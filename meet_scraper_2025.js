@@ -1,7 +1,7 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 const path = require('path');
-const {handleTotalAthleteString, getAmountMeetsOnPage} = require('../../utils/string_utils');
+const {handleTotalAthleteString, getAmountMeetsOnPage} = require('./utils/string_utils');
 
 // Ensure directories exist
 function ensureDirectoryExists(dirPath) {
