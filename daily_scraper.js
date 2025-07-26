@@ -1,3 +1,10 @@
+console.log('🔍 Daily scraper starting...');
+console.log('📁 Current working directory:', process.cwd());
+console.log('📋 Files in current directory:', require('fs').readdirSync('.'));
+
+const { spawn } = require('child_process');
+const path = require('path');
+
 async function main() {
     console.log('🏋️ Daily Scraper & Import Started');
     
