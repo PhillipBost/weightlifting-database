@@ -1,0 +1,44 @@
+name: Daily Weightlifting Meet Scraper
+
+on:
+  schedule:
+    # Run daily at 2 AM UTC (adjust time as needed)
+    - cron: '0 2 * * *'
+  workflow_dispatch:  # Allow manual triggers for testing
+
+jobs:
+  scrape-and-import:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm install
+        
+      - name: Run daily scraper and database import
+        run: npm start
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+          
+      - name: Upload CSV artifact (for debugging)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: scraped-csv-${{ github.run_number }}
+          path: 'meets_*.csv'
+          retention-days: 7
+          
+      - name: Notify on failure
+        if: failure()
+        run: |
+          echo "🚨 Daily scraper failed!"
+          echo "Check the logs above for details."
