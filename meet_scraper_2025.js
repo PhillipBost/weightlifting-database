@@ -552,7 +552,7 @@ async function getTestHistoricalMeets() {
 
     const url = 'https://usaweightlifting.sport80.com/public/rankings/results/';
 
-    const browser = await puppeteer.launch({headless: false, slowMo: 25}); // Minimal delay for Vue.js timing
+    const browser = await puppeteer.launch({headless: true, slowMo: 25}); // Minimal delay for Vue.js timing
     const page = await browser.newPage();
     await page.setViewport({width: 1500, height: 1000});
 
