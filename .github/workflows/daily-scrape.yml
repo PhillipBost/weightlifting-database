@@ -3,7 +3,7 @@ name: Daily Weightlifting Meet Scraper
 on:
   schedule:
     # Run daily at 2 AM UTC (adjust time as needed)
-    - cron: '0 2 * * *'
+    - cron: '0 2 * * *'  # ← Five fields (minute hour day month weekday)
   workflow_dispatch:  # Allow manual triggers for testing
 
 jobs:
