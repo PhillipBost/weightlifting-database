@@ -18,12 +18,12 @@
   "dependencies": {
     "cron": "^2.4.0",
     "csv": "^6.3.1",
-    "csv-parser": "^latest",
+    "csv-parser": "^3.0.0",
     "csv-stringify": "^6.4.0",
     "csv-writer": "^1.6.0",
     "fast-csv": "^4.3.6",
-    "puppeteer": "^latest",
-    "papaparse": "^latest",
+    "puppeteer": "^21.0.0",
+    "papaparse": "^5.4.1",
     "@supabase/supabase-js": "^2.39.0"
   }
 }
