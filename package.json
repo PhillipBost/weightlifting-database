@@ -1,0 +1,29 @@
+{
+  "name": "weightlifting_database",
+  "version": "2.0.0",
+  "type": "commonjs",
+  "description": "node scraper using puppeteer",
+  "main": "main.js",
+  "scripts": {
+    "start": "node daily_scraper.js",
+    "scrape": "node meet_scraper_2025.js", 
+    "import": "node database-importer.js",
+    "test": "node meet_scraper_2025.js && node database-importer.js"
+  },
+  "author": "Phil Bost",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "dependencies": {
+    "cron": "^2.4.0",
+    "csv": "^6.3.1",
+    "csv-parser": "^latest",
+    "csv-stringify": "^6.4.0",
+    "csv-writer": "^1.6.0",
+    "fast-csv": "^4.3.6",
+    "puppeteer": "^latest",
+    "papaparse": "^latest",
+    "@supabase/supabase-js": "^2.39.0"
+  }
+}
