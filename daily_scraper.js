@@ -45,7 +45,7 @@ async function main() {
     console.log('🏋️ Daily Scraper & Database Import Started');
     console.log('==========================================');
     console.log(`📍 Working directory: ${process.cwd()}`);
-    console.log(`🕐 Start time: ${new Date().toLocaleString()}`);
+    console.log(`🕐 Start time: ${new Date().toLocaleString('en-US', { timeZone: 'America/New_York' })}`);
     
     try {
         // Step 1: Run meet scraper
