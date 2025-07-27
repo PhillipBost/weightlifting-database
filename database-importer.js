@@ -113,7 +113,7 @@ async function getExistingMeetCount() {
 async function main() {
     console.log('🗄️ Database Import Started');
     console.log('==========================');
-    console.log(`🕐 Start time: ${new Date().toLocaleString()}`);
+    console.log(`🕐 Start time: ${new Date().toLocaleString('en-US', { timeZone: 'America/New_York' })}`);
     
     try {
         // Check Supabase connection
