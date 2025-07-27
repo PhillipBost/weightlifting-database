@@ -118,7 +118,6 @@ async function main() {
     try {
         // Check Supabase connection
         console.log('🔗 Testing Supabase connection...');
-
         console.log('🔍 Secret check:');
         console.log('SUPABASE_URL defined:', !!process.env.SUPABASE_URL);
         console.log('SUPABASE_URL length:', process.env.SUPABASE_URL?.length || 0);
@@ -129,6 +128,45 @@ async function main() {
             throw new Error('Missing Supabase environment variables (SUPABASE_URL, SUPABASE_ANON_KEY)');
         }
         
+        console.log('🧪 Testing basic Supabase connection...');
+        
+        try {
+            // Test 1: Simple select
+            const { data: testData, error: testError } = await supabase
+                .from('meets')
+                .select('meet_id')
+                .limit(1);
+            
+            console.log('✅ Test query result:', { 
+                success: !testError, 
+                dataLength: testData?.length, 
+                error: testError ? {
+                    message: testError.message,
+                    details: testError.details,
+                    hint: testError.hint,
+                    code: testError.code
+                } : null 
+            });
+            
+            // Test 2: Count query (more detailed)
+            const { count, error: countError } = await supabase
+                .from('meets')
+                .select('*', { count: 'exact', head: true });
+                
+            console.log('📊 Count query result:', { 
+                count: count, 
+                error: countError ? {
+                    message: countError.message,
+                    details: countError.details,
+                    hint: countError.hint,
+                    code: countError.code
+                } : null 
+            });
+            
+        } catch (err) {
+            console.log('💥 Connection test threw exception:', err.message);
+        }
+
         const beforeCount = await getExistingMeetCount();
         
         // Determine which CSV file to import
