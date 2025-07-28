@@ -10,7 +10,7 @@ const supabase = createClient(
 );
 
 // Import scraper function - adjust path as needed for GitHub
-const { scrapeOneMeet } = require('./scrapers/scrapeOneMeet.js');
+const { scrapeOneMeet } = require('./scrapeOneMeet.js');
 
 async function readCSVFile(filePath) {
     console.log(`📖 Reading CSV file: ${filePath}`);
