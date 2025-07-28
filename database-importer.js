@@ -37,15 +37,33 @@ async function readCSVFile(filePath) {
 async function getExistingMeetIds() {
     console.log('🔍 Getting existing meet IDs from database...');
     
-    const { data: existingMeets, error } = await supabase
-        .from('meets')
-        .select('meet_id');
+    let allMeets = [];
+    let from = 0;
+    const pageSize = 1000;
     
-    if (error) {
-        throw new Error(`Failed to get existing meets: ${error.message}`);
+    while (true) {
+        const { data: meets, error } = await supabase
+            .from('meets')
+            .select('meet_id')
+            .range(from, from + pageSize - 1);
+        
+        if (error) {
+            throw new Error(`Failed to get existing meets: ${error.message}`);
+        }
+        
+        if (!meets || meets.length === 0) {
+            break;
+        }
+        
+        allMeets.push(...meets);
+        from += pageSize;
+        
+        if (meets.length < pageSize) {
+            break; // Last page
+        }
     }
     
-    const existingIds = new Set(existingMeets.map(m => m.meet_id));
+    const existingIds = new Set(allMeets.map(m => m.meet_id));
     console.log(`📊 Found ${existingIds.size} existing meets in database`);
     return existingIds;
 }
