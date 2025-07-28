@@ -1,8 +1,8 @@
 //may need some refactoring to move thru quickly
 const puppeteer = require('puppeteer')
-const { createCSVfromArray, writeCSV } = require('./utils/csv_utils');
-const {handleTotalAthleteString, getAmountMeetsOnPage} = require('./utils/string_utils')
-const {getAthletesOnPage} = require('./utils/scraping_utils')
+const { createCSVfromArray, writeCSV } = require('../utils/csv_utils');
+const {handleTotalAthleteString, getAmountMeetsOnPage} = require('../utils/string_utils')
+const {getAthletesOnPage} = require('../utils/scraping_utils')
 
 async function scrapeOneMeet(meetNumber, filePath){
     let baseUrl = 'https://usaweightlifting.sport80.com/public/rankings/results/'
