@@ -2,31 +2,47 @@ name: Daily Weightlifting Meet Scraper
 
 on:
   schedule:
-    # Run daily at 2 AM UTC (adjust time as needed)
-    - cron: '0 2 * * *'  # ← Five fields (minute hour day month weekday)
-  workflow_dispatch:  # Allow manual triggers for testing
+    # 2 AM EST = 7 AM UTC (Standard Time) / 6 AM UTC (Daylight Time)
+    # Using 7 AM UTC to be safe during EST
+    - cron: '0 7 * * *'
+  workflow_dispatch:
 
 jobs:
   scrape-and-import:
     runs-on: ubuntu-latest
     
+    # Set timezone for the entire job
+    env:
+      TZ: America/New_York
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '18'
+
+      - name: Set timezone and show current time
+        run: |
+          # Set system timezone to EST
+          sudo timedatectl set-timezone America/New_York
+          echo "🕐 Workflow started at: $(date)"
+          echo "📅 Date: $(date +'%Y-%m-%d %H:%M:%S %Z')"    
           
       - name: Install dependencies
         run: npm install
         
       - name: Run daily scraper and database import
-        run: npm start
+        run: |
+          echo "🚀 Starting scraper at: $(date +'%Y-%m-%d %H:%M:%S %Z')"
+          npm start
+          echo "✅ Scraper completed at: $(date +'%Y-%m-%d %H:%M:%S %Z')"
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+          TZ: America/New_York
           
       - name: Upload CSV artifact (for debugging)
         if: always()
@@ -35,9 +51,15 @@ jobs:
           name: scraped-csv-${{ github.run_number }}
           path: 'meets_*.csv'
           retention-days: 7
-          
+      
+      - name: Show completion summary
+        if: always()
+        run: |
+          echo "🏁 Workflow completed at: $(date +'%Y-%m-%d %H:%M:%S %Z')"
+          echo "📊 Summary complete"    
+
       - name: Notify on failure
         if: failure()
         run: |
-          echo "🚨 Daily scraper failed!"
+          echo "🚨 Daily scraper failed at: $(date +'%Y-%m-%d %H:%M:%S %Z')"
           echo "Check the logs above for details."
