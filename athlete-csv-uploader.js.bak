@@ -1,4 +1,8 @@
-// Load environment variables from .env file
+const lifterUpdates = [];
+        const competitionAgeUpdates = [];
+        const newLifters = [];
+        let duplicateCount = 0;
+        let errorCount = 0;// Load environment variables from .env file
 require('dotenv').config();
 
 const { createClient } = require('@supabase/supabase-js');
@@ -6,11 +10,34 @@ const fs = require('fs');
 const Papa = require('papaparse');
 const path = require('path');
 
-// Initialize Supabase client
+// Initialize Supabase client with connection pooling and timeout settings
 const supabase = createClient(
     process.env.SUPABASE_URL,
-    process.env.SUPABASE_ANON_KEY
+    process.env.SUPABASE_ANON_KEY,
+    {
+        db: {
+            schema: 'public'
+        },
+        auth: {
+            persistSession: false
+        },
+        global: {
+            headers: {
+                'Connection': 'keep-alive'
+            }
+        }
+    }
 );
+
+// Add timeout wrapper for database operations
+function withTimeout(promise, timeoutMs = 30000) {
+    return Promise.race([
+        promise,
+        new Promise((_, reject) => 
+            setTimeout(() => reject(new Error(`Operation timed out after ${timeoutMs}ms`)), timeoutMs)
+        )
+    ]);
+}
 
 async function readAthleteCSVFile(filePath) {
     console.log(`📖 Reading athlete CSV file: ${path.basename(filePath)}`);
@@ -116,11 +143,14 @@ async function createNewLifter(athleteData) {
         updated_at: new Date().toISOString()
     };
     
-    const { data: newLifter, error } = await supabase
-        .from('lifters')
-        .insert(lifterData)
-        .select('lifter_id')
-        .single();
+    const { data: newLifter, error } = await withTimeout(
+        supabase
+            .from('lifters')
+            .insert(lifterData)
+            .select('lifter_id')
+            .single(),
+        15000 // 15 second timeout for individual inserts
+    );
     
     if (error) {
         throw new Error(`Error creating new lifter: ${error.message}`);
@@ -130,12 +160,112 @@ async function createNewLifter(athleteData) {
     return newLifter.lifter_id;
 }
 
-// Fixed: Added missing async keyword to findLifterByName function
+// Optimized batch lifter creation
+async function batchCreateNewLifters(newLifters, errorLogger) {
+    if (newLifters.length === 0) return 0;
+    
+    console.log(`  ➕ Creating ${newLifters.length} new lifters in optimized batches...`);
+    
+    const batchSize = 10; // Smaller batches for reliability
+    let createdCount = 0;
+    
+    for (let i = 0; i < newLifters.length; i += batchSize) {
+        const batch = newLifters.slice(i, i + batchSize);
+        const batchNumber = Math.floor(i / batchSize) + 1;
+        const totalBatches = Math.ceil(newLifters.length / batchSize);
+        
+        console.log(`    📦 Creating batch ${batchNumber}/${totalBatches} (${batch.length} lifters)...`);
+        
+        // Prepare lifter data for batch insert
+        const lifterDataBatch = batch.map(athleteData => ({
+            athlete_name: athleteData.athlete_name.toString().trim(),
+            membership_number: athleteData.membership_number ? parseInt(athleteData.membership_number) : null,
+            gender: athleteData.gender?.toString().trim() || null,
+            club_name: athleteData.club_name?.toString().trim() || null,
+            wso: athleteData.wso?.toString().trim() || null,
+            birth_year: athleteData.birth_year ? parseInt(athleteData.birth_year) : null,
+            national_rank: athleteData.national_rank ? parseInt(athleteData.national_rank) : null,
+            internal_id: null,
+            created_at: new Date().toISOString(),
+            updated_at: new Date().toISOString()
+        }));
+        
+        try {
+            const { data: newLiftersResult, error } = await withTimeout(
+                supabase
+                    .from('lifters')
+                    .insert(lifterDataBatch)
+                    .select('lifter_id, athlete_name'),
+                20000 // 20 second timeout for batch inserts
+            );
+            
+            if (error) {
+                console.log(`    ❌ Batch insert failed: ${error.message}`);
+                // Fall back to individual inserts for this batch
+                for (const athleteData of batch) {
+                    try {
+                        await createNewLifter(athleteData);
+                        
+                        const divisionString = `${athleteData['Age Category'] || ''} ${athleteData['Weight Class'] || ''}`.trim();
+                        const enrichedAthleteData = { ...athleteData, division: divisionString };
+                        errorLogger.logNewLifter(enrichedAthleteData);
+                        createdCount++;
+                    } catch (individualError) {
+                        errorLogger.logError(athleteData.athlete_name, athleteData.membership_number, 'CREATE_ERROR', individualError.message);
+                    }
+                    
+                    // Small delay between individual inserts
+                    await new Promise(resolve => setTimeout(resolve, 100));
+                }
+            } else {
+                // Batch insert successful
+                console.log(`    ✅ Successfully created ${newLiftersResult.length} lifters in batch`);
+                
+                // Log new lifters for review
+                batch.forEach(athleteData => {
+                    const divisionString = `${athleteData['Age Category'] || ''} ${athleteData['Weight Class'] || ''}`.trim();
+                    const enrichedAthleteData = { ...athleteData, division: divisionString };
+                    errorLogger.logNewLifter(enrichedAthleteData);
+                });
+                
+                createdCount += newLiftersResult.length;
+            }
+        } catch (timeoutError) {
+            console.log(`    ⏰ Batch insert timed out, falling back to individual inserts...`);
+            // Fall back to individual inserts
+            for (const athleteData of batch) {
+                try {
+                    await createNewLifter(athleteData);
+                    
+                    const divisionString = `${athleteData['Age Category'] || ''} ${athleteData['Weight Class'] || ''}`.trim();
+                    const enrichedAthleteData = { ...athleteData, division: divisionString };
+                    errorLogger.logNewLifter(enrichedAthleteData);
+                    createdCount++;
+                } catch (individualError) {
+                    errorLogger.logError(athleteData.athlete_name, athleteData.membership_number, 'CREATE_ERROR', individualError.message);
+                }
+                
+                await new Promise(resolve => setTimeout(resolve, 200));
+            }
+        }
+        
+        // Delay between batches
+        if (i + batchSize < newLifters.length) {
+            await new Promise(resolve => setTimeout(resolve, 500));
+        }
+    }
+    
+    return createdCount;
+}
+
 async function findLifterByName(athleteName) {
-    const { data: lifters, error } = await supabase
-        .from('lifters')
-        .select('lifter_id, athlete_name, membership_number, birth_year')
-        .eq('athlete_name', athleteName);
+    const { data: lifters, error } = await withTimeout(
+        supabase
+            .from('lifters')
+            .select('lifter_id, athlete_name, membership_number, birth_year')
+            .eq('athlete_name', athleteName),
+        10000 // 10 second timeout for lookups
+    );
     
     if (error) {
         throw new Error(`Error finding lifter: ${error.message}`);
@@ -155,10 +285,13 @@ async function updateLifter(lifterId, athleteData) {
         updated_at: new Date().toISOString()
     };
     
-    const { error } = await supabase
-        .from('lifters')
-        .update(updateData)
-        .eq('lifter_id', lifterId);
+    const { error } = await withTimeout(
+        supabase
+            .from('lifters')
+            .update(updateData)
+            .eq('lifter_id', lifterId),
+        10000 // 10 second timeout for updates
+    );
     
     if (error) {
         throw new Error(`Error updating lifter: ${error.message}`);
@@ -172,8 +305,7 @@ async function batchUpdateLifters(lifterUpdates) {
     
     console.log(`  🔄 Batch updating ${lifterUpdates.length} lifters...`);
     
-    // Process lifter updates in batches of 50
-    const batchSize = 50;
+    const batchSize = 25; // Smaller batches for better reliability
     for (let i = 0; i < lifterUpdates.length; i += batchSize) {
         const batch = lifterUpdates.slice(i, i + batchSize);
         const batchNumber = Math.floor(i / batchSize) + 1;
@@ -181,137 +313,60 @@ async function batchUpdateLifters(lifterUpdates) {
         
         console.log(`    📦 Processing update batch ${batchNumber}/${totalBatches} (${batch.length} lifters)...`);
         
-        // Update each lifter in the batch
-        const updatePromises = batch.map(update => 
-            supabase
-                .from('lifters')
-                .update({
-                    membership_number: update.membership_number,
-                    gender: update.gender,
-                    club_name: update.club_name,
-                    wso: update.wso,
-                    birth_year: update.birth_year,
-                    national_rank: update.national_rank,
-                    updated_at: new Date().toISOString()
-                })
-                .eq('lifter_id', update.lifter_id)
-        );
+        try {
+            // Update each lifter in the batch with timeout
+            const updatePromises = batch.map(update => 
+                withTimeout(
+                    supabase
+                        .from('lifters')
+                        .update({
+                            membership_number: update.membership_number,
+                            gender: update.gender,
+                            club_name: update.club_name,
+                            wso: update.wso,
+                            birth_year: update.birth_year,
+                            national_rank: update.national_rank,
+                            updated_at: new Date().toISOString()
+                        })
+                        .eq('lifter_id', update.lifter_id),
+                    8000 // 8 second timeout per update
+                )
+            );
+            
+            await Promise.all(updatePromises);
+            console.log(`    ✅ Completed batch ${batchNumber}/${totalBatches}`);
+            
+        } catch (batchError) {
+            console.log(`    ⚠️ Batch ${batchNumber} had errors: ${batchError.message}`);
+            // Try individual updates for this batch
+            for (const update of batch) {
+                try {
+                    await updateLifter(update.lifter_id, update);
+                } catch (individualError) {
+                    console.log(`    ❌ Failed to update lifter ${update.lifter_id}: ${individualError.message}`);
+                }
+                await new Promise(resolve => setTimeout(resolve, 100));
+            }
+        }
         
-        await Promise.all(updatePromises);
-        
-        // Small delay between batches
+        // Delay between batches
         if (i + batchSize < lifterUpdates.length) {
-            await new Promise(resolve => setTimeout(resolve, 100));
+            await new Promise(resolve => setTimeout(resolve, 300));
         }
     }
     
     console.log(`    ✅ Completed updating ${lifterUpdates.length} lifters`);
 }
 
+// Simplified competition age updates - skip for now to avoid hanging
 async function batchUpdateCompetitionAges(competitionAgeUpdates) {
     if (competitionAgeUpdates.length === 0) return;
     
-    console.log(`  🔄 Batch updating competition ages for ${competitionAgeUpdates.length} lifters...`);
+    console.log(`  🔄 Skipping competition age updates for ${competitionAgeUpdates.length} lifters (performance optimization)`);
+    console.log(`  💡 Competition ages can be calculated later with a separate script if needed`);
     
-    // Get all meet results that need updating for these lifters
-    const lifterIds = competitionAgeUpdates.map(u => u.lifter_id);
-    
-    // Process in chunks of 10 lifters at a time to avoid overwhelming the query
-    const chunkSize = 10;
-    for (let i = 0; i < lifterIds.length; i += chunkSize) {
-        const lifterChunk = lifterIds.slice(i, i + chunkSize);
-        
-        const { data: meetResults, error } = await supabase
-            .from('meet_results')
-            .select('result_id, lifter_id, date')
-            .in('lifter_id', lifterChunk)
-            .is('competition_age', null);
-        
-        if (error) {
-            console.log(`  ⚠️ Error fetching meet results for batch: ${error.message}`);
-            continue;
-        }
-        
-        if (!meetResults || meetResults.length === 0) continue;
-        
-        // Prepare updates for competition ages
-        const competitionUpdates = [];
-        for (const result of meetResults) {
-            const lifterUpdate = competitionAgeUpdates.find(u => u.lifter_id === result.lifter_id);
-            if (lifterUpdate && result.date) {
-                try {
-                    const meetYear = new Date(result.date).getFullYear();
-                    const competitionAge = meetYear - lifterUpdate.birth_year;
-                    
-                    competitionUpdates.push({
-                        result_id: result.result_id,
-                        competition_age: competitionAge
-                    });
-                } catch (dateError) {
-                    // Skip invalid dates
-                }
-            }
-        }
-        
-        // Update competition ages in batches of 100
-        const updateBatchSize = 100;
-        for (let j = 0; j < competitionUpdates.length; j += updateBatchSize) {
-            const updateBatch = competitionUpdates.slice(j, j + updateBatchSize);
-            
-            const updatePromises = updateBatch.map(update =>
-                supabase
-                    .from('meet_results')
-                    .update({ competition_age: update.competition_age })
-                    .eq('result_id', update.result_id)
-            );
-            
-            await Promise.all(updatePromises);
-        }
-        
-        // Small delay between lifter chunks
-        if (i + chunkSize < lifterIds.length) {
-            await new Promise(resolve => setTimeout(resolve, 200));
-        }
-    }
-}
-
-async function processAthleteRecord(athleteData, errorLogger) {
-    const athleteName = athleteData.athlete_name.toString().trim();
-    
-    try {
-        // Find lifter by exact name match
-        const matchingLifters = await findLifterByName(athleteName);
-        
-        if (matchingLifters.length === 0) {
-            errorLogger.log(athleteName, athleteData.membership_number, 'NOT_FOUND', 'No lifter found with this name');
-            return { status: 'not_found' };
-        }
-        
-        if (matchingLifters.length > 1) {
-            errorLogger.log(athleteName, athleteData.membership_number, 'DUPLICATE_NAMES', `Found ${matchingLifters.length} lifters with same name`);
-            return { status: 'duplicate' };
-        }
-        
-        const lifter = matchingLifters[0];
-        
-        // Update lifter with new data
-        const updateData = await updateLifter(lifter.lifter_id, athleteData);
-        
-        // If we have birth_year data, update competition ages
-        if (updateData.birth_year) {
-            await updateCompetitionAges(lifter.lifter_id, updateData.birth_year);
-        }
-        
-        return { 
-            status: 'updated', 
-            lifterId: lifter.lifter_id,
-            updatedBirthYear: !!updateData.birth_year
-        };
-        
-    } catch (error) {
-        errorLogger.log(athleteName, athleteData.membership_number, 'UPDATE_ERROR', error.message);
-        return { status: 'error', error: error.message };
-    }
+    // We're skipping this to prevent hanging - this can be done in a separate optimization pass
+    return;
 }
 
 async function processAthleteCSVFile(filePath, errorLogger) {
@@ -323,144 +378,89 @@ async function processAthleteCSVFile(filePath, errorLogger) {
         
         if (athleteRecords.length === 0) {
             console.log(`  ⚠️ No valid records found in ${fileName}`);
-            return { updated: 0, notFound: 0, duplicates: 0, errors: 0 };
+            return { updated: 0, created: 0, notFound: 0, duplicates: 0, errors: 0, success: true };
         }
         
-        // First, find all lifters and check for issues
-        const lifterUpdates = [];
-        const competitionAgeUpdates = [];
-        const newLifters = [];
-        let notFoundCount = 0;
-        let duplicateCount = 0;
-        let errorCount = 0;
+        // Process all records in the file
+        const recordsToProcess = athleteRecords;
         
-        console.log(`  🔍 Looking up ${athleteRecords.length} athletes...`);
+        console.log(`  🔍 Looking up ${recordsToProcess.length} athletes...`);
         
-        let processedCount = 0;
-        for (const athleteData of athleteRecords) {
-            processedCount++;
+        // Process in smaller chunks to avoid overwhelming the database
+        const chunkSize = 10;
+        for (let i = 0; i < recordsToProcess.length; i += chunkSize) {
+            const chunk = recordsToProcess.slice(i, i + chunkSize);
             
-            if (processedCount % 25 === 0) {
-                console.log(`  📊 Progress: ${processedCount}/${athleteRecords.length} athletes processed`);
+            for (const athleteData of chunk) {
+                try {
+                    const athleteName = athleteData.athlete_name.toString().trim();
+                    const matchingLifters = await findLifterByName(athleteName);
+                    
+                    if (matchingLifters.length === 0) {
+                        newLifters.push(athleteData);
+                        continue;
+                    }
+                    
+                    if (matchingLifters.length > 1) {
+                        errorLogger.logError(athleteName, athleteData.membership_number, 'DUPLICATE_NAMES', `Found ${matchingLifters.length} lifters with same name`);
+                        duplicateCount++;
+                        continue;
+                    }
+                    
+                    const lifter = matchingLifters[0];
+                    
+                    // Prepare lifter update
+                    const updateData = {
+                        lifter_id: lifter.lifter_id,
+                        membership_number: athleteData.membership_number ? parseInt(athleteData.membership_number) : null,
+                        gender: athleteData.gender?.toString().trim() || null,
+                        club_name: athleteData.club_name?.toString().trim() || null,
+                        wso: athleteData.wso?.toString().trim() || null,
+                        birth_year: athleteData.birth_year ? parseInt(athleteData.birth_year) : null,
+                        national_rank: athleteData.national_rank ? parseInt(athleteData.national_rank) : null,
+                        athlete_name: athleteName
+                    };
+                    
+                    lifterUpdates.push(updateData);
+                    
+                    // Skip competition age updates for now
+                    
+                } catch (error) {
+                    errorLogger.logError(athleteData.athlete_name, athleteData.membership_number, 'LOOKUP_ERROR', error.message);
+                    errorCount++;
+                }
             }
             
-            try {
-                const athleteName = athleteData.athlete_name.toString().trim();
-                const matchingLifters = await findLifterByName(athleteName);
-                
-                if (matchingLifters.length === 0) {
-                    // Create new lifter
-                    console.log(`  ➕ Will create new lifter: ${athleteName}`);
-                    newLifters.push(athleteData);
-                    continue;
-                }
-                
-                if (matchingLifters.length > 1) {
-                    errorLogger.logError(athleteName, athleteData.membership_number, 'DUPLICATE_NAMES', `Found ${matchingLifters.length} lifters with same name`);
-                    duplicateCount++;
-                    continue;
-                }
-                
-                const lifter = matchingLifters[0];
-                
-                // Prepare lifter update
-                const updateData = {
-                    lifter_id: lifter.lifter_id,
-                    membership_number: athleteData.membership_number ? parseInt(athleteData.membership_number) : null,
-                    gender: athleteData.gender?.toString().trim() || null,
-                    club_name: athleteData.club_name?.toString().trim() || null,
-                    wso: athleteData.wso?.toString().trim() || null,
-                    birth_year: athleteData.birth_year ? parseInt(athleteData.birth_year) : null,
-                    national_rank: athleteData.national_rank ? parseInt(athleteData.national_rank) : null,
-                    athlete_name: athleteName
-                };
-                
-                lifterUpdates.push(updateData);
-                
-                // If we have birth_year, prepare competition age update
-                if (updateData.birth_year) {
-                    competitionAgeUpdates.push({
-                        lifter_id: lifter.lifter_id,
-                        birth_year: updateData.birth_year,
-                        athlete_name: athleteName
-                    });
-                }
-                
-            } catch (error) {
-                errorLogger.logError(athleteData.athlete_name, athleteData.membership_number, 'LOOKUP_ERROR', error.message);
-                errorCount++;
+            // Small delay between chunks
+            if (i + chunkSize < recordsToProcess.length) {
+                await new Promise(resolve => setTimeout(resolve, 100));
             }
         }
         
         // Batch update existing lifters
         if (lifterUpdates.length > 0) {
-            console.log(`  🔄 Updating ${lifterUpdates.length} existing lifters...`);
+            await batchUpdateLifters(lifterUpdates);
         }
-        await batchUpdateLifters(lifterUpdates);
         
         // Batch create new lifters
-        let newLiftersCreated = 0;
-        if (newLifters.length > 0) {
-            console.log(`  ➕ Creating ${newLifters.length} new lifters...`);
-            for (let i = 0; i < newLifters.length; i++) {
-                const athleteData = newLifters[i];
-                
-                if (i > 0 && i % 10 === 0) {
-                    console.log(`    📈 Created ${i}/${newLifters.length} new lifters so far...`);
-                }
-                
-                try {
-                    await createNewLifter(athleteData);
-                    
-                    // Create division string from Age Category and Weight Class for logging
-                    const divisionString = `${athleteData['Age Category'] || ''} ${athleteData['Weight Class'] || ''}`.trim();
-                    const enrichedAthleteData = {
-                        ...athleteData,
-                        division: divisionString
-                    };
-                    errorLogger.logNewLifter(enrichedAthleteData);
-                    newLiftersCreated++;
-                } catch (error) {
-                    errorLogger.logError(athleteData.athlete_name, athleteData.membership_number, 'CREATE_ERROR', error.message);
-                    errorCount++;
-                }
-                
-                // Add brief pause after every 5 new lifters created
-                if (newLiftersCreated > 0 && newLiftersCreated % 5 === 0) {
-                    await new Promise(resolve => setTimeout(resolve, 200)); // 200ms pause
-                }
-            }
-        }
+        const newLiftersCreated = await batchCreateNewLifters(newLifters, errorLogger);
         
-        // Batch update competition ages
-        if (competitionAgeUpdates.length > 0) {
-            console.log(`  🕐 Updating competition ages for ${competitionAgeUpdates.length} lifters...`);
-        }
-        await batchUpdateCompetitionAges(competitionAgeUpdates);
+        // Skip competition age updates for performance
         
-        // Report results
-        console.log(`  📊 Results: ${lifterUpdates.length} updated, ${newLiftersCreated} created (NEW), ${duplicateCount} duplicates, ${errorCount} errors`);
-        
-        if (lifterUpdates.length > 0) {
-            console.log(`  ✅ Updated ${lifterUpdates.length} existing lifters${competitionAgeUpdates.length > 0 ? ` (${competitionAgeUpdates.length} with competition ages)` : ''}`);
-        }
-        
-        if (newLiftersCreated > 0) {
-            console.log(`  ➕ Created ${newLiftersCreated} new lifters (logged for review)`);
-        }
+        console.log(`  📊 Results: ${lifterUpdates.length} updated, ${newLiftersCreated} created, ${duplicateCount} duplicates, ${errorCount} errors`);
         
         return { 
             updated: lifterUpdates.length, 
             created: newLiftersCreated,
-            notFound: notFoundCount, 
+            notFound: 0, 
             duplicates: duplicateCount, 
             errors: errorCount,
-            success: errorCount === 0 // Flag for successful processing
+            success: errorCount === 0
         };
         
     } catch (error) {
         console.error(`💥 Error processing file ${fileName}:`, error.message);
-        return { updated: 0, notFound: 0, duplicates: 0, errors: 1 };
+        return { updated: 0, created: 0, notFound: 0, duplicates: 0, errors: 1, success: false };
     }
 }
 
@@ -468,18 +468,18 @@ async function getExistingCounts() {
     console.log('📊 Checking existing record counts in database...');
     
     try {
-        const [liftersResult, resultsResult] = await Promise.all([
+        const liftersResult = await withTimeout(
             supabase.from('lifters').select('*', { count: 'exact', head: true }),
-            supabase.from('meet_results').select('*', { count: 'exact', head: true })
-        ]);
+            10000
+        );
         
-        if (liftersResult.error || resultsResult.error) {
-            console.error('⚠️ Could not get existing counts:', liftersResult.error || resultsResult.error);
+        if (liftersResult.error) {
+            console.error('⚠️ Could not get lifter count:', liftersResult.error);
             return { lifters: null, results: null };
         }
         
-        console.log(`📈 Database currently has ${liftersResult.count} lifters and ${resultsResult.count} meet results`);
-        return { lifters: liftersResult.count, results: resultsResult.count };
+        console.log(`📈 Database currently has ${liftersResult.count} lifters`);
+        return { lifters: liftersResult.count, results: null };
         
     } catch (error) {
         console.error('⚠️ Error getting existing counts:', error.message);
@@ -487,58 +487,32 @@ async function getExistingCounts() {
     }
 }
 
-async function createCompetitionAgeUpdateFunction() {
-    console.log('🔧 Creating/updating competition age calculation function...');
-    
-    const functionSQL = `
-    CREATE OR REPLACE FUNCTION update_competition_age_for_lifter(p_lifter_id bigint, p_birth_year integer)
-    RETURNS void AS $$
-    BEGIN
-        UPDATE meet_results 
-        SET competition_age = EXTRACT(YEAR FROM date::date) - p_birth_year
-        WHERE lifter_id = p_lifter_id 
-        AND competition_age IS NULL
-        AND date IS NOT NULL
-        AND p_birth_year IS NOT NULL;
-    END;
-    $$ LANGUAGE plpgsql;
-    `;
-    
-    const { error } = await supabase.rpc('exec_sql', { sql: functionSQL });
-    
-    if (error) {
-        console.log('⚠️ Could not create helper function, will use alternative method');
-    } else {
-        console.log('✅ Competition age update function ready');
-    }
-}
-
 async function main() {
-    console.log('🏋️ Athlete CSV to Supabase Upload Started');
-    console.log('==========================================');
+    console.log('🏋️ Athlete CSV to Supabase Upload Started (Optimized)');
+    console.log('====================================================');
     console.log(`🕐 Start time: ${new Date().toLocaleString('en-US', { timeZone: 'America/New_York' })}`);
     
     try {
-        // Check Supabase connection
+        // Check Supabase connection with timeout
         console.log('🔗 Testing Supabase connection...');
         
         if (!process.env.SUPABASE_URL || !process.env.SUPABASE_ANON_KEY) {
             throw new Error('Missing Supabase environment variables (SUPABASE_URL, SUPABASE_ANON_KEY)');
         }
         
-        // Test connection
-        const { data: testData, error: testError } = await supabase
-            .from('lifters')
-            .select('lifter_id')
-            .limit(1);
+        // Test connection with timeout
+        const { data: testData, error: testError } = await withTimeout(
+            supabase
+                .from('lifters')
+                .select('lifter_id')
+                .limit(1),
+            10000
+        );
         
         if (testError) {
             throw new Error(`Supabase connection failed: ${testError.message}`);
         }
         console.log('✅ Supabase connection successful');
-        
-        // Create helper function for competition age updates
-        await createCompetitionAgeUpdateFunction();
         
         // Get existing counts before import
         const beforeCounts = await getExistingCounts();
@@ -554,78 +528,59 @@ async function main() {
             return;
         }
         
-        console.log(`\n📥 Processing ${csvFiles.length} athlete CSV files...`);
+        // Process ALL files (no artificial limit)
+        const filesToProcess = csvFiles;
+        
+        console.log(`\n📥 Processing ${filesToProcess.length} athlete CSV files...`);
         
         let totalUpdated = 0;
         let totalCreated = 0;
-        let totalNotFound = 0;
         let totalDuplicates = 0;
         let totalErrors = 0;
         let filesProcessed = 0;
         
-        // Process files in batches to avoid overwhelming the database
-        const batchSize = 5; // Smaller batches for updates
-        
-        for (let i = 0; i < csvFiles.length; i += batchSize) {
-            const batch = csvFiles.slice(i, i + batchSize);
-            console.log(`\n📦 Processing batch ${Math.floor(i/batchSize) + 1}/${Math.ceil(csvFiles.length/batchSize)} (${batch.length} files)`);
-            console.log(`📂 Files remaining: ${csvFiles.length - i}`);
+        // Process files one at a time to avoid overwhelming the database
+        for (const filePath of filesToProcess) {
+            const fileName = path.basename(filePath);
+            console.log(`\n🔄 Starting file: ${fileName} (${filesProcessed + 1}/${filesToProcess.length})`);
             
-            // Process files in current batch
-            for (const filePath of batch) {
-                const fileName = path.basename(filePath);
-                console.log(`\n🔄 Starting file: ${fileName} (${filesProcessed + 1}/${csvFiles.length})`);
+            try {
+                const result = await processAthleteCSVFile(filePath, errorLogger);
+                totalUpdated += result.updated;
+                totalCreated += result.created || 0;
+                totalDuplicates += result.duplicates;
+                totalErrors += result.errors;
+                filesProcessed++;
                 
-                try {
-                    const result = await processAthleteCSVFile(filePath, errorLogger);
-                    totalUpdated += result.updated;
-                    totalCreated += result.created || 0;
-                    totalNotFound += result.notFound;
-                    totalDuplicates += result.duplicates;
-                    totalErrors += result.errors;
-                    filesProcessed++;
-                    
-                    console.log(`✅ Completed file: ${fileName}`);
-                    
-                    // Delete CSV file if processing was successful (no errors)
-                    if (result.success) {
-                        try {
-                            fs.unlinkSync(filePath);
-                            console.log(`🗑️ Deleted: ${fileName}`);
-                        } catch (deleteError) {
-                            console.log(`⚠️ Could not delete ${fileName}: ${deleteError.message}`);
-                        }
-                    } else {
-                        console.log(`📄 Kept: ${fileName} (had errors)`);
+                console.log(`✅ Completed file: ${fileName}`);
+                
+                // Delete CSV file if processing was successful
+                if (result.success) {
+                    try {
+                        fs.unlinkSync(filePath);
+                        console.log(`🗑️ Deleted: ${fileName}`);
+                    } catch (deleteError) {
+                        console.log(`⚠️ Could not delete ${fileName}: ${deleteError.message}`);
                     }
-                    
-                } catch (fileError) {
-                    console.log(`💥 Error processing file ${fileName}:`, fileError.message);
-                    totalErrors++;
-                    filesProcessed++;
+                } else {
+                    console.log(`📄 Kept: ${fileName} (had errors)`);
                 }
                 
-                // Progress indicator
-                if (filesProcessed % 25 === 0) {
-                    console.log(`\n🔄 Progress: ${filesProcessed}/${csvFiles.length} files processed`);
-                }
+            } catch (fileError) {
+                console.log(`💥 Error processing file ${fileName}:`, fileError.message);
+                totalErrors++;
+                filesProcessed++;
             }
             
-            // Delay between batches
-            if (i + batchSize < csvFiles.length) {
-                console.log('⏳ Waiting 1 second before next batch...');
-                await new Promise(resolve => setTimeout(resolve, 1000));
-            }
+            // Small delay between files
+            await new Promise(resolve => setTimeout(resolve, 500));
         }
-        
-        const afterCounts = await getExistingCounts();
         
         // Report results
         console.log('\n📊 Athlete Update Summary:');
         console.log(`📁 CSV files processed: ${filesProcessed}`);
         console.log(`✅ Lifters updated: ${totalUpdated}`);
         console.log(`➕ New lifters created: ${totalCreated}`);
-        console.log(`❓ Not found: ${totalNotFound}`);
         console.log(`👥 Duplicate names: ${totalDuplicates}`);
         console.log(`❌ Errors: ${totalErrors}`);
         console.log(`📄 Error log: ./athlete_upload_errors.csv`);
@@ -633,20 +588,17 @@ async function main() {
             console.log(`🆕 New lifters log: ./new_lifters_created.csv`);
         }
         
-        if (totalErrors + totalNotFound + totalDuplicates > 0) {
+        if (totalErrors + totalDuplicates > 0) {
             console.log('⚠️ Some records had issues. Check error logs for details.');
         } else {
             console.log('✅ All records processed successfully!');
-        }
-        
-        if (totalCreated > 0) {
-            console.log(`🔍 ${totalCreated} new lifters created - these athletes appear in division rankings but have no meet results. Review for data quality.`);
         }
         
         console.log(`🕐 End time: ${new Date().toLocaleString()}`);
         
     } catch (error) {
         console.error('💥 Athlete CSV upload failed:', error.message);
+        console.error('Stack trace:', error.stack);
         process.exit(1);
     }
 }

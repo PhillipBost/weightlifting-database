@@ -82,34 +82,84 @@ function isAthleteAlreadyProcessed(membershipId) {
     return fs.existsSync(athleteFile) && !CONFIG.OVERWRITE_EXISTING_FILES; // Fixed: was OVERWRITE_EXISTING_FILES
 }
 
+// NEW: Updated upload script function with separate window
 async function runUploadScript() {
     const { spawn } = require('child_process');
+    const os = require('os');
     
-    return new Promise((resolve, reject) => {
-        console.log('\n📤 Starting CSV upload to Supabase...');
-        console.log(`📅 ${new Date().toISOString()}`);
-        
-        const child = spawn('node', ['athlete-csv-uploader.js'], {
-            // NEW: Upload CSV files after each division if we processed any athletesstdio: 'inherit', // This will show the upload script output in real-time
-            cwd: process.cwd()
-        });
-        
-        child.on('close', (code) => {
-            console.log(`📊 CSV upload process closed with code: ${code}`);
-            if (code === 0) {
-                console.log(`✅ CSV upload completed successfully (exit code: ${code})`);
-                resolve(code);
+    console.log('\n📤 Starting CSV upload to Supabase in separate window...');
+    console.log(`📅 ${new Date().toISOString()}`);
+    
+    try {
+        if (os.platform() === 'win32') {
+            // Windows - Create a batch file and run it
+            const batchContent = `@echo off
+echo ================================================
+echo ATHLETE CSV UPLOADER - BACKGROUND PROCESS
+echo ================================================
+echo Starting upload at %date% %time%
+echo.
+
+node athlete-csv-uploader.js
+
+echo.
+echo ================================================
+echo Upload completed at %date% %time%
+echo Press any key to close this window...
+echo ================================================
+pause`;
+            
+            const batchFile = path.join(process.cwd(), 'run_upload.bat');
+            fs.writeFileSync(batchFile, batchContent);
+            
+            const child = spawn('cmd', ['/c', 'start', 'cmd', '/k', 'run_upload.bat'], {
+                detached: true,
+                stdio: 'ignore',
+                cwd: process.cwd(),
+                env: { ...process.env }
+            });
+            
+            child.unref();
+            
+            console.log(`✅ Upload batch file created and started: ${batchFile}`);
+            console.log(`🖥️ New cmd window opened for upload process`);
+            
+        } else {
+            // Non-Windows - Use terminal approach
+            let command, args;
+            
+            if (os.platform() === 'darwin') {
+                // macOS
+                command = 'osascript';
+                args = ['-e', `tell application "Terminal" to do script "cd \\"${process.cwd()}\\" && echo 'ATHLETE CSV UPLOADER - BACKGROUND PROCESS' && node athlete-csv-uploader.js"`];
             } else {
-                console.log(`❌ CSV upload failed with exit code: ${code}`);
-                reject(new Error(`CSV upload failed with exit code: ${code}`));
+                // Linux
+                command = 'gnome-terminal';
+                args = ['--', 'bash', '-c', `cd "${process.cwd()}" && echo "ATHLETE CSV UPLOADER - BACKGROUND PROCESS" && node athlete-csv-uploader.js; echo "Upload completed. Press enter to close..."; read`];
             }
-        });
+            
+            const child = spawn(command, args, {
+                detached: true,
+                stdio: 'ignore',
+                cwd: process.cwd(),
+                env: { ...process.env }
+            });
+            
+            child.unref();
+            console.log(`✅ Upload process started in separate terminal`);
+        }
         
-        child.on('error', (error) => {
-            console.log(`💥 Error running CSV upload:`, error.message);
-            reject(error);
-        });
-    });
+        console.log(`📋 Upload running independently - division scraping will continue`);
+        console.log(`💡 Monitor the separate window for upload progress`);
+        
+        // Return immediately without waiting
+        return 0;
+        
+    } catch (error) {
+        console.log(`❌ Failed to start upload in separate window: ${error.message}`);
+        console.log(`⚠️ Continuing without upload - run athlete-csv-uploader.js manually later`);
+        return 1;
+    }
 }
 
 // Function to create individual athlete CSV file
@@ -944,13 +994,15 @@ async function processAllDivisions() {
                     console.log(`     • ...and ${divisionErrors.length - 3} more errors`);
                 }
             }
+            
+            // NEW: Upload with separate window approach
             if (divisionSuccessCount > 0) {
                 try {
                     console.log(`\n📤 Uploading ${divisionSuccessCount} athlete CSV files from division ${i + 1}/${divisions.length}...`);
                     await runUploadScript();
-                    console.log(`✅ Division ${i + 1} upload completed successfully!`);
+                    console.log(`✅ Division ${i + 1} upload started in separate window!`);
                 } catch (uploadError) {
-                    console.log(`⚠️ Division ${i + 1} upload failed:`, uploadError.message);
+                    console.log(`⚠️ Division ${i + 1} upload failed to start:`, uploadError.message);
                     console.log('💡 Continuing to next division... You can manually upload later with: node athlete-csv-uploader.js');
                 }
             } else {
@@ -982,11 +1034,12 @@ async function processAllDivisions() {
     console.log(`   ✅ Athletes processed successfully: ${totalSuccessCount}`);
     console.log(`   ❌ Athletes failed: ${totalErrorCount}`);
     console.log(`   📁 Individual athlete files created in: ../output/athletes/`);
-    console.log(`   📤 CSV uploads performed after each division`);
+    console.log(`   📤 CSV uploads started in separate windows after each division`);
     
-    // Final summary - no bulk upload needed since we upload after each division
+    // Final summary - uploads are running independently
     console.log('\n🚀 Complete pipeline finished successfully!');
-    console.log('💡 All athlete data has been uploaded to Supabase division by division');
+    console.log('💡 Uploads are running in separate windows - monitor those for upload progress');
+    console.log('📋 Any remaining CSV files can be uploaded manually with: node athlete-csv-uploader.js');
     
     return {
         divisionsProcessed: totalDivisionsProcessed,
