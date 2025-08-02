@@ -176,6 +176,10 @@ async function batchUpdateLifters(lifterUpdates) {
     const batchSize = 50;
     for (let i = 0; i < lifterUpdates.length; i += batchSize) {
         const batch = lifterUpdates.slice(i, i + batchSize);
+        const batchNumber = Math.floor(i / batchSize) + 1;
+        const totalBatches = Math.ceil(lifterUpdates.length / batchSize);
+        
+        console.log(`    📦 Processing update batch ${batchNumber}/${totalBatches} (${batch.length} lifters)...`);
         
         // Update each lifter in the batch
         const updatePromises = batch.map(update => 
@@ -200,6 +204,8 @@ async function batchUpdateLifters(lifterUpdates) {
             await new Promise(resolve => setTimeout(resolve, 100));
         }
     }
+    
+    console.log(`    ✅ Completed updating ${lifterUpdates.length} lifters`);
 }
 
 async function batchUpdateCompetitionAges(competitionAgeUpdates) {
@@ -330,7 +336,14 @@ async function processAthleteCSVFile(filePath, errorLogger) {
         
         console.log(`  🔍 Looking up ${athleteRecords.length} athletes...`);
         
+        let processedCount = 0;
         for (const athleteData of athleteRecords) {
+            processedCount++;
+            
+            if (processedCount % 25 === 0) {
+                console.log(`  📊 Progress: ${processedCount}/${athleteRecords.length} athletes processed`);
+            }
+            
             try {
                 const athleteName = athleteData.athlete_name.toString().trim();
                 const matchingLifters = await findLifterByName(athleteName);
@@ -380,25 +393,49 @@ async function processAthleteCSVFile(filePath, errorLogger) {
         }
         
         // Batch update existing lifters
+        if (lifterUpdates.length > 0) {
+            console.log(`  🔄 Updating ${lifterUpdates.length} existing lifters...`);
+        }
         await batchUpdateLifters(lifterUpdates);
         
         // Batch create new lifters
         let newLiftersCreated = 0;
         if (newLifters.length > 0) {
             console.log(`  ➕ Creating ${newLifters.length} new lifters...`);
-            for (const athleteData of newLifters) {
+            for (let i = 0; i < newLifters.length; i++) {
+                const athleteData = newLifters[i];
+                
+                if (i > 0 && i % 10 === 0) {
+                    console.log(`    📈 Created ${i}/${newLifters.length} new lifters so far...`);
+                }
+                
                 try {
                     await createNewLifter(athleteData);
-                    errorLogger.logNewLifter(athleteData);
+                    
+                    // Create division string from Age Category and Weight Class for logging
+                    const divisionString = `${athleteData['Age Category'] || ''} ${athleteData['Weight Class'] || ''}`.trim();
+                    const enrichedAthleteData = {
+                        ...athleteData,
+                        division: divisionString
+                    };
+                    errorLogger.logNewLifter(enrichedAthleteData);
                     newLiftersCreated++;
                 } catch (error) {
                     errorLogger.logError(athleteData.athlete_name, athleteData.membership_number, 'CREATE_ERROR', error.message);
                     errorCount++;
                 }
+                
+                // Add brief pause after every 5 new lifters created
+                if (newLiftersCreated > 0 && newLiftersCreated % 5 === 0) {
+                    await new Promise(resolve => setTimeout(resolve, 200)); // 200ms pause
+                }
             }
         }
         
         // Batch update competition ages
+        if (competitionAgeUpdates.length > 0) {
+            console.log(`  🕐 Updating competition ages for ${competitionAgeUpdates.length} lifters...`);
+        }
         await batchUpdateCompetitionAges(competitionAgeUpdates);
         
         // Report results
@@ -532,27 +569,40 @@ async function main() {
         for (let i = 0; i < csvFiles.length; i += batchSize) {
             const batch = csvFiles.slice(i, i + batchSize);
             console.log(`\n📦 Processing batch ${Math.floor(i/batchSize) + 1}/${Math.ceil(csvFiles.length/batchSize)} (${batch.length} files)`);
+            console.log(`📂 Files remaining: ${csvFiles.length - i}`);
             
             // Process files in current batch
             for (const filePath of batch) {
-                const result = await processAthleteCSVFile(filePath, errorLogger);
-                totalUpdated += result.updated;
-                totalCreated += result.created || 0;
-                totalNotFound += result.notFound;
-                totalDuplicates += result.duplicates;
-                totalErrors += result.errors;
-                filesProcessed++;
+                const fileName = path.basename(filePath);
+                console.log(`\n🔄 Starting file: ${fileName} (${filesProcessed + 1}/${csvFiles.length})`);
                 
-                // Delete CSV file if processing was successful (no errors)
-                if (result.success) {
-                    try {
-                        fs.unlinkSync(filePath);
-                        console.log(`  🗑️ Deleted: ${path.basename(filePath)}`);
-                    } catch (deleteError) {
-                        console.log(`  ⚠️ Could not delete ${path.basename(filePath)}: ${deleteError.message}`);
+                try {
+                    const result = await processAthleteCSVFile(filePath, errorLogger);
+                    totalUpdated += result.updated;
+                    totalCreated += result.created || 0;
+                    totalNotFound += result.notFound;
+                    totalDuplicates += result.duplicates;
+                    totalErrors += result.errors;
+                    filesProcessed++;
+                    
+                    console.log(`✅ Completed file: ${fileName}`);
+                    
+                    // Delete CSV file if processing was successful (no errors)
+                    if (result.success) {
+                        try {
+                            fs.unlinkSync(filePath);
+                            console.log(`🗑️ Deleted: ${fileName}`);
+                        } catch (deleteError) {
+                            console.log(`⚠️ Could not delete ${fileName}: ${deleteError.message}`);
+                        }
+                    } else {
+                        console.log(`📄 Kept: ${fileName} (had errors)`);
                     }
-                } else {
-                    console.log(`  📄 Kept: ${path.basename(filePath)} (had errors)`);
+                    
+                } catch (fileError) {
+                    console.log(`💥 Error processing file ${fileName}:`, fileError.message);
+                    totalErrors++;
+                    filesProcessed++;
                 }
                 
                 // Progress indicator
