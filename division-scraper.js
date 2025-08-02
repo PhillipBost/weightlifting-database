@@ -11,7 +11,7 @@ const CONFIG = {
     DELAY_BETWEEN_DIVISIONS: 5000,
     MAX_DIVISIONS_FOR_TESTING: 3,
     TARGET_YEAR: 2012,
-    HEADLESS: false
+    HEADLESS: "new"
 };
 
 // Utility functions
@@ -733,11 +733,11 @@ async function scrapeAthleteProfileIntegrated(page, athleteName, ageCategory, we
             
             if (nextPageExists) {
 				try {
-					// Use shorter timeout for pagination since it's just table updates
-					await page.waitForNetworkIdle({timeout: 5000});
+					// Use very short timeout for pagination since it's just table updates
+					await page.waitForNetworkIdle({timeout: 3000});
 				} catch (timeoutError) {
-					// Use shorter fixed delay for pagination - it's much faster than initial load
-					await page.waitForTimeout(1500);
+					// Use short fixed delay for pagination
+					await page.waitForTimeout(500);
 				}
 				currentPage++;
 				                

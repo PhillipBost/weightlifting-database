@@ -10,7 +10,7 @@ const CONFIG = {
     DELAY_BETWEEN_ATHLETES: 2000,
     DELAY_BETWEEN_DIVISIONS: 5000,
     MAX_DIVISIONS_FOR_TESTING: 3,
-    TARGET_YEAR: 2024,
+    TARGET_YEAR: 2012,
     HEADLESS: false
 };
 
@@ -545,7 +545,7 @@ async function scrapeAthleteProfileIntegrated(page, athleteName, ageCategory, we
 
             if (activeInterface.includes('date-picker') || activeInterface.includes('v-menu')) {
                 if (fieldType === 'start') {
-                    await handleComplexDatePicker(page, 2024, activeInterface, 1, 1); // January 1, 2024
+                    await handleComplexDatePicker(page, 2012, activeInterface, 1, 1); // January 1, 2012
                 } else if (fieldType === 'end') {
 					// Set last day of Dec for end field
 					const lastDayDec = 31; // December always has 31 days
@@ -733,11 +733,11 @@ async function scrapeAthleteProfileIntegrated(page, athleteName, ageCategory, we
             
             if (nextPageExists) {
 				try {
-					// Use shorter timeout for pagination since it's just table updates
-					await page.waitForNetworkIdle({timeout: 5000});
+					// Use very short timeout for pagination since it's just table updates
+					await page.waitForNetworkIdle({timeout: 3000});
 				} catch (timeoutError) {
-					// Use shorter fixed delay for pagination - it's much faster than initial load
-					await page.waitForTimeout(1500);
+					// Use short fixed delay for pagination
+					await page.waitForTimeout(500);
 				}
 				currentPage++;
 				                
