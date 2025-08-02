@@ -32,7 +32,7 @@ function escapeCSV(value) {
 }
 
 function loadDivisions() {
-    const divisionsFile = './all divisions.csv';
+    const divisionsFile = './all divisions_7.csv';
     if (!fs.existsSync(divisionsFile)) {
         throw new Error('Division file not found: ./all divisions.csv');
     }
@@ -110,7 +110,7 @@ echo ================================================
 timeout /t 3 /nobreak >nul
 exit`;
             
-            const batchFile = path.join(process.cwd(), 'run_upload.bat');
+            const batchFile = path.join(process.cwd(), 'run_upload_7.bat');
             fs.writeFileSync(batchFile, batchContent);
             
             const child = spawn('cmd', ['/c', 'start', 'cmd', '/c', 'run_upload.bat'], {

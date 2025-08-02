@@ -32,7 +32,7 @@ function escapeCSV(value) {
 }
 
 function loadDivisions() {
-    const divisionsFile = './all divisions.csv';
+    const divisionsFile = './all divisions_1.csv';
     if (!fs.existsSync(divisionsFile)) {
         throw new Error('Division file not found: ./all divisions.csv');
     }
