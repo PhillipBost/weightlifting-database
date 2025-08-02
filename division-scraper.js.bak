@@ -11,7 +11,7 @@ const CONFIG = {
     DELAY_BETWEEN_DIVISIONS: 5000,
     MAX_DIVISIONS_FOR_TESTING: 3,
     TARGET_YEAR: 2012,
-    HEADLESS: false
+    HEADLESS: "new"
 };
 
 // Utility functions
