@@ -902,20 +902,6 @@ async function processAllDivisions() {
     console.log(`   ❌ Athletes failed: ${totalErrorCount}`);
     console.log(`   📁 Individual athlete files created in: ../output/athletes/`);
     
-    // NEW: Upload CSV files to Supabase
-    if (totalSuccessCount > 0) {
-        try {
-            console.log('\n📤 Step 2: Uploading athlete CSV files to Supabase...');
-            await runUploadScript();
-            console.log('\n🚀 Complete pipeline finished successfully!');
-        } catch (uploadError) {
-            console.log('\n⚠️ Division scraping completed, but CSV upload failed:', uploadError.message);
-            console.log('💡 You can manually run: node athlete-csv-uploader.js');
-        }
-    } else {
-        console.log('\n📝 No new athletes to upload - skipping CSV upload step');
-    }
-    
     return {
         divisionsProcessed: totalDivisionsProcessed,
         successfulAthletes: totalSuccessCount,

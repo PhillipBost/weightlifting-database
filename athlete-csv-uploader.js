@@ -1,0 +1,527 @@
+// Load environment variables from .env file
+require('dotenv').config();
+
+const { createClient } = require('@supabase/supabase-js');
+const fs = require('fs');
+const Papa = require('papaparse');
+const path = require('path');
+
+// Initialize Supabase client
+const supabase = createClient(
+    process.env.SUPABASE_URL,
+    process.env.SUPABASE_ANON_KEY
+);
+
+async function readAthleteCSVFile(filePath) {
+    console.log(`📖 Reading athlete CSV file: ${path.basename(filePath)}`);
+    
+    if (!fs.existsSync(filePath)) {
+        throw new Error(`CSV file not found: ${filePath}`);
+    }
+    
+    const csvContent = fs.readFileSync(filePath, 'utf8');
+    const parsed = Papa.parse(csvContent, {
+        header: true,
+        dynamicTyping: true,
+        skipEmptyLines: true
+    });
+    
+    if (parsed.errors.length > 0) {
+        console.log(`⚠️ CSV parsing warnings for ${path.basename(filePath)}:`, parsed.errors.slice(0, 3));
+    }
+    
+    // Filter out rows without athlete_name (essential for matching)
+    const validRows = parsed.data.filter(row => 
+        row && row.athlete_name && row.athlete_name.toString().trim() !== ''
+    );
+    
+    console.log(`📊 Parsed ${validRows.length} valid records from ${path.basename(filePath)}`);
+    return validRows;
+}
+
+async function getAllAthleteCSVFiles() {
+    const athletesDir = '../output/athletes';
+    console.log(`🔍 Scanning for athlete CSV files in: ${athletesDir}`);
+    
+    if (!fs.existsSync(athletesDir)) {
+        throw new Error(`Athletes directory not found: ${athletesDir}`);
+    }
+    
+    const files = fs.readdirSync(athletesDir)
+        .filter(file => file.startsWith('athlete_') && file.endsWith('.csv'))
+        .map(file => path.join(athletesDir, file));
+    
+    console.log(`📁 Found ${files.length} athlete CSV files`);
+    return files;
+}
+
+function createErrorLogger() {
+    const errorFilePath = './athlete_upload_errors.csv';
+    
+    // Create error file with headers if it doesn't exist
+    if (!fs.existsSync(errorFilePath)) {
+        const headers = ['timestamp', 'athlete_name', 'membership_number', 'error_type', 'error_message'];
+        fs.writeFileSync(errorFilePath, headers.join(',') + '\n');
+    }
+    
+    return {
+        log: (athleteName, membershipNumber, errorType, errorMessage) => {
+            const timestamp = new Date().toISOString();
+            const row = [
+                timestamp,
+                `"${athleteName || ''}"`,
+                membershipNumber || '',
+                errorType,
+                `"${errorMessage}"`
+            ];
+            fs.appendFileSync(errorFilePath, row.join(',') + '\n');
+        }
+    };
+}
+
+async function findLifterByName(athleteName) {
+    const { data: lifters, error } = await supabase
+        .from('lifters')
+        .select('lifter_id, athlete_name, membership_number, birth_year')
+        .eq('athlete_name', athleteName);
+    
+    if (error) {
+        throw new Error(`Error finding lifter: ${error.message}`);
+    }
+    
+    return lifters;
+}
+
+async function updateLifter(lifterId, athleteData) {
+    const updateData = {
+        membership_number: athleteData.membership_number ? parseInt(athleteData.membership_number) : null,
+        gender: athleteData.gender?.toString().trim() || null,
+        club_name: athleteData.club_name?.toString().trim() || null,
+        wso: athleteData.wso?.toString().trim() || null,
+        birth_year: athleteData.birth_year ? parseInt(athleteData.birth_year) : null,
+        national_rank: athleteData.national_rank ? parseInt(athleteData.national_rank) : null,
+        updated_at: new Date().toISOString()
+    };
+    
+    const { error } = await supabase
+        .from('lifters')
+        .update(updateData)
+        .eq('lifter_id', lifterId);
+    
+    if (error) {
+        throw new Error(`Error updating lifter: ${error.message}`);
+    }
+    
+    return updateData;
+}
+
+async function batchUpdateLifters(lifterUpdates) {
+    if (lifterUpdates.length === 0) return;
+    
+    console.log(`  🔄 Batch updating ${lifterUpdates.length} lifters...`);
+    
+    // Process lifter updates in batches of 50
+    const batchSize = 50;
+    for (let i = 0; i < lifterUpdates.length; i += batchSize) {
+        const batch = lifterUpdates.slice(i, i + batchSize);
+        
+        // Update each lifter in the batch
+        const updatePromises = batch.map(update => 
+            supabase
+                .from('lifters')
+                .update({
+                    membership_number: update.membership_number,
+                    gender: update.gender,
+                    club_name: update.club_name,
+                    wso: update.wso,
+                    birth_year: update.birth_year,
+                    national_rank: update.national_rank,
+                    updated_at: new Date().toISOString()
+                })
+                .eq('lifter_id', update.lifter_id)
+        );
+        
+        await Promise.all(updatePromises);
+        
+        // Small delay between batches
+        if (i + batchSize < lifterUpdates.length) {
+            await new Promise(resolve => setTimeout(resolve, 100));
+        }
+    }
+}
+
+async function batchUpdateCompetitionAges(competitionAgeUpdates) {
+    if (competitionAgeUpdates.length === 0) return;
+    
+    console.log(`  🔄 Batch updating competition ages for ${competitionAgeUpdates.length} lifters...`);
+    
+    // Get all meet results that need updating for these lifters
+    const lifterIds = competitionAgeUpdates.map(u => u.lifter_id);
+    
+    // Process in chunks of 10 lifters at a time to avoid overwhelming the query
+    const chunkSize = 10;
+    for (let i = 0; i < lifterIds.length; i += chunkSize) {
+        const lifterChunk = lifterIds.slice(i, i + chunkSize);
+        
+        const { data: meetResults, error } = await supabase
+            .from('meet_results')
+            .select('result_id, lifter_id, date')
+            .in('lifter_id', lifterChunk)
+            .is('competition_age', null);
+        
+        if (error) {
+            console.log(`  ⚠️ Error fetching meet results for batch: ${error.message}`);
+            continue;
+        }
+        
+        if (!meetResults || meetResults.length === 0) continue;
+        
+        // Prepare updates for competition ages
+        const competitionUpdates = [];
+        for (const result of meetResults) {
+            const lifterUpdate = competitionAgeUpdates.find(u => u.lifter_id === result.lifter_id);
+            if (lifterUpdate && result.date) {
+                try {
+                    const meetYear = new Date(result.date).getFullYear();
+                    const competitionAge = meetYear - lifterUpdate.birth_year;
+                    
+                    competitionUpdates.push({
+                        result_id: result.result_id,
+                        competition_age: competitionAge
+                    });
+                } catch (dateError) {
+                    // Skip invalid dates
+                }
+            }
+        }
+        
+        // Update competition ages in batches of 100
+        const updateBatchSize = 100;
+        for (let j = 0; j < competitionUpdates.length; j += updateBatchSize) {
+            const updateBatch = competitionUpdates.slice(j, j + updateBatchSize);
+            
+            const updatePromises = updateBatch.map(update =>
+                supabase
+                    .from('meet_results')
+                    .update({ competition_age: update.competition_age })
+                    .eq('result_id', update.result_id)
+            );
+            
+            await Promise.all(updatePromises);
+        }
+        
+        // Small delay between lifter chunks
+        if (i + chunkSize < lifterIds.length) {
+            await new Promise(resolve => setTimeout(resolve, 200));
+        }
+    }
+}
+
+async function processAthleteRecord(athleteData, errorLogger) {
+    const athleteName = athleteData.athlete_name.toString().trim();
+    
+    try {
+        // Find lifter by exact name match
+        const matchingLifters = await findLifterByName(athleteName);
+        
+        if (matchingLifters.length === 0) {
+            errorLogger.log(athleteName, athleteData.membership_number, 'NOT_FOUND', 'No lifter found with this name');
+            return { status: 'not_found' };
+        }
+        
+        if (matchingLifters.length > 1) {
+            errorLogger.log(athleteName, athleteData.membership_number, 'DUPLICATE_NAMES', `Found ${matchingLifters.length} lifters with same name`);
+            return { status: 'duplicate' };
+        }
+        
+        const lifter = matchingLifters[0];
+        
+        // Update lifter with new data
+        const updateData = await updateLifter(lifter.lifter_id, athleteData);
+        
+        // If we have birth_year data, update competition ages
+        if (updateData.birth_year) {
+            await updateCompetitionAges(lifter.lifter_id, updateData.birth_year);
+        }
+        
+        return { 
+            status: 'updated', 
+            lifterId: lifter.lifter_id,
+            updatedBirthYear: !!updateData.birth_year
+        };
+        
+    } catch (error) {
+        errorLogger.log(athleteName, athleteData.membership_number, 'UPDATE_ERROR', error.message);
+        return { status: 'error', error: error.message };
+    }
+}
+
+async function processAthleteCSVFile(filePath, errorLogger) {
+    const fileName = path.basename(filePath);
+    console.log(`\n📄 Processing: ${fileName}`);
+    
+    try {
+        const athleteRecords = await readAthleteCSVFile(filePath);
+        
+        if (athleteRecords.length === 0) {
+            console.log(`  ⚠️ No valid records found in ${fileName}`);
+            return { updated: 0, notFound: 0, duplicates: 0, errors: 0 };
+        }
+        
+        // First, find all lifters and check for issues
+        const lifterUpdates = [];
+        const competitionAgeUpdates = [];
+        let notFoundCount = 0;
+        let duplicateCount = 0;
+        let errorCount = 0;
+        
+        console.log(`  🔍 Looking up ${athleteRecords.length} athletes...`);
+        
+        for (const athleteData of athleteRecords) {
+            try {
+                const athleteName = athleteData.athlete_name.toString().trim();
+                const matchingLifters = await findLifterByName(athleteName);
+                
+                if (matchingLifters.length === 0) {
+                    errorLogger.log(athleteName, athleteData.membership_number, 'NOT_FOUND', 'No lifter found with this name');
+                    notFoundCount++;
+                    continue;
+                }
+                
+                if (matchingLifters.length > 1) {
+                    errorLogger.log(athleteName, athleteData.membership_number, 'DUPLICATE_NAMES', `Found ${matchingLifters.length} lifters with same name`);
+                    duplicateCount++;
+                    continue;
+                }
+                
+                const lifter = matchingLifters[0];
+                
+                // Prepare lifter update
+                const updateData = {
+                    lifter_id: lifter.lifter_id,
+                    membership_number: athleteData.membership_number ? parseInt(athleteData.membership_number) : null,
+                    gender: athleteData.gender?.toString().trim() || null,
+                    club_name: athleteData.club_name?.toString().trim() || null,
+                    wso: athleteData.wso?.toString().trim() || null,
+                    birth_year: athleteData.birth_year ? parseInt(athleteData.birth_year) : null,
+                    national_rank: athleteData.national_rank ? parseInt(athleteData.national_rank) : null,
+                    athlete_name: athleteName
+                };
+                
+                lifterUpdates.push(updateData);
+                
+                // If we have birth_year, prepare competition age update
+                if (updateData.birth_year) {
+                    competitionAgeUpdates.push({
+                        lifter_id: lifter.lifter_id,
+                        birth_year: updateData.birth_year,
+                        athlete_name: athleteName
+                    });
+                }
+                
+            } catch (error) {
+                errorLogger.log(athleteData.athlete_name, athleteData.membership_number, 'LOOKUP_ERROR', error.message);
+                errorCount++;
+            }
+        }
+        
+        // Batch update lifters
+        await batchUpdateLifters(lifterUpdates);
+        
+        // Batch update competition ages
+        await batchUpdateCompetitionAges(competitionAgeUpdates);
+        
+        // Report results
+        console.log(`  📊 Results: ${lifterUpdates.length} updated, ${notFoundCount} not found, ${duplicateCount} duplicates, ${errorCount} errors`);
+        
+        if (lifterUpdates.length > 0) {
+            console.log(`  ✅ Updated ${lifterUpdates.length} lifters${competitionAgeUpdates.length > 0 ? ` (${competitionAgeUpdates.length} with competition ages)` : ''}`);
+        }
+        
+        return { 
+            updated: lifterUpdates.length, 
+            notFound: notFoundCount, 
+            duplicates: duplicateCount, 
+            errors: errorCount,
+            success: errorCount === 0 // Flag for successful processing
+        };
+        
+    } catch (error) {
+        console.error(`💥 Error processing file ${fileName}:`, error.message);
+        return { updated: 0, notFound: 0, duplicates: 0, errors: 1 };
+    }
+}
+
+async function getExistingCounts() {
+    console.log('📊 Checking existing record counts in database...');
+    
+    try {
+        const [liftersResult, resultsResult] = await Promise.all([
+            supabase.from('lifters').select('*', { count: 'exact', head: true }),
+            supabase.from('meet_results').select('*', { count: 'exact', head: true })
+        ]);
+        
+        if (liftersResult.error || resultsResult.error) {
+            console.error('⚠️ Could not get existing counts:', liftersResult.error || resultsResult.error);
+            return { lifters: null, results: null };
+        }
+        
+        console.log(`📈 Database currently has ${liftersResult.count} lifters and ${resultsResult.count} meet results`);
+        return { lifters: liftersResult.count, results: resultsResult.count };
+        
+    } catch (error) {
+        console.error('⚠️ Error getting existing counts:', error.message);
+        return { lifters: null, results: null };
+    }
+}
+
+async function createCompetitionAgeUpdateFunction() {
+    console.log('🔧 Creating/updating competition age calculation function...');
+    
+    const functionSQL = `
+    CREATE OR REPLACE FUNCTION update_competition_age_for_lifter(p_lifter_id bigint, p_birth_year integer)
+    RETURNS void AS $$
+    BEGIN
+        UPDATE meet_results 
+        SET competition_age = EXTRACT(YEAR FROM date::date) - p_birth_year
+        WHERE lifter_id = p_lifter_id 
+        AND competition_age IS NULL
+        AND date IS NOT NULL
+        AND p_birth_year IS NOT NULL;
+    END;
+    $$ LANGUAGE plpgsql;
+    `;
+    
+    const { error } = await supabase.rpc('exec_sql', { sql: functionSQL });
+    
+    if (error) {
+        console.log('⚠️ Could not create helper function, will use alternative method');
+    } else {
+        console.log('✅ Competition age update function ready');
+    }
+}
+
+async function main() {
+    console.log('🏋️ Athlete CSV to Supabase Upload Started');
+    console.log('==========================================');
+    console.log(`🕐 Start time: ${new Date().toLocaleString('en-US', { timeZone: 'America/New_York' })}`);
+    
+    try {
+        // Check Supabase connection
+        console.log('🔗 Testing Supabase connection...');
+        
+        if (!process.env.SUPABASE_URL || !process.env.SUPABASE_ANON_KEY) {
+            throw new Error('Missing Supabase environment variables (SUPABASE_URL, SUPABASE_ANON_KEY)');
+        }
+        
+        // Test connection
+        const { data: testData, error: testError } = await supabase
+            .from('lifters')
+            .select('lifter_id')
+            .limit(1);
+        
+        if (testError) {
+            throw new Error(`Supabase connection failed: ${testError.message}`);
+        }
+        console.log('✅ Supabase connection successful');
+        
+        // Create helper function for competition age updates
+        await createCompetitionAgeUpdateFunction();
+        
+        // Get existing counts before import
+        const beforeCounts = await getExistingCounts();
+        
+        // Create error logger
+        const errorLogger = createErrorLogger();
+        
+        // Get all athlete CSV files
+        const csvFiles = await getAllAthleteCSVFiles();
+        
+        if (csvFiles.length === 0) {
+            console.log('⚠️ No athlete CSV files found');
+            return;
+        }
+        
+        console.log(`\n📥 Processing ${csvFiles.length} athlete CSV files...`);
+        
+        let totalUpdated = 0;
+        let totalNotFound = 0;
+        let totalDuplicates = 0;
+        let totalErrors = 0;
+        let filesProcessed = 0;
+        
+        // Process files in batches to avoid overwhelming the database
+        const batchSize = 5; // Smaller batches for updates
+        
+        for (let i = 0; i < csvFiles.length; i += batchSize) {
+            const batch = csvFiles.slice(i, i + batchSize);
+            console.log(`\n📦 Processing batch ${Math.floor(i/batchSize) + 1}/${Math.ceil(csvFiles.length/batchSize)} (${batch.length} files)`);
+            
+            // Process files in current batch
+            for (const filePath of batch) {
+                const result = await processAthleteCSVFile(filePath, errorLogger);
+                totalUpdated += result.updated;
+                totalNotFound += result.notFound;
+                totalDuplicates += result.duplicates;
+                totalErrors += result.errors;
+                filesProcessed++;
+                
+                // Delete CSV file if processing was successful (no errors)
+                if (result.success) {
+                    try {
+                        fs.unlinkSync(filePath);
+                        console.log(`  🗑️ Deleted: ${path.basename(filePath)}`);
+                    } catch (deleteError) {
+                        console.log(`  ⚠️ Could not delete ${path.basename(filePath)}: ${deleteError.message}`);
+                    }
+                } else {
+                    console.log(`  📄 Kept: ${path.basename(filePath)} (had errors)`);
+                }
+                
+                // Progress indicator
+                if (filesProcessed % 25 === 0) {
+                    console.log(`\n🔄 Progress: ${filesProcessed}/${csvFiles.length} files processed`);
+                }
+            }
+            
+            // Delay between batches
+            if (i + batchSize < csvFiles.length) {
+                console.log('⏳ Waiting 1 second before next batch...');
+                await new Promise(resolve => setTimeout(resolve, 1000));
+            }
+        }
+        
+        const afterCounts = await getExistingCounts();
+        
+        // Report results
+        console.log('\n📊 Athlete Update Summary:');
+        console.log(`📁 CSV files processed: ${filesProcessed}`);
+        console.log(`✅ Lifters updated: ${totalUpdated}`);
+        console.log(`❓ Not found: ${totalNotFound}`);
+        console.log(`👥 Duplicate names: ${totalDuplicates}`);
+        console.log(`❌ Errors: ${totalErrors}`);
+        console.log(`📄 Error log: ./athlete_upload_errors.csv`);
+        
+        if (totalErrors + totalNotFound + totalDuplicates > 0) {
+            console.log('⚠️ Some records had issues. Check ./athlete_upload_errors.csv for details.');
+        } else {
+            console.log('✅ All records processed successfully!');
+        }
+        
+        console.log(`🕐 End time: ${new Date().toLocaleString()}`);
+        
+    } catch (error) {
+        console.error('💥 Athlete CSV upload failed:', error.message);
+        process.exit(1);
+    }
+}
+
+// Run if called directly
+if (require.main === module) {
+    main();
+}
+
+module.exports = {
+    main,
+    processAthleteCSVFile
+};
