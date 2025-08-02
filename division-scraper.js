@@ -10,7 +10,7 @@ const CONFIG = {
     DELAY_BETWEEN_ATHLETES: 2000,
     DELAY_BETWEEN_DIVISIONS: 5000,
     MAX_DIVISIONS_FOR_TESTING: 3,
-    TARGET_YEAR: 2024,
+    TARGET_YEAR: 2012,
     HEADLESS: false
 };
 
@@ -40,10 +40,22 @@ function loadDivisions() {
     const content = fs.readFileSync(divisionsFile, 'utf8');
     const lines = content.split('\n').map(line => line.trim()).filter(line => line);
     
-    // Skip header if it exists
-    const divisions = lines[0].includes('Age Group') && lines[0].includes('kg') ? lines.slice(1) : lines;
+    // Better header detection - check if first line is just "Division" or similar header text
+    const firstLine = lines[0];
+    const isHeader = firstLine && (
+        firstLine.toLowerCase() === 'division' ||
+        firstLine.toLowerCase() === 'divisions' ||
+        firstLine.toLowerCase() === 'age group' ||
+        firstLine.toLowerCase() === 'weight class' ||
+        (firstLine.toLowerCase().includes('age') && firstLine.toLowerCase().includes('group') && !firstLine.includes('kg'))
+    );
+    
+    const divisions = isHeader ? lines.slice(1) : lines;
     
     console.log(`📋 Loaded ${divisions.length} divisions from ./all divisions.csv`);
+    console.log(`📄 ${isHeader ? 'Header detected and skipped' : 'No header detected'}`);
+    console.log(`🏁 First division: ${divisions[0]}`);
+    console.log(`🏁 Second division: ${divisions[1] || 'N/A'}`);
     return divisions;
 }
 
@@ -78,7 +90,7 @@ async function runUploadScript() {
         console.log(`📅 ${new Date().toISOString()}`);
         
         const child = spawn('node', ['athlete-csv-uploader.js'], {
-            stdio: 'inherit', // This will show the upload script output in real-time
+            // NEW: Upload CSV files after each division if we processed any athletesstdio: 'inherit', // This will show the upload script output in real-time
             cwd: process.cwd()
         });
         
@@ -533,7 +545,7 @@ async function scrapeAthleteProfileIntegrated(page, athleteName, ageCategory, we
 
             if (activeInterface.includes('date-picker') || activeInterface.includes('v-menu')) {
                 if (fieldType === 'start') {
-                    await handleComplexDatePicker(page, 2024, activeInterface, 1, 1); // January 1, 2024
+                    await handleComplexDatePicker(page, 2012, activeInterface, 1, 1); // January 1, 2012
                 } else if (fieldType === 'end') {
 					// Set last day of Dec for end field
 					const lastDayDec = 31; // December always has 31 days
@@ -721,10 +733,11 @@ async function scrapeAthleteProfileIntegrated(page, athleteName, ageCategory, we
             
             if (nextPageExists) {
 				try {
-					await page.waitForNetworkIdle({timeout: 30000});
+					// Use shorter timeout for pagination since it's just table updates
+					await page.waitForNetworkIdle({timeout: 5000});
 				} catch (timeoutError) {
-					console.log('⚠️ Network idle timeout, using fixed delay instead...');
-					await page.waitForTimeout(5000); // Fixed 5-second delay as backup
+					// Use shorter fixed delay for pagination - it's much faster than initial load
+					await page.waitForTimeout(1500);
 				}
 				currentPage++;
 				                
@@ -767,6 +780,43 @@ async function processAllDivisions() {
     
     const divisions = loadDivisions();
     
+    // Create completed divisions log
+    const completedDivisionsLog = './completed_divisions.csv';
+    const logHeaders = [
+        'division_number',
+        'division_name',
+        'timestamp',
+        'athletes_scraped',
+        'athletes_successful',
+        'athletes_failed', 
+        'upload_status',
+        'total_time_seconds'
+    ];
+    
+    // Create log file with headers if it doesn't exist
+    if (!fs.existsSync(completedDivisionsLog)) {
+        fs.writeFileSync(completedDivisionsLog, logHeaders.join(',') + '\n');
+        console.log(`📊 Created division completion log: ${completedDivisionsLog}`);
+    }
+    
+    function logCompletedDivision(divisionNumber, divisionName, athletesScraped, athletesSuccessful, athletesFailed, uploadStatus, startTime) {
+        const timestamp = new Date().toISOString();
+        const totalTimeSeconds = Math.round((Date.now() - startTime) / 1000);
+        
+        const logRow = [
+            divisionNumber,
+            escapeCSV(divisionName),
+            timestamp,
+            athletesScraped,
+            athletesSuccessful,
+            athletesFailed,
+            uploadStatus,
+            totalTimeSeconds
+        ];
+        
+        fs.appendFileSync(completedDivisionsLog, logRow.join(',') + '\n');
+    }
+    
     // Launch browser once for entire run
     const browser = await puppeteer.launch({headless: CONFIG.HEADLESS, slowMo: 50});
     const page = await browser.newPage();
@@ -780,6 +830,7 @@ async function processAllDivisions() {
         // Process each division
         for (let i = 0; i < divisions.length; i++) {
             const division = divisions[i];
+            const divisionStartTime = Date.now();
             console.log(`\n🏋️ Processing division ${i + 1}/${divisions.length}: ${division}`);
             
             const { ageCategory, weightClass } = splitAgeCategoryAndWeightClass(division);
@@ -788,6 +839,8 @@ async function processAllDivisions() {
             
             let divisionSuccessCount = 0;
             let divisionErrorCount = 0;
+            let divisionErrors = []; // Track specific errors for this division
+            let totalAthletesSeen = 0;
             
             // Now we have all athletes from the division - process them directly
             const divisionResult = await scrapeAthleteProfileIntegrated(
@@ -801,7 +854,7 @@ async function processAllDivisions() {
             
             if (divisionResult.success && divisionResult.athletes) {
                 console.log(`📊 Processing ${divisionResult.athletes.length} athletes from division results...`);
-                
+                totalAthletesSeen = divisionResult.athletes.length;
                 // Process each athlete found in the division
                 for (let j = 0; j < divisionResult.athletes.length; j++) {
                     const athlete = divisionResult.athletes[j];
@@ -809,6 +862,7 @@ async function processAllDivisions() {
                     if (!athlete.membershipId) {
                         console.log(`⏭️ Skipping athlete ${j + 1} - no membership ID`);
                         divisionErrorCount++;
+                        divisionErrors.push(`No membership ID: ${athlete.athleteName || 'Unknown'}`);
                         continue;
                     }
                     
@@ -851,6 +905,7 @@ async function processAllDivisions() {
                         console.log(`   - Name: ${athlete.athleteName}`);
                         console.log(`   - Club: ${athlete.club}`);
                         console.log(`   - WSO: ${athlete.wso}`);
+                        console.log(`   - Division: ${division}`); // Added for debugging
                         
                         divisionSuccessCount++;
                         totalSuccessCount++;
@@ -859,6 +914,7 @@ async function processAllDivisions() {
                         console.log(`💥 Error processing ${athlete.athleteName}: ${error.message}`);
                         divisionErrorCount++;
                         totalErrorCount++;
+                        divisionErrors.push(`${athlete.athleteName}: ${error.message}`);
                     }
                     
                     // Small delay between athletes
@@ -870,11 +926,36 @@ async function processAllDivisions() {
                 console.log(`❌ Failed to get athletes from division: ${division}`);
                 divisionErrorCount++;
                 totalErrorCount++;
+                divisionErrors.push(`Failed to scrape division: ${division}`);
             }
             
             console.log(`✅ Division ${division} completed:`);
             console.log(`   - Successful athletes: ${divisionSuccessCount}`);
             console.log(`   - Failed athletes: ${divisionErrorCount}`);
+            
+            // Show concise error summary if there were errors
+            if (divisionErrors.length > 0) {
+                console.log(`   ⚠️ Errors (${divisionErrors.length}):`);
+                // Show first 3 errors, then summary if more
+                const errorsToShow = divisionErrors.slice(0, 3);
+                errorsToShow.forEach(error => console.log(`     • ${error}`));
+                
+                if (divisionErrors.length > 3) {
+                    console.log(`     • ...and ${divisionErrors.length - 3} more errors`);
+                }
+            }
+            if (divisionSuccessCount > 0) {
+                try {
+                    console.log(`\n📤 Uploading ${divisionSuccessCount} athlete CSV files from division ${i + 1}/${divisions.length}...`);
+                    await runUploadScript();
+                    console.log(`✅ Division ${i + 1} upload completed successfully!`);
+                } catch (uploadError) {
+                    console.log(`⚠️ Division ${i + 1} upload failed:`, uploadError.message);
+                    console.log('💡 Continuing to next division... You can manually upload later with: node athlete-csv-uploader.js');
+                }
+            } else {
+                console.log(`📝 No new athletes in division ${i + 1} - skipping upload`);
+            }
             
             totalDivisionsProcessed++;
             
@@ -901,20 +982,11 @@ async function processAllDivisions() {
     console.log(`   ✅ Athletes processed successfully: ${totalSuccessCount}`);
     console.log(`   ❌ Athletes failed: ${totalErrorCount}`);
     console.log(`   📁 Individual athlete files created in: ../output/athletes/`);
+    console.log(`   📤 CSV uploads performed after each division`);
     
-    // NEW: Upload CSV files to Supabase
-    if (totalSuccessCount > 0) {
-        try {
-            console.log('\n📤 Step 2: Uploading athlete CSV files to Supabase...');
-            await runUploadScript();
-            console.log('\n🚀 Complete pipeline finished successfully!');
-        } catch (uploadError) {
-            console.log('\n⚠️ Division scraping completed, but CSV upload failed:', uploadError.message);
-            console.log('💡 You can manually run: node athlete-csv-uploader.js');
-        }
-    } else {
-        console.log('\n📝 No new athletes to upload - skipping CSV upload step');
-    }
+    // Final summary - no bulk upload needed since we upload after each division
+    console.log('\n🚀 Complete pipeline finished successfully!');
+    console.log('💡 All athlete data has been uploaded to Supabase division by division');
     
     return {
         divisionsProcessed: totalDivisionsProcessed,

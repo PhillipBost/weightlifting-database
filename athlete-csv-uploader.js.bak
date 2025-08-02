@@ -57,6 +57,7 @@ async function getAllAthleteCSVFiles() {
 
 function createErrorLogger() {
     const errorFilePath = './athlete_upload_errors.csv';
+    const newLiftersFilePath = './new_lifters_created.csv';
     
     // Create error file with headers if it doesn't exist
     if (!fs.existsSync(errorFilePath)) {
@@ -64,8 +65,14 @@ function createErrorLogger() {
         fs.writeFileSync(errorFilePath, headers.join(',') + '\n');
     }
     
+    // Create new lifters file with headers if it doesn't exist
+    if (!fs.existsSync(newLiftersFilePath)) {
+        const headers = ['timestamp', 'athlete_name', 'membership_number', 'gender', 'club_name', 'wso', 'birth_year', 'national_rank', 'division', 'note'];
+        fs.writeFileSync(newLiftersFilePath, headers.join(',') + '\n');
+    }
+    
     return {
-        log: (athleteName, membershipNumber, errorType, errorMessage) => {
+        logError: (athleteName, membershipNumber, errorType, errorMessage) => {
             const timestamp = new Date().toISOString();
             const row = [
                 timestamp,
@@ -75,10 +82,55 @@ function createErrorLogger() {
                 `"${errorMessage}"`
             ];
             fs.appendFileSync(errorFilePath, row.join(',') + '\n');
+        },
+        logNewLifter: (athleteData) => {
+            const timestamp = new Date().toISOString();
+            const row = [
+                timestamp,
+                `"${athleteData.athlete_name || ''}"`,
+                athleteData.membership_number || '',
+                `"${athleteData.gender || ''}"`,
+                `"${athleteData.club_name || ''}"`,
+                `"${athleteData.wso || ''}"`,
+                athleteData.birth_year || '',
+                athleteData.national_rank || '',
+                `"${athleteData.division || ''}"`,
+                '"Created from division scraper - no meet results found"'
+            ];
+            fs.appendFileSync(newLiftersFilePath, row.join(',') + '\n');
         }
     };
 }
 
+async function createNewLifter(athleteData) {
+    const lifterData = {
+        athlete_name: athleteData.athlete_name.toString().trim(),
+        membership_number: athleteData.membership_number ? parseInt(athleteData.membership_number) : null,
+        gender: athleteData.gender?.toString().trim() || null,
+        club_name: athleteData.club_name?.toString().trim() || null,
+        wso: athleteData.wso?.toString().trim() || null,
+        birth_year: athleteData.birth_year ? parseInt(athleteData.birth_year) : null,
+        national_rank: athleteData.national_rank ? parseInt(athleteData.national_rank) : null,
+        internal_id: null, // Will be populated later by internal_id script
+        created_at: new Date().toISOString(),
+        updated_at: new Date().toISOString()
+    };
+    
+    const { data: newLifter, error } = await supabase
+        .from('lifters')
+        .insert(lifterData)
+        .select('lifter_id')
+        .single();
+    
+    if (error) {
+        throw new Error(`Error creating new lifter: ${error.message}`);
+    }
+    
+    console.log(`  ➕ Created new lifter: ${athleteData.athlete_name} (ID: ${newLifter.lifter_id})`);
+    return newLifter.lifter_id;
+}
+
+// Fixed: Added missing async keyword to findLifterByName function
 async function findLifterByName(athleteName) {
     const { data: lifters, error } = await supabase
         .from('lifters')
@@ -271,6 +323,7 @@ async function processAthleteCSVFile(filePath, errorLogger) {
         // First, find all lifters and check for issues
         const lifterUpdates = [];
         const competitionAgeUpdates = [];
+        const newLifters = [];
         let notFoundCount = 0;
         let duplicateCount = 0;
         let errorCount = 0;
@@ -283,13 +336,14 @@ async function processAthleteCSVFile(filePath, errorLogger) {
                 const matchingLifters = await findLifterByName(athleteName);
                 
                 if (matchingLifters.length === 0) {
-                    errorLogger.log(athleteName, athleteData.membership_number, 'NOT_FOUND', 'No lifter found with this name');
-                    notFoundCount++;
+                    // Create new lifter
+                    console.log(`  ➕ Will create new lifter: ${athleteName}`);
+                    newLifters.push(athleteData);
                     continue;
                 }
                 
                 if (matchingLifters.length > 1) {
-                    errorLogger.log(athleteName, athleteData.membership_number, 'DUPLICATE_NAMES', `Found ${matchingLifters.length} lifters with same name`);
+                    errorLogger.logError(athleteName, athleteData.membership_number, 'DUPLICATE_NAMES', `Found ${matchingLifters.length} lifters with same name`);
                     duplicateCount++;
                     continue;
                 }
@@ -320,29 +374,51 @@ async function processAthleteCSVFile(filePath, errorLogger) {
                 }
                 
             } catch (error) {
-                errorLogger.log(athleteData.athlete_name, athleteData.membership_number, 'LOOKUP_ERROR', error.message);
+                errorLogger.logError(athleteData.athlete_name, athleteData.membership_number, 'LOOKUP_ERROR', error.message);
                 errorCount++;
             }
         }
         
-        // Batch update lifters
+        // Batch update existing lifters
         await batchUpdateLifters(lifterUpdates);
+        
+        // Batch create new lifters
+        let newLiftersCreated = 0;
+        if (newLifters.length > 0) {
+            console.log(`  ➕ Creating ${newLifters.length} new lifters...`);
+            for (const athleteData of newLifters) {
+                try {
+                    await createNewLifter(athleteData);
+                    errorLogger.logNewLifter(athleteData);
+                    newLiftersCreated++;
+                } catch (error) {
+                    errorLogger.logError(athleteData.athlete_name, athleteData.membership_number, 'CREATE_ERROR', error.message);
+                    errorCount++;
+                }
+            }
+        }
         
         // Batch update competition ages
         await batchUpdateCompetitionAges(competitionAgeUpdates);
         
         // Report results
-        console.log(`  📊 Results: ${lifterUpdates.length} updated, ${notFoundCount} not found, ${duplicateCount} duplicates, ${errorCount} errors`);
+        console.log(`  📊 Results: ${lifterUpdates.length} updated, ${newLiftersCreated} created (NEW), ${duplicateCount} duplicates, ${errorCount} errors`);
         
         if (lifterUpdates.length > 0) {
-            console.log(`  ✅ Updated ${lifterUpdates.length} lifters${competitionAgeUpdates.length > 0 ? ` (${competitionAgeUpdates.length} with competition ages)` : ''}`);
+            console.log(`  ✅ Updated ${lifterUpdates.length} existing lifters${competitionAgeUpdates.length > 0 ? ` (${competitionAgeUpdates.length} with competition ages)` : ''}`);
+        }
+        
+        if (newLiftersCreated > 0) {
+            console.log(`  ➕ Created ${newLiftersCreated} new lifters (logged for review)`);
         }
         
         return { 
             updated: lifterUpdates.length, 
+            created: newLiftersCreated,
             notFound: notFoundCount, 
             duplicates: duplicateCount, 
-            errors: errorCount 
+            errors: errorCount,
+            success: errorCount === 0 // Flag for successful processing
         };
         
     } catch (error) {
@@ -444,6 +520,7 @@ async function main() {
         console.log(`\n📥 Processing ${csvFiles.length} athlete CSV files...`);
         
         let totalUpdated = 0;
+        let totalCreated = 0;
         let totalNotFound = 0;
         let totalDuplicates = 0;
         let totalErrors = 0;
@@ -460,10 +537,23 @@ async function main() {
             for (const filePath of batch) {
                 const result = await processAthleteCSVFile(filePath, errorLogger);
                 totalUpdated += result.updated;
+                totalCreated += result.created || 0;
                 totalNotFound += result.notFound;
                 totalDuplicates += result.duplicates;
                 totalErrors += result.errors;
                 filesProcessed++;
+                
+                // Delete CSV file if processing was successful (no errors)
+                if (result.success) {
+                    try {
+                        fs.unlinkSync(filePath);
+                        console.log(`  🗑️ Deleted: ${path.basename(filePath)}`);
+                    } catch (deleteError) {
+                        console.log(`  ⚠️ Could not delete ${path.basename(filePath)}: ${deleteError.message}`);
+                    }
+                } else {
+                    console.log(`  📄 Kept: ${path.basename(filePath)} (had errors)`);
+                }
                 
                 // Progress indicator
                 if (filesProcessed % 25 === 0) {
@@ -484,15 +574,23 @@ async function main() {
         console.log('\n📊 Athlete Update Summary:');
         console.log(`📁 CSV files processed: ${filesProcessed}`);
         console.log(`✅ Lifters updated: ${totalUpdated}`);
+        console.log(`➕ New lifters created: ${totalCreated}`);
         console.log(`❓ Not found: ${totalNotFound}`);
         console.log(`👥 Duplicate names: ${totalDuplicates}`);
         console.log(`❌ Errors: ${totalErrors}`);
         console.log(`📄 Error log: ./athlete_upload_errors.csv`);
+        if (totalCreated > 0) {
+            console.log(`🆕 New lifters log: ./new_lifters_created.csv`);
+        }
         
         if (totalErrors + totalNotFound + totalDuplicates > 0) {
-            console.log('⚠️ Some records had issues. Check ./athlete_upload_errors.csv for details.');
+            console.log('⚠️ Some records had issues. Check error logs for details.');
         } else {
             console.log('✅ All records processed successfully!');
+        }
+        
+        if (totalCreated > 0) {
+            console.log(`🔍 ${totalCreated} new lifters created - these athletes appear in division rankings but have no meet results. Review for data quality.`);
         }
         
         console.log(`🕐 End time: ${new Date().toLocaleString()}`);
