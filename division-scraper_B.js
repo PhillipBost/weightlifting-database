@@ -10,7 +10,7 @@ const CONFIG = {
     DELAY_BETWEEN_ATHLETES: 2000,
     DELAY_BETWEEN_DIVISIONS: 5000,
     MAX_DIVISIONS_FOR_TESTING: Infinity, // Process ALL divisions
-    TARGET_YEAR: 2012,
+    TARGET_YEAR: 2018,
     HEADLESS: "new"
 };
 
@@ -57,7 +57,7 @@ function createExtractionIssuesLogger() {
 }
 
 function loadDivisions() {
-    const divisionsFile = './all divisions_9.csv';
+    const divisionsFile = './all divisions_B.csv';
     if (!fs.existsSync(divisionsFile)) {
         throw new Error('Division file not found: ./all divisions.csv');
     }
@@ -135,7 +135,7 @@ echo ================================================
 timeout /t 3 /nobreak >nul
 exit`;
             
-            const batchFile = path.join(process.cwd(), 'run_upload_8.bat');
+            const batchFile = path.join(process.cwd(), 'run_upload_B.bat');
             fs.writeFileSync(batchFile, batchContent);
             
             const child = spawn('cmd', ['/c', 'start', 'cmd', '/c', 'run_upload.bat'], {
@@ -621,7 +621,7 @@ async function scrapeAthleteProfileIntegrated(page, athleteName, ageCategory, we
 
             if (activeInterface.includes('date-picker') || activeInterface.includes('v-menu')) {
                 if (fieldType === 'start') {
-                    await handleComplexDatePicker(page, 2012, activeInterface, 1, 1); // January 1, 2012
+                    await handleComplexDatePicker(page, 2018, activeInterface, 1, 1); // January 1, 2018
                 } else if (fieldType === 'end') {
 					// Set last day of Dec for end field
 					const lastDayDec = 31; // December always has 31 days

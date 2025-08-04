@@ -57,7 +57,7 @@ function createExtractionIssuesLogger() {
 }
 
 function loadDivisions() {
-    const divisionsFile = './all divisions_9.csv';
+    const divisionsFile = './all divisions_A.csv';
     if (!fs.existsSync(divisionsFile)) {
         throw new Error('Division file not found: ./all divisions.csv');
     }
@@ -135,7 +135,7 @@ echo ================================================
 timeout /t 3 /nobreak >nul
 exit`;
             
-            const batchFile = path.join(process.cwd(), 'run_upload_8.bat');
+            const batchFile = path.join(process.cwd(), 'run_upload_A.bat');
             fs.writeFileSync(batchFile, batchContent);
             
             const child = spawn('cmd', ['/c', 'start', 'cmd', '/c', 'run_upload.bat'], {
@@ -568,80 +568,89 @@ async function scrapeAthleteProfileIntegrated(page, athleteName, ageCategory, we
     }
 
     async function handleDateField(page, fieldSelector, targetYear, fieldType) {
-        console.log(`📅 Handling ${fieldType} date field: ${fieldSelector}`);
+		console.log(`📅 Handling ${fieldType} date field: ${fieldSelector}`);
 
-        try {
-            // Check if the field exists
+		try {
+			// Check if the field exists
 			const fieldExists = await page.$(fieldSelector);
-            if (!fieldExists) {
-                console.log(`⚠️ ${fieldType} date field not found: ${fieldSelector}`);
-                return;
-            }
-			
+			if (!fieldExists) {
+				console.log(`⚠️ ${fieldType} date field not found: ${fieldSelector}`);
+				return;
+			}
+
 			// Click the date field to open its calendar
-            await page.click(fieldSelector);
-            await page.waitForTimeout(200); // Wait for calendar to open
+			await page.click(fieldSelector);
+			await page.waitForTimeout(200);
 
-            // Look for various date picker interfaces that might have opened
+			// Look for various date picker interfaces that might have opened
 			const datePickerInterfaces = [
-                '.v-date-picker',
-                '.s80-date-picker',
-                '.v-menu__content',
-                '[role="dialog"]',
-                '.v-dialog',
-                'input[type="date"]'
-            ];
+				'.v-date-picker',
+				'.s80-date-picker',
+				'.v-menu__content',
+				'[role="dialog"]',
+				'.v-dialog',
+				'input[type="date"]'
+			];
 
-            let activeInterface = null;
-            for (const selector of datePickerInterfaces) {
-                try {
-                    const element = await page.$(selector);
-                    if (element) {
-                        const isVisible = await element.evaluate(el => {
-                            return el.offsetParent !== null && getComputedStyle(el).visibility !== 'hidden';
-                        });
-                        if (isVisible) {
-                            activeInterface = selector;
-                            console.log(`✅ Found active ${fieldType} date interface: ${selector}`);
-                            break;
-                        }
-                    }
-                } catch (err) {
-                    // Continue checking other selectors
-                }
-            }
+			let activeInterface = null;
+			for (const selector of datePickerInterfaces) {
+				try {
+					const element = await page.$(selector);
+					if (element) {
+						const isVisible = await element.evaluate(el => {
+							return el.offsetParent !== null && getComputedStyle(el).visibility !== 'hidden';
+						});
+						if (isVisible) {
+							activeInterface = selector;
+							console.log(`✅ Found active ${fieldType} date interface: ${selector}`);
+							break;
+						}
+					}
+				} catch (err) {
+					// Continue checking other selectors
+				}
+			}
 
-            if (!activeInterface) {
-                console.log(`⚠️ No ${fieldType} date picker interface found`);
-                // Try pressing Escape to close any open interface
+			if (!activeInterface) {
+				console.log(`⚠️ No ${fieldType} date picker interface found`);
+				// Try pressing Escape to close any open interface
 				await page.keyboard.press('Escape');
-                await page.waitForTimeout(500);
-                return;
-            }
+				await page.waitForTimeout(500);
+				return;
+			}
 
-            if (activeInterface.includes('date-picker') || activeInterface.includes('v-menu')) {
-                if (fieldType === 'start') {
-                    await handleComplexDatePicker(page, 2012, activeInterface, 1, 1); // January 1, 2012
-                } else if (fieldType === 'end') {
+			// If we have a complex date picker, handle it
+			if (activeInterface.includes('date-picker') || activeInterface.includes('v-menu')) {
+				// Set Jan 1, 2012 for start field
+				if (fieldType === 'start') {
+					await handleComplexDatePicker(page, targetYear, activeInterface, 1, 1); // January 1
+				} else if (fieldType === 'end') {
 					// Set last day of Dec for end field
 					const lastDayDec = 31; // December always has 31 days
 					await handleComplexDatePicker(page, targetYear, activeInterface, 12, lastDayDec); // December 31
-                } else {
-                    await handleComplexDatePicker(page, targetYear, activeInterface);
-                }
+				} else {
+					await handleComplexDatePicker(page, targetYear, activeInterface); // Default for other
+				}
 
+				// Close this individual calendar
 				console.log(`🔚 Waiting for ${fieldType} date calendar to close...`);
 				await page.waitForTimeout(100);
-            }
 
-            console.log(`✅ ${fieldType} date field handling completed`);
+			} else {
+				console.log(`⚠️ Unknown ${fieldType} date interface, attempting generic navigation...`);
+				// Handle generic case if needed
+			}
 
-        } catch (error) {
-            console.error(`❌ Failed to handle ${fieldType} date field:`, error.message);
-            await page.keyboard.press('Escape');
-            await page.waitForTimeout(500);
-        }
-    }
+			console.log(`✅ ${fieldType} date field handling completed`);
+
+		} catch (error) {
+			console.error(`❌ Failed to handle ${fieldType} date field:`, error.message);
+
+			// Always try to close any open calendar
+			await page.keyboard.press('Escape');
+			await page.waitForTimeout(500);
+		}
+	}
 
     try {
 		// Check if this is the first division (you'll need to pass a parameter for this)
@@ -721,12 +730,15 @@ async function scrapeAthleteProfileIntegrated(page, athleteName, ageCategory, we
         await page.keyboard.press('Enter');
         
         // Set date range with working calendar navigation
-        console.log('Setting date range with calendar navigation...');
-        console.log(`📅 Setting START date range to ${CONFIG.TARGET_YEAR}...`);
-        await handleDateField(page, '#form__date_range_start', CONFIG.TARGET_YEAR, 'start');
-        await page.waitForTimeout(100);
-        
-        console.log(`Date range set to: 01-01-${CONFIG.TARGET_YEAR} - 12-31-${CONFIG.TARGET_YEAR}`);
+		console.log(`📅 Setting START date range to 2012...`);
+		await handleDateField(page, '#form__date_range_start', 2012, 'start');
+		await page.waitForTimeout(100);
+
+		console.log(`📅 Setting END date range to 2017...`);
+		await handleDateField(page, '#form__date_range_end', 2017, 'end');
+		await page.waitForTimeout(100);
+
+		console.log(`Date range set to: 01-01-2012 - 12-31-2017`);
         console.log('🖱️ Clicking away from calendar to apply date filter...');
         await page.click('body');
         await page.waitForTimeout(500);
