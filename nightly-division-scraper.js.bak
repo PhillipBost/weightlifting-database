@@ -9,9 +9,9 @@ const CONFIG = {
     OVERWRITE_EXISTING_FILES: false,
     DELAY_BETWEEN_ATHLETES: 2000,
     DELAY_BETWEEN_DIVISIONS: 5000,
-    MAX_DIVISIONS_FOR_TESTING: Infinity, // Process ALL divisions
-    TARGET_YEAR: 2012,
-    HEADLESS: "new"
+    MAX_DIVISIONS_FOR_TESTING: Infinity, // Process current divisions
+    TARGET_YEAR: new Date().getFullYear(), // Automatically uses current year
+    HEADLESS: false
 };
 
 // Utility functions
@@ -57,9 +57,9 @@ function createExtractionIssuesLogger() {
 }
 
 function loadDivisions() {
-    const divisionsFile = './all divisions_6.csv';
+    const divisionsFile = './active divisions.csv';
     if (!fs.existsSync(divisionsFile)) {
-        throw new Error('Division file not found: ./all divisions.csv');
+        throw new Error('Division file not found: ./active divisions.csv');
     }
     
     const content = fs.readFileSync(divisionsFile, 'utf8');
@@ -77,7 +77,7 @@ function loadDivisions() {
     
     const divisions = isHeader ? lines.slice(1) : lines;
     
-    console.log(`📋 Loaded ${divisions.length} divisions from ./all divisions.csv`);
+    console.log(`📋 Loaded ${divisions.length} divisions from ./active divisions.csv`);
     console.log(`📄 ${isHeader ? 'Header detected and skipped' : 'No header detected'}`);
     console.log(`🏁 First division: ${divisions[0]}`);
     console.log(`🏁 Second division: ${divisions[1] || 'N/A'}`);
@@ -135,7 +135,7 @@ echo ================================================
 timeout /t 3 /nobreak >nul
 exit`;
             
-            const batchFile = path.join(process.cwd(), 'run_upload_6.bat');
+            const batchFile = path.join(process.cwd(), 'run_upload_B.bat');
             fs.writeFileSync(batchFile, batchContent);
             
             const child = spawn('cmd', ['/c', 'start', 'cmd', '/c', 'run_upload.bat'], {
@@ -485,6 +485,34 @@ async function scrapeAthleteProfileIntegrated(page, athleteName, ageCategory, we
             if (!closestBtn) throw new Error('Could not find previous month button in the active calendar');
             return closestBtn;
         }
+		
+		async function getNextMonthButton() {
+			const containerBox = await container.boundingBox();
+			if (!containerBox) throw new Error('Could not get bounding box of calendar container');
+
+			const buttons = await page.$$('button[aria-label="Next month"]');
+			let closestBtn = null;
+			let minDistance = Infinity;
+
+			for (const btn of buttons) {
+				const isVisible = await btn.evaluate(el => {
+					return el.offsetParent !== null && getComputedStyle(el).visibility !== 'hidden';
+				});
+				if (!isVisible) continue;
+
+				const btnBox = await btn.boundingBox();
+				if (!btnBox) continue;
+
+				const verticalDistance = Math.abs(btnBox.y - containerBox.y);
+				if (verticalDistance < minDistance && verticalDistance < 150) {
+					minDistance = verticalDistance;
+					closestBtn = btn;
+				}
+			}
+
+			if (!closestBtn) throw new Error('Could not find next month button in the active calendar');
+			return closestBtn;
+		}
 
         const currentMonthYear = await getCurrentMonthYear();
         if (!currentMonthYear) throw new Error('Could not determine current month/year in date picker');
@@ -494,34 +522,47 @@ async function scrapeAthleteProfileIntegrated(page, athleteName, ageCategory, we
         
         console.log(`📅 Starting from: ${currentMonthYear.raw}`);
 
-        const totalMonthsToGoBack = (currentYear - targetYear) * 12 + (currentMonth - targetMonth);
-        
-        if (totalMonthsToGoBack <= 0) {
-            console.log('✅ Already at or past target month/year');
-        } else {
-            console.log(`🚀 Need to go back ${totalMonthsToGoBack} months - executing rapid clicks...`);
-            
-            const prevButton = await getPrevMonthButton();
-            
-            for (let i = 0; i < totalMonthsToGoBack; i++) {
-                await prevButton.click();
-                await page.waitForTimeout(25);
-            }
-	
-			console.log(`✅ Completed ${totalMonthsToGoBack} rapid navigation clicks`);
-            
-            // Verify we're at the correct month/year after rapid navigation
-            const finalMonthYear = await getCurrentMonthYear();
-            if (finalMonthYear) {
-                const finalMonth = monthMap[finalMonthYear.monthName];
-                const finalYear = finalMonthYear.year;
-                console.log(`📅 Final position: ${finalMonthYear.raw}`);
-                
-                if (finalMonth !== targetMonth || finalYear !== targetYear) {
-                    console.log(`⚠️ Rapid navigation ended at wrong position. Expected: ${targetMonth}/${targetYear}, Got: ${finalMonth}/${finalYear}`);
-                }
-            }
+        const totalMonthsDifference = (targetYear - currentYear) * 12 + (targetMonth - currentMonth);
 
+		if (totalMonthsDifference === 0) {
+			console.log('✅ Already at target month/year');
+		} else if (totalMonthsDifference > 0) {
+			// Need to go forward
+			console.log(`🚀 Need to go forward ${totalMonthsDifference} months - executing rapid clicks...`);
+			
+			const nextButton = await getNextMonthButton();
+			
+			for (let i = 0; i < totalMonthsDifference; i++) {
+				await nextButton.click();
+				await page.waitForTimeout(25);
+			}
+
+			console.log(`✅ Completed ${totalMonthsDifference} forward navigation clicks`);
+		} else {
+			// Need to go backward
+			const totalMonthsToGoBack = Math.abs(totalMonthsDifference);
+			console.log(`🚀 Need to go back ${totalMonthsToGoBack} months - executing rapid clicks...`);
+			
+			const prevButton = await getPrevMonthButton();
+			
+			for (let i = 0; i < totalMonthsToGoBack; i++) {
+				await prevButton.click();
+				await page.waitForTimeout(25);
+			}
+
+			console.log(`✅ Completed ${totalMonthsToGoBack} backward navigation clicks`);
+		}
+
+		// Verify we're at the correct month/year after navigation
+		const finalMonthYear = await getCurrentMonthYear();
+		if (finalMonthYear) {
+			const finalMonth = monthMap[finalMonthYear.monthName];
+			const finalYear = finalMonthYear.year;
+			console.log(`📅 Final position: ${finalMonthYear.raw}`);
+			
+			if (finalMonth !== targetMonth || finalYear !== targetYear) {
+				console.log(`⚠️ Navigation ended at wrong position. Expected: ${targetMonth}/${targetYear}, Got: ${finalMonth}/${finalYear}`);
+			}
 		}
 
 		// Now click on the target day
@@ -533,7 +574,7 @@ async function scrapeAthleteProfileIntegrated(page, athleteName, ageCategory, we
             const dayButtons = Array.from(allButtons).filter(btn => btn.textContent.trim() === day.toString());
             
             if (dayButtons.length > 0) {
-                const buttonIndex = (day === 31 && dayButtons.length > 1) ? 1 : 0;
+                const buttonIndex = (dayButtons.length > 1) ? 1 : 0;
                 const dayButton = dayButtons[buttonIndex];
                 dayButton.click();
                 return { success: true };
@@ -567,81 +608,79 @@ async function scrapeAthleteProfileIntegrated(page, athleteName, ageCategory, we
         console.log(`✅ Fast date picker navigation completed for ${targetMonth}/${targetDay}/${targetYear}`);
     }
 
-    async function handleDateField(page, fieldSelector, targetYear, fieldType) {
-        console.log(`📅 Handling ${fieldType} date field: ${fieldSelector}`);
+    async function handleDateField(page, fieldSelector, targetYear, fieldType, targetMonth = 1, targetDay = 1) {
+		console.log(`📅 Handling ${fieldType} date field: ${fieldSelector}`);
 
-        try {
-            // Check if the field exists
+		try {
+			// Check if the field exists
 			const fieldExists = await page.$(fieldSelector);
-            if (!fieldExists) {
-                console.log(`⚠️ ${fieldType} date field not found: ${fieldSelector}`);
-                return;
-            }
+			if (!fieldExists) {
+				console.log(`⚠️ ${fieldType} date field not found: ${fieldSelector}`);
+				return;
+			}
 			
 			// Click the date field to open its calendar
-            await page.click(fieldSelector);
-            await page.waitForTimeout(200); // Wait for calendar to open
+			await page.click(fieldSelector);
+			await page.waitForTimeout(200); // Wait for calendar to open
 
-            // Look for various date picker interfaces that might have opened
+			// Look for various date picker interfaces that might have opened
 			const datePickerInterfaces = [
-                '.v-date-picker',
-                '.s80-date-picker',
-                '.v-menu__content',
-                '[role="dialog"]',
-                '.v-dialog',
-                'input[type="date"]'
-            ];
+				'.v-date-picker',
+				'.s80-date-picker',
+				'.v-menu__content',
+				'[role="dialog"]',
+				'.v-dialog',
+				'input[type="date"]'
+			];
 
-            let activeInterface = null;
-            for (const selector of datePickerInterfaces) {
-                try {
-                    const element = await page.$(selector);
-                    if (element) {
-                        const isVisible = await element.evaluate(el => {
-                            return el.offsetParent !== null && getComputedStyle(el).visibility !== 'hidden';
-                        });
-                        if (isVisible) {
-                            activeInterface = selector;
-                            console.log(`✅ Found active ${fieldType} date interface: ${selector}`);
-                            break;
-                        }
-                    }
-                } catch (err) {
-                    // Continue checking other selectors
-                }
-            }
+			let activeInterface = null;
+			for (const selector of datePickerInterfaces) {
+				try {
+					const element = await page.$(selector);
+					if (element) {
+						const isVisible = await element.evaluate(el => {
+							return el.offsetParent !== null && getComputedStyle(el).visibility !== 'hidden';
+						});
+						if (isVisible) {
+							activeInterface = selector;
+							console.log(`✅ Found active ${fieldType} date interface: ${selector}`);
+							break;
+						}
+					}
+				} catch (err) {
+					// Continue checking other selectors
+				}
+			}
 
-            if (!activeInterface) {
-                console.log(`⚠️ No ${fieldType} date picker interface found`);
-                // Try pressing Escape to close any open interface
+			if (!activeInterface) {
+				console.log(`⚠️ No ${fieldType} date picker interface found`);
+				// Try pressing Escape to close any open interface
 				await page.keyboard.press('Escape');
-                await page.waitForTimeout(500);
-                return;
-            }
+				await page.waitForTimeout(500);
+				return;
+			}
 
-            if (activeInterface.includes('date-picker') || activeInterface.includes('v-menu')) {
-                if (fieldType === 'start') {
-                    await handleComplexDatePicker(page, 2012, activeInterface, 1, 1); // January 1, 2012
-                } else if (fieldType === 'end') {
-					// Set last day of Dec for end field
-					const lastDayDec = 31; // December always has 31 days
-					await handleComplexDatePicker(page, targetYear, activeInterface, 12, lastDayDec); // December 31
-                } else {
-                    await handleComplexDatePicker(page, targetYear, activeInterface);
-                }
+			if (activeInterface.includes('date-picker') || activeInterface.includes('v-menu')) {
+				if (fieldType === 'start') {
+					await handleComplexDatePicker(page, targetYear, activeInterface, targetMonth, targetDay);
+				} else if (fieldType === 'end') {
+					await handleComplexDatePicker(page, targetYear, activeInterface, targetMonth, targetDay);
+				} else {
+					await handleComplexDatePicker(page, targetYear, activeInterface);
+				}
 
 				console.log(`🔚 Waiting for ${fieldType} date calendar to close...`);
 				await page.waitForTimeout(100);
-            }
+			}
 
-            console.log(`✅ ${fieldType} date field handling completed`);
+			console.log(`✅ ${fieldType} date field handling completed`);
 
-        } catch (error) {
-            console.error(`❌ Failed to handle ${fieldType} date field:`, error.message);
-            await page.keyboard.press('Escape');
-            await page.waitForTimeout(500);
-        }
-    }
+		} catch (error) {
+			console.error(`❌ Failed to handle ${fieldType} date field:`, error.message);
+			await page.keyboard.press('Escape');
+			await page.waitForTimeout(500);
+		}
+	}
 
     try {
 		// Check if this is the first division (you'll need to pass a parameter for this)
@@ -720,13 +759,32 @@ async function scrapeAthleteProfileIntegrated(page, athleteName, ageCategory, we
         
         await page.keyboard.press('Enter');
         
-        // Set date range with working calendar navigation
-        console.log('Setting date range with calendar navigation...');
-        console.log(`📅 Setting START date range to ${CONFIG.TARGET_YEAR}...`);
-        await handleDateField(page, '#form__date_range_start', CONFIG.TARGET_YEAR, 'start');
-        await page.waitForTimeout(100);
-        
-        console.log(`Date range set to: 01-01-${CONFIG.TARGET_YEAR} - 12-31-${CONFIG.TARGET_YEAR}`);
+        // Calculate dynamic date ranges
+		const today = new Date();
+		const currentYear = today.getFullYear();
+		const currentMonth = today.getMonth(); // 0-based (0 = January, 11 = December)
+
+		// Start date: First day of previous month
+		let startYear = currentYear;
+		let startMonth = currentMonth - 1; // Previous month
+
+		// Handle year rollover (if current month is January, go to December of previous year)
+		if (startMonth < 0) {
+			startMonth = 11; // December (0-based)
+			startYear = currentYear - 1;
+		}
+
+		const startMonthNumber = startMonth + 1; // Convert to 1-based for display/calendar
+
+		console.log(`📅 Setting START date range to ${startMonthNumber}/1/${startYear}...`);
+		await handleDateField(page, '#form__date_range_start', startYear, 'start', startMonthNumber, 1);
+		await page.waitForTimeout(100);
+
+		console.log(`📅 Setting END date range to 12/31/${currentYear}...`);
+		await handleDateField(page, '#form__date_range_end', currentYear, 'end', 12, 31);
+		await page.waitForTimeout(100);
+
+		console.log(`Date range set to: ${startMonthNumber.toString().padStart(2, '0')}-01-${startYear} - 12-31-${currentYear}`);
         console.log('🖱️ Clicking away from calendar to apply date filter...');
         await page.click('body');
         await page.waitForTimeout(500);

@@ -533,7 +533,7 @@ async function scrapeAthleteProfileIntegrated(page, athleteName, ageCategory, we
             const dayButtons = Array.from(allButtons).filter(btn => btn.textContent.trim() === day.toString());
             
             if (dayButtons.length > 0) {
-                const buttonIndex = (day === 31 && dayButtons.length > 1) ? 1 : 0;
+                const buttonIndex = (dayButtons.length > 1) ? 1 : 0;
                 const dayButton = dayButtons[buttonIndex];
                 dayButton.click();
                 return { success: true };
@@ -623,13 +623,12 @@ async function scrapeAthleteProfileIntegrated(page, athleteName, ageCategory, we
 			if (activeInterface.includes('date-picker') || activeInterface.includes('v-menu')) {
 				// Set Jan 1, 2012 for start field
 				if (fieldType === 'start') {
-					await handleComplexDatePicker(page, targetYear, activeInterface, 1, 1); // January 1
+					await handleComplexDatePicker(page, targetYear, activeInterface, 1, 1); 
 				} else if (fieldType === 'end') {
-					// Set last day of Dec for end field
-					const lastDayDec = 31; // December always has 31 days
-					await handleComplexDatePicker(page, targetYear, activeInterface, 12, lastDayDec); // December 31
+					const lastDayApr = 30; 
+					await handleComplexDatePicker(page, 2015, activeInterface, 4, 30); 
 				} else {
-					await handleComplexDatePicker(page, targetYear, activeInterface); // Default for other
+					await handleComplexDatePicker(page, 2015, activeInterface); // Default for other
 				}
 
 				// Close this individual calendar
