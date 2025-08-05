@@ -112,13 +112,54 @@ async function runUploadScript() {
     const { spawn } = require('child_process');
     const os = require('os');
     
-    console.log('\n📤 Starting CSV upload to Supabase in separate window...');
+    console.log('\n📤 Starting CSV upload to Supabase...');
     console.log(`📅 ${new Date().toISOString()}`);
     
-    try {
-        if (os.platform() === 'win32') {
-            // Windows - Create a batch file that closes after completion
-            const batchContent = `@echo off
+    // Check if we're in GitHub Actions or CI environment
+    const isCI = process.env.CI || process.env.GITHUB_ACTIONS || process.env.NODE_ENV === 'production';
+    
+    if (isCI) {
+        console.log('🤖 Detected CI environment - running upload directly (no separate window)');
+        
+        try {
+            // In CI, run the upload script directly without trying to open a window
+            const child = spawn('node', ['athlete-csv-uploader.js'], {
+                stdio: 'inherit', // Show output in current console
+                cwd: process.cwd(),
+                env: { ...process.env }
+            });
+            
+            // Wait for the upload to complete in CI
+            return new Promise((resolve, reject) => {
+                child.on('close', (code) => {
+                    if (code === 0) {
+                        console.log(`✅ Upload completed successfully in CI`);
+                        resolve(0);
+                    } else {
+                        console.log(`❌ Upload failed with exit code: ${code}`);
+                        reject(new Error(`Upload failed with exit code: ${code}`));
+                    }
+                });
+                
+                child.on('error', (error) => {
+                    console.log(`❌ Upload process error: ${error.message}`);
+                    reject(error);
+                });
+            });
+            
+        } catch (error) {
+            console.log(`❌ Failed to start upload in CI: ${error.message}`);
+            throw error;
+        }
+        
+    } else {
+        // Local development - use the existing window-opening approach
+        console.log('💻 Detected local environment - opening separate window for upload');
+        
+        try {
+            if (os.platform() === 'win32') {
+                // Windows - Create a batch file that closes after completion
+                const batchContent = `@echo off
 echo ================================================
 echo ATHLETE CSV UPLOADER - BACKGROUND PROCESS
 echo ================================================
@@ -134,57 +175,58 @@ echo Window will close in 3 seconds...
 echo ================================================
 timeout /t 3 /nobreak >nul
 exit`;
-            
-            const batchFile = path.join(process.cwd(), 'run_upload_B.bat');
-            fs.writeFileSync(batchFile, batchContent);
-            
-            const child = spawn('cmd', ['/c', 'start', 'cmd', '/c', 'run_upload.bat'], {
-                detached: true,
-                stdio: 'ignore',
-                cwd: process.cwd(),
-                env: { ...process.env }
-            });
-            
-            child.unref();
-            
-            console.log(`✅ Upload batch file created and started: ${batchFile}`);
-            console.log(`🖥️ Cmd window opened for upload process (will auto-close)`);
-            
-        } else {
-            // Non-Windows - Use terminal approach with auto-close
-            let command, args;
-            
-            if (os.platform() === 'darwin') {
-                // macOS - Terminal closes automatically after script completion
-                command = 'osascript';
-                args = ['-e', `tell application "Terminal" to do script "cd \\"${process.cwd()}\\" && echo 'ATHLETE CSV UPLOADER - BACKGROUND PROCESS' && node athlete-csv-uploader.js && sleep 2 && exit"`];
+                
+                const batchFile = path.join(process.cwd(), 'run_upload.bat');
+                fs.writeFileSync(batchFile, batchContent);
+                
+                const child = spawn('cmd', ['/c', 'start', 'cmd', '/c', 'run_upload.bat'], {
+                    detached: true,
+                    stdio: 'ignore',
+                    cwd: process.cwd(),
+                    env: { ...process.env }
+                });
+                
+                child.unref();
+                
+                console.log(`✅ Upload batch file created and started: ${batchFile}`);
+                console.log(`🖥️ Cmd window opened for upload process (will auto-close)`);
+                
             } else {
-                // Linux - Terminal closes automatically
-                command = 'gnome-terminal';
-                args = ['--', 'bash', '-c', `cd "${process.cwd()}" && echo "ATHLETE CSV UPLOADER - BACKGROUND PROCESS" && node athlete-csv-uploader.js && echo "Upload completed. Closing in 2 seconds..." && sleep 2`];
+                // Non-Windows - Use terminal approach with auto-close
+                let command, args;
+                
+                if (os.platform() === 'darwin') {
+                    // macOS - Terminal closes automatically after script completion
+                    command = 'osascript';
+                    args = ['-e', `tell application "Terminal" to do script "cd \\"${process.cwd()}\\" && echo 'ATHLETE CSV UPLOADER - BACKGROUND PROCESS' && node athlete-csv-uploader.js && sleep 2 && exit"`];
+                } else {
+                    // Linux - Terminal closes automatically
+                    command = 'gnome-terminal';
+                    args = ['--', 'bash', '-c', `cd "${process.cwd()}" && echo "ATHLETE CSV UPLOADER - BACKGROUND PROCESS" && node athlete-csv-uploader.js && echo "Upload completed. Closing in 2 seconds..." && sleep 2`];
+                }
+                
+                const child = spawn(command, args, {
+                    detached: true,
+                    stdio: 'ignore',
+                    cwd: process.cwd(),
+                    env: { ...process.env }
+                });
+                
+                child.unref();
+                console.log(`✅ Upload process started in separate terminal (will auto-close)`);
             }
             
-            const child = spawn(command, args, {
-                detached: true,
-                stdio: 'ignore',
-                cwd: process.cwd(),
-                env: { ...process.env }
-            });
+            console.log(`📋 Upload running independently - division scraping will continue`);
+            console.log(`💡 Monitor the separate window for upload progress`);
             
-            child.unref();
-            console.log(`✅ Upload process started in separate terminal (will auto-close)`);
+            // Return immediately without waiting (for local development)
+            return 0;
+            
+        } catch (error) {
+            console.log(`❌ Failed to start upload in separate window: ${error.message}`);
+            console.log(`⚠️ Continuing without upload - run athlete-csv-uploader.js manually later`);
+            return 1;
         }
-        
-        console.log(`📋 Upload running independently - division scraping will continue`);
-        console.log(`💡 Monitor the separate window for upload progress`);
-        
-        // Return immediately without waiting
-        return 0;
-        
-    } catch (error) {
-        console.log(`❌ Failed to start upload in separate window: ${error.message}`);
-        console.log(`⚠️ Continuing without upload - run athlete-csv-uploader.js manually later`);
-        return 1;
     }
 }
 
