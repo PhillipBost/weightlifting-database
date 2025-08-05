@@ -3,7 +3,7 @@ const fs = require('fs');
 const csv = require('csv-writer');
 const csvParser = require('csv-parser');
 
-const CSV_FILE = 'athlete_ids.csv';
+const CSV_FILE = 'internal_ids.csv';
 const BATCH_SIZE = 50;
 const REQUEST_DELAY = 500; // ms
 const MAX_CONSECUTIVE_ERRORS = 10;
@@ -11,8 +11,8 @@ const MAX_CONSECUTIVE_ERRORS = 10;
 const csvWriter = csv.createObjectCsvWriter({
   path: CSV_FILE,
   header: [
-    { id: 'athleteId', title: 'Athlete ID' },
-    { id: 'athleteName', title: 'Athlete Name' }
+    { id: 'athleteId', title: 'internal_id' },
+    { id: 'athleteName', title: 'lifter' }
   ],
   append: true
 });
@@ -30,7 +30,8 @@ async function getLastAthleteId() {
     fs.createReadStream(CSV_FILE)
       .pipe(csvParser())
       .on('data', (row) => {
-        const id = parseInt(row['Athlete ID']);
+        // Try both possible column names
+        const id = parseInt(row['internal_id']) || parseInt(row['Athlete ID']);
         if (!isNaN(id) && id > maxId) {
           maxId = id;
         }
@@ -70,65 +71,22 @@ async function scrapeAthleteData(page, id, retryCount = 0) {
     // Wait for table with a shorter timeout to fail faster on missing data
     await page.waitForSelector('table', { timeout: 2000 });
     
-    // Debug: Let's see what the table structure actually looks like
-    const tableData = await page.$eval('table tr', (rows) => {
-      const result = {
-        rowCount: rows.length,
-        headers: [],
-        firstDataRow: [],
-        allData: []
-      };
-      
-      // Get headers if they exist
-      if (rows.length > 0) {
-        const headerCells = rows[0].querySelectorAll('th, td');
-        result.headers = Array.from(headerCells).map(cell => cell.textContent.trim());
-      }
-      
-      // Get first data row
+    const athleteName = await page.$$eval('table tr', (rows) => {
       if (rows.length > 1) {
-        const dataCells = rows[1].querySelectorAll('td');
-        result.firstDataRow = Array.from(dataCells).map(cell => cell.textContent.trim());
-      }
-      
-      // Get all data for debugging (limit to first 3 rows to avoid spam)
-      for (let i = 0; i < Math.min(rows.length, 3); i++) {
-        const cells = rows[i].querySelectorAll('th, td');
-        result.allData.push(Array.from(cells).map(cell => cell.textContent.trim()));
-      }
-      
-      return result;
-    });
-
-    // Log the table structure for debugging
-    console.log(`\n--- Table Structure for ID ${id} ---`);
-    console.log('Row count:', tableData.rowCount);
-    console.log('Headers:', tableData.headers);
-    console.log('First data row:', tableData.firstDataRow);
-    console.log('All data (first 3 rows):', tableData.allData);
-    console.log('--- End Debug Info ---\n');
-
-    // Try to find athlete name - let's check multiple possible positions
-    let athleteName = null;
-    
-    if (tableData.firstDataRow.length > 0) {
-      // Look for what might be an athlete name (non-empty, not just "-", not a weight class)
-      for (let i = 0; i < tableData.firstDataRow.length; i++) {
-        const cellValue = tableData.firstDataRow[i];
-        if (cellValue && 
-            cellValue !== '-' && 
-            !cellValue.includes('kg') && 
-            !cellValue.includes('Kg') &&
-            !cellValue.match(/^\d+$/) && // not just a number
-            cellValue.length > 2) {
-          athleteName = cellValue;
-          console.log(`Found potential athlete name in column ${i}: "${athleteName}"`);
-          break;
+        const cols = rows[1].querySelectorAll('td');
+        // Column 3 (index 3) contains the "Lifter" name
+        if (cols.length > 3) {
+          const lifterName = cols[3].textContent.trim();
+          // Only return valid names (not empty, not just "-")
+          if (lifterName && lifterName !== '-' && lifterName.length > 0) {
+            return lifterName;
+          }
         }
       }
-    }
+      return null;
+    });
 
-    if (athleteName && athleteName.length > 0) {
+    if (athleteName) {
       return { athleteId: id, athleteName: athleteName };
     } else {
       return null; // No valid athlete name found

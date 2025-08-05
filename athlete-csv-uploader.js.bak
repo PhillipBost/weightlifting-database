@@ -50,7 +50,7 @@ async function readAthleteCSVFile(filePath) {
 }
 
 async function getAllAthleteCSVFiles() {
-    const athletesDir = 'output/athletes';
+    const athletesDir = '../output/athletes';
     console.log(`🔍 Scanning for athlete CSV files in: ${athletesDir}`);
     
     if (!fs.existsSync(athletesDir)) {
