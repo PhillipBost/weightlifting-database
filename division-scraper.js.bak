@@ -888,18 +888,7 @@ async function processAllDivisions() {
     }
     
     // Launch browser once for entire run
-    const browser = await puppeteer.launch({
-		headless: true,
-		args: [
-			'--no-sandbox',
-			'--disable-setuid-sandbox',
-			'--disable-dev-shm-usage',
-			'--disable-gpu',
-			'--no-first-run',
-			'--disable-extensions'
-		],
-		slowMo: 25
-	});
+    const browser = await puppeteer.launch({headless: CONFIG.HEADLESS, slowMo: 50});
     const page = await browser.newPage();
     await page.setViewport({width: 1500, height: 1000});
     

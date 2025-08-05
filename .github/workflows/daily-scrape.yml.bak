@@ -59,7 +59,11 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: scraped-csv-${{ github.run_number }}
-          path: 'meets_*.csv'
+          path: |
+              meets_*.csv
+              completed_divisions.csv
+              athlete_extraction_details.csv
+              ../output/athletes/*.csv
           retention-days: 7
       
       - name: Show completion summary

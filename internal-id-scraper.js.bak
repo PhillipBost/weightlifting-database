@@ -1,0 +1,60 @@
+const puppeteer = require('puppeteer');
+const fs = require('fs');
+const csv = require('csv-writer');
+
+const csvWriter = csv.createObjectCsvWriter({
+  path: 'athlete_ids.csv',
+  header: [
+    { id: 'athleteId', title: 'Athlete ID' },
+    { id: 'athleteName', title: 'Athlete Name' }
+  ],
+  append: true
+});
+
+(async () => {
+  const browser = await puppeteer.launch({headless: true});
+  const page = await browser.newPage();
+  let id = 1;
+  let hasData = true;
+  let records = [];
+
+  while (hasData) {
+    const url = `https://usaweightlifting.sport80.com/public/rankings/member/${id}`;
+    await page.goto(url);
+
+    try {
+      await page.waitForSelector('table', { timeout: 1000 });
+      const athleteName = await page.$$eval('table tr', (rows) => {
+        if (rows.length > 1) {
+          const cols = rows[1].querySelectorAll('td');
+          if (cols.length >= 3) {
+            return cols[2].textContent.trim();
+          }
+        }
+        return null;
+      });
+
+      if (athleteName) {
+        records.push({ athleteId: id, athleteName: athleteName });
+        console.log(`Fetched data for member ${id}`);
+      }
+
+      if (records.length >= 50) {
+        await csvWriter.writeRecords(records);
+        records = [];
+      }
+
+      id++;
+      await new Promise(resolve => setTimeout(resolve, 500)); // pause for 500ms
+    } catch (error) {
+      hasData = false;
+      console.log(`No data found for member ${id}. Stopping.`);
+    }
+  }
+
+  if (records.length > 0) {
+    await csvWriter.writeRecords(records);
+  }
+
+  await browser.close();
+})();
