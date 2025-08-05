@@ -18,4 +18,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: athlete-data
-          path: output/
+          path: |
+            output/
+            completed_divisions.csv
+            athlete_extraction_details.csv
