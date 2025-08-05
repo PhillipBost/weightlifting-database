@@ -103,7 +103,7 @@ function splitAgeCategoryAndWeightClass(combinedString) {
 function isAthleteAlreadyProcessed(membershipId) {
     if (!membershipId) return false;
     
-    const athleteFile = path.join('../output/athletes', `athlete_${membershipId}.csv`);
+    const athleteFile = path.join('./output/athletes', `athlete_${membershipId}.csv`);
     return fs.existsSync(athleteFile) && !CONFIG.OVERWRITE_EXISTING_FILES; // Fixed: was OVERWRITE_EXISTING_FILES
 }
 
@@ -190,7 +190,7 @@ exit`;
 
 // Function to create individual athlete CSV file
 function createAthleteCSV(membershipId, profileData, sourceDivision) {
-    const athletesDir = '../output/athletes';
+    const athletesDir = './output/athletes';
     ensureDirectoryExists(athletesDir);
     
     const athleteFile = path.join(athletesDir, `athlete_${membershipId}.csv`);
@@ -1259,7 +1259,7 @@ async function processAllDivisions() {
     console.log(`   📂 Divisions processed: ${totalDivisionsProcessed}`);
     console.log(`   ✅ Athletes processed successfully: ${totalSuccessCount}`);
     console.log(`   ❌ Athletes failed: ${totalErrorCount}`);
-    console.log(`   📁 Individual athlete files created in: ../output/athletes/`);
+    console.log(`   📁 Individual athlete files created in: ./output/athletes/`);
     console.log(`   📤 CSV uploads started in separate windows after each division`);
     
     // Final summary - uploads are running independently
