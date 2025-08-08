@@ -57,9 +57,9 @@ function createExtractionIssuesLogger() {
 }
 
 function loadDivisions() {
-    const divisionsFile = './all divisions_2016-2017.csv';
+    const divisionsFile = './all divisions_2012.csv';
     if (!fs.existsSync(divisionsFile)) {
-        throw new Error('Division file not found: ./all divisions.csv');
+        throw new Error('Division file not found: ./all divisions_2012.csv');
     }
     
     const content = fs.readFileSync(divisionsFile, 'utf8');
@@ -135,7 +135,7 @@ echo ================================================
 timeout /t 3 /nobreak >nul
 exit`;
             
-            const batchFile = path.join(process.cwd(), 'run_upload_2016-2017.bat');
+            const batchFile = path.join(process.cwd(), 'run_upload_2012.bat');
             fs.writeFileSync(batchFile, batchContent);
             
             const child = spawn('cmd', ['/c', 'start', 'cmd', '/c', 'run_upload.bat'], {
@@ -621,15 +621,14 @@ async function scrapeAthleteProfileIntegrated(page, athleteName, ageCategory, we
 
 			// If we have a complex date picker, handle it
 			if (activeInterface.includes('date-picker') || activeInterface.includes('v-menu')) {
-				// Set Sept 1, 2018 for start field
+				// Set Jan 1, 2016 for start field
 				if (fieldType === 'start') {
-					await handleComplexDatePicker(page, 2016, activeInterface, 1, 1); // Jan 1
+					await handleComplexDatePicker(page, targetYear, activeInterface, 1, 1); 
 				} else if (fieldType === 'end') {
-					// Set last day of Dec for end field
 					const lastDayDec = 31; // December always has 31 days
-					await handleComplexDatePicker(page, 2017, activeInterface, 12, lastDayDec); // December 31
+					await handleComplexDatePicker(page, 2016, activeInterface, 12, 31); 
 				} else {
-					await handleComplexDatePicker(page, targetYear, activeInterface); // Default for other
+					await handleComplexDatePicker(page, 2016, activeInterface); // Default for other
 				}
 
 				// Close this individual calendar
@@ -730,15 +729,15 @@ async function scrapeAthleteProfileIntegrated(page, athleteName, ageCategory, we
         await page.keyboard.press('Enter');
         
         // Set date range with working calendar navigation
-		console.log(`📅 Setting START date range to 2012...`);
-		await handleDateField(page, '#form__date_range_start', 2012, 'start');
+		console.log(`📅 Setting START date range to 2016...`);
+		await handleDateField(page, '#form__date_range_start', 2016, 'start');
 		await page.waitForTimeout(100);
 
-		console.log(`📅 Setting END date range to 2017...`);
-		await handleDateField(page, '#form__date_range_end', 2017, 'end');
+		console.log(`📅 Setting END date range to 2016...`);
+		await handleDateField(page, '#form__date_range_end', 2016, 'end');
 		await page.waitForTimeout(100);
 
-		console.log(`Date range set to: 01-01-2012 - 12-31-2017`);
+		console.log(`Date range set to: 01-01-2016 - 12-31-2016`);
         console.log('🖱️ Clicking away from calendar to apply date filter...');
         await page.click('body');
         await page.waitForTimeout(500);
@@ -1011,7 +1010,7 @@ async function processAllDivisions() {
     // Launch browser once for entire run
     const browser = await puppeteer.launch({headless: CONFIG.HEADLESS, slowMo: 50});
     const page = await browser.newPage();
-    await page.setViewport({width: 1500, height: 1000});
+	await page.setViewport({width: 0, height: 0});
 	const issuesLogger = createExtractionIssuesLogger();
     
     let totalSuccessCount = 0;

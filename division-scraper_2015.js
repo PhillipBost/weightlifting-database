@@ -11,7 +11,7 @@ const CONFIG = {
     DELAY_BETWEEN_DIVISIONS: 5000,
     MAX_DIVISIONS_FOR_TESTING: Infinity, // Process ALL divisions
     TARGET_YEAR: 2015,
-    HEADLESS: true
+    HEADLESS: false
 };
 
 // Utility functions
@@ -623,10 +623,10 @@ async function scrapeAthleteProfileIntegrated(page, athleteName, ageCategory, we
 			if (activeInterface.includes('date-picker') || activeInterface.includes('v-menu')) {
 				// Set Jan 1, 2015 for start field
 				if (fieldType === 'start') {
-					await handleComplexDatePicker(page, targetYear, activeInterface, 1, 1); 
+					await handleComplexDatePicker(page, targetYear, activeInterface, 7, 1); 
 				} else if (fieldType === 'end') {
 					const lastDayDec = 31; // December always has 31 days
-					await handleComplexDatePicker(page, 2015, activeInterface, 12, 31); 
+					await handleComplexDatePicker(page, 2015, activeInterface, 7, 31); 
 				} else {
 					await handleComplexDatePicker(page, 2015, activeInterface); // Default for other
 				}
@@ -733,7 +733,7 @@ async function scrapeAthleteProfileIntegrated(page, athleteName, ageCategory, we
 		await handleDateField(page, '#form__date_range_start', 2015, 'start');
 		await page.waitForTimeout(100);
 
-		console.log(`📅 Setting END date range to 2015...`);
+		console.log(`📅 Setting END date range to 2014...`);
 		await handleDateField(page, '#form__date_range_end', 2015, 'end');
 		await page.waitForTimeout(100);
 
