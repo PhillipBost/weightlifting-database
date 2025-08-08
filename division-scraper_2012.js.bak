@@ -10,8 +10,8 @@ const CONFIG = {
     DELAY_BETWEEN_ATHLETES: 2000,
     DELAY_BETWEEN_DIVISIONS: 5000,
     MAX_DIVISIONS_FOR_TESTING: Infinity, // Process ALL divisions
-    TARGET_YEAR: 2012,
-    HEADLESS: "new"
+    TARGET_YEAR: 2015,
+    HEADLESS: false
 };
 
 // Utility functions
@@ -59,7 +59,7 @@ function createExtractionIssuesLogger() {
 function loadDivisions() {
     const divisionsFile = './all divisions_2012.csv';
     if (!fs.existsSync(divisionsFile)) {
-        throw new Error('Division file not found: ./all divisions.csv');
+        throw new Error('Division file not found: ./all divisions_2012.csv');
     }
     
     const content = fs.readFileSync(divisionsFile, 'utf8');
@@ -623,12 +623,12 @@ async function scrapeAthleteProfileIntegrated(page, athleteName, ageCategory, we
 			if (activeInterface.includes('date-picker') || activeInterface.includes('v-menu')) {
 				// Set Jan 1, 2012 for start field
 				if (fieldType === 'start') {
-					await handleComplexDatePicker(page, targetYear, activeInterface, 1, 1); 
+					await handleComplexDatePicker(page, targetYear, activeInterface, 7, 2); 
 				} else if (fieldType === 'end') {
 					const lastDayDec = 31; // December always has 31 days
-					await handleComplexDatePicker(page, 2012, activeInterface, 12, 31); 
+					await handleComplexDatePicker(page, 2015, activeInterface, 7, 31); 
 				} else {
-					await handleComplexDatePicker(page, 2012, activeInterface); // Default for other
+					await handleComplexDatePicker(page, 2015, activeInterface); // Default for other
 				}
 
 				// Close this individual calendar
