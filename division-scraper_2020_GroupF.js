@@ -6,12 +6,12 @@ const path = require('path');
 // DIVISION-BASED SCRAPER WITH INTEGRATED ATHLETE SCRAPING
 // =================================================================
 const CONFIG = {
-    OVERWRITE_EXISTING_FILES: false,
+    OVERWRITE_EXISTING_FILES: true,
     DELAY_BETWEEN_ATHLETES: 2000,
     DELAY_BETWEEN_DIVISIONS: 5000,
     MAX_DIVISIONS_FOR_TESTING: Infinity, // Process ALL divisions
     TARGET_YEAR: 2020,
-    HEADLESS: false
+    HEADLESS: "new"
 };
 
 // Utility functions
@@ -57,7 +57,7 @@ function createExtractionIssuesLogger() {
 }
 
 function loadDivisions() {
-    const divisionsFile = './all divisions_GroupA.csv';
+    const divisionsFile = './all divisions_GroupF.csv';
     if (!fs.existsSync(divisionsFile)) {
         throw new Error('Division file not found: ./all divisions.csv');
     }
@@ -750,7 +750,7 @@ async function scrapeAthleteProfileIntegrated(page, athleteName, ageCategory, we
 			return buttons.find(btn => btn.textContent?.includes('Apply'));
 		});
 		await applyButton.click();
-		await page.waitForTimeout(90000);
+		await page.waitForTimeout(30000);
 
 		console.log('Filters applied');
         
@@ -970,7 +970,7 @@ async function processAllDivisions() {
     const divisions = loadDivisions();
     
     // Create completed divisions log
-    const completedDivisionsLog = './completed_divisions.csv';
+    const completedDivisionsLog = './completed_divisionsF.csv';
     const logHeaders = [
         'division_number',
         'division_name',

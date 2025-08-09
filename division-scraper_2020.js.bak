@@ -627,7 +627,7 @@ async function scrapeAthleteProfileIntegrated(page, athleteName, ageCategory, we
 				} else if (fieldType === 'end') {
 					// Set last day of Dec for end field
 					const lastDayDec = 31; // December always has 31 days
-					await handleComplexDatePicker(page, 2020, activeInterface, 12, lastDayDec); // December 31
+					await handleComplexDatePicker(page, 2021, activeInterface, 12, lastDayDec); // December 31
 				} else {
 					await handleComplexDatePicker(page, targetYear, activeInterface); // Default for other
 				}
