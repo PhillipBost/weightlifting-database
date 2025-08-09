@@ -553,7 +553,7 @@ async function getTestHistoricalMeets() {
     const url = 'https://usaweightlifting.sport80.com/public/rankings/results/';
 
     const browser = await puppeteer.launch({
-        headless: true,
+        headless: "new",
         args: [
             '--no-sandbox',
             '--disable-setuid-sandbox',
