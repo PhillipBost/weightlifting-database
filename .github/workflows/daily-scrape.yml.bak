@@ -44,6 +44,11 @@ jobs:
           SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
           TZ: America/New_York
       
+      - name: Create output directory structure
+        run: |
+          mkdir -p output/athletes
+          echo "📁 Created output directory structure"
+      
       - name: Run nightly division scraper
         run: |
           echo "🏋️ Starting division scraper at: $(date +'%Y-%m-%d %H:%M:%S %Z')"
@@ -63,7 +68,7 @@ jobs:
               meets_*.csv
               completed_divisions.csv
               athlete_extraction_details.csv
-              ../output/athletes/*.csv
+              output/athletes/*.csv
           retention-days: 7
       
       - name: Show completion summary
