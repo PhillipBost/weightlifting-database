@@ -6,7 +6,7 @@ name: Division Scraper - Sunday (Divisions 214-248)
 on:
   schedule:
     # 3 AM EST every Sunday (8 AM UTC)
-    - cron: '0 8 * * 7'
+    - cron: '0 8 * * 0'
   workflow_dispatch:
 
 jobs:
