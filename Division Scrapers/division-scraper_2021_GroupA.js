@@ -57,9 +57,9 @@ function createExtractionIssuesLogger() {
 }
 
 function loadDivisions() {
-    const divisionsFile = './all divisions_GroupA_2021.csv';
+    const divisionsFile = './all divisions_GroupA.csv';
     if (!fs.existsSync(divisionsFile)) {
-        throw new Error('Division file not found: ./all divisions.csv');
+        throw new Error('Division file not found: ./all divisions_GroupA.csv');
     }
     
     const content = fs.readFileSync(divisionsFile, 'utf8');
@@ -103,7 +103,7 @@ function splitAgeCategoryAndWeightClass(combinedString) {
 function isAthleteAlreadyProcessed(membershipId) {
     if (!membershipId) return false;
     
-    const athleteFile = path.join('../output/athletes', `athlete_${membershipId}.csv`);
+    const athleteFile = path.join('./output/athletes', `athlete_${membershipId}.csv`);
     return fs.existsSync(athleteFile) && !CONFIG.OVERWRITE_EXISTING_FILES; // Fixed: was OVERWRITE_EXISTING_FILES
 }
 
@@ -119,26 +119,30 @@ async function runUploadScript() {
         if (os.platform() === 'win32') {
             // Windows - Create a batch file that closes after completion
             const batchContent = `@echo off
-echo ================================================
-echo ATHLETE CSV UPLOADER - BACKGROUND PROCESS
-echo ================================================
-echo Starting upload at %date% %time%
-echo.
+			echo ================================================
+			echo ATHLETE CSV UPLOADER - BACKGROUND PROCESS
+			echo ================================================
+			echo Starting upload at %date% %time%
+			echo.
 
-node athlete-csv-uploader.js
+			node athlete-csv-uploader.js
 
-echo.
-echo ================================================
-echo Upload completed at %date% %time%
-echo Window will close in 3 seconds...
-echo ================================================
-timeout /t 3 /nobreak >nul
-exit`;
+			echo.
+			echo ================================================
+			echo Upload completed at %date% %time%
+			echo Window will close in 3 seconds...
+			echo ================================================
+			timeout /t 3 /nobreak >nul
+			exit;
+			
+			REM Delete this batch file after upload
+			del "%~f0"`;
             
-            const batchFile = path.join(process.cwd(), 'run_upload_2021.bat');
+            const timestamp = new Date().toISOString().replace(/[:\-]/g, '').replace(/\..+/, '');
+			const batchFile = path.join(process.cwd(), `run_upload_${CONFIG.TARGET_YEAR}_${timestamp}.bat`);
             fs.writeFileSync(batchFile, batchContent);
             
-            const child = spawn('cmd', ['/c', 'start', 'cmd', '/c', 'run_upload.bat'], {
+            const child = spawn('cmd', ['/c', 'start', 'cmd', '/c', path.basename(batchFile)], {
                 detached: true,
                 stdio: 'ignore',
                 cwd: process.cwd(),
@@ -190,7 +194,7 @@ exit`;
 
 // Function to create individual athlete CSV file
 function createAthleteCSV(membershipId, profileData, sourceDivision) {
-    const athletesDir = '../output/athletes';
+    const athletesDir = './output/athletes';
     ensureDirectoryExists(athletesDir);
     
     const athleteFile = path.join(athletesDir, `athlete_${membershipId}.csv`);
@@ -623,11 +627,11 @@ async function scrapeAthleteProfileIntegrated(page, athleteName, ageCategory, we
 			if (activeInterface.includes('date-picker') || activeInterface.includes('v-menu')) {
 				// Set Sept 1, 2018 for start field
 				if (fieldType === 'start') {
-					await handleComplexDatePicker(page, 2021, activeInterface, 1, 1); // Jan 1
+					await handleComplexDatePicker(page, targetYear, activeInterface, 1, 1); // Jan 1
 				} else if (fieldType === 'end') {
 					// Set last day of Dec for end field
 					const lastDayDec = 31; // December always has 31 days
-					await handleComplexDatePicker(page, 2021, activeInterface, 12, lastDayDec); // December 31
+					await handleComplexDatePicker(page, targetYear, activeInterface, 12, lastDayDec); // December 31
 				} else {
 					await handleComplexDatePicker(page, targetYear, activeInterface); // Default for other
 				}
@@ -730,15 +734,15 @@ async function scrapeAthleteProfileIntegrated(page, athleteName, ageCategory, we
         await page.keyboard.press('Enter');
         
         // Set date range with working calendar navigation
-		console.log(`📅 Setting START date range to 2012...`);
-		await handleDateField(page, '#form__date_range_start', 2012, 'start');
+		console.log(`📅 Setting START date range to ${CONFIG.TARGET_YEAR}...`);
+		await handleDateField(page, '#form__date_range_start', CONFIG.TARGET_YEAR, 'start');
 		await page.waitForTimeout(100);
 
-		console.log(`📅 Setting END date range to 2017...`);
-		await handleDateField(page, '#form__date_range_end', 2017, 'end');
+		console.log(`📅 Setting END date range to ${CONFIG.TARGET_YEAR}...`);
+		await handleDateField(page, '#form__date_range_end', CONFIG.TARGET_YEAR, 'end');
 		await page.waitForTimeout(100);
 
-		console.log(`Date range set to: 01-01-2012 - 12-31-2017`);
+		console.log(`Date range set to: 01-01-${CONFIG.TARGET_YEAR} - 12-31-${CONFIG.TARGET_YEAR}`);
         console.log('🖱️ Clicking away from calendar to apply date filter...');
         await page.click('body');
         await page.waitForTimeout(500);
@@ -967,11 +971,10 @@ async function processAllDivisions() {
     console.log('🚀 Starting Division-Based Systematic Athlete Scraper...');
     console.log('📋 Using integrated scraping approach');
     
-    const divisions = loadDivisions();
-    
     // Create completed divisions log
-    const completedDivisionsLog = './completed_divisionsA.csv';
-    const logHeaders = [
+    const completedDivisionsLog = `./completed_divisions_${CONFIG.TARGET_YEAR}_GroupA.csv`;
+    const divisions = loadDivisions();
+	const logHeaders = [
         'division_number',
         'division_name',
         'timestamp',
@@ -980,7 +983,8 @@ async function processAllDivisions() {
         'athletes_successful',
         'athletes_failed', 
         'upload_status',
-        'total_time_seconds'
+        'total_time_seconds',
+		'success_percentage'
     ];
     
     // Create log file with headers if it doesn't exist
@@ -993,16 +997,26 @@ async function processAllDivisions() {
 		const timestamp = new Date().toISOString();
 		const totalTimeSeconds = Math.round((Date.now() - startTime) / 1000);
 		
+		// Calculate success percentage as whole number
+		let successPercentage = 0;
+		if (expectedAthletes && expectedAthletes !== 'Unknown') {
+			const expected = parseInt(expectedAthletes);
+			if (!isNaN(expected) && expected > 0) {
+				successPercentage = Math.round((athletesSuccessful / expected) * 100);
+			}
+		}
+		
 		const logRow = [
 			divisionNumber,
 			escapeCSV(divisionName),
 			timestamp,
-			expectedAthletes,  // ← Add this line
+			expectedAthletes,
 			athletesScraped,
 			athletesSuccessful,
 			athletesFailed,
 			uploadStatus,
-			totalTimeSeconds
+			totalTimeSeconds,
+			successPercentage
 		];
 		
 		fs.appendFileSync(completedDivisionsLog, logRow.join(',') + '\n');
@@ -1213,7 +1227,7 @@ async function processAllDivisions() {
     console.log(`   📂 Divisions processed: ${totalDivisionsProcessed}`);
     console.log(`   ✅ Athletes processed successfully: ${totalSuccessCount}`);
     console.log(`   ❌ Athletes failed: ${totalErrorCount}`);
-    console.log(`   📁 Individual athlete files created in: ../output/athletes/`);
+    console.log(`   📁 Individual athlete files created in: ./output/athletes/`);
     console.log(`   📤 CSV uploads started in separate windows after each division`);
     
     // Final summary - uploads are running independently
