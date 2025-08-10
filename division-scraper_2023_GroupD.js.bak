@@ -10,7 +10,7 @@ const CONFIG = {
     DELAY_BETWEEN_ATHLETES: 2000,
     DELAY_BETWEEN_DIVISIONS: 5000,
     MAX_DIVISIONS_FOR_TESTING: Infinity, // Process ALL divisions
-    TARGET_YEAR: 2022,
+    TARGET_YEAR: 2023,
     HEADLESS: "new"
 };
 
@@ -57,7 +57,7 @@ function createExtractionIssuesLogger() {
 }
 
 function loadDivisions() {
-    const divisionsFile = './all divisions_GroupD_2022.csv';
+    const divisionsFile = './all divisions_GroupD_2023.csv';
     if (!fs.existsSync(divisionsFile)) {
         throw new Error('Division file not found: ./all divisions.csv');
     }
@@ -135,7 +135,7 @@ echo ================================================
 timeout /t 3 /nobreak >nul
 exit`;
             
-            const batchFile = path.join(process.cwd(), 'run_upload_2022.bat');
+            const batchFile = path.join(process.cwd(), 'run_upload_2023.bat');
             fs.writeFileSync(batchFile, batchContent);
             
             const child = spawn('cmd', ['/c', 'start', 'cmd', '/c', 'run_upload.bat'], {
@@ -623,11 +623,11 @@ async function scrapeAthleteProfileIntegrated(page, athleteName, ageCategory, we
 			if (activeInterface.includes('date-picker') || activeInterface.includes('v-menu')) {
 				// Set Sept 1, 2018 for start field
 				if (fieldType === 'start') {
-					await handleComplexDatePicker(page, 2022, activeInterface, 1, 1); // Jan 1
+					await handleComplexDatePicker(page, 2023, activeInterface, 1, 1); // Jan 1
 				} else if (fieldType === 'end') {
 					// Set last day of Dec for end field
 					const lastDayDec = 31; // December always has 31 days
-					await handleComplexDatePicker(page, 2022, activeInterface, 12, lastDayDec); // December 31
+					await handleComplexDatePicker(page, 2023, activeInterface, 12, lastDayDec); // December 31
 				} else {
 					await handleComplexDatePicker(page, targetYear, activeInterface); // Default for other
 				}
