@@ -7,11 +7,11 @@ const path = require('path');
 // Scrapes only LAST MONTH + CURRENT MONTH data for efficiency
 // =================================================================
 const CONFIG = {
-    OVERWRITE_EXISTING_FILES: false,
+    OVERWRITE_EXISTING_FILES: true,
     DELAY_BETWEEN_ATHLETES: 100,    // Reduced from 2000ms
     DELAY_BETWEEN_DIVISIONS: 2000,  // Reduced from 3000ms since less data
     TARGET_YEAR: new Date().getFullYear(),
-    HEADLESS: false,
+    HEADLESS: "new",
     // Get division range from environment
     DIVISION_START: parseInt(process.env.DIVISION_START || '1'),
     DIVISION_END: parseInt(process.env.DIVISION_END || '35'),
@@ -742,7 +742,7 @@ async function processBatchDivisions() {
     
     // Launch browser
     const browser = await puppeteer.launch({
-        headless: false,
+        headless: "new",
         args: [
             '--no-sandbox',
             '--disable-setuid-sandbox',
