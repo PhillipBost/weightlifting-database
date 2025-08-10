@@ -1,0 +1,77 @@
+# ============================================
+# File 1: division-scraper-monday.yml
+# ============================================
+name: Division Scraper - Monday (Divisions 1-35)
+
+on:
+  schedule:
+    # 3 AM EST every Monday (8 AM UTC)
+    - cron: '0 8 * * 1'
+  workflow_dispatch:
+
+jobs:
+  scrape-monday-divisions:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180  # 3 hour timeout
+    env:
+      TZ: America/New_York
+      DIVISION_START: 1
+      DIVISION_END: 35
+      DAY_NAME: Monday
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+      
+      - name: Create output directories
+        run: |
+          mkdir -p output/athletes
+          mkdir -p logs/monday
+          echo "📁 Created output directories"
+      
+      - name: Run division scraper for Monday batch
+        run: |
+          echo "🏋️ Starting Monday scraper (Divisions $DIVISION_START-$DIVISION_END)"
+          echo "🕐 Start time: $(date +'%Y-%m-%d %H:%M:%S %Z')"
+          node nightly-division-scraper.js
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+          
+      - name: Upload logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: monday-logs-${{ github.run_number }}
+          path: |
+            logs/monday/
+            completed_divisions_monday.csv
+            athlete_extraction_details.csv
+          retention-days: 30
+      
+      - name: Upload athlete CSVs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: monday-athletes-${{ github.run_number }}
+          path: output/athletes/*.csv
+          retention-days: 7
+          
+      - name: Summary
+        if: always()
+        run: |
+          echo "📊 Monday Summary:"
+          ATHLETE_COUNT=$(find output/athletes -name "*.csv" 2>/dev/null | wc -l)
+          echo "👥 Athlete files created: $ATHLETE_COUNT"
+          if [ -f "completed_divisions_monday.csv" ]; then
+            echo "Divisions processed:"
+            tail -10 completed_divisions_monday.csv
+          fi
