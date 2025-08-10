@@ -133,7 +133,7 @@ echo Upload completed at %date% %time%
 echo Window will close in 3 seconds...
 echo ================================================
 timeout /t 3 /nobreak >nul
-exit`;
+pause`;
             
             const batchFile = path.join(process.cwd(), 'run_upload_2023.bat');
             fs.writeFileSync(batchFile, batchContent);
