@@ -7,11 +7,11 @@ const path = require('path');
 // Scrapes only LAST MONTH + CURRENT MONTH data for efficiency
 // =================================================================
 const CONFIG = {
-    OVERWRITE_EXISTING_FILES: true,
+    OVERWRITE_EXISTING_FILES: false,
     DELAY_BETWEEN_ATHLETES: 100,    // Reduced from 2000ms
     DELAY_BETWEEN_DIVISIONS: 2000,  // Reduced from 3000ms since less data
     TARGET_YEAR: new Date().getFullYear(),
-    HEADLESS: "new",
+    HEADLESS: true,
     // Get division range from environment
     DIVISION_START: parseInt(process.env.DIVISION_START || '1'),
     DIVISION_END: parseInt(process.env.DIVISION_END || '35'),
@@ -740,17 +740,50 @@ async function processBatchDivisions() {
     
     const issuesLogger = createExtractionIssuesLogger();
     
-    // Launch browser
+    // Launch browser with proper arguments for GitHub Actions
+    const isGitHubActions = process.env.GITHUB_ACTIONS === 'true';
+    
     const browser = await puppeteer.launch({
-        headless: "new",
+        headless: isGitHubActions ? "new" : true,  // Use 'new' headless mode in GitHub Actions
         args: [
             '--no-sandbox',
             '--disable-setuid-sandbox',
             '--disable-dev-shm-usage',
-            '--disable-gpu'
+            '--disable-gpu',
+            '--no-first-run',
+            '--no-zygote',
+            '--single-process',  // Helps in containerized environments
+            '--disable-extensions',
+            '--disable-background-networking',
+            '--disable-background-timer-throttling',
+            '--disable-backgrounding-occluded-windows',
+            '--disable-breakpad',
+            '--disable-client-side-phishing-detection',
+            '--disable-component-extensions-with-background-pages',
+            '--disable-default-apps',
+            '--disable-features=TranslateUI',
+            '--disable-hang-monitor',
+            '--disable-ipc-flooding-protection',
+            '--disable-popup-blocking',
+            '--disable-prompt-on-repost',
+            '--disable-renderer-backgrounding',
+            '--disable-sync',
+            '--force-color-profile=srgb',
+            '--metrics-recording-only',
+            '--no-default-browser-check',
+            '--password-store=basic',
+            '--use-mock-keychain',
+            '--disable-blink-features=AutomationControlled',
+            '--window-size=1920,1080'
         ],
+        defaultViewport: {
+            width: 1920,
+            height: 1080
+        },
         slowMo: 25
     });
+    
+    console.log('✅ Browser launched successfully');
     
     const page = await browser.newPage();
     await page.setViewport({ width: 1500, height: 1000 });
