@@ -289,7 +289,7 @@ async function updateRecentMeetResultsWithCurrentAffiliation(lifterId, athleteDa
     }
 }
 
-async function processAthleteCSVFileForNightly(filePath, errorLogger) {
+async function processAthleteCSVFile(filePath, errorLogger) {
     const fileName = path.basename(filePath);
     console.log(`\n📄 Processing: ${fileName}`);
     
@@ -506,7 +506,7 @@ async function main() {
             console.log(`\n🔄 Starting file: ${fileName} (${filesProcessed + 1}/${csvFiles.length})`);
             
             try {
-                const result = await processAthleteCSVFile(filePath, errorLogger);
+                const result = await processAthleteCSVFileForNightly(filePath, errorLogger);
                 totalUpdated += result.updated;
                 totalCreated += result.created || 0;
                 totalNotFound += result.notFound;
