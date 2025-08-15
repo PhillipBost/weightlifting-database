@@ -573,6 +573,5 @@ if (require.main === module) {
 }
 
 module.exports = {
-    main,
-    processAthleteCSVFile
+    main
 };
