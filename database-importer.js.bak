@@ -371,9 +371,6 @@ async function processMeetCsvFile(csvFilePath, meetId, meetName) {
                     cj_lift_3: row['C&J Lift 3']?.toString().trim() || null,
                     best_cj: row['Best C&J']?.toString().trim() || null,
                     total: row.Total?.toString().trim() || null
-					competition_age: birthYear && meetDate ? 
-						new Date(meetDate).getFullYear() - birthYear : null,
-					qpoints: calculateQPoints(total, bodyWeight, gender)
                 };
                 
                 await createMeetResult(resultData);
