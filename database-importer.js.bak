@@ -243,7 +243,7 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
     // First try to find existing lifter by name
     const { data: existing, error: findError } = await supabase
         .from('lifters')
-        .select('*')
+        .select('lifter_id, athlete_name, birth_year, gender') // Add birth_year, gender
         .eq('athlete_name', cleanName)
         .maybeSingle();
     
