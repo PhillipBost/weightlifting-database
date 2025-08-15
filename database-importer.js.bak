@@ -275,9 +275,17 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
 }
 
 async function createMeetResult(resultData) {
+    // Calculate competition age and qpoints before inserting
+    const enhancedResultData = {
+        ...resultData,
+        competition_age: resultData.date && resultData.lifter_birth_year ? 
+            new Date(resultData.date).getFullYear() - resultData.lifter_birth_year : null,
+        qpoints: calculateQPoints(resultData.total, resultData.body_weight_kg, resultData.lifter_gender)
+    };
+    
     const { data, error } = await supabase
         .from('meet_results')
-        .insert(resultData)
+        .insert(enhancedResultData)
         .select()
         .single();
     
@@ -350,30 +358,33 @@ async function processMeetCsvFile(csvFilePath, meetId, meetName) {
         for (const [index, row] of validResults.entries()) {
             try {
                 // Find or create lifter
-                const lifter = await findOrCreateLifter(row.Lifter);
-                
-                // Create meet result
-                const resultData = {
-                    meet_id: meetId,
-                    lifter_id: lifter.lifter_id,
-                    meet_name: row.Meet?.trim() || null,
-                    date: row.Date?.trim() || null,
-                    age_category: row['Age Category']?.trim() || null,
-                    weight_class: row['Weight Class']?.trim() || null,
-                    lifter_name: row.Lifter?.trim() || null,
-                    body_weight_kg: row['Body Weight (Kg)']?.toString().trim() || null,
-                    snatch_lift_1: row['Snatch Lift 1']?.toString().trim() || null,
-                    snatch_lift_2: row['Snatch Lift 2']?.toString().trim() || null,
-                    snatch_lift_3: row['Snatch Lift 3']?.toString().trim() || null,
-                    best_snatch: row['Best Snatch']?.toString().trim() || null,
-                    cj_lift_1: row['C&J Lift 1']?.toString().trim() || null,
-                    cj_lift_2: row['C&J Lift 2']?.toString().trim() || null,
-                    cj_lift_3: row['C&J Lift 3']?.toString().trim() || null,
-                    best_cj: row['Best C&J']?.toString().trim() || null,
-                    total: row.Total?.toString().trim() || null
-                };
-                
-                await createMeetResult(resultData);
+				const lifter = await findOrCreateLifter(row.Lifter);
+
+				// Create meet result with lifter data for calculations
+				const resultData = {
+					meet_id: meetId,
+					lifter_id: lifter.lifter_id,
+					meet_name: row.Meet?.trim() || null,
+					date: row.Date?.trim() || null,
+					age_category: row['Age Category']?.trim() || null,
+					weight_class: row['Weight Class']?.trim() || null,
+					lifter_name: row.Lifter?.trim() || null,
+					body_weight_kg: row['Body Weight (Kg)']?.toString().trim() || null,
+					snatch_lift_1: row['Snatch Lift 1']?.toString().trim() || null,
+					snatch_lift_2: row['Snatch Lift 2']?.toString().trim() || null,
+					snatch_lift_3: row['Snatch Lift 3']?.toString().trim() || null,
+					best_snatch: row['Best Snatch']?.toString().trim() || null,
+					cj_lift_1: row['C&J Lift 1']?.toString().trim() || null,
+					cj_lift_2: row['C&J Lift 2']?.toString().trim() || null,
+					cj_lift_3: row['C&J Lift 3']?.toString().trim() || null,
+					best_cj: row['Best C&J']?.toString().trim() || null,
+					total: row.Total?.toString().trim() || null,
+					// Add lifter data for calculations
+					lifter_birth_year: lifter.birth_year,
+					lifter_gender: lifter.gender
+				};
+
+				await createMeetResult(resultData);
                 processedCount++;
                 
                 // Progress indicator
@@ -415,6 +426,26 @@ async function getExistingMeetCount() {
         console.error('⚠️ Error getting existing count:', error.message);
         return null;
     }
+}
+
+function calculateQPoints(total, bodyWeight, gender) {
+    if (!total || !bodyWeight || !gender || total <= 0 || bodyWeight <= 0) {
+        return null;
+    }
+    
+    const totalNum = parseFloat(total);
+    const bwNum = parseFloat(bodyWeight);
+    const B = bwNum / 100;
+    
+    if (gender === 'M') {
+        const denominator = 416.7 - 47.87 * Math.pow(B, -2) + 18.93 * Math.pow(B, 2);
+        return Math.round((totalNum * 463.26 / denominator) * 1000) / 1000;
+    } else if (gender === 'F') {
+        const denominator = 266.5 - 19.44 * Math.pow(B, -2) + 18.61 * Math.pow(B, 2);
+        return Math.round((totalNum * 306.54 / denominator) * 1000) / 1000;
+    }
+    
+    return null;
 }
 
 async function main() {
