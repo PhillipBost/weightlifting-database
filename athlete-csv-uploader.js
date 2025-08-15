@@ -224,7 +224,72 @@ async function batchUpdateCompetitionAges(competitionAgeUpdates) {
     return;
 }
 
-async function processAthleteCSVFile(filePath, errorLogger) {
+async function updateRecentMeetResultsWithCurrentAffiliation(lifterId, athleteData, errorLogger) {
+    // For nightly runs, we're seeing the athlete's CURRENT affiliation
+    // Update their recent meet results (last 2-3 months) with this info
+    
+    if (!athleteData.wso || !athleteData.club_name) {
+        return { updated: 0, errors: 0 };
+    }
+    
+    try {
+        // Calculate date range for recent meets
+        const today = new Date();
+        const threeMonthsAgo = new Date(today);
+        threeMonthsAgo.setMonth(today.getMonth() - 3);
+        const dateString = threeMonthsAgo.toISOString().split('T')[0];
+        
+        console.log(`  🔄 Updating recent meet_results for lifter ${lifterId} since ${dateString}`);
+        
+        // Find recent meet results that don't have WSO/club set
+        const { data: meetResults, error: findError } = await supabase
+            .from('meet_results')
+            .select('result_id, date, meet_name, wso, club_name')
+            .eq('lifter_id', lifterId)
+            .gte('date', dateString)
+            .or('wso.is.null,club_name.is.null,wso.eq.,club_name.eq.');
+        
+        if (findError) {
+            throw new Error(`Error finding meet results: ${findError.message}`);
+        }
+        
+        if (!meetResults || meetResults.length === 0) {
+            return { updated: 0, errors: 0 };
+        }
+        
+        console.log(`  📊 Found ${meetResults.length} recent meet_results to update`);
+        
+        // Update with current affiliation
+        const { error: updateError } = await supabase
+            .from('meet_results')
+            .update({
+                wso: athleteData.wso.toString().trim(),
+                club_name: athleteData.club_name.toString().trim(),
+                updated_at: new Date().toISOString()
+            })
+            .in('result_id', meetResults.map(r => r.result_id));
+        
+        if (updateError) {
+            throw new Error(`Error updating meet results: ${updateError.message}`);
+        }
+        
+        console.log(`  ✅ Updated ${meetResults.length} recent meet_results with current WSO/club`);
+        
+        return { updated: meetResults.length, errors: 0 };
+        
+    } catch (error) {
+        console.error(`  💥 Error updating meet_results:`, error.message);
+        errorLogger.logError(
+            athleteData.athlete_name,
+            athleteData.membership_number,
+            'MEET_RESULTS_UPDATE_ERROR',
+            error.message
+        );
+        return { updated: 0, errors: 1 };
+    }
+}
+
+async function processAthleteCSVFileForNightly(filePath, errorLogger) {
     const fileName = path.basename(filePath);
     console.log(`\n📄 Processing: ${fileName}`);
     
@@ -334,6 +399,41 @@ async function processAthleteCSVFile(filePath, errorLogger) {
             }
         }
         
+		if (matchingLifters.length === 1) {
+			const lifter = matchingLifters[0];
+			const lifterId = lifter.lifter_id;
+			
+			// Check if WSO or club changed
+			const wsoChanged = lifter.wso !== athleteData.wso;
+			const clubChanged = lifter.club_name !== athleteData.club_name;
+			
+			if (wsoChanged || clubChanged) {
+				console.log(`  🔄 Affiliation change detected for ${athleteName}:`);
+				if (wsoChanged) console.log(`    WSO: "${lifter.wso}" → "${athleteData.wso}"`);
+				if (clubChanged) console.log(`    Club: "${lifter.club_name}" → "${athleteData.club_name}"`);
+				
+				// Track the change (optional - create a history table)
+				await trackAffiliationChange(lifterId, {
+					old_wso: lifter.wso,
+					new_wso: athleteData.wso,
+					old_club: lifter.club_name,
+					new_club: athleteData.club_name,
+					change_detected: new Date().toISOString()
+				});
+			}
+			
+			// Update lifter table (current state)
+			lifterUpdates.push(updateData);
+			
+			// Update recent meet_results with current affiliation
+			const meetResultsUpdate = await updateRecentMeetResultsWithCurrentAffiliation(
+				lifterId, 
+				athleteData, 
+				errorLogger
+			);
+			meetResultsUpdated += meetResultsUpdate.updated;
+		}
+		
         // SKIP competition age updates
         
         console.log(`  📊 Results: ${lifterUpdates.length} updated, ${newLiftersCreated} created, ${duplicateCount} duplicates, ${errorCount} errors`);
