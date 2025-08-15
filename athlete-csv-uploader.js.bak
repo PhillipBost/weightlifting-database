@@ -289,7 +289,7 @@ async function updateRecentMeetResultsWithCurrentAffiliation(lifterId, athleteDa
     }
 }
 
-async function processAthleteCSVFileForNightly(filePath, errorLogger) {
+async function processAthleteCSVFile(filePath, errorLogger) {
     const fileName = path.basename(filePath);
     console.log(`\n📄 Processing: ${fileName}`);
     
@@ -573,6 +573,5 @@ if (require.main === module) {
 }
 
 module.exports = {
-    main,
-    processAthleteCSVFile
+    main
 };
