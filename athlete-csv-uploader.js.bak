@@ -365,40 +365,6 @@ async function processAthleteCSVFile(filePath, errorLogger) {
             await batchUpdateLifters(lifterUpdates);
         }
         
-        // Create new lifters one by one (like your original)
-        let newLiftersCreated = 0;
-        if (newLifters.length > 0) {
-            console.log(`  ➕ Creating ${newLifters.length} new lifters...`);
-            for (let i = 0; i < newLifters.length; i++) {
-                const athleteData = newLifters[i];
-                
-                if (i > 0 && i % 10 === 0) {
-                    console.log(`    📈 Created ${i}/${newLifters.length} new lifters so far...`);
-                }
-                
-                try {
-                    await createNewLifter(athleteData);
-                    
-                    // Create division string from Age Category and Weight Class for logging
-                    const divisionString = `${athleteData['Age Category'] || ''} ${athleteData['Weight Class'] || ''}`.trim();
-                    const enrichedAthleteData = {
-                        ...athleteData,
-                        division: divisionString
-                    };
-                    errorLogger.logNewLifter(enrichedAthleteData);
-                    newLiftersCreated++;
-                } catch (error) {
-                    errorLogger.logError(athleteData.athlete_name, athleteData.membership_number, 'CREATE_ERROR', error.message);
-                    errorCount++;
-                }
-                
-                // Add brief pause after every 5 new lifters created
-                if (newLiftersCreated > 0 && newLiftersCreated % 5 === 0) {
-                    await new Promise(resolve => setTimeout(resolve, 200));
-                }
-            }
-        }
-        
 		if (matchingLifters.length === 1) {
 			const lifter = matchingLifters[0];
 			const lifterId = lifter.lifter_id;
@@ -433,6 +399,42 @@ async function processAthleteCSVFile(filePath, errorLogger) {
 			);
 			meetResultsUpdated += meetResultsUpdate.updated;
 		}
+		
+        // Create new lifters one by one (like your original)
+        let newLiftersCreated = 0;
+        if (newLifters.length > 0) {
+            console.log(`  ➕ Creating ${newLifters.length} new lifters...`);
+            for (let i = 0; i < newLifters.length; i++) {
+                const athleteData = newLifters[i];
+                
+                if (i > 0 && i % 10 === 0) {
+                    console.log(`    📈 Created ${i}/${newLifters.length} new lifters so far...`);
+                }
+                
+                try {
+                    await createNewLifter(athleteData);
+                    
+                    // Create division string from Age Category and Weight Class for logging
+                    const divisionString = `${athleteData['Age Category'] || ''} ${athleteData['Weight Class'] || ''}`.trim();
+                    const enrichedAthleteData = {
+                        ...athleteData,
+                        division: divisionString
+                    };
+                    errorLogger.logNewLifter(enrichedAthleteData);
+                    newLiftersCreated++;
+                } catch (error) {
+                    errorLogger.logError(athleteData.athlete_name, athleteData.membership_number, 'CREATE_ERROR', error.message);
+                    errorCount++;
+                }
+                
+                // Add brief pause after every 5 new lifters created
+                if (newLiftersCreated > 0 && newLiftersCreated % 5 === 0) {
+                    await new Promise(resolve => setTimeout(resolve, 200));
+                }
+            }
+        }
+        
+		
 		
         // SKIP competition age updates
         
