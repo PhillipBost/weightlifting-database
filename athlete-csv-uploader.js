@@ -9,7 +9,7 @@ const path = require('path');
 // Initialize Supabase client - SIMPLE VERSION
 const supabase = createClient(
     process.env.SUPABASE_URL,
-    process.env.SUPABASE_ANON_KEY
+    process.env.SUPABASE_SECRET_KEY
 );
 
 // MINIMAL timeout wrapper - only for the most critical operations

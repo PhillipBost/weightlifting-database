@@ -275,17 +275,20 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
 }
 
 async function createMeetResult(resultData) {
-    // Calculate competition age and qpoints before inserting
+    // Extract lifter data for calculations (don't insert these into DB)
+    const { lifter_birth_year, lifter_gender, ...dbResultData } = resultData;
+    
+    // Calculate competition age and qpoints
     const enhancedResultData = {
-        ...resultData,
-        competition_age: resultData.date && resultData.lifter_birth_year ? 
-            new Date(resultData.date).getFullYear() - resultData.lifter_birth_year : null,
-        qpoints: calculateQPoints(resultData.total, resultData.body_weight_kg, resultData.lifter_gender)
+        ...dbResultData,
+        competition_age: resultData.date && lifter_birth_year ? 
+            new Date(resultData.date).getFullYear() - lifter_birth_year : null,
+        qpoints: calculateQPoints(resultData.total, resultData.body_weight_kg, lifter_gender)
     };
     
     const { data, error } = await supabase
         .from('meet_results')
-        .insert(enhancedResultData)
+        .insert(enhancedResultData)  // Insert without the temporary lifter fields
         .select()
         .single();
     
