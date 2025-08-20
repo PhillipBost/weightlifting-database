@@ -7,13 +7,14 @@ yarn-error.log*
 
 # Environment variables
 .env
+.env.bak
 .env.local
+.env.local.bak
 .env.development.local
 .env.test.local
 .env.production.local
 
 # Output files and scraped data
-output/
 Division Scrapers/
 meets_*.csv
 completed_divisions.csv
