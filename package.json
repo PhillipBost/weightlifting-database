@@ -14,7 +14,7 @@
   "author": "Phil Bost",
   "license": "MIT",
   "devDependencies": {
-    "nodemon": "^2.0.22"
+    "nodemon": "^3.1.10"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.39.0",
@@ -27,6 +27,6 @@
     "dotenv": "^17.2.1",
     "fast-csv": "^4.3.6",
     "papaparse": "^5.4.1",
-    "puppeteer": "^21.0.0"
+    "puppeteer": "^24.17.0"
   }
 }
