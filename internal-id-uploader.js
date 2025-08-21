@@ -24,7 +24,7 @@ function withTimeout(promise, timeoutMs = 30000) {
     ]);
 }
 
-// Load data from JSON file
+// ENHANCED: Load data with ALL fields preserved including uploadConflicts
 function loadInternalIdsData() {
     if (!fs.existsSync(JSON_FILE)) {
         throw new Error(`JSON file not found: ${JSON_FILE}`);
@@ -34,12 +34,16 @@ function loadInternalIdsData() {
         const data = JSON.parse(fs.readFileSync(JSON_FILE, 'utf8'));
         console.log(`📖 Loaded internal IDs data:`);
         console.log(`   Athletes: ${Object.keys(data.athletes || {}).length}`);
-        console.log(`   Failed IDs: ${data.failedIds?.length || 0}`);
+        console.log(`   Failed IDs (retryable): ${data.failedIds?.length || 0}`);
+        console.log(`   Permanently failed IDs: ${data.permanentlyFailedIds?.length || 0}`);
+        console.log(`   Upload conflicts: ${data.uploadConflicts?.length || 0}`);
         console.log(`   Previously processed: ${Object.keys(data.processed || {}).length}`);
         
         return {
             athletes: data.athletes || {},
             failedIds: data.failedIds || [],
+            permanentlyFailedIds: data.permanentlyFailedIds || [], // ✅ PRESERVE
+            uploadConflicts: data.uploadConflicts || [], // ✅ NEW: Track conflicts
             lastProcessedId: data.lastProcessedId || 0,
             processed: data.processed || {}
         };
@@ -48,9 +52,26 @@ function loadInternalIdsData() {
     }
 }
 
-// Save updated data back to JSON file
+// ENHANCED: Save data with ALL fields preserved and conflict cleanup
 function saveInternalIdsData(data) {
     try {
+        // Ensure all arrays exist
+        if (!data.permanentlyFailedIds) data.permanentlyFailedIds = [];
+        if (!data.uploadConflicts) data.uploadConflicts = [];
+        
+        // Remove duplicates between failed and permanently failed
+        data.failedIds = data.failedIds.filter(id => !data.permanentlyFailedIds.includes(id));
+        
+        // Remove duplicates in uploadConflicts
+        const conflictIds = new Set();
+        data.uploadConflicts = data.uploadConflicts.filter(conflict => {
+            if (conflictIds.has(conflict.internalId)) {
+                return false; // Duplicate
+            }
+            conflictIds.add(conflict.internalId);
+            return true;
+        });
+        
         fs.writeFileSync(JSON_FILE, JSON.stringify(data, null, 2));
         return true;
     } catch (error) {
@@ -172,9 +193,20 @@ async function updateLifterInternalId(lifterId, internalId) {
     }
 }
 
-// Main processing function for a single athlete
-async function processAthlete(internalId, athleteName, errorLogger) {
+// SMART: Enhanced processing function with conflict detection and permanent skipping
+async function processAthlete(internalId, athleteName, errorLogger, data) {
     console.log(`\n🔍 Processing: ${athleteName} (Internal ID: ${internalId})`);
+    
+    // ✅ SMART: Check if this is a known conflict first
+    const knownConflict = data.uploadConflicts.find(c => c.internalId === parseInt(internalId));
+    if (knownConflict) {
+        console.log(`   ↷ Skipping known conflict: ${knownConflict.reason}`);
+        return {
+            success: true, // Don't retry
+            action: 'SKIPPED',
+            reason: 'Known conflict - permanently skipped'
+        };
+    }
     
     try {
         // Query by internal_id first
@@ -197,35 +229,72 @@ async function processAthlete(internalId, athleteName, errorLogger) {
             return { action: 'CREATED', success: true, lifterId: newLifter.lifter_id };
         }
         
-        // Case 3: Internal ID exists but with different name - MISMATCH
+        // Case 3: Internal ID exists but with different name - PERMANENT CONFLICT
         if (lifterByInternalId && lifterByInternalId.athlete_name !== athleteName) {
-            const errorMsg = `Internal ID ${internalId} exists with different name`;
-            console.log(`  ❌ NAME_MISMATCH: Expected "${athleteName}", found "${lifterByInternalId.athlete_name}"`);
+            const conflict = {
+                internalId: parseInt(internalId),
+                scrapedName: athleteName,
+                existingName: lifterByInternalId.athlete_name,
+                reason: `Internal ID ${internalId} already assigned to "${lifterByInternalId.athlete_name}"`,
+                conflictType: 'INTERNAL_ID_TAKEN',
+                detectedAt: new Date().toISOString()
+            };
+            
+            // Add to permanent conflicts list
+            data.uploadConflicts.push(conflict);
+            
+            console.log(`  ❌ PERMANENT CONFLICT: Internal ID ${internalId} already belongs to "${lifterByInternalId.athlete_name}"`);
+            console.log(`  📝 Added to permanent conflicts - will not retry`);
+            
+            // Log to CSV for record keeping (but don't retry)
             errorLogger.logError(
                 internalId,
                 athleteName,
-                'NAME_MISMATCH',
+                'PERMANENT_CONFLICT',
                 lifterByInternalId.athlete_name,
                 internalId,
-                errorMsg
+                'Internal ID conflict - permanently skipped'
             );
-            return { action: 'ERROR', success: false, errorType: 'NAME_MISMATCH' };
+            
+            return {
+                success: true, // Don't retry
+                action: 'CONFLICT',
+                reason: 'Permanent conflict logged'
+            };
         }
         
-        // Case 4: Name exists but with different internal_id - MISMATCH  
+        // Case 4: Name exists but with different internal_id - PERMANENT CONFLICT  
         if (lifterByName && lifterByName.internal_id && 
             lifterByName.internal_id !== parseInt(internalId)) {
-            const errorMsg = `Athlete "${athleteName}" exists with different internal_id`;
-            console.log(`  ❌ INTERNAL_ID_MISMATCH: Expected "${internalId}", found "${lifterByName.internal_id}"`);
+            
+            const conflict = {
+                internalId: parseInt(internalId),
+                scrapedName: athleteName,
+                existingInternalId: lifterByName.internal_id,
+                reason: `Athlete "${athleteName}" already has internal_id ${lifterByName.internal_id}`,
+                conflictType: 'NAME_HAS_DIFFERENT_ID',
+                detectedAt: new Date().toISOString()
+            };
+            
+            data.uploadConflicts.push(conflict);
+            
+            console.log(`  ❌ PERMANENT CONFLICT: "${athleteName}" already has internal_id ${lifterByName.internal_id}`);
+            console.log(`  📝 Added to permanent conflicts - will not retry`);
+            
             errorLogger.logError(
                 internalId,
                 athleteName,
-                'INTERNAL_ID_MISMATCH',
+                'PERMANENT_CONFLICT',
                 athleteName,
                 lifterByName.internal_id,
-                errorMsg
+                'Name has different internal_id - permanently skipped'
             );
-            return { action: 'ERROR', success: false, errorType: 'INTERNAL_ID_MISMATCH' };
+            
+            return {
+                success: true, // Don't retry
+                action: 'CONFLICT',
+                reason: 'Permanent conflict logged'
+            };
         }
         
         // Case 5: Name exists but internal_id is null - UPDATE
@@ -278,8 +347,8 @@ async function main() {
         // Test Supabase connection
         console.log('\n🔗 Testing Supabase connection...');
         
-        if (!process.env.SUPABASE_URL || !process.env.SUPABASE_ANON_KEY) {
-            throw new Error('Missing Supabase environment variables (SUPABASE_URL, SUPABASE_ANON_KEY)');
+        if (!process.env.SUPABASE_URL || !process.env.SUPABASE_SECRET_KEY) {
+            throw new Error('Missing Supabase environment variables (SUPABASE_URL, SUPABASE_SECRET_KEY)');
         }
         
         const { data: testData, error: testError } = await withTimeout(
@@ -297,21 +366,41 @@ async function main() {
         // Load data
         console.log('\n📖 Loading internal IDs data...');
         const data = loadInternalIdsData();
-        
+
+		const debugAllIds = Object.keys(data.athletes);
+		const debugProcessedIds = Object.keys(data.processed);
+		const debugConflictIds = data.uploadConflicts.map(c => c.internalId.toString());
+		        
         // Create error logger
         const errorLogger = createErrorLogger();
         
-        // Find unprocessed athletes
+        // Find unprocessed athletes (excluding known conflicts)
         const allInternalIds = Object.keys(data.athletes);
-        const unprocessedIds = allInternalIds.filter(id => !data.processed[id]);
+		const processedIds = Object.keys(data.processed).filter(id => data.processed[id] === true);
+		const conflictIds = data.uploadConflicts.map(c => c.internalId.toString());
+
+		// Debug: Check if ID 1 is being found
+		console.log(`🔍 Debug: ID 1 processed status: ${data.processed['1']}`);
+		console.log(`🔍 Debug: ID 1 exists in athletes: ${!!data.athletes['1']}`);
+		console.log(`🔍 Debug: Is ID "1" in processedIds? ${debugProcessedIds.includes('1')}`);
+		console.log(`🔍 Debug: Is ID "1" in conflictIds? ${debugConflictIds.includes('1')}`);
+
+		const unprocessedIds = allInternalIds
+			.filter(id => !processedIds.includes(id) && !conflictIds.includes(id))
+			.sort((a, b) => parseInt(a) - parseInt(b));
         
         console.log(`\n📊 Processing Summary:`);
         console.log(`   Total athletes in JSON: ${allInternalIds.length}`);
-        console.log(`   Previously processed: ${allInternalIds.length - unprocessedIds.length}`);
+        console.log(`   Previously processed: ${processedIds.length}`);
+        console.log(`   Known conflicts (permanently skipped): ${conflictIds.length}`);
         console.log(`   To process tonight: ${unprocessedIds.length}`);
         
         if (unprocessedIds.length === 0) {
             console.log('\n🎉 All athletes already processed - nothing to upload!');
+            console.log('\n📝 Conflict Summary:');
+            data.uploadConflicts.forEach(conflict => {
+                console.log(`   • ID ${conflict.internalId}: ${conflict.reason}`);
+            });
             return;
         }
         
@@ -322,6 +411,7 @@ async function main() {
             created: 0,
             updated: 0,
             skipped: 0,
+            conflicts: 0,
             errors: 0
         };
         
@@ -331,15 +421,16 @@ async function main() {
             
             console.log(`\n[${i + 1}/${unprocessedIds.length}] Processing ${athleteName}...`);
             
-            const result = await processAthlete(internalId, athleteName, errorLogger);
+            const result = await processAthlete(internalId, athleteName, errorLogger, data);
             
             // Update stats
             if (result.action === 'CREATED') stats.created++;
             else if (result.action === 'UPDATED') stats.updated++;
             else if (result.action === 'SKIPPED') stats.skipped++;
+            else if (result.action === 'CONFLICT') stats.conflicts++;
             else if (result.action === 'ERROR') stats.errors++;
             
-            // Mark as processed if successful
+            // Mark as processed if successful (including conflicts)
             if (result.success) {
                 data.processed[internalId] = true;
                 
@@ -364,15 +455,24 @@ async function main() {
             console.error('❌ Warning: Failed to save final progress to JSON file');
         }
         
-        // Summary report
+        // Enhanced summary report
         console.log('\n🎉 Internal ID Upload Completed!');
         console.log('================================');
         console.log(`📊 Results Summary:`);
         console.log(`   ➕ Created: ${stats.created} new lifters`);
         console.log(`   🔄 Updated: ${stats.updated} existing lifters`);
-        console.log(`   ⏭️ Skipped: ${stats.skipped} already correct`);
+        console.log(`   ⭐ Skipped: ${stats.skipped} already correct`);
+        console.log(`   ⚠️ Conflicts: ${stats.conflicts} permanently skipped`);
         console.log(`   ❌ Errors: ${stats.errors} failed`);
-        console.log(`   📁 Total processed: ${stats.created + stats.updated + stats.skipped}`);
+        console.log(`   📊 Total processed: ${stats.created + stats.updated + stats.skipped + stats.conflicts}`);
+        
+        if (stats.conflicts > 0) {
+            console.log(`\n📝 New Conflicts (permanently skipped):`);
+            const newConflicts = data.uploadConflicts.slice(-stats.conflicts);
+            newConflicts.forEach(conflict => {
+                console.log(`   • ID ${conflict.internalId}: ${conflict.reason}`);
+            });
+        }
         
         if (stats.errors > 0) {
             console.log(`\n⚠️ ${stats.errors} errors logged to: ${ERROR_LOG_FILE}`);
@@ -380,6 +480,7 @@ async function main() {
         
         console.log(`\n🕐 End time: ${new Date().toLocaleString()}`);
         console.log(`💾 Progress saved to: ${JSON_FILE}`);
+        console.log(`📁 Total permanent conflicts: ${data.uploadConflicts.length}`);
         
         // Exit with appropriate code for GitHub Actions
         if (stats.errors > 0) {
