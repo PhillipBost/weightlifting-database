@@ -119,18 +119,7 @@ async function scrapeAthleteData(page, id, retryCount = 0) {
     // Load existing data
     let data = loadExistingData();
     
-    const browser = await puppeteer.launch({
-        headless: "new",
-        args: [
-            '--no-sandbox',
-            '--disable-setuid-sandbox',
-            '--disable-dev-shm-usage',
-            '--disable-gpu',
-            '--no-first-run',
-            '--disable-extensions'
-        ],
-        slowMo: 25
-    });
+    browser = await puppeteer.launch({ headless: "new" });
     const page = await browser.newPage();
     
     // Set a user agent to appear more like a regular browser
