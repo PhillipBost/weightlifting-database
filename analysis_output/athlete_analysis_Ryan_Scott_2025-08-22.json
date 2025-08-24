@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-22T07:52:40.528Z",
+  "athleteName": "Ryan Scott",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1003756": [
+        {
+          "meet_id": 2700,
+          "date": "2017-06-17",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Ryan Scott",
+          "lifter_id": 31727,
+          "membershipNumbers": [
+            {
+              "athleteName": "Ryan Scott",
+              "membershipNumber": "1003756",
+              "fullText": "22  -  228  Ryan Scott  M  32  Middle GA Weightlifting  1003756  91.9  2017-06-17  -  Local  Georgia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNi0xNyIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ],
+      "1025637": [
+        {
+          "meet_id": 3108,
+          "date": "2018-09-01",
+          "age_category": "Open Men's",
+          "weight_class": "102kg",
+          "lifter_name": "Ryan Scott",
+          "lifter_id": 31727,
+          "membershipNumbers": [
+            {
+              "athleteName": "Ryan Scott",
+              "membershipNumber": "1025637",
+              "fullText": "3  -  233  Ryan Scott  M  30  -  1025637  97.95  2018-09-01  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOS0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOS0wMSIsIndlaWdodF9jbGFzcyI6ODh9"
+        },
+        {
+          "meet_id": 3604,
+          "date": "2019-01-20",
+          "age_category": "Open Men's",
+          "weight_class": "102kg",
+          "lifter_name": "Ryan Scott",
+          "lifter_id": 31727,
+          "membershipNumbers": [
+            {
+              "athleteName": "Ryan Scott",
+              "membershipNumber": "1025637",
+              "fullText": "22  -  162  Ryan Scott  M  31  -  1025637  97.35  2019-01-20  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0yMCIsIndlaWdodF9jbGFzcyI6ODh9"
+        },
+        {
+          "meet_id": 2992,
+          "date": "2018-04-15",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Ryan Scott",
+          "lifter_id": 31727,
+          "membershipNumbers": [
+            {
+              "athleteName": "Ryan Scott",
+              "membershipNumber": "1025637",
+              "fullText": "15  -  220  Ryan Scott  M  30  -  1025637  99.5  2018-04-15  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNC0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNC0xNSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Ryan Scott",
+    "splits": [
+      {
+        "newAthleteName": "Ryan Scott (Person 1)",
+        "membershipNumber": "1003756",
+        "competitionCount": 1,
+        "competitions": [
+          2700
+        ]
+      },
+      {
+        "newAthleteName": "Ryan Scott (Person 2)",
+        "membershipNumber": "1025637",
+        "competitionCount": 3,
+        "competitions": [
+          3108,
+          3604,
+          2992
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Ryan Scott",
+    "competitions": [
+      {
+        "meet_id": 3108,
+        "date": "2018-09-01",
+        "age_category": "Open Men's",
+        "weight_class": "102kg",
+        "lifter_name": "Ryan Scott",
+        "lifter_id": 31727,
+        "membershipNumbers": [
+          {
+            "athleteName": "Ryan Scott",
+            "membershipNumber": "1025637",
+            "fullText": "3  -  233  Ryan Scott  M  30  -  1025637  97.95  2018-09-01  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOS0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOS0wMSIsIndlaWdodF9jbGFzcyI6ODh9"
+      },
+      {
+        "meet_id": 3604,
+        "date": "2019-01-20",
+        "age_category": "Open Men's",
+        "weight_class": "102kg",
+        "lifter_name": "Ryan Scott",
+        "lifter_id": 31727,
+        "membershipNumbers": [
+          {
+            "athleteName": "Ryan Scott",
+            "membershipNumber": "1025637",
+            "fullText": "22  -  162  Ryan Scott  M  31  -  1025637  97.35  2019-01-20  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0yMCIsIndlaWdodF9jbGFzcyI6ODh9"
+      },
+      {
+        "meet_id": 2700,
+        "date": "2017-06-17",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Ryan Scott",
+        "lifter_id": 31727,
+        "membershipNumbers": [
+          {
+            "athleteName": "Ryan Scott",
+            "membershipNumber": "1003756",
+            "fullText": "22  -  228  Ryan Scott  M  32  Middle GA Weightlifting  1003756  91.9  2017-06-17  -  Local  Georgia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNi0xNyIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 2992,
+        "date": "2018-04-15",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Ryan Scott",
+        "lifter_id": 31727,
+        "membershipNumbers": [
+          {
+            "athleteName": "Ryan Scott",
+            "membershipNumber": "1025637",
+            "fullText": "15  -  220  Ryan Scott  M  30  -  1025637  99.5  2018-04-15  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNC0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNC0xNSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1003756": [
+          {
+            "meet_id": 2700,
+            "date": "2017-06-17",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Ryan Scott",
+            "lifter_id": 31727,
+            "membershipNumbers": [
+              {
+                "athleteName": "Ryan Scott",
+                "membershipNumber": "1003756",
+                "fullText": "22  -  228  Ryan Scott  M  32  Middle GA Weightlifting  1003756  91.9  2017-06-17  -  Local  Georgia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNi0xNyIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          }
+        ],
+        "1025637": [
+          {
+            "meet_id": 3108,
+            "date": "2018-09-01",
+            "age_category": "Open Men's",
+            "weight_class": "102kg",
+            "lifter_name": "Ryan Scott",
+            "lifter_id": 31727,
+            "membershipNumbers": [
+              {
+                "athleteName": "Ryan Scott",
+                "membershipNumber": "1025637",
+                "fullText": "3  -  233  Ryan Scott  M  30  -  1025637  97.95  2018-09-01  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOS0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOS0wMSIsIndlaWdodF9jbGFzcyI6ODh9"
+          },
+          {
+            "meet_id": 3604,
+            "date": "2019-01-20",
+            "age_category": "Open Men's",
+            "weight_class": "102kg",
+            "lifter_name": "Ryan Scott",
+            "lifter_id": 31727,
+            "membershipNumbers": [
+              {
+                "athleteName": "Ryan Scott",
+                "membershipNumber": "1025637",
+                "fullText": "22  -  162  Ryan Scott  M  31  -  1025637  97.35  2019-01-20  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0yMCIsIndlaWdodF9jbGFzcyI6ODh9"
+          },
+          {
+            "meet_id": 2992,
+            "date": "2018-04-15",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Ryan Scott",
+            "lifter_id": 31727,
+            "membershipNumbers": [
+              {
+                "athleteName": "Ryan Scott",
+                "membershipNumber": "1025637",
+                "fullText": "15  -  220  Ryan Scott  M  30  -  1025637  99.5  2018-04-15  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNC0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNC0xNSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

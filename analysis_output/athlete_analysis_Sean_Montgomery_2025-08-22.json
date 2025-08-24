@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T22:39:31.645Z",
+  "athleteName": "Sean Montgomery",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "186250": [
+        {
+          "meet_id": 820,
+          "date": "2013-08-24",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Sean Montgomery",
+          "lifter_id": 6045,
+          "membershipNumbers": [
+            {
+              "athleteName": "Sean Montgomery",
+              "membershipNumber": "186250",
+              "fullText": "11  -  220  Sean Montgomery  M  18  TEAM FLORIDA GULFCOAST WL  186250  85.85  2013-08-24  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wOC0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wOC0yNCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        },
+        {
+          "meet_id": 823,
+          "date": "2013-11-10",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Sean Montgomery",
+          "lifter_id": 6045,
+          "membershipNumbers": [
+            {
+              "athleteName": "Sean Montgomery",
+              "membershipNumber": "186250",
+              "fullText": "21  -  218  Sean Montgomery  M  18  TEAM FLORIDA GULFCOAST WL  186250  91.2  2013-11-10  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMS0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMS0xMCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ],
+      "1002674": [
+        {
+          "meet_id": 1723,
+          "date": "2016-01-30",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Sean Montgomery",
+          "lifter_id": 6045,
+          "membershipNumbers": [
+            {
+              "athleteName": "Sean Montgomery",
+              "membershipNumber": "1002674",
+              "fullText": "5  -  251  Sean Montgomery  M  21  -  1002674  97.1  2016-01-30  -  Local  Mountain North"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0zMCIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Sean Montgomery",
+    "splits": [
+      {
+        "newAthleteName": "Sean Montgomery (Person 1)",
+        "membershipNumber": "186250",
+        "competitionCount": 2,
+        "competitions": [
+          820,
+          823
+        ]
+      },
+      {
+        "newAthleteName": "Sean Montgomery (Person 2)",
+        "membershipNumber": "1002674",
+        "competitionCount": 1,
+        "competitions": [
+          1723
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Sean Montgomery",
+    "competitions": [
+      {
+        "meet_id": 820,
+        "date": "2013-08-24",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Sean Montgomery",
+        "lifter_id": 6045,
+        "membershipNumbers": [
+          {
+            "athleteName": "Sean Montgomery",
+            "membershipNumber": "186250",
+            "fullText": "11  -  220  Sean Montgomery  M  18  TEAM FLORIDA GULFCOAST WL  186250  85.85  2013-08-24  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wOC0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wOC0yNCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 823,
+        "date": "2013-11-10",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Sean Montgomery",
+        "lifter_id": 6045,
+        "membershipNumbers": [
+          {
+            "athleteName": "Sean Montgomery",
+            "membershipNumber": "186250",
+            "fullText": "21  -  218  Sean Montgomery  M  18  TEAM FLORIDA GULFCOAST WL  186250  91.2  2013-11-10  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMS0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMS0xMCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 1723,
+        "date": "2016-01-30",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Sean Montgomery",
+        "lifter_id": 6045,
+        "membershipNumbers": [
+          {
+            "athleteName": "Sean Montgomery",
+            "membershipNumber": "1002674",
+            "fullText": "5  -  251  Sean Montgomery  M  21  -  1002674  97.1  2016-01-30  -  Local  Mountain North"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0zMCIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "186250": [
+          {
+            "meet_id": 820,
+            "date": "2013-08-24",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Sean Montgomery",
+            "lifter_id": 6045,
+            "membershipNumbers": [
+              {
+                "athleteName": "Sean Montgomery",
+                "membershipNumber": "186250",
+                "fullText": "11  -  220  Sean Montgomery  M  18  TEAM FLORIDA GULFCOAST WL  186250  85.85  2013-08-24  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wOC0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wOC0yNCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          },
+          {
+            "meet_id": 823,
+            "date": "2013-11-10",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Sean Montgomery",
+            "lifter_id": 6045,
+            "membershipNumbers": [
+              {
+                "athleteName": "Sean Montgomery",
+                "membershipNumber": "186250",
+                "fullText": "21  -  218  Sean Montgomery  M  18  TEAM FLORIDA GULFCOAST WL  186250  91.2  2013-11-10  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMS0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMS0xMCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          }
+        ],
+        "1002674": [
+          {
+            "meet_id": 1723,
+            "date": "2016-01-30",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Sean Montgomery",
+            "lifter_id": 6045,
+            "membershipNumbers": [
+              {
+                "athleteName": "Sean Montgomery",
+                "membershipNumber": "1002674",
+                "fullText": "5  -  251  Sean Montgomery  M  21  -  1002674  97.1  2016-01-30  -  Local  Mountain North"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0zMCIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

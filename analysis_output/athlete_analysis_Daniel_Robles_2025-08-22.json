@@ -1,0 +1,112 @@
+{
+  "timestamp": "2025-08-22T16:17:56.796Z",
+  "athleteName": "Daniel Robles",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 1,
+    "membershipGroups": {
+      "1010056": [
+        {
+          "meet_id": 3488,
+          "date": "2018-10-27",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Daniel Robles",
+          "lifter_id": 20814,
+          "membershipNumbers": [
+            {
+              "athleteName": "Daniel Robles",
+              "membershipNumber": "1010056",
+              "fullText": "19  -  238  Daniel Robles  M  35  XCEL BARBELL CLUB  1010056  80.06  2018-10-27  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yNyIsIndlaWdodF9jbGFzcyI6ODV9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 1536,
+        "date": "2014-08-16",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Daniel Robles",
+        "lifter_id": 20814,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      }
+    ],
+    "splitRequired": false
+  },
+  "splitPlan": {
+    "action": "NO_SPLIT_NEEDED",
+    "reason": "Only one distinct athlete found"
+  },
+  "rawData": {
+    "athleteName": "Daniel Robles",
+    "competitions": [
+      {
+        "meet_id": 1536,
+        "date": "2014-08-16",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Daniel Robles",
+        "lifter_id": 20814,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 3488,
+        "date": "2018-10-27",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Daniel Robles",
+        "lifter_id": 20814,
+        "membershipNumbers": [
+          {
+            "athleteName": "Daniel Robles",
+            "membershipNumber": "1010056",
+            "fullText": "19  -  238  Daniel Robles  M  35  XCEL BARBELL CLUB  1010056  80.06  2018-10-27  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yNyIsIndlaWdodF9jbGFzcyI6ODV9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 1,
+      "membershipGroups": {
+        "1010056": [
+          {
+            "meet_id": 3488,
+            "date": "2018-10-27",
+            "age_category": "Open Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Daniel Robles",
+            "lifter_id": 20814,
+            "membershipNumbers": [
+              {
+                "athleteName": "Daniel Robles",
+                "membershipNumber": "1010056",
+                "fullText": "19  -  238  Daniel Robles  M  35  XCEL BARBELL CLUB  1010056  80.06  2018-10-27  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yNyIsIndlaWdodF9jbGFzcyI6ODV9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 1536,
+          "date": "2014-08-16",
+          "age_category": "Open Men's",
+          "weight_class": "+105 kg",
+          "lifter_name": "Daniel Robles",
+          "lifter_id": 20814,
+          "membershipNumbers": [],
+          "error": "No division code found for: \"Open Men's +105 kg\""
+        }
+      ],
+      "splitRequired": false
+    }
+  }
+}

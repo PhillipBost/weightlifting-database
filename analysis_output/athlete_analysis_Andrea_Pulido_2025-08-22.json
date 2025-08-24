@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-22T21:09:35.939Z",
+  "athleteName": "Andrea Pulido",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1005745": [
+        {
+          "meet_id": 541,
+          "date": "2016-09-10",
+          "age_category": "Open Women's",
+          "weight_class": "+75 Kg",
+          "lifter_name": "Andrea Pulido",
+          "lifter_id": 17226,
+          "membershipNumbers": [
+            {
+              "athleteName": "Andrea Pulido",
+              "membershipNumber": "1005745",
+              "fullText": "9  -  94  Andrea Pulido  F  22  SANTA BARBARA STRENGTH  1005745  76.2  2016-09-10  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOS0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOS0xMCIsIndlaWdodF9jbGFzcyI6MzY4fQ=="
+        },
+        {
+          "meet_id": 1917,
+          "date": "2016-05-14",
+          "age_category": "Open Women's",
+          "weight_class": "75 kg",
+          "lifter_name": "Andrea Pulido",
+          "lifter_id": 17226,
+          "membershipNumbers": [
+            {
+              "athleteName": "Andrea Pulido",
+              "membershipNumber": "1005745",
+              "fullText": "9  -  86  Andrea Pulido  F  22  SANTA BARBARA STRENGTH  1005745  73.2  2016-05-14  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0xNCIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+        }
+      ],
+      "1077350": [
+        {
+          "meet_id": 6535,
+          "date": "2024-09-28",
+          "age_category": "Open Women's",
+          "weight_class": "+87kg",
+          "lifter_name": "Andrea Pulido",
+          "lifter_id": 17226,
+          "membershipNumbers": [
+            {
+              "athleteName": "Andrea Pulido",
+              "membershipNumber": "1077350",
+              "fullText": "27  -  96  Andrea Pulido  F  22  The Strength Tank Weightlifting Club  1077350  99.2  2024-09-28  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOS0yOCIsIndlaWdodF9jbGFzcyI6MTAwfQ=="
+        },
+        {
+          "meet_id": 6452,
+          "date": "2024-07-13",
+          "age_category": "Open Women's",
+          "weight_class": "+87kg",
+          "lifter_name": "Andrea Pulido",
+          "lifter_id": 17226,
+          "membershipNumbers": [
+            {
+              "athleteName": "Andrea Pulido",
+              "membershipNumber": "1077350",
+              "fullText": "10  -  86  Andrea Pulido  F  22  The Strength Tank Weightlifting Club  1077350  93.4  2024-07-13  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNy0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNy0xMyIsIndlaWdodF9jbGFzcyI6MTAwfQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Andrea Pulido",
+    "splits": [
+      {
+        "newAthleteName": "Andrea Pulido (Person 1)",
+        "membershipNumber": "1005745",
+        "competitionCount": 2,
+        "competitions": [
+          541,
+          1917
+        ]
+      },
+      {
+        "newAthleteName": "Andrea Pulido (Person 2)",
+        "membershipNumber": "1077350",
+        "competitionCount": 2,
+        "competitions": [
+          6535,
+          6452
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Andrea Pulido",
+    "competitions": [
+      {
+        "meet_id": 6535,
+        "date": "2024-09-28",
+        "age_category": "Open Women's",
+        "weight_class": "+87kg",
+        "lifter_name": "Andrea Pulido",
+        "lifter_id": 17226,
+        "membershipNumbers": [
+          {
+            "athleteName": "Andrea Pulido",
+            "membershipNumber": "1077350",
+            "fullText": "27  -  96  Andrea Pulido  F  22  The Strength Tank Weightlifting Club  1077350  99.2  2024-09-28  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOS0yOCIsIndlaWdodF9jbGFzcyI6MTAwfQ=="
+      },
+      {
+        "meet_id": 6452,
+        "date": "2024-07-13",
+        "age_category": "Open Women's",
+        "weight_class": "+87kg",
+        "lifter_name": "Andrea Pulido",
+        "lifter_id": 17226,
+        "membershipNumbers": [
+          {
+            "athleteName": "Andrea Pulido",
+            "membershipNumber": "1077350",
+            "fullText": "10  -  86  Andrea Pulido  F  22  The Strength Tank Weightlifting Club  1077350  93.4  2024-07-13  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNy0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNy0xMyIsIndlaWdodF9jbGFzcyI6MTAwfQ=="
+      },
+      {
+        "meet_id": 541,
+        "date": "2016-09-10",
+        "age_category": "Open Women's",
+        "weight_class": "+75 Kg",
+        "lifter_name": "Andrea Pulido",
+        "lifter_id": 17226,
+        "membershipNumbers": [
+          {
+            "athleteName": "Andrea Pulido",
+            "membershipNumber": "1005745",
+            "fullText": "9  -  94  Andrea Pulido  F  22  SANTA BARBARA STRENGTH  1005745  76.2  2016-09-10  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOS0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOS0xMCIsIndlaWdodF9jbGFzcyI6MzY4fQ=="
+      },
+      {
+        "meet_id": 1917,
+        "date": "2016-05-14",
+        "age_category": "Open Women's",
+        "weight_class": "75 kg",
+        "lifter_name": "Andrea Pulido",
+        "lifter_id": 17226,
+        "membershipNumbers": [
+          {
+            "athleteName": "Andrea Pulido",
+            "membershipNumber": "1005745",
+            "fullText": "9  -  86  Andrea Pulido  F  22  SANTA BARBARA STRENGTH  1005745  73.2  2016-05-14  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0xNCIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1005745": [
+          {
+            "meet_id": 541,
+            "date": "2016-09-10",
+            "age_category": "Open Women's",
+            "weight_class": "+75 Kg",
+            "lifter_name": "Andrea Pulido",
+            "lifter_id": 17226,
+            "membershipNumbers": [
+              {
+                "athleteName": "Andrea Pulido",
+                "membershipNumber": "1005745",
+                "fullText": "9  -  94  Andrea Pulido  F  22  SANTA BARBARA STRENGTH  1005745  76.2  2016-09-10  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOS0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOS0xMCIsIndlaWdodF9jbGFzcyI6MzY4fQ=="
+          },
+          {
+            "meet_id": 1917,
+            "date": "2016-05-14",
+            "age_category": "Open Women's",
+            "weight_class": "75 kg",
+            "lifter_name": "Andrea Pulido",
+            "lifter_id": 17226,
+            "membershipNumbers": [
+              {
+                "athleteName": "Andrea Pulido",
+                "membershipNumber": "1005745",
+                "fullText": "9  -  86  Andrea Pulido  F  22  SANTA BARBARA STRENGTH  1005745  73.2  2016-05-14  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0xNCIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+          }
+        ],
+        "1077350": [
+          {
+            "meet_id": 6535,
+            "date": "2024-09-28",
+            "age_category": "Open Women's",
+            "weight_class": "+87kg",
+            "lifter_name": "Andrea Pulido",
+            "lifter_id": 17226,
+            "membershipNumbers": [
+              {
+                "athleteName": "Andrea Pulido",
+                "membershipNumber": "1077350",
+                "fullText": "27  -  96  Andrea Pulido  F  22  The Strength Tank Weightlifting Club  1077350  99.2  2024-09-28  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOS0yOCIsIndlaWdodF9jbGFzcyI6MTAwfQ=="
+          },
+          {
+            "meet_id": 6452,
+            "date": "2024-07-13",
+            "age_category": "Open Women's",
+            "weight_class": "+87kg",
+            "lifter_name": "Andrea Pulido",
+            "lifter_id": 17226,
+            "membershipNumbers": [
+              {
+                "athleteName": "Andrea Pulido",
+                "membershipNumber": "1077350",
+                "fullText": "10  -  86  Andrea Pulido  F  22  The Strength Tank Weightlifting Club  1077350  93.4  2024-07-13  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNy0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNy0xMyIsIndlaWdodF9jbGFzcyI6MTAwfQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

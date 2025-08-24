@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T08:43:58.114Z",
+  "athleteName": "Jacob Davis",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1043795": [
+        {
+          "meet_id": 4144,
+          "date": "2019-08-03",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Jacob Davis",
+          "lifter_id": 43439,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jacob Davis",
+              "membershipNumber": "1043795",
+              "fullText": "9  -  199  Jacob Davis  M  25  Team Florida Pensacola  1043795  75.3  2019-08-03  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOC0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOC0wMyIsIndlaWdodF9jbGFzcyI6ODV9"
+        }
+      ],
+      "1070169": [
+        {
+          "meet_id": 5836,
+          "date": "2023-04-19",
+          "age_category": "Men's 16-17 Age Group",
+          "weight_class": "67kg",
+          "lifter_name": "Jacob Davis",
+          "lifter_id": 43439,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jacob Davis",
+              "membershipNumber": "1070169",
+              "fullText": "1  -  134  Jacob Davis  M  17  Falcons Barbell Club  1070169  67  2023-04-19  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0xOSIsIndlaWdodF9jbGFzcyI6NH0="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Jacob Davis",
+    "splits": [
+      {
+        "newAthleteName": "Jacob Davis (Person 1)",
+        "membershipNumber": "1043795",
+        "competitionCount": 1,
+        "competitions": [
+          4144
+        ]
+      },
+      {
+        "newAthleteName": "Jacob Davis (Person 2)",
+        "membershipNumber": "1070169",
+        "competitionCount": 1,
+        "competitions": [
+          5836
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Jacob Davis",
+    "competitions": [
+      {
+        "meet_id": 5836,
+        "date": "2023-04-19",
+        "age_category": "Men's 16-17 Age Group",
+        "weight_class": "67kg",
+        "lifter_name": "Jacob Davis",
+        "lifter_id": 43439,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jacob Davis",
+            "membershipNumber": "1070169",
+            "fullText": "1  -  134  Jacob Davis  M  17  Falcons Barbell Club  1070169  67  2023-04-19  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0xOSIsIndlaWdodF9jbGFzcyI6NH0="
+      },
+      {
+        "meet_id": 4144,
+        "date": "2019-08-03",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Jacob Davis",
+        "lifter_id": 43439,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jacob Davis",
+            "membershipNumber": "1043795",
+            "fullText": "9  -  199  Jacob Davis  M  25  Team Florida Pensacola  1043795  75.3  2019-08-03  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOC0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOC0wMyIsIndlaWdodF9jbGFzcyI6ODV9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1043795": [
+          {
+            "meet_id": 4144,
+            "date": "2019-08-03",
+            "age_category": "Open Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Jacob Davis",
+            "lifter_id": 43439,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jacob Davis",
+                "membershipNumber": "1043795",
+                "fullText": "9  -  199  Jacob Davis  M  25  Team Florida Pensacola  1043795  75.3  2019-08-03  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOC0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOC0wMyIsIndlaWdodF9jbGFzcyI6ODV9"
+          }
+        ],
+        "1070169": [
+          {
+            "meet_id": 5836,
+            "date": "2023-04-19",
+            "age_category": "Men's 16-17 Age Group",
+            "weight_class": "67kg",
+            "lifter_name": "Jacob Davis",
+            "lifter_id": 43439,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jacob Davis",
+                "membershipNumber": "1070169",
+                "fullText": "1  -  134  Jacob Davis  M  17  Falcons Barbell Club  1070169  67  2023-04-19  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0xOSIsIndlaWdodF9jbGFzcyI6NH0="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T15:48:47.610Z",
+  "athleteName": "Linh Nguyen",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "197410": [
+        {
+          "meet_id": 4523,
+          "date": "2021-03-31",
+          "age_category": "Men's Masters (35-39)",
+          "weight_class": "67kg",
+          "lifter_name": "Linh Nguyen",
+          "lifter_id": 32312,
+          "membershipNumbers": [
+            {
+              "athleteName": "Linh Nguyen",
+              "membershipNumber": "197410",
+              "fullText": "1  -  186  Linh Nguyen  M  36  RCF Weightlifting Club  197410  66  2021-03-31  -  Local  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMy0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMy0zMSIsIndlaWdodF9jbGFzcyI6MTAzfQ=="
+        }
+      ],
+      "1023142": [
+        {
+          "meet_id": 2788,
+          "date": "2017-09-23",
+          "age_category": "Open Women's",
+          "weight_class": "63 kg",
+          "lifter_name": "Linh Nguyen",
+          "lifter_id": 32312,
+          "membershipNumbers": [
+            {
+              "athleteName": "Linh Nguyen",
+              "membershipNumber": "1023142",
+              "fullText": "7  -  113  Linh Nguyen  F  25  Omaha Alpha Weightlifting  1023142  61.4  2017-09-23  -  Local  Iowa-Nebraska"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wOS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wOS0yMyIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+        },
+        {
+          "meet_id": 3508,
+          "date": "2018-09-29",
+          "age_category": "Open Women's",
+          "weight_class": "71kg",
+          "lifter_name": "Linh Nguyen",
+          "lifter_id": 32312,
+          "membershipNumbers": [
+            {
+              "athleteName": "Linh Nguyen",
+              "membershipNumber": "1023142",
+              "fullText": "9  -  116  Linh Nguyen  F  26  Omaha Alpha Weightlifting  1023142  69.7  2018-09-29  -  Local  Iowa-Nebraska"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOS0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOS0yOSIsIndlaWdodF9jbGFzcyI6OTZ9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Linh Nguyen",
+    "splits": [
+      {
+        "newAthleteName": "Linh Nguyen (Person 1)",
+        "membershipNumber": "197410",
+        "competitionCount": 1,
+        "competitions": [
+          4523
+        ]
+      },
+      {
+        "newAthleteName": "Linh Nguyen (Person 2)",
+        "membershipNumber": "1023142",
+        "competitionCount": 2,
+        "competitions": [
+          2788,
+          3508
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Linh Nguyen",
+    "competitions": [
+      {
+        "meet_id": 4523,
+        "date": "2021-03-31",
+        "age_category": "Men's Masters (35-39)",
+        "weight_class": "67kg",
+        "lifter_name": "Linh Nguyen",
+        "lifter_id": 32312,
+        "membershipNumbers": [
+          {
+            "athleteName": "Linh Nguyen",
+            "membershipNumber": "197410",
+            "fullText": "1  -  186  Linh Nguyen  M  36  RCF Weightlifting Club  197410  66  2021-03-31  -  Local  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMy0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMy0zMSIsIndlaWdodF9jbGFzcyI6MTAzfQ=="
+      },
+      {
+        "meet_id": 2788,
+        "date": "2017-09-23",
+        "age_category": "Open Women's",
+        "weight_class": "63 kg",
+        "lifter_name": "Linh Nguyen",
+        "lifter_id": 32312,
+        "membershipNumbers": [
+          {
+            "athleteName": "Linh Nguyen",
+            "membershipNumber": "1023142",
+            "fullText": "7  -  113  Linh Nguyen  F  25  Omaha Alpha Weightlifting  1023142  61.4  2017-09-23  -  Local  Iowa-Nebraska"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wOS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wOS0yMyIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+      },
+      {
+        "meet_id": 3508,
+        "date": "2018-09-29",
+        "age_category": "Open Women's",
+        "weight_class": "71kg",
+        "lifter_name": "Linh Nguyen",
+        "lifter_id": 32312,
+        "membershipNumbers": [
+          {
+            "athleteName": "Linh Nguyen",
+            "membershipNumber": "1023142",
+            "fullText": "9  -  116  Linh Nguyen  F  26  Omaha Alpha Weightlifting  1023142  69.7  2018-09-29  -  Local  Iowa-Nebraska"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOS0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOS0yOSIsIndlaWdodF9jbGFzcyI6OTZ9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "197410": [
+          {
+            "meet_id": 4523,
+            "date": "2021-03-31",
+            "age_category": "Men's Masters (35-39)",
+            "weight_class": "67kg",
+            "lifter_name": "Linh Nguyen",
+            "lifter_id": 32312,
+            "membershipNumbers": [
+              {
+                "athleteName": "Linh Nguyen",
+                "membershipNumber": "197410",
+                "fullText": "1  -  186  Linh Nguyen  M  36  RCF Weightlifting Club  197410  66  2021-03-31  -  Local  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMy0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMy0zMSIsIndlaWdodF9jbGFzcyI6MTAzfQ=="
+          }
+        ],
+        "1023142": [
+          {
+            "meet_id": 2788,
+            "date": "2017-09-23",
+            "age_category": "Open Women's",
+            "weight_class": "63 kg",
+            "lifter_name": "Linh Nguyen",
+            "lifter_id": 32312,
+            "membershipNumbers": [
+              {
+                "athleteName": "Linh Nguyen",
+                "membershipNumber": "1023142",
+                "fullText": "7  -  113  Linh Nguyen  F  25  Omaha Alpha Weightlifting  1023142  61.4  2017-09-23  -  Local  Iowa-Nebraska"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wOS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wOS0yMyIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+          },
+          {
+            "meet_id": 3508,
+            "date": "2018-09-29",
+            "age_category": "Open Women's",
+            "weight_class": "71kg",
+            "lifter_name": "Linh Nguyen",
+            "lifter_id": 32312,
+            "membershipNumbers": [
+              {
+                "athleteName": "Linh Nguyen",
+                "membershipNumber": "1023142",
+                "fullText": "9  -  116  Linh Nguyen  F  26  Omaha Alpha Weightlifting  1023142  69.7  2018-09-29  -  Local  Iowa-Nebraska"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOS0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOS0yOSIsIndlaWdodF9jbGFzcyI6OTZ9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

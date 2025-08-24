@@ -1,0 +1,243 @@
+{
+  "timestamp": "2025-08-22T08:26:12.109Z",
+  "athleteName": "Jacob Harris",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1032910": [
+        {
+          "meet_id": 4032,
+          "date": "2019-07-13",
+          "age_category": "Open Men's",
+          "weight_class": "73kg",
+          "lifter_name": "Jacob Harris",
+          "lifter_id": 40015,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jacob Harris",
+              "membershipNumber": "1032910",
+              "fullText": "8  -  204  Jacob Harris  M  21  -  1032910  71.4  2019-07-13  -  Local  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0xMyIsIndlaWdodF9jbGFzcyI6ODR9"
+        },
+        {
+          "meet_id": 3793,
+          "date": "2019-09-15",
+          "age_category": "Open Men's",
+          "weight_class": "73kg",
+          "lifter_name": "Jacob Harris",
+          "lifter_id": 40015,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jacob Harris",
+              "membershipNumber": "1032910",
+              "fullText": "27  -  208  Jacob Harris  M  21  -  1032910  72.41  2019-09-15  -  National  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOS0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOS0xNSIsIndlaWdodF9jbGFzcyI6ODR9"
+        }
+      ],
+      "1036686": [
+        {
+          "meet_id": 3955,
+          "date": "2019-05-25",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "Jacob Harris",
+          "lifter_id": 40015,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jacob Harris",
+              "membershipNumber": "1036686",
+              "fullText": "14  -  185  Jacob Harris  M  16  -  1036686  86.5  2019-05-25  -  Local  Missouri Valley"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0yNSIsIndlaWdodF9jbGFzcyI6ODZ9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 3675,
+        "date": "2019-02-02",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Jacob Harris",
+        "lifter_id": 40015,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMi0wMiIsIndlaWdodF9jbGFzcyI6ODZ9"
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Jacob Harris",
+    "splits": [
+      {
+        "newAthleteName": "Jacob Harris (Person 1)",
+        "membershipNumber": "1032910",
+        "competitionCount": 2,
+        "competitions": [
+          4032,
+          3793
+        ]
+      },
+      {
+        "newAthleteName": "Jacob Harris (Person 2)",
+        "membershipNumber": "1036686",
+        "competitionCount": 1,
+        "competitions": [
+          3955
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 3675,
+        "date": "2019-02-02",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Jacob Harris",
+        "lifter_id": 40015,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMi0wMiIsIndlaWdodF9jbGFzcyI6ODZ9"
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Jacob Harris",
+    "competitions": [
+      {
+        "meet_id": 4032,
+        "date": "2019-07-13",
+        "age_category": "Open Men's",
+        "weight_class": "73kg",
+        "lifter_name": "Jacob Harris",
+        "lifter_id": 40015,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jacob Harris",
+            "membershipNumber": "1032910",
+            "fullText": "8  -  204  Jacob Harris  M  21  -  1032910  71.4  2019-07-13  -  Local  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0xMyIsIndlaWdodF9jbGFzcyI6ODR9"
+      },
+      {
+        "meet_id": 3675,
+        "date": "2019-02-02",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Jacob Harris",
+        "lifter_id": 40015,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMi0wMiIsIndlaWdodF9jbGFzcyI6ODZ9"
+      },
+      {
+        "meet_id": 3793,
+        "date": "2019-09-15",
+        "age_category": "Open Men's",
+        "weight_class": "73kg",
+        "lifter_name": "Jacob Harris",
+        "lifter_id": 40015,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jacob Harris",
+            "membershipNumber": "1032910",
+            "fullText": "27  -  208  Jacob Harris  M  21  -  1032910  72.41  2019-09-15  -  National  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOS0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOS0xNSIsIndlaWdodF9jbGFzcyI6ODR9"
+      },
+      {
+        "meet_id": 3955,
+        "date": "2019-05-25",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Jacob Harris",
+        "lifter_id": 40015,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jacob Harris",
+            "membershipNumber": "1036686",
+            "fullText": "14  -  185  Jacob Harris  M  16  -  1036686  86.5  2019-05-25  -  Local  Missouri Valley"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0yNSIsIndlaWdodF9jbGFzcyI6ODZ9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1032910": [
+          {
+            "meet_id": 4032,
+            "date": "2019-07-13",
+            "age_category": "Open Men's",
+            "weight_class": "73kg",
+            "lifter_name": "Jacob Harris",
+            "lifter_id": 40015,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jacob Harris",
+                "membershipNumber": "1032910",
+                "fullText": "8  -  204  Jacob Harris  M  21  -  1032910  71.4  2019-07-13  -  Local  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0xMyIsIndlaWdodF9jbGFzcyI6ODR9"
+          },
+          {
+            "meet_id": 3793,
+            "date": "2019-09-15",
+            "age_category": "Open Men's",
+            "weight_class": "73kg",
+            "lifter_name": "Jacob Harris",
+            "lifter_id": 40015,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jacob Harris",
+                "membershipNumber": "1032910",
+                "fullText": "27  -  208  Jacob Harris  M  21  -  1032910  72.41  2019-09-15  -  National  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOS0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOS0xNSIsIndlaWdodF9jbGFzcyI6ODR9"
+          }
+        ],
+        "1036686": [
+          {
+            "meet_id": 3955,
+            "date": "2019-05-25",
+            "age_category": "Open Men's",
+            "weight_class": "89kg",
+            "lifter_name": "Jacob Harris",
+            "lifter_id": 40015,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jacob Harris",
+                "membershipNumber": "1036686",
+                "fullText": "14  -  185  Jacob Harris  M  16  -  1036686  86.5  2019-05-25  -  Local  Missouri Valley"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0yNSIsIndlaWdodF9jbGFzcyI6ODZ9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 3675,
+          "date": "2019-02-02",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "Jacob Harris",
+          "lifter_id": 40015,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMi0wMiIsIndlaWdodF9jbGFzcyI6ODZ9"
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

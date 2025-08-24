@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T22:20:29.633Z",
+  "athleteName": "Samantha Smith",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "2019": [
+        {
+          "meet_id": 4299,
+          "date": "2019-11-03",
+          "age_category": "Open Women's",
+          "weight_class": "55kg",
+          "lifter_name": "Samantha Smith",
+          "lifter_id": 43212,
+          "membershipNumbers": [
+            {
+              "athleteName": "Samantha Smith",
+              "membershipNumber": "2019",
+              "fullText": "20  -  95  Samantha Smith  F  21  -  -  54.7  2019-11-03  -  Local  -"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0wMyIsIndlaWdodF9jbGFzcyI6OTN9"
+        }
+      ],
+      "1040259": [
+        {
+          "meet_id": 4938,
+          "date": "2021-07-24",
+          "age_category": "Open Women's",
+          "weight_class": "87kg",
+          "lifter_name": "Samantha Smith",
+          "lifter_id": 43212,
+          "membershipNumbers": [
+            {
+              "athleteName": "Samantha Smith",
+              "membershipNumber": "1040259",
+              "fullText": "3  -  148  Samantha Smith  F  28  Powerhouse Performance  1040259  82.05  2021-07-24  -  Local  Mountain North"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNy0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNy0yNCIsIndlaWdodF9jbGFzcyI6OTl9"
+        },
+        {
+          "meet_id": 4107,
+          "date": "2019-07-13",
+          "age_category": "Open Women's",
+          "weight_class": "87kg",
+          "lifter_name": "Samantha Smith",
+          "lifter_id": 43212,
+          "membershipNumbers": [
+            {
+              "athleteName": "Samantha Smith",
+              "membershipNumber": "1040259",
+              "fullText": "5  -  130  Samantha Smith  F  26  Powerhouse Performance  1040259  81.3  2019-07-13  -  Local  Mountain North"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0xMyIsIndlaWdodF9jbGFzcyI6OTl9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Samantha Smith",
+    "splits": [
+      {
+        "newAthleteName": "Samantha Smith (Person 1)",
+        "membershipNumber": "2019",
+        "competitionCount": 1,
+        "competitions": [
+          4299
+        ]
+      },
+      {
+        "newAthleteName": "Samantha Smith (Person 2)",
+        "membershipNumber": "1040259",
+        "competitionCount": 2,
+        "competitions": [
+          4938,
+          4107
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Samantha Smith",
+    "competitions": [
+      {
+        "meet_id": 4938,
+        "date": "2021-07-24",
+        "age_category": "Open Women's",
+        "weight_class": "87kg",
+        "lifter_name": "Samantha Smith",
+        "lifter_id": 43212,
+        "membershipNumbers": [
+          {
+            "athleteName": "Samantha Smith",
+            "membershipNumber": "1040259",
+            "fullText": "3  -  148  Samantha Smith  F  28  Powerhouse Performance  1040259  82.05  2021-07-24  -  Local  Mountain North"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNy0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNy0yNCIsIndlaWdodF9jbGFzcyI6OTl9"
+      },
+      {
+        "meet_id": 4107,
+        "date": "2019-07-13",
+        "age_category": "Open Women's",
+        "weight_class": "87kg",
+        "lifter_name": "Samantha Smith",
+        "lifter_id": 43212,
+        "membershipNumbers": [
+          {
+            "athleteName": "Samantha Smith",
+            "membershipNumber": "1040259",
+            "fullText": "5  -  130  Samantha Smith  F  26  Powerhouse Performance  1040259  81.3  2019-07-13  -  Local  Mountain North"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0xMyIsIndlaWdodF9jbGFzcyI6OTl9"
+      },
+      {
+        "meet_id": 4299,
+        "date": "2019-11-03",
+        "age_category": "Open Women's",
+        "weight_class": "55kg",
+        "lifter_name": "Samantha Smith",
+        "lifter_id": 43212,
+        "membershipNumbers": [
+          {
+            "athleteName": "Samantha Smith",
+            "membershipNumber": "2019",
+            "fullText": "20  -  95  Samantha Smith  F  21  -  -  54.7  2019-11-03  -  Local  -"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0wMyIsIndlaWdodF9jbGFzcyI6OTN9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "2019": [
+          {
+            "meet_id": 4299,
+            "date": "2019-11-03",
+            "age_category": "Open Women's",
+            "weight_class": "55kg",
+            "lifter_name": "Samantha Smith",
+            "lifter_id": 43212,
+            "membershipNumbers": [
+              {
+                "athleteName": "Samantha Smith",
+                "membershipNumber": "2019",
+                "fullText": "20  -  95  Samantha Smith  F  21  -  -  54.7  2019-11-03  -  Local  -"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0wMyIsIndlaWdodF9jbGFzcyI6OTN9"
+          }
+        ],
+        "1040259": [
+          {
+            "meet_id": 4938,
+            "date": "2021-07-24",
+            "age_category": "Open Women's",
+            "weight_class": "87kg",
+            "lifter_name": "Samantha Smith",
+            "lifter_id": 43212,
+            "membershipNumbers": [
+              {
+                "athleteName": "Samantha Smith",
+                "membershipNumber": "1040259",
+                "fullText": "3  -  148  Samantha Smith  F  28  Powerhouse Performance  1040259  82.05  2021-07-24  -  Local  Mountain North"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNy0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNy0yNCIsIndlaWdodF9jbGFzcyI6OTl9"
+          },
+          {
+            "meet_id": 4107,
+            "date": "2019-07-13",
+            "age_category": "Open Women's",
+            "weight_class": "87kg",
+            "lifter_name": "Samantha Smith",
+            "lifter_id": 43212,
+            "membershipNumbers": [
+              {
+                "athleteName": "Samantha Smith",
+                "membershipNumber": "1040259",
+                "fullText": "5  -  130  Samantha Smith  F  26  Powerhouse Performance  1040259  81.3  2019-07-13  -  Local  Mountain North"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0xMyIsIndlaWdodF9jbGFzcyI6OTl9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

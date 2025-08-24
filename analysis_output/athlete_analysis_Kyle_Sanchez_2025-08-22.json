@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-22T17:06:02.256Z",
+  "athleteName": "Kyle Sanchez",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1054339": [
+        {
+          "meet_id": 4791,
+          "date": "2021-03-13",
+          "age_category": "Open Men's",
+          "weight_class": "102kg",
+          "lifter_name": "Kyle Sanchez",
+          "lifter_id": 47702,
+          "membershipNumbers": [
+            {
+              "athleteName": "Kyle Sanchez",
+              "membershipNumber": "1054339",
+              "fullText": "7  -  184  Kyle Sanchez  M  26  Bobcat Barbell  1054339  99.4  2021-03-13  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMy0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMy0xMyIsIndlaWdodF9jbGFzcyI6ODh9"
+        },
+        {
+          "meet_id": 4711,
+          "date": "2021-02-12",
+          "age_category": "Open Men's",
+          "weight_class": "102kg",
+          "lifter_name": "Kyle Sanchez",
+          "lifter_id": 47702,
+          "membershipNumbers": [
+            {
+              "athleteName": "Kyle Sanchez",
+              "membershipNumber": "1054339",
+              "fullText": "4  -  152  Kyle Sanchez  M  26  Bobcat Barbell  1054339  98.2  2021-02-12  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMi0xMiIsIndlaWdodF9jbGFzcyI6ODh9"
+        }
+      ],
+      "1073896": [
+        {
+          "meet_id": 6231,
+          "date": "2024-02-10",
+          "age_category": "Open Men's",
+          "weight_class": "96kg",
+          "lifter_name": "Kyle Sanchez",
+          "lifter_id": 47702,
+          "membershipNumbers": [
+            {
+              "athleteName": "Kyle Sanchez",
+              "membershipNumber": "1073896",
+              "fullText": "15  -  200  Kyle Sanchez  M  24  Gratitude Strength  1073896  92.7  2024-02-10  -  Local  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMi0xMCIsIndlaWdodF9jbGFzcyI6ODd9"
+        },
+        {
+          "meet_id": 6468,
+          "date": "2024-07-27",
+          "age_category": "Open Men's",
+          "weight_class": "96kg",
+          "lifter_name": "Kyle Sanchez",
+          "lifter_id": 47702,
+          "membershipNumbers": [
+            {
+              "athleteName": "Kyle Sanchez",
+              "membershipNumber": "1073896",
+              "fullText": "10  -  200  Kyle Sanchez  M  24  Gratitude Strength  1073896  92  2024-07-27  -  Local  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNy0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNy0yNyIsIndlaWdodF9jbGFzcyI6ODd9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Kyle Sanchez",
+    "splits": [
+      {
+        "newAthleteName": "Kyle Sanchez (Person 1)",
+        "membershipNumber": "1054339",
+        "competitionCount": 2,
+        "competitions": [
+          4791,
+          4711
+        ]
+      },
+      {
+        "newAthleteName": "Kyle Sanchez (Person 2)",
+        "membershipNumber": "1073896",
+        "competitionCount": 2,
+        "competitions": [
+          6231,
+          6468
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Kyle Sanchez",
+    "competitions": [
+      {
+        "meet_id": 4791,
+        "date": "2021-03-13",
+        "age_category": "Open Men's",
+        "weight_class": "102kg",
+        "lifter_name": "Kyle Sanchez",
+        "lifter_id": 47702,
+        "membershipNumbers": [
+          {
+            "athleteName": "Kyle Sanchez",
+            "membershipNumber": "1054339",
+            "fullText": "7  -  184  Kyle Sanchez  M  26  Bobcat Barbell  1054339  99.4  2021-03-13  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMy0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMy0xMyIsIndlaWdodF9jbGFzcyI6ODh9"
+      },
+      {
+        "meet_id": 6231,
+        "date": "2024-02-10",
+        "age_category": "Open Men's",
+        "weight_class": "96kg",
+        "lifter_name": "Kyle Sanchez",
+        "lifter_id": 47702,
+        "membershipNumbers": [
+          {
+            "athleteName": "Kyle Sanchez",
+            "membershipNumber": "1073896",
+            "fullText": "15  -  200  Kyle Sanchez  M  24  Gratitude Strength  1073896  92.7  2024-02-10  -  Local  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMi0xMCIsIndlaWdodF9jbGFzcyI6ODd9"
+      },
+      {
+        "meet_id": 6468,
+        "date": "2024-07-27",
+        "age_category": "Open Men's",
+        "weight_class": "96kg",
+        "lifter_name": "Kyle Sanchez",
+        "lifter_id": 47702,
+        "membershipNumbers": [
+          {
+            "athleteName": "Kyle Sanchez",
+            "membershipNumber": "1073896",
+            "fullText": "10  -  200  Kyle Sanchez  M  24  Gratitude Strength  1073896  92  2024-07-27  -  Local  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNy0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNy0yNyIsIndlaWdodF9jbGFzcyI6ODd9"
+      },
+      {
+        "meet_id": 4711,
+        "date": "2021-02-12",
+        "age_category": "Open Men's",
+        "weight_class": "102kg",
+        "lifter_name": "Kyle Sanchez",
+        "lifter_id": 47702,
+        "membershipNumbers": [
+          {
+            "athleteName": "Kyle Sanchez",
+            "membershipNumber": "1054339",
+            "fullText": "4  -  152  Kyle Sanchez  M  26  Bobcat Barbell  1054339  98.2  2021-02-12  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMi0xMiIsIndlaWdodF9jbGFzcyI6ODh9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1054339": [
+          {
+            "meet_id": 4791,
+            "date": "2021-03-13",
+            "age_category": "Open Men's",
+            "weight_class": "102kg",
+            "lifter_name": "Kyle Sanchez",
+            "lifter_id": 47702,
+            "membershipNumbers": [
+              {
+                "athleteName": "Kyle Sanchez",
+                "membershipNumber": "1054339",
+                "fullText": "7  -  184  Kyle Sanchez  M  26  Bobcat Barbell  1054339  99.4  2021-03-13  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMy0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMy0xMyIsIndlaWdodF9jbGFzcyI6ODh9"
+          },
+          {
+            "meet_id": 4711,
+            "date": "2021-02-12",
+            "age_category": "Open Men's",
+            "weight_class": "102kg",
+            "lifter_name": "Kyle Sanchez",
+            "lifter_id": 47702,
+            "membershipNumbers": [
+              {
+                "athleteName": "Kyle Sanchez",
+                "membershipNumber": "1054339",
+                "fullText": "4  -  152  Kyle Sanchez  M  26  Bobcat Barbell  1054339  98.2  2021-02-12  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMi0xMiIsIndlaWdodF9jbGFzcyI6ODh9"
+          }
+        ],
+        "1073896": [
+          {
+            "meet_id": 6231,
+            "date": "2024-02-10",
+            "age_category": "Open Men's",
+            "weight_class": "96kg",
+            "lifter_name": "Kyle Sanchez",
+            "lifter_id": 47702,
+            "membershipNumbers": [
+              {
+                "athleteName": "Kyle Sanchez",
+                "membershipNumber": "1073896",
+                "fullText": "15  -  200  Kyle Sanchez  M  24  Gratitude Strength  1073896  92.7  2024-02-10  -  Local  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMi0xMCIsIndlaWdodF9jbGFzcyI6ODd9"
+          },
+          {
+            "meet_id": 6468,
+            "date": "2024-07-27",
+            "age_category": "Open Men's",
+            "weight_class": "96kg",
+            "lifter_name": "Kyle Sanchez",
+            "lifter_id": 47702,
+            "membershipNumbers": [
+              {
+                "athleteName": "Kyle Sanchez",
+                "membershipNumber": "1073896",
+                "fullText": "10  -  200  Kyle Sanchez  M  24  Gratitude Strength  1073896  92  2024-07-27  -  Local  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNy0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNy0yNyIsIndlaWdodF9jbGFzcyI6ODd9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

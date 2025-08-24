@@ -1,0 +1,292 @@
+{
+  "timestamp": "2025-08-22T15:43:46.558Z",
+  "athleteName": "Katie Pierce",
+  "totalCompetitions": 5,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1060451": [
+        {
+          "meet_id": 5263,
+          "date": "2022-04-03",
+          "age_category": "Open Women's",
+          "weight_class": "+87kg",
+          "lifter_name": "Katie Pierce",
+          "lifter_id": 50657,
+          "membershipNumbers": [
+            {
+              "athleteName": "Katie Pierce",
+              "membershipNumber": "1060451",
+              "fullText": "5  -  90  Katie Pierce  F  23  -  1060451  114.6  2022-04-03  -  Local  Indiana"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNC0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNC0wMyIsIndlaWdodF9jbGFzcyI6MTAwfQ=="
+        }
+      ],
+      "1065046": [
+        {
+          "meet_id": 5511,
+          "date": "2022-10-02",
+          "age_category": "Women's Masters (40-44)",
+          "weight_class": "87kg",
+          "lifter_name": "Katie Pierce",
+          "lifter_id": 50657,
+          "membershipNumbers": [
+            {
+              "athleteName": "Katie Pierce",
+              "membershipNumber": "1065046",
+              "fullText": "3  -  73  Katie Pierce   F  44  Kiowa Weightlifting  1065046  84.9  2022-10-02  -  Local  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMC0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMC0wMiIsIndlaWdodF9jbGFzcyI6MTM5fQ=="
+        },
+        {
+          "meet_id": 5636,
+          "date": "2022-12-17",
+          "age_category": "Women's Masters (40-44)",
+          "weight_class": "87kg",
+          "lifter_name": "Katie Pierce",
+          "lifter_id": 50657,
+          "membershipNumbers": [
+            {
+              "athleteName": "Katie Pierce",
+              "membershipNumber": "1065046",
+              "fullText": "2  -  94  Katie Pierce   F  44  Kiowa Weightlifting  1065046  86.3  2022-12-17  -  Local  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMi0xNyIsIndlaWdodF9jbGFzcyI6MTM5fQ=="
+        },
+        {
+          "meet_id": 5831,
+          "date": "2023-04-29",
+          "age_category": "Women's Masters (45-49)",
+          "weight_class": "+87kg",
+          "lifter_name": "Katie Pierce",
+          "lifter_id": 50657,
+          "membershipNumbers": [
+            {
+              "athleteName": "Katie Pierce",
+              "membershipNumber": "1065046",
+              "fullText": "3  -  107  Katie Pierce   F  45  Kiowa Weightlifting  1065046  88.9  2023-04-29  -  Local  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0yOSIsIndlaWdodF9jbGFzcyI6MTYwfQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 5033,
+        "date": "2022-01-29",
+        "age_category": "Open Women's",
+        "weight_class": "+87kg",
+        "lifter_name": "Katie Pierce",
+        "lifter_id": 50657,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMS0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMS0yOSIsIndlaWdodF9jbGFzcyI6MTAwfQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Katie Pierce",
+    "splits": [
+      {
+        "newAthleteName": "Katie Pierce (Person 1)",
+        "membershipNumber": "1060451",
+        "competitionCount": 1,
+        "competitions": [
+          5263
+        ]
+      },
+      {
+        "newAthleteName": "Katie Pierce (Person 2)",
+        "membershipNumber": "1065046",
+        "competitionCount": 3,
+        "competitions": [
+          5511,
+          5636,
+          5831
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 5033,
+        "date": "2022-01-29",
+        "age_category": "Open Women's",
+        "weight_class": "+87kg",
+        "lifter_name": "Katie Pierce",
+        "lifter_id": 50657,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMS0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMS0yOSIsIndlaWdodF9jbGFzcyI6MTAwfQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Katie Pierce",
+    "competitions": [
+      {
+        "meet_id": 5511,
+        "date": "2022-10-02",
+        "age_category": "Women's Masters (40-44)",
+        "weight_class": "87kg",
+        "lifter_name": "Katie Pierce",
+        "lifter_id": 50657,
+        "membershipNumbers": [
+          {
+            "athleteName": "Katie Pierce",
+            "membershipNumber": "1065046",
+            "fullText": "3  -  73  Katie Pierce   F  44  Kiowa Weightlifting  1065046  84.9  2022-10-02  -  Local  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMC0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMC0wMiIsIndlaWdodF9jbGFzcyI6MTM5fQ=="
+      },
+      {
+        "meet_id": 5636,
+        "date": "2022-12-17",
+        "age_category": "Women's Masters (40-44)",
+        "weight_class": "87kg",
+        "lifter_name": "Katie Pierce",
+        "lifter_id": 50657,
+        "membershipNumbers": [
+          {
+            "athleteName": "Katie Pierce",
+            "membershipNumber": "1065046",
+            "fullText": "2  -  94  Katie Pierce   F  44  Kiowa Weightlifting  1065046  86.3  2022-12-17  -  Local  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMi0xNyIsIndlaWdodF9jbGFzcyI6MTM5fQ=="
+      },
+      {
+        "meet_id": 5263,
+        "date": "2022-04-03",
+        "age_category": "Open Women's",
+        "weight_class": "+87kg",
+        "lifter_name": "Katie Pierce",
+        "lifter_id": 50657,
+        "membershipNumbers": [
+          {
+            "athleteName": "Katie Pierce",
+            "membershipNumber": "1060451",
+            "fullText": "5  -  90  Katie Pierce  F  23  -  1060451  114.6  2022-04-03  -  Local  Indiana"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNC0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNC0wMyIsIndlaWdodF9jbGFzcyI6MTAwfQ=="
+      },
+      {
+        "meet_id": 5831,
+        "date": "2023-04-29",
+        "age_category": "Women's Masters (45-49)",
+        "weight_class": "+87kg",
+        "lifter_name": "Katie Pierce",
+        "lifter_id": 50657,
+        "membershipNumbers": [
+          {
+            "athleteName": "Katie Pierce",
+            "membershipNumber": "1065046",
+            "fullText": "3  -  107  Katie Pierce   F  45  Kiowa Weightlifting  1065046  88.9  2023-04-29  -  Local  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0yOSIsIndlaWdodF9jbGFzcyI6MTYwfQ=="
+      },
+      {
+        "meet_id": 5033,
+        "date": "2022-01-29",
+        "age_category": "Open Women's",
+        "weight_class": "+87kg",
+        "lifter_name": "Katie Pierce",
+        "lifter_id": 50657,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMS0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMS0yOSIsIndlaWdodF9jbGFzcyI6MTAwfQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1060451": [
+          {
+            "meet_id": 5263,
+            "date": "2022-04-03",
+            "age_category": "Open Women's",
+            "weight_class": "+87kg",
+            "lifter_name": "Katie Pierce",
+            "lifter_id": 50657,
+            "membershipNumbers": [
+              {
+                "athleteName": "Katie Pierce",
+                "membershipNumber": "1060451",
+                "fullText": "5  -  90  Katie Pierce  F  23  -  1060451  114.6  2022-04-03  -  Local  Indiana"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNC0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNC0wMyIsIndlaWdodF9jbGFzcyI6MTAwfQ=="
+          }
+        ],
+        "1065046": [
+          {
+            "meet_id": 5511,
+            "date": "2022-10-02",
+            "age_category": "Women's Masters (40-44)",
+            "weight_class": "87kg",
+            "lifter_name": "Katie Pierce",
+            "lifter_id": 50657,
+            "membershipNumbers": [
+              {
+                "athleteName": "Katie Pierce",
+                "membershipNumber": "1065046",
+                "fullText": "3  -  73  Katie Pierce   F  44  Kiowa Weightlifting  1065046  84.9  2022-10-02  -  Local  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMC0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMC0wMiIsIndlaWdodF9jbGFzcyI6MTM5fQ=="
+          },
+          {
+            "meet_id": 5636,
+            "date": "2022-12-17",
+            "age_category": "Women's Masters (40-44)",
+            "weight_class": "87kg",
+            "lifter_name": "Katie Pierce",
+            "lifter_id": 50657,
+            "membershipNumbers": [
+              {
+                "athleteName": "Katie Pierce",
+                "membershipNumber": "1065046",
+                "fullText": "2  -  94  Katie Pierce   F  44  Kiowa Weightlifting  1065046  86.3  2022-12-17  -  Local  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMi0xNyIsIndlaWdodF9jbGFzcyI6MTM5fQ=="
+          },
+          {
+            "meet_id": 5831,
+            "date": "2023-04-29",
+            "age_category": "Women's Masters (45-49)",
+            "weight_class": "+87kg",
+            "lifter_name": "Katie Pierce",
+            "lifter_id": 50657,
+            "membershipNumbers": [
+              {
+                "athleteName": "Katie Pierce",
+                "membershipNumber": "1065046",
+                "fullText": "3  -  107  Katie Pierce   F  45  Kiowa Weightlifting  1065046  88.9  2023-04-29  -  Local  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0yOSIsIndlaWdodF9jbGFzcyI6MTYwfQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 5033,
+          "date": "2022-01-29",
+          "age_category": "Open Women's",
+          "weight_class": "+87kg",
+          "lifter_name": "Katie Pierce",
+          "lifter_id": 50657,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMS0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMS0yOSIsIndlaWdodF9jbGFzcyI6MTAwfQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

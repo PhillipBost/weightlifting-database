@@ -1,0 +1,194 @@
+{
+  "timestamp": "2025-08-22T06:57:51.752Z",
+  "athleteName": "Jessica Smith",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "189617": [
+        {
+          "meet_id": 1312,
+          "date": "2014-03-08",
+          "age_category": "Women's Masters (40-44)",
+          "weight_class": "63 kg",
+          "lifter_name": "Jessica Smith",
+          "lifter_id": 19575,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jessica Smith",
+              "membershipNumber": "189617",
+              "fullText": "1  -  104  Jessica Smith  F  43  -  189617  58.9  2014-03-08  -  Local  Alabama"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0wOCIsIndlaWdodF9jbGFzcyI6Mzk5fQ=="
+        }
+      ],
+      "1019117": [
+        {
+          "meet_id": 2554,
+          "date": "2017-05-07",
+          "age_category": "Open Women's",
+          "weight_class": "75 kg",
+          "lifter_name": "Jessica Smith",
+          "lifter_id": 19575,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jessica Smith",
+              "membershipNumber": "1019117",
+              "fullText": "6  -  144  Jessica Smith  F  26  EAST COAST GOLD W/L TEAM  1019117  73  2017-05-07  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNS0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNS0wNyIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 2875,
+        "date": "2017-10-29",
+        "age_category": "Open Women's",
+        "weight_class": "75 kg",
+        "lifter_name": "Jessica Smith",
+        "lifter_id": 19575,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0yOSIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Jessica Smith",
+    "splits": [
+      {
+        "newAthleteName": "Jessica Smith (Person 1)",
+        "membershipNumber": "189617",
+        "competitionCount": 1,
+        "competitions": [
+          1312
+        ]
+      },
+      {
+        "newAthleteName": "Jessica Smith (Person 2)",
+        "membershipNumber": "1019117",
+        "competitionCount": 1,
+        "competitions": [
+          2554
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 2875,
+        "date": "2017-10-29",
+        "age_category": "Open Women's",
+        "weight_class": "75 kg",
+        "lifter_name": "Jessica Smith",
+        "lifter_id": 19575,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0yOSIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Jessica Smith",
+    "competitions": [
+      {
+        "meet_id": 2875,
+        "date": "2017-10-29",
+        "age_category": "Open Women's",
+        "weight_class": "75 kg",
+        "lifter_name": "Jessica Smith",
+        "lifter_id": 19575,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0yOSIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+      },
+      {
+        "meet_id": 1312,
+        "date": "2014-03-08",
+        "age_category": "Women's Masters (40-44)",
+        "weight_class": "63 kg",
+        "lifter_name": "Jessica Smith",
+        "lifter_id": 19575,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jessica Smith",
+            "membershipNumber": "189617",
+            "fullText": "1  -  104  Jessica Smith  F  43  -  189617  58.9  2014-03-08  -  Local  Alabama"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0wOCIsIndlaWdodF9jbGFzcyI6Mzk5fQ=="
+      },
+      {
+        "meet_id": 2554,
+        "date": "2017-05-07",
+        "age_category": "Open Women's",
+        "weight_class": "75 kg",
+        "lifter_name": "Jessica Smith",
+        "lifter_id": 19575,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jessica Smith",
+            "membershipNumber": "1019117",
+            "fullText": "6  -  144  Jessica Smith  F  26  EAST COAST GOLD W/L TEAM  1019117  73  2017-05-07  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNS0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNS0wNyIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "189617": [
+          {
+            "meet_id": 1312,
+            "date": "2014-03-08",
+            "age_category": "Women's Masters (40-44)",
+            "weight_class": "63 kg",
+            "lifter_name": "Jessica Smith",
+            "lifter_id": 19575,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jessica Smith",
+                "membershipNumber": "189617",
+                "fullText": "1  -  104  Jessica Smith  F  43  -  189617  58.9  2014-03-08  -  Local  Alabama"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0wOCIsIndlaWdodF9jbGFzcyI6Mzk5fQ=="
+          }
+        ],
+        "1019117": [
+          {
+            "meet_id": 2554,
+            "date": "2017-05-07",
+            "age_category": "Open Women's",
+            "weight_class": "75 kg",
+            "lifter_name": "Jessica Smith",
+            "lifter_id": 19575,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jessica Smith",
+                "membershipNumber": "1019117",
+                "fullText": "6  -  144  Jessica Smith  F  26  EAST COAST GOLD W/L TEAM  1019117  73  2017-05-07  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNS0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNS0wNyIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 2875,
+          "date": "2017-10-29",
+          "age_category": "Open Women's",
+          "weight_class": "75 kg",
+          "lifter_name": "Jessica Smith",
+          "lifter_id": 19575,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0yOSIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

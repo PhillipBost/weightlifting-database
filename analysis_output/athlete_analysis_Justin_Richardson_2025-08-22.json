@@ -1,0 +1,194 @@
+{
+  "timestamp": "2025-08-22T09:07:31.973Z",
+  "athleteName": "Justin Richardson",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1055047": [
+        {
+          "meet_id": 6283,
+          "date": "2024-03-30",
+          "age_category": "Men's Masters (35-39)",
+          "weight_class": "96kg",
+          "lifter_name": "Justin Richardson",
+          "lifter_id": 57332,
+          "membershipNumbers": [
+            {
+              "athleteName": "Justin Richardson",
+              "membershipNumber": "1055047",
+              "fullText": "2  -  258  Justin Richardson  M  36  -  1055047  90.05  2024-03-30  -  Local  Southern"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMy0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMy0zMCIsIndlaWdodF9jbGFzcyI6MTA3fQ=="
+        }
+      ],
+      "1070732": [
+        {
+          "meet_id": 5950,
+          "date": "2023-07-08",
+          "age_category": "Junior Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Justin Richardson",
+          "lifter_id": 57332,
+          "membershipNumbers": [
+            {
+              "athleteName": "Justin Richardson",
+              "membershipNumber": "1070732",
+              "fullText": "1  -  205  Justin Richardson  M  20  -  1070732  78.05  2023-07-08  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNy0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNy0wOCIsIndlaWdodF9jbGFzcyI6NjV9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 6461,
+        "date": "2024-07-20",
+        "age_category": "Men's Masters (35-39)",
+        "weight_class": "96kg",
+        "lifter_name": "Justin Richardson",
+        "lifter_id": 57332,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNy0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNy0yMCIsIndlaWdodF9jbGFzcyI6MTA3fQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Justin Richardson",
+    "splits": [
+      {
+        "newAthleteName": "Justin Richardson (Person 1)",
+        "membershipNumber": "1055047",
+        "competitionCount": 1,
+        "competitions": [
+          6283
+        ]
+      },
+      {
+        "newAthleteName": "Justin Richardson (Person 2)",
+        "membershipNumber": "1070732",
+        "competitionCount": 1,
+        "competitions": [
+          5950
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 6461,
+        "date": "2024-07-20",
+        "age_category": "Men's Masters (35-39)",
+        "weight_class": "96kg",
+        "lifter_name": "Justin Richardson",
+        "lifter_id": 57332,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNy0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNy0yMCIsIndlaWdodF9jbGFzcyI6MTA3fQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Justin Richardson",
+    "competitions": [
+      {
+        "meet_id": 6283,
+        "date": "2024-03-30",
+        "age_category": "Men's Masters (35-39)",
+        "weight_class": "96kg",
+        "lifter_name": "Justin Richardson",
+        "lifter_id": 57332,
+        "membershipNumbers": [
+          {
+            "athleteName": "Justin Richardson",
+            "membershipNumber": "1055047",
+            "fullText": "2  -  258  Justin Richardson  M  36  -  1055047  90.05  2024-03-30  -  Local  Southern"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMy0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMy0zMCIsIndlaWdodF9jbGFzcyI6MTA3fQ=="
+      },
+      {
+        "meet_id": 6461,
+        "date": "2024-07-20",
+        "age_category": "Men's Masters (35-39)",
+        "weight_class": "96kg",
+        "lifter_name": "Justin Richardson",
+        "lifter_id": 57332,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNy0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNy0yMCIsIndlaWdodF9jbGFzcyI6MTA3fQ=="
+      },
+      {
+        "meet_id": 5950,
+        "date": "2023-07-08",
+        "age_category": "Junior Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Justin Richardson",
+        "lifter_id": 57332,
+        "membershipNumbers": [
+          {
+            "athleteName": "Justin Richardson",
+            "membershipNumber": "1070732",
+            "fullText": "1  -  205  Justin Richardson  M  20  -  1070732  78.05  2023-07-08  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNy0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNy0wOCIsIndlaWdodF9jbGFzcyI6NjV9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1055047": [
+          {
+            "meet_id": 6283,
+            "date": "2024-03-30",
+            "age_category": "Men's Masters (35-39)",
+            "weight_class": "96kg",
+            "lifter_name": "Justin Richardson",
+            "lifter_id": 57332,
+            "membershipNumbers": [
+              {
+                "athleteName": "Justin Richardson",
+                "membershipNumber": "1055047",
+                "fullText": "2  -  258  Justin Richardson  M  36  -  1055047  90.05  2024-03-30  -  Local  Southern"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMy0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMy0zMCIsIndlaWdodF9jbGFzcyI6MTA3fQ=="
+          }
+        ],
+        "1070732": [
+          {
+            "meet_id": 5950,
+            "date": "2023-07-08",
+            "age_category": "Junior Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Justin Richardson",
+            "lifter_id": 57332,
+            "membershipNumbers": [
+              {
+                "athleteName": "Justin Richardson",
+                "membershipNumber": "1070732",
+                "fullText": "1  -  205  Justin Richardson  M  20  -  1070732  78.05  2023-07-08  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNy0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNy0wOCIsIndlaWdodF9jbGFzcyI6NjV9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 6461,
+          "date": "2024-07-20",
+          "age_category": "Men's Masters (35-39)",
+          "weight_class": "96kg",
+          "lifter_name": "Justin Richardson",
+          "lifter_id": 57332,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNy0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNy0yMCIsIndlaWdodF9jbGFzcyI6MTA3fQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

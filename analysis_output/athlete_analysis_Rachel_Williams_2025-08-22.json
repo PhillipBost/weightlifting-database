@@ -1,0 +1,211 @@
+{
+  "timestamp": "2025-08-22T22:10:02.953Z",
+  "athleteName": "Rachel Williams",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 3,
+    "membershipGroups": {
+      "1022649": [
+        {
+          "meet_id": 4244,
+          "date": "2019-12-14",
+          "age_category": "Open Women's",
+          "weight_class": "87kg",
+          "lifter_name": "Rachel Williams",
+          "lifter_id": 42382,
+          "membershipNumbers": [
+            {
+              "athleteName": "Rachel Williams",
+              "membershipNumber": "1022649",
+              "fullText": "10  -  132  Rachel Williams  F  27  -  1022649  84.8  2019-12-14  -  Local  Mountain North"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMi0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMi0xNCIsIndlaWdodF9jbGFzcyI6OTl9"
+        }
+      ],
+      "1041282": [
+        {
+          "meet_id": 3969,
+          "date": "2019-05-11",
+          "age_category": "Women's Masters (45-49)",
+          "weight_class": "71kg",
+          "lifter_name": "Rachel Williams",
+          "lifter_id": 42382,
+          "membershipNumbers": [
+            {
+              "athleteName": "Rachel Williams",
+              "membershipNumber": "1041282",
+              "fullText": "1  -  87  Rachel Williams  F  48  -  1041282  70.4  2019-05-11  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0xMSIsIndlaWdodF9jbGFzcyI6MTU2fQ=="
+        }
+      ],
+      "1065757": [
+        {
+          "meet_id": 5816,
+          "date": "2023-04-22",
+          "age_category": "Open Women's",
+          "weight_class": "76kg",
+          "lifter_name": "Rachel Williams",
+          "lifter_id": 42382,
+          "membershipNumbers": [
+            {
+              "athleteName": "Rachel Williams",
+              "membershipNumber": "1065757",
+              "fullText": "21  -  88  Rachel Williams  F  39  Icon Performance Center LLC  1065757  74.6  2023-04-22  -  Local  New England"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0yMiIsIndlaWdodF9jbGFzcyI6OTd9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Rachel Williams",
+    "splits": [
+      {
+        "newAthleteName": "Rachel Williams (Person 1)",
+        "membershipNumber": "1022649",
+        "competitionCount": 1,
+        "competitions": [
+          4244
+        ]
+      },
+      {
+        "newAthleteName": "Rachel Williams (Person 2)",
+        "membershipNumber": "1041282",
+        "competitionCount": 1,
+        "competitions": [
+          3969
+        ]
+      },
+      {
+        "newAthleteName": "Rachel Williams (Person 3)",
+        "membershipNumber": "1065757",
+        "competitionCount": 1,
+        "competitions": [
+          5816
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Rachel Williams",
+    "competitions": [
+      {
+        "meet_id": 3969,
+        "date": "2019-05-11",
+        "age_category": "Women's Masters (45-49)",
+        "weight_class": "71kg",
+        "lifter_name": "Rachel Williams",
+        "lifter_id": 42382,
+        "membershipNumbers": [
+          {
+            "athleteName": "Rachel Williams",
+            "membershipNumber": "1041282",
+            "fullText": "1  -  87  Rachel Williams  F  48  -  1041282  70.4  2019-05-11  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0xMSIsIndlaWdodF9jbGFzcyI6MTU2fQ=="
+      },
+      {
+        "meet_id": 4244,
+        "date": "2019-12-14",
+        "age_category": "Open Women's",
+        "weight_class": "87kg",
+        "lifter_name": "Rachel Williams",
+        "lifter_id": 42382,
+        "membershipNumbers": [
+          {
+            "athleteName": "Rachel Williams",
+            "membershipNumber": "1022649",
+            "fullText": "10  -  132  Rachel Williams  F  27  -  1022649  84.8  2019-12-14  -  Local  Mountain North"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMi0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMi0xNCIsIndlaWdodF9jbGFzcyI6OTl9"
+      },
+      {
+        "meet_id": 5816,
+        "date": "2023-04-22",
+        "age_category": "Open Women's",
+        "weight_class": "76kg",
+        "lifter_name": "Rachel Williams",
+        "lifter_id": 42382,
+        "membershipNumbers": [
+          {
+            "athleteName": "Rachel Williams",
+            "membershipNumber": "1065757",
+            "fullText": "21  -  88  Rachel Williams  F  39  Icon Performance Center LLC  1065757  74.6  2023-04-22  -  Local  New England"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0yMiIsIndlaWdodF9jbGFzcyI6OTd9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 3,
+      "membershipGroups": {
+        "1022649": [
+          {
+            "meet_id": 4244,
+            "date": "2019-12-14",
+            "age_category": "Open Women's",
+            "weight_class": "87kg",
+            "lifter_name": "Rachel Williams",
+            "lifter_id": 42382,
+            "membershipNumbers": [
+              {
+                "athleteName": "Rachel Williams",
+                "membershipNumber": "1022649",
+                "fullText": "10  -  132  Rachel Williams  F  27  -  1022649  84.8  2019-12-14  -  Local  Mountain North"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMi0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMi0xNCIsIndlaWdodF9jbGFzcyI6OTl9"
+          }
+        ],
+        "1041282": [
+          {
+            "meet_id": 3969,
+            "date": "2019-05-11",
+            "age_category": "Women's Masters (45-49)",
+            "weight_class": "71kg",
+            "lifter_name": "Rachel Williams",
+            "lifter_id": 42382,
+            "membershipNumbers": [
+              {
+                "athleteName": "Rachel Williams",
+                "membershipNumber": "1041282",
+                "fullText": "1  -  87  Rachel Williams  F  48  -  1041282  70.4  2019-05-11  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0xMSIsIndlaWdodF9jbGFzcyI6MTU2fQ=="
+          }
+        ],
+        "1065757": [
+          {
+            "meet_id": 5816,
+            "date": "2023-04-22",
+            "age_category": "Open Women's",
+            "weight_class": "76kg",
+            "lifter_name": "Rachel Williams",
+            "lifter_id": 42382,
+            "membershipNumbers": [
+              {
+                "athleteName": "Rachel Williams",
+                "membershipNumber": "1065757",
+                "fullText": "21  -  88  Rachel Williams  F  39  Icon Performance Center LLC  1065757  74.6  2023-04-22  -  Local  New England"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0yMiIsIndlaWdodF9jbGFzcyI6OTd9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

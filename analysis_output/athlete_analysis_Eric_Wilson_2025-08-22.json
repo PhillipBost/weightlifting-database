@@ -1,0 +1,292 @@
+{
+  "timestamp": "2025-08-22T09:02:55.003Z",
+  "athleteName": "Eric Wilson",
+  "totalCompetitions": 5,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1061595": [
+        {
+          "meet_id": 5313,
+          "date": "2022-05-01",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Eric Wilson",
+          "lifter_id": 52362,
+          "membershipNumbers": [
+            {
+              "athleteName": "Eric Wilson",
+              "membershipNumber": "1061595",
+              "fullText": "4  -  220  Eric Wilson  M  31  CHFP WEIGHTLIFTING CLUB  1061595  79  2022-05-01  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNS0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNS0wMSIsIndlaWdodF9jbGFzcyI6ODV9"
+        },
+        {
+          "meet_id": 5426,
+          "date": "2022-07-16",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Eric Wilson",
+          "lifter_id": 52362,
+          "membershipNumbers": [
+            {
+              "athleteName": "Eric Wilson",
+              "membershipNumber": "1061595",
+              "fullText": "7  -  229  Eric Wilson  M  31  CHFP WEIGHTLIFTING CLUB  1061595  79.15  2022-07-16  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNy0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNy0xNiIsIndlaWdodF9jbGFzcyI6ODV9"
+        }
+      ],
+      "1065123": [
+        {
+          "meet_id": 5480,
+          "date": "2022-09-03",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Eric Wilson",
+          "lifter_id": 52362,
+          "membershipNumbers": [
+            {
+              "athleteName": "Eric Wilson",
+              "membershipNumber": "1065123",
+              "fullText": "4  -  210  Eric Wilson  M  26  Aspire Athletic Performance  1065123  77.52  2022-09-03  -  Local  New England"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wOS0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wOS0wMyIsIndlaWdodF9jbGFzcyI6ODV9"
+        },
+        {
+          "meet_id": 5942,
+          "date": "2023-07-15",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Eric Wilson",
+          "lifter_id": 52362,
+          "membershipNumbers": [
+            {
+              "athleteName": "Eric Wilson",
+              "membershipNumber": "1065123",
+              "fullText": "9  -  210  Eric Wilson  M  27  Aspire Athletic Performance  1065123  76.76  2023-07-15  -  Local  New England"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNy0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNy0xNSIsIndlaWdodF9jbGFzcyI6ODV9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 5737,
+        "date": "2023-03-03",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Eric Wilson",
+        "lifter_id": 52362,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMy0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMy0wMyIsIndlaWdodF9jbGFzcyI6ODV9"
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Eric Wilson",
+    "splits": [
+      {
+        "newAthleteName": "Eric Wilson (Person 1)",
+        "membershipNumber": "1061595",
+        "competitionCount": 2,
+        "competitions": [
+          5313,
+          5426
+        ]
+      },
+      {
+        "newAthleteName": "Eric Wilson (Person 2)",
+        "membershipNumber": "1065123",
+        "competitionCount": 2,
+        "competitions": [
+          5480,
+          5942
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 5737,
+        "date": "2023-03-03",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Eric Wilson",
+        "lifter_id": 52362,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMy0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMy0wMyIsIndlaWdodF9jbGFzcyI6ODV9"
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Eric Wilson",
+    "competitions": [
+      {
+        "meet_id": 5313,
+        "date": "2022-05-01",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Eric Wilson",
+        "lifter_id": 52362,
+        "membershipNumbers": [
+          {
+            "athleteName": "Eric Wilson",
+            "membershipNumber": "1061595",
+            "fullText": "4  -  220  Eric Wilson  M  31  CHFP WEIGHTLIFTING CLUB  1061595  79  2022-05-01  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNS0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNS0wMSIsIndlaWdodF9jbGFzcyI6ODV9"
+      },
+      {
+        "meet_id": 5426,
+        "date": "2022-07-16",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Eric Wilson",
+        "lifter_id": 52362,
+        "membershipNumbers": [
+          {
+            "athleteName": "Eric Wilson",
+            "membershipNumber": "1061595",
+            "fullText": "7  -  229  Eric Wilson  M  31  CHFP WEIGHTLIFTING CLUB  1061595  79.15  2022-07-16  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNy0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNy0xNiIsIndlaWdodF9jbGFzcyI6ODV9"
+      },
+      {
+        "meet_id": 5480,
+        "date": "2022-09-03",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Eric Wilson",
+        "lifter_id": 52362,
+        "membershipNumbers": [
+          {
+            "athleteName": "Eric Wilson",
+            "membershipNumber": "1065123",
+            "fullText": "4  -  210  Eric Wilson  M  26  Aspire Athletic Performance  1065123  77.52  2022-09-03  -  Local  New England"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wOS0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wOS0wMyIsIndlaWdodF9jbGFzcyI6ODV9"
+      },
+      {
+        "meet_id": 5737,
+        "date": "2023-03-03",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Eric Wilson",
+        "lifter_id": 52362,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMy0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMy0wMyIsIndlaWdodF9jbGFzcyI6ODV9"
+      },
+      {
+        "meet_id": 5942,
+        "date": "2023-07-15",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Eric Wilson",
+        "lifter_id": 52362,
+        "membershipNumbers": [
+          {
+            "athleteName": "Eric Wilson",
+            "membershipNumber": "1065123",
+            "fullText": "9  -  210  Eric Wilson  M  27  Aspire Athletic Performance  1065123  76.76  2023-07-15  -  Local  New England"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNy0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNy0xNSIsIndlaWdodF9jbGFzcyI6ODV9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1061595": [
+          {
+            "meet_id": 5313,
+            "date": "2022-05-01",
+            "age_category": "Open Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Eric Wilson",
+            "lifter_id": 52362,
+            "membershipNumbers": [
+              {
+                "athleteName": "Eric Wilson",
+                "membershipNumber": "1061595",
+                "fullText": "4  -  220  Eric Wilson  M  31  CHFP WEIGHTLIFTING CLUB  1061595  79  2022-05-01  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNS0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNS0wMSIsIndlaWdodF9jbGFzcyI6ODV9"
+          },
+          {
+            "meet_id": 5426,
+            "date": "2022-07-16",
+            "age_category": "Open Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Eric Wilson",
+            "lifter_id": 52362,
+            "membershipNumbers": [
+              {
+                "athleteName": "Eric Wilson",
+                "membershipNumber": "1061595",
+                "fullText": "7  -  229  Eric Wilson  M  31  CHFP WEIGHTLIFTING CLUB  1061595  79.15  2022-07-16  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNy0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNy0xNiIsIndlaWdodF9jbGFzcyI6ODV9"
+          }
+        ],
+        "1065123": [
+          {
+            "meet_id": 5480,
+            "date": "2022-09-03",
+            "age_category": "Open Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Eric Wilson",
+            "lifter_id": 52362,
+            "membershipNumbers": [
+              {
+                "athleteName": "Eric Wilson",
+                "membershipNumber": "1065123",
+                "fullText": "4  -  210  Eric Wilson  M  26  Aspire Athletic Performance  1065123  77.52  2022-09-03  -  Local  New England"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wOS0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wOS0wMyIsIndlaWdodF9jbGFzcyI6ODV9"
+          },
+          {
+            "meet_id": 5942,
+            "date": "2023-07-15",
+            "age_category": "Open Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Eric Wilson",
+            "lifter_id": 52362,
+            "membershipNumbers": [
+              {
+                "athleteName": "Eric Wilson",
+                "membershipNumber": "1065123",
+                "fullText": "9  -  210  Eric Wilson  M  27  Aspire Athletic Performance  1065123  76.76  2023-07-15  -  Local  New England"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNy0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNy0xNSIsIndlaWdodF9jbGFzcyI6ODV9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 5737,
+          "date": "2023-03-03",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Eric Wilson",
+          "lifter_id": 52362,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMy0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMy0wMyIsIndlaWdodF9jbGFzcyI6ODV9"
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

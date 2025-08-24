@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T08:45:44.963Z",
+  "athleteName": "Collin Taylor",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1024161": [
+        {
+          "meet_id": 4287,
+          "date": "2019-11-23",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "Collin Taylor",
+          "lifter_id": 44158,
+          "membershipNumbers": [
+            {
+              "athleteName": "Collin Taylor",
+              "membershipNumber": "1024161",
+              "fullText": "12  -  210  Collin Taylor  M  32  Strength Solutions Weightlifting  1024161  88.65  2019-11-23  -  Local  Ohio"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0yMyIsIndlaWdodF9jbGFzcyI6ODZ9"
+        }
+      ],
+      "1047173": [
+        {
+          "meet_id": 4345,
+          "date": "2019-12-14",
+          "age_category": "Men's 16-17 Age Group",
+          "weight_class": "89kg",
+          "lifter_name": "Collin Taylor",
+          "lifter_id": 44158,
+          "membershipNumbers": [
+            {
+              "athleteName": "Collin Taylor",
+              "membershipNumber": "1047173",
+              "fullText": "2  -  189  Collin Taylor  M  17  -  1047173  83.5  2019-12-14  -  Local  Indiana"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMi0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMi0xNCIsIndlaWdodF9jbGFzcyI6N30="
+        },
+        {
+          "meet_id": 4555,
+          "date": "2020-08-14",
+          "age_category": "Junior Men's",
+          "weight_class": "89kg",
+          "lifter_name": "Collin Taylor",
+          "lifter_id": 44158,
+          "membershipNumbers": [
+            {
+              "athleteName": "Collin Taylor",
+              "membershipNumber": "1047173",
+              "fullText": "2  -  195  Collin Taylor  M  18  -  1047173  83  2020-08-14  -  Local  Indiana"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wOC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wOC0xNCIsIndlaWdodF9jbGFzcyI6NjZ9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Collin Taylor",
+    "splits": [
+      {
+        "newAthleteName": "Collin Taylor (Person 1)",
+        "membershipNumber": "1024161",
+        "competitionCount": 1,
+        "competitions": [
+          4287
+        ]
+      },
+      {
+        "newAthleteName": "Collin Taylor (Person 2)",
+        "membershipNumber": "1047173",
+        "competitionCount": 2,
+        "competitions": [
+          4345,
+          4555
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Collin Taylor",
+    "competitions": [
+      {
+        "meet_id": 4287,
+        "date": "2019-11-23",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Collin Taylor",
+        "lifter_id": 44158,
+        "membershipNumbers": [
+          {
+            "athleteName": "Collin Taylor",
+            "membershipNumber": "1024161",
+            "fullText": "12  -  210  Collin Taylor  M  32  Strength Solutions Weightlifting  1024161  88.65  2019-11-23  -  Local  Ohio"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0yMyIsIndlaWdodF9jbGFzcyI6ODZ9"
+      },
+      {
+        "meet_id": 4345,
+        "date": "2019-12-14",
+        "age_category": "Men's 16-17 Age Group",
+        "weight_class": "89kg",
+        "lifter_name": "Collin Taylor",
+        "lifter_id": 44158,
+        "membershipNumbers": [
+          {
+            "athleteName": "Collin Taylor",
+            "membershipNumber": "1047173",
+            "fullText": "2  -  189  Collin Taylor  M  17  -  1047173  83.5  2019-12-14  -  Local  Indiana"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMi0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMi0xNCIsIndlaWdodF9jbGFzcyI6N30="
+      },
+      {
+        "meet_id": 4555,
+        "date": "2020-08-14",
+        "age_category": "Junior Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Collin Taylor",
+        "lifter_id": 44158,
+        "membershipNumbers": [
+          {
+            "athleteName": "Collin Taylor",
+            "membershipNumber": "1047173",
+            "fullText": "2  -  195  Collin Taylor  M  18  -  1047173  83  2020-08-14  -  Local  Indiana"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wOC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wOC0xNCIsIndlaWdodF9jbGFzcyI6NjZ9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1024161": [
+          {
+            "meet_id": 4287,
+            "date": "2019-11-23",
+            "age_category": "Open Men's",
+            "weight_class": "89kg",
+            "lifter_name": "Collin Taylor",
+            "lifter_id": 44158,
+            "membershipNumbers": [
+              {
+                "athleteName": "Collin Taylor",
+                "membershipNumber": "1024161",
+                "fullText": "12  -  210  Collin Taylor  M  32  Strength Solutions Weightlifting  1024161  88.65  2019-11-23  -  Local  Ohio"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0yMyIsIndlaWdodF9jbGFzcyI6ODZ9"
+          }
+        ],
+        "1047173": [
+          {
+            "meet_id": 4345,
+            "date": "2019-12-14",
+            "age_category": "Men's 16-17 Age Group",
+            "weight_class": "89kg",
+            "lifter_name": "Collin Taylor",
+            "lifter_id": 44158,
+            "membershipNumbers": [
+              {
+                "athleteName": "Collin Taylor",
+                "membershipNumber": "1047173",
+                "fullText": "2  -  189  Collin Taylor  M  17  -  1047173  83.5  2019-12-14  -  Local  Indiana"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMi0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMi0xNCIsIndlaWdodF9jbGFzcyI6N30="
+          },
+          {
+            "meet_id": 4555,
+            "date": "2020-08-14",
+            "age_category": "Junior Men's",
+            "weight_class": "89kg",
+            "lifter_name": "Collin Taylor",
+            "lifter_id": 44158,
+            "membershipNumbers": [
+              {
+                "athleteName": "Collin Taylor",
+                "membershipNumber": "1047173",
+                "fullText": "2  -  195  Collin Taylor  M  18  -  1047173  83  2020-08-14  -  Local  Indiana"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wOC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wOC0xNCIsIndlaWdodF9jbGFzcyI6NjZ9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

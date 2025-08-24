@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-22T20:45:18.718Z",
+  "athleteName": "Sydney Smith",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1015717": [
+        {
+          "meet_id": 2984,
+          "date": "2018-01-13",
+          "age_category": "Women's 16-17 Age Group",
+          "weight_class": "63 kg",
+          "lifter_name": "Sydney Smith",
+          "lifter_id": 28733,
+          "membershipNumbers": [
+            {
+              "athleteName": "Sydney Smith",
+              "membershipNumber": "1015717",
+              "fullText": "8  -  94  Sydney Smith  F  17  -  1015717  59.4  2018-01-13  -  Local  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMS0xMyIsIndlaWdodF9jbGFzcyI6MzMzfQ=="
+        },
+        {
+          "meet_id": 3904,
+          "date": "2019-05-18",
+          "age_category": "Open Women's",
+          "weight_class": "59kg",
+          "lifter_name": "Sydney Smith",
+          "lifter_id": 28733,
+          "membershipNumbers": [
+            {
+              "athleteName": "Sydney Smith",
+              "membershipNumber": "1015717",
+              "fullText": "15  -  107  Sydney Smith  F  18  -  1015717  57.8  2019-05-18  -  Local  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0xOCIsIndlaWdodF9jbGFzcyI6OTR9"
+        }
+      ],
+      "1016481": [
+        {
+          "meet_id": 2362,
+          "date": "2017-02-25",
+          "age_category": "Open Women's",
+          "weight_class": "63 kg",
+          "lifter_name": "Sydney Smith",
+          "lifter_id": 28733,
+          "membershipNumbers": [
+            {
+              "athleteName": "Sydney Smith",
+              "membershipNumber": "1016481",
+              "fullText": "4  -  79  Sydney Smith  F  18  -  1016481  60.3  2017-02-25  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0yNSIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+        },
+        {
+          "meet_id": 2416,
+          "date": "2017-02-11",
+          "age_category": "Open Women's",
+          "weight_class": "63 kg",
+          "lifter_name": "Sydney Smith",
+          "lifter_id": 28733,
+          "membershipNumbers": [
+            {
+              "athleteName": "Sydney Smith",
+              "membershipNumber": "1016481",
+              "fullText": "27  -  73  Sydney Smith  F  18  -  1016481  60.6  2017-02-11  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xMSIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Sydney Smith",
+    "splits": [
+      {
+        "newAthleteName": "Sydney Smith (Person 1)",
+        "membershipNumber": "1015717",
+        "competitionCount": 2,
+        "competitions": [
+          2984,
+          3904
+        ]
+      },
+      {
+        "newAthleteName": "Sydney Smith (Person 2)",
+        "membershipNumber": "1016481",
+        "competitionCount": 2,
+        "competitions": [
+          2362,
+          2416
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Sydney Smith",
+    "competitions": [
+      {
+        "meet_id": 2984,
+        "date": "2018-01-13",
+        "age_category": "Women's 16-17 Age Group",
+        "weight_class": "63 kg",
+        "lifter_name": "Sydney Smith",
+        "lifter_id": 28733,
+        "membershipNumbers": [
+          {
+            "athleteName": "Sydney Smith",
+            "membershipNumber": "1015717",
+            "fullText": "8  -  94  Sydney Smith  F  17  -  1015717  59.4  2018-01-13  -  Local  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMS0xMyIsIndlaWdodF9jbGFzcyI6MzMzfQ=="
+      },
+      {
+        "meet_id": 3904,
+        "date": "2019-05-18",
+        "age_category": "Open Women's",
+        "weight_class": "59kg",
+        "lifter_name": "Sydney Smith",
+        "lifter_id": 28733,
+        "membershipNumbers": [
+          {
+            "athleteName": "Sydney Smith",
+            "membershipNumber": "1015717",
+            "fullText": "15  -  107  Sydney Smith  F  18  -  1015717  57.8  2019-05-18  -  Local  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0xOCIsIndlaWdodF9jbGFzcyI6OTR9"
+      },
+      {
+        "meet_id": 2362,
+        "date": "2017-02-25",
+        "age_category": "Open Women's",
+        "weight_class": "63 kg",
+        "lifter_name": "Sydney Smith",
+        "lifter_id": 28733,
+        "membershipNumbers": [
+          {
+            "athleteName": "Sydney Smith",
+            "membershipNumber": "1016481",
+            "fullText": "4  -  79  Sydney Smith  F  18  -  1016481  60.3  2017-02-25  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0yNSIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+      },
+      {
+        "meet_id": 2416,
+        "date": "2017-02-11",
+        "age_category": "Open Women's",
+        "weight_class": "63 kg",
+        "lifter_name": "Sydney Smith",
+        "lifter_id": 28733,
+        "membershipNumbers": [
+          {
+            "athleteName": "Sydney Smith",
+            "membershipNumber": "1016481",
+            "fullText": "27  -  73  Sydney Smith  F  18  -  1016481  60.6  2017-02-11  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xMSIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1015717": [
+          {
+            "meet_id": 2984,
+            "date": "2018-01-13",
+            "age_category": "Women's 16-17 Age Group",
+            "weight_class": "63 kg",
+            "lifter_name": "Sydney Smith",
+            "lifter_id": 28733,
+            "membershipNumbers": [
+              {
+                "athleteName": "Sydney Smith",
+                "membershipNumber": "1015717",
+                "fullText": "8  -  94  Sydney Smith  F  17  -  1015717  59.4  2018-01-13  -  Local  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMS0xMyIsIndlaWdodF9jbGFzcyI6MzMzfQ=="
+          },
+          {
+            "meet_id": 3904,
+            "date": "2019-05-18",
+            "age_category": "Open Women's",
+            "weight_class": "59kg",
+            "lifter_name": "Sydney Smith",
+            "lifter_id": 28733,
+            "membershipNumbers": [
+              {
+                "athleteName": "Sydney Smith",
+                "membershipNumber": "1015717",
+                "fullText": "15  -  107  Sydney Smith  F  18  -  1015717  57.8  2019-05-18  -  Local  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0xOCIsIndlaWdodF9jbGFzcyI6OTR9"
+          }
+        ],
+        "1016481": [
+          {
+            "meet_id": 2362,
+            "date": "2017-02-25",
+            "age_category": "Open Women's",
+            "weight_class": "63 kg",
+            "lifter_name": "Sydney Smith",
+            "lifter_id": 28733,
+            "membershipNumbers": [
+              {
+                "athleteName": "Sydney Smith",
+                "membershipNumber": "1016481",
+                "fullText": "4  -  79  Sydney Smith  F  18  -  1016481  60.3  2017-02-25  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0yNSIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+          },
+          {
+            "meet_id": 2416,
+            "date": "2017-02-11",
+            "age_category": "Open Women's",
+            "weight_class": "63 kg",
+            "lifter_name": "Sydney Smith",
+            "lifter_id": 28733,
+            "membershipNumbers": [
+              {
+                "athleteName": "Sydney Smith",
+                "membershipNumber": "1016481",
+                "fullText": "27  -  73  Sydney Smith  F  18  -  1016481  60.6  2017-02-11  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xMSIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

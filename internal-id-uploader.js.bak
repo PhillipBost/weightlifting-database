@@ -128,32 +128,32 @@ async function findLifterByInternalId(internalId) {
     const { data, error } = await withTimeout(
         supabase
             .from('lifters')
-            .select('lifter_id, athlete_name, internal_id')
-            .eq('internal_id', parseInt(internalId))
-            .maybeSingle()
+            .select('lifter_id, athlete_name, internal_id, internal_id_2')
+            .or(`internal_id.eq.${parseInt(internalId)},internal_id_2.eq.${parseInt(internalId)}`)
     );
     
     if (error) {
         throw new Error(`Error querying by internal_id: ${error.message}`);
     }
     
-    return data;
+    // Return first match if any found
+    return data && data.length > 0 ? data[0] : null;
 }
 
 async function findLifterByName(athleteName) {
     const { data, error } = await withTimeout(
         supabase
             .from('lifters')
-            .select('lifter_id, athlete_name, internal_id')
+            .select('lifter_id, athlete_name, internal_id, internal_id_2')
             .eq('athlete_name', athleteName)
-            .maybeSingle()
     );
     
     if (error) {
         throw new Error(`Error querying by athlete_name: ${error.message}`);
     }
     
-    return data;
+    // Return first match if any found
+    return data && data.length > 0 ? data[0] : null;
 }
 
 async function createNewLifter(internalId, athleteName) {
@@ -178,13 +178,37 @@ async function createNewLifter(internalId, athleteName) {
 }
 
 async function updateLifterInternalId(lifterId, internalId) {
+    // First get current internal IDs
+    const { data: current, error: fetchError } = await withTimeout(
+        supabase
+            .from('lifters')
+            .select('internal_id, internal_id_2')
+            .eq('lifter_id', lifterId)
+            .single()
+    );
+    
+    if (fetchError) {
+        throw new Error(`Error fetching current internal IDs: ${fetchError.message}`);
+    }
+    
+    const newId = parseInt(internalId);
+    let updateData = { updated_at: new Date().toISOString() };
+    
+    // Determine where to put the new internal ID
+    if (!current.internal_id) {
+        updateData.internal_id = newId;
+        console.log(`  📝 Adding as primary internal_id`);
+    } else if (!current.internal_id_2) {
+        updateData.internal_id_2 = newId;
+        console.log(`  📝 Adding as secondary internal_id_2 (primary: ${current.internal_id})`);
+    } else {
+        throw new Error(`Lifter already has two internal IDs: ${current.internal_id} and ${current.internal_id_2}`);
+    }
+    
     const { error } = await withTimeout(
         supabase
             .from('lifters')
-            .update({
-                internal_id: parseInt(internalId),
-                updated_at: new Date().toISOString()
-            })
+            .update(updateData)
             .eq('lifter_id', lifterId)
     );
     
@@ -263,39 +287,32 @@ async function processAthlete(internalId, athleteName, errorLogger, data) {
             };
         }
         
-        // Case 4: Name exists but with different internal_id - PERMANENT CONFLICT  
-        if (lifterByName && lifterByName.internal_id && 
-            lifterByName.internal_id !== parseInt(internalId)) {
-            
-            const conflict = {
-                internalId: parseInt(internalId),
-                scrapedName: athleteName,
-                existingInternalId: lifterByName.internal_id,
-                reason: `Athlete "${athleteName}" already has internal_id ${lifterByName.internal_id}`,
-                conflictType: 'NAME_HAS_DIFFERENT_ID',
-                detectedAt: new Date().toISOString()
-            };
-            
-            data.uploadConflicts.push(conflict);
-            
-            console.log(`  ❌ PERMANENT CONFLICT: "${athleteName}" already has internal_id ${lifterByName.internal_id}`);
-            console.log(`  📝 Added to permanent conflicts - will not retry`);
-            
-            errorLogger.logError(
-                internalId,
-                athleteName,
-                'PERMANENT_CONFLICT',
-                athleteName,
-                lifterByName.internal_id,
-                'Name has different internal_id - permanently skipped'
-            );
-            
-            return {
-                success: true, // Don't retry
-                action: 'CONFLICT',
-                reason: 'Permanent conflict logged'
-            };
-        }
+        // Case 4: Name exists but with different internal_id - CHECK FOR SECOND ID SLOT
+		if (lifterByName && lifterByName.internal_id && 
+			lifterByName.internal_id !== parseInt(internalId)) {
+			
+			// Check if internal_id_2 is available
+			if (!lifterByName.internal_id_2) {
+				// Add as second internal ID
+				await updateLifterInternalId(lifterByName.lifter_id, internalId);
+				console.log(`  🔄 Added as secondary internal_id_2 (primary: ${lifterByName.internal_id})`);
+				return { action: 'UPDATED', success: true, lifterId: lifterByName.lifter_id };
+			} else {
+				// Both slots filled - now it's a real conflict
+				const conflict = {
+					internalId: parseInt(internalId),
+					scrapedName: athleteName,
+					existingInternalId: lifterByName.internal_id,
+					existingInternalId2: lifterByName.internal_id_2,
+					reason: `Athlete "${athleteName}" already has two internal_ids: ${lifterByName.internal_id} and ${lifterByName.internal_id_2}`,
+					conflictType: 'NAME_HAS_TWO_IDS',
+					detectedAt: new Date().toISOString()
+				};
+				
+				data.uploadConflicts.push(conflict);
+				// ... rest of conflict handling
+			}
+		}
         
         // Case 5: Name exists but internal_id is null - UPDATE
         if (lifterByName && !lifterByName.internal_id) {
@@ -377,6 +394,7 @@ async function main() {
         // Find unprocessed athletes (excluding known conflicts)
         const allInternalIds = Object.keys(data.athletes);
 		const processedIds = Object.keys(data.processed).filter(id => data.processed[id] === true);
+		const conflictIds = data.uploadConflicts.map(c => c.internalId.toString());
 
 		// Debug: Check if ID 1 is being found
 		console.log(`🔍 Debug: ID 1 processed status: ${data.processed['1']}`);

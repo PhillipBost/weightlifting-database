@@ -1,0 +1,194 @@
+{
+  "timestamp": "2025-08-22T19:39:57.101Z",
+  "athleteName": "Sarah Clark",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "221013": [
+        {
+          "meet_id": 526,
+          "date": "2016-01-31",
+          "age_category": "Open Women's",
+          "weight_class": "63 kg",
+          "lifter_name": "Sarah Clark",
+          "lifter_id": 16809,
+          "membershipNumbers": [
+            {
+              "athleteName": "Sarah Clark",
+              "membershipNumber": "221013",
+              "fullText": "27  -  85  Sarah Clark  F  26  TOUGH TEMPLE BARBELL CLUB  221013  60.35  2016-01-31  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0zMSIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+        }
+      ],
+      "1071319": [
+        {
+          "meet_id": 5967,
+          "date": "2023-08-06",
+          "age_category": "Junior Women's",
+          "weight_class": "55kg",
+          "lifter_name": "Sarah Clark",
+          "lifter_id": 16809,
+          "membershipNumbers": [
+            {
+              "athleteName": "Sarah Clark",
+              "membershipNumber": "1071319",
+              "fullText": "1  -  108  Sarah Clark  F  18  Jacksonville Weightlifting  1071319  52.3  2023-08-06  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wOC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wOC0wNiIsIndlaWdodF9jbGFzcyI6NzN9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 1747,
+        "date": "2016-04-17",
+        "age_category": "Open Women's",
+        "weight_class": "63 kg",
+        "lifter_name": "Sarah Clark",
+        "lifter_id": 16809,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0xNyIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Sarah Clark",
+    "splits": [
+      {
+        "newAthleteName": "Sarah Clark (Person 1)",
+        "membershipNumber": "221013",
+        "competitionCount": 1,
+        "competitions": [
+          526
+        ]
+      },
+      {
+        "newAthleteName": "Sarah Clark (Person 2)",
+        "membershipNumber": "1071319",
+        "competitionCount": 1,
+        "competitions": [
+          5967
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 1747,
+        "date": "2016-04-17",
+        "age_category": "Open Women's",
+        "weight_class": "63 kg",
+        "lifter_name": "Sarah Clark",
+        "lifter_id": 16809,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0xNyIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Sarah Clark",
+    "competitions": [
+      {
+        "meet_id": 1747,
+        "date": "2016-04-17",
+        "age_category": "Open Women's",
+        "weight_class": "63 kg",
+        "lifter_name": "Sarah Clark",
+        "lifter_id": 16809,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0xNyIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+      },
+      {
+        "meet_id": 5967,
+        "date": "2023-08-06",
+        "age_category": "Junior Women's",
+        "weight_class": "55kg",
+        "lifter_name": "Sarah Clark",
+        "lifter_id": 16809,
+        "membershipNumbers": [
+          {
+            "athleteName": "Sarah Clark",
+            "membershipNumber": "1071319",
+            "fullText": "1  -  108  Sarah Clark  F  18  Jacksonville Weightlifting  1071319  52.3  2023-08-06  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wOC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wOC0wNiIsIndlaWdodF9jbGFzcyI6NzN9"
+      },
+      {
+        "meet_id": 526,
+        "date": "2016-01-31",
+        "age_category": "Open Women's",
+        "weight_class": "63 kg",
+        "lifter_name": "Sarah Clark",
+        "lifter_id": 16809,
+        "membershipNumbers": [
+          {
+            "athleteName": "Sarah Clark",
+            "membershipNumber": "221013",
+            "fullText": "27  -  85  Sarah Clark  F  26  TOUGH TEMPLE BARBELL CLUB  221013  60.35  2016-01-31  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0zMSIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "221013": [
+          {
+            "meet_id": 526,
+            "date": "2016-01-31",
+            "age_category": "Open Women's",
+            "weight_class": "63 kg",
+            "lifter_name": "Sarah Clark",
+            "lifter_id": 16809,
+            "membershipNumbers": [
+              {
+                "athleteName": "Sarah Clark",
+                "membershipNumber": "221013",
+                "fullText": "27  -  85  Sarah Clark  F  26  TOUGH TEMPLE BARBELL CLUB  221013  60.35  2016-01-31  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0zMSIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+          }
+        ],
+        "1071319": [
+          {
+            "meet_id": 5967,
+            "date": "2023-08-06",
+            "age_category": "Junior Women's",
+            "weight_class": "55kg",
+            "lifter_name": "Sarah Clark",
+            "lifter_id": 16809,
+            "membershipNumbers": [
+              {
+                "athleteName": "Sarah Clark",
+                "membershipNumber": "1071319",
+                "fullText": "1  -  108  Sarah Clark  F  18  Jacksonville Weightlifting  1071319  52.3  2023-08-06  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wOC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wOC0wNiIsIndlaWdodF9jbGFzcyI6NzN9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 1747,
+          "date": "2016-04-17",
+          "age_category": "Open Women's",
+          "weight_class": "63 kg",
+          "lifter_name": "Sarah Clark",
+          "lifter_id": 16809,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0xNyIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

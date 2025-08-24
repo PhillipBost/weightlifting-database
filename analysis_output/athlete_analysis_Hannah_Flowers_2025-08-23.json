@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-23T00:08:37.306Z",
+  "athleteName": "Hannah Flowers",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1014648": [
+        {
+          "meet_id": 2360,
+          "date": "2017-02-04",
+          "age_category": "Open Women's",
+          "weight_class": "75 kg",
+          "lifter_name": "Hannah Flowers",
+          "lifter_id": 28712,
+          "membershipNumbers": [
+            {
+              "athleteName": "Hannah Flowers",
+              "membershipNumber": "1014648",
+              "fullText": "10  -  116  Hannah Flowers  F  21  -  1014648  71.23  2017-02-04  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0wNCIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+        }
+      ],
+      "1073107": [
+        {
+          "meet_id": 6080,
+          "date": "2023-10-28",
+          "age_category": "Junior Women's",
+          "weight_class": "55kg",
+          "lifter_name": "Hannah Flowers",
+          "lifter_id": 28712,
+          "membershipNumbers": [
+            {
+              "athleteName": "Hannah Flowers",
+              "membershipNumber": "1073107",
+              "fullText": "6  -  97  Hannah Flowers  F  19  Team Florida Pensacola  1073107  51.4  2023-10-28  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMC0yOCIsIndlaWdodF9jbGFzcyI6NzN9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Hannah Flowers",
+    "splits": [
+      {
+        "newAthleteName": "Hannah Flowers (Person 1)",
+        "membershipNumber": "1014648",
+        "competitionCount": 1,
+        "competitions": [
+          2360
+        ]
+      },
+      {
+        "newAthleteName": "Hannah Flowers (Person 2)",
+        "membershipNumber": "1073107",
+        "competitionCount": 1,
+        "competitions": [
+          6080
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Hannah Flowers",
+    "competitions": [
+      {
+        "meet_id": 6080,
+        "date": "2023-10-28",
+        "age_category": "Junior Women's",
+        "weight_class": "55kg",
+        "lifter_name": "Hannah Flowers",
+        "lifter_id": 28712,
+        "membershipNumbers": [
+          {
+            "athleteName": "Hannah Flowers",
+            "membershipNumber": "1073107",
+            "fullText": "6  -  97  Hannah Flowers  F  19  Team Florida Pensacola  1073107  51.4  2023-10-28  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMC0yOCIsIndlaWdodF9jbGFzcyI6NzN9"
+      },
+      {
+        "meet_id": 2360,
+        "date": "2017-02-04",
+        "age_category": "Open Women's",
+        "weight_class": "75 kg",
+        "lifter_name": "Hannah Flowers",
+        "lifter_id": 28712,
+        "membershipNumbers": [
+          {
+            "athleteName": "Hannah Flowers",
+            "membershipNumber": "1014648",
+            "fullText": "10  -  116  Hannah Flowers  F  21  -  1014648  71.23  2017-02-04  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0wNCIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1014648": [
+          {
+            "meet_id": 2360,
+            "date": "2017-02-04",
+            "age_category": "Open Women's",
+            "weight_class": "75 kg",
+            "lifter_name": "Hannah Flowers",
+            "lifter_id": 28712,
+            "membershipNumbers": [
+              {
+                "athleteName": "Hannah Flowers",
+                "membershipNumber": "1014648",
+                "fullText": "10  -  116  Hannah Flowers  F  21  -  1014648  71.23  2017-02-04  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0wNCIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+          }
+        ],
+        "1073107": [
+          {
+            "meet_id": 6080,
+            "date": "2023-10-28",
+            "age_category": "Junior Women's",
+            "weight_class": "55kg",
+            "lifter_name": "Hannah Flowers",
+            "lifter_id": 28712,
+            "membershipNumbers": [
+              {
+                "athleteName": "Hannah Flowers",
+                "membershipNumber": "1073107",
+                "fullText": "6  -  97  Hannah Flowers  F  19  Team Florida Pensacola  1073107  51.4  2023-10-28  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMC0yOCIsIndlaWdodF9jbGFzcyI6NzN9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

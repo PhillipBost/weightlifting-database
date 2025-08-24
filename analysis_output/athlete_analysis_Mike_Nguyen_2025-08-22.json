@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T04:45:20.770Z",
+  "athleteName": "Mike Nguyen",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "190714": [
+        {
+          "meet_id": 693,
+          "date": "2013-12-14",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Mike Nguyen",
+          "lifter_id": 4651,
+          "membershipNumbers": [
+            {
+              "athleteName": "Mike Nguyen",
+              "membershipNumber": "190714",
+              "fullText": "9  -  224  Mike Nguyen  M  29  -  190714  76.6  2013-12-14  -  Local  Georgia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMi0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMi0xNCIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        }
+      ],
+      "1056131": [
+        {
+          "meet_id": 4845,
+          "date": "2021-05-22",
+          "age_category": "Open Men's",
+          "weight_class": "61kg",
+          "lifter_name": "Mike Nguyen",
+          "lifter_id": 4651,
+          "membershipNumbers": [
+            {
+              "athleteName": "Mike Nguyen",
+              "membershipNumber": "1056131",
+              "fullText": "7  -  162  Mike Nguyen  M  24  -  1056131  60.5  2021-05-22  -  Local  Illinois"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNS0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNS0yMiIsIndlaWdodF9jbGFzcyI6ODJ9"
+        },
+        {
+          "meet_id": 4524,
+          "date": "2021-04-01",
+          "age_category": "Open Men's",
+          "weight_class": "61kg",
+          "lifter_name": "Mike Nguyen",
+          "lifter_id": 4651,
+          "membershipNumbers": [
+            {
+              "athleteName": "Mike Nguyen",
+              "membershipNumber": "1056131",
+              "fullText": "1  -  153  Mike Nguyen  M  24  -  1056131  60.9  2021-04-01  -  Local  Illinois"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNC0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNC0wMSIsIndlaWdodF9jbGFzcyI6ODJ9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Mike Nguyen",
+    "splits": [
+      {
+        "newAthleteName": "Mike Nguyen (Person 1)",
+        "membershipNumber": "190714",
+        "competitionCount": 1,
+        "competitions": [
+          693
+        ]
+      },
+      {
+        "newAthleteName": "Mike Nguyen (Person 2)",
+        "membershipNumber": "1056131",
+        "competitionCount": 2,
+        "competitions": [
+          4845,
+          4524
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Mike Nguyen",
+    "competitions": [
+      {
+        "meet_id": 693,
+        "date": "2013-12-14",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Mike Nguyen",
+        "lifter_id": 4651,
+        "membershipNumbers": [
+          {
+            "athleteName": "Mike Nguyen",
+            "membershipNumber": "190714",
+            "fullText": "9  -  224  Mike Nguyen  M  29  -  190714  76.6  2013-12-14  -  Local  Georgia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMi0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMi0xNCIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 4845,
+        "date": "2021-05-22",
+        "age_category": "Open Men's",
+        "weight_class": "61kg",
+        "lifter_name": "Mike Nguyen",
+        "lifter_id": 4651,
+        "membershipNumbers": [
+          {
+            "athleteName": "Mike Nguyen",
+            "membershipNumber": "1056131",
+            "fullText": "7  -  162  Mike Nguyen  M  24  -  1056131  60.5  2021-05-22  -  Local  Illinois"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNS0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNS0yMiIsIndlaWdodF9jbGFzcyI6ODJ9"
+      },
+      {
+        "meet_id": 4524,
+        "date": "2021-04-01",
+        "age_category": "Open Men's",
+        "weight_class": "61kg",
+        "lifter_name": "Mike Nguyen",
+        "lifter_id": 4651,
+        "membershipNumbers": [
+          {
+            "athleteName": "Mike Nguyen",
+            "membershipNumber": "1056131",
+            "fullText": "1  -  153  Mike Nguyen  M  24  -  1056131  60.9  2021-04-01  -  Local  Illinois"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNC0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNC0wMSIsIndlaWdodF9jbGFzcyI6ODJ9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "190714": [
+          {
+            "meet_id": 693,
+            "date": "2013-12-14",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Mike Nguyen",
+            "lifter_id": 4651,
+            "membershipNumbers": [
+              {
+                "athleteName": "Mike Nguyen",
+                "membershipNumber": "190714",
+                "fullText": "9  -  224  Mike Nguyen  M  29  -  190714  76.6  2013-12-14  -  Local  Georgia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMi0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMi0xNCIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          }
+        ],
+        "1056131": [
+          {
+            "meet_id": 4845,
+            "date": "2021-05-22",
+            "age_category": "Open Men's",
+            "weight_class": "61kg",
+            "lifter_name": "Mike Nguyen",
+            "lifter_id": 4651,
+            "membershipNumbers": [
+              {
+                "athleteName": "Mike Nguyen",
+                "membershipNumber": "1056131",
+                "fullText": "7  -  162  Mike Nguyen  M  24  -  1056131  60.5  2021-05-22  -  Local  Illinois"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNS0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNS0yMiIsIndlaWdodF9jbGFzcyI6ODJ9"
+          },
+          {
+            "meet_id": 4524,
+            "date": "2021-04-01",
+            "age_category": "Open Men's",
+            "weight_class": "61kg",
+            "lifter_name": "Mike Nguyen",
+            "lifter_id": 4651,
+            "membershipNumbers": [
+              {
+                "athleteName": "Mike Nguyen",
+                "membershipNumber": "1056131",
+                "fullText": "1  -  153  Mike Nguyen  M  24  -  1056131  60.9  2021-04-01  -  Local  Illinois"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNC0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNC0wMSIsIndlaWdodF9jbGFzcyI6ODJ9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

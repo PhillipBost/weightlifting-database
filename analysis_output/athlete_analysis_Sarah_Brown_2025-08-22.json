@@ -1,0 +1,292 @@
+{
+  "timestamp": "2025-08-22T15:57:36.948Z",
+  "athleteName": "Sarah Brown",
+  "totalCompetitions": 5,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "208612": [
+        {
+          "meet_id": 373,
+          "date": "2015-05-09",
+          "age_category": "Open Women's",
+          "weight_class": "63 kg",
+          "lifter_name": "Sarah Brown",
+          "lifter_id": 12792,
+          "membershipNumbers": [
+            {
+              "athleteName": "Sarah Brown",
+              "membershipNumber": "208612",
+              "fullText": "14  -  96  Sarah Brown  F  32  DRAGONFIRE WEIGHTLIFTING  208612  62.1  2015-05-09  -  Local  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0wOSIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+        }
+      ],
+      "1068532": [
+        {
+          "meet_id": 6549,
+          "date": "2024-10-05",
+          "age_category": "Open Women's",
+          "weight_class": "71kg",
+          "lifter_name": "Sarah Brown",
+          "lifter_id": 12792,
+          "membershipNumbers": [
+            {
+              "athleteName": "Sarah Brown",
+              "membershipNumber": "1068532",
+              "fullText": "21  -  127  Sarah Brown  F  25  EFD Holland Barbell  1068532  68.3  2024-10-05  -  Local  Michigan"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0wNSIsIndlaWdodF9jbGFzcyI6OTZ9"
+        },
+        {
+          "meet_id": 6136,
+          "date": "2023-11-18",
+          "age_category": "Open Women's",
+          "weight_class": "71kg",
+          "lifter_name": "Sarah Brown",
+          "lifter_id": 12792,
+          "membershipNumbers": [
+            {
+              "athleteName": "Sarah Brown",
+              "membershipNumber": "1068532",
+              "fullText": "22  -  101  Sarah Brown  F  24  EFD Holland Barbell  1068532  68.82  2023-11-18  -  Local  Michigan"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMS0xOCIsIndlaWdodF9jbGFzcyI6OTZ9"
+        },
+        {
+          "meet_id": 6215,
+          "date": "2024-01-27",
+          "age_category": "Open Women's",
+          "weight_class": "71kg",
+          "lifter_name": "Sarah Brown",
+          "lifter_id": 12792,
+          "membershipNumbers": [
+            {
+              "athleteName": "Sarah Brown",
+              "membershipNumber": "1068532",
+              "fullText": "27  -  118  Sarah Brown  F  25  EFD Holland Barbell  1068532  70.2  2024-01-27  -  Local  Michigan"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMS0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMS0yNyIsIndlaWdodF9jbGFzcyI6OTZ9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 5791,
+        "date": "2023-04-15",
+        "age_category": "Open Women's",
+        "weight_class": "76kg",
+        "lifter_name": "Sarah Brown",
+        "lifter_id": 12792,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0xNSIsIndlaWdodF9jbGFzcyI6OTd9"
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Sarah Brown",
+    "splits": [
+      {
+        "newAthleteName": "Sarah Brown (Person 1)",
+        "membershipNumber": "208612",
+        "competitionCount": 1,
+        "competitions": [
+          373
+        ]
+      },
+      {
+        "newAthleteName": "Sarah Brown (Person 2)",
+        "membershipNumber": "1068532",
+        "competitionCount": 3,
+        "competitions": [
+          6549,
+          6136,
+          6215
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 5791,
+        "date": "2023-04-15",
+        "age_category": "Open Women's",
+        "weight_class": "76kg",
+        "lifter_name": "Sarah Brown",
+        "lifter_id": 12792,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0xNSIsIndlaWdodF9jbGFzcyI6OTd9"
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Sarah Brown",
+    "competitions": [
+      {
+        "meet_id": 5791,
+        "date": "2023-04-15",
+        "age_category": "Open Women's",
+        "weight_class": "76kg",
+        "lifter_name": "Sarah Brown",
+        "lifter_id": 12792,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0xNSIsIndlaWdodF9jbGFzcyI6OTd9"
+      },
+      {
+        "meet_id": 6549,
+        "date": "2024-10-05",
+        "age_category": "Open Women's",
+        "weight_class": "71kg",
+        "lifter_name": "Sarah Brown",
+        "lifter_id": 12792,
+        "membershipNumbers": [
+          {
+            "athleteName": "Sarah Brown",
+            "membershipNumber": "1068532",
+            "fullText": "21  -  127  Sarah Brown  F  25  EFD Holland Barbell  1068532  68.3  2024-10-05  -  Local  Michigan"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0wNSIsIndlaWdodF9jbGFzcyI6OTZ9"
+      },
+      {
+        "meet_id": 373,
+        "date": "2015-05-09",
+        "age_category": "Open Women's",
+        "weight_class": "63 kg",
+        "lifter_name": "Sarah Brown",
+        "lifter_id": 12792,
+        "membershipNumbers": [
+          {
+            "athleteName": "Sarah Brown",
+            "membershipNumber": "208612",
+            "fullText": "14  -  96  Sarah Brown  F  32  DRAGONFIRE WEIGHTLIFTING  208612  62.1  2015-05-09  -  Local  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0wOSIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+      },
+      {
+        "meet_id": 6136,
+        "date": "2023-11-18",
+        "age_category": "Open Women's",
+        "weight_class": "71kg",
+        "lifter_name": "Sarah Brown",
+        "lifter_id": 12792,
+        "membershipNumbers": [
+          {
+            "athleteName": "Sarah Brown",
+            "membershipNumber": "1068532",
+            "fullText": "22  -  101  Sarah Brown  F  24  EFD Holland Barbell  1068532  68.82  2023-11-18  -  Local  Michigan"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMS0xOCIsIndlaWdodF9jbGFzcyI6OTZ9"
+      },
+      {
+        "meet_id": 6215,
+        "date": "2024-01-27",
+        "age_category": "Open Women's",
+        "weight_class": "71kg",
+        "lifter_name": "Sarah Brown",
+        "lifter_id": 12792,
+        "membershipNumbers": [
+          {
+            "athleteName": "Sarah Brown",
+            "membershipNumber": "1068532",
+            "fullText": "27  -  118  Sarah Brown  F  25  EFD Holland Barbell  1068532  70.2  2024-01-27  -  Local  Michigan"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMS0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMS0yNyIsIndlaWdodF9jbGFzcyI6OTZ9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "208612": [
+          {
+            "meet_id": 373,
+            "date": "2015-05-09",
+            "age_category": "Open Women's",
+            "weight_class": "63 kg",
+            "lifter_name": "Sarah Brown",
+            "lifter_id": 12792,
+            "membershipNumbers": [
+              {
+                "athleteName": "Sarah Brown",
+                "membershipNumber": "208612",
+                "fullText": "14  -  96  Sarah Brown  F  32  DRAGONFIRE WEIGHTLIFTING  208612  62.1  2015-05-09  -  Local  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0wOSIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+          }
+        ],
+        "1068532": [
+          {
+            "meet_id": 6549,
+            "date": "2024-10-05",
+            "age_category": "Open Women's",
+            "weight_class": "71kg",
+            "lifter_name": "Sarah Brown",
+            "lifter_id": 12792,
+            "membershipNumbers": [
+              {
+                "athleteName": "Sarah Brown",
+                "membershipNumber": "1068532",
+                "fullText": "21  -  127  Sarah Brown  F  25  EFD Holland Barbell  1068532  68.3  2024-10-05  -  Local  Michigan"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0wNSIsIndlaWdodF9jbGFzcyI6OTZ9"
+          },
+          {
+            "meet_id": 6136,
+            "date": "2023-11-18",
+            "age_category": "Open Women's",
+            "weight_class": "71kg",
+            "lifter_name": "Sarah Brown",
+            "lifter_id": 12792,
+            "membershipNumbers": [
+              {
+                "athleteName": "Sarah Brown",
+                "membershipNumber": "1068532",
+                "fullText": "22  -  101  Sarah Brown  F  24  EFD Holland Barbell  1068532  68.82  2023-11-18  -  Local  Michigan"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMS0xOCIsIndlaWdodF9jbGFzcyI6OTZ9"
+          },
+          {
+            "meet_id": 6215,
+            "date": "2024-01-27",
+            "age_category": "Open Women's",
+            "weight_class": "71kg",
+            "lifter_name": "Sarah Brown",
+            "lifter_id": 12792,
+            "membershipNumbers": [
+              {
+                "athleteName": "Sarah Brown",
+                "membershipNumber": "1068532",
+                "fullText": "27  -  118  Sarah Brown  F  25  EFD Holland Barbell  1068532  70.2  2024-01-27  -  Local  Michigan"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMS0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMS0yNyIsIndlaWdodF9jbGFzcyI6OTZ9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 5791,
+          "date": "2023-04-15",
+          "age_category": "Open Women's",
+          "weight_class": "76kg",
+          "lifter_name": "Sarah Brown",
+          "lifter_id": 12792,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0xNSIsIndlaWdodF9jbGFzcyI6OTd9"
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "timestamp": "2025-08-22T22:11:29.736Z",
+  "athleteName": "Andrew Schwartz",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1001603": [
+        {
+          "meet_id": 1687,
+          "date": "2016-01-09",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Andrew Schwartz",
+          "lifter_id": 21716,
+          "membershipNumbers": [
+            {
+              "athleteName": "Andrew Schwartz",
+              "membershipNumber": "1001603",
+              "fullText": "25  -  180  Andrew Schwartz  M  29  CF Atlanta Weightlifting  1001603  83  2016-01-09  -  Local  Georgia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0wOSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ],
+      "1041806": [
+        {
+          "meet_id": 3981,
+          "date": "2019-05-04",
+          "age_category": "Open Men's",
+          "weight_class": "73kg",
+          "lifter_name": "Andrew Schwartz",
+          "lifter_id": 21716,
+          "membershipNumbers": [
+            {
+              "athleteName": "Andrew Schwartz",
+              "membershipNumber": "1041806",
+              "fullText": "17  -  141  Andrew Schwartz  M  18  -  1041806  70.7  2019-05-04  -  Local  Illinois"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0wNCIsIndlaWdodF9jbGFzcyI6ODR9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 2335,
+        "date": "2017-01-14",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Andrew Schwartz",
+        "lifter_id": 21716,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMS0xNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Andrew Schwartz",
+    "splits": [
+      {
+        "newAthleteName": "Andrew Schwartz (Person 1)",
+        "membershipNumber": "1001603",
+        "competitionCount": 1,
+        "competitions": [
+          1687
+        ]
+      },
+      {
+        "newAthleteName": "Andrew Schwartz (Person 2)",
+        "membershipNumber": "1041806",
+        "competitionCount": 1,
+        "competitions": [
+          3981
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 2335,
+        "date": "2017-01-14",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Andrew Schwartz",
+        "lifter_id": 21716,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMS0xNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Andrew Schwartz",
+    "competitions": [
+      {
+        "meet_id": 2335,
+        "date": "2017-01-14",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Andrew Schwartz",
+        "lifter_id": 21716,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMS0xNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 1687,
+        "date": "2016-01-09",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Andrew Schwartz",
+        "lifter_id": 21716,
+        "membershipNumbers": [
+          {
+            "athleteName": "Andrew Schwartz",
+            "membershipNumber": "1001603",
+            "fullText": "25  -  180  Andrew Schwartz  M  29  CF Atlanta Weightlifting  1001603  83  2016-01-09  -  Local  Georgia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0wOSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 3981,
+        "date": "2019-05-04",
+        "age_category": "Open Men's",
+        "weight_class": "73kg",
+        "lifter_name": "Andrew Schwartz",
+        "lifter_id": 21716,
+        "membershipNumbers": [
+          {
+            "athleteName": "Andrew Schwartz",
+            "membershipNumber": "1041806",
+            "fullText": "17  -  141  Andrew Schwartz  M  18  -  1041806  70.7  2019-05-04  -  Local  Illinois"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0wNCIsIndlaWdodF9jbGFzcyI6ODR9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1001603": [
+          {
+            "meet_id": 1687,
+            "date": "2016-01-09",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Andrew Schwartz",
+            "lifter_id": 21716,
+            "membershipNumbers": [
+              {
+                "athleteName": "Andrew Schwartz",
+                "membershipNumber": "1001603",
+                "fullText": "25  -  180  Andrew Schwartz  M  29  CF Atlanta Weightlifting  1001603  83  2016-01-09  -  Local  Georgia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0wOSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          }
+        ],
+        "1041806": [
+          {
+            "meet_id": 3981,
+            "date": "2019-05-04",
+            "age_category": "Open Men's",
+            "weight_class": "73kg",
+            "lifter_name": "Andrew Schwartz",
+            "lifter_id": 21716,
+            "membershipNumbers": [
+              {
+                "athleteName": "Andrew Schwartz",
+                "membershipNumber": "1041806",
+                "fullText": "17  -  141  Andrew Schwartz  M  18  -  1041806  70.7  2019-05-04  -  Local  Illinois"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0wNCIsIndlaWdodF9jbGFzcyI6ODR9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 2335,
+          "date": "2017-01-14",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Andrew Schwartz",
+          "lifter_id": 21716,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMS0xNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

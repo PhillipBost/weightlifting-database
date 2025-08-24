@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T08:14:14.355Z",
+  "athleteName": "Nicole Meyer",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1016421": [
+        {
+          "meet_id": 3282,
+          "date": "2018-10-07",
+          "age_category": "Women's Masters (45-49)",
+          "weight_class": "64kg",
+          "lifter_name": "Nicole Meyer",
+          "lifter_id": 36804,
+          "membershipNumbers": [
+            {
+              "athleteName": "Nicole Meyer",
+              "membershipNumber": "1016421",
+              "fullText": "1  -  115  Nicole Meyer  F  47  SUPERIOR ATHLETIC ADVANTAGE  1016421  63.02  2018-10-07  -  Local  Illinois"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0wNyIsIndlaWdodF9jbGFzcyI6MTU1fQ=="
+        }
+      ],
+      "1078703": [
+        {
+          "meet_id": 6645,
+          "date": "2024-11-16",
+          "age_category": "Open Women's",
+          "weight_class": "59kg",
+          "lifter_name": "Nicole Meyer",
+          "lifter_id": 36804,
+          "membershipNumbers": [
+            {
+              "athleteName": "Nicole Meyer",
+              "membershipNumber": "1078703",
+              "fullText": "2  -  100  Nicole Meyer   F  34  -  1078703  58.4  2024-11-16  -  Local  Michigan"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMS0xNiIsIndlaWdodF9jbGFzcyI6OTR9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Nicole Meyer",
+    "splits": [
+      {
+        "newAthleteName": "Nicole Meyer (Person 1)",
+        "membershipNumber": "1016421",
+        "competitionCount": 1,
+        "competitions": [
+          3282
+        ]
+      },
+      {
+        "newAthleteName": "Nicole Meyer (Person 2)",
+        "membershipNumber": "1078703",
+        "competitionCount": 1,
+        "competitions": [
+          6645
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Nicole Meyer",
+    "competitions": [
+      {
+        "meet_id": 6645,
+        "date": "2024-11-16",
+        "age_category": "Open Women's",
+        "weight_class": "59kg",
+        "lifter_name": "Nicole Meyer",
+        "lifter_id": 36804,
+        "membershipNumbers": [
+          {
+            "athleteName": "Nicole Meyer",
+            "membershipNumber": "1078703",
+            "fullText": "2  -  100  Nicole Meyer   F  34  -  1078703  58.4  2024-11-16  -  Local  Michigan"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMS0xNiIsIndlaWdodF9jbGFzcyI6OTR9"
+      },
+      {
+        "meet_id": 3282,
+        "date": "2018-10-07",
+        "age_category": "Women's Masters (45-49)",
+        "weight_class": "64kg",
+        "lifter_name": "Nicole Meyer",
+        "lifter_id": 36804,
+        "membershipNumbers": [
+          {
+            "athleteName": "Nicole Meyer",
+            "membershipNumber": "1016421",
+            "fullText": "1  -  115  Nicole Meyer  F  47  SUPERIOR ATHLETIC ADVANTAGE  1016421  63.02  2018-10-07  -  Local  Illinois"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0wNyIsIndlaWdodF9jbGFzcyI6MTU1fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1016421": [
+          {
+            "meet_id": 3282,
+            "date": "2018-10-07",
+            "age_category": "Women's Masters (45-49)",
+            "weight_class": "64kg",
+            "lifter_name": "Nicole Meyer",
+            "lifter_id": 36804,
+            "membershipNumbers": [
+              {
+                "athleteName": "Nicole Meyer",
+                "membershipNumber": "1016421",
+                "fullText": "1  -  115  Nicole Meyer  F  47  SUPERIOR ATHLETIC ADVANTAGE  1016421  63.02  2018-10-07  -  Local  Illinois"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0wNyIsIndlaWdodF9jbGFzcyI6MTU1fQ=="
+          }
+        ],
+        "1078703": [
+          {
+            "meet_id": 6645,
+            "date": "2024-11-16",
+            "age_category": "Open Women's",
+            "weight_class": "59kg",
+            "lifter_name": "Nicole Meyer",
+            "lifter_id": 36804,
+            "membershipNumbers": [
+              {
+                "athleteName": "Nicole Meyer",
+                "membershipNumber": "1078703",
+                "fullText": "2  -  100  Nicole Meyer   F  34  -  1078703  58.4  2024-11-16  -  Local  Michigan"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMS0xNiIsIndlaWdodF9jbGFzcyI6OTR9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

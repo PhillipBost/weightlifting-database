@@ -1,0 +1,194 @@
+{
+  "timestamp": "2025-08-23T00:11:36.347Z",
+  "athleteName": "Chelsea Allen",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1012618": [
+        {
+          "meet_id": 2473,
+          "date": "2017-03-18",
+          "age_category": "Open Women's",
+          "weight_class": "69 kg",
+          "lifter_name": "Chelsea Allen",
+          "lifter_id": 26757,
+          "membershipNumbers": [
+            {
+              "athleteName": "Chelsea Allen",
+              "membershipNumber": "1012618",
+              "fullText": "2  -  128  Chelsea Allen  F  26  IronRx Weightlifting  1012618  66.7  2017-03-18  -  Local  New England"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0xOCIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+        }
+      ],
+      "1061634": [
+        {
+          "meet_id": 5248,
+          "date": "2022-03-26",
+          "age_category": "Open Women's",
+          "weight_class": "59kg",
+          "lifter_name": "Chelsea Allen",
+          "lifter_id": 26757,
+          "membershipNumbers": [
+            {
+              "athleteName": "Chelsea Allen",
+              "membershipNumber": "1061634",
+              "fullText": "13  -  119  Chelsea Allen  F  27  -  1061634  57.3  2022-03-26  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMy0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMy0yNiIsIndlaWdodF9jbGFzcyI6OTR9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 2221,
+        "date": "2016-10-22",
+        "age_category": "Open Women's",
+        "weight_class": "69 kg",
+        "lifter_name": "Chelsea Allen",
+        "lifter_id": 26757,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0yMiIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Chelsea Allen",
+    "splits": [
+      {
+        "newAthleteName": "Chelsea Allen (Person 1)",
+        "membershipNumber": "1012618",
+        "competitionCount": 1,
+        "competitions": [
+          2473
+        ]
+      },
+      {
+        "newAthleteName": "Chelsea Allen (Person 2)",
+        "membershipNumber": "1061634",
+        "competitionCount": 1,
+        "competitions": [
+          5248
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 2221,
+        "date": "2016-10-22",
+        "age_category": "Open Women's",
+        "weight_class": "69 kg",
+        "lifter_name": "Chelsea Allen",
+        "lifter_id": 26757,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0yMiIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Chelsea Allen",
+    "competitions": [
+      {
+        "meet_id": 5248,
+        "date": "2022-03-26",
+        "age_category": "Open Women's",
+        "weight_class": "59kg",
+        "lifter_name": "Chelsea Allen",
+        "lifter_id": 26757,
+        "membershipNumbers": [
+          {
+            "athleteName": "Chelsea Allen",
+            "membershipNumber": "1061634",
+            "fullText": "13  -  119  Chelsea Allen  F  27  -  1061634  57.3  2022-03-26  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMy0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMy0yNiIsIndlaWdodF9jbGFzcyI6OTR9"
+      },
+      {
+        "meet_id": 2221,
+        "date": "2016-10-22",
+        "age_category": "Open Women's",
+        "weight_class": "69 kg",
+        "lifter_name": "Chelsea Allen",
+        "lifter_id": 26757,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0yMiIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+      },
+      {
+        "meet_id": 2473,
+        "date": "2017-03-18",
+        "age_category": "Open Women's",
+        "weight_class": "69 kg",
+        "lifter_name": "Chelsea Allen",
+        "lifter_id": 26757,
+        "membershipNumbers": [
+          {
+            "athleteName": "Chelsea Allen",
+            "membershipNumber": "1012618",
+            "fullText": "2  -  128  Chelsea Allen  F  26  IronRx Weightlifting  1012618  66.7  2017-03-18  -  Local  New England"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0xOCIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1012618": [
+          {
+            "meet_id": 2473,
+            "date": "2017-03-18",
+            "age_category": "Open Women's",
+            "weight_class": "69 kg",
+            "lifter_name": "Chelsea Allen",
+            "lifter_id": 26757,
+            "membershipNumbers": [
+              {
+                "athleteName": "Chelsea Allen",
+                "membershipNumber": "1012618",
+                "fullText": "2  -  128  Chelsea Allen  F  26  IronRx Weightlifting  1012618  66.7  2017-03-18  -  Local  New England"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0xOCIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+          }
+        ],
+        "1061634": [
+          {
+            "meet_id": 5248,
+            "date": "2022-03-26",
+            "age_category": "Open Women's",
+            "weight_class": "59kg",
+            "lifter_name": "Chelsea Allen",
+            "lifter_id": 26757,
+            "membershipNumbers": [
+              {
+                "athleteName": "Chelsea Allen",
+                "membershipNumber": "1061634",
+                "fullText": "13  -  119  Chelsea Allen  F  27  -  1061634  57.3  2022-03-26  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMy0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMy0yNiIsIndlaWdodF9jbGFzcyI6OTR9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 2221,
+          "date": "2016-10-22",
+          "age_category": "Open Women's",
+          "weight_class": "69 kg",
+          "lifter_name": "Chelsea Allen",
+          "lifter_id": 26757,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0yMiIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

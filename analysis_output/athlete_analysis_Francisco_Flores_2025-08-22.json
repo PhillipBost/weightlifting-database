@@ -1,0 +1,298 @@
+{
+  "timestamp": "2025-08-22T07:02:32.475Z",
+  "athleteName": "Francisco Flores",
+  "totalCompetitions": 5,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "205743": [
+        {
+          "meet_id": 1550,
+          "date": "2014-12-21",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Francisco Flores",
+          "lifter_id": 20900,
+          "membershipNumbers": [
+            {
+              "athleteName": "Francisco Flores",
+              "membershipNumber": "205743",
+              "fullText": "13  -  165  Francisco Flores  M  29  OCCAM ATHLETICS  205743  94.78  2014-12-21  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMi0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMi0yMSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        },
+        {
+          "meet_id": 1706,
+          "date": "2016-01-10",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Francisco Flores",
+          "lifter_id": 20900,
+          "membershipNumbers": [
+            {
+              "athleteName": "Francisco Flores",
+              "membershipNumber": "205743",
+              "fullText": "14  -  182  Francisco Flores  M  31  OCCAM ATHLETICS  205743  88.76  2016-01-10  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0xMCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        },
+        {
+          "meet_id": 2160,
+          "date": "2016-09-17",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Francisco Flores",
+          "lifter_id": 20900,
+          "membershipNumbers": [
+            {
+              "athleteName": "Francisco Flores",
+              "membershipNumber": "205743",
+              "fullText": "20  -  200  Francisco Flores  M  31  OCCAM ATHLETICS  205743  92.9  2016-09-17  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOS0xNyIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ],
+      "1028186": [
+        {
+          "meet_id": 3196,
+          "date": "2018-04-28",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Francisco Flores",
+          "lifter_id": 20900,
+          "membershipNumbers": [
+            {
+              "athleteName": "Francisco Flores",
+              "membershipNumber": "1028186",
+              "fullText": "26  -  173  Francisco Flores  M  19  -  1028186  70.8  2018-04-28  -  Local  Missouri Valley"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNC0yOCIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        },
+        {
+          "meet_id": 3198,
+          "date": "2018-12-29",
+          "age_category": "Open Men's",
+          "weight_class": "73kg",
+          "lifter_name": "Francisco Flores",
+          "lifter_id": 20900,
+          "membershipNumbers": [
+            {
+              "athleteName": "Francisco Flores",
+              "membershipNumber": "1028186",
+              "fullText": "6  -  180  Francisco Flores  M  19  -  1028186  70.9  2018-12-29  -  Local  Missouri Valley"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0yOSIsIndlaWdodF9jbGFzcyI6ODR9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Francisco Flores",
+    "splits": [
+      {
+        "newAthleteName": "Francisco Flores (Person 1)",
+        "membershipNumber": "205743",
+        "competitionCount": 3,
+        "competitions": [
+          1550,
+          1706,
+          2160
+        ]
+      },
+      {
+        "newAthleteName": "Francisco Flores (Person 2)",
+        "membershipNumber": "1028186",
+        "competitionCount": 2,
+        "competitions": [
+          3196,
+          3198
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Francisco Flores",
+    "competitions": [
+      {
+        "meet_id": 1550,
+        "date": "2014-12-21",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Francisco Flores",
+        "lifter_id": 20900,
+        "membershipNumbers": [
+          {
+            "athleteName": "Francisco Flores",
+            "membershipNumber": "205743",
+            "fullText": "13  -  165  Francisco Flores  M  29  OCCAM ATHLETICS  205743  94.78  2014-12-21  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMi0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMi0yMSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 1706,
+        "date": "2016-01-10",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Francisco Flores",
+        "lifter_id": 20900,
+        "membershipNumbers": [
+          {
+            "athleteName": "Francisco Flores",
+            "membershipNumber": "205743",
+            "fullText": "14  -  182  Francisco Flores  M  31  OCCAM ATHLETICS  205743  88.76  2016-01-10  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0xMCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 3196,
+        "date": "2018-04-28",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Francisco Flores",
+        "lifter_id": 20900,
+        "membershipNumbers": [
+          {
+            "athleteName": "Francisco Flores",
+            "membershipNumber": "1028186",
+            "fullText": "26  -  173  Francisco Flores  M  19  -  1028186  70.8  2018-04-28  -  Local  Missouri Valley"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNC0yOCIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 2160,
+        "date": "2016-09-17",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Francisco Flores",
+        "lifter_id": 20900,
+        "membershipNumbers": [
+          {
+            "athleteName": "Francisco Flores",
+            "membershipNumber": "205743",
+            "fullText": "20  -  200  Francisco Flores  M  31  OCCAM ATHLETICS  205743  92.9  2016-09-17  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOS0xNyIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 3198,
+        "date": "2018-12-29",
+        "age_category": "Open Men's",
+        "weight_class": "73kg",
+        "lifter_name": "Francisco Flores",
+        "lifter_id": 20900,
+        "membershipNumbers": [
+          {
+            "athleteName": "Francisco Flores",
+            "membershipNumber": "1028186",
+            "fullText": "6  -  180  Francisco Flores  M  19  -  1028186  70.9  2018-12-29  -  Local  Missouri Valley"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0yOSIsIndlaWdodF9jbGFzcyI6ODR9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "205743": [
+          {
+            "meet_id": 1550,
+            "date": "2014-12-21",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Francisco Flores",
+            "lifter_id": 20900,
+            "membershipNumbers": [
+              {
+                "athleteName": "Francisco Flores",
+                "membershipNumber": "205743",
+                "fullText": "13  -  165  Francisco Flores  M  29  OCCAM ATHLETICS  205743  94.78  2014-12-21  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMi0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMi0yMSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          },
+          {
+            "meet_id": 1706,
+            "date": "2016-01-10",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Francisco Flores",
+            "lifter_id": 20900,
+            "membershipNumbers": [
+              {
+                "athleteName": "Francisco Flores",
+                "membershipNumber": "205743",
+                "fullText": "14  -  182  Francisco Flores  M  31  OCCAM ATHLETICS  205743  88.76  2016-01-10  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0xMCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          },
+          {
+            "meet_id": 2160,
+            "date": "2016-09-17",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Francisco Flores",
+            "lifter_id": 20900,
+            "membershipNumbers": [
+              {
+                "athleteName": "Francisco Flores",
+                "membershipNumber": "205743",
+                "fullText": "20  -  200  Francisco Flores  M  31  OCCAM ATHLETICS  205743  92.9  2016-09-17  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOS0xNyIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          }
+        ],
+        "1028186": [
+          {
+            "meet_id": 3196,
+            "date": "2018-04-28",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Francisco Flores",
+            "lifter_id": 20900,
+            "membershipNumbers": [
+              {
+                "athleteName": "Francisco Flores",
+                "membershipNumber": "1028186",
+                "fullText": "26  -  173  Francisco Flores  M  19  -  1028186  70.8  2018-04-28  -  Local  Missouri Valley"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNC0yOCIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          },
+          {
+            "meet_id": 3198,
+            "date": "2018-12-29",
+            "age_category": "Open Men's",
+            "weight_class": "73kg",
+            "lifter_name": "Francisco Flores",
+            "lifter_id": 20900,
+            "membershipNumbers": [
+              {
+                "athleteName": "Francisco Flores",
+                "membershipNumber": "1028186",
+                "fullText": "6  -  180  Francisco Flores  M  19  -  1028186  70.9  2018-12-29  -  Local  Missouri Valley"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0yOSIsIndlaWdodF9jbGFzcyI6ODR9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

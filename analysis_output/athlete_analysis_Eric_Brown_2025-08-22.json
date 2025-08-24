@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-22T09:42:34.833Z",
+  "athleteName": "Eric Brown",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "211410": [
+        {
+          "meet_id": 175,
+          "date": "2015-12-12",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Eric Brown",
+          "lifter_id": 8530,
+          "membershipNumbers": [
+            {
+              "athleteName": "Eric Brown",
+              "membershipNumber": "211410",
+              "fullText": "19  -  213  Eric Brown  M  25  BLACK SWAMP BARBELL  211410  85.8  2015-12-12  -  Local  Michigan"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMi0xMiIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        },
+        {
+          "meet_id": 165,
+          "date": "2015-04-11",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Eric Brown",
+          "lifter_id": 8530,
+          "membershipNumbers": [
+            {
+              "athleteName": "Eric Brown",
+              "membershipNumber": "211410",
+              "fullText": "20  -  196  Eric Brown  M  25  BLACK SWAMP BARBELL  211410  83.45  2015-04-11  -  Local  Michigan"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0xMSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ],
+      "1017100": [
+        {
+          "meet_id": 6817,
+          "date": "2025-04-03",
+          "age_category": "Men's Masters (55-59)",
+          "weight_class": "102kg",
+          "lifter_name": "Eric Brown",
+          "lifter_id": 8530,
+          "membershipNumbers": [
+            {
+              "athleteName": "Eric Brown",
+              "membershipNumber": "1017100",
+              "fullText": "1  -  218  Eric Brown  M  56  CROSSFIT FORT VANCOUVER BARBELL CLUB  1017100  100.4  2025-04-03  -  National  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNC0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNC0wMyIsIndlaWdodF9jbGFzcyI6MTg4fQ=="
+        },
+        {
+          "meet_id": 6738,
+          "date": "2025-02-02",
+          "age_category": "Men's Masters (55-59)",
+          "weight_class": "102kg",
+          "lifter_name": "Eric Brown",
+          "lifter_id": 8530,
+          "membershipNumbers": [
+            {
+              "athleteName": "Eric Brown",
+              "membershipNumber": "1017100",
+              "fullText": "1  -  227  Eric Brown  M  56  CROSSFIT FORT VANCOUVER BARBELL CLUB  1017100  100.7  2025-02-02  -  Local  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMi0wMiIsIndlaWdodF9jbGFzcyI6MTg4fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Eric Brown",
+    "splits": [
+      {
+        "newAthleteName": "Eric Brown (Person 1)",
+        "membershipNumber": "211410",
+        "competitionCount": 2,
+        "competitions": [
+          175,
+          165
+        ]
+      },
+      {
+        "newAthleteName": "Eric Brown (Person 2)",
+        "membershipNumber": "1017100",
+        "competitionCount": 2,
+        "competitions": [
+          6817,
+          6738
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Eric Brown",
+    "competitions": [
+      {
+        "meet_id": 175,
+        "date": "2015-12-12",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Eric Brown",
+        "lifter_id": 8530,
+        "membershipNumbers": [
+          {
+            "athleteName": "Eric Brown",
+            "membershipNumber": "211410",
+            "fullText": "19  -  213  Eric Brown  M  25  BLACK SWAMP BARBELL  211410  85.8  2015-12-12  -  Local  Michigan"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMi0xMiIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 6817,
+        "date": "2025-04-03",
+        "age_category": "Men's Masters (55-59)",
+        "weight_class": "102kg",
+        "lifter_name": "Eric Brown",
+        "lifter_id": 8530,
+        "membershipNumbers": [
+          {
+            "athleteName": "Eric Brown",
+            "membershipNumber": "1017100",
+            "fullText": "1  -  218  Eric Brown  M  56  CROSSFIT FORT VANCOUVER BARBELL CLUB  1017100  100.4  2025-04-03  -  National  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNC0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNC0wMyIsIndlaWdodF9jbGFzcyI6MTg4fQ=="
+      },
+      {
+        "meet_id": 6738,
+        "date": "2025-02-02",
+        "age_category": "Men's Masters (55-59)",
+        "weight_class": "102kg",
+        "lifter_name": "Eric Brown",
+        "lifter_id": 8530,
+        "membershipNumbers": [
+          {
+            "athleteName": "Eric Brown",
+            "membershipNumber": "1017100",
+            "fullText": "1  -  227  Eric Brown  M  56  CROSSFIT FORT VANCOUVER BARBELL CLUB  1017100  100.7  2025-02-02  -  Local  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMi0wMiIsIndlaWdodF9jbGFzcyI6MTg4fQ=="
+      },
+      {
+        "meet_id": 165,
+        "date": "2015-04-11",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Eric Brown",
+        "lifter_id": 8530,
+        "membershipNumbers": [
+          {
+            "athleteName": "Eric Brown",
+            "membershipNumber": "211410",
+            "fullText": "20  -  196  Eric Brown  M  25  BLACK SWAMP BARBELL  211410  83.45  2015-04-11  -  Local  Michigan"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0xMSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "211410": [
+          {
+            "meet_id": 175,
+            "date": "2015-12-12",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Eric Brown",
+            "lifter_id": 8530,
+            "membershipNumbers": [
+              {
+                "athleteName": "Eric Brown",
+                "membershipNumber": "211410",
+                "fullText": "19  -  213  Eric Brown  M  25  BLACK SWAMP BARBELL  211410  85.8  2015-12-12  -  Local  Michigan"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMi0xMiIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          },
+          {
+            "meet_id": 165,
+            "date": "2015-04-11",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Eric Brown",
+            "lifter_id": 8530,
+            "membershipNumbers": [
+              {
+                "athleteName": "Eric Brown",
+                "membershipNumber": "211410",
+                "fullText": "20  -  196  Eric Brown  M  25  BLACK SWAMP BARBELL  211410  83.45  2015-04-11  -  Local  Michigan"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0xMSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          }
+        ],
+        "1017100": [
+          {
+            "meet_id": 6817,
+            "date": "2025-04-03",
+            "age_category": "Men's Masters (55-59)",
+            "weight_class": "102kg",
+            "lifter_name": "Eric Brown",
+            "lifter_id": 8530,
+            "membershipNumbers": [
+              {
+                "athleteName": "Eric Brown",
+                "membershipNumber": "1017100",
+                "fullText": "1  -  218  Eric Brown  M  56  CROSSFIT FORT VANCOUVER BARBELL CLUB  1017100  100.4  2025-04-03  -  National  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNC0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNC0wMyIsIndlaWdodF9jbGFzcyI6MTg4fQ=="
+          },
+          {
+            "meet_id": 6738,
+            "date": "2025-02-02",
+            "age_category": "Men's Masters (55-59)",
+            "weight_class": "102kg",
+            "lifter_name": "Eric Brown",
+            "lifter_id": 8530,
+            "membershipNumbers": [
+              {
+                "athleteName": "Eric Brown",
+                "membershipNumber": "1017100",
+                "fullText": "1  -  227  Eric Brown  M  56  CROSSFIT FORT VANCOUVER BARBELL CLUB  1017100  100.7  2025-02-02  -  Local  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMi0wMiIsIndlaWdodF9jbGFzcyI6MTg4fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

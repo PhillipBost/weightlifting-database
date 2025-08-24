@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-22T21:54:53.674Z",
+  "athleteName": "Alejandro Ramirez",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1048697": [
+        {
+          "meet_id": 4386,
+          "date": "2020-03-14",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Alejandro Ramirez",
+          "lifter_id": 45119,
+          "membershipNumbers": [
+            {
+              "athleteName": "Alejandro Ramirez",
+              "membershipNumber": "1048697",
+              "fullText": "7  -  206  Alejandro Ramirez  M  21  Rep Max Performance  1048697  77.71  2020-03-14  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMy0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMy0xNCIsIndlaWdodF9jbGFzcyI6ODV9"
+        },
+        {
+          "meet_id": 4637,
+          "date": "2020-11-14",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Alejandro Ramirez",
+          "lifter_id": 45119,
+          "membershipNumbers": [
+            {
+              "athleteName": "Alejandro Ramirez",
+              "membershipNumber": "1048697",
+              "fullText": "4  -  224  Alejandro Ramirez  M  21  Rep Max Performance  1048697  78.41  2020-11-14  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0xMS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0xMS0xNCIsIndlaWdodF9jbGFzcyI6ODV9"
+        }
+      ],
+      "1068751": [
+        {
+          "meet_id": 5718,
+          "date": "2023-02-11",
+          "age_category": "Open Men's",
+          "weight_class": "96kg",
+          "lifter_name": "Alejandro Ramirez",
+          "lifter_id": 45119,
+          "membershipNumbers": [
+            {
+              "athleteName": "Alejandro Ramirez",
+              "membershipNumber": "1068751",
+              "fullText": "13  -  192  Alejandro Ramirez  M  25  Stonehenge Weightlifting  1068751  95.7  2023-02-11  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMi0xMSIsIndlaWdodF9jbGFzcyI6ODd9"
+        },
+        {
+          "meet_id": 6240,
+          "date": "2024-02-17",
+          "age_category": "Open Men's",
+          "weight_class": "96kg",
+          "lifter_name": "Alejandro Ramirez",
+          "lifter_id": 45119,
+          "membershipNumbers": [
+            {
+              "athleteName": "Alejandro Ramirez",
+              "membershipNumber": "1068751",
+              "fullText": "6  -  213  Alejandro Ramirez  M  26  Stonehenge Weightlifting  1068751  95.4  2024-02-17  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMi0xNyIsIndlaWdodF9jbGFzcyI6ODd9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Alejandro Ramirez",
+    "splits": [
+      {
+        "newAthleteName": "Alejandro Ramirez (Person 1)",
+        "membershipNumber": "1048697",
+        "competitionCount": 2,
+        "competitions": [
+          4386,
+          4637
+        ]
+      },
+      {
+        "newAthleteName": "Alejandro Ramirez (Person 2)",
+        "membershipNumber": "1068751",
+        "competitionCount": 2,
+        "competitions": [
+          5718,
+          6240
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Alejandro Ramirez",
+    "competitions": [
+      {
+        "meet_id": 4386,
+        "date": "2020-03-14",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Alejandro Ramirez",
+        "lifter_id": 45119,
+        "membershipNumbers": [
+          {
+            "athleteName": "Alejandro Ramirez",
+            "membershipNumber": "1048697",
+            "fullText": "7  -  206  Alejandro Ramirez  M  21  Rep Max Performance  1048697  77.71  2020-03-14  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMy0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMy0xNCIsIndlaWdodF9jbGFzcyI6ODV9"
+      },
+      {
+        "meet_id": 4637,
+        "date": "2020-11-14",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Alejandro Ramirez",
+        "lifter_id": 45119,
+        "membershipNumbers": [
+          {
+            "athleteName": "Alejandro Ramirez",
+            "membershipNumber": "1048697",
+            "fullText": "4  -  224  Alejandro Ramirez  M  21  Rep Max Performance  1048697  78.41  2020-11-14  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0xMS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0xMS0xNCIsIndlaWdodF9jbGFzcyI6ODV9"
+      },
+      {
+        "meet_id": 5718,
+        "date": "2023-02-11",
+        "age_category": "Open Men's",
+        "weight_class": "96kg",
+        "lifter_name": "Alejandro Ramirez",
+        "lifter_id": 45119,
+        "membershipNumbers": [
+          {
+            "athleteName": "Alejandro Ramirez",
+            "membershipNumber": "1068751",
+            "fullText": "13  -  192  Alejandro Ramirez  M  25  Stonehenge Weightlifting  1068751  95.7  2023-02-11  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMi0xMSIsIndlaWdodF9jbGFzcyI6ODd9"
+      },
+      {
+        "meet_id": 6240,
+        "date": "2024-02-17",
+        "age_category": "Open Men's",
+        "weight_class": "96kg",
+        "lifter_name": "Alejandro Ramirez",
+        "lifter_id": 45119,
+        "membershipNumbers": [
+          {
+            "athleteName": "Alejandro Ramirez",
+            "membershipNumber": "1068751",
+            "fullText": "6  -  213  Alejandro Ramirez  M  26  Stonehenge Weightlifting  1068751  95.4  2024-02-17  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMi0xNyIsIndlaWdodF9jbGFzcyI6ODd9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1048697": [
+          {
+            "meet_id": 4386,
+            "date": "2020-03-14",
+            "age_category": "Open Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Alejandro Ramirez",
+            "lifter_id": 45119,
+            "membershipNumbers": [
+              {
+                "athleteName": "Alejandro Ramirez",
+                "membershipNumber": "1048697",
+                "fullText": "7  -  206  Alejandro Ramirez  M  21  Rep Max Performance  1048697  77.71  2020-03-14  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMy0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMy0xNCIsIndlaWdodF9jbGFzcyI6ODV9"
+          },
+          {
+            "meet_id": 4637,
+            "date": "2020-11-14",
+            "age_category": "Open Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Alejandro Ramirez",
+            "lifter_id": 45119,
+            "membershipNumbers": [
+              {
+                "athleteName": "Alejandro Ramirez",
+                "membershipNumber": "1048697",
+                "fullText": "4  -  224  Alejandro Ramirez  M  21  Rep Max Performance  1048697  78.41  2020-11-14  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0xMS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0xMS0xNCIsIndlaWdodF9jbGFzcyI6ODV9"
+          }
+        ],
+        "1068751": [
+          {
+            "meet_id": 5718,
+            "date": "2023-02-11",
+            "age_category": "Open Men's",
+            "weight_class": "96kg",
+            "lifter_name": "Alejandro Ramirez",
+            "lifter_id": 45119,
+            "membershipNumbers": [
+              {
+                "athleteName": "Alejandro Ramirez",
+                "membershipNumber": "1068751",
+                "fullText": "13  -  192  Alejandro Ramirez  M  25  Stonehenge Weightlifting  1068751  95.7  2023-02-11  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMi0xMSIsIndlaWdodF9jbGFzcyI6ODd9"
+          },
+          {
+            "meet_id": 6240,
+            "date": "2024-02-17",
+            "age_category": "Open Men's",
+            "weight_class": "96kg",
+            "lifter_name": "Alejandro Ramirez",
+            "lifter_id": 45119,
+            "membershipNumbers": [
+              {
+                "athleteName": "Alejandro Ramirez",
+                "membershipNumber": "1068751",
+                "fullText": "6  -  213  Alejandro Ramirez  M  26  Stonehenge Weightlifting  1068751  95.4  2024-02-17  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMi0xNyIsIndlaWdodF9jbGFzcyI6ODd9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

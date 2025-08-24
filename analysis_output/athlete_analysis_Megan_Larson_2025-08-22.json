@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-22T21:16:23.563Z",
+  "athleteName": "Megan Larson",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1063000": [
+        {
+          "meet_id": 5269,
+          "date": "2022-04-09",
+          "age_category": "Open Women's",
+          "weight_class": "87kg",
+          "lifter_name": "Megan Larson",
+          "lifter_id": 51997,
+          "membershipNumbers": [
+            {
+              "athleteName": "Megan Larson",
+              "membershipNumber": "1063000",
+              "fullText": "10  -  113  Megan Larson  F  27  Wolf Pack Weightlifting  1063000  82.4  2022-04-09  -  Local  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNC0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNC0wOSIsIndlaWdodF9jbGFzcyI6OTl9"
+        }
+      ],
+      "1067447": [
+        {
+          "meet_id": 6025,
+          "date": "2023-09-17",
+          "age_category": "Open Women's",
+          "weight_class": "81kg",
+          "lifter_name": "Megan Larson",
+          "lifter_id": 51997,
+          "membershipNumbers": [
+            {
+              "athleteName": "Megan Larson",
+              "membershipNumber": "1067447",
+              "fullText": "20  -  141  Megan Larson  F  28  Wolf Pack Weightlifting  1067447  77.93  2023-09-17  -  North American Open Series  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wOS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wOS0xNyIsIndlaWdodF9jbGFzcyI6OTh9"
+        },
+        {
+          "meet_id": 5646,
+          "date": "2022-12-01",
+          "age_category": "Open Women's",
+          "weight_class": "81kg",
+          "lifter_name": "Megan Larson",
+          "lifter_id": 51997,
+          "membershipNumbers": [
+            {
+              "athleteName": "Megan Larson",
+              "membershipNumber": "1067447",
+              "fullText": "1  -  133  Megan Larson  F  27  Wolf Pack Weightlifting  1067447  80.9  2022-12-01  -  Local  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMi0wMSIsIndlaWdodF9jbGFzcyI6OTh9"
+        },
+        {
+          "meet_id": 5691,
+          "date": "2023-01-28",
+          "age_category": "Open Women's",
+          "weight_class": "81kg",
+          "lifter_name": "Megan Larson",
+          "lifter_id": 51997,
+          "membershipNumbers": [
+            {
+              "athleteName": "Megan Larson",
+              "membershipNumber": "1067447",
+              "fullText": "13  -  140  Megan Larson  F  28  Wolf Pack Weightlifting  1067447  80  2023-01-28  -  Local  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMS0yOCIsIndlaWdodF9jbGFzcyI6OTh9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Megan Larson",
+    "splits": [
+      {
+        "newAthleteName": "Megan Larson (Person 1)",
+        "membershipNumber": "1063000",
+        "competitionCount": 1,
+        "competitions": [
+          5269
+        ]
+      },
+      {
+        "newAthleteName": "Megan Larson (Person 2)",
+        "membershipNumber": "1067447",
+        "competitionCount": 3,
+        "competitions": [
+          6025,
+          5646,
+          5691
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Megan Larson",
+    "competitions": [
+      {
+        "meet_id": 5269,
+        "date": "2022-04-09",
+        "age_category": "Open Women's",
+        "weight_class": "87kg",
+        "lifter_name": "Megan Larson",
+        "lifter_id": 51997,
+        "membershipNumbers": [
+          {
+            "athleteName": "Megan Larson",
+            "membershipNumber": "1063000",
+            "fullText": "10  -  113  Megan Larson  F  27  Wolf Pack Weightlifting  1063000  82.4  2022-04-09  -  Local  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNC0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNC0wOSIsIndlaWdodF9jbGFzcyI6OTl9"
+      },
+      {
+        "meet_id": 6025,
+        "date": "2023-09-17",
+        "age_category": "Open Women's",
+        "weight_class": "81kg",
+        "lifter_name": "Megan Larson",
+        "lifter_id": 51997,
+        "membershipNumbers": [
+          {
+            "athleteName": "Megan Larson",
+            "membershipNumber": "1067447",
+            "fullText": "20  -  141  Megan Larson  F  28  Wolf Pack Weightlifting  1067447  77.93  2023-09-17  -  North American Open Series  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wOS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wOS0xNyIsIndlaWdodF9jbGFzcyI6OTh9"
+      },
+      {
+        "meet_id": 5646,
+        "date": "2022-12-01",
+        "age_category": "Open Women's",
+        "weight_class": "81kg",
+        "lifter_name": "Megan Larson",
+        "lifter_id": 51997,
+        "membershipNumbers": [
+          {
+            "athleteName": "Megan Larson",
+            "membershipNumber": "1067447",
+            "fullText": "1  -  133  Megan Larson  F  27  Wolf Pack Weightlifting  1067447  80.9  2022-12-01  -  Local  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMi0wMSIsIndlaWdodF9jbGFzcyI6OTh9"
+      },
+      {
+        "meet_id": 5691,
+        "date": "2023-01-28",
+        "age_category": "Open Women's",
+        "weight_class": "81kg",
+        "lifter_name": "Megan Larson",
+        "lifter_id": 51997,
+        "membershipNumbers": [
+          {
+            "athleteName": "Megan Larson",
+            "membershipNumber": "1067447",
+            "fullText": "13  -  140  Megan Larson  F  28  Wolf Pack Weightlifting  1067447  80  2023-01-28  -  Local  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMS0yOCIsIndlaWdodF9jbGFzcyI6OTh9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1063000": [
+          {
+            "meet_id": 5269,
+            "date": "2022-04-09",
+            "age_category": "Open Women's",
+            "weight_class": "87kg",
+            "lifter_name": "Megan Larson",
+            "lifter_id": 51997,
+            "membershipNumbers": [
+              {
+                "athleteName": "Megan Larson",
+                "membershipNumber": "1063000",
+                "fullText": "10  -  113  Megan Larson  F  27  Wolf Pack Weightlifting  1063000  82.4  2022-04-09  -  Local  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNC0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNC0wOSIsIndlaWdodF9jbGFzcyI6OTl9"
+          }
+        ],
+        "1067447": [
+          {
+            "meet_id": 6025,
+            "date": "2023-09-17",
+            "age_category": "Open Women's",
+            "weight_class": "81kg",
+            "lifter_name": "Megan Larson",
+            "lifter_id": 51997,
+            "membershipNumbers": [
+              {
+                "athleteName": "Megan Larson",
+                "membershipNumber": "1067447",
+                "fullText": "20  -  141  Megan Larson  F  28  Wolf Pack Weightlifting  1067447  77.93  2023-09-17  -  North American Open Series  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wOS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wOS0xNyIsIndlaWdodF9jbGFzcyI6OTh9"
+          },
+          {
+            "meet_id": 5646,
+            "date": "2022-12-01",
+            "age_category": "Open Women's",
+            "weight_class": "81kg",
+            "lifter_name": "Megan Larson",
+            "lifter_id": 51997,
+            "membershipNumbers": [
+              {
+                "athleteName": "Megan Larson",
+                "membershipNumber": "1067447",
+                "fullText": "1  -  133  Megan Larson  F  27  Wolf Pack Weightlifting  1067447  80.9  2022-12-01  -  Local  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMi0wMSIsIndlaWdodF9jbGFzcyI6OTh9"
+          },
+          {
+            "meet_id": 5691,
+            "date": "2023-01-28",
+            "age_category": "Open Women's",
+            "weight_class": "81kg",
+            "lifter_name": "Megan Larson",
+            "lifter_id": 51997,
+            "membershipNumbers": [
+              {
+                "athleteName": "Megan Larson",
+                "membershipNumber": "1067447",
+                "fullText": "13  -  140  Megan Larson  F  28  Wolf Pack Weightlifting  1067447  80  2023-01-28  -  Local  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMS0yOCIsIndlaWdodF9jbGFzcyI6OTh9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

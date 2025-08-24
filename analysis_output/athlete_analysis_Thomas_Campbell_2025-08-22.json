@@ -1,0 +1,194 @@
+{
+  "timestamp": "2025-08-22T13:20:57.719Z",
+  "athleteName": "Thomas Campbell",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1037414": [
+        {
+          "meet_id": 3583,
+          "date": "2019-01-26",
+          "age_category": "Open Men's",
+          "weight_class": "109kg",
+          "lifter_name": "Thomas Campbell",
+          "lifter_id": 39336,
+          "membershipNumbers": [
+            {
+              "athleteName": "Thomas Campbell",
+              "membershipNumber": "1037414",
+              "fullText": "8  -  208  Thomas Campbell  M  35  -  1037414  108.1  2019-01-26  -  Local  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0yNiIsIndlaWdodF9jbGFzcyI6ODl9"
+        }
+      ],
+      "1077541": [
+        {
+          "meet_id": 6968,
+          "date": "2025-07-19",
+          "age_category": "Open Men's",
+          "weight_class": "88kg",
+          "lifter_name": "Thomas Campbell",
+          "lifter_id": 39336,
+          "membershipNumbers": [
+            {
+              "athleteName": "Thomas Campbell",
+              "membershipNumber": "1077541",
+              "fullText": "13  -  139  Thomas Campbell  M  33  Providence Barbell Club  1077541  85.4  2025-07-19  -  Local  New England"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNy0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNy0xOSIsIndlaWdodF9jbGFzcyI6NzEzfQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 6532,
+        "date": "2024-09-28",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Thomas Campbell",
+        "lifter_id": 39336,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOS0yOCIsIndlaWdodF9jbGFzcyI6ODZ9"
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Thomas Campbell",
+    "splits": [
+      {
+        "newAthleteName": "Thomas Campbell (Person 1)",
+        "membershipNumber": "1037414",
+        "competitionCount": 1,
+        "competitions": [
+          3583
+        ]
+      },
+      {
+        "newAthleteName": "Thomas Campbell (Person 2)",
+        "membershipNumber": "1077541",
+        "competitionCount": 1,
+        "competitions": [
+          6968
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 6532,
+        "date": "2024-09-28",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Thomas Campbell",
+        "lifter_id": 39336,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOS0yOCIsIndlaWdodF9jbGFzcyI6ODZ9"
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Thomas Campbell",
+    "competitions": [
+      {
+        "meet_id": 6532,
+        "date": "2024-09-28",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Thomas Campbell",
+        "lifter_id": 39336,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOS0yOCIsIndlaWdodF9jbGFzcyI6ODZ9"
+      },
+      {
+        "meet_id": 6968,
+        "date": "2025-07-19",
+        "age_category": "Open Men's",
+        "weight_class": "88kg",
+        "lifter_name": "Thomas Campbell",
+        "lifter_id": 39336,
+        "membershipNumbers": [
+          {
+            "athleteName": "Thomas Campbell",
+            "membershipNumber": "1077541",
+            "fullText": "13  -  139  Thomas Campbell  M  33  Providence Barbell Club  1077541  85.4  2025-07-19  -  Local  New England"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNy0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNy0xOSIsIndlaWdodF9jbGFzcyI6NzEzfQ=="
+      },
+      {
+        "meet_id": 3583,
+        "date": "2019-01-26",
+        "age_category": "Open Men's",
+        "weight_class": "109kg",
+        "lifter_name": "Thomas Campbell",
+        "lifter_id": 39336,
+        "membershipNumbers": [
+          {
+            "athleteName": "Thomas Campbell",
+            "membershipNumber": "1037414",
+            "fullText": "8  -  208  Thomas Campbell  M  35  -  1037414  108.1  2019-01-26  -  Local  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0yNiIsIndlaWdodF9jbGFzcyI6ODl9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1037414": [
+          {
+            "meet_id": 3583,
+            "date": "2019-01-26",
+            "age_category": "Open Men's",
+            "weight_class": "109kg",
+            "lifter_name": "Thomas Campbell",
+            "lifter_id": 39336,
+            "membershipNumbers": [
+              {
+                "athleteName": "Thomas Campbell",
+                "membershipNumber": "1037414",
+                "fullText": "8  -  208  Thomas Campbell  M  35  -  1037414  108.1  2019-01-26  -  Local  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0yNiIsIndlaWdodF9jbGFzcyI6ODl9"
+          }
+        ],
+        "1077541": [
+          {
+            "meet_id": 6968,
+            "date": "2025-07-19",
+            "age_category": "Open Men's",
+            "weight_class": "88kg",
+            "lifter_name": "Thomas Campbell",
+            "lifter_id": 39336,
+            "membershipNumbers": [
+              {
+                "athleteName": "Thomas Campbell",
+                "membershipNumber": "1077541",
+                "fullText": "13  -  139  Thomas Campbell  M  33  Providence Barbell Club  1077541  85.4  2025-07-19  -  Local  New England"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNy0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNy0xOSIsIndlaWdodF9jbGFzcyI6NzEzfQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 6532,
+          "date": "2024-09-28",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "Thomas Campbell",
+          "lifter_id": 39336,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOS0yOCIsIndlaWdodF9jbGFzcyI6ODZ9"
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

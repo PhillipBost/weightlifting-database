@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-23T00:01:46.555Z",
+  "athleteName": "Jorge Sanchez",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "211033": [
+        {
+          "meet_id": 3758,
+          "date": "2019-06-02",
+          "age_category": "Open Men's",
+          "weight_class": "+109kg",
+          "lifter_name": "Jorge Sanchez",
+          "lifter_id": 40674,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jorge Sanchez",
+              "membershipNumber": "211033",
+              "fullText": "3  -  245  Jorge Sanchez  M  39  -  211033  119.1  2019-06-02  -  Local  Ohio"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNi0wMiIsIndlaWdodF9jbGFzcyI6OTB9"
+        }
+      ],
+      "1066260": [
+        {
+          "meet_id": 5575,
+          "date": "2022-10-23",
+          "age_category": "Open Men's",
+          "weight_class": "73kg",
+          "lifter_name": "Jorge Sanchez",
+          "lifter_id": 40674,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jorge Sanchez",
+              "membershipNumber": "1066260",
+              "fullText": "1  -  285  Jorge Sanchez  M  24  MASS Strength  1066260  72.8  2022-10-23  -  Local  New England"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMC0yMyIsIndlaWdodF9jbGFzcyI6ODR9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Jorge Sanchez",
+    "splits": [
+      {
+        "newAthleteName": "Jorge Sanchez (Person 1)",
+        "membershipNumber": "211033",
+        "competitionCount": 1,
+        "competitions": [
+          3758
+        ]
+      },
+      {
+        "newAthleteName": "Jorge Sanchez (Person 2)",
+        "membershipNumber": "1066260",
+        "competitionCount": 1,
+        "competitions": [
+          5575
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Jorge Sanchez",
+    "competitions": [
+      {
+        "meet_id": 5575,
+        "date": "2022-10-23",
+        "age_category": "Open Men's",
+        "weight_class": "73kg",
+        "lifter_name": "Jorge Sanchez",
+        "lifter_id": 40674,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jorge Sanchez",
+            "membershipNumber": "1066260",
+            "fullText": "1  -  285  Jorge Sanchez  M  24  MASS Strength  1066260  72.8  2022-10-23  -  Local  New England"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMC0yMyIsIndlaWdodF9jbGFzcyI6ODR9"
+      },
+      {
+        "meet_id": 3758,
+        "date": "2019-06-02",
+        "age_category": "Open Men's",
+        "weight_class": "+109kg",
+        "lifter_name": "Jorge Sanchez",
+        "lifter_id": 40674,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jorge Sanchez",
+            "membershipNumber": "211033",
+            "fullText": "3  -  245  Jorge Sanchez  M  39  -  211033  119.1  2019-06-02  -  Local  Ohio"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNi0wMiIsIndlaWdodF9jbGFzcyI6OTB9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "211033": [
+          {
+            "meet_id": 3758,
+            "date": "2019-06-02",
+            "age_category": "Open Men's",
+            "weight_class": "+109kg",
+            "lifter_name": "Jorge Sanchez",
+            "lifter_id": 40674,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jorge Sanchez",
+                "membershipNumber": "211033",
+                "fullText": "3  -  245  Jorge Sanchez  M  39  -  211033  119.1  2019-06-02  -  Local  Ohio"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNi0wMiIsIndlaWdodF9jbGFzcyI6OTB9"
+          }
+        ],
+        "1066260": [
+          {
+            "meet_id": 5575,
+            "date": "2022-10-23",
+            "age_category": "Open Men's",
+            "weight_class": "73kg",
+            "lifter_name": "Jorge Sanchez",
+            "lifter_id": 40674,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jorge Sanchez",
+                "membershipNumber": "1066260",
+                "fullText": "1  -  285  Jorge Sanchez  M  24  MASS Strength  1066260  72.8  2022-10-23  -  Local  New England"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMC0yMyIsIndlaWdodF9jbGFzcyI6ODR9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

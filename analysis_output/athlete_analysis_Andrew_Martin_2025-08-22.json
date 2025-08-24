@@ -1,0 +1,341 @@
+{
+  "timestamp": "2025-08-22T16:29:16.317Z",
+  "athleteName": "Andrew Martin",
+  "totalCompetitions": 6,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "209126": [
+        {
+          "meet_id": 222,
+          "date": "2015-12-12",
+          "age_category": "Men's 14-15 Age Group",
+          "weight_class": "56 Kg",
+          "lifter_name": "Andrew Martin",
+          "lifter_id": 9900,
+          "membershipNumbers": [
+            {
+              "athleteName": "Andrew Martin",
+              "membershipNumber": "209126",
+              "fullText": "7  -  84  Andrew Martin  M  14  LSU - Shreveport  209126  55  2015-12-12  -  Local  Southern"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMi0xMiIsIndlaWdodF9jbGFzcyI6MzA3fQ=="
+        },
+        {
+          "meet_id": 2010,
+          "date": "2016-05-21",
+          "age_category": "Open Men's",
+          "weight_class": "62 kg",
+          "lifter_name": "Andrew Martin",
+          "lifter_id": 9900,
+          "membershipNumbers": [
+            {
+              "athleteName": "Andrew Martin",
+              "membershipNumber": "209126",
+              "fullText": "19  -  96  Andrew Martin  M  15  LSU - Shreveport  209126  59.2  2016-05-21  -  Local  Southern"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0yMSIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+        },
+        {
+          "meet_id": 2016,
+          "date": "2016-05-14",
+          "age_category": "Open Men's",
+          "weight_class": "62 kg",
+          "lifter_name": "Andrew Martin",
+          "lifter_id": 9900,
+          "membershipNumbers": [
+            {
+              "athleteName": "Andrew Martin",
+              "membershipNumber": "209126",
+              "fullText": "3  -  91  Andrew Martin  M  15  LSU - Shreveport  209126  58  2016-05-14  -  Local  Southern"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0xNCIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+        },
+        {
+          "meet_id": 2114,
+          "date": "2016-08-13",
+          "age_category": "Open Men's",
+          "weight_class": "62 kg",
+          "lifter_name": "Andrew Martin",
+          "lifter_id": 9900,
+          "membershipNumbers": [
+            {
+              "athleteName": "Andrew Martin",
+              "membershipNumber": "209126",
+              "fullText": "1  -  94  Andrew Martin  M  15  LSU - Shreveport  209126  60.5  2016-08-13  -  Local  Southern"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0xMyIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+        }
+      ],
+      "1046167": [
+        {
+          "meet_id": 4254,
+          "date": "2019-11-03",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Andrew Martin",
+          "lifter_id": 9900,
+          "membershipNumbers": [
+            {
+              "athleteName": "Andrew Martin",
+              "membershipNumber": "1046167",
+              "fullText": "5  -  238  Andrew Martin  M  24  Yankee Barbell Club  1046167  79.01  2019-11-03  -  Local  New England"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0wMyIsIndlaWdodF9jbGFzcyI6ODV9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 1891,
+        "date": "2016-04-02",
+        "age_category": "Open Men's",
+        "weight_class": "62 kg",
+        "lifter_name": "Andrew Martin",
+        "lifter_id": 9900,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0wMiIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Andrew Martin",
+    "splits": [
+      {
+        "newAthleteName": "Andrew Martin (Person 1)",
+        "membershipNumber": "209126",
+        "competitionCount": 4,
+        "competitions": [
+          222,
+          2010,
+          2016,
+          2114
+        ]
+      },
+      {
+        "newAthleteName": "Andrew Martin (Person 2)",
+        "membershipNumber": "1046167",
+        "competitionCount": 1,
+        "competitions": [
+          4254
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 1891,
+        "date": "2016-04-02",
+        "age_category": "Open Men's",
+        "weight_class": "62 kg",
+        "lifter_name": "Andrew Martin",
+        "lifter_id": 9900,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0wMiIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Andrew Martin",
+    "competitions": [
+      {
+        "meet_id": 222,
+        "date": "2015-12-12",
+        "age_category": "Men's 14-15 Age Group",
+        "weight_class": "56 Kg",
+        "lifter_name": "Andrew Martin",
+        "lifter_id": 9900,
+        "membershipNumbers": [
+          {
+            "athleteName": "Andrew Martin",
+            "membershipNumber": "209126",
+            "fullText": "7  -  84  Andrew Martin  M  14  LSU - Shreveport  209126  55  2015-12-12  -  Local  Southern"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMi0xMiIsIndlaWdodF9jbGFzcyI6MzA3fQ=="
+      },
+      {
+        "meet_id": 2010,
+        "date": "2016-05-21",
+        "age_category": "Open Men's",
+        "weight_class": "62 kg",
+        "lifter_name": "Andrew Martin",
+        "lifter_id": 9900,
+        "membershipNumbers": [
+          {
+            "athleteName": "Andrew Martin",
+            "membershipNumber": "209126",
+            "fullText": "19  -  96  Andrew Martin  M  15  LSU - Shreveport  209126  59.2  2016-05-21  -  Local  Southern"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0yMSIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+      },
+      {
+        "meet_id": 2016,
+        "date": "2016-05-14",
+        "age_category": "Open Men's",
+        "weight_class": "62 kg",
+        "lifter_name": "Andrew Martin",
+        "lifter_id": 9900,
+        "membershipNumbers": [
+          {
+            "athleteName": "Andrew Martin",
+            "membershipNumber": "209126",
+            "fullText": "3  -  91  Andrew Martin  M  15  LSU - Shreveport  209126  58  2016-05-14  -  Local  Southern"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0xNCIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+      },
+      {
+        "meet_id": 4254,
+        "date": "2019-11-03",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Andrew Martin",
+        "lifter_id": 9900,
+        "membershipNumbers": [
+          {
+            "athleteName": "Andrew Martin",
+            "membershipNumber": "1046167",
+            "fullText": "5  -  238  Andrew Martin  M  24  Yankee Barbell Club  1046167  79.01  2019-11-03  -  Local  New England"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0wMyIsIndlaWdodF9jbGFzcyI6ODV9"
+      },
+      {
+        "meet_id": 1891,
+        "date": "2016-04-02",
+        "age_category": "Open Men's",
+        "weight_class": "62 kg",
+        "lifter_name": "Andrew Martin",
+        "lifter_id": 9900,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0wMiIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+      },
+      {
+        "meet_id": 2114,
+        "date": "2016-08-13",
+        "age_category": "Open Men's",
+        "weight_class": "62 kg",
+        "lifter_name": "Andrew Martin",
+        "lifter_id": 9900,
+        "membershipNumbers": [
+          {
+            "athleteName": "Andrew Martin",
+            "membershipNumber": "209126",
+            "fullText": "1  -  94  Andrew Martin  M  15  LSU - Shreveport  209126  60.5  2016-08-13  -  Local  Southern"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0xMyIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "209126": [
+          {
+            "meet_id": 222,
+            "date": "2015-12-12",
+            "age_category": "Men's 14-15 Age Group",
+            "weight_class": "56 Kg",
+            "lifter_name": "Andrew Martin",
+            "lifter_id": 9900,
+            "membershipNumbers": [
+              {
+                "athleteName": "Andrew Martin",
+                "membershipNumber": "209126",
+                "fullText": "7  -  84  Andrew Martin  M  14  LSU - Shreveport  209126  55  2015-12-12  -  Local  Southern"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMi0xMiIsIndlaWdodF9jbGFzcyI6MzA3fQ=="
+          },
+          {
+            "meet_id": 2010,
+            "date": "2016-05-21",
+            "age_category": "Open Men's",
+            "weight_class": "62 kg",
+            "lifter_name": "Andrew Martin",
+            "lifter_id": 9900,
+            "membershipNumbers": [
+              {
+                "athleteName": "Andrew Martin",
+                "membershipNumber": "209126",
+                "fullText": "19  -  96  Andrew Martin  M  15  LSU - Shreveport  209126  59.2  2016-05-21  -  Local  Southern"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0yMSIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+          },
+          {
+            "meet_id": 2016,
+            "date": "2016-05-14",
+            "age_category": "Open Men's",
+            "weight_class": "62 kg",
+            "lifter_name": "Andrew Martin",
+            "lifter_id": 9900,
+            "membershipNumbers": [
+              {
+                "athleteName": "Andrew Martin",
+                "membershipNumber": "209126",
+                "fullText": "3  -  91  Andrew Martin  M  15  LSU - Shreveport  209126  58  2016-05-14  -  Local  Southern"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0xNCIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+          },
+          {
+            "meet_id": 2114,
+            "date": "2016-08-13",
+            "age_category": "Open Men's",
+            "weight_class": "62 kg",
+            "lifter_name": "Andrew Martin",
+            "lifter_id": 9900,
+            "membershipNumbers": [
+              {
+                "athleteName": "Andrew Martin",
+                "membershipNumber": "209126",
+                "fullText": "1  -  94  Andrew Martin  M  15  LSU - Shreveport  209126  60.5  2016-08-13  -  Local  Southern"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0xMyIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+          }
+        ],
+        "1046167": [
+          {
+            "meet_id": 4254,
+            "date": "2019-11-03",
+            "age_category": "Open Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Andrew Martin",
+            "lifter_id": 9900,
+            "membershipNumbers": [
+              {
+                "athleteName": "Andrew Martin",
+                "membershipNumber": "1046167",
+                "fullText": "5  -  238  Andrew Martin  M  24  Yankee Barbell Club  1046167  79.01  2019-11-03  -  Local  New England"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0wMyIsIndlaWdodF9jbGFzcyI6ODV9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 1891,
+          "date": "2016-04-02",
+          "age_category": "Open Men's",
+          "weight_class": "62 kg",
+          "lifter_name": "Andrew Martin",
+          "lifter_id": 9900,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0wMiIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

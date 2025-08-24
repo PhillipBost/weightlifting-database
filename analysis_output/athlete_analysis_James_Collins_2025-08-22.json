@@ -1,0 +1,234 @@
+{
+  "timestamp": "2025-08-22T09:05:41.202Z",
+  "athleteName": "James Collins",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1028030": [
+        {
+          "meet_id": 3209,
+          "date": "2018-04-28",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "James Collins",
+          "lifter_id": 36257,
+          "membershipNumbers": [
+            {
+              "athleteName": "James Collins",
+              "membershipNumber": "1028030",
+              "fullText": "29  -  168  James Collins  M  24  Corvallis Strength  1028030  82.6  2018-04-28  -  Local  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNC0yOCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ],
+      "1040726": [
+        {
+          "meet_id": 5053,
+          "date": "2021-11-13",
+          "age_category": "Open Men's",
+          "weight_class": "96kg",
+          "lifter_name": "James Collins",
+          "lifter_id": 36257,
+          "membershipNumbers": [
+            {
+              "athleteName": "James Collins",
+              "membershipNumber": "1040726",
+              "fullText": "4  -  240  James Collins  M  32  Austin Barbell  1040726  93.85  2021-11-13  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMS0xMyIsIndlaWdodF9jbGFzcyI6ODd9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 3522,
+        "date": "2018-10-27",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "James Collins",
+        "lifter_id": 36257,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yNyIsIndlaWdodF9jbGFzcyI6ODV9"
+      },
+      {
+        "meet_id": 3723,
+        "date": "2019-01-26",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "James Collins",
+        "lifter_id": 36257,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0yNiIsIndlaWdodF9jbGFzcyI6ODV9"
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "James Collins",
+    "splits": [
+      {
+        "newAthleteName": "James Collins (Person 1)",
+        "membershipNumber": "1028030",
+        "competitionCount": 1,
+        "competitions": [
+          3209
+        ]
+      },
+      {
+        "newAthleteName": "James Collins (Person 2)",
+        "membershipNumber": "1040726",
+        "competitionCount": 1,
+        "competitions": [
+          5053
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 3522,
+        "date": "2018-10-27",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "James Collins",
+        "lifter_id": 36257,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yNyIsIndlaWdodF9jbGFzcyI6ODV9"
+      },
+      {
+        "meet_id": 3723,
+        "date": "2019-01-26",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "James Collins",
+        "lifter_id": 36257,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0yNiIsIndlaWdodF9jbGFzcyI6ODV9"
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "James Collins",
+    "competitions": [
+      {
+        "meet_id": 5053,
+        "date": "2021-11-13",
+        "age_category": "Open Men's",
+        "weight_class": "96kg",
+        "lifter_name": "James Collins",
+        "lifter_id": 36257,
+        "membershipNumbers": [
+          {
+            "athleteName": "James Collins",
+            "membershipNumber": "1040726",
+            "fullText": "4  -  240  James Collins  M  32  Austin Barbell  1040726  93.85  2021-11-13  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMS0xMyIsIndlaWdodF9jbGFzcyI6ODd9"
+      },
+      {
+        "meet_id": 3522,
+        "date": "2018-10-27",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "James Collins",
+        "lifter_id": 36257,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yNyIsIndlaWdodF9jbGFzcyI6ODV9"
+      },
+      {
+        "meet_id": 3209,
+        "date": "2018-04-28",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "James Collins",
+        "lifter_id": 36257,
+        "membershipNumbers": [
+          {
+            "athleteName": "James Collins",
+            "membershipNumber": "1028030",
+            "fullText": "29  -  168  James Collins  M  24  Corvallis Strength  1028030  82.6  2018-04-28  -  Local  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNC0yOCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 3723,
+        "date": "2019-01-26",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "James Collins",
+        "lifter_id": 36257,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0yNiIsIndlaWdodF9jbGFzcyI6ODV9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1028030": [
+          {
+            "meet_id": 3209,
+            "date": "2018-04-28",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "James Collins",
+            "lifter_id": 36257,
+            "membershipNumbers": [
+              {
+                "athleteName": "James Collins",
+                "membershipNumber": "1028030",
+                "fullText": "29  -  168  James Collins  M  24  Corvallis Strength  1028030  82.6  2018-04-28  -  Local  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNC0yOCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          }
+        ],
+        "1040726": [
+          {
+            "meet_id": 5053,
+            "date": "2021-11-13",
+            "age_category": "Open Men's",
+            "weight_class": "96kg",
+            "lifter_name": "James Collins",
+            "lifter_id": 36257,
+            "membershipNumbers": [
+              {
+                "athleteName": "James Collins",
+                "membershipNumber": "1040726",
+                "fullText": "4  -  240  James Collins  M  32  Austin Barbell  1040726  93.85  2021-11-13  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMS0xMyIsIndlaWdodF9jbGFzcyI6ODd9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 3522,
+          "date": "2018-10-27",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "James Collins",
+          "lifter_id": 36257,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yNyIsIndlaWdodF9jbGFzcyI6ODV9"
+        },
+        {
+          "meet_id": 3723,
+          "date": "2019-01-26",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "James Collins",
+          "lifter_id": 36257,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0yNiIsIndlaWdodF9jbGFzcyI6ODV9"
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

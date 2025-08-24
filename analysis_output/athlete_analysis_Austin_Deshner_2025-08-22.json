@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T06:38:15.596Z",
+  "athleteName": "Austin Deshner",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "220655": [
+        {
+          "meet_id": 474,
+          "date": "2015-10-17",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Austin Deshner",
+          "lifter_id": 14902,
+          "membershipNumbers": [
+            {
+              "athleteName": "Austin Deshner",
+              "membershipNumber": "220655",
+              "fullText": "10  -  265  Austin Deshner  M  24  -  220655  89.4  2015-10-17  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xNyIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ],
+      "1035293": [
+        {
+          "meet_id": 4143,
+          "date": "2019-10-26",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "Austin Deshner",
+          "lifter_id": 14902,
+          "membershipNumbers": [
+            {
+              "athleteName": "Austin Deshner",
+              "membershipNumber": "1035293",
+              "fullText": "7  -  276  Austin Deshner  M  28  -  1035293  88  2019-10-26  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMC0yNiIsIndlaWdodF9jbGFzcyI6ODZ9"
+        },
+        {
+          "meet_id": 3513,
+          "date": "2018-10-27",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "Austin Deshner",
+          "lifter_id": 14902,
+          "membershipNumbers": [
+            {
+              "athleteName": "Austin Deshner",
+              "membershipNumber": "1035293",
+              "fullText": "7  -  266  Austin Deshner  M  27  -  1035293  87.4  2018-10-27  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yNyIsIndlaWdodF9jbGFzcyI6ODZ9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Austin Deshner",
+    "splits": [
+      {
+        "newAthleteName": "Austin Deshner (Person 1)",
+        "membershipNumber": "220655",
+        "competitionCount": 1,
+        "competitions": [
+          474
+        ]
+      },
+      {
+        "newAthleteName": "Austin Deshner (Person 2)",
+        "membershipNumber": "1035293",
+        "competitionCount": 2,
+        "competitions": [
+          4143,
+          3513
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Austin Deshner",
+    "competitions": [
+      {
+        "meet_id": 4143,
+        "date": "2019-10-26",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Austin Deshner",
+        "lifter_id": 14902,
+        "membershipNumbers": [
+          {
+            "athleteName": "Austin Deshner",
+            "membershipNumber": "1035293",
+            "fullText": "7  -  276  Austin Deshner  M  28  -  1035293  88  2019-10-26  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMC0yNiIsIndlaWdodF9jbGFzcyI6ODZ9"
+      },
+      {
+        "meet_id": 474,
+        "date": "2015-10-17",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Austin Deshner",
+        "lifter_id": 14902,
+        "membershipNumbers": [
+          {
+            "athleteName": "Austin Deshner",
+            "membershipNumber": "220655",
+            "fullText": "10  -  265  Austin Deshner  M  24  -  220655  89.4  2015-10-17  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xNyIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 3513,
+        "date": "2018-10-27",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Austin Deshner",
+        "lifter_id": 14902,
+        "membershipNumbers": [
+          {
+            "athleteName": "Austin Deshner",
+            "membershipNumber": "1035293",
+            "fullText": "7  -  266  Austin Deshner  M  27  -  1035293  87.4  2018-10-27  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yNyIsIndlaWdodF9jbGFzcyI6ODZ9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "220655": [
+          {
+            "meet_id": 474,
+            "date": "2015-10-17",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Austin Deshner",
+            "lifter_id": 14902,
+            "membershipNumbers": [
+              {
+                "athleteName": "Austin Deshner",
+                "membershipNumber": "220655",
+                "fullText": "10  -  265  Austin Deshner  M  24  -  220655  89.4  2015-10-17  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xNyIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          }
+        ],
+        "1035293": [
+          {
+            "meet_id": 4143,
+            "date": "2019-10-26",
+            "age_category": "Open Men's",
+            "weight_class": "89kg",
+            "lifter_name": "Austin Deshner",
+            "lifter_id": 14902,
+            "membershipNumbers": [
+              {
+                "athleteName": "Austin Deshner",
+                "membershipNumber": "1035293",
+                "fullText": "7  -  276  Austin Deshner  M  28  -  1035293  88  2019-10-26  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMC0yNiIsIndlaWdodF9jbGFzcyI6ODZ9"
+          },
+          {
+            "meet_id": 3513,
+            "date": "2018-10-27",
+            "age_category": "Open Men's",
+            "weight_class": "89kg",
+            "lifter_name": "Austin Deshner",
+            "lifter_id": 14902,
+            "membershipNumbers": [
+              {
+                "athleteName": "Austin Deshner",
+                "membershipNumber": "1035293",
+                "fullText": "7  -  266  Austin Deshner  M  27  -  1035293  87.4  2018-10-27  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yNyIsIndlaWdodF9jbGFzcyI6ODZ9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

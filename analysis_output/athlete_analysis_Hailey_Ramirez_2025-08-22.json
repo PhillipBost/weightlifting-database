@@ -1,0 +1,194 @@
+{
+  "timestamp": "2025-08-22T12:56:31.921Z",
+  "athleteName": "Hailey Ramirez",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1002088": [
+        {
+          "meet_id": 1699,
+          "date": "2016-02-13",
+          "age_category": "Women's 13 Under Age Group",
+          "weight_class": "+58 Kg",
+          "lifter_name": "Hailey Ramirez",
+          "lifter_id": 21889,
+          "membershipNumbers": [
+            {
+              "athleteName": "Hailey Ramirez",
+              "membershipNumber": "1002088",
+              "fullText": "1  -  81  Hailey Ramirez  F  13  JO CO WEIGHTLIFTING CLUB  1002088  62.4  2016-02-13  -  Local  Indiana"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMi0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMi0xMyIsIndlaWdodF9jbGFzcyI6MzA1fQ=="
+        }
+      ],
+      "1071058": [
+        {
+          "meet_id": 6792,
+          "date": "2025-03-15",
+          "age_category": "Open Women's",
+          "weight_class": "71kg",
+          "lifter_name": "Hailey Ramirez",
+          "lifter_id": 21889,
+          "membershipNumbers": [
+            {
+              "athleteName": "Hailey Ramirez",
+              "membershipNumber": "1071058",
+              "fullText": "12  -  125  Hailey Ramirez  F  22  -  1071058  68  2025-03-15  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMy0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMy0xNSIsIndlaWdodF9jbGFzcyI6OTZ9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 6024,
+        "date": "2023-09-30",
+        "age_category": "Open Women's",
+        "weight_class": "71kg",
+        "lifter_name": "Hailey Ramirez",
+        "lifter_id": 21889,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wOS0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wOS0zMCIsIndlaWdodF9jbGFzcyI6OTZ9"
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Hailey Ramirez",
+    "splits": [
+      {
+        "newAthleteName": "Hailey Ramirez (Person 1)",
+        "membershipNumber": "1002088",
+        "competitionCount": 1,
+        "competitions": [
+          1699
+        ]
+      },
+      {
+        "newAthleteName": "Hailey Ramirez (Person 2)",
+        "membershipNumber": "1071058",
+        "competitionCount": 1,
+        "competitions": [
+          6792
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 6024,
+        "date": "2023-09-30",
+        "age_category": "Open Women's",
+        "weight_class": "71kg",
+        "lifter_name": "Hailey Ramirez",
+        "lifter_id": 21889,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wOS0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wOS0zMCIsIndlaWdodF9jbGFzcyI6OTZ9"
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Hailey Ramirez",
+    "competitions": [
+      {
+        "meet_id": 6792,
+        "date": "2025-03-15",
+        "age_category": "Open Women's",
+        "weight_class": "71kg",
+        "lifter_name": "Hailey Ramirez",
+        "lifter_id": 21889,
+        "membershipNumbers": [
+          {
+            "athleteName": "Hailey Ramirez",
+            "membershipNumber": "1071058",
+            "fullText": "12  -  125  Hailey Ramirez  F  22  -  1071058  68  2025-03-15  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMy0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMy0xNSIsIndlaWdodF9jbGFzcyI6OTZ9"
+      },
+      {
+        "meet_id": 1699,
+        "date": "2016-02-13",
+        "age_category": "Women's 13 Under Age Group",
+        "weight_class": "+58 Kg",
+        "lifter_name": "Hailey Ramirez",
+        "lifter_id": 21889,
+        "membershipNumbers": [
+          {
+            "athleteName": "Hailey Ramirez",
+            "membershipNumber": "1002088",
+            "fullText": "1  -  81  Hailey Ramirez  F  13  JO CO WEIGHTLIFTING CLUB  1002088  62.4  2016-02-13  -  Local  Indiana"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMi0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMi0xMyIsIndlaWdodF9jbGFzcyI6MzA1fQ=="
+      },
+      {
+        "meet_id": 6024,
+        "date": "2023-09-30",
+        "age_category": "Open Women's",
+        "weight_class": "71kg",
+        "lifter_name": "Hailey Ramirez",
+        "lifter_id": 21889,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wOS0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wOS0zMCIsIndlaWdodF9jbGFzcyI6OTZ9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1002088": [
+          {
+            "meet_id": 1699,
+            "date": "2016-02-13",
+            "age_category": "Women's 13 Under Age Group",
+            "weight_class": "+58 Kg",
+            "lifter_name": "Hailey Ramirez",
+            "lifter_id": 21889,
+            "membershipNumbers": [
+              {
+                "athleteName": "Hailey Ramirez",
+                "membershipNumber": "1002088",
+                "fullText": "1  -  81  Hailey Ramirez  F  13  JO CO WEIGHTLIFTING CLUB  1002088  62.4  2016-02-13  -  Local  Indiana"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMi0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMi0xMyIsIndlaWdodF9jbGFzcyI6MzA1fQ=="
+          }
+        ],
+        "1071058": [
+          {
+            "meet_id": 6792,
+            "date": "2025-03-15",
+            "age_category": "Open Women's",
+            "weight_class": "71kg",
+            "lifter_name": "Hailey Ramirez",
+            "lifter_id": 21889,
+            "membershipNumbers": [
+              {
+                "athleteName": "Hailey Ramirez",
+                "membershipNumber": "1071058",
+                "fullText": "12  -  125  Hailey Ramirez  F  22  -  1071058  68  2025-03-15  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMy0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMy0xNSIsIndlaWdodF9jbGFzcyI6OTZ9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 6024,
+          "date": "2023-09-30",
+          "age_category": "Open Women's",
+          "weight_class": "71kg",
+          "lifter_name": "Hailey Ramirez",
+          "lifter_id": 21889,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wOS0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wOS0zMCIsIndlaWdodF9jbGFzcyI6OTZ9"
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

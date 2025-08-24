@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T20:52:17.542Z",
+  "athleteName": "Andrew Schumacher",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "163693": [
+        {
+          "meet_id": 451,
+          "date": "2015-01-31",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Andrew Schumacher",
+          "lifter_id": 14404,
+          "membershipNumbers": [
+            {
+              "athleteName": "Andrew Schumacher",
+              "membershipNumber": "163693",
+              "fullText": "4  -  216  Andrew Schumacher  M  21  -  163693  81.5  2015-01-31  -  Local  Georgia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMS0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMS0zMSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ],
+      "1007868": [
+        {
+          "meet_id": 2501,
+          "date": "2017-06-24",
+          "age_category": "Open Men's",
+          "weight_class": "56 kg",
+          "lifter_name": "Andrew Schumacher",
+          "lifter_id": 14404,
+          "membershipNumbers": [
+            {
+              "athleteName": "Andrew Schumacher",
+              "membershipNumber": "1007868",
+              "fullText": "1  -  130  Andrew Schumacher  M  36  Coalition Weightlifting  1007868  51.25  2017-06-24  -  Local  Illinois"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNi0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNi0yNCIsIndlaWdodF9jbGFzcyI6MzU0fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Andrew Schumacher",
+    "splits": [
+      {
+        "newAthleteName": "Andrew Schumacher (Person 1)",
+        "membershipNumber": "163693",
+        "competitionCount": 1,
+        "competitions": [
+          451
+        ]
+      },
+      {
+        "newAthleteName": "Andrew Schumacher (Person 2)",
+        "membershipNumber": "1007868",
+        "competitionCount": 1,
+        "competitions": [
+          2501
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Andrew Schumacher",
+    "competitions": [
+      {
+        "meet_id": 451,
+        "date": "2015-01-31",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Andrew Schumacher",
+        "lifter_id": 14404,
+        "membershipNumbers": [
+          {
+            "athleteName": "Andrew Schumacher",
+            "membershipNumber": "163693",
+            "fullText": "4  -  216  Andrew Schumacher  M  21  -  163693  81.5  2015-01-31  -  Local  Georgia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMS0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMS0zMSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 2501,
+        "date": "2017-06-24",
+        "age_category": "Open Men's",
+        "weight_class": "56 kg",
+        "lifter_name": "Andrew Schumacher",
+        "lifter_id": 14404,
+        "membershipNumbers": [
+          {
+            "athleteName": "Andrew Schumacher",
+            "membershipNumber": "1007868",
+            "fullText": "1  -  130  Andrew Schumacher  M  36  Coalition Weightlifting  1007868  51.25  2017-06-24  -  Local  Illinois"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNi0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNi0yNCIsIndlaWdodF9jbGFzcyI6MzU0fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "163693": [
+          {
+            "meet_id": 451,
+            "date": "2015-01-31",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Andrew Schumacher",
+            "lifter_id": 14404,
+            "membershipNumbers": [
+              {
+                "athleteName": "Andrew Schumacher",
+                "membershipNumber": "163693",
+                "fullText": "4  -  216  Andrew Schumacher  M  21  -  163693  81.5  2015-01-31  -  Local  Georgia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMS0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMS0zMSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          }
+        ],
+        "1007868": [
+          {
+            "meet_id": 2501,
+            "date": "2017-06-24",
+            "age_category": "Open Men's",
+            "weight_class": "56 kg",
+            "lifter_name": "Andrew Schumacher",
+            "lifter_id": 14404,
+            "membershipNumbers": [
+              {
+                "athleteName": "Andrew Schumacher",
+                "membershipNumber": "1007868",
+                "fullText": "1  -  130  Andrew Schumacher  M  36  Coalition Weightlifting  1007868  51.25  2017-06-24  -  Local  Illinois"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNi0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNi0yNCIsIndlaWdodF9jbGFzcyI6MzU0fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "timestamp": "2025-08-23T00:43:55.798Z",
+  "athleteName": "Stephen Richardson",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 1,
+    "membershipGroups": {
+      "1005684": [
+        {
+          "meet_id": 1780,
+          "date": "2016-06-05",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Stephen Richardson",
+          "lifter_id": 22895,
+          "membershipNumbers": [
+            {
+              "athleteName": "Stephen Richardson",
+              "membershipNumber": "1005684",
+              "fullText": "16  -  180  Stephen Richardson  M  26  Central Maryland Gold Weightlifting Club  1005684  83.75  2016-06-05  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0wNSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 2878,
+        "date": "2017-10-15",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Stephen Richardson",
+        "lifter_id": 22895,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 3426,
+        "date": "2018-06-02",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Stephen Richardson",
+        "lifter_id": 22895,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      }
+    ],
+    "splitRequired": false
+  },
+  "splitPlan": {
+    "action": "NO_SPLIT_NEEDED",
+    "reason": "Only one distinct athlete found"
+  },
+  "rawData": {
+    "athleteName": "Stephen Richardson",
+    "competitions": [
+      {
+        "meet_id": 1780,
+        "date": "2016-06-05",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Stephen Richardson",
+        "lifter_id": 22895,
+        "membershipNumbers": [
+          {
+            "athleteName": "Stephen Richardson",
+            "membershipNumber": "1005684",
+            "fullText": "16  -  180  Stephen Richardson  M  26  Central Maryland Gold Weightlifting Club  1005684  83.75  2016-06-05  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0wNSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 2878,
+        "date": "2017-10-15",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Stephen Richardson",
+        "lifter_id": 22895,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 3426,
+        "date": "2018-06-02",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Stephen Richardson",
+        "lifter_id": 22895,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 1,
+      "membershipGroups": {
+        "1005684": [
+          {
+            "meet_id": 1780,
+            "date": "2016-06-05",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Stephen Richardson",
+            "lifter_id": 22895,
+            "membershipNumbers": [
+              {
+                "athleteName": "Stephen Richardson",
+                "membershipNumber": "1005684",
+                "fullText": "16  -  180  Stephen Richardson  M  26  Central Maryland Gold Weightlifting Club  1005684  83.75  2016-06-05  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0wNSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 2878,
+          "date": "2017-10-15",
+          "age_category": "Open Men's",
+          "weight_class": "+105 kg",
+          "lifter_name": "Stephen Richardson",
+          "lifter_id": 22895,
+          "membershipNumbers": [],
+          "error": "No division code found for: \"Open Men's +105 kg\""
+        },
+        {
+          "meet_id": 3426,
+          "date": "2018-06-02",
+          "age_category": "Open Men's",
+          "weight_class": "+105 kg",
+          "lifter_name": "Stephen Richardson",
+          "lifter_id": 22895,
+          "membershipNumbers": [],
+          "error": "No division code found for: \"Open Men's +105 kg\""
+        }
+      ],
+      "splitRequired": false
+    }
+  }
+}

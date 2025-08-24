@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T21:08:04.374Z",
+  "athleteName": "John Adams",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "198223": [
+        {
+          "meet_id": 1234,
+          "date": "2014-06-21",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "John Adams",
+          "lifter_id": 19150,
+          "membershipNumbers": [
+            {
+              "athleteName": "John Adams",
+              "membershipNumber": "198223",
+              "fullText": "20  -  176  John Adams  M  16  -  198223  71.7  2014-06-21  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNi0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNi0yMSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        },
+        {
+          "meet_id": 1250,
+          "date": "2014-06-06",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "John Adams",
+          "lifter_id": 19150,
+          "membershipNumbers": [
+            {
+              "athleteName": "John Adams",
+              "membershipNumber": "198223",
+              "fullText": "1  -  188  John Adams  M  16  -  198223  72.9  2014-06-06  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNi0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNi0wNiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        }
+      ],
+      "1024178": [
+        {
+          "meet_id": 2902,
+          "date": "2017-11-04",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "John Adams",
+          "lifter_id": 19150,
+          "membershipNumbers": [
+            {
+              "athleteName": "John Adams",
+              "membershipNumber": "1024178",
+              "fullText": "1  -  287  John Adams  M  30  J2Fit Weightlifting  1024178  88.34  2017-11-04  -  Local  New York"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMS0wNCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "John Adams",
+    "splits": [
+      {
+        "newAthleteName": "John Adams (Person 1)",
+        "membershipNumber": "198223",
+        "competitionCount": 2,
+        "competitions": [
+          1234,
+          1250
+        ]
+      },
+      {
+        "newAthleteName": "John Adams (Person 2)",
+        "membershipNumber": "1024178",
+        "competitionCount": 1,
+        "competitions": [
+          2902
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "John Adams",
+    "competitions": [
+      {
+        "meet_id": 1234,
+        "date": "2014-06-21",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "John Adams",
+        "lifter_id": 19150,
+        "membershipNumbers": [
+          {
+            "athleteName": "John Adams",
+            "membershipNumber": "198223",
+            "fullText": "20  -  176  John Adams  M  16  -  198223  71.7  2014-06-21  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNi0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNi0yMSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 1250,
+        "date": "2014-06-06",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "John Adams",
+        "lifter_id": 19150,
+        "membershipNumbers": [
+          {
+            "athleteName": "John Adams",
+            "membershipNumber": "198223",
+            "fullText": "1  -  188  John Adams  M  16  -  198223  72.9  2014-06-06  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNi0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNi0wNiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 2902,
+        "date": "2017-11-04",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "John Adams",
+        "lifter_id": 19150,
+        "membershipNumbers": [
+          {
+            "athleteName": "John Adams",
+            "membershipNumber": "1024178",
+            "fullText": "1  -  287  John Adams  M  30  J2Fit Weightlifting  1024178  88.34  2017-11-04  -  Local  New York"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMS0wNCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "198223": [
+          {
+            "meet_id": 1234,
+            "date": "2014-06-21",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "John Adams",
+            "lifter_id": 19150,
+            "membershipNumbers": [
+              {
+                "athleteName": "John Adams",
+                "membershipNumber": "198223",
+                "fullText": "20  -  176  John Adams  M  16  -  198223  71.7  2014-06-21  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNi0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNi0yMSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          },
+          {
+            "meet_id": 1250,
+            "date": "2014-06-06",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "John Adams",
+            "lifter_id": 19150,
+            "membershipNumbers": [
+              {
+                "athleteName": "John Adams",
+                "membershipNumber": "198223",
+                "fullText": "1  -  188  John Adams  M  16  -  198223  72.9  2014-06-06  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNi0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNi0wNiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          }
+        ],
+        "1024178": [
+          {
+            "meet_id": 2902,
+            "date": "2017-11-04",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "John Adams",
+            "lifter_id": 19150,
+            "membershipNumbers": [
+              {
+                "athleteName": "John Adams",
+                "membershipNumber": "1024178",
+                "fullText": "1  -  287  John Adams  M  30  J2Fit Weightlifting  1024178  88.34  2017-11-04  -  Local  New York"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMS0wNCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

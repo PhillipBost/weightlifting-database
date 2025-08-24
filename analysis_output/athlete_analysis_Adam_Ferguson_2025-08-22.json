@@ -1,0 +1,332 @@
+{
+  "timestamp": "2025-08-22T06:58:43.189Z",
+  "athleteName": "Adam Ferguson",
+  "totalCompetitions": 6,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "193793": [
+        {
+          "meet_id": 1359,
+          "date": "2014-03-01",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Adam Ferguson",
+          "lifter_id": 19912,
+          "membershipNumbers": [
+            {
+              "athleteName": "Adam Ferguson",
+              "membershipNumber": "193793",
+              "fullText": "25  -  177  Adam Ferguson  M  25  -  193793  90.1  2014-03-01  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0wMSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ],
+      "1002078": [
+        {
+          "meet_id": 1780,
+          "date": "2016-06-05",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Adam Ferguson",
+          "lifter_id": 19912,
+          "membershipNumbers": [
+            {
+              "athleteName": "Adam Ferguson",
+              "membershipNumber": "1002078",
+              "fullText": "9  -  159  Adam Ferguson  M  34  Energy Barbell Club  1002078  101.55  2016-06-05  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0wNSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        },
+        {
+          "meet_id": 2837,
+          "date": "2017-12-02",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Adam Ferguson",
+          "lifter_id": 19912,
+          "membershipNumbers": [
+            {
+              "athleteName": "Adam Ferguson",
+              "membershipNumber": "1002078",
+              "fullText": "21  -  160  Adam Ferguson  M  35  Energy Barbell Club  1002078  92.3  2017-12-02  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMi0wMiIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        },
+        {
+          "meet_id": 2204,
+          "date": "2017-01-29",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Adam Ferguson",
+          "lifter_id": 19912,
+          "membershipNumbers": [
+            {
+              "athleteName": "Adam Ferguson",
+              "membershipNumber": "1002078",
+              "fullText": "30  -  162  Adam Ferguson  M  35  Energy Barbell Club  1002078  92.4  2017-01-29  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMS0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMS0yOSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 2286,
+        "date": "2017-04-09",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Adam Ferguson",
+        "lifter_id": 19912,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNC0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNC0wOSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 2539,
+        "date": "2017-10-15",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Adam Ferguson",
+        "lifter_id": 19912,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0xNSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Adam Ferguson",
+    "splits": [
+      {
+        "newAthleteName": "Adam Ferguson (Person 1)",
+        "membershipNumber": "193793",
+        "competitionCount": 1,
+        "competitions": [
+          1359
+        ]
+      },
+      {
+        "newAthleteName": "Adam Ferguson (Person 2)",
+        "membershipNumber": "1002078",
+        "competitionCount": 3,
+        "competitions": [
+          1780,
+          2837,
+          2204
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 2286,
+        "date": "2017-04-09",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Adam Ferguson",
+        "lifter_id": 19912,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNC0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNC0wOSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 2539,
+        "date": "2017-10-15",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Adam Ferguson",
+        "lifter_id": 19912,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0xNSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Adam Ferguson",
+    "competitions": [
+      {
+        "meet_id": 1780,
+        "date": "2016-06-05",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Adam Ferguson",
+        "lifter_id": 19912,
+        "membershipNumbers": [
+          {
+            "athleteName": "Adam Ferguson",
+            "membershipNumber": "1002078",
+            "fullText": "9  -  159  Adam Ferguson  M  34  Energy Barbell Club  1002078  101.55  2016-06-05  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0wNSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 2837,
+        "date": "2017-12-02",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Adam Ferguson",
+        "lifter_id": 19912,
+        "membershipNumbers": [
+          {
+            "athleteName": "Adam Ferguson",
+            "membershipNumber": "1002078",
+            "fullText": "21  -  160  Adam Ferguson  M  35  Energy Barbell Club  1002078  92.3  2017-12-02  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMi0wMiIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 2286,
+        "date": "2017-04-09",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Adam Ferguson",
+        "lifter_id": 19912,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNC0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNC0wOSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 1359,
+        "date": "2014-03-01",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Adam Ferguson",
+        "lifter_id": 19912,
+        "membershipNumbers": [
+          {
+            "athleteName": "Adam Ferguson",
+            "membershipNumber": "193793",
+            "fullText": "25  -  177  Adam Ferguson  M  25  -  193793  90.1  2014-03-01  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0wMSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 2204,
+        "date": "2017-01-29",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Adam Ferguson",
+        "lifter_id": 19912,
+        "membershipNumbers": [
+          {
+            "athleteName": "Adam Ferguson",
+            "membershipNumber": "1002078",
+            "fullText": "30  -  162  Adam Ferguson  M  35  Energy Barbell Club  1002078  92.4  2017-01-29  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMS0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMS0yOSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 2539,
+        "date": "2017-10-15",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Adam Ferguson",
+        "lifter_id": 19912,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0xNSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "193793": [
+          {
+            "meet_id": 1359,
+            "date": "2014-03-01",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Adam Ferguson",
+            "lifter_id": 19912,
+            "membershipNumbers": [
+              {
+                "athleteName": "Adam Ferguson",
+                "membershipNumber": "193793",
+                "fullText": "25  -  177  Adam Ferguson  M  25  -  193793  90.1  2014-03-01  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0wMSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          }
+        ],
+        "1002078": [
+          {
+            "meet_id": 1780,
+            "date": "2016-06-05",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Adam Ferguson",
+            "lifter_id": 19912,
+            "membershipNumbers": [
+              {
+                "athleteName": "Adam Ferguson",
+                "membershipNumber": "1002078",
+                "fullText": "9  -  159  Adam Ferguson  M  34  Energy Barbell Club  1002078  101.55  2016-06-05  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0wNSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          },
+          {
+            "meet_id": 2837,
+            "date": "2017-12-02",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Adam Ferguson",
+            "lifter_id": 19912,
+            "membershipNumbers": [
+              {
+                "athleteName": "Adam Ferguson",
+                "membershipNumber": "1002078",
+                "fullText": "21  -  160  Adam Ferguson  M  35  Energy Barbell Club  1002078  92.3  2017-12-02  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMi0wMiIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          },
+          {
+            "meet_id": 2204,
+            "date": "2017-01-29",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Adam Ferguson",
+            "lifter_id": 19912,
+            "membershipNumbers": [
+              {
+                "athleteName": "Adam Ferguson",
+                "membershipNumber": "1002078",
+                "fullText": "30  -  162  Adam Ferguson  M  35  Energy Barbell Club  1002078  92.4  2017-01-29  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMS0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMS0yOSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 2286,
+          "date": "2017-04-09",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Adam Ferguson",
+          "lifter_id": 19912,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNC0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNC0wOSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        },
+        {
+          "meet_id": 2539,
+          "date": "2017-10-15",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Adam Ferguson",
+          "lifter_id": 19912,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0xNSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

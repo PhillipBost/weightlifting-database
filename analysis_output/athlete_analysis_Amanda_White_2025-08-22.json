@@ -1,0 +1,194 @@
+{
+  "timestamp": "2025-08-22T06:22:32.575Z",
+  "athleteName": "Amanda White",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "215910": [
+        {
+          "meet_id": 2088,
+          "date": "2016-09-11",
+          "age_category": "Open Women's",
+          "weight_class": "69 kg",
+          "lifter_name": "Amanda White",
+          "lifter_id": 13272,
+          "membershipNumbers": [
+            {
+              "athleteName": "Amanda White",
+              "membershipNumber": "215910",
+              "fullText": "2  -  114  Amanda White  F  27  NORTH GATE BARBELL  215910  66  2016-09-11  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOS0xMSIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+        }
+      ],
+      "1012811": [
+        {
+          "meet_id": 2259,
+          "date": "2016-12-18",
+          "age_category": "Open Women's",
+          "weight_class": "63 kg",
+          "lifter_name": "Amanda White",
+          "lifter_id": 13272,
+          "membershipNumbers": [
+            {
+              "athleteName": "Amanda White",
+              "membershipNumber": "1012811",
+              "fullText": "9  -  128  Amanda White  F  28  Karhu Barbell Club  1012811  59.5  2016-12-18  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMi0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMi0xOCIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 388,
+        "date": "2015-08-08",
+        "age_category": "Open Women's",
+        "weight_class": "69 kg",
+        "lifter_name": "Amanda White",
+        "lifter_id": 13272,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOC0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOC0wOCIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Amanda White",
+    "splits": [
+      {
+        "newAthleteName": "Amanda White (Person 1)",
+        "membershipNumber": "215910",
+        "competitionCount": 1,
+        "competitions": [
+          2088
+        ]
+      },
+      {
+        "newAthleteName": "Amanda White (Person 2)",
+        "membershipNumber": "1012811",
+        "competitionCount": 1,
+        "competitions": [
+          2259
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 388,
+        "date": "2015-08-08",
+        "age_category": "Open Women's",
+        "weight_class": "69 kg",
+        "lifter_name": "Amanda White",
+        "lifter_id": 13272,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOC0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOC0wOCIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Amanda White",
+    "competitions": [
+      {
+        "meet_id": 2088,
+        "date": "2016-09-11",
+        "age_category": "Open Women's",
+        "weight_class": "69 kg",
+        "lifter_name": "Amanda White",
+        "lifter_id": 13272,
+        "membershipNumbers": [
+          {
+            "athleteName": "Amanda White",
+            "membershipNumber": "215910",
+            "fullText": "2  -  114  Amanda White  F  27  NORTH GATE BARBELL  215910  66  2016-09-11  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOS0xMSIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+      },
+      {
+        "meet_id": 2259,
+        "date": "2016-12-18",
+        "age_category": "Open Women's",
+        "weight_class": "63 kg",
+        "lifter_name": "Amanda White",
+        "lifter_id": 13272,
+        "membershipNumbers": [
+          {
+            "athleteName": "Amanda White",
+            "membershipNumber": "1012811",
+            "fullText": "9  -  128  Amanda White  F  28  Karhu Barbell Club  1012811  59.5  2016-12-18  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMi0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMi0xOCIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+      },
+      {
+        "meet_id": 388,
+        "date": "2015-08-08",
+        "age_category": "Open Women's",
+        "weight_class": "69 kg",
+        "lifter_name": "Amanda White",
+        "lifter_id": 13272,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOC0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOC0wOCIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "215910": [
+          {
+            "meet_id": 2088,
+            "date": "2016-09-11",
+            "age_category": "Open Women's",
+            "weight_class": "69 kg",
+            "lifter_name": "Amanda White",
+            "lifter_id": 13272,
+            "membershipNumbers": [
+              {
+                "athleteName": "Amanda White",
+                "membershipNumber": "215910",
+                "fullText": "2  -  114  Amanda White  F  27  NORTH GATE BARBELL  215910  66  2016-09-11  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOS0xMSIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+          }
+        ],
+        "1012811": [
+          {
+            "meet_id": 2259,
+            "date": "2016-12-18",
+            "age_category": "Open Women's",
+            "weight_class": "63 kg",
+            "lifter_name": "Amanda White",
+            "lifter_id": 13272,
+            "membershipNumbers": [
+              {
+                "athleteName": "Amanda White",
+                "membershipNumber": "1012811",
+                "fullText": "9  -  128  Amanda White  F  28  Karhu Barbell Club  1012811  59.5  2016-12-18  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMi0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMi0xOCIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 388,
+          "date": "2015-08-08",
+          "age_category": "Open Women's",
+          "weight_class": "69 kg",
+          "lifter_name": "Amanda White",
+          "lifter_id": 13272,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOC0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOC0wOCIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

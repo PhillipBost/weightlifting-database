@@ -1,0 +1,194 @@
+{
+  "timestamp": "2025-08-22T07:07:11.186Z",
+  "athleteName": "Ethan Bailey",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1001257": [
+        {
+          "meet_id": 1699,
+          "date": "2016-02-13",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Ethan Bailey",
+          "lifter_id": 21878,
+          "membershipNumbers": [
+            {
+              "athleteName": "Ethan Bailey",
+              "membershipNumber": "1001257",
+              "fullText": "27  -  176  Ethan Bailey  M  23  SWORN BARBELL CLUB  1001257  74  2016-02-13  -  Local  Indiana"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMi0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMi0xMyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        }
+      ],
+      "1053736": [
+        {
+          "meet_id": 4777,
+          "date": "2021-01-30",
+          "age_category": "Men's 16-17 Age Group",
+          "weight_class": "+102kg",
+          "lifter_name": "Ethan Bailey",
+          "lifter_id": 21878,
+          "membershipNumbers": [
+            {
+              "athleteName": "Ethan Bailey",
+              "membershipNumber": "1053736",
+              "fullText": "2  -  198  Ethan Bailey  M  17  WESLEY WEIGHTLIFTERS  1053736  145.1  2021-01-30  -  Local  Missouri Valley"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMS0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMS0zMCIsIndlaWdodF9jbGFzcyI6MTB9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 2148,
+        "date": "2016-10-22",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Ethan Bailey",
+        "lifter_id": 21878,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0yMiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Ethan Bailey",
+    "splits": [
+      {
+        "newAthleteName": "Ethan Bailey (Person 1)",
+        "membershipNumber": "1001257",
+        "competitionCount": 1,
+        "competitions": [
+          1699
+        ]
+      },
+      {
+        "newAthleteName": "Ethan Bailey (Person 2)",
+        "membershipNumber": "1053736",
+        "competitionCount": 1,
+        "competitions": [
+          4777
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 2148,
+        "date": "2016-10-22",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Ethan Bailey",
+        "lifter_id": 21878,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0yMiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Ethan Bailey",
+    "competitions": [
+      {
+        "meet_id": 1699,
+        "date": "2016-02-13",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Ethan Bailey",
+        "lifter_id": 21878,
+        "membershipNumbers": [
+          {
+            "athleteName": "Ethan Bailey",
+            "membershipNumber": "1001257",
+            "fullText": "27  -  176  Ethan Bailey  M  23  SWORN BARBELL CLUB  1001257  74  2016-02-13  -  Local  Indiana"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMi0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMi0xMyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 2148,
+        "date": "2016-10-22",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Ethan Bailey",
+        "lifter_id": 21878,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0yMiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 4777,
+        "date": "2021-01-30",
+        "age_category": "Men's 16-17 Age Group",
+        "weight_class": "+102kg",
+        "lifter_name": "Ethan Bailey",
+        "lifter_id": 21878,
+        "membershipNumbers": [
+          {
+            "athleteName": "Ethan Bailey",
+            "membershipNumber": "1053736",
+            "fullText": "2  -  198  Ethan Bailey  M  17  WESLEY WEIGHTLIFTERS  1053736  145.1  2021-01-30  -  Local  Missouri Valley"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMS0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMS0zMCIsIndlaWdodF9jbGFzcyI6MTB9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1001257": [
+          {
+            "meet_id": 1699,
+            "date": "2016-02-13",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Ethan Bailey",
+            "lifter_id": 21878,
+            "membershipNumbers": [
+              {
+                "athleteName": "Ethan Bailey",
+                "membershipNumber": "1001257",
+                "fullText": "27  -  176  Ethan Bailey  M  23  SWORN BARBELL CLUB  1001257  74  2016-02-13  -  Local  Indiana"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMi0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMi0xMyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          }
+        ],
+        "1053736": [
+          {
+            "meet_id": 4777,
+            "date": "2021-01-30",
+            "age_category": "Men's 16-17 Age Group",
+            "weight_class": "+102kg",
+            "lifter_name": "Ethan Bailey",
+            "lifter_id": 21878,
+            "membershipNumbers": [
+              {
+                "athleteName": "Ethan Bailey",
+                "membershipNumber": "1053736",
+                "fullText": "2  -  198  Ethan Bailey  M  17  WESLEY WEIGHTLIFTERS  1053736  145.1  2021-01-30  -  Local  Missouri Valley"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMS0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMS0zMCIsIndlaWdodF9jbGFzcyI6MTB9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 2148,
+          "date": "2016-10-22",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Ethan Bailey",
+          "lifter_id": 21878,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0yMiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

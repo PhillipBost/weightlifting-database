@@ -1,0 +1,243 @@
+{
+  "timestamp": "2025-08-22T06:36:26.359Z",
+  "athleteName": "Daniel Sandoval",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "199532": [
+        {
+          "meet_id": 54,
+          "date": "2015-10-18",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Daniel Sandoval",
+          "lifter_id": 14727,
+          "membershipNumbers": [
+            {
+              "athleteName": "Daniel Sandoval",
+              "membershipNumber": "199532",
+              "fullText": "26  -  190  Daniel Sandoval  M  42  Creed Weightlifting  199532  83.29  2015-10-18  -  Local  Pennsylvania-West Virginia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xOCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        },
+        {
+          "meet_id": 1471,
+          "date": "2014-10-03",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Daniel Sandoval",
+          "lifter_id": 14727,
+          "membershipNumbers": [
+            {
+              "athleteName": "Daniel Sandoval",
+              "membershipNumber": "199532",
+              "fullText": "2  -  190  Daniel Sandoval  M  41  Creed Weightlifting  199532  85  2014-10-03  -  Local  Pennsylvania-West Virginia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMC0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMC0wMyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ],
+      "211421": [
+        {
+          "meet_id": 462,
+          "date": "2015-05-23",
+          "age_category": "Open Men's",
+          "weight_class": "69 kg",
+          "lifter_name": "Daniel Sandoval",
+          "lifter_id": 14727,
+          "membershipNumbers": [
+            {
+              "athleteName": "Daniel Sandoval",
+              "membershipNumber": "211421",
+              "fullText": "5  -  202  Daniel Sandoval  M  25  WILLIAMS WEIGHTLIFTING  211421  67  2015-05-23  -  Local  Georgia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0yMyIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 1745,
+        "date": "2016-10-23",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Daniel Sandoval",
+        "lifter_id": 14727,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0yMyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Daniel Sandoval",
+    "splits": [
+      {
+        "newAthleteName": "Daniel Sandoval (Person 1)",
+        "membershipNumber": "199532",
+        "competitionCount": 2,
+        "competitions": [
+          54,
+          1471
+        ]
+      },
+      {
+        "newAthleteName": "Daniel Sandoval (Person 2)",
+        "membershipNumber": "211421",
+        "competitionCount": 1,
+        "competitions": [
+          462
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 1745,
+        "date": "2016-10-23",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Daniel Sandoval",
+        "lifter_id": 14727,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0yMyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Daniel Sandoval",
+    "competitions": [
+      {
+        "meet_id": 1745,
+        "date": "2016-10-23",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Daniel Sandoval",
+        "lifter_id": 14727,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0yMyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 462,
+        "date": "2015-05-23",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "Daniel Sandoval",
+        "lifter_id": 14727,
+        "membershipNumbers": [
+          {
+            "athleteName": "Daniel Sandoval",
+            "membershipNumber": "211421",
+            "fullText": "5  -  202  Daniel Sandoval  M  25  WILLIAMS WEIGHTLIFTING  211421  67  2015-05-23  -  Local  Georgia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0yMyIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      },
+      {
+        "meet_id": 54,
+        "date": "2015-10-18",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Daniel Sandoval",
+        "lifter_id": 14727,
+        "membershipNumbers": [
+          {
+            "athleteName": "Daniel Sandoval",
+            "membershipNumber": "199532",
+            "fullText": "26  -  190  Daniel Sandoval  M  42  Creed Weightlifting  199532  83.29  2015-10-18  -  Local  Pennsylvania-West Virginia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xOCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 1471,
+        "date": "2014-10-03",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Daniel Sandoval",
+        "lifter_id": 14727,
+        "membershipNumbers": [
+          {
+            "athleteName": "Daniel Sandoval",
+            "membershipNumber": "199532",
+            "fullText": "2  -  190  Daniel Sandoval  M  41  Creed Weightlifting  199532  85  2014-10-03  -  Local  Pennsylvania-West Virginia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMC0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMC0wMyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "199532": [
+          {
+            "meet_id": 54,
+            "date": "2015-10-18",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Daniel Sandoval",
+            "lifter_id": 14727,
+            "membershipNumbers": [
+              {
+                "athleteName": "Daniel Sandoval",
+                "membershipNumber": "199532",
+                "fullText": "26  -  190  Daniel Sandoval  M  42  Creed Weightlifting  199532  83.29  2015-10-18  -  Local  Pennsylvania-West Virginia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xOCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          },
+          {
+            "meet_id": 1471,
+            "date": "2014-10-03",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Daniel Sandoval",
+            "lifter_id": 14727,
+            "membershipNumbers": [
+              {
+                "athleteName": "Daniel Sandoval",
+                "membershipNumber": "199532",
+                "fullText": "2  -  190  Daniel Sandoval  M  41  Creed Weightlifting  199532  85  2014-10-03  -  Local  Pennsylvania-West Virginia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMC0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMC0wMyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          }
+        ],
+        "211421": [
+          {
+            "meet_id": 462,
+            "date": "2015-05-23",
+            "age_category": "Open Men's",
+            "weight_class": "69 kg",
+            "lifter_name": "Daniel Sandoval",
+            "lifter_id": 14727,
+            "membershipNumbers": [
+              {
+                "athleteName": "Daniel Sandoval",
+                "membershipNumber": "211421",
+                "fullText": "5  -  202  Daniel Sandoval  M  25  WILLIAMS WEIGHTLIFTING  211421  67  2015-05-23  -  Local  Georgia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0yMyIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 1745,
+          "date": "2016-10-23",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Daniel Sandoval",
+          "lifter_id": 14727,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0yMyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

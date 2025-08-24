@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-22T15:26:23.420Z",
+  "athleteName": "Jennifer King",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1036190": [
+        {
+          "meet_id": 3661,
+          "date": "2019-01-27",
+          "age_category": "Women's Masters (40-44)",
+          "weight_class": "64kg",
+          "lifter_name": "Jennifer King",
+          "lifter_id": 39934,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jennifer King",
+              "membershipNumber": "1036190",
+              "fullText": "1  -  113  Jennifer King  F  40  -  1036190  62.2  2019-01-27  -  Local  Mountain North"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0yNyIsIndlaWdodF9jbGFzcyI6MTM1fQ=="
+        },
+        {
+          "meet_id": 3792,
+          "date": "2019-07-28",
+          "age_category": "Women's Masters (40-44)",
+          "weight_class": "71kg",
+          "lifter_name": "Jennifer King",
+          "lifter_id": 39934,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jennifer King",
+              "membershipNumber": "1036190",
+              "fullText": "2  -  117  Jennifer King  F  40  -  1036190  66.46  2019-07-28  -  National  Mountain North"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0yOCIsIndlaWdodF9jbGFzcyI6MTM2fQ=="
+        },
+        {
+          "meet_id": 3738,
+          "date": "2019-03-30",
+          "age_category": "Women's Masters (40-44)",
+          "weight_class": "64kg",
+          "lifter_name": "Jennifer King",
+          "lifter_id": 39934,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jennifer King",
+              "membershipNumber": "1036190",
+              "fullText": "2  -  116  Jennifer King  F  40  -  1036190  62.5  2019-03-30  -  Local  Mountain North"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMy0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMy0zMCIsIndlaWdodF9jbGFzcyI6MTM1fQ=="
+        }
+      ],
+      "1054551": [
+        {
+          "meet_id": 4673,
+          "date": "2021-02-13",
+          "age_category": "Women's Masters (35-39)",
+          "weight_class": "64kg",
+          "lifter_name": "Jennifer King",
+          "lifter_id": 39934,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jennifer King",
+              "membershipNumber": "1054551",
+              "fullText": "2  -  128  Jennifer King  F  38  -  1054551  61.4  2021-02-13  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMi0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMi0xMyIsIndlaWdodF9jbGFzcyI6MTE1fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Jennifer King",
+    "splits": [
+      {
+        "newAthleteName": "Jennifer King (Person 1)",
+        "membershipNumber": "1036190",
+        "competitionCount": 3,
+        "competitions": [
+          3661,
+          3792,
+          3738
+        ]
+      },
+      {
+        "newAthleteName": "Jennifer King (Person 2)",
+        "membershipNumber": "1054551",
+        "competitionCount": 1,
+        "competitions": [
+          4673
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Jennifer King",
+    "competitions": [
+      {
+        "meet_id": 3661,
+        "date": "2019-01-27",
+        "age_category": "Women's Masters (40-44)",
+        "weight_class": "64kg",
+        "lifter_name": "Jennifer King",
+        "lifter_id": 39934,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jennifer King",
+            "membershipNumber": "1036190",
+            "fullText": "1  -  113  Jennifer King  F  40  -  1036190  62.2  2019-01-27  -  Local  Mountain North"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0yNyIsIndlaWdodF9jbGFzcyI6MTM1fQ=="
+      },
+      {
+        "meet_id": 3792,
+        "date": "2019-07-28",
+        "age_category": "Women's Masters (40-44)",
+        "weight_class": "71kg",
+        "lifter_name": "Jennifer King",
+        "lifter_id": 39934,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jennifer King",
+            "membershipNumber": "1036190",
+            "fullText": "2  -  117  Jennifer King  F  40  -  1036190  66.46  2019-07-28  -  National  Mountain North"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0yOCIsIndlaWdodF9jbGFzcyI6MTM2fQ=="
+      },
+      {
+        "meet_id": 4673,
+        "date": "2021-02-13",
+        "age_category": "Women's Masters (35-39)",
+        "weight_class": "64kg",
+        "lifter_name": "Jennifer King",
+        "lifter_id": 39934,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jennifer King",
+            "membershipNumber": "1054551",
+            "fullText": "2  -  128  Jennifer King  F  38  -  1054551  61.4  2021-02-13  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMi0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMi0xMyIsIndlaWdodF9jbGFzcyI6MTE1fQ=="
+      },
+      {
+        "meet_id": 3738,
+        "date": "2019-03-30",
+        "age_category": "Women's Masters (40-44)",
+        "weight_class": "64kg",
+        "lifter_name": "Jennifer King",
+        "lifter_id": 39934,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jennifer King",
+            "membershipNumber": "1036190",
+            "fullText": "2  -  116  Jennifer King  F  40  -  1036190  62.5  2019-03-30  -  Local  Mountain North"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMy0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMy0zMCIsIndlaWdodF9jbGFzcyI6MTM1fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1036190": [
+          {
+            "meet_id": 3661,
+            "date": "2019-01-27",
+            "age_category": "Women's Masters (40-44)",
+            "weight_class": "64kg",
+            "lifter_name": "Jennifer King",
+            "lifter_id": 39934,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jennifer King",
+                "membershipNumber": "1036190",
+                "fullText": "1  -  113  Jennifer King  F  40  -  1036190  62.2  2019-01-27  -  Local  Mountain North"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0yNyIsIndlaWdodF9jbGFzcyI6MTM1fQ=="
+          },
+          {
+            "meet_id": 3792,
+            "date": "2019-07-28",
+            "age_category": "Women's Masters (40-44)",
+            "weight_class": "71kg",
+            "lifter_name": "Jennifer King",
+            "lifter_id": 39934,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jennifer King",
+                "membershipNumber": "1036190",
+                "fullText": "2  -  117  Jennifer King  F  40  -  1036190  66.46  2019-07-28  -  National  Mountain North"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0yOCIsIndlaWdodF9jbGFzcyI6MTM2fQ=="
+          },
+          {
+            "meet_id": 3738,
+            "date": "2019-03-30",
+            "age_category": "Women's Masters (40-44)",
+            "weight_class": "64kg",
+            "lifter_name": "Jennifer King",
+            "lifter_id": 39934,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jennifer King",
+                "membershipNumber": "1036190",
+                "fullText": "2  -  116  Jennifer King  F  40  -  1036190  62.5  2019-03-30  -  Local  Mountain North"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMy0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMy0zMCIsIndlaWdodF9jbGFzcyI6MTM1fQ=="
+          }
+        ],
+        "1054551": [
+          {
+            "meet_id": 4673,
+            "date": "2021-02-13",
+            "age_category": "Women's Masters (35-39)",
+            "weight_class": "64kg",
+            "lifter_name": "Jennifer King",
+            "lifter_id": 39934,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jennifer King",
+                "membershipNumber": "1054551",
+                "fullText": "2  -  128  Jennifer King  F  38  -  1054551  61.4  2021-02-13  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMi0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMi0xMyIsIndlaWdodF9jbGFzcyI6MTE1fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

@@ -1,0 +1,283 @@
+{
+  "timestamp": "2025-08-23T01:33:09.723Z",
+  "athleteName": "Michael Donaldson",
+  "totalCompetitions": 5,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "215172": [
+        {
+          "meet_id": 150,
+          "date": "2015-11-07",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Michael Donaldson",
+          "lifter_id": 8081,
+          "membershipNumbers": [
+            {
+              "athleteName": "Michael Donaldson",
+              "membershipNumber": "215172",
+              "fullText": "20  -  157  Michael Donaldson  M  45  -  215172  103  2015-11-07  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMS0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMS0wNyIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        },
+        {
+          "meet_id": 1918,
+          "date": "2016-06-11",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Michael Donaldson",
+          "lifter_id": 8081,
+          "membershipNumbers": [
+            {
+              "athleteName": "Michael Donaldson",
+              "membershipNumber": "215172",
+              "fullText": "8  -  175  Michael Donaldson  M  46  -  215172  103.6  2016-06-11  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0xMSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        }
+      ],
+      "1009862": [
+        {
+          "meet_id": 2012,
+          "date": "2016-08-20",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Michael Donaldson",
+          "lifter_id": 8081,
+          "membershipNumbers": [
+            {
+              "athleteName": "Michael Donaldson",
+              "membershipNumber": "1009862",
+              "fullText": "19  -  222  Michael Donaldson  M  35  ROCKWALL WEIGHTLIFTING CLUB  1009862  101.2  2016-08-20  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0yMCIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 143,
+        "date": "2015-09-19",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Michael Donaldson",
+        "lifter_id": 8081,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOS0xOSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 528,
+        "date": "2016-02-07",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Michael Donaldson",
+        "lifter_id": 8081,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Michael Donaldson",
+    "splits": [
+      {
+        "newAthleteName": "Michael Donaldson (Person 1)",
+        "membershipNumber": "215172",
+        "competitionCount": 2,
+        "competitions": [
+          150,
+          1918
+        ]
+      },
+      {
+        "newAthleteName": "Michael Donaldson (Person 2)",
+        "membershipNumber": "1009862",
+        "competitionCount": 1,
+        "competitions": [
+          2012
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 143,
+        "date": "2015-09-19",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Michael Donaldson",
+        "lifter_id": 8081,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOS0xOSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 528,
+        "date": "2016-02-07",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Michael Donaldson",
+        "lifter_id": 8081,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Michael Donaldson",
+    "competitions": [
+      {
+        "meet_id": 143,
+        "date": "2015-09-19",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Michael Donaldson",
+        "lifter_id": 8081,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOS0xOSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 150,
+        "date": "2015-11-07",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Michael Donaldson",
+        "lifter_id": 8081,
+        "membershipNumbers": [
+          {
+            "athleteName": "Michael Donaldson",
+            "membershipNumber": "215172",
+            "fullText": "20  -  157  Michael Donaldson  M  45  -  215172  103  2015-11-07  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMS0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMS0wNyIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 528,
+        "date": "2016-02-07",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Michael Donaldson",
+        "lifter_id": 8081,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 1918,
+        "date": "2016-06-11",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Michael Donaldson",
+        "lifter_id": 8081,
+        "membershipNumbers": [
+          {
+            "athleteName": "Michael Donaldson",
+            "membershipNumber": "215172",
+            "fullText": "8  -  175  Michael Donaldson  M  46  -  215172  103.6  2016-06-11  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0xMSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 2012,
+        "date": "2016-08-20",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Michael Donaldson",
+        "lifter_id": 8081,
+        "membershipNumbers": [
+          {
+            "athleteName": "Michael Donaldson",
+            "membershipNumber": "1009862",
+            "fullText": "19  -  222  Michael Donaldson  M  35  ROCKWALL WEIGHTLIFTING CLUB  1009862  101.2  2016-08-20  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0yMCIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "215172": [
+          {
+            "meet_id": 150,
+            "date": "2015-11-07",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Michael Donaldson",
+            "lifter_id": 8081,
+            "membershipNumbers": [
+              {
+                "athleteName": "Michael Donaldson",
+                "membershipNumber": "215172",
+                "fullText": "20  -  157  Michael Donaldson  M  45  -  215172  103  2015-11-07  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMS0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMS0wNyIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          },
+          {
+            "meet_id": 1918,
+            "date": "2016-06-11",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Michael Donaldson",
+            "lifter_id": 8081,
+            "membershipNumbers": [
+              {
+                "athleteName": "Michael Donaldson",
+                "membershipNumber": "215172",
+                "fullText": "8  -  175  Michael Donaldson  M  46  -  215172  103.6  2016-06-11  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0xMSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          }
+        ],
+        "1009862": [
+          {
+            "meet_id": 2012,
+            "date": "2016-08-20",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Michael Donaldson",
+            "lifter_id": 8081,
+            "membershipNumbers": [
+              {
+                "athleteName": "Michael Donaldson",
+                "membershipNumber": "1009862",
+                "fullText": "19  -  222  Michael Donaldson  M  35  ROCKWALL WEIGHTLIFTING CLUB  1009862  101.2  2016-08-20  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0yMCIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 143,
+          "date": "2015-09-19",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Michael Donaldson",
+          "lifter_id": 8081,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOS0xOSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        },
+        {
+          "meet_id": 528,
+          "date": "2016-02-07",
+          "age_category": "Open Men's",
+          "weight_class": "+105 kg",
+          "lifter_name": "Michael Donaldson",
+          "lifter_id": 8081,
+          "membershipNumbers": [],
+          "error": "No division code found for: \"Open Men's +105 kg\""
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

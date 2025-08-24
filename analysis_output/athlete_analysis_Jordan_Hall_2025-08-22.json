@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-22T06:10:45.918Z",
+  "athleteName": "Jordan Hall",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1000657": [
+        {
+          "meet_id": 348,
+          "date": "2015-12-12",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Jordan Hall",
+          "lifter_id": 12343,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jordan Hall",
+              "membershipNumber": "1000657",
+              "fullText": "9  -  224  Jordan Hall  M  22  -  1000657  81.74  2015-12-12  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMi0xMiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        },
+        {
+          "meet_id": 2188,
+          "date": "2016-10-08",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Jordan Hall",
+          "lifter_id": 12343,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jordan Hall",
+              "membershipNumber": "1000657",
+              "fullText": "16  -  220  Jordan Hall  M  23  -  1000657  80.18  2016-10-08  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0wOCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ],
+      "1053195": [
+        {
+          "meet_id": 4858,
+          "date": "2021-05-29",
+          "age_category": "Women's 16-17 Age Group",
+          "weight_class": "64kg",
+          "lifter_name": "Jordan Hall",
+          "lifter_id": 12343,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jordan Hall",
+              "membershipNumber": "1053195",
+              "fullText": "1  -  105  Jordan Hall  F  17  LILY WEIGHTLIFTING  1053195  64  2021-05-29  -  Local  Michigan"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNS0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNS0yOSIsIndlaWdodF9jbGFzcyI6MTZ9"
+        },
+        {
+          "meet_id": 4707,
+          "date": "2020-12-12",
+          "age_category": "Women's 16-17 Age Group",
+          "weight_class": "76kg",
+          "lifter_name": "Jordan Hall",
+          "lifter_id": 12343,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jordan Hall",
+              "membershipNumber": "1053195",
+              "fullText": "1  -  77  Jordan Hall  F  16  LILY WEIGHTLIFTING  1053195  75.7  2020-12-12  -  Local  Michigan"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0xMi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0xMi0xMiIsIndlaWdodF9jbGFzcyI6MTh9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Jordan Hall",
+    "splits": [
+      {
+        "newAthleteName": "Jordan Hall (Person 1)",
+        "membershipNumber": "1000657",
+        "competitionCount": 2,
+        "competitions": [
+          348,
+          2188
+        ]
+      },
+      {
+        "newAthleteName": "Jordan Hall (Person 2)",
+        "membershipNumber": "1053195",
+        "competitionCount": 2,
+        "competitions": [
+          4858,
+          4707
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Jordan Hall",
+    "competitions": [
+      {
+        "meet_id": 4858,
+        "date": "2021-05-29",
+        "age_category": "Women's 16-17 Age Group",
+        "weight_class": "64kg",
+        "lifter_name": "Jordan Hall",
+        "lifter_id": 12343,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jordan Hall",
+            "membershipNumber": "1053195",
+            "fullText": "1  -  105  Jordan Hall  F  17  LILY WEIGHTLIFTING  1053195  64  2021-05-29  -  Local  Michigan"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNS0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNS0yOSIsIndlaWdodF9jbGFzcyI6MTZ9"
+      },
+      {
+        "meet_id": 348,
+        "date": "2015-12-12",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Jordan Hall",
+        "lifter_id": 12343,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jordan Hall",
+            "membershipNumber": "1000657",
+            "fullText": "9  -  224  Jordan Hall  M  22  -  1000657  81.74  2015-12-12  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMi0xMiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 4707,
+        "date": "2020-12-12",
+        "age_category": "Women's 16-17 Age Group",
+        "weight_class": "76kg",
+        "lifter_name": "Jordan Hall",
+        "lifter_id": 12343,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jordan Hall",
+            "membershipNumber": "1053195",
+            "fullText": "1  -  77  Jordan Hall  F  16  LILY WEIGHTLIFTING  1053195  75.7  2020-12-12  -  Local  Michigan"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0xMi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0xMi0xMiIsIndlaWdodF9jbGFzcyI6MTh9"
+      },
+      {
+        "meet_id": 2188,
+        "date": "2016-10-08",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Jordan Hall",
+        "lifter_id": 12343,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jordan Hall",
+            "membershipNumber": "1000657",
+            "fullText": "16  -  220  Jordan Hall  M  23  -  1000657  80.18  2016-10-08  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0wOCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1000657": [
+          {
+            "meet_id": 348,
+            "date": "2015-12-12",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Jordan Hall",
+            "lifter_id": 12343,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jordan Hall",
+                "membershipNumber": "1000657",
+                "fullText": "9  -  224  Jordan Hall  M  22  -  1000657  81.74  2015-12-12  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMi0xMiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          },
+          {
+            "meet_id": 2188,
+            "date": "2016-10-08",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Jordan Hall",
+            "lifter_id": 12343,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jordan Hall",
+                "membershipNumber": "1000657",
+                "fullText": "16  -  220  Jordan Hall  M  23  -  1000657  80.18  2016-10-08  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0wOCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          }
+        ],
+        "1053195": [
+          {
+            "meet_id": 4858,
+            "date": "2021-05-29",
+            "age_category": "Women's 16-17 Age Group",
+            "weight_class": "64kg",
+            "lifter_name": "Jordan Hall",
+            "lifter_id": 12343,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jordan Hall",
+                "membershipNumber": "1053195",
+                "fullText": "1  -  105  Jordan Hall  F  17  LILY WEIGHTLIFTING  1053195  64  2021-05-29  -  Local  Michigan"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNS0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNS0yOSIsIndlaWdodF9jbGFzcyI6MTZ9"
+          },
+          {
+            "meet_id": 4707,
+            "date": "2020-12-12",
+            "age_category": "Women's 16-17 Age Group",
+            "weight_class": "76kg",
+            "lifter_name": "Jordan Hall",
+            "lifter_id": 12343,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jordan Hall",
+                "membershipNumber": "1053195",
+                "fullText": "1  -  77  Jordan Hall  F  16  LILY WEIGHTLIFTING  1053195  75.7  2020-12-12  -  Local  Michigan"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0xMi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0xMi0xMiIsIndlaWdodF9jbGFzcyI6MTh9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

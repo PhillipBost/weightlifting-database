@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-22T07:41:10.251Z",
+  "athleteName": "Thomas Wright",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "167596": [
+        {
+          "meet_id": 2291,
+          "date": "2017-02-04",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Thomas Wright",
+          "lifter_id": 28082,
+          "membershipNumbers": [
+            {
+              "athleteName": "Thomas Wright",
+              "membershipNumber": "167596",
+              "fullText": "14  -  195  Thomas Wright  M  40  Statesville Weightlifting Club  167596  96.5  2017-02-04  -  Local  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0wNCIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        }
+      ],
+      "1035155": [
+        {
+          "meet_id": 3525,
+          "date": "2019-01-20",
+          "age_category": "Open Men's",
+          "weight_class": "102kg",
+          "lifter_name": "Thomas Wright",
+          "lifter_id": 28082,
+          "membershipNumbers": [
+            {
+              "athleteName": "Thomas Wright",
+              "membershipNumber": "1035155",
+              "fullText": "19  -  213  Thomas Wright  M  29  North Dallas Barbell  1035155  98.95  2019-01-20  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0yMCIsIndlaWdodF9jbGFzcyI6ODh9"
+        },
+        {
+          "meet_id": 3575,
+          "date": "2018-12-15",
+          "age_category": "Open Men's",
+          "weight_class": "102kg",
+          "lifter_name": "Thomas Wright",
+          "lifter_id": 28082,
+          "membershipNumbers": [
+            {
+              "athleteName": "Thomas Wright",
+              "membershipNumber": "1035155",
+              "fullText": "14  -  213  Thomas Wright  M  28  North Dallas Barbell  1035155  99.1  2018-12-15  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0xNSIsIndlaWdodF9jbGFzcyI6ODh9"
+        },
+        {
+          "meet_id": 3814,
+          "date": "2019-01-13",
+          "age_category": "Open Men's",
+          "weight_class": "102kg",
+          "lifter_name": "Thomas Wright",
+          "lifter_id": 28082,
+          "membershipNumbers": [
+            {
+              "athleteName": "Thomas Wright",
+              "membershipNumber": "1035155",
+              "fullText": "9  -  219  Thomas Wright  M  29  North Dallas Barbell  1035155  101.85  2019-01-13  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0xMyIsIndlaWdodF9jbGFzcyI6ODh9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Thomas Wright",
+    "splits": [
+      {
+        "newAthleteName": "Thomas Wright (Person 1)",
+        "membershipNumber": "167596",
+        "competitionCount": 1,
+        "competitions": [
+          2291
+        ]
+      },
+      {
+        "newAthleteName": "Thomas Wright (Person 2)",
+        "membershipNumber": "1035155",
+        "competitionCount": 3,
+        "competitions": [
+          3525,
+          3575,
+          3814
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Thomas Wright",
+    "competitions": [
+      {
+        "meet_id": 3525,
+        "date": "2019-01-20",
+        "age_category": "Open Men's",
+        "weight_class": "102kg",
+        "lifter_name": "Thomas Wright",
+        "lifter_id": 28082,
+        "membershipNumbers": [
+          {
+            "athleteName": "Thomas Wright",
+            "membershipNumber": "1035155",
+            "fullText": "19  -  213  Thomas Wright  M  29  North Dallas Barbell  1035155  98.95  2019-01-20  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0yMCIsIndlaWdodF9jbGFzcyI6ODh9"
+      },
+      {
+        "meet_id": 2291,
+        "date": "2017-02-04",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Thomas Wright",
+        "lifter_id": 28082,
+        "membershipNumbers": [
+          {
+            "athleteName": "Thomas Wright",
+            "membershipNumber": "167596",
+            "fullText": "14  -  195  Thomas Wright  M  40  Statesville Weightlifting Club  167596  96.5  2017-02-04  -  Local  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0wNCIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 3575,
+        "date": "2018-12-15",
+        "age_category": "Open Men's",
+        "weight_class": "102kg",
+        "lifter_name": "Thomas Wright",
+        "lifter_id": 28082,
+        "membershipNumbers": [
+          {
+            "athleteName": "Thomas Wright",
+            "membershipNumber": "1035155",
+            "fullText": "14  -  213  Thomas Wright  M  28  North Dallas Barbell  1035155  99.1  2018-12-15  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0xNSIsIndlaWdodF9jbGFzcyI6ODh9"
+      },
+      {
+        "meet_id": 3814,
+        "date": "2019-01-13",
+        "age_category": "Open Men's",
+        "weight_class": "102kg",
+        "lifter_name": "Thomas Wright",
+        "lifter_id": 28082,
+        "membershipNumbers": [
+          {
+            "athleteName": "Thomas Wright",
+            "membershipNumber": "1035155",
+            "fullText": "9  -  219  Thomas Wright  M  29  North Dallas Barbell  1035155  101.85  2019-01-13  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0xMyIsIndlaWdodF9jbGFzcyI6ODh9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "167596": [
+          {
+            "meet_id": 2291,
+            "date": "2017-02-04",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Thomas Wright",
+            "lifter_id": 28082,
+            "membershipNumbers": [
+              {
+                "athleteName": "Thomas Wright",
+                "membershipNumber": "167596",
+                "fullText": "14  -  195  Thomas Wright  M  40  Statesville Weightlifting Club  167596  96.5  2017-02-04  -  Local  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0wNCIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          }
+        ],
+        "1035155": [
+          {
+            "meet_id": 3525,
+            "date": "2019-01-20",
+            "age_category": "Open Men's",
+            "weight_class": "102kg",
+            "lifter_name": "Thomas Wright",
+            "lifter_id": 28082,
+            "membershipNumbers": [
+              {
+                "athleteName": "Thomas Wright",
+                "membershipNumber": "1035155",
+                "fullText": "19  -  213  Thomas Wright  M  29  North Dallas Barbell  1035155  98.95  2019-01-20  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0yMCIsIndlaWdodF9jbGFzcyI6ODh9"
+          },
+          {
+            "meet_id": 3575,
+            "date": "2018-12-15",
+            "age_category": "Open Men's",
+            "weight_class": "102kg",
+            "lifter_name": "Thomas Wright",
+            "lifter_id": 28082,
+            "membershipNumbers": [
+              {
+                "athleteName": "Thomas Wright",
+                "membershipNumber": "1035155",
+                "fullText": "14  -  213  Thomas Wright  M  28  North Dallas Barbell  1035155  99.1  2018-12-15  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0xNSIsIndlaWdodF9jbGFzcyI6ODh9"
+          },
+          {
+            "meet_id": 3814,
+            "date": "2019-01-13",
+            "age_category": "Open Men's",
+            "weight_class": "102kg",
+            "lifter_name": "Thomas Wright",
+            "lifter_id": 28082,
+            "membershipNumbers": [
+              {
+                "athleteName": "Thomas Wright",
+                "membershipNumber": "1035155",
+                "fullText": "9  -  219  Thomas Wright  M  29  North Dallas Barbell  1035155  101.85  2019-01-13  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0xMyIsIndlaWdodF9jbGFzcyI6ODh9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

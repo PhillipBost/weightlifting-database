@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-23T00:03:36.123Z",
+  "athleteName": "Rachel Arnold",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1011822": [
+        {
+          "meet_id": 2100,
+          "date": "2016-09-17",
+          "age_category": "Open Women's",
+          "weight_class": "69 kg",
+          "lifter_name": "Rachel Arnold",
+          "lifter_id": 25876,
+          "membershipNumbers": [
+            {
+              "athleteName": "Rachel Arnold",
+              "membershipNumber": "1011822",
+              "fullText": "9  -  149  Rachel Arnold  F  24  RELENTLESS WEIGHTLIFTING CLUB  1011822  64.15  2016-09-17  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOS0xNyIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+        }
+      ],
+      "1059734": [
+        {
+          "meet_id": 5197,
+          "date": "2022-01-15",
+          "age_category": "Open Women's",
+          "weight_class": "81kg",
+          "lifter_name": "Rachel Arnold",
+          "lifter_id": 25876,
+          "membershipNumbers": [
+            {
+              "athleteName": "Rachel Arnold",
+              "membershipNumber": "1059734",
+              "fullText": "22  -  86  Rachel Arnold  F  27  RVA Weightlifting  1059734  78.7  2022-01-15  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMS0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMS0xNSIsIndlaWdodF9jbGFzcyI6OTh9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Rachel Arnold",
+    "splits": [
+      {
+        "newAthleteName": "Rachel Arnold (Person 1)",
+        "membershipNumber": "1011822",
+        "competitionCount": 1,
+        "competitions": [
+          2100
+        ]
+      },
+      {
+        "newAthleteName": "Rachel Arnold (Person 2)",
+        "membershipNumber": "1059734",
+        "competitionCount": 1,
+        "competitions": [
+          5197
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Rachel Arnold",
+    "competitions": [
+      {
+        "meet_id": 5197,
+        "date": "2022-01-15",
+        "age_category": "Open Women's",
+        "weight_class": "81kg",
+        "lifter_name": "Rachel Arnold",
+        "lifter_id": 25876,
+        "membershipNumbers": [
+          {
+            "athleteName": "Rachel Arnold",
+            "membershipNumber": "1059734",
+            "fullText": "22  -  86  Rachel Arnold  F  27  RVA Weightlifting  1059734  78.7  2022-01-15  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMS0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMS0xNSIsIndlaWdodF9jbGFzcyI6OTh9"
+      },
+      {
+        "meet_id": 2100,
+        "date": "2016-09-17",
+        "age_category": "Open Women's",
+        "weight_class": "69 kg",
+        "lifter_name": "Rachel Arnold",
+        "lifter_id": 25876,
+        "membershipNumbers": [
+          {
+            "athleteName": "Rachel Arnold",
+            "membershipNumber": "1011822",
+            "fullText": "9  -  149  Rachel Arnold  F  24  RELENTLESS WEIGHTLIFTING CLUB  1011822  64.15  2016-09-17  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOS0xNyIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1011822": [
+          {
+            "meet_id": 2100,
+            "date": "2016-09-17",
+            "age_category": "Open Women's",
+            "weight_class": "69 kg",
+            "lifter_name": "Rachel Arnold",
+            "lifter_id": 25876,
+            "membershipNumbers": [
+              {
+                "athleteName": "Rachel Arnold",
+                "membershipNumber": "1011822",
+                "fullText": "9  -  149  Rachel Arnold  F  24  RELENTLESS WEIGHTLIFTING CLUB  1011822  64.15  2016-09-17  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOS0xNyIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+          }
+        ],
+        "1059734": [
+          {
+            "meet_id": 5197,
+            "date": "2022-01-15",
+            "age_category": "Open Women's",
+            "weight_class": "81kg",
+            "lifter_name": "Rachel Arnold",
+            "lifter_id": 25876,
+            "membershipNumbers": [
+              {
+                "athleteName": "Rachel Arnold",
+                "membershipNumber": "1059734",
+                "fullText": "22  -  86  Rachel Arnold  F  27  RVA Weightlifting  1059734  78.7  2022-01-15  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMS0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMS0xNSIsIndlaWdodF9jbGFzcyI6OTh9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

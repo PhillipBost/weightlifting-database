@@ -1,0 +1,332 @@
+{
+  "timestamp": "2025-08-22T10:59:23.486Z",
+  "athleteName": "Melanie Wilson",
+  "totalCompetitions": 6,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "218879": [
+        {
+          "meet_id": 235,
+          "date": "2015-10-18",
+          "age_category": "Open Women's",
+          "weight_class": "53 kg",
+          "lifter_name": "Melanie Wilson",
+          "lifter_id": 10130,
+          "membershipNumbers": [
+            {
+              "athleteName": "Melanie Wilson",
+              "membershipNumber": "218879",
+              "fullText": "10  -  110  Melanie Wilson  F  32  STONECUTTER WEIGHTLIFTING  218879  53  2015-10-18  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xOCIsIndlaWdodF9jbGFzcyI6MzYzfQ=="
+        },
+        {
+          "meet_id": 2217,
+          "date": "2016-10-16",
+          "age_category": "Open Women's",
+          "weight_class": "58 kg",
+          "lifter_name": "Melanie Wilson",
+          "lifter_id": 10130,
+          "membershipNumbers": [
+            {
+              "athleteName": "Melanie Wilson",
+              "membershipNumber": "218879",
+              "fullText": "25  -  107  Melanie Wilson  F  33  STONECUTTER WEIGHTLIFTING  218879  53.42  2016-10-16  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0xNiIsIndlaWdodF9jbGFzcyI6MzY0fQ=="
+        },
+        {
+          "meet_id": 2209,
+          "date": "2017-02-19",
+          "age_category": "Open Women's",
+          "weight_class": "58 kg",
+          "lifter_name": "Melanie Wilson",
+          "lifter_id": 10130,
+          "membershipNumbers": [
+            {
+              "athleteName": "Melanie Wilson",
+              "membershipNumber": "218879",
+              "fullText": "22  -  116  Melanie Wilson  F  34  STONECUTTER WEIGHTLIFTING  218879  56.2  2017-02-19  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xOSIsIndlaWdodF9jbGFzcyI6MzY0fQ=="
+        }
+      ],
+      "1031496": [
+        {
+          "meet_id": 4855,
+          "date": "2021-11-20",
+          "age_category": "Open Women's",
+          "weight_class": "71kg",
+          "lifter_name": "Melanie Wilson",
+          "lifter_id": 10130,
+          "membershipNumbers": [
+            {
+              "athleteName": "Melanie Wilson",
+              "membershipNumber": "1031496",
+              "fullText": "11  -  122  Melanie Wilson  F  34  Denver Barbell Club  1031496  70.5  2021-11-20  -  Local  Mountain North"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMS0yMCIsIndlaWdodF9jbGFzcyI6OTZ9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 2891,
+        "date": "2018-09-16",
+        "age_category": "Open Women's",
+        "weight_class": "64kg",
+        "lifter_name": "Melanie Wilson",
+        "lifter_id": 10130,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOS0xNiIsIndlaWdodF9jbGFzcyI6OTV9"
+      },
+      {
+        "meet_id": 3237,
+        "date": "2018-07-22",
+        "age_category": "Open Women's",
+        "weight_class": "63 kg",
+        "lifter_name": "Melanie Wilson",
+        "lifter_id": 10130,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNy0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNy0yMiIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Melanie Wilson",
+    "splits": [
+      {
+        "newAthleteName": "Melanie Wilson (Person 1)",
+        "membershipNumber": "218879",
+        "competitionCount": 3,
+        "competitions": [
+          235,
+          2217,
+          2209
+        ]
+      },
+      {
+        "newAthleteName": "Melanie Wilson (Person 2)",
+        "membershipNumber": "1031496",
+        "competitionCount": 1,
+        "competitions": [
+          4855
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 2891,
+        "date": "2018-09-16",
+        "age_category": "Open Women's",
+        "weight_class": "64kg",
+        "lifter_name": "Melanie Wilson",
+        "lifter_id": 10130,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOS0xNiIsIndlaWdodF9jbGFzcyI6OTV9"
+      },
+      {
+        "meet_id": 3237,
+        "date": "2018-07-22",
+        "age_category": "Open Women's",
+        "weight_class": "63 kg",
+        "lifter_name": "Melanie Wilson",
+        "lifter_id": 10130,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNy0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNy0yMiIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Melanie Wilson",
+    "competitions": [
+      {
+        "meet_id": 4855,
+        "date": "2021-11-20",
+        "age_category": "Open Women's",
+        "weight_class": "71kg",
+        "lifter_name": "Melanie Wilson",
+        "lifter_id": 10130,
+        "membershipNumbers": [
+          {
+            "athleteName": "Melanie Wilson",
+            "membershipNumber": "1031496",
+            "fullText": "11  -  122  Melanie Wilson  F  34  Denver Barbell Club  1031496  70.5  2021-11-20  -  Local  Mountain North"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMS0yMCIsIndlaWdodF9jbGFzcyI6OTZ9"
+      },
+      {
+        "meet_id": 235,
+        "date": "2015-10-18",
+        "age_category": "Open Women's",
+        "weight_class": "53 kg",
+        "lifter_name": "Melanie Wilson",
+        "lifter_id": 10130,
+        "membershipNumbers": [
+          {
+            "athleteName": "Melanie Wilson",
+            "membershipNumber": "218879",
+            "fullText": "10  -  110  Melanie Wilson  F  32  STONECUTTER WEIGHTLIFTING  218879  53  2015-10-18  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xOCIsIndlaWdodF9jbGFzcyI6MzYzfQ=="
+      },
+      {
+        "meet_id": 2217,
+        "date": "2016-10-16",
+        "age_category": "Open Women's",
+        "weight_class": "58 kg",
+        "lifter_name": "Melanie Wilson",
+        "lifter_id": 10130,
+        "membershipNumbers": [
+          {
+            "athleteName": "Melanie Wilson",
+            "membershipNumber": "218879",
+            "fullText": "25  -  107  Melanie Wilson  F  33  STONECUTTER WEIGHTLIFTING  218879  53.42  2016-10-16  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0xNiIsIndlaWdodF9jbGFzcyI6MzY0fQ=="
+      },
+      {
+        "meet_id": 2891,
+        "date": "2018-09-16",
+        "age_category": "Open Women's",
+        "weight_class": "64kg",
+        "lifter_name": "Melanie Wilson",
+        "lifter_id": 10130,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOS0xNiIsIndlaWdodF9jbGFzcyI6OTV9"
+      },
+      {
+        "meet_id": 3237,
+        "date": "2018-07-22",
+        "age_category": "Open Women's",
+        "weight_class": "63 kg",
+        "lifter_name": "Melanie Wilson",
+        "lifter_id": 10130,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNy0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNy0yMiIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+      },
+      {
+        "meet_id": 2209,
+        "date": "2017-02-19",
+        "age_category": "Open Women's",
+        "weight_class": "58 kg",
+        "lifter_name": "Melanie Wilson",
+        "lifter_id": 10130,
+        "membershipNumbers": [
+          {
+            "athleteName": "Melanie Wilson",
+            "membershipNumber": "218879",
+            "fullText": "22  -  116  Melanie Wilson  F  34  STONECUTTER WEIGHTLIFTING  218879  56.2  2017-02-19  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xOSIsIndlaWdodF9jbGFzcyI6MzY0fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "218879": [
+          {
+            "meet_id": 235,
+            "date": "2015-10-18",
+            "age_category": "Open Women's",
+            "weight_class": "53 kg",
+            "lifter_name": "Melanie Wilson",
+            "lifter_id": 10130,
+            "membershipNumbers": [
+              {
+                "athleteName": "Melanie Wilson",
+                "membershipNumber": "218879",
+                "fullText": "10  -  110  Melanie Wilson  F  32  STONECUTTER WEIGHTLIFTING  218879  53  2015-10-18  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xOCIsIndlaWdodF9jbGFzcyI6MzYzfQ=="
+          },
+          {
+            "meet_id": 2217,
+            "date": "2016-10-16",
+            "age_category": "Open Women's",
+            "weight_class": "58 kg",
+            "lifter_name": "Melanie Wilson",
+            "lifter_id": 10130,
+            "membershipNumbers": [
+              {
+                "athleteName": "Melanie Wilson",
+                "membershipNumber": "218879",
+                "fullText": "25  -  107  Melanie Wilson  F  33  STONECUTTER WEIGHTLIFTING  218879  53.42  2016-10-16  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0xNiIsIndlaWdodF9jbGFzcyI6MzY0fQ=="
+          },
+          {
+            "meet_id": 2209,
+            "date": "2017-02-19",
+            "age_category": "Open Women's",
+            "weight_class": "58 kg",
+            "lifter_name": "Melanie Wilson",
+            "lifter_id": 10130,
+            "membershipNumbers": [
+              {
+                "athleteName": "Melanie Wilson",
+                "membershipNumber": "218879",
+                "fullText": "22  -  116  Melanie Wilson  F  34  STONECUTTER WEIGHTLIFTING  218879  56.2  2017-02-19  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xOSIsIndlaWdodF9jbGFzcyI6MzY0fQ=="
+          }
+        ],
+        "1031496": [
+          {
+            "meet_id": 4855,
+            "date": "2021-11-20",
+            "age_category": "Open Women's",
+            "weight_class": "71kg",
+            "lifter_name": "Melanie Wilson",
+            "lifter_id": 10130,
+            "membershipNumbers": [
+              {
+                "athleteName": "Melanie Wilson",
+                "membershipNumber": "1031496",
+                "fullText": "11  -  122  Melanie Wilson  F  34  Denver Barbell Club  1031496  70.5  2021-11-20  -  Local  Mountain North"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMS0yMCIsIndlaWdodF9jbGFzcyI6OTZ9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 2891,
+          "date": "2018-09-16",
+          "age_category": "Open Women's",
+          "weight_class": "64kg",
+          "lifter_name": "Melanie Wilson",
+          "lifter_id": 10130,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOS0xNiIsIndlaWdodF9jbGFzcyI6OTV9"
+        },
+        {
+          "meet_id": 3237,
+          "date": "2018-07-22",
+          "age_category": "Open Women's",
+          "weight_class": "63 kg",
+          "lifter_name": "Melanie Wilson",
+          "lifter_id": 10130,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNy0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNy0yMiIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

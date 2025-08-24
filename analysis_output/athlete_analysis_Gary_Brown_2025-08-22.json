@@ -1,0 +1,332 @@
+{
+  "timestamp": "2025-08-22T18:33:53.015Z",
+  "athleteName": "Gary Brown",
+  "totalCompetitions": 6,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "191482": [
+        {
+          "meet_id": 1592,
+          "date": "2014-12-06",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Gary Brown",
+          "lifter_id": 12174,
+          "membershipNumbers": [
+            {
+              "athleteName": "Gary Brown",
+              "membershipNumber": "191482",
+              "fullText": "25  -  176  Gary Brown  M  49  -  191482  75.98  2014-12-06  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMi0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMi0wNiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        },
+        {
+          "meet_id": 1938,
+          "date": "2016-06-04",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Gary Brown",
+          "lifter_id": 12174,
+          "membershipNumbers": [
+            {
+              "athleteName": "Gary Brown",
+              "membershipNumber": "191482",
+              "fullText": "23  -  173  Gary Brown  M  51  -  191482  75.7  2016-06-04  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0wNCIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        }
+      ],
+      "198977": [
+        {
+          "meet_id": 1271,
+          "date": "2014-06-28",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Gary Brown",
+          "lifter_id": 12174,
+          "membershipNumbers": [
+            {
+              "athleteName": "Gary Brown",
+              "membershipNumber": "198977",
+              "fullText": "14  -  225  Gary Brown  M  36  Oly Concepts  198977  97.9  2014-06-28  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNi0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNi0yOCIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        },
+        {
+          "meet_id": 1420,
+          "date": "2014-11-02",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Gary Brown",
+          "lifter_id": 12174,
+          "membershipNumbers": [
+            {
+              "athleteName": "Gary Brown",
+              "membershipNumber": "198977",
+              "fullText": "30  -  224  Gary Brown  M  36  Oly Concepts  198977  92.5  2014-11-02  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMS0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMS0wMiIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 338,
+        "date": "2015-01-23",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Gary Brown",
+        "lifter_id": 12174,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMS0yMyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 1320,
+        "date": "2014-06-07",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Gary Brown",
+        "lifter_id": 12174,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNi0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNi0wNyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Gary Brown",
+    "splits": [
+      {
+        "newAthleteName": "Gary Brown (Person 1)",
+        "membershipNumber": "191482",
+        "competitionCount": 2,
+        "competitions": [
+          1592,
+          1938
+        ]
+      },
+      {
+        "newAthleteName": "Gary Brown (Person 2)",
+        "membershipNumber": "198977",
+        "competitionCount": 2,
+        "competitions": [
+          1271,
+          1420
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 338,
+        "date": "2015-01-23",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Gary Brown",
+        "lifter_id": 12174,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMS0yMyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 1320,
+        "date": "2014-06-07",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Gary Brown",
+        "lifter_id": 12174,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNi0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNi0wNyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Gary Brown",
+    "competitions": [
+      {
+        "meet_id": 1271,
+        "date": "2014-06-28",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Gary Brown",
+        "lifter_id": 12174,
+        "membershipNumbers": [
+          {
+            "athleteName": "Gary Brown",
+            "membershipNumber": "198977",
+            "fullText": "14  -  225  Gary Brown  M  36  Oly Concepts  198977  97.9  2014-06-28  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNi0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNi0yOCIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 1420,
+        "date": "2014-11-02",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Gary Brown",
+        "lifter_id": 12174,
+        "membershipNumbers": [
+          {
+            "athleteName": "Gary Brown",
+            "membershipNumber": "198977",
+            "fullText": "30  -  224  Gary Brown  M  36  Oly Concepts  198977  92.5  2014-11-02  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMS0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMS0wMiIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 1592,
+        "date": "2014-12-06",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Gary Brown",
+        "lifter_id": 12174,
+        "membershipNumbers": [
+          {
+            "athleteName": "Gary Brown",
+            "membershipNumber": "191482",
+            "fullText": "25  -  176  Gary Brown  M  49  -  191482  75.98  2014-12-06  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMi0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMi0wNiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 1938,
+        "date": "2016-06-04",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Gary Brown",
+        "lifter_id": 12174,
+        "membershipNumbers": [
+          {
+            "athleteName": "Gary Brown",
+            "membershipNumber": "191482",
+            "fullText": "23  -  173  Gary Brown  M  51  -  191482  75.7  2016-06-04  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0wNCIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 338,
+        "date": "2015-01-23",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Gary Brown",
+        "lifter_id": 12174,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMS0yMyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 1320,
+        "date": "2014-06-07",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Gary Brown",
+        "lifter_id": 12174,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNi0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNi0wNyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "191482": [
+          {
+            "meet_id": 1592,
+            "date": "2014-12-06",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Gary Brown",
+            "lifter_id": 12174,
+            "membershipNumbers": [
+              {
+                "athleteName": "Gary Brown",
+                "membershipNumber": "191482",
+                "fullText": "25  -  176  Gary Brown  M  49  -  191482  75.98  2014-12-06  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMi0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMi0wNiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          },
+          {
+            "meet_id": 1938,
+            "date": "2016-06-04",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Gary Brown",
+            "lifter_id": 12174,
+            "membershipNumbers": [
+              {
+                "athleteName": "Gary Brown",
+                "membershipNumber": "191482",
+                "fullText": "23  -  173  Gary Brown  M  51  -  191482  75.7  2016-06-04  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0wNCIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          }
+        ],
+        "198977": [
+          {
+            "meet_id": 1271,
+            "date": "2014-06-28",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Gary Brown",
+            "lifter_id": 12174,
+            "membershipNumbers": [
+              {
+                "athleteName": "Gary Brown",
+                "membershipNumber": "198977",
+                "fullText": "14  -  225  Gary Brown  M  36  Oly Concepts  198977  97.9  2014-06-28  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNi0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNi0yOCIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          },
+          {
+            "meet_id": 1420,
+            "date": "2014-11-02",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Gary Brown",
+            "lifter_id": 12174,
+            "membershipNumbers": [
+              {
+                "athleteName": "Gary Brown",
+                "membershipNumber": "198977",
+                "fullText": "30  -  224  Gary Brown  M  36  Oly Concepts  198977  92.5  2014-11-02  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMS0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMS0wMiIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 338,
+          "date": "2015-01-23",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Gary Brown",
+          "lifter_id": 12174,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMS0yMyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        },
+        {
+          "meet_id": 1320,
+          "date": "2014-06-07",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Gary Brown",
+          "lifter_id": 12174,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNi0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNi0wNyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

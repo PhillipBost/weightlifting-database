@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T09:08:46.976Z",
+  "athleteName": "Sara Miller",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1076567": [
+        {
+          "meet_id": 6388,
+          "date": "2024-05-11",
+          "age_category": "Open Women's",
+          "weight_class": "81kg",
+          "lifter_name": "Sara Miller",
+          "lifter_id": 60670,
+          "membershipNumbers": [
+            {
+              "athleteName": "Sara Miller",
+              "membershipNumber": "1076567",
+              "fullText": "22  -  112  Sara Miller  F  27  -  1076567  76.53  2024-05-11  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNS0xMSIsIndlaWdodF9jbGFzcyI6OTh9"
+        }
+      ],
+      "1077173": [
+        {
+          "meet_id": 6680,
+          "date": "2024-12-22",
+          "age_category": "Open Women's",
+          "weight_class": "76kg",
+          "lifter_name": "Sara Miller",
+          "lifter_id": 60670,
+          "membershipNumbers": [
+            {
+              "athleteName": "Sara Miller",
+              "membershipNumber": "1077173",
+              "fullText": "2  -  111  Sara Miller  F  25  Providence Barbell Club  1077173  74.5  2024-12-22  -  Local  New England"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMi0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMi0yMiIsIndlaWdodF9jbGFzcyI6OTd9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Sara Miller",
+    "splits": [
+      {
+        "newAthleteName": "Sara Miller (Person 1)",
+        "membershipNumber": "1076567",
+        "competitionCount": 1,
+        "competitions": [
+          6388
+        ]
+      },
+      {
+        "newAthleteName": "Sara Miller (Person 2)",
+        "membershipNumber": "1077173",
+        "competitionCount": 1,
+        "competitions": [
+          6680
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Sara Miller",
+    "competitions": [
+      {
+        "meet_id": 6680,
+        "date": "2024-12-22",
+        "age_category": "Open Women's",
+        "weight_class": "76kg",
+        "lifter_name": "Sara Miller",
+        "lifter_id": 60670,
+        "membershipNumbers": [
+          {
+            "athleteName": "Sara Miller",
+            "membershipNumber": "1077173",
+            "fullText": "2  -  111  Sara Miller  F  25  Providence Barbell Club  1077173  74.5  2024-12-22  -  Local  New England"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMi0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMi0yMiIsIndlaWdodF9jbGFzcyI6OTd9"
+      },
+      {
+        "meet_id": 6388,
+        "date": "2024-05-11",
+        "age_category": "Open Women's",
+        "weight_class": "81kg",
+        "lifter_name": "Sara Miller",
+        "lifter_id": 60670,
+        "membershipNumbers": [
+          {
+            "athleteName": "Sara Miller",
+            "membershipNumber": "1076567",
+            "fullText": "22  -  112  Sara Miller  F  27  -  1076567  76.53  2024-05-11  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNS0xMSIsIndlaWdodF9jbGFzcyI6OTh9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1076567": [
+          {
+            "meet_id": 6388,
+            "date": "2024-05-11",
+            "age_category": "Open Women's",
+            "weight_class": "81kg",
+            "lifter_name": "Sara Miller",
+            "lifter_id": 60670,
+            "membershipNumbers": [
+              {
+                "athleteName": "Sara Miller",
+                "membershipNumber": "1076567",
+                "fullText": "22  -  112  Sara Miller  F  27  -  1076567  76.53  2024-05-11  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNS0xMSIsIndlaWdodF9jbGFzcyI6OTh9"
+          }
+        ],
+        "1077173": [
+          {
+            "meet_id": 6680,
+            "date": "2024-12-22",
+            "age_category": "Open Women's",
+            "weight_class": "76kg",
+            "lifter_name": "Sara Miller",
+            "lifter_id": 60670,
+            "membershipNumbers": [
+              {
+                "athleteName": "Sara Miller",
+                "membershipNumber": "1077173",
+                "fullText": "2  -  111  Sara Miller  F  25  Providence Barbell Club  1077173  74.5  2024-12-22  -  Local  New England"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMi0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMi0yMiIsIndlaWdodF9jbGFzcyI6OTd9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

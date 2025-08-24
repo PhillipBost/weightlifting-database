@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T05:22:14.756Z",
+  "athleteName": "Tanner Miller",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "183615": [
+        {
+          "meet_id": 410,
+          "date": "2015-06-13",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Tanner Miller",
+          "lifter_id": 7540,
+          "membershipNumbers": [
+            {
+              "athleteName": "Tanner Miller",
+              "membershipNumber": "183615",
+              "fullText": "12  -  250  Tanner Miller  M  25  -  183615  101.1  2015-06-13  -  Local  Iowa-Nebraska"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNi0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNi0xMyIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        },
+        {
+          "meet_id": 412,
+          "date": "2015-12-12",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Tanner Miller",
+          "lifter_id": 7540,
+          "membershipNumbers": [
+            {
+              "athleteName": "Tanner Miller",
+              "membershipNumber": "183615",
+              "fullText": "7  -  245  Tanner Miller  M  25  -  183615  103  2015-12-12  -  Local  Iowa-Nebraska"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMi0xMiIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        }
+      ],
+      "208531": [
+        {
+          "meet_id": 126,
+          "date": "2015-04-04",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Tanner Miller",
+          "lifter_id": 7540,
+          "membershipNumbers": [
+            {
+              "athleteName": "Tanner Miller",
+              "membershipNumber": "208531",
+              "fullText": "8  -  232  Tanner Miller  M  26  -  208531  83.8  2015-04-04  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0wNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Tanner Miller",
+    "splits": [
+      {
+        "newAthleteName": "Tanner Miller (Person 1)",
+        "membershipNumber": "183615",
+        "competitionCount": 2,
+        "competitions": [
+          410,
+          412
+        ]
+      },
+      {
+        "newAthleteName": "Tanner Miller (Person 2)",
+        "membershipNumber": "208531",
+        "competitionCount": 1,
+        "competitions": [
+          126
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Tanner Miller",
+    "competitions": [
+      {
+        "meet_id": 126,
+        "date": "2015-04-04",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Tanner Miller",
+        "lifter_id": 7540,
+        "membershipNumbers": [
+          {
+            "athleteName": "Tanner Miller",
+            "membershipNumber": "208531",
+            "fullText": "8  -  232  Tanner Miller  M  26  -  208531  83.8  2015-04-04  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0wNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 410,
+        "date": "2015-06-13",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Tanner Miller",
+        "lifter_id": 7540,
+        "membershipNumbers": [
+          {
+            "athleteName": "Tanner Miller",
+            "membershipNumber": "183615",
+            "fullText": "12  -  250  Tanner Miller  M  25  -  183615  101.1  2015-06-13  -  Local  Iowa-Nebraska"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNi0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNi0xMyIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 412,
+        "date": "2015-12-12",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Tanner Miller",
+        "lifter_id": 7540,
+        "membershipNumbers": [
+          {
+            "athleteName": "Tanner Miller",
+            "membershipNumber": "183615",
+            "fullText": "7  -  245  Tanner Miller  M  25  -  183615  103  2015-12-12  -  Local  Iowa-Nebraska"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMi0xMiIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "183615": [
+          {
+            "meet_id": 410,
+            "date": "2015-06-13",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Tanner Miller",
+            "lifter_id": 7540,
+            "membershipNumbers": [
+              {
+                "athleteName": "Tanner Miller",
+                "membershipNumber": "183615",
+                "fullText": "12  -  250  Tanner Miller  M  25  -  183615  101.1  2015-06-13  -  Local  Iowa-Nebraska"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNi0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNi0xMyIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          },
+          {
+            "meet_id": 412,
+            "date": "2015-12-12",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Tanner Miller",
+            "lifter_id": 7540,
+            "membershipNumbers": [
+              {
+                "athleteName": "Tanner Miller",
+                "membershipNumber": "183615",
+                "fullText": "7  -  245  Tanner Miller  M  25  -  183615  103  2015-12-12  -  Local  Iowa-Nebraska"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMi0xMiIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          }
+        ],
+        "208531": [
+          {
+            "meet_id": 126,
+            "date": "2015-04-04",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Tanner Miller",
+            "lifter_id": 7540,
+            "membershipNumbers": [
+              {
+                "athleteName": "Tanner Miller",
+                "membershipNumber": "208531",
+                "fullText": "8  -  232  Tanner Miller  M  26  -  208531  83.8  2015-04-04  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0wNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

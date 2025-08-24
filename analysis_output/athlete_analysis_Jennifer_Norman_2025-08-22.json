@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T23:00:42.841Z",
+  "athleteName": "Jennifer Norman",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1035489": [
+        {
+          "meet_id": 3370,
+          "date": "2018-12-01",
+          "age_category": "Women's Masters (35-39)",
+          "weight_class": "64kg",
+          "lifter_name": "Jennifer Norman",
+          "lifter_id": 37313,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jennifer Norman",
+              "membershipNumber": "1035489",
+              "fullText": "1  -  103  Jennifer Norman  F  35  -  1035489  62.35  2018-12-01  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0wMSIsIndlaWdodF9jbGFzcyI6MTE1fQ=="
+        }
+      ],
+      "1065623": [
+        {
+          "meet_id": 5477,
+          "date": "2022-08-27",
+          "age_category": "Women's Masters (35-39)",
+          "weight_class": "87kg",
+          "lifter_name": "Jennifer Norman",
+          "lifter_id": 37313,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jennifer Norman",
+              "membershipNumber": "1065623",
+              "fullText": "1  -  147  Jennifer Norman  F  36  Archon Weightlifting  1065623  86  2022-08-27  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wOC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wOC0yNyIsIndlaWdodF9jbGFzcyI6MTE5fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Jennifer Norman",
+    "splits": [
+      {
+        "newAthleteName": "Jennifer Norman (Person 1)",
+        "membershipNumber": "1035489",
+        "competitionCount": 1,
+        "competitions": [
+          3370
+        ]
+      },
+      {
+        "newAthleteName": "Jennifer Norman (Person 2)",
+        "membershipNumber": "1065623",
+        "competitionCount": 1,
+        "competitions": [
+          5477
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Jennifer Norman",
+    "competitions": [
+      {
+        "meet_id": 3370,
+        "date": "2018-12-01",
+        "age_category": "Women's Masters (35-39)",
+        "weight_class": "64kg",
+        "lifter_name": "Jennifer Norman",
+        "lifter_id": 37313,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jennifer Norman",
+            "membershipNumber": "1035489",
+            "fullText": "1  -  103  Jennifer Norman  F  35  -  1035489  62.35  2018-12-01  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0wMSIsIndlaWdodF9jbGFzcyI6MTE1fQ=="
+      },
+      {
+        "meet_id": 5477,
+        "date": "2022-08-27",
+        "age_category": "Women's Masters (35-39)",
+        "weight_class": "87kg",
+        "lifter_name": "Jennifer Norman",
+        "lifter_id": 37313,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jennifer Norman",
+            "membershipNumber": "1065623",
+            "fullText": "1  -  147  Jennifer Norman  F  36  Archon Weightlifting  1065623  86  2022-08-27  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wOC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wOC0yNyIsIndlaWdodF9jbGFzcyI6MTE5fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1035489": [
+          {
+            "meet_id": 3370,
+            "date": "2018-12-01",
+            "age_category": "Women's Masters (35-39)",
+            "weight_class": "64kg",
+            "lifter_name": "Jennifer Norman",
+            "lifter_id": 37313,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jennifer Norman",
+                "membershipNumber": "1035489",
+                "fullText": "1  -  103  Jennifer Norman  F  35  -  1035489  62.35  2018-12-01  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0wMSIsIndlaWdodF9jbGFzcyI6MTE1fQ=="
+          }
+        ],
+        "1065623": [
+          {
+            "meet_id": 5477,
+            "date": "2022-08-27",
+            "age_category": "Women's Masters (35-39)",
+            "weight_class": "87kg",
+            "lifter_name": "Jennifer Norman",
+            "lifter_id": 37313,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jennifer Norman",
+                "membershipNumber": "1065623",
+                "fullText": "1  -  147  Jennifer Norman  F  36  Archon Weightlifting  1065623  86  2022-08-27  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wOC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wOC0yNyIsIndlaWdodF9jbGFzcyI6MTE5fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

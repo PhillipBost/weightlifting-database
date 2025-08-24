@@ -1,0 +1,243 @@
+{
+  "timestamp": "2025-08-22T08:25:32.020Z",
+  "athleteName": "Daniel Johnson",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1070200": [
+        {
+          "meet_id": 5859,
+          "date": "2023-05-13",
+          "age_category": "Open Men's",
+          "weight_class": "96kg",
+          "lifter_name": "Daniel Johnson",
+          "lifter_id": 39601,
+          "membershipNumbers": [
+            {
+              "athleteName": "Daniel Johnson",
+              "membershipNumber": "1070200",
+              "fullText": "21  -  149  Daniel Johnson  M  27  JP Weightlifting  1070200  91.65  2023-05-13  -  Local  Tennessee-Kentucky"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNS0xMyIsIndlaWdodF9jbGFzcyI6ODd9"
+        }
+      ],
+      "1073872": [
+        {
+          "meet_id": 6179,
+          "date": "2024-01-06",
+          "age_category": "Men's 14-15 Age Group",
+          "weight_class": "89kg",
+          "lifter_name": "Daniel Johnson",
+          "lifter_id": 39601,
+          "membershipNumbers": [
+            {
+              "athleteName": "Daniel Johnson",
+              "membershipNumber": "1073872",
+              "fullText": "1  -  60  Daniel Johnson  M  14  -  1073872  85.5  2024-01-06  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMS0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMS0wNiIsIndlaWdodF9jbGFzcyI6Mjl9"
+        },
+        {
+          "meet_id": 6238,
+          "date": "2024-02-10",
+          "age_category": "Men's 14-15 Age Group",
+          "weight_class": "89kg",
+          "lifter_name": "Daniel Johnson",
+          "lifter_id": 39601,
+          "membershipNumbers": [
+            {
+              "athleteName": "Daniel Johnson",
+              "membershipNumber": "1073872",
+              "fullText": "3  -  75  Daniel Johnson  M  14  -  1073872  85.4  2024-02-10  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMi0xMCIsIndlaWdodF9jbGFzcyI6Mjl9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 3626,
+        "date": "2019-08-10",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Daniel Johnson",
+        "lifter_id": 39601,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOC0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOC0xMCIsIndlaWdodF9jbGFzcyI6ODV9"
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Daniel Johnson",
+    "splits": [
+      {
+        "newAthleteName": "Daniel Johnson (Person 1)",
+        "membershipNumber": "1070200",
+        "competitionCount": 1,
+        "competitions": [
+          5859
+        ]
+      },
+      {
+        "newAthleteName": "Daniel Johnson (Person 2)",
+        "membershipNumber": "1073872",
+        "competitionCount": 2,
+        "competitions": [
+          6179,
+          6238
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 3626,
+        "date": "2019-08-10",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Daniel Johnson",
+        "lifter_id": 39601,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOC0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOC0xMCIsIndlaWdodF9jbGFzcyI6ODV9"
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Daniel Johnson",
+    "competitions": [
+      {
+        "meet_id": 6179,
+        "date": "2024-01-06",
+        "age_category": "Men's 14-15 Age Group",
+        "weight_class": "89kg",
+        "lifter_name": "Daniel Johnson",
+        "lifter_id": 39601,
+        "membershipNumbers": [
+          {
+            "athleteName": "Daniel Johnson",
+            "membershipNumber": "1073872",
+            "fullText": "1  -  60  Daniel Johnson  M  14  -  1073872  85.5  2024-01-06  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMS0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMS0wNiIsIndlaWdodF9jbGFzcyI6Mjl9"
+      },
+      {
+        "meet_id": 6238,
+        "date": "2024-02-10",
+        "age_category": "Men's 14-15 Age Group",
+        "weight_class": "89kg",
+        "lifter_name": "Daniel Johnson",
+        "lifter_id": 39601,
+        "membershipNumbers": [
+          {
+            "athleteName": "Daniel Johnson",
+            "membershipNumber": "1073872",
+            "fullText": "3  -  75  Daniel Johnson  M  14  -  1073872  85.4  2024-02-10  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMi0xMCIsIndlaWdodF9jbGFzcyI6Mjl9"
+      },
+      {
+        "meet_id": 5859,
+        "date": "2023-05-13",
+        "age_category": "Open Men's",
+        "weight_class": "96kg",
+        "lifter_name": "Daniel Johnson",
+        "lifter_id": 39601,
+        "membershipNumbers": [
+          {
+            "athleteName": "Daniel Johnson",
+            "membershipNumber": "1070200",
+            "fullText": "21  -  149  Daniel Johnson  M  27  JP Weightlifting  1070200  91.65  2023-05-13  -  Local  Tennessee-Kentucky"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNS0xMyIsIndlaWdodF9jbGFzcyI6ODd9"
+      },
+      {
+        "meet_id": 3626,
+        "date": "2019-08-10",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Daniel Johnson",
+        "lifter_id": 39601,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOC0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOC0xMCIsIndlaWdodF9jbGFzcyI6ODV9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1070200": [
+          {
+            "meet_id": 5859,
+            "date": "2023-05-13",
+            "age_category": "Open Men's",
+            "weight_class": "96kg",
+            "lifter_name": "Daniel Johnson",
+            "lifter_id": 39601,
+            "membershipNumbers": [
+              {
+                "athleteName": "Daniel Johnson",
+                "membershipNumber": "1070200",
+                "fullText": "21  -  149  Daniel Johnson  M  27  JP Weightlifting  1070200  91.65  2023-05-13  -  Local  Tennessee-Kentucky"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNS0xMyIsIndlaWdodF9jbGFzcyI6ODd9"
+          }
+        ],
+        "1073872": [
+          {
+            "meet_id": 6179,
+            "date": "2024-01-06",
+            "age_category": "Men's 14-15 Age Group",
+            "weight_class": "89kg",
+            "lifter_name": "Daniel Johnson",
+            "lifter_id": 39601,
+            "membershipNumbers": [
+              {
+                "athleteName": "Daniel Johnson",
+                "membershipNumber": "1073872",
+                "fullText": "1  -  60  Daniel Johnson  M  14  -  1073872  85.5  2024-01-06  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMS0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMS0wNiIsIndlaWdodF9jbGFzcyI6Mjl9"
+          },
+          {
+            "meet_id": 6238,
+            "date": "2024-02-10",
+            "age_category": "Men's 14-15 Age Group",
+            "weight_class": "89kg",
+            "lifter_name": "Daniel Johnson",
+            "lifter_id": 39601,
+            "membershipNumbers": [
+              {
+                "athleteName": "Daniel Johnson",
+                "membershipNumber": "1073872",
+                "fullText": "3  -  75  Daniel Johnson  M  14  -  1073872  85.4  2024-02-10  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMi0xMCIsIndlaWdodF9jbGFzcyI6Mjl9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 3626,
+          "date": "2019-08-10",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Daniel Johnson",
+          "lifter_id": 39601,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOC0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOC0xMCIsIndlaWdodF9jbGFzcyI6ODV9"
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

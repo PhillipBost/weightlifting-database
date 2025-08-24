@@ -1,0 +1,332 @@
+{
+  "timestamp": "2025-08-22T07:13:24.361Z",
+  "athleteName": "Patrick Hopkins",
+  "totalCompetitions": 6,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1004829": [
+        {
+          "meet_id": 3459,
+          "date": "2019-01-05",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "Patrick Hopkins",
+          "lifter_id": 23231,
+          "membershipNumbers": [
+            {
+              "athleteName": "Patrick Hopkins",
+              "membershipNumber": "1004829",
+              "fullText": "15  -  206  Patrick Hopkins  M  31  BEANTOWN BARBELL CLUB  1004829  87.1  2019-01-05  -  Local  New England"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0wNSIsIndlaWdodF9jbGFzcyI6ODZ9"
+        },
+        {
+          "meet_id": 3460,
+          "date": "2019-05-26",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "Patrick Hopkins",
+          "lifter_id": 23231,
+          "membershipNumbers": [
+            {
+              "athleteName": "Patrick Hopkins",
+              "membershipNumber": "1004829",
+              "fullText": "14  -  211  Patrick Hopkins  M  31  BEANTOWN BARBELL CLUB  1004829  86.5  2019-05-26  -  Local  New England"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0yNiIsIndlaWdodF9jbGFzcyI6ODZ9"
+        },
+        {
+          "meet_id": 1810,
+          "date": "2016-07-24",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Patrick Hopkins",
+          "lifter_id": 23231,
+          "membershipNumbers": [
+            {
+              "athleteName": "Patrick Hopkins",
+              "membershipNumber": "1004829",
+              "fullText": "28  -  165  Patrick Hopkins  M  28  BEANTOWN BARBELL CLUB  1004829  82.5  2016-07-24  -  Local  New England"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNy0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNy0yNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ],
+      "1009425": [
+        {
+          "meet_id": 1873,
+          "date": "2016-08-27",
+          "age_category": "Men's 14-15 Age Group",
+          "weight_class": "77 kg",
+          "lifter_name": "Patrick Hopkins",
+          "lifter_id": 23231,
+          "membershipNumbers": [
+            {
+              "athleteName": "Patrick Hopkins",
+              "membershipNumber": "1009425",
+              "fullText": "1  -  188  Patrick Hopkins  M  14  COASTAL EMPIRE WEIGHTLIFTING  1009425  77  2016-08-27  -  Local  Georgia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0yNyIsIndlaWdodF9jbGFzcyI6MzEwfQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 3793,
+        "date": "2019-09-15",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Patrick Hopkins",
+        "lifter_id": 23231,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOS0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOS0xNSIsIndlaWdodF9jbGFzcyI6ODZ9"
+      },
+      {
+        "meet_id": 4108,
+        "date": "2019-07-21",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Patrick Hopkins",
+        "lifter_id": 23231,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0yMSIsIndlaWdodF9jbGFzcyI6ODZ9"
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Patrick Hopkins",
+    "splits": [
+      {
+        "newAthleteName": "Patrick Hopkins (Person 1)",
+        "membershipNumber": "1004829",
+        "competitionCount": 3,
+        "competitions": [
+          3459,
+          3460,
+          1810
+        ]
+      },
+      {
+        "newAthleteName": "Patrick Hopkins (Person 2)",
+        "membershipNumber": "1009425",
+        "competitionCount": 1,
+        "competitions": [
+          1873
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 3793,
+        "date": "2019-09-15",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Patrick Hopkins",
+        "lifter_id": 23231,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOS0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOS0xNSIsIndlaWdodF9jbGFzcyI6ODZ9"
+      },
+      {
+        "meet_id": 4108,
+        "date": "2019-07-21",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Patrick Hopkins",
+        "lifter_id": 23231,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0yMSIsIndlaWdodF9jbGFzcyI6ODZ9"
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Patrick Hopkins",
+    "competitions": [
+      {
+        "meet_id": 1873,
+        "date": "2016-08-27",
+        "age_category": "Men's 14-15 Age Group",
+        "weight_class": "77 kg",
+        "lifter_name": "Patrick Hopkins",
+        "lifter_id": 23231,
+        "membershipNumbers": [
+          {
+            "athleteName": "Patrick Hopkins",
+            "membershipNumber": "1009425",
+            "fullText": "1  -  188  Patrick Hopkins  M  14  COASTAL EMPIRE WEIGHTLIFTING  1009425  77  2016-08-27  -  Local  Georgia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0yNyIsIndlaWdodF9jbGFzcyI6MzEwfQ=="
+      },
+      {
+        "meet_id": 3459,
+        "date": "2019-01-05",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Patrick Hopkins",
+        "lifter_id": 23231,
+        "membershipNumbers": [
+          {
+            "athleteName": "Patrick Hopkins",
+            "membershipNumber": "1004829",
+            "fullText": "15  -  206  Patrick Hopkins  M  31  BEANTOWN BARBELL CLUB  1004829  87.1  2019-01-05  -  Local  New England"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0wNSIsIndlaWdodF9jbGFzcyI6ODZ9"
+      },
+      {
+        "meet_id": 3460,
+        "date": "2019-05-26",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Patrick Hopkins",
+        "lifter_id": 23231,
+        "membershipNumbers": [
+          {
+            "athleteName": "Patrick Hopkins",
+            "membershipNumber": "1004829",
+            "fullText": "14  -  211  Patrick Hopkins  M  31  BEANTOWN BARBELL CLUB  1004829  86.5  2019-05-26  -  Local  New England"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0yNiIsIndlaWdodF9jbGFzcyI6ODZ9"
+      },
+      {
+        "meet_id": 1810,
+        "date": "2016-07-24",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Patrick Hopkins",
+        "lifter_id": 23231,
+        "membershipNumbers": [
+          {
+            "athleteName": "Patrick Hopkins",
+            "membershipNumber": "1004829",
+            "fullText": "28  -  165  Patrick Hopkins  M  28  BEANTOWN BARBELL CLUB  1004829  82.5  2016-07-24  -  Local  New England"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNy0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNy0yNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 3793,
+        "date": "2019-09-15",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Patrick Hopkins",
+        "lifter_id": 23231,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOS0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOS0xNSIsIndlaWdodF9jbGFzcyI6ODZ9"
+      },
+      {
+        "meet_id": 4108,
+        "date": "2019-07-21",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Patrick Hopkins",
+        "lifter_id": 23231,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0yMSIsIndlaWdodF9jbGFzcyI6ODZ9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1004829": [
+          {
+            "meet_id": 3459,
+            "date": "2019-01-05",
+            "age_category": "Open Men's",
+            "weight_class": "89kg",
+            "lifter_name": "Patrick Hopkins",
+            "lifter_id": 23231,
+            "membershipNumbers": [
+              {
+                "athleteName": "Patrick Hopkins",
+                "membershipNumber": "1004829",
+                "fullText": "15  -  206  Patrick Hopkins  M  31  BEANTOWN BARBELL CLUB  1004829  87.1  2019-01-05  -  Local  New England"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0wNSIsIndlaWdodF9jbGFzcyI6ODZ9"
+          },
+          {
+            "meet_id": 3460,
+            "date": "2019-05-26",
+            "age_category": "Open Men's",
+            "weight_class": "89kg",
+            "lifter_name": "Patrick Hopkins",
+            "lifter_id": 23231,
+            "membershipNumbers": [
+              {
+                "athleteName": "Patrick Hopkins",
+                "membershipNumber": "1004829",
+                "fullText": "14  -  211  Patrick Hopkins  M  31  BEANTOWN BARBELL CLUB  1004829  86.5  2019-05-26  -  Local  New England"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0yNiIsIndlaWdodF9jbGFzcyI6ODZ9"
+          },
+          {
+            "meet_id": 1810,
+            "date": "2016-07-24",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Patrick Hopkins",
+            "lifter_id": 23231,
+            "membershipNumbers": [
+              {
+                "athleteName": "Patrick Hopkins",
+                "membershipNumber": "1004829",
+                "fullText": "28  -  165  Patrick Hopkins  M  28  BEANTOWN BARBELL CLUB  1004829  82.5  2016-07-24  -  Local  New England"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNy0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNy0yNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          }
+        ],
+        "1009425": [
+          {
+            "meet_id": 1873,
+            "date": "2016-08-27",
+            "age_category": "Men's 14-15 Age Group",
+            "weight_class": "77 kg",
+            "lifter_name": "Patrick Hopkins",
+            "lifter_id": 23231,
+            "membershipNumbers": [
+              {
+                "athleteName": "Patrick Hopkins",
+                "membershipNumber": "1009425",
+                "fullText": "1  -  188  Patrick Hopkins  M  14  COASTAL EMPIRE WEIGHTLIFTING  1009425  77  2016-08-27  -  Local  Georgia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0yNyIsIndlaWdodF9jbGFzcyI6MzEwfQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 3793,
+          "date": "2019-09-15",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "Patrick Hopkins",
+          "lifter_id": 23231,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOS0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOS0xNSIsIndlaWdodF9jbGFzcyI6ODZ9"
+        },
+        {
+          "meet_id": 4108,
+          "date": "2019-07-21",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "Patrick Hopkins",
+          "lifter_id": 23231,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0yMSIsIndlaWdodF9jbGFzcyI6ODZ9"
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

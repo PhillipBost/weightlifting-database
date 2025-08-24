@@ -1,0 +1,142 @@
+{
+  "timestamp": "2025-08-22T04:30:00.301Z",
+  "athleteName": "Matthew Morris",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 1,
+    "membershipGroups": {
+      "1068445": [
+        {
+          "meet_id": 5999,
+          "date": "2023-08-12",
+          "age_category": "Men's Masters (40-44)",
+          "weight_class": "81kg",
+          "lifter_name": "Matthew Morris",
+          "lifter_id": 2843,
+          "membershipNumbers": [
+            {
+              "athleteName": "Matthew Morris",
+              "membershipNumber": "1068445",
+              "fullText": "3  -  110  Matthew Morris  M  44  -  1068445  78.4  2023-08-12  -  Local  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wOC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wOC0xMiIsIndlaWdodF9jbGFzcyI6MTI1fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 861,
+        "date": "2012-01-14",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Matthew Morris",
+        "lifter_id": 2843,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 863,
+        "date": "2012-08-11",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Matthew Morris",
+        "lifter_id": 2843,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      }
+    ],
+    "splitRequired": false
+  },
+  "splitPlan": {
+    "action": "NO_SPLIT_NEEDED",
+    "reason": "Only one distinct athlete found"
+  },
+  "rawData": {
+    "athleteName": "Matthew Morris",
+    "competitions": [
+      {
+        "meet_id": 861,
+        "date": "2012-01-14",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Matthew Morris",
+        "lifter_id": 2843,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 863,
+        "date": "2012-08-11",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Matthew Morris",
+        "lifter_id": 2843,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 5999,
+        "date": "2023-08-12",
+        "age_category": "Men's Masters (40-44)",
+        "weight_class": "81kg",
+        "lifter_name": "Matthew Morris",
+        "lifter_id": 2843,
+        "membershipNumbers": [
+          {
+            "athleteName": "Matthew Morris",
+            "membershipNumber": "1068445",
+            "fullText": "3  -  110  Matthew Morris  M  44  -  1068445  78.4  2023-08-12  -  Local  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wOC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wOC0xMiIsIndlaWdodF9jbGFzcyI6MTI1fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 1,
+      "membershipGroups": {
+        "1068445": [
+          {
+            "meet_id": 5999,
+            "date": "2023-08-12",
+            "age_category": "Men's Masters (40-44)",
+            "weight_class": "81kg",
+            "lifter_name": "Matthew Morris",
+            "lifter_id": 2843,
+            "membershipNumbers": [
+              {
+                "athleteName": "Matthew Morris",
+                "membershipNumber": "1068445",
+                "fullText": "3  -  110  Matthew Morris  M  44  -  1068445  78.4  2023-08-12  -  Local  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wOC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wOC0xMiIsIndlaWdodF9jbGFzcyI6MTI1fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 861,
+          "date": "2012-01-14",
+          "age_category": "Open Men's",
+          "weight_class": "+105 kg",
+          "lifter_name": "Matthew Morris",
+          "lifter_id": 2843,
+          "membershipNumbers": [],
+          "error": "No division code found for: \"Open Men's +105 kg\""
+        },
+        {
+          "meet_id": 863,
+          "date": "2012-08-11",
+          "age_category": "Open Men's",
+          "weight_class": "+105 kg",
+          "lifter_name": "Matthew Morris",
+          "lifter_id": 2843,
+          "membershipNumbers": [],
+          "error": "No division code found for: \"Open Men's +105 kg\""
+        }
+      ],
+      "splitRequired": false
+    }
+  }
+}

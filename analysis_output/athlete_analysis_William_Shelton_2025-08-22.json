@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T18:14:40.917Z",
+  "athleteName": "William Shelton",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "178995": [
+        {
+          "meet_id": 797,
+          "date": "2013-04-21",
+          "age_category": "Open Men's",
+          "weight_class": "69 kg",
+          "lifter_name": "William Shelton",
+          "lifter_id": 5788,
+          "membershipNumbers": [
+            {
+              "athleteName": "William Shelton",
+              "membershipNumber": "178995",
+              "fullText": "3  -  120  William Shelton  M  19  -  178995  67.9  2013-04-21  -  Local  Georgia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNC0yMSIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+        }
+      ],
+      "1035379": [
+        {
+          "meet_id": 3482,
+          "date": "2018-11-18",
+          "age_category": "Open Men's",
+          "weight_class": "+109kg",
+          "lifter_name": "William Shelton",
+          "lifter_id": 5788,
+          "membershipNumbers": [
+            {
+              "athleteName": "William Shelton",
+              "membershipNumber": "1035379",
+              "fullText": "5  -  180  William Shelton  M  28  -  1035379  116.4  2018-11-18  -  Local  Missouri Valley"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMS0xOCIsIndlaWdodF9jbGFzcyI6OTB9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "William Shelton",
+    "splits": [
+      {
+        "newAthleteName": "William Shelton (Person 1)",
+        "membershipNumber": "178995",
+        "competitionCount": 1,
+        "competitions": [
+          797
+        ]
+      },
+      {
+        "newAthleteName": "William Shelton (Person 2)",
+        "membershipNumber": "1035379",
+        "competitionCount": 1,
+        "competitions": [
+          3482
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "William Shelton",
+    "competitions": [
+      {
+        "meet_id": 797,
+        "date": "2013-04-21",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "William Shelton",
+        "lifter_id": 5788,
+        "membershipNumbers": [
+          {
+            "athleteName": "William Shelton",
+            "membershipNumber": "178995",
+            "fullText": "3  -  120  William Shelton  M  19  -  178995  67.9  2013-04-21  -  Local  Georgia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNC0yMSIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      },
+      {
+        "meet_id": 3482,
+        "date": "2018-11-18",
+        "age_category": "Open Men's",
+        "weight_class": "+109kg",
+        "lifter_name": "William Shelton",
+        "lifter_id": 5788,
+        "membershipNumbers": [
+          {
+            "athleteName": "William Shelton",
+            "membershipNumber": "1035379",
+            "fullText": "5  -  180  William Shelton  M  28  -  1035379  116.4  2018-11-18  -  Local  Missouri Valley"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMS0xOCIsIndlaWdodF9jbGFzcyI6OTB9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "178995": [
+          {
+            "meet_id": 797,
+            "date": "2013-04-21",
+            "age_category": "Open Men's",
+            "weight_class": "69 kg",
+            "lifter_name": "William Shelton",
+            "lifter_id": 5788,
+            "membershipNumbers": [
+              {
+                "athleteName": "William Shelton",
+                "membershipNumber": "178995",
+                "fullText": "3  -  120  William Shelton  M  19  -  178995  67.9  2013-04-21  -  Local  Georgia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNC0yMSIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+          }
+        ],
+        "1035379": [
+          {
+            "meet_id": 3482,
+            "date": "2018-11-18",
+            "age_category": "Open Men's",
+            "weight_class": "+109kg",
+            "lifter_name": "William Shelton",
+            "lifter_id": 5788,
+            "membershipNumbers": [
+              {
+                "athleteName": "William Shelton",
+                "membershipNumber": "1035379",
+                "fullText": "5  -  180  William Shelton  M  28  -  1035379  116.4  2018-11-18  -  Local  Missouri Valley"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMS0xOCIsIndlaWdodF9jbGFzcyI6OTB9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

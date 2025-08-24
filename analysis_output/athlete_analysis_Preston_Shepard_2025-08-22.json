@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-22T20:54:32.945Z",
+  "athleteName": "Preston Shepard",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "180788": [
+        {
+          "meet_id": 107,
+          "date": "2015-04-25",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Preston Shepard",
+          "lifter_id": 5870,
+          "membershipNumbers": [
+            {
+              "athleteName": "Preston Shepard",
+              "membershipNumber": "180788",
+              "fullText": "14  -  245  Preston Shepard  M  26  EAST CAROLINA WEIGHTLIFTING  180788  84.9  2015-04-25  -  Local  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0yNSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        },
+        {
+          "meet_id": 804,
+          "date": "2013-03-02",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Preston Shepard",
+          "lifter_id": 5870,
+          "membershipNumbers": [
+            {
+              "athleteName": "Preston Shepard",
+              "membershipNumber": "180788",
+              "fullText": "2  -  229  Preston Shepard  M  24  EAST CAROLINA WEIGHTLIFTING  180788  75.8  2013-03-02  -  Local  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMy0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMy0wMiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        },
+        {
+          "meet_id": 1627,
+          "date": "2013-04-07",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Preston Shepard",
+          "lifter_id": 5870,
+          "membershipNumbers": [
+            {
+              "athleteName": "Preston Shepard",
+              "membershipNumber": "180788",
+              "fullText": "18  -  231  Preston Shepard  M  24  EAST CAROLINA WEIGHTLIFTING  180788  76.43  2013-04-07  -  National  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNC0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNC0wNyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        }
+      ],
+      "1022012": [
+        {
+          "meet_id": 3446,
+          "date": "2018-08-11",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "Preston Shepard",
+          "lifter_id": 5870,
+          "membershipNumbers": [
+            {
+              "athleteName": "Preston Shepard",
+              "membershipNumber": "1022012",
+              "fullText": "7  -  242  Preston Shepard  M  29  -  1022012  83.95  2018-08-11  -  Local  Georgia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOC0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOC0xMSIsIndlaWdodF9jbGFzcyI6ODZ9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Preston Shepard",
+    "splits": [
+      {
+        "newAthleteName": "Preston Shepard (Person 1)",
+        "membershipNumber": "180788",
+        "competitionCount": 3,
+        "competitions": [
+          107,
+          804,
+          1627
+        ]
+      },
+      {
+        "newAthleteName": "Preston Shepard (Person 2)",
+        "membershipNumber": "1022012",
+        "competitionCount": 1,
+        "competitions": [
+          3446
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Preston Shepard",
+    "competitions": [
+      {
+        "meet_id": 107,
+        "date": "2015-04-25",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Preston Shepard",
+        "lifter_id": 5870,
+        "membershipNumbers": [
+          {
+            "athleteName": "Preston Shepard",
+            "membershipNumber": "180788",
+            "fullText": "14  -  245  Preston Shepard  M  26  EAST CAROLINA WEIGHTLIFTING  180788  84.9  2015-04-25  -  Local  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0yNSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 804,
+        "date": "2013-03-02",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Preston Shepard",
+        "lifter_id": 5870,
+        "membershipNumbers": [
+          {
+            "athleteName": "Preston Shepard",
+            "membershipNumber": "180788",
+            "fullText": "2  -  229  Preston Shepard  M  24  EAST CAROLINA WEIGHTLIFTING  180788  75.8  2013-03-02  -  Local  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMy0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMy0wMiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 1627,
+        "date": "2013-04-07",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Preston Shepard",
+        "lifter_id": 5870,
+        "membershipNumbers": [
+          {
+            "athleteName": "Preston Shepard",
+            "membershipNumber": "180788",
+            "fullText": "18  -  231  Preston Shepard  M  24  EAST CAROLINA WEIGHTLIFTING  180788  76.43  2013-04-07  -  National  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNC0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNC0wNyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 3446,
+        "date": "2018-08-11",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Preston Shepard",
+        "lifter_id": 5870,
+        "membershipNumbers": [
+          {
+            "athleteName": "Preston Shepard",
+            "membershipNumber": "1022012",
+            "fullText": "7  -  242  Preston Shepard  M  29  -  1022012  83.95  2018-08-11  -  Local  Georgia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOC0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOC0xMSIsIndlaWdodF9jbGFzcyI6ODZ9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "180788": [
+          {
+            "meet_id": 107,
+            "date": "2015-04-25",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Preston Shepard",
+            "lifter_id": 5870,
+            "membershipNumbers": [
+              {
+                "athleteName": "Preston Shepard",
+                "membershipNumber": "180788",
+                "fullText": "14  -  245  Preston Shepard  M  26  EAST CAROLINA WEIGHTLIFTING  180788  84.9  2015-04-25  -  Local  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0yNSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          },
+          {
+            "meet_id": 804,
+            "date": "2013-03-02",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Preston Shepard",
+            "lifter_id": 5870,
+            "membershipNumbers": [
+              {
+                "athleteName": "Preston Shepard",
+                "membershipNumber": "180788",
+                "fullText": "2  -  229  Preston Shepard  M  24  EAST CAROLINA WEIGHTLIFTING  180788  75.8  2013-03-02  -  Local  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMy0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMy0wMiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          },
+          {
+            "meet_id": 1627,
+            "date": "2013-04-07",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Preston Shepard",
+            "lifter_id": 5870,
+            "membershipNumbers": [
+              {
+                "athleteName": "Preston Shepard",
+                "membershipNumber": "180788",
+                "fullText": "18  -  231  Preston Shepard  M  24  EAST CAROLINA WEIGHTLIFTING  180788  76.43  2013-04-07  -  National  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNC0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNC0wNyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          }
+        ],
+        "1022012": [
+          {
+            "meet_id": 3446,
+            "date": "2018-08-11",
+            "age_category": "Open Men's",
+            "weight_class": "89kg",
+            "lifter_name": "Preston Shepard",
+            "lifter_id": 5870,
+            "membershipNumbers": [
+              {
+                "athleteName": "Preston Shepard",
+                "membershipNumber": "1022012",
+                "fullText": "7  -  242  Preston Shepard  M  29  -  1022012  83.95  2018-08-11  -  Local  Georgia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOC0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOC0xMSIsIndlaWdodF9jbGFzcyI6ODZ9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T07:27:40.026Z",
+  "athleteName": "Eric Le",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1006878": [
+        {
+          "meet_id": 2054,
+          "date": "2016-06-18",
+          "age_category": "Open Men's",
+          "weight_class": "69 kg",
+          "lifter_name": "Eric Le",
+          "lifter_id": 25384,
+          "membershipNumbers": [
+            {
+              "athleteName": "Eric Le",
+              "membershipNumber": "1006878",
+              "fullText": "12  -  128  Eric Le  M  32  MSP FITNESS LWC  1006878  63.12  2016-06-18  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0xOCIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+        },
+        {
+          "meet_id": 2101,
+          "date": "2016-10-15",
+          "age_category": "Open Men's",
+          "weight_class": "69 kg",
+          "lifter_name": "Eric Le",
+          "lifter_id": 25384,
+          "membershipNumbers": [
+            {
+              "athleteName": "Eric Le",
+              "membershipNumber": "1006878",
+              "fullText": "12  -  125  Eric Le  M  32  MSP FITNESS LWC  1006878  68.2  2016-10-15  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0xNSIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+        }
+      ],
+      "1063991": [
+        {
+          "meet_id": 5431,
+          "date": "2022-07-23",
+          "age_category": "Open Men's",
+          "weight_class": "67kg",
+          "lifter_name": "Eric Le",
+          "lifter_id": 25384,
+          "membershipNumbers": [
+            {
+              "athleteName": "Eric Le",
+              "membershipNumber": "1063991",
+              "fullText": "1  -  155  Eric Le  M  31  -  1063991  65.7  2022-07-23  -  Local  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNy0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNy0yMyIsIndlaWdodF9jbGFzcyI6ODN9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Eric Le",
+    "splits": [
+      {
+        "newAthleteName": "Eric Le (Person 1)",
+        "membershipNumber": "1006878",
+        "competitionCount": 2,
+        "competitions": [
+          2054,
+          2101
+        ]
+      },
+      {
+        "newAthleteName": "Eric Le (Person 2)",
+        "membershipNumber": "1063991",
+        "competitionCount": 1,
+        "competitions": [
+          5431
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Eric Le",
+    "competitions": [
+      {
+        "meet_id": 5431,
+        "date": "2022-07-23",
+        "age_category": "Open Men's",
+        "weight_class": "67kg",
+        "lifter_name": "Eric Le",
+        "lifter_id": 25384,
+        "membershipNumbers": [
+          {
+            "athleteName": "Eric Le",
+            "membershipNumber": "1063991",
+            "fullText": "1  -  155  Eric Le  M  31  -  1063991  65.7  2022-07-23  -  Local  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNy0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNy0yMyIsIndlaWdodF9jbGFzcyI6ODN9"
+      },
+      {
+        "meet_id": 2054,
+        "date": "2016-06-18",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "Eric Le",
+        "lifter_id": 25384,
+        "membershipNumbers": [
+          {
+            "athleteName": "Eric Le",
+            "membershipNumber": "1006878",
+            "fullText": "12  -  128  Eric Le  M  32  MSP FITNESS LWC  1006878  63.12  2016-06-18  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0xOCIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      },
+      {
+        "meet_id": 2101,
+        "date": "2016-10-15",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "Eric Le",
+        "lifter_id": 25384,
+        "membershipNumbers": [
+          {
+            "athleteName": "Eric Le",
+            "membershipNumber": "1006878",
+            "fullText": "12  -  125  Eric Le  M  32  MSP FITNESS LWC  1006878  68.2  2016-10-15  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0xNSIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1006878": [
+          {
+            "meet_id": 2054,
+            "date": "2016-06-18",
+            "age_category": "Open Men's",
+            "weight_class": "69 kg",
+            "lifter_name": "Eric Le",
+            "lifter_id": 25384,
+            "membershipNumbers": [
+              {
+                "athleteName": "Eric Le",
+                "membershipNumber": "1006878",
+                "fullText": "12  -  128  Eric Le  M  32  MSP FITNESS LWC  1006878  63.12  2016-06-18  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0xOCIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+          },
+          {
+            "meet_id": 2101,
+            "date": "2016-10-15",
+            "age_category": "Open Men's",
+            "weight_class": "69 kg",
+            "lifter_name": "Eric Le",
+            "lifter_id": 25384,
+            "membershipNumbers": [
+              {
+                "athleteName": "Eric Le",
+                "membershipNumber": "1006878",
+                "fullText": "12  -  125  Eric Le  M  32  MSP FITNESS LWC  1006878  68.2  2016-10-15  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0xNSIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+          }
+        ],
+        "1063991": [
+          {
+            "meet_id": 5431,
+            "date": "2022-07-23",
+            "age_category": "Open Men's",
+            "weight_class": "67kg",
+            "lifter_name": "Eric Le",
+            "lifter_id": 25384,
+            "membershipNumbers": [
+              {
+                "athleteName": "Eric Le",
+                "membershipNumber": "1063991",
+                "fullText": "1  -  155  Eric Le  M  31  -  1063991  65.7  2022-07-23  -  Local  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNy0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNy0yMyIsIndlaWdodF9jbGFzcyI6ODN9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

@@ -1,0 +1,298 @@
+{
+  "timestamp": "2025-08-22T08:25:08.931Z",
+  "athleteName": "Brent Smith",
+  "totalCompetitions": 5,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1042272": [
+        {
+          "meet_id": 5222,
+          "date": "2022-03-04",
+          "age_category": "Men's Masters (40-44)",
+          "weight_class": "81kg",
+          "lifter_name": "Brent Smith",
+          "lifter_id": 39598,
+          "membershipNumbers": [
+            {
+              "athleteName": "Brent Smith",
+              "membershipNumber": "1042272",
+              "fullText": "2  -  197  Brent Smith  M  40  MARTHA A RHOADES  1042272  80.05  2022-03-04  -  North American Open Series  Iowa-Nebraska"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMy0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMy0wNCIsIndlaWdodF9jbGFzcyI6MTI1fQ=="
+        },
+        {
+          "meet_id": 5039,
+          "date": "2021-10-30",
+          "age_category": "Men's Masters (35-39)",
+          "weight_class": "81kg",
+          "lifter_name": "Brent Smith",
+          "lifter_id": 39598,
+          "membershipNumbers": [
+            {
+              "athleteName": "Brent Smith",
+              "membershipNumber": "1042272",
+              "fullText": "5  -  175  Brent Smith  M  39  MARTHA A RHOADES  1042272  81  2021-10-30  -  Local  Iowa-Nebraska"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMC0zMCIsIndlaWdodF9jbGFzcyI6MTA1fQ=="
+        },
+        {
+          "meet_id": 5536,
+          "date": "2022-10-15",
+          "age_category": "Men's Masters (40-44)",
+          "weight_class": "81kg",
+          "lifter_name": "Brent Smith",
+          "lifter_id": 39598,
+          "membershipNumbers": [
+            {
+              "athleteName": "Brent Smith",
+              "membershipNumber": "1042272",
+              "fullText": "3  -  196  Brent Smith  M  40  MARTHA A RHOADES  1042272  80.4  2022-10-15  -  Local  Iowa-Nebraska"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMC0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMC0xNSIsIndlaWdodF9jbGFzcyI6MTI1fQ=="
+        },
+        {
+          "meet_id": 3954,
+          "date": "2019-05-18",
+          "age_category": "Open Men's",
+          "weight_class": "73kg",
+          "lifter_name": "Brent Smith",
+          "lifter_id": 39598,
+          "membershipNumbers": [
+            {
+              "athleteName": "Brent Smith",
+              "membershipNumber": "1042272",
+              "fullText": "12  -  160  Brent Smith  M  37  MARTHA A RHOADES  1042272  72.5  2019-05-18  -  Local  Iowa-Nebraska"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0xOCIsIndlaWdodF9jbGFzcyI6ODR9"
+        }
+      ],
+      "1042955": [
+        {
+          "meet_id": 3626,
+          "date": "2019-08-10",
+          "age_category": "Open Men's",
+          "weight_class": "61kg",
+          "lifter_name": "Brent Smith",
+          "lifter_id": 39598,
+          "membershipNumbers": [
+            {
+              "athleteName": "Brent Smith",
+              "membershipNumber": "1042955",
+              "fullText": "5  -  162  Brent Smith  M  31  -  1042955  58.7  2019-08-10  -  Local  Tennessee-Kentucky"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOC0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOC0xMCIsIndlaWdodF9jbGFzcyI6ODJ9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Brent Smith",
+    "splits": [
+      {
+        "newAthleteName": "Brent Smith (Person 1)",
+        "membershipNumber": "1042272",
+        "competitionCount": 4,
+        "competitions": [
+          5222,
+          5039,
+          5536,
+          3954
+        ]
+      },
+      {
+        "newAthleteName": "Brent Smith (Person 2)",
+        "membershipNumber": "1042955",
+        "competitionCount": 1,
+        "competitions": [
+          3626
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Brent Smith",
+    "competitions": [
+      {
+        "meet_id": 5222,
+        "date": "2022-03-04",
+        "age_category": "Men's Masters (40-44)",
+        "weight_class": "81kg",
+        "lifter_name": "Brent Smith",
+        "lifter_id": 39598,
+        "membershipNumbers": [
+          {
+            "athleteName": "Brent Smith",
+            "membershipNumber": "1042272",
+            "fullText": "2  -  197  Brent Smith  M  40  MARTHA A RHOADES  1042272  80.05  2022-03-04  -  North American Open Series  Iowa-Nebraska"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMy0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMy0wNCIsIndlaWdodF9jbGFzcyI6MTI1fQ=="
+      },
+      {
+        "meet_id": 5039,
+        "date": "2021-10-30",
+        "age_category": "Men's Masters (35-39)",
+        "weight_class": "81kg",
+        "lifter_name": "Brent Smith",
+        "lifter_id": 39598,
+        "membershipNumbers": [
+          {
+            "athleteName": "Brent Smith",
+            "membershipNumber": "1042272",
+            "fullText": "5  -  175  Brent Smith  M  39  MARTHA A RHOADES  1042272  81  2021-10-30  -  Local  Iowa-Nebraska"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMC0zMCIsIndlaWdodF9jbGFzcyI6MTA1fQ=="
+      },
+      {
+        "meet_id": 3626,
+        "date": "2019-08-10",
+        "age_category": "Open Men's",
+        "weight_class": "61kg",
+        "lifter_name": "Brent Smith",
+        "lifter_id": 39598,
+        "membershipNumbers": [
+          {
+            "athleteName": "Brent Smith",
+            "membershipNumber": "1042955",
+            "fullText": "5  -  162  Brent Smith  M  31  -  1042955  58.7  2019-08-10  -  Local  Tennessee-Kentucky"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOC0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOC0xMCIsIndlaWdodF9jbGFzcyI6ODJ9"
+      },
+      {
+        "meet_id": 5536,
+        "date": "2022-10-15",
+        "age_category": "Men's Masters (40-44)",
+        "weight_class": "81kg",
+        "lifter_name": "Brent Smith",
+        "lifter_id": 39598,
+        "membershipNumbers": [
+          {
+            "athleteName": "Brent Smith",
+            "membershipNumber": "1042272",
+            "fullText": "3  -  196  Brent Smith  M  40  MARTHA A RHOADES  1042272  80.4  2022-10-15  -  Local  Iowa-Nebraska"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMC0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMC0xNSIsIndlaWdodF9jbGFzcyI6MTI1fQ=="
+      },
+      {
+        "meet_id": 3954,
+        "date": "2019-05-18",
+        "age_category": "Open Men's",
+        "weight_class": "73kg",
+        "lifter_name": "Brent Smith",
+        "lifter_id": 39598,
+        "membershipNumbers": [
+          {
+            "athleteName": "Brent Smith",
+            "membershipNumber": "1042272",
+            "fullText": "12  -  160  Brent Smith  M  37  MARTHA A RHOADES  1042272  72.5  2019-05-18  -  Local  Iowa-Nebraska"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0xOCIsIndlaWdodF9jbGFzcyI6ODR9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1042272": [
+          {
+            "meet_id": 5222,
+            "date": "2022-03-04",
+            "age_category": "Men's Masters (40-44)",
+            "weight_class": "81kg",
+            "lifter_name": "Brent Smith",
+            "lifter_id": 39598,
+            "membershipNumbers": [
+              {
+                "athleteName": "Brent Smith",
+                "membershipNumber": "1042272",
+                "fullText": "2  -  197  Brent Smith  M  40  MARTHA A RHOADES  1042272  80.05  2022-03-04  -  North American Open Series  Iowa-Nebraska"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMy0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMy0wNCIsIndlaWdodF9jbGFzcyI6MTI1fQ=="
+          },
+          {
+            "meet_id": 5039,
+            "date": "2021-10-30",
+            "age_category": "Men's Masters (35-39)",
+            "weight_class": "81kg",
+            "lifter_name": "Brent Smith",
+            "lifter_id": 39598,
+            "membershipNumbers": [
+              {
+                "athleteName": "Brent Smith",
+                "membershipNumber": "1042272",
+                "fullText": "5  -  175  Brent Smith  M  39  MARTHA A RHOADES  1042272  81  2021-10-30  -  Local  Iowa-Nebraska"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMC0zMCIsIndlaWdodF9jbGFzcyI6MTA1fQ=="
+          },
+          {
+            "meet_id": 5536,
+            "date": "2022-10-15",
+            "age_category": "Men's Masters (40-44)",
+            "weight_class": "81kg",
+            "lifter_name": "Brent Smith",
+            "lifter_id": 39598,
+            "membershipNumbers": [
+              {
+                "athleteName": "Brent Smith",
+                "membershipNumber": "1042272",
+                "fullText": "3  -  196  Brent Smith  M  40  MARTHA A RHOADES  1042272  80.4  2022-10-15  -  Local  Iowa-Nebraska"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMC0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMC0xNSIsIndlaWdodF9jbGFzcyI6MTI1fQ=="
+          },
+          {
+            "meet_id": 3954,
+            "date": "2019-05-18",
+            "age_category": "Open Men's",
+            "weight_class": "73kg",
+            "lifter_name": "Brent Smith",
+            "lifter_id": 39598,
+            "membershipNumbers": [
+              {
+                "athleteName": "Brent Smith",
+                "membershipNumber": "1042272",
+                "fullText": "12  -  160  Brent Smith  M  37  MARTHA A RHOADES  1042272  72.5  2019-05-18  -  Local  Iowa-Nebraska"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0xOCIsIndlaWdodF9jbGFzcyI6ODR9"
+          }
+        ],
+        "1042955": [
+          {
+            "meet_id": 3626,
+            "date": "2019-08-10",
+            "age_category": "Open Men's",
+            "weight_class": "61kg",
+            "lifter_name": "Brent Smith",
+            "lifter_id": 39598,
+            "membershipNumbers": [
+              {
+                "athleteName": "Brent Smith",
+                "membershipNumber": "1042955",
+                "fullText": "5  -  162  Brent Smith  M  31  -  1042955  58.7  2019-08-10  -  Local  Tennessee-Kentucky"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOC0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOC0xMCIsIndlaWdodF9jbGFzcyI6ODJ9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

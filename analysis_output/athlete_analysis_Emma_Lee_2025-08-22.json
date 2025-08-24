@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T14:17:44.069Z",
+  "athleteName": "Emma Lee",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1018792": [
+        {
+          "meet_id": 2474,
+          "date": "2017-04-29",
+          "age_category": "Women's 14-15 Age Group",
+          "weight_class": "48 kg",
+          "lifter_name": "Emma Lee",
+          "lifter_id": 29879,
+          "membershipNumbers": [
+            {
+              "athleteName": "Emma Lee",
+              "membershipNumber": "1018792",
+              "fullText": "4  -  52  Emma Lee  F  14  Champion Weightlifting  1018792  47.3  2017-04-29  -  Local  Missouri Valley"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNC0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNC0yOSIsIndlaWdodF9jbGFzcyI6MzE0fQ=="
+        }
+      ],
+      "1081850": [
+        {
+          "meet_id": 6898,
+          "date": "2025-05-17",
+          "age_category": "Junior Women's",
+          "weight_class": "76kg",
+          "lifter_name": "Emma Lee",
+          "lifter_id": 29879,
+          "membershipNumbers": [
+            {
+              "athleteName": "Emma Lee",
+              "membershipNumber": "1081850",
+              "fullText": "6  -  108  Emma Lee  F  19  University of Oregon Weightlifting Club  1081850  73.3  2025-05-17  -  Local  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNS0xNyIsIndlaWdodF9jbGFzcyI6Nzd9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Emma Lee",
+    "splits": [
+      {
+        "newAthleteName": "Emma Lee (Person 1)",
+        "membershipNumber": "1018792",
+        "competitionCount": 1,
+        "competitions": [
+          2474
+        ]
+      },
+      {
+        "newAthleteName": "Emma Lee (Person 2)",
+        "membershipNumber": "1081850",
+        "competitionCount": 1,
+        "competitions": [
+          6898
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Emma Lee",
+    "competitions": [
+      {
+        "meet_id": 6898,
+        "date": "2025-05-17",
+        "age_category": "Junior Women's",
+        "weight_class": "76kg",
+        "lifter_name": "Emma Lee",
+        "lifter_id": 29879,
+        "membershipNumbers": [
+          {
+            "athleteName": "Emma Lee",
+            "membershipNumber": "1081850",
+            "fullText": "6  -  108  Emma Lee  F  19  University of Oregon Weightlifting Club  1081850  73.3  2025-05-17  -  Local  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNS0xNyIsIndlaWdodF9jbGFzcyI6Nzd9"
+      },
+      {
+        "meet_id": 2474,
+        "date": "2017-04-29",
+        "age_category": "Women's 14-15 Age Group",
+        "weight_class": "48 kg",
+        "lifter_name": "Emma Lee",
+        "lifter_id": 29879,
+        "membershipNumbers": [
+          {
+            "athleteName": "Emma Lee",
+            "membershipNumber": "1018792",
+            "fullText": "4  -  52  Emma Lee  F  14  Champion Weightlifting  1018792  47.3  2017-04-29  -  Local  Missouri Valley"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNC0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNC0yOSIsIndlaWdodF9jbGFzcyI6MzE0fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1018792": [
+          {
+            "meet_id": 2474,
+            "date": "2017-04-29",
+            "age_category": "Women's 14-15 Age Group",
+            "weight_class": "48 kg",
+            "lifter_name": "Emma Lee",
+            "lifter_id": 29879,
+            "membershipNumbers": [
+              {
+                "athleteName": "Emma Lee",
+                "membershipNumber": "1018792",
+                "fullText": "4  -  52  Emma Lee  F  14  Champion Weightlifting  1018792  47.3  2017-04-29  -  Local  Missouri Valley"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNC0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNC0yOSIsIndlaWdodF9jbGFzcyI6MzE0fQ=="
+          }
+        ],
+        "1081850": [
+          {
+            "meet_id": 6898,
+            "date": "2025-05-17",
+            "age_category": "Junior Women's",
+            "weight_class": "76kg",
+            "lifter_name": "Emma Lee",
+            "lifter_id": 29879,
+            "membershipNumbers": [
+              {
+                "athleteName": "Emma Lee",
+                "membershipNumber": "1081850",
+                "fullText": "6  -  108  Emma Lee  F  19  University of Oregon Weightlifting Club  1081850  73.3  2025-05-17  -  Local  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNS0xNyIsIndlaWdodF9jbGFzcyI6Nzd9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

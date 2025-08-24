@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T06:54:07.246Z",
+  "athleteName": "Josh Anderson",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "178132": [
+        {
+          "meet_id": 1013,
+          "date": "2013-03-16",
+          "age_category": "Open Men's",
+          "weight_class": "69 kg",
+          "lifter_name": "Josh Anderson",
+          "lifter_id": 18178,
+          "membershipNumbers": [
+            {
+              "athleteName": "Josh Anderson",
+              "membershipNumber": "178132",
+              "fullText": "14  -  144  Josh Anderson  M  17  -  178132  68.49  2013-03-16  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMy0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMy0xNiIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+        }
+      ],
+      "1010815": [
+        {
+          "meet_id": 2050,
+          "date": "2016-08-28",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Josh Anderson",
+          "lifter_id": 18178,
+          "membershipNumbers": [
+            {
+              "athleteName": "Josh Anderson",
+              "membershipNumber": "1010815",
+              "fullText": "27  -  165  Josh Anderson  M  33  Strength Guild Weightlifting Academy  1010815  84.4  2016-08-28  -  Local  Missouri Valley"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0yOCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Josh Anderson",
+    "splits": [
+      {
+        "newAthleteName": "Josh Anderson (Person 1)",
+        "membershipNumber": "178132",
+        "competitionCount": 1,
+        "competitions": [
+          1013
+        ]
+      },
+      {
+        "newAthleteName": "Josh Anderson (Person 2)",
+        "membershipNumber": "1010815",
+        "competitionCount": 1,
+        "competitions": [
+          2050
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Josh Anderson",
+    "competitions": [
+      {
+        "meet_id": 1013,
+        "date": "2013-03-16",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "Josh Anderson",
+        "lifter_id": 18178,
+        "membershipNumbers": [
+          {
+            "athleteName": "Josh Anderson",
+            "membershipNumber": "178132",
+            "fullText": "14  -  144  Josh Anderson  M  17  -  178132  68.49  2013-03-16  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMy0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMy0xNiIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      },
+      {
+        "meet_id": 2050,
+        "date": "2016-08-28",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Josh Anderson",
+        "lifter_id": 18178,
+        "membershipNumbers": [
+          {
+            "athleteName": "Josh Anderson",
+            "membershipNumber": "1010815",
+            "fullText": "27  -  165  Josh Anderson  M  33  Strength Guild Weightlifting Academy  1010815  84.4  2016-08-28  -  Local  Missouri Valley"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0yOCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "178132": [
+          {
+            "meet_id": 1013,
+            "date": "2013-03-16",
+            "age_category": "Open Men's",
+            "weight_class": "69 kg",
+            "lifter_name": "Josh Anderson",
+            "lifter_id": 18178,
+            "membershipNumbers": [
+              {
+                "athleteName": "Josh Anderson",
+                "membershipNumber": "178132",
+                "fullText": "14  -  144  Josh Anderson  M  17  -  178132  68.49  2013-03-16  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMy0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMy0xNiIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+          }
+        ],
+        "1010815": [
+          {
+            "meet_id": 2050,
+            "date": "2016-08-28",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Josh Anderson",
+            "lifter_id": 18178,
+            "membershipNumbers": [
+              {
+                "athleteName": "Josh Anderson",
+                "membershipNumber": "1010815",
+                "fullText": "27  -  165  Josh Anderson  M  33  Strength Guild Weightlifting Academy  1010815  84.4  2016-08-28  -  Local  Missouri Valley"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0yOCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

@@ -1,0 +1,292 @@
+{
+  "timestamp": "2025-08-22T12:49:11.726Z",
+  "athleteName": "Rachel Smith",
+  "totalCompetitions": 5,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "207545": [
+        {
+          "meet_id": 453,
+          "date": "2015-02-28",
+          "age_category": "Open Women's",
+          "weight_class": "69 kg",
+          "lifter_name": "Rachel Smith",
+          "lifter_id": 14553,
+          "membershipNumbers": [
+            {
+              "athleteName": "Rachel Smith",
+              "membershipNumber": "207545",
+              "fullText": "8  -  120  Rachel Smith  F  24  EAST ALABAMA WEIGHTLIFTING  207545  64.6  2015-02-28  -  Local  Alabama"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMi0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMi0yOCIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+        },
+        {
+          "meet_id": 471,
+          "date": "2015-08-29",
+          "age_category": "Open Women's",
+          "weight_class": "63 kg",
+          "lifter_name": "Rachel Smith",
+          "lifter_id": 14553,
+          "membershipNumbers": [
+            {
+              "athleteName": "Rachel Smith",
+              "membershipNumber": "207545",
+              "fullText": "9  -  113  Rachel Smith  F  24  EAST ALABAMA WEIGHTLIFTING  207545  62  2015-08-29  -  Local  Alabama"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOC0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOC0yOSIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+        }
+      ],
+      "1073002": [
+        {
+          "meet_id": 6206,
+          "date": "2024-01-27",
+          "age_category": "Open Women's",
+          "weight_class": "+87kg",
+          "lifter_name": "Rachel Smith",
+          "lifter_id": 14553,
+          "membershipNumbers": [
+            {
+              "athleteName": "Rachel Smith",
+              "membershipNumber": "1073002",
+              "fullText": "15  -  127  Rachel Smith  F  21  -  1073002  90.3  2024-01-27  -  Local  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMS0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMS0yNyIsIndlaWdodF9jbGFzcyI6MTAwfQ=="
+        },
+        {
+          "meet_id": 6365,
+          "date": "2024-05-04",
+          "age_category": "Open Women's",
+          "weight_class": "+87kg",
+          "lifter_name": "Rachel Smith",
+          "lifter_id": 14553,
+          "membershipNumbers": [
+            {
+              "athleteName": "Rachel Smith",
+              "membershipNumber": "1073002",
+              "fullText": "19  -  134  Rachel Smith  F  21  -  1073002  90  2024-05-04  -  Local  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNS0wNCIsIndlaWdodF9jbGFzcyI6MTAwfQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 461,
+        "date": "2015-05-23",
+        "age_category": "Open Women's",
+        "weight_class": "69 kg",
+        "lifter_name": "Rachel Smith",
+        "lifter_id": 14553,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0yMyIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Rachel Smith",
+    "splits": [
+      {
+        "newAthleteName": "Rachel Smith (Person 1)",
+        "membershipNumber": "207545",
+        "competitionCount": 2,
+        "competitions": [
+          453,
+          471
+        ]
+      },
+      {
+        "newAthleteName": "Rachel Smith (Person 2)",
+        "membershipNumber": "1073002",
+        "competitionCount": 2,
+        "competitions": [
+          6206,
+          6365
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 461,
+        "date": "2015-05-23",
+        "age_category": "Open Women's",
+        "weight_class": "69 kg",
+        "lifter_name": "Rachel Smith",
+        "lifter_id": 14553,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0yMyIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Rachel Smith",
+    "competitions": [
+      {
+        "meet_id": 461,
+        "date": "2015-05-23",
+        "age_category": "Open Women's",
+        "weight_class": "69 kg",
+        "lifter_name": "Rachel Smith",
+        "lifter_id": 14553,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0yMyIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+      },
+      {
+        "meet_id": 453,
+        "date": "2015-02-28",
+        "age_category": "Open Women's",
+        "weight_class": "69 kg",
+        "lifter_name": "Rachel Smith",
+        "lifter_id": 14553,
+        "membershipNumbers": [
+          {
+            "athleteName": "Rachel Smith",
+            "membershipNumber": "207545",
+            "fullText": "8  -  120  Rachel Smith  F  24  EAST ALABAMA WEIGHTLIFTING  207545  64.6  2015-02-28  -  Local  Alabama"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMi0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMi0yOCIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+      },
+      {
+        "meet_id": 471,
+        "date": "2015-08-29",
+        "age_category": "Open Women's",
+        "weight_class": "63 kg",
+        "lifter_name": "Rachel Smith",
+        "lifter_id": 14553,
+        "membershipNumbers": [
+          {
+            "athleteName": "Rachel Smith",
+            "membershipNumber": "207545",
+            "fullText": "9  -  113  Rachel Smith  F  24  EAST ALABAMA WEIGHTLIFTING  207545  62  2015-08-29  -  Local  Alabama"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOC0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOC0yOSIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+      },
+      {
+        "meet_id": 6206,
+        "date": "2024-01-27",
+        "age_category": "Open Women's",
+        "weight_class": "+87kg",
+        "lifter_name": "Rachel Smith",
+        "lifter_id": 14553,
+        "membershipNumbers": [
+          {
+            "athleteName": "Rachel Smith",
+            "membershipNumber": "1073002",
+            "fullText": "15  -  127  Rachel Smith  F  21  -  1073002  90.3  2024-01-27  -  Local  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMS0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMS0yNyIsIndlaWdodF9jbGFzcyI6MTAwfQ=="
+      },
+      {
+        "meet_id": 6365,
+        "date": "2024-05-04",
+        "age_category": "Open Women's",
+        "weight_class": "+87kg",
+        "lifter_name": "Rachel Smith",
+        "lifter_id": 14553,
+        "membershipNumbers": [
+          {
+            "athleteName": "Rachel Smith",
+            "membershipNumber": "1073002",
+            "fullText": "19  -  134  Rachel Smith  F  21  -  1073002  90  2024-05-04  -  Local  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNS0wNCIsIndlaWdodF9jbGFzcyI6MTAwfQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "207545": [
+          {
+            "meet_id": 453,
+            "date": "2015-02-28",
+            "age_category": "Open Women's",
+            "weight_class": "69 kg",
+            "lifter_name": "Rachel Smith",
+            "lifter_id": 14553,
+            "membershipNumbers": [
+              {
+                "athleteName": "Rachel Smith",
+                "membershipNumber": "207545",
+                "fullText": "8  -  120  Rachel Smith  F  24  EAST ALABAMA WEIGHTLIFTING  207545  64.6  2015-02-28  -  Local  Alabama"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMi0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMi0yOCIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+          },
+          {
+            "meet_id": 471,
+            "date": "2015-08-29",
+            "age_category": "Open Women's",
+            "weight_class": "63 kg",
+            "lifter_name": "Rachel Smith",
+            "lifter_id": 14553,
+            "membershipNumbers": [
+              {
+                "athleteName": "Rachel Smith",
+                "membershipNumber": "207545",
+                "fullText": "9  -  113  Rachel Smith  F  24  EAST ALABAMA WEIGHTLIFTING  207545  62  2015-08-29  -  Local  Alabama"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOC0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOC0yOSIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+          }
+        ],
+        "1073002": [
+          {
+            "meet_id": 6206,
+            "date": "2024-01-27",
+            "age_category": "Open Women's",
+            "weight_class": "+87kg",
+            "lifter_name": "Rachel Smith",
+            "lifter_id": 14553,
+            "membershipNumbers": [
+              {
+                "athleteName": "Rachel Smith",
+                "membershipNumber": "1073002",
+                "fullText": "15  -  127  Rachel Smith  F  21  -  1073002  90.3  2024-01-27  -  Local  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMS0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMS0yNyIsIndlaWdodF9jbGFzcyI6MTAwfQ=="
+          },
+          {
+            "meet_id": 6365,
+            "date": "2024-05-04",
+            "age_category": "Open Women's",
+            "weight_class": "+87kg",
+            "lifter_name": "Rachel Smith",
+            "lifter_id": 14553,
+            "membershipNumbers": [
+              {
+                "athleteName": "Rachel Smith",
+                "membershipNumber": "1073002",
+                "fullText": "19  -  134  Rachel Smith  F  21  -  1073002  90  2024-05-04  -  Local  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNS0wNCIsIndlaWdodF9jbGFzcyI6MTAwfQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 461,
+          "date": "2015-05-23",
+          "age_category": "Open Women's",
+          "weight_class": "69 kg",
+          "lifter_name": "Rachel Smith",
+          "lifter_id": 14553,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0yMyIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

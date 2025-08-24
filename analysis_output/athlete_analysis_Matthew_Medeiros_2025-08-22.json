@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T04:02:24.883Z",
+  "athleteName": "Matthew Medeiros",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "126964": [
+        {
+          "meet_id": 672,
+          "date": "2012-10-27",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Matthew Medeiros",
+          "lifter_id": 1104,
+          "membershipNumbers": [
+            {
+              "athleteName": "Matthew Medeiros",
+              "membershipNumber": "126964",
+              "fullText": "9  -  193  Matthew Medeiros  M  36  -  126964  77  2012-10-27  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0xMC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0xMC0yNyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        }
+      ],
+      "1051527": [
+        {
+          "meet_id": 6532,
+          "date": "2024-09-28",
+          "age_category": "Men's Masters (35-39)",
+          "weight_class": "81kg",
+          "lifter_name": "Matthew Medeiros",
+          "lifter_id": 1104,
+          "membershipNumbers": [
+            {
+              "athleteName": "Matthew Medeiros",
+              "membershipNumber": "1051527",
+              "fullText": "1  -  190  Matthew Medeiros  M  36  Providence Barbell Club  1051527  79.05  2024-09-28  -  Local  New England"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOS0yOCIsIndlaWdodF9jbGFzcyI6MTA1fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Matthew Medeiros",
+    "splits": [
+      {
+        "newAthleteName": "Matthew Medeiros (Person 1)",
+        "membershipNumber": "126964",
+        "competitionCount": 1,
+        "competitions": [
+          672
+        ]
+      },
+      {
+        "newAthleteName": "Matthew Medeiros (Person 2)",
+        "membershipNumber": "1051527",
+        "competitionCount": 1,
+        "competitions": [
+          6532
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Matthew Medeiros",
+    "competitions": [
+      {
+        "meet_id": 6532,
+        "date": "2024-09-28",
+        "age_category": "Men's Masters (35-39)",
+        "weight_class": "81kg",
+        "lifter_name": "Matthew Medeiros",
+        "lifter_id": 1104,
+        "membershipNumbers": [
+          {
+            "athleteName": "Matthew Medeiros",
+            "membershipNumber": "1051527",
+            "fullText": "1  -  190  Matthew Medeiros  M  36  Providence Barbell Club  1051527  79.05  2024-09-28  -  Local  New England"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOS0yOCIsIndlaWdodF9jbGFzcyI6MTA1fQ=="
+      },
+      {
+        "meet_id": 672,
+        "date": "2012-10-27",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Matthew Medeiros",
+        "lifter_id": 1104,
+        "membershipNumbers": [
+          {
+            "athleteName": "Matthew Medeiros",
+            "membershipNumber": "126964",
+            "fullText": "9  -  193  Matthew Medeiros  M  36  -  126964  77  2012-10-27  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0xMC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0xMC0yNyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "126964": [
+          {
+            "meet_id": 672,
+            "date": "2012-10-27",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Matthew Medeiros",
+            "lifter_id": 1104,
+            "membershipNumbers": [
+              {
+                "athleteName": "Matthew Medeiros",
+                "membershipNumber": "126964",
+                "fullText": "9  -  193  Matthew Medeiros  M  36  -  126964  77  2012-10-27  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0xMC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0xMC0yNyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          }
+        ],
+        "1051527": [
+          {
+            "meet_id": 6532,
+            "date": "2024-09-28",
+            "age_category": "Men's Masters (35-39)",
+            "weight_class": "81kg",
+            "lifter_name": "Matthew Medeiros",
+            "lifter_id": 1104,
+            "membershipNumbers": [
+              {
+                "athleteName": "Matthew Medeiros",
+                "membershipNumber": "1051527",
+                "fullText": "1  -  190  Matthew Medeiros  M  36  Providence Barbell Club  1051527  79.05  2024-09-28  -  Local  New England"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOS0yOCIsIndlaWdodF9jbGFzcyI6MTA1fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

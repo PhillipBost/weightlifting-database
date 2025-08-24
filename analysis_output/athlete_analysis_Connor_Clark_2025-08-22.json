@@ -1,0 +1,194 @@
+{
+  "timestamp": "2025-08-22T08:58:40.878Z",
+  "athleteName": "Connor Clark",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1060868": [
+        {
+          "meet_id": 5240,
+          "date": "2022-03-19",
+          "age_category": "Junior Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Connor Clark",
+          "lifter_id": 51612,
+          "membershipNumbers": [
+            {
+              "athleteName": "Connor Clark",
+              "membershipNumber": "1060868",
+              "fullText": "6  -  166  Connor Clark  M  18  Southwest barbell and Fitnes  1060868  76.7  2022-03-19  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMy0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMy0xOSIsIndlaWdodF9jbGFzcyI6NjV9"
+        }
+      ],
+      "1067743": [
+        {
+          "meet_id": 6281,
+          "date": "2024-03-30",
+          "age_category": "Junior Men's",
+          "weight_class": "73kg",
+          "lifter_name": "Connor Clark",
+          "lifter_id": 51612,
+          "membershipNumbers": [
+            {
+              "athleteName": "Connor Clark",
+              "membershipNumber": "1067743",
+              "fullText": "2  -  215  Connor Clark  M  20  -  1067743  69.94  2024-03-30  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMy0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMy0zMCIsIndlaWdodF9jbGFzcyI6NjR9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 5770,
+        "date": "2023-04-01",
+        "age_category": "Junior Men's",
+        "weight_class": "67kg",
+        "lifter_name": "Connor Clark",
+        "lifter_id": 51612,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0wMSIsIndlaWdodF9jbGFzcyI6NjN9"
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Connor Clark",
+    "splits": [
+      {
+        "newAthleteName": "Connor Clark (Person 1)",
+        "membershipNumber": "1060868",
+        "competitionCount": 1,
+        "competitions": [
+          5240
+        ]
+      },
+      {
+        "newAthleteName": "Connor Clark (Person 2)",
+        "membershipNumber": "1067743",
+        "competitionCount": 1,
+        "competitions": [
+          6281
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 5770,
+        "date": "2023-04-01",
+        "age_category": "Junior Men's",
+        "weight_class": "67kg",
+        "lifter_name": "Connor Clark",
+        "lifter_id": 51612,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0wMSIsIndlaWdodF9jbGFzcyI6NjN9"
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Connor Clark",
+    "competitions": [
+      {
+        "meet_id": 5240,
+        "date": "2022-03-19",
+        "age_category": "Junior Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Connor Clark",
+        "lifter_id": 51612,
+        "membershipNumbers": [
+          {
+            "athleteName": "Connor Clark",
+            "membershipNumber": "1060868",
+            "fullText": "6  -  166  Connor Clark  M  18  Southwest barbell and Fitnes  1060868  76.7  2022-03-19  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMy0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMy0xOSIsIndlaWdodF9jbGFzcyI6NjV9"
+      },
+      {
+        "meet_id": 6281,
+        "date": "2024-03-30",
+        "age_category": "Junior Men's",
+        "weight_class": "73kg",
+        "lifter_name": "Connor Clark",
+        "lifter_id": 51612,
+        "membershipNumbers": [
+          {
+            "athleteName": "Connor Clark",
+            "membershipNumber": "1067743",
+            "fullText": "2  -  215  Connor Clark  M  20  -  1067743  69.94  2024-03-30  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMy0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMy0zMCIsIndlaWdodF9jbGFzcyI6NjR9"
+      },
+      {
+        "meet_id": 5770,
+        "date": "2023-04-01",
+        "age_category": "Junior Men's",
+        "weight_class": "67kg",
+        "lifter_name": "Connor Clark",
+        "lifter_id": 51612,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0wMSIsIndlaWdodF9jbGFzcyI6NjN9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1060868": [
+          {
+            "meet_id": 5240,
+            "date": "2022-03-19",
+            "age_category": "Junior Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Connor Clark",
+            "lifter_id": 51612,
+            "membershipNumbers": [
+              {
+                "athleteName": "Connor Clark",
+                "membershipNumber": "1060868",
+                "fullText": "6  -  166  Connor Clark  M  18  Southwest barbell and Fitnes  1060868  76.7  2022-03-19  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMy0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMy0xOSIsIndlaWdodF9jbGFzcyI6NjV9"
+          }
+        ],
+        "1067743": [
+          {
+            "meet_id": 6281,
+            "date": "2024-03-30",
+            "age_category": "Junior Men's",
+            "weight_class": "73kg",
+            "lifter_name": "Connor Clark",
+            "lifter_id": 51612,
+            "membershipNumbers": [
+              {
+                "athleteName": "Connor Clark",
+                "membershipNumber": "1067743",
+                "fullText": "2  -  215  Connor Clark  M  20  -  1067743  69.94  2024-03-30  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMy0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMy0zMCIsIndlaWdodF9jbGFzcyI6NjR9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 5770,
+          "date": "2023-04-01",
+          "age_category": "Junior Men's",
+          "weight_class": "67kg",
+          "lifter_name": "Connor Clark",
+          "lifter_id": 51612,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0wMSIsIndlaWdodF9jbGFzcyI6NjN9"
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

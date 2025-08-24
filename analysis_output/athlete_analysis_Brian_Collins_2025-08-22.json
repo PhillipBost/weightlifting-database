@@ -1,0 +1,292 @@
+{
+  "timestamp": "2025-08-22T22:29:24.222Z",
+  "athleteName": "Brian Collins",
+  "totalCompetitions": 5,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "185794": [
+        {
+          "meet_id": 798,
+          "date": "2013-07-27",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Brian Collins",
+          "lifter_id": 5805,
+          "membershipNumbers": [
+            {
+              "athleteName": "Brian Collins",
+              "membershipNumber": "185794",
+              "fullText": "5  -  186  Brian Collins  M  21  ASHLAND ATHLETIC CLUB  185794  80.7  2013-07-27  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNy0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNy0yNyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ],
+      "197757": [
+        {
+          "meet_id": 1480,
+          "date": "2014-07-12",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Brian Collins",
+          "lifter_id": 5805,
+          "membershipNumbers": [
+            {
+              "athleteName": "Brian Collins",
+              "membershipNumber": "197757",
+              "fullText": "2  -  260  Brian Collins  M  29  -  197757  91.4  2014-07-12  -  Local  Missouri Valley"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNy0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNy0xMiIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        },
+        {
+          "meet_id": 1684,
+          "date": "2016-07-09",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Brian Collins",
+          "lifter_id": 5805,
+          "membershipNumbers": [
+            {
+              "athleteName": "Brian Collins",
+              "membershipNumber": "197757",
+              "fullText": "9  -  265  Brian Collins  M  31  -  197757  93.2  2016-07-09  -  Local  Missouri Valley"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNy0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNy0wOSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        },
+        {
+          "meet_id": 242,
+          "date": "2015-01-17",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Brian Collins",
+          "lifter_id": 5805,
+          "membershipNumbers": [
+            {
+              "athleteName": "Brian Collins",
+              "membershipNumber": "197757",
+              "fullText": "3  -  268  Brian Collins  M  30  -  197757  93.2  2015-01-17  -  Local  Missouri Valley"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMS0xNyIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 1683,
+        "date": "2016-04-30",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Brian Collins",
+        "lifter_id": 5805,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0zMCIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Brian Collins",
+    "splits": [
+      {
+        "newAthleteName": "Brian Collins (Person 1)",
+        "membershipNumber": "185794",
+        "competitionCount": 1,
+        "competitions": [
+          798
+        ]
+      },
+      {
+        "newAthleteName": "Brian Collins (Person 2)",
+        "membershipNumber": "197757",
+        "competitionCount": 3,
+        "competitions": [
+          1480,
+          1684,
+          242
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 1683,
+        "date": "2016-04-30",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Brian Collins",
+        "lifter_id": 5805,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0zMCIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Brian Collins",
+    "competitions": [
+      {
+        "meet_id": 798,
+        "date": "2013-07-27",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Brian Collins",
+        "lifter_id": 5805,
+        "membershipNumbers": [
+          {
+            "athleteName": "Brian Collins",
+            "membershipNumber": "185794",
+            "fullText": "5  -  186  Brian Collins  M  21  ASHLAND ATHLETIC CLUB  185794  80.7  2013-07-27  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNy0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNy0yNyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 1480,
+        "date": "2014-07-12",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Brian Collins",
+        "lifter_id": 5805,
+        "membershipNumbers": [
+          {
+            "athleteName": "Brian Collins",
+            "membershipNumber": "197757",
+            "fullText": "2  -  260  Brian Collins  M  29  -  197757  91.4  2014-07-12  -  Local  Missouri Valley"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNy0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNy0xMiIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 1683,
+        "date": "2016-04-30",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Brian Collins",
+        "lifter_id": 5805,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0zMCIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 1684,
+        "date": "2016-07-09",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Brian Collins",
+        "lifter_id": 5805,
+        "membershipNumbers": [
+          {
+            "athleteName": "Brian Collins",
+            "membershipNumber": "197757",
+            "fullText": "9  -  265  Brian Collins  M  31  -  197757  93.2  2016-07-09  -  Local  Missouri Valley"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNy0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNy0wOSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 242,
+        "date": "2015-01-17",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Brian Collins",
+        "lifter_id": 5805,
+        "membershipNumbers": [
+          {
+            "athleteName": "Brian Collins",
+            "membershipNumber": "197757",
+            "fullText": "3  -  268  Brian Collins  M  30  -  197757  93.2  2015-01-17  -  Local  Missouri Valley"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMS0xNyIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "185794": [
+          {
+            "meet_id": 798,
+            "date": "2013-07-27",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Brian Collins",
+            "lifter_id": 5805,
+            "membershipNumbers": [
+              {
+                "athleteName": "Brian Collins",
+                "membershipNumber": "185794",
+                "fullText": "5  -  186  Brian Collins  M  21  ASHLAND ATHLETIC CLUB  185794  80.7  2013-07-27  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNy0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNy0yNyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          }
+        ],
+        "197757": [
+          {
+            "meet_id": 1480,
+            "date": "2014-07-12",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Brian Collins",
+            "lifter_id": 5805,
+            "membershipNumbers": [
+              {
+                "athleteName": "Brian Collins",
+                "membershipNumber": "197757",
+                "fullText": "2  -  260  Brian Collins  M  29  -  197757  91.4  2014-07-12  -  Local  Missouri Valley"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNy0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNy0xMiIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          },
+          {
+            "meet_id": 1684,
+            "date": "2016-07-09",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Brian Collins",
+            "lifter_id": 5805,
+            "membershipNumbers": [
+              {
+                "athleteName": "Brian Collins",
+                "membershipNumber": "197757",
+                "fullText": "9  -  265  Brian Collins  M  31  -  197757  93.2  2016-07-09  -  Local  Missouri Valley"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNy0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNy0wOSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          },
+          {
+            "meet_id": 242,
+            "date": "2015-01-17",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Brian Collins",
+            "lifter_id": 5805,
+            "membershipNumbers": [
+              {
+                "athleteName": "Brian Collins",
+                "membershipNumber": "197757",
+                "fullText": "3  -  268  Brian Collins  M  30  -  197757  93.2  2015-01-17  -  Local  Missouri Valley"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMS0xNyIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 1683,
+          "date": "2016-04-30",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Brian Collins",
+          "lifter_id": 5805,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0zMCIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

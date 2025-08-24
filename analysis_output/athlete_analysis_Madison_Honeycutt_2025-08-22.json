@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T07:41:44.409Z",
+  "athleteName": "Madison Honeycutt",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1015740": [
+        {
+          "meet_id": 2349,
+          "date": "2017-03-19",
+          "age_category": "Women's 16-17 Age Group",
+          "weight_class": "63 kg",
+          "lifter_name": "Madison Honeycutt",
+          "lifter_id": 28646,
+          "membershipNumbers": [
+            {
+              "athleteName": "Madison Honeycutt",
+              "membershipNumber": "1015740",
+              "fullText": "4  -  109  Madison Honeycutt  F  16  Coastline Weightlifting  1015740  62.47  2017-03-19  -  National  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0xOSIsIndlaWdodF9jbGFzcyI6MzMzfQ=="
+        },
+        {
+          "meet_id": 2393,
+          "date": "2017-02-19",
+          "age_category": "Women's 16-17 Age Group",
+          "weight_class": "63 kg",
+          "lifter_name": "Madison Honeycutt",
+          "lifter_id": 28646,
+          "membershipNumbers": [
+            {
+              "athleteName": "Madison Honeycutt",
+              "membershipNumber": "1015740",
+              "fullText": "2  -  108  Madison Honeycutt  F  16  Coastline Weightlifting  1015740  62.17  2017-02-19  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xOSIsIndlaWdodF9jbGFzcyI6MzMzfQ=="
+        }
+      ],
+      "1024599": [
+        {
+          "meet_id": 2887,
+          "date": "2017-12-17",
+          "age_category": "Women's 16-17 Age Group",
+          "weight_class": "63 kg",
+          "lifter_name": "Madison Honeycutt",
+          "lifter_id": 28646,
+          "membershipNumbers": [
+            {
+              "athleteName": "Madison Honeycutt",
+              "membershipNumber": "1024599",
+              "fullText": "1  -  103  Madison Honeycutt  F  17  Steadfast Barbell  1024599  62.7  2017-12-17  -  Local  Ohio"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMi0xNyIsIndlaWdodF9jbGFzcyI6MzMzfQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Madison Honeycutt",
+    "splits": [
+      {
+        "newAthleteName": "Madison Honeycutt (Person 1)",
+        "membershipNumber": "1015740",
+        "competitionCount": 2,
+        "competitions": [
+          2349,
+          2393
+        ]
+      },
+      {
+        "newAthleteName": "Madison Honeycutt (Person 2)",
+        "membershipNumber": "1024599",
+        "competitionCount": 1,
+        "competitions": [
+          2887
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Madison Honeycutt",
+    "competitions": [
+      {
+        "meet_id": 2349,
+        "date": "2017-03-19",
+        "age_category": "Women's 16-17 Age Group",
+        "weight_class": "63 kg",
+        "lifter_name": "Madison Honeycutt",
+        "lifter_id": 28646,
+        "membershipNumbers": [
+          {
+            "athleteName": "Madison Honeycutt",
+            "membershipNumber": "1015740",
+            "fullText": "4  -  109  Madison Honeycutt  F  16  Coastline Weightlifting  1015740  62.47  2017-03-19  -  National  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0xOSIsIndlaWdodF9jbGFzcyI6MzMzfQ=="
+      },
+      {
+        "meet_id": 2887,
+        "date": "2017-12-17",
+        "age_category": "Women's 16-17 Age Group",
+        "weight_class": "63 kg",
+        "lifter_name": "Madison Honeycutt",
+        "lifter_id": 28646,
+        "membershipNumbers": [
+          {
+            "athleteName": "Madison Honeycutt",
+            "membershipNumber": "1024599",
+            "fullText": "1  -  103  Madison Honeycutt  F  17  Steadfast Barbell  1024599  62.7  2017-12-17  -  Local  Ohio"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMi0xNyIsIndlaWdodF9jbGFzcyI6MzMzfQ=="
+      },
+      {
+        "meet_id": 2393,
+        "date": "2017-02-19",
+        "age_category": "Women's 16-17 Age Group",
+        "weight_class": "63 kg",
+        "lifter_name": "Madison Honeycutt",
+        "lifter_id": 28646,
+        "membershipNumbers": [
+          {
+            "athleteName": "Madison Honeycutt",
+            "membershipNumber": "1015740",
+            "fullText": "2  -  108  Madison Honeycutt  F  16  Coastline Weightlifting  1015740  62.17  2017-02-19  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xOSIsIndlaWdodF9jbGFzcyI6MzMzfQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1015740": [
+          {
+            "meet_id": 2349,
+            "date": "2017-03-19",
+            "age_category": "Women's 16-17 Age Group",
+            "weight_class": "63 kg",
+            "lifter_name": "Madison Honeycutt",
+            "lifter_id": 28646,
+            "membershipNumbers": [
+              {
+                "athleteName": "Madison Honeycutt",
+                "membershipNumber": "1015740",
+                "fullText": "4  -  109  Madison Honeycutt  F  16  Coastline Weightlifting  1015740  62.47  2017-03-19  -  National  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0xOSIsIndlaWdodF9jbGFzcyI6MzMzfQ=="
+          },
+          {
+            "meet_id": 2393,
+            "date": "2017-02-19",
+            "age_category": "Women's 16-17 Age Group",
+            "weight_class": "63 kg",
+            "lifter_name": "Madison Honeycutt",
+            "lifter_id": 28646,
+            "membershipNumbers": [
+              {
+                "athleteName": "Madison Honeycutt",
+                "membershipNumber": "1015740",
+                "fullText": "2  -  108  Madison Honeycutt  F  16  Coastline Weightlifting  1015740  62.17  2017-02-19  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xOSIsIndlaWdodF9jbGFzcyI6MzMzfQ=="
+          }
+        ],
+        "1024599": [
+          {
+            "meet_id": 2887,
+            "date": "2017-12-17",
+            "age_category": "Women's 16-17 Age Group",
+            "weight_class": "63 kg",
+            "lifter_name": "Madison Honeycutt",
+            "lifter_id": 28646,
+            "membershipNumbers": [
+              {
+                "athleteName": "Madison Honeycutt",
+                "membershipNumber": "1024599",
+                "fullText": "1  -  103  Madison Honeycutt  F  17  Steadfast Barbell  1024599  62.7  2017-12-17  -  Local  Ohio"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMi0xNyIsIndlaWdodF9jbGFzcyI6MzMzfQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

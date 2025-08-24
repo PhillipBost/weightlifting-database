@@ -1,0 +1,298 @@
+{
+  "timestamp": "2025-08-22T08:29:37.510Z",
+  "athleteName": "Carlos Robles",
+  "totalCompetitions": 5,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1040874": [
+        {
+          "meet_id": 4953,
+          "date": "2021-07-17",
+          "age_category": "Men's Masters (35-39)",
+          "weight_class": "89kg",
+          "lifter_name": "Carlos Robles",
+          "lifter_id": 40950,
+          "membershipNumbers": [
+            {
+              "athleteName": "Carlos Robles",
+              "membershipNumber": "1040874",
+              "fullText": "2  -  179  Carlos Robles  M  38  -  1040874  87.74  2021-07-17  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNy0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNy0xNyIsIndlaWdodF9jbGFzcyI6MTA2fQ=="
+        },
+        {
+          "meet_id": 3934,
+          "date": "2019-04-20",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "Carlos Robles",
+          "lifter_id": 40950,
+          "membershipNumbers": [
+            {
+              "athleteName": "Carlos Robles",
+              "membershipNumber": "1040874",
+              "fullText": "17  -  179  Carlos Robles  M  36  -  1040874  87.2  2019-04-20  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0yMCIsIndlaWdodF9jbGFzcyI6ODZ9"
+        },
+        {
+          "meet_id": 3792,
+          "date": "2019-07-28",
+          "age_category": "Men's Masters (35-39)",
+          "weight_class": "89kg",
+          "lifter_name": "Carlos Robles",
+          "lifter_id": 40950,
+          "membershipNumbers": [
+            {
+              "athleteName": "Carlos Robles",
+              "membershipNumber": "1040874",
+              "fullText": "6  -  179  Carlos Robles  M  36  -  1040874  87.3  2019-07-28  -  National  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0yOCIsIndlaWdodF9jbGFzcyI6MTA2fQ=="
+        }
+      ],
+      "1045979": [
+        {
+          "meet_id": 4414,
+          "date": "2020-02-22",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "Carlos Robles",
+          "lifter_id": 40950,
+          "membershipNumbers": [
+            {
+              "athleteName": "Carlos Robles",
+              "membershipNumber": "1045979",
+              "fullText": "24  -  162  Carlos Robles  M  26  -  1045979  85.9  2020-02-22  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMi0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMi0yMiIsIndlaWdodF9jbGFzcyI6ODZ9"
+        },
+        {
+          "meet_id": 4263,
+          "date": "2019-10-19",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "Carlos Robles",
+          "lifter_id": 40950,
+          "membershipNumbers": [
+            {
+              "athleteName": "Carlos Robles",
+              "membershipNumber": "1045979",
+              "fullText": "30  -  159  Carlos Robles  M  25  -  1045979  86.35  2019-10-19  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMC0xOSIsIndlaWdodF9jbGFzcyI6ODZ9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Carlos Robles",
+    "splits": [
+      {
+        "newAthleteName": "Carlos Robles (Person 1)",
+        "membershipNumber": "1040874",
+        "competitionCount": 3,
+        "competitions": [
+          4953,
+          3934,
+          3792
+        ]
+      },
+      {
+        "newAthleteName": "Carlos Robles (Person 2)",
+        "membershipNumber": "1045979",
+        "competitionCount": 2,
+        "competitions": [
+          4414,
+          4263
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Carlos Robles",
+    "competitions": [
+      {
+        "meet_id": 4953,
+        "date": "2021-07-17",
+        "age_category": "Men's Masters (35-39)",
+        "weight_class": "89kg",
+        "lifter_name": "Carlos Robles",
+        "lifter_id": 40950,
+        "membershipNumbers": [
+          {
+            "athleteName": "Carlos Robles",
+            "membershipNumber": "1040874",
+            "fullText": "2  -  179  Carlos Robles  M  38  -  1040874  87.74  2021-07-17  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNy0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNy0xNyIsIndlaWdodF9jbGFzcyI6MTA2fQ=="
+      },
+      {
+        "meet_id": 4414,
+        "date": "2020-02-22",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Carlos Robles",
+        "lifter_id": 40950,
+        "membershipNumbers": [
+          {
+            "athleteName": "Carlos Robles",
+            "membershipNumber": "1045979",
+            "fullText": "24  -  162  Carlos Robles  M  26  -  1045979  85.9  2020-02-22  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMi0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMi0yMiIsIndlaWdodF9jbGFzcyI6ODZ9"
+      },
+      {
+        "meet_id": 3934,
+        "date": "2019-04-20",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Carlos Robles",
+        "lifter_id": 40950,
+        "membershipNumbers": [
+          {
+            "athleteName": "Carlos Robles",
+            "membershipNumber": "1040874",
+            "fullText": "17  -  179  Carlos Robles  M  36  -  1040874  87.2  2019-04-20  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0yMCIsIndlaWdodF9jbGFzcyI6ODZ9"
+      },
+      {
+        "meet_id": 3792,
+        "date": "2019-07-28",
+        "age_category": "Men's Masters (35-39)",
+        "weight_class": "89kg",
+        "lifter_name": "Carlos Robles",
+        "lifter_id": 40950,
+        "membershipNumbers": [
+          {
+            "athleteName": "Carlos Robles",
+            "membershipNumber": "1040874",
+            "fullText": "6  -  179  Carlos Robles  M  36  -  1040874  87.3  2019-07-28  -  National  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0yOCIsIndlaWdodF9jbGFzcyI6MTA2fQ=="
+      },
+      {
+        "meet_id": 4263,
+        "date": "2019-10-19",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Carlos Robles",
+        "lifter_id": 40950,
+        "membershipNumbers": [
+          {
+            "athleteName": "Carlos Robles",
+            "membershipNumber": "1045979",
+            "fullText": "30  -  159  Carlos Robles  M  25  -  1045979  86.35  2019-10-19  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMC0xOSIsIndlaWdodF9jbGFzcyI6ODZ9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1040874": [
+          {
+            "meet_id": 4953,
+            "date": "2021-07-17",
+            "age_category": "Men's Masters (35-39)",
+            "weight_class": "89kg",
+            "lifter_name": "Carlos Robles",
+            "lifter_id": 40950,
+            "membershipNumbers": [
+              {
+                "athleteName": "Carlos Robles",
+                "membershipNumber": "1040874",
+                "fullText": "2  -  179  Carlos Robles  M  38  -  1040874  87.74  2021-07-17  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNy0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNy0xNyIsIndlaWdodF9jbGFzcyI6MTA2fQ=="
+          },
+          {
+            "meet_id": 3934,
+            "date": "2019-04-20",
+            "age_category": "Open Men's",
+            "weight_class": "89kg",
+            "lifter_name": "Carlos Robles",
+            "lifter_id": 40950,
+            "membershipNumbers": [
+              {
+                "athleteName": "Carlos Robles",
+                "membershipNumber": "1040874",
+                "fullText": "17  -  179  Carlos Robles  M  36  -  1040874  87.2  2019-04-20  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0yMCIsIndlaWdodF9jbGFzcyI6ODZ9"
+          },
+          {
+            "meet_id": 3792,
+            "date": "2019-07-28",
+            "age_category": "Men's Masters (35-39)",
+            "weight_class": "89kg",
+            "lifter_name": "Carlos Robles",
+            "lifter_id": 40950,
+            "membershipNumbers": [
+              {
+                "athleteName": "Carlos Robles",
+                "membershipNumber": "1040874",
+                "fullText": "6  -  179  Carlos Robles  M  36  -  1040874  87.3  2019-07-28  -  National  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0yOCIsIndlaWdodF9jbGFzcyI6MTA2fQ=="
+          }
+        ],
+        "1045979": [
+          {
+            "meet_id": 4414,
+            "date": "2020-02-22",
+            "age_category": "Open Men's",
+            "weight_class": "89kg",
+            "lifter_name": "Carlos Robles",
+            "lifter_id": 40950,
+            "membershipNumbers": [
+              {
+                "athleteName": "Carlos Robles",
+                "membershipNumber": "1045979",
+                "fullText": "24  -  162  Carlos Robles  M  26  -  1045979  85.9  2020-02-22  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMi0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMi0yMiIsIndlaWdodF9jbGFzcyI6ODZ9"
+          },
+          {
+            "meet_id": 4263,
+            "date": "2019-10-19",
+            "age_category": "Open Men's",
+            "weight_class": "89kg",
+            "lifter_name": "Carlos Robles",
+            "lifter_id": 40950,
+            "membershipNumbers": [
+              {
+                "athleteName": "Carlos Robles",
+                "membershipNumber": "1045979",
+                "fullText": "30  -  159  Carlos Robles  M  25  -  1045979  86.35  2019-10-19  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMC0xOSIsIndlaWdodF9jbGFzcyI6ODZ9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

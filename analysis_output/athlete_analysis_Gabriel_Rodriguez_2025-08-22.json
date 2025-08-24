@@ -1,0 +1,243 @@
+{
+  "timestamp": "2025-08-22T06:50:54.006Z",
+  "athleteName": "Gabriel Rodriguez",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "216228": [
+        {
+          "meet_id": 535,
+          "date": "2016-03-13",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Gabriel Rodriguez",
+          "lifter_id": 17060,
+          "membershipNumbers": [
+            {
+              "athleteName": "Gabriel Rodriguez",
+              "membershipNumber": "216228",
+              "fullText": "15  -  213  Gabriel Rodriguez  M  23  -  216228  77.5  2016-03-13  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMy0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMy0xMyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ],
+      "1046541": [
+        {
+          "meet_id": 4725,
+          "date": "2021-01-15",
+          "age_category": "Open Men's",
+          "weight_class": "67kg",
+          "lifter_name": "Gabriel Rodriguez",
+          "lifter_id": 17060,
+          "membershipNumbers": [
+            {
+              "athleteName": "Gabriel Rodriguez",
+              "membershipNumber": "1046541",
+              "fullText": "16  -  141  Gabriel Rodriguez  M  25  Bravura Weightlifting  1046541  66  2021-01-15  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMS0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMS0xNSIsIndlaWdodF9jbGFzcyI6ODN9"
+        },
+        {
+          "meet_id": 4330,
+          "date": "2019-10-26",
+          "age_category": "Open Men's",
+          "weight_class": "55kg",
+          "lifter_name": "Gabriel Rodriguez",
+          "lifter_id": 17060,
+          "membershipNumbers": [
+            {
+              "athleteName": "Gabriel Rodriguez",
+              "membershipNumber": "1046541",
+              "fullText": "3  -  137  Gabriel Rodriguez  M  23  Bravura Weightlifting  1046541  50  2019-10-26  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMC0yNiIsIndlaWdodF9jbGFzcyI6ODF9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 4691,
+        "date": "2020-12-12",
+        "age_category": "Open Men's",
+        "weight_class": "67kg",
+        "lifter_name": "Gabriel Rodriguez",
+        "lifter_id": 17060,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0xMi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0xMi0xMiIsIndlaWdodF9jbGFzcyI6ODN9"
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Gabriel Rodriguez",
+    "splits": [
+      {
+        "newAthleteName": "Gabriel Rodriguez (Person 1)",
+        "membershipNumber": "216228",
+        "competitionCount": 1,
+        "competitions": [
+          535
+        ]
+      },
+      {
+        "newAthleteName": "Gabriel Rodriguez (Person 2)",
+        "membershipNumber": "1046541",
+        "competitionCount": 2,
+        "competitions": [
+          4725,
+          4330
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 4691,
+        "date": "2020-12-12",
+        "age_category": "Open Men's",
+        "weight_class": "67kg",
+        "lifter_name": "Gabriel Rodriguez",
+        "lifter_id": 17060,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0xMi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0xMi0xMiIsIndlaWdodF9jbGFzcyI6ODN9"
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Gabriel Rodriguez",
+    "competitions": [
+      {
+        "meet_id": 4725,
+        "date": "2021-01-15",
+        "age_category": "Open Men's",
+        "weight_class": "67kg",
+        "lifter_name": "Gabriel Rodriguez",
+        "lifter_id": 17060,
+        "membershipNumbers": [
+          {
+            "athleteName": "Gabriel Rodriguez",
+            "membershipNumber": "1046541",
+            "fullText": "16  -  141  Gabriel Rodriguez  M  25  Bravura Weightlifting  1046541  66  2021-01-15  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMS0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMS0xNSIsIndlaWdodF9jbGFzcyI6ODN9"
+      },
+      {
+        "meet_id": 535,
+        "date": "2016-03-13",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Gabriel Rodriguez",
+        "lifter_id": 17060,
+        "membershipNumbers": [
+          {
+            "athleteName": "Gabriel Rodriguez",
+            "membershipNumber": "216228",
+            "fullText": "15  -  213  Gabriel Rodriguez  M  23  -  216228  77.5  2016-03-13  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMy0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMy0xMyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 4330,
+        "date": "2019-10-26",
+        "age_category": "Open Men's",
+        "weight_class": "55kg",
+        "lifter_name": "Gabriel Rodriguez",
+        "lifter_id": 17060,
+        "membershipNumbers": [
+          {
+            "athleteName": "Gabriel Rodriguez",
+            "membershipNumber": "1046541",
+            "fullText": "3  -  137  Gabriel Rodriguez  M  23  Bravura Weightlifting  1046541  50  2019-10-26  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMC0yNiIsIndlaWdodF9jbGFzcyI6ODF9"
+      },
+      {
+        "meet_id": 4691,
+        "date": "2020-12-12",
+        "age_category": "Open Men's",
+        "weight_class": "67kg",
+        "lifter_name": "Gabriel Rodriguez",
+        "lifter_id": 17060,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0xMi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0xMi0xMiIsIndlaWdodF9jbGFzcyI6ODN9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "216228": [
+          {
+            "meet_id": 535,
+            "date": "2016-03-13",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Gabriel Rodriguez",
+            "lifter_id": 17060,
+            "membershipNumbers": [
+              {
+                "athleteName": "Gabriel Rodriguez",
+                "membershipNumber": "216228",
+                "fullText": "15  -  213  Gabriel Rodriguez  M  23  -  216228  77.5  2016-03-13  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMy0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMy0xMyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          }
+        ],
+        "1046541": [
+          {
+            "meet_id": 4725,
+            "date": "2021-01-15",
+            "age_category": "Open Men's",
+            "weight_class": "67kg",
+            "lifter_name": "Gabriel Rodriguez",
+            "lifter_id": 17060,
+            "membershipNumbers": [
+              {
+                "athleteName": "Gabriel Rodriguez",
+                "membershipNumber": "1046541",
+                "fullText": "16  -  141  Gabriel Rodriguez  M  25  Bravura Weightlifting  1046541  66  2021-01-15  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMS0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMS0xNSIsIndlaWdodF9jbGFzcyI6ODN9"
+          },
+          {
+            "meet_id": 4330,
+            "date": "2019-10-26",
+            "age_category": "Open Men's",
+            "weight_class": "55kg",
+            "lifter_name": "Gabriel Rodriguez",
+            "lifter_id": 17060,
+            "membershipNumbers": [
+              {
+                "athleteName": "Gabriel Rodriguez",
+                "membershipNumber": "1046541",
+                "fullText": "3  -  137  Gabriel Rodriguez  M  23  Bravura Weightlifting  1046541  50  2019-10-26  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMC0yNiIsIndlaWdodF9jbGFzcyI6ODF9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 4691,
+          "date": "2020-12-12",
+          "age_category": "Open Men's",
+          "weight_class": "67kg",
+          "lifter_name": "Gabriel Rodriguez",
+          "lifter_id": 17060,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0xMi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0xMi0xMiIsIndlaWdodF9jbGFzcyI6ODN9"
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

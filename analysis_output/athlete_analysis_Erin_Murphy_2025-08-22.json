@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T09:15:57.620Z",
+  "athleteName": "Erin Murphy",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1003880": [
+        {
+          "meet_id": 2083,
+          "date": "2016-08-28",
+          "age_category": "Open Women's",
+          "weight_class": "63 kg",
+          "lifter_name": "Erin Murphy",
+          "lifter_id": 25593,
+          "membershipNumbers": [
+            {
+              "athleteName": "Erin Murphy",
+              "membershipNumber": "1003880",
+              "fullText": "7  -  132  Erin Murphy  F  19  Harvey's Army Weightlifting  1003880  59.9  2016-08-28  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0yOCIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+        }
+      ],
+      "1057958": [
+        {
+          "meet_id": 4846,
+          "date": "2021-10-31",
+          "age_category": "Women's Masters (35-39)",
+          "weight_class": "87kg",
+          "lifter_name": "Erin Murphy",
+          "lifter_id": 25593,
+          "membershipNumbers": [
+            {
+              "athleteName": "Erin Murphy",
+              "membershipNumber": "1057958",
+              "fullText": "1  -  80  Erin Murphy  F  39  SOUTH LOOP STRENGTH AND CONDITIONING  1057958  86.9  2021-10-31  -  Local  Illinois"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMC0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMC0zMSIsIndlaWdodF9jbGFzcyI6MTE5fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Erin Murphy",
+    "splits": [
+      {
+        "newAthleteName": "Erin Murphy (Person 1)",
+        "membershipNumber": "1003880",
+        "competitionCount": 1,
+        "competitions": [
+          2083
+        ]
+      },
+      {
+        "newAthleteName": "Erin Murphy (Person 2)",
+        "membershipNumber": "1057958",
+        "competitionCount": 1,
+        "competitions": [
+          4846
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Erin Murphy",
+    "competitions": [
+      {
+        "meet_id": 4846,
+        "date": "2021-10-31",
+        "age_category": "Women's Masters (35-39)",
+        "weight_class": "87kg",
+        "lifter_name": "Erin Murphy",
+        "lifter_id": 25593,
+        "membershipNumbers": [
+          {
+            "athleteName": "Erin Murphy",
+            "membershipNumber": "1057958",
+            "fullText": "1  -  80  Erin Murphy  F  39  SOUTH LOOP STRENGTH AND CONDITIONING  1057958  86.9  2021-10-31  -  Local  Illinois"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMC0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMC0zMSIsIndlaWdodF9jbGFzcyI6MTE5fQ=="
+      },
+      {
+        "meet_id": 2083,
+        "date": "2016-08-28",
+        "age_category": "Open Women's",
+        "weight_class": "63 kg",
+        "lifter_name": "Erin Murphy",
+        "lifter_id": 25593,
+        "membershipNumbers": [
+          {
+            "athleteName": "Erin Murphy",
+            "membershipNumber": "1003880",
+            "fullText": "7  -  132  Erin Murphy  F  19  Harvey's Army Weightlifting  1003880  59.9  2016-08-28  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0yOCIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1003880": [
+          {
+            "meet_id": 2083,
+            "date": "2016-08-28",
+            "age_category": "Open Women's",
+            "weight_class": "63 kg",
+            "lifter_name": "Erin Murphy",
+            "lifter_id": 25593,
+            "membershipNumbers": [
+              {
+                "athleteName": "Erin Murphy",
+                "membershipNumber": "1003880",
+                "fullText": "7  -  132  Erin Murphy  F  19  Harvey's Army Weightlifting  1003880  59.9  2016-08-28  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0yOCIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+          }
+        ],
+        "1057958": [
+          {
+            "meet_id": 4846,
+            "date": "2021-10-31",
+            "age_category": "Women's Masters (35-39)",
+            "weight_class": "87kg",
+            "lifter_name": "Erin Murphy",
+            "lifter_id": 25593,
+            "membershipNumbers": [
+              {
+                "athleteName": "Erin Murphy",
+                "membershipNumber": "1057958",
+                "fullText": "1  -  80  Erin Murphy  F  39  SOUTH LOOP STRENGTH AND CONDITIONING  1057958  86.9  2021-10-31  -  Local  Illinois"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMC0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMC0zMSIsIndlaWdodF9jbGFzcyI6MTE5fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

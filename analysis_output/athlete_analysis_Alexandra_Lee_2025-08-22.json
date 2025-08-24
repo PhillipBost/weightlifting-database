@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T07:11:10.721Z",
+  "athleteName": "Alexandra Lee",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1013064": [
+        {
+          "meet_id": 1745,
+          "date": "2016-10-23",
+          "age_category": "Women's Masters (35-39)",
+          "weight_class": "58 kg",
+          "lifter_name": "Alexandra Lee",
+          "lifter_id": 22494,
+          "membershipNumbers": [
+            {
+              "athleteName": "Alexandra Lee",
+              "membershipNumber": "1013064",
+              "fullText": "15  -  95  Alexandra Lee  F  35  -  1013064  55  2016-10-23  -  Local  New Jersey"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0yMyIsIndlaWdodF9jbGFzcyI6MzgxfQ=="
+        }
+      ],
+      "1024012": [
+        {
+          "meet_id": 2682,
+          "date": "2017-10-28",
+          "age_category": "Open Women's",
+          "weight_class": "69 kg",
+          "lifter_name": "Alexandra Lee",
+          "lifter_id": 22494,
+          "membershipNumbers": [
+            {
+              "athleteName": "Alexandra Lee",
+              "membershipNumber": "1024012",
+              "fullText": "1  -  590  Alexandra Lee  F  25  Shoofly Barbell Club  1024012  67.5  2017-10-28  -  Local  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0yOCIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Alexandra Lee",
+    "splits": [
+      {
+        "newAthleteName": "Alexandra Lee (Person 1)",
+        "membershipNumber": "1013064",
+        "competitionCount": 1,
+        "competitions": [
+          1745
+        ]
+      },
+      {
+        "newAthleteName": "Alexandra Lee (Person 2)",
+        "membershipNumber": "1024012",
+        "competitionCount": 1,
+        "competitions": [
+          2682
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Alexandra Lee",
+    "competitions": [
+      {
+        "meet_id": 2682,
+        "date": "2017-10-28",
+        "age_category": "Open Women's",
+        "weight_class": "69 kg",
+        "lifter_name": "Alexandra Lee",
+        "lifter_id": 22494,
+        "membershipNumbers": [
+          {
+            "athleteName": "Alexandra Lee",
+            "membershipNumber": "1024012",
+            "fullText": "1  -  590  Alexandra Lee  F  25  Shoofly Barbell Club  1024012  67.5  2017-10-28  -  Local  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0yOCIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+      },
+      {
+        "meet_id": 1745,
+        "date": "2016-10-23",
+        "age_category": "Women's Masters (35-39)",
+        "weight_class": "58 kg",
+        "lifter_name": "Alexandra Lee",
+        "lifter_id": 22494,
+        "membershipNumbers": [
+          {
+            "athleteName": "Alexandra Lee",
+            "membershipNumber": "1013064",
+            "fullText": "15  -  95  Alexandra Lee  F  35  -  1013064  55  2016-10-23  -  Local  New Jersey"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0yMyIsIndlaWdodF9jbGFzcyI6MzgxfQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1013064": [
+          {
+            "meet_id": 1745,
+            "date": "2016-10-23",
+            "age_category": "Women's Masters (35-39)",
+            "weight_class": "58 kg",
+            "lifter_name": "Alexandra Lee",
+            "lifter_id": 22494,
+            "membershipNumbers": [
+              {
+                "athleteName": "Alexandra Lee",
+                "membershipNumber": "1013064",
+                "fullText": "15  -  95  Alexandra Lee  F  35  -  1013064  55  2016-10-23  -  Local  New Jersey"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0yMyIsIndlaWdodF9jbGFzcyI6MzgxfQ=="
+          }
+        ],
+        "1024012": [
+          {
+            "meet_id": 2682,
+            "date": "2017-10-28",
+            "age_category": "Open Women's",
+            "weight_class": "69 kg",
+            "lifter_name": "Alexandra Lee",
+            "lifter_id": 22494,
+            "membershipNumbers": [
+              {
+                "athleteName": "Alexandra Lee",
+                "membershipNumber": "1024012",
+                "fullText": "1  -  590  Alexandra Lee  F  25  Shoofly Barbell Club  1024012  67.5  2017-10-28  -  Local  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0yOCIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

@@ -1,0 +1,292 @@
+{
+  "timestamp": "2025-08-22T15:15:20.493Z",
+  "athleteName": "Thomas O'Brien",
+  "totalCompetitions": 5,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1004104": [
+        {
+          "meet_id": 2175,
+          "date": "2016-08-28",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Thomas O'Brien",
+          "lifter_id": 23619,
+          "membershipNumbers": [
+            {
+              "athleteName": "Thomas O'Brien",
+              "membershipNumber": "1004104",
+              "fullText": "20  -  219  Thomas O'Brien  M  22  Palmetto Weightlifting  1004104  89.73  2016-08-28  -  Local  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0yOCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ],
+      "1044017": [
+        {
+          "meet_id": 6072,
+          "date": "2023-10-28",
+          "age_category": "Men's Masters (35-39)",
+          "weight_class": "+109kg",
+          "lifter_name": "Thomas O'Brien",
+          "lifter_id": 23619,
+          "membershipNumbers": [
+            {
+              "athleteName": "Thomas O'Brien",
+              "membershipNumber": "1044017",
+              "fullText": "2  -  245  Thomas O'Brien  M  36  -  1044017  115.8  2023-10-28  -  Local  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMC0yOCIsIndlaWdodF9jbGFzcyI6MTEwfQ=="
+        },
+        {
+          "meet_id": 3711,
+          "date": "2019-09-07",
+          "age_category": "Open Men's",
+          "weight_class": "+109kg",
+          "lifter_name": "Thomas O'Brien",
+          "lifter_id": 23619,
+          "membershipNumbers": [
+            {
+              "athleteName": "Thomas O'Brien",
+              "membershipNumber": "1044017",
+              "fullText": "1  -  246  Thomas O'Brien  M  32  -  1044017  113.4  2019-09-07  -  Local  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOS0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOS0wNyIsIndlaWdodF9jbGFzcyI6OTB9"
+        },
+        {
+          "meet_id": 6738,
+          "date": "2025-02-02",
+          "age_category": "Men's Masters (35-39)",
+          "weight_class": "+109kg",
+          "lifter_name": "Thomas O'Brien",
+          "lifter_id": 23619,
+          "membershipNumbers": [
+            {
+              "athleteName": "Thomas O'Brien",
+              "membershipNumber": "1044017",
+              "fullText": "2  -  252  Thomas O'Brien  M  38  -  1044017  120.8  2025-02-02  -  Local  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMi0wMiIsIndlaWdodF9jbGFzcyI6MTEwfQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 1841,
+        "date": "2016-03-19",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Thomas O'Brien",
+        "lifter_id": 23619,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMy0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMy0xOSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Thomas O'Brien",
+    "splits": [
+      {
+        "newAthleteName": "Thomas O'Brien (Person 1)",
+        "membershipNumber": "1004104",
+        "competitionCount": 1,
+        "competitions": [
+          2175
+        ]
+      },
+      {
+        "newAthleteName": "Thomas O'Brien (Person 2)",
+        "membershipNumber": "1044017",
+        "competitionCount": 3,
+        "competitions": [
+          6072,
+          3711,
+          6738
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 1841,
+        "date": "2016-03-19",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Thomas O'Brien",
+        "lifter_id": 23619,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMy0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMy0xOSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Thomas O'Brien",
+    "competitions": [
+      {
+        "meet_id": 6072,
+        "date": "2023-10-28",
+        "age_category": "Men's Masters (35-39)",
+        "weight_class": "+109kg",
+        "lifter_name": "Thomas O'Brien",
+        "lifter_id": 23619,
+        "membershipNumbers": [
+          {
+            "athleteName": "Thomas O'Brien",
+            "membershipNumber": "1044017",
+            "fullText": "2  -  245  Thomas O'Brien  M  36  -  1044017  115.8  2023-10-28  -  Local  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMC0yOCIsIndlaWdodF9jbGFzcyI6MTEwfQ=="
+      },
+      {
+        "meet_id": 1841,
+        "date": "2016-03-19",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Thomas O'Brien",
+        "lifter_id": 23619,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMy0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMy0xOSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 3711,
+        "date": "2019-09-07",
+        "age_category": "Open Men's",
+        "weight_class": "+109kg",
+        "lifter_name": "Thomas O'Brien",
+        "lifter_id": 23619,
+        "membershipNumbers": [
+          {
+            "athleteName": "Thomas O'Brien",
+            "membershipNumber": "1044017",
+            "fullText": "1  -  246  Thomas O'Brien  M  32  -  1044017  113.4  2019-09-07  -  Local  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOS0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOS0wNyIsIndlaWdodF9jbGFzcyI6OTB9"
+      },
+      {
+        "meet_id": 6738,
+        "date": "2025-02-02",
+        "age_category": "Men's Masters (35-39)",
+        "weight_class": "+109kg",
+        "lifter_name": "Thomas O'Brien",
+        "lifter_id": 23619,
+        "membershipNumbers": [
+          {
+            "athleteName": "Thomas O'Brien",
+            "membershipNumber": "1044017",
+            "fullText": "2  -  252  Thomas O'Brien  M  38  -  1044017  120.8  2025-02-02  -  Local  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMi0wMiIsIndlaWdodF9jbGFzcyI6MTEwfQ=="
+      },
+      {
+        "meet_id": 2175,
+        "date": "2016-08-28",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Thomas O'Brien",
+        "lifter_id": 23619,
+        "membershipNumbers": [
+          {
+            "athleteName": "Thomas O'Brien",
+            "membershipNumber": "1004104",
+            "fullText": "20  -  219  Thomas O'Brien  M  22  Palmetto Weightlifting  1004104  89.73  2016-08-28  -  Local  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0yOCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1004104": [
+          {
+            "meet_id": 2175,
+            "date": "2016-08-28",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Thomas O'Brien",
+            "lifter_id": 23619,
+            "membershipNumbers": [
+              {
+                "athleteName": "Thomas O'Brien",
+                "membershipNumber": "1004104",
+                "fullText": "20  -  219  Thomas O'Brien  M  22  Palmetto Weightlifting  1004104  89.73  2016-08-28  -  Local  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0yOCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          }
+        ],
+        "1044017": [
+          {
+            "meet_id": 6072,
+            "date": "2023-10-28",
+            "age_category": "Men's Masters (35-39)",
+            "weight_class": "+109kg",
+            "lifter_name": "Thomas O'Brien",
+            "lifter_id": 23619,
+            "membershipNumbers": [
+              {
+                "athleteName": "Thomas O'Brien",
+                "membershipNumber": "1044017",
+                "fullText": "2  -  245  Thomas O'Brien  M  36  -  1044017  115.8  2023-10-28  -  Local  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMC0yOCIsIndlaWdodF9jbGFzcyI6MTEwfQ=="
+          },
+          {
+            "meet_id": 3711,
+            "date": "2019-09-07",
+            "age_category": "Open Men's",
+            "weight_class": "+109kg",
+            "lifter_name": "Thomas O'Brien",
+            "lifter_id": 23619,
+            "membershipNumbers": [
+              {
+                "athleteName": "Thomas O'Brien",
+                "membershipNumber": "1044017",
+                "fullText": "1  -  246  Thomas O'Brien  M  32  -  1044017  113.4  2019-09-07  -  Local  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOS0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOS0wNyIsIndlaWdodF9jbGFzcyI6OTB9"
+          },
+          {
+            "meet_id": 6738,
+            "date": "2025-02-02",
+            "age_category": "Men's Masters (35-39)",
+            "weight_class": "+109kg",
+            "lifter_name": "Thomas O'Brien",
+            "lifter_id": 23619,
+            "membershipNumbers": [
+              {
+                "athleteName": "Thomas O'Brien",
+                "membershipNumber": "1044017",
+                "fullText": "2  -  252  Thomas O'Brien  M  38  -  1044017  120.8  2025-02-02  -  Local  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMi0wMiIsIndlaWdodF9jbGFzcyI6MTEwfQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 1841,
+          "date": "2016-03-19",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Thomas O'Brien",
+          "lifter_id": 23619,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMy0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMy0xOSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

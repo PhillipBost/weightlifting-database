@@ -1,0 +1,260 @@
+{
+  "timestamp": "2025-08-22T19:05:57.432Z",
+  "athleteName": "Brian Nguyen",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 3,
+    "membershipGroups": {
+      "204160": [
+        {
+          "meet_id": 325,
+          "date": "2015-07-25",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Brian Nguyen",
+          "lifter_id": 12002,
+          "membershipNumbers": [
+            {
+              "athleteName": "Brian Nguyen",
+              "membershipNumber": "204160",
+              "fullText": "14  -  229  Brian Nguyen  M  21  Fortius Weightlifting  204160  80.8  2015-07-25  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNy0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNy0yNSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        },
+        {
+          "meet_id": 1200,
+          "date": "2014-11-01",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Brian Nguyen",
+          "lifter_id": 12002,
+          "membershipNumbers": [
+            {
+              "athleteName": "Brian Nguyen",
+              "membershipNumber": "204160",
+              "fullText": "16  -  233  Brian Nguyen  M  20  Fortius Weightlifting  204160  82.1  2014-11-01  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMS0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMS0wMSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ],
+      "1013493": [
+        {
+          "meet_id": 2228,
+          "date": "2016-11-19",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Brian Nguyen",
+          "lifter_id": 12002,
+          "membershipNumbers": [
+            {
+              "athleteName": "Brian Nguyen",
+              "membershipNumber": "1013493",
+              "fullText": "14  -  220  Brian Nguyen  M  24  -  1013493  83.2  2016-11-19  -  Local  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMS0xOSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ],
+      "1077581": [
+        {
+          "meet_id": 6493,
+          "date": "2024-08-03",
+          "age_category": "Open Men's",
+          "weight_class": "73kg",
+          "lifter_name": "Brian Nguyen",
+          "lifter_id": 12002,
+          "membershipNumbers": [
+            {
+              "athleteName": "Brian Nguyen",
+              "membershipNumber": "1077581",
+              "fullText": "14  -  186  Brian Nguyen  M  27  -  1077581  70.09  2024-08-03  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOC0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOC0wMyIsIndlaWdodF9jbGFzcyI6ODR9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Brian Nguyen",
+    "splits": [
+      {
+        "newAthleteName": "Brian Nguyen (Person 1)",
+        "membershipNumber": "204160",
+        "competitionCount": 2,
+        "competitions": [
+          325,
+          1200
+        ]
+      },
+      {
+        "newAthleteName": "Brian Nguyen (Person 2)",
+        "membershipNumber": "1013493",
+        "competitionCount": 1,
+        "competitions": [
+          2228
+        ]
+      },
+      {
+        "newAthleteName": "Brian Nguyen (Person 3)",
+        "membershipNumber": "1077581",
+        "competitionCount": 1,
+        "competitions": [
+          6493
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Brian Nguyen",
+    "competitions": [
+      {
+        "meet_id": 6493,
+        "date": "2024-08-03",
+        "age_category": "Open Men's",
+        "weight_class": "73kg",
+        "lifter_name": "Brian Nguyen",
+        "lifter_id": 12002,
+        "membershipNumbers": [
+          {
+            "athleteName": "Brian Nguyen",
+            "membershipNumber": "1077581",
+            "fullText": "14  -  186  Brian Nguyen  M  27  -  1077581  70.09  2024-08-03  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOC0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOC0wMyIsIndlaWdodF9jbGFzcyI6ODR9"
+      },
+      {
+        "meet_id": 325,
+        "date": "2015-07-25",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Brian Nguyen",
+        "lifter_id": 12002,
+        "membershipNumbers": [
+          {
+            "athleteName": "Brian Nguyen",
+            "membershipNumber": "204160",
+            "fullText": "14  -  229  Brian Nguyen  M  21  Fortius Weightlifting  204160  80.8  2015-07-25  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNy0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNy0yNSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 2228,
+        "date": "2016-11-19",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Brian Nguyen",
+        "lifter_id": 12002,
+        "membershipNumbers": [
+          {
+            "athleteName": "Brian Nguyen",
+            "membershipNumber": "1013493",
+            "fullText": "14  -  220  Brian Nguyen  M  24  -  1013493  83.2  2016-11-19  -  Local  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMS0xOSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 1200,
+        "date": "2014-11-01",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Brian Nguyen",
+        "lifter_id": 12002,
+        "membershipNumbers": [
+          {
+            "athleteName": "Brian Nguyen",
+            "membershipNumber": "204160",
+            "fullText": "16  -  233  Brian Nguyen  M  20  Fortius Weightlifting  204160  82.1  2014-11-01  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMS0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMS0wMSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 3,
+      "membershipGroups": {
+        "204160": [
+          {
+            "meet_id": 325,
+            "date": "2015-07-25",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Brian Nguyen",
+            "lifter_id": 12002,
+            "membershipNumbers": [
+              {
+                "athleteName": "Brian Nguyen",
+                "membershipNumber": "204160",
+                "fullText": "14  -  229  Brian Nguyen  M  21  Fortius Weightlifting  204160  80.8  2015-07-25  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNy0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNy0yNSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          },
+          {
+            "meet_id": 1200,
+            "date": "2014-11-01",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Brian Nguyen",
+            "lifter_id": 12002,
+            "membershipNumbers": [
+              {
+                "athleteName": "Brian Nguyen",
+                "membershipNumber": "204160",
+                "fullText": "16  -  233  Brian Nguyen  M  20  Fortius Weightlifting  204160  82.1  2014-11-01  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMS0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMS0wMSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          }
+        ],
+        "1013493": [
+          {
+            "meet_id": 2228,
+            "date": "2016-11-19",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Brian Nguyen",
+            "lifter_id": 12002,
+            "membershipNumbers": [
+              {
+                "athleteName": "Brian Nguyen",
+                "membershipNumber": "1013493",
+                "fullText": "14  -  220  Brian Nguyen  M  24  -  1013493  83.2  2016-11-19  -  Local  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMS0xOSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          }
+        ],
+        "1077581": [
+          {
+            "meet_id": 6493,
+            "date": "2024-08-03",
+            "age_category": "Open Men's",
+            "weight_class": "73kg",
+            "lifter_name": "Brian Nguyen",
+            "lifter_id": 12002,
+            "membershipNumbers": [
+              {
+                "athleteName": "Brian Nguyen",
+                "membershipNumber": "1077581",
+                "fullText": "14  -  186  Brian Nguyen  M  27  -  1077581  70.09  2024-08-03  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOC0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOC0wMyIsIndlaWdodF9jbGFzcyI6ODR9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

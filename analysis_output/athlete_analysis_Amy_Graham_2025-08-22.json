@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T09:03:41.335Z",
+  "athleteName": "Amy Graham",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "179379": [
+        {
+          "meet_id": 5472,
+          "date": "2022-08-21",
+          "age_category": "Women's Masters (45-49)",
+          "weight_class": "81kg",
+          "lifter_name": "Amy Graham",
+          "lifter_id": 53536,
+          "membershipNumbers": [
+            {
+              "athleteName": "Amy Graham",
+              "membershipNumber": "179379",
+              "fullText": "1  -  109  Amy Graham  F  45  -  179379  77.8  2022-08-21  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wOC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wOC0yMSIsIndlaWdodF9jbGFzcyI6MTU4fQ=="
+        },
+        {
+          "meet_id": 5893,
+          "date": "2023-05-18",
+          "age_category": "Women's Masters (45-49)",
+          "weight_class": "81kg",
+          "lifter_name": "Amy Graham",
+          "lifter_id": 53536,
+          "membershipNumbers": [
+            {
+              "athleteName": "Amy Graham",
+              "membershipNumber": "179379",
+              "fullText": "1  -  116  Amy Graham  F  46  -  179379  78.85  2023-05-18  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNS0xOCIsIndlaWdodF9jbGFzcyI6MTU4fQ=="
+        }
+      ],
+      "1077648": [
+        {
+          "meet_id": 6486,
+          "date": "2024-08-04",
+          "age_category": "Women's Masters (45-49)",
+          "weight_class": "81kg",
+          "lifter_name": "Amy Graham",
+          "lifter_id": 53536,
+          "membershipNumbers": [
+            {
+              "athleteName": "Amy Graham",
+              "membershipNumber": "1077648",
+              "fullText": "1  -  110  Amy Graham  F  47  -  1077648  79.55  2024-08-04  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOC0wNCIsIndlaWdodF9jbGFzcyI6MTU4fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Amy Graham",
+    "splits": [
+      {
+        "newAthleteName": "Amy Graham (Person 1)",
+        "membershipNumber": "179379",
+        "competitionCount": 2,
+        "competitions": [
+          5472,
+          5893
+        ]
+      },
+      {
+        "newAthleteName": "Amy Graham (Person 2)",
+        "membershipNumber": "1077648",
+        "competitionCount": 1,
+        "competitions": [
+          6486
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Amy Graham",
+    "competitions": [
+      {
+        "meet_id": 6486,
+        "date": "2024-08-04",
+        "age_category": "Women's Masters (45-49)",
+        "weight_class": "81kg",
+        "lifter_name": "Amy Graham",
+        "lifter_id": 53536,
+        "membershipNumbers": [
+          {
+            "athleteName": "Amy Graham",
+            "membershipNumber": "1077648",
+            "fullText": "1  -  110  Amy Graham  F  47  -  1077648  79.55  2024-08-04  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOC0wNCIsIndlaWdodF9jbGFzcyI6MTU4fQ=="
+      },
+      {
+        "meet_id": 5472,
+        "date": "2022-08-21",
+        "age_category": "Women's Masters (45-49)",
+        "weight_class": "81kg",
+        "lifter_name": "Amy Graham",
+        "lifter_id": 53536,
+        "membershipNumbers": [
+          {
+            "athleteName": "Amy Graham",
+            "membershipNumber": "179379",
+            "fullText": "1  -  109  Amy Graham  F  45  -  179379  77.8  2022-08-21  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wOC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wOC0yMSIsIndlaWdodF9jbGFzcyI6MTU4fQ=="
+      },
+      {
+        "meet_id": 5893,
+        "date": "2023-05-18",
+        "age_category": "Women's Masters (45-49)",
+        "weight_class": "81kg",
+        "lifter_name": "Amy Graham",
+        "lifter_id": 53536,
+        "membershipNumbers": [
+          {
+            "athleteName": "Amy Graham",
+            "membershipNumber": "179379",
+            "fullText": "1  -  116  Amy Graham  F  46  -  179379  78.85  2023-05-18  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNS0xOCIsIndlaWdodF9jbGFzcyI6MTU4fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "179379": [
+          {
+            "meet_id": 5472,
+            "date": "2022-08-21",
+            "age_category": "Women's Masters (45-49)",
+            "weight_class": "81kg",
+            "lifter_name": "Amy Graham",
+            "lifter_id": 53536,
+            "membershipNumbers": [
+              {
+                "athleteName": "Amy Graham",
+                "membershipNumber": "179379",
+                "fullText": "1  -  109  Amy Graham  F  45  -  179379  77.8  2022-08-21  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wOC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wOC0yMSIsIndlaWdodF9jbGFzcyI6MTU4fQ=="
+          },
+          {
+            "meet_id": 5893,
+            "date": "2023-05-18",
+            "age_category": "Women's Masters (45-49)",
+            "weight_class": "81kg",
+            "lifter_name": "Amy Graham",
+            "lifter_id": 53536,
+            "membershipNumbers": [
+              {
+                "athleteName": "Amy Graham",
+                "membershipNumber": "179379",
+                "fullText": "1  -  116  Amy Graham  F  46  -  179379  78.85  2023-05-18  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNS0xOCIsIndlaWdodF9jbGFzcyI6MTU4fQ=="
+          }
+        ],
+        "1077648": [
+          {
+            "meet_id": 6486,
+            "date": "2024-08-04",
+            "age_category": "Women's Masters (45-49)",
+            "weight_class": "81kg",
+            "lifter_name": "Amy Graham",
+            "lifter_id": 53536,
+            "membershipNumbers": [
+              {
+                "athleteName": "Amy Graham",
+                "membershipNumber": "1077648",
+                "fullText": "1  -  110  Amy Graham  F  47  -  1077648  79.55  2024-08-04  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOC0wNCIsIndlaWdodF9jbGFzcyI6MTU4fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

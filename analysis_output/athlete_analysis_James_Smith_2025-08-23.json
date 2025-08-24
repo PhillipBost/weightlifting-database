@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-23T01:33:58.919Z",
+  "athleteName": "James Smith",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "213214": [
+        {
+          "meet_id": 3713,
+          "date": "2019-06-08",
+          "age_category": "Open Men's",
+          "weight_class": "109kg",
+          "lifter_name": "James Smith",
+          "lifter_id": 22856,
+          "membershipNumbers": [
+            {
+              "athleteName": "James Smith",
+              "membershipNumber": "213214",
+              "fullText": "3  -  212  James Smith  M  18  CINCINNATI WEIGHTLIFTING CLUB  213214  104.5  2019-06-08  -  Local  Ohio"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNi0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNi0wOCIsIndlaWdodF9jbGFzcyI6ODl9"
+        },
+        {
+          "meet_id": 1927,
+          "date": "2017-03-26",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "James Smith",
+          "lifter_id": 22856,
+          "membershipNumbers": [
+            {
+              "athleteName": "James Smith",
+              "membershipNumber": "213214",
+              "fullText": "14  -  142  James Smith  M  16  CINCINNATI WEIGHTLIFTING CLUB  213214  96.6  2017-03-26  -  Local  Ohio"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0yNiIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        },
+        {
+          "meet_id": 2524,
+          "date": "2017-04-23",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "James Smith",
+          "lifter_id": 22856,
+          "membershipNumbers": [
+            {
+              "athleteName": "James Smith",
+              "membershipNumber": "213214",
+              "fullText": "8  -  155  James Smith  M  16  CINCINNATI WEIGHTLIFTING CLUB  213214  100.75  2017-04-23  -  Local  Ohio"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNC0yMyIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        }
+      ],
+      "1010048": [
+        {
+          "meet_id": 1777,
+          "date": "2016-08-07",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "James Smith",
+          "lifter_id": 22856,
+          "membershipNumbers": [
+            {
+              "athleteName": "James Smith",
+              "membershipNumber": "1010048",
+              "fullText": "6  -  147  James Smith  M  40  -  1010048  77  2016-08-07  -  Local  Pennsylvania-West Virginia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0wNyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "James Smith",
+    "splits": [
+      {
+        "newAthleteName": "James Smith (Person 1)",
+        "membershipNumber": "213214",
+        "competitionCount": 3,
+        "competitions": [
+          3713,
+          1927,
+          2524
+        ]
+      },
+      {
+        "newAthleteName": "James Smith (Person 2)",
+        "membershipNumber": "1010048",
+        "competitionCount": 1,
+        "competitions": [
+          1777
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "James Smith",
+    "competitions": [
+      {
+        "meet_id": 3713,
+        "date": "2019-06-08",
+        "age_category": "Open Men's",
+        "weight_class": "109kg",
+        "lifter_name": "James Smith",
+        "lifter_id": 22856,
+        "membershipNumbers": [
+          {
+            "athleteName": "James Smith",
+            "membershipNumber": "213214",
+            "fullText": "3  -  212  James Smith  M  18  CINCINNATI WEIGHTLIFTING CLUB  213214  104.5  2019-06-08  -  Local  Ohio"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNi0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNi0wOCIsIndlaWdodF9jbGFzcyI6ODl9"
+      },
+      {
+        "meet_id": 1927,
+        "date": "2017-03-26",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "James Smith",
+        "lifter_id": 22856,
+        "membershipNumbers": [
+          {
+            "athleteName": "James Smith",
+            "membershipNumber": "213214",
+            "fullText": "14  -  142  James Smith  M  16  CINCINNATI WEIGHTLIFTING CLUB  213214  96.6  2017-03-26  -  Local  Ohio"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0yNiIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 2524,
+        "date": "2017-04-23",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "James Smith",
+        "lifter_id": 22856,
+        "membershipNumbers": [
+          {
+            "athleteName": "James Smith",
+            "membershipNumber": "213214",
+            "fullText": "8  -  155  James Smith  M  16  CINCINNATI WEIGHTLIFTING CLUB  213214  100.75  2017-04-23  -  Local  Ohio"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNC0yMyIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 1777,
+        "date": "2016-08-07",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "James Smith",
+        "lifter_id": 22856,
+        "membershipNumbers": [
+          {
+            "athleteName": "James Smith",
+            "membershipNumber": "1010048",
+            "fullText": "6  -  147  James Smith  M  40  -  1010048  77  2016-08-07  -  Local  Pennsylvania-West Virginia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0wNyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "213214": [
+          {
+            "meet_id": 3713,
+            "date": "2019-06-08",
+            "age_category": "Open Men's",
+            "weight_class": "109kg",
+            "lifter_name": "James Smith",
+            "lifter_id": 22856,
+            "membershipNumbers": [
+              {
+                "athleteName": "James Smith",
+                "membershipNumber": "213214",
+                "fullText": "3  -  212  James Smith  M  18  CINCINNATI WEIGHTLIFTING CLUB  213214  104.5  2019-06-08  -  Local  Ohio"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNi0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNi0wOCIsIndlaWdodF9jbGFzcyI6ODl9"
+          },
+          {
+            "meet_id": 1927,
+            "date": "2017-03-26",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "James Smith",
+            "lifter_id": 22856,
+            "membershipNumbers": [
+              {
+                "athleteName": "James Smith",
+                "membershipNumber": "213214",
+                "fullText": "14  -  142  James Smith  M  16  CINCINNATI WEIGHTLIFTING CLUB  213214  96.6  2017-03-26  -  Local  Ohio"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0yNiIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          },
+          {
+            "meet_id": 2524,
+            "date": "2017-04-23",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "James Smith",
+            "lifter_id": 22856,
+            "membershipNumbers": [
+              {
+                "athleteName": "James Smith",
+                "membershipNumber": "213214",
+                "fullText": "8  -  155  James Smith  M  16  CINCINNATI WEIGHTLIFTING CLUB  213214  100.75  2017-04-23  -  Local  Ohio"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNC0yMyIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          }
+        ],
+        "1010048": [
+          {
+            "meet_id": 1777,
+            "date": "2016-08-07",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "James Smith",
+            "lifter_id": 22856,
+            "membershipNumbers": [
+              {
+                "athleteName": "James Smith",
+                "membershipNumber": "1010048",
+                "fullText": "6  -  147  James Smith  M  40  -  1010048  77  2016-08-07  -  Local  Pennsylvania-West Virginia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0wNyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

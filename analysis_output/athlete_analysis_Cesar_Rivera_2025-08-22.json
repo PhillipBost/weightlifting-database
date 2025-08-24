@@ -1,0 +1,341 @@
+{
+  "timestamp": "2025-08-22T23:41:22.473Z",
+  "athleteName": "Cesar Rivera",
+  "totalCompetitions": 6,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1004504": [
+        {
+          "meet_id": 2654,
+          "date": "2017-08-13",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Cesar Rivera",
+          "lifter_id": 17609,
+          "membershipNumbers": [
+            {
+              "athleteName": "Cesar Rivera",
+              "membershipNumber": "1004504",
+              "fullText": "4  -  245  Cesar Rivera  M  24  Southern California Weightlifting Club  1004504  101.75  2017-08-13  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wOC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wOC0xMyIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        },
+        {
+          "meet_id": 3005,
+          "date": "2018-02-11",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Cesar Rivera",
+          "lifter_id": 17609,
+          "membershipNumbers": [
+            {
+              "athleteName": "Cesar Rivera",
+              "membershipNumber": "1004504",
+              "fullText": "5  -  258  Cesar Rivera  M  25  Southern California Weightlifting Club  1004504  102.99  2018-02-11  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMi0xMSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        },
+        {
+          "meet_id": 3646,
+          "date": "2019-02-10",
+          "age_category": "Open Men's",
+          "weight_class": "109kg",
+          "lifter_name": "Cesar Rivera",
+          "lifter_id": 17609,
+          "membershipNumbers": [
+            {
+              "athleteName": "Cesar Rivera",
+              "membershipNumber": "1004504",
+              "fullText": "5  -  260  Cesar Rivera  M  26  Southern California Weightlifting Club  1004504  107.64  2019-02-10  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMi0xMCIsIndlaWdodF9jbGFzcyI6ODl9"
+        }
+      ],
+      "1004832": [
+        {
+          "meet_id": 1867,
+          "date": "2016-03-20",
+          "age_category": "Open Men's",
+          "weight_class": "69 kg",
+          "lifter_name": "Cesar Rivera",
+          "lifter_id": 17609,
+          "membershipNumbers": [
+            {
+              "athleteName": "Cesar Rivera",
+              "membershipNumber": "1004832",
+              "fullText": "2  -  162  Cesar Rivera  M  28  TEAM VICTORY WEIGHTLIFTING  1004832  69  2016-03-20  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMy0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMy0yMCIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+        },
+        {
+          "meet_id": 1918,
+          "date": "2016-06-11",
+          "age_category": "Open Men's",
+          "weight_class": "69 kg",
+          "lifter_name": "Cesar Rivera",
+          "lifter_id": 17609,
+          "membershipNumbers": [
+            {
+              "athleteName": "Cesar Rivera",
+              "membershipNumber": "1004832",
+              "fullText": "16  -  161  Cesar Rivera  M  28  TEAM VICTORY WEIGHTLIFTING  1004832  68.6  2016-06-11  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0xMSIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 557,
+        "date": "2016-05-14",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Cesar Rivera",
+        "lifter_id": 17609,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0xNCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Cesar Rivera",
+    "splits": [
+      {
+        "newAthleteName": "Cesar Rivera (Person 1)",
+        "membershipNumber": "1004504",
+        "competitionCount": 3,
+        "competitions": [
+          2654,
+          3005,
+          3646
+        ]
+      },
+      {
+        "newAthleteName": "Cesar Rivera (Person 2)",
+        "membershipNumber": "1004832",
+        "competitionCount": 2,
+        "competitions": [
+          1867,
+          1918
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 557,
+        "date": "2016-05-14",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Cesar Rivera",
+        "lifter_id": 17609,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0xNCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Cesar Rivera",
+    "competitions": [
+      {
+        "meet_id": 557,
+        "date": "2016-05-14",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Cesar Rivera",
+        "lifter_id": 17609,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0xNCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 1867,
+        "date": "2016-03-20",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "Cesar Rivera",
+        "lifter_id": 17609,
+        "membershipNumbers": [
+          {
+            "athleteName": "Cesar Rivera",
+            "membershipNumber": "1004832",
+            "fullText": "2  -  162  Cesar Rivera  M  28  TEAM VICTORY WEIGHTLIFTING  1004832  69  2016-03-20  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMy0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMy0yMCIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      },
+      {
+        "meet_id": 1918,
+        "date": "2016-06-11",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "Cesar Rivera",
+        "lifter_id": 17609,
+        "membershipNumbers": [
+          {
+            "athleteName": "Cesar Rivera",
+            "membershipNumber": "1004832",
+            "fullText": "16  -  161  Cesar Rivera  M  28  TEAM VICTORY WEIGHTLIFTING  1004832  68.6  2016-06-11  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0xMSIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      },
+      {
+        "meet_id": 2654,
+        "date": "2017-08-13",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Cesar Rivera",
+        "lifter_id": 17609,
+        "membershipNumbers": [
+          {
+            "athleteName": "Cesar Rivera",
+            "membershipNumber": "1004504",
+            "fullText": "4  -  245  Cesar Rivera  M  24  Southern California Weightlifting Club  1004504  101.75  2017-08-13  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wOC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wOC0xMyIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 3005,
+        "date": "2018-02-11",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Cesar Rivera",
+        "lifter_id": 17609,
+        "membershipNumbers": [
+          {
+            "athleteName": "Cesar Rivera",
+            "membershipNumber": "1004504",
+            "fullText": "5  -  258  Cesar Rivera  M  25  Southern California Weightlifting Club  1004504  102.99  2018-02-11  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMi0xMSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 3646,
+        "date": "2019-02-10",
+        "age_category": "Open Men's",
+        "weight_class": "109kg",
+        "lifter_name": "Cesar Rivera",
+        "lifter_id": 17609,
+        "membershipNumbers": [
+          {
+            "athleteName": "Cesar Rivera",
+            "membershipNumber": "1004504",
+            "fullText": "5  -  260  Cesar Rivera  M  26  Southern California Weightlifting Club  1004504  107.64  2019-02-10  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMi0xMCIsIndlaWdodF9jbGFzcyI6ODl9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1004504": [
+          {
+            "meet_id": 2654,
+            "date": "2017-08-13",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Cesar Rivera",
+            "lifter_id": 17609,
+            "membershipNumbers": [
+              {
+                "athleteName": "Cesar Rivera",
+                "membershipNumber": "1004504",
+                "fullText": "4  -  245  Cesar Rivera  M  24  Southern California Weightlifting Club  1004504  101.75  2017-08-13  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wOC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wOC0xMyIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          },
+          {
+            "meet_id": 3005,
+            "date": "2018-02-11",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Cesar Rivera",
+            "lifter_id": 17609,
+            "membershipNumbers": [
+              {
+                "athleteName": "Cesar Rivera",
+                "membershipNumber": "1004504",
+                "fullText": "5  -  258  Cesar Rivera  M  25  Southern California Weightlifting Club  1004504  102.99  2018-02-11  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMi0xMSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          },
+          {
+            "meet_id": 3646,
+            "date": "2019-02-10",
+            "age_category": "Open Men's",
+            "weight_class": "109kg",
+            "lifter_name": "Cesar Rivera",
+            "lifter_id": 17609,
+            "membershipNumbers": [
+              {
+                "athleteName": "Cesar Rivera",
+                "membershipNumber": "1004504",
+                "fullText": "5  -  260  Cesar Rivera  M  26  Southern California Weightlifting Club  1004504  107.64  2019-02-10  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMi0xMCIsIndlaWdodF9jbGFzcyI6ODl9"
+          }
+        ],
+        "1004832": [
+          {
+            "meet_id": 1867,
+            "date": "2016-03-20",
+            "age_category": "Open Men's",
+            "weight_class": "69 kg",
+            "lifter_name": "Cesar Rivera",
+            "lifter_id": 17609,
+            "membershipNumbers": [
+              {
+                "athleteName": "Cesar Rivera",
+                "membershipNumber": "1004832",
+                "fullText": "2  -  162  Cesar Rivera  M  28  TEAM VICTORY WEIGHTLIFTING  1004832  69  2016-03-20  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMy0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMy0yMCIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+          },
+          {
+            "meet_id": 1918,
+            "date": "2016-06-11",
+            "age_category": "Open Men's",
+            "weight_class": "69 kg",
+            "lifter_name": "Cesar Rivera",
+            "lifter_id": 17609,
+            "membershipNumbers": [
+              {
+                "athleteName": "Cesar Rivera",
+                "membershipNumber": "1004832",
+                "fullText": "16  -  161  Cesar Rivera  M  28  TEAM VICTORY WEIGHTLIFTING  1004832  68.6  2016-06-11  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0xMSIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 557,
+          "date": "2016-05-14",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Cesar Rivera",
+          "lifter_id": 17609,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0xNCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

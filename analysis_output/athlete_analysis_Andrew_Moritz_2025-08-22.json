@@ -1,0 +1,243 @@
+{
+  "timestamp": "2025-08-22T22:17:02.711Z",
+  "athleteName": "Andrew Moritz",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "215226": [
+        {
+          "meet_id": 29,
+          "date": "2015-11-21",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Andrew Moritz",
+          "lifter_id": 11228,
+          "membershipNumbers": [
+            {
+              "athleteName": "Andrew Moritz",
+              "membershipNumber": "215226",
+              "fullText": "7  -  221  Andrew Moritz  M  31  -  215226  88  2015-11-21  -  Local  New York"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMS0yMSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        },
+        {
+          "meet_id": 521,
+          "date": "2016-03-19",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Andrew Moritz",
+          "lifter_id": 11228,
+          "membershipNumbers": [
+            {
+              "athleteName": "Andrew Moritz",
+              "membershipNumber": "215226",
+              "fullText": "27  -  220  Andrew Moritz  M  32  -  215226  90  2016-03-19  -  Local  New York"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMy0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMy0xOSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ],
+      "1047972": [
+        {
+          "meet_id": 4289,
+          "date": "2019-12-15",
+          "age_category": "Open Men's",
+          "weight_class": "109kg",
+          "lifter_name": "Andrew Moritz",
+          "lifter_id": 11228,
+          "membershipNumbers": [
+            {
+              "athleteName": "Andrew Moritz",
+              "membershipNumber": "1047972",
+              "fullText": "4  -  230  Andrew Moritz  M  35  Strong Weightlifting  1047972  108.4  2019-12-15  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMi0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMi0xNSIsIndlaWdodF9jbGFzcyI6ODl9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 61,
+        "date": "2015-10-04",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Andrew Moritz",
+        "lifter_id": 11228,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0wNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Andrew Moritz",
+    "splits": [
+      {
+        "newAthleteName": "Andrew Moritz (Person 1)",
+        "membershipNumber": "215226",
+        "competitionCount": 2,
+        "competitions": [
+          29,
+          521
+        ]
+      },
+      {
+        "newAthleteName": "Andrew Moritz (Person 2)",
+        "membershipNumber": "1047972",
+        "competitionCount": 1,
+        "competitions": [
+          4289
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 61,
+        "date": "2015-10-04",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Andrew Moritz",
+        "lifter_id": 11228,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0wNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Andrew Moritz",
+    "competitions": [
+      {
+        "meet_id": 29,
+        "date": "2015-11-21",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Andrew Moritz",
+        "lifter_id": 11228,
+        "membershipNumbers": [
+          {
+            "athleteName": "Andrew Moritz",
+            "membershipNumber": "215226",
+            "fullText": "7  -  221  Andrew Moritz  M  31  -  215226  88  2015-11-21  -  Local  New York"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMS0yMSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 521,
+        "date": "2016-03-19",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Andrew Moritz",
+        "lifter_id": 11228,
+        "membershipNumbers": [
+          {
+            "athleteName": "Andrew Moritz",
+            "membershipNumber": "215226",
+            "fullText": "27  -  220  Andrew Moritz  M  32  -  215226  90  2016-03-19  -  Local  New York"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMy0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMy0xOSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 4289,
+        "date": "2019-12-15",
+        "age_category": "Open Men's",
+        "weight_class": "109kg",
+        "lifter_name": "Andrew Moritz",
+        "lifter_id": 11228,
+        "membershipNumbers": [
+          {
+            "athleteName": "Andrew Moritz",
+            "membershipNumber": "1047972",
+            "fullText": "4  -  230  Andrew Moritz  M  35  Strong Weightlifting  1047972  108.4  2019-12-15  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMi0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMi0xNSIsIndlaWdodF9jbGFzcyI6ODl9"
+      },
+      {
+        "meet_id": 61,
+        "date": "2015-10-04",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Andrew Moritz",
+        "lifter_id": 11228,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0wNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "215226": [
+          {
+            "meet_id": 29,
+            "date": "2015-11-21",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Andrew Moritz",
+            "lifter_id": 11228,
+            "membershipNumbers": [
+              {
+                "athleteName": "Andrew Moritz",
+                "membershipNumber": "215226",
+                "fullText": "7  -  221  Andrew Moritz  M  31  -  215226  88  2015-11-21  -  Local  New York"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMS0yMSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          },
+          {
+            "meet_id": 521,
+            "date": "2016-03-19",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Andrew Moritz",
+            "lifter_id": 11228,
+            "membershipNumbers": [
+              {
+                "athleteName": "Andrew Moritz",
+                "membershipNumber": "215226",
+                "fullText": "27  -  220  Andrew Moritz  M  32  -  215226  90  2016-03-19  -  Local  New York"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMy0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMy0xOSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          }
+        ],
+        "1047972": [
+          {
+            "meet_id": 4289,
+            "date": "2019-12-15",
+            "age_category": "Open Men's",
+            "weight_class": "109kg",
+            "lifter_name": "Andrew Moritz",
+            "lifter_id": 11228,
+            "membershipNumbers": [
+              {
+                "athleteName": "Andrew Moritz",
+                "membershipNumber": "1047972",
+                "fullText": "4  -  230  Andrew Moritz  M  35  Strong Weightlifting  1047972  108.4  2019-12-15  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMi0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMi0xNSIsIndlaWdodF9jbGFzcyI6ODl9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 61,
+          "date": "2015-10-04",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Andrew Moritz",
+          "lifter_id": 11228,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0wNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

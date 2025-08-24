@@ -1,0 +1,254 @@
+{
+  "timestamp": "2025-08-22T04:53:42.779Z",
+  "athleteName": "Justin Smith",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 3,
+    "membershipGroups": {
+      "180238": [
+        {
+          "meet_id": 760,
+          "date": "2013-02-10",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Justin Smith",
+          "lifter_id": 5553,
+          "membershipNumbers": [
+            {
+              "athleteName": "Justin Smith",
+              "membershipNumber": "180238",
+              "fullText": "5  -  195  Justin Smith  M  19  -  180238  87.6  2013-02-10  -  Local  New Jersey"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMi0xMCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ],
+      "1002113": [
+        {
+          "meet_id": 2289,
+          "date": "2017-03-25",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Justin Smith",
+          "lifter_id": 5553,
+          "membershipNumbers": [
+            {
+              "athleteName": "Justin Smith",
+              "membershipNumber": "1002113",
+              "fullText": "21  -  223  Justin Smith  M  29  -  1002113  90.9  2017-03-25  -  Local  Georgia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0yNSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ],
+      "1046476": [
+        {
+          "meet_id": 4299,
+          "date": "2019-11-03",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Justin Smith",
+          "lifter_id": 5553,
+          "membershipNumbers": [
+            {
+              "athleteName": "Justin Smith",
+              "membershipNumber": "1046476",
+              "fullText": "10  -  228  Justin Smith  M  34  -  1046476  79.7  2019-11-03  -  Local  Illinois"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0wMyIsIndlaWdodF9jbGFzcyI6ODV9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 3580,
+        "date": "2018-10-20",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Justin Smith",
+        "lifter_id": 5553,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yMCIsIndlaWdodF9jbGFzcyI6ODZ9"
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Justin Smith",
+    "splits": [
+      {
+        "newAthleteName": "Justin Smith (Person 1)",
+        "membershipNumber": "180238",
+        "competitionCount": 1,
+        "competitions": [
+          760
+        ]
+      },
+      {
+        "newAthleteName": "Justin Smith (Person 2)",
+        "membershipNumber": "1002113",
+        "competitionCount": 1,
+        "competitions": [
+          2289
+        ]
+      },
+      {
+        "newAthleteName": "Justin Smith (Person 3)",
+        "membershipNumber": "1046476",
+        "competitionCount": 1,
+        "competitions": [
+          4299
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 3580,
+        "date": "2018-10-20",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Justin Smith",
+        "lifter_id": 5553,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yMCIsIndlaWdodF9jbGFzcyI6ODZ9"
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Justin Smith",
+    "competitions": [
+      {
+        "meet_id": 760,
+        "date": "2013-02-10",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Justin Smith",
+        "lifter_id": 5553,
+        "membershipNumbers": [
+          {
+            "athleteName": "Justin Smith",
+            "membershipNumber": "180238",
+            "fullText": "5  -  195  Justin Smith  M  19  -  180238  87.6  2013-02-10  -  Local  New Jersey"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMi0xMCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 2289,
+        "date": "2017-03-25",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Justin Smith",
+        "lifter_id": 5553,
+        "membershipNumbers": [
+          {
+            "athleteName": "Justin Smith",
+            "membershipNumber": "1002113",
+            "fullText": "21  -  223  Justin Smith  M  29  -  1002113  90.9  2017-03-25  -  Local  Georgia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0yNSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 4299,
+        "date": "2019-11-03",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Justin Smith",
+        "lifter_id": 5553,
+        "membershipNumbers": [
+          {
+            "athleteName": "Justin Smith",
+            "membershipNumber": "1046476",
+            "fullText": "10  -  228  Justin Smith  M  34  -  1046476  79.7  2019-11-03  -  Local  Illinois"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0wMyIsIndlaWdodF9jbGFzcyI6ODV9"
+      },
+      {
+        "meet_id": 3580,
+        "date": "2018-10-20",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Justin Smith",
+        "lifter_id": 5553,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yMCIsIndlaWdodF9jbGFzcyI6ODZ9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 3,
+      "membershipGroups": {
+        "180238": [
+          {
+            "meet_id": 760,
+            "date": "2013-02-10",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Justin Smith",
+            "lifter_id": 5553,
+            "membershipNumbers": [
+              {
+                "athleteName": "Justin Smith",
+                "membershipNumber": "180238",
+                "fullText": "5  -  195  Justin Smith  M  19  -  180238  87.6  2013-02-10  -  Local  New Jersey"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMi0xMCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          }
+        ],
+        "1002113": [
+          {
+            "meet_id": 2289,
+            "date": "2017-03-25",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Justin Smith",
+            "lifter_id": 5553,
+            "membershipNumbers": [
+              {
+                "athleteName": "Justin Smith",
+                "membershipNumber": "1002113",
+                "fullText": "21  -  223  Justin Smith  M  29  -  1002113  90.9  2017-03-25  -  Local  Georgia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0yNSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          }
+        ],
+        "1046476": [
+          {
+            "meet_id": 4299,
+            "date": "2019-11-03",
+            "age_category": "Open Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Justin Smith",
+            "lifter_id": 5553,
+            "membershipNumbers": [
+              {
+                "athleteName": "Justin Smith",
+                "membershipNumber": "1046476",
+                "fullText": "10  -  228  Justin Smith  M  34  -  1046476  79.7  2019-11-03  -  Local  Illinois"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0wMyIsIndlaWdodF9jbGFzcyI6ODV9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 3580,
+          "date": "2018-10-20",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "Justin Smith",
+          "lifter_id": 5553,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yMCIsIndlaWdodF9jbGFzcyI6ODZ9"
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

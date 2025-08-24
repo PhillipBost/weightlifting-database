@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T09:04:15.148Z",
+  "athleteName": "Raul Reyes",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1066089": [
+        {
+          "meet_id": 5503,
+          "date": "2022-09-24",
+          "age_category": "Junior Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Raul Reyes",
+          "lifter_id": 53840,
+          "membershipNumbers": [
+            {
+              "athleteName": "Raul Reyes",
+              "membershipNumber": "1066089",
+              "fullText": "4  -  138  Raul Reyes  M  17  Deviant Strength  1066089  81  2022-09-24  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wOS0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wOS0yNCIsIndlaWdodF9jbGFzcyI6NjV9"
+        }
+      ],
+      "1073809": [
+        {
+          "meet_id": 6185,
+          "date": "2024-01-13",
+          "age_category": "Open Men's",
+          "weight_class": "+109kg",
+          "lifter_name": "Raul Reyes",
+          "lifter_id": 53840,
+          "membershipNumbers": [
+            {
+              "athleteName": "Raul Reyes",
+              "membershipNumber": "1073809",
+              "fullText": "9  -  144  Raul Reyes  M  31  Dynamis Barbell Club  1073809  127.7  2024-01-13  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMS0xMyIsIndlaWdodF9jbGFzcyI6OTB9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Raul Reyes",
+    "splits": [
+      {
+        "newAthleteName": "Raul Reyes (Person 1)",
+        "membershipNumber": "1066089",
+        "competitionCount": 1,
+        "competitions": [
+          5503
+        ]
+      },
+      {
+        "newAthleteName": "Raul Reyes (Person 2)",
+        "membershipNumber": "1073809",
+        "competitionCount": 1,
+        "competitions": [
+          6185
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Raul Reyes",
+    "competitions": [
+      {
+        "meet_id": 5503,
+        "date": "2022-09-24",
+        "age_category": "Junior Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Raul Reyes",
+        "lifter_id": 53840,
+        "membershipNumbers": [
+          {
+            "athleteName": "Raul Reyes",
+            "membershipNumber": "1066089",
+            "fullText": "4  -  138  Raul Reyes  M  17  Deviant Strength  1066089  81  2022-09-24  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wOS0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wOS0yNCIsIndlaWdodF9jbGFzcyI6NjV9"
+      },
+      {
+        "meet_id": 6185,
+        "date": "2024-01-13",
+        "age_category": "Open Men's",
+        "weight_class": "+109kg",
+        "lifter_name": "Raul Reyes",
+        "lifter_id": 53840,
+        "membershipNumbers": [
+          {
+            "athleteName": "Raul Reyes",
+            "membershipNumber": "1073809",
+            "fullText": "9  -  144  Raul Reyes  M  31  Dynamis Barbell Club  1073809  127.7  2024-01-13  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMS0xMyIsIndlaWdodF9jbGFzcyI6OTB9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1066089": [
+          {
+            "meet_id": 5503,
+            "date": "2022-09-24",
+            "age_category": "Junior Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Raul Reyes",
+            "lifter_id": 53840,
+            "membershipNumbers": [
+              {
+                "athleteName": "Raul Reyes",
+                "membershipNumber": "1066089",
+                "fullText": "4  -  138  Raul Reyes  M  17  Deviant Strength  1066089  81  2022-09-24  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wOS0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wOS0yNCIsIndlaWdodF9jbGFzcyI6NjV9"
+          }
+        ],
+        "1073809": [
+          {
+            "meet_id": 6185,
+            "date": "2024-01-13",
+            "age_category": "Open Men's",
+            "weight_class": "+109kg",
+            "lifter_name": "Raul Reyes",
+            "lifter_id": 53840,
+            "membershipNumbers": [
+              {
+                "athleteName": "Raul Reyes",
+                "membershipNumber": "1073809",
+                "fullText": "9  -  144  Raul Reyes  M  31  Dynamis Barbell Club  1073809  127.7  2024-01-13  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMS0xMyIsIndlaWdodF9jbGFzcyI6OTB9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

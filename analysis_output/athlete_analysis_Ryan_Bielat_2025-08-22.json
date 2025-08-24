@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T07:49:00.101Z",
+  "athleteName": "Ryan Bielat",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1018562": [
+        {
+          "meet_id": 2554,
+          "date": "2017-05-07",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Ryan Bielat",
+          "lifter_id": 30500,
+          "membershipNumbers": [
+            {
+              "athleteName": "Ryan Bielat",
+              "membershipNumber": "1018562",
+              "fullText": "8  -  213  Ryan Bielat  M  35  -  1018562  74.5  2017-05-07  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNS0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNS0wNyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        }
+      ],
+      "1069308": [
+        {
+          "meet_id": 5828,
+          "date": "2023-04-29",
+          "age_category": "Men's Masters (40-44)",
+          "weight_class": "89kg",
+          "lifter_name": "Ryan Bielat",
+          "lifter_id": 30500,
+          "membershipNumbers": [
+            {
+              "athleteName": "Ryan Bielat",
+              "membershipNumber": "1069308",
+              "fullText": "3  -  205  Ryan Bielat  M  41  EAST COAST GOLD W/L TEAM  1069308  88  2023-04-29  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0yOSIsIndlaWdodF9jbGFzcyI6MTI2fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Ryan Bielat",
+    "splits": [
+      {
+        "newAthleteName": "Ryan Bielat (Person 1)",
+        "membershipNumber": "1018562",
+        "competitionCount": 1,
+        "competitions": [
+          2554
+        ]
+      },
+      {
+        "newAthleteName": "Ryan Bielat (Person 2)",
+        "membershipNumber": "1069308",
+        "competitionCount": 1,
+        "competitions": [
+          5828
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Ryan Bielat",
+    "competitions": [
+      {
+        "meet_id": 2554,
+        "date": "2017-05-07",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Ryan Bielat",
+        "lifter_id": 30500,
+        "membershipNumbers": [
+          {
+            "athleteName": "Ryan Bielat",
+            "membershipNumber": "1018562",
+            "fullText": "8  -  213  Ryan Bielat  M  35  -  1018562  74.5  2017-05-07  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNS0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNS0wNyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 5828,
+        "date": "2023-04-29",
+        "age_category": "Men's Masters (40-44)",
+        "weight_class": "89kg",
+        "lifter_name": "Ryan Bielat",
+        "lifter_id": 30500,
+        "membershipNumbers": [
+          {
+            "athleteName": "Ryan Bielat",
+            "membershipNumber": "1069308",
+            "fullText": "3  -  205  Ryan Bielat  M  41  EAST COAST GOLD W/L TEAM  1069308  88  2023-04-29  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0yOSIsIndlaWdodF9jbGFzcyI6MTI2fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1018562": [
+          {
+            "meet_id": 2554,
+            "date": "2017-05-07",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Ryan Bielat",
+            "lifter_id": 30500,
+            "membershipNumbers": [
+              {
+                "athleteName": "Ryan Bielat",
+                "membershipNumber": "1018562",
+                "fullText": "8  -  213  Ryan Bielat  M  35  -  1018562  74.5  2017-05-07  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNS0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNS0wNyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          }
+        ],
+        "1069308": [
+          {
+            "meet_id": 5828,
+            "date": "2023-04-29",
+            "age_category": "Men's Masters (40-44)",
+            "weight_class": "89kg",
+            "lifter_name": "Ryan Bielat",
+            "lifter_id": 30500,
+            "membershipNumbers": [
+              {
+                "athleteName": "Ryan Bielat",
+                "membershipNumber": "1069308",
+                "fullText": "3  -  205  Ryan Bielat  M  41  EAST COAST GOLD W/L TEAM  1069308  88  2023-04-29  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0yOSIsIndlaWdodF9jbGFzcyI6MTI2fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

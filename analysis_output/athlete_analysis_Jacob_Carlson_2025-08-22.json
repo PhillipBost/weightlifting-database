@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T22:17:22.433Z",
+  "athleteName": "Jacob Carlson",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1015076": [
+        {
+          "meet_id": 2484,
+          "date": "2017-02-11",
+          "age_category": "Open Men's",
+          "weight_class": "69 kg",
+          "lifter_name": "Jacob Carlson",
+          "lifter_id": 29984,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jacob Carlson",
+              "membershipNumber": "1015076",
+              "fullText": "28  -  108  Jacob Carlson  M  15  BURNSVILLE WEIGHTLIFTING CLUB  1015076  65  2017-02-11  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xMSIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+        }
+      ],
+      "1079273": [
+        {
+          "meet_id": 6672,
+          "date": "2024-12-14",
+          "age_category": "Men's 13 Under Age Group",
+          "weight_class": "49kg",
+          "lifter_name": "Jacob Carlson",
+          "lifter_id": 29984,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jacob Carlson",
+              "membershipNumber": "1079273",
+              "fullText": "8  -  48  Jacob Carlson  M  12  Park Christian Weightlifting Club  1079273  44.9  2024-12-14  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMi0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMi0xNCIsIndlaWdodF9jbGFzcyI6NDV9"
+        },
+        {
+          "meet_id": 6761,
+          "date": "2025-02-08",
+          "age_category": "Men's 13 Under Age Group",
+          "weight_class": "49kg",
+          "lifter_name": "Jacob Carlson",
+          "lifter_id": 29984,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jacob Carlson",
+              "membershipNumber": "1079273",
+              "fullText": "4  -  55  Jacob Carlson  M  13  Park Christian Weightlifting Club  1079273  45.3  2025-02-08  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMi0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMi0wOCIsIndlaWdodF9jbGFzcyI6NDV9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Jacob Carlson",
+    "splits": [
+      {
+        "newAthleteName": "Jacob Carlson (Person 1)",
+        "membershipNumber": "1015076",
+        "competitionCount": 1,
+        "competitions": [
+          2484
+        ]
+      },
+      {
+        "newAthleteName": "Jacob Carlson (Person 2)",
+        "membershipNumber": "1079273",
+        "competitionCount": 2,
+        "competitions": [
+          6672,
+          6761
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Jacob Carlson",
+    "competitions": [
+      {
+        "meet_id": 2484,
+        "date": "2017-02-11",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "Jacob Carlson",
+        "lifter_id": 29984,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jacob Carlson",
+            "membershipNumber": "1015076",
+            "fullText": "28  -  108  Jacob Carlson  M  15  BURNSVILLE WEIGHTLIFTING CLUB  1015076  65  2017-02-11  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xMSIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      },
+      {
+        "meet_id": 6672,
+        "date": "2024-12-14",
+        "age_category": "Men's 13 Under Age Group",
+        "weight_class": "49kg",
+        "lifter_name": "Jacob Carlson",
+        "lifter_id": 29984,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jacob Carlson",
+            "membershipNumber": "1079273",
+            "fullText": "8  -  48  Jacob Carlson  M  12  Park Christian Weightlifting Club  1079273  44.9  2024-12-14  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMi0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMi0xNCIsIndlaWdodF9jbGFzcyI6NDV9"
+      },
+      {
+        "meet_id": 6761,
+        "date": "2025-02-08",
+        "age_category": "Men's 13 Under Age Group",
+        "weight_class": "49kg",
+        "lifter_name": "Jacob Carlson",
+        "lifter_id": 29984,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jacob Carlson",
+            "membershipNumber": "1079273",
+            "fullText": "4  -  55  Jacob Carlson  M  13  Park Christian Weightlifting Club  1079273  45.3  2025-02-08  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMi0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMi0wOCIsIndlaWdodF9jbGFzcyI6NDV9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1015076": [
+          {
+            "meet_id": 2484,
+            "date": "2017-02-11",
+            "age_category": "Open Men's",
+            "weight_class": "69 kg",
+            "lifter_name": "Jacob Carlson",
+            "lifter_id": 29984,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jacob Carlson",
+                "membershipNumber": "1015076",
+                "fullText": "28  -  108  Jacob Carlson  M  15  BURNSVILLE WEIGHTLIFTING CLUB  1015076  65  2017-02-11  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xMSIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+          }
+        ],
+        "1079273": [
+          {
+            "meet_id": 6672,
+            "date": "2024-12-14",
+            "age_category": "Men's 13 Under Age Group",
+            "weight_class": "49kg",
+            "lifter_name": "Jacob Carlson",
+            "lifter_id": 29984,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jacob Carlson",
+                "membershipNumber": "1079273",
+                "fullText": "8  -  48  Jacob Carlson  M  12  Park Christian Weightlifting Club  1079273  44.9  2024-12-14  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMi0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMi0xNCIsIndlaWdodF9jbGFzcyI6NDV9"
+          },
+          {
+            "meet_id": 6761,
+            "date": "2025-02-08",
+            "age_category": "Men's 13 Under Age Group",
+            "weight_class": "49kg",
+            "lifter_name": "Jacob Carlson",
+            "lifter_id": 29984,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jacob Carlson",
+                "membershipNumber": "1079273",
+                "fullText": "4  -  55  Jacob Carlson  M  13  Park Christian Weightlifting Club  1079273  45.3  2025-02-08  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMi0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMi0wOCIsIndlaWdodF9jbGFzcyI6NDV9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

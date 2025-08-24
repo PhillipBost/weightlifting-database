@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T20:03:46.550Z",
+  "athleteName": "Andrea Smith",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "188628": [
+        {
+          "meet_id": 606,
+          "date": "2013-10-12",
+          "age_category": "Open Women's",
+          "weight_class": "69 kg",
+          "lifter_name": "Andrea Smith",
+          "lifter_id": 3944,
+          "membershipNumbers": [
+            {
+              "athleteName": "Andrea Smith",
+              "membershipNumber": "188628",
+              "fullText": "4  -  115  Andrea Smith  F  30  -  188628  66.1  2013-10-12  -  Local  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMC0xMiIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+        }
+      ],
+      "1076757": [
+        {
+          "meet_id": 6582,
+          "date": "2024-10-19",
+          "age_category": "Women's Masters (40-44)",
+          "weight_class": "+87kg",
+          "lifter_name": "Andrea Smith",
+          "lifter_id": 3944,
+          "membershipNumbers": [
+            {
+              "athleteName": "Andrea Smith",
+              "membershipNumber": "1076757",
+              "fullText": "7  -  118  Andrea Smith  F  43  Iron Barbell Collective, LLC  1076757  110  2024-10-19  -  Local  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0xOSIsIndlaWdodF9jbGFzcyI6MTQwfQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Andrea Smith",
+    "splits": [
+      {
+        "newAthleteName": "Andrea Smith (Person 1)",
+        "membershipNumber": "188628",
+        "competitionCount": 1,
+        "competitions": [
+          606
+        ]
+      },
+      {
+        "newAthleteName": "Andrea Smith (Person 2)",
+        "membershipNumber": "1076757",
+        "competitionCount": 1,
+        "competitions": [
+          6582
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Andrea Smith",
+    "competitions": [
+      {
+        "meet_id": 606,
+        "date": "2013-10-12",
+        "age_category": "Open Women's",
+        "weight_class": "69 kg",
+        "lifter_name": "Andrea Smith",
+        "lifter_id": 3944,
+        "membershipNumbers": [
+          {
+            "athleteName": "Andrea Smith",
+            "membershipNumber": "188628",
+            "fullText": "4  -  115  Andrea Smith  F  30  -  188628  66.1  2013-10-12  -  Local  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMC0xMiIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+      },
+      {
+        "meet_id": 6582,
+        "date": "2024-10-19",
+        "age_category": "Women's Masters (40-44)",
+        "weight_class": "+87kg",
+        "lifter_name": "Andrea Smith",
+        "lifter_id": 3944,
+        "membershipNumbers": [
+          {
+            "athleteName": "Andrea Smith",
+            "membershipNumber": "1076757",
+            "fullText": "7  -  118  Andrea Smith  F  43  Iron Barbell Collective, LLC  1076757  110  2024-10-19  -  Local  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0xOSIsIndlaWdodF9jbGFzcyI6MTQwfQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "188628": [
+          {
+            "meet_id": 606,
+            "date": "2013-10-12",
+            "age_category": "Open Women's",
+            "weight_class": "69 kg",
+            "lifter_name": "Andrea Smith",
+            "lifter_id": 3944,
+            "membershipNumbers": [
+              {
+                "athleteName": "Andrea Smith",
+                "membershipNumber": "188628",
+                "fullText": "4  -  115  Andrea Smith  F  30  -  188628  66.1  2013-10-12  -  Local  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMC0xMiIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+          }
+        ],
+        "1076757": [
+          {
+            "meet_id": 6582,
+            "date": "2024-10-19",
+            "age_category": "Women's Masters (40-44)",
+            "weight_class": "+87kg",
+            "lifter_name": "Andrea Smith",
+            "lifter_id": 3944,
+            "membershipNumbers": [
+              {
+                "athleteName": "Andrea Smith",
+                "membershipNumber": "1076757",
+                "fullText": "7  -  118  Andrea Smith  F  43  Iron Barbell Collective, LLC  1076757  110  2024-10-19  -  Local  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0xOSIsIndlaWdodF9jbGFzcyI6MTQwfQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

@@ -1,0 +1,274 @@
+{
+  "timestamp": "2025-08-22T18:04:04.720Z",
+  "athleteName": "Brad Davis",
+  "totalCompetitions": 5,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "187361": [
+        {
+          "meet_id": 689,
+          "date": "2013-09-28",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Brad Davis",
+          "lifter_id": 4561,
+          "membershipNumbers": [
+            {
+              "athleteName": "Brad Davis",
+              "membershipNumber": "187361",
+              "fullText": "19  -  154  Brad Davis  M  28  -  187361  70.5  2013-09-28  -  Local  Tennessee-Kentucky"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wOS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wOS0yOCIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        }
+      ],
+      "216667": [
+        {
+          "meet_id": 2217,
+          "date": "2016-10-16",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Brad Davis",
+          "lifter_id": 4561,
+          "membershipNumbers": [
+            {
+              "athleteName": "Brad Davis",
+              "membershipNumber": "216667",
+              "fullText": "27  -  179  Brad Davis  M  41  -  216667  102.74  2016-10-16  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0xNiIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 2074,
+        "date": "2016-08-27",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Brad Davis",
+        "lifter_id": 4561,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 1766,
+        "date": "2016-07-09",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Brad Davis",
+        "lifter_id": 4561,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 1854,
+        "date": "2016-06-18",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Brad Davis",
+        "lifter_id": 4561,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Brad Davis",
+    "splits": [
+      {
+        "newAthleteName": "Brad Davis (Person 1)",
+        "membershipNumber": "187361",
+        "competitionCount": 1,
+        "competitions": [
+          689
+        ]
+      },
+      {
+        "newAthleteName": "Brad Davis (Person 2)",
+        "membershipNumber": "216667",
+        "competitionCount": 1,
+        "competitions": [
+          2217
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 2074,
+        "date": "2016-08-27",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Brad Davis",
+        "lifter_id": 4561,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 1766,
+        "date": "2016-07-09",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Brad Davis",
+        "lifter_id": 4561,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 1854,
+        "date": "2016-06-18",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Brad Davis",
+        "lifter_id": 4561,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Brad Davis",
+    "competitions": [
+      {
+        "meet_id": 689,
+        "date": "2013-09-28",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Brad Davis",
+        "lifter_id": 4561,
+        "membershipNumbers": [
+          {
+            "athleteName": "Brad Davis",
+            "membershipNumber": "187361",
+            "fullText": "19  -  154  Brad Davis  M  28  -  187361  70.5  2013-09-28  -  Local  Tennessee-Kentucky"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wOS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wOS0yOCIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 2074,
+        "date": "2016-08-27",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Brad Davis",
+        "lifter_id": 4561,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 1766,
+        "date": "2016-07-09",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Brad Davis",
+        "lifter_id": 4561,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 2217,
+        "date": "2016-10-16",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Brad Davis",
+        "lifter_id": 4561,
+        "membershipNumbers": [
+          {
+            "athleteName": "Brad Davis",
+            "membershipNumber": "216667",
+            "fullText": "27  -  179  Brad Davis  M  41  -  216667  102.74  2016-10-16  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0xNiIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 1854,
+        "date": "2016-06-18",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Brad Davis",
+        "lifter_id": 4561,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "187361": [
+          {
+            "meet_id": 689,
+            "date": "2013-09-28",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Brad Davis",
+            "lifter_id": 4561,
+            "membershipNumbers": [
+              {
+                "athleteName": "Brad Davis",
+                "membershipNumber": "187361",
+                "fullText": "19  -  154  Brad Davis  M  28  -  187361  70.5  2013-09-28  -  Local  Tennessee-Kentucky"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wOS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wOS0yOCIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          }
+        ],
+        "216667": [
+          {
+            "meet_id": 2217,
+            "date": "2016-10-16",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Brad Davis",
+            "lifter_id": 4561,
+            "membershipNumbers": [
+              {
+                "athleteName": "Brad Davis",
+                "membershipNumber": "216667",
+                "fullText": "27  -  179  Brad Davis  M  41  -  216667  102.74  2016-10-16  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0xNiIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 2074,
+          "date": "2016-08-27",
+          "age_category": "Open Men's",
+          "weight_class": "+105 kg",
+          "lifter_name": "Brad Davis",
+          "lifter_id": 4561,
+          "membershipNumbers": [],
+          "error": "No division code found for: \"Open Men's +105 kg\""
+        },
+        {
+          "meet_id": 1766,
+          "date": "2016-07-09",
+          "age_category": "Open Men's",
+          "weight_class": "+105 kg",
+          "lifter_name": "Brad Davis",
+          "lifter_id": 4561,
+          "membershipNumbers": [],
+          "error": "No division code found for: \"Open Men's +105 kg\""
+        },
+        {
+          "meet_id": 1854,
+          "date": "2016-06-18",
+          "age_category": "Open Men's",
+          "weight_class": "+105 kg",
+          "lifter_name": "Brad Davis",
+          "lifter_id": 4561,
+          "membershipNumbers": [],
+          "error": "No division code found for: \"Open Men's +105 kg\""
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

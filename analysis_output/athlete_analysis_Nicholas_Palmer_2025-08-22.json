@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-22T03:53:00.180Z",
+  "athleteName": "Nicholas Palmer",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "176025": [
+        {
+          "meet_id": 762,
+          "date": "2013-06-01",
+          "age_category": "Open Men's",
+          "weight_class": "62 kg",
+          "lifter_name": "Nicholas Palmer",
+          "lifter_id": 637,
+          "membershipNumbers": [
+            {
+              "athleteName": "Nicholas Palmer",
+              "membershipNumber": "176025",
+              "fullText": "3  -  160  Nicholas Palmer  M  18  DEVILS WEIGHTLIFTING TEAM  176025  60.53  2013-06-01  -  Local  New Jersey"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNi0wMSIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+        },
+        {
+          "meet_id": 652,
+          "date": "2012-09-16",
+          "age_category": "Open Men's",
+          "weight_class": "62 kg",
+          "lifter_name": "Nicholas Palmer",
+          "lifter_id": 637,
+          "membershipNumbers": [
+            {
+              "athleteName": "Nicholas Palmer",
+              "membershipNumber": "176025",
+              "fullText": "4  -  145  Nicholas Palmer  M  17  DEVILS WEIGHTLIFTING TEAM  176025  58.8  2012-09-16  -  Local  New Jersey"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wOS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wOS0xNiIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+        },
+        {
+          "meet_id": 757,
+          "date": "2012-08-04",
+          "age_category": "Open Men's",
+          "weight_class": "62 kg",
+          "lifter_name": "Nicholas Palmer",
+          "lifter_id": 637,
+          "membershipNumbers": [
+            {
+              "athleteName": "Nicholas Palmer",
+              "membershipNumber": "176025",
+              "fullText": "2  -  140  Nicholas Palmer  M  17  DEVILS WEIGHTLIFTING TEAM  176025  59.6  2012-08-04  -  Local  New Jersey"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wOC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wOC0wNCIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+        }
+      ],
+      "1011995": [
+        {
+          "meet_id": 2168,
+          "date": "2016-10-09",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Nicholas Palmer",
+          "lifter_id": 637,
+          "membershipNumbers": [
+            {
+              "athleteName": "Nicholas Palmer",
+              "membershipNumber": "1011995",
+              "fullText": "13  -  206  Nicholas Palmer  M  36  -  1011995  89.95  2016-10-09  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0wOSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Nicholas Palmer",
+    "splits": [
+      {
+        "newAthleteName": "Nicholas Palmer (Person 1)",
+        "membershipNumber": "176025",
+        "competitionCount": 3,
+        "competitions": [
+          762,
+          652,
+          757
+        ]
+      },
+      {
+        "newAthleteName": "Nicholas Palmer (Person 2)",
+        "membershipNumber": "1011995",
+        "competitionCount": 1,
+        "competitions": [
+          2168
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Nicholas Palmer",
+    "competitions": [
+      {
+        "meet_id": 762,
+        "date": "2013-06-01",
+        "age_category": "Open Men's",
+        "weight_class": "62 kg",
+        "lifter_name": "Nicholas Palmer",
+        "lifter_id": 637,
+        "membershipNumbers": [
+          {
+            "athleteName": "Nicholas Palmer",
+            "membershipNumber": "176025",
+            "fullText": "3  -  160  Nicholas Palmer  M  18  DEVILS WEIGHTLIFTING TEAM  176025  60.53  2013-06-01  -  Local  New Jersey"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNi0wMSIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+      },
+      {
+        "meet_id": 2168,
+        "date": "2016-10-09",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Nicholas Palmer",
+        "lifter_id": 637,
+        "membershipNumbers": [
+          {
+            "athleteName": "Nicholas Palmer",
+            "membershipNumber": "1011995",
+            "fullText": "13  -  206  Nicholas Palmer  M  36  -  1011995  89.95  2016-10-09  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0wOSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 652,
+        "date": "2012-09-16",
+        "age_category": "Open Men's",
+        "weight_class": "62 kg",
+        "lifter_name": "Nicholas Palmer",
+        "lifter_id": 637,
+        "membershipNumbers": [
+          {
+            "athleteName": "Nicholas Palmer",
+            "membershipNumber": "176025",
+            "fullText": "4  -  145  Nicholas Palmer  M  17  DEVILS WEIGHTLIFTING TEAM  176025  58.8  2012-09-16  -  Local  New Jersey"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wOS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wOS0xNiIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+      },
+      {
+        "meet_id": 757,
+        "date": "2012-08-04",
+        "age_category": "Open Men's",
+        "weight_class": "62 kg",
+        "lifter_name": "Nicholas Palmer",
+        "lifter_id": 637,
+        "membershipNumbers": [
+          {
+            "athleteName": "Nicholas Palmer",
+            "membershipNumber": "176025",
+            "fullText": "2  -  140  Nicholas Palmer  M  17  DEVILS WEIGHTLIFTING TEAM  176025  59.6  2012-08-04  -  Local  New Jersey"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wOC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wOC0wNCIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "176025": [
+          {
+            "meet_id": 762,
+            "date": "2013-06-01",
+            "age_category": "Open Men's",
+            "weight_class": "62 kg",
+            "lifter_name": "Nicholas Palmer",
+            "lifter_id": 637,
+            "membershipNumbers": [
+              {
+                "athleteName": "Nicholas Palmer",
+                "membershipNumber": "176025",
+                "fullText": "3  -  160  Nicholas Palmer  M  18  DEVILS WEIGHTLIFTING TEAM  176025  60.53  2013-06-01  -  Local  New Jersey"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNi0wMSIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+          },
+          {
+            "meet_id": 652,
+            "date": "2012-09-16",
+            "age_category": "Open Men's",
+            "weight_class": "62 kg",
+            "lifter_name": "Nicholas Palmer",
+            "lifter_id": 637,
+            "membershipNumbers": [
+              {
+                "athleteName": "Nicholas Palmer",
+                "membershipNumber": "176025",
+                "fullText": "4  -  145  Nicholas Palmer  M  17  DEVILS WEIGHTLIFTING TEAM  176025  58.8  2012-09-16  -  Local  New Jersey"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wOS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wOS0xNiIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+          },
+          {
+            "meet_id": 757,
+            "date": "2012-08-04",
+            "age_category": "Open Men's",
+            "weight_class": "62 kg",
+            "lifter_name": "Nicholas Palmer",
+            "lifter_id": 637,
+            "membershipNumbers": [
+              {
+                "athleteName": "Nicholas Palmer",
+                "membershipNumber": "176025",
+                "fullText": "2  -  140  Nicholas Palmer  M  17  DEVILS WEIGHTLIFTING TEAM  176025  59.6  2012-08-04  -  Local  New Jersey"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wOC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wOC0wNCIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+          }
+        ],
+        "1011995": [
+          {
+            "meet_id": 2168,
+            "date": "2016-10-09",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Nicholas Palmer",
+            "lifter_id": 637,
+            "membershipNumbers": [
+              {
+                "athleteName": "Nicholas Palmer",
+                "membershipNumber": "1011995",
+                "fullText": "13  -  206  Nicholas Palmer  M  36  -  1011995  89.95  2016-10-09  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0wOSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T07:03:07.569Z",
+  "athleteName": "Katherine Martin",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "201267": [
+        {
+          "meet_id": 1577,
+          "date": "2014-08-23",
+          "age_category": "Open Women's",
+          "weight_class": "69 kg",
+          "lifter_name": "Katherine Martin",
+          "lifter_id": 21011,
+          "membershipNumbers": [
+            {
+              "athleteName": "Katherine Martin",
+              "membershipNumber": "201267",
+              "fullText": "18  -  99  Katherine Martin  F  31  -  201267  66  2014-08-23  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0yMyIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+        }
+      ],
+      "1010465": [
+        {
+          "meet_id": 2129,
+          "date": "2016-08-27",
+          "age_category": "Open Women's",
+          "weight_class": "69 kg",
+          "lifter_name": "Katherine Martin",
+          "lifter_id": 21011,
+          "membershipNumbers": [
+            {
+              "athleteName": "Katherine Martin",
+              "membershipNumber": "1010465",
+              "fullText": "15  -  155  Katherine Martin  F  24  KiloDelphia  1010465  67  2016-08-27  -  Local  Pennsylvania-West Virginia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0yNyIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+        },
+        {
+          "meet_id": 1805,
+          "date": "2016-09-25",
+          "age_category": "Open Women's",
+          "weight_class": "69 kg",
+          "lifter_name": "Katherine Martin",
+          "lifter_id": 21011,
+          "membershipNumbers": [
+            {
+              "athleteName": "Katherine Martin",
+              "membershipNumber": "1010465",
+              "fullText": "26  -  156  Katherine Martin  F  24  KiloDelphia  1010465  67.87  2016-09-25  -  National  Pennsylvania-West Virginia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOS0yNSIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Katherine Martin",
+    "splits": [
+      {
+        "newAthleteName": "Katherine Martin (Person 1)",
+        "membershipNumber": "201267",
+        "competitionCount": 1,
+        "competitions": [
+          1577
+        ]
+      },
+      {
+        "newAthleteName": "Katherine Martin (Person 2)",
+        "membershipNumber": "1010465",
+        "competitionCount": 2,
+        "competitions": [
+          2129,
+          1805
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Katherine Martin",
+    "competitions": [
+      {
+        "meet_id": 2129,
+        "date": "2016-08-27",
+        "age_category": "Open Women's",
+        "weight_class": "69 kg",
+        "lifter_name": "Katherine Martin",
+        "lifter_id": 21011,
+        "membershipNumbers": [
+          {
+            "athleteName": "Katherine Martin",
+            "membershipNumber": "1010465",
+            "fullText": "15  -  155  Katherine Martin  F  24  KiloDelphia  1010465  67  2016-08-27  -  Local  Pennsylvania-West Virginia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0yNyIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+      },
+      {
+        "meet_id": 1577,
+        "date": "2014-08-23",
+        "age_category": "Open Women's",
+        "weight_class": "69 kg",
+        "lifter_name": "Katherine Martin",
+        "lifter_id": 21011,
+        "membershipNumbers": [
+          {
+            "athleteName": "Katherine Martin",
+            "membershipNumber": "201267",
+            "fullText": "18  -  99  Katherine Martin  F  31  -  201267  66  2014-08-23  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0yMyIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+      },
+      {
+        "meet_id": 1805,
+        "date": "2016-09-25",
+        "age_category": "Open Women's",
+        "weight_class": "69 kg",
+        "lifter_name": "Katherine Martin",
+        "lifter_id": 21011,
+        "membershipNumbers": [
+          {
+            "athleteName": "Katherine Martin",
+            "membershipNumber": "1010465",
+            "fullText": "26  -  156  Katherine Martin  F  24  KiloDelphia  1010465  67.87  2016-09-25  -  National  Pennsylvania-West Virginia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOS0yNSIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "201267": [
+          {
+            "meet_id": 1577,
+            "date": "2014-08-23",
+            "age_category": "Open Women's",
+            "weight_class": "69 kg",
+            "lifter_name": "Katherine Martin",
+            "lifter_id": 21011,
+            "membershipNumbers": [
+              {
+                "athleteName": "Katherine Martin",
+                "membershipNumber": "201267",
+                "fullText": "18  -  99  Katherine Martin  F  31  -  201267  66  2014-08-23  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0yMyIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+          }
+        ],
+        "1010465": [
+          {
+            "meet_id": 2129,
+            "date": "2016-08-27",
+            "age_category": "Open Women's",
+            "weight_class": "69 kg",
+            "lifter_name": "Katherine Martin",
+            "lifter_id": 21011,
+            "membershipNumbers": [
+              {
+                "athleteName": "Katherine Martin",
+                "membershipNumber": "1010465",
+                "fullText": "15  -  155  Katherine Martin  F  24  KiloDelphia  1010465  67  2016-08-27  -  Local  Pennsylvania-West Virginia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0yNyIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+          },
+          {
+            "meet_id": 1805,
+            "date": "2016-09-25",
+            "age_category": "Open Women's",
+            "weight_class": "69 kg",
+            "lifter_name": "Katherine Martin",
+            "lifter_id": 21011,
+            "membershipNumbers": [
+              {
+                "athleteName": "Katherine Martin",
+                "membershipNumber": "1010465",
+                "fullText": "26  -  156  Katherine Martin  F  24  KiloDelphia  1010465  67.87  2016-09-25  -  National  Pennsylvania-West Virginia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOS0yNSIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

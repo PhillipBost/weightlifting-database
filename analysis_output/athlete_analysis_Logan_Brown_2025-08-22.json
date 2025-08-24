@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-22T21:14:34.323Z",
+  "athleteName": "Logan Brown",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "210965": [
+        {
+          "meet_id": 457,
+          "date": "2015-03-28",
+          "age_category": "Open Men's",
+          "weight_class": "62 kg",
+          "lifter_name": "Logan Brown",
+          "lifter_id": 14626,
+          "membershipNumbers": [
+            {
+              "athleteName": "Logan Brown",
+              "membershipNumber": "210965",
+              "fullText": "5  -  125  Logan Brown  M  16  Team Georgia Weightlifting  210965  59.9  2015-03-28  -  Local  Georgia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMy0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMy0yOCIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+        },
+        {
+          "meet_id": 458,
+          "date": "2015-04-25",
+          "age_category": "Open Men's",
+          "weight_class": "62 kg",
+          "lifter_name": "Logan Brown",
+          "lifter_id": 14626,
+          "membershipNumbers": [
+            {
+              "athleteName": "Logan Brown",
+              "membershipNumber": "210965",
+              "fullText": "10  -  131  Logan Brown  M  16  Team Georgia Weightlifting  210965  59.4  2015-04-25  -  Local  Georgia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0yNSIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+        }
+      ],
+      "1058415": [
+        {
+          "meet_id": 5101,
+          "date": "2022-01-22",
+          "age_category": "Men's 16-17 Age Group",
+          "weight_class": "67kg",
+          "lifter_name": "Logan Brown",
+          "lifter_id": 14626,
+          "membershipNumbers": [
+            {
+              "athleteName": "Logan Brown",
+              "membershipNumber": "1058415",
+              "fullText": "3  -  158  Logan Brown  M  17  -  1058415  62.4  2022-01-22  -  Local  Tennessee-Kentucky"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMS0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMS0yMiIsIndlaWdodF9jbGFzcyI6NH0="
+        },
+        {
+          "meet_id": 4657,
+          "date": "2021-09-25",
+          "age_category": "Men's 16-17 Age Group",
+          "weight_class": "67kg",
+          "lifter_name": "Logan Brown",
+          "lifter_id": 14626,
+          "membershipNumbers": [
+            {
+              "athleteName": "Logan Brown",
+              "membershipNumber": "1058415",
+              "fullText": "3  -  148  Logan Brown  M  16  -  1058415  62.6  2021-09-25  -  Local  Tennessee-Kentucky"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wOS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wOS0yNSIsIndlaWdodF9jbGFzcyI6NH0="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Logan Brown",
+    "splits": [
+      {
+        "newAthleteName": "Logan Brown (Person 1)",
+        "membershipNumber": "210965",
+        "competitionCount": 2,
+        "competitions": [
+          457,
+          458
+        ]
+      },
+      {
+        "newAthleteName": "Logan Brown (Person 2)",
+        "membershipNumber": "1058415",
+        "competitionCount": 2,
+        "competitions": [
+          5101,
+          4657
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Logan Brown",
+    "competitions": [
+      {
+        "meet_id": 457,
+        "date": "2015-03-28",
+        "age_category": "Open Men's",
+        "weight_class": "62 kg",
+        "lifter_name": "Logan Brown",
+        "lifter_id": 14626,
+        "membershipNumbers": [
+          {
+            "athleteName": "Logan Brown",
+            "membershipNumber": "210965",
+            "fullText": "5  -  125  Logan Brown  M  16  Team Georgia Weightlifting  210965  59.9  2015-03-28  -  Local  Georgia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMy0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMy0yOCIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+      },
+      {
+        "meet_id": 458,
+        "date": "2015-04-25",
+        "age_category": "Open Men's",
+        "weight_class": "62 kg",
+        "lifter_name": "Logan Brown",
+        "lifter_id": 14626,
+        "membershipNumbers": [
+          {
+            "athleteName": "Logan Brown",
+            "membershipNumber": "210965",
+            "fullText": "10  -  131  Logan Brown  M  16  Team Georgia Weightlifting  210965  59.4  2015-04-25  -  Local  Georgia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0yNSIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+      },
+      {
+        "meet_id": 5101,
+        "date": "2022-01-22",
+        "age_category": "Men's 16-17 Age Group",
+        "weight_class": "67kg",
+        "lifter_name": "Logan Brown",
+        "lifter_id": 14626,
+        "membershipNumbers": [
+          {
+            "athleteName": "Logan Brown",
+            "membershipNumber": "1058415",
+            "fullText": "3  -  158  Logan Brown  M  17  -  1058415  62.4  2022-01-22  -  Local  Tennessee-Kentucky"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMS0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMS0yMiIsIndlaWdodF9jbGFzcyI6NH0="
+      },
+      {
+        "meet_id": 4657,
+        "date": "2021-09-25",
+        "age_category": "Men's 16-17 Age Group",
+        "weight_class": "67kg",
+        "lifter_name": "Logan Brown",
+        "lifter_id": 14626,
+        "membershipNumbers": [
+          {
+            "athleteName": "Logan Brown",
+            "membershipNumber": "1058415",
+            "fullText": "3  -  148  Logan Brown  M  16  -  1058415  62.6  2021-09-25  -  Local  Tennessee-Kentucky"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wOS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wOS0yNSIsIndlaWdodF9jbGFzcyI6NH0="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "210965": [
+          {
+            "meet_id": 457,
+            "date": "2015-03-28",
+            "age_category": "Open Men's",
+            "weight_class": "62 kg",
+            "lifter_name": "Logan Brown",
+            "lifter_id": 14626,
+            "membershipNumbers": [
+              {
+                "athleteName": "Logan Brown",
+                "membershipNumber": "210965",
+                "fullText": "5  -  125  Logan Brown  M  16  Team Georgia Weightlifting  210965  59.9  2015-03-28  -  Local  Georgia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMy0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMy0yOCIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+          },
+          {
+            "meet_id": 458,
+            "date": "2015-04-25",
+            "age_category": "Open Men's",
+            "weight_class": "62 kg",
+            "lifter_name": "Logan Brown",
+            "lifter_id": 14626,
+            "membershipNumbers": [
+              {
+                "athleteName": "Logan Brown",
+                "membershipNumber": "210965",
+                "fullText": "10  -  131  Logan Brown  M  16  Team Georgia Weightlifting  210965  59.4  2015-04-25  -  Local  Georgia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0yNSIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+          }
+        ],
+        "1058415": [
+          {
+            "meet_id": 5101,
+            "date": "2022-01-22",
+            "age_category": "Men's 16-17 Age Group",
+            "weight_class": "67kg",
+            "lifter_name": "Logan Brown",
+            "lifter_id": 14626,
+            "membershipNumbers": [
+              {
+                "athleteName": "Logan Brown",
+                "membershipNumber": "1058415",
+                "fullText": "3  -  158  Logan Brown  M  17  -  1058415  62.4  2022-01-22  -  Local  Tennessee-Kentucky"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMS0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMS0yMiIsIndlaWdodF9jbGFzcyI6NH0="
+          },
+          {
+            "meet_id": 4657,
+            "date": "2021-09-25",
+            "age_category": "Men's 16-17 Age Group",
+            "weight_class": "67kg",
+            "lifter_name": "Logan Brown",
+            "lifter_id": 14626,
+            "membershipNumbers": [
+              {
+                "athleteName": "Logan Brown",
+                "membershipNumber": "1058415",
+                "fullText": "3  -  148  Logan Brown  M  16  -  1058415  62.6  2021-09-25  -  Local  Tennessee-Kentucky"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wOS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wOS0yNSIsIndlaWdodF9jbGFzcyI6NH0="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

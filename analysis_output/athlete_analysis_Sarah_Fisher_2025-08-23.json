@@ -1,0 +1,243 @@
+{
+  "timestamp": "2025-08-23T00:33:30.217Z",
+  "athleteName": "Sarah Fisher",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "199846": [
+        {
+          "meet_id": 1426,
+          "date": "2014-08-02",
+          "age_category": "Open Women's",
+          "weight_class": "69 kg",
+          "lifter_name": "Sarah Fisher",
+          "lifter_id": 14797,
+          "membershipNumbers": [
+            {
+              "athleteName": "Sarah Fisher",
+              "membershipNumber": "199846",
+              "fullText": "28  -  88  Sarah Fisher  F  18  -  199846  68.8  2014-08-02  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0wMiIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+        },
+        {
+          "meet_id": 467,
+          "date": "2015-08-01",
+          "age_category": "Open Women's",
+          "weight_class": "69 kg",
+          "lifter_name": "Sarah Fisher",
+          "lifter_id": 14797,
+          "membershipNumbers": [
+            {
+              "athleteName": "Sarah Fisher",
+              "membershipNumber": "199846",
+              "fullText": "22  -  108  Sarah Fisher  F  19  -  199846  68.7  2015-08-01  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOC0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOC0wMSIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+        }
+      ],
+      "1069649": [
+        {
+          "meet_id": 5784,
+          "date": "2023-04-08",
+          "age_category": "Open Women's",
+          "weight_class": "87kg",
+          "lifter_name": "Sarah Fisher",
+          "lifter_id": 14797,
+          "membershipNumbers": [
+            {
+              "athleteName": "Sarah Fisher",
+              "membershipNumber": "1069649",
+              "fullText": "3  -  127  Sarah Fisher  F  24  -  1069649  85.6  2023-04-08  -  Local  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0wOCIsIndlaWdodF9jbGFzcyI6OTl9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 3594,
+        "date": "2019-01-05",
+        "age_category": "Women's Masters (45-49)",
+        "weight_class": "71kg",
+        "lifter_name": "Sarah Fisher",
+        "lifter_id": 14797,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0wNSIsIndlaWdodF9jbGFzcyI6MTU2fQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Sarah Fisher",
+    "splits": [
+      {
+        "newAthleteName": "Sarah Fisher (Person 1)",
+        "membershipNumber": "199846",
+        "competitionCount": 2,
+        "competitions": [
+          1426,
+          467
+        ]
+      },
+      {
+        "newAthleteName": "Sarah Fisher (Person 2)",
+        "membershipNumber": "1069649",
+        "competitionCount": 1,
+        "competitions": [
+          5784
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 3594,
+        "date": "2019-01-05",
+        "age_category": "Women's Masters (45-49)",
+        "weight_class": "71kg",
+        "lifter_name": "Sarah Fisher",
+        "lifter_id": 14797,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0wNSIsIndlaWdodF9jbGFzcyI6MTU2fQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Sarah Fisher",
+    "competitions": [
+      {
+        "meet_id": 5784,
+        "date": "2023-04-08",
+        "age_category": "Open Women's",
+        "weight_class": "87kg",
+        "lifter_name": "Sarah Fisher",
+        "lifter_id": 14797,
+        "membershipNumbers": [
+          {
+            "athleteName": "Sarah Fisher",
+            "membershipNumber": "1069649",
+            "fullText": "3  -  127  Sarah Fisher  F  24  -  1069649  85.6  2023-04-08  -  Local  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0wOCIsIndlaWdodF9jbGFzcyI6OTl9"
+      },
+      {
+        "meet_id": 1426,
+        "date": "2014-08-02",
+        "age_category": "Open Women's",
+        "weight_class": "69 kg",
+        "lifter_name": "Sarah Fisher",
+        "lifter_id": 14797,
+        "membershipNumbers": [
+          {
+            "athleteName": "Sarah Fisher",
+            "membershipNumber": "199846",
+            "fullText": "28  -  88  Sarah Fisher  F  18  -  199846  68.8  2014-08-02  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0wMiIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+      },
+      {
+        "meet_id": 467,
+        "date": "2015-08-01",
+        "age_category": "Open Women's",
+        "weight_class": "69 kg",
+        "lifter_name": "Sarah Fisher",
+        "lifter_id": 14797,
+        "membershipNumbers": [
+          {
+            "athleteName": "Sarah Fisher",
+            "membershipNumber": "199846",
+            "fullText": "22  -  108  Sarah Fisher  F  19  -  199846  68.7  2015-08-01  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOC0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOC0wMSIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+      },
+      {
+        "meet_id": 3594,
+        "date": "2019-01-05",
+        "age_category": "Women's Masters (45-49)",
+        "weight_class": "71kg",
+        "lifter_name": "Sarah Fisher",
+        "lifter_id": 14797,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0wNSIsIndlaWdodF9jbGFzcyI6MTU2fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "199846": [
+          {
+            "meet_id": 1426,
+            "date": "2014-08-02",
+            "age_category": "Open Women's",
+            "weight_class": "69 kg",
+            "lifter_name": "Sarah Fisher",
+            "lifter_id": 14797,
+            "membershipNumbers": [
+              {
+                "athleteName": "Sarah Fisher",
+                "membershipNumber": "199846",
+                "fullText": "28  -  88  Sarah Fisher  F  18  -  199846  68.8  2014-08-02  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0wMiIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+          },
+          {
+            "meet_id": 467,
+            "date": "2015-08-01",
+            "age_category": "Open Women's",
+            "weight_class": "69 kg",
+            "lifter_name": "Sarah Fisher",
+            "lifter_id": 14797,
+            "membershipNumbers": [
+              {
+                "athleteName": "Sarah Fisher",
+                "membershipNumber": "199846",
+                "fullText": "22  -  108  Sarah Fisher  F  19  -  199846  68.7  2015-08-01  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOC0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOC0wMSIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+          }
+        ],
+        "1069649": [
+          {
+            "meet_id": 5784,
+            "date": "2023-04-08",
+            "age_category": "Open Women's",
+            "weight_class": "87kg",
+            "lifter_name": "Sarah Fisher",
+            "lifter_id": 14797,
+            "membershipNumbers": [
+              {
+                "athleteName": "Sarah Fisher",
+                "membershipNumber": "1069649",
+                "fullText": "3  -  127  Sarah Fisher  F  24  -  1069649  85.6  2023-04-08  -  Local  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0wOCIsIndlaWdodF9jbGFzcyI6OTl9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 3594,
+          "date": "2019-01-05",
+          "age_category": "Women's Masters (45-49)",
+          "weight_class": "71kg",
+          "lifter_name": "Sarah Fisher",
+          "lifter_id": 14797,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0wNSIsIndlaWdodF9jbGFzcyI6MTU2fQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

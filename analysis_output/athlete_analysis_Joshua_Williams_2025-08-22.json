@@ -1,0 +1,260 @@
+{
+  "timestamp": "2025-08-22T06:42:28.359Z",
+  "athleteName": "Joshua Williams",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 3,
+    "membershipGroups": {
+      "216242": [
+        {
+          "meet_id": 61,
+          "date": "2015-10-04",
+          "age_category": "Open Men's",
+          "weight_class": "69 kg",
+          "lifter_name": "Joshua Williams",
+          "lifter_id": 15876,
+          "membershipNumbers": [
+            {
+              "athleteName": "Joshua Williams",
+              "membershipNumber": "216242",
+              "fullText": "23  -  168  Joshua Williams  M  22  -  216242  67.3  2015-10-04  -  Local  New Jersey"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0wNCIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+        },
+        {
+          "meet_id": 2129,
+          "date": "2021-10-30",
+          "age_category": "Open Men's",
+          "weight_class": "73kg",
+          "lifter_name": "Joshua Williams",
+          "lifter_id": 15876,
+          "membershipNumbers": [
+            {
+              "athleteName": "Joshua Williams",
+              "membershipNumber": "216242",
+              "fullText": "11  -  199  Joshua Williams  M  28  -  216242  68.8  2021-10-30  -  Local  New Jersey"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMC0zMCIsIndlaWdodF9jbGFzcyI6ODR9"
+        }
+      ],
+      "1041481": [
+        {
+          "meet_id": 4018,
+          "date": "2019-05-11",
+          "age_category": "Open Men's",
+          "weight_class": "109kg",
+          "lifter_name": "Joshua Williams",
+          "lifter_id": 15876,
+          "membershipNumbers": [
+            {
+              "athleteName": "Joshua Williams",
+              "membershipNumber": "1041481",
+              "fullText": "2  -  205  Joshua Williams  M  25  -  1041481  106.9  2019-05-11  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0xMSIsIndlaWdodF9jbGFzcyI6ODl9"
+        }
+      ],
+      "1082651": [
+        {
+          "meet_id": 6995,
+          "date": "2025-08-09",
+          "age_category": "Open Men's",
+          "weight_class": "88kg",
+          "lifter_name": "Joshua Williams",
+          "lifter_id": 15876,
+          "membershipNumbers": [
+            {
+              "athleteName": "Joshua Williams",
+              "membershipNumber": "1082651",
+              "fullText": "4  -  211  Joshua Williams  M  39  Lupo Barbell Club  1082651  83.55  2025-08-09  -  Local  New York"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wOC0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wOC0wOSIsIndlaWdodF9jbGFzcyI6NzEzfQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Joshua Williams",
+    "splits": [
+      {
+        "newAthleteName": "Joshua Williams (Person 1)",
+        "membershipNumber": "216242",
+        "competitionCount": 2,
+        "competitions": [
+          61,
+          2129
+        ]
+      },
+      {
+        "newAthleteName": "Joshua Williams (Person 2)",
+        "membershipNumber": "1041481",
+        "competitionCount": 1,
+        "competitions": [
+          4018
+        ]
+      },
+      {
+        "newAthleteName": "Joshua Williams (Person 3)",
+        "membershipNumber": "1082651",
+        "competitionCount": 1,
+        "competitions": [
+          6995
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Joshua Williams",
+    "competitions": [
+      {
+        "meet_id": 4018,
+        "date": "2019-05-11",
+        "age_category": "Open Men's",
+        "weight_class": "109kg",
+        "lifter_name": "Joshua Williams",
+        "lifter_id": 15876,
+        "membershipNumbers": [
+          {
+            "athleteName": "Joshua Williams",
+            "membershipNumber": "1041481",
+            "fullText": "2  -  205  Joshua Williams  M  25  -  1041481  106.9  2019-05-11  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0xMSIsIndlaWdodF9jbGFzcyI6ODl9"
+      },
+      {
+        "meet_id": 6995,
+        "date": "2025-08-09",
+        "age_category": "Open Men's",
+        "weight_class": "88kg",
+        "lifter_name": "Joshua Williams",
+        "lifter_id": 15876,
+        "membershipNumbers": [
+          {
+            "athleteName": "Joshua Williams",
+            "membershipNumber": "1082651",
+            "fullText": "4  -  211  Joshua Williams  M  39  Lupo Barbell Club  1082651  83.55  2025-08-09  -  Local  New York"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wOC0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wOC0wOSIsIndlaWdodF9jbGFzcyI6NzEzfQ=="
+      },
+      {
+        "meet_id": 61,
+        "date": "2015-10-04",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "Joshua Williams",
+        "lifter_id": 15876,
+        "membershipNumbers": [
+          {
+            "athleteName": "Joshua Williams",
+            "membershipNumber": "216242",
+            "fullText": "23  -  168  Joshua Williams  M  22  -  216242  67.3  2015-10-04  -  Local  New Jersey"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0wNCIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      },
+      {
+        "meet_id": 2129,
+        "date": "2021-10-30",
+        "age_category": "Open Men's",
+        "weight_class": "73kg",
+        "lifter_name": "Joshua Williams",
+        "lifter_id": 15876,
+        "membershipNumbers": [
+          {
+            "athleteName": "Joshua Williams",
+            "membershipNumber": "216242",
+            "fullText": "11  -  199  Joshua Williams  M  28  -  216242  68.8  2021-10-30  -  Local  New Jersey"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMC0zMCIsIndlaWdodF9jbGFzcyI6ODR9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 3,
+      "membershipGroups": {
+        "216242": [
+          {
+            "meet_id": 61,
+            "date": "2015-10-04",
+            "age_category": "Open Men's",
+            "weight_class": "69 kg",
+            "lifter_name": "Joshua Williams",
+            "lifter_id": 15876,
+            "membershipNumbers": [
+              {
+                "athleteName": "Joshua Williams",
+                "membershipNumber": "216242",
+                "fullText": "23  -  168  Joshua Williams  M  22  -  216242  67.3  2015-10-04  -  Local  New Jersey"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0wNCIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+          },
+          {
+            "meet_id": 2129,
+            "date": "2021-10-30",
+            "age_category": "Open Men's",
+            "weight_class": "73kg",
+            "lifter_name": "Joshua Williams",
+            "lifter_id": 15876,
+            "membershipNumbers": [
+              {
+                "athleteName": "Joshua Williams",
+                "membershipNumber": "216242",
+                "fullText": "11  -  199  Joshua Williams  M  28  -  216242  68.8  2021-10-30  -  Local  New Jersey"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMC0zMCIsIndlaWdodF9jbGFzcyI6ODR9"
+          }
+        ],
+        "1041481": [
+          {
+            "meet_id": 4018,
+            "date": "2019-05-11",
+            "age_category": "Open Men's",
+            "weight_class": "109kg",
+            "lifter_name": "Joshua Williams",
+            "lifter_id": 15876,
+            "membershipNumbers": [
+              {
+                "athleteName": "Joshua Williams",
+                "membershipNumber": "1041481",
+                "fullText": "2  -  205  Joshua Williams  M  25  -  1041481  106.9  2019-05-11  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0xMSIsIndlaWdodF9jbGFzcyI6ODl9"
+          }
+        ],
+        "1082651": [
+          {
+            "meet_id": 6995,
+            "date": "2025-08-09",
+            "age_category": "Open Men's",
+            "weight_class": "88kg",
+            "lifter_name": "Joshua Williams",
+            "lifter_id": 15876,
+            "membershipNumbers": [
+              {
+                "athleteName": "Joshua Williams",
+                "membershipNumber": "1082651",
+                "fullText": "4  -  211  Joshua Williams  M  39  Lupo Barbell Club  1082651  83.55  2025-08-09  -  Local  New York"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wOC0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wOC0wOSIsIndlaWdodF9jbGFzcyI6NzEzfQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

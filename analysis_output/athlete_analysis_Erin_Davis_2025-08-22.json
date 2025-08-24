@@ -1,0 +1,194 @@
+{
+  "timestamp": "2025-08-22T22:40:20.821Z",
+  "athleteName": "Erin Davis",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1032550": [
+        {
+          "meet_id": 3479,
+          "date": "2018-10-21",
+          "age_category": "Open Women's",
+          "weight_class": "59kg",
+          "lifter_name": "Erin Davis",
+          "lifter_id": 38047,
+          "membershipNumbers": [
+            {
+              "athleteName": "Erin Davis",
+              "membershipNumber": "1032550",
+              "fullText": "21  -  100  Erin Davis  F  21  Feel The Steel Barbell Club  1032550  56.84  2018-10-21  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yMSIsIndlaWdodF9jbGFzcyI6OTR9"
+        }
+      ],
+      "1070158": [
+        {
+          "meet_id": 5846,
+          "date": "2023-05-07",
+          "age_category": "Open Women's",
+          "weight_class": "71kg",
+          "lifter_name": "Erin Davis",
+          "lifter_id": 38047,
+          "membershipNumbers": [
+            {
+              "athleteName": "Erin Davis",
+              "membershipNumber": "1070158",
+              "fullText": "8  -  126  Erin Davis  F  21  -  1070158  69.7  2023-05-07  -  Local  New York"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNS0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNS0wNyIsIndlaWdodF9jbGFzcyI6OTZ9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 6371,
+        "date": "2024-05-11",
+        "age_category": "Open Women's",
+        "weight_class": "71kg",
+        "lifter_name": "Erin Davis",
+        "lifter_id": 38047,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNS0xMSIsIndlaWdodF9jbGFzcyI6OTZ9"
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Erin Davis",
+    "splits": [
+      {
+        "newAthleteName": "Erin Davis (Person 1)",
+        "membershipNumber": "1032550",
+        "competitionCount": 1,
+        "competitions": [
+          3479
+        ]
+      },
+      {
+        "newAthleteName": "Erin Davis (Person 2)",
+        "membershipNumber": "1070158",
+        "competitionCount": 1,
+        "competitions": [
+          5846
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 6371,
+        "date": "2024-05-11",
+        "age_category": "Open Women's",
+        "weight_class": "71kg",
+        "lifter_name": "Erin Davis",
+        "lifter_id": 38047,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNS0xMSIsIndlaWdodF9jbGFzcyI6OTZ9"
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Erin Davis",
+    "competitions": [
+      {
+        "meet_id": 3479,
+        "date": "2018-10-21",
+        "age_category": "Open Women's",
+        "weight_class": "59kg",
+        "lifter_name": "Erin Davis",
+        "lifter_id": 38047,
+        "membershipNumbers": [
+          {
+            "athleteName": "Erin Davis",
+            "membershipNumber": "1032550",
+            "fullText": "21  -  100  Erin Davis  F  21  Feel The Steel Barbell Club  1032550  56.84  2018-10-21  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yMSIsIndlaWdodF9jbGFzcyI6OTR9"
+      },
+      {
+        "meet_id": 6371,
+        "date": "2024-05-11",
+        "age_category": "Open Women's",
+        "weight_class": "71kg",
+        "lifter_name": "Erin Davis",
+        "lifter_id": 38047,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNS0xMSIsIndlaWdodF9jbGFzcyI6OTZ9"
+      },
+      {
+        "meet_id": 5846,
+        "date": "2023-05-07",
+        "age_category": "Open Women's",
+        "weight_class": "71kg",
+        "lifter_name": "Erin Davis",
+        "lifter_id": 38047,
+        "membershipNumbers": [
+          {
+            "athleteName": "Erin Davis",
+            "membershipNumber": "1070158",
+            "fullText": "8  -  126  Erin Davis  F  21  -  1070158  69.7  2023-05-07  -  Local  New York"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNS0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNS0wNyIsIndlaWdodF9jbGFzcyI6OTZ9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1032550": [
+          {
+            "meet_id": 3479,
+            "date": "2018-10-21",
+            "age_category": "Open Women's",
+            "weight_class": "59kg",
+            "lifter_name": "Erin Davis",
+            "lifter_id": 38047,
+            "membershipNumbers": [
+              {
+                "athleteName": "Erin Davis",
+                "membershipNumber": "1032550",
+                "fullText": "21  -  100  Erin Davis  F  21  Feel The Steel Barbell Club  1032550  56.84  2018-10-21  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yMSIsIndlaWdodF9jbGFzcyI6OTR9"
+          }
+        ],
+        "1070158": [
+          {
+            "meet_id": 5846,
+            "date": "2023-05-07",
+            "age_category": "Open Women's",
+            "weight_class": "71kg",
+            "lifter_name": "Erin Davis",
+            "lifter_id": 38047,
+            "membershipNumbers": [
+              {
+                "athleteName": "Erin Davis",
+                "membershipNumber": "1070158",
+                "fullText": "8  -  126  Erin Davis  F  21  -  1070158  69.7  2023-05-07  -  Local  New York"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNS0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNS0wNyIsIndlaWdodF9jbGFzcyI6OTZ9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 6371,
+          "date": "2024-05-11",
+          "age_category": "Open Women's",
+          "weight_class": "71kg",
+          "lifter_name": "Erin Davis",
+          "lifter_id": 38047,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNS0xMSIsIndlaWdodF9jbGFzcyI6OTZ9"
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

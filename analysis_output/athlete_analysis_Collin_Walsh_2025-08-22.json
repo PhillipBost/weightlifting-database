@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T06:56:13.902Z",
+  "athleteName": "Collin Walsh",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "193758": [
+        {
+          "meet_id": 1305,
+          "date": "2014-03-01",
+          "age_category": "Open Men's",
+          "weight_class": "69 kg",
+          "lifter_name": "Collin Walsh",
+          "lifter_id": 18999,
+          "membershipNumbers": [
+            {
+              "athleteName": "Collin Walsh",
+              "membershipNumber": "193758",
+              "fullText": "11  -  176  Collin Walsh  M  23  EAST CAROLINA WEIGHTLIFTING  193758  68.95  2014-03-01  -  Local  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0wMSIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+        },
+        {
+          "meet_id": 1418,
+          "date": "2014-10-11",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Collin Walsh",
+          "lifter_id": 18999,
+          "membershipNumbers": [
+            {
+              "athleteName": "Collin Walsh",
+              "membershipNumber": "193758",
+              "fullText": "16  -  205  Collin Walsh  M  23  EAST CAROLINA WEIGHTLIFTING  193758  71.6  2014-10-11  -  Local  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMC0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMC0xMSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        }
+      ],
+      "197098": [
+        {
+          "meet_id": 1206,
+          "date": "2014-05-24",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Collin Walsh",
+          "lifter_id": 18999,
+          "membershipNumbers": [
+            {
+              "athleteName": "Collin Walsh",
+              "membershipNumber": "197098",
+              "fullText": "12  -  208  Collin Walsh  M  21  METRO WLC  197098  81.8  2014-05-24  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNS0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNS0yNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Collin Walsh",
+    "splits": [
+      {
+        "newAthleteName": "Collin Walsh (Person 1)",
+        "membershipNumber": "193758",
+        "competitionCount": 2,
+        "competitions": [
+          1305,
+          1418
+        ]
+      },
+      {
+        "newAthleteName": "Collin Walsh (Person 2)",
+        "membershipNumber": "197098",
+        "competitionCount": 1,
+        "competitions": [
+          1206
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Collin Walsh",
+    "competitions": [
+      {
+        "meet_id": 1305,
+        "date": "2014-03-01",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "Collin Walsh",
+        "lifter_id": 18999,
+        "membershipNumbers": [
+          {
+            "athleteName": "Collin Walsh",
+            "membershipNumber": "193758",
+            "fullText": "11  -  176  Collin Walsh  M  23  EAST CAROLINA WEIGHTLIFTING  193758  68.95  2014-03-01  -  Local  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0wMSIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      },
+      {
+        "meet_id": 1206,
+        "date": "2014-05-24",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Collin Walsh",
+        "lifter_id": 18999,
+        "membershipNumbers": [
+          {
+            "athleteName": "Collin Walsh",
+            "membershipNumber": "197098",
+            "fullText": "12  -  208  Collin Walsh  M  21  METRO WLC  197098  81.8  2014-05-24  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNS0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNS0yNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 1418,
+        "date": "2014-10-11",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Collin Walsh",
+        "lifter_id": 18999,
+        "membershipNumbers": [
+          {
+            "athleteName": "Collin Walsh",
+            "membershipNumber": "193758",
+            "fullText": "16  -  205  Collin Walsh  M  23  EAST CAROLINA WEIGHTLIFTING  193758  71.6  2014-10-11  -  Local  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMC0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMC0xMSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "193758": [
+          {
+            "meet_id": 1305,
+            "date": "2014-03-01",
+            "age_category": "Open Men's",
+            "weight_class": "69 kg",
+            "lifter_name": "Collin Walsh",
+            "lifter_id": 18999,
+            "membershipNumbers": [
+              {
+                "athleteName": "Collin Walsh",
+                "membershipNumber": "193758",
+                "fullText": "11  -  176  Collin Walsh  M  23  EAST CAROLINA WEIGHTLIFTING  193758  68.95  2014-03-01  -  Local  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0wMSIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+          },
+          {
+            "meet_id": 1418,
+            "date": "2014-10-11",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Collin Walsh",
+            "lifter_id": 18999,
+            "membershipNumbers": [
+              {
+                "athleteName": "Collin Walsh",
+                "membershipNumber": "193758",
+                "fullText": "16  -  205  Collin Walsh  M  23  EAST CAROLINA WEIGHTLIFTING  193758  71.6  2014-10-11  -  Local  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMC0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMC0xMSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          }
+        ],
+        "197098": [
+          {
+            "meet_id": 1206,
+            "date": "2014-05-24",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Collin Walsh",
+            "lifter_id": 18999,
+            "membershipNumbers": [
+              {
+                "athleteName": "Collin Walsh",
+                "membershipNumber": "197098",
+                "fullText": "12  -  208  Collin Walsh  M  21  METRO WLC  197098  81.8  2014-05-24  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNS0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNS0yNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

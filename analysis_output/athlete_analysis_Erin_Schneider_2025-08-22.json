@@ -1,0 +1,298 @@
+{
+  "timestamp": "2025-08-22T17:51:00.817Z",
+  "athleteName": "Erin Schneider",
+  "totalCompetitions": 5,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1056731": [
+        {
+          "meet_id": 4902,
+          "date": "2021-07-24",
+          "age_category": "Open Women's",
+          "weight_class": "+87kg",
+          "lifter_name": "Erin Schneider",
+          "lifter_id": 48978,
+          "membershipNumbers": [
+            {
+              "athleteName": "Erin Schneider",
+              "membershipNumber": "1056731",
+              "fullText": "6  -  142  Erin Schneider  F  34  CB Weightlifting  1056731  92.9  2021-07-24  -  Local  Mountain North"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNy0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNy0yNCIsIndlaWdodF9jbGFzcyI6MTAwfQ=="
+        },
+        {
+          "meet_id": 6479,
+          "date": "2024-07-28",
+          "age_category": "Women's Masters (35-39)",
+          "weight_class": "+87kg",
+          "lifter_name": "Erin Schneider",
+          "lifter_id": 48978,
+          "membershipNumbers": [
+            {
+              "athleteName": "Erin Schneider",
+              "membershipNumber": "1056731",
+              "fullText": "1  -  136  Erin Schneider  F  37  Dynamic Pursuit  1056731  93.8  2024-07-28  -  Local  Mountain North"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNy0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNy0yOCIsIndlaWdodF9jbGFzcyI6MTIwfQ=="
+        },
+        {
+          "meet_id": 4855,
+          "date": "2021-11-20",
+          "age_category": "Open Women's",
+          "weight_class": "+87kg",
+          "lifter_name": "Erin Schneider",
+          "lifter_id": 48978,
+          "membershipNumbers": [
+            {
+              "athleteName": "Erin Schneider",
+              "membershipNumber": "1056731",
+              "fullText": "3  -  150  Erin Schneider  F  34  CB Weightlifting  1056731  93.9  2021-11-20  -  Local  Mountain North"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMS0yMCIsIndlaWdodF9jbGFzcyI6MTAwfQ=="
+        }
+      ],
+      "1058908": [
+        {
+          "meet_id": 5325,
+          "date": "2022-05-07",
+          "age_category": "Open Women's",
+          "weight_class": "87kg",
+          "lifter_name": "Erin Schneider",
+          "lifter_id": 48978,
+          "membershipNumbers": [
+            {
+              "athleteName": "Erin Schneider",
+              "membershipNumber": "1058908",
+              "fullText": "5  -  112  Erin Schneider  F  47  -  1058908  87  2022-05-07  -  Local  Wisconsin"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNS0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNS0wNyIsIndlaWdodF9jbGFzcyI6OTl9"
+        },
+        {
+          "meet_id": 5568,
+          "date": "2022-10-22",
+          "age_category": "Women's Masters (45-49)",
+          "weight_class": "87kg",
+          "lifter_name": "Erin Schneider",
+          "lifter_id": 48978,
+          "membershipNumbers": [
+            {
+              "athleteName": "Erin Schneider",
+              "membershipNumber": "1058908",
+              "fullText": "1  -  112  Erin Schneider  F  47  -  1058908  82.4  2022-10-22  -  Local  Wisconsin"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMC0yMiIsIndlaWdodF9jbGFzcyI6MTU5fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Erin Schneider",
+    "splits": [
+      {
+        "newAthleteName": "Erin Schneider (Person 1)",
+        "membershipNumber": "1056731",
+        "competitionCount": 3,
+        "competitions": [
+          4902,
+          6479,
+          4855
+        ]
+      },
+      {
+        "newAthleteName": "Erin Schneider (Person 2)",
+        "membershipNumber": "1058908",
+        "competitionCount": 2,
+        "competitions": [
+          5325,
+          5568
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Erin Schneider",
+    "competitions": [
+      {
+        "meet_id": 4902,
+        "date": "2021-07-24",
+        "age_category": "Open Women's",
+        "weight_class": "+87kg",
+        "lifter_name": "Erin Schneider",
+        "lifter_id": 48978,
+        "membershipNumbers": [
+          {
+            "athleteName": "Erin Schneider",
+            "membershipNumber": "1056731",
+            "fullText": "6  -  142  Erin Schneider  F  34  CB Weightlifting  1056731  92.9  2021-07-24  -  Local  Mountain North"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNy0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNy0yNCIsIndlaWdodF9jbGFzcyI6MTAwfQ=="
+      },
+      {
+        "meet_id": 6479,
+        "date": "2024-07-28",
+        "age_category": "Women's Masters (35-39)",
+        "weight_class": "+87kg",
+        "lifter_name": "Erin Schneider",
+        "lifter_id": 48978,
+        "membershipNumbers": [
+          {
+            "athleteName": "Erin Schneider",
+            "membershipNumber": "1056731",
+            "fullText": "1  -  136  Erin Schneider  F  37  Dynamic Pursuit  1056731  93.8  2024-07-28  -  Local  Mountain North"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNy0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNy0yOCIsIndlaWdodF9jbGFzcyI6MTIwfQ=="
+      },
+      {
+        "meet_id": 5325,
+        "date": "2022-05-07",
+        "age_category": "Open Women's",
+        "weight_class": "87kg",
+        "lifter_name": "Erin Schneider",
+        "lifter_id": 48978,
+        "membershipNumbers": [
+          {
+            "athleteName": "Erin Schneider",
+            "membershipNumber": "1058908",
+            "fullText": "5  -  112  Erin Schneider  F  47  -  1058908  87  2022-05-07  -  Local  Wisconsin"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNS0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNS0wNyIsIndlaWdodF9jbGFzcyI6OTl9"
+      },
+      {
+        "meet_id": 4855,
+        "date": "2021-11-20",
+        "age_category": "Open Women's",
+        "weight_class": "+87kg",
+        "lifter_name": "Erin Schneider",
+        "lifter_id": 48978,
+        "membershipNumbers": [
+          {
+            "athleteName": "Erin Schneider",
+            "membershipNumber": "1056731",
+            "fullText": "3  -  150  Erin Schneider  F  34  CB Weightlifting  1056731  93.9  2021-11-20  -  Local  Mountain North"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMS0yMCIsIndlaWdodF9jbGFzcyI6MTAwfQ=="
+      },
+      {
+        "meet_id": 5568,
+        "date": "2022-10-22",
+        "age_category": "Women's Masters (45-49)",
+        "weight_class": "87kg",
+        "lifter_name": "Erin Schneider",
+        "lifter_id": 48978,
+        "membershipNumbers": [
+          {
+            "athleteName": "Erin Schneider",
+            "membershipNumber": "1058908",
+            "fullText": "1  -  112  Erin Schneider  F  47  -  1058908  82.4  2022-10-22  -  Local  Wisconsin"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMC0yMiIsIndlaWdodF9jbGFzcyI6MTU5fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1056731": [
+          {
+            "meet_id": 4902,
+            "date": "2021-07-24",
+            "age_category": "Open Women's",
+            "weight_class": "+87kg",
+            "lifter_name": "Erin Schneider",
+            "lifter_id": 48978,
+            "membershipNumbers": [
+              {
+                "athleteName": "Erin Schneider",
+                "membershipNumber": "1056731",
+                "fullText": "6  -  142  Erin Schneider  F  34  CB Weightlifting  1056731  92.9  2021-07-24  -  Local  Mountain North"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNy0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNy0yNCIsIndlaWdodF9jbGFzcyI6MTAwfQ=="
+          },
+          {
+            "meet_id": 6479,
+            "date": "2024-07-28",
+            "age_category": "Women's Masters (35-39)",
+            "weight_class": "+87kg",
+            "lifter_name": "Erin Schneider",
+            "lifter_id": 48978,
+            "membershipNumbers": [
+              {
+                "athleteName": "Erin Schneider",
+                "membershipNumber": "1056731",
+                "fullText": "1  -  136  Erin Schneider  F  37  Dynamic Pursuit  1056731  93.8  2024-07-28  -  Local  Mountain North"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNy0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNy0yOCIsIndlaWdodF9jbGFzcyI6MTIwfQ=="
+          },
+          {
+            "meet_id": 4855,
+            "date": "2021-11-20",
+            "age_category": "Open Women's",
+            "weight_class": "+87kg",
+            "lifter_name": "Erin Schneider",
+            "lifter_id": 48978,
+            "membershipNumbers": [
+              {
+                "athleteName": "Erin Schneider",
+                "membershipNumber": "1056731",
+                "fullText": "3  -  150  Erin Schneider  F  34  CB Weightlifting  1056731  93.9  2021-11-20  -  Local  Mountain North"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMS0yMCIsIndlaWdodF9jbGFzcyI6MTAwfQ=="
+          }
+        ],
+        "1058908": [
+          {
+            "meet_id": 5325,
+            "date": "2022-05-07",
+            "age_category": "Open Women's",
+            "weight_class": "87kg",
+            "lifter_name": "Erin Schneider",
+            "lifter_id": 48978,
+            "membershipNumbers": [
+              {
+                "athleteName": "Erin Schneider",
+                "membershipNumber": "1058908",
+                "fullText": "5  -  112  Erin Schneider  F  47  -  1058908  87  2022-05-07  -  Local  Wisconsin"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNS0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNS0wNyIsIndlaWdodF9jbGFzcyI6OTl9"
+          },
+          {
+            "meet_id": 5568,
+            "date": "2022-10-22",
+            "age_category": "Women's Masters (45-49)",
+            "weight_class": "87kg",
+            "lifter_name": "Erin Schneider",
+            "lifter_id": 48978,
+            "membershipNumbers": [
+              {
+                "athleteName": "Erin Schneider",
+                "membershipNumber": "1058908",
+                "fullText": "1  -  112  Erin Schneider  F  47  -  1058908  82.4  2022-10-22  -  Local  Wisconsin"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMC0yMiIsIndlaWdodF9jbGFzcyI6MTU5fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

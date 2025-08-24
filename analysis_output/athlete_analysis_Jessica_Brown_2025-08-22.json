@@ -1,0 +1,303 @@
+{
+  "timestamp": "2025-08-22T04:01:42.418Z",
+  "athleteName": "Jessica Brown",
+  "totalCompetitions": 5,
+  "analysis": {
+    "distinctAthletes": 3,
+    "membershipGroups": {
+      "175836": [
+        {
+          "meet_id": 839,
+          "date": "2013-02-16",
+          "age_category": "Open Women's",
+          "weight_class": "69 kg",
+          "lifter_name": "Jessica Brown",
+          "lifter_id": 1040,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jessica Brown",
+              "membershipNumber": "175836",
+              "fullText": "1  -  115  Jessica Brown  F  18  CINCINNATI WEIGHTLIFTING CLUB  175836  65.6  2013-02-16  -  Local  Ohio"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMi0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMi0xNiIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+        },
+        {
+          "meet_id": 669,
+          "date": "2012-12-29",
+          "age_category": "Women's 16-17 Age Group",
+          "weight_class": "63 kg",
+          "lifter_name": "Jessica Brown",
+          "lifter_id": 1040,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jessica Brown",
+              "membershipNumber": "175836",
+              "fullText": "1  -  109  Jessica Brown  F  17  CINCINNATI WEIGHTLIFTING CLUB  175836  63  2012-12-29  -  Local  Ohio"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0xMi0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0xMi0yOSIsIndlaWdodF9jbGFzcyI6MzMzfQ=="
+        }
+      ],
+      "1005844": [
+        {
+          "meet_id": 1651,
+          "date": "2016-07-10",
+          "age_category": "Open Women's",
+          "weight_class": "48 kg",
+          "lifter_name": "Jessica Brown",
+          "lifter_id": 1040,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jessica Brown",
+              "membershipNumber": "1005844",
+              "fullText": "1  -  123  Jessica Brown  F  28  -  1005844  46.3  2016-07-10  -  Local  New York"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNy0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNy0xMCIsIndlaWdodF9jbGFzcyI6MzYyfQ=="
+        }
+      ],
+      "1055746": [
+        {
+          "meet_id": 4496,
+          "date": "2021-05-08",
+          "age_category": "Women's 13 Under Age Group",
+          "weight_class": "+64kg",
+          "lifter_name": "Jessica Brown",
+          "lifter_id": 1040,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jessica Brown",
+              "membershipNumber": "1055746",
+              "fullText": "4  -  51  Jessica Brown  F  13  CALAVERA BARBELL  1055746  66.75  2021-05-08  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNS0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNS0wOCIsIndlaWdodF9jbGFzcyI6NjB9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 1077,
+        "date": "2012-06-09",
+        "age_category": "Women's 16-17 Age Group",
+        "weight_class": "63 kg",
+        "lifter_name": "Jessica Brown",
+        "lifter_id": 1040,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wNi0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wNi0wOSIsIndlaWdodF9jbGFzcyI6MzMzfQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Jessica Brown",
+    "splits": [
+      {
+        "newAthleteName": "Jessica Brown (Person 1)",
+        "membershipNumber": "175836",
+        "competitionCount": 2,
+        "competitions": [
+          839,
+          669
+        ]
+      },
+      {
+        "newAthleteName": "Jessica Brown (Person 2)",
+        "membershipNumber": "1005844",
+        "competitionCount": 1,
+        "competitions": [
+          1651
+        ]
+      },
+      {
+        "newAthleteName": "Jessica Brown (Person 3)",
+        "membershipNumber": "1055746",
+        "competitionCount": 1,
+        "competitions": [
+          4496
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 1077,
+        "date": "2012-06-09",
+        "age_category": "Women's 16-17 Age Group",
+        "weight_class": "63 kg",
+        "lifter_name": "Jessica Brown",
+        "lifter_id": 1040,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wNi0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wNi0wOSIsIndlaWdodF9jbGFzcyI6MzMzfQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Jessica Brown",
+    "competitions": [
+      {
+        "meet_id": 1651,
+        "date": "2016-07-10",
+        "age_category": "Open Women's",
+        "weight_class": "48 kg",
+        "lifter_name": "Jessica Brown",
+        "lifter_id": 1040,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jessica Brown",
+            "membershipNumber": "1005844",
+            "fullText": "1  -  123  Jessica Brown  F  28  -  1005844  46.3  2016-07-10  -  Local  New York"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNy0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNy0xMCIsIndlaWdodF9jbGFzcyI6MzYyfQ=="
+      },
+      {
+        "meet_id": 839,
+        "date": "2013-02-16",
+        "age_category": "Open Women's",
+        "weight_class": "69 kg",
+        "lifter_name": "Jessica Brown",
+        "lifter_id": 1040,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jessica Brown",
+            "membershipNumber": "175836",
+            "fullText": "1  -  115  Jessica Brown  F  18  CINCINNATI WEIGHTLIFTING CLUB  175836  65.6  2013-02-16  -  Local  Ohio"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMi0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMi0xNiIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+      },
+      {
+        "meet_id": 1077,
+        "date": "2012-06-09",
+        "age_category": "Women's 16-17 Age Group",
+        "weight_class": "63 kg",
+        "lifter_name": "Jessica Brown",
+        "lifter_id": 1040,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wNi0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wNi0wOSIsIndlaWdodF9jbGFzcyI6MzMzfQ=="
+      },
+      {
+        "meet_id": 4496,
+        "date": "2021-05-08",
+        "age_category": "Women's 13 Under Age Group",
+        "weight_class": "+64kg",
+        "lifter_name": "Jessica Brown",
+        "lifter_id": 1040,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jessica Brown",
+            "membershipNumber": "1055746",
+            "fullText": "4  -  51  Jessica Brown  F  13  CALAVERA BARBELL  1055746  66.75  2021-05-08  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNS0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNS0wOCIsIndlaWdodF9jbGFzcyI6NjB9"
+      },
+      {
+        "meet_id": 669,
+        "date": "2012-12-29",
+        "age_category": "Women's 16-17 Age Group",
+        "weight_class": "63 kg",
+        "lifter_name": "Jessica Brown",
+        "lifter_id": 1040,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jessica Brown",
+            "membershipNumber": "175836",
+            "fullText": "1  -  109  Jessica Brown  F  17  CINCINNATI WEIGHTLIFTING CLUB  175836  63  2012-12-29  -  Local  Ohio"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0xMi0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0xMi0yOSIsIndlaWdodF9jbGFzcyI6MzMzfQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 3,
+      "membershipGroups": {
+        "175836": [
+          {
+            "meet_id": 839,
+            "date": "2013-02-16",
+            "age_category": "Open Women's",
+            "weight_class": "69 kg",
+            "lifter_name": "Jessica Brown",
+            "lifter_id": 1040,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jessica Brown",
+                "membershipNumber": "175836",
+                "fullText": "1  -  115  Jessica Brown  F  18  CINCINNATI WEIGHTLIFTING CLUB  175836  65.6  2013-02-16  -  Local  Ohio"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMi0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMi0xNiIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+          },
+          {
+            "meet_id": 669,
+            "date": "2012-12-29",
+            "age_category": "Women's 16-17 Age Group",
+            "weight_class": "63 kg",
+            "lifter_name": "Jessica Brown",
+            "lifter_id": 1040,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jessica Brown",
+                "membershipNumber": "175836",
+                "fullText": "1  -  109  Jessica Brown  F  17  CINCINNATI WEIGHTLIFTING CLUB  175836  63  2012-12-29  -  Local  Ohio"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0xMi0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0xMi0yOSIsIndlaWdodF9jbGFzcyI6MzMzfQ=="
+          }
+        ],
+        "1005844": [
+          {
+            "meet_id": 1651,
+            "date": "2016-07-10",
+            "age_category": "Open Women's",
+            "weight_class": "48 kg",
+            "lifter_name": "Jessica Brown",
+            "lifter_id": 1040,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jessica Brown",
+                "membershipNumber": "1005844",
+                "fullText": "1  -  123  Jessica Brown  F  28  -  1005844  46.3  2016-07-10  -  Local  New York"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNy0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNy0xMCIsIndlaWdodF9jbGFzcyI6MzYyfQ=="
+          }
+        ],
+        "1055746": [
+          {
+            "meet_id": 4496,
+            "date": "2021-05-08",
+            "age_category": "Women's 13 Under Age Group",
+            "weight_class": "+64kg",
+            "lifter_name": "Jessica Brown",
+            "lifter_id": 1040,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jessica Brown",
+                "membershipNumber": "1055746",
+                "fullText": "4  -  51  Jessica Brown  F  13  CALAVERA BARBELL  1055746  66.75  2021-05-08  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNS0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNS0wOCIsIndlaWdodF9jbGFzcyI6NjB9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 1077,
+          "date": "2012-06-09",
+          "age_category": "Women's 16-17 Age Group",
+          "weight_class": "63 kg",
+          "lifter_name": "Jessica Brown",
+          "lifter_id": 1040,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wNi0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wNi0wOSIsIndlaWdodF9jbGFzcyI6MzMzfQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

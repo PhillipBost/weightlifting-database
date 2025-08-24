@@ -1,0 +1,194 @@
+{
+  "timestamp": "2025-08-22T06:59:56.887Z",
+  "athleteName": "Jeffrey Rogers",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "193446": [
+        {
+          "meet_id": 1400,
+          "date": "2014-03-08",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Jeffrey Rogers",
+          "lifter_id": 20266,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jeffrey Rogers",
+              "membershipNumber": "193446",
+              "fullText": "7  -  238  Jeffrey Rogers  M  18  -  193446  99.2  2014-03-08  -  Local  Southern"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0wOCIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        }
+      ],
+      "1025661": [
+        {
+          "meet_id": 2986,
+          "date": "2018-07-14",
+          "age_category": "Open Men's",
+          "weight_class": "69 kg",
+          "lifter_name": "Jeffrey Rogers",
+          "lifter_id": 20266,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jeffrey Rogers",
+              "membershipNumber": "1025661",
+              "fullText": "12  -  129  Jeffrey Rogers  M  54  TOUGH TEMPLE BARBELL CLUB  1025661  65.25  2018-07-14  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNy0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNy0xNCIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 2827,
+        "date": "2018-01-28",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "Jeffrey Rogers",
+        "lifter_id": 20266,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMS0yOCIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Jeffrey Rogers",
+    "splits": [
+      {
+        "newAthleteName": "Jeffrey Rogers (Person 1)",
+        "membershipNumber": "193446",
+        "competitionCount": 1,
+        "competitions": [
+          1400
+        ]
+      },
+      {
+        "newAthleteName": "Jeffrey Rogers (Person 2)",
+        "membershipNumber": "1025661",
+        "competitionCount": 1,
+        "competitions": [
+          2986
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 2827,
+        "date": "2018-01-28",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "Jeffrey Rogers",
+        "lifter_id": 20266,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMS0yOCIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Jeffrey Rogers",
+    "competitions": [
+      {
+        "meet_id": 1400,
+        "date": "2014-03-08",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Jeffrey Rogers",
+        "lifter_id": 20266,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jeffrey Rogers",
+            "membershipNumber": "193446",
+            "fullText": "7  -  238  Jeffrey Rogers  M  18  -  193446  99.2  2014-03-08  -  Local  Southern"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0wOCIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 2827,
+        "date": "2018-01-28",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "Jeffrey Rogers",
+        "lifter_id": 20266,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMS0yOCIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      },
+      {
+        "meet_id": 2986,
+        "date": "2018-07-14",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "Jeffrey Rogers",
+        "lifter_id": 20266,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jeffrey Rogers",
+            "membershipNumber": "1025661",
+            "fullText": "12  -  129  Jeffrey Rogers  M  54  TOUGH TEMPLE BARBELL CLUB  1025661  65.25  2018-07-14  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNy0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNy0xNCIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "193446": [
+          {
+            "meet_id": 1400,
+            "date": "2014-03-08",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Jeffrey Rogers",
+            "lifter_id": 20266,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jeffrey Rogers",
+                "membershipNumber": "193446",
+                "fullText": "7  -  238  Jeffrey Rogers  M  18  -  193446  99.2  2014-03-08  -  Local  Southern"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0wOCIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          }
+        ],
+        "1025661": [
+          {
+            "meet_id": 2986,
+            "date": "2018-07-14",
+            "age_category": "Open Men's",
+            "weight_class": "69 kg",
+            "lifter_name": "Jeffrey Rogers",
+            "lifter_id": 20266,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jeffrey Rogers",
+                "membershipNumber": "1025661",
+                "fullText": "12  -  129  Jeffrey Rogers  M  54  TOUGH TEMPLE BARBELL CLUB  1025661  65.25  2018-07-14  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNy0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNy0xNCIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 2827,
+          "date": "2018-01-28",
+          "age_category": "Open Men's",
+          "weight_class": "69 kg",
+          "lifter_name": "Jeffrey Rogers",
+          "lifter_id": 20266,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMS0yOCIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

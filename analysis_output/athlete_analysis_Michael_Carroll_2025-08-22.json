@@ -1,0 +1,194 @@
+{
+  "timestamp": "2025-08-22T16:20:38.520Z",
+  "athleteName": "Michael Carroll",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1051390": [
+        {
+          "meet_id": 5317,
+          "date": "2022-05-07",
+          "age_category": "Men's Masters (35-39)",
+          "weight_class": "+109kg",
+          "lifter_name": "Michael Carroll",
+          "lifter_id": 49315,
+          "membershipNumbers": [
+            {
+              "athleteName": "Michael Carroll",
+              "membershipNumber": "1051390",
+              "fullText": "1  -  192  Michael Carroll  M  38  Fifty-One Fifty Weightlifting Club  1051390  134  2022-05-07  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNS0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNS0wNyIsIndlaWdodF9jbGFzcyI6MTEwfQ=="
+        }
+      ],
+      "1064392": [
+        {
+          "meet_id": 5412,
+          "date": "2022-07-10",
+          "age_category": "Junior Men's",
+          "weight_class": "73kg",
+          "lifter_name": "Michael Carroll",
+          "lifter_id": 49315,
+          "membershipNumbers": [
+            {
+              "athleteName": "Michael Carroll",
+              "membershipNumber": "1064392",
+              "fullText": "2  -  181  Michael Carroll  M  19  -  1064392  73  2022-07-10  -  Local  Indiana"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNy0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNy0xMCIsIndlaWdodF9jbGFzcyI6NjR9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 4913,
+        "date": "2021-05-22",
+        "age_category": "Men's Masters (35-39)",
+        "weight_class": "+109kg",
+        "lifter_name": "Michael Carroll",
+        "lifter_id": 49315,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNS0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNS0yMiIsIndlaWdodF9jbGFzcyI6MTEwfQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Michael Carroll",
+    "splits": [
+      {
+        "newAthleteName": "Michael Carroll (Person 1)",
+        "membershipNumber": "1051390",
+        "competitionCount": 1,
+        "competitions": [
+          5317
+        ]
+      },
+      {
+        "newAthleteName": "Michael Carroll (Person 2)",
+        "membershipNumber": "1064392",
+        "competitionCount": 1,
+        "competitions": [
+          5412
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 4913,
+        "date": "2021-05-22",
+        "age_category": "Men's Masters (35-39)",
+        "weight_class": "+109kg",
+        "lifter_name": "Michael Carroll",
+        "lifter_id": 49315,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNS0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNS0yMiIsIndlaWdodF9jbGFzcyI6MTEwfQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Michael Carroll",
+    "competitions": [
+      {
+        "meet_id": 4913,
+        "date": "2021-05-22",
+        "age_category": "Men's Masters (35-39)",
+        "weight_class": "+109kg",
+        "lifter_name": "Michael Carroll",
+        "lifter_id": 49315,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNS0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNS0yMiIsIndlaWdodF9jbGFzcyI6MTEwfQ=="
+      },
+      {
+        "meet_id": 5317,
+        "date": "2022-05-07",
+        "age_category": "Men's Masters (35-39)",
+        "weight_class": "+109kg",
+        "lifter_name": "Michael Carroll",
+        "lifter_id": 49315,
+        "membershipNumbers": [
+          {
+            "athleteName": "Michael Carroll",
+            "membershipNumber": "1051390",
+            "fullText": "1  -  192  Michael Carroll  M  38  Fifty-One Fifty Weightlifting Club  1051390  134  2022-05-07  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNS0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNS0wNyIsIndlaWdodF9jbGFzcyI6MTEwfQ=="
+      },
+      {
+        "meet_id": 5412,
+        "date": "2022-07-10",
+        "age_category": "Junior Men's",
+        "weight_class": "73kg",
+        "lifter_name": "Michael Carroll",
+        "lifter_id": 49315,
+        "membershipNumbers": [
+          {
+            "athleteName": "Michael Carroll",
+            "membershipNumber": "1064392",
+            "fullText": "2  -  181  Michael Carroll  M  19  -  1064392  73  2022-07-10  -  Local  Indiana"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNy0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNy0xMCIsIndlaWdodF9jbGFzcyI6NjR9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1051390": [
+          {
+            "meet_id": 5317,
+            "date": "2022-05-07",
+            "age_category": "Men's Masters (35-39)",
+            "weight_class": "+109kg",
+            "lifter_name": "Michael Carroll",
+            "lifter_id": 49315,
+            "membershipNumbers": [
+              {
+                "athleteName": "Michael Carroll",
+                "membershipNumber": "1051390",
+                "fullText": "1  -  192  Michael Carroll  M  38  Fifty-One Fifty Weightlifting Club  1051390  134  2022-05-07  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNS0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNS0wNyIsIndlaWdodF9jbGFzcyI6MTEwfQ=="
+          }
+        ],
+        "1064392": [
+          {
+            "meet_id": 5412,
+            "date": "2022-07-10",
+            "age_category": "Junior Men's",
+            "weight_class": "73kg",
+            "lifter_name": "Michael Carroll",
+            "lifter_id": 49315,
+            "membershipNumbers": [
+              {
+                "athleteName": "Michael Carroll",
+                "membershipNumber": "1064392",
+                "fullText": "2  -  181  Michael Carroll  M  19  -  1064392  73  2022-07-10  -  Local  Indiana"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNy0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNy0xMCIsIndlaWdodF9jbGFzcyI6NjR9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 4913,
+          "date": "2021-05-22",
+          "age_category": "Men's Masters (35-39)",
+          "weight_class": "+109kg",
+          "lifter_name": "Michael Carroll",
+          "lifter_id": 49315,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNS0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNS0yMiIsIndlaWdodF9jbGFzcyI6MTEwfQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

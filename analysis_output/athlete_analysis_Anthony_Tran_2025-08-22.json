@@ -1,0 +1,298 @@
+{
+  "timestamp": "2025-08-22T06:06:04.080Z",
+  "athleteName": "Anthony Tran",
+  "totalCompetitions": 5,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "212621": [
+        {
+          "meet_id": 1726,
+          "date": "2016-02-06",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Anthony Tran",
+          "lifter_id": 11912,
+          "membershipNumbers": [
+            {
+              "athleteName": "Anthony Tran",
+              "membershipNumber": "212621",
+              "fullText": "21  -  175  Anthony Tran  M  30  SENSE Weightlifting Village  212621  81.3  2016-02-06  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMi0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMi0wNiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        },
+        {
+          "meet_id": 318,
+          "date": "2015-05-02",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Anthony Tran",
+          "lifter_id": 11912,
+          "membershipNumbers": [
+            {
+              "athleteName": "Anthony Tran",
+              "membershipNumber": "212621",
+              "fullText": "9  -  148  Anthony Tran  M  29  SENSE Weightlifting Village  212621  80.5  2015-05-02  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0wMiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ],
+      "1017345": [
+        {
+          "meet_id": 5164,
+          "date": "2022-02-28",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Anthony Tran",
+          "lifter_id": 11912,
+          "membershipNumbers": [
+            {
+              "athleteName": "Anthony Tran",
+              "membershipNumber": "1017345",
+              "fullText": "3  -  230  Anthony Tran  M  31  -  1017345  80  2022-02-28  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMi0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMi0yOCIsIndlaWdodF9jbGFzcyI6ODV9"
+        },
+        {
+          "meet_id": 5250,
+          "date": "2022-03-27",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Anthony Tran",
+          "lifter_id": 11912,
+          "membershipNumbers": [
+            {
+              "athleteName": "Anthony Tran",
+              "membershipNumber": "1017345",
+              "fullText": "2  -  210  Anthony Tran  M  31  -  1017345  80.26  2022-03-27  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMy0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMy0yNyIsIndlaWdodF9jbGFzcyI6ODV9"
+        },
+        {
+          "meet_id": 2718,
+          "date": "2017-08-05",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Anthony Tran",
+          "lifter_id": 11912,
+          "membershipNumbers": [
+            {
+              "athleteName": "Anthony Tran",
+              "membershipNumber": "1017345",
+              "fullText": "9  -  207  Anthony Tran  M  26  -  1017345  80.59  2017-08-05  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wOC0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wOC0wNSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Anthony Tran",
+    "splits": [
+      {
+        "newAthleteName": "Anthony Tran (Person 1)",
+        "membershipNumber": "212621",
+        "competitionCount": 2,
+        "competitions": [
+          1726,
+          318
+        ]
+      },
+      {
+        "newAthleteName": "Anthony Tran (Person 2)",
+        "membershipNumber": "1017345",
+        "competitionCount": 3,
+        "competitions": [
+          5164,
+          5250,
+          2718
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Anthony Tran",
+    "competitions": [
+      {
+        "meet_id": 5164,
+        "date": "2022-02-28",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Anthony Tran",
+        "lifter_id": 11912,
+        "membershipNumbers": [
+          {
+            "athleteName": "Anthony Tran",
+            "membershipNumber": "1017345",
+            "fullText": "3  -  230  Anthony Tran  M  31  -  1017345  80  2022-02-28  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMi0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMi0yOCIsIndlaWdodF9jbGFzcyI6ODV9"
+      },
+      {
+        "meet_id": 5250,
+        "date": "2022-03-27",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Anthony Tran",
+        "lifter_id": 11912,
+        "membershipNumbers": [
+          {
+            "athleteName": "Anthony Tran",
+            "membershipNumber": "1017345",
+            "fullText": "2  -  210  Anthony Tran  M  31  -  1017345  80.26  2022-03-27  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMy0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMy0yNyIsIndlaWdodF9jbGFzcyI6ODV9"
+      },
+      {
+        "meet_id": 1726,
+        "date": "2016-02-06",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Anthony Tran",
+        "lifter_id": 11912,
+        "membershipNumbers": [
+          {
+            "athleteName": "Anthony Tran",
+            "membershipNumber": "212621",
+            "fullText": "21  -  175  Anthony Tran  M  30  SENSE Weightlifting Village  212621  81.3  2016-02-06  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMi0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMi0wNiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 2718,
+        "date": "2017-08-05",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Anthony Tran",
+        "lifter_id": 11912,
+        "membershipNumbers": [
+          {
+            "athleteName": "Anthony Tran",
+            "membershipNumber": "1017345",
+            "fullText": "9  -  207  Anthony Tran  M  26  -  1017345  80.59  2017-08-05  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wOC0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wOC0wNSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 318,
+        "date": "2015-05-02",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Anthony Tran",
+        "lifter_id": 11912,
+        "membershipNumbers": [
+          {
+            "athleteName": "Anthony Tran",
+            "membershipNumber": "212621",
+            "fullText": "9  -  148  Anthony Tran  M  29  SENSE Weightlifting Village  212621  80.5  2015-05-02  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0wMiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "212621": [
+          {
+            "meet_id": 1726,
+            "date": "2016-02-06",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Anthony Tran",
+            "lifter_id": 11912,
+            "membershipNumbers": [
+              {
+                "athleteName": "Anthony Tran",
+                "membershipNumber": "212621",
+                "fullText": "21  -  175  Anthony Tran  M  30  SENSE Weightlifting Village  212621  81.3  2016-02-06  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMi0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMi0wNiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          },
+          {
+            "meet_id": 318,
+            "date": "2015-05-02",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Anthony Tran",
+            "lifter_id": 11912,
+            "membershipNumbers": [
+              {
+                "athleteName": "Anthony Tran",
+                "membershipNumber": "212621",
+                "fullText": "9  -  148  Anthony Tran  M  29  SENSE Weightlifting Village  212621  80.5  2015-05-02  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0wMiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          }
+        ],
+        "1017345": [
+          {
+            "meet_id": 5164,
+            "date": "2022-02-28",
+            "age_category": "Open Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Anthony Tran",
+            "lifter_id": 11912,
+            "membershipNumbers": [
+              {
+                "athleteName": "Anthony Tran",
+                "membershipNumber": "1017345",
+                "fullText": "3  -  230  Anthony Tran  M  31  -  1017345  80  2022-02-28  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMi0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMi0yOCIsIndlaWdodF9jbGFzcyI6ODV9"
+          },
+          {
+            "meet_id": 5250,
+            "date": "2022-03-27",
+            "age_category": "Open Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Anthony Tran",
+            "lifter_id": 11912,
+            "membershipNumbers": [
+              {
+                "athleteName": "Anthony Tran",
+                "membershipNumber": "1017345",
+                "fullText": "2  -  210  Anthony Tran  M  31  -  1017345  80.26  2022-03-27  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMy0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMy0yNyIsIndlaWdodF9jbGFzcyI6ODV9"
+          },
+          {
+            "meet_id": 2718,
+            "date": "2017-08-05",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Anthony Tran",
+            "lifter_id": 11912,
+            "membershipNumbers": [
+              {
+                "athleteName": "Anthony Tran",
+                "membershipNumber": "1017345",
+                "fullText": "9  -  207  Anthony Tran  M  26  -  1017345  80.59  2017-08-05  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wOC0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wOC0wNSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

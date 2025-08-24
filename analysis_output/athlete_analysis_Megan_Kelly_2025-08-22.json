@@ -1,0 +1,332 @@
+{
+  "timestamp": "2025-08-22T21:54:26.881Z",
+  "athleteName": "Megan Kelly",
+  "totalCompetitions": 6,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "203499": [
+        {
+          "meet_id": 1500,
+          "date": "2014-12-06",
+          "age_category": "Open Women's",
+          "weight_class": "63 kg",
+          "lifter_name": "Megan Kelly",
+          "lifter_id": 15283,
+          "membershipNumbers": [
+            {
+              "athleteName": "Megan Kelly",
+              "membershipNumber": "203499",
+              "fullText": "16  -  93  Megan Kelly  F  23  K&M WEIGHTLIFTING  203499  61.5  2014-12-06  -  Local  New England"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMi0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMi0wNiIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+        }
+      ],
+      "220848": [
+        {
+          "meet_id": 2100,
+          "date": "2016-09-17",
+          "age_category": "Open Women's",
+          "weight_class": "63 kg",
+          "lifter_name": "Megan Kelly",
+          "lifter_id": 15283,
+          "membershipNumbers": [
+            {
+              "athleteName": "Megan Kelly",
+              "membershipNumber": "220848",
+              "fullText": "23  -  118  Megan Kelly  F  32  IRON ATHLETE WEIGHTLIFTING CLUB  220848  62.5  2016-09-17  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOS0xNyIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+        },
+        {
+          "meet_id": 2168,
+          "date": "2016-10-09",
+          "age_category": "Open Women's",
+          "weight_class": "69 kg",
+          "lifter_name": "Megan Kelly",
+          "lifter_id": 15283,
+          "membershipNumbers": [
+            {
+              "athleteName": "Megan Kelly",
+              "membershipNumber": "220848",
+              "fullText": "11  -  129  Megan Kelly  F  32  IRON ATHLETE WEIGHTLIFTING CLUB  220848  64.7  2016-10-09  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0wOSIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+        },
+        {
+          "meet_id": 2707,
+          "date": "2017-08-19",
+          "age_category": "Open Women's",
+          "weight_class": "69 kg",
+          "lifter_name": "Megan Kelly",
+          "lifter_id": 15283,
+          "membershipNumbers": [
+            {
+              "athleteName": "Megan Kelly",
+              "membershipNumber": "220848",
+              "fullText": "5  -  129  Megan Kelly  F  33  IRON ATHLETE WEIGHTLIFTING CLUB  220848  67.1  2017-08-19  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wOC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wOC0xOSIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 494,
+        "date": "2015-10-17",
+        "age_category": "Open Women's",
+        "weight_class": "69 kg",
+        "lifter_name": "Megan Kelly",
+        "lifter_id": 15283,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xNyIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+      },
+      {
+        "meet_id": 8,
+        "date": "2015-05-23",
+        "age_category": "Open Women's",
+        "weight_class": "63 kg",
+        "lifter_name": "Megan Kelly",
+        "lifter_id": 15283,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0yMyIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Megan Kelly",
+    "splits": [
+      {
+        "newAthleteName": "Megan Kelly (Person 1)",
+        "membershipNumber": "203499",
+        "competitionCount": 1,
+        "competitions": [
+          1500
+        ]
+      },
+      {
+        "newAthleteName": "Megan Kelly (Person 2)",
+        "membershipNumber": "220848",
+        "competitionCount": 3,
+        "competitions": [
+          2100,
+          2168,
+          2707
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 494,
+        "date": "2015-10-17",
+        "age_category": "Open Women's",
+        "weight_class": "69 kg",
+        "lifter_name": "Megan Kelly",
+        "lifter_id": 15283,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xNyIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+      },
+      {
+        "meet_id": 8,
+        "date": "2015-05-23",
+        "age_category": "Open Women's",
+        "weight_class": "63 kg",
+        "lifter_name": "Megan Kelly",
+        "lifter_id": 15283,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0yMyIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Megan Kelly",
+    "competitions": [
+      {
+        "meet_id": 494,
+        "date": "2015-10-17",
+        "age_category": "Open Women's",
+        "weight_class": "69 kg",
+        "lifter_name": "Megan Kelly",
+        "lifter_id": 15283,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xNyIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+      },
+      {
+        "meet_id": 8,
+        "date": "2015-05-23",
+        "age_category": "Open Women's",
+        "weight_class": "63 kg",
+        "lifter_name": "Megan Kelly",
+        "lifter_id": 15283,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0yMyIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+      },
+      {
+        "meet_id": 2100,
+        "date": "2016-09-17",
+        "age_category": "Open Women's",
+        "weight_class": "63 kg",
+        "lifter_name": "Megan Kelly",
+        "lifter_id": 15283,
+        "membershipNumbers": [
+          {
+            "athleteName": "Megan Kelly",
+            "membershipNumber": "220848",
+            "fullText": "23  -  118  Megan Kelly  F  32  IRON ATHLETE WEIGHTLIFTING CLUB  220848  62.5  2016-09-17  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOS0xNyIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+      },
+      {
+        "meet_id": 2168,
+        "date": "2016-10-09",
+        "age_category": "Open Women's",
+        "weight_class": "69 kg",
+        "lifter_name": "Megan Kelly",
+        "lifter_id": 15283,
+        "membershipNumbers": [
+          {
+            "athleteName": "Megan Kelly",
+            "membershipNumber": "220848",
+            "fullText": "11  -  129  Megan Kelly  F  32  IRON ATHLETE WEIGHTLIFTING CLUB  220848  64.7  2016-10-09  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0wOSIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+      },
+      {
+        "meet_id": 2707,
+        "date": "2017-08-19",
+        "age_category": "Open Women's",
+        "weight_class": "69 kg",
+        "lifter_name": "Megan Kelly",
+        "lifter_id": 15283,
+        "membershipNumbers": [
+          {
+            "athleteName": "Megan Kelly",
+            "membershipNumber": "220848",
+            "fullText": "5  -  129  Megan Kelly  F  33  IRON ATHLETE WEIGHTLIFTING CLUB  220848  67.1  2017-08-19  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wOC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wOC0xOSIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+      },
+      {
+        "meet_id": 1500,
+        "date": "2014-12-06",
+        "age_category": "Open Women's",
+        "weight_class": "63 kg",
+        "lifter_name": "Megan Kelly",
+        "lifter_id": 15283,
+        "membershipNumbers": [
+          {
+            "athleteName": "Megan Kelly",
+            "membershipNumber": "203499",
+            "fullText": "16  -  93  Megan Kelly  F  23  K&M WEIGHTLIFTING  203499  61.5  2014-12-06  -  Local  New England"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMi0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMi0wNiIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "203499": [
+          {
+            "meet_id": 1500,
+            "date": "2014-12-06",
+            "age_category": "Open Women's",
+            "weight_class": "63 kg",
+            "lifter_name": "Megan Kelly",
+            "lifter_id": 15283,
+            "membershipNumbers": [
+              {
+                "athleteName": "Megan Kelly",
+                "membershipNumber": "203499",
+                "fullText": "16  -  93  Megan Kelly  F  23  K&M WEIGHTLIFTING  203499  61.5  2014-12-06  -  Local  New England"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMi0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMi0wNiIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+          }
+        ],
+        "220848": [
+          {
+            "meet_id": 2100,
+            "date": "2016-09-17",
+            "age_category": "Open Women's",
+            "weight_class": "63 kg",
+            "lifter_name": "Megan Kelly",
+            "lifter_id": 15283,
+            "membershipNumbers": [
+              {
+                "athleteName": "Megan Kelly",
+                "membershipNumber": "220848",
+                "fullText": "23  -  118  Megan Kelly  F  32  IRON ATHLETE WEIGHTLIFTING CLUB  220848  62.5  2016-09-17  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOS0xNyIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+          },
+          {
+            "meet_id": 2168,
+            "date": "2016-10-09",
+            "age_category": "Open Women's",
+            "weight_class": "69 kg",
+            "lifter_name": "Megan Kelly",
+            "lifter_id": 15283,
+            "membershipNumbers": [
+              {
+                "athleteName": "Megan Kelly",
+                "membershipNumber": "220848",
+                "fullText": "11  -  129  Megan Kelly  F  32  IRON ATHLETE WEIGHTLIFTING CLUB  220848  64.7  2016-10-09  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0wOSIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+          },
+          {
+            "meet_id": 2707,
+            "date": "2017-08-19",
+            "age_category": "Open Women's",
+            "weight_class": "69 kg",
+            "lifter_name": "Megan Kelly",
+            "lifter_id": 15283,
+            "membershipNumbers": [
+              {
+                "athleteName": "Megan Kelly",
+                "membershipNumber": "220848",
+                "fullText": "5  -  129  Megan Kelly  F  33  IRON ATHLETE WEIGHTLIFTING CLUB  220848  67.1  2017-08-19  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wOC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wOC0xOSIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 494,
+          "date": "2015-10-17",
+          "age_category": "Open Women's",
+          "weight_class": "69 kg",
+          "lifter_name": "Megan Kelly",
+          "lifter_id": 15283,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xNyIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+        },
+        {
+          "meet_id": 8,
+          "date": "2015-05-23",
+          "age_category": "Open Women's",
+          "weight_class": "63 kg",
+          "lifter_name": "Megan Kelly",
+          "lifter_id": 15283,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0yMyIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

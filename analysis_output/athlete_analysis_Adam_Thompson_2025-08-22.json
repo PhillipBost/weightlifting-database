@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T10:19:09.710Z",
+  "athleteName": "Adam Thompson",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "187148": [
+        {
+          "meet_id": 716,
+          "date": "2013-09-21",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Adam Thompson",
+          "lifter_id": 5114,
+          "membershipNumbers": [
+            {
+              "athleteName": "Adam Thompson",
+              "membershipNumber": "187148",
+              "fullText": "7  -  215  Adam Thompson  M  31  -  187148  73  2013-09-21  -  Local  -"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wOS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wOS0yMSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        }
+      ],
+      "1036926": [
+        {
+          "meet_id": 3677,
+          "date": "2018-12-29",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Adam Thompson",
+          "lifter_id": 5114,
+          "membershipNumbers": [
+            {
+              "athleteName": "Adam Thompson",
+              "membershipNumber": "1036926",
+              "fullText": "9  -  187  Adam Thompson  M  22  HONOR YOUR Barbell  1036926  77.6  2018-12-29  -  Local  Missouri Valley"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0yOSIsIndlaWdodF9jbGFzcyI6ODV9"
+        },
+        {
+          "meet_id": 3910,
+          "date": "2019-03-16",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Adam Thompson",
+          "lifter_id": 5114,
+          "membershipNumbers": [
+            {
+              "athleteName": "Adam Thompson",
+              "membershipNumber": "1036926",
+              "fullText": "8  -  208  Adam Thompson  M  23  HONOR YOUR Barbell  1036926  80.4  2019-03-16  -  Local  Missouri Valley"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMy0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMy0xNiIsIndlaWdodF9jbGFzcyI6ODV9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Adam Thompson",
+    "splits": [
+      {
+        "newAthleteName": "Adam Thompson (Person 1)",
+        "membershipNumber": "187148",
+        "competitionCount": 1,
+        "competitions": [
+          716
+        ]
+      },
+      {
+        "newAthleteName": "Adam Thompson (Person 2)",
+        "membershipNumber": "1036926",
+        "competitionCount": 2,
+        "competitions": [
+          3677,
+          3910
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Adam Thompson",
+    "competitions": [
+      {
+        "meet_id": 716,
+        "date": "2013-09-21",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Adam Thompson",
+        "lifter_id": 5114,
+        "membershipNumbers": [
+          {
+            "athleteName": "Adam Thompson",
+            "membershipNumber": "187148",
+            "fullText": "7  -  215  Adam Thompson  M  31  -  187148  73  2013-09-21  -  Local  -"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wOS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wOS0yMSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 3677,
+        "date": "2018-12-29",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Adam Thompson",
+        "lifter_id": 5114,
+        "membershipNumbers": [
+          {
+            "athleteName": "Adam Thompson",
+            "membershipNumber": "1036926",
+            "fullText": "9  -  187  Adam Thompson  M  22  HONOR YOUR Barbell  1036926  77.6  2018-12-29  -  Local  Missouri Valley"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0yOSIsIndlaWdodF9jbGFzcyI6ODV9"
+      },
+      {
+        "meet_id": 3910,
+        "date": "2019-03-16",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Adam Thompson",
+        "lifter_id": 5114,
+        "membershipNumbers": [
+          {
+            "athleteName": "Adam Thompson",
+            "membershipNumber": "1036926",
+            "fullText": "8  -  208  Adam Thompson  M  23  HONOR YOUR Barbell  1036926  80.4  2019-03-16  -  Local  Missouri Valley"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMy0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMy0xNiIsIndlaWdodF9jbGFzcyI6ODV9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "187148": [
+          {
+            "meet_id": 716,
+            "date": "2013-09-21",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Adam Thompson",
+            "lifter_id": 5114,
+            "membershipNumbers": [
+              {
+                "athleteName": "Adam Thompson",
+                "membershipNumber": "187148",
+                "fullText": "7  -  215  Adam Thompson  M  31  -  187148  73  2013-09-21  -  Local  -"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wOS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wOS0yMSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          }
+        ],
+        "1036926": [
+          {
+            "meet_id": 3677,
+            "date": "2018-12-29",
+            "age_category": "Open Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Adam Thompson",
+            "lifter_id": 5114,
+            "membershipNumbers": [
+              {
+                "athleteName": "Adam Thompson",
+                "membershipNumber": "1036926",
+                "fullText": "9  -  187  Adam Thompson  M  22  HONOR YOUR Barbell  1036926  77.6  2018-12-29  -  Local  Missouri Valley"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0yOSIsIndlaWdodF9jbGFzcyI6ODV9"
+          },
+          {
+            "meet_id": 3910,
+            "date": "2019-03-16",
+            "age_category": "Open Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Adam Thompson",
+            "lifter_id": 5114,
+            "membershipNumbers": [
+              {
+                "athleteName": "Adam Thompson",
+                "membershipNumber": "1036926",
+                "fullText": "8  -  208  Adam Thompson  M  23  HONOR YOUR Barbell  1036926  80.4  2019-03-16  -  Local  Missouri Valley"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMy0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMy0xNiIsIndlaWdodF9jbGFzcyI6ODV9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

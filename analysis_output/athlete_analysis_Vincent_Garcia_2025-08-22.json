@@ -1,0 +1,243 @@
+{
+  "timestamp": "2025-08-22T08:50:52.970Z",
+  "athleteName": "Vincent Garcia",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1058443": [
+        {
+          "meet_id": 5006,
+          "date": "2021-09-18",
+          "age_category": "Men's Masters (45-49)",
+          "weight_class": "+109kg",
+          "lifter_name": "Vincent Garcia",
+          "lifter_id": 49881,
+          "membershipNumbers": [
+            {
+              "athleteName": "Vincent Garcia",
+              "membershipNumber": "1058443",
+              "fullText": "1  -  161  Vincent Garcia  M  45  DiamondFit Weightlifting Club  1058443  115.7  2021-09-18  -  Local  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wOS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wOS0xOCIsIndlaWdodF9jbGFzcyI6MTUwfQ=="
+        }
+      ],
+      "1061134": [
+        {
+          "meet_id": 5411,
+          "date": "2022-06-04",
+          "age_category": "Men's Masters (35-39)",
+          "weight_class": "73kg",
+          "lifter_name": "Vincent Garcia",
+          "lifter_id": 49881,
+          "membershipNumbers": [
+            {
+              "athleteName": "Vincent Garcia",
+              "membershipNumber": "1061134",
+              "fullText": "1  -  170  Vincent Garcia  M  35  Black Label Barbell Club  1061134  68.85  2022-06-04  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNi0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNi0wNCIsIndlaWdodF9jbGFzcyI6MTA0fQ=="
+        },
+        {
+          "meet_id": 5481,
+          "date": "2022-09-03",
+          "age_category": "Men's Masters (35-39)",
+          "weight_class": "67kg",
+          "lifter_name": "Vincent Garcia",
+          "lifter_id": 49881,
+          "membershipNumbers": [
+            {
+              "athleteName": "Vincent Garcia",
+              "membershipNumber": "1061134",
+              "fullText": "1  -  167  Vincent Garcia  M  35  Black Label Barbell Club  1061134  66.35  2022-09-03  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wOS0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wOS0wMyIsIndlaWdodF9jbGFzcyI6MTAzfQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 5140,
+        "date": "2022-01-29",
+        "age_category": "Men's Masters (35-39)",
+        "weight_class": "73kg",
+        "lifter_name": "Vincent Garcia",
+        "lifter_id": 49881,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMS0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMS0yOSIsIndlaWdodF9jbGFzcyI6MTA0fQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Vincent Garcia",
+    "splits": [
+      {
+        "newAthleteName": "Vincent Garcia (Person 1)",
+        "membershipNumber": "1058443",
+        "competitionCount": 1,
+        "competitions": [
+          5006
+        ]
+      },
+      {
+        "newAthleteName": "Vincent Garcia (Person 2)",
+        "membershipNumber": "1061134",
+        "competitionCount": 2,
+        "competitions": [
+          5411,
+          5481
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 5140,
+        "date": "2022-01-29",
+        "age_category": "Men's Masters (35-39)",
+        "weight_class": "73kg",
+        "lifter_name": "Vincent Garcia",
+        "lifter_id": 49881,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMS0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMS0yOSIsIndlaWdodF9jbGFzcyI6MTA0fQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Vincent Garcia",
+    "competitions": [
+      {
+        "meet_id": 5006,
+        "date": "2021-09-18",
+        "age_category": "Men's Masters (45-49)",
+        "weight_class": "+109kg",
+        "lifter_name": "Vincent Garcia",
+        "lifter_id": 49881,
+        "membershipNumbers": [
+          {
+            "athleteName": "Vincent Garcia",
+            "membershipNumber": "1058443",
+            "fullText": "1  -  161  Vincent Garcia  M  45  DiamondFit Weightlifting Club  1058443  115.7  2021-09-18  -  Local  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wOS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wOS0xOCIsIndlaWdodF9jbGFzcyI6MTUwfQ=="
+      },
+      {
+        "meet_id": 5411,
+        "date": "2022-06-04",
+        "age_category": "Men's Masters (35-39)",
+        "weight_class": "73kg",
+        "lifter_name": "Vincent Garcia",
+        "lifter_id": 49881,
+        "membershipNumbers": [
+          {
+            "athleteName": "Vincent Garcia",
+            "membershipNumber": "1061134",
+            "fullText": "1  -  170  Vincent Garcia  M  35  Black Label Barbell Club  1061134  68.85  2022-06-04  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNi0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNi0wNCIsIndlaWdodF9jbGFzcyI6MTA0fQ=="
+      },
+      {
+        "meet_id": 5481,
+        "date": "2022-09-03",
+        "age_category": "Men's Masters (35-39)",
+        "weight_class": "67kg",
+        "lifter_name": "Vincent Garcia",
+        "lifter_id": 49881,
+        "membershipNumbers": [
+          {
+            "athleteName": "Vincent Garcia",
+            "membershipNumber": "1061134",
+            "fullText": "1  -  167  Vincent Garcia  M  35  Black Label Barbell Club  1061134  66.35  2022-09-03  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wOS0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wOS0wMyIsIndlaWdodF9jbGFzcyI6MTAzfQ=="
+      },
+      {
+        "meet_id": 5140,
+        "date": "2022-01-29",
+        "age_category": "Men's Masters (35-39)",
+        "weight_class": "73kg",
+        "lifter_name": "Vincent Garcia",
+        "lifter_id": 49881,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMS0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMS0yOSIsIndlaWdodF9jbGFzcyI6MTA0fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1058443": [
+          {
+            "meet_id": 5006,
+            "date": "2021-09-18",
+            "age_category": "Men's Masters (45-49)",
+            "weight_class": "+109kg",
+            "lifter_name": "Vincent Garcia",
+            "lifter_id": 49881,
+            "membershipNumbers": [
+              {
+                "athleteName": "Vincent Garcia",
+                "membershipNumber": "1058443",
+                "fullText": "1  -  161  Vincent Garcia  M  45  DiamondFit Weightlifting Club  1058443  115.7  2021-09-18  -  Local  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wOS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wOS0xOCIsIndlaWdodF9jbGFzcyI6MTUwfQ=="
+          }
+        ],
+        "1061134": [
+          {
+            "meet_id": 5411,
+            "date": "2022-06-04",
+            "age_category": "Men's Masters (35-39)",
+            "weight_class": "73kg",
+            "lifter_name": "Vincent Garcia",
+            "lifter_id": 49881,
+            "membershipNumbers": [
+              {
+                "athleteName": "Vincent Garcia",
+                "membershipNumber": "1061134",
+                "fullText": "1  -  170  Vincent Garcia  M  35  Black Label Barbell Club  1061134  68.85  2022-06-04  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNi0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNi0wNCIsIndlaWdodF9jbGFzcyI6MTA0fQ=="
+          },
+          {
+            "meet_id": 5481,
+            "date": "2022-09-03",
+            "age_category": "Men's Masters (35-39)",
+            "weight_class": "67kg",
+            "lifter_name": "Vincent Garcia",
+            "lifter_id": 49881,
+            "membershipNumbers": [
+              {
+                "athleteName": "Vincent Garcia",
+                "membershipNumber": "1061134",
+                "fullText": "1  -  167  Vincent Garcia  M  35  Black Label Barbell Club  1061134  66.35  2022-09-03  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wOS0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wOS0wMyIsIndlaWdodF9jbGFzcyI6MTAzfQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 5140,
+          "date": "2022-01-29",
+          "age_category": "Men's Masters (35-39)",
+          "weight_class": "73kg",
+          "lifter_name": "Vincent Garcia",
+          "lifter_id": 49881,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMS0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMS0yOSIsIndlaWdodF9jbGFzcyI6MTA0fQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

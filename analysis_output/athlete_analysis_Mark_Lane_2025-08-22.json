@@ -1,0 +1,354 @@
+{
+  "timestamp": "2025-08-22T17:48:54.720Z",
+  "athleteName": "Mark Lane",
+  "totalCompetitions": 7,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "124787": [
+        {
+          "meet_id": 526,
+          "date": "2016-01-31",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Mark Lane",
+          "lifter_id": 6122,
+          "membershipNumbers": [
+            {
+              "athleteName": "Mark Lane",
+              "membershipNumber": "124787",
+              "fullText": "28  -  184  Mark Lane  M  46  ATHLETIC LAB WLC  124787  84.45  2016-01-31  -  Local  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0zMSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ],
+      "181627": [
+        {
+          "meet_id": 828,
+          "date": "2013-02-09",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Mark Lane",
+          "lifter_id": 6122,
+          "membershipNumbers": [
+            {
+              "athleteName": "Mark Lane",
+              "membershipNumber": "181627",
+              "fullText": "15  -  173  Mark Lane  M  33  KNOXVILLE WEIGHTLIFTING CLUB  181627  86.6  2013-02-09  -  Local  Tennessee-Kentucky"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMi0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMi0wOSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 1969,
+        "date": "2016-04-03",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Mark Lane",
+        "lifter_id": 6122,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0wMyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 113,
+        "date": "2015-07-25",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Mark Lane",
+        "lifter_id": 6122,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNy0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNy0yNSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 82,
+        "date": "2015-10-17",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Mark Lane",
+        "lifter_id": 6122,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xNyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 2025,
+        "date": "2016-11-06",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Mark Lane",
+        "lifter_id": 6122,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMS0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMS0wNiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 2140,
+        "date": "2017-03-12",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Mark Lane",
+        "lifter_id": 6122,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0xMiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Mark Lane",
+    "splits": [
+      {
+        "newAthleteName": "Mark Lane (Person 1)",
+        "membershipNumber": "124787",
+        "competitionCount": 1,
+        "competitions": [
+          526
+        ]
+      },
+      {
+        "newAthleteName": "Mark Lane (Person 2)",
+        "membershipNumber": "181627",
+        "competitionCount": 1,
+        "competitions": [
+          828
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 1969,
+        "date": "2016-04-03",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Mark Lane",
+        "lifter_id": 6122,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0wMyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 113,
+        "date": "2015-07-25",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Mark Lane",
+        "lifter_id": 6122,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNy0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNy0yNSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 82,
+        "date": "2015-10-17",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Mark Lane",
+        "lifter_id": 6122,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xNyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 2025,
+        "date": "2016-11-06",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Mark Lane",
+        "lifter_id": 6122,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMS0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMS0wNiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 2140,
+        "date": "2017-03-12",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Mark Lane",
+        "lifter_id": 6122,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0xMiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Mark Lane",
+    "competitions": [
+      {
+        "meet_id": 828,
+        "date": "2013-02-09",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Mark Lane",
+        "lifter_id": 6122,
+        "membershipNumbers": [
+          {
+            "athleteName": "Mark Lane",
+            "membershipNumber": "181627",
+            "fullText": "15  -  173  Mark Lane  M  33  KNOXVILLE WEIGHTLIFTING CLUB  181627  86.6  2013-02-09  -  Local  Tennessee-Kentucky"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMi0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMi0wOSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 1969,
+        "date": "2016-04-03",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Mark Lane",
+        "lifter_id": 6122,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0wMyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 113,
+        "date": "2015-07-25",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Mark Lane",
+        "lifter_id": 6122,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNy0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNy0yNSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 82,
+        "date": "2015-10-17",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Mark Lane",
+        "lifter_id": 6122,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xNyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 526,
+        "date": "2016-01-31",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Mark Lane",
+        "lifter_id": 6122,
+        "membershipNumbers": [
+          {
+            "athleteName": "Mark Lane",
+            "membershipNumber": "124787",
+            "fullText": "28  -  184  Mark Lane  M  46  ATHLETIC LAB WLC  124787  84.45  2016-01-31  -  Local  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0zMSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 2025,
+        "date": "2016-11-06",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Mark Lane",
+        "lifter_id": 6122,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMS0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMS0wNiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 2140,
+        "date": "2017-03-12",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Mark Lane",
+        "lifter_id": 6122,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0xMiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "124787": [
+          {
+            "meet_id": 526,
+            "date": "2016-01-31",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Mark Lane",
+            "lifter_id": 6122,
+            "membershipNumbers": [
+              {
+                "athleteName": "Mark Lane",
+                "membershipNumber": "124787",
+                "fullText": "28  -  184  Mark Lane  M  46  ATHLETIC LAB WLC  124787  84.45  2016-01-31  -  Local  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0zMSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          }
+        ],
+        "181627": [
+          {
+            "meet_id": 828,
+            "date": "2013-02-09",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Mark Lane",
+            "lifter_id": 6122,
+            "membershipNumbers": [
+              {
+                "athleteName": "Mark Lane",
+                "membershipNumber": "181627",
+                "fullText": "15  -  173  Mark Lane  M  33  KNOXVILLE WEIGHTLIFTING CLUB  181627  86.6  2013-02-09  -  Local  Tennessee-Kentucky"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMi0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMi0wOSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 1969,
+          "date": "2016-04-03",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Mark Lane",
+          "lifter_id": 6122,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0wMyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        },
+        {
+          "meet_id": 113,
+          "date": "2015-07-25",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Mark Lane",
+          "lifter_id": 6122,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNy0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNy0yNSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        },
+        {
+          "meet_id": 82,
+          "date": "2015-10-17",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Mark Lane",
+          "lifter_id": 6122,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xNyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        },
+        {
+          "meet_id": 2025,
+          "date": "2016-11-06",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Mark Lane",
+          "lifter_id": 6122,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMS0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMS0wNiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        },
+        {
+          "meet_id": 2140,
+          "date": "2017-03-12",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Mark Lane",
+          "lifter_id": 6122,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0xMiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

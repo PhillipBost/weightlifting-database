@@ -1,0 +1,243 @@
+{
+  "timestamp": "2025-08-22T05:05:33.949Z",
+  "athleteName": "Jason Feinstein",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "184140": [
+        {
+          "meet_id": 845,
+          "date": "2013-11-24",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Jason Feinstein",
+          "lifter_id": 6211,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jason Feinstein",
+              "membershipNumber": "184140",
+              "fullText": "12  -  172  Jason Feinstein  M  40  -  184140  90.8  2013-11-24  -  Local  Ohio"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMS0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMS0yNCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        },
+        {
+          "meet_id": 1185,
+          "date": "2014-07-06",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Jason Feinstein",
+          "lifter_id": 6211,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jason Feinstein",
+              "membershipNumber": "184140",
+              "fullText": "1  -  184  Jason Feinstein  M  41  -  184140  92.5  2014-07-06  -  Local  Ohio"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNy0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNy0wNiIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ],
+      "198870": [
+        {
+          "meet_id": 1515,
+          "date": "2014-09-13",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Jason Feinstein",
+          "lifter_id": 6211,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jason Feinstein",
+              "membershipNumber": "198870",
+              "fullText": "11  -  162  Jason Feinstein  M  29  -  198870  104.1  2014-09-13  -  Local  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOS0xMyIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 1325,
+        "date": "2014-08-02",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Jason Feinstein",
+        "lifter_id": 6211,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Jason Feinstein",
+    "splits": [
+      {
+        "newAthleteName": "Jason Feinstein (Person 1)",
+        "membershipNumber": "184140",
+        "competitionCount": 2,
+        "competitions": [
+          845,
+          1185
+        ]
+      },
+      {
+        "newAthleteName": "Jason Feinstein (Person 2)",
+        "membershipNumber": "198870",
+        "competitionCount": 1,
+        "competitions": [
+          1515
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 1325,
+        "date": "2014-08-02",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Jason Feinstein",
+        "lifter_id": 6211,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Jason Feinstein",
+    "competitions": [
+      {
+        "meet_id": 845,
+        "date": "2013-11-24",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Jason Feinstein",
+        "lifter_id": 6211,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jason Feinstein",
+            "membershipNumber": "184140",
+            "fullText": "12  -  172  Jason Feinstein  M  40  -  184140  90.8  2013-11-24  -  Local  Ohio"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMS0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMS0yNCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 1185,
+        "date": "2014-07-06",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Jason Feinstein",
+        "lifter_id": 6211,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jason Feinstein",
+            "membershipNumber": "184140",
+            "fullText": "1  -  184  Jason Feinstein  M  41  -  184140  92.5  2014-07-06  -  Local  Ohio"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNy0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNy0wNiIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 1325,
+        "date": "2014-08-02",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Jason Feinstein",
+        "lifter_id": 6211,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 1515,
+        "date": "2014-09-13",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Jason Feinstein",
+        "lifter_id": 6211,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jason Feinstein",
+            "membershipNumber": "198870",
+            "fullText": "11  -  162  Jason Feinstein  M  29  -  198870  104.1  2014-09-13  -  Local  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOS0xMyIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "184140": [
+          {
+            "meet_id": 845,
+            "date": "2013-11-24",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Jason Feinstein",
+            "lifter_id": 6211,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jason Feinstein",
+                "membershipNumber": "184140",
+                "fullText": "12  -  172  Jason Feinstein  M  40  -  184140  90.8  2013-11-24  -  Local  Ohio"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMS0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMS0yNCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          },
+          {
+            "meet_id": 1185,
+            "date": "2014-07-06",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Jason Feinstein",
+            "lifter_id": 6211,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jason Feinstein",
+                "membershipNumber": "184140",
+                "fullText": "1  -  184  Jason Feinstein  M  41  -  184140  92.5  2014-07-06  -  Local  Ohio"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNy0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNy0wNiIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          }
+        ],
+        "198870": [
+          {
+            "meet_id": 1515,
+            "date": "2014-09-13",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Jason Feinstein",
+            "lifter_id": 6211,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jason Feinstein",
+                "membershipNumber": "198870",
+                "fullText": "11  -  162  Jason Feinstein  M  29  -  198870  104.1  2014-09-13  -  Local  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOS0xMyIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 1325,
+          "date": "2014-08-02",
+          "age_category": "Open Men's",
+          "weight_class": "+105 kg",
+          "lifter_name": "Jason Feinstein",
+          "lifter_id": 6211,
+          "membershipNumbers": [],
+          "error": "No division code found for: \"Open Men's +105 kg\""
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

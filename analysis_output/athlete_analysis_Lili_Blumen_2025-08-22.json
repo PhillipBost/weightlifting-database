@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T23:07:31.104Z",
+  "athleteName": "Lili Blumen",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1075835": [
+        {
+          "meet_id": 6387,
+          "date": "2024-05-11",
+          "age_category": "Junior Women's",
+          "weight_class": "59kg",
+          "lifter_name": "Lili Blumen",
+          "lifter_id": 60657,
+          "membershipNumbers": [
+            {
+              "athleteName": "Lili Blumen",
+              "membershipNumber": "1075835",
+              "fullText": "11  -  54  Lili Blumen  F  16  -  1075835  56.9  2024-05-11  -  Local  New England"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNS0xMSIsIndlaWdodF9jbGFzcyI6NzR9"
+        }
+      ],
+      "1078815": [
+        {
+          "meet_id": 6570,
+          "date": "2024-10-19",
+          "age_category": "Women's 16-17 Age Group",
+          "weight_class": "64kg",
+          "lifter_name": "Lili Blumen",
+          "lifter_id": 60657,
+          "membershipNumbers": [
+            {
+              "athleteName": "Lili Blumen",
+              "membershipNumber": "1078815",
+              "fullText": "7  -  58  Lili Blumen  F  16  Empowered RX  1078815  60.4  2024-10-19  -  Local  New England"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0xOSIsIndlaWdodF9jbGFzcyI6MTZ9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Lili Blumen",
+    "splits": [
+      {
+        "newAthleteName": "Lili Blumen (Person 1)",
+        "membershipNumber": "1075835",
+        "competitionCount": 1,
+        "competitions": [
+          6387
+        ]
+      },
+      {
+        "newAthleteName": "Lili Blumen (Person 2)",
+        "membershipNumber": "1078815",
+        "competitionCount": 1,
+        "competitions": [
+          6570
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Lili Blumen",
+    "competitions": [
+      {
+        "meet_id": 6570,
+        "date": "2024-10-19",
+        "age_category": "Women's 16-17 Age Group",
+        "weight_class": "64kg",
+        "lifter_name": "Lili Blumen",
+        "lifter_id": 60657,
+        "membershipNumbers": [
+          {
+            "athleteName": "Lili Blumen",
+            "membershipNumber": "1078815",
+            "fullText": "7  -  58  Lili Blumen  F  16  Empowered RX  1078815  60.4  2024-10-19  -  Local  New England"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0xOSIsIndlaWdodF9jbGFzcyI6MTZ9"
+      },
+      {
+        "meet_id": 6387,
+        "date": "2024-05-11",
+        "age_category": "Junior Women's",
+        "weight_class": "59kg",
+        "lifter_name": "Lili Blumen",
+        "lifter_id": 60657,
+        "membershipNumbers": [
+          {
+            "athleteName": "Lili Blumen",
+            "membershipNumber": "1075835",
+            "fullText": "11  -  54  Lili Blumen  F  16  -  1075835  56.9  2024-05-11  -  Local  New England"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNS0xMSIsIndlaWdodF9jbGFzcyI6NzR9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1075835": [
+          {
+            "meet_id": 6387,
+            "date": "2024-05-11",
+            "age_category": "Junior Women's",
+            "weight_class": "59kg",
+            "lifter_name": "Lili Blumen",
+            "lifter_id": 60657,
+            "membershipNumbers": [
+              {
+                "athleteName": "Lili Blumen",
+                "membershipNumber": "1075835",
+                "fullText": "11  -  54  Lili Blumen  F  16  -  1075835  56.9  2024-05-11  -  Local  New England"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNS0xMSIsIndlaWdodF9jbGFzcyI6NzR9"
+          }
+        ],
+        "1078815": [
+          {
+            "meet_id": 6570,
+            "date": "2024-10-19",
+            "age_category": "Women's 16-17 Age Group",
+            "weight_class": "64kg",
+            "lifter_name": "Lili Blumen",
+            "lifter_id": 60657,
+            "membershipNumbers": [
+              {
+                "athleteName": "Lili Blumen",
+                "membershipNumber": "1078815",
+                "fullText": "7  -  58  Lili Blumen  F  16  Empowered RX  1078815  60.4  2024-10-19  -  Local  New England"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0xOSIsIndlaWdodF9jbGFzcyI6MTZ9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

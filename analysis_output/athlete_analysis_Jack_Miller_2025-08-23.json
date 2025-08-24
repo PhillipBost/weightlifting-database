@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-23T00:24:56.539Z",
+  "athleteName": "Jack Miller",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1005498": [
+        {
+          "meet_id": 1889,
+          "date": "2016-05-22",
+          "age_category": "Open Men's",
+          "weight_class": "69 kg",
+          "lifter_name": "Jack Miller",
+          "lifter_id": 24109,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jack Miller",
+              "membershipNumber": "1005498",
+              "fullText": "8  -  195  Jack Miller  M  16  REDZONE WEIGHTLIFTING CLUB  1005498  67.1  2016-05-22  -  Local  New England"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0yMiIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+        }
+      ],
+      "1059403": [
+        {
+          "meet_id": 5003,
+          "date": "2021-10-30",
+          "age_category": "Open Men's",
+          "weight_class": "67kg",
+          "lifter_name": "Jack Miller",
+          "lifter_id": 24109,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jack Miller",
+              "membershipNumber": "1059403",
+              "fullText": "15  -  117  Jack Miller  M  17  Team Divergent  1059403  63.77  2021-10-30  -  Local  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMC0zMCIsIndlaWdodF9jbGFzcyI6ODN9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Jack Miller",
+    "splits": [
+      {
+        "newAthleteName": "Jack Miller (Person 1)",
+        "membershipNumber": "1005498",
+        "competitionCount": 1,
+        "competitions": [
+          1889
+        ]
+      },
+      {
+        "newAthleteName": "Jack Miller (Person 2)",
+        "membershipNumber": "1059403",
+        "competitionCount": 1,
+        "competitions": [
+          5003
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Jack Miller",
+    "competitions": [
+      {
+        "meet_id": 1889,
+        "date": "2016-05-22",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "Jack Miller",
+        "lifter_id": 24109,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jack Miller",
+            "membershipNumber": "1005498",
+            "fullText": "8  -  195  Jack Miller  M  16  REDZONE WEIGHTLIFTING CLUB  1005498  67.1  2016-05-22  -  Local  New England"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0yMiIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      },
+      {
+        "meet_id": 5003,
+        "date": "2021-10-30",
+        "age_category": "Open Men's",
+        "weight_class": "67kg",
+        "lifter_name": "Jack Miller",
+        "lifter_id": 24109,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jack Miller",
+            "membershipNumber": "1059403",
+            "fullText": "15  -  117  Jack Miller  M  17  Team Divergent  1059403  63.77  2021-10-30  -  Local  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMC0zMCIsIndlaWdodF9jbGFzcyI6ODN9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1005498": [
+          {
+            "meet_id": 1889,
+            "date": "2016-05-22",
+            "age_category": "Open Men's",
+            "weight_class": "69 kg",
+            "lifter_name": "Jack Miller",
+            "lifter_id": 24109,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jack Miller",
+                "membershipNumber": "1005498",
+                "fullText": "8  -  195  Jack Miller  M  16  REDZONE WEIGHTLIFTING CLUB  1005498  67.1  2016-05-22  -  Local  New England"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0yMiIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+          }
+        ],
+        "1059403": [
+          {
+            "meet_id": 5003,
+            "date": "2021-10-30",
+            "age_category": "Open Men's",
+            "weight_class": "67kg",
+            "lifter_name": "Jack Miller",
+            "lifter_id": 24109,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jack Miller",
+                "membershipNumber": "1059403",
+                "fullText": "15  -  117  Jack Miller  M  17  Team Divergent  1059403  63.77  2021-10-30  -  Local  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMC0zMCIsIndlaWdodF9jbGFzcyI6ODN9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

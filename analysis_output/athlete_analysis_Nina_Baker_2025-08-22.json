@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T15:14:31.483Z",
+  "athleteName": "Nina Baker",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1013642": [
+        {
+          "meet_id": 2346,
+          "date": "2017-01-28",
+          "age_category": "Women's 16-17 Age Group",
+          "weight_class": "53 kg",
+          "lifter_name": "Nina Baker",
+          "lifter_id": 28585,
+          "membershipNumbers": [
+            {
+              "athleteName": "Nina Baker",
+              "membershipNumber": "1013642",
+              "fullText": "4  -  58  Nina Baker  F  16  Lakeville South Strength  1013642  49.83  2017-01-28  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMS0yOCIsIndlaWdodF9jbGFzcyI6MzMxfQ=="
+        }
+      ],
+      "1015643": [
+        {
+          "meet_id": 2484,
+          "date": "2017-02-11",
+          "age_category": "Women's 16-17 Age Group",
+          "weight_class": "53 kg",
+          "lifter_name": "Nina Baker",
+          "lifter_id": 28585,
+          "membershipNumbers": [
+            {
+              "athleteName": "Nina Baker",
+              "membershipNumber": "1015643",
+              "fullText": "5  -  54  Nina Baker  F  16  Lakeville South Strength  1015643  50.13  2017-02-11  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xMSIsIndlaWdodF9jbGFzcyI6MzMxfQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Nina Baker",
+    "splits": [
+      {
+        "newAthleteName": "Nina Baker (Person 1)",
+        "membershipNumber": "1013642",
+        "competitionCount": 1,
+        "competitions": [
+          2346
+        ]
+      },
+      {
+        "newAthleteName": "Nina Baker (Person 2)",
+        "membershipNumber": "1015643",
+        "competitionCount": 1,
+        "competitions": [
+          2484
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Nina Baker",
+    "competitions": [
+      {
+        "meet_id": 2484,
+        "date": "2017-02-11",
+        "age_category": "Women's 16-17 Age Group",
+        "weight_class": "53 kg",
+        "lifter_name": "Nina Baker",
+        "lifter_id": 28585,
+        "membershipNumbers": [
+          {
+            "athleteName": "Nina Baker",
+            "membershipNumber": "1015643",
+            "fullText": "5  -  54  Nina Baker  F  16  Lakeville South Strength  1015643  50.13  2017-02-11  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xMSIsIndlaWdodF9jbGFzcyI6MzMxfQ=="
+      },
+      {
+        "meet_id": 2346,
+        "date": "2017-01-28",
+        "age_category": "Women's 16-17 Age Group",
+        "weight_class": "53 kg",
+        "lifter_name": "Nina Baker",
+        "lifter_id": 28585,
+        "membershipNumbers": [
+          {
+            "athleteName": "Nina Baker",
+            "membershipNumber": "1013642",
+            "fullText": "4  -  58  Nina Baker  F  16  Lakeville South Strength  1013642  49.83  2017-01-28  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMS0yOCIsIndlaWdodF9jbGFzcyI6MzMxfQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1013642": [
+          {
+            "meet_id": 2346,
+            "date": "2017-01-28",
+            "age_category": "Women's 16-17 Age Group",
+            "weight_class": "53 kg",
+            "lifter_name": "Nina Baker",
+            "lifter_id": 28585,
+            "membershipNumbers": [
+              {
+                "athleteName": "Nina Baker",
+                "membershipNumber": "1013642",
+                "fullText": "4  -  58  Nina Baker  F  16  Lakeville South Strength  1013642  49.83  2017-01-28  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMS0yOCIsIndlaWdodF9jbGFzcyI6MzMxfQ=="
+          }
+        ],
+        "1015643": [
+          {
+            "meet_id": 2484,
+            "date": "2017-02-11",
+            "age_category": "Women's 16-17 Age Group",
+            "weight_class": "53 kg",
+            "lifter_name": "Nina Baker",
+            "lifter_id": 28585,
+            "membershipNumbers": [
+              {
+                "athleteName": "Nina Baker",
+                "membershipNumber": "1015643",
+                "fullText": "5  -  54  Nina Baker  F  16  Lakeville South Strength  1015643  50.13  2017-02-11  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xMSIsIndlaWdodF9jbGFzcyI6MzMxfQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

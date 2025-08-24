@@ -1,0 +1,298 @@
+{
+  "timestamp": "2025-08-22T16:57:12.360Z",
+  "athleteName": "Sophia Nelson",
+  "totalCompetitions": 5,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1001581": [
+        {
+          "meet_id": 554,
+          "date": "2016-02-27",
+          "age_category": "Open Women's",
+          "weight_class": "63 kg",
+          "lifter_name": "Sophia Nelson",
+          "lifter_id": 17517,
+          "membershipNumbers": [
+            {
+              "athleteName": "Sophia Nelson",
+              "membershipNumber": "1001581",
+              "fullText": "5  -  138  Sophia Nelson  F  18  -  1001581  58.4  2016-02-27  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMi0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMi0yNyIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+        },
+        {
+          "meet_id": 1708,
+          "date": "2016-01-16",
+          "age_category": "Open Women's",
+          "weight_class": "58 kg",
+          "lifter_name": "Sophia Nelson",
+          "lifter_id": 17517,
+          "membershipNumbers": [
+            {
+              "athleteName": "Sophia Nelson",
+              "membershipNumber": "1001581",
+              "fullText": "10  -  125  Sophia Nelson  F  18  -  1001581  56.6  2016-01-16  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0xNiIsIndlaWdodF9jbGFzcyI6MzY0fQ=="
+        }
+      ],
+      "1067272": [
+        {
+          "meet_id": 5728,
+          "date": "2023-02-25",
+          "age_category": "Junior Women's",
+          "weight_class": "59kg",
+          "lifter_name": "Sophia Nelson",
+          "lifter_id": 17517,
+          "membershipNumbers": [
+            {
+              "athleteName": "Sophia Nelson",
+              "membershipNumber": "1067272",
+              "fullText": "5  -  53  Sophia Nelson  F  18  Mi5 Barbell Club  1067272  58.3  2023-02-25  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMi0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMi0yNSIsIndlaWdodF9jbGFzcyI6NzR9"
+        },
+        {
+          "meet_id": 5731,
+          "date": "2023-02-11",
+          "age_category": "Junior Women's",
+          "weight_class": "59kg",
+          "lifter_name": "Sophia Nelson",
+          "lifter_id": 17517,
+          "membershipNumbers": [
+            {
+              "athleteName": "Sophia Nelson",
+              "membershipNumber": "1067272",
+              "fullText": "10  -  52  Sophia Nelson  F  18  Mi5 Barbell Club  1067272  57.9  2023-02-11  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMi0xMSIsIndlaWdodF9jbGFzcyI6NzR9"
+        },
+        {
+          "meet_id": 5620,
+          "date": "2022-12-10",
+          "age_category": "Women's 16-17 Age Group",
+          "weight_class": "64kg",
+          "lifter_name": "Sophia Nelson",
+          "lifter_id": 17517,
+          "membershipNumbers": [
+            {
+              "athleteName": "Sophia Nelson",
+              "membershipNumber": "1067272",
+              "fullText": "7  -  47  Sophia Nelson  F  17  Mi5 Barbell Club  1067272  59.1  2022-12-10  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMi0xMCIsIndlaWdodF9jbGFzcyI6MTZ9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Sophia Nelson",
+    "splits": [
+      {
+        "newAthleteName": "Sophia Nelson (Person 1)",
+        "membershipNumber": "1001581",
+        "competitionCount": 2,
+        "competitions": [
+          554,
+          1708
+        ]
+      },
+      {
+        "newAthleteName": "Sophia Nelson (Person 2)",
+        "membershipNumber": "1067272",
+        "competitionCount": 3,
+        "competitions": [
+          5728,
+          5731,
+          5620
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Sophia Nelson",
+    "competitions": [
+      {
+        "meet_id": 554,
+        "date": "2016-02-27",
+        "age_category": "Open Women's",
+        "weight_class": "63 kg",
+        "lifter_name": "Sophia Nelson",
+        "lifter_id": 17517,
+        "membershipNumbers": [
+          {
+            "athleteName": "Sophia Nelson",
+            "membershipNumber": "1001581",
+            "fullText": "5  -  138  Sophia Nelson  F  18  -  1001581  58.4  2016-02-27  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMi0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMi0yNyIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+      },
+      {
+        "meet_id": 1708,
+        "date": "2016-01-16",
+        "age_category": "Open Women's",
+        "weight_class": "58 kg",
+        "lifter_name": "Sophia Nelson",
+        "lifter_id": 17517,
+        "membershipNumbers": [
+          {
+            "athleteName": "Sophia Nelson",
+            "membershipNumber": "1001581",
+            "fullText": "10  -  125  Sophia Nelson  F  18  -  1001581  56.6  2016-01-16  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0xNiIsIndlaWdodF9jbGFzcyI6MzY0fQ=="
+      },
+      {
+        "meet_id": 5728,
+        "date": "2023-02-25",
+        "age_category": "Junior Women's",
+        "weight_class": "59kg",
+        "lifter_name": "Sophia Nelson",
+        "lifter_id": 17517,
+        "membershipNumbers": [
+          {
+            "athleteName": "Sophia Nelson",
+            "membershipNumber": "1067272",
+            "fullText": "5  -  53  Sophia Nelson  F  18  Mi5 Barbell Club  1067272  58.3  2023-02-25  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMi0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMi0yNSIsIndlaWdodF9jbGFzcyI6NzR9"
+      },
+      {
+        "meet_id": 5731,
+        "date": "2023-02-11",
+        "age_category": "Junior Women's",
+        "weight_class": "59kg",
+        "lifter_name": "Sophia Nelson",
+        "lifter_id": 17517,
+        "membershipNumbers": [
+          {
+            "athleteName": "Sophia Nelson",
+            "membershipNumber": "1067272",
+            "fullText": "10  -  52  Sophia Nelson  F  18  Mi5 Barbell Club  1067272  57.9  2023-02-11  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMi0xMSIsIndlaWdodF9jbGFzcyI6NzR9"
+      },
+      {
+        "meet_id": 5620,
+        "date": "2022-12-10",
+        "age_category": "Women's 16-17 Age Group",
+        "weight_class": "64kg",
+        "lifter_name": "Sophia Nelson",
+        "lifter_id": 17517,
+        "membershipNumbers": [
+          {
+            "athleteName": "Sophia Nelson",
+            "membershipNumber": "1067272",
+            "fullText": "7  -  47  Sophia Nelson  F  17  Mi5 Barbell Club  1067272  59.1  2022-12-10  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMi0xMCIsIndlaWdodF9jbGFzcyI6MTZ9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1001581": [
+          {
+            "meet_id": 554,
+            "date": "2016-02-27",
+            "age_category": "Open Women's",
+            "weight_class": "63 kg",
+            "lifter_name": "Sophia Nelson",
+            "lifter_id": 17517,
+            "membershipNumbers": [
+              {
+                "athleteName": "Sophia Nelson",
+                "membershipNumber": "1001581",
+                "fullText": "5  -  138  Sophia Nelson  F  18  -  1001581  58.4  2016-02-27  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMi0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMi0yNyIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+          },
+          {
+            "meet_id": 1708,
+            "date": "2016-01-16",
+            "age_category": "Open Women's",
+            "weight_class": "58 kg",
+            "lifter_name": "Sophia Nelson",
+            "lifter_id": 17517,
+            "membershipNumbers": [
+              {
+                "athleteName": "Sophia Nelson",
+                "membershipNumber": "1001581",
+                "fullText": "10  -  125  Sophia Nelson  F  18  -  1001581  56.6  2016-01-16  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0xNiIsIndlaWdodF9jbGFzcyI6MzY0fQ=="
+          }
+        ],
+        "1067272": [
+          {
+            "meet_id": 5728,
+            "date": "2023-02-25",
+            "age_category": "Junior Women's",
+            "weight_class": "59kg",
+            "lifter_name": "Sophia Nelson",
+            "lifter_id": 17517,
+            "membershipNumbers": [
+              {
+                "athleteName": "Sophia Nelson",
+                "membershipNumber": "1067272",
+                "fullText": "5  -  53  Sophia Nelson  F  18  Mi5 Barbell Club  1067272  58.3  2023-02-25  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMi0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMi0yNSIsIndlaWdodF9jbGFzcyI6NzR9"
+          },
+          {
+            "meet_id": 5731,
+            "date": "2023-02-11",
+            "age_category": "Junior Women's",
+            "weight_class": "59kg",
+            "lifter_name": "Sophia Nelson",
+            "lifter_id": 17517,
+            "membershipNumbers": [
+              {
+                "athleteName": "Sophia Nelson",
+                "membershipNumber": "1067272",
+                "fullText": "10  -  52  Sophia Nelson  F  18  Mi5 Barbell Club  1067272  57.9  2023-02-11  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMi0xMSIsIndlaWdodF9jbGFzcyI6NzR9"
+          },
+          {
+            "meet_id": 5620,
+            "date": "2022-12-10",
+            "age_category": "Women's 16-17 Age Group",
+            "weight_class": "64kg",
+            "lifter_name": "Sophia Nelson",
+            "lifter_id": 17517,
+            "membershipNumbers": [
+              {
+                "athleteName": "Sophia Nelson",
+                "membershipNumber": "1067272",
+                "fullText": "7  -  47  Sophia Nelson  F  17  Mi5 Barbell Club  1067272  59.1  2022-12-10  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMi0xMCIsIndlaWdodF9jbGFzcyI6MTZ9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

@@ -1,0 +1,298 @@
+{
+  "timestamp": "2025-08-22T04:45:03.337Z",
+  "athleteName": "David Graham",
+  "totalCompetitions": 5,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "190813": [
+        {
+          "meet_id": 692,
+          "date": "2013-12-28",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "David Graham",
+          "lifter_id": 4628,
+          "membershipNumbers": [
+            {
+              "athleteName": "David Graham",
+              "membershipNumber": "190813",
+              "fullText": "8  -  153  David Graham  M  37  -  190813  83.1  2013-12-28  -  Local  Missouri Valley"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMi0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMi0yOCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ],
+      "1034547": [
+        {
+          "meet_id": 5163,
+          "date": "2022-01-19",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "David Graham",
+          "lifter_id": 4628,
+          "membershipNumbers": [
+            {
+              "athleteName": "David Graham",
+              "membershipNumber": "1034547",
+              "fullText": "1  -  243  David Graham  M  32  -  1034547  87  2022-01-19  -  Local  Michigan"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMS0xOSIsIndlaWdodF9jbGFzcyI6ODZ9"
+        },
+        {
+          "meet_id": 3654,
+          "date": "2019-03-03",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "David Graham",
+          "lifter_id": 4628,
+          "membershipNumbers": [
+            {
+              "athleteName": "David Graham",
+              "membershipNumber": "1034547",
+              "fullText": "12  -  259  David Graham  M  29  -  1034547  86.7  2019-03-03  -  National  Michigan"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMy0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMy0wMyIsIndlaWdodF9jbGFzcyI6ODZ9"
+        },
+        {
+          "meet_id": 3503,
+          "date": "2018-11-03",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "David Graham",
+          "lifter_id": 4628,
+          "membershipNumbers": [
+            {
+              "athleteName": "David Graham",
+              "membershipNumber": "1034547",
+              "fullText": "2  -  250  David Graham  M  28  -  1034547  80.4  2018-11-03  -  Local  Michigan"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMS0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMS0wMyIsIndlaWdodF9jbGFzcyI6ODV9"
+        },
+        {
+          "meet_id": 3700,
+          "date": "2019-01-26",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "David Graham",
+          "lifter_id": 4628,
+          "membershipNumbers": [
+            {
+              "athleteName": "David Graham",
+              "membershipNumber": "1034547",
+              "fullText": "6  -  249  David Graham  M  29  -  1034547  84.5  2019-01-26  -  Local  Michigan"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0yNiIsIndlaWdodF9jbGFzcyI6ODZ9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "David Graham",
+    "splits": [
+      {
+        "newAthleteName": "David Graham (Person 1)",
+        "membershipNumber": "190813",
+        "competitionCount": 1,
+        "competitions": [
+          692
+        ]
+      },
+      {
+        "newAthleteName": "David Graham (Person 2)",
+        "membershipNumber": "1034547",
+        "competitionCount": 4,
+        "competitions": [
+          5163,
+          3654,
+          3503,
+          3700
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "David Graham",
+    "competitions": [
+      {
+        "meet_id": 692,
+        "date": "2013-12-28",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "David Graham",
+        "lifter_id": 4628,
+        "membershipNumbers": [
+          {
+            "athleteName": "David Graham",
+            "membershipNumber": "190813",
+            "fullText": "8  -  153  David Graham  M  37  -  190813  83.1  2013-12-28  -  Local  Missouri Valley"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMi0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMi0yOCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 5163,
+        "date": "2022-01-19",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "David Graham",
+        "lifter_id": 4628,
+        "membershipNumbers": [
+          {
+            "athleteName": "David Graham",
+            "membershipNumber": "1034547",
+            "fullText": "1  -  243  David Graham  M  32  -  1034547  87  2022-01-19  -  Local  Michigan"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMS0xOSIsIndlaWdodF9jbGFzcyI6ODZ9"
+      },
+      {
+        "meet_id": 3654,
+        "date": "2019-03-03",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "David Graham",
+        "lifter_id": 4628,
+        "membershipNumbers": [
+          {
+            "athleteName": "David Graham",
+            "membershipNumber": "1034547",
+            "fullText": "12  -  259  David Graham  M  29  -  1034547  86.7  2019-03-03  -  National  Michigan"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMy0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMy0wMyIsIndlaWdodF9jbGFzcyI6ODZ9"
+      },
+      {
+        "meet_id": 3503,
+        "date": "2018-11-03",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "David Graham",
+        "lifter_id": 4628,
+        "membershipNumbers": [
+          {
+            "athleteName": "David Graham",
+            "membershipNumber": "1034547",
+            "fullText": "2  -  250  David Graham  M  28  -  1034547  80.4  2018-11-03  -  Local  Michigan"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMS0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMS0wMyIsIndlaWdodF9jbGFzcyI6ODV9"
+      },
+      {
+        "meet_id": 3700,
+        "date": "2019-01-26",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "David Graham",
+        "lifter_id": 4628,
+        "membershipNumbers": [
+          {
+            "athleteName": "David Graham",
+            "membershipNumber": "1034547",
+            "fullText": "6  -  249  David Graham  M  29  -  1034547  84.5  2019-01-26  -  Local  Michigan"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0yNiIsIndlaWdodF9jbGFzcyI6ODZ9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "190813": [
+          {
+            "meet_id": 692,
+            "date": "2013-12-28",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "David Graham",
+            "lifter_id": 4628,
+            "membershipNumbers": [
+              {
+                "athleteName": "David Graham",
+                "membershipNumber": "190813",
+                "fullText": "8  -  153  David Graham  M  37  -  190813  83.1  2013-12-28  -  Local  Missouri Valley"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMi0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMi0yOCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          }
+        ],
+        "1034547": [
+          {
+            "meet_id": 5163,
+            "date": "2022-01-19",
+            "age_category": "Open Men's",
+            "weight_class": "89kg",
+            "lifter_name": "David Graham",
+            "lifter_id": 4628,
+            "membershipNumbers": [
+              {
+                "athleteName": "David Graham",
+                "membershipNumber": "1034547",
+                "fullText": "1  -  243  David Graham  M  32  -  1034547  87  2022-01-19  -  Local  Michigan"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMS0xOSIsIndlaWdodF9jbGFzcyI6ODZ9"
+          },
+          {
+            "meet_id": 3654,
+            "date": "2019-03-03",
+            "age_category": "Open Men's",
+            "weight_class": "89kg",
+            "lifter_name": "David Graham",
+            "lifter_id": 4628,
+            "membershipNumbers": [
+              {
+                "athleteName": "David Graham",
+                "membershipNumber": "1034547",
+                "fullText": "12  -  259  David Graham  M  29  -  1034547  86.7  2019-03-03  -  National  Michigan"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMy0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMy0wMyIsIndlaWdodF9jbGFzcyI6ODZ9"
+          },
+          {
+            "meet_id": 3503,
+            "date": "2018-11-03",
+            "age_category": "Open Men's",
+            "weight_class": "81kg",
+            "lifter_name": "David Graham",
+            "lifter_id": 4628,
+            "membershipNumbers": [
+              {
+                "athleteName": "David Graham",
+                "membershipNumber": "1034547",
+                "fullText": "2  -  250  David Graham  M  28  -  1034547  80.4  2018-11-03  -  Local  Michigan"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMS0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMS0wMyIsIndlaWdodF9jbGFzcyI6ODV9"
+          },
+          {
+            "meet_id": 3700,
+            "date": "2019-01-26",
+            "age_category": "Open Men's",
+            "weight_class": "89kg",
+            "lifter_name": "David Graham",
+            "lifter_id": 4628,
+            "membershipNumbers": [
+              {
+                "athleteName": "David Graham",
+                "membershipNumber": "1034547",
+                "fullText": "6  -  249  David Graham  M  29  -  1034547  84.5  2019-01-26  -  Local  Michigan"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0yNiIsIndlaWdodF9jbGFzcyI6ODZ9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

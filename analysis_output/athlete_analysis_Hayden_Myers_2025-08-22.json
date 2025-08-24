@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T17:59:52.985Z",
+  "athleteName": "Hayden Myers",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1041011": [
+        {
+          "meet_id": 4485,
+          "date": "2020-02-16",
+          "age_category": "Open Men's",
+          "weight_class": "109kg",
+          "lifter_name": "Hayden Myers",
+          "lifter_id": 42369,
+          "membershipNumbers": [
+            {
+              "athleteName": "Hayden Myers",
+              "membershipNumber": "1041011",
+              "fullText": "3  -  215  Hayden Myers  M  17  -  1041011  105.9  2020-02-16  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMi0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMi0xNiIsIndlaWdodF9jbGFzcyI6ODl9"
+        },
+        {
+          "meet_id": 3969,
+          "date": "2019-05-11",
+          "age_category": "Open Men's",
+          "weight_class": "102kg",
+          "lifter_name": "Hayden Myers",
+          "lifter_id": 42369,
+          "membershipNumbers": [
+            {
+              "athleteName": "Hayden Myers",
+              "membershipNumber": "1041011",
+              "fullText": "7  -  170  Hayden Myers  M  16  -  1041011  100.4  2019-05-11  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0xMSIsIndlaWdodF9jbGFzcyI6ODh9"
+        }
+      ],
+      "1075370": [
+        {
+          "meet_id": 6301,
+          "date": "2024-04-07",
+          "age_category": "Open Men's",
+          "weight_class": "+109kg",
+          "lifter_name": "Hayden Myers",
+          "lifter_id": 42369,
+          "membershipNumbers": [
+            {
+              "athleteName": "Hayden Myers",
+              "membershipNumber": "1075370",
+              "fullText": "4  -  248  Hayden Myers   M  21  Detour Athletics Barbell Club  1075370  112.66  2024-04-07  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNC0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNC0wNyIsIndlaWdodF9jbGFzcyI6OTB9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Hayden Myers",
+    "splits": [
+      {
+        "newAthleteName": "Hayden Myers (Person 1)",
+        "membershipNumber": "1041011",
+        "competitionCount": 2,
+        "competitions": [
+          4485,
+          3969
+        ]
+      },
+      {
+        "newAthleteName": "Hayden Myers (Person 2)",
+        "membershipNumber": "1075370",
+        "competitionCount": 1,
+        "competitions": [
+          6301
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Hayden Myers",
+    "competitions": [
+      {
+        "meet_id": 6301,
+        "date": "2024-04-07",
+        "age_category": "Open Men's",
+        "weight_class": "+109kg",
+        "lifter_name": "Hayden Myers",
+        "lifter_id": 42369,
+        "membershipNumbers": [
+          {
+            "athleteName": "Hayden Myers",
+            "membershipNumber": "1075370",
+            "fullText": "4  -  248  Hayden Myers   M  21  Detour Athletics Barbell Club  1075370  112.66  2024-04-07  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNC0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNC0wNyIsIndlaWdodF9jbGFzcyI6OTB9"
+      },
+      {
+        "meet_id": 4485,
+        "date": "2020-02-16",
+        "age_category": "Open Men's",
+        "weight_class": "109kg",
+        "lifter_name": "Hayden Myers",
+        "lifter_id": 42369,
+        "membershipNumbers": [
+          {
+            "athleteName": "Hayden Myers",
+            "membershipNumber": "1041011",
+            "fullText": "3  -  215  Hayden Myers  M  17  -  1041011  105.9  2020-02-16  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMi0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMi0xNiIsIndlaWdodF9jbGFzcyI6ODl9"
+      },
+      {
+        "meet_id": 3969,
+        "date": "2019-05-11",
+        "age_category": "Open Men's",
+        "weight_class": "102kg",
+        "lifter_name": "Hayden Myers",
+        "lifter_id": 42369,
+        "membershipNumbers": [
+          {
+            "athleteName": "Hayden Myers",
+            "membershipNumber": "1041011",
+            "fullText": "7  -  170  Hayden Myers  M  16  -  1041011  100.4  2019-05-11  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0xMSIsIndlaWdodF9jbGFzcyI6ODh9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1041011": [
+          {
+            "meet_id": 4485,
+            "date": "2020-02-16",
+            "age_category": "Open Men's",
+            "weight_class": "109kg",
+            "lifter_name": "Hayden Myers",
+            "lifter_id": 42369,
+            "membershipNumbers": [
+              {
+                "athleteName": "Hayden Myers",
+                "membershipNumber": "1041011",
+                "fullText": "3  -  215  Hayden Myers  M  17  -  1041011  105.9  2020-02-16  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMi0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMi0xNiIsIndlaWdodF9jbGFzcyI6ODl9"
+          },
+          {
+            "meet_id": 3969,
+            "date": "2019-05-11",
+            "age_category": "Open Men's",
+            "weight_class": "102kg",
+            "lifter_name": "Hayden Myers",
+            "lifter_id": 42369,
+            "membershipNumbers": [
+              {
+                "athleteName": "Hayden Myers",
+                "membershipNumber": "1041011",
+                "fullText": "7  -  170  Hayden Myers  M  16  -  1041011  100.4  2019-05-11  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0xMSIsIndlaWdodF9jbGFzcyI6ODh9"
+          }
+        ],
+        "1075370": [
+          {
+            "meet_id": 6301,
+            "date": "2024-04-07",
+            "age_category": "Open Men's",
+            "weight_class": "+109kg",
+            "lifter_name": "Hayden Myers",
+            "lifter_id": 42369,
+            "membershipNumbers": [
+              {
+                "athleteName": "Hayden Myers",
+                "membershipNumber": "1075370",
+                "fullText": "4  -  248  Hayden Myers   M  21  Detour Athletics Barbell Club  1075370  112.66  2024-04-07  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNC0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNC0wNyIsIndlaWdodF9jbGFzcyI6OTB9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

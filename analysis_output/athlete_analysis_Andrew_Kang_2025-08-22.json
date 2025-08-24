@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T20:10:23.956Z",
+  "athleteName": "Andrew Kang",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1028866": [
+        {
+          "meet_id": 3123,
+          "date": "2018-06-30",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Andrew Kang",
+          "lifter_id": 35701,
+          "membershipNumbers": [
+            {
+              "athleteName": "Andrew Kang",
+              "membershipNumber": "1028866",
+              "fullText": "27  -  179  Andrew Kang  M  29  Grounds & Pounds WLC  1028866  83.6  2018-06-30  -  Local  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0zMCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        },
+        {
+          "meet_id": 3917,
+          "date": "2019-06-22",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Andrew Kang",
+          "lifter_id": 35701,
+          "membershipNumbers": [
+            {
+              "athleteName": "Andrew Kang",
+              "membershipNumber": "1028866",
+              "fullText": "22  -  193  Andrew Kang  M  30  Grounds & Pounds WLC  1028866  77.7  2019-06-22  -  Local  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNi0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNi0yMiIsIndlaWdodF9jbGFzcyI6ODV9"
+        }
+      ],
+      "1062385": [
+        {
+          "meet_id": 5250,
+          "date": "2022-03-27",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "Andrew Kang",
+          "lifter_id": 35701,
+          "membershipNumbers": [
+            {
+              "athleteName": "Andrew Kang",
+              "membershipNumber": "1062385",
+              "fullText": "8  -  190  Andrew Kang  M  30  Golden State Barbell Club  1062385  82.88  2022-03-27  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMy0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMy0yNyIsIndlaWdodF9jbGFzcyI6ODZ9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Andrew Kang",
+    "splits": [
+      {
+        "newAthleteName": "Andrew Kang (Person 1)",
+        "membershipNumber": "1028866",
+        "competitionCount": 2,
+        "competitions": [
+          3123,
+          3917
+        ]
+      },
+      {
+        "newAthleteName": "Andrew Kang (Person 2)",
+        "membershipNumber": "1062385",
+        "competitionCount": 1,
+        "competitions": [
+          5250
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Andrew Kang",
+    "competitions": [
+      {
+        "meet_id": 5250,
+        "date": "2022-03-27",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Andrew Kang",
+        "lifter_id": 35701,
+        "membershipNumbers": [
+          {
+            "athleteName": "Andrew Kang",
+            "membershipNumber": "1062385",
+            "fullText": "8  -  190  Andrew Kang  M  30  Golden State Barbell Club  1062385  82.88  2022-03-27  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMy0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMy0yNyIsIndlaWdodF9jbGFzcyI6ODZ9"
+      },
+      {
+        "meet_id": 3123,
+        "date": "2018-06-30",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Andrew Kang",
+        "lifter_id": 35701,
+        "membershipNumbers": [
+          {
+            "athleteName": "Andrew Kang",
+            "membershipNumber": "1028866",
+            "fullText": "27  -  179  Andrew Kang  M  29  Grounds & Pounds WLC  1028866  83.6  2018-06-30  -  Local  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0zMCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 3917,
+        "date": "2019-06-22",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Andrew Kang",
+        "lifter_id": 35701,
+        "membershipNumbers": [
+          {
+            "athleteName": "Andrew Kang",
+            "membershipNumber": "1028866",
+            "fullText": "22  -  193  Andrew Kang  M  30  Grounds & Pounds WLC  1028866  77.7  2019-06-22  -  Local  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNi0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNi0yMiIsIndlaWdodF9jbGFzcyI6ODV9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1028866": [
+          {
+            "meet_id": 3123,
+            "date": "2018-06-30",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Andrew Kang",
+            "lifter_id": 35701,
+            "membershipNumbers": [
+              {
+                "athleteName": "Andrew Kang",
+                "membershipNumber": "1028866",
+                "fullText": "27  -  179  Andrew Kang  M  29  Grounds & Pounds WLC  1028866  83.6  2018-06-30  -  Local  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0zMCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          },
+          {
+            "meet_id": 3917,
+            "date": "2019-06-22",
+            "age_category": "Open Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Andrew Kang",
+            "lifter_id": 35701,
+            "membershipNumbers": [
+              {
+                "athleteName": "Andrew Kang",
+                "membershipNumber": "1028866",
+                "fullText": "22  -  193  Andrew Kang  M  30  Grounds & Pounds WLC  1028866  77.7  2019-06-22  -  Local  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNi0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNi0yMiIsIndlaWdodF9jbGFzcyI6ODV9"
+          }
+        ],
+        "1062385": [
+          {
+            "meet_id": 5250,
+            "date": "2022-03-27",
+            "age_category": "Open Men's",
+            "weight_class": "89kg",
+            "lifter_name": "Andrew Kang",
+            "lifter_id": 35701,
+            "membershipNumbers": [
+              {
+                "athleteName": "Andrew Kang",
+                "membershipNumber": "1062385",
+                "fullText": "8  -  190  Andrew Kang  M  30  Golden State Barbell Club  1062385  82.88  2022-03-27  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMy0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMy0yNyIsIndlaWdodF9jbGFzcyI6ODZ9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

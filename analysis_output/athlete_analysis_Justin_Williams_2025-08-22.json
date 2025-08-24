@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T13:59:31.458Z",
+  "athleteName": "Justin Williams",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "171488": [
+        {
+          "meet_id": 673,
+          "date": "2012-10-21",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Justin Williams",
+          "lifter_id": 1125,
+          "membershipNumbers": [
+            {
+              "athleteName": "Justin Williams",
+              "membershipNumber": "171488",
+              "fullText": "2  -  255  Justin Williams  M  31  -  171488  89.8  2012-10-21  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0xMC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0xMC0yMSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ],
+      "1081385": [
+        {
+          "meet_id": 6929,
+          "date": "2025-05-17",
+          "age_category": "Men's Masters (40-44)",
+          "weight_class": "89kg",
+          "lifter_name": "Justin Williams",
+          "lifter_id": 1125,
+          "membershipNumbers": [
+            {
+              "athleteName": "Justin Williams",
+              "membershipNumber": "1081385",
+              "fullText": "6  -  180  Justin Williams  M  40  Vektløfter Barbell  1081385  86  2025-05-17  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNS0xNyIsIndlaWdodF9jbGFzcyI6MTI2fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Justin Williams",
+    "splits": [
+      {
+        "newAthleteName": "Justin Williams (Person 1)",
+        "membershipNumber": "171488",
+        "competitionCount": 1,
+        "competitions": [
+          673
+        ]
+      },
+      {
+        "newAthleteName": "Justin Williams (Person 2)",
+        "membershipNumber": "1081385",
+        "competitionCount": 1,
+        "competitions": [
+          6929
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Justin Williams",
+    "competitions": [
+      {
+        "meet_id": 6929,
+        "date": "2025-05-17",
+        "age_category": "Men's Masters (40-44)",
+        "weight_class": "89kg",
+        "lifter_name": "Justin Williams",
+        "lifter_id": 1125,
+        "membershipNumbers": [
+          {
+            "athleteName": "Justin Williams",
+            "membershipNumber": "1081385",
+            "fullText": "6  -  180  Justin Williams  M  40  Vektløfter Barbell  1081385  86  2025-05-17  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNS0xNyIsIndlaWdodF9jbGFzcyI6MTI2fQ=="
+      },
+      {
+        "meet_id": 673,
+        "date": "2012-10-21",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Justin Williams",
+        "lifter_id": 1125,
+        "membershipNumbers": [
+          {
+            "athleteName": "Justin Williams",
+            "membershipNumber": "171488",
+            "fullText": "2  -  255  Justin Williams  M  31  -  171488  89.8  2012-10-21  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0xMC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0xMC0yMSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "171488": [
+          {
+            "meet_id": 673,
+            "date": "2012-10-21",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Justin Williams",
+            "lifter_id": 1125,
+            "membershipNumbers": [
+              {
+                "athleteName": "Justin Williams",
+                "membershipNumber": "171488",
+                "fullText": "2  -  255  Justin Williams  M  31  -  171488  89.8  2012-10-21  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0xMC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0xMC0yMSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          }
+        ],
+        "1081385": [
+          {
+            "meet_id": 6929,
+            "date": "2025-05-17",
+            "age_category": "Men's Masters (40-44)",
+            "weight_class": "89kg",
+            "lifter_name": "Justin Williams",
+            "lifter_id": 1125,
+            "membershipNumbers": [
+              {
+                "athleteName": "Justin Williams",
+                "membershipNumber": "1081385",
+                "fullText": "6  -  180  Justin Williams  M  40  Vektløfter Barbell  1081385  86  2025-05-17  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNS0xNyIsIndlaWdodF9jbGFzcyI6MTI2fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

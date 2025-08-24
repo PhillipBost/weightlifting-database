@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T09:10:36.136Z",
+  "athleteName": "Jiting Shen",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1079557": [
+        {
+          "meet_id": 6682,
+          "date": "2024-12-21",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "Jiting Shen",
+          "lifter_id": 62572,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jiting Shen",
+              "membershipNumber": "1079557",
+              "fullText": "13  -  82  Jiting Shen  M  27  Austin Barbell  1079557  81.15  2024-12-21  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMi0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMi0yMSIsIndlaWdodF9jbGFzcyI6ODZ9"
+        }
+      ],
+      "1081727": [
+        {
+          "meet_id": 6980,
+          "date": "2025-07-26",
+          "age_category": "Open Men's",
+          "weight_class": "88kg",
+          "lifter_name": "Jiting Shen",
+          "lifter_id": 62572,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jiting Shen",
+              "membershipNumber": "1081727",
+              "fullText": "29  -  139  Jiting Shen  M  28  Austin Barbell  1081727  85.6  2025-07-26  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNy0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNy0yNiIsIndlaWdodF9jbGFzcyI6NzEzfQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Jiting Shen",
+    "splits": [
+      {
+        "newAthleteName": "Jiting Shen (Person 1)",
+        "membershipNumber": "1079557",
+        "competitionCount": 1,
+        "competitions": [
+          6682
+        ]
+      },
+      {
+        "newAthleteName": "Jiting Shen (Person 2)",
+        "membershipNumber": "1081727",
+        "competitionCount": 1,
+        "competitions": [
+          6980
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Jiting Shen",
+    "competitions": [
+      {
+        "meet_id": 6682,
+        "date": "2024-12-21",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Jiting Shen",
+        "lifter_id": 62572,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jiting Shen",
+            "membershipNumber": "1079557",
+            "fullText": "13  -  82  Jiting Shen  M  27  Austin Barbell  1079557  81.15  2024-12-21  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMi0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMi0yMSIsIndlaWdodF9jbGFzcyI6ODZ9"
+      },
+      {
+        "meet_id": 6980,
+        "date": "2025-07-26",
+        "age_category": "Open Men's",
+        "weight_class": "88kg",
+        "lifter_name": "Jiting Shen",
+        "lifter_id": 62572,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jiting Shen",
+            "membershipNumber": "1081727",
+            "fullText": "29  -  139  Jiting Shen  M  28  Austin Barbell  1081727  85.6  2025-07-26  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNy0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNy0yNiIsIndlaWdodF9jbGFzcyI6NzEzfQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1079557": [
+          {
+            "meet_id": 6682,
+            "date": "2024-12-21",
+            "age_category": "Open Men's",
+            "weight_class": "89kg",
+            "lifter_name": "Jiting Shen",
+            "lifter_id": 62572,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jiting Shen",
+                "membershipNumber": "1079557",
+                "fullText": "13  -  82  Jiting Shen  M  27  Austin Barbell  1079557  81.15  2024-12-21  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMi0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMi0yMSIsIndlaWdodF9jbGFzcyI6ODZ9"
+          }
+        ],
+        "1081727": [
+          {
+            "meet_id": 6980,
+            "date": "2025-07-26",
+            "age_category": "Open Men's",
+            "weight_class": "88kg",
+            "lifter_name": "Jiting Shen",
+            "lifter_id": 62572,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jiting Shen",
+                "membershipNumber": "1081727",
+                "fullText": "29  -  139  Jiting Shen  M  28  Austin Barbell  1081727  85.6  2025-07-26  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNy0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNy0yNiIsIndlaWdodF9jbGFzcyI6NzEzfQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

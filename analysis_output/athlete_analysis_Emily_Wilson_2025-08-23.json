@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-23T00:58:31.415Z",
+  "athleteName": "Emily Wilson",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "203629": [
+        {
+          "meet_id": 1547,
+          "date": "2014-11-22",
+          "age_category": "Open Women's",
+          "weight_class": "+75 Kg",
+          "lifter_name": "Emily Wilson",
+          "lifter_id": 20864,
+          "membershipNumbers": [
+            {
+              "athleteName": "Emily Wilson",
+              "membershipNumber": "203629",
+              "fullText": "3  -  155  Emily Wilson  F  32  -  203629  84.2  2014-11-22  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMS0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMS0yMiIsIndlaWdodF9jbGFzcyI6MzY4fQ=="
+        }
+      ],
+      "1031566": [
+        {
+          "meet_id": 3417,
+          "date": "2018-06-23",
+          "age_category": "Open Women's",
+          "weight_class": "53 kg",
+          "lifter_name": "Emily Wilson",
+          "lifter_id": 20864,
+          "membershipNumbers": [
+            {
+              "athleteName": "Emily Wilson",
+              "membershipNumber": "1031566",
+              "fullText": "6  -  100  Emily Wilson  F  31  Verdant Barbell  1031566  52  2018-06-23  -  Local  Mountain North"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0yMyIsIndlaWdodF9jbGFzcyI6MzYzfQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Emily Wilson",
+    "splits": [
+      {
+        "newAthleteName": "Emily Wilson (Person 1)",
+        "membershipNumber": "203629",
+        "competitionCount": 1,
+        "competitions": [
+          1547
+        ]
+      },
+      {
+        "newAthleteName": "Emily Wilson (Person 2)",
+        "membershipNumber": "1031566",
+        "competitionCount": 1,
+        "competitions": [
+          3417
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Emily Wilson",
+    "competitions": [
+      {
+        "meet_id": 1547,
+        "date": "2014-11-22",
+        "age_category": "Open Women's",
+        "weight_class": "+75 Kg",
+        "lifter_name": "Emily Wilson",
+        "lifter_id": 20864,
+        "membershipNumbers": [
+          {
+            "athleteName": "Emily Wilson",
+            "membershipNumber": "203629",
+            "fullText": "3  -  155  Emily Wilson  F  32  -  203629  84.2  2014-11-22  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMS0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMS0yMiIsIndlaWdodF9jbGFzcyI6MzY4fQ=="
+      },
+      {
+        "meet_id": 3417,
+        "date": "2018-06-23",
+        "age_category": "Open Women's",
+        "weight_class": "53 kg",
+        "lifter_name": "Emily Wilson",
+        "lifter_id": 20864,
+        "membershipNumbers": [
+          {
+            "athleteName": "Emily Wilson",
+            "membershipNumber": "1031566",
+            "fullText": "6  -  100  Emily Wilson  F  31  Verdant Barbell  1031566  52  2018-06-23  -  Local  Mountain North"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0yMyIsIndlaWdodF9jbGFzcyI6MzYzfQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "203629": [
+          {
+            "meet_id": 1547,
+            "date": "2014-11-22",
+            "age_category": "Open Women's",
+            "weight_class": "+75 Kg",
+            "lifter_name": "Emily Wilson",
+            "lifter_id": 20864,
+            "membershipNumbers": [
+              {
+                "athleteName": "Emily Wilson",
+                "membershipNumber": "203629",
+                "fullText": "3  -  155  Emily Wilson  F  32  -  203629  84.2  2014-11-22  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMS0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMS0yMiIsIndlaWdodF9jbGFzcyI6MzY4fQ=="
+          }
+        ],
+        "1031566": [
+          {
+            "meet_id": 3417,
+            "date": "2018-06-23",
+            "age_category": "Open Women's",
+            "weight_class": "53 kg",
+            "lifter_name": "Emily Wilson",
+            "lifter_id": 20864,
+            "membershipNumbers": [
+              {
+                "athleteName": "Emily Wilson",
+                "membershipNumber": "1031566",
+                "fullText": "6  -  100  Emily Wilson  F  31  Verdant Barbell  1031566  52  2018-06-23  -  Local  Mountain North"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0yMyIsIndlaWdodF9jbGFzcyI6MzYzfQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "timestamp": "2025-08-22T07:36:12.534Z",
+  "athleteName": "Tyler Ball",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1015179": [
+        {
+          "meet_id": 2184,
+          "date": "2017-02-05",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Tyler Ball",
+          "lifter_id": 27474,
+          "membershipNumbers": [
+            {
+              "athleteName": "Tyler Ball",
+              "membershipNumber": "1015179",
+              "fullText": "5  -  157  Tyler Ball  M  43  KiloDelphia  1015179  86.58  2017-02-05  -  Local  Pennsylvania-West Virginia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0wNSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ],
+      "1065703": [
+        {
+          "meet_id": 5658,
+          "date": "2023-01-14",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Tyler Ball",
+          "lifter_id": 27474,
+          "membershipNumbers": [
+            {
+              "athleteName": "Tyler Ball",
+              "membershipNumber": "1065703",
+              "fullText": "12  -  205  Tyler Ball  M  25  Mach 1 Barbell  1065703  80.2  2023-01-14  -  Local  New Jersey"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMS0xNCIsIndlaWdodF9jbGFzcyI6ODV9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 5592,
+        "date": "2022-10-29",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Tyler Ball",
+        "lifter_id": 27474,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMC0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMC0yOSIsIndlaWdodF9jbGFzcyI6ODV9"
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Tyler Ball",
+    "splits": [
+      {
+        "newAthleteName": "Tyler Ball (Person 1)",
+        "membershipNumber": "1015179",
+        "competitionCount": 1,
+        "competitions": [
+          2184
+        ]
+      },
+      {
+        "newAthleteName": "Tyler Ball (Person 2)",
+        "membershipNumber": "1065703",
+        "competitionCount": 1,
+        "competitions": [
+          5658
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 5592,
+        "date": "2022-10-29",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Tyler Ball",
+        "lifter_id": 27474,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMC0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMC0yOSIsIndlaWdodF9jbGFzcyI6ODV9"
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Tyler Ball",
+    "competitions": [
+      {
+        "meet_id": 2184,
+        "date": "2017-02-05",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Tyler Ball",
+        "lifter_id": 27474,
+        "membershipNumbers": [
+          {
+            "athleteName": "Tyler Ball",
+            "membershipNumber": "1015179",
+            "fullText": "5  -  157  Tyler Ball  M  43  KiloDelphia  1015179  86.58  2017-02-05  -  Local  Pennsylvania-West Virginia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0wNSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 5658,
+        "date": "2023-01-14",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Tyler Ball",
+        "lifter_id": 27474,
+        "membershipNumbers": [
+          {
+            "athleteName": "Tyler Ball",
+            "membershipNumber": "1065703",
+            "fullText": "12  -  205  Tyler Ball  M  25  Mach 1 Barbell  1065703  80.2  2023-01-14  -  Local  New Jersey"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMS0xNCIsIndlaWdodF9jbGFzcyI6ODV9"
+      },
+      {
+        "meet_id": 5592,
+        "date": "2022-10-29",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Tyler Ball",
+        "lifter_id": 27474,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMC0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMC0yOSIsIndlaWdodF9jbGFzcyI6ODV9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1015179": [
+          {
+            "meet_id": 2184,
+            "date": "2017-02-05",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Tyler Ball",
+            "lifter_id": 27474,
+            "membershipNumbers": [
+              {
+                "athleteName": "Tyler Ball",
+                "membershipNumber": "1015179",
+                "fullText": "5  -  157  Tyler Ball  M  43  KiloDelphia  1015179  86.58  2017-02-05  -  Local  Pennsylvania-West Virginia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0wNSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          }
+        ],
+        "1065703": [
+          {
+            "meet_id": 5658,
+            "date": "2023-01-14",
+            "age_category": "Open Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Tyler Ball",
+            "lifter_id": 27474,
+            "membershipNumbers": [
+              {
+                "athleteName": "Tyler Ball",
+                "membershipNumber": "1065703",
+                "fullText": "12  -  205  Tyler Ball  M  25  Mach 1 Barbell  1065703  80.2  2023-01-14  -  Local  New Jersey"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMS0xNCIsIndlaWdodF9jbGFzcyI6ODV9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 5592,
+          "date": "2022-10-29",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Tyler Ball",
+          "lifter_id": 27474,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMC0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMC0yOSIsIndlaWdodF9jbGFzcyI6ODV9"
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

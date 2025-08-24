@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-22T13:17:25.543Z",
+  "athleteName": "Jerryth Fieldhouse",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1068593": [
+        {
+          "meet_id": 5771,
+          "date": "2023-03-11",
+          "age_category": "Men's 16-17 Age Group",
+          "weight_class": "81kg",
+          "lifter_name": "Jerryth Fieldhouse",
+          "lifter_id": 55652,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jerryth Fieldhouse",
+              "membershipNumber": "1068593",
+              "fullText": "1  -  183  Jerryth Fieldhouse  M  16  -  1068593  75.98  2023-03-11  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMy0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMy0xMSIsIndlaWdodF9jbGFzcyI6Nn0="
+        },
+        {
+          "meet_id": 5731,
+          "date": "2023-02-11",
+          "age_category": "Men's 16-17 Age Group",
+          "weight_class": "81kg",
+          "lifter_name": "Jerryth Fieldhouse",
+          "lifter_id": 55652,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jerryth Fieldhouse",
+              "membershipNumber": "1068593",
+              "fullText": "4  -  160  Jerryth Fieldhouse  M  16  -  1068593  76.1  2023-02-11  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMi0xMSIsIndlaWdodF9jbGFzcyI6Nn0="
+        }
+      ],
+      "1074724": [
+        {
+          "meet_id": 6252,
+          "date": "2024-02-24",
+          "age_category": "Men's 16-17 Age Group",
+          "weight_class": "81kg",
+          "lifter_name": "Jerryth Fieldhouse",
+          "lifter_id": 55652,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jerryth Fieldhouse",
+              "membershipNumber": "1074724",
+              "fullText": "1  -  199  Jerryth Fieldhouse  M  17  -  1074724  76.3  2024-02-24  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMi0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMi0yNCIsIndlaWdodF9jbGFzcyI6Nn0="
+        },
+        {
+          "meet_id": 6232,
+          "date": "2024-02-10",
+          "age_category": "Men's 16-17 Age Group",
+          "weight_class": "81kg",
+          "lifter_name": "Jerryth Fieldhouse",
+          "lifter_id": 55652,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jerryth Fieldhouse",
+              "membershipNumber": "1074724",
+              "fullText": "3  -  193  Jerryth Fieldhouse  M  17  -  1074724  76.2  2024-02-10  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMi0xMCIsIndlaWdodF9jbGFzcyI6Nn0="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Jerryth Fieldhouse",
+    "splits": [
+      {
+        "newAthleteName": "Jerryth Fieldhouse (Person 1)",
+        "membershipNumber": "1068593",
+        "competitionCount": 2,
+        "competitions": [
+          5771,
+          5731
+        ]
+      },
+      {
+        "newAthleteName": "Jerryth Fieldhouse (Person 2)",
+        "membershipNumber": "1074724",
+        "competitionCount": 2,
+        "competitions": [
+          6252,
+          6232
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Jerryth Fieldhouse",
+    "competitions": [
+      {
+        "meet_id": 6252,
+        "date": "2024-02-24",
+        "age_category": "Men's 16-17 Age Group",
+        "weight_class": "81kg",
+        "lifter_name": "Jerryth Fieldhouse",
+        "lifter_id": 55652,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jerryth Fieldhouse",
+            "membershipNumber": "1074724",
+            "fullText": "1  -  199  Jerryth Fieldhouse  M  17  -  1074724  76.3  2024-02-24  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMi0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMi0yNCIsIndlaWdodF9jbGFzcyI6Nn0="
+      },
+      {
+        "meet_id": 5771,
+        "date": "2023-03-11",
+        "age_category": "Men's 16-17 Age Group",
+        "weight_class": "81kg",
+        "lifter_name": "Jerryth Fieldhouse",
+        "lifter_id": 55652,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jerryth Fieldhouse",
+            "membershipNumber": "1068593",
+            "fullText": "1  -  183  Jerryth Fieldhouse  M  16  -  1068593  75.98  2023-03-11  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMy0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMy0xMSIsIndlaWdodF9jbGFzcyI6Nn0="
+      },
+      {
+        "meet_id": 5731,
+        "date": "2023-02-11",
+        "age_category": "Men's 16-17 Age Group",
+        "weight_class": "81kg",
+        "lifter_name": "Jerryth Fieldhouse",
+        "lifter_id": 55652,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jerryth Fieldhouse",
+            "membershipNumber": "1068593",
+            "fullText": "4  -  160  Jerryth Fieldhouse  M  16  -  1068593  76.1  2023-02-11  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMi0xMSIsIndlaWdodF9jbGFzcyI6Nn0="
+      },
+      {
+        "meet_id": 6232,
+        "date": "2024-02-10",
+        "age_category": "Men's 16-17 Age Group",
+        "weight_class": "81kg",
+        "lifter_name": "Jerryth Fieldhouse",
+        "lifter_id": 55652,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jerryth Fieldhouse",
+            "membershipNumber": "1074724",
+            "fullText": "3  -  193  Jerryth Fieldhouse  M  17  -  1074724  76.2  2024-02-10  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMi0xMCIsIndlaWdodF9jbGFzcyI6Nn0="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1068593": [
+          {
+            "meet_id": 5771,
+            "date": "2023-03-11",
+            "age_category": "Men's 16-17 Age Group",
+            "weight_class": "81kg",
+            "lifter_name": "Jerryth Fieldhouse",
+            "lifter_id": 55652,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jerryth Fieldhouse",
+                "membershipNumber": "1068593",
+                "fullText": "1  -  183  Jerryth Fieldhouse  M  16  -  1068593  75.98  2023-03-11  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMy0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMy0xMSIsIndlaWdodF9jbGFzcyI6Nn0="
+          },
+          {
+            "meet_id": 5731,
+            "date": "2023-02-11",
+            "age_category": "Men's 16-17 Age Group",
+            "weight_class": "81kg",
+            "lifter_name": "Jerryth Fieldhouse",
+            "lifter_id": 55652,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jerryth Fieldhouse",
+                "membershipNumber": "1068593",
+                "fullText": "4  -  160  Jerryth Fieldhouse  M  16  -  1068593  76.1  2023-02-11  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMi0xMSIsIndlaWdodF9jbGFzcyI6Nn0="
+          }
+        ],
+        "1074724": [
+          {
+            "meet_id": 6252,
+            "date": "2024-02-24",
+            "age_category": "Men's 16-17 Age Group",
+            "weight_class": "81kg",
+            "lifter_name": "Jerryth Fieldhouse",
+            "lifter_id": 55652,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jerryth Fieldhouse",
+                "membershipNumber": "1074724",
+                "fullText": "1  -  199  Jerryth Fieldhouse  M  17  -  1074724  76.3  2024-02-24  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMi0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMi0yNCIsIndlaWdodF9jbGFzcyI6Nn0="
+          },
+          {
+            "meet_id": 6232,
+            "date": "2024-02-10",
+            "age_category": "Men's 16-17 Age Group",
+            "weight_class": "81kg",
+            "lifter_name": "Jerryth Fieldhouse",
+            "lifter_id": 55652,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jerryth Fieldhouse",
+                "membershipNumber": "1074724",
+                "fullText": "3  -  193  Jerryth Fieldhouse  M  17  -  1074724  76.2  2024-02-10  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMi0xMCIsIndlaWdodF9jbGFzcyI6Nn0="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

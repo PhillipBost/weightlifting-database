@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T09:03:52.535Z",
+  "athleteName": "Breanna Rodriguez",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1064780": [
+        {
+          "meet_id": 5472,
+          "date": "2022-08-20",
+          "age_category": "Women's 16-17 Age Group",
+          "weight_class": "55kg",
+          "lifter_name": "Breanna Rodriguez",
+          "lifter_id": 53540,
+          "membershipNumbers": [
+            {
+              "athleteName": "Breanna Rodriguez",
+              "membershipNumber": "1064780",
+              "fullText": "8  -  97  Breanna Rodriguez   F  17  -  1064780  51.9  2022-08-20  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wOC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wOC0yMCIsIndlaWdodF9jbGFzcyI6MTR9"
+        }
+      ],
+      "1071280": [
+        {
+          "meet_id": 5967,
+          "date": "2023-08-06",
+          "age_category": "Junior Women's",
+          "weight_class": "55kg",
+          "lifter_name": "Breanna Rodriguez",
+          "lifter_id": 53540,
+          "membershipNumbers": [
+            {
+              "athleteName": "Breanna Rodriguez",
+              "membershipNumber": "1071280",
+              "fullText": "3  -  102  Breanna Rodriguez  F  18  Ischyros  1071280  53.2  2023-08-06  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wOC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wOC0wNiIsIndlaWdodF9jbGFzcyI6NzN9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Breanna Rodriguez",
+    "splits": [
+      {
+        "newAthleteName": "Breanna Rodriguez (Person 1)",
+        "membershipNumber": "1064780",
+        "competitionCount": 1,
+        "competitions": [
+          5472
+        ]
+      },
+      {
+        "newAthleteName": "Breanna Rodriguez (Person 2)",
+        "membershipNumber": "1071280",
+        "competitionCount": 1,
+        "competitions": [
+          5967
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Breanna Rodriguez",
+    "competitions": [
+      {
+        "meet_id": 5967,
+        "date": "2023-08-06",
+        "age_category": "Junior Women's",
+        "weight_class": "55kg",
+        "lifter_name": "Breanna Rodriguez",
+        "lifter_id": 53540,
+        "membershipNumbers": [
+          {
+            "athleteName": "Breanna Rodriguez",
+            "membershipNumber": "1071280",
+            "fullText": "3  -  102  Breanna Rodriguez  F  18  Ischyros  1071280  53.2  2023-08-06  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wOC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wOC0wNiIsIndlaWdodF9jbGFzcyI6NzN9"
+      },
+      {
+        "meet_id": 5472,
+        "date": "2022-08-20",
+        "age_category": "Women's 16-17 Age Group",
+        "weight_class": "55kg",
+        "lifter_name": "Breanna Rodriguez",
+        "lifter_id": 53540,
+        "membershipNumbers": [
+          {
+            "athleteName": "Breanna Rodriguez",
+            "membershipNumber": "1064780",
+            "fullText": "8  -  97  Breanna Rodriguez   F  17  -  1064780  51.9  2022-08-20  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wOC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wOC0yMCIsIndlaWdodF9jbGFzcyI6MTR9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1064780": [
+          {
+            "meet_id": 5472,
+            "date": "2022-08-20",
+            "age_category": "Women's 16-17 Age Group",
+            "weight_class": "55kg",
+            "lifter_name": "Breanna Rodriguez",
+            "lifter_id": 53540,
+            "membershipNumbers": [
+              {
+                "athleteName": "Breanna Rodriguez",
+                "membershipNumber": "1064780",
+                "fullText": "8  -  97  Breanna Rodriguez   F  17  -  1064780  51.9  2022-08-20  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wOC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wOC0yMCIsIndlaWdodF9jbGFzcyI6MTR9"
+          }
+        ],
+        "1071280": [
+          {
+            "meet_id": 5967,
+            "date": "2023-08-06",
+            "age_category": "Junior Women's",
+            "weight_class": "55kg",
+            "lifter_name": "Breanna Rodriguez",
+            "lifter_id": 53540,
+            "membershipNumbers": [
+              {
+                "athleteName": "Breanna Rodriguez",
+                "membershipNumber": "1071280",
+                "fullText": "3  -  102  Breanna Rodriguez  F  18  Ischyros  1071280  53.2  2023-08-06  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wOC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wOC0wNiIsIndlaWdodF9jbGFzcyI6NzN9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

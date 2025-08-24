@@ -1,0 +1,275 @@
+{
+  "timestamp": "2025-08-22T20:22:22.820Z",
+  "athleteName": "Grace Wilson",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 3,
+    "membershipGroups": {
+      "1030703": [
+        {
+          "meet_id": 2942,
+          "date": "2018-06-03",
+          "age_category": "Women's 14-15 Age Group",
+          "weight_class": "+69 kg",
+          "lifter_name": "Grace Wilson",
+          "lifter_id": 34398,
+          "membershipNumbers": [
+            {
+              "athleteName": "Grace Wilson",
+              "membershipNumber": "1030703",
+              "fullText": "1  -  148  Grace Wilson  F  15  LEHIGH VALLEY BARBELL CLUB  1030703  79.7  2018-06-03  -  Local  Pennsylvania-West Virginia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0wMyIsIndlaWdodF9jbGFzcyI6MzE5fQ=="
+        }
+      ],
+      "1039359": [
+        {
+          "meet_id": 3952,
+          "date": "2019-02-23",
+          "age_category": "Women's 14-15 Age Group",
+          "weight_class": "59kg",
+          "lifter_name": "Grace Wilson",
+          "lifter_id": 34398,
+          "membershipNumbers": [
+            {
+              "athleteName": "Grace Wilson",
+              "membershipNumber": "1039359",
+              "fullText": "2  -  85  Grace Wilson  F  15  VERO BEACH WEIGHTLIFTING  1039359  57.8  2019-02-23  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMi0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMi0yMyIsIndlaWdodF9jbGFzcyI6MzZ9"
+        }
+      ],
+      "1052518": [
+        {
+          "meet_id": 4609,
+          "date": "2020-10-23",
+          "age_category": "Women's 16-17 Age Group",
+          "weight_class": "64kg",
+          "lifter_name": "Grace Wilson",
+          "lifter_id": 34398,
+          "membershipNumbers": [
+            {
+              "athleteName": "Grace Wilson",
+              "membershipNumber": "1052518",
+              "fullText": "5  -  106  Grace Wilson  F  16  VERO BEACH WEIGHTLIFTING  1052518  61.9  2020-10-23  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0xMC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0xMC0yMyIsIndlaWdodF9jbGFzcyI6MTZ9"
+        },
+        {
+          "meet_id": 4628,
+          "date": "2020-09-25",
+          "age_category": "Women's 16-17 Age Group",
+          "weight_class": "59kg",
+          "lifter_name": "Grace Wilson",
+          "lifter_id": 34398,
+          "membershipNumbers": [
+            {
+              "athleteName": "Grace Wilson",
+              "membershipNumber": "1052518",
+              "fullText": "1  -  100  Grace Wilson  F  16  VERO BEACH WEIGHTLIFTING  1052518  58.85  2020-09-25  -  Local  Florida"
+            },
+            {
+              "athleteName": "Grace Wilson",
+              "membershipNumber": "1039359",
+              "fullText": "1  -  100  Grace Wilson  F  16  VERO BEACH WEIGHTLIFTING  1039359  58.89  2020-09-25  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wOS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wOS0yNSIsIndlaWdodF9jbGFzcyI6MTV9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Grace Wilson",
+    "splits": [
+      {
+        "newAthleteName": "Grace Wilson (Person 1)",
+        "membershipNumber": "1030703",
+        "competitionCount": 1,
+        "competitions": [
+          2942
+        ]
+      },
+      {
+        "newAthleteName": "Grace Wilson (Person 2)",
+        "membershipNumber": "1039359",
+        "competitionCount": 1,
+        "competitions": [
+          3952
+        ]
+      },
+      {
+        "newAthleteName": "Grace Wilson (Person 3)",
+        "membershipNumber": "1052518",
+        "competitionCount": 2,
+        "competitions": [
+          4609,
+          4628
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Grace Wilson",
+    "competitions": [
+      {
+        "meet_id": 2942,
+        "date": "2018-06-03",
+        "age_category": "Women's 14-15 Age Group",
+        "weight_class": "+69 kg",
+        "lifter_name": "Grace Wilson",
+        "lifter_id": 34398,
+        "membershipNumbers": [
+          {
+            "athleteName": "Grace Wilson",
+            "membershipNumber": "1030703",
+            "fullText": "1  -  148  Grace Wilson  F  15  LEHIGH VALLEY BARBELL CLUB  1030703  79.7  2018-06-03  -  Local  Pennsylvania-West Virginia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0wMyIsIndlaWdodF9jbGFzcyI6MzE5fQ=="
+      },
+      {
+        "meet_id": 4609,
+        "date": "2020-10-23",
+        "age_category": "Women's 16-17 Age Group",
+        "weight_class": "64kg",
+        "lifter_name": "Grace Wilson",
+        "lifter_id": 34398,
+        "membershipNumbers": [
+          {
+            "athleteName": "Grace Wilson",
+            "membershipNumber": "1052518",
+            "fullText": "5  -  106  Grace Wilson  F  16  VERO BEACH WEIGHTLIFTING  1052518  61.9  2020-10-23  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0xMC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0xMC0yMyIsIndlaWdodF9jbGFzcyI6MTZ9"
+      },
+      {
+        "meet_id": 3952,
+        "date": "2019-02-23",
+        "age_category": "Women's 14-15 Age Group",
+        "weight_class": "59kg",
+        "lifter_name": "Grace Wilson",
+        "lifter_id": 34398,
+        "membershipNumbers": [
+          {
+            "athleteName": "Grace Wilson",
+            "membershipNumber": "1039359",
+            "fullText": "2  -  85  Grace Wilson  F  15  VERO BEACH WEIGHTLIFTING  1039359  57.8  2019-02-23  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMi0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMi0yMyIsIndlaWdodF9jbGFzcyI6MzZ9"
+      },
+      {
+        "meet_id": 4628,
+        "date": "2020-09-25",
+        "age_category": "Women's 16-17 Age Group",
+        "weight_class": "59kg",
+        "lifter_name": "Grace Wilson",
+        "lifter_id": 34398,
+        "membershipNumbers": [
+          {
+            "athleteName": "Grace Wilson",
+            "membershipNumber": "1052518",
+            "fullText": "1  -  100  Grace Wilson  F  16  VERO BEACH WEIGHTLIFTING  1052518  58.85  2020-09-25  -  Local  Florida"
+          },
+          {
+            "athleteName": "Grace Wilson",
+            "membershipNumber": "1039359",
+            "fullText": "1  -  100  Grace Wilson  F  16  VERO BEACH WEIGHTLIFTING  1039359  58.89  2020-09-25  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wOS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wOS0yNSIsIndlaWdodF9jbGFzcyI6MTV9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 3,
+      "membershipGroups": {
+        "1030703": [
+          {
+            "meet_id": 2942,
+            "date": "2018-06-03",
+            "age_category": "Women's 14-15 Age Group",
+            "weight_class": "+69 kg",
+            "lifter_name": "Grace Wilson",
+            "lifter_id": 34398,
+            "membershipNumbers": [
+              {
+                "athleteName": "Grace Wilson",
+                "membershipNumber": "1030703",
+                "fullText": "1  -  148  Grace Wilson  F  15  LEHIGH VALLEY BARBELL CLUB  1030703  79.7  2018-06-03  -  Local  Pennsylvania-West Virginia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0wMyIsIndlaWdodF9jbGFzcyI6MzE5fQ=="
+          }
+        ],
+        "1039359": [
+          {
+            "meet_id": 3952,
+            "date": "2019-02-23",
+            "age_category": "Women's 14-15 Age Group",
+            "weight_class": "59kg",
+            "lifter_name": "Grace Wilson",
+            "lifter_id": 34398,
+            "membershipNumbers": [
+              {
+                "athleteName": "Grace Wilson",
+                "membershipNumber": "1039359",
+                "fullText": "2  -  85  Grace Wilson  F  15  VERO BEACH WEIGHTLIFTING  1039359  57.8  2019-02-23  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMi0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMi0yMyIsIndlaWdodF9jbGFzcyI6MzZ9"
+          }
+        ],
+        "1052518": [
+          {
+            "meet_id": 4609,
+            "date": "2020-10-23",
+            "age_category": "Women's 16-17 Age Group",
+            "weight_class": "64kg",
+            "lifter_name": "Grace Wilson",
+            "lifter_id": 34398,
+            "membershipNumbers": [
+              {
+                "athleteName": "Grace Wilson",
+                "membershipNumber": "1052518",
+                "fullText": "5  -  106  Grace Wilson  F  16  VERO BEACH WEIGHTLIFTING  1052518  61.9  2020-10-23  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0xMC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0xMC0yMyIsIndlaWdodF9jbGFzcyI6MTZ9"
+          },
+          {
+            "meet_id": 4628,
+            "date": "2020-09-25",
+            "age_category": "Women's 16-17 Age Group",
+            "weight_class": "59kg",
+            "lifter_name": "Grace Wilson",
+            "lifter_id": 34398,
+            "membershipNumbers": [
+              {
+                "athleteName": "Grace Wilson",
+                "membershipNumber": "1052518",
+                "fullText": "1  -  100  Grace Wilson  F  16  VERO BEACH WEIGHTLIFTING  1052518  58.85  2020-09-25  -  Local  Florida"
+              },
+              {
+                "athleteName": "Grace Wilson",
+                "membershipNumber": "1039359",
+                "fullText": "1  -  100  Grace Wilson  F  16  VERO BEACH WEIGHTLIFTING  1039359  58.89  2020-09-25  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wOS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wOS0yNSIsIndlaWdodF9jbGFzcyI6MTV9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

@@ -1,0 +1,354 @@
+{
+  "timestamp": "2025-08-22T05:42:35.926Z",
+  "athleteName": "Jason Lee",
+  "totalCompetitions": 7,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "201473": [
+        {
+          "meet_id": 5991,
+          "date": "2023-08-26",
+          "age_category": "Men's Masters (45-49)",
+          "weight_class": "89kg",
+          "lifter_name": "Jason Lee",
+          "lifter_id": 9369,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jason Lee",
+              "membershipNumber": "201473",
+              "fullText": "1  -  165  Jason Lee  M  49  -  201473  82.4  2023-08-26  -  Local  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wOC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wOC0yNiIsIndlaWdodF9jbGFzcyI6MTQ2fQ=="
+        }
+      ],
+      "1077525": [
+        {
+          "meet_id": 6496,
+          "date": "2024-08-10",
+          "age_category": "Junior Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Jason Lee",
+          "lifter_id": 9369,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jason Lee",
+              "membershipNumber": "1077525",
+              "fullText": "1  -  237  Jason Lee  M  19  -  1077525  79.9  2024-08-10  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOC0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOC0xMCIsIndlaWdodF9jbGFzcyI6NjV9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 3531,
+        "date": "2018-10-27",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Jason Lee",
+        "lifter_id": 9369,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yNyIsIndlaWdodF9jbGFzcyI6ODV9"
+      },
+      {
+        "meet_id": 1453,
+        "date": "2014-10-25",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Jason Lee",
+        "lifter_id": 9369,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMC0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMC0yNSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 3412,
+        "date": "2018-08-04",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Jason Lee",
+        "lifter_id": 9369,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOC0wNCIsIndlaWdodF9jbGFzcyI6ODV9"
+      },
+      {
+        "meet_id": 2,
+        "date": "2015-10-11",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Jason Lee",
+        "lifter_id": 9369,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xMSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 208,
+        "date": "2015-04-25",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Jason Lee",
+        "lifter_id": 9369,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0yNSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Jason Lee",
+    "splits": [
+      {
+        "newAthleteName": "Jason Lee (Person 1)",
+        "membershipNumber": "201473",
+        "competitionCount": 1,
+        "competitions": [
+          5991
+        ]
+      },
+      {
+        "newAthleteName": "Jason Lee (Person 2)",
+        "membershipNumber": "1077525",
+        "competitionCount": 1,
+        "competitions": [
+          6496
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 3531,
+        "date": "2018-10-27",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Jason Lee",
+        "lifter_id": 9369,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yNyIsIndlaWdodF9jbGFzcyI6ODV9"
+      },
+      {
+        "meet_id": 1453,
+        "date": "2014-10-25",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Jason Lee",
+        "lifter_id": 9369,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMC0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMC0yNSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 3412,
+        "date": "2018-08-04",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Jason Lee",
+        "lifter_id": 9369,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOC0wNCIsIndlaWdodF9jbGFzcyI6ODV9"
+      },
+      {
+        "meet_id": 2,
+        "date": "2015-10-11",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Jason Lee",
+        "lifter_id": 9369,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xMSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 208,
+        "date": "2015-04-25",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Jason Lee",
+        "lifter_id": 9369,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0yNSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Jason Lee",
+    "competitions": [
+      {
+        "meet_id": 6496,
+        "date": "2024-08-10",
+        "age_category": "Junior Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Jason Lee",
+        "lifter_id": 9369,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jason Lee",
+            "membershipNumber": "1077525",
+            "fullText": "1  -  237  Jason Lee  M  19  -  1077525  79.9  2024-08-10  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOC0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOC0xMCIsIndlaWdodF9jbGFzcyI6NjV9"
+      },
+      {
+        "meet_id": 3531,
+        "date": "2018-10-27",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Jason Lee",
+        "lifter_id": 9369,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yNyIsIndlaWdodF9jbGFzcyI6ODV9"
+      },
+      {
+        "meet_id": 1453,
+        "date": "2014-10-25",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Jason Lee",
+        "lifter_id": 9369,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMC0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMC0yNSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 3412,
+        "date": "2018-08-04",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Jason Lee",
+        "lifter_id": 9369,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOC0wNCIsIndlaWdodF9jbGFzcyI6ODV9"
+      },
+      {
+        "meet_id": 2,
+        "date": "2015-10-11",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Jason Lee",
+        "lifter_id": 9369,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xMSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 208,
+        "date": "2015-04-25",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Jason Lee",
+        "lifter_id": 9369,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0yNSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 5991,
+        "date": "2023-08-26",
+        "age_category": "Men's Masters (45-49)",
+        "weight_class": "89kg",
+        "lifter_name": "Jason Lee",
+        "lifter_id": 9369,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jason Lee",
+            "membershipNumber": "201473",
+            "fullText": "1  -  165  Jason Lee  M  49  -  201473  82.4  2023-08-26  -  Local  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wOC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wOC0yNiIsIndlaWdodF9jbGFzcyI6MTQ2fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "201473": [
+          {
+            "meet_id": 5991,
+            "date": "2023-08-26",
+            "age_category": "Men's Masters (45-49)",
+            "weight_class": "89kg",
+            "lifter_name": "Jason Lee",
+            "lifter_id": 9369,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jason Lee",
+                "membershipNumber": "201473",
+                "fullText": "1  -  165  Jason Lee  M  49  -  201473  82.4  2023-08-26  -  Local  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wOC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wOC0yNiIsIndlaWdodF9jbGFzcyI6MTQ2fQ=="
+          }
+        ],
+        "1077525": [
+          {
+            "meet_id": 6496,
+            "date": "2024-08-10",
+            "age_category": "Junior Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Jason Lee",
+            "lifter_id": 9369,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jason Lee",
+                "membershipNumber": "1077525",
+                "fullText": "1  -  237  Jason Lee  M  19  -  1077525  79.9  2024-08-10  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOC0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOC0xMCIsIndlaWdodF9jbGFzcyI6NjV9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 3531,
+          "date": "2018-10-27",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Jason Lee",
+          "lifter_id": 9369,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yNyIsIndlaWdodF9jbGFzcyI6ODV9"
+        },
+        {
+          "meet_id": 1453,
+          "date": "2014-10-25",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Jason Lee",
+          "lifter_id": 9369,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMC0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMC0yNSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        },
+        {
+          "meet_id": 3412,
+          "date": "2018-08-04",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Jason Lee",
+          "lifter_id": 9369,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOC0wNCIsIndlaWdodF9jbGFzcyI6ODV9"
+        },
+        {
+          "meet_id": 2,
+          "date": "2015-10-11",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Jason Lee",
+          "lifter_id": 9369,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xMSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        },
+        {
+          "meet_id": 208,
+          "date": "2015-04-25",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Jason Lee",
+          "lifter_id": 9369,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0yNSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T08:15:00.721Z",
+  "athleteName": "Justin Davis",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1036161": [
+        {
+          "meet_id": 3901,
+          "date": "2019-06-22",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "Justin Davis",
+          "lifter_id": 37520,
+          "membershipNumbers": [
+            {
+              "athleteName": "Justin Davis",
+              "membershipNumber": "1036161",
+              "fullText": "26  -  204  Justin Davis  M  28  -  1036161  84.6  2019-06-22  -  Local  New York"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNi0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNi0yMiIsIndlaWdodF9jbGFzcyI6ODZ9"
+        },
+        {
+          "meet_id": 3403,
+          "date": "2018-12-01",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "Justin Davis",
+          "lifter_id": 37520,
+          "membershipNumbers": [
+            {
+              "athleteName": "Justin Davis",
+              "membershipNumber": "1036161",
+              "fullText": "15  -  211  Justin Davis  M  27  -  1036161  85.7  2018-12-01  -  Local  New York"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0wMSIsIndlaWdodF9jbGFzcyI6ODZ9"
+        }
+      ],
+      "1070217": [
+        {
+          "meet_id": 5801,
+          "date": "2023-04-15",
+          "age_category": "Men's 16-17 Age Group",
+          "weight_class": "81kg",
+          "lifter_name": "Justin Davis",
+          "lifter_id": 37520,
+          "membershipNumbers": [
+            {
+              "athleteName": "Justin Davis",
+              "membershipNumber": "1070217",
+              "fullText": "2  -  183  Justin Davis  M  17  FonockFit Barbell Club  1070217  73.94  2023-04-15  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0xNSIsIndlaWdodF9jbGFzcyI6Nn0="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Justin Davis",
+    "splits": [
+      {
+        "newAthleteName": "Justin Davis (Person 1)",
+        "membershipNumber": "1036161",
+        "competitionCount": 2,
+        "competitions": [
+          3901,
+          3403
+        ]
+      },
+      {
+        "newAthleteName": "Justin Davis (Person 2)",
+        "membershipNumber": "1070217",
+        "competitionCount": 1,
+        "competitions": [
+          5801
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Justin Davis",
+    "competitions": [
+      {
+        "meet_id": 3901,
+        "date": "2019-06-22",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Justin Davis",
+        "lifter_id": 37520,
+        "membershipNumbers": [
+          {
+            "athleteName": "Justin Davis",
+            "membershipNumber": "1036161",
+            "fullText": "26  -  204  Justin Davis  M  28  -  1036161  84.6  2019-06-22  -  Local  New York"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNi0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNi0yMiIsIndlaWdodF9jbGFzcyI6ODZ9"
+      },
+      {
+        "meet_id": 5801,
+        "date": "2023-04-15",
+        "age_category": "Men's 16-17 Age Group",
+        "weight_class": "81kg",
+        "lifter_name": "Justin Davis",
+        "lifter_id": 37520,
+        "membershipNumbers": [
+          {
+            "athleteName": "Justin Davis",
+            "membershipNumber": "1070217",
+            "fullText": "2  -  183  Justin Davis  M  17  FonockFit Barbell Club  1070217  73.94  2023-04-15  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0xNSIsIndlaWdodF9jbGFzcyI6Nn0="
+      },
+      {
+        "meet_id": 3403,
+        "date": "2018-12-01",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Justin Davis",
+        "lifter_id": 37520,
+        "membershipNumbers": [
+          {
+            "athleteName": "Justin Davis",
+            "membershipNumber": "1036161",
+            "fullText": "15  -  211  Justin Davis  M  27  -  1036161  85.7  2018-12-01  -  Local  New York"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0wMSIsIndlaWdodF9jbGFzcyI6ODZ9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1036161": [
+          {
+            "meet_id": 3901,
+            "date": "2019-06-22",
+            "age_category": "Open Men's",
+            "weight_class": "89kg",
+            "lifter_name": "Justin Davis",
+            "lifter_id": 37520,
+            "membershipNumbers": [
+              {
+                "athleteName": "Justin Davis",
+                "membershipNumber": "1036161",
+                "fullText": "26  -  204  Justin Davis  M  28  -  1036161  84.6  2019-06-22  -  Local  New York"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNi0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNi0yMiIsIndlaWdodF9jbGFzcyI6ODZ9"
+          },
+          {
+            "meet_id": 3403,
+            "date": "2018-12-01",
+            "age_category": "Open Men's",
+            "weight_class": "89kg",
+            "lifter_name": "Justin Davis",
+            "lifter_id": 37520,
+            "membershipNumbers": [
+              {
+                "athleteName": "Justin Davis",
+                "membershipNumber": "1036161",
+                "fullText": "15  -  211  Justin Davis  M  27  -  1036161  85.7  2018-12-01  -  Local  New York"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0wMSIsIndlaWdodF9jbGFzcyI6ODZ9"
+          }
+        ],
+        "1070217": [
+          {
+            "meet_id": 5801,
+            "date": "2023-04-15",
+            "age_category": "Men's 16-17 Age Group",
+            "weight_class": "81kg",
+            "lifter_name": "Justin Davis",
+            "lifter_id": 37520,
+            "membershipNumbers": [
+              {
+                "athleteName": "Justin Davis",
+                "membershipNumber": "1070217",
+                "fullText": "2  -  183  Justin Davis  M  17  FonockFit Barbell Club  1070217  73.94  2023-04-15  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0xNSIsIndlaWdodF9jbGFzcyI6Nn0="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

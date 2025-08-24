@@ -1,0 +1,298 @@
+{
+  "timestamp": "2025-08-22T07:22:04.478Z",
+  "athleteName": "Mary Brown",
+  "totalCompetitions": 5,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1006222": [
+        {
+          "meet_id": 2043,
+          "date": "2016-09-10",
+          "age_category": "Open Women's",
+          "weight_class": "69 kg",
+          "lifter_name": "Mary Brown",
+          "lifter_id": 24616,
+          "membershipNumbers": [
+            {
+              "athleteName": "Mary Brown",
+              "membershipNumber": "1006222",
+              "fullText": "14  -  118  Mary Brown  F  30  Wild Card Weightlifting  1006222  67.4  2016-09-10  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOS0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOS0xMCIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+        },
+        {
+          "meet_id": 1951,
+          "date": "2016-07-10",
+          "age_category": "Open Women's",
+          "weight_class": "75 kg",
+          "lifter_name": "Mary Brown",
+          "lifter_id": 24616,
+          "membershipNumbers": [
+            {
+              "athleteName": "Mary Brown",
+              "membershipNumber": "1006222",
+              "fullText": "8  -  111  Mary Brown  F  30  Wild Card Weightlifting  1006222  73.05  2016-07-10  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNy0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNy0xMCIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+        },
+        {
+          "meet_id": 2204,
+          "date": "2017-01-29",
+          "age_category": "Open Women's",
+          "weight_class": "75 kg",
+          "lifter_name": "Mary Brown",
+          "lifter_id": 24616,
+          "membershipNumbers": [
+            {
+              "athleteName": "Mary Brown",
+              "membershipNumber": "1006222",
+              "fullText": "17  -  108  Mary Brown  F  31  Wild Card Weightlifting  1006222  71.5  2017-01-29  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMS0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMS0yOSIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+        },
+        {
+          "meet_id": 2375,
+          "date": "2017-03-25",
+          "age_category": "Open Women's",
+          "weight_class": "69 kg",
+          "lifter_name": "Mary Brown",
+          "lifter_id": 24616,
+          "membershipNumbers": [
+            {
+              "athleteName": "Mary Brown",
+              "membershipNumber": "1006222",
+              "fullText": "27  -  116  Mary Brown  F  31  Wild Card Weightlifting  1006222  68.5  2017-03-25  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0yNSIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+        }
+      ],
+      "1021601": [
+        {
+          "meet_id": 2766,
+          "date": "2017-10-21",
+          "age_category": "Open Women's",
+          "weight_class": "69 kg",
+          "lifter_name": "Mary Brown",
+          "lifter_id": 24616,
+          "membershipNumbers": [
+            {
+              "athleteName": "Mary Brown",
+              "membershipNumber": "1021601",
+              "fullText": "30  -  122  Mary Brown  F  22  Sasquatch Barbell Club  1021601  65.3  2017-10-21  -  Local  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0yMSIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Mary Brown",
+    "splits": [
+      {
+        "newAthleteName": "Mary Brown (Person 1)",
+        "membershipNumber": "1006222",
+        "competitionCount": 4,
+        "competitions": [
+          2043,
+          1951,
+          2204,
+          2375
+        ]
+      },
+      {
+        "newAthleteName": "Mary Brown (Person 2)",
+        "membershipNumber": "1021601",
+        "competitionCount": 1,
+        "competitions": [
+          2766
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Mary Brown",
+    "competitions": [
+      {
+        "meet_id": 2043,
+        "date": "2016-09-10",
+        "age_category": "Open Women's",
+        "weight_class": "69 kg",
+        "lifter_name": "Mary Brown",
+        "lifter_id": 24616,
+        "membershipNumbers": [
+          {
+            "athleteName": "Mary Brown",
+            "membershipNumber": "1006222",
+            "fullText": "14  -  118  Mary Brown  F  30  Wild Card Weightlifting  1006222  67.4  2016-09-10  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOS0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOS0xMCIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+      },
+      {
+        "meet_id": 2766,
+        "date": "2017-10-21",
+        "age_category": "Open Women's",
+        "weight_class": "69 kg",
+        "lifter_name": "Mary Brown",
+        "lifter_id": 24616,
+        "membershipNumbers": [
+          {
+            "athleteName": "Mary Brown",
+            "membershipNumber": "1021601",
+            "fullText": "30  -  122  Mary Brown  F  22  Sasquatch Barbell Club  1021601  65.3  2017-10-21  -  Local  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0yMSIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+      },
+      {
+        "meet_id": 1951,
+        "date": "2016-07-10",
+        "age_category": "Open Women's",
+        "weight_class": "75 kg",
+        "lifter_name": "Mary Brown",
+        "lifter_id": 24616,
+        "membershipNumbers": [
+          {
+            "athleteName": "Mary Brown",
+            "membershipNumber": "1006222",
+            "fullText": "8  -  111  Mary Brown  F  30  Wild Card Weightlifting  1006222  73.05  2016-07-10  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNy0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNy0xMCIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+      },
+      {
+        "meet_id": 2204,
+        "date": "2017-01-29",
+        "age_category": "Open Women's",
+        "weight_class": "75 kg",
+        "lifter_name": "Mary Brown",
+        "lifter_id": 24616,
+        "membershipNumbers": [
+          {
+            "athleteName": "Mary Brown",
+            "membershipNumber": "1006222",
+            "fullText": "17  -  108  Mary Brown  F  31  Wild Card Weightlifting  1006222  71.5  2017-01-29  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMS0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMS0yOSIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+      },
+      {
+        "meet_id": 2375,
+        "date": "2017-03-25",
+        "age_category": "Open Women's",
+        "weight_class": "69 kg",
+        "lifter_name": "Mary Brown",
+        "lifter_id": 24616,
+        "membershipNumbers": [
+          {
+            "athleteName": "Mary Brown",
+            "membershipNumber": "1006222",
+            "fullText": "27  -  116  Mary Brown  F  31  Wild Card Weightlifting  1006222  68.5  2017-03-25  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0yNSIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1006222": [
+          {
+            "meet_id": 2043,
+            "date": "2016-09-10",
+            "age_category": "Open Women's",
+            "weight_class": "69 kg",
+            "lifter_name": "Mary Brown",
+            "lifter_id": 24616,
+            "membershipNumbers": [
+              {
+                "athleteName": "Mary Brown",
+                "membershipNumber": "1006222",
+                "fullText": "14  -  118  Mary Brown  F  30  Wild Card Weightlifting  1006222  67.4  2016-09-10  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOS0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOS0xMCIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+          },
+          {
+            "meet_id": 1951,
+            "date": "2016-07-10",
+            "age_category": "Open Women's",
+            "weight_class": "75 kg",
+            "lifter_name": "Mary Brown",
+            "lifter_id": 24616,
+            "membershipNumbers": [
+              {
+                "athleteName": "Mary Brown",
+                "membershipNumber": "1006222",
+                "fullText": "8  -  111  Mary Brown  F  30  Wild Card Weightlifting  1006222  73.05  2016-07-10  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNy0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNy0xMCIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+          },
+          {
+            "meet_id": 2204,
+            "date": "2017-01-29",
+            "age_category": "Open Women's",
+            "weight_class": "75 kg",
+            "lifter_name": "Mary Brown",
+            "lifter_id": 24616,
+            "membershipNumbers": [
+              {
+                "athleteName": "Mary Brown",
+                "membershipNumber": "1006222",
+                "fullText": "17  -  108  Mary Brown  F  31  Wild Card Weightlifting  1006222  71.5  2017-01-29  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMS0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMS0yOSIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+          },
+          {
+            "meet_id": 2375,
+            "date": "2017-03-25",
+            "age_category": "Open Women's",
+            "weight_class": "69 kg",
+            "lifter_name": "Mary Brown",
+            "lifter_id": 24616,
+            "membershipNumbers": [
+              {
+                "athleteName": "Mary Brown",
+                "membershipNumber": "1006222",
+                "fullText": "27  -  116  Mary Brown  F  31  Wild Card Weightlifting  1006222  68.5  2017-03-25  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0yNSIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+          }
+        ],
+        "1021601": [
+          {
+            "meet_id": 2766,
+            "date": "2017-10-21",
+            "age_category": "Open Women's",
+            "weight_class": "69 kg",
+            "lifter_name": "Mary Brown",
+            "lifter_id": 24616,
+            "membershipNumbers": [
+              {
+                "athleteName": "Mary Brown",
+                "membershipNumber": "1021601",
+                "fullText": "30  -  122  Mary Brown  F  22  Sasquatch Barbell Club  1021601  65.3  2017-10-21  -  Local  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0yMSIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

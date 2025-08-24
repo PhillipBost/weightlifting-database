@@ -1,0 +1,298 @@
+{
+  "timestamp": "2025-08-23T01:03:49.213Z",
+  "athleteName": "Christopher Gomez",
+  "totalCompetitions": 5,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "203685": [
+        {
+          "meet_id": 2511,
+          "date": "2017-02-18",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Christopher Gomez",
+          "lifter_id": 30175,
+          "membershipNumbers": [
+            {
+              "athleteName": "Christopher Gomez",
+              "membershipNumber": "203685",
+              "fullText": "17  -  230  Christopher Gomez  M  32  -  203685  93.6  2017-02-18  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xOCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        },
+        {
+          "meet_id": 6193,
+          "date": "2024-01-20",
+          "age_category": "Open Men's",
+          "weight_class": "96kg",
+          "lifter_name": "Christopher Gomez",
+          "lifter_id": 30175,
+          "membershipNumbers": [
+            {
+              "athleteName": "Christopher Gomez",
+              "membershipNumber": "203685",
+              "fullText": "12  -  230  Christopher Gomez  M  39  -  203685  95.6  2024-01-20  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMS0yMCIsIndlaWdodF9jbGFzcyI6ODd9"
+        }
+      ],
+      "1074942": [
+        {
+          "meet_id": 6268,
+          "date": "2024-03-16",
+          "age_category": "Men's 14-15 Age Group",
+          "weight_class": "81kg",
+          "lifter_name": "Christopher Gomez",
+          "lifter_id": 30175,
+          "membershipNumbers": [
+            {
+              "athleteName": "Christopher Gomez",
+              "membershipNumber": "1074942",
+              "fullText": "1  -  145  Christopher Gomez  M  15  HASSLE FREE BBC  1074942  76.6  2024-03-16  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMy0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMy0xNiIsIndlaWdodF9jbGFzcyI6Mjh9"
+        },
+        {
+          "meet_id": 6333,
+          "date": "2024-04-27",
+          "age_category": "Men's 14-15 Age Group",
+          "weight_class": "81kg",
+          "lifter_name": "Christopher Gomez",
+          "lifter_id": 30175,
+          "membershipNumbers": [
+            {
+              "athleteName": "Christopher Gomez",
+              "membershipNumber": "1074942",
+              "fullText": "2  -  154  Christopher Gomez  M  15  HASSLE FREE BBC  1074942  77.9  2024-04-27  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNC0yNyIsIndlaWdodF9jbGFzcyI6Mjh9"
+        },
+        {
+          "meet_id": 6431,
+          "date": "2024-06-12",
+          "age_category": "Men's 14-15 Age Group",
+          "weight_class": "81kg",
+          "lifter_name": "Christopher Gomez",
+          "lifter_id": 30175,
+          "membershipNumbers": [
+            {
+              "athleteName": "Christopher Gomez",
+              "membershipNumber": "1074942",
+              "fullText": "9  -  150  Christopher Gomez  M  15  HASSLE FREE BBC  1074942  78.68  2024-06-12  -  National  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNi0xMiIsIndlaWdodF9jbGFzcyI6Mjh9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Christopher Gomez",
+    "splits": [
+      {
+        "newAthleteName": "Christopher Gomez (Person 1)",
+        "membershipNumber": "203685",
+        "competitionCount": 2,
+        "competitions": [
+          2511,
+          6193
+        ]
+      },
+      {
+        "newAthleteName": "Christopher Gomez (Person 2)",
+        "membershipNumber": "1074942",
+        "competitionCount": 3,
+        "competitions": [
+          6268,
+          6333,
+          6431
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Christopher Gomez",
+    "competitions": [
+      {
+        "meet_id": 2511,
+        "date": "2017-02-18",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Christopher Gomez",
+        "lifter_id": 30175,
+        "membershipNumbers": [
+          {
+            "athleteName": "Christopher Gomez",
+            "membershipNumber": "203685",
+            "fullText": "17  -  230  Christopher Gomez  M  32  -  203685  93.6  2017-02-18  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xOCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 6193,
+        "date": "2024-01-20",
+        "age_category": "Open Men's",
+        "weight_class": "96kg",
+        "lifter_name": "Christopher Gomez",
+        "lifter_id": 30175,
+        "membershipNumbers": [
+          {
+            "athleteName": "Christopher Gomez",
+            "membershipNumber": "203685",
+            "fullText": "12  -  230  Christopher Gomez  M  39  -  203685  95.6  2024-01-20  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMS0yMCIsIndlaWdodF9jbGFzcyI6ODd9"
+      },
+      {
+        "meet_id": 6268,
+        "date": "2024-03-16",
+        "age_category": "Men's 14-15 Age Group",
+        "weight_class": "81kg",
+        "lifter_name": "Christopher Gomez",
+        "lifter_id": 30175,
+        "membershipNumbers": [
+          {
+            "athleteName": "Christopher Gomez",
+            "membershipNumber": "1074942",
+            "fullText": "1  -  145  Christopher Gomez  M  15  HASSLE FREE BBC  1074942  76.6  2024-03-16  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMy0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMy0xNiIsIndlaWdodF9jbGFzcyI6Mjh9"
+      },
+      {
+        "meet_id": 6333,
+        "date": "2024-04-27",
+        "age_category": "Men's 14-15 Age Group",
+        "weight_class": "81kg",
+        "lifter_name": "Christopher Gomez",
+        "lifter_id": 30175,
+        "membershipNumbers": [
+          {
+            "athleteName": "Christopher Gomez",
+            "membershipNumber": "1074942",
+            "fullText": "2  -  154  Christopher Gomez  M  15  HASSLE FREE BBC  1074942  77.9  2024-04-27  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNC0yNyIsIndlaWdodF9jbGFzcyI6Mjh9"
+      },
+      {
+        "meet_id": 6431,
+        "date": "2024-06-12",
+        "age_category": "Men's 14-15 Age Group",
+        "weight_class": "81kg",
+        "lifter_name": "Christopher Gomez",
+        "lifter_id": 30175,
+        "membershipNumbers": [
+          {
+            "athleteName": "Christopher Gomez",
+            "membershipNumber": "1074942",
+            "fullText": "9  -  150  Christopher Gomez  M  15  HASSLE FREE BBC  1074942  78.68  2024-06-12  -  National  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNi0xMiIsIndlaWdodF9jbGFzcyI6Mjh9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "203685": [
+          {
+            "meet_id": 2511,
+            "date": "2017-02-18",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Christopher Gomez",
+            "lifter_id": 30175,
+            "membershipNumbers": [
+              {
+                "athleteName": "Christopher Gomez",
+                "membershipNumber": "203685",
+                "fullText": "17  -  230  Christopher Gomez  M  32  -  203685  93.6  2017-02-18  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xOCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          },
+          {
+            "meet_id": 6193,
+            "date": "2024-01-20",
+            "age_category": "Open Men's",
+            "weight_class": "96kg",
+            "lifter_name": "Christopher Gomez",
+            "lifter_id": 30175,
+            "membershipNumbers": [
+              {
+                "athleteName": "Christopher Gomez",
+                "membershipNumber": "203685",
+                "fullText": "12  -  230  Christopher Gomez  M  39  -  203685  95.6  2024-01-20  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMS0yMCIsIndlaWdodF9jbGFzcyI6ODd9"
+          }
+        ],
+        "1074942": [
+          {
+            "meet_id": 6268,
+            "date": "2024-03-16",
+            "age_category": "Men's 14-15 Age Group",
+            "weight_class": "81kg",
+            "lifter_name": "Christopher Gomez",
+            "lifter_id": 30175,
+            "membershipNumbers": [
+              {
+                "athleteName": "Christopher Gomez",
+                "membershipNumber": "1074942",
+                "fullText": "1  -  145  Christopher Gomez  M  15  HASSLE FREE BBC  1074942  76.6  2024-03-16  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMy0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMy0xNiIsIndlaWdodF9jbGFzcyI6Mjh9"
+          },
+          {
+            "meet_id": 6333,
+            "date": "2024-04-27",
+            "age_category": "Men's 14-15 Age Group",
+            "weight_class": "81kg",
+            "lifter_name": "Christopher Gomez",
+            "lifter_id": 30175,
+            "membershipNumbers": [
+              {
+                "athleteName": "Christopher Gomez",
+                "membershipNumber": "1074942",
+                "fullText": "2  -  154  Christopher Gomez  M  15  HASSLE FREE BBC  1074942  77.9  2024-04-27  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNC0yNyIsIndlaWdodF9jbGFzcyI6Mjh9"
+          },
+          {
+            "meet_id": 6431,
+            "date": "2024-06-12",
+            "age_category": "Men's 14-15 Age Group",
+            "weight_class": "81kg",
+            "lifter_name": "Christopher Gomez",
+            "lifter_id": 30175,
+            "membershipNumbers": [
+              {
+                "athleteName": "Christopher Gomez",
+                "membershipNumber": "1074942",
+                "fullText": "9  -  150  Christopher Gomez  M  15  HASSLE FREE BBC  1074942  78.68  2024-06-12  -  National  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNi0xMiIsIndlaWdodF9jbGFzcyI6Mjh9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

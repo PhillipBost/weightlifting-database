@@ -1,0 +1,112 @@
+{
+  "timestamp": "2025-08-22T04:03:22.743Z",
+  "athleteName": "Richard Bell",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 1,
+    "membershipGroups": {
+      "1029320": [
+        {
+          "meet_id": 3907,
+          "date": "2019-04-27",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "Richard Bell",
+          "lifter_id": 1221,
+          "membershipNumbers": [
+            {
+              "athleteName": "Richard Bell",
+              "membershipNumber": "1029320",
+              "fullText": "23  -  214  Richard Bell  M  18  Kuna Barbell Club  1029320  86.25  2019-04-27  -  Local  Mountain North"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0yNyIsIndlaWdodF9jbGFzcyI6ODZ9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 686,
+        "date": "2012-10-13",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Richard Bell",
+        "lifter_id": 1221,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      }
+    ],
+    "splitRequired": false
+  },
+  "splitPlan": {
+    "action": "NO_SPLIT_NEEDED",
+    "reason": "Only one distinct athlete found"
+  },
+  "rawData": {
+    "athleteName": "Richard Bell",
+    "competitions": [
+      {
+        "meet_id": 686,
+        "date": "2012-10-13",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Richard Bell",
+        "lifter_id": 1221,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 3907,
+        "date": "2019-04-27",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Richard Bell",
+        "lifter_id": 1221,
+        "membershipNumbers": [
+          {
+            "athleteName": "Richard Bell",
+            "membershipNumber": "1029320",
+            "fullText": "23  -  214  Richard Bell  M  18  Kuna Barbell Club  1029320  86.25  2019-04-27  -  Local  Mountain North"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0yNyIsIndlaWdodF9jbGFzcyI6ODZ9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 1,
+      "membershipGroups": {
+        "1029320": [
+          {
+            "meet_id": 3907,
+            "date": "2019-04-27",
+            "age_category": "Open Men's",
+            "weight_class": "89kg",
+            "lifter_name": "Richard Bell",
+            "lifter_id": 1221,
+            "membershipNumbers": [
+              {
+                "athleteName": "Richard Bell",
+                "membershipNumber": "1029320",
+                "fullText": "23  -  214  Richard Bell  M  18  Kuna Barbell Club  1029320  86.25  2019-04-27  -  Local  Mountain North"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0yNyIsIndlaWdodF9jbGFzcyI6ODZ9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 686,
+          "date": "2012-10-13",
+          "age_category": "Open Men's",
+          "weight_class": "+105 kg",
+          "lifter_name": "Richard Bell",
+          "lifter_id": 1221,
+          "membershipNumbers": [],
+          "error": "No division code found for: \"Open Men's +105 kg\""
+        }
+      ],
+      "splitRequired": false
+    }
+  }
+}

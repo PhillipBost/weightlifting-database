@@ -1,0 +1,243 @@
+{
+  "timestamp": "2025-08-22T08:26:35.167Z",
+  "athleteName": "Olivia Bell",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1038837": [
+        {
+          "meet_id": 3689,
+          "date": "2019-02-23",
+          "age_category": "Women's 13 Under Age Group",
+          "weight_class": "30kg",
+          "lifter_name": "Olivia Bell",
+          "lifter_id": 40107,
+          "membershipNumbers": [
+            {
+              "athleteName": "Olivia Bell",
+              "membershipNumber": "1038837",
+              "fullText": "1  -  42  Olivia Bell  F  9  ATLANTA PERFORMANCE  1038837  29.6  2019-02-23  -  Local  Georgia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMi0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMi0yMyIsIndlaWdodF9jbGFzcyI6NTF9"
+        },
+        {
+          "meet_id": 3766,
+          "date": "2019-04-06",
+          "age_category": "Women's 13 Under Age Group",
+          "weight_class": "33kg",
+          "lifter_name": "Olivia Bell",
+          "lifter_id": 40107,
+          "membershipNumbers": [
+            {
+              "athleteName": "Olivia Bell",
+              "membershipNumber": "1038837",
+              "fullText": "3  -  39  Olivia Bell  F  9  ATLANTA PERFORMANCE  1038837  30.5  2019-04-06  -  Local  Georgia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0wNiIsIndlaWdodF9jbGFzcyI6NTJ9"
+        }
+      ],
+      "1055609": [
+        {
+          "meet_id": 5058,
+          "date": "2021-12-11",
+          "age_category": "Junior Women's",
+          "weight_class": "71kg",
+          "lifter_name": "Olivia Bell",
+          "lifter_id": 40107,
+          "membershipNumbers": [
+            {
+              "athleteName": "Olivia Bell",
+              "membershipNumber": "1055609",
+              "fullText": "20  -  54  Olivia Bell  F  20  Bobcat Barbell  1055609  70.5  2021-12-11  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMi0xMSIsIndlaWdodF9jbGFzcyI6NzZ9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 5192,
+        "date": "2022-01-15",
+        "age_category": "Open Women's",
+        "weight_class": "71kg",
+        "lifter_name": "Olivia Bell",
+        "lifter_id": 40107,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMS0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMS0xNSIsIndlaWdodF9jbGFzcyI6OTZ9"
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Olivia Bell",
+    "splits": [
+      {
+        "newAthleteName": "Olivia Bell (Person 1)",
+        "membershipNumber": "1038837",
+        "competitionCount": 2,
+        "competitions": [
+          3689,
+          3766
+        ]
+      },
+      {
+        "newAthleteName": "Olivia Bell (Person 2)",
+        "membershipNumber": "1055609",
+        "competitionCount": 1,
+        "competitions": [
+          5058
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 5192,
+        "date": "2022-01-15",
+        "age_category": "Open Women's",
+        "weight_class": "71kg",
+        "lifter_name": "Olivia Bell",
+        "lifter_id": 40107,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMS0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMS0xNSIsIndlaWdodF9jbGFzcyI6OTZ9"
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Olivia Bell",
+    "competitions": [
+      {
+        "meet_id": 3689,
+        "date": "2019-02-23",
+        "age_category": "Women's 13 Under Age Group",
+        "weight_class": "30kg",
+        "lifter_name": "Olivia Bell",
+        "lifter_id": 40107,
+        "membershipNumbers": [
+          {
+            "athleteName": "Olivia Bell",
+            "membershipNumber": "1038837",
+            "fullText": "1  -  42  Olivia Bell  F  9  ATLANTA PERFORMANCE  1038837  29.6  2019-02-23  -  Local  Georgia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMi0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMi0yMyIsIndlaWdodF9jbGFzcyI6NTF9"
+      },
+      {
+        "meet_id": 3766,
+        "date": "2019-04-06",
+        "age_category": "Women's 13 Under Age Group",
+        "weight_class": "33kg",
+        "lifter_name": "Olivia Bell",
+        "lifter_id": 40107,
+        "membershipNumbers": [
+          {
+            "athleteName": "Olivia Bell",
+            "membershipNumber": "1038837",
+            "fullText": "3  -  39  Olivia Bell  F  9  ATLANTA PERFORMANCE  1038837  30.5  2019-04-06  -  Local  Georgia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0wNiIsIndlaWdodF9jbGFzcyI6NTJ9"
+      },
+      {
+        "meet_id": 5192,
+        "date": "2022-01-15",
+        "age_category": "Open Women's",
+        "weight_class": "71kg",
+        "lifter_name": "Olivia Bell",
+        "lifter_id": 40107,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMS0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMS0xNSIsIndlaWdodF9jbGFzcyI6OTZ9"
+      },
+      {
+        "meet_id": 5058,
+        "date": "2021-12-11",
+        "age_category": "Junior Women's",
+        "weight_class": "71kg",
+        "lifter_name": "Olivia Bell",
+        "lifter_id": 40107,
+        "membershipNumbers": [
+          {
+            "athleteName": "Olivia Bell",
+            "membershipNumber": "1055609",
+            "fullText": "20  -  54  Olivia Bell  F  20  Bobcat Barbell  1055609  70.5  2021-12-11  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMi0xMSIsIndlaWdodF9jbGFzcyI6NzZ9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1038837": [
+          {
+            "meet_id": 3689,
+            "date": "2019-02-23",
+            "age_category": "Women's 13 Under Age Group",
+            "weight_class": "30kg",
+            "lifter_name": "Olivia Bell",
+            "lifter_id": 40107,
+            "membershipNumbers": [
+              {
+                "athleteName": "Olivia Bell",
+                "membershipNumber": "1038837",
+                "fullText": "1  -  42  Olivia Bell  F  9  ATLANTA PERFORMANCE  1038837  29.6  2019-02-23  -  Local  Georgia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMi0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMi0yMyIsIndlaWdodF9jbGFzcyI6NTF9"
+          },
+          {
+            "meet_id": 3766,
+            "date": "2019-04-06",
+            "age_category": "Women's 13 Under Age Group",
+            "weight_class": "33kg",
+            "lifter_name": "Olivia Bell",
+            "lifter_id": 40107,
+            "membershipNumbers": [
+              {
+                "athleteName": "Olivia Bell",
+                "membershipNumber": "1038837",
+                "fullText": "3  -  39  Olivia Bell  F  9  ATLANTA PERFORMANCE  1038837  30.5  2019-04-06  -  Local  Georgia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0wNiIsIndlaWdodF9jbGFzcyI6NTJ9"
+          }
+        ],
+        "1055609": [
+          {
+            "meet_id": 5058,
+            "date": "2021-12-11",
+            "age_category": "Junior Women's",
+            "weight_class": "71kg",
+            "lifter_name": "Olivia Bell",
+            "lifter_id": 40107,
+            "membershipNumbers": [
+              {
+                "athleteName": "Olivia Bell",
+                "membershipNumber": "1055609",
+                "fullText": "20  -  54  Olivia Bell  F  20  Bobcat Barbell  1055609  70.5  2021-12-11  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMi0xMSIsIndlaWdodF9jbGFzcyI6NzZ9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 5192,
+          "date": "2022-01-15",
+          "age_category": "Open Women's",
+          "weight_class": "71kg",
+          "lifter_name": "Olivia Bell",
+          "lifter_id": 40107,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMS0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMS0xNSIsIndlaWdodF9jbGFzcyI6OTZ9"
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

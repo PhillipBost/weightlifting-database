@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T07:39:31.551Z",
+  "athleteName": "Heather Russell",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1015459": [
+        {
+          "meet_id": 2271,
+          "date": "2017-03-05",
+          "age_category": "Open Women's",
+          "weight_class": "75 kg",
+          "lifter_name": "Heather Russell",
+          "lifter_id": 27894,
+          "membershipNumbers": [
+            {
+              "athleteName": "Heather Russell",
+              "membershipNumber": "1015459",
+              "fullText": "10  -  137  Heather Russell  F  27  -  1015459  69.5  2017-03-05  -  Local  Ohio"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0wNSIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+        }
+      ],
+      "1042152": [
+        {
+          "meet_id": 3959,
+          "date": "2019-09-28",
+          "age_category": "Women's Masters (40-44)",
+          "weight_class": "76kg",
+          "lifter_name": "Heather Russell",
+          "lifter_id": 27894,
+          "membershipNumbers": [
+            {
+              "athleteName": "Heather Russell",
+              "membershipNumber": "1042152",
+              "fullText": "1  -  112  Heather Russell  F  41  Cuppa Joe Weightlifting  1042152  74.55  2019-09-28  -  Local  New York"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOS0yOCIsIndlaWdodF9jbGFzcyI6MTM3fQ=="
+        },
+        {
+          "meet_id": 3932,
+          "date": "2019-07-20",
+          "age_category": "Open Women's",
+          "weight_class": "76kg",
+          "lifter_name": "Heather Russell",
+          "lifter_id": 27894,
+          "membershipNumbers": [
+            {
+              "athleteName": "Heather Russell",
+              "membershipNumber": "1042152",
+              "fullText": "10  -  111  Heather Russell  F  41  Cuppa Joe Weightlifting  1042152  74.75  2019-07-20  -  Local  New York"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0yMCIsIndlaWdodF9jbGFzcyI6OTd9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Heather Russell",
+    "splits": [
+      {
+        "newAthleteName": "Heather Russell (Person 1)",
+        "membershipNumber": "1015459",
+        "competitionCount": 1,
+        "competitions": [
+          2271
+        ]
+      },
+      {
+        "newAthleteName": "Heather Russell (Person 2)",
+        "membershipNumber": "1042152",
+        "competitionCount": 2,
+        "competitions": [
+          3959,
+          3932
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Heather Russell",
+    "competitions": [
+      {
+        "meet_id": 3959,
+        "date": "2019-09-28",
+        "age_category": "Women's Masters (40-44)",
+        "weight_class": "76kg",
+        "lifter_name": "Heather Russell",
+        "lifter_id": 27894,
+        "membershipNumbers": [
+          {
+            "athleteName": "Heather Russell",
+            "membershipNumber": "1042152",
+            "fullText": "1  -  112  Heather Russell  F  41  Cuppa Joe Weightlifting  1042152  74.55  2019-09-28  -  Local  New York"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOS0yOCIsIndlaWdodF9jbGFzcyI6MTM3fQ=="
+      },
+      {
+        "meet_id": 2271,
+        "date": "2017-03-05",
+        "age_category": "Open Women's",
+        "weight_class": "75 kg",
+        "lifter_name": "Heather Russell",
+        "lifter_id": 27894,
+        "membershipNumbers": [
+          {
+            "athleteName": "Heather Russell",
+            "membershipNumber": "1015459",
+            "fullText": "10  -  137  Heather Russell  F  27  -  1015459  69.5  2017-03-05  -  Local  Ohio"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0wNSIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+      },
+      {
+        "meet_id": 3932,
+        "date": "2019-07-20",
+        "age_category": "Open Women's",
+        "weight_class": "76kg",
+        "lifter_name": "Heather Russell",
+        "lifter_id": 27894,
+        "membershipNumbers": [
+          {
+            "athleteName": "Heather Russell",
+            "membershipNumber": "1042152",
+            "fullText": "10  -  111  Heather Russell  F  41  Cuppa Joe Weightlifting  1042152  74.75  2019-07-20  -  Local  New York"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0yMCIsIndlaWdodF9jbGFzcyI6OTd9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1015459": [
+          {
+            "meet_id": 2271,
+            "date": "2017-03-05",
+            "age_category": "Open Women's",
+            "weight_class": "75 kg",
+            "lifter_name": "Heather Russell",
+            "lifter_id": 27894,
+            "membershipNumbers": [
+              {
+                "athleteName": "Heather Russell",
+                "membershipNumber": "1015459",
+                "fullText": "10  -  137  Heather Russell  F  27  -  1015459  69.5  2017-03-05  -  Local  Ohio"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0wNSIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+          }
+        ],
+        "1042152": [
+          {
+            "meet_id": 3959,
+            "date": "2019-09-28",
+            "age_category": "Women's Masters (40-44)",
+            "weight_class": "76kg",
+            "lifter_name": "Heather Russell",
+            "lifter_id": 27894,
+            "membershipNumbers": [
+              {
+                "athleteName": "Heather Russell",
+                "membershipNumber": "1042152",
+                "fullText": "1  -  112  Heather Russell  F  41  Cuppa Joe Weightlifting  1042152  74.55  2019-09-28  -  Local  New York"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOS0yOCIsIndlaWdodF9jbGFzcyI6MTM3fQ=="
+          },
+          {
+            "meet_id": 3932,
+            "date": "2019-07-20",
+            "age_category": "Open Women's",
+            "weight_class": "76kg",
+            "lifter_name": "Heather Russell",
+            "lifter_id": 27894,
+            "membershipNumbers": [
+              {
+                "athleteName": "Heather Russell",
+                "membershipNumber": "1042152",
+                "fullText": "10  -  111  Heather Russell  F  41  Cuppa Joe Weightlifting  1042152  74.75  2019-07-20  -  Local  New York"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0yMCIsIndlaWdodF9jbGFzcyI6OTd9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

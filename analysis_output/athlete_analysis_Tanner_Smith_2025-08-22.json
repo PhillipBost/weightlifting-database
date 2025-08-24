@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-22T20:04:11.444Z",
+  "athleteName": "Tanner Smith",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "221383": [
+        {
+          "meet_id": 280,
+          "date": "2015-12-12",
+          "age_category": "Men's 13 Under Age Group",
+          "weight_class": "69 Kg",
+          "lifter_name": "Tanner Smith",
+          "lifter_id": 10966,
+          "membershipNumbers": [
+            {
+              "athleteName": "Tanner Smith",
+              "membershipNumber": "221383",
+              "fullText": "5  -  73  Tanner Smith  M  13  BURNSVILLE WEIGHTLIFTING CLUB  221383  66.1  2015-12-12  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMi0xMiIsIndlaWdodF9jbGFzcyI6Mjk2fQ=="
+        },
+        {
+          "meet_id": 1713,
+          "date": "2016-01-23",
+          "age_category": "Men's 14-15 Age Group",
+          "weight_class": "69 kg",
+          "lifter_name": "Tanner Smith",
+          "lifter_id": 10966,
+          "membershipNumbers": [
+            {
+              "athleteName": "Tanner Smith",
+              "membershipNumber": "221383",
+              "fullText": "5  -  84  Tanner Smith  M  14  BURNSVILLE WEIGHTLIFTING CLUB  221383  65.7  2016-01-23  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0yMyIsIndlaWdodF9jbGFzcyI6MzA5fQ=="
+        }
+      ],
+      "1064621": [
+        {
+          "meet_id": 5478,
+          "date": "2022-08-27",
+          "age_category": "Men's 14-15 Age Group",
+          "weight_class": "55kg",
+          "lifter_name": "Tanner Smith",
+          "lifter_id": 10966,
+          "membershipNumbers": [
+            {
+              "athleteName": "Tanner Smith",
+              "membershipNumber": "1064621",
+              "fullText": "1  -  101  Tanner Smith  M  15  Unaffiliated  1064621  52.95  2022-08-27  -  Local  Tennessee-Kentucky"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wOC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wOC0yNyIsIndlaWdodF9jbGFzcyI6MjR9"
+        },
+        {
+          "meet_id": 5813,
+          "date": "2023-04-22",
+          "age_category": "Men's 16-17 Age Group",
+          "weight_class": "67kg",
+          "lifter_name": "Tanner Smith",
+          "lifter_id": 10966,
+          "membershipNumbers": [
+            {
+              "athleteName": "Tanner Smith",
+              "membershipNumber": "1064621",
+              "fullText": "5  -  150  Tanner Smith  M  16  Unaffiliated  1064621  65.5  2023-04-22  -  Local  Tennessee-Kentucky"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0yMiIsIndlaWdodF9jbGFzcyI6NH0="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Tanner Smith",
+    "splits": [
+      {
+        "newAthleteName": "Tanner Smith (Person 1)",
+        "membershipNumber": "221383",
+        "competitionCount": 2,
+        "competitions": [
+          280,
+          1713
+        ]
+      },
+      {
+        "newAthleteName": "Tanner Smith (Person 2)",
+        "membershipNumber": "1064621",
+        "competitionCount": 2,
+        "competitions": [
+          5478,
+          5813
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Tanner Smith",
+    "competitions": [
+      {
+        "meet_id": 280,
+        "date": "2015-12-12",
+        "age_category": "Men's 13 Under Age Group",
+        "weight_class": "69 Kg",
+        "lifter_name": "Tanner Smith",
+        "lifter_id": 10966,
+        "membershipNumbers": [
+          {
+            "athleteName": "Tanner Smith",
+            "membershipNumber": "221383",
+            "fullText": "5  -  73  Tanner Smith  M  13  BURNSVILLE WEIGHTLIFTING CLUB  221383  66.1  2015-12-12  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMi0xMiIsIndlaWdodF9jbGFzcyI6Mjk2fQ=="
+      },
+      {
+        "meet_id": 1713,
+        "date": "2016-01-23",
+        "age_category": "Men's 14-15 Age Group",
+        "weight_class": "69 kg",
+        "lifter_name": "Tanner Smith",
+        "lifter_id": 10966,
+        "membershipNumbers": [
+          {
+            "athleteName": "Tanner Smith",
+            "membershipNumber": "221383",
+            "fullText": "5  -  84  Tanner Smith  M  14  BURNSVILLE WEIGHTLIFTING CLUB  221383  65.7  2016-01-23  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0yMyIsIndlaWdodF9jbGFzcyI6MzA5fQ=="
+      },
+      {
+        "meet_id": 5478,
+        "date": "2022-08-27",
+        "age_category": "Men's 14-15 Age Group",
+        "weight_class": "55kg",
+        "lifter_name": "Tanner Smith",
+        "lifter_id": 10966,
+        "membershipNumbers": [
+          {
+            "athleteName": "Tanner Smith",
+            "membershipNumber": "1064621",
+            "fullText": "1  -  101  Tanner Smith  M  15  Unaffiliated  1064621  52.95  2022-08-27  -  Local  Tennessee-Kentucky"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wOC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wOC0yNyIsIndlaWdodF9jbGFzcyI6MjR9"
+      },
+      {
+        "meet_id": 5813,
+        "date": "2023-04-22",
+        "age_category": "Men's 16-17 Age Group",
+        "weight_class": "67kg",
+        "lifter_name": "Tanner Smith",
+        "lifter_id": 10966,
+        "membershipNumbers": [
+          {
+            "athleteName": "Tanner Smith",
+            "membershipNumber": "1064621",
+            "fullText": "5  -  150  Tanner Smith  M  16  Unaffiliated  1064621  65.5  2023-04-22  -  Local  Tennessee-Kentucky"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0yMiIsIndlaWdodF9jbGFzcyI6NH0="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "221383": [
+          {
+            "meet_id": 280,
+            "date": "2015-12-12",
+            "age_category": "Men's 13 Under Age Group",
+            "weight_class": "69 Kg",
+            "lifter_name": "Tanner Smith",
+            "lifter_id": 10966,
+            "membershipNumbers": [
+              {
+                "athleteName": "Tanner Smith",
+                "membershipNumber": "221383",
+                "fullText": "5  -  73  Tanner Smith  M  13  BURNSVILLE WEIGHTLIFTING CLUB  221383  66.1  2015-12-12  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMi0xMiIsIndlaWdodF9jbGFzcyI6Mjk2fQ=="
+          },
+          {
+            "meet_id": 1713,
+            "date": "2016-01-23",
+            "age_category": "Men's 14-15 Age Group",
+            "weight_class": "69 kg",
+            "lifter_name": "Tanner Smith",
+            "lifter_id": 10966,
+            "membershipNumbers": [
+              {
+                "athleteName": "Tanner Smith",
+                "membershipNumber": "221383",
+                "fullText": "5  -  84  Tanner Smith  M  14  BURNSVILLE WEIGHTLIFTING CLUB  221383  65.7  2016-01-23  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0yMyIsIndlaWdodF9jbGFzcyI6MzA5fQ=="
+          }
+        ],
+        "1064621": [
+          {
+            "meet_id": 5478,
+            "date": "2022-08-27",
+            "age_category": "Men's 14-15 Age Group",
+            "weight_class": "55kg",
+            "lifter_name": "Tanner Smith",
+            "lifter_id": 10966,
+            "membershipNumbers": [
+              {
+                "athleteName": "Tanner Smith",
+                "membershipNumber": "1064621",
+                "fullText": "1  -  101  Tanner Smith  M  15  Unaffiliated  1064621  52.95  2022-08-27  -  Local  Tennessee-Kentucky"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wOC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wOC0yNyIsIndlaWdodF9jbGFzcyI6MjR9"
+          },
+          {
+            "meet_id": 5813,
+            "date": "2023-04-22",
+            "age_category": "Men's 16-17 Age Group",
+            "weight_class": "67kg",
+            "lifter_name": "Tanner Smith",
+            "lifter_id": 10966,
+            "membershipNumbers": [
+              {
+                "athleteName": "Tanner Smith",
+                "membershipNumber": "1064621",
+                "fullText": "5  -  150  Tanner Smith  M  16  Unaffiliated  1064621  65.5  2023-04-22  -  Local  Tennessee-Kentucky"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0yMiIsIndlaWdodF9jbGFzcyI6NH0="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-22T13:38:49.939Z",
+  "athleteName": "Jeremy Bauer",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "195088": [
+        {
+          "meet_id": 1414,
+          "date": "2014-08-24",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Jeremy Bauer",
+          "lifter_id": 7485,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jeremy Bauer",
+              "membershipNumber": "195088",
+              "fullText": "12  -  192  Jeremy Bauer  M  39  VERO BEACH WEIGHTLIFTING  195088  103.4  2014-08-24  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0yNCIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        },
+        {
+          "meet_id": 1387,
+          "date": "2014-06-22",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Jeremy Bauer",
+          "lifter_id": 7485,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jeremy Bauer",
+              "membershipNumber": "195088",
+              "fullText": "7  -  179  Jeremy Bauer  M  39  VERO BEACH WEIGHTLIFTING  195088  101.6  2014-06-22  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNi0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNi0yMiIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        },
+        {
+          "meet_id": 124,
+          "date": "2015-02-21",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Jeremy Bauer",
+          "lifter_id": 7485,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jeremy Bauer",
+              "membershipNumber": "195088",
+              "fullText": "26  -  204  Jeremy Bauer  M  40  VERO BEACH WEIGHTLIFTING  195088  102.9  2015-02-21  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMi0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMi0yMSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        }
+      ],
+      "1026760": [
+        {
+          "meet_id": 3681,
+          "date": "2019-02-03",
+          "age_category": "Open Men's",
+          "weight_class": "+109kg",
+          "lifter_name": "Jeremy Bauer",
+          "lifter_id": 7485,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jeremy Bauer",
+              "membershipNumber": "1026760",
+              "fullText": "8  -  187  Jeremy Bauer  M  45  ROCHESTER BARBELL CLUB  1026760  115.64  2019-02-03  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMi0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMi0wMyIsIndlaWdodF9jbGFzcyI6OTB9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Jeremy Bauer",
+    "splits": [
+      {
+        "newAthleteName": "Jeremy Bauer (Person 1)",
+        "membershipNumber": "195088",
+        "competitionCount": 3,
+        "competitions": [
+          1414,
+          1387,
+          124
+        ]
+      },
+      {
+        "newAthleteName": "Jeremy Bauer (Person 2)",
+        "membershipNumber": "1026760",
+        "competitionCount": 1,
+        "competitions": [
+          3681
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Jeremy Bauer",
+    "competitions": [
+      {
+        "meet_id": 1414,
+        "date": "2014-08-24",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Jeremy Bauer",
+        "lifter_id": 7485,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jeremy Bauer",
+            "membershipNumber": "195088",
+            "fullText": "12  -  192  Jeremy Bauer  M  39  VERO BEACH WEIGHTLIFTING  195088  103.4  2014-08-24  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0yNCIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 1387,
+        "date": "2014-06-22",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Jeremy Bauer",
+        "lifter_id": 7485,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jeremy Bauer",
+            "membershipNumber": "195088",
+            "fullText": "7  -  179  Jeremy Bauer  M  39  VERO BEACH WEIGHTLIFTING  195088  101.6  2014-06-22  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNi0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNi0yMiIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 124,
+        "date": "2015-02-21",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Jeremy Bauer",
+        "lifter_id": 7485,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jeremy Bauer",
+            "membershipNumber": "195088",
+            "fullText": "26  -  204  Jeremy Bauer  M  40  VERO BEACH WEIGHTLIFTING  195088  102.9  2015-02-21  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMi0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMi0yMSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 3681,
+        "date": "2019-02-03",
+        "age_category": "Open Men's",
+        "weight_class": "+109kg",
+        "lifter_name": "Jeremy Bauer",
+        "lifter_id": 7485,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jeremy Bauer",
+            "membershipNumber": "1026760",
+            "fullText": "8  -  187  Jeremy Bauer  M  45  ROCHESTER BARBELL CLUB  1026760  115.64  2019-02-03  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMi0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMi0wMyIsIndlaWdodF9jbGFzcyI6OTB9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "195088": [
+          {
+            "meet_id": 1414,
+            "date": "2014-08-24",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Jeremy Bauer",
+            "lifter_id": 7485,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jeremy Bauer",
+                "membershipNumber": "195088",
+                "fullText": "12  -  192  Jeremy Bauer  M  39  VERO BEACH WEIGHTLIFTING  195088  103.4  2014-08-24  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0yNCIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          },
+          {
+            "meet_id": 1387,
+            "date": "2014-06-22",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Jeremy Bauer",
+            "lifter_id": 7485,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jeremy Bauer",
+                "membershipNumber": "195088",
+                "fullText": "7  -  179  Jeremy Bauer  M  39  VERO BEACH WEIGHTLIFTING  195088  101.6  2014-06-22  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNi0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNi0yMiIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          },
+          {
+            "meet_id": 124,
+            "date": "2015-02-21",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Jeremy Bauer",
+            "lifter_id": 7485,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jeremy Bauer",
+                "membershipNumber": "195088",
+                "fullText": "26  -  204  Jeremy Bauer  M  40  VERO BEACH WEIGHTLIFTING  195088  102.9  2015-02-21  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMi0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMi0yMSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          }
+        ],
+        "1026760": [
+          {
+            "meet_id": 3681,
+            "date": "2019-02-03",
+            "age_category": "Open Men's",
+            "weight_class": "+109kg",
+            "lifter_name": "Jeremy Bauer",
+            "lifter_id": 7485,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jeremy Bauer",
+                "membershipNumber": "1026760",
+                "fullText": "8  -  187  Jeremy Bauer  M  45  ROCHESTER BARBELL CLUB  1026760  115.64  2019-02-03  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMi0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMi0wMyIsIndlaWdodF9jbGFzcyI6OTB9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

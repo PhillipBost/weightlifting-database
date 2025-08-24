@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T21:09:09.997Z",
+  "athleteName": "David Bui",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "165728": [
+        {
+          "meet_id": 672,
+          "date": "2012-10-27",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "David Bui",
+          "lifter_id": 1102,
+          "membershipNumbers": [
+            {
+              "athleteName": "David Bui",
+              "membershipNumber": "165728",
+              "fullText": "8  -  195  David Bui  M  28  -  165728  76  2012-10-27  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0xMC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0xMC0yNyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        }
+      ],
+      "1032887": [
+        {
+          "meet_id": 3443,
+          "date": "2018-10-21",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "David Bui",
+          "lifter_id": 1102,
+          "membershipNumbers": [
+            {
+              "athleteName": "David Bui",
+              "membershipNumber": "1032887",
+              "fullText": "13  -  219  David Bui  M  30  -  1032887  79.25  2018-10-21  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yMSIsIndlaWdodF9jbGFzcyI6ODV9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "David Bui",
+    "splits": [
+      {
+        "newAthleteName": "David Bui (Person 1)",
+        "membershipNumber": "165728",
+        "competitionCount": 1,
+        "competitions": [
+          672
+        ]
+      },
+      {
+        "newAthleteName": "David Bui (Person 2)",
+        "membershipNumber": "1032887",
+        "competitionCount": 1,
+        "competitions": [
+          3443
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "David Bui",
+    "competitions": [
+      {
+        "meet_id": 672,
+        "date": "2012-10-27",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "David Bui",
+        "lifter_id": 1102,
+        "membershipNumbers": [
+          {
+            "athleteName": "David Bui",
+            "membershipNumber": "165728",
+            "fullText": "8  -  195  David Bui  M  28  -  165728  76  2012-10-27  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0xMC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0xMC0yNyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 3443,
+        "date": "2018-10-21",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "David Bui",
+        "lifter_id": 1102,
+        "membershipNumbers": [
+          {
+            "athleteName": "David Bui",
+            "membershipNumber": "1032887",
+            "fullText": "13  -  219  David Bui  M  30  -  1032887  79.25  2018-10-21  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yMSIsIndlaWdodF9jbGFzcyI6ODV9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "165728": [
+          {
+            "meet_id": 672,
+            "date": "2012-10-27",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "David Bui",
+            "lifter_id": 1102,
+            "membershipNumbers": [
+              {
+                "athleteName": "David Bui",
+                "membershipNumber": "165728",
+                "fullText": "8  -  195  David Bui  M  28  -  165728  76  2012-10-27  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0xMC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0xMC0yNyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          }
+        ],
+        "1032887": [
+          {
+            "meet_id": 3443,
+            "date": "2018-10-21",
+            "age_category": "Open Men's",
+            "weight_class": "81kg",
+            "lifter_name": "David Bui",
+            "lifter_id": 1102,
+            "membershipNumbers": [
+              {
+                "athleteName": "David Bui",
+                "membershipNumber": "1032887",
+                "fullText": "13  -  219  David Bui  M  30  -  1032887  79.25  2018-10-21  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yMSIsIndlaWdodF9jbGFzcyI6ODV9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T06:42:04.956Z",
+  "athleteName": "Tyler Morgan",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "181277": [
+        {
+          "meet_id": 1307,
+          "date": "2014-03-29",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Tyler Morgan",
+          "lifter_id": 15724,
+          "membershipNumbers": [
+            {
+              "athleteName": "Tyler Morgan",
+              "membershipNumber": "181277",
+              "fullText": "20  -  195  Tyler Morgan  M  23  -  181277  86.2  2014-03-29  -  Local  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0yOSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ],
+      "213799": [
+        {
+          "meet_id": 59,
+          "date": "2015-05-17",
+          "age_category": "Open Men's",
+          "weight_class": "69 kg",
+          "lifter_name": "Tyler Morgan",
+          "lifter_id": 15724,
+          "membershipNumbers": [
+            {
+              "athleteName": "Tyler Morgan",
+              "membershipNumber": "213799",
+              "fullText": "10  -  180  Tyler Morgan  M  20  EAST COAST GOLD W/L TEAM  213799  68.21  2015-05-17  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0xNyIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Tyler Morgan",
+    "splits": [
+      {
+        "newAthleteName": "Tyler Morgan (Person 1)",
+        "membershipNumber": "181277",
+        "competitionCount": 1,
+        "competitions": [
+          1307
+        ]
+      },
+      {
+        "newAthleteName": "Tyler Morgan (Person 2)",
+        "membershipNumber": "213799",
+        "competitionCount": 1,
+        "competitions": [
+          59
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Tyler Morgan",
+    "competitions": [
+      {
+        "meet_id": 59,
+        "date": "2015-05-17",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "Tyler Morgan",
+        "lifter_id": 15724,
+        "membershipNumbers": [
+          {
+            "athleteName": "Tyler Morgan",
+            "membershipNumber": "213799",
+            "fullText": "10  -  180  Tyler Morgan  M  20  EAST COAST GOLD W/L TEAM  213799  68.21  2015-05-17  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0xNyIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      },
+      {
+        "meet_id": 1307,
+        "date": "2014-03-29",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Tyler Morgan",
+        "lifter_id": 15724,
+        "membershipNumbers": [
+          {
+            "athleteName": "Tyler Morgan",
+            "membershipNumber": "181277",
+            "fullText": "20  -  195  Tyler Morgan  M  23  -  181277  86.2  2014-03-29  -  Local  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0yOSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "181277": [
+          {
+            "meet_id": 1307,
+            "date": "2014-03-29",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Tyler Morgan",
+            "lifter_id": 15724,
+            "membershipNumbers": [
+              {
+                "athleteName": "Tyler Morgan",
+                "membershipNumber": "181277",
+                "fullText": "20  -  195  Tyler Morgan  M  23  -  181277  86.2  2014-03-29  -  Local  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0yOSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          }
+        ],
+        "213799": [
+          {
+            "meet_id": 59,
+            "date": "2015-05-17",
+            "age_category": "Open Men's",
+            "weight_class": "69 kg",
+            "lifter_name": "Tyler Morgan",
+            "lifter_id": 15724,
+            "membershipNumbers": [
+              {
+                "athleteName": "Tyler Morgan",
+                "membershipNumber": "213799",
+                "fullText": "10  -  180  Tyler Morgan  M  20  EAST COAST GOLD W/L TEAM  213799  68.21  2015-05-17  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0xNyIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

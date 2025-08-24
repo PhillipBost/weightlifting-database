@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T13:31:50.318Z",
+  "athleteName": "Lauren Sanders",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1061344": [
+        {
+          "meet_id": 5213,
+          "date": "2022-02-26",
+          "age_category": "Junior Women's",
+          "weight_class": "64kg",
+          "lifter_name": "Lauren Sanders",
+          "lifter_id": 51467,
+          "membershipNumbers": [
+            {
+              "athleteName": "Lauren Sanders",
+              "membershipNumber": "1061344",
+              "fullText": "3  -  90  Lauren Sanders  F  19  -  1061344  60.52  2022-02-26  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMi0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMi0yNiIsIndlaWdodF9jbGFzcyI6NzV9"
+        },
+        {
+          "meet_id": 5308,
+          "date": "2022-04-30",
+          "age_category": "Open Women's",
+          "weight_class": "64kg",
+          "lifter_name": "Lauren Sanders",
+          "lifter_id": 51467,
+          "membershipNumbers": [
+            {
+              "athleteName": "Lauren Sanders",
+              "membershipNumber": "1061344",
+              "fullText": "29  -  96  Lauren Sanders  F  19  -  1061344  62.75  2022-04-30  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNC0zMCIsIndlaWdodF9jbGFzcyI6OTV9"
+        }
+      ],
+      "1080060": [
+        {
+          "meet_id": 6722,
+          "date": "2025-01-26",
+          "age_category": "Open Women's",
+          "weight_class": "+87kg",
+          "lifter_name": "Lauren Sanders",
+          "lifter_id": 51467,
+          "membershipNumbers": [
+            {
+              "athleteName": "Lauren Sanders",
+              "membershipNumber": "1080060",
+              "fullText": "3  -  118  Lauren Sanders  F  30  Unbreakable Barbell  1080060  87.25  2025-01-26  -  Local  New Jersey"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMS0yNiIsIndlaWdodF9jbGFzcyI6MTAwfQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Lauren Sanders",
+    "splits": [
+      {
+        "newAthleteName": "Lauren Sanders (Person 1)",
+        "membershipNumber": "1061344",
+        "competitionCount": 2,
+        "competitions": [
+          5213,
+          5308
+        ]
+      },
+      {
+        "newAthleteName": "Lauren Sanders (Person 2)",
+        "membershipNumber": "1080060",
+        "competitionCount": 1,
+        "competitions": [
+          6722
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Lauren Sanders",
+    "competitions": [
+      {
+        "meet_id": 5213,
+        "date": "2022-02-26",
+        "age_category": "Junior Women's",
+        "weight_class": "64kg",
+        "lifter_name": "Lauren Sanders",
+        "lifter_id": 51467,
+        "membershipNumbers": [
+          {
+            "athleteName": "Lauren Sanders",
+            "membershipNumber": "1061344",
+            "fullText": "3  -  90  Lauren Sanders  F  19  -  1061344  60.52  2022-02-26  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMi0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMi0yNiIsIndlaWdodF9jbGFzcyI6NzV9"
+      },
+      {
+        "meet_id": 5308,
+        "date": "2022-04-30",
+        "age_category": "Open Women's",
+        "weight_class": "64kg",
+        "lifter_name": "Lauren Sanders",
+        "lifter_id": 51467,
+        "membershipNumbers": [
+          {
+            "athleteName": "Lauren Sanders",
+            "membershipNumber": "1061344",
+            "fullText": "29  -  96  Lauren Sanders  F  19  -  1061344  62.75  2022-04-30  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNC0zMCIsIndlaWdodF9jbGFzcyI6OTV9"
+      },
+      {
+        "meet_id": 6722,
+        "date": "2025-01-26",
+        "age_category": "Open Women's",
+        "weight_class": "+87kg",
+        "lifter_name": "Lauren Sanders",
+        "lifter_id": 51467,
+        "membershipNumbers": [
+          {
+            "athleteName": "Lauren Sanders",
+            "membershipNumber": "1080060",
+            "fullText": "3  -  118  Lauren Sanders  F  30  Unbreakable Barbell  1080060  87.25  2025-01-26  -  Local  New Jersey"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMS0yNiIsIndlaWdodF9jbGFzcyI6MTAwfQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1061344": [
+          {
+            "meet_id": 5213,
+            "date": "2022-02-26",
+            "age_category": "Junior Women's",
+            "weight_class": "64kg",
+            "lifter_name": "Lauren Sanders",
+            "lifter_id": 51467,
+            "membershipNumbers": [
+              {
+                "athleteName": "Lauren Sanders",
+                "membershipNumber": "1061344",
+                "fullText": "3  -  90  Lauren Sanders  F  19  -  1061344  60.52  2022-02-26  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMi0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMi0yNiIsIndlaWdodF9jbGFzcyI6NzV9"
+          },
+          {
+            "meet_id": 5308,
+            "date": "2022-04-30",
+            "age_category": "Open Women's",
+            "weight_class": "64kg",
+            "lifter_name": "Lauren Sanders",
+            "lifter_id": 51467,
+            "membershipNumbers": [
+              {
+                "athleteName": "Lauren Sanders",
+                "membershipNumber": "1061344",
+                "fullText": "29  -  96  Lauren Sanders  F  19  -  1061344  62.75  2022-04-30  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNC0zMCIsIndlaWdodF9jbGFzcyI6OTV9"
+          }
+        ],
+        "1080060": [
+          {
+            "meet_id": 6722,
+            "date": "2025-01-26",
+            "age_category": "Open Women's",
+            "weight_class": "+87kg",
+            "lifter_name": "Lauren Sanders",
+            "lifter_id": 51467,
+            "membershipNumbers": [
+              {
+                "athleteName": "Lauren Sanders",
+                "membershipNumber": "1080060",
+                "fullText": "3  -  118  Lauren Sanders  F  30  Unbreakable Barbell  1080060  87.25  2025-01-26  -  Local  New Jersey"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMS0yNiIsIndlaWdodF9jbGFzcyI6MTAwfQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

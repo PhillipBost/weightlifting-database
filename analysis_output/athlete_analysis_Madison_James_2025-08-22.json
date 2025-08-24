@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T06:58:08.922Z",
+  "athleteName": "Madison James",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "189958": [
+        {
+          "meet_id": 1338,
+          "date": "2014-01-04",
+          "age_category": "Open Women's",
+          "weight_class": "75 kg",
+          "lifter_name": "Madison James",
+          "lifter_id": 19777,
+          "membershipNumbers": [
+            {
+              "athleteName": "Madison James",
+              "membershipNumber": "189958",
+              "fullText": "12  -  116  Madison James  F  19  TEAM CROSSFIT  189958  71.96  2014-01-04  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMS0wNCIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+        },
+        {
+          "meet_id": 1579,
+          "date": "2014-08-02",
+          "age_category": "Open Women's",
+          "weight_class": "75 kg",
+          "lifter_name": "Madison James",
+          "lifter_id": 19777,
+          "membershipNumbers": [
+            {
+              "athleteName": "Madison James",
+              "membershipNumber": "189958",
+              "fullText": "24  -  117  Madison James  F  19  TEAM CROSSFIT  189958  69.3  2014-08-02  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0wMiIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+        }
+      ],
+      "1070235": [
+        {
+          "meet_id": 5923,
+          "date": "2023-06-17",
+          "age_category": "Women's Masters (35-39)",
+          "weight_class": "81kg",
+          "lifter_name": "Madison James",
+          "lifter_id": 19777,
+          "membershipNumbers": [
+            {
+              "athleteName": "Madison James",
+              "membershipNumber": "1070235",
+              "fullText": "6  -  81  Madison James  F  35  Industrial Strength WLC  1070235  78.6  2023-06-17  -  Local  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNi0xNyIsIndlaWdodF9jbGFzcyI6MTE4fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Madison James",
+    "splits": [
+      {
+        "newAthleteName": "Madison James (Person 1)",
+        "membershipNumber": "189958",
+        "competitionCount": 2,
+        "competitions": [
+          1338,
+          1579
+        ]
+      },
+      {
+        "newAthleteName": "Madison James (Person 2)",
+        "membershipNumber": "1070235",
+        "competitionCount": 1,
+        "competitions": [
+          5923
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Madison James",
+    "competitions": [
+      {
+        "meet_id": 1338,
+        "date": "2014-01-04",
+        "age_category": "Open Women's",
+        "weight_class": "75 kg",
+        "lifter_name": "Madison James",
+        "lifter_id": 19777,
+        "membershipNumbers": [
+          {
+            "athleteName": "Madison James",
+            "membershipNumber": "189958",
+            "fullText": "12  -  116  Madison James  F  19  TEAM CROSSFIT  189958  71.96  2014-01-04  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMS0wNCIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+      },
+      {
+        "meet_id": 1579,
+        "date": "2014-08-02",
+        "age_category": "Open Women's",
+        "weight_class": "75 kg",
+        "lifter_name": "Madison James",
+        "lifter_id": 19777,
+        "membershipNumbers": [
+          {
+            "athleteName": "Madison James",
+            "membershipNumber": "189958",
+            "fullText": "24  -  117  Madison James  F  19  TEAM CROSSFIT  189958  69.3  2014-08-02  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0wMiIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+      },
+      {
+        "meet_id": 5923,
+        "date": "2023-06-17",
+        "age_category": "Women's Masters (35-39)",
+        "weight_class": "81kg",
+        "lifter_name": "Madison James",
+        "lifter_id": 19777,
+        "membershipNumbers": [
+          {
+            "athleteName": "Madison James",
+            "membershipNumber": "1070235",
+            "fullText": "6  -  81  Madison James  F  35  Industrial Strength WLC  1070235  78.6  2023-06-17  -  Local  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNi0xNyIsIndlaWdodF9jbGFzcyI6MTE4fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "189958": [
+          {
+            "meet_id": 1338,
+            "date": "2014-01-04",
+            "age_category": "Open Women's",
+            "weight_class": "75 kg",
+            "lifter_name": "Madison James",
+            "lifter_id": 19777,
+            "membershipNumbers": [
+              {
+                "athleteName": "Madison James",
+                "membershipNumber": "189958",
+                "fullText": "12  -  116  Madison James  F  19  TEAM CROSSFIT  189958  71.96  2014-01-04  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMS0wNCIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+          },
+          {
+            "meet_id": 1579,
+            "date": "2014-08-02",
+            "age_category": "Open Women's",
+            "weight_class": "75 kg",
+            "lifter_name": "Madison James",
+            "lifter_id": 19777,
+            "membershipNumbers": [
+              {
+                "athleteName": "Madison James",
+                "membershipNumber": "189958",
+                "fullText": "24  -  117  Madison James  F  19  TEAM CROSSFIT  189958  69.3  2014-08-02  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0wMiIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+          }
+        ],
+        "1070235": [
+          {
+            "meet_id": 5923,
+            "date": "2023-06-17",
+            "age_category": "Women's Masters (35-39)",
+            "weight_class": "81kg",
+            "lifter_name": "Madison James",
+            "lifter_id": 19777,
+            "membershipNumbers": [
+              {
+                "athleteName": "Madison James",
+                "membershipNumber": "1070235",
+                "fullText": "6  -  81  Madison James  F  35  Industrial Strength WLC  1070235  78.6  2023-06-17  -  Local  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNi0xNyIsIndlaWdodF9jbGFzcyI6MTE4fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

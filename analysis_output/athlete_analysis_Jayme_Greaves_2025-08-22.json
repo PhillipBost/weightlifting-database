@@ -1,0 +1,243 @@
+{
+  "timestamp": "2025-08-22T18:17:12.640Z",
+  "athleteName": "Jayme Greaves",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1017814": [
+        {
+          "meet_id": 2515,
+          "date": "2017-05-21",
+          "age_category": "Open Men's",
+          "weight_class": "69 kg",
+          "lifter_name": "Jayme Greaves",
+          "lifter_id": 28555,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jayme Greaves",
+              "membershipNumber": "1017814",
+              "fullText": "22  -  108  Jayme Greaves  M  42  MOORESTOWN WLC  1017814  67.5  2017-05-21  -  Local  New Jersey"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNS0yMSIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+        },
+        {
+          "meet_id": 2926,
+          "date": "2017-12-17",
+          "age_category": "Open Men's",
+          "weight_class": "69 kg",
+          "lifter_name": "Jayme Greaves",
+          "lifter_id": 28555,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jayme Greaves",
+              "membershipNumber": "1017814",
+              "fullText": "14  -  111  Jayme Greaves  M  42  MOORESTOWN WLC  1017814  68.5  2017-12-17  -  Local  New Jersey"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMi0xNyIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+        }
+      ],
+      "1061115": [
+        {
+          "meet_id": 5203,
+          "date": "2022-01-23",
+          "age_category": "Men's Masters (45-49)",
+          "weight_class": "67kg",
+          "lifter_name": "Jayme Greaves",
+          "lifter_id": 28555,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jayme Greaves",
+              "membershipNumber": "1061115",
+              "fullText": "1  -  110  Jayme Greaves  M  47  MOORESTOWN WLC  1061115  66.8  2022-01-23  -  Local  New Jersey"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMS0yMyIsIndlaWdodF9jbGFzcyI6MTQzfQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 2345,
+        "date": "2017-10-22",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "Jayme Greaves",
+        "lifter_id": 28555,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0yMiIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Jayme Greaves",
+    "splits": [
+      {
+        "newAthleteName": "Jayme Greaves (Person 1)",
+        "membershipNumber": "1017814",
+        "competitionCount": 2,
+        "competitions": [
+          2515,
+          2926
+        ]
+      },
+      {
+        "newAthleteName": "Jayme Greaves (Person 2)",
+        "membershipNumber": "1061115",
+        "competitionCount": 1,
+        "competitions": [
+          5203
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 2345,
+        "date": "2017-10-22",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "Jayme Greaves",
+        "lifter_id": 28555,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0yMiIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Jayme Greaves",
+    "competitions": [
+      {
+        "meet_id": 5203,
+        "date": "2022-01-23",
+        "age_category": "Men's Masters (45-49)",
+        "weight_class": "67kg",
+        "lifter_name": "Jayme Greaves",
+        "lifter_id": 28555,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jayme Greaves",
+            "membershipNumber": "1061115",
+            "fullText": "1  -  110  Jayme Greaves  M  47  MOORESTOWN WLC  1061115  66.8  2022-01-23  -  Local  New Jersey"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMS0yMyIsIndlaWdodF9jbGFzcyI6MTQzfQ=="
+      },
+      {
+        "meet_id": 2345,
+        "date": "2017-10-22",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "Jayme Greaves",
+        "lifter_id": 28555,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0yMiIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      },
+      {
+        "meet_id": 2515,
+        "date": "2017-05-21",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "Jayme Greaves",
+        "lifter_id": 28555,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jayme Greaves",
+            "membershipNumber": "1017814",
+            "fullText": "22  -  108  Jayme Greaves  M  42  MOORESTOWN WLC  1017814  67.5  2017-05-21  -  Local  New Jersey"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNS0yMSIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      },
+      {
+        "meet_id": 2926,
+        "date": "2017-12-17",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "Jayme Greaves",
+        "lifter_id": 28555,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jayme Greaves",
+            "membershipNumber": "1017814",
+            "fullText": "14  -  111  Jayme Greaves  M  42  MOORESTOWN WLC  1017814  68.5  2017-12-17  -  Local  New Jersey"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMi0xNyIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1017814": [
+          {
+            "meet_id": 2515,
+            "date": "2017-05-21",
+            "age_category": "Open Men's",
+            "weight_class": "69 kg",
+            "lifter_name": "Jayme Greaves",
+            "lifter_id": 28555,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jayme Greaves",
+                "membershipNumber": "1017814",
+                "fullText": "22  -  108  Jayme Greaves  M  42  MOORESTOWN WLC  1017814  67.5  2017-05-21  -  Local  New Jersey"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNS0yMSIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+          },
+          {
+            "meet_id": 2926,
+            "date": "2017-12-17",
+            "age_category": "Open Men's",
+            "weight_class": "69 kg",
+            "lifter_name": "Jayme Greaves",
+            "lifter_id": 28555,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jayme Greaves",
+                "membershipNumber": "1017814",
+                "fullText": "14  -  111  Jayme Greaves  M  42  MOORESTOWN WLC  1017814  68.5  2017-12-17  -  Local  New Jersey"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMi0xNyIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+          }
+        ],
+        "1061115": [
+          {
+            "meet_id": 5203,
+            "date": "2022-01-23",
+            "age_category": "Men's Masters (45-49)",
+            "weight_class": "67kg",
+            "lifter_name": "Jayme Greaves",
+            "lifter_id": 28555,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jayme Greaves",
+                "membershipNumber": "1061115",
+                "fullText": "1  -  110  Jayme Greaves  M  47  MOORESTOWN WLC  1061115  66.8  2022-01-23  -  Local  New Jersey"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMS0yMyIsIndlaWdodF9jbGFzcyI6MTQzfQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 2345,
+          "date": "2017-10-22",
+          "age_category": "Open Men's",
+          "weight_class": "69 kg",
+          "lifter_name": "Jayme Greaves",
+          "lifter_id": 28555,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0yMiIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

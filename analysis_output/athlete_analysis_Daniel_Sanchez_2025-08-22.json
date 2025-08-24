@@ -1,0 +1,298 @@
+{
+  "timestamp": "2025-08-22T15:28:30.943Z",
+  "athleteName": "Daniel Sanchez",
+  "totalCompetitions": 5,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "219166": [
+        {
+          "meet_id": 144,
+          "date": "2015-10-17",
+          "age_category": "Open Men's",
+          "weight_class": "69 kg",
+          "lifter_name": "Daniel Sanchez",
+          "lifter_id": 8109,
+          "membershipNumbers": [
+            {
+              "athleteName": "Daniel Sanchez",
+              "membershipNumber": "219166",
+              "fullText": "18  -  169  Daniel Sanchez  M  19  -  219166  66.3  2015-10-17  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xNyIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+        },
+        {
+          "meet_id": 150,
+          "date": "2015-11-07",
+          "age_category": "Open Men's",
+          "weight_class": "69 kg",
+          "lifter_name": "Daniel Sanchez",
+          "lifter_id": 8109,
+          "membershipNumbers": [
+            {
+              "athleteName": "Daniel Sanchez",
+              "membershipNumber": "219166",
+              "fullText": "21  -  166  Daniel Sanchez  M  19  -  219166  66.9  2015-11-07  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMS0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMS0wNyIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+        },
+        {
+          "meet_id": 145,
+          "date": "2015-10-24",
+          "age_category": "Open Men's",
+          "weight_class": "69 kg",
+          "lifter_name": "Daniel Sanchez",
+          "lifter_id": 8109,
+          "membershipNumbers": [
+            {
+              "athleteName": "Daniel Sanchez",
+              "membershipNumber": "219166",
+              "fullText": "24  -  169  Daniel Sanchez  M  19  -  219166  66.3  2015-10-24  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0yNCIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+        },
+        {
+          "meet_id": 3100,
+          "date": "2018-07-22",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Daniel Sanchez",
+          "lifter_id": 8109,
+          "membershipNumbers": [
+            {
+              "athleteName": "Daniel Sanchez",
+              "membershipNumber": "219166",
+              "fullText": "22  -  189  Daniel Sanchez  M  22  -  219166  70  2018-07-22  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNy0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNy0yMiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        }
+      ],
+      "1066048": [
+        {
+          "meet_id": 6753,
+          "date": "2025-02-08",
+          "age_category": "Open Men's",
+          "weight_class": "+109kg",
+          "lifter_name": "Daniel Sanchez",
+          "lifter_id": 8109,
+          "membershipNumbers": [
+            {
+              "athleteName": "Daniel Sanchez",
+              "membershipNumber": "1066048",
+              "fullText": "10  -  193  Daniel Sanchez  M  33  Strength Ratio  1066048  154.4  2025-02-08  -  Local  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMi0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMi0wOCIsIndlaWdodF9jbGFzcyI6OTB9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Daniel Sanchez",
+    "splits": [
+      {
+        "newAthleteName": "Daniel Sanchez (Person 1)",
+        "membershipNumber": "219166",
+        "competitionCount": 4,
+        "competitions": [
+          144,
+          150,
+          145,
+          3100
+        ]
+      },
+      {
+        "newAthleteName": "Daniel Sanchez (Person 2)",
+        "membershipNumber": "1066048",
+        "competitionCount": 1,
+        "competitions": [
+          6753
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Daniel Sanchez",
+    "competitions": [
+      {
+        "meet_id": 144,
+        "date": "2015-10-17",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "Daniel Sanchez",
+        "lifter_id": 8109,
+        "membershipNumbers": [
+          {
+            "athleteName": "Daniel Sanchez",
+            "membershipNumber": "219166",
+            "fullText": "18  -  169  Daniel Sanchez  M  19  -  219166  66.3  2015-10-17  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xNyIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      },
+      {
+        "meet_id": 6753,
+        "date": "2025-02-08",
+        "age_category": "Open Men's",
+        "weight_class": "+109kg",
+        "lifter_name": "Daniel Sanchez",
+        "lifter_id": 8109,
+        "membershipNumbers": [
+          {
+            "athleteName": "Daniel Sanchez",
+            "membershipNumber": "1066048",
+            "fullText": "10  -  193  Daniel Sanchez  M  33  Strength Ratio  1066048  154.4  2025-02-08  -  Local  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMi0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMi0wOCIsIndlaWdodF9jbGFzcyI6OTB9"
+      },
+      {
+        "meet_id": 150,
+        "date": "2015-11-07",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "Daniel Sanchez",
+        "lifter_id": 8109,
+        "membershipNumbers": [
+          {
+            "athleteName": "Daniel Sanchez",
+            "membershipNumber": "219166",
+            "fullText": "21  -  166  Daniel Sanchez  M  19  -  219166  66.9  2015-11-07  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMS0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMS0wNyIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      },
+      {
+        "meet_id": 145,
+        "date": "2015-10-24",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "Daniel Sanchez",
+        "lifter_id": 8109,
+        "membershipNumbers": [
+          {
+            "athleteName": "Daniel Sanchez",
+            "membershipNumber": "219166",
+            "fullText": "24  -  169  Daniel Sanchez  M  19  -  219166  66.3  2015-10-24  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0yNCIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      },
+      {
+        "meet_id": 3100,
+        "date": "2018-07-22",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Daniel Sanchez",
+        "lifter_id": 8109,
+        "membershipNumbers": [
+          {
+            "athleteName": "Daniel Sanchez",
+            "membershipNumber": "219166",
+            "fullText": "22  -  189  Daniel Sanchez  M  22  -  219166  70  2018-07-22  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNy0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNy0yMiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "219166": [
+          {
+            "meet_id": 144,
+            "date": "2015-10-17",
+            "age_category": "Open Men's",
+            "weight_class": "69 kg",
+            "lifter_name": "Daniel Sanchez",
+            "lifter_id": 8109,
+            "membershipNumbers": [
+              {
+                "athleteName": "Daniel Sanchez",
+                "membershipNumber": "219166",
+                "fullText": "18  -  169  Daniel Sanchez  M  19  -  219166  66.3  2015-10-17  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xNyIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+          },
+          {
+            "meet_id": 150,
+            "date": "2015-11-07",
+            "age_category": "Open Men's",
+            "weight_class": "69 kg",
+            "lifter_name": "Daniel Sanchez",
+            "lifter_id": 8109,
+            "membershipNumbers": [
+              {
+                "athleteName": "Daniel Sanchez",
+                "membershipNumber": "219166",
+                "fullText": "21  -  166  Daniel Sanchez  M  19  -  219166  66.9  2015-11-07  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMS0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMS0wNyIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+          },
+          {
+            "meet_id": 145,
+            "date": "2015-10-24",
+            "age_category": "Open Men's",
+            "weight_class": "69 kg",
+            "lifter_name": "Daniel Sanchez",
+            "lifter_id": 8109,
+            "membershipNumbers": [
+              {
+                "athleteName": "Daniel Sanchez",
+                "membershipNumber": "219166",
+                "fullText": "24  -  169  Daniel Sanchez  M  19  -  219166  66.3  2015-10-24  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0yNCIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+          },
+          {
+            "meet_id": 3100,
+            "date": "2018-07-22",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Daniel Sanchez",
+            "lifter_id": 8109,
+            "membershipNumbers": [
+              {
+                "athleteName": "Daniel Sanchez",
+                "membershipNumber": "219166",
+                "fullText": "22  -  189  Daniel Sanchez  M  22  -  219166  70  2018-07-22  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNy0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNy0yMiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          }
+        ],
+        "1066048": [
+          {
+            "meet_id": 6753,
+            "date": "2025-02-08",
+            "age_category": "Open Men's",
+            "weight_class": "+109kg",
+            "lifter_name": "Daniel Sanchez",
+            "lifter_id": 8109,
+            "membershipNumbers": [
+              {
+                "athleteName": "Daniel Sanchez",
+                "membershipNumber": "1066048",
+                "fullText": "10  -  193  Daniel Sanchez  M  33  Strength Ratio  1066048  154.4  2025-02-08  -  Local  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMi0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMi0wOCIsIndlaWdodF9jbGFzcyI6OTB9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

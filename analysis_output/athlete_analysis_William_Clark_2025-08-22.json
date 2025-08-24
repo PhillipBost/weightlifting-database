@@ -1,0 +1,292 @@
+{
+  "timestamp": "2025-08-22T07:56:34.011Z",
+  "athleteName": "William Clark",
+  "totalCompetitions": 5,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1019544": [
+        {
+          "meet_id": 2807,
+          "date": "2017-12-16",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "William Clark",
+          "lifter_id": 32462,
+          "membershipNumbers": [
+            {
+              "athleteName": "William Clark",
+              "membershipNumber": "1019544",
+              "fullText": "15  -  205  William Clark  M  29  -  1019544  72.8  2017-12-16  -  Local  Tennessee-Kentucky"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMi0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMi0xNiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        },
+        {
+          "meet_id": 3565,
+          "date": "2018-12-02",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "William Clark",
+          "lifter_id": 32462,
+          "membershipNumbers": [
+            {
+              "athleteName": "William Clark",
+              "membershipNumber": "1019544",
+              "fullText": "7  -  221  William Clark  M  30  -  1019544  79.1  2018-12-02  -  Local  Tennessee-Kentucky"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0wMiIsIndlaWdodF9jbGFzcyI6ODV9"
+        },
+        {
+          "meet_id": 2964,
+          "date": "2018-03-31",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "William Clark",
+          "lifter_id": 32462,
+          "membershipNumbers": [
+            {
+              "athleteName": "William Clark",
+              "membershipNumber": "1019544",
+              "fullText": "5  -  217  William Clark  M  30  -  1019544  75.3  2018-03-31  -  Local  Tennessee-Kentucky"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMy0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMy0zMSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        }
+      ],
+      "1039715": [
+        {
+          "meet_id": 3843,
+          "date": "2019-04-14",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "William Clark",
+          "lifter_id": 32462,
+          "membershipNumbers": [
+            {
+              "athleteName": "William Clark",
+              "membershipNumber": "1039715",
+              "fullText": "9  -  140  William Clark  M  18  -  1039715  73.4  2019-04-14  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0xNCIsIndlaWdodF9jbGFzcyI6ODV9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 3654,
+        "date": "2019-03-03",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "William Clark",
+        "lifter_id": 32462,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMy0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMy0wMyIsIndlaWdodF9jbGFzcyI6ODV9"
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "William Clark",
+    "splits": [
+      {
+        "newAthleteName": "William Clark (Person 1)",
+        "membershipNumber": "1019544",
+        "competitionCount": 3,
+        "competitions": [
+          2807,
+          3565,
+          2964
+        ]
+      },
+      {
+        "newAthleteName": "William Clark (Person 2)",
+        "membershipNumber": "1039715",
+        "competitionCount": 1,
+        "competitions": [
+          3843
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 3654,
+        "date": "2019-03-03",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "William Clark",
+        "lifter_id": 32462,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMy0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMy0wMyIsIndlaWdodF9jbGFzcyI6ODV9"
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "William Clark",
+    "competitions": [
+      {
+        "meet_id": 3654,
+        "date": "2019-03-03",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "William Clark",
+        "lifter_id": 32462,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMy0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMy0wMyIsIndlaWdodF9jbGFzcyI6ODV9"
+      },
+      {
+        "meet_id": 2807,
+        "date": "2017-12-16",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "William Clark",
+        "lifter_id": 32462,
+        "membershipNumbers": [
+          {
+            "athleteName": "William Clark",
+            "membershipNumber": "1019544",
+            "fullText": "15  -  205  William Clark  M  29  -  1019544  72.8  2017-12-16  -  Local  Tennessee-Kentucky"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMi0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMi0xNiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 3565,
+        "date": "2018-12-02",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "William Clark",
+        "lifter_id": 32462,
+        "membershipNumbers": [
+          {
+            "athleteName": "William Clark",
+            "membershipNumber": "1019544",
+            "fullText": "7  -  221  William Clark  M  30  -  1019544  79.1  2018-12-02  -  Local  Tennessee-Kentucky"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0wMiIsIndlaWdodF9jbGFzcyI6ODV9"
+      },
+      {
+        "meet_id": 3843,
+        "date": "2019-04-14",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "William Clark",
+        "lifter_id": 32462,
+        "membershipNumbers": [
+          {
+            "athleteName": "William Clark",
+            "membershipNumber": "1039715",
+            "fullText": "9  -  140  William Clark  M  18  -  1039715  73.4  2019-04-14  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0xNCIsIndlaWdodF9jbGFzcyI6ODV9"
+      },
+      {
+        "meet_id": 2964,
+        "date": "2018-03-31",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "William Clark",
+        "lifter_id": 32462,
+        "membershipNumbers": [
+          {
+            "athleteName": "William Clark",
+            "membershipNumber": "1019544",
+            "fullText": "5  -  217  William Clark  M  30  -  1019544  75.3  2018-03-31  -  Local  Tennessee-Kentucky"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMy0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMy0zMSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1019544": [
+          {
+            "meet_id": 2807,
+            "date": "2017-12-16",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "William Clark",
+            "lifter_id": 32462,
+            "membershipNumbers": [
+              {
+                "athleteName": "William Clark",
+                "membershipNumber": "1019544",
+                "fullText": "15  -  205  William Clark  M  29  -  1019544  72.8  2017-12-16  -  Local  Tennessee-Kentucky"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMi0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMi0xNiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          },
+          {
+            "meet_id": 3565,
+            "date": "2018-12-02",
+            "age_category": "Open Men's",
+            "weight_class": "81kg",
+            "lifter_name": "William Clark",
+            "lifter_id": 32462,
+            "membershipNumbers": [
+              {
+                "athleteName": "William Clark",
+                "membershipNumber": "1019544",
+                "fullText": "7  -  221  William Clark  M  30  -  1019544  79.1  2018-12-02  -  Local  Tennessee-Kentucky"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0wMiIsIndlaWdodF9jbGFzcyI6ODV9"
+          },
+          {
+            "meet_id": 2964,
+            "date": "2018-03-31",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "William Clark",
+            "lifter_id": 32462,
+            "membershipNumbers": [
+              {
+                "athleteName": "William Clark",
+                "membershipNumber": "1019544",
+                "fullText": "5  -  217  William Clark  M  30  -  1019544  75.3  2018-03-31  -  Local  Tennessee-Kentucky"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMy0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMy0zMSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          }
+        ],
+        "1039715": [
+          {
+            "meet_id": 3843,
+            "date": "2019-04-14",
+            "age_category": "Open Men's",
+            "weight_class": "81kg",
+            "lifter_name": "William Clark",
+            "lifter_id": 32462,
+            "membershipNumbers": [
+              {
+                "athleteName": "William Clark",
+                "membershipNumber": "1039715",
+                "fullText": "9  -  140  William Clark  M  18  -  1039715  73.4  2019-04-14  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0xNCIsIndlaWdodF9jbGFzcyI6ODV9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 3654,
+          "date": "2019-03-03",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "William Clark",
+          "lifter_id": 32462,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMy0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMy0wMyIsIndlaWdodF9jbGFzcyI6ODV9"
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

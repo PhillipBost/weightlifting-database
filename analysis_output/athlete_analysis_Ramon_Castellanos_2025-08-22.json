@@ -1,0 +1,211 @@
+{
+  "timestamp": "2025-08-22T13:05:17.235Z",
+  "athleteName": "Ramon Castellanos",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 3,
+    "membershipGroups": {
+      "190635": [
+        {
+          "meet_id": 822,
+          "date": "2013-12-15",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Ramon Castellanos",
+          "lifter_id": 6073,
+          "membershipNumbers": [
+            {
+              "athleteName": "Ramon Castellanos",
+              "membershipNumber": "190635",
+              "fullText": "13  -  205  Ramon Castellanos  M  50  -  190635  90.9  2013-12-15  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMi0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMi0xNSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ],
+      "1006706": [
+        {
+          "meet_id": 1918,
+          "date": "2016-06-11",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Ramon Castellanos",
+          "lifter_id": 6073,
+          "membershipNumbers": [
+            {
+              "athleteName": "Ramon Castellanos",
+              "membershipNumber": "1006706",
+              "fullText": "16  -  208  Ramon Castellanos  M  26  -  1006706  76.3  2016-06-11  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0xMSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        }
+      ],
+      "1024679": [
+        {
+          "meet_id": 3778,
+          "date": "2019-05-04",
+          "age_category": "Open Men's",
+          "weight_class": "102kg",
+          "lifter_name": "Ramon Castellanos",
+          "lifter_id": 6073,
+          "membershipNumbers": [
+            {
+              "athleteName": "Ramon Castellanos",
+              "membershipNumber": "1024679",
+              "fullText": "5  -  209  Ramon Castellanos  M  29  THE SPORTS PALACE  1024679  100.65  2019-05-04  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0wNCIsIndlaWdodF9jbGFzcyI6ODh9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Ramon Castellanos",
+    "splits": [
+      {
+        "newAthleteName": "Ramon Castellanos (Person 1)",
+        "membershipNumber": "190635",
+        "competitionCount": 1,
+        "competitions": [
+          822
+        ]
+      },
+      {
+        "newAthleteName": "Ramon Castellanos (Person 2)",
+        "membershipNumber": "1006706",
+        "competitionCount": 1,
+        "competitions": [
+          1918
+        ]
+      },
+      {
+        "newAthleteName": "Ramon Castellanos (Person 3)",
+        "membershipNumber": "1024679",
+        "competitionCount": 1,
+        "competitions": [
+          3778
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Ramon Castellanos",
+    "competitions": [
+      {
+        "meet_id": 3778,
+        "date": "2019-05-04",
+        "age_category": "Open Men's",
+        "weight_class": "102kg",
+        "lifter_name": "Ramon Castellanos",
+        "lifter_id": 6073,
+        "membershipNumbers": [
+          {
+            "athleteName": "Ramon Castellanos",
+            "membershipNumber": "1024679",
+            "fullText": "5  -  209  Ramon Castellanos  M  29  THE SPORTS PALACE  1024679  100.65  2019-05-04  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0wNCIsIndlaWdodF9jbGFzcyI6ODh9"
+      },
+      {
+        "meet_id": 822,
+        "date": "2013-12-15",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Ramon Castellanos",
+        "lifter_id": 6073,
+        "membershipNumbers": [
+          {
+            "athleteName": "Ramon Castellanos",
+            "membershipNumber": "190635",
+            "fullText": "13  -  205  Ramon Castellanos  M  50  -  190635  90.9  2013-12-15  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMi0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMi0xNSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 1918,
+        "date": "2016-06-11",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Ramon Castellanos",
+        "lifter_id": 6073,
+        "membershipNumbers": [
+          {
+            "athleteName": "Ramon Castellanos",
+            "membershipNumber": "1006706",
+            "fullText": "16  -  208  Ramon Castellanos  M  26  -  1006706  76.3  2016-06-11  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0xMSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 3,
+      "membershipGroups": {
+        "190635": [
+          {
+            "meet_id": 822,
+            "date": "2013-12-15",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Ramon Castellanos",
+            "lifter_id": 6073,
+            "membershipNumbers": [
+              {
+                "athleteName": "Ramon Castellanos",
+                "membershipNumber": "190635",
+                "fullText": "13  -  205  Ramon Castellanos  M  50  -  190635  90.9  2013-12-15  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMi0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMi0xNSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          }
+        ],
+        "1006706": [
+          {
+            "meet_id": 1918,
+            "date": "2016-06-11",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Ramon Castellanos",
+            "lifter_id": 6073,
+            "membershipNumbers": [
+              {
+                "athleteName": "Ramon Castellanos",
+                "membershipNumber": "1006706",
+                "fullText": "16  -  208  Ramon Castellanos  M  26  -  1006706  76.3  2016-06-11  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0xMSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          }
+        ],
+        "1024679": [
+          {
+            "meet_id": 3778,
+            "date": "2019-05-04",
+            "age_category": "Open Men's",
+            "weight_class": "102kg",
+            "lifter_name": "Ramon Castellanos",
+            "lifter_id": 6073,
+            "membershipNumbers": [
+              {
+                "athleteName": "Ramon Castellanos",
+                "membershipNumber": "1024679",
+                "fullText": "5  -  209  Ramon Castellanos  M  29  THE SPORTS PALACE  1024679  100.65  2019-05-04  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0wNCIsIndlaWdodF9jbGFzcyI6ODh9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

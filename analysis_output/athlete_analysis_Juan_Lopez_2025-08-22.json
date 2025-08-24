@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T20:43:17.024Z",
+  "athleteName": "Juan Lopez",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "216534": [
+        {
+          "meet_id": 293,
+          "date": "2015-08-08",
+          "age_category": "Open Men's",
+          "weight_class": "62 kg",
+          "lifter_name": "Juan Lopez",
+          "lifter_id": 11275,
+          "membershipNumbers": [
+            {
+              "athleteName": "Juan Lopez",
+              "membershipNumber": "216534",
+              "fullText": "7  -  115  Juan Lopez  M  18  Fortius Weightlifting  216534  57  2015-08-08  -  Local  Mountain North"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOC0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOC0wOCIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+        }
+      ],
+      "1034522": [
+        {
+          "meet_id": 5907,
+          "date": "2023-06-04",
+          "age_category": "Open Men's",
+          "weight_class": "102kg",
+          "lifter_name": "Juan Lopez",
+          "lifter_id": 11275,
+          "membershipNumbers": [
+            {
+              "athleteName": "Juan Lopez",
+              "membershipNumber": "1034522",
+              "fullText": "5  -  175  Juan Lopez  M  36  Sage Weightlifting Club  1034522  102  2023-06-04  -  Local  New York"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNi0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNi0wNCIsIndlaWdodF9jbGFzcyI6ODh9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Juan Lopez",
+    "splits": [
+      {
+        "newAthleteName": "Juan Lopez (Person 1)",
+        "membershipNumber": "216534",
+        "competitionCount": 1,
+        "competitions": [
+          293
+        ]
+      },
+      {
+        "newAthleteName": "Juan Lopez (Person 2)",
+        "membershipNumber": "1034522",
+        "competitionCount": 1,
+        "competitions": [
+          5907
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Juan Lopez",
+    "competitions": [
+      {
+        "meet_id": 293,
+        "date": "2015-08-08",
+        "age_category": "Open Men's",
+        "weight_class": "62 kg",
+        "lifter_name": "Juan Lopez",
+        "lifter_id": 11275,
+        "membershipNumbers": [
+          {
+            "athleteName": "Juan Lopez",
+            "membershipNumber": "216534",
+            "fullText": "7  -  115  Juan Lopez  M  18  Fortius Weightlifting  216534  57  2015-08-08  -  Local  Mountain North"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOC0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOC0wOCIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+      },
+      {
+        "meet_id": 5907,
+        "date": "2023-06-04",
+        "age_category": "Open Men's",
+        "weight_class": "102kg",
+        "lifter_name": "Juan Lopez",
+        "lifter_id": 11275,
+        "membershipNumbers": [
+          {
+            "athleteName": "Juan Lopez",
+            "membershipNumber": "1034522",
+            "fullText": "5  -  175  Juan Lopez  M  36  Sage Weightlifting Club  1034522  102  2023-06-04  -  Local  New York"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNi0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNi0wNCIsIndlaWdodF9jbGFzcyI6ODh9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "216534": [
+          {
+            "meet_id": 293,
+            "date": "2015-08-08",
+            "age_category": "Open Men's",
+            "weight_class": "62 kg",
+            "lifter_name": "Juan Lopez",
+            "lifter_id": 11275,
+            "membershipNumbers": [
+              {
+                "athleteName": "Juan Lopez",
+                "membershipNumber": "216534",
+                "fullText": "7  -  115  Juan Lopez  M  18  Fortius Weightlifting  216534  57  2015-08-08  -  Local  Mountain North"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOC0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOC0wOCIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+          }
+        ],
+        "1034522": [
+          {
+            "meet_id": 5907,
+            "date": "2023-06-04",
+            "age_category": "Open Men's",
+            "weight_class": "102kg",
+            "lifter_name": "Juan Lopez",
+            "lifter_id": 11275,
+            "membershipNumbers": [
+              {
+                "athleteName": "Juan Lopez",
+                "membershipNumber": "1034522",
+                "fullText": "5  -  175  Juan Lopez  M  36  Sage Weightlifting Club  1034522  102  2023-06-04  -  Local  New York"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNi0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNi0wNCIsIndlaWdodF9jbGFzcyI6ODh9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

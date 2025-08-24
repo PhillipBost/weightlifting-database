@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T09:03:24.422Z",
+  "athleteName": "Amaya Batiza",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1050311": [
+        {
+          "meet_id": 5573,
+          "date": "2022-10-30",
+          "age_category": "Open Women's",
+          "weight_class": "64kg",
+          "lifter_name": "Amaya Batiza",
+          "lifter_id": 53466,
+          "membershipNumbers": [
+            {
+              "athleteName": "Amaya Batiza",
+              "membershipNumber": "1050311",
+              "fullText": "15  -  106  Amaya Batiza  F  27  -  1050311  62.5  2022-10-30  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMC0zMCIsIndlaWdodF9jbGFzcyI6OTV9"
+        }
+      ],
+      "1065343": [
+        {
+          "meet_id": 5463,
+          "date": "2022-08-14",
+          "age_category": "Open Women's",
+          "weight_class": "64kg",
+          "lifter_name": "Amaya Batiza",
+          "lifter_id": 53466,
+          "membershipNumbers": [
+            {
+              "athleteName": "Amaya Batiza",
+              "membershipNumber": "1065343",
+              "fullText": "14  -  106  Amaya Batiza  F  27  -  1065343  60.9  2022-08-14  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wOC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wOC0xNCIsIndlaWdodF9jbGFzcyI6OTV9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Amaya Batiza",
+    "splits": [
+      {
+        "newAthleteName": "Amaya Batiza (Person 1)",
+        "membershipNumber": "1050311",
+        "competitionCount": 1,
+        "competitions": [
+          5573
+        ]
+      },
+      {
+        "newAthleteName": "Amaya Batiza (Person 2)",
+        "membershipNumber": "1065343",
+        "competitionCount": 1,
+        "competitions": [
+          5463
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Amaya Batiza",
+    "competitions": [
+      {
+        "meet_id": 5463,
+        "date": "2022-08-14",
+        "age_category": "Open Women's",
+        "weight_class": "64kg",
+        "lifter_name": "Amaya Batiza",
+        "lifter_id": 53466,
+        "membershipNumbers": [
+          {
+            "athleteName": "Amaya Batiza",
+            "membershipNumber": "1065343",
+            "fullText": "14  -  106  Amaya Batiza  F  27  -  1065343  60.9  2022-08-14  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wOC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wOC0xNCIsIndlaWdodF9jbGFzcyI6OTV9"
+      },
+      {
+        "meet_id": 5573,
+        "date": "2022-10-30",
+        "age_category": "Open Women's",
+        "weight_class": "64kg",
+        "lifter_name": "Amaya Batiza",
+        "lifter_id": 53466,
+        "membershipNumbers": [
+          {
+            "athleteName": "Amaya Batiza",
+            "membershipNumber": "1050311",
+            "fullText": "15  -  106  Amaya Batiza  F  27  -  1050311  62.5  2022-10-30  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMC0zMCIsIndlaWdodF9jbGFzcyI6OTV9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1050311": [
+          {
+            "meet_id": 5573,
+            "date": "2022-10-30",
+            "age_category": "Open Women's",
+            "weight_class": "64kg",
+            "lifter_name": "Amaya Batiza",
+            "lifter_id": 53466,
+            "membershipNumbers": [
+              {
+                "athleteName": "Amaya Batiza",
+                "membershipNumber": "1050311",
+                "fullText": "15  -  106  Amaya Batiza  F  27  -  1050311  62.5  2022-10-30  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMC0zMCIsIndlaWdodF9jbGFzcyI6OTV9"
+          }
+        ],
+        "1065343": [
+          {
+            "meet_id": 5463,
+            "date": "2022-08-14",
+            "age_category": "Open Women's",
+            "weight_class": "64kg",
+            "lifter_name": "Amaya Batiza",
+            "lifter_id": 53466,
+            "membershipNumbers": [
+              {
+                "athleteName": "Amaya Batiza",
+                "membershipNumber": "1065343",
+                "fullText": "14  -  106  Amaya Batiza  F  27  -  1065343  60.9  2022-08-14  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wOC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wOC0xNCIsIndlaWdodF9jbGFzcyI6OTV9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

@@ -1,0 +1,271 @@
+{
+  "timestamp": "2025-08-22T23:07:58.913Z",
+  "athleteName": "Luis Rodriguez",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 4,
+    "membershipGroups": {
+      "1033574": [
+        {
+          "meet_id": 3597,
+          "date": "2018-11-18",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "Luis Rodriguez",
+          "lifter_id": 38796,
+          "membershipNumbers": [
+            {
+              "athleteName": "Luis Rodriguez",
+              "membershipNumber": "1033574",
+              "fullText": "30  -  156  Luis Rodriguez  M  35  Speed Power Strength  1033574  84.04  2018-11-18  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMS0xOCIsIndlaWdodF9jbGFzcyI6ODZ9"
+        }
+      ],
+      "1046155": [
+        {
+          "meet_id": 4206,
+          "date": "2019-10-26",
+          "age_category": "Open Men's",
+          "weight_class": "102kg",
+          "lifter_name": "Luis Rodriguez",
+          "lifter_id": 38796,
+          "membershipNumbers": [
+            {
+              "athleteName": "Luis Rodriguez",
+              "membershipNumber": "1046155",
+              "fullText": "23  -  192  Luis Rodriguez  M  36  STONEAGE WEIGHTLIFTING CLUB  1046155  100.9  2019-10-26  -  Local  Tennessee-Kentucky"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMC0yNiIsIndlaWdodF9jbGFzcyI6ODh9"
+        }
+      ],
+      "1054781": [
+        {
+          "meet_id": 4810,
+          "date": "2021-03-20",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "Luis Rodriguez",
+          "lifter_id": 38796,
+          "membershipNumbers": [
+            {
+              "athleteName": "Luis Rodriguez",
+              "membershipNumber": "1054781",
+              "fullText": "14  -  218  Luis Rodriguez  M  25  -  1054781  88.3  2021-03-20  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMy0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMy0yMCIsIndlaWdodF9jbGFzcyI6ODZ9"
+        }
+      ],
+      "1069048": [
+        {
+          "meet_id": 5850,
+          "date": "2023-05-06",
+          "age_category": "Open Men's",
+          "weight_class": "109kg",
+          "lifter_name": "Luis Rodriguez",
+          "lifter_id": 38796,
+          "membershipNumbers": [
+            {
+              "athleteName": "Luis Rodriguez",
+              "membershipNumber": "1069048",
+              "fullText": "15  -  184  Luis Rodriguez  M  26  CROSSFIT FORT VANCOUVER BARBELL CLUB  1069048  108  2023-05-06  -  Local  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNS0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNS0wNiIsIndlaWdodF9jbGFzcyI6ODl9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Luis Rodriguez",
+    "splits": [
+      {
+        "newAthleteName": "Luis Rodriguez (Person 1)",
+        "membershipNumber": "1033574",
+        "competitionCount": 1,
+        "competitions": [
+          3597
+        ]
+      },
+      {
+        "newAthleteName": "Luis Rodriguez (Person 2)",
+        "membershipNumber": "1046155",
+        "competitionCount": 1,
+        "competitions": [
+          4206
+        ]
+      },
+      {
+        "newAthleteName": "Luis Rodriguez (Person 3)",
+        "membershipNumber": "1054781",
+        "competitionCount": 1,
+        "competitions": [
+          4810
+        ]
+      },
+      {
+        "newAthleteName": "Luis Rodriguez (Person 4)",
+        "membershipNumber": "1069048",
+        "competitionCount": 1,
+        "competitions": [
+          5850
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Luis Rodriguez",
+    "competitions": [
+      {
+        "meet_id": 4810,
+        "date": "2021-03-20",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Luis Rodriguez",
+        "lifter_id": 38796,
+        "membershipNumbers": [
+          {
+            "athleteName": "Luis Rodriguez",
+            "membershipNumber": "1054781",
+            "fullText": "14  -  218  Luis Rodriguez  M  25  -  1054781  88.3  2021-03-20  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMy0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMy0yMCIsIndlaWdodF9jbGFzcyI6ODZ9"
+      },
+      {
+        "meet_id": 3597,
+        "date": "2018-11-18",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Luis Rodriguez",
+        "lifter_id": 38796,
+        "membershipNumbers": [
+          {
+            "athleteName": "Luis Rodriguez",
+            "membershipNumber": "1033574",
+            "fullText": "30  -  156  Luis Rodriguez  M  35  Speed Power Strength  1033574  84.04  2018-11-18  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMS0xOCIsIndlaWdodF9jbGFzcyI6ODZ9"
+      },
+      {
+        "meet_id": 5850,
+        "date": "2023-05-06",
+        "age_category": "Open Men's",
+        "weight_class": "109kg",
+        "lifter_name": "Luis Rodriguez",
+        "lifter_id": 38796,
+        "membershipNumbers": [
+          {
+            "athleteName": "Luis Rodriguez",
+            "membershipNumber": "1069048",
+            "fullText": "15  -  184  Luis Rodriguez  M  26  CROSSFIT FORT VANCOUVER BARBELL CLUB  1069048  108  2023-05-06  -  Local  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNS0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNS0wNiIsIndlaWdodF9jbGFzcyI6ODl9"
+      },
+      {
+        "meet_id": 4206,
+        "date": "2019-10-26",
+        "age_category": "Open Men's",
+        "weight_class": "102kg",
+        "lifter_name": "Luis Rodriguez",
+        "lifter_id": 38796,
+        "membershipNumbers": [
+          {
+            "athleteName": "Luis Rodriguez",
+            "membershipNumber": "1046155",
+            "fullText": "23  -  192  Luis Rodriguez  M  36  STONEAGE WEIGHTLIFTING CLUB  1046155  100.9  2019-10-26  -  Local  Tennessee-Kentucky"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMC0yNiIsIndlaWdodF9jbGFzcyI6ODh9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 4,
+      "membershipGroups": {
+        "1033574": [
+          {
+            "meet_id": 3597,
+            "date": "2018-11-18",
+            "age_category": "Open Men's",
+            "weight_class": "89kg",
+            "lifter_name": "Luis Rodriguez",
+            "lifter_id": 38796,
+            "membershipNumbers": [
+              {
+                "athleteName": "Luis Rodriguez",
+                "membershipNumber": "1033574",
+                "fullText": "30  -  156  Luis Rodriguez  M  35  Speed Power Strength  1033574  84.04  2018-11-18  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMS0xOCIsIndlaWdodF9jbGFzcyI6ODZ9"
+          }
+        ],
+        "1046155": [
+          {
+            "meet_id": 4206,
+            "date": "2019-10-26",
+            "age_category": "Open Men's",
+            "weight_class": "102kg",
+            "lifter_name": "Luis Rodriguez",
+            "lifter_id": 38796,
+            "membershipNumbers": [
+              {
+                "athleteName": "Luis Rodriguez",
+                "membershipNumber": "1046155",
+                "fullText": "23  -  192  Luis Rodriguez  M  36  STONEAGE WEIGHTLIFTING CLUB  1046155  100.9  2019-10-26  -  Local  Tennessee-Kentucky"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMC0yNiIsIndlaWdodF9jbGFzcyI6ODh9"
+          }
+        ],
+        "1054781": [
+          {
+            "meet_id": 4810,
+            "date": "2021-03-20",
+            "age_category": "Open Men's",
+            "weight_class": "89kg",
+            "lifter_name": "Luis Rodriguez",
+            "lifter_id": 38796,
+            "membershipNumbers": [
+              {
+                "athleteName": "Luis Rodriguez",
+                "membershipNumber": "1054781",
+                "fullText": "14  -  218  Luis Rodriguez  M  25  -  1054781  88.3  2021-03-20  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMy0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMy0yMCIsIndlaWdodF9jbGFzcyI6ODZ9"
+          }
+        ],
+        "1069048": [
+          {
+            "meet_id": 5850,
+            "date": "2023-05-06",
+            "age_category": "Open Men's",
+            "weight_class": "109kg",
+            "lifter_name": "Luis Rodriguez",
+            "lifter_id": 38796,
+            "membershipNumbers": [
+              {
+                "athleteName": "Luis Rodriguez",
+                "membershipNumber": "1069048",
+                "fullText": "15  -  184  Luis Rodriguez  M  26  CROSSFIT FORT VANCOUVER BARBELL CLUB  1069048  108  2023-05-06  -  Local  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNS0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNS0wNiIsIndlaWdodF9jbGFzcyI6ODl9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

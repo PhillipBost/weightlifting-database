@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T15:52:50.261Z",
+  "athleteName": "Emily Perez",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1045273": [
+        {
+          "meet_id": 4261,
+          "date": "2019-11-16",
+          "age_category": "Open Women's",
+          "weight_class": "64kg",
+          "lifter_name": "Emily Perez",
+          "lifter_id": 44030,
+          "membershipNumbers": [
+            {
+              "athleteName": "Emily Perez",
+              "membershipNumber": "1045273",
+              "fullText": "5  -  147  Emily Perez  F  21  Atlas Barbell Club  1045273  63.7  2019-11-16  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0xNiIsIndlaWdodF9jbGFzcyI6OTV9"
+        },
+        {
+          "meet_id": 4315,
+          "date": "2020-02-08",
+          "age_category": "Open Women's",
+          "weight_class": "64kg",
+          "lifter_name": "Emily Perez",
+          "lifter_id": 44030,
+          "membershipNumbers": [
+            {
+              "athleteName": "Emily Perez",
+              "membershipNumber": "1045273",
+              "fullText": "24  -  153  Emily Perez  F  22  Atlas Barbell Club  1045273  63.68  2020-02-08  -  National  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMi0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMi0wOCIsIndlaWdodF9jbGFzcyI6OTV9"
+        }
+      ],
+      "1074625": [
+        {
+          "meet_id": 6206,
+          "date": "2024-01-27",
+          "age_category": "Open Women's",
+          "weight_class": "87kg",
+          "lifter_name": "Emily Perez",
+          "lifter_id": 44030,
+          "membershipNumbers": [
+            {
+              "athleteName": "Emily Perez",
+              "membershipNumber": "1074625",
+              "fullText": "26  -  114  Emily Perez  F  28  Endless Strength Weightlifting  1074625  83.45  2024-01-27  -  Local  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMS0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMS0yNyIsIndlaWdodF9jbGFzcyI6OTl9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Emily Perez",
+    "splits": [
+      {
+        "newAthleteName": "Emily Perez (Person 1)",
+        "membershipNumber": "1045273",
+        "competitionCount": 2,
+        "competitions": [
+          4261,
+          4315
+        ]
+      },
+      {
+        "newAthleteName": "Emily Perez (Person 2)",
+        "membershipNumber": "1074625",
+        "competitionCount": 1,
+        "competitions": [
+          6206
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Emily Perez",
+    "competitions": [
+      {
+        "meet_id": 6206,
+        "date": "2024-01-27",
+        "age_category": "Open Women's",
+        "weight_class": "87kg",
+        "lifter_name": "Emily Perez",
+        "lifter_id": 44030,
+        "membershipNumbers": [
+          {
+            "athleteName": "Emily Perez",
+            "membershipNumber": "1074625",
+            "fullText": "26  -  114  Emily Perez  F  28  Endless Strength Weightlifting  1074625  83.45  2024-01-27  -  Local  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMS0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMS0yNyIsIndlaWdodF9jbGFzcyI6OTl9"
+      },
+      {
+        "meet_id": 4261,
+        "date": "2019-11-16",
+        "age_category": "Open Women's",
+        "weight_class": "64kg",
+        "lifter_name": "Emily Perez",
+        "lifter_id": 44030,
+        "membershipNumbers": [
+          {
+            "athleteName": "Emily Perez",
+            "membershipNumber": "1045273",
+            "fullText": "5  -  147  Emily Perez  F  21  Atlas Barbell Club  1045273  63.7  2019-11-16  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0xNiIsIndlaWdodF9jbGFzcyI6OTV9"
+      },
+      {
+        "meet_id": 4315,
+        "date": "2020-02-08",
+        "age_category": "Open Women's",
+        "weight_class": "64kg",
+        "lifter_name": "Emily Perez",
+        "lifter_id": 44030,
+        "membershipNumbers": [
+          {
+            "athleteName": "Emily Perez",
+            "membershipNumber": "1045273",
+            "fullText": "24  -  153  Emily Perez  F  22  Atlas Barbell Club  1045273  63.68  2020-02-08  -  National  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMi0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMi0wOCIsIndlaWdodF9jbGFzcyI6OTV9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1045273": [
+          {
+            "meet_id": 4261,
+            "date": "2019-11-16",
+            "age_category": "Open Women's",
+            "weight_class": "64kg",
+            "lifter_name": "Emily Perez",
+            "lifter_id": 44030,
+            "membershipNumbers": [
+              {
+                "athleteName": "Emily Perez",
+                "membershipNumber": "1045273",
+                "fullText": "5  -  147  Emily Perez  F  21  Atlas Barbell Club  1045273  63.7  2019-11-16  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0xNiIsIndlaWdodF9jbGFzcyI6OTV9"
+          },
+          {
+            "meet_id": 4315,
+            "date": "2020-02-08",
+            "age_category": "Open Women's",
+            "weight_class": "64kg",
+            "lifter_name": "Emily Perez",
+            "lifter_id": 44030,
+            "membershipNumbers": [
+              {
+                "athleteName": "Emily Perez",
+                "membershipNumber": "1045273",
+                "fullText": "24  -  153  Emily Perez  F  22  Atlas Barbell Club  1045273  63.68  2020-02-08  -  National  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMi0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMi0wOCIsIndlaWdodF9jbGFzcyI6OTV9"
+          }
+        ],
+        "1074625": [
+          {
+            "meet_id": 6206,
+            "date": "2024-01-27",
+            "age_category": "Open Women's",
+            "weight_class": "87kg",
+            "lifter_name": "Emily Perez",
+            "lifter_id": 44030,
+            "membershipNumbers": [
+              {
+                "athleteName": "Emily Perez",
+                "membershipNumber": "1074625",
+                "fullText": "26  -  114  Emily Perez  F  28  Endless Strength Weightlifting  1074625  83.45  2024-01-27  -  Local  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMS0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMS0yNyIsIndlaWdodF9jbGFzcyI6OTl9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-22T05:44:46.422Z",
+  "athleteName": "Michael Harvey",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "199515": [
+        {
+          "meet_id": 219,
+          "date": "2015-04-04",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Michael Harvey",
+          "lifter_id": 9862,
+          "membershipNumbers": [
+            {
+              "athleteName": "Michael Harvey",
+              "membershipNumber": "199515",
+              "fullText": "24  -  195  Michael Harvey  M  40  -  199515  92  2015-04-04  -  Local  Southern"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0wNCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        },
+        {
+          "meet_id": 1570,
+          "date": "2014-12-20",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Michael Harvey",
+          "lifter_id": 9862,
+          "membershipNumbers": [
+            {
+              "athleteName": "Michael Harvey",
+              "membershipNumber": "199515",
+              "fullText": "18  -  185  Michael Harvey  M  39  -  199515  93.7  2014-12-20  -  Local  Southern"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMi0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMi0yMCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        },
+        {
+          "meet_id": 1611,
+          "date": "2015-08-13",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Michael Harvey",
+          "lifter_id": 9862,
+          "membershipNumbers": [
+            {
+              "athleteName": "Michael Harvey",
+              "membershipNumber": "199515",
+              "fullText": "23  -  185  Michael Harvey  M  40  -  199515  89.37  2015-08-13  -  National  Southern"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOC0xMyIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ],
+      "213009": [
+        {
+          "meet_id": 342,
+          "date": "2015-06-13",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Michael Harvey",
+          "lifter_id": 9862,
+          "membershipNumbers": [
+            {
+              "athleteName": "Michael Harvey",
+              "membershipNumber": "213009",
+              "fullText": "18  -  225  Michael Harvey  M  23  WEBER STATE WEIGHTLIFTING  213009  91.17  2015-06-13  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNi0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNi0xMyIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Michael Harvey",
+    "splits": [
+      {
+        "newAthleteName": "Michael Harvey (Person 1)",
+        "membershipNumber": "199515",
+        "competitionCount": 3,
+        "competitions": [
+          219,
+          1570,
+          1611
+        ]
+      },
+      {
+        "newAthleteName": "Michael Harvey (Person 2)",
+        "membershipNumber": "213009",
+        "competitionCount": 1,
+        "competitions": [
+          342
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Michael Harvey",
+    "competitions": [
+      {
+        "meet_id": 219,
+        "date": "2015-04-04",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Michael Harvey",
+        "lifter_id": 9862,
+        "membershipNumbers": [
+          {
+            "athleteName": "Michael Harvey",
+            "membershipNumber": "199515",
+            "fullText": "24  -  195  Michael Harvey  M  40  -  199515  92  2015-04-04  -  Local  Southern"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0wNCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 1570,
+        "date": "2014-12-20",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Michael Harvey",
+        "lifter_id": 9862,
+        "membershipNumbers": [
+          {
+            "athleteName": "Michael Harvey",
+            "membershipNumber": "199515",
+            "fullText": "18  -  185  Michael Harvey  M  39  -  199515  93.7  2014-12-20  -  Local  Southern"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMi0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMi0yMCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 1611,
+        "date": "2015-08-13",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Michael Harvey",
+        "lifter_id": 9862,
+        "membershipNumbers": [
+          {
+            "athleteName": "Michael Harvey",
+            "membershipNumber": "199515",
+            "fullText": "23  -  185  Michael Harvey  M  40  -  199515  89.37  2015-08-13  -  National  Southern"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOC0xMyIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 342,
+        "date": "2015-06-13",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Michael Harvey",
+        "lifter_id": 9862,
+        "membershipNumbers": [
+          {
+            "athleteName": "Michael Harvey",
+            "membershipNumber": "213009",
+            "fullText": "18  -  225  Michael Harvey  M  23  WEBER STATE WEIGHTLIFTING  213009  91.17  2015-06-13  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNi0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNi0xMyIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "199515": [
+          {
+            "meet_id": 219,
+            "date": "2015-04-04",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Michael Harvey",
+            "lifter_id": 9862,
+            "membershipNumbers": [
+              {
+                "athleteName": "Michael Harvey",
+                "membershipNumber": "199515",
+                "fullText": "24  -  195  Michael Harvey  M  40  -  199515  92  2015-04-04  -  Local  Southern"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0wNCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          },
+          {
+            "meet_id": 1570,
+            "date": "2014-12-20",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Michael Harvey",
+            "lifter_id": 9862,
+            "membershipNumbers": [
+              {
+                "athleteName": "Michael Harvey",
+                "membershipNumber": "199515",
+                "fullText": "18  -  185  Michael Harvey  M  39  -  199515  93.7  2014-12-20  -  Local  Southern"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMi0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMi0yMCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          },
+          {
+            "meet_id": 1611,
+            "date": "2015-08-13",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Michael Harvey",
+            "lifter_id": 9862,
+            "membershipNumbers": [
+              {
+                "athleteName": "Michael Harvey",
+                "membershipNumber": "199515",
+                "fullText": "23  -  185  Michael Harvey  M  40  -  199515  89.37  2015-08-13  -  National  Southern"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOC0xMyIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          }
+        ],
+        "213009": [
+          {
+            "meet_id": 342,
+            "date": "2015-06-13",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Michael Harvey",
+            "lifter_id": 9862,
+            "membershipNumbers": [
+              {
+                "athleteName": "Michael Harvey",
+                "membershipNumber": "213009",
+                "fullText": "18  -  225  Michael Harvey  M  23  WEBER STATE WEIGHTLIFTING  213009  91.17  2015-06-13  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNi0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNi0xMyIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T16:14:10.885Z",
+  "athleteName": "Michael Molina",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1042649": [
+        {
+          "meet_id": 4554,
+          "date": "2020-07-18",
+          "age_category": "Men's 16-17 Age Group",
+          "weight_class": "89kg",
+          "lifter_name": "Michael Molina",
+          "lifter_id": 42669,
+          "membershipNumbers": [
+            {
+              "athleteName": "Michael Molina",
+              "membershipNumber": "1042649",
+              "fullText": "2  -  132  Michael Molina  M  17  LONG ISLAND WLC  1042649  85.7  2020-07-18  -  Local  New York"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wNy0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wNy0xOCIsIndlaWdodF9jbGFzcyI6N30="
+        },
+        {
+          "meet_id": 4596,
+          "date": "2020-09-19",
+          "age_category": "Men's 16-17 Age Group",
+          "weight_class": "89kg",
+          "lifter_name": "Michael Molina",
+          "lifter_id": 42669,
+          "membershipNumbers": [
+            {
+              "athleteName": "Michael Molina",
+              "membershipNumber": "1042649",
+              "fullText": "2  -  143  Michael Molina  M  17  LONG ISLAND WLC  1042649  85.2  2020-09-19  -  Local  New York"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wOS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wOS0xOSIsIndlaWdodF9jbGFzcyI6N30="
+        }
+      ],
+      "1044151": [
+        {
+          "meet_id": 4013,
+          "date": "2019-08-10",
+          "age_category": "Open Men's",
+          "weight_class": "+109kg",
+          "lifter_name": "Michael Molina",
+          "lifter_id": 42669,
+          "membershipNumbers": [
+            {
+              "athleteName": "Michael Molina",
+              "membershipNumber": "1044151",
+              "fullText": "9  -  154  Michael Molina  M  38  -  1044151  110.3  2019-08-10  -  Local  Georgia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOC0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOC0xMCIsIndlaWdodF9jbGFzcyI6OTB9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Michael Molina",
+    "splits": [
+      {
+        "newAthleteName": "Michael Molina (Person 1)",
+        "membershipNumber": "1042649",
+        "competitionCount": 2,
+        "competitions": [
+          4554,
+          4596
+        ]
+      },
+      {
+        "newAthleteName": "Michael Molina (Person 2)",
+        "membershipNumber": "1044151",
+        "competitionCount": 1,
+        "competitions": [
+          4013
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Michael Molina",
+    "competitions": [
+      {
+        "meet_id": 4013,
+        "date": "2019-08-10",
+        "age_category": "Open Men's",
+        "weight_class": "+109kg",
+        "lifter_name": "Michael Molina",
+        "lifter_id": 42669,
+        "membershipNumbers": [
+          {
+            "athleteName": "Michael Molina",
+            "membershipNumber": "1044151",
+            "fullText": "9  -  154  Michael Molina  M  38  -  1044151  110.3  2019-08-10  -  Local  Georgia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOC0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOC0xMCIsIndlaWdodF9jbGFzcyI6OTB9"
+      },
+      {
+        "meet_id": 4554,
+        "date": "2020-07-18",
+        "age_category": "Men's 16-17 Age Group",
+        "weight_class": "89kg",
+        "lifter_name": "Michael Molina",
+        "lifter_id": 42669,
+        "membershipNumbers": [
+          {
+            "athleteName": "Michael Molina",
+            "membershipNumber": "1042649",
+            "fullText": "2  -  132  Michael Molina  M  17  LONG ISLAND WLC  1042649  85.7  2020-07-18  -  Local  New York"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wNy0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wNy0xOCIsIndlaWdodF9jbGFzcyI6N30="
+      },
+      {
+        "meet_id": 4596,
+        "date": "2020-09-19",
+        "age_category": "Men's 16-17 Age Group",
+        "weight_class": "89kg",
+        "lifter_name": "Michael Molina",
+        "lifter_id": 42669,
+        "membershipNumbers": [
+          {
+            "athleteName": "Michael Molina",
+            "membershipNumber": "1042649",
+            "fullText": "2  -  143  Michael Molina  M  17  LONG ISLAND WLC  1042649  85.2  2020-09-19  -  Local  New York"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wOS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wOS0xOSIsIndlaWdodF9jbGFzcyI6N30="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1042649": [
+          {
+            "meet_id": 4554,
+            "date": "2020-07-18",
+            "age_category": "Men's 16-17 Age Group",
+            "weight_class": "89kg",
+            "lifter_name": "Michael Molina",
+            "lifter_id": 42669,
+            "membershipNumbers": [
+              {
+                "athleteName": "Michael Molina",
+                "membershipNumber": "1042649",
+                "fullText": "2  -  132  Michael Molina  M  17  LONG ISLAND WLC  1042649  85.7  2020-07-18  -  Local  New York"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wNy0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wNy0xOCIsIndlaWdodF9jbGFzcyI6N30="
+          },
+          {
+            "meet_id": 4596,
+            "date": "2020-09-19",
+            "age_category": "Men's 16-17 Age Group",
+            "weight_class": "89kg",
+            "lifter_name": "Michael Molina",
+            "lifter_id": 42669,
+            "membershipNumbers": [
+              {
+                "athleteName": "Michael Molina",
+                "membershipNumber": "1042649",
+                "fullText": "2  -  143  Michael Molina  M  17  LONG ISLAND WLC  1042649  85.2  2020-09-19  -  Local  New York"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wOS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wOS0xOSIsIndlaWdodF9jbGFzcyI6N30="
+          }
+        ],
+        "1044151": [
+          {
+            "meet_id": 4013,
+            "date": "2019-08-10",
+            "age_category": "Open Men's",
+            "weight_class": "+109kg",
+            "lifter_name": "Michael Molina",
+            "lifter_id": 42669,
+            "membershipNumbers": [
+              {
+                "athleteName": "Michael Molina",
+                "membershipNumber": "1044151",
+                "fullText": "9  -  154  Michael Molina  M  38  -  1044151  110.3  2019-08-10  -  Local  Georgia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOC0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOC0xMCIsIndlaWdodF9jbGFzcyI6OTB9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

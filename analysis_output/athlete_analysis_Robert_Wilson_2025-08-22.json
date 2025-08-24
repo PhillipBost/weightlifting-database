@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-22T04:50:50.650Z",
+  "athleteName": "Robert Wilson",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "175783": [
+        {
+          "meet_id": 729,
+          "date": "2013-03-03",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Robert Wilson",
+          "lifter_id": 5266,
+          "membershipNumbers": [
+            {
+              "athleteName": "Robert Wilson",
+              "membershipNumber": "175783",
+              "fullText": "9  -  165  Robert Wilson  M  35  -  175783  101.84  2013-03-03  -  Local  New England"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMy0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMy0wMyIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        }
+      ],
+      "1056961": [
+        {
+          "meet_id": 4947,
+          "date": "2021-08-07",
+          "age_category": "Open Men's",
+          "weight_class": "96kg",
+          "lifter_name": "Robert Wilson",
+          "lifter_id": 5266,
+          "membershipNumbers": [
+            {
+              "athleteName": "Robert Wilson",
+              "membershipNumber": "1056961",
+              "fullText": "12  -  140  Robert Wilson  M  31  Strength Ratio  1056961  94.8  2021-08-07  -  Local  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wOC0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wOC0wNyIsIndlaWdodF9jbGFzcyI6ODd9"
+        },
+        {
+          "meet_id": 4956,
+          "date": "2021-11-14",
+          "age_category": "Open Men's",
+          "weight_class": "96kg",
+          "lifter_name": "Robert Wilson",
+          "lifter_id": 5266,
+          "membershipNumbers": [
+            {
+              "athleteName": "Robert Wilson",
+              "membershipNumber": "1056961",
+              "fullText": "10  -  154  Robert Wilson  M  31  Strength Ratio  1056961  93.97  2021-11-14  -  Local  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMS0xNCIsIndlaWdodF9jbGFzcyI6ODd9"
+        },
+        {
+          "meet_id": 5379,
+          "date": "2022-05-21",
+          "age_category": "Open Men's",
+          "weight_class": "102kg",
+          "lifter_name": "Robert Wilson",
+          "lifter_id": 5266,
+          "membershipNumbers": [
+            {
+              "athleteName": "Robert Wilson",
+              "membershipNumber": "1056961",
+              "fullText": "26  -  164  Robert Wilson  M  32  Strength Ratio  1056961  97.6  2022-05-21  -  Local  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNS0yMSIsIndlaWdodF9jbGFzcyI6ODh9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Robert Wilson",
+    "splits": [
+      {
+        "newAthleteName": "Robert Wilson (Person 1)",
+        "membershipNumber": "175783",
+        "competitionCount": 1,
+        "competitions": [
+          729
+        ]
+      },
+      {
+        "newAthleteName": "Robert Wilson (Person 2)",
+        "membershipNumber": "1056961",
+        "competitionCount": 3,
+        "competitions": [
+          4947,
+          4956,
+          5379
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Robert Wilson",
+    "competitions": [
+      {
+        "meet_id": 4947,
+        "date": "2021-08-07",
+        "age_category": "Open Men's",
+        "weight_class": "96kg",
+        "lifter_name": "Robert Wilson",
+        "lifter_id": 5266,
+        "membershipNumbers": [
+          {
+            "athleteName": "Robert Wilson",
+            "membershipNumber": "1056961",
+            "fullText": "12  -  140  Robert Wilson  M  31  Strength Ratio  1056961  94.8  2021-08-07  -  Local  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wOC0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wOC0wNyIsIndlaWdodF9jbGFzcyI6ODd9"
+      },
+      {
+        "meet_id": 4956,
+        "date": "2021-11-14",
+        "age_category": "Open Men's",
+        "weight_class": "96kg",
+        "lifter_name": "Robert Wilson",
+        "lifter_id": 5266,
+        "membershipNumbers": [
+          {
+            "athleteName": "Robert Wilson",
+            "membershipNumber": "1056961",
+            "fullText": "10  -  154  Robert Wilson  M  31  Strength Ratio  1056961  93.97  2021-11-14  -  Local  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMS0xNCIsIndlaWdodF9jbGFzcyI6ODd9"
+      },
+      {
+        "meet_id": 5379,
+        "date": "2022-05-21",
+        "age_category": "Open Men's",
+        "weight_class": "102kg",
+        "lifter_name": "Robert Wilson",
+        "lifter_id": 5266,
+        "membershipNumbers": [
+          {
+            "athleteName": "Robert Wilson",
+            "membershipNumber": "1056961",
+            "fullText": "26  -  164  Robert Wilson  M  32  Strength Ratio  1056961  97.6  2022-05-21  -  Local  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNS0yMSIsIndlaWdodF9jbGFzcyI6ODh9"
+      },
+      {
+        "meet_id": 729,
+        "date": "2013-03-03",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Robert Wilson",
+        "lifter_id": 5266,
+        "membershipNumbers": [
+          {
+            "athleteName": "Robert Wilson",
+            "membershipNumber": "175783",
+            "fullText": "9  -  165  Robert Wilson  M  35  -  175783  101.84  2013-03-03  -  Local  New England"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMy0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMy0wMyIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "175783": [
+          {
+            "meet_id": 729,
+            "date": "2013-03-03",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Robert Wilson",
+            "lifter_id": 5266,
+            "membershipNumbers": [
+              {
+                "athleteName": "Robert Wilson",
+                "membershipNumber": "175783",
+                "fullText": "9  -  165  Robert Wilson  M  35  -  175783  101.84  2013-03-03  -  Local  New England"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMy0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMy0wMyIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          }
+        ],
+        "1056961": [
+          {
+            "meet_id": 4947,
+            "date": "2021-08-07",
+            "age_category": "Open Men's",
+            "weight_class": "96kg",
+            "lifter_name": "Robert Wilson",
+            "lifter_id": 5266,
+            "membershipNumbers": [
+              {
+                "athleteName": "Robert Wilson",
+                "membershipNumber": "1056961",
+                "fullText": "12  -  140  Robert Wilson  M  31  Strength Ratio  1056961  94.8  2021-08-07  -  Local  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wOC0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wOC0wNyIsIndlaWdodF9jbGFzcyI6ODd9"
+          },
+          {
+            "meet_id": 4956,
+            "date": "2021-11-14",
+            "age_category": "Open Men's",
+            "weight_class": "96kg",
+            "lifter_name": "Robert Wilson",
+            "lifter_id": 5266,
+            "membershipNumbers": [
+              {
+                "athleteName": "Robert Wilson",
+                "membershipNumber": "1056961",
+                "fullText": "10  -  154  Robert Wilson  M  31  Strength Ratio  1056961  93.97  2021-11-14  -  Local  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMS0xNCIsIndlaWdodF9jbGFzcyI6ODd9"
+          },
+          {
+            "meet_id": 5379,
+            "date": "2022-05-21",
+            "age_category": "Open Men's",
+            "weight_class": "102kg",
+            "lifter_name": "Robert Wilson",
+            "lifter_id": 5266,
+            "membershipNumbers": [
+              {
+                "athleteName": "Robert Wilson",
+                "membershipNumber": "1056961",
+                "fullText": "26  -  164  Robert Wilson  M  32  Strength Ratio  1056961  97.6  2022-05-21  -  Local  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNS0yMSIsIndlaWdodF9jbGFzcyI6ODh9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

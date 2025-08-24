@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-22T09:07:14.671Z",
+  "athleteName": "Robert Ramsey 2nd",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1070473": [
+        {
+          "meet_id": 5858,
+          "date": "2023-05-13",
+          "age_category": "Men's 13 Under Age Group",
+          "weight_class": "36kg",
+          "lifter_name": "Robert Ramsey 2nd",
+          "lifter_id": 56738,
+          "membershipNumbers": [
+            {
+              "athleteName": "Robert Ramsey 2nd",
+              "membershipNumber": "1070473",
+              "fullText": "1  -  39  Robert Ramsey 2nd  M  11  FORNEY BARBELL CLUB  1070473  33.38  2023-05-13  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNS0xMyIsIndlaWdodF9jbGFzcyI6NDJ9"
+        },
+        {
+          "meet_id": 5929,
+          "date": "2023-06-24",
+          "age_category": "Men's 13 Under Age Group",
+          "weight_class": "36kg",
+          "lifter_name": "Robert Ramsey 2nd",
+          "lifter_id": 56738,
+          "membershipNumbers": [
+            {
+              "athleteName": "Robert Ramsey 2nd",
+              "membershipNumber": "1070473",
+              "fullText": "14  -  42  Robert Ramsey 2nd  M  11  FORNEY BARBELL CLUB  1070473  33.09  2023-06-24  -  National  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNi0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNi0yNCIsIndlaWdodF9jbGFzcyI6NDJ9"
+        }
+      ],
+      "1070946": [
+        {
+          "meet_id": 6750,
+          "date": "2025-02-08",
+          "age_category": "Men's 13 Under Age Group",
+          "weight_class": "39kg",
+          "lifter_name": "Robert Ramsey 2nd",
+          "lifter_id": 56738,
+          "membershipNumbers": [
+            {
+              "athleteName": "Robert Ramsey 2nd",
+              "membershipNumber": "1070946",
+              "fullText": "2  -  51  Robert Ramsey 2nd  M  13  FORNEY BARBELL CLUB  1070946  37.1  2025-02-08  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMi0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMi0wOCIsIndlaWdodF9jbGFzcyI6NDN9"
+        },
+        {
+          "meet_id": 6107,
+          "date": "2023-11-04",
+          "age_category": "Men's 13 Under Age Group",
+          "weight_class": "36kg",
+          "lifter_name": "Robert Ramsey 2nd",
+          "lifter_id": 56738,
+          "membershipNumbers": [
+            {
+              "athleteName": "Robert Ramsey 2nd",
+              "membershipNumber": "1070946",
+              "fullText": "1  -  55  Robert Ramsey 2nd  M  11  FORNEY BARBELL CLUB  1070946  34.7  2023-11-04  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMS0wNCIsIndlaWdodF9jbGFzcyI6NDJ9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Robert Ramsey 2nd",
+    "splits": [
+      {
+        "newAthleteName": "Robert Ramsey 2nd (Person 1)",
+        "membershipNumber": "1070473",
+        "competitionCount": 2,
+        "competitions": [
+          5858,
+          5929
+        ]
+      },
+      {
+        "newAthleteName": "Robert Ramsey 2nd (Person 2)",
+        "membershipNumber": "1070946",
+        "competitionCount": 2,
+        "competitions": [
+          6750,
+          6107
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Robert Ramsey 2nd",
+    "competitions": [
+      {
+        "meet_id": 5858,
+        "date": "2023-05-13",
+        "age_category": "Men's 13 Under Age Group",
+        "weight_class": "36kg",
+        "lifter_name": "Robert Ramsey 2nd",
+        "lifter_id": 56738,
+        "membershipNumbers": [
+          {
+            "athleteName": "Robert Ramsey 2nd",
+            "membershipNumber": "1070473",
+            "fullText": "1  -  39  Robert Ramsey 2nd  M  11  FORNEY BARBELL CLUB  1070473  33.38  2023-05-13  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNS0xMyIsIndlaWdodF9jbGFzcyI6NDJ9"
+      },
+      {
+        "meet_id": 6750,
+        "date": "2025-02-08",
+        "age_category": "Men's 13 Under Age Group",
+        "weight_class": "39kg",
+        "lifter_name": "Robert Ramsey 2nd",
+        "lifter_id": 56738,
+        "membershipNumbers": [
+          {
+            "athleteName": "Robert Ramsey 2nd",
+            "membershipNumber": "1070946",
+            "fullText": "2  -  51  Robert Ramsey 2nd  M  13  FORNEY BARBELL CLUB  1070946  37.1  2025-02-08  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMi0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMi0wOCIsIndlaWdodF9jbGFzcyI6NDN9"
+      },
+      {
+        "meet_id": 6107,
+        "date": "2023-11-04",
+        "age_category": "Men's 13 Under Age Group",
+        "weight_class": "36kg",
+        "lifter_name": "Robert Ramsey 2nd",
+        "lifter_id": 56738,
+        "membershipNumbers": [
+          {
+            "athleteName": "Robert Ramsey 2nd",
+            "membershipNumber": "1070946",
+            "fullText": "1  -  55  Robert Ramsey 2nd  M  11  FORNEY BARBELL CLUB  1070946  34.7  2023-11-04  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMS0wNCIsIndlaWdodF9jbGFzcyI6NDJ9"
+      },
+      {
+        "meet_id": 5929,
+        "date": "2023-06-24",
+        "age_category": "Men's 13 Under Age Group",
+        "weight_class": "36kg",
+        "lifter_name": "Robert Ramsey 2nd",
+        "lifter_id": 56738,
+        "membershipNumbers": [
+          {
+            "athleteName": "Robert Ramsey 2nd",
+            "membershipNumber": "1070473",
+            "fullText": "14  -  42  Robert Ramsey 2nd  M  11  FORNEY BARBELL CLUB  1070473  33.09  2023-06-24  -  National  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNi0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNi0yNCIsIndlaWdodF9jbGFzcyI6NDJ9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1070473": [
+          {
+            "meet_id": 5858,
+            "date": "2023-05-13",
+            "age_category": "Men's 13 Under Age Group",
+            "weight_class": "36kg",
+            "lifter_name": "Robert Ramsey 2nd",
+            "lifter_id": 56738,
+            "membershipNumbers": [
+              {
+                "athleteName": "Robert Ramsey 2nd",
+                "membershipNumber": "1070473",
+                "fullText": "1  -  39  Robert Ramsey 2nd  M  11  FORNEY BARBELL CLUB  1070473  33.38  2023-05-13  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNS0xMyIsIndlaWdodF9jbGFzcyI6NDJ9"
+          },
+          {
+            "meet_id": 5929,
+            "date": "2023-06-24",
+            "age_category": "Men's 13 Under Age Group",
+            "weight_class": "36kg",
+            "lifter_name": "Robert Ramsey 2nd",
+            "lifter_id": 56738,
+            "membershipNumbers": [
+              {
+                "athleteName": "Robert Ramsey 2nd",
+                "membershipNumber": "1070473",
+                "fullText": "14  -  42  Robert Ramsey 2nd  M  11  FORNEY BARBELL CLUB  1070473  33.09  2023-06-24  -  National  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNi0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNi0yNCIsIndlaWdodF9jbGFzcyI6NDJ9"
+          }
+        ],
+        "1070946": [
+          {
+            "meet_id": 6750,
+            "date": "2025-02-08",
+            "age_category": "Men's 13 Under Age Group",
+            "weight_class": "39kg",
+            "lifter_name": "Robert Ramsey 2nd",
+            "lifter_id": 56738,
+            "membershipNumbers": [
+              {
+                "athleteName": "Robert Ramsey 2nd",
+                "membershipNumber": "1070946",
+                "fullText": "2  -  51  Robert Ramsey 2nd  M  13  FORNEY BARBELL CLUB  1070946  37.1  2025-02-08  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMi0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMi0wOCIsIndlaWdodF9jbGFzcyI6NDN9"
+          },
+          {
+            "meet_id": 6107,
+            "date": "2023-11-04",
+            "age_category": "Men's 13 Under Age Group",
+            "weight_class": "36kg",
+            "lifter_name": "Robert Ramsey 2nd",
+            "lifter_id": 56738,
+            "membershipNumbers": [
+              {
+                "athleteName": "Robert Ramsey 2nd",
+                "membershipNumber": "1070946",
+                "fullText": "1  -  55  Robert Ramsey 2nd  M  11  FORNEY BARBELL CLUB  1070946  34.7  2023-11-04  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMS0wNCIsIndlaWdodF9jbGFzcyI6NDJ9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

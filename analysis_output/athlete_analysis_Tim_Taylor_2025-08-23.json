@@ -1,0 +1,234 @@
+{
+  "timestamp": "2025-08-23T00:23:18.511Z",
+  "athleteName": "Tim Taylor",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "201067": [
+        {
+          "meet_id": 1735,
+          "date": "2016-04-10",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Tim Taylor",
+          "lifter_id": 15841,
+          "membershipNumbers": [
+            {
+              "athleteName": "Tim Taylor",
+              "membershipNumber": "201067",
+              "fullText": "22  -  213  Tim Taylor  M  37  Huguenot Barbell  201067  93.2  2016-04-10  -  Local  New York"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0xMCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ],
+      "209128": [
+        {
+          "meet_id": 95,
+          "date": "2015-05-16",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Tim Taylor",
+          "lifter_id": 15841,
+          "membershipNumbers": [
+            {
+              "athleteName": "Tim Taylor",
+              "membershipNumber": "209128",
+              "fullText": "8  -  262  Tim Taylor  M  30  PITTSBURGH BBC  209128  99.12  2015-05-16  -  Local  Pennsylvania-West Virginia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0xNiIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 60,
+        "date": "2015-04-26",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Tim Taylor",
+        "lifter_id": 15841,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 94,
+        "date": "2015-02-21",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Tim Taylor",
+        "lifter_id": 15841,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMi0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMi0yMSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Tim Taylor",
+    "splits": [
+      {
+        "newAthleteName": "Tim Taylor (Person 1)",
+        "membershipNumber": "201067",
+        "competitionCount": 1,
+        "competitions": [
+          1735
+        ]
+      },
+      {
+        "newAthleteName": "Tim Taylor (Person 2)",
+        "membershipNumber": "209128",
+        "competitionCount": 1,
+        "competitions": [
+          95
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 60,
+        "date": "2015-04-26",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Tim Taylor",
+        "lifter_id": 15841,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 94,
+        "date": "2015-02-21",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Tim Taylor",
+        "lifter_id": 15841,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMi0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMi0yMSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Tim Taylor",
+    "competitions": [
+      {
+        "meet_id": 60,
+        "date": "2015-04-26",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Tim Taylor",
+        "lifter_id": 15841,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 94,
+        "date": "2015-02-21",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Tim Taylor",
+        "lifter_id": 15841,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMi0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMi0yMSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 95,
+        "date": "2015-05-16",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Tim Taylor",
+        "lifter_id": 15841,
+        "membershipNumbers": [
+          {
+            "athleteName": "Tim Taylor",
+            "membershipNumber": "209128",
+            "fullText": "8  -  262  Tim Taylor  M  30  PITTSBURGH BBC  209128  99.12  2015-05-16  -  Local  Pennsylvania-West Virginia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0xNiIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 1735,
+        "date": "2016-04-10",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Tim Taylor",
+        "lifter_id": 15841,
+        "membershipNumbers": [
+          {
+            "athleteName": "Tim Taylor",
+            "membershipNumber": "201067",
+            "fullText": "22  -  213  Tim Taylor  M  37  Huguenot Barbell  201067  93.2  2016-04-10  -  Local  New York"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0xMCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "201067": [
+          {
+            "meet_id": 1735,
+            "date": "2016-04-10",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Tim Taylor",
+            "lifter_id": 15841,
+            "membershipNumbers": [
+              {
+                "athleteName": "Tim Taylor",
+                "membershipNumber": "201067",
+                "fullText": "22  -  213  Tim Taylor  M  37  Huguenot Barbell  201067  93.2  2016-04-10  -  Local  New York"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0xMCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          }
+        ],
+        "209128": [
+          {
+            "meet_id": 95,
+            "date": "2015-05-16",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Tim Taylor",
+            "lifter_id": 15841,
+            "membershipNumbers": [
+              {
+                "athleteName": "Tim Taylor",
+                "membershipNumber": "209128",
+                "fullText": "8  -  262  Tim Taylor  M  30  PITTSBURGH BBC  209128  99.12  2015-05-16  -  Local  Pennsylvania-West Virginia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0xNiIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 60,
+          "date": "2015-04-26",
+          "age_category": "Open Men's",
+          "weight_class": "+105 kg",
+          "lifter_name": "Tim Taylor",
+          "lifter_id": 15841,
+          "membershipNumbers": [],
+          "error": "No division code found for: \"Open Men's +105 kg\""
+        },
+        {
+          "meet_id": 94,
+          "date": "2015-02-21",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Tim Taylor",
+          "lifter_id": 15841,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMi0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMi0yMSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

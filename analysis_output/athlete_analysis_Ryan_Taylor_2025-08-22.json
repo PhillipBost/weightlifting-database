@@ -1,0 +1,332 @@
+{
+  "timestamp": "2025-08-22T12:13:46.972Z",
+  "athleteName": "Ryan Taylor",
+  "totalCompetitions": 6,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "197981": [
+        {
+          "meet_id": 1188,
+          "date": "2014-06-07",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Ryan Taylor",
+          "lifter_id": 11813,
+          "membershipNumbers": [
+            {
+              "athleteName": "Ryan Taylor",
+              "membershipNumber": "197981",
+              "fullText": "26  -  261  Ryan Taylor  M  28  Academy of Weightlifting  197981  92.8  2014-06-07  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNi0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNi0wNyIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ],
+      "1063064": [
+        {
+          "meet_id": 5439,
+          "date": "2022-07-31",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "Ryan Taylor",
+          "lifter_id": 11813,
+          "membershipNumbers": [
+            {
+              "athleteName": "Ryan Taylor",
+              "membershipNumber": "1063064",
+              "fullText": "3  -  221  Ryan Taylor  M  24  -  1063064  82.4  2022-07-31  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNy0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNy0zMSIsIndlaWdodF9jbGFzcyI6ODZ9"
+        },
+        {
+          "meet_id": 6569,
+          "date": "2024-10-19",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "Ryan Taylor",
+          "lifter_id": 11813,
+          "membershipNumbers": [
+            {
+              "athleteName": "Ryan Taylor",
+              "membershipNumber": "1063064",
+              "fullText": "27  -  228  Ryan Taylor  M  26  -  1063064  86.2  2024-10-19  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0xOSIsIndlaWdodF9jbGFzcyI6ODZ9"
+        },
+        {
+          "meet_id": 6882,
+          "date": "2025-05-10",
+          "age_category": "Open Men's",
+          "weight_class": "96kg",
+          "lifter_name": "Ryan Taylor",
+          "lifter_id": 11813,
+          "membershipNumbers": [
+            {
+              "athleteName": "Ryan Taylor",
+              "membershipNumber": "1063064",
+              "fullText": "9  -  241  Ryan Taylor  M  27  -  1063064  91.15  2025-05-10  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNS0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNS0xMCIsIndlaWdodF9jbGFzcyI6ODd9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 311,
+        "date": "2015-03-29",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Ryan Taylor",
+        "lifter_id": 11813,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMy0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMy0yOSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 5854,
+        "date": "2023-05-07",
+        "age_category": "Open Men's",
+        "weight_class": "96kg",
+        "lifter_name": "Ryan Taylor",
+        "lifter_id": 11813,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNS0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNS0wNyIsIndlaWdodF9jbGFzcyI6ODd9"
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Ryan Taylor",
+    "splits": [
+      {
+        "newAthleteName": "Ryan Taylor (Person 1)",
+        "membershipNumber": "197981",
+        "competitionCount": 1,
+        "competitions": [
+          1188
+        ]
+      },
+      {
+        "newAthleteName": "Ryan Taylor (Person 2)",
+        "membershipNumber": "1063064",
+        "competitionCount": 3,
+        "competitions": [
+          5439,
+          6569,
+          6882
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 311,
+        "date": "2015-03-29",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Ryan Taylor",
+        "lifter_id": 11813,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMy0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMy0yOSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 5854,
+        "date": "2023-05-07",
+        "age_category": "Open Men's",
+        "weight_class": "96kg",
+        "lifter_name": "Ryan Taylor",
+        "lifter_id": 11813,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNS0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNS0wNyIsIndlaWdodF9jbGFzcyI6ODd9"
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Ryan Taylor",
+    "competitions": [
+      {
+        "meet_id": 311,
+        "date": "2015-03-29",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Ryan Taylor",
+        "lifter_id": 11813,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMy0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMy0yOSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 5854,
+        "date": "2023-05-07",
+        "age_category": "Open Men's",
+        "weight_class": "96kg",
+        "lifter_name": "Ryan Taylor",
+        "lifter_id": 11813,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNS0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNS0wNyIsIndlaWdodF9jbGFzcyI6ODd9"
+      },
+      {
+        "meet_id": 1188,
+        "date": "2014-06-07",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Ryan Taylor",
+        "lifter_id": 11813,
+        "membershipNumbers": [
+          {
+            "athleteName": "Ryan Taylor",
+            "membershipNumber": "197981",
+            "fullText": "26  -  261  Ryan Taylor  M  28  Academy of Weightlifting  197981  92.8  2014-06-07  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNi0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNi0wNyIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 5439,
+        "date": "2022-07-31",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Ryan Taylor",
+        "lifter_id": 11813,
+        "membershipNumbers": [
+          {
+            "athleteName": "Ryan Taylor",
+            "membershipNumber": "1063064",
+            "fullText": "3  -  221  Ryan Taylor  M  24  -  1063064  82.4  2022-07-31  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNy0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNy0zMSIsIndlaWdodF9jbGFzcyI6ODZ9"
+      },
+      {
+        "meet_id": 6569,
+        "date": "2024-10-19",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Ryan Taylor",
+        "lifter_id": 11813,
+        "membershipNumbers": [
+          {
+            "athleteName": "Ryan Taylor",
+            "membershipNumber": "1063064",
+            "fullText": "27  -  228  Ryan Taylor  M  26  -  1063064  86.2  2024-10-19  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0xOSIsIndlaWdodF9jbGFzcyI6ODZ9"
+      },
+      {
+        "meet_id": 6882,
+        "date": "2025-05-10",
+        "age_category": "Open Men's",
+        "weight_class": "96kg",
+        "lifter_name": "Ryan Taylor",
+        "lifter_id": 11813,
+        "membershipNumbers": [
+          {
+            "athleteName": "Ryan Taylor",
+            "membershipNumber": "1063064",
+            "fullText": "9  -  241  Ryan Taylor  M  27  -  1063064  91.15  2025-05-10  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNS0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNS0xMCIsIndlaWdodF9jbGFzcyI6ODd9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "197981": [
+          {
+            "meet_id": 1188,
+            "date": "2014-06-07",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Ryan Taylor",
+            "lifter_id": 11813,
+            "membershipNumbers": [
+              {
+                "athleteName": "Ryan Taylor",
+                "membershipNumber": "197981",
+                "fullText": "26  -  261  Ryan Taylor  M  28  Academy of Weightlifting  197981  92.8  2014-06-07  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNi0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNi0wNyIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          }
+        ],
+        "1063064": [
+          {
+            "meet_id": 5439,
+            "date": "2022-07-31",
+            "age_category": "Open Men's",
+            "weight_class": "89kg",
+            "lifter_name": "Ryan Taylor",
+            "lifter_id": 11813,
+            "membershipNumbers": [
+              {
+                "athleteName": "Ryan Taylor",
+                "membershipNumber": "1063064",
+                "fullText": "3  -  221  Ryan Taylor  M  24  -  1063064  82.4  2022-07-31  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNy0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNy0zMSIsIndlaWdodF9jbGFzcyI6ODZ9"
+          },
+          {
+            "meet_id": 6569,
+            "date": "2024-10-19",
+            "age_category": "Open Men's",
+            "weight_class": "89kg",
+            "lifter_name": "Ryan Taylor",
+            "lifter_id": 11813,
+            "membershipNumbers": [
+              {
+                "athleteName": "Ryan Taylor",
+                "membershipNumber": "1063064",
+                "fullText": "27  -  228  Ryan Taylor  M  26  -  1063064  86.2  2024-10-19  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0xOSIsIndlaWdodF9jbGFzcyI6ODZ9"
+          },
+          {
+            "meet_id": 6882,
+            "date": "2025-05-10",
+            "age_category": "Open Men's",
+            "weight_class": "96kg",
+            "lifter_name": "Ryan Taylor",
+            "lifter_id": 11813,
+            "membershipNumbers": [
+              {
+                "athleteName": "Ryan Taylor",
+                "membershipNumber": "1063064",
+                "fullText": "9  -  241  Ryan Taylor  M  27  -  1063064  91.15  2025-05-10  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNS0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNS0xMCIsIndlaWdodF9jbGFzcyI6ODd9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 311,
+          "date": "2015-03-29",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Ryan Taylor",
+          "lifter_id": 11813,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMy0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMy0yOSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        },
+        {
+          "meet_id": 5854,
+          "date": "2023-05-07",
+          "age_category": "Open Men's",
+          "weight_class": "96kg",
+          "lifter_name": "Ryan Taylor",
+          "lifter_id": 11813,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNS0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNS0wNyIsIndlaWdodF9jbGFzcyI6ODd9"
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

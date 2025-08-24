@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T16:38:28.568Z",
+  "athleteName": "Andrew Johnson",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1006827": [
+        {
+          "meet_id": 1690,
+          "date": "2016-05-21",
+          "age_category": "Men's 13 Under Age Group",
+          "weight_class": "50 Kg",
+          "lifter_name": "Andrew Johnson",
+          "lifter_id": 21792,
+          "membershipNumbers": [
+            {
+              "athleteName": "Andrew Johnson",
+              "membershipNumber": "1006827",
+              "fullText": "1  -  72  Andrew Johnson  M  13  AURORA WEIGHTLIFTING CLUB  1006827  46.2  2016-05-21  -  Local  Illinois"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0yMSIsIndlaWdodF9jbGFzcyI6MjkzfQ=="
+        }
+      ],
+      "1035583": [
+        {
+          "meet_id": 3483,
+          "date": "2018-11-03",
+          "age_category": "Men's 13 Under Age Group",
+          "weight_class": "44kg",
+          "lifter_name": "Andrew Johnson",
+          "lifter_id": 21792,
+          "membershipNumbers": [
+            {
+              "athleteName": "Andrew Johnson",
+              "membershipNumber": "1035583",
+              "fullText": "4  -  38  Andrew Johnson  M  11  BLOOMINGTON-NORMAL BARBELL CLUB  1035583  44  2018-11-03  -  Local  Illinois"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMS0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMS0wMyIsIndlaWdodF9jbGFzcyI6NzQ2fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Andrew Johnson",
+    "splits": [
+      {
+        "newAthleteName": "Andrew Johnson (Person 1)",
+        "membershipNumber": "1006827",
+        "competitionCount": 1,
+        "competitions": [
+          1690
+        ]
+      },
+      {
+        "newAthleteName": "Andrew Johnson (Person 2)",
+        "membershipNumber": "1035583",
+        "competitionCount": 1,
+        "competitions": [
+          3483
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Andrew Johnson",
+    "competitions": [
+      {
+        "meet_id": 1690,
+        "date": "2016-05-21",
+        "age_category": "Men's 13 Under Age Group",
+        "weight_class": "50 Kg",
+        "lifter_name": "Andrew Johnson",
+        "lifter_id": 21792,
+        "membershipNumbers": [
+          {
+            "athleteName": "Andrew Johnson",
+            "membershipNumber": "1006827",
+            "fullText": "1  -  72  Andrew Johnson  M  13  AURORA WEIGHTLIFTING CLUB  1006827  46.2  2016-05-21  -  Local  Illinois"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0yMSIsIndlaWdodF9jbGFzcyI6MjkzfQ=="
+      },
+      {
+        "meet_id": 3483,
+        "date": "2018-11-03",
+        "age_category": "Men's 13 Under Age Group",
+        "weight_class": "44kg",
+        "lifter_name": "Andrew Johnson",
+        "lifter_id": 21792,
+        "membershipNumbers": [
+          {
+            "athleteName": "Andrew Johnson",
+            "membershipNumber": "1035583",
+            "fullText": "4  -  38  Andrew Johnson  M  11  BLOOMINGTON-NORMAL BARBELL CLUB  1035583  44  2018-11-03  -  Local  Illinois"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMS0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMS0wMyIsIndlaWdodF9jbGFzcyI6NzQ2fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1006827": [
+          {
+            "meet_id": 1690,
+            "date": "2016-05-21",
+            "age_category": "Men's 13 Under Age Group",
+            "weight_class": "50 Kg",
+            "lifter_name": "Andrew Johnson",
+            "lifter_id": 21792,
+            "membershipNumbers": [
+              {
+                "athleteName": "Andrew Johnson",
+                "membershipNumber": "1006827",
+                "fullText": "1  -  72  Andrew Johnson  M  13  AURORA WEIGHTLIFTING CLUB  1006827  46.2  2016-05-21  -  Local  Illinois"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0yMSIsIndlaWdodF9jbGFzcyI6MjkzfQ=="
+          }
+        ],
+        "1035583": [
+          {
+            "meet_id": 3483,
+            "date": "2018-11-03",
+            "age_category": "Men's 13 Under Age Group",
+            "weight_class": "44kg",
+            "lifter_name": "Andrew Johnson",
+            "lifter_id": 21792,
+            "membershipNumbers": [
+              {
+                "athleteName": "Andrew Johnson",
+                "membershipNumber": "1035583",
+                "fullText": "4  -  38  Andrew Johnson  M  11  BLOOMINGTON-NORMAL BARBELL CLUB  1035583  44  2018-11-03  -  Local  Illinois"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMS0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMS0wMyIsIndlaWdodF9jbGFzcyI6NzQ2fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

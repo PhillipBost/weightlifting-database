@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T09:29:40.723Z",
+  "athleteName": "Luis Gonzalez",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1012851": [
+        {
+          "meet_id": 6864,
+          "date": "2025-05-04",
+          "age_category": "Open Men's",
+          "weight_class": "96kg",
+          "lifter_name": "Luis Gonzalez",
+          "lifter_id": 61183,
+          "membershipNumbers": [
+            {
+              "athleteName": "Luis Gonzalez",
+              "membershipNumber": "1012851",
+              "fullText": "2  -  265  Luis Gonzalez  M  31  FORZA WEIGHTLIFTING CLUB  1012851  95  2025-05-04  -  Local  Illinois"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNS0wNCIsIndlaWdodF9jbGFzcyI6ODd9"
+        }
+      ],
+      "1076122": [
+        {
+          "meet_id": 6486,
+          "date": "2024-08-03",
+          "age_category": "Junior Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Luis Gonzalez",
+          "lifter_id": 61183,
+          "membershipNumbers": [
+            {
+              "athleteName": "Luis Gonzalez",
+              "membershipNumber": "1076122",
+              "fullText": "13  -  140  Luis Gonzalez  M  18  Maxx Effort Training  1076122  74  2024-08-03  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOC0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOC0wMyIsIndlaWdodF9jbGFzcyI6NjV9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Luis Gonzalez",
+    "splits": [
+      {
+        "newAthleteName": "Luis Gonzalez (Person 1)",
+        "membershipNumber": "1012851",
+        "competitionCount": 1,
+        "competitions": [
+          6864
+        ]
+      },
+      {
+        "newAthleteName": "Luis Gonzalez (Person 2)",
+        "membershipNumber": "1076122",
+        "competitionCount": 1,
+        "competitions": [
+          6486
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Luis Gonzalez",
+    "competitions": [
+      {
+        "meet_id": 6486,
+        "date": "2024-08-03",
+        "age_category": "Junior Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Luis Gonzalez",
+        "lifter_id": 61183,
+        "membershipNumbers": [
+          {
+            "athleteName": "Luis Gonzalez",
+            "membershipNumber": "1076122",
+            "fullText": "13  -  140  Luis Gonzalez  M  18  Maxx Effort Training  1076122  74  2024-08-03  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOC0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOC0wMyIsIndlaWdodF9jbGFzcyI6NjV9"
+      },
+      {
+        "meet_id": 6864,
+        "date": "2025-05-04",
+        "age_category": "Open Men's",
+        "weight_class": "96kg",
+        "lifter_name": "Luis Gonzalez",
+        "lifter_id": 61183,
+        "membershipNumbers": [
+          {
+            "athleteName": "Luis Gonzalez",
+            "membershipNumber": "1012851",
+            "fullText": "2  -  265  Luis Gonzalez  M  31  FORZA WEIGHTLIFTING CLUB  1012851  95  2025-05-04  -  Local  Illinois"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNS0wNCIsIndlaWdodF9jbGFzcyI6ODd9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1012851": [
+          {
+            "meet_id": 6864,
+            "date": "2025-05-04",
+            "age_category": "Open Men's",
+            "weight_class": "96kg",
+            "lifter_name": "Luis Gonzalez",
+            "lifter_id": 61183,
+            "membershipNumbers": [
+              {
+                "athleteName": "Luis Gonzalez",
+                "membershipNumber": "1012851",
+                "fullText": "2  -  265  Luis Gonzalez  M  31  FORZA WEIGHTLIFTING CLUB  1012851  95  2025-05-04  -  Local  Illinois"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNS0wNCIsIndlaWdodF9jbGFzcyI6ODd9"
+          }
+        ],
+        "1076122": [
+          {
+            "meet_id": 6486,
+            "date": "2024-08-03",
+            "age_category": "Junior Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Luis Gonzalez",
+            "lifter_id": 61183,
+            "membershipNumbers": [
+              {
+                "athleteName": "Luis Gonzalez",
+                "membershipNumber": "1076122",
+                "fullText": "13  -  140  Luis Gonzalez  M  18  Maxx Effort Training  1076122  74  2024-08-03  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOC0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOC0wMyIsIndlaWdodF9jbGFzcyI6NjV9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

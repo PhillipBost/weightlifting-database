@@ -1,0 +1,112 @@
+{
+  "timestamp": "2025-08-23T02:00:16.668Z",
+  "athleteName": "Manuel Gonzalez",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 1,
+    "membershipGroups": {
+      "1016640": [
+        {
+          "meet_id": 2397,
+          "date": "2017-02-18",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Manuel Gonzalez",
+          "lifter_id": 20930,
+          "membershipNumbers": [
+            {
+              "athleteName": "Manuel Gonzalez",
+              "membershipNumber": "1016640",
+              "fullText": "14  -  234  Manuel Gonzalez  M  27  TSS BARBELL  1016640  83.1  2017-02-18  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xOCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 1555,
+        "date": "2014-02-22",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Manuel Gonzalez",
+        "lifter_id": 20930,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      }
+    ],
+    "splitRequired": false
+  },
+  "splitPlan": {
+    "action": "NO_SPLIT_NEEDED",
+    "reason": "Only one distinct athlete found"
+  },
+  "rawData": {
+    "athleteName": "Manuel Gonzalez",
+    "competitions": [
+      {
+        "meet_id": 1555,
+        "date": "2014-02-22",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Manuel Gonzalez",
+        "lifter_id": 20930,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 2397,
+        "date": "2017-02-18",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Manuel Gonzalez",
+        "lifter_id": 20930,
+        "membershipNumbers": [
+          {
+            "athleteName": "Manuel Gonzalez",
+            "membershipNumber": "1016640",
+            "fullText": "14  -  234  Manuel Gonzalez  M  27  TSS BARBELL  1016640  83.1  2017-02-18  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xOCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 1,
+      "membershipGroups": {
+        "1016640": [
+          {
+            "meet_id": 2397,
+            "date": "2017-02-18",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Manuel Gonzalez",
+            "lifter_id": 20930,
+            "membershipNumbers": [
+              {
+                "athleteName": "Manuel Gonzalez",
+                "membershipNumber": "1016640",
+                "fullText": "14  -  234  Manuel Gonzalez  M  27  TSS BARBELL  1016640  83.1  2017-02-18  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xOCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 1555,
+          "date": "2014-02-22",
+          "age_category": "Open Men's",
+          "weight_class": "+105 kg",
+          "lifter_name": "Manuel Gonzalez",
+          "lifter_id": 20930,
+          "membershipNumbers": [],
+          "error": "No division code found for: \"Open Men's +105 kg\""
+        }
+      ],
+      "splitRequired": false
+    }
+  }
+}

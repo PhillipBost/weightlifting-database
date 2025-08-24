@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T20:34:11.003Z",
+  "athleteName": "Kimberly Wilson",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "214799": [
+        {
+          "meet_id": 231,
+          "date": "2015-10-11",
+          "age_category": "Open Women's",
+          "weight_class": "69 kg",
+          "lifter_name": "Kimberly Wilson",
+          "lifter_id": 10074,
+          "membershipNumbers": [
+            {
+              "athleteName": "Kimberly Wilson",
+              "membershipNumber": "214799",
+              "fullText": "10  -  158  Kimberly Wilson  F  30  Spoon Barbell Club  214799  67.7  2015-10-11  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xMSIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+        }
+      ],
+      "1007502": [
+        {
+          "meet_id": 1780,
+          "date": "2016-06-05",
+          "age_category": "Open Women's",
+          "weight_class": "75 kg",
+          "lifter_name": "Kimberly Wilson",
+          "lifter_id": 10074,
+          "membershipNumbers": [
+            {
+              "athleteName": "Kimberly Wilson",
+              "membershipNumber": "1007502",
+              "fullText": "6  -  109  Kimberly Wilson  F  22  Crofton CrossFit  1007502  69.25  2016-06-05  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0wNSIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Kimberly Wilson",
+    "splits": [
+      {
+        "newAthleteName": "Kimberly Wilson (Person 1)",
+        "membershipNumber": "214799",
+        "competitionCount": 1,
+        "competitions": [
+          231
+        ]
+      },
+      {
+        "newAthleteName": "Kimberly Wilson (Person 2)",
+        "membershipNumber": "1007502",
+        "competitionCount": 1,
+        "competitions": [
+          1780
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Kimberly Wilson",
+    "competitions": [
+      {
+        "meet_id": 231,
+        "date": "2015-10-11",
+        "age_category": "Open Women's",
+        "weight_class": "69 kg",
+        "lifter_name": "Kimberly Wilson",
+        "lifter_id": 10074,
+        "membershipNumbers": [
+          {
+            "athleteName": "Kimberly Wilson",
+            "membershipNumber": "214799",
+            "fullText": "10  -  158  Kimberly Wilson  F  30  Spoon Barbell Club  214799  67.7  2015-10-11  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xMSIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+      },
+      {
+        "meet_id": 1780,
+        "date": "2016-06-05",
+        "age_category": "Open Women's",
+        "weight_class": "75 kg",
+        "lifter_name": "Kimberly Wilson",
+        "lifter_id": 10074,
+        "membershipNumbers": [
+          {
+            "athleteName": "Kimberly Wilson",
+            "membershipNumber": "1007502",
+            "fullText": "6  -  109  Kimberly Wilson  F  22  Crofton CrossFit  1007502  69.25  2016-06-05  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0wNSIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "214799": [
+          {
+            "meet_id": 231,
+            "date": "2015-10-11",
+            "age_category": "Open Women's",
+            "weight_class": "69 kg",
+            "lifter_name": "Kimberly Wilson",
+            "lifter_id": 10074,
+            "membershipNumbers": [
+              {
+                "athleteName": "Kimberly Wilson",
+                "membershipNumber": "214799",
+                "fullText": "10  -  158  Kimberly Wilson  F  30  Spoon Barbell Club  214799  67.7  2015-10-11  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xMSIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+          }
+        ],
+        "1007502": [
+          {
+            "meet_id": 1780,
+            "date": "2016-06-05",
+            "age_category": "Open Women's",
+            "weight_class": "75 kg",
+            "lifter_name": "Kimberly Wilson",
+            "lifter_id": 10074,
+            "membershipNumbers": [
+              {
+                "athleteName": "Kimberly Wilson",
+                "membershipNumber": "1007502",
+                "fullText": "6  -  109  Kimberly Wilson  F  22  Crofton CrossFit  1007502  69.25  2016-06-05  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0wNSIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

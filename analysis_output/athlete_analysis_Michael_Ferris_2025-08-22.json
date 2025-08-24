@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T08:15:36.661Z",
+  "athleteName": "Michael Ferris",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1028524": [
+        {
+          "meet_id": 3480,
+          "date": "2018-08-04",
+          "age_category": "Open Men's",
+          "weight_class": "109kg",
+          "lifter_name": "Michael Ferris",
+          "lifter_id": 38054,
+          "membershipNumbers": [
+            {
+              "athleteName": "Michael Ferris",
+              "membershipNumber": "1028524",
+              "fullText": "12  -  155  Michael Ferris  M  48  -  1028524  106.8  2018-08-04  -  Local  Michigan"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOC0wNCIsIndlaWdodF9jbGFzcyI6ODl9"
+        }
+      ],
+      "1041082": [
+        {
+          "meet_id": 3992,
+          "date": "2019-07-06",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "Michael Ferris",
+          "lifter_id": 38054,
+          "membershipNumbers": [
+            {
+              "athleteName": "Michael Ferris",
+              "membershipNumber": "1041082",
+              "fullText": "17  -  100  Michael Ferris  M  70  -  1041082  88.2  2019-07-06  -  Local  Michigan"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0wNiIsIndlaWdodF9jbGFzcyI6ODZ9"
+        },
+        {
+          "meet_id": 3931,
+          "date": "2019-06-01",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "Michael Ferris",
+          "lifter_id": 38054,
+          "membershipNumbers": [
+            {
+              "athleteName": "Michael Ferris",
+              "membershipNumber": "1041082",
+              "fullText": "26  -  105  Michael Ferris  M  70  -  1041082  88.6  2019-06-01  -  Local  Michigan"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNi0wMSIsIndlaWdodF9jbGFzcyI6ODZ9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Michael Ferris",
+    "splits": [
+      {
+        "newAthleteName": "Michael Ferris (Person 1)",
+        "membershipNumber": "1028524",
+        "competitionCount": 1,
+        "competitions": [
+          3480
+        ]
+      },
+      {
+        "newAthleteName": "Michael Ferris (Person 2)",
+        "membershipNumber": "1041082",
+        "competitionCount": 2,
+        "competitions": [
+          3992,
+          3931
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Michael Ferris",
+    "competitions": [
+      {
+        "meet_id": 3480,
+        "date": "2018-08-04",
+        "age_category": "Open Men's",
+        "weight_class": "109kg",
+        "lifter_name": "Michael Ferris",
+        "lifter_id": 38054,
+        "membershipNumbers": [
+          {
+            "athleteName": "Michael Ferris",
+            "membershipNumber": "1028524",
+            "fullText": "12  -  155  Michael Ferris  M  48  -  1028524  106.8  2018-08-04  -  Local  Michigan"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOC0wNCIsIndlaWdodF9jbGFzcyI6ODl9"
+      },
+      {
+        "meet_id": 3992,
+        "date": "2019-07-06",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Michael Ferris",
+        "lifter_id": 38054,
+        "membershipNumbers": [
+          {
+            "athleteName": "Michael Ferris",
+            "membershipNumber": "1041082",
+            "fullText": "17  -  100  Michael Ferris  M  70  -  1041082  88.2  2019-07-06  -  Local  Michigan"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0wNiIsIndlaWdodF9jbGFzcyI6ODZ9"
+      },
+      {
+        "meet_id": 3931,
+        "date": "2019-06-01",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Michael Ferris",
+        "lifter_id": 38054,
+        "membershipNumbers": [
+          {
+            "athleteName": "Michael Ferris",
+            "membershipNumber": "1041082",
+            "fullText": "26  -  105  Michael Ferris  M  70  -  1041082  88.6  2019-06-01  -  Local  Michigan"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNi0wMSIsIndlaWdodF9jbGFzcyI6ODZ9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1028524": [
+          {
+            "meet_id": 3480,
+            "date": "2018-08-04",
+            "age_category": "Open Men's",
+            "weight_class": "109kg",
+            "lifter_name": "Michael Ferris",
+            "lifter_id": 38054,
+            "membershipNumbers": [
+              {
+                "athleteName": "Michael Ferris",
+                "membershipNumber": "1028524",
+                "fullText": "12  -  155  Michael Ferris  M  48  -  1028524  106.8  2018-08-04  -  Local  Michigan"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOC0wNCIsIndlaWdodF9jbGFzcyI6ODl9"
+          }
+        ],
+        "1041082": [
+          {
+            "meet_id": 3992,
+            "date": "2019-07-06",
+            "age_category": "Open Men's",
+            "weight_class": "89kg",
+            "lifter_name": "Michael Ferris",
+            "lifter_id": 38054,
+            "membershipNumbers": [
+              {
+                "athleteName": "Michael Ferris",
+                "membershipNumber": "1041082",
+                "fullText": "17  -  100  Michael Ferris  M  70  -  1041082  88.2  2019-07-06  -  Local  Michigan"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0wNiIsIndlaWdodF9jbGFzcyI6ODZ9"
+          },
+          {
+            "meet_id": 3931,
+            "date": "2019-06-01",
+            "age_category": "Open Men's",
+            "weight_class": "89kg",
+            "lifter_name": "Michael Ferris",
+            "lifter_id": 38054,
+            "membershipNumbers": [
+              {
+                "athleteName": "Michael Ferris",
+                "membershipNumber": "1041082",
+                "fullText": "26  -  105  Michael Ferris  M  70  -  1041082  88.6  2019-06-01  -  Local  Michigan"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNi0wMSIsIndlaWdodF9jbGFzcyI6ODZ9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

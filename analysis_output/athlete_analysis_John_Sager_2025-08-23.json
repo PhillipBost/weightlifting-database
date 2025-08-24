@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-23T01:32:41.528Z",
+  "athleteName": "John Sager",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "174986": [
+        {
+          "meet_id": 1406,
+          "date": "2014-05-17",
+          "age_category": "Open Men's",
+          "weight_class": "69 kg",
+          "lifter_name": "John Sager",
+          "lifter_id": 20287,
+          "membershipNumbers": [
+            {
+              "athleteName": "John Sager",
+              "membershipNumber": "174986",
+              "fullText": "11  -  165  John Sager  M  33  -  174986  65.9  2014-05-17  -  Local  Mountain North"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNS0xNyIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+        }
+      ],
+      "1075958": [
+        {
+          "meet_id": 6377,
+          "date": "2024-05-11",
+          "age_category": "Men's Masters (45-49)",
+          "weight_class": "89kg",
+          "lifter_name": "John Sager",
+          "lifter_id": 20287,
+          "membershipNumbers": [
+            {
+              "athleteName": "John Sager",
+              "membershipNumber": "1075958",
+              "fullText": "2  -  183  John Sager  M  48  -  1075958  88.85  2024-05-11  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNS0xMSIsIndlaWdodF9jbGFzcyI6MTQ2fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "John Sager",
+    "splits": [
+      {
+        "newAthleteName": "John Sager (Person 1)",
+        "membershipNumber": "174986",
+        "competitionCount": 1,
+        "competitions": [
+          1406
+        ]
+      },
+      {
+        "newAthleteName": "John Sager (Person 2)",
+        "membershipNumber": "1075958",
+        "competitionCount": 1,
+        "competitions": [
+          6377
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "John Sager",
+    "competitions": [
+      {
+        "meet_id": 6377,
+        "date": "2024-05-11",
+        "age_category": "Men's Masters (45-49)",
+        "weight_class": "89kg",
+        "lifter_name": "John Sager",
+        "lifter_id": 20287,
+        "membershipNumbers": [
+          {
+            "athleteName": "John Sager",
+            "membershipNumber": "1075958",
+            "fullText": "2  -  183  John Sager  M  48  -  1075958  88.85  2024-05-11  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNS0xMSIsIndlaWdodF9jbGFzcyI6MTQ2fQ=="
+      },
+      {
+        "meet_id": 1406,
+        "date": "2014-05-17",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "John Sager",
+        "lifter_id": 20287,
+        "membershipNumbers": [
+          {
+            "athleteName": "John Sager",
+            "membershipNumber": "174986",
+            "fullText": "11  -  165  John Sager  M  33  -  174986  65.9  2014-05-17  -  Local  Mountain North"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNS0xNyIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "174986": [
+          {
+            "meet_id": 1406,
+            "date": "2014-05-17",
+            "age_category": "Open Men's",
+            "weight_class": "69 kg",
+            "lifter_name": "John Sager",
+            "lifter_id": 20287,
+            "membershipNumbers": [
+              {
+                "athleteName": "John Sager",
+                "membershipNumber": "174986",
+                "fullText": "11  -  165  John Sager  M  33  -  174986  65.9  2014-05-17  -  Local  Mountain North"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNS0xNyIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+          }
+        ],
+        "1075958": [
+          {
+            "meet_id": 6377,
+            "date": "2024-05-11",
+            "age_category": "Men's Masters (45-49)",
+            "weight_class": "89kg",
+            "lifter_name": "John Sager",
+            "lifter_id": 20287,
+            "membershipNumbers": [
+              {
+                "athleteName": "John Sager",
+                "membershipNumber": "1075958",
+                "fullText": "2  -  183  John Sager  M  48  -  1075958  88.85  2024-05-11  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNS0xMSIsIndlaWdodF9jbGFzcyI6MTQ2fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

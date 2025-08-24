@@ -1,0 +1,194 @@
+{
+  "timestamp": "2025-08-22T06:05:36.074Z",
+  "athleteName": "John Carter",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "196252": [
+        {
+          "meet_id": 1214,
+          "date": "2014-04-20",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "John Carter",
+          "lifter_id": 11848,
+          "membershipNumbers": [
+            {
+              "athleteName": "John Carter",
+              "membershipNumber": "196252",
+              "fullText": "2  -  146  John Carter  M  16  SQUATMORE WLC  196252  87  2014-04-20  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNC0yMCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ],
+      "203056": [
+        {
+          "meet_id": 1385,
+          "date": "2014-10-19",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "John Carter",
+          "lifter_id": 11848,
+          "membershipNumbers": [
+            {
+              "athleteName": "John Carter",
+              "membershipNumber": "203056",
+              "fullText": "1  -  252  John Carter  M  26  -  203056  83.2  2014-10-19  -  Local  Mountain North"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMC0xOSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 313,
+        "date": "2015-05-03",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "John Carter",
+        "lifter_id": 11848,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0wMyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "John Carter",
+    "splits": [
+      {
+        "newAthleteName": "John Carter (Person 1)",
+        "membershipNumber": "196252",
+        "competitionCount": 1,
+        "competitions": [
+          1214
+        ]
+      },
+      {
+        "newAthleteName": "John Carter (Person 2)",
+        "membershipNumber": "203056",
+        "competitionCount": 1,
+        "competitions": [
+          1385
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 313,
+        "date": "2015-05-03",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "John Carter",
+        "lifter_id": 11848,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0wMyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "John Carter",
+    "competitions": [
+      {
+        "meet_id": 1214,
+        "date": "2014-04-20",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "John Carter",
+        "lifter_id": 11848,
+        "membershipNumbers": [
+          {
+            "athleteName": "John Carter",
+            "membershipNumber": "196252",
+            "fullText": "2  -  146  John Carter  M  16  SQUATMORE WLC  196252  87  2014-04-20  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNC0yMCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 1385,
+        "date": "2014-10-19",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "John Carter",
+        "lifter_id": 11848,
+        "membershipNumbers": [
+          {
+            "athleteName": "John Carter",
+            "membershipNumber": "203056",
+            "fullText": "1  -  252  John Carter  M  26  -  203056  83.2  2014-10-19  -  Local  Mountain North"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMC0xOSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 313,
+        "date": "2015-05-03",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "John Carter",
+        "lifter_id": 11848,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0wMyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "196252": [
+          {
+            "meet_id": 1214,
+            "date": "2014-04-20",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "John Carter",
+            "lifter_id": 11848,
+            "membershipNumbers": [
+              {
+                "athleteName": "John Carter",
+                "membershipNumber": "196252",
+                "fullText": "2  -  146  John Carter  M  16  SQUATMORE WLC  196252  87  2014-04-20  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNC0yMCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          }
+        ],
+        "203056": [
+          {
+            "meet_id": 1385,
+            "date": "2014-10-19",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "John Carter",
+            "lifter_id": 11848,
+            "membershipNumbers": [
+              {
+                "athleteName": "John Carter",
+                "membershipNumber": "203056",
+                "fullText": "1  -  252  John Carter  M  26  -  203056  83.2  2014-10-19  -  Local  Mountain North"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMC0xOSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 313,
+          "date": "2015-05-03",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "John Carter",
+          "lifter_id": 11848,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0wMyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

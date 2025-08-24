@@ -1,0 +1,234 @@
+{
+  "timestamp": "2025-08-22T10:47:16.702Z",
+  "athleteName": "Eric Wang",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1052561": [
+        {
+          "meet_id": 5082,
+          "date": "2022-01-08",
+          "age_category": "Junior Men's",
+          "weight_class": "89kg",
+          "lifter_name": "Eric Wang",
+          "lifter_id": 50338,
+          "membershipNumbers": [
+            {
+              "athleteName": "Eric Wang",
+              "membershipNumber": "1052561",
+              "fullText": "6  -  201  Eric Wang  M  19  Weightlifting.Org  1052561  84.4  2022-01-08  -  Local  New York"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMS0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMS0wOCIsIndlaWdodF9jbGFzcyI6NjZ9"
+        }
+      ],
+      "1073666": [
+        {
+          "meet_id": 6194,
+          "date": "2024-01-20",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "Eric Wang",
+          "lifter_id": 50338,
+          "membershipNumbers": [
+            {
+              "athleteName": "Eric Wang",
+              "membershipNumber": "1073666",
+              "fullText": "30  -  171  Eric Wang  M  23  Jake Pudenz Strength & Power  1073666  87.75  2024-01-20  -  Local  Iowa-Nebraska"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMS0yMCIsIndlaWdodF9jbGFzcyI6ODZ9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 5078,
+        "date": "2021-10-30",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Eric Wang",
+        "lifter_id": 50338,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMC0zMCIsIndlaWdodF9jbGFzcyI6ODZ9"
+      },
+      {
+        "meet_id": 6372,
+        "date": "2024-05-11",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Eric Wang",
+        "lifter_id": 50338,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNS0xMSIsIndlaWdodF9jbGFzcyI6ODZ9"
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Eric Wang",
+    "splits": [
+      {
+        "newAthleteName": "Eric Wang (Person 1)",
+        "membershipNumber": "1052561",
+        "competitionCount": 1,
+        "competitions": [
+          5082
+        ]
+      },
+      {
+        "newAthleteName": "Eric Wang (Person 2)",
+        "membershipNumber": "1073666",
+        "competitionCount": 1,
+        "competitions": [
+          6194
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 5078,
+        "date": "2021-10-30",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Eric Wang",
+        "lifter_id": 50338,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMC0zMCIsIndlaWdodF9jbGFzcyI6ODZ9"
+      },
+      {
+        "meet_id": 6372,
+        "date": "2024-05-11",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Eric Wang",
+        "lifter_id": 50338,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNS0xMSIsIndlaWdodF9jbGFzcyI6ODZ9"
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Eric Wang",
+    "competitions": [
+      {
+        "meet_id": 5082,
+        "date": "2022-01-08",
+        "age_category": "Junior Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Eric Wang",
+        "lifter_id": 50338,
+        "membershipNumbers": [
+          {
+            "athleteName": "Eric Wang",
+            "membershipNumber": "1052561",
+            "fullText": "6  -  201  Eric Wang  M  19  Weightlifting.Org  1052561  84.4  2022-01-08  -  Local  New York"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMS0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMS0wOCIsIndlaWdodF9jbGFzcyI6NjZ9"
+      },
+      {
+        "meet_id": 6194,
+        "date": "2024-01-20",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Eric Wang",
+        "lifter_id": 50338,
+        "membershipNumbers": [
+          {
+            "athleteName": "Eric Wang",
+            "membershipNumber": "1073666",
+            "fullText": "30  -  171  Eric Wang  M  23  Jake Pudenz Strength & Power  1073666  87.75  2024-01-20  -  Local  Iowa-Nebraska"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMS0yMCIsIndlaWdodF9jbGFzcyI6ODZ9"
+      },
+      {
+        "meet_id": 5078,
+        "date": "2021-10-30",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Eric Wang",
+        "lifter_id": 50338,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMC0zMCIsIndlaWdodF9jbGFzcyI6ODZ9"
+      },
+      {
+        "meet_id": 6372,
+        "date": "2024-05-11",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Eric Wang",
+        "lifter_id": 50338,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNS0xMSIsIndlaWdodF9jbGFzcyI6ODZ9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1052561": [
+          {
+            "meet_id": 5082,
+            "date": "2022-01-08",
+            "age_category": "Junior Men's",
+            "weight_class": "89kg",
+            "lifter_name": "Eric Wang",
+            "lifter_id": 50338,
+            "membershipNumbers": [
+              {
+                "athleteName": "Eric Wang",
+                "membershipNumber": "1052561",
+                "fullText": "6  -  201  Eric Wang  M  19  Weightlifting.Org  1052561  84.4  2022-01-08  -  Local  New York"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMS0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMS0wOCIsIndlaWdodF9jbGFzcyI6NjZ9"
+          }
+        ],
+        "1073666": [
+          {
+            "meet_id": 6194,
+            "date": "2024-01-20",
+            "age_category": "Open Men's",
+            "weight_class": "89kg",
+            "lifter_name": "Eric Wang",
+            "lifter_id": 50338,
+            "membershipNumbers": [
+              {
+                "athleteName": "Eric Wang",
+                "membershipNumber": "1073666",
+                "fullText": "30  -  171  Eric Wang  M  23  Jake Pudenz Strength & Power  1073666  87.75  2024-01-20  -  Local  Iowa-Nebraska"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMS0yMCIsIndlaWdodF9jbGFzcyI6ODZ9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 5078,
+          "date": "2021-10-30",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "Eric Wang",
+          "lifter_id": 50338,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMC0zMCIsIndlaWdodF9jbGFzcyI6ODZ9"
+        },
+        {
+          "meet_id": 6372,
+          "date": "2024-05-11",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "Eric Wang",
+          "lifter_id": 50338,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNS0xMSIsIndlaWdodF9jbGFzcyI6ODZ9"
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

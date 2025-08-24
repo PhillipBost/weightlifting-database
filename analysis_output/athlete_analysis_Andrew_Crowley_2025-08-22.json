@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T04:51:02.044Z",
+  "athleteName": "Andrew Crowley",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "136104": [
+        {
+          "meet_id": 745,
+          "date": "2013-04-26",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Andrew Crowley",
+          "lifter_id": 5428,
+          "membershipNumbers": [
+            {
+              "athleteName": "Andrew Crowley",
+              "membershipNumber": "136104",
+              "fullText": "1  -  250  Andrew Crowley  M  26  -  136104  98.88  2013-04-26  -  Local  New York"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNC0yNiIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        }
+      ],
+      "1043480": [
+        {
+          "meet_id": 4144,
+          "date": "2019-08-03",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Andrew Crowley",
+          "lifter_id": 5428,
+          "membershipNumbers": [
+            {
+              "athleteName": "Andrew Crowley",
+              "membershipNumber": "1043480",
+              "fullText": "7  -  205  Andrew Crowley  M  25  Team Florida Pensacola  1043480  78.5  2019-08-03  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOC0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOC0wMyIsIndlaWdodF9jbGFzcyI6ODV9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Andrew Crowley",
+    "splits": [
+      {
+        "newAthleteName": "Andrew Crowley (Person 1)",
+        "membershipNumber": "136104",
+        "competitionCount": 1,
+        "competitions": [
+          745
+        ]
+      },
+      {
+        "newAthleteName": "Andrew Crowley (Person 2)",
+        "membershipNumber": "1043480",
+        "competitionCount": 1,
+        "competitions": [
+          4144
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Andrew Crowley",
+    "competitions": [
+      {
+        "meet_id": 745,
+        "date": "2013-04-26",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Andrew Crowley",
+        "lifter_id": 5428,
+        "membershipNumbers": [
+          {
+            "athleteName": "Andrew Crowley",
+            "membershipNumber": "136104",
+            "fullText": "1  -  250  Andrew Crowley  M  26  -  136104  98.88  2013-04-26  -  Local  New York"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNC0yNiIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 4144,
+        "date": "2019-08-03",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Andrew Crowley",
+        "lifter_id": 5428,
+        "membershipNumbers": [
+          {
+            "athleteName": "Andrew Crowley",
+            "membershipNumber": "1043480",
+            "fullText": "7  -  205  Andrew Crowley  M  25  Team Florida Pensacola  1043480  78.5  2019-08-03  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOC0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOC0wMyIsIndlaWdodF9jbGFzcyI6ODV9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "136104": [
+          {
+            "meet_id": 745,
+            "date": "2013-04-26",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Andrew Crowley",
+            "lifter_id": 5428,
+            "membershipNumbers": [
+              {
+                "athleteName": "Andrew Crowley",
+                "membershipNumber": "136104",
+                "fullText": "1  -  250  Andrew Crowley  M  26  -  136104  98.88  2013-04-26  -  Local  New York"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNC0yNiIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          }
+        ],
+        "1043480": [
+          {
+            "meet_id": 4144,
+            "date": "2019-08-03",
+            "age_category": "Open Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Andrew Crowley",
+            "lifter_id": 5428,
+            "membershipNumbers": [
+              {
+                "athleteName": "Andrew Crowley",
+                "membershipNumber": "1043480",
+                "fullText": "7  -  205  Andrew Crowley  M  25  Team Florida Pensacola  1043480  78.5  2019-08-03  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOC0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOC0wMyIsIndlaWdodF9jbGFzcyI6ODV9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

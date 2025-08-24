@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T19:22:16.630Z",
+  "athleteName": "Emily Hu",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1004217": [
+        {
+          "meet_id": 1826,
+          "date": "2016-04-23",
+          "age_category": "Open Women's",
+          "weight_class": "58 kg",
+          "lifter_name": "Emily Hu",
+          "lifter_id": 23438,
+          "membershipNumbers": [
+            {
+              "athleteName": "Emily Hu",
+              "membershipNumber": "1004217",
+              "fullText": "11  -  122  Emily Hu  F  24  -  1004217  57.2  2016-04-23  -  Local  Ohio"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0yMyIsIndlaWdodF9jbGFzcyI6MzY0fQ=="
+        }
+      ],
+      "1011257": [
+        {
+          "meet_id": 2293,
+          "date": "2016-12-18",
+          "age_category": "Open Women's",
+          "weight_class": "63 kg",
+          "lifter_name": "Emily Hu",
+          "lifter_id": 23438,
+          "membershipNumbers": [
+            {
+              "athleteName": "Emily Hu",
+              "membershipNumber": "1011257",
+              "fullText": "1  -  157  Emily Hu  F  34  THE SPORTS PALACE  1011257  60.52  2016-12-18  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMi0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMi0xOCIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+        },
+        {
+          "meet_id": 2351,
+          "date": "2017-02-19",
+          "age_category": "Women's Masters (35-39)",
+          "weight_class": "63 kg",
+          "lifter_name": "Emily Hu",
+          "lifter_id": 23438,
+          "membershipNumbers": [
+            {
+              "athleteName": "Emily Hu",
+              "membershipNumber": "1011257",
+              "fullText": "2  -  153  Emily Hu  F  35  THE SPORTS PALACE  1011257  58.7  2017-02-19  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xOSIsIndlaWdodF9jbGFzcyI6MzgyfQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Emily Hu",
+    "splits": [
+      {
+        "newAthleteName": "Emily Hu (Person 1)",
+        "membershipNumber": "1004217",
+        "competitionCount": 1,
+        "competitions": [
+          1826
+        ]
+      },
+      {
+        "newAthleteName": "Emily Hu (Person 2)",
+        "membershipNumber": "1011257",
+        "competitionCount": 2,
+        "competitions": [
+          2293,
+          2351
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Emily Hu",
+    "competitions": [
+      {
+        "meet_id": 2293,
+        "date": "2016-12-18",
+        "age_category": "Open Women's",
+        "weight_class": "63 kg",
+        "lifter_name": "Emily Hu",
+        "lifter_id": 23438,
+        "membershipNumbers": [
+          {
+            "athleteName": "Emily Hu",
+            "membershipNumber": "1011257",
+            "fullText": "1  -  157  Emily Hu  F  34  THE SPORTS PALACE  1011257  60.52  2016-12-18  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMi0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMi0xOCIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+      },
+      {
+        "meet_id": 2351,
+        "date": "2017-02-19",
+        "age_category": "Women's Masters (35-39)",
+        "weight_class": "63 kg",
+        "lifter_name": "Emily Hu",
+        "lifter_id": 23438,
+        "membershipNumbers": [
+          {
+            "athleteName": "Emily Hu",
+            "membershipNumber": "1011257",
+            "fullText": "2  -  153  Emily Hu  F  35  THE SPORTS PALACE  1011257  58.7  2017-02-19  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xOSIsIndlaWdodF9jbGFzcyI6MzgyfQ=="
+      },
+      {
+        "meet_id": 1826,
+        "date": "2016-04-23",
+        "age_category": "Open Women's",
+        "weight_class": "58 kg",
+        "lifter_name": "Emily Hu",
+        "lifter_id": 23438,
+        "membershipNumbers": [
+          {
+            "athleteName": "Emily Hu",
+            "membershipNumber": "1004217",
+            "fullText": "11  -  122  Emily Hu  F  24  -  1004217  57.2  2016-04-23  -  Local  Ohio"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0yMyIsIndlaWdodF9jbGFzcyI6MzY0fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1004217": [
+          {
+            "meet_id": 1826,
+            "date": "2016-04-23",
+            "age_category": "Open Women's",
+            "weight_class": "58 kg",
+            "lifter_name": "Emily Hu",
+            "lifter_id": 23438,
+            "membershipNumbers": [
+              {
+                "athleteName": "Emily Hu",
+                "membershipNumber": "1004217",
+                "fullText": "11  -  122  Emily Hu  F  24  -  1004217  57.2  2016-04-23  -  Local  Ohio"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0yMyIsIndlaWdodF9jbGFzcyI6MzY0fQ=="
+          }
+        ],
+        "1011257": [
+          {
+            "meet_id": 2293,
+            "date": "2016-12-18",
+            "age_category": "Open Women's",
+            "weight_class": "63 kg",
+            "lifter_name": "Emily Hu",
+            "lifter_id": 23438,
+            "membershipNumbers": [
+              {
+                "athleteName": "Emily Hu",
+                "membershipNumber": "1011257",
+                "fullText": "1  -  157  Emily Hu  F  34  THE SPORTS PALACE  1011257  60.52  2016-12-18  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMi0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMi0xOCIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+          },
+          {
+            "meet_id": 2351,
+            "date": "2017-02-19",
+            "age_category": "Women's Masters (35-39)",
+            "weight_class": "63 kg",
+            "lifter_name": "Emily Hu",
+            "lifter_id": 23438,
+            "membershipNumbers": [
+              {
+                "athleteName": "Emily Hu",
+                "membershipNumber": "1011257",
+                "fullText": "2  -  153  Emily Hu  F  35  THE SPORTS PALACE  1011257  58.7  2017-02-19  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xOSIsIndlaWdodF9jbGFzcyI6MzgyfQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

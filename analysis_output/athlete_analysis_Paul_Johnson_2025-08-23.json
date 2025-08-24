@@ -1,0 +1,332 @@
+{
+  "timestamp": "2025-08-23T00:24:14.433Z",
+  "athleteName": "Paul Johnson",
+  "totalCompetitions": 6,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "221557": [
+        {
+          "meet_id": 1871,
+          "date": "2016-07-31",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Paul Johnson",
+          "lifter_id": 22535,
+          "membershipNumbers": [
+            {
+              "athleteName": "Paul Johnson",
+              "membershipNumber": "221557",
+              "fullText": "12  -  168  Paul Johnson  M  29  4 Star Strength  221557  97.4  2016-07-31  -  Local  Michigan"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNy0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNy0zMSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        }
+      ],
+      "1042499": [
+        {
+          "meet_id": 4492,
+          "date": "2020-07-18",
+          "age_category": "Open Men's",
+          "weight_class": "96kg",
+          "lifter_name": "Paul Johnson",
+          "lifter_id": 22535,
+          "membershipNumbers": [
+            {
+              "athleteName": "Paul Johnson",
+              "membershipNumber": "1042499",
+              "fullText": "4  -  227  Paul Johnson  M  24  -  1042499  92.7  2020-07-18  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wNy0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wNy0xOCIsIndlaWdodF9jbGFzcyI6ODd9"
+        },
+        {
+          "meet_id": 4731,
+          "date": "2021-03-07",
+          "age_category": "Open Men's",
+          "weight_class": "96kg",
+          "lifter_name": "Paul Johnson",
+          "lifter_id": 22535,
+          "membershipNumbers": [
+            {
+              "athleteName": "Paul Johnson",
+              "membershipNumber": "1042499",
+              "fullText": "27  -  234  Paul Johnson  M  25  -  1042499  95.4  2021-03-07  -  National  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMy0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMy0wNyIsIndlaWdodF9jbGFzcyI6ODd9"
+        },
+        {
+          "meet_id": 4081,
+          "date": "2019-06-15",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "Paul Johnson",
+          "lifter_id": 22535,
+          "membershipNumbers": [
+            {
+              "athleteName": "Paul Johnson",
+              "membershipNumber": "1042499",
+              "fullText": "24  -  223  Paul Johnson  M  23  -  1042499  87.22  2019-06-15  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNi0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNi0xNSIsIndlaWdodF9jbGFzcyI6ODZ9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 4314,
+        "date": "2020-02-08",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Paul Johnson",
+        "lifter_id": 22535,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMi0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMi0wOCIsIndlaWdodF9jbGFzcyI6ODZ9"
+      },
+      {
+        "meet_id": 1754,
+        "date": "2016-04-09",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Paul Johnson",
+        "lifter_id": 22535,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0wOSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Paul Johnson",
+    "splits": [
+      {
+        "newAthleteName": "Paul Johnson (Person 1)",
+        "membershipNumber": "221557",
+        "competitionCount": 1,
+        "competitions": [
+          1871
+        ]
+      },
+      {
+        "newAthleteName": "Paul Johnson (Person 2)",
+        "membershipNumber": "1042499",
+        "competitionCount": 3,
+        "competitions": [
+          4492,
+          4731,
+          4081
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 4314,
+        "date": "2020-02-08",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Paul Johnson",
+        "lifter_id": 22535,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMi0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMi0wOCIsIndlaWdodF9jbGFzcyI6ODZ9"
+      },
+      {
+        "meet_id": 1754,
+        "date": "2016-04-09",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Paul Johnson",
+        "lifter_id": 22535,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0wOSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Paul Johnson",
+    "competitions": [
+      {
+        "meet_id": 4314,
+        "date": "2020-02-08",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Paul Johnson",
+        "lifter_id": 22535,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMi0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMi0wOCIsIndlaWdodF9jbGFzcyI6ODZ9"
+      },
+      {
+        "meet_id": 4492,
+        "date": "2020-07-18",
+        "age_category": "Open Men's",
+        "weight_class": "96kg",
+        "lifter_name": "Paul Johnson",
+        "lifter_id": 22535,
+        "membershipNumbers": [
+          {
+            "athleteName": "Paul Johnson",
+            "membershipNumber": "1042499",
+            "fullText": "4  -  227  Paul Johnson  M  24  -  1042499  92.7  2020-07-18  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wNy0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wNy0xOCIsIndlaWdodF9jbGFzcyI6ODd9"
+      },
+      {
+        "meet_id": 4731,
+        "date": "2021-03-07",
+        "age_category": "Open Men's",
+        "weight_class": "96kg",
+        "lifter_name": "Paul Johnson",
+        "lifter_id": 22535,
+        "membershipNumbers": [
+          {
+            "athleteName": "Paul Johnson",
+            "membershipNumber": "1042499",
+            "fullText": "27  -  234  Paul Johnson  M  25  -  1042499  95.4  2021-03-07  -  National  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMy0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMy0wNyIsIndlaWdodF9jbGFzcyI6ODd9"
+      },
+      {
+        "meet_id": 4081,
+        "date": "2019-06-15",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Paul Johnson",
+        "lifter_id": 22535,
+        "membershipNumbers": [
+          {
+            "athleteName": "Paul Johnson",
+            "membershipNumber": "1042499",
+            "fullText": "24  -  223  Paul Johnson  M  23  -  1042499  87.22  2019-06-15  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNi0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNi0xNSIsIndlaWdodF9jbGFzcyI6ODZ9"
+      },
+      {
+        "meet_id": 1754,
+        "date": "2016-04-09",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Paul Johnson",
+        "lifter_id": 22535,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0wOSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 1871,
+        "date": "2016-07-31",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Paul Johnson",
+        "lifter_id": 22535,
+        "membershipNumbers": [
+          {
+            "athleteName": "Paul Johnson",
+            "membershipNumber": "221557",
+            "fullText": "12  -  168  Paul Johnson  M  29  4 Star Strength  221557  97.4  2016-07-31  -  Local  Michigan"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNy0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNy0zMSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "221557": [
+          {
+            "meet_id": 1871,
+            "date": "2016-07-31",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Paul Johnson",
+            "lifter_id": 22535,
+            "membershipNumbers": [
+              {
+                "athleteName": "Paul Johnson",
+                "membershipNumber": "221557",
+                "fullText": "12  -  168  Paul Johnson  M  29  4 Star Strength  221557  97.4  2016-07-31  -  Local  Michigan"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNy0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNy0zMSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          }
+        ],
+        "1042499": [
+          {
+            "meet_id": 4492,
+            "date": "2020-07-18",
+            "age_category": "Open Men's",
+            "weight_class": "96kg",
+            "lifter_name": "Paul Johnson",
+            "lifter_id": 22535,
+            "membershipNumbers": [
+              {
+                "athleteName": "Paul Johnson",
+                "membershipNumber": "1042499",
+                "fullText": "4  -  227  Paul Johnson  M  24  -  1042499  92.7  2020-07-18  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wNy0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wNy0xOCIsIndlaWdodF9jbGFzcyI6ODd9"
+          },
+          {
+            "meet_id": 4731,
+            "date": "2021-03-07",
+            "age_category": "Open Men's",
+            "weight_class": "96kg",
+            "lifter_name": "Paul Johnson",
+            "lifter_id": 22535,
+            "membershipNumbers": [
+              {
+                "athleteName": "Paul Johnson",
+                "membershipNumber": "1042499",
+                "fullText": "27  -  234  Paul Johnson  M  25  -  1042499  95.4  2021-03-07  -  National  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMy0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMy0wNyIsIndlaWdodF9jbGFzcyI6ODd9"
+          },
+          {
+            "meet_id": 4081,
+            "date": "2019-06-15",
+            "age_category": "Open Men's",
+            "weight_class": "89kg",
+            "lifter_name": "Paul Johnson",
+            "lifter_id": 22535,
+            "membershipNumbers": [
+              {
+                "athleteName": "Paul Johnson",
+                "membershipNumber": "1042499",
+                "fullText": "24  -  223  Paul Johnson  M  23  -  1042499  87.22  2019-06-15  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNi0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNi0xNSIsIndlaWdodF9jbGFzcyI6ODZ9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 4314,
+          "date": "2020-02-08",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "Paul Johnson",
+          "lifter_id": 22535,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMi0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMi0wOCIsIndlaWdodF9jbGFzcyI6ODZ9"
+        },
+        {
+          "meet_id": 1754,
+          "date": "2016-04-09",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Paul Johnson",
+          "lifter_id": 22535,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0wOSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T08:47:39.063Z",
+  "athleteName": "Christopher Cunningham",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "190622": [
+        {
+          "meet_id": 1298,
+          "date": "2014-03-09",
+          "age_category": "Men's 14-15 Age Group",
+          "weight_class": "50 Kg",
+          "lifter_name": "Christopher Cunningham",
+          "lifter_id": 19497,
+          "membershipNumbers": [
+            {
+              "athleteName": "Christopher Cunningham",
+              "membershipNumber": "190622",
+              "fullText": "2  -  93  Christopher Cunningham  M  14  -  190622  49.8  2014-03-09  -  Local  New England"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0wOSIsIndlaWdodF9jbGFzcyI6MzA2fQ=="
+        },
+        {
+          "meet_id": 1309,
+          "date": "2014-01-26",
+          "age_category": "Men's 14-15 Age Group",
+          "weight_class": "50 Kg",
+          "lifter_name": "Christopher Cunningham",
+          "lifter_id": 19497,
+          "membershipNumbers": [
+            {
+              "athleteName": "Christopher Cunningham",
+              "membershipNumber": "190622",
+              "fullText": "1  -  88  Christopher Cunningham  M  14  -  190622  47.3  2014-01-26  -  Local  New England"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMS0yNiIsIndlaWdodF9jbGFzcyI6MzA2fQ=="
+        }
+      ],
+      "1001521": [
+        {
+          "meet_id": 3126,
+          "date": "2018-04-08",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Christopher Cunningham",
+          "lifter_id": 19497,
+          "membershipNumbers": [
+            {
+              "athleteName": "Christopher Cunningham",
+              "membershipNumber": "1001521",
+              "fullText": "10  -  251  Christopher Cunningham  M  37  -  1001521  93  2018-04-08  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNC0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNC0wOCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Christopher Cunningham",
+    "splits": [
+      {
+        "newAthleteName": "Christopher Cunningham (Person 1)",
+        "membershipNumber": "190622",
+        "competitionCount": 2,
+        "competitions": [
+          1298,
+          1309
+        ]
+      },
+      {
+        "newAthleteName": "Christopher Cunningham (Person 2)",
+        "membershipNumber": "1001521",
+        "competitionCount": 1,
+        "competitions": [
+          3126
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Christopher Cunningham",
+    "competitions": [
+      {
+        "meet_id": 1298,
+        "date": "2014-03-09",
+        "age_category": "Men's 14-15 Age Group",
+        "weight_class": "50 Kg",
+        "lifter_name": "Christopher Cunningham",
+        "lifter_id": 19497,
+        "membershipNumbers": [
+          {
+            "athleteName": "Christopher Cunningham",
+            "membershipNumber": "190622",
+            "fullText": "2  -  93  Christopher Cunningham  M  14  -  190622  49.8  2014-03-09  -  Local  New England"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0wOSIsIndlaWdodF9jbGFzcyI6MzA2fQ=="
+      },
+      {
+        "meet_id": 3126,
+        "date": "2018-04-08",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Christopher Cunningham",
+        "lifter_id": 19497,
+        "membershipNumbers": [
+          {
+            "athleteName": "Christopher Cunningham",
+            "membershipNumber": "1001521",
+            "fullText": "10  -  251  Christopher Cunningham  M  37  -  1001521  93  2018-04-08  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNC0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNC0wOCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 1309,
+        "date": "2014-01-26",
+        "age_category": "Men's 14-15 Age Group",
+        "weight_class": "50 Kg",
+        "lifter_name": "Christopher Cunningham",
+        "lifter_id": 19497,
+        "membershipNumbers": [
+          {
+            "athleteName": "Christopher Cunningham",
+            "membershipNumber": "190622",
+            "fullText": "1  -  88  Christopher Cunningham  M  14  -  190622  47.3  2014-01-26  -  Local  New England"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMS0yNiIsIndlaWdodF9jbGFzcyI6MzA2fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "190622": [
+          {
+            "meet_id": 1298,
+            "date": "2014-03-09",
+            "age_category": "Men's 14-15 Age Group",
+            "weight_class": "50 Kg",
+            "lifter_name": "Christopher Cunningham",
+            "lifter_id": 19497,
+            "membershipNumbers": [
+              {
+                "athleteName": "Christopher Cunningham",
+                "membershipNumber": "190622",
+                "fullText": "2  -  93  Christopher Cunningham  M  14  -  190622  49.8  2014-03-09  -  Local  New England"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0wOSIsIndlaWdodF9jbGFzcyI6MzA2fQ=="
+          },
+          {
+            "meet_id": 1309,
+            "date": "2014-01-26",
+            "age_category": "Men's 14-15 Age Group",
+            "weight_class": "50 Kg",
+            "lifter_name": "Christopher Cunningham",
+            "lifter_id": 19497,
+            "membershipNumbers": [
+              {
+                "athleteName": "Christopher Cunningham",
+                "membershipNumber": "190622",
+                "fullText": "1  -  88  Christopher Cunningham  M  14  -  190622  47.3  2014-01-26  -  Local  New England"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMS0yNiIsIndlaWdodF9jbGFzcyI6MzA2fQ=="
+          }
+        ],
+        "1001521": [
+          {
+            "meet_id": 3126,
+            "date": "2018-04-08",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Christopher Cunningham",
+            "lifter_id": 19497,
+            "membershipNumbers": [
+              {
+                "athleteName": "Christopher Cunningham",
+                "membershipNumber": "1001521",
+                "fullText": "10  -  251  Christopher Cunningham  M  37  -  1001521  93  2018-04-08  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNC0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNC0wOCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

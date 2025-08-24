@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-22T08:08:18.237Z",
+  "athleteName": "Mark Harvey",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1028857": [
+        {
+          "meet_id": 3601,
+          "date": "2019-01-13",
+          "age_category": "Open Men's",
+          "weight_class": "73kg",
+          "lifter_name": "Mark Harvey",
+          "lifter_id": 34496,
+          "membershipNumbers": [
+            {
+              "athleteName": "Mark Harvey",
+              "membershipNumber": "1028857",
+              "fullText": "8  -  186  Mark Harvey  M  30  -  1028857  71.8  2019-01-13  -  Local  Pennsylvania-West Virginia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0xMyIsIndlaWdodF9jbGFzcyI6ODR9"
+        },
+        {
+          "meet_id": 2950,
+          "date": "2018-07-15",
+          "age_category": "Open Men's",
+          "weight_class": "69 kg",
+          "lifter_name": "Mark Harvey",
+          "lifter_id": 34496,
+          "membershipNumbers": [
+            {
+              "athleteName": "Mark Harvey",
+              "membershipNumber": "1028857",
+              "fullText": "4  -  188  Mark Harvey  M  29  -  1028857  68.4  2018-07-15  -  Local  Pennsylvania-West Virginia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNy0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNy0xNSIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+        }
+      ],
+      "1078315": [
+        {
+          "meet_id": 6621,
+          "date": "2024-11-02",
+          "age_category": "Open Men's",
+          "weight_class": "96kg",
+          "lifter_name": "Mark Harvey",
+          "lifter_id": 34496,
+          "membershipNumbers": [
+            {
+              "athleteName": "Mark Harvey",
+              "membershipNumber": "1078315",
+              "fullText": "12  -  214  Mark Harvey  M  36  -  1078315  93.6  2024-11-02  -  Local  Pennsylvania-West Virginia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMS0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMS0wMiIsIndlaWdodF9jbGFzcyI6ODd9"
+        },
+        {
+          "meet_id": 6826,
+          "date": "2025-04-12",
+          "age_category": "Men's Masters (35-39)",
+          "weight_class": "96kg",
+          "lifter_name": "Mark Harvey",
+          "lifter_id": 34496,
+          "membershipNumbers": [
+            {
+              "athleteName": "Mark Harvey",
+              "membershipNumber": "1078315",
+              "fullText": "4  -  215  Mark Harvey  M  37  -  1078315  92.95  2025-04-12  -  Local  Pennsylvania-West Virginia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNC0xMiIsIndlaWdodF9jbGFzcyI6MTA3fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Mark Harvey",
+    "splits": [
+      {
+        "newAthleteName": "Mark Harvey (Person 1)",
+        "membershipNumber": "1028857",
+        "competitionCount": 2,
+        "competitions": [
+          3601,
+          2950
+        ]
+      },
+      {
+        "newAthleteName": "Mark Harvey (Person 2)",
+        "membershipNumber": "1078315",
+        "competitionCount": 2,
+        "competitions": [
+          6621,
+          6826
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Mark Harvey",
+    "competitions": [
+      {
+        "meet_id": 6621,
+        "date": "2024-11-02",
+        "age_category": "Open Men's",
+        "weight_class": "96kg",
+        "lifter_name": "Mark Harvey",
+        "lifter_id": 34496,
+        "membershipNumbers": [
+          {
+            "athleteName": "Mark Harvey",
+            "membershipNumber": "1078315",
+            "fullText": "12  -  214  Mark Harvey  M  36  -  1078315  93.6  2024-11-02  -  Local  Pennsylvania-West Virginia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMS0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMS0wMiIsIndlaWdodF9jbGFzcyI6ODd9"
+      },
+      {
+        "meet_id": 3601,
+        "date": "2019-01-13",
+        "age_category": "Open Men's",
+        "weight_class": "73kg",
+        "lifter_name": "Mark Harvey",
+        "lifter_id": 34496,
+        "membershipNumbers": [
+          {
+            "athleteName": "Mark Harvey",
+            "membershipNumber": "1028857",
+            "fullText": "8  -  186  Mark Harvey  M  30  -  1028857  71.8  2019-01-13  -  Local  Pennsylvania-West Virginia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0xMyIsIndlaWdodF9jbGFzcyI6ODR9"
+      },
+      {
+        "meet_id": 6826,
+        "date": "2025-04-12",
+        "age_category": "Men's Masters (35-39)",
+        "weight_class": "96kg",
+        "lifter_name": "Mark Harvey",
+        "lifter_id": 34496,
+        "membershipNumbers": [
+          {
+            "athleteName": "Mark Harvey",
+            "membershipNumber": "1078315",
+            "fullText": "4  -  215  Mark Harvey  M  37  -  1078315  92.95  2025-04-12  -  Local  Pennsylvania-West Virginia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNC0xMiIsIndlaWdodF9jbGFzcyI6MTA3fQ=="
+      },
+      {
+        "meet_id": 2950,
+        "date": "2018-07-15",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "Mark Harvey",
+        "lifter_id": 34496,
+        "membershipNumbers": [
+          {
+            "athleteName": "Mark Harvey",
+            "membershipNumber": "1028857",
+            "fullText": "4  -  188  Mark Harvey  M  29  -  1028857  68.4  2018-07-15  -  Local  Pennsylvania-West Virginia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNy0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNy0xNSIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1028857": [
+          {
+            "meet_id": 3601,
+            "date": "2019-01-13",
+            "age_category": "Open Men's",
+            "weight_class": "73kg",
+            "lifter_name": "Mark Harvey",
+            "lifter_id": 34496,
+            "membershipNumbers": [
+              {
+                "athleteName": "Mark Harvey",
+                "membershipNumber": "1028857",
+                "fullText": "8  -  186  Mark Harvey  M  30  -  1028857  71.8  2019-01-13  -  Local  Pennsylvania-West Virginia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0xMyIsIndlaWdodF9jbGFzcyI6ODR9"
+          },
+          {
+            "meet_id": 2950,
+            "date": "2018-07-15",
+            "age_category": "Open Men's",
+            "weight_class": "69 kg",
+            "lifter_name": "Mark Harvey",
+            "lifter_id": 34496,
+            "membershipNumbers": [
+              {
+                "athleteName": "Mark Harvey",
+                "membershipNumber": "1028857",
+                "fullText": "4  -  188  Mark Harvey  M  29  -  1028857  68.4  2018-07-15  -  Local  Pennsylvania-West Virginia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNy0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNy0xNSIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+          }
+        ],
+        "1078315": [
+          {
+            "meet_id": 6621,
+            "date": "2024-11-02",
+            "age_category": "Open Men's",
+            "weight_class": "96kg",
+            "lifter_name": "Mark Harvey",
+            "lifter_id": 34496,
+            "membershipNumbers": [
+              {
+                "athleteName": "Mark Harvey",
+                "membershipNumber": "1078315",
+                "fullText": "12  -  214  Mark Harvey  M  36  -  1078315  93.6  2024-11-02  -  Local  Pennsylvania-West Virginia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMS0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMS0wMiIsIndlaWdodF9jbGFzcyI6ODd9"
+          },
+          {
+            "meet_id": 6826,
+            "date": "2025-04-12",
+            "age_category": "Men's Masters (35-39)",
+            "weight_class": "96kg",
+            "lifter_name": "Mark Harvey",
+            "lifter_id": 34496,
+            "membershipNumbers": [
+              {
+                "athleteName": "Mark Harvey",
+                "membershipNumber": "1078315",
+                "fullText": "4  -  215  Mark Harvey  M  37  -  1078315  92.95  2025-04-12  -  Local  Pennsylvania-West Virginia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNC0xMiIsIndlaWdodF9jbGFzcyI6MTA3fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

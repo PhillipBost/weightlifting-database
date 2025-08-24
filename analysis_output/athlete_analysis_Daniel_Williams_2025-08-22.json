@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T07:01:01.353Z",
+  "athleteName": "Daniel Williams",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "157843": [
+        {
+          "meet_id": 1407,
+          "date": "2014-07-27",
+          "age_category": "Open Men's",
+          "weight_class": "69 kg",
+          "lifter_name": "Daniel Williams",
+          "lifter_id": 20292,
+          "membershipNumbers": [
+            {
+              "athleteName": "Daniel Williams",
+              "membershipNumber": "157843",
+              "fullText": "3  -  183  Daniel Williams  M  28  -  157843  67.85  2014-07-27  -  Local  Georgia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNy0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNy0yNyIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+        }
+      ],
+      "1051251": [
+        {
+          "meet_id": 4545,
+          "date": "2020-12-12",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Daniel Williams",
+          "lifter_id": 20292,
+          "membershipNumbers": [
+            {
+              "athleteName": "Daniel Williams",
+              "membershipNumber": "1051251",
+              "fullText": "29  -  144  Daniel Williams  M  24  Albany CrossFit Barbell Club  1051251  79.1  2020-12-12  -  Local  New York"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0xMi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0xMi0xMiIsIndlaWdodF9jbGFzcyI6ODV9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Daniel Williams",
+    "splits": [
+      {
+        "newAthleteName": "Daniel Williams (Person 1)",
+        "membershipNumber": "157843",
+        "competitionCount": 1,
+        "competitions": [
+          1407
+        ]
+      },
+      {
+        "newAthleteName": "Daniel Williams (Person 2)",
+        "membershipNumber": "1051251",
+        "competitionCount": 1,
+        "competitions": [
+          4545
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Daniel Williams",
+    "competitions": [
+      {
+        "meet_id": 1407,
+        "date": "2014-07-27",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "Daniel Williams",
+        "lifter_id": 20292,
+        "membershipNumbers": [
+          {
+            "athleteName": "Daniel Williams",
+            "membershipNumber": "157843",
+            "fullText": "3  -  183  Daniel Williams  M  28  -  157843  67.85  2014-07-27  -  Local  Georgia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNy0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNy0yNyIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      },
+      {
+        "meet_id": 4545,
+        "date": "2020-12-12",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Daniel Williams",
+        "lifter_id": 20292,
+        "membershipNumbers": [
+          {
+            "athleteName": "Daniel Williams",
+            "membershipNumber": "1051251",
+            "fullText": "29  -  144  Daniel Williams  M  24  Albany CrossFit Barbell Club  1051251  79.1  2020-12-12  -  Local  New York"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0xMi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0xMi0xMiIsIndlaWdodF9jbGFzcyI6ODV9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "157843": [
+          {
+            "meet_id": 1407,
+            "date": "2014-07-27",
+            "age_category": "Open Men's",
+            "weight_class": "69 kg",
+            "lifter_name": "Daniel Williams",
+            "lifter_id": 20292,
+            "membershipNumbers": [
+              {
+                "athleteName": "Daniel Williams",
+                "membershipNumber": "157843",
+                "fullText": "3  -  183  Daniel Williams  M  28  -  157843  67.85  2014-07-27  -  Local  Georgia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNy0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNy0yNyIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+          }
+        ],
+        "1051251": [
+          {
+            "meet_id": 4545,
+            "date": "2020-12-12",
+            "age_category": "Open Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Daniel Williams",
+            "lifter_id": 20292,
+            "membershipNumbers": [
+              {
+                "athleteName": "Daniel Williams",
+                "membershipNumber": "1051251",
+                "fullText": "29  -  144  Daniel Williams  M  24  Albany CrossFit Barbell Club  1051251  79.1  2020-12-12  -  Local  New York"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0xMi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0xMi0xMiIsIndlaWdodF9jbGFzcyI6ODV9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

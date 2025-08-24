@@ -1,0 +1,260 @@
+{
+  "timestamp": "2025-08-23T01:08:24.714Z",
+  "athleteName": "Joseph Stewart",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 3,
+    "membershipGroups": {
+      "209684": [
+        {
+          "meet_id": 2278,
+          "date": "2017-01-29",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Joseph Stewart",
+          "lifter_id": 8322,
+          "membershipNumbers": [
+            {
+              "athleteName": "Joseph Stewart",
+              "membershipNumber": "209684",
+              "fullText": "12  -  225  Joseph Stewart  M  35  -  209684  92.5  2017-01-29  -  Local  Michigan"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMS0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMS0yOSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        },
+        {
+          "meet_id": 1871,
+          "date": "2016-07-31",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Joseph Stewart",
+          "lifter_id": 8322,
+          "membershipNumbers": [
+            {
+              "athleteName": "Joseph Stewart",
+              "membershipNumber": "209684",
+              "fullText": "12  -  208  Joseph Stewart  M  34  -  209684  90.9  2016-07-31  -  Local  Michigan"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNy0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNy0zMSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ],
+      "219830": [
+        {
+          "meet_id": 159,
+          "date": "2015-10-17",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Joseph Stewart",
+          "lifter_id": 8322,
+          "membershipNumbers": [
+            {
+              "athleteName": "Joseph Stewart",
+              "membershipNumber": "219830",
+              "fullText": "20  -  244  Joseph Stewart  M  21  -  219830  91.2  2015-10-17  -  Local  Southern"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xNyIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ],
+      "1061216": [
+        {
+          "meet_id": 5416,
+          "date": "2022-07-16",
+          "age_category": "Men's Masters (40-44)",
+          "weight_class": "89kg",
+          "lifter_name": "Joseph Stewart",
+          "lifter_id": 8322,
+          "membershipNumbers": [
+            {
+              "athleteName": "Joseph Stewart",
+              "membershipNumber": "1061216",
+              "fullText": "2  -  178  Joseph Stewart  M  44  Armor Athletics Gym  1061216  85  2022-07-16  -  Local  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNy0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNy0xNiIsIndlaWdodF9jbGFzcyI6MTI2fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Joseph Stewart",
+    "splits": [
+      {
+        "newAthleteName": "Joseph Stewart (Person 1)",
+        "membershipNumber": "209684",
+        "competitionCount": 2,
+        "competitions": [
+          2278,
+          1871
+        ]
+      },
+      {
+        "newAthleteName": "Joseph Stewart (Person 2)",
+        "membershipNumber": "219830",
+        "competitionCount": 1,
+        "competitions": [
+          159
+        ]
+      },
+      {
+        "newAthleteName": "Joseph Stewart (Person 3)",
+        "membershipNumber": "1061216",
+        "competitionCount": 1,
+        "competitions": [
+          5416
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Joseph Stewart",
+    "competitions": [
+      {
+        "meet_id": 5416,
+        "date": "2022-07-16",
+        "age_category": "Men's Masters (40-44)",
+        "weight_class": "89kg",
+        "lifter_name": "Joseph Stewart",
+        "lifter_id": 8322,
+        "membershipNumbers": [
+          {
+            "athleteName": "Joseph Stewart",
+            "membershipNumber": "1061216",
+            "fullText": "2  -  178  Joseph Stewart  M  44  Armor Athletics Gym  1061216  85  2022-07-16  -  Local  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNy0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNy0xNiIsIndlaWdodF9jbGFzcyI6MTI2fQ=="
+      },
+      {
+        "meet_id": 2278,
+        "date": "2017-01-29",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Joseph Stewart",
+        "lifter_id": 8322,
+        "membershipNumbers": [
+          {
+            "athleteName": "Joseph Stewart",
+            "membershipNumber": "209684",
+            "fullText": "12  -  225  Joseph Stewart  M  35  -  209684  92.5  2017-01-29  -  Local  Michigan"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMS0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMS0yOSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 159,
+        "date": "2015-10-17",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Joseph Stewart",
+        "lifter_id": 8322,
+        "membershipNumbers": [
+          {
+            "athleteName": "Joseph Stewart",
+            "membershipNumber": "219830",
+            "fullText": "20  -  244  Joseph Stewart  M  21  -  219830  91.2  2015-10-17  -  Local  Southern"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xNyIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 1871,
+        "date": "2016-07-31",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Joseph Stewart",
+        "lifter_id": 8322,
+        "membershipNumbers": [
+          {
+            "athleteName": "Joseph Stewart",
+            "membershipNumber": "209684",
+            "fullText": "12  -  208  Joseph Stewart  M  34  -  209684  90.9  2016-07-31  -  Local  Michigan"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNy0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNy0zMSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 3,
+      "membershipGroups": {
+        "209684": [
+          {
+            "meet_id": 2278,
+            "date": "2017-01-29",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Joseph Stewart",
+            "lifter_id": 8322,
+            "membershipNumbers": [
+              {
+                "athleteName": "Joseph Stewart",
+                "membershipNumber": "209684",
+                "fullText": "12  -  225  Joseph Stewart  M  35  -  209684  92.5  2017-01-29  -  Local  Michigan"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMS0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMS0yOSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          },
+          {
+            "meet_id": 1871,
+            "date": "2016-07-31",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Joseph Stewart",
+            "lifter_id": 8322,
+            "membershipNumbers": [
+              {
+                "athleteName": "Joseph Stewart",
+                "membershipNumber": "209684",
+                "fullText": "12  -  208  Joseph Stewart  M  34  -  209684  90.9  2016-07-31  -  Local  Michigan"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNy0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNy0zMSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          }
+        ],
+        "219830": [
+          {
+            "meet_id": 159,
+            "date": "2015-10-17",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Joseph Stewart",
+            "lifter_id": 8322,
+            "membershipNumbers": [
+              {
+                "athleteName": "Joseph Stewart",
+                "membershipNumber": "219830",
+                "fullText": "20  -  244  Joseph Stewart  M  21  -  219830  91.2  2015-10-17  -  Local  Southern"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xNyIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          }
+        ],
+        "1061216": [
+          {
+            "meet_id": 5416,
+            "date": "2022-07-16",
+            "age_category": "Men's Masters (40-44)",
+            "weight_class": "89kg",
+            "lifter_name": "Joseph Stewart",
+            "lifter_id": 8322,
+            "membershipNumbers": [
+              {
+                "athleteName": "Joseph Stewart",
+                "membershipNumber": "1061216",
+                "fullText": "2  -  178  Joseph Stewart  M  44  Armor Athletics Gym  1061216  85  2022-07-16  -  Local  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNy0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNy0xNiIsIndlaWdodF9jbGFzcyI6MTI2fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

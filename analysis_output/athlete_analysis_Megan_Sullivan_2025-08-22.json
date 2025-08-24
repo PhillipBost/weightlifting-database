@@ -1,0 +1,332 @@
+{
+  "timestamp": "2025-08-22T22:24:51.237Z",
+  "athleteName": "Megan Sullivan",
+  "totalCompetitions": 6,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1034939": [
+        {
+          "meet_id": 2922,
+          "date": "2020-01-25",
+          "age_category": "Open Women's",
+          "weight_class": "76kg",
+          "lifter_name": "Megan Sullivan",
+          "lifter_id": 34317,
+          "membershipNumbers": [
+            {
+              "athleteName": "Megan Sullivan",
+              "membershipNumber": "1034939",
+              "fullText": "10  -  130  Megan Sullivan  F  28  Southeastern Indiana Barbell  1034939  75.95  2020-01-25  -  Local  Indiana"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMS0yNSIsIndlaWdodF9jbGFzcyI6OTd9"
+        },
+        {
+          "meet_id": 3919,
+          "date": "2019-05-04",
+          "age_category": "Open Women's",
+          "weight_class": "76kg",
+          "lifter_name": "Megan Sullivan",
+          "lifter_id": 34317,
+          "membershipNumbers": [
+            {
+              "athleteName": "Megan Sullivan",
+              "membershipNumber": "1034939",
+              "fullText": "18  -  108  Megan Sullivan  F  27  Southeastern Indiana Barbell  1034939  75.6  2019-05-04  -  Local  Indiana"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0wNCIsIndlaWdodF9jbGFzcyI6OTd9"
+        },
+        {
+          "meet_id": 3501,
+          "date": "2018-12-15",
+          "age_category": "Open Women's",
+          "weight_class": "76kg",
+          "lifter_name": "Megan Sullivan",
+          "lifter_id": 34317,
+          "membershipNumbers": [
+            {
+              "athleteName": "Megan Sullivan",
+              "membershipNumber": "1034939",
+              "fullText": "19  -  102  Megan Sullivan  F  26  Southeastern Indiana Barbell  1034939  75.7  2018-12-15  -  Local  Indiana"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0xNSIsIndlaWdodF9jbGFzcyI6OTd9"
+        }
+      ],
+      "1045809": [
+        {
+          "meet_id": 4217,
+          "date": "2019-09-28",
+          "age_category": "Open Women's",
+          "weight_class": "+87kg",
+          "lifter_name": "Megan Sullivan",
+          "lifter_id": 34317,
+          "membershipNumbers": [
+            {
+              "athleteName": "Megan Sullivan",
+              "membershipNumber": "1045809",
+              "fullText": "20  -  67  Megan Sullivan  F  26  -  1045809  91.1  2019-09-28  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOS0yOCIsIndlaWdodF9jbGFzcyI6MTAwfQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 3640,
+        "date": "2019-01-12",
+        "age_category": "Open Women's",
+        "weight_class": "76kg",
+        "lifter_name": "Megan Sullivan",
+        "lifter_id": 34317,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0xMiIsIndlaWdodF9jbGFzcyI6OTd9"
+      },
+      {
+        "meet_id": 4312,
+        "date": "2020-03-08",
+        "age_category": "Open Women's",
+        "weight_class": "76kg",
+        "lifter_name": "Megan Sullivan",
+        "lifter_id": 34317,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMy0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMy0wOCIsIndlaWdodF9jbGFzcyI6OTd9"
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Megan Sullivan",
+    "splits": [
+      {
+        "newAthleteName": "Megan Sullivan (Person 1)",
+        "membershipNumber": "1034939",
+        "competitionCount": 3,
+        "competitions": [
+          2922,
+          3919,
+          3501
+        ]
+      },
+      {
+        "newAthleteName": "Megan Sullivan (Person 2)",
+        "membershipNumber": "1045809",
+        "competitionCount": 1,
+        "competitions": [
+          4217
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 3640,
+        "date": "2019-01-12",
+        "age_category": "Open Women's",
+        "weight_class": "76kg",
+        "lifter_name": "Megan Sullivan",
+        "lifter_id": 34317,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0xMiIsIndlaWdodF9jbGFzcyI6OTd9"
+      },
+      {
+        "meet_id": 4312,
+        "date": "2020-03-08",
+        "age_category": "Open Women's",
+        "weight_class": "76kg",
+        "lifter_name": "Megan Sullivan",
+        "lifter_id": 34317,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMy0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMy0wOCIsIndlaWdodF9jbGFzcyI6OTd9"
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Megan Sullivan",
+    "competitions": [
+      {
+        "meet_id": 2922,
+        "date": "2020-01-25",
+        "age_category": "Open Women's",
+        "weight_class": "76kg",
+        "lifter_name": "Megan Sullivan",
+        "lifter_id": 34317,
+        "membershipNumbers": [
+          {
+            "athleteName": "Megan Sullivan",
+            "membershipNumber": "1034939",
+            "fullText": "10  -  130  Megan Sullivan  F  28  Southeastern Indiana Barbell  1034939  75.95  2020-01-25  -  Local  Indiana"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMS0yNSIsIndlaWdodF9jbGFzcyI6OTd9"
+      },
+      {
+        "meet_id": 3640,
+        "date": "2019-01-12",
+        "age_category": "Open Women's",
+        "weight_class": "76kg",
+        "lifter_name": "Megan Sullivan",
+        "lifter_id": 34317,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0xMiIsIndlaWdodF9jbGFzcyI6OTd9"
+      },
+      {
+        "meet_id": 3919,
+        "date": "2019-05-04",
+        "age_category": "Open Women's",
+        "weight_class": "76kg",
+        "lifter_name": "Megan Sullivan",
+        "lifter_id": 34317,
+        "membershipNumbers": [
+          {
+            "athleteName": "Megan Sullivan",
+            "membershipNumber": "1034939",
+            "fullText": "18  -  108  Megan Sullivan  F  27  Southeastern Indiana Barbell  1034939  75.6  2019-05-04  -  Local  Indiana"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0wNCIsIndlaWdodF9jbGFzcyI6OTd9"
+      },
+      {
+        "meet_id": 4217,
+        "date": "2019-09-28",
+        "age_category": "Open Women's",
+        "weight_class": "+87kg",
+        "lifter_name": "Megan Sullivan",
+        "lifter_id": 34317,
+        "membershipNumbers": [
+          {
+            "athleteName": "Megan Sullivan",
+            "membershipNumber": "1045809",
+            "fullText": "20  -  67  Megan Sullivan  F  26  -  1045809  91.1  2019-09-28  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOS0yOCIsIndlaWdodF9jbGFzcyI6MTAwfQ=="
+      },
+      {
+        "meet_id": 3501,
+        "date": "2018-12-15",
+        "age_category": "Open Women's",
+        "weight_class": "76kg",
+        "lifter_name": "Megan Sullivan",
+        "lifter_id": 34317,
+        "membershipNumbers": [
+          {
+            "athleteName": "Megan Sullivan",
+            "membershipNumber": "1034939",
+            "fullText": "19  -  102  Megan Sullivan  F  26  Southeastern Indiana Barbell  1034939  75.7  2018-12-15  -  Local  Indiana"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0xNSIsIndlaWdodF9jbGFzcyI6OTd9"
+      },
+      {
+        "meet_id": 4312,
+        "date": "2020-03-08",
+        "age_category": "Open Women's",
+        "weight_class": "76kg",
+        "lifter_name": "Megan Sullivan",
+        "lifter_id": 34317,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMy0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMy0wOCIsIndlaWdodF9jbGFzcyI6OTd9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1034939": [
+          {
+            "meet_id": 2922,
+            "date": "2020-01-25",
+            "age_category": "Open Women's",
+            "weight_class": "76kg",
+            "lifter_name": "Megan Sullivan",
+            "lifter_id": 34317,
+            "membershipNumbers": [
+              {
+                "athleteName": "Megan Sullivan",
+                "membershipNumber": "1034939",
+                "fullText": "10  -  130  Megan Sullivan  F  28  Southeastern Indiana Barbell  1034939  75.95  2020-01-25  -  Local  Indiana"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMS0yNSIsIndlaWdodF9jbGFzcyI6OTd9"
+          },
+          {
+            "meet_id": 3919,
+            "date": "2019-05-04",
+            "age_category": "Open Women's",
+            "weight_class": "76kg",
+            "lifter_name": "Megan Sullivan",
+            "lifter_id": 34317,
+            "membershipNumbers": [
+              {
+                "athleteName": "Megan Sullivan",
+                "membershipNumber": "1034939",
+                "fullText": "18  -  108  Megan Sullivan  F  27  Southeastern Indiana Barbell  1034939  75.6  2019-05-04  -  Local  Indiana"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0wNCIsIndlaWdodF9jbGFzcyI6OTd9"
+          },
+          {
+            "meet_id": 3501,
+            "date": "2018-12-15",
+            "age_category": "Open Women's",
+            "weight_class": "76kg",
+            "lifter_name": "Megan Sullivan",
+            "lifter_id": 34317,
+            "membershipNumbers": [
+              {
+                "athleteName": "Megan Sullivan",
+                "membershipNumber": "1034939",
+                "fullText": "19  -  102  Megan Sullivan  F  26  Southeastern Indiana Barbell  1034939  75.7  2018-12-15  -  Local  Indiana"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0xNSIsIndlaWdodF9jbGFzcyI6OTd9"
+          }
+        ],
+        "1045809": [
+          {
+            "meet_id": 4217,
+            "date": "2019-09-28",
+            "age_category": "Open Women's",
+            "weight_class": "+87kg",
+            "lifter_name": "Megan Sullivan",
+            "lifter_id": 34317,
+            "membershipNumbers": [
+              {
+                "athleteName": "Megan Sullivan",
+                "membershipNumber": "1045809",
+                "fullText": "20  -  67  Megan Sullivan  F  26  -  1045809  91.1  2019-09-28  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOS0yOCIsIndlaWdodF9jbGFzcyI6MTAwfQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 3640,
+          "date": "2019-01-12",
+          "age_category": "Open Women's",
+          "weight_class": "76kg",
+          "lifter_name": "Megan Sullivan",
+          "lifter_id": 34317,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0xMiIsIndlaWdodF9jbGFzcyI6OTd9"
+        },
+        {
+          "meet_id": 4312,
+          "date": "2020-03-08",
+          "age_category": "Open Women's",
+          "weight_class": "76kg",
+          "lifter_name": "Megan Sullivan",
+          "lifter_id": 34317,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMy0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMy0wOCIsIndlaWdodF9jbGFzcyI6OTd9"
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

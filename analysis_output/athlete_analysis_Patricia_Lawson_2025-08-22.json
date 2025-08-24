@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-22T16:16:54.201Z",
+  "athleteName": "Patricia Lawson",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1001355": [
+        {
+          "meet_id": 1695,
+          "date": "2016-02-28",
+          "age_category": "Women's Masters (45-49)",
+          "weight_class": "75 kg",
+          "lifter_name": "Patricia Lawson",
+          "lifter_id": 21831,
+          "membershipNumbers": [
+            {
+              "athleteName": "Patricia Lawson",
+              "membershipNumber": "1001355",
+              "fullText": "3  -  78  Patricia Lawson  F  49  Warwick Weightlifting Club  1001355  72  2016-02-28  -  Local  New Jersey"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMi0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMi0yOCIsIndlaWdodF9jbGFzcyI6NDE4fQ=="
+        }
+      ],
+      "1026426": [
+        {
+          "meet_id": 3565,
+          "date": "2018-12-02",
+          "age_category": "Open Women's",
+          "weight_class": "55kg",
+          "lifter_name": "Patricia Lawson",
+          "lifter_id": 21831,
+          "membershipNumbers": [
+            {
+              "athleteName": "Patricia Lawson",
+              "membershipNumber": "1026426",
+              "fullText": "1  -  144  Patricia Lawson  F  33  -  1026426  53.7  2018-12-02  -  Local  Tennessee-Kentucky"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0wMiIsIndlaWdodF9jbGFzcyI6OTN9"
+        },
+        {
+          "meet_id": 6817,
+          "date": "2025-04-03",
+          "age_category": "Women's Masters (40-44)",
+          "weight_class": "59kg",
+          "lifter_name": "Patricia Lawson",
+          "lifter_id": 21831,
+          "membershipNumbers": [
+            {
+              "athleteName": "Patricia Lawson",
+              "membershipNumber": "1026426",
+              "fullText": "2  -  146  Patricia Lawson  F  40  Milo Strength Weightlifting Club  1026426  58  2025-04-03  -  National  Tennessee-Kentucky"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNC0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNC0wMyIsIndlaWdodF9jbGFzcyI6MTM0fQ=="
+        },
+        {
+          "meet_id": 6730,
+          "date": "2025-01-31",
+          "age_category": "Women's Masters (40-44)",
+          "weight_class": "64kg",
+          "lifter_name": "Patricia Lawson",
+          "lifter_id": 21831,
+          "membershipNumbers": [
+            {
+              "athleteName": "Patricia Lawson",
+              "membershipNumber": "1026426",
+              "fullText": "1  -  113  Patricia Lawson  F  40  -  1026426  61  2025-01-31  -  Local  Tennessee-Kentucky"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMS0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMS0zMSIsIndlaWdodF9jbGFzcyI6MTM1fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Patricia Lawson",
+    "splits": [
+      {
+        "newAthleteName": "Patricia Lawson (Person 1)",
+        "membershipNumber": "1001355",
+        "competitionCount": 1,
+        "competitions": [
+          1695
+        ]
+      },
+      {
+        "newAthleteName": "Patricia Lawson (Person 2)",
+        "membershipNumber": "1026426",
+        "competitionCount": 3,
+        "competitions": [
+          3565,
+          6817,
+          6730
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Patricia Lawson",
+    "competitions": [
+      {
+        "meet_id": 3565,
+        "date": "2018-12-02",
+        "age_category": "Open Women's",
+        "weight_class": "55kg",
+        "lifter_name": "Patricia Lawson",
+        "lifter_id": 21831,
+        "membershipNumbers": [
+          {
+            "athleteName": "Patricia Lawson",
+            "membershipNumber": "1026426",
+            "fullText": "1  -  144  Patricia Lawson  F  33  -  1026426  53.7  2018-12-02  -  Local  Tennessee-Kentucky"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0wMiIsIndlaWdodF9jbGFzcyI6OTN9"
+      },
+      {
+        "meet_id": 6817,
+        "date": "2025-04-03",
+        "age_category": "Women's Masters (40-44)",
+        "weight_class": "59kg",
+        "lifter_name": "Patricia Lawson",
+        "lifter_id": 21831,
+        "membershipNumbers": [
+          {
+            "athleteName": "Patricia Lawson",
+            "membershipNumber": "1026426",
+            "fullText": "2  -  146  Patricia Lawson  F  40  Milo Strength Weightlifting Club  1026426  58  2025-04-03  -  National  Tennessee-Kentucky"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNC0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNC0wMyIsIndlaWdodF9jbGFzcyI6MTM0fQ=="
+      },
+      {
+        "meet_id": 1695,
+        "date": "2016-02-28",
+        "age_category": "Women's Masters (45-49)",
+        "weight_class": "75 kg",
+        "lifter_name": "Patricia Lawson",
+        "lifter_id": 21831,
+        "membershipNumbers": [
+          {
+            "athleteName": "Patricia Lawson",
+            "membershipNumber": "1001355",
+            "fullText": "3  -  78  Patricia Lawson  F  49  Warwick Weightlifting Club  1001355  72  2016-02-28  -  Local  New Jersey"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMi0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMi0yOCIsIndlaWdodF9jbGFzcyI6NDE4fQ=="
+      },
+      {
+        "meet_id": 6730,
+        "date": "2025-01-31",
+        "age_category": "Women's Masters (40-44)",
+        "weight_class": "64kg",
+        "lifter_name": "Patricia Lawson",
+        "lifter_id": 21831,
+        "membershipNumbers": [
+          {
+            "athleteName": "Patricia Lawson",
+            "membershipNumber": "1026426",
+            "fullText": "1  -  113  Patricia Lawson  F  40  -  1026426  61  2025-01-31  -  Local  Tennessee-Kentucky"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMS0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMS0zMSIsIndlaWdodF9jbGFzcyI6MTM1fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1001355": [
+          {
+            "meet_id": 1695,
+            "date": "2016-02-28",
+            "age_category": "Women's Masters (45-49)",
+            "weight_class": "75 kg",
+            "lifter_name": "Patricia Lawson",
+            "lifter_id": 21831,
+            "membershipNumbers": [
+              {
+                "athleteName": "Patricia Lawson",
+                "membershipNumber": "1001355",
+                "fullText": "3  -  78  Patricia Lawson  F  49  Warwick Weightlifting Club  1001355  72  2016-02-28  -  Local  New Jersey"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMi0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMi0yOCIsIndlaWdodF9jbGFzcyI6NDE4fQ=="
+          }
+        ],
+        "1026426": [
+          {
+            "meet_id": 3565,
+            "date": "2018-12-02",
+            "age_category": "Open Women's",
+            "weight_class": "55kg",
+            "lifter_name": "Patricia Lawson",
+            "lifter_id": 21831,
+            "membershipNumbers": [
+              {
+                "athleteName": "Patricia Lawson",
+                "membershipNumber": "1026426",
+                "fullText": "1  -  144  Patricia Lawson  F  33  -  1026426  53.7  2018-12-02  -  Local  Tennessee-Kentucky"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0wMiIsIndlaWdodF9jbGFzcyI6OTN9"
+          },
+          {
+            "meet_id": 6817,
+            "date": "2025-04-03",
+            "age_category": "Women's Masters (40-44)",
+            "weight_class": "59kg",
+            "lifter_name": "Patricia Lawson",
+            "lifter_id": 21831,
+            "membershipNumbers": [
+              {
+                "athleteName": "Patricia Lawson",
+                "membershipNumber": "1026426",
+                "fullText": "2  -  146  Patricia Lawson  F  40  Milo Strength Weightlifting Club  1026426  58  2025-04-03  -  National  Tennessee-Kentucky"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNC0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNC0wMyIsIndlaWdodF9jbGFzcyI6MTM0fQ=="
+          },
+          {
+            "meet_id": 6730,
+            "date": "2025-01-31",
+            "age_category": "Women's Masters (40-44)",
+            "weight_class": "64kg",
+            "lifter_name": "Patricia Lawson",
+            "lifter_id": 21831,
+            "membershipNumbers": [
+              {
+                "athleteName": "Patricia Lawson",
+                "membershipNumber": "1026426",
+                "fullText": "1  -  113  Patricia Lawson  F  40  -  1026426  61  2025-01-31  -  Local  Tennessee-Kentucky"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMS0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMS0zMSIsIndlaWdodF9jbGFzcyI6MTM1fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

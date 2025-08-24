@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-22T15:31:32.625Z",
+  "athleteName": "Antonio Lopez",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "205458": [
+        {
+          "meet_id": 1550,
+          "date": "2014-12-21",
+          "age_category": "Open Men's",
+          "weight_class": "69 kg",
+          "lifter_name": "Antonio Lopez",
+          "lifter_id": 13089,
+          "membershipNumbers": [
+            {
+              "athleteName": "Antonio Lopez",
+              "membershipNumber": "205458",
+              "fullText": "13  -  154  Antonio Lopez  M  20  Team Aita  205458  62.71  2014-12-21  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMi0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMi0yMSIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+        },
+        {
+          "meet_id": 381,
+          "date": "2015-08-01",
+          "age_category": "Open Men's",
+          "weight_class": "69 kg",
+          "lifter_name": "Antonio Lopez",
+          "lifter_id": 13089,
+          "membershipNumbers": [
+            {
+              "athleteName": "Antonio Lopez",
+              "membershipNumber": "205458",
+              "fullText": "9  -  184  Antonio Lopez  M  21  Team Aita  205458  66.19  2015-08-01  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOC0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOC0wMSIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+        },
+        {
+          "meet_id": 1608,
+          "date": "2015-09-27",
+          "age_category": "Open Men's",
+          "weight_class": "62 kg",
+          "lifter_name": "Antonio Lopez",
+          "lifter_id": 13089,
+          "membershipNumbers": [
+            {
+              "athleteName": "Antonio Lopez",
+              "membershipNumber": "205458",
+              "fullText": "11  -  191  Antonio Lopez  M  21  Team Aita  205458  61.91  2015-09-27  -  National  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOS0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOS0yNyIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+        }
+      ],
+      "1073068": [
+        {
+          "meet_id": 6162,
+          "date": "2023-12-16",
+          "age_category": "Open Men's",
+          "weight_class": "+109kg",
+          "lifter_name": "Antonio Lopez",
+          "lifter_id": 13089,
+          "membershipNumbers": [
+            {
+              "athleteName": "Antonio Lopez",
+              "membershipNumber": "1073068",
+              "fullText": "7  -  198  Antonio Lopez  M  28  Visions Barbell  1073068  125.35  2023-12-16  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMi0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMi0xNiIsIndlaWdodF9jbGFzcyI6OTB9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Antonio Lopez",
+    "splits": [
+      {
+        "newAthleteName": "Antonio Lopez (Person 1)",
+        "membershipNumber": "205458",
+        "competitionCount": 3,
+        "competitions": [
+          1550,
+          381,
+          1608
+        ]
+      },
+      {
+        "newAthleteName": "Antonio Lopez (Person 2)",
+        "membershipNumber": "1073068",
+        "competitionCount": 1,
+        "competitions": [
+          6162
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Antonio Lopez",
+    "competitions": [
+      {
+        "meet_id": 1550,
+        "date": "2014-12-21",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "Antonio Lopez",
+        "lifter_id": 13089,
+        "membershipNumbers": [
+          {
+            "athleteName": "Antonio Lopez",
+            "membershipNumber": "205458",
+            "fullText": "13  -  154  Antonio Lopez  M  20  Team Aita  205458  62.71  2014-12-21  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMi0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMi0yMSIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      },
+      {
+        "meet_id": 6162,
+        "date": "2023-12-16",
+        "age_category": "Open Men's",
+        "weight_class": "+109kg",
+        "lifter_name": "Antonio Lopez",
+        "lifter_id": 13089,
+        "membershipNumbers": [
+          {
+            "athleteName": "Antonio Lopez",
+            "membershipNumber": "1073068",
+            "fullText": "7  -  198  Antonio Lopez  M  28  Visions Barbell  1073068  125.35  2023-12-16  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMi0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMi0xNiIsIndlaWdodF9jbGFzcyI6OTB9"
+      },
+      {
+        "meet_id": 381,
+        "date": "2015-08-01",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "Antonio Lopez",
+        "lifter_id": 13089,
+        "membershipNumbers": [
+          {
+            "athleteName": "Antonio Lopez",
+            "membershipNumber": "205458",
+            "fullText": "9  -  184  Antonio Lopez  M  21  Team Aita  205458  66.19  2015-08-01  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOC0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOC0wMSIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      },
+      {
+        "meet_id": 1608,
+        "date": "2015-09-27",
+        "age_category": "Open Men's",
+        "weight_class": "62 kg",
+        "lifter_name": "Antonio Lopez",
+        "lifter_id": 13089,
+        "membershipNumbers": [
+          {
+            "athleteName": "Antonio Lopez",
+            "membershipNumber": "205458",
+            "fullText": "11  -  191  Antonio Lopez  M  21  Team Aita  205458  61.91  2015-09-27  -  National  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOS0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOS0yNyIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "205458": [
+          {
+            "meet_id": 1550,
+            "date": "2014-12-21",
+            "age_category": "Open Men's",
+            "weight_class": "69 kg",
+            "lifter_name": "Antonio Lopez",
+            "lifter_id": 13089,
+            "membershipNumbers": [
+              {
+                "athleteName": "Antonio Lopez",
+                "membershipNumber": "205458",
+                "fullText": "13  -  154  Antonio Lopez  M  20  Team Aita  205458  62.71  2014-12-21  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMi0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMi0yMSIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+          },
+          {
+            "meet_id": 381,
+            "date": "2015-08-01",
+            "age_category": "Open Men's",
+            "weight_class": "69 kg",
+            "lifter_name": "Antonio Lopez",
+            "lifter_id": 13089,
+            "membershipNumbers": [
+              {
+                "athleteName": "Antonio Lopez",
+                "membershipNumber": "205458",
+                "fullText": "9  -  184  Antonio Lopez  M  21  Team Aita  205458  66.19  2015-08-01  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOC0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOC0wMSIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+          },
+          {
+            "meet_id": 1608,
+            "date": "2015-09-27",
+            "age_category": "Open Men's",
+            "weight_class": "62 kg",
+            "lifter_name": "Antonio Lopez",
+            "lifter_id": 13089,
+            "membershipNumbers": [
+              {
+                "athleteName": "Antonio Lopez",
+                "membershipNumber": "205458",
+                "fullText": "11  -  191  Antonio Lopez  M  21  Team Aita  205458  61.91  2015-09-27  -  National  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOS0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOS0yNyIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+          }
+        ],
+        "1073068": [
+          {
+            "meet_id": 6162,
+            "date": "2023-12-16",
+            "age_category": "Open Men's",
+            "weight_class": "+109kg",
+            "lifter_name": "Antonio Lopez",
+            "lifter_id": 13089,
+            "membershipNumbers": [
+              {
+                "athleteName": "Antonio Lopez",
+                "membershipNumber": "1073068",
+                "fullText": "7  -  198  Antonio Lopez  M  28  Visions Barbell  1073068  125.35  2023-12-16  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMi0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMi0xNiIsIndlaWdodF9jbGFzcyI6OTB9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

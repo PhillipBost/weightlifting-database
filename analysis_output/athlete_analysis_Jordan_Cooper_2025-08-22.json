@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-22T13:20:10.851Z",
+  "athleteName": "Jordan Cooper",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1010218": [
+        {
+          "meet_id": 2128,
+          "date": "2016-08-06",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Jordan Cooper",
+          "lifter_id": 26076,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jordan Cooper",
+              "membershipNumber": "1010218",
+              "fullText": "10  -  233  Jordan Cooper  M  25  Zoo City Barbell  1010218  85  2016-08-06  -  Local  Michigan"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0wNiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ],
+      "1077290": [
+        {
+          "meet_id": 6800,
+          "date": "2025-03-23",
+          "age_category": "Women's 14-15 Age Group",
+          "weight_class": "76kg",
+          "lifter_name": "Jordan Cooper",
+          "lifter_id": 26076,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jordan Cooper",
+              "membershipNumber": "1077290",
+              "fullText": "1  -  113  Jordan Cooper  F  14  TEAM OMNIA  1077290  71.6  2025-03-23  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMy0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMy0yMyIsIndlaWdodF9jbGFzcyI6Mzl9"
+        },
+        {
+          "meet_id": 6516,
+          "date": "2024-09-07",
+          "age_category": "Women's 13 Under Age Group",
+          "weight_class": "+64kg",
+          "lifter_name": "Jordan Cooper",
+          "lifter_id": 26076,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jordan Cooper",
+              "membershipNumber": "1077290",
+              "fullText": "1  -  105  Jordan Cooper  F  13  TEAM OMNIA  1077290  72.9  2024-09-07  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOS0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOS0wNyIsIndlaWdodF9jbGFzcyI6NjB9"
+        },
+        {
+          "meet_id": 6591,
+          "date": "2024-10-26",
+          "age_category": "Women's 13 Under Age Group",
+          "weight_class": "+64kg",
+          "lifter_name": "Jordan Cooper",
+          "lifter_id": 26076,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jordan Cooper",
+              "membershipNumber": "1077290",
+              "fullText": "1  -  106  Jordan Cooper  F  13  TEAM OMNIA  1077290  70.7  2024-10-26  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0yNiIsIndlaWdodF9jbGFzcyI6NjB9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Jordan Cooper",
+    "splits": [
+      {
+        "newAthleteName": "Jordan Cooper (Person 1)",
+        "membershipNumber": "1010218",
+        "competitionCount": 1,
+        "competitions": [
+          2128
+        ]
+      },
+      {
+        "newAthleteName": "Jordan Cooper (Person 2)",
+        "membershipNumber": "1077290",
+        "competitionCount": 3,
+        "competitions": [
+          6800,
+          6516,
+          6591
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Jordan Cooper",
+    "competitions": [
+      {
+        "meet_id": 6800,
+        "date": "2025-03-23",
+        "age_category": "Women's 14-15 Age Group",
+        "weight_class": "76kg",
+        "lifter_name": "Jordan Cooper",
+        "lifter_id": 26076,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jordan Cooper",
+            "membershipNumber": "1077290",
+            "fullText": "1  -  113  Jordan Cooper  F  14  TEAM OMNIA  1077290  71.6  2025-03-23  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMy0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMy0yMyIsIndlaWdodF9jbGFzcyI6Mzl9"
+      },
+      {
+        "meet_id": 2128,
+        "date": "2016-08-06",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Jordan Cooper",
+        "lifter_id": 26076,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jordan Cooper",
+            "membershipNumber": "1010218",
+            "fullText": "10  -  233  Jordan Cooper  M  25  Zoo City Barbell  1010218  85  2016-08-06  -  Local  Michigan"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0wNiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 6516,
+        "date": "2024-09-07",
+        "age_category": "Women's 13 Under Age Group",
+        "weight_class": "+64kg",
+        "lifter_name": "Jordan Cooper",
+        "lifter_id": 26076,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jordan Cooper",
+            "membershipNumber": "1077290",
+            "fullText": "1  -  105  Jordan Cooper  F  13  TEAM OMNIA  1077290  72.9  2024-09-07  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOS0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOS0wNyIsIndlaWdodF9jbGFzcyI6NjB9"
+      },
+      {
+        "meet_id": 6591,
+        "date": "2024-10-26",
+        "age_category": "Women's 13 Under Age Group",
+        "weight_class": "+64kg",
+        "lifter_name": "Jordan Cooper",
+        "lifter_id": 26076,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jordan Cooper",
+            "membershipNumber": "1077290",
+            "fullText": "1  -  106  Jordan Cooper  F  13  TEAM OMNIA  1077290  70.7  2024-10-26  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0yNiIsIndlaWdodF9jbGFzcyI6NjB9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1010218": [
+          {
+            "meet_id": 2128,
+            "date": "2016-08-06",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Jordan Cooper",
+            "lifter_id": 26076,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jordan Cooper",
+                "membershipNumber": "1010218",
+                "fullText": "10  -  233  Jordan Cooper  M  25  Zoo City Barbell  1010218  85  2016-08-06  -  Local  Michigan"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0wNiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          }
+        ],
+        "1077290": [
+          {
+            "meet_id": 6800,
+            "date": "2025-03-23",
+            "age_category": "Women's 14-15 Age Group",
+            "weight_class": "76kg",
+            "lifter_name": "Jordan Cooper",
+            "lifter_id": 26076,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jordan Cooper",
+                "membershipNumber": "1077290",
+                "fullText": "1  -  113  Jordan Cooper  F  14  TEAM OMNIA  1077290  71.6  2025-03-23  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMy0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMy0yMyIsIndlaWdodF9jbGFzcyI6Mzl9"
+          },
+          {
+            "meet_id": 6516,
+            "date": "2024-09-07",
+            "age_category": "Women's 13 Under Age Group",
+            "weight_class": "+64kg",
+            "lifter_name": "Jordan Cooper",
+            "lifter_id": 26076,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jordan Cooper",
+                "membershipNumber": "1077290",
+                "fullText": "1  -  105  Jordan Cooper  F  13  TEAM OMNIA  1077290  72.9  2024-09-07  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOS0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOS0wNyIsIndlaWdodF9jbGFzcyI6NjB9"
+          },
+          {
+            "meet_id": 6591,
+            "date": "2024-10-26",
+            "age_category": "Women's 13 Under Age Group",
+            "weight_class": "+64kg",
+            "lifter_name": "Jordan Cooper",
+            "lifter_id": 26076,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jordan Cooper",
+                "membershipNumber": "1077290",
+                "fullText": "1  -  106  Jordan Cooper  F  13  TEAM OMNIA  1077290  70.7  2024-10-26  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0yNiIsIndlaWdodF9jbGFzcyI6NjB9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

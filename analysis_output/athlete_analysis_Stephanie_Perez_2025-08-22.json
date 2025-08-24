@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-22T19:31:07.569Z",
+  "athleteName": "Stephanie Perez",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "201053": [
+        {
+          "meet_id": 475,
+          "date": "2015-10-10",
+          "age_category": "Open Women's",
+          "weight_class": "69 kg",
+          "lifter_name": "Stephanie Perez",
+          "lifter_id": 14930,
+          "membershipNumbers": [
+            {
+              "athleteName": "Stephanie Perez",
+              "membershipNumber": "201053",
+              "fullText": "9  -  142  Stephanie Perez  F  30  -  201053  67.2  2015-10-10  -  Local  Georgia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xMCIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+        },
+        {
+          "meet_id": 1261,
+          "date": "2014-08-23",
+          "age_category": "Open Women's",
+          "weight_class": "75 kg",
+          "lifter_name": "Stephanie Perez",
+          "lifter_id": 14930,
+          "membershipNumbers": [
+            {
+              "athleteName": "Stephanie Perez",
+              "membershipNumber": "201053",
+              "fullText": "2  -  162  Stephanie Perez  F  29  -  201053  73.9  2014-08-23  -  Local  Georgia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0yMyIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+        }
+      ],
+      "1015668": [
+        {
+          "meet_id": 2349,
+          "date": "2017-03-19",
+          "age_category": "Open Women's",
+          "weight_class": "63 kg",
+          "lifter_name": "Stephanie Perez",
+          "lifter_id": 14930,
+          "membershipNumbers": [
+            {
+              "athleteName": "Stephanie Perez",
+              "membershipNumber": "1015668",
+              "fullText": "20  -  149  Stephanie Perez  F  28  OCCAM ATHLETICS  1015668  59.52  2017-03-19  -  National  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0xOSIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+        },
+        {
+          "meet_id": 2393,
+          "date": "2017-02-19",
+          "age_category": "Open Women's",
+          "weight_class": "63 kg",
+          "lifter_name": "Stephanie Perez",
+          "lifter_id": 14930,
+          "membershipNumbers": [
+            {
+              "athleteName": "Stephanie Perez",
+              "membershipNumber": "1015668",
+              "fullText": "10  -  147  Stephanie Perez  F  28  OCCAM ATHLETICS  1015668  58.89  2017-02-19  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xOSIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Stephanie Perez",
+    "splits": [
+      {
+        "newAthleteName": "Stephanie Perez (Person 1)",
+        "membershipNumber": "201053",
+        "competitionCount": 2,
+        "competitions": [
+          475,
+          1261
+        ]
+      },
+      {
+        "newAthleteName": "Stephanie Perez (Person 2)",
+        "membershipNumber": "1015668",
+        "competitionCount": 2,
+        "competitions": [
+          2349,
+          2393
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Stephanie Perez",
+    "competitions": [
+      {
+        "meet_id": 475,
+        "date": "2015-10-10",
+        "age_category": "Open Women's",
+        "weight_class": "69 kg",
+        "lifter_name": "Stephanie Perez",
+        "lifter_id": 14930,
+        "membershipNumbers": [
+          {
+            "athleteName": "Stephanie Perez",
+            "membershipNumber": "201053",
+            "fullText": "9  -  142  Stephanie Perez  F  30  -  201053  67.2  2015-10-10  -  Local  Georgia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xMCIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+      },
+      {
+        "meet_id": 1261,
+        "date": "2014-08-23",
+        "age_category": "Open Women's",
+        "weight_class": "75 kg",
+        "lifter_name": "Stephanie Perez",
+        "lifter_id": 14930,
+        "membershipNumbers": [
+          {
+            "athleteName": "Stephanie Perez",
+            "membershipNumber": "201053",
+            "fullText": "2  -  162  Stephanie Perez  F  29  -  201053  73.9  2014-08-23  -  Local  Georgia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0yMyIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+      },
+      {
+        "meet_id": 2349,
+        "date": "2017-03-19",
+        "age_category": "Open Women's",
+        "weight_class": "63 kg",
+        "lifter_name": "Stephanie Perez",
+        "lifter_id": 14930,
+        "membershipNumbers": [
+          {
+            "athleteName": "Stephanie Perez",
+            "membershipNumber": "1015668",
+            "fullText": "20  -  149  Stephanie Perez  F  28  OCCAM ATHLETICS  1015668  59.52  2017-03-19  -  National  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0xOSIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+      },
+      {
+        "meet_id": 2393,
+        "date": "2017-02-19",
+        "age_category": "Open Women's",
+        "weight_class": "63 kg",
+        "lifter_name": "Stephanie Perez",
+        "lifter_id": 14930,
+        "membershipNumbers": [
+          {
+            "athleteName": "Stephanie Perez",
+            "membershipNumber": "1015668",
+            "fullText": "10  -  147  Stephanie Perez  F  28  OCCAM ATHLETICS  1015668  58.89  2017-02-19  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xOSIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "201053": [
+          {
+            "meet_id": 475,
+            "date": "2015-10-10",
+            "age_category": "Open Women's",
+            "weight_class": "69 kg",
+            "lifter_name": "Stephanie Perez",
+            "lifter_id": 14930,
+            "membershipNumbers": [
+              {
+                "athleteName": "Stephanie Perez",
+                "membershipNumber": "201053",
+                "fullText": "9  -  142  Stephanie Perez  F  30  -  201053  67.2  2015-10-10  -  Local  Georgia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xMCIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+          },
+          {
+            "meet_id": 1261,
+            "date": "2014-08-23",
+            "age_category": "Open Women's",
+            "weight_class": "75 kg",
+            "lifter_name": "Stephanie Perez",
+            "lifter_id": 14930,
+            "membershipNumbers": [
+              {
+                "athleteName": "Stephanie Perez",
+                "membershipNumber": "201053",
+                "fullText": "2  -  162  Stephanie Perez  F  29  -  201053  73.9  2014-08-23  -  Local  Georgia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0yMyIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+          }
+        ],
+        "1015668": [
+          {
+            "meet_id": 2349,
+            "date": "2017-03-19",
+            "age_category": "Open Women's",
+            "weight_class": "63 kg",
+            "lifter_name": "Stephanie Perez",
+            "lifter_id": 14930,
+            "membershipNumbers": [
+              {
+                "athleteName": "Stephanie Perez",
+                "membershipNumber": "1015668",
+                "fullText": "20  -  149  Stephanie Perez  F  28  OCCAM ATHLETICS  1015668  59.52  2017-03-19  -  National  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0xOSIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+          },
+          {
+            "meet_id": 2393,
+            "date": "2017-02-19",
+            "age_category": "Open Women's",
+            "weight_class": "63 kg",
+            "lifter_name": "Stephanie Perez",
+            "lifter_id": 14930,
+            "membershipNumbers": [
+              {
+                "athleteName": "Stephanie Perez",
+                "membershipNumber": "1015668",
+                "fullText": "10  -  147  Stephanie Perez  F  28  OCCAM ATHLETICS  1015668  58.89  2017-02-19  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xOSIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

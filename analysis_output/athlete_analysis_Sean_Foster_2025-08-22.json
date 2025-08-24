@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-22T13:05:43.322Z",
+  "athleteName": "Sean Foster",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "162399": [
+        {
+          "meet_id": 1389,
+          "date": "2014-02-09",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Sean Foster",
+          "lifter_id": 19731,
+          "membershipNumbers": [
+            {
+              "athleteName": "Sean Foster",
+              "membershipNumber": "162399",
+              "fullText": "6  -  218  Sean Foster  M  30  -  162399  91.6  2014-02-09  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMi0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMi0wOSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        },
+        {
+          "meet_id": 1332,
+          "date": "2014-05-24",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Sean Foster",
+          "lifter_id": 19731,
+          "membershipNumbers": [
+            {
+              "athleteName": "Sean Foster",
+              "membershipNumber": "162399",
+              "fullText": "15  -  230  Sean Foster  M  30  -  162399  90.6  2014-05-24  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNS0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNS0yNCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ],
+      "1076899": [
+        {
+          "meet_id": 6909,
+          "date": "2025-05-17",
+          "age_category": "Open Men's",
+          "weight_class": "96kg",
+          "lifter_name": "Sean Foster",
+          "lifter_id": 19731,
+          "membershipNumbers": [
+            {
+              "athleteName": "Sean Foster",
+              "membershipNumber": "1076899",
+              "fullText": "18  -  241  Sean Foster  M  33  Hungry dog barbell  1076899  95.1  2025-05-17  -  Local  New Jersey"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNS0xNyIsIndlaWdodF9jbGFzcyI6ODd9"
+        },
+        {
+          "meet_id": 6439,
+          "date": "2024-06-23",
+          "age_category": "Open Men's",
+          "weight_class": "96kg",
+          "lifter_name": "Sean Foster",
+          "lifter_id": 19731,
+          "membershipNumbers": [
+            {
+              "athleteName": "Sean Foster",
+              "membershipNumber": "1076899",
+              "fullText": "3  -  225  Sean Foster  M  32  Hungry dog barbell  1076899  92.5  2024-06-23  -  Local  New Jersey"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNi0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNi0yMyIsIndlaWdodF9jbGFzcyI6ODd9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Sean Foster",
+    "splits": [
+      {
+        "newAthleteName": "Sean Foster (Person 1)",
+        "membershipNumber": "162399",
+        "competitionCount": 2,
+        "competitions": [
+          1389,
+          1332
+        ]
+      },
+      {
+        "newAthleteName": "Sean Foster (Person 2)",
+        "membershipNumber": "1076899",
+        "competitionCount": 2,
+        "competitions": [
+          6909,
+          6439
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Sean Foster",
+    "competitions": [
+      {
+        "meet_id": 6909,
+        "date": "2025-05-17",
+        "age_category": "Open Men's",
+        "weight_class": "96kg",
+        "lifter_name": "Sean Foster",
+        "lifter_id": 19731,
+        "membershipNumbers": [
+          {
+            "athleteName": "Sean Foster",
+            "membershipNumber": "1076899",
+            "fullText": "18  -  241  Sean Foster  M  33  Hungry dog barbell  1076899  95.1  2025-05-17  -  Local  New Jersey"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNS0xNyIsIndlaWdodF9jbGFzcyI6ODd9"
+      },
+      {
+        "meet_id": 6439,
+        "date": "2024-06-23",
+        "age_category": "Open Men's",
+        "weight_class": "96kg",
+        "lifter_name": "Sean Foster",
+        "lifter_id": 19731,
+        "membershipNumbers": [
+          {
+            "athleteName": "Sean Foster",
+            "membershipNumber": "1076899",
+            "fullText": "3  -  225  Sean Foster  M  32  Hungry dog barbell  1076899  92.5  2024-06-23  -  Local  New Jersey"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNi0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNi0yMyIsIndlaWdodF9jbGFzcyI6ODd9"
+      },
+      {
+        "meet_id": 1389,
+        "date": "2014-02-09",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Sean Foster",
+        "lifter_id": 19731,
+        "membershipNumbers": [
+          {
+            "athleteName": "Sean Foster",
+            "membershipNumber": "162399",
+            "fullText": "6  -  218  Sean Foster  M  30  -  162399  91.6  2014-02-09  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMi0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMi0wOSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 1332,
+        "date": "2014-05-24",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Sean Foster",
+        "lifter_id": 19731,
+        "membershipNumbers": [
+          {
+            "athleteName": "Sean Foster",
+            "membershipNumber": "162399",
+            "fullText": "15  -  230  Sean Foster  M  30  -  162399  90.6  2014-05-24  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNS0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNS0yNCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "162399": [
+          {
+            "meet_id": 1389,
+            "date": "2014-02-09",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Sean Foster",
+            "lifter_id": 19731,
+            "membershipNumbers": [
+              {
+                "athleteName": "Sean Foster",
+                "membershipNumber": "162399",
+                "fullText": "6  -  218  Sean Foster  M  30  -  162399  91.6  2014-02-09  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMi0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMi0wOSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          },
+          {
+            "meet_id": 1332,
+            "date": "2014-05-24",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Sean Foster",
+            "lifter_id": 19731,
+            "membershipNumbers": [
+              {
+                "athleteName": "Sean Foster",
+                "membershipNumber": "162399",
+                "fullText": "15  -  230  Sean Foster  M  30  -  162399  90.6  2014-05-24  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNS0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNS0yNCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          }
+        ],
+        "1076899": [
+          {
+            "meet_id": 6909,
+            "date": "2025-05-17",
+            "age_category": "Open Men's",
+            "weight_class": "96kg",
+            "lifter_name": "Sean Foster",
+            "lifter_id": 19731,
+            "membershipNumbers": [
+              {
+                "athleteName": "Sean Foster",
+                "membershipNumber": "1076899",
+                "fullText": "18  -  241  Sean Foster  M  33  Hungry dog barbell  1076899  95.1  2025-05-17  -  Local  New Jersey"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNS0xNyIsIndlaWdodF9jbGFzcyI6ODd9"
+          },
+          {
+            "meet_id": 6439,
+            "date": "2024-06-23",
+            "age_category": "Open Men's",
+            "weight_class": "96kg",
+            "lifter_name": "Sean Foster",
+            "lifter_id": 19731,
+            "membershipNumbers": [
+              {
+                "athleteName": "Sean Foster",
+                "membershipNumber": "1076899",
+                "fullText": "3  -  225  Sean Foster  M  32  Hungry dog barbell  1076899  92.5  2024-06-23  -  Local  New Jersey"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNi0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNi0yMyIsIndlaWdodF9jbGFzcyI6ODd9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}
