@@ -179,7 +179,7 @@ async function handleComplexDatePicker(page, targetYear, interfaceSelector, targ
 
         if (!closestBtn) throw new Error('Could not find previous month button in the active calendar');
         await closestBtn.click();
-        await page.waitForTimeout(100); // FAST
+        await new Promise(resolve => setTimeout(resolve, 100)); // FAST
     }
 
     // Loop until we reach the target month/year (max 24 tries)
@@ -212,7 +212,7 @@ async function handleComplexDatePicker(page, targetYear, interfaceSelector, targ
     console.log(`📅 Selecting day ${targetDay}`);
 
     // Minimal wait time for calendar readiness
-    await page.waitForTimeout(100);
+    await new Promise(resolve => setTimeout(resolve, 100));
 
     // Use filter() to find the correct button (handles multiple calendars)
     const clickResult = await page.evaluate((day) => {
@@ -235,7 +235,7 @@ async function handleComplexDatePicker(page, targetYear, interfaceSelector, targ
     if (clickResult.success) {
         console.log(`✅ Clicked day ${targetDay}`);
         // Minimal wait time after click
-        await page.waitForTimeout(100);
+        await new Promise(resolve => setTimeout(resolve, 100));
     } else {
         console.log(`❌ Could not find day ${targetDay} button`);
     }
@@ -291,7 +291,7 @@ async function completeNavigation(page, targetYear) {
     console.log('🎯 Completing navigation setup...');
 
     // Wait a moment for any changes to take effect
-    await page.waitForTimeout(1000);
+    await new Promise(resolve => setTimeout(resolve, 1000));
 
     // Look for and click apply/submit buttons
     const applySelectors = [
@@ -350,7 +350,7 @@ async function completeNavigation(page, targetYear) {
 async function setResultsPerPage(page) {
     console.log('⚙️ Setting results per page to 50...');
     await page.click('div.v-select__slot div.v-input__append-inner div.v-input__icon');
-    await page.waitForTimeout(300);
+    await new Promise(resolve => setTimeout(resolve, 300));
     await page.click('div.v-menu__content div.v-list.v-select-list.v-sheet div.v-list-item.v-list-item--link:nth-of-type(6)');
     console.log('✅ Set to 50 results per page');
 }
@@ -369,7 +369,7 @@ async function extractMeetsFromPage(page, csvFilePath, errorFilePath, batchId) {
 
     try {
         // Wait a moment for API response to be captured
-        await page.waitForTimeout(500);
+        await new Promise(resolve => setTimeout(resolve, 500));
         
         const meetsOnPage = await page.evaluate(() => {
             const rows = Array.from(document.querySelectorAll('.data-table tbody tr'));
@@ -613,7 +613,7 @@ async function getTestHistoricalMeets() {
                 await navigateToYear(page, year);
 
                 // Quick wait for data to load
-                await page.waitForTimeout(1000);
+                await new Promise(resolve => setTimeout(resolve, 1000));
 
                 let meetCount = 0;
                 let errorCount = 0;
@@ -635,7 +635,7 @@ async function getTestHistoricalMeets() {
 
                     // PAGINATION - slower wait for content to load
                     await page.click('.data-table div div.v-data-table div.v-data-footer div.v-data-footer__icons-after');
-                    await page.waitForTimeout(1000); // Increased from 200ms to prevent duplicate extraction
+                    await new Promise(resolve => setTimeout(resolve, 1000)); // Increased from 200ms to prevent duplicate extraction
 
                     pageData = await getPageData(page);
                     console.log(`📄 Page data: ${pageData}`);
@@ -734,29 +734,29 @@ async function navigateToYear(page, targetYear) {
         // Click the filter button
         console.log('🔘 Clicking filter button...');
         await page.click(filterButton);
-        await page.waitForTimeout(1000);
+        await new Promise(resolve => setTimeout(resolve, 1000));
 
         // Handle START date field first
         console.log('📅 Setting START date range...');
         await handleDateField(page, '#form__date_range_start', targetYear, 'start');
 
         // Wait between date field operations - FAST
-        await page.waitForTimeout(100);
+        await new Promise(resolve => setTimeout(resolve, 100));
 
         // Handle END date field second  
         console.log('📅 Setting END date range...');
         await handleDateField(page, '#form__date_range_end', targetYear, 'end');
 
         // Wait before applying filter - FAST
-        await page.waitForTimeout(100);
+        await new Promise(resolve => setTimeout(resolve, 100));
 
         // Wait before proceeding - dates are already set automatically
-        await page.waitForTimeout(100);
+        await new Promise(resolve => setTimeout(resolve, 100));
 
         // Click away from calendar to properly dismiss it and apply the filter
         console.log('🖱️ Clicking away from calendar to apply date filter...');
         await page.click('body');
-        await page.waitForTimeout(500);
+        await new Promise(resolve => setTimeout(resolve, 500));
 
         // Apply the filter - dates need to be submitted to server
         console.log('🔄 Applying date filter to submit the date range...');
@@ -809,7 +809,7 @@ async function navigateToYear(page, targetYear) {
             console.log('⚠️ Could not find apply button - date filter may not be applied');
         }
 
-        await page.waitForTimeout(1000); // Wait for filter to process
+        await new Promise(resolve => setTimeout(resolve, 1000)); // Wait for filter to process
         console.log(`✅ Successfully navigated to ${targetYear}`);
 
     } catch (error) {
@@ -833,7 +833,7 @@ async function handleDateField(page, fieldSelector, targetYear, fieldType) {
 
         // Click the date field to open its calendar - NO SCREENSHOT
         await page.click(fieldSelector);
-        await page.waitForTimeout(200); // FAST
+        await new Promise(resolve => setTimeout(resolve, 200)); // FAST
 
         // Look for various date picker interfaces that might have opened
         const datePickerInterfaces = [
@@ -868,7 +868,7 @@ async function handleDateField(page, fieldSelector, targetYear, fieldType) {
             console.log(`⚠️ No ${fieldType} date picker interface found`);
             // Try pressing Escape to close any open interface
             await page.keyboard.press('Escape');
-            await page.waitForTimeout(500);
+            await new Promise(resolve => setTimeout(resolve, 500));
             return;
         }
 
@@ -887,7 +887,7 @@ async function handleDateField(page, fieldSelector, targetYear, fieldType) {
 
             // Close this individual calendar (use Escape instead of clicking Apply)
             console.log(`🔚 Waiting for ${fieldType} date calendar to close...`);
-            await page.waitForTimeout(100); // FAST
+            await new Promise(resolve => setTimeout(resolve, 100)); // FAST
 
         } else {
             console.log(`⚠️ Unknown ${fieldType} date interface, attempting generic navigation...`);
@@ -901,6 +901,6 @@ async function handleDateField(page, fieldSelector, targetYear, fieldType) {
 
         // Always try to close any open calendar
         await page.keyboard.press('Escape');
-        await page.waitForTimeout(500);
+        await new Promise(resolve => setTimeout(resolve, 500));
     }
 }
