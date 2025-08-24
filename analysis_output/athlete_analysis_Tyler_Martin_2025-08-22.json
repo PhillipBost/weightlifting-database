@@ -1,0 +1,381 @@
+{
+  "timestamp": "2025-08-22T06:51:51.686Z",
+  "athleteName": "Tyler Martin",
+  "totalCompetitions": 7,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "211798": [
+        {
+          "meet_id": 4585,
+          "date": "2020-09-26",
+          "age_category": "Open Men's",
+          "weight_class": "96kg",
+          "lifter_name": "Tyler Martin",
+          "lifter_id": 17500,
+          "membershipNumbers": [
+            {
+              "athleteName": "Tyler Martin",
+              "membershipNumber": "211798",
+              "fullText": "11  -  194  Tyler Martin  M  33  Teton Crossfit  211798  93.9  2020-09-26  -  Local  Mountain North"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wOS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wOS0yNiIsIndlaWdodF9jbGFzcyI6ODd9"
+        }
+      ],
+      "1025100": [
+        {
+          "meet_id": 554,
+          "date": "2020-02-15",
+          "age_category": "Junior Men's",
+          "weight_class": "+109kg",
+          "lifter_name": "Tyler Martin",
+          "lifter_id": 17500,
+          "membershipNumbers": [
+            {
+              "athleteName": "Tyler Martin",
+              "membershipNumber": "1025100",
+              "fullText": "4  -  190  Tyler Martin  M  18  -  1025100  152  2020-02-15  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMi0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMi0xNSIsIndlaWdodF9jbGFzcyI6NzB9"
+        },
+        {
+          "meet_id": 3754,
+          "date": "2019-01-12",
+          "age_category": "Open Men's",
+          "weight_class": "+109kg",
+          "lifter_name": "Tyler Martin",
+          "lifter_id": 17500,
+          "membershipNumbers": [
+            {
+              "athleteName": "Tyler Martin",
+              "membershipNumber": "1025100",
+              "fullText": "23  -  149  Tyler Martin  M  17  -  1025100  143  2019-01-12  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0xMiIsIndlaWdodF9jbGFzcyI6OTB9"
+        },
+        {
+          "meet_id": 4341,
+          "date": "2019-12-07",
+          "age_category": "Open Men's",
+          "weight_class": "+109kg",
+          "lifter_name": "Tyler Martin",
+          "lifter_id": 17500,
+          "membershipNumbers": [
+            {
+              "athleteName": "Tyler Martin",
+              "membershipNumber": "1025100",
+              "fullText": "4  -  172  Tyler Martin  M  17  -  1025100  146.5  2019-12-07  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMi0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMi0wNyIsIndlaWdodF9jbGFzcyI6OTB9"
+        },
+        {
+          "meet_id": 4426,
+          "date": "2020-01-25",
+          "age_category": "Open Men's",
+          "weight_class": "+109kg",
+          "lifter_name": "Tyler Martin",
+          "lifter_id": 17500,
+          "membershipNumbers": [
+            {
+              "athleteName": "Tyler Martin",
+              "membershipNumber": "1025100",
+              "fullText": "11  -  182  Tyler Martin  M  18  -  1025100  149.7  2020-01-25  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMS0yNSIsIndlaWdodF9jbGFzcyI6OTB9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 3015,
+        "date": "2017-12-16",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Tyler Martin",
+        "lifter_id": 17500,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 3120,
+        "date": "2018-01-27",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Tyler Martin",
+        "lifter_id": 17500,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Tyler Martin",
+    "splits": [
+      {
+        "newAthleteName": "Tyler Martin (Person 1)",
+        "membershipNumber": "211798",
+        "competitionCount": 1,
+        "competitions": [
+          4585
+        ]
+      },
+      {
+        "newAthleteName": "Tyler Martin (Person 2)",
+        "membershipNumber": "1025100",
+        "competitionCount": 4,
+        "competitions": [
+          554,
+          3754,
+          4341,
+          4426
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 3015,
+        "date": "2017-12-16",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Tyler Martin",
+        "lifter_id": 17500,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 3120,
+        "date": "2018-01-27",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Tyler Martin",
+        "lifter_id": 17500,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Tyler Martin",
+    "competitions": [
+      {
+        "meet_id": 554,
+        "date": "2020-02-15",
+        "age_category": "Junior Men's",
+        "weight_class": "+109kg",
+        "lifter_name": "Tyler Martin",
+        "lifter_id": 17500,
+        "membershipNumbers": [
+          {
+            "athleteName": "Tyler Martin",
+            "membershipNumber": "1025100",
+            "fullText": "4  -  190  Tyler Martin  M  18  -  1025100  152  2020-02-15  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMi0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMi0xNSIsIndlaWdodF9jbGFzcyI6NzB9"
+      },
+      {
+        "meet_id": 3015,
+        "date": "2017-12-16",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Tyler Martin",
+        "lifter_id": 17500,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 3120,
+        "date": "2018-01-27",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Tyler Martin",
+        "lifter_id": 17500,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 3754,
+        "date": "2019-01-12",
+        "age_category": "Open Men's",
+        "weight_class": "+109kg",
+        "lifter_name": "Tyler Martin",
+        "lifter_id": 17500,
+        "membershipNumbers": [
+          {
+            "athleteName": "Tyler Martin",
+            "membershipNumber": "1025100",
+            "fullText": "23  -  149  Tyler Martin  M  17  -  1025100  143  2019-01-12  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0xMiIsIndlaWdodF9jbGFzcyI6OTB9"
+      },
+      {
+        "meet_id": 4341,
+        "date": "2019-12-07",
+        "age_category": "Open Men's",
+        "weight_class": "+109kg",
+        "lifter_name": "Tyler Martin",
+        "lifter_id": 17500,
+        "membershipNumbers": [
+          {
+            "athleteName": "Tyler Martin",
+            "membershipNumber": "1025100",
+            "fullText": "4  -  172  Tyler Martin  M  17  -  1025100  146.5  2019-12-07  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMi0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMi0wNyIsIndlaWdodF9jbGFzcyI6OTB9"
+      },
+      {
+        "meet_id": 4426,
+        "date": "2020-01-25",
+        "age_category": "Open Men's",
+        "weight_class": "+109kg",
+        "lifter_name": "Tyler Martin",
+        "lifter_id": 17500,
+        "membershipNumbers": [
+          {
+            "athleteName": "Tyler Martin",
+            "membershipNumber": "1025100",
+            "fullText": "11  -  182  Tyler Martin  M  18  -  1025100  149.7  2020-01-25  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMS0yNSIsIndlaWdodF9jbGFzcyI6OTB9"
+      },
+      {
+        "meet_id": 4585,
+        "date": "2020-09-26",
+        "age_category": "Open Men's",
+        "weight_class": "96kg",
+        "lifter_name": "Tyler Martin",
+        "lifter_id": 17500,
+        "membershipNumbers": [
+          {
+            "athleteName": "Tyler Martin",
+            "membershipNumber": "211798",
+            "fullText": "11  -  194  Tyler Martin  M  33  Teton Crossfit  211798  93.9  2020-09-26  -  Local  Mountain North"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wOS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wOS0yNiIsIndlaWdodF9jbGFzcyI6ODd9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "211798": [
+          {
+            "meet_id": 4585,
+            "date": "2020-09-26",
+            "age_category": "Open Men's",
+            "weight_class": "96kg",
+            "lifter_name": "Tyler Martin",
+            "lifter_id": 17500,
+            "membershipNumbers": [
+              {
+                "athleteName": "Tyler Martin",
+                "membershipNumber": "211798",
+                "fullText": "11  -  194  Tyler Martin  M  33  Teton Crossfit  211798  93.9  2020-09-26  -  Local  Mountain North"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wOS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wOS0yNiIsIndlaWdodF9jbGFzcyI6ODd9"
+          }
+        ],
+        "1025100": [
+          {
+            "meet_id": 554,
+            "date": "2020-02-15",
+            "age_category": "Junior Men's",
+            "weight_class": "+109kg",
+            "lifter_name": "Tyler Martin",
+            "lifter_id": 17500,
+            "membershipNumbers": [
+              {
+                "athleteName": "Tyler Martin",
+                "membershipNumber": "1025100",
+                "fullText": "4  -  190  Tyler Martin  M  18  -  1025100  152  2020-02-15  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMi0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMi0xNSIsIndlaWdodF9jbGFzcyI6NzB9"
+          },
+          {
+            "meet_id": 3754,
+            "date": "2019-01-12",
+            "age_category": "Open Men's",
+            "weight_class": "+109kg",
+            "lifter_name": "Tyler Martin",
+            "lifter_id": 17500,
+            "membershipNumbers": [
+              {
+                "athleteName": "Tyler Martin",
+                "membershipNumber": "1025100",
+                "fullText": "23  -  149  Tyler Martin  M  17  -  1025100  143  2019-01-12  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0xMiIsIndlaWdodF9jbGFzcyI6OTB9"
+          },
+          {
+            "meet_id": 4341,
+            "date": "2019-12-07",
+            "age_category": "Open Men's",
+            "weight_class": "+109kg",
+            "lifter_name": "Tyler Martin",
+            "lifter_id": 17500,
+            "membershipNumbers": [
+              {
+                "athleteName": "Tyler Martin",
+                "membershipNumber": "1025100",
+                "fullText": "4  -  172  Tyler Martin  M  17  -  1025100  146.5  2019-12-07  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMi0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMi0wNyIsIndlaWdodF9jbGFzcyI6OTB9"
+          },
+          {
+            "meet_id": 4426,
+            "date": "2020-01-25",
+            "age_category": "Open Men's",
+            "weight_class": "+109kg",
+            "lifter_name": "Tyler Martin",
+            "lifter_id": 17500,
+            "membershipNumbers": [
+              {
+                "athleteName": "Tyler Martin",
+                "membershipNumber": "1025100",
+                "fullText": "11  -  182  Tyler Martin  M  18  -  1025100  149.7  2020-01-25  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMS0yNSIsIndlaWdodF9jbGFzcyI6OTB9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 3015,
+          "date": "2017-12-16",
+          "age_category": "Open Men's",
+          "weight_class": "+105 kg",
+          "lifter_name": "Tyler Martin",
+          "lifter_id": 17500,
+          "membershipNumbers": [],
+          "error": "No division code found for: \"Open Men's +105 kg\""
+        },
+        {
+          "meet_id": 3120,
+          "date": "2018-01-27",
+          "age_category": "Open Men's",
+          "weight_class": "+105 kg",
+          "lifter_name": "Tyler Martin",
+          "lifter_id": 17500,
+          "membershipNumbers": [],
+          "error": "No division code found for: \"Open Men's +105 kg\""
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "timestamp": "2025-08-22T23:00:29.500Z",
+  "athleteName": "Matthew Wheeler",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "185891": [
+        {
+          "meet_id": 1314,
+          "date": "2014-03-15",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Matthew Wheeler",
+          "lifter_id": 19204,
+          "membershipNumbers": [
+            {
+              "athleteName": "Matthew Wheeler",
+              "membershipNumber": "185891",
+              "fullText": "5  -  175  Matthew Wheeler  M  29  -  185891  92.6  2014-03-15  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0xNSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ],
+      "1058171": [
+        {
+          "meet_id": 4946,
+          "date": "2021-10-16",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Matthew Wheeler",
+          "lifter_id": 19204,
+          "membershipNumbers": [
+            {
+              "athleteName": "Matthew Wheeler",
+              "membershipNumber": "1058171",
+              "fullText": "4  -  220  Matthew Wheeler  M  30  Black Flag Barbell  1058171  79.45  2021-10-16  -  Local  Ohio"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMC0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMC0xNiIsIndlaWdodF9jbGFzcyI6ODV9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 1245,
+        "date": "2014-01-19",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Matthew Wheeler",
+        "lifter_id": 19204,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMS0xOSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Matthew Wheeler",
+    "splits": [
+      {
+        "newAthleteName": "Matthew Wheeler (Person 1)",
+        "membershipNumber": "185891",
+        "competitionCount": 1,
+        "competitions": [
+          1314
+        ]
+      },
+      {
+        "newAthleteName": "Matthew Wheeler (Person 2)",
+        "membershipNumber": "1058171",
+        "competitionCount": 1,
+        "competitions": [
+          4946
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 1245,
+        "date": "2014-01-19",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Matthew Wheeler",
+        "lifter_id": 19204,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMS0xOSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Matthew Wheeler",
+    "competitions": [
+      {
+        "meet_id": 4946,
+        "date": "2021-10-16",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Matthew Wheeler",
+        "lifter_id": 19204,
+        "membershipNumbers": [
+          {
+            "athleteName": "Matthew Wheeler",
+            "membershipNumber": "1058171",
+            "fullText": "4  -  220  Matthew Wheeler  M  30  Black Flag Barbell  1058171  79.45  2021-10-16  -  Local  Ohio"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMC0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMC0xNiIsIndlaWdodF9jbGFzcyI6ODV9"
+      },
+      {
+        "meet_id": 1245,
+        "date": "2014-01-19",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Matthew Wheeler",
+        "lifter_id": 19204,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMS0xOSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 1314,
+        "date": "2014-03-15",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Matthew Wheeler",
+        "lifter_id": 19204,
+        "membershipNumbers": [
+          {
+            "athleteName": "Matthew Wheeler",
+            "membershipNumber": "185891",
+            "fullText": "5  -  175  Matthew Wheeler  M  29  -  185891  92.6  2014-03-15  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0xNSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "185891": [
+          {
+            "meet_id": 1314,
+            "date": "2014-03-15",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Matthew Wheeler",
+            "lifter_id": 19204,
+            "membershipNumbers": [
+              {
+                "athleteName": "Matthew Wheeler",
+                "membershipNumber": "185891",
+                "fullText": "5  -  175  Matthew Wheeler  M  29  -  185891  92.6  2014-03-15  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0xNSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          }
+        ],
+        "1058171": [
+          {
+            "meet_id": 4946,
+            "date": "2021-10-16",
+            "age_category": "Open Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Matthew Wheeler",
+            "lifter_id": 19204,
+            "membershipNumbers": [
+              {
+                "athleteName": "Matthew Wheeler",
+                "membershipNumber": "1058171",
+                "fullText": "4  -  220  Matthew Wheeler  M  30  Black Flag Barbell  1058171  79.45  2021-10-16  -  Local  Ohio"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMC0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMC0xNiIsIndlaWdodF9jbGFzcyI6ODV9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 1245,
+          "date": "2014-01-19",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Matthew Wheeler",
+          "lifter_id": 19204,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMS0xOSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

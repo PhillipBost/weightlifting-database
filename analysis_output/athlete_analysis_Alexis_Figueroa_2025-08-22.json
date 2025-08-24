@@ -1,0 +1,298 @@
+{
+  "timestamp": "2025-08-22T19:57:55.961Z",
+  "athleteName": "Alexis Figueroa",
+  "totalCompetitions": 5,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "221707": [
+        {
+          "meet_id": 536,
+          "date": "2016-01-23",
+          "age_category": "Open Women's",
+          "weight_class": "75 kg",
+          "lifter_name": "Alexis Figueroa",
+          "lifter_id": 17116,
+          "membershipNumbers": [
+            {
+              "athleteName": "Alexis Figueroa",
+              "membershipNumber": "221707",
+              "fullText": "15  -  97  Alexis Figueroa  F  27  -  221707  72.2  2016-01-23  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0yMyIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+        }
+      ],
+      "1067891": [
+        {
+          "meet_id": 5672,
+          "date": "2023-01-21",
+          "age_category": "Open Men's",
+          "weight_class": "+109kg",
+          "lifter_name": "Alexis Figueroa",
+          "lifter_id": 17116,
+          "membershipNumbers": [
+            {
+              "athleteName": "Alexis Figueroa",
+              "membershipNumber": "1067891",
+              "fullText": "3  -  275  Alexis Figueroa  M  30  BLACK & RED BARBELL CLUB  1067891  135  2023-01-21  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMS0yMSIsIndlaWdodF9jbGFzcyI6OTB9"
+        },
+        {
+          "meet_id": 5814,
+          "date": "2023-04-16",
+          "age_category": "Open Men's",
+          "weight_class": "+109kg",
+          "lifter_name": "Alexis Figueroa",
+          "lifter_id": 17116,
+          "membershipNumbers": [
+            {
+              "athleteName": "Alexis Figueroa",
+              "membershipNumber": "1067891",
+              "fullText": "1  -  292  Alexis Figueroa  M  30  BLACK & RED BARBELL CLUB  1067891  140.46  2023-04-16  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0xNiIsIndlaWdodF9jbGFzcyI6OTB9"
+        },
+        {
+          "meet_id": 6346,
+          "date": "2024-04-27",
+          "age_category": "Open Men's",
+          "weight_class": "+109kg",
+          "lifter_name": "Alexis Figueroa",
+          "lifter_id": 17116,
+          "membershipNumbers": [
+            {
+              "athleteName": "Alexis Figueroa",
+              "membershipNumber": "1067891",
+              "fullText": "5  -  279  Alexis Figueroa  M  31  BLACK & RED BARBELL CLUB  1067891  139.1  2024-04-27  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNC0yNyIsIndlaWdodF9jbGFzcyI6OTB9"
+        },
+        {
+          "meet_id": 6466,
+          "date": "2024-07-27",
+          "age_category": "Open Men's",
+          "weight_class": "+109kg",
+          "lifter_name": "Alexis Figueroa",
+          "lifter_id": 17116,
+          "membershipNumbers": [
+            {
+              "athleteName": "Alexis Figueroa",
+              "membershipNumber": "1067891",
+              "fullText": "2  -  280  Alexis Figueroa  M  31  DC Barbell  1067891  138.3  2024-07-27  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNy0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNy0yNyIsIndlaWdodF9jbGFzcyI6OTB9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Alexis Figueroa",
+    "splits": [
+      {
+        "newAthleteName": "Alexis Figueroa (Person 1)",
+        "membershipNumber": "221707",
+        "competitionCount": 1,
+        "competitions": [
+          536
+        ]
+      },
+      {
+        "newAthleteName": "Alexis Figueroa (Person 2)",
+        "membershipNumber": "1067891",
+        "competitionCount": 4,
+        "competitions": [
+          5672,
+          5814,
+          6346,
+          6466
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Alexis Figueroa",
+    "competitions": [
+      {
+        "meet_id": 536,
+        "date": "2016-01-23",
+        "age_category": "Open Women's",
+        "weight_class": "75 kg",
+        "lifter_name": "Alexis Figueroa",
+        "lifter_id": 17116,
+        "membershipNumbers": [
+          {
+            "athleteName": "Alexis Figueroa",
+            "membershipNumber": "221707",
+            "fullText": "15  -  97  Alexis Figueroa  F  27  -  221707  72.2  2016-01-23  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0yMyIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+      },
+      {
+        "meet_id": 5672,
+        "date": "2023-01-21",
+        "age_category": "Open Men's",
+        "weight_class": "+109kg",
+        "lifter_name": "Alexis Figueroa",
+        "lifter_id": 17116,
+        "membershipNumbers": [
+          {
+            "athleteName": "Alexis Figueroa",
+            "membershipNumber": "1067891",
+            "fullText": "3  -  275  Alexis Figueroa  M  30  BLACK & RED BARBELL CLUB  1067891  135  2023-01-21  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMS0yMSIsIndlaWdodF9jbGFzcyI6OTB9"
+      },
+      {
+        "meet_id": 5814,
+        "date": "2023-04-16",
+        "age_category": "Open Men's",
+        "weight_class": "+109kg",
+        "lifter_name": "Alexis Figueroa",
+        "lifter_id": 17116,
+        "membershipNumbers": [
+          {
+            "athleteName": "Alexis Figueroa",
+            "membershipNumber": "1067891",
+            "fullText": "1  -  292  Alexis Figueroa  M  30  BLACK & RED BARBELL CLUB  1067891  140.46  2023-04-16  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0xNiIsIndlaWdodF9jbGFzcyI6OTB9"
+      },
+      {
+        "meet_id": 6346,
+        "date": "2024-04-27",
+        "age_category": "Open Men's",
+        "weight_class": "+109kg",
+        "lifter_name": "Alexis Figueroa",
+        "lifter_id": 17116,
+        "membershipNumbers": [
+          {
+            "athleteName": "Alexis Figueroa",
+            "membershipNumber": "1067891",
+            "fullText": "5  -  279  Alexis Figueroa  M  31  BLACK & RED BARBELL CLUB  1067891  139.1  2024-04-27  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNC0yNyIsIndlaWdodF9jbGFzcyI6OTB9"
+      },
+      {
+        "meet_id": 6466,
+        "date": "2024-07-27",
+        "age_category": "Open Men's",
+        "weight_class": "+109kg",
+        "lifter_name": "Alexis Figueroa",
+        "lifter_id": 17116,
+        "membershipNumbers": [
+          {
+            "athleteName": "Alexis Figueroa",
+            "membershipNumber": "1067891",
+            "fullText": "2  -  280  Alexis Figueroa  M  31  DC Barbell  1067891  138.3  2024-07-27  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNy0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNy0yNyIsIndlaWdodF9jbGFzcyI6OTB9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "221707": [
+          {
+            "meet_id": 536,
+            "date": "2016-01-23",
+            "age_category": "Open Women's",
+            "weight_class": "75 kg",
+            "lifter_name": "Alexis Figueroa",
+            "lifter_id": 17116,
+            "membershipNumbers": [
+              {
+                "athleteName": "Alexis Figueroa",
+                "membershipNumber": "221707",
+                "fullText": "15  -  97  Alexis Figueroa  F  27  -  221707  72.2  2016-01-23  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0yMyIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+          }
+        ],
+        "1067891": [
+          {
+            "meet_id": 5672,
+            "date": "2023-01-21",
+            "age_category": "Open Men's",
+            "weight_class": "+109kg",
+            "lifter_name": "Alexis Figueroa",
+            "lifter_id": 17116,
+            "membershipNumbers": [
+              {
+                "athleteName": "Alexis Figueroa",
+                "membershipNumber": "1067891",
+                "fullText": "3  -  275  Alexis Figueroa  M  30  BLACK & RED BARBELL CLUB  1067891  135  2023-01-21  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMS0yMSIsIndlaWdodF9jbGFzcyI6OTB9"
+          },
+          {
+            "meet_id": 5814,
+            "date": "2023-04-16",
+            "age_category": "Open Men's",
+            "weight_class": "+109kg",
+            "lifter_name": "Alexis Figueroa",
+            "lifter_id": 17116,
+            "membershipNumbers": [
+              {
+                "athleteName": "Alexis Figueroa",
+                "membershipNumber": "1067891",
+                "fullText": "1  -  292  Alexis Figueroa  M  30  BLACK & RED BARBELL CLUB  1067891  140.46  2023-04-16  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0xNiIsIndlaWdodF9jbGFzcyI6OTB9"
+          },
+          {
+            "meet_id": 6346,
+            "date": "2024-04-27",
+            "age_category": "Open Men's",
+            "weight_class": "+109kg",
+            "lifter_name": "Alexis Figueroa",
+            "lifter_id": 17116,
+            "membershipNumbers": [
+              {
+                "athleteName": "Alexis Figueroa",
+                "membershipNumber": "1067891",
+                "fullText": "5  -  279  Alexis Figueroa  M  31  BLACK & RED BARBELL CLUB  1067891  139.1  2024-04-27  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNC0yNyIsIndlaWdodF9jbGFzcyI6OTB9"
+          },
+          {
+            "meet_id": 6466,
+            "date": "2024-07-27",
+            "age_category": "Open Men's",
+            "weight_class": "+109kg",
+            "lifter_name": "Alexis Figueroa",
+            "lifter_id": 17116,
+            "membershipNumbers": [
+              {
+                "athleteName": "Alexis Figueroa",
+                "membershipNumber": "1067891",
+                "fullText": "2  -  280  Alexis Figueroa  M  31  DC Barbell  1067891  138.3  2024-07-27  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNy0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNy0yNyIsIndlaWdodF9jbGFzcyI6OTB9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

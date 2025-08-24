@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T15:15:39.194Z",
+  "athleteName": "Michael Goldman",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "184030": [
+        {
+          "meet_id": 775,
+          "date": "2013-07-13",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Michael Goldman",
+          "lifter_id": 5637,
+          "membershipNumbers": [
+            {
+              "athleteName": "Michael Goldman",
+              "membershipNumber": "184030",
+              "fullText": "8  -  182  Michael Goldman  M  34  -  184030  83.46  2013-07-13  -  Local  Pennsylvania-West Virginia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNy0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNy0xMyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        },
+        {
+          "meet_id": 1380,
+          "date": "2014-04-27",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Michael Goldman",
+          "lifter_id": 5637,
+          "membershipNumbers": [
+            {
+              "athleteName": "Michael Goldman",
+              "membershipNumber": "184030",
+              "fullText": "13  -  182  Michael Goldman  M  35  -  184030  82.3  2014-04-27  -  Local  Pennsylvania-West Virginia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNC0yNyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ],
+      "1073394": [
+        {
+          "meet_id": 6208,
+          "date": "2024-01-28",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Michael Goldman",
+          "lifter_id": 5637,
+          "membershipNumbers": [
+            {
+              "athleteName": "Michael Goldman",
+              "membershipNumber": "1073394",
+              "fullText": "21  -  153  Michael Goldman  M  30  MURDER OF CROWS  1073394  79.4  2024-01-28  -  Local  New York"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMS0yOCIsIndlaWdodF9jbGFzcyI6ODV9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Michael Goldman",
+    "splits": [
+      {
+        "newAthleteName": "Michael Goldman (Person 1)",
+        "membershipNumber": "184030",
+        "competitionCount": 2,
+        "competitions": [
+          775,
+          1380
+        ]
+      },
+      {
+        "newAthleteName": "Michael Goldman (Person 2)",
+        "membershipNumber": "1073394",
+        "competitionCount": 1,
+        "competitions": [
+          6208
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Michael Goldman",
+    "competitions": [
+      {
+        "meet_id": 6208,
+        "date": "2024-01-28",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Michael Goldman",
+        "lifter_id": 5637,
+        "membershipNumbers": [
+          {
+            "athleteName": "Michael Goldman",
+            "membershipNumber": "1073394",
+            "fullText": "21  -  153  Michael Goldman  M  30  MURDER OF CROWS  1073394  79.4  2024-01-28  -  Local  New York"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMS0yOCIsIndlaWdodF9jbGFzcyI6ODV9"
+      },
+      {
+        "meet_id": 775,
+        "date": "2013-07-13",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Michael Goldman",
+        "lifter_id": 5637,
+        "membershipNumbers": [
+          {
+            "athleteName": "Michael Goldman",
+            "membershipNumber": "184030",
+            "fullText": "8  -  182  Michael Goldman  M  34  -  184030  83.46  2013-07-13  -  Local  Pennsylvania-West Virginia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNy0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNy0xMyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 1380,
+        "date": "2014-04-27",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Michael Goldman",
+        "lifter_id": 5637,
+        "membershipNumbers": [
+          {
+            "athleteName": "Michael Goldman",
+            "membershipNumber": "184030",
+            "fullText": "13  -  182  Michael Goldman  M  35  -  184030  82.3  2014-04-27  -  Local  Pennsylvania-West Virginia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNC0yNyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "184030": [
+          {
+            "meet_id": 775,
+            "date": "2013-07-13",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Michael Goldman",
+            "lifter_id": 5637,
+            "membershipNumbers": [
+              {
+                "athleteName": "Michael Goldman",
+                "membershipNumber": "184030",
+                "fullText": "8  -  182  Michael Goldman  M  34  -  184030  83.46  2013-07-13  -  Local  Pennsylvania-West Virginia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNy0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNy0xMyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          },
+          {
+            "meet_id": 1380,
+            "date": "2014-04-27",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Michael Goldman",
+            "lifter_id": 5637,
+            "membershipNumbers": [
+              {
+                "athleteName": "Michael Goldman",
+                "membershipNumber": "184030",
+                "fullText": "13  -  182  Michael Goldman  M  35  -  184030  82.3  2014-04-27  -  Local  Pennsylvania-West Virginia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNC0yNyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          }
+        ],
+        "1073394": [
+          {
+            "meet_id": 6208,
+            "date": "2024-01-28",
+            "age_category": "Open Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Michael Goldman",
+            "lifter_id": 5637,
+            "membershipNumbers": [
+              {
+                "athleteName": "Michael Goldman",
+                "membershipNumber": "1073394",
+                "fullText": "21  -  153  Michael Goldman  M  30  MURDER OF CROWS  1073394  79.4  2024-01-28  -  Local  New York"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMS0yOCIsIndlaWdodF9jbGFzcyI6ODV9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "timestamp": "2025-08-22T15:53:09.165Z",
+  "athleteName": "Rachel Carlson",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "177899": [
+        {
+          "meet_id": 701,
+          "date": "2013-10-20",
+          "age_category": "Open Women's",
+          "weight_class": "+75 Kg",
+          "lifter_name": "Rachel Carlson",
+          "lifter_id": 4755,
+          "membershipNumbers": [
+            {
+              "athleteName": "Rachel Carlson",
+              "membershipNumber": "177899",
+              "fullText": "26  -  71  Rachel Carlson  F  31  TEAM CONNECTICUT  177899  77  2013-10-20  -  Local  New England"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMC0yMCIsIndlaWdodF9jbGFzcyI6MzY4fQ=="
+        }
+      ],
+      "1017712": [
+        {
+          "meet_id": 2756,
+          "date": "2017-08-24",
+          "age_category": "Open Women's",
+          "weight_class": "58 kg",
+          "lifter_name": "Rachel Carlson",
+          "lifter_id": 4755,
+          "membershipNumbers": [
+            {
+              "athleteName": "Rachel Carlson",
+              "membershipNumber": "1017712",
+              "fullText": "1  -  100  Rachel Carlson  F  31  ALASKA WEIGHTLIFTING CLUB  1017712  57.7  2017-08-24  -  Local  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wOC0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wOC0yNCIsIndlaWdodF9jbGFzcyI6MzY0fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 2611,
+        "date": "2017-04-15",
+        "age_category": "Open Women's",
+        "weight_class": "63 kg",
+        "lifter_name": "Rachel Carlson",
+        "lifter_id": 4755,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNC0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNC0xNSIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Rachel Carlson",
+    "splits": [
+      {
+        "newAthleteName": "Rachel Carlson (Person 1)",
+        "membershipNumber": "177899",
+        "competitionCount": 1,
+        "competitions": [
+          701
+        ]
+      },
+      {
+        "newAthleteName": "Rachel Carlson (Person 2)",
+        "membershipNumber": "1017712",
+        "competitionCount": 1,
+        "competitions": [
+          2756
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 2611,
+        "date": "2017-04-15",
+        "age_category": "Open Women's",
+        "weight_class": "63 kg",
+        "lifter_name": "Rachel Carlson",
+        "lifter_id": 4755,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNC0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNC0xNSIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Rachel Carlson",
+    "competitions": [
+      {
+        "meet_id": 2611,
+        "date": "2017-04-15",
+        "age_category": "Open Women's",
+        "weight_class": "63 kg",
+        "lifter_name": "Rachel Carlson",
+        "lifter_id": 4755,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNC0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNC0xNSIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+      },
+      {
+        "meet_id": 2756,
+        "date": "2017-08-24",
+        "age_category": "Open Women's",
+        "weight_class": "58 kg",
+        "lifter_name": "Rachel Carlson",
+        "lifter_id": 4755,
+        "membershipNumbers": [
+          {
+            "athleteName": "Rachel Carlson",
+            "membershipNumber": "1017712",
+            "fullText": "1  -  100  Rachel Carlson  F  31  ALASKA WEIGHTLIFTING CLUB  1017712  57.7  2017-08-24  -  Local  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wOC0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wOC0yNCIsIndlaWdodF9jbGFzcyI6MzY0fQ=="
+      },
+      {
+        "meet_id": 701,
+        "date": "2013-10-20",
+        "age_category": "Open Women's",
+        "weight_class": "+75 Kg",
+        "lifter_name": "Rachel Carlson",
+        "lifter_id": 4755,
+        "membershipNumbers": [
+          {
+            "athleteName": "Rachel Carlson",
+            "membershipNumber": "177899",
+            "fullText": "26  -  71  Rachel Carlson  F  31  TEAM CONNECTICUT  177899  77  2013-10-20  -  Local  New England"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMC0yMCIsIndlaWdodF9jbGFzcyI6MzY4fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "177899": [
+          {
+            "meet_id": 701,
+            "date": "2013-10-20",
+            "age_category": "Open Women's",
+            "weight_class": "+75 Kg",
+            "lifter_name": "Rachel Carlson",
+            "lifter_id": 4755,
+            "membershipNumbers": [
+              {
+                "athleteName": "Rachel Carlson",
+                "membershipNumber": "177899",
+                "fullText": "26  -  71  Rachel Carlson  F  31  TEAM CONNECTICUT  177899  77  2013-10-20  -  Local  New England"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMC0yMCIsIndlaWdodF9jbGFzcyI6MzY4fQ=="
+          }
+        ],
+        "1017712": [
+          {
+            "meet_id": 2756,
+            "date": "2017-08-24",
+            "age_category": "Open Women's",
+            "weight_class": "58 kg",
+            "lifter_name": "Rachel Carlson",
+            "lifter_id": 4755,
+            "membershipNumbers": [
+              {
+                "athleteName": "Rachel Carlson",
+                "membershipNumber": "1017712",
+                "fullText": "1  -  100  Rachel Carlson  F  31  ALASKA WEIGHTLIFTING CLUB  1017712  57.7  2017-08-24  -  Local  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wOC0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wOC0yNCIsIndlaWdodF9jbGFzcyI6MzY0fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 2611,
+          "date": "2017-04-15",
+          "age_category": "Open Women's",
+          "weight_class": "63 kg",
+          "lifter_name": "Rachel Carlson",
+          "lifter_id": 4755,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNC0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNC0xNSIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

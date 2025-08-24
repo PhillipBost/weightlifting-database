@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-23T01:33:31.417Z",
+  "athleteName": "Matthew Berg",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "215762": [
+        {
+          "meet_id": 387,
+          "date": "2015-07-12",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Matthew Berg",
+          "lifter_id": 13210,
+          "membershipNumbers": [
+            {
+              "athleteName": "Matthew Berg",
+              "membershipNumber": "215762",
+              "fullText": "10  -  145  Matthew Berg  M  27  STONE AGE FUEL BARBELL CLUB  215762  94.43  2015-07-12  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNy0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNy0xMiIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        }
+      ],
+      "1036546": [
+        {
+          "meet_id": 4008,
+          "date": "2019-04-27",
+          "age_category": "Open Men's",
+          "weight_class": "109kg",
+          "lifter_name": "Matthew Berg",
+          "lifter_id": 13210,
+          "membershipNumbers": [
+            {
+              "athleteName": "Matthew Berg",
+              "membershipNumber": "1036546",
+              "fullText": "5  -  225  Matthew Berg  M  26  GOT STRENGTH WEIGHTLIFTING CLUB  1036546  107.55  2019-04-27  -  Local  Iowa-Nebraska"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0yNyIsIndlaWdodF9jbGFzcyI6ODl9"
+        },
+        {
+          "meet_id": 3536,
+          "date": "2018-12-01",
+          "age_category": "Open Men's",
+          "weight_class": "109kg",
+          "lifter_name": "Matthew Berg",
+          "lifter_id": 13210,
+          "membershipNumbers": [
+            {
+              "athleteName": "Matthew Berg",
+              "membershipNumber": "1036546",
+              "fullText": "4  -  220  Matthew Berg  M  25  GOT STRENGTH WEIGHTLIFTING CLUB  1036546  108.7  2018-12-01  -  Local  Iowa-Nebraska"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0wMSIsIndlaWdodF9jbGFzcyI6ODl9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Matthew Berg",
+    "splits": [
+      {
+        "newAthleteName": "Matthew Berg (Person 1)",
+        "membershipNumber": "215762",
+        "competitionCount": 1,
+        "competitions": [
+          387
+        ]
+      },
+      {
+        "newAthleteName": "Matthew Berg (Person 2)",
+        "membershipNumber": "1036546",
+        "competitionCount": 2,
+        "competitions": [
+          4008,
+          3536
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Matthew Berg",
+    "competitions": [
+      {
+        "meet_id": 387,
+        "date": "2015-07-12",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Matthew Berg",
+        "lifter_id": 13210,
+        "membershipNumbers": [
+          {
+            "athleteName": "Matthew Berg",
+            "membershipNumber": "215762",
+            "fullText": "10  -  145  Matthew Berg  M  27  STONE AGE FUEL BARBELL CLUB  215762  94.43  2015-07-12  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNy0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNy0xMiIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 4008,
+        "date": "2019-04-27",
+        "age_category": "Open Men's",
+        "weight_class": "109kg",
+        "lifter_name": "Matthew Berg",
+        "lifter_id": 13210,
+        "membershipNumbers": [
+          {
+            "athleteName": "Matthew Berg",
+            "membershipNumber": "1036546",
+            "fullText": "5  -  225  Matthew Berg  M  26  GOT STRENGTH WEIGHTLIFTING CLUB  1036546  107.55  2019-04-27  -  Local  Iowa-Nebraska"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0yNyIsIndlaWdodF9jbGFzcyI6ODl9"
+      },
+      {
+        "meet_id": 3536,
+        "date": "2018-12-01",
+        "age_category": "Open Men's",
+        "weight_class": "109kg",
+        "lifter_name": "Matthew Berg",
+        "lifter_id": 13210,
+        "membershipNumbers": [
+          {
+            "athleteName": "Matthew Berg",
+            "membershipNumber": "1036546",
+            "fullText": "4  -  220  Matthew Berg  M  25  GOT STRENGTH WEIGHTLIFTING CLUB  1036546  108.7  2018-12-01  -  Local  Iowa-Nebraska"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0wMSIsIndlaWdodF9jbGFzcyI6ODl9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "215762": [
+          {
+            "meet_id": 387,
+            "date": "2015-07-12",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Matthew Berg",
+            "lifter_id": 13210,
+            "membershipNumbers": [
+              {
+                "athleteName": "Matthew Berg",
+                "membershipNumber": "215762",
+                "fullText": "10  -  145  Matthew Berg  M  27  STONE AGE FUEL BARBELL CLUB  215762  94.43  2015-07-12  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNy0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNy0xMiIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          }
+        ],
+        "1036546": [
+          {
+            "meet_id": 4008,
+            "date": "2019-04-27",
+            "age_category": "Open Men's",
+            "weight_class": "109kg",
+            "lifter_name": "Matthew Berg",
+            "lifter_id": 13210,
+            "membershipNumbers": [
+              {
+                "athleteName": "Matthew Berg",
+                "membershipNumber": "1036546",
+                "fullText": "5  -  225  Matthew Berg  M  26  GOT STRENGTH WEIGHTLIFTING CLUB  1036546  107.55  2019-04-27  -  Local  Iowa-Nebraska"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0yNyIsIndlaWdodF9jbGFzcyI6ODl9"
+          },
+          {
+            "meet_id": 3536,
+            "date": "2018-12-01",
+            "age_category": "Open Men's",
+            "weight_class": "109kg",
+            "lifter_name": "Matthew Berg",
+            "lifter_id": 13210,
+            "membershipNumbers": [
+              {
+                "athleteName": "Matthew Berg",
+                "membershipNumber": "1036546",
+                "fullText": "4  -  220  Matthew Berg  M  25  GOT STRENGTH WEIGHTLIFTING CLUB  1036546  108.7  2018-12-01  -  Local  Iowa-Nebraska"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0wMSIsIndlaWdodF9jbGFzcyI6ODl9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

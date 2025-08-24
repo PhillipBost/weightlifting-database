@@ -1,0 +1,298 @@
+{
+  "timestamp": "2025-08-22T22:22:34.599Z",
+  "athleteName": "Maria Martinez",
+  "totalCompetitions": 5,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1062378": [
+        {
+          "meet_id": 5255,
+          "date": "2022-03-26",
+          "age_category": "Junior Women's",
+          "weight_class": "81kg",
+          "lifter_name": "Maria Martinez",
+          "lifter_id": 51833,
+          "membershipNumbers": [
+            {
+              "athleteName": "Maria Martinez",
+              "membershipNumber": "1062378",
+              "fullText": "5  -  93  Maria Martinez  F  20  Emory University Weightlifting Club  1062378  76.8  2022-03-26  -  Local  Georgia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMy0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMy0yNiIsIndlaWdodF9jbGFzcyI6Nzh9"
+        }
+      ],
+      "1073406": [
+        {
+          "meet_id": 6392,
+          "date": "2024-05-10",
+          "age_category": "Women's Masters (40-44)",
+          "weight_class": "64kg",
+          "lifter_name": "Maria Martinez",
+          "lifter_id": 51833,
+          "membershipNumbers": [
+            {
+              "athleteName": "Maria Martinez",
+              "membershipNumber": "1073406",
+              "fullText": "1  -  97  Maria Martinez  F  41  West Chester Weightlifting  1073406  63.7  2024-05-10  -  Local  Pennsylvania-West Virginia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNS0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNS0xMCIsIndlaWdodF9jbGFzcyI6MTM1fQ=="
+        },
+        {
+          "meet_id": 6459,
+          "date": "2024-07-19",
+          "age_category": "Women's Masters (40-44)",
+          "weight_class": "71kg",
+          "lifter_name": "Maria Martinez",
+          "lifter_id": 51833,
+          "membershipNumbers": [
+            {
+              "athleteName": "Maria Martinez",
+              "membershipNumber": "1073406",
+              "fullText": "1  -  103  Maria Martinez  F  41  West Chester Weightlifting  1073406  66.1  2024-07-19  -  Local  Pennsylvania-West Virginia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNy0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNy0xOSIsIndlaWdodF9jbGFzcyI6MTM2fQ=="
+        },
+        {
+          "meet_id": 6164,
+          "date": "2023-12-16",
+          "age_category": "Open Women's",
+          "weight_class": "64kg",
+          "lifter_name": "Maria Martinez",
+          "lifter_id": 51833,
+          "membershipNumbers": [
+            {
+              "athleteName": "Maria Martinez",
+              "membershipNumber": "1073406",
+              "fullText": "23  -  84  Maria Martinez  F  40  West Chester Weightlifting  1073406  62.4  2023-12-16  -  Local  Pennsylvania-West Virginia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMi0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMi0xNiIsIndlaWdodF9jbGFzcyI6OTV9"
+        },
+        {
+          "meet_id": 6262,
+          "date": "2024-03-15",
+          "age_category": "Open Women's",
+          "weight_class": "64kg",
+          "lifter_name": "Maria Martinez",
+          "lifter_id": 51833,
+          "membershipNumbers": [
+            {
+              "athleteName": "Maria Martinez",
+              "membershipNumber": "1073406",
+              "fullText": "4  -  94  Maria Martinez  F  41  West Chester Weightlifting  1073406  63  2024-03-15  -  Local  Pennsylvania-West Virginia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMy0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMy0xNSIsIndlaWdodF9jbGFzcyI6OTV9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Maria Martinez",
+    "splits": [
+      {
+        "newAthleteName": "Maria Martinez (Person 1)",
+        "membershipNumber": "1062378",
+        "competitionCount": 1,
+        "competitions": [
+          5255
+        ]
+      },
+      {
+        "newAthleteName": "Maria Martinez (Person 2)",
+        "membershipNumber": "1073406",
+        "competitionCount": 4,
+        "competitions": [
+          6392,
+          6459,
+          6164,
+          6262
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Maria Martinez",
+    "competitions": [
+      {
+        "meet_id": 5255,
+        "date": "2022-03-26",
+        "age_category": "Junior Women's",
+        "weight_class": "81kg",
+        "lifter_name": "Maria Martinez",
+        "lifter_id": 51833,
+        "membershipNumbers": [
+          {
+            "athleteName": "Maria Martinez",
+            "membershipNumber": "1062378",
+            "fullText": "5  -  93  Maria Martinez  F  20  Emory University Weightlifting Club  1062378  76.8  2022-03-26  -  Local  Georgia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMy0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMy0yNiIsIndlaWdodF9jbGFzcyI6Nzh9"
+      },
+      {
+        "meet_id": 6392,
+        "date": "2024-05-10",
+        "age_category": "Women's Masters (40-44)",
+        "weight_class": "64kg",
+        "lifter_name": "Maria Martinez",
+        "lifter_id": 51833,
+        "membershipNumbers": [
+          {
+            "athleteName": "Maria Martinez",
+            "membershipNumber": "1073406",
+            "fullText": "1  -  97  Maria Martinez  F  41  West Chester Weightlifting  1073406  63.7  2024-05-10  -  Local  Pennsylvania-West Virginia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNS0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNS0xMCIsIndlaWdodF9jbGFzcyI6MTM1fQ=="
+      },
+      {
+        "meet_id": 6459,
+        "date": "2024-07-19",
+        "age_category": "Women's Masters (40-44)",
+        "weight_class": "71kg",
+        "lifter_name": "Maria Martinez",
+        "lifter_id": 51833,
+        "membershipNumbers": [
+          {
+            "athleteName": "Maria Martinez",
+            "membershipNumber": "1073406",
+            "fullText": "1  -  103  Maria Martinez  F  41  West Chester Weightlifting  1073406  66.1  2024-07-19  -  Local  Pennsylvania-West Virginia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNy0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNy0xOSIsIndlaWdodF9jbGFzcyI6MTM2fQ=="
+      },
+      {
+        "meet_id": 6164,
+        "date": "2023-12-16",
+        "age_category": "Open Women's",
+        "weight_class": "64kg",
+        "lifter_name": "Maria Martinez",
+        "lifter_id": 51833,
+        "membershipNumbers": [
+          {
+            "athleteName": "Maria Martinez",
+            "membershipNumber": "1073406",
+            "fullText": "23  -  84  Maria Martinez  F  40  West Chester Weightlifting  1073406  62.4  2023-12-16  -  Local  Pennsylvania-West Virginia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMi0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMi0xNiIsIndlaWdodF9jbGFzcyI6OTV9"
+      },
+      {
+        "meet_id": 6262,
+        "date": "2024-03-15",
+        "age_category": "Open Women's",
+        "weight_class": "64kg",
+        "lifter_name": "Maria Martinez",
+        "lifter_id": 51833,
+        "membershipNumbers": [
+          {
+            "athleteName": "Maria Martinez",
+            "membershipNumber": "1073406",
+            "fullText": "4  -  94  Maria Martinez  F  41  West Chester Weightlifting  1073406  63  2024-03-15  -  Local  Pennsylvania-West Virginia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMy0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMy0xNSIsIndlaWdodF9jbGFzcyI6OTV9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1062378": [
+          {
+            "meet_id": 5255,
+            "date": "2022-03-26",
+            "age_category": "Junior Women's",
+            "weight_class": "81kg",
+            "lifter_name": "Maria Martinez",
+            "lifter_id": 51833,
+            "membershipNumbers": [
+              {
+                "athleteName": "Maria Martinez",
+                "membershipNumber": "1062378",
+                "fullText": "5  -  93  Maria Martinez  F  20  Emory University Weightlifting Club  1062378  76.8  2022-03-26  -  Local  Georgia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMy0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMy0yNiIsIndlaWdodF9jbGFzcyI6Nzh9"
+          }
+        ],
+        "1073406": [
+          {
+            "meet_id": 6392,
+            "date": "2024-05-10",
+            "age_category": "Women's Masters (40-44)",
+            "weight_class": "64kg",
+            "lifter_name": "Maria Martinez",
+            "lifter_id": 51833,
+            "membershipNumbers": [
+              {
+                "athleteName": "Maria Martinez",
+                "membershipNumber": "1073406",
+                "fullText": "1  -  97  Maria Martinez  F  41  West Chester Weightlifting  1073406  63.7  2024-05-10  -  Local  Pennsylvania-West Virginia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNS0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNS0xMCIsIndlaWdodF9jbGFzcyI6MTM1fQ=="
+          },
+          {
+            "meet_id": 6459,
+            "date": "2024-07-19",
+            "age_category": "Women's Masters (40-44)",
+            "weight_class": "71kg",
+            "lifter_name": "Maria Martinez",
+            "lifter_id": 51833,
+            "membershipNumbers": [
+              {
+                "athleteName": "Maria Martinez",
+                "membershipNumber": "1073406",
+                "fullText": "1  -  103  Maria Martinez  F  41  West Chester Weightlifting  1073406  66.1  2024-07-19  -  Local  Pennsylvania-West Virginia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNy0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNy0xOSIsIndlaWdodF9jbGFzcyI6MTM2fQ=="
+          },
+          {
+            "meet_id": 6164,
+            "date": "2023-12-16",
+            "age_category": "Open Women's",
+            "weight_class": "64kg",
+            "lifter_name": "Maria Martinez",
+            "lifter_id": 51833,
+            "membershipNumbers": [
+              {
+                "athleteName": "Maria Martinez",
+                "membershipNumber": "1073406",
+                "fullText": "23  -  84  Maria Martinez  F  40  West Chester Weightlifting  1073406  62.4  2023-12-16  -  Local  Pennsylvania-West Virginia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMi0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMi0xNiIsIndlaWdodF9jbGFzcyI6OTV9"
+          },
+          {
+            "meet_id": 6262,
+            "date": "2024-03-15",
+            "age_category": "Open Women's",
+            "weight_class": "64kg",
+            "lifter_name": "Maria Martinez",
+            "lifter_id": 51833,
+            "membershipNumbers": [
+              {
+                "athleteName": "Maria Martinez",
+                "membershipNumber": "1073406",
+                "fullText": "4  -  94  Maria Martinez  F  41  West Chester Weightlifting  1073406  63  2024-03-15  -  Local  Pennsylvania-West Virginia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMy0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMy0xNSIsIndlaWdodF9jbGFzcyI6OTV9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

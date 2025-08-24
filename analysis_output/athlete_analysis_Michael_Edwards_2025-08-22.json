@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T18:43:48.074Z",
+  "athleteName": "Michael Edwards",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "138929": [
+        {
+          "meet_id": 1086,
+          "date": "2013-05-19",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Michael Edwards",
+          "lifter_id": 17012,
+          "membershipNumbers": [
+            {
+              "athleteName": "Michael Edwards",
+              "membershipNumber": "138929",
+              "fullText": "6  -  162  Michael Edwards  M  37  4K Weightlifting  138929  76.25  2013-05-19  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNS0xOSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        },
+        {
+          "meet_id": 1183,
+          "date": "2014-05-17",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Michael Edwards",
+          "lifter_id": 17012,
+          "membershipNumbers": [
+            {
+              "athleteName": "Michael Edwards",
+              "membershipNumber": "138929",
+              "fullText": "21  -  183  Michael Edwards  M  38  4K Weightlifting  138929  76.32  2014-05-17  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNS0xNyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        }
+      ],
+      "1002227": [
+        {
+          "meet_id": 534,
+          "date": "2016-02-14",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Michael Edwards",
+          "lifter_id": 17012,
+          "membershipNumbers": [
+            {
+              "athleteName": "Michael Edwards",
+              "membershipNumber": "1002227",
+              "fullText": "6  -  221  Michael Edwards  M  32  -  1002227  76.59  2016-02-14  -  Local  Mountain North"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMi0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMi0xNCIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Michael Edwards",
+    "splits": [
+      {
+        "newAthleteName": "Michael Edwards (Person 1)",
+        "membershipNumber": "138929",
+        "competitionCount": 2,
+        "competitions": [
+          1086,
+          1183
+        ]
+      },
+      {
+        "newAthleteName": "Michael Edwards (Person 2)",
+        "membershipNumber": "1002227",
+        "competitionCount": 1,
+        "competitions": [
+          534
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Michael Edwards",
+    "competitions": [
+      {
+        "meet_id": 534,
+        "date": "2016-02-14",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Michael Edwards",
+        "lifter_id": 17012,
+        "membershipNumbers": [
+          {
+            "athleteName": "Michael Edwards",
+            "membershipNumber": "1002227",
+            "fullText": "6  -  221  Michael Edwards  M  32  -  1002227  76.59  2016-02-14  -  Local  Mountain North"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMi0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMi0xNCIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 1086,
+        "date": "2013-05-19",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Michael Edwards",
+        "lifter_id": 17012,
+        "membershipNumbers": [
+          {
+            "athleteName": "Michael Edwards",
+            "membershipNumber": "138929",
+            "fullText": "6  -  162  Michael Edwards  M  37  4K Weightlifting  138929  76.25  2013-05-19  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNS0xOSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 1183,
+        "date": "2014-05-17",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Michael Edwards",
+        "lifter_id": 17012,
+        "membershipNumbers": [
+          {
+            "athleteName": "Michael Edwards",
+            "membershipNumber": "138929",
+            "fullText": "21  -  183  Michael Edwards  M  38  4K Weightlifting  138929  76.32  2014-05-17  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNS0xNyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "138929": [
+          {
+            "meet_id": 1086,
+            "date": "2013-05-19",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Michael Edwards",
+            "lifter_id": 17012,
+            "membershipNumbers": [
+              {
+                "athleteName": "Michael Edwards",
+                "membershipNumber": "138929",
+                "fullText": "6  -  162  Michael Edwards  M  37  4K Weightlifting  138929  76.25  2013-05-19  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNS0xOSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          },
+          {
+            "meet_id": 1183,
+            "date": "2014-05-17",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Michael Edwards",
+            "lifter_id": 17012,
+            "membershipNumbers": [
+              {
+                "athleteName": "Michael Edwards",
+                "membershipNumber": "138929",
+                "fullText": "21  -  183  Michael Edwards  M  38  4K Weightlifting  138929  76.32  2014-05-17  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNS0xNyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          }
+        ],
+        "1002227": [
+          {
+            "meet_id": 534,
+            "date": "2016-02-14",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Michael Edwards",
+            "lifter_id": 17012,
+            "membershipNumbers": [
+              {
+                "athleteName": "Michael Edwards",
+                "membershipNumber": "1002227",
+                "fullText": "6  -  221  Michael Edwards  M  32  -  1002227  76.59  2016-02-14  -  Local  Mountain North"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMi0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMi0xNCIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

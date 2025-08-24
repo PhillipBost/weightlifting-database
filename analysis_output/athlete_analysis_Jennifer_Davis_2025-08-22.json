@@ -1,0 +1,292 @@
+{
+  "timestamp": "2025-08-22T08:42:38.468Z",
+  "athleteName": "Jennifer Davis",
+  "totalCompetitions": 5,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1043998": [
+        {
+          "meet_id": 4051,
+          "date": "2019-09-07",
+          "age_category": "Open Women's",
+          "weight_class": "55kg",
+          "lifter_name": "Jennifer Davis",
+          "lifter_id": 42863,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jennifer Davis",
+              "membershipNumber": "1043998",
+              "fullText": "7  -  87  Jennifer Davis  F  22  Notch 8 Barbell  1043998  53.7  2019-09-07  -  Local  Indiana"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOS0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOS0wNyIsIndlaWdodF9jbGFzcyI6OTN9"
+        }
+      ],
+      "1046504": [
+        {
+          "meet_id": 4363,
+          "date": "2020-01-25",
+          "age_category": "Open Women's",
+          "weight_class": "59kg",
+          "lifter_name": "Jennifer Davis",
+          "lifter_id": 42863,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jennifer Davis",
+              "membershipNumber": "1046504",
+              "fullText": "23  -  92  Jennifer Davis  F  38  -  1046504  57.85  2020-01-25  -  Local  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMS0yNSIsIndlaWdodF9jbGFzcyI6OTR9"
+        },
+        {
+          "meet_id": 4045,
+          "date": "2019-11-17",
+          "age_category": "Women's Masters (35-39)",
+          "weight_class": "59kg",
+          "lifter_name": "Jennifer Davis",
+          "lifter_id": 42863,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jennifer Davis",
+              "membershipNumber": "1046504",
+              "fullText": "8  -  98  Jennifer Davis  F  37  -  1046504  56.35  2019-11-17  -  National  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0xNyIsIndlaWdodF9jbGFzcyI6MTE0fQ=="
+        },
+        {
+          "meet_id": 4531,
+          "date": "2021-11-13",
+          "age_category": "Women's Masters (35-39)",
+          "weight_class": "64kg",
+          "lifter_name": "Jennifer Davis",
+          "lifter_id": 42863,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jennifer Davis",
+              "membershipNumber": "1046504",
+              "fullText": "1  -  86  Jennifer Davis  F  39  -  1046504  63.1  2021-11-13  -  Local  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMS0xMyIsIndlaWdodF9jbGFzcyI6MTE1fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 4362,
+        "date": "2020-02-08",
+        "age_category": "Open Women's",
+        "weight_class": "59kg",
+        "lifter_name": "Jennifer Davis",
+        "lifter_id": 42863,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMi0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMi0wOCIsIndlaWdodF9jbGFzcyI6OTR9"
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Jennifer Davis",
+    "splits": [
+      {
+        "newAthleteName": "Jennifer Davis (Person 1)",
+        "membershipNumber": "1043998",
+        "competitionCount": 1,
+        "competitions": [
+          4051
+        ]
+      },
+      {
+        "newAthleteName": "Jennifer Davis (Person 2)",
+        "membershipNumber": "1046504",
+        "competitionCount": 3,
+        "competitions": [
+          4363,
+          4045,
+          4531
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 4362,
+        "date": "2020-02-08",
+        "age_category": "Open Women's",
+        "weight_class": "59kg",
+        "lifter_name": "Jennifer Davis",
+        "lifter_id": 42863,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMi0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMi0wOCIsIndlaWdodF9jbGFzcyI6OTR9"
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Jennifer Davis",
+    "competitions": [
+      {
+        "meet_id": 4363,
+        "date": "2020-01-25",
+        "age_category": "Open Women's",
+        "weight_class": "59kg",
+        "lifter_name": "Jennifer Davis",
+        "lifter_id": 42863,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jennifer Davis",
+            "membershipNumber": "1046504",
+            "fullText": "23  -  92  Jennifer Davis  F  38  -  1046504  57.85  2020-01-25  -  Local  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMS0yNSIsIndlaWdodF9jbGFzcyI6OTR9"
+      },
+      {
+        "meet_id": 4051,
+        "date": "2019-09-07",
+        "age_category": "Open Women's",
+        "weight_class": "55kg",
+        "lifter_name": "Jennifer Davis",
+        "lifter_id": 42863,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jennifer Davis",
+            "membershipNumber": "1043998",
+            "fullText": "7  -  87  Jennifer Davis  F  22  Notch 8 Barbell  1043998  53.7  2019-09-07  -  Local  Indiana"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOS0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOS0wNyIsIndlaWdodF9jbGFzcyI6OTN9"
+      },
+      {
+        "meet_id": 4045,
+        "date": "2019-11-17",
+        "age_category": "Women's Masters (35-39)",
+        "weight_class": "59kg",
+        "lifter_name": "Jennifer Davis",
+        "lifter_id": 42863,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jennifer Davis",
+            "membershipNumber": "1046504",
+            "fullText": "8  -  98  Jennifer Davis  F  37  -  1046504  56.35  2019-11-17  -  National  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0xNyIsIndlaWdodF9jbGFzcyI6MTE0fQ=="
+      },
+      {
+        "meet_id": 4362,
+        "date": "2020-02-08",
+        "age_category": "Open Women's",
+        "weight_class": "59kg",
+        "lifter_name": "Jennifer Davis",
+        "lifter_id": 42863,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMi0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMi0wOCIsIndlaWdodF9jbGFzcyI6OTR9"
+      },
+      {
+        "meet_id": 4531,
+        "date": "2021-11-13",
+        "age_category": "Women's Masters (35-39)",
+        "weight_class": "64kg",
+        "lifter_name": "Jennifer Davis",
+        "lifter_id": 42863,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jennifer Davis",
+            "membershipNumber": "1046504",
+            "fullText": "1  -  86  Jennifer Davis  F  39  -  1046504  63.1  2021-11-13  -  Local  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMS0xMyIsIndlaWdodF9jbGFzcyI6MTE1fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1043998": [
+          {
+            "meet_id": 4051,
+            "date": "2019-09-07",
+            "age_category": "Open Women's",
+            "weight_class": "55kg",
+            "lifter_name": "Jennifer Davis",
+            "lifter_id": 42863,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jennifer Davis",
+                "membershipNumber": "1043998",
+                "fullText": "7  -  87  Jennifer Davis  F  22  Notch 8 Barbell  1043998  53.7  2019-09-07  -  Local  Indiana"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOS0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOS0wNyIsIndlaWdodF9jbGFzcyI6OTN9"
+          }
+        ],
+        "1046504": [
+          {
+            "meet_id": 4363,
+            "date": "2020-01-25",
+            "age_category": "Open Women's",
+            "weight_class": "59kg",
+            "lifter_name": "Jennifer Davis",
+            "lifter_id": 42863,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jennifer Davis",
+                "membershipNumber": "1046504",
+                "fullText": "23  -  92  Jennifer Davis  F  38  -  1046504  57.85  2020-01-25  -  Local  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMS0yNSIsIndlaWdodF9jbGFzcyI6OTR9"
+          },
+          {
+            "meet_id": 4045,
+            "date": "2019-11-17",
+            "age_category": "Women's Masters (35-39)",
+            "weight_class": "59kg",
+            "lifter_name": "Jennifer Davis",
+            "lifter_id": 42863,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jennifer Davis",
+                "membershipNumber": "1046504",
+                "fullText": "8  -  98  Jennifer Davis  F  37  -  1046504  56.35  2019-11-17  -  National  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0xNyIsIndlaWdodF9jbGFzcyI6MTE0fQ=="
+          },
+          {
+            "meet_id": 4531,
+            "date": "2021-11-13",
+            "age_category": "Women's Masters (35-39)",
+            "weight_class": "64kg",
+            "lifter_name": "Jennifer Davis",
+            "lifter_id": 42863,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jennifer Davis",
+                "membershipNumber": "1046504",
+                "fullText": "1  -  86  Jennifer Davis  F  39  -  1046504  63.1  2021-11-13  -  Local  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMS0xMyIsIndlaWdodF9jbGFzcyI6MTE1fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 4362,
+          "date": "2020-02-08",
+          "age_category": "Open Women's",
+          "weight_class": "59kg",
+          "lifter_name": "Jennifer Davis",
+          "lifter_id": 42863,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMi0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMi0wOCIsIndlaWdodF9jbGFzcyI6OTR9"
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

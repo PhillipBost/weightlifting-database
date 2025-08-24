@@ -1,0 +1,283 @@
+{
+  "timestamp": "2025-08-22T20:58:05.199Z",
+  "athleteName": "Andrew Lu",
+  "totalCompetitions": 5,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "208888": [
+        {
+          "meet_id": 426,
+          "date": "2015-07-19",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Andrew Lu",
+          "lifter_id": 13883,
+          "membershipNumbers": [
+            {
+              "athleteName": "Andrew Lu",
+              "membershipNumber": "208888",
+              "fullText": "18  -  173  Andrew Lu  M  26  MILLER WEIGHTLIFTING  208888  74.2  2015-07-19  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNy0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNy0xOSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        },
+        {
+          "meet_id": 2519,
+          "date": "2017-04-22",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Andrew Lu",
+          "lifter_id": 13883,
+          "membershipNumbers": [
+            {
+              "athleteName": "Andrew Lu",
+              "membershipNumber": "208888",
+              "fullText": "27  -  186  Andrew Lu  M  28  MILLER WEIGHTLIFTING  208888  76.7  2017-04-22  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNC0yMiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        }
+      ],
+      "1029920": [
+        {
+          "meet_id": 3354,
+          "date": "2018-07-14",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Andrew Lu",
+          "lifter_id": 13883,
+          "membershipNumbers": [
+            {
+              "athleteName": "Andrew Lu",
+              "membershipNumber": "1029920",
+              "fullText": "15  -  180  Andrew Lu  M  30  BASTION BARBELL CLUB  1029920  75.6  2018-07-14  -  Local  New York"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNy0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNy0xNCIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 424,
+        "date": "2015-05-23",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Andrew Lu",
+        "lifter_id": 13883,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0yMyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 2065,
+        "date": "2016-07-24",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Andrew Lu",
+        "lifter_id": 13883,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNy0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNy0yNCIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Andrew Lu",
+    "splits": [
+      {
+        "newAthleteName": "Andrew Lu (Person 1)",
+        "membershipNumber": "208888",
+        "competitionCount": 2,
+        "competitions": [
+          426,
+          2519
+        ]
+      },
+      {
+        "newAthleteName": "Andrew Lu (Person 2)",
+        "membershipNumber": "1029920",
+        "competitionCount": 1,
+        "competitions": [
+          3354
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 424,
+        "date": "2015-05-23",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Andrew Lu",
+        "lifter_id": 13883,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0yMyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 2065,
+        "date": "2016-07-24",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Andrew Lu",
+        "lifter_id": 13883,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNy0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNy0yNCIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Andrew Lu",
+    "competitions": [
+      {
+        "meet_id": 3354,
+        "date": "2018-07-14",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Andrew Lu",
+        "lifter_id": 13883,
+        "membershipNumbers": [
+          {
+            "athleteName": "Andrew Lu",
+            "membershipNumber": "1029920",
+            "fullText": "15  -  180  Andrew Lu  M  30  BASTION BARBELL CLUB  1029920  75.6  2018-07-14  -  Local  New York"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNy0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNy0xNCIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 424,
+        "date": "2015-05-23",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Andrew Lu",
+        "lifter_id": 13883,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0yMyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 426,
+        "date": "2015-07-19",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Andrew Lu",
+        "lifter_id": 13883,
+        "membershipNumbers": [
+          {
+            "athleteName": "Andrew Lu",
+            "membershipNumber": "208888",
+            "fullText": "18  -  173  Andrew Lu  M  26  MILLER WEIGHTLIFTING  208888  74.2  2015-07-19  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNy0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNy0xOSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 2519,
+        "date": "2017-04-22",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Andrew Lu",
+        "lifter_id": 13883,
+        "membershipNumbers": [
+          {
+            "athleteName": "Andrew Lu",
+            "membershipNumber": "208888",
+            "fullText": "27  -  186  Andrew Lu  M  28  MILLER WEIGHTLIFTING  208888  76.7  2017-04-22  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNC0yMiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 2065,
+        "date": "2016-07-24",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Andrew Lu",
+        "lifter_id": 13883,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNy0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNy0yNCIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "208888": [
+          {
+            "meet_id": 426,
+            "date": "2015-07-19",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Andrew Lu",
+            "lifter_id": 13883,
+            "membershipNumbers": [
+              {
+                "athleteName": "Andrew Lu",
+                "membershipNumber": "208888",
+                "fullText": "18  -  173  Andrew Lu  M  26  MILLER WEIGHTLIFTING  208888  74.2  2015-07-19  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNy0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNy0xOSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          },
+          {
+            "meet_id": 2519,
+            "date": "2017-04-22",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Andrew Lu",
+            "lifter_id": 13883,
+            "membershipNumbers": [
+              {
+                "athleteName": "Andrew Lu",
+                "membershipNumber": "208888",
+                "fullText": "27  -  186  Andrew Lu  M  28  MILLER WEIGHTLIFTING  208888  76.7  2017-04-22  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNC0yMiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          }
+        ],
+        "1029920": [
+          {
+            "meet_id": 3354,
+            "date": "2018-07-14",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Andrew Lu",
+            "lifter_id": 13883,
+            "membershipNumbers": [
+              {
+                "athleteName": "Andrew Lu",
+                "membershipNumber": "1029920",
+                "fullText": "15  -  180  Andrew Lu  M  30  BASTION BARBELL CLUB  1029920  75.6  2018-07-14  -  Local  New York"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNy0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNy0xNCIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 424,
+          "date": "2015-05-23",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Andrew Lu",
+          "lifter_id": 13883,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0yMyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        },
+        {
+          "meet_id": 2065,
+          "date": "2016-07-24",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Andrew Lu",
+          "lifter_id": 13883,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNy0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNy0yNCIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

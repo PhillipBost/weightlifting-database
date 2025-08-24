@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T22:09:02.427Z",
+  "athleteName": "Matthew Cook",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1018304": [
+        {
+          "meet_id": 3075,
+          "date": "2018-04-15",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Matthew Cook",
+          "lifter_id": 35322,
+          "membershipNumbers": [
+            {
+              "athleteName": "Matthew Cook",
+              "membershipNumber": "1018304",
+              "fullText": "22  -  195  Matthew Cook  M  35  Strong Weightlifting  1018304  97.6  2018-04-15  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNC0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNC0xNSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        }
+      ],
+      "1052286": [
+        {
+          "meet_id": 4559,
+          "date": "2020-09-25",
+          "age_category": "Open Men's",
+          "weight_class": "96kg",
+          "lifter_name": "Matthew Cook",
+          "lifter_id": 35322,
+          "membershipNumbers": [
+            {
+              "athleteName": "Matthew Cook",
+              "membershipNumber": "1052286",
+              "fullText": "2  -  236  Matthew Cook  M  26  -  1052286  96  2020-09-25  -  Local  Georgia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wOS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wOS0yNSIsIndlaWdodF9jbGFzcyI6ODd9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Matthew Cook",
+    "splits": [
+      {
+        "newAthleteName": "Matthew Cook (Person 1)",
+        "membershipNumber": "1018304",
+        "competitionCount": 1,
+        "competitions": [
+          3075
+        ]
+      },
+      {
+        "newAthleteName": "Matthew Cook (Person 2)",
+        "membershipNumber": "1052286",
+        "competitionCount": 1,
+        "competitions": [
+          4559
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Matthew Cook",
+    "competitions": [
+      {
+        "meet_id": 3075,
+        "date": "2018-04-15",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Matthew Cook",
+        "lifter_id": 35322,
+        "membershipNumbers": [
+          {
+            "athleteName": "Matthew Cook",
+            "membershipNumber": "1018304",
+            "fullText": "22  -  195  Matthew Cook  M  35  Strong Weightlifting  1018304  97.6  2018-04-15  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNC0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNC0xNSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 4559,
+        "date": "2020-09-25",
+        "age_category": "Open Men's",
+        "weight_class": "96kg",
+        "lifter_name": "Matthew Cook",
+        "lifter_id": 35322,
+        "membershipNumbers": [
+          {
+            "athleteName": "Matthew Cook",
+            "membershipNumber": "1052286",
+            "fullText": "2  -  236  Matthew Cook  M  26  -  1052286  96  2020-09-25  -  Local  Georgia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wOS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wOS0yNSIsIndlaWdodF9jbGFzcyI6ODd9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1018304": [
+          {
+            "meet_id": 3075,
+            "date": "2018-04-15",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Matthew Cook",
+            "lifter_id": 35322,
+            "membershipNumbers": [
+              {
+                "athleteName": "Matthew Cook",
+                "membershipNumber": "1018304",
+                "fullText": "22  -  195  Matthew Cook  M  35  Strong Weightlifting  1018304  97.6  2018-04-15  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNC0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNC0xNSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          }
+        ],
+        "1052286": [
+          {
+            "meet_id": 4559,
+            "date": "2020-09-25",
+            "age_category": "Open Men's",
+            "weight_class": "96kg",
+            "lifter_name": "Matthew Cook",
+            "lifter_id": 35322,
+            "membershipNumbers": [
+              {
+                "athleteName": "Matthew Cook",
+                "membershipNumber": "1052286",
+                "fullText": "2  -  236  Matthew Cook  M  26  -  1052286  96  2020-09-25  -  Local  Georgia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wOS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wOS0yNSIsIndlaWdodF9jbGFzcyI6ODd9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

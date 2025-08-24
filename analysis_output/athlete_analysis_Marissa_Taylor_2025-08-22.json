@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-22T22:50:08.120Z",
+  "athleteName": "Marissa Taylor",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1033154": [
+        {
+          "meet_id": 3863,
+          "date": "2019-02-02",
+          "age_category": "Women's 13 Under Age Group",
+          "weight_class": "45kg",
+          "lifter_name": "Marissa Taylor",
+          "lifter_id": 38481,
+          "membershipNumbers": [
+            {
+              "athleteName": "Marissa Taylor",
+              "membershipNumber": "1033154",
+              "fullText": "2  -  61  Marissa Taylor  F  11  Redline Athletics  1033154  40.7  2019-02-02  -  Local  Southern"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMi0wMiIsIndlaWdodF9jbGFzcyI6NTV9"
+        },
+        {
+          "meet_id": 3544,
+          "date": "2018-11-18",
+          "age_category": "Women's 13 Under Age Group",
+          "weight_class": "45kg",
+          "lifter_name": "Marissa Taylor",
+          "lifter_id": 38481,
+          "membershipNumbers": [
+            {
+              "athleteName": "Marissa Taylor",
+              "membershipNumber": "1033154",
+              "fullText": "3  -  53  Marissa Taylor  F  10  Redline Athletics  1033154  40.2  2018-11-18  -  Local  Southern"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMS0xOCIsIndlaWdodF9jbGFzcyI6NTV9"
+        },
+        {
+          "meet_id": 3687,
+          "date": "2018-12-15",
+          "age_category": "Women's 13 Under Age Group",
+          "weight_class": "45kg",
+          "lifter_name": "Marissa Taylor",
+          "lifter_id": 38481,
+          "membershipNumbers": [
+            {
+              "athleteName": "Marissa Taylor",
+              "membershipNumber": "1033154",
+              "fullText": "1  -  55  Marissa Taylor  F  10  Redline Athletics  1033154  40.2  2018-12-15  -  Local  Southern"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0xNSIsIndlaWdodF9jbGFzcyI6NTV9"
+        }
+      ],
+      "1054614": [
+        {
+          "meet_id": 4810,
+          "date": "2021-03-20",
+          "age_category": "Open Women's",
+          "weight_class": "71kg",
+          "lifter_name": "Marissa Taylor",
+          "lifter_id": 38481,
+          "membershipNumbers": [
+            {
+              "athleteName": "Marissa Taylor",
+              "membershipNumber": "1054614",
+              "fullText": "8  -  146  Marissa Taylor  F  33  Hidden Valley Weightlifting Club  1054614  66.6  2021-03-20  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMy0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMy0yMCIsIndlaWdodF9jbGFzcyI6OTZ9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Marissa Taylor",
+    "splits": [
+      {
+        "newAthleteName": "Marissa Taylor (Person 1)",
+        "membershipNumber": "1033154",
+        "competitionCount": 3,
+        "competitions": [
+          3863,
+          3544,
+          3687
+        ]
+      },
+      {
+        "newAthleteName": "Marissa Taylor (Person 2)",
+        "membershipNumber": "1054614",
+        "competitionCount": 1,
+        "competitions": [
+          4810
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Marissa Taylor",
+    "competitions": [
+      {
+        "meet_id": 4810,
+        "date": "2021-03-20",
+        "age_category": "Open Women's",
+        "weight_class": "71kg",
+        "lifter_name": "Marissa Taylor",
+        "lifter_id": 38481,
+        "membershipNumbers": [
+          {
+            "athleteName": "Marissa Taylor",
+            "membershipNumber": "1054614",
+            "fullText": "8  -  146  Marissa Taylor  F  33  Hidden Valley Weightlifting Club  1054614  66.6  2021-03-20  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMy0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMy0yMCIsIndlaWdodF9jbGFzcyI6OTZ9"
+      },
+      {
+        "meet_id": 3863,
+        "date": "2019-02-02",
+        "age_category": "Women's 13 Under Age Group",
+        "weight_class": "45kg",
+        "lifter_name": "Marissa Taylor",
+        "lifter_id": 38481,
+        "membershipNumbers": [
+          {
+            "athleteName": "Marissa Taylor",
+            "membershipNumber": "1033154",
+            "fullText": "2  -  61  Marissa Taylor  F  11  Redline Athletics  1033154  40.7  2019-02-02  -  Local  Southern"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMi0wMiIsIndlaWdodF9jbGFzcyI6NTV9"
+      },
+      {
+        "meet_id": 3544,
+        "date": "2018-11-18",
+        "age_category": "Women's 13 Under Age Group",
+        "weight_class": "45kg",
+        "lifter_name": "Marissa Taylor",
+        "lifter_id": 38481,
+        "membershipNumbers": [
+          {
+            "athleteName": "Marissa Taylor",
+            "membershipNumber": "1033154",
+            "fullText": "3  -  53  Marissa Taylor  F  10  Redline Athletics  1033154  40.2  2018-11-18  -  Local  Southern"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMS0xOCIsIndlaWdodF9jbGFzcyI6NTV9"
+      },
+      {
+        "meet_id": 3687,
+        "date": "2018-12-15",
+        "age_category": "Women's 13 Under Age Group",
+        "weight_class": "45kg",
+        "lifter_name": "Marissa Taylor",
+        "lifter_id": 38481,
+        "membershipNumbers": [
+          {
+            "athleteName": "Marissa Taylor",
+            "membershipNumber": "1033154",
+            "fullText": "1  -  55  Marissa Taylor  F  10  Redline Athletics  1033154  40.2  2018-12-15  -  Local  Southern"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0xNSIsIndlaWdodF9jbGFzcyI6NTV9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1033154": [
+          {
+            "meet_id": 3863,
+            "date": "2019-02-02",
+            "age_category": "Women's 13 Under Age Group",
+            "weight_class": "45kg",
+            "lifter_name": "Marissa Taylor",
+            "lifter_id": 38481,
+            "membershipNumbers": [
+              {
+                "athleteName": "Marissa Taylor",
+                "membershipNumber": "1033154",
+                "fullText": "2  -  61  Marissa Taylor  F  11  Redline Athletics  1033154  40.7  2019-02-02  -  Local  Southern"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMi0wMiIsIndlaWdodF9jbGFzcyI6NTV9"
+          },
+          {
+            "meet_id": 3544,
+            "date": "2018-11-18",
+            "age_category": "Women's 13 Under Age Group",
+            "weight_class": "45kg",
+            "lifter_name": "Marissa Taylor",
+            "lifter_id": 38481,
+            "membershipNumbers": [
+              {
+                "athleteName": "Marissa Taylor",
+                "membershipNumber": "1033154",
+                "fullText": "3  -  53  Marissa Taylor  F  10  Redline Athletics  1033154  40.2  2018-11-18  -  Local  Southern"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMS0xOCIsIndlaWdodF9jbGFzcyI6NTV9"
+          },
+          {
+            "meet_id": 3687,
+            "date": "2018-12-15",
+            "age_category": "Women's 13 Under Age Group",
+            "weight_class": "45kg",
+            "lifter_name": "Marissa Taylor",
+            "lifter_id": 38481,
+            "membershipNumbers": [
+              {
+                "athleteName": "Marissa Taylor",
+                "membershipNumber": "1033154",
+                "fullText": "1  -  55  Marissa Taylor  F  10  Redline Athletics  1033154  40.2  2018-12-15  -  Local  Southern"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0xNSIsIndlaWdodF9jbGFzcyI6NTV9"
+          }
+        ],
+        "1054614": [
+          {
+            "meet_id": 4810,
+            "date": "2021-03-20",
+            "age_category": "Open Women's",
+            "weight_class": "71kg",
+            "lifter_name": "Marissa Taylor",
+            "lifter_id": 38481,
+            "membershipNumbers": [
+              {
+                "athleteName": "Marissa Taylor",
+                "membershipNumber": "1054614",
+                "fullText": "8  -  146  Marissa Taylor  F  33  Hidden Valley Weightlifting Club  1054614  66.6  2021-03-20  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMy0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMy0yMCIsIndlaWdodF9jbGFzcyI6OTZ9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

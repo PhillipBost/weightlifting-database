@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T19:37:19.885Z",
+  "athleteName": "Ian Martin",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "207970": [
+        {
+          "meet_id": 104,
+          "date": "2015-03-21",
+          "age_category": "Open Men's",
+          "weight_class": "69 kg",
+          "lifter_name": "Ian Martin",
+          "lifter_id": 7081,
+          "membershipNumbers": [
+            {
+              "athleteName": "Ian Martin",
+              "membershipNumber": "207970",
+              "fullText": "11  -  187  Ian Martin  M  32  -  207970  68.2  2015-03-21  -  Local  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMy0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMy0yMSIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+        }
+      ],
+      "1024615": [
+        {
+          "meet_id": 2837,
+          "date": "2017-12-02",
+          "age_category": "Men's 13 Under Age Group",
+          "weight_class": "35 Kg",
+          "lifter_name": "Ian Martin",
+          "lifter_id": 7081,
+          "membershipNumbers": [
+            {
+              "athleteName": "Ian Martin",
+              "membershipNumber": "1024615",
+              "fullText": "3  -  32  Ian Martin  M  11  Occoquan Bay Barbell Club  1024615  32  2017-12-02  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMi0wMiIsIndlaWdodF9jbGFzcyI6MjkyfQ=="
+        },
+        {
+          "meet_id": 2975,
+          "date": "2018-01-20",
+          "age_category": "Men's 13 Under Age Group",
+          "weight_class": "35 Kg",
+          "lifter_name": "Ian Martin",
+          "lifter_id": 7081,
+          "membershipNumbers": [
+            {
+              "athleteName": "Ian Martin",
+              "membershipNumber": "1024615",
+              "fullText": "1  -  40  Ian Martin  M  12  Occoquan Bay Barbell Club  1024615  32.5  2018-01-20  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMS0yMCIsIndlaWdodF9jbGFzcyI6MjkyfQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Ian Martin",
+    "splits": [
+      {
+        "newAthleteName": "Ian Martin (Person 1)",
+        "membershipNumber": "207970",
+        "competitionCount": 1,
+        "competitions": [
+          104
+        ]
+      },
+      {
+        "newAthleteName": "Ian Martin (Person 2)",
+        "membershipNumber": "1024615",
+        "competitionCount": 2,
+        "competitions": [
+          2837,
+          2975
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Ian Martin",
+    "competitions": [
+      {
+        "meet_id": 2837,
+        "date": "2017-12-02",
+        "age_category": "Men's 13 Under Age Group",
+        "weight_class": "35 Kg",
+        "lifter_name": "Ian Martin",
+        "lifter_id": 7081,
+        "membershipNumbers": [
+          {
+            "athleteName": "Ian Martin",
+            "membershipNumber": "1024615",
+            "fullText": "3  -  32  Ian Martin  M  11  Occoquan Bay Barbell Club  1024615  32  2017-12-02  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMi0wMiIsIndlaWdodF9jbGFzcyI6MjkyfQ=="
+      },
+      {
+        "meet_id": 2975,
+        "date": "2018-01-20",
+        "age_category": "Men's 13 Under Age Group",
+        "weight_class": "35 Kg",
+        "lifter_name": "Ian Martin",
+        "lifter_id": 7081,
+        "membershipNumbers": [
+          {
+            "athleteName": "Ian Martin",
+            "membershipNumber": "1024615",
+            "fullText": "1  -  40  Ian Martin  M  12  Occoquan Bay Barbell Club  1024615  32.5  2018-01-20  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMS0yMCIsIndlaWdodF9jbGFzcyI6MjkyfQ=="
+      },
+      {
+        "meet_id": 104,
+        "date": "2015-03-21",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "Ian Martin",
+        "lifter_id": 7081,
+        "membershipNumbers": [
+          {
+            "athleteName": "Ian Martin",
+            "membershipNumber": "207970",
+            "fullText": "11  -  187  Ian Martin  M  32  -  207970  68.2  2015-03-21  -  Local  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMy0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMy0yMSIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "207970": [
+          {
+            "meet_id": 104,
+            "date": "2015-03-21",
+            "age_category": "Open Men's",
+            "weight_class": "69 kg",
+            "lifter_name": "Ian Martin",
+            "lifter_id": 7081,
+            "membershipNumbers": [
+              {
+                "athleteName": "Ian Martin",
+                "membershipNumber": "207970",
+                "fullText": "11  -  187  Ian Martin  M  32  -  207970  68.2  2015-03-21  -  Local  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMy0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMy0yMSIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+          }
+        ],
+        "1024615": [
+          {
+            "meet_id": 2837,
+            "date": "2017-12-02",
+            "age_category": "Men's 13 Under Age Group",
+            "weight_class": "35 Kg",
+            "lifter_name": "Ian Martin",
+            "lifter_id": 7081,
+            "membershipNumbers": [
+              {
+                "athleteName": "Ian Martin",
+                "membershipNumber": "1024615",
+                "fullText": "3  -  32  Ian Martin  M  11  Occoquan Bay Barbell Club  1024615  32  2017-12-02  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMi0wMiIsIndlaWdodF9jbGFzcyI6MjkyfQ=="
+          },
+          {
+            "meet_id": 2975,
+            "date": "2018-01-20",
+            "age_category": "Men's 13 Under Age Group",
+            "weight_class": "35 Kg",
+            "lifter_name": "Ian Martin",
+            "lifter_id": 7081,
+            "membershipNumbers": [
+              {
+                "athleteName": "Ian Martin",
+                "membershipNumber": "1024615",
+                "fullText": "1  -  40  Ian Martin  M  12  Occoquan Bay Barbell Club  1024615  32.5  2018-01-20  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMS0yMCIsIndlaWdodF9jbGFzcyI6MjkyfQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

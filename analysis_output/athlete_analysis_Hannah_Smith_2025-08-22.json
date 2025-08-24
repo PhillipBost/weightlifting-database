@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T07:14:50.604Z",
+  "athleteName": "Hannah Smith",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1007336": [
+        {
+          "meet_id": 2199,
+          "date": "2016-10-15",
+          "age_category": "Open Women's",
+          "weight_class": "63 kg",
+          "lifter_name": "Hannah Smith",
+          "lifter_id": 23565,
+          "membershipNumbers": [
+            {
+              "athleteName": "Hannah Smith",
+              "membershipNumber": "1007336",
+              "fullText": "17  -  107  Hannah Smith  F  25  Pinnacle Weightlifting  1007336  60.5  2016-10-15  -  Local  Mountain North"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0xNSIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+        },
+        {
+          "meet_id": 1836,
+          "date": "2016-07-24",
+          "age_category": "Open Women's",
+          "weight_class": "63 kg",
+          "lifter_name": "Hannah Smith",
+          "lifter_id": 23565,
+          "membershipNumbers": [
+            {
+              "athleteName": "Hannah Smith",
+              "membershipNumber": "1007336",
+              "fullText": "21  -  106  Hannah Smith  F  25  Pinnacle Weightlifting  1007336  61.2  2016-07-24  -  Local  Mountain North"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNy0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNy0yNCIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+        }
+      ],
+      "1067833": [
+        {
+          "meet_id": 5659,
+          "date": "2023-01-15",
+          "age_category": "Open Women's",
+          "weight_class": "64kg",
+          "lifter_name": "Hannah Smith",
+          "lifter_id": 23565,
+          "membershipNumbers": [
+            {
+              "athleteName": "Hannah Smith",
+              "membershipNumber": "1067833",
+              "fullText": "20  -  89  Hannah Smith  F  30  Schuster Athletics  1067833  60.4  2023-01-15  -  Local  New York"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMS0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMS0xNSIsIndlaWdodF9jbGFzcyI6OTV9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Hannah Smith",
+    "splits": [
+      {
+        "newAthleteName": "Hannah Smith (Person 1)",
+        "membershipNumber": "1007336",
+        "competitionCount": 2,
+        "competitions": [
+          2199,
+          1836
+        ]
+      },
+      {
+        "newAthleteName": "Hannah Smith (Person 2)",
+        "membershipNumber": "1067833",
+        "competitionCount": 1,
+        "competitions": [
+          5659
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Hannah Smith",
+    "competitions": [
+      {
+        "meet_id": 2199,
+        "date": "2016-10-15",
+        "age_category": "Open Women's",
+        "weight_class": "63 kg",
+        "lifter_name": "Hannah Smith",
+        "lifter_id": 23565,
+        "membershipNumbers": [
+          {
+            "athleteName": "Hannah Smith",
+            "membershipNumber": "1007336",
+            "fullText": "17  -  107  Hannah Smith  F  25  Pinnacle Weightlifting  1007336  60.5  2016-10-15  -  Local  Mountain North"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0xNSIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+      },
+      {
+        "meet_id": 5659,
+        "date": "2023-01-15",
+        "age_category": "Open Women's",
+        "weight_class": "64kg",
+        "lifter_name": "Hannah Smith",
+        "lifter_id": 23565,
+        "membershipNumbers": [
+          {
+            "athleteName": "Hannah Smith",
+            "membershipNumber": "1067833",
+            "fullText": "20  -  89  Hannah Smith  F  30  Schuster Athletics  1067833  60.4  2023-01-15  -  Local  New York"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMS0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMS0xNSIsIndlaWdodF9jbGFzcyI6OTV9"
+      },
+      {
+        "meet_id": 1836,
+        "date": "2016-07-24",
+        "age_category": "Open Women's",
+        "weight_class": "63 kg",
+        "lifter_name": "Hannah Smith",
+        "lifter_id": 23565,
+        "membershipNumbers": [
+          {
+            "athleteName": "Hannah Smith",
+            "membershipNumber": "1007336",
+            "fullText": "21  -  106  Hannah Smith  F  25  Pinnacle Weightlifting  1007336  61.2  2016-07-24  -  Local  Mountain North"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNy0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNy0yNCIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1007336": [
+          {
+            "meet_id": 2199,
+            "date": "2016-10-15",
+            "age_category": "Open Women's",
+            "weight_class": "63 kg",
+            "lifter_name": "Hannah Smith",
+            "lifter_id": 23565,
+            "membershipNumbers": [
+              {
+                "athleteName": "Hannah Smith",
+                "membershipNumber": "1007336",
+                "fullText": "17  -  107  Hannah Smith  F  25  Pinnacle Weightlifting  1007336  60.5  2016-10-15  -  Local  Mountain North"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0xNSIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+          },
+          {
+            "meet_id": 1836,
+            "date": "2016-07-24",
+            "age_category": "Open Women's",
+            "weight_class": "63 kg",
+            "lifter_name": "Hannah Smith",
+            "lifter_id": 23565,
+            "membershipNumbers": [
+              {
+                "athleteName": "Hannah Smith",
+                "membershipNumber": "1007336",
+                "fullText": "21  -  106  Hannah Smith  F  25  Pinnacle Weightlifting  1007336  61.2  2016-07-24  -  Local  Mountain North"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNy0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNy0yNCIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+          }
+        ],
+        "1067833": [
+          {
+            "meet_id": 5659,
+            "date": "2023-01-15",
+            "age_category": "Open Women's",
+            "weight_class": "64kg",
+            "lifter_name": "Hannah Smith",
+            "lifter_id": 23565,
+            "membershipNumbers": [
+              {
+                "athleteName": "Hannah Smith",
+                "membershipNumber": "1067833",
+                "fullText": "20  -  89  Hannah Smith  F  30  Schuster Athletics  1067833  60.4  2023-01-15  -  Local  New York"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMS0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMS0xNSIsIndlaWdodF9jbGFzcyI6OTV9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

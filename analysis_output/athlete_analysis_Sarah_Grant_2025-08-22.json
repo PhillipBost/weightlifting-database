@@ -1,0 +1,298 @@
+{
+  "timestamp": "2025-08-22T13:20:39.600Z",
+  "athleteName": "Sarah Grant",
+  "totalCompetitions": 5,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "201162": [
+        {
+          "meet_id": 1481,
+          "date": "2014-08-16",
+          "age_category": "Open Women's",
+          "weight_class": "63 kg",
+          "lifter_name": "Sarah Grant",
+          "lifter_id": 20650,
+          "membershipNumbers": [
+            {
+              "athleteName": "Sarah Grant",
+              "membershipNumber": "201162",
+              "fullText": "3  -  138  Sarah Grant  F  22  PIONEER WLC  201162  61.6  2014-08-16  -  Local  Missouri Valley"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0xNiIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+        },
+        {
+          "meet_id": 1482,
+          "date": "2014-09-13",
+          "age_category": "Open Women's",
+          "weight_class": "63 kg",
+          "lifter_name": "Sarah Grant",
+          "lifter_id": 20650,
+          "membershipNumbers": [
+            {
+              "athleteName": "Sarah Grant",
+              "membershipNumber": "201162",
+              "fullText": "4  -  144  Sarah Grant  F  22  PIONEER WLC  201162  61.3  2014-09-13  -  Local  Missouri Valley"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOS0xMyIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+        }
+      ],
+      "1078163": [
+        {
+          "meet_id": 6552,
+          "date": "2024-10-05",
+          "age_category": "Women's Masters (40-44)",
+          "weight_class": "+87kg",
+          "lifter_name": "Sarah Grant",
+          "lifter_id": 20650,
+          "membershipNumbers": [
+            {
+              "athleteName": "Sarah Grant",
+              "membershipNumber": "1078163",
+              "fullText": "2  -  115  Sarah Grant  F  41  Annex Weightlifting  1078163  93  2024-10-05  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0wNSIsIndlaWdodF9jbGFzcyI6MTQwfQ=="
+        },
+        {
+          "meet_id": 6792,
+          "date": "2025-03-15",
+          "age_category": "Women's Masters (40-44)",
+          "weight_class": "+87kg",
+          "lifter_name": "Sarah Grant",
+          "lifter_id": 20650,
+          "membershipNumbers": [
+            {
+              "athleteName": "Sarah Grant",
+              "membershipNumber": "1078163",
+              "fullText": "1  -  137  Sarah Grant  F  42  Annex Weightlifting  1078163  95  2025-03-15  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMy0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMy0xNSIsIndlaWdodF9jbGFzcyI6MTQwfQ=="
+        },
+        {
+          "meet_id": 6900,
+          "date": "2025-05-17",
+          "age_category": "Women's Masters (40-44)",
+          "weight_class": "+87kg",
+          "lifter_name": "Sarah Grant",
+          "lifter_id": 20650,
+          "membershipNumbers": [
+            {
+              "athleteName": "Sarah Grant",
+              "membershipNumber": "1078163",
+              "fullText": "2  -  140  Sarah Grant  F  42  Annex Weightlifting  1078163  95.1  2025-05-17  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNS0xNyIsIndlaWdodF9jbGFzcyI6MTQwfQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Sarah Grant",
+    "splits": [
+      {
+        "newAthleteName": "Sarah Grant (Person 1)",
+        "membershipNumber": "201162",
+        "competitionCount": 2,
+        "competitions": [
+          1481,
+          1482
+        ]
+      },
+      {
+        "newAthleteName": "Sarah Grant (Person 2)",
+        "membershipNumber": "1078163",
+        "competitionCount": 3,
+        "competitions": [
+          6552,
+          6792,
+          6900
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Sarah Grant",
+    "competitions": [
+      {
+        "meet_id": 6552,
+        "date": "2024-10-05",
+        "age_category": "Women's Masters (40-44)",
+        "weight_class": "+87kg",
+        "lifter_name": "Sarah Grant",
+        "lifter_id": 20650,
+        "membershipNumbers": [
+          {
+            "athleteName": "Sarah Grant",
+            "membershipNumber": "1078163",
+            "fullText": "2  -  115  Sarah Grant  F  41  Annex Weightlifting  1078163  93  2024-10-05  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0wNSIsIndlaWdodF9jbGFzcyI6MTQwfQ=="
+      },
+      {
+        "meet_id": 1481,
+        "date": "2014-08-16",
+        "age_category": "Open Women's",
+        "weight_class": "63 kg",
+        "lifter_name": "Sarah Grant",
+        "lifter_id": 20650,
+        "membershipNumbers": [
+          {
+            "athleteName": "Sarah Grant",
+            "membershipNumber": "201162",
+            "fullText": "3  -  138  Sarah Grant  F  22  PIONEER WLC  201162  61.6  2014-08-16  -  Local  Missouri Valley"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0xNiIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+      },
+      {
+        "meet_id": 1482,
+        "date": "2014-09-13",
+        "age_category": "Open Women's",
+        "weight_class": "63 kg",
+        "lifter_name": "Sarah Grant",
+        "lifter_id": 20650,
+        "membershipNumbers": [
+          {
+            "athleteName": "Sarah Grant",
+            "membershipNumber": "201162",
+            "fullText": "4  -  144  Sarah Grant  F  22  PIONEER WLC  201162  61.3  2014-09-13  -  Local  Missouri Valley"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOS0xMyIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+      },
+      {
+        "meet_id": 6792,
+        "date": "2025-03-15",
+        "age_category": "Women's Masters (40-44)",
+        "weight_class": "+87kg",
+        "lifter_name": "Sarah Grant",
+        "lifter_id": 20650,
+        "membershipNumbers": [
+          {
+            "athleteName": "Sarah Grant",
+            "membershipNumber": "1078163",
+            "fullText": "1  -  137  Sarah Grant  F  42  Annex Weightlifting  1078163  95  2025-03-15  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMy0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMy0xNSIsIndlaWdodF9jbGFzcyI6MTQwfQ=="
+      },
+      {
+        "meet_id": 6900,
+        "date": "2025-05-17",
+        "age_category": "Women's Masters (40-44)",
+        "weight_class": "+87kg",
+        "lifter_name": "Sarah Grant",
+        "lifter_id": 20650,
+        "membershipNumbers": [
+          {
+            "athleteName": "Sarah Grant",
+            "membershipNumber": "1078163",
+            "fullText": "2  -  140  Sarah Grant  F  42  Annex Weightlifting  1078163  95.1  2025-05-17  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNS0xNyIsIndlaWdodF9jbGFzcyI6MTQwfQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "201162": [
+          {
+            "meet_id": 1481,
+            "date": "2014-08-16",
+            "age_category": "Open Women's",
+            "weight_class": "63 kg",
+            "lifter_name": "Sarah Grant",
+            "lifter_id": 20650,
+            "membershipNumbers": [
+              {
+                "athleteName": "Sarah Grant",
+                "membershipNumber": "201162",
+                "fullText": "3  -  138  Sarah Grant  F  22  PIONEER WLC  201162  61.6  2014-08-16  -  Local  Missouri Valley"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0xNiIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+          },
+          {
+            "meet_id": 1482,
+            "date": "2014-09-13",
+            "age_category": "Open Women's",
+            "weight_class": "63 kg",
+            "lifter_name": "Sarah Grant",
+            "lifter_id": 20650,
+            "membershipNumbers": [
+              {
+                "athleteName": "Sarah Grant",
+                "membershipNumber": "201162",
+                "fullText": "4  -  144  Sarah Grant  F  22  PIONEER WLC  201162  61.3  2014-09-13  -  Local  Missouri Valley"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOS0xMyIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+          }
+        ],
+        "1078163": [
+          {
+            "meet_id": 6552,
+            "date": "2024-10-05",
+            "age_category": "Women's Masters (40-44)",
+            "weight_class": "+87kg",
+            "lifter_name": "Sarah Grant",
+            "lifter_id": 20650,
+            "membershipNumbers": [
+              {
+                "athleteName": "Sarah Grant",
+                "membershipNumber": "1078163",
+                "fullText": "2  -  115  Sarah Grant  F  41  Annex Weightlifting  1078163  93  2024-10-05  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0wNSIsIndlaWdodF9jbGFzcyI6MTQwfQ=="
+          },
+          {
+            "meet_id": 6792,
+            "date": "2025-03-15",
+            "age_category": "Women's Masters (40-44)",
+            "weight_class": "+87kg",
+            "lifter_name": "Sarah Grant",
+            "lifter_id": 20650,
+            "membershipNumbers": [
+              {
+                "athleteName": "Sarah Grant",
+                "membershipNumber": "1078163",
+                "fullText": "1  -  137  Sarah Grant  F  42  Annex Weightlifting  1078163  95  2025-03-15  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMy0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMy0xNSIsIndlaWdodF9jbGFzcyI6MTQwfQ=="
+          },
+          {
+            "meet_id": 6900,
+            "date": "2025-05-17",
+            "age_category": "Women's Masters (40-44)",
+            "weight_class": "+87kg",
+            "lifter_name": "Sarah Grant",
+            "lifter_id": 20650,
+            "membershipNumbers": [
+              {
+                "athleteName": "Sarah Grant",
+                "membershipNumber": "1078163",
+                "fullText": "2  -  140  Sarah Grant  F  42  Annex Weightlifting  1078163  95.1  2025-05-17  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNS0xNyIsIndlaWdodF9jbGFzcyI6MTQwfQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

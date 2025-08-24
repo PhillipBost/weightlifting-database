@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T09:04:32.387Z",
+  "athleteName": "Cody Stassen",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1065655": [
+        {
+          "meet_id": 5489,
+          "date": "2022-09-10",
+          "age_category": "Open Men's",
+          "weight_class": "73kg",
+          "lifter_name": "Cody Stassen",
+          "lifter_id": 53729,
+          "membershipNumbers": [
+            {
+              "athleteName": "Cody Stassen",
+              "membershipNumber": "1065655",
+              "fullText": "4  -  180  Cody Stassen  M  21  -  1065655  71  2022-09-10  -  Local  Missouri Valley"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wOS0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wOS0xMCIsIndlaWdodF9jbGFzcyI6ODR9"
+        }
+      ],
+      "1068321": [
+        {
+          "meet_id": 5665,
+          "date": "2023-01-21",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Cody Stassen",
+          "lifter_id": 53729,
+          "membershipNumbers": [
+            {
+              "athleteName": "Cody Stassen",
+              "membershipNumber": "1068321",
+              "fullText": "8  -  211  Cody Stassen  M  22  -  1068321  73.8  2023-01-21  -  Local  Missouri Valley"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMS0yMSIsIndlaWdodF9jbGFzcyI6ODV9"
+        },
+        {
+          "meet_id": 6521,
+          "date": "2024-09-14",
+          "age_category": "Open Men's",
+          "weight_class": "73kg",
+          "lifter_name": "Cody Stassen",
+          "lifter_id": 53729,
+          "membershipNumbers": [
+            {
+              "athleteName": "Cody Stassen",
+              "membershipNumber": "1068321",
+              "fullText": "3  -  187  Cody Stassen  M  23  Smash Barbell  1068321  72  2024-09-14  -  Local  Missouri Valley"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOS0xNCIsIndlaWdodF9jbGFzcyI6ODR9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Cody Stassen",
+    "splits": [
+      {
+        "newAthleteName": "Cody Stassen (Person 1)",
+        "membershipNumber": "1065655",
+        "competitionCount": 1,
+        "competitions": [
+          5489
+        ]
+      },
+      {
+        "newAthleteName": "Cody Stassen (Person 2)",
+        "membershipNumber": "1068321",
+        "competitionCount": 2,
+        "competitions": [
+          5665,
+          6521
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Cody Stassen",
+    "competitions": [
+      {
+        "meet_id": 5489,
+        "date": "2022-09-10",
+        "age_category": "Open Men's",
+        "weight_class": "73kg",
+        "lifter_name": "Cody Stassen",
+        "lifter_id": 53729,
+        "membershipNumbers": [
+          {
+            "athleteName": "Cody Stassen",
+            "membershipNumber": "1065655",
+            "fullText": "4  -  180  Cody Stassen  M  21  -  1065655  71  2022-09-10  -  Local  Missouri Valley"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wOS0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wOS0xMCIsIndlaWdodF9jbGFzcyI6ODR9"
+      },
+      {
+        "meet_id": 5665,
+        "date": "2023-01-21",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Cody Stassen",
+        "lifter_id": 53729,
+        "membershipNumbers": [
+          {
+            "athleteName": "Cody Stassen",
+            "membershipNumber": "1068321",
+            "fullText": "8  -  211  Cody Stassen  M  22  -  1068321  73.8  2023-01-21  -  Local  Missouri Valley"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMS0yMSIsIndlaWdodF9jbGFzcyI6ODV9"
+      },
+      {
+        "meet_id": 6521,
+        "date": "2024-09-14",
+        "age_category": "Open Men's",
+        "weight_class": "73kg",
+        "lifter_name": "Cody Stassen",
+        "lifter_id": 53729,
+        "membershipNumbers": [
+          {
+            "athleteName": "Cody Stassen",
+            "membershipNumber": "1068321",
+            "fullText": "3  -  187  Cody Stassen  M  23  Smash Barbell  1068321  72  2024-09-14  -  Local  Missouri Valley"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOS0xNCIsIndlaWdodF9jbGFzcyI6ODR9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1065655": [
+          {
+            "meet_id": 5489,
+            "date": "2022-09-10",
+            "age_category": "Open Men's",
+            "weight_class": "73kg",
+            "lifter_name": "Cody Stassen",
+            "lifter_id": 53729,
+            "membershipNumbers": [
+              {
+                "athleteName": "Cody Stassen",
+                "membershipNumber": "1065655",
+                "fullText": "4  -  180  Cody Stassen  M  21  -  1065655  71  2022-09-10  -  Local  Missouri Valley"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wOS0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wOS0xMCIsIndlaWdodF9jbGFzcyI6ODR9"
+          }
+        ],
+        "1068321": [
+          {
+            "meet_id": 5665,
+            "date": "2023-01-21",
+            "age_category": "Open Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Cody Stassen",
+            "lifter_id": 53729,
+            "membershipNumbers": [
+              {
+                "athleteName": "Cody Stassen",
+                "membershipNumber": "1068321",
+                "fullText": "8  -  211  Cody Stassen  M  22  -  1068321  73.8  2023-01-21  -  Local  Missouri Valley"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMS0yMSIsIndlaWdodF9jbGFzcyI6ODV9"
+          },
+          {
+            "meet_id": 6521,
+            "date": "2024-09-14",
+            "age_category": "Open Men's",
+            "weight_class": "73kg",
+            "lifter_name": "Cody Stassen",
+            "lifter_id": 53729,
+            "membershipNumbers": [
+              {
+                "athleteName": "Cody Stassen",
+                "membershipNumber": "1068321",
+                "fullText": "3  -  187  Cody Stassen  M  23  Smash Barbell  1068321  72  2024-09-14  -  Local  Missouri Valley"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOS0xNCIsIndlaWdodF9jbGFzcyI6ODR9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

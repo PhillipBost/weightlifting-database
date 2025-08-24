@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T16:48:45.580Z",
+  "athleteName": "Katie Clements",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "218205": [
+        {
+          "meet_id": 117,
+          "date": "2015-09-05",
+          "age_category": "Open Women's",
+          "weight_class": "58 kg",
+          "lifter_name": "Katie Clements",
+          "lifter_id": 7328,
+          "membershipNumbers": [
+            {
+              "athleteName": "Katie Clements",
+              "membershipNumber": "218205",
+              "fullText": "5  -  93  Katie Clements  F  24  -  218205  57.62  2015-09-05  -  Local  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOS0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOS0wNSIsIndlaWdodF9jbGFzcyI6MzY0fQ=="
+        },
+        {
+          "meet_id": 1812,
+          "date": "2016-04-10",
+          "age_category": "Open Women's",
+          "weight_class": "63 kg",
+          "lifter_name": "Katie Clements",
+          "lifter_id": 7328,
+          "membershipNumbers": [
+            {
+              "athleteName": "Katie Clements",
+              "membershipNumber": "218205",
+              "fullText": "15  -  111  Katie Clements  F  25  -  218205  58.8  2016-04-10  -  Local  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0xMCIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+        }
+      ],
+      "1075620": [
+        {
+          "meet_id": 6298,
+          "date": "2024-04-06",
+          "age_category": "Open Women's",
+          "weight_class": "71kg",
+          "lifter_name": "Katie Clements",
+          "lifter_id": 7328,
+          "membershipNumbers": [
+            {
+              "athleteName": "Katie Clements",
+              "membershipNumber": "1075620",
+              "fullText": "19  -  116  Katie Clements  F  33  ATHLETIC LAB WLC  1075620  68.3  2024-04-06  -  Local  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNC0wNiIsIndlaWdodF9jbGFzcyI6OTZ9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Katie Clements",
+    "splits": [
+      {
+        "newAthleteName": "Katie Clements (Person 1)",
+        "membershipNumber": "218205",
+        "competitionCount": 2,
+        "competitions": [
+          117,
+          1812
+        ]
+      },
+      {
+        "newAthleteName": "Katie Clements (Person 2)",
+        "membershipNumber": "1075620",
+        "competitionCount": 1,
+        "competitions": [
+          6298
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Katie Clements",
+    "competitions": [
+      {
+        "meet_id": 117,
+        "date": "2015-09-05",
+        "age_category": "Open Women's",
+        "weight_class": "58 kg",
+        "lifter_name": "Katie Clements",
+        "lifter_id": 7328,
+        "membershipNumbers": [
+          {
+            "athleteName": "Katie Clements",
+            "membershipNumber": "218205",
+            "fullText": "5  -  93  Katie Clements  F  24  -  218205  57.62  2015-09-05  -  Local  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOS0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOS0wNSIsIndlaWdodF9jbGFzcyI6MzY0fQ=="
+      },
+      {
+        "meet_id": 6298,
+        "date": "2024-04-06",
+        "age_category": "Open Women's",
+        "weight_class": "71kg",
+        "lifter_name": "Katie Clements",
+        "lifter_id": 7328,
+        "membershipNumbers": [
+          {
+            "athleteName": "Katie Clements",
+            "membershipNumber": "1075620",
+            "fullText": "19  -  116  Katie Clements  F  33  ATHLETIC LAB WLC  1075620  68.3  2024-04-06  -  Local  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNC0wNiIsIndlaWdodF9jbGFzcyI6OTZ9"
+      },
+      {
+        "meet_id": 1812,
+        "date": "2016-04-10",
+        "age_category": "Open Women's",
+        "weight_class": "63 kg",
+        "lifter_name": "Katie Clements",
+        "lifter_id": 7328,
+        "membershipNumbers": [
+          {
+            "athleteName": "Katie Clements",
+            "membershipNumber": "218205",
+            "fullText": "15  -  111  Katie Clements  F  25  -  218205  58.8  2016-04-10  -  Local  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0xMCIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "218205": [
+          {
+            "meet_id": 117,
+            "date": "2015-09-05",
+            "age_category": "Open Women's",
+            "weight_class": "58 kg",
+            "lifter_name": "Katie Clements",
+            "lifter_id": 7328,
+            "membershipNumbers": [
+              {
+                "athleteName": "Katie Clements",
+                "membershipNumber": "218205",
+                "fullText": "5  -  93  Katie Clements  F  24  -  218205  57.62  2015-09-05  -  Local  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOS0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOS0wNSIsIndlaWdodF9jbGFzcyI6MzY0fQ=="
+          },
+          {
+            "meet_id": 1812,
+            "date": "2016-04-10",
+            "age_category": "Open Women's",
+            "weight_class": "63 kg",
+            "lifter_name": "Katie Clements",
+            "lifter_id": 7328,
+            "membershipNumbers": [
+              {
+                "athleteName": "Katie Clements",
+                "membershipNumber": "218205",
+                "fullText": "15  -  111  Katie Clements  F  25  -  218205  58.8  2016-04-10  -  Local  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0xMCIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+          }
+        ],
+        "1075620": [
+          {
+            "meet_id": 6298,
+            "date": "2024-04-06",
+            "age_category": "Open Women's",
+            "weight_class": "71kg",
+            "lifter_name": "Katie Clements",
+            "lifter_id": 7328,
+            "membershipNumbers": [
+              {
+                "athleteName": "Katie Clements",
+                "membershipNumber": "1075620",
+                "fullText": "19  -  116  Katie Clements  F  33  ATHLETIC LAB WLC  1075620  68.3  2024-04-06  -  Local  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNC0wNiIsIndlaWdodF9jbGFzcyI6OTZ9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

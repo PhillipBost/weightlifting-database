@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T09:02:24.321Z",
+  "athleteName": "Taylor Owen",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1054590": [
+        {
+          "meet_id": 5281,
+          "date": "2022-04-16",
+          "age_category": "Open Women's",
+          "weight_class": "59kg",
+          "lifter_name": "Taylor Owen",
+          "lifter_id": 52127,
+          "membershipNumbers": [
+            {
+              "athleteName": "Taylor Owen",
+              "membershipNumber": "1054590",
+              "fullText": "4  -  128  Taylor Owen  F  23  -  1054590  58.01  2022-04-16  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNC0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNC0xNiIsIndlaWdodF9jbGFzcyI6OTR9"
+        }
+      ],
+      "1068627": [
+        {
+          "meet_id": 5712,
+          "date": "2023-02-05",
+          "age_category": "Women's 16-17 Age Group",
+          "weight_class": "64kg",
+          "lifter_name": "Taylor Owen",
+          "lifter_id": 52127,
+          "membershipNumbers": [
+            {
+              "athleteName": "Taylor Owen",
+              "membershipNumber": "1068627",
+              "fullText": "1  -  92  Taylor Owen  F  17  HOOSIER BARBELL CLUB  1068627  59.7  2023-02-05  -  Local  Indiana"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMi0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMi0wNSIsIndlaWdodF9jbGFzcyI6MTZ9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Taylor Owen",
+    "splits": [
+      {
+        "newAthleteName": "Taylor Owen (Person 1)",
+        "membershipNumber": "1054590",
+        "competitionCount": 1,
+        "competitions": [
+          5281
+        ]
+      },
+      {
+        "newAthleteName": "Taylor Owen (Person 2)",
+        "membershipNumber": "1068627",
+        "competitionCount": 1,
+        "competitions": [
+          5712
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Taylor Owen",
+    "competitions": [
+      {
+        "meet_id": 5281,
+        "date": "2022-04-16",
+        "age_category": "Open Women's",
+        "weight_class": "59kg",
+        "lifter_name": "Taylor Owen",
+        "lifter_id": 52127,
+        "membershipNumbers": [
+          {
+            "athleteName": "Taylor Owen",
+            "membershipNumber": "1054590",
+            "fullText": "4  -  128  Taylor Owen  F  23  -  1054590  58.01  2022-04-16  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNC0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNC0xNiIsIndlaWdodF9jbGFzcyI6OTR9"
+      },
+      {
+        "meet_id": 5712,
+        "date": "2023-02-05",
+        "age_category": "Women's 16-17 Age Group",
+        "weight_class": "64kg",
+        "lifter_name": "Taylor Owen",
+        "lifter_id": 52127,
+        "membershipNumbers": [
+          {
+            "athleteName": "Taylor Owen",
+            "membershipNumber": "1068627",
+            "fullText": "1  -  92  Taylor Owen  F  17  HOOSIER BARBELL CLUB  1068627  59.7  2023-02-05  -  Local  Indiana"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMi0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMi0wNSIsIndlaWdodF9jbGFzcyI6MTZ9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1054590": [
+          {
+            "meet_id": 5281,
+            "date": "2022-04-16",
+            "age_category": "Open Women's",
+            "weight_class": "59kg",
+            "lifter_name": "Taylor Owen",
+            "lifter_id": 52127,
+            "membershipNumbers": [
+              {
+                "athleteName": "Taylor Owen",
+                "membershipNumber": "1054590",
+                "fullText": "4  -  128  Taylor Owen  F  23  -  1054590  58.01  2022-04-16  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNC0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNC0xNiIsIndlaWdodF9jbGFzcyI6OTR9"
+          }
+        ],
+        "1068627": [
+          {
+            "meet_id": 5712,
+            "date": "2023-02-05",
+            "age_category": "Women's 16-17 Age Group",
+            "weight_class": "64kg",
+            "lifter_name": "Taylor Owen",
+            "lifter_id": 52127,
+            "membershipNumbers": [
+              {
+                "athleteName": "Taylor Owen",
+                "membershipNumber": "1068627",
+                "fullText": "1  -  92  Taylor Owen  F  17  HOOSIER BARBELL CLUB  1068627  59.7  2023-02-05  -  Local  Indiana"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMi0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMi0wNSIsIndlaWdodF9jbGFzcyI6MTZ9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

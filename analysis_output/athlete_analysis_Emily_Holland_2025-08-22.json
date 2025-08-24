@@ -1,0 +1,298 @@
+{
+  "timestamp": "2025-08-22T05:10:48.965Z",
+  "athleteName": "Emily Holland",
+  "totalCompetitions": 5,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "199081": [
+        {
+          "meet_id": 1231,
+          "date": "2014-10-12",
+          "age_category": "Open Women's",
+          "weight_class": "53 kg",
+          "lifter_name": "Emily Holland",
+          "lifter_id": 6874,
+          "membershipNumbers": [
+            {
+              "athleteName": "Emily Holland",
+              "membershipNumber": "199081",
+              "fullText": "10  -  77  Emily Holland  F  24  -  199081  50.3  2014-10-12  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMC0xMiIsIndlaWdodF9jbGFzcyI6MzYzfQ=="
+        },
+        {
+          "meet_id": 1705,
+          "date": "2016-01-17",
+          "age_category": "Open Women's",
+          "weight_class": "48 kg",
+          "lifter_name": "Emily Holland",
+          "lifter_id": 6874,
+          "membershipNumbers": [
+            {
+              "athleteName": "Emily Holland",
+              "membershipNumber": "199081",
+              "fullText": "6  -  96  Emily Holland  F  26  -  199081  47.94  2016-01-17  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0xNyIsIndlaWdodF9jbGFzcyI6MzYyfQ=="
+        },
+        {
+          "meet_id": 224,
+          "date": "2014-03-21",
+          "age_category": "Open Women's",
+          "weight_class": "48 kg",
+          "lifter_name": "Emily Holland",
+          "lifter_id": 6874,
+          "membershipNumbers": [
+            {
+              "athleteName": "Emily Holland",
+              "membershipNumber": "199081",
+              "fullText": "1  -  92  Emily Holland  F  24  -  199081  47.9  2014-03-21  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0yMSIsIndlaWdodF9jbGFzcyI6MzYyfQ=="
+        },
+        {
+          "meet_id": 430,
+          "date": "2015-01-18",
+          "age_category": "Open Women's",
+          "weight_class": "48 kg",
+          "lifter_name": "Emily Holland",
+          "lifter_id": 6874,
+          "membershipNumbers": [
+            {
+              "athleteName": "Emily Holland",
+              "membershipNumber": "199081",
+              "fullText": "4  -  89  Emily Holland  F  25  -  199081  47.4  2015-01-18  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMS0xOCIsIndlaWdodF9jbGFzcyI6MzYyfQ=="
+        }
+      ],
+      "203156": [
+        {
+          "meet_id": 2444,
+          "date": "2017-10-08",
+          "age_category": "Open Women's",
+          "weight_class": "63 kg",
+          "lifter_name": "Emily Holland",
+          "lifter_id": 6874,
+          "membershipNumbers": [
+            {
+              "athleteName": "Emily Holland",
+              "membershipNumber": "203156",
+              "fullText": "4  -  152  Emily Holland  F  27  -  203156  62  2017-10-08  -  Local  New England"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0wOCIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Emily Holland",
+    "splits": [
+      {
+        "newAthleteName": "Emily Holland (Person 1)",
+        "membershipNumber": "199081",
+        "competitionCount": 4,
+        "competitions": [
+          1231,
+          1705,
+          224,
+          430
+        ]
+      },
+      {
+        "newAthleteName": "Emily Holland (Person 2)",
+        "membershipNumber": "203156",
+        "competitionCount": 1,
+        "competitions": [
+          2444
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Emily Holland",
+    "competitions": [
+      {
+        "meet_id": 1231,
+        "date": "2014-10-12",
+        "age_category": "Open Women's",
+        "weight_class": "53 kg",
+        "lifter_name": "Emily Holland",
+        "lifter_id": 6874,
+        "membershipNumbers": [
+          {
+            "athleteName": "Emily Holland",
+            "membershipNumber": "199081",
+            "fullText": "10  -  77  Emily Holland  F  24  -  199081  50.3  2014-10-12  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMC0xMiIsIndlaWdodF9jbGFzcyI6MzYzfQ=="
+      },
+      {
+        "meet_id": 1705,
+        "date": "2016-01-17",
+        "age_category": "Open Women's",
+        "weight_class": "48 kg",
+        "lifter_name": "Emily Holland",
+        "lifter_id": 6874,
+        "membershipNumbers": [
+          {
+            "athleteName": "Emily Holland",
+            "membershipNumber": "199081",
+            "fullText": "6  -  96  Emily Holland  F  26  -  199081  47.94  2016-01-17  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0xNyIsIndlaWdodF9jbGFzcyI6MzYyfQ=="
+      },
+      {
+        "meet_id": 224,
+        "date": "2014-03-21",
+        "age_category": "Open Women's",
+        "weight_class": "48 kg",
+        "lifter_name": "Emily Holland",
+        "lifter_id": 6874,
+        "membershipNumbers": [
+          {
+            "athleteName": "Emily Holland",
+            "membershipNumber": "199081",
+            "fullText": "1  -  92  Emily Holland  F  24  -  199081  47.9  2014-03-21  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0yMSIsIndlaWdodF9jbGFzcyI6MzYyfQ=="
+      },
+      {
+        "meet_id": 430,
+        "date": "2015-01-18",
+        "age_category": "Open Women's",
+        "weight_class": "48 kg",
+        "lifter_name": "Emily Holland",
+        "lifter_id": 6874,
+        "membershipNumbers": [
+          {
+            "athleteName": "Emily Holland",
+            "membershipNumber": "199081",
+            "fullText": "4  -  89  Emily Holland  F  25  -  199081  47.4  2015-01-18  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMS0xOCIsIndlaWdodF9jbGFzcyI6MzYyfQ=="
+      },
+      {
+        "meet_id": 2444,
+        "date": "2017-10-08",
+        "age_category": "Open Women's",
+        "weight_class": "63 kg",
+        "lifter_name": "Emily Holland",
+        "lifter_id": 6874,
+        "membershipNumbers": [
+          {
+            "athleteName": "Emily Holland",
+            "membershipNumber": "203156",
+            "fullText": "4  -  152  Emily Holland  F  27  -  203156  62  2017-10-08  -  Local  New England"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0wOCIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "199081": [
+          {
+            "meet_id": 1231,
+            "date": "2014-10-12",
+            "age_category": "Open Women's",
+            "weight_class": "53 kg",
+            "lifter_name": "Emily Holland",
+            "lifter_id": 6874,
+            "membershipNumbers": [
+              {
+                "athleteName": "Emily Holland",
+                "membershipNumber": "199081",
+                "fullText": "10  -  77  Emily Holland  F  24  -  199081  50.3  2014-10-12  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMC0xMiIsIndlaWdodF9jbGFzcyI6MzYzfQ=="
+          },
+          {
+            "meet_id": 1705,
+            "date": "2016-01-17",
+            "age_category": "Open Women's",
+            "weight_class": "48 kg",
+            "lifter_name": "Emily Holland",
+            "lifter_id": 6874,
+            "membershipNumbers": [
+              {
+                "athleteName": "Emily Holland",
+                "membershipNumber": "199081",
+                "fullText": "6  -  96  Emily Holland  F  26  -  199081  47.94  2016-01-17  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0xNyIsIndlaWdodF9jbGFzcyI6MzYyfQ=="
+          },
+          {
+            "meet_id": 224,
+            "date": "2014-03-21",
+            "age_category": "Open Women's",
+            "weight_class": "48 kg",
+            "lifter_name": "Emily Holland",
+            "lifter_id": 6874,
+            "membershipNumbers": [
+              {
+                "athleteName": "Emily Holland",
+                "membershipNumber": "199081",
+                "fullText": "1  -  92  Emily Holland  F  24  -  199081  47.9  2014-03-21  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0yMSIsIndlaWdodF9jbGFzcyI6MzYyfQ=="
+          },
+          {
+            "meet_id": 430,
+            "date": "2015-01-18",
+            "age_category": "Open Women's",
+            "weight_class": "48 kg",
+            "lifter_name": "Emily Holland",
+            "lifter_id": 6874,
+            "membershipNumbers": [
+              {
+                "athleteName": "Emily Holland",
+                "membershipNumber": "199081",
+                "fullText": "4  -  89  Emily Holland  F  25  -  199081  47.4  2015-01-18  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMS0xOCIsIndlaWdodF9jbGFzcyI6MzYyfQ=="
+          }
+        ],
+        "203156": [
+          {
+            "meet_id": 2444,
+            "date": "2017-10-08",
+            "age_category": "Open Women's",
+            "weight_class": "63 kg",
+            "lifter_name": "Emily Holland",
+            "lifter_id": 6874,
+            "membershipNumbers": [
+              {
+                "athleteName": "Emily Holland",
+                "membershipNumber": "203156",
+                "fullText": "4  -  152  Emily Holland  F  27  -  203156  62  2017-10-08  -  Local  New England"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0wOCIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

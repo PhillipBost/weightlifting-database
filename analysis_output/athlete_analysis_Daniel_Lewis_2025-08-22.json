@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-22T04:38:22.891Z",
+  "athleteName": "Daniel Lewis",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "188883": [
+        {
+          "meet_id": 570,
+          "date": "2013-10-27",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Daniel Lewis",
+          "lifter_id": 3807,
+          "membershipNumbers": [
+            {
+              "athleteName": "Daniel Lewis",
+              "membershipNumber": "188883",
+              "fullText": "7  -  222  Daniel Lewis  M  24  CROSSFIT RDU  188883  75.5  2013-10-27  -  Local  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMC0yNyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        },
+        {
+          "meet_id": 109,
+          "date": "2015-02-22",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Daniel Lewis",
+          "lifter_id": 3807,
+          "membershipNumbers": [
+            {
+              "athleteName": "Daniel Lewis",
+              "membershipNumber": "188883",
+              "fullText": "2  -  236  Daniel Lewis  M  26  CROSSFIT RDU  188883  83.4  2015-02-22  -  Local  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMi0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMi0yMiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ],
+      "1039342": [
+        {
+          "meet_id": 4056,
+          "date": "2019-07-14",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Daniel Lewis",
+          "lifter_id": 3807,
+          "membershipNumbers": [
+            {
+              "athleteName": "Daniel Lewis",
+              "membershipNumber": "1039342",
+              "fullText": "16  -  197  Daniel Lewis  M  29  ARDENT BARBELL CLUB  1039342  78.4  2019-07-14  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0xNCIsIndlaWdodF9jbGFzcyI6ODV9"
+        },
+        {
+          "meet_id": 4358,
+          "date": "2020-01-19",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Daniel Lewis",
+          "lifter_id": 3807,
+          "membershipNumbers": [
+            {
+              "athleteName": "Daniel Lewis",
+              "membershipNumber": "1039342",
+              "fullText": "13  -  203  Daniel Lewis  M  30  ARDENT BARBELL CLUB  1039342  79.9  2020-01-19  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMS0xOSIsIndlaWdodF9jbGFzcyI6ODV9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Daniel Lewis",
+    "splits": [
+      {
+        "newAthleteName": "Daniel Lewis (Person 1)",
+        "membershipNumber": "188883",
+        "competitionCount": 2,
+        "competitions": [
+          570,
+          109
+        ]
+      },
+      {
+        "newAthleteName": "Daniel Lewis (Person 2)",
+        "membershipNumber": "1039342",
+        "competitionCount": 2,
+        "competitions": [
+          4056,
+          4358
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Daniel Lewis",
+    "competitions": [
+      {
+        "meet_id": 570,
+        "date": "2013-10-27",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Daniel Lewis",
+        "lifter_id": 3807,
+        "membershipNumbers": [
+          {
+            "athleteName": "Daniel Lewis",
+            "membershipNumber": "188883",
+            "fullText": "7  -  222  Daniel Lewis  M  24  CROSSFIT RDU  188883  75.5  2013-10-27  -  Local  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMC0yNyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 109,
+        "date": "2015-02-22",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Daniel Lewis",
+        "lifter_id": 3807,
+        "membershipNumbers": [
+          {
+            "athleteName": "Daniel Lewis",
+            "membershipNumber": "188883",
+            "fullText": "2  -  236  Daniel Lewis  M  26  CROSSFIT RDU  188883  83.4  2015-02-22  -  Local  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMi0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMi0yMiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 4056,
+        "date": "2019-07-14",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Daniel Lewis",
+        "lifter_id": 3807,
+        "membershipNumbers": [
+          {
+            "athleteName": "Daniel Lewis",
+            "membershipNumber": "1039342",
+            "fullText": "16  -  197  Daniel Lewis  M  29  ARDENT BARBELL CLUB  1039342  78.4  2019-07-14  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0xNCIsIndlaWdodF9jbGFzcyI6ODV9"
+      },
+      {
+        "meet_id": 4358,
+        "date": "2020-01-19",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Daniel Lewis",
+        "lifter_id": 3807,
+        "membershipNumbers": [
+          {
+            "athleteName": "Daniel Lewis",
+            "membershipNumber": "1039342",
+            "fullText": "13  -  203  Daniel Lewis  M  30  ARDENT BARBELL CLUB  1039342  79.9  2020-01-19  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMS0xOSIsIndlaWdodF9jbGFzcyI6ODV9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "188883": [
+          {
+            "meet_id": 570,
+            "date": "2013-10-27",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Daniel Lewis",
+            "lifter_id": 3807,
+            "membershipNumbers": [
+              {
+                "athleteName": "Daniel Lewis",
+                "membershipNumber": "188883",
+                "fullText": "7  -  222  Daniel Lewis  M  24  CROSSFIT RDU  188883  75.5  2013-10-27  -  Local  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMC0yNyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          },
+          {
+            "meet_id": 109,
+            "date": "2015-02-22",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Daniel Lewis",
+            "lifter_id": 3807,
+            "membershipNumbers": [
+              {
+                "athleteName": "Daniel Lewis",
+                "membershipNumber": "188883",
+                "fullText": "2  -  236  Daniel Lewis  M  26  CROSSFIT RDU  188883  83.4  2015-02-22  -  Local  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMi0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMi0yMiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          }
+        ],
+        "1039342": [
+          {
+            "meet_id": 4056,
+            "date": "2019-07-14",
+            "age_category": "Open Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Daniel Lewis",
+            "lifter_id": 3807,
+            "membershipNumbers": [
+              {
+                "athleteName": "Daniel Lewis",
+                "membershipNumber": "1039342",
+                "fullText": "16  -  197  Daniel Lewis  M  29  ARDENT BARBELL CLUB  1039342  78.4  2019-07-14  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0xNCIsIndlaWdodF9jbGFzcyI6ODV9"
+          },
+          {
+            "meet_id": 4358,
+            "date": "2020-01-19",
+            "age_category": "Open Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Daniel Lewis",
+            "lifter_id": 3807,
+            "membershipNumbers": [
+              {
+                "athleteName": "Daniel Lewis",
+                "membershipNumber": "1039342",
+                "fullText": "13  -  203  Daniel Lewis  M  30  ARDENT BARBELL CLUB  1039342  79.9  2020-01-19  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMS0xOSIsIndlaWdodF9jbGFzcyI6ODV9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

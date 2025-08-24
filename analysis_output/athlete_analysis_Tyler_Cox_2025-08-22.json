@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T13:12:51.874Z",
+  "athleteName": "Tyler Cox",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "201759": [
+        {
+          "meet_id": 3241,
+          "date": "2018-04-14",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Tyler Cox",
+          "lifter_id": 36576,
+          "membershipNumbers": [
+            {
+              "athleteName": "Tyler Cox",
+              "membershipNumber": "201759",
+              "fullText": "14  -  251  Tyler Cox  M  32  LHO Barbell  201759  84.3  2018-04-14  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNC0xNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ],
+      "1074395": [
+        {
+          "meet_id": 6431,
+          "date": "2024-06-12",
+          "age_category": "Men's 13 Under Age Group",
+          "weight_class": "67kg",
+          "lifter_name": "Tyler Cox",
+          "lifter_id": 36576,
+          "membershipNumbers": [
+            {
+              "athleteName": "Tyler Cox",
+              "membershipNumber": "1074395",
+              "fullText": "1  -  127  Tyler Cox  M  13  -  1074395  65.16  2024-06-12  -  National  Hawaii and International"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNi0xMiIsIndlaWdodF9jbGFzcyI6NDh9"
+        },
+        {
+          "meet_id": 6178,
+          "date": "2023-11-25",
+          "age_category": "Men's 13 Under Age Group",
+          "weight_class": "73kg",
+          "lifter_name": "Tyler Cox",
+          "lifter_id": 36576,
+          "membershipNumbers": [
+            {
+              "athleteName": "Tyler Cox",
+              "membershipNumber": "1074395",
+              "fullText": "1  -  118  Tyler Cox  M  13  -  1074395  73  2023-11-25  -  Local  Hawaii and International"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMS0yNSIsIndlaWdodF9jbGFzcyI6NDl9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Tyler Cox",
+    "splits": [
+      {
+        "newAthleteName": "Tyler Cox (Person 1)",
+        "membershipNumber": "201759",
+        "competitionCount": 1,
+        "competitions": [
+          3241
+        ]
+      },
+      {
+        "newAthleteName": "Tyler Cox (Person 2)",
+        "membershipNumber": "1074395",
+        "competitionCount": 2,
+        "competitions": [
+          6431,
+          6178
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Tyler Cox",
+    "competitions": [
+      {
+        "meet_id": 3241,
+        "date": "2018-04-14",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Tyler Cox",
+        "lifter_id": 36576,
+        "membershipNumbers": [
+          {
+            "athleteName": "Tyler Cox",
+            "membershipNumber": "201759",
+            "fullText": "14  -  251  Tyler Cox  M  32  LHO Barbell  201759  84.3  2018-04-14  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNC0xNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 6431,
+        "date": "2024-06-12",
+        "age_category": "Men's 13 Under Age Group",
+        "weight_class": "67kg",
+        "lifter_name": "Tyler Cox",
+        "lifter_id": 36576,
+        "membershipNumbers": [
+          {
+            "athleteName": "Tyler Cox",
+            "membershipNumber": "1074395",
+            "fullText": "1  -  127  Tyler Cox  M  13  -  1074395  65.16  2024-06-12  -  National  Hawaii and International"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNi0xMiIsIndlaWdodF9jbGFzcyI6NDh9"
+      },
+      {
+        "meet_id": 6178,
+        "date": "2023-11-25",
+        "age_category": "Men's 13 Under Age Group",
+        "weight_class": "73kg",
+        "lifter_name": "Tyler Cox",
+        "lifter_id": 36576,
+        "membershipNumbers": [
+          {
+            "athleteName": "Tyler Cox",
+            "membershipNumber": "1074395",
+            "fullText": "1  -  118  Tyler Cox  M  13  -  1074395  73  2023-11-25  -  Local  Hawaii and International"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMS0yNSIsIndlaWdodF9jbGFzcyI6NDl9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "201759": [
+          {
+            "meet_id": 3241,
+            "date": "2018-04-14",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Tyler Cox",
+            "lifter_id": 36576,
+            "membershipNumbers": [
+              {
+                "athleteName": "Tyler Cox",
+                "membershipNumber": "201759",
+                "fullText": "14  -  251  Tyler Cox  M  32  LHO Barbell  201759  84.3  2018-04-14  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNC0xNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          }
+        ],
+        "1074395": [
+          {
+            "meet_id": 6431,
+            "date": "2024-06-12",
+            "age_category": "Men's 13 Under Age Group",
+            "weight_class": "67kg",
+            "lifter_name": "Tyler Cox",
+            "lifter_id": 36576,
+            "membershipNumbers": [
+              {
+                "athleteName": "Tyler Cox",
+                "membershipNumber": "1074395",
+                "fullText": "1  -  127  Tyler Cox  M  13  -  1074395  65.16  2024-06-12  -  National  Hawaii and International"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNi0xMiIsIndlaWdodF9jbGFzcyI6NDh9"
+          },
+          {
+            "meet_id": 6178,
+            "date": "2023-11-25",
+            "age_category": "Men's 13 Under Age Group",
+            "weight_class": "73kg",
+            "lifter_name": "Tyler Cox",
+            "lifter_id": 36576,
+            "membershipNumbers": [
+              {
+                "athleteName": "Tyler Cox",
+                "membershipNumber": "1074395",
+                "fullText": "1  -  118  Tyler Cox  M  13  -  1074395  73  2023-11-25  -  Local  Hawaii and International"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMS0yNSIsIndlaWdodF9jbGFzcyI6NDl9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

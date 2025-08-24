@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T15:59:36.169Z",
+  "athleteName": "James Baker",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1001048": [
+        {
+          "meet_id": 1679,
+          "date": "2016-04-10",
+          "age_category": "Open Men's",
+          "weight_class": "62 kg",
+          "lifter_name": "James Baker",
+          "lifter_id": 21572,
+          "membershipNumbers": [
+            {
+              "athleteName": "James Baker",
+              "membershipNumber": "1001048",
+              "fullText": "3  -  200  James Baker  M  28  -  1001048  61.76  2016-04-10  -  Local  New England"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0xMCIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+        }
+      ],
+      "1062375": [
+        {
+          "meet_id": 5279,
+          "date": "2022-04-16",
+          "age_category": "Open Men's",
+          "weight_class": "+109kg",
+          "lifter_name": "James Baker",
+          "lifter_id": 21572,
+          "membershipNumbers": [
+            {
+              "athleteName": "James Baker",
+              "membershipNumber": "1062375",
+              "fullText": "7  -  194  James Baker  M  31  Sanctuary Barbell  1062375  133  2022-04-16  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNC0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNC0xNiIsIndlaWdodF9jbGFzcyI6OTB9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "James Baker",
+    "splits": [
+      {
+        "newAthleteName": "James Baker (Person 1)",
+        "membershipNumber": "1001048",
+        "competitionCount": 1,
+        "competitions": [
+          1679
+        ]
+      },
+      {
+        "newAthleteName": "James Baker (Person 2)",
+        "membershipNumber": "1062375",
+        "competitionCount": 1,
+        "competitions": [
+          5279
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "James Baker",
+    "competitions": [
+      {
+        "meet_id": 5279,
+        "date": "2022-04-16",
+        "age_category": "Open Men's",
+        "weight_class": "+109kg",
+        "lifter_name": "James Baker",
+        "lifter_id": 21572,
+        "membershipNumbers": [
+          {
+            "athleteName": "James Baker",
+            "membershipNumber": "1062375",
+            "fullText": "7  -  194  James Baker  M  31  Sanctuary Barbell  1062375  133  2022-04-16  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNC0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNC0xNiIsIndlaWdodF9jbGFzcyI6OTB9"
+      },
+      {
+        "meet_id": 1679,
+        "date": "2016-04-10",
+        "age_category": "Open Men's",
+        "weight_class": "62 kg",
+        "lifter_name": "James Baker",
+        "lifter_id": 21572,
+        "membershipNumbers": [
+          {
+            "athleteName": "James Baker",
+            "membershipNumber": "1001048",
+            "fullText": "3  -  200  James Baker  M  28  -  1001048  61.76  2016-04-10  -  Local  New England"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0xMCIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1001048": [
+          {
+            "meet_id": 1679,
+            "date": "2016-04-10",
+            "age_category": "Open Men's",
+            "weight_class": "62 kg",
+            "lifter_name": "James Baker",
+            "lifter_id": 21572,
+            "membershipNumbers": [
+              {
+                "athleteName": "James Baker",
+                "membershipNumber": "1001048",
+                "fullText": "3  -  200  James Baker  M  28  -  1001048  61.76  2016-04-10  -  Local  New England"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0xMCIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+          }
+        ],
+        "1062375": [
+          {
+            "meet_id": 5279,
+            "date": "2022-04-16",
+            "age_category": "Open Men's",
+            "weight_class": "+109kg",
+            "lifter_name": "James Baker",
+            "lifter_id": 21572,
+            "membershipNumbers": [
+              {
+                "athleteName": "James Baker",
+                "membershipNumber": "1062375",
+                "fullText": "7  -  194  James Baker  M  31  Sanctuary Barbell  1062375  133  2022-04-16  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNC0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNC0xNiIsIndlaWdodF9jbGFzcyI6OTB9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

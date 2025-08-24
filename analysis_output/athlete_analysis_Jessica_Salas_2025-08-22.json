@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T16:51:29.983Z",
+  "athleteName": "Jessica Salas",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1016082": [
+        {
+          "meet_id": 2393,
+          "date": "2017-02-19",
+          "age_category": "Open Women's",
+          "weight_class": "53 kg",
+          "lifter_name": "Jessica Salas",
+          "lifter_id": 28966,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jessica Salas",
+              "membershipNumber": "1016082",
+              "fullText": "7  -  133  Jessica Salas  F  31  CALIFORNIA STRENGTH  1016082  52.32  2017-02-19  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xOSIsIndlaWdodF9jbGFzcyI6MzYzfQ=="
+        }
+      ],
+      "1036413": [
+        {
+          "meet_id": 3810,
+          "date": "2019-03-16",
+          "age_category": "Women's Masters (35-39)",
+          "weight_class": "64kg",
+          "lifter_name": "Jessica Salas",
+          "lifter_id": 28966,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jessica Salas",
+              "membershipNumber": "1036413",
+              "fullText": "1  -  106  Jessica Salas  F  35  -  1036413  62.29  2019-03-16  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMy0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMy0xNiIsIndlaWdodF9jbGFzcyI6MTE1fQ=="
+        },
+        {
+          "meet_id": 3423,
+          "date": "2018-12-02",
+          "age_category": "Open Women's",
+          "weight_class": "64kg",
+          "lifter_name": "Jessica Salas",
+          "lifter_id": 28966,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jessica Salas",
+              "membershipNumber": "1036413",
+              "fullText": "15  -  95  Jessica Salas  F  34  -  1036413  62.7  2018-12-02  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0wMiIsIndlaWdodF9jbGFzcyI6OTV9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Jessica Salas",
+    "splits": [
+      {
+        "newAthleteName": "Jessica Salas (Person 1)",
+        "membershipNumber": "1016082",
+        "competitionCount": 1,
+        "competitions": [
+          2393
+        ]
+      },
+      {
+        "newAthleteName": "Jessica Salas (Person 2)",
+        "membershipNumber": "1036413",
+        "competitionCount": 2,
+        "competitions": [
+          3810,
+          3423
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Jessica Salas",
+    "competitions": [
+      {
+        "meet_id": 3810,
+        "date": "2019-03-16",
+        "age_category": "Women's Masters (35-39)",
+        "weight_class": "64kg",
+        "lifter_name": "Jessica Salas",
+        "lifter_id": 28966,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jessica Salas",
+            "membershipNumber": "1036413",
+            "fullText": "1  -  106  Jessica Salas  F  35  -  1036413  62.29  2019-03-16  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMy0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMy0xNiIsIndlaWdodF9jbGFzcyI6MTE1fQ=="
+      },
+      {
+        "meet_id": 2393,
+        "date": "2017-02-19",
+        "age_category": "Open Women's",
+        "weight_class": "53 kg",
+        "lifter_name": "Jessica Salas",
+        "lifter_id": 28966,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jessica Salas",
+            "membershipNumber": "1016082",
+            "fullText": "7  -  133  Jessica Salas  F  31  CALIFORNIA STRENGTH  1016082  52.32  2017-02-19  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xOSIsIndlaWdodF9jbGFzcyI6MzYzfQ=="
+      },
+      {
+        "meet_id": 3423,
+        "date": "2018-12-02",
+        "age_category": "Open Women's",
+        "weight_class": "64kg",
+        "lifter_name": "Jessica Salas",
+        "lifter_id": 28966,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jessica Salas",
+            "membershipNumber": "1036413",
+            "fullText": "15  -  95  Jessica Salas  F  34  -  1036413  62.7  2018-12-02  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0wMiIsIndlaWdodF9jbGFzcyI6OTV9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1016082": [
+          {
+            "meet_id": 2393,
+            "date": "2017-02-19",
+            "age_category": "Open Women's",
+            "weight_class": "53 kg",
+            "lifter_name": "Jessica Salas",
+            "lifter_id": 28966,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jessica Salas",
+                "membershipNumber": "1016082",
+                "fullText": "7  -  133  Jessica Salas  F  31  CALIFORNIA STRENGTH  1016082  52.32  2017-02-19  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xOSIsIndlaWdodF9jbGFzcyI6MzYzfQ=="
+          }
+        ],
+        "1036413": [
+          {
+            "meet_id": 3810,
+            "date": "2019-03-16",
+            "age_category": "Women's Masters (35-39)",
+            "weight_class": "64kg",
+            "lifter_name": "Jessica Salas",
+            "lifter_id": 28966,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jessica Salas",
+                "membershipNumber": "1036413",
+                "fullText": "1  -  106  Jessica Salas  F  35  -  1036413  62.29  2019-03-16  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMy0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMy0xNiIsIndlaWdodF9jbGFzcyI6MTE1fQ=="
+          },
+          {
+            "meet_id": 3423,
+            "date": "2018-12-02",
+            "age_category": "Open Women's",
+            "weight_class": "64kg",
+            "lifter_name": "Jessica Salas",
+            "lifter_id": 28966,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jessica Salas",
+                "membershipNumber": "1036413",
+                "fullText": "15  -  95  Jessica Salas  F  34  -  1036413  62.7  2018-12-02  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0wMiIsIndlaWdodF9jbGFzcyI6OTV9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

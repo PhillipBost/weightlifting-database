@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T07:35:08.582Z",
+  "athleteName": "Hannah Wilson",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "194252": [
+        {
+          "meet_id": 2233,
+          "date": "2016-09-30",
+          "age_category": "Open Women's",
+          "weight_class": "58 kg",
+          "lifter_name": "Hannah Wilson",
+          "lifter_id": 26860,
+          "membershipNumbers": [
+            {
+              "athleteName": "Hannah Wilson",
+              "membershipNumber": "194252",
+              "fullText": "1  -  162  Hannah Wilson  F  27  Kim Barbell  194252  56  2016-09-30  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOS0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOS0zMCIsIndlaWdodF9jbGFzcyI6MzY0fQ=="
+        }
+      ],
+      "1031430": [
+        {
+          "meet_id": 3364,
+          "date": "2018-06-30",
+          "age_category": "Open Women's",
+          "weight_class": "75 kg",
+          "lifter_name": "Hannah Wilson",
+          "lifter_id": 26860,
+          "membershipNumbers": [
+            {
+              "athleteName": "Hannah Wilson",
+              "membershipNumber": "1031430",
+              "fullText": "17  -  80  Hannah Wilson  F  25  West Virginia Weightlifting  1031430  74.1  2018-06-30  -  Local  Pennsylvania-West Virginia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0zMCIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Hannah Wilson",
+    "splits": [
+      {
+        "newAthleteName": "Hannah Wilson (Person 1)",
+        "membershipNumber": "194252",
+        "competitionCount": 1,
+        "competitions": [
+          2233
+        ]
+      },
+      {
+        "newAthleteName": "Hannah Wilson (Person 2)",
+        "membershipNumber": "1031430",
+        "competitionCount": 1,
+        "competitions": [
+          3364
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Hannah Wilson",
+    "competitions": [
+      {
+        "meet_id": 2233,
+        "date": "2016-09-30",
+        "age_category": "Open Women's",
+        "weight_class": "58 kg",
+        "lifter_name": "Hannah Wilson",
+        "lifter_id": 26860,
+        "membershipNumbers": [
+          {
+            "athleteName": "Hannah Wilson",
+            "membershipNumber": "194252",
+            "fullText": "1  -  162  Hannah Wilson  F  27  Kim Barbell  194252  56  2016-09-30  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOS0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOS0zMCIsIndlaWdodF9jbGFzcyI6MzY0fQ=="
+      },
+      {
+        "meet_id": 3364,
+        "date": "2018-06-30",
+        "age_category": "Open Women's",
+        "weight_class": "75 kg",
+        "lifter_name": "Hannah Wilson",
+        "lifter_id": 26860,
+        "membershipNumbers": [
+          {
+            "athleteName": "Hannah Wilson",
+            "membershipNumber": "1031430",
+            "fullText": "17  -  80  Hannah Wilson  F  25  West Virginia Weightlifting  1031430  74.1  2018-06-30  -  Local  Pennsylvania-West Virginia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0zMCIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "194252": [
+          {
+            "meet_id": 2233,
+            "date": "2016-09-30",
+            "age_category": "Open Women's",
+            "weight_class": "58 kg",
+            "lifter_name": "Hannah Wilson",
+            "lifter_id": 26860,
+            "membershipNumbers": [
+              {
+                "athleteName": "Hannah Wilson",
+                "membershipNumber": "194252",
+                "fullText": "1  -  162  Hannah Wilson  F  27  Kim Barbell  194252  56  2016-09-30  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOS0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOS0zMCIsIndlaWdodF9jbGFzcyI6MzY0fQ=="
+          }
+        ],
+        "1031430": [
+          {
+            "meet_id": 3364,
+            "date": "2018-06-30",
+            "age_category": "Open Women's",
+            "weight_class": "75 kg",
+            "lifter_name": "Hannah Wilson",
+            "lifter_id": 26860,
+            "membershipNumbers": [
+              {
+                "athleteName": "Hannah Wilson",
+                "membershipNumber": "1031430",
+                "fullText": "17  -  80  Hannah Wilson  F  25  West Virginia Weightlifting  1031430  74.1  2018-06-30  -  Local  Pennsylvania-West Virginia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0zMCIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

@@ -1,0 +1,243 @@
+{
+  "timestamp": "2025-08-22T07:55:53.120Z",
+  "athleteName": "Jessica Hu",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1020917": [
+        {
+          "meet_id": 2768,
+          "date": "2017-08-13",
+          "age_category": "Open Women's",
+          "weight_class": "58 kg",
+          "lifter_name": "Jessica Hu",
+          "lifter_id": 32174,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jessica Hu",
+              "membershipNumber": "1020917",
+              "fullText": "16  -  107  Jessica Hu  F  30  -  1020917  56.63  2017-08-13  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wOC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wOC0xMyIsIndlaWdodF9jbGFzcyI6MzY0fQ=="
+        }
+      ],
+      "1075763": [
+        {
+          "meet_id": 6323,
+          "date": "2024-04-20",
+          "age_category": "Open Women's",
+          "weight_class": "76kg",
+          "lifter_name": "Jessica Hu",
+          "lifter_id": 32174,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jessica Hu",
+              "membershipNumber": "1075763",
+              "fullText": "13  -  114  Jessica Hu  F  28  THE SPORTS PALACE  1075763  73  2024-04-20  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNC0yMCIsIndlaWdodF9jbGFzcyI6OTd9"
+        },
+        {
+          "meet_id": 6393,
+          "date": "2024-05-12",
+          "age_category": "Open Women's",
+          "weight_class": "76kg",
+          "lifter_name": "Jessica Hu",
+          "lifter_id": 32174,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jessica Hu",
+              "membershipNumber": "1075763",
+              "fullText": "2  -  118  Jessica Hu  F  28  THE SPORTS PALACE  1075763  74.71  2024-05-12  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNS0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNS0xMiIsIndlaWdodF9jbGFzcyI6OTd9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 3524,
+        "date": "2018-12-02",
+        "age_category": "Open Women's",
+        "weight_class": "59kg",
+        "lifter_name": "Jessica Hu",
+        "lifter_id": 32174,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0wMiIsIndlaWdodF9jbGFzcyI6OTR9"
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Jessica Hu",
+    "splits": [
+      {
+        "newAthleteName": "Jessica Hu (Person 1)",
+        "membershipNumber": "1020917",
+        "competitionCount": 1,
+        "competitions": [
+          2768
+        ]
+      },
+      {
+        "newAthleteName": "Jessica Hu (Person 2)",
+        "membershipNumber": "1075763",
+        "competitionCount": 2,
+        "competitions": [
+          6323,
+          6393
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 3524,
+        "date": "2018-12-02",
+        "age_category": "Open Women's",
+        "weight_class": "59kg",
+        "lifter_name": "Jessica Hu",
+        "lifter_id": 32174,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0wMiIsIndlaWdodF9jbGFzcyI6OTR9"
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Jessica Hu",
+    "competitions": [
+      {
+        "meet_id": 6323,
+        "date": "2024-04-20",
+        "age_category": "Open Women's",
+        "weight_class": "76kg",
+        "lifter_name": "Jessica Hu",
+        "lifter_id": 32174,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jessica Hu",
+            "membershipNumber": "1075763",
+            "fullText": "13  -  114  Jessica Hu  F  28  THE SPORTS PALACE  1075763  73  2024-04-20  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNC0yMCIsIndlaWdodF9jbGFzcyI6OTd9"
+      },
+      {
+        "meet_id": 6393,
+        "date": "2024-05-12",
+        "age_category": "Open Women's",
+        "weight_class": "76kg",
+        "lifter_name": "Jessica Hu",
+        "lifter_id": 32174,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jessica Hu",
+            "membershipNumber": "1075763",
+            "fullText": "2  -  118  Jessica Hu  F  28  THE SPORTS PALACE  1075763  74.71  2024-05-12  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNS0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNS0xMiIsIndlaWdodF9jbGFzcyI6OTd9"
+      },
+      {
+        "meet_id": 2768,
+        "date": "2017-08-13",
+        "age_category": "Open Women's",
+        "weight_class": "58 kg",
+        "lifter_name": "Jessica Hu",
+        "lifter_id": 32174,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jessica Hu",
+            "membershipNumber": "1020917",
+            "fullText": "16  -  107  Jessica Hu  F  30  -  1020917  56.63  2017-08-13  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wOC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wOC0xMyIsIndlaWdodF9jbGFzcyI6MzY0fQ=="
+      },
+      {
+        "meet_id": 3524,
+        "date": "2018-12-02",
+        "age_category": "Open Women's",
+        "weight_class": "59kg",
+        "lifter_name": "Jessica Hu",
+        "lifter_id": 32174,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0wMiIsIndlaWdodF9jbGFzcyI6OTR9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1020917": [
+          {
+            "meet_id": 2768,
+            "date": "2017-08-13",
+            "age_category": "Open Women's",
+            "weight_class": "58 kg",
+            "lifter_name": "Jessica Hu",
+            "lifter_id": 32174,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jessica Hu",
+                "membershipNumber": "1020917",
+                "fullText": "16  -  107  Jessica Hu  F  30  -  1020917  56.63  2017-08-13  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wOC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wOC0xMyIsIndlaWdodF9jbGFzcyI6MzY0fQ=="
+          }
+        ],
+        "1075763": [
+          {
+            "meet_id": 6323,
+            "date": "2024-04-20",
+            "age_category": "Open Women's",
+            "weight_class": "76kg",
+            "lifter_name": "Jessica Hu",
+            "lifter_id": 32174,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jessica Hu",
+                "membershipNumber": "1075763",
+                "fullText": "13  -  114  Jessica Hu  F  28  THE SPORTS PALACE  1075763  73  2024-04-20  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNC0yMCIsIndlaWdodF9jbGFzcyI6OTd9"
+          },
+          {
+            "meet_id": 6393,
+            "date": "2024-05-12",
+            "age_category": "Open Women's",
+            "weight_class": "76kg",
+            "lifter_name": "Jessica Hu",
+            "lifter_id": 32174,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jessica Hu",
+                "membershipNumber": "1075763",
+                "fullText": "2  -  118  Jessica Hu  F  28  THE SPORTS PALACE  1075763  74.71  2024-05-12  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNS0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNS0xMiIsIndlaWdodF9jbGFzcyI6OTd9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 3524,
+          "date": "2018-12-02",
+          "age_category": "Open Women's",
+          "weight_class": "59kg",
+          "lifter_name": "Jessica Hu",
+          "lifter_id": 32174,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0wMiIsIndlaWdodF9jbGFzcyI6OTR9"
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

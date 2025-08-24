@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-23T01:18:59.233Z",
+  "athleteName": "Maria Perez",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1021981": [
+        {
+          "meet_id": 3752,
+          "date": "2019-10-26",
+          "age_category": "Women's Masters (35-39)",
+          "weight_class": "64kg",
+          "lifter_name": "Maria Perez",
+          "lifter_id": 32570,
+          "membershipNumbers": [
+            {
+              "athleteName": "Maria Perez",
+              "membershipNumber": "1021981",
+              "fullText": "4  -  134  Maria Perez  F  37  Back Room WLC  1021981  63.3  2019-10-26  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMC0yNiIsIndlaWdodF9jbGFzcyI6MTE1fQ=="
+        },
+        {
+          "meet_id": 2819,
+          "date": "2017-10-28",
+          "age_category": "Women's Masters (35-39)",
+          "weight_class": "63 kg",
+          "lifter_name": "Maria Perez",
+          "lifter_id": 32570,
+          "membershipNumbers": [
+            {
+              "athleteName": "Maria Perez",
+              "membershipNumber": "1021981",
+              "fullText": "4  -  128  Maria Perez  F  35  Back Room WLC  1021981  60.17  2017-10-28  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0yOCIsIndlaWdodF9jbGFzcyI6MzgyfQ=="
+        },
+        {
+          "meet_id": 3216,
+          "date": "2018-05-19",
+          "age_category": "Women's Masters (35-39)",
+          "weight_class": "63 kg",
+          "lifter_name": "Maria Perez",
+          "lifter_id": 32570,
+          "membershipNumbers": [
+            {
+              "athleteName": "Maria Perez",
+              "membershipNumber": "1021981",
+              "fullText": "3  -  137  Maria Perez  F  36  Back Room WLC  1021981  60  2018-05-19  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNS0xOSIsIndlaWdodF9jbGFzcyI6MzgyfQ=="
+        }
+      ],
+      "1082014": [
+        {
+          "meet_id": 6992,
+          "date": "2025-08-01",
+          "age_category": "Women's 16-17 Age Group",
+          "weight_class": "53kg",
+          "lifter_name": "Maria Perez",
+          "lifter_id": 32570,
+          "membershipNumbers": [
+            {
+              "athleteName": "Maria Perez",
+              "membershipNumber": "1082014",
+              "fullText": "5  -  84  Maria Perez  F  16  Ischyros  1082014  51  2025-08-01  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wOC0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wOC0wMSIsIndlaWdodF9jbGFzcyI6NzY5fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Maria Perez",
+    "splits": [
+      {
+        "newAthleteName": "Maria Perez (Person 1)",
+        "membershipNumber": "1021981",
+        "competitionCount": 3,
+        "competitions": [
+          3752,
+          2819,
+          3216
+        ]
+      },
+      {
+        "newAthleteName": "Maria Perez (Person 2)",
+        "membershipNumber": "1082014",
+        "competitionCount": 1,
+        "competitions": [
+          6992
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Maria Perez",
+    "competitions": [
+      {
+        "meet_id": 3752,
+        "date": "2019-10-26",
+        "age_category": "Women's Masters (35-39)",
+        "weight_class": "64kg",
+        "lifter_name": "Maria Perez",
+        "lifter_id": 32570,
+        "membershipNumbers": [
+          {
+            "athleteName": "Maria Perez",
+            "membershipNumber": "1021981",
+            "fullText": "4  -  134  Maria Perez  F  37  Back Room WLC  1021981  63.3  2019-10-26  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMC0yNiIsIndlaWdodF9jbGFzcyI6MTE1fQ=="
+      },
+      {
+        "meet_id": 2819,
+        "date": "2017-10-28",
+        "age_category": "Women's Masters (35-39)",
+        "weight_class": "63 kg",
+        "lifter_name": "Maria Perez",
+        "lifter_id": 32570,
+        "membershipNumbers": [
+          {
+            "athleteName": "Maria Perez",
+            "membershipNumber": "1021981",
+            "fullText": "4  -  128  Maria Perez  F  35  Back Room WLC  1021981  60.17  2017-10-28  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0yOCIsIndlaWdodF9jbGFzcyI6MzgyfQ=="
+      },
+      {
+        "meet_id": 6992,
+        "date": "2025-08-01",
+        "age_category": "Women's 16-17 Age Group",
+        "weight_class": "53kg",
+        "lifter_name": "Maria Perez",
+        "lifter_id": 32570,
+        "membershipNumbers": [
+          {
+            "athleteName": "Maria Perez",
+            "membershipNumber": "1082014",
+            "fullText": "5  -  84  Maria Perez  F  16  Ischyros  1082014  51  2025-08-01  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wOC0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wOC0wMSIsIndlaWdodF9jbGFzcyI6NzY5fQ=="
+      },
+      {
+        "meet_id": 3216,
+        "date": "2018-05-19",
+        "age_category": "Women's Masters (35-39)",
+        "weight_class": "63 kg",
+        "lifter_name": "Maria Perez",
+        "lifter_id": 32570,
+        "membershipNumbers": [
+          {
+            "athleteName": "Maria Perez",
+            "membershipNumber": "1021981",
+            "fullText": "3  -  137  Maria Perez  F  36  Back Room WLC  1021981  60  2018-05-19  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNS0xOSIsIndlaWdodF9jbGFzcyI6MzgyfQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1021981": [
+          {
+            "meet_id": 3752,
+            "date": "2019-10-26",
+            "age_category": "Women's Masters (35-39)",
+            "weight_class": "64kg",
+            "lifter_name": "Maria Perez",
+            "lifter_id": 32570,
+            "membershipNumbers": [
+              {
+                "athleteName": "Maria Perez",
+                "membershipNumber": "1021981",
+                "fullText": "4  -  134  Maria Perez  F  37  Back Room WLC  1021981  63.3  2019-10-26  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMC0yNiIsIndlaWdodF9jbGFzcyI6MTE1fQ=="
+          },
+          {
+            "meet_id": 2819,
+            "date": "2017-10-28",
+            "age_category": "Women's Masters (35-39)",
+            "weight_class": "63 kg",
+            "lifter_name": "Maria Perez",
+            "lifter_id": 32570,
+            "membershipNumbers": [
+              {
+                "athleteName": "Maria Perez",
+                "membershipNumber": "1021981",
+                "fullText": "4  -  128  Maria Perez  F  35  Back Room WLC  1021981  60.17  2017-10-28  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0yOCIsIndlaWdodF9jbGFzcyI6MzgyfQ=="
+          },
+          {
+            "meet_id": 3216,
+            "date": "2018-05-19",
+            "age_category": "Women's Masters (35-39)",
+            "weight_class": "63 kg",
+            "lifter_name": "Maria Perez",
+            "lifter_id": 32570,
+            "membershipNumbers": [
+              {
+                "athleteName": "Maria Perez",
+                "membershipNumber": "1021981",
+                "fullText": "3  -  137  Maria Perez  F  36  Back Room WLC  1021981  60  2018-05-19  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNS0xOSIsIndlaWdodF9jbGFzcyI6MzgyfQ=="
+          }
+        ],
+        "1082014": [
+          {
+            "meet_id": 6992,
+            "date": "2025-08-01",
+            "age_category": "Women's 16-17 Age Group",
+            "weight_class": "53kg",
+            "lifter_name": "Maria Perez",
+            "lifter_id": 32570,
+            "membershipNumbers": [
+              {
+                "athleteName": "Maria Perez",
+                "membershipNumber": "1082014",
+                "fullText": "5  -  84  Maria Perez  F  16  Ischyros  1082014  51  2025-08-01  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wOC0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wOC0wMSIsIndlaWdodF9jbGFzcyI6NzY5fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

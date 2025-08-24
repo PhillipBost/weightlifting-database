@@ -1,0 +1,194 @@
+{
+  "timestamp": "2025-08-22T06:59:00.879Z",
+  "athleteName": "Patrick Scott",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "186454": [
+        {
+          "meet_id": 1376,
+          "date": "2014-04-13",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Patrick Scott",
+          "lifter_id": 20062,
+          "membershipNumbers": [
+            {
+              "athleteName": "Patrick Scott",
+              "membershipNumber": "186454",
+              "fullText": "21  -  178  Patrick Scott  M  37  ATHLETIC LAB WLC  186454  103.6  2014-04-13  -  Local  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNC0xMyIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        }
+      ],
+      "1014698": [
+        {
+          "meet_id": 3123,
+          "date": "2018-06-30",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Patrick Scott",
+          "lifter_id": 20062,
+          "membershipNumbers": [
+            {
+              "athleteName": "Patrick Scott",
+              "membershipNumber": "1014698",
+              "fullText": "17  -  212  Patrick Scott  M  35  BULL CITY WEIGHTLIFTING  1014698  89.1  2018-06-30  -  Local  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0zMCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 2311,
+        "date": "2017-02-18",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Patrick Scott",
+        "lifter_id": 20062,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xOCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Patrick Scott",
+    "splits": [
+      {
+        "newAthleteName": "Patrick Scott (Person 1)",
+        "membershipNumber": "186454",
+        "competitionCount": 1,
+        "competitions": [
+          1376
+        ]
+      },
+      {
+        "newAthleteName": "Patrick Scott (Person 2)",
+        "membershipNumber": "1014698",
+        "competitionCount": 1,
+        "competitions": [
+          3123
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 2311,
+        "date": "2017-02-18",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Patrick Scott",
+        "lifter_id": 20062,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xOCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Patrick Scott",
+    "competitions": [
+      {
+        "meet_id": 1376,
+        "date": "2014-04-13",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Patrick Scott",
+        "lifter_id": 20062,
+        "membershipNumbers": [
+          {
+            "athleteName": "Patrick Scott",
+            "membershipNumber": "186454",
+            "fullText": "21  -  178  Patrick Scott  M  37  ATHLETIC LAB WLC  186454  103.6  2014-04-13  -  Local  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNC0xMyIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 2311,
+        "date": "2017-02-18",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Patrick Scott",
+        "lifter_id": 20062,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xOCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 3123,
+        "date": "2018-06-30",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Patrick Scott",
+        "lifter_id": 20062,
+        "membershipNumbers": [
+          {
+            "athleteName": "Patrick Scott",
+            "membershipNumber": "1014698",
+            "fullText": "17  -  212  Patrick Scott  M  35  BULL CITY WEIGHTLIFTING  1014698  89.1  2018-06-30  -  Local  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0zMCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "186454": [
+          {
+            "meet_id": 1376,
+            "date": "2014-04-13",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Patrick Scott",
+            "lifter_id": 20062,
+            "membershipNumbers": [
+              {
+                "athleteName": "Patrick Scott",
+                "membershipNumber": "186454",
+                "fullText": "21  -  178  Patrick Scott  M  37  ATHLETIC LAB WLC  186454  103.6  2014-04-13  -  Local  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNC0xMyIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          }
+        ],
+        "1014698": [
+          {
+            "meet_id": 3123,
+            "date": "2018-06-30",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Patrick Scott",
+            "lifter_id": 20062,
+            "membershipNumbers": [
+              {
+                "athleteName": "Patrick Scott",
+                "membershipNumber": "1014698",
+                "fullText": "17  -  212  Patrick Scott  M  35  BULL CITY WEIGHTLIFTING  1014698  89.1  2018-06-30  -  Local  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0zMCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 2311,
+          "date": "2017-02-18",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Patrick Scott",
+          "lifter_id": 20062,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xOCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

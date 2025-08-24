@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T18:22:01.645Z",
+  "athleteName": "Thomas Case",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1006492": [
+        {
+          "meet_id": 2057,
+          "date": "2016-06-25",
+          "age_category": "Open Men's",
+          "weight_class": "62 kg",
+          "lifter_name": "Thomas Case",
+          "lifter_id": 24545,
+          "membershipNumbers": [
+            {
+              "athleteName": "Thomas Case",
+              "membershipNumber": "1006492",
+              "fullText": "3  -  102  Thomas Case  M  15  VERO BEACH WEIGHTLIFTING  1006492  59.95  2016-06-25  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0yNSIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+        },
+        {
+          "meet_id": 1941,
+          "date": "2016-04-30",
+          "age_category": "Open Men's",
+          "weight_class": "62 kg",
+          "lifter_name": "Thomas Case",
+          "lifter_id": 24545,
+          "membershipNumbers": [
+            {
+              "athleteName": "Thomas Case",
+              "membershipNumber": "1006492",
+              "fullText": "3  -  92  Thomas Case  M  15  VERO BEACH WEIGHTLIFTING  1006492  58.3  2016-04-30  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0zMCIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+        }
+      ],
+      "1046726": [
+        {
+          "meet_id": 3812,
+          "date": "2019-11-17",
+          "age_category": "Open Men's",
+          "weight_class": "67kg",
+          "lifter_name": "Thomas Case",
+          "lifter_id": 24545,
+          "membershipNumbers": [
+            {
+              "athleteName": "Thomas Case",
+              "membershipNumber": "1046726",
+              "fullText": "17  -  85  Thomas Case  M  39  Speed Power Strength  1046726  65.77  2019-11-17  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0xNyIsIndlaWdodF9jbGFzcyI6ODN9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Thomas Case",
+    "splits": [
+      {
+        "newAthleteName": "Thomas Case (Person 1)",
+        "membershipNumber": "1006492",
+        "competitionCount": 2,
+        "competitions": [
+          2057,
+          1941
+        ]
+      },
+      {
+        "newAthleteName": "Thomas Case (Person 2)",
+        "membershipNumber": "1046726",
+        "competitionCount": 1,
+        "competitions": [
+          3812
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Thomas Case",
+    "competitions": [
+      {
+        "meet_id": 2057,
+        "date": "2016-06-25",
+        "age_category": "Open Men's",
+        "weight_class": "62 kg",
+        "lifter_name": "Thomas Case",
+        "lifter_id": 24545,
+        "membershipNumbers": [
+          {
+            "athleteName": "Thomas Case",
+            "membershipNumber": "1006492",
+            "fullText": "3  -  102  Thomas Case  M  15  VERO BEACH WEIGHTLIFTING  1006492  59.95  2016-06-25  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0yNSIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+      },
+      {
+        "meet_id": 1941,
+        "date": "2016-04-30",
+        "age_category": "Open Men's",
+        "weight_class": "62 kg",
+        "lifter_name": "Thomas Case",
+        "lifter_id": 24545,
+        "membershipNumbers": [
+          {
+            "athleteName": "Thomas Case",
+            "membershipNumber": "1006492",
+            "fullText": "3  -  92  Thomas Case  M  15  VERO BEACH WEIGHTLIFTING  1006492  58.3  2016-04-30  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0zMCIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+      },
+      {
+        "meet_id": 3812,
+        "date": "2019-11-17",
+        "age_category": "Open Men's",
+        "weight_class": "67kg",
+        "lifter_name": "Thomas Case",
+        "lifter_id": 24545,
+        "membershipNumbers": [
+          {
+            "athleteName": "Thomas Case",
+            "membershipNumber": "1046726",
+            "fullText": "17  -  85  Thomas Case  M  39  Speed Power Strength  1046726  65.77  2019-11-17  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0xNyIsIndlaWdodF9jbGFzcyI6ODN9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1006492": [
+          {
+            "meet_id": 2057,
+            "date": "2016-06-25",
+            "age_category": "Open Men's",
+            "weight_class": "62 kg",
+            "lifter_name": "Thomas Case",
+            "lifter_id": 24545,
+            "membershipNumbers": [
+              {
+                "athleteName": "Thomas Case",
+                "membershipNumber": "1006492",
+                "fullText": "3  -  102  Thomas Case  M  15  VERO BEACH WEIGHTLIFTING  1006492  59.95  2016-06-25  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0yNSIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+          },
+          {
+            "meet_id": 1941,
+            "date": "2016-04-30",
+            "age_category": "Open Men's",
+            "weight_class": "62 kg",
+            "lifter_name": "Thomas Case",
+            "lifter_id": 24545,
+            "membershipNumbers": [
+              {
+                "athleteName": "Thomas Case",
+                "membershipNumber": "1006492",
+                "fullText": "3  -  92  Thomas Case  M  15  VERO BEACH WEIGHTLIFTING  1006492  58.3  2016-04-30  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0zMCIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+          }
+        ],
+        "1046726": [
+          {
+            "meet_id": 3812,
+            "date": "2019-11-17",
+            "age_category": "Open Men's",
+            "weight_class": "67kg",
+            "lifter_name": "Thomas Case",
+            "lifter_id": 24545,
+            "membershipNumbers": [
+              {
+                "athleteName": "Thomas Case",
+                "membershipNumber": "1046726",
+                "fullText": "17  -  85  Thomas Case  M  39  Speed Power Strength  1046726  65.77  2019-11-17  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0xNyIsIndlaWdodF9jbGFzcyI6ODN9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

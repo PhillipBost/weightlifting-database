@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-22T20:23:40.164Z",
+  "athleteName": "Austin Johnson",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1025261": [
+        {
+          "meet_id": 2887,
+          "date": "2017-12-17",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Austin Johnson",
+          "lifter_id": 33019,
+          "membershipNumbers": [
+            {
+              "athleteName": "Austin Johnson",
+              "membershipNumber": "1025261",
+              "fullText": "29  -  169  Austin Johnson  M  15  -  1025261  75.85  2017-12-17  -  Local  Ohio"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMi0xNyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        }
+      ],
+      "1054629": [
+        {
+          "meet_id": 5209,
+          "date": "2022-02-19",
+          "age_category": "Men's 13 Under Age Group",
+          "weight_class": "67kg",
+          "lifter_name": "Austin Johnson",
+          "lifter_id": 33019,
+          "membershipNumbers": [
+            {
+              "athleteName": "Austin Johnson",
+              "membershipNumber": "1054629",
+              "fullText": "2  -  73  Austin Johnson  M  12  Lebanon Barbell Club  1054629  66.85  2022-02-19  -  Local  Missouri Valley"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMi0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMi0xOSIsIndlaWdodF9jbGFzcyI6NDh9"
+        },
+        {
+          "meet_id": 4652,
+          "date": "2021-02-20",
+          "age_category": "Men's 13 Under Age Group",
+          "weight_class": "55kg",
+          "lifter_name": "Austin Johnson",
+          "lifter_id": 33019,
+          "membershipNumbers": [
+            {
+              "athleteName": "Austin Johnson",
+              "membershipNumber": "1054629",
+              "fullText": "2  -  39  Austin Johnson  M  11  Lebanon Barbell Club  1054629  54.3  2021-02-20  -  Local  Missouri Valley"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMi0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMi0yMCIsIndlaWdodF9jbGFzcyI6NDZ9"
+        },
+        {
+          "meet_id": 5368,
+          "date": "2022-05-21",
+          "age_category": "Men's 13 Under Age Group",
+          "weight_class": "73kg",
+          "lifter_name": "Austin Johnson",
+          "lifter_id": 33019,
+          "membershipNumbers": [
+            {
+              "athleteName": "Austin Johnson",
+              "membershipNumber": "1054629",
+              "fullText": "3  -  75  Austin Johnson  M  12  Lebanon Barbell Club  1054629  70.8  2022-05-21  -  Local  Missouri Valley"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNS0yMSIsIndlaWdodF9jbGFzcyI6NDl9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Austin Johnson",
+    "splits": [
+      {
+        "newAthleteName": "Austin Johnson (Person 1)",
+        "membershipNumber": "1025261",
+        "competitionCount": 1,
+        "competitions": [
+          2887
+        ]
+      },
+      {
+        "newAthleteName": "Austin Johnson (Person 2)",
+        "membershipNumber": "1054629",
+        "competitionCount": 3,
+        "competitions": [
+          5209,
+          4652,
+          5368
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Austin Johnson",
+    "competitions": [
+      {
+        "meet_id": 2887,
+        "date": "2017-12-17",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Austin Johnson",
+        "lifter_id": 33019,
+        "membershipNumbers": [
+          {
+            "athleteName": "Austin Johnson",
+            "membershipNumber": "1025261",
+            "fullText": "29  -  169  Austin Johnson  M  15  -  1025261  75.85  2017-12-17  -  Local  Ohio"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMi0xNyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 5209,
+        "date": "2022-02-19",
+        "age_category": "Men's 13 Under Age Group",
+        "weight_class": "67kg",
+        "lifter_name": "Austin Johnson",
+        "lifter_id": 33019,
+        "membershipNumbers": [
+          {
+            "athleteName": "Austin Johnson",
+            "membershipNumber": "1054629",
+            "fullText": "2  -  73  Austin Johnson  M  12  Lebanon Barbell Club  1054629  66.85  2022-02-19  -  Local  Missouri Valley"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMi0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMi0xOSIsIndlaWdodF9jbGFzcyI6NDh9"
+      },
+      {
+        "meet_id": 4652,
+        "date": "2021-02-20",
+        "age_category": "Men's 13 Under Age Group",
+        "weight_class": "55kg",
+        "lifter_name": "Austin Johnson",
+        "lifter_id": 33019,
+        "membershipNumbers": [
+          {
+            "athleteName": "Austin Johnson",
+            "membershipNumber": "1054629",
+            "fullText": "2  -  39  Austin Johnson  M  11  Lebanon Barbell Club  1054629  54.3  2021-02-20  -  Local  Missouri Valley"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMi0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMi0yMCIsIndlaWdodF9jbGFzcyI6NDZ9"
+      },
+      {
+        "meet_id": 5368,
+        "date": "2022-05-21",
+        "age_category": "Men's 13 Under Age Group",
+        "weight_class": "73kg",
+        "lifter_name": "Austin Johnson",
+        "lifter_id": 33019,
+        "membershipNumbers": [
+          {
+            "athleteName": "Austin Johnson",
+            "membershipNumber": "1054629",
+            "fullText": "3  -  75  Austin Johnson  M  12  Lebanon Barbell Club  1054629  70.8  2022-05-21  -  Local  Missouri Valley"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNS0yMSIsIndlaWdodF9jbGFzcyI6NDl9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1025261": [
+          {
+            "meet_id": 2887,
+            "date": "2017-12-17",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Austin Johnson",
+            "lifter_id": 33019,
+            "membershipNumbers": [
+              {
+                "athleteName": "Austin Johnson",
+                "membershipNumber": "1025261",
+                "fullText": "29  -  169  Austin Johnson  M  15  -  1025261  75.85  2017-12-17  -  Local  Ohio"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMi0xNyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          }
+        ],
+        "1054629": [
+          {
+            "meet_id": 5209,
+            "date": "2022-02-19",
+            "age_category": "Men's 13 Under Age Group",
+            "weight_class": "67kg",
+            "lifter_name": "Austin Johnson",
+            "lifter_id": 33019,
+            "membershipNumbers": [
+              {
+                "athleteName": "Austin Johnson",
+                "membershipNumber": "1054629",
+                "fullText": "2  -  73  Austin Johnson  M  12  Lebanon Barbell Club  1054629  66.85  2022-02-19  -  Local  Missouri Valley"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMi0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMi0xOSIsIndlaWdodF9jbGFzcyI6NDh9"
+          },
+          {
+            "meet_id": 4652,
+            "date": "2021-02-20",
+            "age_category": "Men's 13 Under Age Group",
+            "weight_class": "55kg",
+            "lifter_name": "Austin Johnson",
+            "lifter_id": 33019,
+            "membershipNumbers": [
+              {
+                "athleteName": "Austin Johnson",
+                "membershipNumber": "1054629",
+                "fullText": "2  -  39  Austin Johnson  M  11  Lebanon Barbell Club  1054629  54.3  2021-02-20  -  Local  Missouri Valley"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMi0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMi0yMCIsIndlaWdodF9jbGFzcyI6NDZ9"
+          },
+          {
+            "meet_id": 5368,
+            "date": "2022-05-21",
+            "age_category": "Men's 13 Under Age Group",
+            "weight_class": "73kg",
+            "lifter_name": "Austin Johnson",
+            "lifter_id": 33019,
+            "membershipNumbers": [
+              {
+                "athleteName": "Austin Johnson",
+                "membershipNumber": "1054629",
+                "fullText": "3  -  75  Austin Johnson  M  12  Lebanon Barbell Club  1054629  70.8  2022-05-21  -  Local  Missouri Valley"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNS0yMSIsIndlaWdodF9jbGFzcyI6NDl9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

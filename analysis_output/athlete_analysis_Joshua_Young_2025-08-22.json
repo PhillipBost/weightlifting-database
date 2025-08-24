@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T08:47:22.192Z",
+  "athleteName": "Joshua Young",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1051880": [
+        {
+          "meet_id": 4553,
+          "date": "2020-09-26",
+          "age_category": "Men's Masters (40-44)",
+          "weight_class": "96kg",
+          "lifter_name": "Joshua Young",
+          "lifter_id": 46170,
+          "membershipNumbers": [
+            {
+              "athleteName": "Joshua Young",
+              "membershipNumber": "1051880",
+              "fullText": "1  -  218  Joshua Young  M  41  -  1051880  93  2020-09-26  -  Local  Tennessee-Kentucky"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wOS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wOS0yNiIsIndlaWdodF9jbGFzcyI6MTI3fQ=="
+        }
+      ],
+      "1053560": [
+        {
+          "meet_id": 4702,
+          "date": "2020-12-19",
+          "age_category": "Open Men's",
+          "weight_class": "102kg",
+          "lifter_name": "Joshua Young",
+          "lifter_id": 46170,
+          "membershipNumbers": [
+            {
+              "athleteName": "Joshua Young",
+              "membershipNumber": "1053560",
+              "fullText": "6  -  110  Joshua Young  M  31  Keep Pulling  1053560  101.5  2020-12-19  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0xMi0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0xMi0xOSIsIndlaWdodF9jbGFzcyI6ODh9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Joshua Young",
+    "splits": [
+      {
+        "newAthleteName": "Joshua Young (Person 1)",
+        "membershipNumber": "1051880",
+        "competitionCount": 1,
+        "competitions": [
+          4553
+        ]
+      },
+      {
+        "newAthleteName": "Joshua Young (Person 2)",
+        "membershipNumber": "1053560",
+        "competitionCount": 1,
+        "competitions": [
+          4702
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Joshua Young",
+    "competitions": [
+      {
+        "meet_id": 4553,
+        "date": "2020-09-26",
+        "age_category": "Men's Masters (40-44)",
+        "weight_class": "96kg",
+        "lifter_name": "Joshua Young",
+        "lifter_id": 46170,
+        "membershipNumbers": [
+          {
+            "athleteName": "Joshua Young",
+            "membershipNumber": "1051880",
+            "fullText": "1  -  218  Joshua Young  M  41  -  1051880  93  2020-09-26  -  Local  Tennessee-Kentucky"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wOS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wOS0yNiIsIndlaWdodF9jbGFzcyI6MTI3fQ=="
+      },
+      {
+        "meet_id": 4702,
+        "date": "2020-12-19",
+        "age_category": "Open Men's",
+        "weight_class": "102kg",
+        "lifter_name": "Joshua Young",
+        "lifter_id": 46170,
+        "membershipNumbers": [
+          {
+            "athleteName": "Joshua Young",
+            "membershipNumber": "1053560",
+            "fullText": "6  -  110  Joshua Young  M  31  Keep Pulling  1053560  101.5  2020-12-19  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0xMi0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0xMi0xOSIsIndlaWdodF9jbGFzcyI6ODh9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1051880": [
+          {
+            "meet_id": 4553,
+            "date": "2020-09-26",
+            "age_category": "Men's Masters (40-44)",
+            "weight_class": "96kg",
+            "lifter_name": "Joshua Young",
+            "lifter_id": 46170,
+            "membershipNumbers": [
+              {
+                "athleteName": "Joshua Young",
+                "membershipNumber": "1051880",
+                "fullText": "1  -  218  Joshua Young  M  41  -  1051880  93  2020-09-26  -  Local  Tennessee-Kentucky"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wOS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wOS0yNiIsIndlaWdodF9jbGFzcyI6MTI3fQ=="
+          }
+        ],
+        "1053560": [
+          {
+            "meet_id": 4702,
+            "date": "2020-12-19",
+            "age_category": "Open Men's",
+            "weight_class": "102kg",
+            "lifter_name": "Joshua Young",
+            "lifter_id": 46170,
+            "membershipNumbers": [
+              {
+                "athleteName": "Joshua Young",
+                "membershipNumber": "1053560",
+                "fullText": "6  -  110  Joshua Young  M  31  Keep Pulling  1053560  101.5  2020-12-19  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0xMi0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0xMi0xOSIsIndlaWdodF9jbGFzcyI6ODh9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

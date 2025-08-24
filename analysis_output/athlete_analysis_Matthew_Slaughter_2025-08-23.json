@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-23T00:23:32.525Z",
+  "athleteName": "Matthew Slaughter",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "177999": [
+        {
+          "meet_id": 591,
+          "date": "2012-09-29",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Matthew Slaughter",
+          "lifter_id": 132,
+          "membershipNumbers": [
+            {
+              "athleteName": "Matthew Slaughter",
+              "membershipNumber": "177999",
+              "fullText": "6  -  185  Matthew Slaughter  M  24  BLAZE WEIGHTLIFTING CLUB  177999  77  2012-09-29  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wOS0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wOS0yOSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        }
+      ],
+      "221282": [
+        {
+          "meet_id": 292,
+          "date": "2015-10-25",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Matthew Slaughter",
+          "lifter_id": 132,
+          "membershipNumbers": [
+            {
+              "athleteName": "Matthew Slaughter",
+              "membershipNumber": "221282",
+              "fullText": "22  -  250  Matthew Slaughter  M  28  Butcher Barbell  221282  89.9  2015-10-25  -  Local  Mountain North"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0yNSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Matthew Slaughter",
+    "splits": [
+      {
+        "newAthleteName": "Matthew Slaughter (Person 1)",
+        "membershipNumber": "177999",
+        "competitionCount": 1,
+        "competitions": [
+          591
+        ]
+      },
+      {
+        "newAthleteName": "Matthew Slaughter (Person 2)",
+        "membershipNumber": "221282",
+        "competitionCount": 1,
+        "competitions": [
+          292
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Matthew Slaughter",
+    "competitions": [
+      {
+        "meet_id": 292,
+        "date": "2015-10-25",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Matthew Slaughter",
+        "lifter_id": 132,
+        "membershipNumbers": [
+          {
+            "athleteName": "Matthew Slaughter",
+            "membershipNumber": "221282",
+            "fullText": "22  -  250  Matthew Slaughter  M  28  Butcher Barbell  221282  89.9  2015-10-25  -  Local  Mountain North"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0yNSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 591,
+        "date": "2012-09-29",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Matthew Slaughter",
+        "lifter_id": 132,
+        "membershipNumbers": [
+          {
+            "athleteName": "Matthew Slaughter",
+            "membershipNumber": "177999",
+            "fullText": "6  -  185  Matthew Slaughter  M  24  BLAZE WEIGHTLIFTING CLUB  177999  77  2012-09-29  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wOS0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wOS0yOSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "177999": [
+          {
+            "meet_id": 591,
+            "date": "2012-09-29",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Matthew Slaughter",
+            "lifter_id": 132,
+            "membershipNumbers": [
+              {
+                "athleteName": "Matthew Slaughter",
+                "membershipNumber": "177999",
+                "fullText": "6  -  185  Matthew Slaughter  M  24  BLAZE WEIGHTLIFTING CLUB  177999  77  2012-09-29  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wOS0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wOS0yOSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          }
+        ],
+        "221282": [
+          {
+            "meet_id": 292,
+            "date": "2015-10-25",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Matthew Slaughter",
+            "lifter_id": 132,
+            "membershipNumbers": [
+              {
+                "athleteName": "Matthew Slaughter",
+                "membershipNumber": "221282",
+                "fullText": "22  -  250  Matthew Slaughter  M  28  Butcher Barbell  221282  89.9  2015-10-25  -  Local  Mountain North"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0yNSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

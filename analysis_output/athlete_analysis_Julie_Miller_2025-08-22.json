@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-22T20:04:36.397Z",
+  "athleteName": "Julie Miller",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "179205": [
+        {
+          "meet_id": 734,
+          "date": "2013-09-15",
+          "age_category": "Women's Masters (45-49)",
+          "weight_class": "75 kg",
+          "lifter_name": "Julie Miller",
+          "lifter_id": 1784,
+          "membershipNumbers": [
+            {
+              "athleteName": "Julie Miller",
+              "membershipNumber": "179205",
+              "fullText": "2  -  100  Julie Miller  F  45  -  179205  74  2013-09-15  -  Local  -"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wOS0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wOS0xNSIsIndlaWdodF9jbGFzcyI6NDE4fQ=="
+        },
+        {
+          "meet_id": 708,
+          "date": "2012-11-18",
+          "age_category": "Women's Masters (40-44)",
+          "weight_class": "+75 kg",
+          "lifter_name": "Julie Miller",
+          "lifter_id": 1784,
+          "membershipNumbers": [
+            {
+              "athleteName": "Julie Miller",
+              "membershipNumber": "179205",
+              "fullText": "1  -  92  Julie Miller  F  44  -  179205  75.5  2012-11-18  -  Local  -"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0xMS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0xMS0xOCIsIndlaWdodF9jbGFzcyI6NDAyfQ=="
+        }
+      ],
+      "1034388": [
+        {
+          "meet_id": 5425,
+          "date": "2022-07-16",
+          "age_category": "Women's Masters (40-44)",
+          "weight_class": "59kg",
+          "lifter_name": "Julie Miller",
+          "lifter_id": 1784,
+          "membershipNumbers": [
+            {
+              "athleteName": "Julie Miller",
+              "membershipNumber": "1034388",
+              "fullText": "4  -  76  Julie Miller  F  42  Cuppa Joe Weightlifting  1034388  56.75  2022-07-16  -  Local  New York"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNy0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNy0xNiIsIndlaWdodF9jbGFzcyI6MTM0fQ=="
+        },
+        {
+          "meet_id": 4280,
+          "date": "2020-01-18",
+          "age_category": "Women's Masters (40-44)",
+          "weight_class": "59kg",
+          "lifter_name": "Julie Miller",
+          "lifter_id": 1784,
+          "membershipNumbers": [
+            {
+              "athleteName": "Julie Miller",
+              "membershipNumber": "1034388",
+              "fullText": "2  -  83  Julie Miller  F  40  Cuppa Joe Weightlifting  1034388  58.45  2020-01-18  -  Local  New York"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMS0xOCIsIndlaWdodF9jbGFzcyI6MTM0fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Julie Miller",
+    "splits": [
+      {
+        "newAthleteName": "Julie Miller (Person 1)",
+        "membershipNumber": "179205",
+        "competitionCount": 2,
+        "competitions": [
+          734,
+          708
+        ]
+      },
+      {
+        "newAthleteName": "Julie Miller (Person 2)",
+        "membershipNumber": "1034388",
+        "competitionCount": 2,
+        "competitions": [
+          5425,
+          4280
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Julie Miller",
+    "competitions": [
+      {
+        "meet_id": 5425,
+        "date": "2022-07-16",
+        "age_category": "Women's Masters (40-44)",
+        "weight_class": "59kg",
+        "lifter_name": "Julie Miller",
+        "lifter_id": 1784,
+        "membershipNumbers": [
+          {
+            "athleteName": "Julie Miller",
+            "membershipNumber": "1034388",
+            "fullText": "4  -  76  Julie Miller  F  42  Cuppa Joe Weightlifting  1034388  56.75  2022-07-16  -  Local  New York"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNy0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNy0xNiIsIndlaWdodF9jbGFzcyI6MTM0fQ=="
+      },
+      {
+        "meet_id": 734,
+        "date": "2013-09-15",
+        "age_category": "Women's Masters (45-49)",
+        "weight_class": "75 kg",
+        "lifter_name": "Julie Miller",
+        "lifter_id": 1784,
+        "membershipNumbers": [
+          {
+            "athleteName": "Julie Miller",
+            "membershipNumber": "179205",
+            "fullText": "2  -  100  Julie Miller  F  45  -  179205  74  2013-09-15  -  Local  -"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wOS0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wOS0xNSIsIndlaWdodF9jbGFzcyI6NDE4fQ=="
+      },
+      {
+        "meet_id": 708,
+        "date": "2012-11-18",
+        "age_category": "Women's Masters (40-44)",
+        "weight_class": "+75 kg",
+        "lifter_name": "Julie Miller",
+        "lifter_id": 1784,
+        "membershipNumbers": [
+          {
+            "athleteName": "Julie Miller",
+            "membershipNumber": "179205",
+            "fullText": "1  -  92  Julie Miller  F  44  -  179205  75.5  2012-11-18  -  Local  -"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0xMS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0xMS0xOCIsIndlaWdodF9jbGFzcyI6NDAyfQ=="
+      },
+      {
+        "meet_id": 4280,
+        "date": "2020-01-18",
+        "age_category": "Women's Masters (40-44)",
+        "weight_class": "59kg",
+        "lifter_name": "Julie Miller",
+        "lifter_id": 1784,
+        "membershipNumbers": [
+          {
+            "athleteName": "Julie Miller",
+            "membershipNumber": "1034388",
+            "fullText": "2  -  83  Julie Miller  F  40  Cuppa Joe Weightlifting  1034388  58.45  2020-01-18  -  Local  New York"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMS0xOCIsIndlaWdodF9jbGFzcyI6MTM0fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "179205": [
+          {
+            "meet_id": 734,
+            "date": "2013-09-15",
+            "age_category": "Women's Masters (45-49)",
+            "weight_class": "75 kg",
+            "lifter_name": "Julie Miller",
+            "lifter_id": 1784,
+            "membershipNumbers": [
+              {
+                "athleteName": "Julie Miller",
+                "membershipNumber": "179205",
+                "fullText": "2  -  100  Julie Miller  F  45  -  179205  74  2013-09-15  -  Local  -"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wOS0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wOS0xNSIsIndlaWdodF9jbGFzcyI6NDE4fQ=="
+          },
+          {
+            "meet_id": 708,
+            "date": "2012-11-18",
+            "age_category": "Women's Masters (40-44)",
+            "weight_class": "+75 kg",
+            "lifter_name": "Julie Miller",
+            "lifter_id": 1784,
+            "membershipNumbers": [
+              {
+                "athleteName": "Julie Miller",
+                "membershipNumber": "179205",
+                "fullText": "1  -  92  Julie Miller  F  44  -  179205  75.5  2012-11-18  -  Local  -"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0xMS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0xMS0xOCIsIndlaWdodF9jbGFzcyI6NDAyfQ=="
+          }
+        ],
+        "1034388": [
+          {
+            "meet_id": 5425,
+            "date": "2022-07-16",
+            "age_category": "Women's Masters (40-44)",
+            "weight_class": "59kg",
+            "lifter_name": "Julie Miller",
+            "lifter_id": 1784,
+            "membershipNumbers": [
+              {
+                "athleteName": "Julie Miller",
+                "membershipNumber": "1034388",
+                "fullText": "4  -  76  Julie Miller  F  42  Cuppa Joe Weightlifting  1034388  56.75  2022-07-16  -  Local  New York"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNy0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNy0xNiIsIndlaWdodF9jbGFzcyI6MTM0fQ=="
+          },
+          {
+            "meet_id": 4280,
+            "date": "2020-01-18",
+            "age_category": "Women's Masters (40-44)",
+            "weight_class": "59kg",
+            "lifter_name": "Julie Miller",
+            "lifter_id": 1784,
+            "membershipNumbers": [
+              {
+                "athleteName": "Julie Miller",
+                "membershipNumber": "1034388",
+                "fullText": "2  -  83  Julie Miller  F  40  Cuppa Joe Weightlifting  1034388  58.45  2020-01-18  -  Local  New York"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMS0xOCIsIndlaWdodF9jbGFzcyI6MTM0fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

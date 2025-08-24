@@ -1,0 +1,194 @@
+{
+  "timestamp": "2025-08-22T21:08:56.080Z",
+  "athleteName": "Christian Sanchez",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "185252": [
+        {
+          "meet_id": 1991,
+          "date": "2016-05-07",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Christian Sanchez",
+          "lifter_id": 24910,
+          "membershipNumbers": [
+            {
+              "athleteName": "Christian Sanchez",
+              "membershipNumber": "185252",
+              "fullText": "7  -  198  Christian Sanchez  M  32  -  185252  75.45  2016-05-07  -  Local  -"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0wNyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        }
+      ],
+      "1043964": [
+        {
+          "meet_id": 4301,
+          "date": "2020-01-11",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Christian Sanchez",
+          "lifter_id": 24910,
+          "membershipNumbers": [
+            {
+              "athleteName": "Christian Sanchez",
+              "membershipNumber": "1043964",
+              "fullText": "11  -  185  Christian Sanchez  M  22  Southern California Weightlifting Club  1043964  80.5  2020-01-11  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMS0xMSIsIndlaWdodF9jbGFzcyI6ODV9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 3944,
+        "date": "2019-07-21",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Christian Sanchez",
+        "lifter_id": 24910,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0yMSIsIndlaWdodF9jbGFzcyI6ODZ9"
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Christian Sanchez",
+    "splits": [
+      {
+        "newAthleteName": "Christian Sanchez (Person 1)",
+        "membershipNumber": "185252",
+        "competitionCount": 1,
+        "competitions": [
+          1991
+        ]
+      },
+      {
+        "newAthleteName": "Christian Sanchez (Person 2)",
+        "membershipNumber": "1043964",
+        "competitionCount": 1,
+        "competitions": [
+          4301
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 3944,
+        "date": "2019-07-21",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Christian Sanchez",
+        "lifter_id": 24910,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0yMSIsIndlaWdodF9jbGFzcyI6ODZ9"
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Christian Sanchez",
+    "competitions": [
+      {
+        "meet_id": 3944,
+        "date": "2019-07-21",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Christian Sanchez",
+        "lifter_id": 24910,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0yMSIsIndlaWdodF9jbGFzcyI6ODZ9"
+      },
+      {
+        "meet_id": 1991,
+        "date": "2016-05-07",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Christian Sanchez",
+        "lifter_id": 24910,
+        "membershipNumbers": [
+          {
+            "athleteName": "Christian Sanchez",
+            "membershipNumber": "185252",
+            "fullText": "7  -  198  Christian Sanchez  M  32  -  185252  75.45  2016-05-07  -  Local  -"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0wNyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 4301,
+        "date": "2020-01-11",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Christian Sanchez",
+        "lifter_id": 24910,
+        "membershipNumbers": [
+          {
+            "athleteName": "Christian Sanchez",
+            "membershipNumber": "1043964",
+            "fullText": "11  -  185  Christian Sanchez  M  22  Southern California Weightlifting Club  1043964  80.5  2020-01-11  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMS0xMSIsIndlaWdodF9jbGFzcyI6ODV9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "185252": [
+          {
+            "meet_id": 1991,
+            "date": "2016-05-07",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Christian Sanchez",
+            "lifter_id": 24910,
+            "membershipNumbers": [
+              {
+                "athleteName": "Christian Sanchez",
+                "membershipNumber": "185252",
+                "fullText": "7  -  198  Christian Sanchez  M  32  -  185252  75.45  2016-05-07  -  Local  -"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0wNyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          }
+        ],
+        "1043964": [
+          {
+            "meet_id": 4301,
+            "date": "2020-01-11",
+            "age_category": "Open Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Christian Sanchez",
+            "lifter_id": 24910,
+            "membershipNumbers": [
+              {
+                "athleteName": "Christian Sanchez",
+                "membershipNumber": "1043964",
+                "fullText": "11  -  185  Christian Sanchez  M  22  Southern California Weightlifting Club  1043964  80.5  2020-01-11  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMS0xMSIsIndlaWdodF9jbGFzcyI6ODV9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 3944,
+          "date": "2019-07-21",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "Christian Sanchez",
+          "lifter_id": 24910,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0yMSIsIndlaWdodF9jbGFzcyI6ODZ9"
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

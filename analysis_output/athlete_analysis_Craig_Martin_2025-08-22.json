@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T22:06:17.295Z",
+  "athleteName": "Craig Martin",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1007029": [
+        {
+          "meet_id": 1963,
+          "date": "2016-05-22",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Craig Martin",
+          "lifter_id": 24695,
+          "membershipNumbers": [
+            {
+              "athleteName": "Craig Martin",
+              "membershipNumber": "1007029",
+              "fullText": "21  -  220  Craig Martin  M  29  -  1007029  89.27  2016-05-22  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0yMiIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ],
+      "1044856": [
+        {
+          "meet_id": 4183,
+          "date": "2019-11-16",
+          "age_category": "Open Men's",
+          "weight_class": "102kg",
+          "lifter_name": "Craig Martin",
+          "lifter_id": 24695,
+          "membershipNumbers": [
+            {
+              "athleteName": "Craig Martin",
+              "membershipNumber": "1044856",
+              "fullText": "7  -  212  Craig Martin  M  32  Triumph Barbell  1044856  97.5  2019-11-16  -  Local  Tennessee-Kentucky"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0xNiIsIndlaWdodF9jbGFzcyI6ODh9"
+        },
+        {
+          "meet_id": 4584,
+          "date": "2020-10-24",
+          "age_category": "Open Men's",
+          "weight_class": "102kg",
+          "lifter_name": "Craig Martin",
+          "lifter_id": 24695,
+          "membershipNumbers": [
+            {
+              "athleteName": "Craig Martin",
+              "membershipNumber": "1044856",
+              "fullText": "17  -  211  Craig Martin  M  33  Triumph Barbell  1044856  98.9  2020-10-24  -  Local  Tennessee-Kentucky"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0xMC0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0xMC0yNCIsIndlaWdodF9jbGFzcyI6ODh9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Craig Martin",
+    "splits": [
+      {
+        "newAthleteName": "Craig Martin (Person 1)",
+        "membershipNumber": "1007029",
+        "competitionCount": 1,
+        "competitions": [
+          1963
+        ]
+      },
+      {
+        "newAthleteName": "Craig Martin (Person 2)",
+        "membershipNumber": "1044856",
+        "competitionCount": 2,
+        "competitions": [
+          4183,
+          4584
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Craig Martin",
+    "competitions": [
+      {
+        "meet_id": 1963,
+        "date": "2016-05-22",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Craig Martin",
+        "lifter_id": 24695,
+        "membershipNumbers": [
+          {
+            "athleteName": "Craig Martin",
+            "membershipNumber": "1007029",
+            "fullText": "21  -  220  Craig Martin  M  29  -  1007029  89.27  2016-05-22  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0yMiIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 4183,
+        "date": "2019-11-16",
+        "age_category": "Open Men's",
+        "weight_class": "102kg",
+        "lifter_name": "Craig Martin",
+        "lifter_id": 24695,
+        "membershipNumbers": [
+          {
+            "athleteName": "Craig Martin",
+            "membershipNumber": "1044856",
+            "fullText": "7  -  212  Craig Martin  M  32  Triumph Barbell  1044856  97.5  2019-11-16  -  Local  Tennessee-Kentucky"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0xNiIsIndlaWdodF9jbGFzcyI6ODh9"
+      },
+      {
+        "meet_id": 4584,
+        "date": "2020-10-24",
+        "age_category": "Open Men's",
+        "weight_class": "102kg",
+        "lifter_name": "Craig Martin",
+        "lifter_id": 24695,
+        "membershipNumbers": [
+          {
+            "athleteName": "Craig Martin",
+            "membershipNumber": "1044856",
+            "fullText": "17  -  211  Craig Martin  M  33  Triumph Barbell  1044856  98.9  2020-10-24  -  Local  Tennessee-Kentucky"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0xMC0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0xMC0yNCIsIndlaWdodF9jbGFzcyI6ODh9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1007029": [
+          {
+            "meet_id": 1963,
+            "date": "2016-05-22",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Craig Martin",
+            "lifter_id": 24695,
+            "membershipNumbers": [
+              {
+                "athleteName": "Craig Martin",
+                "membershipNumber": "1007029",
+                "fullText": "21  -  220  Craig Martin  M  29  -  1007029  89.27  2016-05-22  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0yMiIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          }
+        ],
+        "1044856": [
+          {
+            "meet_id": 4183,
+            "date": "2019-11-16",
+            "age_category": "Open Men's",
+            "weight_class": "102kg",
+            "lifter_name": "Craig Martin",
+            "lifter_id": 24695,
+            "membershipNumbers": [
+              {
+                "athleteName": "Craig Martin",
+                "membershipNumber": "1044856",
+                "fullText": "7  -  212  Craig Martin  M  32  Triumph Barbell  1044856  97.5  2019-11-16  -  Local  Tennessee-Kentucky"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0xNiIsIndlaWdodF9jbGFzcyI6ODh9"
+          },
+          {
+            "meet_id": 4584,
+            "date": "2020-10-24",
+            "age_category": "Open Men's",
+            "weight_class": "102kg",
+            "lifter_name": "Craig Martin",
+            "lifter_id": 24695,
+            "membershipNumbers": [
+              {
+                "athleteName": "Craig Martin",
+                "membershipNumber": "1044856",
+                "fullText": "17  -  211  Craig Martin  M  33  Triumph Barbell  1044856  98.9  2020-10-24  -  Local  Tennessee-Kentucky"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0xMC0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0xMC0yNCIsIndlaWdodF9jbGFzcyI6ODh9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

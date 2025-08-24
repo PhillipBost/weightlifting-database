@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T17:39:16.165Z",
+  "athleteName": "Jacob Henderson",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1011743": [
+        {
+          "meet_id": 2045,
+          "date": "2016-10-02",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Jacob Henderson",
+          "lifter_id": 25251,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jacob Henderson",
+              "membershipNumber": "1011743",
+              "fullText": "10  -  230  Jacob Henderson  M  23  LINDENWOOD LIONS  1011743  92.8  2016-10-02  -  Local  Missouri Valley"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0wMiIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ],
+      "1049884": [
+        {
+          "meet_id": 4549,
+          "date": "2020-08-01",
+          "age_category": "Open Men's",
+          "weight_class": "109kg",
+          "lifter_name": "Jacob Henderson",
+          "lifter_id": 25251,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jacob Henderson",
+              "membershipNumber": "1049884",
+              "fullText": "2  -  190  Jacob Henderson  M  29  -  1049884  105.3  2020-08-01  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wOC0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wOC0wMSIsIndlaWdodF9jbGFzcyI6ODl9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Jacob Henderson",
+    "splits": [
+      {
+        "newAthleteName": "Jacob Henderson (Person 1)",
+        "membershipNumber": "1011743",
+        "competitionCount": 1,
+        "competitions": [
+          2045
+        ]
+      },
+      {
+        "newAthleteName": "Jacob Henderson (Person 2)",
+        "membershipNumber": "1049884",
+        "competitionCount": 1,
+        "competitions": [
+          4549
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Jacob Henderson",
+    "competitions": [
+      {
+        "meet_id": 4549,
+        "date": "2020-08-01",
+        "age_category": "Open Men's",
+        "weight_class": "109kg",
+        "lifter_name": "Jacob Henderson",
+        "lifter_id": 25251,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jacob Henderson",
+            "membershipNumber": "1049884",
+            "fullText": "2  -  190  Jacob Henderson  M  29  -  1049884  105.3  2020-08-01  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wOC0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wOC0wMSIsIndlaWdodF9jbGFzcyI6ODl9"
+      },
+      {
+        "meet_id": 2045,
+        "date": "2016-10-02",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Jacob Henderson",
+        "lifter_id": 25251,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jacob Henderson",
+            "membershipNumber": "1011743",
+            "fullText": "10  -  230  Jacob Henderson  M  23  LINDENWOOD LIONS  1011743  92.8  2016-10-02  -  Local  Missouri Valley"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0wMiIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1011743": [
+          {
+            "meet_id": 2045,
+            "date": "2016-10-02",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Jacob Henderson",
+            "lifter_id": 25251,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jacob Henderson",
+                "membershipNumber": "1011743",
+                "fullText": "10  -  230  Jacob Henderson  M  23  LINDENWOOD LIONS  1011743  92.8  2016-10-02  -  Local  Missouri Valley"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0wMiIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          }
+        ],
+        "1049884": [
+          {
+            "meet_id": 4549,
+            "date": "2020-08-01",
+            "age_category": "Open Men's",
+            "weight_class": "109kg",
+            "lifter_name": "Jacob Henderson",
+            "lifter_id": 25251,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jacob Henderson",
+                "membershipNumber": "1049884",
+                "fullText": "2  -  190  Jacob Henderson  M  29  -  1049884  105.3  2020-08-01  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wOC0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wOC0wMSIsIndlaWdodF9jbGFzcyI6ODl9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

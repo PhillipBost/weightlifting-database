@@ -1,0 +1,194 @@
+{
+  "timestamp": "2025-08-22T08:47:10.940Z",
+  "athleteName": "Stephen Smith",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "194485": [
+        {
+          "meet_id": 4549,
+          "date": "2020-08-01",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "Stephen Smith",
+          "lifter_id": 46153,
+          "membershipNumbers": [
+            {
+              "athleteName": "Stephen Smith",
+              "membershipNumber": "194485",
+              "fullText": "5  -  199  Stephen Smith  M  24  757 BARBELL CLUB  194485  82.4  2020-08-01  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wOC0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wOC0wMSIsIndlaWdodF9jbGFzcyI6ODZ9"
+        }
+      ],
+      "1061457": [
+        {
+          "meet_id": 5909,
+          "date": "2023-05-27",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Stephen Smith",
+          "lifter_id": 46153,
+          "membershipNumbers": [
+            {
+              "athleteName": "Stephen Smith",
+              "membershipNumber": "1061457",
+              "fullText": "5  -  186  Stephen Smith  M  31  TOUGH TEMPLE BARBELL CLUB  1061457  80.1  2023-05-27  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNS0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNS0yNyIsIndlaWdodF9jbGFzcyI6ODV9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 5592,
+        "date": "2022-10-29",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Stephen Smith",
+        "lifter_id": 46153,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMC0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMC0yOSIsIndlaWdodF9jbGFzcyI6ODV9"
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Stephen Smith",
+    "splits": [
+      {
+        "newAthleteName": "Stephen Smith (Person 1)",
+        "membershipNumber": "194485",
+        "competitionCount": 1,
+        "competitions": [
+          4549
+        ]
+      },
+      {
+        "newAthleteName": "Stephen Smith (Person 2)",
+        "membershipNumber": "1061457",
+        "competitionCount": 1,
+        "competitions": [
+          5909
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 5592,
+        "date": "2022-10-29",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Stephen Smith",
+        "lifter_id": 46153,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMC0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMC0yOSIsIndlaWdodF9jbGFzcyI6ODV9"
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Stephen Smith",
+    "competitions": [
+      {
+        "meet_id": 5909,
+        "date": "2023-05-27",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Stephen Smith",
+        "lifter_id": 46153,
+        "membershipNumbers": [
+          {
+            "athleteName": "Stephen Smith",
+            "membershipNumber": "1061457",
+            "fullText": "5  -  186  Stephen Smith  M  31  TOUGH TEMPLE BARBELL CLUB  1061457  80.1  2023-05-27  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNS0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNS0yNyIsIndlaWdodF9jbGFzcyI6ODV9"
+      },
+      {
+        "meet_id": 4549,
+        "date": "2020-08-01",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Stephen Smith",
+        "lifter_id": 46153,
+        "membershipNumbers": [
+          {
+            "athleteName": "Stephen Smith",
+            "membershipNumber": "194485",
+            "fullText": "5  -  199  Stephen Smith  M  24  757 BARBELL CLUB  194485  82.4  2020-08-01  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wOC0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wOC0wMSIsIndlaWdodF9jbGFzcyI6ODZ9"
+      },
+      {
+        "meet_id": 5592,
+        "date": "2022-10-29",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Stephen Smith",
+        "lifter_id": 46153,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMC0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMC0yOSIsIndlaWdodF9jbGFzcyI6ODV9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "194485": [
+          {
+            "meet_id": 4549,
+            "date": "2020-08-01",
+            "age_category": "Open Men's",
+            "weight_class": "89kg",
+            "lifter_name": "Stephen Smith",
+            "lifter_id": 46153,
+            "membershipNumbers": [
+              {
+                "athleteName": "Stephen Smith",
+                "membershipNumber": "194485",
+                "fullText": "5  -  199  Stephen Smith  M  24  757 BARBELL CLUB  194485  82.4  2020-08-01  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wOC0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wOC0wMSIsIndlaWdodF9jbGFzcyI6ODZ9"
+          }
+        ],
+        "1061457": [
+          {
+            "meet_id": 5909,
+            "date": "2023-05-27",
+            "age_category": "Open Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Stephen Smith",
+            "lifter_id": 46153,
+            "membershipNumbers": [
+              {
+                "athleteName": "Stephen Smith",
+                "membershipNumber": "1061457",
+                "fullText": "5  -  186  Stephen Smith  M  31  TOUGH TEMPLE BARBELL CLUB  1061457  80.1  2023-05-27  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNS0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNS0yNyIsIndlaWdodF9jbGFzcyI6ODV9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 5592,
+          "date": "2022-10-29",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Stephen Smith",
+          "lifter_id": 46153,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMC0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMC0yOSIsIndlaWdodF9jbGFzcyI6ODV9"
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

@@ -1,0 +1,243 @@
+{
+  "timestamp": "2025-08-22T20:47:44.066Z",
+  "athleteName": "Taylor Smith",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1006788": [
+        {
+          "meet_id": 1886,
+          "date": "2016-05-22",
+          "age_category": "Open Women's",
+          "weight_class": "+75 Kg",
+          "lifter_name": "Taylor Smith",
+          "lifter_id": 24079,
+          "membershipNumbers": [
+            {
+              "athleteName": "Taylor Smith",
+              "membershipNumber": "1006788",
+              "fullText": "16  -  132  Taylor Smith  F  18  -  1006788  102.6  2016-05-22  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0yMiIsIndlaWdodF9jbGFzcyI6MzY4fQ=="
+        }
+      ],
+      "1023990": [
+        {
+          "meet_id": 2806,
+          "date": "2017-12-16",
+          "age_category": "Open Women's",
+          "weight_class": "90 kg",
+          "lifter_name": "Taylor Smith",
+          "lifter_id": 24079,
+          "membershipNumbers": [
+            {
+              "athleteName": "Taylor Smith",
+              "membershipNumber": "1023990",
+              "fullText": "12  -  111  Taylor Smith  F  18  3 Kings Weightlifting Club  1023990  78.3  2017-12-16  -  Local  Indiana"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMi0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMi0xNiIsIndlaWdodF9jbGFzcyI6MzY5fQ=="
+        },
+        {
+          "meet_id": 2922,
+          "date": "2018-01-20",
+          "age_category": "Open Women's",
+          "weight_class": "75 kg",
+          "lifter_name": "Taylor Smith",
+          "lifter_id": 24079,
+          "membershipNumbers": [
+            {
+              "athleteName": "Taylor Smith",
+              "membershipNumber": "1023990",
+              "fullText": "13  -  125  Taylor Smith  F  19  3 Kings Weightlifting Club  1023990  73.76  2018-01-20  -  Local  Indiana"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMS0yMCIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 2895,
+        "date": "2018-03-04",
+        "age_category": "Open Women's",
+        "weight_class": "75 kg",
+        "lifter_name": "Taylor Smith",
+        "lifter_id": 24079,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMy0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMy0wNCIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Taylor Smith",
+    "splits": [
+      {
+        "newAthleteName": "Taylor Smith (Person 1)",
+        "membershipNumber": "1006788",
+        "competitionCount": 1,
+        "competitions": [
+          1886
+        ]
+      },
+      {
+        "newAthleteName": "Taylor Smith (Person 2)",
+        "membershipNumber": "1023990",
+        "competitionCount": 2,
+        "competitions": [
+          2806,
+          2922
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 2895,
+        "date": "2018-03-04",
+        "age_category": "Open Women's",
+        "weight_class": "75 kg",
+        "lifter_name": "Taylor Smith",
+        "lifter_id": 24079,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMy0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMy0wNCIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Taylor Smith",
+    "competitions": [
+      {
+        "meet_id": 2895,
+        "date": "2018-03-04",
+        "age_category": "Open Women's",
+        "weight_class": "75 kg",
+        "lifter_name": "Taylor Smith",
+        "lifter_id": 24079,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMy0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMy0wNCIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+      },
+      {
+        "meet_id": 1886,
+        "date": "2016-05-22",
+        "age_category": "Open Women's",
+        "weight_class": "+75 Kg",
+        "lifter_name": "Taylor Smith",
+        "lifter_id": 24079,
+        "membershipNumbers": [
+          {
+            "athleteName": "Taylor Smith",
+            "membershipNumber": "1006788",
+            "fullText": "16  -  132  Taylor Smith  F  18  -  1006788  102.6  2016-05-22  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0yMiIsIndlaWdodF9jbGFzcyI6MzY4fQ=="
+      },
+      {
+        "meet_id": 2806,
+        "date": "2017-12-16",
+        "age_category": "Open Women's",
+        "weight_class": "90 kg",
+        "lifter_name": "Taylor Smith",
+        "lifter_id": 24079,
+        "membershipNumbers": [
+          {
+            "athleteName": "Taylor Smith",
+            "membershipNumber": "1023990",
+            "fullText": "12  -  111  Taylor Smith  F  18  3 Kings Weightlifting Club  1023990  78.3  2017-12-16  -  Local  Indiana"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMi0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMi0xNiIsIndlaWdodF9jbGFzcyI6MzY5fQ=="
+      },
+      {
+        "meet_id": 2922,
+        "date": "2018-01-20",
+        "age_category": "Open Women's",
+        "weight_class": "75 kg",
+        "lifter_name": "Taylor Smith",
+        "lifter_id": 24079,
+        "membershipNumbers": [
+          {
+            "athleteName": "Taylor Smith",
+            "membershipNumber": "1023990",
+            "fullText": "13  -  125  Taylor Smith  F  19  3 Kings Weightlifting Club  1023990  73.76  2018-01-20  -  Local  Indiana"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMS0yMCIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1006788": [
+          {
+            "meet_id": 1886,
+            "date": "2016-05-22",
+            "age_category": "Open Women's",
+            "weight_class": "+75 Kg",
+            "lifter_name": "Taylor Smith",
+            "lifter_id": 24079,
+            "membershipNumbers": [
+              {
+                "athleteName": "Taylor Smith",
+                "membershipNumber": "1006788",
+                "fullText": "16  -  132  Taylor Smith  F  18  -  1006788  102.6  2016-05-22  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0yMiIsIndlaWdodF9jbGFzcyI6MzY4fQ=="
+          }
+        ],
+        "1023990": [
+          {
+            "meet_id": 2806,
+            "date": "2017-12-16",
+            "age_category": "Open Women's",
+            "weight_class": "90 kg",
+            "lifter_name": "Taylor Smith",
+            "lifter_id": 24079,
+            "membershipNumbers": [
+              {
+                "athleteName": "Taylor Smith",
+                "membershipNumber": "1023990",
+                "fullText": "12  -  111  Taylor Smith  F  18  3 Kings Weightlifting Club  1023990  78.3  2017-12-16  -  Local  Indiana"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMi0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMi0xNiIsIndlaWdodF9jbGFzcyI6MzY5fQ=="
+          },
+          {
+            "meet_id": 2922,
+            "date": "2018-01-20",
+            "age_category": "Open Women's",
+            "weight_class": "75 kg",
+            "lifter_name": "Taylor Smith",
+            "lifter_id": 24079,
+            "membershipNumbers": [
+              {
+                "athleteName": "Taylor Smith",
+                "membershipNumber": "1023990",
+                "fullText": "13  -  125  Taylor Smith  F  19  3 Kings Weightlifting Club  1023990  73.76  2018-01-20  -  Local  Indiana"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMS0yMCIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 2895,
+          "date": "2018-03-04",
+          "age_category": "Open Women's",
+          "weight_class": "75 kg",
+          "lifter_name": "Taylor Smith",
+          "lifter_id": 24079,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMy0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMy0wNCIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

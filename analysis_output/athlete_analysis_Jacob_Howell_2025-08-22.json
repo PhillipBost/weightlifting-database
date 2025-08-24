@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T18:00:11.770Z",
+  "athleteName": "Jacob Howell",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "204350": [
+        {
+          "meet_id": 153,
+          "date": "2015-03-28",
+          "age_category": "Open Men's",
+          "weight_class": "56 kg",
+          "lifter_name": "Jacob Howell",
+          "lifter_id": 8256,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jacob Howell",
+              "membershipNumber": "204350",
+              "fullText": "2  -  127  Jacob Howell  M  18  -  204350  51.8  2015-03-28  -  Local  Tennessee-Kentucky"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMy0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMy0yOCIsIndlaWdodF9jbGFzcyI6MzU0fQ=="
+        },
+        {
+          "meet_id": 1587,
+          "date": "2014-12-13",
+          "age_category": "Open Men's",
+          "weight_class": "56 kg",
+          "lifter_name": "Jacob Howell",
+          "lifter_id": 8256,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jacob Howell",
+              "membershipNumber": "204350",
+              "fullText": "4  -  114  Jacob Howell  M  17  -  204350  50.1  2014-12-13  -  Local  Tennessee-Kentucky"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMi0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMi0xMyIsIndlaWdodF9jbGFzcyI6MzU0fQ=="
+        }
+      ],
+      "1077727": [
+        {
+          "meet_id": 6505,
+          "date": "2024-08-31",
+          "age_category": "Open Men's",
+          "weight_class": "73kg",
+          "lifter_name": "Jacob Howell",
+          "lifter_id": 8256,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jacob Howell",
+              "membershipNumber": "1077727",
+              "fullText": "4  -  148  Jacob Howell  M  24  Columbus Weightlifting  1077727  68.45  2024-08-31  -  Local  Ohio"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOC0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOC0zMSIsIndlaWdodF9jbGFzcyI6ODR9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Jacob Howell",
+    "splits": [
+      {
+        "newAthleteName": "Jacob Howell (Person 1)",
+        "membershipNumber": "204350",
+        "competitionCount": 2,
+        "competitions": [
+          153,
+          1587
+        ]
+      },
+      {
+        "newAthleteName": "Jacob Howell (Person 2)",
+        "membershipNumber": "1077727",
+        "competitionCount": 1,
+        "competitions": [
+          6505
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Jacob Howell",
+    "competitions": [
+      {
+        "meet_id": 6505,
+        "date": "2024-08-31",
+        "age_category": "Open Men's",
+        "weight_class": "73kg",
+        "lifter_name": "Jacob Howell",
+        "lifter_id": 8256,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jacob Howell",
+            "membershipNumber": "1077727",
+            "fullText": "4  -  148  Jacob Howell  M  24  Columbus Weightlifting  1077727  68.45  2024-08-31  -  Local  Ohio"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOC0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOC0zMSIsIndlaWdodF9jbGFzcyI6ODR9"
+      },
+      {
+        "meet_id": 153,
+        "date": "2015-03-28",
+        "age_category": "Open Men's",
+        "weight_class": "56 kg",
+        "lifter_name": "Jacob Howell",
+        "lifter_id": 8256,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jacob Howell",
+            "membershipNumber": "204350",
+            "fullText": "2  -  127  Jacob Howell  M  18  -  204350  51.8  2015-03-28  -  Local  Tennessee-Kentucky"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMy0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMy0yOCIsIndlaWdodF9jbGFzcyI6MzU0fQ=="
+      },
+      {
+        "meet_id": 1587,
+        "date": "2014-12-13",
+        "age_category": "Open Men's",
+        "weight_class": "56 kg",
+        "lifter_name": "Jacob Howell",
+        "lifter_id": 8256,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jacob Howell",
+            "membershipNumber": "204350",
+            "fullText": "4  -  114  Jacob Howell  M  17  -  204350  50.1  2014-12-13  -  Local  Tennessee-Kentucky"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMi0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMi0xMyIsIndlaWdodF9jbGFzcyI6MzU0fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "204350": [
+          {
+            "meet_id": 153,
+            "date": "2015-03-28",
+            "age_category": "Open Men's",
+            "weight_class": "56 kg",
+            "lifter_name": "Jacob Howell",
+            "lifter_id": 8256,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jacob Howell",
+                "membershipNumber": "204350",
+                "fullText": "2  -  127  Jacob Howell  M  18  -  204350  51.8  2015-03-28  -  Local  Tennessee-Kentucky"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMy0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMy0yOCIsIndlaWdodF9jbGFzcyI6MzU0fQ=="
+          },
+          {
+            "meet_id": 1587,
+            "date": "2014-12-13",
+            "age_category": "Open Men's",
+            "weight_class": "56 kg",
+            "lifter_name": "Jacob Howell",
+            "lifter_id": 8256,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jacob Howell",
+                "membershipNumber": "204350",
+                "fullText": "4  -  114  Jacob Howell  M  17  -  204350  50.1  2014-12-13  -  Local  Tennessee-Kentucky"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMi0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMi0xMyIsIndlaWdodF9jbGFzcyI6MzU0fQ=="
+          }
+        ],
+        "1077727": [
+          {
+            "meet_id": 6505,
+            "date": "2024-08-31",
+            "age_category": "Open Men's",
+            "weight_class": "73kg",
+            "lifter_name": "Jacob Howell",
+            "lifter_id": 8256,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jacob Howell",
+                "membershipNumber": "1077727",
+                "fullText": "4  -  148  Jacob Howell  M  24  Columbus Weightlifting  1077727  68.45  2024-08-31  -  Local  Ohio"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOC0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOC0zMSIsIndlaWdodF9jbGFzcyI6ODR9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

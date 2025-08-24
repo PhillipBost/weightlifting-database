@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T09:10:24.653Z",
+  "athleteName": "Mario Gutierrez",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "177872": [
+        {
+          "meet_id": 621,
+          "date": "2012-09-08",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Mario Gutierrez",
+          "lifter_id": 355,
+          "membershipNumbers": [
+            {
+              "athleteName": "Mario Gutierrez",
+              "membershipNumber": "177872",
+              "fullText": "3  -  215  Mario Gutierrez  M  30  AXIOM LIFTING CLUB  177872  82.3  2012-09-08  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wOS0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wOS0wOCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ],
+      "1030809": [
+        {
+          "meet_id": 3343,
+          "date": "2018-06-02",
+          "age_category": "Open Men's",
+          "weight_class": "69 kg",
+          "lifter_name": "Mario Gutierrez",
+          "lifter_id": 355,
+          "membershipNumbers": [
+            {
+              "athleteName": "Mario Gutierrez",
+              "membershipNumber": "1030809",
+              "fullText": "8  -  101  Mario Gutierrez  M  15  Higher Dimensions Youth Athletic Foundation  1030809  67.7  2018-06-02  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0wMiIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+        },
+        {
+          "meet_id": 3449,
+          "date": "2018-07-14",
+          "age_category": "Open Men's",
+          "weight_class": "69 kg",
+          "lifter_name": "Mario Gutierrez",
+          "lifter_id": 355,
+          "membershipNumbers": [
+            {
+              "athleteName": "Mario Gutierrez",
+              "membershipNumber": "1030809",
+              "fullText": "15  -  100  Mario Gutierrez  M  15  Higher Dimensions Youth Athletic Foundation  1030809  69  2018-07-14  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNy0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNy0xNCIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Mario Gutierrez",
+    "splits": [
+      {
+        "newAthleteName": "Mario Gutierrez (Person 1)",
+        "membershipNumber": "177872",
+        "competitionCount": 1,
+        "competitions": [
+          621
+        ]
+      },
+      {
+        "newAthleteName": "Mario Gutierrez (Person 2)",
+        "membershipNumber": "1030809",
+        "competitionCount": 2,
+        "competitions": [
+          3343,
+          3449
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Mario Gutierrez",
+    "competitions": [
+      {
+        "meet_id": 621,
+        "date": "2012-09-08",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Mario Gutierrez",
+        "lifter_id": 355,
+        "membershipNumbers": [
+          {
+            "athleteName": "Mario Gutierrez",
+            "membershipNumber": "177872",
+            "fullText": "3  -  215  Mario Gutierrez  M  30  AXIOM LIFTING CLUB  177872  82.3  2012-09-08  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wOS0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wOS0wOCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 3343,
+        "date": "2018-06-02",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "Mario Gutierrez",
+        "lifter_id": 355,
+        "membershipNumbers": [
+          {
+            "athleteName": "Mario Gutierrez",
+            "membershipNumber": "1030809",
+            "fullText": "8  -  101  Mario Gutierrez  M  15  Higher Dimensions Youth Athletic Foundation  1030809  67.7  2018-06-02  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0wMiIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      },
+      {
+        "meet_id": 3449,
+        "date": "2018-07-14",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "Mario Gutierrez",
+        "lifter_id": 355,
+        "membershipNumbers": [
+          {
+            "athleteName": "Mario Gutierrez",
+            "membershipNumber": "1030809",
+            "fullText": "15  -  100  Mario Gutierrez  M  15  Higher Dimensions Youth Athletic Foundation  1030809  69  2018-07-14  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNy0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNy0xNCIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "177872": [
+          {
+            "meet_id": 621,
+            "date": "2012-09-08",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Mario Gutierrez",
+            "lifter_id": 355,
+            "membershipNumbers": [
+              {
+                "athleteName": "Mario Gutierrez",
+                "membershipNumber": "177872",
+                "fullText": "3  -  215  Mario Gutierrez  M  30  AXIOM LIFTING CLUB  177872  82.3  2012-09-08  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wOS0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wOS0wOCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          }
+        ],
+        "1030809": [
+          {
+            "meet_id": 3343,
+            "date": "2018-06-02",
+            "age_category": "Open Men's",
+            "weight_class": "69 kg",
+            "lifter_name": "Mario Gutierrez",
+            "lifter_id": 355,
+            "membershipNumbers": [
+              {
+                "athleteName": "Mario Gutierrez",
+                "membershipNumber": "1030809",
+                "fullText": "8  -  101  Mario Gutierrez  M  15  Higher Dimensions Youth Athletic Foundation  1030809  67.7  2018-06-02  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0wMiIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+          },
+          {
+            "meet_id": 3449,
+            "date": "2018-07-14",
+            "age_category": "Open Men's",
+            "weight_class": "69 kg",
+            "lifter_name": "Mario Gutierrez",
+            "lifter_id": 355,
+            "membershipNumbers": [
+              {
+                "athleteName": "Mario Gutierrez",
+                "membershipNumber": "1030809",
+                "fullText": "15  -  100  Mario Gutierrez  M  15  Higher Dimensions Youth Athletic Foundation  1030809  69  2018-07-14  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNy0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNy0xNCIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T15:45:31.476Z",
+  "athleteName": "Nathaniel Olson",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1005543": [
+        {
+          "meet_id": 1855,
+          "date": "2016-05-21",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Nathaniel Olson",
+          "lifter_id": 23753,
+          "membershipNumbers": [
+            {
+              "athleteName": "Nathaniel Olson",
+              "membershipNumber": "1005543",
+              "fullText": "19  -  218  Nathaniel Olson  M  26  -  1005543  97.81  2016-05-21  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0yMSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        }
+      ],
+      "1080426": [
+        {
+          "meet_id": 6760,
+          "date": "2025-02-15",
+          "age_category": "Junior Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Nathaniel Olson",
+          "lifter_id": 23753,
+          "membershipNumbers": [
+            {
+              "athleteName": "Nathaniel Olson",
+              "membershipNumber": "1080426",
+              "fullText": "2  -  170  Nathaniel Olson  M  20  -  1080426  79  2025-02-15  -  Local  New England"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMi0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMi0xNSIsIndlaWdodF9jbGFzcyI6NjV9"
+        },
+        {
+          "meet_id": 6861,
+          "date": "2025-04-27",
+          "age_category": "Junior Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Nathaniel Olson",
+          "lifter_id": 23753,
+          "membershipNumbers": [
+            {
+              "athleteName": "Nathaniel Olson",
+              "membershipNumber": "1080426",
+              "fullText": "3  -  164  Nathaniel Olson  M  20  -  1080426  78.2  2025-04-27  -  Local  New England"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNC0yNyIsIndlaWdodF9jbGFzcyI6NjV9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Nathaniel Olson",
+    "splits": [
+      {
+        "newAthleteName": "Nathaniel Olson (Person 1)",
+        "membershipNumber": "1005543",
+        "competitionCount": 1,
+        "competitions": [
+          1855
+        ]
+      },
+      {
+        "newAthleteName": "Nathaniel Olson (Person 2)",
+        "membershipNumber": "1080426",
+        "competitionCount": 2,
+        "competitions": [
+          6760,
+          6861
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Nathaniel Olson",
+    "competitions": [
+      {
+        "meet_id": 1855,
+        "date": "2016-05-21",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Nathaniel Olson",
+        "lifter_id": 23753,
+        "membershipNumbers": [
+          {
+            "athleteName": "Nathaniel Olson",
+            "membershipNumber": "1005543",
+            "fullText": "19  -  218  Nathaniel Olson  M  26  -  1005543  97.81  2016-05-21  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0yMSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 6760,
+        "date": "2025-02-15",
+        "age_category": "Junior Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Nathaniel Olson",
+        "lifter_id": 23753,
+        "membershipNumbers": [
+          {
+            "athleteName": "Nathaniel Olson",
+            "membershipNumber": "1080426",
+            "fullText": "2  -  170  Nathaniel Olson  M  20  -  1080426  79  2025-02-15  -  Local  New England"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMi0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMi0xNSIsIndlaWdodF9jbGFzcyI6NjV9"
+      },
+      {
+        "meet_id": 6861,
+        "date": "2025-04-27",
+        "age_category": "Junior Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Nathaniel Olson",
+        "lifter_id": 23753,
+        "membershipNumbers": [
+          {
+            "athleteName": "Nathaniel Olson",
+            "membershipNumber": "1080426",
+            "fullText": "3  -  164  Nathaniel Olson  M  20  -  1080426  78.2  2025-04-27  -  Local  New England"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNC0yNyIsIndlaWdodF9jbGFzcyI6NjV9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1005543": [
+          {
+            "meet_id": 1855,
+            "date": "2016-05-21",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Nathaniel Olson",
+            "lifter_id": 23753,
+            "membershipNumbers": [
+              {
+                "athleteName": "Nathaniel Olson",
+                "membershipNumber": "1005543",
+                "fullText": "19  -  218  Nathaniel Olson  M  26  -  1005543  97.81  2016-05-21  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0yMSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          }
+        ],
+        "1080426": [
+          {
+            "meet_id": 6760,
+            "date": "2025-02-15",
+            "age_category": "Junior Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Nathaniel Olson",
+            "lifter_id": 23753,
+            "membershipNumbers": [
+              {
+                "athleteName": "Nathaniel Olson",
+                "membershipNumber": "1080426",
+                "fullText": "2  -  170  Nathaniel Olson  M  20  -  1080426  79  2025-02-15  -  Local  New England"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMi0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMi0xNSIsIndlaWdodF9jbGFzcyI6NjV9"
+          },
+          {
+            "meet_id": 6861,
+            "date": "2025-04-27",
+            "age_category": "Junior Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Nathaniel Olson",
+            "lifter_id": 23753,
+            "membershipNumbers": [
+              {
+                "athleteName": "Nathaniel Olson",
+                "membershipNumber": "1080426",
+                "fullText": "3  -  164  Nathaniel Olson  M  20  -  1080426  78.2  2025-04-27  -  Local  New England"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNC0yNyIsIndlaWdodF9jbGFzcyI6NjV9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

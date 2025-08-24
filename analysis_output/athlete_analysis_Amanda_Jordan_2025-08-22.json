@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T07:39:49.314Z",
+  "athleteName": "Amanda Jordan",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1018129": [
+        {
+          "meet_id": 2274,
+          "date": "2017-04-30",
+          "age_category": "Open Women's",
+          "weight_class": "75 kg",
+          "lifter_name": "Amanda Jordan",
+          "lifter_id": 27930,
+          "membershipNumbers": [
+            {
+              "athleteName": "Amanda Jordan",
+              "membershipNumber": "1018129",
+              "fullText": "24  -  90  Amanda Jordan  F  28  UPROAR WEIGHTLIFTING  1018129  70.1  2017-04-30  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNC0zMCIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+        }
+      ],
+      "1020985": [
+        {
+          "meet_id": 2768,
+          "date": "2017-08-13",
+          "age_category": "Open Women's",
+          "weight_class": "75 kg",
+          "lifter_name": "Amanda Jordan",
+          "lifter_id": 27930,
+          "membershipNumbers": [
+            {
+              "athleteName": "Amanda Jordan",
+              "membershipNumber": "1020985",
+              "fullText": "10  -  131  Amanda Jordan  F  30  -  1020985  73.13  2017-08-13  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wOC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wOC0xMyIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+        },
+        {
+          "meet_id": 4200,
+          "date": "2019-11-03",
+          "age_category": "Open Women's",
+          "weight_class": "71kg",
+          "lifter_name": "Amanda Jordan",
+          "lifter_id": 27930,
+          "membershipNumbers": [
+            {
+              "athleteName": "Amanda Jordan",
+              "membershipNumber": "1020985",
+              "fullText": "30  -  117  Amanda Jordan  F  32  -  1020985  68.13  2019-11-03  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0wMyIsIndlaWdodF9jbGFzcyI6OTZ9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Amanda Jordan",
+    "splits": [
+      {
+        "newAthleteName": "Amanda Jordan (Person 1)",
+        "membershipNumber": "1018129",
+        "competitionCount": 1,
+        "competitions": [
+          2274
+        ]
+      },
+      {
+        "newAthleteName": "Amanda Jordan (Person 2)",
+        "membershipNumber": "1020985",
+        "competitionCount": 2,
+        "competitions": [
+          2768,
+          4200
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Amanda Jordan",
+    "competitions": [
+      {
+        "meet_id": 2274,
+        "date": "2017-04-30",
+        "age_category": "Open Women's",
+        "weight_class": "75 kg",
+        "lifter_name": "Amanda Jordan",
+        "lifter_id": 27930,
+        "membershipNumbers": [
+          {
+            "athleteName": "Amanda Jordan",
+            "membershipNumber": "1018129",
+            "fullText": "24  -  90  Amanda Jordan  F  28  UPROAR WEIGHTLIFTING  1018129  70.1  2017-04-30  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNC0zMCIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+      },
+      {
+        "meet_id": 2768,
+        "date": "2017-08-13",
+        "age_category": "Open Women's",
+        "weight_class": "75 kg",
+        "lifter_name": "Amanda Jordan",
+        "lifter_id": 27930,
+        "membershipNumbers": [
+          {
+            "athleteName": "Amanda Jordan",
+            "membershipNumber": "1020985",
+            "fullText": "10  -  131  Amanda Jordan  F  30  -  1020985  73.13  2017-08-13  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wOC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wOC0xMyIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+      },
+      {
+        "meet_id": 4200,
+        "date": "2019-11-03",
+        "age_category": "Open Women's",
+        "weight_class": "71kg",
+        "lifter_name": "Amanda Jordan",
+        "lifter_id": 27930,
+        "membershipNumbers": [
+          {
+            "athleteName": "Amanda Jordan",
+            "membershipNumber": "1020985",
+            "fullText": "30  -  117  Amanda Jordan  F  32  -  1020985  68.13  2019-11-03  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0wMyIsIndlaWdodF9jbGFzcyI6OTZ9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1018129": [
+          {
+            "meet_id": 2274,
+            "date": "2017-04-30",
+            "age_category": "Open Women's",
+            "weight_class": "75 kg",
+            "lifter_name": "Amanda Jordan",
+            "lifter_id": 27930,
+            "membershipNumbers": [
+              {
+                "athleteName": "Amanda Jordan",
+                "membershipNumber": "1018129",
+                "fullText": "24  -  90  Amanda Jordan  F  28  UPROAR WEIGHTLIFTING  1018129  70.1  2017-04-30  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNC0zMCIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+          }
+        ],
+        "1020985": [
+          {
+            "meet_id": 2768,
+            "date": "2017-08-13",
+            "age_category": "Open Women's",
+            "weight_class": "75 kg",
+            "lifter_name": "Amanda Jordan",
+            "lifter_id": 27930,
+            "membershipNumbers": [
+              {
+                "athleteName": "Amanda Jordan",
+                "membershipNumber": "1020985",
+                "fullText": "10  -  131  Amanda Jordan  F  30  -  1020985  73.13  2017-08-13  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wOC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wOC0xMyIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+          },
+          {
+            "meet_id": 4200,
+            "date": "2019-11-03",
+            "age_category": "Open Women's",
+            "weight_class": "71kg",
+            "lifter_name": "Amanda Jordan",
+            "lifter_id": 27930,
+            "membershipNumbers": [
+              {
+                "athleteName": "Amanda Jordan",
+                "membershipNumber": "1020985",
+                "fullText": "30  -  117  Amanda Jordan  F  32  -  1020985  68.13  2019-11-03  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0wMyIsIndlaWdodF9jbGFzcyI6OTZ9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

@@ -1,0 +1,243 @@
+{
+  "timestamp": "2025-08-22T07:15:13.861Z",
+  "athleteName": "Kaden Adams",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1005194": [
+        {
+          "meet_id": 2361,
+          "date": "2016-12-17",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Kaden Adams",
+          "lifter_id": 23857,
+          "membershipNumbers": [
+            {
+              "athleteName": "Kaden Adams",
+              "membershipNumber": "1005194",
+              "fullText": "19  -  163  Kaden Adams  M  16  -  1005194  71  2016-12-17  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMi0xNyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        },
+        {
+          "meet_id": 1860,
+          "date": "2016-04-02",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Kaden Adams",
+          "lifter_id": 23857,
+          "membershipNumbers": [
+            {
+              "athleteName": "Kaden Adams",
+              "membershipNumber": "1005194",
+              "fullText": "20  -  150  Kaden Adams  M  16  -  1005194  71.9  2016-04-02  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0wMiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        }
+      ],
+      "1006322": [
+        {
+          "meet_id": 1917,
+          "date": "2016-05-14",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Kaden Adams",
+          "lifter_id": 23857,
+          "membershipNumbers": [
+            {
+              "athleteName": "Kaden Adams",
+              "membershipNumber": "1006322",
+              "fullText": "15  -  188  Kaden Adams  M  19  IRON FACTORY WEIGHTLIFTING  1006322  89.75  2016-05-14  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0xNCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 2423,
+        "date": "2017-02-18",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Kaden Adams",
+        "lifter_id": 23857,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xOCIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Kaden Adams",
+    "splits": [
+      {
+        "newAthleteName": "Kaden Adams (Person 1)",
+        "membershipNumber": "1005194",
+        "competitionCount": 2,
+        "competitions": [
+          2361,
+          1860
+        ]
+      },
+      {
+        "newAthleteName": "Kaden Adams (Person 2)",
+        "membershipNumber": "1006322",
+        "competitionCount": 1,
+        "competitions": [
+          1917
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 2423,
+        "date": "2017-02-18",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Kaden Adams",
+        "lifter_id": 23857,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xOCIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Kaden Adams",
+    "competitions": [
+      {
+        "meet_id": 2361,
+        "date": "2016-12-17",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Kaden Adams",
+        "lifter_id": 23857,
+        "membershipNumbers": [
+          {
+            "athleteName": "Kaden Adams",
+            "membershipNumber": "1005194",
+            "fullText": "19  -  163  Kaden Adams  M  16  -  1005194  71  2016-12-17  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMi0xNyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 1917,
+        "date": "2016-05-14",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Kaden Adams",
+        "lifter_id": 23857,
+        "membershipNumbers": [
+          {
+            "athleteName": "Kaden Adams",
+            "membershipNumber": "1006322",
+            "fullText": "15  -  188  Kaden Adams  M  19  IRON FACTORY WEIGHTLIFTING  1006322  89.75  2016-05-14  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0xNCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 1860,
+        "date": "2016-04-02",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Kaden Adams",
+        "lifter_id": 23857,
+        "membershipNumbers": [
+          {
+            "athleteName": "Kaden Adams",
+            "membershipNumber": "1005194",
+            "fullText": "20  -  150  Kaden Adams  M  16  -  1005194  71.9  2016-04-02  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0wMiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 2423,
+        "date": "2017-02-18",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Kaden Adams",
+        "lifter_id": 23857,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xOCIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1005194": [
+          {
+            "meet_id": 2361,
+            "date": "2016-12-17",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Kaden Adams",
+            "lifter_id": 23857,
+            "membershipNumbers": [
+              {
+                "athleteName": "Kaden Adams",
+                "membershipNumber": "1005194",
+                "fullText": "19  -  163  Kaden Adams  M  16  -  1005194  71  2016-12-17  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMi0xNyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          },
+          {
+            "meet_id": 1860,
+            "date": "2016-04-02",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Kaden Adams",
+            "lifter_id": 23857,
+            "membershipNumbers": [
+              {
+                "athleteName": "Kaden Adams",
+                "membershipNumber": "1005194",
+                "fullText": "20  -  150  Kaden Adams  M  16  -  1005194  71.9  2016-04-02  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0wMiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          }
+        ],
+        "1006322": [
+          {
+            "meet_id": 1917,
+            "date": "2016-05-14",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Kaden Adams",
+            "lifter_id": 23857,
+            "membershipNumbers": [
+              {
+                "athleteName": "Kaden Adams",
+                "membershipNumber": "1006322",
+                "fullText": "15  -  188  Kaden Adams  M  19  IRON FACTORY WEIGHTLIFTING  1006322  89.75  2016-05-14  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0xNCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 2423,
+          "date": "2017-02-18",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Kaden Adams",
+          "lifter_id": 23857,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xOCIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

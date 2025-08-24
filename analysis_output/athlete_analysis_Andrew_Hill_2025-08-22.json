@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-22T09:05:17.768Z",
+  "athleteName": "Andrew Hill",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "186361": [
+        {
+          "meet_id": 1080,
+          "date": "2013-08-03",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Andrew Hill",
+          "lifter_id": 18447,
+          "membershipNumbers": [
+            {
+              "athleteName": "Andrew Hill",
+              "membershipNumber": "186361",
+              "fullText": "4  -  190  Andrew Hill  M  31  BLUEGRASS BARBELL CLUB  186361  97.8  2013-08-03  -  Local  Tennessee-Kentucky"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wOC0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wOC0wMyIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        },
+        {
+          "meet_id": 1082,
+          "date": "2013-10-05",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Andrew Hill",
+          "lifter_id": 18447,
+          "membershipNumbers": [
+            {
+              "athleteName": "Andrew Hill",
+              "membershipNumber": "186361",
+              "fullText": "9  -  210  Andrew Hill  M  31  BLUEGRASS BARBELL CLUB  186361  98.9  2013-10-05  -  Local  Tennessee-Kentucky"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMC0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMC0wNSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        },
+        {
+          "meet_id": 1258,
+          "date": "2014-05-10",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Andrew Hill",
+          "lifter_id": 18447,
+          "membershipNumbers": [
+            {
+              "athleteName": "Andrew Hill",
+              "membershipNumber": "186361",
+              "fullText": "15  -  205  Andrew Hill  M  32  BLUEGRASS BARBELL CLUB  186361  100.6  2014-05-10  -  Local  Tennessee-Kentucky"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNS0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNS0xMCIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        }
+      ],
+      "1029791": [
+        {
+          "meet_id": 3346,
+          "date": "2018-06-30",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Andrew Hill",
+          "lifter_id": 18447,
+          "membershipNumbers": [
+            {
+              "athleteName": "Andrew Hill",
+              "membershipNumber": "1029791",
+              "fullText": "5  -  242  Andrew Hill  M  31  -  1029791  101.81  2018-06-30  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0zMCIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Andrew Hill",
+    "splits": [
+      {
+        "newAthleteName": "Andrew Hill (Person 1)",
+        "membershipNumber": "186361",
+        "competitionCount": 3,
+        "competitions": [
+          1080,
+          1082,
+          1258
+        ]
+      },
+      {
+        "newAthleteName": "Andrew Hill (Person 2)",
+        "membershipNumber": "1029791",
+        "competitionCount": 1,
+        "competitions": [
+          3346
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Andrew Hill",
+    "competitions": [
+      {
+        "meet_id": 3346,
+        "date": "2018-06-30",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Andrew Hill",
+        "lifter_id": 18447,
+        "membershipNumbers": [
+          {
+            "athleteName": "Andrew Hill",
+            "membershipNumber": "1029791",
+            "fullText": "5  -  242  Andrew Hill  M  31  -  1029791  101.81  2018-06-30  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0zMCIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 1080,
+        "date": "2013-08-03",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Andrew Hill",
+        "lifter_id": 18447,
+        "membershipNumbers": [
+          {
+            "athleteName": "Andrew Hill",
+            "membershipNumber": "186361",
+            "fullText": "4  -  190  Andrew Hill  M  31  BLUEGRASS BARBELL CLUB  186361  97.8  2013-08-03  -  Local  Tennessee-Kentucky"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wOC0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wOC0wMyIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 1082,
+        "date": "2013-10-05",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Andrew Hill",
+        "lifter_id": 18447,
+        "membershipNumbers": [
+          {
+            "athleteName": "Andrew Hill",
+            "membershipNumber": "186361",
+            "fullText": "9  -  210  Andrew Hill  M  31  BLUEGRASS BARBELL CLUB  186361  98.9  2013-10-05  -  Local  Tennessee-Kentucky"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMC0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMC0wNSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 1258,
+        "date": "2014-05-10",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Andrew Hill",
+        "lifter_id": 18447,
+        "membershipNumbers": [
+          {
+            "athleteName": "Andrew Hill",
+            "membershipNumber": "186361",
+            "fullText": "15  -  205  Andrew Hill  M  32  BLUEGRASS BARBELL CLUB  186361  100.6  2014-05-10  -  Local  Tennessee-Kentucky"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNS0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNS0xMCIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "186361": [
+          {
+            "meet_id": 1080,
+            "date": "2013-08-03",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Andrew Hill",
+            "lifter_id": 18447,
+            "membershipNumbers": [
+              {
+                "athleteName": "Andrew Hill",
+                "membershipNumber": "186361",
+                "fullText": "4  -  190  Andrew Hill  M  31  BLUEGRASS BARBELL CLUB  186361  97.8  2013-08-03  -  Local  Tennessee-Kentucky"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wOC0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wOC0wMyIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          },
+          {
+            "meet_id": 1082,
+            "date": "2013-10-05",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Andrew Hill",
+            "lifter_id": 18447,
+            "membershipNumbers": [
+              {
+                "athleteName": "Andrew Hill",
+                "membershipNumber": "186361",
+                "fullText": "9  -  210  Andrew Hill  M  31  BLUEGRASS BARBELL CLUB  186361  98.9  2013-10-05  -  Local  Tennessee-Kentucky"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMC0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMC0wNSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          },
+          {
+            "meet_id": 1258,
+            "date": "2014-05-10",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Andrew Hill",
+            "lifter_id": 18447,
+            "membershipNumbers": [
+              {
+                "athleteName": "Andrew Hill",
+                "membershipNumber": "186361",
+                "fullText": "15  -  205  Andrew Hill  M  32  BLUEGRASS BARBELL CLUB  186361  100.6  2014-05-10  -  Local  Tennessee-Kentucky"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNS0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNS0xMCIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          }
+        ],
+        "1029791": [
+          {
+            "meet_id": 3346,
+            "date": "2018-06-30",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Andrew Hill",
+            "lifter_id": 18447,
+            "membershipNumbers": [
+              {
+                "athleteName": "Andrew Hill",
+                "membershipNumber": "1029791",
+                "fullText": "5  -  242  Andrew Hill  M  31  -  1029791  101.81  2018-06-30  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0zMCIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

@@ -1,0 +1,292 @@
+{
+  "timestamp": "2025-08-22T09:11:04.080Z",
+  "athleteName": "Gage Thomas",
+  "totalCompetitions": 5,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "174971": [
+        {
+          "meet_id": 248,
+          "date": "2015-03-14",
+          "age_category": "Men's 14-15 Age Group",
+          "weight_class": "77 kg",
+          "lifter_name": "Gage Thomas",
+          "lifter_id": 3230,
+          "membershipNumbers": [
+            {
+              "athleteName": "Gage Thomas",
+              "membershipNumber": "174971",
+              "fullText": "1  -  76  Gage Thomas  M  14  WESLEY WEIGHTLIFTERS  174971  70.8  2015-03-14  -  Local  Missouri Valley"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMy0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMy0xNCIsIndlaWdodF9jbGFzcyI6MzEwfQ=="
+        },
+        {
+          "meet_id": 3562,
+          "date": "2018-11-24",
+          "age_category": "Open Men's",
+          "weight_class": "+109kg",
+          "lifter_name": "Gage Thomas",
+          "lifter_id": 3230,
+          "membershipNumbers": [
+            {
+              "athleteName": "Gage Thomas",
+              "membershipNumber": "174971",
+              "fullText": "2  -  151  Gage Thomas  M  17  WESLEY WEIGHTLIFTERS  174971  115.9  2018-11-24  -  Local  Missouri Valley"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMS0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMS0yNCIsIndlaWdodF9jbGFzcyI6OTB9"
+        },
+        {
+          "meet_id": 3786,
+          "date": "2019-01-12",
+          "age_category": "Open Men's",
+          "weight_class": "+109kg",
+          "lifter_name": "Gage Thomas",
+          "lifter_id": 3230,
+          "membershipNumbers": [
+            {
+              "athleteName": "Gage Thomas",
+              "membershipNumber": "174971",
+              "fullText": "20  -  163  Gage Thomas  M  18  WESLEY WEIGHTLIFTERS  174971  115.3  2019-01-12  -  Local  Missouri Valley"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0xMiIsIndlaWdodF9jbGFzcyI6OTB9"
+        }
+      ],
+      "215106": [
+        {
+          "meet_id": 507,
+          "date": "2015-10-18",
+          "age_category": "Open Men's",
+          "weight_class": "69 kg",
+          "lifter_name": "Gage Thomas",
+          "lifter_id": 3230,
+          "membershipNumbers": [
+            {
+              "athleteName": "Gage Thomas",
+              "membershipNumber": "215106",
+              "fullText": "16  -  123  Gage Thomas  M  15  -  215106  67  2015-10-18  -  Local  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xOCIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 913,
+        "date": "2012-05-05",
+        "age_category": "Men's 13 Under Age Group",
+        "weight_class": "50 Kg",
+        "lifter_name": "Gage Thomas",
+        "lifter_id": 3230,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wNS0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wNS0wNSIsIndlaWdodF9jbGFzcyI6MjkzfQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Gage Thomas",
+    "splits": [
+      {
+        "newAthleteName": "Gage Thomas (Person 1)",
+        "membershipNumber": "174971",
+        "competitionCount": 3,
+        "competitions": [
+          248,
+          3562,
+          3786
+        ]
+      },
+      {
+        "newAthleteName": "Gage Thomas (Person 2)",
+        "membershipNumber": "215106",
+        "competitionCount": 1,
+        "competitions": [
+          507
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 913,
+        "date": "2012-05-05",
+        "age_category": "Men's 13 Under Age Group",
+        "weight_class": "50 Kg",
+        "lifter_name": "Gage Thomas",
+        "lifter_id": 3230,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wNS0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wNS0wNSIsIndlaWdodF9jbGFzcyI6MjkzfQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Gage Thomas",
+    "competitions": [
+      {
+        "meet_id": 248,
+        "date": "2015-03-14",
+        "age_category": "Men's 14-15 Age Group",
+        "weight_class": "77 kg",
+        "lifter_name": "Gage Thomas",
+        "lifter_id": 3230,
+        "membershipNumbers": [
+          {
+            "athleteName": "Gage Thomas",
+            "membershipNumber": "174971",
+            "fullText": "1  -  76  Gage Thomas  M  14  WESLEY WEIGHTLIFTERS  174971  70.8  2015-03-14  -  Local  Missouri Valley"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMy0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMy0xNCIsIndlaWdodF9jbGFzcyI6MzEwfQ=="
+      },
+      {
+        "meet_id": 3562,
+        "date": "2018-11-24",
+        "age_category": "Open Men's",
+        "weight_class": "+109kg",
+        "lifter_name": "Gage Thomas",
+        "lifter_id": 3230,
+        "membershipNumbers": [
+          {
+            "athleteName": "Gage Thomas",
+            "membershipNumber": "174971",
+            "fullText": "2  -  151  Gage Thomas  M  17  WESLEY WEIGHTLIFTERS  174971  115.9  2018-11-24  -  Local  Missouri Valley"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMS0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMS0yNCIsIndlaWdodF9jbGFzcyI6OTB9"
+      },
+      {
+        "meet_id": 3786,
+        "date": "2019-01-12",
+        "age_category": "Open Men's",
+        "weight_class": "+109kg",
+        "lifter_name": "Gage Thomas",
+        "lifter_id": 3230,
+        "membershipNumbers": [
+          {
+            "athleteName": "Gage Thomas",
+            "membershipNumber": "174971",
+            "fullText": "20  -  163  Gage Thomas  M  18  WESLEY WEIGHTLIFTERS  174971  115.3  2019-01-12  -  Local  Missouri Valley"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0xMiIsIndlaWdodF9jbGFzcyI6OTB9"
+      },
+      {
+        "meet_id": 913,
+        "date": "2012-05-05",
+        "age_category": "Men's 13 Under Age Group",
+        "weight_class": "50 Kg",
+        "lifter_name": "Gage Thomas",
+        "lifter_id": 3230,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wNS0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wNS0wNSIsIndlaWdodF9jbGFzcyI6MjkzfQ=="
+      },
+      {
+        "meet_id": 507,
+        "date": "2015-10-18",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "Gage Thomas",
+        "lifter_id": 3230,
+        "membershipNumbers": [
+          {
+            "athleteName": "Gage Thomas",
+            "membershipNumber": "215106",
+            "fullText": "16  -  123  Gage Thomas  M  15  -  215106  67  2015-10-18  -  Local  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xOCIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "174971": [
+          {
+            "meet_id": 248,
+            "date": "2015-03-14",
+            "age_category": "Men's 14-15 Age Group",
+            "weight_class": "77 kg",
+            "lifter_name": "Gage Thomas",
+            "lifter_id": 3230,
+            "membershipNumbers": [
+              {
+                "athleteName": "Gage Thomas",
+                "membershipNumber": "174971",
+                "fullText": "1  -  76  Gage Thomas  M  14  WESLEY WEIGHTLIFTERS  174971  70.8  2015-03-14  -  Local  Missouri Valley"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMy0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMy0xNCIsIndlaWdodF9jbGFzcyI6MzEwfQ=="
+          },
+          {
+            "meet_id": 3562,
+            "date": "2018-11-24",
+            "age_category": "Open Men's",
+            "weight_class": "+109kg",
+            "lifter_name": "Gage Thomas",
+            "lifter_id": 3230,
+            "membershipNumbers": [
+              {
+                "athleteName": "Gage Thomas",
+                "membershipNumber": "174971",
+                "fullText": "2  -  151  Gage Thomas  M  17  WESLEY WEIGHTLIFTERS  174971  115.9  2018-11-24  -  Local  Missouri Valley"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMS0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMS0yNCIsIndlaWdodF9jbGFzcyI6OTB9"
+          },
+          {
+            "meet_id": 3786,
+            "date": "2019-01-12",
+            "age_category": "Open Men's",
+            "weight_class": "+109kg",
+            "lifter_name": "Gage Thomas",
+            "lifter_id": 3230,
+            "membershipNumbers": [
+              {
+                "athleteName": "Gage Thomas",
+                "membershipNumber": "174971",
+                "fullText": "20  -  163  Gage Thomas  M  18  WESLEY WEIGHTLIFTERS  174971  115.3  2019-01-12  -  Local  Missouri Valley"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0xMiIsIndlaWdodF9jbGFzcyI6OTB9"
+          }
+        ],
+        "215106": [
+          {
+            "meet_id": 507,
+            "date": "2015-10-18",
+            "age_category": "Open Men's",
+            "weight_class": "69 kg",
+            "lifter_name": "Gage Thomas",
+            "lifter_id": 3230,
+            "membershipNumbers": [
+              {
+                "athleteName": "Gage Thomas",
+                "membershipNumber": "215106",
+                "fullText": "16  -  123  Gage Thomas  M  15  -  215106  67  2015-10-18  -  Local  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xOCIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 913,
+          "date": "2012-05-05",
+          "age_category": "Men's 13 Under Age Group",
+          "weight_class": "50 Kg",
+          "lifter_name": "Gage Thomas",
+          "lifter_id": 3230,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wNS0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wNS0wNSIsIndlaWdodF9jbGFzcyI6MjkzfQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

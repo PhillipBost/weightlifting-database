@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T22:29:37.845Z",
+  "athleteName": "Parker Jackson",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "188127": [
+        {
+          "meet_id": 706,
+          "date": "2013-10-26",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Parker Jackson",
+          "lifter_id": 4851,
+          "membershipNumbers": [
+            {
+              "athleteName": "Parker Jackson",
+              "membershipNumber": "188127",
+              "fullText": "4  -  266  Parker Jackson  M  21  -  188127  83.6  2013-10-26  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMC0yNiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ],
+      "1068976": [
+        {
+          "meet_id": 5746,
+          "date": "2023-03-11",
+          "age_category": "Men's 13 Under Age Group",
+          "weight_class": "49kg",
+          "lifter_name": "Parker Jackson",
+          "lifter_id": 4851,
+          "membershipNumbers": [
+            {
+              "athleteName": "Parker Jackson",
+              "membershipNumber": "1068976",
+              "fullText": "2  -  53  Parker Jackson  M  12  HASSLE FREE BBC  1068976  46.3  2023-03-11  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMy0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMy0xMSIsIndlaWdodF9jbGFzcyI6NDV9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Parker Jackson",
+    "splits": [
+      {
+        "newAthleteName": "Parker Jackson (Person 1)",
+        "membershipNumber": "188127",
+        "competitionCount": 1,
+        "competitions": [
+          706
+        ]
+      },
+      {
+        "newAthleteName": "Parker Jackson (Person 2)",
+        "membershipNumber": "1068976",
+        "competitionCount": 1,
+        "competitions": [
+          5746
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Parker Jackson",
+    "competitions": [
+      {
+        "meet_id": 706,
+        "date": "2013-10-26",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Parker Jackson",
+        "lifter_id": 4851,
+        "membershipNumbers": [
+          {
+            "athleteName": "Parker Jackson",
+            "membershipNumber": "188127",
+            "fullText": "4  -  266  Parker Jackson  M  21  -  188127  83.6  2013-10-26  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMC0yNiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 5746,
+        "date": "2023-03-11",
+        "age_category": "Men's 13 Under Age Group",
+        "weight_class": "49kg",
+        "lifter_name": "Parker Jackson",
+        "lifter_id": 4851,
+        "membershipNumbers": [
+          {
+            "athleteName": "Parker Jackson",
+            "membershipNumber": "1068976",
+            "fullText": "2  -  53  Parker Jackson  M  12  HASSLE FREE BBC  1068976  46.3  2023-03-11  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMy0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMy0xMSIsIndlaWdodF9jbGFzcyI6NDV9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "188127": [
+          {
+            "meet_id": 706,
+            "date": "2013-10-26",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Parker Jackson",
+            "lifter_id": 4851,
+            "membershipNumbers": [
+              {
+                "athleteName": "Parker Jackson",
+                "membershipNumber": "188127",
+                "fullText": "4  -  266  Parker Jackson  M  21  -  188127  83.6  2013-10-26  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMC0yNiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          }
+        ],
+        "1068976": [
+          {
+            "meet_id": 5746,
+            "date": "2023-03-11",
+            "age_category": "Men's 13 Under Age Group",
+            "weight_class": "49kg",
+            "lifter_name": "Parker Jackson",
+            "lifter_id": 4851,
+            "membershipNumbers": [
+              {
+                "athleteName": "Parker Jackson",
+                "membershipNumber": "1068976",
+                "fullText": "2  -  53  Parker Jackson  M  12  HASSLE FREE BBC  1068976  46.3  2023-03-11  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMy0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMy0xMSIsIndlaWdodF9jbGFzcyI6NDV9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

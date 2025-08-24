@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-22T08:32:47.369Z",
+  "athleteName": "Brooke Steele",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1041063": [
+        {
+          "meet_id": 4293,
+          "date": "2019-12-15",
+          "age_category": "Women's 16-17 Age Group",
+          "weight_class": "76kg",
+          "lifter_name": "Brooke Steele",
+          "lifter_id": 41429,
+          "membershipNumbers": [
+            {
+              "athleteName": "Brooke Steele",
+              "membershipNumber": "1041063",
+              "fullText": "1  -  134  Brooke Steele  F  17  West Coast Weightlifting  1041063  75.4  2019-12-15  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMi0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMi0xNSIsIndlaWdodF9jbGFzcyI6MTh9"
+        },
+        {
+          "meet_id": 3818,
+          "date": "2019-05-18",
+          "age_category": "Women's 16-17 Age Group",
+          "weight_class": "76kg",
+          "lifter_name": "Brooke Steele",
+          "lifter_id": 41429,
+          "membershipNumbers": [
+            {
+              "athleteName": "Brooke Steele",
+              "membershipNumber": "1041063",
+              "fullText": "4  -  117  Brooke Steele  F  17  West Coast Weightlifting  1041063  76  2019-05-18  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0xOCIsIndlaWdodF9jbGFzcyI6MTh9"
+        },
+        {
+          "meet_id": 3944,
+          "date": "2019-07-21",
+          "age_category": "Women's 16-17 Age Group",
+          "weight_class": "76kg",
+          "lifter_name": "Brooke Steele",
+          "lifter_id": 41429,
+          "membershipNumbers": [
+            {
+              "athleteName": "Brooke Steele",
+              "membershipNumber": "1041063",
+              "fullText": "4  -  125  Brooke Steele  F  17  West Coast Weightlifting  1041063  75.66  2019-07-21  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0yMSIsIndlaWdodF9jbGFzcyI6MTh9"
+        }
+      ],
+      "1082276": [
+        {
+          "meet_id": 6975,
+          "date": "2025-07-26",
+          "age_category": "Open Women's",
+          "weight_class": "86+kg",
+          "lifter_name": "Brooke Steele",
+          "lifter_id": 41429,
+          "membershipNumbers": [
+            {
+              "athleteName": "Brooke Steele",
+              "membershipNumber": "1082276",
+              "fullText": "28  -  86  Brooke Steele  F  29  Unaffiliated  1082276  101  2025-07-26  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNy0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNy0yNiIsIndlaWdodF9jbGFzcyI6NzAyfQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Brooke Steele",
+    "splits": [
+      {
+        "newAthleteName": "Brooke Steele (Person 1)",
+        "membershipNumber": "1041063",
+        "competitionCount": 3,
+        "competitions": [
+          4293,
+          3818,
+          3944
+        ]
+      },
+      {
+        "newAthleteName": "Brooke Steele (Person 2)",
+        "membershipNumber": "1082276",
+        "competitionCount": 1,
+        "competitions": [
+          6975
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Brooke Steele",
+    "competitions": [
+      {
+        "meet_id": 6975,
+        "date": "2025-07-26",
+        "age_category": "Open Women's",
+        "weight_class": "86+kg",
+        "lifter_name": "Brooke Steele",
+        "lifter_id": 41429,
+        "membershipNumbers": [
+          {
+            "athleteName": "Brooke Steele",
+            "membershipNumber": "1082276",
+            "fullText": "28  -  86  Brooke Steele  F  29  Unaffiliated  1082276  101  2025-07-26  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNy0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNy0yNiIsIndlaWdodF9jbGFzcyI6NzAyfQ=="
+      },
+      {
+        "meet_id": 4293,
+        "date": "2019-12-15",
+        "age_category": "Women's 16-17 Age Group",
+        "weight_class": "76kg",
+        "lifter_name": "Brooke Steele",
+        "lifter_id": 41429,
+        "membershipNumbers": [
+          {
+            "athleteName": "Brooke Steele",
+            "membershipNumber": "1041063",
+            "fullText": "1  -  134  Brooke Steele  F  17  West Coast Weightlifting  1041063  75.4  2019-12-15  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMi0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMi0xNSIsIndlaWdodF9jbGFzcyI6MTh9"
+      },
+      {
+        "meet_id": 3818,
+        "date": "2019-05-18",
+        "age_category": "Women's 16-17 Age Group",
+        "weight_class": "76kg",
+        "lifter_name": "Brooke Steele",
+        "lifter_id": 41429,
+        "membershipNumbers": [
+          {
+            "athleteName": "Brooke Steele",
+            "membershipNumber": "1041063",
+            "fullText": "4  -  117  Brooke Steele  F  17  West Coast Weightlifting  1041063  76  2019-05-18  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0xOCIsIndlaWdodF9jbGFzcyI6MTh9"
+      },
+      {
+        "meet_id": 3944,
+        "date": "2019-07-21",
+        "age_category": "Women's 16-17 Age Group",
+        "weight_class": "76kg",
+        "lifter_name": "Brooke Steele",
+        "lifter_id": 41429,
+        "membershipNumbers": [
+          {
+            "athleteName": "Brooke Steele",
+            "membershipNumber": "1041063",
+            "fullText": "4  -  125  Brooke Steele  F  17  West Coast Weightlifting  1041063  75.66  2019-07-21  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0yMSIsIndlaWdodF9jbGFzcyI6MTh9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1041063": [
+          {
+            "meet_id": 4293,
+            "date": "2019-12-15",
+            "age_category": "Women's 16-17 Age Group",
+            "weight_class": "76kg",
+            "lifter_name": "Brooke Steele",
+            "lifter_id": 41429,
+            "membershipNumbers": [
+              {
+                "athleteName": "Brooke Steele",
+                "membershipNumber": "1041063",
+                "fullText": "1  -  134  Brooke Steele  F  17  West Coast Weightlifting  1041063  75.4  2019-12-15  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMi0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMi0xNSIsIndlaWdodF9jbGFzcyI6MTh9"
+          },
+          {
+            "meet_id": 3818,
+            "date": "2019-05-18",
+            "age_category": "Women's 16-17 Age Group",
+            "weight_class": "76kg",
+            "lifter_name": "Brooke Steele",
+            "lifter_id": 41429,
+            "membershipNumbers": [
+              {
+                "athleteName": "Brooke Steele",
+                "membershipNumber": "1041063",
+                "fullText": "4  -  117  Brooke Steele  F  17  West Coast Weightlifting  1041063  76  2019-05-18  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0xOCIsIndlaWdodF9jbGFzcyI6MTh9"
+          },
+          {
+            "meet_id": 3944,
+            "date": "2019-07-21",
+            "age_category": "Women's 16-17 Age Group",
+            "weight_class": "76kg",
+            "lifter_name": "Brooke Steele",
+            "lifter_id": 41429,
+            "membershipNumbers": [
+              {
+                "athleteName": "Brooke Steele",
+                "membershipNumber": "1041063",
+                "fullText": "4  -  125  Brooke Steele  F  17  West Coast Weightlifting  1041063  75.66  2019-07-21  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0yMSIsIndlaWdodF9jbGFzcyI6MTh9"
+          }
+        ],
+        "1082276": [
+          {
+            "meet_id": 6975,
+            "date": "2025-07-26",
+            "age_category": "Open Women's",
+            "weight_class": "86+kg",
+            "lifter_name": "Brooke Steele",
+            "lifter_id": 41429,
+            "membershipNumbers": [
+              {
+                "athleteName": "Brooke Steele",
+                "membershipNumber": "1082276",
+                "fullText": "28  -  86  Brooke Steele  F  29  Unaffiliated  1082276  101  2025-07-26  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNy0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNy0yNiIsIndlaWdodF9jbGFzcyI6NzAyfQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

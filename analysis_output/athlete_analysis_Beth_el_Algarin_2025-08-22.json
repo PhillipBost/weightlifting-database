@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T05:52:37.110Z",
+  "athleteName": "Beth-el Algarin",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "207344": [
+        {
+          "meet_id": 269,
+          "date": "2015-02-07",
+          "age_category": "Women's 14-15 Age Group",
+          "weight_class": "+69 kg",
+          "lifter_name": "Beth-el Algarin",
+          "lifter_id": 10765,
+          "membershipNumbers": [
+            {
+              "athleteName": "Beth-el Algarin",
+              "membershipNumber": "207344",
+              "fullText": "1  -  103  Beth-el Algarin  F  15  -  207344  76.04  2015-02-07  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMi0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMi0wNyIsIndlaWdodF9jbGFzcyI6MzE5fQ=="
+        }
+      ],
+      "1025719": [
+        {
+          "meet_id": 3058,
+          "date": "2018-01-13",
+          "age_category": "Open Women's",
+          "weight_class": "90 kg",
+          "lifter_name": "Beth-el Algarin",
+          "lifter_id": 10765,
+          "membershipNumbers": [
+            {
+              "athleteName": "Beth-el Algarin",
+              "membershipNumber": "1025719",
+              "fullText": "7  -  160  Beth-el Algarin  F  18  -  1025719  83.75  2018-01-13  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMS0xMyIsIndlaWdodF9jbGFzcyI6MzY5fQ=="
+        },
+        {
+          "meet_id": 3175,
+          "date": "2018-03-10",
+          "age_category": "Open Women's",
+          "weight_class": "90 kg",
+          "lifter_name": "Beth-el Algarin",
+          "lifter_id": 10765,
+          "membershipNumbers": [
+            {
+              "athleteName": "Beth-el Algarin",
+              "membershipNumber": "1025719",
+              "fullText": "4  -  151  Beth-el Algarin  F  18  -  1025719  81.7  2018-03-10  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMy0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMy0xMCIsIndlaWdodF9jbGFzcyI6MzY5fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Beth-el Algarin",
+    "splits": [
+      {
+        "newAthleteName": "Beth-el Algarin (Person 1)",
+        "membershipNumber": "207344",
+        "competitionCount": 1,
+        "competitions": [
+          269
+        ]
+      },
+      {
+        "newAthleteName": "Beth-el Algarin (Person 2)",
+        "membershipNumber": "1025719",
+        "competitionCount": 2,
+        "competitions": [
+          3058,
+          3175
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Beth-el Algarin",
+    "competitions": [
+      {
+        "meet_id": 269,
+        "date": "2015-02-07",
+        "age_category": "Women's 14-15 Age Group",
+        "weight_class": "+69 kg",
+        "lifter_name": "Beth-el Algarin",
+        "lifter_id": 10765,
+        "membershipNumbers": [
+          {
+            "athleteName": "Beth-el Algarin",
+            "membershipNumber": "207344",
+            "fullText": "1  -  103  Beth-el Algarin  F  15  -  207344  76.04  2015-02-07  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMi0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMi0wNyIsIndlaWdodF9jbGFzcyI6MzE5fQ=="
+      },
+      {
+        "meet_id": 3058,
+        "date": "2018-01-13",
+        "age_category": "Open Women's",
+        "weight_class": "90 kg",
+        "lifter_name": "Beth-el Algarin",
+        "lifter_id": 10765,
+        "membershipNumbers": [
+          {
+            "athleteName": "Beth-el Algarin",
+            "membershipNumber": "1025719",
+            "fullText": "7  -  160  Beth-el Algarin  F  18  -  1025719  83.75  2018-01-13  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMS0xMyIsIndlaWdodF9jbGFzcyI6MzY5fQ=="
+      },
+      {
+        "meet_id": 3175,
+        "date": "2018-03-10",
+        "age_category": "Open Women's",
+        "weight_class": "90 kg",
+        "lifter_name": "Beth-el Algarin",
+        "lifter_id": 10765,
+        "membershipNumbers": [
+          {
+            "athleteName": "Beth-el Algarin",
+            "membershipNumber": "1025719",
+            "fullText": "4  -  151  Beth-el Algarin  F  18  -  1025719  81.7  2018-03-10  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMy0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMy0xMCIsIndlaWdodF9jbGFzcyI6MzY5fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "207344": [
+          {
+            "meet_id": 269,
+            "date": "2015-02-07",
+            "age_category": "Women's 14-15 Age Group",
+            "weight_class": "+69 kg",
+            "lifter_name": "Beth-el Algarin",
+            "lifter_id": 10765,
+            "membershipNumbers": [
+              {
+                "athleteName": "Beth-el Algarin",
+                "membershipNumber": "207344",
+                "fullText": "1  -  103  Beth-el Algarin  F  15  -  207344  76.04  2015-02-07  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMi0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMi0wNyIsIndlaWdodF9jbGFzcyI6MzE5fQ=="
+          }
+        ],
+        "1025719": [
+          {
+            "meet_id": 3058,
+            "date": "2018-01-13",
+            "age_category": "Open Women's",
+            "weight_class": "90 kg",
+            "lifter_name": "Beth-el Algarin",
+            "lifter_id": 10765,
+            "membershipNumbers": [
+              {
+                "athleteName": "Beth-el Algarin",
+                "membershipNumber": "1025719",
+                "fullText": "7  -  160  Beth-el Algarin  F  18  -  1025719  83.75  2018-01-13  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMS0xMyIsIndlaWdodF9jbGFzcyI6MzY5fQ=="
+          },
+          {
+            "meet_id": 3175,
+            "date": "2018-03-10",
+            "age_category": "Open Women's",
+            "weight_class": "90 kg",
+            "lifter_name": "Beth-el Algarin",
+            "lifter_id": 10765,
+            "membershipNumbers": [
+              {
+                "athleteName": "Beth-el Algarin",
+                "membershipNumber": "1025719",
+                "fullText": "4  -  151  Beth-el Algarin  F  18  -  1025719  81.7  2018-03-10  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMy0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMy0xMCIsIndlaWdodF9jbGFzcyI6MzY5fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

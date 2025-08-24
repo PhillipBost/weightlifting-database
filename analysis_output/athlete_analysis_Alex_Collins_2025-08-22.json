@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T13:00:56.389Z",
+  "athleteName": "Alex Collins",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "180701": [
+        {
+          "meet_id": 790,
+          "date": "2013-01-26",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Alex Collins",
+          "lifter_id": 5754,
+          "membershipNumbers": [
+            {
+              "athleteName": "Alex Collins",
+              "membershipNumber": "180701",
+              "fullText": "20  -  170  Alex Collins  M  22  PITTSBURGH BBC  180701  91.4  2013-01-26  -  Local  Pennsylvania-West Virginia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMS0yNiIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ],
+      "1074975": [
+        {
+          "meet_id": 6232,
+          "date": "2024-02-10",
+          "age_category": "Men's 13 Under Age Group",
+          "weight_class": "73kg",
+          "lifter_name": "Alex Collins",
+          "lifter_id": 5754,
+          "membershipNumbers": [
+            {
+              "athleteName": "Alex Collins",
+              "membershipNumber": "1074975",
+              "fullText": "2  -  63  Alex Collins  M  13  Lakeville South Strength  1074975  71.5  2024-02-10  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMi0xMCIsIndlaWdodF9jbGFzcyI6NDl9"
+        },
+        {
+          "meet_id": 6732,
+          "date": "2025-02-01",
+          "age_category": "Men's 14-15 Age Group",
+          "weight_class": "89kg",
+          "lifter_name": "Alex Collins",
+          "lifter_id": 5754,
+          "membershipNumbers": [
+            {
+              "athleteName": "Alex Collins",
+              "membershipNumber": "1074975",
+              "fullText": "4  -  85  Alex Collins  M  14  Lakeville South Strength  1074975  81.8  2025-02-01  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMi0wMSIsIndlaWdodF9jbGFzcyI6Mjl9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Alex Collins",
+    "splits": [
+      {
+        "newAthleteName": "Alex Collins (Person 1)",
+        "membershipNumber": "180701",
+        "competitionCount": 1,
+        "competitions": [
+          790
+        ]
+      },
+      {
+        "newAthleteName": "Alex Collins (Person 2)",
+        "membershipNumber": "1074975",
+        "competitionCount": 2,
+        "competitions": [
+          6232,
+          6732
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Alex Collins",
+    "competitions": [
+      {
+        "meet_id": 6232,
+        "date": "2024-02-10",
+        "age_category": "Men's 13 Under Age Group",
+        "weight_class": "73kg",
+        "lifter_name": "Alex Collins",
+        "lifter_id": 5754,
+        "membershipNumbers": [
+          {
+            "athleteName": "Alex Collins",
+            "membershipNumber": "1074975",
+            "fullText": "2  -  63  Alex Collins  M  13  Lakeville South Strength  1074975  71.5  2024-02-10  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMi0xMCIsIndlaWdodF9jbGFzcyI6NDl9"
+      },
+      {
+        "meet_id": 790,
+        "date": "2013-01-26",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Alex Collins",
+        "lifter_id": 5754,
+        "membershipNumbers": [
+          {
+            "athleteName": "Alex Collins",
+            "membershipNumber": "180701",
+            "fullText": "20  -  170  Alex Collins  M  22  PITTSBURGH BBC  180701  91.4  2013-01-26  -  Local  Pennsylvania-West Virginia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMS0yNiIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 6732,
+        "date": "2025-02-01",
+        "age_category": "Men's 14-15 Age Group",
+        "weight_class": "89kg",
+        "lifter_name": "Alex Collins",
+        "lifter_id": 5754,
+        "membershipNumbers": [
+          {
+            "athleteName": "Alex Collins",
+            "membershipNumber": "1074975",
+            "fullText": "4  -  85  Alex Collins  M  14  Lakeville South Strength  1074975  81.8  2025-02-01  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMi0wMSIsIndlaWdodF9jbGFzcyI6Mjl9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "180701": [
+          {
+            "meet_id": 790,
+            "date": "2013-01-26",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Alex Collins",
+            "lifter_id": 5754,
+            "membershipNumbers": [
+              {
+                "athleteName": "Alex Collins",
+                "membershipNumber": "180701",
+                "fullText": "20  -  170  Alex Collins  M  22  PITTSBURGH BBC  180701  91.4  2013-01-26  -  Local  Pennsylvania-West Virginia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMS0yNiIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          }
+        ],
+        "1074975": [
+          {
+            "meet_id": 6232,
+            "date": "2024-02-10",
+            "age_category": "Men's 13 Under Age Group",
+            "weight_class": "73kg",
+            "lifter_name": "Alex Collins",
+            "lifter_id": 5754,
+            "membershipNumbers": [
+              {
+                "athleteName": "Alex Collins",
+                "membershipNumber": "1074975",
+                "fullText": "2  -  63  Alex Collins  M  13  Lakeville South Strength  1074975  71.5  2024-02-10  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMi0xMCIsIndlaWdodF9jbGFzcyI6NDl9"
+          },
+          {
+            "meet_id": 6732,
+            "date": "2025-02-01",
+            "age_category": "Men's 14-15 Age Group",
+            "weight_class": "89kg",
+            "lifter_name": "Alex Collins",
+            "lifter_id": 5754,
+            "membershipNumbers": [
+              {
+                "athleteName": "Alex Collins",
+                "membershipNumber": "1074975",
+                "fullText": "4  -  85  Alex Collins  M  14  Lakeville South Strength  1074975  81.8  2025-02-01  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMi0wMSIsIndlaWdodF9jbGFzcyI6Mjl9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

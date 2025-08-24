@@ -1,0 +1,194 @@
+{
+  "timestamp": "2025-08-22T04:28:58.303Z",
+  "athleteName": "Dustin Young",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "175632": [
+        {
+          "meet_id": 828,
+          "date": "2013-02-09",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Dustin Young",
+          "lifter_id": 2589,
+          "membershipNumbers": [
+            {
+              "athleteName": "Dustin Young",
+              "membershipNumber": "175632",
+              "fullText": "19  -  100  Dustin Young  M  15  -  175632  74.1  2013-02-09  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMi0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMi0wOSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        }
+      ],
+      "1049482": [
+        {
+          "meet_id": 451,
+          "date": "2020-02-29",
+          "age_category": "Men's Masters (35-39)",
+          "weight_class": "109kg",
+          "lifter_name": "Dustin Young",
+          "lifter_id": 2589,
+          "membershipNumbers": [
+            {
+              "athleteName": "Dustin Young",
+              "membershipNumber": "1049482",
+              "fullText": "1  -  170  Dustin Young  M  37  Black Hive Weightlifting  1049482  109  2020-02-29  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMi0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMi0yOSIsIndlaWdodF9jbGFzcyI6MTA5fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 795,
+        "date": "2012-06-10",
+        "age_category": "Men's 14-15 Age Group",
+        "weight_class": "77 kg",
+        "lifter_name": "Dustin Young",
+        "lifter_id": 2589,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wNi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wNi0xMCIsIndlaWdodF9jbGFzcyI6MzEwfQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Dustin Young",
+    "splits": [
+      {
+        "newAthleteName": "Dustin Young (Person 1)",
+        "membershipNumber": "175632",
+        "competitionCount": 1,
+        "competitions": [
+          828
+        ]
+      },
+      {
+        "newAthleteName": "Dustin Young (Person 2)",
+        "membershipNumber": "1049482",
+        "competitionCount": 1,
+        "competitions": [
+          451
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 795,
+        "date": "2012-06-10",
+        "age_category": "Men's 14-15 Age Group",
+        "weight_class": "77 kg",
+        "lifter_name": "Dustin Young",
+        "lifter_id": 2589,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wNi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wNi0xMCIsIndlaWdodF9jbGFzcyI6MzEwfQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Dustin Young",
+    "competitions": [
+      {
+        "meet_id": 828,
+        "date": "2013-02-09",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Dustin Young",
+        "lifter_id": 2589,
+        "membershipNumbers": [
+          {
+            "athleteName": "Dustin Young",
+            "membershipNumber": "175632",
+            "fullText": "19  -  100  Dustin Young  M  15  -  175632  74.1  2013-02-09  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMi0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMi0wOSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 451,
+        "date": "2020-02-29",
+        "age_category": "Men's Masters (35-39)",
+        "weight_class": "109kg",
+        "lifter_name": "Dustin Young",
+        "lifter_id": 2589,
+        "membershipNumbers": [
+          {
+            "athleteName": "Dustin Young",
+            "membershipNumber": "1049482",
+            "fullText": "1  -  170  Dustin Young  M  37  Black Hive Weightlifting  1049482  109  2020-02-29  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMi0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMi0yOSIsIndlaWdodF9jbGFzcyI6MTA5fQ=="
+      },
+      {
+        "meet_id": 795,
+        "date": "2012-06-10",
+        "age_category": "Men's 14-15 Age Group",
+        "weight_class": "77 kg",
+        "lifter_name": "Dustin Young",
+        "lifter_id": 2589,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wNi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wNi0xMCIsIndlaWdodF9jbGFzcyI6MzEwfQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "175632": [
+          {
+            "meet_id": 828,
+            "date": "2013-02-09",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Dustin Young",
+            "lifter_id": 2589,
+            "membershipNumbers": [
+              {
+                "athleteName": "Dustin Young",
+                "membershipNumber": "175632",
+                "fullText": "19  -  100  Dustin Young  M  15  -  175632  74.1  2013-02-09  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMi0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMi0wOSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          }
+        ],
+        "1049482": [
+          {
+            "meet_id": 451,
+            "date": "2020-02-29",
+            "age_category": "Men's Masters (35-39)",
+            "weight_class": "109kg",
+            "lifter_name": "Dustin Young",
+            "lifter_id": 2589,
+            "membershipNumbers": [
+              {
+                "athleteName": "Dustin Young",
+                "membershipNumber": "1049482",
+                "fullText": "1  -  170  Dustin Young  M  37  Black Hive Weightlifting  1049482  109  2020-02-29  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMi0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMi0yOSIsIndlaWdodF9jbGFzcyI6MTA5fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 795,
+          "date": "2012-06-10",
+          "age_category": "Men's 14-15 Age Group",
+          "weight_class": "77 kg",
+          "lifter_name": "Dustin Young",
+          "lifter_id": 2589,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wNi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wNi0xMCIsIndlaWdodF9jbGFzcyI6MzEwfQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

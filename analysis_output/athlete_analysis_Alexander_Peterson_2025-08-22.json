@@ -1,0 +1,298 @@
+{
+  "timestamp": "2025-08-22T05:40:41.809Z",
+  "athleteName": "Alexander Peterson",
+  "totalCompetitions": 5,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "217243": [
+        {
+          "meet_id": 2089,
+          "date": "2016-10-23",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Alexander Peterson",
+          "lifter_id": 9101,
+          "membershipNumbers": [
+            {
+              "athleteName": "Alexander Peterson",
+              "membershipNumber": "217243",
+              "fullText": "28  -  246  Alexander Peterson  M  25  -  217243  100.12  2016-10-23  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0yMyIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        },
+        {
+          "meet_id": 191,
+          "date": "2015-10-04",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Alexander Peterson",
+          "lifter_id": 9101,
+          "membershipNumbers": [
+            {
+              "athleteName": "Alexander Peterson",
+              "membershipNumber": "217243",
+              "fullText": "24  -  227  Alexander Peterson  M  24  -  217243  92.7  2015-10-04  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0wNCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        },
+        {
+          "meet_id": 192,
+          "date": "2015-12-13",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Alexander Peterson",
+          "lifter_id": 9101,
+          "membershipNumbers": [
+            {
+              "athleteName": "Alexander Peterson",
+              "membershipNumber": "217243",
+              "fullText": "4  -  251  Alexander Peterson  M  24  -  217243  92.9  2015-12-13  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMi0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMi0xMyIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        },
+        {
+          "meet_id": 1806,
+          "date": "2016-03-26",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Alexander Peterson",
+          "lifter_id": 9101,
+          "membershipNumbers": [
+            {
+              "athleteName": "Alexander Peterson",
+              "membershipNumber": "217243",
+              "fullText": "21  -  251  Alexander Peterson  M  25  -  217243  97.22  2016-03-26  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMy0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMy0yNiIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        }
+      ],
+      "1002130": [
+        {
+          "meet_id": 1713,
+          "date": "2016-01-23",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Alexander Peterson",
+          "lifter_id": 9101,
+          "membershipNumbers": [
+            {
+              "athleteName": "Alexander Peterson",
+              "membershipNumber": "1002130",
+              "fullText": "30  -  129  Alexander Peterson  M  19  NORTHFIELD WLC  1002130  72.5  2016-01-23  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0yMyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Alexander Peterson",
+    "splits": [
+      {
+        "newAthleteName": "Alexander Peterson (Person 1)",
+        "membershipNumber": "217243",
+        "competitionCount": 4,
+        "competitions": [
+          2089,
+          191,
+          192,
+          1806
+        ]
+      },
+      {
+        "newAthleteName": "Alexander Peterson (Person 2)",
+        "membershipNumber": "1002130",
+        "competitionCount": 1,
+        "competitions": [
+          1713
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Alexander Peterson",
+    "competitions": [
+      {
+        "meet_id": 2089,
+        "date": "2016-10-23",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Alexander Peterson",
+        "lifter_id": 9101,
+        "membershipNumbers": [
+          {
+            "athleteName": "Alexander Peterson",
+            "membershipNumber": "217243",
+            "fullText": "28  -  246  Alexander Peterson  M  25  -  217243  100.12  2016-10-23  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0yMyIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 191,
+        "date": "2015-10-04",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Alexander Peterson",
+        "lifter_id": 9101,
+        "membershipNumbers": [
+          {
+            "athleteName": "Alexander Peterson",
+            "membershipNumber": "217243",
+            "fullText": "24  -  227  Alexander Peterson  M  24  -  217243  92.7  2015-10-04  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0wNCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 192,
+        "date": "2015-12-13",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Alexander Peterson",
+        "lifter_id": 9101,
+        "membershipNumbers": [
+          {
+            "athleteName": "Alexander Peterson",
+            "membershipNumber": "217243",
+            "fullText": "4  -  251  Alexander Peterson  M  24  -  217243  92.9  2015-12-13  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMi0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMi0xMyIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 1713,
+        "date": "2016-01-23",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Alexander Peterson",
+        "lifter_id": 9101,
+        "membershipNumbers": [
+          {
+            "athleteName": "Alexander Peterson",
+            "membershipNumber": "1002130",
+            "fullText": "30  -  129  Alexander Peterson  M  19  NORTHFIELD WLC  1002130  72.5  2016-01-23  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0yMyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 1806,
+        "date": "2016-03-26",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Alexander Peterson",
+        "lifter_id": 9101,
+        "membershipNumbers": [
+          {
+            "athleteName": "Alexander Peterson",
+            "membershipNumber": "217243",
+            "fullText": "21  -  251  Alexander Peterson  M  25  -  217243  97.22  2016-03-26  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMy0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMy0yNiIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "217243": [
+          {
+            "meet_id": 2089,
+            "date": "2016-10-23",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Alexander Peterson",
+            "lifter_id": 9101,
+            "membershipNumbers": [
+              {
+                "athleteName": "Alexander Peterson",
+                "membershipNumber": "217243",
+                "fullText": "28  -  246  Alexander Peterson  M  25  -  217243  100.12  2016-10-23  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0yMyIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          },
+          {
+            "meet_id": 191,
+            "date": "2015-10-04",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Alexander Peterson",
+            "lifter_id": 9101,
+            "membershipNumbers": [
+              {
+                "athleteName": "Alexander Peterson",
+                "membershipNumber": "217243",
+                "fullText": "24  -  227  Alexander Peterson  M  24  -  217243  92.7  2015-10-04  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0wNCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          },
+          {
+            "meet_id": 192,
+            "date": "2015-12-13",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Alexander Peterson",
+            "lifter_id": 9101,
+            "membershipNumbers": [
+              {
+                "athleteName": "Alexander Peterson",
+                "membershipNumber": "217243",
+                "fullText": "4  -  251  Alexander Peterson  M  24  -  217243  92.9  2015-12-13  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMi0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMi0xMyIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          },
+          {
+            "meet_id": 1806,
+            "date": "2016-03-26",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Alexander Peterson",
+            "lifter_id": 9101,
+            "membershipNumbers": [
+              {
+                "athleteName": "Alexander Peterson",
+                "membershipNumber": "217243",
+                "fullText": "21  -  251  Alexander Peterson  M  25  -  217243  97.22  2016-03-26  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMy0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMy0yNiIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          }
+        ],
+        "1002130": [
+          {
+            "meet_id": 1713,
+            "date": "2016-01-23",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Alexander Peterson",
+            "lifter_id": 9101,
+            "membershipNumbers": [
+              {
+                "athleteName": "Alexander Peterson",
+                "membershipNumber": "1002130",
+                "fullText": "30  -  129  Alexander Peterson  M  19  NORTHFIELD WLC  1002130  72.5  2016-01-23  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0yMyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

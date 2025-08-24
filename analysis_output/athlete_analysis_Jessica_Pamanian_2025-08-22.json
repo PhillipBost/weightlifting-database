@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T04:51:19.039Z",
+  "athleteName": "Jessica Pamanian",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "190030": [
+        {
+          "meet_id": 736,
+          "date": "2013-11-24",
+          "age_category": "Open Women's",
+          "weight_class": "69 kg",
+          "lifter_name": "Jessica Pamanian",
+          "lifter_id": 5392,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jessica Pamanian",
+              "membershipNumber": "190030",
+              "fullText": "1  -  159  Jessica Pamanian  F  29  Brooklyn Training Hall  190030  63.2  2013-11-24  -  Local  New York"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMS0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMS0yNCIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+        }
+      ],
+      "203193": [
+        {
+          "meet_id": 1827,
+          "date": "2016-08-28",
+          "age_category": "Open Women's",
+          "weight_class": "63 kg",
+          "lifter_name": "Jessica Pamanian",
+          "lifter_id": 5392,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jessica Pamanian",
+              "membershipNumber": "203193",
+              "fullText": "2  -  177  Jessica Pamanian  F  33  Brooklyn Training Hall  203193  62.4  2016-08-28  -  Local  New York"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0yOCIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+        },
+        {
+          "meet_id": 1973,
+          "date": "2016-12-11",
+          "age_category": "Open Women's",
+          "weight_class": "63 kg",
+          "lifter_name": "Jessica Pamanian",
+          "lifter_id": 5392,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jessica Pamanian",
+              "membershipNumber": "203193",
+              "fullText": "24  -  176  Jessica Pamanian  F  33  Brooklyn Training Hall  203193  62.06  2016-12-11  -  National  New York"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMi0xMSIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Jessica Pamanian",
+    "splits": [
+      {
+        "newAthleteName": "Jessica Pamanian (Person 1)",
+        "membershipNumber": "190030",
+        "competitionCount": 1,
+        "competitions": [
+          736
+        ]
+      },
+      {
+        "newAthleteName": "Jessica Pamanian (Person 2)",
+        "membershipNumber": "203193",
+        "competitionCount": 2,
+        "competitions": [
+          1827,
+          1973
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Jessica Pamanian",
+    "competitions": [
+      {
+        "meet_id": 1827,
+        "date": "2016-08-28",
+        "age_category": "Open Women's",
+        "weight_class": "63 kg",
+        "lifter_name": "Jessica Pamanian",
+        "lifter_id": 5392,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jessica Pamanian",
+            "membershipNumber": "203193",
+            "fullText": "2  -  177  Jessica Pamanian  F  33  Brooklyn Training Hall  203193  62.4  2016-08-28  -  Local  New York"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0yOCIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+      },
+      {
+        "meet_id": 736,
+        "date": "2013-11-24",
+        "age_category": "Open Women's",
+        "weight_class": "69 kg",
+        "lifter_name": "Jessica Pamanian",
+        "lifter_id": 5392,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jessica Pamanian",
+            "membershipNumber": "190030",
+            "fullText": "1  -  159  Jessica Pamanian  F  29  Brooklyn Training Hall  190030  63.2  2013-11-24  -  Local  New York"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMS0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMS0yNCIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+      },
+      {
+        "meet_id": 1973,
+        "date": "2016-12-11",
+        "age_category": "Open Women's",
+        "weight_class": "63 kg",
+        "lifter_name": "Jessica Pamanian",
+        "lifter_id": 5392,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jessica Pamanian",
+            "membershipNumber": "203193",
+            "fullText": "24  -  176  Jessica Pamanian  F  33  Brooklyn Training Hall  203193  62.06  2016-12-11  -  National  New York"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMi0xMSIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "190030": [
+          {
+            "meet_id": 736,
+            "date": "2013-11-24",
+            "age_category": "Open Women's",
+            "weight_class": "69 kg",
+            "lifter_name": "Jessica Pamanian",
+            "lifter_id": 5392,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jessica Pamanian",
+                "membershipNumber": "190030",
+                "fullText": "1  -  159  Jessica Pamanian  F  29  Brooklyn Training Hall  190030  63.2  2013-11-24  -  Local  New York"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMS0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMS0yNCIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+          }
+        ],
+        "203193": [
+          {
+            "meet_id": 1827,
+            "date": "2016-08-28",
+            "age_category": "Open Women's",
+            "weight_class": "63 kg",
+            "lifter_name": "Jessica Pamanian",
+            "lifter_id": 5392,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jessica Pamanian",
+                "membershipNumber": "203193",
+                "fullText": "2  -  177  Jessica Pamanian  F  33  Brooklyn Training Hall  203193  62.4  2016-08-28  -  Local  New York"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0yOCIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+          },
+          {
+            "meet_id": 1973,
+            "date": "2016-12-11",
+            "age_category": "Open Women's",
+            "weight_class": "63 kg",
+            "lifter_name": "Jessica Pamanian",
+            "lifter_id": 5392,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jessica Pamanian",
+                "membershipNumber": "203193",
+                "fullText": "24  -  176  Jessica Pamanian  F  33  Brooklyn Training Hall  203193  62.06  2016-12-11  -  National  New York"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMi0xMSIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

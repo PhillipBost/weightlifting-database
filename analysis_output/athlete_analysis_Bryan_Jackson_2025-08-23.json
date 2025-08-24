@@ -1,0 +1,292 @@
+{
+  "timestamp": "2025-08-23T00:38:49.224Z",
+  "athleteName": "Bryan Jackson",
+  "totalCompetitions": 5,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "195297": [
+        {
+          "meet_id": 3005,
+          "date": "2020-02-16",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Bryan Jackson",
+          "lifter_id": 34860,
+          "membershipNumbers": [
+            {
+              "athleteName": "Bryan Jackson",
+              "membershipNumber": "195297",
+              "fullText": "9  -  160  Bryan Jackson  M  41  Validus Weightlifting  195297  79.52  2020-02-16  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMi0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMi0xNiIsIndlaWdodF9jbGFzcyI6ODV9"
+        },
+        {
+          "meet_id": 4043,
+          "date": "2019-11-10",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Bryan Jackson",
+          "lifter_id": 34860,
+          "membershipNumbers": [
+            {
+              "athleteName": "Bryan Jackson",
+              "membershipNumber": "195297",
+              "fullText": "19  -  153  Bryan Jackson  M  40  Validus Weightlifting  195297  80.2  2019-11-10  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0xMCIsIndlaWdodF9jbGFzcyI6ODV9"
+        }
+      ],
+      "1056467": [
+        {
+          "meet_id": 5062,
+          "date": "2021-12-12",
+          "age_category": "Men's Masters (40-44)",
+          "weight_class": "81kg",
+          "lifter_name": "Bryan Jackson",
+          "lifter_id": 34860,
+          "membershipNumbers": [
+            {
+              "athleteName": "Bryan Jackson",
+              "membershipNumber": "1056467",
+              "fullText": "3  -  162  Bryan Jackson  M  42  -  1056467  80.39  2021-12-12  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMi0xMiIsIndlaWdodF9jbGFzcyI6MTI1fQ=="
+        },
+        {
+          "meet_id": 4826,
+          "date": "2021-08-14",
+          "age_category": "Men's Masters (40-44)",
+          "weight_class": "81kg",
+          "lifter_name": "Bryan Jackson",
+          "lifter_id": 34860,
+          "membershipNumbers": [
+            {
+              "athleteName": "Bryan Jackson",
+              "membershipNumber": "1056467",
+              "fullText": "1  -  165  Bryan Jackson  M  42  -  1056467  81  2021-08-14  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wOC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wOC0xNCIsIndlaWdodF9jbGFzcyI6MTI1fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 3866,
+        "date": "2019-04-07",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Bryan Jackson",
+        "lifter_id": 34860,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0wNyIsIndlaWdodF9jbGFzcyI6ODV9"
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Bryan Jackson",
+    "splits": [
+      {
+        "newAthleteName": "Bryan Jackson (Person 1)",
+        "membershipNumber": "195297",
+        "competitionCount": 2,
+        "competitions": [
+          3005,
+          4043
+        ]
+      },
+      {
+        "newAthleteName": "Bryan Jackson (Person 2)",
+        "membershipNumber": "1056467",
+        "competitionCount": 2,
+        "competitions": [
+          5062,
+          4826
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 3866,
+        "date": "2019-04-07",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Bryan Jackson",
+        "lifter_id": 34860,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0wNyIsIndlaWdodF9jbGFzcyI6ODV9"
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Bryan Jackson",
+    "competitions": [
+      {
+        "meet_id": 5062,
+        "date": "2021-12-12",
+        "age_category": "Men's Masters (40-44)",
+        "weight_class": "81kg",
+        "lifter_name": "Bryan Jackson",
+        "lifter_id": 34860,
+        "membershipNumbers": [
+          {
+            "athleteName": "Bryan Jackson",
+            "membershipNumber": "1056467",
+            "fullText": "3  -  162  Bryan Jackson  M  42  -  1056467  80.39  2021-12-12  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMi0xMiIsIndlaWdodF9jbGFzcyI6MTI1fQ=="
+      },
+      {
+        "meet_id": 4826,
+        "date": "2021-08-14",
+        "age_category": "Men's Masters (40-44)",
+        "weight_class": "81kg",
+        "lifter_name": "Bryan Jackson",
+        "lifter_id": 34860,
+        "membershipNumbers": [
+          {
+            "athleteName": "Bryan Jackson",
+            "membershipNumber": "1056467",
+            "fullText": "1  -  165  Bryan Jackson  M  42  -  1056467  81  2021-08-14  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wOC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wOC0xNCIsIndlaWdodF9jbGFzcyI6MTI1fQ=="
+      },
+      {
+        "meet_id": 3005,
+        "date": "2020-02-16",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Bryan Jackson",
+        "lifter_id": 34860,
+        "membershipNumbers": [
+          {
+            "athleteName": "Bryan Jackson",
+            "membershipNumber": "195297",
+            "fullText": "9  -  160  Bryan Jackson  M  41  Validus Weightlifting  195297  79.52  2020-02-16  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMi0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMi0xNiIsIndlaWdodF9jbGFzcyI6ODV9"
+      },
+      {
+        "meet_id": 3866,
+        "date": "2019-04-07",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Bryan Jackson",
+        "lifter_id": 34860,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0wNyIsIndlaWdodF9jbGFzcyI6ODV9"
+      },
+      {
+        "meet_id": 4043,
+        "date": "2019-11-10",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Bryan Jackson",
+        "lifter_id": 34860,
+        "membershipNumbers": [
+          {
+            "athleteName": "Bryan Jackson",
+            "membershipNumber": "195297",
+            "fullText": "19  -  153  Bryan Jackson  M  40  Validus Weightlifting  195297  80.2  2019-11-10  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0xMCIsIndlaWdodF9jbGFzcyI6ODV9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "195297": [
+          {
+            "meet_id": 3005,
+            "date": "2020-02-16",
+            "age_category": "Open Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Bryan Jackson",
+            "lifter_id": 34860,
+            "membershipNumbers": [
+              {
+                "athleteName": "Bryan Jackson",
+                "membershipNumber": "195297",
+                "fullText": "9  -  160  Bryan Jackson  M  41  Validus Weightlifting  195297  79.52  2020-02-16  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMi0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMi0xNiIsIndlaWdodF9jbGFzcyI6ODV9"
+          },
+          {
+            "meet_id": 4043,
+            "date": "2019-11-10",
+            "age_category": "Open Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Bryan Jackson",
+            "lifter_id": 34860,
+            "membershipNumbers": [
+              {
+                "athleteName": "Bryan Jackson",
+                "membershipNumber": "195297",
+                "fullText": "19  -  153  Bryan Jackson  M  40  Validus Weightlifting  195297  80.2  2019-11-10  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0xMCIsIndlaWdodF9jbGFzcyI6ODV9"
+          }
+        ],
+        "1056467": [
+          {
+            "meet_id": 5062,
+            "date": "2021-12-12",
+            "age_category": "Men's Masters (40-44)",
+            "weight_class": "81kg",
+            "lifter_name": "Bryan Jackson",
+            "lifter_id": 34860,
+            "membershipNumbers": [
+              {
+                "athleteName": "Bryan Jackson",
+                "membershipNumber": "1056467",
+                "fullText": "3  -  162  Bryan Jackson  M  42  -  1056467  80.39  2021-12-12  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMi0xMiIsIndlaWdodF9jbGFzcyI6MTI1fQ=="
+          },
+          {
+            "meet_id": 4826,
+            "date": "2021-08-14",
+            "age_category": "Men's Masters (40-44)",
+            "weight_class": "81kg",
+            "lifter_name": "Bryan Jackson",
+            "lifter_id": 34860,
+            "membershipNumbers": [
+              {
+                "athleteName": "Bryan Jackson",
+                "membershipNumber": "1056467",
+                "fullText": "1  -  165  Bryan Jackson  M  42  -  1056467  81  2021-08-14  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wOC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wOC0xNCIsIndlaWdodF9jbGFzcyI6MTI1fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 3866,
+          "date": "2019-04-07",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Bryan Jackson",
+          "lifter_id": 34860,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0wNyIsIndlaWdodF9jbGFzcyI6ODV9"
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

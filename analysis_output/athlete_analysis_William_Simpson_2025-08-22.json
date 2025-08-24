@@ -1,0 +1,309 @@
+{
+  "timestamp": "2025-08-22T13:34:23.529Z",
+  "athleteName": "William Simpson",
+  "totalCompetitions": 5,
+  "analysis": {
+    "distinctAthletes": 3,
+    "membershipGroups": {
+      "2014": [
+        {
+          "meet_id": 1578,
+          "date": "2014-08-16",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "William Simpson",
+          "lifter_id": 21014,
+          "membershipNumbers": [
+            {
+              "athleteName": "William Simpson",
+              "membershipNumber": "2014",
+              "fullText": "3  -  206  William Simpson  M  23  -  -  76.5  2014-08-16  -  Local  -"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0xNiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        },
+        {
+          "meet_id": 1579,
+          "date": "2014-08-02",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "William Simpson",
+          "lifter_id": 21014,
+          "membershipNumbers": [
+            {
+              "athleteName": "William Simpson",
+              "membershipNumber": "2014",
+              "fullText": "24  -  199  William Simpson  M  23  -  -  76.5  2014-08-02  -  Local  -"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0wMiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        }
+      ],
+      "1066078": [
+        {
+          "meet_id": 5681,
+          "date": "2023-01-28",
+          "age_category": "Open Men's",
+          "weight_class": "+109kg",
+          "lifter_name": "William Simpson",
+          "lifter_id": 21014,
+          "membershipNumbers": [
+            {
+              "athleteName": "William Simpson",
+              "membershipNumber": "1066078",
+              "fullText": "28  -  130  William Simpson  M  19  Mars Hill University  1066078  127.6  2023-01-28  -  Local  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMS0yOCIsIndlaWdodF9jbGFzcyI6OTB9"
+        }
+      ],
+      "1079726": [
+        {
+          "meet_id": 6735,
+          "date": "2025-02-01",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "William Simpson",
+          "lifter_id": 21014,
+          "membershipNumbers": [
+            {
+              "athleteName": "William Simpson",
+              "membershipNumber": "1079726",
+              "fullText": "22  -  162  William Simpson  M  32  Dirty Durham Barbell  1079726  85.7  2025-02-01  -  Local  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMi0wMSIsIndlaWdodF9jbGFzcyI6ODZ9"
+        },
+        {
+          "meet_id": 6854,
+          "date": "2025-05-03",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "William Simpson",
+          "lifter_id": 21014,
+          "membershipNumbers": [
+            {
+              "athleteName": "William Simpson",
+              "membershipNumber": "1079726",
+              "fullText": "17  -  178  William Simpson  M  32  Dirty Durham Barbell  1079726  86.8  2025-05-03  -  Local  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNS0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNS0wMyIsIndlaWdodF9jbGFzcyI6ODZ9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "William Simpson",
+    "splits": [
+      {
+        "newAthleteName": "William Simpson (Person 1)",
+        "membershipNumber": "2014",
+        "competitionCount": 2,
+        "competitions": [
+          1578,
+          1579
+        ]
+      },
+      {
+        "newAthleteName": "William Simpson (Person 2)",
+        "membershipNumber": "1066078",
+        "competitionCount": 1,
+        "competitions": [
+          5681
+        ]
+      },
+      {
+        "newAthleteName": "William Simpson (Person 3)",
+        "membershipNumber": "1079726",
+        "competitionCount": 2,
+        "competitions": [
+          6735,
+          6854
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "William Simpson",
+    "competitions": [
+      {
+        "meet_id": 1578,
+        "date": "2014-08-16",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "William Simpson",
+        "lifter_id": 21014,
+        "membershipNumbers": [
+          {
+            "athleteName": "William Simpson",
+            "membershipNumber": "2014",
+            "fullText": "3  -  206  William Simpson  M  23  -  -  76.5  2014-08-16  -  Local  -"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0xNiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 1579,
+        "date": "2014-08-02",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "William Simpson",
+        "lifter_id": 21014,
+        "membershipNumbers": [
+          {
+            "athleteName": "William Simpson",
+            "membershipNumber": "2014",
+            "fullText": "24  -  199  William Simpson  M  23  -  -  76.5  2014-08-02  -  Local  -"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0wMiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 6735,
+        "date": "2025-02-01",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "William Simpson",
+        "lifter_id": 21014,
+        "membershipNumbers": [
+          {
+            "athleteName": "William Simpson",
+            "membershipNumber": "1079726",
+            "fullText": "22  -  162  William Simpson  M  32  Dirty Durham Barbell  1079726  85.7  2025-02-01  -  Local  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMi0wMSIsIndlaWdodF9jbGFzcyI6ODZ9"
+      },
+      {
+        "meet_id": 5681,
+        "date": "2023-01-28",
+        "age_category": "Open Men's",
+        "weight_class": "+109kg",
+        "lifter_name": "William Simpson",
+        "lifter_id": 21014,
+        "membershipNumbers": [
+          {
+            "athleteName": "William Simpson",
+            "membershipNumber": "1066078",
+            "fullText": "28  -  130  William Simpson  M  19  Mars Hill University  1066078  127.6  2023-01-28  -  Local  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMS0yOCIsIndlaWdodF9jbGFzcyI6OTB9"
+      },
+      {
+        "meet_id": 6854,
+        "date": "2025-05-03",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "William Simpson",
+        "lifter_id": 21014,
+        "membershipNumbers": [
+          {
+            "athleteName": "William Simpson",
+            "membershipNumber": "1079726",
+            "fullText": "17  -  178  William Simpson  M  32  Dirty Durham Barbell  1079726  86.8  2025-05-03  -  Local  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNS0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNS0wMyIsIndlaWdodF9jbGFzcyI6ODZ9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 3,
+      "membershipGroups": {
+        "2014": [
+          {
+            "meet_id": 1578,
+            "date": "2014-08-16",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "William Simpson",
+            "lifter_id": 21014,
+            "membershipNumbers": [
+              {
+                "athleteName": "William Simpson",
+                "membershipNumber": "2014",
+                "fullText": "3  -  206  William Simpson  M  23  -  -  76.5  2014-08-16  -  Local  -"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0xNiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          },
+          {
+            "meet_id": 1579,
+            "date": "2014-08-02",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "William Simpson",
+            "lifter_id": 21014,
+            "membershipNumbers": [
+              {
+                "athleteName": "William Simpson",
+                "membershipNumber": "2014",
+                "fullText": "24  -  199  William Simpson  M  23  -  -  76.5  2014-08-02  -  Local  -"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0wMiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          }
+        ],
+        "1066078": [
+          {
+            "meet_id": 5681,
+            "date": "2023-01-28",
+            "age_category": "Open Men's",
+            "weight_class": "+109kg",
+            "lifter_name": "William Simpson",
+            "lifter_id": 21014,
+            "membershipNumbers": [
+              {
+                "athleteName": "William Simpson",
+                "membershipNumber": "1066078",
+                "fullText": "28  -  130  William Simpson  M  19  Mars Hill University  1066078  127.6  2023-01-28  -  Local  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMS0yOCIsIndlaWdodF9jbGFzcyI6OTB9"
+          }
+        ],
+        "1079726": [
+          {
+            "meet_id": 6735,
+            "date": "2025-02-01",
+            "age_category": "Open Men's",
+            "weight_class": "89kg",
+            "lifter_name": "William Simpson",
+            "lifter_id": 21014,
+            "membershipNumbers": [
+              {
+                "athleteName": "William Simpson",
+                "membershipNumber": "1079726",
+                "fullText": "22  -  162  William Simpson  M  32  Dirty Durham Barbell  1079726  85.7  2025-02-01  -  Local  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMi0wMSIsIndlaWdodF9jbGFzcyI6ODZ9"
+          },
+          {
+            "meet_id": 6854,
+            "date": "2025-05-03",
+            "age_category": "Open Men's",
+            "weight_class": "89kg",
+            "lifter_name": "William Simpson",
+            "lifter_id": 21014,
+            "membershipNumbers": [
+              {
+                "athleteName": "William Simpson",
+                "membershipNumber": "1079726",
+                "fullText": "17  -  178  William Simpson  M  32  Dirty Durham Barbell  1079726  86.8  2025-05-03  -  Local  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNS0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNS0wMyIsIndlaWdodF9jbGFzcyI6ODZ9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

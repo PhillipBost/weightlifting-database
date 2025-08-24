@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T09:04:03.738Z",
+  "athleteName": "Olivia Anderson",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1064526": [
+        {
+          "meet_id": 5482,
+          "date": "2022-08-27",
+          "age_category": "Women's 13 Under Age Group",
+          "weight_class": "+64kg",
+          "lifter_name": "Olivia Anderson",
+          "lifter_id": 53678,
+          "membershipNumbers": [
+            {
+              "athleteName": "Olivia Anderson",
+              "membershipNumber": "1064526",
+              "fullText": "5  -  37  Olivia Anderson  F  13  PORTLAND OREGON WEIGHTLIFTING  1064526  91  2022-08-27  -  Local  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wOC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wOC0yNyIsIndlaWdodF9jbGFzcyI6NjB9"
+        }
+      ],
+      "1066176": [
+        {
+          "meet_id": 5519,
+          "date": "2022-10-08",
+          "age_category": "Women's Masters (45-49)",
+          "weight_class": "64kg",
+          "lifter_name": "Olivia Anderson",
+          "lifter_id": 53678,
+          "membershipNumbers": [
+            {
+              "athleteName": "Olivia Anderson",
+              "membershipNumber": "1066176",
+              "fullText": "3  -  96  Olivia Anderson  F  48  Zion Barbell  1066176  64  2022-10-08  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMC0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMC0wOCIsIndlaWdodF9jbGFzcyI6MTU1fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Olivia Anderson",
+    "splits": [
+      {
+        "newAthleteName": "Olivia Anderson (Person 1)",
+        "membershipNumber": "1064526",
+        "competitionCount": 1,
+        "competitions": [
+          5482
+        ]
+      },
+      {
+        "newAthleteName": "Olivia Anderson (Person 2)",
+        "membershipNumber": "1066176",
+        "competitionCount": 1,
+        "competitions": [
+          5519
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Olivia Anderson",
+    "competitions": [
+      {
+        "meet_id": 5482,
+        "date": "2022-08-27",
+        "age_category": "Women's 13 Under Age Group",
+        "weight_class": "+64kg",
+        "lifter_name": "Olivia Anderson",
+        "lifter_id": 53678,
+        "membershipNumbers": [
+          {
+            "athleteName": "Olivia Anderson",
+            "membershipNumber": "1064526",
+            "fullText": "5  -  37  Olivia Anderson  F  13  PORTLAND OREGON WEIGHTLIFTING  1064526  91  2022-08-27  -  Local  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wOC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wOC0yNyIsIndlaWdodF9jbGFzcyI6NjB9"
+      },
+      {
+        "meet_id": 5519,
+        "date": "2022-10-08",
+        "age_category": "Women's Masters (45-49)",
+        "weight_class": "64kg",
+        "lifter_name": "Olivia Anderson",
+        "lifter_id": 53678,
+        "membershipNumbers": [
+          {
+            "athleteName": "Olivia Anderson",
+            "membershipNumber": "1066176",
+            "fullText": "3  -  96  Olivia Anderson  F  48  Zion Barbell  1066176  64  2022-10-08  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMC0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMC0wOCIsIndlaWdodF9jbGFzcyI6MTU1fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1064526": [
+          {
+            "meet_id": 5482,
+            "date": "2022-08-27",
+            "age_category": "Women's 13 Under Age Group",
+            "weight_class": "+64kg",
+            "lifter_name": "Olivia Anderson",
+            "lifter_id": 53678,
+            "membershipNumbers": [
+              {
+                "athleteName": "Olivia Anderson",
+                "membershipNumber": "1064526",
+                "fullText": "5  -  37  Olivia Anderson  F  13  PORTLAND OREGON WEIGHTLIFTING  1064526  91  2022-08-27  -  Local  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wOC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wOC0yNyIsIndlaWdodF9jbGFzcyI6NjB9"
+          }
+        ],
+        "1066176": [
+          {
+            "meet_id": 5519,
+            "date": "2022-10-08",
+            "age_category": "Women's Masters (45-49)",
+            "weight_class": "64kg",
+            "lifter_name": "Olivia Anderson",
+            "lifter_id": 53678,
+            "membershipNumbers": [
+              {
+                "athleteName": "Olivia Anderson",
+                "membershipNumber": "1066176",
+                "fullText": "3  -  96  Olivia Anderson  F  48  Zion Barbell  1066176  64  2022-10-08  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMC0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMC0wOCIsIndlaWdodF9jbGFzcyI6MTU1fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

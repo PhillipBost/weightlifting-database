@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T07:46:52.961Z",
+  "athleteName": "David Watts",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "179970": [
+        {
+          "meet_id": 667,
+          "date": "2012-12-15",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "David Watts",
+          "lifter_id": 1001,
+          "membershipNumbers": [
+            {
+              "athleteName": "David Watts",
+              "membershipNumber": "179970",
+              "fullText": "21  -  155  David Watts  M  34  -  179970  87.81  2012-12-15  -  Local  Missouri Valley"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0xMi0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0xMi0xNSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ],
+      "1037747": [
+        {
+          "meet_id": 3939,
+          "date": "2019-05-19",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "David Watts",
+          "lifter_id": 1001,
+          "membershipNumbers": [
+            {
+              "athleteName": "David Watts",
+              "membershipNumber": "1037747",
+              "fullText": "3  -  214  David Watts  M  34  HIGH DESERT ATHLETIC CLUB  1037747  88.43  2019-05-19  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0xOSIsIndlaWdodF9jbGFzcyI6ODZ9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "David Watts",
+    "splits": [
+      {
+        "newAthleteName": "David Watts (Person 1)",
+        "membershipNumber": "179970",
+        "competitionCount": 1,
+        "competitions": [
+          667
+        ]
+      },
+      {
+        "newAthleteName": "David Watts (Person 2)",
+        "membershipNumber": "1037747",
+        "competitionCount": 1,
+        "competitions": [
+          3939
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "David Watts",
+    "competitions": [
+      {
+        "meet_id": 667,
+        "date": "2012-12-15",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "David Watts",
+        "lifter_id": 1001,
+        "membershipNumbers": [
+          {
+            "athleteName": "David Watts",
+            "membershipNumber": "179970",
+            "fullText": "21  -  155  David Watts  M  34  -  179970  87.81  2012-12-15  -  Local  Missouri Valley"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0xMi0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0xMi0xNSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 3939,
+        "date": "2019-05-19",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "David Watts",
+        "lifter_id": 1001,
+        "membershipNumbers": [
+          {
+            "athleteName": "David Watts",
+            "membershipNumber": "1037747",
+            "fullText": "3  -  214  David Watts  M  34  HIGH DESERT ATHLETIC CLUB  1037747  88.43  2019-05-19  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0xOSIsIndlaWdodF9jbGFzcyI6ODZ9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "179970": [
+          {
+            "meet_id": 667,
+            "date": "2012-12-15",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "David Watts",
+            "lifter_id": 1001,
+            "membershipNumbers": [
+              {
+                "athleteName": "David Watts",
+                "membershipNumber": "179970",
+                "fullText": "21  -  155  David Watts  M  34  -  179970  87.81  2012-12-15  -  Local  Missouri Valley"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0xMi0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0xMi0xNSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          }
+        ],
+        "1037747": [
+          {
+            "meet_id": 3939,
+            "date": "2019-05-19",
+            "age_category": "Open Men's",
+            "weight_class": "89kg",
+            "lifter_name": "David Watts",
+            "lifter_id": 1001,
+            "membershipNumbers": [
+              {
+                "athleteName": "David Watts",
+                "membershipNumber": "1037747",
+                "fullText": "3  -  214  David Watts  M  34  HIGH DESERT ATHLETIC CLUB  1037747  88.43  2019-05-19  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0xOSIsIndlaWdodF9jbGFzcyI6ODZ9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

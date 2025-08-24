@@ -1,0 +1,332 @@
+{
+  "timestamp": "2025-08-22T04:25:27.963Z",
+  "athleteName": "Edgar Persons",
+  "totalCompetitions": 6,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "100381": [
+        {
+          "meet_id": 298,
+          "date": "2015-04-12",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Edgar Persons",
+          "lifter_id": 2451,
+          "membershipNumbers": [
+            {
+              "athleteName": "Edgar Persons",
+              "membershipNumber": "100381",
+              "fullText": "24  -  93  Edgar Persons  M  77  -  100381  74.2  2015-04-12  -  Local  Pennsylvania-West Virginia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0xMiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        },
+        {
+          "meet_id": 1287,
+          "date": "2014-04-06",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Edgar Persons",
+          "lifter_id": 2451,
+          "membershipNumbers": [
+            {
+              "athleteName": "Edgar Persons",
+              "membershipNumber": "100381",
+              "fullText": "23  -  90  Edgar Persons  M  76  -  100381  74.85  2014-04-06  -  Local  Pennsylvania-West Virginia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNC0wNiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        }
+      ],
+      "119993": [
+        {
+          "meet_id": 759,
+          "date": "2013-03-10",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Edgar Persons",
+          "lifter_id": 2451,
+          "membershipNumbers": [
+            {
+              "athleteName": "Edgar Persons",
+              "membershipNumber": "119993",
+              "fullText": "7  -  199  Edgar Persons  M  35  -  119993  82.7  2013-03-10  -  Local  Pennsylvania-West Virginia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMy0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMy0xMCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        },
+        {
+          "meet_id": 767,
+          "date": "2012-03-18",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Edgar Persons",
+          "lifter_id": 2451,
+          "membershipNumbers": [
+            {
+              "athleteName": "Edgar Persons",
+              "membershipNumber": "119993",
+              "fullText": "4  -  180  Edgar Persons  M  34  -  119993  82.94  2012-03-18  -  Local  Pennsylvania-West Virginia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wMy0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wMy0xOCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 1102,
+        "date": "2012-04-01",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Edgar Persons",
+        "lifter_id": 2451,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wNC0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wNC0wMSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 1969,
+        "date": "2016-04-03",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Edgar Persons",
+        "lifter_id": 2451,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0wMyIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Edgar Persons",
+    "splits": [
+      {
+        "newAthleteName": "Edgar Persons (Person 1)",
+        "membershipNumber": "100381",
+        "competitionCount": 2,
+        "competitions": [
+          298,
+          1287
+        ]
+      },
+      {
+        "newAthleteName": "Edgar Persons (Person 2)",
+        "membershipNumber": "119993",
+        "competitionCount": 2,
+        "competitions": [
+          759,
+          767
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 1102,
+        "date": "2012-04-01",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Edgar Persons",
+        "lifter_id": 2451,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wNC0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wNC0wMSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 1969,
+        "date": "2016-04-03",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Edgar Persons",
+        "lifter_id": 2451,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0wMyIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Edgar Persons",
+    "competitions": [
+      {
+        "meet_id": 759,
+        "date": "2013-03-10",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Edgar Persons",
+        "lifter_id": 2451,
+        "membershipNumbers": [
+          {
+            "athleteName": "Edgar Persons",
+            "membershipNumber": "119993",
+            "fullText": "7  -  199  Edgar Persons  M  35  -  119993  82.7  2013-03-10  -  Local  Pennsylvania-West Virginia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMy0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMy0xMCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 298,
+        "date": "2015-04-12",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Edgar Persons",
+        "lifter_id": 2451,
+        "membershipNumbers": [
+          {
+            "athleteName": "Edgar Persons",
+            "membershipNumber": "100381",
+            "fullText": "24  -  93  Edgar Persons  M  77  -  100381  74.2  2015-04-12  -  Local  Pennsylvania-West Virginia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0xMiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 1102,
+        "date": "2012-04-01",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Edgar Persons",
+        "lifter_id": 2451,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wNC0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wNC0wMSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 1969,
+        "date": "2016-04-03",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Edgar Persons",
+        "lifter_id": 2451,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0wMyIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 1287,
+        "date": "2014-04-06",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Edgar Persons",
+        "lifter_id": 2451,
+        "membershipNumbers": [
+          {
+            "athleteName": "Edgar Persons",
+            "membershipNumber": "100381",
+            "fullText": "23  -  90  Edgar Persons  M  76  -  100381  74.85  2014-04-06  -  Local  Pennsylvania-West Virginia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNC0wNiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 767,
+        "date": "2012-03-18",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Edgar Persons",
+        "lifter_id": 2451,
+        "membershipNumbers": [
+          {
+            "athleteName": "Edgar Persons",
+            "membershipNumber": "119993",
+            "fullText": "4  -  180  Edgar Persons  M  34  -  119993  82.94  2012-03-18  -  Local  Pennsylvania-West Virginia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wMy0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wMy0xOCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "100381": [
+          {
+            "meet_id": 298,
+            "date": "2015-04-12",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Edgar Persons",
+            "lifter_id": 2451,
+            "membershipNumbers": [
+              {
+                "athleteName": "Edgar Persons",
+                "membershipNumber": "100381",
+                "fullText": "24  -  93  Edgar Persons  M  77  -  100381  74.2  2015-04-12  -  Local  Pennsylvania-West Virginia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0xMiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          },
+          {
+            "meet_id": 1287,
+            "date": "2014-04-06",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Edgar Persons",
+            "lifter_id": 2451,
+            "membershipNumbers": [
+              {
+                "athleteName": "Edgar Persons",
+                "membershipNumber": "100381",
+                "fullText": "23  -  90  Edgar Persons  M  76  -  100381  74.85  2014-04-06  -  Local  Pennsylvania-West Virginia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNC0wNiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          }
+        ],
+        "119993": [
+          {
+            "meet_id": 759,
+            "date": "2013-03-10",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Edgar Persons",
+            "lifter_id": 2451,
+            "membershipNumbers": [
+              {
+                "athleteName": "Edgar Persons",
+                "membershipNumber": "119993",
+                "fullText": "7  -  199  Edgar Persons  M  35  -  119993  82.7  2013-03-10  -  Local  Pennsylvania-West Virginia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMy0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMy0xMCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          },
+          {
+            "meet_id": 767,
+            "date": "2012-03-18",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Edgar Persons",
+            "lifter_id": 2451,
+            "membershipNumbers": [
+              {
+                "athleteName": "Edgar Persons",
+                "membershipNumber": "119993",
+                "fullText": "4  -  180  Edgar Persons  M  34  -  119993  82.94  2012-03-18  -  Local  Pennsylvania-West Virginia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wMy0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wMy0xOCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 1102,
+          "date": "2012-04-01",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Edgar Persons",
+          "lifter_id": 2451,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wNC0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wNC0wMSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        },
+        {
+          "meet_id": 1969,
+          "date": "2016-04-03",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Edgar Persons",
+          "lifter_id": 2451,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0wMyIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

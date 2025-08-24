@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T19:33:10.242Z",
+  "athleteName": "Thomas Moore",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "191682": [
+        {
+          "meet_id": 1322,
+          "date": "2014-03-01",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Thomas Moore",
+          "lifter_id": 14906,
+          "membershipNumbers": [
+            {
+              "athleteName": "Thomas Moore",
+              "membershipNumber": "191682",
+              "fullText": "27  -  107  Thomas Moore  M  52  R 3 Weightlifting  191682  80.45  2014-03-01  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0wMSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        },
+        {
+          "meet_id": 1324,
+          "date": "2014-04-12",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Thomas Moore",
+          "lifter_id": 14906,
+          "membershipNumbers": [
+            {
+              "athleteName": "Thomas Moore",
+              "membershipNumber": "191682",
+              "fullText": "20  -  117  Thomas Moore  M  52  R 3 Weightlifting  191682  81.8  2014-04-12  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNC0xMiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ],
+      "203804": [
+        {
+          "meet_id": 474,
+          "date": "2015-10-17",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Thomas Moore",
+          "lifter_id": 14906,
+          "membershipNumbers": [
+            {
+              "athleteName": "Thomas Moore",
+              "membershipNumber": "203804",
+              "fullText": "30  -  142  Thomas Moore  M  61  WILLIAMS WEIGHTLIFTING  203804  95.8  2015-10-17  -  Local  Georgia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xNyIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Thomas Moore",
+    "splits": [
+      {
+        "newAthleteName": "Thomas Moore (Person 1)",
+        "membershipNumber": "191682",
+        "competitionCount": 2,
+        "competitions": [
+          1322,
+          1324
+        ]
+      },
+      {
+        "newAthleteName": "Thomas Moore (Person 2)",
+        "membershipNumber": "203804",
+        "competitionCount": 1,
+        "competitions": [
+          474
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Thomas Moore",
+    "competitions": [
+      {
+        "meet_id": 1322,
+        "date": "2014-03-01",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Thomas Moore",
+        "lifter_id": 14906,
+        "membershipNumbers": [
+          {
+            "athleteName": "Thomas Moore",
+            "membershipNumber": "191682",
+            "fullText": "27  -  107  Thomas Moore  M  52  R 3 Weightlifting  191682  80.45  2014-03-01  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0wMSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 1324,
+        "date": "2014-04-12",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Thomas Moore",
+        "lifter_id": 14906,
+        "membershipNumbers": [
+          {
+            "athleteName": "Thomas Moore",
+            "membershipNumber": "191682",
+            "fullText": "20  -  117  Thomas Moore  M  52  R 3 Weightlifting  191682  81.8  2014-04-12  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNC0xMiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 474,
+        "date": "2015-10-17",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Thomas Moore",
+        "lifter_id": 14906,
+        "membershipNumbers": [
+          {
+            "athleteName": "Thomas Moore",
+            "membershipNumber": "203804",
+            "fullText": "30  -  142  Thomas Moore  M  61  WILLIAMS WEIGHTLIFTING  203804  95.8  2015-10-17  -  Local  Georgia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xNyIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "191682": [
+          {
+            "meet_id": 1322,
+            "date": "2014-03-01",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Thomas Moore",
+            "lifter_id": 14906,
+            "membershipNumbers": [
+              {
+                "athleteName": "Thomas Moore",
+                "membershipNumber": "191682",
+                "fullText": "27  -  107  Thomas Moore  M  52  R 3 Weightlifting  191682  80.45  2014-03-01  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0wMSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          },
+          {
+            "meet_id": 1324,
+            "date": "2014-04-12",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Thomas Moore",
+            "lifter_id": 14906,
+            "membershipNumbers": [
+              {
+                "athleteName": "Thomas Moore",
+                "membershipNumber": "191682",
+                "fullText": "20  -  117  Thomas Moore  M  52  R 3 Weightlifting  191682  81.8  2014-04-12  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNC0xMiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          }
+        ],
+        "203804": [
+          {
+            "meet_id": 474,
+            "date": "2015-10-17",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Thomas Moore",
+            "lifter_id": 14906,
+            "membershipNumbers": [
+              {
+                "athleteName": "Thomas Moore",
+                "membershipNumber": "203804",
+                "fullText": "30  -  142  Thomas Moore  M  61  WILLIAMS WEIGHTLIFTING  203804  95.8  2015-10-17  -  Local  Georgia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xNyIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

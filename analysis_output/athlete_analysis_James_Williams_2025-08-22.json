@@ -1,0 +1,194 @@
+{
+  "timestamp": "2025-08-22T13:25:06.385Z",
+  "athleteName": "James Williams",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1080219": [
+        {
+          "meet_id": 6735,
+          "date": "2025-02-01",
+          "age_category": "Junior Men's",
+          "weight_class": "81kg",
+          "lifter_name": "James Williams",
+          "lifter_id": 6371,
+          "membershipNumbers": [
+            {
+              "athleteName": "James Williams",
+              "membershipNumber": "1080219",
+              "fullText": "13  -  150  James Williams  M  19  -  1080219  77.1  2025-02-01  -  Local  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMi0wMSIsIndlaWdodF9jbGFzcyI6NjV9"
+        }
+      ],
+      "1080461": [
+        {
+          "meet_id": 6840,
+          "date": "2025-04-27",
+          "age_category": "Open Men's",
+          "weight_class": "96kg",
+          "lifter_name": "James Williams",
+          "lifter_id": 6371,
+          "membershipNumbers": [
+            {
+              "athleteName": "James Williams",
+              "membershipNumber": "1080461",
+              "fullText": "8  -  183  James Williams  M  25  Westminster Barbell  1080461  91  2025-04-27  -  Local  Pennsylvania-West Virginia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNC0yNyIsIndlaWdodF9jbGFzcyI6ODd9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 897,
+        "date": "2013-01-20",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "James Williams",
+        "lifter_id": 6371,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "James Williams",
+    "splits": [
+      {
+        "newAthleteName": "James Williams (Person 1)",
+        "membershipNumber": "1080219",
+        "competitionCount": 1,
+        "competitions": [
+          6735
+        ]
+      },
+      {
+        "newAthleteName": "James Williams (Person 2)",
+        "membershipNumber": "1080461",
+        "competitionCount": 1,
+        "competitions": [
+          6840
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 897,
+        "date": "2013-01-20",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "James Williams",
+        "lifter_id": 6371,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "James Williams",
+    "competitions": [
+      {
+        "meet_id": 897,
+        "date": "2013-01-20",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "James Williams",
+        "lifter_id": 6371,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 6840,
+        "date": "2025-04-27",
+        "age_category": "Open Men's",
+        "weight_class": "96kg",
+        "lifter_name": "James Williams",
+        "lifter_id": 6371,
+        "membershipNumbers": [
+          {
+            "athleteName": "James Williams",
+            "membershipNumber": "1080461",
+            "fullText": "8  -  183  James Williams  M  25  Westminster Barbell  1080461  91  2025-04-27  -  Local  Pennsylvania-West Virginia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNC0yNyIsIndlaWdodF9jbGFzcyI6ODd9"
+      },
+      {
+        "meet_id": 6735,
+        "date": "2025-02-01",
+        "age_category": "Junior Men's",
+        "weight_class": "81kg",
+        "lifter_name": "James Williams",
+        "lifter_id": 6371,
+        "membershipNumbers": [
+          {
+            "athleteName": "James Williams",
+            "membershipNumber": "1080219",
+            "fullText": "13  -  150  James Williams  M  19  -  1080219  77.1  2025-02-01  -  Local  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMi0wMSIsIndlaWdodF9jbGFzcyI6NjV9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1080219": [
+          {
+            "meet_id": 6735,
+            "date": "2025-02-01",
+            "age_category": "Junior Men's",
+            "weight_class": "81kg",
+            "lifter_name": "James Williams",
+            "lifter_id": 6371,
+            "membershipNumbers": [
+              {
+                "athleteName": "James Williams",
+                "membershipNumber": "1080219",
+                "fullText": "13  -  150  James Williams  M  19  -  1080219  77.1  2025-02-01  -  Local  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMi0wMSIsIndlaWdodF9jbGFzcyI6NjV9"
+          }
+        ],
+        "1080461": [
+          {
+            "meet_id": 6840,
+            "date": "2025-04-27",
+            "age_category": "Open Men's",
+            "weight_class": "96kg",
+            "lifter_name": "James Williams",
+            "lifter_id": 6371,
+            "membershipNumbers": [
+              {
+                "athleteName": "James Williams",
+                "membershipNumber": "1080461",
+                "fullText": "8  -  183  James Williams  M  25  Westminster Barbell  1080461  91  2025-04-27  -  Local  Pennsylvania-West Virginia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNC0yNyIsIndlaWdodF9jbGFzcyI6ODd9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 897,
+          "date": "2013-01-20",
+          "age_category": "Open Men's",
+          "weight_class": "+105 kg",
+          "lifter_name": "James Williams",
+          "lifter_id": 6371,
+          "membershipNumbers": [],
+          "error": "No division code found for: \"Open Men's +105 kg\""
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

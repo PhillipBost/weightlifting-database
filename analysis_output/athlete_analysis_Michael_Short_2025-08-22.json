@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T16:32:34.398Z",
+  "athleteName": "Michael Short",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1006504": [
+        {
+          "meet_id": 2404,
+          "date": "2017-07-30",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Michael Short",
+          "lifter_id": 24547,
+          "membershipNumbers": [
+            {
+              "athleteName": "Michael Short",
+              "membershipNumber": "1006504",
+              "fullText": "15  -  270  Michael Short  M  27  -  1006504  92.59  2017-07-30  -  National  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNy0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNy0zMCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        },
+        {
+          "meet_id": 2765,
+          "date": "2017-06-17",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Michael Short",
+          "lifter_id": 24547,
+          "membershipNumbers": [
+            {
+              "athleteName": "Michael Short",
+              "membershipNumber": "1006504",
+              "fullText": "6  -  268  Michael Short  M  27  -  1006504  92.6  2017-06-17  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNi0xNyIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ],
+      "1006513": [
+        {
+          "meet_id": 1942,
+          "date": "2016-04-30",
+          "age_category": "Men's 13 Under Age Group",
+          "weight_class": "56 Kg",
+          "lifter_name": "Michael Short",
+          "lifter_id": 24547,
+          "membershipNumbers": [
+            {
+              "athleteName": "Michael Short",
+              "membershipNumber": "1006513",
+              "fullText": "3  -  48  Michael Short  M  12  CHAOS WEIGHTLIFTING  1006513  55.1  2016-04-30  -  Local  Mountain North"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0zMCIsIndlaWdodF9jbGFzcyI6Mjk0fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Michael Short",
+    "splits": [
+      {
+        "newAthleteName": "Michael Short (Person 1)",
+        "membershipNumber": "1006504",
+        "competitionCount": 2,
+        "competitions": [
+          2404,
+          2765
+        ]
+      },
+      {
+        "newAthleteName": "Michael Short (Person 2)",
+        "membershipNumber": "1006513",
+        "competitionCount": 1,
+        "competitions": [
+          1942
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Michael Short",
+    "competitions": [
+      {
+        "meet_id": 1942,
+        "date": "2016-04-30",
+        "age_category": "Men's 13 Under Age Group",
+        "weight_class": "56 Kg",
+        "lifter_name": "Michael Short",
+        "lifter_id": 24547,
+        "membershipNumbers": [
+          {
+            "athleteName": "Michael Short",
+            "membershipNumber": "1006513",
+            "fullText": "3  -  48  Michael Short  M  12  CHAOS WEIGHTLIFTING  1006513  55.1  2016-04-30  -  Local  Mountain North"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0zMCIsIndlaWdodF9jbGFzcyI6Mjk0fQ=="
+      },
+      {
+        "meet_id": 2404,
+        "date": "2017-07-30",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Michael Short",
+        "lifter_id": 24547,
+        "membershipNumbers": [
+          {
+            "athleteName": "Michael Short",
+            "membershipNumber": "1006504",
+            "fullText": "15  -  270  Michael Short  M  27  -  1006504  92.59  2017-07-30  -  National  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNy0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNy0zMCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 2765,
+        "date": "2017-06-17",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Michael Short",
+        "lifter_id": 24547,
+        "membershipNumbers": [
+          {
+            "athleteName": "Michael Short",
+            "membershipNumber": "1006504",
+            "fullText": "6  -  268  Michael Short  M  27  -  1006504  92.6  2017-06-17  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNi0xNyIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1006504": [
+          {
+            "meet_id": 2404,
+            "date": "2017-07-30",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Michael Short",
+            "lifter_id": 24547,
+            "membershipNumbers": [
+              {
+                "athleteName": "Michael Short",
+                "membershipNumber": "1006504",
+                "fullText": "15  -  270  Michael Short  M  27  -  1006504  92.59  2017-07-30  -  National  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNy0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNy0zMCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          },
+          {
+            "meet_id": 2765,
+            "date": "2017-06-17",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Michael Short",
+            "lifter_id": 24547,
+            "membershipNumbers": [
+              {
+                "athleteName": "Michael Short",
+                "membershipNumber": "1006504",
+                "fullText": "6  -  268  Michael Short  M  27  -  1006504  92.6  2017-06-17  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNi0xNyIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          }
+        ],
+        "1006513": [
+          {
+            "meet_id": 1942,
+            "date": "2016-04-30",
+            "age_category": "Men's 13 Under Age Group",
+            "weight_class": "56 Kg",
+            "lifter_name": "Michael Short",
+            "lifter_id": 24547,
+            "membershipNumbers": [
+              {
+                "athleteName": "Michael Short",
+                "membershipNumber": "1006513",
+                "fullText": "3  -  48  Michael Short  M  12  CHAOS WEIGHTLIFTING  1006513  55.1  2016-04-30  -  Local  Mountain North"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0zMCIsIndlaWdodF9jbGFzcyI6Mjk0fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

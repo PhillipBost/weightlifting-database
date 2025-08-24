@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-22T12:22:21.116Z",
+  "athleteName": "Patrick Dawson",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "222185": [
+        {
+          "meet_id": 296,
+          "date": "2015-11-21",
+          "age_category": "Open Men's",
+          "weight_class": "56 kg",
+          "lifter_name": "Patrick Dawson",
+          "lifter_id": 11309,
+          "membershipNumbers": [
+            {
+              "athleteName": "Patrick Dawson",
+              "membershipNumber": "222185",
+              "fullText": "3  -  117  Patrick Dawson  M  29  CROSSFIT EVOLVE BARBELL CLUB  222185  54.2  2015-11-21  -  Local  Mountain North"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMS0yMSIsIndlaWdodF9jbGFzcyI6MzU0fQ=="
+        },
+        {
+          "meet_id": 534,
+          "date": "2016-02-14",
+          "age_category": "Open Men's",
+          "weight_class": "56 kg",
+          "lifter_name": "Patrick Dawson",
+          "lifter_id": 11309,
+          "membershipNumbers": [
+            {
+              "athleteName": "Patrick Dawson",
+              "membershipNumber": "222185",
+              "fullText": "1  -  132  Patrick Dawson  M  30  CROSSFIT EVOLVE BARBELL CLUB  222185  54.69  2016-02-14  -  Local  Mountain North"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMi0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMi0xNCIsIndlaWdodF9jbGFzcyI6MzU0fQ=="
+        }
+      ],
+      "1012266": [
+        {
+          "meet_id": 3093,
+          "date": "2018-04-07",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Patrick Dawson",
+          "lifter_id": 11309,
+          "membershipNumbers": [
+            {
+              "athleteName": "Patrick Dawson",
+              "membershipNumber": "1012266",
+              "fullText": "17  -  205  Patrick Dawson  M  40  Sacris Barbell  1012266  92.3  2018-04-07  -  Local  Mountain North"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNC0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNC0wNyIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        },
+        {
+          "meet_id": 3110,
+          "date": "2018-05-06",
+          "age_category": "Open Men's",
+          "weight_class": "62 kg",
+          "lifter_name": "Patrick Dawson",
+          "lifter_id": 11309,
+          "membershipNumbers": [
+            {
+              "athleteName": "Patrick Dawson",
+              "membershipNumber": "1012266",
+              "fullText": "9  -  98  Patrick Dawson  M  40  Sacris Barbell  1012266  61.2  2018-05-06  -  Local  Mountain North"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNS0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNS0wNiIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Patrick Dawson",
+    "splits": [
+      {
+        "newAthleteName": "Patrick Dawson (Person 1)",
+        "membershipNumber": "222185",
+        "competitionCount": 2,
+        "competitions": [
+          296,
+          534
+        ]
+      },
+      {
+        "newAthleteName": "Patrick Dawson (Person 2)",
+        "membershipNumber": "1012266",
+        "competitionCount": 2,
+        "competitions": [
+          3093,
+          3110
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Patrick Dawson",
+    "competitions": [
+      {
+        "meet_id": 296,
+        "date": "2015-11-21",
+        "age_category": "Open Men's",
+        "weight_class": "56 kg",
+        "lifter_name": "Patrick Dawson",
+        "lifter_id": 11309,
+        "membershipNumbers": [
+          {
+            "athleteName": "Patrick Dawson",
+            "membershipNumber": "222185",
+            "fullText": "3  -  117  Patrick Dawson  M  29  CROSSFIT EVOLVE BARBELL CLUB  222185  54.2  2015-11-21  -  Local  Mountain North"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMS0yMSIsIndlaWdodF9jbGFzcyI6MzU0fQ=="
+      },
+      {
+        "meet_id": 534,
+        "date": "2016-02-14",
+        "age_category": "Open Men's",
+        "weight_class": "56 kg",
+        "lifter_name": "Patrick Dawson",
+        "lifter_id": 11309,
+        "membershipNumbers": [
+          {
+            "athleteName": "Patrick Dawson",
+            "membershipNumber": "222185",
+            "fullText": "1  -  132  Patrick Dawson  M  30  CROSSFIT EVOLVE BARBELL CLUB  222185  54.69  2016-02-14  -  Local  Mountain North"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMi0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMi0xNCIsIndlaWdodF9jbGFzcyI6MzU0fQ=="
+      },
+      {
+        "meet_id": 3093,
+        "date": "2018-04-07",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Patrick Dawson",
+        "lifter_id": 11309,
+        "membershipNumbers": [
+          {
+            "athleteName": "Patrick Dawson",
+            "membershipNumber": "1012266",
+            "fullText": "17  -  205  Patrick Dawson  M  40  Sacris Barbell  1012266  92.3  2018-04-07  -  Local  Mountain North"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNC0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNC0wNyIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 3110,
+        "date": "2018-05-06",
+        "age_category": "Open Men's",
+        "weight_class": "62 kg",
+        "lifter_name": "Patrick Dawson",
+        "lifter_id": 11309,
+        "membershipNumbers": [
+          {
+            "athleteName": "Patrick Dawson",
+            "membershipNumber": "1012266",
+            "fullText": "9  -  98  Patrick Dawson  M  40  Sacris Barbell  1012266  61.2  2018-05-06  -  Local  Mountain North"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNS0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNS0wNiIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "222185": [
+          {
+            "meet_id": 296,
+            "date": "2015-11-21",
+            "age_category": "Open Men's",
+            "weight_class": "56 kg",
+            "lifter_name": "Patrick Dawson",
+            "lifter_id": 11309,
+            "membershipNumbers": [
+              {
+                "athleteName": "Patrick Dawson",
+                "membershipNumber": "222185",
+                "fullText": "3  -  117  Patrick Dawson  M  29  CROSSFIT EVOLVE BARBELL CLUB  222185  54.2  2015-11-21  -  Local  Mountain North"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMS0yMSIsIndlaWdodF9jbGFzcyI6MzU0fQ=="
+          },
+          {
+            "meet_id": 534,
+            "date": "2016-02-14",
+            "age_category": "Open Men's",
+            "weight_class": "56 kg",
+            "lifter_name": "Patrick Dawson",
+            "lifter_id": 11309,
+            "membershipNumbers": [
+              {
+                "athleteName": "Patrick Dawson",
+                "membershipNumber": "222185",
+                "fullText": "1  -  132  Patrick Dawson  M  30  CROSSFIT EVOLVE BARBELL CLUB  222185  54.69  2016-02-14  -  Local  Mountain North"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMi0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMi0xNCIsIndlaWdodF9jbGFzcyI6MzU0fQ=="
+          }
+        ],
+        "1012266": [
+          {
+            "meet_id": 3093,
+            "date": "2018-04-07",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Patrick Dawson",
+            "lifter_id": 11309,
+            "membershipNumbers": [
+              {
+                "athleteName": "Patrick Dawson",
+                "membershipNumber": "1012266",
+                "fullText": "17  -  205  Patrick Dawson  M  40  Sacris Barbell  1012266  92.3  2018-04-07  -  Local  Mountain North"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNC0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNC0wNyIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          },
+          {
+            "meet_id": 3110,
+            "date": "2018-05-06",
+            "age_category": "Open Men's",
+            "weight_class": "62 kg",
+            "lifter_name": "Patrick Dawson",
+            "lifter_id": 11309,
+            "membershipNumbers": [
+              {
+                "athleteName": "Patrick Dawson",
+                "membershipNumber": "1012266",
+                "fullText": "9  -  98  Patrick Dawson  M  40  Sacris Barbell  1012266  61.2  2018-05-06  -  Local  Mountain North"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNS0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNS0wNiIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

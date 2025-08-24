@@ -1,0 +1,80 @@
+{
+  "timestamp": "2025-08-22T09:03:01.258Z",
+  "athleteName": "Daniel Martin",
+  "totalCompetitions": 1,
+  "analysis": {
+    "distinctAthletes": 1,
+    "membershipGroups": {
+      "1041269": [
+        {
+          "meet_id": 3959,
+          "date": "2019-09-28",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Daniel Martin",
+          "lifter_id": 42291,
+          "membershipNumbers": [
+            {
+              "athleteName": "Daniel Martin",
+              "membershipNumber": "1041269",
+              "fullText": "13  -  217  Daniel Martin  M  25  -  1041269  74.7  2019-09-28  -  Local  Georgia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOS0yOCIsIndlaWdodF9jbGFzcyI6ODV9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": false
+  },
+  "splitPlan": {
+    "action": "NO_SPLIT_NEEDED",
+    "reason": "Only one distinct athlete found"
+  },
+  "rawData": {
+    "athleteName": "Daniel Martin",
+    "competitions": [
+      {
+        "meet_id": 3959,
+        "date": "2019-09-28",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Daniel Martin",
+        "lifter_id": 42291,
+        "membershipNumbers": [
+          {
+            "athleteName": "Daniel Martin",
+            "membershipNumber": "1041269",
+            "fullText": "13  -  217  Daniel Martin  M  25  -  1041269  74.7  2019-09-28  -  Local  Georgia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOS0yOCIsIndlaWdodF9jbGFzcyI6ODV9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 1,
+      "membershipGroups": {
+        "1041269": [
+          {
+            "meet_id": 3959,
+            "date": "2019-09-28",
+            "age_category": "Open Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Daniel Martin",
+            "lifter_id": 42291,
+            "membershipNumbers": [
+              {
+                "athleteName": "Daniel Martin",
+                "membershipNumber": "1041269",
+                "fullText": "13  -  217  Daniel Martin  M  25  -  1041269  74.7  2019-09-28  -  Local  Georgia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOS0yOCIsIndlaWdodF9jbGFzcyI6ODV9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": false
+    }
+  }
+}

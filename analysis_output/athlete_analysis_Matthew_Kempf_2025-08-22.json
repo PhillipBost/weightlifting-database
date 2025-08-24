@@ -1,0 +1,243 @@
+{
+  "timestamp": "2025-08-22T19:05:13.663Z",
+  "athleteName": "Matthew Kempf",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1012193": [
+        {
+          "meet_id": 2891,
+          "date": "2018-09-16",
+          "age_category": "Men's Masters (35-39)",
+          "weight_class": "+109kg",
+          "lifter_name": "Matthew Kempf",
+          "lifter_id": 26614,
+          "membershipNumbers": [
+            {
+              "athleteName": "Matthew Kempf",
+              "membershipNumber": "1012193",
+              "fullText": "7  -  215  Matthew Kempf  M  38  Standard Strength  1012193  112.48  2018-09-16  -  National  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOS0xNiIsIndlaWdodF9jbGFzcyI6MTEwfQ=="
+        },
+        {
+          "meet_id": 2207,
+          "date": "2016-11-19",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Matthew Kempf",
+          "lifter_id": 26614,
+          "membershipNumbers": [
+            {
+              "athleteName": "Matthew Kempf",
+              "membershipNumber": "1012193",
+              "fullText": "12  -  204  Matthew Kempf  M  36  Standard Strength  1012193  100.7  2016-11-19  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMS0xOSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        }
+      ],
+      "1030317": [
+        {
+          "meet_id": 3313,
+          "date": "2018-07-07",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Matthew Kempf",
+          "lifter_id": 26614,
+          "membershipNumbers": [
+            {
+              "athleteName": "Matthew Kempf",
+              "membershipNumber": "1030317",
+              "fullText": "3  -  174  Matthew Kempf  M  23  -  1030317  76.3  2018-07-07  -  Local  Indiana"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNy0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNy0wNyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 3165,
+        "date": "2018-07-21",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Matthew Kempf",
+        "lifter_id": 26614,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Matthew Kempf",
+    "splits": [
+      {
+        "newAthleteName": "Matthew Kempf (Person 1)",
+        "membershipNumber": "1012193",
+        "competitionCount": 2,
+        "competitions": [
+          2891,
+          2207
+        ]
+      },
+      {
+        "newAthleteName": "Matthew Kempf (Person 2)",
+        "membershipNumber": "1030317",
+        "competitionCount": 1,
+        "competitions": [
+          3313
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 3165,
+        "date": "2018-07-21",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Matthew Kempf",
+        "lifter_id": 26614,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Matthew Kempf",
+    "competitions": [
+      {
+        "meet_id": 2891,
+        "date": "2018-09-16",
+        "age_category": "Men's Masters (35-39)",
+        "weight_class": "+109kg",
+        "lifter_name": "Matthew Kempf",
+        "lifter_id": 26614,
+        "membershipNumbers": [
+          {
+            "athleteName": "Matthew Kempf",
+            "membershipNumber": "1012193",
+            "fullText": "7  -  215  Matthew Kempf  M  38  Standard Strength  1012193  112.48  2018-09-16  -  National  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOS0xNiIsIndlaWdodF9jbGFzcyI6MTEwfQ=="
+      },
+      {
+        "meet_id": 3313,
+        "date": "2018-07-07",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Matthew Kempf",
+        "lifter_id": 26614,
+        "membershipNumbers": [
+          {
+            "athleteName": "Matthew Kempf",
+            "membershipNumber": "1030317",
+            "fullText": "3  -  174  Matthew Kempf  M  23  -  1030317  76.3  2018-07-07  -  Local  Indiana"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNy0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNy0wNyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 2207,
+        "date": "2016-11-19",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Matthew Kempf",
+        "lifter_id": 26614,
+        "membershipNumbers": [
+          {
+            "athleteName": "Matthew Kempf",
+            "membershipNumber": "1012193",
+            "fullText": "12  -  204  Matthew Kempf  M  36  Standard Strength  1012193  100.7  2016-11-19  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMS0xOSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 3165,
+        "date": "2018-07-21",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Matthew Kempf",
+        "lifter_id": 26614,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1012193": [
+          {
+            "meet_id": 2891,
+            "date": "2018-09-16",
+            "age_category": "Men's Masters (35-39)",
+            "weight_class": "+109kg",
+            "lifter_name": "Matthew Kempf",
+            "lifter_id": 26614,
+            "membershipNumbers": [
+              {
+                "athleteName": "Matthew Kempf",
+                "membershipNumber": "1012193",
+                "fullText": "7  -  215  Matthew Kempf  M  38  Standard Strength  1012193  112.48  2018-09-16  -  National  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOS0xNiIsIndlaWdodF9jbGFzcyI6MTEwfQ=="
+          },
+          {
+            "meet_id": 2207,
+            "date": "2016-11-19",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Matthew Kempf",
+            "lifter_id": 26614,
+            "membershipNumbers": [
+              {
+                "athleteName": "Matthew Kempf",
+                "membershipNumber": "1012193",
+                "fullText": "12  -  204  Matthew Kempf  M  36  Standard Strength  1012193  100.7  2016-11-19  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMS0xOSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          }
+        ],
+        "1030317": [
+          {
+            "meet_id": 3313,
+            "date": "2018-07-07",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Matthew Kempf",
+            "lifter_id": 26614,
+            "membershipNumbers": [
+              {
+                "athleteName": "Matthew Kempf",
+                "membershipNumber": "1030317",
+                "fullText": "3  -  174  Matthew Kempf  M  23  -  1030317  76.3  2018-07-07  -  Local  Indiana"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNy0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNy0wNyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 3165,
+          "date": "2018-07-21",
+          "age_category": "Open Men's",
+          "weight_class": "+105 kg",
+          "lifter_name": "Matthew Kempf",
+          "lifter_id": 26614,
+          "membershipNumbers": [],
+          "error": "No division code found for: \"Open Men's +105 kg\""
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

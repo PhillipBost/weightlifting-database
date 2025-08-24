@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T22:16:35.376Z",
+  "athleteName": "Michael Sparks",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "129189": [
+        {
+          "meet_id": 1496,
+          "date": "2014-08-30",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Michael Sparks",
+          "lifter_id": 20712,
+          "membershipNumbers": [
+            {
+              "athleteName": "Michael Sparks",
+              "membershipNumber": "129189",
+              "fullText": "7  -  255  Michael Sparks  M  27  WESLEY WEIGHTLIFTERS  129189  103.6  2014-08-30  -  Local  Missouri Valley"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0zMCIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        }
+      ],
+      "1051643": [
+        {
+          "meet_id": 4726,
+          "date": "2021-02-21",
+          "age_category": "Men's 14-15 Age Group",
+          "weight_class": "+89kg",
+          "lifter_name": "Michael Sparks",
+          "lifter_id": 20712,
+          "membershipNumbers": [
+            {
+              "athleteName": "Michael Sparks",
+              "membershipNumber": "1051643",
+              "fullText": "1  -  108  Michael Sparks  M  14  TEAM FLORIDA NORTHEAST  1051643  102  2021-02-21  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMi0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMi0yMSIsIndlaWdodF9jbGFzcyI6MzB9"
+        },
+        {
+          "meet_id": 4552,
+          "date": "2020-07-18",
+          "age_category": "Men's 13 Under Age Group",
+          "weight_class": "+73kg",
+          "lifter_name": "Michael Sparks",
+          "lifter_id": 20712,
+          "membershipNumbers": [
+            {
+              "athleteName": "Michael Sparks",
+              "membershipNumber": "1051643",
+              "fullText": "1  -  70  Michael Sparks  M  13  TEAM FLORIDA NORTHEAST  1051643  82.3  2020-07-18  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wNy0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wNy0xOCIsIndlaWdodF9jbGFzcyI6NTB9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Michael Sparks",
+    "splits": [
+      {
+        "newAthleteName": "Michael Sparks (Person 1)",
+        "membershipNumber": "129189",
+        "competitionCount": 1,
+        "competitions": [
+          1496
+        ]
+      },
+      {
+        "newAthleteName": "Michael Sparks (Person 2)",
+        "membershipNumber": "1051643",
+        "competitionCount": 2,
+        "competitions": [
+          4726,
+          4552
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Michael Sparks",
+    "competitions": [
+      {
+        "meet_id": 4726,
+        "date": "2021-02-21",
+        "age_category": "Men's 14-15 Age Group",
+        "weight_class": "+89kg",
+        "lifter_name": "Michael Sparks",
+        "lifter_id": 20712,
+        "membershipNumbers": [
+          {
+            "athleteName": "Michael Sparks",
+            "membershipNumber": "1051643",
+            "fullText": "1  -  108  Michael Sparks  M  14  TEAM FLORIDA NORTHEAST  1051643  102  2021-02-21  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMi0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMi0yMSIsIndlaWdodF9jbGFzcyI6MzB9"
+      },
+      {
+        "meet_id": 1496,
+        "date": "2014-08-30",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Michael Sparks",
+        "lifter_id": 20712,
+        "membershipNumbers": [
+          {
+            "athleteName": "Michael Sparks",
+            "membershipNumber": "129189",
+            "fullText": "7  -  255  Michael Sparks  M  27  WESLEY WEIGHTLIFTERS  129189  103.6  2014-08-30  -  Local  Missouri Valley"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0zMCIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 4552,
+        "date": "2020-07-18",
+        "age_category": "Men's 13 Under Age Group",
+        "weight_class": "+73kg",
+        "lifter_name": "Michael Sparks",
+        "lifter_id": 20712,
+        "membershipNumbers": [
+          {
+            "athleteName": "Michael Sparks",
+            "membershipNumber": "1051643",
+            "fullText": "1  -  70  Michael Sparks  M  13  TEAM FLORIDA NORTHEAST  1051643  82.3  2020-07-18  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wNy0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wNy0xOCIsIndlaWdodF9jbGFzcyI6NTB9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "129189": [
+          {
+            "meet_id": 1496,
+            "date": "2014-08-30",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Michael Sparks",
+            "lifter_id": 20712,
+            "membershipNumbers": [
+              {
+                "athleteName": "Michael Sparks",
+                "membershipNumber": "129189",
+                "fullText": "7  -  255  Michael Sparks  M  27  WESLEY WEIGHTLIFTERS  129189  103.6  2014-08-30  -  Local  Missouri Valley"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0zMCIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          }
+        ],
+        "1051643": [
+          {
+            "meet_id": 4726,
+            "date": "2021-02-21",
+            "age_category": "Men's 14-15 Age Group",
+            "weight_class": "+89kg",
+            "lifter_name": "Michael Sparks",
+            "lifter_id": 20712,
+            "membershipNumbers": [
+              {
+                "athleteName": "Michael Sparks",
+                "membershipNumber": "1051643",
+                "fullText": "1  -  108  Michael Sparks  M  14  TEAM FLORIDA NORTHEAST  1051643  102  2021-02-21  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMi0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMi0yMSIsIndlaWdodF9jbGFzcyI6MzB9"
+          },
+          {
+            "meet_id": 4552,
+            "date": "2020-07-18",
+            "age_category": "Men's 13 Under Age Group",
+            "weight_class": "+73kg",
+            "lifter_name": "Michael Sparks",
+            "lifter_id": 20712,
+            "membershipNumbers": [
+              {
+                "athleteName": "Michael Sparks",
+                "membershipNumber": "1051643",
+                "fullText": "1  -  70  Michael Sparks  M  13  TEAM FLORIDA NORTHEAST  1051643  82.3  2020-07-18  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wNy0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wNy0xOCIsIndlaWdodF9jbGFzcyI6NTB9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

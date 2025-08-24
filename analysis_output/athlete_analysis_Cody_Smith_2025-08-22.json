@@ -1,0 +1,112 @@
+{
+  "timestamp": "2025-08-22T06:40:25.277Z",
+  "athleteName": "Cody Smith",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 1,
+    "membershipGroups": {
+      "180923": [
+        {
+          "meet_id": 1596,
+          "date": "2014-08-09",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Cody Smith",
+          "lifter_id": 15339,
+          "membershipNumbers": [
+            {
+              "athleteName": "Cody Smith",
+              "membershipNumber": "180923",
+              "fullText": "7  -  232  Cody Smith  M  28  PACIFIC NORTHWEST BARBELL  180923  103.6  2014-08-09  -  Local  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0wOSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 498,
+        "date": "2015-04-11",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Cody Smith",
+        "lifter_id": 15339,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      }
+    ],
+    "splitRequired": false
+  },
+  "splitPlan": {
+    "action": "NO_SPLIT_NEEDED",
+    "reason": "Only one distinct athlete found"
+  },
+  "rawData": {
+    "athleteName": "Cody Smith",
+    "competitions": [
+      {
+        "meet_id": 498,
+        "date": "2015-04-11",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Cody Smith",
+        "lifter_id": 15339,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 1596,
+        "date": "2014-08-09",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Cody Smith",
+        "lifter_id": 15339,
+        "membershipNumbers": [
+          {
+            "athleteName": "Cody Smith",
+            "membershipNumber": "180923",
+            "fullText": "7  -  232  Cody Smith  M  28  PACIFIC NORTHWEST BARBELL  180923  103.6  2014-08-09  -  Local  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0wOSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 1,
+      "membershipGroups": {
+        "180923": [
+          {
+            "meet_id": 1596,
+            "date": "2014-08-09",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Cody Smith",
+            "lifter_id": 15339,
+            "membershipNumbers": [
+              {
+                "athleteName": "Cody Smith",
+                "membershipNumber": "180923",
+                "fullText": "7  -  232  Cody Smith  M  28  PACIFIC NORTHWEST BARBELL  180923  103.6  2014-08-09  -  Local  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0wOSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 498,
+          "date": "2015-04-11",
+          "age_category": "Open Men's",
+          "weight_class": "+105 kg",
+          "lifter_name": "Cody Smith",
+          "lifter_id": 15339,
+          "membershipNumbers": [],
+          "error": "No division code found for: \"Open Men's +105 kg\""
+        }
+      ],
+      "splitRequired": false
+    }
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T05:49:50.974Z",
+  "athleteName": "Katie Smith",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "197987": [
+        {
+          "meet_id": 1208,
+          "date": "2014-05-31",
+          "age_category": "Women's 13 Under Age Group",
+          "weight_class": "44kg",
+          "lifter_name": "Katie Smith",
+          "lifter_id": 10435,
+          "membershipNumbers": [
+            {
+              "athleteName": "Katie Smith",
+              "membershipNumber": "197987",
+              "fullText": "1  -  39  Katie Smith  F  13  -  197987  42.6  2014-05-31  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNS0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNS0zMSIsIndlaWdodF9jbGFzcyI6NzM3fQ=="
+        }
+      ],
+      "217943": [
+        {
+          "meet_id": 254,
+          "date": "2015-09-12",
+          "age_category": "Open Women's",
+          "weight_class": "58 kg",
+          "lifter_name": "Katie Smith",
+          "lifter_id": 10435,
+          "membershipNumbers": [
+            {
+              "athleteName": "Katie Smith",
+              "membershipNumber": "217943",
+              "fullText": "6  -  135  Katie Smith  F  29  -  217943  57.1  2015-09-12  -  Local  Missouri Valley"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOS0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOS0xMiIsIndlaWdodF9jbGFzcyI6MzY0fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Katie Smith",
+    "splits": [
+      {
+        "newAthleteName": "Katie Smith (Person 1)",
+        "membershipNumber": "197987",
+        "competitionCount": 1,
+        "competitions": [
+          1208
+        ]
+      },
+      {
+        "newAthleteName": "Katie Smith (Person 2)",
+        "membershipNumber": "217943",
+        "competitionCount": 1,
+        "competitions": [
+          254
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Katie Smith",
+    "competitions": [
+      {
+        "meet_id": 1208,
+        "date": "2014-05-31",
+        "age_category": "Women's 13 Under Age Group",
+        "weight_class": "44kg",
+        "lifter_name": "Katie Smith",
+        "lifter_id": 10435,
+        "membershipNumbers": [
+          {
+            "athleteName": "Katie Smith",
+            "membershipNumber": "197987",
+            "fullText": "1  -  39  Katie Smith  F  13  -  197987  42.6  2014-05-31  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNS0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNS0zMSIsIndlaWdodF9jbGFzcyI6NzM3fQ=="
+      },
+      {
+        "meet_id": 254,
+        "date": "2015-09-12",
+        "age_category": "Open Women's",
+        "weight_class": "58 kg",
+        "lifter_name": "Katie Smith",
+        "lifter_id": 10435,
+        "membershipNumbers": [
+          {
+            "athleteName": "Katie Smith",
+            "membershipNumber": "217943",
+            "fullText": "6  -  135  Katie Smith  F  29  -  217943  57.1  2015-09-12  -  Local  Missouri Valley"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOS0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOS0xMiIsIndlaWdodF9jbGFzcyI6MzY0fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "197987": [
+          {
+            "meet_id": 1208,
+            "date": "2014-05-31",
+            "age_category": "Women's 13 Under Age Group",
+            "weight_class": "44kg",
+            "lifter_name": "Katie Smith",
+            "lifter_id": 10435,
+            "membershipNumbers": [
+              {
+                "athleteName": "Katie Smith",
+                "membershipNumber": "197987",
+                "fullText": "1  -  39  Katie Smith  F  13  -  197987  42.6  2014-05-31  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNS0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNS0zMSIsIndlaWdodF9jbGFzcyI6NzM3fQ=="
+          }
+        ],
+        "217943": [
+          {
+            "meet_id": 254,
+            "date": "2015-09-12",
+            "age_category": "Open Women's",
+            "weight_class": "58 kg",
+            "lifter_name": "Katie Smith",
+            "lifter_id": 10435,
+            "membershipNumbers": [
+              {
+                "athleteName": "Katie Smith",
+                "membershipNumber": "217943",
+                "fullText": "6  -  135  Katie Smith  F  29  -  217943  57.1  2015-09-12  -  Local  Missouri Valley"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOS0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOS0xMiIsIndlaWdodF9jbGFzcyI6MzY0fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

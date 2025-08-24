@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-22T08:35:29.354Z",
+  "athleteName": "Matthew Farley",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1039887": [
+        {
+          "meet_id": 3921,
+          "date": "2019-04-14",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "Matthew Farley",
+          "lifter_id": 41989,
+          "membershipNumbers": [
+            {
+              "athleteName": "Matthew Farley",
+              "membershipNumber": "1039887",
+              "fullText": "9  -  195  Matthew Farley  M  19  -  1039887  86.5  2019-04-14  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0xNCIsIndlaWdodF9jbGFzcyI6ODZ9"
+        }
+      ],
+      "1045276": [
+        {
+          "meet_id": 4116,
+          "date": "2019-10-26",
+          "age_category": "Open Men's",
+          "weight_class": "67kg",
+          "lifter_name": "Matthew Farley",
+          "lifter_id": 41989,
+          "membershipNumbers": [
+            {
+              "athleteName": "Matthew Farley",
+              "membershipNumber": "1045276",
+              "fullText": "9  -  157  Matthew Farley  M  24  Team SAW  1045276  66  2019-10-26  -  Local  Illinois"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMC0yNiIsIndlaWdodF9jbGFzcyI6ODN9"
+        },
+        {
+          "meet_id": 4378,
+          "date": "2019-11-09",
+          "age_category": "Open Men's",
+          "weight_class": "67kg",
+          "lifter_name": "Matthew Farley",
+          "lifter_id": 41989,
+          "membershipNumbers": [
+            {
+              "athleteName": "Matthew Farley",
+              "membershipNumber": "1045276",
+              "fullText": "1  -  156  Matthew Farley  M  24  Team SAW  1045276  66.3  2019-11-09  -  Local  Illinois"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0wOSIsIndlaWdodF9jbGFzcyI6ODN9"
+        },
+        {
+          "meet_id": 4340,
+          "date": "2020-02-22",
+          "age_category": "Open Men's",
+          "weight_class": "67kg",
+          "lifter_name": "Matthew Farley",
+          "lifter_id": 41989,
+          "membershipNumbers": [
+            {
+              "athleteName": "Matthew Farley",
+              "membershipNumber": "1045276",
+              "fullText": "9  -  159  Matthew Farley  M  25  Team SAW  1045276  66  2020-02-22  -  Local  Illinois"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMi0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMi0yMiIsIndlaWdodF9jbGFzcyI6ODN9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Matthew Farley",
+    "splits": [
+      {
+        "newAthleteName": "Matthew Farley (Person 1)",
+        "membershipNumber": "1039887",
+        "competitionCount": 1,
+        "competitions": [
+          3921
+        ]
+      },
+      {
+        "newAthleteName": "Matthew Farley (Person 2)",
+        "membershipNumber": "1045276",
+        "competitionCount": 3,
+        "competitions": [
+          4116,
+          4378,
+          4340
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Matthew Farley",
+    "competitions": [
+      {
+        "meet_id": 4116,
+        "date": "2019-10-26",
+        "age_category": "Open Men's",
+        "weight_class": "67kg",
+        "lifter_name": "Matthew Farley",
+        "lifter_id": 41989,
+        "membershipNumbers": [
+          {
+            "athleteName": "Matthew Farley",
+            "membershipNumber": "1045276",
+            "fullText": "9  -  157  Matthew Farley  M  24  Team SAW  1045276  66  2019-10-26  -  Local  Illinois"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMC0yNiIsIndlaWdodF9jbGFzcyI6ODN9"
+      },
+      {
+        "meet_id": 3921,
+        "date": "2019-04-14",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Matthew Farley",
+        "lifter_id": 41989,
+        "membershipNumbers": [
+          {
+            "athleteName": "Matthew Farley",
+            "membershipNumber": "1039887",
+            "fullText": "9  -  195  Matthew Farley  M  19  -  1039887  86.5  2019-04-14  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0xNCIsIndlaWdodF9jbGFzcyI6ODZ9"
+      },
+      {
+        "meet_id": 4378,
+        "date": "2019-11-09",
+        "age_category": "Open Men's",
+        "weight_class": "67kg",
+        "lifter_name": "Matthew Farley",
+        "lifter_id": 41989,
+        "membershipNumbers": [
+          {
+            "athleteName": "Matthew Farley",
+            "membershipNumber": "1045276",
+            "fullText": "1  -  156  Matthew Farley  M  24  Team SAW  1045276  66.3  2019-11-09  -  Local  Illinois"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0wOSIsIndlaWdodF9jbGFzcyI6ODN9"
+      },
+      {
+        "meet_id": 4340,
+        "date": "2020-02-22",
+        "age_category": "Open Men's",
+        "weight_class": "67kg",
+        "lifter_name": "Matthew Farley",
+        "lifter_id": 41989,
+        "membershipNumbers": [
+          {
+            "athleteName": "Matthew Farley",
+            "membershipNumber": "1045276",
+            "fullText": "9  -  159  Matthew Farley  M  25  Team SAW  1045276  66  2020-02-22  -  Local  Illinois"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMi0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMi0yMiIsIndlaWdodF9jbGFzcyI6ODN9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1039887": [
+          {
+            "meet_id": 3921,
+            "date": "2019-04-14",
+            "age_category": "Open Men's",
+            "weight_class": "89kg",
+            "lifter_name": "Matthew Farley",
+            "lifter_id": 41989,
+            "membershipNumbers": [
+              {
+                "athleteName": "Matthew Farley",
+                "membershipNumber": "1039887",
+                "fullText": "9  -  195  Matthew Farley  M  19  -  1039887  86.5  2019-04-14  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0xNCIsIndlaWdodF9jbGFzcyI6ODZ9"
+          }
+        ],
+        "1045276": [
+          {
+            "meet_id": 4116,
+            "date": "2019-10-26",
+            "age_category": "Open Men's",
+            "weight_class": "67kg",
+            "lifter_name": "Matthew Farley",
+            "lifter_id": 41989,
+            "membershipNumbers": [
+              {
+                "athleteName": "Matthew Farley",
+                "membershipNumber": "1045276",
+                "fullText": "9  -  157  Matthew Farley  M  24  Team SAW  1045276  66  2019-10-26  -  Local  Illinois"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMC0yNiIsIndlaWdodF9jbGFzcyI6ODN9"
+          },
+          {
+            "meet_id": 4378,
+            "date": "2019-11-09",
+            "age_category": "Open Men's",
+            "weight_class": "67kg",
+            "lifter_name": "Matthew Farley",
+            "lifter_id": 41989,
+            "membershipNumbers": [
+              {
+                "athleteName": "Matthew Farley",
+                "membershipNumber": "1045276",
+                "fullText": "1  -  156  Matthew Farley  M  24  Team SAW  1045276  66.3  2019-11-09  -  Local  Illinois"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0wOSIsIndlaWdodF9jbGFzcyI6ODN9"
+          },
+          {
+            "meet_id": 4340,
+            "date": "2020-02-22",
+            "age_category": "Open Men's",
+            "weight_class": "67kg",
+            "lifter_name": "Matthew Farley",
+            "lifter_id": 41989,
+            "membershipNumbers": [
+              {
+                "athleteName": "Matthew Farley",
+                "membershipNumber": "1045276",
+                "fullText": "9  -  159  Matthew Farley  M  25  Team SAW  1045276  66  2020-02-22  -  Local  Illinois"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMi0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMi0yMiIsIndlaWdodF9jbGFzcyI6ODN9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

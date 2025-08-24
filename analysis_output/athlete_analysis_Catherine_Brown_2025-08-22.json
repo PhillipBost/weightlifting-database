@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T07:41:27.420Z",
+  "athleteName": "Catherine Brown",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1018526": [
+        {
+          "meet_id": 2300,
+          "date": "2017-05-20",
+          "age_category": "Open Women's",
+          "weight_class": "63 kg",
+          "lifter_name": "Catherine Brown",
+          "lifter_id": 28191,
+          "membershipNumbers": [
+            {
+              "athleteName": "Catherine Brown",
+              "membershipNumber": "1018526",
+              "fullText": "11  -  118  Catherine Brown  F  25  -  1018526  62.44  2017-05-20  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNS0yMCIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+        },
+        {
+          "meet_id": 3107,
+          "date": "2018-04-15",
+          "age_category": "Open Women's",
+          "weight_class": "63 kg",
+          "lifter_name": "Catherine Brown",
+          "lifter_id": 28191,
+          "membershipNumbers": [
+            {
+              "athleteName": "Catherine Brown",
+              "membershipNumber": "1018526",
+              "fullText": "25  -  128  Catherine Brown  F  26  -  1018526  62.8  2018-04-15  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNC0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNC0xNSIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+        }
+      ],
+      "1047449": [
+        {
+          "meet_id": 4358,
+          "date": "2020-01-18",
+          "age_category": "Open Women's",
+          "weight_class": "87kg",
+          "lifter_name": "Catherine Brown",
+          "lifter_id": 28191,
+          "membershipNumbers": [
+            {
+              "athleteName": "Catherine Brown",
+              "membershipNumber": "1047449",
+              "fullText": "13  -  118  Catherine Brown  F  26  Three Ships Strength  1047449  81.4  2020-01-18  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMS0xOCIsIndlaWdodF9jbGFzcyI6OTl9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Catherine Brown",
+    "splits": [
+      {
+        "newAthleteName": "Catherine Brown (Person 1)",
+        "membershipNumber": "1018526",
+        "competitionCount": 2,
+        "competitions": [
+          2300,
+          3107
+        ]
+      },
+      {
+        "newAthleteName": "Catherine Brown (Person 2)",
+        "membershipNumber": "1047449",
+        "competitionCount": 1,
+        "competitions": [
+          4358
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Catherine Brown",
+    "competitions": [
+      {
+        "meet_id": 4358,
+        "date": "2020-01-18",
+        "age_category": "Open Women's",
+        "weight_class": "87kg",
+        "lifter_name": "Catherine Brown",
+        "lifter_id": 28191,
+        "membershipNumbers": [
+          {
+            "athleteName": "Catherine Brown",
+            "membershipNumber": "1047449",
+            "fullText": "13  -  118  Catherine Brown  F  26  Three Ships Strength  1047449  81.4  2020-01-18  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMS0xOCIsIndlaWdodF9jbGFzcyI6OTl9"
+      },
+      {
+        "meet_id": 2300,
+        "date": "2017-05-20",
+        "age_category": "Open Women's",
+        "weight_class": "63 kg",
+        "lifter_name": "Catherine Brown",
+        "lifter_id": 28191,
+        "membershipNumbers": [
+          {
+            "athleteName": "Catherine Brown",
+            "membershipNumber": "1018526",
+            "fullText": "11  -  118  Catherine Brown  F  25  -  1018526  62.44  2017-05-20  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNS0yMCIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+      },
+      {
+        "meet_id": 3107,
+        "date": "2018-04-15",
+        "age_category": "Open Women's",
+        "weight_class": "63 kg",
+        "lifter_name": "Catherine Brown",
+        "lifter_id": 28191,
+        "membershipNumbers": [
+          {
+            "athleteName": "Catherine Brown",
+            "membershipNumber": "1018526",
+            "fullText": "25  -  128  Catherine Brown  F  26  -  1018526  62.8  2018-04-15  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNC0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNC0xNSIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1018526": [
+          {
+            "meet_id": 2300,
+            "date": "2017-05-20",
+            "age_category": "Open Women's",
+            "weight_class": "63 kg",
+            "lifter_name": "Catherine Brown",
+            "lifter_id": 28191,
+            "membershipNumbers": [
+              {
+                "athleteName": "Catherine Brown",
+                "membershipNumber": "1018526",
+                "fullText": "11  -  118  Catherine Brown  F  25  -  1018526  62.44  2017-05-20  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNS0yMCIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+          },
+          {
+            "meet_id": 3107,
+            "date": "2018-04-15",
+            "age_category": "Open Women's",
+            "weight_class": "63 kg",
+            "lifter_name": "Catherine Brown",
+            "lifter_id": 28191,
+            "membershipNumbers": [
+              {
+                "athleteName": "Catherine Brown",
+                "membershipNumber": "1018526",
+                "fullText": "25  -  128  Catherine Brown  F  26  -  1018526  62.8  2018-04-15  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNC0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNC0xNSIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+          }
+        ],
+        "1047449": [
+          {
+            "meet_id": 4358,
+            "date": "2020-01-18",
+            "age_category": "Open Women's",
+            "weight_class": "87kg",
+            "lifter_name": "Catherine Brown",
+            "lifter_id": 28191,
+            "membershipNumbers": [
+              {
+                "athleteName": "Catherine Brown",
+                "membershipNumber": "1047449",
+                "fullText": "13  -  118  Catherine Brown  F  26  Three Ships Strength  1047449  81.4  2020-01-18  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMS0xOCIsIndlaWdodF9jbGFzcyI6OTl9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

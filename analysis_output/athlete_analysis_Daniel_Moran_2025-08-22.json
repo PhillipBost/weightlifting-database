@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T09:04:43.733Z",
+  "athleteName": "Daniel Moran",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1067428": [
+        {
+          "meet_id": 5620,
+          "date": "2022-12-10",
+          "age_category": "Men's 14-15 Age Group",
+          "weight_class": "73kg",
+          "lifter_name": "Daniel Moran",
+          "lifter_id": 54725,
+          "membershipNumbers": [
+            {
+              "athleteName": "Daniel Moran",
+              "membershipNumber": "1067428",
+              "fullText": "5  -  70  Daniel Moran  M  14  NORTHFIELD WLC  1067428  69.5  2022-12-10  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMi0xMCIsIndlaWdodF9jbGFzcyI6Mjd9"
+        }
+      ],
+      "1075016": [
+        {
+          "meet_id": 6232,
+          "date": "2024-02-10",
+          "age_category": "Men's 16-17 Age Group",
+          "weight_class": "73kg",
+          "lifter_name": "Daniel Moran",
+          "lifter_id": 54725,
+          "membershipNumbers": [
+            {
+              "athleteName": "Daniel Moran",
+              "membershipNumber": "1075016",
+              "fullText": "5  -  133  Daniel Moran  M  16  NORTHFIELD WLC  1075016  73  2024-02-10  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMi0xMCIsIndlaWdodF9jbGFzcyI6NX0="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Daniel Moran",
+    "splits": [
+      {
+        "newAthleteName": "Daniel Moran (Person 1)",
+        "membershipNumber": "1067428",
+        "competitionCount": 1,
+        "competitions": [
+          5620
+        ]
+      },
+      {
+        "newAthleteName": "Daniel Moran (Person 2)",
+        "membershipNumber": "1075016",
+        "competitionCount": 1,
+        "competitions": [
+          6232
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Daniel Moran",
+    "competitions": [
+      {
+        "meet_id": 5620,
+        "date": "2022-12-10",
+        "age_category": "Men's 14-15 Age Group",
+        "weight_class": "73kg",
+        "lifter_name": "Daniel Moran",
+        "lifter_id": 54725,
+        "membershipNumbers": [
+          {
+            "athleteName": "Daniel Moran",
+            "membershipNumber": "1067428",
+            "fullText": "5  -  70  Daniel Moran  M  14  NORTHFIELD WLC  1067428  69.5  2022-12-10  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMi0xMCIsIndlaWdodF9jbGFzcyI6Mjd9"
+      },
+      {
+        "meet_id": 6232,
+        "date": "2024-02-10",
+        "age_category": "Men's 16-17 Age Group",
+        "weight_class": "73kg",
+        "lifter_name": "Daniel Moran",
+        "lifter_id": 54725,
+        "membershipNumbers": [
+          {
+            "athleteName": "Daniel Moran",
+            "membershipNumber": "1075016",
+            "fullText": "5  -  133  Daniel Moran  M  16  NORTHFIELD WLC  1075016  73  2024-02-10  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMi0xMCIsIndlaWdodF9jbGFzcyI6NX0="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1067428": [
+          {
+            "meet_id": 5620,
+            "date": "2022-12-10",
+            "age_category": "Men's 14-15 Age Group",
+            "weight_class": "73kg",
+            "lifter_name": "Daniel Moran",
+            "lifter_id": 54725,
+            "membershipNumbers": [
+              {
+                "athleteName": "Daniel Moran",
+                "membershipNumber": "1067428",
+                "fullText": "5  -  70  Daniel Moran  M  14  NORTHFIELD WLC  1067428  69.5  2022-12-10  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMi0xMCIsIndlaWdodF9jbGFzcyI6Mjd9"
+          }
+        ],
+        "1075016": [
+          {
+            "meet_id": 6232,
+            "date": "2024-02-10",
+            "age_category": "Men's 16-17 Age Group",
+            "weight_class": "73kg",
+            "lifter_name": "Daniel Moran",
+            "lifter_id": 54725,
+            "membershipNumbers": [
+              {
+                "athleteName": "Daniel Moran",
+                "membershipNumber": "1075016",
+                "fullText": "5  -  133  Daniel Moran  M  16  NORTHFIELD WLC  1075016  73  2024-02-10  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMi0xMCIsIndlaWdodF9jbGFzcyI6NX0="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

@@ -1,0 +1,332 @@
+{
+  "timestamp": "2025-08-22T14:29:23.712Z",
+  "athleteName": "Joshua Smith",
+  "totalCompetitions": 6,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "133687": [
+        {
+          "meet_id": 6962,
+          "date": "2025-07-12",
+          "age_category": "Men's Masters (35-39)",
+          "weight_class": "110kg",
+          "lifter_name": "Joshua Smith",
+          "lifter_id": 9693,
+          "membershipNumbers": [
+            {
+              "athleteName": "Joshua Smith",
+              "membershipNumber": "133687",
+              "fullText": "1  -  260  Joshua Smith  M  36  -  133687  109.1  2025-07-12  -  Local  Tennessee-Kentucky"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNy0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNy0xMiIsIndlaWdodF9jbGFzcyI6Njk1fQ=="
+        },
+        {
+          "meet_id": 4657,
+          "date": "2021-09-25",
+          "age_category": "Open Men's",
+          "weight_class": "109kg",
+          "lifter_name": "Joshua Smith",
+          "lifter_id": 9693,
+          "membershipNumbers": [
+            {
+              "athleteName": "Joshua Smith",
+              "membershipNumber": "133687",
+              "fullText": "2  -  265  Joshua Smith  M  32  -  133687  104.6  2021-09-25  -  Local  Tennessee-Kentucky"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wOS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wOS0yNSIsIndlaWdodF9jbGFzcyI6ODl9"
+        }
+      ],
+      "198034": [
+        {
+          "meet_id": 1501,
+          "date": "2014-11-02",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Joshua Smith",
+          "lifter_id": 9693,
+          "membershipNumbers": [
+            {
+              "athleteName": "Joshua Smith",
+              "membershipNumber": "198034",
+              "fullText": "18  -  210  Joshua Smith  M  31  CROSSFIT MOHAWK VALLEY  198034  99.8  2014-11-02  -  Local  New York"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMS0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMS0wMiIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        },
+        {
+          "meet_id": 37,
+          "date": "2015-07-12",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Joshua Smith",
+          "lifter_id": 9693,
+          "membershipNumbers": [
+            {
+              "athleteName": "Joshua Smith",
+              "membershipNumber": "198034",
+              "fullText": "5  -  220  Joshua Smith  M  32  CROSSFIT MOHAWK VALLEY  198034  96.16  2015-07-12  -  Local  New York"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNy0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNy0xMiIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 2614,
+        "date": "2017-06-04",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Joshua Smith",
+        "lifter_id": 9693,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 21,
+        "date": "2015-04-25",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Joshua Smith",
+        "lifter_id": 9693,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0yNSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Joshua Smith",
+    "splits": [
+      {
+        "newAthleteName": "Joshua Smith (Person 1)",
+        "membershipNumber": "133687",
+        "competitionCount": 2,
+        "competitions": [
+          6962,
+          4657
+        ]
+      },
+      {
+        "newAthleteName": "Joshua Smith (Person 2)",
+        "membershipNumber": "198034",
+        "competitionCount": 2,
+        "competitions": [
+          1501,
+          37
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 2614,
+        "date": "2017-06-04",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Joshua Smith",
+        "lifter_id": 9693,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 21,
+        "date": "2015-04-25",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Joshua Smith",
+        "lifter_id": 9693,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0yNSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Joshua Smith",
+    "competitions": [
+      {
+        "meet_id": 6962,
+        "date": "2025-07-12",
+        "age_category": "Men's Masters (35-39)",
+        "weight_class": "110kg",
+        "lifter_name": "Joshua Smith",
+        "lifter_id": 9693,
+        "membershipNumbers": [
+          {
+            "athleteName": "Joshua Smith",
+            "membershipNumber": "133687",
+            "fullText": "1  -  260  Joshua Smith  M  36  -  133687  109.1  2025-07-12  -  Local  Tennessee-Kentucky"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNy0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNy0xMiIsIndlaWdodF9jbGFzcyI6Njk1fQ=="
+      },
+      {
+        "meet_id": 2614,
+        "date": "2017-06-04",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Joshua Smith",
+        "lifter_id": 9693,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 4657,
+        "date": "2021-09-25",
+        "age_category": "Open Men's",
+        "weight_class": "109kg",
+        "lifter_name": "Joshua Smith",
+        "lifter_id": 9693,
+        "membershipNumbers": [
+          {
+            "athleteName": "Joshua Smith",
+            "membershipNumber": "133687",
+            "fullText": "2  -  265  Joshua Smith  M  32  -  133687  104.6  2021-09-25  -  Local  Tennessee-Kentucky"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wOS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wOS0yNSIsIndlaWdodF9jbGFzcyI6ODl9"
+      },
+      {
+        "meet_id": 1501,
+        "date": "2014-11-02",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Joshua Smith",
+        "lifter_id": 9693,
+        "membershipNumbers": [
+          {
+            "athleteName": "Joshua Smith",
+            "membershipNumber": "198034",
+            "fullText": "18  -  210  Joshua Smith  M  31  CROSSFIT MOHAWK VALLEY  198034  99.8  2014-11-02  -  Local  New York"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMS0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMS0wMiIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 21,
+        "date": "2015-04-25",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Joshua Smith",
+        "lifter_id": 9693,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0yNSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 37,
+        "date": "2015-07-12",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Joshua Smith",
+        "lifter_id": 9693,
+        "membershipNumbers": [
+          {
+            "athleteName": "Joshua Smith",
+            "membershipNumber": "198034",
+            "fullText": "5  -  220  Joshua Smith  M  32  CROSSFIT MOHAWK VALLEY  198034  96.16  2015-07-12  -  Local  New York"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNy0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNy0xMiIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "133687": [
+          {
+            "meet_id": 6962,
+            "date": "2025-07-12",
+            "age_category": "Men's Masters (35-39)",
+            "weight_class": "110kg",
+            "lifter_name": "Joshua Smith",
+            "lifter_id": 9693,
+            "membershipNumbers": [
+              {
+                "athleteName": "Joshua Smith",
+                "membershipNumber": "133687",
+                "fullText": "1  -  260  Joshua Smith  M  36  -  133687  109.1  2025-07-12  -  Local  Tennessee-Kentucky"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNy0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNy0xMiIsIndlaWdodF9jbGFzcyI6Njk1fQ=="
+          },
+          {
+            "meet_id": 4657,
+            "date": "2021-09-25",
+            "age_category": "Open Men's",
+            "weight_class": "109kg",
+            "lifter_name": "Joshua Smith",
+            "lifter_id": 9693,
+            "membershipNumbers": [
+              {
+                "athleteName": "Joshua Smith",
+                "membershipNumber": "133687",
+                "fullText": "2  -  265  Joshua Smith  M  32  -  133687  104.6  2021-09-25  -  Local  Tennessee-Kentucky"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wOS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wOS0yNSIsIndlaWdodF9jbGFzcyI6ODl9"
+          }
+        ],
+        "198034": [
+          {
+            "meet_id": 1501,
+            "date": "2014-11-02",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Joshua Smith",
+            "lifter_id": 9693,
+            "membershipNumbers": [
+              {
+                "athleteName": "Joshua Smith",
+                "membershipNumber": "198034",
+                "fullText": "18  -  210  Joshua Smith  M  31  CROSSFIT MOHAWK VALLEY  198034  99.8  2014-11-02  -  Local  New York"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMS0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMS0wMiIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          },
+          {
+            "meet_id": 37,
+            "date": "2015-07-12",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Joshua Smith",
+            "lifter_id": 9693,
+            "membershipNumbers": [
+              {
+                "athleteName": "Joshua Smith",
+                "membershipNumber": "198034",
+                "fullText": "5  -  220  Joshua Smith  M  32  CROSSFIT MOHAWK VALLEY  198034  96.16  2015-07-12  -  Local  New York"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNy0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNy0xMiIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 2614,
+          "date": "2017-06-04",
+          "age_category": "Open Men's",
+          "weight_class": "+105 kg",
+          "lifter_name": "Joshua Smith",
+          "lifter_id": 9693,
+          "membershipNumbers": [],
+          "error": "No division code found for: \"Open Men's +105 kg\""
+        },
+        {
+          "meet_id": 21,
+          "date": "2015-04-25",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Joshua Smith",
+          "lifter_id": 9693,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0yNSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

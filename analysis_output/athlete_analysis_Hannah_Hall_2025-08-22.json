@@ -1,0 +1,309 @@
+{
+  "timestamp": "2025-08-22T13:41:42.038Z",
+  "athleteName": "Hannah Hall",
+  "totalCompetitions": 5,
+  "analysis": {
+    "distinctAthletes": 3,
+    "membershipGroups": {
+      "1028080": [
+        {
+          "meet_id": 3146,
+          "date": "2018-03-17",
+          "age_category": "Open Women's",
+          "weight_class": "90 kg",
+          "lifter_name": "Hannah Hall",
+          "lifter_id": 35867,
+          "membershipNumbers": [
+            {
+              "athleteName": "Hannah Hall",
+              "membershipNumber": "1028080",
+              "fullText": "14  -  130  Hannah Hall  F  25  Lead to Platinum Barbell Club  1028080  87.2  2018-03-17  -  Local  Mountain North"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMy0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMy0xNyIsIndlaWdodF9jbGFzcyI6MzY5fQ=="
+        }
+      ],
+      "1028819": [
+        {
+          "meet_id": 5411,
+          "date": "2022-06-04",
+          "age_category": "Open Women's",
+          "weight_class": "87kg",
+          "lifter_name": "Hannah Hall",
+          "lifter_id": 35867,
+          "membershipNumbers": [
+            {
+              "athleteName": "Hannah Hall",
+              "membershipNumber": "1028819",
+              "fullText": "7  -  118  Hannah Hall  F  31  Risen Weightlifting Club  1028819  82.5  2022-06-04  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNi0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNi0wNCIsIndlaWdodF9jbGFzcyI6OTl9"
+        },
+        {
+          "meet_id": 4590,
+          "date": "2021-08-13",
+          "age_category": "Open Women's",
+          "weight_class": "81kg",
+          "lifter_name": "Hannah Hall",
+          "lifter_id": 35867,
+          "membershipNumbers": [
+            {
+              "athleteName": "Hannah Hall",
+              "membershipNumber": "1028819",
+              "fullText": "3  -  108  Hannah Hall  F  30  Risen Weightlifting Club  1028819  76.25  2021-08-13  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wOC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wOC0xMyIsIndlaWdodF9jbGFzcyI6OTh9"
+        }
+      ],
+      "1032989": [
+        {
+          "meet_id": 3868,
+          "date": "2019-04-07",
+          "age_category": "Open Women's",
+          "weight_class": "76kg",
+          "lifter_name": "Hannah Hall",
+          "lifter_id": 35867,
+          "membershipNumbers": [
+            {
+              "athleteName": "Hannah Hall",
+              "membershipNumber": "1032989",
+              "fullText": "8  -  171  Hannah Hall  F  18  PRECISION BARBELL  1032989  74.5  2019-04-07  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0wNyIsIndlaWdodF9jbGFzcyI6OTd9"
+        },
+        {
+          "meet_id": 4314,
+          "date": "2020-02-09",
+          "age_category": "Open Women's",
+          "weight_class": "76kg",
+          "lifter_name": "Hannah Hall",
+          "lifter_id": 35867,
+          "membershipNumbers": [
+            {
+              "athleteName": "Hannah Hall",
+              "membershipNumber": "1032989",
+              "fullText": "4  -  190  Hannah Hall  F  19  PRECISION BARBELL  1032989  75.62  2020-02-09  -  National  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMi0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMi0wOSIsIndlaWdodF9jbGFzcyI6OTd9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Hannah Hall",
+    "splits": [
+      {
+        "newAthleteName": "Hannah Hall (Person 1)",
+        "membershipNumber": "1028080",
+        "competitionCount": 1,
+        "competitions": [
+          3146
+        ]
+      },
+      {
+        "newAthleteName": "Hannah Hall (Person 2)",
+        "membershipNumber": "1028819",
+        "competitionCount": 2,
+        "competitions": [
+          5411,
+          4590
+        ]
+      },
+      {
+        "newAthleteName": "Hannah Hall (Person 3)",
+        "membershipNumber": "1032989",
+        "competitionCount": 2,
+        "competitions": [
+          3868,
+          4314
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Hannah Hall",
+    "competitions": [
+      {
+        "meet_id": 5411,
+        "date": "2022-06-04",
+        "age_category": "Open Women's",
+        "weight_class": "87kg",
+        "lifter_name": "Hannah Hall",
+        "lifter_id": 35867,
+        "membershipNumbers": [
+          {
+            "athleteName": "Hannah Hall",
+            "membershipNumber": "1028819",
+            "fullText": "7  -  118  Hannah Hall  F  31  Risen Weightlifting Club  1028819  82.5  2022-06-04  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNi0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNi0wNCIsIndlaWdodF9jbGFzcyI6OTl9"
+      },
+      {
+        "meet_id": 3146,
+        "date": "2018-03-17",
+        "age_category": "Open Women's",
+        "weight_class": "90 kg",
+        "lifter_name": "Hannah Hall",
+        "lifter_id": 35867,
+        "membershipNumbers": [
+          {
+            "athleteName": "Hannah Hall",
+            "membershipNumber": "1028080",
+            "fullText": "14  -  130  Hannah Hall  F  25  Lead to Platinum Barbell Club  1028080  87.2  2018-03-17  -  Local  Mountain North"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMy0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMy0xNyIsIndlaWdodF9jbGFzcyI6MzY5fQ=="
+      },
+      {
+        "meet_id": 3868,
+        "date": "2019-04-07",
+        "age_category": "Open Women's",
+        "weight_class": "76kg",
+        "lifter_name": "Hannah Hall",
+        "lifter_id": 35867,
+        "membershipNumbers": [
+          {
+            "athleteName": "Hannah Hall",
+            "membershipNumber": "1032989",
+            "fullText": "8  -  171  Hannah Hall  F  18  PRECISION BARBELL  1032989  74.5  2019-04-07  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0wNyIsIndlaWdodF9jbGFzcyI6OTd9"
+      },
+      {
+        "meet_id": 4314,
+        "date": "2020-02-09",
+        "age_category": "Open Women's",
+        "weight_class": "76kg",
+        "lifter_name": "Hannah Hall",
+        "lifter_id": 35867,
+        "membershipNumbers": [
+          {
+            "athleteName": "Hannah Hall",
+            "membershipNumber": "1032989",
+            "fullText": "4  -  190  Hannah Hall  F  19  PRECISION BARBELL  1032989  75.62  2020-02-09  -  National  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMi0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMi0wOSIsIndlaWdodF9jbGFzcyI6OTd9"
+      },
+      {
+        "meet_id": 4590,
+        "date": "2021-08-13",
+        "age_category": "Open Women's",
+        "weight_class": "81kg",
+        "lifter_name": "Hannah Hall",
+        "lifter_id": 35867,
+        "membershipNumbers": [
+          {
+            "athleteName": "Hannah Hall",
+            "membershipNumber": "1028819",
+            "fullText": "3  -  108  Hannah Hall  F  30  Risen Weightlifting Club  1028819  76.25  2021-08-13  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wOC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wOC0xMyIsIndlaWdodF9jbGFzcyI6OTh9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 3,
+      "membershipGroups": {
+        "1028080": [
+          {
+            "meet_id": 3146,
+            "date": "2018-03-17",
+            "age_category": "Open Women's",
+            "weight_class": "90 kg",
+            "lifter_name": "Hannah Hall",
+            "lifter_id": 35867,
+            "membershipNumbers": [
+              {
+                "athleteName": "Hannah Hall",
+                "membershipNumber": "1028080",
+                "fullText": "14  -  130  Hannah Hall  F  25  Lead to Platinum Barbell Club  1028080  87.2  2018-03-17  -  Local  Mountain North"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMy0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMy0xNyIsIndlaWdodF9jbGFzcyI6MzY5fQ=="
+          }
+        ],
+        "1028819": [
+          {
+            "meet_id": 5411,
+            "date": "2022-06-04",
+            "age_category": "Open Women's",
+            "weight_class": "87kg",
+            "lifter_name": "Hannah Hall",
+            "lifter_id": 35867,
+            "membershipNumbers": [
+              {
+                "athleteName": "Hannah Hall",
+                "membershipNumber": "1028819",
+                "fullText": "7  -  118  Hannah Hall  F  31  Risen Weightlifting Club  1028819  82.5  2022-06-04  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNi0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNi0wNCIsIndlaWdodF9jbGFzcyI6OTl9"
+          },
+          {
+            "meet_id": 4590,
+            "date": "2021-08-13",
+            "age_category": "Open Women's",
+            "weight_class": "81kg",
+            "lifter_name": "Hannah Hall",
+            "lifter_id": 35867,
+            "membershipNumbers": [
+              {
+                "athleteName": "Hannah Hall",
+                "membershipNumber": "1028819",
+                "fullText": "3  -  108  Hannah Hall  F  30  Risen Weightlifting Club  1028819  76.25  2021-08-13  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wOC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wOC0xMyIsIndlaWdodF9jbGFzcyI6OTh9"
+          }
+        ],
+        "1032989": [
+          {
+            "meet_id": 3868,
+            "date": "2019-04-07",
+            "age_category": "Open Women's",
+            "weight_class": "76kg",
+            "lifter_name": "Hannah Hall",
+            "lifter_id": 35867,
+            "membershipNumbers": [
+              {
+                "athleteName": "Hannah Hall",
+                "membershipNumber": "1032989",
+                "fullText": "8  -  171  Hannah Hall  F  18  PRECISION BARBELL  1032989  74.5  2019-04-07  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0wNyIsIndlaWdodF9jbGFzcyI6OTd9"
+          },
+          {
+            "meet_id": 4314,
+            "date": "2020-02-09",
+            "age_category": "Open Women's",
+            "weight_class": "76kg",
+            "lifter_name": "Hannah Hall",
+            "lifter_id": 35867,
+            "membershipNumbers": [
+              {
+                "athleteName": "Hannah Hall",
+                "membershipNumber": "1032989",
+                "fullText": "4  -  190  Hannah Hall  F  19  PRECISION BARBELL  1032989  75.62  2020-02-09  -  National  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMi0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMi0wOSIsIndlaWdodF9jbGFzcyI6OTd9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T19:30:42.103Z",
+  "athleteName": "Meredith Brown",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1058963": [
+        {
+          "meet_id": 5053,
+          "date": "2021-11-25",
+          "age_category": "Open Women's",
+          "weight_class": "45kg",
+          "lifter_name": "Meredith Brown",
+          "lifter_id": 50200,
+          "membershipNumbers": [
+            {
+              "athleteName": "Meredith Brown",
+              "membershipNumber": "1058963",
+              "fullText": "1  -  45  Meredith Brown  F  21  Austin Barbell  1058963  44.95  2021-11-25  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMS0yNSIsIndlaWdodF9jbGFzcyI6OTF9"
+        }
+      ],
+      "1075511": [
+        {
+          "meet_id": 6542,
+          "date": "2024-09-21",
+          "age_category": "Women's Masters (35-39)",
+          "weight_class": "+87kg",
+          "lifter_name": "Meredith Brown",
+          "lifter_id": 50200,
+          "membershipNumbers": [
+            {
+              "athleteName": "Meredith Brown",
+              "membershipNumber": "1075511",
+              "fullText": "3  -  94  Meredith Brown  F  39  Lebanon Barbell Club  1075511  103.1  2024-09-21  -  Local  Missouri Valley"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOS0yMSIsIndlaWdodF9jbGFzcyI6MTIwfQ=="
+        },
+        {
+          "meet_id": 6310,
+          "date": "2024-04-13",
+          "age_category": "Women's Masters (35-39)",
+          "weight_class": "+87kg",
+          "lifter_name": "Meredith Brown",
+          "lifter_id": 50200,
+          "membershipNumbers": [
+            {
+              "athleteName": "Meredith Brown",
+              "membershipNumber": "1075511",
+              "fullText": "3  -  91  Meredith Brown  F  39  Lebanon Barbell Club  1075511  104.2  2024-04-13  -  Local  Missouri Valley"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNC0xMyIsIndlaWdodF9jbGFzcyI6MTIwfQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Meredith Brown",
+    "splits": [
+      {
+        "newAthleteName": "Meredith Brown (Person 1)",
+        "membershipNumber": "1058963",
+        "competitionCount": 1,
+        "competitions": [
+          5053
+        ]
+      },
+      {
+        "newAthleteName": "Meredith Brown (Person 2)",
+        "membershipNumber": "1075511",
+        "competitionCount": 2,
+        "competitions": [
+          6542,
+          6310
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Meredith Brown",
+    "competitions": [
+      {
+        "meet_id": 6542,
+        "date": "2024-09-21",
+        "age_category": "Women's Masters (35-39)",
+        "weight_class": "+87kg",
+        "lifter_name": "Meredith Brown",
+        "lifter_id": 50200,
+        "membershipNumbers": [
+          {
+            "athleteName": "Meredith Brown",
+            "membershipNumber": "1075511",
+            "fullText": "3  -  94  Meredith Brown  F  39  Lebanon Barbell Club  1075511  103.1  2024-09-21  -  Local  Missouri Valley"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOS0yMSIsIndlaWdodF9jbGFzcyI6MTIwfQ=="
+      },
+      {
+        "meet_id": 5053,
+        "date": "2021-11-25",
+        "age_category": "Open Women's",
+        "weight_class": "45kg",
+        "lifter_name": "Meredith Brown",
+        "lifter_id": 50200,
+        "membershipNumbers": [
+          {
+            "athleteName": "Meredith Brown",
+            "membershipNumber": "1058963",
+            "fullText": "1  -  45  Meredith Brown  F  21  Austin Barbell  1058963  44.95  2021-11-25  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMS0yNSIsIndlaWdodF9jbGFzcyI6OTF9"
+      },
+      {
+        "meet_id": 6310,
+        "date": "2024-04-13",
+        "age_category": "Women's Masters (35-39)",
+        "weight_class": "+87kg",
+        "lifter_name": "Meredith Brown",
+        "lifter_id": 50200,
+        "membershipNumbers": [
+          {
+            "athleteName": "Meredith Brown",
+            "membershipNumber": "1075511",
+            "fullText": "3  -  91  Meredith Brown  F  39  Lebanon Barbell Club  1075511  104.2  2024-04-13  -  Local  Missouri Valley"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNC0xMyIsIndlaWdodF9jbGFzcyI6MTIwfQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1058963": [
+          {
+            "meet_id": 5053,
+            "date": "2021-11-25",
+            "age_category": "Open Women's",
+            "weight_class": "45kg",
+            "lifter_name": "Meredith Brown",
+            "lifter_id": 50200,
+            "membershipNumbers": [
+              {
+                "athleteName": "Meredith Brown",
+                "membershipNumber": "1058963",
+                "fullText": "1  -  45  Meredith Brown  F  21  Austin Barbell  1058963  44.95  2021-11-25  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMS0yNSIsIndlaWdodF9jbGFzcyI6OTF9"
+          }
+        ],
+        "1075511": [
+          {
+            "meet_id": 6542,
+            "date": "2024-09-21",
+            "age_category": "Women's Masters (35-39)",
+            "weight_class": "+87kg",
+            "lifter_name": "Meredith Brown",
+            "lifter_id": 50200,
+            "membershipNumbers": [
+              {
+                "athleteName": "Meredith Brown",
+                "membershipNumber": "1075511",
+                "fullText": "3  -  94  Meredith Brown  F  39  Lebanon Barbell Club  1075511  103.1  2024-09-21  -  Local  Missouri Valley"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOS0yMSIsIndlaWdodF9jbGFzcyI6MTIwfQ=="
+          },
+          {
+            "meet_id": 6310,
+            "date": "2024-04-13",
+            "age_category": "Women's Masters (35-39)",
+            "weight_class": "+87kg",
+            "lifter_name": "Meredith Brown",
+            "lifter_id": 50200,
+            "membershipNumbers": [
+              {
+                "athleteName": "Meredith Brown",
+                "membershipNumber": "1075511",
+                "fullText": "3  -  91  Meredith Brown  F  39  Lebanon Barbell Club  1075511  104.2  2024-04-13  -  Local  Missouri Valley"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNC0xMyIsIndlaWdodF9jbGFzcyI6MTIwfQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

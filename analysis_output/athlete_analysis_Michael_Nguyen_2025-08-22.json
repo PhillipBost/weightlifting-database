@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T08:12:59.050Z",
+  "athleteName": "Michael Nguyen",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1027342": [
+        {
+          "meet_id": 3365,
+          "date": "2018-05-19",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Michael Nguyen",
+          "lifter_id": 36049,
+          "membershipNumbers": [
+            {
+              "athleteName": "Michael Nguyen",
+              "membershipNumber": "1027342",
+              "fullText": "18  -  222  Michael Nguyen  M  27  ALLSOUTH Barbell  1027342  91.4  2018-05-19  -  Local  Georgia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNS0xOSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        },
+        {
+          "meet_id": 3171,
+          "date": "2018-02-24",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Michael Nguyen",
+          "lifter_id": 36049,
+          "membershipNumbers": [
+            {
+              "athleteName": "Michael Nguyen",
+              "membershipNumber": "1027342",
+              "fullText": "13  -  206  Michael Nguyen  M  27  ALLSOUTH Barbell  1027342  92  2018-02-24  -  Local  Georgia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMi0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMi0yNCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ],
+      "1029168": [
+        {
+          "meet_id": 3216,
+          "date": "2018-05-19",
+          "age_category": "Open Men's",
+          "weight_class": "69 kg",
+          "lifter_name": "Michael Nguyen",
+          "lifter_id": 36049,
+          "membershipNumbers": [
+            {
+              "athleteName": "Michael Nguyen",
+              "membershipNumber": "1029168",
+              "fullText": "17  -  117  Michael Nguyen  M  20  -  1029168  68.16  2018-05-19  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNS0xOSIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Michael Nguyen",
+    "splits": [
+      {
+        "newAthleteName": "Michael Nguyen (Person 1)",
+        "membershipNumber": "1027342",
+        "competitionCount": 2,
+        "competitions": [
+          3365,
+          3171
+        ]
+      },
+      {
+        "newAthleteName": "Michael Nguyen (Person 2)",
+        "membershipNumber": "1029168",
+        "competitionCount": 1,
+        "competitions": [
+          3216
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Michael Nguyen",
+    "competitions": [
+      {
+        "meet_id": 3365,
+        "date": "2018-05-19",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Michael Nguyen",
+        "lifter_id": 36049,
+        "membershipNumbers": [
+          {
+            "athleteName": "Michael Nguyen",
+            "membershipNumber": "1027342",
+            "fullText": "18  -  222  Michael Nguyen  M  27  ALLSOUTH Barbell  1027342  91.4  2018-05-19  -  Local  Georgia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNS0xOSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 3171,
+        "date": "2018-02-24",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Michael Nguyen",
+        "lifter_id": 36049,
+        "membershipNumbers": [
+          {
+            "athleteName": "Michael Nguyen",
+            "membershipNumber": "1027342",
+            "fullText": "13  -  206  Michael Nguyen  M  27  ALLSOUTH Barbell  1027342  92  2018-02-24  -  Local  Georgia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMi0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMi0yNCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 3216,
+        "date": "2018-05-19",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "Michael Nguyen",
+        "lifter_id": 36049,
+        "membershipNumbers": [
+          {
+            "athleteName": "Michael Nguyen",
+            "membershipNumber": "1029168",
+            "fullText": "17  -  117  Michael Nguyen  M  20  -  1029168  68.16  2018-05-19  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNS0xOSIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1027342": [
+          {
+            "meet_id": 3365,
+            "date": "2018-05-19",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Michael Nguyen",
+            "lifter_id": 36049,
+            "membershipNumbers": [
+              {
+                "athleteName": "Michael Nguyen",
+                "membershipNumber": "1027342",
+                "fullText": "18  -  222  Michael Nguyen  M  27  ALLSOUTH Barbell  1027342  91.4  2018-05-19  -  Local  Georgia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNS0xOSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          },
+          {
+            "meet_id": 3171,
+            "date": "2018-02-24",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Michael Nguyen",
+            "lifter_id": 36049,
+            "membershipNumbers": [
+              {
+                "athleteName": "Michael Nguyen",
+                "membershipNumber": "1027342",
+                "fullText": "13  -  206  Michael Nguyen  M  27  ALLSOUTH Barbell  1027342  92  2018-02-24  -  Local  Georgia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMi0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMi0yNCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          }
+        ],
+        "1029168": [
+          {
+            "meet_id": 3216,
+            "date": "2018-05-19",
+            "age_category": "Open Men's",
+            "weight_class": "69 kg",
+            "lifter_name": "Michael Nguyen",
+            "lifter_id": 36049,
+            "membershipNumbers": [
+              {
+                "athleteName": "Michael Nguyen",
+                "membershipNumber": "1029168",
+                "fullText": "17  -  117  Michael Nguyen  M  20  -  1029168  68.16  2018-05-19  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNS0xOSIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

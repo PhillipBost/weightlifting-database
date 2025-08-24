@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T05:22:26.823Z",
+  "athleteName": "Jose Salinas",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "208384": [
+        {
+          "meet_id": 126,
+          "date": "2015-04-04",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Jose Salinas",
+          "lifter_id": 7558,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jose Salinas",
+              "membershipNumber": "208384",
+              "fullText": "26  -  155  Jose Salinas  M  33  -  208384  70.75  2015-04-04  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0wNCIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        }
+      ],
+      "1060119": [
+        {
+          "meet_id": 5143,
+          "date": "2022-02-21",
+          "age_category": "Open Men's",
+          "weight_class": "96kg",
+          "lifter_name": "Jose Salinas",
+          "lifter_id": 7558,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jose Salinas",
+              "membershipNumber": "1060119",
+              "fullText": "1  -  174  Jose Salinas  M  22  Bexar Barbell  1060119  96  2022-02-21  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMi0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMi0yMSIsIndlaWdodF9jbGFzcyI6ODd9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Jose Salinas",
+    "splits": [
+      {
+        "newAthleteName": "Jose Salinas (Person 1)",
+        "membershipNumber": "208384",
+        "competitionCount": 1,
+        "competitions": [
+          126
+        ]
+      },
+      {
+        "newAthleteName": "Jose Salinas (Person 2)",
+        "membershipNumber": "1060119",
+        "competitionCount": 1,
+        "competitions": [
+          5143
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Jose Salinas",
+    "competitions": [
+      {
+        "meet_id": 126,
+        "date": "2015-04-04",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Jose Salinas",
+        "lifter_id": 7558,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jose Salinas",
+            "membershipNumber": "208384",
+            "fullText": "26  -  155  Jose Salinas  M  33  -  208384  70.75  2015-04-04  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0wNCIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 5143,
+        "date": "2022-02-21",
+        "age_category": "Open Men's",
+        "weight_class": "96kg",
+        "lifter_name": "Jose Salinas",
+        "lifter_id": 7558,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jose Salinas",
+            "membershipNumber": "1060119",
+            "fullText": "1  -  174  Jose Salinas  M  22  Bexar Barbell  1060119  96  2022-02-21  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMi0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMi0yMSIsIndlaWdodF9jbGFzcyI6ODd9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "208384": [
+          {
+            "meet_id": 126,
+            "date": "2015-04-04",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Jose Salinas",
+            "lifter_id": 7558,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jose Salinas",
+                "membershipNumber": "208384",
+                "fullText": "26  -  155  Jose Salinas  M  33  -  208384  70.75  2015-04-04  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0wNCIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          }
+        ],
+        "1060119": [
+          {
+            "meet_id": 5143,
+            "date": "2022-02-21",
+            "age_category": "Open Men's",
+            "weight_class": "96kg",
+            "lifter_name": "Jose Salinas",
+            "lifter_id": 7558,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jose Salinas",
+                "membershipNumber": "1060119",
+                "fullText": "1  -  174  Jose Salinas  M  22  Bexar Barbell  1060119  96  2022-02-21  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMi0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMi0yMSIsIndlaWdodF9jbGFzcyI6ODd9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

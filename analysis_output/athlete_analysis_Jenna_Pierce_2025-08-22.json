@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-22T07:45:22.746Z",
+  "athleteName": "Jenna Pierce",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1017414": [
+        {
+          "meet_id": 2421,
+          "date": "2017-09-10",
+          "age_category": "Women's 16-17 Age Group",
+          "weight_class": "58 kg",
+          "lifter_name": "Jenna Pierce",
+          "lifter_id": 29402,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jenna Pierce",
+              "membershipNumber": "1017414",
+              "fullText": "2  -  107  Jenna Pierce  F  16  SAYRE PARK WLC  1017414  56.62  2017-09-10  -  National  Michigan"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wOS0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wOS0xMCIsIndlaWdodF9jbGFzcyI6MzMyfQ=="
+        },
+        {
+          "meet_id": 2893,
+          "date": "2018-06-17",
+          "age_category": "Women's 16-17 Age Group",
+          "weight_class": "58 kg",
+          "lifter_name": "Jenna Pierce",
+          "lifter_id": 29402,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jenna Pierce",
+              "membershipNumber": "1017414",
+              "fullText": "23  -  102  Jenna Pierce  F  17  SAYRE PARK WLC  1017414  56.74  2018-06-17  -  National  Michigan"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0xNyIsIndlaWdodF9jbGFzcyI6MzMyfQ=="
+        },
+        {
+          "meet_id": 2530,
+          "date": "2017-03-25",
+          "age_category": "Women's 16-17 Age Group",
+          "weight_class": "58 kg",
+          "lifter_name": "Jenna Pierce",
+          "lifter_id": 29402,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jenna Pierce",
+              "membershipNumber": "1017414",
+              "fullText": "2  -  99  Jenna Pierce  F  16  SAYRE PARK WLC  1017414  56.2  2017-03-25  -  Local  Michigan"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0yNSIsIndlaWdodF9jbGFzcyI6MzMyfQ=="
+        }
+      ],
+      "1072900": [
+        {
+          "meet_id": 6226,
+          "date": "2024-01-27",
+          "age_category": "Women's Masters (40-44)",
+          "weight_class": "+87kg",
+          "lifter_name": "Jenna Pierce",
+          "lifter_id": 29402,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jenna Pierce",
+              "membershipNumber": "1072900",
+              "fullText": "4  -  73  Jenna Pierce  F  40  Muncie Weightlifting Club  1072900  96.2  2024-01-27  -  Local  Indiana"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMS0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMS0yNyIsIndlaWdodF9jbGFzcyI6MTQwfQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Jenna Pierce",
+    "splits": [
+      {
+        "newAthleteName": "Jenna Pierce (Person 1)",
+        "membershipNumber": "1017414",
+        "competitionCount": 3,
+        "competitions": [
+          2421,
+          2893,
+          2530
+        ]
+      },
+      {
+        "newAthleteName": "Jenna Pierce (Person 2)",
+        "membershipNumber": "1072900",
+        "competitionCount": 1,
+        "competitions": [
+          6226
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Jenna Pierce",
+    "competitions": [
+      {
+        "meet_id": 2421,
+        "date": "2017-09-10",
+        "age_category": "Women's 16-17 Age Group",
+        "weight_class": "58 kg",
+        "lifter_name": "Jenna Pierce",
+        "lifter_id": 29402,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jenna Pierce",
+            "membershipNumber": "1017414",
+            "fullText": "2  -  107  Jenna Pierce  F  16  SAYRE PARK WLC  1017414  56.62  2017-09-10  -  National  Michigan"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wOS0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wOS0xMCIsIndlaWdodF9jbGFzcyI6MzMyfQ=="
+      },
+      {
+        "meet_id": 2893,
+        "date": "2018-06-17",
+        "age_category": "Women's 16-17 Age Group",
+        "weight_class": "58 kg",
+        "lifter_name": "Jenna Pierce",
+        "lifter_id": 29402,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jenna Pierce",
+            "membershipNumber": "1017414",
+            "fullText": "23  -  102  Jenna Pierce  F  17  SAYRE PARK WLC  1017414  56.74  2018-06-17  -  National  Michigan"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0xNyIsIndlaWdodF9jbGFzcyI6MzMyfQ=="
+      },
+      {
+        "meet_id": 6226,
+        "date": "2024-01-27",
+        "age_category": "Women's Masters (40-44)",
+        "weight_class": "+87kg",
+        "lifter_name": "Jenna Pierce",
+        "lifter_id": 29402,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jenna Pierce",
+            "membershipNumber": "1072900",
+            "fullText": "4  -  73  Jenna Pierce  F  40  Muncie Weightlifting Club  1072900  96.2  2024-01-27  -  Local  Indiana"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMS0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMS0yNyIsIndlaWdodF9jbGFzcyI6MTQwfQ=="
+      },
+      {
+        "meet_id": 2530,
+        "date": "2017-03-25",
+        "age_category": "Women's 16-17 Age Group",
+        "weight_class": "58 kg",
+        "lifter_name": "Jenna Pierce",
+        "lifter_id": 29402,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jenna Pierce",
+            "membershipNumber": "1017414",
+            "fullText": "2  -  99  Jenna Pierce  F  16  SAYRE PARK WLC  1017414  56.2  2017-03-25  -  Local  Michigan"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0yNSIsIndlaWdodF9jbGFzcyI6MzMyfQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1017414": [
+          {
+            "meet_id": 2421,
+            "date": "2017-09-10",
+            "age_category": "Women's 16-17 Age Group",
+            "weight_class": "58 kg",
+            "lifter_name": "Jenna Pierce",
+            "lifter_id": 29402,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jenna Pierce",
+                "membershipNumber": "1017414",
+                "fullText": "2  -  107  Jenna Pierce  F  16  SAYRE PARK WLC  1017414  56.62  2017-09-10  -  National  Michigan"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wOS0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wOS0xMCIsIndlaWdodF9jbGFzcyI6MzMyfQ=="
+          },
+          {
+            "meet_id": 2893,
+            "date": "2018-06-17",
+            "age_category": "Women's 16-17 Age Group",
+            "weight_class": "58 kg",
+            "lifter_name": "Jenna Pierce",
+            "lifter_id": 29402,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jenna Pierce",
+                "membershipNumber": "1017414",
+                "fullText": "23  -  102  Jenna Pierce  F  17  SAYRE PARK WLC  1017414  56.74  2018-06-17  -  National  Michigan"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0xNyIsIndlaWdodF9jbGFzcyI6MzMyfQ=="
+          },
+          {
+            "meet_id": 2530,
+            "date": "2017-03-25",
+            "age_category": "Women's 16-17 Age Group",
+            "weight_class": "58 kg",
+            "lifter_name": "Jenna Pierce",
+            "lifter_id": 29402,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jenna Pierce",
+                "membershipNumber": "1017414",
+                "fullText": "2  -  99  Jenna Pierce  F  16  SAYRE PARK WLC  1017414  56.2  2017-03-25  -  Local  Michigan"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0yNSIsIndlaWdodF9jbGFzcyI6MzMyfQ=="
+          }
+        ],
+        "1072900": [
+          {
+            "meet_id": 6226,
+            "date": "2024-01-27",
+            "age_category": "Women's Masters (40-44)",
+            "weight_class": "+87kg",
+            "lifter_name": "Jenna Pierce",
+            "lifter_id": 29402,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jenna Pierce",
+                "membershipNumber": "1072900",
+                "fullText": "4  -  73  Jenna Pierce  F  40  Muncie Weightlifting Club  1072900  96.2  2024-01-27  -  Local  Indiana"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMS0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMS0yNyIsIndlaWdodF9jbGFzcyI6MTQwfQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

@@ -1,0 +1,294 @@
+{
+  "timestamp": "2025-08-22T23:34:17.084Z",
+  "athleteName": "Jason Miller",
+  "totalCompetitions": 5,
+  "analysis": {
+    "distinctAthletes": 3,
+    "membershipGroups": {
+      "162083": [
+        {
+          "meet_id": 3491,
+          "date": "2018-08-11",
+          "age_category": "Open Men's",
+          "weight_class": "+109kg",
+          "lifter_name": "Jason Miller",
+          "lifter_id": 421,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jason Miller",
+              "membershipNumber": "162083",
+              "fullText": "11  -  150  Jason Miller  M  41  OCU BARBELL CLUB  162083  129  2018-08-11  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOC0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOC0xMSIsIndlaWdodF9jbGFzcyI6OTB9"
+        }
+      ],
+      "175305": [
+        {
+          "meet_id": 629,
+          "date": "2012-10-14",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Jason Miller",
+          "lifter_id": 421,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jason Miller",
+              "membershipNumber": "175305",
+              "fullText": "3  -  110  Jason Miller  M  37  VAUGHN WEIGHTLIFTING  175305  81.2  2012-10-14  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0xMC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0xMC0xNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ],
+      "1016906": [
+        {
+          "meet_id": 3647,
+          "date": "2018-11-25",
+          "age_category": "Men's 14-15 Age Group",
+          "weight_class": "61kg",
+          "lifter_name": "Jason Miller",
+          "lifter_id": 421,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jason Miller",
+              "membershipNumber": "1016906",
+              "fullText": "1  -  48  Jason Miller  M  14  Central Maryland Gold Weightlifting Club  1016906  58.5  2018-11-25  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMS0yNSIsIndlaWdodF9jbGFzcyI6MjV9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 1741,
+        "date": "2016-03-13",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Jason Miller",
+        "lifter_id": 421,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMy0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMy0xMyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 3349,
+        "date": "2018-05-12",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Jason Miller",
+        "lifter_id": 421,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Jason Miller",
+    "splits": [
+      {
+        "newAthleteName": "Jason Miller (Person 1)",
+        "membershipNumber": "162083",
+        "competitionCount": 1,
+        "competitions": [
+          3491
+        ]
+      },
+      {
+        "newAthleteName": "Jason Miller (Person 2)",
+        "membershipNumber": "175305",
+        "competitionCount": 1,
+        "competitions": [
+          629
+        ]
+      },
+      {
+        "newAthleteName": "Jason Miller (Person 3)",
+        "membershipNumber": "1016906",
+        "competitionCount": 1,
+        "competitions": [
+          3647
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 1741,
+        "date": "2016-03-13",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Jason Miller",
+        "lifter_id": 421,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMy0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMy0xMyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 3349,
+        "date": "2018-05-12",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Jason Miller",
+        "lifter_id": 421,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Jason Miller",
+    "competitions": [
+      {
+        "meet_id": 629,
+        "date": "2012-10-14",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Jason Miller",
+        "lifter_id": 421,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jason Miller",
+            "membershipNumber": "175305",
+            "fullText": "3  -  110  Jason Miller  M  37  VAUGHN WEIGHTLIFTING  175305  81.2  2012-10-14  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0xMC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0xMC0xNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 1741,
+        "date": "2016-03-13",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Jason Miller",
+        "lifter_id": 421,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMy0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMy0xMyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 3491,
+        "date": "2018-08-11",
+        "age_category": "Open Men's",
+        "weight_class": "+109kg",
+        "lifter_name": "Jason Miller",
+        "lifter_id": 421,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jason Miller",
+            "membershipNumber": "162083",
+            "fullText": "11  -  150  Jason Miller  M  41  OCU BARBELL CLUB  162083  129  2018-08-11  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOC0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOC0xMSIsIndlaWdodF9jbGFzcyI6OTB9"
+      },
+      {
+        "meet_id": 3647,
+        "date": "2018-11-25",
+        "age_category": "Men's 14-15 Age Group",
+        "weight_class": "61kg",
+        "lifter_name": "Jason Miller",
+        "lifter_id": 421,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jason Miller",
+            "membershipNumber": "1016906",
+            "fullText": "1  -  48  Jason Miller  M  14  Central Maryland Gold Weightlifting Club  1016906  58.5  2018-11-25  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMS0yNSIsIndlaWdodF9jbGFzcyI6MjV9"
+      },
+      {
+        "meet_id": 3349,
+        "date": "2018-05-12",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Jason Miller",
+        "lifter_id": 421,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 3,
+      "membershipGroups": {
+        "162083": [
+          {
+            "meet_id": 3491,
+            "date": "2018-08-11",
+            "age_category": "Open Men's",
+            "weight_class": "+109kg",
+            "lifter_name": "Jason Miller",
+            "lifter_id": 421,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jason Miller",
+                "membershipNumber": "162083",
+                "fullText": "11  -  150  Jason Miller  M  41  OCU BARBELL CLUB  162083  129  2018-08-11  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOC0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOC0xMSIsIndlaWdodF9jbGFzcyI6OTB9"
+          }
+        ],
+        "175305": [
+          {
+            "meet_id": 629,
+            "date": "2012-10-14",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Jason Miller",
+            "lifter_id": 421,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jason Miller",
+                "membershipNumber": "175305",
+                "fullText": "3  -  110  Jason Miller  M  37  VAUGHN WEIGHTLIFTING  175305  81.2  2012-10-14  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0xMC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0xMC0xNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          }
+        ],
+        "1016906": [
+          {
+            "meet_id": 3647,
+            "date": "2018-11-25",
+            "age_category": "Men's 14-15 Age Group",
+            "weight_class": "61kg",
+            "lifter_name": "Jason Miller",
+            "lifter_id": 421,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jason Miller",
+                "membershipNumber": "1016906",
+                "fullText": "1  -  48  Jason Miller  M  14  Central Maryland Gold Weightlifting Club  1016906  58.5  2018-11-25  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMS0yNSIsIndlaWdodF9jbGFzcyI6MjV9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 1741,
+          "date": "2016-03-13",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Jason Miller",
+          "lifter_id": 421,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMy0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMy0xMyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        },
+        {
+          "meet_id": 3349,
+          "date": "2018-05-12",
+          "age_category": "Open Men's",
+          "weight_class": "+105 kg",
+          "lifter_name": "Jason Miller",
+          "lifter_id": 421,
+          "membershipNumbers": [],
+          "error": "No division code found for: \"Open Men's +105 kg\""
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

@@ -1,0 +1,234 @@
+{
+  "timestamp": "2025-08-22T20:52:43.768Z",
+  "athleteName": "Sean King",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1007211": [
+        {
+          "meet_id": 2143,
+          "date": "2017-05-06",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Sean King",
+          "lifter_id": 21780,
+          "membershipNumbers": [
+            {
+              "athleteName": "Sean King",
+              "membershipNumber": "1007211",
+              "fullText": "24  -  180  Sean King  M  18  -  1007211  102.9  2017-05-06  -  Local  Illinois"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNS0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNS0wNiIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        }
+      ],
+      "1042585": [
+        {
+          "meet_id": 6476,
+          "date": "2024-07-31",
+          "age_category": "Men's 14-15 Age Group",
+          "weight_class": "49kg",
+          "lifter_name": "Sean King",
+          "lifter_id": 21780,
+          "membershipNumbers": [
+            {
+              "athleteName": "Sean King",
+              "membershipNumber": "1042585",
+              "fullText": "1  -  58  Sean King  M  14  HIGH DESERT ATHLETIC CLUB  1042585  48.6  2024-07-31  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNy0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNy0zMSIsIndlaWdodF9jbGFzcyI6MjN9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 1690,
+        "date": "2016-05-21",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Sean King",
+        "lifter_id": 21780,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0yMSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 2843,
+        "date": "2018-04-14",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Sean King",
+        "lifter_id": 21780,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNC0xNCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Sean King",
+    "splits": [
+      {
+        "newAthleteName": "Sean King (Person 1)",
+        "membershipNumber": "1007211",
+        "competitionCount": 1,
+        "competitions": [
+          2143
+        ]
+      },
+      {
+        "newAthleteName": "Sean King (Person 2)",
+        "membershipNumber": "1042585",
+        "competitionCount": 1,
+        "competitions": [
+          6476
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 1690,
+        "date": "2016-05-21",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Sean King",
+        "lifter_id": 21780,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0yMSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 2843,
+        "date": "2018-04-14",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Sean King",
+        "lifter_id": 21780,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNC0xNCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Sean King",
+    "competitions": [
+      {
+        "meet_id": 6476,
+        "date": "2024-07-31",
+        "age_category": "Men's 14-15 Age Group",
+        "weight_class": "49kg",
+        "lifter_name": "Sean King",
+        "lifter_id": 21780,
+        "membershipNumbers": [
+          {
+            "athleteName": "Sean King",
+            "membershipNumber": "1042585",
+            "fullText": "1  -  58  Sean King  M  14  HIGH DESERT ATHLETIC CLUB  1042585  48.6  2024-07-31  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNy0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNy0zMSIsIndlaWdodF9jbGFzcyI6MjN9"
+      },
+      {
+        "meet_id": 1690,
+        "date": "2016-05-21",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Sean King",
+        "lifter_id": 21780,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0yMSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 2143,
+        "date": "2017-05-06",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Sean King",
+        "lifter_id": 21780,
+        "membershipNumbers": [
+          {
+            "athleteName": "Sean King",
+            "membershipNumber": "1007211",
+            "fullText": "24  -  180  Sean King  M  18  -  1007211  102.9  2017-05-06  -  Local  Illinois"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNS0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNS0wNiIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 2843,
+        "date": "2018-04-14",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Sean King",
+        "lifter_id": 21780,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNC0xNCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1007211": [
+          {
+            "meet_id": 2143,
+            "date": "2017-05-06",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Sean King",
+            "lifter_id": 21780,
+            "membershipNumbers": [
+              {
+                "athleteName": "Sean King",
+                "membershipNumber": "1007211",
+                "fullText": "24  -  180  Sean King  M  18  -  1007211  102.9  2017-05-06  -  Local  Illinois"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNS0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNS0wNiIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          }
+        ],
+        "1042585": [
+          {
+            "meet_id": 6476,
+            "date": "2024-07-31",
+            "age_category": "Men's 14-15 Age Group",
+            "weight_class": "49kg",
+            "lifter_name": "Sean King",
+            "lifter_id": 21780,
+            "membershipNumbers": [
+              {
+                "athleteName": "Sean King",
+                "membershipNumber": "1042585",
+                "fullText": "1  -  58  Sean King  M  14  HIGH DESERT ATHLETIC CLUB  1042585  48.6  2024-07-31  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNy0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNy0zMSIsIndlaWdodF9jbGFzcyI6MjN9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 1690,
+          "date": "2016-05-21",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Sean King",
+          "lifter_id": 21780,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0yMSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        },
+        {
+          "meet_id": 2843,
+          "date": "2018-04-14",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Sean King",
+          "lifter_id": 21780,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNC0xNCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

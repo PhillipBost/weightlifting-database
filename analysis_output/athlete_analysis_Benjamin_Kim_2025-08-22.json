@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T19:32:06.279Z",
+  "athleteName": "Benjamin Kim",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "218053": [
+        {
+          "meet_id": 328,
+          "date": "2015-10-25",
+          "age_category": "Open Men's",
+          "weight_class": "69 kg",
+          "lifter_name": "Benjamin Kim",
+          "lifter_id": 12043,
+          "membershipNumbers": [
+            {
+              "athleteName": "Benjamin Kim",
+              "membershipNumber": "218053",
+              "fullText": "24  -  172  Benjamin Kim  M  20  -  218053  67.6  2015-10-25  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0yNSIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+        },
+        {
+          "meet_id": 2033,
+          "date": "2016-10-23",
+          "age_category": "Open Men's",
+          "weight_class": "69 kg",
+          "lifter_name": "Benjamin Kim",
+          "lifter_id": 12043,
+          "membershipNumbers": [
+            {
+              "athleteName": "Benjamin Kim",
+              "membershipNumber": "218053",
+              "fullText": "23  -  192  Benjamin Kim  M  21  -  218053  68.28  2016-10-23  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0yMyIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+        }
+      ],
+      "1078519": [
+        {
+          "meet_id": 6552,
+          "date": "2024-10-05",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "Benjamin Kim",
+          "lifter_id": 12043,
+          "membershipNumbers": [
+            {
+              "athleteName": "Benjamin Kim",
+              "membershipNumber": "1078519",
+              "fullText": "14  -  225  Benjamin Kim  M  33  IKON Strength  1078519  87.6  2024-10-05  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0wNSIsIndlaWdodF9jbGFzcyI6ODZ9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Benjamin Kim",
+    "splits": [
+      {
+        "newAthleteName": "Benjamin Kim (Person 1)",
+        "membershipNumber": "218053",
+        "competitionCount": 2,
+        "competitions": [
+          328,
+          2033
+        ]
+      },
+      {
+        "newAthleteName": "Benjamin Kim (Person 2)",
+        "membershipNumber": "1078519",
+        "competitionCount": 1,
+        "competitions": [
+          6552
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Benjamin Kim",
+    "competitions": [
+      {
+        "meet_id": 6552,
+        "date": "2024-10-05",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Benjamin Kim",
+        "lifter_id": 12043,
+        "membershipNumbers": [
+          {
+            "athleteName": "Benjamin Kim",
+            "membershipNumber": "1078519",
+            "fullText": "14  -  225  Benjamin Kim  M  33  IKON Strength  1078519  87.6  2024-10-05  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0wNSIsIndlaWdodF9jbGFzcyI6ODZ9"
+      },
+      {
+        "meet_id": 328,
+        "date": "2015-10-25",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "Benjamin Kim",
+        "lifter_id": 12043,
+        "membershipNumbers": [
+          {
+            "athleteName": "Benjamin Kim",
+            "membershipNumber": "218053",
+            "fullText": "24  -  172  Benjamin Kim  M  20  -  218053  67.6  2015-10-25  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0yNSIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      },
+      {
+        "meet_id": 2033,
+        "date": "2016-10-23",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "Benjamin Kim",
+        "lifter_id": 12043,
+        "membershipNumbers": [
+          {
+            "athleteName": "Benjamin Kim",
+            "membershipNumber": "218053",
+            "fullText": "23  -  192  Benjamin Kim  M  21  -  218053  68.28  2016-10-23  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0yMyIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "218053": [
+          {
+            "meet_id": 328,
+            "date": "2015-10-25",
+            "age_category": "Open Men's",
+            "weight_class": "69 kg",
+            "lifter_name": "Benjamin Kim",
+            "lifter_id": 12043,
+            "membershipNumbers": [
+              {
+                "athleteName": "Benjamin Kim",
+                "membershipNumber": "218053",
+                "fullText": "24  -  172  Benjamin Kim  M  20  -  218053  67.6  2015-10-25  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0yNSIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+          },
+          {
+            "meet_id": 2033,
+            "date": "2016-10-23",
+            "age_category": "Open Men's",
+            "weight_class": "69 kg",
+            "lifter_name": "Benjamin Kim",
+            "lifter_id": 12043,
+            "membershipNumbers": [
+              {
+                "athleteName": "Benjamin Kim",
+                "membershipNumber": "218053",
+                "fullText": "23  -  192  Benjamin Kim  M  21  -  218053  68.28  2016-10-23  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0yMyIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+          }
+        ],
+        "1078519": [
+          {
+            "meet_id": 6552,
+            "date": "2024-10-05",
+            "age_category": "Open Men's",
+            "weight_class": "89kg",
+            "lifter_name": "Benjamin Kim",
+            "lifter_id": 12043,
+            "membershipNumbers": [
+              {
+                "athleteName": "Benjamin Kim",
+                "membershipNumber": "1078519",
+                "fullText": "14  -  225  Benjamin Kim  M  33  IKON Strength  1078519  87.6  2024-10-05  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0wNSIsIndlaWdodF9jbGFzcyI6ODZ9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

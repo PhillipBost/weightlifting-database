@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T23:37:29.887Z",
+  "athleteName": "Kelly Johnson",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1023175": [
+        {
+          "meet_id": 2288,
+          "date": "2017-10-21",
+          "age_category": "Open Women's",
+          "weight_class": "90 kg",
+          "lifter_name": "Kelly Johnson",
+          "lifter_id": 28047,
+          "membershipNumbers": [
+            {
+              "athleteName": "Kelly Johnson",
+              "membershipNumber": "1023175",
+              "fullText": "11  -  137  Kelly Johnson  F  28  -  1023175  79.4  2017-10-21  -  Local  Georgia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0yMSIsIndlaWdodF9jbGFzcyI6MzY5fQ=="
+        }
+      ],
+      "1031578": [
+        {
+          "meet_id": 3417,
+          "date": "2018-06-23",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Kelly Johnson",
+          "lifter_id": 28047,
+          "membershipNumbers": [
+            {
+              "athleteName": "Kelly Johnson",
+              "membershipNumber": "1031578",
+              "fullText": "8  -  234  Kelly Johnson  M  37  Verdant Barbell  1031578  104.5  2018-06-23  -  Local  Mountain North"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0yMyIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        },
+        {
+          "meet_id": 3529,
+          "date": "2018-10-27",
+          "age_category": "Open Men's",
+          "weight_class": "109kg",
+          "lifter_name": "Kelly Johnson",
+          "lifter_id": 28047,
+          "membershipNumbers": [
+            {
+              "athleteName": "Kelly Johnson",
+              "membershipNumber": "1031578",
+              "fullText": "10  -  238  Kelly Johnson  M  37  Verdant Barbell  1031578  107.62  2018-10-27  -  Local  Mountain North"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yNyIsIndlaWdodF9jbGFzcyI6ODl9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Kelly Johnson",
+    "splits": [
+      {
+        "newAthleteName": "Kelly Johnson (Person 1)",
+        "membershipNumber": "1023175",
+        "competitionCount": 1,
+        "competitions": [
+          2288
+        ]
+      },
+      {
+        "newAthleteName": "Kelly Johnson (Person 2)",
+        "membershipNumber": "1031578",
+        "competitionCount": 2,
+        "competitions": [
+          3417,
+          3529
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Kelly Johnson",
+    "competitions": [
+      {
+        "meet_id": 2288,
+        "date": "2017-10-21",
+        "age_category": "Open Women's",
+        "weight_class": "90 kg",
+        "lifter_name": "Kelly Johnson",
+        "lifter_id": 28047,
+        "membershipNumbers": [
+          {
+            "athleteName": "Kelly Johnson",
+            "membershipNumber": "1023175",
+            "fullText": "11  -  137  Kelly Johnson  F  28  -  1023175  79.4  2017-10-21  -  Local  Georgia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0yMSIsIndlaWdodF9jbGFzcyI6MzY5fQ=="
+      },
+      {
+        "meet_id": 3417,
+        "date": "2018-06-23",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Kelly Johnson",
+        "lifter_id": 28047,
+        "membershipNumbers": [
+          {
+            "athleteName": "Kelly Johnson",
+            "membershipNumber": "1031578",
+            "fullText": "8  -  234  Kelly Johnson  M  37  Verdant Barbell  1031578  104.5  2018-06-23  -  Local  Mountain North"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0yMyIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 3529,
+        "date": "2018-10-27",
+        "age_category": "Open Men's",
+        "weight_class": "109kg",
+        "lifter_name": "Kelly Johnson",
+        "lifter_id": 28047,
+        "membershipNumbers": [
+          {
+            "athleteName": "Kelly Johnson",
+            "membershipNumber": "1031578",
+            "fullText": "10  -  238  Kelly Johnson  M  37  Verdant Barbell  1031578  107.62  2018-10-27  -  Local  Mountain North"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yNyIsIndlaWdodF9jbGFzcyI6ODl9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1023175": [
+          {
+            "meet_id": 2288,
+            "date": "2017-10-21",
+            "age_category": "Open Women's",
+            "weight_class": "90 kg",
+            "lifter_name": "Kelly Johnson",
+            "lifter_id": 28047,
+            "membershipNumbers": [
+              {
+                "athleteName": "Kelly Johnson",
+                "membershipNumber": "1023175",
+                "fullText": "11  -  137  Kelly Johnson  F  28  -  1023175  79.4  2017-10-21  -  Local  Georgia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0yMSIsIndlaWdodF9jbGFzcyI6MzY5fQ=="
+          }
+        ],
+        "1031578": [
+          {
+            "meet_id": 3417,
+            "date": "2018-06-23",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Kelly Johnson",
+            "lifter_id": 28047,
+            "membershipNumbers": [
+              {
+                "athleteName": "Kelly Johnson",
+                "membershipNumber": "1031578",
+                "fullText": "8  -  234  Kelly Johnson  M  37  Verdant Barbell  1031578  104.5  2018-06-23  -  Local  Mountain North"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0yMyIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          },
+          {
+            "meet_id": 3529,
+            "date": "2018-10-27",
+            "age_category": "Open Men's",
+            "weight_class": "109kg",
+            "lifter_name": "Kelly Johnson",
+            "lifter_id": 28047,
+            "membershipNumbers": [
+              {
+                "athleteName": "Kelly Johnson",
+                "membershipNumber": "1031578",
+                "fullText": "10  -  238  Kelly Johnson  M  37  Verdant Barbell  1031578  107.62  2018-10-27  -  Local  Mountain North"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yNyIsIndlaWdodF9jbGFzcyI6ODl9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

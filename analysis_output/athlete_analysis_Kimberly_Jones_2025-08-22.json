@@ -1,0 +1,292 @@
+{
+  "timestamp": "2025-08-22T17:03:44.552Z",
+  "athleteName": "Kimberly Jones",
+  "totalCompetitions": 5,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1005130": [
+        {
+          "meet_id": 1732,
+          "date": "2016-04-09",
+          "age_category": "Women's Masters (60-64)",
+          "weight_class": "63 kg",
+          "lifter_name": "Kimberly Jones",
+          "lifter_id": 22344,
+          "membershipNumbers": [
+            {
+              "athleteName": "Kimberly Jones",
+              "membershipNumber": "1005130",
+              "fullText": "1  -  55  Kimberly Jones  F  60  -  1005130  59.8  2016-04-09  -  Local  Missouri Valley"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0wOSIsIndlaWdodF9jbGFzcyI6NDY3fQ=="
+        }
+      ],
+      "1032884": [
+        {
+          "meet_id": 3518,
+          "date": "2019-02-09",
+          "age_category": "Women's Masters (35-39)",
+          "weight_class": "49kg",
+          "lifter_name": "Kimberly Jones",
+          "lifter_id": 22344,
+          "membershipNumbers": [
+            {
+              "athleteName": "Kimberly Jones",
+              "membershipNumber": "1032884",
+              "fullText": "1  -  97  Kimberly Jones  F  36  CHFP WEIGHTLIFTING CLUB  1032884  46.4  2019-02-09  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMi0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMi0wOSIsIndlaWdodF9jbGFzcyI6MTEyfQ=="
+        },
+        {
+          "meet_id": 3720,
+          "date": "2019-03-31",
+          "age_category": "Women's Masters (35-39)",
+          "weight_class": "49kg",
+          "lifter_name": "Kimberly Jones",
+          "lifter_id": 22344,
+          "membershipNumbers": [
+            {
+              "athleteName": "Kimberly Jones",
+              "membershipNumber": "1032884",
+              "fullText": "8  -  98  Kimberly Jones  F  36  CHFP WEIGHTLIFTING CLUB  1032884  47.65  2019-03-31  -  National  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMy0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMy0zMSIsIndlaWdodF9jbGFzcyI6MTEyfQ=="
+        },
+        {
+          "meet_id": 3793,
+          "date": "2019-09-15",
+          "age_category": "Women's Masters (35-39)",
+          "weight_class": "55kg",
+          "lifter_name": "Kimberly Jones",
+          "lifter_id": 22344,
+          "membershipNumbers": [
+            {
+              "athleteName": "Kimberly Jones",
+              "membershipNumber": "1032884",
+              "fullText": "4  -  105  Kimberly Jones  F  36  CHFP WEIGHTLIFTING CLUB  1032884  52.1  2019-09-15  -  National  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOS0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOS0xNSIsIndlaWdodF9jbGFzcyI6MTEzfQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 3443,
+        "date": "2018-10-21",
+        "age_category": "Women's Masters (35-39)",
+        "weight_class": "49kg",
+        "lifter_name": "Kimberly Jones",
+        "lifter_id": 22344,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yMSIsIndlaWdodF9jbGFzcyI6MTEyfQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Kimberly Jones",
+    "splits": [
+      {
+        "newAthleteName": "Kimberly Jones (Person 1)",
+        "membershipNumber": "1005130",
+        "competitionCount": 1,
+        "competitions": [
+          1732
+        ]
+      },
+      {
+        "newAthleteName": "Kimberly Jones (Person 2)",
+        "membershipNumber": "1032884",
+        "competitionCount": 3,
+        "competitions": [
+          3518,
+          3720,
+          3793
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 3443,
+        "date": "2018-10-21",
+        "age_category": "Women's Masters (35-39)",
+        "weight_class": "49kg",
+        "lifter_name": "Kimberly Jones",
+        "lifter_id": 22344,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yMSIsIndlaWdodF9jbGFzcyI6MTEyfQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Kimberly Jones",
+    "competitions": [
+      {
+        "meet_id": 3443,
+        "date": "2018-10-21",
+        "age_category": "Women's Masters (35-39)",
+        "weight_class": "49kg",
+        "lifter_name": "Kimberly Jones",
+        "lifter_id": 22344,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yMSIsIndlaWdodF9jbGFzcyI6MTEyfQ=="
+      },
+      {
+        "meet_id": 1732,
+        "date": "2016-04-09",
+        "age_category": "Women's Masters (60-64)",
+        "weight_class": "63 kg",
+        "lifter_name": "Kimberly Jones",
+        "lifter_id": 22344,
+        "membershipNumbers": [
+          {
+            "athleteName": "Kimberly Jones",
+            "membershipNumber": "1005130",
+            "fullText": "1  -  55  Kimberly Jones  F  60  -  1005130  59.8  2016-04-09  -  Local  Missouri Valley"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0wOSIsIndlaWdodF9jbGFzcyI6NDY3fQ=="
+      },
+      {
+        "meet_id": 3518,
+        "date": "2019-02-09",
+        "age_category": "Women's Masters (35-39)",
+        "weight_class": "49kg",
+        "lifter_name": "Kimberly Jones",
+        "lifter_id": 22344,
+        "membershipNumbers": [
+          {
+            "athleteName": "Kimberly Jones",
+            "membershipNumber": "1032884",
+            "fullText": "1  -  97  Kimberly Jones  F  36  CHFP WEIGHTLIFTING CLUB  1032884  46.4  2019-02-09  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMi0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMi0wOSIsIndlaWdodF9jbGFzcyI6MTEyfQ=="
+      },
+      {
+        "meet_id": 3720,
+        "date": "2019-03-31",
+        "age_category": "Women's Masters (35-39)",
+        "weight_class": "49kg",
+        "lifter_name": "Kimberly Jones",
+        "lifter_id": 22344,
+        "membershipNumbers": [
+          {
+            "athleteName": "Kimberly Jones",
+            "membershipNumber": "1032884",
+            "fullText": "8  -  98  Kimberly Jones  F  36  CHFP WEIGHTLIFTING CLUB  1032884  47.65  2019-03-31  -  National  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMy0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMy0zMSIsIndlaWdodF9jbGFzcyI6MTEyfQ=="
+      },
+      {
+        "meet_id": 3793,
+        "date": "2019-09-15",
+        "age_category": "Women's Masters (35-39)",
+        "weight_class": "55kg",
+        "lifter_name": "Kimberly Jones",
+        "lifter_id": 22344,
+        "membershipNumbers": [
+          {
+            "athleteName": "Kimberly Jones",
+            "membershipNumber": "1032884",
+            "fullText": "4  -  105  Kimberly Jones  F  36  CHFP WEIGHTLIFTING CLUB  1032884  52.1  2019-09-15  -  National  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOS0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOS0xNSIsIndlaWdodF9jbGFzcyI6MTEzfQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1005130": [
+          {
+            "meet_id": 1732,
+            "date": "2016-04-09",
+            "age_category": "Women's Masters (60-64)",
+            "weight_class": "63 kg",
+            "lifter_name": "Kimberly Jones",
+            "lifter_id": 22344,
+            "membershipNumbers": [
+              {
+                "athleteName": "Kimberly Jones",
+                "membershipNumber": "1005130",
+                "fullText": "1  -  55  Kimberly Jones  F  60  -  1005130  59.8  2016-04-09  -  Local  Missouri Valley"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0wOSIsIndlaWdodF9jbGFzcyI6NDY3fQ=="
+          }
+        ],
+        "1032884": [
+          {
+            "meet_id": 3518,
+            "date": "2019-02-09",
+            "age_category": "Women's Masters (35-39)",
+            "weight_class": "49kg",
+            "lifter_name": "Kimberly Jones",
+            "lifter_id": 22344,
+            "membershipNumbers": [
+              {
+                "athleteName": "Kimberly Jones",
+                "membershipNumber": "1032884",
+                "fullText": "1  -  97  Kimberly Jones  F  36  CHFP WEIGHTLIFTING CLUB  1032884  46.4  2019-02-09  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMi0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMi0wOSIsIndlaWdodF9jbGFzcyI6MTEyfQ=="
+          },
+          {
+            "meet_id": 3720,
+            "date": "2019-03-31",
+            "age_category": "Women's Masters (35-39)",
+            "weight_class": "49kg",
+            "lifter_name": "Kimberly Jones",
+            "lifter_id": 22344,
+            "membershipNumbers": [
+              {
+                "athleteName": "Kimberly Jones",
+                "membershipNumber": "1032884",
+                "fullText": "8  -  98  Kimberly Jones  F  36  CHFP WEIGHTLIFTING CLUB  1032884  47.65  2019-03-31  -  National  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMy0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMy0zMSIsIndlaWdodF9jbGFzcyI6MTEyfQ=="
+          },
+          {
+            "meet_id": 3793,
+            "date": "2019-09-15",
+            "age_category": "Women's Masters (35-39)",
+            "weight_class": "55kg",
+            "lifter_name": "Kimberly Jones",
+            "lifter_id": 22344,
+            "membershipNumbers": [
+              {
+                "athleteName": "Kimberly Jones",
+                "membershipNumber": "1032884",
+                "fullText": "4  -  105  Kimberly Jones  F  36  CHFP WEIGHTLIFTING CLUB  1032884  52.1  2019-09-15  -  National  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOS0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOS0xNSIsIndlaWdodF9jbGFzcyI6MTEzfQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 3443,
+          "date": "2018-10-21",
+          "age_category": "Women's Masters (35-39)",
+          "weight_class": "49kg",
+          "lifter_name": "Kimberly Jones",
+          "lifter_id": 22344,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yMSIsIndlaWdodF9jbGFzcyI6MTEyfQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T18:55:21.443Z",
+  "athleteName": "John Kennedy",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "184064": [
+        {
+          "meet_id": 999,
+          "date": "2013-06-01",
+          "age_category": "Open Men's",
+          "weight_class": "69 kg",
+          "lifter_name": "John Kennedy",
+          "lifter_id": 6831,
+          "membershipNumbers": [
+            {
+              "athleteName": "John Kennedy",
+              "membershipNumber": "184064",
+              "fullText": "11  -  115  John Kennedy  M  56  Fortius Weightlifting  184064  67.6  2013-06-01  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNi0wMSIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+        }
+      ],
+      "218670": [
+        {
+          "meet_id": 407,
+          "date": "2015-10-03",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "John Kennedy",
+          "lifter_id": 6831,
+          "membershipNumbers": [
+            {
+              "athleteName": "John Kennedy",
+              "membershipNumber": "218670",
+              "fullText": "28  -  141  John Kennedy  M  32  HAWAII ISLAND BARBELL CLUB  218670  84  2015-10-03  -  Local  Hawaii and International"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0wMyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "John Kennedy",
+    "splits": [
+      {
+        "newAthleteName": "John Kennedy (Person 1)",
+        "membershipNumber": "184064",
+        "competitionCount": 1,
+        "competitions": [
+          999
+        ]
+      },
+      {
+        "newAthleteName": "John Kennedy (Person 2)",
+        "membershipNumber": "218670",
+        "competitionCount": 1,
+        "competitions": [
+          407
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "John Kennedy",
+    "competitions": [
+      {
+        "meet_id": 999,
+        "date": "2013-06-01",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "John Kennedy",
+        "lifter_id": 6831,
+        "membershipNumbers": [
+          {
+            "athleteName": "John Kennedy",
+            "membershipNumber": "184064",
+            "fullText": "11  -  115  John Kennedy  M  56  Fortius Weightlifting  184064  67.6  2013-06-01  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNi0wMSIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      },
+      {
+        "meet_id": 407,
+        "date": "2015-10-03",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "John Kennedy",
+        "lifter_id": 6831,
+        "membershipNumbers": [
+          {
+            "athleteName": "John Kennedy",
+            "membershipNumber": "218670",
+            "fullText": "28  -  141  John Kennedy  M  32  HAWAII ISLAND BARBELL CLUB  218670  84  2015-10-03  -  Local  Hawaii and International"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0wMyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "184064": [
+          {
+            "meet_id": 999,
+            "date": "2013-06-01",
+            "age_category": "Open Men's",
+            "weight_class": "69 kg",
+            "lifter_name": "John Kennedy",
+            "lifter_id": 6831,
+            "membershipNumbers": [
+              {
+                "athleteName": "John Kennedy",
+                "membershipNumber": "184064",
+                "fullText": "11  -  115  John Kennedy  M  56  Fortius Weightlifting  184064  67.6  2013-06-01  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNi0wMSIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+          }
+        ],
+        "218670": [
+          {
+            "meet_id": 407,
+            "date": "2015-10-03",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "John Kennedy",
+            "lifter_id": 6831,
+            "membershipNumbers": [
+              {
+                "athleteName": "John Kennedy",
+                "membershipNumber": "218670",
+                "fullText": "28  -  141  John Kennedy  M  32  HAWAII ISLAND BARBELL CLUB  218670  84  2015-10-03  -  Local  Hawaii and International"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0wMyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

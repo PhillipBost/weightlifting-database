@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T16:04:07.876Z",
+  "athleteName": "Ashley Owen",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1008620": [
+        {
+          "meet_id": 6581,
+          "date": "2024-10-19",
+          "age_category": "Women's Masters (35-39)",
+          "weight_class": "71kg",
+          "lifter_name": "Ashley Owen",
+          "lifter_id": 24489,
+          "membershipNumbers": [
+            {
+              "athleteName": "Ashley Owen",
+              "membershipNumber": "1008620",
+              "fullText": "4  -  153  Ashley Owen  F  36  Wilder Athletics  1008620  69.7  2024-10-19  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0xOSIsIndlaWdodF9jbGFzcyI6MTE2fQ=="
+        },
+        {
+          "meet_id": 1933,
+          "date": "2016-06-26",
+          "age_category": "Open Women's",
+          "weight_class": "69 kg",
+          "lifter_name": "Ashley Owen",
+          "lifter_id": 24489,
+          "membershipNumbers": [
+            {
+              "athleteName": "Ashley Owen",
+              "membershipNumber": "1008620",
+              "fullText": "8  -  137  Ashley Owen  F  28  -  1008620  66.9  2016-06-26  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0yNiIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+        }
+      ],
+      "1012906": [
+        {
+          "meet_id": 2031,
+          "date": "2017-02-12",
+          "age_category": "Open Women's",
+          "weight_class": "58 kg",
+          "lifter_name": "Ashley Owen",
+          "lifter_id": 24489,
+          "membershipNumbers": [
+            {
+              "athleteName": "Ashley Owen",
+              "membershipNumber": "1012906",
+              "fullText": "27  -  106  Ashley Owen  F  23  Elite Barbell Club  1012906  57.67  2017-02-12  -  Local  Mountain North"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xMiIsIndlaWdodF9jbGFzcyI6MzY0fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Ashley Owen",
+    "splits": [
+      {
+        "newAthleteName": "Ashley Owen (Person 1)",
+        "membershipNumber": "1008620",
+        "competitionCount": 2,
+        "competitions": [
+          6581,
+          1933
+        ]
+      },
+      {
+        "newAthleteName": "Ashley Owen (Person 2)",
+        "membershipNumber": "1012906",
+        "competitionCount": 1,
+        "competitions": [
+          2031
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Ashley Owen",
+    "competitions": [
+      {
+        "meet_id": 6581,
+        "date": "2024-10-19",
+        "age_category": "Women's Masters (35-39)",
+        "weight_class": "71kg",
+        "lifter_name": "Ashley Owen",
+        "lifter_id": 24489,
+        "membershipNumbers": [
+          {
+            "athleteName": "Ashley Owen",
+            "membershipNumber": "1008620",
+            "fullText": "4  -  153  Ashley Owen  F  36  Wilder Athletics  1008620  69.7  2024-10-19  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0xOSIsIndlaWdodF9jbGFzcyI6MTE2fQ=="
+      },
+      {
+        "meet_id": 1933,
+        "date": "2016-06-26",
+        "age_category": "Open Women's",
+        "weight_class": "69 kg",
+        "lifter_name": "Ashley Owen",
+        "lifter_id": 24489,
+        "membershipNumbers": [
+          {
+            "athleteName": "Ashley Owen",
+            "membershipNumber": "1008620",
+            "fullText": "8  -  137  Ashley Owen  F  28  -  1008620  66.9  2016-06-26  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0yNiIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+      },
+      {
+        "meet_id": 2031,
+        "date": "2017-02-12",
+        "age_category": "Open Women's",
+        "weight_class": "58 kg",
+        "lifter_name": "Ashley Owen",
+        "lifter_id": 24489,
+        "membershipNumbers": [
+          {
+            "athleteName": "Ashley Owen",
+            "membershipNumber": "1012906",
+            "fullText": "27  -  106  Ashley Owen  F  23  Elite Barbell Club  1012906  57.67  2017-02-12  -  Local  Mountain North"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xMiIsIndlaWdodF9jbGFzcyI6MzY0fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1008620": [
+          {
+            "meet_id": 6581,
+            "date": "2024-10-19",
+            "age_category": "Women's Masters (35-39)",
+            "weight_class": "71kg",
+            "lifter_name": "Ashley Owen",
+            "lifter_id": 24489,
+            "membershipNumbers": [
+              {
+                "athleteName": "Ashley Owen",
+                "membershipNumber": "1008620",
+                "fullText": "4  -  153  Ashley Owen  F  36  Wilder Athletics  1008620  69.7  2024-10-19  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0xOSIsIndlaWdodF9jbGFzcyI6MTE2fQ=="
+          },
+          {
+            "meet_id": 1933,
+            "date": "2016-06-26",
+            "age_category": "Open Women's",
+            "weight_class": "69 kg",
+            "lifter_name": "Ashley Owen",
+            "lifter_id": 24489,
+            "membershipNumbers": [
+              {
+                "athleteName": "Ashley Owen",
+                "membershipNumber": "1008620",
+                "fullText": "8  -  137  Ashley Owen  F  28  -  1008620  66.9  2016-06-26  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0yNiIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+          }
+        ],
+        "1012906": [
+          {
+            "meet_id": 2031,
+            "date": "2017-02-12",
+            "age_category": "Open Women's",
+            "weight_class": "58 kg",
+            "lifter_name": "Ashley Owen",
+            "lifter_id": 24489,
+            "membershipNumbers": [
+              {
+                "athleteName": "Ashley Owen",
+                "membershipNumber": "1012906",
+                "fullText": "27  -  106  Ashley Owen  F  23  Elite Barbell Club  1012906  57.67  2017-02-12  -  Local  Mountain North"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xMiIsIndlaWdodF9jbGFzcyI6MzY0fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

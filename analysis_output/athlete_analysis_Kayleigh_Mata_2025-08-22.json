@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T09:05:53.466Z",
+  "athleteName": "Kayleigh Mata",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1068010": [
+        {
+          "meet_id": 5751,
+          "date": "2023-03-18",
+          "age_category": "Junior Women's",
+          "weight_class": "76kg",
+          "lifter_name": "Kayleigh Mata",
+          "lifter_id": 55822,
+          "membershipNumbers": [
+            {
+              "athleteName": "Kayleigh Mata",
+              "membershipNumber": "1068010",
+              "fullText": "4  -  118  Kayleigh Mata  F  19  Unaffiliated  1068010  72.15  2023-03-18  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMy0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMy0xOCIsIndlaWdodF9jbGFzcyI6Nzd9"
+        }
+      ],
+      "1069238": [
+        {
+          "meet_id": 5967,
+          "date": "2023-08-05",
+          "age_category": "Junior Women's",
+          "weight_class": "76kg",
+          "lifter_name": "Kayleigh Mata",
+          "lifter_id": 55822,
+          "membershipNumbers": [
+            {
+              "athleteName": "Kayleigh Mata",
+              "membershipNumber": "1069238",
+              "fullText": "6  -  119  Kayleigh Mata  F  19  -  1069238  74.55  2023-08-05  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wOC0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wOC0wNSIsIndlaWdodF9jbGFzcyI6Nzd9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Kayleigh Mata",
+    "splits": [
+      {
+        "newAthleteName": "Kayleigh Mata (Person 1)",
+        "membershipNumber": "1068010",
+        "competitionCount": 1,
+        "competitions": [
+          5751
+        ]
+      },
+      {
+        "newAthleteName": "Kayleigh Mata (Person 2)",
+        "membershipNumber": "1069238",
+        "competitionCount": 1,
+        "competitions": [
+          5967
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Kayleigh Mata",
+    "competitions": [
+      {
+        "meet_id": 5751,
+        "date": "2023-03-18",
+        "age_category": "Junior Women's",
+        "weight_class": "76kg",
+        "lifter_name": "Kayleigh Mata",
+        "lifter_id": 55822,
+        "membershipNumbers": [
+          {
+            "athleteName": "Kayleigh Mata",
+            "membershipNumber": "1068010",
+            "fullText": "4  -  118  Kayleigh Mata  F  19  Unaffiliated  1068010  72.15  2023-03-18  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMy0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMy0xOCIsIndlaWdodF9jbGFzcyI6Nzd9"
+      },
+      {
+        "meet_id": 5967,
+        "date": "2023-08-05",
+        "age_category": "Junior Women's",
+        "weight_class": "76kg",
+        "lifter_name": "Kayleigh Mata",
+        "lifter_id": 55822,
+        "membershipNumbers": [
+          {
+            "athleteName": "Kayleigh Mata",
+            "membershipNumber": "1069238",
+            "fullText": "6  -  119  Kayleigh Mata  F  19  -  1069238  74.55  2023-08-05  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wOC0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wOC0wNSIsIndlaWdodF9jbGFzcyI6Nzd9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1068010": [
+          {
+            "meet_id": 5751,
+            "date": "2023-03-18",
+            "age_category": "Junior Women's",
+            "weight_class": "76kg",
+            "lifter_name": "Kayleigh Mata",
+            "lifter_id": 55822,
+            "membershipNumbers": [
+              {
+                "athleteName": "Kayleigh Mata",
+                "membershipNumber": "1068010",
+                "fullText": "4  -  118  Kayleigh Mata  F  19  Unaffiliated  1068010  72.15  2023-03-18  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMy0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMy0xOCIsIndlaWdodF9jbGFzcyI6Nzd9"
+          }
+        ],
+        "1069238": [
+          {
+            "meet_id": 5967,
+            "date": "2023-08-05",
+            "age_category": "Junior Women's",
+            "weight_class": "76kg",
+            "lifter_name": "Kayleigh Mata",
+            "lifter_id": 55822,
+            "membershipNumbers": [
+              {
+                "athleteName": "Kayleigh Mata",
+                "membershipNumber": "1069238",
+                "fullText": "6  -  119  Kayleigh Mata  F  19  -  1069238  74.55  2023-08-05  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wOC0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wOC0wNSIsIndlaWdodF9jbGFzcyI6Nzd9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

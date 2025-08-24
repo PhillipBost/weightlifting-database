@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T18:00:43.263Z",
+  "athleteName": "Michael Clark",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "185551": [
+        {
+          "meet_id": 1324,
+          "date": "2014-04-12",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Michael Clark",
+          "lifter_id": 19654,
+          "membershipNumbers": [
+            {
+              "athleteName": "Michael Clark",
+              "membershipNumber": "185551",
+              "fullText": "8  -  215  Michael Clark  M  25  -  185551  76  2014-04-12  -  Local  Georgia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNC0xMiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        }
+      ],
+      "1081302": [
+        {
+          "meet_id": 6826,
+          "date": "2025-04-12",
+          "age_category": "Men's Masters (45-49)",
+          "weight_class": "+109kg",
+          "lifter_name": "Michael Clark",
+          "lifter_id": 19654,
+          "membershipNumbers": [
+            {
+              "athleteName": "Michael Clark",
+              "membershipNumber": "1081302",
+              "fullText": "2  -  160  Michael Clark  M  47  West Virginia Weightlifting  1081302  110.2  2025-04-12  -  Local  Pennsylvania-West Virginia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNC0xMiIsIndlaWdodF9jbGFzcyI6MTUwfQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Michael Clark",
+    "splits": [
+      {
+        "newAthleteName": "Michael Clark (Person 1)",
+        "membershipNumber": "185551",
+        "competitionCount": 1,
+        "competitions": [
+          1324
+        ]
+      },
+      {
+        "newAthleteName": "Michael Clark (Person 2)",
+        "membershipNumber": "1081302",
+        "competitionCount": 1,
+        "competitions": [
+          6826
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Michael Clark",
+    "competitions": [
+      {
+        "meet_id": 1324,
+        "date": "2014-04-12",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Michael Clark",
+        "lifter_id": 19654,
+        "membershipNumbers": [
+          {
+            "athleteName": "Michael Clark",
+            "membershipNumber": "185551",
+            "fullText": "8  -  215  Michael Clark  M  25  -  185551  76  2014-04-12  -  Local  Georgia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNC0xMiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 6826,
+        "date": "2025-04-12",
+        "age_category": "Men's Masters (45-49)",
+        "weight_class": "+109kg",
+        "lifter_name": "Michael Clark",
+        "lifter_id": 19654,
+        "membershipNumbers": [
+          {
+            "athleteName": "Michael Clark",
+            "membershipNumber": "1081302",
+            "fullText": "2  -  160  Michael Clark  M  47  West Virginia Weightlifting  1081302  110.2  2025-04-12  -  Local  Pennsylvania-West Virginia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNC0xMiIsIndlaWdodF9jbGFzcyI6MTUwfQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "185551": [
+          {
+            "meet_id": 1324,
+            "date": "2014-04-12",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Michael Clark",
+            "lifter_id": 19654,
+            "membershipNumbers": [
+              {
+                "athleteName": "Michael Clark",
+                "membershipNumber": "185551",
+                "fullText": "8  -  215  Michael Clark  M  25  -  185551  76  2014-04-12  -  Local  Georgia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNC0xMiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          }
+        ],
+        "1081302": [
+          {
+            "meet_id": 6826,
+            "date": "2025-04-12",
+            "age_category": "Men's Masters (45-49)",
+            "weight_class": "+109kg",
+            "lifter_name": "Michael Clark",
+            "lifter_id": 19654,
+            "membershipNumbers": [
+              {
+                "athleteName": "Michael Clark",
+                "membershipNumber": "1081302",
+                "fullText": "2  -  160  Michael Clark  M  47  West Virginia Weightlifting  1081302  110.2  2025-04-12  -  Local  Pennsylvania-West Virginia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNC0xMiIsIndlaWdodF9jbGFzcyI6MTUwfQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "timestamp": "2025-08-22T06:06:40.221Z",
+  "athleteName": "Michael O'Brien",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 0,
+    "membershipGroups": {},
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 330,
+        "date": "2015-10-10",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Michael O'Brien",
+        "lifter_id": 12106,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 1745,
+        "date": "2016-10-23",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "Michael O'Brien",
+        "lifter_id": 12106,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0yMyIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      }
+    ],
+    "splitRequired": false
+  },
+  "splitPlan": {
+    "action": "NO_SPLIT_NEEDED",
+    "reason": "Only one distinct athlete found"
+  },
+  "rawData": {
+    "athleteName": "Michael O'Brien",
+    "competitions": [
+      {
+        "meet_id": 330,
+        "date": "2015-10-10",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Michael O'Brien",
+        "lifter_id": 12106,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 1745,
+        "date": "2016-10-23",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "Michael O'Brien",
+        "lifter_id": 12106,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0yMyIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 0,
+      "membershipGroups": {},
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 330,
+          "date": "2015-10-10",
+          "age_category": "Open Men's",
+          "weight_class": "+105 kg",
+          "lifter_name": "Michael O'Brien",
+          "lifter_id": 12106,
+          "membershipNumbers": [],
+          "error": "No division code found for: \"Open Men's +105 kg\""
+        },
+        {
+          "meet_id": 1745,
+          "date": "2016-10-23",
+          "age_category": "Open Men's",
+          "weight_class": "69 kg",
+          "lifter_name": "Michael O'Brien",
+          "lifter_id": 12106,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0yMyIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+        }
+      ],
+      "splitRequired": false
+    }
+  }
+}

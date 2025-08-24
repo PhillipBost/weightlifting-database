@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T15:48:28.912Z",
+  "athleteName": "Lisi Wang",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1058546": [
+        {
+          "meet_id": 5035,
+          "date": "2021-10-16",
+          "age_category": "Open Women's",
+          "weight_class": "55kg",
+          "lifter_name": "Lisi Wang",
+          "lifter_id": 50081,
+          "membershipNumbers": [
+            {
+              "athleteName": "Lisi Wang",
+              "membershipNumber": "1058546",
+              "fullText": "7  -  97  Lisi Wang  F  31  -  1058546  53.85  2021-10-16  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMC0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMC0xNiIsIndlaWdodF9jbGFzcyI6OTN9"
+        }
+      ],
+      "1080038": [
+        {
+          "meet_id": 6710,
+          "date": "2025-01-11",
+          "age_category": "Open Women's",
+          "weight_class": "55kg",
+          "lifter_name": "Lisi Wang",
+          "lifter_id": 50081,
+          "membershipNumbers": [
+            {
+              "athleteName": "Lisi Wang",
+              "membershipNumber": "1080038",
+              "fullText": "4  -  112  Lisi Wang  F  35  Standard Strength  1080038  53.95  2025-01-11  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMS0xMSIsIndlaWdodF9jbGFzcyI6OTN9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Lisi Wang",
+    "splits": [
+      {
+        "newAthleteName": "Lisi Wang (Person 1)",
+        "membershipNumber": "1058546",
+        "competitionCount": 1,
+        "competitions": [
+          5035
+        ]
+      },
+      {
+        "newAthleteName": "Lisi Wang (Person 2)",
+        "membershipNumber": "1080038",
+        "competitionCount": 1,
+        "competitions": [
+          6710
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Lisi Wang",
+    "competitions": [
+      {
+        "meet_id": 5035,
+        "date": "2021-10-16",
+        "age_category": "Open Women's",
+        "weight_class": "55kg",
+        "lifter_name": "Lisi Wang",
+        "lifter_id": 50081,
+        "membershipNumbers": [
+          {
+            "athleteName": "Lisi Wang",
+            "membershipNumber": "1058546",
+            "fullText": "7  -  97  Lisi Wang  F  31  -  1058546  53.85  2021-10-16  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMC0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMC0xNiIsIndlaWdodF9jbGFzcyI6OTN9"
+      },
+      {
+        "meet_id": 6710,
+        "date": "2025-01-11",
+        "age_category": "Open Women's",
+        "weight_class": "55kg",
+        "lifter_name": "Lisi Wang",
+        "lifter_id": 50081,
+        "membershipNumbers": [
+          {
+            "athleteName": "Lisi Wang",
+            "membershipNumber": "1080038",
+            "fullText": "4  -  112  Lisi Wang  F  35  Standard Strength  1080038  53.95  2025-01-11  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMS0xMSIsIndlaWdodF9jbGFzcyI6OTN9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1058546": [
+          {
+            "meet_id": 5035,
+            "date": "2021-10-16",
+            "age_category": "Open Women's",
+            "weight_class": "55kg",
+            "lifter_name": "Lisi Wang",
+            "lifter_id": 50081,
+            "membershipNumbers": [
+              {
+                "athleteName": "Lisi Wang",
+                "membershipNumber": "1058546",
+                "fullText": "7  -  97  Lisi Wang  F  31  -  1058546  53.85  2021-10-16  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMC0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMC0xNiIsIndlaWdodF9jbGFzcyI6OTN9"
+          }
+        ],
+        "1080038": [
+          {
+            "meet_id": 6710,
+            "date": "2025-01-11",
+            "age_category": "Open Women's",
+            "weight_class": "55kg",
+            "lifter_name": "Lisi Wang",
+            "lifter_id": 50081,
+            "membershipNumbers": [
+              {
+                "athleteName": "Lisi Wang",
+                "membershipNumber": "1080038",
+                "fullText": "4  -  112  Lisi Wang  F  35  Standard Strength  1080038  53.95  2025-01-11  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMS0xMSIsIndlaWdodF9jbGFzcyI6OTN9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

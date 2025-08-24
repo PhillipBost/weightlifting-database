@@ -1,0 +1,88 @@
+{
+  "timestamp": "2025-08-22T07:22:51.680Z",
+  "athleteName": "John Ross",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 0,
+    "membershipGroups": {},
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 3323,
+        "date": "2018-04-28",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "John Ross",
+        "lifter_id": 24738,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 1968,
+        "date": "2016-07-17",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "John Ross",
+        "lifter_id": 24738,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNy0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNy0xNyIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      }
+    ],
+    "splitRequired": false
+  },
+  "splitPlan": {
+    "action": "NO_SPLIT_NEEDED",
+    "reason": "Only one distinct athlete found"
+  },
+  "rawData": {
+    "athleteName": "John Ross",
+    "competitions": [
+      {
+        "meet_id": 3323,
+        "date": "2018-04-28",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "John Ross",
+        "lifter_id": 24738,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 1968,
+        "date": "2016-07-17",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "John Ross",
+        "lifter_id": 24738,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNy0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNy0xNyIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 0,
+      "membershipGroups": {},
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 3323,
+          "date": "2018-04-28",
+          "age_category": "Open Men's",
+          "weight_class": "+105 kg",
+          "lifter_name": "John Ross",
+          "lifter_id": 24738,
+          "membershipNumbers": [],
+          "error": "No division code found for: \"Open Men's +105 kg\""
+        },
+        {
+          "meet_id": 1968,
+          "date": "2016-07-17",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "John Ross",
+          "lifter_id": 24738,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNy0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNy0xNyIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        }
+      ],
+      "splitRequired": false
+    }
+  }
+}

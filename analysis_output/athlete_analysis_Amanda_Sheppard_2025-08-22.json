@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-22T04:49:24.088Z",
+  "athleteName": "Amanda Sheppard",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "187443": [
+        {
+          "meet_id": 718,
+          "date": "2013-10-20",
+          "age_category": "Open Women's",
+          "weight_class": "69 kg",
+          "lifter_name": "Amanda Sheppard",
+          "lifter_id": 5233,
+          "membershipNumbers": [
+            {
+              "athleteName": "Amanda Sheppard",
+              "membershipNumber": "187443",
+              "fullText": "10  -  123  Amanda Sheppard  F  22  -  187443  67.72  2013-10-20  -  Local  Illinois"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMC0yMCIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+        }
+      ],
+      "1027849": [
+        {
+          "meet_id": 3253,
+          "date": "2018-05-12",
+          "age_category": "Open Women's",
+          "weight_class": "90 kg",
+          "lifter_name": "Amanda Sheppard",
+          "lifter_id": 5233,
+          "membershipNumbers": [
+            {
+              "athleteName": "Amanda Sheppard",
+              "membershipNumber": "1027849",
+              "fullText": "12  -  120  Amanda Sheppard  F  31  Stallis Strong Barbell  1027849  86.53  2018-05-12  -  Local  Wisconsin"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNS0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNS0xMiIsIndlaWdodF9jbGFzcyI6MzY5fQ=="
+        },
+        {
+          "meet_id": 3391,
+          "date": "2018-07-21",
+          "age_category": "Open Women's",
+          "weight_class": "+90 kg",
+          "lifter_name": "Amanda Sheppard",
+          "lifter_id": 5233,
+          "membershipNumbers": [
+            {
+              "athleteName": "Amanda Sheppard",
+              "membershipNumber": "1027849",
+              "fullText": "3  -  126  Amanda Sheppard  F  31  Stallis Strong Barbell  1027849  90.2  2018-07-21  -  Local  Wisconsin"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNy0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNy0yMSIsIndlaWdodF9jbGFzcyI6MzcwfQ=="
+        },
+        {
+          "meet_id": 3588,
+          "date": "2018-11-17",
+          "age_category": "Open Women's",
+          "weight_class": "+87kg",
+          "lifter_name": "Amanda Sheppard",
+          "lifter_id": 5233,
+          "membershipNumbers": [
+            {
+              "athleteName": "Amanda Sheppard",
+              "membershipNumber": "1027849",
+              "fullText": "4  -  125  Amanda Sheppard  F  31  Stallis Strong Barbell  1027849  89.8  2018-11-17  -  Local  Wisconsin"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMS0xNyIsIndlaWdodF9jbGFzcyI6MTAwfQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Amanda Sheppard",
+    "splits": [
+      {
+        "newAthleteName": "Amanda Sheppard (Person 1)",
+        "membershipNumber": "187443",
+        "competitionCount": 1,
+        "competitions": [
+          718
+        ]
+      },
+      {
+        "newAthleteName": "Amanda Sheppard (Person 2)",
+        "membershipNumber": "1027849",
+        "competitionCount": 3,
+        "competitions": [
+          3253,
+          3391,
+          3588
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Amanda Sheppard",
+    "competitions": [
+      {
+        "meet_id": 718,
+        "date": "2013-10-20",
+        "age_category": "Open Women's",
+        "weight_class": "69 kg",
+        "lifter_name": "Amanda Sheppard",
+        "lifter_id": 5233,
+        "membershipNumbers": [
+          {
+            "athleteName": "Amanda Sheppard",
+            "membershipNumber": "187443",
+            "fullText": "10  -  123  Amanda Sheppard  F  22  -  187443  67.72  2013-10-20  -  Local  Illinois"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMC0yMCIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+      },
+      {
+        "meet_id": 3253,
+        "date": "2018-05-12",
+        "age_category": "Open Women's",
+        "weight_class": "90 kg",
+        "lifter_name": "Amanda Sheppard",
+        "lifter_id": 5233,
+        "membershipNumbers": [
+          {
+            "athleteName": "Amanda Sheppard",
+            "membershipNumber": "1027849",
+            "fullText": "12  -  120  Amanda Sheppard  F  31  Stallis Strong Barbell  1027849  86.53  2018-05-12  -  Local  Wisconsin"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNS0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNS0xMiIsIndlaWdodF9jbGFzcyI6MzY5fQ=="
+      },
+      {
+        "meet_id": 3391,
+        "date": "2018-07-21",
+        "age_category": "Open Women's",
+        "weight_class": "+90 kg",
+        "lifter_name": "Amanda Sheppard",
+        "lifter_id": 5233,
+        "membershipNumbers": [
+          {
+            "athleteName": "Amanda Sheppard",
+            "membershipNumber": "1027849",
+            "fullText": "3  -  126  Amanda Sheppard  F  31  Stallis Strong Barbell  1027849  90.2  2018-07-21  -  Local  Wisconsin"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNy0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNy0yMSIsIndlaWdodF9jbGFzcyI6MzcwfQ=="
+      },
+      {
+        "meet_id": 3588,
+        "date": "2018-11-17",
+        "age_category": "Open Women's",
+        "weight_class": "+87kg",
+        "lifter_name": "Amanda Sheppard",
+        "lifter_id": 5233,
+        "membershipNumbers": [
+          {
+            "athleteName": "Amanda Sheppard",
+            "membershipNumber": "1027849",
+            "fullText": "4  -  125  Amanda Sheppard  F  31  Stallis Strong Barbell  1027849  89.8  2018-11-17  -  Local  Wisconsin"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMS0xNyIsIndlaWdodF9jbGFzcyI6MTAwfQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "187443": [
+          {
+            "meet_id": 718,
+            "date": "2013-10-20",
+            "age_category": "Open Women's",
+            "weight_class": "69 kg",
+            "lifter_name": "Amanda Sheppard",
+            "lifter_id": 5233,
+            "membershipNumbers": [
+              {
+                "athleteName": "Amanda Sheppard",
+                "membershipNumber": "187443",
+                "fullText": "10  -  123  Amanda Sheppard  F  22  -  187443  67.72  2013-10-20  -  Local  Illinois"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMC0yMCIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+          }
+        ],
+        "1027849": [
+          {
+            "meet_id": 3253,
+            "date": "2018-05-12",
+            "age_category": "Open Women's",
+            "weight_class": "90 kg",
+            "lifter_name": "Amanda Sheppard",
+            "lifter_id": 5233,
+            "membershipNumbers": [
+              {
+                "athleteName": "Amanda Sheppard",
+                "membershipNumber": "1027849",
+                "fullText": "12  -  120  Amanda Sheppard  F  31  Stallis Strong Barbell  1027849  86.53  2018-05-12  -  Local  Wisconsin"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNS0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNS0xMiIsIndlaWdodF9jbGFzcyI6MzY5fQ=="
+          },
+          {
+            "meet_id": 3391,
+            "date": "2018-07-21",
+            "age_category": "Open Women's",
+            "weight_class": "+90 kg",
+            "lifter_name": "Amanda Sheppard",
+            "lifter_id": 5233,
+            "membershipNumbers": [
+              {
+                "athleteName": "Amanda Sheppard",
+                "membershipNumber": "1027849",
+                "fullText": "3  -  126  Amanda Sheppard  F  31  Stallis Strong Barbell  1027849  90.2  2018-07-21  -  Local  Wisconsin"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNy0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNy0yMSIsIndlaWdodF9jbGFzcyI6MzcwfQ=="
+          },
+          {
+            "meet_id": 3588,
+            "date": "2018-11-17",
+            "age_category": "Open Women's",
+            "weight_class": "+87kg",
+            "lifter_name": "Amanda Sheppard",
+            "lifter_id": 5233,
+            "membershipNumbers": [
+              {
+                "athleteName": "Amanda Sheppard",
+                "membershipNumber": "1027849",
+                "fullText": "4  -  125  Amanda Sheppard  F  31  Stallis Strong Barbell  1027849  89.8  2018-11-17  -  Local  Wisconsin"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMS0xNyIsIndlaWdodF9jbGFzcyI6MTAwfQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T22:09:22.274Z",
+  "athleteName": "Jessica Lee",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1003784": [
+        {
+          "meet_id": 2683,
+          "date": "2017-07-15",
+          "age_category": "Women's Masters (35-39)",
+          "weight_class": "63 kg",
+          "lifter_name": "Jessica Lee",
+          "lifter_id": 31583,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jessica Lee",
+              "membershipNumber": "1003784",
+              "fullText": "4  -  124  Jessica Lee  F  38  SWORN BARBELL CLUB  1003784  60.5  2017-07-15  -  Local  Indiana"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNy0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNy0xNSIsIndlaWdodF9jbGFzcyI6MzgyfQ=="
+        }
+      ],
+      "1055618": [
+        {
+          "meet_id": 4879,
+          "date": "2021-04-24",
+          "age_category": "Junior Women's",
+          "weight_class": "71kg",
+          "lifter_name": "Jessica Lee",
+          "lifter_id": 31583,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jessica Lee",
+              "membershipNumber": "1055618",
+              "fullText": "3  -  124  Jessica Lee  F  19  PERFORMANCE ONE WEIGHTLIFTING  1055618  70.2  2021-04-24  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNC0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNC0yNCIsIndlaWdodF9jbGFzcyI6NzZ9"
+        },
+        {
+          "meet_id": 5017,
+          "date": "2021-08-14",
+          "age_category": "Junior Women's",
+          "weight_class": "76kg",
+          "lifter_name": "Jessica Lee",
+          "lifter_id": 31583,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jessica Lee",
+              "membershipNumber": "1055618",
+              "fullText": "3  -  121  Jessica Lee  F  19  PERFORMANCE ONE WEIGHTLIFTING  1055618  73.3  2021-08-14  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wOC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wOC0xNCIsIndlaWdodF9jbGFzcyI6Nzd9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Jessica Lee",
+    "splits": [
+      {
+        "newAthleteName": "Jessica Lee (Person 1)",
+        "membershipNumber": "1003784",
+        "competitionCount": 1,
+        "competitions": [
+          2683
+        ]
+      },
+      {
+        "newAthleteName": "Jessica Lee (Person 2)",
+        "membershipNumber": "1055618",
+        "competitionCount": 2,
+        "competitions": [
+          4879,
+          5017
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Jessica Lee",
+    "competitions": [
+      {
+        "meet_id": 4879,
+        "date": "2021-04-24",
+        "age_category": "Junior Women's",
+        "weight_class": "71kg",
+        "lifter_name": "Jessica Lee",
+        "lifter_id": 31583,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jessica Lee",
+            "membershipNumber": "1055618",
+            "fullText": "3  -  124  Jessica Lee  F  19  PERFORMANCE ONE WEIGHTLIFTING  1055618  70.2  2021-04-24  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNC0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNC0yNCIsIndlaWdodF9jbGFzcyI6NzZ9"
+      },
+      {
+        "meet_id": 5017,
+        "date": "2021-08-14",
+        "age_category": "Junior Women's",
+        "weight_class": "76kg",
+        "lifter_name": "Jessica Lee",
+        "lifter_id": 31583,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jessica Lee",
+            "membershipNumber": "1055618",
+            "fullText": "3  -  121  Jessica Lee  F  19  PERFORMANCE ONE WEIGHTLIFTING  1055618  73.3  2021-08-14  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wOC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wOC0xNCIsIndlaWdodF9jbGFzcyI6Nzd9"
+      },
+      {
+        "meet_id": 2683,
+        "date": "2017-07-15",
+        "age_category": "Women's Masters (35-39)",
+        "weight_class": "63 kg",
+        "lifter_name": "Jessica Lee",
+        "lifter_id": 31583,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jessica Lee",
+            "membershipNumber": "1003784",
+            "fullText": "4  -  124  Jessica Lee  F  38  SWORN BARBELL CLUB  1003784  60.5  2017-07-15  -  Local  Indiana"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNy0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNy0xNSIsIndlaWdodF9jbGFzcyI6MzgyfQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1003784": [
+          {
+            "meet_id": 2683,
+            "date": "2017-07-15",
+            "age_category": "Women's Masters (35-39)",
+            "weight_class": "63 kg",
+            "lifter_name": "Jessica Lee",
+            "lifter_id": 31583,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jessica Lee",
+                "membershipNumber": "1003784",
+                "fullText": "4  -  124  Jessica Lee  F  38  SWORN BARBELL CLUB  1003784  60.5  2017-07-15  -  Local  Indiana"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNy0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNy0xNSIsIndlaWdodF9jbGFzcyI6MzgyfQ=="
+          }
+        ],
+        "1055618": [
+          {
+            "meet_id": 4879,
+            "date": "2021-04-24",
+            "age_category": "Junior Women's",
+            "weight_class": "71kg",
+            "lifter_name": "Jessica Lee",
+            "lifter_id": 31583,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jessica Lee",
+                "membershipNumber": "1055618",
+                "fullText": "3  -  124  Jessica Lee  F  19  PERFORMANCE ONE WEIGHTLIFTING  1055618  70.2  2021-04-24  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNC0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNC0yNCIsIndlaWdodF9jbGFzcyI6NzZ9"
+          },
+          {
+            "meet_id": 5017,
+            "date": "2021-08-14",
+            "age_category": "Junior Women's",
+            "weight_class": "76kg",
+            "lifter_name": "Jessica Lee",
+            "lifter_id": 31583,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jessica Lee",
+                "membershipNumber": "1055618",
+                "fullText": "3  -  121  Jessica Lee  F  19  PERFORMANCE ONE WEIGHTLIFTING  1055618  73.3  2021-08-14  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wOC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wOC0xNCIsIndlaWdodF9jbGFzcyI6Nzd9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

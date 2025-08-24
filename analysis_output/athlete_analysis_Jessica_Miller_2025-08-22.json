@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-22T20:03:33.653Z",
+  "athleteName": "Jessica Miller",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1013396": [
+        {
+          "meet_id": 2457,
+          "date": "2017-01-22",
+          "age_category": "Open Women's",
+          "weight_class": "63 kg",
+          "lifter_name": "Jessica Miller",
+          "lifter_id": 29721,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jessica Miller",
+              "membershipNumber": "1013396",
+              "fullText": "8  -  104  Jessica Miller  F  26  BARBELL SYNDICATE  1013396  60.6  2017-01-22  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMS0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMS0yMiIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+        },
+        {
+          "meet_id": 2928,
+          "date": "2017-09-17",
+          "age_category": "Open Women's",
+          "weight_class": "63 kg",
+          "lifter_name": "Jessica Miller",
+          "lifter_id": 29721,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jessica Miller",
+              "membershipNumber": "1013396",
+              "fullText": "6  -  118  Jessica Miller  F  26  BARBELL SYNDICATE  1013396  61  2017-09-17  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wOS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wOS0xNyIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+        },
+        {
+          "meet_id": 3149,
+          "date": "2018-03-10",
+          "age_category": "Open Women's",
+          "weight_class": "63 kg",
+          "lifter_name": "Jessica Miller",
+          "lifter_id": 29721,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jessica Miller",
+              "membershipNumber": "1013396",
+              "fullText": "10  -  128  Jessica Miller  F  27  BARBELL SYNDICATE  1013396  62.7  2018-03-10  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMy0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMy0xMCIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+        }
+      ],
+      "1039297": [
+        {
+          "meet_id": 3744,
+          "date": "2019-04-07",
+          "age_category": "Women's Masters (45-49)",
+          "weight_class": "71kg",
+          "lifter_name": "Jessica Miller",
+          "lifter_id": 29721,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jessica Miller",
+              "membershipNumber": "1039297",
+              "fullText": "3  -  62  Jessica Miller  F  45  -  1039297  67.78  2019-04-07  -  Local  New England"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0wNyIsIndlaWdodF9jbGFzcyI6MTU2fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Jessica Miller",
+    "splits": [
+      {
+        "newAthleteName": "Jessica Miller (Person 1)",
+        "membershipNumber": "1013396",
+        "competitionCount": 3,
+        "competitions": [
+          2457,
+          2928,
+          3149
+        ]
+      },
+      {
+        "newAthleteName": "Jessica Miller (Person 2)",
+        "membershipNumber": "1039297",
+        "competitionCount": 1,
+        "competitions": [
+          3744
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Jessica Miller",
+    "competitions": [
+      {
+        "meet_id": 3744,
+        "date": "2019-04-07",
+        "age_category": "Women's Masters (45-49)",
+        "weight_class": "71kg",
+        "lifter_name": "Jessica Miller",
+        "lifter_id": 29721,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jessica Miller",
+            "membershipNumber": "1039297",
+            "fullText": "3  -  62  Jessica Miller  F  45  -  1039297  67.78  2019-04-07  -  Local  New England"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0wNyIsIndlaWdodF9jbGFzcyI6MTU2fQ=="
+      },
+      {
+        "meet_id": 2457,
+        "date": "2017-01-22",
+        "age_category": "Open Women's",
+        "weight_class": "63 kg",
+        "lifter_name": "Jessica Miller",
+        "lifter_id": 29721,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jessica Miller",
+            "membershipNumber": "1013396",
+            "fullText": "8  -  104  Jessica Miller  F  26  BARBELL SYNDICATE  1013396  60.6  2017-01-22  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMS0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMS0yMiIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+      },
+      {
+        "meet_id": 2928,
+        "date": "2017-09-17",
+        "age_category": "Open Women's",
+        "weight_class": "63 kg",
+        "lifter_name": "Jessica Miller",
+        "lifter_id": 29721,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jessica Miller",
+            "membershipNumber": "1013396",
+            "fullText": "6  -  118  Jessica Miller  F  26  BARBELL SYNDICATE  1013396  61  2017-09-17  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wOS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wOS0xNyIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+      },
+      {
+        "meet_id": 3149,
+        "date": "2018-03-10",
+        "age_category": "Open Women's",
+        "weight_class": "63 kg",
+        "lifter_name": "Jessica Miller",
+        "lifter_id": 29721,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jessica Miller",
+            "membershipNumber": "1013396",
+            "fullText": "10  -  128  Jessica Miller  F  27  BARBELL SYNDICATE  1013396  62.7  2018-03-10  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMy0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMy0xMCIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1013396": [
+          {
+            "meet_id": 2457,
+            "date": "2017-01-22",
+            "age_category": "Open Women's",
+            "weight_class": "63 kg",
+            "lifter_name": "Jessica Miller",
+            "lifter_id": 29721,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jessica Miller",
+                "membershipNumber": "1013396",
+                "fullText": "8  -  104  Jessica Miller  F  26  BARBELL SYNDICATE  1013396  60.6  2017-01-22  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMS0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMS0yMiIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+          },
+          {
+            "meet_id": 2928,
+            "date": "2017-09-17",
+            "age_category": "Open Women's",
+            "weight_class": "63 kg",
+            "lifter_name": "Jessica Miller",
+            "lifter_id": 29721,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jessica Miller",
+                "membershipNumber": "1013396",
+                "fullText": "6  -  118  Jessica Miller  F  26  BARBELL SYNDICATE  1013396  61  2017-09-17  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wOS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wOS0xNyIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+          },
+          {
+            "meet_id": 3149,
+            "date": "2018-03-10",
+            "age_category": "Open Women's",
+            "weight_class": "63 kg",
+            "lifter_name": "Jessica Miller",
+            "lifter_id": 29721,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jessica Miller",
+                "membershipNumber": "1013396",
+                "fullText": "10  -  128  Jessica Miller  F  27  BARBELL SYNDICATE  1013396  62.7  2018-03-10  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMy0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMy0xMCIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+          }
+        ],
+        "1039297": [
+          {
+            "meet_id": 3744,
+            "date": "2019-04-07",
+            "age_category": "Women's Masters (45-49)",
+            "weight_class": "71kg",
+            "lifter_name": "Jessica Miller",
+            "lifter_id": 29721,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jessica Miller",
+                "membershipNumber": "1039297",
+                "fullText": "3  -  62  Jessica Miller  F  45  -  1039297  67.78  2019-04-07  -  Local  New England"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0wNyIsIndlaWdodF9jbGFzcyI6MTU2fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

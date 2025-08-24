@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-23T00:35:35.655Z",
+  "athleteName": "Joseph Yu",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1033952": [
+        {
+          "meet_id": 3443,
+          "date": "2018-10-21",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Joseph Yu",
+          "lifter_id": 37787,
+          "membershipNumbers": [
+            {
+              "athleteName": "Joseph Yu",
+              "membershipNumber": "1033952",
+              "fullText": "16  -  208  Joseph Yu  M  27  -  1033952  77.5  2018-10-21  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yMSIsIndlaWdodF9jbGFzcyI6ODV9"
+        }
+      ],
+      "1064901": [
+        {
+          "meet_id": 5746,
+          "date": "2023-03-11",
+          "age_category": "Open Men's",
+          "weight_class": "96kg",
+          "lifter_name": "Joseph Yu",
+          "lifter_id": 37787,
+          "membershipNumbers": [
+            {
+              "athleteName": "Joseph Yu",
+              "membershipNumber": "1064901",
+              "fullText": "4  -  255  Joseph Yu  M  33  -  1064901  92.3  2023-03-11  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMy0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMy0xMSIsIndlaWdodF9jbGFzcyI6ODd9"
+        },
+        {
+          "meet_id": 6994,
+          "date": "2025-08-02",
+          "age_category": "Men's Masters (35-39)",
+          "weight_class": "110kg",
+          "lifter_name": "Joseph Yu",
+          "lifter_id": 37787,
+          "membershipNumbers": [
+            {
+              "athleteName": "Joseph Yu",
+              "membershipNumber": "1064901",
+              "fullText": "1  -  256  Joseph Yu  M  35  NorCal Weightlifting  1064901  97.2  2025-08-02  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wOC0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wOC0wMiIsIndlaWdodF9jbGFzcyI6Njk1fQ=="
+        },
+        {
+          "meet_id": 5448,
+          "date": "2022-08-07",
+          "age_category": "Open Men's",
+          "weight_class": "96kg",
+          "lifter_name": "Joseph Yu",
+          "lifter_id": 37787,
+          "membershipNumbers": [
+            {
+              "athleteName": "Joseph Yu",
+              "membershipNumber": "1064901",
+              "fullText": "3  -  250  Joseph Yu  M  32  -  1064901  92.4  2022-08-07  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wOC0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wOC0wNyIsIndlaWdodF9jbGFzcyI6ODd9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Joseph Yu",
+    "splits": [
+      {
+        "newAthleteName": "Joseph Yu (Person 1)",
+        "membershipNumber": "1033952",
+        "competitionCount": 1,
+        "competitions": [
+          3443
+        ]
+      },
+      {
+        "newAthleteName": "Joseph Yu (Person 2)",
+        "membershipNumber": "1064901",
+        "competitionCount": 3,
+        "competitions": [
+          5746,
+          6994,
+          5448
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Joseph Yu",
+    "competitions": [
+      {
+        "meet_id": 5746,
+        "date": "2023-03-11",
+        "age_category": "Open Men's",
+        "weight_class": "96kg",
+        "lifter_name": "Joseph Yu",
+        "lifter_id": 37787,
+        "membershipNumbers": [
+          {
+            "athleteName": "Joseph Yu",
+            "membershipNumber": "1064901",
+            "fullText": "4  -  255  Joseph Yu  M  33  -  1064901  92.3  2023-03-11  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMy0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMy0xMSIsIndlaWdodF9jbGFzcyI6ODd9"
+      },
+      {
+        "meet_id": 6994,
+        "date": "2025-08-02",
+        "age_category": "Men's Masters (35-39)",
+        "weight_class": "110kg",
+        "lifter_name": "Joseph Yu",
+        "lifter_id": 37787,
+        "membershipNumbers": [
+          {
+            "athleteName": "Joseph Yu",
+            "membershipNumber": "1064901",
+            "fullText": "1  -  256  Joseph Yu  M  35  NorCal Weightlifting  1064901  97.2  2025-08-02  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wOC0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wOC0wMiIsIndlaWdodF9jbGFzcyI6Njk1fQ=="
+      },
+      {
+        "meet_id": 3443,
+        "date": "2018-10-21",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Joseph Yu",
+        "lifter_id": 37787,
+        "membershipNumbers": [
+          {
+            "athleteName": "Joseph Yu",
+            "membershipNumber": "1033952",
+            "fullText": "16  -  208  Joseph Yu  M  27  -  1033952  77.5  2018-10-21  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yMSIsIndlaWdodF9jbGFzcyI6ODV9"
+      },
+      {
+        "meet_id": 5448,
+        "date": "2022-08-07",
+        "age_category": "Open Men's",
+        "weight_class": "96kg",
+        "lifter_name": "Joseph Yu",
+        "lifter_id": 37787,
+        "membershipNumbers": [
+          {
+            "athleteName": "Joseph Yu",
+            "membershipNumber": "1064901",
+            "fullText": "3  -  250  Joseph Yu  M  32  -  1064901  92.4  2022-08-07  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wOC0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wOC0wNyIsIndlaWdodF9jbGFzcyI6ODd9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1033952": [
+          {
+            "meet_id": 3443,
+            "date": "2018-10-21",
+            "age_category": "Open Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Joseph Yu",
+            "lifter_id": 37787,
+            "membershipNumbers": [
+              {
+                "athleteName": "Joseph Yu",
+                "membershipNumber": "1033952",
+                "fullText": "16  -  208  Joseph Yu  M  27  -  1033952  77.5  2018-10-21  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yMSIsIndlaWdodF9jbGFzcyI6ODV9"
+          }
+        ],
+        "1064901": [
+          {
+            "meet_id": 5746,
+            "date": "2023-03-11",
+            "age_category": "Open Men's",
+            "weight_class": "96kg",
+            "lifter_name": "Joseph Yu",
+            "lifter_id": 37787,
+            "membershipNumbers": [
+              {
+                "athleteName": "Joseph Yu",
+                "membershipNumber": "1064901",
+                "fullText": "4  -  255  Joseph Yu  M  33  -  1064901  92.3  2023-03-11  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMy0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMy0xMSIsIndlaWdodF9jbGFzcyI6ODd9"
+          },
+          {
+            "meet_id": 6994,
+            "date": "2025-08-02",
+            "age_category": "Men's Masters (35-39)",
+            "weight_class": "110kg",
+            "lifter_name": "Joseph Yu",
+            "lifter_id": 37787,
+            "membershipNumbers": [
+              {
+                "athleteName": "Joseph Yu",
+                "membershipNumber": "1064901",
+                "fullText": "1  -  256  Joseph Yu  M  35  NorCal Weightlifting  1064901  97.2  2025-08-02  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wOC0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wOC0wMiIsIndlaWdodF9jbGFzcyI6Njk1fQ=="
+          },
+          {
+            "meet_id": 5448,
+            "date": "2022-08-07",
+            "age_category": "Open Men's",
+            "weight_class": "96kg",
+            "lifter_name": "Joseph Yu",
+            "lifter_id": 37787,
+            "membershipNumbers": [
+              {
+                "athleteName": "Joseph Yu",
+                "membershipNumber": "1064901",
+                "fullText": "3  -  250  Joseph Yu  M  32  -  1064901  92.4  2022-08-07  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wOC0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wOC0wNyIsIndlaWdodF9jbGFzcyI6ODd9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "timestamp": "2025-08-22T06:10:23.412Z",
+  "athleteName": "Andrew Carroll",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "207241": [
+        {
+          "meet_id": 542,
+          "date": "2016-04-30",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Andrew Carroll",
+          "lifter_id": 12311,
+          "membershipNumbers": [
+            {
+              "athleteName": "Andrew Carroll",
+              "membershipNumber": "207241",
+              "fullText": "12  -  230  Andrew Carroll  M  28  -  207241  89.25  2016-04-30  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0zMCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ],
+      "1072614": [
+        {
+          "meet_id": 6065,
+          "date": "2023-10-22",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Andrew Carroll",
+          "lifter_id": 12311,
+          "membershipNumbers": [
+            {
+              "athleteName": "Andrew Carroll",
+              "membershipNumber": "1072614",
+              "fullText": "19  -  160  Andrew Carroll  M  27  HOBOKEN BARBELL  1072614  74.75  2023-10-22  -  Local  New Jersey"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMC0yMiIsIndlaWdodF9jbGFzcyI6ODV9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 347,
+        "date": "2015-10-24",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Andrew Carroll",
+        "lifter_id": 12311,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0yNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Andrew Carroll",
+    "splits": [
+      {
+        "newAthleteName": "Andrew Carroll (Person 1)",
+        "membershipNumber": "207241",
+        "competitionCount": 1,
+        "competitions": [
+          542
+        ]
+      },
+      {
+        "newAthleteName": "Andrew Carroll (Person 2)",
+        "membershipNumber": "1072614",
+        "competitionCount": 1,
+        "competitions": [
+          6065
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 347,
+        "date": "2015-10-24",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Andrew Carroll",
+        "lifter_id": 12311,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0yNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Andrew Carroll",
+    "competitions": [
+      {
+        "meet_id": 542,
+        "date": "2016-04-30",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Andrew Carroll",
+        "lifter_id": 12311,
+        "membershipNumbers": [
+          {
+            "athleteName": "Andrew Carroll",
+            "membershipNumber": "207241",
+            "fullText": "12  -  230  Andrew Carroll  M  28  -  207241  89.25  2016-04-30  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0zMCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 347,
+        "date": "2015-10-24",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Andrew Carroll",
+        "lifter_id": 12311,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0yNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 6065,
+        "date": "2023-10-22",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Andrew Carroll",
+        "lifter_id": 12311,
+        "membershipNumbers": [
+          {
+            "athleteName": "Andrew Carroll",
+            "membershipNumber": "1072614",
+            "fullText": "19  -  160  Andrew Carroll  M  27  HOBOKEN BARBELL  1072614  74.75  2023-10-22  -  Local  New Jersey"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMC0yMiIsIndlaWdodF9jbGFzcyI6ODV9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "207241": [
+          {
+            "meet_id": 542,
+            "date": "2016-04-30",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Andrew Carroll",
+            "lifter_id": 12311,
+            "membershipNumbers": [
+              {
+                "athleteName": "Andrew Carroll",
+                "membershipNumber": "207241",
+                "fullText": "12  -  230  Andrew Carroll  M  28  -  207241  89.25  2016-04-30  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0zMCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          }
+        ],
+        "1072614": [
+          {
+            "meet_id": 6065,
+            "date": "2023-10-22",
+            "age_category": "Open Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Andrew Carroll",
+            "lifter_id": 12311,
+            "membershipNumbers": [
+              {
+                "athleteName": "Andrew Carroll",
+                "membershipNumber": "1072614",
+                "fullText": "19  -  160  Andrew Carroll  M  27  HOBOKEN BARBELL  1072614  74.75  2023-10-22  -  Local  New Jersey"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMC0yMiIsIndlaWdodF9jbGFzcyI6ODV9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 347,
+          "date": "2015-10-24",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Andrew Carroll",
+          "lifter_id": 12311,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0yNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

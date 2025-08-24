@@ -1,0 +1,298 @@
+{
+  "timestamp": "2025-08-22T18:44:39.001Z",
+  "athleteName": "Jordan Stewart",
+  "totalCompetitions": 5,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "176196": [
+        {
+          "meet_id": 582,
+          "date": "2012-09-02",
+          "age_category": "Open Men's",
+          "weight_class": "62 kg",
+          "lifter_name": "Jordan Stewart",
+          "lifter_id": 71,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jordan Stewart",
+              "membershipNumber": "176196",
+              "fullText": "1  -  155  Jordan Stewart  M  31  -  176196  61  2012-09-02  -  Local  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wOS0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wOS0wMiIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+        },
+        {
+          "meet_id": 1022,
+          "date": "2012-07-21",
+          "age_category": "Open Men's",
+          "weight_class": "62 kg",
+          "lifter_name": "Jordan Stewart",
+          "lifter_id": 71,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jordan Stewart",
+              "membershipNumber": "176196",
+              "fullText": "1  -  146  Jordan Stewart  M  31  -  176196  61.8  2012-07-21  -  Local  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wNy0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wNy0yMSIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+        }
+      ],
+      "1058195": [
+        {
+          "meet_id": 4915,
+          "date": "2021-09-04",
+          "age_category": "Women's 14-15 Age Group",
+          "weight_class": "55kg",
+          "lifter_name": "Jordan Stewart",
+          "lifter_id": 71,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jordan Stewart",
+              "membershipNumber": "1058195",
+              "fullText": "1  -  92  Jordan Stewart  F  14  Abstract Barbell  1058195  53.1  2021-09-04  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wOS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wOS0wNCIsIndlaWdodF9jbGFzcyI6MzV9"
+        },
+        {
+          "meet_id": 5192,
+          "date": "2022-01-15",
+          "age_category": "Women's 14-15 Age Group",
+          "weight_class": "55kg",
+          "lifter_name": "Jordan Stewart",
+          "lifter_id": 71,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jordan Stewart",
+              "membershipNumber": "1058195",
+              "fullText": "1  -  112  Jordan Stewart  F  15  Abstract Barbell  1058195  53.6  2022-01-15  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMS0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMS0xNSIsIndlaWdodF9jbGFzcyI6MzV9"
+        },
+        {
+          "meet_id": 5012,
+          "date": "2021-10-09",
+          "age_category": "Women's 14-15 Age Group",
+          "weight_class": "55kg",
+          "lifter_name": "Jordan Stewart",
+          "lifter_id": 71,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jordan Stewart",
+              "membershipNumber": "1058195",
+              "fullText": "3  -  101  Jordan Stewart  F  14  Abstract Barbell  1058195  52.2  2021-10-09  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMC0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMC0wOSIsIndlaWdodF9jbGFzcyI6MzV9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Jordan Stewart",
+    "splits": [
+      {
+        "newAthleteName": "Jordan Stewart (Person 1)",
+        "membershipNumber": "176196",
+        "competitionCount": 2,
+        "competitions": [
+          582,
+          1022
+        ]
+      },
+      {
+        "newAthleteName": "Jordan Stewart (Person 2)",
+        "membershipNumber": "1058195",
+        "competitionCount": 3,
+        "competitions": [
+          4915,
+          5192,
+          5012
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Jordan Stewart",
+    "competitions": [
+      {
+        "meet_id": 4915,
+        "date": "2021-09-04",
+        "age_category": "Women's 14-15 Age Group",
+        "weight_class": "55kg",
+        "lifter_name": "Jordan Stewart",
+        "lifter_id": 71,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jordan Stewart",
+            "membershipNumber": "1058195",
+            "fullText": "1  -  92  Jordan Stewart  F  14  Abstract Barbell  1058195  53.1  2021-09-04  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wOS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wOS0wNCIsIndlaWdodF9jbGFzcyI6MzV9"
+      },
+      {
+        "meet_id": 5192,
+        "date": "2022-01-15",
+        "age_category": "Women's 14-15 Age Group",
+        "weight_class": "55kg",
+        "lifter_name": "Jordan Stewart",
+        "lifter_id": 71,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jordan Stewart",
+            "membershipNumber": "1058195",
+            "fullText": "1  -  112  Jordan Stewart  F  15  Abstract Barbell  1058195  53.6  2022-01-15  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMS0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMS0xNSIsIndlaWdodF9jbGFzcyI6MzV9"
+      },
+      {
+        "meet_id": 582,
+        "date": "2012-09-02",
+        "age_category": "Open Men's",
+        "weight_class": "62 kg",
+        "lifter_name": "Jordan Stewart",
+        "lifter_id": 71,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jordan Stewart",
+            "membershipNumber": "176196",
+            "fullText": "1  -  155  Jordan Stewart  M  31  -  176196  61  2012-09-02  -  Local  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wOS0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wOS0wMiIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+      },
+      {
+        "meet_id": 5012,
+        "date": "2021-10-09",
+        "age_category": "Women's 14-15 Age Group",
+        "weight_class": "55kg",
+        "lifter_name": "Jordan Stewart",
+        "lifter_id": 71,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jordan Stewart",
+            "membershipNumber": "1058195",
+            "fullText": "3  -  101  Jordan Stewart  F  14  Abstract Barbell  1058195  52.2  2021-10-09  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMC0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMC0wOSIsIndlaWdodF9jbGFzcyI6MzV9"
+      },
+      {
+        "meet_id": 1022,
+        "date": "2012-07-21",
+        "age_category": "Open Men's",
+        "weight_class": "62 kg",
+        "lifter_name": "Jordan Stewart",
+        "lifter_id": 71,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jordan Stewart",
+            "membershipNumber": "176196",
+            "fullText": "1  -  146  Jordan Stewart  M  31  -  176196  61.8  2012-07-21  -  Local  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wNy0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wNy0yMSIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "176196": [
+          {
+            "meet_id": 582,
+            "date": "2012-09-02",
+            "age_category": "Open Men's",
+            "weight_class": "62 kg",
+            "lifter_name": "Jordan Stewart",
+            "lifter_id": 71,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jordan Stewart",
+                "membershipNumber": "176196",
+                "fullText": "1  -  155  Jordan Stewart  M  31  -  176196  61  2012-09-02  -  Local  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wOS0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wOS0wMiIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+          },
+          {
+            "meet_id": 1022,
+            "date": "2012-07-21",
+            "age_category": "Open Men's",
+            "weight_class": "62 kg",
+            "lifter_name": "Jordan Stewart",
+            "lifter_id": 71,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jordan Stewart",
+                "membershipNumber": "176196",
+                "fullText": "1  -  146  Jordan Stewart  M  31  -  176196  61.8  2012-07-21  -  Local  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wNy0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wNy0yMSIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+          }
+        ],
+        "1058195": [
+          {
+            "meet_id": 4915,
+            "date": "2021-09-04",
+            "age_category": "Women's 14-15 Age Group",
+            "weight_class": "55kg",
+            "lifter_name": "Jordan Stewart",
+            "lifter_id": 71,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jordan Stewart",
+                "membershipNumber": "1058195",
+                "fullText": "1  -  92  Jordan Stewart  F  14  Abstract Barbell  1058195  53.1  2021-09-04  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wOS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wOS0wNCIsIndlaWdodF9jbGFzcyI6MzV9"
+          },
+          {
+            "meet_id": 5192,
+            "date": "2022-01-15",
+            "age_category": "Women's 14-15 Age Group",
+            "weight_class": "55kg",
+            "lifter_name": "Jordan Stewart",
+            "lifter_id": 71,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jordan Stewart",
+                "membershipNumber": "1058195",
+                "fullText": "1  -  112  Jordan Stewart  F  15  Abstract Barbell  1058195  53.6  2022-01-15  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMS0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMS0xNSIsIndlaWdodF9jbGFzcyI6MzV9"
+          },
+          {
+            "meet_id": 5012,
+            "date": "2021-10-09",
+            "age_category": "Women's 14-15 Age Group",
+            "weight_class": "55kg",
+            "lifter_name": "Jordan Stewart",
+            "lifter_id": 71,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jordan Stewart",
+                "membershipNumber": "1058195",
+                "fullText": "3  -  101  Jordan Stewart  F  14  Abstract Barbell  1058195  52.2  2021-10-09  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMC0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMC0wOSIsIndlaWdodF9jbGFzcyI6MzV9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

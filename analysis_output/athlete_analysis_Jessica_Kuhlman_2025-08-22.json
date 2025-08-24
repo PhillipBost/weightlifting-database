@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T08:07:55.943Z",
+  "athleteName": "Jessica Kuhlman",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1030719": [
+        {
+          "meet_id": 2940,
+          "date": "2018-07-14",
+          "age_category": "Open Women's",
+          "weight_class": "90 kg",
+          "lifter_name": "Jessica Kuhlman",
+          "lifter_id": 34389,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jessica Kuhlman",
+              "membershipNumber": "1030719",
+              "fullText": "14  -  147  Jessica Kuhlman  F  22  DISPENZA WEIGHTLIFTING CLUB  1030719  78.2  2018-07-14  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNy0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNy0xNCIsIndlaWdodF9jbGFzcyI6MzY5fQ=="
+        }
+      ],
+      "1047034": [
+        {
+          "meet_id": 4521,
+          "date": "2020-10-31",
+          "age_category": "Open Women's",
+          "weight_class": "81kg",
+          "lifter_name": "Jessica Kuhlman",
+          "lifter_id": 34389,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jessica Kuhlman",
+              "membershipNumber": "1047034",
+              "fullText": "3  -  185  Jessica Kuhlman  F  24  -  1047034  79.4  2020-10-31  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0xMC0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0xMC0zMSIsIndlaWdodF9jbGFzcyI6OTh9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Jessica Kuhlman",
+    "splits": [
+      {
+        "newAthleteName": "Jessica Kuhlman (Person 1)",
+        "membershipNumber": "1030719",
+        "competitionCount": 1,
+        "competitions": [
+          2940
+        ]
+      },
+      {
+        "newAthleteName": "Jessica Kuhlman (Person 2)",
+        "membershipNumber": "1047034",
+        "competitionCount": 1,
+        "competitions": [
+          4521
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Jessica Kuhlman",
+    "competitions": [
+      {
+        "meet_id": 2940,
+        "date": "2018-07-14",
+        "age_category": "Open Women's",
+        "weight_class": "90 kg",
+        "lifter_name": "Jessica Kuhlman",
+        "lifter_id": 34389,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jessica Kuhlman",
+            "membershipNumber": "1030719",
+            "fullText": "14  -  147  Jessica Kuhlman  F  22  DISPENZA WEIGHTLIFTING CLUB  1030719  78.2  2018-07-14  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNy0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNy0xNCIsIndlaWdodF9jbGFzcyI6MzY5fQ=="
+      },
+      {
+        "meet_id": 4521,
+        "date": "2020-10-31",
+        "age_category": "Open Women's",
+        "weight_class": "81kg",
+        "lifter_name": "Jessica Kuhlman",
+        "lifter_id": 34389,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jessica Kuhlman",
+            "membershipNumber": "1047034",
+            "fullText": "3  -  185  Jessica Kuhlman  F  24  -  1047034  79.4  2020-10-31  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0xMC0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0xMC0zMSIsIndlaWdodF9jbGFzcyI6OTh9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1030719": [
+          {
+            "meet_id": 2940,
+            "date": "2018-07-14",
+            "age_category": "Open Women's",
+            "weight_class": "90 kg",
+            "lifter_name": "Jessica Kuhlman",
+            "lifter_id": 34389,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jessica Kuhlman",
+                "membershipNumber": "1030719",
+                "fullText": "14  -  147  Jessica Kuhlman  F  22  DISPENZA WEIGHTLIFTING CLUB  1030719  78.2  2018-07-14  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNy0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNy0xNCIsIndlaWdodF9jbGFzcyI6MzY5fQ=="
+          }
+        ],
+        "1047034": [
+          {
+            "meet_id": 4521,
+            "date": "2020-10-31",
+            "age_category": "Open Women's",
+            "weight_class": "81kg",
+            "lifter_name": "Jessica Kuhlman",
+            "lifter_id": 34389,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jessica Kuhlman",
+                "membershipNumber": "1047034",
+                "fullText": "3  -  185  Jessica Kuhlman  F  24  -  1047034  79.4  2020-10-31  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0xMC0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0xMC0zMSIsIndlaWdodF9jbGFzcyI6OTh9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

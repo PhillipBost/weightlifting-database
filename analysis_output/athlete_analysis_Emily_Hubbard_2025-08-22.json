@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-22T22:39:59.485Z",
+  "athleteName": "Emily Hubbard",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1047579": [
+        {
+          "meet_id": 4356,
+          "date": "2019-12-14",
+          "age_category": "Women's 16-17 Age Group",
+          "weight_class": "71kg",
+          "lifter_name": "Emily Hubbard",
+          "lifter_id": 44405,
+          "membershipNumbers": [
+            {
+              "athleteName": "Emily Hubbard",
+              "membershipNumber": "1047579",
+              "fullText": "6  -  101  Emily Hubbard  F  16  Fearless Lifting Barbell Club  1047579  68.1  2019-12-14  -  Local  Alabama"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMi0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMi0xNCIsIndlaWdodF9jbGFzcyI6MTd9"
+        }
+      ],
+      "1077006": [
+        {
+          "meet_id": 6468,
+          "date": "2024-07-27",
+          "age_category": "Women's Masters (40-44)",
+          "weight_class": "81kg",
+          "lifter_name": "Emily Hubbard",
+          "lifter_id": 44405,
+          "membershipNumbers": [
+            {
+              "athleteName": "Emily Hubbard",
+              "membershipNumber": "1077006",
+              "fullText": "1  -  133  Emily Hubbard  F  42  RoseCity Barbell  1077006  77.6  2024-07-27  -  Local  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNy0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNy0yNyIsIndlaWdodF9jbGFzcyI6MTM4fQ=="
+        },
+        {
+          "meet_id": 6656,
+          "date": "2024-12-05",
+          "age_category": "Women's Masters (40-44)",
+          "weight_class": "87kg",
+          "lifter_name": "Emily Hubbard",
+          "lifter_id": 44405,
+          "membershipNumbers": [
+            {
+              "athleteName": "Emily Hubbard",
+              "membershipNumber": "1077006",
+              "fullText": "6  -  132  Emily Hubbard  F  42  RoseCity Barbell  1077006  82.72  2024-12-05  -  North American Open Series  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMi0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMi0wNSIsIndlaWdodF9jbGFzcyI6MTM5fQ=="
+        },
+        {
+          "meet_id": 6555,
+          "date": "2024-10-06",
+          "age_category": "Open Women's",
+          "weight_class": "81kg",
+          "lifter_name": "Emily Hubbard",
+          "lifter_id": 44405,
+          "membershipNumbers": [
+            {
+              "athleteName": "Emily Hubbard",
+              "membershipNumber": "1077006",
+              "fullText": "6  -  136  Emily Hubbard  F  42  RoseCity Barbell  1077006  79.35  2024-10-06  -  Local  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0wNiIsIndlaWdodF9jbGFzcyI6OTh9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Emily Hubbard",
+    "splits": [
+      {
+        "newAthleteName": "Emily Hubbard (Person 1)",
+        "membershipNumber": "1047579",
+        "competitionCount": 1,
+        "competitions": [
+          4356
+        ]
+      },
+      {
+        "newAthleteName": "Emily Hubbard (Person 2)",
+        "membershipNumber": "1077006",
+        "competitionCount": 3,
+        "competitions": [
+          6468,
+          6656,
+          6555
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Emily Hubbard",
+    "competitions": [
+      {
+        "meet_id": 6468,
+        "date": "2024-07-27",
+        "age_category": "Women's Masters (40-44)",
+        "weight_class": "81kg",
+        "lifter_name": "Emily Hubbard",
+        "lifter_id": 44405,
+        "membershipNumbers": [
+          {
+            "athleteName": "Emily Hubbard",
+            "membershipNumber": "1077006",
+            "fullText": "1  -  133  Emily Hubbard  F  42  RoseCity Barbell  1077006  77.6  2024-07-27  -  Local  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNy0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNy0yNyIsIndlaWdodF9jbGFzcyI6MTM4fQ=="
+      },
+      {
+        "meet_id": 6656,
+        "date": "2024-12-05",
+        "age_category": "Women's Masters (40-44)",
+        "weight_class": "87kg",
+        "lifter_name": "Emily Hubbard",
+        "lifter_id": 44405,
+        "membershipNumbers": [
+          {
+            "athleteName": "Emily Hubbard",
+            "membershipNumber": "1077006",
+            "fullText": "6  -  132  Emily Hubbard  F  42  RoseCity Barbell  1077006  82.72  2024-12-05  -  North American Open Series  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMi0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMi0wNSIsIndlaWdodF9jbGFzcyI6MTM5fQ=="
+      },
+      {
+        "meet_id": 6555,
+        "date": "2024-10-06",
+        "age_category": "Open Women's",
+        "weight_class": "81kg",
+        "lifter_name": "Emily Hubbard",
+        "lifter_id": 44405,
+        "membershipNumbers": [
+          {
+            "athleteName": "Emily Hubbard",
+            "membershipNumber": "1077006",
+            "fullText": "6  -  136  Emily Hubbard  F  42  RoseCity Barbell  1077006  79.35  2024-10-06  -  Local  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0wNiIsIndlaWdodF9jbGFzcyI6OTh9"
+      },
+      {
+        "meet_id": 4356,
+        "date": "2019-12-14",
+        "age_category": "Women's 16-17 Age Group",
+        "weight_class": "71kg",
+        "lifter_name": "Emily Hubbard",
+        "lifter_id": 44405,
+        "membershipNumbers": [
+          {
+            "athleteName": "Emily Hubbard",
+            "membershipNumber": "1047579",
+            "fullText": "6  -  101  Emily Hubbard  F  16  Fearless Lifting Barbell Club  1047579  68.1  2019-12-14  -  Local  Alabama"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMi0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMi0xNCIsIndlaWdodF9jbGFzcyI6MTd9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1047579": [
+          {
+            "meet_id": 4356,
+            "date": "2019-12-14",
+            "age_category": "Women's 16-17 Age Group",
+            "weight_class": "71kg",
+            "lifter_name": "Emily Hubbard",
+            "lifter_id": 44405,
+            "membershipNumbers": [
+              {
+                "athleteName": "Emily Hubbard",
+                "membershipNumber": "1047579",
+                "fullText": "6  -  101  Emily Hubbard  F  16  Fearless Lifting Barbell Club  1047579  68.1  2019-12-14  -  Local  Alabama"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMi0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMi0xNCIsIndlaWdodF9jbGFzcyI6MTd9"
+          }
+        ],
+        "1077006": [
+          {
+            "meet_id": 6468,
+            "date": "2024-07-27",
+            "age_category": "Women's Masters (40-44)",
+            "weight_class": "81kg",
+            "lifter_name": "Emily Hubbard",
+            "lifter_id": 44405,
+            "membershipNumbers": [
+              {
+                "athleteName": "Emily Hubbard",
+                "membershipNumber": "1077006",
+                "fullText": "1  -  133  Emily Hubbard  F  42  RoseCity Barbell  1077006  77.6  2024-07-27  -  Local  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNy0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNy0yNyIsIndlaWdodF9jbGFzcyI6MTM4fQ=="
+          },
+          {
+            "meet_id": 6656,
+            "date": "2024-12-05",
+            "age_category": "Women's Masters (40-44)",
+            "weight_class": "87kg",
+            "lifter_name": "Emily Hubbard",
+            "lifter_id": 44405,
+            "membershipNumbers": [
+              {
+                "athleteName": "Emily Hubbard",
+                "membershipNumber": "1077006",
+                "fullText": "6  -  132  Emily Hubbard  F  42  RoseCity Barbell  1077006  82.72  2024-12-05  -  North American Open Series  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMi0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMi0wNSIsIndlaWdodF9jbGFzcyI6MTM5fQ=="
+          },
+          {
+            "meet_id": 6555,
+            "date": "2024-10-06",
+            "age_category": "Open Women's",
+            "weight_class": "81kg",
+            "lifter_name": "Emily Hubbard",
+            "lifter_id": 44405,
+            "membershipNumbers": [
+              {
+                "athleteName": "Emily Hubbard",
+                "membershipNumber": "1077006",
+                "fullText": "6  -  136  Emily Hubbard  F  42  RoseCity Barbell  1077006  79.35  2024-10-06  -  Local  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0wNiIsIndlaWdodF9jbGFzcyI6OTh9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

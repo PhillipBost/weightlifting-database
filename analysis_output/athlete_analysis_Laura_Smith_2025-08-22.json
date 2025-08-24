@@ -1,0 +1,211 @@
+{
+  "timestamp": "2025-08-22T08:25:48.953Z",
+  "athleteName": "Laura Smith",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 3,
+    "membershipGroups": {
+      "1036048": [
+        {
+          "meet_id": 3636,
+          "date": "2019-01-12",
+          "age_category": "Women's Masters (35-39)",
+          "weight_class": "81kg",
+          "lifter_name": "Laura Smith",
+          "lifter_id": 39731,
+          "membershipNumbers": [
+            {
+              "athleteName": "Laura Smith",
+              "membershipNumber": "1036048",
+              "fullText": "2  -  116  Laura Smith  F  35  3rd Rock Barbell Club  1036048  80  2019-01-12  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0xMiIsIndlaWdodF9jbGFzcyI6MTE4fQ=="
+        }
+      ],
+      "1046056": [
+        {
+          "meet_id": 4201,
+          "date": "2020-01-18",
+          "age_category": "Women's Masters (35-39)",
+          "weight_class": "71kg",
+          "lifter_name": "Laura Smith",
+          "lifter_id": 39731,
+          "membershipNumbers": [
+            {
+              "athleteName": "Laura Smith",
+              "membershipNumber": "1046056",
+              "fullText": "11  -  82  Laura Smith  F  35  True Core Barbell Club  1046056  70.85  2020-01-18  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMS0xOCIsIndlaWdodF9jbGFzcyI6MTE2fQ=="
+        }
+      ],
+      "1074934": [
+        {
+          "meet_id": 6230,
+          "date": "2024-02-10",
+          "age_category": "Women's Masters (35-39)",
+          "weight_class": "+87kg",
+          "lifter_name": "Laura Smith",
+          "lifter_id": 39731,
+          "membershipNumbers": [
+            {
+              "athleteName": "Laura Smith",
+              "membershipNumber": "1074934",
+              "fullText": "4  -  81  Laura Smith   F  36  Mac-Town Barbell Club  1074934  106.6  2024-02-10  -  Local  Missouri Valley"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMi0xMCIsIndlaWdodF9jbGFzcyI6MTIwfQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Laura Smith",
+    "splits": [
+      {
+        "newAthleteName": "Laura Smith (Person 1)",
+        "membershipNumber": "1036048",
+        "competitionCount": 1,
+        "competitions": [
+          3636
+        ]
+      },
+      {
+        "newAthleteName": "Laura Smith (Person 2)",
+        "membershipNumber": "1046056",
+        "competitionCount": 1,
+        "competitions": [
+          4201
+        ]
+      },
+      {
+        "newAthleteName": "Laura Smith (Person 3)",
+        "membershipNumber": "1074934",
+        "competitionCount": 1,
+        "competitions": [
+          6230
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Laura Smith",
+    "competitions": [
+      {
+        "meet_id": 6230,
+        "date": "2024-02-10",
+        "age_category": "Women's Masters (35-39)",
+        "weight_class": "+87kg",
+        "lifter_name": "Laura Smith",
+        "lifter_id": 39731,
+        "membershipNumbers": [
+          {
+            "athleteName": "Laura Smith",
+            "membershipNumber": "1074934",
+            "fullText": "4  -  81  Laura Smith   F  36  Mac-Town Barbell Club  1074934  106.6  2024-02-10  -  Local  Missouri Valley"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMi0xMCIsIndlaWdodF9jbGFzcyI6MTIwfQ=="
+      },
+      {
+        "meet_id": 3636,
+        "date": "2019-01-12",
+        "age_category": "Women's Masters (35-39)",
+        "weight_class": "81kg",
+        "lifter_name": "Laura Smith",
+        "lifter_id": 39731,
+        "membershipNumbers": [
+          {
+            "athleteName": "Laura Smith",
+            "membershipNumber": "1036048",
+            "fullText": "2  -  116  Laura Smith  F  35  3rd Rock Barbell Club  1036048  80  2019-01-12  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0xMiIsIndlaWdodF9jbGFzcyI6MTE4fQ=="
+      },
+      {
+        "meet_id": 4201,
+        "date": "2020-01-18",
+        "age_category": "Women's Masters (35-39)",
+        "weight_class": "71kg",
+        "lifter_name": "Laura Smith",
+        "lifter_id": 39731,
+        "membershipNumbers": [
+          {
+            "athleteName": "Laura Smith",
+            "membershipNumber": "1046056",
+            "fullText": "11  -  82  Laura Smith  F  35  True Core Barbell Club  1046056  70.85  2020-01-18  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMS0xOCIsIndlaWdodF9jbGFzcyI6MTE2fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 3,
+      "membershipGroups": {
+        "1036048": [
+          {
+            "meet_id": 3636,
+            "date": "2019-01-12",
+            "age_category": "Women's Masters (35-39)",
+            "weight_class": "81kg",
+            "lifter_name": "Laura Smith",
+            "lifter_id": 39731,
+            "membershipNumbers": [
+              {
+                "athleteName": "Laura Smith",
+                "membershipNumber": "1036048",
+                "fullText": "2  -  116  Laura Smith  F  35  3rd Rock Barbell Club  1036048  80  2019-01-12  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0xMiIsIndlaWdodF9jbGFzcyI6MTE4fQ=="
+          }
+        ],
+        "1046056": [
+          {
+            "meet_id": 4201,
+            "date": "2020-01-18",
+            "age_category": "Women's Masters (35-39)",
+            "weight_class": "71kg",
+            "lifter_name": "Laura Smith",
+            "lifter_id": 39731,
+            "membershipNumbers": [
+              {
+                "athleteName": "Laura Smith",
+                "membershipNumber": "1046056",
+                "fullText": "11  -  82  Laura Smith  F  35  True Core Barbell Club  1046056  70.85  2020-01-18  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMS0xOCIsIndlaWdodF9jbGFzcyI6MTE2fQ=="
+          }
+        ],
+        "1074934": [
+          {
+            "meet_id": 6230,
+            "date": "2024-02-10",
+            "age_category": "Women's Masters (35-39)",
+            "weight_class": "+87kg",
+            "lifter_name": "Laura Smith",
+            "lifter_id": 39731,
+            "membershipNumbers": [
+              {
+                "athleteName": "Laura Smith",
+                "membershipNumber": "1074934",
+                "fullText": "4  -  81  Laura Smith   F  36  Mac-Town Barbell Club  1074934  106.6  2024-02-10  -  Local  Missouri Valley"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMi0xMCIsIndlaWdodF9jbGFzcyI6MTIwfQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

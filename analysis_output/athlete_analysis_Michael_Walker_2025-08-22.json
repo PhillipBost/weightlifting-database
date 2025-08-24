@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T16:32:15.402Z",
+  "athleteName": "Michael Walker",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1020737": [
+        {
+          "meet_id": 2531,
+          "date": "2017-06-24",
+          "age_category": "Men's 13 Under Age Group",
+          "weight_class": "44kg",
+          "lifter_name": "Michael Walker",
+          "lifter_id": 30340,
+          "membershipNumbers": [
+            {
+              "athleteName": "Michael Walker",
+              "membershipNumber": "1020737",
+              "fullText": "1  -  39  Michael Walker  M  11  LOUISIANA BARBELL CLUB  1020737  40.8  2017-06-24  -  Local  Southern"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNi0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNi0yNCIsIndlaWdodF9jbGFzcyI6NzQ2fQ=="
+        }
+      ],
+      "1082659": [
+        {
+          "meet_id": 6988,
+          "date": "2025-08-03",
+          "age_category": "Men's Masters (35-39)",
+          "weight_class": "88kg",
+          "lifter_name": "Michael Walker",
+          "lifter_id": 30340,
+          "membershipNumbers": [
+            {
+              "athleteName": "Michael Walker",
+              "membershipNumber": "1082659",
+              "fullText": "1  -  197  Michael Walker  M  37  Rebels Weightlifting Club  1082659  83.3  2025-08-03  -  Local  New England"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wOC0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wOC0wMyIsIndlaWdodF9jbGFzcyI6Njk3fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Michael Walker",
+    "splits": [
+      {
+        "newAthleteName": "Michael Walker (Person 1)",
+        "membershipNumber": "1020737",
+        "competitionCount": 1,
+        "competitions": [
+          2531
+        ]
+      },
+      {
+        "newAthleteName": "Michael Walker (Person 2)",
+        "membershipNumber": "1082659",
+        "competitionCount": 1,
+        "competitions": [
+          6988
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Michael Walker",
+    "competitions": [
+      {
+        "meet_id": 6988,
+        "date": "2025-08-03",
+        "age_category": "Men's Masters (35-39)",
+        "weight_class": "88kg",
+        "lifter_name": "Michael Walker",
+        "lifter_id": 30340,
+        "membershipNumbers": [
+          {
+            "athleteName": "Michael Walker",
+            "membershipNumber": "1082659",
+            "fullText": "1  -  197  Michael Walker  M  37  Rebels Weightlifting Club  1082659  83.3  2025-08-03  -  Local  New England"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wOC0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wOC0wMyIsIndlaWdodF9jbGFzcyI6Njk3fQ=="
+      },
+      {
+        "meet_id": 2531,
+        "date": "2017-06-24",
+        "age_category": "Men's 13 Under Age Group",
+        "weight_class": "44kg",
+        "lifter_name": "Michael Walker",
+        "lifter_id": 30340,
+        "membershipNumbers": [
+          {
+            "athleteName": "Michael Walker",
+            "membershipNumber": "1020737",
+            "fullText": "1  -  39  Michael Walker  M  11  LOUISIANA BARBELL CLUB  1020737  40.8  2017-06-24  -  Local  Southern"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNi0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNi0yNCIsIndlaWdodF9jbGFzcyI6NzQ2fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1020737": [
+          {
+            "meet_id": 2531,
+            "date": "2017-06-24",
+            "age_category": "Men's 13 Under Age Group",
+            "weight_class": "44kg",
+            "lifter_name": "Michael Walker",
+            "lifter_id": 30340,
+            "membershipNumbers": [
+              {
+                "athleteName": "Michael Walker",
+                "membershipNumber": "1020737",
+                "fullText": "1  -  39  Michael Walker  M  11  LOUISIANA BARBELL CLUB  1020737  40.8  2017-06-24  -  Local  Southern"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNi0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNi0yNCIsIndlaWdodF9jbGFzcyI6NzQ2fQ=="
+          }
+        ],
+        "1082659": [
+          {
+            "meet_id": 6988,
+            "date": "2025-08-03",
+            "age_category": "Men's Masters (35-39)",
+            "weight_class": "88kg",
+            "lifter_name": "Michael Walker",
+            "lifter_id": 30340,
+            "membershipNumbers": [
+              {
+                "athleteName": "Michael Walker",
+                "membershipNumber": "1082659",
+                "fullText": "1  -  197  Michael Walker  M  37  Rebels Weightlifting Club  1082659  83.3  2025-08-03  -  Local  New England"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wOC0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wOC0wMyIsIndlaWdodF9jbGFzcyI6Njk3fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

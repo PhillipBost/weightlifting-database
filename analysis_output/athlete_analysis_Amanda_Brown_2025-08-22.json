@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T22:09:43.110Z",
+  "athleteName": "Amanda Brown",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1007449": [
+        {
+          "meet_id": 1892,
+          "date": "2016-07-17",
+          "age_category": "Open Women's",
+          "weight_class": "63 kg",
+          "lifter_name": "Amanda Brown",
+          "lifter_id": 24143,
+          "membershipNumbers": [
+            {
+              "athleteName": "Amanda Brown",
+              "membershipNumber": "1007449",
+              "fullText": "12  -  118  Amanda Brown  F  28  Raleigh Weightlifting Club  1007449  60.6  2016-07-17  -  Local  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNy0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNy0xNyIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+        }
+      ],
+      "1058635": [
+        {
+          "meet_id": 5259,
+          "date": "2022-04-02",
+          "age_category": "Women's Masters (35-39)",
+          "weight_class": "76kg",
+          "lifter_name": "Amanda Brown",
+          "lifter_id": 24143,
+          "membershipNumbers": [
+            {
+              "athleteName": "Amanda Brown",
+              "membershipNumber": "1058635",
+              "fullText": "3  -  115  Amanda Brown  F  39  Aquila Barbell Club  1058635  71.85  2022-04-02  -  Local  Pennsylvania-West Virginia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNC0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNC0wMiIsIndlaWdodF9jbGFzcyI6MTE3fQ=="
+        },
+        {
+          "meet_id": 5553,
+          "date": "2022-10-23",
+          "age_category": "Women's Masters (35-39)",
+          "weight_class": "76kg",
+          "lifter_name": "Amanda Brown",
+          "lifter_id": 24143,
+          "membershipNumbers": [
+            {
+              "athleteName": "Amanda Brown",
+              "membershipNumber": "1058635",
+              "fullText": "1  -  120  Amanda Brown  F  39  Aquila Barbell Club  1058635  72.5  2022-10-23  -  Local  Pennsylvania-West Virginia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMC0yMyIsIndlaWdodF9jbGFzcyI6MTE3fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Amanda Brown",
+    "splits": [
+      {
+        "newAthleteName": "Amanda Brown (Person 1)",
+        "membershipNumber": "1007449",
+        "competitionCount": 1,
+        "competitions": [
+          1892
+        ]
+      },
+      {
+        "newAthleteName": "Amanda Brown (Person 2)",
+        "membershipNumber": "1058635",
+        "competitionCount": 2,
+        "competitions": [
+          5259,
+          5553
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Amanda Brown",
+    "competitions": [
+      {
+        "meet_id": 5259,
+        "date": "2022-04-02",
+        "age_category": "Women's Masters (35-39)",
+        "weight_class": "76kg",
+        "lifter_name": "Amanda Brown",
+        "lifter_id": 24143,
+        "membershipNumbers": [
+          {
+            "athleteName": "Amanda Brown",
+            "membershipNumber": "1058635",
+            "fullText": "3  -  115  Amanda Brown  F  39  Aquila Barbell Club  1058635  71.85  2022-04-02  -  Local  Pennsylvania-West Virginia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNC0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNC0wMiIsIndlaWdodF9jbGFzcyI6MTE3fQ=="
+      },
+      {
+        "meet_id": 5553,
+        "date": "2022-10-23",
+        "age_category": "Women's Masters (35-39)",
+        "weight_class": "76kg",
+        "lifter_name": "Amanda Brown",
+        "lifter_id": 24143,
+        "membershipNumbers": [
+          {
+            "athleteName": "Amanda Brown",
+            "membershipNumber": "1058635",
+            "fullText": "1  -  120  Amanda Brown  F  39  Aquila Barbell Club  1058635  72.5  2022-10-23  -  Local  Pennsylvania-West Virginia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMC0yMyIsIndlaWdodF9jbGFzcyI6MTE3fQ=="
+      },
+      {
+        "meet_id": 1892,
+        "date": "2016-07-17",
+        "age_category": "Open Women's",
+        "weight_class": "63 kg",
+        "lifter_name": "Amanda Brown",
+        "lifter_id": 24143,
+        "membershipNumbers": [
+          {
+            "athleteName": "Amanda Brown",
+            "membershipNumber": "1007449",
+            "fullText": "12  -  118  Amanda Brown  F  28  Raleigh Weightlifting Club  1007449  60.6  2016-07-17  -  Local  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNy0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNy0xNyIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1007449": [
+          {
+            "meet_id": 1892,
+            "date": "2016-07-17",
+            "age_category": "Open Women's",
+            "weight_class": "63 kg",
+            "lifter_name": "Amanda Brown",
+            "lifter_id": 24143,
+            "membershipNumbers": [
+              {
+                "athleteName": "Amanda Brown",
+                "membershipNumber": "1007449",
+                "fullText": "12  -  118  Amanda Brown  F  28  Raleigh Weightlifting Club  1007449  60.6  2016-07-17  -  Local  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNy0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNy0xNyIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+          }
+        ],
+        "1058635": [
+          {
+            "meet_id": 5259,
+            "date": "2022-04-02",
+            "age_category": "Women's Masters (35-39)",
+            "weight_class": "76kg",
+            "lifter_name": "Amanda Brown",
+            "lifter_id": 24143,
+            "membershipNumbers": [
+              {
+                "athleteName": "Amanda Brown",
+                "membershipNumber": "1058635",
+                "fullText": "3  -  115  Amanda Brown  F  39  Aquila Barbell Club  1058635  71.85  2022-04-02  -  Local  Pennsylvania-West Virginia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNC0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNC0wMiIsIndlaWdodF9jbGFzcyI6MTE3fQ=="
+          },
+          {
+            "meet_id": 5553,
+            "date": "2022-10-23",
+            "age_category": "Women's Masters (35-39)",
+            "weight_class": "76kg",
+            "lifter_name": "Amanda Brown",
+            "lifter_id": 24143,
+            "membershipNumbers": [
+              {
+                "athleteName": "Amanda Brown",
+                "membershipNumber": "1058635",
+                "fullText": "1  -  120  Amanda Brown  F  39  Aquila Barbell Club  1058635  72.5  2022-10-23  -  Local  Pennsylvania-West Virginia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMC0yMyIsIndlaWdodF9jbGFzcyI6MTE3fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

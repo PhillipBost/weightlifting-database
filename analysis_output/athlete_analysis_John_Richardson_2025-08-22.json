@@ -1,0 +1,80 @@
+{
+  "timestamp": "2025-08-22T05:32:06.664Z",
+  "athleteName": "John Richardson",
+  "totalCompetitions": 1,
+  "analysis": {
+    "distinctAthletes": 1,
+    "membershipGroups": {
+      "152855": [
+        {
+          "meet_id": 137,
+          "date": "2015-06-13",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "John Richardson",
+          "lifter_id": 7975,
+          "membershipNumbers": [
+            {
+              "athleteName": "John Richardson",
+              "membershipNumber": "152855",
+              "fullText": "22  -  199  John Richardson  M  37  -  152855  104.9  2015-06-13  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNi0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNi0xMyIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": false
+  },
+  "splitPlan": {
+    "action": "NO_SPLIT_NEEDED",
+    "reason": "Only one distinct athlete found"
+  },
+  "rawData": {
+    "athleteName": "John Richardson",
+    "competitions": [
+      {
+        "meet_id": 137,
+        "date": "2015-06-13",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "John Richardson",
+        "lifter_id": 7975,
+        "membershipNumbers": [
+          {
+            "athleteName": "John Richardson",
+            "membershipNumber": "152855",
+            "fullText": "22  -  199  John Richardson  M  37  -  152855  104.9  2015-06-13  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNi0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNi0xMyIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 1,
+      "membershipGroups": {
+        "152855": [
+          {
+            "meet_id": 137,
+            "date": "2015-06-13",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "John Richardson",
+            "lifter_id": 7975,
+            "membershipNumbers": [
+              {
+                "athleteName": "John Richardson",
+                "membershipNumber": "152855",
+                "fullText": "22  -  199  John Richardson  M  37  -  152855  104.9  2015-06-13  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNi0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNi0xMyIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": false
+    }
+  }
+}

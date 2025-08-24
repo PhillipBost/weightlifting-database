@@ -1,0 +1,215 @@
+{
+  "timestamp": "2025-08-22T23:52:25.791Z",
+  "athleteName": "Quentin Patault",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1031465": [
+        {
+          "meet_id": 3993,
+          "date": "2019-11-23",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Quentin Patault",
+          "lifter_id": 36327,
+          "membershipNumbers": [
+            {
+              "athleteName": "Quentin Patault",
+              "membershipNumber": "1031465",
+              "fullText": "2  -  274  Quentin Patault  M  27  -  1031465  80.3  2019-11-23  -  Local  Hawaii and International"
+            },
+            {
+              "athleteName": "Quentin Patault",
+              "membershipNumber": "1050825",
+              "fullText": "2  -  274  Quentin Patault  M  27  Unaffiliated  1050825  80.6  2019-11-23  -  Local  Hawaii and International"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0yMyIsIndlaWdodF9jbGFzcyI6ODV9"
+        },
+        {
+          "meet_id": 3217,
+          "date": "2018-10-28",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Quentin Patault",
+          "lifter_id": 36327,
+          "membershipNumbers": [
+            {
+              "athleteName": "Quentin Patault",
+              "membershipNumber": "1031465",
+              "fullText": "5  -  267  Quentin Patault  M  26  -  1031465  79.4  2018-10-28  -  Local  Hawaii and International"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yOCIsIndlaWdodF9jbGFzcyI6ODV9"
+        }
+      ],
+      "1050825": [
+        {
+          "meet_id": 4532,
+          "date": "2020-05-31",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Quentin Patault",
+          "lifter_id": 36327,
+          "membershipNumbers": [
+            {
+              "athleteName": "Quentin Patault",
+              "membershipNumber": "1050825",
+              "fullText": "1  -  258  Quentin Patault  M  28  Unaffiliated  1050825  80.9  2020-05-31  -  Local  Hawaii and International"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wNS0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wNS0zMSIsIndlaWdodF9jbGFzcyI6ODV9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Quentin Patault",
+    "splits": [
+      {
+        "newAthleteName": "Quentin Patault (Person 1)",
+        "membershipNumber": "1031465",
+        "competitionCount": 2,
+        "competitions": [
+          3993,
+          3217
+        ]
+      },
+      {
+        "newAthleteName": "Quentin Patault (Person 2)",
+        "membershipNumber": "1050825",
+        "competitionCount": 1,
+        "competitions": [
+          4532
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Quentin Patault",
+    "competitions": [
+      {
+        "meet_id": 4532,
+        "date": "2020-05-31",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Quentin Patault",
+        "lifter_id": 36327,
+        "membershipNumbers": [
+          {
+            "athleteName": "Quentin Patault",
+            "membershipNumber": "1050825",
+            "fullText": "1  -  258  Quentin Patault  M  28  Unaffiliated  1050825  80.9  2020-05-31  -  Local  Hawaii and International"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wNS0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wNS0zMSIsIndlaWdodF9jbGFzcyI6ODV9"
+      },
+      {
+        "meet_id": 3993,
+        "date": "2019-11-23",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Quentin Patault",
+        "lifter_id": 36327,
+        "membershipNumbers": [
+          {
+            "athleteName": "Quentin Patault",
+            "membershipNumber": "1031465",
+            "fullText": "2  -  274  Quentin Patault  M  27  -  1031465  80.3  2019-11-23  -  Local  Hawaii and International"
+          },
+          {
+            "athleteName": "Quentin Patault",
+            "membershipNumber": "1050825",
+            "fullText": "2  -  274  Quentin Patault  M  27  Unaffiliated  1050825  80.6  2019-11-23  -  Local  Hawaii and International"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0yMyIsIndlaWdodF9jbGFzcyI6ODV9"
+      },
+      {
+        "meet_id": 3217,
+        "date": "2018-10-28",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Quentin Patault",
+        "lifter_id": 36327,
+        "membershipNumbers": [
+          {
+            "athleteName": "Quentin Patault",
+            "membershipNumber": "1031465",
+            "fullText": "5  -  267  Quentin Patault  M  26  -  1031465  79.4  2018-10-28  -  Local  Hawaii and International"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yOCIsIndlaWdodF9jbGFzcyI6ODV9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1031465": [
+          {
+            "meet_id": 3993,
+            "date": "2019-11-23",
+            "age_category": "Open Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Quentin Patault",
+            "lifter_id": 36327,
+            "membershipNumbers": [
+              {
+                "athleteName": "Quentin Patault",
+                "membershipNumber": "1031465",
+                "fullText": "2  -  274  Quentin Patault  M  27  -  1031465  80.3  2019-11-23  -  Local  Hawaii and International"
+              },
+              {
+                "athleteName": "Quentin Patault",
+                "membershipNumber": "1050825",
+                "fullText": "2  -  274  Quentin Patault  M  27  Unaffiliated  1050825  80.6  2019-11-23  -  Local  Hawaii and International"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0yMyIsIndlaWdodF9jbGFzcyI6ODV9"
+          },
+          {
+            "meet_id": 3217,
+            "date": "2018-10-28",
+            "age_category": "Open Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Quentin Patault",
+            "lifter_id": 36327,
+            "membershipNumbers": [
+              {
+                "athleteName": "Quentin Patault",
+                "membershipNumber": "1031465",
+                "fullText": "5  -  267  Quentin Patault  M  26  -  1031465  79.4  2018-10-28  -  Local  Hawaii and International"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yOCIsIndlaWdodF9jbGFzcyI6ODV9"
+          }
+        ],
+        "1050825": [
+          {
+            "meet_id": 4532,
+            "date": "2020-05-31",
+            "age_category": "Open Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Quentin Patault",
+            "lifter_id": 36327,
+            "membershipNumbers": [
+              {
+                "athleteName": "Quentin Patault",
+                "membershipNumber": "1050825",
+                "fullText": "1  -  258  Quentin Patault  M  28  Unaffiliated  1050825  80.9  2020-05-31  -  Local  Hawaii and International"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wNS0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wNS0zMSIsIndlaWdodF9jbGFzcyI6ODV9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

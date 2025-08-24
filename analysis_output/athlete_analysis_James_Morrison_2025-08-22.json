@@ -1,0 +1,88 @@
+{
+  "timestamp": "2025-08-22T05:28:58.828Z",
+  "athleteName": "James Morrison",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 0,
+    "membershipGroups": {},
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 2843,
+        "date": "2018-04-14",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "James Morrison",
+        "lifter_id": 7826,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 133,
+        "date": "2015-10-17",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "James Morrison",
+        "lifter_id": 7826,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xNyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      }
+    ],
+    "splitRequired": false
+  },
+  "splitPlan": {
+    "action": "NO_SPLIT_NEEDED",
+    "reason": "Only one distinct athlete found"
+  },
+  "rawData": {
+    "athleteName": "James Morrison",
+    "competitions": [
+      {
+        "meet_id": 2843,
+        "date": "2018-04-14",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "James Morrison",
+        "lifter_id": 7826,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 133,
+        "date": "2015-10-17",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "James Morrison",
+        "lifter_id": 7826,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xNyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 0,
+      "membershipGroups": {},
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 2843,
+          "date": "2018-04-14",
+          "age_category": "Open Men's",
+          "weight_class": "+105 kg",
+          "lifter_name": "James Morrison",
+          "lifter_id": 7826,
+          "membershipNumbers": [],
+          "error": "No division code found for: \"Open Men's +105 kg\""
+        },
+        {
+          "meet_id": 133,
+          "date": "2015-10-17",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "James Morrison",
+          "lifter_id": 7826,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xNyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ],
+      "splitRequired": false
+    }
+  }
+}

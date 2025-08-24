@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T09:46:49.516Z",
+  "athleteName": "Lindsey Nichols",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "171094": [
+        {
+          "meet_id": 897,
+          "date": "2013-01-20",
+          "age_category": "Open Women's",
+          "weight_class": "53 kg",
+          "lifter_name": "Lindsey Nichols",
+          "lifter_id": 1211,
+          "membershipNumbers": [
+            {
+              "athleteName": "Lindsey Nichols",
+              "membershipNumber": "171094",
+              "fullText": "7  -  98  Lindsey Nichols  F  31  POWER AND GRACE PERFORMANCE.  171094  51.3  2013-01-20  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMS0yMCIsIndlaWdodF9jbGFzcyI6MzYzfQ=="
+        },
+        {
+          "meet_id": 685,
+          "date": "2012-09-29",
+          "age_category": "Open Women's",
+          "weight_class": "53 kg",
+          "lifter_name": "Lindsey Nichols",
+          "lifter_id": 1211,
+          "membershipNumbers": [
+            {
+              "athleteName": "Lindsey Nichols",
+              "membershipNumber": "171094",
+              "fullText": "2  -  93  Lindsey Nichols  F  30  POWER AND GRACE PERFORMANCE.  171094  51.6  2012-09-29  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wOS0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wOS0yOSIsIndlaWdodF9jbGFzcyI6MzYzfQ=="
+        }
+      ],
+      "175853": [
+        {
+          "meet_id": 2622,
+          "date": "2017-05-21",
+          "age_category": "Open Women's",
+          "weight_class": "69 kg",
+          "lifter_name": "Lindsey Nichols",
+          "lifter_id": 1211,
+          "membershipNumbers": [
+            {
+              "athleteName": "Lindsey Nichols",
+              "membershipNumber": "175853",
+              "fullText": "20  -  140  Lindsey Nichols  F  28  CROSS TIMBERS BARBELL  175853  66.18  2017-05-21  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNS0yMSIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Lindsey Nichols",
+    "splits": [
+      {
+        "newAthleteName": "Lindsey Nichols (Person 1)",
+        "membershipNumber": "171094",
+        "competitionCount": 2,
+        "competitions": [
+          897,
+          685
+        ]
+      },
+      {
+        "newAthleteName": "Lindsey Nichols (Person 2)",
+        "membershipNumber": "175853",
+        "competitionCount": 1,
+        "competitions": [
+          2622
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Lindsey Nichols",
+    "competitions": [
+      {
+        "meet_id": 897,
+        "date": "2013-01-20",
+        "age_category": "Open Women's",
+        "weight_class": "53 kg",
+        "lifter_name": "Lindsey Nichols",
+        "lifter_id": 1211,
+        "membershipNumbers": [
+          {
+            "athleteName": "Lindsey Nichols",
+            "membershipNumber": "171094",
+            "fullText": "7  -  98  Lindsey Nichols  F  31  POWER AND GRACE PERFORMANCE.  171094  51.3  2013-01-20  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMS0yMCIsIndlaWdodF9jbGFzcyI6MzYzfQ=="
+      },
+      {
+        "meet_id": 2622,
+        "date": "2017-05-21",
+        "age_category": "Open Women's",
+        "weight_class": "69 kg",
+        "lifter_name": "Lindsey Nichols",
+        "lifter_id": 1211,
+        "membershipNumbers": [
+          {
+            "athleteName": "Lindsey Nichols",
+            "membershipNumber": "175853",
+            "fullText": "20  -  140  Lindsey Nichols  F  28  CROSS TIMBERS BARBELL  175853  66.18  2017-05-21  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNS0yMSIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+      },
+      {
+        "meet_id": 685,
+        "date": "2012-09-29",
+        "age_category": "Open Women's",
+        "weight_class": "53 kg",
+        "lifter_name": "Lindsey Nichols",
+        "lifter_id": 1211,
+        "membershipNumbers": [
+          {
+            "athleteName": "Lindsey Nichols",
+            "membershipNumber": "171094",
+            "fullText": "2  -  93  Lindsey Nichols  F  30  POWER AND GRACE PERFORMANCE.  171094  51.6  2012-09-29  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wOS0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wOS0yOSIsIndlaWdodF9jbGFzcyI6MzYzfQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "171094": [
+          {
+            "meet_id": 897,
+            "date": "2013-01-20",
+            "age_category": "Open Women's",
+            "weight_class": "53 kg",
+            "lifter_name": "Lindsey Nichols",
+            "lifter_id": 1211,
+            "membershipNumbers": [
+              {
+                "athleteName": "Lindsey Nichols",
+                "membershipNumber": "171094",
+                "fullText": "7  -  98  Lindsey Nichols  F  31  POWER AND GRACE PERFORMANCE.  171094  51.3  2013-01-20  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMS0yMCIsIndlaWdodF9jbGFzcyI6MzYzfQ=="
+          },
+          {
+            "meet_id": 685,
+            "date": "2012-09-29",
+            "age_category": "Open Women's",
+            "weight_class": "53 kg",
+            "lifter_name": "Lindsey Nichols",
+            "lifter_id": 1211,
+            "membershipNumbers": [
+              {
+                "athleteName": "Lindsey Nichols",
+                "membershipNumber": "171094",
+                "fullText": "2  -  93  Lindsey Nichols  F  30  POWER AND GRACE PERFORMANCE.  171094  51.6  2012-09-29  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wOS0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wOS0yOSIsIndlaWdodF9jbGFzcyI6MzYzfQ=="
+          }
+        ],
+        "175853": [
+          {
+            "meet_id": 2622,
+            "date": "2017-05-21",
+            "age_category": "Open Women's",
+            "weight_class": "69 kg",
+            "lifter_name": "Lindsey Nichols",
+            "lifter_id": 1211,
+            "membershipNumbers": [
+              {
+                "athleteName": "Lindsey Nichols",
+                "membershipNumber": "175853",
+                "fullText": "20  -  140  Lindsey Nichols  F  28  CROSS TIMBERS BARBELL  175853  66.18  2017-05-21  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNS0yMSIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

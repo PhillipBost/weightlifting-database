@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-22T13:24:53.614Z",
+  "athleteName": "Peter Park",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "182993": [
+        {
+          "meet_id": 451,
+          "date": "2015-01-31",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Peter Park",
+          "lifter_id": 14416,
+          "membershipNumbers": [
+            {
+              "athleteName": "Peter Park",
+              "membershipNumber": "182993",
+              "fullText": "9  -  190  Peter Park  M  25  -  182993  74.05  2015-01-31  -  Local  Georgia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMS0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMS0zMSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        },
+        {
+          "meet_id": 1209,
+          "date": "2014-03-01",
+          "age_category": "Open Men's",
+          "weight_class": "69 kg",
+          "lifter_name": "Peter Park",
+          "lifter_id": 14416,
+          "membershipNumbers": [
+            {
+              "athleteName": "Peter Park",
+              "membershipNumber": "182993",
+              "fullText": "9  -  191  Peter Park  M  24  -  182993  68  2014-03-01  -  Local  Georgia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0wMSIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+        },
+        {
+          "meet_id": 1123,
+          "date": "2013-04-27",
+          "age_category": "Open Men's",
+          "weight_class": "69 kg",
+          "lifter_name": "Peter Park",
+          "lifter_id": 14416,
+          "membershipNumbers": [
+            {
+              "athleteName": "Peter Park",
+              "membershipNumber": "182993",
+              "fullText": "4  -  172  Peter Park  M  23  -  182993  68.4  2013-04-27  -  Local  Georgia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNC0yNyIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+        }
+      ],
+      "1079504": [
+        {
+          "meet_id": 6720,
+          "date": "2025-01-26",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "Peter Park",
+          "lifter_id": 14416,
+          "membershipNumbers": [
+            {
+              "athleteName": "Peter Park",
+              "membershipNumber": "1079504",
+              "fullText": "18  -  168  Peter Park  M  24  -  1079504  85.8  2025-01-26  -  Local  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMS0yNiIsIndlaWdodF9jbGFzcyI6ODZ9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Peter Park",
+    "splits": [
+      {
+        "newAthleteName": "Peter Park (Person 1)",
+        "membershipNumber": "182993",
+        "competitionCount": 3,
+        "competitions": [
+          451,
+          1209,
+          1123
+        ]
+      },
+      {
+        "newAthleteName": "Peter Park (Person 2)",
+        "membershipNumber": "1079504",
+        "competitionCount": 1,
+        "competitions": [
+          6720
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Peter Park",
+    "competitions": [
+      {
+        "meet_id": 451,
+        "date": "2015-01-31",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Peter Park",
+        "lifter_id": 14416,
+        "membershipNumbers": [
+          {
+            "athleteName": "Peter Park",
+            "membershipNumber": "182993",
+            "fullText": "9  -  190  Peter Park  M  25  -  182993  74.05  2015-01-31  -  Local  Georgia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMS0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMS0zMSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 6720,
+        "date": "2025-01-26",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Peter Park",
+        "lifter_id": 14416,
+        "membershipNumbers": [
+          {
+            "athleteName": "Peter Park",
+            "membershipNumber": "1079504",
+            "fullText": "18  -  168  Peter Park  M  24  -  1079504  85.8  2025-01-26  -  Local  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMS0yNiIsIndlaWdodF9jbGFzcyI6ODZ9"
+      },
+      {
+        "meet_id": 1209,
+        "date": "2014-03-01",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "Peter Park",
+        "lifter_id": 14416,
+        "membershipNumbers": [
+          {
+            "athleteName": "Peter Park",
+            "membershipNumber": "182993",
+            "fullText": "9  -  191  Peter Park  M  24  -  182993  68  2014-03-01  -  Local  Georgia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0wMSIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      },
+      {
+        "meet_id": 1123,
+        "date": "2013-04-27",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "Peter Park",
+        "lifter_id": 14416,
+        "membershipNumbers": [
+          {
+            "athleteName": "Peter Park",
+            "membershipNumber": "182993",
+            "fullText": "4  -  172  Peter Park  M  23  -  182993  68.4  2013-04-27  -  Local  Georgia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNC0yNyIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "182993": [
+          {
+            "meet_id": 451,
+            "date": "2015-01-31",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Peter Park",
+            "lifter_id": 14416,
+            "membershipNumbers": [
+              {
+                "athleteName": "Peter Park",
+                "membershipNumber": "182993",
+                "fullText": "9  -  190  Peter Park  M  25  -  182993  74.05  2015-01-31  -  Local  Georgia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMS0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMS0zMSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          },
+          {
+            "meet_id": 1209,
+            "date": "2014-03-01",
+            "age_category": "Open Men's",
+            "weight_class": "69 kg",
+            "lifter_name": "Peter Park",
+            "lifter_id": 14416,
+            "membershipNumbers": [
+              {
+                "athleteName": "Peter Park",
+                "membershipNumber": "182993",
+                "fullText": "9  -  191  Peter Park  M  24  -  182993  68  2014-03-01  -  Local  Georgia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0wMSIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+          },
+          {
+            "meet_id": 1123,
+            "date": "2013-04-27",
+            "age_category": "Open Men's",
+            "weight_class": "69 kg",
+            "lifter_name": "Peter Park",
+            "lifter_id": 14416,
+            "membershipNumbers": [
+              {
+                "athleteName": "Peter Park",
+                "membershipNumber": "182993",
+                "fullText": "4  -  172  Peter Park  M  23  -  182993  68.4  2013-04-27  -  Local  Georgia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNC0yNyIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+          }
+        ],
+        "1079504": [
+          {
+            "meet_id": 6720,
+            "date": "2025-01-26",
+            "age_category": "Open Men's",
+            "weight_class": "89kg",
+            "lifter_name": "Peter Park",
+            "lifter_id": 14416,
+            "membershipNumbers": [
+              {
+                "athleteName": "Peter Park",
+                "membershipNumber": "1079504",
+                "fullText": "18  -  168  Peter Park  M  24  -  1079504  85.8  2025-01-26  -  Local  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMS0yNiIsIndlaWdodF9jbGFzcyI6ODZ9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

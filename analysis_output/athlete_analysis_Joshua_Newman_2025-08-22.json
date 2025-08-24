@@ -1,0 +1,283 @@
+{
+  "timestamp": "2025-08-22T12:41:07.188Z",
+  "athleteName": "Joshua Newman",
+  "totalCompetitions": 5,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "212440": [
+        {
+          "meet_id": 111,
+          "date": "2015-05-23",
+          "age_category": "Open Men's",
+          "weight_class": "69 kg",
+          "lifter_name": "Joshua Newman",
+          "lifter_id": 7211,
+          "membershipNumbers": [
+            {
+              "athleteName": "Joshua Newman",
+              "membershipNumber": "212440",
+              "fullText": "16  -  179  Joshua Newman  M  29  -  212440  67  2015-05-23  -  Local  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0yMyIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+        }
+      ],
+      "1067524": [
+        {
+          "meet_id": 5974,
+          "date": "2023-08-12",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Joshua Newman",
+          "lifter_id": 7211,
+          "membershipNumbers": [
+            {
+              "athleteName": "Joshua Newman",
+              "membershipNumber": "1067524",
+              "fullText": "25  -  151  Joshua Newman  M  33  Mach 1 Barbell  1067524  80.4  2023-08-12  -  Local  New York"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wOC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wOC0xMiIsIndlaWdodF9jbGFzcyI6ODV9"
+        },
+        {
+          "meet_id": 6125,
+          "date": "2023-11-19",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Joshua Newman",
+          "lifter_id": 7211,
+          "membershipNumbers": [
+            {
+              "athleteName": "Joshua Newman",
+              "membershipNumber": "1067524",
+              "fullText": "8  -  151  Joshua Newman  M  33  Mach 1 Barbell  1067524  80.4  2023-11-19  -  Local  New York"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMS0xOSIsIndlaWdodF9jbGFzcyI6ODV9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 5821,
+        "date": "2023-04-29",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Joshua Newman",
+        "lifter_id": 7211,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0yOSIsIndlaWdodF9jbGFzcyI6ODV9"
+      },
+      {
+        "meet_id": 5658,
+        "date": "2023-01-14",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Joshua Newman",
+        "lifter_id": 7211,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMS0xNCIsIndlaWdodF9jbGFzcyI6ODV9"
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Joshua Newman",
+    "splits": [
+      {
+        "newAthleteName": "Joshua Newman (Person 1)",
+        "membershipNumber": "212440",
+        "competitionCount": 1,
+        "competitions": [
+          111
+        ]
+      },
+      {
+        "newAthleteName": "Joshua Newman (Person 2)",
+        "membershipNumber": "1067524",
+        "competitionCount": 2,
+        "competitions": [
+          5974,
+          6125
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 5821,
+        "date": "2023-04-29",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Joshua Newman",
+        "lifter_id": 7211,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0yOSIsIndlaWdodF9jbGFzcyI6ODV9"
+      },
+      {
+        "meet_id": 5658,
+        "date": "2023-01-14",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Joshua Newman",
+        "lifter_id": 7211,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMS0xNCIsIndlaWdodF9jbGFzcyI6ODV9"
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Joshua Newman",
+    "competitions": [
+      {
+        "meet_id": 5974,
+        "date": "2023-08-12",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Joshua Newman",
+        "lifter_id": 7211,
+        "membershipNumbers": [
+          {
+            "athleteName": "Joshua Newman",
+            "membershipNumber": "1067524",
+            "fullText": "25  -  151  Joshua Newman  M  33  Mach 1 Barbell  1067524  80.4  2023-08-12  -  Local  New York"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wOC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wOC0xMiIsIndlaWdodF9jbGFzcyI6ODV9"
+      },
+      {
+        "meet_id": 6125,
+        "date": "2023-11-19",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Joshua Newman",
+        "lifter_id": 7211,
+        "membershipNumbers": [
+          {
+            "athleteName": "Joshua Newman",
+            "membershipNumber": "1067524",
+            "fullText": "8  -  151  Joshua Newman  M  33  Mach 1 Barbell  1067524  80.4  2023-11-19  -  Local  New York"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMS0xOSIsIndlaWdodF9jbGFzcyI6ODV9"
+      },
+      {
+        "meet_id": 5821,
+        "date": "2023-04-29",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Joshua Newman",
+        "lifter_id": 7211,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0yOSIsIndlaWdodF9jbGFzcyI6ODV9"
+      },
+      {
+        "meet_id": 111,
+        "date": "2015-05-23",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "Joshua Newman",
+        "lifter_id": 7211,
+        "membershipNumbers": [
+          {
+            "athleteName": "Joshua Newman",
+            "membershipNumber": "212440",
+            "fullText": "16  -  179  Joshua Newman  M  29  -  212440  67  2015-05-23  -  Local  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0yMyIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      },
+      {
+        "meet_id": 5658,
+        "date": "2023-01-14",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Joshua Newman",
+        "lifter_id": 7211,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMS0xNCIsIndlaWdodF9jbGFzcyI6ODV9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "212440": [
+          {
+            "meet_id": 111,
+            "date": "2015-05-23",
+            "age_category": "Open Men's",
+            "weight_class": "69 kg",
+            "lifter_name": "Joshua Newman",
+            "lifter_id": 7211,
+            "membershipNumbers": [
+              {
+                "athleteName": "Joshua Newman",
+                "membershipNumber": "212440",
+                "fullText": "16  -  179  Joshua Newman  M  29  -  212440  67  2015-05-23  -  Local  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0yMyIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+          }
+        ],
+        "1067524": [
+          {
+            "meet_id": 5974,
+            "date": "2023-08-12",
+            "age_category": "Open Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Joshua Newman",
+            "lifter_id": 7211,
+            "membershipNumbers": [
+              {
+                "athleteName": "Joshua Newman",
+                "membershipNumber": "1067524",
+                "fullText": "25  -  151  Joshua Newman  M  33  Mach 1 Barbell  1067524  80.4  2023-08-12  -  Local  New York"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wOC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wOC0xMiIsIndlaWdodF9jbGFzcyI6ODV9"
+          },
+          {
+            "meet_id": 6125,
+            "date": "2023-11-19",
+            "age_category": "Open Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Joshua Newman",
+            "lifter_id": 7211,
+            "membershipNumbers": [
+              {
+                "athleteName": "Joshua Newman",
+                "membershipNumber": "1067524",
+                "fullText": "8  -  151  Joshua Newman  M  33  Mach 1 Barbell  1067524  80.4  2023-11-19  -  Local  New York"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMS0xOSIsIndlaWdodF9jbGFzcyI6ODV9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 5821,
+          "date": "2023-04-29",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Joshua Newman",
+          "lifter_id": 7211,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0yOSIsIndlaWdodF9jbGFzcyI6ODV9"
+        },
+        {
+          "meet_id": 5658,
+          "date": "2023-01-14",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Joshua Newman",
+          "lifter_id": 7211,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMS0xNCIsIndlaWdodF9jbGFzcyI6ODV9"
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-22T21:21:18.927Z",
+  "athleteName": "David Martinez",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1020320": [
+        {
+          "meet_id": 3679,
+          "date": "2019-02-02",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "David Martinez",
+          "lifter_id": 33718,
+          "membershipNumbers": [
+            {
+              "athleteName": "David Martinez",
+              "membershipNumber": "1020320",
+              "fullText": "12  -  232  David Martinez  M  26  -  1020320  87.6  2019-02-02  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMi0wMiIsIndlaWdodF9jbGFzcyI6ODZ9"
+        }
+      ],
+      "1029089": [
+        {
+          "meet_id": 2995,
+          "date": "2018-04-21",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "David Martinez",
+          "lifter_id": 33718,
+          "membershipNumbers": [
+            {
+              "athleteName": "David Martinez",
+              "membershipNumber": "1029089",
+              "fullText": "7  -  243  David Martinez  M  31  -  1029089  92.5  2018-04-21  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNC0yMSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        },
+        {
+          "meet_id": 3444,
+          "date": "2018-08-04",
+          "age_category": "Open Men's",
+          "weight_class": "96kg",
+          "lifter_name": "David Martinez",
+          "lifter_id": 33718,
+          "membershipNumbers": [
+            {
+              "athleteName": "David Martinez",
+              "membershipNumber": "1029089",
+              "fullText": "4  -  270  David Martinez  M  31  -  1029089  95.97  2018-08-04  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOC0wNCIsIndlaWdodF9jbGFzcyI6ODd9"
+        },
+        {
+          "meet_id": 2891,
+          "date": "2018-09-16",
+          "age_category": "Open Men's",
+          "weight_class": "96kg",
+          "lifter_name": "David Martinez",
+          "lifter_id": 33718,
+          "membershipNumbers": [
+            {
+              "athleteName": "David Martinez",
+              "membershipNumber": "1029089",
+              "fullText": "16  -  270  David Martinez  M  31  -  1029089  94.76  2018-09-16  -  National  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOS0xNiIsIndlaWdodF9jbGFzcyI6ODd9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "David Martinez",
+    "splits": [
+      {
+        "newAthleteName": "David Martinez (Person 1)",
+        "membershipNumber": "1020320",
+        "competitionCount": 1,
+        "competitions": [
+          3679
+        ]
+      },
+      {
+        "newAthleteName": "David Martinez (Person 2)",
+        "membershipNumber": "1029089",
+        "competitionCount": 3,
+        "competitions": [
+          2995,
+          3444,
+          2891
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "David Martinez",
+    "competitions": [
+      {
+        "meet_id": 2995,
+        "date": "2018-04-21",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "David Martinez",
+        "lifter_id": 33718,
+        "membershipNumbers": [
+          {
+            "athleteName": "David Martinez",
+            "membershipNumber": "1029089",
+            "fullText": "7  -  243  David Martinez  M  31  -  1029089  92.5  2018-04-21  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNC0yMSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 3444,
+        "date": "2018-08-04",
+        "age_category": "Open Men's",
+        "weight_class": "96kg",
+        "lifter_name": "David Martinez",
+        "lifter_id": 33718,
+        "membershipNumbers": [
+          {
+            "athleteName": "David Martinez",
+            "membershipNumber": "1029089",
+            "fullText": "4  -  270  David Martinez  M  31  -  1029089  95.97  2018-08-04  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOC0wNCIsIndlaWdodF9jbGFzcyI6ODd9"
+      },
+      {
+        "meet_id": 3679,
+        "date": "2019-02-02",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "David Martinez",
+        "lifter_id": 33718,
+        "membershipNumbers": [
+          {
+            "athleteName": "David Martinez",
+            "membershipNumber": "1020320",
+            "fullText": "12  -  232  David Martinez  M  26  -  1020320  87.6  2019-02-02  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMi0wMiIsIndlaWdodF9jbGFzcyI6ODZ9"
+      },
+      {
+        "meet_id": 2891,
+        "date": "2018-09-16",
+        "age_category": "Open Men's",
+        "weight_class": "96kg",
+        "lifter_name": "David Martinez",
+        "lifter_id": 33718,
+        "membershipNumbers": [
+          {
+            "athleteName": "David Martinez",
+            "membershipNumber": "1029089",
+            "fullText": "16  -  270  David Martinez  M  31  -  1029089  94.76  2018-09-16  -  National  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOS0xNiIsIndlaWdodF9jbGFzcyI6ODd9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1020320": [
+          {
+            "meet_id": 3679,
+            "date": "2019-02-02",
+            "age_category": "Open Men's",
+            "weight_class": "89kg",
+            "lifter_name": "David Martinez",
+            "lifter_id": 33718,
+            "membershipNumbers": [
+              {
+                "athleteName": "David Martinez",
+                "membershipNumber": "1020320",
+                "fullText": "12  -  232  David Martinez  M  26  -  1020320  87.6  2019-02-02  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMi0wMiIsIndlaWdodF9jbGFzcyI6ODZ9"
+          }
+        ],
+        "1029089": [
+          {
+            "meet_id": 2995,
+            "date": "2018-04-21",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "David Martinez",
+            "lifter_id": 33718,
+            "membershipNumbers": [
+              {
+                "athleteName": "David Martinez",
+                "membershipNumber": "1029089",
+                "fullText": "7  -  243  David Martinez  M  31  -  1029089  92.5  2018-04-21  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNC0yMSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          },
+          {
+            "meet_id": 3444,
+            "date": "2018-08-04",
+            "age_category": "Open Men's",
+            "weight_class": "96kg",
+            "lifter_name": "David Martinez",
+            "lifter_id": 33718,
+            "membershipNumbers": [
+              {
+                "athleteName": "David Martinez",
+                "membershipNumber": "1029089",
+                "fullText": "4  -  270  David Martinez  M  31  -  1029089  95.97  2018-08-04  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOC0wNCIsIndlaWdodF9jbGFzcyI6ODd9"
+          },
+          {
+            "meet_id": 2891,
+            "date": "2018-09-16",
+            "age_category": "Open Men's",
+            "weight_class": "96kg",
+            "lifter_name": "David Martinez",
+            "lifter_id": 33718,
+            "membershipNumbers": [
+              {
+                "athleteName": "David Martinez",
+                "membershipNumber": "1029089",
+                "fullText": "16  -  270  David Martinez  M  31  -  1029089  94.76  2018-09-16  -  National  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOS0xNiIsIndlaWdodF9jbGFzcyI6ODd9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

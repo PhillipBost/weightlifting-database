@@ -1,0 +1,298 @@
+{
+  "timestamp": "2025-08-22T08:58:24.023Z",
+  "athleteName": "Jason Nguyen",
+  "totalCompetitions": 5,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1061325": [
+        {
+          "meet_id": 5243,
+          "date": "2022-03-19",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Jason Nguyen",
+          "lifter_id": 51630,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jason Nguyen",
+              "membershipNumber": "1061325",
+              "fullText": "14  -  200  Jason Nguyen  M  39  Workhorse Barbell  1061325  78.3  2022-03-19  -  Local  Hawaii and International"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMy0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMy0xOSIsIndlaWdodF9jbGFzcyI6ODV9"
+        }
+      ],
+      "1078229": [
+        {
+          "meet_id": 6551,
+          "date": "2024-10-05",
+          "age_category": "Junior Men's",
+          "weight_class": "89kg",
+          "lifter_name": "Jason Nguyen",
+          "lifter_id": 51630,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jason Nguyen",
+              "membershipNumber": "1078229",
+              "fullText": "2  -  216  Jason Nguyen  M  19  Warner University  1078229  81.1  2024-10-05  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0wNSIsIndlaWdodF9jbGFzcyI6NjZ9"
+        },
+        {
+          "meet_id": 6779,
+          "date": "2025-02-27",
+          "age_category": "Junior Men's",
+          "weight_class": "73kg",
+          "lifter_name": "Jason Nguyen",
+          "lifter_id": 51630,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jason Nguyen",
+              "membershipNumber": "1078229",
+              "fullText": "9  -  217  Jason Nguyen  M  20  Warner University  1078229  72.97  2025-02-27  -  North American Open Series  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMi0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMi0yNyIsIndlaWdodF9jbGFzcyI6NjR9"
+        },
+        {
+          "meet_id": 6730,
+          "date": "2025-01-31",
+          "age_category": "Junior Men's",
+          "weight_class": "73kg",
+          "lifter_name": "Jason Nguyen",
+          "lifter_id": 51630,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jason Nguyen",
+              "membershipNumber": "1078229",
+              "fullText": "1  -  171  Jason Nguyen  M  20  Warner University  1078229  72.8  2025-01-31  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMS0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMS0zMSIsIndlaWdodF9jbGFzcyI6NjR9"
+        },
+        {
+          "meet_id": 6627,
+          "date": "2024-11-09",
+          "age_category": "Junior Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Jason Nguyen",
+          "lifter_id": 51630,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jason Nguyen",
+              "membershipNumber": "1078229",
+              "fullText": "2  -  212  Jason Nguyen  M  19  Warner University  1078229  81  2024-11-09  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMS0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMS0wOSIsIndlaWdodF9jbGFzcyI6NjV9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Jason Nguyen",
+    "splits": [
+      {
+        "newAthleteName": "Jason Nguyen (Person 1)",
+        "membershipNumber": "1061325",
+        "competitionCount": 1,
+        "competitions": [
+          5243
+        ]
+      },
+      {
+        "newAthleteName": "Jason Nguyen (Person 2)",
+        "membershipNumber": "1078229",
+        "competitionCount": 4,
+        "competitions": [
+          6551,
+          6779,
+          6730,
+          6627
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Jason Nguyen",
+    "competitions": [
+      {
+        "meet_id": 6551,
+        "date": "2024-10-05",
+        "age_category": "Junior Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Jason Nguyen",
+        "lifter_id": 51630,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jason Nguyen",
+            "membershipNumber": "1078229",
+            "fullText": "2  -  216  Jason Nguyen  M  19  Warner University  1078229  81.1  2024-10-05  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0wNSIsIndlaWdodF9jbGFzcyI6NjZ9"
+      },
+      {
+        "meet_id": 6779,
+        "date": "2025-02-27",
+        "age_category": "Junior Men's",
+        "weight_class": "73kg",
+        "lifter_name": "Jason Nguyen",
+        "lifter_id": 51630,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jason Nguyen",
+            "membershipNumber": "1078229",
+            "fullText": "9  -  217  Jason Nguyen  M  20  Warner University  1078229  72.97  2025-02-27  -  North American Open Series  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMi0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMi0yNyIsIndlaWdodF9jbGFzcyI6NjR9"
+      },
+      {
+        "meet_id": 6730,
+        "date": "2025-01-31",
+        "age_category": "Junior Men's",
+        "weight_class": "73kg",
+        "lifter_name": "Jason Nguyen",
+        "lifter_id": 51630,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jason Nguyen",
+            "membershipNumber": "1078229",
+            "fullText": "1  -  171  Jason Nguyen  M  20  Warner University  1078229  72.8  2025-01-31  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMS0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMS0zMSIsIndlaWdodF9jbGFzcyI6NjR9"
+      },
+      {
+        "meet_id": 5243,
+        "date": "2022-03-19",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Jason Nguyen",
+        "lifter_id": 51630,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jason Nguyen",
+            "membershipNumber": "1061325",
+            "fullText": "14  -  200  Jason Nguyen  M  39  Workhorse Barbell  1061325  78.3  2022-03-19  -  Local  Hawaii and International"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMy0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMy0xOSIsIndlaWdodF9jbGFzcyI6ODV9"
+      },
+      {
+        "meet_id": 6627,
+        "date": "2024-11-09",
+        "age_category": "Junior Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Jason Nguyen",
+        "lifter_id": 51630,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jason Nguyen",
+            "membershipNumber": "1078229",
+            "fullText": "2  -  212  Jason Nguyen  M  19  Warner University  1078229  81  2024-11-09  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMS0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMS0wOSIsIndlaWdodF9jbGFzcyI6NjV9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1061325": [
+          {
+            "meet_id": 5243,
+            "date": "2022-03-19",
+            "age_category": "Open Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Jason Nguyen",
+            "lifter_id": 51630,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jason Nguyen",
+                "membershipNumber": "1061325",
+                "fullText": "14  -  200  Jason Nguyen  M  39  Workhorse Barbell  1061325  78.3  2022-03-19  -  Local  Hawaii and International"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMy0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMy0xOSIsIndlaWdodF9jbGFzcyI6ODV9"
+          }
+        ],
+        "1078229": [
+          {
+            "meet_id": 6551,
+            "date": "2024-10-05",
+            "age_category": "Junior Men's",
+            "weight_class": "89kg",
+            "lifter_name": "Jason Nguyen",
+            "lifter_id": 51630,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jason Nguyen",
+                "membershipNumber": "1078229",
+                "fullText": "2  -  216  Jason Nguyen  M  19  Warner University  1078229  81.1  2024-10-05  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0wNSIsIndlaWdodF9jbGFzcyI6NjZ9"
+          },
+          {
+            "meet_id": 6779,
+            "date": "2025-02-27",
+            "age_category": "Junior Men's",
+            "weight_class": "73kg",
+            "lifter_name": "Jason Nguyen",
+            "lifter_id": 51630,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jason Nguyen",
+                "membershipNumber": "1078229",
+                "fullText": "9  -  217  Jason Nguyen  M  20  Warner University  1078229  72.97  2025-02-27  -  North American Open Series  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMi0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMi0yNyIsIndlaWdodF9jbGFzcyI6NjR9"
+          },
+          {
+            "meet_id": 6730,
+            "date": "2025-01-31",
+            "age_category": "Junior Men's",
+            "weight_class": "73kg",
+            "lifter_name": "Jason Nguyen",
+            "lifter_id": 51630,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jason Nguyen",
+                "membershipNumber": "1078229",
+                "fullText": "1  -  171  Jason Nguyen  M  20  Warner University  1078229  72.8  2025-01-31  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMS0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMS0zMSIsIndlaWdodF9jbGFzcyI6NjR9"
+          },
+          {
+            "meet_id": 6627,
+            "date": "2024-11-09",
+            "age_category": "Junior Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Jason Nguyen",
+            "lifter_id": 51630,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jason Nguyen",
+                "membershipNumber": "1078229",
+                "fullText": "2  -  212  Jason Nguyen  M  19  Warner University  1078229  81  2024-11-09  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMS0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMS0wOSIsIndlaWdodF9jbGFzcyI6NjV9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

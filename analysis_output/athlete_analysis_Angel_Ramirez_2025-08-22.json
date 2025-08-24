@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-22T10:21:45.824Z",
+  "athleteName": "Angel Ramirez",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1017829": [
+        {
+          "meet_id": 2295,
+          "date": "2017-04-08",
+          "age_category": "Open Men's",
+          "weight_class": "69 kg",
+          "lifter_name": "Angel Ramirez",
+          "lifter_id": 28122,
+          "membershipNumbers": [
+            {
+              "athleteName": "Angel Ramirez",
+              "membershipNumber": "1017829",
+              "fullText": "3  -  155  Angel Ramirez  M  16  Conqueror Weightlifting  1017829  68.9  2017-04-08  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNC0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNC0wOCIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+        },
+        {
+          "meet_id": 2300,
+          "date": "2017-05-20",
+          "age_category": "Open Men's",
+          "weight_class": "69 kg",
+          "lifter_name": "Angel Ramirez",
+          "lifter_id": 28122,
+          "membershipNumbers": [
+            {
+              "athleteName": "Angel Ramirez",
+              "membershipNumber": "1017829",
+              "fullText": "15  -  164  Angel Ramirez  M  16  Conqueror Weightlifting  1017829  68.68  2017-05-20  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNS0yMCIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+        }
+      ],
+      "1043312": [
+        {
+          "meet_id": 3944,
+          "date": "2019-07-21",
+          "age_category": "Open Men's",
+          "weight_class": "96kg",
+          "lifter_name": "Angel Ramirez",
+          "lifter_id": 28122,
+          "membershipNumbers": [
+            {
+              "athleteName": "Angel Ramirez",
+              "membershipNumber": "1043312",
+              "fullText": "25  -  181  Angel Ramirez  M  22  -  1043312  93.96  2019-07-21  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0yMSIsIndlaWdodF9jbGFzcyI6ODd9"
+        },
+        {
+          "meet_id": 4422,
+          "date": "2021-05-08",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Angel Ramirez",
+          "lifter_id": 28122,
+          "membershipNumbers": [
+            {
+              "athleteName": "Angel Ramirez",
+              "membershipNumber": "1043312",
+              "fullText": "11  -  194  Angel Ramirez  M  24  -  1043312  80.4  2021-05-08  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNS0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNS0wOCIsIndlaWdodF9jbGFzcyI6ODV9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Angel Ramirez",
+    "splits": [
+      {
+        "newAthleteName": "Angel Ramirez (Person 1)",
+        "membershipNumber": "1017829",
+        "competitionCount": 2,
+        "competitions": [
+          2295,
+          2300
+        ]
+      },
+      {
+        "newAthleteName": "Angel Ramirez (Person 2)",
+        "membershipNumber": "1043312",
+        "competitionCount": 2,
+        "competitions": [
+          3944,
+          4422
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Angel Ramirez",
+    "competitions": [
+      {
+        "meet_id": 2295,
+        "date": "2017-04-08",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "Angel Ramirez",
+        "lifter_id": 28122,
+        "membershipNumbers": [
+          {
+            "athleteName": "Angel Ramirez",
+            "membershipNumber": "1017829",
+            "fullText": "3  -  155  Angel Ramirez  M  16  Conqueror Weightlifting  1017829  68.9  2017-04-08  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNC0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNC0wOCIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      },
+      {
+        "meet_id": 2300,
+        "date": "2017-05-20",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "Angel Ramirez",
+        "lifter_id": 28122,
+        "membershipNumbers": [
+          {
+            "athleteName": "Angel Ramirez",
+            "membershipNumber": "1017829",
+            "fullText": "15  -  164  Angel Ramirez  M  16  Conqueror Weightlifting  1017829  68.68  2017-05-20  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNS0yMCIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      },
+      {
+        "meet_id": 3944,
+        "date": "2019-07-21",
+        "age_category": "Open Men's",
+        "weight_class": "96kg",
+        "lifter_name": "Angel Ramirez",
+        "lifter_id": 28122,
+        "membershipNumbers": [
+          {
+            "athleteName": "Angel Ramirez",
+            "membershipNumber": "1043312",
+            "fullText": "25  -  181  Angel Ramirez  M  22  -  1043312  93.96  2019-07-21  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0yMSIsIndlaWdodF9jbGFzcyI6ODd9"
+      },
+      {
+        "meet_id": 4422,
+        "date": "2021-05-08",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Angel Ramirez",
+        "lifter_id": 28122,
+        "membershipNumbers": [
+          {
+            "athleteName": "Angel Ramirez",
+            "membershipNumber": "1043312",
+            "fullText": "11  -  194  Angel Ramirez  M  24  -  1043312  80.4  2021-05-08  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNS0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNS0wOCIsIndlaWdodF9jbGFzcyI6ODV9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1017829": [
+          {
+            "meet_id": 2295,
+            "date": "2017-04-08",
+            "age_category": "Open Men's",
+            "weight_class": "69 kg",
+            "lifter_name": "Angel Ramirez",
+            "lifter_id": 28122,
+            "membershipNumbers": [
+              {
+                "athleteName": "Angel Ramirez",
+                "membershipNumber": "1017829",
+                "fullText": "3  -  155  Angel Ramirez  M  16  Conqueror Weightlifting  1017829  68.9  2017-04-08  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNC0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNC0wOCIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+          },
+          {
+            "meet_id": 2300,
+            "date": "2017-05-20",
+            "age_category": "Open Men's",
+            "weight_class": "69 kg",
+            "lifter_name": "Angel Ramirez",
+            "lifter_id": 28122,
+            "membershipNumbers": [
+              {
+                "athleteName": "Angel Ramirez",
+                "membershipNumber": "1017829",
+                "fullText": "15  -  164  Angel Ramirez  M  16  Conqueror Weightlifting  1017829  68.68  2017-05-20  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNS0yMCIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+          }
+        ],
+        "1043312": [
+          {
+            "meet_id": 3944,
+            "date": "2019-07-21",
+            "age_category": "Open Men's",
+            "weight_class": "96kg",
+            "lifter_name": "Angel Ramirez",
+            "lifter_id": 28122,
+            "membershipNumbers": [
+              {
+                "athleteName": "Angel Ramirez",
+                "membershipNumber": "1043312",
+                "fullText": "25  -  181  Angel Ramirez  M  22  -  1043312  93.96  2019-07-21  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0yMSIsIndlaWdodF9jbGFzcyI6ODd9"
+          },
+          {
+            "meet_id": 4422,
+            "date": "2021-05-08",
+            "age_category": "Open Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Angel Ramirez",
+            "lifter_id": 28122,
+            "membershipNumbers": [
+              {
+                "athleteName": "Angel Ramirez",
+                "membershipNumber": "1043312",
+                "fullText": "11  -  194  Angel Ramirez  M  24  -  1043312  80.4  2021-05-08  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNS0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNS0wOCIsIndlaWdodF9jbGFzcyI6ODV9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

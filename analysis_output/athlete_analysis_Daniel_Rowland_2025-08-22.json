@@ -1,0 +1,243 @@
+{
+  "timestamp": "2025-08-22T06:54:35.859Z",
+  "athleteName": "Daniel Rowland",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "190513": [
+        {
+          "meet_id": 1370,
+          "date": "2014-04-12",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Daniel Rowland",
+          "lifter_id": 18406,
+          "membershipNumbers": [
+            {
+              "athleteName": "Daniel Rowland",
+              "membershipNumber": "190513",
+              "fullText": "7  -  210  Daniel Rowland  M  23  DELTA BARBELL CLUB  190513  84.9  2014-04-12  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNC0xMiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        },
+        {
+          "meet_id": 1330,
+          "date": "2014-02-16",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Daniel Rowland",
+          "lifter_id": 18406,
+          "membershipNumbers": [
+            {
+              "athleteName": "Daniel Rowland",
+              "membershipNumber": "190513",
+              "fullText": "3  -  200  Daniel Rowland  M  23  DELTA BARBELL CLUB  190513  87.13  2014-02-16  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMi0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMi0xNiIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ],
+      "1063721": [
+        {
+          "meet_id": 5411,
+          "date": "2022-06-04",
+          "age_category": "Men's Masters (35-39)",
+          "weight_class": "109kg",
+          "lifter_name": "Daniel Rowland",
+          "lifter_id": 18406,
+          "membershipNumbers": [
+            {
+              "athleteName": "Daniel Rowland",
+              "membershipNumber": "1063721",
+              "fullText": "3  -  194  Daniel Rowland  M  37  Risen Weightlifting Club  1063721  107.4  2022-06-04  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNi0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNi0wNCIsIndlaWdodF9jbGFzcyI6MTA5fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 1061,
+        "date": "2013-12-14",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Daniel Rowland",
+        "lifter_id": 18406,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMi0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMi0xNCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Daniel Rowland",
+    "splits": [
+      {
+        "newAthleteName": "Daniel Rowland (Person 1)",
+        "membershipNumber": "190513",
+        "competitionCount": 2,
+        "competitions": [
+          1370,
+          1330
+        ]
+      },
+      {
+        "newAthleteName": "Daniel Rowland (Person 2)",
+        "membershipNumber": "1063721",
+        "competitionCount": 1,
+        "competitions": [
+          5411
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 1061,
+        "date": "2013-12-14",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Daniel Rowland",
+        "lifter_id": 18406,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMi0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMi0xNCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Daniel Rowland",
+    "competitions": [
+      {
+        "meet_id": 5411,
+        "date": "2022-06-04",
+        "age_category": "Men's Masters (35-39)",
+        "weight_class": "109kg",
+        "lifter_name": "Daniel Rowland",
+        "lifter_id": 18406,
+        "membershipNumbers": [
+          {
+            "athleteName": "Daniel Rowland",
+            "membershipNumber": "1063721",
+            "fullText": "3  -  194  Daniel Rowland  M  37  Risen Weightlifting Club  1063721  107.4  2022-06-04  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNi0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNi0wNCIsIndlaWdodF9jbGFzcyI6MTA5fQ=="
+      },
+      {
+        "meet_id": 1370,
+        "date": "2014-04-12",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Daniel Rowland",
+        "lifter_id": 18406,
+        "membershipNumbers": [
+          {
+            "athleteName": "Daniel Rowland",
+            "membershipNumber": "190513",
+            "fullText": "7  -  210  Daniel Rowland  M  23  DELTA BARBELL CLUB  190513  84.9  2014-04-12  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNC0xMiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 1061,
+        "date": "2013-12-14",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Daniel Rowland",
+        "lifter_id": 18406,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMi0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMi0xNCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 1330,
+        "date": "2014-02-16",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Daniel Rowland",
+        "lifter_id": 18406,
+        "membershipNumbers": [
+          {
+            "athleteName": "Daniel Rowland",
+            "membershipNumber": "190513",
+            "fullText": "3  -  200  Daniel Rowland  M  23  DELTA BARBELL CLUB  190513  87.13  2014-02-16  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMi0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMi0xNiIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "190513": [
+          {
+            "meet_id": 1370,
+            "date": "2014-04-12",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Daniel Rowland",
+            "lifter_id": 18406,
+            "membershipNumbers": [
+              {
+                "athleteName": "Daniel Rowland",
+                "membershipNumber": "190513",
+                "fullText": "7  -  210  Daniel Rowland  M  23  DELTA BARBELL CLUB  190513  84.9  2014-04-12  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNC0xMiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          },
+          {
+            "meet_id": 1330,
+            "date": "2014-02-16",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Daniel Rowland",
+            "lifter_id": 18406,
+            "membershipNumbers": [
+              {
+                "athleteName": "Daniel Rowland",
+                "membershipNumber": "190513",
+                "fullText": "3  -  200  Daniel Rowland  M  23  DELTA BARBELL CLUB  190513  87.13  2014-02-16  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMi0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMi0xNiIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          }
+        ],
+        "1063721": [
+          {
+            "meet_id": 5411,
+            "date": "2022-06-04",
+            "age_category": "Men's Masters (35-39)",
+            "weight_class": "109kg",
+            "lifter_name": "Daniel Rowland",
+            "lifter_id": 18406,
+            "membershipNumbers": [
+              {
+                "athleteName": "Daniel Rowland",
+                "membershipNumber": "1063721",
+                "fullText": "3  -  194  Daniel Rowland  M  37  Risen Weightlifting Club  1063721  107.4  2022-06-04  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNi0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNi0wNCIsIndlaWdodF9jbGFzcyI6MTA5fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 1061,
+          "date": "2013-12-14",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Daniel Rowland",
+          "lifter_id": 18406,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMi0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMi0xNCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

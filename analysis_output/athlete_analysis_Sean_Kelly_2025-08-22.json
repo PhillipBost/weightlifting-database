@@ -1,0 +1,298 @@
+{
+  "timestamp": "2025-08-22T18:33:15.301Z",
+  "athleteName": "Sean Kelly",
+  "totalCompetitions": 5,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "183406": [
+        {
+          "meet_id": 1193,
+          "date": "2014-05-24",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Sean Kelly",
+          "lifter_id": 6030,
+          "membershipNumbers": [
+            {
+              "athleteName": "Sean Kelly",
+              "membershipNumber": "183406",
+              "fullText": "11  -  210  Sean Kelly  M  28  TEAM FLORIDA NORTHEAST  183406  78.25  2014-05-24  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNS0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNS0yNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        },
+        {
+          "meet_id": 1322,
+          "date": "2014-03-01",
+          "age_category": "Open Men's",
+          "weight_class": "56 kg",
+          "lifter_name": "Sean Kelly",
+          "lifter_id": 6030,
+          "membershipNumbers": [
+            {
+              "athleteName": "Sean Kelly",
+              "membershipNumber": "183406",
+              "fullText": "1  -  200  Sean Kelly  M  28  TEAM FLORIDA NORTHEAST  183406  27  2014-03-01  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0wMSIsIndlaWdodF9jbGFzcyI6MzU0fQ=="
+        },
+        {
+          "meet_id": 819,
+          "date": "2013-06-22",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Sean Kelly",
+          "lifter_id": 6030,
+          "membershipNumbers": [
+            {
+              "athleteName": "Sean Kelly",
+              "membershipNumber": "183406",
+              "fullText": "16  -  213  Sean Kelly  M  27  TEAM FLORIDA NORTHEAST  183406  77  2013-06-22  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNi0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNi0yMiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        },
+        {
+          "meet_id": 1324,
+          "date": "2014-04-12",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Sean Kelly",
+          "lifter_id": 6030,
+          "membershipNumbers": [
+            {
+              "athleteName": "Sean Kelly",
+              "membershipNumber": "183406",
+              "fullText": "9  -  200  Sean Kelly  M  28  TEAM FLORIDA NORTHEAST  183406  79.6  2014-04-12  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNC0xMiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ],
+      "190708": [
+        {
+          "meet_id": 1245,
+          "date": "2014-01-19",
+          "age_category": "Open Men's",
+          "weight_class": "69 kg",
+          "lifter_name": "Sean Kelly",
+          "lifter_id": 6030,
+          "membershipNumbers": [
+            {
+              "athleteName": "Sean Kelly",
+              "membershipNumber": "190708",
+              "fullText": "14  -  162  Sean Kelly  M  18  TEAM HOUSTON  190708  68.1  2014-01-19  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMS0xOSIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Sean Kelly",
+    "splits": [
+      {
+        "newAthleteName": "Sean Kelly (Person 1)",
+        "membershipNumber": "183406",
+        "competitionCount": 4,
+        "competitions": [
+          1193,
+          1322,
+          819,
+          1324
+        ]
+      },
+      {
+        "newAthleteName": "Sean Kelly (Person 2)",
+        "membershipNumber": "190708",
+        "competitionCount": 1,
+        "competitions": [
+          1245
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Sean Kelly",
+    "competitions": [
+      {
+        "meet_id": 1193,
+        "date": "2014-05-24",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Sean Kelly",
+        "lifter_id": 6030,
+        "membershipNumbers": [
+          {
+            "athleteName": "Sean Kelly",
+            "membershipNumber": "183406",
+            "fullText": "11  -  210  Sean Kelly  M  28  TEAM FLORIDA NORTHEAST  183406  78.25  2014-05-24  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNS0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNS0yNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 1322,
+        "date": "2014-03-01",
+        "age_category": "Open Men's",
+        "weight_class": "56 kg",
+        "lifter_name": "Sean Kelly",
+        "lifter_id": 6030,
+        "membershipNumbers": [
+          {
+            "athleteName": "Sean Kelly",
+            "membershipNumber": "183406",
+            "fullText": "1  -  200  Sean Kelly  M  28  TEAM FLORIDA NORTHEAST  183406  27  2014-03-01  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0wMSIsIndlaWdodF9jbGFzcyI6MzU0fQ=="
+      },
+      {
+        "meet_id": 1245,
+        "date": "2014-01-19",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "Sean Kelly",
+        "lifter_id": 6030,
+        "membershipNumbers": [
+          {
+            "athleteName": "Sean Kelly",
+            "membershipNumber": "190708",
+            "fullText": "14  -  162  Sean Kelly  M  18  TEAM HOUSTON  190708  68.1  2014-01-19  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMS0xOSIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      },
+      {
+        "meet_id": 819,
+        "date": "2013-06-22",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Sean Kelly",
+        "lifter_id": 6030,
+        "membershipNumbers": [
+          {
+            "athleteName": "Sean Kelly",
+            "membershipNumber": "183406",
+            "fullText": "16  -  213  Sean Kelly  M  27  TEAM FLORIDA NORTHEAST  183406  77  2013-06-22  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNi0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNi0yMiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 1324,
+        "date": "2014-04-12",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Sean Kelly",
+        "lifter_id": 6030,
+        "membershipNumbers": [
+          {
+            "athleteName": "Sean Kelly",
+            "membershipNumber": "183406",
+            "fullText": "9  -  200  Sean Kelly  M  28  TEAM FLORIDA NORTHEAST  183406  79.6  2014-04-12  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNC0xMiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "183406": [
+          {
+            "meet_id": 1193,
+            "date": "2014-05-24",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Sean Kelly",
+            "lifter_id": 6030,
+            "membershipNumbers": [
+              {
+                "athleteName": "Sean Kelly",
+                "membershipNumber": "183406",
+                "fullText": "11  -  210  Sean Kelly  M  28  TEAM FLORIDA NORTHEAST  183406  78.25  2014-05-24  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNS0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNS0yNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          },
+          {
+            "meet_id": 1322,
+            "date": "2014-03-01",
+            "age_category": "Open Men's",
+            "weight_class": "56 kg",
+            "lifter_name": "Sean Kelly",
+            "lifter_id": 6030,
+            "membershipNumbers": [
+              {
+                "athleteName": "Sean Kelly",
+                "membershipNumber": "183406",
+                "fullText": "1  -  200  Sean Kelly  M  28  TEAM FLORIDA NORTHEAST  183406  27  2014-03-01  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0wMSIsIndlaWdodF9jbGFzcyI6MzU0fQ=="
+          },
+          {
+            "meet_id": 819,
+            "date": "2013-06-22",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Sean Kelly",
+            "lifter_id": 6030,
+            "membershipNumbers": [
+              {
+                "athleteName": "Sean Kelly",
+                "membershipNumber": "183406",
+                "fullText": "16  -  213  Sean Kelly  M  27  TEAM FLORIDA NORTHEAST  183406  77  2013-06-22  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNi0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNi0yMiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          },
+          {
+            "meet_id": 1324,
+            "date": "2014-04-12",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Sean Kelly",
+            "lifter_id": 6030,
+            "membershipNumbers": [
+              {
+                "athleteName": "Sean Kelly",
+                "membershipNumber": "183406",
+                "fullText": "9  -  200  Sean Kelly  M  28  TEAM FLORIDA NORTHEAST  183406  79.6  2014-04-12  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNC0xMiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          }
+        ],
+        "190708": [
+          {
+            "meet_id": 1245,
+            "date": "2014-01-19",
+            "age_category": "Open Men's",
+            "weight_class": "69 kg",
+            "lifter_name": "Sean Kelly",
+            "lifter_id": 6030,
+            "membershipNumbers": [
+              {
+                "athleteName": "Sean Kelly",
+                "membershipNumber": "190708",
+                "fullText": "14  -  162  Sean Kelly  M  18  TEAM HOUSTON  190708  68.1  2014-01-19  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMS0xOSIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

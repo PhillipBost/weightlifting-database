@@ -1,0 +1,243 @@
+{
+  "timestamp": "2025-08-23T00:39:17.427Z",
+  "athleteName": "Jessica Fugleberg",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1064848": [
+        {
+          "meet_id": 5530,
+          "date": "2022-10-15",
+          "age_category": "Open Women's",
+          "weight_class": "+87kg",
+          "lifter_name": "Jessica Fugleberg",
+          "lifter_id": 54043,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jessica Fugleberg",
+              "membershipNumber": "1064848",
+              "fullText": "20  -  105  Jessica Fugleberg  F  29  Gaines' Gym  1064848  106.7  2022-10-15  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMC0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMC0xNSIsIndlaWdodF9jbGFzcyI6MTAwfQ=="
+        },
+        {
+          "meet_id": 5732,
+          "date": "2023-03-11",
+          "age_category": "Open Women's",
+          "weight_class": "+87kg",
+          "lifter_name": "Jessica Fugleberg",
+          "lifter_id": 54043,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jessica Fugleberg",
+              "membershipNumber": "1064848",
+              "fullText": "7  -  109  Jessica Fugleberg  F  30  Gaines' Gym  1064848  111.11  2023-03-11  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMy0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMy0xMSIsIndlaWdodF9jbGFzcyI6MTAwfQ=="
+        }
+      ],
+      "1073239": [
+        {
+          "meet_id": 6052,
+          "date": "2023-10-21",
+          "age_category": "Open Women's",
+          "weight_class": "+87kg",
+          "lifter_name": "Jessica Fugleberg",
+          "lifter_id": 54043,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jessica Fugleberg",
+              "membershipNumber": "1073239",
+              "fullText": "20  -  109  Jessica Fugleberg  F  30  Gaines' Gym  1073239  113.9  2023-10-21  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMC0yMSIsIndlaWdodF9jbGFzcyI6MTAwfQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 6364,
+        "date": "2024-05-04",
+        "age_category": "Open Women's",
+        "weight_class": "+87kg",
+        "lifter_name": "Jessica Fugleberg",
+        "lifter_id": 54043,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNS0wNCIsIndlaWdodF9jbGFzcyI6MTAwfQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Jessica Fugleberg",
+    "splits": [
+      {
+        "newAthleteName": "Jessica Fugleberg (Person 1)",
+        "membershipNumber": "1064848",
+        "competitionCount": 2,
+        "competitions": [
+          5530,
+          5732
+        ]
+      },
+      {
+        "newAthleteName": "Jessica Fugleberg (Person 2)",
+        "membershipNumber": "1073239",
+        "competitionCount": 1,
+        "competitions": [
+          6052
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 6364,
+        "date": "2024-05-04",
+        "age_category": "Open Women's",
+        "weight_class": "+87kg",
+        "lifter_name": "Jessica Fugleberg",
+        "lifter_id": 54043,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNS0wNCIsIndlaWdodF9jbGFzcyI6MTAwfQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Jessica Fugleberg",
+    "competitions": [
+      {
+        "meet_id": 5530,
+        "date": "2022-10-15",
+        "age_category": "Open Women's",
+        "weight_class": "+87kg",
+        "lifter_name": "Jessica Fugleberg",
+        "lifter_id": 54043,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jessica Fugleberg",
+            "membershipNumber": "1064848",
+            "fullText": "20  -  105  Jessica Fugleberg  F  29  Gaines' Gym  1064848  106.7  2022-10-15  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMC0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMC0xNSIsIndlaWdodF9jbGFzcyI6MTAwfQ=="
+      },
+      {
+        "meet_id": 5732,
+        "date": "2023-03-11",
+        "age_category": "Open Women's",
+        "weight_class": "+87kg",
+        "lifter_name": "Jessica Fugleberg",
+        "lifter_id": 54043,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jessica Fugleberg",
+            "membershipNumber": "1064848",
+            "fullText": "7  -  109  Jessica Fugleberg  F  30  Gaines' Gym  1064848  111.11  2023-03-11  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMy0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMy0xMSIsIndlaWdodF9jbGFzcyI6MTAwfQ=="
+      },
+      {
+        "meet_id": 6364,
+        "date": "2024-05-04",
+        "age_category": "Open Women's",
+        "weight_class": "+87kg",
+        "lifter_name": "Jessica Fugleberg",
+        "lifter_id": 54043,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNS0wNCIsIndlaWdodF9jbGFzcyI6MTAwfQ=="
+      },
+      {
+        "meet_id": 6052,
+        "date": "2023-10-21",
+        "age_category": "Open Women's",
+        "weight_class": "+87kg",
+        "lifter_name": "Jessica Fugleberg",
+        "lifter_id": 54043,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jessica Fugleberg",
+            "membershipNumber": "1073239",
+            "fullText": "20  -  109  Jessica Fugleberg  F  30  Gaines' Gym  1073239  113.9  2023-10-21  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMC0yMSIsIndlaWdodF9jbGFzcyI6MTAwfQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1064848": [
+          {
+            "meet_id": 5530,
+            "date": "2022-10-15",
+            "age_category": "Open Women's",
+            "weight_class": "+87kg",
+            "lifter_name": "Jessica Fugleberg",
+            "lifter_id": 54043,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jessica Fugleberg",
+                "membershipNumber": "1064848",
+                "fullText": "20  -  105  Jessica Fugleberg  F  29  Gaines' Gym  1064848  106.7  2022-10-15  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMC0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMC0xNSIsIndlaWdodF9jbGFzcyI6MTAwfQ=="
+          },
+          {
+            "meet_id": 5732,
+            "date": "2023-03-11",
+            "age_category": "Open Women's",
+            "weight_class": "+87kg",
+            "lifter_name": "Jessica Fugleberg",
+            "lifter_id": 54043,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jessica Fugleberg",
+                "membershipNumber": "1064848",
+                "fullText": "7  -  109  Jessica Fugleberg  F  30  Gaines' Gym  1064848  111.11  2023-03-11  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMy0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMy0xMSIsIndlaWdodF9jbGFzcyI6MTAwfQ=="
+          }
+        ],
+        "1073239": [
+          {
+            "meet_id": 6052,
+            "date": "2023-10-21",
+            "age_category": "Open Women's",
+            "weight_class": "+87kg",
+            "lifter_name": "Jessica Fugleberg",
+            "lifter_id": 54043,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jessica Fugleberg",
+                "membershipNumber": "1073239",
+                "fullText": "20  -  109  Jessica Fugleberg  F  30  Gaines' Gym  1073239  113.9  2023-10-21  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMC0yMSIsIndlaWdodF9jbGFzcyI6MTAwfQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 6364,
+          "date": "2024-05-04",
+          "age_category": "Open Women's",
+          "weight_class": "+87kg",
+          "lifter_name": "Jessica Fugleberg",
+          "lifter_id": 54043,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNS0wNCIsIndlaWdodF9jbGFzcyI6MTAwfQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

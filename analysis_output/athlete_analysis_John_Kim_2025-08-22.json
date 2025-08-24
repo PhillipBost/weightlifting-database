@@ -1,0 +1,334 @@
+{
+  "timestamp": "2025-08-22T18:32:44.103Z",
+  "athleteName": "John Kim",
+  "totalCompetitions": 6,
+  "analysis": {
+    "distinctAthletes": 3,
+    "membershipGroups": {
+      "182849": [
+        {
+          "meet_id": 507,
+          "date": "2015-10-18",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "John Kim",
+          "lifter_id": 12072,
+          "membershipNumbers": [
+            {
+              "athleteName": "John Kim",
+              "membershipNumber": "182849",
+              "fullText": "17  -  188  John Kim  M  47  -  182849  76  2015-10-18  -  Local  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xOCIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        }
+      ],
+      "209858": [
+        {
+          "meet_id": 359,
+          "date": "2015-04-18",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "John Kim",
+          "lifter_id": 12072,
+          "membershipNumbers": [
+            {
+              "athleteName": "John Kim",
+              "membershipNumber": "209858",
+              "fullText": "15  -  236  John Kim  M  29  INDUSTRIOUS BARBELL CLUB  209858  98.6  2015-04-18  -  Local  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0xOCIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        }
+      ],
+      "1071816": [
+        {
+          "meet_id": 6058,
+          "date": "2023-10-21",
+          "age_category": "Men's Masters (35-39)",
+          "weight_class": "73kg",
+          "lifter_name": "John Kim",
+          "lifter_id": 12072,
+          "membershipNumbers": [
+            {
+              "athleteName": "John Kim",
+              "membershipNumber": "1071816",
+              "fullText": "2  -  199  John Kim  M  35  IKON Strength  1071816  73  2023-10-21  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMC0yMSIsIndlaWdodF9jbGFzcyI6MTA0fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 329,
+        "date": "2015-10-17",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "John Kim",
+        "lifter_id": 12072,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xNyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 3627,
+        "date": "2019-01-26",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "John Kim",
+        "lifter_id": 12072,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0yNiIsIndlaWdodF9jbGFzcyI6ODZ9"
+      },
+      {
+        "meet_id": 355,
+        "date": "2015-03-14",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "John Kim",
+        "lifter_id": 12072,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMy0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMy0xNCIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "John Kim",
+    "splits": [
+      {
+        "newAthleteName": "John Kim (Person 1)",
+        "membershipNumber": "182849",
+        "competitionCount": 1,
+        "competitions": [
+          507
+        ]
+      },
+      {
+        "newAthleteName": "John Kim (Person 2)",
+        "membershipNumber": "209858",
+        "competitionCount": 1,
+        "competitions": [
+          359
+        ]
+      },
+      {
+        "newAthleteName": "John Kim (Person 3)",
+        "membershipNumber": "1071816",
+        "competitionCount": 1,
+        "competitions": [
+          6058
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 329,
+        "date": "2015-10-17",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "John Kim",
+        "lifter_id": 12072,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xNyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 3627,
+        "date": "2019-01-26",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "John Kim",
+        "lifter_id": 12072,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0yNiIsIndlaWdodF9jbGFzcyI6ODZ9"
+      },
+      {
+        "meet_id": 355,
+        "date": "2015-03-14",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "John Kim",
+        "lifter_id": 12072,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMy0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMy0xNCIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "John Kim",
+    "competitions": [
+      {
+        "meet_id": 329,
+        "date": "2015-10-17",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "John Kim",
+        "lifter_id": 12072,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xNyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 507,
+        "date": "2015-10-18",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "John Kim",
+        "lifter_id": 12072,
+        "membershipNumbers": [
+          {
+            "athleteName": "John Kim",
+            "membershipNumber": "182849",
+            "fullText": "17  -  188  John Kim  M  47  -  182849  76  2015-10-18  -  Local  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xOCIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 3627,
+        "date": "2019-01-26",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "John Kim",
+        "lifter_id": 12072,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0yNiIsIndlaWdodF9jbGFzcyI6ODZ9"
+      },
+      {
+        "meet_id": 355,
+        "date": "2015-03-14",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "John Kim",
+        "lifter_id": 12072,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMy0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMy0xNCIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 359,
+        "date": "2015-04-18",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "John Kim",
+        "lifter_id": 12072,
+        "membershipNumbers": [
+          {
+            "athleteName": "John Kim",
+            "membershipNumber": "209858",
+            "fullText": "15  -  236  John Kim  M  29  INDUSTRIOUS BARBELL CLUB  209858  98.6  2015-04-18  -  Local  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0xOCIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 6058,
+        "date": "2023-10-21",
+        "age_category": "Men's Masters (35-39)",
+        "weight_class": "73kg",
+        "lifter_name": "John Kim",
+        "lifter_id": 12072,
+        "membershipNumbers": [
+          {
+            "athleteName": "John Kim",
+            "membershipNumber": "1071816",
+            "fullText": "2  -  199  John Kim  M  35  IKON Strength  1071816  73  2023-10-21  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMC0yMSIsIndlaWdodF9jbGFzcyI6MTA0fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 3,
+      "membershipGroups": {
+        "182849": [
+          {
+            "meet_id": 507,
+            "date": "2015-10-18",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "John Kim",
+            "lifter_id": 12072,
+            "membershipNumbers": [
+              {
+                "athleteName": "John Kim",
+                "membershipNumber": "182849",
+                "fullText": "17  -  188  John Kim  M  47  -  182849  76  2015-10-18  -  Local  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xOCIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          }
+        ],
+        "209858": [
+          {
+            "meet_id": 359,
+            "date": "2015-04-18",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "John Kim",
+            "lifter_id": 12072,
+            "membershipNumbers": [
+              {
+                "athleteName": "John Kim",
+                "membershipNumber": "209858",
+                "fullText": "15  -  236  John Kim  M  29  INDUSTRIOUS BARBELL CLUB  209858  98.6  2015-04-18  -  Local  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0xOCIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          }
+        ],
+        "1071816": [
+          {
+            "meet_id": 6058,
+            "date": "2023-10-21",
+            "age_category": "Men's Masters (35-39)",
+            "weight_class": "73kg",
+            "lifter_name": "John Kim",
+            "lifter_id": 12072,
+            "membershipNumbers": [
+              {
+                "athleteName": "John Kim",
+                "membershipNumber": "1071816",
+                "fullText": "2  -  199  John Kim  M  35  IKON Strength  1071816  73  2023-10-21  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMC0yMSIsIndlaWdodF9jbGFzcyI6MTA0fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 329,
+          "date": "2015-10-17",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "John Kim",
+          "lifter_id": 12072,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xNyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        },
+        {
+          "meet_id": 3627,
+          "date": "2019-01-26",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "John Kim",
+          "lifter_id": 12072,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0yNiIsIndlaWdodF9jbGFzcyI6ODZ9"
+        },
+        {
+          "meet_id": 355,
+          "date": "2015-03-14",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "John Kim",
+          "lifter_id": 12072,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMy0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMy0xNCIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

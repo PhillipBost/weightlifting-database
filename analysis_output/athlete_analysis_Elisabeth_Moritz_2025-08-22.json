@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T15:14:49.868Z",
+  "athleteName": "Elisabeth Moritz",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1048274": [
+        {
+          "meet_id": 4387,
+          "date": "2019-12-14",
+          "age_category": "Women's 13 Under Age Group",
+          "weight_class": "30kg",
+          "lifter_name": "Elisabeth Moritz",
+          "lifter_id": 44472,
+          "membershipNumbers": [
+            {
+              "athleteName": "Elisabeth Moritz",
+              "membershipNumber": "1048274",
+              "fullText": "1  -  26  Elisabeth Moritz  F  7  HI PERFORMANCE ATHLETICS  1048274  27  2019-12-14  -  Local  Hawaii and International"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMi0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMi0xNCIsIndlaWdodF9jbGFzcyI6NTF9"
+        }
+      ],
+      "1067624": [
+        {
+          "meet_id": 5643,
+          "date": "2022-12-17",
+          "age_category": "Women's 13 Under Age Group",
+          "weight_class": "59kg",
+          "lifter_name": "Elisabeth Moritz",
+          "lifter_id": 44472,
+          "membershipNumbers": [
+            {
+              "athleteName": "Elisabeth Moritz",
+              "membershipNumber": "1067624",
+              "fullText": "1  -  61  Elisabeth Moritz  F  10  HI PERFORMANCE ATHLETICS  1067624  58.2  2022-12-17  -  Local  Hawaii and International"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMi0xNyIsIndlaWdodF9jbGFzcyI6NTh9"
+        },
+        {
+          "meet_id": 6805,
+          "date": "2025-01-18",
+          "age_category": "Women's 13 Under Age Group",
+          "weight_class": "+64kg",
+          "lifter_name": "Elisabeth Moritz",
+          "lifter_id": 44472,
+          "membershipNumbers": [
+            {
+              "athleteName": "Elisabeth Moritz",
+              "membershipNumber": "1067624",
+              "fullText": "1  -  90  Elisabeth Moritz  F  13  Maui Strong  1067624  68.67  2025-01-18  -  Local  Hawaii and International"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMS0xOCIsIndlaWdodF9jbGFzcyI6NjB9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Elisabeth Moritz",
+    "splits": [
+      {
+        "newAthleteName": "Elisabeth Moritz (Person 1)",
+        "membershipNumber": "1048274",
+        "competitionCount": 1,
+        "competitions": [
+          4387
+        ]
+      },
+      {
+        "newAthleteName": "Elisabeth Moritz (Person 2)",
+        "membershipNumber": "1067624",
+        "competitionCount": 2,
+        "competitions": [
+          5643,
+          6805
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Elisabeth Moritz",
+    "competitions": [
+      {
+        "meet_id": 5643,
+        "date": "2022-12-17",
+        "age_category": "Women's 13 Under Age Group",
+        "weight_class": "59kg",
+        "lifter_name": "Elisabeth Moritz",
+        "lifter_id": 44472,
+        "membershipNumbers": [
+          {
+            "athleteName": "Elisabeth Moritz",
+            "membershipNumber": "1067624",
+            "fullText": "1  -  61  Elisabeth Moritz  F  10  HI PERFORMANCE ATHLETICS  1067624  58.2  2022-12-17  -  Local  Hawaii and International"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMi0xNyIsIndlaWdodF9jbGFzcyI6NTh9"
+      },
+      {
+        "meet_id": 4387,
+        "date": "2019-12-14",
+        "age_category": "Women's 13 Under Age Group",
+        "weight_class": "30kg",
+        "lifter_name": "Elisabeth Moritz",
+        "lifter_id": 44472,
+        "membershipNumbers": [
+          {
+            "athleteName": "Elisabeth Moritz",
+            "membershipNumber": "1048274",
+            "fullText": "1  -  26  Elisabeth Moritz  F  7  HI PERFORMANCE ATHLETICS  1048274  27  2019-12-14  -  Local  Hawaii and International"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMi0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMi0xNCIsIndlaWdodF9jbGFzcyI6NTF9"
+      },
+      {
+        "meet_id": 6805,
+        "date": "2025-01-18",
+        "age_category": "Women's 13 Under Age Group",
+        "weight_class": "+64kg",
+        "lifter_name": "Elisabeth Moritz",
+        "lifter_id": 44472,
+        "membershipNumbers": [
+          {
+            "athleteName": "Elisabeth Moritz",
+            "membershipNumber": "1067624",
+            "fullText": "1  -  90  Elisabeth Moritz  F  13  Maui Strong  1067624  68.67  2025-01-18  -  Local  Hawaii and International"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMS0xOCIsIndlaWdodF9jbGFzcyI6NjB9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1048274": [
+          {
+            "meet_id": 4387,
+            "date": "2019-12-14",
+            "age_category": "Women's 13 Under Age Group",
+            "weight_class": "30kg",
+            "lifter_name": "Elisabeth Moritz",
+            "lifter_id": 44472,
+            "membershipNumbers": [
+              {
+                "athleteName": "Elisabeth Moritz",
+                "membershipNumber": "1048274",
+                "fullText": "1  -  26  Elisabeth Moritz  F  7  HI PERFORMANCE ATHLETICS  1048274  27  2019-12-14  -  Local  Hawaii and International"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMi0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMi0xNCIsIndlaWdodF9jbGFzcyI6NTF9"
+          }
+        ],
+        "1067624": [
+          {
+            "meet_id": 5643,
+            "date": "2022-12-17",
+            "age_category": "Women's 13 Under Age Group",
+            "weight_class": "59kg",
+            "lifter_name": "Elisabeth Moritz",
+            "lifter_id": 44472,
+            "membershipNumbers": [
+              {
+                "athleteName": "Elisabeth Moritz",
+                "membershipNumber": "1067624",
+                "fullText": "1  -  61  Elisabeth Moritz  F  10  HI PERFORMANCE ATHLETICS  1067624  58.2  2022-12-17  -  Local  Hawaii and International"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMi0xNyIsIndlaWdodF9jbGFzcyI6NTh9"
+          },
+          {
+            "meet_id": 6805,
+            "date": "2025-01-18",
+            "age_category": "Women's 13 Under Age Group",
+            "weight_class": "+64kg",
+            "lifter_name": "Elisabeth Moritz",
+            "lifter_id": 44472,
+            "membershipNumbers": [
+              {
+                "athleteName": "Elisabeth Moritz",
+                "membershipNumber": "1067624",
+                "fullText": "1  -  90  Elisabeth Moritz  F  13  Maui Strong  1067624  68.67  2025-01-18  -  Local  Hawaii and International"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMS0xOCIsIndlaWdodF9jbGFzcyI6NjB9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

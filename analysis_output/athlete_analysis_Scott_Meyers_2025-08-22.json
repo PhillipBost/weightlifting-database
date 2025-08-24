@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-22T11:26:13.002Z",
+  "athleteName": "Scott Meyers",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "141285": [
+        {
+          "meet_id": 983,
+          "date": "2013-03-16",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Scott Meyers",
+          "lifter_id": 6718,
+          "membershipNumbers": [
+            {
+              "athleteName": "Scott Meyers",
+              "membershipNumber": "141285",
+              "fullText": "9  -  220  Scott Meyers  M  31  -  141285  84.9  2013-03-16  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMy0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMy0xNiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ],
+      "1021633": [
+        {
+          "meet_id": 2670,
+          "date": "2017-07-29",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Scott Meyers",
+          "lifter_id": 6718,
+          "membershipNumbers": [
+            {
+              "athleteName": "Scott Meyers",
+              "membershipNumber": "1021633",
+              "fullText": "18  -  204  Scott Meyers  M  47  Redline Athletics  1021633  88.2  2017-07-29  -  Local  Southern"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNy0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNy0yOSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        },
+        {
+          "meet_id": 2860,
+          "date": "2017-11-19",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Scott Meyers",
+          "lifter_id": 6718,
+          "membershipNumbers": [
+            {
+              "athleteName": "Scott Meyers",
+              "membershipNumber": "1021633",
+              "fullText": "12  -  206  Scott Meyers  M  47  Redline Athletics  1021633  83.3  2017-11-19  -  Local  Southern"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMS0xOSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        },
+        {
+          "meet_id": 3308,
+          "date": "2018-03-24",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Scott Meyers",
+          "lifter_id": 6718,
+          "membershipNumbers": [
+            {
+              "athleteName": "Scott Meyers",
+              "membershipNumber": "1021633",
+              "fullText": "26  -  213  Scott Meyers  M  48  Redline Athletics  1021633  82  2018-03-24  -  Local  Southern"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMy0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMy0yNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Scott Meyers",
+    "splits": [
+      {
+        "newAthleteName": "Scott Meyers (Person 1)",
+        "membershipNumber": "141285",
+        "competitionCount": 1,
+        "competitions": [
+          983
+        ]
+      },
+      {
+        "newAthleteName": "Scott Meyers (Person 2)",
+        "membershipNumber": "1021633",
+        "competitionCount": 3,
+        "competitions": [
+          2670,
+          2860,
+          3308
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Scott Meyers",
+    "competitions": [
+      {
+        "meet_id": 2670,
+        "date": "2017-07-29",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Scott Meyers",
+        "lifter_id": 6718,
+        "membershipNumbers": [
+          {
+            "athleteName": "Scott Meyers",
+            "membershipNumber": "1021633",
+            "fullText": "18  -  204  Scott Meyers  M  47  Redline Athletics  1021633  88.2  2017-07-29  -  Local  Southern"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNy0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNy0yOSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 2860,
+        "date": "2017-11-19",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Scott Meyers",
+        "lifter_id": 6718,
+        "membershipNumbers": [
+          {
+            "athleteName": "Scott Meyers",
+            "membershipNumber": "1021633",
+            "fullText": "12  -  206  Scott Meyers  M  47  Redline Athletics  1021633  83.3  2017-11-19  -  Local  Southern"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMS0xOSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 983,
+        "date": "2013-03-16",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Scott Meyers",
+        "lifter_id": 6718,
+        "membershipNumbers": [
+          {
+            "athleteName": "Scott Meyers",
+            "membershipNumber": "141285",
+            "fullText": "9  -  220  Scott Meyers  M  31  -  141285  84.9  2013-03-16  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMy0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMy0xNiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 3308,
+        "date": "2018-03-24",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Scott Meyers",
+        "lifter_id": 6718,
+        "membershipNumbers": [
+          {
+            "athleteName": "Scott Meyers",
+            "membershipNumber": "1021633",
+            "fullText": "26  -  213  Scott Meyers  M  48  Redline Athletics  1021633  82  2018-03-24  -  Local  Southern"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMy0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMy0yNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "141285": [
+          {
+            "meet_id": 983,
+            "date": "2013-03-16",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Scott Meyers",
+            "lifter_id": 6718,
+            "membershipNumbers": [
+              {
+                "athleteName": "Scott Meyers",
+                "membershipNumber": "141285",
+                "fullText": "9  -  220  Scott Meyers  M  31  -  141285  84.9  2013-03-16  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMy0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMy0xNiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          }
+        ],
+        "1021633": [
+          {
+            "meet_id": 2670,
+            "date": "2017-07-29",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Scott Meyers",
+            "lifter_id": 6718,
+            "membershipNumbers": [
+              {
+                "athleteName": "Scott Meyers",
+                "membershipNumber": "1021633",
+                "fullText": "18  -  204  Scott Meyers  M  47  Redline Athletics  1021633  88.2  2017-07-29  -  Local  Southern"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNy0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNy0yOSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          },
+          {
+            "meet_id": 2860,
+            "date": "2017-11-19",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Scott Meyers",
+            "lifter_id": 6718,
+            "membershipNumbers": [
+              {
+                "athleteName": "Scott Meyers",
+                "membershipNumber": "1021633",
+                "fullText": "12  -  206  Scott Meyers  M  47  Redline Athletics  1021633  83.3  2017-11-19  -  Local  Southern"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMS0xOSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          },
+          {
+            "meet_id": 3308,
+            "date": "2018-03-24",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Scott Meyers",
+            "lifter_id": 6718,
+            "membershipNumbers": [
+              {
+                "athleteName": "Scott Meyers",
+                "membershipNumber": "1021633",
+                "fullText": "26  -  213  Scott Meyers  M  48  Redline Athletics  1021633  82  2018-03-24  -  Local  Southern"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMy0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMy0yNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

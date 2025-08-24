@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-22T07:23:55.819Z",
+  "athleteName": "Stephanie Smith",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1009363": [
+        {
+          "meet_id": 2015,
+          "date": "2016-08-13",
+          "age_category": "Open Women's",
+          "weight_class": "63 kg",
+          "lifter_name": "Stephanie Smith",
+          "lifter_id": 25023,
+          "membershipNumbers": [
+            {
+              "athleteName": "Stephanie Smith",
+              "membershipNumber": "1009363",
+              "fullText": "2  -  155  Stephanie Smith  F  29  Prattville Weightlifting  1009363  62.5  2016-08-13  -  Local  Alabama"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0xMyIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+        },
+        {
+          "meet_id": 2404,
+          "date": "2017-07-30",
+          "age_category": "Open Women's",
+          "weight_class": "63 kg",
+          "lifter_name": "Stephanie Smith",
+          "lifter_id": 25023,
+          "membershipNumbers": [
+            {
+              "athleteName": "Stephanie Smith",
+              "membershipNumber": "1009363",
+              "fullText": "15  -  154  Stephanie Smith  F  30  Prattville Weightlifting  1009363  62.43  2017-07-30  -  National  Alabama"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNy0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNy0zMCIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+        },
+        {
+          "meet_id": 2725,
+          "date": "2017-07-01",
+          "age_category": "Open Women's",
+          "weight_class": "63 kg",
+          "lifter_name": "Stephanie Smith",
+          "lifter_id": 25023,
+          "membershipNumbers": [
+            {
+              "athleteName": "Stephanie Smith",
+              "membershipNumber": "1009363",
+              "fullText": "2  -  155  Stephanie Smith  F  30  Prattville Weightlifting  1009363  62.95  2017-07-01  -  Local  Alabama"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNy0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNy0wMSIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+        }
+      ],
+      "1033669": [
+        {
+          "meet_id": 3514,
+          "date": "2018-09-08",
+          "age_category": "Open Women's",
+          "weight_class": "76kg",
+          "lifter_name": "Stephanie Smith",
+          "lifter_id": 25023,
+          "membershipNumbers": [
+            {
+              "athleteName": "Stephanie Smith",
+              "membershipNumber": "1033669",
+              "fullText": "1  -  174  Stephanie Smith  F  31  -  1033669  74.3  2018-09-08  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOS0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOS0wOCIsIndlaWdodF9jbGFzcyI6OTd9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Stephanie Smith",
+    "splits": [
+      {
+        "newAthleteName": "Stephanie Smith (Person 1)",
+        "membershipNumber": "1009363",
+        "competitionCount": 3,
+        "competitions": [
+          2015,
+          2404,
+          2725
+        ]
+      },
+      {
+        "newAthleteName": "Stephanie Smith (Person 2)",
+        "membershipNumber": "1033669",
+        "competitionCount": 1,
+        "competitions": [
+          3514
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Stephanie Smith",
+    "competitions": [
+      {
+        "meet_id": 2015,
+        "date": "2016-08-13",
+        "age_category": "Open Women's",
+        "weight_class": "63 kg",
+        "lifter_name": "Stephanie Smith",
+        "lifter_id": 25023,
+        "membershipNumbers": [
+          {
+            "athleteName": "Stephanie Smith",
+            "membershipNumber": "1009363",
+            "fullText": "2  -  155  Stephanie Smith  F  29  Prattville Weightlifting  1009363  62.5  2016-08-13  -  Local  Alabama"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0xMyIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+      },
+      {
+        "meet_id": 2404,
+        "date": "2017-07-30",
+        "age_category": "Open Women's",
+        "weight_class": "63 kg",
+        "lifter_name": "Stephanie Smith",
+        "lifter_id": 25023,
+        "membershipNumbers": [
+          {
+            "athleteName": "Stephanie Smith",
+            "membershipNumber": "1009363",
+            "fullText": "15  -  154  Stephanie Smith  F  30  Prattville Weightlifting  1009363  62.43  2017-07-30  -  National  Alabama"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNy0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNy0zMCIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+      },
+      {
+        "meet_id": 2725,
+        "date": "2017-07-01",
+        "age_category": "Open Women's",
+        "weight_class": "63 kg",
+        "lifter_name": "Stephanie Smith",
+        "lifter_id": 25023,
+        "membershipNumbers": [
+          {
+            "athleteName": "Stephanie Smith",
+            "membershipNumber": "1009363",
+            "fullText": "2  -  155  Stephanie Smith  F  30  Prattville Weightlifting  1009363  62.95  2017-07-01  -  Local  Alabama"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNy0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNy0wMSIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+      },
+      {
+        "meet_id": 3514,
+        "date": "2018-09-08",
+        "age_category": "Open Women's",
+        "weight_class": "76kg",
+        "lifter_name": "Stephanie Smith",
+        "lifter_id": 25023,
+        "membershipNumbers": [
+          {
+            "athleteName": "Stephanie Smith",
+            "membershipNumber": "1033669",
+            "fullText": "1  -  174  Stephanie Smith  F  31  -  1033669  74.3  2018-09-08  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOS0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOS0wOCIsIndlaWdodF9jbGFzcyI6OTd9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1009363": [
+          {
+            "meet_id": 2015,
+            "date": "2016-08-13",
+            "age_category": "Open Women's",
+            "weight_class": "63 kg",
+            "lifter_name": "Stephanie Smith",
+            "lifter_id": 25023,
+            "membershipNumbers": [
+              {
+                "athleteName": "Stephanie Smith",
+                "membershipNumber": "1009363",
+                "fullText": "2  -  155  Stephanie Smith  F  29  Prattville Weightlifting  1009363  62.5  2016-08-13  -  Local  Alabama"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0xMyIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+          },
+          {
+            "meet_id": 2404,
+            "date": "2017-07-30",
+            "age_category": "Open Women's",
+            "weight_class": "63 kg",
+            "lifter_name": "Stephanie Smith",
+            "lifter_id": 25023,
+            "membershipNumbers": [
+              {
+                "athleteName": "Stephanie Smith",
+                "membershipNumber": "1009363",
+                "fullText": "15  -  154  Stephanie Smith  F  30  Prattville Weightlifting  1009363  62.43  2017-07-30  -  National  Alabama"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNy0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNy0zMCIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+          },
+          {
+            "meet_id": 2725,
+            "date": "2017-07-01",
+            "age_category": "Open Women's",
+            "weight_class": "63 kg",
+            "lifter_name": "Stephanie Smith",
+            "lifter_id": 25023,
+            "membershipNumbers": [
+              {
+                "athleteName": "Stephanie Smith",
+                "membershipNumber": "1009363",
+                "fullText": "2  -  155  Stephanie Smith  F  30  Prattville Weightlifting  1009363  62.95  2017-07-01  -  Local  Alabama"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNy0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNy0wMSIsIndlaWdodF9jbGFzcyI6MzY1fQ=="
+          }
+        ],
+        "1033669": [
+          {
+            "meet_id": 3514,
+            "date": "2018-09-08",
+            "age_category": "Open Women's",
+            "weight_class": "76kg",
+            "lifter_name": "Stephanie Smith",
+            "lifter_id": 25023,
+            "membershipNumbers": [
+              {
+                "athleteName": "Stephanie Smith",
+                "membershipNumber": "1033669",
+                "fullText": "1  -  174  Stephanie Smith  F  31  -  1033669  74.3  2018-09-08  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOS0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOS0wOCIsIndlaWdodF9jbGFzcyI6OTd9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

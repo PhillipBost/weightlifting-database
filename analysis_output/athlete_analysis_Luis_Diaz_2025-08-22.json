@@ -1,0 +1,403 @@
+{
+  "timestamp": "2025-08-22T09:14:10.635Z",
+  "athleteName": "Luis Diaz",
+  "totalCompetitions": 8,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "197431": [
+        {
+          "meet_id": 1357,
+          "date": "2014-06-01",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Luis Diaz",
+          "lifter_id": 7339,
+          "membershipNumbers": [
+            {
+              "athleteName": "Luis Diaz",
+              "membershipNumber": "197431",
+              "fullText": "3  -  218  Luis Diaz  M  19  TEAM CONNECTICUT  197431  103.23  2014-06-01  -  Local  New England"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNi0wMSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        }
+      ],
+      "1031416": [
+        {
+          "meet_id": 3763,
+          "date": "2019-03-24",
+          "age_category": "Open Men's",
+          "weight_class": "+109kg",
+          "lifter_name": "Luis Diaz",
+          "lifter_id": 7339,
+          "membershipNumbers": [
+            {
+              "athleteName": "Luis Diaz",
+              "membershipNumber": "1031416",
+              "fullText": "6  -  249  Luis Diaz  M  30  Pre-Script Barbell  1031416  111.8  2019-03-24  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMy0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMy0yNCIsIndlaWdodF9jbGFzcyI6OTB9"
+        },
+        {
+          "meet_id": 2891,
+          "date": "2018-09-16",
+          "age_category": "Open Men's",
+          "weight_class": "109kg",
+          "lifter_name": "Luis Diaz",
+          "lifter_id": 7339,
+          "membershipNumbers": [
+            {
+              "athleteName": "Luis Diaz",
+              "membershipNumber": "1031416",
+              "fullText": "15  -  229  Luis Diaz  M  29  Pre-Script Barbell  1031416  107.48  2018-09-16  -  National  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOS0xNiIsIndlaWdodF9jbGFzcyI6ODl9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 12,
+        "date": "2015-01-25",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Luis Diaz",
+        "lifter_id": 7339,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 1497,
+        "date": "2014-08-10",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Luis Diaz",
+        "lifter_id": 7339,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 1498,
+        "date": "2014-09-28",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Luis Diaz",
+        "lifter_id": 7339,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 1499,
+        "date": "2014-11-23",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Luis Diaz",
+        "lifter_id": 7339,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 3165,
+        "date": "2018-07-21",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Luis Diaz",
+        "lifter_id": 7339,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Luis Diaz",
+    "splits": [
+      {
+        "newAthleteName": "Luis Diaz (Person 1)",
+        "membershipNumber": "197431",
+        "competitionCount": 1,
+        "competitions": [
+          1357
+        ]
+      },
+      {
+        "newAthleteName": "Luis Diaz (Person 2)",
+        "membershipNumber": "1031416",
+        "competitionCount": 2,
+        "competitions": [
+          3763,
+          2891
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 12,
+        "date": "2015-01-25",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Luis Diaz",
+        "lifter_id": 7339,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 1497,
+        "date": "2014-08-10",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Luis Diaz",
+        "lifter_id": 7339,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 1498,
+        "date": "2014-09-28",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Luis Diaz",
+        "lifter_id": 7339,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 1499,
+        "date": "2014-11-23",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Luis Diaz",
+        "lifter_id": 7339,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 3165,
+        "date": "2018-07-21",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Luis Diaz",
+        "lifter_id": 7339,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Luis Diaz",
+    "competitions": [
+      {
+        "meet_id": 12,
+        "date": "2015-01-25",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Luis Diaz",
+        "lifter_id": 7339,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 1497,
+        "date": "2014-08-10",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Luis Diaz",
+        "lifter_id": 7339,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 1498,
+        "date": "2014-09-28",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Luis Diaz",
+        "lifter_id": 7339,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 1499,
+        "date": "2014-11-23",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Luis Diaz",
+        "lifter_id": 7339,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 3763,
+        "date": "2019-03-24",
+        "age_category": "Open Men's",
+        "weight_class": "+109kg",
+        "lifter_name": "Luis Diaz",
+        "lifter_id": 7339,
+        "membershipNumbers": [
+          {
+            "athleteName": "Luis Diaz",
+            "membershipNumber": "1031416",
+            "fullText": "6  -  249  Luis Diaz  M  30  Pre-Script Barbell  1031416  111.8  2019-03-24  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMy0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMy0yNCIsIndlaWdodF9jbGFzcyI6OTB9"
+      },
+      {
+        "meet_id": 2891,
+        "date": "2018-09-16",
+        "age_category": "Open Men's",
+        "weight_class": "109kg",
+        "lifter_name": "Luis Diaz",
+        "lifter_id": 7339,
+        "membershipNumbers": [
+          {
+            "athleteName": "Luis Diaz",
+            "membershipNumber": "1031416",
+            "fullText": "15  -  229  Luis Diaz  M  29  Pre-Script Barbell  1031416  107.48  2018-09-16  -  National  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOS0xNiIsIndlaWdodF9jbGFzcyI6ODl9"
+      },
+      {
+        "meet_id": 1357,
+        "date": "2014-06-01",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Luis Diaz",
+        "lifter_id": 7339,
+        "membershipNumbers": [
+          {
+            "athleteName": "Luis Diaz",
+            "membershipNumber": "197431",
+            "fullText": "3  -  218  Luis Diaz  M  19  TEAM CONNECTICUT  197431  103.23  2014-06-01  -  Local  New England"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNi0wMSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 3165,
+        "date": "2018-07-21",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Luis Diaz",
+        "lifter_id": 7339,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "197431": [
+          {
+            "meet_id": 1357,
+            "date": "2014-06-01",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Luis Diaz",
+            "lifter_id": 7339,
+            "membershipNumbers": [
+              {
+                "athleteName": "Luis Diaz",
+                "membershipNumber": "197431",
+                "fullText": "3  -  218  Luis Diaz  M  19  TEAM CONNECTICUT  197431  103.23  2014-06-01  -  Local  New England"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNi0wMSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          }
+        ],
+        "1031416": [
+          {
+            "meet_id": 3763,
+            "date": "2019-03-24",
+            "age_category": "Open Men's",
+            "weight_class": "+109kg",
+            "lifter_name": "Luis Diaz",
+            "lifter_id": 7339,
+            "membershipNumbers": [
+              {
+                "athleteName": "Luis Diaz",
+                "membershipNumber": "1031416",
+                "fullText": "6  -  249  Luis Diaz  M  30  Pre-Script Barbell  1031416  111.8  2019-03-24  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMy0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMy0yNCIsIndlaWdodF9jbGFzcyI6OTB9"
+          },
+          {
+            "meet_id": 2891,
+            "date": "2018-09-16",
+            "age_category": "Open Men's",
+            "weight_class": "109kg",
+            "lifter_name": "Luis Diaz",
+            "lifter_id": 7339,
+            "membershipNumbers": [
+              {
+                "athleteName": "Luis Diaz",
+                "membershipNumber": "1031416",
+                "fullText": "15  -  229  Luis Diaz  M  29  Pre-Script Barbell  1031416  107.48  2018-09-16  -  National  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOS0xNiIsIndlaWdodF9jbGFzcyI6ODl9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 12,
+          "date": "2015-01-25",
+          "age_category": "Open Men's",
+          "weight_class": "+105 kg",
+          "lifter_name": "Luis Diaz",
+          "lifter_id": 7339,
+          "membershipNumbers": [],
+          "error": "No division code found for: \"Open Men's +105 kg\""
+        },
+        {
+          "meet_id": 1497,
+          "date": "2014-08-10",
+          "age_category": "Open Men's",
+          "weight_class": "+105 kg",
+          "lifter_name": "Luis Diaz",
+          "lifter_id": 7339,
+          "membershipNumbers": [],
+          "error": "No division code found for: \"Open Men's +105 kg\""
+        },
+        {
+          "meet_id": 1498,
+          "date": "2014-09-28",
+          "age_category": "Open Men's",
+          "weight_class": "+105 kg",
+          "lifter_name": "Luis Diaz",
+          "lifter_id": 7339,
+          "membershipNumbers": [],
+          "error": "No division code found for: \"Open Men's +105 kg\""
+        },
+        {
+          "meet_id": 1499,
+          "date": "2014-11-23",
+          "age_category": "Open Men's",
+          "weight_class": "+105 kg",
+          "lifter_name": "Luis Diaz",
+          "lifter_id": 7339,
+          "membershipNumbers": [],
+          "error": "No division code found for: \"Open Men's +105 kg\""
+        },
+        {
+          "meet_id": 3165,
+          "date": "2018-07-21",
+          "age_category": "Open Men's",
+          "weight_class": "+105 kg",
+          "lifter_name": "Luis Diaz",
+          "lifter_id": 7339,
+          "membershipNumbers": [],
+          "error": "No division code found for: \"Open Men's +105 kg\""
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

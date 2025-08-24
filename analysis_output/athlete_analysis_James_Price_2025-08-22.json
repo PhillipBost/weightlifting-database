@@ -1,0 +1,194 @@
+{
+  "timestamp": "2025-08-22T22:41:21.317Z",
+  "athleteName": "James Price",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "194810": [
+        {
+          "meet_id": 1306,
+          "date": "2014-03-29",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "James Price",
+          "lifter_id": 19536,
+          "membershipNumbers": [
+            {
+              "athleteName": "James Price",
+              "membershipNumber": "194810",
+              "fullText": "14  -  212  James Price  M  22  -  194810  91.2  2014-03-29  -  Local  Tennessee-Kentucky"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0yOSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ],
+      "1030586": [
+        {
+          "meet_id": 3399,
+          "date": "2018-06-02",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "James Price",
+          "lifter_id": 19536,
+          "membershipNumbers": [
+            {
+              "athleteName": "James Price",
+              "membershipNumber": "1030586",
+              "fullText": "20  -  190  James Price  M  31  MISSISSIPPI BARBELL  1030586  80.8  2018-06-02  -  Local  Southern"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0wMiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 3606,
+        "date": "2018-10-20",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "James Price",
+        "lifter_id": 19536,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yMCIsIndlaWdodF9jbGFzcyI6ODV9"
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "James Price",
+    "splits": [
+      {
+        "newAthleteName": "James Price (Person 1)",
+        "membershipNumber": "194810",
+        "competitionCount": 1,
+        "competitions": [
+          1306
+        ]
+      },
+      {
+        "newAthleteName": "James Price (Person 2)",
+        "membershipNumber": "1030586",
+        "competitionCount": 1,
+        "competitions": [
+          3399
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 3606,
+        "date": "2018-10-20",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "James Price",
+        "lifter_id": 19536,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yMCIsIndlaWdodF9jbGFzcyI6ODV9"
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "James Price",
+    "competitions": [
+      {
+        "meet_id": 3399,
+        "date": "2018-06-02",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "James Price",
+        "lifter_id": 19536,
+        "membershipNumbers": [
+          {
+            "athleteName": "James Price",
+            "membershipNumber": "1030586",
+            "fullText": "20  -  190  James Price  M  31  MISSISSIPPI BARBELL  1030586  80.8  2018-06-02  -  Local  Southern"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0wMiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 1306,
+        "date": "2014-03-29",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "James Price",
+        "lifter_id": 19536,
+        "membershipNumbers": [
+          {
+            "athleteName": "James Price",
+            "membershipNumber": "194810",
+            "fullText": "14  -  212  James Price  M  22  -  194810  91.2  2014-03-29  -  Local  Tennessee-Kentucky"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0yOSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 3606,
+        "date": "2018-10-20",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "James Price",
+        "lifter_id": 19536,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yMCIsIndlaWdodF9jbGFzcyI6ODV9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "194810": [
+          {
+            "meet_id": 1306,
+            "date": "2014-03-29",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "James Price",
+            "lifter_id": 19536,
+            "membershipNumbers": [
+              {
+                "athleteName": "James Price",
+                "membershipNumber": "194810",
+                "fullText": "14  -  212  James Price  M  22  -  194810  91.2  2014-03-29  -  Local  Tennessee-Kentucky"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0yOSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          }
+        ],
+        "1030586": [
+          {
+            "meet_id": 3399,
+            "date": "2018-06-02",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "James Price",
+            "lifter_id": 19536,
+            "membershipNumbers": [
+              {
+                "athleteName": "James Price",
+                "membershipNumber": "1030586",
+                "fullText": "20  -  190  James Price  M  31  MISSISSIPPI BARBELL  1030586  80.8  2018-06-02  -  Local  Southern"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0wMiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 3606,
+          "date": "2018-10-20",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "James Price",
+          "lifter_id": 19536,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yMCIsIndlaWdodF9jbGFzcyI6ODV9"
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

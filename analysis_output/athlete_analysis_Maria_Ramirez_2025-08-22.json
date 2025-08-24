@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T07:27:23.249Z",
+  "athleteName": "Maria Ramirez",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1021612": [
+        {
+          "meet_id": 2050,
+          "date": "2016-08-28",
+          "age_category": "Women's Masters (35-39)",
+          "weight_class": "63 kg",
+          "lifter_name": "Maria Ramirez",
+          "lifter_id": 25364,
+          "membershipNumbers": [
+            {
+              "athleteName": "Maria Ramirez",
+              "membershipNumber": "1021612",
+              "fullText": "6  -  53  Maria Ramirez  F  36  KC WEIGHTLIFTING  1021612  61.2  2016-08-28  -  Local  Missouri Valley"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0yOCIsIndlaWdodF9jbGFzcyI6MzgyfQ=="
+        },
+        {
+          "meet_id": 3142,
+          "date": "2018-03-17",
+          "age_category": "Women's Masters (35-39)",
+          "weight_class": "63 kg",
+          "lifter_name": "Maria Ramirez",
+          "lifter_id": 25364,
+          "membershipNumbers": [
+            {
+              "athleteName": "Maria Ramirez",
+              "membershipNumber": "1021612",
+              "fullText": "5  -  56  Maria Ramirez  F  38  KC WEIGHTLIFTING  1021612  61.1  2018-03-17  -  Local  Missouri Valley"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMy0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMy0xNyIsIndlaWdodF9jbGFzcyI6MzgyfQ=="
+        }
+      ],
+      "1070913": [
+        {
+          "meet_id": 6003,
+          "date": "2023-09-09",
+          "age_category": "Women's Masters (40-44)",
+          "weight_class": "64kg",
+          "lifter_name": "Maria Ramirez",
+          "lifter_id": 25364,
+          "membershipNumbers": [
+            {
+              "athleteName": "Maria Ramirez",
+              "membershipNumber": "1070913",
+              "fullText": "3  -  53  Maria Ramirez  F  43  KC WEIGHTLIFTING  1070913  60.2  2023-09-09  -  Local  Missouri Valley"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wOS0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wOS0wOSIsIndlaWdodF9jbGFzcyI6MTM1fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Maria Ramirez",
+    "splits": [
+      {
+        "newAthleteName": "Maria Ramirez (Person 1)",
+        "membershipNumber": "1021612",
+        "competitionCount": 2,
+        "competitions": [
+          2050,
+          3142
+        ]
+      },
+      {
+        "newAthleteName": "Maria Ramirez (Person 2)",
+        "membershipNumber": "1070913",
+        "competitionCount": 1,
+        "competitions": [
+          6003
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Maria Ramirez",
+    "competitions": [
+      {
+        "meet_id": 6003,
+        "date": "2023-09-09",
+        "age_category": "Women's Masters (40-44)",
+        "weight_class": "64kg",
+        "lifter_name": "Maria Ramirez",
+        "lifter_id": 25364,
+        "membershipNumbers": [
+          {
+            "athleteName": "Maria Ramirez",
+            "membershipNumber": "1070913",
+            "fullText": "3  -  53  Maria Ramirez  F  43  KC WEIGHTLIFTING  1070913  60.2  2023-09-09  -  Local  Missouri Valley"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wOS0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wOS0wOSIsIndlaWdodF9jbGFzcyI6MTM1fQ=="
+      },
+      {
+        "meet_id": 2050,
+        "date": "2016-08-28",
+        "age_category": "Women's Masters (35-39)",
+        "weight_class": "63 kg",
+        "lifter_name": "Maria Ramirez",
+        "lifter_id": 25364,
+        "membershipNumbers": [
+          {
+            "athleteName": "Maria Ramirez",
+            "membershipNumber": "1021612",
+            "fullText": "6  -  53  Maria Ramirez  F  36  KC WEIGHTLIFTING  1021612  61.2  2016-08-28  -  Local  Missouri Valley"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0yOCIsIndlaWdodF9jbGFzcyI6MzgyfQ=="
+      },
+      {
+        "meet_id": 3142,
+        "date": "2018-03-17",
+        "age_category": "Women's Masters (35-39)",
+        "weight_class": "63 kg",
+        "lifter_name": "Maria Ramirez",
+        "lifter_id": 25364,
+        "membershipNumbers": [
+          {
+            "athleteName": "Maria Ramirez",
+            "membershipNumber": "1021612",
+            "fullText": "5  -  56  Maria Ramirez  F  38  KC WEIGHTLIFTING  1021612  61.1  2018-03-17  -  Local  Missouri Valley"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMy0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMy0xNyIsIndlaWdodF9jbGFzcyI6MzgyfQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1021612": [
+          {
+            "meet_id": 2050,
+            "date": "2016-08-28",
+            "age_category": "Women's Masters (35-39)",
+            "weight_class": "63 kg",
+            "lifter_name": "Maria Ramirez",
+            "lifter_id": 25364,
+            "membershipNumbers": [
+              {
+                "athleteName": "Maria Ramirez",
+                "membershipNumber": "1021612",
+                "fullText": "6  -  53  Maria Ramirez  F  36  KC WEIGHTLIFTING  1021612  61.2  2016-08-28  -  Local  Missouri Valley"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0yOCIsIndlaWdodF9jbGFzcyI6MzgyfQ=="
+          },
+          {
+            "meet_id": 3142,
+            "date": "2018-03-17",
+            "age_category": "Women's Masters (35-39)",
+            "weight_class": "63 kg",
+            "lifter_name": "Maria Ramirez",
+            "lifter_id": 25364,
+            "membershipNumbers": [
+              {
+                "athleteName": "Maria Ramirez",
+                "membershipNumber": "1021612",
+                "fullText": "5  -  56  Maria Ramirez  F  38  KC WEIGHTLIFTING  1021612  61.1  2018-03-17  -  Local  Missouri Valley"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMy0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMy0xNyIsIndlaWdodF9jbGFzcyI6MzgyfQ=="
+          }
+        ],
+        "1070913": [
+          {
+            "meet_id": 6003,
+            "date": "2023-09-09",
+            "age_category": "Women's Masters (40-44)",
+            "weight_class": "64kg",
+            "lifter_name": "Maria Ramirez",
+            "lifter_id": 25364,
+            "membershipNumbers": [
+              {
+                "athleteName": "Maria Ramirez",
+                "membershipNumber": "1070913",
+                "fullText": "3  -  53  Maria Ramirez  F  43  KC WEIGHTLIFTING  1070913  60.2  2023-09-09  -  Local  Missouri Valley"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wOS0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wOS0wOSIsIndlaWdodF9jbGFzcyI6MTM1fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T03:58:17.104Z",
+  "athleteName": "Daniel Farrell",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "166886": [
+        {
+          "meet_id": 934,
+          "date": "2013-11-16",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Daniel Farrell",
+          "lifter_id": 885,
+          "membershipNumbers": [
+            {
+              "athleteName": "Daniel Farrell",
+              "membershipNumber": "166886",
+              "fullText": "5  -  147  Daniel Farrell  M  50  -  166886  93.5  2013-11-16  -  Local  Missouri Valley"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMS0xNiIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        },
+        {
+          "meet_id": 664,
+          "date": "2012-11-17",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Daniel Farrell",
+          "lifter_id": 885,
+          "membershipNumbers": [
+            {
+              "athleteName": "Daniel Farrell",
+              "membershipNumber": "166886",
+              "fullText": "10  -  145  Daniel Farrell  M  49  -  166886  97.7  2012-11-17  -  Local  Missouri Valley"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0xMS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0xMS0xNyIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        }
+      ],
+      "1006542": [
+        {
+          "meet_id": 1872,
+          "date": "2016-07-31",
+          "age_category": "Open Men's",
+          "weight_class": "62 kg",
+          "lifter_name": "Daniel Farrell",
+          "lifter_id": 885,
+          "membershipNumbers": [
+            {
+              "athleteName": "Daniel Farrell",
+              "membershipNumber": "1006542",
+              "fullText": "1  -  117  Daniel Farrell  M  15  -  1006542  59.75  2016-07-31  -  Local  Pennsylvania-West Virginia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNy0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNy0zMSIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Daniel Farrell",
+    "splits": [
+      {
+        "newAthleteName": "Daniel Farrell (Person 1)",
+        "membershipNumber": "166886",
+        "competitionCount": 2,
+        "competitions": [
+          934,
+          664
+        ]
+      },
+      {
+        "newAthleteName": "Daniel Farrell (Person 2)",
+        "membershipNumber": "1006542",
+        "competitionCount": 1,
+        "competitions": [
+          1872
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Daniel Farrell",
+    "competitions": [
+      {
+        "meet_id": 934,
+        "date": "2013-11-16",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Daniel Farrell",
+        "lifter_id": 885,
+        "membershipNumbers": [
+          {
+            "athleteName": "Daniel Farrell",
+            "membershipNumber": "166886",
+            "fullText": "5  -  147  Daniel Farrell  M  50  -  166886  93.5  2013-11-16  -  Local  Missouri Valley"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMS0xNiIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 664,
+        "date": "2012-11-17",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Daniel Farrell",
+        "lifter_id": 885,
+        "membershipNumbers": [
+          {
+            "athleteName": "Daniel Farrell",
+            "membershipNumber": "166886",
+            "fullText": "10  -  145  Daniel Farrell  M  49  -  166886  97.7  2012-11-17  -  Local  Missouri Valley"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0xMS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0xMS0xNyIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 1872,
+        "date": "2016-07-31",
+        "age_category": "Open Men's",
+        "weight_class": "62 kg",
+        "lifter_name": "Daniel Farrell",
+        "lifter_id": 885,
+        "membershipNumbers": [
+          {
+            "athleteName": "Daniel Farrell",
+            "membershipNumber": "1006542",
+            "fullText": "1  -  117  Daniel Farrell  M  15  -  1006542  59.75  2016-07-31  -  Local  Pennsylvania-West Virginia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNy0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNy0zMSIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "166886": [
+          {
+            "meet_id": 934,
+            "date": "2013-11-16",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Daniel Farrell",
+            "lifter_id": 885,
+            "membershipNumbers": [
+              {
+                "athleteName": "Daniel Farrell",
+                "membershipNumber": "166886",
+                "fullText": "5  -  147  Daniel Farrell  M  50  -  166886  93.5  2013-11-16  -  Local  Missouri Valley"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMS0xNiIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          },
+          {
+            "meet_id": 664,
+            "date": "2012-11-17",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Daniel Farrell",
+            "lifter_id": 885,
+            "membershipNumbers": [
+              {
+                "athleteName": "Daniel Farrell",
+                "membershipNumber": "166886",
+                "fullText": "10  -  145  Daniel Farrell  M  49  -  166886  97.7  2012-11-17  -  Local  Missouri Valley"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0xMS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0xMS0xNyIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          }
+        ],
+        "1006542": [
+          {
+            "meet_id": 1872,
+            "date": "2016-07-31",
+            "age_category": "Open Men's",
+            "weight_class": "62 kg",
+            "lifter_name": "Daniel Farrell",
+            "lifter_id": 885,
+            "membershipNumbers": [
+              {
+                "athleteName": "Daniel Farrell",
+                "membershipNumber": "1006542",
+                "fullText": "1  -  117  Daniel Farrell  M  15  -  1006542  59.75  2016-07-31  -  Local  Pennsylvania-West Virginia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNy0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNy0zMSIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

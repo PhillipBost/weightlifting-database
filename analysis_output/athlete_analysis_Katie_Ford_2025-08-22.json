@@ -1,0 +1,243 @@
+{
+  "timestamp": "2025-08-22T10:59:46.371Z",
+  "athleteName": "Katie Ford",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "207431": [
+        {
+          "meet_id": 20,
+          "date": "2015-04-12",
+          "age_category": "Open Women's",
+          "weight_class": "69 kg",
+          "lifter_name": "Katie Ford",
+          "lifter_id": 9429,
+          "membershipNumbers": [
+            {
+              "athleteName": "Katie Ford",
+              "membershipNumber": "207431",
+              "fullText": "15  -  107  Katie Ford  F  32  -  207431  67.7  2015-04-12  -  Local  New York"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0xMiIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+        }
+      ],
+      "1000915": [
+        {
+          "meet_id": 1718,
+          "date": "2016-01-31",
+          "age_category": "Open Women's",
+          "weight_class": "+75 Kg",
+          "lifter_name": "Katie Ford",
+          "lifter_id": 9429,
+          "membershipNumbers": [
+            {
+              "athleteName": "Katie Ford",
+              "membershipNumber": "1000915",
+              "fullText": "1  -  290  Katie Ford  F  34  BOISE BARBELL  1000915  137.01  2016-01-31  -  Local  Mountain North"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0zMSIsIndlaWdodF9jbGFzcyI6MzY4fQ=="
+        },
+        {
+          "meet_id": 555,
+          "date": "2016-01-30",
+          "age_category": "Open Women's",
+          "weight_class": "75 kg",
+          "lifter_name": "Katie Ford",
+          "lifter_id": 9429,
+          "membershipNumbers": [
+            {
+              "athleteName": "Katie Ford",
+              "membershipNumber": "1000915",
+              "fullText": "6  -  106  Katie Ford  F  34  BOISE BARBELL  1000915  72.68  2016-01-30  -  Local  Mountain North"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0zMCIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 21,
+        "date": "2015-04-25",
+        "age_category": "Open Women's",
+        "weight_class": "69 kg",
+        "lifter_name": "Katie Ford",
+        "lifter_id": 9429,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0yNSIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Katie Ford",
+    "splits": [
+      {
+        "newAthleteName": "Katie Ford (Person 1)",
+        "membershipNumber": "207431",
+        "competitionCount": 1,
+        "competitions": [
+          20
+        ]
+      },
+      {
+        "newAthleteName": "Katie Ford (Person 2)",
+        "membershipNumber": "1000915",
+        "competitionCount": 2,
+        "competitions": [
+          1718,
+          555
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 21,
+        "date": "2015-04-25",
+        "age_category": "Open Women's",
+        "weight_class": "69 kg",
+        "lifter_name": "Katie Ford",
+        "lifter_id": 9429,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0yNSIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Katie Ford",
+    "competitions": [
+      {
+        "meet_id": 21,
+        "date": "2015-04-25",
+        "age_category": "Open Women's",
+        "weight_class": "69 kg",
+        "lifter_name": "Katie Ford",
+        "lifter_id": 9429,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0yNSIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+      },
+      {
+        "meet_id": 20,
+        "date": "2015-04-12",
+        "age_category": "Open Women's",
+        "weight_class": "69 kg",
+        "lifter_name": "Katie Ford",
+        "lifter_id": 9429,
+        "membershipNumbers": [
+          {
+            "athleteName": "Katie Ford",
+            "membershipNumber": "207431",
+            "fullText": "15  -  107  Katie Ford  F  32  -  207431  67.7  2015-04-12  -  Local  New York"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0xMiIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+      },
+      {
+        "meet_id": 1718,
+        "date": "2016-01-31",
+        "age_category": "Open Women's",
+        "weight_class": "+75 Kg",
+        "lifter_name": "Katie Ford",
+        "lifter_id": 9429,
+        "membershipNumbers": [
+          {
+            "athleteName": "Katie Ford",
+            "membershipNumber": "1000915",
+            "fullText": "1  -  290  Katie Ford  F  34  BOISE BARBELL  1000915  137.01  2016-01-31  -  Local  Mountain North"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0zMSIsIndlaWdodF9jbGFzcyI6MzY4fQ=="
+      },
+      {
+        "meet_id": 555,
+        "date": "2016-01-30",
+        "age_category": "Open Women's",
+        "weight_class": "75 kg",
+        "lifter_name": "Katie Ford",
+        "lifter_id": 9429,
+        "membershipNumbers": [
+          {
+            "athleteName": "Katie Ford",
+            "membershipNumber": "1000915",
+            "fullText": "6  -  106  Katie Ford  F  34  BOISE BARBELL  1000915  72.68  2016-01-30  -  Local  Mountain North"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0zMCIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "207431": [
+          {
+            "meet_id": 20,
+            "date": "2015-04-12",
+            "age_category": "Open Women's",
+            "weight_class": "69 kg",
+            "lifter_name": "Katie Ford",
+            "lifter_id": 9429,
+            "membershipNumbers": [
+              {
+                "athleteName": "Katie Ford",
+                "membershipNumber": "207431",
+                "fullText": "15  -  107  Katie Ford  F  32  -  207431  67.7  2015-04-12  -  Local  New York"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0xMiIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+          }
+        ],
+        "1000915": [
+          {
+            "meet_id": 1718,
+            "date": "2016-01-31",
+            "age_category": "Open Women's",
+            "weight_class": "+75 Kg",
+            "lifter_name": "Katie Ford",
+            "lifter_id": 9429,
+            "membershipNumbers": [
+              {
+                "athleteName": "Katie Ford",
+                "membershipNumber": "1000915",
+                "fullText": "1  -  290  Katie Ford  F  34  BOISE BARBELL  1000915  137.01  2016-01-31  -  Local  Mountain North"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0zMSIsIndlaWdodF9jbGFzcyI6MzY4fQ=="
+          },
+          {
+            "meet_id": 555,
+            "date": "2016-01-30",
+            "age_category": "Open Women's",
+            "weight_class": "75 kg",
+            "lifter_name": "Katie Ford",
+            "lifter_id": 9429,
+            "membershipNumbers": [
+              {
+                "athleteName": "Katie Ford",
+                "membershipNumber": "1000915",
+                "fullText": "6  -  106  Katie Ford  F  34  BOISE BARBELL  1000915  72.68  2016-01-30  -  Local  Mountain North"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0zMCIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 21,
+          "date": "2015-04-25",
+          "age_category": "Open Women's",
+          "weight_class": "69 kg",
+          "lifter_name": "Katie Ford",
+          "lifter_id": 9429,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0yNSIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

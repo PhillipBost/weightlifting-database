@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T03:58:00.206Z",
+  "athleteName": "William Smith",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "178312": [
+        {
+          "meet_id": 665,
+          "date": "2012-10-07",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "William Smith",
+          "lifter_id": 927,
+          "membershipNumbers": [
+            {
+              "athleteName": "William Smith",
+              "membershipNumber": "178312",
+              "fullText": "3  -  140  William Smith  M  27  OCCAM ATHLETICS  178312  77.1  2012-10-07  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0xMC0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0xMC0wNyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ],
+      "1058197": [
+        {
+          "meet_id": 5014,
+          "date": "2021-11-14",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "William Smith",
+          "lifter_id": 927,
+          "membershipNumbers": [
+            {
+              "athleteName": "William Smith",
+              "membershipNumber": "1058197",
+              "fullText": "9  -  200  William Smith  M  29  -  1058197  88.7  2021-11-14  -  Local  Tennessee-Kentucky"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMS0xNCIsIndlaWdodF9jbGFzcyI6ODZ9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "William Smith",
+    "splits": [
+      {
+        "newAthleteName": "William Smith (Person 1)",
+        "membershipNumber": "178312",
+        "competitionCount": 1,
+        "competitions": [
+          665
+        ]
+      },
+      {
+        "newAthleteName": "William Smith (Person 2)",
+        "membershipNumber": "1058197",
+        "competitionCount": 1,
+        "competitions": [
+          5014
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "William Smith",
+    "competitions": [
+      {
+        "meet_id": 665,
+        "date": "2012-10-07",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "William Smith",
+        "lifter_id": 927,
+        "membershipNumbers": [
+          {
+            "athleteName": "William Smith",
+            "membershipNumber": "178312",
+            "fullText": "3  -  140  William Smith  M  27  OCCAM ATHLETICS  178312  77.1  2012-10-07  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0xMC0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0xMC0wNyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 5014,
+        "date": "2021-11-14",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "William Smith",
+        "lifter_id": 927,
+        "membershipNumbers": [
+          {
+            "athleteName": "William Smith",
+            "membershipNumber": "1058197",
+            "fullText": "9  -  200  William Smith  M  29  -  1058197  88.7  2021-11-14  -  Local  Tennessee-Kentucky"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMS0xNCIsIndlaWdodF9jbGFzcyI6ODZ9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "178312": [
+          {
+            "meet_id": 665,
+            "date": "2012-10-07",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "William Smith",
+            "lifter_id": 927,
+            "membershipNumbers": [
+              {
+                "athleteName": "William Smith",
+                "membershipNumber": "178312",
+                "fullText": "3  -  140  William Smith  M  27  OCCAM ATHLETICS  178312  77.1  2012-10-07  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0xMC0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0xMC0wNyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          }
+        ],
+        "1058197": [
+          {
+            "meet_id": 5014,
+            "date": "2021-11-14",
+            "age_category": "Open Men's",
+            "weight_class": "89kg",
+            "lifter_name": "William Smith",
+            "lifter_id": 927,
+            "membershipNumbers": [
+              {
+                "athleteName": "William Smith",
+                "membershipNumber": "1058197",
+                "fullText": "9  -  200  William Smith  M  29  -  1058197  88.7  2021-11-14  -  Local  Tennessee-Kentucky"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMS0xNCIsIndlaWdodF9jbGFzcyI6ODZ9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

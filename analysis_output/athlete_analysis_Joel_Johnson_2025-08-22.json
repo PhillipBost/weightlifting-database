@@ -1,0 +1,194 @@
+{
+  "timestamp": "2025-08-22T08:15:18.510Z",
+  "athleteName": "Joel Johnson",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1026319": [
+        {
+          "meet_id": 3450,
+          "date": "2018-08-11",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Joel Johnson",
+          "lifter_id": 37880,
+          "membershipNumbers": [
+            {
+              "athleteName": "Joel Johnson",
+              "membershipNumber": "1026319",
+              "fullText": "8  -  215  Joel Johnson  M  24  -  1026319  78.6  2018-08-11  -  Local  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOC0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOC0xMSIsIndlaWdodF9jbGFzcyI6ODV9"
+        }
+      ],
+      "1029220": [
+        {
+          "meet_id": 3706,
+          "date": "2019-03-02",
+          "age_category": "Open Men's",
+          "weight_class": "109kg",
+          "lifter_name": "Joel Johnson",
+          "lifter_id": 37880,
+          "membershipNumbers": [
+            {
+              "athleteName": "Joel Johnson",
+              "membershipNumber": "1029220",
+              "fullText": "7  -  164  Joel Johnson  M  44  N. Highland WLC  1029220  102.2  2019-03-02  -  Local  Iowa-Nebraska"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMy0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMy0wMiIsIndlaWdodF9jbGFzcyI6ODl9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 3659,
+        "date": "2019-03-10",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Joel Johnson",
+        "lifter_id": 37880,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMy0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMy0xMCIsIndlaWdodF9jbGFzcyI6ODV9"
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Joel Johnson",
+    "splits": [
+      {
+        "newAthleteName": "Joel Johnson (Person 1)",
+        "membershipNumber": "1026319",
+        "competitionCount": 1,
+        "competitions": [
+          3450
+        ]
+      },
+      {
+        "newAthleteName": "Joel Johnson (Person 2)",
+        "membershipNumber": "1029220",
+        "competitionCount": 1,
+        "competitions": [
+          3706
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 3659,
+        "date": "2019-03-10",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Joel Johnson",
+        "lifter_id": 37880,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMy0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMy0xMCIsIndlaWdodF9jbGFzcyI6ODV9"
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Joel Johnson",
+    "competitions": [
+      {
+        "meet_id": 3450,
+        "date": "2018-08-11",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Joel Johnson",
+        "lifter_id": 37880,
+        "membershipNumbers": [
+          {
+            "athleteName": "Joel Johnson",
+            "membershipNumber": "1026319",
+            "fullText": "8  -  215  Joel Johnson  M  24  -  1026319  78.6  2018-08-11  -  Local  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOC0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOC0xMSIsIndlaWdodF9jbGFzcyI6ODV9"
+      },
+      {
+        "meet_id": 3659,
+        "date": "2019-03-10",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Joel Johnson",
+        "lifter_id": 37880,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMy0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMy0xMCIsIndlaWdodF9jbGFzcyI6ODV9"
+      },
+      {
+        "meet_id": 3706,
+        "date": "2019-03-02",
+        "age_category": "Open Men's",
+        "weight_class": "109kg",
+        "lifter_name": "Joel Johnson",
+        "lifter_id": 37880,
+        "membershipNumbers": [
+          {
+            "athleteName": "Joel Johnson",
+            "membershipNumber": "1029220",
+            "fullText": "7  -  164  Joel Johnson  M  44  N. Highland WLC  1029220  102.2  2019-03-02  -  Local  Iowa-Nebraska"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMy0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMy0wMiIsIndlaWdodF9jbGFzcyI6ODl9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1026319": [
+          {
+            "meet_id": 3450,
+            "date": "2018-08-11",
+            "age_category": "Open Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Joel Johnson",
+            "lifter_id": 37880,
+            "membershipNumbers": [
+              {
+                "athleteName": "Joel Johnson",
+                "membershipNumber": "1026319",
+                "fullText": "8  -  215  Joel Johnson  M  24  -  1026319  78.6  2018-08-11  -  Local  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOC0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOC0xMSIsIndlaWdodF9jbGFzcyI6ODV9"
+          }
+        ],
+        "1029220": [
+          {
+            "meet_id": 3706,
+            "date": "2019-03-02",
+            "age_category": "Open Men's",
+            "weight_class": "109kg",
+            "lifter_name": "Joel Johnson",
+            "lifter_id": 37880,
+            "membershipNumbers": [
+              {
+                "athleteName": "Joel Johnson",
+                "membershipNumber": "1029220",
+                "fullText": "7  -  164  Joel Johnson  M  44  N. Highland WLC  1029220  102.2  2019-03-02  -  Local  Iowa-Nebraska"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMy0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMy0wMiIsIndlaWdodF9jbGFzcyI6ODl9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 3659,
+          "date": "2019-03-10",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Joel Johnson",
+          "lifter_id": 37880,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMy0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMy0xMCIsIndlaWdodF9jbGFzcyI6ODV9"
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

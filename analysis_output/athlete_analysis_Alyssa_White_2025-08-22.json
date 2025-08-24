@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-22T17:16:07.197Z",
+  "athleteName": "Alyssa White",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1025416": [
+        {
+          "meet_id": 3041,
+          "date": "2018-02-03",
+          "age_category": "Open Women's",
+          "weight_class": "90 kg",
+          "lifter_name": "Alyssa White",
+          "lifter_id": 35102,
+          "membershipNumbers": [
+            {
+              "athleteName": "Alyssa White",
+              "membershipNumber": "1025416",
+              "fullText": "12  -  102  Alyssa White  F  31  Team Titan Weightlifting  1025416  81.94  2018-02-03  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMi0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMi0wMyIsIndlaWdodF9jbGFzcyI6MzY5fQ=="
+        },
+        {
+          "meet_id": 4145,
+          "date": "2019-06-23",
+          "age_category": "Open Women's",
+          "weight_class": "81kg",
+          "lifter_name": "Alyssa White",
+          "lifter_id": 35102,
+          "membershipNumbers": [
+            {
+              "athleteName": "Alyssa White",
+              "membershipNumber": "1025416",
+              "fullText": "2  -  124  Alyssa White  F  32  Team Titan Weightlifting  1025416  81  2019-06-23  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNi0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNi0yMyIsIndlaWdodF9jbGFzcyI6OTh9"
+        },
+        {
+          "meet_id": 4102,
+          "date": "2019-05-20",
+          "age_category": "Open Women's",
+          "weight_class": "81kg",
+          "lifter_name": "Alyssa White",
+          "lifter_id": 35102,
+          "membershipNumbers": [
+            {
+              "athleteName": "Alyssa White",
+              "membershipNumber": "1025416",
+              "fullText": "1  -  121  Alyssa White  F  32  Team Titan Weightlifting  1025416  80.9  2019-05-20  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0yMCIsIndlaWdodF9jbGFzcyI6OTh9"
+        }
+      ],
+      "1066236": [
+        {
+          "meet_id": 5687,
+          "date": "2023-01-28",
+          "age_category": "Open Women's",
+          "weight_class": "81kg",
+          "lifter_name": "Alyssa White",
+          "lifter_id": 35102,
+          "membershipNumbers": [
+            {
+              "athleteName": "Alyssa White",
+              "membershipNumber": "1066236",
+              "fullText": "17  -  127  Alyssa White  F  22  -  1066236  78.6  2023-01-28  -  Local  Indiana"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMS0yOCIsIndlaWdodF9jbGFzcyI6OTh9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Alyssa White",
+    "splits": [
+      {
+        "newAthleteName": "Alyssa White (Person 1)",
+        "membershipNumber": "1025416",
+        "competitionCount": 3,
+        "competitions": [
+          3041,
+          4145,
+          4102
+        ]
+      },
+      {
+        "newAthleteName": "Alyssa White (Person 2)",
+        "membershipNumber": "1066236",
+        "competitionCount": 1,
+        "competitions": [
+          5687
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Alyssa White",
+    "competitions": [
+      {
+        "meet_id": 3041,
+        "date": "2018-02-03",
+        "age_category": "Open Women's",
+        "weight_class": "90 kg",
+        "lifter_name": "Alyssa White",
+        "lifter_id": 35102,
+        "membershipNumbers": [
+          {
+            "athleteName": "Alyssa White",
+            "membershipNumber": "1025416",
+            "fullText": "12  -  102  Alyssa White  F  31  Team Titan Weightlifting  1025416  81.94  2018-02-03  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMi0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMi0wMyIsIndlaWdodF9jbGFzcyI6MzY5fQ=="
+      },
+      {
+        "meet_id": 4145,
+        "date": "2019-06-23",
+        "age_category": "Open Women's",
+        "weight_class": "81kg",
+        "lifter_name": "Alyssa White",
+        "lifter_id": 35102,
+        "membershipNumbers": [
+          {
+            "athleteName": "Alyssa White",
+            "membershipNumber": "1025416",
+            "fullText": "2  -  124  Alyssa White  F  32  Team Titan Weightlifting  1025416  81  2019-06-23  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNi0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNi0yMyIsIndlaWdodF9jbGFzcyI6OTh9"
+      },
+      {
+        "meet_id": 4102,
+        "date": "2019-05-20",
+        "age_category": "Open Women's",
+        "weight_class": "81kg",
+        "lifter_name": "Alyssa White",
+        "lifter_id": 35102,
+        "membershipNumbers": [
+          {
+            "athleteName": "Alyssa White",
+            "membershipNumber": "1025416",
+            "fullText": "1  -  121  Alyssa White  F  32  Team Titan Weightlifting  1025416  80.9  2019-05-20  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0yMCIsIndlaWdodF9jbGFzcyI6OTh9"
+      },
+      {
+        "meet_id": 5687,
+        "date": "2023-01-28",
+        "age_category": "Open Women's",
+        "weight_class": "81kg",
+        "lifter_name": "Alyssa White",
+        "lifter_id": 35102,
+        "membershipNumbers": [
+          {
+            "athleteName": "Alyssa White",
+            "membershipNumber": "1066236",
+            "fullText": "17  -  127  Alyssa White  F  22  -  1066236  78.6  2023-01-28  -  Local  Indiana"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMS0yOCIsIndlaWdodF9jbGFzcyI6OTh9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1025416": [
+          {
+            "meet_id": 3041,
+            "date": "2018-02-03",
+            "age_category": "Open Women's",
+            "weight_class": "90 kg",
+            "lifter_name": "Alyssa White",
+            "lifter_id": 35102,
+            "membershipNumbers": [
+              {
+                "athleteName": "Alyssa White",
+                "membershipNumber": "1025416",
+                "fullText": "12  -  102  Alyssa White  F  31  Team Titan Weightlifting  1025416  81.94  2018-02-03  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMi0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMi0wMyIsIndlaWdodF9jbGFzcyI6MzY5fQ=="
+          },
+          {
+            "meet_id": 4145,
+            "date": "2019-06-23",
+            "age_category": "Open Women's",
+            "weight_class": "81kg",
+            "lifter_name": "Alyssa White",
+            "lifter_id": 35102,
+            "membershipNumbers": [
+              {
+                "athleteName": "Alyssa White",
+                "membershipNumber": "1025416",
+                "fullText": "2  -  124  Alyssa White  F  32  Team Titan Weightlifting  1025416  81  2019-06-23  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNi0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNi0yMyIsIndlaWdodF9jbGFzcyI6OTh9"
+          },
+          {
+            "meet_id": 4102,
+            "date": "2019-05-20",
+            "age_category": "Open Women's",
+            "weight_class": "81kg",
+            "lifter_name": "Alyssa White",
+            "lifter_id": 35102,
+            "membershipNumbers": [
+              {
+                "athleteName": "Alyssa White",
+                "membershipNumber": "1025416",
+                "fullText": "1  -  121  Alyssa White  F  32  Team Titan Weightlifting  1025416  80.9  2019-05-20  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0yMCIsIndlaWdodF9jbGFzcyI6OTh9"
+          }
+        ],
+        "1066236": [
+          {
+            "meet_id": 5687,
+            "date": "2023-01-28",
+            "age_category": "Open Women's",
+            "weight_class": "81kg",
+            "lifter_name": "Alyssa White",
+            "lifter_id": 35102,
+            "membershipNumbers": [
+              {
+                "athleteName": "Alyssa White",
+                "membershipNumber": "1066236",
+                "fullText": "17  -  127  Alyssa White  F  22  -  1066236  78.6  2023-01-28  -  Local  Indiana"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMS0yOCIsIndlaWdodF9jbGFzcyI6OTh9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

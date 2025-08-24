@@ -1,0 +1,343 @@
+{
+  "timestamp": "2025-08-22T13:28:23.080Z",
+  "athleteName": "Zachary Taylor",
+  "totalCompetitions": 6,
+  "analysis": {
+    "distinctAthletes": 3,
+    "membershipGroups": {
+      "195305": [
+        {
+          "meet_id": 1227,
+          "date": "2014-04-25",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Zachary Taylor",
+          "lifter_id": 19110,
+          "membershipNumbers": [
+            {
+              "athleteName": "Zachary Taylor",
+              "membershipNumber": "195305",
+              "fullText": "6  -  140  Zachary Taylor  M  17  LEADVILLE LIFTERS  195305  71.9  2014-04-25  -  Local  Mountain North"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNC0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNC0yNSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        },
+        {
+          "meet_id": 1407,
+          "date": "2014-07-27",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Zachary Taylor",
+          "lifter_id": 19110,
+          "membershipNumbers": [
+            {
+              "athleteName": "Zachary Taylor",
+              "membershipNumber": "195305",
+              "fullText": "12  -  139  Zachary Taylor  M  17  LEADVILLE LIFTERS  195305  75  2014-07-27  -  Local  Mountain North"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNy0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNy0yNyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        }
+      ],
+      "1018307": [
+        {
+          "meet_id": 2053,
+          "date": "2017-05-27",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Zachary Taylor",
+          "lifter_id": 19110,
+          "membershipNumbers": [
+            {
+              "athleteName": "Zachary Taylor",
+              "membershipNumber": "1018307",
+              "fullText": "6  -  235  Zachary Taylor  M  25  -  1018307  80.5  2017-05-27  -  Local  New England"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNS0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNS0yNyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ],
+      "1019288": [
+        {
+          "meet_id": 2665,
+          "date": "2017-07-01",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Zachary Taylor",
+          "lifter_id": 19110,
+          "membershipNumbers": [
+            {
+              "athleteName": "Zachary Taylor",
+              "membershipNumber": "1019288",
+              "fullText": "13  -  140  Zachary Taylor  M  45  BODY SHOP X BARBELL CLUB  1019288  104.9  2017-07-01  -  Local  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNy0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNy0wMSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 1639,
+        "date": "2014-04-19",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Zachary Taylor",
+        "lifter_id": 19110,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNC0xOSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 2516,
+        "date": "2017-09-30",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Zachary Taylor",
+        "lifter_id": 19110,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Zachary Taylor",
+    "splits": [
+      {
+        "newAthleteName": "Zachary Taylor (Person 1)",
+        "membershipNumber": "195305",
+        "competitionCount": 2,
+        "competitions": [
+          1227,
+          1407
+        ]
+      },
+      {
+        "newAthleteName": "Zachary Taylor (Person 2)",
+        "membershipNumber": "1018307",
+        "competitionCount": 1,
+        "competitions": [
+          2053
+        ]
+      },
+      {
+        "newAthleteName": "Zachary Taylor (Person 3)",
+        "membershipNumber": "1019288",
+        "competitionCount": 1,
+        "competitions": [
+          2665
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 1639,
+        "date": "2014-04-19",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Zachary Taylor",
+        "lifter_id": 19110,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNC0xOSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 2516,
+        "date": "2017-09-30",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Zachary Taylor",
+        "lifter_id": 19110,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Zachary Taylor",
+    "competitions": [
+      {
+        "meet_id": 1227,
+        "date": "2014-04-25",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Zachary Taylor",
+        "lifter_id": 19110,
+        "membershipNumbers": [
+          {
+            "athleteName": "Zachary Taylor",
+            "membershipNumber": "195305",
+            "fullText": "6  -  140  Zachary Taylor  M  17  LEADVILLE LIFTERS  195305  71.9  2014-04-25  -  Local  Mountain North"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNC0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNC0yNSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 1407,
+        "date": "2014-07-27",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Zachary Taylor",
+        "lifter_id": 19110,
+        "membershipNumbers": [
+          {
+            "athleteName": "Zachary Taylor",
+            "membershipNumber": "195305",
+            "fullText": "12  -  139  Zachary Taylor  M  17  LEADVILLE LIFTERS  195305  75  2014-07-27  -  Local  Mountain North"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNy0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNy0yNyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 2665,
+        "date": "2017-07-01",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Zachary Taylor",
+        "lifter_id": 19110,
+        "membershipNumbers": [
+          {
+            "athleteName": "Zachary Taylor",
+            "membershipNumber": "1019288",
+            "fullText": "13  -  140  Zachary Taylor  M  45  BODY SHOP X BARBELL CLUB  1019288  104.9  2017-07-01  -  Local  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNy0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNy0wMSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 1639,
+        "date": "2014-04-19",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Zachary Taylor",
+        "lifter_id": 19110,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNC0xOSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 2516,
+        "date": "2017-09-30",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Zachary Taylor",
+        "lifter_id": 19110,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 2053,
+        "date": "2017-05-27",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Zachary Taylor",
+        "lifter_id": 19110,
+        "membershipNumbers": [
+          {
+            "athleteName": "Zachary Taylor",
+            "membershipNumber": "1018307",
+            "fullText": "6  -  235  Zachary Taylor  M  25  -  1018307  80.5  2017-05-27  -  Local  New England"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNS0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNS0yNyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 3,
+      "membershipGroups": {
+        "195305": [
+          {
+            "meet_id": 1227,
+            "date": "2014-04-25",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Zachary Taylor",
+            "lifter_id": 19110,
+            "membershipNumbers": [
+              {
+                "athleteName": "Zachary Taylor",
+                "membershipNumber": "195305",
+                "fullText": "6  -  140  Zachary Taylor  M  17  LEADVILLE LIFTERS  195305  71.9  2014-04-25  -  Local  Mountain North"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNC0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNC0yNSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          },
+          {
+            "meet_id": 1407,
+            "date": "2014-07-27",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Zachary Taylor",
+            "lifter_id": 19110,
+            "membershipNumbers": [
+              {
+                "athleteName": "Zachary Taylor",
+                "membershipNumber": "195305",
+                "fullText": "12  -  139  Zachary Taylor  M  17  LEADVILLE LIFTERS  195305  75  2014-07-27  -  Local  Mountain North"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNy0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNy0yNyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          }
+        ],
+        "1018307": [
+          {
+            "meet_id": 2053,
+            "date": "2017-05-27",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Zachary Taylor",
+            "lifter_id": 19110,
+            "membershipNumbers": [
+              {
+                "athleteName": "Zachary Taylor",
+                "membershipNumber": "1018307",
+                "fullText": "6  -  235  Zachary Taylor  M  25  -  1018307  80.5  2017-05-27  -  Local  New England"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNS0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNS0yNyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          }
+        ],
+        "1019288": [
+          {
+            "meet_id": 2665,
+            "date": "2017-07-01",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Zachary Taylor",
+            "lifter_id": 19110,
+            "membershipNumbers": [
+              {
+                "athleteName": "Zachary Taylor",
+                "membershipNumber": "1019288",
+                "fullText": "13  -  140  Zachary Taylor  M  45  BODY SHOP X BARBELL CLUB  1019288  104.9  2017-07-01  -  Local  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNy0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNy0wMSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 1639,
+          "date": "2014-04-19",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Zachary Taylor",
+          "lifter_id": 19110,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNC0xOSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        },
+        {
+          "meet_id": 2516,
+          "date": "2017-09-30",
+          "age_category": "Open Men's",
+          "weight_class": "+105 kg",
+          "lifter_name": "Zachary Taylor",
+          "lifter_id": 19110,
+          "membershipNumbers": [],
+          "error": "No division code found for: \"Open Men's +105 kg\""
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

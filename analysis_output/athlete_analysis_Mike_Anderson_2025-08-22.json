@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-22T06:40:19.527Z",
+  "athleteName": "Mike Anderson",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "166785": [
+        {
+          "meet_id": 1247,
+          "date": "2014-02-01",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Mike Anderson",
+          "lifter_id": 15231,
+          "membershipNumbers": [
+            {
+              "athleteName": "Mike Anderson",
+              "membershipNumber": "166785",
+              "fullText": "4  -  134  Mike Anderson  M  65  -  166785  100.1  2014-02-01  -  Local  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMi0wMSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        },
+        {
+          "meet_id": 5696,
+          "date": "2023-01-28",
+          "age_category": "Men's Masters (70-74)",
+          "weight_class": "102kg",
+          "lifter_name": "Mike Anderson",
+          "lifter_id": 15231,
+          "membershipNumbers": [
+            {
+              "athleteName": "Mike Anderson",
+              "membershipNumber": "166785",
+              "fullText": "1  -  102  Mike Anderson  M  74  -  166785  97  2023-01-28  -  Local  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMS0yOCIsIndlaWdodF9jbGFzcyI6MjQ4fQ=="
+        }
+      ],
+      "201461": [
+        {
+          "meet_id": 1504,
+          "date": "2014-09-27",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Mike Anderson",
+          "lifter_id": 15231,
+          "membershipNumbers": [
+            {
+              "athleteName": "Mike Anderson",
+              "membershipNumber": "201461",
+              "fullText": "5  -  224  Mike Anderson  M  29  KOA BARBELL  201461  83.5  2014-09-27  -  Local  New Jersey"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOS0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOS0yNyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        },
+        {
+          "meet_id": 49,
+          "date": "2015-06-19",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Mike Anderson",
+          "lifter_id": 15231,
+          "membershipNumbers": [
+            {
+              "athleteName": "Mike Anderson",
+              "membershipNumber": "201461",
+              "fullText": "9  -  230  Mike Anderson  M  30  KOA BARBELL  201461  84.38  2015-06-19  -  Local  New Jersey"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNi0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNi0xOSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Mike Anderson",
+    "splits": [
+      {
+        "newAthleteName": "Mike Anderson (Person 1)",
+        "membershipNumber": "166785",
+        "competitionCount": 2,
+        "competitions": [
+          1247,
+          5696
+        ]
+      },
+      {
+        "newAthleteName": "Mike Anderson (Person 2)",
+        "membershipNumber": "201461",
+        "competitionCount": 2,
+        "competitions": [
+          1504,
+          49
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Mike Anderson",
+    "competitions": [
+      {
+        "meet_id": 1247,
+        "date": "2014-02-01",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Mike Anderson",
+        "lifter_id": 15231,
+        "membershipNumbers": [
+          {
+            "athleteName": "Mike Anderson",
+            "membershipNumber": "166785",
+            "fullText": "4  -  134  Mike Anderson  M  65  -  166785  100.1  2014-02-01  -  Local  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMi0wMSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 1504,
+        "date": "2014-09-27",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Mike Anderson",
+        "lifter_id": 15231,
+        "membershipNumbers": [
+          {
+            "athleteName": "Mike Anderson",
+            "membershipNumber": "201461",
+            "fullText": "5  -  224  Mike Anderson  M  29  KOA BARBELL  201461  83.5  2014-09-27  -  Local  New Jersey"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOS0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOS0yNyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 49,
+        "date": "2015-06-19",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Mike Anderson",
+        "lifter_id": 15231,
+        "membershipNumbers": [
+          {
+            "athleteName": "Mike Anderson",
+            "membershipNumber": "201461",
+            "fullText": "9  -  230  Mike Anderson  M  30  KOA BARBELL  201461  84.38  2015-06-19  -  Local  New Jersey"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNi0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNi0xOSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 5696,
+        "date": "2023-01-28",
+        "age_category": "Men's Masters (70-74)",
+        "weight_class": "102kg",
+        "lifter_name": "Mike Anderson",
+        "lifter_id": 15231,
+        "membershipNumbers": [
+          {
+            "athleteName": "Mike Anderson",
+            "membershipNumber": "166785",
+            "fullText": "1  -  102  Mike Anderson  M  74  -  166785  97  2023-01-28  -  Local  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMS0yOCIsIndlaWdodF9jbGFzcyI6MjQ4fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "166785": [
+          {
+            "meet_id": 1247,
+            "date": "2014-02-01",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Mike Anderson",
+            "lifter_id": 15231,
+            "membershipNumbers": [
+              {
+                "athleteName": "Mike Anderson",
+                "membershipNumber": "166785",
+                "fullText": "4  -  134  Mike Anderson  M  65  -  166785  100.1  2014-02-01  -  Local  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMi0wMSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          },
+          {
+            "meet_id": 5696,
+            "date": "2023-01-28",
+            "age_category": "Men's Masters (70-74)",
+            "weight_class": "102kg",
+            "lifter_name": "Mike Anderson",
+            "lifter_id": 15231,
+            "membershipNumbers": [
+              {
+                "athleteName": "Mike Anderson",
+                "membershipNumber": "166785",
+                "fullText": "1  -  102  Mike Anderson  M  74  -  166785  97  2023-01-28  -  Local  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMS0yOCIsIndlaWdodF9jbGFzcyI6MjQ4fQ=="
+          }
+        ],
+        "201461": [
+          {
+            "meet_id": 1504,
+            "date": "2014-09-27",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Mike Anderson",
+            "lifter_id": 15231,
+            "membershipNumbers": [
+              {
+                "athleteName": "Mike Anderson",
+                "membershipNumber": "201461",
+                "fullText": "5  -  224  Mike Anderson  M  29  KOA BARBELL  201461  83.5  2014-09-27  -  Local  New Jersey"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOS0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOS0yNyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          },
+          {
+            "meet_id": 49,
+            "date": "2015-06-19",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Mike Anderson",
+            "lifter_id": 15231,
+            "membershipNumbers": [
+              {
+                "athleteName": "Mike Anderson",
+                "membershipNumber": "201461",
+                "fullText": "9  -  230  Mike Anderson  M  30  KOA BARBELL  201461  84.38  2015-06-19  -  Local  New Jersey"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNi0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNi0xOSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T05:15:34.851Z",
+  "athleteName": "John Evans",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "188774": [
+        {
+          "meet_id": 113,
+          "date": "2015-07-25",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "John Evans",
+          "lifter_id": 7241,
+          "membershipNumbers": [
+            {
+              "athleteName": "John Evans",
+              "membershipNumber": "188774",
+              "fullText": "24  -  185  John Evans  M  22  -  188774  76.6  2015-07-25  -  Local  Pennsylvania-West Virginia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNy0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNy0yNSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        }
+      ],
+      "1063890": [
+        {
+          "meet_id": 5390,
+          "date": "2022-06-01",
+          "age_category": "Open Men's",
+          "weight_class": "+109kg",
+          "lifter_name": "John Evans",
+          "lifter_id": 7241,
+          "membershipNumbers": [
+            {
+              "athleteName": "John Evans",
+              "membershipNumber": "1063890",
+              "fullText": "2  -  240  John Evans  M  29  -  1063890  139.8  2022-06-01  -  Local  Alabama"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNi0wMSIsIndlaWdodF9jbGFzcyI6OTB9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "John Evans",
+    "splits": [
+      {
+        "newAthleteName": "John Evans (Person 1)",
+        "membershipNumber": "188774",
+        "competitionCount": 1,
+        "competitions": [
+          113
+        ]
+      },
+      {
+        "newAthleteName": "John Evans (Person 2)",
+        "membershipNumber": "1063890",
+        "competitionCount": 1,
+        "competitions": [
+          5390
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "John Evans",
+    "competitions": [
+      {
+        "meet_id": 5390,
+        "date": "2022-06-01",
+        "age_category": "Open Men's",
+        "weight_class": "+109kg",
+        "lifter_name": "John Evans",
+        "lifter_id": 7241,
+        "membershipNumbers": [
+          {
+            "athleteName": "John Evans",
+            "membershipNumber": "1063890",
+            "fullText": "2  -  240  John Evans  M  29  -  1063890  139.8  2022-06-01  -  Local  Alabama"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNi0wMSIsIndlaWdodF9jbGFzcyI6OTB9"
+      },
+      {
+        "meet_id": 113,
+        "date": "2015-07-25",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "John Evans",
+        "lifter_id": 7241,
+        "membershipNumbers": [
+          {
+            "athleteName": "John Evans",
+            "membershipNumber": "188774",
+            "fullText": "24  -  185  John Evans  M  22  -  188774  76.6  2015-07-25  -  Local  Pennsylvania-West Virginia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNy0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNy0yNSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "188774": [
+          {
+            "meet_id": 113,
+            "date": "2015-07-25",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "John Evans",
+            "lifter_id": 7241,
+            "membershipNumbers": [
+              {
+                "athleteName": "John Evans",
+                "membershipNumber": "188774",
+                "fullText": "24  -  185  John Evans  M  22  -  188774  76.6  2015-07-25  -  Local  Pennsylvania-West Virginia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNy0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNy0yNSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          }
+        ],
+        "1063890": [
+          {
+            "meet_id": 5390,
+            "date": "2022-06-01",
+            "age_category": "Open Men's",
+            "weight_class": "+109kg",
+            "lifter_name": "John Evans",
+            "lifter_id": 7241,
+            "membershipNumbers": [
+              {
+                "athleteName": "John Evans",
+                "membershipNumber": "1063890",
+                "fullText": "2  -  240  John Evans  M  29  -  1063890  139.8  2022-06-01  -  Local  Alabama"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNi0wMSIsIndlaWdodF9jbGFzcyI6OTB9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

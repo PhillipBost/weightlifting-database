@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T04:56:07.224Z",
+  "athleteName": "Allison Bender",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "184644": [
+        {
+          "meet_id": 798,
+          "date": "2013-07-27",
+          "age_category": "Open Women's",
+          "weight_class": "+75 Kg",
+          "lifter_name": "Allison Bender",
+          "lifter_id": 5811,
+          "membershipNumbers": [
+            {
+              "athleteName": "Allison Bender",
+              "membershipNumber": "184644",
+              "fullText": "1  -  152  Allison Bender  F  32  Magnus Barbell  184644  83.5  2013-07-27  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNy0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNy0yNyIsIndlaWdodF9jbGFzcyI6MzY4fQ=="
+        }
+      ],
+      "200433": [
+        {
+          "meet_id": 1424,
+          "date": "2014-08-02",
+          "age_category": "Open Women's",
+          "weight_class": "+75 Kg",
+          "lifter_name": "Allison Bender",
+          "lifter_id": 5811,
+          "membershipNumbers": [
+            {
+              "athleteName": "Allison Bender",
+              "membershipNumber": "200433",
+              "fullText": "27  -  109  Allison Bender  F  30  SOUTH COBB BARBELL CLUB  200433  76.9  2014-08-02  -  Local  Georgia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0wMiIsIndlaWdodF9jbGFzcyI6MzY4fQ=="
+        },
+        {
+          "meet_id": 1177,
+          "date": "2014-10-11",
+          "age_category": "Open Women's",
+          "weight_class": "+75 Kg",
+          "lifter_name": "Allison Bender",
+          "lifter_id": 5811,
+          "membershipNumbers": [
+            {
+              "athleteName": "Allison Bender",
+              "membershipNumber": "200433",
+              "fullText": "8  -  116  Allison Bender  F  30  SOUTH COBB BARBELL CLUB  200433  76.9  2014-10-11  -  Local  Georgia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMC0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMC0xMSIsIndlaWdodF9jbGFzcyI6MzY4fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Allison Bender",
+    "splits": [
+      {
+        "newAthleteName": "Allison Bender (Person 1)",
+        "membershipNumber": "184644",
+        "competitionCount": 1,
+        "competitions": [
+          798
+        ]
+      },
+      {
+        "newAthleteName": "Allison Bender (Person 2)",
+        "membershipNumber": "200433",
+        "competitionCount": 2,
+        "competitions": [
+          1424,
+          1177
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Allison Bender",
+    "competitions": [
+      {
+        "meet_id": 798,
+        "date": "2013-07-27",
+        "age_category": "Open Women's",
+        "weight_class": "+75 Kg",
+        "lifter_name": "Allison Bender",
+        "lifter_id": 5811,
+        "membershipNumbers": [
+          {
+            "athleteName": "Allison Bender",
+            "membershipNumber": "184644",
+            "fullText": "1  -  152  Allison Bender  F  32  Magnus Barbell  184644  83.5  2013-07-27  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNy0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNy0yNyIsIndlaWdodF9jbGFzcyI6MzY4fQ=="
+      },
+      {
+        "meet_id": 1424,
+        "date": "2014-08-02",
+        "age_category": "Open Women's",
+        "weight_class": "+75 Kg",
+        "lifter_name": "Allison Bender",
+        "lifter_id": 5811,
+        "membershipNumbers": [
+          {
+            "athleteName": "Allison Bender",
+            "membershipNumber": "200433",
+            "fullText": "27  -  109  Allison Bender  F  30  SOUTH COBB BARBELL CLUB  200433  76.9  2014-08-02  -  Local  Georgia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0wMiIsIndlaWdodF9jbGFzcyI6MzY4fQ=="
+      },
+      {
+        "meet_id": 1177,
+        "date": "2014-10-11",
+        "age_category": "Open Women's",
+        "weight_class": "+75 Kg",
+        "lifter_name": "Allison Bender",
+        "lifter_id": 5811,
+        "membershipNumbers": [
+          {
+            "athleteName": "Allison Bender",
+            "membershipNumber": "200433",
+            "fullText": "8  -  116  Allison Bender  F  30  SOUTH COBB BARBELL CLUB  200433  76.9  2014-10-11  -  Local  Georgia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMC0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMC0xMSIsIndlaWdodF9jbGFzcyI6MzY4fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "184644": [
+          {
+            "meet_id": 798,
+            "date": "2013-07-27",
+            "age_category": "Open Women's",
+            "weight_class": "+75 Kg",
+            "lifter_name": "Allison Bender",
+            "lifter_id": 5811,
+            "membershipNumbers": [
+              {
+                "athleteName": "Allison Bender",
+                "membershipNumber": "184644",
+                "fullText": "1  -  152  Allison Bender  F  32  Magnus Barbell  184644  83.5  2013-07-27  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNy0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNy0yNyIsIndlaWdodF9jbGFzcyI6MzY4fQ=="
+          }
+        ],
+        "200433": [
+          {
+            "meet_id": 1424,
+            "date": "2014-08-02",
+            "age_category": "Open Women's",
+            "weight_class": "+75 Kg",
+            "lifter_name": "Allison Bender",
+            "lifter_id": 5811,
+            "membershipNumbers": [
+              {
+                "athleteName": "Allison Bender",
+                "membershipNumber": "200433",
+                "fullText": "27  -  109  Allison Bender  F  30  SOUTH COBB BARBELL CLUB  200433  76.9  2014-08-02  -  Local  Georgia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0wMiIsIndlaWdodF9jbGFzcyI6MzY4fQ=="
+          },
+          {
+            "meet_id": 1177,
+            "date": "2014-10-11",
+            "age_category": "Open Women's",
+            "weight_class": "+75 Kg",
+            "lifter_name": "Allison Bender",
+            "lifter_id": 5811,
+            "membershipNumbers": [
+              {
+                "athleteName": "Allison Bender",
+                "membershipNumber": "200433",
+                "fullText": "8  -  116  Allison Bender  F  30  SOUTH COBB BARBELL CLUB  200433  76.9  2014-10-11  -  Local  Georgia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMC0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMC0xMSIsIndlaWdodF9jbGFzcyI6MzY4fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

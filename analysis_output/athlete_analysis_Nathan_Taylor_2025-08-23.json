@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-23T00:53:42.353Z",
+  "athleteName": "Nathan Taylor",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "188147": [
+        {
+          "meet_id": 712,
+          "date": "2013-10-06",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Nathan Taylor",
+          "lifter_id": 5026,
+          "membershipNumbers": [
+            {
+              "athleteName": "Nathan Taylor",
+              "membershipNumber": "188147",
+              "fullText": "13  -  160  Nathan Taylor  M  21  LSU - Shreveport  188147  74.6  2013-10-06  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMC0wNiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        }
+      ],
+      "1067955": [
+        {
+          "meet_id": 5682,
+          "date": "2023-01-28",
+          "age_category": "Open Men's",
+          "weight_class": "109kg",
+          "lifter_name": "Nathan Taylor",
+          "lifter_id": 5026,
+          "membershipNumbers": [
+            {
+              "athleteName": "Nathan Taylor",
+              "membershipNumber": "1067955",
+              "fullText": "7  -  242  Nathan Taylor  M  29  CLEAN SLATE WEIGHTLIFTING  1067955  103.15  2023-01-28  -  Local  Ohio"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMS0yOCIsIndlaWdodF9jbGFzcyI6ODl9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Nathan Taylor",
+    "splits": [
+      {
+        "newAthleteName": "Nathan Taylor (Person 1)",
+        "membershipNumber": "188147",
+        "competitionCount": 1,
+        "competitions": [
+          712
+        ]
+      },
+      {
+        "newAthleteName": "Nathan Taylor (Person 2)",
+        "membershipNumber": "1067955",
+        "competitionCount": 1,
+        "competitions": [
+          5682
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Nathan Taylor",
+    "competitions": [
+      {
+        "meet_id": 5682,
+        "date": "2023-01-28",
+        "age_category": "Open Men's",
+        "weight_class": "109kg",
+        "lifter_name": "Nathan Taylor",
+        "lifter_id": 5026,
+        "membershipNumbers": [
+          {
+            "athleteName": "Nathan Taylor",
+            "membershipNumber": "1067955",
+            "fullText": "7  -  242  Nathan Taylor  M  29  CLEAN SLATE WEIGHTLIFTING  1067955  103.15  2023-01-28  -  Local  Ohio"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMS0yOCIsIndlaWdodF9jbGFzcyI6ODl9"
+      },
+      {
+        "meet_id": 712,
+        "date": "2013-10-06",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Nathan Taylor",
+        "lifter_id": 5026,
+        "membershipNumbers": [
+          {
+            "athleteName": "Nathan Taylor",
+            "membershipNumber": "188147",
+            "fullText": "13  -  160  Nathan Taylor  M  21  LSU - Shreveport  188147  74.6  2013-10-06  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMC0wNiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "188147": [
+          {
+            "meet_id": 712,
+            "date": "2013-10-06",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Nathan Taylor",
+            "lifter_id": 5026,
+            "membershipNumbers": [
+              {
+                "athleteName": "Nathan Taylor",
+                "membershipNumber": "188147",
+                "fullText": "13  -  160  Nathan Taylor  M  21  LSU - Shreveport  188147  74.6  2013-10-06  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMC0wNiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          }
+        ],
+        "1067955": [
+          {
+            "meet_id": 5682,
+            "date": "2023-01-28",
+            "age_category": "Open Men's",
+            "weight_class": "109kg",
+            "lifter_name": "Nathan Taylor",
+            "lifter_id": 5026,
+            "membershipNumbers": [
+              {
+                "athleteName": "Nathan Taylor",
+                "membershipNumber": "1067955",
+                "fullText": "7  -  242  Nathan Taylor  M  29  CLEAN SLATE WEIGHTLIFTING  1067955  103.15  2023-01-28  -  Local  Ohio"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMS0yOCIsIndlaWdodF9jbGFzcyI6ODl9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

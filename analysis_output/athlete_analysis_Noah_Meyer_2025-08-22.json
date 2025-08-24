@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-22T13:06:08.009Z",
+  "athleteName": "Noah Meyer",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1015043": [
+        {
+          "meet_id": 2256,
+          "date": "2017-02-26",
+          "age_category": "Junior Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Noah Meyer",
+          "lifter_id": 27819,
+          "membershipNumbers": [
+            {
+              "athleteName": "Noah Meyer",
+              "membershipNumber": "1015043",
+              "fullText": "13  -  251  Noah Meyer  M  20  -  1015043  81.06  2017-02-26  -  National  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0yNiIsIndlaWdodF9jbGFzcyI6MzQxfQ=="
+        },
+        {
+          "meet_id": 2267,
+          "date": "2017-01-14",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Noah Meyer",
+          "lifter_id": 27819,
+          "membershipNumbers": [
+            {
+              "athleteName": "Noah Meyer",
+              "membershipNumber": "1015043",
+              "fullText": "15  -  240  Noah Meyer  M  20  -  1015043  82.5  2017-01-14  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMS0xNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ],
+      "1073846": [
+        {
+          "meet_id": 6761,
+          "date": "2025-02-08",
+          "age_category": "Men's 16-17 Age Group",
+          "weight_class": "81kg",
+          "lifter_name": "Noah Meyer",
+          "lifter_id": 27819,
+          "membershipNumbers": [
+            {
+              "athleteName": "Noah Meyer",
+              "membershipNumber": "1073846",
+              "fullText": "4  -  114  Noah Meyer  M  17  Park Christian Weightlifting Club  1073846  80.8  2025-02-08  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMi0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMi0wOCIsIndlaWdodF9jbGFzcyI6Nn0="
+        },
+        {
+          "meet_id": 6179,
+          "date": "2024-01-06",
+          "age_category": "Men's 16-17 Age Group",
+          "weight_class": "89kg",
+          "lifter_name": "Noah Meyer",
+          "lifter_id": 27819,
+          "membershipNumbers": [
+            {
+              "athleteName": "Noah Meyer",
+              "membershipNumber": "1073846",
+              "fullText": "15  -  76  Noah Meyer  M  16  -  1073846  82.8  2024-01-06  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMS0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMS0wNiIsIndlaWdodF9jbGFzcyI6N30="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Noah Meyer",
+    "splits": [
+      {
+        "newAthleteName": "Noah Meyer (Person 1)",
+        "membershipNumber": "1015043",
+        "competitionCount": 2,
+        "competitions": [
+          2256,
+          2267
+        ]
+      },
+      {
+        "newAthleteName": "Noah Meyer (Person 2)",
+        "membershipNumber": "1073846",
+        "competitionCount": 2,
+        "competitions": [
+          6761,
+          6179
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Noah Meyer",
+    "competitions": [
+      {
+        "meet_id": 2256,
+        "date": "2017-02-26",
+        "age_category": "Junior Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Noah Meyer",
+        "lifter_id": 27819,
+        "membershipNumbers": [
+          {
+            "athleteName": "Noah Meyer",
+            "membershipNumber": "1015043",
+            "fullText": "13  -  251  Noah Meyer  M  20  -  1015043  81.06  2017-02-26  -  National  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0yNiIsIndlaWdodF9jbGFzcyI6MzQxfQ=="
+      },
+      {
+        "meet_id": 2267,
+        "date": "2017-01-14",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Noah Meyer",
+        "lifter_id": 27819,
+        "membershipNumbers": [
+          {
+            "athleteName": "Noah Meyer",
+            "membershipNumber": "1015043",
+            "fullText": "15  -  240  Noah Meyer  M  20  -  1015043  82.5  2017-01-14  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMS0xNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 6761,
+        "date": "2025-02-08",
+        "age_category": "Men's 16-17 Age Group",
+        "weight_class": "81kg",
+        "lifter_name": "Noah Meyer",
+        "lifter_id": 27819,
+        "membershipNumbers": [
+          {
+            "athleteName": "Noah Meyer",
+            "membershipNumber": "1073846",
+            "fullText": "4  -  114  Noah Meyer  M  17  Park Christian Weightlifting Club  1073846  80.8  2025-02-08  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMi0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMi0wOCIsIndlaWdodF9jbGFzcyI6Nn0="
+      },
+      {
+        "meet_id": 6179,
+        "date": "2024-01-06",
+        "age_category": "Men's 16-17 Age Group",
+        "weight_class": "89kg",
+        "lifter_name": "Noah Meyer",
+        "lifter_id": 27819,
+        "membershipNumbers": [
+          {
+            "athleteName": "Noah Meyer",
+            "membershipNumber": "1073846",
+            "fullText": "15  -  76  Noah Meyer  M  16  -  1073846  82.8  2024-01-06  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMS0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMS0wNiIsIndlaWdodF9jbGFzcyI6N30="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1015043": [
+          {
+            "meet_id": 2256,
+            "date": "2017-02-26",
+            "age_category": "Junior Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Noah Meyer",
+            "lifter_id": 27819,
+            "membershipNumbers": [
+              {
+                "athleteName": "Noah Meyer",
+                "membershipNumber": "1015043",
+                "fullText": "13  -  251  Noah Meyer  M  20  -  1015043  81.06  2017-02-26  -  National  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0yNiIsIndlaWdodF9jbGFzcyI6MzQxfQ=="
+          },
+          {
+            "meet_id": 2267,
+            "date": "2017-01-14",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Noah Meyer",
+            "lifter_id": 27819,
+            "membershipNumbers": [
+              {
+                "athleteName": "Noah Meyer",
+                "membershipNumber": "1015043",
+                "fullText": "15  -  240  Noah Meyer  M  20  -  1015043  82.5  2017-01-14  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMS0xNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          }
+        ],
+        "1073846": [
+          {
+            "meet_id": 6761,
+            "date": "2025-02-08",
+            "age_category": "Men's 16-17 Age Group",
+            "weight_class": "81kg",
+            "lifter_name": "Noah Meyer",
+            "lifter_id": 27819,
+            "membershipNumbers": [
+              {
+                "athleteName": "Noah Meyer",
+                "membershipNumber": "1073846",
+                "fullText": "4  -  114  Noah Meyer  M  17  Park Christian Weightlifting Club  1073846  80.8  2025-02-08  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMi0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMi0wOCIsIndlaWdodF9jbGFzcyI6Nn0="
+          },
+          {
+            "meet_id": 6179,
+            "date": "2024-01-06",
+            "age_category": "Men's 16-17 Age Group",
+            "weight_class": "89kg",
+            "lifter_name": "Noah Meyer",
+            "lifter_id": 27819,
+            "membershipNumbers": [
+              {
+                "athleteName": "Noah Meyer",
+                "membershipNumber": "1073846",
+                "fullText": "15  -  76  Noah Meyer  M  16  -  1073846  82.8  2024-01-06  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMS0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMS0wNiIsIndlaWdodF9jbGFzcyI6N30="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

@@ -1,0 +1,234 @@
+{
+  "timestamp": "2025-08-22T20:10:04.605Z",
+  "athleteName": "Timothy Smith",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "215665": [
+        {
+          "meet_id": 240,
+          "date": "2015-07-25",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Timothy Smith",
+          "lifter_id": 10182,
+          "membershipNumbers": [
+            {
+              "athleteName": "Timothy Smith",
+              "membershipNumber": "215665",
+              "fullText": "25  -  164  Timothy Smith  M  20  METRO WLC  215665  73.5  2015-07-25  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNy0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNy0yNSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        }
+      ],
+      "1020830": [
+        {
+          "meet_id": 2866,
+          "date": "2017-10-14",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Timothy Smith",
+          "lifter_id": 10182,
+          "membershipNumbers": [
+            {
+              "athleteName": "Timothy Smith",
+              "membershipNumber": "1020830",
+              "fullText": "25  -  148  Timothy Smith  M  30  STONEAGE WEIGHTLIFTING CLUB  1020830  78.5  2017-10-14  -  Local  Tennessee-Kentucky"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0xNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 3137,
+        "date": "2018-03-24",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Timothy Smith",
+        "lifter_id": 10182,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMy0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMy0yNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 3194,
+        "date": "2018-02-24",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Timothy Smith",
+        "lifter_id": 10182,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMi0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMi0yNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Timothy Smith",
+    "splits": [
+      {
+        "newAthleteName": "Timothy Smith (Person 1)",
+        "membershipNumber": "215665",
+        "competitionCount": 1,
+        "competitions": [
+          240
+        ]
+      },
+      {
+        "newAthleteName": "Timothy Smith (Person 2)",
+        "membershipNumber": "1020830",
+        "competitionCount": 1,
+        "competitions": [
+          2866
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 3137,
+        "date": "2018-03-24",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Timothy Smith",
+        "lifter_id": 10182,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMy0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMy0yNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 3194,
+        "date": "2018-02-24",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Timothy Smith",
+        "lifter_id": 10182,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMi0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMi0yNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Timothy Smith",
+    "competitions": [
+      {
+        "meet_id": 2866,
+        "date": "2017-10-14",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Timothy Smith",
+        "lifter_id": 10182,
+        "membershipNumbers": [
+          {
+            "athleteName": "Timothy Smith",
+            "membershipNumber": "1020830",
+            "fullText": "25  -  148  Timothy Smith  M  30  STONEAGE WEIGHTLIFTING CLUB  1020830  78.5  2017-10-14  -  Local  Tennessee-Kentucky"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0xNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 3137,
+        "date": "2018-03-24",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Timothy Smith",
+        "lifter_id": 10182,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMy0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMy0yNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 3194,
+        "date": "2018-02-24",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Timothy Smith",
+        "lifter_id": 10182,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMi0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMi0yNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 240,
+        "date": "2015-07-25",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Timothy Smith",
+        "lifter_id": 10182,
+        "membershipNumbers": [
+          {
+            "athleteName": "Timothy Smith",
+            "membershipNumber": "215665",
+            "fullText": "25  -  164  Timothy Smith  M  20  METRO WLC  215665  73.5  2015-07-25  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNy0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNy0yNSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "215665": [
+          {
+            "meet_id": 240,
+            "date": "2015-07-25",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Timothy Smith",
+            "lifter_id": 10182,
+            "membershipNumbers": [
+              {
+                "athleteName": "Timothy Smith",
+                "membershipNumber": "215665",
+                "fullText": "25  -  164  Timothy Smith  M  20  METRO WLC  215665  73.5  2015-07-25  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNy0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNy0yNSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          }
+        ],
+        "1020830": [
+          {
+            "meet_id": 2866,
+            "date": "2017-10-14",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Timothy Smith",
+            "lifter_id": 10182,
+            "membershipNumbers": [
+              {
+                "athleteName": "Timothy Smith",
+                "membershipNumber": "1020830",
+                "fullText": "25  -  148  Timothy Smith  M  30  STONEAGE WEIGHTLIFTING CLUB  1020830  78.5  2017-10-14  -  Local  Tennessee-Kentucky"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0xNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 3137,
+          "date": "2018-03-24",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Timothy Smith",
+          "lifter_id": 10182,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMy0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMy0yNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        },
+        {
+          "meet_id": 3194,
+          "date": "2018-02-24",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Timothy Smith",
+          "lifter_id": 10182,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMi0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMi0yNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

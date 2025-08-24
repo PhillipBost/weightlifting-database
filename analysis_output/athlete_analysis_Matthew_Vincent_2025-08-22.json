@@ -1,0 +1,112 @@
+{
+  "timestamp": "2025-08-22T07:01:07.666Z",
+  "athleteName": "Matthew Vincent",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 1,
+    "membershipGroups": {
+      "203042": [
+        {
+          "meet_id": 1444,
+          "date": "2014-10-11",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Matthew Vincent",
+          "lifter_id": 20465,
+          "membershipNumbers": [
+            {
+              "athleteName": "Matthew Vincent",
+              "membershipNumber": "203042",
+              "fullText": "27  -  197  Matthew Vincent  M  20  -  203042  88.49  2014-10-11  -  Local  Mountain North"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMC0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMC0xMSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 1569,
+        "date": "2014-10-04",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Matthew Vincent",
+        "lifter_id": 20465,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      }
+    ],
+    "splitRequired": false
+  },
+  "splitPlan": {
+    "action": "NO_SPLIT_NEEDED",
+    "reason": "Only one distinct athlete found"
+  },
+  "rawData": {
+    "athleteName": "Matthew Vincent",
+    "competitions": [
+      {
+        "meet_id": 1444,
+        "date": "2014-10-11",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Matthew Vincent",
+        "lifter_id": 20465,
+        "membershipNumbers": [
+          {
+            "athleteName": "Matthew Vincent",
+            "membershipNumber": "203042",
+            "fullText": "27  -  197  Matthew Vincent  M  20  -  203042  88.49  2014-10-11  -  Local  Mountain North"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMC0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMC0xMSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 1569,
+        "date": "2014-10-04",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Matthew Vincent",
+        "lifter_id": 20465,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 1,
+      "membershipGroups": {
+        "203042": [
+          {
+            "meet_id": 1444,
+            "date": "2014-10-11",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Matthew Vincent",
+            "lifter_id": 20465,
+            "membershipNumbers": [
+              {
+                "athleteName": "Matthew Vincent",
+                "membershipNumber": "203042",
+                "fullText": "27  -  197  Matthew Vincent  M  20  -  203042  88.49  2014-10-11  -  Local  Mountain North"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMC0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMC0xMSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 1569,
+          "date": "2014-10-04",
+          "age_category": "Open Men's",
+          "weight_class": "+105 kg",
+          "lifter_name": "Matthew Vincent",
+          "lifter_id": 20465,
+          "membershipNumbers": [],
+          "error": "No division code found for: \"Open Men's +105 kg\""
+        }
+      ],
+      "splitRequired": false
+    }
+  }
+}

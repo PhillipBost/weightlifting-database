@@ -1,0 +1,243 @@
+{
+  "timestamp": "2025-08-22T18:52:50.694Z",
+  "athleteName": "Cole White",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "199008": [
+        {
+          "meet_id": 1480,
+          "date": "2014-07-12",
+          "age_category": "Men's 14-15 Age Group",
+          "weight_class": "56 Kg",
+          "lifter_name": "Cole White",
+          "lifter_id": 14610,
+          "membershipNumbers": [
+            {
+              "athleteName": "Cole White",
+              "membershipNumber": "199008",
+              "fullText": "1  -  62  Cole White  M  14  METRO WLC  199008  52.2  2014-07-12  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNy0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNy0xMiIsIndlaWdodF9jbGFzcyI6MzA3fQ=="
+        },
+        {
+          "meet_id": 3168,
+          "date": "2018-04-21",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Cole White",
+          "lifter_id": 14610,
+          "membershipNumbers": [
+            {
+              "athleteName": "Cole White",
+              "membershipNumber": "199008",
+              "fullText": "14  -  155  Cole White  M  18  METRO WLC  199008  93.8  2018-04-21  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNC0yMSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ],
+      "211008": [
+        {
+          "meet_id": 457,
+          "date": "2015-03-28",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Cole White",
+          "lifter_id": 14610,
+          "membershipNumbers": [
+            {
+              "athleteName": "Cole White",
+              "membershipNumber": "211008",
+              "fullText": "29  -  164  Cole White  M  17  Team Georgia Weightlifting  211008  81.6  2015-03-28  -  Local  Georgia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMy0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMy0yOCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 458,
+        "date": "2015-04-25",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Cole White",
+        "lifter_id": 14610,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0yNSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Cole White",
+    "splits": [
+      {
+        "newAthleteName": "Cole White (Person 1)",
+        "membershipNumber": "199008",
+        "competitionCount": 2,
+        "competitions": [
+          1480,
+          3168
+        ]
+      },
+      {
+        "newAthleteName": "Cole White (Person 2)",
+        "membershipNumber": "211008",
+        "competitionCount": 1,
+        "competitions": [
+          457
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 458,
+        "date": "2015-04-25",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Cole White",
+        "lifter_id": 14610,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0yNSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Cole White",
+    "competitions": [
+      {
+        "meet_id": 458,
+        "date": "2015-04-25",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Cole White",
+        "lifter_id": 14610,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0yNSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 457,
+        "date": "2015-03-28",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Cole White",
+        "lifter_id": 14610,
+        "membershipNumbers": [
+          {
+            "athleteName": "Cole White",
+            "membershipNumber": "211008",
+            "fullText": "29  -  164  Cole White  M  17  Team Georgia Weightlifting  211008  81.6  2015-03-28  -  Local  Georgia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMy0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMy0yOCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 1480,
+        "date": "2014-07-12",
+        "age_category": "Men's 14-15 Age Group",
+        "weight_class": "56 Kg",
+        "lifter_name": "Cole White",
+        "lifter_id": 14610,
+        "membershipNumbers": [
+          {
+            "athleteName": "Cole White",
+            "membershipNumber": "199008",
+            "fullText": "1  -  62  Cole White  M  14  METRO WLC  199008  52.2  2014-07-12  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNy0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNy0xMiIsIndlaWdodF9jbGFzcyI6MzA3fQ=="
+      },
+      {
+        "meet_id": 3168,
+        "date": "2018-04-21",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Cole White",
+        "lifter_id": 14610,
+        "membershipNumbers": [
+          {
+            "athleteName": "Cole White",
+            "membershipNumber": "199008",
+            "fullText": "14  -  155  Cole White  M  18  METRO WLC  199008  93.8  2018-04-21  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNC0yMSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "199008": [
+          {
+            "meet_id": 1480,
+            "date": "2014-07-12",
+            "age_category": "Men's 14-15 Age Group",
+            "weight_class": "56 Kg",
+            "lifter_name": "Cole White",
+            "lifter_id": 14610,
+            "membershipNumbers": [
+              {
+                "athleteName": "Cole White",
+                "membershipNumber": "199008",
+                "fullText": "1  -  62  Cole White  M  14  METRO WLC  199008  52.2  2014-07-12  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNy0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNy0xMiIsIndlaWdodF9jbGFzcyI6MzA3fQ=="
+          },
+          {
+            "meet_id": 3168,
+            "date": "2018-04-21",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Cole White",
+            "lifter_id": 14610,
+            "membershipNumbers": [
+              {
+                "athleteName": "Cole White",
+                "membershipNumber": "199008",
+                "fullText": "14  -  155  Cole White  M  18  METRO WLC  199008  93.8  2018-04-21  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNC0yMSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          }
+        ],
+        "211008": [
+          {
+            "meet_id": 457,
+            "date": "2015-03-28",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Cole White",
+            "lifter_id": 14610,
+            "membershipNumbers": [
+              {
+                "athleteName": "Cole White",
+                "membershipNumber": "211008",
+                "fullText": "29  -  164  Cole White  M  17  Team Georgia Weightlifting  211008  81.6  2015-03-28  -  Local  Georgia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMy0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMy0yOCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 458,
+          "date": "2015-04-25",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Cole White",
+          "lifter_id": 14610,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0yNSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

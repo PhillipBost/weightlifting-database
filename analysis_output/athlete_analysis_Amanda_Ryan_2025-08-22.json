@@ -1,0 +1,298 @@
+{
+  "timestamp": "2025-08-22T05:11:40.363Z",
+  "athleteName": "Amanda Ryan",
+  "totalCompetitions": 5,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "209623": [
+        {
+          "meet_id": 224,
+          "date": "2014-03-21",
+          "age_category": "Open Women's",
+          "weight_class": "58 kg",
+          "lifter_name": "Amanda Ryan",
+          "lifter_id": 6863,
+          "membershipNumbers": [
+            {
+              "athleteName": "Amanda Ryan",
+              "membershipNumber": "209623",
+              "fullText": "3  -  129  Amanda Ryan  F  27  -  209623  57  2014-03-21  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0yMSIsIndlaWdodF9jbGFzcyI6MzY0fQ=="
+        },
+        {
+          "meet_id": 226,
+          "date": "2015-05-09",
+          "age_category": "Open Women's",
+          "weight_class": "58 kg",
+          "lifter_name": "Amanda Ryan",
+          "lifter_id": 6863,
+          "membershipNumbers": [
+            {
+              "athleteName": "Amanda Ryan",
+              "membershipNumber": "209623",
+              "fullText": "13  -  127  Amanda Ryan  F  28  -  209623  57.6  2015-05-09  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0wOSIsIndlaWdodF9jbGFzcyI6MzY0fQ=="
+        }
+      ],
+      "1073036": [
+        {
+          "meet_id": 6140,
+          "date": "2023-12-02",
+          "age_category": "Open Women's",
+          "weight_class": "55kg",
+          "lifter_name": "Amanda Ryan",
+          "lifter_id": 6863,
+          "membershipNumbers": [
+            {
+              "athleteName": "Amanda Ryan",
+              "membershipNumber": "1073036",
+              "fullText": "2  -  109  Amanda Ryan  F  31  Conqueror Weightlifting  1073036  54.3  2023-12-02  -  Local  Iowa-Nebraska"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMi0wMiIsIndlaWdodF9jbGFzcyI6OTN9"
+        },
+        {
+          "meet_id": 6116,
+          "date": "2023-11-11",
+          "age_category": "Open Women's",
+          "weight_class": "55kg",
+          "lifter_name": "Amanda Ryan",
+          "lifter_id": 6863,
+          "membershipNumbers": [
+            {
+              "athleteName": "Amanda Ryan",
+              "membershipNumber": "1073036",
+              "fullText": "2  -  104  Amanda Ryan  F  31  Conqueror Weightlifting  1073036  54.2  2023-11-11  -  Local  Iowa-Nebraska"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMS0xMSIsIndlaWdodF9jbGFzcyI6OTN9"
+        },
+        {
+          "meet_id": 6219,
+          "date": "2024-02-03",
+          "age_category": "Open Women's",
+          "weight_class": "55kg",
+          "lifter_name": "Amanda Ryan",
+          "lifter_id": 6863,
+          "membershipNumbers": [
+            {
+              "athleteName": "Amanda Ryan",
+              "membershipNumber": "1073036",
+              "fullText": "4  -  114  Amanda Ryan  F  32  Conqueror Weightlifting  1073036  54.7  2024-02-03  -  Local  Iowa-Nebraska"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMi0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMi0wMyIsIndlaWdodF9jbGFzcyI6OTN9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Amanda Ryan",
+    "splits": [
+      {
+        "newAthleteName": "Amanda Ryan (Person 1)",
+        "membershipNumber": "209623",
+        "competitionCount": 2,
+        "competitions": [
+          224,
+          226
+        ]
+      },
+      {
+        "newAthleteName": "Amanda Ryan (Person 2)",
+        "membershipNumber": "1073036",
+        "competitionCount": 3,
+        "competitions": [
+          6140,
+          6116,
+          6219
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Amanda Ryan",
+    "competitions": [
+      {
+        "meet_id": 6140,
+        "date": "2023-12-02",
+        "age_category": "Open Women's",
+        "weight_class": "55kg",
+        "lifter_name": "Amanda Ryan",
+        "lifter_id": 6863,
+        "membershipNumbers": [
+          {
+            "athleteName": "Amanda Ryan",
+            "membershipNumber": "1073036",
+            "fullText": "2  -  109  Amanda Ryan  F  31  Conqueror Weightlifting  1073036  54.3  2023-12-02  -  Local  Iowa-Nebraska"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMi0wMiIsIndlaWdodF9jbGFzcyI6OTN9"
+      },
+      {
+        "meet_id": 6116,
+        "date": "2023-11-11",
+        "age_category": "Open Women's",
+        "weight_class": "55kg",
+        "lifter_name": "Amanda Ryan",
+        "lifter_id": 6863,
+        "membershipNumbers": [
+          {
+            "athleteName": "Amanda Ryan",
+            "membershipNumber": "1073036",
+            "fullText": "2  -  104  Amanda Ryan  F  31  Conqueror Weightlifting  1073036  54.2  2023-11-11  -  Local  Iowa-Nebraska"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMS0xMSIsIndlaWdodF9jbGFzcyI6OTN9"
+      },
+      {
+        "meet_id": 224,
+        "date": "2014-03-21",
+        "age_category": "Open Women's",
+        "weight_class": "58 kg",
+        "lifter_name": "Amanda Ryan",
+        "lifter_id": 6863,
+        "membershipNumbers": [
+          {
+            "athleteName": "Amanda Ryan",
+            "membershipNumber": "209623",
+            "fullText": "3  -  129  Amanda Ryan  F  27  -  209623  57  2014-03-21  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0yMSIsIndlaWdodF9jbGFzcyI6MzY0fQ=="
+      },
+      {
+        "meet_id": 226,
+        "date": "2015-05-09",
+        "age_category": "Open Women's",
+        "weight_class": "58 kg",
+        "lifter_name": "Amanda Ryan",
+        "lifter_id": 6863,
+        "membershipNumbers": [
+          {
+            "athleteName": "Amanda Ryan",
+            "membershipNumber": "209623",
+            "fullText": "13  -  127  Amanda Ryan  F  28  -  209623  57.6  2015-05-09  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0wOSIsIndlaWdodF9jbGFzcyI6MzY0fQ=="
+      },
+      {
+        "meet_id": 6219,
+        "date": "2024-02-03",
+        "age_category": "Open Women's",
+        "weight_class": "55kg",
+        "lifter_name": "Amanda Ryan",
+        "lifter_id": 6863,
+        "membershipNumbers": [
+          {
+            "athleteName": "Amanda Ryan",
+            "membershipNumber": "1073036",
+            "fullText": "4  -  114  Amanda Ryan  F  32  Conqueror Weightlifting  1073036  54.7  2024-02-03  -  Local  Iowa-Nebraska"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMi0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMi0wMyIsIndlaWdodF9jbGFzcyI6OTN9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "209623": [
+          {
+            "meet_id": 224,
+            "date": "2014-03-21",
+            "age_category": "Open Women's",
+            "weight_class": "58 kg",
+            "lifter_name": "Amanda Ryan",
+            "lifter_id": 6863,
+            "membershipNumbers": [
+              {
+                "athleteName": "Amanda Ryan",
+                "membershipNumber": "209623",
+                "fullText": "3  -  129  Amanda Ryan  F  27  -  209623  57  2014-03-21  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0yMSIsIndlaWdodF9jbGFzcyI6MzY0fQ=="
+          },
+          {
+            "meet_id": 226,
+            "date": "2015-05-09",
+            "age_category": "Open Women's",
+            "weight_class": "58 kg",
+            "lifter_name": "Amanda Ryan",
+            "lifter_id": 6863,
+            "membershipNumbers": [
+              {
+                "athleteName": "Amanda Ryan",
+                "membershipNumber": "209623",
+                "fullText": "13  -  127  Amanda Ryan  F  28  -  209623  57.6  2015-05-09  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0wOSIsIndlaWdodF9jbGFzcyI6MzY0fQ=="
+          }
+        ],
+        "1073036": [
+          {
+            "meet_id": 6140,
+            "date": "2023-12-02",
+            "age_category": "Open Women's",
+            "weight_class": "55kg",
+            "lifter_name": "Amanda Ryan",
+            "lifter_id": 6863,
+            "membershipNumbers": [
+              {
+                "athleteName": "Amanda Ryan",
+                "membershipNumber": "1073036",
+                "fullText": "2  -  109  Amanda Ryan  F  31  Conqueror Weightlifting  1073036  54.3  2023-12-02  -  Local  Iowa-Nebraska"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMi0wMiIsIndlaWdodF9jbGFzcyI6OTN9"
+          },
+          {
+            "meet_id": 6116,
+            "date": "2023-11-11",
+            "age_category": "Open Women's",
+            "weight_class": "55kg",
+            "lifter_name": "Amanda Ryan",
+            "lifter_id": 6863,
+            "membershipNumbers": [
+              {
+                "athleteName": "Amanda Ryan",
+                "membershipNumber": "1073036",
+                "fullText": "2  -  104  Amanda Ryan  F  31  Conqueror Weightlifting  1073036  54.2  2023-11-11  -  Local  Iowa-Nebraska"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMS0xMSIsIndlaWdodF9jbGFzcyI6OTN9"
+          },
+          {
+            "meet_id": 6219,
+            "date": "2024-02-03",
+            "age_category": "Open Women's",
+            "weight_class": "55kg",
+            "lifter_name": "Amanda Ryan",
+            "lifter_id": 6863,
+            "membershipNumbers": [
+              {
+                "athleteName": "Amanda Ryan",
+                "membershipNumber": "1073036",
+                "fullText": "4  -  114  Amanda Ryan  F  32  Conqueror Weightlifting  1073036  54.7  2024-02-03  -  Local  Iowa-Nebraska"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMi0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMi0wMyIsIndlaWdodF9jbGFzcyI6OTN9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

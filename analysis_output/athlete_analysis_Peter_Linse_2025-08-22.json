@@ -1,0 +1,243 @@
+{
+  "timestamp": "2025-08-22T07:03:30.792Z",
+  "athleteName": "Peter Linse",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "204330": [
+        {
+          "meet_id": 1603,
+          "date": "2014-12-06",
+          "age_category": "Open Men's",
+          "weight_class": "69 kg",
+          "lifter_name": "Peter Linse",
+          "lifter_id": 21123,
+          "membershipNumbers": [
+            {
+              "athleteName": "Peter Linse",
+              "membershipNumber": "204330",
+              "fullText": "2  -  207  Peter Linse  M  22  -  204330  67.6  2014-12-06  -  Local  Wisconsin"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMi0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMi0wNiIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+        }
+      ],
+      "1017704": [
+        {
+          "meet_id": 2458,
+          "date": "2017-05-20",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Peter Linse",
+          "lifter_id": 21123,
+          "membershipNumbers": [
+            {
+              "athleteName": "Peter Linse",
+              "membershipNumber": "1017704",
+              "fullText": "11  -  223  Peter Linse  M  25  Team Juggernaut  1017704  75.45  2017-05-20  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNS0yMCIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        },
+        {
+          "meet_id": 2823,
+          "date": "2017-10-21",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Peter Linse",
+          "lifter_id": 21123,
+          "membershipNumbers": [
+            {
+              "athleteName": "Peter Linse",
+              "membershipNumber": "1017704",
+              "fullText": "11  -  225  Peter Linse  M  25  Team Juggernaut  1017704  76.37  2017-10-21  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0yMSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 3242,
+        "date": "2018-04-22",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Peter Linse",
+        "lifter_id": 21123,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNC0yMiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Peter Linse",
+    "splits": [
+      {
+        "newAthleteName": "Peter Linse (Person 1)",
+        "membershipNumber": "204330",
+        "competitionCount": 1,
+        "competitions": [
+          1603
+        ]
+      },
+      {
+        "newAthleteName": "Peter Linse (Person 2)",
+        "membershipNumber": "1017704",
+        "competitionCount": 2,
+        "competitions": [
+          2458,
+          2823
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 3242,
+        "date": "2018-04-22",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Peter Linse",
+        "lifter_id": 21123,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNC0yMiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Peter Linse",
+    "competitions": [
+      {
+        "meet_id": 1603,
+        "date": "2014-12-06",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "Peter Linse",
+        "lifter_id": 21123,
+        "membershipNumbers": [
+          {
+            "athleteName": "Peter Linse",
+            "membershipNumber": "204330",
+            "fullText": "2  -  207  Peter Linse  M  22  -  204330  67.6  2014-12-06  -  Local  Wisconsin"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMi0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMi0wNiIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      },
+      {
+        "meet_id": 2458,
+        "date": "2017-05-20",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Peter Linse",
+        "lifter_id": 21123,
+        "membershipNumbers": [
+          {
+            "athleteName": "Peter Linse",
+            "membershipNumber": "1017704",
+            "fullText": "11  -  223  Peter Linse  M  25  Team Juggernaut  1017704  75.45  2017-05-20  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNS0yMCIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 2823,
+        "date": "2017-10-21",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Peter Linse",
+        "lifter_id": 21123,
+        "membershipNumbers": [
+          {
+            "athleteName": "Peter Linse",
+            "membershipNumber": "1017704",
+            "fullText": "11  -  225  Peter Linse  M  25  Team Juggernaut  1017704  76.37  2017-10-21  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0yMSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 3242,
+        "date": "2018-04-22",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Peter Linse",
+        "lifter_id": 21123,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNC0yMiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "204330": [
+          {
+            "meet_id": 1603,
+            "date": "2014-12-06",
+            "age_category": "Open Men's",
+            "weight_class": "69 kg",
+            "lifter_name": "Peter Linse",
+            "lifter_id": 21123,
+            "membershipNumbers": [
+              {
+                "athleteName": "Peter Linse",
+                "membershipNumber": "204330",
+                "fullText": "2  -  207  Peter Linse  M  22  -  204330  67.6  2014-12-06  -  Local  Wisconsin"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMi0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMi0wNiIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+          }
+        ],
+        "1017704": [
+          {
+            "meet_id": 2458,
+            "date": "2017-05-20",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Peter Linse",
+            "lifter_id": 21123,
+            "membershipNumbers": [
+              {
+                "athleteName": "Peter Linse",
+                "membershipNumber": "1017704",
+                "fullText": "11  -  223  Peter Linse  M  25  Team Juggernaut  1017704  75.45  2017-05-20  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNS0yMCIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          },
+          {
+            "meet_id": 2823,
+            "date": "2017-10-21",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Peter Linse",
+            "lifter_id": 21123,
+            "membershipNumbers": [
+              {
+                "athleteName": "Peter Linse",
+                "membershipNumber": "1017704",
+                "fullText": "11  -  225  Peter Linse  M  25  Team Juggernaut  1017704  76.37  2017-10-21  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0yMSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 3242,
+          "date": "2018-04-22",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Peter Linse",
+          "lifter_id": 21123,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNC0yMiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

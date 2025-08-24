@@ -1,0 +1,434 @@
+{
+  "timestamp": "2025-08-23T01:40:55.112Z",
+  "athleteName": "Matthew Torres",
+  "totalCompetitions": 9,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1018656": [
+        {
+          "meet_id": 3605,
+          "date": "2018-10-20",
+          "age_category": "Open Men's",
+          "weight_class": "+109kg",
+          "lifter_name": "Matthew Torres",
+          "lifter_id": 24624,
+          "membershipNumbers": [
+            {
+              "athleteName": "Matthew Torres",
+              "membershipNumber": "1018656",
+              "fullText": "5  -  247  Matthew Torres  M  24  HOOSIER BARBELL CLUB  1018656  117.1  2018-10-20  -  Local  Indiana"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yMCIsIndlaWdodF9jbGFzcyI6OTB9"
+        }
+      ],
+      "1078936": [
+        {
+          "meet_id": 6591,
+          "date": "2024-10-26",
+          "age_category": "Men's 13 Under Age Group",
+          "weight_class": "+73kg",
+          "lifter_name": "Matthew Torres",
+          "lifter_id": 24624,
+          "membershipNumbers": [
+            {
+              "athleteName": "Matthew Torres",
+              "membershipNumber": "1078936",
+              "fullText": "4  -  68  Matthew Torres  M  11  TEAM OMNIA  1078936  87.4  2024-10-26  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0yNiIsIndlaWdodF9jbGFzcyI6NTB9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 1952,
+        "date": "2016-08-06",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Matthew Torres",
+        "lifter_id": 24624,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0wNiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 2629,
+        "date": "2017-05-21",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Matthew Torres",
+        "lifter_id": 24624,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 2948,
+        "date": "2018-01-13",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Matthew Torres",
+        "lifter_id": 24624,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 3229,
+        "date": "2018-03-17",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Matthew Torres",
+        "lifter_id": 24624,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 2268,
+        "date": "2017-04-22",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Matthew Torres",
+        "lifter_id": 24624,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 3040,
+        "date": "2017-12-29",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Matthew Torres",
+        "lifter_id": 24624,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 6725,
+        "date": "2025-01-25",
+        "age_category": "Men's 13 Under Age Group",
+        "weight_class": "+73kg",
+        "lifter_name": "Matthew Torres",
+        "lifter_id": 24624,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMS0yNSIsIndlaWdodF9jbGFzcyI6NTB9"
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Matthew Torres",
+    "splits": [
+      {
+        "newAthleteName": "Matthew Torres (Person 1)",
+        "membershipNumber": "1018656",
+        "competitionCount": 1,
+        "competitions": [
+          3605
+        ]
+      },
+      {
+        "newAthleteName": "Matthew Torres (Person 2)",
+        "membershipNumber": "1078936",
+        "competitionCount": 1,
+        "competitions": [
+          6591
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 1952,
+        "date": "2016-08-06",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Matthew Torres",
+        "lifter_id": 24624,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0wNiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 2629,
+        "date": "2017-05-21",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Matthew Torres",
+        "lifter_id": 24624,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 2948,
+        "date": "2018-01-13",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Matthew Torres",
+        "lifter_id": 24624,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 3229,
+        "date": "2018-03-17",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Matthew Torres",
+        "lifter_id": 24624,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 2268,
+        "date": "2017-04-22",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Matthew Torres",
+        "lifter_id": 24624,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 3040,
+        "date": "2017-12-29",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Matthew Torres",
+        "lifter_id": 24624,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 6725,
+        "date": "2025-01-25",
+        "age_category": "Men's 13 Under Age Group",
+        "weight_class": "+73kg",
+        "lifter_name": "Matthew Torres",
+        "lifter_id": 24624,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMS0yNSIsIndlaWdodF9jbGFzcyI6NTB9"
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Matthew Torres",
+    "competitions": [
+      {
+        "meet_id": 1952,
+        "date": "2016-08-06",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Matthew Torres",
+        "lifter_id": 24624,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0wNiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 2629,
+        "date": "2017-05-21",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Matthew Torres",
+        "lifter_id": 24624,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 2948,
+        "date": "2018-01-13",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Matthew Torres",
+        "lifter_id": 24624,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 3229,
+        "date": "2018-03-17",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Matthew Torres",
+        "lifter_id": 24624,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 3605,
+        "date": "2018-10-20",
+        "age_category": "Open Men's",
+        "weight_class": "+109kg",
+        "lifter_name": "Matthew Torres",
+        "lifter_id": 24624,
+        "membershipNumbers": [
+          {
+            "athleteName": "Matthew Torres",
+            "membershipNumber": "1018656",
+            "fullText": "5  -  247  Matthew Torres  M  24  HOOSIER BARBELL CLUB  1018656  117.1  2018-10-20  -  Local  Indiana"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yMCIsIndlaWdodF9jbGFzcyI6OTB9"
+      },
+      {
+        "meet_id": 6591,
+        "date": "2024-10-26",
+        "age_category": "Men's 13 Under Age Group",
+        "weight_class": "+73kg",
+        "lifter_name": "Matthew Torres",
+        "lifter_id": 24624,
+        "membershipNumbers": [
+          {
+            "athleteName": "Matthew Torres",
+            "membershipNumber": "1078936",
+            "fullText": "4  -  68  Matthew Torres  M  11  TEAM OMNIA  1078936  87.4  2024-10-26  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0yNiIsIndlaWdodF9jbGFzcyI6NTB9"
+      },
+      {
+        "meet_id": 2268,
+        "date": "2017-04-22",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Matthew Torres",
+        "lifter_id": 24624,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 3040,
+        "date": "2017-12-29",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Matthew Torres",
+        "lifter_id": 24624,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 6725,
+        "date": "2025-01-25",
+        "age_category": "Men's 13 Under Age Group",
+        "weight_class": "+73kg",
+        "lifter_name": "Matthew Torres",
+        "lifter_id": 24624,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMS0yNSIsIndlaWdodF9jbGFzcyI6NTB9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1018656": [
+          {
+            "meet_id": 3605,
+            "date": "2018-10-20",
+            "age_category": "Open Men's",
+            "weight_class": "+109kg",
+            "lifter_name": "Matthew Torres",
+            "lifter_id": 24624,
+            "membershipNumbers": [
+              {
+                "athleteName": "Matthew Torres",
+                "membershipNumber": "1018656",
+                "fullText": "5  -  247  Matthew Torres  M  24  HOOSIER BARBELL CLUB  1018656  117.1  2018-10-20  -  Local  Indiana"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yMCIsIndlaWdodF9jbGFzcyI6OTB9"
+          }
+        ],
+        "1078936": [
+          {
+            "meet_id": 6591,
+            "date": "2024-10-26",
+            "age_category": "Men's 13 Under Age Group",
+            "weight_class": "+73kg",
+            "lifter_name": "Matthew Torres",
+            "lifter_id": 24624,
+            "membershipNumbers": [
+              {
+                "athleteName": "Matthew Torres",
+                "membershipNumber": "1078936",
+                "fullText": "4  -  68  Matthew Torres  M  11  TEAM OMNIA  1078936  87.4  2024-10-26  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0yNiIsIndlaWdodF9jbGFzcyI6NTB9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 1952,
+          "date": "2016-08-06",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Matthew Torres",
+          "lifter_id": 24624,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0wNiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        },
+        {
+          "meet_id": 2629,
+          "date": "2017-05-21",
+          "age_category": "Open Men's",
+          "weight_class": "+105 kg",
+          "lifter_name": "Matthew Torres",
+          "lifter_id": 24624,
+          "membershipNumbers": [],
+          "error": "No division code found for: \"Open Men's +105 kg\""
+        },
+        {
+          "meet_id": 2948,
+          "date": "2018-01-13",
+          "age_category": "Open Men's",
+          "weight_class": "+105 kg",
+          "lifter_name": "Matthew Torres",
+          "lifter_id": 24624,
+          "membershipNumbers": [],
+          "error": "No division code found for: \"Open Men's +105 kg\""
+        },
+        {
+          "meet_id": 3229,
+          "date": "2018-03-17",
+          "age_category": "Open Men's",
+          "weight_class": "+105 kg",
+          "lifter_name": "Matthew Torres",
+          "lifter_id": 24624,
+          "membershipNumbers": [],
+          "error": "No division code found for: \"Open Men's +105 kg\""
+        },
+        {
+          "meet_id": 2268,
+          "date": "2017-04-22",
+          "age_category": "Open Men's",
+          "weight_class": "+105 kg",
+          "lifter_name": "Matthew Torres",
+          "lifter_id": 24624,
+          "membershipNumbers": [],
+          "error": "No division code found for: \"Open Men's +105 kg\""
+        },
+        {
+          "meet_id": 3040,
+          "date": "2017-12-29",
+          "age_category": "Open Men's",
+          "weight_class": "+105 kg",
+          "lifter_name": "Matthew Torres",
+          "lifter_id": 24624,
+          "membershipNumbers": [],
+          "error": "No division code found for: \"Open Men's +105 kg\""
+        },
+        {
+          "meet_id": 6725,
+          "date": "2025-01-25",
+          "age_category": "Men's 13 Under Age Group",
+          "weight_class": "+73kg",
+          "lifter_name": "Matthew Torres",
+          "lifter_id": 24624,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMS0yNSIsIndlaWdodF9jbGFzcyI6NTB9"
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

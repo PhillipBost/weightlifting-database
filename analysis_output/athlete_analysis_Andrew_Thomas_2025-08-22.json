@@ -1,0 +1,341 @@
+{
+  "timestamp": "2025-08-22T08:43:12.166Z",
+  "athleteName": "Andrew Thomas",
+  "totalCompetitions": 6,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1042764": [
+        {
+          "meet_id": 6013,
+          "date": "2023-09-23",
+          "age_category": "Open Men's",
+          "weight_class": "109kg",
+          "lifter_name": "Andrew Thomas",
+          "lifter_id": 42968,
+          "membershipNumbers": [
+            {
+              "athleteName": "Andrew Thomas",
+              "membershipNumber": "1042764",
+              "fullText": "2  -  245  Andrew Thomas  M  22  BEANTOWN BARBELL CLUB  1042764  108.26  2023-09-23  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wOS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wOS0yMyIsIndlaWdodF9jbGFzcyI6ODl9"
+        },
+        {
+          "meet_id": 4056,
+          "date": "2019-07-14",
+          "age_category": "Open Men's",
+          "weight_class": "109kg",
+          "lifter_name": "Andrew Thomas",
+          "lifter_id": 42968,
+          "membershipNumbers": [
+            {
+              "athleteName": "Andrew Thomas",
+              "membershipNumber": "1042764",
+              "fullText": "4  -  208  Andrew Thomas  M  18  Unaffiliated  1042764  106.7  2019-07-14  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0xNCIsIndlaWdodF9jbGFzcyI6ODl9"
+        },
+        {
+          "meet_id": 6319,
+          "date": "2024-04-21",
+          "age_category": "Open Men's",
+          "weight_class": "109kg",
+          "lifter_name": "Andrew Thomas",
+          "lifter_id": 42968,
+          "membershipNumbers": [
+            {
+              "athleteName": "Andrew Thomas",
+              "membershipNumber": "1042764",
+              "fullText": "4  -  249  Andrew Thomas  M  23  BEANTOWN BARBELL CLUB  1042764  104  2024-04-21  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNC0yMSIsIndlaWdodF9jbGFzcyI6ODl9"
+        },
+        {
+          "meet_id": 6840,
+          "date": "2025-04-27",
+          "age_category": "Open Men's",
+          "weight_class": "+109kg",
+          "lifter_name": "Andrew Thomas",
+          "lifter_id": 42968,
+          "membershipNumbers": [
+            {
+              "athleteName": "Andrew Thomas",
+              "membershipNumber": "1042764",
+              "fullText": "1  -  267  Andrew Thomas  M  24  BEANTOWN BARBELL CLUB  1042764  115.4  2025-04-27  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNC0yNyIsIndlaWdodF9jbGFzcyI6OTB9"
+        }
+      ],
+      "1049951": [
+        {
+          "meet_id": 4789,
+          "date": "2021-04-11",
+          "age_category": "Open Men's",
+          "weight_class": "96kg",
+          "lifter_name": "Andrew Thomas",
+          "lifter_id": 42968,
+          "membershipNumbers": [
+            {
+              "athleteName": "Andrew Thomas",
+              "membershipNumber": "1049951",
+              "fullText": "3  -  216  Andrew Thomas  M  32  -  1049951  93.26  2021-04-11  -  Local  Michigan"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNC0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNC0xMSIsIndlaWdodF9jbGFzcyI6ODd9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 6285,
+        "date": "2024-03-23",
+        "age_category": "Open Men's",
+        "weight_class": "102kg",
+        "lifter_name": "Andrew Thomas",
+        "lifter_id": 42968,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMy0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMy0yMyIsIndlaWdodF9jbGFzcyI6ODh9"
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Andrew Thomas",
+    "splits": [
+      {
+        "newAthleteName": "Andrew Thomas (Person 1)",
+        "membershipNumber": "1042764",
+        "competitionCount": 4,
+        "competitions": [
+          6013,
+          4056,
+          6319,
+          6840
+        ]
+      },
+      {
+        "newAthleteName": "Andrew Thomas (Person 2)",
+        "membershipNumber": "1049951",
+        "competitionCount": 1,
+        "competitions": [
+          4789
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 6285,
+        "date": "2024-03-23",
+        "age_category": "Open Men's",
+        "weight_class": "102kg",
+        "lifter_name": "Andrew Thomas",
+        "lifter_id": 42968,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMy0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMy0yMyIsIndlaWdodF9jbGFzcyI6ODh9"
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Andrew Thomas",
+    "competitions": [
+      {
+        "meet_id": 6013,
+        "date": "2023-09-23",
+        "age_category": "Open Men's",
+        "weight_class": "109kg",
+        "lifter_name": "Andrew Thomas",
+        "lifter_id": 42968,
+        "membershipNumbers": [
+          {
+            "athleteName": "Andrew Thomas",
+            "membershipNumber": "1042764",
+            "fullText": "2  -  245  Andrew Thomas  M  22  BEANTOWN BARBELL CLUB  1042764  108.26  2023-09-23  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wOS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wOS0yMyIsIndlaWdodF9jbGFzcyI6ODl9"
+      },
+      {
+        "meet_id": 6285,
+        "date": "2024-03-23",
+        "age_category": "Open Men's",
+        "weight_class": "102kg",
+        "lifter_name": "Andrew Thomas",
+        "lifter_id": 42968,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMy0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMy0yMyIsIndlaWdodF9jbGFzcyI6ODh9"
+      },
+      {
+        "meet_id": 4056,
+        "date": "2019-07-14",
+        "age_category": "Open Men's",
+        "weight_class": "109kg",
+        "lifter_name": "Andrew Thomas",
+        "lifter_id": 42968,
+        "membershipNumbers": [
+          {
+            "athleteName": "Andrew Thomas",
+            "membershipNumber": "1042764",
+            "fullText": "4  -  208  Andrew Thomas  M  18  Unaffiliated  1042764  106.7  2019-07-14  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0xNCIsIndlaWdodF9jbGFzcyI6ODl9"
+      },
+      {
+        "meet_id": 6319,
+        "date": "2024-04-21",
+        "age_category": "Open Men's",
+        "weight_class": "109kg",
+        "lifter_name": "Andrew Thomas",
+        "lifter_id": 42968,
+        "membershipNumbers": [
+          {
+            "athleteName": "Andrew Thomas",
+            "membershipNumber": "1042764",
+            "fullText": "4  -  249  Andrew Thomas  M  23  BEANTOWN BARBELL CLUB  1042764  104  2024-04-21  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNC0yMSIsIndlaWdodF9jbGFzcyI6ODl9"
+      },
+      {
+        "meet_id": 6840,
+        "date": "2025-04-27",
+        "age_category": "Open Men's",
+        "weight_class": "+109kg",
+        "lifter_name": "Andrew Thomas",
+        "lifter_id": 42968,
+        "membershipNumbers": [
+          {
+            "athleteName": "Andrew Thomas",
+            "membershipNumber": "1042764",
+            "fullText": "1  -  267  Andrew Thomas  M  24  BEANTOWN BARBELL CLUB  1042764  115.4  2025-04-27  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNC0yNyIsIndlaWdodF9jbGFzcyI6OTB9"
+      },
+      {
+        "meet_id": 4789,
+        "date": "2021-04-11",
+        "age_category": "Open Men's",
+        "weight_class": "96kg",
+        "lifter_name": "Andrew Thomas",
+        "lifter_id": 42968,
+        "membershipNumbers": [
+          {
+            "athleteName": "Andrew Thomas",
+            "membershipNumber": "1049951",
+            "fullText": "3  -  216  Andrew Thomas  M  32  -  1049951  93.26  2021-04-11  -  Local  Michigan"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNC0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNC0xMSIsIndlaWdodF9jbGFzcyI6ODd9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1042764": [
+          {
+            "meet_id": 6013,
+            "date": "2023-09-23",
+            "age_category": "Open Men's",
+            "weight_class": "109kg",
+            "lifter_name": "Andrew Thomas",
+            "lifter_id": 42968,
+            "membershipNumbers": [
+              {
+                "athleteName": "Andrew Thomas",
+                "membershipNumber": "1042764",
+                "fullText": "2  -  245  Andrew Thomas  M  22  BEANTOWN BARBELL CLUB  1042764  108.26  2023-09-23  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wOS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wOS0yMyIsIndlaWdodF9jbGFzcyI6ODl9"
+          },
+          {
+            "meet_id": 4056,
+            "date": "2019-07-14",
+            "age_category": "Open Men's",
+            "weight_class": "109kg",
+            "lifter_name": "Andrew Thomas",
+            "lifter_id": 42968,
+            "membershipNumbers": [
+              {
+                "athleteName": "Andrew Thomas",
+                "membershipNumber": "1042764",
+                "fullText": "4  -  208  Andrew Thomas  M  18  Unaffiliated  1042764  106.7  2019-07-14  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0xNCIsIndlaWdodF9jbGFzcyI6ODl9"
+          },
+          {
+            "meet_id": 6319,
+            "date": "2024-04-21",
+            "age_category": "Open Men's",
+            "weight_class": "109kg",
+            "lifter_name": "Andrew Thomas",
+            "lifter_id": 42968,
+            "membershipNumbers": [
+              {
+                "athleteName": "Andrew Thomas",
+                "membershipNumber": "1042764",
+                "fullText": "4  -  249  Andrew Thomas  M  23  BEANTOWN BARBELL CLUB  1042764  104  2024-04-21  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNC0yMSIsIndlaWdodF9jbGFzcyI6ODl9"
+          },
+          {
+            "meet_id": 6840,
+            "date": "2025-04-27",
+            "age_category": "Open Men's",
+            "weight_class": "+109kg",
+            "lifter_name": "Andrew Thomas",
+            "lifter_id": 42968,
+            "membershipNumbers": [
+              {
+                "athleteName": "Andrew Thomas",
+                "membershipNumber": "1042764",
+                "fullText": "1  -  267  Andrew Thomas  M  24  BEANTOWN BARBELL CLUB  1042764  115.4  2025-04-27  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNC0yNyIsIndlaWdodF9jbGFzcyI6OTB9"
+          }
+        ],
+        "1049951": [
+          {
+            "meet_id": 4789,
+            "date": "2021-04-11",
+            "age_category": "Open Men's",
+            "weight_class": "96kg",
+            "lifter_name": "Andrew Thomas",
+            "lifter_id": 42968,
+            "membershipNumbers": [
+              {
+                "athleteName": "Andrew Thomas",
+                "membershipNumber": "1049951",
+                "fullText": "3  -  216  Andrew Thomas  M  32  -  1049951  93.26  2021-04-11  -  Local  Michigan"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNC0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNC0xMSIsIndlaWdodF9jbGFzcyI6ODd9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 6285,
+          "date": "2024-03-23",
+          "age_category": "Open Men's",
+          "weight_class": "102kg",
+          "lifter_name": "Andrew Thomas",
+          "lifter_id": 42968,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMy0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMy0yMyIsIndlaWdodF9jbGFzcyI6ODh9"
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

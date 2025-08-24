@@ -1,0 +1,194 @@
+{
+  "timestamp": "2025-08-23T00:48:09.330Z",
+  "athleteName": "Ryan Parker",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "197456": [
+        {
+          "meet_id": 1173,
+          "date": "2014-08-02",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Ryan Parker",
+          "lifter_id": 13282,
+          "membershipNumbers": [
+            {
+              "athleteName": "Ryan Parker",
+              "membershipNumber": "197456",
+              "fullText": "29  -  218  Ryan Parker  M  37  NORTH GATE BARBELL  197456  91.37  2014-08-02  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0wMiIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ],
+      "1030549": [
+        {
+          "meet_id": 3340,
+          "date": "2018-05-13",
+          "age_category": "Men's 13 Under Age Group",
+          "weight_class": "+69 Kg",
+          "lifter_name": "Ryan Parker",
+          "lifter_id": 13282,
+          "membershipNumbers": [
+            {
+              "athleteName": "Ryan Parker",
+              "membershipNumber": "1030549",
+              "fullText": "1  -  109  Ryan Parker  M  13  Lodestone Strength  1030549  78.1  2018-05-13  -  Local  Mountain North"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNS0xMyIsIndlaWdodF9jbGFzcyI6Mjk3fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 388,
+        "date": "2015-08-08",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Ryan Parker",
+        "lifter_id": 13282,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOC0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOC0wOCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Ryan Parker",
+    "splits": [
+      {
+        "newAthleteName": "Ryan Parker (Person 1)",
+        "membershipNumber": "197456",
+        "competitionCount": 1,
+        "competitions": [
+          1173
+        ]
+      },
+      {
+        "newAthleteName": "Ryan Parker (Person 2)",
+        "membershipNumber": "1030549",
+        "competitionCount": 1,
+        "competitions": [
+          3340
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 388,
+        "date": "2015-08-08",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Ryan Parker",
+        "lifter_id": 13282,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOC0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOC0wOCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Ryan Parker",
+    "competitions": [
+      {
+        "meet_id": 1173,
+        "date": "2014-08-02",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Ryan Parker",
+        "lifter_id": 13282,
+        "membershipNumbers": [
+          {
+            "athleteName": "Ryan Parker",
+            "membershipNumber": "197456",
+            "fullText": "29  -  218  Ryan Parker  M  37  NORTH GATE BARBELL  197456  91.37  2014-08-02  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0wMiIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 3340,
+        "date": "2018-05-13",
+        "age_category": "Men's 13 Under Age Group",
+        "weight_class": "+69 Kg",
+        "lifter_name": "Ryan Parker",
+        "lifter_id": 13282,
+        "membershipNumbers": [
+          {
+            "athleteName": "Ryan Parker",
+            "membershipNumber": "1030549",
+            "fullText": "1  -  109  Ryan Parker  M  13  Lodestone Strength  1030549  78.1  2018-05-13  -  Local  Mountain North"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNS0xMyIsIndlaWdodF9jbGFzcyI6Mjk3fQ=="
+      },
+      {
+        "meet_id": 388,
+        "date": "2015-08-08",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Ryan Parker",
+        "lifter_id": 13282,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOC0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOC0wOCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "197456": [
+          {
+            "meet_id": 1173,
+            "date": "2014-08-02",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Ryan Parker",
+            "lifter_id": 13282,
+            "membershipNumbers": [
+              {
+                "athleteName": "Ryan Parker",
+                "membershipNumber": "197456",
+                "fullText": "29  -  218  Ryan Parker  M  37  NORTH GATE BARBELL  197456  91.37  2014-08-02  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0wMiIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          }
+        ],
+        "1030549": [
+          {
+            "meet_id": 3340,
+            "date": "2018-05-13",
+            "age_category": "Men's 13 Under Age Group",
+            "weight_class": "+69 Kg",
+            "lifter_name": "Ryan Parker",
+            "lifter_id": 13282,
+            "membershipNumbers": [
+              {
+                "athleteName": "Ryan Parker",
+                "membershipNumber": "1030549",
+                "fullText": "1  -  109  Ryan Parker  M  13  Lodestone Strength  1030549  78.1  2018-05-13  -  Local  Mountain North"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNS0xMyIsIndlaWdodF9jbGFzcyI6Mjk3fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 388,
+          "date": "2015-08-08",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Ryan Parker",
+          "lifter_id": 13282,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOC0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOC0wOCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

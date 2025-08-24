@@ -1,0 +1,243 @@
+{
+  "timestamp": "2025-08-22T05:45:12.098Z",
+  "athleteName": "Michael Kelley",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "181075": [
+        {
+          "meet_id": 216,
+          "date": "2015-03-14",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Michael Kelley",
+          "lifter_id": 9816,
+          "membershipNumbers": [
+            {
+              "athleteName": "Michael Kelley",
+              "membershipNumber": "181075",
+              "fullText": "30  -  130  Michael Kelley  M  52  DIAMOND STATE BARBELL CLUB  181075  98.5  2015-03-14  -  Local  Southern"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMy0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMy0xNCIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        },
+        {
+          "meet_id": 218,
+          "date": "2015-05-30",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Michael Kelley",
+          "lifter_id": 9816,
+          "membershipNumbers": [
+            {
+              "athleteName": "Michael Kelley",
+              "membershipNumber": "181075",
+              "fullText": "14  -  135  Michael Kelley  M  52  DIAMOND STATE BARBELL CLUB  181075  101.1  2015-05-30  -  Local  Southern"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0zMCIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        }
+      ],
+      "1015496": [
+        {
+          "meet_id": 2902,
+          "date": "2017-11-04",
+          "age_category": "Open Men's",
+          "weight_class": "69 kg",
+          "lifter_name": "Michael Kelley",
+          "lifter_id": 9816,
+          "membershipNumbers": [
+            {
+              "athleteName": "Michael Kelley",
+              "membershipNumber": "1015496",
+              "fullText": "2  -  141  Michael Kelley  M  29  -  1015496  68.7  2017-11-04  -  Local  New York"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMS0wNCIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 2453,
+        "date": "2017-03-12",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Michael Kelley",
+        "lifter_id": 9816,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0xMiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Michael Kelley",
+    "splits": [
+      {
+        "newAthleteName": "Michael Kelley (Person 1)",
+        "membershipNumber": "181075",
+        "competitionCount": 2,
+        "competitions": [
+          216,
+          218
+        ]
+      },
+      {
+        "newAthleteName": "Michael Kelley (Person 2)",
+        "membershipNumber": "1015496",
+        "competitionCount": 1,
+        "competitions": [
+          2902
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 2453,
+        "date": "2017-03-12",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Michael Kelley",
+        "lifter_id": 9816,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0xMiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Michael Kelley",
+    "competitions": [
+      {
+        "meet_id": 216,
+        "date": "2015-03-14",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Michael Kelley",
+        "lifter_id": 9816,
+        "membershipNumbers": [
+          {
+            "athleteName": "Michael Kelley",
+            "membershipNumber": "181075",
+            "fullText": "30  -  130  Michael Kelley  M  52  DIAMOND STATE BARBELL CLUB  181075  98.5  2015-03-14  -  Local  Southern"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMy0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMy0xNCIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 2453,
+        "date": "2017-03-12",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Michael Kelley",
+        "lifter_id": 9816,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0xMiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 2902,
+        "date": "2017-11-04",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "Michael Kelley",
+        "lifter_id": 9816,
+        "membershipNumbers": [
+          {
+            "athleteName": "Michael Kelley",
+            "membershipNumber": "1015496",
+            "fullText": "2  -  141  Michael Kelley  M  29  -  1015496  68.7  2017-11-04  -  Local  New York"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMS0wNCIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      },
+      {
+        "meet_id": 218,
+        "date": "2015-05-30",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Michael Kelley",
+        "lifter_id": 9816,
+        "membershipNumbers": [
+          {
+            "athleteName": "Michael Kelley",
+            "membershipNumber": "181075",
+            "fullText": "14  -  135  Michael Kelley  M  52  DIAMOND STATE BARBELL CLUB  181075  101.1  2015-05-30  -  Local  Southern"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0zMCIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "181075": [
+          {
+            "meet_id": 216,
+            "date": "2015-03-14",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Michael Kelley",
+            "lifter_id": 9816,
+            "membershipNumbers": [
+              {
+                "athleteName": "Michael Kelley",
+                "membershipNumber": "181075",
+                "fullText": "30  -  130  Michael Kelley  M  52  DIAMOND STATE BARBELL CLUB  181075  98.5  2015-03-14  -  Local  Southern"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMy0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMy0xNCIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          },
+          {
+            "meet_id": 218,
+            "date": "2015-05-30",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Michael Kelley",
+            "lifter_id": 9816,
+            "membershipNumbers": [
+              {
+                "athleteName": "Michael Kelley",
+                "membershipNumber": "181075",
+                "fullText": "14  -  135  Michael Kelley  M  52  DIAMOND STATE BARBELL CLUB  181075  101.1  2015-05-30  -  Local  Southern"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0zMCIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          }
+        ],
+        "1015496": [
+          {
+            "meet_id": 2902,
+            "date": "2017-11-04",
+            "age_category": "Open Men's",
+            "weight_class": "69 kg",
+            "lifter_name": "Michael Kelley",
+            "lifter_id": 9816,
+            "membershipNumbers": [
+              {
+                "athleteName": "Michael Kelley",
+                "membershipNumber": "1015496",
+                "fullText": "2  -  141  Michael Kelley  M  29  -  1015496  68.7  2017-11-04  -  Local  New York"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMS0wNCIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 2453,
+          "date": "2017-03-12",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Michael Kelley",
+          "lifter_id": 9816,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0xMiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T22:17:42.429Z",
+  "athleteName": "Adam Norris",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1054679": [
+        {
+          "meet_id": 4786,
+          "date": "2021-02-27",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Adam Norris",
+          "lifter_id": 48480,
+          "membershipNumbers": [
+            {
+              "athleteName": "Adam Norris",
+              "membershipNumber": "1054679",
+              "fullText": "9  -  150  Adam Norris  M  31  Strength Academy Weightlifting  1054679  75.6  2021-02-27  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMi0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMi0yNyIsIndlaWdodF9jbGFzcyI6ODV9"
+        }
+      ],
+      "1068943": [
+        {
+          "meet_id": 6124,
+          "date": "2023-11-18",
+          "age_category": "Open Men's",
+          "weight_class": "73kg",
+          "lifter_name": "Adam Norris",
+          "lifter_id": 48480,
+          "membershipNumbers": [
+            {
+              "athleteName": "Adam Norris",
+              "membershipNumber": "1068943",
+              "fullText": "6  -  185  Adam Norris  M  27  Broken Record Barbell  1068943  72.1  2023-11-18  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMS0xOCIsIndlaWdodF9jbGFzcyI6ODR9"
+        },
+        {
+          "meet_id": 5760,
+          "date": "2023-03-25",
+          "age_category": "Open Men's",
+          "weight_class": "73kg",
+          "lifter_name": "Adam Norris",
+          "lifter_id": 48480,
+          "membershipNumbers": [
+            {
+              "athleteName": "Adam Norris",
+              "membershipNumber": "1068943",
+              "fullText": "13  -  167  Adam Norris  M  27  Broken Record Barbell  1068943  70.35  2023-03-25  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMy0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMy0yNSIsIndlaWdodF9jbGFzcyI6ODR9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Adam Norris",
+    "splits": [
+      {
+        "newAthleteName": "Adam Norris (Person 1)",
+        "membershipNumber": "1054679",
+        "competitionCount": 1,
+        "competitions": [
+          4786
+        ]
+      },
+      {
+        "newAthleteName": "Adam Norris (Person 2)",
+        "membershipNumber": "1068943",
+        "competitionCount": 2,
+        "competitions": [
+          6124,
+          5760
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Adam Norris",
+    "competitions": [
+      {
+        "meet_id": 4786,
+        "date": "2021-02-27",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Adam Norris",
+        "lifter_id": 48480,
+        "membershipNumbers": [
+          {
+            "athleteName": "Adam Norris",
+            "membershipNumber": "1054679",
+            "fullText": "9  -  150  Adam Norris  M  31  Strength Academy Weightlifting  1054679  75.6  2021-02-27  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMi0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMi0yNyIsIndlaWdodF9jbGFzcyI6ODV9"
+      },
+      {
+        "meet_id": 6124,
+        "date": "2023-11-18",
+        "age_category": "Open Men's",
+        "weight_class": "73kg",
+        "lifter_name": "Adam Norris",
+        "lifter_id": 48480,
+        "membershipNumbers": [
+          {
+            "athleteName": "Adam Norris",
+            "membershipNumber": "1068943",
+            "fullText": "6  -  185  Adam Norris  M  27  Broken Record Barbell  1068943  72.1  2023-11-18  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMS0xOCIsIndlaWdodF9jbGFzcyI6ODR9"
+      },
+      {
+        "meet_id": 5760,
+        "date": "2023-03-25",
+        "age_category": "Open Men's",
+        "weight_class": "73kg",
+        "lifter_name": "Adam Norris",
+        "lifter_id": 48480,
+        "membershipNumbers": [
+          {
+            "athleteName": "Adam Norris",
+            "membershipNumber": "1068943",
+            "fullText": "13  -  167  Adam Norris  M  27  Broken Record Barbell  1068943  70.35  2023-03-25  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMy0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMy0yNSIsIndlaWdodF9jbGFzcyI6ODR9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1054679": [
+          {
+            "meet_id": 4786,
+            "date": "2021-02-27",
+            "age_category": "Open Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Adam Norris",
+            "lifter_id": 48480,
+            "membershipNumbers": [
+              {
+                "athleteName": "Adam Norris",
+                "membershipNumber": "1054679",
+                "fullText": "9  -  150  Adam Norris  M  31  Strength Academy Weightlifting  1054679  75.6  2021-02-27  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMi0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMi0yNyIsIndlaWdodF9jbGFzcyI6ODV9"
+          }
+        ],
+        "1068943": [
+          {
+            "meet_id": 6124,
+            "date": "2023-11-18",
+            "age_category": "Open Men's",
+            "weight_class": "73kg",
+            "lifter_name": "Adam Norris",
+            "lifter_id": 48480,
+            "membershipNumbers": [
+              {
+                "athleteName": "Adam Norris",
+                "membershipNumber": "1068943",
+                "fullText": "6  -  185  Adam Norris  M  27  Broken Record Barbell  1068943  72.1  2023-11-18  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMS0xOCIsIndlaWdodF9jbGFzcyI6ODR9"
+          },
+          {
+            "meet_id": 5760,
+            "date": "2023-03-25",
+            "age_category": "Open Men's",
+            "weight_class": "73kg",
+            "lifter_name": "Adam Norris",
+            "lifter_id": 48480,
+            "membershipNumbers": [
+              {
+                "athleteName": "Adam Norris",
+                "membershipNumber": "1068943",
+                "fullText": "13  -  167  Adam Norris  M  27  Broken Record Barbell  1068943  70.35  2023-03-25  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMy0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMy0yNSIsIndlaWdodF9jbGFzcyI6ODR9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

@@ -1,0 +1,309 @@
+{
+  "timestamp": "2025-08-22T23:34:50.786Z",
+  "athleteName": "Tammy Nguyen",
+  "totalCompetitions": 5,
+  "analysis": {
+    "distinctAthletes": 3,
+    "membershipGroups": {
+      "200998": [
+        {
+          "meet_id": 205,
+          "date": "2015-05-17",
+          "age_category": "Open Women's",
+          "weight_class": "48 kg",
+          "lifter_name": "Tammy Nguyen",
+          "lifter_id": 9607,
+          "membershipNumbers": [
+            {
+              "athleteName": "Tammy Nguyen",
+              "membershipNumber": "200998",
+              "fullText": "2  -  104  Tammy Nguyen  F  20  HOOSIER WEIGHTLIFTING CLUB  200998  46.2  2015-05-17  -  Local  Indiana"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0xNyIsIndlaWdodF9jbGFzcyI6MzYyfQ=="
+        },
+        {
+          "meet_id": 206,
+          "date": "2015-04-11",
+          "age_category": "Open Women's",
+          "weight_class": "48 kg",
+          "lifter_name": "Tammy Nguyen",
+          "lifter_id": 9607,
+          "membershipNumbers": [
+            {
+              "athleteName": "Tammy Nguyen",
+              "membershipNumber": "200998",
+              "fullText": "3  -  95  Tammy Nguyen  F  20  HOOSIER WEIGHTLIFTING CLUB  200998  46.5  2015-04-11  -  Local  Indiana"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0xMSIsIndlaWdodF9jbGFzcyI6MzYyfQ=="
+        }
+      ],
+      "1034325": [
+        {
+          "meet_id": 3527,
+          "date": "2018-10-20",
+          "age_category": "Open Women's",
+          "weight_class": "71kg",
+          "lifter_name": "Tammy Nguyen",
+          "lifter_id": 9607,
+          "membershipNumbers": [
+            {
+              "athleteName": "Tammy Nguyen",
+              "membershipNumber": "1034325",
+              "fullText": "22  -  122  Tammy Nguyen  F  25  Blade Method Barbell  1034325  68.6  2018-10-20  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yMCIsIndlaWdodF9jbGFzcyI6OTZ9"
+        },
+        {
+          "meet_id": 3579,
+          "date": "2018-12-15",
+          "age_category": "Open Women's",
+          "weight_class": "71kg",
+          "lifter_name": "Tammy Nguyen",
+          "lifter_id": 9607,
+          "membershipNumbers": [
+            {
+              "athleteName": "Tammy Nguyen",
+              "membershipNumber": "1034325",
+              "fullText": "26  -  132  Tammy Nguyen  F  25  Blade Method Barbell  1034325  68.5  2018-12-15  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0xNSIsIndlaWdodF9jbGFzcyI6OTZ9"
+        }
+      ],
+      "1065085": [
+        {
+          "meet_id": 5480,
+          "date": "2022-09-03",
+          "age_category": "Women's Masters (35-39)",
+          "weight_class": "71kg",
+          "lifter_name": "Tammy Nguyen",
+          "lifter_id": 9607,
+          "membershipNumbers": [
+            {
+              "athleteName": "Tammy Nguyen",
+              "membershipNumber": "1065085",
+              "fullText": "6  -  91  Tammy Nguyen  F  35  Lift JP  1065085  64.88  2022-09-03  -  Local  New England"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wOS0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wOS0wMyIsIndlaWdodF9jbGFzcyI6MTE2fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Tammy Nguyen",
+    "splits": [
+      {
+        "newAthleteName": "Tammy Nguyen (Person 1)",
+        "membershipNumber": "200998",
+        "competitionCount": 2,
+        "competitions": [
+          205,
+          206
+        ]
+      },
+      {
+        "newAthleteName": "Tammy Nguyen (Person 2)",
+        "membershipNumber": "1034325",
+        "competitionCount": 2,
+        "competitions": [
+          3527,
+          3579
+        ]
+      },
+      {
+        "newAthleteName": "Tammy Nguyen (Person 3)",
+        "membershipNumber": "1065085",
+        "competitionCount": 1,
+        "competitions": [
+          5480
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Tammy Nguyen",
+    "competitions": [
+      {
+        "meet_id": 205,
+        "date": "2015-05-17",
+        "age_category": "Open Women's",
+        "weight_class": "48 kg",
+        "lifter_name": "Tammy Nguyen",
+        "lifter_id": 9607,
+        "membershipNumbers": [
+          {
+            "athleteName": "Tammy Nguyen",
+            "membershipNumber": "200998",
+            "fullText": "2  -  104  Tammy Nguyen  F  20  HOOSIER WEIGHTLIFTING CLUB  200998  46.2  2015-05-17  -  Local  Indiana"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0xNyIsIndlaWdodF9jbGFzcyI6MzYyfQ=="
+      },
+      {
+        "meet_id": 206,
+        "date": "2015-04-11",
+        "age_category": "Open Women's",
+        "weight_class": "48 kg",
+        "lifter_name": "Tammy Nguyen",
+        "lifter_id": 9607,
+        "membershipNumbers": [
+          {
+            "athleteName": "Tammy Nguyen",
+            "membershipNumber": "200998",
+            "fullText": "3  -  95  Tammy Nguyen  F  20  HOOSIER WEIGHTLIFTING CLUB  200998  46.5  2015-04-11  -  Local  Indiana"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0xMSIsIndlaWdodF9jbGFzcyI6MzYyfQ=="
+      },
+      {
+        "meet_id": 3527,
+        "date": "2018-10-20",
+        "age_category": "Open Women's",
+        "weight_class": "71kg",
+        "lifter_name": "Tammy Nguyen",
+        "lifter_id": 9607,
+        "membershipNumbers": [
+          {
+            "athleteName": "Tammy Nguyen",
+            "membershipNumber": "1034325",
+            "fullText": "22  -  122  Tammy Nguyen  F  25  Blade Method Barbell  1034325  68.6  2018-10-20  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yMCIsIndlaWdodF9jbGFzcyI6OTZ9"
+      },
+      {
+        "meet_id": 3579,
+        "date": "2018-12-15",
+        "age_category": "Open Women's",
+        "weight_class": "71kg",
+        "lifter_name": "Tammy Nguyen",
+        "lifter_id": 9607,
+        "membershipNumbers": [
+          {
+            "athleteName": "Tammy Nguyen",
+            "membershipNumber": "1034325",
+            "fullText": "26  -  132  Tammy Nguyen  F  25  Blade Method Barbell  1034325  68.5  2018-12-15  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0xNSIsIndlaWdodF9jbGFzcyI6OTZ9"
+      },
+      {
+        "meet_id": 5480,
+        "date": "2022-09-03",
+        "age_category": "Women's Masters (35-39)",
+        "weight_class": "71kg",
+        "lifter_name": "Tammy Nguyen",
+        "lifter_id": 9607,
+        "membershipNumbers": [
+          {
+            "athleteName": "Tammy Nguyen",
+            "membershipNumber": "1065085",
+            "fullText": "6  -  91  Tammy Nguyen  F  35  Lift JP  1065085  64.88  2022-09-03  -  Local  New England"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wOS0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wOS0wMyIsIndlaWdodF9jbGFzcyI6MTE2fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 3,
+      "membershipGroups": {
+        "200998": [
+          {
+            "meet_id": 205,
+            "date": "2015-05-17",
+            "age_category": "Open Women's",
+            "weight_class": "48 kg",
+            "lifter_name": "Tammy Nguyen",
+            "lifter_id": 9607,
+            "membershipNumbers": [
+              {
+                "athleteName": "Tammy Nguyen",
+                "membershipNumber": "200998",
+                "fullText": "2  -  104  Tammy Nguyen  F  20  HOOSIER WEIGHTLIFTING CLUB  200998  46.2  2015-05-17  -  Local  Indiana"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0xNyIsIndlaWdodF9jbGFzcyI6MzYyfQ=="
+          },
+          {
+            "meet_id": 206,
+            "date": "2015-04-11",
+            "age_category": "Open Women's",
+            "weight_class": "48 kg",
+            "lifter_name": "Tammy Nguyen",
+            "lifter_id": 9607,
+            "membershipNumbers": [
+              {
+                "athleteName": "Tammy Nguyen",
+                "membershipNumber": "200998",
+                "fullText": "3  -  95  Tammy Nguyen  F  20  HOOSIER WEIGHTLIFTING CLUB  200998  46.5  2015-04-11  -  Local  Indiana"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0xMSIsIndlaWdodF9jbGFzcyI6MzYyfQ=="
+          }
+        ],
+        "1034325": [
+          {
+            "meet_id": 3527,
+            "date": "2018-10-20",
+            "age_category": "Open Women's",
+            "weight_class": "71kg",
+            "lifter_name": "Tammy Nguyen",
+            "lifter_id": 9607,
+            "membershipNumbers": [
+              {
+                "athleteName": "Tammy Nguyen",
+                "membershipNumber": "1034325",
+                "fullText": "22  -  122  Tammy Nguyen  F  25  Blade Method Barbell  1034325  68.6  2018-10-20  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yMCIsIndlaWdodF9jbGFzcyI6OTZ9"
+          },
+          {
+            "meet_id": 3579,
+            "date": "2018-12-15",
+            "age_category": "Open Women's",
+            "weight_class": "71kg",
+            "lifter_name": "Tammy Nguyen",
+            "lifter_id": 9607,
+            "membershipNumbers": [
+              {
+                "athleteName": "Tammy Nguyen",
+                "membershipNumber": "1034325",
+                "fullText": "26  -  132  Tammy Nguyen  F  25  Blade Method Barbell  1034325  68.5  2018-12-15  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0xNSIsIndlaWdodF9jbGFzcyI6OTZ9"
+          }
+        ],
+        "1065085": [
+          {
+            "meet_id": 5480,
+            "date": "2022-09-03",
+            "age_category": "Women's Masters (35-39)",
+            "weight_class": "71kg",
+            "lifter_name": "Tammy Nguyen",
+            "lifter_id": 9607,
+            "membershipNumbers": [
+              {
+                "athleteName": "Tammy Nguyen",
+                "membershipNumber": "1065085",
+                "fullText": "6  -  91  Tammy Nguyen  F  35  Lift JP  1065085  64.88  2022-09-03  -  Local  New England"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wOS0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wOS0wMyIsIndlaWdodF9jbGFzcyI6MTE2fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

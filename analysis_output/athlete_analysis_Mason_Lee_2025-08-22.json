@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T20:43:03.951Z",
+  "athleteName": "Mason Lee",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1034280": [
+        {
+          "meet_id": 3443,
+          "date": "2018-10-21",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Mason Lee",
+          "lifter_id": 37791,
+          "membershipNumbers": [
+            {
+              "athleteName": "Mason Lee",
+              "membershipNumber": "1034280",
+              "fullText": "26  -  158  Mason Lee  M  19  -  1034280  79.4  2018-10-21  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yMSIsIndlaWdodF9jbGFzcyI6ODV9"
+        }
+      ],
+      "1037404": [
+        {
+          "meet_id": 3664,
+          "date": "2019-01-12",
+          "age_category": "Men's 13 Under Age Group",
+          "weight_class": "36kg",
+          "lifter_name": "Mason Lee",
+          "lifter_id": 37791,
+          "membershipNumbers": [
+            {
+              "athleteName": "Mason Lee",
+              "membershipNumber": "1037404",
+              "fullText": "6  -  37  Mason Lee  M  11  Supreme Fitness & Weightlifting Co.  1037404  33.2  2019-01-12  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0xMiIsIndlaWdodF9jbGFzcyI6NDJ9"
+        },
+        {
+          "meet_id": 3998,
+          "date": "2019-11-24",
+          "age_category": "Men's 13 Under Age Group",
+          "weight_class": "39kg",
+          "lifter_name": "Mason Lee",
+          "lifter_id": 37791,
+          "membershipNumbers": [
+            {
+              "athleteName": "Mason Lee",
+              "membershipNumber": "1037404",
+              "fullText": "2  -  51  Mason Lee  M  11  Supreme Fitness & Weightlifting Co.  1037404  38.2  2019-11-24  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0yNCIsIndlaWdodF9jbGFzcyI6NDN9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Mason Lee",
+    "splits": [
+      {
+        "newAthleteName": "Mason Lee (Person 1)",
+        "membershipNumber": "1034280",
+        "competitionCount": 1,
+        "competitions": [
+          3443
+        ]
+      },
+      {
+        "newAthleteName": "Mason Lee (Person 2)",
+        "membershipNumber": "1037404",
+        "competitionCount": 2,
+        "competitions": [
+          3664,
+          3998
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Mason Lee",
+    "competitions": [
+      {
+        "meet_id": 3664,
+        "date": "2019-01-12",
+        "age_category": "Men's 13 Under Age Group",
+        "weight_class": "36kg",
+        "lifter_name": "Mason Lee",
+        "lifter_id": 37791,
+        "membershipNumbers": [
+          {
+            "athleteName": "Mason Lee",
+            "membershipNumber": "1037404",
+            "fullText": "6  -  37  Mason Lee  M  11  Supreme Fitness & Weightlifting Co.  1037404  33.2  2019-01-12  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0xMiIsIndlaWdodF9jbGFzcyI6NDJ9"
+      },
+      {
+        "meet_id": 3443,
+        "date": "2018-10-21",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Mason Lee",
+        "lifter_id": 37791,
+        "membershipNumbers": [
+          {
+            "athleteName": "Mason Lee",
+            "membershipNumber": "1034280",
+            "fullText": "26  -  158  Mason Lee  M  19  -  1034280  79.4  2018-10-21  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yMSIsIndlaWdodF9jbGFzcyI6ODV9"
+      },
+      {
+        "meet_id": 3998,
+        "date": "2019-11-24",
+        "age_category": "Men's 13 Under Age Group",
+        "weight_class": "39kg",
+        "lifter_name": "Mason Lee",
+        "lifter_id": 37791,
+        "membershipNumbers": [
+          {
+            "athleteName": "Mason Lee",
+            "membershipNumber": "1037404",
+            "fullText": "2  -  51  Mason Lee  M  11  Supreme Fitness & Weightlifting Co.  1037404  38.2  2019-11-24  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0yNCIsIndlaWdodF9jbGFzcyI6NDN9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1034280": [
+          {
+            "meet_id": 3443,
+            "date": "2018-10-21",
+            "age_category": "Open Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Mason Lee",
+            "lifter_id": 37791,
+            "membershipNumbers": [
+              {
+                "athleteName": "Mason Lee",
+                "membershipNumber": "1034280",
+                "fullText": "26  -  158  Mason Lee  M  19  -  1034280  79.4  2018-10-21  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yMSIsIndlaWdodF9jbGFzcyI6ODV9"
+          }
+        ],
+        "1037404": [
+          {
+            "meet_id": 3664,
+            "date": "2019-01-12",
+            "age_category": "Men's 13 Under Age Group",
+            "weight_class": "36kg",
+            "lifter_name": "Mason Lee",
+            "lifter_id": 37791,
+            "membershipNumbers": [
+              {
+                "athleteName": "Mason Lee",
+                "membershipNumber": "1037404",
+                "fullText": "6  -  37  Mason Lee  M  11  Supreme Fitness & Weightlifting Co.  1037404  33.2  2019-01-12  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0xMiIsIndlaWdodF9jbGFzcyI6NDJ9"
+          },
+          {
+            "meet_id": 3998,
+            "date": "2019-11-24",
+            "age_category": "Men's 13 Under Age Group",
+            "weight_class": "39kg",
+            "lifter_name": "Mason Lee",
+            "lifter_id": 37791,
+            "membershipNumbers": [
+              {
+                "athleteName": "Mason Lee",
+                "membershipNumber": "1037404",
+                "fullText": "2  -  51  Mason Lee  M  11  Supreme Fitness & Weightlifting Co.  1037404  38.2  2019-11-24  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0yNCIsIndlaWdodF9jbGFzcyI6NDN9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

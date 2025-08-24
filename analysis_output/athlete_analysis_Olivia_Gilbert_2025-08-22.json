@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-22T17:50:29.501Z",
+  "athleteName": "Olivia Gilbert",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "212501": [
+        {
+          "meet_id": 24,
+          "date": "2015-05-03",
+          "age_category": "Women's 16-17 Age Group",
+          "weight_class": "53 kg",
+          "lifter_name": "Olivia Gilbert",
+          "lifter_id": 10160,
+          "membershipNumbers": [
+            {
+              "athleteName": "Olivia Gilbert",
+              "membershipNumber": "212501",
+              "fullText": "2  -  91  Olivia Gilbert  F  16  -  212501  52  2015-05-03  -  Local  New York"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0wMyIsIndlaWdodF9jbGFzcyI6MzMxfQ=="
+        },
+        {
+          "meet_id": 2075,
+          "date": "2016-10-23",
+          "age_category": "Women's 16-17 Age Group",
+          "weight_class": "53 kg",
+          "lifter_name": "Olivia Gilbert",
+          "lifter_id": 10160,
+          "membershipNumbers": [
+            {
+              "athleteName": "Olivia Gilbert",
+              "membershipNumber": "212501",
+              "fullText": "4  -  97  Olivia Gilbert  F  17  -  212501  50.9  2016-10-23  -  Local  New York"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0yMyIsIndlaWdodF9jbGFzcyI6MzMxfQ=="
+        },
+        {
+          "meet_id": 1984,
+          "date": "2016-06-12",
+          "age_category": "Women's 16-17 Age Group",
+          "weight_class": "53 kg",
+          "lifter_name": "Olivia Gilbert",
+          "lifter_id": 10160,
+          "membershipNumbers": [
+            {
+              "athleteName": "Olivia Gilbert",
+              "membershipNumber": "212501",
+              "fullText": "2  -  103  Olivia Gilbert  F  17  -  212501  52.7  2016-06-12  -  Local  New York"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0xMiIsIndlaWdodF9jbGFzcyI6MzMxfQ=="
+        }
+      ],
+      "1076047": [
+        {
+          "meet_id": 6324,
+          "date": "2024-04-20",
+          "age_category": "Open Women's",
+          "weight_class": "59kg",
+          "lifter_name": "Olivia Gilbert",
+          "lifter_id": 10160,
+          "membershipNumbers": [
+            {
+              "athleteName": "Olivia Gilbert",
+              "membershipNumber": "1076047",
+              "fullText": "16  -  91  Olivia Gilbert  F  24  Pinnacle Weightlifting  1076047  57.7  2024-04-20  -  Local  Mountain North"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNC0yMCIsIndlaWdodF9jbGFzcyI6OTR9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Olivia Gilbert",
+    "splits": [
+      {
+        "newAthleteName": "Olivia Gilbert (Person 1)",
+        "membershipNumber": "212501",
+        "competitionCount": 3,
+        "competitions": [
+          24,
+          2075,
+          1984
+        ]
+      },
+      {
+        "newAthleteName": "Olivia Gilbert (Person 2)",
+        "membershipNumber": "1076047",
+        "competitionCount": 1,
+        "competitions": [
+          6324
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Olivia Gilbert",
+    "competitions": [
+      {
+        "meet_id": 24,
+        "date": "2015-05-03",
+        "age_category": "Women's 16-17 Age Group",
+        "weight_class": "53 kg",
+        "lifter_name": "Olivia Gilbert",
+        "lifter_id": 10160,
+        "membershipNumbers": [
+          {
+            "athleteName": "Olivia Gilbert",
+            "membershipNumber": "212501",
+            "fullText": "2  -  91  Olivia Gilbert  F  16  -  212501  52  2015-05-03  -  Local  New York"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0wMyIsIndlaWdodF9jbGFzcyI6MzMxfQ=="
+      },
+      {
+        "meet_id": 2075,
+        "date": "2016-10-23",
+        "age_category": "Women's 16-17 Age Group",
+        "weight_class": "53 kg",
+        "lifter_name": "Olivia Gilbert",
+        "lifter_id": 10160,
+        "membershipNumbers": [
+          {
+            "athleteName": "Olivia Gilbert",
+            "membershipNumber": "212501",
+            "fullText": "4  -  97  Olivia Gilbert  F  17  -  212501  50.9  2016-10-23  -  Local  New York"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0yMyIsIndlaWdodF9jbGFzcyI6MzMxfQ=="
+      },
+      {
+        "meet_id": 1984,
+        "date": "2016-06-12",
+        "age_category": "Women's 16-17 Age Group",
+        "weight_class": "53 kg",
+        "lifter_name": "Olivia Gilbert",
+        "lifter_id": 10160,
+        "membershipNumbers": [
+          {
+            "athleteName": "Olivia Gilbert",
+            "membershipNumber": "212501",
+            "fullText": "2  -  103  Olivia Gilbert  F  17  -  212501  52.7  2016-06-12  -  Local  New York"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0xMiIsIndlaWdodF9jbGFzcyI6MzMxfQ=="
+      },
+      {
+        "meet_id": 6324,
+        "date": "2024-04-20",
+        "age_category": "Open Women's",
+        "weight_class": "59kg",
+        "lifter_name": "Olivia Gilbert",
+        "lifter_id": 10160,
+        "membershipNumbers": [
+          {
+            "athleteName": "Olivia Gilbert",
+            "membershipNumber": "1076047",
+            "fullText": "16  -  91  Olivia Gilbert  F  24  Pinnacle Weightlifting  1076047  57.7  2024-04-20  -  Local  Mountain North"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNC0yMCIsIndlaWdodF9jbGFzcyI6OTR9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "212501": [
+          {
+            "meet_id": 24,
+            "date": "2015-05-03",
+            "age_category": "Women's 16-17 Age Group",
+            "weight_class": "53 kg",
+            "lifter_name": "Olivia Gilbert",
+            "lifter_id": 10160,
+            "membershipNumbers": [
+              {
+                "athleteName": "Olivia Gilbert",
+                "membershipNumber": "212501",
+                "fullText": "2  -  91  Olivia Gilbert  F  16  -  212501  52  2015-05-03  -  Local  New York"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0wMyIsIndlaWdodF9jbGFzcyI6MzMxfQ=="
+          },
+          {
+            "meet_id": 2075,
+            "date": "2016-10-23",
+            "age_category": "Women's 16-17 Age Group",
+            "weight_class": "53 kg",
+            "lifter_name": "Olivia Gilbert",
+            "lifter_id": 10160,
+            "membershipNumbers": [
+              {
+                "athleteName": "Olivia Gilbert",
+                "membershipNumber": "212501",
+                "fullText": "4  -  97  Olivia Gilbert  F  17  -  212501  50.9  2016-10-23  -  Local  New York"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0yMyIsIndlaWdodF9jbGFzcyI6MzMxfQ=="
+          },
+          {
+            "meet_id": 1984,
+            "date": "2016-06-12",
+            "age_category": "Women's 16-17 Age Group",
+            "weight_class": "53 kg",
+            "lifter_name": "Olivia Gilbert",
+            "lifter_id": 10160,
+            "membershipNumbers": [
+              {
+                "athleteName": "Olivia Gilbert",
+                "membershipNumber": "212501",
+                "fullText": "2  -  103  Olivia Gilbert  F  17  -  212501  52.7  2016-06-12  -  Local  New York"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0xMiIsIndlaWdodF9jbGFzcyI6MzMxfQ=="
+          }
+        ],
+        "1076047": [
+          {
+            "meet_id": 6324,
+            "date": "2024-04-20",
+            "age_category": "Open Women's",
+            "weight_class": "59kg",
+            "lifter_name": "Olivia Gilbert",
+            "lifter_id": 10160,
+            "membershipNumbers": [
+              {
+                "athleteName": "Olivia Gilbert",
+                "membershipNumber": "1076047",
+                "fullText": "16  -  91  Olivia Gilbert  F  24  Pinnacle Weightlifting  1076047  57.7  2024-04-20  -  Local  Mountain North"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNC0yMCIsIndlaWdodF9jbGFzcyI6OTR9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

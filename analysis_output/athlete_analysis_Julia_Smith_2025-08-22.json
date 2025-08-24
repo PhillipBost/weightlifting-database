@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-22T16:43:18.322Z",
+  "athleteName": "Julia Smith",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1023749": [
+        {
+          "meet_id": 2910,
+          "date": "2017-10-21",
+          "age_category": "Open Women's",
+          "weight_class": "58 kg",
+          "lifter_name": "Julia Smith",
+          "lifter_id": 33091,
+          "membershipNumbers": [
+            {
+              "athleteName": "Julia Smith",
+              "membershipNumber": "1023749",
+              "fullText": "17  -  92  Julia Smith  F  19  University of Oregon Weightlifting Club  1023749  55.8  2017-10-21  -  Local  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0yMSIsIndlaWdodF9jbGFzcyI6MzY0fQ=="
+        }
+      ],
+      "1080661": [
+        {
+          "meet_id": 6992,
+          "date": "2025-08-01",
+          "age_category": "Women's 16-17 Age Group",
+          "weight_class": "53kg",
+          "lifter_name": "Julia Smith",
+          "lifter_id": 33091,
+          "membershipNumbers": [
+            {
+              "athleteName": "Julia Smith",
+              "membershipNumber": "1080661",
+              "fullText": "1  -  106  Julia Smith  F  16  Jacksonville Weightlifting  1080661  52.75  2025-08-01  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wOC0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wOC0wMSIsIndlaWdodF9jbGFzcyI6NzY5fQ=="
+        },
+        {
+          "meet_id": 6841,
+          "date": "2025-04-25",
+          "age_category": "Women's 16-17 Age Group",
+          "weight_class": "55kg",
+          "lifter_name": "Julia Smith",
+          "lifter_id": 33091,
+          "membershipNumbers": [
+            {
+              "athleteName": "Julia Smith",
+              "membershipNumber": "1080661",
+              "fullText": "4  -  105  Julia Smith  F  16  Jacksonville Weightlifting  1080661  50.3  2025-04-25  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNC0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNC0yNSIsIndlaWdodF9jbGFzcyI6MTR9"
+        },
+        {
+          "meet_id": 6782,
+          "date": "2025-03-08",
+          "age_category": "Women's 16-17 Age Group",
+          "weight_class": "55kg",
+          "lifter_name": "Julia Smith",
+          "lifter_id": 33091,
+          "membershipNumbers": [
+            {
+              "athleteName": "Julia Smith",
+              "membershipNumber": "1080661",
+              "fullText": "2  -  104  Julia Smith  F  16  Jacksonville Weightlifting  1080661  51.6  2025-03-08  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMy0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMy0wOCIsIndlaWdodF9jbGFzcyI6MTR9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Julia Smith",
+    "splits": [
+      {
+        "newAthleteName": "Julia Smith (Person 1)",
+        "membershipNumber": "1023749",
+        "competitionCount": 1,
+        "competitions": [
+          2910
+        ]
+      },
+      {
+        "newAthleteName": "Julia Smith (Person 2)",
+        "membershipNumber": "1080661",
+        "competitionCount": 3,
+        "competitions": [
+          6992,
+          6841,
+          6782
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Julia Smith",
+    "competitions": [
+      {
+        "meet_id": 6992,
+        "date": "2025-08-01",
+        "age_category": "Women's 16-17 Age Group",
+        "weight_class": "53kg",
+        "lifter_name": "Julia Smith",
+        "lifter_id": 33091,
+        "membershipNumbers": [
+          {
+            "athleteName": "Julia Smith",
+            "membershipNumber": "1080661",
+            "fullText": "1  -  106  Julia Smith  F  16  Jacksonville Weightlifting  1080661  52.75  2025-08-01  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wOC0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wOC0wMSIsIndlaWdodF9jbGFzcyI6NzY5fQ=="
+      },
+      {
+        "meet_id": 6841,
+        "date": "2025-04-25",
+        "age_category": "Women's 16-17 Age Group",
+        "weight_class": "55kg",
+        "lifter_name": "Julia Smith",
+        "lifter_id": 33091,
+        "membershipNumbers": [
+          {
+            "athleteName": "Julia Smith",
+            "membershipNumber": "1080661",
+            "fullText": "4  -  105  Julia Smith  F  16  Jacksonville Weightlifting  1080661  50.3  2025-04-25  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNC0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNC0yNSIsIndlaWdodF9jbGFzcyI6MTR9"
+      },
+      {
+        "meet_id": 2910,
+        "date": "2017-10-21",
+        "age_category": "Open Women's",
+        "weight_class": "58 kg",
+        "lifter_name": "Julia Smith",
+        "lifter_id": 33091,
+        "membershipNumbers": [
+          {
+            "athleteName": "Julia Smith",
+            "membershipNumber": "1023749",
+            "fullText": "17  -  92  Julia Smith  F  19  University of Oregon Weightlifting Club  1023749  55.8  2017-10-21  -  Local  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0yMSIsIndlaWdodF9jbGFzcyI6MzY0fQ=="
+      },
+      {
+        "meet_id": 6782,
+        "date": "2025-03-08",
+        "age_category": "Women's 16-17 Age Group",
+        "weight_class": "55kg",
+        "lifter_name": "Julia Smith",
+        "lifter_id": 33091,
+        "membershipNumbers": [
+          {
+            "athleteName": "Julia Smith",
+            "membershipNumber": "1080661",
+            "fullText": "2  -  104  Julia Smith  F  16  Jacksonville Weightlifting  1080661  51.6  2025-03-08  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMy0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMy0wOCIsIndlaWdodF9jbGFzcyI6MTR9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1023749": [
+          {
+            "meet_id": 2910,
+            "date": "2017-10-21",
+            "age_category": "Open Women's",
+            "weight_class": "58 kg",
+            "lifter_name": "Julia Smith",
+            "lifter_id": 33091,
+            "membershipNumbers": [
+              {
+                "athleteName": "Julia Smith",
+                "membershipNumber": "1023749",
+                "fullText": "17  -  92  Julia Smith  F  19  University of Oregon Weightlifting Club  1023749  55.8  2017-10-21  -  Local  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0yMSIsIndlaWdodF9jbGFzcyI6MzY0fQ=="
+          }
+        ],
+        "1080661": [
+          {
+            "meet_id": 6992,
+            "date": "2025-08-01",
+            "age_category": "Women's 16-17 Age Group",
+            "weight_class": "53kg",
+            "lifter_name": "Julia Smith",
+            "lifter_id": 33091,
+            "membershipNumbers": [
+              {
+                "athleteName": "Julia Smith",
+                "membershipNumber": "1080661",
+                "fullText": "1  -  106  Julia Smith  F  16  Jacksonville Weightlifting  1080661  52.75  2025-08-01  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wOC0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wOC0wMSIsIndlaWdodF9jbGFzcyI6NzY5fQ=="
+          },
+          {
+            "meet_id": 6841,
+            "date": "2025-04-25",
+            "age_category": "Women's 16-17 Age Group",
+            "weight_class": "55kg",
+            "lifter_name": "Julia Smith",
+            "lifter_id": 33091,
+            "membershipNumbers": [
+              {
+                "athleteName": "Julia Smith",
+                "membershipNumber": "1080661",
+                "fullText": "4  -  105  Julia Smith  F  16  Jacksonville Weightlifting  1080661  50.3  2025-04-25  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNC0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNC0yNSIsIndlaWdodF9jbGFzcyI6MTR9"
+          },
+          {
+            "meet_id": 6782,
+            "date": "2025-03-08",
+            "age_category": "Women's 16-17 Age Group",
+            "weight_class": "55kg",
+            "lifter_name": "Julia Smith",
+            "lifter_id": 33091,
+            "membershipNumbers": [
+              {
+                "athleteName": "Julia Smith",
+                "membershipNumber": "1080661",
+                "fullText": "2  -  104  Julia Smith  F  16  Jacksonville Weightlifting  1080661  51.6  2025-03-08  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMy0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMy0wOCIsIndlaWdodF9jbGFzcyI6MTR9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

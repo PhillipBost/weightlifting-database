@@ -1,0 +1,194 @@
+{
+  "timestamp": "2025-08-22T09:10:07.624Z",
+  "athleteName": "Israel Rodriguez",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1069327": [
+        {
+          "meet_id": 6703,
+          "date": "2025-01-18",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "Israel Rodriguez",
+          "lifter_id": 61424,
+          "membershipNumbers": [
+            {
+              "athleteName": "Israel Rodriguez",
+              "membershipNumber": "1069327",
+              "fullText": "22  -  199  Israel Rodriguez  M  27  CALIFORNIA STRENGTH  1069327  82.55  2025-01-18  -  Local  Tennessee-Kentucky"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMS0xOCIsIndlaWdodF9jbGFzcyI6ODZ9"
+        }
+      ],
+      "1077803": [
+        {
+          "meet_id": 6523,
+          "date": "2024-09-21",
+          "age_category": "Men's Masters (40-44)",
+          "weight_class": "96kg",
+          "lifter_name": "Israel Rodriguez",
+          "lifter_id": 61424,
+          "membershipNumbers": [
+            {
+              "athleteName": "Israel Rodriguez",
+              "membershipNumber": "1077803",
+              "fullText": "2  -  205  Israel Rodriguez  M  40  Gratitude Strength  1077803  92.9  2024-09-21  -  Local  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOS0yMSIsIndlaWdodF9jbGFzcyI6MTI3fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 6589,
+        "date": "2024-10-26",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Israel Rodriguez",
+        "lifter_id": 61424,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0yNiIsIndlaWdodF9jbGFzcyI6ODZ9"
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Israel Rodriguez",
+    "splits": [
+      {
+        "newAthleteName": "Israel Rodriguez (Person 1)",
+        "membershipNumber": "1069327",
+        "competitionCount": 1,
+        "competitions": [
+          6703
+        ]
+      },
+      {
+        "newAthleteName": "Israel Rodriguez (Person 2)",
+        "membershipNumber": "1077803",
+        "competitionCount": 1,
+        "competitions": [
+          6523
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 6589,
+        "date": "2024-10-26",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Israel Rodriguez",
+        "lifter_id": 61424,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0yNiIsIndlaWdodF9jbGFzcyI6ODZ9"
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Israel Rodriguez",
+    "competitions": [
+      {
+        "meet_id": 6523,
+        "date": "2024-09-21",
+        "age_category": "Men's Masters (40-44)",
+        "weight_class": "96kg",
+        "lifter_name": "Israel Rodriguez",
+        "lifter_id": 61424,
+        "membershipNumbers": [
+          {
+            "athleteName": "Israel Rodriguez",
+            "membershipNumber": "1077803",
+            "fullText": "2  -  205  Israel Rodriguez  M  40  Gratitude Strength  1077803  92.9  2024-09-21  -  Local  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOS0yMSIsIndlaWdodF9jbGFzcyI6MTI3fQ=="
+      },
+      {
+        "meet_id": 6703,
+        "date": "2025-01-18",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Israel Rodriguez",
+        "lifter_id": 61424,
+        "membershipNumbers": [
+          {
+            "athleteName": "Israel Rodriguez",
+            "membershipNumber": "1069327",
+            "fullText": "22  -  199  Israel Rodriguez  M  27  CALIFORNIA STRENGTH  1069327  82.55  2025-01-18  -  Local  Tennessee-Kentucky"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMS0xOCIsIndlaWdodF9jbGFzcyI6ODZ9"
+      },
+      {
+        "meet_id": 6589,
+        "date": "2024-10-26",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Israel Rodriguez",
+        "lifter_id": 61424,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0yNiIsIndlaWdodF9jbGFzcyI6ODZ9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1069327": [
+          {
+            "meet_id": 6703,
+            "date": "2025-01-18",
+            "age_category": "Open Men's",
+            "weight_class": "89kg",
+            "lifter_name": "Israel Rodriguez",
+            "lifter_id": 61424,
+            "membershipNumbers": [
+              {
+                "athleteName": "Israel Rodriguez",
+                "membershipNumber": "1069327",
+                "fullText": "22  -  199  Israel Rodriguez  M  27  CALIFORNIA STRENGTH  1069327  82.55  2025-01-18  -  Local  Tennessee-Kentucky"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMS0xOCIsIndlaWdodF9jbGFzcyI6ODZ9"
+          }
+        ],
+        "1077803": [
+          {
+            "meet_id": 6523,
+            "date": "2024-09-21",
+            "age_category": "Men's Masters (40-44)",
+            "weight_class": "96kg",
+            "lifter_name": "Israel Rodriguez",
+            "lifter_id": 61424,
+            "membershipNumbers": [
+              {
+                "athleteName": "Israel Rodriguez",
+                "membershipNumber": "1077803",
+                "fullText": "2  -  205  Israel Rodriguez  M  40  Gratitude Strength  1077803  92.9  2024-09-21  -  Local  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOS0yMSIsIndlaWdodF9jbGFzcyI6MTI3fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 6589,
+          "date": "2024-10-26",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "Israel Rodriguez",
+          "lifter_id": 61424,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0yNiIsIndlaWdodF9jbGFzcyI6ODZ9"
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

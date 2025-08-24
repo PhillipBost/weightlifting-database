@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T07:55:30.887Z",
+  "athleteName": "Anthony Martinez",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1021610": [
+        {
+          "meet_id": 2764,
+          "date": "2017-07-29",
+          "age_category": "Open Men's",
+          "weight_class": "69 kg",
+          "lifter_name": "Anthony Martinez",
+          "lifter_id": 32115,
+          "membershipNumbers": [
+            {
+              "athleteName": "Anthony Martinez",
+              "membershipNumber": "1021610",
+              "fullText": "6  -  146  Anthony Martinez  M  19  -  1021610  68.21  2017-07-29  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNy0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNy0yOSIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+        }
+      ],
+      "1038509": [
+        {
+          "meet_id": 3699,
+          "date": "2019-02-10",
+          "age_category": "Open Men's",
+          "weight_class": "61kg",
+          "lifter_name": "Anthony Martinez",
+          "lifter_id": 32115,
+          "membershipNumbers": [
+            {
+              "athleteName": "Anthony Martinez",
+              "membershipNumber": "1038509",
+              "fullText": "4  -  108  Anthony Martinez  M  17  Blackketter WL  1038509  58.6  2019-02-10  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMi0xMCIsIndlaWdodF9jbGFzcyI6ODJ9"
+        },
+        {
+          "meet_id": 4112,
+          "date": "2019-08-10",
+          "age_category": "Open Men's",
+          "weight_class": "67kg",
+          "lifter_name": "Anthony Martinez",
+          "lifter_id": 32115,
+          "membershipNumbers": [
+            {
+              "athleteName": "Anthony Martinez",
+              "membershipNumber": "1038509",
+              "fullText": "9  -  137  Anthony Martinez  M  17  Blackketter WL  1038509  62.2  2019-08-10  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOC0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOC0xMCIsIndlaWdodF9jbGFzcyI6ODN9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Anthony Martinez",
+    "splits": [
+      {
+        "newAthleteName": "Anthony Martinez (Person 1)",
+        "membershipNumber": "1021610",
+        "competitionCount": 1,
+        "competitions": [
+          2764
+        ]
+      },
+      {
+        "newAthleteName": "Anthony Martinez (Person 2)",
+        "membershipNumber": "1038509",
+        "competitionCount": 2,
+        "competitions": [
+          3699,
+          4112
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Anthony Martinez",
+    "competitions": [
+      {
+        "meet_id": 3699,
+        "date": "2019-02-10",
+        "age_category": "Open Men's",
+        "weight_class": "61kg",
+        "lifter_name": "Anthony Martinez",
+        "lifter_id": 32115,
+        "membershipNumbers": [
+          {
+            "athleteName": "Anthony Martinez",
+            "membershipNumber": "1038509",
+            "fullText": "4  -  108  Anthony Martinez  M  17  Blackketter WL  1038509  58.6  2019-02-10  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMi0xMCIsIndlaWdodF9jbGFzcyI6ODJ9"
+      },
+      {
+        "meet_id": 2764,
+        "date": "2017-07-29",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "Anthony Martinez",
+        "lifter_id": 32115,
+        "membershipNumbers": [
+          {
+            "athleteName": "Anthony Martinez",
+            "membershipNumber": "1021610",
+            "fullText": "6  -  146  Anthony Martinez  M  19  -  1021610  68.21  2017-07-29  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNy0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNy0yOSIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      },
+      {
+        "meet_id": 4112,
+        "date": "2019-08-10",
+        "age_category": "Open Men's",
+        "weight_class": "67kg",
+        "lifter_name": "Anthony Martinez",
+        "lifter_id": 32115,
+        "membershipNumbers": [
+          {
+            "athleteName": "Anthony Martinez",
+            "membershipNumber": "1038509",
+            "fullText": "9  -  137  Anthony Martinez  M  17  Blackketter WL  1038509  62.2  2019-08-10  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOC0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOC0xMCIsIndlaWdodF9jbGFzcyI6ODN9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1021610": [
+          {
+            "meet_id": 2764,
+            "date": "2017-07-29",
+            "age_category": "Open Men's",
+            "weight_class": "69 kg",
+            "lifter_name": "Anthony Martinez",
+            "lifter_id": 32115,
+            "membershipNumbers": [
+              {
+                "athleteName": "Anthony Martinez",
+                "membershipNumber": "1021610",
+                "fullText": "6  -  146  Anthony Martinez  M  19  -  1021610  68.21  2017-07-29  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNy0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNy0yOSIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+          }
+        ],
+        "1038509": [
+          {
+            "meet_id": 3699,
+            "date": "2019-02-10",
+            "age_category": "Open Men's",
+            "weight_class": "61kg",
+            "lifter_name": "Anthony Martinez",
+            "lifter_id": 32115,
+            "membershipNumbers": [
+              {
+                "athleteName": "Anthony Martinez",
+                "membershipNumber": "1038509",
+                "fullText": "4  -  108  Anthony Martinez  M  17  Blackketter WL  1038509  58.6  2019-02-10  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMi0xMCIsIndlaWdodF9jbGFzcyI6ODJ9"
+          },
+          {
+            "meet_id": 4112,
+            "date": "2019-08-10",
+            "age_category": "Open Men's",
+            "weight_class": "67kg",
+            "lifter_name": "Anthony Martinez",
+            "lifter_id": 32115,
+            "membershipNumbers": [
+              {
+                "athleteName": "Anthony Martinez",
+                "membershipNumber": "1038509",
+                "fullText": "9  -  137  Anthony Martinez  M  17  Blackketter WL  1038509  62.2  2019-08-10  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOC0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOC0xMCIsIndlaWdodF9jbGFzcyI6ODN9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

@@ -1,0 +1,243 @@
+{
+  "timestamp": "2025-08-22T06:02:55.944Z",
+  "athleteName": "Ashley Hart",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "217076": [
+        {
+          "meet_id": 292,
+          "date": "2015-10-25",
+          "age_category": "Open Women's",
+          "weight_class": "48 kg",
+          "lifter_name": "Ashley Hart",
+          "lifter_id": 11271,
+          "membershipNumbers": [
+            {
+              "athleteName": "Ashley Hart",
+              "membershipNumber": "217076",
+              "fullText": "11  -  98  Ashley Hart  F  28  -  217076  47  2015-10-25  -  Local  Mountain North"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0yNSIsIndlaWdodF9jbGFzcyI6MzYyfQ=="
+        }
+      ],
+      "1029447": [
+        {
+          "meet_id": 3029,
+          "date": "2018-08-19",
+          "age_category": "Open Women's",
+          "weight_class": "71kg",
+          "lifter_name": "Ashley Hart",
+          "lifter_id": 11271,
+          "membershipNumbers": [
+            {
+              "athleteName": "Ashley Hart",
+              "membershipNumber": "1029447",
+              "fullText": "20  -  92  Ashley Hart  F  32  -  1029447  68.5  2018-08-19  -  Local  New Jersey"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOC0xOSIsIndlaWdodF9jbGFzcyI6OTZ9"
+        },
+        {
+          "meet_id": 3147,
+          "date": "2018-09-22",
+          "age_category": "Open Women's",
+          "weight_class": "71kg",
+          "lifter_name": "Ashley Hart",
+          "lifter_id": 11271,
+          "membershipNumbers": [
+            {
+              "athleteName": "Ashley Hart",
+              "membershipNumber": "1029447",
+              "fullText": "15  -  95  Ashley Hart  F  32  -  1029447  68.52  2018-09-22  -  Local  New Jersey"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOS0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOS0yMiIsIndlaWdodF9jbGFzcyI6OTZ9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 3000,
+        "date": "2018-05-19",
+        "age_category": "Open Women's",
+        "weight_class": "69 kg",
+        "lifter_name": "Ashley Hart",
+        "lifter_id": 11271,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNS0xOSIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Ashley Hart",
+    "splits": [
+      {
+        "newAthleteName": "Ashley Hart (Person 1)",
+        "membershipNumber": "217076",
+        "competitionCount": 1,
+        "competitions": [
+          292
+        ]
+      },
+      {
+        "newAthleteName": "Ashley Hart (Person 2)",
+        "membershipNumber": "1029447",
+        "competitionCount": 2,
+        "competitions": [
+          3029,
+          3147
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 3000,
+        "date": "2018-05-19",
+        "age_category": "Open Women's",
+        "weight_class": "69 kg",
+        "lifter_name": "Ashley Hart",
+        "lifter_id": 11271,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNS0xOSIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Ashley Hart",
+    "competitions": [
+      {
+        "meet_id": 3029,
+        "date": "2018-08-19",
+        "age_category": "Open Women's",
+        "weight_class": "71kg",
+        "lifter_name": "Ashley Hart",
+        "lifter_id": 11271,
+        "membershipNumbers": [
+          {
+            "athleteName": "Ashley Hart",
+            "membershipNumber": "1029447",
+            "fullText": "20  -  92  Ashley Hart  F  32  -  1029447  68.5  2018-08-19  -  Local  New Jersey"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOC0xOSIsIndlaWdodF9jbGFzcyI6OTZ9"
+      },
+      {
+        "meet_id": 3000,
+        "date": "2018-05-19",
+        "age_category": "Open Women's",
+        "weight_class": "69 kg",
+        "lifter_name": "Ashley Hart",
+        "lifter_id": 11271,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNS0xOSIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+      },
+      {
+        "meet_id": 292,
+        "date": "2015-10-25",
+        "age_category": "Open Women's",
+        "weight_class": "48 kg",
+        "lifter_name": "Ashley Hart",
+        "lifter_id": 11271,
+        "membershipNumbers": [
+          {
+            "athleteName": "Ashley Hart",
+            "membershipNumber": "217076",
+            "fullText": "11  -  98  Ashley Hart  F  28  -  217076  47  2015-10-25  -  Local  Mountain North"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0yNSIsIndlaWdodF9jbGFzcyI6MzYyfQ=="
+      },
+      {
+        "meet_id": 3147,
+        "date": "2018-09-22",
+        "age_category": "Open Women's",
+        "weight_class": "71kg",
+        "lifter_name": "Ashley Hart",
+        "lifter_id": 11271,
+        "membershipNumbers": [
+          {
+            "athleteName": "Ashley Hart",
+            "membershipNumber": "1029447",
+            "fullText": "15  -  95  Ashley Hart  F  32  -  1029447  68.52  2018-09-22  -  Local  New Jersey"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOS0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOS0yMiIsIndlaWdodF9jbGFzcyI6OTZ9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "217076": [
+          {
+            "meet_id": 292,
+            "date": "2015-10-25",
+            "age_category": "Open Women's",
+            "weight_class": "48 kg",
+            "lifter_name": "Ashley Hart",
+            "lifter_id": 11271,
+            "membershipNumbers": [
+              {
+                "athleteName": "Ashley Hart",
+                "membershipNumber": "217076",
+                "fullText": "11  -  98  Ashley Hart  F  28  -  217076  47  2015-10-25  -  Local  Mountain North"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0yNSIsIndlaWdodF9jbGFzcyI6MzYyfQ=="
+          }
+        ],
+        "1029447": [
+          {
+            "meet_id": 3029,
+            "date": "2018-08-19",
+            "age_category": "Open Women's",
+            "weight_class": "71kg",
+            "lifter_name": "Ashley Hart",
+            "lifter_id": 11271,
+            "membershipNumbers": [
+              {
+                "athleteName": "Ashley Hart",
+                "membershipNumber": "1029447",
+                "fullText": "20  -  92  Ashley Hart  F  32  -  1029447  68.5  2018-08-19  -  Local  New Jersey"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOC0xOSIsIndlaWdodF9jbGFzcyI6OTZ9"
+          },
+          {
+            "meet_id": 3147,
+            "date": "2018-09-22",
+            "age_category": "Open Women's",
+            "weight_class": "71kg",
+            "lifter_name": "Ashley Hart",
+            "lifter_id": 11271,
+            "membershipNumbers": [
+              {
+                "athleteName": "Ashley Hart",
+                "membershipNumber": "1029447",
+                "fullText": "15  -  95  Ashley Hart  F  32  -  1029447  68.52  2018-09-22  -  Local  New Jersey"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOS0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOS0yMiIsIndlaWdodF9jbGFzcyI6OTZ9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 3000,
+          "date": "2018-05-19",
+          "age_category": "Open Women's",
+          "weight_class": "69 kg",
+          "lifter_name": "Ashley Hart",
+          "lifter_id": 11271,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNS0xOSIsIndlaWdodF9jbGFzcyI6MzY2fQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

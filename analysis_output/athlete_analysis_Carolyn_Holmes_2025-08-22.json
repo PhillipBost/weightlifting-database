@@ -1,0 +1,298 @@
+{
+  "timestamp": "2025-08-22T17:18:24.440Z",
+  "athleteName": "Carolyn Holmes",
+  "totalCompetitions": 5,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "186157": [
+        {
+          "meet_id": 2718,
+          "date": "2017-08-05",
+          "age_category": "Women's Masters (40-44)",
+          "weight_class": "63 kg",
+          "lifter_name": "Carolyn Holmes",
+          "lifter_id": 18322,
+          "membershipNumbers": [
+            {
+              "athleteName": "Carolyn Holmes",
+              "membershipNumber": "186157",
+              "fullText": "5  -  91  Carolyn Holmes  F  43  -  186157  61.85  2017-08-05  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wOC0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wOC0wNSIsIndlaWdodF9jbGFzcyI6Mzk5fQ=="
+        },
+        {
+          "meet_id": 1051,
+          "date": "2013-08-10",
+          "age_category": "Women's Masters (35-39)",
+          "weight_class": "63 kg",
+          "lifter_name": "Carolyn Holmes",
+          "lifter_id": 18322,
+          "membershipNumbers": [
+            {
+              "athleteName": "Carolyn Holmes",
+              "membershipNumber": "186157",
+              "fullText": "3  -  83  Carolyn Holmes  F  39  -  186157  62.18  2013-08-10  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wOC0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wOC0xMCIsIndlaWdodF9jbGFzcyI6MzgyfQ=="
+        },
+        {
+          "meet_id": 1542,
+          "date": "2014-08-09",
+          "age_category": "Women's Masters (40-44)",
+          "weight_class": "63 kg",
+          "lifter_name": "Carolyn Holmes",
+          "lifter_id": 18322,
+          "membershipNumbers": [
+            {
+              "athleteName": "Carolyn Holmes",
+              "membershipNumber": "186157",
+              "fullText": "4  -  86  Carolyn Holmes  F  40  -  186157  61.7  2014-08-09  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0wOSIsIndlaWdodF9jbGFzcyI6Mzk5fQ=="
+        },
+        {
+          "meet_id": 1848,
+          "date": "2016-08-06",
+          "age_category": "Women's Masters (40-44)",
+          "weight_class": "63 kg",
+          "lifter_name": "Carolyn Holmes",
+          "lifter_id": 18322,
+          "membershipNumbers": [
+            {
+              "athleteName": "Carolyn Holmes",
+              "membershipNumber": "186157",
+              "fullText": "4  -  87  Carolyn Holmes  F  42  -  186157  60.98  2016-08-06  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0wNiIsIndlaWdodF9jbGFzcyI6Mzk5fQ=="
+        }
+      ],
+      "1013742": [
+        {
+          "meet_id": 2207,
+          "date": "2016-11-19",
+          "age_category": "Women's Masters (35-39)",
+          "weight_class": "69 kg",
+          "lifter_name": "Carolyn Holmes",
+          "lifter_id": 18322,
+          "membershipNumbers": [
+            {
+              "athleteName": "Carolyn Holmes",
+              "membershipNumber": "1013742",
+              "fullText": "14  -  81  Carolyn Holmes  F  37  -  1013742  68.4  2016-11-19  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMS0xOSIsIndlaWdodF9jbGFzcyI6MzgzfQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Carolyn Holmes",
+    "splits": [
+      {
+        "newAthleteName": "Carolyn Holmes (Person 1)",
+        "membershipNumber": "186157",
+        "competitionCount": 4,
+        "competitions": [
+          2718,
+          1051,
+          1542,
+          1848
+        ]
+      },
+      {
+        "newAthleteName": "Carolyn Holmes (Person 2)",
+        "membershipNumber": "1013742",
+        "competitionCount": 1,
+        "competitions": [
+          2207
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Carolyn Holmes",
+    "competitions": [
+      {
+        "meet_id": 2718,
+        "date": "2017-08-05",
+        "age_category": "Women's Masters (40-44)",
+        "weight_class": "63 kg",
+        "lifter_name": "Carolyn Holmes",
+        "lifter_id": 18322,
+        "membershipNumbers": [
+          {
+            "athleteName": "Carolyn Holmes",
+            "membershipNumber": "186157",
+            "fullText": "5  -  91  Carolyn Holmes  F  43  -  186157  61.85  2017-08-05  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wOC0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wOC0wNSIsIndlaWdodF9jbGFzcyI6Mzk5fQ=="
+      },
+      {
+        "meet_id": 1051,
+        "date": "2013-08-10",
+        "age_category": "Women's Masters (35-39)",
+        "weight_class": "63 kg",
+        "lifter_name": "Carolyn Holmes",
+        "lifter_id": 18322,
+        "membershipNumbers": [
+          {
+            "athleteName": "Carolyn Holmes",
+            "membershipNumber": "186157",
+            "fullText": "3  -  83  Carolyn Holmes  F  39  -  186157  62.18  2013-08-10  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wOC0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wOC0xMCIsIndlaWdodF9jbGFzcyI6MzgyfQ=="
+      },
+      {
+        "meet_id": 1542,
+        "date": "2014-08-09",
+        "age_category": "Women's Masters (40-44)",
+        "weight_class": "63 kg",
+        "lifter_name": "Carolyn Holmes",
+        "lifter_id": 18322,
+        "membershipNumbers": [
+          {
+            "athleteName": "Carolyn Holmes",
+            "membershipNumber": "186157",
+            "fullText": "4  -  86  Carolyn Holmes  F  40  -  186157  61.7  2014-08-09  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0wOSIsIndlaWdodF9jbGFzcyI6Mzk5fQ=="
+      },
+      {
+        "meet_id": 1848,
+        "date": "2016-08-06",
+        "age_category": "Women's Masters (40-44)",
+        "weight_class": "63 kg",
+        "lifter_name": "Carolyn Holmes",
+        "lifter_id": 18322,
+        "membershipNumbers": [
+          {
+            "athleteName": "Carolyn Holmes",
+            "membershipNumber": "186157",
+            "fullText": "4  -  87  Carolyn Holmes  F  42  -  186157  60.98  2016-08-06  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0wNiIsIndlaWdodF9jbGFzcyI6Mzk5fQ=="
+      },
+      {
+        "meet_id": 2207,
+        "date": "2016-11-19",
+        "age_category": "Women's Masters (35-39)",
+        "weight_class": "69 kg",
+        "lifter_name": "Carolyn Holmes",
+        "lifter_id": 18322,
+        "membershipNumbers": [
+          {
+            "athleteName": "Carolyn Holmes",
+            "membershipNumber": "1013742",
+            "fullText": "14  -  81  Carolyn Holmes  F  37  -  1013742  68.4  2016-11-19  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMS0xOSIsIndlaWdodF9jbGFzcyI6MzgzfQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "186157": [
+          {
+            "meet_id": 2718,
+            "date": "2017-08-05",
+            "age_category": "Women's Masters (40-44)",
+            "weight_class": "63 kg",
+            "lifter_name": "Carolyn Holmes",
+            "lifter_id": 18322,
+            "membershipNumbers": [
+              {
+                "athleteName": "Carolyn Holmes",
+                "membershipNumber": "186157",
+                "fullText": "5  -  91  Carolyn Holmes  F  43  -  186157  61.85  2017-08-05  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wOC0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wOC0wNSIsIndlaWdodF9jbGFzcyI6Mzk5fQ=="
+          },
+          {
+            "meet_id": 1051,
+            "date": "2013-08-10",
+            "age_category": "Women's Masters (35-39)",
+            "weight_class": "63 kg",
+            "lifter_name": "Carolyn Holmes",
+            "lifter_id": 18322,
+            "membershipNumbers": [
+              {
+                "athleteName": "Carolyn Holmes",
+                "membershipNumber": "186157",
+                "fullText": "3  -  83  Carolyn Holmes  F  39  -  186157  62.18  2013-08-10  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wOC0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wOC0xMCIsIndlaWdodF9jbGFzcyI6MzgyfQ=="
+          },
+          {
+            "meet_id": 1542,
+            "date": "2014-08-09",
+            "age_category": "Women's Masters (40-44)",
+            "weight_class": "63 kg",
+            "lifter_name": "Carolyn Holmes",
+            "lifter_id": 18322,
+            "membershipNumbers": [
+              {
+                "athleteName": "Carolyn Holmes",
+                "membershipNumber": "186157",
+                "fullText": "4  -  86  Carolyn Holmes  F  40  -  186157  61.7  2014-08-09  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0wOSIsIndlaWdodF9jbGFzcyI6Mzk5fQ=="
+          },
+          {
+            "meet_id": 1848,
+            "date": "2016-08-06",
+            "age_category": "Women's Masters (40-44)",
+            "weight_class": "63 kg",
+            "lifter_name": "Carolyn Holmes",
+            "lifter_id": 18322,
+            "membershipNumbers": [
+              {
+                "athleteName": "Carolyn Holmes",
+                "membershipNumber": "186157",
+                "fullText": "4  -  87  Carolyn Holmes  F  42  -  186157  60.98  2016-08-06  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0wNiIsIndlaWdodF9jbGFzcyI6Mzk5fQ=="
+          }
+        ],
+        "1013742": [
+          {
+            "meet_id": 2207,
+            "date": "2016-11-19",
+            "age_category": "Women's Masters (35-39)",
+            "weight_class": "69 kg",
+            "lifter_name": "Carolyn Holmes",
+            "lifter_id": 18322,
+            "membershipNumbers": [
+              {
+                "athleteName": "Carolyn Holmes",
+                "membershipNumber": "1013742",
+                "fullText": "14  -  81  Carolyn Holmes  F  37  -  1013742  68.4  2016-11-19  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMS0xOSIsIndlaWdodF9jbGFzcyI6MzgzfQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

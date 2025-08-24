@@ -1,0 +1,243 @@
+{
+  "timestamp": "2025-08-22T07:02:04.173Z",
+  "athleteName": "Jarrod Davis",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "201548": [
+        {
+          "meet_id": 1496,
+          "date": "2014-08-30",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Jarrod Davis",
+          "lifter_id": 20713,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jarrod Davis",
+              "membershipNumber": "201548",
+              "fullText": "8  -  242  Jarrod Davis  M  29  -  201548  101.6  2014-08-30  -  Local  New England"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0zMCIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        }
+      ],
+      "1003145": [
+        {
+          "meet_id": 1778,
+          "date": "2016-02-06",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Jarrod Davis",
+          "lifter_id": 20713,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jarrod Davis",
+              "membershipNumber": "1003145",
+              "fullText": "16  -  205  Jarrod Davis  M  33  VAUGHN WEIGHTLIFTING  1003145  83  2016-02-06  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMi0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMi0wNiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        },
+        {
+          "meet_id": 3792,
+          "date": "2019-07-28",
+          "age_category": "Men's Masters (35-39)",
+          "weight_class": "81kg",
+          "lifter_name": "Jarrod Davis",
+          "lifter_id": 20713,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jarrod Davis",
+              "membershipNumber": "1003145",
+              "fullText": "4  -  193  Jarrod Davis  M  36  VAUGHN WEIGHTLIFTING  1003145  80.55  2019-07-28  -  National  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0yOCIsIndlaWdodF9jbGFzcyI6MTA1fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 3831,
+        "date": "2019-04-06",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Jarrod Davis",
+        "lifter_id": 20713,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0wNiIsIndlaWdodF9jbGFzcyI6ODV9"
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Jarrod Davis",
+    "splits": [
+      {
+        "newAthleteName": "Jarrod Davis (Person 1)",
+        "membershipNumber": "201548",
+        "competitionCount": 1,
+        "competitions": [
+          1496
+        ]
+      },
+      {
+        "newAthleteName": "Jarrod Davis (Person 2)",
+        "membershipNumber": "1003145",
+        "competitionCount": 2,
+        "competitions": [
+          1778,
+          3792
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 3831,
+        "date": "2019-04-06",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Jarrod Davis",
+        "lifter_id": 20713,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0wNiIsIndlaWdodF9jbGFzcyI6ODV9"
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Jarrod Davis",
+    "competitions": [
+      {
+        "meet_id": 1496,
+        "date": "2014-08-30",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Jarrod Davis",
+        "lifter_id": 20713,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jarrod Davis",
+            "membershipNumber": "201548",
+            "fullText": "8  -  242  Jarrod Davis  M  29  -  201548  101.6  2014-08-30  -  Local  New England"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0zMCIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 3831,
+        "date": "2019-04-06",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Jarrod Davis",
+        "lifter_id": 20713,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0wNiIsIndlaWdodF9jbGFzcyI6ODV9"
+      },
+      {
+        "meet_id": 1778,
+        "date": "2016-02-06",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Jarrod Davis",
+        "lifter_id": 20713,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jarrod Davis",
+            "membershipNumber": "1003145",
+            "fullText": "16  -  205  Jarrod Davis  M  33  VAUGHN WEIGHTLIFTING  1003145  83  2016-02-06  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMi0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMi0wNiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 3792,
+        "date": "2019-07-28",
+        "age_category": "Men's Masters (35-39)",
+        "weight_class": "81kg",
+        "lifter_name": "Jarrod Davis",
+        "lifter_id": 20713,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jarrod Davis",
+            "membershipNumber": "1003145",
+            "fullText": "4  -  193  Jarrod Davis  M  36  VAUGHN WEIGHTLIFTING  1003145  80.55  2019-07-28  -  National  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0yOCIsIndlaWdodF9jbGFzcyI6MTA1fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "201548": [
+          {
+            "meet_id": 1496,
+            "date": "2014-08-30",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Jarrod Davis",
+            "lifter_id": 20713,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jarrod Davis",
+                "membershipNumber": "201548",
+                "fullText": "8  -  242  Jarrod Davis  M  29  -  201548  101.6  2014-08-30  -  Local  New England"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0zMCIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          }
+        ],
+        "1003145": [
+          {
+            "meet_id": 1778,
+            "date": "2016-02-06",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Jarrod Davis",
+            "lifter_id": 20713,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jarrod Davis",
+                "membershipNumber": "1003145",
+                "fullText": "16  -  205  Jarrod Davis  M  33  VAUGHN WEIGHTLIFTING  1003145  83  2016-02-06  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMi0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMi0wNiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          },
+          {
+            "meet_id": 3792,
+            "date": "2019-07-28",
+            "age_category": "Men's Masters (35-39)",
+            "weight_class": "81kg",
+            "lifter_name": "Jarrod Davis",
+            "lifter_id": 20713,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jarrod Davis",
+                "membershipNumber": "1003145",
+                "fullText": "4  -  193  Jarrod Davis  M  36  VAUGHN WEIGHTLIFTING  1003145  80.55  2019-07-28  -  National  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0yOCIsIndlaWdodF9jbGFzcyI6MTA1fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 3831,
+          "date": "2019-04-06",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Jarrod Davis",
+          "lifter_id": 20713,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0wNiIsIndlaWdodF9jbGFzcyI6ODV9"
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "timestamp": "2025-08-22T03:53:06.011Z",
+  "athleteName": "Brian Evans",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 1,
+    "membershipGroups": {
+      "184319": [
+        {
+          "meet_id": 958,
+          "date": "2013-06-01",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Brian Evans",
+          "lifter_id": 716,
+          "membershipNumbers": [
+            {
+              "athleteName": "Brian Evans",
+              "membershipNumber": "184319",
+              "fullText": "11  -  235  Brian Evans  M  24  -  184319  98.2  2013-06-01  -  Local  Mountain North"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNi0wMSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 655,
+        "date": "2012-09-15",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Brian Evans",
+        "lifter_id": 716,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      }
+    ],
+    "splitRequired": false
+  },
+  "splitPlan": {
+    "action": "NO_SPLIT_NEEDED",
+    "reason": "Only one distinct athlete found"
+  },
+  "rawData": {
+    "athleteName": "Brian Evans",
+    "competitions": [
+      {
+        "meet_id": 958,
+        "date": "2013-06-01",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Brian Evans",
+        "lifter_id": 716,
+        "membershipNumbers": [
+          {
+            "athleteName": "Brian Evans",
+            "membershipNumber": "184319",
+            "fullText": "11  -  235  Brian Evans  M  24  -  184319  98.2  2013-06-01  -  Local  Mountain North"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNi0wMSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 655,
+        "date": "2012-09-15",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Brian Evans",
+        "lifter_id": 716,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 1,
+      "membershipGroups": {
+        "184319": [
+          {
+            "meet_id": 958,
+            "date": "2013-06-01",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Brian Evans",
+            "lifter_id": 716,
+            "membershipNumbers": [
+              {
+                "athleteName": "Brian Evans",
+                "membershipNumber": "184319",
+                "fullText": "11  -  235  Brian Evans  M  24  -  184319  98.2  2013-06-01  -  Local  Mountain North"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNi0wMSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 655,
+          "date": "2012-09-15",
+          "age_category": "Open Men's",
+          "weight_class": "+105 kg",
+          "lifter_name": "Brian Evans",
+          "lifter_id": 716,
+          "membershipNumbers": [],
+          "error": "No division code found for: \"Open Men's +105 kg\""
+        }
+      ],
+      "splitRequired": false
+    }
+  }
+}

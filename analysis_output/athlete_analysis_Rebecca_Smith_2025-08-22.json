@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T09:03:12.954Z",
+  "athleteName": "Rebecca Smith",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1062880": [
+        {
+          "meet_id": 5456,
+          "date": "2022-08-14",
+          "age_category": "Women's Masters (35-39)",
+          "weight_class": "+87kg",
+          "lifter_name": "Rebecca Smith",
+          "lifter_id": 53368,
+          "membershipNumbers": [
+            {
+              "athleteName": "Rebecca Smith",
+              "membershipNumber": "1062880",
+              "fullText": "2  -  101  Rebecca Smith  F  36  MISSISSIPPI BARBELL  1062880  99.54  2022-08-14  -  National  Southern"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wOC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wOC0xNCIsIndlaWdodF9jbGFzcyI6MTIwfQ=="
+        }
+      ],
+      "1068858": [
+        {
+          "meet_id": 5862,
+          "date": "2023-05-13",
+          "age_category": "Women's Masters (45-49)",
+          "weight_class": "71kg",
+          "lifter_name": "Rebecca Smith",
+          "lifter_id": 53368,
+          "membershipNumbers": [
+            {
+              "athleteName": "Rebecca Smith",
+              "membershipNumber": "1068858",
+              "fullText": "4  -  86  Rebecca Smith  F  45  -  1068858  68.5  2023-05-13  -  Local  Pennsylvania-West Virginia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNS0xMyIsIndlaWdodF9jbGFzcyI6MTU2fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Rebecca Smith",
+    "splits": [
+      {
+        "newAthleteName": "Rebecca Smith (Person 1)",
+        "membershipNumber": "1062880",
+        "competitionCount": 1,
+        "competitions": [
+          5456
+        ]
+      },
+      {
+        "newAthleteName": "Rebecca Smith (Person 2)",
+        "membershipNumber": "1068858",
+        "competitionCount": 1,
+        "competitions": [
+          5862
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Rebecca Smith",
+    "competitions": [
+      {
+        "meet_id": 5456,
+        "date": "2022-08-14",
+        "age_category": "Women's Masters (35-39)",
+        "weight_class": "+87kg",
+        "lifter_name": "Rebecca Smith",
+        "lifter_id": 53368,
+        "membershipNumbers": [
+          {
+            "athleteName": "Rebecca Smith",
+            "membershipNumber": "1062880",
+            "fullText": "2  -  101  Rebecca Smith  F  36  MISSISSIPPI BARBELL  1062880  99.54  2022-08-14  -  National  Southern"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wOC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wOC0xNCIsIndlaWdodF9jbGFzcyI6MTIwfQ=="
+      },
+      {
+        "meet_id": 5862,
+        "date": "2023-05-13",
+        "age_category": "Women's Masters (45-49)",
+        "weight_class": "71kg",
+        "lifter_name": "Rebecca Smith",
+        "lifter_id": 53368,
+        "membershipNumbers": [
+          {
+            "athleteName": "Rebecca Smith",
+            "membershipNumber": "1068858",
+            "fullText": "4  -  86  Rebecca Smith  F  45  -  1068858  68.5  2023-05-13  -  Local  Pennsylvania-West Virginia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNS0xMyIsIndlaWdodF9jbGFzcyI6MTU2fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1062880": [
+          {
+            "meet_id": 5456,
+            "date": "2022-08-14",
+            "age_category": "Women's Masters (35-39)",
+            "weight_class": "+87kg",
+            "lifter_name": "Rebecca Smith",
+            "lifter_id": 53368,
+            "membershipNumbers": [
+              {
+                "athleteName": "Rebecca Smith",
+                "membershipNumber": "1062880",
+                "fullText": "2  -  101  Rebecca Smith  F  36  MISSISSIPPI BARBELL  1062880  99.54  2022-08-14  -  National  Southern"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wOC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wOC0xNCIsIndlaWdodF9jbGFzcyI6MTIwfQ=="
+          }
+        ],
+        "1068858": [
+          {
+            "meet_id": 5862,
+            "date": "2023-05-13",
+            "age_category": "Women's Masters (45-49)",
+            "weight_class": "71kg",
+            "lifter_name": "Rebecca Smith",
+            "lifter_id": 53368,
+            "membershipNumbers": [
+              {
+                "athleteName": "Rebecca Smith",
+                "membershipNumber": "1068858",
+                "fullText": "4  -  86  Rebecca Smith  F  45  -  1068858  68.5  2023-05-13  -  Local  Pennsylvania-West Virginia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNS0xMyIsIndlaWdodF9jbGFzcyI6MTU2fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

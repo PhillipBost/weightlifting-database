@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T07:56:50.965Z",
+  "athleteName": "Jennifer Berry",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1023459": [
+        {
+          "meet_id": 2816,
+          "date": "2017-10-22",
+          "age_category": "Women's Masters (35-39)",
+          "weight_class": "69 kg",
+          "lifter_name": "Jennifer Berry",
+          "lifter_id": 32550,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jennifer Berry",
+              "membershipNumber": "1023459",
+              "fullText": "25  -  101  Jennifer Berry  F  36  -  1023459  67.21  2017-10-22  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0yMiIsIndlaWdodF9jbGFzcyI6MzgzfQ=="
+        },
+        {
+          "meet_id": 3083,
+          "date": "2018-02-03",
+          "age_category": "Women's Masters (35-39)",
+          "weight_class": "69 kg",
+          "lifter_name": "Jennifer Berry",
+          "lifter_id": 32550,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jennifer Berry",
+              "membershipNumber": "1023459",
+              "fullText": "4  -  106  Jennifer Berry  F  37  -  1023459  67.57  2018-02-03  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMi0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMi0wMyIsIndlaWdodF9jbGFzcyI6MzgzfQ=="
+        }
+      ],
+      "1075880": [
+        {
+          "meet_id": 6365,
+          "date": "2024-05-04",
+          "age_category": "Open Women's",
+          "weight_class": "87kg",
+          "lifter_name": "Jennifer Berry",
+          "lifter_id": 32550,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jennifer Berry",
+              "membershipNumber": "1075880",
+              "fullText": "3  -  171  Jennifer Berry  F  20  -  1075880  87  2024-05-04  -  Local  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNS0wNCIsIndlaWdodF9jbGFzcyI6OTl9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Jennifer Berry",
+    "splits": [
+      {
+        "newAthleteName": "Jennifer Berry (Person 1)",
+        "membershipNumber": "1023459",
+        "competitionCount": 2,
+        "competitions": [
+          2816,
+          3083
+        ]
+      },
+      {
+        "newAthleteName": "Jennifer Berry (Person 2)",
+        "membershipNumber": "1075880",
+        "competitionCount": 1,
+        "competitions": [
+          6365
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Jennifer Berry",
+    "competitions": [
+      {
+        "meet_id": 6365,
+        "date": "2024-05-04",
+        "age_category": "Open Women's",
+        "weight_class": "87kg",
+        "lifter_name": "Jennifer Berry",
+        "lifter_id": 32550,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jennifer Berry",
+            "membershipNumber": "1075880",
+            "fullText": "3  -  171  Jennifer Berry  F  20  -  1075880  87  2024-05-04  -  Local  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNS0wNCIsIndlaWdodF9jbGFzcyI6OTl9"
+      },
+      {
+        "meet_id": 2816,
+        "date": "2017-10-22",
+        "age_category": "Women's Masters (35-39)",
+        "weight_class": "69 kg",
+        "lifter_name": "Jennifer Berry",
+        "lifter_id": 32550,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jennifer Berry",
+            "membershipNumber": "1023459",
+            "fullText": "25  -  101  Jennifer Berry  F  36  -  1023459  67.21  2017-10-22  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0yMiIsIndlaWdodF9jbGFzcyI6MzgzfQ=="
+      },
+      {
+        "meet_id": 3083,
+        "date": "2018-02-03",
+        "age_category": "Women's Masters (35-39)",
+        "weight_class": "69 kg",
+        "lifter_name": "Jennifer Berry",
+        "lifter_id": 32550,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jennifer Berry",
+            "membershipNumber": "1023459",
+            "fullText": "4  -  106  Jennifer Berry  F  37  -  1023459  67.57  2018-02-03  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMi0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMi0wMyIsIndlaWdodF9jbGFzcyI6MzgzfQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1023459": [
+          {
+            "meet_id": 2816,
+            "date": "2017-10-22",
+            "age_category": "Women's Masters (35-39)",
+            "weight_class": "69 kg",
+            "lifter_name": "Jennifer Berry",
+            "lifter_id": 32550,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jennifer Berry",
+                "membershipNumber": "1023459",
+                "fullText": "25  -  101  Jennifer Berry  F  36  -  1023459  67.21  2017-10-22  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0yMiIsIndlaWdodF9jbGFzcyI6MzgzfQ=="
+          },
+          {
+            "meet_id": 3083,
+            "date": "2018-02-03",
+            "age_category": "Women's Masters (35-39)",
+            "weight_class": "69 kg",
+            "lifter_name": "Jennifer Berry",
+            "lifter_id": 32550,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jennifer Berry",
+                "membershipNumber": "1023459",
+                "fullText": "4  -  106  Jennifer Berry  F  37  -  1023459  67.57  2018-02-03  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMi0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMi0wMyIsIndlaWdodF9jbGFzcyI6MzgzfQ=="
+          }
+        ],
+        "1075880": [
+          {
+            "meet_id": 6365,
+            "date": "2024-05-04",
+            "age_category": "Open Women's",
+            "weight_class": "87kg",
+            "lifter_name": "Jennifer Berry",
+            "lifter_id": 32550,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jennifer Berry",
+                "membershipNumber": "1075880",
+                "fullText": "3  -  171  Jennifer Berry  F  20  -  1075880  87  2024-05-04  -  Local  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNS0wNCIsIndlaWdodF9jbGFzcyI6OTl9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

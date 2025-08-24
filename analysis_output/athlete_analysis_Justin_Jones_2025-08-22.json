@@ -1,0 +1,194 @@
+{
+  "timestamp": "2025-08-22T05:05:51.269Z",
+  "athleteName": "Justin Jones",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "175265": [
+        {
+          "meet_id": 858,
+          "date": "2013-08-24",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Justin Jones",
+          "lifter_id": 6258,
+          "membershipNumbers": [
+            {
+              "athleteName": "Justin Jones",
+              "membershipNumber": "175265",
+              "fullText": "14  -  213  Justin Jones  M  28  -  175265  90.5  2013-08-24  -  Local  Michigan"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wOC0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wOC0yNCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ],
+      "1077884": [
+        {
+          "meet_id": 6601,
+          "date": "2024-10-22",
+          "age_category": "Open Men's",
+          "weight_class": "96kg",
+          "lifter_name": "Justin Jones",
+          "lifter_id": 6258,
+          "membershipNumbers": [
+            {
+              "athleteName": "Justin Jones",
+              "membershipNumber": "1077884",
+              "fullText": "3  -  179  Justin Jones  M  40  -  1077884  93.8  2024-10-22  -  Local  Michigan"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0yMiIsIndlaWdodF9jbGFzcyI6ODd9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 1196,
+        "date": "2014-06-07",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Justin Jones",
+        "lifter_id": 6258,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNi0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNi0wNyIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Justin Jones",
+    "splits": [
+      {
+        "newAthleteName": "Justin Jones (Person 1)",
+        "membershipNumber": "175265",
+        "competitionCount": 1,
+        "competitions": [
+          858
+        ]
+      },
+      {
+        "newAthleteName": "Justin Jones (Person 2)",
+        "membershipNumber": "1077884",
+        "competitionCount": 1,
+        "competitions": [
+          6601
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 1196,
+        "date": "2014-06-07",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Justin Jones",
+        "lifter_id": 6258,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNi0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNi0wNyIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Justin Jones",
+    "competitions": [
+      {
+        "meet_id": 6601,
+        "date": "2024-10-22",
+        "age_category": "Open Men's",
+        "weight_class": "96kg",
+        "lifter_name": "Justin Jones",
+        "lifter_id": 6258,
+        "membershipNumbers": [
+          {
+            "athleteName": "Justin Jones",
+            "membershipNumber": "1077884",
+            "fullText": "3  -  179  Justin Jones  M  40  -  1077884  93.8  2024-10-22  -  Local  Michigan"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0yMiIsIndlaWdodF9jbGFzcyI6ODd9"
+      },
+      {
+        "meet_id": 858,
+        "date": "2013-08-24",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Justin Jones",
+        "lifter_id": 6258,
+        "membershipNumbers": [
+          {
+            "athleteName": "Justin Jones",
+            "membershipNumber": "175265",
+            "fullText": "14  -  213  Justin Jones  M  28  -  175265  90.5  2013-08-24  -  Local  Michigan"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wOC0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wOC0yNCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 1196,
+        "date": "2014-06-07",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Justin Jones",
+        "lifter_id": 6258,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNi0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNi0wNyIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "175265": [
+          {
+            "meet_id": 858,
+            "date": "2013-08-24",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Justin Jones",
+            "lifter_id": 6258,
+            "membershipNumbers": [
+              {
+                "athleteName": "Justin Jones",
+                "membershipNumber": "175265",
+                "fullText": "14  -  213  Justin Jones  M  28  -  175265  90.5  2013-08-24  -  Local  Michigan"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wOC0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wOC0yNCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          }
+        ],
+        "1077884": [
+          {
+            "meet_id": 6601,
+            "date": "2024-10-22",
+            "age_category": "Open Men's",
+            "weight_class": "96kg",
+            "lifter_name": "Justin Jones",
+            "lifter_id": 6258,
+            "membershipNumbers": [
+              {
+                "athleteName": "Justin Jones",
+                "membershipNumber": "1077884",
+                "fullText": "3  -  179  Justin Jones  M  40  -  1077884  93.8  2024-10-22  -  Local  Michigan"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0yMiIsIndlaWdodF9jbGFzcyI6ODd9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 1196,
+          "date": "2014-06-07",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Justin Jones",
+          "lifter_id": 6258,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNi0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNi0wNyIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

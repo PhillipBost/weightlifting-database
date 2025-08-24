@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-22T05:20:23.876Z",
+  "athleteName": "Amy Romero",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "206359": [
+        {
+          "meet_id": 123,
+          "date": "2015-02-08",
+          "age_category": "Open Women's",
+          "weight_class": "+75 Kg",
+          "lifter_name": "Amy Romero",
+          "lifter_id": 7465,
+          "membershipNumbers": [
+            {
+              "athleteName": "Amy Romero",
+              "membershipNumber": "206359",
+              "fullText": "12  -  118  Amy Romero  F  24  HOOLIGAN WEIGHTLIFTING  206359  83.6  2015-02-08  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMi0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMi0wOCIsIndlaWdodF9jbGFzcyI6MzY4fQ=="
+        },
+        {
+          "meet_id": 126,
+          "date": "2015-04-04",
+          "age_category": "Open Women's",
+          "weight_class": "+75 Kg",
+          "lifter_name": "Amy Romero",
+          "lifter_id": 7465,
+          "membershipNumbers": [
+            {
+              "athleteName": "Amy Romero",
+              "membershipNumber": "206359",
+              "fullText": "10  -  127  Amy Romero  F  24  HOOLIGAN WEIGHTLIFTING  206359  82.7  2015-04-04  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0wNCIsIndlaWdodF9jbGFzcyI6MzY4fQ=="
+        },
+        {
+          "meet_id": 134,
+          "date": "2015-06-21",
+          "age_category": "Open Women's",
+          "weight_class": "+75 Kg",
+          "lifter_name": "Amy Romero",
+          "lifter_id": 7465,
+          "membershipNumbers": [
+            {
+              "athleteName": "Amy Romero",
+              "membershipNumber": "206359",
+              "fullText": "8  -  123  Amy Romero  F  24  HOOLIGAN WEIGHTLIFTING  206359  85.3  2015-06-21  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNi0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNi0yMSIsIndlaWdodF9jbGFzcyI6MzY4fQ=="
+        }
+      ],
+      "1013681": [
+        {
+          "meet_id": 2200,
+          "date": "2016-11-19",
+          "age_category": "Women's Masters (35-39)",
+          "weight_class": "+75 kg",
+          "lifter_name": "Amy Romero",
+          "lifter_id": 7465,
+          "membershipNumbers": [
+            {
+              "athleteName": "Amy Romero",
+              "membershipNumber": "1013681",
+              "fullText": "2  -  141  Amy Romero  F  37  -  1013681  100  2016-11-19  -  Local  Southern"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMS0xOSIsIndlaWdodF9jbGFzcyI6Mzg1fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Amy Romero",
+    "splits": [
+      {
+        "newAthleteName": "Amy Romero (Person 1)",
+        "membershipNumber": "206359",
+        "competitionCount": 3,
+        "competitions": [
+          123,
+          126,
+          134
+        ]
+      },
+      {
+        "newAthleteName": "Amy Romero (Person 2)",
+        "membershipNumber": "1013681",
+        "competitionCount": 1,
+        "competitions": [
+          2200
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Amy Romero",
+    "competitions": [
+      {
+        "meet_id": 123,
+        "date": "2015-02-08",
+        "age_category": "Open Women's",
+        "weight_class": "+75 Kg",
+        "lifter_name": "Amy Romero",
+        "lifter_id": 7465,
+        "membershipNumbers": [
+          {
+            "athleteName": "Amy Romero",
+            "membershipNumber": "206359",
+            "fullText": "12  -  118  Amy Romero  F  24  HOOLIGAN WEIGHTLIFTING  206359  83.6  2015-02-08  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMi0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMi0wOCIsIndlaWdodF9jbGFzcyI6MzY4fQ=="
+      },
+      {
+        "meet_id": 126,
+        "date": "2015-04-04",
+        "age_category": "Open Women's",
+        "weight_class": "+75 Kg",
+        "lifter_name": "Amy Romero",
+        "lifter_id": 7465,
+        "membershipNumbers": [
+          {
+            "athleteName": "Amy Romero",
+            "membershipNumber": "206359",
+            "fullText": "10  -  127  Amy Romero  F  24  HOOLIGAN WEIGHTLIFTING  206359  82.7  2015-04-04  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0wNCIsIndlaWdodF9jbGFzcyI6MzY4fQ=="
+      },
+      {
+        "meet_id": 134,
+        "date": "2015-06-21",
+        "age_category": "Open Women's",
+        "weight_class": "+75 Kg",
+        "lifter_name": "Amy Romero",
+        "lifter_id": 7465,
+        "membershipNumbers": [
+          {
+            "athleteName": "Amy Romero",
+            "membershipNumber": "206359",
+            "fullText": "8  -  123  Amy Romero  F  24  HOOLIGAN WEIGHTLIFTING  206359  85.3  2015-06-21  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNi0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNi0yMSIsIndlaWdodF9jbGFzcyI6MzY4fQ=="
+      },
+      {
+        "meet_id": 2200,
+        "date": "2016-11-19",
+        "age_category": "Women's Masters (35-39)",
+        "weight_class": "+75 kg",
+        "lifter_name": "Amy Romero",
+        "lifter_id": 7465,
+        "membershipNumbers": [
+          {
+            "athleteName": "Amy Romero",
+            "membershipNumber": "1013681",
+            "fullText": "2  -  141  Amy Romero  F  37  -  1013681  100  2016-11-19  -  Local  Southern"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMS0xOSIsIndlaWdodF9jbGFzcyI6Mzg1fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "206359": [
+          {
+            "meet_id": 123,
+            "date": "2015-02-08",
+            "age_category": "Open Women's",
+            "weight_class": "+75 Kg",
+            "lifter_name": "Amy Romero",
+            "lifter_id": 7465,
+            "membershipNumbers": [
+              {
+                "athleteName": "Amy Romero",
+                "membershipNumber": "206359",
+                "fullText": "12  -  118  Amy Romero  F  24  HOOLIGAN WEIGHTLIFTING  206359  83.6  2015-02-08  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMi0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMi0wOCIsIndlaWdodF9jbGFzcyI6MzY4fQ=="
+          },
+          {
+            "meet_id": 126,
+            "date": "2015-04-04",
+            "age_category": "Open Women's",
+            "weight_class": "+75 Kg",
+            "lifter_name": "Amy Romero",
+            "lifter_id": 7465,
+            "membershipNumbers": [
+              {
+                "athleteName": "Amy Romero",
+                "membershipNumber": "206359",
+                "fullText": "10  -  127  Amy Romero  F  24  HOOLIGAN WEIGHTLIFTING  206359  82.7  2015-04-04  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0wNCIsIndlaWdodF9jbGFzcyI6MzY4fQ=="
+          },
+          {
+            "meet_id": 134,
+            "date": "2015-06-21",
+            "age_category": "Open Women's",
+            "weight_class": "+75 Kg",
+            "lifter_name": "Amy Romero",
+            "lifter_id": 7465,
+            "membershipNumbers": [
+              {
+                "athleteName": "Amy Romero",
+                "membershipNumber": "206359",
+                "fullText": "8  -  123  Amy Romero  F  24  HOOLIGAN WEIGHTLIFTING  206359  85.3  2015-06-21  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNi0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNi0yMSIsIndlaWdodF9jbGFzcyI6MzY4fQ=="
+          }
+        ],
+        "1013681": [
+          {
+            "meet_id": 2200,
+            "date": "2016-11-19",
+            "age_category": "Women's Masters (35-39)",
+            "weight_class": "+75 kg",
+            "lifter_name": "Amy Romero",
+            "lifter_id": 7465,
+            "membershipNumbers": [
+              {
+                "athleteName": "Amy Romero",
+                "membershipNumber": "1013681",
+                "fullText": "2  -  141  Amy Romero  F  37  -  1013681  100  2016-11-19  -  Local  Southern"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMS0xOSIsIndlaWdodF9jbGFzcyI6Mzg1fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

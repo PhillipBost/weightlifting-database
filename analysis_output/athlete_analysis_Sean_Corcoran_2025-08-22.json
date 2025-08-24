@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T07:05:10.007Z",
+  "athleteName": "Sean Corcoran",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1002388": [
+        {
+          "meet_id": 1689,
+          "date": "2016-03-26",
+          "age_category": "Open Men's",
+          "weight_class": "69 kg",
+          "lifter_name": "Sean Corcoran",
+          "lifter_id": 21371,
+          "membershipNumbers": [
+            {
+              "athleteName": "Sean Corcoran",
+              "membershipNumber": "1002388",
+              "fullText": "24  -  147  Sean Corcoran  M  22  -  1002388  67  2016-03-26  -  Local  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMy0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMy0yNiIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+        }
+      ],
+      "1007427": [
+        {
+          "meet_id": 1653,
+          "date": "2016-06-12",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Sean Corcoran",
+          "lifter_id": 21371,
+          "membershipNumbers": [
+            {
+              "athleteName": "Sean Corcoran",
+              "membershipNumber": "1007427",
+              "fullText": "23  -  160  Sean Corcoran  M  26  -  1007427  76.7  2016-06-12  -  Local  Pennsylvania-West Virginia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0xMiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        },
+        {
+          "meet_id": 1664,
+          "date": "2016-12-17",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Sean Corcoran",
+          "lifter_id": 21371,
+          "membershipNumbers": [
+            {
+              "athleteName": "Sean Corcoran",
+              "membershipNumber": "1007427",
+              "fullText": "14  -  187  Sean Corcoran  M  26  -  1007427  74.5  2016-12-17  -  Local  Pennsylvania-West Virginia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMi0xNyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Sean Corcoran",
+    "splits": [
+      {
+        "newAthleteName": "Sean Corcoran (Person 1)",
+        "membershipNumber": "1002388",
+        "competitionCount": 1,
+        "competitions": [
+          1689
+        ]
+      },
+      {
+        "newAthleteName": "Sean Corcoran (Person 2)",
+        "membershipNumber": "1007427",
+        "competitionCount": 2,
+        "competitions": [
+          1653,
+          1664
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Sean Corcoran",
+    "competitions": [
+      {
+        "meet_id": 1653,
+        "date": "2016-06-12",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Sean Corcoran",
+        "lifter_id": 21371,
+        "membershipNumbers": [
+          {
+            "athleteName": "Sean Corcoran",
+            "membershipNumber": "1007427",
+            "fullText": "23  -  160  Sean Corcoran  M  26  -  1007427  76.7  2016-06-12  -  Local  Pennsylvania-West Virginia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0xMiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 1689,
+        "date": "2016-03-26",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "Sean Corcoran",
+        "lifter_id": 21371,
+        "membershipNumbers": [
+          {
+            "athleteName": "Sean Corcoran",
+            "membershipNumber": "1002388",
+            "fullText": "24  -  147  Sean Corcoran  M  22  -  1002388  67  2016-03-26  -  Local  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMy0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMy0yNiIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      },
+      {
+        "meet_id": 1664,
+        "date": "2016-12-17",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Sean Corcoran",
+        "lifter_id": 21371,
+        "membershipNumbers": [
+          {
+            "athleteName": "Sean Corcoran",
+            "membershipNumber": "1007427",
+            "fullText": "14  -  187  Sean Corcoran  M  26  -  1007427  74.5  2016-12-17  -  Local  Pennsylvania-West Virginia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMi0xNyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1002388": [
+          {
+            "meet_id": 1689,
+            "date": "2016-03-26",
+            "age_category": "Open Men's",
+            "weight_class": "69 kg",
+            "lifter_name": "Sean Corcoran",
+            "lifter_id": 21371,
+            "membershipNumbers": [
+              {
+                "athleteName": "Sean Corcoran",
+                "membershipNumber": "1002388",
+                "fullText": "24  -  147  Sean Corcoran  M  22  -  1002388  67  2016-03-26  -  Local  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMy0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMy0yNiIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+          }
+        ],
+        "1007427": [
+          {
+            "meet_id": 1653,
+            "date": "2016-06-12",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Sean Corcoran",
+            "lifter_id": 21371,
+            "membershipNumbers": [
+              {
+                "athleteName": "Sean Corcoran",
+                "membershipNumber": "1007427",
+                "fullText": "23  -  160  Sean Corcoran  M  26  -  1007427  76.7  2016-06-12  -  Local  Pennsylvania-West Virginia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0xMiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          },
+          {
+            "meet_id": 1664,
+            "date": "2016-12-17",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Sean Corcoran",
+            "lifter_id": 21371,
+            "membershipNumbers": [
+              {
+                "athleteName": "Sean Corcoran",
+                "membershipNumber": "1007427",
+                "fullText": "14  -  187  Sean Corcoran  M  26  -  1007427  74.5  2016-12-17  -  Local  Pennsylvania-West Virginia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMi0xNyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

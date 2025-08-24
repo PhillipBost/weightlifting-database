@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-22T23:46:26.583Z",
+  "athleteName": "Thomas Schmidt",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "173107": [
+        {
+          "meet_id": 192,
+          "date": "2015-12-13",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Thomas Schmidt",
+          "lifter_id": 9054,
+          "membershipNumbers": [
+            {
+              "athleteName": "Thomas Schmidt",
+              "membershipNumber": "173107",
+              "fullText": "14  -  205  Thomas Schmidt  M  37  GREEN BAY BARBELL  173107  76.1  2015-12-13  -  Local  Wisconsin"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMi0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMi0xMyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        },
+        {
+          "meet_id": 189,
+          "date": "2015-06-12",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Thomas Schmidt",
+          "lifter_id": 9054,
+          "membershipNumbers": [
+            {
+              "athleteName": "Thomas Schmidt",
+              "membershipNumber": "173107",
+              "fullText": "3  -  202  Thomas Schmidt  M  37  GREEN BAY BARBELL  173107  82.2  2015-06-12  -  Local  Wisconsin"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNi0xMiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ],
+      "185874": [
+        {
+          "meet_id": 3159,
+          "date": "2018-09-01",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Thomas Schmidt",
+          "lifter_id": 9054,
+          "membershipNumbers": [
+            {
+              "athleteName": "Thomas Schmidt",
+              "membershipNumber": "185874",
+              "fullText": "19  -  195  Thomas Schmidt  M  22  Nadine Sikora  185874  76.4  2018-09-01  -  Local  Michigan"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOS0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOS0wMSIsIndlaWdodF9jbGFzcyI6ODV9"
+        },
+        {
+          "meet_id": 3164,
+          "date": "2018-03-31",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Thomas Schmidt",
+          "lifter_id": 9054,
+          "membershipNumbers": [
+            {
+              "athleteName": "Thomas Schmidt",
+              "membershipNumber": "185874",
+              "fullText": "9  -  185  Thomas Schmidt  M  22  Nadine Sikora  185874  76.8  2018-03-31  -  Local  Michigan"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMy0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMy0zMSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Thomas Schmidt",
+    "splits": [
+      {
+        "newAthleteName": "Thomas Schmidt (Person 1)",
+        "membershipNumber": "173107",
+        "competitionCount": 2,
+        "competitions": [
+          192,
+          189
+        ]
+      },
+      {
+        "newAthleteName": "Thomas Schmidt (Person 2)",
+        "membershipNumber": "185874",
+        "competitionCount": 2,
+        "competitions": [
+          3159,
+          3164
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Thomas Schmidt",
+    "competitions": [
+      {
+        "meet_id": 192,
+        "date": "2015-12-13",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Thomas Schmidt",
+        "lifter_id": 9054,
+        "membershipNumbers": [
+          {
+            "athleteName": "Thomas Schmidt",
+            "membershipNumber": "173107",
+            "fullText": "14  -  205  Thomas Schmidt  M  37  GREEN BAY BARBELL  173107  76.1  2015-12-13  -  Local  Wisconsin"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMi0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMi0xMyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 189,
+        "date": "2015-06-12",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Thomas Schmidt",
+        "lifter_id": 9054,
+        "membershipNumbers": [
+          {
+            "athleteName": "Thomas Schmidt",
+            "membershipNumber": "173107",
+            "fullText": "3  -  202  Thomas Schmidt  M  37  GREEN BAY BARBELL  173107  82.2  2015-06-12  -  Local  Wisconsin"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNi0xMiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 3159,
+        "date": "2018-09-01",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Thomas Schmidt",
+        "lifter_id": 9054,
+        "membershipNumbers": [
+          {
+            "athleteName": "Thomas Schmidt",
+            "membershipNumber": "185874",
+            "fullText": "19  -  195  Thomas Schmidt  M  22  Nadine Sikora  185874  76.4  2018-09-01  -  Local  Michigan"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOS0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOS0wMSIsIndlaWdodF9jbGFzcyI6ODV9"
+      },
+      {
+        "meet_id": 3164,
+        "date": "2018-03-31",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Thomas Schmidt",
+        "lifter_id": 9054,
+        "membershipNumbers": [
+          {
+            "athleteName": "Thomas Schmidt",
+            "membershipNumber": "185874",
+            "fullText": "9  -  185  Thomas Schmidt  M  22  Nadine Sikora  185874  76.8  2018-03-31  -  Local  Michigan"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMy0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMy0zMSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "173107": [
+          {
+            "meet_id": 192,
+            "date": "2015-12-13",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Thomas Schmidt",
+            "lifter_id": 9054,
+            "membershipNumbers": [
+              {
+                "athleteName": "Thomas Schmidt",
+                "membershipNumber": "173107",
+                "fullText": "14  -  205  Thomas Schmidt  M  37  GREEN BAY BARBELL  173107  76.1  2015-12-13  -  Local  Wisconsin"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMi0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMi0xMyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          },
+          {
+            "meet_id": 189,
+            "date": "2015-06-12",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Thomas Schmidt",
+            "lifter_id": 9054,
+            "membershipNumbers": [
+              {
+                "athleteName": "Thomas Schmidt",
+                "membershipNumber": "173107",
+                "fullText": "3  -  202  Thomas Schmidt  M  37  GREEN BAY BARBELL  173107  82.2  2015-06-12  -  Local  Wisconsin"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNi0xMiIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          }
+        ],
+        "185874": [
+          {
+            "meet_id": 3159,
+            "date": "2018-09-01",
+            "age_category": "Open Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Thomas Schmidt",
+            "lifter_id": 9054,
+            "membershipNumbers": [
+              {
+                "athleteName": "Thomas Schmidt",
+                "membershipNumber": "185874",
+                "fullText": "19  -  195  Thomas Schmidt  M  22  Nadine Sikora  185874  76.4  2018-09-01  -  Local  Michigan"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOS0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOS0wMSIsIndlaWdodF9jbGFzcyI6ODV9"
+          },
+          {
+            "meet_id": 3164,
+            "date": "2018-03-31",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Thomas Schmidt",
+            "lifter_id": 9054,
+            "membershipNumbers": [
+              {
+                "athleteName": "Thomas Schmidt",
+                "membershipNumber": "185874",
+                "fullText": "9  -  185  Thomas Schmidt  M  22  Nadine Sikora  185874  76.8  2018-03-31  -  Local  Michigan"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMy0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMy0zMSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

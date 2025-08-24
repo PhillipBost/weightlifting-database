@@ -1,0 +1,332 @@
+{
+  "timestamp": "2025-08-22T10:23:44.007Z",
+  "athleteName": "Jessica White",
+  "totalCompetitions": 6,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1013906": [
+        {
+          "meet_id": 2184,
+          "date": "2017-02-05",
+          "age_category": "Women's Masters (35-39)",
+          "weight_class": "69 kg",
+          "lifter_name": "Jessica White",
+          "lifter_id": 27475,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jessica White",
+              "membershipNumber": "1013906",
+              "fullText": "2  -  113  Jessica White  F  36  KOP Barbell  1013906  65.61  2017-02-05  -  Local  Pennsylvania-West Virginia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0wNSIsIndlaWdodF9jbGFzcyI6MzgzfQ=="
+        }
+      ],
+      "1044534": [
+        {
+          "meet_id": 4856,
+          "date": "2021-03-27",
+          "age_category": "Open Women's",
+          "weight_class": "76kg",
+          "lifter_name": "Jessica White",
+          "lifter_id": 27475,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jessica White",
+              "membershipNumber": "1044534",
+              "fullText": "15  -  91  Jessica White  F  32  Empire Weightlifting  1044534  76  2021-03-27  -  Local  New York"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMy0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMy0yNyIsIndlaWdodF9jbGFzcyI6OTd9"
+        },
+        {
+          "meet_id": 4545,
+          "date": "2020-12-12",
+          "age_category": "Open Women's",
+          "weight_class": "71kg",
+          "lifter_name": "Jessica White",
+          "lifter_id": 27475,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jessica White",
+              "membershipNumber": "1044534",
+              "fullText": "23  -  91  Jessica White  F  31  Empire Weightlifting  1044534  70.9  2020-12-12  -  Local  New York"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0xMi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0xMi0xMiIsIndlaWdodF9jbGFzcyI6OTZ9"
+        },
+        {
+          "meet_id": 6183,
+          "date": "2024-01-13",
+          "age_category": "Open Women's",
+          "weight_class": "81kg",
+          "lifter_name": "Jessica White",
+          "lifter_id": 27475,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jessica White",
+              "membershipNumber": "1044534",
+              "fullText": "16  -  88  Jessica White  F  35  Empire Weightlifting  1044534  80.6  2024-01-13  -  Local  New York"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMS0xMyIsIndlaWdodF9jbGFzcyI6OTh9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 4164,
+        "date": "2019-08-24",
+        "age_category": "Open Women's",
+        "weight_class": "76kg",
+        "lifter_name": "Jessica White",
+        "lifter_id": 27475,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOC0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOC0yNCIsIndlaWdodF9jbGFzcyI6OTd9"
+      },
+      {
+        "meet_id": 4294,
+        "date": "2019-12-14",
+        "age_category": "Open Women's",
+        "weight_class": "71kg",
+        "lifter_name": "Jessica White",
+        "lifter_id": 27475,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMi0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMi0xNCIsIndlaWdodF9jbGFzcyI6OTZ9"
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Jessica White",
+    "splits": [
+      {
+        "newAthleteName": "Jessica White (Person 1)",
+        "membershipNumber": "1013906",
+        "competitionCount": 1,
+        "competitions": [
+          2184
+        ]
+      },
+      {
+        "newAthleteName": "Jessica White (Person 2)",
+        "membershipNumber": "1044534",
+        "competitionCount": 3,
+        "competitions": [
+          4856,
+          4545,
+          6183
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 4164,
+        "date": "2019-08-24",
+        "age_category": "Open Women's",
+        "weight_class": "76kg",
+        "lifter_name": "Jessica White",
+        "lifter_id": 27475,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOC0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOC0yNCIsIndlaWdodF9jbGFzcyI6OTd9"
+      },
+      {
+        "meet_id": 4294,
+        "date": "2019-12-14",
+        "age_category": "Open Women's",
+        "weight_class": "71kg",
+        "lifter_name": "Jessica White",
+        "lifter_id": 27475,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMi0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMi0xNCIsIndlaWdodF9jbGFzcyI6OTZ9"
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Jessica White",
+    "competitions": [
+      {
+        "meet_id": 2184,
+        "date": "2017-02-05",
+        "age_category": "Women's Masters (35-39)",
+        "weight_class": "69 kg",
+        "lifter_name": "Jessica White",
+        "lifter_id": 27475,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jessica White",
+            "membershipNumber": "1013906",
+            "fullText": "2  -  113  Jessica White  F  36  KOP Barbell  1013906  65.61  2017-02-05  -  Local  Pennsylvania-West Virginia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0wNSIsIndlaWdodF9jbGFzcyI6MzgzfQ=="
+      },
+      {
+        "meet_id": 4164,
+        "date": "2019-08-24",
+        "age_category": "Open Women's",
+        "weight_class": "76kg",
+        "lifter_name": "Jessica White",
+        "lifter_id": 27475,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOC0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOC0yNCIsIndlaWdodF9jbGFzcyI6OTd9"
+      },
+      {
+        "meet_id": 4856,
+        "date": "2021-03-27",
+        "age_category": "Open Women's",
+        "weight_class": "76kg",
+        "lifter_name": "Jessica White",
+        "lifter_id": 27475,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jessica White",
+            "membershipNumber": "1044534",
+            "fullText": "15  -  91  Jessica White  F  32  Empire Weightlifting  1044534  76  2021-03-27  -  Local  New York"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMy0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMy0yNyIsIndlaWdodF9jbGFzcyI6OTd9"
+      },
+      {
+        "meet_id": 4294,
+        "date": "2019-12-14",
+        "age_category": "Open Women's",
+        "weight_class": "71kg",
+        "lifter_name": "Jessica White",
+        "lifter_id": 27475,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMi0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMi0xNCIsIndlaWdodF9jbGFzcyI6OTZ9"
+      },
+      {
+        "meet_id": 4545,
+        "date": "2020-12-12",
+        "age_category": "Open Women's",
+        "weight_class": "71kg",
+        "lifter_name": "Jessica White",
+        "lifter_id": 27475,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jessica White",
+            "membershipNumber": "1044534",
+            "fullText": "23  -  91  Jessica White  F  31  Empire Weightlifting  1044534  70.9  2020-12-12  -  Local  New York"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0xMi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0xMi0xMiIsIndlaWdodF9jbGFzcyI6OTZ9"
+      },
+      {
+        "meet_id": 6183,
+        "date": "2024-01-13",
+        "age_category": "Open Women's",
+        "weight_class": "81kg",
+        "lifter_name": "Jessica White",
+        "lifter_id": 27475,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jessica White",
+            "membershipNumber": "1044534",
+            "fullText": "16  -  88  Jessica White  F  35  Empire Weightlifting  1044534  80.6  2024-01-13  -  Local  New York"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMS0xMyIsIndlaWdodF9jbGFzcyI6OTh9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1013906": [
+          {
+            "meet_id": 2184,
+            "date": "2017-02-05",
+            "age_category": "Women's Masters (35-39)",
+            "weight_class": "69 kg",
+            "lifter_name": "Jessica White",
+            "lifter_id": 27475,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jessica White",
+                "membershipNumber": "1013906",
+                "fullText": "2  -  113  Jessica White  F  36  KOP Barbell  1013906  65.61  2017-02-05  -  Local  Pennsylvania-West Virginia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0wNSIsIndlaWdodF9jbGFzcyI6MzgzfQ=="
+          }
+        ],
+        "1044534": [
+          {
+            "meet_id": 4856,
+            "date": "2021-03-27",
+            "age_category": "Open Women's",
+            "weight_class": "76kg",
+            "lifter_name": "Jessica White",
+            "lifter_id": 27475,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jessica White",
+                "membershipNumber": "1044534",
+                "fullText": "15  -  91  Jessica White  F  32  Empire Weightlifting  1044534  76  2021-03-27  -  Local  New York"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMy0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMy0yNyIsIndlaWdodF9jbGFzcyI6OTd9"
+          },
+          {
+            "meet_id": 4545,
+            "date": "2020-12-12",
+            "age_category": "Open Women's",
+            "weight_class": "71kg",
+            "lifter_name": "Jessica White",
+            "lifter_id": 27475,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jessica White",
+                "membershipNumber": "1044534",
+                "fullText": "23  -  91  Jessica White  F  31  Empire Weightlifting  1044534  70.9  2020-12-12  -  Local  New York"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0xMi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0xMi0xMiIsIndlaWdodF9jbGFzcyI6OTZ9"
+          },
+          {
+            "meet_id": 6183,
+            "date": "2024-01-13",
+            "age_category": "Open Women's",
+            "weight_class": "81kg",
+            "lifter_name": "Jessica White",
+            "lifter_id": 27475,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jessica White",
+                "membershipNumber": "1044534",
+                "fullText": "16  -  88  Jessica White  F  35  Empire Weightlifting  1044534  80.6  2024-01-13  -  Local  New York"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMS0xMyIsIndlaWdodF9jbGFzcyI6OTh9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 4164,
+          "date": "2019-08-24",
+          "age_category": "Open Women's",
+          "weight_class": "76kg",
+          "lifter_name": "Jessica White",
+          "lifter_id": 27475,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOC0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOC0yNCIsIndlaWdodF9jbGFzcyI6OTd9"
+        },
+        {
+          "meet_id": 4294,
+          "date": "2019-12-14",
+          "age_category": "Open Women's",
+          "weight_class": "71kg",
+          "lifter_name": "Jessica White",
+          "lifter_id": 27475,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMi0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMi0xNCIsIndlaWdodF9jbGFzcyI6OTZ9"
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

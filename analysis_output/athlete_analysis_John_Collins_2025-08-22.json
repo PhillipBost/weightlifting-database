@@ -1,0 +1,341 @@
+{
+  "timestamp": "2025-08-22T03:29:56.864Z",
+  "athleteName": "John Collins",
+  "totalCompetitions": 6,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "165254": [
+        {
+          "meet_id": 780,
+          "date": "2013-02-10",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "John Collins",
+          "lifter_id": 88,
+          "membershipNumbers": [
+            {
+              "athleteName": "John Collins",
+              "membershipNumber": "165254",
+              "fullText": "2  -  222  John Collins  M  25  HUMBLE BEAST WEIGHTLIFTING  165254  92.25  2013-02-10  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMi0xMCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        },
+        {
+          "meet_id": 99,
+          "date": "2015-04-19",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "John Collins",
+          "lifter_id": 88,
+          "membershipNumbers": [
+            {
+              "athleteName": "John Collins",
+              "membershipNumber": "165254",
+              "fullText": "24  -  219  John Collins  M  27  HUMBLE BEAST WEIGHTLIFTING  165254  90.1  2015-04-19  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0xOSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        },
+        {
+          "meet_id": 781,
+          "date": "2013-04-21",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "John Collins",
+          "lifter_id": 88,
+          "membershipNumbers": [
+            {
+              "athleteName": "John Collins",
+              "membershipNumber": "165254",
+              "fullText": "2  -  240  John Collins  M  25  HUMBLE BEAST WEIGHTLIFTING  165254  91.78  2013-04-21  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNC0yMSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ],
+      "178096": [
+        {
+          "meet_id": 819,
+          "date": "2013-06-22",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "John Collins",
+          "lifter_id": 88,
+          "membershipNumbers": [
+            {
+              "athleteName": "John Collins",
+              "membershipNumber": "178096",
+              "fullText": "25  -  192  John Collins  M  16  -  178096  77  2013-06-22  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNi0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNi0yMiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        },
+        {
+          "meet_id": 586,
+          "date": "2012-09-22",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "John Collins",
+          "lifter_id": 88,
+          "membershipNumbers": [
+            {
+              "athleteName": "John Collins",
+              "membershipNumber": "178096",
+              "fullText": "3  -  147  John Collins  M  15  -  178096  74.1  2012-09-22  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wOS0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wOS0yMiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 776,
+        "date": "2012-02-11",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "John Collins",
+        "lifter_id": 88,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wMi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wMi0xMSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "John Collins",
+    "splits": [
+      {
+        "newAthleteName": "John Collins (Person 1)",
+        "membershipNumber": "165254",
+        "competitionCount": 3,
+        "competitions": [
+          780,
+          99,
+          781
+        ]
+      },
+      {
+        "newAthleteName": "John Collins (Person 2)",
+        "membershipNumber": "178096",
+        "competitionCount": 2,
+        "competitions": [
+          819,
+          586
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 776,
+        "date": "2012-02-11",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "John Collins",
+        "lifter_id": 88,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wMi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wMi0xMSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "John Collins",
+    "competitions": [
+      {
+        "meet_id": 780,
+        "date": "2013-02-10",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "John Collins",
+        "lifter_id": 88,
+        "membershipNumbers": [
+          {
+            "athleteName": "John Collins",
+            "membershipNumber": "165254",
+            "fullText": "2  -  222  John Collins  M  25  HUMBLE BEAST WEIGHTLIFTING  165254  92.25  2013-02-10  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMi0xMCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 99,
+        "date": "2015-04-19",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "John Collins",
+        "lifter_id": 88,
+        "membershipNumbers": [
+          {
+            "athleteName": "John Collins",
+            "membershipNumber": "165254",
+            "fullText": "24  -  219  John Collins  M  27  HUMBLE BEAST WEIGHTLIFTING  165254  90.1  2015-04-19  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0xOSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 819,
+        "date": "2013-06-22",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "John Collins",
+        "lifter_id": 88,
+        "membershipNumbers": [
+          {
+            "athleteName": "John Collins",
+            "membershipNumber": "178096",
+            "fullText": "25  -  192  John Collins  M  16  -  178096  77  2013-06-22  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNi0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNi0yMiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 586,
+        "date": "2012-09-22",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "John Collins",
+        "lifter_id": 88,
+        "membershipNumbers": [
+          {
+            "athleteName": "John Collins",
+            "membershipNumber": "178096",
+            "fullText": "3  -  147  John Collins  M  15  -  178096  74.1  2012-09-22  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wOS0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wOS0yMiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 776,
+        "date": "2012-02-11",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "John Collins",
+        "lifter_id": 88,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wMi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wMi0xMSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 781,
+        "date": "2013-04-21",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "John Collins",
+        "lifter_id": 88,
+        "membershipNumbers": [
+          {
+            "athleteName": "John Collins",
+            "membershipNumber": "165254",
+            "fullText": "2  -  240  John Collins  M  25  HUMBLE BEAST WEIGHTLIFTING  165254  91.78  2013-04-21  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNC0yMSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "165254": [
+          {
+            "meet_id": 780,
+            "date": "2013-02-10",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "John Collins",
+            "lifter_id": 88,
+            "membershipNumbers": [
+              {
+                "athleteName": "John Collins",
+                "membershipNumber": "165254",
+                "fullText": "2  -  222  John Collins  M  25  HUMBLE BEAST WEIGHTLIFTING  165254  92.25  2013-02-10  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMi0xMCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          },
+          {
+            "meet_id": 99,
+            "date": "2015-04-19",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "John Collins",
+            "lifter_id": 88,
+            "membershipNumbers": [
+              {
+                "athleteName": "John Collins",
+                "membershipNumber": "165254",
+                "fullText": "24  -  219  John Collins  M  27  HUMBLE BEAST WEIGHTLIFTING  165254  90.1  2015-04-19  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0xOSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          },
+          {
+            "meet_id": 781,
+            "date": "2013-04-21",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "John Collins",
+            "lifter_id": 88,
+            "membershipNumbers": [
+              {
+                "athleteName": "John Collins",
+                "membershipNumber": "165254",
+                "fullText": "2  -  240  John Collins  M  25  HUMBLE BEAST WEIGHTLIFTING  165254  91.78  2013-04-21  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNC0yMSIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          }
+        ],
+        "178096": [
+          {
+            "meet_id": 819,
+            "date": "2013-06-22",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "John Collins",
+            "lifter_id": 88,
+            "membershipNumbers": [
+              {
+                "athleteName": "John Collins",
+                "membershipNumber": "178096",
+                "fullText": "25  -  192  John Collins  M  16  -  178096  77  2013-06-22  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNi0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNi0yMiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          },
+          {
+            "meet_id": 586,
+            "date": "2012-09-22",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "John Collins",
+            "lifter_id": 88,
+            "membershipNumbers": [
+              {
+                "athleteName": "John Collins",
+                "membershipNumber": "178096",
+                "fullText": "3  -  147  John Collins  M  15  -  178096  74.1  2012-09-22  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wOS0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wOS0yMiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 776,
+          "date": "2012-02-11",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "John Collins",
+          "lifter_id": 88,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wMi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wMi0xMSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

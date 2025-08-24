@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T20:32:00.418Z",
+  "athleteName": "Jordan Miller",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "136857": [
+        {
+          "meet_id": 2103,
+          "date": "2016-10-23",
+          "age_category": "Open Men's",
+          "weight_class": "62 kg",
+          "lifter_name": "Jordan Miller",
+          "lifter_id": 1656,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jordan Miller",
+              "membershipNumber": "136857",
+              "fullText": "3  -  200  Jordan Miller  M  28  Bennito Weightlifting Club  136857  61.4  2016-10-23  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0yMyIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+        },
+        {
+          "meet_id": 704,
+          "date": "2012-11-11",
+          "age_category": "Open Men's",
+          "weight_class": "62 kg",
+          "lifter_name": "Jordan Miller",
+          "lifter_id": 1656,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jordan Miller",
+              "membershipNumber": "136857",
+              "fullText": "2  -  220  Jordan Miller  M  24  Bennito Weightlifting Club  136857  61.6  2012-11-11  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0xMS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0xMS0xMSIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+        }
+      ],
+      "187821": [
+        {
+          "meet_id": 689,
+          "date": "2013-09-28",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Jordan Miller",
+          "lifter_id": 1656,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jordan Miller",
+              "membershipNumber": "187821",
+              "fullText": "25  -  162  Jordan Miller  M  22  WEIGHTLIFTING ACADEMY  187821  89.3  2013-09-28  -  Local  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wOS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wOS0yOCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Jordan Miller",
+    "splits": [
+      {
+        "newAthleteName": "Jordan Miller (Person 1)",
+        "membershipNumber": "136857",
+        "competitionCount": 2,
+        "competitions": [
+          2103,
+          704
+        ]
+      },
+      {
+        "newAthleteName": "Jordan Miller (Person 2)",
+        "membershipNumber": "187821",
+        "competitionCount": 1,
+        "competitions": [
+          689
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Jordan Miller",
+    "competitions": [
+      {
+        "meet_id": 689,
+        "date": "2013-09-28",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Jordan Miller",
+        "lifter_id": 1656,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jordan Miller",
+            "membershipNumber": "187821",
+            "fullText": "25  -  162  Jordan Miller  M  22  WEIGHTLIFTING ACADEMY  187821  89.3  2013-09-28  -  Local  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wOS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wOS0yOCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 2103,
+        "date": "2016-10-23",
+        "age_category": "Open Men's",
+        "weight_class": "62 kg",
+        "lifter_name": "Jordan Miller",
+        "lifter_id": 1656,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jordan Miller",
+            "membershipNumber": "136857",
+            "fullText": "3  -  200  Jordan Miller  M  28  Bennito Weightlifting Club  136857  61.4  2016-10-23  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0yMyIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+      },
+      {
+        "meet_id": 704,
+        "date": "2012-11-11",
+        "age_category": "Open Men's",
+        "weight_class": "62 kg",
+        "lifter_name": "Jordan Miller",
+        "lifter_id": 1656,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jordan Miller",
+            "membershipNumber": "136857",
+            "fullText": "2  -  220  Jordan Miller  M  24  Bennito Weightlifting Club  136857  61.6  2012-11-11  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0xMS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0xMS0xMSIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "136857": [
+          {
+            "meet_id": 2103,
+            "date": "2016-10-23",
+            "age_category": "Open Men's",
+            "weight_class": "62 kg",
+            "lifter_name": "Jordan Miller",
+            "lifter_id": 1656,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jordan Miller",
+                "membershipNumber": "136857",
+                "fullText": "3  -  200  Jordan Miller  M  28  Bennito Weightlifting Club  136857  61.4  2016-10-23  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0yMyIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+          },
+          {
+            "meet_id": 704,
+            "date": "2012-11-11",
+            "age_category": "Open Men's",
+            "weight_class": "62 kg",
+            "lifter_name": "Jordan Miller",
+            "lifter_id": 1656,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jordan Miller",
+                "membershipNumber": "136857",
+                "fullText": "2  -  220  Jordan Miller  M  24  Bennito Weightlifting Club  136857  61.6  2012-11-11  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0xMS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0xMS0xMSIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+          }
+        ],
+        "187821": [
+          {
+            "meet_id": 689,
+            "date": "2013-09-28",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Jordan Miller",
+            "lifter_id": 1656,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jordan Miller",
+                "membershipNumber": "187821",
+                "fullText": "25  -  162  Jordan Miller  M  22  WEIGHTLIFTING ACADEMY  187821  89.3  2013-09-28  -  Local  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wOS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wOS0yOCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

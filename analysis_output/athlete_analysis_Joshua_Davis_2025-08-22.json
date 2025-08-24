@@ -1,0 +1,394 @@
+{
+  "timestamp": "2025-08-22T16:34:58.479Z",
+  "athleteName": "Joshua Davis",
+  "totalCompetitions": 8,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "152487": [
+        {
+          "meet_id": 2891,
+          "date": "2018-09-16",
+          "age_category": "Men's Masters (40-44)",
+          "weight_class": "+109kg",
+          "lifter_name": "Joshua Davis",
+          "lifter_id": 7997,
+          "membershipNumbers": [
+            {
+              "athleteName": "Joshua Davis",
+              "membershipNumber": "152487",
+              "fullText": "5  -  215  Joshua Davis  M  40  Count By Color Weightlifting  152487  165.49  2018-09-16  -  National  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOS0xNiIsIndlaWdodF9jbGFzcyI6MTMwfQ=="
+        }
+      ],
+      "202300": [
+        {
+          "meet_id": 1594,
+          "date": "2014-09-28",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Joshua Davis",
+          "lifter_id": 7997,
+          "membershipNumbers": [
+            {
+              "athleteName": "Joshua Davis",
+              "membershipNumber": "202300",
+              "fullText": "23  -  165  Joshua Davis  M  23  -  202300  82.1  2014-09-28  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOS0yOCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 139,
+        "date": "2015-07-18",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Joshua Davis",
+        "lifter_id": 7997,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 469,
+        "date": "2015-11-15",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Joshua Davis",
+        "lifter_id": 7997,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 1969,
+        "date": "2016-04-03",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Joshua Davis",
+        "lifter_id": 7997,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 2992,
+        "date": "2018-04-15",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Joshua Davis",
+        "lifter_id": 7997,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 141,
+        "date": "2015-08-01",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Joshua Davis",
+        "lifter_id": 7997,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 3322,
+        "date": "2018-06-03",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Joshua Davis",
+        "lifter_id": 7997,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Joshua Davis",
+    "splits": [
+      {
+        "newAthleteName": "Joshua Davis (Person 1)",
+        "membershipNumber": "152487",
+        "competitionCount": 1,
+        "competitions": [
+          2891
+        ]
+      },
+      {
+        "newAthleteName": "Joshua Davis (Person 2)",
+        "membershipNumber": "202300",
+        "competitionCount": 1,
+        "competitions": [
+          1594
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 139,
+        "date": "2015-07-18",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Joshua Davis",
+        "lifter_id": 7997,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 469,
+        "date": "2015-11-15",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Joshua Davis",
+        "lifter_id": 7997,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 1969,
+        "date": "2016-04-03",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Joshua Davis",
+        "lifter_id": 7997,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 2992,
+        "date": "2018-04-15",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Joshua Davis",
+        "lifter_id": 7997,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 141,
+        "date": "2015-08-01",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Joshua Davis",
+        "lifter_id": 7997,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 3322,
+        "date": "2018-06-03",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Joshua Davis",
+        "lifter_id": 7997,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Joshua Davis",
+    "competitions": [
+      {
+        "meet_id": 139,
+        "date": "2015-07-18",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Joshua Davis",
+        "lifter_id": 7997,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 469,
+        "date": "2015-11-15",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Joshua Davis",
+        "lifter_id": 7997,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 1969,
+        "date": "2016-04-03",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Joshua Davis",
+        "lifter_id": 7997,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 2992,
+        "date": "2018-04-15",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Joshua Davis",
+        "lifter_id": 7997,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 141,
+        "date": "2015-08-01",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Joshua Davis",
+        "lifter_id": 7997,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 1594,
+        "date": "2014-09-28",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Joshua Davis",
+        "lifter_id": 7997,
+        "membershipNumbers": [
+          {
+            "athleteName": "Joshua Davis",
+            "membershipNumber": "202300",
+            "fullText": "23  -  165  Joshua Davis  M  23  -  202300  82.1  2014-09-28  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOS0yOCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 2891,
+        "date": "2018-09-16",
+        "age_category": "Men's Masters (40-44)",
+        "weight_class": "+109kg",
+        "lifter_name": "Joshua Davis",
+        "lifter_id": 7997,
+        "membershipNumbers": [
+          {
+            "athleteName": "Joshua Davis",
+            "membershipNumber": "152487",
+            "fullText": "5  -  215  Joshua Davis  M  40  Count By Color Weightlifting  152487  165.49  2018-09-16  -  National  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOS0xNiIsIndlaWdodF9jbGFzcyI6MTMwfQ=="
+      },
+      {
+        "meet_id": 3322,
+        "date": "2018-06-03",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Joshua Davis",
+        "lifter_id": 7997,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "152487": [
+          {
+            "meet_id": 2891,
+            "date": "2018-09-16",
+            "age_category": "Men's Masters (40-44)",
+            "weight_class": "+109kg",
+            "lifter_name": "Joshua Davis",
+            "lifter_id": 7997,
+            "membershipNumbers": [
+              {
+                "athleteName": "Joshua Davis",
+                "membershipNumber": "152487",
+                "fullText": "5  -  215  Joshua Davis  M  40  Count By Color Weightlifting  152487  165.49  2018-09-16  -  National  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOS0xNiIsIndlaWdodF9jbGFzcyI6MTMwfQ=="
+          }
+        ],
+        "202300": [
+          {
+            "meet_id": 1594,
+            "date": "2014-09-28",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Joshua Davis",
+            "lifter_id": 7997,
+            "membershipNumbers": [
+              {
+                "athleteName": "Joshua Davis",
+                "membershipNumber": "202300",
+                "fullText": "23  -  165  Joshua Davis  M  23  -  202300  82.1  2014-09-28  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOS0yOCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 139,
+          "date": "2015-07-18",
+          "age_category": "Open Men's",
+          "weight_class": "+105 kg",
+          "lifter_name": "Joshua Davis",
+          "lifter_id": 7997,
+          "membershipNumbers": [],
+          "error": "No division code found for: \"Open Men's +105 kg\""
+        },
+        {
+          "meet_id": 469,
+          "date": "2015-11-15",
+          "age_category": "Open Men's",
+          "weight_class": "+105 kg",
+          "lifter_name": "Joshua Davis",
+          "lifter_id": 7997,
+          "membershipNumbers": [],
+          "error": "No division code found for: \"Open Men's +105 kg\""
+        },
+        {
+          "meet_id": 1969,
+          "date": "2016-04-03",
+          "age_category": "Open Men's",
+          "weight_class": "+105 kg",
+          "lifter_name": "Joshua Davis",
+          "lifter_id": 7997,
+          "membershipNumbers": [],
+          "error": "No division code found for: \"Open Men's +105 kg\""
+        },
+        {
+          "meet_id": 2992,
+          "date": "2018-04-15",
+          "age_category": "Open Men's",
+          "weight_class": "+105 kg",
+          "lifter_name": "Joshua Davis",
+          "lifter_id": 7997,
+          "membershipNumbers": [],
+          "error": "No division code found for: \"Open Men's +105 kg\""
+        },
+        {
+          "meet_id": 141,
+          "date": "2015-08-01",
+          "age_category": "Open Men's",
+          "weight_class": "+105 kg",
+          "lifter_name": "Joshua Davis",
+          "lifter_id": 7997,
+          "membershipNumbers": [],
+          "error": "No division code found for: \"Open Men's +105 kg\""
+        },
+        {
+          "meet_id": 3322,
+          "date": "2018-06-03",
+          "age_category": "Open Men's",
+          "weight_class": "+105 kg",
+          "lifter_name": "Joshua Davis",
+          "lifter_id": 7997,
+          "membershipNumbers": [],
+          "error": "No division code found for: \"Open Men's +105 kg\""
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

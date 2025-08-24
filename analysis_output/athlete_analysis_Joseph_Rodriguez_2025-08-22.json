@@ -1,0 +1,298 @@
+{
+  "timestamp": "2025-08-22T08:35:58.189Z",
+  "athleteName": "Joseph Rodriguez",
+  "totalCompetitions": 5,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1041898": [
+        {
+          "meet_id": 4210,
+          "date": "2019-11-10",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Joseph Rodriguez",
+          "lifter_id": 42072,
+          "membershipNumbers": [
+            {
+              "athleteName": "Joseph Rodriguez",
+              "membershipNumber": "1041898",
+              "fullText": "12  -  184  Joseph Rodriguez  M  41  Cuppa Joe Weightlifting  1041898  80.15  2019-11-10  -  Local  New York"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0xMCIsIndlaWdodF9jbGFzcyI6ODV9"
+        },
+        {
+          "meet_id": 3932,
+          "date": "2019-07-20",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Joseph Rodriguez",
+          "lifter_id": 42072,
+          "membershipNumbers": [
+            {
+              "athleteName": "Joseph Rodriguez",
+              "membershipNumber": "1041898",
+              "fullText": "18  -  193  Joseph Rodriguez  M  41  Cuppa Joe Weightlifting  1041898  80.6  2019-07-20  -  Local  New York"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0yMCIsIndlaWdodF9jbGFzcyI6ODV9"
+        }
+      ],
+      "1050326": [
+        {
+          "meet_id": 4877,
+          "date": "2021-05-23",
+          "age_category": "Open Men's",
+          "weight_class": "73kg",
+          "lifter_name": "Joseph Rodriguez",
+          "lifter_id": 42072,
+          "membershipNumbers": [
+            {
+              "athleteName": "Joseph Rodriguez",
+              "membershipNumber": "1050326",
+              "fullText": "7  -  170  Joseph Rodriguez  M  25  -  1050326  69.11  2021-05-23  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNS0yMyIsIndlaWdodF9jbGFzcyI6ODR9"
+        },
+        {
+          "meet_id": 5406,
+          "date": "2022-06-18",
+          "age_category": "Open Men's",
+          "weight_class": "73kg",
+          "lifter_name": "Joseph Rodriguez",
+          "lifter_id": 42072,
+          "membershipNumbers": [
+            {
+              "athleteName": "Joseph Rodriguez",
+              "membershipNumber": "1050326",
+              "fullText": "9  -  180  Joseph Rodriguez  M  26  -  1050326  70.02  2022-06-18  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNi0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNi0xOCIsIndlaWdodF9jbGFzcyI6ODR9"
+        },
+        {
+          "meet_id": 5086,
+          "date": "2021-10-17",
+          "age_category": "Open Men's",
+          "weight_class": "67kg",
+          "lifter_name": "Joseph Rodriguez",
+          "lifter_id": 42072,
+          "membershipNumbers": [
+            {
+              "athleteName": "Joseph Rodriguez",
+              "membershipNumber": "1050326",
+              "fullText": "3  -  169  Joseph Rodriguez  M  25  -  1050326  66.1  2021-10-17  -  Local  California North Central"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMC0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMC0xNyIsIndlaWdodF9jbGFzcyI6ODN9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Joseph Rodriguez",
+    "splits": [
+      {
+        "newAthleteName": "Joseph Rodriguez (Person 1)",
+        "membershipNumber": "1041898",
+        "competitionCount": 2,
+        "competitions": [
+          4210,
+          3932
+        ]
+      },
+      {
+        "newAthleteName": "Joseph Rodriguez (Person 2)",
+        "membershipNumber": "1050326",
+        "competitionCount": 3,
+        "competitions": [
+          4877,
+          5406,
+          5086
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Joseph Rodriguez",
+    "competitions": [
+      {
+        "meet_id": 4877,
+        "date": "2021-05-23",
+        "age_category": "Open Men's",
+        "weight_class": "73kg",
+        "lifter_name": "Joseph Rodriguez",
+        "lifter_id": 42072,
+        "membershipNumbers": [
+          {
+            "athleteName": "Joseph Rodriguez",
+            "membershipNumber": "1050326",
+            "fullText": "7  -  170  Joseph Rodriguez  M  25  -  1050326  69.11  2021-05-23  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNS0yMyIsIndlaWdodF9jbGFzcyI6ODR9"
+      },
+      {
+        "meet_id": 5406,
+        "date": "2022-06-18",
+        "age_category": "Open Men's",
+        "weight_class": "73kg",
+        "lifter_name": "Joseph Rodriguez",
+        "lifter_id": 42072,
+        "membershipNumbers": [
+          {
+            "athleteName": "Joseph Rodriguez",
+            "membershipNumber": "1050326",
+            "fullText": "9  -  180  Joseph Rodriguez  M  26  -  1050326  70.02  2022-06-18  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNi0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNi0xOCIsIndlaWdodF9jbGFzcyI6ODR9"
+      },
+      {
+        "meet_id": 4210,
+        "date": "2019-11-10",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Joseph Rodriguez",
+        "lifter_id": 42072,
+        "membershipNumbers": [
+          {
+            "athleteName": "Joseph Rodriguez",
+            "membershipNumber": "1041898",
+            "fullText": "12  -  184  Joseph Rodriguez  M  41  Cuppa Joe Weightlifting  1041898  80.15  2019-11-10  -  Local  New York"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0xMCIsIndlaWdodF9jbGFzcyI6ODV9"
+      },
+      {
+        "meet_id": 3932,
+        "date": "2019-07-20",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Joseph Rodriguez",
+        "lifter_id": 42072,
+        "membershipNumbers": [
+          {
+            "athleteName": "Joseph Rodriguez",
+            "membershipNumber": "1041898",
+            "fullText": "18  -  193  Joseph Rodriguez  M  41  Cuppa Joe Weightlifting  1041898  80.6  2019-07-20  -  Local  New York"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0yMCIsIndlaWdodF9jbGFzcyI6ODV9"
+      },
+      {
+        "meet_id": 5086,
+        "date": "2021-10-17",
+        "age_category": "Open Men's",
+        "weight_class": "67kg",
+        "lifter_name": "Joseph Rodriguez",
+        "lifter_id": 42072,
+        "membershipNumbers": [
+          {
+            "athleteName": "Joseph Rodriguez",
+            "membershipNumber": "1050326",
+            "fullText": "3  -  169  Joseph Rodriguez  M  25  -  1050326  66.1  2021-10-17  -  Local  California North Central"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMC0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMC0xNyIsIndlaWdodF9jbGFzcyI6ODN9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1041898": [
+          {
+            "meet_id": 4210,
+            "date": "2019-11-10",
+            "age_category": "Open Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Joseph Rodriguez",
+            "lifter_id": 42072,
+            "membershipNumbers": [
+              {
+                "athleteName": "Joseph Rodriguez",
+                "membershipNumber": "1041898",
+                "fullText": "12  -  184  Joseph Rodriguez  M  41  Cuppa Joe Weightlifting  1041898  80.15  2019-11-10  -  Local  New York"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0xMCIsIndlaWdodF9jbGFzcyI6ODV9"
+          },
+          {
+            "meet_id": 3932,
+            "date": "2019-07-20",
+            "age_category": "Open Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Joseph Rodriguez",
+            "lifter_id": 42072,
+            "membershipNumbers": [
+              {
+                "athleteName": "Joseph Rodriguez",
+                "membershipNumber": "1041898",
+                "fullText": "18  -  193  Joseph Rodriguez  M  41  Cuppa Joe Weightlifting  1041898  80.6  2019-07-20  -  Local  New York"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0yMCIsIndlaWdodF9jbGFzcyI6ODV9"
+          }
+        ],
+        "1050326": [
+          {
+            "meet_id": 4877,
+            "date": "2021-05-23",
+            "age_category": "Open Men's",
+            "weight_class": "73kg",
+            "lifter_name": "Joseph Rodriguez",
+            "lifter_id": 42072,
+            "membershipNumbers": [
+              {
+                "athleteName": "Joseph Rodriguez",
+                "membershipNumber": "1050326",
+                "fullText": "7  -  170  Joseph Rodriguez  M  25  -  1050326  69.11  2021-05-23  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNS0yMyIsIndlaWdodF9jbGFzcyI6ODR9"
+          },
+          {
+            "meet_id": 5406,
+            "date": "2022-06-18",
+            "age_category": "Open Men's",
+            "weight_class": "73kg",
+            "lifter_name": "Joseph Rodriguez",
+            "lifter_id": 42072,
+            "membershipNumbers": [
+              {
+                "athleteName": "Joseph Rodriguez",
+                "membershipNumber": "1050326",
+                "fullText": "9  -  180  Joseph Rodriguez  M  26  -  1050326  70.02  2022-06-18  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNi0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNi0xOCIsIndlaWdodF9jbGFzcyI6ODR9"
+          },
+          {
+            "meet_id": 5086,
+            "date": "2021-10-17",
+            "age_category": "Open Men's",
+            "weight_class": "67kg",
+            "lifter_name": "Joseph Rodriguez",
+            "lifter_id": 42072,
+            "membershipNumbers": [
+              {
+                "athleteName": "Joseph Rodriguez",
+                "membershipNumber": "1050326",
+                "fullText": "3  -  169  Joseph Rodriguez  M  25  -  1050326  66.1  2021-10-17  -  Local  California North Central"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMC0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMC0xNyIsIndlaWdodF9jbGFzcyI6ODN9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

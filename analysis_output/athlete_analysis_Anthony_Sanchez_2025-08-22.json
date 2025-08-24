@@ -1,0 +1,298 @@
+{
+  "timestamp": "2025-08-22T07:08:25.021Z",
+  "athleteName": "Anthony Sanchez",
+  "totalCompetitions": 5,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1004730": [
+        {
+          "meet_id": 1715,
+          "date": "2016-06-26",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Anthony Sanchez",
+          "lifter_id": 22084,
+          "membershipNumbers": [
+            {
+              "athleteName": "Anthony Sanchez",
+              "membershipNumber": "1004730",
+              "fullText": "22  -  199  Anthony Sanchez  M  17  HASSLE FREE BBC  1004730  72.83  2016-06-26  -  National  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0yNiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        },
+        {
+          "meet_id": 1948,
+          "date": "2016-04-23",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Anthony Sanchez",
+          "lifter_id": 22084,
+          "membershipNumbers": [
+            {
+              "athleteName": "Anthony Sanchez",
+              "membershipNumber": "1004730",
+              "fullText": "9  -  196  Anthony Sanchez  M  17  HASSLE FREE BBC  1004730  72.7  2016-04-23  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0yMyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        },
+        {
+          "meet_id": 1963,
+          "date": "2016-05-22",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Anthony Sanchez",
+          "lifter_id": 22084,
+          "membershipNumbers": [
+            {
+              "athleteName": "Anthony Sanchez",
+              "membershipNumber": "1004730",
+              "fullText": "17  -  193  Anthony Sanchez  M  17  HASSLE FREE BBC  1004730  73.62  2016-05-22  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0yMiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        }
+      ],
+      "1039181": [
+        {
+          "meet_id": 4110,
+          "date": "2019-10-13",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "Anthony Sanchez",
+          "lifter_id": 22084,
+          "membershipNumbers": [
+            {
+              "athleteName": "Anthony Sanchez",
+              "membershipNumber": "1039181",
+              "fullText": "3  -  261  Anthony Sanchez  M  37  -  1039181  88.4  2019-10-13  -  Local  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMC0xMyIsIndlaWdodF9jbGFzcyI6ODZ9"
+        },
+        {
+          "meet_id": 3709,
+          "date": "2019-04-20",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "Anthony Sanchez",
+          "lifter_id": 22084,
+          "membershipNumbers": [
+            {
+              "athleteName": "Anthony Sanchez",
+              "membershipNumber": "1039181",
+              "fullText": "2  -  263  Anthony Sanchez  M  37  -  1039181  87.9  2019-04-20  -  Local  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0yMCIsIndlaWdodF9jbGFzcyI6ODZ9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Anthony Sanchez",
+    "splits": [
+      {
+        "newAthleteName": "Anthony Sanchez (Person 1)",
+        "membershipNumber": "1004730",
+        "competitionCount": 3,
+        "competitions": [
+          1715,
+          1948,
+          1963
+        ]
+      },
+      {
+        "newAthleteName": "Anthony Sanchez (Person 2)",
+        "membershipNumber": "1039181",
+        "competitionCount": 2,
+        "competitions": [
+          4110,
+          3709
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Anthony Sanchez",
+    "competitions": [
+      {
+        "meet_id": 1715,
+        "date": "2016-06-26",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Anthony Sanchez",
+        "lifter_id": 22084,
+        "membershipNumbers": [
+          {
+            "athleteName": "Anthony Sanchez",
+            "membershipNumber": "1004730",
+            "fullText": "22  -  199  Anthony Sanchez  M  17  HASSLE FREE BBC  1004730  72.83  2016-06-26  -  National  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0yNiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 4110,
+        "date": "2019-10-13",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Anthony Sanchez",
+        "lifter_id": 22084,
+        "membershipNumbers": [
+          {
+            "athleteName": "Anthony Sanchez",
+            "membershipNumber": "1039181",
+            "fullText": "3  -  261  Anthony Sanchez  M  37  -  1039181  88.4  2019-10-13  -  Local  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMC0xMyIsIndlaWdodF9jbGFzcyI6ODZ9"
+      },
+      {
+        "meet_id": 1948,
+        "date": "2016-04-23",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Anthony Sanchez",
+        "lifter_id": 22084,
+        "membershipNumbers": [
+          {
+            "athleteName": "Anthony Sanchez",
+            "membershipNumber": "1004730",
+            "fullText": "9  -  196  Anthony Sanchez  M  17  HASSLE FREE BBC  1004730  72.7  2016-04-23  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0yMyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 1963,
+        "date": "2016-05-22",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Anthony Sanchez",
+        "lifter_id": 22084,
+        "membershipNumbers": [
+          {
+            "athleteName": "Anthony Sanchez",
+            "membershipNumber": "1004730",
+            "fullText": "17  -  193  Anthony Sanchez  M  17  HASSLE FREE BBC  1004730  73.62  2016-05-22  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0yMiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 3709,
+        "date": "2019-04-20",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Anthony Sanchez",
+        "lifter_id": 22084,
+        "membershipNumbers": [
+          {
+            "athleteName": "Anthony Sanchez",
+            "membershipNumber": "1039181",
+            "fullText": "2  -  263  Anthony Sanchez  M  37  -  1039181  87.9  2019-04-20  -  Local  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0yMCIsIndlaWdodF9jbGFzcyI6ODZ9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1004730": [
+          {
+            "meet_id": 1715,
+            "date": "2016-06-26",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Anthony Sanchez",
+            "lifter_id": 22084,
+            "membershipNumbers": [
+              {
+                "athleteName": "Anthony Sanchez",
+                "membershipNumber": "1004730",
+                "fullText": "22  -  199  Anthony Sanchez  M  17  HASSLE FREE BBC  1004730  72.83  2016-06-26  -  National  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0yNiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          },
+          {
+            "meet_id": 1948,
+            "date": "2016-04-23",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Anthony Sanchez",
+            "lifter_id": 22084,
+            "membershipNumbers": [
+              {
+                "athleteName": "Anthony Sanchez",
+                "membershipNumber": "1004730",
+                "fullText": "9  -  196  Anthony Sanchez  M  17  HASSLE FREE BBC  1004730  72.7  2016-04-23  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0yMyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          },
+          {
+            "meet_id": 1963,
+            "date": "2016-05-22",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Anthony Sanchez",
+            "lifter_id": 22084,
+            "membershipNumbers": [
+              {
+                "athleteName": "Anthony Sanchez",
+                "membershipNumber": "1004730",
+                "fullText": "17  -  193  Anthony Sanchez  M  17  HASSLE FREE BBC  1004730  73.62  2016-05-22  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0yMiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          }
+        ],
+        "1039181": [
+          {
+            "meet_id": 4110,
+            "date": "2019-10-13",
+            "age_category": "Open Men's",
+            "weight_class": "89kg",
+            "lifter_name": "Anthony Sanchez",
+            "lifter_id": 22084,
+            "membershipNumbers": [
+              {
+                "athleteName": "Anthony Sanchez",
+                "membershipNumber": "1039181",
+                "fullText": "3  -  261  Anthony Sanchez  M  37  -  1039181  88.4  2019-10-13  -  Local  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMC0xMyIsIndlaWdodF9jbGFzcyI6ODZ9"
+          },
+          {
+            "meet_id": 3709,
+            "date": "2019-04-20",
+            "age_category": "Open Men's",
+            "weight_class": "89kg",
+            "lifter_name": "Anthony Sanchez",
+            "lifter_id": 22084,
+            "membershipNumbers": [
+              {
+                "athleteName": "Anthony Sanchez",
+                "membershipNumber": "1039181",
+                "fullText": "2  -  263  Anthony Sanchez  M  37  -  1039181  87.9  2019-04-20  -  Local  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0yMCIsIndlaWdodF9jbGFzcyI6ODZ9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

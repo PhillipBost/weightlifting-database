@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T13:44:57.744Z",
+  "athleteName": "Brandon Rodriguez",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1079445": [
+        {
+          "meet_id": 6722,
+          "date": "2025-01-26",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "Brandon Rodriguez",
+          "lifter_id": 62866,
+          "membershipNumbers": [
+            {
+              "athleteName": "Brandon Rodriguez",
+              "membershipNumber": "1079445",
+              "fullText": "6  -  215  Brandon Rodriguez  M  29  -  1079445  87.45  2025-01-26  -  Local  New Jersey"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMS0yNiIsIndlaWdodF9jbGFzcyI6ODZ9"
+        }
+      ],
+      "1081210": [
+        {
+          "meet_id": 6864,
+          "date": "2025-05-04",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Brandon Rodriguez",
+          "lifter_id": 62866,
+          "membershipNumbers": [
+            {
+              "athleteName": "Brandon Rodriguez",
+              "membershipNumber": "1081210",
+              "fullText": "9  -  160  Brandon Rodriguez  M  25  Sweep The Sheds Weightlifting  1081210  73.9  2025-05-04  -  Local  Illinois"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNS0wNCIsIndlaWdodF9jbGFzcyI6ODV9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Brandon Rodriguez",
+    "splits": [
+      {
+        "newAthleteName": "Brandon Rodriguez (Person 1)",
+        "membershipNumber": "1079445",
+        "competitionCount": 1,
+        "competitions": [
+          6722
+        ]
+      },
+      {
+        "newAthleteName": "Brandon Rodriguez (Person 2)",
+        "membershipNumber": "1081210",
+        "competitionCount": 1,
+        "competitions": [
+          6864
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Brandon Rodriguez",
+    "competitions": [
+      {
+        "meet_id": 6722,
+        "date": "2025-01-26",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Brandon Rodriguez",
+        "lifter_id": 62866,
+        "membershipNumbers": [
+          {
+            "athleteName": "Brandon Rodriguez",
+            "membershipNumber": "1079445",
+            "fullText": "6  -  215  Brandon Rodriguez  M  29  -  1079445  87.45  2025-01-26  -  Local  New Jersey"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMS0yNiIsIndlaWdodF9jbGFzcyI6ODZ9"
+      },
+      {
+        "meet_id": 6864,
+        "date": "2025-05-04",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Brandon Rodriguez",
+        "lifter_id": 62866,
+        "membershipNumbers": [
+          {
+            "athleteName": "Brandon Rodriguez",
+            "membershipNumber": "1081210",
+            "fullText": "9  -  160  Brandon Rodriguez  M  25  Sweep The Sheds Weightlifting  1081210  73.9  2025-05-04  -  Local  Illinois"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNS0wNCIsIndlaWdodF9jbGFzcyI6ODV9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1079445": [
+          {
+            "meet_id": 6722,
+            "date": "2025-01-26",
+            "age_category": "Open Men's",
+            "weight_class": "89kg",
+            "lifter_name": "Brandon Rodriguez",
+            "lifter_id": 62866,
+            "membershipNumbers": [
+              {
+                "athleteName": "Brandon Rodriguez",
+                "membershipNumber": "1079445",
+                "fullText": "6  -  215  Brandon Rodriguez  M  29  -  1079445  87.45  2025-01-26  -  Local  New Jersey"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMS0yNiIsIndlaWdodF9jbGFzcyI6ODZ9"
+          }
+        ],
+        "1081210": [
+          {
+            "meet_id": 6864,
+            "date": "2025-05-04",
+            "age_category": "Open Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Brandon Rodriguez",
+            "lifter_id": 62866,
+            "membershipNumbers": [
+              {
+                "athleteName": "Brandon Rodriguez",
+                "membershipNumber": "1081210",
+                "fullText": "9  -  160  Brandon Rodriguez  M  25  Sweep The Sheds Weightlifting  1081210  73.9  2025-05-04  -  Local  Illinois"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNS0wNCIsIndlaWdodF9jbGFzcyI6ODV9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

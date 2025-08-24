@@ -1,0 +1,298 @@
+{
+  "timestamp": "2025-08-22T08:12:42.186Z",
+  "athleteName": "Raina Bowling",
+  "totalCompetitions": 5,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "2018": [
+        {
+          "meet_id": 3164,
+          "date": "2018-03-31",
+          "age_category": "Women's 16-17 Age Group",
+          "weight_class": "69 kg",
+          "lifter_name": "Raina Bowling",
+          "lifter_id": 35988,
+          "membershipNumbers": [
+            {
+              "athleteName": "Raina Bowling",
+              "membershipNumber": "2018",
+              "fullText": "3  -  94  Raina Bowling  F  16  -  -  68.3  2018-03-31  -  Local  -"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMy0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMy0zMSIsIndlaWdodF9jbGFzcyI6MzM0fQ=="
+        }
+      ],
+      "1028456": [
+        {
+          "meet_id": 4285,
+          "date": "2019-10-26",
+          "age_category": "Women's 16-17 Age Group",
+          "weight_class": "81kg",
+          "lifter_name": "Raina Bowling",
+          "lifter_id": 35988,
+          "membershipNumbers": [
+            {
+              "athleteName": "Raina Bowling",
+              "membershipNumber": "1028456",
+              "fullText": "1  -  123  Raina Bowling  F  17  PEAK FITNESS  1028456  78.3  2019-10-26  -  Local  Michigan"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMC0yNiIsIndlaWdodF9jbGFzcyI6MTl9"
+        },
+        {
+          "meet_id": 3534,
+          "date": "2018-10-27",
+          "age_category": "Women's 16-17 Age Group",
+          "weight_class": "76kg",
+          "lifter_name": "Raina Bowling",
+          "lifter_id": 35988,
+          "membershipNumbers": [
+            {
+              "athleteName": "Raina Bowling",
+              "membershipNumber": "1028456",
+              "fullText": "4  -  101  Raina Bowling  F  16  PEAK FITNESS  1028456  72.7  2018-10-27  -  Local  Michigan"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yNyIsIndlaWdodF9jbGFzcyI6MTh9"
+        },
+        {
+          "meet_id": 3796,
+          "date": "2019-06-30",
+          "age_category": "Women's 16-17 Age Group",
+          "weight_class": "81kg",
+          "lifter_name": "Raina Bowling",
+          "lifter_id": 35988,
+          "membershipNumbers": [
+            {
+              "athleteName": "Raina Bowling",
+              "membershipNumber": "1028456",
+              "fullText": "8  -  119  Raina Bowling  F  17  PEAK FITNESS  1028456  77.25  2019-06-30  -  National  Michigan"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNi0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNi0zMCIsIndlaWdodF9jbGFzcyI6MTl9"
+        },
+        {
+          "meet_id": 3967,
+          "date": "2019-04-13",
+          "age_category": "Women's 16-17 Age Group",
+          "weight_class": "76kg",
+          "lifter_name": "Raina Bowling",
+          "lifter_id": 35988,
+          "membershipNumbers": [
+            {
+              "athleteName": "Raina Bowling",
+              "membershipNumber": "1028456",
+              "fullText": "1  -  117  Raina Bowling  F  17  PEAK FITNESS  1028456  75  2019-04-13  -  Local  Michigan"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0xMyIsIndlaWdodF9jbGFzcyI6MTh9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Raina Bowling",
+    "splits": [
+      {
+        "newAthleteName": "Raina Bowling (Person 1)",
+        "membershipNumber": "2018",
+        "competitionCount": 1,
+        "competitions": [
+          3164
+        ]
+      },
+      {
+        "newAthleteName": "Raina Bowling (Person 2)",
+        "membershipNumber": "1028456",
+        "competitionCount": 4,
+        "competitions": [
+          4285,
+          3534,
+          3796,
+          3967
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Raina Bowling",
+    "competitions": [
+      {
+        "meet_id": 4285,
+        "date": "2019-10-26",
+        "age_category": "Women's 16-17 Age Group",
+        "weight_class": "81kg",
+        "lifter_name": "Raina Bowling",
+        "lifter_id": 35988,
+        "membershipNumbers": [
+          {
+            "athleteName": "Raina Bowling",
+            "membershipNumber": "1028456",
+            "fullText": "1  -  123  Raina Bowling  F  17  PEAK FITNESS  1028456  78.3  2019-10-26  -  Local  Michigan"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMC0yNiIsIndlaWdodF9jbGFzcyI6MTl9"
+      },
+      {
+        "meet_id": 3164,
+        "date": "2018-03-31",
+        "age_category": "Women's 16-17 Age Group",
+        "weight_class": "69 kg",
+        "lifter_name": "Raina Bowling",
+        "lifter_id": 35988,
+        "membershipNumbers": [
+          {
+            "athleteName": "Raina Bowling",
+            "membershipNumber": "2018",
+            "fullText": "3  -  94  Raina Bowling  F  16  -  -  68.3  2018-03-31  -  Local  -"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMy0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMy0zMSIsIndlaWdodF9jbGFzcyI6MzM0fQ=="
+      },
+      {
+        "meet_id": 3534,
+        "date": "2018-10-27",
+        "age_category": "Women's 16-17 Age Group",
+        "weight_class": "76kg",
+        "lifter_name": "Raina Bowling",
+        "lifter_id": 35988,
+        "membershipNumbers": [
+          {
+            "athleteName": "Raina Bowling",
+            "membershipNumber": "1028456",
+            "fullText": "4  -  101  Raina Bowling  F  16  PEAK FITNESS  1028456  72.7  2018-10-27  -  Local  Michigan"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yNyIsIndlaWdodF9jbGFzcyI6MTh9"
+      },
+      {
+        "meet_id": 3796,
+        "date": "2019-06-30",
+        "age_category": "Women's 16-17 Age Group",
+        "weight_class": "81kg",
+        "lifter_name": "Raina Bowling",
+        "lifter_id": 35988,
+        "membershipNumbers": [
+          {
+            "athleteName": "Raina Bowling",
+            "membershipNumber": "1028456",
+            "fullText": "8  -  119  Raina Bowling  F  17  PEAK FITNESS  1028456  77.25  2019-06-30  -  National  Michigan"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNi0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNi0zMCIsIndlaWdodF9jbGFzcyI6MTl9"
+      },
+      {
+        "meet_id": 3967,
+        "date": "2019-04-13",
+        "age_category": "Women's 16-17 Age Group",
+        "weight_class": "76kg",
+        "lifter_name": "Raina Bowling",
+        "lifter_id": 35988,
+        "membershipNumbers": [
+          {
+            "athleteName": "Raina Bowling",
+            "membershipNumber": "1028456",
+            "fullText": "1  -  117  Raina Bowling  F  17  PEAK FITNESS  1028456  75  2019-04-13  -  Local  Michigan"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0xMyIsIndlaWdodF9jbGFzcyI6MTh9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "2018": [
+          {
+            "meet_id": 3164,
+            "date": "2018-03-31",
+            "age_category": "Women's 16-17 Age Group",
+            "weight_class": "69 kg",
+            "lifter_name": "Raina Bowling",
+            "lifter_id": 35988,
+            "membershipNumbers": [
+              {
+                "athleteName": "Raina Bowling",
+                "membershipNumber": "2018",
+                "fullText": "3  -  94  Raina Bowling  F  16  -  -  68.3  2018-03-31  -  Local  -"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMy0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMy0zMSIsIndlaWdodF9jbGFzcyI6MzM0fQ=="
+          }
+        ],
+        "1028456": [
+          {
+            "meet_id": 4285,
+            "date": "2019-10-26",
+            "age_category": "Women's 16-17 Age Group",
+            "weight_class": "81kg",
+            "lifter_name": "Raina Bowling",
+            "lifter_id": 35988,
+            "membershipNumbers": [
+              {
+                "athleteName": "Raina Bowling",
+                "membershipNumber": "1028456",
+                "fullText": "1  -  123  Raina Bowling  F  17  PEAK FITNESS  1028456  78.3  2019-10-26  -  Local  Michigan"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMC0yNiIsIndlaWdodF9jbGFzcyI6MTl9"
+          },
+          {
+            "meet_id": 3534,
+            "date": "2018-10-27",
+            "age_category": "Women's 16-17 Age Group",
+            "weight_class": "76kg",
+            "lifter_name": "Raina Bowling",
+            "lifter_id": 35988,
+            "membershipNumbers": [
+              {
+                "athleteName": "Raina Bowling",
+                "membershipNumber": "1028456",
+                "fullText": "4  -  101  Raina Bowling  F  16  PEAK FITNESS  1028456  72.7  2018-10-27  -  Local  Michigan"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yNyIsIndlaWdodF9jbGFzcyI6MTh9"
+          },
+          {
+            "meet_id": 3796,
+            "date": "2019-06-30",
+            "age_category": "Women's 16-17 Age Group",
+            "weight_class": "81kg",
+            "lifter_name": "Raina Bowling",
+            "lifter_id": 35988,
+            "membershipNumbers": [
+              {
+                "athleteName": "Raina Bowling",
+                "membershipNumber": "1028456",
+                "fullText": "8  -  119  Raina Bowling  F  17  PEAK FITNESS  1028456  77.25  2019-06-30  -  National  Michigan"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNi0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNi0zMCIsIndlaWdodF9jbGFzcyI6MTl9"
+          },
+          {
+            "meet_id": 3967,
+            "date": "2019-04-13",
+            "age_category": "Women's 16-17 Age Group",
+            "weight_class": "76kg",
+            "lifter_name": "Raina Bowling",
+            "lifter_id": 35988,
+            "membershipNumbers": [
+              {
+                "athleteName": "Raina Bowling",
+                "membershipNumber": "1028456",
+                "fullText": "1  -  117  Raina Bowling  F  17  PEAK FITNESS  1028456  75  2019-04-13  -  Local  Michigan"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0xMyIsIndlaWdodF9jbGFzcyI6MTh9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

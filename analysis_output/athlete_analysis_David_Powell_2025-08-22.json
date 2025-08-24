@@ -1,0 +1,341 @@
+{
+  "timestamp": "2025-08-22T12:42:23.150Z",
+  "athleteName": "David Powell",
+  "totalCompetitions": 6,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1043816": [
+        {
+          "meet_id": 4906,
+          "date": "2021-08-07",
+          "age_category": "Men's Masters (40-44)",
+          "weight_class": "102kg",
+          "lifter_name": "David Powell",
+          "lifter_id": 8967,
+          "membershipNumbers": [
+            {
+              "athleteName": "David Powell",
+              "membershipNumber": "1043816",
+              "fullText": "2  -  254  David Powell  M  44  BRIDGE CITY STRENGTH & PERFORMANCE  1043816  101.05  2021-08-07  -  International  Tennessee-Kentucky"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wOC0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wOC0wNyIsIndlaWdodF9jbGFzcyI6MTI4fQ=="
+        },
+        {
+          "meet_id": 4951,
+          "date": "2021-10-23",
+          "age_category": "Men's Masters (40-44)",
+          "weight_class": "102kg",
+          "lifter_name": "David Powell",
+          "lifter_id": 8967,
+          "membershipNumbers": [
+            {
+              "athleteName": "David Powell",
+              "membershipNumber": "1043816",
+              "fullText": "1  -  260  David Powell  M  44  BRIDGE CITY STRENGTH & PERFORMANCE  1043816  100.2  2021-10-23  -  Local  Tennessee-Kentucky"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMC0yMyIsIndlaWdodF9jbGFzcyI6MTI4fQ=="
+        },
+        {
+          "meet_id": 4065,
+          "date": "2019-08-10",
+          "age_category": "Open Men's",
+          "weight_class": "102kg",
+          "lifter_name": "David Powell",
+          "lifter_id": 8967,
+          "membershipNumbers": [
+            {
+              "athleteName": "David Powell",
+              "membershipNumber": "1043816",
+              "fullText": "14  -  230  David Powell  M  42  BRIDGE CITY STRENGTH & PERFORMANCE  1043816  100.8  2019-08-10  -  Local  Tennessee-Kentucky"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOC0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOC0xMCIsIndlaWdodF9jbGFzcyI6ODh9"
+        },
+        {
+          "meet_id": 4798,
+          "date": "2021-06-19",
+          "age_category": "Men's Masters (40-44)",
+          "weight_class": "102kg",
+          "lifter_name": "David Powell",
+          "lifter_id": 8967,
+          "membershipNumbers": [
+            {
+              "athleteName": "David Powell",
+              "membershipNumber": "1043816",
+              "fullText": "1  -  250  David Powell  M  44  BRIDGE CITY STRENGTH & PERFORMANCE  1043816  100.8  2021-06-19  -  Local  Tennessee-Kentucky"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNi0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNi0xOSIsIndlaWdodF9jbGFzcyI6MTI4fQ=="
+        }
+      ],
+      "1078401": [
+        {
+          "meet_id": 6571,
+          "date": "2024-10-19",
+          "age_category": "Men's Masters (60-64)",
+          "weight_class": "89kg",
+          "lifter_name": "David Powell",
+          "lifter_id": 8967,
+          "membershipNumbers": [
+            {
+              "athleteName": "David Powell",
+              "membershipNumber": "1078401",
+              "fullText": "1  -  199  David Powell  M  61  -  1078401  88.5  2024-10-19  -  Local  Ohio"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0xOSIsIndlaWdodF9jbGFzcyI6MjA2fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 186,
+        "date": "2015-04-19",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "David Powell",
+        "lifter_id": 8967,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "David Powell",
+    "splits": [
+      {
+        "newAthleteName": "David Powell (Person 1)",
+        "membershipNumber": "1043816",
+        "competitionCount": 4,
+        "competitions": [
+          4906,
+          4951,
+          4065,
+          4798
+        ]
+      },
+      {
+        "newAthleteName": "David Powell (Person 2)",
+        "membershipNumber": "1078401",
+        "competitionCount": 1,
+        "competitions": [
+          6571
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 186,
+        "date": "2015-04-19",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "David Powell",
+        "lifter_id": 8967,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "David Powell",
+    "competitions": [
+      {
+        "meet_id": 4906,
+        "date": "2021-08-07",
+        "age_category": "Men's Masters (40-44)",
+        "weight_class": "102kg",
+        "lifter_name": "David Powell",
+        "lifter_id": 8967,
+        "membershipNumbers": [
+          {
+            "athleteName": "David Powell",
+            "membershipNumber": "1043816",
+            "fullText": "2  -  254  David Powell  M  44  BRIDGE CITY STRENGTH & PERFORMANCE  1043816  101.05  2021-08-07  -  International  Tennessee-Kentucky"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wOC0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wOC0wNyIsIndlaWdodF9jbGFzcyI6MTI4fQ=="
+      },
+      {
+        "meet_id": 6571,
+        "date": "2024-10-19",
+        "age_category": "Men's Masters (60-64)",
+        "weight_class": "89kg",
+        "lifter_name": "David Powell",
+        "lifter_id": 8967,
+        "membershipNumbers": [
+          {
+            "athleteName": "David Powell",
+            "membershipNumber": "1078401",
+            "fullText": "1  -  199  David Powell  M  61  -  1078401  88.5  2024-10-19  -  Local  Ohio"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0xOSIsIndlaWdodF9jbGFzcyI6MjA2fQ=="
+      },
+      {
+        "meet_id": 4951,
+        "date": "2021-10-23",
+        "age_category": "Men's Masters (40-44)",
+        "weight_class": "102kg",
+        "lifter_name": "David Powell",
+        "lifter_id": 8967,
+        "membershipNumbers": [
+          {
+            "athleteName": "David Powell",
+            "membershipNumber": "1043816",
+            "fullText": "1  -  260  David Powell  M  44  BRIDGE CITY STRENGTH & PERFORMANCE  1043816  100.2  2021-10-23  -  Local  Tennessee-Kentucky"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMC0yMyIsIndlaWdodF9jbGFzcyI6MTI4fQ=="
+      },
+      {
+        "meet_id": 186,
+        "date": "2015-04-19",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "David Powell",
+        "lifter_id": 8967,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 4065,
+        "date": "2019-08-10",
+        "age_category": "Open Men's",
+        "weight_class": "102kg",
+        "lifter_name": "David Powell",
+        "lifter_id": 8967,
+        "membershipNumbers": [
+          {
+            "athleteName": "David Powell",
+            "membershipNumber": "1043816",
+            "fullText": "14  -  230  David Powell  M  42  BRIDGE CITY STRENGTH & PERFORMANCE  1043816  100.8  2019-08-10  -  Local  Tennessee-Kentucky"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOC0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOC0xMCIsIndlaWdodF9jbGFzcyI6ODh9"
+      },
+      {
+        "meet_id": 4798,
+        "date": "2021-06-19",
+        "age_category": "Men's Masters (40-44)",
+        "weight_class": "102kg",
+        "lifter_name": "David Powell",
+        "lifter_id": 8967,
+        "membershipNumbers": [
+          {
+            "athleteName": "David Powell",
+            "membershipNumber": "1043816",
+            "fullText": "1  -  250  David Powell  M  44  BRIDGE CITY STRENGTH & PERFORMANCE  1043816  100.8  2021-06-19  -  Local  Tennessee-Kentucky"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNi0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNi0xOSIsIndlaWdodF9jbGFzcyI6MTI4fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1043816": [
+          {
+            "meet_id": 4906,
+            "date": "2021-08-07",
+            "age_category": "Men's Masters (40-44)",
+            "weight_class": "102kg",
+            "lifter_name": "David Powell",
+            "lifter_id": 8967,
+            "membershipNumbers": [
+              {
+                "athleteName": "David Powell",
+                "membershipNumber": "1043816",
+                "fullText": "2  -  254  David Powell  M  44  BRIDGE CITY STRENGTH & PERFORMANCE  1043816  101.05  2021-08-07  -  International  Tennessee-Kentucky"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wOC0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wOC0wNyIsIndlaWdodF9jbGFzcyI6MTI4fQ=="
+          },
+          {
+            "meet_id": 4951,
+            "date": "2021-10-23",
+            "age_category": "Men's Masters (40-44)",
+            "weight_class": "102kg",
+            "lifter_name": "David Powell",
+            "lifter_id": 8967,
+            "membershipNumbers": [
+              {
+                "athleteName": "David Powell",
+                "membershipNumber": "1043816",
+                "fullText": "1  -  260  David Powell  M  44  BRIDGE CITY STRENGTH & PERFORMANCE  1043816  100.2  2021-10-23  -  Local  Tennessee-Kentucky"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMC0yMyIsIndlaWdodF9jbGFzcyI6MTI4fQ=="
+          },
+          {
+            "meet_id": 4065,
+            "date": "2019-08-10",
+            "age_category": "Open Men's",
+            "weight_class": "102kg",
+            "lifter_name": "David Powell",
+            "lifter_id": 8967,
+            "membershipNumbers": [
+              {
+                "athleteName": "David Powell",
+                "membershipNumber": "1043816",
+                "fullText": "14  -  230  David Powell  M  42  BRIDGE CITY STRENGTH & PERFORMANCE  1043816  100.8  2019-08-10  -  Local  Tennessee-Kentucky"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOC0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOC0xMCIsIndlaWdodF9jbGFzcyI6ODh9"
+          },
+          {
+            "meet_id": 4798,
+            "date": "2021-06-19",
+            "age_category": "Men's Masters (40-44)",
+            "weight_class": "102kg",
+            "lifter_name": "David Powell",
+            "lifter_id": 8967,
+            "membershipNumbers": [
+              {
+                "athleteName": "David Powell",
+                "membershipNumber": "1043816",
+                "fullText": "1  -  250  David Powell  M  44  BRIDGE CITY STRENGTH & PERFORMANCE  1043816  100.8  2021-06-19  -  Local  Tennessee-Kentucky"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNi0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNi0xOSIsIndlaWdodF9jbGFzcyI6MTI4fQ=="
+          }
+        ],
+        "1078401": [
+          {
+            "meet_id": 6571,
+            "date": "2024-10-19",
+            "age_category": "Men's Masters (60-64)",
+            "weight_class": "89kg",
+            "lifter_name": "David Powell",
+            "lifter_id": 8967,
+            "membershipNumbers": [
+              {
+                "athleteName": "David Powell",
+                "membershipNumber": "1078401",
+                "fullText": "1  -  199  David Powell  M  61  -  1078401  88.5  2024-10-19  -  Local  Ohio"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0xOSIsIndlaWdodF9jbGFzcyI6MjA2fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 186,
+          "date": "2015-04-19",
+          "age_category": "Open Men's",
+          "weight_class": "+105 kg",
+          "lifter_name": "David Powell",
+          "lifter_id": 8967,
+          "membershipNumbers": [],
+          "error": "No division code found for: \"Open Men's +105 kg\""
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

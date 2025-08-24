@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T15:28:50.049Z",
+  "athleteName": "Ethan Taylor",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1041967": [
+        {
+          "meet_id": 3977,
+          "date": "2019-05-11",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "Ethan Taylor",
+          "lifter_id": 42434,
+          "membershipNumbers": [
+            {
+              "athleteName": "Ethan Taylor",
+              "membershipNumber": "1041967",
+              "fullText": "9  -  200  Ethan Taylor  M  22  Chosen Barbell Club  1041967  83.6  2019-05-11  -  Local  New York"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0xMSIsIndlaWdodF9jbGFzcyI6ODZ9"
+        }
+      ],
+      "1057053": [
+        {
+          "meet_id": 5249,
+          "date": "2022-03-26",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Ethan Taylor",
+          "lifter_id": 42434,
+          "membershipNumbers": [
+            {
+              "athleteName": "Ethan Taylor",
+              "membershipNumber": "1057053",
+              "fullText": "21  -  182  Ethan Taylor  M  24  Group III Barbell  1057053  80.4  2022-03-26  -  Local  Wisconsin"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMy0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMy0yNiIsIndlaWdodF9jbGFzcyI6ODV9"
+        },
+        {
+          "meet_id": 5025,
+          "date": "2021-10-09",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "Ethan Taylor",
+          "lifter_id": 42434,
+          "membershipNumbers": [
+            {
+              "athleteName": "Ethan Taylor",
+              "membershipNumber": "1057053",
+              "fullText": "20  -  176  Ethan Taylor  M  23  -  1057053  86.07  2021-10-09  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMC0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMC0wOSIsIndlaWdodF9jbGFzcyI6ODZ9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Ethan Taylor",
+    "splits": [
+      {
+        "newAthleteName": "Ethan Taylor (Person 1)",
+        "membershipNumber": "1041967",
+        "competitionCount": 1,
+        "competitions": [
+          3977
+        ]
+      },
+      {
+        "newAthleteName": "Ethan Taylor (Person 2)",
+        "membershipNumber": "1057053",
+        "competitionCount": 2,
+        "competitions": [
+          5249,
+          5025
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Ethan Taylor",
+    "competitions": [
+      {
+        "meet_id": 5249,
+        "date": "2022-03-26",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Ethan Taylor",
+        "lifter_id": 42434,
+        "membershipNumbers": [
+          {
+            "athleteName": "Ethan Taylor",
+            "membershipNumber": "1057053",
+            "fullText": "21  -  182  Ethan Taylor  M  24  Group III Barbell  1057053  80.4  2022-03-26  -  Local  Wisconsin"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMy0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMy0yNiIsIndlaWdodF9jbGFzcyI6ODV9"
+      },
+      {
+        "meet_id": 3977,
+        "date": "2019-05-11",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Ethan Taylor",
+        "lifter_id": 42434,
+        "membershipNumbers": [
+          {
+            "athleteName": "Ethan Taylor",
+            "membershipNumber": "1041967",
+            "fullText": "9  -  200  Ethan Taylor  M  22  Chosen Barbell Club  1041967  83.6  2019-05-11  -  Local  New York"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0xMSIsIndlaWdodF9jbGFzcyI6ODZ9"
+      },
+      {
+        "meet_id": 5025,
+        "date": "2021-10-09",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Ethan Taylor",
+        "lifter_id": 42434,
+        "membershipNumbers": [
+          {
+            "athleteName": "Ethan Taylor",
+            "membershipNumber": "1057053",
+            "fullText": "20  -  176  Ethan Taylor  M  23  -  1057053  86.07  2021-10-09  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMC0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMC0wOSIsIndlaWdodF9jbGFzcyI6ODZ9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1041967": [
+          {
+            "meet_id": 3977,
+            "date": "2019-05-11",
+            "age_category": "Open Men's",
+            "weight_class": "89kg",
+            "lifter_name": "Ethan Taylor",
+            "lifter_id": 42434,
+            "membershipNumbers": [
+              {
+                "athleteName": "Ethan Taylor",
+                "membershipNumber": "1041967",
+                "fullText": "9  -  200  Ethan Taylor  M  22  Chosen Barbell Club  1041967  83.6  2019-05-11  -  Local  New York"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0xMSIsIndlaWdodF9jbGFzcyI6ODZ9"
+          }
+        ],
+        "1057053": [
+          {
+            "meet_id": 5249,
+            "date": "2022-03-26",
+            "age_category": "Open Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Ethan Taylor",
+            "lifter_id": 42434,
+            "membershipNumbers": [
+              {
+                "athleteName": "Ethan Taylor",
+                "membershipNumber": "1057053",
+                "fullText": "21  -  182  Ethan Taylor  M  24  Group III Barbell  1057053  80.4  2022-03-26  -  Local  Wisconsin"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMy0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMy0yNiIsIndlaWdodF9jbGFzcyI6ODV9"
+          },
+          {
+            "meet_id": 5025,
+            "date": "2021-10-09",
+            "age_category": "Open Men's",
+            "weight_class": "89kg",
+            "lifter_name": "Ethan Taylor",
+            "lifter_id": 42434,
+            "membershipNumbers": [
+              {
+                "athleteName": "Ethan Taylor",
+                "membershipNumber": "1057053",
+                "fullText": "20  -  176  Ethan Taylor  M  23  -  1057053  86.07  2021-10-09  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMC0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMC0wOSIsIndlaWdodF9jbGFzcyI6ODZ9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

@@ -1,0 +1,292 @@
+{
+  "timestamp": "2025-08-22T16:48:26.072Z",
+  "athleteName": "Brady Smith",
+  "totalCompetitions": 5,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1023991": [
+        {
+          "meet_id": 2932,
+          "date": "2017-10-29",
+          "age_category": "Men's 13 Under Age Group",
+          "weight_class": "31 Kg",
+          "lifter_name": "Brady Smith",
+          "lifter_id": 33212,
+          "membershipNumbers": [
+            {
+              "athleteName": "Brady Smith",
+              "membershipNumber": "1023991",
+              "fullText": "5  -  15  Brady Smith  M  7  BUTTE BARBELL CLUB  1023991  22.8  2017-10-29  -  Local  Mountain North"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0yOSIsIndlaWdodF9jbGFzcyI6MjkxfQ=="
+        }
+      ],
+      "1075001": [
+        {
+          "meet_id": 6479,
+          "date": "2024-07-27",
+          "age_category": "Men's 16-17 Age Group",
+          "weight_class": "+102kg",
+          "lifter_name": "Brady Smith",
+          "lifter_id": 33212,
+          "membershipNumbers": [
+            {
+              "athleteName": "Brady Smith",
+              "membershipNumber": "1075001",
+              "fullText": "1  -  215  Brady Smith  M  17  Heavy Athletics  1075001  104.1  2024-07-27  -  Local  Mountain North"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNy0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNy0yNyIsIndlaWdodF9jbGFzcyI6MTB9"
+        },
+        {
+          "meet_id": 6248,
+          "date": "2024-02-26",
+          "age_category": "Men's 16-17 Age Group",
+          "weight_class": "+102kg",
+          "lifter_name": "Brady Smith",
+          "lifter_id": 33212,
+          "membershipNumbers": [
+            {
+              "athleteName": "Brady Smith",
+              "membershipNumber": "1075001",
+              "fullText": "1  -  191  Brady Smith  M  17  Heavy Athletics  1075001  102.3  2024-02-26  -  Local  Mountain North"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMi0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMi0yNiIsIndlaWdodF9jbGFzcyI6MTB9"
+        },
+        {
+          "meet_id": 6767,
+          "date": "2025-02-22",
+          "age_category": "Junior Men's",
+          "weight_class": "102kg",
+          "lifter_name": "Brady Smith",
+          "lifter_id": 33212,
+          "membershipNumbers": [
+            {
+              "athleteName": "Brady Smith",
+              "membershipNumber": "1075001",
+              "fullText": "1  -  213  Brady Smith  M  18  Heavy Athletics  1075001  98.4  2025-02-22  -  Local  Mountain North"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMi0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMi0yMiIsIndlaWdodF9jbGFzcyI6Njh9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 6874,
+        "date": "2025-05-10",
+        "age_category": "Junior Men's",
+        "weight_class": "102kg",
+        "lifter_name": "Brady Smith",
+        "lifter_id": 33212,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNS0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNS0xMCIsIndlaWdodF9jbGFzcyI6Njh9"
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Brady Smith",
+    "splits": [
+      {
+        "newAthleteName": "Brady Smith (Person 1)",
+        "membershipNumber": "1023991",
+        "competitionCount": 1,
+        "competitions": [
+          2932
+        ]
+      },
+      {
+        "newAthleteName": "Brady Smith (Person 2)",
+        "membershipNumber": "1075001",
+        "competitionCount": 3,
+        "competitions": [
+          6479,
+          6248,
+          6767
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 6874,
+        "date": "2025-05-10",
+        "age_category": "Junior Men's",
+        "weight_class": "102kg",
+        "lifter_name": "Brady Smith",
+        "lifter_id": 33212,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNS0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNS0xMCIsIndlaWdodF9jbGFzcyI6Njh9"
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Brady Smith",
+    "competitions": [
+      {
+        "meet_id": 2932,
+        "date": "2017-10-29",
+        "age_category": "Men's 13 Under Age Group",
+        "weight_class": "31 Kg",
+        "lifter_name": "Brady Smith",
+        "lifter_id": 33212,
+        "membershipNumbers": [
+          {
+            "athleteName": "Brady Smith",
+            "membershipNumber": "1023991",
+            "fullText": "5  -  15  Brady Smith  M  7  BUTTE BARBELL CLUB  1023991  22.8  2017-10-29  -  Local  Mountain North"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0yOSIsIndlaWdodF9jbGFzcyI6MjkxfQ=="
+      },
+      {
+        "meet_id": 6479,
+        "date": "2024-07-27",
+        "age_category": "Men's 16-17 Age Group",
+        "weight_class": "+102kg",
+        "lifter_name": "Brady Smith",
+        "lifter_id": 33212,
+        "membershipNumbers": [
+          {
+            "athleteName": "Brady Smith",
+            "membershipNumber": "1075001",
+            "fullText": "1  -  215  Brady Smith  M  17  Heavy Athletics  1075001  104.1  2024-07-27  -  Local  Mountain North"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNy0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNy0yNyIsIndlaWdodF9jbGFzcyI6MTB9"
+      },
+      {
+        "meet_id": 6248,
+        "date": "2024-02-26",
+        "age_category": "Men's 16-17 Age Group",
+        "weight_class": "+102kg",
+        "lifter_name": "Brady Smith",
+        "lifter_id": 33212,
+        "membershipNumbers": [
+          {
+            "athleteName": "Brady Smith",
+            "membershipNumber": "1075001",
+            "fullText": "1  -  191  Brady Smith  M  17  Heavy Athletics  1075001  102.3  2024-02-26  -  Local  Mountain North"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMi0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMi0yNiIsIndlaWdodF9jbGFzcyI6MTB9"
+      },
+      {
+        "meet_id": 6874,
+        "date": "2025-05-10",
+        "age_category": "Junior Men's",
+        "weight_class": "102kg",
+        "lifter_name": "Brady Smith",
+        "lifter_id": 33212,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNS0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNS0xMCIsIndlaWdodF9jbGFzcyI6Njh9"
+      },
+      {
+        "meet_id": 6767,
+        "date": "2025-02-22",
+        "age_category": "Junior Men's",
+        "weight_class": "102kg",
+        "lifter_name": "Brady Smith",
+        "lifter_id": 33212,
+        "membershipNumbers": [
+          {
+            "athleteName": "Brady Smith",
+            "membershipNumber": "1075001",
+            "fullText": "1  -  213  Brady Smith  M  18  Heavy Athletics  1075001  98.4  2025-02-22  -  Local  Mountain North"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMi0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMi0yMiIsIndlaWdodF9jbGFzcyI6Njh9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1023991": [
+          {
+            "meet_id": 2932,
+            "date": "2017-10-29",
+            "age_category": "Men's 13 Under Age Group",
+            "weight_class": "31 Kg",
+            "lifter_name": "Brady Smith",
+            "lifter_id": 33212,
+            "membershipNumbers": [
+              {
+                "athleteName": "Brady Smith",
+                "membershipNumber": "1023991",
+                "fullText": "5  -  15  Brady Smith  M  7  BUTTE BARBELL CLUB  1023991  22.8  2017-10-29  -  Local  Mountain North"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0yOSIsIndlaWdodF9jbGFzcyI6MjkxfQ=="
+          }
+        ],
+        "1075001": [
+          {
+            "meet_id": 6479,
+            "date": "2024-07-27",
+            "age_category": "Men's 16-17 Age Group",
+            "weight_class": "+102kg",
+            "lifter_name": "Brady Smith",
+            "lifter_id": 33212,
+            "membershipNumbers": [
+              {
+                "athleteName": "Brady Smith",
+                "membershipNumber": "1075001",
+                "fullText": "1  -  215  Brady Smith  M  17  Heavy Athletics  1075001  104.1  2024-07-27  -  Local  Mountain North"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNy0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNy0yNyIsIndlaWdodF9jbGFzcyI6MTB9"
+          },
+          {
+            "meet_id": 6248,
+            "date": "2024-02-26",
+            "age_category": "Men's 16-17 Age Group",
+            "weight_class": "+102kg",
+            "lifter_name": "Brady Smith",
+            "lifter_id": 33212,
+            "membershipNumbers": [
+              {
+                "athleteName": "Brady Smith",
+                "membershipNumber": "1075001",
+                "fullText": "1  -  191  Brady Smith  M  17  Heavy Athletics  1075001  102.3  2024-02-26  -  Local  Mountain North"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMi0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMi0yNiIsIndlaWdodF9jbGFzcyI6MTB9"
+          },
+          {
+            "meet_id": 6767,
+            "date": "2025-02-22",
+            "age_category": "Junior Men's",
+            "weight_class": "102kg",
+            "lifter_name": "Brady Smith",
+            "lifter_id": 33212,
+            "membershipNumbers": [
+              {
+                "athleteName": "Brady Smith",
+                "membershipNumber": "1075001",
+                "fullText": "1  -  213  Brady Smith  M  18  Heavy Athletics  1075001  98.4  2025-02-22  -  Local  Mountain North"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMi0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMi0yMiIsIndlaWdodF9jbGFzcyI6Njh9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 6874,
+          "date": "2025-05-10",
+          "age_category": "Junior Men's",
+          "weight_class": "102kg",
+          "lifter_name": "Brady Smith",
+          "lifter_id": 33212,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNS0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNS0xMCIsIndlaWdodF9jbGFzcyI6Njh9"
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

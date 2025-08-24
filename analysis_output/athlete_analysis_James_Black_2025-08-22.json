@@ -1,0 +1,298 @@
+{
+  "timestamp": "2025-08-22T19:57:23.177Z",
+  "athleteName": "James Black",
+  "totalCompetitions": 5,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "204129": [
+        {
+          "meet_id": 240,
+          "date": "2015-07-25",
+          "age_category": "Open Men's",
+          "weight_class": "62 kg",
+          "lifter_name": "James Black",
+          "lifter_id": 10156,
+          "membershipNumbers": [
+            {
+              "athleteName": "James Black",
+              "membershipNumber": "204129",
+              "fullText": "7  -  87  James Black  M  16  OCU BARBELL CLUB  204129  61.9  2015-07-25  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNy0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNy0yNSIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+        },
+        {
+          "meet_id": 1537,
+          "date": "2014-11-01",
+          "age_category": "Open Men's",
+          "weight_class": "62 kg",
+          "lifter_name": "James Black",
+          "lifter_id": 10156,
+          "membershipNumbers": [
+            {
+              "athleteName": "James Black",
+              "membershipNumber": "204129",
+              "fullText": "5  -  68  James Black  M  15  OCU BARBELL CLUB  204129  57.1  2014-11-01  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMS0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMS0wMSIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+        },
+        {
+          "meet_id": 2027,
+          "date": "2016-05-28",
+          "age_category": "Open Men's",
+          "weight_class": "69 kg",
+          "lifter_name": "James Black",
+          "lifter_id": 10156,
+          "membershipNumbers": [
+            {
+              "athleteName": "James Black",
+              "membershipNumber": "204129",
+              "fullText": "11  -  119  James Black  M  17  OCU BARBELL CLUB  204129  69  2016-05-28  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0yOCIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+        },
+        {
+          "meet_id": 239,
+          "date": "2015-05-23",
+          "age_category": "Open Men's",
+          "weight_class": "62 kg",
+          "lifter_name": "James Black",
+          "lifter_id": 10156,
+          "membershipNumbers": [
+            {
+              "athleteName": "James Black",
+              "membershipNumber": "204129",
+              "fullText": "12  -  94  James Black  M  16  OCU BARBELL CLUB  204129  61.6  2015-05-23  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0yMyIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+        }
+      ],
+      "1042396": [
+        {
+          "meet_id": 3985,
+          "date": "2019-06-01",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "James Black",
+          "lifter_id": 10156,
+          "membershipNumbers": [
+            {
+              "athleteName": "James Black",
+              "membershipNumber": "1042396",
+              "fullText": "25  -  152  James Black  M  67  AMERICAN COLLEGE OF MODERN WL  1042396  88.5  2019-06-01  -  Local  Alabama"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNi0wMSIsIndlaWdodF9jbGFzcyI6ODZ9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "James Black",
+    "splits": [
+      {
+        "newAthleteName": "James Black (Person 1)",
+        "membershipNumber": "204129",
+        "competitionCount": 4,
+        "competitions": [
+          240,
+          1537,
+          2027,
+          239
+        ]
+      },
+      {
+        "newAthleteName": "James Black (Person 2)",
+        "membershipNumber": "1042396",
+        "competitionCount": 1,
+        "competitions": [
+          3985
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "James Black",
+    "competitions": [
+      {
+        "meet_id": 240,
+        "date": "2015-07-25",
+        "age_category": "Open Men's",
+        "weight_class": "62 kg",
+        "lifter_name": "James Black",
+        "lifter_id": 10156,
+        "membershipNumbers": [
+          {
+            "athleteName": "James Black",
+            "membershipNumber": "204129",
+            "fullText": "7  -  87  James Black  M  16  OCU BARBELL CLUB  204129  61.9  2015-07-25  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNy0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNy0yNSIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+      },
+      {
+        "meet_id": 1537,
+        "date": "2014-11-01",
+        "age_category": "Open Men's",
+        "weight_class": "62 kg",
+        "lifter_name": "James Black",
+        "lifter_id": 10156,
+        "membershipNumbers": [
+          {
+            "athleteName": "James Black",
+            "membershipNumber": "204129",
+            "fullText": "5  -  68  James Black  M  15  OCU BARBELL CLUB  204129  57.1  2014-11-01  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMS0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMS0wMSIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+      },
+      {
+        "meet_id": 2027,
+        "date": "2016-05-28",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "James Black",
+        "lifter_id": 10156,
+        "membershipNumbers": [
+          {
+            "athleteName": "James Black",
+            "membershipNumber": "204129",
+            "fullText": "11  -  119  James Black  M  17  OCU BARBELL CLUB  204129  69  2016-05-28  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0yOCIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      },
+      {
+        "meet_id": 239,
+        "date": "2015-05-23",
+        "age_category": "Open Men's",
+        "weight_class": "62 kg",
+        "lifter_name": "James Black",
+        "lifter_id": 10156,
+        "membershipNumbers": [
+          {
+            "athleteName": "James Black",
+            "membershipNumber": "204129",
+            "fullText": "12  -  94  James Black  M  16  OCU BARBELL CLUB  204129  61.6  2015-05-23  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0yMyIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+      },
+      {
+        "meet_id": 3985,
+        "date": "2019-06-01",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "James Black",
+        "lifter_id": 10156,
+        "membershipNumbers": [
+          {
+            "athleteName": "James Black",
+            "membershipNumber": "1042396",
+            "fullText": "25  -  152  James Black  M  67  AMERICAN COLLEGE OF MODERN WL  1042396  88.5  2019-06-01  -  Local  Alabama"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNi0wMSIsIndlaWdodF9jbGFzcyI6ODZ9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "204129": [
+          {
+            "meet_id": 240,
+            "date": "2015-07-25",
+            "age_category": "Open Men's",
+            "weight_class": "62 kg",
+            "lifter_name": "James Black",
+            "lifter_id": 10156,
+            "membershipNumbers": [
+              {
+                "athleteName": "James Black",
+                "membershipNumber": "204129",
+                "fullText": "7  -  87  James Black  M  16  OCU BARBELL CLUB  204129  61.9  2015-07-25  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNy0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNy0yNSIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+          },
+          {
+            "meet_id": 1537,
+            "date": "2014-11-01",
+            "age_category": "Open Men's",
+            "weight_class": "62 kg",
+            "lifter_name": "James Black",
+            "lifter_id": 10156,
+            "membershipNumbers": [
+              {
+                "athleteName": "James Black",
+                "membershipNumber": "204129",
+                "fullText": "5  -  68  James Black  M  15  OCU BARBELL CLUB  204129  57.1  2014-11-01  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMS0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMS0wMSIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+          },
+          {
+            "meet_id": 2027,
+            "date": "2016-05-28",
+            "age_category": "Open Men's",
+            "weight_class": "69 kg",
+            "lifter_name": "James Black",
+            "lifter_id": 10156,
+            "membershipNumbers": [
+              {
+                "athleteName": "James Black",
+                "membershipNumber": "204129",
+                "fullText": "11  -  119  James Black  M  17  OCU BARBELL CLUB  204129  69  2016-05-28  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0yOCIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+          },
+          {
+            "meet_id": 239,
+            "date": "2015-05-23",
+            "age_category": "Open Men's",
+            "weight_class": "62 kg",
+            "lifter_name": "James Black",
+            "lifter_id": 10156,
+            "membershipNumbers": [
+              {
+                "athleteName": "James Black",
+                "membershipNumber": "204129",
+                "fullText": "12  -  94  James Black  M  16  OCU BARBELL CLUB  204129  61.6  2015-05-23  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0yMyIsIndlaWdodF9jbGFzcyI6MzU1fQ=="
+          }
+        ],
+        "1042396": [
+          {
+            "meet_id": 3985,
+            "date": "2019-06-01",
+            "age_category": "Open Men's",
+            "weight_class": "89kg",
+            "lifter_name": "James Black",
+            "lifter_id": 10156,
+            "membershipNumbers": [
+              {
+                "athleteName": "James Black",
+                "membershipNumber": "1042396",
+                "fullText": "25  -  152  James Black  M  67  AMERICAN COLLEGE OF MODERN WL  1042396  88.5  2019-06-01  -  Local  Alabama"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNi0wMSIsIndlaWdodF9jbGFzcyI6ODZ9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

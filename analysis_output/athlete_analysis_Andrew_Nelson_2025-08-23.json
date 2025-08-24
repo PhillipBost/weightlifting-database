@@ -1,0 +1,243 @@
+{
+  "timestamp": "2025-08-23T00:43:48.292Z",
+  "athleteName": "Andrew Nelson",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1015194": [
+        {
+          "meet_id": 2435,
+          "date": "2017-03-04",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Andrew Nelson",
+          "lifter_id": 29495,
+          "membershipNumbers": [
+            {
+              "athleteName": "Andrew Nelson",
+              "membershipNumber": "1015194",
+              "fullText": "26  -  88  Andrew Nelson  M  15  Champion Weightlifting  1015194  84.1  2017-03-04  -  Local  Missouri Valley"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0wNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ],
+      "1030288": [
+        {
+          "meet_id": 3108,
+          "date": "2018-09-01",
+          "age_category": "Open Men's",
+          "weight_class": "96kg",
+          "lifter_name": "Andrew Nelson",
+          "lifter_id": 29495,
+          "membershipNumbers": [
+            {
+              "athleteName": "Andrew Nelson",
+              "membershipNumber": "1030288",
+              "fullText": "20  -  138  Andrew Nelson  M  15  St. Pete Barbell Club  1030288  95.05  2018-09-01  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOS0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOS0wMSIsIndlaWdodF9jbGFzcyI6ODd9"
+        },
+        {
+          "meet_id": 3434,
+          "date": "2018-07-21",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Andrew Nelson",
+          "lifter_id": 29495,
+          "membershipNumbers": [
+            {
+              "athleteName": "Andrew Nelson",
+              "membershipNumber": "1030288",
+              "fullText": "25  -  99  Andrew Nelson  M  15  St. Pete Barbell Club  1030288  95.7  2018-07-21  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNy0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNy0yMSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 3589,
+        "date": "2018-10-28",
+        "age_category": "Open Men's",
+        "weight_class": "96kg",
+        "lifter_name": "Andrew Nelson",
+        "lifter_id": 29495,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yOCIsIndlaWdodF9jbGFzcyI6ODd9"
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Andrew Nelson",
+    "splits": [
+      {
+        "newAthleteName": "Andrew Nelson (Person 1)",
+        "membershipNumber": "1015194",
+        "competitionCount": 1,
+        "competitions": [
+          2435
+        ]
+      },
+      {
+        "newAthleteName": "Andrew Nelson (Person 2)",
+        "membershipNumber": "1030288",
+        "competitionCount": 2,
+        "competitions": [
+          3108,
+          3434
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 3589,
+        "date": "2018-10-28",
+        "age_category": "Open Men's",
+        "weight_class": "96kg",
+        "lifter_name": "Andrew Nelson",
+        "lifter_id": 29495,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yOCIsIndlaWdodF9jbGFzcyI6ODd9"
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Andrew Nelson",
+    "competitions": [
+      {
+        "meet_id": 3589,
+        "date": "2018-10-28",
+        "age_category": "Open Men's",
+        "weight_class": "96kg",
+        "lifter_name": "Andrew Nelson",
+        "lifter_id": 29495,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yOCIsIndlaWdodF9jbGFzcyI6ODd9"
+      },
+      {
+        "meet_id": 2435,
+        "date": "2017-03-04",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Andrew Nelson",
+        "lifter_id": 29495,
+        "membershipNumbers": [
+          {
+            "athleteName": "Andrew Nelson",
+            "membershipNumber": "1015194",
+            "fullText": "26  -  88  Andrew Nelson  M  15  Champion Weightlifting  1015194  84.1  2017-03-04  -  Local  Missouri Valley"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0wNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 3108,
+        "date": "2018-09-01",
+        "age_category": "Open Men's",
+        "weight_class": "96kg",
+        "lifter_name": "Andrew Nelson",
+        "lifter_id": 29495,
+        "membershipNumbers": [
+          {
+            "athleteName": "Andrew Nelson",
+            "membershipNumber": "1030288",
+            "fullText": "20  -  138  Andrew Nelson  M  15  St. Pete Barbell Club  1030288  95.05  2018-09-01  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOS0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOS0wMSIsIndlaWdodF9jbGFzcyI6ODd9"
+      },
+      {
+        "meet_id": 3434,
+        "date": "2018-07-21",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Andrew Nelson",
+        "lifter_id": 29495,
+        "membershipNumbers": [
+          {
+            "athleteName": "Andrew Nelson",
+            "membershipNumber": "1030288",
+            "fullText": "25  -  99  Andrew Nelson  M  15  St. Pete Barbell Club  1030288  95.7  2018-07-21  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNy0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNy0yMSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1015194": [
+          {
+            "meet_id": 2435,
+            "date": "2017-03-04",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Andrew Nelson",
+            "lifter_id": 29495,
+            "membershipNumbers": [
+              {
+                "athleteName": "Andrew Nelson",
+                "membershipNumber": "1015194",
+                "fullText": "26  -  88  Andrew Nelson  M  15  Champion Weightlifting  1015194  84.1  2017-03-04  -  Local  Missouri Valley"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0wNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          }
+        ],
+        "1030288": [
+          {
+            "meet_id": 3108,
+            "date": "2018-09-01",
+            "age_category": "Open Men's",
+            "weight_class": "96kg",
+            "lifter_name": "Andrew Nelson",
+            "lifter_id": 29495,
+            "membershipNumbers": [
+              {
+                "athleteName": "Andrew Nelson",
+                "membershipNumber": "1030288",
+                "fullText": "20  -  138  Andrew Nelson  M  15  St. Pete Barbell Club  1030288  95.05  2018-09-01  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOS0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOS0wMSIsIndlaWdodF9jbGFzcyI6ODd9"
+          },
+          {
+            "meet_id": 3434,
+            "date": "2018-07-21",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Andrew Nelson",
+            "lifter_id": 29495,
+            "membershipNumbers": [
+              {
+                "athleteName": "Andrew Nelson",
+                "membershipNumber": "1030288",
+                "fullText": "25  -  99  Andrew Nelson  M  15  St. Pete Barbell Club  1030288  95.7  2018-07-21  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNy0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNy0yMSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 3589,
+          "date": "2018-10-28",
+          "age_category": "Open Men's",
+          "weight_class": "96kg",
+          "lifter_name": "Andrew Nelson",
+          "lifter_id": 29495,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yOCIsIndlaWdodF9jbGFzcyI6ODd9"
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

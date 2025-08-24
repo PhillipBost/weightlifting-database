@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T18:47:22.519Z",
+  "athleteName": "Ryan White",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1014257": [
+        {
+          "meet_id": 2302,
+          "date": "2017-01-21",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Ryan White",
+          "lifter_id": 28229,
+          "membershipNumbers": [
+            {
+              "athleteName": "Ryan White",
+              "membershipNumber": "1014257",
+              "fullText": "14  -  193  Ryan White  M  26  -  1014257  72.9  2017-01-21  -  Local  Iowa-Nebraska"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMS0yMSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        }
+      ],
+      "1035923": [
+        {
+          "meet_id": 3423,
+          "date": "2018-12-02",
+          "age_category": "Open Men's",
+          "weight_class": "73kg",
+          "lifter_name": "Ryan White",
+          "lifter_id": 28229,
+          "membershipNumbers": [
+            {
+              "athleteName": "Ryan White",
+              "membershipNumber": "1035923",
+              "fullText": "17  -  141  Ryan White  M  41  Southern California Weightlifting Club  1035923  72.58  2018-12-02  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0wMiIsIndlaWdodF9jbGFzcyI6ODR9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Ryan White",
+    "splits": [
+      {
+        "newAthleteName": "Ryan White (Person 1)",
+        "membershipNumber": "1014257",
+        "competitionCount": 1,
+        "competitions": [
+          2302
+        ]
+      },
+      {
+        "newAthleteName": "Ryan White (Person 2)",
+        "membershipNumber": "1035923",
+        "competitionCount": 1,
+        "competitions": [
+          3423
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Ryan White",
+    "competitions": [
+      {
+        "meet_id": 2302,
+        "date": "2017-01-21",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Ryan White",
+        "lifter_id": 28229,
+        "membershipNumbers": [
+          {
+            "athleteName": "Ryan White",
+            "membershipNumber": "1014257",
+            "fullText": "14  -  193  Ryan White  M  26  -  1014257  72.9  2017-01-21  -  Local  Iowa-Nebraska"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMS0yMSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 3423,
+        "date": "2018-12-02",
+        "age_category": "Open Men's",
+        "weight_class": "73kg",
+        "lifter_name": "Ryan White",
+        "lifter_id": 28229,
+        "membershipNumbers": [
+          {
+            "athleteName": "Ryan White",
+            "membershipNumber": "1035923",
+            "fullText": "17  -  141  Ryan White  M  41  Southern California Weightlifting Club  1035923  72.58  2018-12-02  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0wMiIsIndlaWdodF9jbGFzcyI6ODR9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1014257": [
+          {
+            "meet_id": 2302,
+            "date": "2017-01-21",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Ryan White",
+            "lifter_id": 28229,
+            "membershipNumbers": [
+              {
+                "athleteName": "Ryan White",
+                "membershipNumber": "1014257",
+                "fullText": "14  -  193  Ryan White  M  26  -  1014257  72.9  2017-01-21  -  Local  Iowa-Nebraska"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMS0yMSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          }
+        ],
+        "1035923": [
+          {
+            "meet_id": 3423,
+            "date": "2018-12-02",
+            "age_category": "Open Men's",
+            "weight_class": "73kg",
+            "lifter_name": "Ryan White",
+            "lifter_id": 28229,
+            "membershipNumbers": [
+              {
+                "athleteName": "Ryan White",
+                "membershipNumber": "1035923",
+                "fullText": "17  -  141  Ryan White  M  41  Southern California Weightlifting Club  1035923  72.58  2018-12-02  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0wMiIsIndlaWdodF9jbGFzcyI6ODR9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

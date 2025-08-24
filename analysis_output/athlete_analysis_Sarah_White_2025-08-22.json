@@ -1,0 +1,260 @@
+{
+  "timestamp": "2025-08-22T05:19:36.974Z",
+  "athleteName": "Sarah White",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 3,
+    "membershipGroups": {
+      "134457": [
+        {
+          "meet_id": 1498,
+          "date": "2014-09-28",
+          "age_category": "Open Women's",
+          "weight_class": "+75 Kg",
+          "lifter_name": "Sarah White",
+          "lifter_id": 7257,
+          "membershipNumbers": [
+            {
+              "athleteName": "Sarah White",
+              "membershipNumber": "134457",
+              "fullText": "3  -  161  Sarah White  F  27  TEAM BFS  134457  108.66  2014-09-28  -  Local  New England"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOS0yOCIsIndlaWdodF9jbGFzcyI6MzY4fQ=="
+        },
+        {
+          "meet_id": 1501,
+          "date": "2014-11-02",
+          "age_category": "Open Women's",
+          "weight_class": "+75 Kg",
+          "lifter_name": "Sarah White",
+          "lifter_id": 7257,
+          "membershipNumbers": [
+            {
+              "athleteName": "Sarah White",
+              "membershipNumber": "134457",
+              "fullText": "5  -  163  Sarah White  F  27  TEAM BFS  134457  108.9  2014-11-02  -  Local  New England"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMS0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMS0wMiIsIndlaWdodF9jbGFzcyI6MzY4fQ=="
+        }
+      ],
+      "214730": [
+        {
+          "meet_id": 211,
+          "date": "2015-06-27",
+          "age_category": "Women's Masters (40-44)",
+          "weight_class": "+75 kg",
+          "lifter_name": "Sarah White",
+          "lifter_id": 7257,
+          "membershipNumbers": [
+            {
+              "athleteName": "Sarah White",
+              "membershipNumber": "214730",
+              "fullText": "2  -  65  Sarah White  F  43  LIFT LAB  214730  90  2015-06-27  -  Local  Indiana"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNi0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNi0yNyIsIndlaWdodF9jbGFzcyI6NDAyfQ=="
+        }
+      ],
+      "215128": [
+        {
+          "meet_id": 113,
+          "date": "2015-07-25",
+          "age_category": "Open Women's",
+          "weight_class": "58 kg",
+          "lifter_name": "Sarah White",
+          "lifter_id": 7257,
+          "membershipNumbers": [
+            {
+              "athleteName": "Sarah White",
+              "membershipNumber": "215128",
+              "fullText": "12  -  106  Sarah White  F  24  -  215128  56.1  2015-07-25  -  Local  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNy0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNy0yNSIsIndlaWdodF9jbGFzcyI6MzY0fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Sarah White",
+    "splits": [
+      {
+        "newAthleteName": "Sarah White (Person 1)",
+        "membershipNumber": "134457",
+        "competitionCount": 2,
+        "competitions": [
+          1498,
+          1501
+        ]
+      },
+      {
+        "newAthleteName": "Sarah White (Person 2)",
+        "membershipNumber": "214730",
+        "competitionCount": 1,
+        "competitions": [
+          211
+        ]
+      },
+      {
+        "newAthleteName": "Sarah White (Person 3)",
+        "membershipNumber": "215128",
+        "competitionCount": 1,
+        "competitions": [
+          113
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Sarah White",
+    "competitions": [
+      {
+        "meet_id": 113,
+        "date": "2015-07-25",
+        "age_category": "Open Women's",
+        "weight_class": "58 kg",
+        "lifter_name": "Sarah White",
+        "lifter_id": 7257,
+        "membershipNumbers": [
+          {
+            "athleteName": "Sarah White",
+            "membershipNumber": "215128",
+            "fullText": "12  -  106  Sarah White  F  24  -  215128  56.1  2015-07-25  -  Local  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNy0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNy0yNSIsIndlaWdodF9jbGFzcyI6MzY0fQ=="
+      },
+      {
+        "meet_id": 211,
+        "date": "2015-06-27",
+        "age_category": "Women's Masters (40-44)",
+        "weight_class": "+75 kg",
+        "lifter_name": "Sarah White",
+        "lifter_id": 7257,
+        "membershipNumbers": [
+          {
+            "athleteName": "Sarah White",
+            "membershipNumber": "214730",
+            "fullText": "2  -  65  Sarah White  F  43  LIFT LAB  214730  90  2015-06-27  -  Local  Indiana"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNi0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNi0yNyIsIndlaWdodF9jbGFzcyI6NDAyfQ=="
+      },
+      {
+        "meet_id": 1498,
+        "date": "2014-09-28",
+        "age_category": "Open Women's",
+        "weight_class": "+75 Kg",
+        "lifter_name": "Sarah White",
+        "lifter_id": 7257,
+        "membershipNumbers": [
+          {
+            "athleteName": "Sarah White",
+            "membershipNumber": "134457",
+            "fullText": "3  -  161  Sarah White  F  27  TEAM BFS  134457  108.66  2014-09-28  -  Local  New England"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOS0yOCIsIndlaWdodF9jbGFzcyI6MzY4fQ=="
+      },
+      {
+        "meet_id": 1501,
+        "date": "2014-11-02",
+        "age_category": "Open Women's",
+        "weight_class": "+75 Kg",
+        "lifter_name": "Sarah White",
+        "lifter_id": 7257,
+        "membershipNumbers": [
+          {
+            "athleteName": "Sarah White",
+            "membershipNumber": "134457",
+            "fullText": "5  -  163  Sarah White  F  27  TEAM BFS  134457  108.9  2014-11-02  -  Local  New England"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMS0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMS0wMiIsIndlaWdodF9jbGFzcyI6MzY4fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 3,
+      "membershipGroups": {
+        "134457": [
+          {
+            "meet_id": 1498,
+            "date": "2014-09-28",
+            "age_category": "Open Women's",
+            "weight_class": "+75 Kg",
+            "lifter_name": "Sarah White",
+            "lifter_id": 7257,
+            "membershipNumbers": [
+              {
+                "athleteName": "Sarah White",
+                "membershipNumber": "134457",
+                "fullText": "3  -  161  Sarah White  F  27  TEAM BFS  134457  108.66  2014-09-28  -  Local  New England"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOS0yOCIsIndlaWdodF9jbGFzcyI6MzY4fQ=="
+          },
+          {
+            "meet_id": 1501,
+            "date": "2014-11-02",
+            "age_category": "Open Women's",
+            "weight_class": "+75 Kg",
+            "lifter_name": "Sarah White",
+            "lifter_id": 7257,
+            "membershipNumbers": [
+              {
+                "athleteName": "Sarah White",
+                "membershipNumber": "134457",
+                "fullText": "5  -  163  Sarah White  F  27  TEAM BFS  134457  108.9  2014-11-02  -  Local  New England"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMS0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMS0wMiIsIndlaWdodF9jbGFzcyI6MzY4fQ=="
+          }
+        ],
+        "214730": [
+          {
+            "meet_id": 211,
+            "date": "2015-06-27",
+            "age_category": "Women's Masters (40-44)",
+            "weight_class": "+75 kg",
+            "lifter_name": "Sarah White",
+            "lifter_id": 7257,
+            "membershipNumbers": [
+              {
+                "athleteName": "Sarah White",
+                "membershipNumber": "214730",
+                "fullText": "2  -  65  Sarah White  F  43  LIFT LAB  214730  90  2015-06-27  -  Local  Indiana"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNi0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNi0yNyIsIndlaWdodF9jbGFzcyI6NDAyfQ=="
+          }
+        ],
+        "215128": [
+          {
+            "meet_id": 113,
+            "date": "2015-07-25",
+            "age_category": "Open Women's",
+            "weight_class": "58 kg",
+            "lifter_name": "Sarah White",
+            "lifter_id": 7257,
+            "membershipNumbers": [
+              {
+                "athleteName": "Sarah White",
+                "membershipNumber": "215128",
+                "fullText": "12  -  106  Sarah White  F  24  -  215128  56.1  2015-07-25  -  Local  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNy0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNy0yNSIsIndlaWdodF9jbGFzcyI6MzY0fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

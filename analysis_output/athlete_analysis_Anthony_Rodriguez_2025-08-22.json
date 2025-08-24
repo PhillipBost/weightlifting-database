@@ -1,0 +1,298 @@
+{
+  "timestamp": "2025-08-22T08:14:42.361Z",
+  "athleteName": "Anthony Rodriguez",
+  "totalCompetitions": 5,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1028409": [
+        {
+          "meet_id": 3303,
+          "date": "2018-06-10",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Anthony Rodriguez",
+          "lifter_id": 36882,
+          "membershipNumbers": [
+            {
+              "athleteName": "Anthony Rodriguez",
+              "membershipNumber": "1028409",
+              "fullText": "19  -  155  Anthony Rodriguez  M  34  -  1028409  85.5  2018-06-10  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0xMCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        },
+        {
+          "meet_id": 3921,
+          "date": "2019-04-14",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "Anthony Rodriguez",
+          "lifter_id": 36882,
+          "membershipNumbers": [
+            {
+              "athleteName": "Anthony Rodriguez",
+              "membershipNumber": "1028409",
+              "fullText": "11  -  152  Anthony Rodriguez  M  35  -  1028409  85.3  2019-04-14  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0xNCIsIndlaWdodF9jbGFzcyI6ODZ9"
+        },
+        {
+          "meet_id": 4056,
+          "date": "2019-07-14",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "Anthony Rodriguez",
+          "lifter_id": 36882,
+          "membershipNumbers": [
+            {
+              "athleteName": "Anthony Rodriguez",
+              "membershipNumber": "1028409",
+              "fullText": "15  -  154  Anthony Rodriguez  M  35  -  1028409  85.7  2019-07-14  -  Local  DMV"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0xNCIsIndlaWdodF9jbGFzcyI6ODZ9"
+        }
+      ],
+      "1070060": [
+        {
+          "meet_id": 5801,
+          "date": "2023-04-15",
+          "age_category": "Junior Men's",
+          "weight_class": "89kg",
+          "lifter_name": "Anthony Rodriguez",
+          "lifter_id": 36882,
+          "membershipNumbers": [
+            {
+              "athleteName": "Anthony Rodriguez",
+              "membershipNumber": "1070060",
+              "fullText": "6  -  215  Anthony Rodriguez  M  18  -  1070060  87.91  2023-04-15  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0xNSIsIndlaWdodF9jbGFzcyI6NjZ9"
+        },
+        {
+          "meet_id": 6334,
+          "date": "2024-04-19",
+          "age_category": "Junior Men's",
+          "weight_class": "96kg",
+          "lifter_name": "Anthony Rodriguez",
+          "lifter_id": 36882,
+          "membershipNumbers": [
+            {
+              "athleteName": "Anthony Rodriguez",
+              "membershipNumber": "1070060",
+              "fullText": "3  -  255  Anthony Rodriguez  M  19  -  1070060  91.72  2024-04-19  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNC0xOSIsIndlaWdodF9jbGFzcyI6Njd9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Anthony Rodriguez",
+    "splits": [
+      {
+        "newAthleteName": "Anthony Rodriguez (Person 1)",
+        "membershipNumber": "1028409",
+        "competitionCount": 3,
+        "competitions": [
+          3303,
+          3921,
+          4056
+        ]
+      },
+      {
+        "newAthleteName": "Anthony Rodriguez (Person 2)",
+        "membershipNumber": "1070060",
+        "competitionCount": 2,
+        "competitions": [
+          5801,
+          6334
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Anthony Rodriguez",
+    "competitions": [
+      {
+        "meet_id": 5801,
+        "date": "2023-04-15",
+        "age_category": "Junior Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Anthony Rodriguez",
+        "lifter_id": 36882,
+        "membershipNumbers": [
+          {
+            "athleteName": "Anthony Rodriguez",
+            "membershipNumber": "1070060",
+            "fullText": "6  -  215  Anthony Rodriguez  M  18  -  1070060  87.91  2023-04-15  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0xNSIsIndlaWdodF9jbGFzcyI6NjZ9"
+      },
+      {
+        "meet_id": 3303,
+        "date": "2018-06-10",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Anthony Rodriguez",
+        "lifter_id": 36882,
+        "membershipNumbers": [
+          {
+            "athleteName": "Anthony Rodriguez",
+            "membershipNumber": "1028409",
+            "fullText": "19  -  155  Anthony Rodriguez  M  34  -  1028409  85.5  2018-06-10  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0xMCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      },
+      {
+        "meet_id": 3921,
+        "date": "2019-04-14",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Anthony Rodriguez",
+        "lifter_id": 36882,
+        "membershipNumbers": [
+          {
+            "athleteName": "Anthony Rodriguez",
+            "membershipNumber": "1028409",
+            "fullText": "11  -  152  Anthony Rodriguez  M  35  -  1028409  85.3  2019-04-14  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0xNCIsIndlaWdodF9jbGFzcyI6ODZ9"
+      },
+      {
+        "meet_id": 4056,
+        "date": "2019-07-14",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Anthony Rodriguez",
+        "lifter_id": 36882,
+        "membershipNumbers": [
+          {
+            "athleteName": "Anthony Rodriguez",
+            "membershipNumber": "1028409",
+            "fullText": "15  -  154  Anthony Rodriguez  M  35  -  1028409  85.7  2019-07-14  -  Local  DMV"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0xNCIsIndlaWdodF9jbGFzcyI6ODZ9"
+      },
+      {
+        "meet_id": 6334,
+        "date": "2024-04-19",
+        "age_category": "Junior Men's",
+        "weight_class": "96kg",
+        "lifter_name": "Anthony Rodriguez",
+        "lifter_id": 36882,
+        "membershipNumbers": [
+          {
+            "athleteName": "Anthony Rodriguez",
+            "membershipNumber": "1070060",
+            "fullText": "3  -  255  Anthony Rodriguez  M  19  -  1070060  91.72  2024-04-19  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNC0xOSIsIndlaWdodF9jbGFzcyI6Njd9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1028409": [
+          {
+            "meet_id": 3303,
+            "date": "2018-06-10",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Anthony Rodriguez",
+            "lifter_id": 36882,
+            "membershipNumbers": [
+              {
+                "athleteName": "Anthony Rodriguez",
+                "membershipNumber": "1028409",
+                "fullText": "19  -  155  Anthony Rodriguez  M  34  -  1028409  85.5  2018-06-10  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0xMCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          },
+          {
+            "meet_id": 3921,
+            "date": "2019-04-14",
+            "age_category": "Open Men's",
+            "weight_class": "89kg",
+            "lifter_name": "Anthony Rodriguez",
+            "lifter_id": 36882,
+            "membershipNumbers": [
+              {
+                "athleteName": "Anthony Rodriguez",
+                "membershipNumber": "1028409",
+                "fullText": "11  -  152  Anthony Rodriguez  M  35  -  1028409  85.3  2019-04-14  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0xNCIsIndlaWdodF9jbGFzcyI6ODZ9"
+          },
+          {
+            "meet_id": 4056,
+            "date": "2019-07-14",
+            "age_category": "Open Men's",
+            "weight_class": "89kg",
+            "lifter_name": "Anthony Rodriguez",
+            "lifter_id": 36882,
+            "membershipNumbers": [
+              {
+                "athleteName": "Anthony Rodriguez",
+                "membershipNumber": "1028409",
+                "fullText": "15  -  154  Anthony Rodriguez  M  35  -  1028409  85.7  2019-07-14  -  Local  DMV"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0xNCIsIndlaWdodF9jbGFzcyI6ODZ9"
+          }
+        ],
+        "1070060": [
+          {
+            "meet_id": 5801,
+            "date": "2023-04-15",
+            "age_category": "Junior Men's",
+            "weight_class": "89kg",
+            "lifter_name": "Anthony Rodriguez",
+            "lifter_id": 36882,
+            "membershipNumbers": [
+              {
+                "athleteName": "Anthony Rodriguez",
+                "membershipNumber": "1070060",
+                "fullText": "6  -  215  Anthony Rodriguez  M  18  -  1070060  87.91  2023-04-15  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0xNSIsIndlaWdodF9jbGFzcyI6NjZ9"
+          },
+          {
+            "meet_id": 6334,
+            "date": "2024-04-19",
+            "age_category": "Junior Men's",
+            "weight_class": "96kg",
+            "lifter_name": "Anthony Rodriguez",
+            "lifter_id": 36882,
+            "membershipNumbers": [
+              {
+                "athleteName": "Anthony Rodriguez",
+                "membershipNumber": "1070060",
+                "fullText": "3  -  255  Anthony Rodriguez  M  19  -  1070060  91.72  2024-04-19  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNC0xOSIsIndlaWdodF9jbGFzcyI6Njd9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

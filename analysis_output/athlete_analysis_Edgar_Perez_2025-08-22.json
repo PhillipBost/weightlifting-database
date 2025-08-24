@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T08:12:13.846Z",
+  "athleteName": "Edgar Perez",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1027518": [
+        {
+          "meet_id": 3143,
+          "date": "2018-02-17",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Edgar Perez",
+          "lifter_id": 35851,
+          "membershipNumbers": [
+            {
+              "athleteName": "Edgar Perez",
+              "membershipNumber": "1027518",
+              "fullText": "25  -  164  Edgar Perez  M  19  -  1027518  77.6  2018-02-17  -  Local  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMi0xNyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ],
+      "1071510": [
+        {
+          "meet_id": 5966,
+          "date": "2023-07-29",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Edgar Perez",
+          "lifter_id": 35851,
+          "membershipNumbers": [
+            {
+              "athleteName": "Edgar Perez",
+              "membershipNumber": "1071510",
+              "fullText": "12  -  166  Edgar Perez  M  27  -  1071510  79.4  2023-07-29  -  Local  Illinois"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNy0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNy0yOSIsIndlaWdodF9jbGFzcyI6ODV9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Edgar Perez",
+    "splits": [
+      {
+        "newAthleteName": "Edgar Perez (Person 1)",
+        "membershipNumber": "1027518",
+        "competitionCount": 1,
+        "competitions": [
+          3143
+        ]
+      },
+      {
+        "newAthleteName": "Edgar Perez (Person 2)",
+        "membershipNumber": "1071510",
+        "competitionCount": 1,
+        "competitions": [
+          5966
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Edgar Perez",
+    "competitions": [
+      {
+        "meet_id": 3143,
+        "date": "2018-02-17",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Edgar Perez",
+        "lifter_id": 35851,
+        "membershipNumbers": [
+          {
+            "athleteName": "Edgar Perez",
+            "membershipNumber": "1027518",
+            "fullText": "25  -  164  Edgar Perez  M  19  -  1027518  77.6  2018-02-17  -  Local  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMi0xNyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 5966,
+        "date": "2023-07-29",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Edgar Perez",
+        "lifter_id": 35851,
+        "membershipNumbers": [
+          {
+            "athleteName": "Edgar Perez",
+            "membershipNumber": "1071510",
+            "fullText": "12  -  166  Edgar Perez  M  27  -  1071510  79.4  2023-07-29  -  Local  Illinois"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNy0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNy0yOSIsIndlaWdodF9jbGFzcyI6ODV9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1027518": [
+          {
+            "meet_id": 3143,
+            "date": "2018-02-17",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Edgar Perez",
+            "lifter_id": 35851,
+            "membershipNumbers": [
+              {
+                "athleteName": "Edgar Perez",
+                "membershipNumber": "1027518",
+                "fullText": "25  -  164  Edgar Perez  M  19  -  1027518  77.6  2018-02-17  -  Local  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMi0xNyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          }
+        ],
+        "1071510": [
+          {
+            "meet_id": 5966,
+            "date": "2023-07-29",
+            "age_category": "Open Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Edgar Perez",
+            "lifter_id": 35851,
+            "membershipNumbers": [
+              {
+                "athleteName": "Edgar Perez",
+                "membershipNumber": "1071510",
+                "fullText": "12  -  166  Edgar Perez  M  27  -  1071510  79.4  2023-07-29  -  Local  Illinois"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNy0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNy0yOSIsIndlaWdodF9jbGFzcyI6ODV9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

@@ -1,0 +1,354 @@
+{
+  "timestamp": "2025-08-22T06:07:03.836Z",
+  "athleteName": "Joshua Roberts",
+  "totalCompetitions": 7,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "207775": [
+        {
+          "meet_id": 432,
+          "date": "2015-03-14",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Joshua Roberts",
+          "lifter_id": 12135,
+          "membershipNumbers": [
+            {
+              "athleteName": "Joshua Roberts",
+              "membershipNumber": "207775",
+              "fullText": "15  -  235  Joshua Roberts  M  23  -  207775  95  2015-03-14  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMy0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMy0xNCIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        }
+      ],
+      "1037130": [
+        {
+          "meet_id": 3700,
+          "date": "2019-01-26",
+          "age_category": "Open Men's",
+          "weight_class": "81kg",
+          "lifter_name": "Joshua Roberts",
+          "lifter_id": 12135,
+          "membershipNumbers": [
+            {
+              "athleteName": "Joshua Roberts",
+              "membershipNumber": "1037130",
+              "fullText": "11  -  235  Joshua Roberts  M  25  -  1037130  79.7  2019-01-26  -  Local  Indiana"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0yNiIsIndlaWdodF9jbGFzcyI6ODV9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 334,
+        "date": "2015-10-24",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Joshua Roberts",
+        "lifter_id": 12135,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0yNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 1684,
+        "date": "2016-07-09",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Joshua Roberts",
+        "lifter_id": 12135,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 1804,
+        "date": "2016-03-19",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Joshua Roberts",
+        "lifter_id": 12135,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMy0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMy0xOSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 2311,
+        "date": "2017-02-18",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Joshua Roberts",
+        "lifter_id": 12135,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 3100,
+        "date": "2018-07-22",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Joshua Roberts",
+        "lifter_id": 12135,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Joshua Roberts",
+    "splits": [
+      {
+        "newAthleteName": "Joshua Roberts (Person 1)",
+        "membershipNumber": "207775",
+        "competitionCount": 1,
+        "competitions": [
+          432
+        ]
+      },
+      {
+        "newAthleteName": "Joshua Roberts (Person 2)",
+        "membershipNumber": "1037130",
+        "competitionCount": 1,
+        "competitions": [
+          3700
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 334,
+        "date": "2015-10-24",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Joshua Roberts",
+        "lifter_id": 12135,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0yNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 1684,
+        "date": "2016-07-09",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Joshua Roberts",
+        "lifter_id": 12135,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 1804,
+        "date": "2016-03-19",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Joshua Roberts",
+        "lifter_id": 12135,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMy0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMy0xOSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 2311,
+        "date": "2017-02-18",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Joshua Roberts",
+        "lifter_id": 12135,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 3100,
+        "date": "2018-07-22",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Joshua Roberts",
+        "lifter_id": 12135,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Joshua Roberts",
+    "competitions": [
+      {
+        "meet_id": 3700,
+        "date": "2019-01-26",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "lifter_name": "Joshua Roberts",
+        "lifter_id": 12135,
+        "membershipNumbers": [
+          {
+            "athleteName": "Joshua Roberts",
+            "membershipNumber": "1037130",
+            "fullText": "11  -  235  Joshua Roberts  M  25  -  1037130  79.7  2019-01-26  -  Local  Indiana"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0yNiIsIndlaWdodF9jbGFzcyI6ODV9"
+      },
+      {
+        "meet_id": 432,
+        "date": "2015-03-14",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Joshua Roberts",
+        "lifter_id": 12135,
+        "membershipNumbers": [
+          {
+            "athleteName": "Joshua Roberts",
+            "membershipNumber": "207775",
+            "fullText": "15  -  235  Joshua Roberts  M  23  -  207775  95  2015-03-14  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMy0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMy0xNCIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 334,
+        "date": "2015-10-24",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Joshua Roberts",
+        "lifter_id": 12135,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0yNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 1684,
+        "date": "2016-07-09",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Joshua Roberts",
+        "lifter_id": 12135,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 1804,
+        "date": "2016-03-19",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Joshua Roberts",
+        "lifter_id": 12135,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMy0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMy0xOSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 2311,
+        "date": "2017-02-18",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Joshua Roberts",
+        "lifter_id": 12135,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 3100,
+        "date": "2018-07-22",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Joshua Roberts",
+        "lifter_id": 12135,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "207775": [
+          {
+            "meet_id": 432,
+            "date": "2015-03-14",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Joshua Roberts",
+            "lifter_id": 12135,
+            "membershipNumbers": [
+              {
+                "athleteName": "Joshua Roberts",
+                "membershipNumber": "207775",
+                "fullText": "15  -  235  Joshua Roberts  M  23  -  207775  95  2015-03-14  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMy0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMy0xNCIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          }
+        ],
+        "1037130": [
+          {
+            "meet_id": 3700,
+            "date": "2019-01-26",
+            "age_category": "Open Men's",
+            "weight_class": "81kg",
+            "lifter_name": "Joshua Roberts",
+            "lifter_id": 12135,
+            "membershipNumbers": [
+              {
+                "athleteName": "Joshua Roberts",
+                "membershipNumber": "1037130",
+                "fullText": "11  -  235  Joshua Roberts  M  25  -  1037130  79.7  2019-01-26  -  Local  Indiana"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0yNiIsIndlaWdodF9jbGFzcyI6ODV9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 334,
+          "date": "2015-10-24",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Joshua Roberts",
+          "lifter_id": 12135,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0yNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        },
+        {
+          "meet_id": 1684,
+          "date": "2016-07-09",
+          "age_category": "Open Men's",
+          "weight_class": "+105 kg",
+          "lifter_name": "Joshua Roberts",
+          "lifter_id": 12135,
+          "membershipNumbers": [],
+          "error": "No division code found for: \"Open Men's +105 kg\""
+        },
+        {
+          "meet_id": 1804,
+          "date": "2016-03-19",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Joshua Roberts",
+          "lifter_id": 12135,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMy0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMy0xOSIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        },
+        {
+          "meet_id": 2311,
+          "date": "2017-02-18",
+          "age_category": "Open Men's",
+          "weight_class": "+105 kg",
+          "lifter_name": "Joshua Roberts",
+          "lifter_id": 12135,
+          "membershipNumbers": [],
+          "error": "No division code found for: \"Open Men's +105 kg\""
+        },
+        {
+          "meet_id": 3100,
+          "date": "2018-07-22",
+          "age_category": "Open Men's",
+          "weight_class": "+105 kg",
+          "lifter_name": "Joshua Roberts",
+          "lifter_id": 12135,
+          "membershipNumbers": [],
+          "error": "No division code found for: \"Open Men's +105 kg\""
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T08:14:02.956Z",
+  "athleteName": "Kyle Swanson",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1025766": [
+        {
+          "meet_id": 3253,
+          "date": "2018-05-12",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Kyle Swanson",
+          "lifter_id": 36656,
+          "membershipNumbers": [
+            {
+              "athleteName": "Kyle Swanson",
+              "membershipNumber": "1025766",
+              "fullText": "30  -  150  Kyle Swanson  M  22  -  1025766  76.28  2018-05-12  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNS0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNS0xMiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        }
+      ],
+      "1045883": [
+        {
+          "meet_id": 4116,
+          "date": "2019-10-26",
+          "age_category": "Men's 14-15 Age Group",
+          "weight_class": "73kg",
+          "lifter_name": "Kyle Swanson",
+          "lifter_id": 36656,
+          "membershipNumbers": [
+            {
+              "athleteName": "Kyle Swanson",
+              "membershipNumber": "1045883",
+              "fullText": "3  -  100  Kyle Swanson  M  15  AURORA WEIGHTLIFTING CLUB  1045883  69.5  2019-10-26  -  Local  Illinois"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMC0yNiIsIndlaWdodF9jbGFzcyI6Mjd9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Kyle Swanson",
+    "splits": [
+      {
+        "newAthleteName": "Kyle Swanson (Person 1)",
+        "membershipNumber": "1025766",
+        "competitionCount": 1,
+        "competitions": [
+          3253
+        ]
+      },
+      {
+        "newAthleteName": "Kyle Swanson (Person 2)",
+        "membershipNumber": "1045883",
+        "competitionCount": 1,
+        "competitions": [
+          4116
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Kyle Swanson",
+    "competitions": [
+      {
+        "meet_id": 3253,
+        "date": "2018-05-12",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Kyle Swanson",
+        "lifter_id": 36656,
+        "membershipNumbers": [
+          {
+            "athleteName": "Kyle Swanson",
+            "membershipNumber": "1025766",
+            "fullText": "30  -  150  Kyle Swanson  M  22  -  1025766  76.28  2018-05-12  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNS0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNS0xMiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 4116,
+        "date": "2019-10-26",
+        "age_category": "Men's 14-15 Age Group",
+        "weight_class": "73kg",
+        "lifter_name": "Kyle Swanson",
+        "lifter_id": 36656,
+        "membershipNumbers": [
+          {
+            "athleteName": "Kyle Swanson",
+            "membershipNumber": "1045883",
+            "fullText": "3  -  100  Kyle Swanson  M  15  AURORA WEIGHTLIFTING CLUB  1045883  69.5  2019-10-26  -  Local  Illinois"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMC0yNiIsIndlaWdodF9jbGFzcyI6Mjd9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1025766": [
+          {
+            "meet_id": 3253,
+            "date": "2018-05-12",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Kyle Swanson",
+            "lifter_id": 36656,
+            "membershipNumbers": [
+              {
+                "athleteName": "Kyle Swanson",
+                "membershipNumber": "1025766",
+                "fullText": "30  -  150  Kyle Swanson  M  22  -  1025766  76.28  2018-05-12  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNS0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNS0xMiIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          }
+        ],
+        "1045883": [
+          {
+            "meet_id": 4116,
+            "date": "2019-10-26",
+            "age_category": "Men's 14-15 Age Group",
+            "weight_class": "73kg",
+            "lifter_name": "Kyle Swanson",
+            "lifter_id": 36656,
+            "membershipNumbers": [
+              {
+                "athleteName": "Kyle Swanson",
+                "membershipNumber": "1045883",
+                "fullText": "3  -  100  Kyle Swanson  M  15  AURORA WEIGHTLIFTING CLUB  1045883  69.5  2019-10-26  -  Local  Illinois"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMC0yNiIsIndlaWdodF9jbGFzcyI6Mjd9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

@@ -1,0 +1,292 @@
+{
+  "timestamp": "2025-08-22T08:44:26.660Z",
+  "athleteName": "Adam Schmidt",
+  "totalCompetitions": 5,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "192489": [
+        {
+          "meet_id": 1404,
+          "date": "2014-09-27",
+          "age_category": "Open Men's",
+          "weight_class": "69 kg",
+          "lifter_name": "Adam Schmidt",
+          "lifter_id": 18746,
+          "membershipNumbers": [
+            {
+              "athleteName": "Adam Schmidt",
+              "membershipNumber": "192489",
+              "fullText": "14  -  128  Adam Schmidt  M  30  -  192489  67.65  2014-09-27  -  Local  Mountain North"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOS0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOS0yNyIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+        },
+        {
+          "meet_id": 1161,
+          "date": "2014-02-15",
+          "age_category": "Open Men's",
+          "weight_class": "69 kg",
+          "lifter_name": "Adam Schmidt",
+          "lifter_id": 18746,
+          "membershipNumbers": [
+            {
+              "athleteName": "Adam Schmidt",
+              "membershipNumber": "192489",
+              "fullText": "21  -  128  Adam Schmidt  M  30  -  192489  67.65  2014-02-15  -  Local  Mountain North"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMi0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMi0xNSIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+        }
+      ],
+      "1070426": [
+        {
+          "meet_id": 5842,
+          "date": "2023-05-06",
+          "age_category": "Men's 16-17 Age Group",
+          "weight_class": "61kg",
+          "lifter_name": "Adam Schmidt",
+          "lifter_id": 18746,
+          "membershipNumbers": [
+            {
+              "athleteName": "Adam Schmidt",
+              "membershipNumber": "1070426",
+              "fullText": "1  -  131  Adam Schmidt  M  16  -  1070426  59.4  2023-05-06  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNS0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNS0wNiIsIndlaWdodF9jbGFzcyI6M30="
+        },
+        {
+          "meet_id": 6150,
+          "date": "2023-12-09",
+          "age_category": "Men's 16-17 Age Group",
+          "weight_class": "61kg",
+          "lifter_name": "Adam Schmidt",
+          "lifter_id": 18746,
+          "membershipNumbers": [
+            {
+              "athleteName": "Adam Schmidt",
+              "membershipNumber": "1070426",
+              "fullText": "2  -  141  Adam Schmidt  M  16  -  1070426  60.5  2023-12-09  -  Local  Minnesota-Dakotas"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMi0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMi0wOSIsIndlaWdodF9jbGFzcyI6M30="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 5929,
+        "date": "2023-06-26",
+        "age_category": "Men's 16-17 Age Group",
+        "weight_class": "61kg",
+        "lifter_name": "Adam Schmidt",
+        "lifter_id": 18746,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNi0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNi0yNiIsIndlaWdodF9jbGFzcyI6M30="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Adam Schmidt",
+    "splits": [
+      {
+        "newAthleteName": "Adam Schmidt (Person 1)",
+        "membershipNumber": "192489",
+        "competitionCount": 2,
+        "competitions": [
+          1404,
+          1161
+        ]
+      },
+      {
+        "newAthleteName": "Adam Schmidt (Person 2)",
+        "membershipNumber": "1070426",
+        "competitionCount": 2,
+        "competitions": [
+          5842,
+          6150
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 5929,
+        "date": "2023-06-26",
+        "age_category": "Men's 16-17 Age Group",
+        "weight_class": "61kg",
+        "lifter_name": "Adam Schmidt",
+        "lifter_id": 18746,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNi0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNi0yNiIsIndlaWdodF9jbGFzcyI6M30="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Adam Schmidt",
+    "competitions": [
+      {
+        "meet_id": 1404,
+        "date": "2014-09-27",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "Adam Schmidt",
+        "lifter_id": 18746,
+        "membershipNumbers": [
+          {
+            "athleteName": "Adam Schmidt",
+            "membershipNumber": "192489",
+            "fullText": "14  -  128  Adam Schmidt  M  30  -  192489  67.65  2014-09-27  -  Local  Mountain North"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOS0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOS0yNyIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      },
+      {
+        "meet_id": 5842,
+        "date": "2023-05-06",
+        "age_category": "Men's 16-17 Age Group",
+        "weight_class": "61kg",
+        "lifter_name": "Adam Schmidt",
+        "lifter_id": 18746,
+        "membershipNumbers": [
+          {
+            "athleteName": "Adam Schmidt",
+            "membershipNumber": "1070426",
+            "fullText": "1  -  131  Adam Schmidt  M  16  -  1070426  59.4  2023-05-06  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNS0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNS0wNiIsIndlaWdodF9jbGFzcyI6M30="
+      },
+      {
+        "meet_id": 5929,
+        "date": "2023-06-26",
+        "age_category": "Men's 16-17 Age Group",
+        "weight_class": "61kg",
+        "lifter_name": "Adam Schmidt",
+        "lifter_id": 18746,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNi0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNi0yNiIsIndlaWdodF9jbGFzcyI6M30="
+      },
+      {
+        "meet_id": 1161,
+        "date": "2014-02-15",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "Adam Schmidt",
+        "lifter_id": 18746,
+        "membershipNumbers": [
+          {
+            "athleteName": "Adam Schmidt",
+            "membershipNumber": "192489",
+            "fullText": "21  -  128  Adam Schmidt  M  30  -  192489  67.65  2014-02-15  -  Local  Mountain North"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMi0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMi0xNSIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      },
+      {
+        "meet_id": 6150,
+        "date": "2023-12-09",
+        "age_category": "Men's 16-17 Age Group",
+        "weight_class": "61kg",
+        "lifter_name": "Adam Schmidt",
+        "lifter_id": 18746,
+        "membershipNumbers": [
+          {
+            "athleteName": "Adam Schmidt",
+            "membershipNumber": "1070426",
+            "fullText": "2  -  141  Adam Schmidt  M  16  -  1070426  60.5  2023-12-09  -  Local  Minnesota-Dakotas"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMi0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMi0wOSIsIndlaWdodF9jbGFzcyI6M30="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "192489": [
+          {
+            "meet_id": 1404,
+            "date": "2014-09-27",
+            "age_category": "Open Men's",
+            "weight_class": "69 kg",
+            "lifter_name": "Adam Schmidt",
+            "lifter_id": 18746,
+            "membershipNumbers": [
+              {
+                "athleteName": "Adam Schmidt",
+                "membershipNumber": "192489",
+                "fullText": "14  -  128  Adam Schmidt  M  30  -  192489  67.65  2014-09-27  -  Local  Mountain North"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOS0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOS0yNyIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+          },
+          {
+            "meet_id": 1161,
+            "date": "2014-02-15",
+            "age_category": "Open Men's",
+            "weight_class": "69 kg",
+            "lifter_name": "Adam Schmidt",
+            "lifter_id": 18746,
+            "membershipNumbers": [
+              {
+                "athleteName": "Adam Schmidt",
+                "membershipNumber": "192489",
+                "fullText": "21  -  128  Adam Schmidt  M  30  -  192489  67.65  2014-02-15  -  Local  Mountain North"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMi0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMi0xNSIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+          }
+        ],
+        "1070426": [
+          {
+            "meet_id": 5842,
+            "date": "2023-05-06",
+            "age_category": "Men's 16-17 Age Group",
+            "weight_class": "61kg",
+            "lifter_name": "Adam Schmidt",
+            "lifter_id": 18746,
+            "membershipNumbers": [
+              {
+                "athleteName": "Adam Schmidt",
+                "membershipNumber": "1070426",
+                "fullText": "1  -  131  Adam Schmidt  M  16  -  1070426  59.4  2023-05-06  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNS0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNS0wNiIsIndlaWdodF9jbGFzcyI6M30="
+          },
+          {
+            "meet_id": 6150,
+            "date": "2023-12-09",
+            "age_category": "Men's 16-17 Age Group",
+            "weight_class": "61kg",
+            "lifter_name": "Adam Schmidt",
+            "lifter_id": 18746,
+            "membershipNumbers": [
+              {
+                "athleteName": "Adam Schmidt",
+                "membershipNumber": "1070426",
+                "fullText": "2  -  141  Adam Schmidt  M  16  -  1070426  60.5  2023-12-09  -  Local  Minnesota-Dakotas"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMi0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMi0wOSIsIndlaWdodF9jbGFzcyI6M30="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 5929,
+          "date": "2023-06-26",
+          "age_category": "Men's 16-17 Age Group",
+          "weight_class": "61kg",
+          "lifter_name": "Adam Schmidt",
+          "lifter_id": 18746,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNi0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNi0yNiIsIndlaWdodF9jbGFzcyI6M30="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

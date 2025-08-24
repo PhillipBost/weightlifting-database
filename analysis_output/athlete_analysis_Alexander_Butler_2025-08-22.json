@@ -1,0 +1,243 @@
+{
+  "timestamp": "2025-08-22T04:55:50.033Z",
+  "athleteName": "Alexander Butler",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "182794": [
+        {
+          "meet_id": 785,
+          "date": "2013-10-26",
+          "age_category": "Open Men's",
+          "weight_class": "105 kg",
+          "lifter_name": "Alexander Butler",
+          "lifter_id": 5685,
+          "membershipNumbers": [
+            {
+              "athleteName": "Alexander Butler",
+              "membershipNumber": "182794",
+              "fullText": "9  -  262  Alexander Butler  M  23  -  182794  101.99  2013-10-26  -  Local  New Jersey"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMC0yNiIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+        },
+        {
+          "meet_id": 1456,
+          "date": "2014-11-08",
+          "age_category": "Open Men's",
+          "weight_class": "94 kg",
+          "lifter_name": "Alexander Butler",
+          "lifter_id": 5685,
+          "membershipNumbers": [
+            {
+              "athleteName": "Alexander Butler",
+              "membershipNumber": "182794",
+              "fullText": "9  -  215  Alexander Butler  M  24  -  182794  90.8  2014-11-08  -  Local  New Jersey"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMS0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMS0wOCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+        }
+      ],
+      "1074806": [
+        {
+          "meet_id": 6355,
+          "date": "2024-04-27",
+          "age_category": "Open Men's",
+          "weight_class": "96kg",
+          "lifter_name": "Alexander Butler",
+          "lifter_id": 5685,
+          "membershipNumbers": [
+            {
+              "athleteName": "Alexander Butler",
+              "membershipNumber": "1074806",
+              "fullText": "20  -  157  Alexander Butler  M  34  Kaz Barbell Club  1074806  93  2024-04-27  -  Local  Mountain North"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNC0yNyIsIndlaWdodF9jbGFzcyI6ODd9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 781,
+        "date": "2013-04-21",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Alexander Butler",
+        "lifter_id": 5685,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Alexander Butler",
+    "splits": [
+      {
+        "newAthleteName": "Alexander Butler (Person 1)",
+        "membershipNumber": "182794",
+        "competitionCount": 2,
+        "competitions": [
+          785,
+          1456
+        ]
+      },
+      {
+        "newAthleteName": "Alexander Butler (Person 2)",
+        "membershipNumber": "1074806",
+        "competitionCount": 1,
+        "competitions": [
+          6355
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 781,
+        "date": "2013-04-21",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Alexander Butler",
+        "lifter_id": 5685,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Alexander Butler",
+    "competitions": [
+      {
+        "meet_id": 785,
+        "date": "2013-10-26",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "lifter_name": "Alexander Butler",
+        "lifter_id": 5685,
+        "membershipNumbers": [
+          {
+            "athleteName": "Alexander Butler",
+            "membershipNumber": "182794",
+            "fullText": "9  -  262  Alexander Butler  M  23  -  182794  101.99  2013-10-26  -  Local  New Jersey"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMC0yNiIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+      },
+      {
+        "meet_id": 781,
+        "date": "2013-04-21",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "lifter_name": "Alexander Butler",
+        "lifter_id": 5685,
+        "membershipNumbers": [],
+        "error": "No division code found for: \"Open Men's +105 kg\""
+      },
+      {
+        "meet_id": 6355,
+        "date": "2024-04-27",
+        "age_category": "Open Men's",
+        "weight_class": "96kg",
+        "lifter_name": "Alexander Butler",
+        "lifter_id": 5685,
+        "membershipNumbers": [
+          {
+            "athleteName": "Alexander Butler",
+            "membershipNumber": "1074806",
+            "fullText": "20  -  157  Alexander Butler  M  34  Kaz Barbell Club  1074806  93  2024-04-27  -  Local  Mountain North"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNC0yNyIsIndlaWdodF9jbGFzcyI6ODd9"
+      },
+      {
+        "meet_id": 1456,
+        "date": "2014-11-08",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "lifter_name": "Alexander Butler",
+        "lifter_id": 5685,
+        "membershipNumbers": [
+          {
+            "athleteName": "Alexander Butler",
+            "membershipNumber": "182794",
+            "fullText": "9  -  215  Alexander Butler  M  24  -  182794  90.8  2014-11-08  -  Local  New Jersey"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMS0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMS0wOCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "182794": [
+          {
+            "meet_id": 785,
+            "date": "2013-10-26",
+            "age_category": "Open Men's",
+            "weight_class": "105 kg",
+            "lifter_name": "Alexander Butler",
+            "lifter_id": 5685,
+            "membershipNumbers": [
+              {
+                "athleteName": "Alexander Butler",
+                "membershipNumber": "182794",
+                "fullText": "9  -  262  Alexander Butler  M  23  -  182794  101.99  2013-10-26  -  Local  New Jersey"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMC0yNiIsIndlaWdodF9jbGFzcyI6MzYwfQ=="
+          },
+          {
+            "meet_id": 1456,
+            "date": "2014-11-08",
+            "age_category": "Open Men's",
+            "weight_class": "94 kg",
+            "lifter_name": "Alexander Butler",
+            "lifter_id": 5685,
+            "membershipNumbers": [
+              {
+                "athleteName": "Alexander Butler",
+                "membershipNumber": "182794",
+                "fullText": "9  -  215  Alexander Butler  M  24  -  182794  90.8  2014-11-08  -  Local  New Jersey"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMS0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMS0wOCIsIndlaWdodF9jbGFzcyI6MzU5fQ=="
+          }
+        ],
+        "1074806": [
+          {
+            "meet_id": 6355,
+            "date": "2024-04-27",
+            "age_category": "Open Men's",
+            "weight_class": "96kg",
+            "lifter_name": "Alexander Butler",
+            "lifter_id": 5685,
+            "membershipNumbers": [
+              {
+                "athleteName": "Alexander Butler",
+                "membershipNumber": "1074806",
+                "fullText": "20  -  157  Alexander Butler  M  34  Kaz Barbell Club  1074806  93  2024-04-27  -  Local  Mountain North"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNC0yNyIsIndlaWdodF9jbGFzcyI6ODd9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 781,
+          "date": "2013-04-21",
+          "age_category": "Open Men's",
+          "weight_class": "+105 kg",
+          "lifter_name": "Alexander Butler",
+          "lifter_id": 5685,
+          "membershipNumbers": [],
+          "error": "No division code found for: \"Open Men's +105 kg\""
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

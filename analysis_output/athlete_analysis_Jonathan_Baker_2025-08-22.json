@@ -1,0 +1,211 @@
+{
+  "timestamp": "2025-08-22T05:06:09.236Z",
+  "athleteName": "Jonathan Baker",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 3,
+    "membershipGroups": {
+      "182415": [
+        {
+          "meet_id": 881,
+          "date": "2013-05-18",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Jonathan Baker",
+          "lifter_id": 6309,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jonathan Baker",
+              "membershipNumber": "182415",
+              "fullText": "12  -  220  Jonathan Baker  M  24  HOOSIER WEIGHTLIFTING CLUB  182415  84.2  2013-05-18  -  Local  Indiana"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNS0xOCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ],
+      "1009473": [
+        {
+          "meet_id": 2034,
+          "date": "2016-07-24",
+          "age_category": "Open Men's",
+          "weight_class": "69 kg",
+          "lifter_name": "Jonathan Baker",
+          "lifter_id": 6309,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jonathan Baker",
+              "membershipNumber": "1009473",
+              "fullText": "12  -  160  Jonathan Baker  M  33  Fortius Weightlifting  1009473  66.7  2016-07-24  -  Local  California South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNy0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNy0yNCIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+        }
+      ],
+      "1072314": [
+        {
+          "meet_id": 6033,
+          "date": "2023-10-08",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "Jonathan Baker",
+          "lifter_id": 6309,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jonathan Baker",
+              "membershipNumber": "1072314",
+              "fullText": "1  -  240  Jonathan Baker  M  25  -  1072314  86.3  2023-10-08  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMC0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMC0wOCIsIndlaWdodF9jbGFzcyI6ODZ9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Jonathan Baker",
+    "splits": [
+      {
+        "newAthleteName": "Jonathan Baker (Person 1)",
+        "membershipNumber": "182415",
+        "competitionCount": 1,
+        "competitions": [
+          881
+        ]
+      },
+      {
+        "newAthleteName": "Jonathan Baker (Person 2)",
+        "membershipNumber": "1009473",
+        "competitionCount": 1,
+        "competitions": [
+          2034
+        ]
+      },
+      {
+        "newAthleteName": "Jonathan Baker (Person 3)",
+        "membershipNumber": "1072314",
+        "competitionCount": 1,
+        "competitions": [
+          6033
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Jonathan Baker",
+    "competitions": [
+      {
+        "meet_id": 881,
+        "date": "2013-05-18",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Jonathan Baker",
+        "lifter_id": 6309,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jonathan Baker",
+            "membershipNumber": "182415",
+            "fullText": "12  -  220  Jonathan Baker  M  24  HOOSIER WEIGHTLIFTING CLUB  182415  84.2  2013-05-18  -  Local  Indiana"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNS0xOCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 2034,
+        "date": "2016-07-24",
+        "age_category": "Open Men's",
+        "weight_class": "69 kg",
+        "lifter_name": "Jonathan Baker",
+        "lifter_id": 6309,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jonathan Baker",
+            "membershipNumber": "1009473",
+            "fullText": "12  -  160  Jonathan Baker  M  33  Fortius Weightlifting  1009473  66.7  2016-07-24  -  Local  California South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNy0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNy0yNCIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+      },
+      {
+        "meet_id": 6033,
+        "date": "2023-10-08",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Jonathan Baker",
+        "lifter_id": 6309,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jonathan Baker",
+            "membershipNumber": "1072314",
+            "fullText": "1  -  240  Jonathan Baker  M  25  -  1072314  86.3  2023-10-08  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMC0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMC0wOCIsIndlaWdodF9jbGFzcyI6ODZ9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 3,
+      "membershipGroups": {
+        "182415": [
+          {
+            "meet_id": 881,
+            "date": "2013-05-18",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Jonathan Baker",
+            "lifter_id": 6309,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jonathan Baker",
+                "membershipNumber": "182415",
+                "fullText": "12  -  220  Jonathan Baker  M  24  HOOSIER WEIGHTLIFTING CLUB  182415  84.2  2013-05-18  -  Local  Indiana"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNS0xOCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          }
+        ],
+        "1009473": [
+          {
+            "meet_id": 2034,
+            "date": "2016-07-24",
+            "age_category": "Open Men's",
+            "weight_class": "69 kg",
+            "lifter_name": "Jonathan Baker",
+            "lifter_id": 6309,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jonathan Baker",
+                "membershipNumber": "1009473",
+                "fullText": "12  -  160  Jonathan Baker  M  33  Fortius Weightlifting  1009473  66.7  2016-07-24  -  Local  California South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNy0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNy0yNCIsIndlaWdodF9jbGFzcyI6MzU2fQ=="
+          }
+        ],
+        "1072314": [
+          {
+            "meet_id": 6033,
+            "date": "2023-10-08",
+            "age_category": "Open Men's",
+            "weight_class": "89kg",
+            "lifter_name": "Jonathan Baker",
+            "lifter_id": 6309,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jonathan Baker",
+                "membershipNumber": "1072314",
+                "fullText": "1  -  240  Jonathan Baker  M  25  -  1072314  86.3  2023-10-08  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMC0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMC0wOCIsIndlaWdodF9jbGFzcyI6ODZ9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

@@ -1,0 +1,347 @@
+{
+  "timestamp": "2025-08-22T07:42:18.886Z",
+  "athleteName": "Jackson Blizzard",
+  "totalCompetitions": 6,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1016389": [
+        {
+          "meet_id": 2593,
+          "date": "2017-06-17",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Jackson Blizzard",
+          "lifter_id": 28869,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jackson Blizzard",
+              "membershipNumber": "1016389",
+              "fullText": "21  -  111  Jackson Blizzard  M  15  -  1016389  75.9  2017-06-17  -  Local  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNi0xNyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        }
+      ],
+      "1016856": [
+        {
+          "meet_id": 2854,
+          "date": "2018-02-17",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Jackson Blizzard",
+          "lifter_id": 28869,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jackson Blizzard",
+              "membershipNumber": "1016856",
+              "fullText": "5  -  218  Jackson Blizzard  M  22  -  1016856  75.9  2018-02-17  -  Local  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMi0xNyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        },
+        {
+          "meet_id": 5908,
+          "date": "2023-06-03",
+          "age_category": "Open Men's",
+          "weight_class": "73kg",
+          "lifter_name": "Jackson Blizzard",
+          "lifter_id": 28869,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jackson Blizzard",
+              "membershipNumber": "1016856",
+              "fullText": "2  -  223  Jackson Blizzard  M  27  -  1016856  72.8  2023-06-03  -  Local  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNi0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNi0wMyIsIndlaWdodF9jbGFzcyI6ODR9"
+        },
+        {
+          "meet_id": 2380,
+          "date": "2017-03-04",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Jackson Blizzard",
+          "lifter_id": 28869,
+          "membershipNumbers": [
+            {
+              "athleteName": "Jackson Blizzard",
+              "membershipNumber": "1016856",
+              "fullText": "10  -  200  Jackson Blizzard  M  21  -  1016856  72.24  2017-03-04  -  Local  Carolina"
+            },
+            {
+              "athleteName": "Jackson Blizzard",
+              "membershipNumber": "1016389",
+              "fullText": "22  -  85  Jackson Blizzard  M  15  -  1016389  72.53  2017-03-04  -  Local  Carolina"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0wNCIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 2404,
+        "date": "2017-07-30",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Jackson Blizzard",
+        "lifter_id": 28869,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNy0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNy0zMCIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 2895,
+        "date": "2018-03-04",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Jackson Blizzard",
+        "lifter_id": 28869,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMy0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMy0wNCIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      }
+    ],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Jackson Blizzard",
+    "splits": [
+      {
+        "newAthleteName": "Jackson Blizzard (Person 1)",
+        "membershipNumber": "1016389",
+        "competitionCount": 1,
+        "competitions": [
+          2593
+        ]
+      },
+      {
+        "newAthleteName": "Jackson Blizzard (Person 2)",
+        "membershipNumber": "1016856",
+        "competitionCount": 3,
+        "competitions": [
+          2854,
+          5908,
+          2380
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": [
+      {
+        "meet_id": 2404,
+        "date": "2017-07-30",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Jackson Blizzard",
+        "lifter_id": 28869,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNy0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNy0zMCIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 2895,
+        "date": "2018-03-04",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Jackson Blizzard",
+        "lifter_id": 28869,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMy0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMy0wNCIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      }
+    ]
+  },
+  "rawData": {
+    "athleteName": "Jackson Blizzard",
+    "competitions": [
+      {
+        "meet_id": 2404,
+        "date": "2017-07-30",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Jackson Blizzard",
+        "lifter_id": 28869,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNy0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNy0zMCIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 2854,
+        "date": "2018-02-17",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Jackson Blizzard",
+        "lifter_id": 28869,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jackson Blizzard",
+            "membershipNumber": "1016856",
+            "fullText": "5  -  218  Jackson Blizzard  M  22  -  1016856  75.9  2018-02-17  -  Local  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMi0xNyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 2895,
+        "date": "2018-03-04",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Jackson Blizzard",
+        "lifter_id": 28869,
+        "membershipNumbers": [],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMy0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMy0wNCIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 5908,
+        "date": "2023-06-03",
+        "age_category": "Open Men's",
+        "weight_class": "73kg",
+        "lifter_name": "Jackson Blizzard",
+        "lifter_id": 28869,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jackson Blizzard",
+            "membershipNumber": "1016856",
+            "fullText": "2  -  223  Jackson Blizzard  M  27  -  1016856  72.8  2023-06-03  -  Local  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNi0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNi0wMyIsIndlaWdodF9jbGFzcyI6ODR9"
+      },
+      {
+        "meet_id": 2593,
+        "date": "2017-06-17",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Jackson Blizzard",
+        "lifter_id": 28869,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jackson Blizzard",
+            "membershipNumber": "1016389",
+            "fullText": "21  -  111  Jackson Blizzard  M  15  -  1016389  75.9  2017-06-17  -  Local  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNi0xNyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 2380,
+        "date": "2017-03-04",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Jackson Blizzard",
+        "lifter_id": 28869,
+        "membershipNumbers": [
+          {
+            "athleteName": "Jackson Blizzard",
+            "membershipNumber": "1016856",
+            "fullText": "10  -  200  Jackson Blizzard  M  21  -  1016856  72.24  2017-03-04  -  Local  Carolina"
+          },
+          {
+            "athleteName": "Jackson Blizzard",
+            "membershipNumber": "1016389",
+            "fullText": "22  -  85  Jackson Blizzard  M  15  -  1016389  72.53  2017-03-04  -  Local  Carolina"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0wNCIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1016389": [
+          {
+            "meet_id": 2593,
+            "date": "2017-06-17",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Jackson Blizzard",
+            "lifter_id": 28869,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jackson Blizzard",
+                "membershipNumber": "1016389",
+                "fullText": "21  -  111  Jackson Blizzard  M  15  -  1016389  75.9  2017-06-17  -  Local  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNi0xNyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          }
+        ],
+        "1016856": [
+          {
+            "meet_id": 2854,
+            "date": "2018-02-17",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Jackson Blizzard",
+            "lifter_id": 28869,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jackson Blizzard",
+                "membershipNumber": "1016856",
+                "fullText": "5  -  218  Jackson Blizzard  M  22  -  1016856  75.9  2018-02-17  -  Local  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMi0xNyIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          },
+          {
+            "meet_id": 5908,
+            "date": "2023-06-03",
+            "age_category": "Open Men's",
+            "weight_class": "73kg",
+            "lifter_name": "Jackson Blizzard",
+            "lifter_id": 28869,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jackson Blizzard",
+                "membershipNumber": "1016856",
+                "fullText": "2  -  223  Jackson Blizzard  M  27  -  1016856  72.8  2023-06-03  -  Local  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNi0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNi0wMyIsIndlaWdodF9jbGFzcyI6ODR9"
+          },
+          {
+            "meet_id": 2380,
+            "date": "2017-03-04",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Jackson Blizzard",
+            "lifter_id": 28869,
+            "membershipNumbers": [
+              {
+                "athleteName": "Jackson Blizzard",
+                "membershipNumber": "1016856",
+                "fullText": "10  -  200  Jackson Blizzard  M  21  -  1016856  72.24  2017-03-04  -  Local  Carolina"
+              },
+              {
+                "athleteName": "Jackson Blizzard",
+                "membershipNumber": "1016389",
+                "fullText": "22  -  85  Jackson Blizzard  M  15  -  1016389  72.53  2017-03-04  -  Local  Carolina"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0wNCIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [
+        {
+          "meet_id": 2404,
+          "date": "2017-07-30",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Jackson Blizzard",
+          "lifter_id": 28869,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNy0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNy0zMCIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        },
+        {
+          "meet_id": 2895,
+          "date": "2018-03-04",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Jackson Blizzard",
+          "lifter_id": 28869,
+          "membershipNumbers": [],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMy0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMy0wNCIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        }
+      ],
+      "splitRequired": true
+    }
+  }
+}

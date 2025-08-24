@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-22T04:54:05.397Z",
+  "athleteName": "Cassie Haynes",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "168704": [
+        {
+          "meet_id": 769,
+          "date": "2013-05-04",
+          "age_category": "Open Women's",
+          "weight_class": "75 kg",
+          "lifter_name": "Cassie Haynes",
+          "lifter_id": 5592,
+          "membershipNumbers": [
+            {
+              "athleteName": "Cassie Haynes",
+              "membershipNumber": "168704",
+              "fullText": "5  -  150  Cassie Haynes  F  30  LIBERTY BARBELL CLUB  168704  74.87  2013-05-04  -  Local  Pennsylvania-West Virginia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNS0wNCIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+        },
+        {
+          "meet_id": 773,
+          "date": "2013-07-07",
+          "age_category": "Open Women's",
+          "weight_class": "75 kg",
+          "lifter_name": "Cassie Haynes",
+          "lifter_id": 5592,
+          "membershipNumbers": [
+            {
+              "athleteName": "Cassie Haynes",
+              "membershipNumber": "168704",
+              "fullText": "4  -  121  Cassie Haynes  F  30  LIBERTY BARBELL CLUB  168704  74.2  2013-07-07  -  Local  Pennsylvania-West Virginia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNy0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNy0wNyIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+        },
+        {
+          "meet_id": 774,
+          "date": "2013-06-23",
+          "age_category": "Open Women's",
+          "weight_class": "75 kg",
+          "lifter_name": "Cassie Haynes",
+          "lifter_id": 5592,
+          "membershipNumbers": [
+            {
+              "athleteName": "Cassie Haynes",
+              "membershipNumber": "168704",
+              "fullText": "1  -  154  Cassie Haynes  F  30  LIBERTY BARBELL CLUB  168704  74.8  2013-06-23  -  Local  Pennsylvania-West Virginia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNi0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNi0yMyIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+        }
+      ],
+      "190644": [
+        {
+          "meet_id": 1756,
+          "date": "2016-05-01",
+          "age_category": "Women's Masters (75+)",
+          "weight_class": "+75 kg",
+          "lifter_name": "Cassie Haynes",
+          "lifter_id": 5592,
+          "membershipNumbers": [
+            {
+              "athleteName": "Cassie Haynes",
+              "membershipNumber": "190644",
+              "fullText": "1  -  200  Cassie Haynes  F  117  -  190644  84.54  2016-05-01  -  Local  Pennsylvania-West Virginia"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0wMSIsIndlaWdodF9jbGFzcyI6NTIxfQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Cassie Haynes",
+    "splits": [
+      {
+        "newAthleteName": "Cassie Haynes (Person 1)",
+        "membershipNumber": "168704",
+        "competitionCount": 3,
+        "competitions": [
+          769,
+          773,
+          774
+        ]
+      },
+      {
+        "newAthleteName": "Cassie Haynes (Person 2)",
+        "membershipNumber": "190644",
+        "competitionCount": 1,
+        "competitions": [
+          1756
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Cassie Haynes",
+    "competitions": [
+      {
+        "meet_id": 769,
+        "date": "2013-05-04",
+        "age_category": "Open Women's",
+        "weight_class": "75 kg",
+        "lifter_name": "Cassie Haynes",
+        "lifter_id": 5592,
+        "membershipNumbers": [
+          {
+            "athleteName": "Cassie Haynes",
+            "membershipNumber": "168704",
+            "fullText": "5  -  150  Cassie Haynes  F  30  LIBERTY BARBELL CLUB  168704  74.87  2013-05-04  -  Local  Pennsylvania-West Virginia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNS0wNCIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+      },
+      {
+        "meet_id": 773,
+        "date": "2013-07-07",
+        "age_category": "Open Women's",
+        "weight_class": "75 kg",
+        "lifter_name": "Cassie Haynes",
+        "lifter_id": 5592,
+        "membershipNumbers": [
+          {
+            "athleteName": "Cassie Haynes",
+            "membershipNumber": "168704",
+            "fullText": "4  -  121  Cassie Haynes  F  30  LIBERTY BARBELL CLUB  168704  74.2  2013-07-07  -  Local  Pennsylvania-West Virginia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNy0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNy0wNyIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+      },
+      {
+        "meet_id": 774,
+        "date": "2013-06-23",
+        "age_category": "Open Women's",
+        "weight_class": "75 kg",
+        "lifter_name": "Cassie Haynes",
+        "lifter_id": 5592,
+        "membershipNumbers": [
+          {
+            "athleteName": "Cassie Haynes",
+            "membershipNumber": "168704",
+            "fullText": "1  -  154  Cassie Haynes  F  30  LIBERTY BARBELL CLUB  168704  74.8  2013-06-23  -  Local  Pennsylvania-West Virginia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNi0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNi0yMyIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+      },
+      {
+        "meet_id": 1756,
+        "date": "2016-05-01",
+        "age_category": "Women's Masters (75+)",
+        "weight_class": "+75 kg",
+        "lifter_name": "Cassie Haynes",
+        "lifter_id": 5592,
+        "membershipNumbers": [
+          {
+            "athleteName": "Cassie Haynes",
+            "membershipNumber": "190644",
+            "fullText": "1  -  200  Cassie Haynes  F  117  -  190644  84.54  2016-05-01  -  Local  Pennsylvania-West Virginia"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0wMSIsIndlaWdodF9jbGFzcyI6NTIxfQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "168704": [
+          {
+            "meet_id": 769,
+            "date": "2013-05-04",
+            "age_category": "Open Women's",
+            "weight_class": "75 kg",
+            "lifter_name": "Cassie Haynes",
+            "lifter_id": 5592,
+            "membershipNumbers": [
+              {
+                "athleteName": "Cassie Haynes",
+                "membershipNumber": "168704",
+                "fullText": "5  -  150  Cassie Haynes  F  30  LIBERTY BARBELL CLUB  168704  74.87  2013-05-04  -  Local  Pennsylvania-West Virginia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNS0wNCIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+          },
+          {
+            "meet_id": 773,
+            "date": "2013-07-07",
+            "age_category": "Open Women's",
+            "weight_class": "75 kg",
+            "lifter_name": "Cassie Haynes",
+            "lifter_id": 5592,
+            "membershipNumbers": [
+              {
+                "athleteName": "Cassie Haynes",
+                "membershipNumber": "168704",
+                "fullText": "4  -  121  Cassie Haynes  F  30  LIBERTY BARBELL CLUB  168704  74.2  2013-07-07  -  Local  Pennsylvania-West Virginia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNy0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNy0wNyIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+          },
+          {
+            "meet_id": 774,
+            "date": "2013-06-23",
+            "age_category": "Open Women's",
+            "weight_class": "75 kg",
+            "lifter_name": "Cassie Haynes",
+            "lifter_id": 5592,
+            "membershipNumbers": [
+              {
+                "athleteName": "Cassie Haynes",
+                "membershipNumber": "168704",
+                "fullText": "1  -  154  Cassie Haynes  F  30  LIBERTY BARBELL CLUB  168704  74.8  2013-06-23  -  Local  Pennsylvania-West Virginia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNi0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNi0yMyIsIndlaWdodF9jbGFzcyI6MzY3fQ=="
+          }
+        ],
+        "190644": [
+          {
+            "meet_id": 1756,
+            "date": "2016-05-01",
+            "age_category": "Women's Masters (75+)",
+            "weight_class": "+75 kg",
+            "lifter_name": "Cassie Haynes",
+            "lifter_id": 5592,
+            "membershipNumbers": [
+              {
+                "athleteName": "Cassie Haynes",
+                "membershipNumber": "190644",
+                "fullText": "1  -  200  Cassie Haynes  F  117  -  190644  84.54  2016-05-01  -  Local  Pennsylvania-West Virginia"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0wMSIsIndlaWdodF9jbGFzcyI6NTIxfQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

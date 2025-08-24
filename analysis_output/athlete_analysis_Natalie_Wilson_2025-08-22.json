@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T08:32:58.655Z",
+  "athleteName": "Natalie Wilson",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1041110": [
+        {
+          "meet_id": 3832,
+          "date": "2019-05-25",
+          "age_category": "Women's 13 Under Age Group",
+          "weight_class": "36kg",
+          "lifter_name": "Natalie Wilson",
+          "lifter_id": 41528,
+          "membershipNumbers": [
+            {
+              "athleteName": "Natalie Wilson",
+              "membershipNumber": "1041110",
+              "fullText": "6  -  30  Natalie Wilson  F  11  -  1041110  33.2  2019-05-25  -  Local  Florida"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0yNSIsIndlaWdodF9jbGFzcyI6NzM5fQ=="
+        }
+      ],
+      "1079741": [
+        {
+          "meet_id": 6676,
+          "date": "2024-12-21",
+          "age_category": "Women's 14-15 Age Group",
+          "weight_class": "64kg",
+          "lifter_name": "Natalie Wilson",
+          "lifter_id": 41528,
+          "membershipNumbers": [
+            {
+              "athleteName": "Natalie Wilson",
+              "membershipNumber": "1079741",
+              "fullText": "1  -  97  Natalie Wilson  F  15  -  1079741  60.25  2024-12-21  -  Local  Alabama"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMi0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMi0yMSIsIndlaWdodF9jbGFzcyI6Mzd9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Natalie Wilson",
+    "splits": [
+      {
+        "newAthleteName": "Natalie Wilson (Person 1)",
+        "membershipNumber": "1041110",
+        "competitionCount": 1,
+        "competitions": [
+          3832
+        ]
+      },
+      {
+        "newAthleteName": "Natalie Wilson (Person 2)",
+        "membershipNumber": "1079741",
+        "competitionCount": 1,
+        "competitions": [
+          6676
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Natalie Wilson",
+    "competitions": [
+      {
+        "meet_id": 6676,
+        "date": "2024-12-21",
+        "age_category": "Women's 14-15 Age Group",
+        "weight_class": "64kg",
+        "lifter_name": "Natalie Wilson",
+        "lifter_id": 41528,
+        "membershipNumbers": [
+          {
+            "athleteName": "Natalie Wilson",
+            "membershipNumber": "1079741",
+            "fullText": "1  -  97  Natalie Wilson  F  15  -  1079741  60.25  2024-12-21  -  Local  Alabama"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMi0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMi0yMSIsIndlaWdodF9jbGFzcyI6Mzd9"
+      },
+      {
+        "meet_id": 3832,
+        "date": "2019-05-25",
+        "age_category": "Women's 13 Under Age Group",
+        "weight_class": "36kg",
+        "lifter_name": "Natalie Wilson",
+        "lifter_id": 41528,
+        "membershipNumbers": [
+          {
+            "athleteName": "Natalie Wilson",
+            "membershipNumber": "1041110",
+            "fullText": "6  -  30  Natalie Wilson  F  11  -  1041110  33.2  2019-05-25  -  Local  Florida"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0yNSIsIndlaWdodF9jbGFzcyI6NzM5fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1041110": [
+          {
+            "meet_id": 3832,
+            "date": "2019-05-25",
+            "age_category": "Women's 13 Under Age Group",
+            "weight_class": "36kg",
+            "lifter_name": "Natalie Wilson",
+            "lifter_id": 41528,
+            "membershipNumbers": [
+              {
+                "athleteName": "Natalie Wilson",
+                "membershipNumber": "1041110",
+                "fullText": "6  -  30  Natalie Wilson  F  11  -  1041110  33.2  2019-05-25  -  Local  Florida"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0yNSIsIndlaWdodF9jbGFzcyI6NzM5fQ=="
+          }
+        ],
+        "1079741": [
+          {
+            "meet_id": 6676,
+            "date": "2024-12-21",
+            "age_category": "Women's 14-15 Age Group",
+            "weight_class": "64kg",
+            "lifter_name": "Natalie Wilson",
+            "lifter_id": 41528,
+            "membershipNumbers": [
+              {
+                "athleteName": "Natalie Wilson",
+                "membershipNumber": "1079741",
+                "fullText": "1  -  97  Natalie Wilson  F  15  -  1079741  60.25  2024-12-21  -  Local  Alabama"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMi0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMi0yMSIsIndlaWdodF9jbGFzcyI6Mzd9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

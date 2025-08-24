@@ -1,0 +1,249 @@
+{
+  "timestamp": "2025-08-22T06:00:58.966Z",
+  "athleteName": "Andrew White",
+  "totalCompetitions": 4,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "192885": [
+        {
+          "meet_id": 285,
+          "date": "2015-03-01",
+          "age_category": "Open Men's",
+          "weight_class": "77 kg",
+          "lifter_name": "Andrew White",
+          "lifter_id": 11031,
+          "membershipNumbers": [
+            {
+              "athleteName": "Andrew White",
+              "membershipNumber": "192885",
+              "fullText": "1  -  278  Andrew White  M  22  TEXAS BARBELL CLUB  192885  76.6  2015-03-01  -  Local  Mountain North"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMy0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMy0wMSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+        },
+        {
+          "meet_id": 2644,
+          "date": "2017-04-13",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Andrew White",
+          "lifter_id": 11031,
+          "membershipNumbers": [
+            {
+              "athleteName": "Andrew White",
+              "membershipNumber": "192885",
+              "fullText": "1  -  295  Andrew White  M  24  TEXAS BARBELL CLUB  192885  85  2017-04-13  -  Local  Mountain North"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNC0xMyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        },
+        {
+          "meet_id": 2419,
+          "date": "2017-05-14",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Andrew White",
+          "lifter_id": 11031,
+          "membershipNumbers": [
+            {
+              "athleteName": "Andrew White",
+              "membershipNumber": "192885",
+              "fullText": "13  -  290  Andrew White  M  24  TEXAS BARBELL CLUB  192885  84.69  2017-05-14  -  National  Mountain North"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNS0xNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ],
+      "1048650": [
+        {
+          "meet_id": 4329,
+          "date": "2020-01-18",
+          "age_category": "Men's 13 Under Age Group",
+          "weight_class": "36kg",
+          "lifter_name": "Andrew White",
+          "lifter_id": 11031,
+          "membershipNumbers": [
+            {
+              "athleteName": "Andrew White",
+              "membershipNumber": "1048650",
+              "fullText": "2  -  15  Andrew White  M  8  BUTTE BARBELL CLUB  1048650  35.9  2020-01-18  -  Local  Mountain North"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMS0xOCIsIndlaWdodF9jbGFzcyI6NDJ9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Andrew White",
+    "splits": [
+      {
+        "newAthleteName": "Andrew White (Person 1)",
+        "membershipNumber": "192885",
+        "competitionCount": 3,
+        "competitions": [
+          285,
+          2644,
+          2419
+        ]
+      },
+      {
+        "newAthleteName": "Andrew White (Person 2)",
+        "membershipNumber": "1048650",
+        "competitionCount": 1,
+        "competitions": [
+          4329
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Andrew White",
+    "competitions": [
+      {
+        "meet_id": 4329,
+        "date": "2020-01-18",
+        "age_category": "Men's 13 Under Age Group",
+        "weight_class": "36kg",
+        "lifter_name": "Andrew White",
+        "lifter_id": 11031,
+        "membershipNumbers": [
+          {
+            "athleteName": "Andrew White",
+            "membershipNumber": "1048650",
+            "fullText": "2  -  15  Andrew White  M  8  BUTTE BARBELL CLUB  1048650  35.9  2020-01-18  -  Local  Mountain North"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMS0xOCIsIndlaWdodF9jbGFzcyI6NDJ9"
+      },
+      {
+        "meet_id": 285,
+        "date": "2015-03-01",
+        "age_category": "Open Men's",
+        "weight_class": "77 kg",
+        "lifter_name": "Andrew White",
+        "lifter_id": 11031,
+        "membershipNumbers": [
+          {
+            "athleteName": "Andrew White",
+            "membershipNumber": "192885",
+            "fullText": "1  -  278  Andrew White  M  22  TEXAS BARBELL CLUB  192885  76.6  2015-03-01  -  Local  Mountain North"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMy0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMy0wMSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+      },
+      {
+        "meet_id": 2644,
+        "date": "2017-04-13",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Andrew White",
+        "lifter_id": 11031,
+        "membershipNumbers": [
+          {
+            "athleteName": "Andrew White",
+            "membershipNumber": "192885",
+            "fullText": "1  -  295  Andrew White  M  24  TEXAS BARBELL CLUB  192885  85  2017-04-13  -  Local  Mountain North"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNC0xMyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 2419,
+        "date": "2017-05-14",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Andrew White",
+        "lifter_id": 11031,
+        "membershipNumbers": [
+          {
+            "athleteName": "Andrew White",
+            "membershipNumber": "192885",
+            "fullText": "13  -  290  Andrew White  M  24  TEXAS BARBELL CLUB  192885  84.69  2017-05-14  -  National  Mountain North"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNS0xNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "192885": [
+          {
+            "meet_id": 285,
+            "date": "2015-03-01",
+            "age_category": "Open Men's",
+            "weight_class": "77 kg",
+            "lifter_name": "Andrew White",
+            "lifter_id": 11031,
+            "membershipNumbers": [
+              {
+                "athleteName": "Andrew White",
+                "membershipNumber": "192885",
+                "fullText": "1  -  278  Andrew White  M  22  TEXAS BARBELL CLUB  192885  76.6  2015-03-01  -  Local  Mountain North"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMy0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMy0wMSIsIndlaWdodF9jbGFzcyI6MzU3fQ=="
+          },
+          {
+            "meet_id": 2644,
+            "date": "2017-04-13",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Andrew White",
+            "lifter_id": 11031,
+            "membershipNumbers": [
+              {
+                "athleteName": "Andrew White",
+                "membershipNumber": "192885",
+                "fullText": "1  -  295  Andrew White  M  24  TEXAS BARBELL CLUB  192885  85  2017-04-13  -  Local  Mountain North"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNC0xMyIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          },
+          {
+            "meet_id": 2419,
+            "date": "2017-05-14",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Andrew White",
+            "lifter_id": 11031,
+            "membershipNumbers": [
+              {
+                "athleteName": "Andrew White",
+                "membershipNumber": "192885",
+                "fullText": "13  -  290  Andrew White  M  24  TEXAS BARBELL CLUB  192885  84.69  2017-05-14  -  National  Mountain North"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNS0xNCIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          }
+        ],
+        "1048650": [
+          {
+            "meet_id": 4329,
+            "date": "2020-01-18",
+            "age_category": "Men's 13 Under Age Group",
+            "weight_class": "36kg",
+            "lifter_name": "Andrew White",
+            "lifter_id": 11031,
+            "membershipNumbers": [
+              {
+                "athleteName": "Andrew White",
+                "membershipNumber": "1048650",
+                "fullText": "2  -  15  Andrew White  M  8  BUTTE BARBELL CLUB  1048650  35.9  2020-01-18  -  Local  Mountain North"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMS0xOCIsIndlaWdodF9jbGFzcyI6NDJ9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

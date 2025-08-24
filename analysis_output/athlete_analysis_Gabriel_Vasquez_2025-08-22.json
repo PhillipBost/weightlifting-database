@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T09:04:55.256Z",
+  "athleteName": "Gabriel Vasquez",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1066403": [
+        {
+          "meet_id": 5616,
+          "date": "2023-01-12",
+          "age_category": "Open Men's",
+          "weight_class": "61kg",
+          "lifter_name": "Gabriel Vasquez",
+          "lifter_id": 54669,
+          "membershipNumbers": [
+            {
+              "athleteName": "Gabriel Vasquez",
+              "membershipNumber": "1066403",
+              "fullText": "1  -  189  Gabriel Vasquez  M  28  -  1066403  60.35  2023-01-12  -  Local  Texas-Oklahoma"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMS0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMS0xMiIsIndlaWdodF9jbGFzcyI6ODJ9"
+        }
+      ],
+      "1067310": [
+        {
+          "meet_id": 5615,
+          "date": "2022-12-10",
+          "age_category": "Junior Men's",
+          "weight_class": "+109kg",
+          "lifter_name": "Gabriel Vasquez",
+          "lifter_id": 54669,
+          "membershipNumbers": [
+            {
+              "athleteName": "Gabriel Vasquez",
+              "membershipNumber": "1067310",
+              "fullText": "2  -  185  Gabriel Vasquez  M  18  -  1067310  143.6  2022-12-10  -  Local  Mountain South"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMi0xMCIsIndlaWdodF9jbGFzcyI6NzB9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Gabriel Vasquez",
+    "splits": [
+      {
+        "newAthleteName": "Gabriel Vasquez (Person 1)",
+        "membershipNumber": "1066403",
+        "competitionCount": 1,
+        "competitions": [
+          5616
+        ]
+      },
+      {
+        "newAthleteName": "Gabriel Vasquez (Person 2)",
+        "membershipNumber": "1067310",
+        "competitionCount": 1,
+        "competitions": [
+          5615
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Gabriel Vasquez",
+    "competitions": [
+      {
+        "meet_id": 5615,
+        "date": "2022-12-10",
+        "age_category": "Junior Men's",
+        "weight_class": "+109kg",
+        "lifter_name": "Gabriel Vasquez",
+        "lifter_id": 54669,
+        "membershipNumbers": [
+          {
+            "athleteName": "Gabriel Vasquez",
+            "membershipNumber": "1067310",
+            "fullText": "2  -  185  Gabriel Vasquez  M  18  -  1067310  143.6  2022-12-10  -  Local  Mountain South"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMi0xMCIsIndlaWdodF9jbGFzcyI6NzB9"
+      },
+      {
+        "meet_id": 5616,
+        "date": "2023-01-12",
+        "age_category": "Open Men's",
+        "weight_class": "61kg",
+        "lifter_name": "Gabriel Vasquez",
+        "lifter_id": 54669,
+        "membershipNumbers": [
+          {
+            "athleteName": "Gabriel Vasquez",
+            "membershipNumber": "1066403",
+            "fullText": "1  -  189  Gabriel Vasquez  M  28  -  1066403  60.35  2023-01-12  -  Local  Texas-Oklahoma"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMS0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMS0xMiIsIndlaWdodF9jbGFzcyI6ODJ9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1066403": [
+          {
+            "meet_id": 5616,
+            "date": "2023-01-12",
+            "age_category": "Open Men's",
+            "weight_class": "61kg",
+            "lifter_name": "Gabriel Vasquez",
+            "lifter_id": 54669,
+            "membershipNumbers": [
+              {
+                "athleteName": "Gabriel Vasquez",
+                "membershipNumber": "1066403",
+                "fullText": "1  -  189  Gabriel Vasquez  M  28  -  1066403  60.35  2023-01-12  -  Local  Texas-Oklahoma"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMS0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMS0xMiIsIndlaWdodF9jbGFzcyI6ODJ9"
+          }
+        ],
+        "1067310": [
+          {
+            "meet_id": 5615,
+            "date": "2022-12-10",
+            "age_category": "Junior Men's",
+            "weight_class": "+109kg",
+            "lifter_name": "Gabriel Vasquez",
+            "lifter_id": 54669,
+            "membershipNumbers": [
+              {
+                "athleteName": "Gabriel Vasquez",
+                "membershipNumber": "1067310",
+                "fullText": "2  -  185  Gabriel Vasquez  M  18  -  1067310  143.6  2022-12-10  -  Local  Mountain South"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMi0xMCIsIndlaWdodF9jbGFzcyI6NzB9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

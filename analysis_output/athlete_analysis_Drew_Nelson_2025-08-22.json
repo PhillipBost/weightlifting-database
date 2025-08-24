@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-22T08:13:50.503Z",
+  "athleteName": "Drew Nelson",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1020007": [
+        {
+          "meet_id": 3238,
+          "date": "2018-06-09",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Drew Nelson",
+          "lifter_id": 36569,
+          "membershipNumbers": [
+            {
+              "athleteName": "Drew Nelson",
+              "membershipNumber": "1020007",
+              "fullText": "25  -  195  Drew Nelson  M  31  -  1020007  84.3  2018-06-09  -  Local  New York"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0wOSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        },
+        {
+          "meet_id": 4779,
+          "date": "2021-10-24",
+          "age_category": "Open Men's",
+          "weight_class": "89kg",
+          "lifter_name": "Drew Nelson",
+          "lifter_id": 36569,
+          "membershipNumbers": [
+            {
+              "athleteName": "Drew Nelson",
+              "membershipNumber": "1020007",
+              "fullText": "20  -  213  Drew Nelson  M  34  -  1020007  86.75  2021-10-24  -  Local  New York"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMC0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMC0yNCIsIndlaWdodF9jbGFzcyI6ODZ9"
+        }
+      ],
+      "1038131": [
+        {
+          "meet_id": 3839,
+          "date": "2019-01-19",
+          "age_category": "Open Men's",
+          "weight_class": "73kg",
+          "lifter_name": "Drew Nelson",
+          "lifter_id": 36569,
+          "membershipNumbers": [
+            {
+              "athleteName": "Drew Nelson",
+              "membershipNumber": "1038131",
+              "fullText": "11  -  174  Drew Nelson  M  16  New Albany Barbell Club  1038131  69.5  2019-01-19  -  Local  Indiana"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0xOSIsIndlaWdodF9jbGFzcyI6ODR9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Drew Nelson",
+    "splits": [
+      {
+        "newAthleteName": "Drew Nelson (Person 1)",
+        "membershipNumber": "1020007",
+        "competitionCount": 2,
+        "competitions": [
+          3238,
+          4779
+        ]
+      },
+      {
+        "newAthleteName": "Drew Nelson (Person 2)",
+        "membershipNumber": "1038131",
+        "competitionCount": 1,
+        "competitions": [
+          3839
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Drew Nelson",
+    "competitions": [
+      {
+        "meet_id": 3238,
+        "date": "2018-06-09",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Drew Nelson",
+        "lifter_id": 36569,
+        "membershipNumbers": [
+          {
+            "athleteName": "Drew Nelson",
+            "membershipNumber": "1020007",
+            "fullText": "25  -  195  Drew Nelson  M  31  -  1020007  84.3  2018-06-09  -  Local  New York"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0wOSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 3839,
+        "date": "2019-01-19",
+        "age_category": "Open Men's",
+        "weight_class": "73kg",
+        "lifter_name": "Drew Nelson",
+        "lifter_id": 36569,
+        "membershipNumbers": [
+          {
+            "athleteName": "Drew Nelson",
+            "membershipNumber": "1038131",
+            "fullText": "11  -  174  Drew Nelson  M  16  New Albany Barbell Club  1038131  69.5  2019-01-19  -  Local  Indiana"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0xOSIsIndlaWdodF9jbGFzcyI6ODR9"
+      },
+      {
+        "meet_id": 4779,
+        "date": "2021-10-24",
+        "age_category": "Open Men's",
+        "weight_class": "89kg",
+        "lifter_name": "Drew Nelson",
+        "lifter_id": 36569,
+        "membershipNumbers": [
+          {
+            "athleteName": "Drew Nelson",
+            "membershipNumber": "1020007",
+            "fullText": "20  -  213  Drew Nelson  M  34  -  1020007  86.75  2021-10-24  -  Local  New York"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMC0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMC0yNCIsIndlaWdodF9jbGFzcyI6ODZ9"
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1020007": [
+          {
+            "meet_id": 3238,
+            "date": "2018-06-09",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Drew Nelson",
+            "lifter_id": 36569,
+            "membershipNumbers": [
+              {
+                "athleteName": "Drew Nelson",
+                "membershipNumber": "1020007",
+                "fullText": "25  -  195  Drew Nelson  M  31  -  1020007  84.3  2018-06-09  -  Local  New York"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0wOSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          },
+          {
+            "meet_id": 4779,
+            "date": "2021-10-24",
+            "age_category": "Open Men's",
+            "weight_class": "89kg",
+            "lifter_name": "Drew Nelson",
+            "lifter_id": 36569,
+            "membershipNumbers": [
+              {
+                "athleteName": "Drew Nelson",
+                "membershipNumber": "1020007",
+                "fullText": "20  -  213  Drew Nelson  M  34  -  1020007  86.75  2021-10-24  -  Local  New York"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMC0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMC0yNCIsIndlaWdodF9jbGFzcyI6ODZ9"
+          }
+        ],
+        "1038131": [
+          {
+            "meet_id": 3839,
+            "date": "2019-01-19",
+            "age_category": "Open Men's",
+            "weight_class": "73kg",
+            "lifter_name": "Drew Nelson",
+            "lifter_id": 36569,
+            "membershipNumbers": [
+              {
+                "athleteName": "Drew Nelson",
+                "membershipNumber": "1038131",
+                "fullText": "11  -  174  Drew Nelson  M  16  New Albany Barbell Club  1038131  69.5  2019-01-19  -  Local  Indiana"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0xOSIsIndlaWdodF9jbGFzcyI6ODR9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

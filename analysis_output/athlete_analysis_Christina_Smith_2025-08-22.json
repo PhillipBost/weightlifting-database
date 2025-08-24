@@ -1,0 +1,151 @@
+{
+  "timestamp": "2025-08-22T20:34:23.953Z",
+  "athleteName": "Christina Smith",
+  "totalCompetitions": 2,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1006404": [
+        {
+          "meet_id": 1870,
+          "date": "2016-05-14",
+          "age_category": "Open Women's",
+          "weight_class": "+75 Kg",
+          "lifter_name": "Christina Smith",
+          "lifter_id": 23912,
+          "membershipNumbers": [
+            {
+              "athleteName": "Christina Smith",
+              "membershipNumber": "1006404",
+              "fullText": "7  -  136  Christina Smith  F  21  Corvallis Strength  1006404  85.2  2016-05-14  -  Local  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0xNCIsIndlaWdodF9jbGFzcyI6MzY4fQ=="
+        }
+      ],
+      "1056885": [
+        {
+          "meet_id": 4938,
+          "date": "2021-07-24",
+          "age_category": "Open Women's",
+          "weight_class": "71kg",
+          "lifter_name": "Christina Smith",
+          "lifter_id": 23912,
+          "membershipNumbers": [
+            {
+              "athleteName": "Christina Smith",
+              "membershipNumber": "1056885",
+              "fullText": "28  -  95  Christina Smith  F  23  Powerhouse Performance  1056885  70.1  2021-07-24  -  Local  Mountain North"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNy0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNy0yNCIsIndlaWdodF9jbGFzcyI6OTZ9"
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Christina Smith",
+    "splits": [
+      {
+        "newAthleteName": "Christina Smith (Person 1)",
+        "membershipNumber": "1006404",
+        "competitionCount": 1,
+        "competitions": [
+          1870
+        ]
+      },
+      {
+        "newAthleteName": "Christina Smith (Person 2)",
+        "membershipNumber": "1056885",
+        "competitionCount": 1,
+        "competitions": [
+          4938
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Christina Smith",
+    "competitions": [
+      {
+        "meet_id": 4938,
+        "date": "2021-07-24",
+        "age_category": "Open Women's",
+        "weight_class": "71kg",
+        "lifter_name": "Christina Smith",
+        "lifter_id": 23912,
+        "membershipNumbers": [
+          {
+            "athleteName": "Christina Smith",
+            "membershipNumber": "1056885",
+            "fullText": "28  -  95  Christina Smith  F  23  Powerhouse Performance  1056885  70.1  2021-07-24  -  Local  Mountain North"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNy0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNy0yNCIsIndlaWdodF9jbGFzcyI6OTZ9"
+      },
+      {
+        "meet_id": 1870,
+        "date": "2016-05-14",
+        "age_category": "Open Women's",
+        "weight_class": "+75 Kg",
+        "lifter_name": "Christina Smith",
+        "lifter_id": 23912,
+        "membershipNumbers": [
+          {
+            "athleteName": "Christina Smith",
+            "membershipNumber": "1006404",
+            "fullText": "7  -  136  Christina Smith  F  21  Corvallis Strength  1006404  85.2  2016-05-14  -  Local  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0xNCIsIndlaWdodF9jbGFzcyI6MzY4fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1006404": [
+          {
+            "meet_id": 1870,
+            "date": "2016-05-14",
+            "age_category": "Open Women's",
+            "weight_class": "+75 Kg",
+            "lifter_name": "Christina Smith",
+            "lifter_id": 23912,
+            "membershipNumbers": [
+              {
+                "athleteName": "Christina Smith",
+                "membershipNumber": "1006404",
+                "fullText": "7  -  136  Christina Smith  F  21  Corvallis Strength  1006404  85.2  2016-05-14  -  Local  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0xNCIsIndlaWdodF9jbGFzcyI6MzY4fQ=="
+          }
+        ],
+        "1056885": [
+          {
+            "meet_id": 4938,
+            "date": "2021-07-24",
+            "age_category": "Open Women's",
+            "weight_class": "71kg",
+            "lifter_name": "Christina Smith",
+            "lifter_id": 23912,
+            "membershipNumbers": [
+              {
+                "athleteName": "Christina Smith",
+                "membershipNumber": "1056885",
+                "fullText": "28  -  95  Christina Smith  F  23  Powerhouse Performance  1056885  70.1  2021-07-24  -  Local  Mountain North"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNy0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNy0yNCIsIndlaWdodF9jbGFzcyI6OTZ9"
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}

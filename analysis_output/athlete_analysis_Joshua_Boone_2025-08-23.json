@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-08-23T00:53:28.624Z",
+  "athleteName": "Joshua Boone",
+  "totalCompetitions": 3,
+  "analysis": {
+    "distinctAthletes": 2,
+    "membershipGroups": {
+      "1006486": [
+        {
+          "meet_id": 1680,
+          "date": "2016-06-11",
+          "age_category": "Open Men's",
+          "weight_class": "85 kg",
+          "lifter_name": "Joshua Boone",
+          "lifter_id": 21602,
+          "membershipNumbers": [
+            {
+              "athleteName": "Joshua Boone",
+              "membershipNumber": "1006486",
+              "fullText": "18  -  220  Joshua Boone  M  20  -  1006486  81.6  2016-06-11  -  Local  Pacific Northwest"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0xMSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+        }
+      ],
+      "1052978": [
+        {
+          "meet_id": 4703,
+          "date": "2020-12-31",
+          "age_category": "Men's Masters (35-39)",
+          "weight_class": "89kg",
+          "lifter_name": "Joshua Boone",
+          "lifter_id": 21602,
+          "membershipNumbers": [
+            {
+              "athleteName": "Joshua Boone",
+              "membershipNumber": "1052978",
+              "fullText": "2  -  195  Joshua Boone  M  37  Gahanna GorrillaZ Barbell Club  1052978  87  2020-12-31  -  Local  Ohio"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0xMi0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0xMi0zMSIsIndlaWdodF9jbGFzcyI6MTA2fQ=="
+        },
+        {
+          "meet_id": 6886,
+          "date": "2025-05-17",
+          "age_category": "Men's Masters (40-44)",
+          "weight_class": "96kg",
+          "lifter_name": "Joshua Boone",
+          "lifter_id": 21602,
+          "membershipNumbers": [
+            {
+              "athleteName": "Joshua Boone",
+              "membershipNumber": "1052978",
+              "fullText": "3  -  200  Joshua Boone  M  42  Gahanna GorrillaZ Barbell Club  1052978  91.1  2025-05-17  -  Local  Ohio"
+            }
+          ],
+          "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNS0xNyIsIndlaWdodF9jbGFzcyI6MTI3fQ=="
+        }
+      ]
+    },
+    "unidentifiedCompetitions": [],
+    "splitRequired": true
+  },
+  "splitPlan": {
+    "action": "SPLIT_REQUIRED",
+    "originalAthleteName": "Joshua Boone",
+    "splits": [
+      {
+        "newAthleteName": "Joshua Boone (Person 1)",
+        "membershipNumber": "1006486",
+        "competitionCount": 1,
+        "competitions": [
+          1680
+        ]
+      },
+      {
+        "newAthleteName": "Joshua Boone (Person 2)",
+        "membershipNumber": "1052978",
+        "competitionCount": 2,
+        "competitions": [
+          4703,
+          6886
+        ]
+      }
+    ],
+    "unidentifiedCompetitions": []
+  },
+  "rawData": {
+    "athleteName": "Joshua Boone",
+    "competitions": [
+      {
+        "meet_id": 4703,
+        "date": "2020-12-31",
+        "age_category": "Men's Masters (35-39)",
+        "weight_class": "89kg",
+        "lifter_name": "Joshua Boone",
+        "lifter_id": 21602,
+        "membershipNumbers": [
+          {
+            "athleteName": "Joshua Boone",
+            "membershipNumber": "1052978",
+            "fullText": "2  -  195  Joshua Boone  M  37  Gahanna GorrillaZ Barbell Club  1052978  87  2020-12-31  -  Local  Ohio"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0xMi0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0xMi0zMSIsIndlaWdodF9jbGFzcyI6MTA2fQ=="
+      },
+      {
+        "meet_id": 1680,
+        "date": "2016-06-11",
+        "age_category": "Open Men's",
+        "weight_class": "85 kg",
+        "lifter_name": "Joshua Boone",
+        "lifter_id": 21602,
+        "membershipNumbers": [
+          {
+            "athleteName": "Joshua Boone",
+            "membershipNumber": "1006486",
+            "fullText": "18  -  220  Joshua Boone  M  20  -  1006486  81.6  2016-06-11  -  Local  Pacific Northwest"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0xMSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+      },
+      {
+        "meet_id": 6886,
+        "date": "2025-05-17",
+        "age_category": "Men's Masters (40-44)",
+        "weight_class": "96kg",
+        "lifter_name": "Joshua Boone",
+        "lifter_id": 21602,
+        "membershipNumbers": [
+          {
+            "athleteName": "Joshua Boone",
+            "membershipNumber": "1052978",
+            "fullText": "3  -  200  Joshua Boone  M  42  Gahanna GorrillaZ Barbell Club  1052978  91.1  2025-05-17  -  Local  Ohio"
+          }
+        ],
+        "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNS0xNyIsIndlaWdodF9jbGFzcyI6MTI3fQ=="
+      }
+    ],
+    "analysis": {
+      "distinctAthletes": 2,
+      "membershipGroups": {
+        "1006486": [
+          {
+            "meet_id": 1680,
+            "date": "2016-06-11",
+            "age_category": "Open Men's",
+            "weight_class": "85 kg",
+            "lifter_name": "Joshua Boone",
+            "lifter_id": 21602,
+            "membershipNumbers": [
+              {
+                "athleteName": "Joshua Boone",
+                "membershipNumber": "1006486",
+                "fullText": "18  -  220  Joshua Boone  M  20  -  1006486  81.6  2016-06-11  -  Local  Pacific Northwest"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0xMSIsIndlaWdodF9jbGFzcyI6MzU4fQ=="
+          }
+        ],
+        "1052978": [
+          {
+            "meet_id": 4703,
+            "date": "2020-12-31",
+            "age_category": "Men's Masters (35-39)",
+            "weight_class": "89kg",
+            "lifter_name": "Joshua Boone",
+            "lifter_id": 21602,
+            "membershipNumbers": [
+              {
+                "athleteName": "Joshua Boone",
+                "membershipNumber": "1052978",
+                "fullText": "2  -  195  Joshua Boone  M  37  Gahanna GorrillaZ Barbell Club  1052978  87  2020-12-31  -  Local  Ohio"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0xMi0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0xMi0zMSIsIndlaWdodF9jbGFzcyI6MTA2fQ=="
+          },
+          {
+            "meet_id": 6886,
+            "date": "2025-05-17",
+            "age_category": "Men's Masters (40-44)",
+            "weight_class": "96kg",
+            "lifter_name": "Joshua Boone",
+            "lifter_id": 21602,
+            "membershipNumbers": [
+              {
+                "athleteName": "Joshua Boone",
+                "membershipNumber": "1052978",
+                "fullText": "3  -  200  Joshua Boone  M  42  Gahanna GorrillaZ Barbell Club  1052978  91.1  2025-05-17  -  Local  Ohio"
+              }
+            ],
+            "sport80Url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNS0xNyIsIndlaWdodF9jbGFzcyI6MTI3fQ=="
+          }
+        ]
+      },
+      "unidentifiedCompetitions": [],
+      "splitRequired": true
+    }
+  }
+}
