@@ -75,7 +75,7 @@ jobs:
           echo "✅ Internal ID Uploader completed at: $(date +'%Y-%m-%d %H:%M:%S %Z')"
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
           TZ: America/New_York
 
       - name: Upload artifacts for review

@@ -5,7 +5,7 @@ name: Division Scraper - Monday (Divisions 1-35)
 
 on:
   schedule:
-    # 2 AM EST every Monday (8 AM UTC)
+    # 3 AM EST every Monday (8 AM UTC)
     - cron: '0 8 * * 1'
   workflow_dispatch:
 
@@ -41,7 +41,7 @@ jobs:
         run: |
           echo "🏋️ Starting Monday scraper (Divisions $DIVISION_START-$DIVISION_END)"
           echo "🕐 Start time: $(date +'%Y-%m-%d %H:%M:%S %Z')"
-          node division-scraper-batch.js
+          node nightly-division-scraper.js
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}

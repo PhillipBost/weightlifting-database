@@ -1,23 +1,23 @@
 # ============================================
-# File 4: division-scraper-wednesday.yml
+# File 4: division-scraper-thursday.yml
 # ============================================
-name: Division Scraper - Wednesday (Divisions 107-141)
+name: Division Scraper - Thursday (Divisions 107-141)
 
 on:
   schedule:
-    # 3 AM EST every Wednesday (8 AM UTC)
+    # 3 AM EST every Thursday (8 AM UTC)
     - cron: '0 8 * * 4'
   workflow_dispatch:
 
 jobs:
-  scrape-wednesday-divisions:
+  scrape-thursday-divisions:
     runs-on: ubuntu-latest
     timeout-minutes: 180  # 3 hour timeout
     env:
       TZ: America/New_York
       DIVISION_START: 107
       DIVISION_END: 141
-      DAY_NAME: Wednesday
+      DAY_NAME: Thursday
     
     steps:
       - name: Checkout repository
@@ -34,12 +34,12 @@ jobs:
       - name: Create output directories
         run: |
           mkdir -p output/athletes
-          mkdir -p logs/wednesday
+          mkdir -p logs/thursday
           echo "📁 Created output directories"
       
-      - name: Run division scraper for Wednesday batch
+      - name: Run division scraper for Thursday batch
         run: |
-          echo "🏋️ Starting Wednesday scraper (Divisions $DIVISION_START-$DIVISION_END)"
+          echo "🏋️ Starting Thursday scraper (Divisions $DIVISION_START-$DIVISION_END)"
           echo "🕐 Start time: $(date +'%Y-%m-%d %H:%M:%S %Z')"
           node nightly-division-scraper.js
         env:
@@ -50,10 +50,10 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: wednesday-logs-${{ github.run_number }}
+          name: thursday-logs-${{ github.run_number }}
           path: |
-            logs/wednesday/
-            completed_divisions_wednesday.csv
+            logs/thursday/
+            completed_divisions_thursday.csv
             athlete_extraction_details.csv
           retention-days: 30
       
@@ -61,17 +61,17 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: wednesday-athletes-${{ github.run_number }}
+          name: thursday-athletes-${{ github.run_number }}
           path: output/athletes/*.csv
           retention-days: 7
           
       - name: Summary
         if: always()
         run: |
-          echo "📊 Monday Summary:"
+          echo "📊 Thursday Summary:"
           ATHLETE_COUNT=$(find output/athletes -name "*.csv" 2>/dev/null | wc -l)
           echo "👥 Athlete files created: $ATHLETE_COUNT"
-          if [ -f "completed_divisions_monday.csv" ]; then
+          if [ -f "completed_divisions_thursday.csv" ]; then
             echo "Divisions processed:"
-            tail -10 completed_divisions_monday.csv
+            tail -10 completed_divisions_thursday.csv
           fi

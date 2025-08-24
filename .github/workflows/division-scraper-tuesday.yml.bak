@@ -71,7 +71,7 @@ jobs:
           echo "📊 Tuesday Summary:"
           ATHLETE_COUNT=$(find output/athletes -name "*.csv" 2>/dev/null | wc -l)
           echo "👥 Athlete files created: $ATHLETE_COUNT"
-          if [ -f "completed_divisions_monday.csv" ]; then
+          if [ -f "completed_divisions_tuesday.csv" ]; then
             echo "Divisions processed:"
-            tail -10 completed_divisions_monday.csv
+            tail -10 completed_divisions_tuesday.csv
           fi
