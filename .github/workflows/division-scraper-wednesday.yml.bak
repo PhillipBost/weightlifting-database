@@ -68,7 +68,7 @@ jobs:
       - name: Summary
         if: always()
         run: |
-          echo "📊 Monday Summary:"
+          echo "📊 Wednesday Summary:"
           ATHLETE_COUNT=$(find output/athletes -name "*.csv" 2>/dev/null | wc -l)
           echo "👥 Athlete files created: $ATHLETE_COUNT"
           if [ -f "completed_divisions_wednesday.csv" ]; then

@@ -1,0 +1,127 @@
+name: Internal ID Pipeline - Scrape and Upload
+
+on:
+  schedule:
+    # 4 AM EST = 9 AM UTC (Standard Time) / 7 AM UTC (Daylight Time)
+    # Using 9 AM UTC to be safe during EST
+    - cron: '0 9 * * *'
+  workflow_dispatch:
+    inputs:
+      skip_scraper:
+        description: 'Skip scraper and only run uploader'
+        required: false
+        default: 'false'
+        type: boolean
+
+jobs:
+  internal-id-pipeline:
+    runs-on: ubuntu-latest
+    
+    # Set timezone for the entire job
+    env:
+      TZ: America/New_York
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Set timezone and show current time
+        run: |
+          sudo timedatectl set-timezone America/New_York
+          echo "🕐 Internal ID Pipeline started at: $(date)"
+          echo "📅 Date: $(date +'%Y-%m-%d %H:%M:%S %Z')"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Internal ID Scraper
+        if: ${{ github.event.inputs.skip_scraper != 'true' }}
+        run: |
+          echo "🕷️ Starting Internal ID Scraper at: $(date +'%Y-%m-%d %H:%M:%S %Z')"
+          node internal-id-scraper.js
+          echo "✅ Internal ID Scraper completed at: $(date +'%Y-%m-%d %H:%M:%S %Z')"
+        continue-on-error: false
+
+      - name: Check scraper output
+        if: ${{ github.event.inputs.skip_scraper != 'true' }}
+        run: |
+          echo "📊 Checking scraper results..."
+          if [ -f "internal_ids.json" ]; then
+            echo "✅ internal_ids.json created successfully"
+            echo "📈 File size: $(stat -c%s internal_ids.json) bytes"
+            # Show summary without exposing sensitive data
+            node -e "
+              const data = JSON.parse(require('fs').readFileSync('internal_ids.json', 'utf8'));
+              console.log('📊 Scraper Summary:');
+              console.log('   Total athletes:', Object.keys(data.athletes || {}).length);
+              console.log('   Failed IDs:', (data.failedIds || []).length);
+              console.log('   Last processed ID:', data.lastProcessedId || 0);
+              console.log('   Previously uploaded:', Object.keys(data.processed || {}).length);
+            "
+          else
+            echo "❌ internal_ids.json not found - scraper may have failed"
+            exit 1
+          fi
+
+      - name: Run Internal ID Uploader
+        run: |
+          echo "📤 Starting Internal ID Uploader at: $(date +'%Y-%m-%d %H:%M:%S %Z')"
+          node internal-id-uploader.js
+          echo "✅ Internal ID Uploader completed at: $(date +'%Y-%m-%d %H:%M:%S %Z')"
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+          TZ: America/New_York
+
+      - name: Upload artifacts for review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: internal-id-pipeline-${{ github.run_number }}
+          path: |
+            internal_ids.json
+            internal_id_upload_errors.csv
+          retention-days: 7
+
+      - name: Show completion summary
+        if: always()
+        run: |
+          echo "🏁 Internal ID Pipeline completed at: $(date +'%Y-%m-%d %H:%M:%S %Z')"
+          echo ""
+          echo "📊 Final Summary:"
+          
+          # Scraper summary
+          if [ -f "internal_ids.json" ]; then
+            node -e "
+              const data = JSON.parse(require('fs').readFileSync('internal_ids.json', 'utf8'));
+              console.log('🕷️ Scraper Results:');
+              console.log('   📈 Total athletes scraped:', Object.keys(data.athletes || {}).length);
+              console.log('   ❌ Failed IDs for retry:', (data.failedIds || []).length);
+              console.log('   🔄 Last processed ID:', data.lastProcessedId || 0);
+            "
+          fi
+          
+          # Uploader summary
+          if [ -f "internal_id_upload_errors.csv" ]; then
+            error_count=$(tail -n +2 internal_id_upload_errors.csv 2>/dev/null | wc -l || echo "0")
+            if [ "$error_count" -gt 0 ]; then
+              echo "⚠️ Upload errors: $error_count (check error log artifact)"
+            else
+              echo "✅ Upload completed with no errors"
+            fi
+          fi
+          
+          echo ""
+          echo "📁 Check the artifacts section above for detailed logs"
+
+      - name: Notify on failure
+        if: failure()
+        run: |
+          echo "🚨 Internal ID Pipeline failed at: $(date +'%Y-%m-%d %H:%M:%S %Z')"
+          echo "❌ Check the logs above for details"
+          echo "🔍 Look for error messages in the failed step"
