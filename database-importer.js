@@ -462,11 +462,11 @@ async function main() {
         console.log('🔍 Secret check:');
         console.log('SUPABASE_URL defined:', !!process.env.SUPABASE_URL);
         console.log('SUPABASE_URL length:', process.env.SUPABASE_URL?.length || 0);
-        console.log('SUPABASE_ANON_KEY defined:', !!process.env.SUPABASE_ANON_KEY);
-        console.log('SUPABASE_ANON_KEY length:', process.env.SUPABASE_ANON_KEY?.length || 0);
+        console.log('SUPABASE_SECRET_KEY defined:', !!process.env.SUPABASE_SECRET_KEY);
+        console.log('SUPABASE_SECRET_KEY length:', process.env.SUPABASE_SECRET_KEY?.length || 0);
       
-        if (!process.env.SUPABASE_URL || !process.env.SUPABASE_ANON_KEY) {
-            throw new Error('Missing Supabase environment variables (SUPABASE_URL, SUPABASE_ANON_KEY)');
+        if (!process.env.SUPABASE_URL || !process.env.SUPABASE_SECRET_KEY) {
+            throw new Error('Missing Supabase environment variables (SUPABASE_URL, SUPABASE_SECRET_KEY)');
         }
         
         // Test connection
