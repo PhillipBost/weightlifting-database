@@ -1,0 +1,317 @@
+/**
+ * MEET RESULTS COLLECTOR - STEP 3
+ * 
+ * Purpose: Collects all database meet results for contaminated athlete names
+ * These are the "messy" results that need to be properly assigned to the correct athlete
+ * 
+ * INPUT: Reads from /output/successful_scrapes/*.json (from Step 2)
+ * OUTPUT: /output/database_results.json
+ * 
+ * For each contaminated athlete name:
+ * - Queries: SELECT * FROM meet_results WHERE lifter_name = 'Athlete Name'
+ * - Collects ALL current database results for that name
+ * - Preserves result_id for later updates
+ */
+
+require('dotenv').config();
+const fs = require('fs');
+const path = require('path');
+const { createClient } = require('@supabase/supabase-js');
+
+// Initialize Supabase client
+const supabase = createClient(
+    process.env.SUPABASE_URL,
+    process.env.SUPABASE_SECRET_KEY
+);
+
+// Configuration
+const INPUT_DIR = './output/successful_scrapes';
+const OUTPUT_DIR = './output';
+const LOGS_DIR = './logs';
+const OUTPUT_FILE = path.join(OUTPUT_DIR, 'database_results.json');
+const LOG_FILE = path.join(LOGS_DIR, 'meet-results-collector.log');
+const SCRIPT_VERSION = '1.0.0';
+
+// Ensure directories exist
+function ensureDirectories() {
+    if (!fs.existsSync(OUTPUT_DIR)) {
+        fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+    }
+    if (!fs.existsSync(LOGS_DIR)) {
+        fs.mkdirSync(LOGS_DIR, { recursive: true });
+    }
+}
+
+// Logging utility
+function log(message) {
+    const timestamp = new Date().toISOString();
+    const logMessage = `[${timestamp}] ${message}\n`;
+    
+    // Console output
+    console.log(message);
+    
+    // File output
+    fs.appendFileSync(LOG_FILE, logMessage);
+}
+
+// Load all successful scrape files
+function loadSuccessfulScrapes() {
+    log('Loading successful scrape files...');
+    
+    if (!fs.existsSync(INPUT_DIR)) {
+        throw new Error(`Input directory not found: ${INPUT_DIR}`);
+    }
+    
+    const files = fs.readdirSync(INPUT_DIR).filter(f => f.endsWith('.json'));
+    
+    if (files.length === 0) {
+        throw new Error('No successful scrape files found in ' + INPUT_DIR);
+    }
+    
+    log(`Found ${files.length} scrape files to process`);
+    
+    const allAthletes = [];
+    
+    for (const file of files) {
+        const filePath = path.join(INPUT_DIR, file);
+        const content = fs.readFileSync(filePath, 'utf8');
+        const data = JSON.parse(content);
+        
+        if (data.data && Array.isArray(data.data)) {
+            allAthletes.push({
+                file: file,
+                athlete_name: data.metadata.athlete_name,
+                athletes: data.data
+            });
+            log(`  Loaded ${file}: ${data.data.length} athletes for "${data.metadata.athlete_name}"`);
+        }
+    }
+    
+    return allAthletes;
+}
+
+// Get unique athlete names to query
+function getUniqueAthleteNames(athleteGroups) {
+    const uniqueNames = new Set();
+    
+    for (const group of athleteGroups) {
+        uniqueNames.add(group.athlete_name);
+    }
+    
+    return Array.from(uniqueNames);
+}
+
+// Query database for meet results
+async function getMeetResultsForAthlete(athleteName) {
+    log(`  Querying meet results for: ${athleteName}`);
+    
+    const allResults = [];
+    let from = 0;
+    const pageSize = 1000;
+    
+    while (true) {
+        const { data: results, error } = await supabase
+            .from('meet_results')
+            .select(`
+                result_id,
+                meet_id,
+                lifter_id,
+                meet_name,
+                date,
+                age_category,
+                weight_class,
+                lifter_name,
+                body_weight_kg,
+                snatch_lift_1,
+                snatch_lift_2,
+                snatch_lift_3,
+                best_snatch,
+                cj_lift_1,
+                cj_lift_2,
+                cj_lift_3,
+                best_cj,
+                total,
+                competition_age,
+                club_name,
+                wso,
+                created_at,
+                updated_at
+            `)
+            .eq('lifter_name', athleteName)
+            .range(from, from + pageSize - 1)
+            .order('date', { ascending: false });
+        
+        if (error) {
+            throw new Error(`Database query failed for ${athleteName}: ${error.message}`);
+        }
+        
+        allResults.push(...results);
+        
+        if (results.length < pageSize) break;
+        from += pageSize;
+    }
+    
+    log(`    Found ${allResults.length} meet results`);
+    
+    return allResults;
+}
+
+// Process all contaminated athletes
+async function collectAllMeetResults(athleteGroups) {
+    log('Collecting meet results from database...');
+    
+    const athleteNames = getUniqueAthleteNames(athleteGroups);
+    log(`Processing ${athleteNames.length} unique athlete names`);
+    
+    const allResults = {};
+    let totalResults = 0;
+    
+    for (const athleteName of athleteNames) {
+        try {
+            const results = await getMeetResultsForAthlete(athleteName);
+            allResults[athleteName] = {
+                athlete_name: athleteName,
+                result_count: results.length,
+                results: results
+            };
+            totalResults += results.length;
+        } catch (error) {
+            log(`  ERROR: Failed to get results for ${athleteName}: ${error.message}`);
+            allResults[athleteName] = {
+                athlete_name: athleteName,
+                result_count: 0,
+                results: [],
+                error: error.message
+            };
+        }
+    }
+    
+    log(`✅ Collected ${totalResults} total meet results across ${athleteNames.length} athlete names`);
+    
+    return allResults;
+}
+
+// Create summary statistics
+function createSummaryStats(athleteGroups, meetResults) {
+    const stats = {
+        total_contaminated_groups: athleteGroups.length,
+        total_individual_athletes: 0,
+        total_meet_results: 0,
+        athlete_breakdown: []
+    };
+    
+    for (const group of athleteGroups) {
+        const athleteName = group.athlete_name;
+        const individualCount = group.athletes.length;
+        const resultsCount = meetResults[athleteName]?.result_count || 0;
+        
+        stats.total_individual_athletes += individualCount;
+        stats.total_meet_results += resultsCount;
+        
+        stats.athlete_breakdown.push({
+            athlete_name: athleteName,
+            individual_athletes: individualCount,
+            internal_ids: group.athletes.map(a => a.internal_id),
+            meet_results_in_database: resultsCount,
+            competitions_from_scraping: group.athletes.reduce((sum, a) => 
+                sum + (a.competition_history?.length || 0), 0)
+        });
+    }
+    
+    return stats;
+}
+
+// Save results to output file
+function saveResults(meetResults, stats, processingTimeMs) {
+    log('Saving results to output file...');
+    
+    const output = {
+        metadata: {
+            timestamp: new Date().toISOString(),
+            script_name: 'meet-results-collector',
+            script_version: SCRIPT_VERSION,
+            unique_athlete_names: Object.keys(meetResults).length,
+            total_meet_results: stats.total_meet_results,
+            processing_time_ms: processingTimeMs,
+            statistics: stats
+        },
+        data: meetResults
+    };
+    
+    fs.writeFileSync(OUTPUT_FILE, JSON.stringify(output, null, 2));
+    log(`✅ Results saved to: ${OUTPUT_FILE}`);
+    
+    return output;
+}
+
+// Main execution function
+async function main() {
+    const startTime = Date.now();
+    
+    try {
+        // Setup
+        ensureDirectories();
+        log('🚀 Starting meet results collection process');
+        log('=' .repeat(60));
+        
+        // Load successful scrapes from Step 2
+        const athleteGroups = loadSuccessfulScrapes();
+        
+        // Test database connection
+        log('Testing database connection...');
+        const { error: testError } = await supabase
+            .from('meet_results')
+            .select('result_id')
+            .limit(1);
+        
+        if (testError) {
+            throw new Error(`Database connection failed: ${testError.message}`);
+        }
+        log('✅ Database connection successful');
+        
+        // Collect all meet results from database
+        const meetResults = await collectAllMeetResults(athleteGroups);
+        
+        // Create summary statistics
+        const stats = createSummaryStats(athleteGroups, meetResults);
+        
+        // Log summary
+        log('');
+        log('📊 Collection Summary:');
+        log(`   Contaminated athlete names: ${stats.total_contaminated_groups}`);
+        log(`   Individual athletes (from scraping): ${stats.total_individual_athletes}`);
+        log(`   Total meet results collected: ${stats.total_meet_results}`);
+        log('');
+        log('   Breakdown by athlete:');
+        for (const breakdown of stats.athlete_breakdown) {
+            log(`     ${breakdown.athlete_name}:`);
+            log(`       - ${breakdown.individual_athletes} distinct athletes (IDs: ${breakdown.internal_ids.join(', ')})`);
+            log(`       - ${breakdown.meet_results_in_database} database results`);
+            log(`       - ${breakdown.competitions_from_scraping} competitions from scraping`);
+        }
+        
+        // Save results
+        const processingTime = Date.now() - startTime;
+        const output = saveResults(meetResults, stats, processingTime);
+        
+        log('');
+        log(`✅ Process completed successfully in ${processingTime}ms`);
+        log(`📄 Next step: Run membership-matcher.js with this output`);
+        
+        // Return data for potential use by master script
+        return output;
+        
+    } catch (error) {
+        log(`❌ Process failed: ${error.message}`);
+        log(`🔍 Stack trace: ${error.stack}`);
+        process.exit(1);
+    }
+}
+
+// Export for use by master script
+module.exports = { main, getMeetResultsForAthlete };
+
+// Run if called directly
+if (require.main === module) {
+    main();
+}
