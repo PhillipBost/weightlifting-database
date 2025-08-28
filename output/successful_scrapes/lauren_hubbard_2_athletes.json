@@ -1,0 +1,388 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T00:25:18.588Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Lauren Hubbard",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 7,
+    "total_reverse_lookups": 7,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 84788682
+  },
+  "data": [
+    {
+      "internal_id": 21653,
+      "athlete_name": "Lauren Hubbard",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/21653",
+      "contaminated_lifter_id": 22466,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T00:24:52.345Z",
+      "profile_data": {
+        "membership_number": "1003047",
+        "birth_year": 1989,
+        "gender": "F",
+        "club_name": "TEAM TEXAS",
+        "wso": "Texas-Oklahoma",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2017 Texas State Weightlifting Championships",
+          "date": "2017-01-15",
+          "division": "Open Women's +90 kg",
+          "lifter_name": "Lauren Hubbard",
+          "body_weight_kg": "100.86",
+          "snatch_1": "70",
+          "snatch_2": "-73",
+          "snatch_3": "74",
+          "cj_1": "80",
+          "cj_2": "83",
+          "cj_3": "-86",
+          "best_snatch": "74",
+          "best_cj": "83",
+          "total": "157"
+        },
+        {
+          "meet_name": "Texas Strength State Qualifer",
+          "date": "2016-08-27",
+          "division": "Open Women's +75 Kg",
+          "lifter_name": "Lauren Hubbard",
+          "body_weight_kg": "97.6",
+          "snatch_1": "70",
+          "snatch_2": "-75",
+          "snatch_3": "75",
+          "cj_1": "80",
+          "cj_2": "-90",
+          "cj_3": "90",
+          "best_snatch": "75",
+          "best_cj": "90",
+          "total": "165"
+        },
+        {
+          "meet_name": "2016 South Texas Open",
+          "date": "2016-04-09",
+          "division": "Open Women's +75 Kg",
+          "lifter_name": "Lauren Hubbard",
+          "body_weight_kg": "97.8",
+          "snatch_1": "-68",
+          "snatch_2": "68",
+          "snatch_3": "71",
+          "cj_1": "80",
+          "cj_2": "85",
+          "cj_3": "-90",
+          "best_snatch": "71",
+          "best_cj": "85",
+          "total": "156"
+        },
+        {
+          "meet_name": "BlackBox Championships",
+          "date": "2016-02-27",
+          "division": "Open Women's +75 Kg",
+          "lifter_name": "Lauren Hubbard",
+          "body_weight_kg": "95.8",
+          "snatch_1": "-64",
+          "snatch_2": "64",
+          "snatch_3": "68",
+          "cj_1": "80",
+          "cj_2": "-85",
+          "cj_3": "-90",
+          "best_snatch": "68",
+          "best_cj": "80",
+          "total": "148"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2017 Texas State Weightlifting Championships",
+            "date": "2017-01-15",
+            "division": "Open Women's +90 kg",
+            "lifter_name": "Lauren Hubbard",
+            "body_weight_kg": "100.86",
+            "snatch_1": "70",
+            "snatch_2": "-73",
+            "snatch_3": "74",
+            "cj_1": "80",
+            "cj_2": "83",
+            "cj_3": "-86",
+            "best_snatch": "74",
+            "best_cj": "83",
+            "total": "157"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMS0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMS0xNSIsIndlaWdodF9jbGFzcyI6MzcwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Lauren Hubbard",
+            "total": "157",
+            "gender": "F",
+            "age": "28",
+            "club_name": "TEAM TEXAS",
+            "membership_number": "1003047",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Texas Strength State Qualifer",
+            "date": "2016-08-27",
+            "division": "Open Women's +75 Kg",
+            "lifter_name": "Lauren Hubbard",
+            "body_weight_kg": "97.6",
+            "snatch_1": "70",
+            "snatch_2": "-75",
+            "snatch_3": "75",
+            "cj_1": "80",
+            "cj_2": "-90",
+            "cj_3": "90",
+            "best_snatch": "75",
+            "best_cj": "90",
+            "total": "165"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0yNyIsIndlaWdodF9jbGFzcyI6MzY4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "Lauren Hubbard",
+            "total": "165",
+            "gender": "F",
+            "age": "27",
+            "club_name": "TEAM TEXAS",
+            "membership_number": "1003047",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2016 South Texas Open",
+            "date": "2016-04-09",
+            "division": "Open Women's +75 Kg",
+            "lifter_name": "Lauren Hubbard",
+            "body_weight_kg": "97.8",
+            "snatch_1": "-68",
+            "snatch_2": "68",
+            "snatch_3": "71",
+            "cj_1": "80",
+            "cj_2": "85",
+            "cj_3": "-90",
+            "best_snatch": "71",
+            "best_cj": "85",
+            "total": "156"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0wOSIsIndlaWdodF9jbGFzcyI6MzY4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Lauren Hubbard",
+            "total": "156",
+            "gender": "F",
+            "age": "27",
+            "club_name": "TEAM TEXAS",
+            "membership_number": "1003047",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "BlackBox Championships",
+            "date": "2016-02-27",
+            "division": "Open Women's +75 Kg",
+            "lifter_name": "Lauren Hubbard",
+            "body_weight_kg": "95.8",
+            "snatch_1": "-64",
+            "snatch_2": "64",
+            "snatch_3": "68",
+            "cj_1": "80",
+            "cj_2": "-85",
+            "cj_3": "-90",
+            "best_snatch": "68",
+            "best_cj": "80",
+            "total": "148"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMi0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMi0yNyIsIndlaWdodF9jbGFzcyI6MzY4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "7",
+            "athlete_name": "Lauren Hubbard",
+            "total": "148",
+            "gender": "F",
+            "age": "27",
+            "club_name": "TEAM TEXAS",
+            "membership_number": "1003047",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 60875,
+      "athlete_name": "Lauren Hubbard",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/60875",
+      "contaminated_lifter_id": 22466,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T00:25:18.586Z",
+      "profile_data": {
+        "membership_number": "1072990",
+        "birth_year": 1988,
+        "gender": "F",
+        "club_name": "Longfellow Weightlifting",
+        "wso": "California South",
+        "national_rank": "10"
+      },
+      "competition_history": [
+        {
+          "meet_name": "The 2024 Nike North American Open Series 2, powered by Rogue",
+          "date": "2024-08-29",
+          "division": "Women's Masters (35-39) 76kg",
+          "lifter_name": "Lauren Hubbard",
+          "body_weight_kg": "75.34",
+          "snatch_1": "-45",
+          "snatch_2": "-45",
+          "snatch_3": "45",
+          "cj_1": "60",
+          "cj_2": "63",
+          "cj_3": "-66",
+          "best_snatch": "45",
+          "best_cj": "63",
+          "total": "108"
+        },
+        {
+          "meet_name": "SoCal Spring Classic",
+          "date": "2024-04-27",
+          "division": "Women's Masters (35-39) 76kg",
+          "lifter_name": "Lauren Hubbard",
+          "body_weight_kg": "75.41",
+          "snatch_1": "43",
+          "snatch_2": "46",
+          "snatch_3": "-50",
+          "cj_1": "55",
+          "cj_2": "60",
+          "cj_3": "65",
+          "best_snatch": "46",
+          "best_cj": "65",
+          "total": "111"
+        },
+        {
+          "meet_name": "2023 Vehement Barbell Festival - NUQ",
+          "date": "2023-12-17",
+          "division": "Women's Masters (35-39) 76kg",
+          "lifter_name": "Lauren Hubbard",
+          "body_weight_kg": "75",
+          "snatch_1": "38",
+          "snatch_2": "42",
+          "snatch_3": "45",
+          "cj_1": "50",
+          "cj_2": "55",
+          "cj_3": "60",
+          "best_snatch": "45",
+          "best_cj": "60",
+          "total": "105"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "The 2024 Nike North American Open Series 2, powered by Rogue",
+            "date": "2024-08-29",
+            "division": "Women's Masters (35-39) 76kg",
+            "lifter_name": "Lauren Hubbard",
+            "body_weight_kg": "75.34",
+            "snatch_1": "-45",
+            "snatch_2": "-45",
+            "snatch_3": "45",
+            "cj_1": "60",
+            "cj_2": "63",
+            "cj_3": "-66",
+            "best_snatch": "45",
+            "best_cj": "63",
+            "total": "108"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOC0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOC0yOSIsIndlaWdodF9jbGFzcyI6MTE3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "Lauren Hubbard",
+            "total": "108",
+            "gender": "F",
+            "age": "36",
+            "club_name": "Longfellow Weightlifting",
+            "membership_number": "1072990",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "SoCal Spring Classic",
+            "date": "2024-04-27",
+            "division": "Women's Masters (35-39) 76kg",
+            "lifter_name": "Lauren Hubbard",
+            "body_weight_kg": "75.41",
+            "snatch_1": "43",
+            "snatch_2": "46",
+            "snatch_3": "-50",
+            "cj_1": "55",
+            "cj_2": "60",
+            "cj_3": "65",
+            "best_snatch": "46",
+            "best_cj": "65",
+            "total": "111"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNC0yNyIsIndlaWdodF9jbGFzcyI6MTE3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Lauren Hubbard",
+            "total": "111",
+            "gender": "F",
+            "age": "36",
+            "club_name": "Longfellow Weightlifting",
+            "membership_number": "1072990",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2023 Vehement Barbell Festival - NUQ",
+            "date": "2023-12-17",
+            "division": "Women's Masters (35-39) 76kg",
+            "lifter_name": "Lauren Hubbard",
+            "body_weight_kg": "75",
+            "snatch_1": "38",
+            "snatch_2": "42",
+            "snatch_3": "45",
+            "cj_1": "50",
+            "cj_2": "55",
+            "cj_3": "60",
+            "best_snatch": "45",
+            "best_cj": "60",
+            "total": "105"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMi0xNyIsIndlaWdodF9jbGFzcyI6MTE3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Lauren Hubbard",
+            "total": "105",
+            "gender": "F",
+            "age": "35",
+            "club_name": "Longfellow Weightlifting",
+            "membership_number": "1072990",
+            "wso": "California South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

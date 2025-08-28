@@ -1,0 +1,780 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T01:25:59.405Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "David Johnson",
+    "internal_ids_processed": 5,
+    "successful_scrapes": 5,
+    "failed_scrapes": 0,
+    "total_competitions_found": 14,
+    "total_reverse_lookups": 14,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 2029499
+  },
+  "data": [
+    {
+      "internal_id": 52042,
+      "athlete_name": "David Johnson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/52042",
+      "contaminated_lifter_id": 8940,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T01:24:01.245Z",
+      "profile_data": {
+        "membership_number": "1059058",
+        "birth_year": 2001,
+        "gender": "M",
+        "club_name": "EAST CAROLINA WEIGHTLIFTING",
+        "wso": "Carolina",
+        "national_rank": "8"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Carolinas State Championship",
+          "date": "2022-10-16",
+          "division": "Open Men's 102kg",
+          "lifter_name": "David Johnson",
+          "body_weight_kg": "98.45",
+          "snatch_1": "82",
+          "snatch_2": "85",
+          "snatch_3": "88",
+          "cj_1": "105",
+          "cj_2": "-110",
+          "cj_3": "112",
+          "best_snatch": "88",
+          "best_cj": "112",
+          "total": "200"
+        },
+        {
+          "meet_name": "ECU 2022 Pirate Liftoff",
+          "date": "2022-04-23",
+          "division": "Open Men's 102kg",
+          "lifter_name": "David Johnson",
+          "body_weight_kg": "96.8",
+          "snatch_1": "70",
+          "snatch_2": "75",
+          "snatch_3": "80",
+          "cj_1": "100",
+          "cj_2": "105",
+          "cj_3": "-110",
+          "best_snatch": "80",
+          "best_cj": "105",
+          "total": "185"
+        },
+        {
+          "meet_name": "2022 East Carolina Club Weightlifting Open (NUQ)",
+          "date": "2022-01-29",
+          "division": "Open Men's 96kg",
+          "lifter_name": "David Johnson",
+          "body_weight_kg": "90.5",
+          "snatch_1": "65",
+          "snatch_2": "70",
+          "snatch_3": "75",
+          "cj_1": "90",
+          "cj_2": "95",
+          "cj_3": "100",
+          "best_snatch": "75",
+          "best_cj": "100",
+          "total": "175"
+        },
+        {
+          "meet_name": "2021 Collegiate Southeast Invitational (NUQ)",
+          "date": "2021-11-20",
+          "division": "Open Men's 89kg",
+          "lifter_name": "David Johnson",
+          "body_weight_kg": "86.9",
+          "snatch_1": "70",
+          "snatch_2": "74",
+          "snatch_3": "78",
+          "cj_1": "85",
+          "cj_2": "89",
+          "cj_3": "93",
+          "best_snatch": "78",
+          "best_cj": "93",
+          "total": "171"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Carolinas State Championship",
+            "date": "2022-10-16",
+            "division": "Open Men's 102kg",
+            "lifter_name": "David Johnson",
+            "body_weight_kg": "98.45",
+            "snatch_1": "82",
+            "snatch_2": "85",
+            "snatch_3": "88",
+            "cj_1": "105",
+            "cj_2": "-110",
+            "cj_3": "112",
+            "best_snatch": "88",
+            "best_cj": "112",
+            "total": "200"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMC0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMC0xNiIsIndlaWdodF9jbGFzcyI6ODh9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "8",
+            "athlete_name": "David Johnson",
+            "total": "200",
+            "gender": "M",
+            "age": "21",
+            "club_name": "EAST CAROLINA WEIGHTLIFTING",
+            "membership_number": "1059058",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "ECU 2022 Pirate Liftoff",
+            "date": "2022-04-23",
+            "division": "Open Men's 102kg",
+            "lifter_name": "David Johnson",
+            "body_weight_kg": "96.8",
+            "snatch_1": "70",
+            "snatch_2": "75",
+            "snatch_3": "80",
+            "cj_1": "100",
+            "cj_2": "105",
+            "cj_3": "-110",
+            "best_snatch": "80",
+            "best_cj": "105",
+            "total": "185"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNC0yMyIsIndlaWdodF9jbGFzcyI6ODh9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "11",
+            "athlete_name": "David Johnson",
+            "total": "185",
+            "gender": "M",
+            "age": "21",
+            "club_name": "EAST CAROLINA WEIGHTLIFTING",
+            "membership_number": "1059058",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2022 East Carolina Club Weightlifting Open (NUQ)",
+            "date": "2022-01-29",
+            "division": "Open Men's 96kg",
+            "lifter_name": "David Johnson",
+            "body_weight_kg": "90.5",
+            "snatch_1": "65",
+            "snatch_2": "70",
+            "snatch_3": "75",
+            "cj_1": "90",
+            "cj_2": "95",
+            "cj_3": "100",
+            "best_snatch": "75",
+            "best_cj": "100",
+            "total": "175"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMS0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMS0yOSIsIndlaWdodF9jbGFzcyI6ODd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "42",
+            "athlete_name": "David Johnson",
+            "total": "175",
+            "gender": "M",
+            "age": "21",
+            "club_name": "EAST CAROLINA WEIGHTLIFTING",
+            "membership_number": "1059058",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2021 Collegiate Southeast Invitational (NUQ)",
+            "date": "2021-11-20",
+            "division": "Open Men's 89kg",
+            "lifter_name": "David Johnson",
+            "body_weight_kg": "86.9",
+            "snatch_1": "70",
+            "snatch_2": "74",
+            "snatch_3": "78",
+            "cj_1": "85",
+            "cj_2": "89",
+            "cj_3": "93",
+            "best_snatch": "78",
+            "best_cj": "93",
+            "total": "171"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMS0yMCIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "7",
+            "athlete_name": "David Johnson",
+            "total": "171",
+            "gender": "M",
+            "age": "20",
+            "club_name": "EAST CAROLINA WEIGHTLIFTING",
+            "membership_number": "1059058",
+            "wso": "Carolina"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 977,
+      "athlete_name": "David Johnson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/977",
+      "contaminated_lifter_id": 8940,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T01:24:46.581Z",
+      "profile_data": {
+        "membership_number": "175579",
+        "birth_year": 1961,
+        "gender": "M",
+        "club_name": "Fulcrum Barbell Club",
+        "wso": "Pacific Northwest",
+        "national_rank": "8"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Washington State Games & Bad Mother W/L Champs",
+          "date": "2012-07-21",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "David Johnson",
+          "body_weight_kg": "95.9",
+          "snatch_1": "71",
+          "snatch_2": "74",
+          "snatch_3": "77",
+          "cj_1": "84",
+          "cj_2": "87",
+          "cj_3": "89",
+          "best_snatch": "77",
+          "best_cj": "89",
+          "total": "166"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Washington State Games & Bad Mother W/L Champs",
+            "date": "2012-07-21",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "David Johnson",
+            "body_weight_kg": "95.9",
+            "snatch_1": "71",
+            "snatch_2": "74",
+            "snatch_3": "77",
+            "cj_1": "84",
+            "cj_2": "87",
+            "cj_3": "89",
+            "best_snatch": "77",
+            "best_cj": "89",
+            "total": "166"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wNy0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wNy0yMSIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "8",
+            "athlete_name": "David Johnson",
+            "total": "166",
+            "gender": "M",
+            "age": "51",
+            "club_name": "Fulcrum Barbell Club",
+            "membership_number": "175579",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 2366,
+      "athlete_name": "David Johnson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/2366",
+      "contaminated_lifter_id": 8940,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T01:25:25.969Z",
+      "profile_data": {
+        "membership_number": "1000607",
+        "birth_year": 1970,
+        "gender": "M",
+        "club_name": "PROVEN STRENGTH WEIGHTLIFTING",
+        "wso": "Mountain South",
+        "national_rank": "27"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Utah State Championships",
+          "date": "2017-01-21",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "David Johnson",
+          "body_weight_kg": "102.55",
+          "snatch_1": "85",
+          "snatch_2": "90",
+          "snatch_3": "-94",
+          "cj_1": "115",
+          "cj_2": "-120",
+          "cj_3": "121",
+          "best_snatch": "90",
+          "best_cj": "121",
+          "total": "211"
+        },
+        {
+          "meet_name": "RecordBreakers 2016",
+          "date": "2016-10-08",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "David Johnson",
+          "body_weight_kg": "101.63",
+          "snatch_1": "-86",
+          "snatch_2": "86",
+          "snatch_3": "91",
+          "cj_1": "110",
+          "cj_2": "113",
+          "cj_3": "118",
+          "best_snatch": "91",
+          "best_cj": "118",
+          "total": "209"
+        },
+        {
+          "meet_name": "Utah State Weightlifting Championships",
+          "date": "2016-07-16",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "David Johnson",
+          "body_weight_kg": "101.65",
+          "snatch_1": "80",
+          "snatch_2": "85",
+          "snatch_3": "90",
+          "cj_1": "105",
+          "cj_2": "108",
+          "cj_3": "-111",
+          "best_snatch": "90",
+          "best_cj": "108",
+          "total": "198"
+        },
+        {
+          "meet_name": "Praxis Cup",
+          "date": "2016-04-30",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "David Johnson",
+          "body_weight_kg": "101.47",
+          "snatch_1": "80",
+          "snatch_2": "-88",
+          "snatch_3": "-88",
+          "cj_1": "103",
+          "cj_2": "-112",
+          "cj_3": "-115",
+          "best_snatch": "80",
+          "best_cj": "103",
+          "total": "183"
+        },
+        {
+          "meet_name": "Praxis Qualifier",
+          "date": "2016-03-19",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "David Johnson",
+          "body_weight_kg": "100.4",
+          "snatch_1": "73",
+          "snatch_2": "85",
+          "snatch_3": "-90",
+          "cj_1": "100",
+          "cj_2": "105",
+          "cj_3": "110",
+          "best_snatch": "85",
+          "best_cj": "110",
+          "total": "195"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Utah State Championships",
+            "date": "2017-01-21",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "David Johnson",
+            "body_weight_kg": "102.55",
+            "snatch_1": "85",
+            "snatch_2": "90",
+            "snatch_3": "-94",
+            "cj_1": "115",
+            "cj_2": "-120",
+            "cj_3": "121",
+            "best_snatch": "90",
+            "best_cj": "121",
+            "total": "211"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMS0yMSIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "27",
+            "athlete_name": "David Johnson",
+            "total": "211",
+            "gender": "M",
+            "age": "47",
+            "club_name": "PROVEN STRENGTH WEIGHTLIFTING",
+            "membership_number": "1000607",
+            "wso": "Mountain South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "RecordBreakers 2016",
+            "date": "2016-10-08",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "David Johnson",
+            "body_weight_kg": "101.63",
+            "snatch_1": "-86",
+            "snatch_2": "86",
+            "snatch_3": "91",
+            "cj_1": "110",
+            "cj_2": "113",
+            "cj_3": "118",
+            "best_snatch": "91",
+            "best_cj": "118",
+            "total": "209"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0wOCIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "12",
+            "athlete_name": "David Johnson",
+            "total": "209",
+            "gender": "M",
+            "age": "46",
+            "club_name": "PROVEN STRENGTH WEIGHTLIFTING",
+            "membership_number": "1000607",
+            "wso": "Mountain South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Utah State Weightlifting Championships",
+            "date": "2016-07-16",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "David Johnson",
+            "body_weight_kg": "101.65",
+            "snatch_1": "80",
+            "snatch_2": "85",
+            "snatch_3": "90",
+            "cj_1": "105",
+            "cj_2": "108",
+            "cj_3": "-111",
+            "best_snatch": "90",
+            "best_cj": "108",
+            "total": "198"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNy0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNy0xNiIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "15",
+            "athlete_name": "David Johnson",
+            "total": "198",
+            "gender": "M",
+            "age": "46",
+            "club_name": "PROVEN STRENGTH WEIGHTLIFTING",
+            "membership_number": "1000607",
+            "wso": "Mountain South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Praxis Cup",
+            "date": "2016-04-30",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "David Johnson",
+            "body_weight_kg": "101.47",
+            "snatch_1": "80",
+            "snatch_2": "-88",
+            "snatch_3": "-88",
+            "cj_1": "103",
+            "cj_2": "-112",
+            "cj_3": "-115",
+            "best_snatch": "80",
+            "best_cj": "103",
+            "total": "183"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0zMCIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "14",
+            "athlete_name": "David Johnson",
+            "total": "183",
+            "gender": "M",
+            "age": "46",
+            "club_name": "PROVEN STRENGTH WEIGHTLIFTING",
+            "membership_number": "1000607",
+            "wso": "Mountain South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Praxis Qualifier",
+            "date": "2016-03-19",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "David Johnson",
+            "body_weight_kg": "100.4",
+            "snatch_1": "73",
+            "snatch_2": "85",
+            "snatch_3": "-90",
+            "cj_1": "100",
+            "cj_2": "105",
+            "cj_3": "110",
+            "best_snatch": "85",
+            "best_cj": "110",
+            "total": "195"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMy0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMy0xOSIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "42",
+            "athlete_name": "David Johnson",
+            "total": "195",
+            "gender": "M",
+            "age": "46",
+            "club_name": "PROVEN STRENGTH WEIGHTLIFTING",
+            "membership_number": "1000607",
+            "wso": "Mountain South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 24236,
+      "athlete_name": "David Johnson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/24236",
+      "contaminated_lifter_id": 8940,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T01:25:48.364Z",
+      "profile_data": {
+        "membership_number": "213014",
+        "birth_year": 1990,
+        "gender": "M",
+        "club_name": "Altius Athletics",
+        "wso": "Hawaii and International",
+        "national_rank": "8"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2018 Hawaii Open Weightlifting Championships",
+          "date": "2018-12-15",
+          "division": "Open Men's 81kg",
+          "lifter_name": "David Johnson",
+          "body_weight_kg": "80.19",
+          "snatch_1": "95",
+          "snatch_2": "100",
+          "snatch_3": "106",
+          "cj_1": "120",
+          "cj_2": "125",
+          "cj_3": "-130",
+          "best_snatch": "106",
+          "best_cj": "125",
+          "total": "231"
+        },
+        {
+          "meet_name": "Kauai Weightlifting classic",
+          "date": "2016-02-13",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "David Johnson",
+          "body_weight_kg": "77.8",
+          "snatch_1": "88",
+          "snatch_2": "93",
+          "snatch_3": "-97",
+          "cj_1": "-115",
+          "cj_2": "115",
+          "cj_3": "-120",
+          "best_snatch": "93",
+          "best_cj": "115",
+          "total": "208"
+        },
+        {
+          "meet_name": "Grind City Invitational",
+          "date": "2015-10-02",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "David Johnson",
+          "body_weight_kg": "74.1",
+          "snatch_1": "80",
+          "snatch_2": "84",
+          "snatch_3": "88",
+          "cj_1": "102",
+          "cj_2": "108",
+          "cj_3": "112",
+          "best_snatch": "88",
+          "best_cj": "112",
+          "total": "200"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2018 Hawaii Open Weightlifting Championships",
+            "date": "2018-12-15",
+            "division": "Open Men's 81kg",
+            "lifter_name": "David Johnson",
+            "body_weight_kg": "80.19",
+            "snatch_1": "95",
+            "snatch_2": "100",
+            "snatch_3": "106",
+            "cj_1": "120",
+            "cj_2": "125",
+            "cj_3": "-130",
+            "best_snatch": "106",
+            "best_cj": "125",
+            "total": "231"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0xNSIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "8",
+            "athlete_name": "David Johnson",
+            "total": "231",
+            "gender": "M",
+            "age": "28",
+            "club_name": "Altius Athletics",
+            "membership_number": "213014",
+            "wso": "Hawaii and International"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Kauai Weightlifting classic",
+            "date": "2016-02-13",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "David Johnson",
+            "body_weight_kg": "77.8",
+            "snatch_1": "88",
+            "snatch_2": "93",
+            "snatch_3": "-97",
+            "cj_1": "-115",
+            "cj_2": "115",
+            "cj_3": "-120",
+            "best_snatch": "93",
+            "best_cj": "115",
+            "total": "208"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMi0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMi0xMyIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "20",
+            "athlete_name": "David Johnson",
+            "total": "208",
+            "gender": "M",
+            "age": "26",
+            "club_name": "Altius Athletics",
+            "membership_number": "213014",
+            "wso": "Hawaii and International"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Grind City Invitational",
+            "date": "2015-10-02",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "David Johnson",
+            "body_weight_kg": "74.1",
+            "snatch_1": "80",
+            "snatch_2": "84",
+            "snatch_3": "88",
+            "cj_1": "102",
+            "cj_2": "108",
+            "cj_3": "112",
+            "best_snatch": "88",
+            "best_cj": "112",
+            "total": "200"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0wMiIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "David Johnson",
+            "total": "200",
+            "gender": "M",
+            "age": "25",
+            "club_name": "Altius Athletics",
+            "membership_number": "213014",
+            "wso": "Hawaii and International"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 25178,
+      "athlete_name": "David Johnson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/25178",
+      "contaminated_lifter_id": 8940,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T01:25:59.403Z",
+      "profile_data": {
+        "membership_number": "195448",
+        "birth_year": 1991,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Wisconsin",
+        "national_rank": "5"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2015 Wisconsin LWC Championship",
+          "date": "2015-04-19",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "David Johnson",
+          "body_weight_kg": "82.4",
+          "snatch_1": "113",
+          "snatch_2": "118",
+          "snatch_3": "121",
+          "cj_1": "-140",
+          "cj_2": "145",
+          "cj_3": "150",
+          "best_snatch": "121",
+          "best_cj": "150",
+          "total": "271"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2015 Wisconsin LWC Championship",
+            "date": "2015-04-19",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "David Johnson",
+            "body_weight_kg": "82.4",
+            "snatch_1": "113",
+            "snatch_2": "118",
+            "snatch_3": "121",
+            "cj_1": "-140",
+            "cj_2": "145",
+            "cj_3": "150",
+            "best_snatch": "121",
+            "best_cj": "150",
+            "total": "271"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0xOSIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "David Johnson",
+            "total": "271",
+            "gender": "M",
+            "age": "24",
+            "club_name": "-",
+            "membership_number": "195448",
+            "wso": "Wisconsin"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

@@ -1,0 +1,417 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T05:44:10.118Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Michael Gray",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 8,
+    "total_reverse_lookups": 8,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 15156573
+  },
+  "data": [
+    {
+      "internal_id": 34871,
+      "athlete_name": "Michael Gray",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/34871",
+      "contaminated_lifter_id": 3636,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T16:30:29.075Z",
+      "profile_data": {
+        "membership_number": "1029413",
+        "birth_year": 1996,
+        "gender": "M",
+        "club_name": "Third Pull Apparel",
+        "wso": "Carolina",
+        "national_rank": "67"
+      },
+      "competition_history": [
+        {
+          "meet_name": "QUEEN CITY CLASSIC",
+          "date": "2018-04-14",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Michael Gray",
+          "body_weight_kg": "89",
+          "snatch_1": "75",
+          "snatch_2": "82",
+          "snatch_3": "-87",
+          "cj_1": "75",
+          "cj_2": "82",
+          "cj_3": "-118",
+          "best_snatch": "82",
+          "best_cj": "82",
+          "total": "164"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "QUEEN CITY CLASSIC",
+            "date": "2018-04-14",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Michael Gray",
+            "body_weight_kg": "89",
+            "snatch_1": "75",
+            "snatch_2": "82",
+            "snatch_3": "-87",
+            "cj_1": "75",
+            "cj_2": "82",
+            "cj_3": "-118",
+            "best_snatch": "82",
+            "best_cj": "82",
+            "total": "164"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNC0xNCIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "67",
+            "athlete_name": "Michael Gray",
+            "total": "164",
+            "gender": "M",
+            "age": "22",
+            "club_name": "Third Pull Apparel",
+            "membership_number": "1029413",
+            "wso": "Carolina"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 3023,
+      "athlete_name": "Michael Gray",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/3023",
+      "contaminated_lifter_id": 3636,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-27T05:44:08.116Z",
+      "profile_data": {
+        "membership_number": "150512",
+        "birth_year": 1972,
+        "gender": "M",
+        "club_name": "CATALYST ATHLETICS",
+        "wso": "Pacific Northwest",
+        "national_rank": "8"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2016 American Masters Weightlifting Championship",
+          "date": "2016-11-06",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Michael Gray",
+          "body_weight_kg": "99.57",
+          "snatch_1": "121",
+          "snatch_2": "-126",
+          "snatch_3": "126",
+          "cj_1": "120",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "126",
+          "best_cj": "120",
+          "total": "246"
+        },
+        {
+          "meet_name": "2015 American Open",
+          "date": "2015-12-06",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Michael Gray",
+          "body_weight_kg": "97.96",
+          "snatch_1": "125",
+          "snatch_2": "-130",
+          "snatch_3": "-130",
+          "cj_1": "-137",
+          "cj_2": "137",
+          "cj_3": "-142",
+          "best_snatch": "125",
+          "best_cj": "137",
+          "total": "262"
+        },
+        {
+          "meet_name": "California State Games- Weightlifting",
+          "date": "2015-07-19",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Michael Gray",
+          "body_weight_kg": "100.5",
+          "snatch_1": "-130",
+          "snatch_2": "-130",
+          "snatch_3": "130",
+          "cj_1": "138",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "130",
+          "best_cj": "138",
+          "total": "268"
+        },
+        {
+          "meet_name": "California State Games",
+          "date": "2014-08-02",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Michael Gray",
+          "body_weight_kg": "101.45",
+          "snatch_1": "133",
+          "snatch_2": "-138",
+          "snatch_3": "-138",
+          "cj_1": "-150",
+          "cj_2": "-152",
+          "cj_3": "-152",
+          "best_snatch": "133",
+          "best_cj": "0",
+          "total": "0"
+        },
+        {
+          "meet_name": "Ensign Gray Open",
+          "date": "2013-10-12",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Michael Gray",
+          "body_weight_kg": "101.6",
+          "snatch_1": "133",
+          "snatch_2": "-138",
+          "snatch_3": "-138",
+          "cj_1": "145",
+          "cj_2": "-151",
+          "cj_3": "-151",
+          "best_snatch": "133",
+          "best_cj": "145",
+          "total": "278"
+        },
+        {
+          "meet_name": "Saint Patricks Day 2013 Weightlifting Championship",
+          "date": "2013-03-16",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Michael Gray",
+          "body_weight_kg": "100.6",
+          "snatch_1": "130",
+          "snatch_2": "-134",
+          "snatch_3": "-135",
+          "cj_1": "-145",
+          "cj_2": "145",
+          "cj_3": "-152",
+          "best_snatch": "130",
+          "best_cj": "145",
+          "total": "275"
+        },
+        {
+          "meet_name": "California State Games",
+          "date": "2012-07-22",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Michael Gray",
+          "body_weight_kg": "100",
+          "snatch_1": "0",
+          "snatch_2": "0",
+          "snatch_3": "0",
+          "cj_1": "151",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "0",
+          "best_cj": "151",
+          "total": "0"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2016 American Masters Weightlifting Championship",
+            "date": "2016-11-06",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Michael Gray",
+            "body_weight_kg": "99.57",
+            "snatch_1": "121",
+            "snatch_2": "-126",
+            "snatch_3": "126",
+            "cj_1": "120",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "126",
+            "best_cj": "120",
+            "total": "246"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMS0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMS0wNiIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "8",
+            "athlete_name": "Michael Gray",
+            "total": "246",
+            "gender": "M",
+            "age": "44",
+            "club_name": "CATALYST ATHLETICS",
+            "membership_number": "150512",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2015 American Open",
+            "date": "2015-12-06",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Michael Gray",
+            "body_weight_kg": "97.96",
+            "snatch_1": "125",
+            "snatch_2": "-130",
+            "snatch_3": "-130",
+            "cj_1": "-137",
+            "cj_2": "137",
+            "cj_3": "-142",
+            "best_snatch": "125",
+            "best_cj": "137",
+            "total": "262"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMi0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMi0wNiIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "59",
+            "athlete_name": "Michael Gray",
+            "total": "262",
+            "gender": "M",
+            "age": "43",
+            "club_name": "CATALYST ATHLETICS",
+            "membership_number": "150512",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "California State Games- Weightlifting",
+            "date": "2015-07-19",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Michael Gray",
+            "body_weight_kg": "100.5",
+            "snatch_1": "-130",
+            "snatch_2": "-130",
+            "snatch_3": "130",
+            "cj_1": "138",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "130",
+            "best_cj": "138",
+            "total": "268"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNy0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNy0xOSIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Michael Gray",
+            "total": "268",
+            "gender": "M",
+            "age": "43",
+            "club_name": "CATALYST ATHLETICS",
+            "membership_number": "150512",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "California State Games",
+            "date": "2014-08-02",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Michael Gray",
+            "body_weight_kg": "101.45",
+            "snatch_1": "133",
+            "snatch_2": "-138",
+            "snatch_3": "-138",
+            "cj_1": "-150",
+            "cj_2": "-152",
+            "cj_3": "-152",
+            "best_snatch": "133",
+            "best_cj": "0",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0wMiIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Ensign Gray Open",
+            "date": "2013-10-12",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Michael Gray",
+            "body_weight_kg": "101.6",
+            "snatch_1": "133",
+            "snatch_2": "-138",
+            "snatch_3": "-138",
+            "cj_1": "145",
+            "cj_2": "-151",
+            "cj_3": "-151",
+            "best_snatch": "133",
+            "best_cj": "145",
+            "total": "278"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMC0xMiIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Michael Gray",
+            "total": "278",
+            "gender": "M",
+            "age": "41",
+            "club_name": "CATALYST ATHLETICS",
+            "membership_number": "150512",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Saint Patricks Day 2013 Weightlifting Championship",
+            "date": "2013-03-16",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Michael Gray",
+            "body_weight_kg": "100.6",
+            "snatch_1": "130",
+            "snatch_2": "-134",
+            "snatch_3": "-135",
+            "cj_1": "-145",
+            "cj_2": "145",
+            "cj_3": "-152",
+            "best_snatch": "130",
+            "best_cj": "145",
+            "total": "275"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMy0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMy0xNiIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Michael Gray",
+            "total": "275",
+            "gender": "M",
+            "age": "41",
+            "club_name": "CATALYST ATHLETICS",
+            "membership_number": "150512",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "California State Games",
+            "date": "2012-07-22",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Michael Gray",
+            "body_weight_kg": "100",
+            "snatch_1": "0",
+            "snatch_2": "0",
+            "snatch_3": "0",
+            "cj_1": "151",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "0",
+            "best_cj": "151",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wNy0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wNy0yMiIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    }
+  ]
+}

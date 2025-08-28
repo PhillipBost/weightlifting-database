@@ -1,0 +1,200 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T14:27:43.018Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Israel Rodriguez",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 3,
+    "total_reverse_lookups": 3,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 48933112
+  },
+  "data": [
+    {
+      "internal_id": 64372,
+      "athlete_name": "Israel Rodriguez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/64372",
+      "contaminated_lifter_id": 61424,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T14:27:32.973Z",
+      "profile_data": {
+        "membership_number": "1069327",
+        "birth_year": 1998,
+        "gender": "M",
+        "club_name": "CALIFORNIA STRENGTH",
+        "wso": "Tennessee-Kentucky",
+        "national_rank": "22"
+      },
+      "competition_history": [
+        {
+          "meet_name": "The 2025 Gator Weightlifting Winter Open (NUQ)",
+          "date": "2025-01-18",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Israel Rodriguez",
+          "body_weight_kg": "82.55",
+          "snatch_1": "88",
+          "snatch_2": "-92",
+          "snatch_3": "-93",
+          "cj_1": "108",
+          "cj_2": "111",
+          "cj_3": "-114",
+          "best_snatch": "88",
+          "best_cj": "111",
+          "total": "199"
+        },
+        {
+          "meet_name": "The Gator Weightlifting Fall Open 2024",
+          "date": "2024-10-26",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Israel Rodriguez",
+          "body_weight_kg": "83.71",
+          "snatch_1": "80",
+          "snatch_2": "83",
+          "snatch_3": "86",
+          "cj_1": "97",
+          "cj_2": "-100",
+          "cj_3": "101",
+          "best_snatch": "86",
+          "best_cj": "101",
+          "total": "187"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "The 2025 Gator Weightlifting Winter Open (NUQ)",
+            "date": "2025-01-18",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Israel Rodriguez",
+            "body_weight_kg": "82.55",
+            "snatch_1": "88",
+            "snatch_2": "-92",
+            "snatch_3": "-93",
+            "cj_1": "108",
+            "cj_2": "111",
+            "cj_3": "-114",
+            "best_snatch": "88",
+            "best_cj": "111",
+            "total": "199"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMS0xOCIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "22",
+            "athlete_name": "Israel Rodriguez",
+            "total": "199",
+            "gender": "M",
+            "age": "27",
+            "club_name": "CALIFORNIA STRENGTH",
+            "membership_number": "1069327",
+            "wso": "Tennessee-Kentucky"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The Gator Weightlifting Fall Open 2024",
+            "date": "2024-10-26",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Israel Rodriguez",
+            "body_weight_kg": "83.71",
+            "snatch_1": "80",
+            "snatch_2": "83",
+            "snatch_3": "86",
+            "cj_1": "97",
+            "cj_2": "-100",
+            "cj_3": "101",
+            "best_snatch": "86",
+            "best_cj": "101",
+            "total": "187"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0yNiIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "35",
+            "athlete_name": "Israel Rodriguez",
+            "total": "187",
+            "gender": "M",
+            "age": "26",
+            "club_name": "CALIFORNIA STRENGTH",
+            "membership_number": "1069327",
+            "wso": "Tennessee-Kentucky"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 63792,
+      "athlete_name": "Israel Rodriguez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/63792",
+      "contaminated_lifter_id": 61424,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T14:27:43.016Z",
+      "profile_data": {
+        "membership_number": "1077803",
+        "birth_year": 1984,
+        "gender": "M",
+        "club_name": "Gratitude Strength",
+        "wso": "Pacific Northwest",
+        "national_rank": "2"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Forge the Iron",
+          "date": "2024-09-21",
+          "division": "Men's Masters (40-44) 96kg",
+          "lifter_name": "Israel Rodriguez",
+          "body_weight_kg": "92.9",
+          "snatch_1": "75",
+          "snatch_2": "78",
+          "snatch_3": "85",
+          "cj_1": "112",
+          "cj_2": "115",
+          "cj_3": "120",
+          "best_snatch": "85",
+          "best_cj": "120",
+          "total": "205"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Forge the Iron",
+            "date": "2024-09-21",
+            "division": "Men's Masters (40-44) 96kg",
+            "lifter_name": "Israel Rodriguez",
+            "body_weight_kg": "92.9",
+            "snatch_1": "75",
+            "snatch_2": "78",
+            "snatch_3": "85",
+            "cj_1": "112",
+            "cj_2": "115",
+            "cj_3": "120",
+            "best_snatch": "85",
+            "best_cj": "120",
+            "total": "205"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOS0yMSIsIndlaWdodF9jbGFzcyI6MTI3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Israel Rodriguez",
+            "total": "205",
+            "gender": "M",
+            "age": "40",
+            "club_name": "Gratitude Strength",
+            "membership_number": "1077803",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

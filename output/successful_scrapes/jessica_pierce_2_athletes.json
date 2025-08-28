@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T13:30:15.573Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Jessica Pierce",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 45485667
+  },
+  "data": [
+    {
+      "internal_id": 29887,
+      "athlete_name": "Jessica Pierce",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/29887",
+      "contaminated_lifter_id": 39160,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T13:30:04.768Z",
+      "profile_data": {
+        "membership_number": "1036590",
+        "birth_year": 1993,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "New England",
+        "national_rank": "15"
+      },
+      "competition_history": [
+        {
+          "meet_name": "New Year Resolution Competition",
+          "date": "2019-01-05",
+          "division": "Open Women's 59kg",
+          "lifter_name": "Jessica Pierce",
+          "body_weight_kg": "58.8",
+          "snatch_1": "31",
+          "snatch_2": "36",
+          "snatch_3": "40",
+          "cj_1": "54",
+          "cj_2": "56",
+          "cj_3": "60",
+          "best_snatch": "40",
+          "best_cj": "60",
+          "total": "100"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "New Year Resolution Competition",
+            "date": "2019-01-05",
+            "division": "Open Women's 59kg",
+            "lifter_name": "Jessica Pierce",
+            "body_weight_kg": "58.8",
+            "snatch_1": "31",
+            "snatch_2": "36",
+            "snatch_3": "40",
+            "cj_1": "54",
+            "cj_2": "56",
+            "cj_3": "60",
+            "best_snatch": "40",
+            "best_cj": "60",
+            "total": "100"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0wNSIsIndlaWdodF9jbGFzcyI6OTR9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "15",
+            "athlete_name": "Jessica Pierce",
+            "total": "100",
+            "gender": "F",
+            "age": "26",
+            "club_name": "-",
+            "membership_number": "1036590",
+            "wso": "New England"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 63921,
+      "athlete_name": "Jessica Pierce",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/63921",
+      "contaminated_lifter_id": 39160,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T13:30:15.572Z",
+      "profile_data": {
+        "membership_number": "1077855",
+        "birth_year": 1984,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "California South",
+        "national_rank": "3"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Fall Ball So Hard",
+          "date": "2024-09-28",
+          "division": "Women's Masters (40-44) 87kg",
+          "lifter_name": "Jessica Pierce",
+          "body_weight_kg": "82",
+          "snatch_1": "38",
+          "snatch_2": "43",
+          "snatch_3": "-49",
+          "cj_1": "56",
+          "cj_2": "62",
+          "cj_3": "-65",
+          "best_snatch": "43",
+          "best_cj": "62",
+          "total": "105"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Fall Ball So Hard",
+            "date": "2024-09-28",
+            "division": "Women's Masters (40-44) 87kg",
+            "lifter_name": "Jessica Pierce",
+            "body_weight_kg": "82",
+            "snatch_1": "38",
+            "snatch_2": "43",
+            "snatch_3": "-49",
+            "cj_1": "56",
+            "cj_2": "62",
+            "cj_3": "-65",
+            "best_snatch": "43",
+            "best_cj": "62",
+            "total": "105"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOS0yOCIsIndlaWdodF9jbGFzcyI6MTM5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Jessica Pierce",
+            "total": "105",
+            "gender": "F",
+            "age": "40",
+            "club_name": "-",
+            "membership_number": "1077855",
+            "wso": "California South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

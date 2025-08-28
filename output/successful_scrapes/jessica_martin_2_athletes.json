@@ -1,0 +1,341 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T10:00:56.281Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Jessica Martin",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 6,
+    "total_reverse_lookups": 6,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 32926375
+  },
+  "data": [
+    {
+      "internal_id": 12554,
+      "athlete_name": "Jessica Martin",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/12554",
+      "contaminated_lifter_id": 10109,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T10:00:28.999Z",
+      "profile_data": {
+        "membership_number": "201430",
+        "birth_year": 1984,
+        "gender": "F",
+        "club_name": "The Fort Barbell Club",
+        "wso": "Texas-Oklahoma",
+        "national_rank": "25"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2016 Texas State Championships",
+          "date": "2016-01-17",
+          "division": "Open Women's 63 kg",
+          "lifter_name": "Jessica Martin",
+          "body_weight_kg": "62.1",
+          "snatch_1": "40",
+          "snatch_2": "43",
+          "snatch_3": "-45",
+          "cj_1": "55",
+          "cj_2": "-58",
+          "cj_3": "-58",
+          "best_snatch": "43",
+          "best_cj": "55",
+          "total": "98"
+        },
+        {
+          "meet_name": "BlackBox Summer Showdown",
+          "date": "2015-08-29",
+          "division": "Open Women's 63 kg",
+          "lifter_name": "Jessica Martin",
+          "body_weight_kg": "61",
+          "snatch_1": "40",
+          "snatch_2": "-43",
+          "snatch_3": "-43",
+          "cj_1": "50",
+          "cj_2": "55",
+          "cj_3": "57",
+          "best_snatch": "40",
+          "best_cj": "57",
+          "total": "97"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2016 Texas State Championships",
+            "date": "2016-01-17",
+            "division": "Open Women's 63 kg",
+            "lifter_name": "Jessica Martin",
+            "body_weight_kg": "62.1",
+            "snatch_1": "40",
+            "snatch_2": "43",
+            "snatch_3": "-45",
+            "cj_1": "55",
+            "cj_2": "-58",
+            "cj_3": "-58",
+            "best_snatch": "43",
+            "best_cj": "55",
+            "total": "98"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0xNyIsIndlaWdodF9jbGFzcyI6MzY1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "25",
+            "athlete_name": "Jessica Martin",
+            "total": "98",
+            "gender": "F",
+            "age": "32",
+            "club_name": "The Fort Barbell Club",
+            "membership_number": "201430",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "BlackBox Summer Showdown",
+            "date": "2015-08-29",
+            "division": "Open Women's 63 kg",
+            "lifter_name": "Jessica Martin",
+            "body_weight_kg": "61",
+            "snatch_1": "40",
+            "snatch_2": "-43",
+            "snatch_3": "-43",
+            "cj_1": "50",
+            "cj_2": "55",
+            "cj_3": "57",
+            "best_snatch": "40",
+            "best_cj": "57",
+            "total": "97"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOC0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOC0yOSIsIndlaWdodF9jbGFzcyI6MzY1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "11",
+            "athlete_name": "Jessica Martin",
+            "total": "97",
+            "gender": "F",
+            "age": "31",
+            "club_name": "The Fort Barbell Club",
+            "membership_number": "201430",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 24156,
+      "athlete_name": "Jessica Martin",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/24156",
+      "contaminated_lifter_id": 10109,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T10:00:56.279Z",
+      "profile_data": {
+        "membership_number": "1024309",
+        "birth_year": 1990,
+        "gender": "F",
+        "club_name": "Atlas Barbell Club",
+        "wso": "California North Central",
+        "national_rank": "10"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Visalia Fall Lift-Off",
+          "date": "2019-11-16",
+          "division": "Open Women's 71kg",
+          "lifter_name": "Jessica Martin",
+          "body_weight_kg": "65",
+          "snatch_1": "42",
+          "snatch_2": "45",
+          "snatch_3": "48",
+          "cj_1": "53",
+          "cj_2": "57",
+          "cj_3": "60",
+          "best_snatch": "48",
+          "best_cj": "60",
+          "total": "108"
+        },
+        {
+          "meet_name": "Grand Rapids Strength Games",
+          "date": "2018-06-23",
+          "division": "Open Women's 63 kg",
+          "lifter_name": "Jessica Martin",
+          "body_weight_kg": "63",
+          "snatch_1": "40",
+          "snatch_2": "42",
+          "snatch_3": "44",
+          "cj_1": "52",
+          "cj_2": "54",
+          "cj_3": "56",
+          "best_snatch": "44",
+          "best_cj": "56",
+          "total": "100"
+        },
+        {
+          "meet_name": "37th Annual Spartan Open Weightlifting Championships",
+          "date": "2018-03-17",
+          "division": "Open Women's 63 kg",
+          "lifter_name": "Jessica Martin",
+          "body_weight_kg": "61.6",
+          "snatch_1": "41",
+          "snatch_2": "-42",
+          "snatch_3": "-42",
+          "cj_1": "52",
+          "cj_2": "-54",
+          "cj_3": "-55",
+          "best_snatch": "41",
+          "best_cj": "52",
+          "total": "93"
+        },
+        {
+          "meet_name": "2018 Winter Canusa",
+          "date": "2018-01-21",
+          "division": "Open Women's 63 kg",
+          "lifter_name": "Jessica Martin",
+          "body_weight_kg": "62.4",
+          "snatch_1": "41",
+          "snatch_2": "42",
+          "snatch_3": "-43",
+          "cj_1": "50",
+          "cj_2": "52",
+          "cj_3": "54",
+          "best_snatch": "42",
+          "best_cj": "54",
+          "total": "96"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Visalia Fall Lift-Off",
+            "date": "2019-11-16",
+            "division": "Open Women's 71kg",
+            "lifter_name": "Jessica Martin",
+            "body_weight_kg": "65",
+            "snatch_1": "42",
+            "snatch_2": "45",
+            "snatch_3": "48",
+            "cj_1": "53",
+            "cj_2": "57",
+            "cj_3": "60",
+            "best_snatch": "48",
+            "best_cj": "60",
+            "total": "108"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0xNiIsIndlaWdodF9jbGFzcyI6OTZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "Jessica Martin",
+            "total": "108",
+            "gender": "F",
+            "age": "29",
+            "club_name": "Atlas Barbell Club",
+            "membership_number": "1024309",
+            "wso": "California North Central"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Grand Rapids Strength Games",
+            "date": "2018-06-23",
+            "division": "Open Women's 63 kg",
+            "lifter_name": "Jessica Martin",
+            "body_weight_kg": "63",
+            "snatch_1": "40",
+            "snatch_2": "42",
+            "snatch_3": "44",
+            "cj_1": "52",
+            "cj_2": "54",
+            "cj_3": "56",
+            "best_snatch": "44",
+            "best_cj": "56",
+            "total": "100"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0yMyIsIndlaWdodF9jbGFzcyI6MzY1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "15",
+            "athlete_name": "Jessica Martin",
+            "total": "100",
+            "gender": "F",
+            "age": "28",
+            "club_name": "Atlas Barbell Club",
+            "membership_number": "1024309",
+            "wso": "California North Central"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "37th Annual Spartan Open Weightlifting Championships",
+            "date": "2018-03-17",
+            "division": "Open Women's 63 kg",
+            "lifter_name": "Jessica Martin",
+            "body_weight_kg": "61.6",
+            "snatch_1": "41",
+            "snatch_2": "-42",
+            "snatch_3": "-42",
+            "cj_1": "52",
+            "cj_2": "-54",
+            "cj_3": "-55",
+            "best_snatch": "41",
+            "best_cj": "52",
+            "total": "93"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMy0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMy0xNyIsIndlaWdodF9jbGFzcyI6MzY1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "23",
+            "athlete_name": "Jessica Martin",
+            "total": "93",
+            "gender": "F",
+            "age": "28",
+            "club_name": "Atlas Barbell Club",
+            "membership_number": "1024309",
+            "wso": "California North Central"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2018 Winter Canusa",
+            "date": "2018-01-21",
+            "division": "Open Women's 63 kg",
+            "lifter_name": "Jessica Martin",
+            "body_weight_kg": "62.4",
+            "snatch_1": "41",
+            "snatch_2": "42",
+            "snatch_3": "-43",
+            "cj_1": "50",
+            "cj_2": "52",
+            "cj_3": "54",
+            "best_snatch": "42",
+            "best_cj": "54",
+            "total": "96"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMS0yMSIsIndlaWdodF9jbGFzcyI6MzY1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "17",
+            "athlete_name": "Jessica Martin",
+            "total": "96",
+            "gender": "F",
+            "age": "28",
+            "club_name": "Atlas Barbell Club",
+            "membership_number": "1024309",
+            "wso": "California North Central"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

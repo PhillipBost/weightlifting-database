@@ -1,0 +1,145 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T07:17:24.027Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Jason Martin",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 20750482
+  },
+  "data": [
+    {
+      "internal_id": 63747,
+      "athlete_name": "Jason Martin",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/63747",
+      "contaminated_lifter_id": 2637,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T18:34:51.778Z",
+      "profile_data": {
+        "membership_number": "1078222",
+        "birth_year": 1999,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Florida",
+        "national_rank": "16"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Freedom Finals 2024",
+          "date": "2024-11-02",
+          "division": "Open Men's 73kg",
+          "lifter_name": "Jason Martin",
+          "body_weight_kg": "72.5",
+          "snatch_1": "53",
+          "snatch_2": "56",
+          "snatch_3": "-60",
+          "cj_1": "77",
+          "cj_2": "80",
+          "cj_3": "-85",
+          "best_snatch": "56",
+          "best_cj": "80",
+          "total": "136"
+        },
+        {
+          "meet_name": "September In House Meet",
+          "date": "2024-09-14",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Jason Martin",
+          "body_weight_kg": "74",
+          "snatch_1": "52",
+          "snatch_2": "56",
+          "snatch_3": "62",
+          "cj_1": "65",
+          "cj_2": "70",
+          "cj_3": "82",
+          "best_snatch": "62",
+          "best_cj": "82",
+          "total": "144"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Freedom Finals 2024",
+            "date": "2024-11-02",
+            "division": "Open Men's 73kg",
+            "lifter_name": "Jason Martin",
+            "body_weight_kg": "72.5",
+            "snatch_1": "53",
+            "snatch_2": "56",
+            "snatch_3": "-60",
+            "cj_1": "77",
+            "cj_2": "80",
+            "cj_3": "-85",
+            "best_snatch": "56",
+            "best_cj": "80",
+            "total": "136"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMS0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMS0wMiIsIndlaWdodF9jbGFzcyI6ODR9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "16",
+            "athlete_name": "Jason Martin",
+            "total": "136",
+            "gender": "M",
+            "age": "25",
+            "club_name": "-",
+            "membership_number": "1078222",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "September In House Meet",
+            "date": "2024-09-14",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Jason Martin",
+            "body_weight_kg": "74",
+            "snatch_1": "52",
+            "snatch_2": "56",
+            "snatch_3": "62",
+            "cj_1": "65",
+            "cj_2": "70",
+            "cj_3": "82",
+            "best_snatch": "62",
+            "best_cj": "82",
+            "total": "144"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOS0xNCIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "11",
+            "athlete_name": "Jason Martin",
+            "total": "144",
+            "gender": "M",
+            "age": "25",
+            "club_name": "-",
+            "membership_number": "1078222",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 29200,
+      "athlete_name": "Jason Martin",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/29200",
+      "contaminated_lifter_id": 2637,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-27T07:17:22.025Z",
+      "profile_data": null,
+      "competition_history": [],
+      "biographical_data_by_competition": [],
+      "scraping_successful": false,
+      "error": "Assignment to constant variable."
+    }
+  ]
+}

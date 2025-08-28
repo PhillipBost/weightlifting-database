@@ -1,0 +1,238 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T22:16:57.946Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Robert Schmidt",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 4,
+    "total_reverse_lookups": 4,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 77088040
+  },
+  "data": [
+    {
+      "internal_id": 66817,
+      "athlete_name": "Robert Schmidt",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/66817",
+      "contaminated_lifter_id": 18137,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T22:16:28.573Z",
+      "profile_data": {
+        "membership_number": "1082509",
+        "birth_year": 2005,
+        "gender": "M",
+        "club_name": "MOORESTOWN WLC",
+        "wso": "DMV",
+        "national_rank": "3"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Moorestown Summer Classic",
+          "date": "2025-07-19",
+          "division": "Junior Men's 88kg",
+          "lifter_name": "Robert Schmidt",
+          "body_weight_kg": "85.2",
+          "snatch_1": "65",
+          "snatch_2": "68",
+          "snatch_3": "72",
+          "cj_1": "85",
+          "cj_2": "90",
+          "cj_3": "-93",
+          "best_snatch": "72",
+          "best_cj": "90",
+          "total": "162"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Moorestown Summer Classic",
+            "date": "2025-07-19",
+            "division": "Junior Men's 88kg",
+            "lifter_name": "Robert Schmidt",
+            "body_weight_kg": "85.2",
+            "snatch_1": "65",
+            "snatch_2": "68",
+            "snatch_3": "72",
+            "cj_1": "85",
+            "cj_2": "90",
+            "cj_3": "-93",
+            "best_snatch": "72",
+            "best_cj": "90",
+            "total": "162"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNy0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNy0xOSIsIndlaWdodF9jbGFzcyI6NzI3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Robert Schmidt",
+            "total": "162",
+            "gender": "M",
+            "age": "20",
+            "club_name": "MOORESTOWN WLC",
+            "membership_number": "1082509",
+            "wso": "DMV"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 3412,
+      "athlete_name": "Robert Schmidt",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/3412",
+      "contaminated_lifter_id": 18137,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T22:16:57.945Z",
+      "profile_data": {
+        "membership_number": "175371",
+        "birth_year": 1973,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Pacific Northwest",
+        "national_rank": "22"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2018 Alaska State Championship",
+          "date": "2018-01-13",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Robert Schmidt",
+          "body_weight_kg": "120.3",
+          "snatch_1": "75",
+          "snatch_2": "80",
+          "snatch_3": "85",
+          "cj_1": "85",
+          "cj_2": "93",
+          "cj_3": "101",
+          "best_snatch": "85",
+          "best_cj": "101",
+          "total": "186"
+        },
+        {
+          "meet_name": "2013 Alaska State Championship",
+          "date": "2013-02-02",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Robert Schmidt",
+          "body_weight_kg": "112",
+          "snatch_1": "65",
+          "snatch_2": "72",
+          "snatch_3": "80",
+          "cj_1": "85",
+          "cj_2": "96",
+          "cj_3": "110",
+          "best_snatch": "80",
+          "best_cj": "110",
+          "total": "190"
+        },
+        {
+          "meet_name": "Alaskan Spring Weightlifting Contest",
+          "date": "2012-05-05",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Robert Schmidt",
+          "body_weight_kg": "113.3",
+          "snatch_1": "0",
+          "snatch_2": "0",
+          "snatch_3": "0",
+          "cj_1": "91",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "0",
+          "best_cj": "91",
+          "total": "0"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2018 Alaska State Championship",
+            "date": "2018-01-13",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Robert Schmidt",
+            "body_weight_kg": "120.3",
+            "snatch_1": "75",
+            "snatch_2": "80",
+            "snatch_3": "85",
+            "cj_1": "85",
+            "cj_2": "93",
+            "cj_3": "101",
+            "best_snatch": "85",
+            "best_cj": "101",
+            "total": "186"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMS0xMyIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "22",
+            "athlete_name": "Robert Schmidt",
+            "total": "186",
+            "gender": "M",
+            "age": "45",
+            "club_name": "-",
+            "membership_number": "175371",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2013 Alaska State Championship",
+            "date": "2013-02-02",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Robert Schmidt",
+            "body_weight_kg": "112",
+            "snatch_1": "65",
+            "snatch_2": "72",
+            "snatch_3": "80",
+            "cj_1": "85",
+            "cj_2": "96",
+            "cj_3": "110",
+            "best_snatch": "80",
+            "best_cj": "110",
+            "total": "190"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMi0wMiIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Robert Schmidt",
+            "total": "190",
+            "gender": "M",
+            "age": "40",
+            "club_name": "-",
+            "membership_number": "175371",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Alaskan Spring Weightlifting Contest",
+            "date": "2012-05-05",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Robert Schmidt",
+            "body_weight_kg": "113.3",
+            "snatch_1": "0",
+            "snatch_2": "0",
+            "snatch_3": "0",
+            "cj_1": "91",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "0",
+            "best_cj": "91",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wNS0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wNS0wNSIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    }
+  ]
+}

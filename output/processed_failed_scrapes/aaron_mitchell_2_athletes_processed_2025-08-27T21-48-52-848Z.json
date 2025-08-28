@@ -1,0 +1,285 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T07:43:18.962Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Aaron Mitchell",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 5,
+    "total_reverse_lookups": 5,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 22305417
+  },
+  "data": [
+    {
+      "internal_id": 50045,
+      "athlete_name": "Aaron Mitchell",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/50045",
+      "contaminated_lifter_id": 44098,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T19:12:27.312Z",
+      "profile_data": {
+        "membership_number": "1055338",
+        "birth_year": 1990,
+        "gender": "M",
+        "club_name": "Butcher Barbell",
+        "wso": "Georgia",
+        "national_rank": "12"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2022 Iron Born Open",
+          "date": "2022-02-12",
+          "division": "Open Men's 109kg",
+          "lifter_name": "Aaron Mitchell",
+          "body_weight_kg": "105.4",
+          "snatch_1": "82",
+          "snatch_2": "86",
+          "snatch_3": "90",
+          "cj_1": "110",
+          "cj_2": "115",
+          "cj_3": "-120",
+          "best_snatch": "90",
+          "best_cj": "115",
+          "total": "205"
+        },
+        {
+          "meet_name": "DoD Midsummer Team Challenge",
+          "date": "2021-07-10",
+          "division": "Open Men's 109kg",
+          "lifter_name": "Aaron Mitchell",
+          "body_weight_kg": "108.7",
+          "snatch_1": "77",
+          "snatch_2": "81",
+          "snatch_3": "87",
+          "cj_1": "107",
+          "cj_2": "113",
+          "cj_3": "120",
+          "best_snatch": "87",
+          "best_cj": "120",
+          "total": "207"
+        },
+        {
+          "meet_name": "Welcome To The Dragon's Den - DoD Spring Meet",
+          "date": "2021-04-24",
+          "division": "Open Men's 109kg",
+          "lifter_name": "Aaron Mitchell",
+          "body_weight_kg": "105.2",
+          "snatch_1": "80",
+          "snatch_2": "84",
+          "snatch_3": "87",
+          "cj_1": "105",
+          "cj_2": "110",
+          "cj_3": "115",
+          "best_snatch": "87",
+          "best_cj": "115",
+          "total": "202"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2022 Iron Born Open",
+            "date": "2022-02-12",
+            "division": "Open Men's 109kg",
+            "lifter_name": "Aaron Mitchell",
+            "body_weight_kg": "105.4",
+            "snatch_1": "82",
+            "snatch_2": "86",
+            "snatch_3": "90",
+            "cj_1": "110",
+            "cj_2": "115",
+            "cj_3": "-120",
+            "best_snatch": "90",
+            "best_cj": "115",
+            "total": "205"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMi0xMiIsIndlaWdodF9jbGFzcyI6ODl9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "12",
+            "athlete_name": "Aaron Mitchell",
+            "total": "205",
+            "gender": "M",
+            "age": "32",
+            "club_name": "Butcher Barbell",
+            "membership_number": "1055338",
+            "wso": "Georgia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "DoD Midsummer Team Challenge",
+            "date": "2021-07-10",
+            "division": "Open Men's 109kg",
+            "lifter_name": "Aaron Mitchell",
+            "body_weight_kg": "108.7",
+            "snatch_1": "77",
+            "snatch_2": "81",
+            "snatch_3": "87",
+            "cj_1": "107",
+            "cj_2": "113",
+            "cj_3": "120",
+            "best_snatch": "87",
+            "best_cj": "120",
+            "total": "207"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNy0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNy0xMCIsIndlaWdodF9jbGFzcyI6ODl9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "Aaron Mitchell",
+            "total": "207",
+            "gender": "M",
+            "age": "31",
+            "club_name": "Butcher Barbell",
+            "membership_number": "1055338",
+            "wso": "Georgia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Welcome To The Dragon's Den - DoD Spring Meet",
+            "date": "2021-04-24",
+            "division": "Open Men's 109kg",
+            "lifter_name": "Aaron Mitchell",
+            "body_weight_kg": "105.2",
+            "snatch_1": "80",
+            "snatch_2": "84",
+            "snatch_3": "87",
+            "cj_1": "105",
+            "cj_2": "110",
+            "cj_3": "115",
+            "best_snatch": "87",
+            "best_cj": "115",
+            "total": "202"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNC0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNC0yNCIsIndlaWdodF9jbGFzcyI6ODl9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Aaron Mitchell",
+            "total": "202",
+            "gender": "M",
+            "age": "31",
+            "club_name": "Butcher Barbell",
+            "membership_number": "1055338",
+            "wso": "Georgia"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 35441,
+      "athlete_name": "Aaron Mitchell",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/35441",
+      "contaminated_lifter_id": 44098,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-27T07:43:16.959Z",
+      "profile_data": {
+        "membership_number": "1047647",
+        "birth_year": 1996,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Tennessee-Kentucky",
+        "national_rank": "15"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Nike 2020 National Under 25 Championships",
+          "date": "2020-02-08",
+          "division": "Open Men's 96kg",
+          "lifter_name": "Aaron Mitchell",
+          "body_weight_kg": "92.23",
+          "snatch_1": "98",
+          "snatch_2": "102",
+          "snatch_3": "-105",
+          "cj_1": "115",
+          "cj_2": "120",
+          "cj_3": "125",
+          "best_snatch": "102",
+          "best_cj": "125",
+          "total": "227"
+        },
+        {
+          "meet_name": "COFFEE CUP",
+          "date": "2019-12-14",
+          "division": "Open Men's 96kg",
+          "lifter_name": "Aaron Mitchell",
+          "body_weight_kg": "93",
+          "snatch_1": "0",
+          "snatch_2": "0",
+          "snatch_3": "0",
+          "cj_1": "122",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "0",
+          "best_cj": "122",
+          "total": "0"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Nike 2020 National Under 25 Championships",
+            "date": "2020-02-08",
+            "division": "Open Men's 96kg",
+            "lifter_name": "Aaron Mitchell",
+            "body_weight_kg": "92.23",
+            "snatch_1": "98",
+            "snatch_2": "102",
+            "snatch_3": "-105",
+            "cj_1": "115",
+            "cj_2": "120",
+            "cj_3": "125",
+            "best_snatch": "102",
+            "best_cj": "125",
+            "total": "227"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMi0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMi0wOCIsIndlaWdodF9jbGFzcyI6ODd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "15",
+            "athlete_name": "Aaron Mitchell",
+            "total": "227",
+            "gender": "M",
+            "age": "24",
+            "club_name": "-",
+            "membership_number": "1047647",
+            "wso": "Tennessee-Kentucky"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "COFFEE CUP",
+            "date": "2019-12-14",
+            "division": "Open Men's 96kg",
+            "lifter_name": "Aaron Mitchell",
+            "body_weight_kg": "93",
+            "snatch_1": "0",
+            "snatch_2": "0",
+            "snatch_3": "0",
+            "cj_1": "122",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "0",
+            "best_cj": "122",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMi0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMi0xNCIsIndlaWdodF9jbGFzcyI6ODd9",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    }
+  ]
+}

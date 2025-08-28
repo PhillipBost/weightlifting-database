@@ -1,0 +1,341 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T19:04:18.906Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Anthony Hernandez",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 6,
+    "total_reverse_lookups": 6,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 65529000
+  },
+  "data": [
+    {
+      "internal_id": 66555,
+      "athlete_name": "Anthony Hernandez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/66555",
+      "contaminated_lifter_id": 16840,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T19:03:43.982Z",
+      "profile_data": {
+        "membership_number": "1082107",
+        "birth_year": 2009,
+        "gender": "M",
+        "club_name": "FULL CIRCLE PERFORMANCE",
+        "wso": "Florida",
+        "national_rank": "2"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Full Circle Performance Qualifier",
+          "date": "2025-05-19",
+          "division": "Men's 16-17 Age Group 89kg",
+          "lifter_name": "Anthony Hernandez",
+          "body_weight_kg": "85.6",
+          "snatch_1": "63",
+          "snatch_2": "67",
+          "snatch_3": "-71",
+          "cj_1": "90",
+          "cj_2": "97",
+          "cj_3": "104",
+          "best_snatch": "67",
+          "best_cj": "104",
+          "total": "171"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Full Circle Performance Qualifier",
+            "date": "2025-05-19",
+            "division": "Men's 16-17 Age Group 89kg",
+            "lifter_name": "Anthony Hernandez",
+            "body_weight_kg": "85.6",
+            "snatch_1": "63",
+            "snatch_2": "67",
+            "snatch_3": "-71",
+            "cj_1": "90",
+            "cj_2": "97",
+            "cj_3": "104",
+            "best_snatch": "67",
+            "best_cj": "104",
+            "total": "171"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNS0xOSIsIndlaWdodF9jbGFzcyI6N30=",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Anthony Hernandez",
+            "total": "171",
+            "gender": "M",
+            "age": "16",
+            "club_name": "FULL CIRCLE PERFORMANCE",
+            "membership_number": "1082107",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 44442,
+      "athlete_name": "Anthony Hernandez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/44442",
+      "contaminated_lifter_id": 16840,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T19:04:18.904Z",
+      "profile_data": {
+        "membership_number": "1002061",
+        "birth_year": 2004,
+        "gender": "M",
+        "club_name": "RELENTLESS BARBELL CLUB",
+        "wso": "Pennsylvania-West Virginia",
+        "national_rank": "2"
+      },
+      "competition_history": [
+        {
+          "meet_name": "TeamWNY Fall Classic",
+          "date": "2017-10-29",
+          "division": "Men's 13 Under Age Group 44kg",
+          "lifter_name": "Anthony Hernandez",
+          "body_weight_kg": "40.3",
+          "snatch_1": "23",
+          "snatch_2": "25",
+          "snatch_3": "-26",
+          "cj_1": "32",
+          "cj_2": "34",
+          "cj_3": "-35",
+          "best_snatch": "25",
+          "best_cj": "34",
+          "total": "59"
+        },
+        {
+          "meet_name": "2017 USA Weightlifting National Youth Championships",
+          "date": "2017-06-25",
+          "division": "Men's 13 Under Age Group 39kg",
+          "lifter_name": "Anthony Hernandez",
+          "body_weight_kg": "38.25",
+          "snatch_1": "20",
+          "snatch_2": "23",
+          "snatch_3": "-25",
+          "cj_1": "28",
+          "cj_2": "31",
+          "cj_3": "-33",
+          "best_snatch": "23",
+          "best_cj": "31",
+          "total": "54"
+        },
+        {
+          "meet_name": "Speed Shop Spring Open",
+          "date": "2017-04-15",
+          "division": "Men's 13 Under Age Group 39kg",
+          "lifter_name": "Anthony Hernandez",
+          "body_weight_kg": "37.1",
+          "snatch_1": "18",
+          "snatch_2": "-21",
+          "snatch_3": "-21",
+          "cj_1": "22",
+          "cj_2": "25",
+          "cj_3": "28",
+          "best_snatch": "18",
+          "best_cj": "28",
+          "total": "46"
+        },
+        {
+          "meet_name": "Spring Cleaning Open 2",
+          "date": "2016-04-10",
+          "division": "Men's 13 Under Age Group 35 Kg",
+          "lifter_name": "Anthony Hernandez",
+          "body_weight_kg": "33.6",
+          "snatch_1": "17",
+          "snatch_2": "18",
+          "snatch_3": "20",
+          "cj_1": "24",
+          "cj_2": "25",
+          "cj_3": "27",
+          "best_snatch": "20",
+          "best_cj": "27",
+          "total": "47"
+        },
+        {
+          "meet_name": "2016 Pittsburgh Open Weightlifting Championships",
+          "date": "2016-01-30",
+          "division": "Men's 13 Under Age Group 35 Kg",
+          "lifter_name": "Anthony Hernandez",
+          "body_weight_kg": "34.31",
+          "snatch_1": "13",
+          "snatch_2": "15",
+          "snatch_3": "18",
+          "cj_1": "17",
+          "cj_2": "20",
+          "cj_3": "23",
+          "best_snatch": "18",
+          "best_cj": "23",
+          "total": "41"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "TeamWNY Fall Classic",
+            "date": "2017-10-29",
+            "division": "Men's 13 Under Age Group 44kg",
+            "lifter_name": "Anthony Hernandez",
+            "body_weight_kg": "40.3",
+            "snatch_1": "23",
+            "snatch_2": "25",
+            "snatch_3": "-26",
+            "cj_1": "32",
+            "cj_2": "34",
+            "cj_3": "-35",
+            "best_snatch": "25",
+            "best_cj": "34",
+            "total": "59"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0yOSIsIndlaWdodF9jbGFzcyI6NDR9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Anthony Hernandez",
+            "total": "59",
+            "gender": "M",
+            "age": "13",
+            "club_name": "RELENTLESS BARBELL CLUB",
+            "membership_number": "1002061",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2017 USA Weightlifting National Youth Championships",
+            "date": "2017-06-25",
+            "division": "Men's 13 Under Age Group 39kg",
+            "lifter_name": "Anthony Hernandez",
+            "body_weight_kg": "38.25",
+            "snatch_1": "20",
+            "snatch_2": "23",
+            "snatch_3": "-25",
+            "cj_1": "28",
+            "cj_2": "31",
+            "cj_3": "-33",
+            "best_snatch": "23",
+            "best_cj": "31",
+            "total": "54"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNi0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNi0yNSIsIndlaWdodF9jbGFzcyI6NDN9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "14",
+            "athlete_name": "Anthony Hernandez",
+            "total": "54",
+            "gender": "M",
+            "age": "13",
+            "club_name": "RELENTLESS BARBELL CLUB",
+            "membership_number": "1002061",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Speed Shop Spring Open",
+            "date": "2017-04-15",
+            "division": "Men's 13 Under Age Group 39kg",
+            "lifter_name": "Anthony Hernandez",
+            "body_weight_kg": "37.1",
+            "snatch_1": "18",
+            "snatch_2": "-21",
+            "snatch_3": "-21",
+            "cj_1": "22",
+            "cj_2": "25",
+            "cj_3": "28",
+            "best_snatch": "18",
+            "best_cj": "28",
+            "total": "46"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNC0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNC0xNSIsIndlaWdodF9jbGFzcyI6NDN9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Anthony Hernandez",
+            "total": "46",
+            "gender": "M",
+            "age": "13",
+            "club_name": "RELENTLESS BARBELL CLUB",
+            "membership_number": "1002061",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Spring Cleaning Open 2",
+            "date": "2016-04-10",
+            "division": "Men's 13 Under Age Group 35 Kg",
+            "lifter_name": "Anthony Hernandez",
+            "body_weight_kg": "33.6",
+            "snatch_1": "17",
+            "snatch_2": "18",
+            "snatch_3": "20",
+            "cj_1": "24",
+            "cj_2": "25",
+            "cj_3": "27",
+            "best_snatch": "20",
+            "best_cj": "27",
+            "total": "47"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0xMCIsIndlaWdodF9jbGFzcyI6MjkyfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Anthony Hernandez",
+            "total": "47",
+            "gender": "M",
+            "age": "12",
+            "club_name": "RELENTLESS BARBELL CLUB",
+            "membership_number": "1002061",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2016 Pittsburgh Open Weightlifting Championships",
+            "date": "2016-01-30",
+            "division": "Men's 13 Under Age Group 35 Kg",
+            "lifter_name": "Anthony Hernandez",
+            "body_weight_kg": "34.31",
+            "snatch_1": "13",
+            "snatch_2": "15",
+            "snatch_3": "18",
+            "cj_1": "17",
+            "cj_2": "20",
+            "cj_3": "23",
+            "best_snatch": "18",
+            "best_cj": "23",
+            "total": "41"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0zMCIsIndlaWdodF9jbGFzcyI6MjkyfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Anthony Hernandez",
+            "total": "41",
+            "gender": "M",
+            "age": "12",
+            "club_name": "RELENTLESS BARBELL CLUB",
+            "membership_number": "1002061",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

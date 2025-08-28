@@ -1,0 +1,191 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T11:36:03.102Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Patrick Scott",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 3,
+    "total_reverse_lookups": 3,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 38633196
+  },
+  "data": [
+    {
+      "internal_id": 5405,
+      "athlete_name": "Patrick Scott",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/5405",
+      "contaminated_lifter_id": 20062,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T11:35:52.750Z",
+      "profile_data": {
+        "membership_number": "186454",
+        "birth_year": 1977,
+        "gender": "M",
+        "club_name": "ATHLETIC LAB WLC",
+        "wso": "Carolina",
+        "national_rank": "21"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Athletic Lab Winter Classic",
+          "date": "2017-02-18",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Patrick Scott",
+          "body_weight_kg": "90.4",
+          "snatch_1": "80",
+          "snatch_2": "85",
+          "snatch_3": "-90",
+          "cj_1": "101",
+          "cj_2": "105",
+          "cj_3": "110",
+          "best_snatch": "85",
+          "best_cj": "110",
+          "total": "195"
+        },
+        {
+          "meet_name": "2014 Capital City Open",
+          "date": "2014-04-13",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Patrick Scott",
+          "body_weight_kg": "103.6",
+          "snatch_1": "70",
+          "snatch_2": "78",
+          "snatch_3": "65",
+          "cj_1": "-95",
+          "cj_2": "95",
+          "cj_3": "100",
+          "best_snatch": "78",
+          "best_cj": "100",
+          "total": "178"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Athletic Lab Winter Classic",
+            "date": "2017-02-18",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Patrick Scott",
+            "body_weight_kg": "90.4",
+            "snatch_1": "80",
+            "snatch_2": "85",
+            "snatch_3": "-90",
+            "cj_1": "101",
+            "cj_2": "105",
+            "cj_3": "110",
+            "best_snatch": "85",
+            "best_cj": "110",
+            "total": "195"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xOCIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2014 Capital City Open",
+            "date": "2014-04-13",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Patrick Scott",
+            "body_weight_kg": "103.6",
+            "snatch_1": "70",
+            "snatch_2": "78",
+            "snatch_3": "65",
+            "cj_1": "-95",
+            "cj_2": "95",
+            "cj_3": "100",
+            "best_snatch": "78",
+            "best_cj": "100",
+            "total": "178"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNC0xMyIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "21",
+            "athlete_name": "Patrick Scott",
+            "total": "178",
+            "gender": "M",
+            "age": "37",
+            "club_name": "ATHLETIC LAB WLC",
+            "membership_number": "186454",
+            "wso": "Carolina"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    },
+    {
+      "internal_id": 11533,
+      "athlete_name": "Patrick Scott",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/11533",
+      "contaminated_lifter_id": 20062,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T11:36:03.100Z",
+      "profile_data": {
+        "membership_number": "1014698",
+        "birth_year": 1983,
+        "gender": "M",
+        "club_name": "BULL CITY WEIGHTLIFTING",
+        "wso": "Carolina",
+        "national_rank": "17"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Athletic Lab Summer Classic",
+          "date": "2018-06-30",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Patrick Scott",
+          "body_weight_kg": "89.1",
+          "snatch_1": "94",
+          "snatch_2": "97",
+          "snatch_3": "-100",
+          "cj_1": "110",
+          "cj_2": "115",
+          "cj_3": "-120",
+          "best_snatch": "97",
+          "best_cj": "115",
+          "total": "212"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Athletic Lab Summer Classic",
+            "date": "2018-06-30",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Patrick Scott",
+            "body_weight_kg": "89.1",
+            "snatch_1": "94",
+            "snatch_2": "97",
+            "snatch_3": "-100",
+            "cj_1": "110",
+            "cj_2": "115",
+            "cj_3": "-120",
+            "best_snatch": "97",
+            "best_cj": "115",
+            "total": "212"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0zMCIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "17",
+            "athlete_name": "Patrick Scott",
+            "total": "212",
+            "gender": "M",
+            "age": "35",
+            "club_name": "BULL CITY WEIGHTLIFTING",
+            "membership_number": "1014698",
+            "wso": "Carolina"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

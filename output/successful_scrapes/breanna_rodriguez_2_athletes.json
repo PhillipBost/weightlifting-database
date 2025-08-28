@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T14:17:55.795Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Breanna Rodriguez",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 48345889
+  },
+  "data": [
+    {
+      "internal_id": 55380,
+      "athlete_name": "Breanna Rodriguez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/55380",
+      "contaminated_lifter_id": 53540,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T14:17:45.366Z",
+      "profile_data": {
+        "membership_number": "1064780",
+        "birth_year": 2005,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "Florida",
+        "national_rank": "8"
+      },
+      "competition_history": [
+        {
+          "meet_name": "The Praelium",
+          "date": "2022-08-20",
+          "division": "Women's 16-17 Age Group 55kg",
+          "lifter_name": "Breanna Rodriguez",
+          "body_weight_kg": "51.9",
+          "snatch_1": "34",
+          "snatch_2": "37",
+          "snatch_3": "40",
+          "cj_1": "51",
+          "cj_2": "54",
+          "cj_3": "57",
+          "best_snatch": "40",
+          "best_cj": "57",
+          "total": "97"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "The Praelium",
+            "date": "2022-08-20",
+            "division": "Women's 16-17 Age Group 55kg",
+            "lifter_name": "Breanna Rodriguez",
+            "body_weight_kg": "51.9",
+            "snatch_1": "34",
+            "snatch_2": "37",
+            "snatch_3": "40",
+            "cj_1": "51",
+            "cj_2": "54",
+            "cj_3": "57",
+            "best_snatch": "40",
+            "best_cj": "57",
+            "total": "97"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wOC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wOC0yMCIsIndlaWdodF9jbGFzcyI6MTR9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "8",
+            "athlete_name": "Breanna Rodriguez",
+            "total": "97",
+            "gender": "F",
+            "age": "17",
+            "club_name": "-",
+            "membership_number": "1064780",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 59665,
+      "athlete_name": "Breanna Rodriguez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/59665",
+      "contaminated_lifter_id": 53540,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T14:17:55.793Z",
+      "profile_data": {
+        "membership_number": "1071280",
+        "birth_year": 2005,
+        "gender": "F",
+        "club_name": "Ischyros",
+        "wso": "Florida",
+        "national_rank": "3"
+      },
+      "competition_history": [
+        {
+          "meet_name": "The Praelium 2023",
+          "date": "2023-08-06",
+          "division": "Junior Women's 55kg",
+          "lifter_name": "Breanna Rodriguez",
+          "body_weight_kg": "53.2",
+          "snatch_1": "38",
+          "snatch_2": "42",
+          "snatch_3": "-45",
+          "cj_1": "56",
+          "cj_2": "60",
+          "cj_3": "-62",
+          "best_snatch": "42",
+          "best_cj": "60",
+          "total": "102"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "The Praelium 2023",
+            "date": "2023-08-06",
+            "division": "Junior Women's 55kg",
+            "lifter_name": "Breanna Rodriguez",
+            "body_weight_kg": "53.2",
+            "snatch_1": "38",
+            "snatch_2": "42",
+            "snatch_3": "-45",
+            "cj_1": "56",
+            "cj_2": "60",
+            "cj_3": "-62",
+            "best_snatch": "42",
+            "best_cj": "60",
+            "total": "102"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wOC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wOC0wNiIsIndlaWdodF9jbGFzcyI6NzN9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Breanna Rodriguez",
+            "total": "102",
+            "gender": "F",
+            "age": "18",
+            "club_name": "Ischyros",
+            "membership_number": "1071280",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

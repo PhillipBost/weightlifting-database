@@ -1,0 +1,341 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T15:42:35.808Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Jessica White",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 6,
+    "total_reverse_lookups": 6,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 53425902
+  },
+  "data": [
+    {
+      "internal_id": 21538,
+      "athlete_name": "Jessica White",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/21538",
+      "contaminated_lifter_id": 27475,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T15:42:25.784Z",
+      "profile_data": {
+        "membership_number": "1044534",
+        "birth_year": 1989,
+        "gender": "F",
+        "club_name": "Empire Weightlifting",
+        "wso": "New York",
+        "national_rank": "16"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Kilo Strength Lift Off",
+          "date": "2024-01-13",
+          "division": "Open Women's 81kg",
+          "lifter_name": "Jessica White",
+          "body_weight_kg": "80.6",
+          "snatch_1": "35",
+          "snatch_2": "38",
+          "snatch_3": "-41",
+          "cj_1": "45",
+          "cj_2": "50",
+          "cj_3": "-55",
+          "best_snatch": "38",
+          "best_cj": "50",
+          "total": "88"
+        },
+        {
+          "meet_name": "ACBC Spring Cleaning",
+          "date": "2021-03-27",
+          "division": "Open Women's 76kg",
+          "lifter_name": "Jessica White",
+          "body_weight_kg": "76",
+          "snatch_1": "35",
+          "snatch_2": "38",
+          "snatch_3": "41",
+          "cj_1": "45",
+          "cj_2": "50",
+          "cj_3": "-55",
+          "best_snatch": "41",
+          "best_cj": "50",
+          "total": "91"
+        },
+        {
+          "meet_name": "3rd Annual Christmas & Kilos",
+          "date": "2020-12-12",
+          "division": "Open Women's 71kg",
+          "lifter_name": "Jessica White",
+          "body_weight_kg": "70.9",
+          "snatch_1": "38",
+          "snatch_2": "41",
+          "snatch_3": "-45",
+          "cj_1": "45",
+          "cj_2": "50",
+          "cj_3": "-55",
+          "best_snatch": "41",
+          "best_cj": "50",
+          "total": "91"
+        },
+        {
+          "meet_name": "2nd Annual Christmas & Kilos",
+          "date": "2019-12-14",
+          "division": "Open Women's 71kg",
+          "lifter_name": "Jessica White",
+          "body_weight_kg": "67.4",
+          "snatch_1": "32",
+          "snatch_2": "35",
+          "snatch_3": "-40",
+          "cj_1": "-38",
+          "cj_2": "38",
+          "cj_3": "41",
+          "best_snatch": "35",
+          "best_cj": "41",
+          "total": "76"
+        },
+        {
+          "meet_name": "315 Summer Showdown",
+          "date": "2019-08-24",
+          "division": "Open Women's 76kg",
+          "lifter_name": "Jessica White",
+          "body_weight_kg": "73.7",
+          "snatch_1": "30",
+          "snatch_2": "33",
+          "snatch_3": "35",
+          "cj_1": "35",
+          "cj_2": "40",
+          "cj_3": "50",
+          "best_snatch": "35",
+          "best_cj": "50",
+          "total": "85"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Kilo Strength Lift Off",
+            "date": "2024-01-13",
+            "division": "Open Women's 81kg",
+            "lifter_name": "Jessica White",
+            "body_weight_kg": "80.6",
+            "snatch_1": "35",
+            "snatch_2": "38",
+            "snatch_3": "-41",
+            "cj_1": "45",
+            "cj_2": "50",
+            "cj_3": "-55",
+            "best_snatch": "38",
+            "best_cj": "50",
+            "total": "88"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMS0xMyIsIndlaWdodF9jbGFzcyI6OTh9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "16",
+            "athlete_name": "Jessica White",
+            "total": "88",
+            "gender": "F",
+            "age": "35",
+            "club_name": "Empire Weightlifting",
+            "membership_number": "1044534",
+            "wso": "New York"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "ACBC Spring Cleaning",
+            "date": "2021-03-27",
+            "division": "Open Women's 76kg",
+            "lifter_name": "Jessica White",
+            "body_weight_kg": "76",
+            "snatch_1": "35",
+            "snatch_2": "38",
+            "snatch_3": "41",
+            "cj_1": "45",
+            "cj_2": "50",
+            "cj_3": "-55",
+            "best_snatch": "41",
+            "best_cj": "50",
+            "total": "91"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMy0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMy0yNyIsIndlaWdodF9jbGFzcyI6OTd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "15",
+            "athlete_name": "Jessica White",
+            "total": "91",
+            "gender": "F",
+            "age": "32",
+            "club_name": "Empire Weightlifting",
+            "membership_number": "1044534",
+            "wso": "New York"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "3rd Annual Christmas & Kilos",
+            "date": "2020-12-12",
+            "division": "Open Women's 71kg",
+            "lifter_name": "Jessica White",
+            "body_weight_kg": "70.9",
+            "snatch_1": "38",
+            "snatch_2": "41",
+            "snatch_3": "-45",
+            "cj_1": "45",
+            "cj_2": "50",
+            "cj_3": "-55",
+            "best_snatch": "41",
+            "best_cj": "50",
+            "total": "91"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0xMi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0xMi0xMiIsIndlaWdodF9jbGFzcyI6OTZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "23",
+            "athlete_name": "Jessica White",
+            "total": "91",
+            "gender": "F",
+            "age": "31",
+            "club_name": "Empire Weightlifting",
+            "membership_number": "1044534",
+            "wso": "New York"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2nd Annual Christmas & Kilos",
+            "date": "2019-12-14",
+            "division": "Open Women's 71kg",
+            "lifter_name": "Jessica White",
+            "body_weight_kg": "67.4",
+            "snatch_1": "32",
+            "snatch_2": "35",
+            "snatch_3": "-40",
+            "cj_1": "-38",
+            "cj_2": "38",
+            "cj_3": "41",
+            "best_snatch": "35",
+            "best_cj": "41",
+            "total": "76"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMi0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMi0xNCIsIndlaWdodF9jbGFzcyI6OTZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "54",
+            "athlete_name": "Jessica White",
+            "total": "76",
+            "gender": "F",
+            "age": "30",
+            "club_name": "Empire Weightlifting",
+            "membership_number": "1044534",
+            "wso": "New York"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "315 Summer Showdown",
+            "date": "2019-08-24",
+            "division": "Open Women's 76kg",
+            "lifter_name": "Jessica White",
+            "body_weight_kg": "73.7",
+            "snatch_1": "30",
+            "snatch_2": "33",
+            "snatch_3": "35",
+            "cj_1": "35",
+            "cj_2": "40",
+            "cj_3": "50",
+            "best_snatch": "35",
+            "best_cj": "50",
+            "total": "85"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOC0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOC0yNCIsIndlaWdodF9jbGFzcyI6OTd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "39",
+            "athlete_name": "Jessica White",
+            "total": "85",
+            "gender": "F",
+            "age": "30",
+            "club_name": "Empire Weightlifting",
+            "membership_number": "1044534",
+            "wso": "New York"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 8167,
+      "athlete_name": "Jessica White",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/8167",
+      "contaminated_lifter_id": 27475,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T15:42:35.806Z",
+      "profile_data": {
+        "membership_number": "1013906",
+        "birth_year": 1981,
+        "gender": "F",
+        "club_name": "KOP Barbell",
+        "wso": "Pennsylvania-West Virginia",
+        "national_rank": "2"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2017 Bridgeport Barbell Club Old Folks Open",
+          "date": "2017-02-05",
+          "division": "Women's Masters (35-39) 69 kg",
+          "lifter_name": "Jessica White",
+          "body_weight_kg": "65.61",
+          "snatch_1": "41",
+          "snatch_2": "44",
+          "snatch_3": "47",
+          "cj_1": "63",
+          "cj_2": "66",
+          "cj_3": "66",
+          "best_snatch": "47",
+          "best_cj": "66",
+          "total": "113"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2017 Bridgeport Barbell Club Old Folks Open",
+            "date": "2017-02-05",
+            "division": "Women's Masters (35-39) 69 kg",
+            "lifter_name": "Jessica White",
+            "body_weight_kg": "65.61",
+            "snatch_1": "41",
+            "snatch_2": "44",
+            "snatch_3": "47",
+            "cj_1": "63",
+            "cj_2": "66",
+            "cj_3": "66",
+            "best_snatch": "47",
+            "best_cj": "66",
+            "total": "113"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0wNSIsIndlaWdodF9jbGFzcyI6MzgzfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Jessica White",
+            "total": "113",
+            "gender": "F",
+            "age": "36",
+            "club_name": "KOP Barbell",
+            "membership_number": "1013906",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

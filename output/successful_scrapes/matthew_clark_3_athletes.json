@@ -1,0 +1,362 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T04:04:42.619Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Matthew Clark",
+    "internal_ids_processed": 3,
+    "successful_scrapes": 3,
+    "failed_scrapes": 0,
+    "total_competitions_found": 6,
+    "total_reverse_lookups": 6,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 11552713
+  },
+  "data": [
+    {
+      "internal_id": 13195,
+      "athlete_name": "Matthew Clark",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/13195",
+      "contaminated_lifter_id": 25097,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T04:04:00.225Z",
+      "profile_data": {
+        "membership_number": "1013819",
+        "birth_year": 1985,
+        "gender": "M",
+        "club_name": "FUBARBELL",
+        "wso": "California North Central",
+        "national_rank": "14"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Rite of Passage Meet",
+          "date": "2016-11-19",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Matthew Clark",
+          "body_weight_kg": "75.7",
+          "snatch_1": "70",
+          "snatch_2": "74",
+          "snatch_3": "78",
+          "cj_1": "90",
+          "cj_2": "95",
+          "cj_3": "100",
+          "best_snatch": "78",
+          "best_cj": "100",
+          "total": "178"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Rite of Passage Meet",
+            "date": "2016-11-19",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Matthew Clark",
+            "body_weight_kg": "75.7",
+            "snatch_1": "70",
+            "snatch_2": "74",
+            "snatch_3": "78",
+            "cj_1": "90",
+            "cj_2": "95",
+            "cj_3": "100",
+            "best_snatch": "78",
+            "best_cj": "100",
+            "total": "178"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMS0xOSIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "14",
+            "athlete_name": "Matthew Clark",
+            "total": "178",
+            "gender": "M",
+            "age": "31",
+            "club_name": "FUBARBELL",
+            "membership_number": "1013819",
+            "wso": "California North Central"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 22670,
+      "athlete_name": "Matthew Clark",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/22670",
+      "contaminated_lifter_id": 25097,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T04:04:09.970Z",
+      "profile_data": {
+        "membership_number": "1009891",
+        "birth_year": 1990,
+        "gender": "M",
+        "club_name": "GREAT LAKES WEIGHTLIFTING CLUB",
+        "wso": "Ohio",
+        "national_rank": "18"
+      },
+      "competition_history": [
+        {
+          "meet_name": "The 2016 Ohio State Championships and Midwest Open",
+          "date": "2016-08-21",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Matthew Clark",
+          "body_weight_kg": "103.9",
+          "snatch_1": "60",
+          "snatch_2": "66",
+          "snatch_3": "72",
+          "cj_1": "80",
+          "cj_2": "88",
+          "cj_3": "92",
+          "best_snatch": "72",
+          "best_cj": "92",
+          "total": "164"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "The 2016 Ohio State Championships and Midwest Open",
+            "date": "2016-08-21",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Matthew Clark",
+            "body_weight_kg": "103.9",
+            "snatch_1": "60",
+            "snatch_2": "66",
+            "snatch_3": "72",
+            "cj_1": "80",
+            "cj_2": "88",
+            "cj_3": "92",
+            "best_snatch": "72",
+            "best_cj": "92",
+            "total": "164"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0yMSIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "18",
+            "athlete_name": "Matthew Clark",
+            "total": "164",
+            "gender": "M",
+            "age": "26",
+            "club_name": "GREAT LAKES WEIGHTLIFTING CLUB",
+            "membership_number": "1009891",
+            "wso": "Ohio"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 42826,
+      "athlete_name": "Matthew Clark",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/42826",
+      "contaminated_lifter_id": 25097,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T04:04:42.617Z",
+      "profile_data": {
+        "membership_number": "1016134",
+        "birth_year": 2002,
+        "gender": "M",
+        "club_name": "HASSLE FREE BBC",
+        "wso": "California North Central",
+        "national_rank": "28"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Hassle Free Winter Breaker",
+          "date": "2017-12-16",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Matthew Clark",
+          "body_weight_kg": "86.8",
+          "snatch_1": "66",
+          "snatch_2": "68",
+          "snatch_3": "70",
+          "cj_1": "94",
+          "cj_2": "98",
+          "cj_3": "101",
+          "best_snatch": "70",
+          "best_cj": "101",
+          "total": "171"
+        },
+        {
+          "meet_name": "Nike 2017 American Open Series 1",
+          "date": "2017-03-19",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Matthew Clark",
+          "body_weight_kg": "79.14",
+          "snatch_1": "52",
+          "snatch_2": "-55",
+          "snatch_3": "55",
+          "cj_1": "78",
+          "cj_2": "81",
+          "cj_3": "-84",
+          "best_snatch": "55",
+          "best_cj": "81",
+          "total": "136"
+        },
+        {
+          "meet_name": "Hassle Free BBC Spring Breaker",
+          "date": "2017-02-19",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Matthew Clark",
+          "body_weight_kg": "79.65",
+          "snatch_1": "55",
+          "snatch_2": "58",
+          "snatch_3": "66",
+          "cj_1": "78",
+          "cj_2": "81",
+          "cj_3": "85",
+          "best_snatch": "66",
+          "best_cj": "85",
+          "total": "151"
+        },
+        {
+          "meet_name": "Whitney Lunar New Year Open",
+          "date": "2017-01-28",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Matthew Clark",
+          "body_weight_kg": "79.2",
+          "snatch_1": "60",
+          "snatch_2": "63",
+          "snatch_3": "65",
+          "cj_1": "80",
+          "cj_2": "83",
+          "cj_3": "85",
+          "best_snatch": "65",
+          "best_cj": "85",
+          "total": "150"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Hassle Free Winter Breaker",
+            "date": "2017-12-16",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Matthew Clark",
+            "body_weight_kg": "86.8",
+            "snatch_1": "66",
+            "snatch_2": "68",
+            "snatch_3": "70",
+            "cj_1": "94",
+            "cj_2": "98",
+            "cj_3": "101",
+            "best_snatch": "70",
+            "best_cj": "101",
+            "total": "171"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMi0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMi0xNiIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "28",
+            "athlete_name": "Matthew Clark",
+            "total": "171",
+            "gender": "M",
+            "age": "15",
+            "club_name": "HASSLE FREE BBC",
+            "membership_number": "1016134",
+            "wso": "California North Central"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Nike 2017 American Open Series 1",
+            "date": "2017-03-19",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Matthew Clark",
+            "body_weight_kg": "79.14",
+            "snatch_1": "52",
+            "snatch_2": "-55",
+            "snatch_3": "55",
+            "cj_1": "78",
+            "cj_2": "81",
+            "cj_3": "-84",
+            "best_snatch": "55",
+            "best_cj": "81",
+            "total": "136"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0xOSIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "63",
+            "athlete_name": "Matthew Clark",
+            "total": "136",
+            "gender": "M",
+            "age": "15",
+            "club_name": "HASSLE FREE BBC",
+            "membership_number": "1016134",
+            "wso": "California North Central"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Hassle Free BBC Spring Breaker",
+            "date": "2017-02-19",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Matthew Clark",
+            "body_weight_kg": "79.65",
+            "snatch_1": "55",
+            "snatch_2": "58",
+            "snatch_3": "66",
+            "cj_1": "78",
+            "cj_2": "81",
+            "cj_3": "85",
+            "best_snatch": "66",
+            "best_cj": "85",
+            "total": "151"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xOSIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "47",
+            "athlete_name": "Matthew Clark",
+            "total": "151",
+            "gender": "M",
+            "age": "15",
+            "club_name": "HASSLE FREE BBC",
+            "membership_number": "1016134",
+            "wso": "California North Central"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Whitney Lunar New Year Open",
+            "date": "2017-01-28",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Matthew Clark",
+            "body_weight_kg": "79.2",
+            "snatch_1": "60",
+            "snatch_2": "63",
+            "snatch_3": "65",
+            "cj_1": "80",
+            "cj_2": "83",
+            "cj_3": "85",
+            "best_snatch": "65",
+            "best_cj": "85",
+            "total": "150"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMS0yOCIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "27",
+            "athlete_name": "Matthew Clark",
+            "total": "150",
+            "gender": "M",
+            "age": "15",
+            "club_name": "HASSLE FREE BBC",
+            "membership_number": "1016134",
+            "wso": "California North Central"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

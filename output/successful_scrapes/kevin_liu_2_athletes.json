@@ -1,0 +1,435 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T18:15:06.225Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Kevin Liu",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 8,
+    "total_reverse_lookups": 8,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 62576319
+  },
+  "data": [
+    {
+      "internal_id": 39973,
+      "athlete_name": "Kevin Liu",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/39973",
+      "contaminated_lifter_id": 11863,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T18:14:35.623Z",
+      "profile_data": {
+        "membership_number": "1033213",
+        "birth_year": 1999,
+        "gender": "M",
+        "club_name": "Weightlifting.Org",
+        "wso": "New York",
+        "national_rank": "11"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2024 Larry Mintz memorial / Long  Island regional open",
+          "date": "2024-04-06",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Kevin Liu",
+          "body_weight_kg": "79.6",
+          "snatch_1": "90",
+          "snatch_2": "-95",
+          "snatch_3": "-95",
+          "cj_1": "105",
+          "cj_2": "110",
+          "cj_3": "115",
+          "best_snatch": "90",
+          "best_cj": "115",
+          "total": "205"
+        },
+        {
+          "meet_name": "Rudy Sablo Memorial and Nationals Qualifier",
+          "date": "2022-05-23",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Kevin Liu",
+          "body_weight_kg": "78.2",
+          "snatch_1": "85",
+          "snatch_2": "90",
+          "snatch_3": "-95",
+          "cj_1": "105",
+          "cj_2": "110",
+          "cj_3": "-115",
+          "best_snatch": "90",
+          "best_cj": "110",
+          "total": "200"
+        },
+        {
+          "meet_name": "Rudy Sablo Memorial and WLDC Inaugural",
+          "date": "2019-11-23",
+          "division": "Open Men's 73kg",
+          "lifter_name": "Kevin Liu",
+          "body_weight_kg": "71",
+          "snatch_1": "80",
+          "snatch_2": "85",
+          "snatch_3": "90",
+          "cj_1": "95",
+          "cj_2": "100",
+          "cj_3": "-103",
+          "best_snatch": "90",
+          "best_cj": "100",
+          "total": "190"
+        },
+        {
+          "meet_name": "2018 Larry Mintz Memorial",
+          "date": "2019-06-01",
+          "division": "Open Men's 73kg",
+          "lifter_name": "Kevin Liu",
+          "body_weight_kg": "70.5",
+          "snatch_1": "-75",
+          "snatch_2": "78",
+          "snatch_3": "-82",
+          "cj_1": "-90",
+          "cj_2": "91",
+          "cj_3": "-95",
+          "best_snatch": "78",
+          "best_cj": "91",
+          "total": "169"
+        },
+        {
+          "meet_name": "Rudy Sablo Memorial",
+          "date": "2018-09-30",
+          "division": "Open Men's 67kg",
+          "lifter_name": "Kevin Liu",
+          "body_weight_kg": "65.6",
+          "snatch_1": "75",
+          "snatch_2": "-78",
+          "snatch_3": "78",
+          "cj_1": "80",
+          "cj_2": "85",
+          "cj_3": "-90",
+          "best_snatch": "78",
+          "best_cj": "85",
+          "total": "163"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2024 Larry Mintz memorial / Long  Island regional open",
+            "date": "2024-04-06",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Kevin Liu",
+            "body_weight_kg": "79.6",
+            "snatch_1": "90",
+            "snatch_2": "-95",
+            "snatch_3": "-95",
+            "cj_1": "105",
+            "cj_2": "110",
+            "cj_3": "115",
+            "best_snatch": "90",
+            "best_cj": "115",
+            "total": "205"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNC0wNiIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "11",
+            "athlete_name": "Kevin Liu",
+            "total": "205",
+            "gender": "M",
+            "age": "25",
+            "club_name": "Weightlifting.Org",
+            "membership_number": "1033213",
+            "wso": "New York"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Rudy Sablo Memorial and Nationals Qualifier",
+            "date": "2022-05-23",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Kevin Liu",
+            "body_weight_kg": "78.2",
+            "snatch_1": "85",
+            "snatch_2": "90",
+            "snatch_3": "-95",
+            "cj_1": "105",
+            "cj_2": "110",
+            "cj_3": "-115",
+            "best_snatch": "90",
+            "best_cj": "110",
+            "total": "200"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNS0yMyIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Kevin Liu",
+            "total": "200",
+            "gender": "M",
+            "age": "23",
+            "club_name": "Weightlifting.Org",
+            "membership_number": "1033213",
+            "wso": "New York"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Rudy Sablo Memorial and WLDC Inaugural",
+            "date": "2019-11-23",
+            "division": "Open Men's 73kg",
+            "lifter_name": "Kevin Liu",
+            "body_weight_kg": "71",
+            "snatch_1": "80",
+            "snatch_2": "85",
+            "snatch_3": "90",
+            "cj_1": "95",
+            "cj_2": "100",
+            "cj_3": "-103",
+            "best_snatch": "90",
+            "best_cj": "100",
+            "total": "190"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0yMyIsIndlaWdodF9jbGFzcyI6ODR9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Kevin Liu",
+            "total": "190",
+            "gender": "M",
+            "age": "20",
+            "club_name": "Weightlifting.Org",
+            "membership_number": "1033213",
+            "wso": "New York"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2018 Larry Mintz Memorial",
+            "date": "2019-06-01",
+            "division": "Open Men's 73kg",
+            "lifter_name": "Kevin Liu",
+            "body_weight_kg": "70.5",
+            "snatch_1": "-75",
+            "snatch_2": "78",
+            "snatch_3": "-82",
+            "cj_1": "-90",
+            "cj_2": "91",
+            "cj_3": "-95",
+            "best_snatch": "78",
+            "best_cj": "91",
+            "total": "169"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNi0wMSIsIndlaWdodF9jbGFzcyI6ODR9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "14",
+            "athlete_name": "Kevin Liu",
+            "total": "169",
+            "gender": "M",
+            "age": "20",
+            "club_name": "Weightlifting.Org",
+            "membership_number": "1033213",
+            "wso": "New York"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Rudy Sablo Memorial",
+            "date": "2018-09-30",
+            "division": "Open Men's 67kg",
+            "lifter_name": "Kevin Liu",
+            "body_weight_kg": "65.6",
+            "snatch_1": "75",
+            "snatch_2": "-78",
+            "snatch_3": "78",
+            "cj_1": "80",
+            "cj_2": "85",
+            "cj_3": "-90",
+            "best_snatch": "78",
+            "best_cj": "85",
+            "total": "163"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOS0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOS0zMCIsIndlaWdodF9jbGFzcyI6ODN9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Kevin Liu",
+            "total": "163",
+            "gender": "M",
+            "age": "19",
+            "club_name": "Weightlifting.Org",
+            "membership_number": "1033213",
+            "wso": "New York"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 40449,
+      "athlete_name": "Kevin Liu",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/40449",
+      "contaminated_lifter_id": 11863,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T18:15:06.222Z",
+      "profile_data": {
+        "membership_number": "209394",
+        "birth_year": 2000,
+        "gender": "M",
+        "club_name": "SQUATMORE WLC",
+        "wso": "California South",
+        "national_rank": "5"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Pacific Weightlifting Association Championships",
+          "date": "2018-09-02",
+          "division": "Open Men's +109kg",
+          "lifter_name": "Kevin Liu",
+          "body_weight_kg": "112.34",
+          "snatch_1": "70",
+          "snatch_2": "-75",
+          "snatch_3": "78",
+          "cj_1": "80",
+          "cj_2": "85",
+          "cj_3": "-90",
+          "best_snatch": "78",
+          "best_cj": "85",
+          "total": "163"
+        },
+        {
+          "meet_name": "Fortius Open",
+          "date": "2015-05-03",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Kevin Liu",
+          "body_weight_kg": "79.15",
+          "snatch_1": "55",
+          "snatch_2": "-60",
+          "snatch_3": "60",
+          "cj_1": "65",
+          "cj_2": "70",
+          "cj_3": "76",
+          "best_snatch": "60",
+          "best_cj": "76",
+          "total": "136"
+        },
+        {
+          "meet_name": "The Eyes of March",
+          "date": "2015-03-14",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Kevin Liu",
+          "body_weight_kg": "80.8",
+          "snatch_1": "52",
+          "snatch_2": "55",
+          "snatch_3": "59",
+          "cj_1": "65",
+          "cj_2": "68",
+          "cj_3": "71",
+          "best_snatch": "59",
+          "best_cj": "71",
+          "total": "130"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Pacific Weightlifting Association Championships",
+            "date": "2018-09-02",
+            "division": "Open Men's +109kg",
+            "lifter_name": "Kevin Liu",
+            "body_weight_kg": "112.34",
+            "snatch_1": "70",
+            "snatch_2": "-75",
+            "snatch_3": "78",
+            "cj_1": "80",
+            "cj_2": "85",
+            "cj_3": "-90",
+            "best_snatch": "78",
+            "best_cj": "85",
+            "total": "163"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOS0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOS0wMiIsIndlaWdodF9jbGFzcyI6OTB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "Kevin Liu",
+            "total": "163",
+            "gender": "M",
+            "age": "18",
+            "club_name": "SQUATMORE WLC",
+            "membership_number": "209394",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Fortius Open",
+            "date": "2015-05-03",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Kevin Liu",
+            "body_weight_kg": "79.15",
+            "snatch_1": "55",
+            "snatch_2": "-60",
+            "snatch_3": "60",
+            "cj_1": "65",
+            "cj_2": "70",
+            "cj_3": "76",
+            "best_snatch": "60",
+            "best_cj": "76",
+            "total": "136"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0wMyIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "66",
+            "athlete_name": "Kevin Liu",
+            "total": "136",
+            "gender": "M",
+            "age": "15",
+            "club_name": "SQUATMORE WLC",
+            "membership_number": "209394",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The Eyes of March",
+            "date": "2015-03-14",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Kevin Liu",
+            "body_weight_kg": "80.8",
+            "snatch_1": "52",
+            "snatch_2": "55",
+            "snatch_3": "59",
+            "cj_1": "65",
+            "cj_2": "68",
+            "cj_3": "71",
+            "best_snatch": "59",
+            "best_cj": "71",
+            "total": "130"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMy0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMy0xNCIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "57",
+            "athlete_name": "Kevin Liu",
+            "total": "130",
+            "gender": "M",
+            "age": "15",
+            "club_name": "SQUATMORE WLC",
+            "membership_number": "209394",
+            "wso": "California South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

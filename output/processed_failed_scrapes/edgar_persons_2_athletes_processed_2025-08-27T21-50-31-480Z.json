@@ -1,0 +1,417 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T05:27:40.021Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Edgar Persons",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 0,
+    "failed_scrapes": 2,
+    "total_competitions_found": 8,
+    "total_reverse_lookups": 8,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 14166476
+  },
+  "data": [
+    {
+      "internal_id": 88,
+      "athlete_name": "Edgar Persons",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/88",
+      "contaminated_lifter_id": 2451,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-27T05:27:16.840Z",
+      "profile_data": {
+        "membership_number": "100381",
+        "birth_year": 1938,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Pennsylvania-West Virginia",
+        "national_rank": "55"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2016 National Masters Championship",
+          "date": "2016-04-03",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Edgar Persons",
+          "body_weight_kg": "86.19",
+          "snatch_1": "35",
+          "snatch_2": "-40",
+          "snatch_3": "40",
+          "cj_1": "40",
+          "cj_2": "45",
+          "cj_3": "-50",
+          "best_snatch": "40",
+          "best_cj": "45",
+          "total": "85"
+        },
+        {
+          "meet_name": "2015 National Masters Championships",
+          "date": "2015-04-12",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Edgar Persons",
+          "body_weight_kg": "74.2",
+          "snatch_1": "37",
+          "snatch_2": "-41",
+          "snatch_3": "41",
+          "cj_1": "43",
+          "cj_2": "50",
+          "cj_3": "52",
+          "best_snatch": "41",
+          "best_cj": "52",
+          "total": "93"
+        },
+        {
+          "meet_name": "39th National Men's and Women's USA Masters Weightlifting Championship",
+          "date": "2014-04-06",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Edgar Persons",
+          "body_weight_kg": "74.85",
+          "snatch_1": "35",
+          "snatch_2": "40",
+          "snatch_3": "-45",
+          "cj_1": "40",
+          "cj_2": "45",
+          "cj_3": "50",
+          "best_snatch": "40",
+          "best_cj": "50",
+          "total": "90"
+        },
+        {
+          "meet_name": "National Masters WLC",
+          "date": "2013-03-10",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Edgar Persons",
+          "body_weight_kg": "74.16",
+          "snatch_1": "41",
+          "snatch_2": "45",
+          "snatch_3": "48",
+          "cj_1": "53",
+          "cj_2": "57",
+          "cj_3": "-60",
+          "best_snatch": "48",
+          "best_cj": "57",
+          "total": "105"
+        },
+        {
+          "meet_name": "National Masters",
+          "date": "2012-04-01",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Edgar Persons",
+          "body_weight_kg": "84",
+          "snatch_1": "0",
+          "snatch_2": "0",
+          "snatch_3": "0",
+          "cj_1": "65",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "0",
+          "best_cj": "65",
+          "total": "0"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2016 National Masters Championship",
+            "date": "2016-04-03",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Edgar Persons",
+            "body_weight_kg": "86.19",
+            "snatch_1": "35",
+            "snatch_2": "-40",
+            "snatch_3": "40",
+            "cj_1": "40",
+            "cj_2": "45",
+            "cj_3": "-50",
+            "best_snatch": "40",
+            "best_cj": "45",
+            "total": "85"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0wMyIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "55",
+            "athlete_name": "Edgar Persons",
+            "total": "85",
+            "gender": "M",
+            "age": "78",
+            "club_name": "-",
+            "membership_number": "100381",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2015 National Masters Championships",
+            "date": "2015-04-12",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Edgar Persons",
+            "body_weight_kg": "74.2",
+            "snatch_1": "37",
+            "snatch_2": "-41",
+            "snatch_3": "41",
+            "cj_1": "43",
+            "cj_2": "50",
+            "cj_3": "52",
+            "best_snatch": "41",
+            "best_cj": "52",
+            "total": "93"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0xMiIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "24",
+            "athlete_name": "Edgar Persons",
+            "total": "93",
+            "gender": "M",
+            "age": "77",
+            "club_name": "-",
+            "membership_number": "100381",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "39th National Men's and Women's USA Masters Weightlifting Championship",
+            "date": "2014-04-06",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Edgar Persons",
+            "body_weight_kg": "74.85",
+            "snatch_1": "35",
+            "snatch_2": "40",
+            "snatch_3": "-45",
+            "cj_1": "40",
+            "cj_2": "45",
+            "cj_3": "50",
+            "best_snatch": "40",
+            "best_cj": "50",
+            "total": "90"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNC0wNiIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "23",
+            "athlete_name": "Edgar Persons",
+            "total": "90",
+            "gender": "M",
+            "age": "76",
+            "club_name": "-",
+            "membership_number": "100381",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "National Masters WLC",
+            "date": "2013-03-10",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Edgar Persons",
+            "body_weight_kg": "74.16",
+            "snatch_1": "41",
+            "snatch_2": "45",
+            "snatch_3": "48",
+            "cj_1": "53",
+            "cj_2": "57",
+            "cj_3": "-60",
+            "best_snatch": "48",
+            "best_cj": "57",
+            "total": "105"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMy0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMy0xMCIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "27",
+            "athlete_name": "Edgar Persons",
+            "total": "105",
+            "gender": "M",
+            "age": "75",
+            "club_name": "-",
+            "membership_number": "100381",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "National Masters",
+            "date": "2012-04-01",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Edgar Persons",
+            "body_weight_kg": "84",
+            "snatch_1": "0",
+            "snatch_2": "0",
+            "snatch_3": "0",
+            "cj_1": "65",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "0",
+            "best_cj": "65",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wNC0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wNC0wMSIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    },
+    {
+      "internal_id": 5981,
+      "athlete_name": "Edgar Persons",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/5981",
+      "contaminated_lifter_id": 2451,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-27T05:27:40.020Z",
+      "profile_data": {
+        "membership_number": "119993",
+        "birth_year": 1978,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Pennsylvania-West Virginia",
+        "national_rank": "7"
+      },
+      "competition_history": [
+        {
+          "meet_name": "39th National Men's and Women's USA Masters Weightlifting Championship",
+          "date": "2014-04-06",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Edgar Persons",
+          "body_weight_kg": "82.98",
+          "snatch_1": "-90",
+          "snatch_2": "-90",
+          "snatch_3": "92",
+          "cj_1": "-110",
+          "cj_2": "-111",
+          "cj_3": "-111",
+          "best_snatch": "92",
+          "best_cj": "0",
+          "total": "0"
+        },
+        {
+          "meet_name": "National Masters WLC",
+          "date": "2013-03-10",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Edgar Persons",
+          "body_weight_kg": "82.7",
+          "snatch_1": "85",
+          "snatch_2": "90",
+          "snatch_3": "93",
+          "cj_1": "100",
+          "cj_2": "106",
+          "cj_3": "-111",
+          "best_snatch": "93",
+          "best_cj": "106",
+          "total": "199"
+        },
+        {
+          "meet_name": "McKenna's Gym Collegiate Developmental Meet",
+          "date": "2012-03-18",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Edgar Persons",
+          "body_weight_kg": "82.94",
+          "snatch_1": "70",
+          "snatch_2": "80",
+          "snatch_3": "-85",
+          "cj_1": "90",
+          "cj_2": "100",
+          "cj_3": "-105",
+          "best_snatch": "80",
+          "best_cj": "100",
+          "total": "180"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "39th National Men's and Women's USA Masters Weightlifting Championship",
+            "date": "2014-04-06",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Edgar Persons",
+            "body_weight_kg": "82.98",
+            "snatch_1": "-90",
+            "snatch_2": "-90",
+            "snatch_3": "92",
+            "cj_1": "-110",
+            "cj_2": "-111",
+            "cj_3": "-111",
+            "best_snatch": "92",
+            "best_cj": "0",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNC0wNiIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "National Masters WLC",
+            "date": "2013-03-10",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Edgar Persons",
+            "body_weight_kg": "82.7",
+            "snatch_1": "85",
+            "snatch_2": "90",
+            "snatch_3": "93",
+            "cj_1": "100",
+            "cj_2": "106",
+            "cj_3": "-111",
+            "best_snatch": "93",
+            "best_cj": "106",
+            "total": "199"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMy0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMy0xMCIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "7",
+            "athlete_name": "Edgar Persons",
+            "total": "199",
+            "gender": "M",
+            "age": "35",
+            "club_name": "-",
+            "membership_number": "119993",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "McKenna's Gym Collegiate Developmental Meet",
+            "date": "2012-03-18",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Edgar Persons",
+            "body_weight_kg": "82.94",
+            "snatch_1": "70",
+            "snatch_2": "80",
+            "snatch_3": "-85",
+            "cj_1": "90",
+            "cj_2": "100",
+            "cj_3": "-105",
+            "best_snatch": "80",
+            "best_cj": "100",
+            "total": "180"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wMy0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wMy0xOCIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Edgar Persons",
+            "total": "180",
+            "gender": "M",
+            "age": "34",
+            "club_name": "-",
+            "membership_number": "119993",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    }
+  ]
+}

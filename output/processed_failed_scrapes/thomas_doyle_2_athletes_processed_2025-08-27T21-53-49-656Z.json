@@ -1,0 +1,238 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T05:23:20.244Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Thomas Doyle",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 4,
+    "total_reverse_lookups": 4,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 13906699
+  },
+  "data": [
+    {
+      "internal_id": 3135,
+      "athlete_name": "Thomas Doyle",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/3135",
+      "contaminated_lifter_id": 2132,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T16:09:51.476Z",
+      "profile_data": {
+        "membership_number": "177878",
+        "birth_year": 1972,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "-",
+        "national_rank": "9"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2012 NE Weightlifting Championships",
+          "date": "2012-09-09",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Thomas Doyle",
+          "body_weight_kg": "89.6",
+          "snatch_1": "53",
+          "snatch_2": "-57",
+          "snatch_3": "-57",
+          "cj_1": "79",
+          "cj_2": "83",
+          "cj_3": "85",
+          "best_snatch": "53",
+          "best_cj": "85",
+          "total": "138"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2012 NE Weightlifting Championships",
+            "date": "2012-09-09",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Thomas Doyle",
+            "body_weight_kg": "89.6",
+            "snatch_1": "53",
+            "snatch_2": "-57",
+            "snatch_3": "-57",
+            "cj_1": "79",
+            "cj_2": "83",
+            "cj_3": "85",
+            "best_snatch": "53",
+            "best_cj": "85",
+            "total": "138"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wOS0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wOS0wOSIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "Thomas Doyle",
+            "total": "138",
+            "gender": "M",
+            "age": "40",
+            "club_name": "-",
+            "membership_number": "177878",
+            "wso": "-"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 17330,
+      "athlete_name": "Thomas Doyle",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/17330",
+      "contaminated_lifter_id": 2132,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-27T05:23:18.242Z",
+      "profile_data": {
+        "membership_number": "198283",
+        "birth_year": 1987,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Illinois",
+        "national_rank": "37"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Chicago Open",
+          "date": "2015-09-19",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Thomas Doyle",
+          "body_weight_kg": "84.9",
+          "snatch_1": "-81",
+          "snatch_2": "-81",
+          "snatch_3": "0",
+          "cj_1": "93",
+          "cj_2": "95",
+          "cj_3": "-98",
+          "best_snatch": "0",
+          "best_cj": "95",
+          "total": "0"
+        },
+        {
+          "meet_name": "Chicago Strength Spring Open",
+          "date": "2015-05-16",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Thomas Doyle",
+          "body_weight_kg": "83.8",
+          "snatch_1": "75",
+          "snatch_2": "80",
+          "snatch_3": "83",
+          "cj_1": "89",
+          "cj_2": "93",
+          "cj_3": "96",
+          "best_snatch": "83",
+          "best_cj": "96",
+          "total": "179"
+        },
+        {
+          "meet_name": "Wisconsin Open",
+          "date": "2014-06-07",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Thomas Doyle",
+          "body_weight_kg": "83.1",
+          "snatch_1": "63",
+          "snatch_2": "63",
+          "snatch_3": "63",
+          "cj_1": "84",
+          "cj_2": "90",
+          "cj_3": "91",
+          "best_snatch": "63",
+          "best_cj": "91",
+          "total": "154"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Chicago Open",
+            "date": "2015-09-19",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Thomas Doyle",
+            "body_weight_kg": "84.9",
+            "snatch_1": "-81",
+            "snatch_2": "-81",
+            "snatch_3": "0",
+            "cj_1": "93",
+            "cj_2": "95",
+            "cj_3": "-98",
+            "best_snatch": "0",
+            "best_cj": "95",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOS0xOSIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Chicago Strength Spring Open",
+            "date": "2015-05-16",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Thomas Doyle",
+            "body_weight_kg": "83.8",
+            "snatch_1": "75",
+            "snatch_2": "80",
+            "snatch_3": "83",
+            "cj_1": "89",
+            "cj_2": "93",
+            "cj_3": "96",
+            "best_snatch": "83",
+            "best_cj": "96",
+            "total": "179"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0xNiIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "37",
+            "athlete_name": "Thomas Doyle",
+            "total": "179",
+            "gender": "M",
+            "age": "28",
+            "club_name": "-",
+            "membership_number": "198283",
+            "wso": "Illinois"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Wisconsin Open",
+            "date": "2014-06-07",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Thomas Doyle",
+            "body_weight_kg": "83.1",
+            "snatch_1": "63",
+            "snatch_2": "63",
+            "snatch_3": "63",
+            "cj_1": "84",
+            "cj_2": "90",
+            "cj_3": "91",
+            "best_snatch": "63",
+            "best_cj": "91",
+            "total": "154"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNi0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNi0wNyIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "59",
+            "athlete_name": "Thomas Doyle",
+            "total": "154",
+            "gender": "M",
+            "age": "27",
+            "club_name": "-",
+            "membership_number": "198283",
+            "wso": "Illinois"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T14:51:30.923Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Luis Gonzalez",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 50361017
+  },
+  "data": [
+    {
+      "internal_id": 66331,
+      "athlete_name": "Luis Gonzalez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/66331",
+      "contaminated_lifter_id": 61183,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T14:51:21.179Z",
+      "profile_data": {
+        "membership_number": "1012851",
+        "birth_year": 1994,
+        "gender": "M",
+        "club_name": "FORZA WEIGHTLIFTING CLUB",
+        "wso": "Illinois",
+        "national_rank": "2"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2025 Illinois WSO Championships",
+          "date": "2025-05-04",
+          "division": "Open Men's 96kg",
+          "lifter_name": "Luis Gonzalez",
+          "body_weight_kg": "95",
+          "snatch_1": "112",
+          "snatch_2": "115",
+          "snatch_3": "-119",
+          "cj_1": "140",
+          "cj_2": "-145",
+          "cj_3": "150",
+          "best_snatch": "115",
+          "best_cj": "150",
+          "total": "265"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2025 Illinois WSO Championships",
+            "date": "2025-05-04",
+            "division": "Open Men's 96kg",
+            "lifter_name": "Luis Gonzalez",
+            "body_weight_kg": "95",
+            "snatch_1": "112",
+            "snatch_2": "115",
+            "snatch_3": "-119",
+            "cj_1": "140",
+            "cj_2": "-145",
+            "cj_3": "150",
+            "best_snatch": "115",
+            "best_cj": "150",
+            "total": "265"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNS0wNCIsIndlaWdodF9jbGFzcyI6ODd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Luis Gonzalez",
+            "total": "265",
+            "gender": "M",
+            "age": "31",
+            "club_name": "FORZA WEIGHTLIFTING CLUB",
+            "membership_number": "1012851",
+            "wso": "Illinois"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 63512,
+      "athlete_name": "Luis Gonzalez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/63512",
+      "contaminated_lifter_id": 61183,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T14:51:30.921Z",
+      "profile_data": {
+        "membership_number": "1076122",
+        "birth_year": 2006,
+        "gender": "M",
+        "club_name": "Maxx Effort Training",
+        "wso": "Florida",
+        "national_rank": "13"
+      },
+      "competition_history": [
+        {
+          "meet_name": "The Praelium 2024",
+          "date": "2024-08-03",
+          "division": "Junior Men's 81kg",
+          "lifter_name": "Luis Gonzalez",
+          "body_weight_kg": "74",
+          "snatch_1": "52",
+          "snatch_2": "-55",
+          "snatch_3": "58",
+          "cj_1": "79",
+          "cj_2": "82",
+          "cj_3": "-85",
+          "best_snatch": "58",
+          "best_cj": "82",
+          "total": "140"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "The Praelium 2024",
+            "date": "2024-08-03",
+            "division": "Junior Men's 81kg",
+            "lifter_name": "Luis Gonzalez",
+            "body_weight_kg": "74",
+            "snatch_1": "52",
+            "snatch_2": "-55",
+            "snatch_3": "58",
+            "cj_1": "79",
+            "cj_2": "82",
+            "cj_3": "-85",
+            "best_snatch": "58",
+            "best_cj": "82",
+            "total": "140"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOC0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOC0wMyIsIndlaWdodF9jbGFzcyI6NjV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "13",
+            "athlete_name": "Luis Gonzalez",
+            "total": "140",
+            "gender": "M",
+            "age": "18",
+            "club_name": "Maxx Effort Training",
+            "membership_number": "1076122",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

@@ -1,0 +1,323 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T05:54:33.580Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Michelle Basnett",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 6,
+    "total_reverse_lookups": 6,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 15780035
+  },
+  "data": [
+    {
+      "internal_id": 35754,
+      "athlete_name": "Michelle Basnett",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/35754",
+      "contaminated_lifter_id": 7299,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T16:47:45.997Z",
+      "profile_data": {
+        "membership_number": "217871",
+        "birth_year": 1996,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "Carolina",
+        "national_rank": "15"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Barbelld and Brews",
+          "date": "2015-09-19",
+          "division": "Open Women's 69 kg",
+          "lifter_name": "Michelle Basnett",
+          "body_weight_kg": "68.2",
+          "snatch_1": "53",
+          "snatch_2": "55",
+          "snatch_3": "57",
+          "cj_1": "70",
+          "cj_2": "75",
+          "cj_3": "80",
+          "best_snatch": "57",
+          "best_cj": "80",
+          "total": "137"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Barbelld and Brews",
+            "date": "2015-09-19",
+            "division": "Open Women's 69 kg",
+            "lifter_name": "Michelle Basnett",
+            "body_weight_kg": "68.2",
+            "snatch_1": "53",
+            "snatch_2": "55",
+            "snatch_3": "57",
+            "cj_1": "70",
+            "cj_2": "75",
+            "cj_3": "80",
+            "best_snatch": "57",
+            "best_cj": "80",
+            "total": "137"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOS0xOSIsIndlaWdodF9jbGFzcyI6MzY2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "15",
+            "athlete_name": "Michelle Basnett",
+            "total": "137",
+            "gender": "F",
+            "age": "19",
+            "club_name": "-",
+            "membership_number": "217871",
+            "wso": "Carolina"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 35756,
+      "athlete_name": "Michelle Basnett",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/35756",
+      "contaminated_lifter_id": 7299,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-27T05:54:31.576Z",
+      "profile_data": {
+        "membership_number": "1010040",
+        "birth_year": 1996,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "Carolina",
+        "national_rank": "4"
+      },
+      "competition_history": [
+        {
+          "meet_name": "North Carolina State Championships",
+          "date": "2017-10-15",
+          "division": "Open Women's 63 kg",
+          "lifter_name": "Michelle Basnett",
+          "body_weight_kg": "62.81",
+          "snatch_1": "-76",
+          "snatch_2": "-78",
+          "snatch_3": "-78",
+          "cj_1": "93",
+          "cj_2": "-95",
+          "cj_3": "-95",
+          "best_snatch": "0",
+          "best_cj": "93",
+          "total": "0"
+        },
+        {
+          "meet_name": "2017 USA Weightlifting National Championships",
+          "date": "2017-05-14",
+          "division": "Open Women's 63 kg",
+          "lifter_name": "Michelle Basnett",
+          "body_weight_kg": "63",
+          "snatch_1": "-77",
+          "snatch_2": "-79",
+          "snatch_3": "-79",
+          "cj_1": "91",
+          "cj_2": "93",
+          "cj_3": "-96",
+          "best_snatch": "0",
+          "best_cj": "93",
+          "total": "0"
+        },
+        {
+          "meet_name": "Nike 2017 National Under 25 Championship",
+          "date": "2017-04-09",
+          "division": "Open Women's 63 kg",
+          "lifter_name": "Michelle Basnett",
+          "body_weight_kg": "62.87",
+          "snatch_1": "75",
+          "snatch_2": "77",
+          "snatch_3": "81",
+          "cj_1": "90",
+          "cj_2": "-94",
+          "cj_3": "-96",
+          "best_snatch": "81",
+          "best_cj": "90",
+          "total": "171"
+        },
+        {
+          "meet_name": "2016 American Open",
+          "date": "2016-12-11",
+          "division": "Open Women's 63 kg",
+          "lifter_name": "Michelle Basnett",
+          "body_weight_kg": "62.89",
+          "snatch_1": "72",
+          "snatch_2": "76",
+          "snatch_3": "-79",
+          "cj_1": "86",
+          "cj_2": "-95",
+          "cj_3": "-95",
+          "best_snatch": "76",
+          "best_cj": "86",
+          "total": "162"
+        },
+        {
+          "meet_name": "Barbells and Brews 2016",
+          "date": "2016-09-10",
+          "division": "Open Women's 63 kg",
+          "lifter_name": "Michelle Basnett",
+          "body_weight_kg": "62.3",
+          "snatch_1": "71",
+          "snatch_2": "-78",
+          "snatch_3": "78",
+          "cj_1": "-92",
+          "cj_2": "-92",
+          "cj_3": "92",
+          "best_snatch": "78",
+          "best_cj": "92",
+          "total": "170"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "North Carolina State Championships",
+            "date": "2017-10-15",
+            "division": "Open Women's 63 kg",
+            "lifter_name": "Michelle Basnett",
+            "body_weight_kg": "62.81",
+            "snatch_1": "-76",
+            "snatch_2": "-78",
+            "snatch_3": "-78",
+            "cj_1": "93",
+            "cj_2": "-95",
+            "cj_3": "-95",
+            "best_snatch": "0",
+            "best_cj": "93",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0xNSIsIndlaWdodF9jbGFzcyI6MzY1fQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2017 USA Weightlifting National Championships",
+            "date": "2017-05-14",
+            "division": "Open Women's 63 kg",
+            "lifter_name": "Michelle Basnett",
+            "body_weight_kg": "63",
+            "snatch_1": "-77",
+            "snatch_2": "-79",
+            "snatch_3": "-79",
+            "cj_1": "91",
+            "cj_2": "93",
+            "cj_3": "-96",
+            "best_snatch": "0",
+            "best_cj": "93",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNS0xNCIsIndlaWdodF9jbGFzcyI6MzY1fQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Nike 2017 National Under 25 Championship",
+            "date": "2017-04-09",
+            "division": "Open Women's 63 kg",
+            "lifter_name": "Michelle Basnett",
+            "body_weight_kg": "62.87",
+            "snatch_1": "75",
+            "snatch_2": "77",
+            "snatch_3": "81",
+            "cj_1": "90",
+            "cj_2": "-94",
+            "cj_3": "-96",
+            "best_snatch": "81",
+            "best_cj": "90",
+            "total": "171"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNC0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNC0wOSIsIndlaWdodF9jbGFzcyI6MzY1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Michelle Basnett",
+            "total": "171",
+            "gender": "F",
+            "age": "21",
+            "club_name": "-",
+            "membership_number": "1010040",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2016 American Open",
+            "date": "2016-12-11",
+            "division": "Open Women's 63 kg",
+            "lifter_name": "Michelle Basnett",
+            "body_weight_kg": "62.89",
+            "snatch_1": "72",
+            "snatch_2": "76",
+            "snatch_3": "-79",
+            "cj_1": "86",
+            "cj_2": "-95",
+            "cj_3": "-95",
+            "best_snatch": "76",
+            "best_cj": "86",
+            "total": "162"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMi0xMSIsIndlaWdodF9jbGFzcyI6MzY1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "47",
+            "athlete_name": "Michelle Basnett",
+            "total": "162",
+            "gender": "F",
+            "age": "20",
+            "club_name": "-",
+            "membership_number": "1010040",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Barbells and Brews 2016",
+            "date": "2016-09-10",
+            "division": "Open Women's 63 kg",
+            "lifter_name": "Michelle Basnett",
+            "body_weight_kg": "62.3",
+            "snatch_1": "71",
+            "snatch_2": "-78",
+            "snatch_3": "78",
+            "cj_1": "-92",
+            "cj_2": "-92",
+            "cj_3": "92",
+            "best_snatch": "78",
+            "best_cj": "92",
+            "total": "170"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOS0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOS0xMCIsIndlaWdodF9jbGFzcyI6MzY1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Michelle Basnett",
+            "total": "170",
+            "gender": "F",
+            "age": "20",
+            "club_name": "-",
+            "membership_number": "1010040",
+            "wso": "Carolina"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    }
+  ]
+}

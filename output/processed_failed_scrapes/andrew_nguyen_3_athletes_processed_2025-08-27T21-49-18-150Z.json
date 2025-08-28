@@ -1,0 +1,111 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T12:26:17.745Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Andrew Nguyen",
+    "internal_ids_processed": 3,
+    "successful_scrapes": 1,
+    "failed_scrapes": 2,
+    "total_competitions_found": 1,
+    "total_reverse_lookups": 1,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 9007389
+  },
+  "data": [
+    {
+      "internal_id": 35423,
+      "athlete_name": "Andrew Nguyen",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/35423",
+      "contaminated_lifter_id": 37822,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T14:36:24.089Z",
+      "profile_data": {
+        "membership_number": "1044372",
+        "birth_year": 1996,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Southern",
+        "national_rank": "32"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2019 Summer Showdown",
+          "date": "2019-08-10",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Andrew Nguyen",
+          "body_weight_kg": "87.8",
+          "snatch_1": "83",
+          "snatch_2": "88",
+          "snatch_3": "89",
+          "cj_1": "116",
+          "cj_2": "120",
+          "cj_3": "120",
+          "best_snatch": "89",
+          "best_cj": "120",
+          "total": "209"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2019 Summer Showdown",
+            "date": "2019-08-10",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Andrew Nguyen",
+            "body_weight_kg": "87.8",
+            "snatch_1": "83",
+            "snatch_2": "88",
+            "snatch_3": "89",
+            "cj_1": "116",
+            "cj_2": "120",
+            "cj_3": "120",
+            "best_snatch": "89",
+            "best_cj": "120",
+            "total": "209"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOC0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOC0xMCIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "32",
+            "athlete_name": "Andrew Nguyen",
+            "total": "209",
+            "gender": "M",
+            "age": "23",
+            "club_name": "-",
+            "membership_number": "1044372",
+            "wso": "Southern"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 6860,
+      "athlete_name": "Andrew Nguyen",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/6860",
+      "contaminated_lifter_id": 37822,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-27T12:25:35.749Z",
+      "profile_data": null,
+      "competition_history": [],
+      "biographical_data_by_competition": [],
+      "scraping_successful": false,
+      "error": "Assignment to constant variable."
+    },
+    {
+      "internal_id": 59299,
+      "athlete_name": "Andrew Nguyen",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/59299",
+      "contaminated_lifter_id": 37822,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-27T12:26:15.743Z",
+      "profile_data": null,
+      "competition_history": [],
+      "biographical_data_by_competition": [],
+      "scraping_successful": false,
+      "error": "Assignment to constant variable."
+    }
+  ]
+}

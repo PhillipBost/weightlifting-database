@@ -1,0 +1,294 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T11:48:33.365Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Anthony Sanchez",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 5,
+    "total_reverse_lookups": 5,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 39383459
+  },
+  "data": [
+    {
+      "internal_id": 9908,
+      "athlete_name": "Anthony Sanchez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/9908",
+      "contaminated_lifter_id": 22084,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T11:48:11.244Z",
+      "profile_data": {
+        "membership_number": "1039181",
+        "birth_year": 1982,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Pacific Northwest",
+        "national_rank": "3"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2019 Oregon State Meet",
+          "date": "2019-10-13",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Anthony Sanchez",
+          "body_weight_kg": "88.4",
+          "snatch_1": "112",
+          "snatch_2": "116",
+          "snatch_3": "-119",
+          "cj_1": "141",
+          "cj_2": "145",
+          "cj_3": "-150",
+          "best_snatch": "116",
+          "best_cj": "145",
+          "total": "261"
+        },
+        {
+          "meet_name": "Iron Beaver Spring Open",
+          "date": "2019-04-20",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Anthony Sanchez",
+          "body_weight_kg": "87.9",
+          "snatch_1": "110",
+          "snatch_2": "113",
+          "snatch_3": "116",
+          "cj_1": "141",
+          "cj_2": "144",
+          "cj_3": "147",
+          "best_snatch": "116",
+          "best_cj": "147",
+          "total": "263"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2019 Oregon State Meet",
+            "date": "2019-10-13",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Anthony Sanchez",
+            "body_weight_kg": "88.4",
+            "snatch_1": "112",
+            "snatch_2": "116",
+            "snatch_3": "-119",
+            "cj_1": "141",
+            "cj_2": "145",
+            "cj_3": "-150",
+            "best_snatch": "116",
+            "best_cj": "145",
+            "total": "261"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMC0xMyIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Anthony Sanchez",
+            "total": "261",
+            "gender": "M",
+            "age": "37",
+            "club_name": "-",
+            "membership_number": "1039181",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Iron Beaver Spring Open",
+            "date": "2019-04-20",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Anthony Sanchez",
+            "body_weight_kg": "87.9",
+            "snatch_1": "110",
+            "snatch_2": "113",
+            "snatch_3": "116",
+            "cj_1": "141",
+            "cj_2": "144",
+            "cj_3": "147",
+            "best_snatch": "116",
+            "best_cj": "147",
+            "total": "263"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0yMCIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Anthony Sanchez",
+            "total": "263",
+            "gender": "M",
+            "age": "37",
+            "club_name": "-",
+            "membership_number": "1039181",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 38873,
+      "athlete_name": "Anthony Sanchez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/38873",
+      "contaminated_lifter_id": 22084,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T11:48:33.362Z",
+      "profile_data": {
+        "membership_number": "1004730",
+        "birth_year": 1999,
+        "gender": "M",
+        "club_name": "HASSLE FREE BBC",
+        "wso": "California South",
+        "national_rank": "22"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2016 National Youth Championship",
+          "date": "2016-06-26",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Anthony Sanchez",
+          "body_weight_kg": "72.83",
+          "snatch_1": "80",
+          "snatch_2": "84",
+          "snatch_3": "88",
+          "cj_1": "107",
+          "cj_2": "111",
+          "cj_3": "-116",
+          "best_snatch": "88",
+          "best_cj": "111",
+          "total": "199"
+        },
+        {
+          "meet_name": "2016 East Bay Battle - Youth & Junior Championships",
+          "date": "2016-05-22",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Anthony Sanchez",
+          "body_weight_kg": "73.62",
+          "snatch_1": "75",
+          "snatch_2": "79",
+          "snatch_3": "83",
+          "cj_1": "105",
+          "cj_2": "110",
+          "cj_3": "-116",
+          "best_snatch": "83",
+          "best_cj": "110",
+          "total": "193"
+        },
+        {
+          "meet_name": "Whitney Open III",
+          "date": "2016-04-23",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Anthony Sanchez",
+          "body_weight_kg": "72.7",
+          "snatch_1": "80",
+          "snatch_2": "-83",
+          "snatch_3": "83",
+          "cj_1": "105",
+          "cj_2": "109",
+          "cj_3": "113",
+          "best_snatch": "83",
+          "best_cj": "113",
+          "total": "196"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2016 National Youth Championship",
+            "date": "2016-06-26",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Anthony Sanchez",
+            "body_weight_kg": "72.83",
+            "snatch_1": "80",
+            "snatch_2": "84",
+            "snatch_3": "88",
+            "cj_1": "107",
+            "cj_2": "111",
+            "cj_3": "-116",
+            "best_snatch": "88",
+            "best_cj": "111",
+            "total": "199"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0yNiIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "22",
+            "athlete_name": "Anthony Sanchez",
+            "total": "199",
+            "gender": "M",
+            "age": "17",
+            "club_name": "HASSLE FREE BBC",
+            "membership_number": "1004730",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2016 East Bay Battle - Youth & Junior Championships",
+            "date": "2016-05-22",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Anthony Sanchez",
+            "body_weight_kg": "73.62",
+            "snatch_1": "75",
+            "snatch_2": "79",
+            "snatch_3": "83",
+            "cj_1": "105",
+            "cj_2": "110",
+            "cj_3": "-116",
+            "best_snatch": "83",
+            "best_cj": "110",
+            "total": "193"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0yMiIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "17",
+            "athlete_name": "Anthony Sanchez",
+            "total": "193",
+            "gender": "M",
+            "age": "17",
+            "club_name": "HASSLE FREE BBC",
+            "membership_number": "1004730",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Whitney Open III",
+            "date": "2016-04-23",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Anthony Sanchez",
+            "body_weight_kg": "72.7",
+            "snatch_1": "80",
+            "snatch_2": "-83",
+            "snatch_3": "83",
+            "cj_1": "105",
+            "cj_2": "109",
+            "cj_3": "113",
+            "best_snatch": "83",
+            "best_cj": "113",
+            "total": "196"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0yMyIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "Anthony Sanchez",
+            "total": "196",
+            "gender": "M",
+            "age": "17",
+            "club_name": "HASSLE FREE BBC",
+            "membership_number": "1004730",
+            "wso": "California South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

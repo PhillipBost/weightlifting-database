@@ -1,0 +1,200 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T19:56:34.223Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Elisabeth Moritz",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 3,
+    "total_reverse_lookups": 3,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 68664317
+  },
+  "data": [
+    {
+      "internal_id": 56855,
+      "athlete_name": "Elisabeth Moritz",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/56855",
+      "contaminated_lifter_id": 44472,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T19:56:23.178Z",
+      "profile_data": {
+        "membership_number": "1067624",
+        "birth_year": 2012,
+        "gender": "F",
+        "club_name": "Maui Strong",
+        "wso": "Hawaii and International",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Maui Strong Weightlifting Championships",
+          "date": "2025-01-18",
+          "division": "Women's 13 Under Age Group +64kg",
+          "lifter_name": "Elisabeth Moritz",
+          "body_weight_kg": "68.67",
+          "snatch_1": "35",
+          "snatch_2": "40",
+          "snatch_3": "0",
+          "cj_1": "45",
+          "cj_2": "50",
+          "cj_3": "0",
+          "best_snatch": "40",
+          "best_cj": "50",
+          "total": "90"
+        },
+        {
+          "meet_name": "Queen Emma Record Breaker",
+          "date": "2022-12-17",
+          "division": "Women's 13 Under Age Group 59kg",
+          "lifter_name": "Elisabeth Moritz",
+          "body_weight_kg": "58.2",
+          "snatch_1": "20",
+          "snatch_2": "23",
+          "snatch_3": "26",
+          "cj_1": "30",
+          "cj_2": "33",
+          "cj_3": "35",
+          "best_snatch": "26",
+          "best_cj": "35",
+          "total": "61"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Maui Strong Weightlifting Championships",
+            "date": "2025-01-18",
+            "division": "Women's 13 Under Age Group +64kg",
+            "lifter_name": "Elisabeth Moritz",
+            "body_weight_kg": "68.67",
+            "snatch_1": "35",
+            "snatch_2": "40",
+            "snatch_3": "0",
+            "cj_1": "45",
+            "cj_2": "50",
+            "cj_3": "0",
+            "best_snatch": "40",
+            "best_cj": "50",
+            "total": "90"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMS0xOCIsIndlaWdodF9jbGFzcyI6NjB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Elisabeth Moritz",
+            "total": "90",
+            "gender": "F",
+            "age": "13",
+            "club_name": "Maui Strong",
+            "membership_number": "1067624",
+            "wso": "Hawaii and International"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Queen Emma Record Breaker",
+            "date": "2022-12-17",
+            "division": "Women's 13 Under Age Group 59kg",
+            "lifter_name": "Elisabeth Moritz",
+            "body_weight_kg": "58.2",
+            "snatch_1": "20",
+            "snatch_2": "23",
+            "snatch_3": "26",
+            "cj_1": "30",
+            "cj_2": "33",
+            "cj_3": "35",
+            "best_snatch": "26",
+            "best_cj": "35",
+            "total": "61"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMi0xNyIsIndlaWdodF9jbGFzcyI6NTh9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Elisabeth Moritz",
+            "total": "61",
+            "gender": "F",
+            "age": "10",
+            "club_name": "HI PERFORMANCE ATHLETICS",
+            "membership_number": "1067624",
+            "wso": "Hawaii and International"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 46547,
+      "athlete_name": "Elisabeth Moritz",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/46547",
+      "contaminated_lifter_id": 44472,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T19:56:34.221Z",
+      "profile_data": {
+        "membership_number": "1048274",
+        "birth_year": 2012,
+        "gender": "F",
+        "club_name": "HI PERFORMANCE ATHLETICS",
+        "wso": "Hawaii and International",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "HI Performance Athletics Youth Weightlifting Meet",
+          "date": "2019-12-14",
+          "division": "Women's 13 Under Age Group 30kg",
+          "lifter_name": "Elisabeth Moritz",
+          "body_weight_kg": "27",
+          "snatch_1": "8",
+          "snatch_2": "10",
+          "snatch_3": "11",
+          "cj_1": "10",
+          "cj_2": "13",
+          "cj_3": "15",
+          "best_snatch": "11",
+          "best_cj": "15",
+          "total": "26"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "HI Performance Athletics Youth Weightlifting Meet",
+            "date": "2019-12-14",
+            "division": "Women's 13 Under Age Group 30kg",
+            "lifter_name": "Elisabeth Moritz",
+            "body_weight_kg": "27",
+            "snatch_1": "8",
+            "snatch_2": "10",
+            "snatch_3": "11",
+            "cj_1": "10",
+            "cj_2": "13",
+            "cj_3": "15",
+            "best_snatch": "11",
+            "best_cj": "15",
+            "total": "26"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMi0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMi0xNCIsIndlaWdodF9jbGFzcyI6NTF9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Elisabeth Moritz",
+            "total": "26",
+            "gender": "F",
+            "age": "7",
+            "club_name": "HI PERFORMANCE ATHLETICS",
+            "membership_number": "1048274",
+            "wso": "Hawaii and International"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

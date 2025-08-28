@@ -1,0 +1,435 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T05:23:10.524Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Nicole Sharp",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 8,
+    "total_reverse_lookups": 8,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 102660618
+  },
+  "data": [
+    {
+      "internal_id": 2962,
+      "athlete_name": "Nicole Sharp",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/2962",
+      "contaminated_lifter_id": 24532,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T05:22:21.193Z",
+      "profile_data": {
+        "membership_number": "1034548",
+        "birth_year": 1971,
+        "gender": "F",
+        "club_name": "Strength Ratio",
+        "wso": "Minnesota-Dakotas",
+        "national_rank": "2"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Howard Cohen American Masters",
+          "date": "2019-11-17",
+          "division": "Women's Masters (45-49) 81kg",
+          "lifter_name": "Nicole Sharp",
+          "body_weight_kg": "78.85",
+          "snatch_1": "33",
+          "snatch_2": "35",
+          "snatch_3": "-37",
+          "cj_1": "40",
+          "cj_2": "43",
+          "cj_3": "45",
+          "best_snatch": "35",
+          "best_cj": "45",
+          "total": "80"
+        },
+        {
+          "meet_name": "Howard Cohen American Masters",
+          "date": "2018-11-04",
+          "division": "Women's Masters (45-49) 71kg",
+          "lifter_name": "Nicole Sharp",
+          "body_weight_kg": "69.73",
+          "snatch_1": "27",
+          "snatch_2": "29",
+          "snatch_3": "30",
+          "cj_1": "35",
+          "cj_2": "37",
+          "cj_3": "39",
+          "best_snatch": "30",
+          "best_cj": "39",
+          "total": "69"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Howard Cohen American Masters",
+            "date": "2019-11-17",
+            "division": "Women's Masters (45-49) 81kg",
+            "lifter_name": "Nicole Sharp",
+            "body_weight_kg": "78.85",
+            "snatch_1": "33",
+            "snatch_2": "35",
+            "snatch_3": "-37",
+            "cj_1": "40",
+            "cj_2": "43",
+            "cj_3": "45",
+            "best_snatch": "35",
+            "best_cj": "45",
+            "total": "80"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0xNyIsIndlaWdodF9jbGFzcyI6MTU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Nicole Sharp",
+            "total": "80",
+            "gender": "F",
+            "age": "48",
+            "club_name": "Strength Ratio",
+            "membership_number": "1034548",
+            "wso": "Minnesota-Dakotas"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Howard Cohen American Masters",
+            "date": "2018-11-04",
+            "division": "Women's Masters (45-49) 71kg",
+            "lifter_name": "Nicole Sharp",
+            "body_weight_kg": "69.73",
+            "snatch_1": "27",
+            "snatch_2": "29",
+            "snatch_3": "30",
+            "cj_1": "35",
+            "cj_2": "37",
+            "cj_3": "39",
+            "best_snatch": "30",
+            "best_cj": "39",
+            "total": "69"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMS0wNCIsIndlaWdodF9jbGFzcyI6MTU2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Nicole Sharp",
+            "total": "69",
+            "gender": "F",
+            "age": "47",
+            "club_name": "Strength Ratio",
+            "membership_number": "1034548",
+            "wso": "Minnesota-Dakotas"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 19243,
+      "athlete_name": "Nicole Sharp",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/19243",
+      "contaminated_lifter_id": 24532,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T05:23:10.521Z",
+      "profile_data": {
+        "membership_number": "1006238",
+        "birth_year": 1988,
+        "gender": "F",
+        "club_name": "XCEL BARBELL CLUB",
+        "wso": "Mountain North",
+        "national_rank": "5"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Summer Slang 2018",
+          "date": "2018-07-15",
+          "division": "Open Women's 75 kg",
+          "lifter_name": "Nicole Sharp",
+          "body_weight_kg": "72.98",
+          "snatch_1": "66",
+          "snatch_2": "69",
+          "snatch_3": "-71",
+          "cj_1": "76",
+          "cj_2": "78",
+          "cj_3": "-81",
+          "best_snatch": "69",
+          "best_cj": "78",
+          "total": "147"
+        },
+        {
+          "meet_name": "2018 Utah State Championships",
+          "date": "2018-02-10",
+          "division": "Open Women's 75 kg",
+          "lifter_name": "Nicole Sharp",
+          "body_weight_kg": "71.57",
+          "snatch_1": "60",
+          "snatch_2": "63",
+          "snatch_3": "67",
+          "cj_1": "70",
+          "cj_2": "74",
+          "cj_3": "78",
+          "best_snatch": "67",
+          "best_cj": "78",
+          "total": "145"
+        },
+        {
+          "meet_name": "Summer Slang 2017",
+          "date": "2017-06-03",
+          "division": "Open Women's 75 kg",
+          "lifter_name": "Nicole Sharp",
+          "body_weight_kg": "74.7",
+          "snatch_1": "60",
+          "snatch_2": "63",
+          "snatch_3": "-65",
+          "cj_1": "70",
+          "cj_2": "-74",
+          "cj_3": "74",
+          "best_snatch": "63",
+          "best_cj": "74",
+          "total": "137"
+        },
+        {
+          "meet_name": "Utah State Championships",
+          "date": "2017-01-21",
+          "division": "Open Women's 75 kg",
+          "lifter_name": "Nicole Sharp",
+          "body_weight_kg": "73.96",
+          "snatch_1": "-57",
+          "snatch_2": "-60",
+          "snatch_3": "60",
+          "cj_1": "67",
+          "cj_2": "-69",
+          "cj_3": "70",
+          "best_snatch": "60",
+          "best_cj": "70",
+          "total": "130"
+        },
+        {
+          "meet_name": "RecordBreakers 2016",
+          "date": "2016-10-08",
+          "division": "Open Women's +75 Kg",
+          "lifter_name": "Nicole Sharp",
+          "body_weight_kg": "78.17",
+          "snatch_1": "55",
+          "snatch_2": "58",
+          "snatch_3": "-61",
+          "cj_1": "65",
+          "cj_2": "67",
+          "cj_3": "-71",
+          "best_snatch": "58",
+          "best_cj": "67",
+          "total": "125"
+        },
+        {
+          "meet_name": "Summer Slang 2016",
+          "date": "2016-06-04",
+          "division": "Open Women's 75 kg",
+          "lifter_name": "Nicole Sharp",
+          "body_weight_kg": "74.29",
+          "snatch_1": "50",
+          "snatch_2": "52",
+          "snatch_3": "54",
+          "cj_1": "60",
+          "cj_2": "-64",
+          "cj_3": "64",
+          "best_snatch": "54",
+          "best_cj": "64",
+          "total": "118"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Summer Slang 2018",
+            "date": "2018-07-15",
+            "division": "Open Women's 75 kg",
+            "lifter_name": "Nicole Sharp",
+            "body_weight_kg": "72.98",
+            "snatch_1": "66",
+            "snatch_2": "69",
+            "snatch_3": "-71",
+            "cj_1": "76",
+            "cj_2": "78",
+            "cj_3": "-81",
+            "best_snatch": "69",
+            "best_cj": "78",
+            "total": "147"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNy0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNy0xNSIsIndlaWdodF9jbGFzcyI6MzY3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "Nicole Sharp",
+            "total": "147",
+            "gender": "F",
+            "age": "30",
+            "club_name": "XCEL BARBELL CLUB",
+            "membership_number": "1006238",
+            "wso": "Mountain North"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2018 Utah State Championships",
+            "date": "2018-02-10",
+            "division": "Open Women's 75 kg",
+            "lifter_name": "Nicole Sharp",
+            "body_weight_kg": "71.57",
+            "snatch_1": "60",
+            "snatch_2": "63",
+            "snatch_3": "67",
+            "cj_1": "70",
+            "cj_2": "74",
+            "cj_3": "78",
+            "best_snatch": "67",
+            "best_cj": "78",
+            "total": "145"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMi0xMCIsIndlaWdodF9jbGFzcyI6MzY3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "12",
+            "athlete_name": "Nicole Sharp",
+            "total": "145",
+            "gender": "F",
+            "age": "30",
+            "club_name": "XCEL BARBELL CLUB",
+            "membership_number": "1006238",
+            "wso": "Mountain North"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Summer Slang 2017",
+            "date": "2017-06-03",
+            "division": "Open Women's 75 kg",
+            "lifter_name": "Nicole Sharp",
+            "body_weight_kg": "74.7",
+            "snatch_1": "60",
+            "snatch_2": "63",
+            "snatch_3": "-65",
+            "cj_1": "70",
+            "cj_2": "-74",
+            "cj_3": "74",
+            "best_snatch": "63",
+            "best_cj": "74",
+            "total": "137"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNi0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNi0wMyIsIndlaWdodF9jbGFzcyI6MzY3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "8",
+            "athlete_name": "Nicole Sharp",
+            "total": "137",
+            "gender": "F",
+            "age": "29",
+            "club_name": "XCEL BARBELL CLUB",
+            "membership_number": "1006238",
+            "wso": "Mountain North"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Utah State Championships",
+            "date": "2017-01-21",
+            "division": "Open Women's 75 kg",
+            "lifter_name": "Nicole Sharp",
+            "body_weight_kg": "73.96",
+            "snatch_1": "-57",
+            "snatch_2": "-60",
+            "snatch_3": "60",
+            "cj_1": "67",
+            "cj_2": "-69",
+            "cj_3": "70",
+            "best_snatch": "60",
+            "best_cj": "70",
+            "total": "130"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMS0yMSIsIndlaWdodF9jbGFzcyI6MzY3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "17",
+            "athlete_name": "Nicole Sharp",
+            "total": "130",
+            "gender": "F",
+            "age": "29",
+            "club_name": "XCEL BARBELL CLUB",
+            "membership_number": "1006238",
+            "wso": "Mountain North"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "RecordBreakers 2016",
+            "date": "2016-10-08",
+            "division": "Open Women's +75 Kg",
+            "lifter_name": "Nicole Sharp",
+            "body_weight_kg": "78.17",
+            "snatch_1": "55",
+            "snatch_2": "58",
+            "snatch_3": "-61",
+            "cj_1": "65",
+            "cj_2": "67",
+            "cj_3": "-71",
+            "best_snatch": "58",
+            "best_cj": "67",
+            "total": "125"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0wOCIsIndlaWdodF9jbGFzcyI6MzY4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "15",
+            "athlete_name": "Nicole Sharp",
+            "total": "125",
+            "gender": "F",
+            "age": "28",
+            "club_name": "XCEL BARBELL CLUB",
+            "membership_number": "1006238",
+            "wso": "Mountain North"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Summer Slang 2016",
+            "date": "2016-06-04",
+            "division": "Open Women's 75 kg",
+            "lifter_name": "Nicole Sharp",
+            "body_weight_kg": "74.29",
+            "snatch_1": "50",
+            "snatch_2": "52",
+            "snatch_3": "54",
+            "cj_1": "60",
+            "cj_2": "-64",
+            "cj_3": "64",
+            "best_snatch": "54",
+            "best_cj": "64",
+            "total": "118"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0wNCIsIndlaWdodF9jbGFzcyI6MzY3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "15",
+            "athlete_name": "Nicole Sharp",
+            "total": "118",
+            "gender": "F",
+            "age": "28",
+            "club_name": "XCEL BARBELL CLUB",
+            "membership_number": "1006238",
+            "wso": "Mountain North"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

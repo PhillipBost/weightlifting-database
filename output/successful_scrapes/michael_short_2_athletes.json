@@ -1,0 +1,200 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T23:57:07.832Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Michael Short",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 3,
+    "total_reverse_lookups": 3,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 48121269
+  },
+  "data": [
+    {
+      "internal_id": 22754,
+      "athlete_name": "Michael Short",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/22754",
+      "contaminated_lifter_id": 24547,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T23:56:58.191Z",
+      "profile_data": {
+        "membership_number": "1006504",
+        "birth_year": 1990,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Mountain South",
+        "national_rank": "15"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Nike 2017 American Open Series 2",
+          "date": "2017-07-30",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Michael Short",
+          "body_weight_kg": "92.59",
+          "snatch_1": "122",
+          "snatch_2": "125",
+          "snatch_3": "-131",
+          "cj_1": "145",
+          "cj_2": "-153",
+          "cj_3": "-158",
+          "best_snatch": "125",
+          "best_cj": "145",
+          "total": "270"
+        },
+        {
+          "meet_name": "Peaks Summer Classic",
+          "date": "2017-06-17",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Michael Short",
+          "body_weight_kg": "92.6",
+          "snatch_1": "108",
+          "snatch_2": "115",
+          "snatch_3": "120",
+          "cj_1": "137",
+          "cj_2": "143",
+          "cj_3": "148",
+          "best_snatch": "120",
+          "best_cj": "148",
+          "total": "268"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Nike 2017 American Open Series 2",
+            "date": "2017-07-30",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Michael Short",
+            "body_weight_kg": "92.59",
+            "snatch_1": "122",
+            "snatch_2": "125",
+            "snatch_3": "-131",
+            "cj_1": "145",
+            "cj_2": "-153",
+            "cj_3": "-158",
+            "best_snatch": "125",
+            "best_cj": "145",
+            "total": "270"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNy0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNy0zMCIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "15",
+            "athlete_name": "Michael Short",
+            "total": "270",
+            "gender": "M",
+            "age": "27",
+            "club_name": "-",
+            "membership_number": "1006504",
+            "wso": "Mountain South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Peaks Summer Classic",
+            "date": "2017-06-17",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Michael Short",
+            "body_weight_kg": "92.6",
+            "snatch_1": "108",
+            "snatch_2": "115",
+            "snatch_3": "120",
+            "cj_1": "137",
+            "cj_2": "143",
+            "cj_3": "148",
+            "best_snatch": "120",
+            "best_cj": "148",
+            "total": "268"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNi0xNyIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Michael Short",
+            "total": "268",
+            "gender": "M",
+            "age": "27",
+            "club_name": "-",
+            "membership_number": "1006504",
+            "wso": "Mountain South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 44588,
+      "athlete_name": "Michael Short",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/44588",
+      "contaminated_lifter_id": 24547,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T23:57:07.831Z",
+      "profile_data": {
+        "membership_number": "1006513",
+        "birth_year": 2004,
+        "gender": "M",
+        "club_name": "CHAOS WEIGHTLIFTING",
+        "wso": "Mountain North",
+        "national_rank": "3"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Conquer All Chaos",
+          "date": "2016-04-30",
+          "division": "Men's 13 Under Age Group 56 Kg",
+          "lifter_name": "Michael Short",
+          "body_weight_kg": "55.1",
+          "snatch_1": "15",
+          "snatch_2": "20",
+          "snatch_3": "-23",
+          "cj_1": "20",
+          "cj_2": "24",
+          "cj_3": "28",
+          "best_snatch": "20",
+          "best_cj": "28",
+          "total": "48"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Conquer All Chaos",
+            "date": "2016-04-30",
+            "division": "Men's 13 Under Age Group 56 Kg",
+            "lifter_name": "Michael Short",
+            "body_weight_kg": "55.1",
+            "snatch_1": "15",
+            "snatch_2": "20",
+            "snatch_3": "-23",
+            "cj_1": "20",
+            "cj_2": "24",
+            "cj_3": "28",
+            "best_snatch": "20",
+            "best_cj": "28",
+            "total": "48"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0zMCIsIndlaWdodF9jbGFzcyI6Mjk0fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Michael Short",
+            "total": "48",
+            "gender": "M",
+            "age": "12",
+            "club_name": "CHAOS WEIGHTLIFTING",
+            "membership_number": "1006513",
+            "wso": "Mountain North"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

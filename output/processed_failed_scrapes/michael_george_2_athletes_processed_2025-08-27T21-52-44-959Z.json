@@ -1,0 +1,333 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T05:32:05.140Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Michael George",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 6,
+    "total_reverse_lookups": 6,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 14431595
+  },
+  "data": [
+    {
+      "internal_id": 24889,
+      "athlete_name": "Michael George",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/24889",
+      "contaminated_lifter_id": 2577,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T16:19:15.534Z",
+      "profile_data": {
+        "membership_number": "201610",
+        "birth_year": 1991,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Ohio",
+        "national_rank": "19"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2nd Annual Black Swamp Winter Open",
+          "date": "2015-12-12",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Michael George",
+          "body_weight_kg": "125.2",
+          "snatch_1": "60",
+          "snatch_2": "-70",
+          "snatch_3": "74",
+          "cj_1": "-95",
+          "cj_2": "99",
+          "cj_3": "-102",
+          "best_snatch": "74",
+          "best_cj": "99",
+          "total": "173"
+        },
+        {
+          "meet_name": "2nd Annual Black Swamp Winter Open",
+          "date": "2015-12-12",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Michael George",
+          "body_weight_kg": "125.2",
+          "snatch_1": "60",
+          "snatch_2": "-70",
+          "snatch_3": "74",
+          "cj_1": "-95",
+          "cj_2": "99",
+          "cj_3": "-102",
+          "best_snatch": "74",
+          "best_cj": "99",
+          "total": "173"
+        },
+        {
+          "meet_name": "Winter Weightlifting Open",
+          "date": "2015-11-21",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Michael George",
+          "body_weight_kg": "125.6",
+          "snatch_1": "60",
+          "snatch_2": "68",
+          "snatch_3": "72",
+          "cj_1": "90",
+          "cj_2": "95",
+          "cj_3": "100",
+          "best_snatch": "72",
+          "best_cj": "100",
+          "total": "172"
+        },
+        {
+          "meet_name": "2015 Ohio State Weightlifting Championships",
+          "date": "2015-09-13",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Michael George",
+          "body_weight_kg": "124.6",
+          "snatch_1": "55",
+          "snatch_2": "60",
+          "snatch_3": "-62",
+          "cj_1": "85",
+          "cj_2": "90",
+          "cj_3": "-95",
+          "best_snatch": "60",
+          "best_cj": "90",
+          "total": "150"
+        },
+        {
+          "meet_name": "Black Swamp Summer Open",
+          "date": "2015-08-22",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Michael George",
+          "body_weight_kg": "125.2",
+          "snatch_1": "60",
+          "snatch_2": "-70",
+          "snatch_3": "74",
+          "cj_1": "-95",
+          "cj_2": "99",
+          "cj_3": "-102",
+          "best_snatch": "74",
+          "best_cj": "99",
+          "total": "173"
+        },
+        {
+          "meet_name": "FC Barbell Open",
+          "date": "2014-09-21",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Michael George",
+          "body_weight_kg": "119.5",
+          "snatch_1": "50",
+          "snatch_2": "55",
+          "snatch_3": "57",
+          "cj_1": "75",
+          "cj_2": "80",
+          "cj_3": "85",
+          "best_snatch": "57",
+          "best_cj": "85",
+          "total": "142"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2nd Annual Black Swamp Winter Open",
+            "date": "2015-12-12",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Michael George",
+            "body_weight_kg": "125.2",
+            "snatch_1": "60",
+            "snatch_2": "-70",
+            "snatch_3": "74",
+            "cj_1": "-95",
+            "cj_2": "99",
+            "cj_3": "-102",
+            "best_snatch": "74",
+            "best_cj": "99",
+            "total": "173"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMi0xMiIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "19",
+            "athlete_name": "Michael George",
+            "total": "173",
+            "gender": "M",
+            "age": "24",
+            "club_name": "-",
+            "membership_number": "201610",
+            "wso": "Ohio"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2nd Annual Black Swamp Winter Open",
+            "date": "2015-12-12",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Michael George",
+            "body_weight_kg": "125.2",
+            "snatch_1": "60",
+            "snatch_2": "-70",
+            "snatch_3": "74",
+            "cj_1": "-95",
+            "cj_2": "99",
+            "cj_3": "-102",
+            "best_snatch": "74",
+            "best_cj": "99",
+            "total": "173"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMi0xMiIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "19",
+            "athlete_name": "Michael George",
+            "total": "173",
+            "gender": "M",
+            "age": "24",
+            "club_name": "-",
+            "membership_number": "201610",
+            "wso": "Ohio"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Winter Weightlifting Open",
+            "date": "2015-11-21",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Michael George",
+            "body_weight_kg": "125.6",
+            "snatch_1": "60",
+            "snatch_2": "68",
+            "snatch_3": "72",
+            "cj_1": "90",
+            "cj_2": "95",
+            "cj_3": "100",
+            "best_snatch": "72",
+            "best_cj": "100",
+            "total": "172"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMS0yMSIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "8",
+            "athlete_name": "Michael George",
+            "total": "172",
+            "gender": "M",
+            "age": "24",
+            "club_name": "-",
+            "membership_number": "201610",
+            "wso": "Ohio"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2015 Ohio State Weightlifting Championships",
+            "date": "2015-09-13",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Michael George",
+            "body_weight_kg": "124.6",
+            "snatch_1": "55",
+            "snatch_2": "60",
+            "snatch_3": "-62",
+            "cj_1": "85",
+            "cj_2": "90",
+            "cj_3": "-95",
+            "best_snatch": "60",
+            "best_cj": "90",
+            "total": "150"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOS0xMyIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "7",
+            "athlete_name": "Michael George",
+            "total": "150",
+            "gender": "M",
+            "age": "24",
+            "club_name": "-",
+            "membership_number": "201610",
+            "wso": "Ohio"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Black Swamp Summer Open",
+            "date": "2015-08-22",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Michael George",
+            "body_weight_kg": "125.2",
+            "snatch_1": "60",
+            "snatch_2": "-70",
+            "snatch_3": "74",
+            "cj_1": "-95",
+            "cj_2": "99",
+            "cj_3": "-102",
+            "best_snatch": "74",
+            "best_cj": "99",
+            "total": "173"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOC0yMiIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "Michael George",
+            "total": "173",
+            "gender": "M",
+            "age": "24",
+            "club_name": "-",
+            "membership_number": "201610",
+            "wso": "Ohio"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "FC Barbell Open",
+            "date": "2014-09-21",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Michael George",
+            "body_weight_kg": "119.5",
+            "snatch_1": "50",
+            "snatch_2": "55",
+            "snatch_3": "57",
+            "cj_1": "75",
+            "cj_2": "80",
+            "cj_3": "85",
+            "best_snatch": "57",
+            "best_cj": "85",
+            "total": "142"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOS0yMSIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Michael George",
+            "total": "142",
+            "gender": "M",
+            "age": "23",
+            "club_name": "-",
+            "membership_number": "201610",
+            "wso": "Ohio"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 8003,
+      "athlete_name": "Michael George",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/8003",
+      "contaminated_lifter_id": 2577,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-27T05:32:03.138Z",
+      "profile_data": null,
+      "competition_history": [],
+      "biographical_data_by_competition": [],
+      "scraping_successful": false,
+      "error": "Assignment to constant variable."
+    }
+  ]
+}

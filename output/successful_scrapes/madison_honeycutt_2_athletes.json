@@ -1,0 +1,200 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T12:33:04.086Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Madison Honeycutt",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 3,
+    "total_reverse_lookups": 3,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 42054180
+  },
+  "data": [
+    {
+      "internal_id": 40439,
+      "athlete_name": "Madison Honeycutt",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/40439",
+      "contaminated_lifter_id": 28646,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T12:32:47.806Z",
+      "profile_data": {
+        "membership_number": "1024599",
+        "birth_year": 2000,
+        "gender": "F",
+        "club_name": "Steadfast Barbell",
+        "wso": "Ohio",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "December Weightlifting League",
+          "date": "2017-12-17",
+          "division": "Women's 16-17 Age Group 63 kg",
+          "lifter_name": "Madison Honeycutt",
+          "body_weight_kg": "62.7",
+          "snatch_1": "40",
+          "snatch_2": "43",
+          "snatch_3": "45",
+          "cj_1": "51",
+          "cj_2": "55",
+          "cj_3": "58",
+          "best_snatch": "45",
+          "best_cj": "58",
+          "total": "103"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "December Weightlifting League",
+            "date": "2017-12-17",
+            "division": "Women's 16-17 Age Group 63 kg",
+            "lifter_name": "Madison Honeycutt",
+            "body_weight_kg": "62.7",
+            "snatch_1": "40",
+            "snatch_2": "43",
+            "snatch_3": "45",
+            "cj_1": "51",
+            "cj_2": "55",
+            "cj_3": "58",
+            "best_snatch": "45",
+            "best_cj": "58",
+            "total": "103"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMi0xNyIsIndlaWdodF9jbGFzcyI6MzMzfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Madison Honeycutt",
+            "total": "103",
+            "gender": "F",
+            "age": "17",
+            "club_name": "Steadfast Barbell",
+            "membership_number": "1024599",
+            "wso": "Ohio"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 41281,
+      "athlete_name": "Madison Honeycutt",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/41281",
+      "contaminated_lifter_id": 28646,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T12:33:04.083Z",
+      "profile_data": {
+        "membership_number": "1015740",
+        "birth_year": 2001,
+        "gender": "F",
+        "club_name": "Coastline Weightlifting",
+        "wso": "California South",
+        "national_rank": "4"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Nike 2017 American Open Series 1",
+          "date": "2017-03-19",
+          "division": "Women's 16-17 Age Group 63 kg",
+          "lifter_name": "Madison Honeycutt",
+          "body_weight_kg": "62.47",
+          "snatch_1": "46",
+          "snatch_2": "47",
+          "snatch_3": "49",
+          "cj_1": "58",
+          "cj_2": "-60",
+          "cj_3": "60",
+          "best_snatch": "49",
+          "best_cj": "60",
+          "total": "109"
+        },
+        {
+          "meet_name": "Hassle Free BBC Spring Breaker",
+          "date": "2017-02-19",
+          "division": "Women's 16-17 Age Group 63 kg",
+          "lifter_name": "Madison Honeycutt",
+          "body_weight_kg": "62.17",
+          "snatch_1": "-45",
+          "snatch_2": "-45",
+          "snatch_3": "45",
+          "cj_1": "60",
+          "cj_2": "-63",
+          "cj_3": "63",
+          "best_snatch": "45",
+          "best_cj": "63",
+          "total": "108"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Nike 2017 American Open Series 1",
+            "date": "2017-03-19",
+            "division": "Women's 16-17 Age Group 63 kg",
+            "lifter_name": "Madison Honeycutt",
+            "body_weight_kg": "62.47",
+            "snatch_1": "46",
+            "snatch_2": "47",
+            "snatch_3": "49",
+            "cj_1": "58",
+            "cj_2": "-60",
+            "cj_3": "60",
+            "best_snatch": "49",
+            "best_cj": "60",
+            "total": "109"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0xOSIsIndlaWdodF9jbGFzcyI6MzMzfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Madison Honeycutt",
+            "total": "109",
+            "gender": "F",
+            "age": "16",
+            "club_name": "Coastline Weightlifting",
+            "membership_number": "1015740",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Hassle Free BBC Spring Breaker",
+            "date": "2017-02-19",
+            "division": "Women's 16-17 Age Group 63 kg",
+            "lifter_name": "Madison Honeycutt",
+            "body_weight_kg": "62.17",
+            "snatch_1": "-45",
+            "snatch_2": "-45",
+            "snatch_3": "45",
+            "cj_1": "60",
+            "cj_2": "-63",
+            "cj_3": "63",
+            "best_snatch": "45",
+            "best_cj": "63",
+            "total": "108"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xOSIsIndlaWdodF9jbGFzcyI6MzMzfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Madison Honeycutt",
+            "total": "108",
+            "gender": "F",
+            "age": "16",
+            "club_name": "Coastline Weightlifting",
+            "membership_number": "1015740",
+            "wso": "California South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

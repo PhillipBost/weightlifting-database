@@ -1,0 +1,341 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T09:08:16.448Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Eric Ortiz",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 6,
+    "total_reverse_lookups": 6,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 29766542
+  },
+  "data": [
+    {
+      "internal_id": 18773,
+      "athlete_name": "Eric Ortiz",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/18773",
+      "contaminated_lifter_id": 6750,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T09:07:58.000Z",
+      "profile_data": {
+        "membership_number": "183522",
+        "birth_year": 1988,
+        "gender": "M",
+        "club_name": "CHIKARA WEIGHTLIFTING CLUB",
+        "wso": "California South",
+        "national_rank": "31"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Team Chikara Developmental Meet #35",
+          "date": "2013-09-21",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Eric Ortiz",
+          "body_weight_kg": "81.72",
+          "snatch_1": "70",
+          "snatch_2": "-75",
+          "snatch_3": "75",
+          "cj_1": "-95",
+          "cj_2": "-95",
+          "cj_3": "95",
+          "best_snatch": "75",
+          "best_cj": "95",
+          "total": "170"
+        },
+        {
+          "meet_name": "Team chikara Developmental Meet #34",
+          "date": "2013-08-10",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Eric Ortiz",
+          "body_weight_kg": "81.42",
+          "snatch_1": "65",
+          "snatch_2": "70",
+          "snatch_3": "-75",
+          "cj_1": "95",
+          "cj_2": "-100",
+          "cj_3": "100",
+          "best_snatch": "70",
+          "best_cj": "100",
+          "total": "170"
+        },
+        {
+          "meet_name": "Team Chikara Developmental Meet #33",
+          "date": "2013-06-15",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Eric Ortiz",
+          "body_weight_kg": "79.54",
+          "snatch_1": "-60",
+          "snatch_2": "65",
+          "snatch_3": "70",
+          "cj_1": "90",
+          "cj_2": "-95",
+          "cj_3": "-95",
+          "best_snatch": "70",
+          "best_cj": "90",
+          "total": "160"
+        },
+        {
+          "meet_name": "Team Chikara Developmental Meet #32",
+          "date": "2013-05-04",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Eric Ortiz",
+          "body_weight_kg": "78.6",
+          "snatch_1": "-60",
+          "snatch_2": "60",
+          "snatch_3": "-65",
+          "cj_1": "90",
+          "cj_2": "95",
+          "cj_3": "-100",
+          "best_snatch": "60",
+          "best_cj": "95",
+          "total": "155"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Team Chikara Developmental Meet #35",
+            "date": "2013-09-21",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Eric Ortiz",
+            "body_weight_kg": "81.72",
+            "snatch_1": "70",
+            "snatch_2": "-75",
+            "snatch_3": "75",
+            "cj_1": "-95",
+            "cj_2": "-95",
+            "cj_3": "95",
+            "best_snatch": "75",
+            "best_cj": "95",
+            "total": "170"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wOS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wOS0yMSIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "31",
+            "athlete_name": "Eric Ortiz",
+            "total": "170",
+            "gender": "M",
+            "age": "25",
+            "club_name": "CHIKARA WEIGHTLIFTING CLUB",
+            "membership_number": "183522",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Team chikara Developmental Meet #34",
+            "date": "2013-08-10",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Eric Ortiz",
+            "body_weight_kg": "81.42",
+            "snatch_1": "65",
+            "snatch_2": "70",
+            "snatch_3": "-75",
+            "cj_1": "95",
+            "cj_2": "-100",
+            "cj_3": "100",
+            "best_snatch": "70",
+            "best_cj": "100",
+            "total": "170"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wOC0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wOC0xMCIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "17",
+            "athlete_name": "Eric Ortiz",
+            "total": "170",
+            "gender": "M",
+            "age": "25",
+            "club_name": "CHIKARA WEIGHTLIFTING CLUB",
+            "membership_number": "183522",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Team Chikara Developmental Meet #33",
+            "date": "2013-06-15",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Eric Ortiz",
+            "body_weight_kg": "79.54",
+            "snatch_1": "-60",
+            "snatch_2": "65",
+            "snatch_3": "70",
+            "cj_1": "90",
+            "cj_2": "-95",
+            "cj_3": "-95",
+            "best_snatch": "70",
+            "best_cj": "90",
+            "total": "160"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNi0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNi0xNSIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "Eric Ortiz",
+            "total": "160",
+            "gender": "M",
+            "age": "25",
+            "club_name": "CHIKARA WEIGHTLIFTING CLUB",
+            "membership_number": "183522",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Team Chikara Developmental Meet #32",
+            "date": "2013-05-04",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Eric Ortiz",
+            "body_weight_kg": "78.6",
+            "snatch_1": "-60",
+            "snatch_2": "60",
+            "snatch_3": "-65",
+            "cj_1": "90",
+            "cj_2": "95",
+            "cj_3": "-100",
+            "best_snatch": "60",
+            "best_cj": "95",
+            "total": "155"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNS0wNCIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "31",
+            "athlete_name": "Eric Ortiz",
+            "total": "155",
+            "gender": "M",
+            "age": "25",
+            "club_name": "CHIKARA WEIGHTLIFTING CLUB",
+            "membership_number": "183522",
+            "wso": "California South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 25965,
+      "athlete_name": "Eric Ortiz",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/25965",
+      "contaminated_lifter_id": 6750,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T09:08:16.446Z",
+      "profile_data": {
+        "membership_number": "214020",
+        "birth_year": 1991,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "DMV",
+        "national_rank": "39"
+      },
+      "competition_history": [
+        {
+          "meet_name": "National University Championship",
+          "date": "2015-09-27",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Eric Ortiz",
+          "body_weight_kg": "93.8",
+          "snatch_1": "90",
+          "snatch_2": "-95",
+          "snatch_3": "-95",
+          "cj_1": "-115",
+          "cj_2": "115",
+          "cj_3": "-120",
+          "best_snatch": "90",
+          "best_cj": "115",
+          "total": "205"
+        },
+        {
+          "meet_name": "The OSS Maryland Potomac Valley Open",
+          "date": "2015-06-28",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Eric Ortiz",
+          "body_weight_kg": "92.75",
+          "snatch_1": "94",
+          "snatch_2": "-97",
+          "snatch_3": "97",
+          "cj_1": "120",
+          "cj_2": "125",
+          "cj_3": "-130",
+          "best_snatch": "97",
+          "best_cj": "125",
+          "total": "222"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "National University Championship",
+            "date": "2015-09-27",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Eric Ortiz",
+            "body_weight_kg": "93.8",
+            "snatch_1": "90",
+            "snatch_2": "-95",
+            "snatch_3": "-95",
+            "cj_1": "-115",
+            "cj_2": "115",
+            "cj_3": "-120",
+            "best_snatch": "90",
+            "best_cj": "115",
+            "total": "205"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOS0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOS0yNyIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "39",
+            "athlete_name": "Eric Ortiz",
+            "total": "205",
+            "gender": "M",
+            "age": "24",
+            "club_name": "-",
+            "membership_number": "214020",
+            "wso": "DMV"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The OSS Maryland Potomac Valley Open",
+            "date": "2015-06-28",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Eric Ortiz",
+            "body_weight_kg": "92.75",
+            "snatch_1": "94",
+            "snatch_2": "-97",
+            "snatch_3": "97",
+            "cj_1": "120",
+            "cj_2": "125",
+            "cj_3": "-130",
+            "best_snatch": "97",
+            "best_cj": "125",
+            "total": "222"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNi0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNi0yOCIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "16",
+            "athlete_name": "Eric Ortiz",
+            "total": "222",
+            "gender": "M",
+            "age": "24",
+            "club_name": "-",
+            "membership_number": "214020",
+            "wso": "DMV"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

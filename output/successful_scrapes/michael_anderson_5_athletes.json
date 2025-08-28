@@ -1,0 +1,498 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T00:53:18.305Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Michael Anderson",
+    "internal_ids_processed": 5,
+    "successful_scrapes": 5,
+    "failed_scrapes": 0,
+    "total_competitions_found": 8,
+    "total_reverse_lookups": 8,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 68399
+  },
+  "data": [
+    {
+      "internal_id": 5239,
+      "athlete_name": "Michael Anderson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/5239",
+      "contaminated_lifter_id": 5315,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T00:52:19.867Z",
+      "profile_data": {
+        "membership_number": "1044863",
+        "birth_year": 1977,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Illinois",
+        "national_rank": "2"
+      },
+      "competition_history": [
+        {
+          "meet_name": "December online qualifier",
+          "date": "2020-12-31",
+          "division": "Men's Masters (40-44) 109kg",
+          "lifter_name": "Michael Anderson",
+          "body_weight_kg": "106",
+          "snatch_1": "79",
+          "snatch_2": "0",
+          "snatch_3": "0",
+          "cj_1": "124",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "79",
+          "best_cj": "124",
+          "total": "203"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "December online qualifier",
+            "date": "2020-12-31",
+            "division": "Men's Masters (40-44) 109kg",
+            "lifter_name": "Michael Anderson",
+            "body_weight_kg": "106",
+            "snatch_1": "79",
+            "snatch_2": "0",
+            "snatch_3": "0",
+            "cj_1": "124",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "79",
+            "best_cj": "124",
+            "total": "203"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0xMi0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0xMi0zMSIsIndlaWdodF9jbGFzcyI6MTI5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Michael Anderson",
+            "total": "203",
+            "gender": "M",
+            "age": "43",
+            "club_name": "-",
+            "membership_number": "1044863",
+            "wso": "Illinois"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 6433,
+      "athlete_name": "Michael Anderson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/6433",
+      "contaminated_lifter_id": 5315,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T00:52:29.588Z",
+      "profile_data": {
+        "membership_number": "214791",
+        "birth_year": 1979,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Carolina",
+        "national_rank": "22"
+      },
+      "competition_history": [
+        {
+          "meet_name": "MDUSA Summer Open",
+          "date": "2015-07-19",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Michael Anderson",
+          "body_weight_kg": "76.9",
+          "snatch_1": "70",
+          "snatch_2": "-75",
+          "snatch_3": "-75",
+          "cj_1": "93",
+          "cj_2": "95",
+          "cj_3": "-97",
+          "best_snatch": "70",
+          "best_cj": "95",
+          "total": "165"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "MDUSA Summer Open",
+            "date": "2015-07-19",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Michael Anderson",
+            "body_weight_kg": "76.9",
+            "snatch_1": "70",
+            "snatch_2": "-75",
+            "snatch_3": "-75",
+            "cj_1": "93",
+            "cj_2": "95",
+            "cj_3": "-97",
+            "best_snatch": "70",
+            "best_cj": "95",
+            "total": "165"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNy0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNy0xOSIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "22",
+            "athlete_name": "Michael Anderson",
+            "total": "165",
+            "gender": "M",
+            "age": "36",
+            "club_name": "-",
+            "membership_number": "214791",
+            "wso": "Carolina"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 9082,
+      "athlete_name": "Michael Anderson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/9082",
+      "contaminated_lifter_id": 5315,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T00:52:58.909Z",
+      "profile_data": {
+        "membership_number": "1014972",
+        "birth_year": 1981,
+        "gender": "M",
+        "club_name": "Crestview Barbell",
+        "wso": "Florida",
+        "national_rank": "22"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Pensacola Sand Bar Slam",
+          "date": "2017-09-30",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Michael Anderson",
+          "body_weight_kg": "76.45",
+          "snatch_1": "70",
+          "snatch_2": "70",
+          "snatch_3": "72",
+          "cj_1": "90",
+          "cj_2": "93",
+          "cj_3": "93",
+          "best_snatch": "72",
+          "best_cj": "93",
+          "total": "165"
+        },
+        {
+          "meet_name": "2nd Annual Crestview Bar Slam",
+          "date": "2017-06-17",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Michael Anderson",
+          "body_weight_kg": "77",
+          "snatch_1": "68",
+          "snatch_2": "71",
+          "snatch_3": "75",
+          "cj_1": "93",
+          "cj_2": "96",
+          "cj_3": "100",
+          "best_snatch": "75",
+          "best_cj": "100",
+          "total": "175"
+        },
+        {
+          "meet_name": "Shamrocks & Snatches Open",
+          "date": "2017-03-04",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Michael Anderson",
+          "body_weight_kg": "74.94",
+          "snatch_1": "-64",
+          "snatch_2": "64",
+          "snatch_3": "-67",
+          "cj_1": "76",
+          "cj_2": "83",
+          "cj_3": "87",
+          "best_snatch": "64",
+          "best_cj": "87",
+          "total": "151"
+        },
+        {
+          "meet_name": "The Gainesville Open",
+          "date": "2017-01-14",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Michael Anderson",
+          "body_weight_kg": "85",
+          "snatch_1": "57",
+          "snatch_2": "62",
+          "snatch_3": "66",
+          "cj_1": "71",
+          "cj_2": "76",
+          "cj_3": "-83",
+          "best_snatch": "66",
+          "best_cj": "76",
+          "total": "142"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Pensacola Sand Bar Slam",
+            "date": "2017-09-30",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Michael Anderson",
+            "body_weight_kg": "76.45",
+            "snatch_1": "70",
+            "snatch_2": "70",
+            "snatch_3": "72",
+            "cj_1": "90",
+            "cj_2": "93",
+            "cj_3": "93",
+            "best_snatch": "72",
+            "best_cj": "93",
+            "total": "165"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wOS0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wOS0zMCIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "22",
+            "athlete_name": "Michael Anderson",
+            "total": "165",
+            "gender": "M",
+            "age": "36",
+            "club_name": "Crestview Barbell",
+            "membership_number": "1014972",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2nd Annual Crestview Bar Slam",
+            "date": "2017-06-17",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Michael Anderson",
+            "body_weight_kg": "77",
+            "snatch_1": "68",
+            "snatch_2": "71",
+            "snatch_3": "75",
+            "cj_1": "93",
+            "cj_2": "96",
+            "cj_3": "100",
+            "best_snatch": "75",
+            "best_cj": "100",
+            "total": "175"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNi0xNyIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "16",
+            "athlete_name": "Michael Anderson",
+            "total": "175",
+            "gender": "M",
+            "age": "36",
+            "club_name": "Crestview Barbell",
+            "membership_number": "1014972",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Shamrocks & Snatches Open",
+            "date": "2017-03-04",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Michael Anderson",
+            "body_weight_kg": "74.94",
+            "snatch_1": "-64",
+            "snatch_2": "64",
+            "snatch_3": "-67",
+            "cj_1": "76",
+            "cj_2": "83",
+            "cj_3": "87",
+            "best_snatch": "64",
+            "best_cj": "87",
+            "total": "151"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0wNCIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "18",
+            "athlete_name": "Michael Anderson",
+            "total": "151",
+            "gender": "M",
+            "age": "36",
+            "club_name": "Crestview Barbell",
+            "membership_number": "1014972",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The Gainesville Open",
+            "date": "2017-01-14",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Michael Anderson",
+            "body_weight_kg": "85",
+            "snatch_1": "57",
+            "snatch_2": "62",
+            "snatch_3": "66",
+            "cj_1": "71",
+            "cj_2": "76",
+            "cj_3": "-83",
+            "best_snatch": "66",
+            "best_cj": "76",
+            "total": "142"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMS0xNCIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "63",
+            "athlete_name": "Michael Anderson",
+            "total": "142",
+            "gender": "M",
+            "age": "36",
+            "club_name": "Crestview Barbell",
+            "membership_number": "1014972",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 9737,
+      "athlete_name": "Michael Anderson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/9737",
+      "contaminated_lifter_id": 5315,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T00:53:08.654Z",
+      "profile_data": {
+        "membership_number": "185455",
+        "birth_year": 1982,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "New England",
+        "national_rank": "9"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Bay State Games",
+          "date": "2013-07-07",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Michael Anderson",
+          "body_weight_kg": "92.5",
+          "snatch_1": "85",
+          "snatch_2": "90",
+          "snatch_3": "95",
+          "cj_1": "105",
+          "cj_2": "110",
+          "cj_3": "115",
+          "best_snatch": "95",
+          "best_cj": "115",
+          "total": "210"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Bay State Games",
+            "date": "2013-07-07",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Michael Anderson",
+            "body_weight_kg": "92.5",
+            "snatch_1": "85",
+            "snatch_2": "90",
+            "snatch_3": "95",
+            "cj_1": "105",
+            "cj_2": "110",
+            "cj_3": "115",
+            "best_snatch": "95",
+            "best_cj": "115",
+            "total": "210"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNy0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNy0wNyIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "Michael Anderson",
+            "total": "210",
+            "gender": "M",
+            "age": "31",
+            "club_name": "-",
+            "membership_number": "185455",
+            "wso": "New England"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 22023,
+      "athlete_name": "Michael Anderson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/22023",
+      "contaminated_lifter_id": 5315,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T00:53:18.301Z",
+      "profile_data": {
+        "membership_number": "192189",
+        "birth_year": 1989,
+        "gender": "M",
+        "club_name": "LIVEFREE WEIGHTLIFTING CLUB",
+        "wso": "New England",
+        "national_rank": "10"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Atlantic States Weightlifting Championships",
+          "date": "2014-02-15",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Michael Anderson",
+          "body_weight_kg": "98.2",
+          "snatch_1": "96",
+          "snatch_2": "-100",
+          "snatch_3": "100",
+          "cj_1": "125",
+          "cj_2": "-130",
+          "cj_3": "-135",
+          "best_snatch": "100",
+          "best_cj": "125",
+          "total": "225"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Atlantic States Weightlifting Championships",
+            "date": "2014-02-15",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Michael Anderson",
+            "body_weight_kg": "98.2",
+            "snatch_1": "96",
+            "snatch_2": "-100",
+            "snatch_3": "100",
+            "cj_1": "125",
+            "cj_2": "-130",
+            "cj_3": "-135",
+            "best_snatch": "100",
+            "best_cj": "125",
+            "total": "225"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMi0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMi0xNSIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "Michael Anderson",
+            "total": "225",
+            "gender": "M",
+            "age": "25",
+            "club_name": "LIVEFREE WEIGHTLIFTING CLUB",
+            "membership_number": "192189",
+            "wso": "New England"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

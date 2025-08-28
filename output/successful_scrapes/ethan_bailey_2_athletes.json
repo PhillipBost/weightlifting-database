@@ -1,0 +1,200 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T11:46:57.813Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Ethan Bailey",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 3,
+    "total_reverse_lookups": 3,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 39287907
+  },
+  "data": [
+    {
+      "internal_id": 29107,
+      "athlete_name": "Ethan Bailey",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/29107",
+      "contaminated_lifter_id": 21878,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T11:46:47.644Z",
+      "profile_data": {
+        "membership_number": "1001257",
+        "birth_year": 1993,
+        "gender": "M",
+        "club_name": "SWORN BARBELL CLUB",
+        "wso": "Indiana",
+        "national_rank": "42"
+      },
+      "competition_history": [
+        {
+          "meet_name": "King of Kilos and Queen of Kilos",
+          "date": "2016-10-22",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Ethan Bailey",
+          "body_weight_kg": "75.6",
+          "snatch_1": "85",
+          "snatch_2": "-95",
+          "snatch_3": "-95",
+          "cj_1": "-106",
+          "cj_2": "108",
+          "cj_3": "-112",
+          "best_snatch": "85",
+          "best_cj": "108",
+          "total": "193"
+        },
+        {
+          "meet_name": "Barbell Lift Off",
+          "date": "2016-02-13",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Ethan Bailey",
+          "body_weight_kg": "74",
+          "snatch_1": "74",
+          "snatch_2": "76",
+          "snatch_3": "-83",
+          "cj_1": "100",
+          "cj_2": "-105",
+          "cj_3": "-107",
+          "best_snatch": "76",
+          "best_cj": "100",
+          "total": "176"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "King of Kilos and Queen of Kilos",
+            "date": "2016-10-22",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Ethan Bailey",
+            "body_weight_kg": "75.6",
+            "snatch_1": "85",
+            "snatch_2": "-95",
+            "snatch_3": "-95",
+            "cj_1": "-106",
+            "cj_2": "108",
+            "cj_3": "-112",
+            "best_snatch": "85",
+            "best_cj": "108",
+            "total": "193"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0yMiIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "42",
+            "athlete_name": "Ethan Bailey",
+            "total": "193",
+            "gender": "M",
+            "age": "23",
+            "club_name": "SWORN BARBELL CLUB",
+            "membership_number": "1001257",
+            "wso": "Indiana"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Barbell Lift Off",
+            "date": "2016-02-13",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Ethan Bailey",
+            "body_weight_kg": "74",
+            "snatch_1": "74",
+            "snatch_2": "76",
+            "snatch_3": "-83",
+            "cj_1": "100",
+            "cj_2": "-105",
+            "cj_3": "-107",
+            "best_snatch": "76",
+            "best_cj": "100",
+            "total": "176"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMi0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMi0xMyIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "27",
+            "athlete_name": "Ethan Bailey",
+            "total": "176",
+            "gender": "M",
+            "age": "23",
+            "club_name": "SWORN BARBELL CLUB",
+            "membership_number": "1001257",
+            "wso": "Indiana"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 49107,
+      "athlete_name": "Ethan Bailey",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/49107",
+      "contaminated_lifter_id": 21878,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T11:46:57.810Z",
+      "profile_data": {
+        "membership_number": "1053736",
+        "birth_year": 2004,
+        "gender": "M",
+        "club_name": "WESLEY WEIGHTLIFTERS",
+        "wso": "Missouri Valley",
+        "national_rank": "2"
+      },
+      "competition_history": [
+        {
+          "meet_name": "KC Winter Open",
+          "date": "2021-01-30",
+          "division": "Men's 16-17 Age Group +102kg",
+          "lifter_name": "Ethan Bailey",
+          "body_weight_kg": "145.1",
+          "snatch_1": "80",
+          "snatch_2": "85",
+          "snatch_3": "-90",
+          "cj_1": "100",
+          "cj_2": "107",
+          "cj_3": "113",
+          "best_snatch": "85",
+          "best_cj": "113",
+          "total": "198"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "KC Winter Open",
+            "date": "2021-01-30",
+            "division": "Men's 16-17 Age Group +102kg",
+            "lifter_name": "Ethan Bailey",
+            "body_weight_kg": "145.1",
+            "snatch_1": "80",
+            "snatch_2": "85",
+            "snatch_3": "-90",
+            "cj_1": "100",
+            "cj_2": "107",
+            "cj_3": "113",
+            "best_snatch": "85",
+            "best_cj": "113",
+            "total": "198"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMS0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMS0zMCIsIndlaWdodF9jbGFzcyI6MTB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Ethan Bailey",
+            "total": "198",
+            "gender": "M",
+            "age": "17",
+            "club_name": "WESLEY WEIGHTLIFTERS",
+            "membership_number": "1053736",
+            "wso": "Missouri Valley"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

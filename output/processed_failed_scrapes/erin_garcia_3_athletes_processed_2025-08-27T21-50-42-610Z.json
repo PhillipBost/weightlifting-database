@@ -1,0 +1,523 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T12:39:38.449Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Erin Garcia",
+    "internal_ids_processed": 3,
+    "successful_scrapes": 2,
+    "failed_scrapes": 1,
+    "total_competitions_found": 10,
+    "total_reverse_lookups": 10,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 9808093
+  },
+  "data": [
+    {
+      "internal_id": 27660,
+      "athlete_name": "Erin Garcia",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/27660",
+      "contaminated_lifter_id": 6384,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T15:02:04.597Z",
+      "profile_data": {
+        "membership_number": "1032124",
+        "birth_year": 1992,
+        "gender": "F",
+        "club_name": "Southern Maryland Weightlifting",
+        "wso": "DMV",
+        "national_rank": "11"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Muscletown USA Classic",
+          "date": "2019-08-24",
+          "division": "Open Women's 76kg",
+          "lifter_name": "Erin Garcia",
+          "body_weight_kg": "74.22",
+          "snatch_1": "59",
+          "snatch_2": "-62",
+          "snatch_3": "62",
+          "cj_1": "82",
+          "cj_2": "86",
+          "cj_3": "-90",
+          "best_snatch": "62",
+          "best_cj": "86",
+          "total": "148"
+        },
+        {
+          "meet_name": "2019 Capital City Open",
+          "date": "2019-04-07",
+          "division": "Open Women's 71kg",
+          "lifter_name": "Erin Garcia",
+          "body_weight_kg": "70.2",
+          "snatch_1": "58",
+          "snatch_2": "61",
+          "snatch_3": "-64",
+          "cj_1": "80",
+          "cj_2": "84",
+          "cj_3": "-87",
+          "best_snatch": "61",
+          "best_cj": "84",
+          "total": "145"
+        },
+        {
+          "meet_name": "2018 NOVA Open",
+          "date": "2018-10-21",
+          "division": "Open Women's 71kg",
+          "lifter_name": "Erin Garcia",
+          "body_weight_kg": "70.1",
+          "snatch_1": "54",
+          "snatch_2": "58",
+          "snatch_3": "-62",
+          "cj_1": "75",
+          "cj_2": "-78",
+          "cj_3": "78",
+          "best_snatch": "58",
+          "best_cj": "78",
+          "total": "136"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Muscletown USA Classic",
+            "date": "2019-08-24",
+            "division": "Open Women's 76kg",
+            "lifter_name": "Erin Garcia",
+            "body_weight_kg": "74.22",
+            "snatch_1": "59",
+            "snatch_2": "-62",
+            "snatch_3": "62",
+            "cj_1": "82",
+            "cj_2": "86",
+            "cj_3": "-90",
+            "best_snatch": "62",
+            "best_cj": "86",
+            "total": "148"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOC0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOC0yNCIsIndlaWdodF9jbGFzcyI6OTd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "11",
+            "athlete_name": "Erin Garcia",
+            "total": "148",
+            "gender": "F",
+            "age": "27",
+            "club_name": "Southern Maryland Weightlifting",
+            "membership_number": "1032124",
+            "wso": "DMV"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2019 Capital City Open",
+            "date": "2019-04-07",
+            "division": "Open Women's 71kg",
+            "lifter_name": "Erin Garcia",
+            "body_weight_kg": "70.2",
+            "snatch_1": "58",
+            "snatch_2": "61",
+            "snatch_3": "-64",
+            "cj_1": "80",
+            "cj_2": "84",
+            "cj_3": "-87",
+            "best_snatch": "61",
+            "best_cj": "84",
+            "total": "145"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0wNyIsIndlaWdodF9jbGFzcyI6OTZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "18",
+            "athlete_name": "Erin Garcia",
+            "total": "145",
+            "gender": "F",
+            "age": "27",
+            "club_name": "Southern Maryland Weightlifting",
+            "membership_number": "1032124",
+            "wso": "DMV"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2018 NOVA Open",
+            "date": "2018-10-21",
+            "division": "Open Women's 71kg",
+            "lifter_name": "Erin Garcia",
+            "body_weight_kg": "70.1",
+            "snatch_1": "54",
+            "snatch_2": "58",
+            "snatch_3": "-62",
+            "cj_1": "75",
+            "cj_2": "-78",
+            "cj_3": "78",
+            "best_snatch": "58",
+            "best_cj": "78",
+            "total": "136"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yMSIsIndlaWdodF9jbGFzcyI6OTZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "18",
+            "athlete_name": "Erin Garcia",
+            "total": "136",
+            "gender": "F",
+            "age": "26",
+            "club_name": "Southern Maryland Weightlifting",
+            "membership_number": "1032124",
+            "wso": "DMV"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 32751,
+      "athlete_name": "Erin Garcia",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/32751",
+      "contaminated_lifter_id": 6384,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T15:02:14.157Z",
+      "profile_data": {
+        "membership_number": "1012273",
+        "birth_year": 1995,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "DMV",
+        "national_rank": "4"
+      },
+      "competition_history": [
+        {
+          "meet_name": "NOVA Open",
+          "date": "2016-10-01",
+          "division": "Open Women's 48 kg",
+          "lifter_name": "Erin Garcia",
+          "body_weight_kg": "47.05",
+          "snatch_1": "34",
+          "snatch_2": "35",
+          "snatch_3": "-38",
+          "cj_1": "-52",
+          "cj_2": "52",
+          "cj_3": "-54",
+          "best_snatch": "35",
+          "best_cj": "52",
+          "total": "87"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "NOVA Open",
+            "date": "2016-10-01",
+            "division": "Open Women's 48 kg",
+            "lifter_name": "Erin Garcia",
+            "body_weight_kg": "47.05",
+            "snatch_1": "34",
+            "snatch_2": "35",
+            "snatch_3": "-38",
+            "cj_1": "-52",
+            "cj_2": "52",
+            "cj_3": "-54",
+            "best_snatch": "35",
+            "best_cj": "52",
+            "total": "87"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0wMSIsIndlaWdodF9jbGFzcyI6MzYyfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Erin Garcia",
+            "total": "87",
+            "gender": "F",
+            "age": "21",
+            "club_name": "-",
+            "membership_number": "1012273",
+            "wso": "DMV"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 26303,
+      "athlete_name": "Erin Garcia",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/26303",
+      "contaminated_lifter_id": 6384,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-27T12:39:36.446Z",
+      "profile_data": {
+        "membership_number": "157782",
+        "birth_year": 1991,
+        "gender": "F",
+        "club_name": "CALIFORNIA STRENGTH",
+        "wso": "Texas-Oklahoma",
+        "national_rank": "4"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Hassle Free Open and International Qualifier",
+          "date": "2014-03-09",
+          "division": "Open Women's +75 Kg",
+          "lifter_name": "Erin Garcia",
+          "body_weight_kg": "90.67",
+          "snatch_1": "82",
+          "snatch_2": "84",
+          "snatch_3": "86",
+          "cj_1": "103",
+          "cj_2": "106",
+          "cj_3": "109",
+          "best_snatch": "86",
+          "best_cj": "109",
+          "total": "195"
+        },
+        {
+          "meet_name": "2013 San antonio Weightlifting Championships",
+          "date": "2013-06-08",
+          "division": "Open Women's +75 Kg",
+          "lifter_name": "Erin Garcia",
+          "body_weight_kg": "82.2",
+          "snatch_1": "81",
+          "snatch_2": "85",
+          "snatch_3": "90",
+          "cj_1": "97",
+          "cj_2": "102",
+          "cj_3": "108",
+          "best_snatch": "90",
+          "best_cj": "108",
+          "total": "198"
+        },
+        {
+          "meet_name": "Yellow Jacket Open",
+          "date": "2013-05-18",
+          "division": "Open Women's +75 Kg",
+          "lifter_name": "Erin Garcia",
+          "body_weight_kg": "80",
+          "snatch_1": "80",
+          "snatch_2": "85",
+          "snatch_3": "89",
+          "cj_1": "95",
+          "cj_2": "101",
+          "cj_3": "106",
+          "best_snatch": "89",
+          "best_cj": "106",
+          "total": "195"
+        },
+        {
+          "meet_name": "Arnold Weightlifting Championships",
+          "date": "2013-03-03",
+          "division": "Open Women's 75 kg",
+          "lifter_name": "Erin Garcia",
+          "body_weight_kg": "74.78",
+          "snatch_1": "0",
+          "snatch_2": "0",
+          "snatch_3": "0",
+          "cj_1": "96",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "0",
+          "best_cj": "96",
+          "total": "0"
+        },
+        {
+          "meet_name": "2013 Texas State Weightlifting Championships",
+          "date": "2013-01-20",
+          "division": "Open Women's +75 Kg",
+          "lifter_name": "Erin Garcia",
+          "body_weight_kg": "75",
+          "snatch_1": "78",
+          "snatch_2": "81",
+          "snatch_3": "85",
+          "cj_1": "89",
+          "cj_2": "93",
+          "cj_3": "96",
+          "best_snatch": "85",
+          "best_cj": "96",
+          "total": "181"
+        },
+        {
+          "meet_name": "Texas State Championship",
+          "date": "2012-01-14",
+          "division": "Open Women's +75 Kg",
+          "lifter_name": "Erin Garcia",
+          "body_weight_kg": "87.8",
+          "snatch_1": "0",
+          "snatch_2": "0",
+          "snatch_3": "0",
+          "cj_1": "93",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "0",
+          "best_cj": "93",
+          "total": "0"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Hassle Free Open and International Qualifier",
+            "date": "2014-03-09",
+            "division": "Open Women's +75 Kg",
+            "lifter_name": "Erin Garcia",
+            "body_weight_kg": "90.67",
+            "snatch_1": "82",
+            "snatch_2": "84",
+            "snatch_3": "86",
+            "cj_1": "103",
+            "cj_2": "106",
+            "cj_3": "109",
+            "best_snatch": "86",
+            "best_cj": "109",
+            "total": "195"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0wOSIsIndlaWdodF9jbGFzcyI6MzY4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Erin Garcia",
+            "total": "195",
+            "gender": "F",
+            "age": "23",
+            "club_name": "CALIFORNIA STRENGTH",
+            "membership_number": "157782",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2013 San antonio Weightlifting Championships",
+            "date": "2013-06-08",
+            "division": "Open Women's +75 Kg",
+            "lifter_name": "Erin Garcia",
+            "body_weight_kg": "82.2",
+            "snatch_1": "81",
+            "snatch_2": "85",
+            "snatch_3": "90",
+            "cj_1": "97",
+            "cj_2": "102",
+            "cj_3": "108",
+            "best_snatch": "90",
+            "best_cj": "108",
+            "total": "198"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNi0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNi0wOCIsIndlaWdodF9jbGFzcyI6MzY4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Erin Garcia",
+            "total": "198",
+            "gender": "F",
+            "age": "22",
+            "club_name": "CALIFORNIA STRENGTH",
+            "membership_number": "157782",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Yellow Jacket Open",
+            "date": "2013-05-18",
+            "division": "Open Women's +75 Kg",
+            "lifter_name": "Erin Garcia",
+            "body_weight_kg": "80",
+            "snatch_1": "80",
+            "snatch_2": "85",
+            "snatch_3": "89",
+            "cj_1": "95",
+            "cj_2": "101",
+            "cj_3": "106",
+            "best_snatch": "89",
+            "best_cj": "106",
+            "total": "195"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNS0xOCIsIndlaWdodF9jbGFzcyI6MzY4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Erin Garcia",
+            "total": "195",
+            "gender": "F",
+            "age": "22",
+            "club_name": "CALIFORNIA STRENGTH",
+            "membership_number": "157782",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Arnold Weightlifting Championships",
+            "date": "2013-03-03",
+            "division": "Open Women's 75 kg",
+            "lifter_name": "Erin Garcia",
+            "body_weight_kg": "74.78",
+            "snatch_1": "0",
+            "snatch_2": "0",
+            "snatch_3": "0",
+            "cj_1": "96",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "0",
+            "best_cj": "96",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMy0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMy0wMyIsIndlaWdodF9jbGFzcyI6MzY3fQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2013 Texas State Weightlifting Championships",
+            "date": "2013-01-20",
+            "division": "Open Women's +75 Kg",
+            "lifter_name": "Erin Garcia",
+            "body_weight_kg": "75",
+            "snatch_1": "78",
+            "snatch_2": "81",
+            "snatch_3": "85",
+            "cj_1": "89",
+            "cj_2": "93",
+            "cj_3": "96",
+            "best_snatch": "85",
+            "best_cj": "96",
+            "total": "181"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMS0yMCIsIndlaWdodF9jbGFzcyI6MzY4fQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Texas State Championship",
+            "date": "2012-01-14",
+            "division": "Open Women's +75 Kg",
+            "lifter_name": "Erin Garcia",
+            "body_weight_kg": "87.8",
+            "snatch_1": "0",
+            "snatch_2": "0",
+            "snatch_3": "0",
+            "cj_1": "93",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "0",
+            "best_cj": "93",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wMS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wMS0xNCIsIndlaWdodF9jbGFzcyI6MzY4fQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    }
+  ]
+}

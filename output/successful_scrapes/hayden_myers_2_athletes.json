@@ -1,0 +1,200 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T23:38:00.835Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Hayden Myers",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 3,
+    "total_reverse_lookups": 3,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 81950929
+  },
+  "data": [
+    {
+      "internal_id": 62297,
+      "athlete_name": "Hayden Myers",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/62297",
+      "contaminated_lifter_id": 42369,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T23:37:38.964Z",
+      "profile_data": {
+        "membership_number": "1075370",
+        "birth_year": 2003,
+        "gender": "M",
+        "club_name": "Detour Athletics Barbell Club",
+        "wso": "Minnesota-Dakotas",
+        "national_rank": "4"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Caruso Classic",
+          "date": "2024-04-07",
+          "division": "Open Men's +109kg",
+          "lifter_name": "Hayden Myers",
+          "body_weight_kg": "112.66",
+          "snatch_1": "95",
+          "snatch_2": "101",
+          "snatch_3": "105",
+          "cj_1": "126",
+          "cj_2": "132",
+          "cj_3": "143",
+          "best_snatch": "105",
+          "best_cj": "143",
+          "total": "248"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Caruso Classic",
+            "date": "2024-04-07",
+            "division": "Open Men's +109kg",
+            "lifter_name": "Hayden Myers",
+            "body_weight_kg": "112.66",
+            "snatch_1": "95",
+            "snatch_2": "101",
+            "snatch_3": "105",
+            "cj_1": "126",
+            "cj_2": "132",
+            "cj_3": "143",
+            "best_snatch": "105",
+            "best_cj": "143",
+            "total": "248"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNC0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNC0wNyIsIndlaWdodF9jbGFzcyI6OTB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Hayden Myers",
+            "total": "248",
+            "gender": "M",
+            "age": "21",
+            "club_name": "Detour Athletics Barbell Club",
+            "membership_number": "1075370",
+            "wso": "Minnesota-Dakotas"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 43799,
+      "athlete_name": "Hayden Myers",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/43799",
+      "contaminated_lifter_id": 42369,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T23:38:00.833Z",
+      "profile_data": {
+        "membership_number": "1041011",
+        "birth_year": 2003,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Minnesota-Dakotas",
+        "national_rank": "3"
+      },
+      "competition_history": [
+        {
+          "meet_name": "All City Weightlifting Championships",
+          "date": "2020-02-16",
+          "division": "Open Men's 109kg",
+          "lifter_name": "Hayden Myers",
+          "body_weight_kg": "105.9",
+          "snatch_1": "85",
+          "snatch_2": "-92",
+          "snatch_3": "-95",
+          "cj_1": "112",
+          "cj_2": "120",
+          "cj_3": "130",
+          "best_snatch": "85",
+          "best_cj": "130",
+          "total": "215"
+        },
+        {
+          "meet_name": "Solcana Beginner Olympic Weightlifting Meet",
+          "date": "2019-05-11",
+          "division": "Open Men's 102kg",
+          "lifter_name": "Hayden Myers",
+          "body_weight_kg": "100.4",
+          "snatch_1": "65",
+          "snatch_2": "70",
+          "snatch_3": "-80",
+          "cj_1": "90",
+          "cj_2": "100",
+          "cj_3": "-110",
+          "best_snatch": "70",
+          "best_cj": "100",
+          "total": "170"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "All City Weightlifting Championships",
+            "date": "2020-02-16",
+            "division": "Open Men's 109kg",
+            "lifter_name": "Hayden Myers",
+            "body_weight_kg": "105.9",
+            "snatch_1": "85",
+            "snatch_2": "-92",
+            "snatch_3": "-95",
+            "cj_1": "112",
+            "cj_2": "120",
+            "cj_3": "130",
+            "best_snatch": "85",
+            "best_cj": "130",
+            "total": "215"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMi0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMi0xNiIsIndlaWdodF9jbGFzcyI6ODl9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Hayden Myers",
+            "total": "215",
+            "gender": "M",
+            "age": "17",
+            "club_name": "-",
+            "membership_number": "1041011",
+            "wso": "Minnesota-Dakotas"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Solcana Beginner Olympic Weightlifting Meet",
+            "date": "2019-05-11",
+            "division": "Open Men's 102kg",
+            "lifter_name": "Hayden Myers",
+            "body_weight_kg": "100.4",
+            "snatch_1": "65",
+            "snatch_2": "70",
+            "snatch_3": "-80",
+            "cj_1": "90",
+            "cj_2": "100",
+            "cj_3": "-110",
+            "best_snatch": "70",
+            "best_cj": "100",
+            "total": "170"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0xMSIsIndlaWdodF9jbGFzcyI6ODh9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "7",
+            "athlete_name": "Hayden Myers",
+            "total": "170",
+            "gender": "M",
+            "age": "16",
+            "club_name": "-",
+            "membership_number": "1041011",
+            "wso": "Minnesota-Dakotas"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

@@ -1,0 +1,388 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T16:28:26.862Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Jason Murphy",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 7,
+    "total_reverse_lookups": 7,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 56176956
+  },
+  "data": [
+    {
+      "internal_id": 48764,
+      "athlete_name": "Jason Murphy",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/48764",
+      "contaminated_lifter_id": 23839,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T16:28:16.683Z",
+      "profile_data": {
+        "membership_number": "1054000",
+        "birth_year": 1995,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Florida",
+        "national_rank": "35"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2022 Nike North American Open Series 1 Powered by Rogue",
+          "date": "2022-03-03",
+          "division": "Open Men's 73kg",
+          "lifter_name": "Jason Murphy",
+          "body_weight_kg": "69.95",
+          "snatch_1": "82",
+          "snatch_2": "-86",
+          "snatch_3": "86",
+          "cj_1": "113",
+          "cj_2": "-115",
+          "cj_3": "-116",
+          "best_snatch": "86",
+          "best_cj": "113",
+          "total": "199"
+        },
+        {
+          "meet_name": "The 2021 Florida State Championship",
+          "date": "2021-05-22",
+          "division": "Open Men's 73kg",
+          "lifter_name": "Jason Murphy",
+          "body_weight_kg": "68.8",
+          "snatch_1": "82",
+          "snatch_2": "-85",
+          "snatch_3": "-87",
+          "cj_1": "110",
+          "cj_2": "113",
+          "cj_3": "-115",
+          "best_snatch": "82",
+          "best_cj": "113",
+          "total": "195"
+        },
+        {
+          "meet_name": "Tradition Barbell Open",
+          "date": "2021-04-24",
+          "division": "Open Men's 73kg",
+          "lifter_name": "Jason Murphy",
+          "body_weight_kg": "70.3",
+          "snatch_1": "75",
+          "snatch_2": "79",
+          "snatch_3": "83",
+          "cj_1": "108",
+          "cj_2": "111",
+          "cj_3": "0",
+          "best_snatch": "83",
+          "best_cj": "111",
+          "total": "194"
+        },
+        {
+          "meet_name": "The Palm Beach Open 2021",
+          "date": "2021-01-30",
+          "division": "Open Men's 73kg",
+          "lifter_name": "Jason Murphy",
+          "body_weight_kg": "69.6",
+          "snatch_1": "70",
+          "snatch_2": "75",
+          "snatch_3": "79",
+          "cj_1": "102",
+          "cj_2": "106",
+          "cj_3": "110",
+          "best_snatch": "79",
+          "best_cj": "110",
+          "total": "189"
+        },
+        {
+          "meet_name": "The Palm Beach Open 2021",
+          "date": "2021-01-30",
+          "division": "Open Men's 73kg",
+          "lifter_name": "Jason Murphy",
+          "body_weight_kg": "69.6",
+          "snatch_1": "70",
+          "snatch_2": "75",
+          "snatch_3": "79",
+          "cj_1": "102",
+          "cj_2": "106",
+          "cj_3": "110",
+          "best_snatch": "79",
+          "best_cj": "110",
+          "total": "189"
+        },
+        {
+          "meet_name": "The Palm Beach Open 2021",
+          "date": "2021-01-30",
+          "division": "Open Men's 73kg",
+          "lifter_name": "Jason Murphy",
+          "body_weight_kg": "69.6",
+          "snatch_1": "70",
+          "snatch_2": "75",
+          "snatch_3": "79",
+          "cj_1": "102",
+          "cj_2": "106",
+          "cj_3": "110",
+          "best_snatch": "79",
+          "best_cj": "110",
+          "total": "189"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2022 Nike North American Open Series 1 Powered by Rogue",
+            "date": "2022-03-03",
+            "division": "Open Men's 73kg",
+            "lifter_name": "Jason Murphy",
+            "body_weight_kg": "69.95",
+            "snatch_1": "82",
+            "snatch_2": "-86",
+            "snatch_3": "86",
+            "cj_1": "113",
+            "cj_2": "-115",
+            "cj_3": "-116",
+            "best_snatch": "86",
+            "best_cj": "113",
+            "total": "199"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMy0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMy0wMyIsIndlaWdodF9jbGFzcyI6ODR9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "35",
+            "athlete_name": "Jason Murphy",
+            "total": "199",
+            "gender": "M",
+            "age": "27",
+            "club_name": "-",
+            "membership_number": "1054000",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The 2021 Florida State Championship",
+            "date": "2021-05-22",
+            "division": "Open Men's 73kg",
+            "lifter_name": "Jason Murphy",
+            "body_weight_kg": "68.8",
+            "snatch_1": "82",
+            "snatch_2": "-85",
+            "snatch_3": "-87",
+            "cj_1": "110",
+            "cj_2": "113",
+            "cj_3": "-115",
+            "best_snatch": "82",
+            "best_cj": "113",
+            "total": "195"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNS0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNS0yMiIsIndlaWdodF9jbGFzcyI6ODR9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "25",
+            "athlete_name": "Jason Murphy",
+            "total": "195",
+            "gender": "M",
+            "age": "26",
+            "club_name": "-",
+            "membership_number": "1054000",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Tradition Barbell Open",
+            "date": "2021-04-24",
+            "division": "Open Men's 73kg",
+            "lifter_name": "Jason Murphy",
+            "body_weight_kg": "70.3",
+            "snatch_1": "75",
+            "snatch_2": "79",
+            "snatch_3": "83",
+            "cj_1": "108",
+            "cj_2": "111",
+            "cj_3": "0",
+            "best_snatch": "83",
+            "best_cj": "111",
+            "total": "194"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNC0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNC0yNCIsIndlaWdodF9jbGFzcyI6ODR9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "7",
+            "athlete_name": "Jason Murphy",
+            "total": "194",
+            "gender": "M",
+            "age": "26",
+            "club_name": "-",
+            "membership_number": "1054000",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The Palm Beach Open 2021",
+            "date": "2021-01-30",
+            "division": "Open Men's 73kg",
+            "lifter_name": "Jason Murphy",
+            "body_weight_kg": "69.6",
+            "snatch_1": "70",
+            "snatch_2": "75",
+            "snatch_3": "79",
+            "cj_1": "102",
+            "cj_2": "106",
+            "cj_3": "110",
+            "best_snatch": "79",
+            "best_cj": "110",
+            "total": "189"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMS0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMS0zMCIsIndlaWdodF9jbGFzcyI6ODR9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "Jason Murphy",
+            "total": "189",
+            "gender": "M",
+            "age": "26",
+            "club_name": "-",
+            "membership_number": "1054000",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The Palm Beach Open 2021",
+            "date": "2021-01-30",
+            "division": "Open Men's 73kg",
+            "lifter_name": "Jason Murphy",
+            "body_weight_kg": "69.6",
+            "snatch_1": "70",
+            "snatch_2": "75",
+            "snatch_3": "79",
+            "cj_1": "102",
+            "cj_2": "106",
+            "cj_3": "110",
+            "best_snatch": "79",
+            "best_cj": "110",
+            "total": "189"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMS0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMS0zMCIsIndlaWdodF9jbGFzcyI6ODR9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "Jason Murphy",
+            "total": "189",
+            "gender": "M",
+            "age": "26",
+            "club_name": "-",
+            "membership_number": "1054000",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The Palm Beach Open 2021",
+            "date": "2021-01-30",
+            "division": "Open Men's 73kg",
+            "lifter_name": "Jason Murphy",
+            "body_weight_kg": "69.6",
+            "snatch_1": "70",
+            "snatch_2": "75",
+            "snatch_3": "79",
+            "cj_1": "102",
+            "cj_2": "106",
+            "cj_3": "110",
+            "best_snatch": "79",
+            "best_cj": "110",
+            "total": "189"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMS0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMS0zMCIsIndlaWdodF9jbGFzcyI6ODR9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "Jason Murphy",
+            "total": "189",
+            "gender": "M",
+            "age": "26",
+            "club_name": "-",
+            "membership_number": "1054000",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 6762,
+      "athlete_name": "Jason Murphy",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/6762",
+      "contaminated_lifter_id": 23839,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T16:28:26.860Z",
+      "profile_data": {
+        "membership_number": "1005589",
+        "birth_year": 1979,
+        "gender": "M",
+        "club_name": "Albany CrossFit Barbell Club",
+        "wso": "New York",
+        "national_rank": "20"
+      },
+      "competition_history": [
+        {
+          "meet_name": "The Liberty Games",
+          "date": "2016-07-16",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Jason Murphy",
+          "body_weight_kg": "139.25",
+          "snatch_1": "44",
+          "snatch_2": "46",
+          "snatch_3": "49",
+          "cj_1": "64",
+          "cj_2": "69",
+          "cj_3": "75",
+          "best_snatch": "49",
+          "best_cj": "75",
+          "total": "124"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "The Liberty Games",
+            "date": "2016-07-16",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Jason Murphy",
+            "body_weight_kg": "139.25",
+            "snatch_1": "44",
+            "snatch_2": "46",
+            "snatch_3": "49",
+            "cj_1": "64",
+            "cj_2": "69",
+            "cj_3": "75",
+            "best_snatch": "49",
+            "best_cj": "75",
+            "total": "124"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNy0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNy0xNiIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "20",
+            "athlete_name": "Jason Murphy",
+            "total": "124",
+            "gender": "M",
+            "age": "37",
+            "club_name": "Albany CrossFit Barbell Club",
+            "membership_number": "1005589",
+            "wso": "New York"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

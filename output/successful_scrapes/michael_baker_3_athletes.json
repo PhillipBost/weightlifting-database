@@ -1,0 +1,456 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T05:20:02.552Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Michael Baker",
+    "internal_ids_processed": 3,
+    "successful_scrapes": 3,
+    "failed_scrapes": 0,
+    "total_competitions_found": 8,
+    "total_reverse_lookups": 8,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 16072646
+  },
+  "data": [
+    {
+      "internal_id": 65034,
+      "athlete_name": "Michael Baker",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/65034",
+      "contaminated_lifter_id": 19335,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T05:19:18.071Z",
+      "profile_data": {
+        "membership_number": "1079779",
+        "birth_year": 1988,
+        "gender": "M",
+        "club_name": "Siuslaw Strength and Conditioning",
+        "wso": "Pacific Northwest",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "EASTSIDE 2025 Novice and Youth",
+          "date": "2025-01-11",
+          "division": "Men's Masters (35-39) 81kg",
+          "lifter_name": "Michael Baker",
+          "body_weight_kg": "80",
+          "snatch_1": "87",
+          "snatch_2": "89",
+          "snatch_3": "-94",
+          "cj_1": "108",
+          "cj_2": "111",
+          "cj_3": "115",
+          "best_snatch": "89",
+          "best_cj": "115",
+          "total": "204"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "EASTSIDE 2025 Novice and Youth",
+            "date": "2025-01-11",
+            "division": "Men's Masters (35-39) 81kg",
+            "lifter_name": "Michael Baker",
+            "body_weight_kg": "80",
+            "snatch_1": "87",
+            "snatch_2": "89",
+            "snatch_3": "-94",
+            "cj_1": "108",
+            "cj_2": "111",
+            "cj_3": "115",
+            "best_snatch": "89",
+            "best_cj": "115",
+            "total": "204"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMS0xMSIsIndlaWdodF9jbGFzcyI6MTA1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Michael Baker",
+            "total": "204",
+            "gender": "M",
+            "age": "37",
+            "club_name": "Siuslaw Strength and Conditioning",
+            "membership_number": "1079779",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 19333,
+      "athlete_name": "Michael Baker",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/19333",
+      "contaminated_lifter_id": 19335,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T05:19:27.855Z",
+      "profile_data": {
+        "membership_number": "192754",
+        "birth_year": 1988,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Mountain South",
+        "national_rank": "9"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Hoisting With Heart",
+          "date": "2014-02-22",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Michael Baker",
+          "body_weight_kg": "90.93",
+          "snatch_1": "94",
+          "snatch_2": "100",
+          "snatch_3": "-108",
+          "cj_1": "120",
+          "cj_2": "-125",
+          "cj_3": "-125",
+          "best_snatch": "100",
+          "best_cj": "120",
+          "total": "220"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Hoisting With Heart",
+            "date": "2014-02-22",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Michael Baker",
+            "body_weight_kg": "90.93",
+            "snatch_1": "94",
+            "snatch_2": "100",
+            "snatch_3": "-108",
+            "cj_1": "120",
+            "cj_2": "-125",
+            "cj_3": "-125",
+            "best_snatch": "100",
+            "best_cj": "120",
+            "total": "220"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMi0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMi0yMiIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "Michael Baker",
+            "total": "220",
+            "gender": "M",
+            "age": "26",
+            "club_name": "-",
+            "membership_number": "192754",
+            "wso": "Mountain South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 51196,
+      "athlete_name": "Michael Baker",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/51196",
+      "contaminated_lifter_id": 19335,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T05:20:02.550Z",
+      "profile_data": {
+        "membership_number": "1057451",
+        "birth_year": 1991,
+        "gender": "M",
+        "club_name": "Shinshengumi Weightlifting",
+        "wso": "Carolina",
+        "national_rank": "7"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Athletic Lab Winter Classic",
+          "date": "2022-01-22",
+          "division": "Open Men's +109kg",
+          "lifter_name": "Michael Baker",
+          "body_weight_kg": "143.7",
+          "snatch_1": "66",
+          "snatch_2": "-71",
+          "snatch_3": "-71",
+          "cj_1": "91",
+          "cj_2": "98",
+          "cj_3": "-105",
+          "best_snatch": "66",
+          "best_cj": "98",
+          "total": "164"
+        },
+        {
+          "meet_name": "South Carolina State Championships",
+          "date": "2021-10-23",
+          "division": "Open Men's +109kg",
+          "lifter_name": "Michael Baker",
+          "body_weight_kg": "141.7",
+          "snatch_1": "66",
+          "snatch_2": "-71",
+          "snatch_3": "70",
+          "cj_1": "84",
+          "cj_2": "93",
+          "cj_3": "-100",
+          "best_snatch": "70",
+          "best_cj": "93",
+          "total": "163"
+        },
+        {
+          "meet_name": "August online qualifier",
+          "date": "2021-11-07",
+          "division": "Open Men's +109kg",
+          "lifter_name": "Michael Baker",
+          "body_weight_kg": "131",
+          "snatch_1": "67",
+          "snatch_2": "0",
+          "snatch_3": "0",
+          "cj_1": "83",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "67",
+          "best_cj": "83",
+          "total": "150"
+        },
+        {
+          "meet_name": "August online qualifier",
+          "date": "2021-08-14",
+          "division": "Open Men's +109kg",
+          "lifter_name": "Michael Baker",
+          "body_weight_kg": "131",
+          "snatch_1": "67",
+          "snatch_2": "0",
+          "snatch_3": "0",
+          "cj_1": "83",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "67",
+          "best_cj": "83",
+          "total": "150"
+        },
+        {
+          "meet_name": "August online qualifier",
+          "date": "2021-08-14",
+          "division": "Open Men's +109kg",
+          "lifter_name": "Michael Baker",
+          "body_weight_kg": "131",
+          "snatch_1": "67",
+          "snatch_2": "0",
+          "snatch_3": "0",
+          "cj_1": "83",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "67",
+          "best_cj": "83",
+          "total": "150"
+        },
+        {
+          "meet_name": "Stars and Stripes Lift Off",
+          "date": "2021-07-31",
+          "division": "Open Men's +109kg",
+          "lifter_name": "Michael Baker",
+          "body_weight_kg": "131",
+          "snatch_1": "67",
+          "snatch_2": "0",
+          "snatch_3": "0",
+          "cj_1": "83",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "67",
+          "best_cj": "83",
+          "total": "150"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Athletic Lab Winter Classic",
+            "date": "2022-01-22",
+            "division": "Open Men's +109kg",
+            "lifter_name": "Michael Baker",
+            "body_weight_kg": "143.7",
+            "snatch_1": "66",
+            "snatch_2": "-71",
+            "snatch_3": "-71",
+            "cj_1": "91",
+            "cj_2": "98",
+            "cj_3": "-105",
+            "best_snatch": "66",
+            "best_cj": "98",
+            "total": "164"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMS0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMS0yMiIsIndlaWdodF9jbGFzcyI6OTB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "7",
+            "athlete_name": "Michael Baker",
+            "total": "164",
+            "gender": "M",
+            "age": "31",
+            "club_name": "Shinshengumi Weightlifting",
+            "membership_number": "1057451",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "South Carolina State Championships",
+            "date": "2021-10-23",
+            "division": "Open Men's +109kg",
+            "lifter_name": "Michael Baker",
+            "body_weight_kg": "141.7",
+            "snatch_1": "66",
+            "snatch_2": "-71",
+            "snatch_3": "70",
+            "cj_1": "84",
+            "cj_2": "93",
+            "cj_3": "-100",
+            "best_snatch": "70",
+            "best_cj": "93",
+            "total": "163"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMC0yMyIsIndlaWdodF9jbGFzcyI6OTB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "11",
+            "athlete_name": "Michael Baker",
+            "total": "163",
+            "gender": "M",
+            "age": "30",
+            "club_name": "Shinshengumi Weightlifting",
+            "membership_number": "1057451",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "August online qualifier",
+            "date": "2021-11-07",
+            "division": "Open Men's +109kg",
+            "lifter_name": "Michael Baker",
+            "body_weight_kg": "131",
+            "snatch_1": "67",
+            "snatch_2": "0",
+            "snatch_3": "0",
+            "cj_1": "83",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "67",
+            "best_cj": "83",
+            "total": "150"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMS0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMS0wNyIsIndlaWdodF9jbGFzcyI6OTB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "Michael Baker",
+            "total": "150",
+            "gender": "M",
+            "age": "30",
+            "club_name": "Shinshengumi Weightlifting",
+            "membership_number": "1057451",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "August online qualifier",
+            "date": "2021-08-14",
+            "division": "Open Men's +109kg",
+            "lifter_name": "Michael Baker",
+            "body_weight_kg": "131",
+            "snatch_1": "67",
+            "snatch_2": "0",
+            "snatch_3": "0",
+            "cj_1": "83",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "67",
+            "best_cj": "83",
+            "total": "150"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wOC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wOC0xNCIsIndlaWdodF9jbGFzcyI6OTB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "14",
+            "athlete_name": "Michael Baker",
+            "total": "150",
+            "gender": "M",
+            "age": "30",
+            "club_name": "Shinshengumi Weightlifting",
+            "membership_number": "1057451",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "August online qualifier",
+            "date": "2021-08-14",
+            "division": "Open Men's +109kg",
+            "lifter_name": "Michael Baker",
+            "body_weight_kg": "131",
+            "snatch_1": "67",
+            "snatch_2": "0",
+            "snatch_3": "0",
+            "cj_1": "83",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "67",
+            "best_cj": "83",
+            "total": "150"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wOC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wOC0xNCIsIndlaWdodF9jbGFzcyI6OTB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "14",
+            "athlete_name": "Michael Baker",
+            "total": "150",
+            "gender": "M",
+            "age": "30",
+            "club_name": "Shinshengumi Weightlifting",
+            "membership_number": "1057451",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Stars and Stripes Lift Off",
+            "date": "2021-07-31",
+            "division": "Open Men's +109kg",
+            "lifter_name": "Michael Baker",
+            "body_weight_kg": "131",
+            "snatch_1": "67",
+            "snatch_2": "0",
+            "snatch_3": "0",
+            "cj_1": "83",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "67",
+            "best_cj": "83",
+            "total": "150"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNy0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNy0zMSIsIndlaWdodF9jbGFzcyI6OTB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Michael Baker",
+            "total": "150",
+            "gender": "M",
+            "age": "30",
+            "club_name": "Shinshengumi Weightlifting",
+            "membership_number": "1057451",
+            "wso": "Carolina"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

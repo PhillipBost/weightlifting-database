@@ -1,0 +1,733 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T01:28:41.874Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Taylor Johnson",
+    "internal_ids_processed": 5,
+    "successful_scrapes": 5,
+    "failed_scrapes": 0,
+    "total_competitions_found": 13,
+    "total_reverse_lookups": 13,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 2191968
+  },
+  "data": [
+    {
+      "internal_id": 15201,
+      "athlete_name": "Taylor Johnson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/15201",
+      "contaminated_lifter_id": 2203,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T01:27:16.261Z",
+      "profile_data": {
+        "membership_number": "218104",
+        "birth_year": 1986,
+        "gender": "F",
+        "club_name": "SAYRE PARK WLC",
+        "wso": "Illinois",
+        "national_rank": "19"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Illumine Winter Open - Chicagoland",
+          "date": "2016-02-13",
+          "division": "Open Women's +75 Kg",
+          "lifter_name": "Taylor Johnson",
+          "body_weight_kg": "93.9",
+          "snatch_1": "43",
+          "snatch_2": "43",
+          "snatch_3": "43",
+          "cj_1": "50",
+          "cj_2": "53",
+          "cj_3": "55",
+          "best_snatch": "43",
+          "best_cj": "55",
+          "total": "98"
+        },
+        {
+          "meet_name": "Mid-American Weightlifting Championships",
+          "date": "2015-10-25",
+          "division": "Open Women's +75 Kg",
+          "lifter_name": "Taylor Johnson",
+          "body_weight_kg": "89.36",
+          "snatch_1": "40",
+          "snatch_2": "-44",
+          "snatch_3": "-45",
+          "cj_1": "50",
+          "cj_2": "53",
+          "cj_3": "-56",
+          "best_snatch": "40",
+          "best_cj": "53",
+          "total": "93"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Illumine Winter Open - Chicagoland",
+            "date": "2016-02-13",
+            "division": "Open Women's +75 Kg",
+            "lifter_name": "Taylor Johnson",
+            "body_weight_kg": "93.9",
+            "snatch_1": "43",
+            "snatch_2": "43",
+            "snatch_3": "43",
+            "cj_1": "50",
+            "cj_2": "53",
+            "cj_3": "55",
+            "best_snatch": "43",
+            "best_cj": "55",
+            "total": "98"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMi0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMi0xMyIsIndlaWdodF9jbGFzcyI6MzY4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "19",
+            "athlete_name": "Taylor Johnson",
+            "total": "98",
+            "gender": "F",
+            "age": "30",
+            "club_name": "SAYRE PARK WLC",
+            "membership_number": "218104",
+            "wso": "Illinois"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Mid-American Weightlifting Championships",
+            "date": "2015-10-25",
+            "division": "Open Women's +75 Kg",
+            "lifter_name": "Taylor Johnson",
+            "body_weight_kg": "89.36",
+            "snatch_1": "40",
+            "snatch_2": "-44",
+            "snatch_3": "-45",
+            "cj_1": "50",
+            "cj_2": "53",
+            "cj_3": "-56",
+            "best_snatch": "40",
+            "best_cj": "53",
+            "total": "93"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0yNSIsIndlaWdodF9jbGFzcyI6MzY4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "30",
+            "athlete_name": "Taylor Johnson",
+            "total": "93",
+            "gender": "F",
+            "age": "29",
+            "club_name": "SAYRE PARK WLC",
+            "membership_number": "218104",
+            "wso": "Illinois"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 20730,
+      "athlete_name": "Taylor Johnson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/20730",
+      "contaminated_lifter_id": 2203,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T01:27:46.169Z",
+      "profile_data": {
+        "membership_number": "1001688",
+        "birth_year": 1989,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Tennessee-Kentucky",
+        "national_rank": "11"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Spring Classic",
+          "date": "2016-05-14",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Taylor Johnson",
+          "body_weight_kg": "82.4",
+          "snatch_1": "-68",
+          "snatch_2": "68",
+          "snatch_3": "-71",
+          "cj_1": "82",
+          "cj_2": "84",
+          "cj_3": "88",
+          "best_snatch": "68",
+          "best_cj": "88",
+          "total": "156"
+        },
+        {
+          "meet_name": "Second Annual Kentucky  State Championship",
+          "date": "2016-03-19",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Taylor Johnson",
+          "body_weight_kg": "83",
+          "snatch_1": "72",
+          "snatch_2": "-75",
+          "snatch_3": "-75",
+          "cj_1": "80",
+          "cj_2": "-90",
+          "cj_3": "91",
+          "best_snatch": "72",
+          "best_cj": "91",
+          "total": "163"
+        },
+        {
+          "meet_name": "Last Chance Qualifier",
+          "date": "2016-02-20",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Taylor Johnson",
+          "body_weight_kg": "82.9",
+          "snatch_1": "67",
+          "snatch_2": "72",
+          "snatch_3": "-76",
+          "cj_1": "84",
+          "cj_2": "-90",
+          "cj_3": "-93",
+          "best_snatch": "72",
+          "best_cj": "84",
+          "total": "156"
+        },
+        {
+          "meet_name": "Bluegrass Barbell Winter Meet",
+          "date": "2016-01-09",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Taylor Johnson",
+          "body_weight_kg": "83.1",
+          "snatch_1": "60",
+          "snatch_2": "65",
+          "snatch_3": "-70",
+          "cj_1": "75",
+          "cj_2": "80",
+          "cj_3": "85",
+          "best_snatch": "65",
+          "best_cj": "85",
+          "total": "150"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Spring Classic",
+            "date": "2016-05-14",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Taylor Johnson",
+            "body_weight_kg": "82.4",
+            "snatch_1": "-68",
+            "snatch_2": "68",
+            "snatch_3": "-71",
+            "cj_1": "82",
+            "cj_2": "84",
+            "cj_3": "88",
+            "best_snatch": "68",
+            "best_cj": "88",
+            "total": "156"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0xNCIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "11",
+            "athlete_name": "Taylor Johnson",
+            "total": "156",
+            "gender": "M",
+            "age": "27",
+            "club_name": "-",
+            "membership_number": "1001688",
+            "wso": "Tennessee-Kentucky"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Second Annual Kentucky  State Championship",
+            "date": "2016-03-19",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Taylor Johnson",
+            "body_weight_kg": "83",
+            "snatch_1": "72",
+            "snatch_2": "-75",
+            "snatch_3": "-75",
+            "cj_1": "80",
+            "cj_2": "-90",
+            "cj_3": "91",
+            "best_snatch": "72",
+            "best_cj": "91",
+            "total": "163"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMy0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMy0xOSIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "68",
+            "athlete_name": "Taylor Johnson",
+            "total": "163",
+            "gender": "M",
+            "age": "27",
+            "club_name": "-",
+            "membership_number": "1001688",
+            "wso": "Tennessee-Kentucky"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Last Chance Qualifier",
+            "date": "2016-02-20",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Taylor Johnson",
+            "body_weight_kg": "82.9",
+            "snatch_1": "67",
+            "snatch_2": "72",
+            "snatch_3": "-76",
+            "cj_1": "84",
+            "cj_2": "-90",
+            "cj_3": "-93",
+            "best_snatch": "72",
+            "best_cj": "84",
+            "total": "156"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMi0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMi0yMCIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "22",
+            "athlete_name": "Taylor Johnson",
+            "total": "156",
+            "gender": "M",
+            "age": "27",
+            "club_name": "-",
+            "membership_number": "1001688",
+            "wso": "Tennessee-Kentucky"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Bluegrass Barbell Winter Meet",
+            "date": "2016-01-09",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Taylor Johnson",
+            "body_weight_kg": "83.1",
+            "snatch_1": "60",
+            "snatch_2": "65",
+            "snatch_3": "-70",
+            "cj_1": "75",
+            "cj_2": "80",
+            "cj_3": "85",
+            "best_snatch": "65",
+            "best_cj": "85",
+            "total": "150"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0wOSIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "28",
+            "athlete_name": "Taylor Johnson",
+            "total": "150",
+            "gender": "M",
+            "age": "27",
+            "club_name": "-",
+            "membership_number": "1001688",
+            "wso": "Tennessee-Kentucky"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 22081,
+      "athlete_name": "Taylor Johnson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/22081",
+      "contaminated_lifter_id": 2203,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T01:27:56.230Z",
+      "profile_data": {
+        "membership_number": "179031",
+        "birth_year": 1989,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Tennessee-Kentucky",
+        "national_rank": "29"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Kentucky Open Championship",
+          "date": "2016-10-23",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Taylor Johnson",
+          "body_weight_kg": "81.7",
+          "snatch_1": "-110",
+          "snatch_2": "-110",
+          "snatch_3": "111",
+          "cj_1": "140",
+          "cj_2": "-147",
+          "cj_3": "-147",
+          "best_snatch": "111",
+          "best_cj": "140",
+          "total": "251"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Kentucky Open Championship",
+            "date": "2016-10-23",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Taylor Johnson",
+            "body_weight_kg": "81.7",
+            "snatch_1": "-110",
+            "snatch_2": "-110",
+            "snatch_3": "111",
+            "cj_1": "140",
+            "cj_2": "-147",
+            "cj_3": "-147",
+            "best_snatch": "111",
+            "best_cj": "140",
+            "total": "251"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0yMyIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "29",
+            "athlete_name": "Taylor Johnson",
+            "total": "251",
+            "gender": "M",
+            "age": "27",
+            "club_name": "-",
+            "membership_number": "179031",
+            "wso": "Tennessee-Kentucky"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 24655,
+      "athlete_name": "Taylor Johnson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/24655",
+      "contaminated_lifter_id": 2203,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T01:28:32.453Z",
+      "profile_data": {
+        "membership_number": "1035077",
+        "birth_year": 1990,
+        "gender": "F",
+        "club_name": "TEAM CONNECTICUT",
+        "wso": "New England",
+        "national_rank": "22"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2019 CT State Weightlifting Championships",
+          "date": "2019-11-03",
+          "division": "Open Women's 71kg",
+          "lifter_name": "Taylor Johnson",
+          "body_weight_kg": "69.9",
+          "snatch_1": "53",
+          "snatch_2": "56",
+          "snatch_3": "-58",
+          "cj_1": "-74",
+          "cj_2": "76",
+          "cj_3": "-80",
+          "best_snatch": "56",
+          "best_cj": "76",
+          "total": "132"
+        },
+        {
+          "meet_name": "2019 Connecticut Open",
+          "date": "2019-08-04",
+          "division": "Open Women's 71kg",
+          "lifter_name": "Taylor Johnson",
+          "body_weight_kg": "68.46",
+          "snatch_1": "50",
+          "snatch_2": "55",
+          "snatch_3": "-60",
+          "cj_1": "75",
+          "cj_2": "78",
+          "cj_3": "-80",
+          "best_snatch": "55",
+          "best_cj": "78",
+          "total": "133"
+        },
+        {
+          "meet_name": "2019 Tri State Open",
+          "date": "2019-06-09",
+          "division": "Open Women's 71kg",
+          "lifter_name": "Taylor Johnson",
+          "body_weight_kg": "67.42",
+          "snatch_1": "50",
+          "snatch_2": "-55",
+          "snatch_3": "55",
+          "cj_1": "72",
+          "cj_2": "76",
+          "cj_3": "-80",
+          "best_snatch": "55",
+          "best_cj": "76",
+          "total": "131"
+        },
+        {
+          "meet_name": "New Haven Open",
+          "date": "2019-04-07",
+          "division": "Open Women's 71kg",
+          "lifter_name": "Taylor Johnson",
+          "body_weight_kg": "67.31",
+          "snatch_1": "50",
+          "snatch_2": "53",
+          "snatch_3": "-56",
+          "cj_1": "70",
+          "cj_2": "-74",
+          "cj_3": "76",
+          "best_snatch": "53",
+          "best_cj": "76",
+          "total": "129"
+        },
+        {
+          "meet_name": "CT State Weightlifting Championships",
+          "date": "2018-11-18",
+          "division": "Open Women's 71kg",
+          "lifter_name": "Taylor Johnson",
+          "body_weight_kg": "65.59",
+          "snatch_1": "40",
+          "snatch_2": "43",
+          "snatch_3": "45",
+          "cj_1": "55",
+          "cj_2": "60",
+          "cj_3": "65",
+          "best_snatch": "45",
+          "best_cj": "65",
+          "total": "110"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2019 CT State Weightlifting Championships",
+            "date": "2019-11-03",
+            "division": "Open Women's 71kg",
+            "lifter_name": "Taylor Johnson",
+            "body_weight_kg": "69.9",
+            "snatch_1": "53",
+            "snatch_2": "56",
+            "snatch_3": "-58",
+            "cj_1": "-74",
+            "cj_2": "76",
+            "cj_3": "-80",
+            "best_snatch": "56",
+            "best_cj": "76",
+            "total": "132"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0wMyIsIndlaWdodF9jbGFzcyI6OTZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "22",
+            "athlete_name": "Taylor Johnson",
+            "total": "132",
+            "gender": "F",
+            "age": "29",
+            "club_name": "TEAM CONNECTICUT",
+            "membership_number": "1035077",
+            "wso": "New England"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2019 Connecticut Open",
+            "date": "2019-08-04",
+            "division": "Open Women's 71kg",
+            "lifter_name": "Taylor Johnson",
+            "body_weight_kg": "68.46",
+            "snatch_1": "50",
+            "snatch_2": "55",
+            "snatch_3": "-60",
+            "cj_1": "75",
+            "cj_2": "78",
+            "cj_3": "-80",
+            "best_snatch": "55",
+            "best_cj": "78",
+            "total": "133"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOC0wNCIsIndlaWdodF9jbGFzcyI6OTZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "17",
+            "athlete_name": "Taylor Johnson",
+            "total": "133",
+            "gender": "F",
+            "age": "29",
+            "club_name": "TEAM CONNECTICUT",
+            "membership_number": "1035077",
+            "wso": "New England"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2019 Tri State Open",
+            "date": "2019-06-09",
+            "division": "Open Women's 71kg",
+            "lifter_name": "Taylor Johnson",
+            "body_weight_kg": "67.42",
+            "snatch_1": "50",
+            "snatch_2": "-55",
+            "snatch_3": "55",
+            "cj_1": "72",
+            "cj_2": "76",
+            "cj_3": "-80",
+            "best_snatch": "55",
+            "best_cj": "76",
+            "total": "131"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNi0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNi0wOSIsIndlaWdodF9jbGFzcyI6OTZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "14",
+            "athlete_name": "Taylor Johnson",
+            "total": "131",
+            "gender": "F",
+            "age": "29",
+            "club_name": "TEAM CONNECTICUT",
+            "membership_number": "1035077",
+            "wso": "New England"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "New Haven Open",
+            "date": "2019-04-07",
+            "division": "Open Women's 71kg",
+            "lifter_name": "Taylor Johnson",
+            "body_weight_kg": "67.31",
+            "snatch_1": "50",
+            "snatch_2": "53",
+            "snatch_3": "-56",
+            "cj_1": "70",
+            "cj_2": "-74",
+            "cj_3": "76",
+            "best_snatch": "53",
+            "best_cj": "76",
+            "total": "129"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0wNyIsIndlaWdodF9jbGFzcyI6OTZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "31",
+            "athlete_name": "Taylor Johnson",
+            "total": "129",
+            "gender": "F",
+            "age": "29",
+            "club_name": "TEAM CONNECTICUT",
+            "membership_number": "1035077",
+            "wso": "New England"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "CT State Weightlifting Championships",
+            "date": "2018-11-18",
+            "division": "Open Women's 71kg",
+            "lifter_name": "Taylor Johnson",
+            "body_weight_kg": "65.59",
+            "snatch_1": "40",
+            "snatch_2": "43",
+            "snatch_3": "45",
+            "cj_1": "55",
+            "cj_2": "60",
+            "cj_3": "65",
+            "best_snatch": "45",
+            "best_cj": "65",
+            "total": "110"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMS0xOCIsIndlaWdodF9jbGFzcyI6OTZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "23",
+            "athlete_name": "Taylor Johnson",
+            "total": "110",
+            "gender": "F",
+            "age": "28",
+            "club_name": "TEAM CONNECTICUT",
+            "membership_number": "1035077",
+            "wso": "New England"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 30964,
+      "athlete_name": "Taylor Johnson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/30964",
+      "contaminated_lifter_id": 2203,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T01:28:41.870Z",
+      "profile_data": {
+        "membership_number": "176298",
+        "birth_year": 1994,
+        "gender": "F",
+        "club_name": "BUFFALO BARBELL CLUB",
+        "wso": "New York",
+        "national_rank": "2"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Seneca Open and Niagala LWC Elections",
+          "date": "2012-07-29",
+          "division": "Open Women's +75 Kg",
+          "lifter_name": "Taylor Johnson",
+          "body_weight_kg": "78.8",
+          "snatch_1": "25",
+          "snatch_2": "28",
+          "snatch_3": "31",
+          "cj_1": "32",
+          "cj_2": "35",
+          "cj_3": "39",
+          "best_snatch": "31",
+          "best_cj": "39",
+          "total": "70"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Seneca Open and Niagala LWC Elections",
+            "date": "2012-07-29",
+            "division": "Open Women's +75 Kg",
+            "lifter_name": "Taylor Johnson",
+            "body_weight_kg": "78.8",
+            "snatch_1": "25",
+            "snatch_2": "28",
+            "snatch_3": "31",
+            "cj_1": "32",
+            "cj_2": "35",
+            "cj_3": "39",
+            "best_snatch": "31",
+            "best_cj": "39",
+            "total": "70"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wNy0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wNy0yOSIsIndlaWdodF9jbGFzcyI6MzY4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Taylor Johnson",
+            "total": "70",
+            "gender": "F",
+            "age": "18",
+            "club_name": "BUFFALO BARBELL CLUB",
+            "membership_number": "176298",
+            "wso": "New York"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

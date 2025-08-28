@@ -1,0 +1,200 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T05:10:57.469Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Erin Davis",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 3,
+    "total_reverse_lookups": 3,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 101927563
+  },
+  "data": [
+    {
+      "internal_id": 36971,
+      "athlete_name": "Erin Davis",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/36971",
+      "contaminated_lifter_id": 38047,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T05:10:33.920Z",
+      "profile_data": {
+        "membership_number": "1032550",
+        "birth_year": 1997,
+        "gender": "F",
+        "club_name": "Feel The Steel Barbell Club",
+        "wso": "California South",
+        "national_rank": "21"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2018 Fortius Halloween Open",
+          "date": "2018-10-21",
+          "division": "Open Women's 59kg",
+          "lifter_name": "Erin Davis",
+          "body_weight_kg": "56.84",
+          "snatch_1": "40",
+          "snatch_2": "43",
+          "snatch_3": "-46",
+          "cj_1": "50",
+          "cj_2": "54",
+          "cj_3": "57",
+          "best_snatch": "43",
+          "best_cj": "57",
+          "total": "100"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2018 Fortius Halloween Open",
+            "date": "2018-10-21",
+            "division": "Open Women's 59kg",
+            "lifter_name": "Erin Davis",
+            "body_weight_kg": "56.84",
+            "snatch_1": "40",
+            "snatch_2": "43",
+            "snatch_3": "-46",
+            "cj_1": "50",
+            "cj_2": "54",
+            "cj_3": "57",
+            "best_snatch": "43",
+            "best_cj": "57",
+            "total": "100"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yMSIsIndlaWdodF9jbGFzcyI6OTR9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "21",
+            "athlete_name": "Erin Davis",
+            "total": "100",
+            "gender": "F",
+            "age": "21",
+            "club_name": "Feel The Steel Barbell Club",
+            "membership_number": "1032550",
+            "wso": "California South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 58716,
+      "athlete_name": "Erin Davis",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/58716",
+      "contaminated_lifter_id": 38047,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T05:10:57.467Z",
+      "profile_data": {
+        "membership_number": "1070158",
+        "birth_year": 2002,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "New York",
+        "national_rank": "55"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Capital Weightlifting Classic",
+          "date": "2024-05-11",
+          "division": "Open Women's 71kg",
+          "lifter_name": "Erin Davis",
+          "body_weight_kg": "67.1",
+          "snatch_1": "48",
+          "snatch_2": "51",
+          "snatch_3": "-55",
+          "cj_1": "70",
+          "cj_2": "74",
+          "cj_3": "-77",
+          "best_snatch": "51",
+          "best_cj": "74",
+          "total": "125"
+        },
+        {
+          "meet_name": "2023 Western New York Regional Open",
+          "date": "2023-05-07",
+          "division": "Open Women's 71kg",
+          "lifter_name": "Erin Davis",
+          "body_weight_kg": "69.7",
+          "snatch_1": "48",
+          "snatch_2": "-52",
+          "snatch_3": "52",
+          "cj_1": "69",
+          "cj_2": "74",
+          "cj_3": "-77",
+          "best_snatch": "52",
+          "best_cj": "74",
+          "total": "126"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Capital Weightlifting Classic",
+            "date": "2024-05-11",
+            "division": "Open Women's 71kg",
+            "lifter_name": "Erin Davis",
+            "body_weight_kg": "67.1",
+            "snatch_1": "48",
+            "snatch_2": "51",
+            "snatch_3": "-55",
+            "cj_1": "70",
+            "cj_2": "74",
+            "cj_3": "-77",
+            "best_snatch": "51",
+            "best_cj": "74",
+            "total": "125"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNS0xMSIsIndlaWdodF9jbGFzcyI6OTZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "55",
+            "athlete_name": "Erin Davis",
+            "total": "125",
+            "gender": "F",
+            "age": "22",
+            "club_name": "-",
+            "membership_number": "1070158",
+            "wso": "New York"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2023 Western New York Regional Open",
+            "date": "2023-05-07",
+            "division": "Open Women's 71kg",
+            "lifter_name": "Erin Davis",
+            "body_weight_kg": "69.7",
+            "snatch_1": "48",
+            "snatch_2": "-52",
+            "snatch_3": "52",
+            "cj_1": "69",
+            "cj_2": "74",
+            "cj_3": "-77",
+            "best_snatch": "52",
+            "best_cj": "74",
+            "total": "126"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNS0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNS0wNyIsIndlaWdodF9jbGFzcyI6OTZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "8",
+            "athlete_name": "Erin Davis",
+            "total": "126",
+            "gender": "F",
+            "age": "21",
+            "club_name": "-",
+            "membership_number": "1070158",
+            "wso": "New York"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

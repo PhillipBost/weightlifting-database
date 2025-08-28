@@ -1,0 +1,435 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T14:02:05.805Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Carly Long",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 8,
+    "total_reverse_lookups": 8,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 47395899
+  },
+  "data": [
+    {
+      "internal_id": 57895,
+      "athlete_name": "Carly Long",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/57895",
+      "contaminated_lifter_id": 49897,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T14:01:55.603Z",
+      "profile_data": {
+        "membership_number": "1069726",
+        "birth_year": 1981,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "California North Central",
+        "national_rank": "20"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Hassle Free Barbell Spring Open",
+          "date": "2025-04-12",
+          "division": "Open Women's 71kg",
+          "lifter_name": "Carly Long",
+          "body_weight_kg": "70.1",
+          "snatch_1": "51",
+          "snatch_2": "53",
+          "snatch_3": "55",
+          "cj_1": "65",
+          "cj_2": "-67",
+          "cj_3": "67",
+          "best_snatch": "55",
+          "best_cj": "67",
+          "total": "122"
+        },
+        {
+          "meet_name": "Bar Wars 2025",
+          "date": "2025-01-11",
+          "division": "Open Women's 71kg",
+          "lifter_name": "Carly Long",
+          "body_weight_kg": "68.35",
+          "snatch_1": "50",
+          "snatch_2": "52",
+          "snatch_3": "54",
+          "cj_1": "64",
+          "cj_2": "67",
+          "cj_3": "70",
+          "best_snatch": "54",
+          "best_cj": "70",
+          "total": "124"
+        },
+        {
+          "meet_name": "2024 Marin (Mother's Day) Open",
+          "date": "2024-05-12",
+          "division": "Women's Masters (40-44) 71kg",
+          "lifter_name": "Carly Long",
+          "body_weight_kg": "68",
+          "snatch_1": "49",
+          "snatch_2": "51",
+          "snatch_3": "53",
+          "cj_1": "63",
+          "cj_2": "-66",
+          "cj_3": "66",
+          "best_snatch": "53",
+          "best_cj": "66",
+          "total": "119"
+        },
+        {
+          "meet_name": "The Nike 2024 USA Weightlifting Masters National Championships Powered by Rogue Fitness",
+          "date": "2024-03-22",
+          "division": "Women's Masters (40-44) 71kg",
+          "lifter_name": "Carly Long",
+          "body_weight_kg": "66.39",
+          "snatch_1": "48",
+          "snatch_2": "-50",
+          "snatch_3": "50",
+          "cj_1": "62",
+          "cj_2": "65",
+          "cj_3": "-67",
+          "best_snatch": "50",
+          "best_cj": "65",
+          "total": "115"
+        },
+        {
+          "meet_name": "2023 Oakland Open",
+          "date": "2023-12-03",
+          "division": "Women's Masters (40-44) 71kg",
+          "lifter_name": "Carly Long",
+          "body_weight_kg": "66.8",
+          "snatch_1": "48",
+          "snatch_2": "-52",
+          "snatch_3": "-52",
+          "cj_1": "62",
+          "cj_2": "-64",
+          "cj_3": "66",
+          "best_snatch": "48",
+          "best_cj": "66",
+          "total": "114"
+        },
+        {
+          "meet_name": "2023 Max's Gym Open",
+          "date": "2023-07-16",
+          "division": "Open Women's 71kg",
+          "lifter_name": "Carly Long",
+          "body_weight_kg": "66.5",
+          "snatch_1": "44",
+          "snatch_2": "46",
+          "snatch_3": "-52",
+          "cj_1": "-58",
+          "cj_2": "59",
+          "cj_3": "-61",
+          "best_snatch": "46",
+          "best_cj": "59",
+          "total": "105"
+        },
+        {
+          "meet_name": "Rite of Passage 2023",
+          "date": "2023-03-25",
+          "division": "Women's Masters (40-44) 71kg",
+          "lifter_name": "Carly Long",
+          "body_weight_kg": "64.25",
+          "snatch_1": "43",
+          "snatch_2": "48",
+          "snatch_3": "-52",
+          "cj_1": "-57",
+          "cj_2": "61",
+          "cj_3": "-66",
+          "best_snatch": "48",
+          "best_cj": "61",
+          "total": "109"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Hassle Free Barbell Spring Open",
+            "date": "2025-04-12",
+            "division": "Open Women's 71kg",
+            "lifter_name": "Carly Long",
+            "body_weight_kg": "70.1",
+            "snatch_1": "51",
+            "snatch_2": "53",
+            "snatch_3": "55",
+            "cj_1": "65",
+            "cj_2": "-67",
+            "cj_3": "67",
+            "best_snatch": "55",
+            "best_cj": "67",
+            "total": "122"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNC0xMiIsIndlaWdodF9jbGFzcyI6OTZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "20",
+            "athlete_name": "Carly Long",
+            "total": "122",
+            "gender": "F",
+            "age": "44",
+            "club_name": "-",
+            "membership_number": "1069726",
+            "wso": "California North Central"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Bar Wars 2025",
+            "date": "2025-01-11",
+            "division": "Open Women's 71kg",
+            "lifter_name": "Carly Long",
+            "body_weight_kg": "68.35",
+            "snatch_1": "50",
+            "snatch_2": "52",
+            "snatch_3": "54",
+            "cj_1": "64",
+            "cj_2": "67",
+            "cj_3": "70",
+            "best_snatch": "54",
+            "best_cj": "70",
+            "total": "124"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMS0xMSIsIndlaWdodF9jbGFzcyI6OTZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "13",
+            "athlete_name": "Carly Long",
+            "total": "124",
+            "gender": "F",
+            "age": "44",
+            "club_name": "-",
+            "membership_number": "1069726",
+            "wso": "California North Central"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2024 Marin (Mother's Day) Open",
+            "date": "2024-05-12",
+            "division": "Women's Masters (40-44) 71kg",
+            "lifter_name": "Carly Long",
+            "body_weight_kg": "68",
+            "snatch_1": "49",
+            "snatch_2": "51",
+            "snatch_3": "53",
+            "cj_1": "63",
+            "cj_2": "-66",
+            "cj_3": "66",
+            "best_snatch": "53",
+            "best_cj": "66",
+            "total": "119"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNS0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNS0xMiIsIndlaWdodF9jbGFzcyI6MTM2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Carly Long",
+            "total": "119",
+            "gender": "F",
+            "age": "43",
+            "club_name": "-",
+            "membership_number": "1069726",
+            "wso": "California North Central"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The Nike 2024 USA Weightlifting Masters National Championships Powered by Rogue Fitness",
+            "date": "2024-03-22",
+            "division": "Women's Masters (40-44) 71kg",
+            "lifter_name": "Carly Long",
+            "body_weight_kg": "66.39",
+            "snatch_1": "48",
+            "snatch_2": "-50",
+            "snatch_3": "50",
+            "cj_1": "62",
+            "cj_2": "65",
+            "cj_3": "-67",
+            "best_snatch": "50",
+            "best_cj": "65",
+            "total": "115"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMy0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMy0yMiIsIndlaWdodF9jbGFzcyI6MTM2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "7",
+            "athlete_name": "Carly Long",
+            "total": "115",
+            "gender": "F",
+            "age": "43",
+            "club_name": "-",
+            "membership_number": "1069726",
+            "wso": "California North Central"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2023 Oakland Open",
+            "date": "2023-12-03",
+            "division": "Women's Masters (40-44) 71kg",
+            "lifter_name": "Carly Long",
+            "body_weight_kg": "66.8",
+            "snatch_1": "48",
+            "snatch_2": "-52",
+            "snatch_3": "-52",
+            "cj_1": "62",
+            "cj_2": "-64",
+            "cj_3": "66",
+            "best_snatch": "48",
+            "best_cj": "66",
+            "total": "114"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMi0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMi0wMyIsIndlaWdodF9jbGFzcyI6MTM2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Carly Long",
+            "total": "114",
+            "gender": "F",
+            "age": "42",
+            "club_name": "-",
+            "membership_number": "1069726",
+            "wso": "California North Central"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2023 Max's Gym Open",
+            "date": "2023-07-16",
+            "division": "Open Women's 71kg",
+            "lifter_name": "Carly Long",
+            "body_weight_kg": "66.5",
+            "snatch_1": "44",
+            "snatch_2": "46",
+            "snatch_3": "-52",
+            "cj_1": "-58",
+            "cj_2": "59",
+            "cj_3": "-61",
+            "best_snatch": "46",
+            "best_cj": "59",
+            "total": "105"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNy0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNy0xNiIsIndlaWdodF9jbGFzcyI6OTZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "12",
+            "athlete_name": "Carly Long",
+            "total": "105",
+            "gender": "F",
+            "age": "42",
+            "club_name": "-",
+            "membership_number": "1069726",
+            "wso": "California North Central"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Rite of Passage 2023",
+            "date": "2023-03-25",
+            "division": "Women's Masters (40-44) 71kg",
+            "lifter_name": "Carly Long",
+            "body_weight_kg": "64.25",
+            "snatch_1": "43",
+            "snatch_2": "48",
+            "snatch_3": "-52",
+            "cj_1": "-57",
+            "cj_2": "61",
+            "cj_3": "-66",
+            "best_snatch": "48",
+            "best_cj": "61",
+            "total": "109"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMy0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMy0yNSIsIndlaWdodF9jbGFzcyI6MTM2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Carly Long",
+            "total": "109",
+            "gender": "F",
+            "age": "42",
+            "club_name": "-",
+            "membership_number": "1069726",
+            "wso": "California North Central"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 51767,
+      "athlete_name": "Carly Long",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/51767",
+      "contaminated_lifter_id": 49897,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T14:02:05.803Z",
+      "profile_data": {
+        "membership_number": "1058550",
+        "birth_year": 1993,
+        "gender": "F",
+        "club_name": "Tacoma Strength Weightlifting",
+        "wso": "Pacific Northwest",
+        "national_rank": "11"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Puget Sound Classic",
+          "date": "2021-09-25",
+          "division": "Open Women's 55kg",
+          "lifter_name": "Carly Long",
+          "body_weight_kg": "55",
+          "snatch_1": "30",
+          "snatch_2": "33",
+          "snatch_3": "33",
+          "cj_1": "42",
+          "cj_2": "46",
+          "cj_3": "46",
+          "best_snatch": "33",
+          "best_cj": "46",
+          "total": "79"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Puget Sound Classic",
+            "date": "2021-09-25",
+            "division": "Open Women's 55kg",
+            "lifter_name": "Carly Long",
+            "body_weight_kg": "55",
+            "snatch_1": "30",
+            "snatch_2": "33",
+            "snatch_3": "33",
+            "cj_1": "42",
+            "cj_2": "46",
+            "cj_3": "46",
+            "best_snatch": "33",
+            "best_cj": "46",
+            "total": "79"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wOS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wOS0yNSIsIndlaWdodF9jbGFzcyI6OTN9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "11",
+            "athlete_name": "Carly Long",
+            "total": "79",
+            "gender": "F",
+            "age": "28",
+            "club_name": "Tacoma Strength Weightlifting",
+            "membership_number": "1058550",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

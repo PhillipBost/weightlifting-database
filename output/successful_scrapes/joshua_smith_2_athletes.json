@@ -1,0 +1,341 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T19:13:24.730Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Joshua Smith",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 6,
+    "total_reverse_lookups": 6,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 66074824
+  },
+  "data": [
+    {
+      "internal_id": 21444,
+      "athlete_name": "Joshua Smith",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/21444",
+      "contaminated_lifter_id": 9693,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T19:13:01.735Z",
+      "profile_data": {
+        "membership_number": "133687",
+        "birth_year": 1989,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Tennessee-Kentucky",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "NWC-Battle of the Champions",
+          "date": "2025-07-12",
+          "division": "Men's Masters (35-39) 110kg",
+          "lifter_name": "Joshua Smith",
+          "body_weight_kg": "109.1",
+          "snatch_1": "105",
+          "snatch_2": "110",
+          "snatch_3": "115",
+          "cj_1": "140",
+          "cj_2": "145",
+          "cj_3": "-155",
+          "best_snatch": "115",
+          "best_cj": "145",
+          "total": "260"
+        },
+        {
+          "meet_name": "2021- TN State Championship",
+          "date": "2021-09-25",
+          "division": "Open Men's 109kg",
+          "lifter_name": "Joshua Smith",
+          "body_weight_kg": "104.6",
+          "snatch_1": "110",
+          "snatch_2": "115",
+          "snatch_3": "-120",
+          "cj_1": "140",
+          "cj_2": "142",
+          "cj_3": "150",
+          "best_snatch": "115",
+          "best_cj": "150",
+          "total": "265"
+        },
+        {
+          "meet_name": "BASA BIG Sunday Open",
+          "date": "2017-06-04",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Joshua Smith",
+          "body_weight_kg": "109.4",
+          "snatch_1": "115",
+          "snatch_2": "120",
+          "snatch_3": "125",
+          "cj_1": "145",
+          "cj_2": "150",
+          "cj_3": "155",
+          "best_snatch": "125",
+          "best_cj": "155",
+          "total": "280"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "NWC-Battle of the Champions",
+            "date": "2025-07-12",
+            "division": "Men's Masters (35-39) 110kg",
+            "lifter_name": "Joshua Smith",
+            "body_weight_kg": "109.1",
+            "snatch_1": "105",
+            "snatch_2": "110",
+            "snatch_3": "115",
+            "cj_1": "140",
+            "cj_2": "145",
+            "cj_3": "-155",
+            "best_snatch": "115",
+            "best_cj": "145",
+            "total": "260"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNy0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNy0xMiIsIndlaWdodF9jbGFzcyI6Njk1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Joshua Smith",
+            "total": "260",
+            "gender": "M",
+            "age": "36",
+            "club_name": "-",
+            "membership_number": "133687",
+            "wso": "Tennessee-Kentucky"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2021- TN State Championship",
+            "date": "2021-09-25",
+            "division": "Open Men's 109kg",
+            "lifter_name": "Joshua Smith",
+            "body_weight_kg": "104.6",
+            "snatch_1": "110",
+            "snatch_2": "115",
+            "snatch_3": "-120",
+            "cj_1": "140",
+            "cj_2": "142",
+            "cj_3": "150",
+            "best_snatch": "115",
+            "best_cj": "150",
+            "total": "265"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wOS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wOS0yNSIsIndlaWdodF9jbGFzcyI6ODl9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Joshua Smith",
+            "total": "265",
+            "gender": "M",
+            "age": "32",
+            "club_name": "-",
+            "membership_number": "133687",
+            "wso": "Tennessee-Kentucky"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "BASA BIG Sunday Open",
+            "date": "2017-06-04",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Joshua Smith",
+            "body_weight_kg": "109.4",
+            "snatch_1": "115",
+            "snatch_2": "120",
+            "snatch_3": "125",
+            "cj_1": "145",
+            "cj_2": "150",
+            "cj_3": "155",
+            "best_snatch": "125",
+            "best_cj": "155",
+            "total": "280"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNi0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNi0wNCIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Joshua Smith",
+            "total": "280",
+            "gender": "M",
+            "age": "28",
+            "club_name": "-",
+            "membership_number": "133687",
+            "wso": "Tennessee-Kentucky"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 10873,
+      "athlete_name": "Joshua Smith",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/10873",
+      "contaminated_lifter_id": 9693,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T19:13:24.729Z",
+      "profile_data": {
+        "membership_number": "198034",
+        "birth_year": 1983,
+        "gender": "M",
+        "club_name": "CROSSFIT MOHAWK VALLEY",
+        "wso": "New York",
+        "national_rank": "5"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Liberty Games",
+          "date": "2015-07-12",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Joshua Smith",
+          "body_weight_kg": "96.16",
+          "snatch_1": "95",
+          "snatch_2": "97",
+          "snatch_3": "100",
+          "cj_1": "117",
+          "cj_2": "120",
+          "cj_3": "0",
+          "best_snatch": "100",
+          "best_cj": "120",
+          "total": "220"
+        },
+        {
+          "meet_name": "Elmira Spring Open",
+          "date": "2015-04-25",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Joshua Smith",
+          "body_weight_kg": "98.6",
+          "snatch_1": "-90",
+          "snatch_2": "93",
+          "snatch_3": "-100",
+          "cj_1": "115",
+          "cj_2": "120",
+          "cj_3": "-127",
+          "best_snatch": "93",
+          "best_cj": "120",
+          "total": "213"
+        },
+        {
+          "meet_name": "General Meng Yi Last qualifier",
+          "date": "2014-11-02",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Joshua Smith",
+          "body_weight_kg": "99.8",
+          "snatch_1": "85",
+          "snatch_2": "90",
+          "snatch_3": "-97",
+          "cj_1": "110",
+          "cj_2": "115",
+          "cj_3": "120",
+          "best_snatch": "90",
+          "best_cj": "120",
+          "total": "210"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Liberty Games",
+            "date": "2015-07-12",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Joshua Smith",
+            "body_weight_kg": "96.16",
+            "snatch_1": "95",
+            "snatch_2": "97",
+            "snatch_3": "100",
+            "cj_1": "117",
+            "cj_2": "120",
+            "cj_3": "0",
+            "best_snatch": "100",
+            "best_cj": "120",
+            "total": "220"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNy0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNy0xMiIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "Joshua Smith",
+            "total": "220",
+            "gender": "M",
+            "age": "32",
+            "club_name": "CROSSFIT MOHAWK VALLEY",
+            "membership_number": "198034",
+            "wso": "New York"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Elmira Spring Open",
+            "date": "2015-04-25",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Joshua Smith",
+            "body_weight_kg": "98.6",
+            "snatch_1": "-90",
+            "snatch_2": "93",
+            "snatch_3": "-100",
+            "cj_1": "115",
+            "cj_2": "120",
+            "cj_3": "-127",
+            "best_snatch": "93",
+            "best_cj": "120",
+            "total": "213"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0yNSIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "30",
+            "athlete_name": "Joshua Smith",
+            "total": "213",
+            "gender": "M",
+            "age": "32",
+            "club_name": "CROSSFIT MOHAWK VALLEY",
+            "membership_number": "198034",
+            "wso": "New York"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "General Meng Yi Last qualifier",
+            "date": "2014-11-02",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Joshua Smith",
+            "body_weight_kg": "99.8",
+            "snatch_1": "85",
+            "snatch_2": "90",
+            "snatch_3": "-97",
+            "cj_1": "110",
+            "cj_2": "115",
+            "cj_3": "120",
+            "best_snatch": "90",
+            "best_cj": "120",
+            "total": "210"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMS0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMS0wMiIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "18",
+            "athlete_name": "Joshua Smith",
+            "total": "210",
+            "gender": "M",
+            "age": "31",
+            "club_name": "CROSSFIT MOHAWK VALLEY",
+            "membership_number": "198034",
+            "wso": "New York"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

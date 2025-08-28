@@ -1,0 +1,98 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T07:54:23.410Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Hannah Cohen",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 1,
+    "total_reverse_lookups": 1,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 22969865
+  },
+  "data": [
+    {
+      "internal_id": 40379,
+      "athlete_name": "Hannah Cohen",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/40379",
+      "contaminated_lifter_id": 2650,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T19:27:41.679Z",
+      "profile_data": {
+        "membership_number": "178254",
+        "birth_year": 2000,
+        "gender": "F",
+        "club_name": "KIRKWOOD WLC",
+        "wso": "Missouri Valley",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "The Lab Gym Fall Open",
+          "date": "2012-10-06",
+          "division": "Women's 13 Under Age Group 44kg",
+          "lifter_name": "Hannah Cohen",
+          "body_weight_kg": "42.55",
+          "snatch_1": "21",
+          "snatch_2": "23",
+          "snatch_3": "25",
+          "cj_1": "30",
+          "cj_2": "33",
+          "cj_3": "35",
+          "best_snatch": "25",
+          "best_cj": "35",
+          "total": "60"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "The Lab Gym Fall Open",
+            "date": "2012-10-06",
+            "division": "Women's 13 Under Age Group 44kg",
+            "lifter_name": "Hannah Cohen",
+            "body_weight_kg": "42.55",
+            "snatch_1": "21",
+            "snatch_2": "23",
+            "snatch_3": "25",
+            "cj_1": "30",
+            "cj_2": "33",
+            "cj_3": "35",
+            "best_snatch": "25",
+            "best_cj": "35",
+            "total": "60"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0xMC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0xMC0wNiIsIndlaWdodF9jbGFzcyI6MzAxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Hannah Cohen",
+            "total": "60",
+            "gender": "F",
+            "age": "12",
+            "club_name": "KIRKWOOD WLC",
+            "membership_number": "178254",
+            "wso": "Missouri Valley"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 44678,
+      "athlete_name": "Hannah Cohen",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/44678",
+      "contaminated_lifter_id": 2650,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-27T07:54:21.409Z",
+      "profile_data": null,
+      "competition_history": [],
+      "biographical_data_by_competition": [],
+      "scraping_successful": false,
+      "error": "Assignment to constant variable."
+    }
+  ]
+}

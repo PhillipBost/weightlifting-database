@@ -1,0 +1,285 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T22:42:31.182Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Carolyn Holmes",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 5,
+    "total_reverse_lookups": 5,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 78621276
+  },
+  "data": [
+    {
+      "internal_id": 4028,
+      "athlete_name": "Carolyn Holmes",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/4028",
+      "contaminated_lifter_id": 18322,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T22:42:19.626Z",
+      "profile_data": {
+        "membership_number": "186157",
+        "birth_year": 1974,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "California North Central",
+        "national_rank": "5"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Redwood Empire Championships",
+          "date": "2017-08-05",
+          "division": "Women's Masters (40-44) 63 kg",
+          "lifter_name": "Carolyn Holmes",
+          "body_weight_kg": "61.85",
+          "snatch_1": "-33",
+          "snatch_2": "33",
+          "snatch_3": "35",
+          "cj_1": "54",
+          "cj_2": "56",
+          "cj_3": "-58",
+          "best_snatch": "35",
+          "best_cj": "56",
+          "total": "91"
+        },
+        {
+          "meet_name": "Redwood Empire Championships",
+          "date": "2016-08-06",
+          "division": "Women's Masters (40-44) 63 kg",
+          "lifter_name": "Carolyn Holmes",
+          "body_weight_kg": "60.98",
+          "snatch_1": "30",
+          "snatch_2": "32",
+          "snatch_3": "-35",
+          "cj_1": "51",
+          "cj_2": "53",
+          "cj_3": "55",
+          "best_snatch": "32",
+          "best_cj": "55",
+          "total": "87"
+        },
+        {
+          "meet_name": "Tommy Kono Open 9",
+          "date": "2014-08-09",
+          "division": "Women's Masters (40-44) 63 kg",
+          "lifter_name": "Carolyn Holmes",
+          "body_weight_kg": "61.7",
+          "snatch_1": "33",
+          "snatch_2": "-36",
+          "snatch_3": "-36",
+          "cj_1": "49",
+          "cj_2": "51",
+          "cj_3": "53",
+          "best_snatch": "33",
+          "best_cj": "53",
+          "total": "86"
+        },
+        {
+          "meet_name": "Redwood Empire Championship",
+          "date": "2013-08-10",
+          "division": "Women's Masters (35-39) 63 kg",
+          "lifter_name": "Carolyn Holmes",
+          "body_weight_kg": "62.18",
+          "snatch_1": "31",
+          "snatch_2": "-32",
+          "snatch_3": "32",
+          "cj_1": "47",
+          "cj_2": "49",
+          "cj_3": "51",
+          "best_snatch": "32",
+          "best_cj": "51",
+          "total": "83"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Redwood Empire Championships",
+            "date": "2017-08-05",
+            "division": "Women's Masters (40-44) 63 kg",
+            "lifter_name": "Carolyn Holmes",
+            "body_weight_kg": "61.85",
+            "snatch_1": "-33",
+            "snatch_2": "33",
+            "snatch_3": "35",
+            "cj_1": "54",
+            "cj_2": "56",
+            "cj_3": "-58",
+            "best_snatch": "35",
+            "best_cj": "56",
+            "total": "91"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wOC0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wOC0wNSIsIndlaWdodF9jbGFzcyI6Mzk5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "Carolyn Holmes",
+            "total": "91",
+            "gender": "F",
+            "age": "43",
+            "club_name": "-",
+            "membership_number": "186157",
+            "wso": "California North Central"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Redwood Empire Championships",
+            "date": "2016-08-06",
+            "division": "Women's Masters (40-44) 63 kg",
+            "lifter_name": "Carolyn Holmes",
+            "body_weight_kg": "60.98",
+            "snatch_1": "30",
+            "snatch_2": "32",
+            "snatch_3": "-35",
+            "cj_1": "51",
+            "cj_2": "53",
+            "cj_3": "55",
+            "best_snatch": "32",
+            "best_cj": "55",
+            "total": "87"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0wNiIsIndlaWdodF9jbGFzcyI6Mzk5fQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Tommy Kono Open 9",
+            "date": "2014-08-09",
+            "division": "Women's Masters (40-44) 63 kg",
+            "lifter_name": "Carolyn Holmes",
+            "body_weight_kg": "61.7",
+            "snatch_1": "33",
+            "snatch_2": "-36",
+            "snatch_3": "-36",
+            "cj_1": "49",
+            "cj_2": "51",
+            "cj_3": "53",
+            "best_snatch": "33",
+            "best_cj": "53",
+            "total": "86"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0wOSIsIndlaWdodF9jbGFzcyI6Mzk5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Carolyn Holmes",
+            "total": "86",
+            "gender": "F",
+            "age": "40",
+            "club_name": "-",
+            "membership_number": "186157",
+            "wso": "California North Central"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Redwood Empire Championship",
+            "date": "2013-08-10",
+            "division": "Women's Masters (35-39) 63 kg",
+            "lifter_name": "Carolyn Holmes",
+            "body_weight_kg": "62.18",
+            "snatch_1": "31",
+            "snatch_2": "-32",
+            "snatch_3": "32",
+            "cj_1": "47",
+            "cj_2": "49",
+            "cj_3": "51",
+            "best_snatch": "32",
+            "best_cj": "51",
+            "total": "83"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wOC0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wOC0xMCIsIndlaWdodF9jbGFzcyI6MzgyfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Carolyn Holmes",
+            "total": "83",
+            "gender": "F",
+            "age": "39",
+            "club_name": "-",
+            "membership_number": "186157",
+            "wso": "California North Central"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    },
+    {
+      "internal_id": 6712,
+      "athlete_name": "Carolyn Holmes",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/6712",
+      "contaminated_lifter_id": 18322,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T22:42:31.180Z",
+      "profile_data": {
+        "membership_number": "1013742",
+        "birth_year": 1979,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "California North Central",
+        "national_rank": "14"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Rite of Passage Meet",
+          "date": "2016-11-19",
+          "division": "Women's Masters (35-39) 69 kg",
+          "lifter_name": "Carolyn Holmes",
+          "body_weight_kg": "68.4",
+          "snatch_1": "25",
+          "snatch_2": "28",
+          "snatch_3": "32",
+          "cj_1": "40",
+          "cj_2": "43",
+          "cj_3": "49",
+          "best_snatch": "32",
+          "best_cj": "49",
+          "total": "81"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Rite of Passage Meet",
+            "date": "2016-11-19",
+            "division": "Women's Masters (35-39) 69 kg",
+            "lifter_name": "Carolyn Holmes",
+            "body_weight_kg": "68.4",
+            "snatch_1": "25",
+            "snatch_2": "28",
+            "snatch_3": "32",
+            "cj_1": "40",
+            "cj_2": "43",
+            "cj_3": "49",
+            "best_snatch": "32",
+            "best_cj": "49",
+            "total": "81"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMS0xOSIsIndlaWdodF9jbGFzcyI6MzgzfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "14",
+            "athlete_name": "Carolyn Holmes",
+            "total": "81",
+            "gender": "F",
+            "age": "37",
+            "club_name": "-",
+            "membership_number": "1013742",
+            "wso": "California North Central"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

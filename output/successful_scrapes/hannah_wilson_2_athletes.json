@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T12:25:41.172Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Hannah Wilson",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 41611266
+  },
+  "data": [
+    {
+      "internal_id": 21161,
+      "athlete_name": "Hannah Wilson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/21161",
+      "contaminated_lifter_id": 26860,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T12:25:30.414Z",
+      "profile_data": {
+        "membership_number": "194252",
+        "birth_year": 1989,
+        "gender": "F",
+        "club_name": "Kim Barbell",
+        "wso": "Texas-Oklahoma",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Development Meet (September)",
+          "date": "2016-09-30",
+          "division": "Open Women's 58 kg",
+          "lifter_name": "Hannah Wilson",
+          "body_weight_kg": "56",
+          "snatch_1": "65",
+          "snatch_2": "68",
+          "snatch_3": "71",
+          "cj_1": "89",
+          "cj_2": "91",
+          "cj_3": "-93",
+          "best_snatch": "71",
+          "best_cj": "91",
+          "total": "162"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Development Meet (September)",
+            "date": "2016-09-30",
+            "division": "Open Women's 58 kg",
+            "lifter_name": "Hannah Wilson",
+            "body_weight_kg": "56",
+            "snatch_1": "65",
+            "snatch_2": "68",
+            "snatch_3": "71",
+            "cj_1": "89",
+            "cj_2": "91",
+            "cj_3": "-93",
+            "best_snatch": "71",
+            "best_cj": "91",
+            "total": "162"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOS0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOS0zMCIsIndlaWdodF9jbGFzcyI6MzY0fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Hannah Wilson",
+            "total": "162",
+            "gender": "F",
+            "age": "27",
+            "club_name": "Kim Barbell",
+            "membership_number": "194252",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 29869,
+      "athlete_name": "Hannah Wilson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/29869",
+      "contaminated_lifter_id": 26860,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T12:25:41.170Z",
+      "profile_data": {
+        "membership_number": "1031430",
+        "birth_year": 1993,
+        "gender": "F",
+        "club_name": "West Virginia Weightlifting",
+        "wso": "Pennsylvania-West Virginia",
+        "national_rank": "17"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Wild, Wonderful Weights Virginia Open",
+          "date": "2018-06-30",
+          "division": "Open Women's 75 kg",
+          "lifter_name": "Hannah Wilson",
+          "body_weight_kg": "74.1",
+          "snatch_1": "34",
+          "snatch_2": "36",
+          "snatch_3": "38",
+          "cj_1": "40",
+          "cj_2": "42",
+          "cj_3": "-45",
+          "best_snatch": "38",
+          "best_cj": "42",
+          "total": "80"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Wild, Wonderful Weights Virginia Open",
+            "date": "2018-06-30",
+            "division": "Open Women's 75 kg",
+            "lifter_name": "Hannah Wilson",
+            "body_weight_kg": "74.1",
+            "snatch_1": "34",
+            "snatch_2": "36",
+            "snatch_3": "38",
+            "cj_1": "40",
+            "cj_2": "42",
+            "cj_3": "-45",
+            "best_snatch": "38",
+            "best_cj": "42",
+            "total": "80"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0zMCIsIndlaWdodF9jbGFzcyI6MzY3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "17",
+            "athlete_name": "Hannah Wilson",
+            "total": "80",
+            "gender": "F",
+            "age": "25",
+            "club_name": "West Virginia Weightlifting",
+            "membership_number": "1031430",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

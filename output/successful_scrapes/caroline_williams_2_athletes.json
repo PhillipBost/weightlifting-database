@@ -1,0 +1,388 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T16:19:41.650Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Caroline Williams",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 7,
+    "total_reverse_lookups": 7,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 55651744
+  },
+  "data": [
+    {
+      "internal_id": 47794,
+      "athlete_name": "Caroline Williams",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/47794",
+      "contaminated_lifter_id": 46111,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T16:19:23.087Z",
+      "profile_data": {
+        "membership_number": "1051316",
+        "birth_year": 1989,
+        "gender": "F",
+        "club_name": "Vulkan Weightlifting",
+        "wso": "Pacific Northwest",
+        "national_rank": "3"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Come To The Dark Side",
+          "date": "2025-04-12",
+          "division": "Women's Masters (35-39) 87kg",
+          "lifter_name": "Caroline Williams",
+          "body_weight_kg": "81.5",
+          "snatch_1": "69",
+          "snatch_2": "71",
+          "snatch_3": "73",
+          "cj_1": "83",
+          "cj_2": "87",
+          "cj_3": "90",
+          "best_snatch": "73",
+          "best_cj": "90",
+          "total": "163"
+        },
+        {
+          "meet_name": "Bar Wars",
+          "date": "2023-05-06",
+          "division": "Open Women's 76kg",
+          "lifter_name": "Caroline Williams",
+          "body_weight_kg": "74.65",
+          "snatch_1": "-74",
+          "snatch_2": "74",
+          "snatch_3": "77",
+          "cj_1": "90",
+          "cj_2": "94",
+          "cj_3": "-100",
+          "best_snatch": "77",
+          "best_cj": "94",
+          "total": "171"
+        },
+        {
+          "meet_name": "Pacific Northwest WSO Championship 2022",
+          "date": "2022-10-02",
+          "division": "Open Women's 76kg",
+          "lifter_name": "Caroline Williams",
+          "body_weight_kg": "73.1",
+          "snatch_1": "70",
+          "snatch_2": "74",
+          "snatch_3": "77",
+          "cj_1": "-90",
+          "cj_2": "90",
+          "cj_3": "95",
+          "best_snatch": "77",
+          "best_cj": "95",
+          "total": "172"
+        },
+        {
+          "meet_name": "Oregon State Championships",
+          "date": "2020-10-24",
+          "division": "Open Women's 81kg",
+          "lifter_name": "Caroline Williams",
+          "body_weight_kg": "78.7",
+          "snatch_1": "68",
+          "snatch_2": "71",
+          "snatch_3": "73",
+          "cj_1": "85",
+          "cj_2": "89",
+          "cj_3": "92",
+          "best_snatch": "73",
+          "best_cj": "92",
+          "total": "165"
+        },
+        {
+          "meet_name": "Eastside Summer Invitational",
+          "date": "2020-07-25",
+          "division": "Open Women's 81kg",
+          "lifter_name": "Caroline Williams",
+          "body_weight_kg": "80",
+          "snatch_1": "64",
+          "snatch_2": "67",
+          "snatch_3": "70",
+          "cj_1": "81",
+          "cj_2": "84",
+          "cj_3": "90",
+          "best_snatch": "70",
+          "best_cj": "90",
+          "total": "160"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Come To The Dark Side",
+            "date": "2025-04-12",
+            "division": "Women's Masters (35-39) 87kg",
+            "lifter_name": "Caroline Williams",
+            "body_weight_kg": "81.5",
+            "snatch_1": "69",
+            "snatch_2": "71",
+            "snatch_3": "73",
+            "cj_1": "83",
+            "cj_2": "87",
+            "cj_3": "90",
+            "best_snatch": "73",
+            "best_cj": "90",
+            "total": "163"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNC0xMiIsIndlaWdodF9jbGFzcyI6MTE5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Caroline Williams",
+            "total": "163",
+            "gender": "F",
+            "age": "36",
+            "club_name": "Vulkan Weightlifting",
+            "membership_number": "1051316",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Bar Wars",
+            "date": "2023-05-06",
+            "division": "Open Women's 76kg",
+            "lifter_name": "Caroline Williams",
+            "body_weight_kg": "74.65",
+            "snatch_1": "-74",
+            "snatch_2": "74",
+            "snatch_3": "77",
+            "cj_1": "90",
+            "cj_2": "94",
+            "cj_3": "-100",
+            "best_snatch": "77",
+            "best_cj": "94",
+            "total": "171"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNS0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNS0wNiIsIndlaWdodF9jbGFzcyI6OTd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Caroline Williams",
+            "total": "171",
+            "gender": "F",
+            "age": "34",
+            "club_name": "Vulkan Weightlifting",
+            "membership_number": "1051316",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Pacific Northwest WSO Championship 2022",
+            "date": "2022-10-02",
+            "division": "Open Women's 76kg",
+            "lifter_name": "Caroline Williams",
+            "body_weight_kg": "73.1",
+            "snatch_1": "70",
+            "snatch_2": "74",
+            "snatch_3": "77",
+            "cj_1": "-90",
+            "cj_2": "90",
+            "cj_3": "95",
+            "best_snatch": "77",
+            "best_cj": "95",
+            "total": "172"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMC0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMC0wMiIsIndlaWdodF9jbGFzcyI6OTd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "Caroline Williams",
+            "total": "172",
+            "gender": "F",
+            "age": "33",
+            "club_name": "Vulkan Weightlifting",
+            "membership_number": "1051316",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Oregon State Championships",
+            "date": "2020-10-24",
+            "division": "Open Women's 81kg",
+            "lifter_name": "Caroline Williams",
+            "body_weight_kg": "78.7",
+            "snatch_1": "68",
+            "snatch_2": "71",
+            "snatch_3": "73",
+            "cj_1": "85",
+            "cj_2": "89",
+            "cj_3": "92",
+            "best_snatch": "73",
+            "best_cj": "92",
+            "total": "165"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0xMC0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0xMC0yNCIsIndlaWdodF9jbGFzcyI6OTh9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Caroline Williams",
+            "total": "165",
+            "gender": "F",
+            "age": "31",
+            "club_name": "Vulkan Weightlifting",
+            "membership_number": "1051316",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Eastside Summer Invitational",
+            "date": "2020-07-25",
+            "division": "Open Women's 81kg",
+            "lifter_name": "Caroline Williams",
+            "body_weight_kg": "80",
+            "snatch_1": "64",
+            "snatch_2": "67",
+            "snatch_3": "70",
+            "cj_1": "81",
+            "cj_2": "84",
+            "cj_3": "90",
+            "best_snatch": "70",
+            "best_cj": "90",
+            "total": "160"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wNy0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wNy0yNSIsIndlaWdodF9jbGFzcyI6OTh9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Caroline Williams",
+            "total": "160",
+            "gender": "F",
+            "age": "31",
+            "club_name": "Vulkan Weightlifting",
+            "membership_number": "1051316",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 59683,
+      "athlete_name": "Caroline Williams",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/59683",
+      "contaminated_lifter_id": 46111,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T16:19:41.647Z",
+      "profile_data": {
+        "membership_number": "1071075",
+        "birth_year": 1993,
+        "gender": "F",
+        "club_name": "Jacksonville Weightlifting",
+        "wso": "Florida",
+        "national_rank": "32"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Jacksonville Weightlifting In-House Throw Down",
+          "date": "2023-10-14",
+          "division": "Open Women's 64kg",
+          "lifter_name": "Caroline Williams",
+          "body_weight_kg": "63.5",
+          "snatch_1": "40",
+          "snatch_2": "43",
+          "snatch_3": "-46",
+          "cj_1": "45",
+          "cj_2": "48",
+          "cj_3": "50",
+          "best_snatch": "43",
+          "best_cj": "50",
+          "total": "93"
+        },
+        {
+          "meet_name": "The Praelium 2023",
+          "date": "2023-08-06",
+          "division": "Open Women's 64kg",
+          "lifter_name": "Caroline Williams",
+          "body_weight_kg": "61.95",
+          "snatch_1": "-38",
+          "snatch_2": "38",
+          "snatch_3": "40",
+          "cj_1": "-46",
+          "cj_2": "-46",
+          "cj_3": "46",
+          "best_snatch": "40",
+          "best_cj": "46",
+          "total": "86"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Jacksonville Weightlifting In-House Throw Down",
+            "date": "2023-10-14",
+            "division": "Open Women's 64kg",
+            "lifter_name": "Caroline Williams",
+            "body_weight_kg": "63.5",
+            "snatch_1": "40",
+            "snatch_2": "43",
+            "snatch_3": "-46",
+            "cj_1": "45",
+            "cj_2": "48",
+            "cj_3": "50",
+            "best_snatch": "43",
+            "best_cj": "50",
+            "total": "93"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMC0xNCIsIndlaWdodF9jbGFzcyI6OTV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "32",
+            "athlete_name": "Caroline Williams",
+            "total": "93",
+            "gender": "F",
+            "age": "30",
+            "club_name": "Jacksonville Weightlifting",
+            "membership_number": "1071075",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The Praelium 2023",
+            "date": "2023-08-06",
+            "division": "Open Women's 64kg",
+            "lifter_name": "Caroline Williams",
+            "body_weight_kg": "61.95",
+            "snatch_1": "-38",
+            "snatch_2": "38",
+            "snatch_3": "40",
+            "cj_1": "-46",
+            "cj_2": "-46",
+            "cj_3": "46",
+            "best_snatch": "40",
+            "best_cj": "46",
+            "total": "86"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wOC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wOC0wNiIsIndlaWdodF9jbGFzcyI6OTV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "13",
+            "athlete_name": "Caroline Williams",
+            "total": "86",
+            "gender": "F",
+            "age": "30",
+            "club_name": "TOTAL CONTROL WEIGHTLIFTING",
+            "membership_number": "1071075",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

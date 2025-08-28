@@ -1,0 +1,341 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T17:08:55.397Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Jessica Ball",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 6,
+    "total_reverse_lookups": 6,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 58605491
+  },
+  "data": [
+    {
+      "internal_id": 54634,
+      "athlete_name": "Jessica Ball",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/54634",
+      "contaminated_lifter_id": 20273,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T17:08:45.423Z",
+      "profile_data": {
+        "membership_number": "1063542",
+        "birth_year": 1986,
+        "gender": "F",
+        "club_name": "ATHLETIC LAB WLC",
+        "wso": "Carolina",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Hot Hot Heat Weightlifting Meet 3.0",
+          "date": "2024-08-10",
+          "division": "Women's Masters (35-39) 71kg",
+          "lifter_name": "Jessica Ball",
+          "body_weight_kg": "69.5",
+          "snatch_1": "40",
+          "snatch_2": "42",
+          "snatch_3": "44",
+          "cj_1": "59",
+          "cj_2": "62",
+          "cj_3": "65",
+          "best_snatch": "44",
+          "best_cj": "65",
+          "total": "109"
+        },
+        {
+          "meet_name": "Carolina Triple Crown",
+          "date": "2024-01-27",
+          "division": "Open Women's 71kg",
+          "lifter_name": "Jessica Ball",
+          "body_weight_kg": "67.45",
+          "snatch_1": "41",
+          "snatch_2": "44",
+          "snatch_3": "47",
+          "cj_1": "55",
+          "cj_2": "58",
+          "cj_3": "62",
+          "best_snatch": "47",
+          "best_cj": "62",
+          "total": "109"
+        },
+        {
+          "meet_name": "2023 Athletic Lab Weightlifting Summer Classic",
+          "date": "2023-06-03",
+          "division": "Women's Masters (35-39) 71kg",
+          "lifter_name": "Jessica Ball",
+          "body_weight_kg": "65.6",
+          "snatch_1": "40",
+          "snatch_2": "43",
+          "snatch_3": "46",
+          "cj_1": "56",
+          "cj_2": "-60",
+          "cj_3": "61",
+          "best_snatch": "46",
+          "best_cj": "61",
+          "total": "107"
+        },
+        {
+          "meet_name": "2023 Athletic Lab Weightlifting Winter Classic",
+          "date": "2023-01-28",
+          "division": "Women's Masters (35-39) 64kg",
+          "lifter_name": "Jessica Ball",
+          "body_weight_kg": "63.7",
+          "snatch_1": "35",
+          "snatch_2": "38",
+          "snatch_3": "-41",
+          "cj_1": "48",
+          "cj_2": "51",
+          "cj_3": "55",
+          "best_snatch": "38",
+          "best_cj": "55",
+          "total": "93"
+        },
+        {
+          "meet_name": "2022 Athletic Lab Summer Classic",
+          "date": "2022-06-04",
+          "division": "Women's Masters (35-39) 64kg",
+          "lifter_name": "Jessica Ball",
+          "body_weight_kg": "63",
+          "snatch_1": "31",
+          "snatch_2": "34",
+          "snatch_3": "-37",
+          "cj_1": "45",
+          "cj_2": "48",
+          "cj_3": "51",
+          "best_snatch": "34",
+          "best_cj": "51",
+          "total": "85"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Hot Hot Heat Weightlifting Meet 3.0",
+            "date": "2024-08-10",
+            "division": "Women's Masters (35-39) 71kg",
+            "lifter_name": "Jessica Ball",
+            "body_weight_kg": "69.5",
+            "snatch_1": "40",
+            "snatch_2": "42",
+            "snatch_3": "44",
+            "cj_1": "59",
+            "cj_2": "62",
+            "cj_3": "65",
+            "best_snatch": "44",
+            "best_cj": "65",
+            "total": "109"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOC0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOC0xMCIsIndlaWdodF9jbGFzcyI6MTE2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Jessica Ball",
+            "total": "109",
+            "gender": "F",
+            "age": "38",
+            "club_name": "ATHLETIC LAB WLC",
+            "membership_number": "1063542",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Carolina Triple Crown",
+            "date": "2024-01-27",
+            "division": "Open Women's 71kg",
+            "lifter_name": "Jessica Ball",
+            "body_weight_kg": "67.45",
+            "snatch_1": "41",
+            "snatch_2": "44",
+            "snatch_3": "47",
+            "cj_1": "55",
+            "cj_2": "58",
+            "cj_3": "62",
+            "best_snatch": "47",
+            "best_cj": "62",
+            "total": "109"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMS0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMS0yNyIsIndlaWdodF9jbGFzcyI6OTZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "38",
+            "athlete_name": "Jessica Ball",
+            "total": "109",
+            "gender": "F",
+            "age": "38",
+            "club_name": "ATHLETIC LAB WLC",
+            "membership_number": "1063542",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2023 Athletic Lab Weightlifting Summer Classic",
+            "date": "2023-06-03",
+            "division": "Women's Masters (35-39) 71kg",
+            "lifter_name": "Jessica Ball",
+            "body_weight_kg": "65.6",
+            "snatch_1": "40",
+            "snatch_2": "43",
+            "snatch_3": "46",
+            "cj_1": "56",
+            "cj_2": "-60",
+            "cj_3": "61",
+            "best_snatch": "46",
+            "best_cj": "61",
+            "total": "107"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNi0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNi0wMyIsIndlaWdodF9jbGFzcyI6MTE2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "Jessica Ball",
+            "total": "107",
+            "gender": "F",
+            "age": "37",
+            "club_name": "ATHLETIC LAB WLC",
+            "membership_number": "1063542",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2023 Athletic Lab Weightlifting Winter Classic",
+            "date": "2023-01-28",
+            "division": "Women's Masters (35-39) 64kg",
+            "lifter_name": "Jessica Ball",
+            "body_weight_kg": "63.7",
+            "snatch_1": "35",
+            "snatch_2": "38",
+            "snatch_3": "-41",
+            "cj_1": "48",
+            "cj_2": "51",
+            "cj_3": "55",
+            "best_snatch": "38",
+            "best_cj": "55",
+            "total": "93"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMS0yOCIsIndlaWdodF9jbGFzcyI6MTE1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "12",
+            "athlete_name": "Jessica Ball",
+            "total": "93",
+            "gender": "F",
+            "age": "37",
+            "club_name": "ATHLETIC LAB WLC",
+            "membership_number": "1063542",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2022 Athletic Lab Summer Classic",
+            "date": "2022-06-04",
+            "division": "Women's Masters (35-39) 64kg",
+            "lifter_name": "Jessica Ball",
+            "body_weight_kg": "63",
+            "snatch_1": "31",
+            "snatch_2": "34",
+            "snatch_3": "-37",
+            "cj_1": "45",
+            "cj_2": "48",
+            "cj_3": "51",
+            "best_snatch": "34",
+            "best_cj": "51",
+            "total": "85"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNi0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNi0wNCIsIndlaWdodF9jbGFzcyI6MTE1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Jessica Ball",
+            "total": "85",
+            "gender": "F",
+            "age": "36",
+            "club_name": "ATHLETIC LAB WLC",
+            "membership_number": "1063542",
+            "wso": "Carolina"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 20363,
+      "athlete_name": "Jessica Ball",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/20363",
+      "contaminated_lifter_id": 20273,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T17:08:55.394Z",
+      "profile_data": {
+        "membership_number": "202914",
+        "birth_year": 1989,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "Missouri Valley",
+        "national_rank": "20"
+      },
+      "competition_history": [
+        {
+          "meet_name": "NWA Barbell Club Open",
+          "date": "2014-11-01",
+          "division": "Open Women's 69 kg",
+          "lifter_name": "Jessica Ball",
+          "body_weight_kg": "65",
+          "snatch_1": "56",
+          "snatch_2": "0",
+          "snatch_3": "0",
+          "cj_1": "84",
+          "cj_2": "0",
+          "cj_3": "93",
+          "best_snatch": "56",
+          "best_cj": "93",
+          "total": "149"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "NWA Barbell Club Open",
+            "date": "2014-11-01",
+            "division": "Open Women's 69 kg",
+            "lifter_name": "Jessica Ball",
+            "body_weight_kg": "65",
+            "snatch_1": "56",
+            "snatch_2": "0",
+            "snatch_3": "0",
+            "cj_1": "84",
+            "cj_2": "0",
+            "cj_3": "93",
+            "best_snatch": "56",
+            "best_cj": "93",
+            "total": "149"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMS0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMS0wMSIsIndlaWdodF9jbGFzcyI6MzY2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "20",
+            "athlete_name": "Jessica Ball",
+            "total": "149",
+            "gender": "F",
+            "age": "25",
+            "club_name": "-",
+            "membership_number": "202914",
+            "wso": "Missouri Valley"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

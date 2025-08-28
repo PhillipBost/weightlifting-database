@@ -1,0 +1,247 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T13:47:19.909Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Kevin Tucker",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 4,
+    "total_reverse_lookups": 4,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 46510003
+  },
+  "data": [
+    {
+      "internal_id": 2171,
+      "athlete_name": "Kevin Tucker",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/2171",
+      "contaminated_lifter_id": 41750,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T13:47:07.596Z",
+      "profile_data": {
+        "membership_number": "1038331",
+        "birth_year": 1969,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "New York",
+        "national_rank": "30"
+      },
+      "competition_history": [
+        {
+          "meet_name": "New York State Weightlifting Championships",
+          "date": "2021-10-24",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Kevin Tucker",
+          "body_weight_kg": "86",
+          "snatch_1": "-60",
+          "snatch_2": "60",
+          "snatch_3": "-63",
+          "cj_1": "75",
+          "cj_2": "78",
+          "cj_3": "-85",
+          "best_snatch": "60",
+          "best_cj": "78",
+          "total": "138"
+        },
+        {
+          "meet_name": "Capital District Open",
+          "date": "2021-05-15",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Kevin Tucker",
+          "body_weight_kg": "86.45",
+          "snatch_1": "54",
+          "snatch_2": "55",
+          "snatch_3": "56",
+          "cj_1": "75",
+          "cj_2": "79",
+          "cj_3": "80",
+          "best_snatch": "56",
+          "best_cj": "80",
+          "total": "136"
+        },
+        {
+          "meet_name": "Capital District Open",
+          "date": "2021-05-15",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Kevin Tucker",
+          "body_weight_kg": "86.45",
+          "snatch_1": "54",
+          "snatch_2": "55",
+          "snatch_3": "56",
+          "cj_1": "75",
+          "cj_2": "79",
+          "cj_3": "80",
+          "best_snatch": "56",
+          "best_cj": "80",
+          "total": "136"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "New York State Weightlifting Championships",
+            "date": "2021-10-24",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Kevin Tucker",
+            "body_weight_kg": "86",
+            "snatch_1": "-60",
+            "snatch_2": "60",
+            "snatch_3": "-63",
+            "cj_1": "75",
+            "cj_2": "78",
+            "cj_3": "-85",
+            "best_snatch": "60",
+            "best_cj": "78",
+            "total": "138"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMC0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMC0yNCIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "30",
+            "athlete_name": "Kevin Tucker",
+            "total": "138",
+            "gender": "M",
+            "age": "52",
+            "club_name": "-",
+            "membership_number": "1038331",
+            "wso": "New York"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Capital District Open",
+            "date": "2021-05-15",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Kevin Tucker",
+            "body_weight_kg": "86.45",
+            "snatch_1": "54",
+            "snatch_2": "55",
+            "snatch_3": "56",
+            "cj_1": "75",
+            "cj_2": "79",
+            "cj_3": "80",
+            "best_snatch": "56",
+            "best_cj": "80",
+            "total": "136"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNS0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNS0xNSIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "23",
+            "athlete_name": "Kevin Tucker",
+            "total": "136",
+            "gender": "M",
+            "age": "52",
+            "club_name": "-",
+            "membership_number": "1038331",
+            "wso": "New York"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Capital District Open",
+            "date": "2021-05-15",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Kevin Tucker",
+            "body_weight_kg": "86.45",
+            "snatch_1": "54",
+            "snatch_2": "55",
+            "snatch_3": "56",
+            "cj_1": "75",
+            "cj_2": "79",
+            "cj_3": "80",
+            "best_snatch": "56",
+            "best_cj": "80",
+            "total": "136"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNS0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNS0xNSIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "23",
+            "athlete_name": "Kevin Tucker",
+            "total": "136",
+            "gender": "M",
+            "age": "52",
+            "club_name": "-",
+            "membership_number": "1038331",
+            "wso": "New York"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 7451,
+      "athlete_name": "Kevin Tucker",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/7451",
+      "contaminated_lifter_id": 41750,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T13:47:19.907Z",
+      "profile_data": {
+        "membership_number": "1046475",
+        "birth_year": 1980,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Carolina",
+        "national_rank": "44"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Cookies and Kilos Fall Open",
+          "date": "2019-11-02",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Kevin Tucker",
+          "body_weight_kg": "88.5",
+          "snatch_1": "-60",
+          "snatch_2": "61",
+          "snatch_3": "-70",
+          "cj_1": "86",
+          "cj_2": "91",
+          "cj_3": "96",
+          "best_snatch": "61",
+          "best_cj": "96",
+          "total": "157"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Cookies and Kilos Fall Open",
+            "date": "2019-11-02",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Kevin Tucker",
+            "body_weight_kg": "88.5",
+            "snatch_1": "-60",
+            "snatch_2": "61",
+            "snatch_3": "-70",
+            "cj_1": "86",
+            "cj_2": "91",
+            "cj_3": "96",
+            "best_snatch": "61",
+            "best_cj": "96",
+            "total": "157"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0wMiIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "44",
+            "athlete_name": "Kevin Tucker",
+            "total": "157",
+            "gender": "M",
+            "age": "39",
+            "club_name": "-",
+            "membership_number": "1046475",
+            "wso": "Carolina"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

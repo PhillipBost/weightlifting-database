@@ -1,0 +1,447 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T12:19:09.774Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Daniel Martinez",
+    "internal_ids_processed": 3,
+    "successful_scrapes": 2,
+    "failed_scrapes": 1,
+    "total_competitions_found": 8,
+    "total_reverse_lookups": 8,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 8579418
+  },
+  "data": [
+    {
+      "internal_id": 5493,
+      "athlete_name": "Daniel Martinez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/5493",
+      "contaminated_lifter_id": 464,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T14:27:47.473Z",
+      "profile_data": {
+        "membership_number": "187223",
+        "birth_year": 1977,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Florida",
+        "national_rank": "26"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Altamonte Open",
+          "date": "2013-09-28",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Daniel Martinez",
+          "body_weight_kg": "82",
+          "snatch_1": "50",
+          "snatch_2": "53",
+          "snatch_3": "56",
+          "cj_1": "60",
+          "cj_2": "65",
+          "cj_3": "70",
+          "best_snatch": "56",
+          "best_cj": "70",
+          "total": "126"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Altamonte Open",
+            "date": "2013-09-28",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Daniel Martinez",
+            "body_weight_kg": "82",
+            "snatch_1": "50",
+            "snatch_2": "53",
+            "snatch_3": "56",
+            "cj_1": "60",
+            "cj_2": "65",
+            "cj_3": "70",
+            "best_snatch": "56",
+            "best_cj": "70",
+            "total": "126"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wOS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wOS0yOCIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "26",
+            "athlete_name": "Daniel Martinez",
+            "total": "126",
+            "gender": "M",
+            "age": "36",
+            "club_name": "-",
+            "membership_number": "187223",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 46230,
+      "athlete_name": "Daniel Martinez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/46230",
+      "contaminated_lifter_id": 464,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T14:28:40.711Z",
+      "profile_data": {
+        "membership_number": "1041915",
+        "birth_year": 2008,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Mountain South",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "AZ Youth and State Weightlifting Championships",
+          "date": "2019-08-17",
+          "division": "Men's 13 Under Age Group 32kg",
+          "lifter_name": "Daniel Martinez",
+          "body_weight_kg": "30.3",
+          "snatch_1": "17",
+          "snatch_2": "20",
+          "snatch_3": "-24",
+          "cj_1": "23",
+          "cj_2": "25",
+          "cj_3": "-28",
+          "best_snatch": "20",
+          "best_cj": "25",
+          "total": "45"
+        },
+        {
+          "meet_name": "Scottsdale Barbell Summer Showdown",
+          "date": "2019-06-22",
+          "division": "Men's 13 Under Age Group 32kg",
+          "lifter_name": "Daniel Martinez",
+          "body_weight_kg": "29",
+          "snatch_1": "13",
+          "snatch_2": "15",
+          "snatch_3": "-19",
+          "cj_1": "17",
+          "cj_2": "20",
+          "cj_3": "23",
+          "best_snatch": "15",
+          "best_cj": "23",
+          "total": "38"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "AZ Youth and State Weightlifting Championships",
+            "date": "2019-08-17",
+            "division": "Men's 13 Under Age Group 32kg",
+            "lifter_name": "Daniel Martinez",
+            "body_weight_kg": "30.3",
+            "snatch_1": "17",
+            "snatch_2": "20",
+            "snatch_3": "-24",
+            "cj_1": "23",
+            "cj_2": "25",
+            "cj_3": "-28",
+            "best_snatch": "20",
+            "best_cj": "25",
+            "total": "45"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOC0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOC0xNyIsIndlaWdodF9jbGFzcyI6NDF9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Daniel Martinez",
+            "total": "45",
+            "gender": "M",
+            "age": "11",
+            "club_name": "-",
+            "membership_number": "1041915",
+            "wso": "Mountain South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Scottsdale Barbell Summer Showdown",
+            "date": "2019-06-22",
+            "division": "Men's 13 Under Age Group 32kg",
+            "lifter_name": "Daniel Martinez",
+            "body_weight_kg": "29",
+            "snatch_1": "13",
+            "snatch_2": "15",
+            "snatch_3": "-19",
+            "cj_1": "17",
+            "cj_2": "20",
+            "cj_3": "23",
+            "best_snatch": "15",
+            "best_cj": "23",
+            "total": "38"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNi0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNi0yMiIsIndlaWdodF9jbGFzcyI6NDF9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Daniel Martinez",
+            "total": "38",
+            "gender": "M",
+            "age": "11",
+            "club_name": "-",
+            "membership_number": "1041915",
+            "wso": "Mountain South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 7950,
+      "athlete_name": "Daniel Martinez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/7950",
+      "contaminated_lifter_id": 464,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-27T12:19:07.772Z",
+      "profile_data": {
+        "membership_number": "152741",
+        "birth_year": 1980,
+        "gender": "M",
+        "club_name": "CINCINNATI WEIGHTLIFTING CLUB",
+        "wso": "Texas-Oklahoma",
+        "national_rank": "2"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Elite Olympic Weightlifting Meet",
+          "date": "2014-09-27",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Daniel Martinez",
+          "body_weight_kg": "77",
+          "snatch_1": "110",
+          "snatch_2": "110",
+          "snatch_3": "113",
+          "cj_1": "130",
+          "cj_2": "135",
+          "cj_3": "135",
+          "best_snatch": "113",
+          "best_cj": "135",
+          "total": "248"
+        },
+        {
+          "meet_name": "2014 Weightlifting Wise Championsips",
+          "date": "2014-07-26",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Daniel Martinez",
+          "body_weight_kg": "77",
+          "snatch_1": "103",
+          "snatch_2": "108",
+          "snatch_3": "113",
+          "cj_1": "125",
+          "cj_2": "132",
+          "cj_3": "132",
+          "best_snatch": "113",
+          "best_cj": "132",
+          "total": "245"
+        },
+        {
+          "meet_name": "Spring 2014 Iron Cat Open",
+          "date": "2014-03-15",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Daniel Martinez",
+          "body_weight_kg": "79.6",
+          "snatch_1": "100",
+          "snatch_2": "105",
+          "snatch_3": "105",
+          "cj_1": "125",
+          "cj_2": "125",
+          "cj_3": "130",
+          "best_snatch": "105",
+          "best_cj": "130",
+          "total": "235"
+        },
+        {
+          "meet_name": "Elite Weightlifting Meet",
+          "date": "2012-08-18",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Daniel Martinez",
+          "body_weight_kg": "82.7",
+          "snatch_1": "-95",
+          "snatch_2": "95",
+          "snatch_3": "100",
+          "cj_1": "125",
+          "cj_2": "-128",
+          "cj_3": "-130",
+          "best_snatch": "100",
+          "best_cj": "125",
+          "total": "225"
+        },
+        {
+          "meet_name": "Black Box Weightlifting Championships",
+          "date": "2012-02-25",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Daniel Martinez",
+          "body_weight_kg": "82.8",
+          "snatch_1": "0",
+          "snatch_2": "0",
+          "snatch_3": "0",
+          "cj_1": "130",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "0",
+          "best_cj": "130",
+          "total": "0"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Elite Olympic Weightlifting Meet",
+            "date": "2014-09-27",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Daniel Martinez",
+            "body_weight_kg": "77",
+            "snatch_1": "110",
+            "snatch_2": "110",
+            "snatch_3": "113",
+            "cj_1": "130",
+            "cj_2": "135",
+            "cj_3": "135",
+            "best_snatch": "113",
+            "best_cj": "135",
+            "total": "248"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOS0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOS0yNyIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Daniel Martinez",
+            "total": "248",
+            "gender": "M",
+            "age": "34",
+            "club_name": "CINCINNATI WEIGHTLIFTING CLUB",
+            "membership_number": "152741",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2014 Weightlifting Wise Championsips",
+            "date": "2014-07-26",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Daniel Martinez",
+            "body_weight_kg": "77",
+            "snatch_1": "103",
+            "snatch_2": "108",
+            "snatch_3": "113",
+            "cj_1": "125",
+            "cj_2": "132",
+            "cj_3": "132",
+            "best_snatch": "113",
+            "best_cj": "132",
+            "total": "245"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNy0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNy0yNiIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "Daniel Martinez",
+            "total": "245",
+            "gender": "M",
+            "age": "34",
+            "club_name": "CINCINNATI WEIGHTLIFTING CLUB",
+            "membership_number": "152741",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Spring 2014 Iron Cat Open",
+            "date": "2014-03-15",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Daniel Martinez",
+            "body_weight_kg": "79.6",
+            "snatch_1": "100",
+            "snatch_2": "105",
+            "snatch_3": "105",
+            "cj_1": "125",
+            "cj_2": "125",
+            "cj_3": "130",
+            "best_snatch": "105",
+            "best_cj": "130",
+            "total": "235"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0xNSIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Daniel Martinez",
+            "total": "235",
+            "gender": "M",
+            "age": "34",
+            "club_name": "CINCINNATI WEIGHTLIFTING CLUB",
+            "membership_number": "152741",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Elite Weightlifting Meet",
+            "date": "2012-08-18",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Daniel Martinez",
+            "body_weight_kg": "82.7",
+            "snatch_1": "-95",
+            "snatch_2": "95",
+            "snatch_3": "100",
+            "cj_1": "125",
+            "cj_2": "-128",
+            "cj_3": "-130",
+            "best_snatch": "100",
+            "best_cj": "125",
+            "total": "225"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wOC0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wOC0xOCIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Daniel Martinez",
+            "total": "225",
+            "gender": "M",
+            "age": "32",
+            "club_name": "CINCINNATI WEIGHTLIFTING CLUB",
+            "membership_number": "152741",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Black Box Weightlifting Championships",
+            "date": "2012-02-25",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Daniel Martinez",
+            "body_weight_kg": "82.8",
+            "snatch_1": "0",
+            "snatch_2": "0",
+            "snatch_3": "0",
+            "cj_1": "130",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "0",
+            "best_cj": "130",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wMi0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wMi0yNSIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    }
+  ]
+}

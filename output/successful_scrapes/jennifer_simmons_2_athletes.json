@@ -1,0 +1,435 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T00:40:13.447Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Jennifer Simmons",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 8,
+    "total_reverse_lookups": 8,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 85683541
+  },
+  "data": [
+    {
+      "internal_id": 47626,
+      "athlete_name": "Jennifer Simmons",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/47626",
+      "contaminated_lifter_id": 45981,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T00:39:53.487Z",
+      "profile_data": {
+        "membership_number": "1050822",
+        "birth_year": 1986,
+        "gender": "F",
+        "club_name": "Catalyst Masters",
+        "wso": "New York",
+        "national_rank": "4"
+      },
+      "competition_history": [
+        {
+          "meet_name": "New York State Weightlifting Championships",
+          "date": "2021-10-24",
+          "division": "Open Women's +87kg",
+          "lifter_name": "Jennifer Simmons",
+          "body_weight_kg": "101.75",
+          "snatch_1": "60",
+          "snatch_2": "-64",
+          "snatch_3": "-65",
+          "cj_1": "75",
+          "cj_2": "81",
+          "cj_3": "-86",
+          "best_snatch": "60",
+          "best_cj": "81",
+          "total": "141"
+        },
+        {
+          "meet_name": "2021 National Garage Championships presented by Caffeine & Kilos",
+          "date": "2021-05-13",
+          "division": "Women's Masters (35-39) +87kg",
+          "lifter_name": "Jennifer Simmons",
+          "body_weight_kg": "99.8",
+          "snatch_1": "60",
+          "snatch_2": "63",
+          "snatch_3": "65",
+          "cj_1": "75",
+          "cj_2": "80",
+          "cj_3": "85",
+          "best_snatch": "65",
+          "best_cj": "85",
+          "total": "150"
+        },
+        {
+          "meet_name": "The Nike 2021 North American Open Series 1 powered by Rogue",
+          "date": "2021-03-07",
+          "division": "Women's Masters (35-39) +87kg",
+          "lifter_name": "Jennifer Simmons",
+          "body_weight_kg": "98.2",
+          "snatch_1": "57",
+          "snatch_2": "60",
+          "snatch_3": "63",
+          "cj_1": "72",
+          "cj_2": "77",
+          "cj_3": "-81",
+          "best_snatch": "63",
+          "best_cj": "77",
+          "total": "140"
+        },
+        {
+          "meet_name": "January online qualifier",
+          "date": "2021-01-31",
+          "division": "Women's Masters (35-39) +87kg",
+          "lifter_name": "Jennifer Simmons",
+          "body_weight_kg": "101",
+          "snatch_1": "79",
+          "snatch_2": "0",
+          "snatch_3": "0",
+          "cj_1": "100",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "79",
+          "best_cj": "100",
+          "total": "179"
+        },
+        {
+          "meet_name": "December online qualifier",
+          "date": "2020-12-31",
+          "division": "Open Women's +87kg",
+          "lifter_name": "Jennifer Simmons",
+          "body_weight_kg": "105",
+          "snatch_1": "81",
+          "snatch_2": "0",
+          "snatch_3": "0",
+          "cj_1": "97",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "81",
+          "best_cj": "97",
+          "total": "178"
+        },
+        {
+          "meet_name": "Lift Proud Virtual Cup",
+          "date": "2020-06-30",
+          "division": "Open Women's +87kg",
+          "lifter_name": "Jennifer Simmons",
+          "body_weight_kg": "98",
+          "snatch_1": "72",
+          "snatch_2": "0",
+          "snatch_3": "0",
+          "cj_1": "79",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "72",
+          "best_cj": "79",
+          "total": "151"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "New York State Weightlifting Championships",
+            "date": "2021-10-24",
+            "division": "Open Women's +87kg",
+            "lifter_name": "Jennifer Simmons",
+            "body_weight_kg": "101.75",
+            "snatch_1": "60",
+            "snatch_2": "-64",
+            "snatch_3": "-65",
+            "cj_1": "75",
+            "cj_2": "81",
+            "cj_3": "-86",
+            "best_snatch": "60",
+            "best_cj": "81",
+            "total": "141"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMC0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMC0yNCIsIndlaWdodF9jbGFzcyI6MTAwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Jennifer Simmons",
+            "total": "141",
+            "gender": "F",
+            "age": "35",
+            "club_name": "Catalyst Masters",
+            "membership_number": "1050822",
+            "wso": "New York"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2021 National Garage Championships presented by Caffeine & Kilos",
+            "date": "2021-05-13",
+            "division": "Women's Masters (35-39) +87kg",
+            "lifter_name": "Jennifer Simmons",
+            "body_weight_kg": "99.8",
+            "snatch_1": "60",
+            "snatch_2": "63",
+            "snatch_3": "65",
+            "cj_1": "75",
+            "cj_2": "80",
+            "cj_3": "85",
+            "best_snatch": "65",
+            "best_cj": "85",
+            "total": "150"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNS0xMyIsIndlaWdodF9jbGFzcyI6MTIwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Jennifer Simmons",
+            "total": "150",
+            "gender": "F",
+            "age": "35",
+            "club_name": "Catalyst Masters",
+            "membership_number": "1050822",
+            "wso": "New York"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The Nike 2021 North American Open Series 1 powered by Rogue",
+            "date": "2021-03-07",
+            "division": "Women's Masters (35-39) +87kg",
+            "lifter_name": "Jennifer Simmons",
+            "body_weight_kg": "98.2",
+            "snatch_1": "57",
+            "snatch_2": "60",
+            "snatch_3": "63",
+            "cj_1": "72",
+            "cj_2": "77",
+            "cj_3": "-81",
+            "best_snatch": "63",
+            "best_cj": "77",
+            "total": "140"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMy0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMy0wNyIsIndlaWdodF9jbGFzcyI6MTIwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Jennifer Simmons",
+            "total": "140",
+            "gender": "F",
+            "age": "35",
+            "club_name": "Catalyst Masters",
+            "membership_number": "1050822",
+            "wso": "New York"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "January online qualifier",
+            "date": "2021-01-31",
+            "division": "Women's Masters (35-39) +87kg",
+            "lifter_name": "Jennifer Simmons",
+            "body_weight_kg": "101",
+            "snatch_1": "79",
+            "snatch_2": "0",
+            "snatch_3": "0",
+            "cj_1": "100",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "79",
+            "best_cj": "100",
+            "total": "179"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMS0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMS0zMSIsIndlaWdodF9jbGFzcyI6MTIwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Jennifer Simmons",
+            "total": "179",
+            "gender": "F",
+            "age": "35",
+            "club_name": "Catalyst Masters",
+            "membership_number": "1050822",
+            "wso": "New York"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "December online qualifier",
+            "date": "2020-12-31",
+            "division": "Open Women's +87kg",
+            "lifter_name": "Jennifer Simmons",
+            "body_weight_kg": "105",
+            "snatch_1": "81",
+            "snatch_2": "0",
+            "snatch_3": "0",
+            "cj_1": "97",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "81",
+            "best_cj": "97",
+            "total": "178"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0xMi0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0xMi0zMSIsIndlaWdodF9jbGFzcyI6MTAwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Jennifer Simmons",
+            "total": "178",
+            "gender": "F",
+            "age": "34",
+            "club_name": "Catalyst Masters",
+            "membership_number": "1050822",
+            "wso": "New York"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Lift Proud Virtual Cup",
+            "date": "2020-06-30",
+            "division": "Open Women's +87kg",
+            "lifter_name": "Jennifer Simmons",
+            "body_weight_kg": "98",
+            "snatch_1": "72",
+            "snatch_2": "0",
+            "snatch_3": "0",
+            "cj_1": "79",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "72",
+            "best_cj": "79",
+            "total": "151"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wNi0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wNi0zMCIsIndlaWdodF9jbGFzcyI6MTAwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Jennifer Simmons",
+            "total": "151",
+            "gender": "F",
+            "age": "34",
+            "club_name": "Catalyst Masters",
+            "membership_number": "1050822",
+            "wso": "New York"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 49542,
+      "athlete_name": "Jennifer Simmons",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/49542",
+      "contaminated_lifter_id": 45981,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T00:40:13.445Z",
+      "profile_data": {
+        "membership_number": "1054497",
+        "birth_year": 1991,
+        "gender": "F",
+        "club_name": "Bexar Barbell",
+        "wso": "Texas-Oklahoma",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Bexar Barbell Winter Throwdown",
+          "date": "2022-12-22",
+          "division": "Open Women's 64kg",
+          "lifter_name": "Jennifer Simmons",
+          "body_weight_kg": "61.7",
+          "snatch_1": "43",
+          "snatch_2": "-45",
+          "snatch_3": "45",
+          "cj_1": "55",
+          "cj_2": "58",
+          "cj_3": "61",
+          "best_snatch": "45",
+          "best_cj": "61",
+          "total": "106"
+        },
+        {
+          "meet_name": "2021 Lock and Load",
+          "date": "2021-05-09",
+          "division": "Open Women's 59kg",
+          "lifter_name": "Jennifer Simmons",
+          "body_weight_kg": "56.38",
+          "snatch_1": "40",
+          "snatch_2": "42",
+          "snatch_3": "-44",
+          "cj_1": "50",
+          "cj_2": "54",
+          "cj_3": "-58",
+          "best_snatch": "42",
+          "best_cj": "54",
+          "total": "96"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Bexar Barbell Winter Throwdown",
+            "date": "2022-12-22",
+            "division": "Open Women's 64kg",
+            "lifter_name": "Jennifer Simmons",
+            "body_weight_kg": "61.7",
+            "snatch_1": "43",
+            "snatch_2": "-45",
+            "snatch_3": "45",
+            "cj_1": "55",
+            "cj_2": "58",
+            "cj_3": "61",
+            "best_snatch": "45",
+            "best_cj": "61",
+            "total": "106"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMi0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMi0yMiIsIndlaWdodF9jbGFzcyI6OTV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Jennifer Simmons",
+            "total": "106",
+            "gender": "F",
+            "age": "31",
+            "club_name": "Bexar Barbell",
+            "membership_number": "1054497",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2021 Lock and Load",
+            "date": "2021-05-09",
+            "division": "Open Women's 59kg",
+            "lifter_name": "Jennifer Simmons",
+            "body_weight_kg": "56.38",
+            "snatch_1": "40",
+            "snatch_2": "42",
+            "snatch_3": "-44",
+            "cj_1": "50",
+            "cj_2": "54",
+            "cj_3": "-58",
+            "best_snatch": "42",
+            "best_cj": "54",
+            "total": "96"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNS0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNS0wOSIsIndlaWdodF9jbGFzcyI6OTR9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Jennifer Simmons",
+            "total": "96",
+            "gender": "F",
+            "age": "30",
+            "club_name": "-",
+            "membership_number": "1054497",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

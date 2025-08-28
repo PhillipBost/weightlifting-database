@@ -1,0 +1,426 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T05:45:04.632Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Jeremy King",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 8,
+    "total_reverse_lookups": 8,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 15211087
+  },
+  "data": [
+    {
+      "internal_id": 19731,
+      "athlete_name": "Jeremy King",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/19731",
+      "contaminated_lifter_id": 5053,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T16:33:20.221Z",
+      "profile_data": {
+        "membership_number": "1024229",
+        "birth_year": 1988,
+        "gender": "M",
+        "club_name": "Bravura Weightlifting",
+        "wso": "Texas-Oklahoma",
+        "national_rank": "9"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Bravura Weightlifting Summer Meet",
+          "date": "2021-08-28",
+          "division": "Open Men's 96kg",
+          "lifter_name": "Jeremy King",
+          "body_weight_kg": "95.1",
+          "snatch_1": "75",
+          "snatch_2": "80",
+          "snatch_3": "85",
+          "cj_1": "85",
+          "cj_2": "90",
+          "cj_3": "-95",
+          "best_snatch": "85",
+          "best_cj": "90",
+          "total": "175"
+        },
+        {
+          "meet_name": "2018 Weightlifting Wise Championships",
+          "date": "2018-06-16",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Jeremy King",
+          "body_weight_kg": "94.1",
+          "snatch_1": "82",
+          "snatch_2": "84",
+          "snatch_3": "86",
+          "cj_1": "102",
+          "cj_2": "104",
+          "cj_3": "106",
+          "best_snatch": "86",
+          "best_cj": "106",
+          "total": "192"
+        },
+        {
+          "meet_name": "Irontail Classic",
+          "date": "2018-03-24",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Jeremy King",
+          "body_weight_kg": "90.4",
+          "snatch_1": "85",
+          "snatch_2": "-87",
+          "snatch_3": "-88",
+          "cj_1": "102",
+          "cj_2": "104",
+          "cj_3": "-106",
+          "best_snatch": "85",
+          "best_cj": "104",
+          "total": "189"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Bravura Weightlifting Summer Meet",
+            "date": "2021-08-28",
+            "division": "Open Men's 96kg",
+            "lifter_name": "Jeremy King",
+            "body_weight_kg": "95.1",
+            "snatch_1": "75",
+            "snatch_2": "80",
+            "snatch_3": "85",
+            "cj_1": "85",
+            "cj_2": "90",
+            "cj_3": "-95",
+            "best_snatch": "85",
+            "best_cj": "90",
+            "total": "175"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wOC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wOC0yOCIsIndlaWdodF9jbGFzcyI6ODd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "Jeremy King",
+            "total": "175",
+            "gender": "M",
+            "age": "33",
+            "club_name": "Bravura Weightlifting",
+            "membership_number": "1024229",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2018 Weightlifting Wise Championships",
+            "date": "2018-06-16",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Jeremy King",
+            "body_weight_kg": "94.1",
+            "snatch_1": "82",
+            "snatch_2": "84",
+            "snatch_3": "86",
+            "cj_1": "102",
+            "cj_2": "104",
+            "cj_3": "106",
+            "best_snatch": "86",
+            "best_cj": "106",
+            "total": "192"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0xNiIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "7",
+            "athlete_name": "Jeremy King",
+            "total": "192",
+            "gender": "M",
+            "age": "30",
+            "club_name": "Bravura Weightlifting",
+            "membership_number": "1024229",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Irontail Classic",
+            "date": "2018-03-24",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Jeremy King",
+            "body_weight_kg": "90.4",
+            "snatch_1": "85",
+            "snatch_2": "-87",
+            "snatch_3": "-88",
+            "cj_1": "102",
+            "cj_2": "104",
+            "cj_3": "-106",
+            "best_snatch": "85",
+            "best_cj": "104",
+            "total": "189"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMy0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMy0yNCIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "29",
+            "athlete_name": "Jeremy King",
+            "total": "189",
+            "gender": "M",
+            "age": "30",
+            "club_name": "Bravura Weightlifting",
+            "membership_number": "1024229",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 27483,
+      "athlete_name": "Jeremy King",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/27483",
+      "contaminated_lifter_id": 5053,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-27T05:45:02.630Z",
+      "profile_data": {
+        "membership_number": "179132",
+        "birth_year": 1992,
+        "gender": "M",
+        "club_name": "EAST COAST GOLD W/L TEAM",
+        "wso": "Pennsylvania-West Virginia",
+        "national_rank": "15"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Gold Cup Challenge Meet",
+          "date": "2013-10-20",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Jeremy King",
+          "body_weight_kg": "93.95",
+          "snatch_1": "105",
+          "snatch_2": "110",
+          "snatch_3": "112",
+          "cj_1": "-132",
+          "cj_2": "-132",
+          "cj_3": "132",
+          "best_snatch": "112",
+          "best_cj": "132",
+          "total": "244"
+        },
+        {
+          "meet_name": "2013 Frederick Open",
+          "date": "2013-08-17",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Jeremy King",
+          "body_weight_kg": "92.66",
+          "snatch_1": "100",
+          "snatch_2": "-105",
+          "snatch_3": "-107",
+          "cj_1": "130",
+          "cj_2": "-140",
+          "cj_3": "-142",
+          "best_snatch": "100",
+          "best_cj": "130",
+          "total": "230"
+        },
+        {
+          "meet_name": "607 Open",
+          "date": "2013-06-29",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Jeremy King",
+          "body_weight_kg": "96",
+          "snatch_1": "100",
+          "snatch_2": "105",
+          "snatch_3": "-110",
+          "cj_1": "130",
+          "cj_2": "135",
+          "cj_3": "137",
+          "best_snatch": "105",
+          "best_cj": "137",
+          "total": "242"
+        },
+        {
+          "meet_name": "East Coast Classic",
+          "date": "2013-05-04",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Jeremy King",
+          "body_weight_kg": "94",
+          "snatch_1": "-105",
+          "snatch_2": "-105",
+          "snatch_3": "-105",
+          "cj_1": "-127",
+          "cj_2": "127",
+          "cj_3": "132",
+          "best_snatch": "0",
+          "best_cj": "132",
+          "total": "0"
+        },
+        {
+          "meet_name": "2013 NYC Open Weightlifting championships",
+          "date": "2013-03-24",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Jeremy King",
+          "body_weight_kg": "92.82",
+          "snatch_1": "100",
+          "snatch_2": "102",
+          "snatch_3": "110",
+          "cj_1": "125",
+          "cj_2": "132",
+          "cj_3": "132",
+          "best_snatch": "110",
+          "best_cj": "132",
+          "total": "242"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Gold Cup Challenge Meet",
+            "date": "2013-10-20",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Jeremy King",
+            "body_weight_kg": "93.95",
+            "snatch_1": "105",
+            "snatch_2": "110",
+            "snatch_3": "112",
+            "cj_1": "-132",
+            "cj_2": "-132",
+            "cj_3": "132",
+            "best_snatch": "112",
+            "best_cj": "132",
+            "total": "244"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMC0yMCIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "15",
+            "athlete_name": "Jeremy King",
+            "total": "244",
+            "gender": "M",
+            "age": "21",
+            "club_name": "EAST COAST GOLD W/L TEAM",
+            "membership_number": "179132",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2013 Frederick Open",
+            "date": "2013-08-17",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Jeremy King",
+            "body_weight_kg": "92.66",
+            "snatch_1": "100",
+            "snatch_2": "-105",
+            "snatch_3": "-107",
+            "cj_1": "130",
+            "cj_2": "-140",
+            "cj_3": "-142",
+            "best_snatch": "100",
+            "best_cj": "130",
+            "total": "230"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wOC0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wOC0xNyIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "7",
+            "athlete_name": "Jeremy King",
+            "total": "230",
+            "gender": "M",
+            "age": "21",
+            "club_name": "EAST COAST GOLD W/L TEAM",
+            "membership_number": "179132",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "607 Open",
+            "date": "2013-06-29",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Jeremy King",
+            "body_weight_kg": "96",
+            "snatch_1": "100",
+            "snatch_2": "105",
+            "snatch_3": "-110",
+            "cj_1": "130",
+            "cj_2": "135",
+            "cj_3": "137",
+            "best_snatch": "105",
+            "best_cj": "137",
+            "total": "242"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNi0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNi0yOSIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Jeremy King",
+            "total": "242",
+            "gender": "M",
+            "age": "21",
+            "club_name": "EAST COAST GOLD W/L TEAM",
+            "membership_number": "179132",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "East Coast Classic",
+            "date": "2013-05-04",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Jeremy King",
+            "body_weight_kg": "94",
+            "snatch_1": "-105",
+            "snatch_2": "-105",
+            "snatch_3": "-105",
+            "cj_1": "-127",
+            "cj_2": "127",
+            "cj_3": "132",
+            "best_snatch": "0",
+            "best_cj": "132",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNS0wNCIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2013 NYC Open Weightlifting championships",
+            "date": "2013-03-24",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Jeremy King",
+            "body_weight_kg": "92.82",
+            "snatch_1": "100",
+            "snatch_2": "102",
+            "snatch_3": "110",
+            "cj_1": "125",
+            "cj_2": "132",
+            "cj_3": "132",
+            "best_snatch": "110",
+            "best_cj": "132",
+            "total": "242"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMy0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMy0yNCIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Jeremy King",
+            "total": "242",
+            "gender": "M",
+            "age": "21",
+            "club_name": "EAST COAST GOLD W/L TEAM",
+            "membership_number": "179132",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    }
+  ]
+}

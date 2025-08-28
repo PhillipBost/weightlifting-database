@@ -1,0 +1,409 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T04:59:46.498Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Hannah Hall",
+    "internal_ids_processed": 3,
+    "successful_scrapes": 3,
+    "failed_scrapes": 0,
+    "total_competitions_found": 7,
+    "total_reverse_lookups": 7,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 14856592
+  },
+  "data": [
+    {
+      "internal_id": 25836,
+      "athlete_name": "Hannah Hall",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/25836",
+      "contaminated_lifter_id": 35867,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T04:59:19.243Z",
+      "profile_data": {
+        "membership_number": "1028819",
+        "birth_year": 1991,
+        "gender": "F",
+        "club_name": "Risen Weightlifting Club",
+        "wso": "Texas-Oklahoma",
+        "national_rank": "7"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2022 Houston Weightlifting Open",
+          "date": "2022-06-04",
+          "division": "Open Women's 87kg",
+          "lifter_name": "Hannah Hall",
+          "body_weight_kg": "82.5",
+          "snatch_1": "-45",
+          "snatch_2": "45",
+          "snatch_3": "48",
+          "cj_1": "62",
+          "cj_2": "66",
+          "cj_3": "70",
+          "best_snatch": "48",
+          "best_cj": "70",
+          "total": "118"
+        },
+        {
+          "meet_name": "Bexar Barbell Brawl",
+          "date": "2021-08-13",
+          "division": "Open Women's 81kg",
+          "lifter_name": "Hannah Hall",
+          "body_weight_kg": "76.25",
+          "snatch_1": "39",
+          "snatch_2": "41",
+          "snatch_3": "44",
+          "cj_1": "61",
+          "cj_2": "64",
+          "cj_3": "-67",
+          "best_snatch": "44",
+          "best_cj": "64",
+          "total": "108"
+        },
+        {
+          "meet_name": "Bexar Barbell Brawl",
+          "date": "2021-08-13",
+          "division": "Open Women's 81kg",
+          "lifter_name": "Hannah Hall",
+          "body_weight_kg": "76.25",
+          "snatch_1": "39",
+          "snatch_2": "41",
+          "snatch_3": "44",
+          "cj_1": "61",
+          "cj_2": "64",
+          "cj_3": "-67",
+          "best_snatch": "44",
+          "best_cj": "64",
+          "total": "108"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2022 Houston Weightlifting Open",
+            "date": "2022-06-04",
+            "division": "Open Women's 87kg",
+            "lifter_name": "Hannah Hall",
+            "body_weight_kg": "82.5",
+            "snatch_1": "-45",
+            "snatch_2": "45",
+            "snatch_3": "48",
+            "cj_1": "62",
+            "cj_2": "66",
+            "cj_3": "70",
+            "best_snatch": "48",
+            "best_cj": "70",
+            "total": "118"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNi0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNi0wNCIsIndlaWdodF9jbGFzcyI6OTl9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "7",
+            "athlete_name": "Hannah Hall",
+            "total": "118",
+            "gender": "F",
+            "age": "31",
+            "club_name": "Risen Weightlifting Club",
+            "membership_number": "1028819",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Bexar Barbell Brawl",
+            "date": "2021-08-13",
+            "division": "Open Women's 81kg",
+            "lifter_name": "Hannah Hall",
+            "body_weight_kg": "76.25",
+            "snatch_1": "39",
+            "snatch_2": "41",
+            "snatch_3": "44",
+            "cj_1": "61",
+            "cj_2": "64",
+            "cj_3": "-67",
+            "best_snatch": "44",
+            "best_cj": "64",
+            "total": "108"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wOC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wOC0xMyIsIndlaWdodF9jbGFzcyI6OTh9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Hannah Hall",
+            "total": "108",
+            "gender": "F",
+            "age": "30",
+            "club_name": "Risen Weightlifting Club",
+            "membership_number": "1028819",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Bexar Barbell Brawl",
+            "date": "2021-08-13",
+            "division": "Open Women's 81kg",
+            "lifter_name": "Hannah Hall",
+            "body_weight_kg": "76.25",
+            "snatch_1": "39",
+            "snatch_2": "41",
+            "snatch_3": "44",
+            "cj_1": "61",
+            "cj_2": "64",
+            "cj_3": "-67",
+            "best_snatch": "44",
+            "best_cj": "64",
+            "total": "108"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wOC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wOC0xMyIsIndlaWdodF9jbGFzcyI6OTh9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Hannah Hall",
+            "total": "108",
+            "gender": "F",
+            "age": "30",
+            "club_name": "Risen Weightlifting Club",
+            "membership_number": "1028819",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 29321,
+      "athlete_name": "Hannah Hall",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/29321",
+      "contaminated_lifter_id": 35867,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T04:59:29.088Z",
+      "profile_data": {
+        "membership_number": "1028080",
+        "birth_year": 1993,
+        "gender": "F",
+        "club_name": "Lead to Platinum Barbell Club",
+        "wso": "Mountain North",
+        "national_rank": "14"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Lead to Platinum Spring Meet",
+          "date": "2018-03-17",
+          "division": "Open Women's 90 kg",
+          "lifter_name": "Hannah Hall",
+          "body_weight_kg": "87.2",
+          "snatch_1": "56",
+          "snatch_2": "56",
+          "snatch_3": "59",
+          "cj_1": "65",
+          "cj_2": "70",
+          "cj_3": "71",
+          "best_snatch": "59",
+          "best_cj": "71",
+          "total": "130"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Lead to Platinum Spring Meet",
+            "date": "2018-03-17",
+            "division": "Open Women's 90 kg",
+            "lifter_name": "Hannah Hall",
+            "body_weight_kg": "87.2",
+            "snatch_1": "56",
+            "snatch_2": "56",
+            "snatch_3": "59",
+            "cj_1": "65",
+            "cj_2": "70",
+            "cj_3": "71",
+            "best_snatch": "59",
+            "best_cj": "71",
+            "total": "130"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMy0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMy0xNyIsIndlaWdodF9jbGFzcyI6MzY5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "14",
+            "athlete_name": "Hannah Hall",
+            "total": "130",
+            "gender": "F",
+            "age": "25",
+            "club_name": "Lead to Platinum Barbell Club",
+            "membership_number": "1028080",
+            "wso": "Mountain North"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 41414,
+      "athlete_name": "Hannah Hall",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/41414",
+      "contaminated_lifter_id": 35867,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T04:59:46.495Z",
+      "profile_data": {
+        "membership_number": "1032989",
+        "birth_year": 2001,
+        "gender": "F",
+        "club_name": "PRECISION BARBELL",
+        "wso": "California South",
+        "national_rank": "4"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Nike 2020 National University Championships",
+          "date": "2020-02-09",
+          "division": "Open Women's 76kg",
+          "lifter_name": "Hannah Hall",
+          "body_weight_kg": "75.62",
+          "snatch_1": "79",
+          "snatch_2": "84",
+          "snatch_3": "86",
+          "cj_1": "101",
+          "cj_2": "104",
+          "cj_3": "-107",
+          "best_snatch": "86",
+          "best_cj": "104",
+          "total": "190"
+        },
+        {
+          "meet_name": "Nike 2020 National University Championships",
+          "date": "2020-02-09",
+          "division": "Open Women's 76kg",
+          "lifter_name": "Hannah Hall",
+          "body_weight_kg": "75.62",
+          "snatch_1": "79",
+          "snatch_2": "84",
+          "snatch_3": "86",
+          "cj_1": "101",
+          "cj_2": "104",
+          "cj_3": "-107",
+          "best_snatch": "86",
+          "best_cj": "104",
+          "total": "190"
+        },
+        {
+          "meet_name": "L.A. Coliseum Wall Meet",
+          "date": "2019-04-07",
+          "division": "Open Women's 76kg",
+          "lifter_name": "Hannah Hall",
+          "body_weight_kg": "74.5",
+          "snatch_1": "71",
+          "snatch_2": "-75",
+          "snatch_3": "76",
+          "cj_1": "87",
+          "cj_2": "95",
+          "cj_3": "-100",
+          "best_snatch": "76",
+          "best_cj": "95",
+          "total": "171"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Nike 2020 National University Championships",
+            "date": "2020-02-09",
+            "division": "Open Women's 76kg",
+            "lifter_name": "Hannah Hall",
+            "body_weight_kg": "75.62",
+            "snatch_1": "79",
+            "snatch_2": "84",
+            "snatch_3": "86",
+            "cj_1": "101",
+            "cj_2": "104",
+            "cj_3": "-107",
+            "best_snatch": "86",
+            "best_cj": "104",
+            "total": "190"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMi0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMi0wOSIsIndlaWdodF9jbGFzcyI6OTd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Hannah Hall",
+            "total": "190",
+            "gender": "F",
+            "age": "19",
+            "club_name": "PRECISION BARBELL",
+            "membership_number": "1032989",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Nike 2020 National University Championships",
+            "date": "2020-02-09",
+            "division": "Open Women's 76kg",
+            "lifter_name": "Hannah Hall",
+            "body_weight_kg": "75.62",
+            "snatch_1": "79",
+            "snatch_2": "84",
+            "snatch_3": "86",
+            "cj_1": "101",
+            "cj_2": "104",
+            "cj_3": "-107",
+            "best_snatch": "86",
+            "best_cj": "104",
+            "total": "190"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMi0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMi0wOSIsIndlaWdodF9jbGFzcyI6OTd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Hannah Hall",
+            "total": "190",
+            "gender": "F",
+            "age": "19",
+            "club_name": "PRECISION BARBELL",
+            "membership_number": "1032989",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "L.A. Coliseum Wall Meet",
+            "date": "2019-04-07",
+            "division": "Open Women's 76kg",
+            "lifter_name": "Hannah Hall",
+            "body_weight_kg": "74.5",
+            "snatch_1": "71",
+            "snatch_2": "-75",
+            "snatch_3": "76",
+            "cj_1": "87",
+            "cj_2": "95",
+            "cj_3": "-100",
+            "best_snatch": "76",
+            "best_cj": "95",
+            "total": "171"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0wNyIsIndlaWdodF9jbGFzcyI6OTd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "8",
+            "athlete_name": "Hannah Hall",
+            "total": "171",
+            "gender": "F",
+            "age": "18",
+            "club_name": "PRECISION BARBELL",
+            "membership_number": "1032989",
+            "wso": "California South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

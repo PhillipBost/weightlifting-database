@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T06:19:35.660Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Jorge Sanchez",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 106045754
+  },
+  "data": [
+    {
+      "internal_id": 7586,
+      "athlete_name": "Jorge Sanchez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/7586",
+      "contaminated_lifter_id": 40674,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T06:19:23.178Z",
+      "profile_data": {
+        "membership_number": "211033",
+        "birth_year": 1980,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Ohio",
+        "national_rank": "3"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Pan American Masters Championships",
+          "date": "2019-06-02",
+          "division": "Open Men's +109kg",
+          "lifter_name": "Jorge Sanchez",
+          "body_weight_kg": "119.1",
+          "snatch_1": "100",
+          "snatch_2": "105",
+          "snatch_3": "-110",
+          "cj_1": "135",
+          "cj_2": "140",
+          "cj_3": "-145",
+          "best_snatch": "105",
+          "best_cj": "140",
+          "total": "245"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Pan American Masters Championships",
+            "date": "2019-06-02",
+            "division": "Open Men's +109kg",
+            "lifter_name": "Jorge Sanchez",
+            "body_weight_kg": "119.1",
+            "snatch_1": "100",
+            "snatch_2": "105",
+            "snatch_3": "-110",
+            "cj_1": "135",
+            "cj_2": "140",
+            "cj_3": "-145",
+            "best_snatch": "105",
+            "best_cj": "140",
+            "total": "245"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNi0wMiIsIndlaWdodF9jbGFzcyI6OTB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Jorge Sanchez",
+            "total": "245",
+            "gender": "M",
+            "age": "39",
+            "club_name": "-",
+            "membership_number": "211033",
+            "wso": "Ohio"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 56408,
+      "athlete_name": "Jorge Sanchez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/56408",
+      "contaminated_lifter_id": 40674,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T06:19:35.657Z",
+      "profile_data": {
+        "membership_number": "1066260",
+        "birth_year": 1998,
+        "gender": "M",
+        "club_name": "MASS Strength",
+        "wso": "New England",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Barbells For Boobs",
+          "date": "2022-10-23",
+          "division": "Open Men's 73kg",
+          "lifter_name": "Jorge Sanchez",
+          "body_weight_kg": "72.8",
+          "snatch_1": "125",
+          "snatch_2": "-130",
+          "snatch_3": "-130",
+          "cj_1": "160",
+          "cj_2": "-170",
+          "cj_3": "-175",
+          "best_snatch": "125",
+          "best_cj": "160",
+          "total": "285"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Barbells For Boobs",
+            "date": "2022-10-23",
+            "division": "Open Men's 73kg",
+            "lifter_name": "Jorge Sanchez",
+            "body_weight_kg": "72.8",
+            "snatch_1": "125",
+            "snatch_2": "-130",
+            "snatch_3": "-130",
+            "cj_1": "160",
+            "cj_2": "-170",
+            "cj_3": "-175",
+            "best_snatch": "125",
+            "best_cj": "160",
+            "total": "285"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMC0yMyIsIndlaWdodF9jbGFzcyI6ODR9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Jorge Sanchez",
+            "total": "285",
+            "gender": "M",
+            "age": "24",
+            "club_name": "MASS Strength",
+            "membership_number": "1066260",
+            "wso": "New England"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

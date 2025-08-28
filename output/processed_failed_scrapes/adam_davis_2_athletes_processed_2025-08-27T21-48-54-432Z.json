@@ -1,0 +1,379 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T00:28:37.106Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Adam Davis",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 7,
+    "total_reverse_lookups": 7,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 84987200
+  },
+  "data": [
+    {
+      "internal_id": 6206,
+      "athlete_name": "Adam Davis",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/6206",
+      "contaminated_lifter_id": 28000,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T00:28:24.815Z",
+      "profile_data": {
+        "membership_number": "184921",
+        "birth_year": 1978,
+        "gender": "M",
+        "club_name": "American Muscle Weightlifting",
+        "wso": "Florida",
+        "national_rank": "5"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Nike 2019 American Open Series 3",
+          "date": "2019-09-15",
+          "division": "Men's Masters (40-44) 73kg",
+          "lifter_name": "Adam Davis",
+          "body_weight_kg": "72.37",
+          "snatch_1": "-72",
+          "snatch_2": "-74",
+          "snatch_3": "-74",
+          "cj_1": "89",
+          "cj_2": "-94",
+          "cj_3": "96",
+          "best_snatch": "0",
+          "best_cj": "96",
+          "total": "0"
+        },
+        {
+          "meet_name": "The Jacked Classic",
+          "date": "2019-06-29",
+          "division": "Open Men's 73kg",
+          "lifter_name": "Adam Davis",
+          "body_weight_kg": "73",
+          "snatch_1": "69",
+          "snatch_2": "73",
+          "snatch_3": "74",
+          "cj_1": "87",
+          "cj_2": "93",
+          "cj_3": "95",
+          "best_snatch": "74",
+          "best_cj": "95",
+          "total": "169"
+        },
+        {
+          "meet_name": "North Miami Weightlifting Open",
+          "date": "2019-02-10",
+          "division": "Open Men's 73kg",
+          "lifter_name": "Adam Davis",
+          "body_weight_kg": "72.7",
+          "snatch_1": "68",
+          "snatch_2": "72",
+          "snatch_3": "74",
+          "cj_1": "86",
+          "cj_2": "90",
+          "cj_3": "96",
+          "best_snatch": "74",
+          "best_cj": "96",
+          "total": "170"
+        },
+        {
+          "meet_name": "American Masters Championships",
+          "date": "2017-11-12",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Adam Davis",
+          "body_weight_kg": "75.13",
+          "snatch_1": "73",
+          "snatch_2": "77",
+          "snatch_3": "-81",
+          "cj_1": "90",
+          "cj_2": "98",
+          "cj_3": "-107",
+          "best_snatch": "77",
+          "best_cj": "98",
+          "total": "175"
+        },
+        {
+          "meet_name": "Nike 2017 American Open Series 2",
+          "date": "2017-07-30",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Adam Davis",
+          "body_weight_kg": "76.91",
+          "snatch_1": "73",
+          "snatch_2": "77",
+          "snatch_3": "-81",
+          "cj_1": "90",
+          "cj_2": "98",
+          "cj_3": "106",
+          "best_snatch": "77",
+          "best_cj": "106",
+          "total": "183"
+        },
+        {
+          "meet_name": "2017 Naples Winter Open",
+          "date": "2017-01-21",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Adam Davis",
+          "body_weight_kg": "76.8",
+          "snatch_1": "75",
+          "snatch_2": "80",
+          "snatch_3": "85",
+          "cj_1": "95",
+          "cj_2": "100",
+          "cj_3": "105",
+          "best_snatch": "85",
+          "best_cj": "105",
+          "total": "190"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Nike 2019 American Open Series 3",
+            "date": "2019-09-15",
+            "division": "Men's Masters (40-44) 73kg",
+            "lifter_name": "Adam Davis",
+            "body_weight_kg": "72.37",
+            "snatch_1": "-72",
+            "snatch_2": "-74",
+            "snatch_3": "-74",
+            "cj_1": "89",
+            "cj_2": "-94",
+            "cj_3": "96",
+            "best_snatch": "0",
+            "best_cj": "96",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOS0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOS0xNSIsIndlaWdodF9jbGFzcyI6MTI0fQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The Jacked Classic",
+            "date": "2019-06-29",
+            "division": "Open Men's 73kg",
+            "lifter_name": "Adam Davis",
+            "body_weight_kg": "73",
+            "snatch_1": "69",
+            "snatch_2": "73",
+            "snatch_3": "74",
+            "cj_1": "87",
+            "cj_2": "93",
+            "cj_3": "95",
+            "best_snatch": "74",
+            "best_cj": "95",
+            "total": "169"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNi0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNi0yOSIsIndlaWdodF9jbGFzcyI6ODR9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "Adam Davis",
+            "total": "169",
+            "gender": "M",
+            "age": "41",
+            "club_name": "American Muscle Weightlifting",
+            "membership_number": "184921",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "North Miami Weightlifting Open",
+            "date": "2019-02-10",
+            "division": "Open Men's 73kg",
+            "lifter_name": "Adam Davis",
+            "body_weight_kg": "72.7",
+            "snatch_1": "68",
+            "snatch_2": "72",
+            "snatch_3": "74",
+            "cj_1": "86",
+            "cj_2": "90",
+            "cj_3": "96",
+            "best_snatch": "74",
+            "best_cj": "96",
+            "total": "170"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMi0xMCIsIndlaWdodF9jbGFzcyI6ODR9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "20",
+            "athlete_name": "Adam Davis",
+            "total": "170",
+            "gender": "M",
+            "age": "41",
+            "club_name": "American Muscle Weightlifting",
+            "membership_number": "184921",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "American Masters Championships",
+            "date": "2017-11-12",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Adam Davis",
+            "body_weight_kg": "75.13",
+            "snatch_1": "73",
+            "snatch_2": "77",
+            "snatch_3": "-81",
+            "cj_1": "90",
+            "cj_2": "98",
+            "cj_3": "-107",
+            "best_snatch": "77",
+            "best_cj": "98",
+            "total": "175"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMS0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMS0xMiIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "13",
+            "athlete_name": "Adam Davis",
+            "total": "175",
+            "gender": "M",
+            "age": "39",
+            "club_name": "American Muscle Weightlifting",
+            "membership_number": "184921",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Nike 2017 American Open Series 2",
+            "date": "2017-07-30",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Adam Davis",
+            "body_weight_kg": "76.91",
+            "snatch_1": "73",
+            "snatch_2": "77",
+            "snatch_3": "-81",
+            "cj_1": "90",
+            "cj_2": "98",
+            "cj_3": "106",
+            "best_snatch": "77",
+            "best_cj": "106",
+            "total": "183"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNy0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNy0zMCIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "65",
+            "athlete_name": "Adam Davis",
+            "total": "183",
+            "gender": "M",
+            "age": "39",
+            "club_name": "American Muscle Weightlifting",
+            "membership_number": "184921",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2017 Naples Winter Open",
+            "date": "2017-01-21",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Adam Davis",
+            "body_weight_kg": "76.8",
+            "snatch_1": "75",
+            "snatch_2": "80",
+            "snatch_3": "85",
+            "cj_1": "95",
+            "cj_2": "100",
+            "cj_3": "105",
+            "best_snatch": "85",
+            "best_cj": "105",
+            "total": "190"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMS0yMSIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "15",
+            "athlete_name": "Adam Davis",
+            "total": "190",
+            "gender": "M",
+            "age": "39",
+            "club_name": "American Muscle Weightlifting",
+            "membership_number": "184921",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    },
+    {
+      "internal_id": 22103,
+      "athlete_name": "Adam Davis",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/22103",
+      "contaminated_lifter_id": 28000,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T00:28:37.104Z",
+      "profile_data": {
+        "membership_number": "1022814",
+        "birth_year": 1989,
+        "gender": "M",
+        "club_name": "Kindred Strength Barbell club",
+        "wso": "New York",
+        "national_rank": "9"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2017 Camillus Fall Open",
+          "date": "2017-09-16",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Adam Davis",
+          "body_weight_kg": "91.2",
+          "snatch_1": "95",
+          "snatch_2": "-102",
+          "snatch_3": "105",
+          "cj_1": "125",
+          "cj_2": "-128",
+          "cj_3": "128",
+          "best_snatch": "105",
+          "best_cj": "128",
+          "total": "233"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2017 Camillus Fall Open",
+            "date": "2017-09-16",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Adam Davis",
+            "body_weight_kg": "91.2",
+            "snatch_1": "95",
+            "snatch_2": "-102",
+            "snatch_3": "105",
+            "cj_1": "125",
+            "cj_2": "-128",
+            "cj_3": "128",
+            "best_snatch": "105",
+            "best_cj": "128",
+            "total": "233"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wOS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wOS0xNiIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "Adam Davis",
+            "total": "233",
+            "gender": "M",
+            "age": "28",
+            "club_name": "Kindred Strength Barbell club",
+            "membership_number": "1022814",
+            "wso": "New York"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

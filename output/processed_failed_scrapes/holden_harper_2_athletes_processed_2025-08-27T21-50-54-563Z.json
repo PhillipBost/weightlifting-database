@@ -1,0 +1,426 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T06:29:44.099Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Holden Harper",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 8,
+    "total_reverse_lookups": 8,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 106654193
+  },
+  "data": [
+    {
+      "internal_id": 27809,
+      "athlete_name": "Holden Harper",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/27809",
+      "contaminated_lifter_id": 39537,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T06:28:59.796Z",
+      "profile_data": {
+        "membership_number": "1045753",
+        "birth_year": 1992,
+        "gender": "M",
+        "club_name": "Rising Tide Weightlifting",
+        "wso": "Carolina",
+        "national_rank": "4"
+      },
+      "competition_history": [
+        {
+          "meet_name": "BARBELLS N SPRINKLES SPRING OPEN '24",
+          "date": "2024-05-04",
+          "division": "Open Men's 102kg",
+          "lifter_name": "Holden Harper",
+          "body_weight_kg": "96.2",
+          "snatch_1": "121",
+          "snatch_2": "126",
+          "snatch_3": "-130",
+          "cj_1": "148",
+          "cj_2": "-153",
+          "cj_3": "-153",
+          "best_snatch": "126",
+          "best_cj": "148",
+          "total": "274"
+        },
+        {
+          "meet_name": "BARBELLS N SPRINKLES FALL OPEN '23",
+          "date": "2023-08-26",
+          "division": "Open Men's 96kg",
+          "lifter_name": "Holden Harper",
+          "body_weight_kg": "95.9",
+          "snatch_1": "-125",
+          "snatch_2": "125",
+          "snatch_3": "-130",
+          "cj_1": "-155",
+          "cj_2": "155",
+          "cj_3": "-161",
+          "best_snatch": "125",
+          "best_cj": "155",
+          "total": "280"
+        },
+        {
+          "meet_name": "2023 Seahawk Open - NUQ",
+          "date": "2023-05-20",
+          "division": "Open Men's 96kg",
+          "lifter_name": "Holden Harper",
+          "body_weight_kg": "94",
+          "snatch_1": "123",
+          "snatch_2": "-128",
+          "snatch_3": "128",
+          "cj_1": "155",
+          "cj_2": "-160",
+          "cj_3": "-164",
+          "best_snatch": "128",
+          "best_cj": "155",
+          "total": "283"
+        },
+        {
+          "meet_name": "A Nightmare On Windmill Way Part III",
+          "date": "2022-10-29",
+          "division": "Open Men's 96kg",
+          "lifter_name": "Holden Harper",
+          "body_weight_kg": "93.1",
+          "snatch_1": "-123",
+          "snatch_2": "123",
+          "snatch_3": "-129",
+          "cj_1": "155",
+          "cj_2": "-162",
+          "cj_3": "-168",
+          "best_snatch": "123",
+          "best_cj": "155",
+          "total": "278"
+        },
+        {
+          "meet_name": "Southeastern Championships hosted by Barbells and Brews (NUQ)",
+          "date": "2022-09-24",
+          "division": "Open Men's 96kg",
+          "lifter_name": "Holden Harper",
+          "body_weight_kg": "93.9",
+          "snatch_1": "-120",
+          "snatch_2": "120",
+          "snatch_3": "-130",
+          "cj_1": "150",
+          "cj_2": "155",
+          "cj_3": "-161",
+          "best_snatch": "120",
+          "best_cj": "155",
+          "total": "275"
+        },
+        {
+          "meet_name": "Halloween Weightlifting Spectacular",
+          "date": "2019-11-02",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Holden Harper",
+          "body_weight_kg": "87.4",
+          "snatch_1": "112",
+          "snatch_2": "117",
+          "snatch_3": "120",
+          "cj_1": "134",
+          "cj_2": "140",
+          "cj_3": "144",
+          "best_snatch": "120",
+          "best_cj": "144",
+          "total": "264"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "BARBELLS N SPRINKLES SPRING OPEN '24",
+            "date": "2024-05-04",
+            "division": "Open Men's 102kg",
+            "lifter_name": "Holden Harper",
+            "body_weight_kg": "96.2",
+            "snatch_1": "121",
+            "snatch_2": "126",
+            "snatch_3": "-130",
+            "cj_1": "148",
+            "cj_2": "-153",
+            "cj_3": "-153",
+            "best_snatch": "126",
+            "best_cj": "148",
+            "total": "274"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNS0wNCIsIndlaWdodF9jbGFzcyI6ODh9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Holden Harper",
+            "total": "274",
+            "gender": "M",
+            "age": "32",
+            "club_name": "Rising Tide Weightlifting",
+            "membership_number": "1045753",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "BARBELLS N SPRINKLES FALL OPEN '23",
+            "date": "2023-08-26",
+            "division": "Open Men's 96kg",
+            "lifter_name": "Holden Harper",
+            "body_weight_kg": "95.9",
+            "snatch_1": "-125",
+            "snatch_2": "125",
+            "snatch_3": "-130",
+            "cj_1": "-155",
+            "cj_2": "155",
+            "cj_3": "-161",
+            "best_snatch": "125",
+            "best_cj": "155",
+            "total": "280"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wOC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wOC0yNiIsIndlaWdodF9jbGFzcyI6ODd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Holden Harper",
+            "total": "280",
+            "gender": "M",
+            "age": "31",
+            "club_name": "Rising Tide Weightlifting",
+            "membership_number": "1045753",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2023 Seahawk Open - NUQ",
+            "date": "2023-05-20",
+            "division": "Open Men's 96kg",
+            "lifter_name": "Holden Harper",
+            "body_weight_kg": "94",
+            "snatch_1": "123",
+            "snatch_2": "-128",
+            "snatch_3": "128",
+            "cj_1": "155",
+            "cj_2": "-160",
+            "cj_3": "-164",
+            "best_snatch": "128",
+            "best_cj": "155",
+            "total": "283"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNS0yMCIsIndlaWdodF9jbGFzcyI6ODd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Holden Harper",
+            "total": "283",
+            "gender": "M",
+            "age": "31",
+            "club_name": "Rising Tide Weightlifting",
+            "membership_number": "1045753",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "A Nightmare On Windmill Way Part III",
+            "date": "2022-10-29",
+            "division": "Open Men's 96kg",
+            "lifter_name": "Holden Harper",
+            "body_weight_kg": "93.1",
+            "snatch_1": "-123",
+            "snatch_2": "123",
+            "snatch_3": "-129",
+            "cj_1": "155",
+            "cj_2": "-162",
+            "cj_3": "-168",
+            "best_snatch": "123",
+            "best_cj": "155",
+            "total": "278"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMC0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMC0yOSIsIndlaWdodF9jbGFzcyI6ODd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "Holden Harper",
+            "total": "278",
+            "gender": "M",
+            "age": "30",
+            "club_name": "Rising Tide Weightlifting",
+            "membership_number": "1045753",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Southeastern Championships hosted by Barbells and Brews (NUQ)",
+            "date": "2022-09-24",
+            "division": "Open Men's 96kg",
+            "lifter_name": "Holden Harper",
+            "body_weight_kg": "93.9",
+            "snatch_1": "-120",
+            "snatch_2": "120",
+            "snatch_3": "-130",
+            "cj_1": "150",
+            "cj_2": "155",
+            "cj_3": "-161",
+            "best_snatch": "120",
+            "best_cj": "155",
+            "total": "275"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wOS0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wOS0yNCIsIndlaWdodF9jbGFzcyI6ODd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Holden Harper",
+            "total": "275",
+            "gender": "M",
+            "age": "30",
+            "club_name": "Rising Tide Weightlifting",
+            "membership_number": "1045753",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Halloween Weightlifting Spectacular",
+            "date": "2019-11-02",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Holden Harper",
+            "body_weight_kg": "87.4",
+            "snatch_1": "112",
+            "snatch_2": "117",
+            "snatch_3": "120",
+            "cj_1": "134",
+            "cj_2": "140",
+            "cj_3": "144",
+            "best_snatch": "120",
+            "best_cj": "144",
+            "total": "264"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0wMiIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Holden Harper",
+            "total": "264",
+            "gender": "M",
+            "age": "27",
+            "club_name": "-",
+            "membership_number": "1045753",
+            "wso": "Carolina"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 27986,
+      "athlete_name": "Holden Harper",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/27986",
+      "contaminated_lifter_id": 39537,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T06:29:44.098Z",
+      "profile_data": {
+        "membership_number": "1039059",
+        "birth_year": 1992,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Carolina",
+        "national_rank": "16"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2019 Spring Open",
+          "date": "2019-04-06",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Holden Harper",
+          "body_weight_kg": "88",
+          "snatch_1": "110",
+          "snatch_2": "116",
+          "snatch_3": "119",
+          "cj_1": "130",
+          "cj_2": "136",
+          "cj_3": "-141",
+          "best_snatch": "119",
+          "best_cj": "136",
+          "total": "255"
+        },
+        {
+          "meet_name": "Oklahoma Open",
+          "date": "2019-02-23",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Holden Harper",
+          "body_weight_kg": "87.4",
+          "snatch_1": "107",
+          "snatch_2": "112",
+          "snatch_3": "118",
+          "cj_1": "128",
+          "cj_2": "134",
+          "cj_3": "140",
+          "best_snatch": "118",
+          "best_cj": "140",
+          "total": "258"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2019 Spring Open",
+            "date": "2019-04-06",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Holden Harper",
+            "body_weight_kg": "88",
+            "snatch_1": "110",
+            "snatch_2": "116",
+            "snatch_3": "119",
+            "cj_1": "130",
+            "cj_2": "136",
+            "cj_3": "-141",
+            "best_snatch": "119",
+            "best_cj": "136",
+            "total": "255"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0wNiIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "16",
+            "athlete_name": "Holden Harper",
+            "total": "255",
+            "gender": "M",
+            "age": "27",
+            "club_name": "-",
+            "membership_number": "1039059",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Oklahoma Open",
+            "date": "2019-02-23",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Holden Harper",
+            "body_weight_kg": "87.4",
+            "snatch_1": "107",
+            "snatch_2": "112",
+            "snatch_3": "118",
+            "cj_1": "128",
+            "cj_2": "134",
+            "cj_3": "140",
+            "best_snatch": "118",
+            "best_cj": "140",
+            "total": "258"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMi0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMi0yMyIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    }
+  ]
+}

@@ -1,0 +1,200 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T07:11:29.211Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Patrick Jacobs",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 3,
+    "total_reverse_lookups": 3,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 109159305
+  },
+  "data": [
+    {
+      "internal_id": 62131,
+      "athlete_name": "Patrick Jacobs",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/62131",
+      "contaminated_lifter_id": 7055,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T07:11:08.888Z",
+      "profile_data": {
+        "membership_number": "1075328",
+        "birth_year": 1991,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Pennsylvania-West Virginia",
+        "national_rank": "8"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2024 Country Strong Spring Lift-Off",
+          "date": "2024-03-30",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Patrick Jacobs",
+          "body_weight_kg": "75.4",
+          "snatch_1": "61",
+          "snatch_2": "68",
+          "snatch_3": "74",
+          "cj_1": "86",
+          "cj_2": "90",
+          "cj_3": "93",
+          "best_snatch": "74",
+          "best_cj": "93",
+          "total": "167"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2024 Country Strong Spring Lift-Off",
+            "date": "2024-03-30",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Patrick Jacobs",
+            "body_weight_kg": "75.4",
+            "snatch_1": "61",
+            "snatch_2": "68",
+            "snatch_3": "74",
+            "cj_1": "86",
+            "cj_2": "90",
+            "cj_3": "93",
+            "best_snatch": "74",
+            "best_cj": "93",
+            "total": "167"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMy0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMy0zMCIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "8",
+            "athlete_name": "Patrick Jacobs",
+            "total": "167",
+            "gender": "M",
+            "age": "33",
+            "club_name": "-",
+            "membership_number": "1075328",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 26660,
+      "athlete_name": "Patrick Jacobs",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/26660",
+      "contaminated_lifter_id": 7055,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T07:11:29.208Z",
+      "profile_data": {
+        "membership_number": "196336",
+        "birth_year": 1991,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Carolina",
+        "national_rank": "2"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2015 Wilmington Open",
+          "date": "2015-01-24",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Patrick Jacobs",
+          "body_weight_kg": "81.6",
+          "snatch_1": "102",
+          "snatch_2": "107",
+          "snatch_3": "112",
+          "cj_1": "141",
+          "cj_2": "146",
+          "cj_3": "146",
+          "best_snatch": "112",
+          "best_cj": "146",
+          "total": "258"
+        },
+        {
+          "meet_name": "2014 Summer Lift Off",
+          "date": "2014-06-28",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Patrick Jacobs",
+          "body_weight_kg": "76.7",
+          "snatch_1": "110",
+          "snatch_2": "110",
+          "snatch_3": "110",
+          "cj_1": "140",
+          "cj_2": "143",
+          "cj_3": "143",
+          "best_snatch": "110",
+          "best_cj": "143",
+          "total": "253"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2015 Wilmington Open",
+            "date": "2015-01-24",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Patrick Jacobs",
+            "body_weight_kg": "81.6",
+            "snatch_1": "102",
+            "snatch_2": "107",
+            "snatch_3": "112",
+            "cj_1": "141",
+            "cj_2": "146",
+            "cj_3": "146",
+            "best_snatch": "112",
+            "best_cj": "146",
+            "total": "258"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMS0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMS0yNCIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Patrick Jacobs",
+            "total": "258",
+            "gender": "M",
+            "age": "24",
+            "club_name": "-",
+            "membership_number": "196336",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2014 Summer Lift Off",
+            "date": "2014-06-28",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Patrick Jacobs",
+            "body_weight_kg": "76.7",
+            "snatch_1": "110",
+            "snatch_2": "110",
+            "snatch_3": "110",
+            "cj_1": "140",
+            "cj_2": "143",
+            "cj_3": "143",
+            "best_snatch": "110",
+            "best_cj": "143",
+            "total": "253"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNi0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNi0yOCIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Patrick Jacobs",
+            "total": "253",
+            "gender": "M",
+            "age": "23",
+            "club_name": "-",
+            "membership_number": "196336",
+            "wso": "Carolina"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

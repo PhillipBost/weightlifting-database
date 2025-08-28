@@ -1,0 +1,200 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T18:27:24.617Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Thomas Campbell",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 3,
+    "total_reverse_lookups": 3,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 63314711
+  },
+  "data": [
+    {
+      "internal_id": 63861,
+      "athlete_name": "Thomas Campbell",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/63861",
+      "contaminated_lifter_id": 39336,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T18:27:14.078Z",
+      "profile_data": {
+        "membership_number": "1077541",
+        "birth_year": 1992,
+        "gender": "M",
+        "club_name": "Providence Barbell Club",
+        "wso": "New England",
+        "national_rank": "13"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Bay State Games",
+          "date": "2025-07-19",
+          "division": "Open Men's 88kg",
+          "lifter_name": "Thomas Campbell",
+          "body_weight_kg": "85.4",
+          "snatch_1": "58",
+          "snatch_2": "59",
+          "snatch_3": "-63",
+          "cj_1": "75",
+          "cj_2": "80",
+          "cj_3": "-85",
+          "best_snatch": "59",
+          "best_cj": "80",
+          "total": "139"
+        },
+        {
+          "meet_name": "2024 New England WSO Championships",
+          "date": "2024-09-28",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Thomas Campbell",
+          "body_weight_kg": "84.05",
+          "snatch_1": "45",
+          "snatch_2": "50",
+          "snatch_3": "53",
+          "cj_1": "65",
+          "cj_2": "70",
+          "cj_3": "75",
+          "best_snatch": "53",
+          "best_cj": "75",
+          "total": "128"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Bay State Games",
+            "date": "2025-07-19",
+            "division": "Open Men's 88kg",
+            "lifter_name": "Thomas Campbell",
+            "body_weight_kg": "85.4",
+            "snatch_1": "58",
+            "snatch_2": "59",
+            "snatch_3": "-63",
+            "cj_1": "75",
+            "cj_2": "80",
+            "cj_3": "-85",
+            "best_snatch": "59",
+            "best_cj": "80",
+            "total": "139"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNy0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNy0xOSIsIndlaWdodF9jbGFzcyI6NzEzfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "13",
+            "athlete_name": "Thomas Campbell",
+            "total": "139",
+            "gender": "M",
+            "age": "33",
+            "club_name": "Providence Barbell Club",
+            "membership_number": "1077541",
+            "wso": "New England"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2024 New England WSO Championships",
+            "date": "2024-09-28",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Thomas Campbell",
+            "body_weight_kg": "84.05",
+            "snatch_1": "45",
+            "snatch_2": "50",
+            "snatch_3": "53",
+            "cj_1": "65",
+            "cj_2": "70",
+            "cj_3": "75",
+            "best_snatch": "53",
+            "best_cj": "75",
+            "total": "128"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOS0yOCIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "49",
+            "athlete_name": "Thomas Campbell",
+            "total": "128",
+            "gender": "M",
+            "age": "32",
+            "club_name": "Providence Barbell Club",
+            "membership_number": "1077541",
+            "wso": "New England"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 11926,
+      "athlete_name": "Thomas Campbell",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/11926",
+      "contaminated_lifter_id": 39336,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T18:27:24.615Z",
+      "profile_data": {
+        "membership_number": "1037414",
+        "birth_year": 1984,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Carolina",
+        "national_rank": "8"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Intro to Kilos",
+          "date": "2019-01-26",
+          "division": "Open Men's 109kg",
+          "lifter_name": "Thomas Campbell",
+          "body_weight_kg": "108.1",
+          "snatch_1": "84",
+          "snatch_2": "89",
+          "snatch_3": "93",
+          "cj_1": "102",
+          "cj_2": "108",
+          "cj_3": "115",
+          "best_snatch": "93",
+          "best_cj": "115",
+          "total": "208"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Intro to Kilos",
+            "date": "2019-01-26",
+            "division": "Open Men's 109kg",
+            "lifter_name": "Thomas Campbell",
+            "body_weight_kg": "108.1",
+            "snatch_1": "84",
+            "snatch_2": "89",
+            "snatch_3": "93",
+            "cj_1": "102",
+            "cj_2": "108",
+            "cj_3": "115",
+            "best_snatch": "93",
+            "best_cj": "115",
+            "total": "208"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0yNiIsIndlaWdodF9jbGFzcyI6ODl9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "8",
+            "athlete_name": "Thomas Campbell",
+            "total": "208",
+            "gender": "M",
+            "age": "35",
+            "club_name": "-",
+            "membership_number": "1037414",
+            "wso": "Carolina"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

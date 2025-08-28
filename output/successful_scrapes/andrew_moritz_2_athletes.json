@@ -1,0 +1,247 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T04:44:36.264Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Andrew Moritz",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 4,
+    "total_reverse_lookups": 4,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 100346358
+  },
+  "data": [
+    {
+      "internal_id": 12902,
+      "athlete_name": "Andrew Moritz",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/12902",
+      "contaminated_lifter_id": 11228,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T04:44:05.742Z",
+      "profile_data": {
+        "membership_number": "1047972",
+        "birth_year": 1984,
+        "gender": "M",
+        "club_name": "Strong Weightlifting",
+        "wso": "Texas-Oklahoma",
+        "national_rank": "4"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Winter Slam Two",
+          "date": "2019-12-15",
+          "division": "Open Men's 109kg",
+          "lifter_name": "Andrew Moritz",
+          "body_weight_kg": "108.4",
+          "snatch_1": "-95",
+          "snatch_2": "95",
+          "snatch_3": "-100",
+          "cj_1": "125",
+          "cj_2": "130",
+          "cj_3": "135",
+          "best_snatch": "95",
+          "best_cj": "135",
+          "total": "230"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Winter Slam Two",
+            "date": "2019-12-15",
+            "division": "Open Men's 109kg",
+            "lifter_name": "Andrew Moritz",
+            "body_weight_kg": "108.4",
+            "snatch_1": "-95",
+            "snatch_2": "95",
+            "snatch_3": "-100",
+            "cj_1": "125",
+            "cj_2": "130",
+            "cj_3": "135",
+            "best_snatch": "95",
+            "best_cj": "135",
+            "total": "230"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMi0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMi0xNSIsIndlaWdodF9jbGFzcyI6ODl9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Andrew Moritz",
+            "total": "230",
+            "gender": "M",
+            "age": "35",
+            "club_name": "Strong Weightlifting",
+            "membership_number": "1047972",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 12903,
+      "athlete_name": "Andrew Moritz",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/12903",
+      "contaminated_lifter_id": 11228,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T04:44:36.262Z",
+      "profile_data": {
+        "membership_number": "215226",
+        "birth_year": 1984,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "New York",
+        "national_rank": "27"
+      },
+      "competition_history": [
+        {
+          "meet_name": "The LehighValley Open",
+          "date": "2016-03-19",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Andrew Moritz",
+          "body_weight_kg": "90",
+          "snatch_1": "98",
+          "snatch_2": "-102",
+          "snatch_3": "-104",
+          "cj_1": "122",
+          "cj_2": "-130",
+          "cj_3": "-130",
+          "best_snatch": "98",
+          "best_cj": "122",
+          "total": "220"
+        },
+        {
+          "meet_name": "Central New York Open",
+          "date": "2015-11-21",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Andrew Moritz",
+          "body_weight_kg": "88",
+          "snatch_1": "95",
+          "snatch_2": "98",
+          "snatch_3": "-103",
+          "cj_1": "120",
+          "cj_2": "123",
+          "cj_3": "0",
+          "best_snatch": "98",
+          "best_cj": "123",
+          "total": "221"
+        },
+        {
+          "meet_name": "(2015 Hookgrip Classic)name change:2015 Hookgrip Spartkiad",
+          "date": "2015-10-04",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Andrew Moritz",
+          "body_weight_kg": "83.15",
+          "snatch_1": "95",
+          "snatch_2": "98",
+          "snatch_3": "-101",
+          "cj_1": "-120",
+          "cj_2": "120",
+          "cj_3": "122",
+          "best_snatch": "98",
+          "best_cj": "122",
+          "total": "220"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "The LehighValley Open",
+            "date": "2016-03-19",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Andrew Moritz",
+            "body_weight_kg": "90",
+            "snatch_1": "98",
+            "snatch_2": "-102",
+            "snatch_3": "-104",
+            "cj_1": "122",
+            "cj_2": "-130",
+            "cj_3": "-130",
+            "best_snatch": "98",
+            "best_cj": "122",
+            "total": "220"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMy0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMy0xOSIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "27",
+            "athlete_name": "Andrew Moritz",
+            "total": "220",
+            "gender": "M",
+            "age": "32",
+            "club_name": "-",
+            "membership_number": "215226",
+            "wso": "New York"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Central New York Open",
+            "date": "2015-11-21",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Andrew Moritz",
+            "body_weight_kg": "88",
+            "snatch_1": "95",
+            "snatch_2": "98",
+            "snatch_3": "-103",
+            "cj_1": "120",
+            "cj_2": "123",
+            "cj_3": "0",
+            "best_snatch": "98",
+            "best_cj": "123",
+            "total": "221"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMS0yMSIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "7",
+            "athlete_name": "Andrew Moritz",
+            "total": "221",
+            "gender": "M",
+            "age": "31",
+            "club_name": "-",
+            "membership_number": "215226",
+            "wso": "New York"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "(2015 Hookgrip Classic)name change:2015 Hookgrip Spartkiad",
+            "date": "2015-10-04",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Andrew Moritz",
+            "body_weight_kg": "83.15",
+            "snatch_1": "95",
+            "snatch_2": "98",
+            "snatch_3": "-101",
+            "cj_1": "-120",
+            "cj_2": "120",
+            "cj_3": "122",
+            "best_snatch": "98",
+            "best_cj": "122",
+            "total": "220"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0wNCIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "33",
+            "athlete_name": "Andrew Moritz",
+            "total": "220",
+            "gender": "M",
+            "age": "31",
+            "club_name": "-",
+            "membership_number": "215226",
+            "wso": "New York"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

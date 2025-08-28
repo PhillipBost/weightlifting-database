@@ -1,0 +1,200 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T12:29:49.054Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Heather Russell",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 3,
+    "total_reverse_lookups": 3,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 41859148
+  },
+  "data": [
+    {
+      "internal_id": 6133,
+      "athlete_name": "Heather Russell",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/6133",
+      "contaminated_lifter_id": 27894,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T12:29:39.411Z",
+      "profile_data": {
+        "membership_number": "1042152",
+        "birth_year": 1978,
+        "gender": "F",
+        "club_name": "Cuppa Joe Weightlifting",
+        "wso": "New York",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "NYS CHAMPIONSHIP",
+          "date": "2019-09-28",
+          "division": "Women's Masters (40-44) 76kg",
+          "lifter_name": "Heather Russell",
+          "body_weight_kg": "74.55",
+          "snatch_1": "45",
+          "snatch_2": "-50",
+          "snatch_3": "-50",
+          "cj_1": "63",
+          "cj_2": "-67",
+          "cj_3": "67",
+          "best_snatch": "45",
+          "best_cj": "67",
+          "total": "112"
+        },
+        {
+          "meet_name": "2019 Hudson Valley Open",
+          "date": "2019-07-20",
+          "division": "Open Women's 76kg",
+          "lifter_name": "Heather Russell",
+          "body_weight_kg": "74.75",
+          "snatch_1": "42",
+          "snatch_2": "47",
+          "snatch_3": "-48",
+          "cj_1": "59",
+          "cj_2": "64",
+          "cj_3": "-69",
+          "best_snatch": "47",
+          "best_cj": "64",
+          "total": "111"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "NYS CHAMPIONSHIP",
+            "date": "2019-09-28",
+            "division": "Women's Masters (40-44) 76kg",
+            "lifter_name": "Heather Russell",
+            "body_weight_kg": "74.55",
+            "snatch_1": "45",
+            "snatch_2": "-50",
+            "snatch_3": "-50",
+            "cj_1": "63",
+            "cj_2": "-67",
+            "cj_3": "67",
+            "best_snatch": "45",
+            "best_cj": "67",
+            "total": "112"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOS0yOCIsIndlaWdodF9jbGFzcyI6MTM3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Heather Russell",
+            "total": "112",
+            "gender": "F",
+            "age": "41",
+            "club_name": "Cuppa Joe Weightlifting",
+            "membership_number": "1042152",
+            "wso": "New York"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2019 Hudson Valley Open",
+            "date": "2019-07-20",
+            "division": "Open Women's 76kg",
+            "lifter_name": "Heather Russell",
+            "body_weight_kg": "74.75",
+            "snatch_1": "42",
+            "snatch_2": "47",
+            "snatch_3": "-48",
+            "cj_1": "59",
+            "cj_2": "64",
+            "cj_3": "-69",
+            "best_snatch": "47",
+            "best_cj": "64",
+            "total": "111"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0yMCIsIndlaWdodF9jbGFzcyI6OTd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "Heather Russell",
+            "total": "111",
+            "gender": "F",
+            "age": "41",
+            "club_name": "Cuppa Joe Weightlifting",
+            "membership_number": "1042152",
+            "wso": "New York"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 23622,
+      "athlete_name": "Heather Russell",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/23622",
+      "contaminated_lifter_id": 27894,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T12:29:49.052Z",
+      "profile_data": {
+        "membership_number": "1015459",
+        "birth_year": 1990,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "Ohio",
+        "national_rank": "10"
+      },
+      "competition_history": [
+        {
+          "meet_name": "The Arnold Weightlifting Championships",
+          "date": "2017-03-05",
+          "division": "Open Women's 75 kg",
+          "lifter_name": "Heather Russell",
+          "body_weight_kg": "69.5",
+          "snatch_1": "-55",
+          "snatch_2": "57",
+          "snatch_3": "-60",
+          "cj_1": "74",
+          "cj_2": "78",
+          "cj_3": "80",
+          "best_snatch": "57",
+          "best_cj": "80",
+          "total": "137"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "The Arnold Weightlifting Championships",
+            "date": "2017-03-05",
+            "division": "Open Women's 75 kg",
+            "lifter_name": "Heather Russell",
+            "body_weight_kg": "69.5",
+            "snatch_1": "-55",
+            "snatch_2": "57",
+            "snatch_3": "-60",
+            "cj_1": "74",
+            "cj_2": "78",
+            "cj_3": "80",
+            "best_snatch": "57",
+            "best_cj": "80",
+            "total": "137"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0wNSIsIndlaWdodF9jbGFzcyI6MzY3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "Heather Russell",
+            "total": "137",
+            "gender": "F",
+            "age": "27",
+            "club_name": "-",
+            "membership_number": "1015459",
+            "wso": "Ohio"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

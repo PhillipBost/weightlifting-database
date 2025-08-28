@@ -1,0 +1,247 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T23:29:10.041Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Olivia Gilbert",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 4,
+    "total_reverse_lookups": 4,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 81420135
+  },
+  "data": [
+    {
+      "internal_id": 38832,
+      "athlete_name": "Olivia Gilbert",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/38832",
+      "contaminated_lifter_id": 10160,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T23:28:55.651Z",
+      "profile_data": {
+        "membership_number": "212501",
+        "birth_year": 1999,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "New York",
+        "national_rank": "4"
+      },
+      "competition_history": [
+        {
+          "meet_name": "TeamWNY October Open",
+          "date": "2016-10-23",
+          "division": "Women's 16-17 Age Group 53 kg",
+          "lifter_name": "Olivia Gilbert",
+          "body_weight_kg": "50.9",
+          "snatch_1": "-42",
+          "snatch_2": "42",
+          "snatch_3": "-45",
+          "cj_1": "52",
+          "cj_2": "55",
+          "cj_3": "-58",
+          "best_snatch": "42",
+          "best_cj": "55",
+          "total": "97"
+        },
+        {
+          "meet_name": "ROC CITY OPEN",
+          "date": "2016-06-12",
+          "division": "Women's 16-17 Age Group 53 kg",
+          "lifter_name": "Olivia Gilbert",
+          "body_weight_kg": "52.7",
+          "snatch_1": "45",
+          "snatch_2": "-48",
+          "snatch_3": "-48",
+          "cj_1": "55",
+          "cj_2": "58",
+          "cj_3": "-61",
+          "best_snatch": "45",
+          "best_cj": "58",
+          "total": "103"
+        },
+        {
+          "meet_name": "Team WNY Spring Cleaning",
+          "date": "2015-05-03",
+          "division": "Women's 16-17 Age Group 53 kg",
+          "lifter_name": "Olivia Gilbert",
+          "body_weight_kg": "52",
+          "snatch_1": "37",
+          "snatch_2": "39",
+          "snatch_3": "-42",
+          "cj_1": "48",
+          "cj_2": "52",
+          "cj_3": "-56",
+          "best_snatch": "39",
+          "best_cj": "52",
+          "total": "91"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "TeamWNY October Open",
+            "date": "2016-10-23",
+            "division": "Women's 16-17 Age Group 53 kg",
+            "lifter_name": "Olivia Gilbert",
+            "body_weight_kg": "50.9",
+            "snatch_1": "-42",
+            "snatch_2": "42",
+            "snatch_3": "-45",
+            "cj_1": "52",
+            "cj_2": "55",
+            "cj_3": "-58",
+            "best_snatch": "42",
+            "best_cj": "55",
+            "total": "97"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0yMyIsIndlaWdodF9jbGFzcyI6MzMxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Olivia Gilbert",
+            "total": "97",
+            "gender": "F",
+            "age": "17",
+            "club_name": "-",
+            "membership_number": "212501",
+            "wso": "New York"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "ROC CITY OPEN",
+            "date": "2016-06-12",
+            "division": "Women's 16-17 Age Group 53 kg",
+            "lifter_name": "Olivia Gilbert",
+            "body_weight_kg": "52.7",
+            "snatch_1": "45",
+            "snatch_2": "-48",
+            "snatch_3": "-48",
+            "cj_1": "55",
+            "cj_2": "58",
+            "cj_3": "-61",
+            "best_snatch": "45",
+            "best_cj": "58",
+            "total": "103"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0xMiIsIndlaWdodF9jbGFzcyI6MzMxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Olivia Gilbert",
+            "total": "103",
+            "gender": "F",
+            "age": "17",
+            "club_name": "-",
+            "membership_number": "212501",
+            "wso": "New York"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Team WNY Spring Cleaning",
+            "date": "2015-05-03",
+            "division": "Women's 16-17 Age Group 53 kg",
+            "lifter_name": "Olivia Gilbert",
+            "body_weight_kg": "52",
+            "snatch_1": "37",
+            "snatch_2": "39",
+            "snatch_3": "-42",
+            "cj_1": "48",
+            "cj_2": "52",
+            "cj_3": "-56",
+            "best_snatch": "39",
+            "best_cj": "52",
+            "total": "91"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0wMyIsIndlaWdodF9jbGFzcyI6MzMxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Olivia Gilbert",
+            "total": "91",
+            "gender": "F",
+            "age": "16",
+            "club_name": "-",
+            "membership_number": "212501",
+            "wso": "New York"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 62486,
+      "athlete_name": "Olivia Gilbert",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/62486",
+      "contaminated_lifter_id": 10160,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T23:29:10.039Z",
+      "profile_data": {
+        "membership_number": "1076047",
+        "birth_year": 2000,
+        "gender": "F",
+        "club_name": "Pinnacle Weightlifting",
+        "wso": "Mountain North",
+        "national_rank": "16"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2024 Mountain North WSO Championship",
+          "date": "2024-04-20",
+          "division": "Open Women's 59kg",
+          "lifter_name": "Olivia Gilbert",
+          "body_weight_kg": "57.7",
+          "snatch_1": "37",
+          "snatch_2": "40",
+          "snatch_3": "-45",
+          "cj_1": "51",
+          "cj_2": "-55",
+          "cj_3": "-55",
+          "best_snatch": "40",
+          "best_cj": "51",
+          "total": "91"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2024 Mountain North WSO Championship",
+            "date": "2024-04-20",
+            "division": "Open Women's 59kg",
+            "lifter_name": "Olivia Gilbert",
+            "body_weight_kg": "57.7",
+            "snatch_1": "37",
+            "snatch_2": "40",
+            "snatch_3": "-45",
+            "cj_1": "51",
+            "cj_2": "-55",
+            "cj_3": "-55",
+            "best_snatch": "40",
+            "best_cj": "51",
+            "total": "91"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNC0yMCIsIndlaWdodF9jbGFzcyI6OTR9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "16",
+            "athlete_name": "Olivia Gilbert",
+            "total": "91",
+            "gender": "F",
+            "age": "24",
+            "club_name": "Pinnacle Weightlifting",
+            "membership_number": "1076047",
+            "wso": "Mountain North"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

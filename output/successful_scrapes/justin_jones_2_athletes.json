@@ -1,0 +1,200 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T09:04:46.220Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Justin Jones",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 3,
+    "total_reverse_lookups": 3,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 29556314
+  },
+  "data": [
+    {
+      "internal_id": 14225,
+      "athlete_name": "Justin Jones",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/14225",
+      "contaminated_lifter_id": 6258,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T09:04:36.475Z",
+      "profile_data": {
+        "membership_number": "175265",
+        "birth_year": 1985,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Michigan",
+        "national_rank": "57"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2014 State of Michigan and Open Championships",
+          "date": "2014-06-07",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Justin Jones",
+          "body_weight_kg": "85.2",
+          "snatch_1": "90",
+          "snatch_2": "95",
+          "snatch_3": "95",
+          "cj_1": "110",
+          "cj_2": "116",
+          "cj_3": "116",
+          "best_snatch": "95",
+          "best_cj": "116",
+          "total": "211"
+        },
+        {
+          "meet_name": "2013 Iron Egg Summer Meltdown Weightlifting Championships",
+          "date": "2013-08-24",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Justin Jones",
+          "body_weight_kg": "90.5",
+          "snatch_1": "86",
+          "snatch_2": "86",
+          "snatch_3": "93",
+          "cj_1": "103",
+          "cj_2": "110",
+          "cj_3": "120",
+          "best_snatch": "93",
+          "best_cj": "120",
+          "total": "213"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2014 State of Michigan and Open Championships",
+            "date": "2014-06-07",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Justin Jones",
+            "body_weight_kg": "85.2",
+            "snatch_1": "90",
+            "snatch_2": "95",
+            "snatch_3": "95",
+            "cj_1": "110",
+            "cj_2": "116",
+            "cj_3": "116",
+            "best_snatch": "95",
+            "best_cj": "116",
+            "total": "211"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNi0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNi0wNyIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "57",
+            "athlete_name": "Justin Jones",
+            "total": "211",
+            "gender": "M",
+            "age": "29",
+            "club_name": "-",
+            "membership_number": "175265",
+            "wso": "Michigan"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2013 Iron Egg Summer Meltdown Weightlifting Championships",
+            "date": "2013-08-24",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Justin Jones",
+            "body_weight_kg": "90.5",
+            "snatch_1": "86",
+            "snatch_2": "86",
+            "snatch_3": "93",
+            "cj_1": "103",
+            "cj_2": "110",
+            "cj_3": "120",
+            "best_snatch": "93",
+            "best_cj": "120",
+            "total": "213"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wOC0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wOC0yNCIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "14",
+            "athlete_name": "Justin Jones",
+            "total": "213",
+            "gender": "M",
+            "age": "28",
+            "club_name": "-",
+            "membership_number": "175265",
+            "wso": "Michigan"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 64520,
+      "athlete_name": "Justin Jones",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/64520",
+      "contaminated_lifter_id": 6258,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T09:04:46.218Z",
+      "profile_data": {
+        "membership_number": "1077884",
+        "birth_year": 1984,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Michigan",
+        "national_rank": "3"
+      },
+      "competition_history": [
+        {
+          "meet_name": "BOO BASH",
+          "date": "2024-10-22",
+          "division": "Open Men's 96kg",
+          "lifter_name": "Justin Jones",
+          "body_weight_kg": "93.8",
+          "snatch_1": "76",
+          "snatch_2": "77",
+          "snatch_3": "-80",
+          "cj_1": "98",
+          "cj_2": "102",
+          "cj_3": "-107",
+          "best_snatch": "77",
+          "best_cj": "102",
+          "total": "179"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "BOO BASH",
+            "date": "2024-10-22",
+            "division": "Open Men's 96kg",
+            "lifter_name": "Justin Jones",
+            "body_weight_kg": "93.8",
+            "snatch_1": "76",
+            "snatch_2": "77",
+            "snatch_3": "-80",
+            "cj_1": "98",
+            "cj_2": "102",
+            "cj_3": "-107",
+            "best_snatch": "77",
+            "best_cj": "102",
+            "total": "179"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0yMiIsIndlaWdodF9jbGFzcyI6ODd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Justin Jones",
+            "total": "179",
+            "gender": "M",
+            "age": "40",
+            "club_name": "-",
+            "membership_number": "1077884",
+            "wso": "Michigan"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

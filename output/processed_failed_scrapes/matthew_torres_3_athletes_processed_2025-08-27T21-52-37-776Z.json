@@ -1,0 +1,541 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T12:54:57.011Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Matthew Torres",
+    "internal_ids_processed": 3,
+    "successful_scrapes": 2,
+    "failed_scrapes": 1,
+    "total_competitions_found": 10,
+    "total_reverse_lookups": 10,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 10726655
+  },
+  "data": [
+    {
+      "internal_id": 21055,
+      "athlete_name": "Matthew Torres",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/21055",
+      "contaminated_lifter_id": 24624,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T15:23:06.532Z",
+      "profile_data": {
+        "membership_number": "1009694",
+        "birth_year": 1989,
+        "gender": "M",
+        "club_name": "Taken Not Given",
+        "wso": "Hawaii and International",
+        "national_rank": "34"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Waimanalo open",
+          "date": "2016-08-06",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Matthew Torres",
+          "body_weight_kg": "84.16",
+          "snatch_1": "80",
+          "snatch_2": "87",
+          "snatch_3": "-95",
+          "cj_1": "120",
+          "cj_2": "-126",
+          "cj_3": "-126",
+          "best_snatch": "87",
+          "best_cj": "120",
+          "total": "207"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Waimanalo open",
+            "date": "2016-08-06",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Matthew Torres",
+            "body_weight_kg": "84.16",
+            "snatch_1": "80",
+            "snatch_2": "87",
+            "snatch_3": "-95",
+            "cj_1": "120",
+            "cj_2": "-126",
+            "cj_3": "-126",
+            "best_snatch": "87",
+            "best_cj": "120",
+            "total": "207"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0wNiIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "34",
+            "athlete_name": "Matthew Torres",
+            "total": "207",
+            "gender": "M",
+            "age": "27",
+            "club_name": "Taken Not Given",
+            "membership_number": "1009694",
+            "wso": "Hawaii and International"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 31305,
+      "athlete_name": "Matthew Torres",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/31305",
+      "contaminated_lifter_id": 24624,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T15:23:51.612Z",
+      "profile_data": {
+        "membership_number": "1018656",
+        "birth_year": 1994,
+        "gender": "M",
+        "club_name": "HOOSIER BARBELL CLUB",
+        "wso": "Indiana",
+        "national_rank": "5"
+      },
+      "competition_history": [
+        {
+          "meet_name": "HBC Closed Meet",
+          "date": "2018-10-20",
+          "division": "Open Men's +109kg",
+          "lifter_name": "Matthew Torres",
+          "body_weight_kg": "117.1",
+          "snatch_1": "110",
+          "snatch_2": "-115",
+          "snatch_3": "117",
+          "cj_1": "-130",
+          "cj_2": "130",
+          "cj_3": "-140",
+          "best_snatch": "117",
+          "best_cj": "130",
+          "total": "247"
+        },
+        {
+          "meet_name": "indiana State Open and High School Championship",
+          "date": "2018-05-13",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Matthew Torres",
+          "body_weight_kg": "116.33",
+          "snatch_1": "105",
+          "snatch_2": "108",
+          "snatch_3": "112",
+          "cj_1": "-132",
+          "cj_2": "-132",
+          "cj_3": "132",
+          "best_snatch": "112",
+          "best_cj": "132",
+          "total": "244"
+        },
+        {
+          "meet_name": "HBC Closed",
+          "date": "2018-03-17",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Matthew Torres",
+          "body_weight_kg": "115.7",
+          "snatch_1": "102",
+          "snatch_2": "-107",
+          "snatch_3": "-107",
+          "cj_1": "135",
+          "cj_2": "-137",
+          "cj_3": "-137",
+          "best_snatch": "102",
+          "best_cj": "135",
+          "total": "237"
+        },
+        {
+          "meet_name": "Winter Open Meet",
+          "date": "2018-01-13",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Matthew Torres",
+          "body_weight_kg": "114.65",
+          "snatch_1": "100",
+          "snatch_2": "105",
+          "snatch_3": "107",
+          "cj_1": "125",
+          "cj_2": "-130",
+          "cj_3": "130",
+          "best_snatch": "107",
+          "best_cj": "130",
+          "total": "237"
+        },
+        {
+          "meet_name": "HBC Annual Tamale Meet",
+          "date": "2017-12-29",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Matthew Torres",
+          "body_weight_kg": "114",
+          "snatch_1": "-100",
+          "snatch_2": "100",
+          "snatch_3": "105",
+          "cj_1": "125",
+          "cj_2": "130",
+          "cj_3": "-137",
+          "best_snatch": "105",
+          "best_cj": "130",
+          "total": "235"
+        },
+        {
+          "meet_name": "Indiana State Weightlifting Championships",
+          "date": "2017-05-21",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Matthew Torres",
+          "body_weight_kg": "111.71",
+          "snatch_1": "95",
+          "snatch_2": "-98",
+          "snatch_3": "98",
+          "cj_1": "110",
+          "cj_2": "115",
+          "cj_3": "120",
+          "best_snatch": "98",
+          "best_cj": "120",
+          "total": "218"
+        },
+        {
+          "meet_name": "Illinois State Championships and Open WL Championships",
+          "date": "2017-04-22",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Matthew Torres",
+          "body_weight_kg": "112.35",
+          "snatch_1": "85",
+          "snatch_2": "-90",
+          "snatch_3": "90",
+          "cj_1": "105",
+          "cj_2": "112",
+          "cj_3": "-120",
+          "best_snatch": "90",
+          "best_cj": "112",
+          "total": "202"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "HBC Closed Meet",
+            "date": "2018-10-20",
+            "division": "Open Men's +109kg",
+            "lifter_name": "Matthew Torres",
+            "body_weight_kg": "117.1",
+            "snatch_1": "110",
+            "snatch_2": "-115",
+            "snatch_3": "117",
+            "cj_1": "-130",
+            "cj_2": "130",
+            "cj_3": "-140",
+            "best_snatch": "117",
+            "best_cj": "130",
+            "total": "247"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yMCIsIndlaWdodF9jbGFzcyI6OTB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "Matthew Torres",
+            "total": "247",
+            "gender": "M",
+            "age": "24",
+            "club_name": "HOOSIER BARBELL CLUB",
+            "membership_number": "1018656",
+            "wso": "Indiana"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "indiana State Open and High School Championship",
+            "date": "2018-05-13",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Matthew Torres",
+            "body_weight_kg": "116.33",
+            "snatch_1": "105",
+            "snatch_2": "108",
+            "snatch_3": "112",
+            "cj_1": "-132",
+            "cj_2": "-132",
+            "cj_3": "132",
+            "best_snatch": "112",
+            "best_cj": "132",
+            "total": "244"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNS0xMyIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Matthew Torres",
+            "total": "244",
+            "gender": "M",
+            "age": "24",
+            "club_name": "HOOSIER BARBELL CLUB",
+            "membership_number": "1018656",
+            "wso": "Indiana"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "HBC Closed",
+            "date": "2018-03-17",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Matthew Torres",
+            "body_weight_kg": "115.7",
+            "snatch_1": "102",
+            "snatch_2": "-107",
+            "snatch_3": "-107",
+            "cj_1": "135",
+            "cj_2": "-137",
+            "cj_3": "-137",
+            "best_snatch": "102",
+            "best_cj": "135",
+            "total": "237"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMy0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMy0xNyIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "7",
+            "athlete_name": "Matthew Torres",
+            "total": "237",
+            "gender": "M",
+            "age": "24",
+            "club_name": "HOOSIER BARBELL CLUB",
+            "membership_number": "1018656",
+            "wso": "Indiana"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Winter Open Meet",
+            "date": "2018-01-13",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Matthew Torres",
+            "body_weight_kg": "114.65",
+            "snatch_1": "100",
+            "snatch_2": "105",
+            "snatch_3": "107",
+            "cj_1": "125",
+            "cj_2": "-130",
+            "cj_3": "130",
+            "best_snatch": "107",
+            "best_cj": "130",
+            "total": "237"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMS0xMyIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "7",
+            "athlete_name": "Matthew Torres",
+            "total": "237",
+            "gender": "M",
+            "age": "24",
+            "club_name": "HOOSIER BARBELL CLUB",
+            "membership_number": "1018656",
+            "wso": "Indiana"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "HBC Annual Tamale Meet",
+            "date": "2017-12-29",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Matthew Torres",
+            "body_weight_kg": "114",
+            "snatch_1": "-100",
+            "snatch_2": "100",
+            "snatch_3": "105",
+            "cj_1": "125",
+            "cj_2": "130",
+            "cj_3": "-137",
+            "best_snatch": "105",
+            "best_cj": "130",
+            "total": "235"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMi0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMi0yOSIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Matthew Torres",
+            "total": "235",
+            "gender": "M",
+            "age": "23",
+            "club_name": "HOOSIER BARBELL CLUB",
+            "membership_number": "1018656",
+            "wso": "Indiana"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Indiana State Weightlifting Championships",
+            "date": "2017-05-21",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Matthew Torres",
+            "body_weight_kg": "111.71",
+            "snatch_1": "95",
+            "snatch_2": "-98",
+            "snatch_3": "98",
+            "cj_1": "110",
+            "cj_2": "115",
+            "cj_3": "120",
+            "best_snatch": "98",
+            "best_cj": "120",
+            "total": "218"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNS0yMSIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "12",
+            "athlete_name": "Matthew Torres",
+            "total": "218",
+            "gender": "M",
+            "age": "23",
+            "club_name": "HOOSIER BARBELL CLUB",
+            "membership_number": "1018656",
+            "wso": "Indiana"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Illinois State Championships and Open WL Championships",
+            "date": "2017-04-22",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Matthew Torres",
+            "body_weight_kg": "112.35",
+            "snatch_1": "85",
+            "snatch_2": "-90",
+            "snatch_3": "90",
+            "cj_1": "105",
+            "cj_2": "112",
+            "cj_3": "-120",
+            "best_snatch": "90",
+            "best_cj": "112",
+            "total": "202"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNC0yMiIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "17",
+            "athlete_name": "Matthew Torres",
+            "total": "202",
+            "gender": "M",
+            "age": "23",
+            "club_name": "HOOSIER BARBELL CLUB",
+            "membership_number": "1018656",
+            "wso": "Indiana"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 64347,
+      "athlete_name": "Matthew Torres",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/64347",
+      "contaminated_lifter_id": 24624,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-27T12:54:55.008Z",
+      "profile_data": {
+        "membership_number": "1078936",
+        "birth_year": 2013,
+        "gender": "M",
+        "club_name": "TEAM OMNIA",
+        "wso": "Florida",
+        "national_rank": "4"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Omnia Open 1 (NUQ)",
+          "date": "2025-01-25",
+          "division": "Men's 13 Under Age Group +73kg",
+          "lifter_name": "Matthew Torres",
+          "body_weight_kg": "91.8",
+          "snatch_1": "28",
+          "snatch_2": "-30",
+          "snatch_3": "30",
+          "cj_1": "0",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "30",
+          "best_cj": "0",
+          "total": "0"
+        },
+        {
+          "meet_name": "The Palm Beach Open 2024",
+          "date": "2024-10-26",
+          "division": "Men's 13 Under Age Group +73kg",
+          "lifter_name": "Matthew Torres",
+          "body_weight_kg": "87.4",
+          "snatch_1": "26",
+          "snatch_2": "28",
+          "snatch_3": "-30",
+          "cj_1": "35",
+          "cj_2": "37",
+          "cj_3": "40",
+          "best_snatch": "28",
+          "best_cj": "40",
+          "total": "68"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Omnia Open 1 (NUQ)",
+            "date": "2025-01-25",
+            "division": "Men's 13 Under Age Group +73kg",
+            "lifter_name": "Matthew Torres",
+            "body_weight_kg": "91.8",
+            "snatch_1": "28",
+            "snatch_2": "-30",
+            "snatch_3": "30",
+            "cj_1": "0",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "30",
+            "best_cj": "0",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMS0yNSIsIndlaWdodF9jbGFzcyI6NTB9",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The Palm Beach Open 2024",
+            "date": "2024-10-26",
+            "division": "Men's 13 Under Age Group +73kg",
+            "lifter_name": "Matthew Torres",
+            "body_weight_kg": "87.4",
+            "snatch_1": "26",
+            "snatch_2": "28",
+            "snatch_3": "-30",
+            "cj_1": "35",
+            "cj_2": "37",
+            "cj_3": "40",
+            "best_snatch": "28",
+            "best_cj": "40",
+            "total": "68"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0yNiIsIndlaWdodF9jbGFzcyI6NTB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Matthew Torres",
+            "total": "68",
+            "gender": "M",
+            "age": "11",
+            "club_name": "TEAM OMNIA",
+            "membership_number": "1078936",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    }
+  ]
+}

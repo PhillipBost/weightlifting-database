@@ -1,0 +1,200 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T10:47:53.971Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Lauren Eichhorn",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 3,
+    "total_reverse_lookups": 3,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 35744065
+  },
+  "data": [
+    {
+      "internal_id": 16910,
+      "athlete_name": "Lauren Eichhorn",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/16910",
+      "contaminated_lifter_id": 13693,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T10:47:11.858Z",
+      "profile_data": {
+        "membership_number": "218413",
+        "birth_year": 1987,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "New York",
+        "national_rank": "11"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Rudy Sablo Memorial",
+          "date": "2015-09-20",
+          "division": "Open Women's 69 kg",
+          "lifter_name": "Lauren Eichhorn",
+          "body_weight_kg": "63.8",
+          "snatch_1": "38",
+          "snatch_2": "-40",
+          "snatch_3": "-40",
+          "cj_1": "51",
+          "cj_2": "53",
+          "cj_3": "56",
+          "best_snatch": "38",
+          "best_cj": "56",
+          "total": "94"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Rudy Sablo Memorial",
+            "date": "2015-09-20",
+            "division": "Open Women's 69 kg",
+            "lifter_name": "Lauren Eichhorn",
+            "body_weight_kg": "63.8",
+            "snatch_1": "38",
+            "snatch_2": "-40",
+            "snatch_3": "-40",
+            "cj_1": "51",
+            "cj_2": "53",
+            "cj_3": "56",
+            "best_snatch": "38",
+            "best_cj": "56",
+            "total": "94"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOS0yMCIsIndlaWdodF9jbGFzcyI6MzY2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "11",
+            "athlete_name": "Lauren Eichhorn",
+            "total": "94",
+            "gender": "F",
+            "age": "28",
+            "club_name": "-",
+            "membership_number": "218413",
+            "wso": "New York"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 28418,
+      "athlete_name": "Lauren Eichhorn",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/28418",
+      "contaminated_lifter_id": 13693,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T10:47:53.969Z",
+      "profile_data": {
+        "membership_number": "1019709",
+        "birth_year": 1992,
+        "gender": "F",
+        "club_name": "Joe Floria",
+        "wso": "New York",
+        "national_rank": "22"
+      },
+      "competition_history": [
+        {
+          "meet_name": "The Holiday Open",
+          "date": "2017-12-17",
+          "division": "Open Women's 69 kg",
+          "lifter_name": "Lauren Eichhorn",
+          "body_weight_kg": "65.5",
+          "snatch_1": "-48",
+          "snatch_2": "49",
+          "snatch_3": "52",
+          "cj_1": "69",
+          "cj_2": "71",
+          "cj_3": "73",
+          "best_snatch": "52",
+          "best_cj": "73",
+          "total": "125"
+        },
+        {
+          "meet_name": "Brooklyn Barbell Open",
+          "date": "2017-08-27",
+          "division": "Open Women's 69 kg",
+          "lifter_name": "Lauren Eichhorn",
+          "body_weight_kg": "63.45",
+          "snatch_1": "48",
+          "snatch_2": "51",
+          "snatch_3": "55",
+          "cj_1": "66",
+          "cj_2": "70",
+          "cj_3": "75",
+          "best_snatch": "55",
+          "best_cj": "75",
+          "total": "130"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "The Holiday Open",
+            "date": "2017-12-17",
+            "division": "Open Women's 69 kg",
+            "lifter_name": "Lauren Eichhorn",
+            "body_weight_kg": "65.5",
+            "snatch_1": "-48",
+            "snatch_2": "49",
+            "snatch_3": "52",
+            "cj_1": "69",
+            "cj_2": "71",
+            "cj_3": "73",
+            "best_snatch": "52",
+            "best_cj": "73",
+            "total": "125"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMi0xNyIsIndlaWdodF9jbGFzcyI6MzY2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "22",
+            "athlete_name": "Lauren Eichhorn",
+            "total": "125",
+            "gender": "F",
+            "age": "25",
+            "club_name": "Joe Floria",
+            "membership_number": "1019709",
+            "wso": "New York"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Brooklyn Barbell Open",
+            "date": "2017-08-27",
+            "division": "Open Women's 69 kg",
+            "lifter_name": "Lauren Eichhorn",
+            "body_weight_kg": "63.45",
+            "snatch_1": "48",
+            "snatch_2": "51",
+            "snatch_3": "55",
+            "cj_1": "66",
+            "cj_2": "70",
+            "cj_3": "75",
+            "best_snatch": "55",
+            "best_cj": "75",
+            "total": "130"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wOC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wOC0yNyIsIndlaWdodF9jbGFzcyI6MzY2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "Lauren Eichhorn",
+            "total": "130",
+            "gender": "F",
+            "age": "25",
+            "club_name": "Joe Floria",
+            "membership_number": "1019709",
+            "wso": "New York"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

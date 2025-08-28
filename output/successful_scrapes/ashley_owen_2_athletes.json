@@ -1,0 +1,247 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T21:08:54.909Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Ashley Owen",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 4,
+    "total_reverse_lookups": 4,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 73005003
+  },
+  "data": [
+    {
+      "internal_id": 18625,
+      "athlete_name": "Ashley Owen",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/18625",
+      "contaminated_lifter_id": 24489,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T21:08:34.823Z",
+      "profile_data": {
+        "membership_number": "1008620",
+        "birth_year": 1988,
+        "gender": "F",
+        "club_name": "Wilder Athletics",
+        "wso": "California South",
+        "national_rank": "4"
+      },
+      "competition_history": [
+        {
+          "meet_name": "BARBARIAN BARBELL presents The 10th Annual OctoBar Fest! (NUQ)",
+          "date": "2024-10-19",
+          "division": "Women's Masters (35-39) 71kg",
+          "lifter_name": "Ashley Owen",
+          "body_weight_kg": "69.7",
+          "snatch_1": "-68",
+          "snatch_2": "68",
+          "snatch_3": "70",
+          "cj_1": "79",
+          "cj_2": "83",
+          "cj_3": "0",
+          "best_snatch": "70",
+          "best_cj": "83",
+          "total": "153"
+        },
+        {
+          "meet_name": "GRIND Summer liftoff",
+          "date": "2016-06-26",
+          "division": "Open Women's 69 kg",
+          "lifter_name": "Ashley Owen",
+          "body_weight_kg": "66.9",
+          "snatch_1": "57",
+          "snatch_2": "62",
+          "snatch_3": "-67",
+          "cj_1": "70",
+          "cj_2": "75",
+          "cj_3": "-79",
+          "best_snatch": "62",
+          "best_cj": "75",
+          "total": "137"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "BARBARIAN BARBELL presents The 10th Annual OctoBar Fest! (NUQ)",
+            "date": "2024-10-19",
+            "division": "Women's Masters (35-39) 71kg",
+            "lifter_name": "Ashley Owen",
+            "body_weight_kg": "69.7",
+            "snatch_1": "-68",
+            "snatch_2": "68",
+            "snatch_3": "70",
+            "cj_1": "79",
+            "cj_2": "83",
+            "cj_3": "0",
+            "best_snatch": "70",
+            "best_cj": "83",
+            "total": "153"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0xOSIsIndlaWdodF9jbGFzcyI6MTE2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Ashley Owen",
+            "total": "153",
+            "gender": "F",
+            "age": "36",
+            "club_name": "Wilder Athletics",
+            "membership_number": "1008620",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "GRIND Summer liftoff",
+            "date": "2016-06-26",
+            "division": "Open Women's 69 kg",
+            "lifter_name": "Ashley Owen",
+            "body_weight_kg": "66.9",
+            "snatch_1": "57",
+            "snatch_2": "62",
+            "snatch_3": "-67",
+            "cj_1": "70",
+            "cj_2": "75",
+            "cj_3": "-79",
+            "best_snatch": "62",
+            "best_cj": "75",
+            "total": "137"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0yNiIsIndlaWdodF9jbGFzcyI6MzY2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "8",
+            "athlete_name": "Ashley Owen",
+            "total": "137",
+            "gender": "F",
+            "age": "28",
+            "club_name": "-",
+            "membership_number": "1008620",
+            "wso": "California South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 31199,
+      "athlete_name": "Ashley Owen",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/31199",
+      "contaminated_lifter_id": 24489,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T21:08:54.906Z",
+      "profile_data": {
+        "membership_number": "1012906",
+        "birth_year": 1994,
+        "gender": "F",
+        "club_name": "Elite Barbell Club",
+        "wso": "Mountain North",
+        "national_rank": "27"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Colorado State and Open",
+          "date": "2017-02-12",
+          "division": "Open Women's 58 kg",
+          "lifter_name": "Ashley Owen",
+          "body_weight_kg": "57.67",
+          "snatch_1": "39",
+          "snatch_2": "42",
+          "snatch_3": "45",
+          "cj_1": "58",
+          "cj_2": "-61",
+          "cj_3": "61",
+          "best_snatch": "45",
+          "best_cj": "61",
+          "total": "106"
+        },
+        {
+          "meet_name": "2016 Harvest Open",
+          "date": "2016-11-19",
+          "division": "Open Women's 63 kg",
+          "lifter_name": "Ashley Owen",
+          "body_weight_kg": "59.2",
+          "snatch_1": "37",
+          "snatch_2": "39",
+          "snatch_3": "42",
+          "cj_1": "56",
+          "cj_2": "59",
+          "cj_3": "62",
+          "best_snatch": "42",
+          "best_cj": "62",
+          "total": "104"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Colorado State and Open",
+            "date": "2017-02-12",
+            "division": "Open Women's 58 kg",
+            "lifter_name": "Ashley Owen",
+            "body_weight_kg": "57.67",
+            "snatch_1": "39",
+            "snatch_2": "42",
+            "snatch_3": "45",
+            "cj_1": "58",
+            "cj_2": "-61",
+            "cj_3": "61",
+            "best_snatch": "45",
+            "best_cj": "61",
+            "total": "106"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xMiIsIndlaWdodF9jbGFzcyI6MzY0fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "27",
+            "athlete_name": "Ashley Owen",
+            "total": "106",
+            "gender": "F",
+            "age": "23",
+            "club_name": "Elite Barbell Club",
+            "membership_number": "1012906",
+            "wso": "Mountain North"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2016 Harvest Open",
+            "date": "2016-11-19",
+            "division": "Open Women's 63 kg",
+            "lifter_name": "Ashley Owen",
+            "body_weight_kg": "59.2",
+            "snatch_1": "37",
+            "snatch_2": "39",
+            "snatch_3": "42",
+            "cj_1": "56",
+            "cj_2": "59",
+            "cj_3": "62",
+            "best_snatch": "42",
+            "best_cj": "62",
+            "total": "104"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMS0xOSIsIndlaWdodF9jbGFzcyI6MzY1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "34",
+            "athlete_name": "Ashley Owen",
+            "total": "104",
+            "gender": "F",
+            "age": "22",
+            "club_name": "Elite Barbell Club",
+            "membership_number": "1012906",
+            "wso": "Mountain North"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

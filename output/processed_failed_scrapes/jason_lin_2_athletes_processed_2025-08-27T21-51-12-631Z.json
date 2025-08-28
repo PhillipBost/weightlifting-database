@@ -1,0 +1,136 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T07:16:42.027Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Jason Lin",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 0,
+    "failed_scrapes": 2,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 20708482
+  },
+  "data": [
+    {
+      "internal_id": 27093,
+      "athlete_name": "Jason Lin",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/27093",
+      "contaminated_lifter_id": 30047,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-27T07:16:01.198Z",
+      "profile_data": {
+        "membership_number": "1043271",
+        "birth_year": 1992,
+        "gender": "M",
+        "club_name": "Austin Barbell",
+        "wso": "Texas-Oklahoma",
+        "national_rank": "10"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Good Vibes Meet (2020 Texas State Qualifier)",
+          "date": "2019-08-31",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Jason Lin",
+          "body_weight_kg": "80.7",
+          "snatch_1": "-95",
+          "snatch_2": "-95",
+          "snatch_3": "-95",
+          "cj_1": "115",
+          "cj_2": "-120",
+          "cj_3": "-120",
+          "best_snatch": "0",
+          "best_cj": "115",
+          "total": "0"
+        },
+        {
+          "meet_name": "2019 Weightlifting Wise Championships (TSCQE)",
+          "date": "2019-07-06",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Jason Lin",
+          "body_weight_kg": "87.3",
+          "snatch_1": "84",
+          "snatch_2": "89",
+          "snatch_3": "-94",
+          "cj_1": "111",
+          "cj_2": "115",
+          "cj_3": "-120",
+          "best_snatch": "89",
+          "best_cj": "115",
+          "total": "204"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Good Vibes Meet (2020 Texas State Qualifier)",
+            "date": "2019-08-31",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Jason Lin",
+            "body_weight_kg": "80.7",
+            "snatch_1": "-95",
+            "snatch_2": "-95",
+            "snatch_3": "-95",
+            "cj_1": "115",
+            "cj_2": "-120",
+            "cj_3": "-120",
+            "best_snatch": "0",
+            "best_cj": "115",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOC0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOC0zMSIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2019 Weightlifting Wise Championships (TSCQE)",
+            "date": "2019-07-06",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Jason Lin",
+            "body_weight_kg": "87.3",
+            "snatch_1": "84",
+            "snatch_2": "89",
+            "snatch_3": "-94",
+            "cj_1": "111",
+            "cj_2": "115",
+            "cj_3": "-120",
+            "best_snatch": "89",
+            "best_cj": "115",
+            "total": "204"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0wNiIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "Jason Lin",
+            "total": "204",
+            "gender": "M",
+            "age": "27",
+            "club_name": "Austin Barbell",
+            "membership_number": "1043271",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    },
+    {
+      "internal_id": 36386,
+      "athlete_name": "Jason Lin",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/36386",
+      "contaminated_lifter_id": 30047,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-27T07:16:42.027Z",
+      "profile_data": null,
+      "competition_history": [],
+      "biographical_data_by_competition": [],
+      "scraping_successful": false,
+      "error": "Assignment to constant variable."
+    }
+  ]
+}

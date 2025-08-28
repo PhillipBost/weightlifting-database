@@ -1,0 +1,379 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T07:01:04.267Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "James Kelly",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 7,
+    "total_reverse_lookups": 7,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 19770722
+  },
+  "data": [
+    {
+      "internal_id": 26285,
+      "athlete_name": "James Kelly",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/26285",
+      "contaminated_lifter_id": 23516,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T18:14:14.038Z",
+      "profile_data": {
+        "membership_number": "1009053",
+        "birth_year": 1991,
+        "gender": "M",
+        "club_name": "Palm Beach Weightlifting",
+        "wso": "Florida",
+        "national_rank": "28"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Port Saint Lucie Weightlifting Open",
+          "date": "2016-08-06",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "James Kelly",
+          "body_weight_kg": "75",
+          "snatch_1": "70",
+          "snatch_2": "75",
+          "snatch_3": "81",
+          "cj_1": "100",
+          "cj_2": "107",
+          "cj_3": "111",
+          "best_snatch": "81",
+          "best_cj": "111",
+          "total": "192"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Port Saint Lucie Weightlifting Open",
+            "date": "2016-08-06",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "James Kelly",
+            "body_weight_kg": "75",
+            "snatch_1": "70",
+            "snatch_2": "75",
+            "snatch_3": "81",
+            "cj_1": "100",
+            "cj_2": "107",
+            "cj_3": "111",
+            "best_snatch": "81",
+            "best_cj": "111",
+            "total": "192"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0wNiIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "28",
+            "athlete_name": "James Kelly",
+            "total": "192",
+            "gender": "M",
+            "age": "25",
+            "club_name": "Palm Beach Weightlifting",
+            "membership_number": "1009053",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 24746,
+      "athlete_name": "James Kelly",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/24746",
+      "contaminated_lifter_id": 23516,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-27T07:01:02.265Z",
+      "profile_data": {
+        "membership_number": "1005514",
+        "birth_year": 1991,
+        "gender": "M",
+        "club_name": "South Bend Barbell",
+        "wso": "Indiana",
+        "national_rank": "9"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2019 Nike American Open Series 1",
+          "date": "2019-03-03",
+          "division": "Open Men's 81kg",
+          "lifter_name": "James Kelly",
+          "body_weight_kg": "79.22",
+          "snatch_1": "94",
+          "snatch_2": "98",
+          "snatch_3": "-105",
+          "cj_1": "-123",
+          "cj_2": "-125",
+          "cj_3": "-125",
+          "best_snatch": "98",
+          "best_cj": "0",
+          "total": "0"
+        },
+        {
+          "meet_name": "2018 Merry Liftmas",
+          "date": "2018-12-15",
+          "division": "Open Men's 81kg",
+          "lifter_name": "James Kelly",
+          "body_weight_kg": "80.4",
+          "snatch_1": "93",
+          "snatch_2": "98",
+          "snatch_3": "103",
+          "cj_1": "122",
+          "cj_2": "127",
+          "cj_3": "-131",
+          "best_snatch": "103",
+          "best_cj": "127",
+          "total": "230"
+        },
+        {
+          "meet_name": "Nike 2018 American Open Series 1",
+          "date": "2018-03-04",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "James Kelly",
+          "body_weight_kg": "76.38",
+          "snatch_1": "88",
+          "snatch_2": "-93",
+          "snatch_3": "94",
+          "cj_1": "116",
+          "cj_2": "120",
+          "cj_3": "-123",
+          "best_snatch": "94",
+          "best_cj": "120",
+          "total": "214"
+        },
+        {
+          "meet_name": "Circle City Open",
+          "date": "2017-07-15",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "James Kelly",
+          "body_weight_kg": "80.7",
+          "snatch_1": "95",
+          "snatch_2": "98",
+          "snatch_3": "100",
+          "cj_1": "117",
+          "cj_2": "121",
+          "cj_3": "-126",
+          "best_snatch": "100",
+          "best_cj": "121",
+          "total": "221"
+        },
+        {
+          "meet_name": "Barbell Lift Off",
+          "date": "2017-02-18",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "James Kelly",
+          "body_weight_kg": "82.5",
+          "snatch_1": "87",
+          "snatch_2": "-93",
+          "snatch_3": "-98",
+          "cj_1": "116",
+          "cj_2": "120",
+          "cj_3": "-123",
+          "best_snatch": "87",
+          "best_cj": "120",
+          "total": "207"
+        },
+        {
+          "meet_name": "Kill Cliff Showdown",
+          "date": "2016-10-02",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "James Kelly",
+          "body_weight_kg": "80.1",
+          "snatch_1": "85",
+          "snatch_2": "91",
+          "snatch_3": "96",
+          "cj_1": "116",
+          "cj_2": "118",
+          "cj_3": "122",
+          "best_snatch": "96",
+          "best_cj": "122",
+          "total": "218"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2019 Nike American Open Series 1",
+            "date": "2019-03-03",
+            "division": "Open Men's 81kg",
+            "lifter_name": "James Kelly",
+            "body_weight_kg": "79.22",
+            "snatch_1": "94",
+            "snatch_2": "98",
+            "snatch_3": "-105",
+            "cj_1": "-123",
+            "cj_2": "-125",
+            "cj_3": "-125",
+            "best_snatch": "98",
+            "best_cj": "0",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMy0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMy0wMyIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2018 Merry Liftmas",
+            "date": "2018-12-15",
+            "division": "Open Men's 81kg",
+            "lifter_name": "James Kelly",
+            "body_weight_kg": "80.4",
+            "snatch_1": "93",
+            "snatch_2": "98",
+            "snatch_3": "103",
+            "cj_1": "122",
+            "cj_2": "127",
+            "cj_3": "-131",
+            "best_snatch": "103",
+            "best_cj": "127",
+            "total": "230"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0xNSIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "James Kelly",
+            "total": "230",
+            "gender": "M",
+            "age": "27",
+            "club_name": "South Bend Barbell",
+            "membership_number": "1005514",
+            "wso": "Indiana"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Nike 2018 American Open Series 1",
+            "date": "2018-03-04",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "James Kelly",
+            "body_weight_kg": "76.38",
+            "snatch_1": "88",
+            "snatch_2": "-93",
+            "snatch_3": "94",
+            "cj_1": "116",
+            "cj_2": "120",
+            "cj_3": "-123",
+            "best_snatch": "94",
+            "best_cj": "120",
+            "total": "214"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMy0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMy0wNCIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "31",
+            "athlete_name": "James Kelly",
+            "total": "214",
+            "gender": "M",
+            "age": "27",
+            "club_name": "South Bend Barbell",
+            "membership_number": "1005514",
+            "wso": "Indiana"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Circle City Open",
+            "date": "2017-07-15",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "James Kelly",
+            "body_weight_kg": "80.7",
+            "snatch_1": "95",
+            "snatch_2": "98",
+            "snatch_3": "100",
+            "cj_1": "117",
+            "cj_2": "121",
+            "cj_3": "-126",
+            "best_snatch": "100",
+            "best_cj": "121",
+            "total": "221"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNy0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNy0xNSIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "James Kelly",
+            "total": "221",
+            "gender": "M",
+            "age": "26",
+            "club_name": "South Bend Barbell",
+            "membership_number": "1005514",
+            "wso": "Indiana"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Barbell Lift Off",
+            "date": "2017-02-18",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "James Kelly",
+            "body_weight_kg": "82.5",
+            "snatch_1": "87",
+            "snatch_2": "-93",
+            "snatch_3": "-98",
+            "cj_1": "116",
+            "cj_2": "120",
+            "cj_3": "-123",
+            "best_snatch": "87",
+            "best_cj": "120",
+            "total": "207"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xOCIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "31",
+            "athlete_name": "James Kelly",
+            "total": "207",
+            "gender": "M",
+            "age": "26",
+            "club_name": "South Bend Barbell",
+            "membership_number": "1005514",
+            "wso": "Indiana"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Kill Cliff Showdown",
+            "date": "2016-10-02",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "James Kelly",
+            "body_weight_kg": "80.1",
+            "snatch_1": "85",
+            "snatch_2": "91",
+            "snatch_3": "96",
+            "cj_1": "116",
+            "cj_2": "118",
+            "cj_3": "122",
+            "best_snatch": "96",
+            "best_cj": "122",
+            "total": "218"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0wMiIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "11",
+            "athlete_name": "James Kelly",
+            "total": "218",
+            "gender": "M",
+            "age": "25",
+            "club_name": "South Bend Barbell",
+            "membership_number": "1005514",
+            "wso": "Indiana"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    }
+  ]
+}

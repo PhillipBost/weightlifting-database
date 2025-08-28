@@ -1,0 +1,247 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T18:26:15.272Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Jordan Cooper",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 4,
+    "total_reverse_lookups": 4,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 63245366
+  },
+  "data": [
+    {
+      "internal_id": 63720,
+      "athlete_name": "Jordan Cooper",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/63720",
+      "contaminated_lifter_id": 26076,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T18:26:04.616Z",
+      "profile_data": {
+        "membership_number": "1077290",
+        "birth_year": 2011,
+        "gender": "F",
+        "club_name": "TEAM OMNIA",
+        "wso": "Florida",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "The Orchid City Classic",
+          "date": "2025-03-23",
+          "division": "Women's 14-15 Age Group 76kg",
+          "lifter_name": "Jordan Cooper",
+          "body_weight_kg": "71.6",
+          "snatch_1": "43",
+          "snatch_2": "46",
+          "snatch_3": "-50",
+          "cj_1": "63",
+          "cj_2": "67",
+          "cj_3": "-71",
+          "best_snatch": "46",
+          "best_cj": "67",
+          "total": "113"
+        },
+        {
+          "meet_name": "The Palm Beach Open 2024",
+          "date": "2024-10-26",
+          "division": "Women's 13 Under Age Group +64kg",
+          "lifter_name": "Jordan Cooper",
+          "body_weight_kg": "70.7",
+          "snatch_1": "42",
+          "snatch_2": "44",
+          "snatch_3": "46",
+          "cj_1": "55",
+          "cj_2": "60",
+          "cj_3": "-63",
+          "best_snatch": "46",
+          "best_cj": "60",
+          "total": "106"
+        },
+        {
+          "meet_name": "The Tampa Open",
+          "date": "2024-09-07",
+          "division": "Women's 13 Under Age Group +64kg",
+          "lifter_name": "Jordan Cooper",
+          "body_weight_kg": "72.9",
+          "snatch_1": "42",
+          "snatch_2": "44",
+          "snatch_3": "-46",
+          "cj_1": "58",
+          "cj_2": "61",
+          "cj_3": "-65",
+          "best_snatch": "44",
+          "best_cj": "61",
+          "total": "105"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "The Orchid City Classic",
+            "date": "2025-03-23",
+            "division": "Women's 14-15 Age Group 76kg",
+            "lifter_name": "Jordan Cooper",
+            "body_weight_kg": "71.6",
+            "snatch_1": "43",
+            "snatch_2": "46",
+            "snatch_3": "-50",
+            "cj_1": "63",
+            "cj_2": "67",
+            "cj_3": "-71",
+            "best_snatch": "46",
+            "best_cj": "67",
+            "total": "113"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMy0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMy0yMyIsIndlaWdodF9jbGFzcyI6Mzl9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Jordan Cooper",
+            "total": "113",
+            "gender": "F",
+            "age": "14",
+            "club_name": "TEAM OMNIA",
+            "membership_number": "1077290",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The Palm Beach Open 2024",
+            "date": "2024-10-26",
+            "division": "Women's 13 Under Age Group +64kg",
+            "lifter_name": "Jordan Cooper",
+            "body_weight_kg": "70.7",
+            "snatch_1": "42",
+            "snatch_2": "44",
+            "snatch_3": "46",
+            "cj_1": "55",
+            "cj_2": "60",
+            "cj_3": "-63",
+            "best_snatch": "46",
+            "best_cj": "60",
+            "total": "106"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0yNiIsIndlaWdodF9jbGFzcyI6NjB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Jordan Cooper",
+            "total": "106",
+            "gender": "F",
+            "age": "13",
+            "club_name": "TEAM OMNIA",
+            "membership_number": "1077290",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The Tampa Open",
+            "date": "2024-09-07",
+            "division": "Women's 13 Under Age Group +64kg",
+            "lifter_name": "Jordan Cooper",
+            "body_weight_kg": "72.9",
+            "snatch_1": "42",
+            "snatch_2": "44",
+            "snatch_3": "-46",
+            "cj_1": "58",
+            "cj_2": "61",
+            "cj_3": "-65",
+            "best_snatch": "44",
+            "best_cj": "61",
+            "total": "105"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOS0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOS0wNyIsIndlaWdodF9jbGFzcyI6NjB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Jordan Cooper",
+            "total": "105",
+            "gender": "F",
+            "age": "13",
+            "club_name": "TEAM OMNIA",
+            "membership_number": "1077290",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 26279,
+      "athlete_name": "Jordan Cooper",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/26279",
+      "contaminated_lifter_id": 26076,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T18:26:15.270Z",
+      "profile_data": {
+        "membership_number": "1010218",
+        "birth_year": 1991,
+        "gender": "M",
+        "club_name": "Zoo City Barbell",
+        "wso": "Michigan",
+        "national_rank": "10"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Zoo City Barbell University National Qualifier",
+          "date": "2016-08-06",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Jordan Cooper",
+          "body_weight_kg": "85",
+          "snatch_1": "103",
+          "snatch_2": "-105",
+          "snatch_3": "106",
+          "cj_1": "120",
+          "cj_2": "124",
+          "cj_3": "127",
+          "best_snatch": "106",
+          "best_cj": "127",
+          "total": "233"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Zoo City Barbell University National Qualifier",
+            "date": "2016-08-06",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Jordan Cooper",
+            "body_weight_kg": "85",
+            "snatch_1": "103",
+            "snatch_2": "-105",
+            "snatch_3": "106",
+            "cj_1": "120",
+            "cj_2": "124",
+            "cj_3": "127",
+            "best_snatch": "106",
+            "best_cj": "127",
+            "total": "233"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0wNiIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "Jordan Cooper",
+            "total": "233",
+            "gender": "M",
+            "age": "25",
+            "club_name": "Zoo City Barbell",
+            "membership_number": "1010218",
+            "wso": "Michigan"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

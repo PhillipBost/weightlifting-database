@@ -1,0 +1,391 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T11:13:13.021Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Luis Lopez",
+    "internal_ids_processed": 3,
+    "successful_scrapes": 1,
+    "failed_scrapes": 2,
+    "total_competitions_found": 7,
+    "total_reverse_lookups": 7,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 4622665
+  },
+  "data": [
+    {
+      "internal_id": 62022,
+      "athlete_name": "Luis Lopez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/62022",
+      "contaminated_lifter_id": 5976,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T12:52:04.283Z",
+      "profile_data": {
+        "membership_number": "1061655",
+        "birth_year": 1995,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "California South",
+        "national_rank": "6"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Spring Lift Off 2024",
+          "date": "2024-03-16",
+          "division": "Open Men's 109kg",
+          "lifter_name": "Luis Lopez",
+          "body_weight_kg": "106.9",
+          "snatch_1": "85",
+          "snatch_2": "91",
+          "snatch_3": "97",
+          "cj_1": "120",
+          "cj_2": "-130",
+          "cj_3": "-133",
+          "best_snatch": "97",
+          "best_cj": "120",
+          "total": "217"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Spring Lift Off 2024",
+            "date": "2024-03-16",
+            "division": "Open Men's 109kg",
+            "lifter_name": "Luis Lopez",
+            "body_weight_kg": "106.9",
+            "snatch_1": "85",
+            "snatch_2": "91",
+            "snatch_3": "97",
+            "cj_1": "120",
+            "cj_2": "-130",
+            "cj_3": "-133",
+            "best_snatch": "97",
+            "best_cj": "120",
+            "total": "217"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMy0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMy0xNiIsIndlaWdodF9jbGFzcyI6ODl9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Luis Lopez",
+            "total": "217",
+            "gender": "M",
+            "age": "29",
+            "club_name": "-",
+            "membership_number": "1061655",
+            "wso": "California South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 13801,
+      "athlete_name": "Luis Lopez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/13801",
+      "contaminated_lifter_id": 5976,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-27T11:11:54.490Z",
+      "profile_data": {
+        "membership_number": "179815",
+        "birth_year": 1985,
+        "gender": "M",
+        "club_name": "TEAM SOUL MIAMI",
+        "wso": "Florida",
+        "national_rank": "4"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Soul AO Last Chance Qualifier",
+          "date": "2021-10-31",
+          "division": "Open Men's 109kg",
+          "lifter_name": "Luis Lopez",
+          "body_weight_kg": "104",
+          "snatch_1": "90",
+          "snatch_2": "95",
+          "snatch_3": "100",
+          "cj_1": "110",
+          "cj_2": "120",
+          "cj_3": "130",
+          "best_snatch": "100",
+          "best_cj": "130",
+          "total": "230"
+        },
+        {
+          "meet_name": "MIA Summer Classic",
+          "date": "2015-06-21",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Luis Lopez",
+          "body_weight_kg": "92.75",
+          "snatch_1": "115",
+          "snatch_2": "120",
+          "snatch_3": "125",
+          "cj_1": "-155",
+          "cj_2": "-155",
+          "cj_3": "-155",
+          "best_snatch": "125",
+          "best_cj": "0",
+          "total": "0"
+        },
+        {
+          "meet_name": "MIA Soul Classic",
+          "date": "2014-06-22",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Luis Lopez",
+          "body_weight_kg": "93.8",
+          "snatch_1": "120",
+          "snatch_2": "125",
+          "snatch_3": "126",
+          "cj_1": "160",
+          "cj_2": "167",
+          "cj_3": "170",
+          "best_snatch": "126",
+          "best_cj": "170",
+          "total": "296"
+        },
+        {
+          "meet_name": "Soul Open 3",
+          "date": "2013-12-15",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Luis Lopez",
+          "body_weight_kg": "101",
+          "snatch_1": "115",
+          "snatch_2": "115",
+          "snatch_3": "120",
+          "cj_1": "145",
+          "cj_2": "152",
+          "cj_3": "158",
+          "best_snatch": "120",
+          "best_cj": "158",
+          "total": "278"
+        },
+        {
+          "meet_name": "MIA Classic",
+          "date": "2014-07-14",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Luis Lopez",
+          "body_weight_kg": "103.4",
+          "snatch_1": "105",
+          "snatch_2": "110",
+          "snatch_3": "115",
+          "cj_1": "135",
+          "cj_2": "140",
+          "cj_3": "147",
+          "best_snatch": "115",
+          "best_cj": "147",
+          "total": "262"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Soul AO Last Chance Qualifier",
+            "date": "2021-10-31",
+            "division": "Open Men's 109kg",
+            "lifter_name": "Luis Lopez",
+            "body_weight_kg": "104",
+            "snatch_1": "90",
+            "snatch_2": "95",
+            "snatch_3": "100",
+            "cj_1": "110",
+            "cj_2": "120",
+            "cj_3": "130",
+            "best_snatch": "100",
+            "best_cj": "130",
+            "total": "230"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMC0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMC0zMSIsIndlaWdodF9jbGFzcyI6ODl9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Luis Lopez",
+            "total": "230",
+            "gender": "M",
+            "age": "36",
+            "club_name": "TEAM SOUL MIAMI",
+            "membership_number": "179815",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "MIA Summer Classic",
+            "date": "2015-06-21",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Luis Lopez",
+            "body_weight_kg": "92.75",
+            "snatch_1": "115",
+            "snatch_2": "120",
+            "snatch_3": "125",
+            "cj_1": "-155",
+            "cj_2": "-155",
+            "cj_3": "-155",
+            "best_snatch": "125",
+            "best_cj": "0",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNi0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNi0yMSIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "MIA Soul Classic",
+            "date": "2014-06-22",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Luis Lopez",
+            "body_weight_kg": "93.8",
+            "snatch_1": "120",
+            "snatch_2": "125",
+            "snatch_3": "126",
+            "cj_1": "160",
+            "cj_2": "167",
+            "cj_3": "170",
+            "best_snatch": "126",
+            "best_cj": "170",
+            "total": "296"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNi0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNi0yMiIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Luis Lopez",
+            "total": "296",
+            "gender": "M",
+            "age": "29",
+            "club_name": "TEAM SOUL MIAMI",
+            "membership_number": "179815",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Soul Open 3",
+            "date": "2013-12-15",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Luis Lopez",
+            "body_weight_kg": "101",
+            "snatch_1": "115",
+            "snatch_2": "115",
+            "snatch_3": "120",
+            "cj_1": "145",
+            "cj_2": "152",
+            "cj_3": "158",
+            "best_snatch": "120",
+            "best_cj": "158",
+            "total": "278"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMi0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMi0xNSIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Luis Lopez",
+            "total": "278",
+            "gender": "M",
+            "age": "28",
+            "club_name": "TEAM SOUL MIAMI",
+            "membership_number": "179815",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "MIA Classic",
+            "date": "2014-07-14",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Luis Lopez",
+            "body_weight_kg": "103.4",
+            "snatch_1": "105",
+            "snatch_2": "110",
+            "snatch_3": "115",
+            "cj_1": "135",
+            "cj_2": "140",
+            "cj_3": "147",
+            "best_snatch": "115",
+            "best_cj": "147",
+            "total": "262"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNy0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNy0xNCIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Luis Lopez",
+            "total": "262",
+            "gender": "M",
+            "age": "29",
+            "club_name": "TEAM SOUL MIAMI",
+            "membership_number": "179815",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    },
+    {
+      "internal_id": 57993,
+      "athlete_name": "Luis Lopez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/57993",
+      "contaminated_lifter_id": 5976,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-27T11:13:11.018Z",
+      "profile_data": {
+        "membership_number": null,
+        "birth_year": null,
+        "gender": null,
+        "club_name": null,
+        "wso": null,
+        "national_rank": null
+      },
+      "competition_history": [
+        {
+          "meet_name": "Tampa Bay Spring Classic 6",
+          "date": "2023-04-01",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Luis Lopez",
+          "body_weight_kg": "75.4",
+          "snatch_1": "-65",
+          "snatch_2": "0",
+          "snatch_3": "0",
+          "cj_1": "0",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "0",
+          "best_cj": "0",
+          "total": "0"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Tampa Bay Spring Classic 6",
+            "date": "2023-04-01",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Luis Lopez",
+            "body_weight_kg": "75.4",
+            "snatch_1": "-65",
+            "snatch_2": "0",
+            "snatch_3": "0",
+            "cj_1": "0",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "0",
+            "best_cj": "0",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0wMSIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    }
+  ]
+}

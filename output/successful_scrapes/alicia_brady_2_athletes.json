@@ -1,0 +1,341 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T12:24:27.828Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Alicia Brady",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 6,
+    "total_reverse_lookups": 6,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 41537922
+  },
+  "data": [
+    {
+      "internal_id": 11673,
+      "athlete_name": "Alicia Brady",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/11673",
+      "contaminated_lifter_id": 26382,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T12:24:11.682Z",
+      "profile_data": {
+        "membership_number": "1036482",
+        "birth_year": 1984,
+        "gender": "F",
+        "club_name": "EAST COAST GOLD W/L TEAM",
+        "wso": "DMV",
+        "national_rank": "2"
+      },
+      "competition_history": [
+        {
+          "meet_name": "RVA Open 2019",
+          "date": "2019-07-14",
+          "division": "Women's Masters (35-39) 76kg",
+          "lifter_name": "Alicia Brady",
+          "body_weight_kg": "72",
+          "snatch_1": "54",
+          "snatch_2": "-56",
+          "snatch_3": "-56",
+          "cj_1": "73",
+          "cj_2": "-76",
+          "cj_3": "76",
+          "best_snatch": "54",
+          "best_cj": "76",
+          "total": "130"
+        },
+        {
+          "meet_name": "2019 Masters National Championships",
+          "date": "2019-03-31",
+          "division": "Women's Masters (35-39) 71kg",
+          "lifter_name": "Alicia Brady",
+          "body_weight_kg": "70.3",
+          "snatch_1": "54",
+          "snatch_2": "57",
+          "snatch_3": "-60",
+          "cj_1": "73",
+          "cj_2": "-76",
+          "cj_3": "-76",
+          "best_snatch": "57",
+          "best_cj": "73",
+          "total": "130"
+        },
+        {
+          "meet_name": "ECG Super Squad Invitational",
+          "date": "2019-03-15",
+          "division": "Women's Masters (35-39) 76kg",
+          "lifter_name": "Alicia Brady",
+          "body_weight_kg": "73.5",
+          "snatch_1": "50",
+          "snatch_2": "53",
+          "snatch_3": "56",
+          "cj_1": "70",
+          "cj_2": "73",
+          "cj_3": "-76",
+          "best_snatch": "56",
+          "best_cj": "73",
+          "total": "129"
+        },
+        {
+          "meet_name": "2019 Old Dominion Classic",
+          "date": "2019-01-12",
+          "division": "Women's Masters (35-39) 71kg",
+          "lifter_name": "Alicia Brady",
+          "body_weight_kg": "70.4",
+          "snatch_1": "-48",
+          "snatch_2": "51",
+          "snatch_3": "54",
+          "cj_1": "69",
+          "cj_2": "72",
+          "cj_3": "75",
+          "best_snatch": "54",
+          "best_cj": "75",
+          "total": "129"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "RVA Open 2019",
+            "date": "2019-07-14",
+            "division": "Women's Masters (35-39) 76kg",
+            "lifter_name": "Alicia Brady",
+            "body_weight_kg": "72",
+            "snatch_1": "54",
+            "snatch_2": "-56",
+            "snatch_3": "-56",
+            "cj_1": "73",
+            "cj_2": "-76",
+            "cj_3": "76",
+            "best_snatch": "54",
+            "best_cj": "76",
+            "total": "130"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0xNCIsIndlaWdodF9jbGFzcyI6MTE3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Alicia Brady",
+            "total": "130",
+            "gender": "F",
+            "age": "35",
+            "club_name": "EAST COAST GOLD W/L TEAM",
+            "membership_number": "1036482",
+            "wso": "DMV"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2019 Masters National Championships",
+            "date": "2019-03-31",
+            "division": "Women's Masters (35-39) 71kg",
+            "lifter_name": "Alicia Brady",
+            "body_weight_kg": "70.3",
+            "snatch_1": "54",
+            "snatch_2": "57",
+            "snatch_3": "-60",
+            "cj_1": "73",
+            "cj_2": "-76",
+            "cj_3": "-76",
+            "best_snatch": "57",
+            "best_cj": "73",
+            "total": "130"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMy0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMy0zMSIsIndlaWdodF9jbGFzcyI6MTE2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "Alicia Brady",
+            "total": "130",
+            "gender": "F",
+            "age": "35",
+            "club_name": "EAST COAST GOLD W/L TEAM",
+            "membership_number": "1036482",
+            "wso": "DMV"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "ECG Super Squad Invitational",
+            "date": "2019-03-15",
+            "division": "Women's Masters (35-39) 76kg",
+            "lifter_name": "Alicia Brady",
+            "body_weight_kg": "73.5",
+            "snatch_1": "50",
+            "snatch_2": "53",
+            "snatch_3": "56",
+            "cj_1": "70",
+            "cj_2": "73",
+            "cj_3": "-76",
+            "best_snatch": "56",
+            "best_cj": "73",
+            "total": "129"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMy0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMy0xNSIsIndlaWdodF9jbGFzcyI6MTE3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Alicia Brady",
+            "total": "129",
+            "gender": "F",
+            "age": "35",
+            "club_name": "EAST COAST GOLD W/L TEAM",
+            "membership_number": "1036482",
+            "wso": "DMV"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2019 Old Dominion Classic",
+            "date": "2019-01-12",
+            "division": "Women's Masters (35-39) 71kg",
+            "lifter_name": "Alicia Brady",
+            "body_weight_kg": "70.4",
+            "snatch_1": "-48",
+            "snatch_2": "51",
+            "snatch_3": "54",
+            "cj_1": "69",
+            "cj_2": "72",
+            "cj_3": "75",
+            "best_snatch": "54",
+            "best_cj": "75",
+            "total": "129"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0xMiIsIndlaWdodF9jbGFzcyI6MTE2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Alicia Brady",
+            "total": "129",
+            "gender": "F",
+            "age": "35",
+            "club_name": "EAST COAST GOLD W/L TEAM",
+            "membership_number": "1036482",
+            "wso": "DMV"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 29658,
+      "athlete_name": "Alicia Brady",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/29658",
+      "contaminated_lifter_id": 26382,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T12:24:27.827Z",
+      "profile_data": {
+        "membership_number": "1001557",
+        "birth_year": 1993,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "Michigan",
+        "national_rank": "9"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Iron Egg in the D",
+          "date": "2016-11-12",
+          "division": "Open Women's 69 kg",
+          "lifter_name": "Alicia Brady",
+          "body_weight_kg": "64.17",
+          "snatch_1": "50",
+          "snatch_2": "55",
+          "snatch_3": "57",
+          "cj_1": "60",
+          "cj_2": "64",
+          "cj_3": "-66",
+          "best_snatch": "57",
+          "best_cj": "64",
+          "total": "121"
+        },
+        {
+          "meet_name": "The Mid-Michigan Open",
+          "date": "2016-09-17",
+          "division": "Open Women's 69 kg",
+          "lifter_name": "Alicia Brady",
+          "body_weight_kg": "64.6",
+          "snatch_1": "50",
+          "snatch_2": "53",
+          "snatch_3": "-57",
+          "cj_1": "58",
+          "cj_2": "-61",
+          "cj_3": "61",
+          "best_snatch": "53",
+          "best_cj": "61",
+          "total": "114"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Iron Egg in the D",
+            "date": "2016-11-12",
+            "division": "Open Women's 69 kg",
+            "lifter_name": "Alicia Brady",
+            "body_weight_kg": "64.17",
+            "snatch_1": "50",
+            "snatch_2": "55",
+            "snatch_3": "57",
+            "cj_1": "60",
+            "cj_2": "64",
+            "cj_3": "-66",
+            "best_snatch": "57",
+            "best_cj": "64",
+            "total": "121"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMS0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMS0xMiIsIndlaWdodF9jbGFzcyI6MzY2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "Alicia Brady",
+            "total": "121",
+            "gender": "F",
+            "age": "23",
+            "club_name": "-",
+            "membership_number": "1001557",
+            "wso": "Michigan"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The Mid-Michigan Open",
+            "date": "2016-09-17",
+            "division": "Open Women's 69 kg",
+            "lifter_name": "Alicia Brady",
+            "body_weight_kg": "64.6",
+            "snatch_1": "50",
+            "snatch_2": "53",
+            "snatch_3": "-57",
+            "cj_1": "58",
+            "cj_2": "-61",
+            "cj_3": "61",
+            "best_snatch": "53",
+            "best_cj": "61",
+            "total": "114"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOS0xNyIsIndlaWdodF9jbGFzcyI6MzY2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "25",
+            "athlete_name": "Alicia Brady",
+            "total": "114",
+            "gender": "F",
+            "age": "23",
+            "club_name": "-",
+            "membership_number": "1001557",
+            "wso": "Michigan"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

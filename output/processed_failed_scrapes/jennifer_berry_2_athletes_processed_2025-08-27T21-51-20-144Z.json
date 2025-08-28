@@ -1,0 +1,191 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T12:55:46.539Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Jennifer Berry",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 3,
+    "total_reverse_lookups": 3,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 43416633
+  },
+  "data": [
+    {
+      "internal_id": 8350,
+      "athlete_name": "Jennifer Berry",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/8350",
+      "contaminated_lifter_id": 32550,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T12:55:10.892Z",
+      "profile_data": {
+        "membership_number": "1023459",
+        "birth_year": 1981,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "Minnesota-Dakotas",
+        "national_rank": "4"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Torque Barbell Invitational",
+          "date": "2018-02-03",
+          "division": "Women's Masters (35-39) 69 kg",
+          "lifter_name": "Jennifer Berry",
+          "body_weight_kg": "67.57",
+          "snatch_1": "40",
+          "snatch_2": "43",
+          "snatch_3": "46",
+          "cj_1": "50",
+          "cj_2": "55",
+          "cj_3": "60",
+          "best_snatch": "46",
+          "best_cj": "60",
+          "total": "106"
+        },
+        {
+          "meet_name": "The Minnesota Open",
+          "date": "2017-10-22",
+          "division": "Women's Masters (35-39) 69 kg",
+          "lifter_name": "Jennifer Berry",
+          "body_weight_kg": "67.21",
+          "snatch_1": "38",
+          "snatch_2": "-43",
+          "snatch_3": "43",
+          "cj_1": "47",
+          "cj_2": "53",
+          "cj_3": "58",
+          "best_snatch": "43",
+          "best_cj": "58",
+          "total": "101"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Torque Barbell Invitational",
+            "date": "2018-02-03",
+            "division": "Women's Masters (35-39) 69 kg",
+            "lifter_name": "Jennifer Berry",
+            "body_weight_kg": "67.57",
+            "snatch_1": "40",
+            "snatch_2": "43",
+            "snatch_3": "46",
+            "cj_1": "50",
+            "cj_2": "55",
+            "cj_3": "60",
+            "best_snatch": "46",
+            "best_cj": "60",
+            "total": "106"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMi0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMi0wMyIsIndlaWdodF9jbGFzcyI6MzgzfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Jennifer Berry",
+            "total": "106",
+            "gender": "F",
+            "age": "37",
+            "club_name": "-",
+            "membership_number": "1023459",
+            "wso": "Minnesota-Dakotas"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The Minnesota Open",
+            "date": "2017-10-22",
+            "division": "Women's Masters (35-39) 69 kg",
+            "lifter_name": "Jennifer Berry",
+            "body_weight_kg": "67.21",
+            "snatch_1": "38",
+            "snatch_2": "-43",
+            "snatch_3": "43",
+            "cj_1": "47",
+            "cj_2": "53",
+            "cj_3": "58",
+            "best_snatch": "43",
+            "best_cj": "58",
+            "total": "101"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0yMiIsIndlaWdodF9jbGFzcyI6MzgzfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "25",
+            "athlete_name": "Jennifer Berry",
+            "total": "101",
+            "gender": "F",
+            "age": "36",
+            "club_name": "-",
+            "membership_number": "1023459",
+            "wso": "Minnesota-Dakotas"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 62848,
+      "athlete_name": "Jennifer Berry",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/62848",
+      "contaminated_lifter_id": 32550,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T12:55:46.538Z",
+      "profile_data": {
+        "membership_number": null,
+        "birth_year": null,
+        "gender": null,
+        "club_name": null,
+        "wso": null,
+        "national_rank": null
+      },
+      "competition_history": [
+        {
+          "meet_name": "QUEEN CITY CLASSIC VII",
+          "date": "2024-05-04",
+          "division": "Open Women's 87kg",
+          "lifter_name": "Jennifer Berry",
+          "body_weight_kg": "87",
+          "snatch_1": "70",
+          "snatch_2": "73",
+          "snatch_3": "76",
+          "cj_1": "88",
+          "cj_2": "92",
+          "cj_3": "95",
+          "best_snatch": "76",
+          "best_cj": "95",
+          "total": "171"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "QUEEN CITY CLASSIC VII",
+            "date": "2024-05-04",
+            "division": "Open Women's 87kg",
+            "lifter_name": "Jennifer Berry",
+            "body_weight_kg": "87",
+            "snatch_1": "70",
+            "snatch_2": "73",
+            "snatch_3": "76",
+            "cj_1": "88",
+            "cj_2": "92",
+            "cj_3": "95",
+            "best_snatch": "76",
+            "best_cj": "95",
+            "total": "171"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNS0wNCIsIndlaWdodF9jbGFzcyI6OTl9",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    }
+  ]
+}

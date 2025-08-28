@@ -1,0 +1,524 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T03:00:00.222Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Joshua Jones",
+    "internal_ids_processed": 4,
+    "successful_scrapes": 4,
+    "failed_scrapes": 0,
+    "total_competitions_found": 9,
+    "total_reverse_lookups": 9,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 7670316
+  },
+  "data": [
+    {
+      "internal_id": 14311,
+      "athlete_name": "Joshua Jones",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/14311",
+      "contaminated_lifter_id": 9564,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T02:58:58.567Z",
+      "profile_data": {
+        "membership_number": "194157",
+        "birth_year": 1985,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Texas-Oklahoma",
+        "national_rank": "6"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Spring 2014 Iron Cat Open",
+          "date": "2014-03-15",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Joshua Jones",
+          "body_weight_kg": "94.6",
+          "snatch_1": "74",
+          "snatch_2": "78",
+          "snatch_3": "80",
+          "cj_1": "92",
+          "cj_2": "95",
+          "cj_3": "100",
+          "best_snatch": "80",
+          "best_cj": "100",
+          "total": "180"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Spring 2014 Iron Cat Open",
+            "date": "2014-03-15",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Joshua Jones",
+            "body_weight_kg": "94.6",
+            "snatch_1": "74",
+            "snatch_2": "78",
+            "snatch_3": "80",
+            "cj_1": "92",
+            "cj_2": "95",
+            "cj_3": "100",
+            "best_snatch": "80",
+            "best_cj": "100",
+            "total": "180"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0xNSIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Joshua Jones",
+            "total": "180",
+            "gender": "M",
+            "age": "29",
+            "club_name": "-",
+            "membership_number": "194157",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 15331,
+      "athlete_name": "Joshua Jones",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/15331",
+      "contaminated_lifter_id": 9564,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T02:59:25.943Z",
+      "profile_data": {
+        "membership_number": "163713",
+        "birth_year": 1986,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Tennessee-Kentucky",
+        "national_rank": "19"
+      },
+      "competition_history": [
+        {
+          "meet_name": "National Championship",
+          "date": "2015-08-16",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Joshua Jones",
+          "body_weight_kg": "102.42",
+          "snatch_1": "130",
+          "snatch_2": "-135",
+          "snatch_3": "-135",
+          "cj_1": "160",
+          "cj_2": "-165",
+          "cj_3": "-165",
+          "best_snatch": "130",
+          "best_cj": "160",
+          "total": "290"
+        },
+        {
+          "meet_name": "Indiana State Championship",
+          "date": "2015-05-17",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Joshua Jones",
+          "body_weight_kg": "102.9",
+          "snatch_1": "126",
+          "snatch_2": "132",
+          "snatch_3": "137",
+          "cj_1": "152",
+          "cj_2": "160",
+          "cj_3": "-170",
+          "best_snatch": "137",
+          "best_cj": "160",
+          "total": "297"
+        },
+        {
+          "meet_name": "Indiana State Open and High School Team Championship",
+          "date": "2014-05-17",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Joshua Jones",
+          "body_weight_kg": "99.5",
+          "snatch_1": "-124",
+          "snatch_2": "126",
+          "snatch_3": "-130",
+          "cj_1": "144",
+          "cj_2": "150",
+          "cj_3": "-155",
+          "best_snatch": "126",
+          "best_cj": "150",
+          "total": "276"
+        },
+        {
+          "meet_name": "Force Barbell Open",
+          "date": "2014-03-29",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Joshua Jones",
+          "body_weight_kg": "100",
+          "snatch_1": "115",
+          "snatch_2": "122",
+          "snatch_3": "125",
+          "cj_1": "140",
+          "cj_2": "144",
+          "cj_3": "148",
+          "best_snatch": "125",
+          "best_cj": "148",
+          "total": "273"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "National Championship",
+            "date": "2015-08-16",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Joshua Jones",
+            "body_weight_kg": "102.42",
+            "snatch_1": "130",
+            "snatch_2": "-135",
+            "snatch_3": "-135",
+            "cj_1": "160",
+            "cj_2": "-165",
+            "cj_3": "-165",
+            "best_snatch": "130",
+            "best_cj": "160",
+            "total": "290"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOC0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOC0xNiIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "19",
+            "athlete_name": "Joshua Jones",
+            "total": "290",
+            "gender": "M",
+            "age": "29",
+            "club_name": "-",
+            "membership_number": "163713",
+            "wso": "Tennessee-Kentucky"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Indiana State Championship",
+            "date": "2015-05-17",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Joshua Jones",
+            "body_weight_kg": "102.9",
+            "snatch_1": "126",
+            "snatch_2": "132",
+            "snatch_3": "137",
+            "cj_1": "152",
+            "cj_2": "160",
+            "cj_3": "-170",
+            "best_snatch": "137",
+            "best_cj": "160",
+            "total": "297"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0xNyIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Joshua Jones",
+            "total": "297",
+            "gender": "M",
+            "age": "29",
+            "club_name": "-",
+            "membership_number": "163713",
+            "wso": "Tennessee-Kentucky"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Indiana State Open and High School Team Championship",
+            "date": "2014-05-17",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Joshua Jones",
+            "body_weight_kg": "99.5",
+            "snatch_1": "-124",
+            "snatch_2": "126",
+            "snatch_3": "-130",
+            "cj_1": "144",
+            "cj_2": "150",
+            "cj_3": "-155",
+            "best_snatch": "126",
+            "best_cj": "150",
+            "total": "276"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNS0xNyIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "Joshua Jones",
+            "total": "276",
+            "gender": "M",
+            "age": "28",
+            "club_name": "-",
+            "membership_number": "163713",
+            "wso": "Tennessee-Kentucky"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Force Barbell Open",
+            "date": "2014-03-29",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Joshua Jones",
+            "body_weight_kg": "100",
+            "snatch_1": "115",
+            "snatch_2": "122",
+            "snatch_3": "125",
+            "cj_1": "140",
+            "cj_2": "144",
+            "cj_3": "148",
+            "best_snatch": "125",
+            "best_cj": "148",
+            "total": "273"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0yOSIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "Joshua Jones",
+            "total": "273",
+            "gender": "M",
+            "age": "28",
+            "club_name": "-",
+            "membership_number": "163713",
+            "wso": "Tennessee-Kentucky"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 16271,
+      "athlete_name": "Joshua Jones",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/16271",
+      "contaminated_lifter_id": 9564,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T02:59:41.554Z",
+      "profile_data": {
+        "membership_number": "1019325",
+        "birth_year": 1986,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "DMV",
+        "national_rank": "17"
+      },
+      "competition_history": [
+        {
+          "meet_name": "BASA Big Sunday Open",
+          "date": "2018-06-03",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Joshua Jones",
+          "body_weight_kg": "83.3",
+          "snatch_1": "74",
+          "snatch_2": "77",
+          "snatch_3": "80",
+          "cj_1": "-95",
+          "cj_2": "98",
+          "cj_3": "103",
+          "best_snatch": "80",
+          "best_cj": "103",
+          "total": "183"
+        },
+        {
+          "meet_name": "BASA BIG Sunday Open",
+          "date": "2017-06-04",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Joshua Jones",
+          "body_weight_kg": "81.6",
+          "snatch_1": "55",
+          "snatch_2": "60",
+          "snatch_3": "63",
+          "cj_1": "73",
+          "cj_2": "78",
+          "cj_3": "85",
+          "best_snatch": "63",
+          "best_cj": "85",
+          "total": "148"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "BASA Big Sunday Open",
+            "date": "2018-06-03",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Joshua Jones",
+            "body_weight_kg": "83.3",
+            "snatch_1": "74",
+            "snatch_2": "77",
+            "snatch_3": "80",
+            "cj_1": "-95",
+            "cj_2": "98",
+            "cj_3": "103",
+            "best_snatch": "80",
+            "best_cj": "103",
+            "total": "183"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0wMyIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "17",
+            "athlete_name": "Joshua Jones",
+            "total": "183",
+            "gender": "M",
+            "age": "32",
+            "club_name": "-",
+            "membership_number": "1019325",
+            "wso": "DMV"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "BASA BIG Sunday Open",
+            "date": "2017-06-04",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Joshua Jones",
+            "body_weight_kg": "81.6",
+            "snatch_1": "55",
+            "snatch_2": "60",
+            "snatch_3": "63",
+            "cj_1": "73",
+            "cj_2": "78",
+            "cj_3": "85",
+            "best_snatch": "63",
+            "best_cj": "85",
+            "total": "148"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNi0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNi0wNCIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "30",
+            "athlete_name": "Joshua Jones",
+            "total": "148",
+            "gender": "M",
+            "age": "31",
+            "club_name": "-",
+            "membership_number": "1019325",
+            "wso": "DMV"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 54271,
+      "athlete_name": "Joshua Jones",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/54271",
+      "contaminated_lifter_id": 9564,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T03:00:00.220Z",
+      "profile_data": {
+        "membership_number": "1061078",
+        "birth_year": 2000,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Mountain South",
+        "national_rank": "25"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2022 Utah Mountain South WSO Championship",
+          "date": "2022-10-08",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Joshua Jones",
+          "body_weight_kg": "79.28",
+          "snatch_1": "90",
+          "snatch_2": "93",
+          "snatch_3": "-96",
+          "cj_1": "108",
+          "cj_2": "-112",
+          "cj_3": "-112",
+          "best_snatch": "93",
+          "best_cj": "108",
+          "total": "201"
+        },
+        {
+          "meet_name": "Utah State Champs 2022",
+          "date": "2022-05-14",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Joshua Jones",
+          "body_weight_kg": "83.37",
+          "snatch_1": "83",
+          "snatch_2": "-86",
+          "snatch_3": "-89",
+          "cj_1": "102",
+          "cj_2": "106",
+          "cj_3": "110",
+          "best_snatch": "83",
+          "best_cj": "110",
+          "total": "193"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2022 Utah Mountain South WSO Championship",
+            "date": "2022-10-08",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Joshua Jones",
+            "body_weight_kg": "79.28",
+            "snatch_1": "90",
+            "snatch_2": "93",
+            "snatch_3": "-96",
+            "cj_1": "108",
+            "cj_2": "-112",
+            "cj_3": "-112",
+            "best_snatch": "93",
+            "best_cj": "108",
+            "total": "201"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMC0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMC0wOCIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "25",
+            "athlete_name": "Joshua Jones",
+            "total": "201",
+            "gender": "M",
+            "age": "22",
+            "club_name": "-",
+            "membership_number": "1061078",
+            "wso": "Mountain South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Utah State Champs 2022",
+            "date": "2022-05-14",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Joshua Jones",
+            "body_weight_kg": "83.37",
+            "snatch_1": "83",
+            "snatch_2": "-86",
+            "snatch_3": "-89",
+            "cj_1": "102",
+            "cj_2": "106",
+            "cj_3": "110",
+            "best_snatch": "83",
+            "best_cj": "110",
+            "total": "193"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNS0xNCIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "41",
+            "athlete_name": "Joshua Jones",
+            "total": "193",
+            "gender": "M",
+            "age": "22",
+            "club_name": "-",
+            "membership_number": "1061078",
+            "wso": "Mountain South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

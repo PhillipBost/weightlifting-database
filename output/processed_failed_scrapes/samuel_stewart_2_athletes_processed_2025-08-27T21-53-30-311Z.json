@@ -1,0 +1,323 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T04:21:19.946Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Samuel Stewart",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 6,
+    "total_reverse_lookups": 6,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 98950040
+  },
+  "data": [
+    {
+      "internal_id": 31849,
+      "athlete_name": "Samuel Stewart",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/31849",
+      "contaminated_lifter_id": 2672,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T04:20:44.129Z",
+      "profile_data": {
+        "membership_number": null,
+        "birth_year": null,
+        "gender": null,
+        "club_name": null,
+        "wso": null,
+        "national_rank": null
+      },
+      "competition_history": [
+        {
+          "meet_name": "Sunshine State Games",
+          "date": "2012-06-23",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Samuel Stewart",
+          "body_weight_kg": "82.54",
+          "snatch_1": "0",
+          "snatch_2": "0",
+          "snatch_3": "0",
+          "cj_1": "130",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "0",
+          "best_cj": "130",
+          "total": "0"
+        },
+        {
+          "meet_name": "Coach Mac Memorial",
+          "date": "2012-02-25",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Samuel Stewart",
+          "body_weight_kg": "82.4",
+          "snatch_1": "0",
+          "snatch_2": "0",
+          "snatch_3": "0",
+          "cj_1": "133",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "0",
+          "best_cj": "133",
+          "total": "0"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Sunshine State Games",
+            "date": "2012-06-23",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Samuel Stewart",
+            "body_weight_kg": "82.54",
+            "snatch_1": "0",
+            "snatch_2": "0",
+            "snatch_3": "0",
+            "cj_1": "130",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "0",
+            "best_cj": "130",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wNi0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wNi0yMyIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Coach Mac Memorial",
+            "date": "2012-02-25",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Samuel Stewart",
+            "body_weight_kg": "82.4",
+            "snatch_1": "0",
+            "snatch_2": "0",
+            "snatch_3": "0",
+            "cj_1": "133",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "0",
+            "best_cj": "133",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wMi0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wMi0yNSIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    },
+    {
+      "internal_id": 44515,
+      "athlete_name": "Samuel Stewart",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/44515",
+      "contaminated_lifter_id": 2672,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T04:21:19.944Z",
+      "profile_data": {
+        "membership_number": "1026932",
+        "birth_year": 2004,
+        "gender": "M",
+        "club_name": "KG Strength Training",
+        "wso": "Mountain South",
+        "national_rank": "3"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Utah Barbell Fitcon Open",
+          "date": "2019-04-13",
+          "division": "Open Men's 55kg",
+          "lifter_name": "Samuel Stewart",
+          "body_weight_kg": "46.6",
+          "snatch_1": "30",
+          "snatch_2": "32",
+          "snatch_3": "34",
+          "cj_1": "-41",
+          "cj_2": "42",
+          "cj_3": "44",
+          "best_snatch": "34",
+          "best_cj": "44",
+          "total": "78"
+        },
+        {
+          "meet_name": "Not A Master Yet",
+          "date": "2018-11-04",
+          "division": "Men's 14-15 Age Group 55kg",
+          "lifter_name": "Samuel Stewart",
+          "body_weight_kg": "54.51",
+          "snatch_1": "24",
+          "snatch_2": "26",
+          "snatch_3": "28",
+          "cj_1": "39",
+          "cj_2": "41",
+          "cj_3": "-43",
+          "best_snatch": "28",
+          "best_cj": "41",
+          "total": "69"
+        },
+        {
+          "meet_name": "Record Breakers 2018",
+          "date": "2018-10-27",
+          "division": "Men's 14-15 Age Group 49kg",
+          "lifter_name": "Samuel Stewart",
+          "body_weight_kg": "45.2",
+          "snatch_1": "21",
+          "snatch_2": "23",
+          "snatch_3": "26",
+          "cj_1": "35",
+          "cj_2": "37",
+          "cj_3": "39",
+          "best_snatch": "26",
+          "best_cj": "39",
+          "total": "65"
+        },
+        {
+          "meet_name": "2018 Utah State Championships",
+          "date": "2018-02-10",
+          "division": "Men's 14-15 Age Group 44kg",
+          "lifter_name": "Samuel Stewart",
+          "body_weight_kg": "39.09",
+          "snatch_1": "16",
+          "snatch_2": "19",
+          "snatch_3": "22",
+          "cj_1": "25",
+          "cj_2": "-30",
+          "cj_3": "30",
+          "best_snatch": "22",
+          "best_cj": "30",
+          "total": "52"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Utah Barbell Fitcon Open",
+            "date": "2019-04-13",
+            "division": "Open Men's 55kg",
+            "lifter_name": "Samuel Stewart",
+            "body_weight_kg": "46.6",
+            "snatch_1": "30",
+            "snatch_2": "32",
+            "snatch_3": "34",
+            "cj_1": "-41",
+            "cj_2": "42",
+            "cj_3": "44",
+            "best_snatch": "34",
+            "best_cj": "44",
+            "total": "78"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0xMyIsIndlaWdodF9jbGFzcyI6ODF9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Samuel Stewart",
+            "total": "78",
+            "gender": "M",
+            "age": "15",
+            "club_name": "KG Strength Training",
+            "membership_number": "1026932",
+            "wso": "Mountain South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Not A Master Yet",
+            "date": "2018-11-04",
+            "division": "Men's 14-15 Age Group 55kg",
+            "lifter_name": "Samuel Stewart",
+            "body_weight_kg": "54.51",
+            "snatch_1": "24",
+            "snatch_2": "26",
+            "snatch_3": "28",
+            "cj_1": "39",
+            "cj_2": "41",
+            "cj_3": "-43",
+            "best_snatch": "28",
+            "best_cj": "41",
+            "total": "69"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMS0wNCIsIndlaWdodF9jbGFzcyI6MjR9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Samuel Stewart",
+            "total": "69",
+            "gender": "M",
+            "age": "14",
+            "club_name": "KG Strength Training",
+            "membership_number": "1026932",
+            "wso": "Mountain South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Record Breakers 2018",
+            "date": "2018-10-27",
+            "division": "Men's 14-15 Age Group 49kg",
+            "lifter_name": "Samuel Stewart",
+            "body_weight_kg": "45.2",
+            "snatch_1": "21",
+            "snatch_2": "23",
+            "snatch_3": "26",
+            "cj_1": "35",
+            "cj_2": "37",
+            "cj_3": "39",
+            "best_snatch": "26",
+            "best_cj": "39",
+            "total": "65"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yNyIsIndlaWdodF9jbGFzcyI6MjN9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Samuel Stewart",
+            "total": "65",
+            "gender": "M",
+            "age": "14",
+            "club_name": "KG Strength Training",
+            "membership_number": "1026932",
+            "wso": "Mountain South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2018 Utah State Championships",
+            "date": "2018-02-10",
+            "division": "Men's 14-15 Age Group 44kg",
+            "lifter_name": "Samuel Stewart",
+            "body_weight_kg": "39.09",
+            "snatch_1": "16",
+            "snatch_2": "19",
+            "snatch_3": "22",
+            "cj_1": "25",
+            "cj_2": "-30",
+            "cj_3": "30",
+            "best_snatch": "22",
+            "best_cj": "30",
+            "total": "52"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMi0xMCIsIndlaWdodF9jbGFzcyI6MjJ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Samuel Stewart",
+            "total": "52",
+            "gender": "M",
+            "age": "14",
+            "club_name": "KG Strength Training",
+            "membership_number": "1026932",
+            "wso": "Mountain South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

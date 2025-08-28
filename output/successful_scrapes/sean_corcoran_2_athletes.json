@@ -1,0 +1,200 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T11:43:34.546Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Sean Corcoran",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 3,
+    "total_reverse_lookups": 3,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 39084640
+  },
+  "data": [
+    {
+      "internal_id": 23232,
+      "athlete_name": "Sean Corcoran",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/23232",
+      "contaminated_lifter_id": 21371,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T11:43:24.579Z",
+      "profile_data": {
+        "membership_number": "1007427",
+        "birth_year": 1990,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Pennsylvania-West Virginia",
+        "national_rank": "14"
+      },
+      "competition_history": [
+        {
+          "meet_name": "3rd Annual Winter Solstice Open",
+          "date": "2016-12-17",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Sean Corcoran",
+          "body_weight_kg": "74.5",
+          "snatch_1": "73",
+          "snatch_2": "78",
+          "snatch_3": "82",
+          "cj_1": "95",
+          "cj_2": "100",
+          "cj_3": "105",
+          "best_snatch": "82",
+          "best_cj": "105",
+          "total": "187"
+        },
+        {
+          "meet_name": "3rd Annual Generation Spring Classic",
+          "date": "2016-06-12",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Sean Corcoran",
+          "body_weight_kg": "76.7",
+          "snatch_1": "61",
+          "snatch_2": "-69",
+          "snatch_3": "69",
+          "cj_1": "85",
+          "cj_2": "91",
+          "cj_3": "-98",
+          "best_snatch": "69",
+          "best_cj": "91",
+          "total": "160"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "3rd Annual Winter Solstice Open",
+            "date": "2016-12-17",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Sean Corcoran",
+            "body_weight_kg": "74.5",
+            "snatch_1": "73",
+            "snatch_2": "78",
+            "snatch_3": "82",
+            "cj_1": "95",
+            "cj_2": "100",
+            "cj_3": "105",
+            "best_snatch": "82",
+            "best_cj": "105",
+            "total": "187"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMi0xNyIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "14",
+            "athlete_name": "Sean Corcoran",
+            "total": "187",
+            "gender": "M",
+            "age": "26",
+            "club_name": "-",
+            "membership_number": "1007427",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "3rd Annual Generation Spring Classic",
+            "date": "2016-06-12",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Sean Corcoran",
+            "body_weight_kg": "76.7",
+            "snatch_1": "61",
+            "snatch_2": "-69",
+            "snatch_3": "69",
+            "cj_1": "85",
+            "cj_2": "91",
+            "cj_3": "-98",
+            "best_snatch": "69",
+            "best_cj": "91",
+            "total": "160"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0xMiIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "23",
+            "athlete_name": "Sean Corcoran",
+            "total": "160",
+            "gender": "M",
+            "age": "26",
+            "club_name": "-",
+            "membership_number": "1007427",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 31052,
+      "athlete_name": "Sean Corcoran",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/31052",
+      "contaminated_lifter_id": 21371,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T11:43:34.544Z",
+      "profile_data": {
+        "membership_number": "1002388",
+        "birth_year": 1994,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Carolina",
+        "national_rank": "24"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2016 Handle Barbell Invitational",
+          "date": "2016-03-26",
+          "division": "Open Men's 69 kg",
+          "lifter_name": "Sean Corcoran",
+          "body_weight_kg": "67",
+          "snatch_1": "58",
+          "snatch_2": "63",
+          "snatch_3": "67",
+          "cj_1": "80",
+          "cj_2": "-85",
+          "cj_3": "-85",
+          "best_snatch": "67",
+          "best_cj": "80",
+          "total": "147"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2016 Handle Barbell Invitational",
+            "date": "2016-03-26",
+            "division": "Open Men's 69 kg",
+            "lifter_name": "Sean Corcoran",
+            "body_weight_kg": "67",
+            "snatch_1": "58",
+            "snatch_2": "63",
+            "snatch_3": "67",
+            "cj_1": "80",
+            "cj_2": "-85",
+            "cj_3": "-85",
+            "best_snatch": "67",
+            "best_cj": "80",
+            "total": "147"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMy0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMy0yNiIsIndlaWdodF9jbGFzcyI6MzU2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "24",
+            "athlete_name": "Sean Corcoran",
+            "total": "147",
+            "gender": "M",
+            "age": "22",
+            "club_name": "-",
+            "membership_number": "1002388",
+            "wso": "Carolina"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

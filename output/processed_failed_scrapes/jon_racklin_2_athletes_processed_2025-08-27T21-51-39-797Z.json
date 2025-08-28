@@ -1,0 +1,285 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T06:46:53.760Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Jon Racklin",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 5,
+    "total_reverse_lookups": 5,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 18920215
+  },
+  "data": [
+    {
+      "internal_id": 5072,
+      "athlete_name": "Jon Racklin",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/5072",
+      "contaminated_lifter_id": 6278,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T17:56:10.705Z",
+      "profile_data": {
+        "membership_number": "120959",
+        "birth_year": 1976,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Illinois",
+        "national_rank": "24"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Mattoon, IL YMCA Open W/L Championships",
+          "date": "2013-01-19",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Jon Racklin",
+          "body_weight_kg": "85.8",
+          "snatch_1": "63",
+          "snatch_2": "70",
+          "snatch_3": "75",
+          "cj_1": "85",
+          "cj_2": "95",
+          "cj_3": "103",
+          "best_snatch": "75",
+          "best_cj": "103",
+          "total": "178"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Mattoon, IL YMCA Open W/L Championships",
+            "date": "2013-01-19",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Jon Racklin",
+            "body_weight_kg": "85.8",
+            "snatch_1": "63",
+            "snatch_2": "70",
+            "snatch_3": "75",
+            "cj_1": "85",
+            "cj_2": "95",
+            "cj_3": "103",
+            "best_snatch": "75",
+            "best_cj": "103",
+            "total": "178"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMS0xOSIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "24",
+            "athlete_name": "Jon Racklin",
+            "total": "178",
+            "gender": "M",
+            "age": "37",
+            "club_name": "-",
+            "membership_number": "120959",
+            "wso": "Illinois"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 71,
+      "athlete_name": "Jon Racklin",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/71",
+      "contaminated_lifter_id": 6278,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-27T06:46:51.758Z",
+      "profile_data": {
+        "membership_number": "111819",
+        "birth_year": 1937,
+        "gender": "M",
+        "club_name": "SAYRE PARK WLC",
+        "wso": "Illinois",
+        "national_rank": "61"
+      },
+      "competition_history": [
+        {
+          "meet_name": "National Masters Weightlifting Championships",
+          "date": "2017-03-12",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Jon Racklin",
+          "body_weight_kg": "84.2",
+          "snatch_1": "-25",
+          "snatch_2": "-25",
+          "snatch_3": "25",
+          "cj_1": "30",
+          "cj_2": "-1",
+          "cj_3": "-1",
+          "best_snatch": "25",
+          "best_cj": "30",
+          "total": "55"
+        },
+        {
+          "meet_name": "American Masters",
+          "date": "2014-11-02",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Jon Racklin",
+          "body_weight_kg": "86.45",
+          "snatch_1": "35",
+          "snatch_2": "40",
+          "snatch_3": "45",
+          "cj_1": "40",
+          "cj_2": "45",
+          "cj_3": "50",
+          "best_snatch": "45",
+          "best_cj": "50",
+          "total": "95"
+        },
+        {
+          "meet_name": "Mattoon, IL YMCA Open W/L Championships",
+          "date": "2013-01-19",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Jon Racklin",
+          "body_weight_kg": "85.7",
+          "snatch_1": "40",
+          "snatch_2": "43",
+          "snatch_3": "46",
+          "cj_1": "45",
+          "cj_2": "47",
+          "cj_3": "50",
+          "best_snatch": "46",
+          "best_cj": "50",
+          "total": "96"
+        },
+        {
+          "meet_name": "National Masters",
+          "date": "2012-04-01",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Jon Racklin",
+          "body_weight_kg": "83.9",
+          "snatch_1": "0",
+          "snatch_2": "0",
+          "snatch_3": "0",
+          "cj_1": "55",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "0",
+          "best_cj": "55",
+          "total": "0"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "National Masters Weightlifting Championships",
+            "date": "2017-03-12",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Jon Racklin",
+            "body_weight_kg": "84.2",
+            "snatch_1": "-25",
+            "snatch_2": "-25",
+            "snatch_3": "25",
+            "cj_1": "30",
+            "cj_2": "-1",
+            "cj_3": "-1",
+            "best_snatch": "25",
+            "best_cj": "30",
+            "total": "55"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0xMiIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "61",
+            "athlete_name": "Jon Racklin",
+            "total": "55",
+            "gender": "M",
+            "age": "80",
+            "club_name": "SAYRE PARK WLC",
+            "membership_number": "111819",
+            "wso": "Illinois"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "American Masters",
+            "date": "2014-11-02",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Jon Racklin",
+            "body_weight_kg": "86.45",
+            "snatch_1": "35",
+            "snatch_2": "40",
+            "snatch_3": "45",
+            "cj_1": "40",
+            "cj_2": "45",
+            "cj_3": "50",
+            "best_snatch": "45",
+            "best_cj": "50",
+            "total": "95"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMS0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMS0wMiIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "62",
+            "athlete_name": "Jon Racklin",
+            "total": "95",
+            "gender": "M",
+            "age": "77",
+            "club_name": "SAYRE PARK WLC",
+            "membership_number": "111819",
+            "wso": "Illinois"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Mattoon, IL YMCA Open W/L Championships",
+            "date": "2013-01-19",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Jon Racklin",
+            "body_weight_kg": "85.7",
+            "snatch_1": "40",
+            "snatch_2": "43",
+            "snatch_3": "46",
+            "cj_1": "45",
+            "cj_2": "47",
+            "cj_3": "50",
+            "best_snatch": "46",
+            "best_cj": "50",
+            "total": "96"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMS0xOSIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "24",
+            "athlete_name": "Jon Racklin",
+            "total": "178",
+            "gender": "M",
+            "age": "37",
+            "club_name": "-",
+            "membership_number": "120959",
+            "wso": "Illinois"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "National Masters",
+            "date": "2012-04-01",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Jon Racklin",
+            "body_weight_kg": "83.9",
+            "snatch_1": "0",
+            "snatch_2": "0",
+            "snatch_3": "0",
+            "cj_1": "55",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "0",
+            "best_cj": "55",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wNC0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wNC0wMSIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    }
+  ]
+}

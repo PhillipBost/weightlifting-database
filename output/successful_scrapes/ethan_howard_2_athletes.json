@@ -1,0 +1,435 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T23:39:40.325Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Ethan Howard",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 8,
+    "total_reverse_lookups": 8,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 82050419
+  },
+  "data": [
+    {
+      "internal_id": 30619,
+      "athlete_name": "Ethan Howard",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/30619",
+      "contaminated_lifter_id": 29908,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T23:38:45.765Z",
+      "profile_data": {
+        "membership_number": "169256",
+        "birth_year": 1993,
+        "gender": "M",
+        "club_name": "PITTSBURGH BBC",
+        "wso": "Pennsylvania-West Virginia",
+        "national_rank": "4"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2017 Kansas State & Open Championships",
+          "date": "2017-08-27",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Ethan Howard",
+          "body_weight_kg": "125.6",
+          "snatch_1": "50",
+          "snatch_2": "55",
+          "snatch_3": "60",
+          "cj_1": "70",
+          "cj_2": "75",
+          "cj_3": "80",
+          "best_snatch": "60",
+          "best_cj": "80",
+          "total": "140"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2017 Kansas State & Open Championships",
+            "date": "2017-08-27",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Ethan Howard",
+            "body_weight_kg": "125.6",
+            "snatch_1": "50",
+            "snatch_2": "55",
+            "snatch_3": "60",
+            "cj_1": "70",
+            "cj_2": "75",
+            "cj_3": "80",
+            "best_snatch": "60",
+            "best_cj": "80",
+            "total": "140"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wOC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wOC0yNyIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Ethan Howard",
+            "total": "140",
+            "gender": "M",
+            "age": "24",
+            "club_name": "PITTSBURGH BBC",
+            "membership_number": "169256",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 41972,
+      "athlete_name": "Ethan Howard",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/41972",
+      "contaminated_lifter_id": 29908,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T23:39:40.323Z",
+      "profile_data": {
+        "membership_number": "1021751",
+        "birth_year": 2001,
+        "gender": "M",
+        "club_name": "LIFT Barbell Club",
+        "wso": "Missouri Valley",
+        "national_rank": "2"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Grayskull Winter Open II",
+          "date": "2020-01-04",
+          "division": "Junior Men's +109kg",
+          "lifter_name": "Ethan Howard",
+          "body_weight_kg": "118",
+          "snatch_1": "70",
+          "snatch_2": "75",
+          "snatch_3": "-80",
+          "cj_1": "100",
+          "cj_2": "-105",
+          "cj_3": "105",
+          "best_snatch": "75",
+          "best_cj": "105",
+          "total": "180"
+        },
+        {
+          "meet_name": "UnCharted Barbell's Fall Lifting Meet",
+          "date": "2018-10-20",
+          "division": "Open Men's +109kg",
+          "lifter_name": "Ethan Howard",
+          "body_weight_kg": "119",
+          "snatch_1": "65",
+          "snatch_2": "-70",
+          "snatch_3": "-70",
+          "cj_1": "83",
+          "cj_2": "87",
+          "cj_3": "-90",
+          "best_snatch": "65",
+          "best_cj": "87",
+          "total": "152"
+        },
+        {
+          "meet_name": "Rodger DeGarmo Memorial",
+          "date": "2018-09-08",
+          "division": "Open Men's +109kg",
+          "lifter_name": "Ethan Howard",
+          "body_weight_kg": "116.47",
+          "snatch_1": "60",
+          "snatch_2": "65",
+          "snatch_3": "70",
+          "cj_1": "75",
+          "cj_2": "81",
+          "cj_3": "-90",
+          "best_snatch": "70",
+          "best_cj": "81",
+          "total": "151"
+        },
+        {
+          "meet_name": "UnCharted Barbell's Spring Meet",
+          "date": "2018-04-14",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Ethan Howard",
+          "body_weight_kg": "123.4",
+          "snatch_1": "68",
+          "snatch_2": "-73",
+          "snatch_3": "73",
+          "cj_1": "85",
+          "cj_2": "-90",
+          "cj_3": "90",
+          "best_snatch": "73",
+          "best_cj": "90",
+          "total": "163"
+        },
+        {
+          "meet_name": "Bringing Down The House",
+          "date": "2018-02-10",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Ethan Howard",
+          "body_weight_kg": "127.7",
+          "snatch_1": "65",
+          "snatch_2": "-70",
+          "snatch_3": "-70",
+          "cj_1": "83",
+          "cj_2": "-86",
+          "cj_3": "86",
+          "best_snatch": "65",
+          "best_cj": "86",
+          "total": "151"
+        },
+        {
+          "meet_name": "Onaga Christmas Open",
+          "date": "2017-12-30",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Ethan Howard",
+          "body_weight_kg": "125.6",
+          "snatch_1": "-65",
+          "snatch_2": "65",
+          "snatch_3": "70",
+          "cj_1": "75",
+          "cj_2": "80",
+          "cj_3": "87",
+          "best_snatch": "70",
+          "best_cj": "87",
+          "total": "157"
+        },
+        {
+          "meet_name": "2017 Kansas State & Open Championships",
+          "date": "2017-08-27",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Ethan Howard",
+          "body_weight_kg": "125.6",
+          "snatch_1": "50",
+          "snatch_2": "55",
+          "snatch_3": "60",
+          "cj_1": "70",
+          "cj_2": "75",
+          "cj_3": "80",
+          "best_snatch": "60",
+          "best_cj": "80",
+          "total": "140"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Grayskull Winter Open II",
+            "date": "2020-01-04",
+            "division": "Junior Men's +109kg",
+            "lifter_name": "Ethan Howard",
+            "body_weight_kg": "118",
+            "snatch_1": "70",
+            "snatch_2": "75",
+            "snatch_3": "-80",
+            "cj_1": "100",
+            "cj_2": "-105",
+            "cj_3": "105",
+            "best_snatch": "75",
+            "best_cj": "105",
+            "total": "180"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMS0wNCIsIndlaWdodF9jbGFzcyI6NzB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Ethan Howard",
+            "total": "180",
+            "gender": "M",
+            "age": "19",
+            "club_name": "LIFT Barbell Club",
+            "membership_number": "1021751",
+            "wso": "Missouri Valley"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "UnCharted Barbell's Fall Lifting Meet",
+            "date": "2018-10-20",
+            "division": "Open Men's +109kg",
+            "lifter_name": "Ethan Howard",
+            "body_weight_kg": "119",
+            "snatch_1": "65",
+            "snatch_2": "-70",
+            "snatch_3": "-70",
+            "cj_1": "83",
+            "cj_2": "87",
+            "cj_3": "-90",
+            "best_snatch": "65",
+            "best_cj": "87",
+            "total": "152"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yMCIsIndlaWdodF9jbGFzcyI6OTB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "18",
+            "athlete_name": "Ethan Howard",
+            "total": "152",
+            "gender": "M",
+            "age": "17",
+            "club_name": "LIFT Barbell Club",
+            "membership_number": "1021751",
+            "wso": "Missouri Valley"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Rodger DeGarmo Memorial",
+            "date": "2018-09-08",
+            "division": "Open Men's +109kg",
+            "lifter_name": "Ethan Howard",
+            "body_weight_kg": "116.47",
+            "snatch_1": "60",
+            "snatch_2": "65",
+            "snatch_3": "70",
+            "cj_1": "75",
+            "cj_2": "81",
+            "cj_3": "-90",
+            "best_snatch": "70",
+            "best_cj": "81",
+            "total": "151"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOS0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOS0wOCIsIndlaWdodF9jbGFzcyI6OTB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Ethan Howard",
+            "total": "151",
+            "gender": "M",
+            "age": "17",
+            "club_name": "LIFT Barbell Club",
+            "membership_number": "1021751",
+            "wso": "Missouri Valley"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "UnCharted Barbell's Spring Meet",
+            "date": "2018-04-14",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Ethan Howard",
+            "body_weight_kg": "123.4",
+            "snatch_1": "68",
+            "snatch_2": "-73",
+            "snatch_3": "73",
+            "cj_1": "85",
+            "cj_2": "-90",
+            "cj_3": "90",
+            "best_snatch": "73",
+            "best_cj": "90",
+            "total": "163"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNC0xNCIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "31",
+            "athlete_name": "Ethan Howard",
+            "total": "163",
+            "gender": "M",
+            "age": "17",
+            "club_name": "LIFT Barbell Club",
+            "membership_number": "1021751",
+            "wso": "Missouri Valley"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Bringing Down The House",
+            "date": "2018-02-10",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Ethan Howard",
+            "body_weight_kg": "127.7",
+            "snatch_1": "65",
+            "snatch_2": "-70",
+            "snatch_3": "-70",
+            "cj_1": "83",
+            "cj_2": "-86",
+            "cj_3": "86",
+            "best_snatch": "65",
+            "best_cj": "86",
+            "total": "151"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMi0xMCIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "17",
+            "athlete_name": "Ethan Howard",
+            "total": "151",
+            "gender": "M",
+            "age": "17",
+            "club_name": "LIFT Barbell Club",
+            "membership_number": "1021751",
+            "wso": "Missouri Valley"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Onaga Christmas Open",
+            "date": "2017-12-30",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Ethan Howard",
+            "body_weight_kg": "125.6",
+            "snatch_1": "-65",
+            "snatch_2": "65",
+            "snatch_3": "70",
+            "cj_1": "75",
+            "cj_2": "80",
+            "cj_3": "87",
+            "best_snatch": "70",
+            "best_cj": "87",
+            "total": "157"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMi0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMi0zMCIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "8",
+            "athlete_name": "Ethan Howard",
+            "total": "157",
+            "gender": "M",
+            "age": "16",
+            "club_name": "LIFT Barbell Club",
+            "membership_number": "1021751",
+            "wso": "Missouri Valley"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2017 Kansas State & Open Championships",
+            "date": "2017-08-27",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Ethan Howard",
+            "body_weight_kg": "125.6",
+            "snatch_1": "50",
+            "snatch_2": "55",
+            "snatch_3": "60",
+            "cj_1": "70",
+            "cj_2": "75",
+            "cj_3": "80",
+            "best_snatch": "60",
+            "best_cj": "80",
+            "total": "140"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wOC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wOC0yNyIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Ethan Howard",
+            "total": "140",
+            "gender": "M",
+            "age": "24",
+            "club_name": "PITTSBURGH BBC",
+            "membership_number": "169256",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

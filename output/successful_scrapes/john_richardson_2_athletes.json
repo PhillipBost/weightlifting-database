@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T09:38:28.900Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "John Richardson",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 31578994
+  },
+  "data": [
+    {
+      "internal_id": 6221,
+      "athlete_name": "John Richardson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/6221",
+      "contaminated_lifter_id": 7975,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T09:38:18.983Z",
+      "profile_data": {
+        "membership_number": "152855",
+        "birth_year": 1978,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Florida",
+        "national_rank": "22"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Florida LWC 14 State Cup/ Sunshine State Games",
+          "date": "2015-06-13",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "John Richardson",
+          "body_weight_kg": "104.9",
+          "snatch_1": "75",
+          "snatch_2": "81",
+          "snatch_3": "-88",
+          "cj_1": "109",
+          "cj_2": "-118",
+          "cj_3": "118",
+          "best_snatch": "81",
+          "best_cj": "118",
+          "total": "199"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Florida LWC 14 State Cup/ Sunshine State Games",
+            "date": "2015-06-13",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "John Richardson",
+            "body_weight_kg": "104.9",
+            "snatch_1": "75",
+            "snatch_2": "81",
+            "snatch_3": "-88",
+            "cj_1": "109",
+            "cj_2": "-118",
+            "cj_3": "118",
+            "best_snatch": "81",
+            "best_cj": "118",
+            "total": "199"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNi0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNi0xMyIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "22",
+            "athlete_name": "John Richardson",
+            "total": "199",
+            "gender": "M",
+            "age": "37",
+            "club_name": "-",
+            "membership_number": "152855",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 12943,
+      "athlete_name": "John Richardson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/12943",
+      "contaminated_lifter_id": 7975,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T09:38:28.897Z",
+      "profile_data": {
+        "membership_number": "1000685",
+        "birth_year": 1984,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Tennessee-Kentucky",
+        "national_rank": "16"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Indiana State Championship and Open",
+          "date": "2016-06-04",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "John Richardson",
+          "body_weight_kg": "83.5",
+          "snatch_1": "100",
+          "snatch_2": "105",
+          "snatch_3": "110",
+          "cj_1": "120",
+          "cj_2": "-128",
+          "cj_3": "-132",
+          "best_snatch": "110",
+          "best_cj": "120",
+          "total": "230"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Indiana State Championship and Open",
+            "date": "2016-06-04",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "John Richardson",
+            "body_weight_kg": "83.5",
+            "snatch_1": "100",
+            "snatch_2": "105",
+            "snatch_3": "110",
+            "cj_1": "120",
+            "cj_2": "-128",
+            "cj_3": "-132",
+            "best_snatch": "110",
+            "best_cj": "120",
+            "total": "230"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0wNCIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "16",
+            "athlete_name": "John Richardson",
+            "total": "230",
+            "gender": "M",
+            "age": "32",
+            "club_name": "-",
+            "membership_number": "1000685",
+            "wso": "Tennessee-Kentucky"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

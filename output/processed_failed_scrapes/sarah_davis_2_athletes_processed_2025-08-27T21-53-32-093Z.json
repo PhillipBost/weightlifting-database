@@ -1,0 +1,144 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T21:35:23.853Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Sarah Davis",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 74593947
+  },
+  "data": [
+    {
+      "internal_id": 61817,
+      "athlete_name": "Sarah Davis",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/61817",
+      "contaminated_lifter_id": 59544,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T21:35:10.716Z",
+      "profile_data": {
+        "membership_number": null,
+        "birth_year": null,
+        "gender": null,
+        "club_name": null,
+        "wso": null,
+        "national_rank": null
+      },
+      "competition_history": [
+        {
+          "meet_name": "St. Valentines Day Showdown",
+          "date": "2024-02-17",
+          "division": "Open Women's 87kg",
+          "lifter_name": "Sarah Davis",
+          "body_weight_kg": "83.6",
+          "snatch_1": "57",
+          "snatch_2": "60",
+          "snatch_3": "63",
+          "cj_1": "78",
+          "cj_2": "82",
+          "cj_3": "85",
+          "best_snatch": "63",
+          "best_cj": "85",
+          "total": "148"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "St. Valentines Day Showdown",
+            "date": "2024-02-17",
+            "division": "Open Women's 87kg",
+            "lifter_name": "Sarah Davis",
+            "body_weight_kg": "83.6",
+            "snatch_1": "57",
+            "snatch_2": "60",
+            "snatch_3": "63",
+            "cj_1": "78",
+            "cj_2": "82",
+            "cj_3": "85",
+            "best_snatch": "63",
+            "best_cj": "85",
+            "total": "148"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMi0xNyIsIndlaWdodF9jbGFzcyI6OTl9",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    },
+    {
+      "internal_id": 41544,
+      "athlete_name": "Sarah Davis",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/41544",
+      "contaminated_lifter_id": 59544,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T21:35:23.851Z",
+      "profile_data": {
+        "membership_number": "1044504",
+        "birth_year": 2001,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "Florida",
+        "national_rank": "13"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Tampa Bay Area Classic 6",
+          "date": "2019-08-31",
+          "division": "Open Women's 71kg",
+          "lifter_name": "Sarah Davis",
+          "body_weight_kg": "71",
+          "snatch_1": "39",
+          "snatch_2": "43",
+          "snatch_3": "46",
+          "cj_1": "64",
+          "cj_2": "66",
+          "cj_3": "-68",
+          "best_snatch": "46",
+          "best_cj": "66",
+          "total": "112"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Tampa Bay Area Classic 6",
+            "date": "2019-08-31",
+            "division": "Open Women's 71kg",
+            "lifter_name": "Sarah Davis",
+            "body_weight_kg": "71",
+            "snatch_1": "39",
+            "snatch_2": "43",
+            "snatch_3": "46",
+            "cj_1": "64",
+            "cj_2": "66",
+            "cj_3": "-68",
+            "best_snatch": "46",
+            "best_cj": "66",
+            "total": "112"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOC0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOC0zMSIsIndlaWdodF9jbGFzcyI6OTZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "13",
+            "athlete_name": "Sarah Davis",
+            "total": "112",
+            "gender": "F",
+            "age": "18",
+            "club_name": "-",
+            "membership_number": "1044504",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

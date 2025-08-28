@@ -1,0 +1,388 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T22:27:58.274Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Dominic Littleghost",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 7,
+    "total_reverse_lookups": 7,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 77748368
+  },
+  "data": [
+    {
+      "internal_id": 52725,
+      "athlete_name": "Dominic Littleghost",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/52725",
+      "contaminated_lifter_id": 48795,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T22:27:47.070Z",
+      "profile_data": {
+        "membership_number": "1060271",
+        "birth_year": 2007,
+        "gender": "M",
+        "club_name": "Moorhead Spuds Weightlifting",
+        "wso": "Minnesota-Dakotas",
+        "national_rank": "6"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2023 Minnesota High School State Championships",
+          "date": "2023-03-11",
+          "division": "Men's 16-17 Age Group +102kg",
+          "lifter_name": "Dominic Littleghost",
+          "body_weight_kg": "149.06",
+          "snatch_1": "70",
+          "snatch_2": "-75",
+          "snatch_3": "75",
+          "cj_1": "95",
+          "cj_2": "100",
+          "cj_3": "-103",
+          "best_snatch": "75",
+          "best_cj": "100",
+          "total": "175"
+        },
+        {
+          "meet_name": "2023 Spud Thud",
+          "date": "2023-02-11",
+          "division": "Men's 16-17 Age Group +102kg",
+          "lifter_name": "Dominic Littleghost",
+          "body_weight_kg": "150.4",
+          "snatch_1": "66",
+          "snatch_2": "70",
+          "snatch_3": "73",
+          "cj_1": "88",
+          "cj_2": "95",
+          "cj_3": "-100",
+          "best_snatch": "73",
+          "best_cj": "95",
+          "total": "168"
+        },
+        {
+          "meet_name": "2023 Laker Liftoff",
+          "date": "2023-01-14",
+          "division": "Men's 16-17 Age Group +102kg",
+          "lifter_name": "Dominic Littleghost",
+          "body_weight_kg": "105",
+          "snatch_1": "60",
+          "snatch_2": "64",
+          "snatch_3": "68",
+          "cj_1": "83",
+          "cj_2": "87",
+          "cj_3": "91",
+          "best_snatch": "68",
+          "best_cj": "91",
+          "total": "159"
+        },
+        {
+          "meet_name": "2022 Spud Thud",
+          "date": "2022-02-12",
+          "division": "Men's 14-15 Age Group +89kg",
+          "lifter_name": "Dominic Littleghost",
+          "body_weight_kg": "152.1",
+          "snatch_1": "52",
+          "snatch_2": "57",
+          "snatch_3": "60",
+          "cj_1": "77",
+          "cj_2": "-81",
+          "cj_3": "-81",
+          "best_snatch": "60",
+          "best_cj": "77",
+          "total": "137"
+        },
+        {
+          "meet_name": "2022 Laker Liftoff Open",
+          "date": "2022-01-15",
+          "division": "Men's 14-15 Age Group +89kg",
+          "lifter_name": "Dominic Littleghost",
+          "body_weight_kg": "103",
+          "snatch_1": "47",
+          "snatch_2": "51",
+          "snatch_3": "-57",
+          "cj_1": "73",
+          "cj_2": "77",
+          "cj_3": "-80",
+          "best_snatch": "51",
+          "best_cj": "77",
+          "total": "128"
+        },
+        {
+          "meet_name": "Little Falls High School Open",
+          "date": "2021-12-11",
+          "division": "Men's 14-15 Age Group +89kg",
+          "lifter_name": "Dominic Littleghost",
+          "body_weight_kg": "147.3",
+          "snatch_1": "32",
+          "snatch_2": "36",
+          "snatch_3": "40",
+          "cj_1": "62",
+          "cj_2": "66",
+          "cj_3": "70",
+          "best_snatch": "40",
+          "best_cj": "70",
+          "total": "110"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2023 Minnesota High School State Championships",
+            "date": "2023-03-11",
+            "division": "Men's 16-17 Age Group +102kg",
+            "lifter_name": "Dominic Littleghost",
+            "body_weight_kg": "149.06",
+            "snatch_1": "70",
+            "snatch_2": "-75",
+            "snatch_3": "75",
+            "cj_1": "95",
+            "cj_2": "100",
+            "cj_3": "-103",
+            "best_snatch": "75",
+            "best_cj": "100",
+            "total": "175"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMy0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMy0xMSIsIndlaWdodF9jbGFzcyI6MTB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Dominic Littleghost",
+            "total": "175",
+            "gender": "M",
+            "age": "16",
+            "club_name": "Moorhead Spuds Weightlifting",
+            "membership_number": "1060271",
+            "wso": "Minnesota-Dakotas"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2023 Spud Thud",
+            "date": "2023-02-11",
+            "division": "Men's 16-17 Age Group +102kg",
+            "lifter_name": "Dominic Littleghost",
+            "body_weight_kg": "150.4",
+            "snatch_1": "66",
+            "snatch_2": "70",
+            "snatch_3": "73",
+            "cj_1": "88",
+            "cj_2": "95",
+            "cj_3": "-100",
+            "best_snatch": "73",
+            "best_cj": "95",
+            "total": "168"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMi0xMSIsIndlaWdodF9jbGFzcyI6MTB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Dominic Littleghost",
+            "total": "168",
+            "gender": "M",
+            "age": "16",
+            "club_name": "Moorhead Spuds Weightlifting",
+            "membership_number": "1060271",
+            "wso": "Minnesota-Dakotas"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2023 Laker Liftoff",
+            "date": "2023-01-14",
+            "division": "Men's 16-17 Age Group +102kg",
+            "lifter_name": "Dominic Littleghost",
+            "body_weight_kg": "105",
+            "snatch_1": "60",
+            "snatch_2": "64",
+            "snatch_3": "68",
+            "cj_1": "83",
+            "cj_2": "87",
+            "cj_3": "91",
+            "best_snatch": "68",
+            "best_cj": "91",
+            "total": "159"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMS0xNCIsIndlaWdodF9jbGFzcyI6MTB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Dominic Littleghost",
+            "total": "159",
+            "gender": "M",
+            "age": "16",
+            "club_name": "Moorhead Spuds Weightlifting",
+            "membership_number": "1060271",
+            "wso": "Minnesota-Dakotas"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2022 Spud Thud",
+            "date": "2022-02-12",
+            "division": "Men's 14-15 Age Group +89kg",
+            "lifter_name": "Dominic Littleghost",
+            "body_weight_kg": "152.1",
+            "snatch_1": "52",
+            "snatch_2": "57",
+            "snatch_3": "60",
+            "cj_1": "77",
+            "cj_2": "-81",
+            "cj_3": "-81",
+            "best_snatch": "60",
+            "best_cj": "77",
+            "total": "137"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMi0xMiIsIndlaWdodF9jbGFzcyI6MzB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Dominic Littleghost",
+            "total": "137",
+            "gender": "M",
+            "age": "15",
+            "club_name": "Moorhead Spuds Weightlifting",
+            "membership_number": "1060271",
+            "wso": "Minnesota-Dakotas"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2022 Laker Liftoff Open",
+            "date": "2022-01-15",
+            "division": "Men's 14-15 Age Group +89kg",
+            "lifter_name": "Dominic Littleghost",
+            "body_weight_kg": "103",
+            "snatch_1": "47",
+            "snatch_2": "51",
+            "snatch_3": "-57",
+            "cj_1": "73",
+            "cj_2": "77",
+            "cj_3": "-80",
+            "best_snatch": "51",
+            "best_cj": "77",
+            "total": "128"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMS0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMS0xNSIsIndlaWdodF9jbGFzcyI6MzB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Dominic Littleghost",
+            "total": "128",
+            "gender": "M",
+            "age": "15",
+            "club_name": "Moorhead Spuds Weightlifting",
+            "membership_number": "1060271",
+            "wso": "Minnesota-Dakotas"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Little Falls High School Open",
+            "date": "2021-12-11",
+            "division": "Men's 14-15 Age Group +89kg",
+            "lifter_name": "Dominic Littleghost",
+            "body_weight_kg": "147.3",
+            "snatch_1": "32",
+            "snatch_2": "36",
+            "snatch_3": "40",
+            "cj_1": "62",
+            "cj_2": "66",
+            "cj_3": "70",
+            "best_snatch": "40",
+            "best_cj": "70",
+            "total": "110"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMi0xMSIsIndlaWdodF9jbGFzcyI6MzB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Dominic Littleghost",
+            "total": "110",
+            "gender": "M",
+            "age": "14",
+            "club_name": "Moorhead Spuds Weightlifting",
+            "membership_number": "1060271",
+            "wso": "Minnesota-Dakotas"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 50034,
+      "athlete_name": "Dominic Littleghost",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/50034",
+      "contaminated_lifter_id": 48795,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T22:27:58.272Z",
+      "profile_data": {
+        "membership_number": "1055326",
+        "birth_year": 2008,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Minnesota-Dakotas",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Moorhead Spud Thud",
+          "date": "2021-03-20",
+          "division": "Men's 13 Under Age Group +73kg",
+          "lifter_name": "Dominic Littleghost",
+          "body_weight_kg": "145.4",
+          "snatch_1": "36",
+          "snatch_2": "40",
+          "snatch_3": "-50",
+          "cj_1": "55",
+          "cj_2": "60",
+          "cj_3": "65",
+          "best_snatch": "40",
+          "best_cj": "65",
+          "total": "105"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Moorhead Spud Thud",
+            "date": "2021-03-20",
+            "division": "Men's 13 Under Age Group +73kg",
+            "lifter_name": "Dominic Littleghost",
+            "body_weight_kg": "145.4",
+            "snatch_1": "36",
+            "snatch_2": "40",
+            "snatch_3": "-50",
+            "cj_1": "55",
+            "cj_2": "60",
+            "cj_3": "65",
+            "best_snatch": "40",
+            "best_cj": "65",
+            "total": "105"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMy0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMy0yMCIsIndlaWdodF9jbGFzcyI6NTB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Dominic Littleghost",
+            "total": "105",
+            "gender": "M",
+            "age": "13",
+            "club_name": "-",
+            "membership_number": "1055326",
+            "wso": "Minnesota-Dakotas"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

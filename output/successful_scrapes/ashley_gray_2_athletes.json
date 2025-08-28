@@ -1,0 +1,294 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T00:31:08.315Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Ashley Gray",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 5,
+    "total_reverse_lookups": 5,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 85138409
+  },
+  "data": [
+    {
+      "internal_id": 19987,
+      "athlete_name": "Ashley Gray",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/19987",
+      "contaminated_lifter_id": 26461,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T00:30:35.188Z",
+      "profile_data": {
+        "membership_number": "211522",
+        "birth_year": 1988,
+        "gender": "F",
+        "club_name": "LEGENDS BARBELL CLUB",
+        "wso": "Pennsylvania-West Virginia",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Barbell MAYnia",
+          "date": "2018-04-21",
+          "division": "Open Women's +90 kg",
+          "lifter_name": "Ashley Gray",
+          "body_weight_kg": "104.2",
+          "snatch_1": "107",
+          "snatch_2": "111",
+          "snatch_3": "-114",
+          "cj_1": "120",
+          "cj_2": "125",
+          "cj_3": "130",
+          "best_snatch": "111",
+          "best_cj": "130",
+          "total": "241"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Barbell MAYnia",
+            "date": "2018-04-21",
+            "division": "Open Women's +90 kg",
+            "lifter_name": "Ashley Gray",
+            "body_weight_kg": "104.2",
+            "snatch_1": "107",
+            "snatch_2": "111",
+            "snatch_3": "-114",
+            "cj_1": "120",
+            "cj_2": "125",
+            "cj_3": "130",
+            "best_snatch": "111",
+            "best_cj": "130",
+            "total": "241"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNC0yMSIsIndlaWdodF9jbGFzcyI6MzcwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Ashley Gray",
+            "total": "241",
+            "gender": "F",
+            "age": "30",
+            "club_name": "LEGENDS BARBELL CLUB",
+            "membership_number": "211522",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 45635,
+      "athlete_name": "Ashley Gray",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/45635",
+      "contaminated_lifter_id": 26461,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T00:31:08.313Z",
+      "profile_data": {
+        "membership_number": "1015870",
+        "birth_year": 2006,
+        "gender": "M",
+        "club_name": "Enderton Strength Barbell",
+        "wso": "Mountain North",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Enderton Strength's 2017 Beat the Heat USAW Competition & Qualifier",
+          "date": "2017-08-26",
+          "division": "Men's 13 Under Age Group 44kg",
+          "lifter_name": "Ashley Gray",
+          "body_weight_kg": "41.7",
+          "snatch_1": "22",
+          "snatch_2": "25",
+          "snatch_3": "-27",
+          "cj_1": "31",
+          "cj_2": "34",
+          "cj_3": "-36",
+          "best_snatch": "25",
+          "best_cj": "34",
+          "total": "59"
+        },
+        {
+          "meet_name": "Rocky Mountain State Games",
+          "date": "2017-07-23",
+          "division": "Men's 13 Under Age Group 44kg",
+          "lifter_name": "Ashley Gray",
+          "body_weight_kg": "41.4",
+          "snatch_1": "20",
+          "snatch_2": "23",
+          "snatch_3": "25",
+          "cj_1": "30",
+          "cj_2": "33",
+          "cj_3": "35",
+          "best_snatch": "25",
+          "best_cj": "35",
+          "total": "60"
+        },
+        {
+          "meet_name": "Cowboy Classic",
+          "date": "2017-02-12",
+          "division": "Men's 13 Under Age Group 39kg",
+          "lifter_name": "Ashley Gray",
+          "body_weight_kg": "38.61",
+          "snatch_1": "18",
+          "snatch_2": "20",
+          "snatch_3": "23",
+          "cj_1": "23",
+          "cj_2": "26",
+          "cj_3": "28",
+          "best_snatch": "23",
+          "best_cj": "28",
+          "total": "51"
+        },
+        {
+          "meet_name": "Lord of the Lifts Super Competition",
+          "date": "2016-10-16",
+          "division": "Men's 13 Under Age Group 44kg",
+          "lifter_name": "Ashley Gray",
+          "body_weight_kg": "39.5",
+          "snatch_1": "17",
+          "snatch_2": "18",
+          "snatch_3": "19",
+          "cj_1": "25",
+          "cj_2": "26",
+          "cj_3": "26",
+          "best_snatch": "19",
+          "best_cj": "26",
+          "total": "45"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Enderton Strength's 2017 Beat the Heat USAW Competition & Qualifier",
+            "date": "2017-08-26",
+            "division": "Men's 13 Under Age Group 44kg",
+            "lifter_name": "Ashley Gray",
+            "body_weight_kg": "41.7",
+            "snatch_1": "22",
+            "snatch_2": "25",
+            "snatch_3": "-27",
+            "cj_1": "31",
+            "cj_2": "34",
+            "cj_3": "-36",
+            "best_snatch": "25",
+            "best_cj": "34",
+            "total": "59"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wOC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wOC0yNiIsIndlaWdodF9jbGFzcyI6NDR9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Ashley Gray",
+            "total": "59",
+            "gender": "M",
+            "age": "11",
+            "club_name": "Enderton Strength Barbell",
+            "membership_number": "1015870",
+            "wso": "Mountain North"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Rocky Mountain State Games",
+            "date": "2017-07-23",
+            "division": "Men's 13 Under Age Group 44kg",
+            "lifter_name": "Ashley Gray",
+            "body_weight_kg": "41.4",
+            "snatch_1": "20",
+            "snatch_2": "23",
+            "snatch_3": "25",
+            "cj_1": "30",
+            "cj_2": "33",
+            "cj_3": "35",
+            "best_snatch": "25",
+            "best_cj": "35",
+            "total": "60"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNy0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNy0yMyIsIndlaWdodF9jbGFzcyI6NDR9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Ashley Gray",
+            "total": "60",
+            "gender": "M",
+            "age": "11",
+            "club_name": "Enderton Strength Barbell",
+            "membership_number": "1015870",
+            "wso": "Mountain North"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Cowboy Classic",
+            "date": "2017-02-12",
+            "division": "Men's 13 Under Age Group 39kg",
+            "lifter_name": "Ashley Gray",
+            "body_weight_kg": "38.61",
+            "snatch_1": "18",
+            "snatch_2": "20",
+            "snatch_3": "23",
+            "cj_1": "23",
+            "cj_2": "26",
+            "cj_3": "28",
+            "best_snatch": "23",
+            "best_cj": "28",
+            "total": "51"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xMiIsIndlaWdodF9jbGFzcyI6NDN9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Ashley Gray",
+            "total": "51",
+            "gender": "M",
+            "age": "11",
+            "club_name": "Enderton Strength Barbell",
+            "membership_number": "1015870",
+            "wso": "Mountain North"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Lord of the Lifts Super Competition",
+            "date": "2016-10-16",
+            "division": "Men's 13 Under Age Group 44kg",
+            "lifter_name": "Ashley Gray",
+            "body_weight_kg": "39.5",
+            "snatch_1": "17",
+            "snatch_2": "18",
+            "snatch_3": "19",
+            "cj_1": "25",
+            "cj_2": "26",
+            "cj_3": "26",
+            "best_snatch": "19",
+            "best_cj": "26",
+            "total": "45"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0xNiIsIndlaWdodF9jbGFzcyI6NDR9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Ashley Gray",
+            "total": "45",
+            "gender": "M",
+            "age": "10",
+            "club_name": "Enderton Strength Barbell",
+            "membership_number": "1015870",
+            "wso": "Mountain North"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

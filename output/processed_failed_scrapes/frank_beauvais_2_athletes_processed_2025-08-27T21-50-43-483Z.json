@@ -1,0 +1,379 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T07:55:40.907Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Frank Beauvais",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 7,
+    "total_reverse_lookups": 7,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 23047362
+  },
+  "data": [
+    {
+      "internal_id": 383,
+      "athlete_name": "Frank Beauvais",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/383",
+      "contaminated_lifter_id": 442,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T19:29:51.381Z",
+      "profile_data": {
+        "membership_number": "190992",
+        "birth_year": 1953,
+        "gender": "M",
+        "club_name": "SNAKE RIVER WEIGHTLIFTING",
+        "wso": "Mountain North",
+        "national_rank": "7"
+      },
+      "competition_history": [
+        {
+          "meet_name": "The Genesis Series 2",
+          "date": "2019-04-27",
+          "division": "Open Men's 61kg",
+          "lifter_name": "Frank Beauvais",
+          "body_weight_kg": "56.95",
+          "snatch_1": "27",
+          "snatch_2": "-30",
+          "snatch_3": "30",
+          "cj_1": "30",
+          "cj_2": "33",
+          "cj_3": "35",
+          "best_snatch": "30",
+          "best_cj": "35",
+          "total": "65"
+        },
+        {
+          "meet_name": "Howard Cohen American Masters",
+          "date": "2018-11-04",
+          "division": "Men's Masters (65-69) 55kg",
+          "lifter_name": "Frank Beauvais",
+          "body_weight_kg": "54.53",
+          "snatch_1": "25",
+          "snatch_2": "-29",
+          "snatch_3": "-30",
+          "cj_1": "29",
+          "cj_2": "32",
+          "cj_3": "-36",
+          "best_snatch": "25",
+          "best_cj": "32",
+          "total": "57"
+        },
+        {
+          "meet_name": "2018 Idaho State Weightlifting Championships",
+          "date": "2018-10-27",
+          "division": "Open Men's 55kg",
+          "lifter_name": "Frank Beauvais",
+          "body_weight_kg": "54.5",
+          "snatch_1": "22",
+          "snatch_2": "25",
+          "snatch_3": "29",
+          "cj_1": "27",
+          "cj_2": "28",
+          "cj_3": "31",
+          "best_snatch": "29",
+          "best_cj": "31",
+          "total": "60"
+        },
+        {
+          "meet_name": "Boise Barbell Open",
+          "date": "2018-08-11",
+          "division": "Open Men's 55kg",
+          "lifter_name": "Frank Beauvais",
+          "body_weight_kg": "54.6",
+          "snatch_1": "-16",
+          "snatch_2": "19",
+          "snatch_3": "22",
+          "cj_1": "16",
+          "cj_2": "20",
+          "cj_3": "25",
+          "best_snatch": "22",
+          "best_cj": "25",
+          "total": "47"
+        },
+        {
+          "meet_name": "2013 Idaho State Championships",
+          "date": "2013-12-21",
+          "division": "Open Men's 56 kg",
+          "lifter_name": "Frank Beauvais",
+          "body_weight_kg": "55.7",
+          "snatch_1": "30",
+          "snatch_2": "33",
+          "snatch_3": "36",
+          "cj_1": "32",
+          "cj_2": "33",
+          "cj_3": "36",
+          "best_snatch": "36",
+          "best_cj": "36",
+          "total": "72"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "The Genesis Series 2",
+            "date": "2019-04-27",
+            "division": "Open Men's 61kg",
+            "lifter_name": "Frank Beauvais",
+            "body_weight_kg": "56.95",
+            "snatch_1": "27",
+            "snatch_2": "-30",
+            "snatch_3": "30",
+            "cj_1": "30",
+            "cj_2": "33",
+            "cj_3": "35",
+            "best_snatch": "30",
+            "best_cj": "35",
+            "total": "65"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0yNyIsIndlaWdodF9jbGFzcyI6ODJ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "7",
+            "athlete_name": "Frank Beauvais",
+            "total": "65",
+            "gender": "M",
+            "age": "66",
+            "club_name": "SNAKE RIVER WEIGHTLIFTING",
+            "membership_number": "190992",
+            "wso": "Mountain North"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Howard Cohen American Masters",
+            "date": "2018-11-04",
+            "division": "Men's Masters (65-69) 55kg",
+            "lifter_name": "Frank Beauvais",
+            "body_weight_kg": "54.53",
+            "snatch_1": "25",
+            "snatch_2": "-29",
+            "snatch_3": "-30",
+            "cj_1": "29",
+            "cj_2": "32",
+            "cj_3": "-36",
+            "best_snatch": "25",
+            "best_cj": "32",
+            "total": "57"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMS0wNCIsIndlaWdodF9jbGFzcyI6MjIxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Frank Beauvais",
+            "total": "57",
+            "gender": "M",
+            "age": "65",
+            "club_name": "SNAKE RIVER WEIGHTLIFTING",
+            "membership_number": "190992",
+            "wso": "Mountain North"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2018 Idaho State Weightlifting Championships",
+            "date": "2018-10-27",
+            "division": "Open Men's 55kg",
+            "lifter_name": "Frank Beauvais",
+            "body_weight_kg": "54.5",
+            "snatch_1": "22",
+            "snatch_2": "25",
+            "snatch_3": "29",
+            "cj_1": "27",
+            "cj_2": "28",
+            "cj_3": "31",
+            "best_snatch": "29",
+            "best_cj": "31",
+            "total": "60"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yNyIsIndlaWdodF9jbGFzcyI6ODF9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "8",
+            "athlete_name": "Frank Beauvais",
+            "total": "60",
+            "gender": "M",
+            "age": "65",
+            "club_name": "SNAKE RIVER WEIGHTLIFTING",
+            "membership_number": "190992",
+            "wso": "Mountain North"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Boise Barbell Open",
+            "date": "2018-08-11",
+            "division": "Open Men's 55kg",
+            "lifter_name": "Frank Beauvais",
+            "body_weight_kg": "54.6",
+            "snatch_1": "-16",
+            "snatch_2": "19",
+            "snatch_3": "22",
+            "cj_1": "16",
+            "cj_2": "20",
+            "cj_3": "25",
+            "best_snatch": "22",
+            "best_cj": "25",
+            "total": "47"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOC0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOC0xMSIsIndlaWdodF9jbGFzcyI6ODF9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Frank Beauvais",
+            "total": "47",
+            "gender": "M",
+            "age": "65",
+            "club_name": "SNAKE RIVER WEIGHTLIFTING",
+            "membership_number": "190992",
+            "wso": "Mountain North"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2013 Idaho State Championships",
+            "date": "2013-12-21",
+            "division": "Open Men's 56 kg",
+            "lifter_name": "Frank Beauvais",
+            "body_weight_kg": "55.7",
+            "snatch_1": "30",
+            "snatch_2": "33",
+            "snatch_3": "36",
+            "cj_1": "32",
+            "cj_2": "33",
+            "cj_3": "36",
+            "best_snatch": "36",
+            "best_cj": "36",
+            "total": "72"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMi0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMi0yMSIsIndlaWdodF9jbGFzcyI6MzU0fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Frank Beauvais",
+            "total": "72",
+            "gender": "M",
+            "age": "60",
+            "club_name": "SNAKE RIVER WEIGHTLIFTING",
+            "membership_number": "190992",
+            "wso": "Mountain North"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 5472,
+      "athlete_name": "Frank Beauvais",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/5472",
+      "contaminated_lifter_id": 442,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-27T07:55:38.905Z",
+      "profile_data": {
+        "membership_number": "179533",
+        "birth_year": 1977,
+        "gender": "M",
+        "club_name": "SNAKE RIVER WEIGHTLIFTING",
+        "wso": "Mountain North",
+        "national_rank": "2"
+      },
+      "competition_history": [
+        {
+          "meet_name": "National Youth Championships & Youth Olympic Trials",
+          "date": "2014-06-15",
+          "division": "Open Men's 62 kg",
+          "lifter_name": "Frank Beauvais",
+          "body_weight_kg": "59.77",
+          "snatch_1": "-55",
+          "snatch_2": "-55",
+          "snatch_3": "-60",
+          "cj_1": "-68",
+          "cj_2": "68",
+          "cj_3": "-75",
+          "best_snatch": "0",
+          "best_cj": "68",
+          "total": "0"
+        },
+        {
+          "meet_name": "2012 Idaho State Championships",
+          "date": "2012-12-22",
+          "division": "Open Men's 69 kg",
+          "lifter_name": "Frank Beauvais",
+          "body_weight_kg": "68.99",
+          "snatch_1": "70",
+          "snatch_2": "75",
+          "snatch_3": "80",
+          "cj_1": "85",
+          "cj_2": "90",
+          "cj_3": "101",
+          "best_snatch": "80",
+          "best_cj": "101",
+          "total": "181"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "National Youth Championships & Youth Olympic Trials",
+            "date": "2014-06-15",
+            "division": "Open Men's 62 kg",
+            "lifter_name": "Frank Beauvais",
+            "body_weight_kg": "59.77",
+            "snatch_1": "-55",
+            "snatch_2": "-55",
+            "snatch_3": "-60",
+            "cj_1": "-68",
+            "cj_2": "68",
+            "cj_3": "-75",
+            "best_snatch": "0",
+            "best_cj": "68",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNi0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNi0xNSIsIndlaWdodF9jbGFzcyI6MzU1fQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2012 Idaho State Championships",
+            "date": "2012-12-22",
+            "division": "Open Men's 69 kg",
+            "lifter_name": "Frank Beauvais",
+            "body_weight_kg": "68.99",
+            "snatch_1": "70",
+            "snatch_2": "75",
+            "snatch_3": "80",
+            "cj_1": "85",
+            "cj_2": "90",
+            "cj_3": "101",
+            "best_snatch": "80",
+            "best_cj": "101",
+            "total": "181"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0xMi0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0xMi0yMiIsIndlaWdodF9jbGFzcyI6MzU2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Frank Beauvais",
+            "total": "181",
+            "gender": "M",
+            "age": "35",
+            "club_name": "SNAKE RIVER WEIGHTLIFTING",
+            "membership_number": "179533",
+            "wso": "Mountain North"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    }
+  ]
+}

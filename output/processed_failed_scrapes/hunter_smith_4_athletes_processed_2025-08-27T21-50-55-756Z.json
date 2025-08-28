@@ -1,0 +1,647 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T10:57:39.920Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Hunter Smith",
+    "internal_ids_processed": 4,
+    "successful_scrapes": 2,
+    "failed_scrapes": 2,
+    "total_competitions_found": 12,
+    "total_reverse_lookups": 12,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 3689564
+  },
+  "data": [
+    {
+      "internal_id": 38987,
+      "athlete_name": "Hunter Smith",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/38987",
+      "contaminated_lifter_id": 30938,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T12:26:04.587Z",
+      "profile_data": {
+        "membership_number": "1019387",
+        "birth_year": 1999,
+        "gender": "M",
+        "club_name": "Everlasting Barbell Club",
+        "wso": "DMV",
+        "national_rank": "12"
+      },
+      "competition_history": [
+        {
+          "meet_name": "BASA BIG Sunday Open",
+          "date": "2017-06-04",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Hunter Smith",
+          "body_weight_kg": "100.5",
+          "snatch_1": "78",
+          "snatch_2": "82",
+          "snatch_3": "86",
+          "cj_1": "108",
+          "cj_2": "115",
+          "cj_3": "120",
+          "best_snatch": "86",
+          "best_cj": "120",
+          "total": "206"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "BASA BIG Sunday Open",
+            "date": "2017-06-04",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Hunter Smith",
+            "body_weight_kg": "100.5",
+            "snatch_1": "78",
+            "snatch_2": "82",
+            "snatch_3": "86",
+            "cj_1": "108",
+            "cj_2": "115",
+            "cj_3": "120",
+            "best_snatch": "86",
+            "best_cj": "120",
+            "total": "206"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNi0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNi0wNCIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "12",
+            "athlete_name": "Hunter Smith",
+            "total": "206",
+            "gender": "M",
+            "age": "18",
+            "club_name": "Everlasting Barbell Club",
+            "membership_number": "1019387",
+            "wso": "DMV"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 51874,
+      "athlete_name": "Hunter Smith",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/51874",
+      "contaminated_lifter_id": 30938,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T12:26:32.055Z",
+      "profile_data": {
+        "membership_number": "1058749",
+        "birth_year": 1999,
+        "gender": "M",
+        "club_name": "HARRISBURG WEIGHTLIFTING CLUB",
+        "wso": "Carolina",
+        "national_rank": "5"
+      },
+      "competition_history": [
+        {
+          "meet_name": "The Nike 2022 National Under 25 Championships, powered by Rogue",
+          "date": "2022-06-30",
+          "division": "Open Men's +109kg",
+          "lifter_name": "Hunter Smith",
+          "body_weight_kg": "150.79",
+          "snatch_1": "112",
+          "snatch_2": "117",
+          "snatch_3": "121",
+          "cj_1": "155",
+          "cj_2": "-162",
+          "cj_3": "-164",
+          "best_snatch": "121",
+          "best_cj": "155",
+          "total": "276"
+        },
+        {
+          "meet_name": "The 2021 NC State Championships hosted by Barbells and Brews",
+          "date": "2021-11-14",
+          "division": "Open Men's +109kg",
+          "lifter_name": "Hunter Smith",
+          "body_weight_kg": "141.6",
+          "snatch_1": "100",
+          "snatch_2": "105",
+          "snatch_3": "110",
+          "cj_1": "-150",
+          "cj_2": "150",
+          "cj_3": "155",
+          "best_snatch": "110",
+          "best_cj": "155",
+          "total": "265"
+        },
+        {
+          "meet_name": "October online qualifier",
+          "date": "2021-10-19",
+          "division": "Open Men's +109kg",
+          "lifter_name": "Hunter Smith",
+          "body_weight_kg": "143",
+          "snatch_1": "105",
+          "snatch_2": "0",
+          "snatch_3": "0",
+          "cj_1": "140",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "105",
+          "best_cj": "140",
+          "total": "245"
+        },
+        {
+          "meet_name": "October online qualifier",
+          "date": "2021-10-31",
+          "division": "Open Men's +109kg",
+          "lifter_name": "Hunter Smith",
+          "body_weight_kg": "143",
+          "snatch_1": "105",
+          "snatch_2": "0",
+          "snatch_3": "0",
+          "cj_1": "140",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "105",
+          "best_cj": "140",
+          "total": "245"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "The Nike 2022 National Under 25 Championships, powered by Rogue",
+            "date": "2022-06-30",
+            "division": "Open Men's +109kg",
+            "lifter_name": "Hunter Smith",
+            "body_weight_kg": "150.79",
+            "snatch_1": "112",
+            "snatch_2": "117",
+            "snatch_3": "121",
+            "cj_1": "155",
+            "cj_2": "-162",
+            "cj_3": "-164",
+            "best_snatch": "121",
+            "best_cj": "155",
+            "total": "276"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNi0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNi0zMCIsIndlaWdodF9jbGFzcyI6OTB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "Hunter Smith",
+            "total": "276",
+            "gender": "M",
+            "age": "23",
+            "club_name": "HARRISBURG WEIGHTLIFTING CLUB",
+            "membership_number": "1058749",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The 2021 NC State Championships hosted by Barbells and Brews",
+            "date": "2021-11-14",
+            "division": "Open Men's +109kg",
+            "lifter_name": "Hunter Smith",
+            "body_weight_kg": "141.6",
+            "snatch_1": "100",
+            "snatch_2": "105",
+            "snatch_3": "110",
+            "cj_1": "-150",
+            "cj_2": "150",
+            "cj_3": "155",
+            "best_snatch": "110",
+            "best_cj": "155",
+            "total": "265"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMS0xNCIsIndlaWdodF9jbGFzcyI6OTB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Hunter Smith",
+            "total": "265",
+            "gender": "M",
+            "age": "22",
+            "club_name": "HARRISBURG WEIGHTLIFTING CLUB",
+            "membership_number": "1058749",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "October online qualifier",
+            "date": "2021-10-19",
+            "division": "Open Men's +109kg",
+            "lifter_name": "Hunter Smith",
+            "body_weight_kg": "143",
+            "snatch_1": "105",
+            "snatch_2": "0",
+            "snatch_3": "0",
+            "cj_1": "140",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "105",
+            "best_cj": "140",
+            "total": "245"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMC0xOSIsIndlaWdodF9jbGFzcyI6OTB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Hunter Smith",
+            "total": "245",
+            "gender": "M",
+            "age": "22",
+            "club_name": "HARRISBURG WEIGHTLIFTING CLUB",
+            "membership_number": "1058749",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "October online qualifier",
+            "date": "2021-10-31",
+            "division": "Open Men's +109kg",
+            "lifter_name": "Hunter Smith",
+            "body_weight_kg": "143",
+            "snatch_1": "105",
+            "snatch_2": "0",
+            "snatch_3": "0",
+            "cj_1": "140",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "105",
+            "best_cj": "140",
+            "total": "245"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMC0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMC0zMSIsIndlaWdodF9jbGFzcyI6OTB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Hunter Smith",
+            "total": "245",
+            "gender": "M",
+            "age": "22",
+            "club_name": "HARRISBURG WEIGHTLIFTING CLUB",
+            "membership_number": "1058749",
+            "wso": "Carolina"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 39441,
+      "athlete_name": "Hunter Smith",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/39441",
+      "contaminated_lifter_id": 30938,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-27T10:57:20.195Z",
+      "profile_data": {
+        "membership_number": "1044006",
+        "birth_year": 1999,
+        "gender": "M",
+        "club_name": "EAST CAROLINA WEIGHTLIFTING",
+        "wso": "Carolina",
+        "national_rank": "17"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Carolinas State Championship",
+          "date": "2022-10-16",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Hunter Smith",
+          "body_weight_kg": "86.85",
+          "snatch_1": "80",
+          "snatch_2": "85",
+          "snatch_3": "-90",
+          "cj_1": "97",
+          "cj_2": "102",
+          "cj_3": "106",
+          "best_snatch": "85",
+          "best_cj": "106",
+          "total": "191"
+        },
+        {
+          "meet_name": "The Nike 2022 National University Championships powered by Rogue",
+          "date": "2022-03-04",
+          "division": "Open Men's 96kg",
+          "lifter_name": "Hunter Smith",
+          "body_weight_kg": "91.65",
+          "snatch_1": "82",
+          "snatch_2": "86",
+          "snatch_3": "90",
+          "cj_1": "101",
+          "cj_2": "108",
+          "cj_3": "-116",
+          "best_snatch": "90",
+          "best_cj": "108",
+          "total": "198"
+        },
+        {
+          "meet_name": "2022 East Carolina Club Weightlifting Open (NUQ)",
+          "date": "2022-01-29",
+          "division": "Open Men's 96kg",
+          "lifter_name": "Hunter Smith",
+          "body_weight_kg": "94.2",
+          "snatch_1": "80",
+          "snatch_2": "85",
+          "snatch_3": "-90",
+          "cj_1": "100",
+          "cj_2": "110",
+          "cj_3": "115",
+          "best_snatch": "85",
+          "best_cj": "115",
+          "total": "200"
+        },
+        {
+          "meet_name": "2019 North Carolina State Championships",
+          "date": "2019-10-20",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Hunter Smith",
+          "body_weight_kg": "78.6",
+          "snatch_1": "0",
+          "snatch_2": "0",
+          "snatch_3": "0",
+          "cj_1": "112",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "0",
+          "best_cj": "112",
+          "total": "0"
+        },
+        {
+          "meet_name": "Belmont Barbell In House Qualifier",
+          "date": "2019-09-22",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Hunter Smith",
+          "body_weight_kg": "75.2",
+          "snatch_1": "84",
+          "snatch_2": "91",
+          "snatch_3": "94",
+          "cj_1": "105",
+          "cj_2": "108",
+          "cj_3": "-116",
+          "best_snatch": "94",
+          "best_cj": "108",
+          "total": "202"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Carolinas State Championship",
+            "date": "2022-10-16",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Hunter Smith",
+            "body_weight_kg": "86.85",
+            "snatch_1": "80",
+            "snatch_2": "85",
+            "snatch_3": "-90",
+            "cj_1": "97",
+            "cj_2": "102",
+            "cj_3": "106",
+            "best_snatch": "85",
+            "best_cj": "106",
+            "total": "191"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMC0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMC0xNiIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "17",
+            "athlete_name": "Hunter Smith",
+            "total": "191",
+            "gender": "M",
+            "age": "23",
+            "club_name": "EAST CAROLINA WEIGHTLIFTING",
+            "membership_number": "1044006",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The Nike 2022 National University Championships powered by Rogue",
+            "date": "2022-03-04",
+            "division": "Open Men's 96kg",
+            "lifter_name": "Hunter Smith",
+            "body_weight_kg": "91.65",
+            "snatch_1": "82",
+            "snatch_2": "86",
+            "snatch_3": "90",
+            "cj_1": "101",
+            "cj_2": "108",
+            "cj_3": "-116",
+            "best_snatch": "90",
+            "best_cj": "108",
+            "total": "198"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMy0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMy0wNCIsIndlaWdodF9jbGFzcyI6ODd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "42",
+            "athlete_name": "Hunter Smith",
+            "total": "198",
+            "gender": "M",
+            "age": "23",
+            "club_name": "EAST CAROLINA WEIGHTLIFTING",
+            "membership_number": "1044006",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2022 East Carolina Club Weightlifting Open (NUQ)",
+            "date": "2022-01-29",
+            "division": "Open Men's 96kg",
+            "lifter_name": "Hunter Smith",
+            "body_weight_kg": "94.2",
+            "snatch_1": "80",
+            "snatch_2": "85",
+            "snatch_3": "-90",
+            "cj_1": "100",
+            "cj_2": "110",
+            "cj_3": "115",
+            "best_snatch": "85",
+            "best_cj": "115",
+            "total": "200"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMS0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMS0yOSIsIndlaWdodF9jbGFzcyI6ODd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "31",
+            "athlete_name": "Hunter Smith",
+            "total": "200",
+            "gender": "M",
+            "age": "23",
+            "club_name": "EAST CAROLINA WEIGHTLIFTING",
+            "membership_number": "1044006",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2019 North Carolina State Championships",
+            "date": "2019-10-20",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Hunter Smith",
+            "body_weight_kg": "78.6",
+            "snatch_1": "0",
+            "snatch_2": "0",
+            "snatch_3": "0",
+            "cj_1": "112",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "0",
+            "best_cj": "112",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMC0yMCIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Belmont Barbell In House Qualifier",
+            "date": "2019-09-22",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Hunter Smith",
+            "body_weight_kg": "75.2",
+            "snatch_1": "84",
+            "snatch_2": "91",
+            "snatch_3": "94",
+            "cj_1": "105",
+            "cj_2": "108",
+            "cj_3": "-116",
+            "best_snatch": "94",
+            "best_cj": "108",
+            "total": "202"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOS0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOS0yMiIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "14",
+            "athlete_name": "Hunter Smith",
+            "total": "202",
+            "gender": "M",
+            "age": "20",
+            "club_name": "EAST CAROLINA WEIGHTLIFTING",
+            "membership_number": "1044006",
+            "wso": "Carolina"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    },
+    {
+      "internal_id": 37325,
+      "athlete_name": "Hunter Smith",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/37325",
+      "contaminated_lifter_id": 30938,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-27T10:57:37.917Z",
+      "profile_data": {
+        "membership_number": "1045980",
+        "birth_year": 1998,
+        "gender": "M",
+        "club_name": "Magnify Barbell Club",
+        "wso": "Pacific Northwest",
+        "national_rank": "21"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Fall Record Breaker",
+          "date": "2020-10-25",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Hunter Smith",
+          "body_weight_kg": "80.31",
+          "snatch_1": "115",
+          "snatch_2": "-120",
+          "snatch_3": "-120",
+          "cj_1": "-137",
+          "cj_2": "-140",
+          "cj_3": "-140",
+          "best_snatch": "115",
+          "best_cj": "0",
+          "total": "0"
+        },
+        {
+          "meet_name": "Oregon Cup",
+          "date": "2019-11-02",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Hunter Smith",
+          "body_weight_kg": "86.5",
+          "snatch_1": "-100",
+          "snatch_2": "100",
+          "snatch_3": "-106",
+          "cj_1": "118",
+          "cj_2": "126",
+          "cj_3": "-130",
+          "best_snatch": "100",
+          "best_cj": "126",
+          "total": "226"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Fall Record Breaker",
+            "date": "2020-10-25",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Hunter Smith",
+            "body_weight_kg": "80.31",
+            "snatch_1": "115",
+            "snatch_2": "-120",
+            "snatch_3": "-120",
+            "cj_1": "-137",
+            "cj_2": "-140",
+            "cj_3": "-140",
+            "best_snatch": "115",
+            "best_cj": "0",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0xMC0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0xMC0yNSIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Oregon Cup",
+            "date": "2019-11-02",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Hunter Smith",
+            "body_weight_kg": "86.5",
+            "snatch_1": "-100",
+            "snatch_2": "100",
+            "snatch_3": "-106",
+            "cj_1": "118",
+            "cj_2": "126",
+            "cj_3": "-130",
+            "best_snatch": "100",
+            "best_cj": "126",
+            "total": "226"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0wMiIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "21",
+            "athlete_name": "Hunter Smith",
+            "total": "226",
+            "gender": "M",
+            "age": "21",
+            "club_name": "Magnify Barbell Club",
+            "membership_number": "1045980",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    }
+  ]
+}

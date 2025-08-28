@@ -1,0 +1,482 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T21:36:41.853Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Jay Johnson",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 9,
+    "total_reverse_lookups": 9,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 74671947
+  },
+  "data": [
+    {
+      "internal_id": 2949,
+      "athlete_name": "Jay Johnson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/2949",
+      "contaminated_lifter_id": 10800,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T21:36:20.693Z",
+      "profile_data": {
+        "membership_number": "113239",
+        "birth_year": 1971,
+        "gender": "M",
+        "club_name": "Stonehenge Weightlifting",
+        "wso": "Texas-Oklahoma",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2021 AUSTIN CITY WEIGHTLIFTING CHAMPIONSHIPS",
+          "date": "2021-08-14",
+          "division": "Men's Masters (50-54) +109kg",
+          "lifter_name": "Jay Johnson",
+          "body_weight_kg": "110.5",
+          "snatch_1": "95",
+          "snatch_2": "-100",
+          "snatch_3": "100",
+          "cj_1": "120",
+          "cj_2": "125",
+          "cj_3": "133",
+          "best_snatch": "100",
+          "best_cj": "133",
+          "total": "233"
+        },
+        {
+          "meet_name": "St. Valentines Showdown",
+          "date": "2022-02-12",
+          "division": "Open Men's +109kg",
+          "lifter_name": "Jay Johnson",
+          "body_weight_kg": "110.3",
+          "snatch_1": "97",
+          "snatch_2": "-103",
+          "snatch_3": "-103",
+          "cj_1": "122",
+          "cj_2": "-126",
+          "cj_3": "128",
+          "best_snatch": "97",
+          "best_cj": "128",
+          "total": "225"
+        },
+        {
+          "meet_name": "Minnesota Championship",
+          "date": "2016-03-26",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Jay Johnson",
+          "body_weight_kg": "104.61",
+          "snatch_1": "97",
+          "snatch_2": "103",
+          "snatch_3": "-108",
+          "cj_1": "120",
+          "cj_2": "125",
+          "cj_3": "-128",
+          "best_snatch": "103",
+          "best_cj": "125",
+          "total": "228"
+        },
+        {
+          "meet_name": "Singlet Showdown",
+          "date": "2015-08-08",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Jay Johnson",
+          "body_weight_kg": "104.44",
+          "snatch_1": "95",
+          "snatch_2": "100",
+          "snatch_3": "-105",
+          "cj_1": "120",
+          "cj_2": "-125",
+          "cj_3": "125",
+          "best_snatch": "100",
+          "best_cj": "125",
+          "total": "225"
+        },
+        {
+          "meet_name": "Minnesota LWC Championships",
+          "date": "2015-03-28",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Jay Johnson",
+          "body_weight_kg": "104.07",
+          "snatch_1": "95",
+          "snatch_2": "100",
+          "snatch_3": "-102",
+          "cj_1": "110",
+          "cj_2": "115",
+          "cj_3": "120",
+          "best_snatch": "100",
+          "best_cj": "120",
+          "total": "220"
+        },
+        {
+          "meet_name": "The Minnesota Open",
+          "date": "2014-10-05",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Jay Johnson",
+          "body_weight_kg": "101.42",
+          "snatch_1": "100",
+          "snatch_2": "106",
+          "snatch_3": "111",
+          "cj_1": "125",
+          "cj_2": "130",
+          "cj_3": "133",
+          "best_snatch": "111",
+          "best_cj": "133",
+          "total": "244"
+        },
+        {
+          "meet_name": "Minnesota LWC Championship",
+          "date": "2014-03-22",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Jay Johnson",
+          "body_weight_kg": "108.34",
+          "snatch_1": "95",
+          "snatch_2": "102",
+          "snatch_3": "107",
+          "cj_1": "115",
+          "cj_2": "120",
+          "cj_3": "125",
+          "best_snatch": "107",
+          "best_cj": "125",
+          "total": "232"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2021 AUSTIN CITY WEIGHTLIFTING CHAMPIONSHIPS",
+            "date": "2021-08-14",
+            "division": "Men's Masters (50-54) +109kg",
+            "lifter_name": "Jay Johnson",
+            "body_weight_kg": "110.5",
+            "snatch_1": "95",
+            "snatch_2": "-100",
+            "snatch_3": "100",
+            "cj_1": "120",
+            "cj_2": "125",
+            "cj_3": "133",
+            "best_snatch": "100",
+            "best_cj": "133",
+            "total": "233"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wOC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wOC0xNCIsIndlaWdodF9jbGFzcyI6MTcwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Jay Johnson",
+            "total": "233",
+            "gender": "M",
+            "age": "50",
+            "club_name": "Stonehenge Weightlifting",
+            "membership_number": "113239",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "St. Valentines Showdown",
+            "date": "2022-02-12",
+            "division": "Open Men's +109kg",
+            "lifter_name": "Jay Johnson",
+            "body_weight_kg": "110.3",
+            "snatch_1": "97",
+            "snatch_2": "-103",
+            "snatch_3": "-103",
+            "cj_1": "122",
+            "cj_2": "-126",
+            "cj_3": "128",
+            "best_snatch": "97",
+            "best_cj": "128",
+            "total": "225"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMi0xMiIsIndlaWdodF9jbGFzcyI6OTB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "Jay Johnson",
+            "total": "225",
+            "gender": "M",
+            "age": "51",
+            "club_name": "Stonehenge Weightlifting",
+            "membership_number": "113239",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Minnesota Championship",
+            "date": "2016-03-26",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Jay Johnson",
+            "body_weight_kg": "104.61",
+            "snatch_1": "97",
+            "snatch_2": "103",
+            "snatch_3": "-108",
+            "cj_1": "120",
+            "cj_2": "125",
+            "cj_3": "-128",
+            "best_snatch": "103",
+            "best_cj": "125",
+            "total": "228"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMy0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMy0yNiIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "33",
+            "athlete_name": "Jay Johnson",
+            "total": "228",
+            "gender": "M",
+            "age": "45",
+            "club_name": "Stonehenge Weightlifting",
+            "membership_number": "113239",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Singlet Showdown",
+            "date": "2015-08-08",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Jay Johnson",
+            "body_weight_kg": "104.44",
+            "snatch_1": "95",
+            "snatch_2": "100",
+            "snatch_3": "-105",
+            "cj_1": "120",
+            "cj_2": "-125",
+            "cj_3": "125",
+            "best_snatch": "100",
+            "best_cj": "125",
+            "total": "225"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOC0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOC0wOCIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "Jay Johnson",
+            "total": "225",
+            "gender": "M",
+            "age": "44",
+            "club_name": "Stonehenge Weightlifting",
+            "membership_number": "113239",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Minnesota LWC Championships",
+            "date": "2015-03-28",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Jay Johnson",
+            "body_weight_kg": "104.07",
+            "snatch_1": "95",
+            "snatch_2": "100",
+            "snatch_3": "-102",
+            "cj_1": "110",
+            "cj_2": "115",
+            "cj_3": "120",
+            "best_snatch": "100",
+            "best_cj": "120",
+            "total": "220"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMy0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMy0yOCIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "Jay Johnson",
+            "total": "220",
+            "gender": "M",
+            "age": "44",
+            "club_name": "Stonehenge Weightlifting",
+            "membership_number": "113239",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The Minnesota Open",
+            "date": "2014-10-05",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Jay Johnson",
+            "body_weight_kg": "101.42",
+            "snatch_1": "100",
+            "snatch_2": "106",
+            "snatch_3": "111",
+            "cj_1": "125",
+            "cj_2": "130",
+            "cj_3": "133",
+            "best_snatch": "111",
+            "best_cj": "133",
+            "total": "244"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMC0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMC0wNSIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Jay Johnson",
+            "total": "244",
+            "gender": "M",
+            "age": "43",
+            "club_name": "Stonehenge Weightlifting",
+            "membership_number": "113239",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Minnesota LWC Championship",
+            "date": "2014-03-22",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Jay Johnson",
+            "body_weight_kg": "108.34",
+            "snatch_1": "95",
+            "snatch_2": "102",
+            "snatch_3": "107",
+            "cj_1": "115",
+            "cj_2": "120",
+            "cj_3": "125",
+            "best_snatch": "107",
+            "best_cj": "125",
+            "total": "232"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0yMiIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "Jay Johnson",
+            "total": "232",
+            "gender": "M",
+            "age": "43",
+            "club_name": "Stonehenge Weightlifting",
+            "membership_number": "113239",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 8659,
+      "athlete_name": "Jay Johnson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/8659",
+      "contaminated_lifter_id": 10800,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T21:36:41.852Z",
+      "profile_data": {
+        "membership_number": "207937",
+        "birth_year": 1981,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Texas-Oklahoma",
+        "national_rank": "24"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2016 BlueWave Weightlifting Championships",
+          "date": "2016-06-04",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Jay Johnson",
+          "body_weight_kg": "92.3",
+          "snatch_1": "89",
+          "snatch_2": "90",
+          "snatch_3": "96",
+          "cj_1": "127",
+          "cj_2": "130",
+          "cj_3": "132",
+          "best_snatch": "96",
+          "best_cj": "132",
+          "total": "228"
+        },
+        {
+          "meet_name": "FX TX Weightlifting Open Unleashed II",
+          "date": "2016-03-05",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Jay Johnson",
+          "body_weight_kg": "90.4",
+          "snatch_1": "82",
+          "snatch_2": "87",
+          "snatch_3": "91",
+          "cj_1": "120",
+          "cj_2": "123",
+          "cj_3": "126",
+          "best_snatch": "91",
+          "best_cj": "126",
+          "total": "217"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2016 BlueWave Weightlifting Championships",
+            "date": "2016-06-04",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Jay Johnson",
+            "body_weight_kg": "92.3",
+            "snatch_1": "89",
+            "snatch_2": "90",
+            "snatch_3": "96",
+            "cj_1": "127",
+            "cj_2": "130",
+            "cj_3": "132",
+            "best_snatch": "96",
+            "best_cj": "132",
+            "total": "228"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0wNCIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "24",
+            "athlete_name": "Jay Johnson",
+            "total": "228",
+            "gender": "M",
+            "age": "35",
+            "club_name": "-",
+            "membership_number": "207937",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "FX TX Weightlifting Open Unleashed II",
+            "date": "2016-03-05",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Jay Johnson",
+            "body_weight_kg": "90.4",
+            "snatch_1": "82",
+            "snatch_2": "87",
+            "snatch_3": "91",
+            "cj_1": "120",
+            "cj_2": "123",
+            "cj_3": "126",
+            "best_snatch": "91",
+            "best_cj": "126",
+            "total": "217"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMy0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMy0wNSIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "8",
+            "athlete_name": "Jay Johnson",
+            "total": "217",
+            "gender": "M",
+            "age": "35",
+            "club_name": "-",
+            "membership_number": "207937",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

@@ -1,0 +1,200 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T02:53:50.575Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Andrew Schumacher",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 3,
+    "total_reverse_lookups": 3,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 93700669
+  },
+  "data": [
+    {
+      "internal_id": 8264,
+      "athlete_name": "Andrew Schumacher",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/8264",
+      "contaminated_lifter_id": 14404,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T02:53:38.128Z",
+      "profile_data": {
+        "membership_number": "1007868",
+        "birth_year": 1981,
+        "gender": "M",
+        "club_name": "Coalition Weightlifting",
+        "wso": "Illinois",
+        "national_rank": "10"
+      },
+      "competition_history": [
+        {
+          "meet_name": "In House Throwdown",
+          "date": "2018-05-12",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Andrew Schumacher",
+          "body_weight_kg": "74.1",
+          "snatch_1": "-90",
+          "snatch_2": "-90",
+          "snatch_3": "93",
+          "cj_1": "113",
+          "cj_2": "117",
+          "cj_3": "-121",
+          "best_snatch": "93",
+          "best_cj": "117",
+          "total": "210"
+        },
+        {
+          "meet_name": "2017 Trident Championships",
+          "date": "2017-06-24",
+          "division": "Open Men's 56 kg",
+          "lifter_name": "Andrew Schumacher",
+          "body_weight_kg": "51.25",
+          "snatch_1": "50",
+          "snatch_2": "53",
+          "snatch_3": "55",
+          "cj_1": "70",
+          "cj_2": "73",
+          "cj_3": "75",
+          "best_snatch": "55",
+          "best_cj": "75",
+          "total": "130"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "In House Throwdown",
+            "date": "2018-05-12",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Andrew Schumacher",
+            "body_weight_kg": "74.1",
+            "snatch_1": "-90",
+            "snatch_2": "-90",
+            "snatch_3": "93",
+            "cj_1": "113",
+            "cj_2": "117",
+            "cj_3": "-121",
+            "best_snatch": "93",
+            "best_cj": "117",
+            "total": "210"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNS0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNS0xMiIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "Andrew Schumacher",
+            "total": "210",
+            "gender": "M",
+            "age": "37",
+            "club_name": "Coalition Weightlifting",
+            "membership_number": "1007868",
+            "wso": "Illinois"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2017 Trident Championships",
+            "date": "2017-06-24",
+            "division": "Open Men's 56 kg",
+            "lifter_name": "Andrew Schumacher",
+            "body_weight_kg": "51.25",
+            "snatch_1": "50",
+            "snatch_2": "53",
+            "snatch_3": "55",
+            "cj_1": "70",
+            "cj_2": "73",
+            "cj_3": "75",
+            "best_snatch": "55",
+            "best_cj": "75",
+            "total": "130"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNi0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNi0yNCIsIndlaWdodF9jbGFzcyI6MzU0fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Andrew Schumacher",
+            "total": "130",
+            "gender": "M",
+            "age": "36",
+            "club_name": "Coalition Weightlifting",
+            "membership_number": "1007868",
+            "wso": "Illinois"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 31973,
+      "athlete_name": "Andrew Schumacher",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/31973",
+      "contaminated_lifter_id": 14404,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T02:53:50.572Z",
+      "profile_data": {
+        "membership_number": "163693",
+        "birth_year": 1994,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Georgia",
+        "national_rank": "4"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Howard Cohen Classic",
+          "date": "2015-01-31",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Andrew Schumacher",
+          "body_weight_kg": "81.5",
+          "snatch_1": "84",
+          "snatch_2": "-92",
+          "snatch_3": "92",
+          "cj_1": "113",
+          "cj_2": "119",
+          "cj_3": "124",
+          "best_snatch": "92",
+          "best_cj": "124",
+          "total": "216"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Howard Cohen Classic",
+            "date": "2015-01-31",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Andrew Schumacher",
+            "body_weight_kg": "81.5",
+            "snatch_1": "84",
+            "snatch_2": "-92",
+            "snatch_3": "92",
+            "cj_1": "113",
+            "cj_2": "119",
+            "cj_3": "124",
+            "best_snatch": "92",
+            "best_cj": "124",
+            "total": "216"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMS0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMS0zMSIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Andrew Schumacher",
+            "total": "216",
+            "gender": "M",
+            "age": "21",
+            "club_name": "-",
+            "membership_number": "163693",
+            "wso": "Georgia"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

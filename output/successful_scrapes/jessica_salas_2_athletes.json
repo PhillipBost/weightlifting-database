@@ -1,0 +1,200 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T22:11:59.479Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Jessica Salas",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 3,
+    "total_reverse_lookups": 3,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 76789573
+  },
+  "data": [
+    {
+      "internal_id": 12664,
+      "athlete_name": "Jessica Salas",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/12664",
+      "contaminated_lifter_id": 28966,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T22:11:47.255Z",
+      "profile_data": {
+        "membership_number": "1036413",
+        "birth_year": 1984,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "California South",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Inland Empire Classic",
+          "date": "2019-03-16",
+          "division": "Women's Masters (35-39) 64kg",
+          "lifter_name": "Jessica Salas",
+          "body_weight_kg": "62.29",
+          "snatch_1": "42",
+          "snatch_2": "-45",
+          "snatch_3": "46",
+          "cj_1": "52",
+          "cj_2": "56",
+          "cj_3": "60",
+          "best_snatch": "46",
+          "best_cj": "60",
+          "total": "106"
+        },
+        {
+          "meet_name": "2018 Winter Classic",
+          "date": "2018-12-02",
+          "division": "Open Women's 64kg",
+          "lifter_name": "Jessica Salas",
+          "body_weight_kg": "62.7",
+          "snatch_1": "33",
+          "snatch_2": "38",
+          "snatch_3": "42",
+          "cj_1": "48",
+          "cj_2": "-52",
+          "cj_3": "53",
+          "best_snatch": "42",
+          "best_cj": "53",
+          "total": "95"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Inland Empire Classic",
+            "date": "2019-03-16",
+            "division": "Women's Masters (35-39) 64kg",
+            "lifter_name": "Jessica Salas",
+            "body_weight_kg": "62.29",
+            "snatch_1": "42",
+            "snatch_2": "-45",
+            "snatch_3": "46",
+            "cj_1": "52",
+            "cj_2": "56",
+            "cj_3": "60",
+            "best_snatch": "46",
+            "best_cj": "60",
+            "total": "106"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMy0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMy0xNiIsIndlaWdodF9jbGFzcyI6MTE1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Jessica Salas",
+            "total": "106",
+            "gender": "F",
+            "age": "35",
+            "club_name": "-",
+            "membership_number": "1036413",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2018 Winter Classic",
+            "date": "2018-12-02",
+            "division": "Open Women's 64kg",
+            "lifter_name": "Jessica Salas",
+            "body_weight_kg": "62.7",
+            "snatch_1": "33",
+            "snatch_2": "38",
+            "snatch_3": "42",
+            "cj_1": "48",
+            "cj_2": "-52",
+            "cj_3": "53",
+            "best_snatch": "42",
+            "best_cj": "53",
+            "total": "95"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0wMiIsIndlaWdodF9jbGFzcyI6OTV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "15",
+            "athlete_name": "Jessica Salas",
+            "total": "95",
+            "gender": "F",
+            "age": "34",
+            "club_name": "-",
+            "membership_number": "1036413",
+            "wso": "California South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 16314,
+      "athlete_name": "Jessica Salas",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/16314",
+      "contaminated_lifter_id": 28966,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T22:11:59.478Z",
+      "profile_data": {
+        "membership_number": "1016082",
+        "birth_year": 1986,
+        "gender": "F",
+        "club_name": "CALIFORNIA STRENGTH",
+        "wso": "California North Central",
+        "national_rank": "7"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Hassle Free BBC Spring Breaker",
+          "date": "2017-02-19",
+          "division": "Open Women's 53 kg",
+          "lifter_name": "Jessica Salas",
+          "body_weight_kg": "52.32",
+          "snatch_1": "55",
+          "snatch_2": "60",
+          "snatch_3": "63",
+          "cj_1": "65",
+          "cj_2": "70",
+          "cj_3": "-75",
+          "best_snatch": "63",
+          "best_cj": "70",
+          "total": "133"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Hassle Free BBC Spring Breaker",
+            "date": "2017-02-19",
+            "division": "Open Women's 53 kg",
+            "lifter_name": "Jessica Salas",
+            "body_weight_kg": "52.32",
+            "snatch_1": "55",
+            "snatch_2": "60",
+            "snatch_3": "63",
+            "cj_1": "65",
+            "cj_2": "70",
+            "cj_3": "-75",
+            "best_snatch": "63",
+            "best_cj": "70",
+            "total": "133"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xOSIsIndlaWdodF9jbGFzcyI6MzYzfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "7",
+            "athlete_name": "Jessica Salas",
+            "total": "133",
+            "gender": "F",
+            "age": "31",
+            "club_name": "CALIFORNIA STRENGTH",
+            "membership_number": "1016082",
+            "wso": "California North Central"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T14:16:33.157Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Daniel Martin",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 48263251
+  },
+  "data": [
+    {
+      "internal_id": 11687,
+      "athlete_name": "Daniel Martin",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/11687",
+      "contaminated_lifter_id": 42291,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T14:16:22.573Z",
+      "profile_data": {
+        "membership_number": "209531",
+        "birth_year": 1984,
+        "gender": "M",
+        "club_name": "SYRACUSE BARBELL CLUB",
+        "wso": "New York",
+        "national_rank": "53"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Elmira Spring Open",
+          "date": "2015-04-25",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Daniel Martin",
+          "body_weight_kg": "93.1",
+          "snatch_1": "-80",
+          "snatch_2": "80",
+          "snatch_3": "84",
+          "cj_1": "-109",
+          "cj_2": "109",
+          "cj_3": "-115",
+          "best_snatch": "84",
+          "best_cj": "109",
+          "total": "193"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Elmira Spring Open",
+            "date": "2015-04-25",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Daniel Martin",
+            "body_weight_kg": "93.1",
+            "snatch_1": "-80",
+            "snatch_2": "80",
+            "snatch_3": "84",
+            "cj_1": "-109",
+            "cj_2": "109",
+            "cj_3": "-115",
+            "best_snatch": "84",
+            "best_cj": "109",
+            "total": "193"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0yNSIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "53",
+            "athlete_name": "Daniel Martin",
+            "total": "193",
+            "gender": "M",
+            "age": "31",
+            "club_name": "SYRACUSE BARBELL CLUB",
+            "membership_number": "209531",
+            "wso": "New York"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 31572,
+      "athlete_name": "Daniel Martin",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/31572",
+      "contaminated_lifter_id": 42291,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T14:16:33.154Z",
+      "profile_data": {
+        "membership_number": "1041269",
+        "birth_year": 1994,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Georgia",
+        "national_rank": "13"
+      },
+      "competition_history": [
+        {
+          "meet_name": "NYS CHAMPIONSHIP",
+          "date": "2019-09-28",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Daniel Martin",
+          "body_weight_kg": "74.7",
+          "snatch_1": "89",
+          "snatch_2": "93",
+          "snatch_3": "95",
+          "cj_1": "115",
+          "cj_2": "119",
+          "cj_3": "122",
+          "best_snatch": "95",
+          "best_cj": "122",
+          "total": "217"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "NYS CHAMPIONSHIP",
+            "date": "2019-09-28",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Daniel Martin",
+            "body_weight_kg": "74.7",
+            "snatch_1": "89",
+            "snatch_2": "93",
+            "snatch_3": "95",
+            "cj_1": "115",
+            "cj_2": "119",
+            "cj_3": "122",
+            "best_snatch": "95",
+            "best_cj": "122",
+            "total": "217"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOS0yOCIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "13",
+            "athlete_name": "Daniel Martin",
+            "total": "217",
+            "gender": "M",
+            "age": "25",
+            "club_name": "-",
+            "membership_number": "1041269",
+            "wso": "Georgia"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

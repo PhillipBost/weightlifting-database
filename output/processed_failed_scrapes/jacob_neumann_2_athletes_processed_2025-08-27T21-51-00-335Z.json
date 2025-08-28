@@ -1,0 +1,145 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T06:09:53.936Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Jacob Neumann",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 16700391
+  },
+  "data": [
+    {
+      "internal_id": 35072,
+      "athlete_name": "Jacob Neumann",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/35072",
+      "contaminated_lifter_id": 10013,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T17:10:05.712Z",
+      "profile_data": {
+        "membership_number": "1031191",
+        "birth_year": 1996,
+        "gender": "M",
+        "club_name": "Backwoods Kentucky Barbell",
+        "wso": "Tennessee-Kentucky",
+        "national_rank": "8"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Kegs & Kilos 2018",
+          "date": "2018-10-13",
+          "division": "Open Men's 96kg",
+          "lifter_name": "Jacob Neumann",
+          "body_weight_kg": "91.1",
+          "snatch_1": "-98",
+          "snatch_2": "105",
+          "snatch_3": "-113",
+          "cj_1": "130",
+          "cj_2": "-135",
+          "cj_3": "136",
+          "best_snatch": "105",
+          "best_cj": "136",
+          "total": "241"
+        },
+        {
+          "meet_name": "Last Chance Qualifier",
+          "date": "2018-08-11",
+          "division": "Open Men's 96kg",
+          "lifter_name": "Jacob Neumann",
+          "body_weight_kg": "94.2",
+          "snatch_1": "94",
+          "snatch_2": "100",
+          "snatch_3": "110",
+          "cj_1": "125",
+          "cj_2": "130",
+          "cj_3": "-140",
+          "best_snatch": "110",
+          "best_cj": "130",
+          "total": "240"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Kegs & Kilos 2018",
+            "date": "2018-10-13",
+            "division": "Open Men's 96kg",
+            "lifter_name": "Jacob Neumann",
+            "body_weight_kg": "91.1",
+            "snatch_1": "-98",
+            "snatch_2": "105",
+            "snatch_3": "-113",
+            "cj_1": "130",
+            "cj_2": "-135",
+            "cj_3": "136",
+            "best_snatch": "105",
+            "best_cj": "136",
+            "total": "241"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0xMyIsIndlaWdodF9jbGFzcyI6ODd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "8",
+            "athlete_name": "Jacob Neumann",
+            "total": "241",
+            "gender": "M",
+            "age": "22",
+            "club_name": "Backwoods Kentucky Barbell",
+            "membership_number": "1031191",
+            "wso": "Tennessee-Kentucky"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Last Chance Qualifier",
+            "date": "2018-08-11",
+            "division": "Open Men's 96kg",
+            "lifter_name": "Jacob Neumann",
+            "body_weight_kg": "94.2",
+            "snatch_1": "94",
+            "snatch_2": "100",
+            "snatch_3": "110",
+            "cj_1": "125",
+            "cj_2": "130",
+            "cj_3": "-140",
+            "best_snatch": "110",
+            "best_cj": "130",
+            "total": "240"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOC0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOC0xMSIsIndlaWdodF9jbGFzcyI6ODd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Jacob Neumann",
+            "total": "240",
+            "gender": "M",
+            "age": "22",
+            "club_name": "Backwoods Kentucky Barbell",
+            "membership_number": "1031191",
+            "wso": "Tennessee-Kentucky"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 41530,
+      "athlete_name": "Jacob Neumann",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/41530",
+      "contaminated_lifter_id": 10013,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-27T06:09:51.934Z",
+      "profile_data": null,
+      "competition_history": [],
+      "biographical_data_by_competition": [],
+      "scraping_successful": false,
+      "error": "Assignment to constant variable."
+    }
+  ]
+}

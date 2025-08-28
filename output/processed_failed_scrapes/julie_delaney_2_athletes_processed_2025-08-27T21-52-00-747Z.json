@@ -1,0 +1,333 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T08:37:40.587Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Julie Delaney",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 6,
+    "total_reverse_lookups": 6,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 25567042
+  },
+  "data": [
+    {
+      "internal_id": 1628,
+      "athlete_name": "Julie Delaney",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/1628",
+      "contaminated_lifter_id": 18104,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T20:31:09.120Z",
+      "profile_data": {
+        "membership_number": "1046477",
+        "birth_year": 1966,
+        "gender": "F",
+        "club_name": "Pilchuck Barbell",
+        "wso": "Pacific Northwest",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Winter Lifting-Land",
+          "date": "2024-01-27",
+          "division": "Women's Masters (55-59) +87kg",
+          "lifter_name": "Julie Delaney",
+          "body_weight_kg": "101.4",
+          "snatch_1": "30",
+          "snatch_2": "33",
+          "snatch_3": "35",
+          "cj_1": "40",
+          "cj_2": "43",
+          "cj_3": "45",
+          "best_snatch": "35",
+          "best_cj": "45",
+          "total": "80"
+        },
+        {
+          "meet_name": "Pilchuck Spring Classic",
+          "date": "2022-04-09",
+          "division": "Women's Masters (55-59) +87kg",
+          "lifter_name": "Julie Delaney",
+          "body_weight_kg": "94.8",
+          "snatch_1": "33",
+          "snatch_2": "35",
+          "snatch_3": "37",
+          "cj_1": "36",
+          "cj_2": "40",
+          "cj_3": "-44",
+          "best_snatch": "37",
+          "best_cj": "40",
+          "total": "77"
+        },
+        {
+          "meet_name": "PCF Winter Lift off",
+          "date": "2022-01-23",
+          "division": "Women's Masters (55-59) +87kg",
+          "lifter_name": "Julie Delaney",
+          "body_weight_kg": "95.5",
+          "snatch_1": "25",
+          "snatch_2": "0",
+          "snatch_3": "30",
+          "cj_1": "32",
+          "cj_2": "35",
+          "cj_3": "40",
+          "best_snatch": "30",
+          "best_cj": "40",
+          "total": "70"
+        },
+        {
+          "meet_name": "2021 Howard Cohen American Masters",
+          "date": "2021-11-05",
+          "division": "Women's Masters (55-59) +87kg",
+          "lifter_name": "Julie Delaney",
+          "body_weight_kg": "92.15",
+          "snatch_1": "35",
+          "snatch_2": "-38",
+          "snatch_3": "-40",
+          "cj_1": "45",
+          "cj_2": "48",
+          "cj_3": "-52",
+          "best_snatch": "35",
+          "best_cj": "48",
+          "total": "83"
+        },
+        {
+          "meet_name": "2021 Howard Cohen American Masters",
+          "date": "2021-11-05",
+          "division": "Women's Masters (55-59) +87kg",
+          "lifter_name": "Julie Delaney",
+          "body_weight_kg": "92.15",
+          "snatch_1": "35",
+          "snatch_2": "-38",
+          "snatch_3": "-40",
+          "cj_1": "45",
+          "cj_2": "48",
+          "cj_3": "-52",
+          "best_snatch": "35",
+          "best_cj": "48",
+          "total": "83"
+        },
+        {
+          "meet_name": "Sasquatch Monster Mash",
+          "date": "2020-10-31",
+          "division": "Women's Masters (50-54) 87kg",
+          "lifter_name": "Julie Delaney",
+          "body_weight_kg": "85",
+          "snatch_1": "33",
+          "snatch_2": "36",
+          "snatch_3": "38",
+          "cj_1": "40",
+          "cj_2": "44",
+          "cj_3": "48",
+          "best_snatch": "38",
+          "best_cj": "48",
+          "total": "86"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Winter Lifting-Land",
+            "date": "2024-01-27",
+            "division": "Women's Masters (55-59) +87kg",
+            "lifter_name": "Julie Delaney",
+            "body_weight_kg": "101.4",
+            "snatch_1": "30",
+            "snatch_2": "33",
+            "snatch_3": "35",
+            "cj_1": "40",
+            "cj_2": "43",
+            "cj_3": "45",
+            "best_snatch": "35",
+            "best_cj": "45",
+            "total": "80"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMS0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMS0yNyIsIndlaWdodF9jbGFzcyI6MjAwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Julie Delaney",
+            "total": "80",
+            "gender": "F",
+            "age": "58",
+            "club_name": "Pilchuck Barbell",
+            "membership_number": "1046477",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Pilchuck Spring Classic",
+            "date": "2022-04-09",
+            "division": "Women's Masters (55-59) +87kg",
+            "lifter_name": "Julie Delaney",
+            "body_weight_kg": "94.8",
+            "snatch_1": "33",
+            "snatch_2": "35",
+            "snatch_3": "37",
+            "cj_1": "36",
+            "cj_2": "40",
+            "cj_3": "-44",
+            "best_snatch": "37",
+            "best_cj": "40",
+            "total": "77"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNC0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNC0wOSIsIndlaWdodF9jbGFzcyI6MjAwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Julie Delaney",
+            "total": "77",
+            "gender": "F",
+            "age": "56",
+            "club_name": "Pilchuck Barbell",
+            "membership_number": "1046477",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "PCF Winter Lift off",
+            "date": "2022-01-23",
+            "division": "Women's Masters (55-59) +87kg",
+            "lifter_name": "Julie Delaney",
+            "body_weight_kg": "95.5",
+            "snatch_1": "25",
+            "snatch_2": "0",
+            "snatch_3": "30",
+            "cj_1": "32",
+            "cj_2": "35",
+            "cj_3": "40",
+            "best_snatch": "30",
+            "best_cj": "40",
+            "total": "70"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMS0yMyIsIndlaWdodF9jbGFzcyI6MjAwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Julie Delaney",
+            "total": "70",
+            "gender": "F",
+            "age": "56",
+            "club_name": "Pilchuck Barbell",
+            "membership_number": "1046477",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2021 Howard Cohen American Masters",
+            "date": "2021-11-05",
+            "division": "Women's Masters (55-59) +87kg",
+            "lifter_name": "Julie Delaney",
+            "body_weight_kg": "92.15",
+            "snatch_1": "35",
+            "snatch_2": "-38",
+            "snatch_3": "-40",
+            "cj_1": "45",
+            "cj_2": "48",
+            "cj_3": "-52",
+            "best_snatch": "35",
+            "best_cj": "48",
+            "total": "83"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMS0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMS0wNSIsIndlaWdodF9jbGFzcyI6MjAwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Julie Delaney",
+            "total": "83",
+            "gender": "F",
+            "age": "55",
+            "club_name": "Pilchuck Barbell",
+            "membership_number": "1046477",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2021 Howard Cohen American Masters",
+            "date": "2021-11-05",
+            "division": "Women's Masters (55-59) +87kg",
+            "lifter_name": "Julie Delaney",
+            "body_weight_kg": "92.15",
+            "snatch_1": "35",
+            "snatch_2": "-38",
+            "snatch_3": "-40",
+            "cj_1": "45",
+            "cj_2": "48",
+            "cj_3": "-52",
+            "best_snatch": "35",
+            "best_cj": "48",
+            "total": "83"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMS0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMS0wNSIsIndlaWdodF9jbGFzcyI6MjAwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Julie Delaney",
+            "total": "83",
+            "gender": "F",
+            "age": "55",
+            "club_name": "Pilchuck Barbell",
+            "membership_number": "1046477",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Sasquatch Monster Mash",
+            "date": "2020-10-31",
+            "division": "Women's Masters (50-54) 87kg",
+            "lifter_name": "Julie Delaney",
+            "body_weight_kg": "85",
+            "snatch_1": "33",
+            "snatch_2": "36",
+            "snatch_3": "38",
+            "cj_1": "40",
+            "cj_2": "44",
+            "cj_3": "48",
+            "best_snatch": "38",
+            "best_cj": "48",
+            "total": "86"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0xMC0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0xMC0zMSIsIndlaWdodF9jbGFzcyI6MTc5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Julie Delaney",
+            "total": "86",
+            "gender": "F",
+            "age": "54",
+            "club_name": "Pilchuck Barbell",
+            "membership_number": "1046477",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 1733,
+      "athlete_name": "Julie Delaney",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/1733",
+      "contaminated_lifter_id": 18104,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-27T08:37:38.584Z",
+      "profile_data": null,
+      "competition_history": [],
+      "biographical_data_by_competition": [],
+      "scraping_successful": false,
+      "error": "Assignment to constant variable."
+    }
+  ]
+}

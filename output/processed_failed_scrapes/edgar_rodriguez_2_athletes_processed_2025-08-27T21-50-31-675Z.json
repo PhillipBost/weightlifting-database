@@ -1,0 +1,473 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T13:35:18.900Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Edgar Rodriguez",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 9,
+    "total_reverse_lookups": 9,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 45788994
+  },
+  "data": [
+    {
+      "internal_id": 26597,
+      "athlete_name": "Edgar Rodriguez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/26597",
+      "contaminated_lifter_id": 40059,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T13:34:39.535Z",
+      "profile_data": {
+        "membership_number": "1022394",
+        "birth_year": 1991,
+        "gender": "M",
+        "club_name": "Sanctuary Barbell",
+        "wso": "Mountain South",
+        "national_rank": "8"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Summertime in the LBwC 2019",
+          "date": "2019-08-11",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Edgar Rodriguez",
+          "body_weight_kg": "87.75",
+          "snatch_1": "92",
+          "snatch_2": "96",
+          "snatch_3": "-100",
+          "cj_1": "115",
+          "cj_2": "-120",
+          "cj_3": "120",
+          "best_snatch": "96",
+          "best_cj": "120",
+          "total": "216"
+        },
+        {
+          "meet_name": "Scottsdale Barbell Summer Showdown",
+          "date": "2019-06-22",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Edgar Rodriguez",
+          "body_weight_kg": "85.5",
+          "snatch_1": "90",
+          "snatch_2": "93",
+          "snatch_3": "96",
+          "cj_1": "-111",
+          "cj_2": "111",
+          "cj_3": "118",
+          "best_snatch": "96",
+          "best_cj": "118",
+          "total": "214"
+        },
+        {
+          "meet_name": "Lunar New Year Open 2019",
+          "date": "2019-02-02",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Edgar Rodriguez",
+          "body_weight_kg": "80.3",
+          "snatch_1": "88",
+          "snatch_2": "91",
+          "snatch_3": "93",
+          "cj_1": "103",
+          "cj_2": "-106",
+          "cj_3": "-107",
+          "best_snatch": "93",
+          "best_cj": "103",
+          "total": "196"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Summertime in the LBwC 2019",
+            "date": "2019-08-11",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Edgar Rodriguez",
+            "body_weight_kg": "87.75",
+            "snatch_1": "92",
+            "snatch_2": "96",
+            "snatch_3": "-100",
+            "cj_1": "115",
+            "cj_2": "-120",
+            "cj_3": "120",
+            "best_snatch": "96",
+            "best_cj": "120",
+            "total": "216"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOC0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOC0xMSIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "8",
+            "athlete_name": "Edgar Rodriguez",
+            "total": "216",
+            "gender": "M",
+            "age": "28",
+            "club_name": "Sanctuary Barbell",
+            "membership_number": "1022394",
+            "wso": "Mountain South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Scottsdale Barbell Summer Showdown",
+            "date": "2019-06-22",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Edgar Rodriguez",
+            "body_weight_kg": "85.5",
+            "snatch_1": "90",
+            "snatch_2": "93",
+            "snatch_3": "96",
+            "cj_1": "-111",
+            "cj_2": "111",
+            "cj_3": "118",
+            "best_snatch": "96",
+            "best_cj": "118",
+            "total": "214"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNi0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNi0yMiIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "20",
+            "athlete_name": "Edgar Rodriguez",
+            "total": "214",
+            "gender": "M",
+            "age": "28",
+            "club_name": "Sanctuary Barbell",
+            "membership_number": "1022394",
+            "wso": "Mountain South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Lunar New Year Open 2019",
+            "date": "2019-02-02",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Edgar Rodriguez",
+            "body_weight_kg": "80.3",
+            "snatch_1": "88",
+            "snatch_2": "91",
+            "snatch_3": "93",
+            "cj_1": "103",
+            "cj_2": "-106",
+            "cj_3": "-107",
+            "best_snatch": "93",
+            "best_cj": "103",
+            "total": "196"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMi0wMiIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    },
+    {
+      "internal_id": 49174,
+      "athlete_name": "Edgar Rodriguez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/49174",
+      "contaminated_lifter_id": 40059,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T13:35:18.898Z",
+      "profile_data": {
+        "membership_number": "1053913",
+        "birth_year": 1985,
+        "gender": "M",
+        "club_name": "Bexar Barbell",
+        "wso": "Texas-Oklahoma",
+        "national_rank": "2"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Bexar Brawl",
+          "date": "2022-07-30",
+          "division": "Men's Masters (35-39) 102kg",
+          "lifter_name": "Edgar Rodriguez",
+          "body_weight_kg": "98.85",
+          "snatch_1": "100",
+          "snatch_2": "105",
+          "snatch_3": "-110",
+          "cj_1": "115",
+          "cj_2": "120",
+          "cj_3": "-125",
+          "best_snatch": "105",
+          "best_cj": "120",
+          "total": "225"
+        },
+        {
+          "meet_name": "2022 Texas State Weightlifting Championships",
+          "date": "2022-01-15",
+          "division": "Men's Masters (35-39) 102kg",
+          "lifter_name": "Edgar Rodriguez",
+          "body_weight_kg": "98.6",
+          "snatch_1": "103",
+          "snatch_2": "-106",
+          "snatch_3": "106",
+          "cj_1": "112",
+          "cj_2": "117",
+          "cj_3": "120",
+          "best_snatch": "106",
+          "best_cj": "120",
+          "total": "226"
+        },
+        {
+          "meet_name": "2021 Texas Barbell Christmas Classic",
+          "date": "2021-12-11",
+          "division": "Men's Masters (35-39) 102kg",
+          "lifter_name": "Edgar Rodriguez",
+          "body_weight_kg": "100.5",
+          "snatch_1": "105",
+          "snatch_2": "-110",
+          "snatch_3": "-110",
+          "cj_1": "111",
+          "cj_2": "116",
+          "cj_3": "-120",
+          "best_snatch": "105",
+          "best_cj": "116",
+          "total": "221"
+        },
+        {
+          "meet_name": "The Nike 2021 North American Open Series 2 powered by Rogue",
+          "date": "2021-09-18",
+          "division": "Open Men's 96kg",
+          "lifter_name": "Edgar Rodriguez",
+          "body_weight_kg": "94.82",
+          "snatch_1": "-105",
+          "snatch_2": "105",
+          "snatch_3": "-108",
+          "cj_1": "115",
+          "cj_2": "-120",
+          "cj_3": "-120",
+          "best_snatch": "105",
+          "best_cj": "115",
+          "total": "220"
+        },
+        {
+          "meet_name": "2021 National Masters",
+          "date": "2021-03-21",
+          "division": "Men's Masters (35-39) 102kg",
+          "lifter_name": "Edgar Rodriguez",
+          "body_weight_kg": "99.7",
+          "snatch_1": "105",
+          "snatch_2": "-110",
+          "snatch_3": "-113",
+          "cj_1": "110",
+          "cj_2": "-116",
+          "cj_3": "-120",
+          "best_snatch": "105",
+          "best_cj": "110",
+          "total": "215"
+        },
+        {
+          "meet_name": "2021 Texas State Weightlifting Championships",
+          "date": "2021-01-15",
+          "division": "Men's Masters (35-39) 102kg",
+          "lifter_name": "Edgar Rodriguez",
+          "body_weight_kg": "102",
+          "snatch_1": "-115",
+          "snatch_2": "-115",
+          "snatch_3": "115",
+          "cj_1": "-115",
+          "cj_2": "-115",
+          "cj_3": "115",
+          "best_snatch": "115",
+          "best_cj": "115",
+          "total": "230"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Bexar Brawl",
+            "date": "2022-07-30",
+            "division": "Men's Masters (35-39) 102kg",
+            "lifter_name": "Edgar Rodriguez",
+            "body_weight_kg": "98.85",
+            "snatch_1": "100",
+            "snatch_2": "105",
+            "snatch_3": "-110",
+            "cj_1": "115",
+            "cj_2": "120",
+            "cj_3": "-125",
+            "best_snatch": "105",
+            "best_cj": "120",
+            "total": "225"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNy0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNy0zMCIsIndlaWdodF9jbGFzcyI6MTA4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Edgar Rodriguez",
+            "total": "225",
+            "gender": "M",
+            "age": "37",
+            "club_name": "Bexar Barbell",
+            "membership_number": "1053913",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2022 Texas State Weightlifting Championships",
+            "date": "2022-01-15",
+            "division": "Men's Masters (35-39) 102kg",
+            "lifter_name": "Edgar Rodriguez",
+            "body_weight_kg": "98.6",
+            "snatch_1": "103",
+            "snatch_2": "-106",
+            "snatch_3": "106",
+            "cj_1": "112",
+            "cj_2": "117",
+            "cj_3": "120",
+            "best_snatch": "106",
+            "best_cj": "120",
+            "total": "226"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMS0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMS0xNSIsIndlaWdodF9jbGFzcyI6MTA4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Edgar Rodriguez",
+            "total": "226",
+            "gender": "M",
+            "age": "37",
+            "club_name": "Bexar Barbell",
+            "membership_number": "1053913",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2021 Texas Barbell Christmas Classic",
+            "date": "2021-12-11",
+            "division": "Men's Masters (35-39) 102kg",
+            "lifter_name": "Edgar Rodriguez",
+            "body_weight_kg": "100.5",
+            "snatch_1": "105",
+            "snatch_2": "-110",
+            "snatch_3": "-110",
+            "cj_1": "111",
+            "cj_2": "116",
+            "cj_3": "-120",
+            "best_snatch": "105",
+            "best_cj": "116",
+            "total": "221"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMi0xMSIsIndlaWdodF9jbGFzcyI6MTA4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Edgar Rodriguez",
+            "total": "221",
+            "gender": "M",
+            "age": "36",
+            "club_name": "Bexar Barbell",
+            "membership_number": "1053913",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The Nike 2021 North American Open Series 2 powered by Rogue",
+            "date": "2021-09-18",
+            "division": "Open Men's 96kg",
+            "lifter_name": "Edgar Rodriguez",
+            "body_weight_kg": "94.82",
+            "snatch_1": "-105",
+            "snatch_2": "105",
+            "snatch_3": "-108",
+            "cj_1": "115",
+            "cj_2": "-120",
+            "cj_3": "-120",
+            "best_snatch": "105",
+            "best_cj": "115",
+            "total": "220"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wOS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wOS0xOCIsIndlaWdodF9jbGFzcyI6ODd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "29",
+            "athlete_name": "Edgar Rodriguez",
+            "total": "220",
+            "gender": "M",
+            "age": "36",
+            "club_name": "Bexar Barbell",
+            "membership_number": "1053913",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2021 National Masters",
+            "date": "2021-03-21",
+            "division": "Men's Masters (35-39) 102kg",
+            "lifter_name": "Edgar Rodriguez",
+            "body_weight_kg": "99.7",
+            "snatch_1": "105",
+            "snatch_2": "-110",
+            "snatch_3": "-113",
+            "cj_1": "110",
+            "cj_2": "-116",
+            "cj_3": "-120",
+            "best_snatch": "105",
+            "best_cj": "110",
+            "total": "215"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMy0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMy0yMSIsIndlaWdodF9jbGFzcyI6MTA4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Edgar Rodriguez",
+            "total": "215",
+            "gender": "M",
+            "age": "36",
+            "club_name": "Bexar Barbell",
+            "membership_number": "1053913",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2021 Texas State Weightlifting Championships",
+            "date": "2021-01-15",
+            "division": "Men's Masters (35-39) 102kg",
+            "lifter_name": "Edgar Rodriguez",
+            "body_weight_kg": "102",
+            "snatch_1": "-115",
+            "snatch_2": "-115",
+            "snatch_3": "115",
+            "cj_1": "-115",
+            "cj_2": "-115",
+            "cj_3": "115",
+            "best_snatch": "115",
+            "best_cj": "115",
+            "total": "230"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMS0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMS0xNSIsIndlaWdodF9jbGFzcyI6MTA4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Edgar Rodriguez",
+            "total": "230",
+            "gender": "M",
+            "age": "36",
+            "club_name": "Bexar Barbell",
+            "membership_number": "1053913",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

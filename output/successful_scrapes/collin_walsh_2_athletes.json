@@ -1,0 +1,200 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T11:31:19.129Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Collin Walsh",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 3,
+    "total_reverse_lookups": 3,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 38349223
+  },
+  "data": [
+    {
+      "internal_id": 26695,
+      "athlete_name": "Collin Walsh",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/26695",
+      "contaminated_lifter_id": 18999,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T11:31:09.319Z",
+      "profile_data": {
+        "membership_number": "193758",
+        "birth_year": 1991,
+        "gender": "M",
+        "club_name": "EAST CAROLINA WEIGHTLIFTING",
+        "wso": "Carolina",
+        "national_rank": "16"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Orlando Open-LC State Qualifier",
+          "date": "2014-10-11",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Collin Walsh",
+          "body_weight_kg": "71.6",
+          "snatch_1": "75",
+          "snatch_2": "81",
+          "snatch_3": "87",
+          "cj_1": "102",
+          "cj_2": "112",
+          "cj_3": "118",
+          "best_snatch": "87",
+          "best_cj": "118",
+          "total": "205"
+        },
+        {
+          "meet_name": "East Carolina Weightlifting Open",
+          "date": "2014-03-01",
+          "division": "Open Men's 69 kg",
+          "lifter_name": "Collin Walsh",
+          "body_weight_kg": "68.95",
+          "snatch_1": "63",
+          "snatch_2": "70",
+          "snatch_3": "75",
+          "cj_1": "95",
+          "cj_2": "101",
+          "cj_3": "0",
+          "best_snatch": "75",
+          "best_cj": "101",
+          "total": "176"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Orlando Open-LC State Qualifier",
+            "date": "2014-10-11",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Collin Walsh",
+            "body_weight_kg": "71.6",
+            "snatch_1": "75",
+            "snatch_2": "81",
+            "snatch_3": "87",
+            "cj_1": "102",
+            "cj_2": "112",
+            "cj_3": "118",
+            "best_snatch": "87",
+            "best_cj": "118",
+            "total": "205"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMC0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMC0xMSIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "16",
+            "athlete_name": "Collin Walsh",
+            "total": "205",
+            "gender": "M",
+            "age": "23",
+            "club_name": "EAST CAROLINA WEIGHTLIFTING",
+            "membership_number": "193758",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "East Carolina Weightlifting Open",
+            "date": "2014-03-01",
+            "division": "Open Men's 69 kg",
+            "lifter_name": "Collin Walsh",
+            "body_weight_kg": "68.95",
+            "snatch_1": "63",
+            "snatch_2": "70",
+            "snatch_3": "75",
+            "cj_1": "95",
+            "cj_2": "101",
+            "cj_3": "0",
+            "best_snatch": "75",
+            "best_cj": "101",
+            "total": "176"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0wMSIsIndlaWdodF9jbGFzcyI6MzU2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "11",
+            "athlete_name": "Collin Walsh",
+            "total": "176",
+            "gender": "M",
+            "age": "23",
+            "club_name": "EAST CAROLINA WEIGHTLIFTING",
+            "membership_number": "193758",
+            "wso": "Carolina"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 29823,
+      "athlete_name": "Collin Walsh",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/29823",
+      "contaminated_lifter_id": 18999,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T11:31:19.127Z",
+      "profile_data": {
+        "membership_number": "197098",
+        "birth_year": 1993,
+        "gender": "M",
+        "club_name": "METRO WLC",
+        "wso": "Texas-Oklahoma",
+        "national_rank": "12"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Oklahoma State Championships of Weightlifting",
+          "date": "2014-05-24",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Collin Walsh",
+          "body_weight_kg": "81.8",
+          "snatch_1": "80",
+          "snatch_2": "88",
+          "snatch_3": "88",
+          "cj_1": "100",
+          "cj_2": "115",
+          "cj_3": "120",
+          "best_snatch": "88",
+          "best_cj": "120",
+          "total": "208"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Oklahoma State Championships of Weightlifting",
+            "date": "2014-05-24",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Collin Walsh",
+            "body_weight_kg": "81.8",
+            "snatch_1": "80",
+            "snatch_2": "88",
+            "snatch_3": "88",
+            "cj_1": "100",
+            "cj_2": "115",
+            "cj_3": "120",
+            "best_snatch": "88",
+            "best_cj": "120",
+            "total": "208"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNS0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNS0yNCIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "12",
+            "athlete_name": "Collin Walsh",
+            "total": "208",
+            "gender": "M",
+            "age": "21",
+            "club_name": "METRO WLC",
+            "membership_number": "197098",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

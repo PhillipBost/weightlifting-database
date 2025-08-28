@@ -1,0 +1,370 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T06:28:56.125Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Taylor Williams",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 7,
+    "total_reverse_lookups": 7,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 17842580
+  },
+  "data": [
+    {
+      "internal_id": 42188,
+      "athlete_name": "Taylor Williams",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/42188",
+      "contaminated_lifter_id": 39638,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T17:34:25.450Z",
+      "profile_data": {
+        "membership_number": "1044544",
+        "birth_year": 2001,
+        "gender": "F",
+        "club_name": "VERO BEACH WEIGHTLIFTING",
+        "wso": "Florida",
+        "national_rank": "46"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Nike 2019 American Open Series 3",
+          "date": "2019-09-15",
+          "division": "Open Women's 59kg",
+          "lifter_name": "Taylor Williams",
+          "body_weight_kg": "58.69",
+          "snatch_1": "51",
+          "snatch_2": "54",
+          "snatch_3": "-57",
+          "cj_1": "71",
+          "cj_2": "-76",
+          "cj_3": "-76",
+          "best_snatch": "54",
+          "best_cj": "71",
+          "total": "125"
+        },
+        {
+          "meet_name": "VBW AO3 Qualifier",
+          "date": "2019-08-09",
+          "division": "Open Women's 59kg",
+          "lifter_name": "Taylor Williams",
+          "body_weight_kg": "58.7",
+          "snatch_1": "47",
+          "snatch_2": "50",
+          "snatch_3": "53",
+          "cj_1": "60",
+          "cj_2": "65",
+          "cj_3": "71",
+          "best_snatch": "53",
+          "best_cj": "71",
+          "total": "124"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Nike 2019 American Open Series 3",
+            "date": "2019-09-15",
+            "division": "Open Women's 59kg",
+            "lifter_name": "Taylor Williams",
+            "body_weight_kg": "58.69",
+            "snatch_1": "51",
+            "snatch_2": "54",
+            "snatch_3": "-57",
+            "cj_1": "71",
+            "cj_2": "-76",
+            "cj_3": "-76",
+            "best_snatch": "54",
+            "best_cj": "71",
+            "total": "125"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOS0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOS0xNSIsIndlaWdodF9jbGFzcyI6OTR9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "46",
+            "athlete_name": "Taylor Williams",
+            "total": "125",
+            "gender": "F",
+            "age": "18",
+            "club_name": "VERO BEACH WEIGHTLIFTING",
+            "membership_number": "1044544",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "VBW AO3 Qualifier",
+            "date": "2019-08-09",
+            "division": "Open Women's 59kg",
+            "lifter_name": "Taylor Williams",
+            "body_weight_kg": "58.7",
+            "snatch_1": "47",
+            "snatch_2": "50",
+            "snatch_3": "53",
+            "cj_1": "60",
+            "cj_2": "65",
+            "cj_3": "71",
+            "best_snatch": "53",
+            "best_cj": "71",
+            "total": "124"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOC0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOC0wOSIsIndlaWdodF9jbGFzcyI6OTR9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Taylor Williams",
+            "total": "124",
+            "gender": "F",
+            "age": "18",
+            "club_name": "VERO BEACH WEIGHTLIFTING",
+            "membership_number": "1044544",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 26628,
+      "athlete_name": "Taylor Williams",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/26628",
+      "contaminated_lifter_id": 39638,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-27T06:28:54.123Z",
+      "profile_data": {
+        "membership_number": "1035242",
+        "birth_year": 1991,
+        "gender": "M",
+        "club_name": "Hungry dog barbell",
+        "wso": "Pennsylvania-West Virginia",
+        "national_rank": "6"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Philadelphia Fall Open and National University Qualifier",
+          "date": "2024-11-02",
+          "division": "Open Men's 102kg",
+          "lifter_name": "Taylor Williams",
+          "body_weight_kg": "102",
+          "snatch_1": "97",
+          "snatch_2": "101",
+          "snatch_3": "0",
+          "cj_1": "120",
+          "cj_2": "0",
+          "cj_3": "124",
+          "best_snatch": "101",
+          "best_cj": "124",
+          "total": "225"
+        },
+        {
+          "meet_name": "Never Give Up Spring Classic",
+          "date": "2024-05-04",
+          "division": "Open Men's 109kg",
+          "lifter_name": "Taylor Williams",
+          "body_weight_kg": "109",
+          "snatch_1": "93",
+          "snatch_2": "97",
+          "snatch_3": "101",
+          "cj_1": "118",
+          "cj_2": "123",
+          "cj_3": "0",
+          "best_snatch": "101",
+          "best_cj": "123",
+          "total": "224"
+        },
+        {
+          "meet_name": "Philadelphia Fall Open and National University Qualifier (NUQ)",
+          "date": "2023-11-04",
+          "division": "Open Men's 109kg",
+          "lifter_name": "Taylor Williams",
+          "body_weight_kg": "108.9",
+          "snatch_1": "85",
+          "snatch_2": "0",
+          "snatch_3": "90",
+          "cj_1": "110",
+          "cj_2": "115",
+          "cj_3": "120",
+          "best_snatch": "90",
+          "best_cj": "120",
+          "total": "210"
+        },
+        {
+          "meet_name": "Cold Iron Classic",
+          "date": "2021-01-30",
+          "division": "Open Men's 102kg",
+          "lifter_name": "Taylor Williams",
+          "body_weight_kg": "101.69",
+          "snatch_1": "-90",
+          "snatch_2": "-90",
+          "snatch_3": "-90",
+          "cj_1": "0",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "0",
+          "best_cj": "0",
+          "total": "0"
+        },
+        {
+          "meet_name": "Cold Iron Classic",
+          "date": "2021-01-30",
+          "division": "Open Men's 102kg",
+          "lifter_name": "Taylor Williams",
+          "body_weight_kg": "101.69",
+          "snatch_1": "-90",
+          "snatch_2": "-90",
+          "snatch_3": "-90",
+          "cj_1": "0",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "0",
+          "best_cj": "0",
+          "total": "0"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Philadelphia Fall Open and National University Qualifier",
+            "date": "2024-11-02",
+            "division": "Open Men's 102kg",
+            "lifter_name": "Taylor Williams",
+            "body_weight_kg": "102",
+            "snatch_1": "97",
+            "snatch_2": "101",
+            "snatch_3": "0",
+            "cj_1": "120",
+            "cj_2": "0",
+            "cj_3": "124",
+            "best_snatch": "101",
+            "best_cj": "124",
+            "total": "225"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMS0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMS0wMiIsIndlaWdodF9jbGFzcyI6ODh9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Taylor Williams",
+            "total": "225",
+            "gender": "M",
+            "age": "33",
+            "club_name": "Hungry dog barbell",
+            "membership_number": "1035242",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Never Give Up Spring Classic",
+            "date": "2024-05-04",
+            "division": "Open Men's 109kg",
+            "lifter_name": "Taylor Williams",
+            "body_weight_kg": "109",
+            "snatch_1": "93",
+            "snatch_2": "97",
+            "snatch_3": "101",
+            "cj_1": "118",
+            "cj_2": "123",
+            "cj_3": "0",
+            "best_snatch": "101",
+            "best_cj": "123",
+            "total": "224"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNS0wNCIsIndlaWdodF9jbGFzcyI6ODl9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "Taylor Williams",
+            "total": "224",
+            "gender": "M",
+            "age": "33",
+            "club_name": "Hungry dog barbell",
+            "membership_number": "1035242",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Philadelphia Fall Open and National University Qualifier (NUQ)",
+            "date": "2023-11-04",
+            "division": "Open Men's 109kg",
+            "lifter_name": "Taylor Williams",
+            "body_weight_kg": "108.9",
+            "snatch_1": "85",
+            "snatch_2": "0",
+            "snatch_3": "90",
+            "cj_1": "110",
+            "cj_2": "115",
+            "cj_3": "120",
+            "best_snatch": "90",
+            "best_cj": "120",
+            "total": "210"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMS0wNCIsIndlaWdodF9jbGFzcyI6ODl9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "Taylor Williams",
+            "total": "210",
+            "gender": "M",
+            "age": "32",
+            "club_name": "Hungry dog barbell",
+            "membership_number": "1035242",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Cold Iron Classic",
+            "date": "2021-01-30",
+            "division": "Open Men's 102kg",
+            "lifter_name": "Taylor Williams",
+            "body_weight_kg": "101.69",
+            "snatch_1": "-90",
+            "snatch_2": "-90",
+            "snatch_3": "-90",
+            "cj_1": "0",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "0",
+            "best_cj": "0",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMS0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMS0zMCIsIndlaWdodF9jbGFzcyI6ODh9",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Cold Iron Classic",
+            "date": "2021-01-30",
+            "division": "Open Men's 102kg",
+            "lifter_name": "Taylor Williams",
+            "body_weight_kg": "101.69",
+            "snatch_1": "-90",
+            "snatch_2": "-90",
+            "snatch_3": "-90",
+            "cj_1": "0",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "0",
+            "best_cj": "0",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMS0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMS0zMCIsIndlaWdodF9jbGFzcyI6ODh9",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    }
+  ]
+}

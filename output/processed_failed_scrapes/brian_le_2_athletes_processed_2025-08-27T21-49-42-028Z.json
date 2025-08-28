@@ -1,0 +1,332 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T16:34:59.161Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Brian Le",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 6,
+    "total_reverse_lookups": 6,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 56569255
+  },
+  "data": [
+    {
+      "internal_id": 49863,
+      "athlete_name": "Brian Le",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/49863",
+      "contaminated_lifter_id": 48108,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T16:34:38.252Z",
+      "profile_data": {
+        "membership_number": "1055039",
+        "birth_year": 1996,
+        "gender": "M",
+        "club_name": "HEAVY METAL BARBELL",
+        "wso": "Carolina",
+        "national_rank": "8"
+      },
+      "competition_history": [
+        {
+          "meet_name": "QUEEN CITY CLASSIC VIII",
+          "date": "2025-05-10",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Brian Le",
+          "body_weight_kg": "83.2",
+          "snatch_1": "-102",
+          "snatch_2": "-102",
+          "snatch_3": "-104",
+          "cj_1": "-130",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "0",
+          "best_cj": "0",
+          "total": "0"
+        },
+        {
+          "meet_name": "Charlotte Team Cup",
+          "date": "2025-01-25",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Brian Le",
+          "body_weight_kg": "82.25",
+          "snatch_1": "100",
+          "snatch_2": "-103",
+          "snatch_3": "105",
+          "cj_1": "125",
+          "cj_2": "130",
+          "cj_3": "135",
+          "best_snatch": "105",
+          "best_cj": "135",
+          "total": "240"
+        },
+        {
+          "meet_name": "QUEEN CITY CLASSIC VII",
+          "date": "2024-05-04",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Brian Le",
+          "body_weight_kg": "80.1",
+          "snatch_1": "-93",
+          "snatch_2": "93",
+          "snatch_3": "-100",
+          "cj_1": "120",
+          "cj_2": "125",
+          "cj_3": "130",
+          "best_snatch": "93",
+          "best_cj": "130",
+          "total": "223"
+        },
+        {
+          "meet_name": "Queen City Classic 2021",
+          "date": "2021-05-23",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Brian Le",
+          "body_weight_kg": "79.9",
+          "snatch_1": "-90",
+          "snatch_2": "92",
+          "snatch_3": "-97",
+          "cj_1": "114",
+          "cj_2": "-118",
+          "cj_3": "119",
+          "best_snatch": "92",
+          "best_cj": "119",
+          "total": "211"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "QUEEN CITY CLASSIC VIII",
+            "date": "2025-05-10",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Brian Le",
+            "body_weight_kg": "83.2",
+            "snatch_1": "-102",
+            "snatch_2": "-102",
+            "snatch_3": "-104",
+            "cj_1": "-130",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "0",
+            "best_cj": "0",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNS0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNS0xMCIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Charlotte Team Cup",
+            "date": "2025-01-25",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Brian Le",
+            "body_weight_kg": "82.25",
+            "snatch_1": "100",
+            "snatch_2": "-103",
+            "snatch_3": "105",
+            "cj_1": "125",
+            "cj_2": "130",
+            "cj_3": "135",
+            "best_snatch": "105",
+            "best_cj": "135",
+            "total": "240"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMS0yNSIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "8",
+            "athlete_name": "Brian Le",
+            "total": "240",
+            "gender": "M",
+            "age": "29",
+            "club_name": "HEAVY METAL BARBELL",
+            "membership_number": "1055039",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "QUEEN CITY CLASSIC VII",
+            "date": "2024-05-04",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Brian Le",
+            "body_weight_kg": "80.1",
+            "snatch_1": "-93",
+            "snatch_2": "93",
+            "snatch_3": "-100",
+            "cj_1": "120",
+            "cj_2": "125",
+            "cj_3": "130",
+            "best_snatch": "93",
+            "best_cj": "130",
+            "total": "223"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNS0wNCIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "21",
+            "athlete_name": "Brian Le",
+            "total": "223",
+            "gender": "M",
+            "age": "28",
+            "club_name": "HEAVY METAL BARBELL",
+            "membership_number": "1055039",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Queen City Classic 2021",
+            "date": "2021-05-23",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Brian Le",
+            "body_weight_kg": "79.9",
+            "snatch_1": "-90",
+            "snatch_2": "92",
+            "snatch_3": "-97",
+            "cj_1": "114",
+            "cj_2": "-118",
+            "cj_3": "119",
+            "best_snatch": "92",
+            "best_cj": "119",
+            "total": "211"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNS0yMyIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "Brian Le",
+            "total": "211",
+            "gender": "M",
+            "age": "25",
+            "club_name": "HEAVY METAL BARBELL",
+            "membership_number": "1055039",
+            "wso": "Carolina"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    },
+    {
+      "internal_id": 56223,
+      "athlete_name": "Brian Le",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/56223",
+      "contaminated_lifter_id": 48108,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T16:34:59.160Z",
+      "profile_data": {
+        "membership_number": "1066225",
+        "birth_year": 1999,
+        "gender": "M",
+        "club_name": "MILWAUKEE BARBELL WEIGHTLIFTING CLUB",
+        "wso": "Wisconsin",
+        "national_rank": "47"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Wisconsin Spring Open",
+          "date": "2023-04-29",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Brian Le",
+          "body_weight_kg": "87.4",
+          "snatch_1": "75",
+          "snatch_2": "80",
+          "snatch_3": "-86",
+          "cj_1": "102",
+          "cj_2": "109",
+          "cj_3": "-115",
+          "best_snatch": "80",
+          "best_cj": "109",
+          "total": "189"
+        },
+        {
+          "meet_name": "BrewCity Open 8",
+          "date": "2022-10-22",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Brian Le",
+          "body_weight_kg": "83.3",
+          "snatch_1": "63",
+          "snatch_2": "68",
+          "snatch_3": "73",
+          "cj_1": "90",
+          "cj_2": "96",
+          "cj_3": "-101",
+          "best_snatch": "73",
+          "best_cj": "96",
+          "total": "169"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Wisconsin Spring Open",
+            "date": "2023-04-29",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Brian Le",
+            "body_weight_kg": "87.4",
+            "snatch_1": "75",
+            "snatch_2": "80",
+            "snatch_3": "-86",
+            "cj_1": "102",
+            "cj_2": "109",
+            "cj_3": "-115",
+            "best_snatch": "80",
+            "best_cj": "109",
+            "total": "189"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0yOSIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "47",
+            "athlete_name": "Brian Le",
+            "total": "189",
+            "gender": "M",
+            "age": "24",
+            "club_name": "MILWAUKEE BARBELL WEIGHTLIFTING CLUB",
+            "membership_number": "1066225",
+            "wso": "Wisconsin"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "BrewCity Open 8",
+            "date": "2022-10-22",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Brian Le",
+            "body_weight_kg": "83.3",
+            "snatch_1": "63",
+            "snatch_2": "68",
+            "snatch_3": "73",
+            "cj_1": "90",
+            "cj_2": "96",
+            "cj_3": "-101",
+            "best_snatch": "73",
+            "best_cj": "96",
+            "total": "169"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMC0yMiIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "37",
+            "athlete_name": "Brian Le",
+            "total": "169",
+            "gender": "M",
+            "age": "23",
+            "club_name": "MILWAUKEE BARBELL WEIGHTLIFTING CLUB",
+            "membership_number": "1066225",
+            "wso": "Wisconsin"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

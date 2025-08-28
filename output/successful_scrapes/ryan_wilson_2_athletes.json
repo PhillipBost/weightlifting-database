@@ -1,0 +1,200 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T11:27:41.402Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Ryan Wilson",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 3,
+    "total_reverse_lookups": 3,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 38131496
+  },
+  "data": [
+    {
+      "internal_id": 19589,
+      "athlete_name": "Ryan Wilson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/19589",
+      "contaminated_lifter_id": 18297,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T11:27:31.210Z",
+      "profile_data": {
+        "membership_number": "184326",
+        "birth_year": 1988,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "New England",
+        "national_rank": "14"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2014 Russ Knipp Weightlifting Championships",
+          "date": "2014-04-12",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Ryan Wilson",
+          "body_weight_kg": "107.6",
+          "snatch_1": "55",
+          "snatch_2": "57",
+          "snatch_3": "60",
+          "cj_1": "85",
+          "cj_2": "87",
+          "cj_3": "90",
+          "best_snatch": "60",
+          "best_cj": "90",
+          "total": "150"
+        },
+        {
+          "meet_name": "University Of Oregon Weightlifting Classic",
+          "date": "2013-06-02",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Ryan Wilson",
+          "body_weight_kg": "107.2",
+          "snatch_1": "60",
+          "snatch_2": "62",
+          "snatch_3": "65",
+          "cj_1": "85",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "65",
+          "best_cj": "85",
+          "total": "150"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2014 Russ Knipp Weightlifting Championships",
+            "date": "2014-04-12",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Ryan Wilson",
+            "body_weight_kg": "107.6",
+            "snatch_1": "55",
+            "snatch_2": "57",
+            "snatch_3": "60",
+            "cj_1": "85",
+            "cj_2": "87",
+            "cj_3": "90",
+            "best_snatch": "60",
+            "best_cj": "90",
+            "total": "150"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNC0xMiIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "14",
+            "athlete_name": "Ryan Wilson",
+            "total": "150",
+            "gender": "M",
+            "age": "26",
+            "club_name": "-",
+            "membership_number": "184326",
+            "wso": "New England"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "University Of Oregon Weightlifting Classic",
+            "date": "2013-06-02",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Ryan Wilson",
+            "body_weight_kg": "107.2",
+            "snatch_1": "60",
+            "snatch_2": "62",
+            "snatch_3": "65",
+            "cj_1": "85",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "65",
+            "best_cj": "85",
+            "total": "150"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNi0wMiIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Ryan Wilson",
+            "total": "150",
+            "gender": "M",
+            "age": "25",
+            "club_name": "-",
+            "membership_number": "184326",
+            "wso": "New England"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 34604,
+      "athlete_name": "Ryan Wilson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/34604",
+      "contaminated_lifter_id": 18297,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T11:27:41.400Z",
+      "profile_data": {
+        "membership_number": "1023130",
+        "birth_year": 1996,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Pacific Northwest",
+        "national_rank": "17"
+      },
+      "competition_history": [
+        {
+          "meet_name": "PFB Weightlifting Fall Open",
+          "date": "2017-11-18",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Ryan Wilson",
+          "body_weight_kg": "93.1",
+          "snatch_1": "79",
+          "snatch_2": "86",
+          "snatch_3": "-93",
+          "cj_1": "106",
+          "cj_2": "113",
+          "cj_3": "119",
+          "best_snatch": "86",
+          "best_cj": "119",
+          "total": "205"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "PFB Weightlifting Fall Open",
+            "date": "2017-11-18",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Ryan Wilson",
+            "body_weight_kg": "93.1",
+            "snatch_1": "79",
+            "snatch_2": "86",
+            "snatch_3": "-93",
+            "cj_1": "106",
+            "cj_2": "113",
+            "cj_3": "119",
+            "best_snatch": "86",
+            "best_cj": "119",
+            "total": "205"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMS0xOCIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "17",
+            "athlete_name": "Ryan Wilson",
+            "total": "205",
+            "gender": "M",
+            "age": "21",
+            "club_name": "-",
+            "membership_number": "1023130",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

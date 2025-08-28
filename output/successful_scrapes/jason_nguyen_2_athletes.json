@@ -1,0 +1,294 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T14:09:39.288Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Jason Nguyen",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 5,
+    "total_reverse_lookups": 5,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 47849382
+  },
+  "data": [
+    {
+      "internal_id": 63995,
+      "athlete_name": "Jason Nguyen",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/63995",
+      "contaminated_lifter_id": 51630,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T14:09:29.371Z",
+      "profile_data": {
+        "membership_number": "1078229",
+        "birth_year": 2005,
+        "gender": "M",
+        "club_name": "Warner University",
+        "wso": "Florida",
+        "national_rank": "9"
+      },
+      "competition_history": [
+        {
+          "meet_name": "The 2025 National University Championships Powered by Rogue Fitness",
+          "date": "2025-02-27",
+          "division": "Junior Men's 73kg",
+          "lifter_name": "Jason Nguyen",
+          "body_weight_kg": "72.97",
+          "snatch_1": "90",
+          "snatch_2": "-94",
+          "snatch_3": "-97",
+          "cj_1": "124",
+          "cj_2": "-127",
+          "cj_3": "127",
+          "best_snatch": "90",
+          "best_cj": "127",
+          "total": "217"
+        },
+        {
+          "meet_name": "2025 January Online Qualifier (NUQ)",
+          "date": "2025-01-31",
+          "division": "Junior Men's 73kg",
+          "lifter_name": "Jason Nguyen",
+          "body_weight_kg": "72.8",
+          "snatch_1": "0",
+          "snatch_2": "0",
+          "snatch_3": "75",
+          "cj_1": "0",
+          "cj_2": "0",
+          "cj_3": "96",
+          "best_snatch": "75",
+          "best_cj": "96",
+          "total": "171"
+        },
+        {
+          "meet_name": "Seminole Classic III (NUQ)",
+          "date": "2024-11-09",
+          "division": "Junior Men's 81kg",
+          "lifter_name": "Jason Nguyen",
+          "body_weight_kg": "81",
+          "snatch_1": "-87",
+          "snatch_2": "-87",
+          "snatch_3": "87",
+          "cj_1": "125",
+          "cj_2": "-130",
+          "cj_3": "-131",
+          "best_snatch": "87",
+          "best_cj": "125",
+          "total": "212"
+        },
+        {
+          "meet_name": "Flo/Am Open (NUQ)",
+          "date": "2024-10-05",
+          "division": "Junior Men's 89kg",
+          "lifter_name": "Jason Nguyen",
+          "body_weight_kg": "81.1",
+          "snatch_1": "86",
+          "snatch_2": "92",
+          "snatch_3": "-96",
+          "cj_1": "124",
+          "cj_2": "-131",
+          "cj_3": "-131",
+          "best_snatch": "92",
+          "best_cj": "124",
+          "total": "216"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "The 2025 National University Championships Powered by Rogue Fitness",
+            "date": "2025-02-27",
+            "division": "Junior Men's 73kg",
+            "lifter_name": "Jason Nguyen",
+            "body_weight_kg": "72.97",
+            "snatch_1": "90",
+            "snatch_2": "-94",
+            "snatch_3": "-97",
+            "cj_1": "124",
+            "cj_2": "-127",
+            "cj_3": "127",
+            "best_snatch": "90",
+            "best_cj": "127",
+            "total": "217"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMi0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMi0yNyIsIndlaWdodF9jbGFzcyI6NjR9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "Jason Nguyen",
+            "total": "217",
+            "gender": "M",
+            "age": "20",
+            "club_name": "Warner University",
+            "membership_number": "1078229",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2025 January Online Qualifier (NUQ)",
+            "date": "2025-01-31",
+            "division": "Junior Men's 73kg",
+            "lifter_name": "Jason Nguyen",
+            "body_weight_kg": "72.8",
+            "snatch_1": "0",
+            "snatch_2": "0",
+            "snatch_3": "75",
+            "cj_1": "0",
+            "cj_2": "0",
+            "cj_3": "96",
+            "best_snatch": "75",
+            "best_cj": "96",
+            "total": "171"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMS0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMS0zMSIsIndlaWdodF9jbGFzcyI6NjR9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Jason Nguyen",
+            "total": "171",
+            "gender": "M",
+            "age": "20",
+            "club_name": "Warner University",
+            "membership_number": "1078229",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Seminole Classic III (NUQ)",
+            "date": "2024-11-09",
+            "division": "Junior Men's 81kg",
+            "lifter_name": "Jason Nguyen",
+            "body_weight_kg": "81",
+            "snatch_1": "-87",
+            "snatch_2": "-87",
+            "snatch_3": "87",
+            "cj_1": "125",
+            "cj_2": "-130",
+            "cj_3": "-131",
+            "best_snatch": "87",
+            "best_cj": "125",
+            "total": "212"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMS0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMS0wOSIsIndlaWdodF9jbGFzcyI6NjV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Jason Nguyen",
+            "total": "212",
+            "gender": "M",
+            "age": "19",
+            "club_name": "Warner University",
+            "membership_number": "1078229",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Flo/Am Open (NUQ)",
+            "date": "2024-10-05",
+            "division": "Junior Men's 89kg",
+            "lifter_name": "Jason Nguyen",
+            "body_weight_kg": "81.1",
+            "snatch_1": "86",
+            "snatch_2": "92",
+            "snatch_3": "-96",
+            "cj_1": "124",
+            "cj_2": "-131",
+            "cj_3": "-131",
+            "best_snatch": "92",
+            "best_cj": "124",
+            "total": "216"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0wNSIsIndlaWdodF9jbGFzcyI6NjZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Jason Nguyen",
+            "total": "216",
+            "gender": "M",
+            "age": "19",
+            "club_name": "Warner University",
+            "membership_number": "1078229",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 53365,
+      "athlete_name": "Jason Nguyen",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/53365",
+      "contaminated_lifter_id": 51630,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T14:09:39.287Z",
+      "profile_data": {
+        "membership_number": "1061325",
+        "birth_year": 1983,
+        "gender": "M",
+        "club_name": "Workhorse Barbell",
+        "wso": "Hawaii and International",
+        "national_rank": "14"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Hawaii Open",
+          "date": "2022-03-19",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Jason Nguyen",
+          "body_weight_kg": "78.3",
+          "snatch_1": "78",
+          "snatch_2": "81",
+          "snatch_3": "85",
+          "cj_1": "105",
+          "cj_2": "110",
+          "cj_3": "115",
+          "best_snatch": "85",
+          "best_cj": "115",
+          "total": "200"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Hawaii Open",
+            "date": "2022-03-19",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Jason Nguyen",
+            "body_weight_kg": "78.3",
+            "snatch_1": "78",
+            "snatch_2": "81",
+            "snatch_3": "85",
+            "cj_1": "105",
+            "cj_2": "110",
+            "cj_3": "115",
+            "best_snatch": "85",
+            "best_cj": "115",
+            "total": "200"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMy0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMy0xOSIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "14",
+            "athlete_name": "Jason Nguyen",
+            "total": "200",
+            "gender": "M",
+            "age": "39",
+            "club_name": "Workhorse Barbell",
+            "membership_number": "1061325",
+            "wso": "Hawaii and International"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

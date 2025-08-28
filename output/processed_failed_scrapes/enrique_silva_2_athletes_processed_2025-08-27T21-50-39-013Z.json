@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T05:26:40.421Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Enrique Silva",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 0,
+    "failed_scrapes": 2,
+    "total_competitions_found": 0,
+    "total_reverse_lookups": 0,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 14106877
+  },
+  "data": [
+    {
+      "internal_id": 973,
+      "athlete_name": "Enrique Silva",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/973",
+      "contaminated_lifter_id": 2429,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-27T05:25:59.736Z",
+      "profile_data": null,
+      "competition_history": [],
+      "biographical_data_by_competition": [],
+      "scraping_successful": false,
+      "error": "Assignment to constant variable."
+    },
+    {
+      "internal_id": 66795,
+      "athlete_name": "Enrique Silva",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/66795",
+      "contaminated_lifter_id": 2429,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-27T05:26:40.421Z",
+      "profile_data": null,
+      "competition_history": [],
+      "biographical_data_by_competition": [],
+      "scraping_successful": false,
+      "error": "Assignment to constant variable."
+    }
+  ]
+}

@@ -1,0 +1,550 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T05:36:05.921Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Justin Thompson",
+    "internal_ids_processed": 3,
+    "successful_scrapes": 3,
+    "failed_scrapes": 0,
+    "total_competitions_found": 10,
+    "total_reverse_lookups": 10,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 17036015
+  },
+  "data": [
+    {
+      "internal_id": 6339,
+      "athlete_name": "Justin Thompson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/6339",
+      "contaminated_lifter_id": 27144,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T05:35:13.183Z",
+      "profile_data": {
+        "membership_number": "193396",
+        "birth_year": 1979,
+        "gender": "M",
+        "club_name": "FCAF Barbell Club",
+        "wso": "Mountain North",
+        "national_rank": "30"
+      },
+      "competition_history": [
+        {
+          "meet_name": "FRCF Spring Weightlifting Meet",
+          "date": "2017-05-07",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Justin Thompson",
+          "body_weight_kg": "82.2",
+          "snatch_1": "60",
+          "snatch_2": "65",
+          "snatch_3": "70",
+          "cj_1": "85",
+          "cj_2": "90",
+          "cj_3": "-97",
+          "best_snatch": "70",
+          "best_cj": "90",
+          "total": "160"
+        },
+        {
+          "meet_name": "FRCF Winter 2016 Invitational Weightlifting Meet",
+          "date": "2016-12-17",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Justin Thompson",
+          "body_weight_kg": "81.6",
+          "snatch_1": "62",
+          "snatch_2": "67",
+          "snatch_3": "-72",
+          "cj_1": "90",
+          "cj_2": "96",
+          "cj_3": "-100",
+          "best_snatch": "67",
+          "best_cj": "96",
+          "total": "163"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "FRCF Spring Weightlifting Meet",
+            "date": "2017-05-07",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Justin Thompson",
+            "body_weight_kg": "82.2",
+            "snatch_1": "60",
+            "snatch_2": "65",
+            "snatch_3": "70",
+            "cj_1": "85",
+            "cj_2": "90",
+            "cj_3": "-97",
+            "best_snatch": "70",
+            "best_cj": "90",
+            "total": "160"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNS0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNS0wNyIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "30",
+            "athlete_name": "Justin Thompson",
+            "total": "160",
+            "gender": "M",
+            "age": "38",
+            "club_name": "FCAF Barbell Club",
+            "membership_number": "193396",
+            "wso": "Mountain North"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "FRCF Winter 2016 Invitational Weightlifting Meet",
+            "date": "2016-12-17",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Justin Thompson",
+            "body_weight_kg": "81.6",
+            "snatch_1": "62",
+            "snatch_2": "67",
+            "snatch_3": "-72",
+            "cj_1": "90",
+            "cj_2": "96",
+            "cj_3": "-100",
+            "best_snatch": "67",
+            "best_cj": "96",
+            "total": "163"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMi0xNyIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "30",
+            "athlete_name": "Justin Thompson",
+            "total": "163",
+            "gender": "M",
+            "age": "37",
+            "club_name": "FCAF Barbell Club",
+            "membership_number": "193396",
+            "wso": "Mountain North"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 47289,
+      "athlete_name": "Justin Thompson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/47289",
+      "contaminated_lifter_id": 27144,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T05:35:34.137Z",
+      "profile_data": {
+        "membership_number": "1049694",
+        "birth_year": 2003,
+        "gender": "M",
+        "club_name": "Team Divergent",
+        "wso": "Georgia",
+        "national_rank": "2"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Coffee Qualifier",
+          "date": "2020-10-30",
+          "division": "Men's 16-17 Age Group 73kg",
+          "lifter_name": "Justin Thompson",
+          "body_weight_kg": "71.8",
+          "snatch_1": "72",
+          "snatch_2": "75",
+          "snatch_3": "-78",
+          "cj_1": "97",
+          "cj_2": "100",
+          "cj_3": "102",
+          "best_snatch": "75",
+          "best_cj": "102",
+          "total": "177"
+        },
+        {
+          "meet_name": "Coffee Winter 2",
+          "date": "2020-03-13",
+          "division": "Men's 16-17 Age Group 81kg",
+          "lifter_name": "Justin Thompson",
+          "body_weight_kg": "76",
+          "snatch_1": "74",
+          "snatch_2": "77",
+          "snatch_3": "80",
+          "cj_1": "103",
+          "cj_2": "105",
+          "cj_3": "107",
+          "best_snatch": "80",
+          "best_cj": "107",
+          "total": "187"
+        },
+        {
+          "meet_name": "Coffee Winter 1",
+          "date": "2020-02-17",
+          "division": "Men's 16-17 Age Group 81kg",
+          "lifter_name": "Justin Thompson",
+          "body_weight_kg": "76.8",
+          "snatch_1": "70",
+          "snatch_2": "72",
+          "snatch_3": "75",
+          "cj_1": "98",
+          "cj_2": "100",
+          "cj_3": "-102",
+          "best_snatch": "75",
+          "best_cj": "100",
+          "total": "175"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Coffee Qualifier",
+            "date": "2020-10-30",
+            "division": "Men's 16-17 Age Group 73kg",
+            "lifter_name": "Justin Thompson",
+            "body_weight_kg": "71.8",
+            "snatch_1": "72",
+            "snatch_2": "75",
+            "snatch_3": "-78",
+            "cj_1": "97",
+            "cj_2": "100",
+            "cj_3": "102",
+            "best_snatch": "75",
+            "best_cj": "102",
+            "total": "177"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0xMC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0xMC0zMCIsIndlaWdodF9jbGFzcyI6NX0=",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Justin Thompson",
+            "total": "177",
+            "gender": "M",
+            "age": "17",
+            "club_name": "Team Divergent",
+            "membership_number": "1049694",
+            "wso": "Georgia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Coffee Winter 2",
+            "date": "2020-03-13",
+            "division": "Men's 16-17 Age Group 81kg",
+            "lifter_name": "Justin Thompson",
+            "body_weight_kg": "76",
+            "snatch_1": "74",
+            "snatch_2": "77",
+            "snatch_3": "80",
+            "cj_1": "103",
+            "cj_2": "105",
+            "cj_3": "107",
+            "best_snatch": "80",
+            "best_cj": "107",
+            "total": "187"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMy0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMy0xMyIsIndlaWdodF9jbGFzcyI6Nn0=",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Justin Thompson",
+            "total": "187",
+            "gender": "M",
+            "age": "17",
+            "club_name": "Team Divergent",
+            "membership_number": "1049694",
+            "wso": "Georgia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Coffee Winter 1",
+            "date": "2020-02-17",
+            "division": "Men's 16-17 Age Group 81kg",
+            "lifter_name": "Justin Thompson",
+            "body_weight_kg": "76.8",
+            "snatch_1": "70",
+            "snatch_2": "72",
+            "snatch_3": "75",
+            "cj_1": "98",
+            "cj_2": "100",
+            "cj_3": "-102",
+            "best_snatch": "75",
+            "best_cj": "100",
+            "total": "175"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMi0xNyIsIndlaWdodF9jbGFzcyI6Nn0=",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Justin Thompson",
+            "total": "175",
+            "gender": "M",
+            "age": "17",
+            "club_name": "Team Divergent",
+            "membership_number": "1049694",
+            "wso": "Georgia"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 48044,
+      "athlete_name": "Justin Thompson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/48044",
+      "contaminated_lifter_id": 27144,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T05:36:05.919Z",
+      "profile_data": {
+        "membership_number": "1051942",
+        "birth_year": 2002,
+        "gender": "M",
+        "club_name": "PHILADELPHIA BARBELL",
+        "wso": "Pennsylvania-West Virginia",
+        "national_rank": "33"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2022 Lift Off! (NUQ)",
+          "date": "2022-10-29",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Justin Thompson",
+          "body_weight_kg": "82",
+          "snatch_1": "86",
+          "snatch_2": "89",
+          "snatch_3": "92",
+          "cj_1": "101",
+          "cj_2": "-105",
+          "cj_3": "-105",
+          "best_snatch": "92",
+          "best_cj": "101",
+          "total": "193"
+        },
+        {
+          "meet_name": "2021 West Chester Summer Classic",
+          "date": "2021-07-31",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Justin Thompson",
+          "body_weight_kg": "85",
+          "snatch_1": "84",
+          "snatch_2": "87",
+          "snatch_3": "91",
+          "cj_1": "102",
+          "cj_2": "106",
+          "cj_3": "110",
+          "best_snatch": "91",
+          "best_cj": "110",
+          "total": "201"
+        },
+        {
+          "meet_name": "Cold Iron Classic",
+          "date": "2021-01-30",
+          "division": "Junior Men's 89kg",
+          "lifter_name": "Justin Thompson",
+          "body_weight_kg": "82.45",
+          "snatch_1": "81",
+          "snatch_2": "85",
+          "snatch_3": "-90",
+          "cj_1": "94",
+          "cj_2": "100",
+          "cj_3": "-106",
+          "best_snatch": "85",
+          "best_cj": "100",
+          "total": "185"
+        },
+        {
+          "meet_name": "August online qualifier",
+          "date": "2020-08-31",
+          "division": "Junior Men's 89kg",
+          "lifter_name": "Justin Thompson",
+          "body_weight_kg": "83",
+          "snatch_1": "81",
+          "snatch_2": "0",
+          "snatch_3": "0",
+          "cj_1": "92",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "81",
+          "best_cj": "92",
+          "total": "173"
+        },
+        {
+          "meet_name": "Cold Iron Classic",
+          "date": "2021-01-30",
+          "division": "Junior Men's 89kg",
+          "lifter_name": "Justin Thompson",
+          "body_weight_kg": "82.45",
+          "snatch_1": "81",
+          "snatch_2": "85",
+          "snatch_3": "-90",
+          "cj_1": "94",
+          "cj_2": "100",
+          "cj_3": "-106",
+          "best_snatch": "85",
+          "best_cj": "100",
+          "total": "185"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2022 Lift Off! (NUQ)",
+            "date": "2022-10-29",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Justin Thompson",
+            "body_weight_kg": "82",
+            "snatch_1": "86",
+            "snatch_2": "89",
+            "snatch_3": "92",
+            "cj_1": "101",
+            "cj_2": "-105",
+            "cj_3": "-105",
+            "best_snatch": "92",
+            "best_cj": "101",
+            "total": "193"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMC0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMC0yOSIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "33",
+            "athlete_name": "Justin Thompson",
+            "total": "193",
+            "gender": "M",
+            "age": "20",
+            "club_name": "PHILADELPHIA BARBELL",
+            "membership_number": "1051942",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2021 West Chester Summer Classic",
+            "date": "2021-07-31",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Justin Thompson",
+            "body_weight_kg": "85",
+            "snatch_1": "84",
+            "snatch_2": "87",
+            "snatch_3": "91",
+            "cj_1": "102",
+            "cj_2": "106",
+            "cj_3": "110",
+            "best_snatch": "91",
+            "best_cj": "110",
+            "total": "201"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNy0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNy0zMSIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "Justin Thompson",
+            "total": "201",
+            "gender": "M",
+            "age": "19",
+            "club_name": "Hungry dog barbell",
+            "membership_number": "1051942",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Cold Iron Classic",
+            "date": "2021-01-30",
+            "division": "Junior Men's 89kg",
+            "lifter_name": "Justin Thompson",
+            "body_weight_kg": "82.45",
+            "snatch_1": "81",
+            "snatch_2": "85",
+            "snatch_3": "-90",
+            "cj_1": "94",
+            "cj_2": "100",
+            "cj_3": "-106",
+            "best_snatch": "85",
+            "best_cj": "100",
+            "total": "185"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMS0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMS0zMCIsIndlaWdodF9jbGFzcyI6NjZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Justin Thompson",
+            "total": "185",
+            "gender": "M",
+            "age": "19",
+            "club_name": "Hungry dog barbell",
+            "membership_number": "1051942",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "August online qualifier",
+            "date": "2020-08-31",
+            "division": "Junior Men's 89kg",
+            "lifter_name": "Justin Thompson",
+            "body_weight_kg": "83",
+            "snatch_1": "81",
+            "snatch_2": "0",
+            "snatch_3": "0",
+            "cj_1": "92",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "81",
+            "best_cj": "92",
+            "total": "173"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wOC0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wOC0zMSIsIndlaWdodF9jbGFzcyI6NjZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Justin Thompson",
+            "total": "173",
+            "gender": "M",
+            "age": "18",
+            "club_name": "Hungry dog barbell",
+            "membership_number": "1051942",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Cold Iron Classic",
+            "date": "2021-01-30",
+            "division": "Junior Men's 89kg",
+            "lifter_name": "Justin Thompson",
+            "body_weight_kg": "82.45",
+            "snatch_1": "81",
+            "snatch_2": "85",
+            "snatch_3": "-90",
+            "cj_1": "94",
+            "cj_2": "100",
+            "cj_3": "-106",
+            "best_snatch": "85",
+            "best_cj": "100",
+            "total": "185"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMS0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMS0zMCIsIndlaWdodF9jbGFzcyI6NjZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Justin Thompson",
+            "total": "185",
+            "gender": "M",
+            "age": "19",
+            "club_name": "Hungry dog barbell",
+            "membership_number": "1051942",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

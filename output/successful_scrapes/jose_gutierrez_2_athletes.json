@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T00:25:41.661Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Jose Gutierrez",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 84811755
+  },
+  "data": [
+    {
+      "internal_id": 7792,
+      "athlete_name": "Jose Gutierrez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/7792",
+      "contaminated_lifter_id": 19182,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T00:25:29.323Z",
+      "profile_data": {
+        "membership_number": "199804",
+        "birth_year": 1980,
+        "gender": "M",
+        "club_name": "BARBARIAN BARBELL CLUB",
+        "wso": "California South",
+        "national_rank": "12"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2014 TCA Fall Kick-Off",
+          "date": "2014-09-13",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Jose Gutierrez",
+          "body_weight_kg": "74.56",
+          "snatch_1": "70",
+          "snatch_2": "70",
+          "snatch_3": "70",
+          "cj_1": "88",
+          "cj_2": "93",
+          "cj_3": "98",
+          "best_snatch": "70",
+          "best_cj": "98",
+          "total": "168"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2014 TCA Fall Kick-Off",
+            "date": "2014-09-13",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Jose Gutierrez",
+            "body_weight_kg": "74.56",
+            "snatch_1": "70",
+            "snatch_2": "70",
+            "snatch_3": "70",
+            "cj_1": "88",
+            "cj_2": "93",
+            "cj_3": "98",
+            "best_snatch": "70",
+            "best_cj": "98",
+            "total": "168"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOS0xMyIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "12",
+            "athlete_name": "Jose Gutierrez",
+            "total": "168",
+            "gender": "M",
+            "age": "34",
+            "club_name": "BARBARIAN BARBELL CLUB",
+            "membership_number": "199804",
+            "wso": "California South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 23275,
+      "athlete_name": "Jose Gutierrez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/23275",
+      "contaminated_lifter_id": 19182,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T00:25:41.659Z",
+      "profile_data": {
+        "membership_number": "1011389",
+        "birth_year": 1990,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "California South",
+        "national_rank": "27"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Pre-Solstice Open",
+          "date": "2017-06-11",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Jose Gutierrez",
+          "body_weight_kg": "82.26",
+          "snatch_1": "87",
+          "snatch_2": "-91",
+          "snatch_3": "92",
+          "cj_1": "105",
+          "cj_2": "110",
+          "cj_3": "-113",
+          "best_snatch": "92",
+          "best_cj": "110",
+          "total": "202"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Pre-Solstice Open",
+            "date": "2017-06-11",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Jose Gutierrez",
+            "body_weight_kg": "82.26",
+            "snatch_1": "87",
+            "snatch_2": "-91",
+            "snatch_3": "92",
+            "cj_1": "105",
+            "cj_2": "110",
+            "cj_3": "-113",
+            "best_snatch": "92",
+            "best_cj": "110",
+            "total": "202"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNi0xMSIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "27",
+            "athlete_name": "Jose Gutierrez",
+            "total": "202",
+            "gender": "M",
+            "age": "27",
+            "club_name": "-",
+            "membership_number": "1011389",
+            "wso": "California South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

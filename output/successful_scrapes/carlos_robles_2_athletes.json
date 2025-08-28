@@ -1,0 +1,294 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T19:01:53.726Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Carlos Robles",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 5,
+    "total_reverse_lookups": 5,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 30407163
+  },
+  "data": [
+    {
+      "internal_id": 10330,
+      "athlete_name": "Carlos Robles",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/10330",
+      "contaminated_lifter_id": 40950,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T19:01:37.831Z",
+      "profile_data": {
+        "membership_number": "1040874",
+        "birth_year": 1983,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Mountain South",
+        "national_rank": "2"
+      },
+      "competition_history": [
+        {
+          "meet_name": "MWL 90",
+          "date": "2021-07-17",
+          "division": "Men's Masters (35-39) 89kg",
+          "lifter_name": "Carlos Robles",
+          "body_weight_kg": "87.74",
+          "snatch_1": "-71",
+          "snatch_2": "71",
+          "snatch_3": "-73",
+          "cj_1": "104",
+          "cj_2": "-108",
+          "cj_3": "108",
+          "best_snatch": "71",
+          "best_cj": "108",
+          "total": "179"
+        },
+        {
+          "meet_name": "Nike 2019 American Open Series 2",
+          "date": "2019-07-28",
+          "division": "Men's Masters (35-39) 89kg",
+          "lifter_name": "Carlos Robles",
+          "body_weight_kg": "87.3",
+          "snatch_1": "73",
+          "snatch_2": "76",
+          "snatch_3": "-79",
+          "cj_1": "100",
+          "cj_2": "103",
+          "cj_3": "-107",
+          "best_snatch": "76",
+          "best_cj": "103",
+          "total": "179"
+        },
+        {
+          "meet_name": "The Miller Gym 5th Anniversary Invite",
+          "date": "2019-04-20",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Carlos Robles",
+          "body_weight_kg": "87.2",
+          "snatch_1": "70",
+          "snatch_2": "73",
+          "snatch_3": "75",
+          "cj_1": "100",
+          "cj_2": "104",
+          "cj_3": "-110",
+          "best_snatch": "75",
+          "best_cj": "104",
+          "total": "179"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "MWL 90",
+            "date": "2021-07-17",
+            "division": "Men's Masters (35-39) 89kg",
+            "lifter_name": "Carlos Robles",
+            "body_weight_kg": "87.74",
+            "snatch_1": "-71",
+            "snatch_2": "71",
+            "snatch_3": "-73",
+            "cj_1": "104",
+            "cj_2": "-108",
+            "cj_3": "108",
+            "best_snatch": "71",
+            "best_cj": "108",
+            "total": "179"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNy0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNy0xNyIsIndlaWdodF9jbGFzcyI6MTA2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Carlos Robles",
+            "total": "179",
+            "gender": "M",
+            "age": "38",
+            "club_name": "-",
+            "membership_number": "1040874",
+            "wso": "Mountain South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Nike 2019 American Open Series 2",
+            "date": "2019-07-28",
+            "division": "Men's Masters (35-39) 89kg",
+            "lifter_name": "Carlos Robles",
+            "body_weight_kg": "87.3",
+            "snatch_1": "73",
+            "snatch_2": "76",
+            "snatch_3": "-79",
+            "cj_1": "100",
+            "cj_2": "103",
+            "cj_3": "-107",
+            "best_snatch": "76",
+            "best_cj": "103",
+            "total": "179"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0yOCIsIndlaWdodF9jbGFzcyI6MTA2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Carlos Robles",
+            "total": "179",
+            "gender": "M",
+            "age": "36",
+            "club_name": "-",
+            "membership_number": "1040874",
+            "wso": "Mountain South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The Miller Gym 5th Anniversary Invite",
+            "date": "2019-04-20",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Carlos Robles",
+            "body_weight_kg": "87.2",
+            "snatch_1": "70",
+            "snatch_2": "73",
+            "snatch_3": "75",
+            "cj_1": "100",
+            "cj_2": "104",
+            "cj_3": "-110",
+            "best_snatch": "75",
+            "best_cj": "104",
+            "total": "179"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0yMCIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "17",
+            "athlete_name": "Carlos Robles",
+            "total": "179",
+            "gender": "M",
+            "age": "36",
+            "club_name": "-",
+            "membership_number": "1040874",
+            "wso": "Mountain South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 31841,
+      "athlete_name": "Carlos Robles",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/31841",
+      "contaminated_lifter_id": 40950,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T19:01:53.724Z",
+      "profile_data": {
+        "membership_number": "1045979",
+        "birth_year": 1994,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "California North Central",
+        "national_rank": "24"
+      },
+      "competition_history": [
+        {
+          "meet_name": "NorCal Weightlifting Meet",
+          "date": "2020-02-22",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Carlos Robles",
+          "body_weight_kg": "85.9",
+          "snatch_1": "-68",
+          "snatch_2": "69",
+          "snatch_3": "-71",
+          "cj_1": "90",
+          "cj_2": "93",
+          "cj_3": "-96",
+          "best_snatch": "69",
+          "best_cj": "93",
+          "total": "162"
+        },
+        {
+          "meet_name": "2019 Hawaii State Championships",
+          "date": "2019-10-19",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Carlos Robles",
+          "body_weight_kg": "86.35",
+          "snatch_1": "62",
+          "snatch_2": "65",
+          "snatch_3": "68",
+          "cj_1": "83",
+          "cj_2": "87",
+          "cj_3": "91",
+          "best_snatch": "68",
+          "best_cj": "91",
+          "total": "159"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "NorCal Weightlifting Meet",
+            "date": "2020-02-22",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Carlos Robles",
+            "body_weight_kg": "85.9",
+            "snatch_1": "-68",
+            "snatch_2": "69",
+            "snatch_3": "-71",
+            "cj_1": "90",
+            "cj_2": "93",
+            "cj_3": "-96",
+            "best_snatch": "69",
+            "best_cj": "93",
+            "total": "162"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMi0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMi0yMiIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "24",
+            "athlete_name": "Carlos Robles",
+            "total": "162",
+            "gender": "M",
+            "age": "26",
+            "club_name": "-",
+            "membership_number": "1045979",
+            "wso": "California North Central"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2019 Hawaii State Championships",
+            "date": "2019-10-19",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Carlos Robles",
+            "body_weight_kg": "86.35",
+            "snatch_1": "62",
+            "snatch_2": "65",
+            "snatch_3": "68",
+            "cj_1": "83",
+            "cj_2": "87",
+            "cj_3": "91",
+            "best_snatch": "68",
+            "best_cj": "91",
+            "total": "159"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMC0xOSIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "30",
+            "athlete_name": "Carlos Robles",
+            "total": "159",
+            "gender": "M",
+            "age": "25",
+            "club_name": "-",
+            "membership_number": "1045979",
+            "wso": "California North Central"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

@@ -1,0 +1,268 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T04:07:11.426Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Amanda Jordan",
+    "internal_ids_processed": 3,
+    "successful_scrapes": 3,
+    "failed_scrapes": 0,
+    "total_competitions_found": 4,
+    "total_reverse_lookups": 4,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 11701520
+  },
+  "data": [
+    {
+      "internal_id": 17592,
+      "athlete_name": "Amanda Jordan",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/17592",
+      "contaminated_lifter_id": 27930,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T04:06:51.996Z",
+      "profile_data": {
+        "membership_number": "1020985",
+        "birth_year": 1987,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "DMV",
+        "national_rank": "30"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2019 NOVA OPEN",
+          "date": "2019-11-03",
+          "division": "Open Women's 71kg",
+          "lifter_name": "Amanda Jordan",
+          "body_weight_kg": "68.13",
+          "snatch_1": "48",
+          "snatch_2": "51",
+          "snatch_3": "-54",
+          "cj_1": "63",
+          "cj_2": "66",
+          "cj_3": "-69",
+          "best_snatch": "51",
+          "best_cj": "66",
+          "total": "117"
+        },
+        {
+          "meet_name": "Tommy Kono Invitational",
+          "date": "2017-08-13",
+          "division": "Open Women's 75 kg",
+          "lifter_name": "Amanda Jordan",
+          "body_weight_kg": "73.13",
+          "snatch_1": "53",
+          "snatch_2": "55",
+          "snatch_3": "-59",
+          "cj_1": "70",
+          "cj_2": "73",
+          "cj_3": "76",
+          "best_snatch": "55",
+          "best_cj": "76",
+          "total": "131"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2019 NOVA OPEN",
+            "date": "2019-11-03",
+            "division": "Open Women's 71kg",
+            "lifter_name": "Amanda Jordan",
+            "body_weight_kg": "68.13",
+            "snatch_1": "48",
+            "snatch_2": "51",
+            "snatch_3": "-54",
+            "cj_1": "63",
+            "cj_2": "66",
+            "cj_3": "-69",
+            "best_snatch": "51",
+            "best_cj": "66",
+            "total": "117"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0wMyIsIndlaWdodF9jbGFzcyI6OTZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "30",
+            "athlete_name": "Amanda Jordan",
+            "total": "117",
+            "gender": "F",
+            "age": "32",
+            "club_name": "-",
+            "membership_number": "1020985",
+            "wso": "DMV"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Tommy Kono Invitational",
+            "date": "2017-08-13",
+            "division": "Open Women's 75 kg",
+            "lifter_name": "Amanda Jordan",
+            "body_weight_kg": "73.13",
+            "snatch_1": "53",
+            "snatch_2": "55",
+            "snatch_3": "-59",
+            "cj_1": "70",
+            "cj_2": "73",
+            "cj_3": "76",
+            "best_snatch": "55",
+            "best_cj": "76",
+            "total": "131"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wOC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wOC0xMyIsIndlaWdodF9jbGFzcyI6MzY3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "Amanda Jordan",
+            "total": "131",
+            "gender": "F",
+            "age": "30",
+            "club_name": "-",
+            "membership_number": "1020985",
+            "wso": "DMV"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 19031,
+      "athlete_name": "Amanda Jordan",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/19031",
+      "contaminated_lifter_id": 27930,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T04:07:01.746Z",
+      "profile_data": {
+        "membership_number": "199117",
+        "birth_year": 1988,
+        "gender": "F",
+        "club_name": "TEAM HOUSTON",
+        "wso": "Texas-Oklahoma",
+        "national_rank": "8"
+      },
+      "competition_history": [
+        {
+          "meet_name": "The Robles Develpmental Meet",
+          "date": "2014-11-22",
+          "division": "Open Women's 58 kg",
+          "lifter_name": "Amanda Jordan",
+          "body_weight_kg": "57",
+          "snatch_1": "42",
+          "snatch_2": "45",
+          "snatch_3": "47",
+          "cj_1": "60",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "47",
+          "best_cj": "60",
+          "total": "107"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "The Robles Develpmental Meet",
+            "date": "2014-11-22",
+            "division": "Open Women's 58 kg",
+            "lifter_name": "Amanda Jordan",
+            "body_weight_kg": "57",
+            "snatch_1": "42",
+            "snatch_2": "45",
+            "snatch_3": "47",
+            "cj_1": "60",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "47",
+            "best_cj": "60",
+            "total": "107"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMS0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMS0yMiIsIndlaWdodF9jbGFzcyI6MzY0fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "8",
+            "athlete_name": "Amanda Jordan",
+            "total": "107",
+            "gender": "F",
+            "age": "26",
+            "club_name": "TEAM HOUSTON",
+            "membership_number": "199117",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 21177,
+      "athlete_name": "Amanda Jordan",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/21177",
+      "contaminated_lifter_id": 27930,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T04:07:11.423Z",
+      "profile_data": {
+        "membership_number": "1018129",
+        "birth_year": 1989,
+        "gender": "F",
+        "club_name": "UPROAR WEIGHTLIFTING",
+        "wso": "Texas-Oklahoma",
+        "national_rank": "24"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2017 Houston Weightlifting Championships",
+          "date": "2017-04-30",
+          "division": "Open Women's 75 kg",
+          "lifter_name": "Amanda Jordan",
+          "body_weight_kg": "70.1",
+          "snatch_1": "35",
+          "snatch_2": "37",
+          "snatch_3": "40",
+          "cj_1": "-50",
+          "cj_2": "50",
+          "cj_3": "-52",
+          "best_snatch": "40",
+          "best_cj": "50",
+          "total": "90"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2017 Houston Weightlifting Championships",
+            "date": "2017-04-30",
+            "division": "Open Women's 75 kg",
+            "lifter_name": "Amanda Jordan",
+            "body_weight_kg": "70.1",
+            "snatch_1": "35",
+            "snatch_2": "37",
+            "snatch_3": "40",
+            "cj_1": "-50",
+            "cj_2": "50",
+            "cj_3": "-52",
+            "best_snatch": "40",
+            "best_cj": "50",
+            "total": "90"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNC0zMCIsIndlaWdodF9jbGFzcyI6MzY3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "24",
+            "athlete_name": "Amanda Jordan",
+            "total": "90",
+            "gender": "F",
+            "age": "28",
+            "club_name": "UPROAR WEIGHTLIFTING",
+            "membership_number": "1018129",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

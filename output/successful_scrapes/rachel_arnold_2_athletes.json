@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T06:22:52.426Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Rachel Arnold",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 106242520
+  },
+  "data": [
+    {
+      "internal_id": 27332,
+      "athlete_name": "Rachel Arnold",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/27332",
+      "contaminated_lifter_id": 25876,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T06:22:39.465Z",
+      "profile_data": {
+        "membership_number": "1011822",
+        "birth_year": 1992,
+        "gender": "F",
+        "club_name": "RELENTLESS WEIGHTLIFTING CLUB",
+        "wso": "Mountain South",
+        "national_rank": "9"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Iron Athlete September Open",
+          "date": "2016-09-17",
+          "division": "Open Women's 69 kg",
+          "lifter_name": "Rachel Arnold",
+          "body_weight_kg": "64.15",
+          "snatch_1": "58",
+          "snatch_2": "62",
+          "snatch_3": "64",
+          "cj_1": "80",
+          "cj_2": "85",
+          "cj_3": "-87",
+          "best_snatch": "64",
+          "best_cj": "85",
+          "total": "149"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Iron Athlete September Open",
+            "date": "2016-09-17",
+            "division": "Open Women's 69 kg",
+            "lifter_name": "Rachel Arnold",
+            "body_weight_kg": "64.15",
+            "snatch_1": "58",
+            "snatch_2": "62",
+            "snatch_3": "64",
+            "cj_1": "80",
+            "cj_2": "85",
+            "cj_3": "-87",
+            "best_snatch": "64",
+            "best_cj": "85",
+            "total": "149"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOS0xNyIsIndlaWdodF9jbGFzcyI6MzY2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "Rachel Arnold",
+            "total": "149",
+            "gender": "F",
+            "age": "24",
+            "club_name": "RELENTLESS WEIGHTLIFTING CLUB",
+            "membership_number": "1011822",
+            "wso": "Mountain South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 52423,
+      "athlete_name": "Rachel Arnold",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/52423",
+      "contaminated_lifter_id": 25876,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T06:22:52.423Z",
+      "profile_data": {
+        "membership_number": "1059734",
+        "birth_year": 1995,
+        "gender": "F",
+        "club_name": "RVA Weightlifting",
+        "wso": "DMV",
+        "national_rank": "22"
+      },
+      "competition_history": [
+        {
+          "meet_name": "RVA Open 2022",
+          "date": "2022-01-15",
+          "division": "Open Women's 81kg",
+          "lifter_name": "Rachel Arnold",
+          "body_weight_kg": "78.7",
+          "snatch_1": "-36",
+          "snatch_2": "36",
+          "snatch_3": "-38",
+          "cj_1": "46",
+          "cj_2": "48",
+          "cj_3": "50",
+          "best_snatch": "36",
+          "best_cj": "50",
+          "total": "86"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "RVA Open 2022",
+            "date": "2022-01-15",
+            "division": "Open Women's 81kg",
+            "lifter_name": "Rachel Arnold",
+            "body_weight_kg": "78.7",
+            "snatch_1": "-36",
+            "snatch_2": "36",
+            "snatch_3": "-38",
+            "cj_1": "46",
+            "cj_2": "48",
+            "cj_3": "50",
+            "best_snatch": "36",
+            "best_cj": "50",
+            "total": "86"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMS0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMS0xNSIsIndlaWdodF9jbGFzcyI6OTh9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "22",
+            "athlete_name": "Rachel Arnold",
+            "total": "86",
+            "gender": "F",
+            "age": "27",
+            "club_name": "RVA Weightlifting",
+            "membership_number": "1059734",
+            "wso": "DMV"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

@@ -1,0 +1,498 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T10:18:27.503Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Christopher Brown",
+    "internal_ids_processed": 4,
+    "successful_scrapes": 2,
+    "failed_scrapes": 2,
+    "total_competitions_found": 9,
+    "total_reverse_lookups": 9,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 1337147
+  },
+  "data": [
+    {
+      "internal_id": 8621,
+      "athlete_name": "Christopher Brown",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/8621",
+      "contaminated_lifter_id": 1950,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T11:12:21.194Z",
+      "profile_data": {
+        "membership_number": "1033785",
+        "birth_year": 1981,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Texas-Oklahoma",
+        "national_rank": "11"
+      },
+      "competition_history": [
+        {
+          "meet_name": "North Dallas Winter Slam & Jam",
+          "date": "2018-12-15",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Christopher Brown",
+          "body_weight_kg": "87.1",
+          "snatch_1": "95",
+          "snatch_2": "-98",
+          "snatch_3": "100",
+          "cj_1": "120",
+          "cj_2": "125",
+          "cj_3": "130",
+          "best_snatch": "100",
+          "best_cj": "130",
+          "total": "230"
+        },
+        {
+          "meet_name": "2018 Copperhead",
+          "date": "2018-10-07",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Christopher Brown",
+          "body_weight_kg": "79.84",
+          "snatch_1": "92",
+          "snatch_2": "96",
+          "snatch_3": "-100",
+          "cj_1": "118",
+          "cj_2": "124",
+          "cj_3": "-130",
+          "best_snatch": "96",
+          "best_cj": "124",
+          "total": "220"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "North Dallas Winter Slam & Jam",
+            "date": "2018-12-15",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Christopher Brown",
+            "body_weight_kg": "87.1",
+            "snatch_1": "95",
+            "snatch_2": "-98",
+            "snatch_3": "100",
+            "cj_1": "120",
+            "cj_2": "125",
+            "cj_3": "130",
+            "best_snatch": "100",
+            "best_cj": "130",
+            "total": "230"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0xNSIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "11",
+            "athlete_name": "Christopher Brown",
+            "total": "230",
+            "gender": "M",
+            "age": "37",
+            "club_name": "-",
+            "membership_number": "1033785",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2018 Copperhead",
+            "date": "2018-10-07",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Christopher Brown",
+            "body_weight_kg": "79.84",
+            "snatch_1": "92",
+            "snatch_2": "96",
+            "snatch_3": "-100",
+            "cj_1": "118",
+            "cj_2": "124",
+            "cj_3": "-130",
+            "best_snatch": "96",
+            "best_cj": "124",
+            "total": "220"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0wNyIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "Christopher Brown",
+            "total": "220",
+            "gender": "M",
+            "age": "37",
+            "club_name": "-",
+            "membership_number": "1033785",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 51244,
+      "athlete_name": "Christopher Brown",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/51244",
+      "contaminated_lifter_id": 1950,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T11:13:01.141Z",
+      "profile_data": {
+        "membership_number": "1058579",
+        "birth_year": 1994,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Florida",
+        "national_rank": "9"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Tampa Bay Spring Classic 6",
+          "date": "2023-04-01",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Christopher Brown",
+          "body_weight_kg": "89",
+          "snatch_1": "95",
+          "snatch_2": "102",
+          "snatch_3": "-108",
+          "cj_1": "130",
+          "cj_2": "135",
+          "cj_3": "140",
+          "best_snatch": "102",
+          "best_cj": "140",
+          "total": "242"
+        },
+        {
+          "meet_name": "Tampa Bay Holiday Classic 3 & KAC Fundraiser",
+          "date": "2022-12-17",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Christopher Brown",
+          "body_weight_kg": "87.2",
+          "snatch_1": "88",
+          "snatch_2": "93",
+          "snatch_3": "96",
+          "cj_1": "125",
+          "cj_2": "131",
+          "cj_3": "-132",
+          "best_snatch": "96",
+          "best_cj": "131",
+          "total": "227"
+        },
+        {
+          "meet_name": "Tampa Bay Spring Classic 5",
+          "date": "2022-03-26",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Christopher Brown",
+          "body_weight_kg": "87.6",
+          "snatch_1": "-85",
+          "snatch_2": "85",
+          "snatch_3": "89",
+          "cj_1": "110",
+          "cj_2": "116",
+          "cj_3": "-123",
+          "best_snatch": "89",
+          "best_cj": "116",
+          "total": "205"
+        },
+        {
+          "meet_name": "Tampa Bay Holiday Classic 2 & Keep Pulling Grand Prix Finals",
+          "date": "2021-12-18",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Christopher Brown",
+          "body_weight_kg": "87",
+          "snatch_1": "84",
+          "snatch_2": "87",
+          "snatch_3": "-90",
+          "cj_1": "108",
+          "cj_2": "115",
+          "cj_3": "122",
+          "best_snatch": "87",
+          "best_cj": "122",
+          "total": "209"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Tampa Bay Spring Classic 6",
+            "date": "2023-04-01",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Christopher Brown",
+            "body_weight_kg": "89",
+            "snatch_1": "95",
+            "snatch_2": "102",
+            "snatch_3": "-108",
+            "cj_1": "130",
+            "cj_2": "135",
+            "cj_3": "140",
+            "best_snatch": "102",
+            "best_cj": "140",
+            "total": "242"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0wMSIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "Christopher Brown",
+            "total": "242",
+            "gender": "M",
+            "age": "29",
+            "club_name": "-",
+            "membership_number": "1058579",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Tampa Bay Holiday Classic 3 & KAC Fundraiser",
+            "date": "2022-12-17",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Christopher Brown",
+            "body_weight_kg": "87.2",
+            "snatch_1": "88",
+            "snatch_2": "93",
+            "snatch_3": "96",
+            "cj_1": "125",
+            "cj_2": "131",
+            "cj_3": "-132",
+            "best_snatch": "96",
+            "best_cj": "131",
+            "total": "227"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMi0xNyIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "Christopher Brown",
+            "total": "227",
+            "gender": "M",
+            "age": "28",
+            "club_name": "-",
+            "membership_number": "1058579",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Tampa Bay Spring Classic 5",
+            "date": "2022-03-26",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Christopher Brown",
+            "body_weight_kg": "87.6",
+            "snatch_1": "-85",
+            "snatch_2": "85",
+            "snatch_3": "89",
+            "cj_1": "110",
+            "cj_2": "116",
+            "cj_3": "-123",
+            "best_snatch": "89",
+            "best_cj": "116",
+            "total": "205"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMy0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMy0yNiIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "29",
+            "athlete_name": "Christopher Brown",
+            "total": "205",
+            "gender": "M",
+            "age": "28",
+            "club_name": "-",
+            "membership_number": "1058579",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Tampa Bay Holiday Classic 2 & Keep Pulling Grand Prix Finals",
+            "date": "2021-12-18",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Christopher Brown",
+            "body_weight_kg": "87",
+            "snatch_1": "84",
+            "snatch_2": "87",
+            "snatch_3": "-90",
+            "cj_1": "108",
+            "cj_2": "115",
+            "cj_3": "122",
+            "best_snatch": "87",
+            "best_cj": "122",
+            "total": "209"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMi0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMi0xOCIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Christopher Brown",
+            "total": "209",
+            "gender": "M",
+            "age": "27",
+            "club_name": "-",
+            "membership_number": "1058579",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 1625,
+      "athlete_name": "Christopher Brown",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/1625",
+      "contaminated_lifter_id": 1950,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-27T10:17:44.980Z",
+      "profile_data": {
+        "membership_number": "142",
+        "birth_year": 1966,
+        "gender": "M",
+        "club_name": "WINDY CITY WLC",
+        "wso": "Illinois",
+        "national_rank": "20"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2012 American Masters Weightlifting Championshsips",
+          "date": "2012-11-11",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Christopher Brown",
+          "body_weight_kg": "76.3",
+          "snatch_1": "77",
+          "snatch_2": "-83",
+          "snatch_3": "-83",
+          "cj_1": "100",
+          "cj_2": "104",
+          "cj_3": "0",
+          "best_snatch": "77",
+          "best_cj": "104",
+          "total": "181"
+        },
+        {
+          "meet_name": "The Deuce",
+          "date": "2012-07-08",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Christopher Brown",
+          "body_weight_kg": "76.53",
+          "snatch_1": "0",
+          "snatch_2": "0",
+          "snatch_3": "0",
+          "cj_1": "102",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "0",
+          "best_cj": "102",
+          "total": "0"
+        },
+        {
+          "meet_name": "Illinois State Weightlifting Championships",
+          "date": "2012-04-28",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Christopher Brown",
+          "body_weight_kg": "76.5",
+          "snatch_1": "0",
+          "snatch_2": "0",
+          "snatch_3": "0",
+          "cj_1": "107",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "0",
+          "best_cj": "107",
+          "total": "0"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2012 American Masters Weightlifting Championshsips",
+            "date": "2012-11-11",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Christopher Brown",
+            "body_weight_kg": "76.3",
+            "snatch_1": "77",
+            "snatch_2": "-83",
+            "snatch_3": "-83",
+            "cj_1": "100",
+            "cj_2": "104",
+            "cj_3": "0",
+            "best_snatch": "77",
+            "best_cj": "104",
+            "total": "181"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0xMS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0xMS0xMSIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "20",
+            "athlete_name": "Christopher Brown",
+            "total": "181",
+            "gender": "M",
+            "age": "46",
+            "club_name": "WINDY CITY WLC",
+            "membership_number": "142",
+            "wso": "Illinois"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The Deuce",
+            "date": "2012-07-08",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Christopher Brown",
+            "body_weight_kg": "76.53",
+            "snatch_1": "0",
+            "snatch_2": "0",
+            "snatch_3": "0",
+            "cj_1": "102",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "0",
+            "best_cj": "102",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wNy0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wNy0wOCIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Illinois State Weightlifting Championships",
+            "date": "2012-04-28",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Christopher Brown",
+            "body_weight_kg": "76.5",
+            "snatch_1": "0",
+            "snatch_2": "0",
+            "snatch_3": "0",
+            "cj_1": "107",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "0",
+            "best_cj": "107",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wNC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wNC0yOCIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    },
+    {
+      "internal_id": 41699,
+      "athlete_name": "Christopher Brown",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/41699",
+      "contaminated_lifter_id": 1950,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-27T10:18:25.500Z",
+      "profile_data": null,
+      "competition_history": [],
+      "biographical_data_by_competition": [],
+      "scraping_successful": false,
+      "error": "Assignment to constant variable."
+    }
+  ]
+}

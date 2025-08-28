@@ -1,0 +1,286 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T06:22:11.438Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Jeffrey Bowers",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 5,
+    "total_reverse_lookups": 5,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 17437893
+  },
+  "data": [
+    {
+      "internal_id": 37641,
+      "athlete_name": "Jeffrey Bowers",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/37641",
+      "contaminated_lifter_id": 12801,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T17:25:33.076Z",
+      "profile_data": {
+        "membership_number": "194956",
+        "birth_year": 1998,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "California North Central",
+        "national_rank": "14"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2015 Hassle Free Spring Breaker",
+          "date": "2015-03-29",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Jeffrey Bowers",
+          "body_weight_kg": "74.65",
+          "snatch_1": "-92",
+          "snatch_2": "92",
+          "snatch_3": "96",
+          "cj_1": "116",
+          "cj_2": "121",
+          "cj_3": "125",
+          "best_snatch": "96",
+          "best_cj": "125",
+          "total": "221"
+        },
+        {
+          "meet_name": "PWA JR Champs MLK Open",
+          "date": "2015-01-18",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Jeffrey Bowers",
+          "body_weight_kg": "75.11",
+          "snatch_1": "89",
+          "snatch_2": "93",
+          "snatch_3": "-97",
+          "cj_1": "111",
+          "cj_2": "-117",
+          "cj_3": "-122",
+          "best_snatch": "93",
+          "best_cj": "111",
+          "total": "204"
+        },
+        {
+          "meet_name": "Hassle Free Record Breaker",
+          "date": "2014-12-21",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Jeffrey Bowers",
+          "body_weight_kg": "74.98",
+          "snatch_1": "87",
+          "snatch_2": "91",
+          "snatch_3": "95",
+          "cj_1": "107",
+          "cj_2": "112",
+          "cj_3": "117",
+          "best_snatch": "95",
+          "best_cj": "117",
+          "total": "212"
+        },
+        {
+          "meet_name": "2014 Max's Gym Open",
+          "date": "2014-10-12",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Jeffrey Bowers",
+          "body_weight_kg": "75.39",
+          "snatch_1": "80",
+          "snatch_2": "83",
+          "snatch_3": "85",
+          "cj_1": "100",
+          "cj_2": "102",
+          "cj_3": "102",
+          "best_snatch": "85",
+          "best_cj": "102",
+          "total": "187"
+        },
+        {
+          "meet_name": "Reno Open",
+          "date": "2014-04-05",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Jeffrey Bowers",
+          "body_weight_kg": "73.53",
+          "snatch_1": "70",
+          "snatch_2": "75",
+          "snatch_3": "80",
+          "cj_1": "90",
+          "cj_2": "95",
+          "cj_3": "-100",
+          "best_snatch": "80",
+          "best_cj": "95",
+          "total": "175"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2015 Hassle Free Spring Breaker",
+            "date": "2015-03-29",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Jeffrey Bowers",
+            "body_weight_kg": "74.65",
+            "snatch_1": "-92",
+            "snatch_2": "92",
+            "snatch_3": "96",
+            "cj_1": "116",
+            "cj_2": "121",
+            "cj_3": "125",
+            "best_snatch": "96",
+            "best_cj": "125",
+            "total": "221"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMy0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMy0yOSIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "14",
+            "athlete_name": "Jeffrey Bowers",
+            "total": "221",
+            "gender": "M",
+            "age": "17",
+            "club_name": "-",
+            "membership_number": "194956",
+            "wso": "California North Central"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "PWA JR Champs MLK Open",
+            "date": "2015-01-18",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Jeffrey Bowers",
+            "body_weight_kg": "75.11",
+            "snatch_1": "89",
+            "snatch_2": "93",
+            "snatch_3": "-97",
+            "cj_1": "111",
+            "cj_2": "-117",
+            "cj_3": "-122",
+            "best_snatch": "93",
+            "best_cj": "111",
+            "total": "204"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMS0xOCIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "20",
+            "athlete_name": "Jeffrey Bowers",
+            "total": "204",
+            "gender": "M",
+            "age": "17",
+            "club_name": "-",
+            "membership_number": "194956",
+            "wso": "California North Central"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Hassle Free Record Breaker",
+            "date": "2014-12-21",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Jeffrey Bowers",
+            "body_weight_kg": "74.98",
+            "snatch_1": "87",
+            "snatch_2": "91",
+            "snatch_3": "95",
+            "cj_1": "107",
+            "cj_2": "112",
+            "cj_3": "117",
+            "best_snatch": "95",
+            "best_cj": "117",
+            "total": "212"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMi0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMi0yMSIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "Jeffrey Bowers",
+            "total": "212",
+            "gender": "M",
+            "age": "16",
+            "club_name": "-",
+            "membership_number": "194956",
+            "wso": "California North Central"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2014 Max's Gym Open",
+            "date": "2014-10-12",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Jeffrey Bowers",
+            "body_weight_kg": "75.39",
+            "snatch_1": "80",
+            "snatch_2": "83",
+            "snatch_3": "85",
+            "cj_1": "100",
+            "cj_2": "102",
+            "cj_3": "102",
+            "best_snatch": "85",
+            "best_cj": "102",
+            "total": "187"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMC0xMiIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "21",
+            "athlete_name": "Jeffrey Bowers",
+            "total": "187",
+            "gender": "M",
+            "age": "16",
+            "club_name": "-",
+            "membership_number": "194956",
+            "wso": "California North Central"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Reno Open",
+            "date": "2014-04-05",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Jeffrey Bowers",
+            "body_weight_kg": "73.53",
+            "snatch_1": "70",
+            "snatch_2": "75",
+            "snatch_3": "80",
+            "cj_1": "90",
+            "cj_2": "95",
+            "cj_3": "-100",
+            "best_snatch": "80",
+            "best_cj": "95",
+            "total": "175"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNC0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNC0wNSIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "14",
+            "athlete_name": "Jeffrey Bowers",
+            "total": "175",
+            "gender": "M",
+            "age": "16",
+            "club_name": "-",
+            "membership_number": "194956",
+            "wso": "California North Central"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 29663,
+      "athlete_name": "Jeffrey Bowers",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/29663",
+      "contaminated_lifter_id": 12801,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-27T06:22:09.436Z",
+      "profile_data": null,
+      "competition_history": [],
+      "biographical_data_by_competition": [],
+      "scraping_successful": false,
+      "error": "Assignment to constant variable."
+    }
+  ]
+}

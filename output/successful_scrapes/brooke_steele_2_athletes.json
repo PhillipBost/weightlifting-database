@@ -1,0 +1,247 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T13:43:58.436Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Brooke Steele",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 4,
+    "total_reverse_lookups": 4,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 46308530
+  },
+  "data": [
+    {
+      "internal_id": 42601,
+      "athlete_name": "Brooke Steele",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/42601",
+      "contaminated_lifter_id": 41429,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T13:43:48.179Z",
+      "profile_data": {
+        "membership_number": "1041063",
+        "birth_year": 2002,
+        "gender": "F",
+        "club_name": "West Coast Weightlifting",
+        "wso": "California South",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Winter Classic Weightlifting Meet",
+          "date": "2019-12-15",
+          "division": "Women's 16-17 Age Group 76kg",
+          "lifter_name": "Brooke Steele",
+          "body_weight_kg": "75.4",
+          "snatch_1": "57",
+          "snatch_2": "60",
+          "snatch_3": "-63",
+          "cj_1": "70",
+          "cj_2": "74",
+          "cj_3": "-77",
+          "best_snatch": "60",
+          "best_cj": "74",
+          "total": "134"
+        },
+        {
+          "meet_name": "Summer Classic",
+          "date": "2019-07-21",
+          "division": "Women's 16-17 Age Group 76kg",
+          "lifter_name": "Brooke Steele",
+          "body_weight_kg": "75.66",
+          "snatch_1": "52",
+          "snatch_2": "55",
+          "snatch_3": "-58",
+          "cj_1": "63",
+          "cj_2": "67",
+          "cj_3": "70",
+          "best_snatch": "55",
+          "best_cj": "70",
+          "total": "125"
+        },
+        {
+          "meet_name": "NATIONAL YOUTH QUALIFIER",
+          "date": "2019-05-18",
+          "division": "Women's 16-17 Age Group 76kg",
+          "lifter_name": "Brooke Steele",
+          "body_weight_kg": "76",
+          "snatch_1": "-47",
+          "snatch_2": "47",
+          "snatch_3": "-49",
+          "cj_1": "-70",
+          "cj_2": "-70",
+          "cj_3": "70",
+          "best_snatch": "47",
+          "best_cj": "70",
+          "total": "117"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Winter Classic Weightlifting Meet",
+            "date": "2019-12-15",
+            "division": "Women's 16-17 Age Group 76kg",
+            "lifter_name": "Brooke Steele",
+            "body_weight_kg": "75.4",
+            "snatch_1": "57",
+            "snatch_2": "60",
+            "snatch_3": "-63",
+            "cj_1": "70",
+            "cj_2": "74",
+            "cj_3": "-77",
+            "best_snatch": "60",
+            "best_cj": "74",
+            "total": "134"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMi0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMi0xNSIsIndlaWdodF9jbGFzcyI6MTh9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Brooke Steele",
+            "total": "134",
+            "gender": "F",
+            "age": "17",
+            "club_name": "West Coast Weightlifting",
+            "membership_number": "1041063",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Summer Classic",
+            "date": "2019-07-21",
+            "division": "Women's 16-17 Age Group 76kg",
+            "lifter_name": "Brooke Steele",
+            "body_weight_kg": "75.66",
+            "snatch_1": "52",
+            "snatch_2": "55",
+            "snatch_3": "-58",
+            "cj_1": "63",
+            "cj_2": "67",
+            "cj_3": "70",
+            "best_snatch": "55",
+            "best_cj": "70",
+            "total": "125"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0yMSIsIndlaWdodF9jbGFzcyI6MTh9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Brooke Steele",
+            "total": "125",
+            "gender": "F",
+            "age": "17",
+            "club_name": "West Coast Weightlifting",
+            "membership_number": "1041063",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "NATIONAL YOUTH QUALIFIER",
+            "date": "2019-05-18",
+            "division": "Women's 16-17 Age Group 76kg",
+            "lifter_name": "Brooke Steele",
+            "body_weight_kg": "76",
+            "snatch_1": "-47",
+            "snatch_2": "47",
+            "snatch_3": "-49",
+            "cj_1": "-70",
+            "cj_2": "-70",
+            "cj_3": "70",
+            "best_snatch": "47",
+            "best_cj": "70",
+            "total": "117"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0xOCIsIndlaWdodF9jbGFzcyI6MTh9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Brooke Steele",
+            "total": "117",
+            "gender": "F",
+            "age": "17",
+            "club_name": "West Coast Weightlifting",
+            "membership_number": "1041063",
+            "wso": "California South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 66871,
+      "athlete_name": "Brooke Steele",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/66871",
+      "contaminated_lifter_id": 41429,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T13:43:58.434Z",
+      "profile_data": {
+        "membership_number": "1082276",
+        "birth_year": 1996,
+        "gender": "F",
+        "club_name": "Unaffiliated",
+        "wso": "Florida",
+        "national_rank": "28"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Iron Knightmare",
+          "date": "2025-07-26",
+          "division": "Open Women's 86+kg",
+          "lifter_name": "Brooke Steele",
+          "body_weight_kg": "101",
+          "snatch_1": "25",
+          "snatch_2": "28",
+          "snatch_3": "31",
+          "cj_1": "52",
+          "cj_2": "54",
+          "cj_3": "55",
+          "best_snatch": "31",
+          "best_cj": "55",
+          "total": "86"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Iron Knightmare",
+            "date": "2025-07-26",
+            "division": "Open Women's 86+kg",
+            "lifter_name": "Brooke Steele",
+            "body_weight_kg": "101",
+            "snatch_1": "25",
+            "snatch_2": "28",
+            "snatch_3": "31",
+            "cj_1": "52",
+            "cj_2": "54",
+            "cj_3": "55",
+            "best_snatch": "31",
+            "best_cj": "55",
+            "total": "86"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNy0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNy0yNiIsIndlaWdodF9jbGFzcyI6NzAyfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "28",
+            "athlete_name": "Brooke Steele",
+            "total": "86",
+            "gender": "F",
+            "age": "29",
+            "club_name": "Unaffiliated",
+            "membership_number": "1082276",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

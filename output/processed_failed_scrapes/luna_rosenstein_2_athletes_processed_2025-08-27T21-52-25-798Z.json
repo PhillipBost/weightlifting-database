@@ -1,0 +1,417 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T00:02:05.052Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Luna Rosenstein",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 8,
+    "total_reverse_lookups": 8,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 48418489
+  },
+  "data": [
+    {
+      "internal_id": 42464,
+      "athlete_name": "Luna Rosenstein",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/42464",
+      "contaminated_lifter_id": 18405,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-27T00:01:49.152Z",
+      "profile_data": {
+        "membership_number": "1004336",
+        "birth_year": 2002,
+        "gender": "F",
+        "club_name": "MYLES AHEAD WEIGHTLIFTING",
+        "wso": "California North Central",
+        "national_rank": "3"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2019 CTS Wine Country Classic",
+          "date": "2019-05-04",
+          "division": "Women's 16-17 Age Group +81kg",
+          "lifter_name": "Luna Rosenstein",
+          "body_weight_kg": "81.77",
+          "snatch_1": "41",
+          "snatch_2": "44",
+          "snatch_3": "47",
+          "cj_1": "56",
+          "cj_2": "59",
+          "cj_3": "-62",
+          "best_snatch": "47",
+          "best_cj": "59",
+          "total": "106"
+        },
+        {
+          "meet_name": "2018 Nor Cal Open",
+          "date": "2018-04-14",
+          "division": "Women's 16-17 Age Group +75 kg",
+          "lifter_name": "Luna Rosenstein",
+          "body_weight_kg": "78.05",
+          "snatch_1": "42",
+          "snatch_2": "44",
+          "snatch_3": "46",
+          "cj_1": "50",
+          "cj_2": "53",
+          "cj_3": "57",
+          "best_snatch": "46",
+          "best_cj": "57",
+          "total": "103"
+        },
+        {
+          "meet_name": "2017 USA Weightlifting National Youth Championships",
+          "date": "2017-06-25",
+          "division": "Women's 14-15 Age Group +69 kg",
+          "lifter_name": "Luna Rosenstein",
+          "body_weight_kg": "79.58",
+          "snatch_1": "41",
+          "snatch_2": "43",
+          "snatch_3": "45",
+          "cj_1": "50",
+          "cj_2": "53",
+          "cj_3": "55",
+          "best_snatch": "45",
+          "best_cj": "55",
+          "total": "100"
+        },
+        {
+          "meet_name": "2017 CTS Wine Country Classic",
+          "date": "2017-05-20",
+          "division": "Women's 14-15 Age Group +69 kg",
+          "lifter_name": "Luna Rosenstein",
+          "body_weight_kg": "80.29",
+          "snatch_1": "41",
+          "snatch_2": "-43",
+          "snatch_3": "43",
+          "cj_1": "52",
+          "cj_2": "55",
+          "cj_3": "58",
+          "best_snatch": "43",
+          "best_cj": "58",
+          "total": "101"
+        },
+        {
+          "meet_name": "Myles Ahead Cup",
+          "date": "2017-01-14",
+          "division": "Women's 14-15 Age Group +69 kg",
+          "lifter_name": "Luna Rosenstein",
+          "body_weight_kg": "79.05",
+          "snatch_1": "38",
+          "snatch_2": "40",
+          "snatch_3": "42",
+          "cj_1": "48",
+          "cj_2": "51",
+          "cj_3": "54",
+          "best_snatch": "42",
+          "best_cj": "54",
+          "total": "96"
+        },
+        {
+          "meet_name": "East County Open",
+          "date": "2016-03-12",
+          "division": "Women's 14-15 Age Group +69 kg",
+          "lifter_name": "Luna Rosenstein",
+          "body_weight_kg": "74.2",
+          "snatch_1": "30",
+          "snatch_2": "33",
+          "snatch_3": "-35",
+          "cj_1": "0",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "33",
+          "best_cj": "0",
+          "total": "0"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2019 CTS Wine Country Classic",
+            "date": "2019-05-04",
+            "division": "Women's 16-17 Age Group +81kg",
+            "lifter_name": "Luna Rosenstein",
+            "body_weight_kg": "81.77",
+            "snatch_1": "41",
+            "snatch_2": "44",
+            "snatch_3": "47",
+            "cj_1": "56",
+            "cj_2": "59",
+            "cj_3": "-62",
+            "best_snatch": "47",
+            "best_cj": "59",
+            "total": "106"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0wNCIsIndlaWdodF9jbGFzcyI6MjB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Luna Rosenstein",
+            "total": "106",
+            "gender": "F",
+            "age": "17",
+            "club_name": "MYLES AHEAD WEIGHTLIFTING",
+            "membership_number": "1004336",
+            "wso": "California North Central"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2018 Nor Cal Open",
+            "date": "2018-04-14",
+            "division": "Women's 16-17 Age Group +75 kg",
+            "lifter_name": "Luna Rosenstein",
+            "body_weight_kg": "78.05",
+            "snatch_1": "42",
+            "snatch_2": "44",
+            "snatch_3": "46",
+            "cj_1": "50",
+            "cj_2": "53",
+            "cj_3": "57",
+            "best_snatch": "46",
+            "best_cj": "57",
+            "total": "103"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNC0xNCIsIndlaWdodF9jbGFzcyI6MzM2fQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2017 USA Weightlifting National Youth Championships",
+            "date": "2017-06-25",
+            "division": "Women's 14-15 Age Group +69 kg",
+            "lifter_name": "Luna Rosenstein",
+            "body_weight_kg": "79.58",
+            "snatch_1": "41",
+            "snatch_2": "43",
+            "snatch_3": "45",
+            "cj_1": "50",
+            "cj_2": "53",
+            "cj_3": "55",
+            "best_snatch": "45",
+            "best_cj": "55",
+            "total": "100"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNi0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNi0yNSIsIndlaWdodF9jbGFzcyI6MzE5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "18",
+            "athlete_name": "Luna Rosenstein",
+            "total": "100",
+            "gender": "F",
+            "age": "15",
+            "club_name": "MYLES AHEAD WEIGHTLIFTING",
+            "membership_number": "1004336",
+            "wso": "California North Central"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2017 CTS Wine Country Classic",
+            "date": "2017-05-20",
+            "division": "Women's 14-15 Age Group +69 kg",
+            "lifter_name": "Luna Rosenstein",
+            "body_weight_kg": "80.29",
+            "snatch_1": "41",
+            "snatch_2": "-43",
+            "snatch_3": "43",
+            "cj_1": "52",
+            "cj_2": "55",
+            "cj_3": "58",
+            "best_snatch": "43",
+            "best_cj": "58",
+            "total": "101"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNS0yMCIsIndlaWdodF9jbGFzcyI6MzE5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Luna Rosenstein",
+            "total": "101",
+            "gender": "F",
+            "age": "15",
+            "club_name": "MYLES AHEAD WEIGHTLIFTING",
+            "membership_number": "1004336",
+            "wso": "California North Central"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Myles Ahead Cup",
+            "date": "2017-01-14",
+            "division": "Women's 14-15 Age Group +69 kg",
+            "lifter_name": "Luna Rosenstein",
+            "body_weight_kg": "79.05",
+            "snatch_1": "38",
+            "snatch_2": "40",
+            "snatch_3": "42",
+            "cj_1": "48",
+            "cj_2": "51",
+            "cj_3": "54",
+            "best_snatch": "42",
+            "best_cj": "54",
+            "total": "96"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMS0xNCIsIndlaWdodF9jbGFzcyI6MzE5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Luna Rosenstein",
+            "total": "96",
+            "gender": "F",
+            "age": "15",
+            "club_name": "MYLES AHEAD WEIGHTLIFTING",
+            "membership_number": "1004336",
+            "wso": "California North Central"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "East County Open",
+            "date": "2016-03-12",
+            "division": "Women's 14-15 Age Group +69 kg",
+            "lifter_name": "Luna Rosenstein",
+            "body_weight_kg": "74.2",
+            "snatch_1": "30",
+            "snatch_2": "33",
+            "snatch_3": "-35",
+            "cj_1": "0",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "33",
+            "best_cj": "0",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMy0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMy0xMiIsIndlaWdodF9jbGFzcyI6MzE5fQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    },
+    {
+      "internal_id": 42471,
+      "athlete_name": "Luna Rosenstein",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/42471",
+      "contaminated_lifter_id": 18405,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-27T00:02:05.050Z",
+      "profile_data": {
+        "membership_number": "190783",
+        "birth_year": 2002,
+        "gender": "F",
+        "club_name": "MYLES AHEAD WEIGHTLIFTING",
+        "wso": "California North Central",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2017 Fool's Open",
+          "date": "2017-04-01",
+          "division": "Women's 14-15 Age Group +69 kg",
+          "lifter_name": "Luna Rosenstein",
+          "body_weight_kg": "80.44",
+          "snatch_1": "40",
+          "snatch_2": "-42",
+          "snatch_3": "42",
+          "cj_1": "51",
+          "cj_2": "54",
+          "cj_3": "57",
+          "best_snatch": "42",
+          "best_cj": "57",
+          "total": "99"
+        },
+        {
+          "meet_name": "4th Annual Midtown Classic",
+          "date": "2013-12-14",
+          "division": "Women's 13 Under Age Group 53kg",
+          "lifter_name": "Luna Rosenstein",
+          "body_weight_kg": "51.41",
+          "snatch_1": "19",
+          "snatch_2": "21",
+          "snatch_3": "22",
+          "cj_1": "23",
+          "cj_2": "25",
+          "cj_3": "-27",
+          "best_snatch": "22",
+          "best_cj": "25",
+          "total": "47"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2017 Fool's Open",
+            "date": "2017-04-01",
+            "division": "Women's 14-15 Age Group +69 kg",
+            "lifter_name": "Luna Rosenstein",
+            "body_weight_kg": "80.44",
+            "snatch_1": "40",
+            "snatch_2": "-42",
+            "snatch_3": "42",
+            "cj_1": "51",
+            "cj_2": "54",
+            "cj_3": "57",
+            "best_snatch": "42",
+            "best_cj": "57",
+            "total": "99"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNC0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNC0wMSIsIndlaWdodF9jbGFzcyI6MzE5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Luna Rosenstein",
+            "total": "99",
+            "gender": "F",
+            "age": "15",
+            "club_name": "MYLES AHEAD WEIGHTLIFTING",
+            "membership_number": "190783",
+            "wso": "California North Central"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "4th Annual Midtown Classic",
+            "date": "2013-12-14",
+            "division": "Women's 13 Under Age Group 53kg",
+            "lifter_name": "Luna Rosenstein",
+            "body_weight_kg": "51.41",
+            "snatch_1": "19",
+            "snatch_2": "21",
+            "snatch_3": "22",
+            "cj_1": "23",
+            "cj_2": "25",
+            "cj_3": "-27",
+            "best_snatch": "22",
+            "best_cj": "25",
+            "total": "47"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMi0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMi0xNCIsIndlaWdodF9jbGFzcyI6MzAzfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "Luna Rosenstein",
+            "total": "47",
+            "gender": "F",
+            "age": "11",
+            "club_name": "MYLES AHEAD WEIGHTLIFTING",
+            "membership_number": "190783",
+            "wso": "California North Central"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

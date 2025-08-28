@@ -1,0 +1,780 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T01:12:09.408Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Emily Smith",
+    "internal_ids_processed": 5,
+    "successful_scrapes": 5,
+    "failed_scrapes": 0,
+    "total_competitions_found": 14,
+    "total_reverse_lookups": 14,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 1199502
+  },
+  "data": [
+    {
+      "internal_id": 64762,
+      "athlete_name": "Emily Smith",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/64762",
+      "contaminated_lifter_id": 6235,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T01:10:33.968Z",
+      "profile_data": {
+        "membership_number": "1069102",
+        "birth_year": 1984,
+        "gender": "F",
+        "club_name": "Iron Acres Barbell",
+        "wso": "Pacific Northwest",
+        "national_rank": "2"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Ironside Open",
+          "date": "2025-06-08",
+          "division": "Women's Masters (40-44) 86+kg",
+          "lifter_name": "Emily Smith",
+          "body_weight_kg": "122.1",
+          "snatch_1": "39",
+          "snatch_2": "41",
+          "snatch_3": "-43",
+          "cj_1": "47",
+          "cj_2": "50",
+          "cj_3": "-53",
+          "best_snatch": "41",
+          "best_cj": "50",
+          "total": "91"
+        },
+        {
+          "meet_name": "Pull and Pray (reap what you sow)",
+          "date": "2024-11-30",
+          "division": "Women's Masters (40-44) +87kg",
+          "lifter_name": "Emily Smith",
+          "body_weight_kg": "119.5",
+          "snatch_1": "31",
+          "snatch_2": "34",
+          "snatch_3": "37",
+          "cj_1": "44",
+          "cj_2": "47",
+          "cj_3": "50",
+          "best_snatch": "37",
+          "best_cj": "50",
+          "total": "87"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Ironside Open",
+            "date": "2025-06-08",
+            "division": "Women's Masters (40-44) 86+kg",
+            "lifter_name": "Emily Smith",
+            "body_weight_kg": "122.1",
+            "snatch_1": "39",
+            "snatch_2": "41",
+            "snatch_3": "-43",
+            "cj_1": "47",
+            "cj_2": "50",
+            "cj_3": "-53",
+            "best_snatch": "41",
+            "best_cj": "50",
+            "total": "91"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNi0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNi0wOCIsIndlaWdodF9jbGFzcyI6NjcwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Emily Smith",
+            "total": "91",
+            "gender": "F",
+            "age": "41",
+            "club_name": "Iron Acres Barbell",
+            "membership_number": "1069102",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Pull and Pray (reap what you sow)",
+            "date": "2024-11-30",
+            "division": "Women's Masters (40-44) +87kg",
+            "lifter_name": "Emily Smith",
+            "body_weight_kg": "119.5",
+            "snatch_1": "31",
+            "snatch_2": "34",
+            "snatch_3": "37",
+            "cj_1": "44",
+            "cj_2": "47",
+            "cj_3": "50",
+            "best_snatch": "37",
+            "best_cj": "50",
+            "total": "87"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMS0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMS0zMCIsIndlaWdodF9jbGFzcyI6MTQwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Emily Smith",
+            "total": "87",
+            "gender": "F",
+            "age": "40",
+            "club_name": "Iron Acres Barbell",
+            "membership_number": "1069102",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 24591,
+      "athlete_name": "Emily Smith",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/24591",
+      "contaminated_lifter_id": 6235,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T01:10:45.013Z",
+      "profile_data": {
+        "membership_number": "181917",
+        "birth_year": 1990,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "Michigan",
+        "national_rank": "4"
+      },
+      "competition_history": [
+        {
+          "meet_name": "32nd Spartan Open",
+          "date": "2013-03-23",
+          "division": "Open Women's +75 Kg",
+          "lifter_name": "Emily Smith",
+          "body_weight_kg": "80.9",
+          "snatch_1": "50",
+          "snatch_2": "55",
+          "snatch_3": "55",
+          "cj_1": "70",
+          "cj_2": "73",
+          "cj_3": "73",
+          "best_snatch": "55",
+          "best_cj": "73",
+          "total": "128"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "32nd Spartan Open",
+            "date": "2013-03-23",
+            "division": "Open Women's +75 Kg",
+            "lifter_name": "Emily Smith",
+            "body_weight_kg": "80.9",
+            "snatch_1": "50",
+            "snatch_2": "55",
+            "snatch_3": "55",
+            "cj_1": "70",
+            "cj_2": "73",
+            "cj_3": "73",
+            "best_snatch": "55",
+            "best_cj": "73",
+            "total": "128"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMy0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMy0yMyIsIndlaWdodF9jbGFzcyI6MzY4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Emily Smith",
+            "total": "128",
+            "gender": "F",
+            "age": "23",
+            "club_name": "-",
+            "membership_number": "181917",
+            "wso": "Michigan"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 34476,
+      "athlete_name": "Emily Smith",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/34476",
+      "contaminated_lifter_id": 6235,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T01:11:04.840Z",
+      "profile_data": {
+        "membership_number": "1013717",
+        "birth_year": 1996,
+        "gender": "F",
+        "club_name": "KiloDelphia",
+        "wso": "Pennsylvania-West Virginia",
+        "national_rank": "14"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Nike 2019 National Under 25 Championships",
+          "date": "2019-03-10",
+          "division": "Open Women's 71kg",
+          "lifter_name": "Emily Smith",
+          "body_weight_kg": "68.39",
+          "snatch_1": "-65",
+          "snatch_2": "65",
+          "snatch_3": "69",
+          "cj_1": "86",
+          "cj_2": "88",
+          "cj_3": "92",
+          "best_snatch": "69",
+          "best_cj": "92",
+          "total": "161"
+        },
+        {
+          "meet_name": "Nike 2019 National University Championships",
+          "date": "2019-03-10",
+          "division": "Open Women's 71kg",
+          "lifter_name": "Emily Smith",
+          "body_weight_kg": "68.39",
+          "snatch_1": "-65",
+          "snatch_2": "65",
+          "snatch_3": "69",
+          "cj_1": "86",
+          "cj_2": "88",
+          "cj_3": "92",
+          "best_snatch": "69",
+          "best_cj": "92",
+          "total": "161"
+        },
+        {
+          "meet_name": "The 4th Annual Mobility-Doc Classic",
+          "date": "2018-09-30",
+          "division": "Open Women's 71kg",
+          "lifter_name": "Emily Smith",
+          "body_weight_kg": "70.6",
+          "snatch_1": "60",
+          "snatch_2": "65",
+          "snatch_3": "-68",
+          "cj_1": "76",
+          "cj_2": "84",
+          "cj_3": "89",
+          "best_snatch": "65",
+          "best_cj": "89",
+          "total": "154"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Nike 2019 National Under 25 Championships",
+            "date": "2019-03-10",
+            "division": "Open Women's 71kg",
+            "lifter_name": "Emily Smith",
+            "body_weight_kg": "68.39",
+            "snatch_1": "-65",
+            "snatch_2": "65",
+            "snatch_3": "69",
+            "cj_1": "86",
+            "cj_2": "88",
+            "cj_3": "92",
+            "best_snatch": "69",
+            "best_cj": "92",
+            "total": "161"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMy0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMy0xMCIsIndlaWdodF9jbGFzcyI6OTZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "14",
+            "athlete_name": "Emily Smith",
+            "total": "161",
+            "gender": "F",
+            "age": "23",
+            "club_name": "KiloDelphia",
+            "membership_number": "1013717",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Nike 2019 National University Championships",
+            "date": "2019-03-10",
+            "division": "Open Women's 71kg",
+            "lifter_name": "Emily Smith",
+            "body_weight_kg": "68.39",
+            "snatch_1": "-65",
+            "snatch_2": "65",
+            "snatch_3": "69",
+            "cj_1": "86",
+            "cj_2": "88",
+            "cj_3": "92",
+            "best_snatch": "69",
+            "best_cj": "92",
+            "total": "161"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMy0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMy0xMCIsIndlaWdodF9jbGFzcyI6OTZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "14",
+            "athlete_name": "Emily Smith",
+            "total": "161",
+            "gender": "F",
+            "age": "23",
+            "club_name": "KiloDelphia",
+            "membership_number": "1013717",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The 4th Annual Mobility-Doc Classic",
+            "date": "2018-09-30",
+            "division": "Open Women's 71kg",
+            "lifter_name": "Emily Smith",
+            "body_weight_kg": "70.6",
+            "snatch_1": "60",
+            "snatch_2": "65",
+            "snatch_3": "-68",
+            "cj_1": "76",
+            "cj_2": "84",
+            "cj_3": "89",
+            "best_snatch": "65",
+            "best_cj": "89",
+            "total": "154"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOS0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOS0zMCIsIndlaWdodF9jbGFzcyI6OTZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Emily Smith",
+            "total": "154",
+            "gender": "F",
+            "age": "22",
+            "club_name": "KiloDelphia",
+            "membership_number": "1013717",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 52979,
+      "athlete_name": "Emily Smith",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/52979",
+      "contaminated_lifter_id": 6235,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T01:11:59.607Z",
+      "profile_data": {
+        "membership_number": "1060803",
+        "birth_year": 2004,
+        "gender": "F",
+        "club_name": "Parish Barbell Club",
+        "wso": "Southern",
+        "national_rank": "7"
+      },
+      "competition_history": [
+        {
+          "meet_name": "The 2023 Nike National Junior Championships, powered by Rogue",
+          "date": "2023-06-29",
+          "division": "Junior Women's 71kg",
+          "lifter_name": "Emily Smith",
+          "body_weight_kg": "67.19",
+          "snatch_1": "64",
+          "snatch_2": "-67",
+          "snatch_3": "69",
+          "cj_1": "75",
+          "cj_2": "79",
+          "cj_3": "81",
+          "best_snatch": "69",
+          "best_cj": "81",
+          "total": "150"
+        },
+        {
+          "meet_name": "The 2023 Nike National University Championships, powered by Rogue",
+          "date": "2023-03-04",
+          "division": "Open Women's 71kg",
+          "lifter_name": "Emily Smith",
+          "body_weight_kg": "65.35",
+          "snatch_1": "65",
+          "snatch_2": "69",
+          "snatch_3": "71",
+          "cj_1": "74",
+          "cj_2": "78",
+          "cj_3": "-81",
+          "best_snatch": "71",
+          "best_cj": "78",
+          "total": "149"
+        },
+        {
+          "meet_name": "71st Annual Gayle Hatch Louisiana Christmas Meet",
+          "date": "2022-12-10",
+          "division": "Open Women's 71kg",
+          "lifter_name": "Emily Smith",
+          "body_weight_kg": "66.7",
+          "snatch_1": "60",
+          "snatch_2": "63",
+          "snatch_3": "66",
+          "cj_1": "70",
+          "cj_2": "74",
+          "cj_3": "77",
+          "best_snatch": "66",
+          "best_cj": "77",
+          "total": "143"
+        },
+        {
+          "meet_name": "Louisiana State Championship",
+          "date": "2022-08-06",
+          "division": "Open Women's 71kg",
+          "lifter_name": "Emily Smith",
+          "body_weight_kg": "64.9",
+          "snatch_1": "58",
+          "snatch_2": "60",
+          "snatch_3": "63",
+          "cj_1": "70",
+          "cj_2": "72",
+          "cj_3": "-75",
+          "best_snatch": "63",
+          "best_cj": "72",
+          "total": "135"
+        },
+        {
+          "meet_name": "2022 Nike North American Open Series 1 Powered by Rogue",
+          "date": "2022-03-04",
+          "division": "Open Women's 71kg",
+          "lifter_name": "Emily Smith",
+          "body_weight_kg": "66.3",
+          "snatch_1": "50",
+          "snatch_2": "53",
+          "snatch_3": "57",
+          "cj_1": "70",
+          "cj_2": "73",
+          "cj_3": "76",
+          "best_snatch": "57",
+          "best_cj": "76",
+          "total": "133"
+        },
+        {
+          "meet_name": "2022 January online qualifier",
+          "date": "2022-01-20",
+          "division": "Open Women's 71kg",
+          "lifter_name": "Emily Smith",
+          "body_weight_kg": "66",
+          "snatch_1": "58",
+          "snatch_2": "0",
+          "snatch_3": "0",
+          "cj_1": "70",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "58",
+          "best_cj": "70",
+          "total": "128"
+        },
+        {
+          "meet_name": "The Battle of New Orleans Liftoff",
+          "date": "2022-01-08",
+          "division": "Open Women's 71kg",
+          "lifter_name": "Emily Smith",
+          "body_weight_kg": "67.5",
+          "snatch_1": "50",
+          "snatch_2": "-53",
+          "snatch_3": "53",
+          "cj_1": "56",
+          "cj_2": "60",
+          "cj_3": "65",
+          "best_snatch": "53",
+          "best_cj": "65",
+          "total": "118"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "The 2023 Nike National Junior Championships, powered by Rogue",
+            "date": "2023-06-29",
+            "division": "Junior Women's 71kg",
+            "lifter_name": "Emily Smith",
+            "body_weight_kg": "67.19",
+            "snatch_1": "64",
+            "snatch_2": "-67",
+            "snatch_3": "69",
+            "cj_1": "75",
+            "cj_2": "79",
+            "cj_3": "81",
+            "best_snatch": "69",
+            "best_cj": "81",
+            "total": "150"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNi0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNi0yOSIsIndlaWdodF9jbGFzcyI6NzZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "7",
+            "athlete_name": "Emily Smith",
+            "total": "150",
+            "gender": "F",
+            "age": "19",
+            "club_name": "Parish Barbell Club",
+            "membership_number": "1060803",
+            "wso": "Southern"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The 2023 Nike National University Championships, powered by Rogue",
+            "date": "2023-03-04",
+            "division": "Open Women's 71kg",
+            "lifter_name": "Emily Smith",
+            "body_weight_kg": "65.35",
+            "snatch_1": "65",
+            "snatch_2": "69",
+            "snatch_3": "71",
+            "cj_1": "74",
+            "cj_2": "78",
+            "cj_3": "-81",
+            "best_snatch": "71",
+            "best_cj": "78",
+            "total": "149"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMy0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMy0wNCIsIndlaWdodF9jbGFzcyI6OTZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "35",
+            "athlete_name": "Emily Smith",
+            "total": "149",
+            "gender": "F",
+            "age": "19",
+            "club_name": "Parish Barbell Club",
+            "membership_number": "1060803",
+            "wso": "Southern"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "71st Annual Gayle Hatch Louisiana Christmas Meet",
+            "date": "2022-12-10",
+            "division": "Open Women's 71kg",
+            "lifter_name": "Emily Smith",
+            "body_weight_kg": "66.7",
+            "snatch_1": "60",
+            "snatch_2": "63",
+            "snatch_3": "66",
+            "cj_1": "70",
+            "cj_2": "74",
+            "cj_3": "77",
+            "best_snatch": "66",
+            "best_cj": "77",
+            "total": "143"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMi0xMCIsIndlaWdodF9jbGFzcyI6OTZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "7",
+            "athlete_name": "Emily Smith",
+            "total": "143",
+            "gender": "F",
+            "age": "18",
+            "club_name": "Parish Barbell Club",
+            "membership_number": "1060803",
+            "wso": "Southern"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Louisiana State Championship",
+            "date": "2022-08-06",
+            "division": "Open Women's 71kg",
+            "lifter_name": "Emily Smith",
+            "body_weight_kg": "64.9",
+            "snatch_1": "58",
+            "snatch_2": "60",
+            "snatch_3": "63",
+            "cj_1": "70",
+            "cj_2": "72",
+            "cj_3": "-75",
+            "best_snatch": "63",
+            "best_cj": "72",
+            "total": "135"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wOC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wOC0wNiIsIndlaWdodF9jbGFzcyI6OTZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "11",
+            "athlete_name": "Emily Smith",
+            "total": "135",
+            "gender": "F",
+            "age": "18",
+            "club_name": "Parish Barbell Club",
+            "membership_number": "1060803",
+            "wso": "Southern"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2022 Nike North American Open Series 1 Powered by Rogue",
+            "date": "2022-03-04",
+            "division": "Open Women's 71kg",
+            "lifter_name": "Emily Smith",
+            "body_weight_kg": "66.3",
+            "snatch_1": "50",
+            "snatch_2": "53",
+            "snatch_3": "57",
+            "cj_1": "70",
+            "cj_2": "73",
+            "cj_3": "76",
+            "best_snatch": "57",
+            "best_cj": "76",
+            "total": "133"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMy0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMy0wNCIsIndlaWdodF9jbGFzcyI6OTZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "39",
+            "athlete_name": "Emily Smith",
+            "total": "133",
+            "gender": "F",
+            "age": "18",
+            "club_name": "Parish Barbell Club",
+            "membership_number": "1060803",
+            "wso": "Southern"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2022 January online qualifier",
+            "date": "2022-01-20",
+            "division": "Open Women's 71kg",
+            "lifter_name": "Emily Smith",
+            "body_weight_kg": "66",
+            "snatch_1": "58",
+            "snatch_2": "0",
+            "snatch_3": "0",
+            "cj_1": "70",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "58",
+            "best_cj": "70",
+            "total": "128"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMS0yMCIsIndlaWdodF9jbGFzcyI6OTZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Emily Smith",
+            "total": "128",
+            "gender": "F",
+            "age": "18",
+            "club_name": "Parish Barbell Club",
+            "membership_number": "1060803",
+            "wso": "Southern"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The Battle of New Orleans Liftoff",
+            "date": "2022-01-08",
+            "division": "Open Women's 71kg",
+            "lifter_name": "Emily Smith",
+            "body_weight_kg": "67.5",
+            "snatch_1": "50",
+            "snatch_2": "-53",
+            "snatch_3": "53",
+            "cj_1": "56",
+            "cj_2": "60",
+            "cj_3": "65",
+            "best_snatch": "53",
+            "best_cj": "65",
+            "total": "118"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMS0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMS0wOCIsIndlaWdodF9jbGFzcyI6OTZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "13",
+            "athlete_name": "Emily Smith",
+            "total": "118",
+            "gender": "F",
+            "age": "18",
+            "club_name": "Parish Barbell Club",
+            "membership_number": "1060803",
+            "wso": "Southern"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 55673,
+      "athlete_name": "Emily Smith",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/55673",
+      "contaminated_lifter_id": 6235,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T01:12:09.405Z",
+      "profile_data": {
+        "membership_number": "1064839",
+        "birth_year": 1994,
+        "gender": "F",
+        "club_name": "Lowcountry Barbell",
+        "wso": "Carolina",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Second Annual Holy City Classic",
+          "date": "2022-09-17",
+          "division": "Open Women's 81kg",
+          "lifter_name": "Emily Smith",
+          "body_weight_kg": "78.6",
+          "snatch_1": "65",
+          "snatch_2": "70",
+          "snatch_3": "75",
+          "cj_1": "82",
+          "cj_2": "87",
+          "cj_3": "-90",
+          "best_snatch": "75",
+          "best_cj": "87",
+          "total": "162"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Second Annual Holy City Classic",
+            "date": "2022-09-17",
+            "division": "Open Women's 81kg",
+            "lifter_name": "Emily Smith",
+            "body_weight_kg": "78.6",
+            "snatch_1": "65",
+            "snatch_2": "70",
+            "snatch_3": "75",
+            "cj_1": "82",
+            "cj_2": "87",
+            "cj_3": "-90",
+            "best_snatch": "75",
+            "best_cj": "87",
+            "total": "162"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wOS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wOS0xNyIsIndlaWdodF9jbGFzcyI6OTh9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Emily Smith",
+            "total": "162",
+            "gender": "F",
+            "age": "28",
+            "club_name": "Lowcountry Barbell",
+            "membership_number": "1064839",
+            "wso": "Carolina"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

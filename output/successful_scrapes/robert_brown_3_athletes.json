@@ -1,0 +1,597 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T06:02:49.580Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Robert Brown",
+    "internal_ids_processed": 3,
+    "successful_scrapes": 3,
+    "failed_scrapes": 0,
+    "total_competitions_found": 11,
+    "total_reverse_lookups": 11,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 18639674
+  },
+  "data": [
+    {
+      "internal_id": 8752,
+      "athlete_name": "Robert Brown",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/8752",
+      "contaminated_lifter_id": 20048,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T06:01:48.196Z",
+      "profile_data": {
+        "membership_number": "1038179",
+        "birth_year": 1981,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Michigan",
+        "national_rank": "4"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Michigan State Meet",
+          "date": "2019-08-04",
+          "division": "Open Men's 102kg",
+          "lifter_name": "Robert Brown",
+          "body_weight_kg": "96.3",
+          "snatch_1": "-116",
+          "snatch_2": "118",
+          "snatch_3": "120",
+          "cj_1": "140",
+          "cj_2": "143",
+          "cj_3": "-145",
+          "best_snatch": "120",
+          "best_cj": "143",
+          "total": "263"
+        },
+        {
+          "meet_name": "Meijer State Games of Michigan 2019",
+          "date": "2019-02-16",
+          "division": "Open Men's 102kg",
+          "lifter_name": "Robert Brown",
+          "body_weight_kg": "96.7",
+          "snatch_1": "0",
+          "snatch_2": "114",
+          "snatch_3": "118",
+          "cj_1": "135",
+          "cj_2": "140",
+          "cj_3": "0",
+          "best_snatch": "118",
+          "best_cj": "140",
+          "total": "258"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Michigan State Meet",
+            "date": "2019-08-04",
+            "division": "Open Men's 102kg",
+            "lifter_name": "Robert Brown",
+            "body_weight_kg": "96.3",
+            "snatch_1": "-116",
+            "snatch_2": "118",
+            "snatch_3": "120",
+            "cj_1": "140",
+            "cj_2": "143",
+            "cj_3": "-145",
+            "best_snatch": "120",
+            "best_cj": "143",
+            "total": "263"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOC0wNCIsIndlaWdodF9jbGFzcyI6ODh9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Robert Brown",
+            "total": "263",
+            "gender": "M",
+            "age": "38",
+            "club_name": "-",
+            "membership_number": "1038179",
+            "wso": "Michigan"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Meijer State Games of Michigan 2019",
+            "date": "2019-02-16",
+            "division": "Open Men's 102kg",
+            "lifter_name": "Robert Brown",
+            "body_weight_kg": "96.7",
+            "snatch_1": "0",
+            "snatch_2": "114",
+            "snatch_3": "118",
+            "cj_1": "135",
+            "cj_2": "140",
+            "cj_3": "0",
+            "best_snatch": "118",
+            "best_cj": "140",
+            "total": "258"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMi0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMi0xNiIsIndlaWdodF9jbGFzcyI6ODh9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Robert Brown",
+            "total": "258",
+            "gender": "M",
+            "age": "38",
+            "club_name": "-",
+            "membership_number": "1038179",
+            "wso": "Michigan"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 14045,
+      "athlete_name": "Robert Brown",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/14045",
+      "contaminated_lifter_id": 20048,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T06:01:58.323Z",
+      "profile_data": {
+        "membership_number": "167647",
+        "birth_year": 1985,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "-",
+        "national_rank": "17"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2014 MISSOURI VALLEY Championship with Open Division",
+          "date": "2014-02-15",
+          "division": "Open Men's 62 kg",
+          "lifter_name": "Robert Brown",
+          "body_weight_kg": "59.45",
+          "snatch_1": "27",
+          "snatch_2": "29",
+          "snatch_3": "29",
+          "cj_1": "37",
+          "cj_2": "39",
+          "cj_3": "27",
+          "best_snatch": "29",
+          "best_cj": "39",
+          "total": "68"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2014 MISSOURI VALLEY Championship with Open Division",
+            "date": "2014-02-15",
+            "division": "Open Men's 62 kg",
+            "lifter_name": "Robert Brown",
+            "body_weight_kg": "59.45",
+            "snatch_1": "27",
+            "snatch_2": "29",
+            "snatch_3": "29",
+            "cj_1": "37",
+            "cj_2": "39",
+            "cj_3": "27",
+            "best_snatch": "29",
+            "best_cj": "39",
+            "total": "68"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMi0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMi0xNSIsIndlaWdodF9jbGFzcyI6MzU1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "17",
+            "athlete_name": "Robert Brown",
+            "total": "68",
+            "gender": "M",
+            "age": "29",
+            "club_name": "-",
+            "membership_number": "167647",
+            "wso": "-"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 25593,
+      "athlete_name": "Robert Brown",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/25593",
+      "contaminated_lifter_id": 20048,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T06:02:49.578Z",
+      "profile_data": {
+        "membership_number": "1015435",
+        "birth_year": 1991,
+        "gender": "M",
+        "club_name": "BlueWave Weightlifting",
+        "wso": "Texas-Oklahoma",
+        "national_rank": "5"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2020 Texas State Weightlifting Championships",
+          "date": "2020-01-17",
+          "division": "Open Men's 96kg",
+          "lifter_name": "Robert Brown",
+          "body_weight_kg": "95.1",
+          "snatch_1": "107",
+          "snatch_2": "112",
+          "snatch_3": "-117",
+          "cj_1": "140",
+          "cj_2": "144",
+          "cj_3": "-150",
+          "best_snatch": "112",
+          "best_cj": "144",
+          "total": "256"
+        },
+        {
+          "meet_name": "Good Vibes Meet (2020 Texas State Qualifier)",
+          "date": "2019-08-31",
+          "division": "Open Men's 96kg",
+          "lifter_name": "Robert Brown",
+          "body_weight_kg": "95.9",
+          "snatch_1": "107",
+          "snatch_2": "113",
+          "snatch_3": "-120",
+          "cj_1": "140",
+          "cj_2": "145",
+          "cj_3": "-150",
+          "best_snatch": "113",
+          "best_cj": "145",
+          "total": "258"
+        },
+        {
+          "meet_name": "Nike 2018 American Open Series 3",
+          "date": "2018-09-16",
+          "division": "Open Men's 102kg",
+          "lifter_name": "Robert Brown",
+          "body_weight_kg": "98.42",
+          "snatch_1": "107",
+          "snatch_2": "112",
+          "snatch_3": "117",
+          "cj_1": "135",
+          "cj_2": "-145",
+          "cj_3": "-145",
+          "best_snatch": "117",
+          "best_cj": "135",
+          "total": "252"
+        },
+        {
+          "meet_name": "Dallas Weightlifting Classic",
+          "date": "2018-07-22",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Robert Brown",
+          "body_weight_kg": "95",
+          "snatch_1": "107",
+          "snatch_2": "112",
+          "snatch_3": "117",
+          "cj_1": "140",
+          "cj_2": "140",
+          "cj_3": "140",
+          "best_snatch": "117",
+          "best_cj": "140",
+          "total": "257"
+        },
+        {
+          "meet_name": "FunkyTown Throwdown 2018",
+          "date": "2018-04-15",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Robert Brown",
+          "body_weight_kg": "98.3",
+          "snatch_1": "105",
+          "snatch_2": "110",
+          "snatch_3": "112",
+          "cj_1": "140",
+          "cj_2": "145",
+          "cj_3": "147",
+          "best_snatch": "112",
+          "best_cj": "147",
+          "total": "259"
+        },
+        {
+          "meet_name": "Good Vibes Weightlifting Meet",
+          "date": "2017-09-02",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Robert Brown",
+          "body_weight_kg": "93",
+          "snatch_1": "105",
+          "snatch_2": "105",
+          "snatch_3": "0",
+          "cj_1": "135",
+          "cj_2": "135",
+          "cj_3": "135",
+          "best_snatch": "105",
+          "best_cj": "135",
+          "total": "240"
+        },
+        {
+          "meet_name": "Nike 2017 American Open Series 2",
+          "date": "2017-07-30",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Robert Brown",
+          "body_weight_kg": "92.12",
+          "snatch_1": "105",
+          "snatch_2": "-110",
+          "snatch_3": "110",
+          "cj_1": "-140",
+          "cj_2": "140",
+          "cj_3": "-145",
+          "best_snatch": "110",
+          "best_cj": "140",
+          "total": "250"
+        },
+        {
+          "meet_name": "Funky Town Throwdown",
+          "date": "2017-04-02",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Robert Brown",
+          "body_weight_kg": "93.5",
+          "snatch_1": "105",
+          "snatch_2": "110",
+          "snatch_3": "112",
+          "cj_1": "135",
+          "cj_2": "140",
+          "cj_3": "140",
+          "best_snatch": "112",
+          "best_cj": "140",
+          "total": "252"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2020 Texas State Weightlifting Championships",
+            "date": "2020-01-17",
+            "division": "Open Men's 96kg",
+            "lifter_name": "Robert Brown",
+            "body_weight_kg": "95.1",
+            "snatch_1": "107",
+            "snatch_2": "112",
+            "snatch_3": "-117",
+            "cj_1": "140",
+            "cj_2": "144",
+            "cj_3": "-150",
+            "best_snatch": "112",
+            "best_cj": "144",
+            "total": "256"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMS0xNyIsIndlaWdodF9jbGFzcyI6ODd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "Robert Brown",
+            "total": "256",
+            "gender": "M",
+            "age": "29",
+            "club_name": "BlueWave Weightlifting",
+            "membership_number": "1015435",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Good Vibes Meet (2020 Texas State Qualifier)",
+            "date": "2019-08-31",
+            "division": "Open Men's 96kg",
+            "lifter_name": "Robert Brown",
+            "body_weight_kg": "95.9",
+            "snatch_1": "107",
+            "snatch_2": "113",
+            "snatch_3": "-120",
+            "cj_1": "140",
+            "cj_2": "145",
+            "cj_3": "-150",
+            "best_snatch": "113",
+            "best_cj": "145",
+            "total": "258"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOC0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOC0zMSIsIndlaWdodF9jbGFzcyI6ODd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Robert Brown",
+            "total": "258",
+            "gender": "M",
+            "age": "28",
+            "club_name": "BlueWave Weightlifting",
+            "membership_number": "1015435",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Nike 2018 American Open Series 3",
+            "date": "2018-09-16",
+            "division": "Open Men's 102kg",
+            "lifter_name": "Robert Brown",
+            "body_weight_kg": "98.42",
+            "snatch_1": "107",
+            "snatch_2": "112",
+            "snatch_3": "117",
+            "cj_1": "135",
+            "cj_2": "-145",
+            "cj_3": "-145",
+            "best_snatch": "117",
+            "best_cj": "135",
+            "total": "252"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOS0xNiIsIndlaWdodF9jbGFzcyI6ODh9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "21",
+            "athlete_name": "Robert Brown",
+            "total": "252",
+            "gender": "M",
+            "age": "27",
+            "club_name": "BlueWave Weightlifting",
+            "membership_number": "1015435",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Dallas Weightlifting Classic",
+            "date": "2018-07-22",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Robert Brown",
+            "body_weight_kg": "95",
+            "snatch_1": "107",
+            "snatch_2": "112",
+            "snatch_3": "117",
+            "cj_1": "140",
+            "cj_2": "140",
+            "cj_3": "140",
+            "best_snatch": "117",
+            "best_cj": "140",
+            "total": "257"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNy0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNy0yMiIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "15",
+            "athlete_name": "Robert Brown",
+            "total": "257",
+            "gender": "M",
+            "age": "27",
+            "club_name": "BlueWave Weightlifting",
+            "membership_number": "1015435",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "FunkyTown Throwdown 2018",
+            "date": "2018-04-15",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Robert Brown",
+            "body_weight_kg": "98.3",
+            "snatch_1": "105",
+            "snatch_2": "110",
+            "snatch_3": "112",
+            "cj_1": "140",
+            "cj_2": "145",
+            "cj_3": "147",
+            "best_snatch": "112",
+            "best_cj": "147",
+            "total": "259"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNC0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNC0xNSIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "Robert Brown",
+            "total": "259",
+            "gender": "M",
+            "age": "27",
+            "club_name": "BlueWave Weightlifting",
+            "membership_number": "1015435",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Good Vibes Weightlifting Meet",
+            "date": "2017-09-02",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Robert Brown",
+            "body_weight_kg": "93",
+            "snatch_1": "105",
+            "snatch_2": "105",
+            "snatch_3": "0",
+            "cj_1": "135",
+            "cj_2": "135",
+            "cj_3": "135",
+            "best_snatch": "105",
+            "best_cj": "135",
+            "total": "240"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wOS0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wOS0wMiIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "11",
+            "athlete_name": "Robert Brown",
+            "total": "240",
+            "gender": "M",
+            "age": "26",
+            "club_name": "BlueWave Weightlifting",
+            "membership_number": "1015435",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Nike 2017 American Open Series 2",
+            "date": "2017-07-30",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Robert Brown",
+            "body_weight_kg": "92.12",
+            "snatch_1": "105",
+            "snatch_2": "-110",
+            "snatch_3": "110",
+            "cj_1": "-140",
+            "cj_2": "140",
+            "cj_3": "-145",
+            "best_snatch": "110",
+            "best_cj": "140",
+            "total": "250"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNy0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNy0zMCIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "26",
+            "athlete_name": "Robert Brown",
+            "total": "250",
+            "gender": "M",
+            "age": "26",
+            "club_name": "BlueWave Weightlifting",
+            "membership_number": "1015435",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Funky Town Throwdown",
+            "date": "2017-04-02",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Robert Brown",
+            "body_weight_kg": "93.5",
+            "snatch_1": "105",
+            "snatch_2": "110",
+            "snatch_3": "112",
+            "cj_1": "135",
+            "cj_2": "140",
+            "cj_3": "140",
+            "best_snatch": "112",
+            "best_cj": "140",
+            "total": "252"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNC0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNC0wMiIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Robert Brown",
+            "total": "252",
+            "gender": "M",
+            "age": "26",
+            "club_name": "BlueWave Weightlifting",
+            "membership_number": "1015435",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

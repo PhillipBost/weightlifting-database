@@ -1,0 +1,456 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T04:29:35.004Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Melanie Wilson",
+    "internal_ids_processed": 3,
+    "successful_scrapes": 3,
+    "failed_scrapes": 0,
+    "total_competitions_found": 8,
+    "total_reverse_lookups": 8,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 13045098
+  },
+  "data": [
+    {
+      "internal_id": 10571,
+      "athlete_name": "Melanie Wilson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/10571",
+      "contaminated_lifter_id": 10130,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T04:28:57.069Z",
+      "profile_data": {
+        "membership_number": "218879",
+        "birth_year": 1983,
+        "gender": "F",
+        "club_name": "STONECUTTER WEIGHTLIFTING",
+        "wso": "Texas-Oklahoma",
+        "national_rank": "22"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Vaughn Weightlifting Okie Open",
+          "date": "2017-02-19",
+          "division": "Open Women's 58 kg",
+          "lifter_name": "Melanie Wilson",
+          "body_weight_kg": "56.2",
+          "snatch_1": "48",
+          "snatch_2": "-53",
+          "snatch_3": "-55",
+          "cj_1": "62",
+          "cj_2": "68",
+          "cj_3": "-72",
+          "best_snatch": "48",
+          "best_cj": "68",
+          "total": "116"
+        },
+        {
+          "meet_name": "2016 Copperhead",
+          "date": "2016-10-16",
+          "division": "Open Women's 58 kg",
+          "lifter_name": "Melanie Wilson",
+          "body_weight_kg": "53.42",
+          "snatch_1": "42",
+          "snatch_2": "-48",
+          "snatch_3": "-53",
+          "cj_1": "57",
+          "cj_2": "60",
+          "cj_3": "65",
+          "best_snatch": "42",
+          "best_cj": "65",
+          "total": "107"
+        },
+        {
+          "meet_name": "Central Texas Oly Open",
+          "date": "2015-10-18",
+          "division": "Open Women's 53 kg",
+          "lifter_name": "Melanie Wilson",
+          "body_weight_kg": "53",
+          "snatch_1": "40",
+          "snatch_2": "-45",
+          "snatch_3": "45",
+          "cj_1": "-60",
+          "cj_2": "60",
+          "cj_3": "65",
+          "best_snatch": "45",
+          "best_cj": "65",
+          "total": "110"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Vaughn Weightlifting Okie Open",
+            "date": "2017-02-19",
+            "division": "Open Women's 58 kg",
+            "lifter_name": "Melanie Wilson",
+            "body_weight_kg": "56.2",
+            "snatch_1": "48",
+            "snatch_2": "-53",
+            "snatch_3": "-55",
+            "cj_1": "62",
+            "cj_2": "68",
+            "cj_3": "-72",
+            "best_snatch": "48",
+            "best_cj": "68",
+            "total": "116"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xOSIsIndlaWdodF9jbGFzcyI6MzY0fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "22",
+            "athlete_name": "Melanie Wilson",
+            "total": "116",
+            "gender": "F",
+            "age": "34",
+            "club_name": "STONECUTTER WEIGHTLIFTING",
+            "membership_number": "218879",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2016 Copperhead",
+            "date": "2016-10-16",
+            "division": "Open Women's 58 kg",
+            "lifter_name": "Melanie Wilson",
+            "body_weight_kg": "53.42",
+            "snatch_1": "42",
+            "snatch_2": "-48",
+            "snatch_3": "-53",
+            "cj_1": "57",
+            "cj_2": "60",
+            "cj_3": "65",
+            "best_snatch": "42",
+            "best_cj": "65",
+            "total": "107"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0xNiIsIndlaWdodF9jbGFzcyI6MzY0fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "25",
+            "athlete_name": "Melanie Wilson",
+            "total": "107",
+            "gender": "F",
+            "age": "33",
+            "club_name": "STONECUTTER WEIGHTLIFTING",
+            "membership_number": "218879",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Central Texas Oly Open",
+            "date": "2015-10-18",
+            "division": "Open Women's 53 kg",
+            "lifter_name": "Melanie Wilson",
+            "body_weight_kg": "53",
+            "snatch_1": "40",
+            "snatch_2": "-45",
+            "snatch_3": "45",
+            "cj_1": "-60",
+            "cj_2": "60",
+            "cj_3": "65",
+            "best_snatch": "45",
+            "best_cj": "65",
+            "total": "110"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xOCIsIndlaWdodF9jbGFzcyI6MzYzfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "Melanie Wilson",
+            "total": "110",
+            "gender": "F",
+            "age": "32",
+            "club_name": "STONECUTTER WEIGHTLIFTING",
+            "membership_number": "218879",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 17521,
+      "athlete_name": "Melanie Wilson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/17521",
+      "contaminated_lifter_id": 10130,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T04:29:25.342Z",
+      "profile_data": {
+        "membership_number": "1031496",
+        "birth_year": 1987,
+        "gender": "F",
+        "club_name": "Denver Barbell Club",
+        "wso": "Mountain North",
+        "national_rank": "11"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2021 Denver Fall Throwdown",
+          "date": "2021-11-20",
+          "division": "Open Women's 71kg",
+          "lifter_name": "Melanie Wilson",
+          "body_weight_kg": "70.5",
+          "snatch_1": "51",
+          "snatch_2": "-53",
+          "snatch_3": "53",
+          "cj_1": "63",
+          "cj_2": "66",
+          "cj_3": "69",
+          "best_snatch": "53",
+          "best_cj": "69",
+          "total": "122"
+        },
+        {
+          "meet_name": "2021 Denver Fall Throwdown",
+          "date": "2021-11-20",
+          "division": "Open Women's 71kg",
+          "lifter_name": "Melanie Wilson",
+          "body_weight_kg": "70.5",
+          "snatch_1": "51",
+          "snatch_2": "-53",
+          "snatch_3": "53",
+          "cj_1": "63",
+          "cj_2": "66",
+          "cj_3": "69",
+          "best_snatch": "53",
+          "best_cj": "69",
+          "total": "122"
+        },
+        {
+          "meet_name": "Nike 2018 American Open Series 3",
+          "date": "2018-09-16",
+          "division": "Open Women's 64kg",
+          "lifter_name": "Melanie Wilson",
+          "body_weight_kg": "63.88",
+          "snatch_1": "-47",
+          "snatch_2": "47",
+          "snatch_3": "-49",
+          "cj_1": "65",
+          "cj_2": "67",
+          "cj_3": "-69",
+          "best_snatch": "47",
+          "best_cj": "67",
+          "total": "114"
+        },
+        {
+          "meet_name": "5 Bar Showdown",
+          "date": "2018-07-22",
+          "division": "Open Women's 63 kg",
+          "lifter_name": "Melanie Wilson",
+          "body_weight_kg": "62.52",
+          "snatch_1": "47",
+          "snatch_2": "-50",
+          "snatch_3": "-50",
+          "cj_1": "60",
+          "cj_2": "63",
+          "cj_3": "-65",
+          "best_snatch": "47",
+          "best_cj": "63",
+          "total": "110"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2021 Denver Fall Throwdown",
+            "date": "2021-11-20",
+            "division": "Open Women's 71kg",
+            "lifter_name": "Melanie Wilson",
+            "body_weight_kg": "70.5",
+            "snatch_1": "51",
+            "snatch_2": "-53",
+            "snatch_3": "53",
+            "cj_1": "63",
+            "cj_2": "66",
+            "cj_3": "69",
+            "best_snatch": "53",
+            "best_cj": "69",
+            "total": "122"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMS0yMCIsIndlaWdodF9jbGFzcyI6OTZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "11",
+            "athlete_name": "Melanie Wilson",
+            "total": "122",
+            "gender": "F",
+            "age": "34",
+            "club_name": "Denver Barbell Club",
+            "membership_number": "1031496",
+            "wso": "Mountain North"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2021 Denver Fall Throwdown",
+            "date": "2021-11-20",
+            "division": "Open Women's 71kg",
+            "lifter_name": "Melanie Wilson",
+            "body_weight_kg": "70.5",
+            "snatch_1": "51",
+            "snatch_2": "-53",
+            "snatch_3": "53",
+            "cj_1": "63",
+            "cj_2": "66",
+            "cj_3": "69",
+            "best_snatch": "53",
+            "best_cj": "69",
+            "total": "122"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMS0yMCIsIndlaWdodF9jbGFzcyI6OTZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "11",
+            "athlete_name": "Melanie Wilson",
+            "total": "122",
+            "gender": "F",
+            "age": "34",
+            "club_name": "Denver Barbell Club",
+            "membership_number": "1031496",
+            "wso": "Mountain North"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Nike 2018 American Open Series 3",
+            "date": "2018-09-16",
+            "division": "Open Women's 64kg",
+            "lifter_name": "Melanie Wilson",
+            "body_weight_kg": "63.88",
+            "snatch_1": "-47",
+            "snatch_2": "47",
+            "snatch_3": "-49",
+            "cj_1": "65",
+            "cj_2": "67",
+            "cj_3": "-69",
+            "best_snatch": "47",
+            "best_cj": "67",
+            "total": "114"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOS0xNiIsIndlaWdodF9jbGFzcyI6OTV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "126",
+            "athlete_name": "Melanie Wilson",
+            "total": "114",
+            "gender": "F",
+            "age": "31",
+            "club_name": "Denver Barbell Club",
+            "membership_number": "1031496",
+            "wso": "Mountain North"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "5 Bar Showdown",
+            "date": "2018-07-22",
+            "division": "Open Women's 63 kg",
+            "lifter_name": "Melanie Wilson",
+            "body_weight_kg": "62.52",
+            "snatch_1": "47",
+            "snatch_2": "-50",
+            "snatch_3": "-50",
+            "cj_1": "60",
+            "cj_2": "63",
+            "cj_3": "-65",
+            "best_snatch": "47",
+            "best_cj": "63",
+            "total": "110"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNy0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNy0yMiIsIndlaWdodF9jbGFzcyI6MzY1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "31",
+            "athlete_name": "Melanie Wilson",
+            "total": "110",
+            "gender": "F",
+            "age": "31",
+            "club_name": "Denver Barbell Club",
+            "membership_number": "1031496",
+            "wso": "Mountain North"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 41830,
+      "athlete_name": "Melanie Wilson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/41830",
+      "contaminated_lifter_id": 10130,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T04:29:35.002Z",
+      "profile_data": {
+        "membership_number": "1043482",
+        "birth_year": 2001,
+        "gender": "F",
+        "club_name": "Keep Pulling",
+        "wso": "Florida",
+        "national_rank": "3"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Tampa Bay Area Classic 6",
+          "date": "2019-08-31",
+          "division": "Open Women's 45kg",
+          "lifter_name": "Melanie Wilson",
+          "body_weight_kg": "43.45",
+          "snatch_1": "21",
+          "snatch_2": "-23",
+          "snatch_3": "23",
+          "cj_1": "31",
+          "cj_2": "-34",
+          "cj_3": "-34",
+          "best_snatch": "23",
+          "best_cj": "31",
+          "total": "54"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Tampa Bay Area Classic 6",
+            "date": "2019-08-31",
+            "division": "Open Women's 45kg",
+            "lifter_name": "Melanie Wilson",
+            "body_weight_kg": "43.45",
+            "snatch_1": "21",
+            "snatch_2": "-23",
+            "snatch_3": "23",
+            "cj_1": "31",
+            "cj_2": "-34",
+            "cj_3": "-34",
+            "best_snatch": "23",
+            "best_cj": "31",
+            "total": "54"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOC0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOC0zMSIsIndlaWdodF9jbGFzcyI6OTF9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Melanie Wilson",
+            "total": "54",
+            "gender": "F",
+            "age": "18",
+            "club_name": "Keep Pulling",
+            "membership_number": "1043482",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

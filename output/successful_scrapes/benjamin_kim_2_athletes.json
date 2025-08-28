@@ -1,0 +1,200 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T01:15:52.060Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Benjamin Kim",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 3,
+    "total_reverse_lookups": 3,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 87822154
+  },
+  "data": [
+    {
+      "internal_id": 33415,
+      "athlete_name": "Benjamin Kim",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/33415",
+      "contaminated_lifter_id": 12043,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T01:15:38.900Z",
+      "profile_data": {
+        "membership_number": "218053",
+        "birth_year": 1995,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "California South",
+        "national_rank": "23"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Fortius Halloween Open",
+          "date": "2016-10-23",
+          "division": "Open Men's 69 kg",
+          "lifter_name": "Benjamin Kim",
+          "body_weight_kg": "68.28",
+          "snatch_1": "84",
+          "snatch_2": "-87",
+          "snatch_3": "-88",
+          "cj_1": "-105",
+          "cj_2": "108",
+          "cj_3": "-111",
+          "best_snatch": "84",
+          "best_cj": "108",
+          "total": "192"
+        },
+        {
+          "meet_name": "2015 Fortius Halloween Invitational",
+          "date": "2015-10-25",
+          "division": "Open Men's 69 kg",
+          "lifter_name": "Benjamin Kim",
+          "body_weight_kg": "67.6",
+          "snatch_1": "70",
+          "snatch_2": "72",
+          "snatch_3": "-75",
+          "cj_1": "92",
+          "cj_2": "96",
+          "cj_3": "100",
+          "best_snatch": "72",
+          "best_cj": "100",
+          "total": "172"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Fortius Halloween Open",
+            "date": "2016-10-23",
+            "division": "Open Men's 69 kg",
+            "lifter_name": "Benjamin Kim",
+            "body_weight_kg": "68.28",
+            "snatch_1": "84",
+            "snatch_2": "-87",
+            "snatch_3": "-88",
+            "cj_1": "-105",
+            "cj_2": "108",
+            "cj_3": "-111",
+            "best_snatch": "84",
+            "best_cj": "108",
+            "total": "192"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0yMyIsIndlaWdodF9jbGFzcyI6MzU2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "23",
+            "athlete_name": "Benjamin Kim",
+            "total": "192",
+            "gender": "M",
+            "age": "21",
+            "club_name": "-",
+            "membership_number": "218053",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2015 Fortius Halloween Invitational",
+            "date": "2015-10-25",
+            "division": "Open Men's 69 kg",
+            "lifter_name": "Benjamin Kim",
+            "body_weight_kg": "67.6",
+            "snatch_1": "70",
+            "snatch_2": "72",
+            "snatch_3": "-75",
+            "cj_1": "92",
+            "cj_2": "96",
+            "cj_3": "100",
+            "best_snatch": "72",
+            "best_cj": "100",
+            "total": "172"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0yNSIsIndlaWdodF9jbGFzcyI6MzU2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "24",
+            "athlete_name": "Benjamin Kim",
+            "total": "172",
+            "gender": "M",
+            "age": "20",
+            "club_name": "-",
+            "membership_number": "218053",
+            "wso": "California South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 64007,
+      "athlete_name": "Benjamin Kim",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/64007",
+      "contaminated_lifter_id": 12043,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T01:15:52.058Z",
+      "profile_data": {
+        "membership_number": "1078519",
+        "birth_year": 1991,
+        "gender": "M",
+        "club_name": "IKON Strength",
+        "wso": "California South",
+        "national_rank": "14"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Fall Face Off",
+          "date": "2024-10-05",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Benjamin Kim",
+          "body_weight_kg": "87.6",
+          "snatch_1": "-98",
+          "snatch_2": "-98",
+          "snatch_3": "98",
+          "cj_1": "127",
+          "cj_2": "-135",
+          "cj_3": "-135",
+          "best_snatch": "98",
+          "best_cj": "127",
+          "total": "225"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Fall Face Off",
+            "date": "2024-10-05",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Benjamin Kim",
+            "body_weight_kg": "87.6",
+            "snatch_1": "-98",
+            "snatch_2": "-98",
+            "snatch_3": "98",
+            "cj_1": "127",
+            "cj_2": "-135",
+            "cj_3": "-135",
+            "best_snatch": "98",
+            "best_cj": "127",
+            "total": "225"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0wNSIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "14",
+            "athlete_name": "Benjamin Kim",
+            "total": "225",
+            "gender": "M",
+            "age": "33",
+            "club_name": "IKON Strength",
+            "membership_number": "1078519",
+            "wso": "California South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

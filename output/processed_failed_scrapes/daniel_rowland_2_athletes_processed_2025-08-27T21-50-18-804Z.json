@@ -1,0 +1,238 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T06:51:16.969Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Daniel Rowland",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 4,
+    "total_reverse_lookups": 4,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 19183424
+  },
+  "data": [
+    {
+      "internal_id": 54797,
+      "athlete_name": "Daniel Rowland",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/54797",
+      "contaminated_lifter_id": 18406,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T17:59:49.845Z",
+      "profile_data": {
+        "membership_number": "1063721",
+        "birth_year": 1985,
+        "gender": "M",
+        "club_name": "Risen Weightlifting Club",
+        "wso": "Texas-Oklahoma",
+        "national_rank": "3"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2022 Houston Weightlifting Open",
+          "date": "2022-06-04",
+          "division": "Men's Masters (35-39) 109kg",
+          "lifter_name": "Daniel Rowland",
+          "body_weight_kg": "107.4",
+          "snatch_1": "74",
+          "snatch_2": "78",
+          "snatch_3": "82",
+          "cj_1": "102",
+          "cj_2": "107",
+          "cj_3": "112",
+          "best_snatch": "82",
+          "best_cj": "112",
+          "total": "194"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2022 Houston Weightlifting Open",
+            "date": "2022-06-04",
+            "division": "Men's Masters (35-39) 109kg",
+            "lifter_name": "Daniel Rowland",
+            "body_weight_kg": "107.4",
+            "snatch_1": "74",
+            "snatch_2": "78",
+            "snatch_3": "82",
+            "cj_1": "102",
+            "cj_2": "107",
+            "cj_3": "112",
+            "best_snatch": "82",
+            "best_cj": "112",
+            "total": "194"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNi0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNi0wNCIsIndlaWdodF9jbGFzcyI6MTA5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Daniel Rowland",
+            "total": "194",
+            "gender": "M",
+            "age": "37",
+            "club_name": "Risen Weightlifting Club",
+            "membership_number": "1063721",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 26491,
+      "athlete_name": "Daniel Rowland",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/26491",
+      "contaminated_lifter_id": 18406,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-27T06:51:14.966Z",
+      "profile_data": {
+        "membership_number": "190513",
+        "birth_year": 1991,
+        "gender": "M",
+        "club_name": "DELTA BARBELL CLUB",
+        "wso": "California North Central",
+        "national_rank": "7"
+      },
+      "competition_history": [
+        {
+          "meet_name": "CTS Wine Country Classic",
+          "date": "2014-04-12",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Daniel Rowland",
+          "body_weight_kg": "84.9",
+          "snatch_1": "90",
+          "snatch_2": "-95",
+          "snatch_3": "-95",
+          "cj_1": "117",
+          "cj_2": "120",
+          "cj_3": "-123",
+          "best_snatch": "90",
+          "best_cj": "120",
+          "total": "210"
+        },
+        {
+          "meet_name": "2014 Presidents Day Open",
+          "date": "2014-02-16",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Daniel Rowland",
+          "body_weight_kg": "87.13",
+          "snatch_1": "-85",
+          "snatch_2": "85",
+          "snatch_3": "-90",
+          "cj_1": "115",
+          "cj_2": "-120",
+          "cj_3": "-120",
+          "best_snatch": "85",
+          "best_cj": "115",
+          "total": "200"
+        },
+        {
+          "meet_name": "4th Annual Midtown Classic",
+          "date": "2013-12-14",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Daniel Rowland",
+          "body_weight_kg": "89.45",
+          "snatch_1": "-83",
+          "snatch_2": "-83",
+          "snatch_3": "-83",
+          "cj_1": "110",
+          "cj_2": "113",
+          "cj_3": "-117",
+          "best_snatch": "0",
+          "best_cj": "113",
+          "total": "0"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "CTS Wine Country Classic",
+            "date": "2014-04-12",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Daniel Rowland",
+            "body_weight_kg": "84.9",
+            "snatch_1": "90",
+            "snatch_2": "-95",
+            "snatch_3": "-95",
+            "cj_1": "117",
+            "cj_2": "120",
+            "cj_3": "-123",
+            "best_snatch": "90",
+            "best_cj": "120",
+            "total": "210"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNC0xMiIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "7",
+            "athlete_name": "Daniel Rowland",
+            "total": "210",
+            "gender": "M",
+            "age": "23",
+            "club_name": "DELTA BARBELL CLUB",
+            "membership_number": "190513",
+            "wso": "California North Central"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2014 Presidents Day Open",
+            "date": "2014-02-16",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Daniel Rowland",
+            "body_weight_kg": "87.13",
+            "snatch_1": "-85",
+            "snatch_2": "85",
+            "snatch_3": "-90",
+            "cj_1": "115",
+            "cj_2": "-120",
+            "cj_3": "-120",
+            "best_snatch": "85",
+            "best_cj": "115",
+            "total": "200"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMi0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMi0xNiIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Daniel Rowland",
+            "total": "200",
+            "gender": "M",
+            "age": "23",
+            "club_name": "DELTA BARBELL CLUB",
+            "membership_number": "190513",
+            "wso": "California North Central"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "4th Annual Midtown Classic",
+            "date": "2013-12-14",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Daniel Rowland",
+            "body_weight_kg": "89.45",
+            "snatch_1": "-83",
+            "snatch_2": "-83",
+            "snatch_3": "-83",
+            "cj_1": "110",
+            "cj_2": "113",
+            "cj_3": "-117",
+            "best_snatch": "0",
+            "best_cj": "113",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMi0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMi0xNCIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    }
+  ]
+}

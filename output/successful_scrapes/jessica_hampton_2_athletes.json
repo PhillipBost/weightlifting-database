@@ -1,0 +1,435 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T00:39:07.049Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Jessica Hampton",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 8,
+    "total_reverse_lookups": 8,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 85617143
+  },
+  "data": [
+    {
+      "internal_id": 21226,
+      "athlete_name": "Jessica Hampton",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/21226",
+      "contaminated_lifter_id": 40517,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T00:38:19.772Z",
+      "profile_data": {
+        "membership_number": "1037184",
+        "birth_year": 1989,
+        "gender": "F",
+        "club_name": "DSSC Weightlifting",
+        "wso": "Georgia",
+        "national_rank": "6"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Southern Open",
+          "date": "2020-01-11",
+          "division": "Open Women's 71kg",
+          "lifter_name": "Jessica Hampton",
+          "body_weight_kg": "70",
+          "snatch_1": "58",
+          "snatch_2": "58",
+          "snatch_3": "58",
+          "cj_1": "75",
+          "cj_2": "78",
+          "cj_3": "80",
+          "best_snatch": "58",
+          "best_cj": "80",
+          "total": "138"
+        },
+        {
+          "meet_name": "2019 Southern Open",
+          "date": "2019-01-05",
+          "division": "Open Women's 71kg",
+          "lifter_name": "Jessica Hampton",
+          "body_weight_kg": "65.4",
+          "snatch_1": "47",
+          "snatch_2": "51",
+          "snatch_3": "55",
+          "cj_1": "63",
+          "cj_2": "67",
+          "cj_3": "71",
+          "best_snatch": "55",
+          "best_cj": "71",
+          "total": "126"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Southern Open",
+            "date": "2020-01-11",
+            "division": "Open Women's 71kg",
+            "lifter_name": "Jessica Hampton",
+            "body_weight_kg": "70",
+            "snatch_1": "58",
+            "snatch_2": "58",
+            "snatch_3": "58",
+            "cj_1": "75",
+            "cj_2": "78",
+            "cj_3": "80",
+            "best_snatch": "58",
+            "best_cj": "80",
+            "total": "138"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMS0xMSIsIndlaWdodF9jbGFzcyI6OTZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Jessica Hampton",
+            "total": "138",
+            "gender": "F",
+            "age": "31",
+            "club_name": "DSSC Weightlifting",
+            "membership_number": "1037184",
+            "wso": "Georgia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2019 Southern Open",
+            "date": "2019-01-05",
+            "division": "Open Women's 71kg",
+            "lifter_name": "Jessica Hampton",
+            "body_weight_kg": "65.4",
+            "snatch_1": "47",
+            "snatch_2": "51",
+            "snatch_3": "55",
+            "cj_1": "63",
+            "cj_2": "67",
+            "cj_3": "71",
+            "best_snatch": "55",
+            "best_cj": "71",
+            "total": "126"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0wNSIsIndlaWdodF9jbGFzcyI6OTZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "15",
+            "athlete_name": "Jessica Hampton",
+            "total": "126",
+            "gender": "F",
+            "age": "30",
+            "club_name": "DSSC Weightlifting",
+            "membership_number": "1037184",
+            "wso": "Georgia"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 55045,
+      "athlete_name": "Jessica Hampton",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/55045",
+      "contaminated_lifter_id": 40517,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T00:39:07.047Z",
+      "profile_data": {
+        "membership_number": "1064275",
+        "birth_year": 1988,
+        "gender": "F",
+        "club_name": "Pinnacle Weightlifting",
+        "wso": "Mountain North",
+        "national_rank": "8"
+      },
+      "competition_history": [
+        {
+          "meet_name": "The 2024 Nike North American Open Series 2, powered by Rogue",
+          "date": "2024-08-29",
+          "division": "Women's Masters (35-39) +87kg",
+          "lifter_name": "Jessica Hampton",
+          "body_weight_kg": "122.35",
+          "snatch_1": "43",
+          "snatch_2": "45",
+          "snatch_3": "-50",
+          "cj_1": "60",
+          "cj_2": "-63",
+          "cj_3": "-64",
+          "best_snatch": "45",
+          "best_cj": "60",
+          "total": "105"
+        },
+        {
+          "meet_name": "Colorado State Championships",
+          "date": "2023-10-29",
+          "division": "Women's Masters (35-39) +87kg",
+          "lifter_name": "Jessica Hampton",
+          "body_weight_kg": "124.3",
+          "snatch_1": "45",
+          "snatch_2": "49",
+          "snatch_3": "-56",
+          "cj_1": "60",
+          "cj_2": "65",
+          "cj_3": "-71",
+          "best_snatch": "49",
+          "best_cj": "65",
+          "total": "114"
+        },
+        {
+          "meet_name": "Rocky Mountain StateGames",
+          "date": "2023-07-29",
+          "division": "Women's Masters (35-39) +87kg",
+          "lifter_name": "Jessica Hampton",
+          "body_weight_kg": "122.3",
+          "snatch_1": "46",
+          "snatch_2": "49",
+          "snatch_3": "54",
+          "cj_1": "64",
+          "cj_2": "67",
+          "cj_3": "70",
+          "best_snatch": "54",
+          "best_cj": "70",
+          "total": "124"
+        },
+        {
+          "meet_name": "2023 Mountain North WSO Championship",
+          "date": "2023-05-07",
+          "division": "Women's Masters (35-39) +87kg",
+          "lifter_name": "Jessica Hampton",
+          "body_weight_kg": "123",
+          "snatch_1": "44",
+          "snatch_2": "47",
+          "snatch_3": "-50",
+          "cj_1": "-63",
+          "cj_2": "63",
+          "cj_3": "-68",
+          "best_snatch": "47",
+          "best_cj": "63",
+          "total": "110"
+        },
+        {
+          "meet_name": "Colorado State Championships",
+          "date": "2022-10-30",
+          "division": "Open Women's +87kg",
+          "lifter_name": "Jessica Hampton",
+          "body_weight_kg": "120.4",
+          "snatch_1": "42",
+          "snatch_2": "46",
+          "snatch_3": "-50",
+          "cj_1": "54",
+          "cj_2": "57",
+          "cj_3": "63",
+          "best_snatch": "46",
+          "best_cj": "63",
+          "total": "109"
+        },
+        {
+          "meet_name": "2022 Rocky Mountain State Games",
+          "date": "2022-07-31",
+          "division": "Open Women's +87kg",
+          "lifter_name": "Jessica Hampton",
+          "body_weight_kg": "118.5",
+          "snatch_1": "-43",
+          "snatch_2": "43",
+          "snatch_3": "-45",
+          "cj_1": "52",
+          "cj_2": "53",
+          "cj_3": "-64",
+          "best_snatch": "43",
+          "best_cj": "53",
+          "total": "96"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "The 2024 Nike North American Open Series 2, powered by Rogue",
+            "date": "2024-08-29",
+            "division": "Women's Masters (35-39) +87kg",
+            "lifter_name": "Jessica Hampton",
+            "body_weight_kg": "122.35",
+            "snatch_1": "43",
+            "snatch_2": "45",
+            "snatch_3": "-50",
+            "cj_1": "60",
+            "cj_2": "-63",
+            "cj_3": "-64",
+            "best_snatch": "45",
+            "best_cj": "60",
+            "total": "105"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOC0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOC0yOSIsIndlaWdodF9jbGFzcyI6MTIwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "8",
+            "athlete_name": "Jessica Hampton",
+            "total": "105",
+            "gender": "F",
+            "age": "36",
+            "club_name": "Pinnacle Weightlifting",
+            "membership_number": "1064275",
+            "wso": "Mountain North"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Colorado State Championships",
+            "date": "2023-10-29",
+            "division": "Women's Masters (35-39) +87kg",
+            "lifter_name": "Jessica Hampton",
+            "body_weight_kg": "124.3",
+            "snatch_1": "45",
+            "snatch_2": "49",
+            "snatch_3": "-56",
+            "cj_1": "60",
+            "cj_2": "65",
+            "cj_3": "-71",
+            "best_snatch": "49",
+            "best_cj": "65",
+            "total": "114"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMC0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMC0yOSIsIndlaWdodF9jbGFzcyI6MTIwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Jessica Hampton",
+            "total": "114",
+            "gender": "F",
+            "age": "35",
+            "club_name": "Pinnacle Weightlifting",
+            "membership_number": "1064275",
+            "wso": "Mountain North"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Rocky Mountain StateGames",
+            "date": "2023-07-29",
+            "division": "Women's Masters (35-39) +87kg",
+            "lifter_name": "Jessica Hampton",
+            "body_weight_kg": "122.3",
+            "snatch_1": "46",
+            "snatch_2": "49",
+            "snatch_3": "54",
+            "cj_1": "64",
+            "cj_2": "67",
+            "cj_3": "70",
+            "best_snatch": "54",
+            "best_cj": "70",
+            "total": "124"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNy0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNy0yOSIsIndlaWdodF9jbGFzcyI6MTIwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Jessica Hampton",
+            "total": "124",
+            "gender": "F",
+            "age": "35",
+            "club_name": "Pinnacle Weightlifting",
+            "membership_number": "1064275",
+            "wso": "Mountain North"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2023 Mountain North WSO Championship",
+            "date": "2023-05-07",
+            "division": "Women's Masters (35-39) +87kg",
+            "lifter_name": "Jessica Hampton",
+            "body_weight_kg": "123",
+            "snatch_1": "44",
+            "snatch_2": "47",
+            "snatch_3": "-50",
+            "cj_1": "-63",
+            "cj_2": "63",
+            "cj_3": "-68",
+            "best_snatch": "47",
+            "best_cj": "63",
+            "total": "110"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNS0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNS0wNyIsIndlaWdodF9jbGFzcyI6MTIwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Jessica Hampton",
+            "total": "110",
+            "gender": "F",
+            "age": "35",
+            "club_name": "Pinnacle Weightlifting",
+            "membership_number": "1064275",
+            "wso": "Mountain North"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Colorado State Championships",
+            "date": "2022-10-30",
+            "division": "Open Women's +87kg",
+            "lifter_name": "Jessica Hampton",
+            "body_weight_kg": "120.4",
+            "snatch_1": "42",
+            "snatch_2": "46",
+            "snatch_3": "-50",
+            "cj_1": "54",
+            "cj_2": "57",
+            "cj_3": "63",
+            "best_snatch": "46",
+            "best_cj": "63",
+            "total": "109"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMC0zMCIsIndlaWdodF9jbGFzcyI6MTAwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "12",
+            "athlete_name": "Jessica Hampton",
+            "total": "109",
+            "gender": "F",
+            "age": "34",
+            "club_name": "Pinnacle Weightlifting",
+            "membership_number": "1064275",
+            "wso": "Mountain North"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2022 Rocky Mountain State Games",
+            "date": "2022-07-31",
+            "division": "Open Women's +87kg",
+            "lifter_name": "Jessica Hampton",
+            "body_weight_kg": "118.5",
+            "snatch_1": "-43",
+            "snatch_2": "43",
+            "snatch_3": "-45",
+            "cj_1": "52",
+            "cj_2": "53",
+            "cj_3": "-64",
+            "best_snatch": "43",
+            "best_cj": "53",
+            "total": "96"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNy0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNy0zMSIsIndlaWdodF9jbGFzcyI6MTAwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "Jessica Hampton",
+            "total": "96",
+            "gender": "F",
+            "age": "34",
+            "club_name": "Pinnacle Weightlifting",
+            "membership_number": "1064275",
+            "wso": "Mountain North"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

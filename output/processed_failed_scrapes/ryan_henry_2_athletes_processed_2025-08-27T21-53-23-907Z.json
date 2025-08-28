@@ -1,0 +1,229 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T02:34:00.694Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Ryan Henry",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 4,
+    "total_reverse_lookups": 4,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 92510788
+  },
+  "data": [
+    {
+      "internal_id": 39107,
+      "athlete_name": "Ryan Henry",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/39107",
+      "contaminated_lifter_id": 21888,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T02:33:40.994Z",
+      "profile_data": {
+        "membership_number": null,
+        "birth_year": null,
+        "gender": null,
+        "club_name": null,
+        "wso": null,
+        "national_rank": null
+      },
+      "competition_history": [
+        {
+          "meet_name": "The Grim Reaper Qualifier",
+          "date": "2019-10-26",
+          "division": "Open Men's 102kg",
+          "lifter_name": "Ryan Henry",
+          "body_weight_kg": "97.5",
+          "snatch_1": "-80",
+          "snatch_2": "-80",
+          "snatch_3": "-80",
+          "cj_1": "80",
+          "cj_2": "-84",
+          "cj_3": "84",
+          "best_snatch": "0",
+          "best_cj": "84",
+          "total": "0"
+        },
+        {
+          "meet_name": "Texas Barbell Spring Showdown",
+          "date": "2019-04-20",
+          "division": "Open Men's 102kg",
+          "lifter_name": "Ryan Henry",
+          "body_weight_kg": "101.5",
+          "snatch_1": "70",
+          "snatch_2": "-75",
+          "snatch_3": "-75",
+          "cj_1": "-130",
+          "cj_2": "-130",
+          "cj_3": "-130",
+          "best_snatch": "70",
+          "best_cj": "0",
+          "total": "0"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "The Grim Reaper Qualifier",
+            "date": "2019-10-26",
+            "division": "Open Men's 102kg",
+            "lifter_name": "Ryan Henry",
+            "body_weight_kg": "97.5",
+            "snatch_1": "-80",
+            "snatch_2": "-80",
+            "snatch_3": "-80",
+            "cj_1": "80",
+            "cj_2": "-84",
+            "cj_3": "84",
+            "best_snatch": "0",
+            "best_cj": "84",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMC0yNiIsIndlaWdodF9jbGFzcyI6ODh9",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Texas Barbell Spring Showdown",
+            "date": "2019-04-20",
+            "division": "Open Men's 102kg",
+            "lifter_name": "Ryan Henry",
+            "body_weight_kg": "101.5",
+            "snatch_1": "70",
+            "snatch_2": "-75",
+            "snatch_3": "-75",
+            "cj_1": "-130",
+            "cj_2": "-130",
+            "cj_3": "-130",
+            "best_snatch": "70",
+            "best_cj": "0",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0yMCIsIndlaWdodF9jbGFzcyI6ODh9",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    },
+    {
+      "internal_id": 43119,
+      "athlete_name": "Ryan Henry",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/43119",
+      "contaminated_lifter_id": 21888,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T02:34:00.691Z",
+      "profile_data": {
+        "membership_number": "1001877",
+        "birth_year": 2002,
+        "gender": "M",
+        "club_name": "JO CO WEIGHTLIFTING CLUB",
+        "wso": "Indiana",
+        "national_rank": "4"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Trinity HS Last Chance Youth Qualifier",
+          "date": "2016-05-21",
+          "division": "Men's 14-15 Age Group 50 Kg",
+          "lifter_name": "Ryan Henry",
+          "body_weight_kg": "46.1",
+          "snatch_1": "37",
+          "snatch_2": "39",
+          "snatch_3": "41",
+          "cj_1": "45",
+          "cj_2": "48",
+          "cj_3": "-50",
+          "best_snatch": "41",
+          "best_cj": "48",
+          "total": "89"
+        },
+        {
+          "meet_name": "Barbell Lift Off",
+          "date": "2016-02-13",
+          "division": "Men's 14-15 Age Group 44kg",
+          "lifter_name": "Ryan Henry",
+          "body_weight_kg": "43.8",
+          "snatch_1": "32",
+          "snatch_2": "35",
+          "snatch_3": "37",
+          "cj_1": "40",
+          "cj_2": "43",
+          "cj_3": "46",
+          "best_snatch": "37",
+          "best_cj": "46",
+          "total": "83"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Trinity HS Last Chance Youth Qualifier",
+            "date": "2016-05-21",
+            "division": "Men's 14-15 Age Group 50 Kg",
+            "lifter_name": "Ryan Henry",
+            "body_weight_kg": "46.1",
+            "snatch_1": "37",
+            "snatch_2": "39",
+            "snatch_3": "41",
+            "cj_1": "45",
+            "cj_2": "48",
+            "cj_3": "-50",
+            "best_snatch": "41",
+            "best_cj": "48",
+            "total": "89"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0yMSIsIndlaWdodF9jbGFzcyI6MzA2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Ryan Henry",
+            "total": "89",
+            "gender": "M",
+            "age": "14",
+            "club_name": "JO CO WEIGHTLIFTING CLUB",
+            "membership_number": "1001877",
+            "wso": "Indiana"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Barbell Lift Off",
+            "date": "2016-02-13",
+            "division": "Men's 14-15 Age Group 44kg",
+            "lifter_name": "Ryan Henry",
+            "body_weight_kg": "43.8",
+            "snatch_1": "32",
+            "snatch_2": "35",
+            "snatch_3": "37",
+            "cj_1": "40",
+            "cj_2": "43",
+            "cj_3": "46",
+            "best_snatch": "37",
+            "best_cj": "46",
+            "total": "83"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMi0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMi0xMyIsIndlaWdodF9jbGFzcyI6MjJ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Ryan Henry",
+            "total": "83",
+            "gender": "M",
+            "age": "14",
+            "club_name": "JO CO WEIGHTLIFTING CLUB",
+            "membership_number": "1001877",
+            "wso": "Indiana"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

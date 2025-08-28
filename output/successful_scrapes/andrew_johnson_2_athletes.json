@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T21:53:11.125Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Andrew Johnson",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 75661219
+  },
+  "data": [
+    {
+      "internal_id": 44024,
+      "athlete_name": "Andrew Johnson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/44024",
+      "contaminated_lifter_id": 21792,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T21:52:59.746Z",
+      "profile_data": {
+        "membership_number": "1006827",
+        "birth_year": 2003,
+        "gender": "M",
+        "club_name": "AURORA WEIGHTLIFTING CLUB",
+        "wso": "Illinois",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Northwestern Illinois Last Chance Qualifier & Developmental",
+          "date": "2016-05-21",
+          "division": "Men's 13 Under Age Group 50 Kg",
+          "lifter_name": "Andrew Johnson",
+          "body_weight_kg": "46.2",
+          "snatch_1": "25",
+          "snatch_2": "27",
+          "snatch_3": "-30",
+          "cj_1": "40",
+          "cj_2": "43",
+          "cj_3": "45",
+          "best_snatch": "27",
+          "best_cj": "45",
+          "total": "72"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Northwestern Illinois Last Chance Qualifier & Developmental",
+            "date": "2016-05-21",
+            "division": "Men's 13 Under Age Group 50 Kg",
+            "lifter_name": "Andrew Johnson",
+            "body_weight_kg": "46.2",
+            "snatch_1": "25",
+            "snatch_2": "27",
+            "snatch_3": "-30",
+            "cj_1": "40",
+            "cj_2": "43",
+            "cj_3": "45",
+            "best_snatch": "27",
+            "best_cj": "45",
+            "total": "72"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0yMSIsIndlaWdodF9jbGFzcyI6MjkzfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Andrew Johnson",
+            "total": "72",
+            "gender": "M",
+            "age": "13",
+            "club_name": "AURORA WEIGHTLIFTING CLUB",
+            "membership_number": "1006827",
+            "wso": "Illinois"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 45758,
+      "athlete_name": "Andrew Johnson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/45758",
+      "contaminated_lifter_id": 21792,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T21:53:11.123Z",
+      "profile_data": {
+        "membership_number": "1035583",
+        "birth_year": 2007,
+        "gender": "M",
+        "club_name": "BLOOMINGTON-NORMAL BARBELL CLUB",
+        "wso": "Illinois",
+        "national_rank": "4"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Guy Carlton Memorial",
+          "date": "2018-11-03",
+          "division": "Men's 13 Under Age Group 44kg",
+          "lifter_name": "Andrew Johnson",
+          "body_weight_kg": "44",
+          "snatch_1": "15",
+          "snatch_2": "16",
+          "snatch_3": "17",
+          "cj_1": "18",
+          "cj_2": "19",
+          "cj_3": "21",
+          "best_snatch": "17",
+          "best_cj": "21",
+          "total": "38"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Guy Carlton Memorial",
+            "date": "2018-11-03",
+            "division": "Men's 13 Under Age Group 44kg",
+            "lifter_name": "Andrew Johnson",
+            "body_weight_kg": "44",
+            "snatch_1": "15",
+            "snatch_2": "16",
+            "snatch_3": "17",
+            "cj_1": "18",
+            "cj_2": "19",
+            "cj_3": "21",
+            "best_snatch": "17",
+            "best_cj": "21",
+            "total": "38"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMS0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMS0wMyIsIndlaWdodF9jbGFzcyI6NDR9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Andrew Johnson",
+            "total": "38",
+            "gender": "M",
+            "age": "11",
+            "club_name": "BLOOMINGTON-NORMAL BARBELL CLUB",
+            "membership_number": "1035583",
+            "wso": "Illinois"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

@@ -1,0 +1,200 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T17:22:47.799Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Matthew Martin",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 3,
+    "total_reverse_lookups": 3,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 24461236
+  },
+  "data": [
+    {
+      "internal_id": 11100,
+      "athlete_name": "Matthew Martin",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/11100",
+      "contaminated_lifter_id": 11840,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T17:22:37.660Z",
+      "profile_data": {
+        "membership_number": "212349",
+        "birth_year": 1983,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "California South",
+        "national_rank": "2"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Feel the Steel III",
+          "date": "2015-08-22",
+          "division": "Open Men's 69 kg",
+          "lifter_name": "Matthew Martin",
+          "body_weight_kg": "69",
+          "snatch_1": "94",
+          "snatch_2": "96",
+          "snatch_3": "98",
+          "cj_1": "118",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "98",
+          "best_cj": "118",
+          "total": "216"
+        },
+        {
+          "meet_name": "Fortius Open",
+          "date": "2015-05-03",
+          "division": "Open Men's 69 kg",
+          "lifter_name": "Matthew Martin",
+          "body_weight_kg": "68.96",
+          "snatch_1": "90",
+          "snatch_2": "-96",
+          "snatch_3": "96",
+          "cj_1": "110",
+          "cj_2": "-116",
+          "cj_3": "-118",
+          "best_snatch": "96",
+          "best_cj": "110",
+          "total": "206"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Feel the Steel III",
+            "date": "2015-08-22",
+            "division": "Open Men's 69 kg",
+            "lifter_name": "Matthew Martin",
+            "body_weight_kg": "69",
+            "snatch_1": "94",
+            "snatch_2": "96",
+            "snatch_3": "98",
+            "cj_1": "118",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "98",
+            "best_cj": "118",
+            "total": "216"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOC0yMiIsIndlaWdodF9jbGFzcyI6MzU2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Matthew Martin",
+            "total": "216",
+            "gender": "M",
+            "age": "32",
+            "club_name": "-",
+            "membership_number": "212349",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Fortius Open",
+            "date": "2015-05-03",
+            "division": "Open Men's 69 kg",
+            "lifter_name": "Matthew Martin",
+            "body_weight_kg": "68.96",
+            "snatch_1": "90",
+            "snatch_2": "-96",
+            "snatch_3": "96",
+            "cj_1": "110",
+            "cj_2": "-116",
+            "cj_3": "-118",
+            "best_snatch": "96",
+            "best_cj": "110",
+            "total": "206"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0wMyIsIndlaWdodF9jbGFzcyI6MzU2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "12",
+            "athlete_name": "Matthew Martin",
+            "total": "206",
+            "gender": "M",
+            "age": "32",
+            "club_name": "-",
+            "membership_number": "212349",
+            "wso": "California South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 39123,
+      "athlete_name": "Matthew Martin",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/39123",
+      "contaminated_lifter_id": 11840,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T17:22:47.797Z",
+      "profile_data": {
+        "membership_number": "191938",
+        "birth_year": 1999,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Texas-Oklahoma",
+        "national_rank": "8"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Lead to Platinum Fall Meet",
+          "date": "2018-10-20",
+          "division": "Open Men's 96kg",
+          "lifter_name": "Matthew Martin",
+          "body_weight_kg": "94.3",
+          "snatch_1": "115",
+          "snatch_2": "120",
+          "snatch_3": "120",
+          "cj_1": "140",
+          "cj_2": "140",
+          "cj_3": "145",
+          "best_snatch": "120",
+          "best_cj": "145",
+          "total": "265"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Lead to Platinum Fall Meet",
+            "date": "2018-10-20",
+            "division": "Open Men's 96kg",
+            "lifter_name": "Matthew Martin",
+            "body_weight_kg": "94.3",
+            "snatch_1": "115",
+            "snatch_2": "120",
+            "snatch_3": "120",
+            "cj_1": "140",
+            "cj_2": "140",
+            "cj_3": "145",
+            "best_snatch": "120",
+            "best_cj": "145",
+            "total": "265"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yMCIsIndlaWdodF9jbGFzcyI6ODd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "8",
+            "athlete_name": "Matthew Martin",
+            "total": "265",
+            "gender": "M",
+            "age": "19",
+            "club_name": "-",
+            "membership_number": "191938",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

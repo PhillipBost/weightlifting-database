@@ -1,0 +1,294 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T20:40:45.037Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Katie Pierce",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 5,
+    "total_reverse_lookups": 5,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 71315131
+  },
+  "data": [
+    {
+      "internal_id": 55785,
+      "athlete_name": "Katie Pierce",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/55785",
+      "contaminated_lifter_id": 50657,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T20:39:46.693Z",
+      "profile_data": {
+        "membership_number": "1065046",
+        "birth_year": 1978,
+        "gender": "F",
+        "club_name": "Kiowa Weightlifting",
+        "wso": "Pacific Northwest",
+        "national_rank": "3"
+      },
+      "competition_history": [
+        {
+          "meet_name": "COME TO THE DARK SIDE",
+          "date": "2023-04-29",
+          "division": "Women's Masters (45-49) +87kg",
+          "lifter_name": "Katie Pierce",
+          "body_weight_kg": "88.9",
+          "snatch_1": "41",
+          "snatch_2": "43",
+          "snatch_3": "-45",
+          "cj_1": "60",
+          "cj_2": "64",
+          "cj_3": "-68",
+          "best_snatch": "43",
+          "best_cj": "64",
+          "total": "107"
+        },
+        {
+          "meet_name": "Winter Warfare",
+          "date": "2022-12-17",
+          "division": "Women's Masters (40-44) 87kg",
+          "lifter_name": "Katie Pierce",
+          "body_weight_kg": "86.3",
+          "snatch_1": "35",
+          "snatch_2": "37",
+          "snatch_3": "40",
+          "cj_1": "48",
+          "cj_2": "51",
+          "cj_3": "54",
+          "best_snatch": "40",
+          "best_cj": "54",
+          "total": "94"
+        },
+        {
+          "meet_name": "Pacific Northwest WSO Championship 2022",
+          "date": "2022-10-02",
+          "division": "Women's Masters (40-44) 87kg",
+          "lifter_name": "Katie Pierce",
+          "body_weight_kg": "84.9",
+          "snatch_1": "25",
+          "snatch_2": "30",
+          "snatch_3": "33",
+          "cj_1": "31",
+          "cj_2": "35",
+          "cj_3": "40",
+          "best_snatch": "33",
+          "best_cj": "40",
+          "total": "73"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "COME TO THE DARK SIDE",
+            "date": "2023-04-29",
+            "division": "Women's Masters (45-49) +87kg",
+            "lifter_name": "Katie Pierce",
+            "body_weight_kg": "88.9",
+            "snatch_1": "41",
+            "snatch_2": "43",
+            "snatch_3": "-45",
+            "cj_1": "60",
+            "cj_2": "64",
+            "cj_3": "-68",
+            "best_snatch": "43",
+            "best_cj": "64",
+            "total": "107"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0yOSIsIndlaWdodF9jbGFzcyI6MTYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Katie Pierce",
+            "total": "107",
+            "gender": "F",
+            "age": "45",
+            "club_name": "Kiowa Weightlifting",
+            "membership_number": "1065046",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Winter Warfare",
+            "date": "2022-12-17",
+            "division": "Women's Masters (40-44) 87kg",
+            "lifter_name": "Katie Pierce",
+            "body_weight_kg": "86.3",
+            "snatch_1": "35",
+            "snatch_2": "37",
+            "snatch_3": "40",
+            "cj_1": "48",
+            "cj_2": "51",
+            "cj_3": "54",
+            "best_snatch": "40",
+            "best_cj": "54",
+            "total": "94"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMi0xNyIsIndlaWdodF9jbGFzcyI6MTM5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Katie Pierce",
+            "total": "94",
+            "gender": "F",
+            "age": "44",
+            "club_name": "Kiowa Weightlifting",
+            "membership_number": "1065046",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Pacific Northwest WSO Championship 2022",
+            "date": "2022-10-02",
+            "division": "Women's Masters (40-44) 87kg",
+            "lifter_name": "Katie Pierce",
+            "body_weight_kg": "84.9",
+            "snatch_1": "25",
+            "snatch_2": "30",
+            "snatch_3": "33",
+            "cj_1": "31",
+            "cj_2": "35",
+            "cj_3": "40",
+            "best_snatch": "33",
+            "best_cj": "40",
+            "total": "73"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMC0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMC0wMiIsIndlaWdodF9jbGFzcyI6MTM5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Katie Pierce",
+            "total": "73",
+            "gender": "F",
+            "age": "44",
+            "club_name": "Kiowa Weightlifting",
+            "membership_number": "1065046",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 52824,
+      "athlete_name": "Katie Pierce",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/52824",
+      "contaminated_lifter_id": 50657,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T20:40:45.033Z",
+      "profile_data": {
+        "membership_number": "1060451",
+        "birth_year": 1999,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "Indiana",
+        "national_rank": "5"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2022 MASS Mania: Round One",
+          "date": "2022-04-03",
+          "division": "Open Women's +87kg",
+          "lifter_name": "Katie Pierce",
+          "body_weight_kg": "114.6",
+          "snatch_1": "35",
+          "snatch_2": "-38",
+          "snatch_3": "38",
+          "cj_1": "48",
+          "cj_2": "52",
+          "cj_3": "-55",
+          "best_snatch": "38",
+          "best_cj": "52",
+          "total": "90"
+        },
+        {
+          "meet_name": "The MASS Classic",
+          "date": "2022-01-29",
+          "division": "Open Women's +87kg",
+          "lifter_name": "Katie Pierce",
+          "body_weight_kg": "115.3",
+          "snatch_1": "32",
+          "snatch_2": "35",
+          "snatch_3": "38",
+          "cj_1": "45",
+          "cj_2": "49",
+          "cj_3": "52",
+          "best_snatch": "38",
+          "best_cj": "52",
+          "total": "90"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2022 MASS Mania: Round One",
+            "date": "2022-04-03",
+            "division": "Open Women's +87kg",
+            "lifter_name": "Katie Pierce",
+            "body_weight_kg": "114.6",
+            "snatch_1": "35",
+            "snatch_2": "-38",
+            "snatch_3": "38",
+            "cj_1": "48",
+            "cj_2": "52",
+            "cj_3": "-55",
+            "best_snatch": "38",
+            "best_cj": "52",
+            "total": "90"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNC0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNC0wMyIsIndlaWdodF9jbGFzcyI6MTAwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "Katie Pierce",
+            "total": "90",
+            "gender": "F",
+            "age": "23",
+            "club_name": "-",
+            "membership_number": "1060451",
+            "wso": "Indiana"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The MASS Classic",
+            "date": "2022-01-29",
+            "division": "Open Women's +87kg",
+            "lifter_name": "Katie Pierce",
+            "body_weight_kg": "115.3",
+            "snatch_1": "32",
+            "snatch_2": "35",
+            "snatch_3": "38",
+            "cj_1": "45",
+            "cj_2": "49",
+            "cj_3": "52",
+            "best_snatch": "38",
+            "best_cj": "52",
+            "total": "90"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMS0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMS0yOSIsIndlaWdodF9jbGFzcyI6MTAwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "33",
+            "athlete_name": "Katie Pierce",
+            "total": "90",
+            "gender": "F",
+            "age": "23",
+            "club_name": "-",
+            "membership_number": "1060451",
+            "wso": "Indiana"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

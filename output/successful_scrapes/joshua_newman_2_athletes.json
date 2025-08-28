@@ -1,0 +1,294 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T17:53:03.711Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Joshua Newman",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 5,
+    "total_reverse_lookups": 5,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 61253805
+  },
+  "data": [
+    {
+      "internal_id": 57167,
+      "athlete_name": "Joshua Newman",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/57167",
+      "contaminated_lifter_id": 7211,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T17:52:53.380Z",
+      "profile_data": {
+        "membership_number": "1067524",
+        "birth_year": 1990,
+        "gender": "M",
+        "club_name": "Mach 1 Barbell",
+        "wso": "New York",
+        "national_rank": "8"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Monmouth Championships 2023",
+          "date": "2023-11-19",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Joshua Newman",
+          "body_weight_kg": "80.4",
+          "snatch_1": "60",
+          "snatch_2": "-64",
+          "snatch_3": "-65",
+          "cj_1": "88",
+          "cj_2": "-91",
+          "cj_3": "91",
+          "best_snatch": "60",
+          "best_cj": "91",
+          "total": "151"
+        },
+        {
+          "meet_name": "RYPT Summer Classic 2023",
+          "date": "2023-08-12",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Joshua Newman",
+          "body_weight_kg": "80.4",
+          "snatch_1": "60",
+          "snatch_2": "63",
+          "snatch_3": "-66",
+          "cj_1": "88",
+          "cj_2": "-92",
+          "cj_3": "-92",
+          "best_snatch": "63",
+          "best_cj": "88",
+          "total": "151"
+        },
+        {
+          "meet_name": "Freehold Spring Lift Off 2023",
+          "date": "2023-04-29",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Joshua Newman",
+          "body_weight_kg": "80",
+          "snatch_1": "55",
+          "snatch_2": "58",
+          "snatch_3": "60",
+          "cj_1": "82",
+          "cj_2": "86",
+          "cj_3": "-90",
+          "best_snatch": "60",
+          "best_cj": "86",
+          "total": "146"
+        },
+        {
+          "meet_name": "Rutgers/RYPT Winter Classic",
+          "date": "2023-01-14",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Joshua Newman",
+          "body_weight_kg": "80.6",
+          "snatch_1": "50",
+          "snatch_2": "52",
+          "snatch_3": "53",
+          "cj_1": "75",
+          "cj_2": "77",
+          "cj_3": "79",
+          "best_snatch": "53",
+          "best_cj": "79",
+          "total": "132"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Monmouth Championships 2023",
+            "date": "2023-11-19",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Joshua Newman",
+            "body_weight_kg": "80.4",
+            "snatch_1": "60",
+            "snatch_2": "-64",
+            "snatch_3": "-65",
+            "cj_1": "88",
+            "cj_2": "-91",
+            "cj_3": "91",
+            "best_snatch": "60",
+            "best_cj": "91",
+            "total": "151"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMS0xOSIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "8",
+            "athlete_name": "Joshua Newman",
+            "total": "151",
+            "gender": "M",
+            "age": "33",
+            "club_name": "Mach 1 Barbell",
+            "membership_number": "1067524",
+            "wso": "New York"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "RYPT Summer Classic 2023",
+            "date": "2023-08-12",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Joshua Newman",
+            "body_weight_kg": "80.4",
+            "snatch_1": "60",
+            "snatch_2": "63",
+            "snatch_3": "-66",
+            "cj_1": "88",
+            "cj_2": "-92",
+            "cj_3": "-92",
+            "best_snatch": "63",
+            "best_cj": "88",
+            "total": "151"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wOC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wOC0xMiIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "25",
+            "athlete_name": "Joshua Newman",
+            "total": "151",
+            "gender": "M",
+            "age": "33",
+            "club_name": "Mach 1 Barbell",
+            "membership_number": "1067524",
+            "wso": "New York"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Freehold Spring Lift Off 2023",
+            "date": "2023-04-29",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Joshua Newman",
+            "body_weight_kg": "80",
+            "snatch_1": "55",
+            "snatch_2": "58",
+            "snatch_3": "60",
+            "cj_1": "82",
+            "cj_2": "86",
+            "cj_3": "-90",
+            "best_snatch": "60",
+            "best_cj": "86",
+            "total": "146"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0yOSIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "59",
+            "athlete_name": "Joshua Newman",
+            "total": "146",
+            "gender": "M",
+            "age": "33",
+            "club_name": "Mach 1 Barbell",
+            "membership_number": "1067524",
+            "wso": "New York"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Rutgers/RYPT Winter Classic",
+            "date": "2023-01-14",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Joshua Newman",
+            "body_weight_kg": "80.6",
+            "snatch_1": "50",
+            "snatch_2": "52",
+            "snatch_3": "53",
+            "cj_1": "75",
+            "cj_2": "77",
+            "cj_3": "79",
+            "best_snatch": "53",
+            "best_cj": "79",
+            "total": "132"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMS0xNCIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "43",
+            "athlete_name": "Joshua Newman",
+            "total": "132",
+            "gender": "M",
+            "age": "33",
+            "club_name": "Mach 1 Barbell",
+            "membership_number": "1067524",
+            "wso": "New York"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 14742,
+      "athlete_name": "Joshua Newman",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/14742",
+      "contaminated_lifter_id": 7211,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T17:53:03.709Z",
+      "profile_data": {
+        "membership_number": "212440",
+        "birth_year": 1986,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Carolina",
+        "national_rank": "16"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Port City Barbell Memorial Day Open",
+          "date": "2015-05-23",
+          "division": "Open Men's 69 kg",
+          "lifter_name": "Joshua Newman",
+          "body_weight_kg": "67",
+          "snatch_1": "-68",
+          "snatch_2": "68",
+          "snatch_3": "72",
+          "cj_1": "98",
+          "cj_2": "102",
+          "cj_3": "107",
+          "best_snatch": "72",
+          "best_cj": "107",
+          "total": "179"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Port City Barbell Memorial Day Open",
+            "date": "2015-05-23",
+            "division": "Open Men's 69 kg",
+            "lifter_name": "Joshua Newman",
+            "body_weight_kg": "67",
+            "snatch_1": "-68",
+            "snatch_2": "68",
+            "snatch_3": "72",
+            "cj_1": "98",
+            "cj_2": "102",
+            "cj_3": "107",
+            "best_snatch": "72",
+            "best_cj": "107",
+            "total": "179"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0yMyIsIndlaWdodF9jbGFzcyI6MzU2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "16",
+            "athlete_name": "Joshua Newman",
+            "total": "179",
+            "gender": "M",
+            "age": "29",
+            "club_name": "-",
+            "membership_number": "212440",
+            "wso": "Carolina"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

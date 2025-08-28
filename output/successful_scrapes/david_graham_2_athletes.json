@@ -1,0 +1,341 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T08:40:22.288Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "David Graham",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 6,
+    "total_reverse_lookups": 6,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 28092382
+  },
+  "data": [
+    {
+      "internal_id": 4900,
+      "athlete_name": "David Graham",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/4900",
+      "contaminated_lifter_id": 4628,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T08:39:48.553Z",
+      "profile_data": {
+        "membership_number": "190813",
+        "birth_year": 1976,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Missouri Valley",
+        "national_rank": "8"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Onaga Christmas Open & Open",
+          "date": "2013-12-28",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "David Graham",
+          "body_weight_kg": "83.1",
+          "snatch_1": "0",
+          "snatch_2": "63",
+          "snatch_3": "0",
+          "cj_1": "0",
+          "cj_2": "87",
+          "cj_3": "90",
+          "best_snatch": "63",
+          "best_cj": "90",
+          "total": "153"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Onaga Christmas Open & Open",
+            "date": "2013-12-28",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "David Graham",
+            "body_weight_kg": "83.1",
+            "snatch_1": "0",
+            "snatch_2": "63",
+            "snatch_3": "0",
+            "cj_1": "0",
+            "cj_2": "87",
+            "cj_3": "90",
+            "best_snatch": "63",
+            "best_cj": "90",
+            "total": "153"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMi0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMi0yOCIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "8",
+            "athlete_name": "David Graham",
+            "total": "153",
+            "gender": "M",
+            "age": "37",
+            "club_name": "-",
+            "membership_number": "190813",
+            "wso": "Missouri Valley"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 24094,
+      "athlete_name": "David Graham",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/24094",
+      "contaminated_lifter_id": 4628,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T08:40:22.285Z",
+      "profile_data": {
+        "membership_number": "1034547",
+        "birth_year": 1990,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Michigan",
+        "national_rank": "4"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2022 January online qualifier",
+          "date": "2022-01-14",
+          "division": "Open Men's 89kg",
+          "lifter_name": "David Graham",
+          "body_weight_kg": "87",
+          "snatch_1": "110",
+          "snatch_2": "0",
+          "snatch_3": "0",
+          "cj_1": "133",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "110",
+          "best_cj": "133",
+          "total": "243"
+        },
+        {
+          "meet_name": "2022 January online qualifier",
+          "date": "2022-01-19",
+          "division": "Open Men's 89kg",
+          "lifter_name": "David Graham",
+          "body_weight_kg": "87",
+          "snatch_1": "110",
+          "snatch_2": "0",
+          "snatch_3": "0",
+          "cj_1": "133",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "110",
+          "best_cj": "133",
+          "total": "243"
+        },
+        {
+          "meet_name": "2019 Nike American Open Series 1",
+          "date": "2019-03-03",
+          "division": "Open Men's 89kg",
+          "lifter_name": "David Graham",
+          "body_weight_kg": "86.7",
+          "snatch_1": "112",
+          "snatch_2": "116",
+          "snatch_3": "-120",
+          "cj_1": "138",
+          "cj_2": "143",
+          "cj_3": "-146",
+          "best_snatch": "116",
+          "best_cj": "143",
+          "total": "259"
+        },
+        {
+          "meet_name": "Lift Lab AO Series 1 Last Chance Qualifier",
+          "date": "2019-01-26",
+          "division": "Open Men's 89kg",
+          "lifter_name": "David Graham",
+          "body_weight_kg": "84.5",
+          "snatch_1": "108",
+          "snatch_2": "112",
+          "snatch_3": "-116",
+          "cj_1": "130",
+          "cj_2": "137",
+          "cj_3": "-143",
+          "best_snatch": "112",
+          "best_cj": "137",
+          "total": "249"
+        },
+        {
+          "meet_name": "PathWeigh Performance St. Louis Classic",
+          "date": "2018-11-03",
+          "division": "Open Men's 81kg",
+          "lifter_name": "David Graham",
+          "body_weight_kg": "80.4",
+          "snatch_1": "105",
+          "snatch_2": "109",
+          "snatch_3": "113",
+          "cj_1": "125",
+          "cj_2": "131",
+          "cj_3": "137",
+          "best_snatch": "113",
+          "best_cj": "137",
+          "total": "250"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2022 January online qualifier",
+            "date": "2022-01-14",
+            "division": "Open Men's 89kg",
+            "lifter_name": "David Graham",
+            "body_weight_kg": "87",
+            "snatch_1": "110",
+            "snatch_2": "0",
+            "snatch_3": "0",
+            "cj_1": "133",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "110",
+            "best_cj": "133",
+            "total": "243"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMS0xNCIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "David Graham",
+            "total": "243",
+            "gender": "M",
+            "age": "32",
+            "club_name": "-",
+            "membership_number": "1034547",
+            "wso": "Michigan"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2022 January online qualifier",
+            "date": "2022-01-19",
+            "division": "Open Men's 89kg",
+            "lifter_name": "David Graham",
+            "body_weight_kg": "87",
+            "snatch_1": "110",
+            "snatch_2": "0",
+            "snatch_3": "0",
+            "cj_1": "133",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "110",
+            "best_cj": "133",
+            "total": "243"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMS0xOSIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "David Graham",
+            "total": "243",
+            "gender": "M",
+            "age": "32",
+            "club_name": "-",
+            "membership_number": "1034547",
+            "wso": "Michigan"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2019 Nike American Open Series 1",
+            "date": "2019-03-03",
+            "division": "Open Men's 89kg",
+            "lifter_name": "David Graham",
+            "body_weight_kg": "86.7",
+            "snatch_1": "112",
+            "snatch_2": "116",
+            "snatch_3": "-120",
+            "cj_1": "138",
+            "cj_2": "143",
+            "cj_3": "-146",
+            "best_snatch": "116",
+            "best_cj": "143",
+            "total": "259"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMy0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMy0wMyIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "12",
+            "athlete_name": "David Graham",
+            "total": "259",
+            "gender": "M",
+            "age": "29",
+            "club_name": "-",
+            "membership_number": "1034547",
+            "wso": "Michigan"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Lift Lab AO Series 1 Last Chance Qualifier",
+            "date": "2019-01-26",
+            "division": "Open Men's 89kg",
+            "lifter_name": "David Graham",
+            "body_weight_kg": "84.5",
+            "snatch_1": "108",
+            "snatch_2": "112",
+            "snatch_3": "-116",
+            "cj_1": "130",
+            "cj_2": "137",
+            "cj_3": "-143",
+            "best_snatch": "112",
+            "best_cj": "137",
+            "total": "249"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0yNiIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "David Graham",
+            "total": "249",
+            "gender": "M",
+            "age": "29",
+            "club_name": "-",
+            "membership_number": "1034547",
+            "wso": "Michigan"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "PathWeigh Performance St. Louis Classic",
+            "date": "2018-11-03",
+            "division": "Open Men's 81kg",
+            "lifter_name": "David Graham",
+            "body_weight_kg": "80.4",
+            "snatch_1": "105",
+            "snatch_2": "109",
+            "snatch_3": "113",
+            "cj_1": "125",
+            "cj_2": "131",
+            "cj_3": "137",
+            "best_snatch": "113",
+            "best_cj": "137",
+            "total": "250"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMS0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMS0wMyIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "David Graham",
+            "total": "250",
+            "gender": "M",
+            "age": "28",
+            "club_name": "-",
+            "membership_number": "1034547",
+            "wso": "Michigan"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

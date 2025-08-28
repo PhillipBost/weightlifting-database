@@ -1,0 +1,583 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T10:13:14.097Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Jordan Taylor",
+    "internal_ids_processed": 5,
+    "successful_scrapes": 4,
+    "failed_scrapes": 1,
+    "total_competitions_found": 10,
+    "total_reverse_lookups": 10,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 1023742
+  },
+  "data": [
+    {
+      "internal_id": 18954,
+      "athlete_name": "Jordan Taylor",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/18954",
+      "contaminated_lifter_id": 17261,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T11:00:34.213Z",
+      "profile_data": {
+        "membership_number": "1015191",
+        "birth_year": 1988,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Georgia",
+        "national_rank": "6"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Matt Davis Memorial",
+          "date": "2017-05-06",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Jordan Taylor",
+          "body_weight_kg": "84.8",
+          "snatch_1": "106",
+          "snatch_2": "-110",
+          "snatch_3": "-112",
+          "cj_1": "130",
+          "cj_2": "140",
+          "cj_3": "-145",
+          "best_snatch": "106",
+          "best_cj": "140",
+          "total": "246"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Matt Davis Memorial",
+            "date": "2017-05-06",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Jordan Taylor",
+            "body_weight_kg": "84.8",
+            "snatch_1": "106",
+            "snatch_2": "-110",
+            "snatch_3": "-112",
+            "cj_1": "130",
+            "cj_2": "140",
+            "cj_3": "-145",
+            "best_snatch": "106",
+            "best_cj": "140",
+            "total": "246"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNS0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNS0wNiIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Jordan Taylor",
+            "total": "246",
+            "gender": "M",
+            "age": "29",
+            "club_name": "-",
+            "membership_number": "1015191",
+            "wso": "Georgia"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 27401,
+      "athlete_name": "Jordan Taylor",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/27401",
+      "contaminated_lifter_id": 17261,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T11:00:47.273Z",
+      "profile_data": {
+        "membership_number": "1004965",
+        "birth_year": 1992,
+        "gender": "M",
+        "club_name": "EMERALD CITY WEIGHTLIFTING",
+        "wso": "Pacific Northwest",
+        "national_rank": "34"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Capitol City Weightlifting Championship",
+          "date": "2016-03-19",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Jordan Taylor",
+          "body_weight_kg": "80.65",
+          "snatch_1": "90",
+          "snatch_2": "95",
+          "snatch_3": "100",
+          "cj_1": "105",
+          "cj_2": "110",
+          "cj_3": "115",
+          "best_snatch": "100",
+          "best_cj": "115",
+          "total": "215"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Capitol City Weightlifting Championship",
+            "date": "2016-03-19",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Jordan Taylor",
+            "body_weight_kg": "80.65",
+            "snatch_1": "90",
+            "snatch_2": "95",
+            "snatch_3": "100",
+            "cj_1": "105",
+            "cj_2": "110",
+            "cj_3": "115",
+            "best_snatch": "100",
+            "best_cj": "115",
+            "total": "215"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMy0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMy0xOSIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "34",
+            "athlete_name": "Jordan Taylor",
+            "total": "215",
+            "gender": "M",
+            "age": "24",
+            "club_name": "EMERALD CITY WEIGHTLIFTING",
+            "membership_number": "1004965",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 28591,
+      "athlete_name": "Jordan Taylor",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/28591",
+      "contaminated_lifter_id": 17261,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T11:00:57.008Z",
+      "profile_data": {
+        "membership_number": "1029064",
+        "birth_year": 1992,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Minnesota-Dakotas",
+        "national_rank": "10"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Testify Barbell MAYhem",
+          "date": "2018-05-05",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Jordan Taylor",
+          "body_weight_kg": "88.8",
+          "snatch_1": "102",
+          "snatch_2": "104",
+          "snatch_3": "107",
+          "cj_1": "125",
+          "cj_2": "127",
+          "cj_3": "129",
+          "best_snatch": "107",
+          "best_cj": "129",
+          "total": "236"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Testify Barbell MAYhem",
+            "date": "2018-05-05",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Jordan Taylor",
+            "body_weight_kg": "88.8",
+            "snatch_1": "102",
+            "snatch_2": "104",
+            "snatch_3": "107",
+            "cj_1": "125",
+            "cj_2": "127",
+            "cj_3": "129",
+            "best_snatch": "107",
+            "best_cj": "129",
+            "total": "236"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNS0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNS0wNSIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "Jordan Taylor",
+            "total": "236",
+            "gender": "M",
+            "age": "26",
+            "club_name": "-",
+            "membership_number": "1029064",
+            "wso": "Minnesota-Dakotas"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 36074,
+      "athlete_name": "Jordan Taylor",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/36074",
+      "contaminated_lifter_id": 17261,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T11:01:06.481Z",
+      "profile_data": {
+        "membership_number": "191894",
+        "birth_year": 1997,
+        "gender": "F",
+        "club_name": "HASSLE FREE BBC",
+        "wso": "California North Central",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2014 Presidents Day Open",
+          "date": "2014-02-16",
+          "division": "Women's 16-17 Age Group +75 kg",
+          "lifter_name": "Jordan Taylor",
+          "body_weight_kg": "81.46",
+          "snatch_1": "25",
+          "snatch_2": "28",
+          "snatch_3": "31",
+          "cj_1": "42",
+          "cj_2": "-45",
+          "cj_3": "-48",
+          "best_snatch": "31",
+          "best_cj": "42",
+          "total": "73"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2014 Presidents Day Open",
+            "date": "2014-02-16",
+            "division": "Women's 16-17 Age Group +75 kg",
+            "lifter_name": "Jordan Taylor",
+            "body_weight_kg": "81.46",
+            "snatch_1": "25",
+            "snatch_2": "28",
+            "snatch_3": "31",
+            "cj_1": "42",
+            "cj_2": "-45",
+            "cj_3": "-48",
+            "best_snatch": "31",
+            "best_cj": "42",
+            "total": "73"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMi0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMi0xNiIsIndlaWdodF9jbGFzcyI6MzM2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Jordan Taylor",
+            "total": "73",
+            "gender": "F",
+            "age": "17",
+            "club_name": "HASSLE FREE BBC",
+            "membership_number": "191894",
+            "wso": "California North Central"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 59919,
+      "athlete_name": "Jordan Taylor",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/59919",
+      "contaminated_lifter_id": 17261,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-27T10:13:12.094Z",
+      "profile_data": {
+        "membership_number": "1063155",
+        "birth_year": 1987,
+        "gender": "F",
+        "club_name": "Strong Weightlifting",
+        "wso": "Texas-Oklahoma",
+        "national_rank": "5"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Strong Summer Championship",
+          "date": "2025-07-26",
+          "division": "Women's Masters (35-39) 86kg",
+          "lifter_name": "Jordan Taylor",
+          "body_weight_kg": "84.1",
+          "snatch_1": "56",
+          "snatch_2": "-59",
+          "snatch_3": "60",
+          "cj_1": "66",
+          "cj_2": "69",
+          "cj_3": "73",
+          "best_snatch": "60",
+          "best_cj": "73",
+          "total": "133"
+        },
+        {
+          "meet_name": "2025 Texas State Weightlifting Championships",
+          "date": "2025-01-17",
+          "division": "Women's Masters (35-39) 81kg",
+          "lifter_name": "Jordan Taylor",
+          "body_weight_kg": "80.2",
+          "snatch_1": "-57",
+          "snatch_2": "57",
+          "snatch_3": "-60",
+          "cj_1": "66",
+          "cj_2": "69",
+          "cj_3": "-72",
+          "best_snatch": "57",
+          "best_cj": "69",
+          "total": "126"
+        },
+        {
+          "meet_name": "The 2024 Nike North American Open Series 2, powered by Rogue",
+          "date": "2024-08-29",
+          "division": "Women's Masters (35-39) 81kg",
+          "lifter_name": "Jordan Taylor",
+          "body_weight_kg": "77.75",
+          "snatch_1": "-59",
+          "snatch_2": "59",
+          "snatch_3": "-62",
+          "cj_1": "70",
+          "cj_2": "-73",
+          "cj_3": "-73",
+          "best_snatch": "59",
+          "best_cj": "70",
+          "total": "129"
+        },
+        {
+          "meet_name": "Texas-Oklahoma WSO Championships",
+          "date": "2024-08-29",
+          "division": "Women's Masters (35-39) 81kg",
+          "lifter_name": "Jordan Taylor",
+          "body_weight_kg": "77.75",
+          "snatch_1": "-59",
+          "snatch_2": "59",
+          "snatch_3": "-62",
+          "cj_1": "70",
+          "cj_2": "-73",
+          "cj_3": "-73",
+          "best_snatch": "59",
+          "best_cj": "70",
+          "total": "129"
+        },
+        {
+          "meet_name": "BlueWave Championships 2024 (NUQ)",
+          "date": "2024-02-03",
+          "division": "Women's Masters (35-39) 81kg",
+          "lifter_name": "Jordan Taylor",
+          "body_weight_kg": "80.2",
+          "snatch_1": "55",
+          "snatch_2": "57",
+          "snatch_3": "-59",
+          "cj_1": "64",
+          "cj_2": "-67",
+          "cj_3": "-67",
+          "best_snatch": "57",
+          "best_cj": "64",
+          "total": "121"
+        },
+        {
+          "meet_name": "GoodVibes Weightlifting Meet 2023",
+          "date": "2023-09-02",
+          "division": "Women's Masters (35-39) 76kg",
+          "lifter_name": "Jordan Taylor",
+          "body_weight_kg": "75.8",
+          "snatch_1": "55",
+          "snatch_2": "-58",
+          "snatch_3": "-60",
+          "cj_1": "-67",
+          "cj_2": "-67",
+          "cj_3": "-67",
+          "best_snatch": "55",
+          "best_cj": "0",
+          "total": "0"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Strong Summer Championship",
+            "date": "2025-07-26",
+            "division": "Women's Masters (35-39) 86kg",
+            "lifter_name": "Jordan Taylor",
+            "body_weight_kg": "84.1",
+            "snatch_1": "56",
+            "snatch_2": "-59",
+            "snatch_3": "60",
+            "cj_1": "66",
+            "cj_2": "69",
+            "cj_3": "73",
+            "best_snatch": "60",
+            "best_cj": "73",
+            "total": "133"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNy0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNy0yNiIsIndlaWdodF9jbGFzcyI6Njg3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "Jordan Taylor",
+            "total": "133",
+            "gender": "F",
+            "age": "38",
+            "club_name": "Strong Weightlifting",
+            "membership_number": "1063155",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2025 Texas State Weightlifting Championships",
+            "date": "2025-01-17",
+            "division": "Women's Masters (35-39) 81kg",
+            "lifter_name": "Jordan Taylor",
+            "body_weight_kg": "80.2",
+            "snatch_1": "-57",
+            "snatch_2": "57",
+            "snatch_3": "-60",
+            "cj_1": "66",
+            "cj_2": "69",
+            "cj_3": "-72",
+            "best_snatch": "57",
+            "best_cj": "69",
+            "total": "126"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMS0xNyIsIndlaWdodF9jbGFzcyI6MTE4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Jordan Taylor",
+            "total": "126",
+            "gender": "F",
+            "age": "38",
+            "club_name": "Abstract Barbell",
+            "membership_number": "1063155",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The 2024 Nike North American Open Series 2, powered by Rogue",
+            "date": "2024-08-29",
+            "division": "Women's Masters (35-39) 81kg",
+            "lifter_name": "Jordan Taylor",
+            "body_weight_kg": "77.75",
+            "snatch_1": "-59",
+            "snatch_2": "59",
+            "snatch_3": "-62",
+            "cj_1": "70",
+            "cj_2": "-73",
+            "cj_3": "-73",
+            "best_snatch": "59",
+            "best_cj": "70",
+            "total": "129"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOC0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOC0yOSIsIndlaWdodF9jbGFzcyI6MTE4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "Jordan Taylor",
+            "total": "129",
+            "gender": "F",
+            "age": "37",
+            "club_name": "Abstract Barbell",
+            "membership_number": "1063155",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Texas-Oklahoma WSO Championships",
+            "date": "2024-08-29",
+            "division": "Women's Masters (35-39) 81kg",
+            "lifter_name": "Jordan Taylor",
+            "body_weight_kg": "77.75",
+            "snatch_1": "-59",
+            "snatch_2": "59",
+            "snatch_3": "-62",
+            "cj_1": "70",
+            "cj_2": "-73",
+            "cj_3": "-73",
+            "best_snatch": "59",
+            "best_cj": "70",
+            "total": "129"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOC0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOC0yOSIsIndlaWdodF9jbGFzcyI6MTE4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "Jordan Taylor",
+            "total": "129",
+            "gender": "F",
+            "age": "37",
+            "club_name": "Abstract Barbell",
+            "membership_number": "1063155",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "BlueWave Championships 2024 (NUQ)",
+            "date": "2024-02-03",
+            "division": "Women's Masters (35-39) 81kg",
+            "lifter_name": "Jordan Taylor",
+            "body_weight_kg": "80.2",
+            "snatch_1": "55",
+            "snatch_2": "57",
+            "snatch_3": "-59",
+            "cj_1": "64",
+            "cj_2": "-67",
+            "cj_3": "-67",
+            "best_snatch": "57",
+            "best_cj": "64",
+            "total": "121"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMi0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMi0wMyIsIndlaWdodF9jbGFzcyI6MTE4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Jordan Taylor",
+            "total": "121",
+            "gender": "F",
+            "age": "37",
+            "club_name": "Abstract Barbell",
+            "membership_number": "1063155",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "GoodVibes Weightlifting Meet 2023",
+            "date": "2023-09-02",
+            "division": "Women's Masters (35-39) 76kg",
+            "lifter_name": "Jordan Taylor",
+            "body_weight_kg": "75.8",
+            "snatch_1": "55",
+            "snatch_2": "-58",
+            "snatch_3": "-60",
+            "cj_1": "-67",
+            "cj_2": "-67",
+            "cj_3": "-67",
+            "best_snatch": "55",
+            "best_cj": "0",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wOS0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wOS0wMiIsIndlaWdodF9jbGFzcyI6MTE3fQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    }
+  ]
+}

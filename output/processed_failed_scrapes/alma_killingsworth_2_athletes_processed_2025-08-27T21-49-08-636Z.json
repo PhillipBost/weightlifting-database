@@ -1,0 +1,286 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T07:41:22.519Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Alma Killingsworth",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 5,
+    "total_reverse_lookups": 5,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 22188974
+  },
+  "data": [
+    {
+      "internal_id": 56120,
+      "athlete_name": "Alma Killingsworth",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/56120",
+      "contaminated_lifter_id": 42273,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-27T07:40:41.577Z",
+      "profile_data": {
+        "membership_number": "1066155",
+        "birth_year": 1979,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "Florida",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Storm Summer Slam 2024",
+          "date": "2024-06-01",
+          "division": "Women's Masters (45-49) 71kg",
+          "lifter_name": "Alma Killingsworth",
+          "body_weight_kg": "69",
+          "snatch_1": "40",
+          "snatch_2": "43",
+          "snatch_3": "46",
+          "cj_1": "58",
+          "cj_2": "61",
+          "cj_3": "-64",
+          "best_snatch": "46",
+          "best_cj": "61",
+          "total": "107"
+        },
+        {
+          "meet_name": "Orchid City Classic",
+          "date": "2024-04-07",
+          "division": "Women's Masters (45-49) 71kg",
+          "lifter_name": "Alma Killingsworth",
+          "body_weight_kg": "69.5",
+          "snatch_1": "40",
+          "snatch_2": "43",
+          "snatch_3": "-46",
+          "cj_1": "56",
+          "cj_2": "59",
+          "cj_3": "-62",
+          "best_snatch": "43",
+          "best_cj": "59",
+          "total": "102"
+        },
+        {
+          "meet_name": "The Jacked Classic 2023",
+          "date": "2023-09-30",
+          "division": "Women's Masters (40-44) 71kg",
+          "lifter_name": "Alma Killingsworth",
+          "body_weight_kg": "69.8",
+          "snatch_1": "-39",
+          "snatch_2": "39",
+          "snatch_3": "42",
+          "cj_1": "55",
+          "cj_2": "58",
+          "cj_3": "61",
+          "best_snatch": "42",
+          "best_cj": "61",
+          "total": "103"
+        },
+        {
+          "meet_name": "2023 Florida WSO State Championships",
+          "date": "2023-05-18",
+          "division": "Women's Masters (40-44) 64kg",
+          "lifter_name": "Alma Killingsworth",
+          "body_weight_kg": "62.8",
+          "snatch_1": "-37",
+          "snatch_2": "37",
+          "snatch_3": "-40",
+          "cj_1": "53",
+          "cj_2": "-56",
+          "cj_3": "-57",
+          "best_snatch": "37",
+          "best_cj": "53",
+          "total": "90"
+        },
+        {
+          "meet_name": "The Palm Beach Open '22 Part 2  (spooky edition)",
+          "date": "2022-10-23",
+          "division": "Women's Masters (40-44) 64kg",
+          "lifter_name": "Alma Killingsworth",
+          "body_weight_kg": "62.8",
+          "snatch_1": "-38",
+          "snatch_2": "38",
+          "snatch_3": "41",
+          "cj_1": "55",
+          "cj_2": "-59",
+          "cj_3": "59",
+          "best_snatch": "41",
+          "best_cj": "59",
+          "total": "100"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Storm Summer Slam 2024",
+            "date": "2024-06-01",
+            "division": "Women's Masters (45-49) 71kg",
+            "lifter_name": "Alma Killingsworth",
+            "body_weight_kg": "69",
+            "snatch_1": "40",
+            "snatch_2": "43",
+            "snatch_3": "46",
+            "cj_1": "58",
+            "cj_2": "61",
+            "cj_3": "-64",
+            "best_snatch": "46",
+            "best_cj": "61",
+            "total": "107"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNi0wMSIsIndlaWdodF9jbGFzcyI6MTU2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Alma Killingsworth",
+            "total": "107",
+            "gender": "F",
+            "age": "45",
+            "club_name": "-",
+            "membership_number": "1066155",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Orchid City Classic",
+            "date": "2024-04-07",
+            "division": "Women's Masters (45-49) 71kg",
+            "lifter_name": "Alma Killingsworth",
+            "body_weight_kg": "69.5",
+            "snatch_1": "40",
+            "snatch_2": "43",
+            "snatch_3": "-46",
+            "cj_1": "56",
+            "cj_2": "59",
+            "cj_3": "-62",
+            "best_snatch": "43",
+            "best_cj": "59",
+            "total": "102"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNC0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNC0wNyIsIndlaWdodF9jbGFzcyI6MTU2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Alma Killingsworth",
+            "total": "102",
+            "gender": "F",
+            "age": "45",
+            "club_name": "-",
+            "membership_number": "1066155",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The Jacked Classic 2023",
+            "date": "2023-09-30",
+            "division": "Women's Masters (40-44) 71kg",
+            "lifter_name": "Alma Killingsworth",
+            "body_weight_kg": "69.8",
+            "snatch_1": "-39",
+            "snatch_2": "39",
+            "snatch_3": "42",
+            "cj_1": "55",
+            "cj_2": "58",
+            "cj_3": "61",
+            "best_snatch": "42",
+            "best_cj": "61",
+            "total": "103"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wOS0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wOS0zMCIsIndlaWdodF9jbGFzcyI6MTM2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Alma Killingsworth",
+            "total": "103",
+            "gender": "F",
+            "age": "44",
+            "club_name": "-",
+            "membership_number": "1066155",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2023 Florida WSO State Championships",
+            "date": "2023-05-18",
+            "division": "Women's Masters (40-44) 64kg",
+            "lifter_name": "Alma Killingsworth",
+            "body_weight_kg": "62.8",
+            "snatch_1": "-37",
+            "snatch_2": "37",
+            "snatch_3": "-40",
+            "cj_1": "53",
+            "cj_2": "-56",
+            "cj_3": "-57",
+            "best_snatch": "37",
+            "best_cj": "53",
+            "total": "90"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNS0xOCIsIndlaWdodF9jbGFzcyI6MTM1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Alma Killingsworth",
+            "total": "90",
+            "gender": "F",
+            "age": "44",
+            "club_name": "-",
+            "membership_number": "1066155",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The Palm Beach Open '22 Part 2  (spooky edition)",
+            "date": "2022-10-23",
+            "division": "Women's Masters (40-44) 64kg",
+            "lifter_name": "Alma Killingsworth",
+            "body_weight_kg": "62.8",
+            "snatch_1": "-38",
+            "snatch_2": "38",
+            "snatch_3": "41",
+            "cj_1": "55",
+            "cj_2": "-59",
+            "cj_3": "59",
+            "best_snatch": "41",
+            "best_cj": "59",
+            "total": "100"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMC0yMyIsIndlaWdodF9jbGFzcyI6MTM1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Alma Killingsworth",
+            "total": "100",
+            "gender": "F",
+            "age": "43",
+            "club_name": "-",
+            "membership_number": "1066155",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 6838,
+      "athlete_name": "Alma Killingsworth",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/6838",
+      "contaminated_lifter_id": 42273,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-27T07:41:22.518Z",
+      "profile_data": null,
+      "competition_history": [],
+      "biographical_data_by_competition": [],
+      "scraping_successful": false,
+      "error": "Assignment to constant variable."
+    }
+  ]
+}

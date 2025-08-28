@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T02:33:17.487Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Christina Smith",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 92467581
+  },
+  "data": [
+    {
+      "internal_id": 32944,
+      "athlete_name": "Christina Smith",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/32944",
+      "contaminated_lifter_id": 23912,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T02:33:04.968Z",
+      "profile_data": {
+        "membership_number": "1006404",
+        "birth_year": 1995,
+        "gender": "F",
+        "club_name": "Corvallis Strength",
+        "wso": "Pacific Northwest",
+        "national_rank": "7"
+      },
+      "competition_history": [
+        {
+          "meet_name": "WarGames 2016:  The Battle for PRs",
+          "date": "2016-05-14",
+          "division": "Open Women's +75 Kg",
+          "lifter_name": "Christina Smith",
+          "body_weight_kg": "85.2",
+          "snatch_1": "55",
+          "snatch_2": "-60",
+          "snatch_3": "61",
+          "cj_1": "66",
+          "cj_2": "71",
+          "cj_3": "75",
+          "best_snatch": "61",
+          "best_cj": "75",
+          "total": "136"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "WarGames 2016:  The Battle for PRs",
+            "date": "2016-05-14",
+            "division": "Open Women's +75 Kg",
+            "lifter_name": "Christina Smith",
+            "body_weight_kg": "85.2",
+            "snatch_1": "55",
+            "snatch_2": "-60",
+            "snatch_3": "61",
+            "cj_1": "66",
+            "cj_2": "71",
+            "cj_3": "75",
+            "best_snatch": "61",
+            "best_cj": "75",
+            "total": "136"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0xNCIsIndlaWdodF9jbGFzcyI6MzY4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "7",
+            "athlete_name": "Christina Smith",
+            "total": "136",
+            "gender": "F",
+            "age": "21",
+            "club_name": "Corvallis Strength",
+            "membership_number": "1006404",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 50913,
+      "athlete_name": "Christina Smith",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/50913",
+      "contaminated_lifter_id": 23912,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T02:33:17.485Z",
+      "profile_data": {
+        "membership_number": "1056885",
+        "birth_year": 1998,
+        "gender": "F",
+        "club_name": "Powerhouse Performance",
+        "wso": "Mountain North",
+        "national_rank": "28"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Heart and Barbell Summer Open",
+          "date": "2021-07-24",
+          "division": "Open Women's 71kg",
+          "lifter_name": "Christina Smith",
+          "body_weight_kg": "70.1",
+          "snatch_1": "35",
+          "snatch_2": "38",
+          "snatch_3": "-41",
+          "cj_1": "-52",
+          "cj_2": "52",
+          "cj_3": "57",
+          "best_snatch": "38",
+          "best_cj": "57",
+          "total": "95"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Heart and Barbell Summer Open",
+            "date": "2021-07-24",
+            "division": "Open Women's 71kg",
+            "lifter_name": "Christina Smith",
+            "body_weight_kg": "70.1",
+            "snatch_1": "35",
+            "snatch_2": "38",
+            "snatch_3": "-41",
+            "cj_1": "-52",
+            "cj_2": "52",
+            "cj_3": "57",
+            "best_snatch": "38",
+            "best_cj": "57",
+            "total": "95"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNy0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNy0yNCIsIndlaWdodF9jbGFzcyI6OTZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "28",
+            "athlete_name": "Christina Smith",
+            "total": "95",
+            "gender": "F",
+            "age": "23",
+            "club_name": "Powerhouse Performance",
+            "membership_number": "1056885",
+            "wso": "Mountain North"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

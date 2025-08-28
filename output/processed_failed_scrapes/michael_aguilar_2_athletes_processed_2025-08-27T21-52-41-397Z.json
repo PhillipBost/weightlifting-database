@@ -1,0 +1,98 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T07:40:10.541Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Michael Aguilar",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 1,
+    "total_reverse_lookups": 1,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 22116996
+  },
+  "data": [
+    {
+      "internal_id": 27120,
+      "athlete_name": "Michael Aguilar",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/27120",
+      "contaminated_lifter_id": 42211,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T19:07:55.709Z",
+      "profile_data": {
+        "membership_number": "1042195",
+        "birth_year": 1992,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Texas-Oklahoma",
+        "national_rank": "26"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Star Spangled Lift Off",
+          "date": "2019-07-13",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Michael Aguilar",
+          "body_weight_kg": "79.25",
+          "snatch_1": "70",
+          "snatch_2": "73",
+          "snatch_3": "75",
+          "cj_1": "85",
+          "cj_2": "90",
+          "cj_3": "95",
+          "best_snatch": "75",
+          "best_cj": "95",
+          "total": "170"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Star Spangled Lift Off",
+            "date": "2019-07-13",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Michael Aguilar",
+            "body_weight_kg": "79.25",
+            "snatch_1": "70",
+            "snatch_2": "73",
+            "snatch_3": "75",
+            "cj_1": "85",
+            "cj_2": "90",
+            "cj_3": "95",
+            "best_snatch": "75",
+            "best_cj": "95",
+            "total": "170"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0xMyIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "26",
+            "athlete_name": "Michael Aguilar",
+            "total": "170",
+            "gender": "M",
+            "age": "27",
+            "club_name": "-",
+            "membership_number": "1042195",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 66735,
+      "athlete_name": "Michael Aguilar",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/66735",
+      "contaminated_lifter_id": 42211,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-27T07:40:08.539Z",
+      "profile_data": null,
+      "competition_history": [],
+      "biographical_data_by_competition": [],
+      "scraping_successful": false,
+      "error": "Assignment to constant variable."
+    }
+  ]
+}

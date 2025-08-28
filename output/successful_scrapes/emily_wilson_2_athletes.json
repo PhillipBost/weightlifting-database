@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T07:04:09.283Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Emily Wilson",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 108719377
+  },
+  "data": [
+    {
+      "internal_id": 9263,
+      "athlete_name": "Emily Wilson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/9263",
+      "contaminated_lifter_id": 20864,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T07:03:56.702Z",
+      "profile_data": {
+        "membership_number": "203629",
+        "birth_year": 1982,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "California South",
+        "national_rank": "3"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Visalia Fall Lift-Off",
+          "date": "2014-11-22",
+          "division": "Open Women's +75 Kg",
+          "lifter_name": "Emily Wilson",
+          "body_weight_kg": "84.2",
+          "snatch_1": "60",
+          "snatch_2": "65",
+          "snatch_3": "70",
+          "cj_1": "75",
+          "cj_2": "80",
+          "cj_3": "85",
+          "best_snatch": "70",
+          "best_cj": "85",
+          "total": "155"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Visalia Fall Lift-Off",
+            "date": "2014-11-22",
+            "division": "Open Women's +75 Kg",
+            "lifter_name": "Emily Wilson",
+            "body_weight_kg": "84.2",
+            "snatch_1": "60",
+            "snatch_2": "65",
+            "snatch_3": "70",
+            "cj_1": "75",
+            "cj_2": "80",
+            "cj_3": "85",
+            "best_snatch": "70",
+            "best_cj": "85",
+            "total": "155"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMS0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMS0yMiIsIndlaWdodF9jbGFzcyI6MzY4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Emily Wilson",
+            "total": "155",
+            "gender": "F",
+            "age": "32",
+            "club_name": "-",
+            "membership_number": "203629",
+            "wso": "California South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 17675,
+      "athlete_name": "Emily Wilson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/17675",
+      "contaminated_lifter_id": 20864,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T07:04:09.281Z",
+      "profile_data": {
+        "membership_number": "1031566",
+        "birth_year": 1987,
+        "gender": "F",
+        "club_name": "Verdant Barbell",
+        "wso": "Mountain North",
+        "national_rank": "6"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Verdant In-House Meet",
+          "date": "2018-06-23",
+          "division": "Open Women's 53 kg",
+          "lifter_name": "Emily Wilson",
+          "body_weight_kg": "52",
+          "snatch_1": "-40",
+          "snatch_2": "-40",
+          "snatch_3": "40",
+          "cj_1": "60",
+          "cj_2": "-61",
+          "cj_3": "-62",
+          "best_snatch": "40",
+          "best_cj": "60",
+          "total": "100"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Verdant In-House Meet",
+            "date": "2018-06-23",
+            "division": "Open Women's 53 kg",
+            "lifter_name": "Emily Wilson",
+            "body_weight_kg": "52",
+            "snatch_1": "-40",
+            "snatch_2": "-40",
+            "snatch_3": "40",
+            "cj_1": "60",
+            "cj_2": "-61",
+            "cj_3": "-62",
+            "best_snatch": "40",
+            "best_cj": "60",
+            "total": "100"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0yMyIsIndlaWdodF9jbGFzcyI6MzYzfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Emily Wilson",
+            "total": "100",
+            "gender": "F",
+            "age": "31",
+            "club_name": "Verdant Barbell",
+            "membership_number": "1031566",
+            "wso": "Mountain North"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

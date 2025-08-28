@@ -1,0 +1,435 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T20:26:15.640Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Chloe Peterson",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 8,
+    "total_reverse_lookups": 8,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 70445734
+  },
+  "data": [
+    {
+      "internal_id": 42857,
+      "athlete_name": "Chloe Peterson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/42857",
+      "contaminated_lifter_id": 8777,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T20:25:34.776Z",
+      "profile_data": {
+        "membership_number": "205139",
+        "birth_year": 2002,
+        "gender": "F",
+        "club_name": "BLACKFLY BARBELL CLUB",
+        "wso": "Michigan",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Reach Your Peak Classic",
+          "date": "2016-04-16",
+          "division": "Women's 14-15 Age Group 58 kg",
+          "lifter_name": "Chloe Peterson",
+          "body_weight_kg": "57.5",
+          "snatch_1": "45",
+          "snatch_2": "45",
+          "snatch_3": "48",
+          "cj_1": "54",
+          "cj_2": "-58",
+          "cj_3": "-58",
+          "best_snatch": "48",
+          "best_cj": "54",
+          "total": "102"
+        },
+        {
+          "meet_name": "Reach Your Peak Classic",
+          "date": "2015-03-28",
+          "division": "Women's 13 Under Age Group 53kg",
+          "lifter_name": "Chloe Peterson",
+          "body_weight_kg": "52.4",
+          "snatch_1": "34",
+          "snatch_2": "-36",
+          "snatch_3": "36",
+          "cj_1": "-41",
+          "cj_2": "41",
+          "cj_3": "43",
+          "best_snatch": "36",
+          "best_cj": "43",
+          "total": "79"
+        },
+        {
+          "meet_name": "Grand Rapids Strength Winter Games Classic",
+          "date": "2015-01-31",
+          "division": "Women's 13 Under Age Group 53kg",
+          "lifter_name": "Chloe Peterson",
+          "body_weight_kg": "51.5",
+          "snatch_1": "29",
+          "snatch_2": "29",
+          "snatch_3": "31",
+          "cj_1": "34",
+          "cj_2": "37",
+          "cj_3": "40",
+          "best_snatch": "31",
+          "best_cj": "40",
+          "total": "71"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Reach Your Peak Classic",
+            "date": "2016-04-16",
+            "division": "Women's 14-15 Age Group 58 kg",
+            "lifter_name": "Chloe Peterson",
+            "body_weight_kg": "57.5",
+            "snatch_1": "45",
+            "snatch_2": "45",
+            "snatch_3": "48",
+            "cj_1": "54",
+            "cj_2": "-58",
+            "cj_3": "-58",
+            "best_snatch": "48",
+            "best_cj": "54",
+            "total": "102"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0xNiIsIndlaWdodF9jbGFzcyI6MzE2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Chloe Peterson",
+            "total": "102",
+            "gender": "F",
+            "age": "14",
+            "club_name": "BLACKFLY BARBELL CLUB",
+            "membership_number": "205139",
+            "wso": "Michigan"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Reach Your Peak Classic",
+            "date": "2015-03-28",
+            "division": "Women's 13 Under Age Group 53kg",
+            "lifter_name": "Chloe Peterson",
+            "body_weight_kg": "52.4",
+            "snatch_1": "34",
+            "snatch_2": "-36",
+            "snatch_3": "36",
+            "cj_1": "-41",
+            "cj_2": "41",
+            "cj_3": "43",
+            "best_snatch": "36",
+            "best_cj": "43",
+            "total": "79"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMy0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMy0yOCIsIndlaWdodF9jbGFzcyI6MzAzfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Chloe Peterson",
+            "total": "79",
+            "gender": "F",
+            "age": "13",
+            "club_name": "BLACKFLY BARBELL CLUB",
+            "membership_number": "205139",
+            "wso": "Michigan"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Grand Rapids Strength Winter Games Classic",
+            "date": "2015-01-31",
+            "division": "Women's 13 Under Age Group 53kg",
+            "lifter_name": "Chloe Peterson",
+            "body_weight_kg": "51.5",
+            "snatch_1": "29",
+            "snatch_2": "29",
+            "snatch_3": "31",
+            "cj_1": "34",
+            "cj_2": "37",
+            "cj_3": "40",
+            "best_snatch": "31",
+            "best_cj": "40",
+            "total": "71"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMS0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMS0zMSIsIndlaWdodF9jbGFzcyI6MzAzfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Chloe Peterson",
+            "total": "71",
+            "gender": "F",
+            "age": "13",
+            "club_name": "BLACKFLY BARBELL CLUB",
+            "membership_number": "205139",
+            "wso": "Michigan"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 54120,
+      "athlete_name": "Chloe Peterson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/54120",
+      "contaminated_lifter_id": 8777,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T20:26:15.639Z",
+      "profile_data": {
+        "membership_number": "1063409",
+        "birth_year": 2010,
+        "gender": "F",
+        "club_name": "POWER AND GRACE PERFORMANCE.",
+        "wso": "Georgia",
+        "national_rank": "5"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2023 Arizona High School Championship & Youth/Junior Open",
+          "date": "2023-01-28",
+          "division": "Women's 13 Under Age Group +64kg",
+          "lifter_name": "Chloe Peterson",
+          "body_weight_kg": "73.3",
+          "snatch_1": "-26",
+          "snatch_2": "26",
+          "snatch_3": "27",
+          "cj_1": "33",
+          "cj_2": "35",
+          "cj_3": "38",
+          "best_snatch": "27",
+          "best_cj": "38",
+          "total": "65"
+        },
+        {
+          "meet_name": "2022 Jingle Barbells Winter Classic & Record Breaker",
+          "date": "2022-12-31",
+          "division": "Women's 13 Under Age Group +64kg",
+          "lifter_name": "Chloe Peterson",
+          "body_weight_kg": "73.9",
+          "snatch_1": "28",
+          "snatch_2": "30",
+          "snatch_3": "-32",
+          "cj_1": "33",
+          "cj_2": "35",
+          "cj_3": "37",
+          "best_snatch": "30",
+          "best_cj": "37",
+          "total": "67"
+        },
+        {
+          "meet_name": "2022 Arizona State and Mountain South WSO Championship",
+          "date": "2022-10-15",
+          "division": "Women's 13 Under Age Group +64kg",
+          "lifter_name": "Chloe Peterson",
+          "body_weight_kg": "69.8",
+          "snatch_1": "24",
+          "snatch_2": "-25",
+          "snatch_3": "25",
+          "cj_1": "-29",
+          "cj_2": "29",
+          "cj_3": "30",
+          "best_snatch": "25",
+          "best_cj": "30",
+          "total": "55"
+        },
+        {
+          "meet_name": "Perception Weightlifting Open & Developmental Meet",
+          "date": "2022-05-07",
+          "division": "Women's 13 Under Age Group +64kg",
+          "lifter_name": "Chloe Peterson",
+          "body_weight_kg": "67.1",
+          "snatch_1": "23",
+          "snatch_2": "24",
+          "snatch_3": "-25",
+          "cj_1": "-33",
+          "cj_2": "33",
+          "cj_3": "34",
+          "best_snatch": "24",
+          "best_cj": "34",
+          "total": "58"
+        },
+        {
+          "meet_name": "April Online Qualifier",
+          "date": "2022-04-30",
+          "division": "Women's 13 Under Age Group +64kg",
+          "lifter_name": "Chloe Peterson",
+          "body_weight_kg": "67",
+          "snatch_1": "24",
+          "snatch_2": "0",
+          "snatch_3": "0",
+          "cj_1": "35",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "24",
+          "best_cj": "35",
+          "total": "59"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2023 Arizona High School Championship & Youth/Junior Open",
+            "date": "2023-01-28",
+            "division": "Women's 13 Under Age Group +64kg",
+            "lifter_name": "Chloe Peterson",
+            "body_weight_kg": "73.3",
+            "snatch_1": "-26",
+            "snatch_2": "26",
+            "snatch_3": "27",
+            "cj_1": "33",
+            "cj_2": "35",
+            "cj_3": "38",
+            "best_snatch": "27",
+            "best_cj": "38",
+            "total": "65"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMS0yOCIsIndlaWdodF9jbGFzcyI6NjB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "Chloe Peterson",
+            "total": "65",
+            "gender": "F",
+            "age": "13",
+            "club_name": "POWER AND GRACE PERFORMANCE.",
+            "membership_number": "1063409",
+            "wso": "Georgia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2022 Jingle Barbells Winter Classic & Record Breaker",
+            "date": "2022-12-31",
+            "division": "Women's 13 Under Age Group +64kg",
+            "lifter_name": "Chloe Peterson",
+            "body_weight_kg": "73.9",
+            "snatch_1": "28",
+            "snatch_2": "30",
+            "snatch_3": "-32",
+            "cj_1": "33",
+            "cj_2": "35",
+            "cj_3": "37",
+            "best_snatch": "30",
+            "best_cj": "37",
+            "total": "67"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMi0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMi0zMSIsIndlaWdodF9jbGFzcyI6NjB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Chloe Peterson",
+            "total": "67",
+            "gender": "F",
+            "age": "12",
+            "club_name": "POWER AND GRACE PERFORMANCE.",
+            "membership_number": "1063409",
+            "wso": "Georgia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2022 Arizona State and Mountain South WSO Championship",
+            "date": "2022-10-15",
+            "division": "Women's 13 Under Age Group +64kg",
+            "lifter_name": "Chloe Peterson",
+            "body_weight_kg": "69.8",
+            "snatch_1": "24",
+            "snatch_2": "-25",
+            "snatch_3": "25",
+            "cj_1": "-29",
+            "cj_2": "29",
+            "cj_3": "30",
+            "best_snatch": "25",
+            "best_cj": "30",
+            "total": "55"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMC0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMC0xNSIsIndlaWdodF9jbGFzcyI6NjB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Chloe Peterson",
+            "total": "55",
+            "gender": "F",
+            "age": "12",
+            "club_name": "POWER AND GRACE PERFORMANCE.",
+            "membership_number": "1063409",
+            "wso": "Georgia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Perception Weightlifting Open & Developmental Meet",
+            "date": "2022-05-07",
+            "division": "Women's 13 Under Age Group +64kg",
+            "lifter_name": "Chloe Peterson",
+            "body_weight_kg": "67.1",
+            "snatch_1": "23",
+            "snatch_2": "24",
+            "snatch_3": "-25",
+            "cj_1": "-33",
+            "cj_2": "33",
+            "cj_3": "34",
+            "best_snatch": "24",
+            "best_cj": "34",
+            "total": "58"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNS0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNS0wNyIsIndlaWdodF9jbGFzcyI6NjB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Chloe Peterson",
+            "total": "58",
+            "gender": "F",
+            "age": "12",
+            "club_name": "POWER AND GRACE PERFORMANCE.",
+            "membership_number": "1063409",
+            "wso": "Georgia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "April Online Qualifier",
+            "date": "2022-04-30",
+            "division": "Women's 13 Under Age Group +64kg",
+            "lifter_name": "Chloe Peterson",
+            "body_weight_kg": "67",
+            "snatch_1": "24",
+            "snatch_2": "0",
+            "snatch_3": "0",
+            "cj_1": "35",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "24",
+            "best_cj": "35",
+            "total": "59"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNC0zMCIsIndlaWdodF9jbGFzcyI6NjB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Chloe Peterson",
+            "total": "59",
+            "gender": "F",
+            "age": "12",
+            "club_name": "POWER AND GRACE PERFORMANCE.",
+            "membership_number": "1063409",
+            "wso": "Georgia"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

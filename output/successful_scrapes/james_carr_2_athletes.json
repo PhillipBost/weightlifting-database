@@ -1,0 +1,200 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T09:14:07.964Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "James Carr",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 3,
+    "total_reverse_lookups": 3,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 30118058
+  },
+  "data": [
+    {
+      "internal_id": 19853,
+      "athlete_name": "James Carr",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/19853",
+      "contaminated_lifter_id": 7028,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T09:13:52.115Z",
+      "profile_data": {
+        "membership_number": "221113",
+        "birth_year": 1988,
+        "gender": "M",
+        "club_name": "RVA Weightlifting",
+        "wso": "DMV",
+        "national_rank": "23"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Old Dominion Classic",
+          "date": "2015-10-24",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "James Carr",
+          "body_weight_kg": "106",
+          "snatch_1": "78",
+          "snatch_2": "-81",
+          "snatch_3": "-82",
+          "cj_1": "98",
+          "cj_2": "105",
+          "cj_3": "-110",
+          "best_snatch": "78",
+          "best_cj": "105",
+          "total": "183"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Old Dominion Classic",
+            "date": "2015-10-24",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "James Carr",
+            "body_weight_kg": "106",
+            "snatch_1": "78",
+            "snatch_2": "-81",
+            "snatch_3": "-82",
+            "cj_1": "98",
+            "cj_2": "105",
+            "cj_3": "-110",
+            "best_snatch": "78",
+            "best_cj": "105",
+            "total": "183"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0yNCIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "23",
+            "athlete_name": "James Carr",
+            "total": "183",
+            "gender": "M",
+            "age": "27",
+            "club_name": "RVA Weightlifting",
+            "membership_number": "221113",
+            "wso": "DMV"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 32193,
+      "athlete_name": "James Carr",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/32193",
+      "contaminated_lifter_id": 7028,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T09:14:07.962Z",
+      "profile_data": {
+        "membership_number": "1009853",
+        "birth_year": 1994,
+        "gender": "M",
+        "club_name": "Victory Kid Barbell",
+        "wso": "Michigan",
+        "national_rank": "10"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2018 Capitol Egg Weightlifting Championships",
+          "date": "2018-10-20",
+          "division": "Open Men's 89kg",
+          "lifter_name": "James Carr",
+          "body_weight_kg": "84.81",
+          "snatch_1": "100",
+          "snatch_2": "-105",
+          "snatch_3": "105",
+          "cj_1": "-130",
+          "cj_2": "133",
+          "cj_3": "-137",
+          "best_snatch": "105",
+          "best_cj": "133",
+          "total": "238"
+        },
+        {
+          "meet_name": "AZO Summer Classic",
+          "date": "2016-08-20",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "James Carr",
+          "body_weight_kg": "82.8",
+          "snatch_1": "98",
+          "snatch_2": "98",
+          "snatch_3": "100",
+          "cj_1": "127",
+          "cj_2": "130",
+          "cj_3": "131",
+          "best_snatch": "100",
+          "best_cj": "131",
+          "total": "231"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2018 Capitol Egg Weightlifting Championships",
+            "date": "2018-10-20",
+            "division": "Open Men's 89kg",
+            "lifter_name": "James Carr",
+            "body_weight_kg": "84.81",
+            "snatch_1": "100",
+            "snatch_2": "-105",
+            "snatch_3": "105",
+            "cj_1": "-130",
+            "cj_2": "133",
+            "cj_3": "-137",
+            "best_snatch": "105",
+            "best_cj": "133",
+            "total": "238"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yMCIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "James Carr",
+            "total": "238",
+            "gender": "M",
+            "age": "24",
+            "club_name": "Victory Kid Barbell",
+            "membership_number": "1009853",
+            "wso": "Michigan"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "AZO Summer Classic",
+            "date": "2016-08-20",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "James Carr",
+            "body_weight_kg": "82.8",
+            "snatch_1": "98",
+            "snatch_2": "98",
+            "snatch_3": "100",
+            "cj_1": "127",
+            "cj_2": "130",
+            "cj_3": "131",
+            "best_snatch": "100",
+            "best_cj": "131",
+            "total": "231"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0yMCIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "14",
+            "athlete_name": "James Carr",
+            "total": "231",
+            "gender": "M",
+            "age": "22",
+            "club_name": "Victory Kid Barbell",
+            "membership_number": "1009853",
+            "wso": "Michigan"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

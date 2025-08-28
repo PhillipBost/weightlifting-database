@@ -1,0 +1,294 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T23:57:26.295Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Jayme Greaves",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 5,
+    "total_reverse_lookups": 5,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 83116389
+  },
+  "data": [
+    {
+      "internal_id": 12,
+      "athlete_name": "Jayme Greaves",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/12",
+      "contaminated_lifter_id": 28555,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T23:56:42.570Z",
+      "profile_data": {
+        "membership_number": "1061115",
+        "birth_year": 1975,
+        "gender": "M",
+        "club_name": "MOORESTOWN WLC",
+        "wso": "New Jersey",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Moorestown Development Meet",
+          "date": "2022-01-23",
+          "division": "Men's Masters (45-49) 67kg",
+          "lifter_name": "Jayme Greaves",
+          "body_weight_kg": "66.8",
+          "snatch_1": "45",
+          "snatch_2": "-50",
+          "snatch_3": "-50",
+          "cj_1": "55",
+          "cj_2": "60",
+          "cj_3": "65",
+          "best_snatch": "45",
+          "best_cj": "65",
+          "total": "110"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Moorestown Development Meet",
+            "date": "2022-01-23",
+            "division": "Men's Masters (45-49) 67kg",
+            "lifter_name": "Jayme Greaves",
+            "body_weight_kg": "66.8",
+            "snatch_1": "45",
+            "snatch_2": "-50",
+            "snatch_3": "-50",
+            "cj_1": "55",
+            "cj_2": "60",
+            "cj_3": "65",
+            "best_snatch": "45",
+            "best_cj": "65",
+            "total": "110"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMS0yMyIsIndlaWdodF9jbGFzcyI6MTQzfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Jayme Greaves",
+            "total": "110",
+            "gender": "M",
+            "age": "47",
+            "club_name": "MOORESTOWN WLC",
+            "membership_number": "1061115",
+            "wso": "New Jersey"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 4158,
+      "athlete_name": "Jayme Greaves",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/4158",
+      "contaminated_lifter_id": 28555,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T23:57:26.293Z",
+      "profile_data": {
+        "membership_number": "1017814",
+        "birth_year": 1975,
+        "gender": "M",
+        "club_name": "MOORESTOWN WLC",
+        "wso": "New Jersey",
+        "national_rank": "15"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Kilodelphia Lift off",
+          "date": "2019-10-13",
+          "division": "Open Men's 73kg",
+          "lifter_name": "Jayme Greaves",
+          "body_weight_kg": "68.8",
+          "snatch_1": "50",
+          "snatch_2": "53",
+          "snatch_3": "56",
+          "cj_1": "65",
+          "cj_2": "70",
+          "cj_3": "-75",
+          "best_snatch": "56",
+          "best_cj": "70",
+          "total": "126"
+        },
+        {
+          "meet_name": "Moorestown Winter Open",
+          "date": "2017-12-17",
+          "division": "Open Men's 69 kg",
+          "lifter_name": "Jayme Greaves",
+          "body_weight_kg": "68.5",
+          "snatch_1": "-50",
+          "snatch_2": "-50",
+          "snatch_3": "50",
+          "cj_1": "-60",
+          "cj_2": "61",
+          "cj_3": "-65",
+          "best_snatch": "50",
+          "best_cj": "61",
+          "total": "111"
+        },
+        {
+          "meet_name": "Gold Cup Challenge",
+          "date": "2017-10-22",
+          "division": "Open Men's 69 kg",
+          "lifter_name": "Jayme Greaves",
+          "body_weight_kg": "68.02",
+          "snatch_1": "48",
+          "snatch_2": "52",
+          "snatch_3": "-55",
+          "cj_1": "59",
+          "cj_2": "-63",
+          "cj_3": "63",
+          "best_snatch": "52",
+          "best_cj": "63",
+          "total": "115"
+        },
+        {
+          "meet_name": "Moorestown Spring Open",
+          "date": "2017-05-21",
+          "division": "Open Men's 69 kg",
+          "lifter_name": "Jayme Greaves",
+          "body_weight_kg": "67.5",
+          "snatch_1": "45",
+          "snatch_2": "-48",
+          "snatch_3": "48",
+          "cj_1": "60",
+          "cj_2": "-65",
+          "cj_3": "-65",
+          "best_snatch": "48",
+          "best_cj": "60",
+          "total": "108"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Kilodelphia Lift off",
+            "date": "2019-10-13",
+            "division": "Open Men's 73kg",
+            "lifter_name": "Jayme Greaves",
+            "body_weight_kg": "68.8",
+            "snatch_1": "50",
+            "snatch_2": "53",
+            "snatch_3": "56",
+            "cj_1": "65",
+            "cj_2": "70",
+            "cj_3": "-75",
+            "best_snatch": "56",
+            "best_cj": "70",
+            "total": "126"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMC0xMyIsIndlaWdodF9jbGFzcyI6ODR9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "15",
+            "athlete_name": "Jayme Greaves",
+            "total": "126",
+            "gender": "M",
+            "age": "44",
+            "club_name": "MOORESTOWN WLC",
+            "membership_number": "1017814",
+            "wso": "New Jersey"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Moorestown Winter Open",
+            "date": "2017-12-17",
+            "division": "Open Men's 69 kg",
+            "lifter_name": "Jayme Greaves",
+            "body_weight_kg": "68.5",
+            "snatch_1": "-50",
+            "snatch_2": "-50",
+            "snatch_3": "50",
+            "cj_1": "-60",
+            "cj_2": "61",
+            "cj_3": "-65",
+            "best_snatch": "50",
+            "best_cj": "61",
+            "total": "111"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMi0xNyIsIndlaWdodF9jbGFzcyI6MzU2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "14",
+            "athlete_name": "Jayme Greaves",
+            "total": "111",
+            "gender": "M",
+            "age": "42",
+            "club_name": "MOORESTOWN WLC",
+            "membership_number": "1017814",
+            "wso": "New Jersey"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Gold Cup Challenge",
+            "date": "2017-10-22",
+            "division": "Open Men's 69 kg",
+            "lifter_name": "Jayme Greaves",
+            "body_weight_kg": "68.02",
+            "snatch_1": "48",
+            "snatch_2": "52",
+            "snatch_3": "-55",
+            "cj_1": "59",
+            "cj_2": "-63",
+            "cj_3": "63",
+            "best_snatch": "52",
+            "best_cj": "63",
+            "total": "115"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0yMiIsIndlaWdodF9jbGFzcyI6MzU2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "47",
+            "athlete_name": "Jayme Greaves",
+            "total": "115",
+            "gender": "M",
+            "age": "42",
+            "club_name": "MOORESTOWN WLC",
+            "membership_number": "1017814",
+            "wso": "New Jersey"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Moorestown Spring Open",
+            "date": "2017-05-21",
+            "division": "Open Men's 69 kg",
+            "lifter_name": "Jayme Greaves",
+            "body_weight_kg": "67.5",
+            "snatch_1": "45",
+            "snatch_2": "-48",
+            "snatch_3": "48",
+            "cj_1": "60",
+            "cj_2": "-65",
+            "cj_3": "-65",
+            "best_snatch": "48",
+            "best_cj": "60",
+            "total": "108"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNS0yMSIsIndlaWdodF9jbGFzcyI6MzU2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "22",
+            "athlete_name": "Jayme Greaves",
+            "total": "108",
+            "gender": "M",
+            "age": "42",
+            "club_name": "MOORESTOWN WLC",
+            "membership_number": "1017814",
+            "wso": "New Jersey"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

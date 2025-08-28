@@ -1,0 +1,588 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T12:58:34.486Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "John Brown",
+    "internal_ids_processed": 3,
+    "successful_scrapes": 2,
+    "failed_scrapes": 1,
+    "total_competitions_found": 11,
+    "total_reverse_lookups": 11,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 10944130
+  },
+  "data": [
+    {
+      "internal_id": 1385,
+      "athlete_name": "John Brown",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/1385",
+      "contaminated_lifter_id": 23791,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T15:29:12.086Z",
+      "profile_data": {
+        "membership_number": "1005827",
+        "birth_year": 1964,
+        "gender": "M",
+        "club_name": "Team Atlanta",
+        "wso": "Georgia",
+        "national_rank": "10"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2019 Iron Born Open",
+          "date": "2019-03-16",
+          "division": "Open Men's +109kg",
+          "lifter_name": "John Brown",
+          "body_weight_kg": "123.35",
+          "snatch_1": "-67",
+          "snatch_2": "68",
+          "snatch_3": "-70",
+          "cj_1": "85",
+          "cj_2": "90",
+          "cj_3": "95",
+          "best_snatch": "68",
+          "best_cj": "95",
+          "total": "163"
+        },
+        {
+          "meet_name": "Barbell MAYnia",
+          "date": "2018-04-21",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "John Brown",
+          "body_weight_kg": "124.4",
+          "snatch_1": "65",
+          "snatch_2": "70",
+          "snatch_3": "73",
+          "cj_1": "85",
+          "cj_2": "90",
+          "cj_3": "93",
+          "best_snatch": "73",
+          "best_cj": "93",
+          "total": "166"
+        },
+        {
+          "meet_name": "American Masters Championships",
+          "date": "2017-11-12",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "John Brown",
+          "body_weight_kg": "119.36",
+          "snatch_1": "63",
+          "snatch_2": "67",
+          "snatch_3": "70",
+          "cj_1": "85",
+          "cj_2": "-91",
+          "cj_3": "91",
+          "best_snatch": "70",
+          "best_cj": "91",
+          "total": "161"
+        },
+        {
+          "meet_name": "Barbells and Brews - Sugar Creek",
+          "date": "2017-09-30",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "John Brown",
+          "body_weight_kg": "119.8",
+          "snatch_1": "-62",
+          "snatch_2": "-65",
+          "snatch_3": "65",
+          "cj_1": "80",
+          "cj_2": "85",
+          "cj_3": "90",
+          "best_snatch": "65",
+          "best_cj": "90",
+          "total": "155"
+        },
+        {
+          "meet_name": "Spring Classic",
+          "date": "2017-03-25",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "John Brown",
+          "body_weight_kg": "115.6",
+          "snatch_1": "58",
+          "snatch_2": "61",
+          "snatch_3": "64",
+          "cj_1": "72",
+          "cj_2": "78",
+          "cj_3": "82",
+          "best_snatch": "64",
+          "best_cj": "82",
+          "total": "146"
+        },
+        {
+          "meet_name": "Cookies & Kilos Fall Open",
+          "date": "2016-10-22",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "John Brown",
+          "body_weight_kg": "113.1",
+          "snatch_1": "60",
+          "snatch_2": "63",
+          "snatch_3": "-67",
+          "cj_1": "70",
+          "cj_2": "75",
+          "cj_3": "80",
+          "best_snatch": "63",
+          "best_cj": "80",
+          "total": "143"
+        },
+        {
+          "meet_name": "Barbells and Brews 2016",
+          "date": "2016-09-10",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "John Brown",
+          "body_weight_kg": "113.9",
+          "snatch_1": "58",
+          "snatch_2": "-61",
+          "snatch_3": "61",
+          "cj_1": "68",
+          "cj_2": "71",
+          "cj_3": "75",
+          "best_snatch": "61",
+          "best_cj": "75",
+          "total": "136"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2019 Iron Born Open",
+            "date": "2019-03-16",
+            "division": "Open Men's +109kg",
+            "lifter_name": "John Brown",
+            "body_weight_kg": "123.35",
+            "snatch_1": "-67",
+            "snatch_2": "68",
+            "snatch_3": "-70",
+            "cj_1": "85",
+            "cj_2": "90",
+            "cj_3": "95",
+            "best_snatch": "68",
+            "best_cj": "95",
+            "total": "163"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMy0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMy0xNiIsIndlaWdodF9jbGFzcyI6OTB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "John Brown",
+            "total": "163",
+            "gender": "M",
+            "age": "55",
+            "club_name": "Team Atlanta",
+            "membership_number": "1005827",
+            "wso": "Georgia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Barbell MAYnia",
+            "date": "2018-04-21",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "John Brown",
+            "body_weight_kg": "124.4",
+            "snatch_1": "65",
+            "snatch_2": "70",
+            "snatch_3": "73",
+            "cj_1": "85",
+            "cj_2": "90",
+            "cj_3": "93",
+            "best_snatch": "73",
+            "best_cj": "93",
+            "total": "166"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNC0yMSIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "John Brown",
+            "total": "166",
+            "gender": "M",
+            "age": "54",
+            "club_name": "Team Atlanta",
+            "membership_number": "1005827",
+            "wso": "Georgia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "American Masters Championships",
+            "date": "2017-11-12",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "John Brown",
+            "body_weight_kg": "119.36",
+            "snatch_1": "63",
+            "snatch_2": "67",
+            "snatch_3": "70",
+            "cj_1": "85",
+            "cj_2": "-91",
+            "cj_3": "91",
+            "best_snatch": "70",
+            "best_cj": "91",
+            "total": "161"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMS0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMS0xMiIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "12",
+            "athlete_name": "John Brown",
+            "total": "161",
+            "gender": "M",
+            "age": "53",
+            "club_name": "Team Atlanta",
+            "membership_number": "1005827",
+            "wso": "Georgia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Barbells and Brews - Sugar Creek",
+            "date": "2017-09-30",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "John Brown",
+            "body_weight_kg": "119.8",
+            "snatch_1": "-62",
+            "snatch_2": "-65",
+            "snatch_3": "65",
+            "cj_1": "80",
+            "cj_2": "85",
+            "cj_3": "90",
+            "best_snatch": "65",
+            "best_cj": "90",
+            "total": "155"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wOS0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wOS0zMCIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "22",
+            "athlete_name": "John Brown",
+            "total": "155",
+            "gender": "M",
+            "age": "53",
+            "club_name": "Team Atlanta",
+            "membership_number": "1005827",
+            "wso": "Georgia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Spring Classic",
+            "date": "2017-03-25",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "John Brown",
+            "body_weight_kg": "115.6",
+            "snatch_1": "58",
+            "snatch_2": "61",
+            "snatch_3": "64",
+            "cj_1": "72",
+            "cj_2": "78",
+            "cj_3": "82",
+            "best_snatch": "64",
+            "best_cj": "82",
+            "total": "146"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0yNSIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "31",
+            "athlete_name": "John Brown",
+            "total": "146",
+            "gender": "M",
+            "age": "53",
+            "club_name": "Team Atlanta",
+            "membership_number": "1005827",
+            "wso": "Georgia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Cookies & Kilos Fall Open",
+            "date": "2016-10-22",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "John Brown",
+            "body_weight_kg": "113.1",
+            "snatch_1": "60",
+            "snatch_2": "63",
+            "snatch_3": "-67",
+            "cj_1": "70",
+            "cj_2": "75",
+            "cj_3": "80",
+            "best_snatch": "63",
+            "best_cj": "80",
+            "total": "143"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0yMiIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "24",
+            "athlete_name": "John Brown",
+            "total": "143",
+            "gender": "M",
+            "age": "52",
+            "club_name": "Team Atlanta",
+            "membership_number": "1005827",
+            "wso": "Georgia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Barbells and Brews 2016",
+            "date": "2016-09-10",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "John Brown",
+            "body_weight_kg": "113.9",
+            "snatch_1": "58",
+            "snatch_2": "-61",
+            "snatch_3": "61",
+            "cj_1": "68",
+            "cj_2": "71",
+            "cj_3": "75",
+            "best_snatch": "61",
+            "best_cj": "75",
+            "total": "136"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOS0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOS0xMCIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "John Brown",
+            "total": "136",
+            "gender": "M",
+            "age": "52",
+            "club_name": "Team Atlanta",
+            "membership_number": "1005827",
+            "wso": "Georgia"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 6862,
+      "athlete_name": "John Brown",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/6862",
+      "contaminated_lifter_id": 23791,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T15:29:23.033Z",
+      "profile_data": {
+        "membership_number": "1016652",
+        "birth_year": 1979,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Tennessee-Kentucky",
+        "national_rank": "28"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2017 Iron Tiger Open / Last Chance Qualifier",
+          "date": "2017-03-25",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "John Brown",
+          "body_weight_kg": "97.5",
+          "snatch_1": "65",
+          "snatch_2": "75",
+          "snatch_3": "80",
+          "cj_1": "100",
+          "cj_2": "109",
+          "cj_3": "-120",
+          "best_snatch": "80",
+          "best_cj": "109",
+          "total": "189"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2017 Iron Tiger Open / Last Chance Qualifier",
+            "date": "2017-03-25",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "John Brown",
+            "body_weight_kg": "97.5",
+            "snatch_1": "65",
+            "snatch_2": "75",
+            "snatch_3": "80",
+            "cj_1": "100",
+            "cj_2": "109",
+            "cj_3": "-120",
+            "best_snatch": "80",
+            "best_cj": "109",
+            "total": "189"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0yNSIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "28",
+            "athlete_name": "John Brown",
+            "total": "189",
+            "gender": "M",
+            "age": "38",
+            "club_name": "-",
+            "membership_number": "1016652",
+            "wso": "Tennessee-Kentucky"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 42961,
+      "athlete_name": "John Brown",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/42961",
+      "contaminated_lifter_id": 23791,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-27T12:58:32.484Z",
+      "profile_data": {
+        "membership_number": "1047058",
+        "birth_year": 2002,
+        "gender": "M",
+        "club_name": "Team Atlanta",
+        "wso": "Georgia",
+        "national_rank": "9"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2021 Georgia LWC Championships",
+          "date": "2021-04-21",
+          "division": "Junior Men's 89kg",
+          "lifter_name": "John Brown",
+          "body_weight_kg": "88",
+          "snatch_1": "-60",
+          "snatch_2": "-60",
+          "snatch_3": "-60",
+          "cj_1": "81",
+          "cj_2": "85",
+          "cj_3": "-90",
+          "best_snatch": "0",
+          "best_cj": "85",
+          "total": "0"
+        },
+        {
+          "meet_name": "Barbell Collective Open Series ONE",
+          "date": "2021-03-20",
+          "division": "Junior Men's 89kg",
+          "lifter_name": "John Brown",
+          "body_weight_kg": "88.3",
+          "snatch_1": "63",
+          "snatch_2": "67",
+          "snatch_3": "70",
+          "cj_1": "-81",
+          "cj_2": "-81",
+          "cj_3": "81",
+          "best_snatch": "70",
+          "best_cj": "81",
+          "total": "151"
+        },
+        {
+          "meet_name": "2020 Iron Born Open",
+          "date": "2020-02-22",
+          "division": "Junior Men's 102kg",
+          "lifter_name": "John Brown",
+          "body_weight_kg": "98.8",
+          "snatch_1": "50",
+          "snatch_2": "55",
+          "snatch_3": "-58",
+          "cj_1": "70",
+          "cj_2": "-75",
+          "cj_3": "75",
+          "best_snatch": "55",
+          "best_cj": "75",
+          "total": "130"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2021 Georgia LWC Championships",
+            "date": "2021-04-21",
+            "division": "Junior Men's 89kg",
+            "lifter_name": "John Brown",
+            "body_weight_kg": "88",
+            "snatch_1": "-60",
+            "snatch_2": "-60",
+            "snatch_3": "-60",
+            "cj_1": "81",
+            "cj_2": "85",
+            "cj_3": "-90",
+            "best_snatch": "0",
+            "best_cj": "85",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNC0yMSIsIndlaWdodF9jbGFzcyI6NjZ9",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Barbell Collective Open Series ONE",
+            "date": "2021-03-20",
+            "division": "Junior Men's 89kg",
+            "lifter_name": "John Brown",
+            "body_weight_kg": "88.3",
+            "snatch_1": "63",
+            "snatch_2": "67",
+            "snatch_3": "70",
+            "cj_1": "-81",
+            "cj_2": "-81",
+            "cj_3": "81",
+            "best_snatch": "70",
+            "best_cj": "81",
+            "total": "151"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMy0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMy0yMCIsIndlaWdodF9jbGFzcyI6NjZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "John Brown",
+            "total": "151",
+            "gender": "M",
+            "age": "19",
+            "club_name": "Team Atlanta",
+            "membership_number": "1047058",
+            "wso": "Georgia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2020 Iron Born Open",
+            "date": "2020-02-22",
+            "division": "Junior Men's 102kg",
+            "lifter_name": "John Brown",
+            "body_weight_kg": "98.8",
+            "snatch_1": "50",
+            "snatch_2": "55",
+            "snatch_3": "-58",
+            "cj_1": "70",
+            "cj_2": "-75",
+            "cj_3": "75",
+            "best_snatch": "55",
+            "best_cj": "75",
+            "total": "130"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMi0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMi0yMiIsIndlaWdodF9jbGFzcyI6Njh9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "8",
+            "athlete_name": "John Brown",
+            "total": "130",
+            "gender": "M",
+            "age": "18",
+            "club_name": "Team Atlanta",
+            "membership_number": "1047058",
+            "wso": "Georgia"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    }
+  ]
+}

@@ -1,0 +1,200 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T21:19:58.008Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Michael Molina",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 3,
+    "total_reverse_lookups": 3,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 73668102
+  },
+  "data": [
+    {
+      "internal_id": 8249,
+      "athlete_name": "Michael Molina",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/8249",
+      "contaminated_lifter_id": 42669,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T21:19:38.242Z",
+      "profile_data": {
+        "membership_number": "1044151",
+        "birth_year": 1981,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Georgia",
+        "national_rank": "9"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Allsouth Barbell Invitational and Open",
+          "date": "2019-08-10",
+          "division": "Open Men's +109kg",
+          "lifter_name": "Michael Molina",
+          "body_weight_kg": "110.3",
+          "snatch_1": "60",
+          "snatch_2": "64",
+          "snatch_3": "-68",
+          "cj_1": "80",
+          "cj_2": "85",
+          "cj_3": "90",
+          "best_snatch": "64",
+          "best_cj": "90",
+          "total": "154"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Allsouth Barbell Invitational and Open",
+            "date": "2019-08-10",
+            "division": "Open Men's +109kg",
+            "lifter_name": "Michael Molina",
+            "body_weight_kg": "110.3",
+            "snatch_1": "60",
+            "snatch_2": "64",
+            "snatch_3": "-68",
+            "cj_1": "80",
+            "cj_2": "85",
+            "cj_3": "90",
+            "best_snatch": "64",
+            "best_cj": "90",
+            "total": "154"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOC0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOC0xMCIsIndlaWdodF9jbGFzcyI6OTB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "Michael Molina",
+            "total": "154",
+            "gender": "M",
+            "age": "38",
+            "club_name": "-",
+            "membership_number": "1044151",
+            "wso": "Georgia"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 43778,
+      "athlete_name": "Michael Molina",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/43778",
+      "contaminated_lifter_id": 42669,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T21:19:58.006Z",
+      "profile_data": {
+        "membership_number": "1042649",
+        "birth_year": 2003,
+        "gender": "M",
+        "club_name": "LONG ISLAND WLC",
+        "wso": "New York",
+        "national_rank": "2"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2020 Division Avenue open 2",
+          "date": "2020-09-19",
+          "division": "Men's 16-17 Age Group 89kg",
+          "lifter_name": "Michael Molina",
+          "body_weight_kg": "85.2",
+          "snatch_1": "52",
+          "snatch_2": "57",
+          "snatch_3": "62",
+          "cj_1": "75",
+          "cj_2": "81",
+          "cj_3": "-86",
+          "best_snatch": "62",
+          "best_cj": "81",
+          "total": "143"
+        },
+        {
+          "meet_name": "2020 Division Avenue Invitational",
+          "date": "2020-07-18",
+          "division": "Men's 16-17 Age Group 89kg",
+          "lifter_name": "Michael Molina",
+          "body_weight_kg": "85.7",
+          "snatch_1": "50",
+          "snatch_2": "55",
+          "snatch_3": "57",
+          "cj_1": "70",
+          "cj_2": "-75",
+          "cj_3": "75",
+          "best_snatch": "57",
+          "best_cj": "75",
+          "total": "132"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2020 Division Avenue open 2",
+            "date": "2020-09-19",
+            "division": "Men's 16-17 Age Group 89kg",
+            "lifter_name": "Michael Molina",
+            "body_weight_kg": "85.2",
+            "snatch_1": "52",
+            "snatch_2": "57",
+            "snatch_3": "62",
+            "cj_1": "75",
+            "cj_2": "81",
+            "cj_3": "-86",
+            "best_snatch": "62",
+            "best_cj": "81",
+            "total": "143"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wOS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wOS0xOSIsIndlaWdodF9jbGFzcyI6N30=",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Michael Molina",
+            "total": "143",
+            "gender": "M",
+            "age": "17",
+            "club_name": "LONG ISLAND WLC",
+            "membership_number": "1042649",
+            "wso": "New York"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2020 Division Avenue Invitational",
+            "date": "2020-07-18",
+            "division": "Men's 16-17 Age Group 89kg",
+            "lifter_name": "Michael Molina",
+            "body_weight_kg": "85.7",
+            "snatch_1": "50",
+            "snatch_2": "55",
+            "snatch_3": "57",
+            "cj_1": "70",
+            "cj_2": "-75",
+            "cj_3": "75",
+            "best_snatch": "57",
+            "best_cj": "75",
+            "total": "132"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wNy0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wNy0xOCIsIndlaWdodF9jbGFzcyI6N30=",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Michael Molina",
+            "total": "132",
+            "gender": "M",
+            "age": "17",
+            "club_name": "LONG ISLAND WLC",
+            "membership_number": "1042649",
+            "wso": "New York"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

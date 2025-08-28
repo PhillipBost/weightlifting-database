@@ -1,0 +1,191 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T07:19:31.211Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Daniel Nguyen",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 3,
+    "total_reverse_lookups": 3,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 20877666
+  },
+  "data": [
+    {
+      "internal_id": 54323,
+      "athlete_name": "Daniel Nguyen",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/54323",
+      "contaminated_lifter_id": 32280,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T18:40:06.063Z",
+      "profile_data": {
+        "membership_number": "1063532",
+        "birth_year": 1996,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Texas-Oklahoma",
+        "national_rank": "56"
+      },
+      "competition_history": [
+        {
+          "meet_name": "San Antonio Spring Lift Off 2022",
+          "date": "2022-05-14",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Daniel Nguyen",
+          "body_weight_kg": "80",
+          "snatch_1": "50",
+          "snatch_2": "53",
+          "snatch_3": "56",
+          "cj_1": "60",
+          "cj_2": "65",
+          "cj_3": "70",
+          "best_snatch": "56",
+          "best_cj": "70",
+          "total": "126"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "San Antonio Spring Lift Off 2022",
+            "date": "2022-05-14",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Daniel Nguyen",
+            "body_weight_kg": "80",
+            "snatch_1": "50",
+            "snatch_2": "53",
+            "snatch_3": "56",
+            "cj_1": "60",
+            "cj_2": "65",
+            "cj_3": "70",
+            "best_snatch": "56",
+            "best_cj": "70",
+            "total": "126"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNS0xNCIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "56",
+            "athlete_name": "Daniel Nguyen",
+            "total": "126",
+            "gender": "M",
+            "age": "26",
+            "club_name": "-",
+            "membership_number": "1063532",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 16293,
+      "athlete_name": "Daniel Nguyen",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/16293",
+      "contaminated_lifter_id": 32280,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-27T07:19:29.207Z",
+      "profile_data": {
+        "membership_number": "1022521",
+        "birth_year": 1986,
+        "gender": "M",
+        "club_name": "ALPHA BARBELL",
+        "wso": "Pacific Northwest",
+        "national_rank": "10"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Lift Proud Virtual Cup",
+          "date": "2020-06-30",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Daniel Nguyen",
+          "body_weight_kg": "88.9",
+          "snatch_1": "95",
+          "snatch_2": "0",
+          "snatch_3": "0",
+          "cj_1": "120",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "95",
+          "best_cj": "120",
+          "total": "215"
+        },
+        {
+          "meet_name": "2017 Armor Open",
+          "date": "2017-10-28",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Daniel Nguyen",
+          "body_weight_kg": "84.1",
+          "snatch_1": "60",
+          "snatch_2": "68",
+          "snatch_3": "-75",
+          "cj_1": "0",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "68",
+          "best_cj": "0",
+          "total": "0"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Lift Proud Virtual Cup",
+            "date": "2020-06-30",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Daniel Nguyen",
+            "body_weight_kg": "88.9",
+            "snatch_1": "95",
+            "snatch_2": "0",
+            "snatch_3": "0",
+            "cj_1": "120",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "95",
+            "best_cj": "120",
+            "total": "215"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wNi0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wNi0zMCIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "Daniel Nguyen",
+            "total": "215",
+            "gender": "M",
+            "age": "34",
+            "club_name": "ALPHA BARBELL",
+            "membership_number": "1022521",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2017 Armor Open",
+            "date": "2017-10-28",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Daniel Nguyen",
+            "body_weight_kg": "84.1",
+            "snatch_1": "60",
+            "snatch_2": "68",
+            "snatch_3": "-75",
+            "cj_1": "0",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "68",
+            "best_cj": "0",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0yOCIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    }
+  ]
+}

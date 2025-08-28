@@ -1,0 +1,229 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T05:32:31.914Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Dustin Young",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 4,
+    "total_reverse_lookups": 4,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 14458369
+  },
+  "data": [
+    {
+      "internal_id": 46648,
+      "athlete_name": "Dustin Young",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/46648",
+      "contaminated_lifter_id": 2589,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T16:19:50.216Z",
+      "profile_data": {
+        "membership_number": "1049482",
+        "birth_year": 1983,
+        "gender": "M",
+        "club_name": "Black Hive Weightlifting",
+        "wso": "Florida",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Howard Cohen Classic",
+          "date": "2020-02-29",
+          "division": "Men's Masters (35-39) 109kg",
+          "lifter_name": "Dustin Young",
+          "body_weight_kg": "109",
+          "snatch_1": "69",
+          "snatch_2": "71",
+          "snatch_3": "75",
+          "cj_1": "89",
+          "cj_2": "92",
+          "cj_3": "95",
+          "best_snatch": "75",
+          "best_cj": "95",
+          "total": "170"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Howard Cohen Classic",
+            "date": "2020-02-29",
+            "division": "Men's Masters (35-39) 109kg",
+            "lifter_name": "Dustin Young",
+            "body_weight_kg": "109",
+            "snatch_1": "69",
+            "snatch_2": "71",
+            "snatch_3": "75",
+            "cj_1": "89",
+            "cj_2": "92",
+            "cj_3": "95",
+            "best_snatch": "75",
+            "best_cj": "95",
+            "total": "170"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMi0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMi0yOSIsIndlaWdodF9jbGFzcyI6MTA5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Dustin Young",
+            "total": "170",
+            "gender": "M",
+            "age": "37",
+            "club_name": "Black Hive Weightlifting",
+            "membership_number": "1049482",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 37368,
+      "athlete_name": "Dustin Young",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/37368",
+      "contaminated_lifter_id": 2589,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-27T05:32:29.913Z",
+      "profile_data": {
+        "membership_number": "175632",
+        "birth_year": 1998,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "DMV",
+        "national_rank": "19"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2013 Hangle Barbell Open",
+          "date": "2013-02-09",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Dustin Young",
+          "body_weight_kg": "74.1",
+          "snatch_1": "38",
+          "snatch_2": "39",
+          "snatch_3": "40",
+          "cj_1": "50",
+          "cj_2": "55",
+          "cj_3": "60",
+          "best_snatch": "40",
+          "best_cj": "60",
+          "total": "100"
+        },
+        {
+          "meet_name": "RVA Open",
+          "date": "2012-06-10",
+          "division": "Men's 14-15 Age Group 77 kg",
+          "lifter_name": "Dustin Young",
+          "body_weight_kg": "70",
+          "snatch_1": "0",
+          "snatch_2": "0",
+          "snatch_3": "0",
+          "cj_1": "42",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "0",
+          "best_cj": "42",
+          "total": "0"
+        },
+        {
+          "meet_name": "Blue Ridge Open and VA State Weightlifting Championship",
+          "date": "2012-05-19",
+          "division": "Men's 14-15 Age Group 69 kg",
+          "lifter_name": "Dustin Young",
+          "body_weight_kg": "68.3",
+          "snatch_1": "0",
+          "snatch_2": "0",
+          "snatch_3": "0",
+          "cj_1": "40",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "0",
+          "best_cj": "40",
+          "total": "0"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2013 Hangle Barbell Open",
+            "date": "2013-02-09",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Dustin Young",
+            "body_weight_kg": "74.1",
+            "snatch_1": "38",
+            "snatch_2": "39",
+            "snatch_3": "40",
+            "cj_1": "50",
+            "cj_2": "55",
+            "cj_3": "60",
+            "best_snatch": "40",
+            "best_cj": "60",
+            "total": "100"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMi0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMi0wOSIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "19",
+            "athlete_name": "Dustin Young",
+            "total": "100",
+            "gender": "M",
+            "age": "15",
+            "club_name": "-",
+            "membership_number": "175632",
+            "wso": "DMV"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "RVA Open",
+            "date": "2012-06-10",
+            "division": "Men's 14-15 Age Group 77 kg",
+            "lifter_name": "Dustin Young",
+            "body_weight_kg": "70",
+            "snatch_1": "0",
+            "snatch_2": "0",
+            "snatch_3": "0",
+            "cj_1": "42",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "0",
+            "best_cj": "42",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wNi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wNi0xMCIsIndlaWdodF9jbGFzcyI6MzEwfQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Blue Ridge Open and VA State Weightlifting Championship",
+            "date": "2012-05-19",
+            "division": "Men's 14-15 Age Group 69 kg",
+            "lifter_name": "Dustin Young",
+            "body_weight_kg": "68.3",
+            "snatch_1": "0",
+            "snatch_2": "0",
+            "snatch_3": "0",
+            "cj_1": "40",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "0",
+            "best_cj": "40",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wNS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wNS0xOSIsIndlaWdodF9jbGFzcyI6MzA5fQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    }
+  ]
+}

@@ -1,0 +1,200 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T23:38:33.301Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Jacob Howell",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 3,
+    "total_reverse_lookups": 3,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 81983395
+  },
+  "data": [
+    {
+      "internal_id": 36659,
+      "athlete_name": "Jacob Howell",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/36659",
+      "contaminated_lifter_id": 8256,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T23:38:20.309Z",
+      "profile_data": {
+        "membership_number": "204350",
+        "birth_year": 1997,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Tennessee-Kentucky",
+        "national_rank": "2"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Barbell Madness",
+          "date": "2015-03-28",
+          "division": "Open Men's 56 kg",
+          "lifter_name": "Jacob Howell",
+          "body_weight_kg": "51.8",
+          "snatch_1": "47",
+          "snatch_2": "52",
+          "snatch_3": "55",
+          "cj_1": "65",
+          "cj_2": "69",
+          "cj_3": "72",
+          "best_snatch": "55",
+          "best_cj": "72",
+          "total": "127"
+        },
+        {
+          "meet_name": "OH Swholy Night Winter Open",
+          "date": "2014-12-13",
+          "division": "Open Men's 56 kg",
+          "lifter_name": "Jacob Howell",
+          "body_weight_kg": "50.1",
+          "snatch_1": "45",
+          "snatch_2": "47",
+          "snatch_3": "52",
+          "cj_1": "57",
+          "cj_2": "60",
+          "cj_3": "62",
+          "best_snatch": "52",
+          "best_cj": "62",
+          "total": "114"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Barbell Madness",
+            "date": "2015-03-28",
+            "division": "Open Men's 56 kg",
+            "lifter_name": "Jacob Howell",
+            "body_weight_kg": "51.8",
+            "snatch_1": "47",
+            "snatch_2": "52",
+            "snatch_3": "55",
+            "cj_1": "65",
+            "cj_2": "69",
+            "cj_3": "72",
+            "best_snatch": "55",
+            "best_cj": "72",
+            "total": "127"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMy0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMy0yOCIsIndlaWdodF9jbGFzcyI6MzU0fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Jacob Howell",
+            "total": "127",
+            "gender": "M",
+            "age": "18",
+            "club_name": "-",
+            "membership_number": "204350",
+            "wso": "Tennessee-Kentucky"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "OH Swholy Night Winter Open",
+            "date": "2014-12-13",
+            "division": "Open Men's 56 kg",
+            "lifter_name": "Jacob Howell",
+            "body_weight_kg": "50.1",
+            "snatch_1": "45",
+            "snatch_2": "47",
+            "snatch_3": "52",
+            "cj_1": "57",
+            "cj_2": "60",
+            "cj_3": "62",
+            "best_snatch": "52",
+            "best_cj": "62",
+            "total": "114"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMi0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMi0xMyIsIndlaWdodF9jbGFzcyI6MzU0fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Jacob Howell",
+            "total": "114",
+            "gender": "M",
+            "age": "17",
+            "club_name": "-",
+            "membership_number": "204350",
+            "wso": "Tennessee-Kentucky"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 63665,
+      "athlete_name": "Jacob Howell",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/63665",
+      "contaminated_lifter_id": 8256,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T23:38:33.298Z",
+      "profile_data": {
+        "membership_number": "1077727",
+        "birth_year": 2000,
+        "gender": "M",
+        "club_name": "Columbus Weightlifting",
+        "wso": "Ohio",
+        "national_rank": "4"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2024 Ohio WSO Championships",
+          "date": "2024-08-31",
+          "division": "Open Men's 73kg",
+          "lifter_name": "Jacob Howell",
+          "body_weight_kg": "68.45",
+          "snatch_1": "60",
+          "snatch_2": "-64",
+          "snatch_3": "64",
+          "cj_1": "80",
+          "cj_2": "84",
+          "cj_3": "-88",
+          "best_snatch": "64",
+          "best_cj": "84",
+          "total": "148"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2024 Ohio WSO Championships",
+            "date": "2024-08-31",
+            "division": "Open Men's 73kg",
+            "lifter_name": "Jacob Howell",
+            "body_weight_kg": "68.45",
+            "snatch_1": "60",
+            "snatch_2": "-64",
+            "snatch_3": "64",
+            "cj_1": "80",
+            "cj_2": "84",
+            "cj_3": "-88",
+            "best_snatch": "64",
+            "best_cj": "84",
+            "total": "148"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOC0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOC0zMSIsIndlaWdodF9jbGFzcyI6ODR9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Jacob Howell",
+            "total": "148",
+            "gender": "M",
+            "age": "24",
+            "club_name": "Columbus Weightlifting",
+            "membership_number": "1077727",
+            "wso": "Ohio"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

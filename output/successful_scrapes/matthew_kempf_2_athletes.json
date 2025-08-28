@@ -1,0 +1,247 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T00:47:04.655Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Matthew Kempf",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 4,
+    "total_reverse_lookups": 4,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 86094749
+  },
+  "data": [
+    {
+      "internal_id": 7267,
+      "athlete_name": "Matthew Kempf",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/7267",
+      "contaminated_lifter_id": 26614,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T00:46:52.453Z",
+      "profile_data": {
+        "membership_number": "1012193",
+        "birth_year": 1980,
+        "gender": "M",
+        "club_name": "Standard Strength",
+        "wso": "California North Central",
+        "national_rank": "7"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Nike 2018 American Open Series 3",
+          "date": "2018-09-16",
+          "division": "Men's Masters (35-39) +109kg",
+          "lifter_name": "Matthew Kempf",
+          "body_weight_kg": "112.48",
+          "snatch_1": "90",
+          "snatch_2": "95",
+          "snatch_3": "-100",
+          "cj_1": "115",
+          "cj_2": "-120",
+          "cj_3": "120",
+          "best_snatch": "95",
+          "best_cj": "120",
+          "total": "215"
+        },
+        {
+          "meet_name": "Silicon Valley Open",
+          "date": "2018-07-21",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Matthew Kempf",
+          "body_weight_kg": "111.81",
+          "snatch_1": "90",
+          "snatch_2": "95",
+          "snatch_3": "-98",
+          "cj_1": "105",
+          "cj_2": "112",
+          "cj_3": "119",
+          "best_snatch": "95",
+          "best_cj": "119",
+          "total": "214"
+        },
+        {
+          "meet_name": "Rite of Passage Meet",
+          "date": "2016-11-19",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Matthew Kempf",
+          "body_weight_kg": "100.7",
+          "snatch_1": "86",
+          "snatch_2": "89",
+          "snatch_3": "93",
+          "cj_1": "95",
+          "cj_2": "100",
+          "cj_3": "111",
+          "best_snatch": "93",
+          "best_cj": "111",
+          "total": "204"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Nike 2018 American Open Series 3",
+            "date": "2018-09-16",
+            "division": "Men's Masters (35-39) +109kg",
+            "lifter_name": "Matthew Kempf",
+            "body_weight_kg": "112.48",
+            "snatch_1": "90",
+            "snatch_2": "95",
+            "snatch_3": "-100",
+            "cj_1": "115",
+            "cj_2": "-120",
+            "cj_3": "120",
+            "best_snatch": "95",
+            "best_cj": "120",
+            "total": "215"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOS0xNiIsIndlaWdodF9jbGFzcyI6MTEwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "7",
+            "athlete_name": "Matthew Kempf",
+            "total": "215",
+            "gender": "M",
+            "age": "38",
+            "club_name": "Standard Strength",
+            "membership_number": "1012193",
+            "wso": "California North Central"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Silicon Valley Open",
+            "date": "2018-07-21",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Matthew Kempf",
+            "body_weight_kg": "111.81",
+            "snatch_1": "90",
+            "snatch_2": "95",
+            "snatch_3": "-98",
+            "cj_1": "105",
+            "cj_2": "112",
+            "cj_3": "119",
+            "best_snatch": "95",
+            "best_cj": "119",
+            "total": "214"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNy0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNy0yMSIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "11",
+            "athlete_name": "Matthew Kempf",
+            "total": "214",
+            "gender": "M",
+            "age": "38",
+            "club_name": "Standard Strength",
+            "membership_number": "1012193",
+            "wso": "California North Central"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Rite of Passage Meet",
+            "date": "2016-11-19",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Matthew Kempf",
+            "body_weight_kg": "100.7",
+            "snatch_1": "86",
+            "snatch_2": "89",
+            "snatch_3": "93",
+            "cj_1": "95",
+            "cj_2": "100",
+            "cj_3": "111",
+            "best_snatch": "93",
+            "best_cj": "111",
+            "total": "204"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMS0xOSIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "12",
+            "athlete_name": "Matthew Kempf",
+            "total": "204",
+            "gender": "M",
+            "age": "36",
+            "club_name": "Standard Strength",
+            "membership_number": "1012193",
+            "wso": "California North Central"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 33102,
+      "athlete_name": "Matthew Kempf",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/33102",
+      "contaminated_lifter_id": 26614,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T00:47:04.652Z",
+      "profile_data": {
+        "membership_number": "1030317",
+        "birth_year": 1995,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Indiana",
+        "national_rank": "3"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2018 Freedom Classic",
+          "date": "2018-07-07",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Matthew Kempf",
+          "body_weight_kg": "76.3",
+          "snatch_1": "75",
+          "snatch_2": "80",
+          "snatch_3": "-84",
+          "cj_1": "90",
+          "cj_2": "94",
+          "cj_3": "-99",
+          "best_snatch": "80",
+          "best_cj": "94",
+          "total": "174"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2018 Freedom Classic",
+            "date": "2018-07-07",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Matthew Kempf",
+            "body_weight_kg": "76.3",
+            "snatch_1": "75",
+            "snatch_2": "80",
+            "snatch_3": "-84",
+            "cj_1": "90",
+            "cj_2": "94",
+            "cj_3": "-99",
+            "best_snatch": "80",
+            "best_cj": "94",
+            "total": "174"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNy0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNy0wNyIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Matthew Kempf",
+            "total": "174",
+            "gender": "M",
+            "age": "23",
+            "club_name": "-",
+            "membership_number": "1030317",
+            "wso": "Indiana"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

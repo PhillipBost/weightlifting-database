@@ -1,0 +1,174 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T08:15:47.301Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Steven Moore",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 0,
+    "failed_scrapes": 2,
+    "total_competitions_found": 3,
+    "total_reverse_lookups": 3,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 24253756
+  },
+  "data": [
+    {
+      "internal_id": 30321,
+      "athlete_name": "Steven Moore",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/30321",
+      "contaminated_lifter_id": 17789,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-27T08:15:28.808Z",
+      "profile_data": null,
+      "competition_history": [],
+      "biographical_data_by_competition": [],
+      "scraping_successful": false,
+      "error": "Assignment to constant variable."
+    },
+    {
+      "internal_id": 34547,
+      "athlete_name": "Steven Moore",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/34547",
+      "contaminated_lifter_id": 17789,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-27T08:15:47.300Z",
+      "profile_data": {
+        "membership_number": "172176",
+        "birth_year": 1996,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "-",
+        "national_rank": "14"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Senior Pacific Weightlifting Asscoiation Championship",
+          "date": "2013-01-20",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Steven Moore",
+          "body_weight_kg": "167.92",
+          "snatch_1": "83",
+          "snatch_2": "87",
+          "snatch_3": "90",
+          "cj_1": "110",
+          "cj_2": "115",
+          "cj_3": "120",
+          "best_snatch": "90",
+          "best_cj": "120",
+          "total": "210"
+        },
+        {
+          "meet_name": "Northern California Open",
+          "date": "2012-05-06",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Steven Moore",
+          "body_weight_kg": "121.68",
+          "snatch_1": "0",
+          "snatch_2": "0",
+          "snatch_3": "0",
+          "cj_1": "110",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "0",
+          "best_cj": "110",
+          "total": "0"
+        },
+        {
+          "meet_name": "PWA Championship",
+          "date": "2012-01-22",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Steven Moore",
+          "body_weight_kg": "152.78",
+          "snatch_1": "0",
+          "snatch_2": "0",
+          "snatch_3": "0",
+          "cj_1": "90",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "0",
+          "best_cj": "90",
+          "total": "0"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Senior Pacific Weightlifting Asscoiation Championship",
+            "date": "2013-01-20",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Steven Moore",
+            "body_weight_kg": "167.92",
+            "snatch_1": "83",
+            "snatch_2": "87",
+            "snatch_3": "90",
+            "cj_1": "110",
+            "cj_2": "115",
+            "cj_3": "120",
+            "best_snatch": "90",
+            "best_cj": "120",
+            "total": "210"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMS0yMCIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "14",
+            "athlete_name": "Steven Moore",
+            "total": "210",
+            "gender": "M",
+            "age": "17",
+            "club_name": "-",
+            "membership_number": "172176",
+            "wso": "-"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Northern California Open",
+            "date": "2012-05-06",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Steven Moore",
+            "body_weight_kg": "121.68",
+            "snatch_1": "0",
+            "snatch_2": "0",
+            "snatch_3": "0",
+            "cj_1": "110",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "0",
+            "best_cj": "110",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wNS0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wNS0wNiIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "PWA Championship",
+            "date": "2012-01-22",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Steven Moore",
+            "body_weight_kg": "152.78",
+            "snatch_1": "0",
+            "snatch_2": "0",
+            "snatch_3": "0",
+            "cj_1": "90",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "0",
+            "best_cj": "90",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wMS0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wMS0yMiIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    }
+  ]
+}

@@ -1,0 +1,192 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T13:21:52.272Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Kyle Anderson",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 3,
+    "total_reverse_lookups": 3,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 12341916
+  },
+  "data": [
+    {
+      "internal_id": 25362,
+      "athlete_name": "Kyle Anderson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/25362",
+      "contaminated_lifter_id": 1534,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T15:58:05.794Z",
+      "profile_data": {
+        "membership_number": "180163",
+        "birth_year": 1991,
+        "gender": "M",
+        "club_name": "Club Boris Olympic Weightlifting",
+        "wso": "Missouri Valley",
+        "national_rank": "23"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Larry Hanneman Memorial",
+          "date": "2013-10-12",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Kyle Anderson",
+          "body_weight_kg": "73.66",
+          "snatch_1": "-70",
+          "snatch_2": "70",
+          "snatch_3": "-77",
+          "cj_1": "90",
+          "cj_2": "-95",
+          "cj_3": "95",
+          "best_snatch": "70",
+          "best_cj": "95",
+          "total": "165"
+        },
+        {
+          "meet_name": "Kansas State and Open Championship 2013",
+          "date": "2013-09-21",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Kyle Anderson",
+          "body_weight_kg": "75",
+          "snatch_1": "70",
+          "snatch_2": "75",
+          "snatch_3": "80",
+          "cj_1": "100",
+          "cj_2": "100",
+          "cj_3": "103",
+          "best_snatch": "80",
+          "best_cj": "103",
+          "total": "183"
+        },
+        {
+          "meet_name": "Onaga Christmas Open",
+          "date": "2012-12-29",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Kyle Anderson",
+          "body_weight_kg": "69.1",
+          "snatch_1": "70",
+          "snatch_2": "70",
+          "snatch_3": "75",
+          "cj_1": "90",
+          "cj_2": "95",
+          "cj_3": "97",
+          "best_snatch": "75",
+          "best_cj": "97",
+          "total": "172"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Larry Hanneman Memorial",
+            "date": "2013-10-12",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Kyle Anderson",
+            "body_weight_kg": "73.66",
+            "snatch_1": "-70",
+            "snatch_2": "70",
+            "snatch_3": "-77",
+            "cj_1": "90",
+            "cj_2": "-95",
+            "cj_3": "95",
+            "best_snatch": "70",
+            "best_cj": "95",
+            "total": "165"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMC0xMiIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "23",
+            "athlete_name": "Kyle Anderson",
+            "total": "165",
+            "gender": "M",
+            "age": "22",
+            "club_name": "Club Boris Olympic Weightlifting",
+            "membership_number": "180163",
+            "wso": "Missouri Valley"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Kansas State and Open Championship 2013",
+            "date": "2013-09-21",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Kyle Anderson",
+            "body_weight_kg": "75",
+            "snatch_1": "70",
+            "snatch_2": "75",
+            "snatch_3": "80",
+            "cj_1": "100",
+            "cj_2": "100",
+            "cj_3": "103",
+            "best_snatch": "80",
+            "best_cj": "103",
+            "total": "183"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wOS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wOS0yMSIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "17",
+            "athlete_name": "Kyle Anderson",
+            "total": "183",
+            "gender": "M",
+            "age": "22",
+            "club_name": "Club Boris Olympic Weightlifting",
+            "membership_number": "180163",
+            "wso": "Missouri Valley"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Onaga Christmas Open",
+            "date": "2012-12-29",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Kyle Anderson",
+            "body_weight_kg": "69.1",
+            "snatch_1": "70",
+            "snatch_2": "70",
+            "snatch_3": "75",
+            "cj_1": "90",
+            "cj_2": "95",
+            "cj_3": "97",
+            "best_snatch": "75",
+            "best_cj": "97",
+            "total": "172"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0xMi0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0xMi0yOSIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Kyle Anderson",
+            "total": "172",
+            "gender": "M",
+            "age": "21",
+            "club_name": "Club Boris Olympic Weightlifting",
+            "membership_number": "180163",
+            "wso": "Missouri Valley"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 36774,
+      "athlete_name": "Kyle Anderson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/36774",
+      "contaminated_lifter_id": 1534,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-27T13:21:50.271Z",
+      "profile_data": null,
+      "competition_history": [],
+      "biographical_data_by_competition": [],
+      "scraping_successful": false,
+      "error": "Assignment to constant variable."
+    }
+  ]
+}

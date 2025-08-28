@@ -1,0 +1,379 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T05:21:09.376Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Jessica Schulz",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 7,
+    "total_reverse_lookups": 7,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 13775831
+  },
+  "data": [
+    {
+      "internal_id": 21299,
+      "athlete_name": "Jessica Schulz",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/21299",
+      "contaminated_lifter_id": 1858,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T16:08:31.258Z",
+      "profile_data": {
+        "membership_number": "207642",
+        "birth_year": 1989,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "New Jersey",
+        "national_rank": "32"
+      },
+      "competition_history": [
+        {
+          "meet_name": "(2015 Hookgrip Classic)name change:2015 Hookgrip Spartkiad",
+          "date": "2015-10-04",
+          "division": "Open Women's +75 Kg",
+          "lifter_name": "Jessica Schulz",
+          "body_weight_kg": "123.54",
+          "snatch_1": "41",
+          "snatch_2": "45",
+          "snatch_3": "-46",
+          "cj_1": "60",
+          "cj_2": "-62",
+          "cj_3": "-62",
+          "best_snatch": "45",
+          "best_cj": "60",
+          "total": "105"
+        },
+        {
+          "meet_name": "Liberty Barbell Classic",
+          "date": "2015-04-26",
+          "division": "Open Women's +75 Kg",
+          "lifter_name": "Jessica Schulz",
+          "body_weight_kg": "122.6",
+          "snatch_1": "34",
+          "snatch_2": "36",
+          "snatch_3": "-39",
+          "cj_1": "56",
+          "cj_2": "59",
+          "cj_3": "-62",
+          "best_snatch": "36",
+          "best_cj": "59",
+          "total": "95"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "(2015 Hookgrip Classic)name change:2015 Hookgrip Spartkiad",
+            "date": "2015-10-04",
+            "division": "Open Women's +75 Kg",
+            "lifter_name": "Jessica Schulz",
+            "body_weight_kg": "123.54",
+            "snatch_1": "41",
+            "snatch_2": "45",
+            "snatch_3": "-46",
+            "cj_1": "60",
+            "cj_2": "-62",
+            "cj_3": "-62",
+            "best_snatch": "45",
+            "best_cj": "60",
+            "total": "105"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0wNCIsIndlaWdodF9jbGFzcyI6MzY4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "32",
+            "athlete_name": "Jessica Schulz",
+            "total": "105",
+            "gender": "F",
+            "age": "26",
+            "club_name": "-",
+            "membership_number": "207642",
+            "wso": "New Jersey"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Liberty Barbell Classic",
+            "date": "2015-04-26",
+            "division": "Open Women's +75 Kg",
+            "lifter_name": "Jessica Schulz",
+            "body_weight_kg": "122.6",
+            "snatch_1": "34",
+            "snatch_2": "36",
+            "snatch_3": "-39",
+            "cj_1": "56",
+            "cj_2": "59",
+            "cj_3": "-62",
+            "best_snatch": "36",
+            "best_cj": "59",
+            "total": "95"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0yNiIsIndlaWdodF9jbGFzcyI6MzY4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "22",
+            "athlete_name": "Jessica Schulz",
+            "total": "95",
+            "gender": "F",
+            "age": "26",
+            "club_name": "-",
+            "membership_number": "207642",
+            "wso": "New Jersey"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 7410,
+      "athlete_name": "Jessica Schulz",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/7410",
+      "contaminated_lifter_id": 1858,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-27T05:21:07.374Z",
+      "profile_data": {
+        "membership_number": "170008",
+        "birth_year": 1980,
+        "gender": "F",
+        "club_name": "CROSSFIT RISE",
+        "wso": "Illinois",
+        "national_rank": "2"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2014 American Open",
+          "date": "2014-12-14",
+          "division": "Open Women's 58 kg",
+          "lifter_name": "Jessica Schulz",
+          "body_weight_kg": "57.34",
+          "snatch_1": "70",
+          "snatch_2": "72",
+          "snatch_3": "74",
+          "cj_1": "-90",
+          "cj_2": "-90",
+          "cj_3": "-91",
+          "best_snatch": "74",
+          "best_cj": "0",
+          "total": "0"
+        },
+        {
+          "meet_name": "Windy City WLC Junior Qualifier",
+          "date": "2014-04-13",
+          "division": "Open Women's 63 kg",
+          "lifter_name": "Jessica Schulz",
+          "body_weight_kg": "61.52",
+          "snatch_1": "68",
+          "snatch_2": "-70",
+          "snatch_3": "-70",
+          "cj_1": "83",
+          "cj_2": "85",
+          "cj_3": "-89",
+          "best_snatch": "68",
+          "best_cj": "85",
+          "total": "153"
+        },
+        {
+          "meet_name": "Mid-American Weightlifting Championships",
+          "date": "2013-10-20",
+          "division": "Open Women's 63 kg",
+          "lifter_name": "Jessica Schulz",
+          "body_weight_kg": "60.52",
+          "snatch_1": "-64",
+          "snatch_2": "65",
+          "snatch_3": "-68",
+          "cj_1": "83",
+          "cj_2": "-86",
+          "cj_3": "-88",
+          "best_snatch": "65",
+          "best_cj": "83",
+          "total": "148"
+        },
+        {
+          "meet_name": "Illinois State/Central Open WL Championships",
+          "date": "2013-04-20",
+          "division": "Open Women's 63 kg",
+          "lifter_name": "Jessica Schulz",
+          "body_weight_kg": "58.75",
+          "snatch_1": "-63",
+          "snatch_2": "63",
+          "snatch_3": "66",
+          "cj_1": "75",
+          "cj_2": "78",
+          "cj_3": "80",
+          "best_snatch": "66",
+          "best_cj": "80",
+          "total": "146"
+        },
+        {
+          "meet_name": "MidAmerican Weightlifting Championships",
+          "date": "2012-10-21",
+          "division": "Open Women's 58 kg",
+          "lifter_name": "Jessica Schulz",
+          "body_weight_kg": "55.44",
+          "snatch_1": "-57",
+          "snatch_2": "57",
+          "snatch_3": "59",
+          "cj_1": "70",
+          "cj_2": "-72",
+          "cj_3": "-74",
+          "best_snatch": "59",
+          "best_cj": "70",
+          "total": "129"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2014 American Open",
+            "date": "2014-12-14",
+            "division": "Open Women's 58 kg",
+            "lifter_name": "Jessica Schulz",
+            "body_weight_kg": "57.34",
+            "snatch_1": "70",
+            "snatch_2": "72",
+            "snatch_3": "74",
+            "cj_1": "-90",
+            "cj_2": "-90",
+            "cj_3": "-91",
+            "best_snatch": "74",
+            "best_cj": "0",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMi0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMi0xNCIsIndlaWdodF9jbGFzcyI6MzY0fQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Windy City WLC Junior Qualifier",
+            "date": "2014-04-13",
+            "division": "Open Women's 63 kg",
+            "lifter_name": "Jessica Schulz",
+            "body_weight_kg": "61.52",
+            "snatch_1": "68",
+            "snatch_2": "-70",
+            "snatch_3": "-70",
+            "cj_1": "83",
+            "cj_2": "85",
+            "cj_3": "-89",
+            "best_snatch": "68",
+            "best_cj": "85",
+            "total": "153"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNC0xMyIsIndlaWdodF9jbGFzcyI6MzY1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Jessica Schulz",
+            "total": "153",
+            "gender": "F",
+            "age": "34",
+            "club_name": "CROSSFIT RISE",
+            "membership_number": "170008",
+            "wso": "Illinois"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Mid-American Weightlifting Championships",
+            "date": "2013-10-20",
+            "division": "Open Women's 63 kg",
+            "lifter_name": "Jessica Schulz",
+            "body_weight_kg": "60.52",
+            "snatch_1": "-64",
+            "snatch_2": "65",
+            "snatch_3": "-68",
+            "cj_1": "83",
+            "cj_2": "-86",
+            "cj_3": "-88",
+            "best_snatch": "65",
+            "best_cj": "83",
+            "total": "148"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMC0yMCIsIndlaWdodF9jbGFzcyI6MzY1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Jessica Schulz",
+            "total": "148",
+            "gender": "F",
+            "age": "33",
+            "club_name": "CROSSFIT RISE",
+            "membership_number": "170008",
+            "wso": "Illinois"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Illinois State/Central Open WL Championships",
+            "date": "2013-04-20",
+            "division": "Open Women's 63 kg",
+            "lifter_name": "Jessica Schulz",
+            "body_weight_kg": "58.75",
+            "snatch_1": "-63",
+            "snatch_2": "63",
+            "snatch_3": "66",
+            "cj_1": "75",
+            "cj_2": "78",
+            "cj_3": "80",
+            "best_snatch": "66",
+            "best_cj": "80",
+            "total": "146"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNC0yMCIsIndlaWdodF9jbGFzcyI6MzY1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Jessica Schulz",
+            "total": "146",
+            "gender": "F",
+            "age": "33",
+            "club_name": "CROSSFIT RISE",
+            "membership_number": "170008",
+            "wso": "Illinois"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "MidAmerican Weightlifting Championships",
+            "date": "2012-10-21",
+            "division": "Open Women's 58 kg",
+            "lifter_name": "Jessica Schulz",
+            "body_weight_kg": "55.44",
+            "snatch_1": "-57",
+            "snatch_2": "57",
+            "snatch_3": "59",
+            "cj_1": "70",
+            "cj_2": "-72",
+            "cj_3": "-74",
+            "best_snatch": "59",
+            "best_cj": "70",
+            "total": "129"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0xMC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0xMC0yMSIsIndlaWdodF9jbGFzcyI6MzY0fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "Jessica Schulz",
+            "total": "129",
+            "gender": "F",
+            "age": "32",
+            "club_name": "CROSSFIT RISE",
+            "membership_number": "170008",
+            "wso": "Illinois"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    }
+  ]
+}

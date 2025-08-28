@@ -1,0 +1,182 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T05:46:46.325Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Daniel Castillo",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 0,
+    "failed_scrapes": 2,
+    "total_competitions_found": 3,
+    "total_reverse_lookups": 3,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 104076419
+  },
+  "data": [
+    {
+      "internal_id": 9486,
+      "athlete_name": "Daniel Castillo",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/9486",
+      "contaminated_lifter_id": 18058,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T05:46:31.166Z",
+      "profile_data": {
+        "membership_number": "1038955",
+        "birth_year": 1982,
+        "gender": "M",
+        "club_name": "Vehement Elite Athletics",
+        "wso": "California South",
+        "national_rank": "25"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Summertime in the LBwC 2019",
+          "date": "2019-08-11",
+          "division": "Open Men's 102kg",
+          "lifter_name": "Daniel Castillo",
+          "body_weight_kg": "96.8",
+          "snatch_1": "76",
+          "snatch_2": "80",
+          "snatch_3": "-83",
+          "cj_1": "104",
+          "cj_2": "108",
+          "cj_3": "-111",
+          "best_snatch": "80",
+          "best_cj": "108",
+          "total": "188"
+        },
+        {
+          "meet_name": "Vehement Barbell Festival",
+          "date": "2019-04-06",
+          "division": "Open Men's 102kg",
+          "lifter_name": "Daniel Castillo",
+          "body_weight_kg": "99.1",
+          "snatch_1": "71",
+          "snatch_2": "74",
+          "snatch_3": "-77",
+          "cj_1": "98",
+          "cj_2": "102",
+          "cj_3": "105",
+          "best_snatch": "74",
+          "best_cj": "105",
+          "total": "179"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Summertime in the LBwC 2019",
+            "date": "2019-08-11",
+            "division": "Open Men's 102kg",
+            "lifter_name": "Daniel Castillo",
+            "body_weight_kg": "96.8",
+            "snatch_1": "76",
+            "snatch_2": "80",
+            "snatch_3": "-83",
+            "cj_1": "104",
+            "cj_2": "108",
+            "cj_3": "-111",
+            "best_snatch": "80",
+            "best_cj": "108",
+            "total": "188"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOC0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOC0xMSIsIndlaWdodF9jbGFzcyI6ODh9",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Vehement Barbell Festival",
+            "date": "2019-04-06",
+            "division": "Open Men's 102kg",
+            "lifter_name": "Daniel Castillo",
+            "body_weight_kg": "99.1",
+            "snatch_1": "71",
+            "snatch_2": "74",
+            "snatch_3": "-77",
+            "cj_1": "98",
+            "cj_2": "102",
+            "cj_3": "105",
+            "best_snatch": "74",
+            "best_cj": "105",
+            "total": "179"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0wNiIsIndlaWdodF9jbGFzcyI6ODh9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "25",
+            "athlete_name": "Daniel Castillo",
+            "total": "179",
+            "gender": "M",
+            "age": "37",
+            "club_name": "Vehement Elite Athletics",
+            "membership_number": "1038955",
+            "wso": "California South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    },
+    {
+      "internal_id": 13127,
+      "athlete_name": "Daniel Castillo",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/13127",
+      "contaminated_lifter_id": 18058,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T05:46:46.324Z",
+      "profile_data": {
+        "membership_number": null,
+        "birth_year": null,
+        "gender": null,
+        "club_name": null,
+        "wso": null,
+        "national_rank": null
+      },
+      "competition_history": [
+        {
+          "meet_name": "SE Regional Open Championship",
+          "date": "2012-03-17",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Daniel Castillo",
+          "body_weight_kg": "92.5",
+          "snatch_1": "0",
+          "snatch_2": "0",
+          "snatch_3": "0",
+          "cj_1": "145",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "0",
+          "best_cj": "145",
+          "total": "0"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "SE Regional Open Championship",
+            "date": "2012-03-17",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Daniel Castillo",
+            "body_weight_kg": "92.5",
+            "snatch_1": "0",
+            "snatch_2": "0",
+            "snatch_3": "0",
+            "cj_1": "145",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "0",
+            "best_cj": "145",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wMy0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wMy0xNyIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    }
+  ]
+}

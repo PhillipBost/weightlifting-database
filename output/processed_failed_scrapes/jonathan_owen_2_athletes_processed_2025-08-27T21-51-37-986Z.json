@@ -1,0 +1,145 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T05:22:09.796Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Jonathan Owen",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 13836251
+  },
+  "data": [
+    {
+      "internal_id": 60026,
+      "athlete_name": "Jonathan Owen",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/60026",
+      "contaminated_lifter_id": 2057,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T16:08:45.971Z",
+      "profile_data": {
+        "membership_number": "1071889",
+        "birth_year": 1982,
+        "gender": "M",
+        "club_name": "GSC Barbell",
+        "wso": "Pacific Northwest",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Sasquatch Open",
+          "date": "2024-03-16",
+          "division": "Men's Masters (40-44) 81kg",
+          "lifter_name": "Jonathan Owen",
+          "body_weight_kg": "76.9",
+          "snatch_1": "50",
+          "snatch_2": "-53",
+          "snatch_3": "53",
+          "cj_1": "57",
+          "cj_2": "61",
+          "cj_3": "-64",
+          "best_snatch": "53",
+          "best_cj": "61",
+          "total": "114"
+        },
+        {
+          "meet_name": "Pumkin Spice Lift Off",
+          "date": "2023-09-09",
+          "division": "Men's Masters (40-44) 81kg",
+          "lifter_name": "Jonathan Owen",
+          "body_weight_kg": "77.1",
+          "snatch_1": "47",
+          "snatch_2": "0",
+          "snatch_3": "49",
+          "cj_1": "55",
+          "cj_2": "58",
+          "cj_3": "60",
+          "best_snatch": "49",
+          "best_cj": "60",
+          "total": "109"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Sasquatch Open",
+            "date": "2024-03-16",
+            "division": "Men's Masters (40-44) 81kg",
+            "lifter_name": "Jonathan Owen",
+            "body_weight_kg": "76.9",
+            "snatch_1": "50",
+            "snatch_2": "-53",
+            "snatch_3": "53",
+            "cj_1": "57",
+            "cj_2": "61",
+            "cj_3": "-64",
+            "best_snatch": "53",
+            "best_cj": "61",
+            "total": "114"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMy0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMy0xNiIsIndlaWdodF9jbGFzcyI6MTI1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Jonathan Owen",
+            "total": "114",
+            "gender": "M",
+            "age": "42",
+            "club_name": "GSC Barbell",
+            "membership_number": "1071889",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Pumkin Spice Lift Off",
+            "date": "2023-09-09",
+            "division": "Men's Masters (40-44) 81kg",
+            "lifter_name": "Jonathan Owen",
+            "body_weight_kg": "77.1",
+            "snatch_1": "47",
+            "snatch_2": "0",
+            "snatch_3": "49",
+            "cj_1": "55",
+            "cj_2": "58",
+            "cj_3": "60",
+            "best_snatch": "49",
+            "best_cj": "60",
+            "total": "109"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wOS0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wOS0wOSIsIndlaWdodF9jbGFzcyI6MTI1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Jonathan Owen",
+            "total": "109",
+            "gender": "M",
+            "age": "41",
+            "club_name": "GSC Barbell",
+            "membership_number": "1071889",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 10738,
+      "athlete_name": "Jonathan Owen",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/10738",
+      "contaminated_lifter_id": 2057,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-27T05:22:07.795Z",
+      "profile_data": null,
+      "competition_history": [],
+      "biographical_data_by_competition": [],
+      "scraping_successful": false,
+      "error": "Assignment to constant variable."
+    }
+  ]
+}

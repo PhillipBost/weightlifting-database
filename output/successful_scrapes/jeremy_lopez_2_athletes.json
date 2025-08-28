@@ -1,0 +1,341 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T23:05:17.944Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Jeremy Lopez",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 6,
+    "total_reverse_lookups": 6,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 79988038
+  },
+  "data": [
+    {
+      "internal_id": 8332,
+      "athlete_name": "Jeremy Lopez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/8332",
+      "contaminated_lifter_id": 38020,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T23:04:50.499Z",
+      "profile_data": {
+        "membership_number": "1033094",
+        "birth_year": 1981,
+        "gender": "M",
+        "club_name": "INVICTUS ATHLETE WEIGHTLIFTING CLUB",
+        "wso": "Pacific Northwest",
+        "national_rank": "3"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2022 Alaska State Championship",
+          "date": "2022-01-15",
+          "division": "Men's Masters (40-44) 81kg",
+          "lifter_name": "Jeremy Lopez",
+          "body_weight_kg": "79.6",
+          "snatch_1": "75",
+          "snatch_2": "-84",
+          "snatch_3": "84",
+          "cj_1": "85",
+          "cj_2": "93",
+          "cj_3": "-103",
+          "best_snatch": "84",
+          "best_cj": "93",
+          "total": "177"
+        },
+        {
+          "meet_name": "2019 Alaska State Chamionships",
+          "date": "2019-01-26",
+          "division": "Open Men's 96kg",
+          "lifter_name": "Jeremy Lopez",
+          "body_weight_kg": "94.1",
+          "snatch_1": "83",
+          "snatch_2": "83",
+          "snatch_3": "89",
+          "cj_1": "105",
+          "cj_2": "105",
+          "cj_3": "110",
+          "best_snatch": "89",
+          "best_cj": "110",
+          "total": "199"
+        },
+        {
+          "meet_name": "Southside AO3 Qualifier",
+          "date": "2018-08-11",
+          "division": "Open Men's 102kg",
+          "lifter_name": "Jeremy Lopez",
+          "body_weight_kg": "99",
+          "snatch_1": "75",
+          "snatch_2": "85",
+          "snatch_3": "-90",
+          "cj_1": "85",
+          "cj_2": "90",
+          "cj_3": "98",
+          "best_snatch": "85",
+          "best_cj": "98",
+          "total": "183"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2022 Alaska State Championship",
+            "date": "2022-01-15",
+            "division": "Men's Masters (40-44) 81kg",
+            "lifter_name": "Jeremy Lopez",
+            "body_weight_kg": "79.6",
+            "snatch_1": "75",
+            "snatch_2": "-84",
+            "snatch_3": "84",
+            "cj_1": "85",
+            "cj_2": "93",
+            "cj_3": "-103",
+            "best_snatch": "84",
+            "best_cj": "93",
+            "total": "177"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMS0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMS0xNSIsIndlaWdodF9jbGFzcyI6MTI1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Jeremy Lopez",
+            "total": "177",
+            "gender": "M",
+            "age": "41",
+            "club_name": "INVICTUS ATHLETE WEIGHTLIFTING CLUB",
+            "membership_number": "1033094",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2019 Alaska State Chamionships",
+            "date": "2019-01-26",
+            "division": "Open Men's 96kg",
+            "lifter_name": "Jeremy Lopez",
+            "body_weight_kg": "94.1",
+            "snatch_1": "83",
+            "snatch_2": "83",
+            "snatch_3": "89",
+            "cj_1": "105",
+            "cj_2": "105",
+            "cj_3": "110",
+            "best_snatch": "89",
+            "best_cj": "110",
+            "total": "199"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0yNiIsIndlaWdodF9jbGFzcyI6ODd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "32",
+            "athlete_name": "Jeremy Lopez",
+            "total": "199",
+            "gender": "M",
+            "age": "38",
+            "club_name": "INVICTUS ATHLETE WEIGHTLIFTING CLUB",
+            "membership_number": "1033094",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Southside AO3 Qualifier",
+            "date": "2018-08-11",
+            "division": "Open Men's 102kg",
+            "lifter_name": "Jeremy Lopez",
+            "body_weight_kg": "99",
+            "snatch_1": "75",
+            "snatch_2": "85",
+            "snatch_3": "-90",
+            "cj_1": "85",
+            "cj_2": "90",
+            "cj_3": "98",
+            "best_snatch": "85",
+            "best_cj": "98",
+            "total": "183"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOC0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOC0xMSIsIndlaWdodF9jbGFzcyI6ODh9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "18",
+            "athlete_name": "Jeremy Lopez",
+            "total": "183",
+            "gender": "M",
+            "age": "37",
+            "club_name": "INVICTUS ATHLETE WEIGHTLIFTING CLUB",
+            "membership_number": "1033094",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 15734,
+      "athlete_name": "Jeremy Lopez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/15734",
+      "contaminated_lifter_id": 38020,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T23:05:17.941Z",
+      "profile_data": {
+        "membership_number": "1045157",
+        "birth_year": 1986,
+        "gender": "M",
+        "club_name": "SoChac Barbell",
+        "wso": "Texas-Oklahoma",
+        "national_rank": "7"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Texas Barbell Christmas Classic",
+          "date": "2020-12-12",
+          "division": "Open Men's +109kg",
+          "lifter_name": "Jeremy Lopez",
+          "body_weight_kg": "126.6",
+          "snatch_1": "58",
+          "snatch_2": "59",
+          "snatch_3": "60",
+          "cj_1": "73",
+          "cj_2": "76",
+          "cj_3": "78",
+          "best_snatch": "60",
+          "best_cj": "78",
+          "total": "138"
+        },
+        {
+          "meet_name": "2019 Central Texas Oly Open",
+          "date": "2019-11-10",
+          "division": "Open Men's +109kg",
+          "lifter_name": "Jeremy Lopez",
+          "body_weight_kg": "140.6",
+          "snatch_1": "57",
+          "snatch_2": "-59",
+          "snatch_3": "59",
+          "cj_1": "73",
+          "cj_2": "-76",
+          "cj_3": "78",
+          "best_snatch": "59",
+          "best_cj": "78",
+          "total": "137"
+        },
+        {
+          "meet_name": "Texas Barbell Fall Classic",
+          "date": "2019-09-28",
+          "division": "Open Men's +109kg",
+          "lifter_name": "Jeremy Lopez",
+          "body_weight_kg": "142.8",
+          "snatch_1": "55",
+          "snatch_2": "56",
+          "snatch_3": "57",
+          "cj_1": "-71",
+          "cj_2": "71",
+          "cj_3": "73",
+          "best_snatch": "57",
+          "best_cj": "73",
+          "total": "130"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Texas Barbell Christmas Classic",
+            "date": "2020-12-12",
+            "division": "Open Men's +109kg",
+            "lifter_name": "Jeremy Lopez",
+            "body_weight_kg": "126.6",
+            "snatch_1": "58",
+            "snatch_2": "59",
+            "snatch_3": "60",
+            "cj_1": "73",
+            "cj_2": "76",
+            "cj_3": "78",
+            "best_snatch": "60",
+            "best_cj": "78",
+            "total": "138"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0xMi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0xMi0xMiIsIndlaWdodF9jbGFzcyI6OTB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "7",
+            "athlete_name": "Jeremy Lopez",
+            "total": "138",
+            "gender": "M",
+            "age": "34",
+            "club_name": "SoChac Barbell",
+            "membership_number": "1045157",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2019 Central Texas Oly Open",
+            "date": "2019-11-10",
+            "division": "Open Men's +109kg",
+            "lifter_name": "Jeremy Lopez",
+            "body_weight_kg": "140.6",
+            "snatch_1": "57",
+            "snatch_2": "-59",
+            "snatch_3": "59",
+            "cj_1": "73",
+            "cj_2": "-76",
+            "cj_3": "78",
+            "best_snatch": "59",
+            "best_cj": "78",
+            "total": "137"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0xMCIsIndlaWdodF9jbGFzcyI6OTB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Jeremy Lopez",
+            "total": "137",
+            "gender": "M",
+            "age": "33",
+            "club_name": "SoChac Barbell",
+            "membership_number": "1045157",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Texas Barbell Fall Classic",
+            "date": "2019-09-28",
+            "division": "Open Men's +109kg",
+            "lifter_name": "Jeremy Lopez",
+            "body_weight_kg": "142.8",
+            "snatch_1": "55",
+            "snatch_2": "56",
+            "snatch_3": "57",
+            "cj_1": "-71",
+            "cj_2": "71",
+            "cj_3": "73",
+            "best_snatch": "57",
+            "best_cj": "73",
+            "total": "130"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOS0yOCIsIndlaWdodF9jbGFzcyI6OTB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "15",
+            "athlete_name": "Jeremy Lopez",
+            "total": "130",
+            "gender": "M",
+            "age": "33",
+            "club_name": "SoChac Barbell",
+            "membership_number": "1045157",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T07:43:22.344Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "William Smith",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 24672438
+  },
+  "data": [
+    {
+      "internal_id": 13486,
+      "athlete_name": "William Smith",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/13486",
+      "contaminated_lifter_id": 927,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T07:43:12.065Z",
+      "profile_data": {
+        "membership_number": "178312",
+        "birth_year": 1985,
+        "gender": "M",
+        "club_name": "OCCAM ATHLETICS",
+        "wso": "California North Central",
+        "national_rank": "3"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Columbus Day Open",
+          "date": "2012-10-07",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "William Smith",
+          "body_weight_kg": "77.1",
+          "snatch_1": "55",
+          "snatch_2": "60",
+          "snatch_3": "65",
+          "cj_1": "65",
+          "cj_2": "70",
+          "cj_3": "75",
+          "best_snatch": "65",
+          "best_cj": "75",
+          "total": "140"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Columbus Day Open",
+            "date": "2012-10-07",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "William Smith",
+            "body_weight_kg": "77.1",
+            "snatch_1": "55",
+            "snatch_2": "60",
+            "snatch_3": "65",
+            "cj_1": "65",
+            "cj_2": "70",
+            "cj_3": "75",
+            "best_snatch": "65",
+            "best_cj": "75",
+            "total": "140"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0xMC0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0xMC0wNyIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "William Smith",
+            "total": "140",
+            "gender": "M",
+            "age": "27",
+            "club_name": "OCCAM ATHLETICS",
+            "membership_number": "178312",
+            "wso": "California North Central"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 51569,
+      "athlete_name": "William Smith",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/51569",
+      "contaminated_lifter_id": 927,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T07:43:22.341Z",
+      "profile_data": {
+        "membership_number": "1058197",
+        "birth_year": 1992,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Tennessee-Kentucky",
+        "national_rank": "9"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Everyday Athletes Fall Classic",
+          "date": "2021-11-14",
+          "division": "Open Men's 89kg",
+          "lifter_name": "William Smith",
+          "body_weight_kg": "88.7",
+          "snatch_1": "-80",
+          "snatch_2": "80",
+          "snatch_3": "83",
+          "cj_1": "110",
+          "cj_2": "115",
+          "cj_3": "117",
+          "best_snatch": "83",
+          "best_cj": "117",
+          "total": "200"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Everyday Athletes Fall Classic",
+            "date": "2021-11-14",
+            "division": "Open Men's 89kg",
+            "lifter_name": "William Smith",
+            "body_weight_kg": "88.7",
+            "snatch_1": "-80",
+            "snatch_2": "80",
+            "snatch_3": "83",
+            "cj_1": "110",
+            "cj_2": "115",
+            "cj_3": "117",
+            "best_snatch": "83",
+            "best_cj": "117",
+            "total": "200"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMS0xNCIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "William Smith",
+            "total": "200",
+            "gender": "M",
+            "age": "29",
+            "club_name": "-",
+            "membership_number": "1058197",
+            "wso": "Tennessee-Kentucky"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

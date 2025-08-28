@@ -1,0 +1,247 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T08:52:11.341Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Cassie Haynes",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 4,
+    "total_reverse_lookups": 4,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 28801435
+  },
+  "data": [
+    {
+      "internal_id": 34,
+      "athlete_name": "Cassie Haynes",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/34",
+      "contaminated_lifter_id": 5592,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T08:51:49.962Z",
+      "profile_data": {
+        "membership_number": "190644",
+        "birth_year": 1899,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "Pennsylvania-West Virginia",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Liberty Barbell Classic",
+          "date": "2016-05-01",
+          "division": "Women's Masters (75+) +75 kg",
+          "lifter_name": "Cassie Haynes",
+          "body_weight_kg": "84.54",
+          "snatch_1": "81",
+          "snatch_2": "84",
+          "snatch_3": "86",
+          "cj_1": "-109",
+          "cj_2": "110",
+          "cj_3": "114",
+          "best_snatch": "86",
+          "best_cj": "114",
+          "total": "200"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Liberty Barbell Classic",
+            "date": "2016-05-01",
+            "division": "Women's Masters (75+) +75 kg",
+            "lifter_name": "Cassie Haynes",
+            "body_weight_kg": "84.54",
+            "snatch_1": "81",
+            "snatch_2": "84",
+            "snatch_3": "86",
+            "cj_1": "-109",
+            "cj_2": "110",
+            "cj_3": "114",
+            "best_snatch": "86",
+            "best_cj": "114",
+            "total": "200"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0wMSIsIndlaWdodF9jbGFzcyI6NTIxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Cassie Haynes",
+            "total": "200",
+            "gender": "F",
+            "age": "117",
+            "club_name": "-",
+            "membership_number": "190644",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 11084,
+      "athlete_name": "Cassie Haynes",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/11084",
+      "contaminated_lifter_id": 5592,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T08:52:11.339Z",
+      "profile_data": {
+        "membership_number": "168704",
+        "birth_year": 1983,
+        "gender": "F",
+        "club_name": "LIBERTY BARBELL CLUB",
+        "wso": "Pennsylvania-West Virginia",
+        "national_rank": "4"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Liberty Barbell July Developmental Meet",
+          "date": "2013-07-07",
+          "division": "Open Women's 75 kg",
+          "lifter_name": "Cassie Haynes",
+          "body_weight_kg": "74.2",
+          "snatch_1": "63",
+          "snatch_2": "66",
+          "snatch_3": "66",
+          "cj_1": "55",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "66",
+          "best_cj": "55",
+          "total": "121"
+        },
+        {
+          "meet_name": "Liberty Barbell Club Open/Philadelphia City Championships",
+          "date": "2013-06-23",
+          "division": "Open Women's 75 kg",
+          "lifter_name": "Cassie Haynes",
+          "body_weight_kg": "74.8",
+          "snatch_1": "61",
+          "snatch_2": "64",
+          "snatch_3": "67",
+          "cj_1": "80",
+          "cj_2": "84",
+          "cj_3": "87",
+          "best_snatch": "67",
+          "best_cj": "87",
+          "total": "154"
+        },
+        {
+          "meet_name": "East Coast Classic",
+          "date": "2013-05-04",
+          "division": "Open Women's 75 kg",
+          "lifter_name": "Cassie Haynes",
+          "body_weight_kg": "74.87",
+          "snatch_1": "59",
+          "snatch_2": "62",
+          "snatch_3": "65",
+          "cj_1": "79",
+          "cj_2": "82",
+          "cj_3": "85",
+          "best_snatch": "65",
+          "best_cj": "85",
+          "total": "150"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Liberty Barbell July Developmental Meet",
+            "date": "2013-07-07",
+            "division": "Open Women's 75 kg",
+            "lifter_name": "Cassie Haynes",
+            "body_weight_kg": "74.2",
+            "snatch_1": "63",
+            "snatch_2": "66",
+            "snatch_3": "66",
+            "cj_1": "55",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "66",
+            "best_cj": "55",
+            "total": "121"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNy0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNy0wNyIsIndlaWdodF9jbGFzcyI6MzY3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Cassie Haynes",
+            "total": "121",
+            "gender": "F",
+            "age": "30",
+            "club_name": "LIBERTY BARBELL CLUB",
+            "membership_number": "168704",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Liberty Barbell Club Open/Philadelphia City Championships",
+            "date": "2013-06-23",
+            "division": "Open Women's 75 kg",
+            "lifter_name": "Cassie Haynes",
+            "body_weight_kg": "74.8",
+            "snatch_1": "61",
+            "snatch_2": "64",
+            "snatch_3": "67",
+            "cj_1": "80",
+            "cj_2": "84",
+            "cj_3": "87",
+            "best_snatch": "67",
+            "best_cj": "87",
+            "total": "154"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNi0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNi0yMyIsIndlaWdodF9jbGFzcyI6MzY3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Cassie Haynes",
+            "total": "154",
+            "gender": "F",
+            "age": "30",
+            "club_name": "LIBERTY BARBELL CLUB",
+            "membership_number": "168704",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "East Coast Classic",
+            "date": "2013-05-04",
+            "division": "Open Women's 75 kg",
+            "lifter_name": "Cassie Haynes",
+            "body_weight_kg": "74.87",
+            "snatch_1": "59",
+            "snatch_2": "62",
+            "snatch_3": "65",
+            "cj_1": "79",
+            "cj_2": "82",
+            "cj_3": "85",
+            "best_snatch": "65",
+            "best_cj": "85",
+            "total": "150"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNS0wNCIsIndlaWdodF9jbGFzcyI6MzY3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "Cassie Haynes",
+            "total": "150",
+            "gender": "F",
+            "age": "30",
+            "club_name": "LIBERTY BARBELL CLUB",
+            "membership_number": "168704",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

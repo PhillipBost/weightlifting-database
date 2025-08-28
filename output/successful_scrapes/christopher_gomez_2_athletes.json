@@ -1,0 +1,294 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T07:08:15.279Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Christopher Gomez",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 5,
+    "total_reverse_lookups": 5,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 108965373
+  },
+  "data": [
+    {
+      "internal_id": 13258,
+      "athlete_name": "Christopher Gomez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/13258",
+      "contaminated_lifter_id": 30175,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T07:07:47.643Z",
+      "profile_data": {
+        "membership_number": "203685",
+        "birth_year": 1985,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Mountain South",
+        "national_rank": "12"
+      },
+      "competition_history": [
+        {
+          "meet_name": "SAS Memorial Weightlifting Meet IX",
+          "date": "2024-01-20",
+          "division": "Open Men's 96kg",
+          "lifter_name": "Christopher Gomez",
+          "body_weight_kg": "95.6",
+          "snatch_1": "103",
+          "snatch_2": "104",
+          "snatch_3": "105",
+          "cj_1": "123",
+          "cj_2": "124",
+          "cj_3": "125",
+          "best_snatch": "105",
+          "best_cj": "125",
+          "total": "230"
+        },
+        {
+          "meet_name": "Peaks Weightlifting Meet",
+          "date": "2017-02-18",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Christopher Gomez",
+          "body_weight_kg": "93.6",
+          "snatch_1": "91",
+          "snatch_2": "96",
+          "snatch_3": "100",
+          "cj_1": "125",
+          "cj_2": "130",
+          "cj_3": "-135",
+          "best_snatch": "100",
+          "best_cj": "130",
+          "total": "230"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "SAS Memorial Weightlifting Meet IX",
+            "date": "2024-01-20",
+            "division": "Open Men's 96kg",
+            "lifter_name": "Christopher Gomez",
+            "body_weight_kg": "95.6",
+            "snatch_1": "103",
+            "snatch_2": "104",
+            "snatch_3": "105",
+            "cj_1": "123",
+            "cj_2": "124",
+            "cj_3": "125",
+            "best_snatch": "105",
+            "best_cj": "125",
+            "total": "230"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMS0yMCIsIndlaWdodF9jbGFzcyI6ODd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "12",
+            "athlete_name": "Christopher Gomez",
+            "total": "230",
+            "gender": "M",
+            "age": "39",
+            "club_name": "-",
+            "membership_number": "203685",
+            "wso": "Mountain South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Peaks Weightlifting Meet",
+            "date": "2017-02-18",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Christopher Gomez",
+            "body_weight_kg": "93.6",
+            "snatch_1": "91",
+            "snatch_2": "96",
+            "snatch_3": "100",
+            "cj_1": "125",
+            "cj_2": "130",
+            "cj_3": "-135",
+            "best_snatch": "100",
+            "best_cj": "130",
+            "total": "230"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xOCIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "17",
+            "athlete_name": "Christopher Gomez",
+            "total": "230",
+            "gender": "M",
+            "age": "32",
+            "club_name": "-",
+            "membership_number": "203685",
+            "wso": "Mountain South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 62044,
+      "athlete_name": "Christopher Gomez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/62044",
+      "contaminated_lifter_id": 30175,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T07:08:15.277Z",
+      "profile_data": {
+        "membership_number": "1074942",
+        "birth_year": 2009,
+        "gender": "M",
+        "club_name": "HASSLE FREE BBC",
+        "wso": "California North Central",
+        "national_rank": "9"
+      },
+      "competition_history": [
+        {
+          "meet_name": "The 2024 Nike National Youth Championships, powered by Rogue",
+          "date": "2024-06-12",
+          "division": "Men's 14-15 Age Group 81kg",
+          "lifter_name": "Christopher Gomez",
+          "body_weight_kg": "78.68",
+          "snatch_1": "60",
+          "snatch_2": "-63",
+          "snatch_3": "64",
+          "cj_1": "86",
+          "cj_2": "-90",
+          "cj_3": "-90",
+          "best_snatch": "64",
+          "best_cj": "86",
+          "total": "150"
+        },
+        {
+          "meet_name": "Folsom Open 3- 2024",
+          "date": "2024-04-27",
+          "division": "Men's 14-15 Age Group 81kg",
+          "lifter_name": "Christopher Gomez",
+          "body_weight_kg": "77.9",
+          "snatch_1": "60",
+          "snatch_2": "63",
+          "snatch_3": "65",
+          "cj_1": "83",
+          "cj_2": "86",
+          "cj_3": "89",
+          "best_snatch": "65",
+          "best_cj": "89",
+          "total": "154"
+        },
+        {
+          "meet_name": "Folsom 2024 -National Qualifier",
+          "date": "2024-03-16",
+          "division": "Men's 14-15 Age Group 81kg",
+          "lifter_name": "Christopher Gomez",
+          "body_weight_kg": "76.6",
+          "snatch_1": "60",
+          "snatch_2": "62",
+          "snatch_3": "64",
+          "cj_1": "79",
+          "cj_2": "81",
+          "cj_3": "-83",
+          "best_snatch": "64",
+          "best_cj": "81",
+          "total": "145"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "The 2024 Nike National Youth Championships, powered by Rogue",
+            "date": "2024-06-12",
+            "division": "Men's 14-15 Age Group 81kg",
+            "lifter_name": "Christopher Gomez",
+            "body_weight_kg": "78.68",
+            "snatch_1": "60",
+            "snatch_2": "-63",
+            "snatch_3": "64",
+            "cj_1": "86",
+            "cj_2": "-90",
+            "cj_3": "-90",
+            "best_snatch": "64",
+            "best_cj": "86",
+            "total": "150"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNi0xMiIsIndlaWdodF9jbGFzcyI6Mjh9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "Christopher Gomez",
+            "total": "150",
+            "gender": "M",
+            "age": "15",
+            "club_name": "HASSLE FREE BBC",
+            "membership_number": "1074942",
+            "wso": "California North Central"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Folsom Open 3- 2024",
+            "date": "2024-04-27",
+            "division": "Men's 14-15 Age Group 81kg",
+            "lifter_name": "Christopher Gomez",
+            "body_weight_kg": "77.9",
+            "snatch_1": "60",
+            "snatch_2": "63",
+            "snatch_3": "65",
+            "cj_1": "83",
+            "cj_2": "86",
+            "cj_3": "89",
+            "best_snatch": "65",
+            "best_cj": "89",
+            "total": "154"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNC0yNyIsIndlaWdodF9jbGFzcyI6Mjh9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Christopher Gomez",
+            "total": "154",
+            "gender": "M",
+            "age": "15",
+            "club_name": "HASSLE FREE BBC",
+            "membership_number": "1074942",
+            "wso": "California North Central"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Folsom 2024 -National Qualifier",
+            "date": "2024-03-16",
+            "division": "Men's 14-15 Age Group 81kg",
+            "lifter_name": "Christopher Gomez",
+            "body_weight_kg": "76.6",
+            "snatch_1": "60",
+            "snatch_2": "62",
+            "snatch_3": "64",
+            "cj_1": "79",
+            "cj_2": "81",
+            "cj_3": "-83",
+            "best_snatch": "64",
+            "best_cj": "81",
+            "total": "145"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMy0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMy0xNiIsIndlaWdodF9jbGFzcyI6Mjh9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Christopher Gomez",
+            "total": "145",
+            "gender": "M",
+            "age": "15",
+            "club_name": "HASSLE FREE BBC",
+            "membership_number": "1074942",
+            "wso": "California North Central"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}
