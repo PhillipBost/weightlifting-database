@@ -1,0 +1,247 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T06:47:37.296Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Christopher Cole",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 4,
+    "total_reverse_lookups": 4,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 107727390
+  },
+  "data": [
+    {
+      "internal_id": 23153,
+      "athlete_name": "Christopher Cole",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/23153",
+      "contaminated_lifter_id": 16181,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T06:47:21.738Z",
+      "profile_data": {
+        "membership_number": "212970",
+        "birth_year": 1990,
+        "gender": "M",
+        "club_name": "RONIN BARBELL",
+        "wso": "DMV",
+        "national_rank": "11"
+      },
+      "competition_history": [
+        {
+          "meet_name": "RVA Open 2016",
+          "date": "2016-07-17",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Christopher Cole",
+          "body_weight_kg": "102.2",
+          "snatch_1": "110",
+          "snatch_2": "-115",
+          "snatch_3": "-115",
+          "cj_1": "130",
+          "cj_2": "-135",
+          "cj_3": "-135",
+          "best_snatch": "110",
+          "best_cj": "130",
+          "total": "240"
+        },
+        {
+          "meet_name": "Manayunk Barbell Fall Open",
+          "date": "2015-10-24",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Christopher Cole",
+          "body_weight_kg": "99.1",
+          "snatch_1": "110",
+          "snatch_2": "115",
+          "snatch_3": "-120",
+          "cj_1": "125",
+          "cj_2": "-132",
+          "cj_3": "-132",
+          "best_snatch": "115",
+          "best_cj": "125",
+          "total": "240"
+        },
+        {
+          "meet_name": "The OSS Maryland Potomac Valley Open",
+          "date": "2015-06-28",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Christopher Cole",
+          "body_weight_kg": "93.6",
+          "snatch_1": "105",
+          "snatch_2": "-111",
+          "snatch_3": "-111",
+          "cj_1": "120",
+          "cj_2": "-125",
+          "cj_3": "126",
+          "best_snatch": "105",
+          "best_cj": "126",
+          "total": "231"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "RVA Open 2016",
+            "date": "2016-07-17",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Christopher Cole",
+            "body_weight_kg": "102.2",
+            "snatch_1": "110",
+            "snatch_2": "-115",
+            "snatch_3": "-115",
+            "cj_1": "130",
+            "cj_2": "-135",
+            "cj_3": "-135",
+            "best_snatch": "110",
+            "best_cj": "130",
+            "total": "240"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNy0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNy0xNyIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "11",
+            "athlete_name": "Christopher Cole",
+            "total": "240",
+            "gender": "M",
+            "age": "26",
+            "club_name": "RONIN BARBELL",
+            "membership_number": "212970",
+            "wso": "DMV"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Manayunk Barbell Fall Open",
+            "date": "2015-10-24",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Christopher Cole",
+            "body_weight_kg": "99.1",
+            "snatch_1": "110",
+            "snatch_2": "115",
+            "snatch_3": "-120",
+            "cj_1": "125",
+            "cj_2": "-132",
+            "cj_3": "-132",
+            "best_snatch": "115",
+            "best_cj": "125",
+            "total": "240"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0yNCIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "29",
+            "athlete_name": "Christopher Cole",
+            "total": "240",
+            "gender": "M",
+            "age": "25",
+            "club_name": "RONIN BARBELL",
+            "membership_number": "212970",
+            "wso": "DMV"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The OSS Maryland Potomac Valley Open",
+            "date": "2015-06-28",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Christopher Cole",
+            "body_weight_kg": "93.6",
+            "snatch_1": "105",
+            "snatch_2": "-111",
+            "snatch_3": "-111",
+            "cj_1": "120",
+            "cj_2": "-125",
+            "cj_3": "126",
+            "best_snatch": "105",
+            "best_cj": "126",
+            "total": "231"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNi0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNi0yOCIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "14",
+            "athlete_name": "Christopher Cole",
+            "total": "231",
+            "gender": "M",
+            "age": "25",
+            "club_name": "RONIN BARBELL",
+            "membership_number": "212970",
+            "wso": "DMV"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 24189,
+      "athlete_name": "Christopher Cole",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/24189",
+      "contaminated_lifter_id": 16181,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T06:47:37.293Z",
+      "profile_data": {
+        "membership_number": "1004578",
+        "birth_year": 1990,
+        "gender": "M",
+        "club_name": "CTS Fitness & Performance",
+        "wso": "California North Central",
+        "national_rank": "58"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2016 CTS Wine Country Classic",
+          "date": "2016-05-21",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Christopher Cole",
+          "body_weight_kg": "91.98",
+          "snatch_1": "61",
+          "snatch_2": "65",
+          "snatch_3": "68",
+          "cj_1": "85",
+          "cj_2": "89",
+          "cj_3": "93",
+          "best_snatch": "68",
+          "best_cj": "93",
+          "total": "161"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2016 CTS Wine Country Classic",
+            "date": "2016-05-21",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Christopher Cole",
+            "body_weight_kg": "91.98",
+            "snatch_1": "61",
+            "snatch_2": "65",
+            "snatch_3": "68",
+            "cj_1": "85",
+            "cj_2": "89",
+            "cj_3": "93",
+            "best_snatch": "68",
+            "best_cj": "93",
+            "total": "161"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0yMSIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "58",
+            "athlete_name": "Christopher Cole",
+            "total": "161",
+            "gender": "M",
+            "age": "26",
+            "club_name": "CTS Fitness & Performance",
+            "membership_number": "1004578",
+            "wso": "California North Central"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

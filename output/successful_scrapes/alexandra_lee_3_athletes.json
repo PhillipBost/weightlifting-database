@@ -1,0 +1,221 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T04:03:51.575Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Alexandra Lee",
+    "internal_ids_processed": 3,
+    "successful_scrapes": 3,
+    "failed_scrapes": 0,
+    "total_competitions_found": 3,
+    "total_reverse_lookups": 3,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 11501669
+  },
+  "data": [
+    {
+      "internal_id": 9003,
+      "athlete_name": "Alexandra Lee",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/9003",
+      "contaminated_lifter_id": 22494,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T04:03:32.313Z",
+      "profile_data": {
+        "membership_number": "1013064",
+        "birth_year": 1981,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "New Jersey",
+        "national_rank": "15"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2016 Gold Cup Challenge",
+          "date": "2016-10-23",
+          "division": "Women's Masters (35-39) 58 kg",
+          "lifter_name": "Alexandra Lee",
+          "body_weight_kg": "55",
+          "snatch_1": "35",
+          "snatch_2": "-38",
+          "snatch_3": "40",
+          "cj_1": "50",
+          "cj_2": "53",
+          "cj_3": "55",
+          "best_snatch": "40",
+          "best_cj": "55",
+          "total": "95"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2016 Gold Cup Challenge",
+            "date": "2016-10-23",
+            "division": "Women's Masters (35-39) 58 kg",
+            "lifter_name": "Alexandra Lee",
+            "body_weight_kg": "55",
+            "snatch_1": "35",
+            "snatch_2": "-38",
+            "snatch_3": "40",
+            "cj_1": "50",
+            "cj_2": "53",
+            "cj_3": "55",
+            "best_snatch": "40",
+            "best_cj": "55",
+            "total": "95"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0yMyIsIndlaWdodF9jbGFzcyI6MzgxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "15",
+            "athlete_name": "Alexandra Lee",
+            "total": "95",
+            "gender": "F",
+            "age": "35",
+            "club_name": "-",
+            "membership_number": "1013064",
+            "wso": "New Jersey"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 20582,
+      "athlete_name": "Alexandra Lee",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/20582",
+      "contaminated_lifter_id": 22494,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T04:03:41.860Z",
+      "profile_data": {
+        "membership_number": "1007186",
+        "birth_year": 1989,
+        "gender": "F",
+        "club_name": "Craft Weightlifting",
+        "wso": "Mountain North",
+        "national_rank": "6"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2016 Harvest Open",
+          "date": "2016-11-19",
+          "division": "Open Women's 75 kg",
+          "lifter_name": "Alexandra Lee",
+          "body_weight_kg": "74.4",
+          "snatch_1": "-55",
+          "snatch_2": "55",
+          "snatch_3": "-58",
+          "cj_1": "66",
+          "cj_2": "-70",
+          "cj_3": "70",
+          "best_snatch": "55",
+          "best_cj": "70",
+          "total": "125"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2016 Harvest Open",
+            "date": "2016-11-19",
+            "division": "Open Women's 75 kg",
+            "lifter_name": "Alexandra Lee",
+            "body_weight_kg": "74.4",
+            "snatch_1": "-55",
+            "snatch_2": "55",
+            "snatch_3": "-58",
+            "cj_1": "66",
+            "cj_2": "-70",
+            "cj_3": "70",
+            "best_snatch": "55",
+            "best_cj": "70",
+            "total": "125"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMS0xOSIsIndlaWdodF9jbGFzcyI6MzY3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Alexandra Lee",
+            "total": "125",
+            "gender": "F",
+            "age": "27",
+            "club_name": "Craft Weightlifting",
+            "membership_number": "1007186",
+            "wso": "Mountain North"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 28451,
+      "athlete_name": "Alexandra Lee",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/28451",
+      "contaminated_lifter_id": 22494,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T04:03:51.573Z",
+      "profile_data": {
+        "membership_number": "1024012",
+        "birth_year": 1992,
+        "gender": "F",
+        "club_name": "Shoofly Barbell Club",
+        "wso": "Carolina",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2017 Halloween Weightlifting Spectacular",
+          "date": "2017-10-28",
+          "division": "Open Women's 69 kg",
+          "lifter_name": "Alexandra Lee",
+          "body_weight_kg": "67.5",
+          "snatch_1": "52",
+          "snatch_2": "525",
+          "snatch_3": "58",
+          "cj_1": "65",
+          "cj_2": "-69",
+          "cj_3": "-73",
+          "best_snatch": "525",
+          "best_cj": "65",
+          "total": "590"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2017 Halloween Weightlifting Spectacular",
+            "date": "2017-10-28",
+            "division": "Open Women's 69 kg",
+            "lifter_name": "Alexandra Lee",
+            "body_weight_kg": "67.5",
+            "snatch_1": "52",
+            "snatch_2": "525",
+            "snatch_3": "58",
+            "cj_1": "65",
+            "cj_2": "-69",
+            "cj_3": "-73",
+            "best_snatch": "525",
+            "best_cj": "65",
+            "total": "590"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0yOCIsIndlaWdodF9jbGFzcyI6MzY2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Alexandra Lee",
+            "total": "590",
+            "gender": "F",
+            "age": "25",
+            "club_name": "Shoofly Barbell Club",
+            "membership_number": "1024012",
+            "wso": "Carolina"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

@@ -1,0 +1,247 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T12:48:26.332Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Ryan Scott",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 4,
+    "total_reverse_lookups": 4,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 42976426
+  },
+  "data": [
+    {
+      "internal_id": 13618,
+      "athlete_name": "Ryan Scott",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/13618",
+      "contaminated_lifter_id": 31727,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T12:48:02.566Z",
+      "profile_data": {
+        "membership_number": "1003756",
+        "birth_year": 1985,
+        "gender": "M",
+        "club_name": "Middle GA Weightlifting",
+        "wso": "Georgia",
+        "national_rank": "22"
+      },
+      "competition_history": [
+        {
+          "meet_name": "ALLSOUTH Barbell Invitational",
+          "date": "2017-06-17",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Ryan Scott",
+          "body_weight_kg": "91.9",
+          "snatch_1": "90",
+          "snatch_2": "91",
+          "snatch_3": "100",
+          "cj_1": "120",
+          "cj_2": "125",
+          "cj_3": "128",
+          "best_snatch": "100",
+          "best_cj": "128",
+          "total": "228"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "ALLSOUTH Barbell Invitational",
+            "date": "2017-06-17",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Ryan Scott",
+            "body_weight_kg": "91.9",
+            "snatch_1": "90",
+            "snatch_2": "91",
+            "snatch_3": "100",
+            "cj_1": "120",
+            "cj_2": "125",
+            "cj_3": "128",
+            "best_snatch": "100",
+            "best_cj": "128",
+            "total": "228"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNi0xNyIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "22",
+            "athlete_name": "Ryan Scott",
+            "total": "228",
+            "gender": "M",
+            "age": "32",
+            "club_name": "Middle GA Weightlifting",
+            "membership_number": "1003756",
+            "wso": "Georgia"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 18676,
+      "athlete_name": "Ryan Scott",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/18676",
+      "contaminated_lifter_id": 31727,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T12:48:26.329Z",
+      "profile_data": {
+        "membership_number": "1025637",
+        "birth_year": 1988,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Florida",
+        "national_rank": "22"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2019 Northeastern United States Weightlifting Competition",
+          "date": "2019-01-20",
+          "division": "Open Men's 102kg",
+          "lifter_name": "Ryan Scott",
+          "body_weight_kg": "97.35",
+          "snatch_1": "70",
+          "snatch_2": "-77",
+          "snatch_3": "-77",
+          "cj_1": "88",
+          "cj_2": "92",
+          "cj_3": "-95",
+          "best_snatch": "70",
+          "best_cj": "92",
+          "total": "162"
+        },
+        {
+          "meet_name": "Tampa Bay Area Classic 5",
+          "date": "2018-09-01",
+          "division": "Open Men's 102kg",
+          "lifter_name": "Ryan Scott",
+          "body_weight_kg": "97.95",
+          "snatch_1": "-100",
+          "snatch_2": "102",
+          "snatch_3": "105",
+          "cj_1": "-122",
+          "cj_2": "128",
+          "cj_3": "-137",
+          "best_snatch": "105",
+          "best_cj": "128",
+          "total": "233"
+        },
+        {
+          "meet_name": "Tampa Bay Spring Classic",
+          "date": "2018-04-15",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Ryan Scott",
+          "body_weight_kg": "99.5",
+          "snatch_1": "80",
+          "snatch_2": "90",
+          "snatch_3": "100",
+          "cj_1": "105",
+          "cj_2": "110",
+          "cj_3": "120",
+          "best_snatch": "100",
+          "best_cj": "120",
+          "total": "220"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2019 Northeastern United States Weightlifting Competition",
+            "date": "2019-01-20",
+            "division": "Open Men's 102kg",
+            "lifter_name": "Ryan Scott",
+            "body_weight_kg": "97.35",
+            "snatch_1": "70",
+            "snatch_2": "-77",
+            "snatch_3": "-77",
+            "cj_1": "88",
+            "cj_2": "92",
+            "cj_3": "-95",
+            "best_snatch": "70",
+            "best_cj": "92",
+            "total": "162"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0yMCIsIndlaWdodF9jbGFzcyI6ODh9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "22",
+            "athlete_name": "Ryan Scott",
+            "total": "162",
+            "gender": "M",
+            "age": "31",
+            "club_name": "-",
+            "membership_number": "1025637",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Tampa Bay Area Classic 5",
+            "date": "2018-09-01",
+            "division": "Open Men's 102kg",
+            "lifter_name": "Ryan Scott",
+            "body_weight_kg": "97.95",
+            "snatch_1": "-100",
+            "snatch_2": "102",
+            "snatch_3": "105",
+            "cj_1": "-122",
+            "cj_2": "128",
+            "cj_3": "-137",
+            "best_snatch": "105",
+            "best_cj": "128",
+            "total": "233"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOS0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOS0wMSIsIndlaWdodF9jbGFzcyI6ODh9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Ryan Scott",
+            "total": "233",
+            "gender": "M",
+            "age": "30",
+            "club_name": "-",
+            "membership_number": "1025637",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Tampa Bay Spring Classic",
+            "date": "2018-04-15",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Ryan Scott",
+            "body_weight_kg": "99.5",
+            "snatch_1": "80",
+            "snatch_2": "90",
+            "snatch_3": "100",
+            "cj_1": "105",
+            "cj_2": "110",
+            "cj_3": "120",
+            "best_snatch": "100",
+            "best_cj": "120",
+            "total": "220"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNC0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNC0xNSIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "15",
+            "athlete_name": "Ryan Scott",
+            "total": "220",
+            "gender": "M",
+            "age": "30",
+            "club_name": "-",
+            "membership_number": "1025637",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

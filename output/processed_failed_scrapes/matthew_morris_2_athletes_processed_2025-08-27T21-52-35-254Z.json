@@ -1,0 +1,191 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T05:33:31.122Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Matthew Morris",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 3,
+    "total_reverse_lookups": 3,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 14517577
+  },
+  "data": [
+    {
+      "internal_id": 59927,
+      "athlete_name": "Matthew Morris",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/59927",
+      "contaminated_lifter_id": 2843,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T16:21:30.544Z",
+      "profile_data": {
+        "membership_number": "1068445",
+        "birth_year": 1979,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Carolina",
+        "national_rank": "3"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Summer Swolefest",
+          "date": "2023-08-12",
+          "division": "Men's Masters (40-44) 81kg",
+          "lifter_name": "Matthew Morris",
+          "body_weight_kg": "78.4",
+          "snatch_1": "43",
+          "snatch_2": "-46",
+          "snatch_3": "48",
+          "cj_1": "56",
+          "cj_2": "60",
+          "cj_3": "62",
+          "best_snatch": "48",
+          "best_cj": "62",
+          "total": "110"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Summer Swolefest",
+            "date": "2023-08-12",
+            "division": "Men's Masters (40-44) 81kg",
+            "lifter_name": "Matthew Morris",
+            "body_weight_kg": "78.4",
+            "snatch_1": "43",
+            "snatch_2": "-46",
+            "snatch_3": "48",
+            "cj_1": "56",
+            "cj_2": "60",
+            "cj_3": "62",
+            "best_snatch": "48",
+            "best_cj": "62",
+            "total": "110"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wOC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wOC0xMiIsIndlaWdodF9jbGFzcyI6MTI1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Matthew Morris",
+            "total": "110",
+            "gender": "M",
+            "age": "44",
+            "club_name": "-",
+            "membership_number": "1068445",
+            "wso": "Carolina"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 7273,
+      "athlete_name": "Matthew Morris",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/7273",
+      "contaminated_lifter_id": 2843,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-27T05:33:29.119Z",
+      "profile_data": {
+        "membership_number": "173027",
+        "birth_year": 1980,
+        "gender": "M",
+        "club_name": "MadTown WLC",
+        "wso": "Wisconsin",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "MadTown Throwdown",
+          "date": "2012-08-11",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Matthew Morris",
+          "body_weight_kg": "119.8",
+          "snatch_1": "106",
+          "snatch_2": "111",
+          "snatch_3": "121",
+          "cj_1": "151",
+          "cj_2": "-161",
+          "cj_3": "165",
+          "best_snatch": "121",
+          "best_cj": "165",
+          "total": "286"
+        },
+        {
+          "meet_name": "MadTown Throwdown",
+          "date": "2012-01-14",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Matthew Morris",
+          "body_weight_kg": "126.8",
+          "snatch_1": "0",
+          "snatch_2": "0",
+          "snatch_3": "0",
+          "cj_1": "155",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "0",
+          "best_cj": "155",
+          "total": "0"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "MadTown Throwdown",
+            "date": "2012-08-11",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Matthew Morris",
+            "body_weight_kg": "119.8",
+            "snatch_1": "106",
+            "snatch_2": "111",
+            "snatch_3": "121",
+            "cj_1": "151",
+            "cj_2": "-161",
+            "cj_3": "165",
+            "best_snatch": "121",
+            "best_cj": "165",
+            "total": "286"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wOC0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wOC0xMSIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Matthew Morris",
+            "total": "286",
+            "gender": "M",
+            "age": "32",
+            "club_name": "MadTown WLC",
+            "membership_number": "173027",
+            "wso": "Wisconsin"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "MadTown Throwdown",
+            "date": "2012-01-14",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Matthew Morris",
+            "body_weight_kg": "126.8",
+            "snatch_1": "0",
+            "snatch_2": "0",
+            "snatch_3": "0",
+            "cj_1": "155",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "0",
+            "best_cj": "155",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wMS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wMS0xNCIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    }
+  ]
+}

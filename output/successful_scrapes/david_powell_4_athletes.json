@@ -1,0 +1,430 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T02:23:06.530Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "David Powell",
+    "internal_ids_processed": 4,
+    "successful_scrapes": 4,
+    "failed_scrapes": 0,
+    "total_competitions_found": 7,
+    "total_reverse_lookups": 7,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 5456624
+  },
+  "data": [
+    {
+      "internal_id": 1714,
+      "athlete_name": "David Powell",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/1714",
+      "contaminated_lifter_id": 8967,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T02:22:19.752Z",
+      "profile_data": {
+        "membership_number": "202263",
+        "birth_year": 1966,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Ohio",
+        "national_rank": "60"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2018 MidWest Strongest Unicorn",
+          "date": "2018-10-28",
+          "division": "Open Men's 81kg",
+          "lifter_name": "David Powell",
+          "body_weight_kg": "77.95",
+          "snatch_1": "-70",
+          "snatch_2": "-72",
+          "snatch_3": "73",
+          "cj_1": "90",
+          "cj_2": "95",
+          "cj_3": "-100",
+          "best_snatch": "73",
+          "best_cj": "95",
+          "total": "168"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2018 MidWest Strongest Unicorn",
+            "date": "2018-10-28",
+            "division": "Open Men's 81kg",
+            "lifter_name": "David Powell",
+            "body_weight_kg": "77.95",
+            "snatch_1": "-70",
+            "snatch_2": "-72",
+            "snatch_3": "73",
+            "cj_1": "90",
+            "cj_2": "95",
+            "cj_3": "-100",
+            "best_snatch": "73",
+            "best_cj": "95",
+            "total": "168"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yOCIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "60",
+            "athlete_name": "David Powell",
+            "total": "168",
+            "gender": "M",
+            "age": "52",
+            "club_name": "-",
+            "membership_number": "202263",
+            "wso": "Ohio"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 5297,
+      "athlete_name": "David Powell",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/5297",
+      "contaminated_lifter_id": 8967,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T02:22:46.947Z",
+      "profile_data": {
+        "membership_number": "1043816",
+        "birth_year": 1977,
+        "gender": "M",
+        "club_name": "BRIDGE CITY STRENGTH & PERFORMANCE",
+        "wso": "Tennessee-Kentucky",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "3rd Annual Brigade Barbell Club Open 2021",
+          "date": "2021-10-23",
+          "division": "Men's Masters (40-44) 102kg",
+          "lifter_name": "David Powell",
+          "body_weight_kg": "100.2",
+          "snatch_1": "105",
+          "snatch_2": "110",
+          "snatch_3": "115",
+          "cj_1": "135",
+          "cj_2": "140",
+          "cj_3": "145",
+          "best_snatch": "115",
+          "best_cj": "145",
+          "total": "260"
+        },
+        {
+          "meet_name": "2021 Pan American Masters Weightlifting Championships",
+          "date": "2021-08-07",
+          "division": "Men's Masters (40-44) 102kg",
+          "lifter_name": "David Powell",
+          "body_weight_kg": "101.05",
+          "snatch_1": "102",
+          "snatch_2": "107",
+          "snatch_3": "112",
+          "cj_1": "132",
+          "cj_2": "137",
+          "cj_3": "142",
+          "best_snatch": "112",
+          "best_cj": "142",
+          "total": "254"
+        },
+        {
+          "meet_name": "Elite Performance Open",
+          "date": "2021-06-19",
+          "division": "Men's Masters (40-44) 102kg",
+          "lifter_name": "David Powell",
+          "body_weight_kg": "100.8",
+          "snatch_1": "102",
+          "snatch_2": "105",
+          "snatch_3": "110",
+          "cj_1": "130",
+          "cj_2": "135",
+          "cj_3": "140",
+          "best_snatch": "110",
+          "best_cj": "140",
+          "total": "250"
+        },
+        {
+          "meet_name": "The Endless Summer Classic",
+          "date": "2019-08-10",
+          "division": "Open Men's 102kg",
+          "lifter_name": "David Powell",
+          "body_weight_kg": "100.8",
+          "snatch_1": "90",
+          "snatch_2": "95",
+          "snatch_3": "100",
+          "cj_1": "115",
+          "cj_2": "120",
+          "cj_3": "130",
+          "best_snatch": "100",
+          "best_cj": "130",
+          "total": "230"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "3rd Annual Brigade Barbell Club Open 2021",
+            "date": "2021-10-23",
+            "division": "Men's Masters (40-44) 102kg",
+            "lifter_name": "David Powell",
+            "body_weight_kg": "100.2",
+            "snatch_1": "105",
+            "snatch_2": "110",
+            "snatch_3": "115",
+            "cj_1": "135",
+            "cj_2": "140",
+            "cj_3": "145",
+            "best_snatch": "115",
+            "best_cj": "145",
+            "total": "260"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMC0yMyIsIndlaWdodF9jbGFzcyI6MTI4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "David Powell",
+            "total": "260",
+            "gender": "M",
+            "age": "44",
+            "club_name": "BRIDGE CITY STRENGTH & PERFORMANCE",
+            "membership_number": "1043816",
+            "wso": "Tennessee-Kentucky"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2021 Pan American Masters Weightlifting Championships",
+            "date": "2021-08-07",
+            "division": "Men's Masters (40-44) 102kg",
+            "lifter_name": "David Powell",
+            "body_weight_kg": "101.05",
+            "snatch_1": "102",
+            "snatch_2": "107",
+            "snatch_3": "112",
+            "cj_1": "132",
+            "cj_2": "137",
+            "cj_3": "142",
+            "best_snatch": "112",
+            "best_cj": "142",
+            "total": "254"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wOC0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wOC0wNyIsIndlaWdodF9jbGFzcyI6MTI4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "David Powell",
+            "total": "254",
+            "gender": "M",
+            "age": "44",
+            "club_name": "BRIDGE CITY STRENGTH & PERFORMANCE",
+            "membership_number": "1043816",
+            "wso": "Tennessee-Kentucky"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Elite Performance Open",
+            "date": "2021-06-19",
+            "division": "Men's Masters (40-44) 102kg",
+            "lifter_name": "David Powell",
+            "body_weight_kg": "100.8",
+            "snatch_1": "102",
+            "snatch_2": "105",
+            "snatch_3": "110",
+            "cj_1": "130",
+            "cj_2": "135",
+            "cj_3": "140",
+            "best_snatch": "110",
+            "best_cj": "140",
+            "total": "250"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNi0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNi0xOSIsIndlaWdodF9jbGFzcyI6MTI4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "David Powell",
+            "total": "250",
+            "gender": "M",
+            "age": "44",
+            "club_name": "BRIDGE CITY STRENGTH & PERFORMANCE",
+            "membership_number": "1043816",
+            "wso": "Tennessee-Kentucky"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The Endless Summer Classic",
+            "date": "2019-08-10",
+            "division": "Open Men's 102kg",
+            "lifter_name": "David Powell",
+            "body_weight_kg": "100.8",
+            "snatch_1": "90",
+            "snatch_2": "95",
+            "snatch_3": "100",
+            "cj_1": "115",
+            "cj_2": "120",
+            "cj_3": "130",
+            "best_snatch": "100",
+            "best_cj": "130",
+            "total": "230"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOC0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOC0xMCIsIndlaWdodF9jbGFzcyI6ODh9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "14",
+            "athlete_name": "David Powell",
+            "total": "230",
+            "gender": "M",
+            "age": "42",
+            "club_name": "BRIDGE CITY STRENGTH & PERFORMANCE",
+            "membership_number": "1043816",
+            "wso": "Tennessee-Kentucky"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 19796,
+      "athlete_name": "David Powell",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/19796",
+      "contaminated_lifter_id": 8967,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T02:22:56.979Z",
+      "profile_data": {
+        "membership_number": "208019",
+        "birth_year": 1988,
+        "gender": "M",
+        "club_name": "LAKESHORE BARBELL CLUB",
+        "wso": "Wisconsin",
+        "national_rank": "14"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2015 Wisconsin LWC Championship",
+          "date": "2015-04-19",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "David Powell",
+          "body_weight_kg": "108.1",
+          "snatch_1": "-90",
+          "snatch_2": "-91",
+          "snatch_3": "91",
+          "cj_1": "111",
+          "cj_2": "114",
+          "cj_3": "-116",
+          "best_snatch": "91",
+          "best_cj": "114",
+          "total": "205"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2015 Wisconsin LWC Championship",
+            "date": "2015-04-19",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "David Powell",
+            "body_weight_kg": "108.1",
+            "snatch_1": "-90",
+            "snatch_2": "-91",
+            "snatch_3": "91",
+            "cj_1": "111",
+            "cj_2": "114",
+            "cj_3": "-116",
+            "best_snatch": "91",
+            "best_cj": "114",
+            "total": "205"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0xOSIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "14",
+            "athlete_name": "David Powell",
+            "total": "205",
+            "gender": "M",
+            "age": "27",
+            "club_name": "LAKESHORE BARBELL CLUB",
+            "membership_number": "208019",
+            "wso": "Wisconsin"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 64315,
+      "athlete_name": "David Powell",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/64315",
+      "contaminated_lifter_id": 8967,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T02:23:06.528Z",
+      "profile_data": {
+        "membership_number": "1078401",
+        "birth_year": 1963,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Ohio",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2024 Monster Smash",
+          "date": "2024-10-19",
+          "division": "Men's Masters (60-64) 89kg",
+          "lifter_name": "David Powell",
+          "body_weight_kg": "88.5",
+          "snatch_1": "84",
+          "snatch_2": "88",
+          "snatch_3": "92",
+          "cj_1": "102",
+          "cj_2": "107",
+          "cj_3": "-110",
+          "best_snatch": "92",
+          "best_cj": "107",
+          "total": "199"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2024 Monster Smash",
+            "date": "2024-10-19",
+            "division": "Men's Masters (60-64) 89kg",
+            "lifter_name": "David Powell",
+            "body_weight_kg": "88.5",
+            "snatch_1": "84",
+            "snatch_2": "88",
+            "snatch_3": "92",
+            "cj_1": "102",
+            "cj_2": "107",
+            "cj_3": "-110",
+            "best_snatch": "92",
+            "best_cj": "107",
+            "total": "199"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0xOSIsIndlaWdodF9jbGFzcyI6MjA2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "David Powell",
+            "total": "199",
+            "gender": "M",
+            "age": "61",
+            "club_name": "-",
+            "membership_number": "1078401",
+            "wso": "Ohio"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

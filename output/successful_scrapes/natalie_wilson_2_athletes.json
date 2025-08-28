@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T13:44:17.128Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Natalie Wilson",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 46327222
+  },
+  "data": [
+    {
+      "internal_id": 46217,
+      "athlete_name": "Natalie Wilson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/46217",
+      "contaminated_lifter_id": 41528,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T13:44:07.247Z",
+      "profile_data": {
+        "membership_number": "1041110",
+        "birth_year": 2008,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "Florida",
+        "national_rank": "3"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Vero Beach Classic VI",
+          "date": "2019-05-25",
+          "division": "Women's 13 Under Age Group 36kg",
+          "lifter_name": "Natalie Wilson",
+          "body_weight_kg": "33.2",
+          "snatch_1": "8",
+          "snatch_2": "10",
+          "snatch_3": "12",
+          "cj_1": "15",
+          "cj_2": "-18",
+          "cj_3": "18",
+          "best_snatch": "12",
+          "best_cj": "18",
+          "total": "30"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Vero Beach Classic VI",
+            "date": "2019-05-25",
+            "division": "Women's 13 Under Age Group 36kg",
+            "lifter_name": "Natalie Wilson",
+            "body_weight_kg": "33.2",
+            "snatch_1": "8",
+            "snatch_2": "10",
+            "snatch_3": "12",
+            "cj_1": "15",
+            "cj_2": "-18",
+            "cj_3": "18",
+            "best_snatch": "12",
+            "best_cj": "18",
+            "total": "30"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0yNSIsIndlaWdodF9jbGFzcyI6NTN9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Natalie Wilson",
+            "total": "30",
+            "gender": "F",
+            "age": "11",
+            "club_name": "-",
+            "membership_number": "1041110",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 64932,
+      "athlete_name": "Natalie Wilson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/64932",
+      "contaminated_lifter_id": 41528,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T13:44:17.126Z",
+      "profile_data": {
+        "membership_number": "1079741",
+        "birth_year": 2009,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "Alabama",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "East Alabama Club meet and Christmas Party",
+          "date": "2024-12-21",
+          "division": "Women's 14-15 Age Group 64kg",
+          "lifter_name": "Natalie Wilson",
+          "body_weight_kg": "60.25",
+          "snatch_1": "32",
+          "snatch_2": "35",
+          "snatch_3": "40",
+          "cj_1": "53",
+          "cj_2": "55",
+          "cj_3": "57",
+          "best_snatch": "40",
+          "best_cj": "57",
+          "total": "97"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "East Alabama Club meet and Christmas Party",
+            "date": "2024-12-21",
+            "division": "Women's 14-15 Age Group 64kg",
+            "lifter_name": "Natalie Wilson",
+            "body_weight_kg": "60.25",
+            "snatch_1": "32",
+            "snatch_2": "35",
+            "snatch_3": "40",
+            "cj_1": "53",
+            "cj_2": "55",
+            "cj_3": "57",
+            "best_snatch": "40",
+            "best_cj": "57",
+            "total": "97"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMi0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMi0yMSIsIndlaWdodF9jbGFzcyI6Mzd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Natalie Wilson",
+            "total": "97",
+            "gender": "F",
+            "age": "15",
+            "club_name": "-",
+            "membership_number": "1079741",
+            "wso": "Alabama"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

@@ -1,0 +1,341 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T11:06:31.059Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Nicholas Davis",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 6,
+    "total_reverse_lookups": 6,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 36861153
+  },
+  "data": [
+    {
+      "internal_id": 6568,
+      "athlete_name": "Nicholas Davis",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/6568",
+      "contaminated_lifter_id": 15209,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T11:06:20.888Z",
+      "profile_data": {
+        "membership_number": "1045661",
+        "birth_year": 1979,
+        "gender": "M",
+        "club_name": "OKC BARBELL CLUB",
+        "wso": "Texas-Oklahoma",
+        "national_rank": "5"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2021 Oklahoma State Championship (National University Qualifier)",
+          "date": "2021-11-06",
+          "division": "Men's Masters (40-44) 81kg",
+          "lifter_name": "Nicholas Davis",
+          "body_weight_kg": "73.5",
+          "snatch_1": "-55",
+          "snatch_2": "-55",
+          "snatch_3": "55",
+          "cj_1": "75",
+          "cj_2": "-80",
+          "cj_3": "-80",
+          "best_snatch": "55",
+          "best_cj": "75",
+          "total": "130"
+        },
+        {
+          "meet_name": "2021 Sooner Summer Slam",
+          "date": "2021-07-24",
+          "division": "Men's Masters (40-44) 81kg",
+          "lifter_name": "Nicholas Davis",
+          "body_weight_kg": "76.1",
+          "snatch_1": "56",
+          "snatch_2": "58",
+          "snatch_3": "-65",
+          "cj_1": "75",
+          "cj_2": "-80",
+          "cj_3": "-80",
+          "best_snatch": "58",
+          "best_cj": "75",
+          "total": "133"
+        },
+        {
+          "meet_name": "2020 Oklahoma Open",
+          "date": "2020-02-22",
+          "division": "Men's Masters (40-44) 73kg",
+          "lifter_name": "Nicholas Davis",
+          "body_weight_kg": "70.8",
+          "snatch_1": "-53",
+          "snatch_2": "55",
+          "snatch_3": "61",
+          "cj_1": "74",
+          "cj_2": "-78",
+          "cj_3": "-78",
+          "best_snatch": "61",
+          "best_cj": "74",
+          "total": "135"
+        },
+        {
+          "meet_name": "U25/Junior Last Chance Qual/Newbie Invitational",
+          "date": "2020-01-04",
+          "division": "Men's Masters (40-44) 73kg",
+          "lifter_name": "Nicholas Davis",
+          "body_weight_kg": "71.7",
+          "snatch_1": "-52",
+          "snatch_2": "52",
+          "snatch_3": "57",
+          "cj_1": "70",
+          "cj_2": "75",
+          "cj_3": "-78",
+          "best_snatch": "57",
+          "best_cj": "75",
+          "total": "132"
+        },
+        {
+          "meet_name": "2019 Sooner State Open",
+          "date": "2019-11-02",
+          "division": "Open Men's 73kg",
+          "lifter_name": "Nicholas Davis",
+          "body_weight_kg": "72.6",
+          "snatch_1": "49",
+          "snatch_2": "55",
+          "snatch_3": "61",
+          "cj_1": "-68",
+          "cj_2": "68",
+          "cj_3": "73",
+          "best_snatch": "61",
+          "best_cj": "73",
+          "total": "134"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2021 Oklahoma State Championship (National University Qualifier)",
+            "date": "2021-11-06",
+            "division": "Men's Masters (40-44) 81kg",
+            "lifter_name": "Nicholas Davis",
+            "body_weight_kg": "73.5",
+            "snatch_1": "-55",
+            "snatch_2": "-55",
+            "snatch_3": "55",
+            "cj_1": "75",
+            "cj_2": "-80",
+            "cj_3": "-80",
+            "best_snatch": "55",
+            "best_cj": "75",
+            "total": "130"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMS0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMS0wNiIsIndlaWdodF9jbGFzcyI6MTI1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "Nicholas Davis",
+            "total": "130",
+            "gender": "M",
+            "age": "42",
+            "club_name": "OKC BARBELL CLUB",
+            "membership_number": "1045661",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2021 Sooner Summer Slam",
+            "date": "2021-07-24",
+            "division": "Men's Masters (40-44) 81kg",
+            "lifter_name": "Nicholas Davis",
+            "body_weight_kg": "76.1",
+            "snatch_1": "56",
+            "snatch_2": "58",
+            "snatch_3": "-65",
+            "cj_1": "75",
+            "cj_2": "-80",
+            "cj_3": "-80",
+            "best_snatch": "58",
+            "best_cj": "75",
+            "total": "133"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNy0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNy0yNCIsIndlaWdodF9jbGFzcyI6MTI1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Nicholas Davis",
+            "total": "133",
+            "gender": "M",
+            "age": "42",
+            "club_name": "OKC BARBELL CLUB",
+            "membership_number": "1045661",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2020 Oklahoma Open",
+            "date": "2020-02-22",
+            "division": "Men's Masters (40-44) 73kg",
+            "lifter_name": "Nicholas Davis",
+            "body_weight_kg": "70.8",
+            "snatch_1": "-53",
+            "snatch_2": "55",
+            "snatch_3": "61",
+            "cj_1": "74",
+            "cj_2": "-78",
+            "cj_3": "-78",
+            "best_snatch": "61",
+            "best_cj": "74",
+            "total": "135"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMi0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMi0yMiIsIndlaWdodF9jbGFzcyI6MTI0fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Nicholas Davis",
+            "total": "135",
+            "gender": "M",
+            "age": "41",
+            "club_name": "OKC BARBELL CLUB",
+            "membership_number": "1045661",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "U25/Junior Last Chance Qual/Newbie Invitational",
+            "date": "2020-01-04",
+            "division": "Men's Masters (40-44) 73kg",
+            "lifter_name": "Nicholas Davis",
+            "body_weight_kg": "71.7",
+            "snatch_1": "-52",
+            "snatch_2": "52",
+            "snatch_3": "57",
+            "cj_1": "70",
+            "cj_2": "75",
+            "cj_3": "-78",
+            "best_snatch": "57",
+            "best_cj": "75",
+            "total": "132"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMS0wNCIsIndlaWdodF9jbGFzcyI6MTI0fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Nicholas Davis",
+            "total": "132",
+            "gender": "M",
+            "age": "41",
+            "club_name": "OKC BARBELL CLUB",
+            "membership_number": "1045661",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2019 Sooner State Open",
+            "date": "2019-11-02",
+            "division": "Open Men's 73kg",
+            "lifter_name": "Nicholas Davis",
+            "body_weight_kg": "72.6",
+            "snatch_1": "49",
+            "snatch_2": "55",
+            "snatch_3": "61",
+            "cj_1": "-68",
+            "cj_2": "68",
+            "cj_3": "73",
+            "best_snatch": "61",
+            "best_cj": "73",
+            "total": "134"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0wMiIsIndlaWdodF9jbGFzcyI6ODR9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "30",
+            "athlete_name": "Nicholas Davis",
+            "total": "134",
+            "gender": "M",
+            "age": "40",
+            "club_name": "OKC BARBELL CLUB",
+            "membership_number": "1045661",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 26255,
+      "athlete_name": "Nicholas Davis",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/26255",
+      "contaminated_lifter_id": 15209,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T11:06:31.057Z",
+      "profile_data": {
+        "membership_number": "211443",
+        "birth_year": 1991,
+        "gender": "M",
+        "club_name": "IRON ATHLETE WEIGHTLIFTING CLUB",
+        "wso": "Mountain South",
+        "national_rank": "23"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Iron Athlete Open",
+          "date": "2015-08-01",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Nicholas Davis",
+          "body_weight_kg": "72.8",
+          "snatch_1": "-67",
+          "snatch_2": "67",
+          "snatch_3": "72",
+          "cj_1": "87",
+          "cj_2": "92",
+          "cj_3": "-97",
+          "best_snatch": "72",
+          "best_cj": "92",
+          "total": "164"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Iron Athlete Open",
+            "date": "2015-08-01",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Nicholas Davis",
+            "body_weight_kg": "72.8",
+            "snatch_1": "-67",
+            "snatch_2": "67",
+            "snatch_3": "72",
+            "cj_1": "87",
+            "cj_2": "92",
+            "cj_3": "-97",
+            "best_snatch": "72",
+            "best_cj": "92",
+            "total": "164"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOC0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOC0wMSIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "23",
+            "athlete_name": "Nicholas Davis",
+            "total": "164",
+            "gender": "M",
+            "age": "24",
+            "club_name": "IRON ATHLETE WEIGHTLIFTING CLUB",
+            "membership_number": "211443",
+            "wso": "Mountain South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

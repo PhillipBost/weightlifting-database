@@ -1,0 +1,341 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T22:49:40.544Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Jordan Vigil",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 6,
+    "total_reverse_lookups": 6,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 79050638
+  },
+  "data": [
+    {
+      "internal_id": 13523,
+      "athlete_name": "Jordan Vigil",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/13523",
+      "contaminated_lifter_id": 35142,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T22:49:11.172Z",
+      "profile_data": {
+        "membership_number": "1026026",
+        "birth_year": 1985,
+        "gender": "M",
+        "club_name": "ENZO ATHLETIC PERFORMANCE",
+        "wso": "Iowa-Nebraska",
+        "national_rank": "56"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Raise The Bar",
+          "date": "2018-01-14",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Jordan Vigil",
+          "body_weight_kg": "84.9",
+          "snatch_1": "70",
+          "snatch_2": "78",
+          "snatch_3": "-85",
+          "cj_1": "95",
+          "cj_2": "105",
+          "cj_3": "-120",
+          "best_snatch": "78",
+          "best_cj": "105",
+          "total": "183"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Raise The Bar",
+            "date": "2018-01-14",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Jordan Vigil",
+            "body_weight_kg": "84.9",
+            "snatch_1": "70",
+            "snatch_2": "78",
+            "snatch_3": "-85",
+            "cj_1": "95",
+            "cj_2": "105",
+            "cj_3": "-120",
+            "best_snatch": "78",
+            "best_cj": "105",
+            "total": "183"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMS0xNCIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "56",
+            "athlete_name": "Jordan Vigil",
+            "total": "183",
+            "gender": "M",
+            "age": "33",
+            "club_name": "ENZO ATHLETIC PERFORMANCE",
+            "membership_number": "1026026",
+            "wso": "Iowa-Nebraska"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 50847,
+      "athlete_name": "Jordan Vigil",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/50847",
+      "contaminated_lifter_id": 35142,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T22:49:40.543Z",
+      "profile_data": {
+        "membership_number": "1056706",
+        "birth_year": 1998,
+        "gender": "M",
+        "club_name": "Southern California Weightlifting Club",
+        "wso": "California South",
+        "national_rank": "12"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2024 Virus Summer Classic",
+          "date": "2024-07-07",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Jordan Vigil",
+          "body_weight_kg": "80.34",
+          "snatch_1": "70",
+          "snatch_2": "74",
+          "snatch_3": "77",
+          "cj_1": "90",
+          "cj_2": "94",
+          "cj_3": "101",
+          "best_snatch": "77",
+          "best_cj": "101",
+          "total": "178"
+        },
+        {
+          "meet_name": "SoCal Spring Classic",
+          "date": "2024-04-28",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Jordan Vigil",
+          "body_weight_kg": "78.79",
+          "snatch_1": "73",
+          "snatch_2": "-76",
+          "snatch_3": "-76",
+          "cj_1": "91",
+          "cj_2": "95",
+          "cj_3": "100",
+          "best_snatch": "73",
+          "best_cj": "100",
+          "total": "173"
+        },
+        {
+          "meet_name": "SoCal Summer Classic",
+          "date": "2021-07-11",
+          "division": "Open Men's 73kg",
+          "lifter_name": "Jordan Vigil",
+          "body_weight_kg": "71.63",
+          "snatch_1": "72",
+          "snatch_2": "75",
+          "snatch_3": "78",
+          "cj_1": "85",
+          "cj_2": "90",
+          "cj_3": "94",
+          "best_snatch": "78",
+          "best_cj": "94",
+          "total": "172"
+        },
+        {
+          "meet_name": "SoCal Summer Classic",
+          "date": "2021-07-11",
+          "division": "Open Men's 73kg",
+          "lifter_name": "Jordan Vigil",
+          "body_weight_kg": "71.63",
+          "snatch_1": "72",
+          "snatch_2": "75",
+          "snatch_3": "78",
+          "cj_1": "85",
+          "cj_2": "90",
+          "cj_3": "94",
+          "best_snatch": "78",
+          "best_cj": "94",
+          "total": "172"
+        },
+        {
+          "meet_name": "SoCal Weightlifting Summer Classic",
+          "date": "2021-07-11",
+          "division": "Open Men's 73kg",
+          "lifter_name": "Jordan Vigil",
+          "body_weight_kg": "71.63",
+          "snatch_1": "72",
+          "snatch_2": "75",
+          "snatch_3": "78",
+          "cj_1": "85",
+          "cj_2": "90",
+          "cj_3": "94",
+          "best_snatch": "78",
+          "best_cj": "94",
+          "total": "172"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2024 Virus Summer Classic",
+            "date": "2024-07-07",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Jordan Vigil",
+            "body_weight_kg": "80.34",
+            "snatch_1": "70",
+            "snatch_2": "74",
+            "snatch_3": "77",
+            "cj_1": "90",
+            "cj_2": "94",
+            "cj_3": "101",
+            "best_snatch": "77",
+            "best_cj": "101",
+            "total": "178"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNy0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNy0wNyIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "12",
+            "athlete_name": "Jordan Vigil",
+            "total": "178",
+            "gender": "M",
+            "age": "26",
+            "club_name": "Southern California Weightlifting Club",
+            "membership_number": "1056706",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "SoCal Spring Classic",
+            "date": "2024-04-28",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Jordan Vigil",
+            "body_weight_kg": "78.79",
+            "snatch_1": "73",
+            "snatch_2": "-76",
+            "snatch_3": "-76",
+            "cj_1": "91",
+            "cj_2": "95",
+            "cj_3": "100",
+            "best_snatch": "73",
+            "best_cj": "100",
+            "total": "173"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNC0yOCIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "Jordan Vigil",
+            "total": "173",
+            "gender": "M",
+            "age": "26",
+            "club_name": "Southern California Weightlifting Club",
+            "membership_number": "1056706",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "SoCal Summer Classic",
+            "date": "2021-07-11",
+            "division": "Open Men's 73kg",
+            "lifter_name": "Jordan Vigil",
+            "body_weight_kg": "71.63",
+            "snatch_1": "72",
+            "snatch_2": "75",
+            "snatch_3": "78",
+            "cj_1": "85",
+            "cj_2": "90",
+            "cj_3": "94",
+            "best_snatch": "78",
+            "best_cj": "94",
+            "total": "172"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNy0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNy0xMSIsIndlaWdodF9jbGFzcyI6ODR9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "8",
+            "athlete_name": "Jordan Vigil",
+            "total": "172",
+            "gender": "M",
+            "age": "23",
+            "club_name": "Red Strength Performance",
+            "membership_number": "1056706",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "SoCal Summer Classic",
+            "date": "2021-07-11",
+            "division": "Open Men's 73kg",
+            "lifter_name": "Jordan Vigil",
+            "body_weight_kg": "71.63",
+            "snatch_1": "72",
+            "snatch_2": "75",
+            "snatch_3": "78",
+            "cj_1": "85",
+            "cj_2": "90",
+            "cj_3": "94",
+            "best_snatch": "78",
+            "best_cj": "94",
+            "total": "172"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNy0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNy0xMSIsIndlaWdodF9jbGFzcyI6ODR9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "8",
+            "athlete_name": "Jordan Vigil",
+            "total": "172",
+            "gender": "M",
+            "age": "23",
+            "club_name": "Red Strength Performance",
+            "membership_number": "1056706",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "SoCal Weightlifting Summer Classic",
+            "date": "2021-07-11",
+            "division": "Open Men's 73kg",
+            "lifter_name": "Jordan Vigil",
+            "body_weight_kg": "71.63",
+            "snatch_1": "72",
+            "snatch_2": "75",
+            "snatch_3": "78",
+            "cj_1": "85",
+            "cj_2": "90",
+            "cj_3": "94",
+            "best_snatch": "78",
+            "best_cj": "94",
+            "total": "172"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNy0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNy0xMSIsIndlaWdodF9jbGFzcyI6ODR9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "8",
+            "athlete_name": "Jordan Vigil",
+            "total": "172",
+            "gender": "M",
+            "age": "23",
+            "club_name": "Red Strength Performance",
+            "membership_number": "1056706",
+            "wso": "California South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

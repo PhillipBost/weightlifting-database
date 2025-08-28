@@ -1,0 +1,247 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T03:19:14.437Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Andrea Pulido",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 4,
+    "total_reverse_lookups": 4,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 95224531
+  },
+  "data": [
+    {
+      "internal_id": 32144,
+      "athlete_name": "Andrea Pulido",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/32144",
+      "contaminated_lifter_id": 17226,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T03:18:53.957Z",
+      "profile_data": {
+        "membership_number": "1005745",
+        "birth_year": 1994,
+        "gender": "F",
+        "club_name": "SANTA BARBARA STRENGTH",
+        "wso": "California South",
+        "national_rank": "9"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2016 TCA Fall Kick-Off Weightlifting Meet",
+          "date": "2016-09-10",
+          "division": "Open Women's +75 Kg",
+          "lifter_name": "Andrea Pulido",
+          "body_weight_kg": "76.2",
+          "snatch_1": "35",
+          "snatch_2": "39",
+          "snatch_3": "-40",
+          "cj_1": "52",
+          "cj_2": "55",
+          "cj_3": "-59",
+          "best_snatch": "39",
+          "best_cj": "55",
+          "total": "94"
+        },
+        {
+          "meet_name": "2016 Goodland Open",
+          "date": "2016-05-14",
+          "division": "Open Women's 75 kg",
+          "lifter_name": "Andrea Pulido",
+          "body_weight_kg": "73.2",
+          "snatch_1": "35",
+          "snatch_2": "-38",
+          "snatch_3": "-38",
+          "cj_1": "45",
+          "cj_2": "48",
+          "cj_3": "51",
+          "best_snatch": "35",
+          "best_cj": "51",
+          "total": "86"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2016 TCA Fall Kick-Off Weightlifting Meet",
+            "date": "2016-09-10",
+            "division": "Open Women's +75 Kg",
+            "lifter_name": "Andrea Pulido",
+            "body_weight_kg": "76.2",
+            "snatch_1": "35",
+            "snatch_2": "39",
+            "snatch_3": "-40",
+            "cj_1": "52",
+            "cj_2": "55",
+            "cj_3": "-59",
+            "best_snatch": "39",
+            "best_cj": "55",
+            "total": "94"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOS0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOS0xMCIsIndlaWdodF9jbGFzcyI6MzY4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "Andrea Pulido",
+            "total": "94",
+            "gender": "F",
+            "age": "22",
+            "club_name": "SANTA BARBARA STRENGTH",
+            "membership_number": "1005745",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2016 Goodland Open",
+            "date": "2016-05-14",
+            "division": "Open Women's 75 kg",
+            "lifter_name": "Andrea Pulido",
+            "body_weight_kg": "73.2",
+            "snatch_1": "35",
+            "snatch_2": "-38",
+            "snatch_3": "-38",
+            "cj_1": "45",
+            "cj_2": "48",
+            "cj_3": "51",
+            "best_snatch": "35",
+            "best_cj": "51",
+            "total": "86"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0xNCIsIndlaWdodF9jbGFzcyI6MzY3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "Andrea Pulido",
+            "total": "86",
+            "gender": "F",
+            "age": "22",
+            "club_name": "SANTA BARBARA STRENGTH",
+            "membership_number": "1005745",
+            "wso": "California South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 63274,
+      "athlete_name": "Andrea Pulido",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/63274",
+      "contaminated_lifter_id": 17226,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T03:19:14.435Z",
+      "profile_data": {
+        "membership_number": "1077350",
+        "birth_year": 2002,
+        "gender": "F",
+        "club_name": "The Strength Tank Weightlifting Club",
+        "wso": "California South",
+        "national_rank": "27"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Fall Ball So Hard",
+          "date": "2024-09-28",
+          "division": "Open Women's +87kg",
+          "lifter_name": "Andrea Pulido",
+          "body_weight_kg": "99.2",
+          "snatch_1": "41",
+          "snatch_2": "-43",
+          "snatch_3": "45",
+          "cj_1": "-48",
+          "cj_2": "48",
+          "cj_3": "51",
+          "best_snatch": "45",
+          "best_cj": "51",
+          "total": "96"
+        },
+        {
+          "meet_name": "Summer 2024 - In House",
+          "date": "2024-07-13",
+          "division": "Open Women's +87kg",
+          "lifter_name": "Andrea Pulido",
+          "body_weight_kg": "93.4",
+          "snatch_1": "-38",
+          "snatch_2": "40",
+          "snatch_3": "-43",
+          "cj_1": "41",
+          "cj_2": "44",
+          "cj_3": "46",
+          "best_snatch": "40",
+          "best_cj": "46",
+          "total": "86"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Fall Ball So Hard",
+            "date": "2024-09-28",
+            "division": "Open Women's +87kg",
+            "lifter_name": "Andrea Pulido",
+            "body_weight_kg": "99.2",
+            "snatch_1": "41",
+            "snatch_2": "-43",
+            "snatch_3": "45",
+            "cj_1": "-48",
+            "cj_2": "48",
+            "cj_3": "51",
+            "best_snatch": "45",
+            "best_cj": "51",
+            "total": "96"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOS0yOCIsIndlaWdodF9jbGFzcyI6MTAwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "27",
+            "athlete_name": "Andrea Pulido",
+            "total": "96",
+            "gender": "F",
+            "age": "22",
+            "club_name": "The Strength Tank Weightlifting Club",
+            "membership_number": "1077350",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Summer 2024 - In House",
+            "date": "2024-07-13",
+            "division": "Open Women's +87kg",
+            "lifter_name": "Andrea Pulido",
+            "body_weight_kg": "93.4",
+            "snatch_1": "-38",
+            "snatch_2": "40",
+            "snatch_3": "-43",
+            "cj_1": "41",
+            "cj_2": "44",
+            "cj_3": "46",
+            "best_snatch": "40",
+            "best_cj": "46",
+            "total": "86"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNy0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNy0xMyIsIndlaWdodF9jbGFzcyI6MTAwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "Andrea Pulido",
+            "total": "86",
+            "gender": "F",
+            "age": "22",
+            "club_name": "The Strength Tank Weightlifting Club",
+            "membership_number": "1077350",
+            "wso": "California South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

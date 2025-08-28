@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T01:17:52.346Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Dylan Kelly",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 87942440
+  },
+  "data": [
+    {
+      "internal_id": 27242,
+      "athlete_name": "Dylan Kelly",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/27242",
+      "contaminated_lifter_id": 18376,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T01:17:39.411Z",
+      "profile_data": {
+        "membership_number": "177845",
+        "birth_year": 1992,
+        "gender": "M",
+        "club_name": "TEAM CROSSFIT",
+        "wso": "California South",
+        "national_rank": "2"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Tommy Kono Open 8",
+          "date": "2013-08-17",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Dylan Kelly",
+          "body_weight_kg": "92.54",
+          "snatch_1": "111",
+          "snatch_2": "116",
+          "snatch_3": "-120",
+          "cj_1": "146",
+          "cj_2": "151",
+          "cj_3": "156",
+          "best_snatch": "116",
+          "best_cj": "156",
+          "total": "272"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Tommy Kono Open 8",
+            "date": "2013-08-17",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Dylan Kelly",
+            "body_weight_kg": "92.54",
+            "snatch_1": "111",
+            "snatch_2": "116",
+            "snatch_3": "-120",
+            "cj_1": "146",
+            "cj_2": "151",
+            "cj_3": "156",
+            "best_snatch": "116",
+            "best_cj": "156",
+            "total": "272"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wOC0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wOC0xNyIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Dylan Kelly",
+            "total": "272",
+            "gender": "M",
+            "age": "21",
+            "club_name": "TEAM CROSSFIT",
+            "membership_number": "177845",
+            "wso": "California South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 39992,
+      "athlete_name": "Dylan Kelly",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/39992",
+      "contaminated_lifter_id": 18376,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T01:17:52.344Z",
+      "profile_data": {
+        "membership_number": "1030851",
+        "birth_year": 1999,
+        "gender": "M",
+        "club_name": "PSI Weightlifting",
+        "wso": "Florida",
+        "national_rank": "19"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Robert Murphy Memorial at the Sunshine State Games",
+          "date": "2018-06-03",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Dylan Kelly",
+          "body_weight_kg": "81.6",
+          "snatch_1": "55",
+          "snatch_2": "60",
+          "snatch_3": "65",
+          "cj_1": "90",
+          "cj_2": "95",
+          "cj_3": "-98",
+          "best_snatch": "65",
+          "best_cj": "95",
+          "total": "160"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Robert Murphy Memorial at the Sunshine State Games",
+            "date": "2018-06-03",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Dylan Kelly",
+            "body_weight_kg": "81.6",
+            "snatch_1": "55",
+            "snatch_2": "60",
+            "snatch_3": "65",
+            "cj_1": "90",
+            "cj_2": "95",
+            "cj_3": "-98",
+            "best_snatch": "65",
+            "best_cj": "95",
+            "total": "160"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0wMyIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "19",
+            "athlete_name": "Dylan Kelly",
+            "total": "160",
+            "gender": "M",
+            "age": "19",
+            "club_name": "PSI Weightlifting",
+            "membership_number": "1030851",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

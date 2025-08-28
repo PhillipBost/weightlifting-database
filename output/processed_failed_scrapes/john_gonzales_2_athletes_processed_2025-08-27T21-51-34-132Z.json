@@ -1,0 +1,238 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T03:19:54.890Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "John Gonzales",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 4,
+    "total_reverse_lookups": 4,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 95264984
+  },
+  "data": [
+    {
+      "internal_id": 8797,
+      "athlete_name": "John Gonzales",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/8797",
+      "contaminated_lifter_id": 4379,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T03:19:40.085Z",
+      "profile_data": {
+        "membership_number": "186222",
+        "birth_year": 1981,
+        "gender": "M",
+        "club_name": "DarkSide Barbell",
+        "wso": "Texas-Oklahoma",
+        "national_rank": "2"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2016 Weightlifting Wise Championships",
+          "date": "2016-06-25",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "John Gonzales",
+          "body_weight_kg": "83.5",
+          "snatch_1": "100",
+          "snatch_2": "104",
+          "snatch_3": "-109",
+          "cj_1": "134",
+          "cj_2": "140",
+          "cj_3": "-145",
+          "best_snatch": "104",
+          "best_cj": "140",
+          "total": "244"
+        },
+        {
+          "meet_name": "2014 Weightlifting Wise Championsips",
+          "date": "2014-07-26",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "John Gonzales",
+          "body_weight_kg": "76.2",
+          "snatch_1": "84",
+          "snatch_2": "84",
+          "snatch_3": "91",
+          "cj_1": "100",
+          "cj_2": "110",
+          "cj_3": "117",
+          "best_snatch": "91",
+          "best_cj": "117",
+          "total": "208"
+        },
+        {
+          "meet_name": "Elite Oly Weightlifting Meet",
+          "date": "2013-09-14",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "John Gonzales",
+          "body_weight_kg": "74.2",
+          "snatch_1": "65",
+          "snatch_2": "70",
+          "snatch_3": "70",
+          "cj_1": "84",
+          "cj_2": "90",
+          "cj_3": "95",
+          "best_snatch": "70",
+          "best_cj": "95",
+          "total": "165"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2016 Weightlifting Wise Championships",
+            "date": "2016-06-25",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "John Gonzales",
+            "body_weight_kg": "83.5",
+            "snatch_1": "100",
+            "snatch_2": "104",
+            "snatch_3": "-109",
+            "cj_1": "134",
+            "cj_2": "140",
+            "cj_3": "-145",
+            "best_snatch": "104",
+            "best_cj": "140",
+            "total": "244"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0yNSIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "John Gonzales",
+            "total": "244",
+            "gender": "M",
+            "age": "35",
+            "club_name": "DarkSide Barbell",
+            "membership_number": "186222",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2014 Weightlifting Wise Championsips",
+            "date": "2014-07-26",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "John Gonzales",
+            "body_weight_kg": "76.2",
+            "snatch_1": "84",
+            "snatch_2": "84",
+            "snatch_3": "91",
+            "cj_1": "100",
+            "cj_2": "110",
+            "cj_3": "117",
+            "best_snatch": "91",
+            "best_cj": "117",
+            "total": "208"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNy0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNy0yNiIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "13",
+            "athlete_name": "John Gonzales",
+            "total": "208",
+            "gender": "M",
+            "age": "33",
+            "club_name": "DarkSide Barbell",
+            "membership_number": "186222",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Elite Oly Weightlifting Meet",
+            "date": "2013-09-14",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "John Gonzales",
+            "body_weight_kg": "74.2",
+            "snatch_1": "65",
+            "snatch_2": "70",
+            "snatch_3": "70",
+            "cj_1": "84",
+            "cj_2": "90",
+            "cj_3": "95",
+            "best_snatch": "70",
+            "best_cj": "95",
+            "total": "165"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wOS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wOS0xNCIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "16",
+            "athlete_name": "John Gonzales",
+            "total": "165",
+            "gender": "M",
+            "age": "32",
+            "club_name": "DarkSide Barbell",
+            "membership_number": "186222",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 38132,
+      "athlete_name": "John Gonzales",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/38132",
+      "contaminated_lifter_id": 4379,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T03:19:54.889Z",
+      "profile_data": {
+        "membership_number": null,
+        "birth_year": null,
+        "gender": null,
+        "club_name": null,
+        "wso": null,
+        "national_rank": null
+      },
+      "competition_history": [
+        {
+          "meet_name": "Texas State Championship",
+          "date": "2012-01-14",
+          "division": "Men's 14-15 Age Group 85 Kg",
+          "lifter_name": "John Gonzales",
+          "body_weight_kg": "78.4",
+          "snatch_1": "0",
+          "snatch_2": "0",
+          "snatch_3": "0",
+          "cj_1": "57",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "0",
+          "best_cj": "57",
+          "total": "0"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Texas State Championship",
+            "date": "2012-01-14",
+            "division": "Men's 14-15 Age Group 85 Kg",
+            "lifter_name": "John Gonzales",
+            "body_weight_kg": "78.4",
+            "snatch_1": "0",
+            "snatch_2": "0",
+            "snatch_3": "0",
+            "cj_1": "57",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "0",
+            "best_cj": "57",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wMS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wMS0xNCIsIndlaWdodF9jbGFzcyI6MzExfQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    }
+  ]
+}

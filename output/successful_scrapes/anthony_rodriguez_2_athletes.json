@@ -1,0 +1,294 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T13:20:00.546Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Anthony Rodriguez",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 5,
+    "total_reverse_lookups": 5,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 44870641
+  },
+  "data": [
+    {
+      "internal_id": 12913,
+      "athlete_name": "Anthony Rodriguez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/12913",
+      "contaminated_lifter_id": 36882,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T13:19:44.976Z",
+      "profile_data": {
+        "membership_number": "1028409",
+        "birth_year": 1984,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "DMV",
+        "national_rank": "15"
+      },
+      "competition_history": [
+        {
+          "meet_name": "RVA Open 2019",
+          "date": "2019-07-14",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Anthony Rodriguez",
+          "body_weight_kg": "85.7",
+          "snatch_1": "62",
+          "snatch_2": "-64",
+          "snatch_3": "64",
+          "cj_1": "87",
+          "cj_2": "-90",
+          "cj_3": "90",
+          "best_snatch": "64",
+          "best_cj": "90",
+          "total": "154"
+        },
+        {
+          "meet_name": "VA State Championships and ECG Spring Fling",
+          "date": "2019-04-14",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Anthony Rodriguez",
+          "body_weight_kg": "85.3",
+          "snatch_1": "61",
+          "snatch_2": "64",
+          "snatch_3": "-68",
+          "cj_1": "-86",
+          "cj_2": "88",
+          "cj_3": "-91",
+          "best_snatch": "64",
+          "best_cj": "88",
+          "total": "152"
+        },
+        {
+          "meet_name": "RVA Open 2018",
+          "date": "2018-06-10",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Anthony Rodriguez",
+          "body_weight_kg": "85.5",
+          "snatch_1": "60",
+          "snatch_2": "63",
+          "snatch_3": "-68",
+          "cj_1": "85",
+          "cj_2": "89",
+          "cj_3": "92",
+          "best_snatch": "63",
+          "best_cj": "92",
+          "total": "155"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "RVA Open 2019",
+            "date": "2019-07-14",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Anthony Rodriguez",
+            "body_weight_kg": "85.7",
+            "snatch_1": "62",
+            "snatch_2": "-64",
+            "snatch_3": "64",
+            "cj_1": "87",
+            "cj_2": "-90",
+            "cj_3": "90",
+            "best_snatch": "64",
+            "best_cj": "90",
+            "total": "154"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0xNCIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "15",
+            "athlete_name": "Anthony Rodriguez",
+            "total": "154",
+            "gender": "M",
+            "age": "35",
+            "club_name": "-",
+            "membership_number": "1028409",
+            "wso": "DMV"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "VA State Championships and ECG Spring Fling",
+            "date": "2019-04-14",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Anthony Rodriguez",
+            "body_weight_kg": "85.3",
+            "snatch_1": "61",
+            "snatch_2": "64",
+            "snatch_3": "-68",
+            "cj_1": "-86",
+            "cj_2": "88",
+            "cj_3": "-91",
+            "best_snatch": "64",
+            "best_cj": "88",
+            "total": "152"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0xNCIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "11",
+            "athlete_name": "Anthony Rodriguez",
+            "total": "152",
+            "gender": "M",
+            "age": "35",
+            "club_name": "-",
+            "membership_number": "1028409",
+            "wso": "DMV"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "RVA Open 2018",
+            "date": "2018-06-10",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Anthony Rodriguez",
+            "body_weight_kg": "85.5",
+            "snatch_1": "60",
+            "snatch_2": "63",
+            "snatch_3": "-68",
+            "cj_1": "85",
+            "cj_2": "89",
+            "cj_3": "92",
+            "best_snatch": "63",
+            "best_cj": "92",
+            "total": "155"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0xMCIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "19",
+            "athlete_name": "Anthony Rodriguez",
+            "total": "155",
+            "gender": "M",
+            "age": "34",
+            "club_name": "-",
+            "membership_number": "1028409",
+            "wso": "DMV"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 58383,
+      "athlete_name": "Anthony Rodriguez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/58383",
+      "contaminated_lifter_id": 36882,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T13:20:00.544Z",
+      "profile_data": {
+        "membership_number": "1070060",
+        "birth_year": 2005,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Florida",
+        "national_rank": "3"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Florida High School Boys State Championships",
+          "date": "2024-04-19",
+          "division": "Junior Men's 96kg",
+          "lifter_name": "Anthony Rodriguez",
+          "body_weight_kg": "91.72",
+          "snatch_1": "106",
+          "snatch_2": "-113",
+          "snatch_3": "115",
+          "cj_1": "140",
+          "cj_2": "-147",
+          "cj_3": "-158",
+          "best_snatch": "115",
+          "best_cj": "140",
+          "total": "255"
+        },
+        {
+          "meet_name": "FHSAA Boys State Championships",
+          "date": "2023-04-15",
+          "division": "Junior Men's 89kg",
+          "lifter_name": "Anthony Rodriguez",
+          "body_weight_kg": "87.91",
+          "snatch_1": "-86",
+          "snatch_2": "86",
+          "snatch_3": "-92",
+          "cj_1": "-129",
+          "cj_2": "129",
+          "cj_3": "-133",
+          "best_snatch": "86",
+          "best_cj": "129",
+          "total": "215"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Florida High School Boys State Championships",
+            "date": "2024-04-19",
+            "division": "Junior Men's 96kg",
+            "lifter_name": "Anthony Rodriguez",
+            "body_weight_kg": "91.72",
+            "snatch_1": "106",
+            "snatch_2": "-113",
+            "snatch_3": "115",
+            "cj_1": "140",
+            "cj_2": "-147",
+            "cj_3": "-158",
+            "best_snatch": "115",
+            "best_cj": "140",
+            "total": "255"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNC0xOSIsIndlaWdodF9jbGFzcyI6Njd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Anthony Rodriguez",
+            "total": "255",
+            "gender": "M",
+            "age": "19",
+            "club_name": "-",
+            "membership_number": "1070060",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "FHSAA Boys State Championships",
+            "date": "2023-04-15",
+            "division": "Junior Men's 89kg",
+            "lifter_name": "Anthony Rodriguez",
+            "body_weight_kg": "87.91",
+            "snatch_1": "-86",
+            "snatch_2": "86",
+            "snatch_3": "-92",
+            "cj_1": "-129",
+            "cj_2": "129",
+            "cj_3": "-133",
+            "best_snatch": "86",
+            "best_cj": "129",
+            "total": "215"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0xNSIsIndlaWdodF9jbGFzcyI6NjZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Anthony Rodriguez",
+            "total": "215",
+            "gender": "M",
+            "age": "18",
+            "club_name": "-",
+            "membership_number": "1070060",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

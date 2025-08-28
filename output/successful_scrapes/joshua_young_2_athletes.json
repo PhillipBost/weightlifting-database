@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T13:58:43.586Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Joshua Young",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 47193680
+  },
+  "data": [
+    {
+      "internal_id": 47898,
+      "athlete_name": "Joshua Young",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/47898",
+      "contaminated_lifter_id": 46170,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T13:58:33.412Z",
+      "profile_data": {
+        "membership_number": "1051880",
+        "birth_year": 1979,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Tennessee-Kentucky",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2020 TN State Championship",
+          "date": "2020-09-26",
+          "division": "Men's Masters (40-44) 96kg",
+          "lifter_name": "Joshua Young",
+          "body_weight_kg": "93",
+          "snatch_1": "90",
+          "snatch_2": "95",
+          "snatch_3": "98",
+          "cj_1": "112",
+          "cj_2": "120",
+          "cj_3": "-127",
+          "best_snatch": "98",
+          "best_cj": "120",
+          "total": "218"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2020 TN State Championship",
+            "date": "2020-09-26",
+            "division": "Men's Masters (40-44) 96kg",
+            "lifter_name": "Joshua Young",
+            "body_weight_kg": "93",
+            "snatch_1": "90",
+            "snatch_2": "95",
+            "snatch_3": "98",
+            "cj_1": "112",
+            "cj_2": "120",
+            "cj_3": "-127",
+            "best_snatch": "98",
+            "best_cj": "120",
+            "total": "218"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wOS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wOS0yNiIsIndlaWdodF9jbGFzcyI6MTI3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Joshua Young",
+            "total": "218",
+            "gender": "M",
+            "age": "41",
+            "club_name": "-",
+            "membership_number": "1051880",
+            "wso": "Tennessee-Kentucky"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 48995,
+      "athlete_name": "Joshua Young",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/48995",
+      "contaminated_lifter_id": 46170,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T13:58:43.584Z",
+      "profile_data": {
+        "membership_number": "1053560",
+        "birth_year": 1989,
+        "gender": "M",
+        "club_name": "Keep Pulling",
+        "wso": "Florida",
+        "national_rank": "6"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Tampa Bay Holiday Classic",
+          "date": "2020-12-19",
+          "division": "Open Men's 102kg",
+          "lifter_name": "Joshua Young",
+          "body_weight_kg": "101.5",
+          "snatch_1": "35",
+          "snatch_2": "37",
+          "snatch_3": "40",
+          "cj_1": "55",
+          "cj_2": "60",
+          "cj_3": "70",
+          "best_snatch": "40",
+          "best_cj": "70",
+          "total": "110"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Tampa Bay Holiday Classic",
+            "date": "2020-12-19",
+            "division": "Open Men's 102kg",
+            "lifter_name": "Joshua Young",
+            "body_weight_kg": "101.5",
+            "snatch_1": "35",
+            "snatch_2": "37",
+            "snatch_3": "40",
+            "cj_1": "55",
+            "cj_2": "60",
+            "cj_3": "70",
+            "best_snatch": "40",
+            "best_cj": "70",
+            "total": "110"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0xMi0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0xMi0xOSIsIndlaWdodF9jbGFzcyI6ODh9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Joshua Young",
+            "total": "110",
+            "gender": "M",
+            "age": "31",
+            "club_name": "Keep Pulling",
+            "membership_number": "1053560",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

@@ -1,0 +1,323 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T05:53:41.445Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Robyn Bennett",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 6,
+    "total_reverse_lookups": 6,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 104491539
+  },
+  "data": [
+    {
+      "internal_id": 3816,
+      "athlete_name": "Robyn Bennett",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/3816",
+      "contaminated_lifter_id": 11871,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T05:53:28.220Z",
+      "profile_data": {
+        "membership_number": "204252",
+        "birth_year": 1974,
+        "gender": "F",
+        "club_name": "The House Barbell Club",
+        "wso": "California South",
+        "national_rank": "8"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2017 Fortuis Halloween Open",
+          "date": "2017-10-22",
+          "division": "Women's Masters (40-44) 63 kg",
+          "lifter_name": "Robyn Bennett",
+          "body_weight_kg": "62.63",
+          "snatch_1": "45",
+          "snatch_2": "-48",
+          "snatch_3": "50",
+          "cj_1": "63",
+          "cj_2": "66",
+          "cj_3": "-68",
+          "best_snatch": "50",
+          "best_cj": "66",
+          "total": "116"
+        },
+        {
+          "meet_name": "Double Barrel Classic Presented by Rogue Fitness",
+          "date": "2017-02-12",
+          "division": "Women's Masters (40-44) 63 kg",
+          "lifter_name": "Robyn Bennett",
+          "body_weight_kg": "62.95",
+          "snatch_1": "48",
+          "snatch_2": "50",
+          "snatch_3": "52",
+          "cj_1": "65",
+          "cj_2": "68",
+          "cj_3": "-71",
+          "best_snatch": "52",
+          "best_cj": "68",
+          "total": "120"
+        },
+        {
+          "meet_name": "Fortius Halloween Open",
+          "date": "2016-10-23",
+          "division": "Women's Masters (40-44) 63 kg",
+          "lifter_name": "Robyn Bennett",
+          "body_weight_kg": "62.82",
+          "snatch_1": "45",
+          "snatch_2": "-48",
+          "snatch_3": "-48",
+          "cj_1": "63",
+          "cj_2": "67",
+          "cj_3": "-70",
+          "best_snatch": "45",
+          "best_cj": "67",
+          "total": "112"
+        },
+        {
+          "meet_name": "Double Barrel Open",
+          "date": "2016-08-21",
+          "division": "Women's Masters (40-44) 63 kg",
+          "lifter_name": "Robyn Bennett",
+          "body_weight_kg": "63",
+          "snatch_1": "44",
+          "snatch_2": "-48",
+          "snatch_3": "-48",
+          "cj_1": "63",
+          "cj_2": "-66",
+          "cj_3": "-67",
+          "best_snatch": "44",
+          "best_cj": "63",
+          "total": "107"
+        },
+        {
+          "meet_name": "Fortius Open",
+          "date": "2015-05-03",
+          "division": "Women's Masters (40-44) 63 kg",
+          "lifter_name": "Robyn Bennett",
+          "body_weight_kg": "61.12",
+          "snatch_1": "44",
+          "snatch_2": "47",
+          "snatch_3": "-49",
+          "cj_1": "64",
+          "cj_2": "67",
+          "cj_3": "-69",
+          "best_snatch": "47",
+          "best_cj": "67",
+          "total": "114"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2017 Fortuis Halloween Open",
+            "date": "2017-10-22",
+            "division": "Women's Masters (40-44) 63 kg",
+            "lifter_name": "Robyn Bennett",
+            "body_weight_kg": "62.63",
+            "snatch_1": "45",
+            "snatch_2": "-48",
+            "snatch_3": "50",
+            "cj_1": "63",
+            "cj_2": "66",
+            "cj_3": "-68",
+            "best_snatch": "50",
+            "best_cj": "66",
+            "total": "116"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0yMiIsIndlaWdodF9jbGFzcyI6Mzk5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "8",
+            "athlete_name": "Robyn Bennett",
+            "total": "116",
+            "gender": "F",
+            "age": "43",
+            "club_name": "The House Barbell Club",
+            "membership_number": "204252",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Double Barrel Classic Presented by Rogue Fitness",
+            "date": "2017-02-12",
+            "division": "Women's Masters (40-44) 63 kg",
+            "lifter_name": "Robyn Bennett",
+            "body_weight_kg": "62.95",
+            "snatch_1": "48",
+            "snatch_2": "50",
+            "snatch_3": "52",
+            "cj_1": "65",
+            "cj_2": "68",
+            "cj_3": "-71",
+            "best_snatch": "52",
+            "best_cj": "68",
+            "total": "120"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xMiIsIndlaWdodF9jbGFzcyI6Mzk5fQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Fortius Halloween Open",
+            "date": "2016-10-23",
+            "division": "Women's Masters (40-44) 63 kg",
+            "lifter_name": "Robyn Bennett",
+            "body_weight_kg": "62.82",
+            "snatch_1": "45",
+            "snatch_2": "-48",
+            "snatch_3": "-48",
+            "cj_1": "63",
+            "cj_2": "67",
+            "cj_3": "-70",
+            "best_snatch": "45",
+            "best_cj": "67",
+            "total": "112"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0yMyIsIndlaWdodF9jbGFzcyI6Mzk5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "7",
+            "athlete_name": "Robyn Bennett",
+            "total": "112",
+            "gender": "F",
+            "age": "42",
+            "club_name": "The House Barbell Club",
+            "membership_number": "204252",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Double Barrel Open",
+            "date": "2016-08-21",
+            "division": "Women's Masters (40-44) 63 kg",
+            "lifter_name": "Robyn Bennett",
+            "body_weight_kg": "63",
+            "snatch_1": "44",
+            "snatch_2": "-48",
+            "snatch_3": "-48",
+            "cj_1": "63",
+            "cj_2": "-66",
+            "cj_3": "-67",
+            "best_snatch": "44",
+            "best_cj": "63",
+            "total": "107"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0yMSIsIndlaWdodF9jbGFzcyI6Mzk5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Robyn Bennett",
+            "total": "107",
+            "gender": "F",
+            "age": "42",
+            "club_name": "The House Barbell Club",
+            "membership_number": "204252",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Fortius Open",
+            "date": "2015-05-03",
+            "division": "Women's Masters (40-44) 63 kg",
+            "lifter_name": "Robyn Bennett",
+            "body_weight_kg": "61.12",
+            "snatch_1": "44",
+            "snatch_2": "47",
+            "snatch_3": "-49",
+            "cj_1": "64",
+            "cj_2": "67",
+            "cj_3": "-69",
+            "best_snatch": "47",
+            "best_cj": "67",
+            "total": "114"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0wMyIsIndlaWdodF9jbGFzcyI6Mzk5fQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    },
+    {
+      "internal_id": 7183,
+      "athlete_name": "Robyn Bennett",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/7183",
+      "contaminated_lifter_id": 11871,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T05:53:41.443Z",
+      "profile_data": {
+        "membership_number": "202393",
+        "birth_year": 1980,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "New York",
+        "national_rank": "12"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Elmira Open",
+          "date": "2014-09-20",
+          "division": "Open Women's 69 kg",
+          "lifter_name": "Robyn Bennett",
+          "body_weight_kg": "69",
+          "snatch_1": "48",
+          "snatch_2": "52",
+          "snatch_3": "54",
+          "cj_1": "65",
+          "cj_2": "-68",
+          "cj_3": "68",
+          "best_snatch": "54",
+          "best_cj": "68",
+          "total": "122"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Elmira Open",
+            "date": "2014-09-20",
+            "division": "Open Women's 69 kg",
+            "lifter_name": "Robyn Bennett",
+            "body_weight_kg": "69",
+            "snatch_1": "48",
+            "snatch_2": "52",
+            "snatch_3": "54",
+            "cj_1": "65",
+            "cj_2": "-68",
+            "cj_3": "68",
+            "best_snatch": "54",
+            "best_cj": "68",
+            "total": "122"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOS0yMCIsIndlaWdodF9jbGFzcyI6MzY2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "12",
+            "athlete_name": "Robyn Bennett",
+            "total": "122",
+            "gender": "F",
+            "age": "34",
+            "club_name": "-",
+            "membership_number": "202393",
+            "wso": "New York"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

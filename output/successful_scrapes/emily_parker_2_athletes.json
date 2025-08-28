@@ -1,0 +1,200 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T01:53:06.563Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Emily Parker",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 3,
+    "total_reverse_lookups": 3,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 90056657
+  },
+  "data": [
+    {
+      "internal_id": 19736,
+      "athlete_name": "Emily Parker",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/19736",
+      "contaminated_lifter_id": 24144,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T01:52:53.829Z",
+      "profile_data": {
+        "membership_number": "1003360",
+        "birth_year": 1988,
+        "gender": "F",
+        "club_name": "BULL CITY WEIGHTLIFTING",
+        "wso": "Carolina",
+        "national_rank": "14"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Athletic Lab Summer Classic",
+          "date": "2016-07-17",
+          "division": "Open Women's 63 kg",
+          "lifter_name": "Emily Parker",
+          "body_weight_kg": "60.6",
+          "snatch_1": "42",
+          "snatch_2": "45",
+          "snatch_3": "49",
+          "cj_1": "56",
+          "cj_2": "59",
+          "cj_3": "63",
+          "best_snatch": "49",
+          "best_cj": "63",
+          "total": "112"
+        },
+        {
+          "meet_name": "2016 Bull City Barbell Open",
+          "date": "2016-04-16",
+          "division": "Open Women's 58 kg",
+          "lifter_name": "Emily Parker",
+          "body_weight_kg": "58",
+          "snatch_1": "36",
+          "snatch_2": "38",
+          "snatch_3": "41",
+          "cj_1": "54",
+          "cj_2": "56",
+          "cj_3": "59",
+          "best_snatch": "41",
+          "best_cj": "59",
+          "total": "100"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Athletic Lab Summer Classic",
+            "date": "2016-07-17",
+            "division": "Open Women's 63 kg",
+            "lifter_name": "Emily Parker",
+            "body_weight_kg": "60.6",
+            "snatch_1": "42",
+            "snatch_2": "45",
+            "snatch_3": "49",
+            "cj_1": "56",
+            "cj_2": "59",
+            "cj_3": "63",
+            "best_snatch": "49",
+            "best_cj": "63",
+            "total": "112"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNy0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNy0xNyIsIndlaWdodF9jbGFzcyI6MzY1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "14",
+            "athlete_name": "Emily Parker",
+            "total": "112",
+            "gender": "F",
+            "age": "28",
+            "club_name": "BULL CITY WEIGHTLIFTING",
+            "membership_number": "1003360",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2016 Bull City Barbell Open",
+            "date": "2016-04-16",
+            "division": "Open Women's 58 kg",
+            "lifter_name": "Emily Parker",
+            "body_weight_kg": "58",
+            "snatch_1": "36",
+            "snatch_2": "38",
+            "snatch_3": "41",
+            "cj_1": "54",
+            "cj_2": "56",
+            "cj_3": "59",
+            "best_snatch": "41",
+            "best_cj": "59",
+            "total": "100"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0xNiIsIndlaWdodF9jbGFzcyI6MzY0fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "15",
+            "athlete_name": "Emily Parker",
+            "total": "100",
+            "gender": "F",
+            "age": "28",
+            "club_name": "BULL CITY WEIGHTLIFTING",
+            "membership_number": "1003360",
+            "wso": "Carolina"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 45349,
+      "athlete_name": "Emily Parker",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/45349",
+      "contaminated_lifter_id": 24144,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T01:53:06.561Z",
+      "profile_data": {
+        "membership_number": "1045605",
+        "birth_year": 2006,
+        "gender": "F",
+        "club_name": "Qtown Barbell Club",
+        "wso": "Pennsylvania-West Virginia",
+        "national_rank": "2"
+      },
+      "competition_history": [
+        {
+          "meet_name": "5th Annual Mobility-Doc Classic",
+          "date": "2019-09-29",
+          "division": "Women's 13 Under Age Group +64kg",
+          "lifter_name": "Emily Parker",
+          "body_weight_kg": "77.1",
+          "snatch_1": "32",
+          "snatch_2": "36",
+          "snatch_3": "-39",
+          "cj_1": "47",
+          "cj_2": "50",
+          "cj_3": "53",
+          "best_snatch": "36",
+          "best_cj": "53",
+          "total": "89"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "5th Annual Mobility-Doc Classic",
+            "date": "2019-09-29",
+            "division": "Women's 13 Under Age Group +64kg",
+            "lifter_name": "Emily Parker",
+            "body_weight_kg": "77.1",
+            "snatch_1": "32",
+            "snatch_2": "36",
+            "snatch_3": "-39",
+            "cj_1": "47",
+            "cj_2": "50",
+            "cj_3": "53",
+            "best_snatch": "36",
+            "best_cj": "53",
+            "total": "89"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOS0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOS0yOSIsIndlaWdodF9jbGFzcyI6NjB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Emily Parker",
+            "total": "89",
+            "gender": "F",
+            "age": "13",
+            "club_name": "Qtown Barbell Club",
+            "membership_number": "1045605",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T00:31:31.333Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Hector Torres",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 85161427
+  },
+  "data": [
+    {
+      "internal_id": 17879,
+      "athlete_name": "Hector Torres",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/17879",
+      "contaminated_lifter_id": 55852,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T00:31:19.399Z",
+      "profile_data": {
+        "membership_number": "188503",
+        "birth_year": 1987,
+        "gender": "M",
+        "club_name": "OCCAM ATHLETICS",
+        "wso": "California North Central",
+        "national_rank": "17"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Hassle Free Open and International Qualifier",
+          "date": "2014-03-09",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Hector Torres",
+          "body_weight_kg": "88.3",
+          "snatch_1": "80",
+          "snatch_2": "-85",
+          "snatch_3": "85",
+          "cj_1": "100",
+          "cj_2": "105",
+          "cj_3": "-110",
+          "best_snatch": "85",
+          "best_cj": "105",
+          "total": "190"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Hassle Free Open and International Qualifier",
+            "date": "2014-03-09",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Hector Torres",
+            "body_weight_kg": "88.3",
+            "snatch_1": "80",
+            "snatch_2": "-85",
+            "snatch_3": "85",
+            "cj_1": "100",
+            "cj_2": "105",
+            "cj_3": "-110",
+            "best_snatch": "85",
+            "best_cj": "105",
+            "total": "190"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0wOSIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "17",
+            "athlete_name": "Hector Torres",
+            "total": "190",
+            "gender": "M",
+            "age": "27",
+            "club_name": "OCCAM ATHLETICS",
+            "membership_number": "188503",
+            "wso": "California North Central"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 58034,
+      "athlete_name": "Hector Torres",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/58034",
+      "contaminated_lifter_id": 55852,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T00:31:31.331Z",
+      "profile_data": {
+        "membership_number": "1065825",
+        "birth_year": 1980,
+        "gender": "M",
+        "club_name": "Caution Barbell Club",
+        "wso": "Florida",
+        "national_rank": "2"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Caution Lift-Off",
+          "date": "2023-03-25",
+          "division": "Men's Masters (40-44) 81kg",
+          "lifter_name": "Hector Torres",
+          "body_weight_kg": "77",
+          "snatch_1": "-70",
+          "snatch_2": "70",
+          "snatch_3": "-77",
+          "cj_1": "92",
+          "cj_2": "-96",
+          "cj_3": "96",
+          "best_snatch": "70",
+          "best_cj": "96",
+          "total": "166"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Caution Lift-Off",
+            "date": "2023-03-25",
+            "division": "Men's Masters (40-44) 81kg",
+            "lifter_name": "Hector Torres",
+            "body_weight_kg": "77",
+            "snatch_1": "-70",
+            "snatch_2": "70",
+            "snatch_3": "-77",
+            "cj_1": "92",
+            "cj_2": "-96",
+            "cj_3": "96",
+            "best_snatch": "70",
+            "best_cj": "96",
+            "total": "166"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMy0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMy0yNSIsIndlaWdodF9jbGFzcyI6MTI1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Hector Torres",
+            "total": "166",
+            "gender": "M",
+            "age": "43",
+            "club_name": "Caution Barbell Club",
+            "membership_number": "1065825",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

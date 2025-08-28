@@ -1,0 +1,286 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T05:43:17.985Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Trent Smith",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 5,
+    "total_reverse_lookups": 5,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 15104440
+  },
+  "data": [
+    {
+      "internal_id": 44327,
+      "athlete_name": "Trent Smith",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/44327",
+      "contaminated_lifter_id": 3025,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T16:29:24.011Z",
+      "profile_data": {
+        "membership_number": "1017624",
+        "birth_year": 2004,
+        "gender": "M",
+        "club_name": "TEAM SAVANNAH",
+        "wso": "Georgia",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Winter 1",
+          "date": "2018-02-22",
+          "division": "Men's 14-15 Age Group 77 kg",
+          "lifter_name": "Trent Smith",
+          "body_weight_kg": "77",
+          "snatch_1": "32",
+          "snatch_2": "34",
+          "snatch_3": "36",
+          "cj_1": "47",
+          "cj_2": "50",
+          "cj_3": "52",
+          "best_snatch": "36",
+          "best_cj": "52",
+          "total": "88"
+        },
+        {
+          "meet_name": "2017 USA Weightlifting National Youth Championships",
+          "date": "2017-06-25",
+          "division": "Men's 13 Under Age Group 69 Kg",
+          "lifter_name": "Trent Smith",
+          "body_weight_kg": "66.98",
+          "snatch_1": "-34",
+          "snatch_2": "34",
+          "snatch_3": "37",
+          "cj_1": "46",
+          "cj_2": "49",
+          "cj_3": "-51",
+          "best_snatch": "37",
+          "best_cj": "49",
+          "total": "86"
+        },
+        {
+          "meet_name": "Spring 3",
+          "date": "2017-05-16",
+          "division": "Men's 13 Under Age Group 69 Kg",
+          "lifter_name": "Trent Smith",
+          "body_weight_kg": "64.9",
+          "snatch_1": "35",
+          "snatch_2": "37",
+          "snatch_3": "39",
+          "cj_1": "43",
+          "cj_2": "-45",
+          "cj_3": "45",
+          "best_snatch": "39",
+          "best_cj": "45",
+          "total": "84"
+        },
+        {
+          "meet_name": "Spring 2",
+          "date": "2017-04-12",
+          "division": "Men's 13 Under Age Group 69 Kg",
+          "lifter_name": "Trent Smith",
+          "body_weight_kg": "66.45",
+          "snatch_1": "30",
+          "snatch_2": "33",
+          "snatch_3": "36",
+          "cj_1": "40",
+          "cj_2": "43",
+          "cj_3": "45",
+          "best_snatch": "36",
+          "best_cj": "45",
+          "total": "81"
+        },
+        {
+          "meet_name": "Spring 1",
+          "date": "2017-03-17",
+          "division": "Men's 13 Under Age Group 69 Kg",
+          "lifter_name": "Trent Smith",
+          "body_weight_kg": "65.8",
+          "snatch_1": "28",
+          "snatch_2": "30",
+          "snatch_3": "32",
+          "cj_1": "40",
+          "cj_2": "43",
+          "cj_3": "45",
+          "best_snatch": "32",
+          "best_cj": "45",
+          "total": "77"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Winter 1",
+            "date": "2018-02-22",
+            "division": "Men's 14-15 Age Group 77 kg",
+            "lifter_name": "Trent Smith",
+            "body_weight_kg": "77",
+            "snatch_1": "32",
+            "snatch_2": "34",
+            "snatch_3": "36",
+            "cj_1": "47",
+            "cj_2": "50",
+            "cj_3": "52",
+            "best_snatch": "36",
+            "best_cj": "52",
+            "total": "88"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMi0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMi0yMiIsIndlaWdodF9jbGFzcyI6MzEwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Trent Smith",
+            "total": "88",
+            "gender": "M",
+            "age": "14",
+            "club_name": "TEAM SAVANNAH",
+            "membership_number": "1017624",
+            "wso": "Georgia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2017 USA Weightlifting National Youth Championships",
+            "date": "2017-06-25",
+            "division": "Men's 13 Under Age Group 69 Kg",
+            "lifter_name": "Trent Smith",
+            "body_weight_kg": "66.98",
+            "snatch_1": "-34",
+            "snatch_2": "34",
+            "snatch_3": "37",
+            "cj_1": "46",
+            "cj_2": "49",
+            "cj_3": "-51",
+            "best_snatch": "37",
+            "best_cj": "49",
+            "total": "86"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNi0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNi0yNSIsIndlaWdodF9jbGFzcyI6Mjk2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "Trent Smith",
+            "total": "86",
+            "gender": "M",
+            "age": "13",
+            "club_name": "TEAM SAVANNAH",
+            "membership_number": "1017624",
+            "wso": "Georgia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Spring 3",
+            "date": "2017-05-16",
+            "division": "Men's 13 Under Age Group 69 Kg",
+            "lifter_name": "Trent Smith",
+            "body_weight_kg": "64.9",
+            "snatch_1": "35",
+            "snatch_2": "37",
+            "snatch_3": "39",
+            "cj_1": "43",
+            "cj_2": "-45",
+            "cj_3": "45",
+            "best_snatch": "39",
+            "best_cj": "45",
+            "total": "84"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNS0xNiIsIndlaWdodF9jbGFzcyI6Mjk2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Trent Smith",
+            "total": "84",
+            "gender": "M",
+            "age": "13",
+            "club_name": "TEAM SAVANNAH",
+            "membership_number": "1017624",
+            "wso": "Georgia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Spring 2",
+            "date": "2017-04-12",
+            "division": "Men's 13 Under Age Group 69 Kg",
+            "lifter_name": "Trent Smith",
+            "body_weight_kg": "66.45",
+            "snatch_1": "30",
+            "snatch_2": "33",
+            "snatch_3": "36",
+            "cj_1": "40",
+            "cj_2": "43",
+            "cj_3": "45",
+            "best_snatch": "36",
+            "best_cj": "45",
+            "total": "81"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNC0xMiIsIndlaWdodF9jbGFzcyI6Mjk2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Trent Smith",
+            "total": "81",
+            "gender": "M",
+            "age": "13",
+            "club_name": "TEAM SAVANNAH",
+            "membership_number": "1017624",
+            "wso": "Georgia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Spring 1",
+            "date": "2017-03-17",
+            "division": "Men's 13 Under Age Group 69 Kg",
+            "lifter_name": "Trent Smith",
+            "body_weight_kg": "65.8",
+            "snatch_1": "28",
+            "snatch_2": "30",
+            "snatch_3": "32",
+            "cj_1": "40",
+            "cj_2": "43",
+            "cj_3": "45",
+            "best_snatch": "32",
+            "best_cj": "45",
+            "total": "77"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0xNyIsIndlaWdodF9jbGFzcyI6Mjk2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Trent Smith",
+            "total": "77",
+            "gender": "M",
+            "age": "13",
+            "club_name": "TEAM SAVANNAH",
+            "membership_number": "1017624",
+            "wso": "Georgia"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 20442,
+      "athlete_name": "Trent Smith",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/20442",
+      "contaminated_lifter_id": 3025,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-27T05:43:15.984Z",
+      "profile_data": null,
+      "competition_history": [],
+      "biographical_data_by_competition": [],
+      "scraping_successful": false,
+      "error": "Assignment to constant variable."
+    }
+  ]
+}

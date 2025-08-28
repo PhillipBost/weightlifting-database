@@ -1,0 +1,315 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T05:56:23.990Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Grace Wilson",
+    "internal_ids_processed": 3,
+    "successful_scrapes": 3,
+    "failed_scrapes": 0,
+    "total_competitions_found": 5,
+    "total_reverse_lookups": 5,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 18254084
+  },
+  "data": [
+    {
+      "internal_id": 43321,
+      "athlete_name": "Grace Wilson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/43321",
+      "contaminated_lifter_id": 34398,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T05:55:57.169Z",
+      "profile_data": {
+        "membership_number": "1030703",
+        "birth_year": 2003,
+        "gender": "F",
+        "club_name": "LEHIGH VALLEY BARBELL CLUB",
+        "wso": "Pennsylvania-West Virginia",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Garage Strength Open",
+          "date": "2018-06-03",
+          "division": "Women's 14-15 Age Group +69 kg",
+          "lifter_name": "Grace Wilson",
+          "body_weight_kg": "79.7",
+          "snatch_1": "58",
+          "snatch_2": "60",
+          "snatch_3": "63",
+          "cj_1": "-82",
+          "cj_2": "82",
+          "cj_3": "85",
+          "best_snatch": "63",
+          "best_cj": "85",
+          "total": "148"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Garage Strength Open",
+            "date": "2018-06-03",
+            "division": "Women's 14-15 Age Group +69 kg",
+            "lifter_name": "Grace Wilson",
+            "body_weight_kg": "79.7",
+            "snatch_1": "58",
+            "snatch_2": "60",
+            "snatch_3": "63",
+            "cj_1": "-82",
+            "cj_2": "82",
+            "cj_3": "85",
+            "best_snatch": "63",
+            "best_cj": "85",
+            "total": "148"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0wMyIsIndlaWdodF9jbGFzcyI6MzE5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Grace Wilson",
+            "total": "148",
+            "gender": "F",
+            "age": "15",
+            "club_name": "LEHIGH VALLEY BARBELL CLUB",
+            "membership_number": "1030703",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 44475,
+      "athlete_name": "Grace Wilson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/44475",
+      "contaminated_lifter_id": 34398,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T05:56:12.465Z",
+      "profile_data": {
+        "membership_number": "1039359",
+        "birth_year": 2004,
+        "gender": "F",
+        "club_name": "VERO BEACH WEIGHTLIFTING",
+        "wso": "Florida",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "VBW Friday Qualifier",
+          "date": "2020-09-25",
+          "division": "Women's 16-17 Age Group 59kg",
+          "lifter_name": "Grace Wilson",
+          "body_weight_kg": "58.89",
+          "snatch_1": "43",
+          "snatch_2": "45",
+          "snatch_3": "47",
+          "cj_1": "48",
+          "cj_2": "51",
+          "cj_3": "53",
+          "best_snatch": "47",
+          "best_cj": "53",
+          "total": "100"
+        },
+        {
+          "meet_name": "VBW SUPER SATURDAY",
+          "date": "2019-02-23",
+          "division": "Women's 14-15 Age Group 59kg",
+          "lifter_name": "Grace Wilson",
+          "body_weight_kg": "57.8",
+          "snatch_1": "30",
+          "snatch_2": "32",
+          "snatch_3": "34",
+          "cj_1": "46",
+          "cj_2": "49",
+          "cj_3": "51",
+          "best_snatch": "34",
+          "best_cj": "51",
+          "total": "85"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "VBW Friday Qualifier",
+            "date": "2020-09-25",
+            "division": "Women's 16-17 Age Group 59kg",
+            "lifter_name": "Grace Wilson",
+            "body_weight_kg": "58.89",
+            "snatch_1": "43",
+            "snatch_2": "45",
+            "snatch_3": "47",
+            "cj_1": "48",
+            "cj_2": "51",
+            "cj_3": "53",
+            "best_snatch": "47",
+            "best_cj": "53",
+            "total": "100"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wOS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wOS0yNSIsIndlaWdodF9jbGFzcyI6MTV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Grace Wilson",
+            "total": "100",
+            "gender": "F",
+            "age": "16",
+            "club_name": "VERO BEACH WEIGHTLIFTING",
+            "membership_number": "1039359",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "VBW SUPER SATURDAY",
+            "date": "2019-02-23",
+            "division": "Women's 14-15 Age Group 59kg",
+            "lifter_name": "Grace Wilson",
+            "body_weight_kg": "57.8",
+            "snatch_1": "30",
+            "snatch_2": "32",
+            "snatch_3": "34",
+            "cj_1": "46",
+            "cj_2": "49",
+            "cj_3": "51",
+            "best_snatch": "34",
+            "best_cj": "51",
+            "total": "85"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMi0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMi0yMyIsIndlaWdodF9jbGFzcyI6MzZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Grace Wilson",
+            "total": "85",
+            "gender": "F",
+            "age": "15",
+            "club_name": "VERO BEACH WEIGHTLIFTING",
+            "membership_number": "1039359",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 48378,
+      "athlete_name": "Grace Wilson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/48378",
+      "contaminated_lifter_id": 34398,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T05:56:23.988Z",
+      "profile_data": {
+        "membership_number": "1052518",
+        "birth_year": 2004,
+        "gender": "F",
+        "club_name": "VERO BEACH WEIGHTLIFTING",
+        "wso": "Florida",
+        "national_rank": "5"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Florida State Championships",
+          "date": "2020-10-23",
+          "division": "Women's 16-17 Age Group 64kg",
+          "lifter_name": "Grace Wilson",
+          "body_weight_kg": "61.9",
+          "snatch_1": "40",
+          "snatch_2": "42",
+          "snatch_3": "45",
+          "cj_1": "59",
+          "cj_2": "61",
+          "cj_3": "-63",
+          "best_snatch": "45",
+          "best_cj": "61",
+          "total": "106"
+        },
+        {
+          "meet_name": "VBW Friday Qualifier",
+          "date": "2020-09-25",
+          "division": "Women's 16-17 Age Group 59kg",
+          "lifter_name": "Grace Wilson",
+          "body_weight_kg": "58.85",
+          "snatch_1": "43",
+          "snatch_2": "45",
+          "snatch_3": "47",
+          "cj_1": "48",
+          "cj_2": "51",
+          "cj_3": "53",
+          "best_snatch": "47",
+          "best_cj": "53",
+          "total": "100"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Florida State Championships",
+            "date": "2020-10-23",
+            "division": "Women's 16-17 Age Group 64kg",
+            "lifter_name": "Grace Wilson",
+            "body_weight_kg": "61.9",
+            "snatch_1": "40",
+            "snatch_2": "42",
+            "snatch_3": "45",
+            "cj_1": "59",
+            "cj_2": "61",
+            "cj_3": "-63",
+            "best_snatch": "45",
+            "best_cj": "61",
+            "total": "106"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0xMC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0xMC0yMyIsIndlaWdodF9jbGFzcyI6MTZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "Grace Wilson",
+            "total": "106",
+            "gender": "F",
+            "age": "16",
+            "club_name": "VERO BEACH WEIGHTLIFTING",
+            "membership_number": "1052518",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "VBW Friday Qualifier",
+            "date": "2020-09-25",
+            "division": "Women's 16-17 Age Group 59kg",
+            "lifter_name": "Grace Wilson",
+            "body_weight_kg": "58.85",
+            "snatch_1": "43",
+            "snatch_2": "45",
+            "snatch_3": "47",
+            "cj_1": "48",
+            "cj_2": "51",
+            "cj_3": "53",
+            "best_snatch": "47",
+            "best_cj": "53",
+            "total": "100"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wOS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wOS0yNSIsIndlaWdodF9jbGFzcyI6MTV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Grace Wilson",
+            "total": "100",
+            "gender": "F",
+            "age": "16",
+            "club_name": "VERO BEACH WEIGHTLIFTING",
+            "membership_number": "1039359",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

@@ -1,0 +1,238 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T07:19:12.053Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Jessica Hu",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 4,
+    "total_reverse_lookups": 4,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 20858508
+  },
+  "data": [
+    {
+      "internal_id": 62469,
+      "athlete_name": "Jessica Hu",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/62469",
+      "contaminated_lifter_id": 32174,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T18:39:35.575Z",
+      "profile_data": {
+        "membership_number": "1075763",
+        "birth_year": 1996,
+        "gender": "F",
+        "club_name": "THE SPORTS PALACE",
+        "wso": "California North Central",
+        "national_rank": "2"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2024 Marin (Mother's Day) Open",
+          "date": "2024-05-12",
+          "division": "Open Women's 76kg",
+          "lifter_name": "Jessica Hu",
+          "body_weight_kg": "74.71",
+          "snatch_1": "-45",
+          "snatch_2": "45",
+          "snatch_3": "48",
+          "cj_1": "65",
+          "cj_2": "68",
+          "cj_3": "70",
+          "best_snatch": "48",
+          "best_cj": "70",
+          "total": "118"
+        },
+        {
+          "meet_name": "Hassle Free Barbell Spring Breaker",
+          "date": "2024-04-20",
+          "division": "Open Women's 76kg",
+          "lifter_name": "Jessica Hu",
+          "body_weight_kg": "73",
+          "snatch_1": "43",
+          "snatch_2": "45",
+          "snatch_3": "47",
+          "cj_1": "63",
+          "cj_2": "65",
+          "cj_3": "67",
+          "best_snatch": "47",
+          "best_cj": "67",
+          "total": "114"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2024 Marin (Mother's Day) Open",
+            "date": "2024-05-12",
+            "division": "Open Women's 76kg",
+            "lifter_name": "Jessica Hu",
+            "body_weight_kg": "74.71",
+            "snatch_1": "-45",
+            "snatch_2": "45",
+            "snatch_3": "48",
+            "cj_1": "65",
+            "cj_2": "68",
+            "cj_3": "70",
+            "best_snatch": "48",
+            "best_cj": "70",
+            "total": "118"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNS0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNS0xMiIsIndlaWdodF9jbGFzcyI6OTd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Jessica Hu",
+            "total": "118",
+            "gender": "F",
+            "age": "28",
+            "club_name": "THE SPORTS PALACE",
+            "membership_number": "1075763",
+            "wso": "California North Central"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Hassle Free Barbell Spring Breaker",
+            "date": "2024-04-20",
+            "division": "Open Women's 76kg",
+            "lifter_name": "Jessica Hu",
+            "body_weight_kg": "73",
+            "snatch_1": "43",
+            "snatch_2": "45",
+            "snatch_3": "47",
+            "cj_1": "63",
+            "cj_2": "65",
+            "cj_3": "67",
+            "best_snatch": "47",
+            "best_cj": "67",
+            "total": "114"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNC0yMCIsIndlaWdodF9jbGFzcyI6OTd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "13",
+            "athlete_name": "Jessica Hu",
+            "total": "114",
+            "gender": "F",
+            "age": "28",
+            "club_name": "THE SPORTS PALACE",
+            "membership_number": "1075763",
+            "wso": "California North Central"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 18152,
+      "athlete_name": "Jessica Hu",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/18152",
+      "contaminated_lifter_id": 32174,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-27T07:19:10.051Z",
+      "profile_data": {
+        "membership_number": "1020917",
+        "birth_year": 1987,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "California North Central",
+        "national_rank": "16"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2018 Max's Gym Open",
+          "date": "2018-12-02",
+          "division": "Open Women's 59kg",
+          "lifter_name": "Jessica Hu",
+          "body_weight_kg": "57.6",
+          "snatch_1": "-51",
+          "snatch_2": "-53",
+          "snatch_3": "-53",
+          "cj_1": "60",
+          "cj_2": "65",
+          "cj_3": "70",
+          "best_snatch": "0",
+          "best_cj": "70",
+          "total": "0"
+        },
+        {
+          "meet_name": "Tommy Kono Invitational",
+          "date": "2017-08-13",
+          "division": "Open Women's 58 kg",
+          "lifter_name": "Jessica Hu",
+          "body_weight_kg": "56.63",
+          "snatch_1": "-45",
+          "snatch_2": "46",
+          "snatch_3": "48",
+          "cj_1": "56",
+          "cj_2": "59",
+          "cj_3": "-62",
+          "best_snatch": "48",
+          "best_cj": "59",
+          "total": "107"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2018 Max's Gym Open",
+            "date": "2018-12-02",
+            "division": "Open Women's 59kg",
+            "lifter_name": "Jessica Hu",
+            "body_weight_kg": "57.6",
+            "snatch_1": "-51",
+            "snatch_2": "-53",
+            "snatch_3": "-53",
+            "cj_1": "60",
+            "cj_2": "65",
+            "cj_3": "70",
+            "best_snatch": "0",
+            "best_cj": "70",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0wMiIsIndlaWdodF9jbGFzcyI6OTR9",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Tommy Kono Invitational",
+            "date": "2017-08-13",
+            "division": "Open Women's 58 kg",
+            "lifter_name": "Jessica Hu",
+            "body_weight_kg": "56.63",
+            "snatch_1": "-45",
+            "snatch_2": "46",
+            "snatch_3": "48",
+            "cj_1": "56",
+            "cj_2": "59",
+            "cj_3": "-62",
+            "best_snatch": "48",
+            "best_cj": "59",
+            "total": "107"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wOC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wOC0xMyIsIndlaWdodF9jbGFzcyI6MzY0fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "16",
+            "athlete_name": "Jessica Hu",
+            "total": "107",
+            "gender": "F",
+            "age": "30",
+            "club_name": "-",
+            "membership_number": "1020917",
+            "wso": "California North Central"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    }
+  ]
+}

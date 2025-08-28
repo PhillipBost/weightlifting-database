@@ -1,0 +1,379 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T06:43:59.511Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Michelle Garcia",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 7,
+    "total_reverse_lookups": 7,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 18745966
+  },
+  "data": [
+    {
+      "internal_id": 30921,
+      "athlete_name": "Michelle Garcia",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/30921",
+      "contaminated_lifter_id": 16989,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T17:52:03.590Z",
+      "profile_data": {
+        "membership_number": "1006291",
+        "birth_year": 1994,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "Florida",
+        "national_rank": "31"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Vero Beach Classic II",
+          "date": "2016-05-21",
+          "division": "Open Women's 58 kg",
+          "lifter_name": "Michelle Garcia",
+          "body_weight_kg": "55.5",
+          "snatch_1": "50",
+          "snatch_2": "54",
+          "snatch_3": "-57",
+          "cj_1": "63",
+          "cj_2": "-64",
+          "cj_3": "-65",
+          "best_snatch": "54",
+          "best_cj": "63",
+          "total": "117"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Vero Beach Classic II",
+            "date": "2016-05-21",
+            "division": "Open Women's 58 kg",
+            "lifter_name": "Michelle Garcia",
+            "body_weight_kg": "55.5",
+            "snatch_1": "50",
+            "snatch_2": "54",
+            "snatch_3": "-57",
+            "cj_1": "63",
+            "cj_2": "-64",
+            "cj_3": "-65",
+            "best_snatch": "54",
+            "best_cj": "63",
+            "total": "117"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0yMSIsIndlaWdodF9jbGFzcyI6MzY0fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "31",
+            "athlete_name": "Michelle Garcia",
+            "total": "117",
+            "gender": "F",
+            "age": "22",
+            "club_name": "-",
+            "membership_number": "1006291",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 15857,
+      "athlete_name": "Michelle Garcia",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/15857",
+      "contaminated_lifter_id": 16989,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-27T06:43:57.508Z",
+      "profile_data": {
+        "membership_number": "1001400",
+        "birth_year": 1986,
+        "gender": "F",
+        "club_name": "Spoon Barbell Club",
+        "wso": "Texas-Oklahoma",
+        "national_rank": "20"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2017 Texas State Weightlifting Championships",
+          "date": "2017-01-15",
+          "division": "Open Women's 69 kg",
+          "lifter_name": "Michelle Garcia",
+          "body_weight_kg": "67.2",
+          "snatch_1": "-62",
+          "snatch_2": "62",
+          "snatch_3": "-65",
+          "cj_1": "78",
+          "cj_2": "-81",
+          "cj_3": "-82",
+          "best_snatch": "62",
+          "best_cj": "78",
+          "total": "140"
+        },
+        {
+          "meet_name": "Big D End Of Year Dev",
+          "date": "2016-12-18",
+          "division": "Open Women's 69 kg",
+          "lifter_name": "Michelle Garcia",
+          "body_weight_kg": "68.9",
+          "snatch_1": "60",
+          "snatch_2": "-63",
+          "snatch_3": "-63",
+          "cj_1": "72",
+          "cj_2": "76",
+          "cj_3": "79",
+          "best_snatch": "60",
+          "best_cj": "79",
+          "total": "139"
+        },
+        {
+          "meet_name": "2016 Copperhead",
+          "date": "2016-10-16",
+          "division": "Open Women's 69 kg",
+          "lifter_name": "Michelle Garcia",
+          "body_weight_kg": "68.28",
+          "snatch_1": "-60",
+          "snatch_2": "-62",
+          "snatch_3": "-63",
+          "cj_1": "-75",
+          "cj_2": "75",
+          "cj_3": "-79",
+          "best_snatch": "0",
+          "best_cj": "75",
+          "total": "0"
+        },
+        {
+          "meet_name": "2016 Lock and Load Weightlifting Championships",
+          "date": "2016-05-22",
+          "division": "Open Women's 75 kg",
+          "lifter_name": "Michelle Garcia",
+          "body_weight_kg": "73.41",
+          "snatch_1": "60",
+          "snatch_2": "-63",
+          "snatch_3": "63",
+          "cj_1": "75",
+          "cj_2": "-80",
+          "cj_3": "-80",
+          "best_snatch": "63",
+          "best_cj": "75",
+          "total": "138"
+        },
+        {
+          "meet_name": "NRG Weightlifting Championship",
+          "date": "2016-01-23",
+          "division": "Open Women's 75 kg",
+          "lifter_name": "Michelle Garcia",
+          "body_weight_kg": "70.5",
+          "snatch_1": "-57",
+          "snatch_2": "58",
+          "snatch_3": "-61",
+          "cj_1": "75",
+          "cj_2": "78",
+          "cj_3": "-80",
+          "best_snatch": "58",
+          "best_cj": "78",
+          "total": "136"
+        },
+        {
+          "meet_name": "NRG Weightlifting Championship",
+          "date": "2016-01-23",
+          "division": "Open Women's 75 kg",
+          "lifter_name": "Michelle Garcia",
+          "body_weight_kg": "70.5",
+          "snatch_1": "-57",
+          "snatch_2": "58",
+          "snatch_3": "-61",
+          "cj_1": "75",
+          "cj_2": "78",
+          "cj_3": "-80",
+          "best_snatch": "58",
+          "best_cj": "78",
+          "total": "136"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2017 Texas State Weightlifting Championships",
+            "date": "2017-01-15",
+            "division": "Open Women's 69 kg",
+            "lifter_name": "Michelle Garcia",
+            "body_weight_kg": "67.2",
+            "snatch_1": "-62",
+            "snatch_2": "62",
+            "snatch_3": "-65",
+            "cj_1": "78",
+            "cj_2": "-81",
+            "cj_3": "-82",
+            "best_snatch": "62",
+            "best_cj": "78",
+            "total": "140"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMS0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMS0xNSIsIndlaWdodF9jbGFzcyI6MzY2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "20",
+            "athlete_name": "Michelle Garcia",
+            "total": "140",
+            "gender": "F",
+            "age": "31",
+            "club_name": "Spoon Barbell Club",
+            "membership_number": "1001400",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Big D End Of Year Dev",
+            "date": "2016-12-18",
+            "division": "Open Women's 69 kg",
+            "lifter_name": "Michelle Garcia",
+            "body_weight_kg": "68.9",
+            "snatch_1": "60",
+            "snatch_2": "-63",
+            "snatch_3": "-63",
+            "cj_1": "72",
+            "cj_2": "76",
+            "cj_3": "79",
+            "best_snatch": "60",
+            "best_cj": "79",
+            "total": "139"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMi0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMi0xOCIsIndlaWdodF9jbGFzcyI6MzY2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "11",
+            "athlete_name": "Michelle Garcia",
+            "total": "139",
+            "gender": "F",
+            "age": "30",
+            "club_name": "Spoon Barbell Club",
+            "membership_number": "1001400",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2016 Copperhead",
+            "date": "2016-10-16",
+            "division": "Open Women's 69 kg",
+            "lifter_name": "Michelle Garcia",
+            "body_weight_kg": "68.28",
+            "snatch_1": "-60",
+            "snatch_2": "-62",
+            "snatch_3": "-63",
+            "cj_1": "-75",
+            "cj_2": "75",
+            "cj_3": "-79",
+            "best_snatch": "0",
+            "best_cj": "75",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0xNiIsIndlaWdodF9jbGFzcyI6MzY2fQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2016 Lock and Load Weightlifting Championships",
+            "date": "2016-05-22",
+            "division": "Open Women's 75 kg",
+            "lifter_name": "Michelle Garcia",
+            "body_weight_kg": "73.41",
+            "snatch_1": "60",
+            "snatch_2": "-63",
+            "snatch_3": "63",
+            "cj_1": "75",
+            "cj_2": "-80",
+            "cj_3": "-80",
+            "best_snatch": "63",
+            "best_cj": "75",
+            "total": "138"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0yMiIsIndlaWdodF9jbGFzcyI6MzY3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Michelle Garcia",
+            "total": "138",
+            "gender": "F",
+            "age": "30",
+            "club_name": "Spoon Barbell Club",
+            "membership_number": "1001400",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "NRG Weightlifting Championship",
+            "date": "2016-01-23",
+            "division": "Open Women's 75 kg",
+            "lifter_name": "Michelle Garcia",
+            "body_weight_kg": "70.5",
+            "snatch_1": "-57",
+            "snatch_2": "58",
+            "snatch_3": "-61",
+            "cj_1": "75",
+            "cj_2": "78",
+            "cj_3": "-80",
+            "best_snatch": "58",
+            "best_cj": "78",
+            "total": "136"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0yMyIsIndlaWdodF9jbGFzcyI6MzY3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "7",
+            "athlete_name": "Michelle Garcia",
+            "total": "136",
+            "gender": "F",
+            "age": "30",
+            "club_name": "Spoon Barbell Club",
+            "membership_number": "1001400",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "NRG Weightlifting Championship",
+            "date": "2016-01-23",
+            "division": "Open Women's 75 kg",
+            "lifter_name": "Michelle Garcia",
+            "body_weight_kg": "70.5",
+            "snatch_1": "-57",
+            "snatch_2": "58",
+            "snatch_3": "-61",
+            "cj_1": "75",
+            "cj_2": "78",
+            "cj_3": "-80",
+            "best_snatch": "58",
+            "best_cj": "78",
+            "total": "136"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0yMyIsIndlaWdodF9jbGFzcyI6MzY3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "7",
+            "athlete_name": "Michelle Garcia",
+            "total": "136",
+            "gender": "F",
+            "age": "30",
+            "club_name": "Spoon Barbell Club",
+            "membership_number": "1001400",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    }
+  ]
+}

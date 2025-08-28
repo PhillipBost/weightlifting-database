@@ -1,0 +1,145 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T07:20:12.915Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "James Fowler",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 20919370
+  },
+  "data": [
+    {
+      "internal_id": 36938,
+      "athlete_name": "James Fowler",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/36938",
+      "contaminated_lifter_id": 32791,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T18:41:32.715Z",
+      "profile_data": {
+        "membership_number": "1034214",
+        "birth_year": 1997,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Tennessee-Kentucky",
+        "national_rank": "5"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Lifting in the Smokies",
+          "date": "2019-05-11",
+          "division": "Open Men's 102kg",
+          "lifter_name": "James Fowler",
+          "body_weight_kg": "100.9",
+          "snatch_1": "102",
+          "snatch_2": "107",
+          "snatch_3": "-111",
+          "cj_1": "125",
+          "cj_2": "-131",
+          "cj_3": "-131",
+          "best_snatch": "107",
+          "best_cj": "125",
+          "total": "232"
+        },
+        {
+          "meet_name": "Tennessee State Championship 2018",
+          "date": "2018-10-13",
+          "division": "Open Men's 102kg",
+          "lifter_name": "James Fowler",
+          "body_weight_kg": "101.6",
+          "snatch_1": "88",
+          "snatch_2": "94",
+          "snatch_3": "98",
+          "cj_1": "110",
+          "cj_2": "120",
+          "cj_3": "130",
+          "best_snatch": "98",
+          "best_cj": "130",
+          "total": "228"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Lifting in the Smokies",
+            "date": "2019-05-11",
+            "division": "Open Men's 102kg",
+            "lifter_name": "James Fowler",
+            "body_weight_kg": "100.9",
+            "snatch_1": "102",
+            "snatch_2": "107",
+            "snatch_3": "-111",
+            "cj_1": "125",
+            "cj_2": "-131",
+            "cj_3": "-131",
+            "best_snatch": "107",
+            "best_cj": "125",
+            "total": "232"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0xMSIsIndlaWdodF9jbGFzcyI6ODh9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "James Fowler",
+            "total": "232",
+            "gender": "M",
+            "age": "22",
+            "club_name": "-",
+            "membership_number": "1034214",
+            "wso": "Tennessee-Kentucky"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Tennessee State Championship 2018",
+            "date": "2018-10-13",
+            "division": "Open Men's 102kg",
+            "lifter_name": "James Fowler",
+            "body_weight_kg": "101.6",
+            "snatch_1": "88",
+            "snatch_2": "94",
+            "snatch_3": "98",
+            "cj_1": "110",
+            "cj_2": "120",
+            "cj_3": "130",
+            "best_snatch": "98",
+            "best_cj": "130",
+            "total": "228"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0xMyIsIndlaWdodF9jbGFzcyI6ODh9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "James Fowler",
+            "total": "228",
+            "gender": "M",
+            "age": "21",
+            "club_name": "-",
+            "membership_number": "1034214",
+            "wso": "Tennessee-Kentucky"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 20192,
+      "athlete_name": "James Fowler",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/20192",
+      "contaminated_lifter_id": 32791,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-27T07:20:10.911Z",
+      "profile_data": null,
+      "competition_history": [],
+      "biographical_data_by_competition": [],
+      "scraping_successful": false,
+      "error": "Assignment to constant variable."
+    }
+  ]
+}

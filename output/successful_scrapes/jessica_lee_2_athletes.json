@@ -1,0 +1,294 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T04:35:33.389Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Jessica Lee",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 5,
+    "total_reverse_lookups": 5,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 99803483
+  },
+  "data": [
+    {
+      "internal_id": 7107,
+      "athlete_name": "Jessica Lee",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/7107",
+      "contaminated_lifter_id": 31583,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T04:35:13.749Z",
+      "profile_data": {
+        "membership_number": "1003784",
+        "birth_year": 1979,
+        "gender": "F",
+        "club_name": "SWORN BARBELL CLUB",
+        "wso": "Indiana",
+        "national_rank": "4"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Circle City Open",
+          "date": "2017-07-15",
+          "division": "Women's Masters (35-39) 63 kg",
+          "lifter_name": "Jessica Lee",
+          "body_weight_kg": "60.5",
+          "snatch_1": "48",
+          "snatch_2": "52",
+          "snatch_3": "56",
+          "cj_1": "64",
+          "cj_2": "68",
+          "cj_3": "-71",
+          "best_snatch": "56",
+          "best_cj": "68",
+          "total": "124"
+        },
+        {
+          "meet_name": "Indiana State Championship and Open",
+          "date": "2016-06-04",
+          "division": "Women's Masters (35-39) 69 kg",
+          "lifter_name": "Jessica Lee",
+          "body_weight_kg": "65.95",
+          "snatch_1": "43",
+          "snatch_2": "46",
+          "snatch_3": "-50",
+          "cj_1": "60",
+          "cj_2": "64",
+          "cj_3": "-68",
+          "best_snatch": "46",
+          "best_cj": "64",
+          "total": "110"
+        },
+        {
+          "meet_name": "Force Weightlifting Midwest Open and Last Chance Qualifier",
+          "date": "2016-03-26",
+          "division": "Women's Masters (35-39) 75 kg",
+          "lifter_name": "Jessica Lee",
+          "body_weight_kg": "70.7",
+          "snatch_1": "40",
+          "snatch_2": "43",
+          "snatch_3": "-47",
+          "cj_1": "57",
+          "cj_2": "60",
+          "cj_3": "64",
+          "best_snatch": "43",
+          "best_cj": "64",
+          "total": "107"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Circle City Open",
+            "date": "2017-07-15",
+            "division": "Women's Masters (35-39) 63 kg",
+            "lifter_name": "Jessica Lee",
+            "body_weight_kg": "60.5",
+            "snatch_1": "48",
+            "snatch_2": "52",
+            "snatch_3": "56",
+            "cj_1": "64",
+            "cj_2": "68",
+            "cj_3": "-71",
+            "best_snatch": "56",
+            "best_cj": "68",
+            "total": "124"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNy0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNy0xNSIsIndlaWdodF9jbGFzcyI6MzgyfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Jessica Lee",
+            "total": "124",
+            "gender": "F",
+            "age": "38",
+            "club_name": "SWORN BARBELL CLUB",
+            "membership_number": "1003784",
+            "wso": "Indiana"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Indiana State Championship and Open",
+            "date": "2016-06-04",
+            "division": "Women's Masters (35-39) 69 kg",
+            "lifter_name": "Jessica Lee",
+            "body_weight_kg": "65.95",
+            "snatch_1": "43",
+            "snatch_2": "46",
+            "snatch_3": "-50",
+            "cj_1": "60",
+            "cj_2": "64",
+            "cj_3": "-68",
+            "best_snatch": "46",
+            "best_cj": "64",
+            "total": "110"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0wNCIsIndlaWdodF9jbGFzcyI6MzgzfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "Jessica Lee",
+            "total": "110",
+            "gender": "F",
+            "age": "37",
+            "club_name": "SWORN BARBELL CLUB",
+            "membership_number": "1003784",
+            "wso": "Indiana"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Force Weightlifting Midwest Open and Last Chance Qualifier",
+            "date": "2016-03-26",
+            "division": "Women's Masters (35-39) 75 kg",
+            "lifter_name": "Jessica Lee",
+            "body_weight_kg": "70.7",
+            "snatch_1": "40",
+            "snatch_2": "43",
+            "snatch_3": "-47",
+            "cj_1": "57",
+            "cj_2": "60",
+            "cj_3": "64",
+            "best_snatch": "43",
+            "best_cj": "64",
+            "total": "107"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMy0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMy0yNiIsIndlaWdodF9jbGFzcyI6Mzg0fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "18",
+            "athlete_name": "Jessica Lee",
+            "total": "107",
+            "gender": "F",
+            "age": "37",
+            "club_name": "SWORN BARBELL CLUB",
+            "membership_number": "1003784",
+            "wso": "Indiana"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 50228,
+      "athlete_name": "Jessica Lee",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/50228",
+      "contaminated_lifter_id": 31583,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T04:35:33.387Z",
+      "profile_data": {
+        "membership_number": "1055618",
+        "birth_year": 2002,
+        "gender": "F",
+        "club_name": "PERFORMANCE ONE WEIGHTLIFTING",
+        "wso": "Mountain South",
+        "national_rank": "3"
+      },
+      "competition_history": [
+        {
+          "meet_name": "End of the Summer Open",
+          "date": "2021-08-14",
+          "division": "Junior Women's 76kg",
+          "lifter_name": "Jessica Lee",
+          "body_weight_kg": "73.3",
+          "snatch_1": "50",
+          "snatch_2": "53",
+          "snatch_3": "-57",
+          "cj_1": "63",
+          "cj_2": "66",
+          "cj_3": "68",
+          "best_snatch": "53",
+          "best_cj": "68",
+          "total": "121"
+        },
+        {
+          "meet_name": "Performance One Spring Open",
+          "date": "2021-04-24",
+          "division": "Junior Women's 71kg",
+          "lifter_name": "Jessica Lee",
+          "body_weight_kg": "70.2",
+          "snatch_1": "50",
+          "snatch_2": "52",
+          "snatch_3": "54",
+          "cj_1": "63",
+          "cj_2": "67",
+          "cj_3": "70",
+          "best_snatch": "54",
+          "best_cj": "70",
+          "total": "124"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "End of the Summer Open",
+            "date": "2021-08-14",
+            "division": "Junior Women's 76kg",
+            "lifter_name": "Jessica Lee",
+            "body_weight_kg": "73.3",
+            "snatch_1": "50",
+            "snatch_2": "53",
+            "snatch_3": "-57",
+            "cj_1": "63",
+            "cj_2": "66",
+            "cj_3": "68",
+            "best_snatch": "53",
+            "best_cj": "68",
+            "total": "121"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wOC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wOC0xNCIsIndlaWdodF9jbGFzcyI6Nzd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Jessica Lee",
+            "total": "121",
+            "gender": "F",
+            "age": "19",
+            "club_name": "PERFORMANCE ONE WEIGHTLIFTING",
+            "membership_number": "1055618",
+            "wso": "Mountain South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Performance One Spring Open",
+            "date": "2021-04-24",
+            "division": "Junior Women's 71kg",
+            "lifter_name": "Jessica Lee",
+            "body_weight_kg": "70.2",
+            "snatch_1": "50",
+            "snatch_2": "52",
+            "snatch_3": "54",
+            "cj_1": "63",
+            "cj_2": "67",
+            "cj_3": "70",
+            "best_snatch": "54",
+            "best_cj": "70",
+            "total": "124"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNC0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNC0yNCIsIndlaWdodF9jbGFzcyI6NzZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Jessica Lee",
+            "total": "124",
+            "gender": "F",
+            "age": "19",
+            "club_name": "PERFORMANCE ONE WEIGHTLIFTING",
+            "membership_number": "1055618",
+            "wso": "Mountain South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

@@ -1,0 +1,482 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T17:32:36.149Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Mark Nelson",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 9,
+    "total_reverse_lookups": 9,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 60026243
+  },
+  "data": [
+    {
+      "internal_id": 9648,
+      "athlete_name": "Mark Nelson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/9648",
+      "contaminated_lifter_id": 4091,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T17:32:06.783Z",
+      "profile_data": {
+        "membership_number": "1015424",
+        "birth_year": 1982,
+        "gender": "M",
+        "club_name": "Strength Academy Weightlifting",
+        "wso": "Mountain South",
+        "national_rank": "19"
+      },
+      "competition_history": [
+        {
+          "meet_name": "The John Davis Memorial 5 Invite",
+          "date": "2019-01-12",
+          "division": "Open Men's 102kg",
+          "lifter_name": "Mark Nelson",
+          "body_weight_kg": "98.29",
+          "snatch_1": "83",
+          "snatch_2": "87",
+          "snatch_3": "90",
+          "cj_1": "112",
+          "cj_2": "117",
+          "cj_3": "-122",
+          "best_snatch": "90",
+          "best_cj": "117",
+          "total": "207"
+        },
+        {
+          "meet_name": "Nike 2018 American Open Series 3",
+          "date": "2018-09-16",
+          "division": "Men's Masters (35-39) 96kg",
+          "lifter_name": "Mark Nelson",
+          "body_weight_kg": "95.18",
+          "snatch_1": "82",
+          "snatch_2": "-86",
+          "snatch_3": "86",
+          "cj_1": "110",
+          "cj_2": "115",
+          "cj_3": "120",
+          "best_snatch": "86",
+          "best_cj": "120",
+          "total": "206"
+        },
+        {
+          "meet_name": "NMLWC YOUTH AND MASTERS CHAMPIONSHIPS",
+          "date": "2018-05-13",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Mark Nelson",
+          "body_weight_kg": "98.23",
+          "snatch_1": "82",
+          "snatch_2": "86",
+          "snatch_3": "90",
+          "cj_1": "110",
+          "cj_2": "115",
+          "cj_3": "120",
+          "best_snatch": "90",
+          "best_cj": "120",
+          "total": "210"
+        },
+        {
+          "meet_name": "End of Summer Meet",
+          "date": "2017-09-16",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Mark Nelson",
+          "body_weight_kg": "93.2",
+          "snatch_1": "75",
+          "snatch_2": "80",
+          "snatch_3": "85",
+          "cj_1": "100",
+          "cj_2": "105",
+          "cj_3": "110",
+          "best_snatch": "85",
+          "best_cj": "110",
+          "total": "195"
+        },
+        {
+          "meet_name": "NM Games",
+          "date": "2017-06-04",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Mark Nelson",
+          "body_weight_kg": "92.99",
+          "snatch_1": "72",
+          "snatch_2": "76",
+          "snatch_3": "-80",
+          "cj_1": "90",
+          "cj_2": "95",
+          "cj_3": "100",
+          "best_snatch": "76",
+          "best_cj": "100",
+          "total": "176"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "The John Davis Memorial 5 Invite",
+            "date": "2019-01-12",
+            "division": "Open Men's 102kg",
+            "lifter_name": "Mark Nelson",
+            "body_weight_kg": "98.29",
+            "snatch_1": "83",
+            "snatch_2": "87",
+            "snatch_3": "90",
+            "cj_1": "112",
+            "cj_2": "117",
+            "cj_3": "-122",
+            "best_snatch": "90",
+            "best_cj": "117",
+            "total": "207"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0xMiIsIndlaWdodF9jbGFzcyI6ODh9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "19",
+            "athlete_name": "Mark Nelson",
+            "total": "207",
+            "gender": "M",
+            "age": "37",
+            "club_name": "Strength Academy Weightlifting",
+            "membership_number": "1015424",
+            "wso": "Mountain South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Nike 2018 American Open Series 3",
+            "date": "2018-09-16",
+            "division": "Men's Masters (35-39) 96kg",
+            "lifter_name": "Mark Nelson",
+            "body_weight_kg": "95.18",
+            "snatch_1": "82",
+            "snatch_2": "-86",
+            "snatch_3": "86",
+            "cj_1": "110",
+            "cj_2": "115",
+            "cj_3": "120",
+            "best_snatch": "86",
+            "best_cj": "120",
+            "total": "206"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOS0xNiIsIndlaWdodF9jbGFzcyI6MTA3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "Mark Nelson",
+            "total": "206",
+            "gender": "M",
+            "age": "36",
+            "club_name": "Strength Academy Weightlifting",
+            "membership_number": "1015424",
+            "wso": "Mountain South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "NMLWC YOUTH AND MASTERS CHAMPIONSHIPS",
+            "date": "2018-05-13",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Mark Nelson",
+            "body_weight_kg": "98.23",
+            "snatch_1": "82",
+            "snatch_2": "86",
+            "snatch_3": "90",
+            "cj_1": "110",
+            "cj_2": "115",
+            "cj_3": "120",
+            "best_snatch": "90",
+            "best_cj": "120",
+            "total": "210"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNS0xMyIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Mark Nelson",
+            "total": "210",
+            "gender": "M",
+            "age": "36",
+            "club_name": "Strength Academy Weightlifting",
+            "membership_number": "1015424",
+            "wso": "Mountain South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "End of Summer Meet",
+            "date": "2017-09-16",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Mark Nelson",
+            "body_weight_kg": "93.2",
+            "snatch_1": "75",
+            "snatch_2": "80",
+            "snatch_3": "85",
+            "cj_1": "100",
+            "cj_2": "105",
+            "cj_3": "110",
+            "best_snatch": "85",
+            "best_cj": "110",
+            "total": "195"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wOS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wOS0xNiIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "18",
+            "athlete_name": "Mark Nelson",
+            "total": "195",
+            "gender": "M",
+            "age": "35",
+            "club_name": "Strength Academy Weightlifting",
+            "membership_number": "1015424",
+            "wso": "Mountain South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "NM Games",
+            "date": "2017-06-04",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Mark Nelson",
+            "body_weight_kg": "92.99",
+            "snatch_1": "72",
+            "snatch_2": "76",
+            "snatch_3": "-80",
+            "cj_1": "90",
+            "cj_2": "95",
+            "cj_3": "100",
+            "best_snatch": "76",
+            "best_cj": "100",
+            "total": "176"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNi0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNi0wNCIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "20",
+            "athlete_name": "Mark Nelson",
+            "total": "176",
+            "gender": "M",
+            "age": "35",
+            "club_name": "Strength Academy Weightlifting",
+            "membership_number": "1015424",
+            "wso": "Mountain South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 20669,
+      "athlete_name": "Mark Nelson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/20669",
+      "contaminated_lifter_id": 4091,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T17:32:36.147Z",
+      "profile_data": {
+        "membership_number": "188993",
+        "birth_year": 1989,
+        "gender": "M",
+        "club_name": "Black Flag Barbell",
+        "wso": "Ohio",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Open Olympic Lifting Meet",
+          "date": "2015-04-25",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Mark Nelson",
+          "body_weight_kg": "84",
+          "snatch_1": "-125",
+          "snatch_2": "125",
+          "snatch_3": "136",
+          "cj_1": "165",
+          "cj_2": "170",
+          "cj_3": "-175",
+          "best_snatch": "136",
+          "best_cj": "170",
+          "total": "306"
+        },
+        {
+          "meet_name": "Speed Shop Winter Weightlifting Open",
+          "date": "2015-02-02",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Mark Nelson",
+          "body_weight_kg": "83.6",
+          "snatch_1": "-125",
+          "snatch_2": "-125",
+          "snatch_3": "125",
+          "cj_1": "160",
+          "cj_2": "166",
+          "cj_3": "172",
+          "best_snatch": "125",
+          "best_cj": "172",
+          "total": "297"
+        },
+        {
+          "meet_name": "Early Fall PR Meet",
+          "date": "2014-09-06",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Mark Nelson",
+          "body_weight_kg": "76.8",
+          "snatch_1": "115",
+          "snatch_2": "115",
+          "snatch_3": "120",
+          "cj_1": "145",
+          "cj_2": "152",
+          "cj_3": "157",
+          "best_snatch": "120",
+          "best_cj": "157",
+          "total": "277"
+        },
+        {
+          "meet_name": "Last Minute American Open Qualifier",
+          "date": "2013-11-02",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Mark Nelson",
+          "body_weight_kg": "83",
+          "snatch_1": "110",
+          "snatch_2": "115",
+          "snatch_3": "120",
+          "cj_1": "140",
+          "cj_2": "155",
+          "cj_3": "165",
+          "best_snatch": "120",
+          "best_cj": "165",
+          "total": "285"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Open Olympic Lifting Meet",
+            "date": "2015-04-25",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Mark Nelson",
+            "body_weight_kg": "84",
+            "snatch_1": "-125",
+            "snatch_2": "125",
+            "snatch_3": "136",
+            "cj_1": "165",
+            "cj_2": "170",
+            "cj_3": "-175",
+            "best_snatch": "136",
+            "best_cj": "170",
+            "total": "306"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0yNSIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Mark Nelson",
+            "total": "306",
+            "gender": "M",
+            "age": "26",
+            "club_name": "Black Flag Barbell",
+            "membership_number": "188993",
+            "wso": "Ohio"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Speed Shop Winter Weightlifting Open",
+            "date": "2015-02-02",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Mark Nelson",
+            "body_weight_kg": "83.6",
+            "snatch_1": "-125",
+            "snatch_2": "-125",
+            "snatch_3": "125",
+            "cj_1": "160",
+            "cj_2": "166",
+            "cj_3": "172",
+            "best_snatch": "125",
+            "best_cj": "172",
+            "total": "297"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMi0wMiIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Mark Nelson",
+            "total": "297",
+            "gender": "M",
+            "age": "26",
+            "club_name": "Black Flag Barbell",
+            "membership_number": "188993",
+            "wso": "Ohio"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Early Fall PR Meet",
+            "date": "2014-09-06",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Mark Nelson",
+            "body_weight_kg": "76.8",
+            "snatch_1": "115",
+            "snatch_2": "115",
+            "snatch_3": "120",
+            "cj_1": "145",
+            "cj_2": "152",
+            "cj_3": "157",
+            "best_snatch": "120",
+            "best_cj": "157",
+            "total": "277"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOS0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOS0wNiIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Mark Nelson",
+            "total": "277",
+            "gender": "M",
+            "age": "25",
+            "club_name": "Black Flag Barbell",
+            "membership_number": "188993",
+            "wso": "Ohio"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Last Minute American Open Qualifier",
+            "date": "2013-11-02",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Mark Nelson",
+            "body_weight_kg": "83",
+            "snatch_1": "110",
+            "snatch_2": "115",
+            "snatch_3": "120",
+            "cj_1": "140",
+            "cj_2": "155",
+            "cj_3": "165",
+            "best_snatch": "120",
+            "best_cj": "165",
+            "total": "285"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMS0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMS0wMiIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Mark Nelson",
+            "total": "285",
+            "gender": "M",
+            "age": "24",
+            "club_name": "Black Flag Barbell",
+            "membership_number": "188993",
+            "wso": "Ohio"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

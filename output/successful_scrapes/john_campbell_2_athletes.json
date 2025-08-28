@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T00:33:45.700Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "John Campbell",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 85295794
+  },
+  "data": [
+    {
+      "internal_id": 3335,
+      "athlete_name": "John Campbell",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/3335",
+      "contaminated_lifter_id": 5847,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T00:33:30.749Z",
+      "profile_data": {
+        "membership_number": "188721",
+        "birth_year": 1973,
+        "gender": "M",
+        "club_name": "SOUTH COBB BARBELL CLUB",
+        "wso": "DMV",
+        "national_rank": "26"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Old Dominion Classic",
+          "date": "2013-11-10",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "John Campbell",
+          "body_weight_kg": "75.3",
+          "snatch_1": "40",
+          "snatch_2": "52",
+          "snatch_3": "55",
+          "cj_1": "52",
+          "cj_2": "61",
+          "cj_3": "65",
+          "best_snatch": "55",
+          "best_cj": "65",
+          "total": "120"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Old Dominion Classic",
+            "date": "2013-11-10",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "John Campbell",
+            "body_weight_kg": "75.3",
+            "snatch_1": "40",
+            "snatch_2": "52",
+            "snatch_3": "55",
+            "cj_1": "52",
+            "cj_2": "61",
+            "cj_3": "65",
+            "best_snatch": "55",
+            "best_cj": "65",
+            "total": "120"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMS0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMS0xMCIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "26",
+            "athlete_name": "John Campbell",
+            "total": "120",
+            "gender": "M",
+            "age": "40",
+            "club_name": "SOUTH COBB BARBELL CLUB",
+            "membership_number": "188721",
+            "wso": "DMV"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 34421,
+      "athlete_name": "John Campbell",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/34421",
+      "contaminated_lifter_id": 5847,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T00:33:45.698Z",
+      "profile_data": {
+        "membership_number": "214851",
+        "birth_year": 1996,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "New Jersey",
+        "national_rank": "53"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Bridgeport Barbell Club Classic",
+          "date": "2015-06-28",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "John Campbell",
+          "body_weight_kg": "81",
+          "snatch_1": "65",
+          "snatch_2": "70",
+          "snatch_3": "-76",
+          "cj_1": "85",
+          "cj_2": "-90",
+          "cj_3": "-97",
+          "best_snatch": "70",
+          "best_cj": "85",
+          "total": "155"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Bridgeport Barbell Club Classic",
+            "date": "2015-06-28",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "John Campbell",
+            "body_weight_kg": "81",
+            "snatch_1": "65",
+            "snatch_2": "70",
+            "snatch_3": "-76",
+            "cj_1": "85",
+            "cj_2": "-90",
+            "cj_3": "-97",
+            "best_snatch": "70",
+            "best_cj": "85",
+            "total": "155"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNi0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNi0yOCIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "53",
+            "athlete_name": "John Campbell",
+            "total": "155",
+            "gender": "M",
+            "age": "19",
+            "club_name": "-",
+            "membership_number": "214851",
+            "wso": "New Jersey"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

@@ -1,0 +1,294 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T06:58:32.467Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Sean Sullivan",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 5,
+    "total_reverse_lookups": 5,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 108382561
+  },
+  "data": [
+    {
+      "internal_id": 3592,
+      "athlete_name": "Sean Sullivan",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/3592",
+      "contaminated_lifter_id": 17062,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T06:58:19.391Z",
+      "profile_data": {
+        "membership_number": "1026601",
+        "birth_year": 1973,
+        "gender": "M",
+        "club_name": "KC WEIGHTLIFTING",
+        "wso": "Missouri Valley",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Masters Qualifier",
+          "date": "2021-06-19",
+          "division": "Men's Masters (45-49) 89kg",
+          "lifter_name": "Sean Sullivan",
+          "body_weight_kg": "86",
+          "snatch_1": "72",
+          "snatch_2": "75",
+          "snatch_3": "79",
+          "cj_1": "88",
+          "cj_2": "90",
+          "cj_3": "-95",
+          "best_snatch": "79",
+          "best_cj": "90",
+          "total": "169"
+        },
+        {
+          "meet_name": "KC Weightlifting's Last Chance AO1",
+          "date": "2020-02-01",
+          "division": "Men's Masters (45-49) 89kg",
+          "lifter_name": "Sean Sullivan",
+          "body_weight_kg": "84.1",
+          "snatch_1": "68",
+          "snatch_2": "72",
+          "snatch_3": "75",
+          "cj_1": "85",
+          "cj_2": "-90",
+          "cj_3": "92",
+          "best_snatch": "75",
+          "best_cj": "92",
+          "total": "167"
+        },
+        {
+          "meet_name": "Kansas State & Open Championships",
+          "date": "2019-09-08",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Sean Sullivan",
+          "body_weight_kg": "84.8",
+          "snatch_1": "70",
+          "snatch_2": "75",
+          "snatch_3": "-80",
+          "cj_1": "85",
+          "cj_2": "90",
+          "cj_3": "-95",
+          "best_snatch": "75",
+          "best_cj": "90",
+          "total": "165"
+        },
+        {
+          "meet_name": "KC Weightliftings Spring Meet",
+          "date": "2019-04-06",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Sean Sullivan",
+          "body_weight_kg": "86.8",
+          "snatch_1": "70",
+          "snatch_2": "-73",
+          "snatch_3": "73",
+          "cj_1": "80",
+          "cj_2": "85",
+          "cj_3": "90",
+          "best_snatch": "73",
+          "best_cj": "90",
+          "total": "163"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Masters Qualifier",
+            "date": "2021-06-19",
+            "division": "Men's Masters (45-49) 89kg",
+            "lifter_name": "Sean Sullivan",
+            "body_weight_kg": "86",
+            "snatch_1": "72",
+            "snatch_2": "75",
+            "snatch_3": "79",
+            "cj_1": "88",
+            "cj_2": "90",
+            "cj_3": "-95",
+            "best_snatch": "79",
+            "best_cj": "90",
+            "total": "169"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNi0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNi0xOSIsIndlaWdodF9jbGFzcyI6MTQ2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Sean Sullivan",
+            "total": "169",
+            "gender": "M",
+            "age": "48",
+            "club_name": "KC WEIGHTLIFTING",
+            "membership_number": "1026601",
+            "wso": "Missouri Valley"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "KC Weightlifting's Last Chance AO1",
+            "date": "2020-02-01",
+            "division": "Men's Masters (45-49) 89kg",
+            "lifter_name": "Sean Sullivan",
+            "body_weight_kg": "84.1",
+            "snatch_1": "68",
+            "snatch_2": "72",
+            "snatch_3": "75",
+            "cj_1": "85",
+            "cj_2": "-90",
+            "cj_3": "92",
+            "best_snatch": "75",
+            "best_cj": "92",
+            "total": "167"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMi0wMSIsIndlaWdodF9jbGFzcyI6MTQ2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Sean Sullivan",
+            "total": "167",
+            "gender": "M",
+            "age": "47",
+            "club_name": "KC WEIGHTLIFTING",
+            "membership_number": "1026601",
+            "wso": "Missouri Valley"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Kansas State & Open Championships",
+            "date": "2019-09-08",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Sean Sullivan",
+            "body_weight_kg": "84.8",
+            "snatch_1": "70",
+            "snatch_2": "75",
+            "snatch_3": "-80",
+            "cj_1": "85",
+            "cj_2": "90",
+            "cj_3": "-95",
+            "best_snatch": "75",
+            "best_cj": "90",
+            "total": "165"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOS0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOS0wOCIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "15",
+            "athlete_name": "Sean Sullivan",
+            "total": "165",
+            "gender": "M",
+            "age": "46",
+            "club_name": "KC WEIGHTLIFTING",
+            "membership_number": "1026601",
+            "wso": "Missouri Valley"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "KC Weightliftings Spring Meet",
+            "date": "2019-04-06",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Sean Sullivan",
+            "body_weight_kg": "86.8",
+            "snatch_1": "70",
+            "snatch_2": "-73",
+            "snatch_3": "73",
+            "cj_1": "80",
+            "cj_2": "85",
+            "cj_3": "90",
+            "best_snatch": "73",
+            "best_cj": "90",
+            "total": "163"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0wNiIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "83",
+            "athlete_name": "Sean Sullivan",
+            "total": "163",
+            "gender": "M",
+            "age": "46",
+            "club_name": "KC WEIGHTLIFTING",
+            "membership_number": "1026601",
+            "wso": "Missouri Valley"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 30021,
+      "athlete_name": "Sean Sullivan",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/30021",
+      "contaminated_lifter_id": 17062,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T06:58:32.464Z",
+      "profile_data": {
+        "membership_number": "1002231",
+        "birth_year": 1993,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Illinois",
+        "national_rank": "18"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2016 Saint Patrick's Day Weightlifting Championship",
+          "date": "2016-03-13",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Sean Sullivan",
+          "body_weight_kg": "83.35",
+          "snatch_1": "-90",
+          "snatch_2": "90",
+          "snatch_3": "94",
+          "cj_1": "105",
+          "cj_2": "110",
+          "cj_3": "114",
+          "best_snatch": "94",
+          "best_cj": "114",
+          "total": "208"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2016 Saint Patrick's Day Weightlifting Championship",
+            "date": "2016-03-13",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Sean Sullivan",
+            "body_weight_kg": "83.35",
+            "snatch_1": "-90",
+            "snatch_2": "90",
+            "snatch_3": "94",
+            "cj_1": "105",
+            "cj_2": "110",
+            "cj_3": "114",
+            "best_snatch": "94",
+            "best_cj": "114",
+            "total": "208"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMy0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMy0xMyIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "18",
+            "athlete_name": "Sean Sullivan",
+            "total": "208",
+            "gender": "M",
+            "age": "23",
+            "club_name": "-",
+            "membership_number": "1002231",
+            "wso": "Illinois"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

@@ -1,0 +1,435 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T05:25:51.696Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Joshua Rivera",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 8,
+    "total_reverse_lookups": 8,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 102821790
+  },
+  "data": [
+    {
+      "internal_id": 43981,
+      "athlete_name": "Joshua Rivera",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/43981",
+      "contaminated_lifter_id": 22175,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T05:25:31.718Z",
+      "profile_data": {
+        "membership_number": "1002607",
+        "birth_year": 2003,
+        "gender": "M",
+        "club_name": "CHFP WEIGHTLIFTING CLUB",
+        "wso": "DMV",
+        "national_rank": "4"
+      },
+      "competition_history": [
+        {
+          "meet_name": "CHFP Youth Developmental Meet",
+          "date": "2019-04-14",
+          "division": "Open Men's 67kg",
+          "lifter_name": "Joshua Rivera",
+          "body_weight_kg": "63.7",
+          "snatch_1": "43",
+          "snatch_2": "45",
+          "snatch_3": "47",
+          "cj_1": "50",
+          "cj_2": "55",
+          "cj_3": "60",
+          "best_snatch": "47",
+          "best_cj": "60",
+          "total": "107"
+        },
+        {
+          "meet_name": "2017 Texas State Weightlifting Championships",
+          "date": "2017-01-15",
+          "division": "Men's 14-15 Age Group 50 Kg",
+          "lifter_name": "Joshua Rivera",
+          "body_weight_kg": "45.7",
+          "snatch_1": "29",
+          "snatch_2": "32",
+          "snatch_3": "-35",
+          "cj_1": "37",
+          "cj_2": "40",
+          "cj_3": "43",
+          "best_snatch": "32",
+          "best_cj": "43",
+          "total": "75"
+        },
+        {
+          "meet_name": "September Showdown 2016",
+          "date": "2016-09-24",
+          "division": "Men's 13 Under Age Group 44kg",
+          "lifter_name": "Joshua Rivera",
+          "body_weight_kg": "43.2",
+          "snatch_1": "30",
+          "snatch_2": "33",
+          "snatch_3": "-35",
+          "cj_1": "39",
+          "cj_2": "-41",
+          "cj_3": "41",
+          "best_snatch": "33",
+          "best_cj": "41",
+          "total": "74"
+        },
+        {
+          "meet_name": "2016 National Youth Championship",
+          "date": "2016-06-26",
+          "division": "Men's 13 Under Age Group 44kg",
+          "lifter_name": "Joshua Rivera",
+          "body_weight_kg": "41.94",
+          "snatch_1": "24",
+          "snatch_2": "26",
+          "snatch_3": "28",
+          "cj_1": "37",
+          "cj_2": "40",
+          "cj_3": "-42",
+          "best_snatch": "28",
+          "best_cj": "40",
+          "total": "68"
+        },
+        {
+          "meet_name": "Force Praxeum Invitational",
+          "date": "2016-05-14",
+          "division": "Men's 13 Under Age Group 44kg",
+          "lifter_name": "Joshua Rivera",
+          "body_weight_kg": "41.6",
+          "snatch_1": "22",
+          "snatch_2": "24",
+          "snatch_3": "26",
+          "cj_1": "33",
+          "cj_2": "35",
+          "cj_3": "38",
+          "best_snatch": "26",
+          "best_cj": "38",
+          "total": "64"
+        },
+        {
+          "meet_name": "Spring Fling",
+          "date": "2016-03-26",
+          "division": "Men's 13 Under Age Group 44kg",
+          "lifter_name": "Joshua Rivera",
+          "body_weight_kg": "42.5",
+          "snatch_1": "20",
+          "snatch_2": "22",
+          "snatch_3": "-24",
+          "cj_1": "30",
+          "cj_2": "32",
+          "cj_3": "35",
+          "best_snatch": "22",
+          "best_cj": "35",
+          "total": "57"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "CHFP Youth Developmental Meet",
+            "date": "2019-04-14",
+            "division": "Open Men's 67kg",
+            "lifter_name": "Joshua Rivera",
+            "body_weight_kg": "63.7",
+            "snatch_1": "43",
+            "snatch_2": "45",
+            "snatch_3": "47",
+            "cj_1": "50",
+            "cj_2": "55",
+            "cj_3": "60",
+            "best_snatch": "47",
+            "best_cj": "60",
+            "total": "107"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0xNCIsIndlaWdodF9jbGFzcyI6ODN9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Joshua Rivera",
+            "total": "107",
+            "gender": "M",
+            "age": "16",
+            "club_name": "CHFP WEIGHTLIFTING CLUB",
+            "membership_number": "1002607",
+            "wso": "DMV"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2017 Texas State Weightlifting Championships",
+            "date": "2017-01-15",
+            "division": "Men's 14-15 Age Group 50 Kg",
+            "lifter_name": "Joshua Rivera",
+            "body_weight_kg": "45.7",
+            "snatch_1": "29",
+            "snatch_2": "32",
+            "snatch_3": "-35",
+            "cj_1": "37",
+            "cj_2": "40",
+            "cj_3": "43",
+            "best_snatch": "32",
+            "best_cj": "43",
+            "total": "75"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMS0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMS0xNSIsIndlaWdodF9jbGFzcyI6MzA2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Joshua Rivera",
+            "total": "75",
+            "gender": "M",
+            "age": "14",
+            "club_name": "CHFP WEIGHTLIFTING CLUB",
+            "membership_number": "1002607",
+            "wso": "DMV"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "September Showdown 2016",
+            "date": "2016-09-24",
+            "division": "Men's 13 Under Age Group 44kg",
+            "lifter_name": "Joshua Rivera",
+            "body_weight_kg": "43.2",
+            "snatch_1": "30",
+            "snatch_2": "33",
+            "snatch_3": "-35",
+            "cj_1": "39",
+            "cj_2": "-41",
+            "cj_3": "41",
+            "best_snatch": "33",
+            "best_cj": "41",
+            "total": "74"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOS0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOS0yNCIsIndlaWdodF9jbGFzcyI6NDR9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Joshua Rivera",
+            "total": "74",
+            "gender": "M",
+            "age": "13",
+            "club_name": "CHFP WEIGHTLIFTING CLUB",
+            "membership_number": "1002607",
+            "wso": "DMV"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2016 National Youth Championship",
+            "date": "2016-06-26",
+            "division": "Men's 13 Under Age Group 44kg",
+            "lifter_name": "Joshua Rivera",
+            "body_weight_kg": "41.94",
+            "snatch_1": "24",
+            "snatch_2": "26",
+            "snatch_3": "28",
+            "cj_1": "37",
+            "cj_2": "40",
+            "cj_3": "-42",
+            "best_snatch": "28",
+            "best_cj": "40",
+            "total": "68"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0yNiIsIndlaWdodF9jbGFzcyI6NDR9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "Joshua Rivera",
+            "total": "68",
+            "gender": "M",
+            "age": "13",
+            "club_name": "CHFP WEIGHTLIFTING CLUB",
+            "membership_number": "1002607",
+            "wso": "DMV"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Force Praxeum Invitational",
+            "date": "2016-05-14",
+            "division": "Men's 13 Under Age Group 44kg",
+            "lifter_name": "Joshua Rivera",
+            "body_weight_kg": "41.6",
+            "snatch_1": "22",
+            "snatch_2": "24",
+            "snatch_3": "26",
+            "cj_1": "33",
+            "cj_2": "35",
+            "cj_3": "38",
+            "best_snatch": "26",
+            "best_cj": "38",
+            "total": "64"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0xNCIsIndlaWdodF9jbGFzcyI6NDR9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Joshua Rivera",
+            "total": "64",
+            "gender": "M",
+            "age": "13",
+            "club_name": "CHFP WEIGHTLIFTING CLUB",
+            "membership_number": "1002607",
+            "wso": "DMV"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Spring Fling",
+            "date": "2016-03-26",
+            "division": "Men's 13 Under Age Group 44kg",
+            "lifter_name": "Joshua Rivera",
+            "body_weight_kg": "42.5",
+            "snatch_1": "20",
+            "snatch_2": "22",
+            "snatch_3": "-24",
+            "cj_1": "30",
+            "cj_2": "32",
+            "cj_3": "35",
+            "best_snatch": "22",
+            "best_cj": "35",
+            "total": "57"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMy0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMy0yNiIsIndlaWdodF9jbGFzcyI6NDR9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Joshua Rivera",
+            "total": "57",
+            "gender": "M",
+            "age": "13",
+            "club_name": "CHFP WEIGHTLIFTING CLUB",
+            "membership_number": "1002607",
+            "wso": "DMV"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 49300,
+      "athlete_name": "Joshua Rivera",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/49300",
+      "contaminated_lifter_id": 22175,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T05:25:51.693Z",
+      "profile_data": {
+        "membership_number": "1054080",
+        "birth_year": 2002,
+        "gender": "M",
+        "club_name": "Keep Pulling",
+        "wso": "Florida",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Tampa Bay Holiday Classic 2 & Keep Pulling Grand Prix Finals",
+          "date": "2021-12-18",
+          "division": "Junior Men's 109kg",
+          "lifter_name": "Joshua Rivera",
+          "body_weight_kg": "106.8",
+          "snatch_1": "98",
+          "snatch_2": "101",
+          "snatch_3": "105",
+          "cj_1": "125",
+          "cj_2": "-130",
+          "cj_3": "130",
+          "best_snatch": "105",
+          "best_cj": "130",
+          "total": "235"
+        },
+        {
+          "meet_name": "Tampa Bay Spring Classic 4",
+          "date": "2021-03-28",
+          "division": "Junior Men's 102kg",
+          "lifter_name": "Joshua Rivera",
+          "body_weight_kg": "100.9",
+          "snatch_1": "93",
+          "snatch_2": "-97",
+          "snatch_3": "98",
+          "cj_1": "110",
+          "cj_2": "115",
+          "cj_3": "120",
+          "best_snatch": "98",
+          "best_cj": "120",
+          "total": "218"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Tampa Bay Holiday Classic 2 & Keep Pulling Grand Prix Finals",
+            "date": "2021-12-18",
+            "division": "Junior Men's 109kg",
+            "lifter_name": "Joshua Rivera",
+            "body_weight_kg": "106.8",
+            "snatch_1": "98",
+            "snatch_2": "101",
+            "snatch_3": "105",
+            "cj_1": "125",
+            "cj_2": "-130",
+            "cj_3": "130",
+            "best_snatch": "105",
+            "best_cj": "130",
+            "total": "235"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMi0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMi0xOCIsIndlaWdodF9jbGFzcyI6Njl9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Joshua Rivera",
+            "total": "235",
+            "gender": "M",
+            "age": "19",
+            "club_name": "Keep Pulling",
+            "membership_number": "1054080",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Tampa Bay Spring Classic 4",
+            "date": "2021-03-28",
+            "division": "Junior Men's 102kg",
+            "lifter_name": "Joshua Rivera",
+            "body_weight_kg": "100.9",
+            "snatch_1": "93",
+            "snatch_2": "-97",
+            "snatch_3": "98",
+            "cj_1": "110",
+            "cj_2": "115",
+            "cj_3": "120",
+            "best_snatch": "98",
+            "best_cj": "120",
+            "total": "218"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMy0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMy0yOCIsIndlaWdodF9jbGFzcyI6Njh9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Joshua Rivera",
+            "total": "218",
+            "gender": "M",
+            "age": "19",
+            "club_name": "Keep Pulling",
+            "membership_number": "1054080",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

@@ -1,0 +1,341 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T13:01:44.625Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Ryan Johnston",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 6,
+    "total_reverse_lookups": 6,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 43774719
+  },
+  "data": [
+    {
+      "internal_id": 5169,
+      "athlete_name": "Ryan Johnston",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/5169",
+      "contaminated_lifter_id": 33823,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T13:01:20.213Z",
+      "profile_data": {
+        "membership_number": "1027202",
+        "birth_year": 1977,
+        "gender": "M",
+        "club_name": "BUTTE BARBELL CLUB",
+        "wso": "Mountain North",
+        "national_rank": "6"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Nike 2018 American Open Series 3",
+          "date": "2018-09-16",
+          "division": "Men's Masters (40-44) 89kg",
+          "lifter_name": "Ryan Johnston",
+          "body_weight_kg": "82.49",
+          "snatch_1": "66",
+          "snatch_2": "70",
+          "snatch_3": "-78",
+          "cj_1": "88",
+          "cj_2": "93",
+          "cj_3": "98",
+          "best_snatch": "70",
+          "best_cj": "98",
+          "total": "168"
+        },
+        {
+          "meet_name": "Montana State Weightlifting Championships",
+          "date": "2018-08-11",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Ryan Johnston",
+          "body_weight_kg": "84.4",
+          "snatch_1": "64",
+          "snatch_2": "68",
+          "snatch_3": "72",
+          "cj_1": "86",
+          "cj_2": "91",
+          "cj_3": "-96",
+          "best_snatch": "72",
+          "best_cj": "91",
+          "total": "163"
+        },
+        {
+          "meet_name": "Butte Barbell Club Winter Classic",
+          "date": "2018-02-17",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Ryan Johnston",
+          "body_weight_kg": "84.2",
+          "snatch_1": "64",
+          "snatch_2": "68",
+          "snatch_3": "72",
+          "cj_1": "86",
+          "cj_2": "90",
+          "cj_3": "94",
+          "best_snatch": "72",
+          "best_cj": "94",
+          "total": "166"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Nike 2018 American Open Series 3",
+            "date": "2018-09-16",
+            "division": "Men's Masters (40-44) 89kg",
+            "lifter_name": "Ryan Johnston",
+            "body_weight_kg": "82.49",
+            "snatch_1": "66",
+            "snatch_2": "70",
+            "snatch_3": "-78",
+            "cj_1": "88",
+            "cj_2": "93",
+            "cj_3": "98",
+            "best_snatch": "70",
+            "best_cj": "98",
+            "total": "168"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOS0xNiIsIndlaWdodF9jbGFzcyI6MTI2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Ryan Johnston",
+            "total": "168",
+            "gender": "M",
+            "age": "41",
+            "club_name": "BUTTE BARBELL CLUB",
+            "membership_number": "1027202",
+            "wso": "Mountain North"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Montana State Weightlifting Championships",
+            "date": "2018-08-11",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Ryan Johnston",
+            "body_weight_kg": "84.4",
+            "snatch_1": "64",
+            "snatch_2": "68",
+            "snatch_3": "72",
+            "cj_1": "86",
+            "cj_2": "91",
+            "cj_3": "-96",
+            "best_snatch": "72",
+            "best_cj": "91",
+            "total": "163"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOC0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOC0xMSIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "20",
+            "athlete_name": "Ryan Johnston",
+            "total": "163",
+            "gender": "M",
+            "age": "41",
+            "club_name": "BUTTE BARBELL CLUB",
+            "membership_number": "1027202",
+            "wso": "Mountain North"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Butte Barbell Club Winter Classic",
+            "date": "2018-02-17",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Ryan Johnston",
+            "body_weight_kg": "84.2",
+            "snatch_1": "64",
+            "snatch_2": "68",
+            "snatch_3": "72",
+            "cj_1": "86",
+            "cj_2": "90",
+            "cj_3": "94",
+            "best_snatch": "72",
+            "best_cj": "94",
+            "total": "166"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMi0xNyIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "23",
+            "athlete_name": "Ryan Johnston",
+            "total": "166",
+            "gender": "M",
+            "age": "41",
+            "club_name": "BUTTE BARBELL CLUB",
+            "membership_number": "1027202",
+            "wso": "Mountain North"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 25613,
+      "athlete_name": "Ryan Johnston",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/25613",
+      "contaminated_lifter_id": 33823,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T13:01:44.623Z",
+      "profile_data": {
+        "membership_number": "1031528",
+        "birth_year": 1991,
+        "gender": "M",
+        "club_name": "Prairie State Barbell",
+        "wso": "Indiana",
+        "national_rank": "11"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2019 CHICAGO OPEN",
+          "date": "2019-08-04",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Ryan Johnston",
+          "body_weight_kg": "84.7",
+          "snatch_1": "100",
+          "snatch_2": "105",
+          "snatch_3": "-108",
+          "cj_1": "118",
+          "cj_2": "122",
+          "cj_3": "126",
+          "best_snatch": "105",
+          "best_cj": "126",
+          "total": "231"
+        },
+        {
+          "meet_name": "Prairie State Open",
+          "date": "2018-11-17",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Ryan Johnston",
+          "body_weight_kg": "83.3",
+          "snatch_1": "95",
+          "snatch_2": "100",
+          "snatch_3": "-102",
+          "cj_1": "110",
+          "cj_2": "115",
+          "cj_3": "120",
+          "best_snatch": "100",
+          "best_cj": "120",
+          "total": "220"
+        },
+        {
+          "meet_name": "2018 CHICAGO OPEN",
+          "date": "2018-08-04",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Ryan Johnston",
+          "body_weight_kg": "83.4",
+          "snatch_1": "87",
+          "snatch_2": "-90",
+          "snatch_3": "90",
+          "cj_1": "105",
+          "cj_2": "110",
+          "cj_3": "-115",
+          "best_snatch": "90",
+          "best_cj": "110",
+          "total": "200"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2019 CHICAGO OPEN",
+            "date": "2019-08-04",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Ryan Johnston",
+            "body_weight_kg": "84.7",
+            "snatch_1": "100",
+            "snatch_2": "105",
+            "snatch_3": "-108",
+            "cj_1": "118",
+            "cj_2": "122",
+            "cj_3": "126",
+            "best_snatch": "105",
+            "best_cj": "126",
+            "total": "231"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOC0wNCIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "11",
+            "athlete_name": "Ryan Johnston",
+            "total": "231",
+            "gender": "M",
+            "age": "28",
+            "club_name": "Prairie State Barbell",
+            "membership_number": "1031528",
+            "wso": "Indiana"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Prairie State Open",
+            "date": "2018-11-17",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Ryan Johnston",
+            "body_weight_kg": "83.3",
+            "snatch_1": "95",
+            "snatch_2": "100",
+            "snatch_3": "-102",
+            "cj_1": "110",
+            "cj_2": "115",
+            "cj_3": "120",
+            "best_snatch": "100",
+            "best_cj": "120",
+            "total": "220"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMS0xNyIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "7",
+            "athlete_name": "Ryan Johnston",
+            "total": "220",
+            "gender": "M",
+            "age": "27",
+            "club_name": "Prairie State Barbell",
+            "membership_number": "1031528",
+            "wso": "Indiana"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2018 CHICAGO OPEN",
+            "date": "2018-08-04",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Ryan Johnston",
+            "body_weight_kg": "83.4",
+            "snatch_1": "87",
+            "snatch_2": "-90",
+            "snatch_3": "90",
+            "cj_1": "105",
+            "cj_2": "110",
+            "cj_3": "-115",
+            "best_snatch": "90",
+            "best_cj": "110",
+            "total": "200"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOC0wNCIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "40",
+            "athlete_name": "Ryan Johnston",
+            "total": "200",
+            "gender": "M",
+            "age": "27",
+            "club_name": "Prairie State Barbell",
+            "membership_number": "1031528",
+            "wso": "Indiana"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

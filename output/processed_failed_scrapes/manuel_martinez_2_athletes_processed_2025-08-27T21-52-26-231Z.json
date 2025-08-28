@@ -1,0 +1,379 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T07:19:20.249Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Manuel Martinez",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 7,
+    "total_reverse_lookups": 7,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 109630343
+  },
+  "data": [
+    {
+      "internal_id": 34266,
+      "athlete_name": "Manuel Martinez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/34266",
+      "contaminated_lifter_id": 13894,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T07:19:07.043Z",
+      "profile_data": {
+        "membership_number": "207739",
+        "birth_year": 1995,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Mountain South",
+        "national_rank": "12"
+      },
+      "competition_history": [
+        {
+          "meet_name": "MWL 77",
+          "date": "2017-10-14",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Manuel Martinez",
+          "body_weight_kg": "94.5",
+          "snatch_1": "95",
+          "snatch_2": "100",
+          "snatch_3": "-105",
+          "cj_1": "-120",
+          "cj_2": "123",
+          "cj_3": "-127",
+          "best_snatch": "100",
+          "best_cj": "123",
+          "total": "223"
+        },
+        {
+          "meet_name": "Kilo Cup",
+          "date": "2017-09-23",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Manuel Martinez",
+          "body_weight_kg": "93.4",
+          "snatch_1": "94",
+          "snatch_2": "99",
+          "snatch_3": "-103",
+          "cj_1": "117",
+          "cj_2": "121",
+          "cj_3": "-127",
+          "best_snatch": "99",
+          "best_cj": "121",
+          "total": "220"
+        },
+        {
+          "meet_name": "Summertime and the lifting is easy",
+          "date": "2017-07-29",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Manuel Martinez",
+          "body_weight_kg": "93.51",
+          "snatch_1": "91",
+          "snatch_2": "97",
+          "snatch_3": "-102",
+          "cj_1": "-117",
+          "cj_2": "-120",
+          "cj_3": "-120",
+          "best_snatch": "97",
+          "best_cj": "0",
+          "total": "0"
+        },
+        {
+          "meet_name": "New Mexico Games",
+          "date": "2016-05-22",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Manuel Martinez",
+          "body_weight_kg": "99.62",
+          "snatch_1": "-95",
+          "snatch_2": "98",
+          "snatch_3": "-105",
+          "cj_1": "121",
+          "cj_2": "126",
+          "cj_3": "131",
+          "best_snatch": "98",
+          "best_cj": "131",
+          "total": "229"
+        },
+        {
+          "meet_name": "HDAC Spring Break Invite",
+          "date": "2016-03-12",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Manuel Martinez",
+          "body_weight_kg": "101.99",
+          "snatch_1": "-90",
+          "snatch_2": "91",
+          "snatch_3": "-101",
+          "cj_1": "120",
+          "cj_2": "125",
+          "cj_3": "-130",
+          "best_snatch": "91",
+          "best_cj": "125",
+          "total": "216"
+        },
+        {
+          "meet_name": "NM Games & NM State Championships",
+          "date": "2015-07-19",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Manuel Martinez",
+          "body_weight_kg": "102.82",
+          "snatch_1": "-85",
+          "snatch_2": "85",
+          "snatch_3": "-95",
+          "cj_1": "-120",
+          "cj_2": "120",
+          "cj_3": "123",
+          "best_snatch": "85",
+          "best_cj": "123",
+          "total": "208"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "MWL 77",
+            "date": "2017-10-14",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Manuel Martinez",
+            "body_weight_kg": "94.5",
+            "snatch_1": "95",
+            "snatch_2": "100",
+            "snatch_3": "-105",
+            "cj_1": "-120",
+            "cj_2": "123",
+            "cj_3": "-127",
+            "best_snatch": "100",
+            "best_cj": "123",
+            "total": "223"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0xNCIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "12",
+            "athlete_name": "Manuel Martinez",
+            "total": "223",
+            "gender": "M",
+            "age": "22",
+            "club_name": "-",
+            "membership_number": "207739",
+            "wso": "Mountain South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Kilo Cup",
+            "date": "2017-09-23",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Manuel Martinez",
+            "body_weight_kg": "93.4",
+            "snatch_1": "94",
+            "snatch_2": "99",
+            "snatch_3": "-103",
+            "cj_1": "117",
+            "cj_2": "121",
+            "cj_3": "-127",
+            "best_snatch": "99",
+            "best_cj": "121",
+            "total": "220"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wOS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wOS0yMyIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "11",
+            "athlete_name": "Manuel Martinez",
+            "total": "220",
+            "gender": "M",
+            "age": "22",
+            "club_name": "-",
+            "membership_number": "207739",
+            "wso": "Mountain South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Summertime and the lifting is easy",
+            "date": "2017-07-29",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Manuel Martinez",
+            "body_weight_kg": "93.51",
+            "snatch_1": "91",
+            "snatch_2": "97",
+            "snatch_3": "-102",
+            "cj_1": "-117",
+            "cj_2": "-120",
+            "cj_3": "-120",
+            "best_snatch": "97",
+            "best_cj": "0",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNy0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNy0yOSIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "New Mexico Games",
+            "date": "2016-05-22",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Manuel Martinez",
+            "body_weight_kg": "99.62",
+            "snatch_1": "-95",
+            "snatch_2": "98",
+            "snatch_3": "-105",
+            "cj_1": "121",
+            "cj_2": "126",
+            "cj_3": "131",
+            "best_snatch": "98",
+            "best_cj": "131",
+            "total": "229"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0yMiIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "12",
+            "athlete_name": "Manuel Martinez",
+            "total": "229",
+            "gender": "M",
+            "age": "21",
+            "club_name": "-",
+            "membership_number": "207739",
+            "wso": "Mountain South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "HDAC Spring Break Invite",
+            "date": "2016-03-12",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Manuel Martinez",
+            "body_weight_kg": "101.99",
+            "snatch_1": "-90",
+            "snatch_2": "91",
+            "snatch_3": "-101",
+            "cj_1": "120",
+            "cj_2": "125",
+            "cj_3": "-130",
+            "best_snatch": "91",
+            "best_cj": "125",
+            "total": "216"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMy0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMy0xMiIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "13",
+            "athlete_name": "Manuel Martinez",
+            "total": "216",
+            "gender": "M",
+            "age": "21",
+            "club_name": "-",
+            "membership_number": "207739",
+            "wso": "Mountain South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "NM Games & NM State Championships",
+            "date": "2015-07-19",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Manuel Martinez",
+            "body_weight_kg": "102.82",
+            "snatch_1": "-85",
+            "snatch_2": "85",
+            "snatch_3": "-95",
+            "cj_1": "-120",
+            "cj_2": "120",
+            "cj_3": "123",
+            "best_snatch": "85",
+            "best_cj": "123",
+            "total": "208"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNy0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNy0xOSIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "14",
+            "athlete_name": "Manuel Martinez",
+            "total": "208",
+            "gender": "M",
+            "age": "20",
+            "club_name": "-",
+            "membership_number": "207739",
+            "wso": "Mountain South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    },
+    {
+      "internal_id": 51050,
+      "athlete_name": "Manuel Martinez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/51050",
+      "contaminated_lifter_id": 13894,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T07:19:20.248Z",
+      "profile_data": {
+        "membership_number": "1057180",
+        "birth_year": 1990,
+        "gender": "M",
+        "club_name": "Pacific Weightlifting",
+        "wso": "California South",
+        "national_rank": "16"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Halloween Throwdown",
+          "date": "2021-10-30",
+          "division": "Open Men's 102kg",
+          "lifter_name": "Manuel Martinez",
+          "body_weight_kg": "100.8",
+          "snatch_1": "85",
+          "snatch_2": "88",
+          "snatch_3": "92",
+          "cj_1": "0",
+          "cj_2": "116",
+          "cj_3": "0",
+          "best_snatch": "92",
+          "best_cj": "116",
+          "total": "208"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Halloween Throwdown",
+            "date": "2021-10-30",
+            "division": "Open Men's 102kg",
+            "lifter_name": "Manuel Martinez",
+            "body_weight_kg": "100.8",
+            "snatch_1": "85",
+            "snatch_2": "88",
+            "snatch_3": "92",
+            "cj_1": "0",
+            "cj_2": "116",
+            "cj_3": "0",
+            "best_snatch": "92",
+            "best_cj": "116",
+            "total": "208"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMC0zMCIsIndlaWdodF9jbGFzcyI6ODh9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "16",
+            "athlete_name": "Manuel Martinez",
+            "total": "208",
+            "gender": "M",
+            "age": "31",
+            "club_name": "Pacific Weightlifting",
+            "membership_number": "1057180",
+            "wso": "California South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

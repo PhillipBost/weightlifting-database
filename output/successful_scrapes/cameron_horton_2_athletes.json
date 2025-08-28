@@ -1,0 +1,294 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T11:51:17.384Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Cameron Horton",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 5,
+    "total_reverse_lookups": 5,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 39547478
+  },
+  "data": [
+    {
+      "internal_id": 44806,
+      "athlete_name": "Cameron Horton",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/44806",
+      "contaminated_lifter_id": 22256,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T11:51:05.882Z",
+      "profile_data": {
+        "membership_number": "1006802",
+        "birth_year": 2005,
+        "gender": "F",
+        "club_name": "GOLDEN BARBELL CLUB",
+        "wso": "Mountain North",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Colorado Youth Weightlifting Championships",
+          "date": "2017-12-09",
+          "division": "Women's 13 Under Age Group 35kg",
+          "lifter_name": "Cameron Horton",
+          "body_weight_kg": "32.7",
+          "snatch_1": "21",
+          "snatch_2": "23",
+          "snatch_3": "25",
+          "cj_1": "29",
+          "cj_2": "31",
+          "cj_3": "33",
+          "best_snatch": "25",
+          "best_cj": "33",
+          "total": "58"
+        },
+        {
+          "meet_name": "FRCF Fall Weightlifting Meet",
+          "date": "2017-10-22",
+          "division": "Women's 13 Under Age Group 35kg",
+          "lifter_name": "Cameron Horton",
+          "body_weight_kg": "32",
+          "snatch_1": "-16",
+          "snatch_2": "16",
+          "snatch_3": "18",
+          "cj_1": "20",
+          "cj_2": "22",
+          "cj_3": "24",
+          "best_snatch": "18",
+          "best_cj": "24",
+          "total": "42"
+        },
+        {
+          "meet_name": "Rocky Mountain State Games",
+          "date": "2017-07-23",
+          "division": "Women's 13 Under Age Group 35kg",
+          "lifter_name": "Cameron Horton",
+          "body_weight_kg": "32.4",
+          "snatch_1": "19",
+          "snatch_2": "21",
+          "snatch_3": "23",
+          "cj_1": "25",
+          "cj_2": "28",
+          "cj_3": "31",
+          "best_snatch": "23",
+          "best_cj": "31",
+          "total": "54"
+        },
+        {
+          "meet_name": "National Law Enforcement Officers Memorial Fundraiser Weightlifting Meet",
+          "date": "2016-05-21",
+          "division": "Women's 13 Under Age Group 31kg",
+          "lifter_name": "Cameron Horton",
+          "body_weight_kg": "31",
+          "snatch_1": "16",
+          "snatch_2": "18",
+          "snatch_3": "20",
+          "cj_1": "22",
+          "cj_2": "25",
+          "cj_3": "29",
+          "best_snatch": "20",
+          "best_cj": "29",
+          "total": "49"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Colorado Youth Weightlifting Championships",
+            "date": "2017-12-09",
+            "division": "Women's 13 Under Age Group 35kg",
+            "lifter_name": "Cameron Horton",
+            "body_weight_kg": "32.7",
+            "snatch_1": "21",
+            "snatch_2": "23",
+            "snatch_3": "25",
+            "cj_1": "29",
+            "cj_2": "31",
+            "cj_3": "33",
+            "best_snatch": "25",
+            "best_cj": "33",
+            "total": "58"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMi0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMi0wOSIsIndlaWdodF9jbGFzcyI6Mjk5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Cameron Horton",
+            "total": "58",
+            "gender": "F",
+            "age": "12",
+            "club_name": "GOLDEN BARBELL CLUB",
+            "membership_number": "1006802",
+            "wso": "Mountain North"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "FRCF Fall Weightlifting Meet",
+            "date": "2017-10-22",
+            "division": "Women's 13 Under Age Group 35kg",
+            "lifter_name": "Cameron Horton",
+            "body_weight_kg": "32",
+            "snatch_1": "-16",
+            "snatch_2": "16",
+            "snatch_3": "18",
+            "cj_1": "20",
+            "cj_2": "22",
+            "cj_3": "24",
+            "best_snatch": "18",
+            "best_cj": "24",
+            "total": "42"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0yMiIsIndlaWdodF9jbGFzcyI6Mjk5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Cameron Horton",
+            "total": "42",
+            "gender": "F",
+            "age": "12",
+            "club_name": "GOLDEN BARBELL CLUB",
+            "membership_number": "1006802",
+            "wso": "Mountain North"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Rocky Mountain State Games",
+            "date": "2017-07-23",
+            "division": "Women's 13 Under Age Group 35kg",
+            "lifter_name": "Cameron Horton",
+            "body_weight_kg": "32.4",
+            "snatch_1": "19",
+            "snatch_2": "21",
+            "snatch_3": "23",
+            "cj_1": "25",
+            "cj_2": "28",
+            "cj_3": "31",
+            "best_snatch": "23",
+            "best_cj": "31",
+            "total": "54"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNy0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNy0yMyIsIndlaWdodF9jbGFzcyI6Mjk5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Cameron Horton",
+            "total": "54",
+            "gender": "F",
+            "age": "12",
+            "club_name": "GOLDEN BARBELL CLUB",
+            "membership_number": "1006802",
+            "wso": "Mountain North"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "National Law Enforcement Officers Memorial Fundraiser Weightlifting Meet",
+            "date": "2016-05-21",
+            "division": "Women's 13 Under Age Group 31kg",
+            "lifter_name": "Cameron Horton",
+            "body_weight_kg": "31",
+            "snatch_1": "16",
+            "snatch_2": "18",
+            "snatch_3": "20",
+            "cj_1": "22",
+            "cj_2": "25",
+            "cj_3": "29",
+            "best_snatch": "20",
+            "best_cj": "29",
+            "total": "49"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0yMSIsIndlaWdodF9jbGFzcyI6Mjk4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Cameron Horton",
+            "total": "49",
+            "gender": "F",
+            "age": "11",
+            "club_name": "GOLDEN BARBELL CLUB",
+            "membership_number": "1006802",
+            "wso": "Mountain North"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 64676,
+      "athlete_name": "Cameron Horton",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/64676",
+      "contaminated_lifter_id": 22256,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T11:51:17.382Z",
+      "profile_data": {
+        "membership_number": "1079020",
+        "birth_year": 2006,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Carolina",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "LR Thanksgiving NUQ",
+          "date": "2024-11-25",
+          "division": "Open Men's +109kg",
+          "lifter_name": "Cameron Horton",
+          "body_weight_kg": "130.5",
+          "snatch_1": "70",
+          "snatch_2": "-80",
+          "snatch_3": "80",
+          "cj_1": "80",
+          "cj_2": "90",
+          "cj_3": "95",
+          "best_snatch": "80",
+          "best_cj": "95",
+          "total": "175"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "LR Thanksgiving NUQ",
+            "date": "2024-11-25",
+            "division": "Open Men's +109kg",
+            "lifter_name": "Cameron Horton",
+            "body_weight_kg": "130.5",
+            "snatch_1": "70",
+            "snatch_2": "-80",
+            "snatch_3": "80",
+            "cj_1": "80",
+            "cj_2": "90",
+            "cj_3": "95",
+            "best_snatch": "80",
+            "best_cj": "95",
+            "total": "175"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMS0yNSIsIndlaWdodF9jbGFzcyI6OTB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Cameron Horton",
+            "total": "175",
+            "gender": "M",
+            "age": "18",
+            "club_name": "-",
+            "membership_number": "1079020",
+            "wso": "Carolina"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

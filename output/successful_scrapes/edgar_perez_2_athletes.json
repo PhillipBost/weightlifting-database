@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T13:16:17.993Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Edgar Perez",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 44648087
+  },
+  "data": [
+    {
+      "internal_id": 38637,
+      "athlete_name": "Edgar Perez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/38637",
+      "contaminated_lifter_id": 35851,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T13:16:07.178Z",
+      "profile_data": {
+        "membership_number": "1027518",
+        "birth_year": 1999,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Pacific Northwest",
+        "national_rank": "25"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Southern Oregon Open",
+          "date": "2018-02-17",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Edgar Perez",
+          "body_weight_kg": "77.6",
+          "snatch_1": "-65",
+          "snatch_2": "-70",
+          "snatch_3": "70",
+          "cj_1": "84",
+          "cj_2": "89",
+          "cj_3": "94",
+          "best_snatch": "70",
+          "best_cj": "94",
+          "total": "164"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Southern Oregon Open",
+            "date": "2018-02-17",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Edgar Perez",
+            "body_weight_kg": "77.6",
+            "snatch_1": "-65",
+            "snatch_2": "-70",
+            "snatch_3": "70",
+            "cj_1": "84",
+            "cj_2": "89",
+            "cj_3": "94",
+            "best_snatch": "70",
+            "best_cj": "94",
+            "total": "164"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMi0xNyIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "25",
+            "athlete_name": "Edgar Perez",
+            "total": "164",
+            "gender": "M",
+            "age": "19",
+            "club_name": "-",
+            "membership_number": "1027518",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 59611,
+      "athlete_name": "Edgar Perez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/59611",
+      "contaminated_lifter_id": 35851,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T13:16:17.991Z",
+      "profile_data": {
+        "membership_number": "1071510",
+        "birth_year": 1996,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Illinois",
+        "national_rank": "12"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2nd Annual Steve Sakoulas Summer Open",
+          "date": "2023-07-29",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Edgar Perez",
+          "body_weight_kg": "79.4",
+          "snatch_1": "63",
+          "snatch_2": "66",
+          "snatch_3": "69",
+          "cj_1": "90",
+          "cj_2": "93",
+          "cj_3": "97",
+          "best_snatch": "69",
+          "best_cj": "97",
+          "total": "166"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2nd Annual Steve Sakoulas Summer Open",
+            "date": "2023-07-29",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Edgar Perez",
+            "body_weight_kg": "79.4",
+            "snatch_1": "63",
+            "snatch_2": "66",
+            "snatch_3": "69",
+            "cj_1": "90",
+            "cj_2": "93",
+            "cj_3": "97",
+            "best_snatch": "69",
+            "best_cj": "97",
+            "total": "166"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNy0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNy0yOSIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "12",
+            "athlete_name": "Edgar Perez",
+            "total": "166",
+            "gender": "M",
+            "age": "27",
+            "club_name": "-",
+            "membership_number": "1071510",
+            "wso": "Illinois"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

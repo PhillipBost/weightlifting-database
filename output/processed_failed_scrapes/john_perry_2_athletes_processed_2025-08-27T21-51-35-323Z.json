@@ -1,0 +1,426 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T04:49:25.327Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "John Perry",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 8,
+    "total_reverse_lookups": 8,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 100635421
+  },
+  "data": [
+    {
+      "internal_id": 23600,
+      "athlete_name": "John Perry",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/23600",
+      "contaminated_lifter_id": 10687,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T04:48:26.509Z",
+      "profile_data": {
+        "membership_number": "192364",
+        "birth_year": 1990,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Georgia",
+        "national_rank": "26"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Emory Open",
+          "date": "2014-03-01",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "John Perry",
+          "body_weight_kg": "74.8",
+          "snatch_1": "40",
+          "snatch_2": "45",
+          "snatch_3": "46",
+          "cj_1": "69",
+          "cj_2": "74",
+          "cj_3": "80",
+          "best_snatch": "46",
+          "best_cj": "80",
+          "total": "126"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Emory Open",
+            "date": "2014-03-01",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "John Perry",
+            "body_weight_kg": "74.8",
+            "snatch_1": "40",
+            "snatch_2": "45",
+            "snatch_3": "46",
+            "cj_1": "69",
+            "cj_2": "74",
+            "cj_3": "80",
+            "best_snatch": "46",
+            "best_cj": "80",
+            "total": "126"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0wMSIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "26",
+            "athlete_name": "John Perry",
+            "total": "126",
+            "gender": "M",
+            "age": "24",
+            "club_name": "-",
+            "membership_number": "192364",
+            "wso": "Georgia"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 38463,
+      "athlete_name": "John Perry",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/38463",
+      "contaminated_lifter_id": 10687,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T04:49:25.326Z",
+      "profile_data": {
+        "membership_number": "191027",
+        "birth_year": 1998,
+        "gender": "M",
+        "club_name": "ROSEMOUNT WEIGHTLIFTING CLUB",
+        "wso": "Minnesota-Dakotas",
+        "national_rank": "13"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Minnesota State High School Championships",
+          "date": "2015-03-07",
+          "division": "Open Men's 69 kg",
+          "lifter_name": "John Perry",
+          "body_weight_kg": "68.6",
+          "snatch_1": "-74",
+          "snatch_2": "-74",
+          "snatch_3": "-74",
+          "cj_1": "90",
+          "cj_2": "-95",
+          "cj_3": "-97",
+          "best_snatch": "0",
+          "best_cj": "90",
+          "total": "0"
+        },
+        {
+          "meet_name": "Blaze High School Open",
+          "date": "2015-02-07",
+          "division": "Open Men's 69 kg",
+          "lifter_name": "John Perry",
+          "body_weight_kg": "68",
+          "snatch_1": "71",
+          "snatch_2": "-74",
+          "snatch_3": "74",
+          "cj_1": "-92",
+          "cj_2": "-95",
+          "cj_3": "95",
+          "best_snatch": "74",
+          "best_cj": "95",
+          "total": "169"
+        },
+        {
+          "meet_name": "Brian Trussell",
+          "date": "2015-01-17",
+          "division": "Open Men's 69 kg",
+          "lifter_name": "John Perry",
+          "body_weight_kg": "68.4",
+          "snatch_1": "68",
+          "snatch_2": "71",
+          "snatch_3": "75",
+          "cj_1": "86",
+          "cj_2": "90",
+          "cj_3": "94",
+          "best_snatch": "75",
+          "best_cj": "94",
+          "total": "169"
+        },
+        {
+          "meet_name": "North Metro High School Weightlifting Meet",
+          "date": "2014-12-13",
+          "division": "Open Men's 69 kg",
+          "lifter_name": "John Perry",
+          "body_weight_kg": "67.9",
+          "snatch_1": "60",
+          "snatch_2": "62",
+          "snatch_3": "66",
+          "cj_1": "82",
+          "cj_2": "83",
+          "cj_3": "88",
+          "best_snatch": "66",
+          "best_cj": "88",
+          "total": "154"
+        },
+        {
+          "meet_name": "MN HS Weightlifting State Championship",
+          "date": "2014-03-08",
+          "division": "Open Men's 62 kg",
+          "lifter_name": "John Perry",
+          "body_weight_kg": "61.1",
+          "snatch_1": "54",
+          "snatch_2": "56",
+          "snatch_3": "58",
+          "cj_1": "70",
+          "cj_2": "-73",
+          "cj_3": "73",
+          "best_snatch": "58",
+          "best_cj": "73",
+          "total": "131"
+        },
+        {
+          "meet_name": "Blaze High School Open",
+          "date": "2014-02-08",
+          "division": "Open Men's 62 kg",
+          "lifter_name": "John Perry",
+          "body_weight_kg": "61.06",
+          "snatch_1": "53",
+          "snatch_2": "55",
+          "snatch_3": "57",
+          "cj_1": "65",
+          "cj_2": "68",
+          "cj_3": "-71",
+          "best_snatch": "57",
+          "best_cj": "68",
+          "total": "125"
+        },
+        {
+          "meet_name": "Rosemont High School Open",
+          "date": "2014-01-18",
+          "division": "Open Men's 62 kg",
+          "lifter_name": "John Perry",
+          "body_weight_kg": "61.05",
+          "snatch_1": "44",
+          "snatch_2": "49",
+          "snatch_3": "52",
+          "cj_1": "60",
+          "cj_2": "63",
+          "cj_3": "66",
+          "best_snatch": "52",
+          "best_cj": "66",
+          "total": "118"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Minnesota State High School Championships",
+            "date": "2015-03-07",
+            "division": "Open Men's 69 kg",
+            "lifter_name": "John Perry",
+            "body_weight_kg": "68.6",
+            "snatch_1": "-74",
+            "snatch_2": "-74",
+            "snatch_3": "-74",
+            "cj_1": "90",
+            "cj_2": "-95",
+            "cj_3": "-97",
+            "best_snatch": "0",
+            "best_cj": "90",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMy0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMy0wNyIsIndlaWdodF9jbGFzcyI6MzU2fQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Blaze High School Open",
+            "date": "2015-02-07",
+            "division": "Open Men's 69 kg",
+            "lifter_name": "John Perry",
+            "body_weight_kg": "68",
+            "snatch_1": "71",
+            "snatch_2": "-74",
+            "snatch_3": "74",
+            "cj_1": "-92",
+            "cj_2": "-95",
+            "cj_3": "95",
+            "best_snatch": "74",
+            "best_cj": "95",
+            "total": "169"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMi0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMi0wNyIsIndlaWdodF9jbGFzcyI6MzU2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "13",
+            "athlete_name": "John Perry",
+            "total": "169",
+            "gender": "M",
+            "age": "17",
+            "club_name": "ROSEMOUNT WEIGHTLIFTING CLUB",
+            "membership_number": "191027",
+            "wso": "Minnesota-Dakotas"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Brian Trussell",
+            "date": "2015-01-17",
+            "division": "Open Men's 69 kg",
+            "lifter_name": "John Perry",
+            "body_weight_kg": "68.4",
+            "snatch_1": "68",
+            "snatch_2": "71",
+            "snatch_3": "75",
+            "cj_1": "86",
+            "cj_2": "90",
+            "cj_3": "94",
+            "best_snatch": "75",
+            "best_cj": "94",
+            "total": "169"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMS0xNyIsIndlaWdodF9jbGFzcyI6MzU2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "13",
+            "athlete_name": "John Perry",
+            "total": "169",
+            "gender": "M",
+            "age": "17",
+            "club_name": "ROSEMOUNT WEIGHTLIFTING CLUB",
+            "membership_number": "191027",
+            "wso": "Minnesota-Dakotas"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "North Metro High School Weightlifting Meet",
+            "date": "2014-12-13",
+            "division": "Open Men's 69 kg",
+            "lifter_name": "John Perry",
+            "body_weight_kg": "67.9",
+            "snatch_1": "60",
+            "snatch_2": "62",
+            "snatch_3": "66",
+            "cj_1": "82",
+            "cj_2": "83",
+            "cj_3": "88",
+            "best_snatch": "66",
+            "best_cj": "88",
+            "total": "154"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMi0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMi0xMyIsIndlaWdodF9jbGFzcyI6MzU2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "16",
+            "athlete_name": "John Perry",
+            "total": "154",
+            "gender": "M",
+            "age": "16",
+            "club_name": "ROSEMOUNT WEIGHTLIFTING CLUB",
+            "membership_number": "191027",
+            "wso": "Minnesota-Dakotas"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "MN HS Weightlifting State Championship",
+            "date": "2014-03-08",
+            "division": "Open Men's 62 kg",
+            "lifter_name": "John Perry",
+            "body_weight_kg": "61.1",
+            "snatch_1": "54",
+            "snatch_2": "56",
+            "snatch_3": "58",
+            "cj_1": "70",
+            "cj_2": "-73",
+            "cj_3": "73",
+            "best_snatch": "58",
+            "best_cj": "73",
+            "total": "131"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0wOCIsIndlaWdodF9jbGFzcyI6MzU1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "John Perry",
+            "total": "131",
+            "gender": "M",
+            "age": "16",
+            "club_name": "ROSEMOUNT WEIGHTLIFTING CLUB",
+            "membership_number": "191027",
+            "wso": "Minnesota-Dakotas"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Blaze High School Open",
+            "date": "2014-02-08",
+            "division": "Open Men's 62 kg",
+            "lifter_name": "John Perry",
+            "body_weight_kg": "61.06",
+            "snatch_1": "53",
+            "snatch_2": "55",
+            "snatch_3": "57",
+            "cj_1": "65",
+            "cj_2": "68",
+            "cj_3": "-71",
+            "best_snatch": "57",
+            "best_cj": "68",
+            "total": "125"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMi0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMi0wOCIsIndlaWdodF9jbGFzcyI6MzU1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "John Perry",
+            "total": "125",
+            "gender": "M",
+            "age": "16",
+            "club_name": "ROSEMOUNT WEIGHTLIFTING CLUB",
+            "membership_number": "191027",
+            "wso": "Minnesota-Dakotas"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Rosemont High School Open",
+            "date": "2014-01-18",
+            "division": "Open Men's 62 kg",
+            "lifter_name": "John Perry",
+            "body_weight_kg": "61.05",
+            "snatch_1": "44",
+            "snatch_2": "49",
+            "snatch_3": "52",
+            "cj_1": "60",
+            "cj_2": "63",
+            "cj_3": "66",
+            "best_snatch": "52",
+            "best_cj": "66",
+            "total": "118"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMS0xOCIsIndlaWdodF9jbGFzcyI6MzU1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "John Perry",
+            "total": "118",
+            "gender": "M",
+            "age": "16",
+            "club_name": "ROSEMOUNT WEIGHTLIFTING CLUB",
+            "membership_number": "191027",
+            "wso": "Minnesota-Dakotas"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    }
+  ]
+}

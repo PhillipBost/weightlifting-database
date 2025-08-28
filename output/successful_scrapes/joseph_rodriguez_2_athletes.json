@@ -1,0 +1,294 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T13:48:27.604Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Joseph Rodriguez",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 5,
+    "total_reverse_lookups": 5,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 46577698
+  },
+  "data": [
+    {
+      "internal_id": 5802,
+      "athlete_name": "Joseph Rodriguez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/5802",
+      "contaminated_lifter_id": 42072,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T13:48:05.192Z",
+      "profile_data": {
+        "membership_number": "1041898",
+        "birth_year": 1978,
+        "gender": "M",
+        "club_name": "Cuppa Joe Weightlifting",
+        "wso": "New York",
+        "national_rank": "12"
+      },
+      "competition_history": [
+        {
+          "meet_name": "KilosGiving OPEN by Brooklyn Barbell",
+          "date": "2019-11-10",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Joseph Rodriguez",
+          "body_weight_kg": "80.15",
+          "snatch_1": "80",
+          "snatch_2": "84",
+          "snatch_3": "-89",
+          "cj_1": "100",
+          "cj_2": "-106",
+          "cj_3": "-106",
+          "best_snatch": "84",
+          "best_cj": "100",
+          "total": "184"
+        },
+        {
+          "meet_name": "2019 Hudson Valley Open",
+          "date": "2019-07-20",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Joseph Rodriguez",
+          "body_weight_kg": "80.6",
+          "snatch_1": "78",
+          "snatch_2": "82",
+          "snatch_3": "87",
+          "cj_1": "99",
+          "cj_2": "106",
+          "cj_3": "-112",
+          "best_snatch": "87",
+          "best_cj": "106",
+          "total": "193"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "KilosGiving OPEN by Brooklyn Barbell",
+            "date": "2019-11-10",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Joseph Rodriguez",
+            "body_weight_kg": "80.15",
+            "snatch_1": "80",
+            "snatch_2": "84",
+            "snatch_3": "-89",
+            "cj_1": "100",
+            "cj_2": "-106",
+            "cj_3": "-106",
+            "best_snatch": "84",
+            "best_cj": "100",
+            "total": "184"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0xMCIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "12",
+            "athlete_name": "Joseph Rodriguez",
+            "total": "184",
+            "gender": "M",
+            "age": "41",
+            "club_name": "Cuppa Joe Weightlifting",
+            "membership_number": "1041898",
+            "wso": "New York"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2019 Hudson Valley Open",
+            "date": "2019-07-20",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Joseph Rodriguez",
+            "body_weight_kg": "80.6",
+            "snatch_1": "78",
+            "snatch_2": "82",
+            "snatch_3": "87",
+            "cj_1": "99",
+            "cj_2": "106",
+            "cj_3": "-112",
+            "best_snatch": "87",
+            "best_cj": "106",
+            "total": "193"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0yMCIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "18",
+            "athlete_name": "Joseph Rodriguez",
+            "total": "193",
+            "gender": "M",
+            "age": "41",
+            "club_name": "Cuppa Joe Weightlifting",
+            "membership_number": "1041898",
+            "wso": "New York"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 47494,
+      "athlete_name": "Joseph Rodriguez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/47494",
+      "contaminated_lifter_id": 42072,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T13:48:27.602Z",
+      "profile_data": {
+        "membership_number": "1050326",
+        "birth_year": 1996,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "California North Central",
+        "national_rank": "9"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Hassle Free Summer Breaker",
+          "date": "2022-06-18",
+          "division": "Open Men's 73kg",
+          "lifter_name": "Joseph Rodriguez",
+          "body_weight_kg": "70.02",
+          "snatch_1": "77",
+          "snatch_2": "80",
+          "snatch_3": "-85",
+          "cj_1": "95",
+          "cj_2": "-100",
+          "cj_3": "100",
+          "best_snatch": "80",
+          "best_cj": "100",
+          "total": "180"
+        },
+        {
+          "meet_name": "Don Wilson Memorial Golden West Open",
+          "date": "2021-10-17",
+          "division": "Open Men's 67kg",
+          "lifter_name": "Joseph Rodriguez",
+          "body_weight_kg": "66.1",
+          "snatch_1": "-70",
+          "snatch_2": "-70",
+          "snatch_3": "75",
+          "cj_1": "90",
+          "cj_2": "94",
+          "cj_3": "-98",
+          "best_snatch": "75",
+          "best_cj": "94",
+          "total": "169"
+        },
+        {
+          "meet_name": "2021 Heavy Athletics Open",
+          "date": "2021-05-23",
+          "division": "Open Men's 73kg",
+          "lifter_name": "Joseph Rodriguez",
+          "body_weight_kg": "69.11",
+          "snatch_1": "65",
+          "snatch_2": "70",
+          "snatch_3": "75",
+          "cj_1": "85",
+          "cj_2": "90",
+          "cj_3": "95",
+          "best_snatch": "75",
+          "best_cj": "95",
+          "total": "170"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Hassle Free Summer Breaker",
+            "date": "2022-06-18",
+            "division": "Open Men's 73kg",
+            "lifter_name": "Joseph Rodriguez",
+            "body_weight_kg": "70.02",
+            "snatch_1": "77",
+            "snatch_2": "80",
+            "snatch_3": "-85",
+            "cj_1": "95",
+            "cj_2": "-100",
+            "cj_3": "100",
+            "best_snatch": "80",
+            "best_cj": "100",
+            "total": "180"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNi0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNi0xOCIsIndlaWdodF9jbGFzcyI6ODR9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "Joseph Rodriguez",
+            "total": "180",
+            "gender": "M",
+            "age": "26",
+            "club_name": "-",
+            "membership_number": "1050326",
+            "wso": "California North Central"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Don Wilson Memorial Golden West Open",
+            "date": "2021-10-17",
+            "division": "Open Men's 67kg",
+            "lifter_name": "Joseph Rodriguez",
+            "body_weight_kg": "66.1",
+            "snatch_1": "-70",
+            "snatch_2": "-70",
+            "snatch_3": "75",
+            "cj_1": "90",
+            "cj_2": "94",
+            "cj_3": "-98",
+            "best_snatch": "75",
+            "best_cj": "94",
+            "total": "169"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMC0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMC0xNyIsIndlaWdodF9jbGFzcyI6ODN9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Joseph Rodriguez",
+            "total": "169",
+            "gender": "M",
+            "age": "25",
+            "club_name": "-",
+            "membership_number": "1050326",
+            "wso": "California North Central"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2021 Heavy Athletics Open",
+            "date": "2021-05-23",
+            "division": "Open Men's 73kg",
+            "lifter_name": "Joseph Rodriguez",
+            "body_weight_kg": "69.11",
+            "snatch_1": "65",
+            "snatch_2": "70",
+            "snatch_3": "75",
+            "cj_1": "85",
+            "cj_2": "90",
+            "cj_3": "95",
+            "best_snatch": "75",
+            "best_cj": "95",
+            "total": "170"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNS0yMyIsIndlaWdodF9jbGFzcyI6ODR9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "7",
+            "athlete_name": "Joseph Rodriguez",
+            "total": "170",
+            "gender": "M",
+            "age": "25",
+            "club_name": "-",
+            "membership_number": "1050326",
+            "wso": "California North Central"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

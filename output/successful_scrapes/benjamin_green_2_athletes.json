@@ -1,0 +1,200 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T12:11:44.061Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Benjamin Green",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 3,
+    "total_reverse_lookups": 3,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 40774155
+  },
+  "data": [
+    {
+      "internal_id": 130,
+      "athlete_name": "Benjamin Green",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/130",
+      "contaminated_lifter_id": 24751,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T12:11:28.565Z",
+      "profile_data": {
+        "membership_number": "235",
+        "birth_year": 1943,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Georgia",
+        "national_rank": "52"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2016 National Masters Championship",
+          "date": "2016-04-03",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Benjamin Green",
+          "body_weight_kg": "81.99",
+          "snatch_1": "35",
+          "snatch_2": "40",
+          "snatch_3": "45",
+          "cj_1": "50",
+          "cj_2": "55",
+          "cj_3": "-60",
+          "best_snatch": "45",
+          "best_cj": "55",
+          "total": "100"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2016 National Masters Championship",
+            "date": "2016-04-03",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Benjamin Green",
+            "body_weight_kg": "81.99",
+            "snatch_1": "35",
+            "snatch_2": "40",
+            "snatch_3": "45",
+            "cj_1": "50",
+            "cj_2": "55",
+            "cj_3": "-60",
+            "best_snatch": "45",
+            "best_cj": "55",
+            "total": "100"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0wMyIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "52",
+            "athlete_name": "Benjamin Green",
+            "total": "100",
+            "gender": "M",
+            "age": "73",
+            "club_name": "-",
+            "membership_number": "235",
+            "wso": "Georgia"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 50009,
+      "athlete_name": "Benjamin Green",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/50009",
+      "contaminated_lifter_id": 24751,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T12:11:44.059Z",
+      "profile_data": {
+        "membership_number": "1055285",
+        "birth_year": 1988,
+        "gender": "M",
+        "club_name": "TMW Barbell",
+        "wso": "California South",
+        "national_rank": "6"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Hassle Free Summer Breaker",
+          "date": "2021-07-31",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Benjamin Green",
+          "body_weight_kg": "80.5",
+          "snatch_1": "-93",
+          "snatch_2": "93",
+          "snatch_3": "95",
+          "cj_1": "110",
+          "cj_2": "116",
+          "cj_3": "120",
+          "best_snatch": "95",
+          "best_cj": "120",
+          "total": "215"
+        },
+        {
+          "meet_name": "Rep Max Spring Lift Off 2021",
+          "date": "2020-03-20",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Benjamin Green",
+          "body_weight_kg": "75.63",
+          "snatch_1": "68",
+          "snatch_2": "73",
+          "snatch_3": "78",
+          "cj_1": "85",
+          "cj_2": "90",
+          "cj_3": "95",
+          "best_snatch": "78",
+          "best_cj": "95",
+          "total": "173"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Hassle Free Summer Breaker",
+            "date": "2021-07-31",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Benjamin Green",
+            "body_weight_kg": "80.5",
+            "snatch_1": "-93",
+            "snatch_2": "93",
+            "snatch_3": "95",
+            "cj_1": "110",
+            "cj_2": "116",
+            "cj_3": "120",
+            "best_snatch": "95",
+            "best_cj": "120",
+            "total": "215"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNy0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNy0zMSIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Benjamin Green",
+            "total": "215",
+            "gender": "M",
+            "age": "33",
+            "club_name": "TMW Barbell",
+            "membership_number": "1055285",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Rep Max Spring Lift Off 2021",
+            "date": "2020-03-20",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Benjamin Green",
+            "body_weight_kg": "75.63",
+            "snatch_1": "68",
+            "snatch_2": "73",
+            "snatch_3": "78",
+            "cj_1": "85",
+            "cj_2": "90",
+            "cj_3": "95",
+            "best_snatch": "78",
+            "best_cj": "95",
+            "total": "173"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMy0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMy0yMCIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Benjamin Green",
+            "total": "173",
+            "gender": "M",
+            "age": "32",
+            "club_name": "TMW Barbell",
+            "membership_number": "1055285",
+            "wso": "California South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

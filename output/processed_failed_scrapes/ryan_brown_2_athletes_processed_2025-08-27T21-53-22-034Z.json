@@ -1,0 +1,314 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T13:03:26.400Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Ryan Brown",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 6,
+    "total_reverse_lookups": 6,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 11236045
+  },
+  "data": [
+    {
+      "internal_id": 21942,
+      "athlete_name": "Ryan Brown",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/21942",
+      "contaminated_lifter_id": 388,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T15:35:44.173Z",
+      "profile_data": {
+        "membership_number": "167961",
+        "birth_year": 1989,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Carolina",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2013 Bull City Barbell Open",
+          "date": "2013-12-07",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Ryan Brown",
+          "body_weight_kg": "75",
+          "snatch_1": "90",
+          "snatch_2": "95",
+          "snatch_3": "0",
+          "cj_1": "125",
+          "cj_2": "132",
+          "cj_3": "137",
+          "best_snatch": "95",
+          "best_cj": "137",
+          "total": "232"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2013 Bull City Barbell Open",
+            "date": "2013-12-07",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Ryan Brown",
+            "body_weight_kg": "75",
+            "snatch_1": "90",
+            "snatch_2": "95",
+            "snatch_3": "0",
+            "cj_1": "125",
+            "cj_2": "132",
+            "cj_3": "137",
+            "best_snatch": "95",
+            "best_cj": "137",
+            "total": "232"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMi0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMi0wNyIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Ryan Brown",
+            "total": "232",
+            "gender": "M",
+            "age": "24",
+            "club_name": "-",
+            "membership_number": "167961",
+            "wso": "Carolina"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 13926,
+      "athlete_name": "Ryan Brown",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/13926",
+      "contaminated_lifter_id": 388,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-27T13:03:24.398Z",
+      "profile_data": {
+        "membership_number": "171903",
+        "birth_year": 1985,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Tennessee-Kentucky",
+        "national_rank": "3"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Bluegrass barbell classic",
+          "date": "2013-05-18",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Ryan Brown",
+          "body_weight_kg": "91.9",
+          "snatch_1": "107",
+          "snatch_2": "110",
+          "snatch_3": "113",
+          "cj_1": "137",
+          "cj_2": "138",
+          "cj_3": "143",
+          "best_snatch": "113",
+          "best_cj": "143",
+          "total": "256"
+        },
+        {
+          "meet_name": "End the Year with a PR Open and Development Meet",
+          "date": "2012-12-29",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Ryan Brown",
+          "body_weight_kg": "88",
+          "snatch_1": "-100",
+          "snatch_2": "100",
+          "snatch_3": "104",
+          "cj_1": "132",
+          "cj_2": "137",
+          "cj_3": "-142",
+          "best_snatch": "104",
+          "best_cj": "137",
+          "total": "241"
+        },
+        {
+          "meet_name": "Kentucky to Cali Meet",
+          "date": "2012-09-16",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Ryan Brown",
+          "body_weight_kg": "85.9",
+          "snatch_1": "97",
+          "snatch_2": "101",
+          "snatch_3": "-104",
+          "cj_1": "-137",
+          "cj_2": "-137",
+          "cj_3": "-137",
+          "best_snatch": "101",
+          "best_cj": "0",
+          "total": "0"
+        },
+        {
+          "meet_name": "Central Kentucky Weightlifting Open",
+          "date": "2012-06-09",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Ryan Brown",
+          "body_weight_kg": "84.7",
+          "snatch_1": "0",
+          "snatch_2": "0",
+          "snatch_3": "0",
+          "cj_1": "135",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "0",
+          "best_cj": "135",
+          "total": "0"
+        },
+        {
+          "meet_name": "War Eagle Open",
+          "date": "2012-02-11",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Ryan Brown",
+          "body_weight_kg": "85",
+          "snatch_1": "0",
+          "snatch_2": "0",
+          "snatch_3": "0",
+          "cj_1": "130",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "0",
+          "best_cj": "130",
+          "total": "0"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Bluegrass barbell classic",
+            "date": "2013-05-18",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Ryan Brown",
+            "body_weight_kg": "91.9",
+            "snatch_1": "107",
+            "snatch_2": "110",
+            "snatch_3": "113",
+            "cj_1": "137",
+            "cj_2": "138",
+            "cj_3": "143",
+            "best_snatch": "113",
+            "best_cj": "143",
+            "total": "256"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNS0xOCIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Ryan Brown",
+            "total": "256",
+            "gender": "M",
+            "age": "28",
+            "club_name": "-",
+            "membership_number": "171903",
+            "wso": "Tennessee-Kentucky"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "End the Year with a PR Open and Development Meet",
+            "date": "2012-12-29",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Ryan Brown",
+            "body_weight_kg": "88",
+            "snatch_1": "-100",
+            "snatch_2": "100",
+            "snatch_3": "104",
+            "cj_1": "132",
+            "cj_2": "137",
+            "cj_3": "-142",
+            "best_snatch": "104",
+            "best_cj": "137",
+            "total": "241"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0xMi0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0xMi0yOSIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Ryan Brown",
+            "total": "241",
+            "gender": "M",
+            "age": "27",
+            "club_name": "-",
+            "membership_number": "171903",
+            "wso": "Tennessee-Kentucky"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Kentucky to Cali Meet",
+            "date": "2012-09-16",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Ryan Brown",
+            "body_weight_kg": "85.9",
+            "snatch_1": "97",
+            "snatch_2": "101",
+            "snatch_3": "-104",
+            "cj_1": "-137",
+            "cj_2": "-137",
+            "cj_3": "-137",
+            "best_snatch": "101",
+            "best_cj": "0",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wOS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wOS0xNiIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Central Kentucky Weightlifting Open",
+            "date": "2012-06-09",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Ryan Brown",
+            "body_weight_kg": "84.7",
+            "snatch_1": "0",
+            "snatch_2": "0",
+            "snatch_3": "0",
+            "cj_1": "135",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "0",
+            "best_cj": "135",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wNi0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wNi0wOSIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "War Eagle Open",
+            "date": "2012-02-11",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Ryan Brown",
+            "body_weight_kg": "85",
+            "snatch_1": "0",
+            "snatch_2": "0",
+            "snatch_3": "0",
+            "cj_1": "130",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "0",
+            "best_cj": "130",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wMi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wMi0xMSIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    }
+  ]
+}

@@ -1,0 +1,388 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T10:56:08.764Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Jonathan Martinez",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 7,
+    "total_reverse_lookups": 7,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 36238858
+  },
+  "data": [
+    {
+      "internal_id": 10681,
+      "athlete_name": "Jonathan Martinez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/10681",
+      "contaminated_lifter_id": 14220,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T10:55:25.666Z",
+      "profile_data": {
+        "membership_number": "1039968",
+        "birth_year": 1983,
+        "gender": "M",
+        "club_name": "Rep Max Performance",
+        "wso": "California South",
+        "national_rank": "14"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Rep Max Spring Lift Off",
+          "date": "2019-03-17",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Jonathan Martinez",
+          "body_weight_kg": "88.1",
+          "snatch_1": "85",
+          "snatch_2": "88",
+          "snatch_3": "-91",
+          "cj_1": "102",
+          "cj_2": "-106",
+          "cj_3": "107",
+          "best_snatch": "88",
+          "best_cj": "107",
+          "total": "195"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Rep Max Spring Lift Off",
+            "date": "2019-03-17",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Jonathan Martinez",
+            "body_weight_kg": "88.1",
+            "snatch_1": "85",
+            "snatch_2": "88",
+            "snatch_3": "-91",
+            "cj_1": "102",
+            "cj_2": "-106",
+            "cj_3": "107",
+            "best_snatch": "88",
+            "best_cj": "107",
+            "total": "195"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMy0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMy0xNyIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "14",
+            "athlete_name": "Jonathan Martinez",
+            "total": "195",
+            "gender": "M",
+            "age": "36",
+            "club_name": "Rep Max Performance",
+            "membership_number": "1039968",
+            "wso": "California South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 30148,
+      "athlete_name": "Jonathan Martinez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/30148",
+      "contaminated_lifter_id": 14220,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T10:56:08.762Z",
+      "profile_data": {
+        "membership_number": "212345",
+        "birth_year": 1993,
+        "gender": "M",
+        "club_name": "TEAM HOUSTON",
+        "wso": "Texas-Oklahoma",
+        "national_rank": "33"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Houston Weightlifting Championships",
+          "date": "2019-04-06",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Jonathan Martinez",
+          "body_weight_kg": "87.7",
+          "snatch_1": "-95",
+          "snatch_2": "97",
+          "snatch_3": "101",
+          "cj_1": "115",
+          "cj_2": "120",
+          "cj_3": "124",
+          "best_snatch": "101",
+          "best_cj": "124",
+          "total": "225"
+        },
+        {
+          "meet_name": "Equality D Meet",
+          "date": "2018-06-16",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Jonathan Martinez",
+          "body_weight_kg": "90.2",
+          "snatch_1": "90",
+          "snatch_2": "-95",
+          "snatch_3": "95",
+          "cj_1": "112",
+          "cj_2": "-120",
+          "cj_3": "112",
+          "best_snatch": "95",
+          "best_cj": "112",
+          "total": "207"
+        },
+        {
+          "meet_name": "2017 Houston Weightlifting Championships",
+          "date": "2017-04-30",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Jonathan Martinez",
+          "body_weight_kg": "89.5",
+          "snatch_1": "-90",
+          "snatch_2": "95",
+          "snatch_3": "100",
+          "cj_1": "120",
+          "cj_2": "-130",
+          "cj_3": "-130",
+          "best_snatch": "100",
+          "best_cj": "120",
+          "total": "220"
+        },
+        {
+          "meet_name": "2016 South Texas Open",
+          "date": "2016-04-09",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Jonathan Martinez",
+          "body_weight_kg": "87.2",
+          "snatch_1": "85",
+          "snatch_2": "-90",
+          "snatch_3": "90",
+          "cj_1": "110",
+          "cj_2": "120",
+          "cj_3": "-126",
+          "best_snatch": "90",
+          "best_cj": "120",
+          "total": "210"
+        },
+        {
+          "meet_name": "NRG Team Texas Open",
+          "date": "2015-08-29",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Jonathan Martinez",
+          "body_weight_kg": "90.75",
+          "snatch_1": "85",
+          "snatch_2": "90",
+          "snatch_3": "90",
+          "cj_1": "105",
+          "cj_2": "105",
+          "cj_3": "110",
+          "best_snatch": "90",
+          "best_cj": "110",
+          "total": "200"
+        },
+        {
+          "meet_name": "Team Houston Qualifier",
+          "date": "2015-08-09",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Jonathan Martinez",
+          "body_weight_kg": "88",
+          "snatch_1": "80",
+          "snatch_2": "85",
+          "snatch_3": "-90",
+          "cj_1": "100",
+          "cj_2": "110",
+          "cj_3": "113",
+          "best_snatch": "85",
+          "best_cj": "113",
+          "total": "198"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Houston Weightlifting Championships",
+            "date": "2019-04-06",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Jonathan Martinez",
+            "body_weight_kg": "87.7",
+            "snatch_1": "-95",
+            "snatch_2": "97",
+            "snatch_3": "101",
+            "cj_1": "115",
+            "cj_2": "120",
+            "cj_3": "124",
+            "best_snatch": "101",
+            "best_cj": "124",
+            "total": "225"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0wNiIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "33",
+            "athlete_name": "Jonathan Martinez",
+            "total": "225",
+            "gender": "M",
+            "age": "26",
+            "club_name": "TEAM HOUSTON",
+            "membership_number": "212345",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Equality D Meet",
+            "date": "2018-06-16",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Jonathan Martinez",
+            "body_weight_kg": "90.2",
+            "snatch_1": "90",
+            "snatch_2": "-95",
+            "snatch_3": "95",
+            "cj_1": "112",
+            "cj_2": "-120",
+            "cj_3": "112",
+            "best_snatch": "95",
+            "best_cj": "112",
+            "total": "207"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0xNiIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "11",
+            "athlete_name": "Jonathan Martinez",
+            "total": "207",
+            "gender": "M",
+            "age": "25",
+            "club_name": "TEAM HOUSTON",
+            "membership_number": "212345",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2017 Houston Weightlifting Championships",
+            "date": "2017-04-30",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Jonathan Martinez",
+            "body_weight_kg": "89.5",
+            "snatch_1": "-90",
+            "snatch_2": "95",
+            "snatch_3": "100",
+            "cj_1": "120",
+            "cj_2": "-130",
+            "cj_3": "-130",
+            "best_snatch": "100",
+            "best_cj": "120",
+            "total": "220"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNC0zMCIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "18",
+            "athlete_name": "Jonathan Martinez",
+            "total": "220",
+            "gender": "M",
+            "age": "24",
+            "club_name": "TEAM HOUSTON",
+            "membership_number": "212345",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2016 South Texas Open",
+            "date": "2016-04-09",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Jonathan Martinez",
+            "body_weight_kg": "87.2",
+            "snatch_1": "85",
+            "snatch_2": "-90",
+            "snatch_3": "90",
+            "cj_1": "110",
+            "cj_2": "120",
+            "cj_3": "-126",
+            "best_snatch": "90",
+            "best_cj": "120",
+            "total": "210"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0wOSIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "Jonathan Martinez",
+            "total": "210",
+            "gender": "M",
+            "age": "23",
+            "club_name": "TEAM HOUSTON",
+            "membership_number": "212345",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "NRG Team Texas Open",
+            "date": "2015-08-29",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Jonathan Martinez",
+            "body_weight_kg": "90.75",
+            "snatch_1": "85",
+            "snatch_2": "90",
+            "snatch_3": "90",
+            "cj_1": "105",
+            "cj_2": "105",
+            "cj_3": "110",
+            "best_snatch": "90",
+            "best_cj": "110",
+            "total": "200"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOC0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOC0yOSIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "Jonathan Martinez",
+            "total": "200",
+            "gender": "M",
+            "age": "22",
+            "club_name": "TEAM HOUSTON",
+            "membership_number": "212345",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Team Houston Qualifier",
+            "date": "2015-08-09",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Jonathan Martinez",
+            "body_weight_kg": "88",
+            "snatch_1": "80",
+            "snatch_2": "85",
+            "snatch_3": "-90",
+            "cj_1": "100",
+            "cj_2": "110",
+            "cj_3": "113",
+            "best_snatch": "85",
+            "best_cj": "113",
+            "total": "198"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOC0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOC0wOSIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "Jonathan Martinez",
+            "total": "198",
+            "gender": "M",
+            "age": "22",
+            "club_name": "TEAM HOUSTON",
+            "membership_number": "212345",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

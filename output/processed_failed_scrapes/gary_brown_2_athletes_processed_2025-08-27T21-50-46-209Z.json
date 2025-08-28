@@ -1,0 +1,332 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T00:16:30.835Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Gary Brown",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 6,
+    "total_reverse_lookups": 6,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 84260929
+  },
+  "data": [
+    {
+      "internal_id": 1518,
+      "athlete_name": "Gary Brown",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/1518",
+      "contaminated_lifter_id": 12174,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T00:16:10.796Z",
+      "profile_data": {
+        "membership_number": "191482",
+        "birth_year": 1965,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Mountain South",
+        "national_rank": "23"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Summer Slang 2016",
+          "date": "2016-06-04",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Gary Brown",
+          "body_weight_kg": "75.7",
+          "snatch_1": "-75",
+          "snatch_2": "-77",
+          "snatch_3": "78",
+          "cj_1": "95",
+          "cj_2": "-98",
+          "cj_3": "-100",
+          "best_snatch": "78",
+          "best_cj": "95",
+          "total": "173"
+        },
+        {
+          "meet_name": "Masters World Qualifier",
+          "date": "2015-01-23",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Gary Brown",
+          "body_weight_kg": "83.35",
+          "snatch_1": "73",
+          "snatch_2": "-75",
+          "snatch_3": "75",
+          "cj_1": "0",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "75",
+          "best_cj": "0",
+          "total": "0"
+        },
+        {
+          "meet_name": "Utah Christmas Meet",
+          "date": "2014-12-06",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Gary Brown",
+          "body_weight_kg": "75.98",
+          "snatch_1": "72",
+          "snatch_2": "72",
+          "snatch_3": "76",
+          "cj_1": "95",
+          "cj_2": "100",
+          "cj_3": "100",
+          "best_snatch": "76",
+          "best_cj": "100",
+          "total": "176"
+        },
+        {
+          "meet_name": "Last Chance Qualifier",
+          "date": "2014-06-07",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Gary Brown",
+          "body_weight_kg": "75.8",
+          "snatch_1": "71",
+          "snatch_2": "74",
+          "snatch_3": "75",
+          "cj_1": "93",
+          "cj_2": "95",
+          "cj_3": "95",
+          "best_snatch": "75",
+          "best_cj": "95",
+          "total": "170"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Summer Slang 2016",
+            "date": "2016-06-04",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Gary Brown",
+            "body_weight_kg": "75.7",
+            "snatch_1": "-75",
+            "snatch_2": "-77",
+            "snatch_3": "78",
+            "cj_1": "95",
+            "cj_2": "-98",
+            "cj_3": "-100",
+            "best_snatch": "78",
+            "best_cj": "95",
+            "total": "173"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0wNCIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "23",
+            "athlete_name": "Gary Brown",
+            "total": "173",
+            "gender": "M",
+            "age": "51",
+            "club_name": "-",
+            "membership_number": "191482",
+            "wso": "Mountain South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Masters World Qualifier",
+            "date": "2015-01-23",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Gary Brown",
+            "body_weight_kg": "83.35",
+            "snatch_1": "73",
+            "snatch_2": "-75",
+            "snatch_3": "75",
+            "cj_1": "0",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "75",
+            "best_cj": "0",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMS0yMyIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Utah Christmas Meet",
+            "date": "2014-12-06",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Gary Brown",
+            "body_weight_kg": "75.98",
+            "snatch_1": "72",
+            "snatch_2": "72",
+            "snatch_3": "76",
+            "cj_1": "95",
+            "cj_2": "100",
+            "cj_3": "100",
+            "best_snatch": "76",
+            "best_cj": "100",
+            "total": "176"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMi0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMi0wNiIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "25",
+            "athlete_name": "Gary Brown",
+            "total": "176",
+            "gender": "M",
+            "age": "49",
+            "club_name": "-",
+            "membership_number": "191482",
+            "wso": "Mountain South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Last Chance Qualifier",
+            "date": "2014-06-07",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Gary Brown",
+            "body_weight_kg": "75.8",
+            "snatch_1": "71",
+            "snatch_2": "74",
+            "snatch_3": "75",
+            "cj_1": "93",
+            "cj_2": "95",
+            "cj_3": "95",
+            "best_snatch": "75",
+            "best_cj": "95",
+            "total": "170"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNi0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNi0wNyIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "50",
+            "athlete_name": "Gary Brown",
+            "total": "170",
+            "gender": "M",
+            "age": "49",
+            "club_name": "-",
+            "membership_number": "191482",
+            "wso": "Mountain South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    },
+    {
+      "internal_id": 6081,
+      "athlete_name": "Gary Brown",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/6081",
+      "contaminated_lifter_id": 12174,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T00:16:30.833Z",
+      "profile_data": {
+        "membership_number": "198977",
+        "birth_year": 1978,
+        "gender": "M",
+        "club_name": "Oly Concepts",
+        "wso": "Florida",
+        "national_rank": "30"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Soul Vs. FWF",
+          "date": "2014-11-02",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Gary Brown",
+          "body_weight_kg": "92.5",
+          "snatch_1": "87",
+          "snatch_2": "91",
+          "snatch_3": "95",
+          "cj_1": "129",
+          "cj_2": "129",
+          "cj_3": "129",
+          "best_snatch": "95",
+          "best_cj": "129",
+          "total": "224"
+        },
+        {
+          "meet_name": "Bacon Beatdown (powered by Camargo Oly Concepts)",
+          "date": "2014-06-28",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Gary Brown",
+          "body_weight_kg": "97.9",
+          "snatch_1": "86",
+          "snatch_2": "90",
+          "snatch_3": "95",
+          "cj_1": "120",
+          "cj_2": "125",
+          "cj_3": "130",
+          "best_snatch": "95",
+          "best_cj": "130",
+          "total": "225"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Soul Vs. FWF",
+            "date": "2014-11-02",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Gary Brown",
+            "body_weight_kg": "92.5",
+            "snatch_1": "87",
+            "snatch_2": "91",
+            "snatch_3": "95",
+            "cj_1": "129",
+            "cj_2": "129",
+            "cj_3": "129",
+            "best_snatch": "95",
+            "best_cj": "129",
+            "total": "224"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMS0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMS0wMiIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "30",
+            "athlete_name": "Gary Brown",
+            "total": "224",
+            "gender": "M",
+            "age": "36",
+            "club_name": "Oly Concepts",
+            "membership_number": "198977",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Bacon Beatdown (powered by Camargo Oly Concepts)",
+            "date": "2014-06-28",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Gary Brown",
+            "body_weight_kg": "97.9",
+            "snatch_1": "86",
+            "snatch_2": "90",
+            "snatch_3": "95",
+            "cj_1": "120",
+            "cj_2": "125",
+            "cj_3": "130",
+            "best_snatch": "95",
+            "best_cj": "130",
+            "total": "225"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNi0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNi0yOCIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "14",
+            "athlete_name": "Gary Brown",
+            "total": "225",
+            "gender": "M",
+            "age": "36",
+            "club_name": "Oly Concepts",
+            "membership_number": "198977",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

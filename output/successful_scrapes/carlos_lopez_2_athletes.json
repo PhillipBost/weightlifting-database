@@ -1,0 +1,435 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T14:36:44.834Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Carlos Lopez",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 8,
+    "total_reverse_lookups": 8,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 49474928
+  },
+  "data": [
+    {
+      "internal_id": 10484,
+      "athlete_name": "Carlos Lopez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/10484",
+      "contaminated_lifter_id": 14361,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T14:36:29.279Z",
+      "profile_data": {
+        "membership_number": "221468",
+        "birth_year": 1983,
+        "gender": "M",
+        "club_name": "Manhattan Barbell",
+        "wso": "New York",
+        "national_rank": "15"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Brooklyn Barbell Open",
+          "date": "2019-08-18",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Carlos Lopez",
+          "body_weight_kg": "82.5",
+          "snatch_1": "77",
+          "snatch_2": "80",
+          "snatch_3": "83",
+          "cj_1": "100",
+          "cj_2": "107",
+          "cj_3": "-112",
+          "best_snatch": "83",
+          "best_cj": "107",
+          "total": "190"
+        },
+        {
+          "meet_name": "BROOKLYN BARBELL OPEN",
+          "date": "2018-08-19",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Carlos Lopez",
+          "body_weight_kg": "83.8",
+          "snatch_1": "75",
+          "snatch_2": "78",
+          "snatch_3": "81",
+          "cj_1": "105",
+          "cj_2": "-108",
+          "cj_3": "-111",
+          "best_snatch": "81",
+          "best_cj": "105",
+          "total": "186"
+        },
+        {
+          "meet_name": "2018 LBH Classic",
+          "date": "2018-03-10",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Carlos Lopez",
+          "body_weight_kg": "86.1",
+          "snatch_1": "70",
+          "snatch_2": "75",
+          "snatch_3": "80",
+          "cj_1": "100",
+          "cj_2": "105",
+          "cj_3": "-110",
+          "best_snatch": "80",
+          "best_cj": "105",
+          "total": "185"
+        },
+        {
+          "meet_name": "Brooklyn Barbell Open",
+          "date": "2016-08-28",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Carlos Lopez",
+          "body_weight_kg": "84.6",
+          "snatch_1": "70",
+          "snatch_2": "75",
+          "snatch_3": "80",
+          "cj_1": "95",
+          "cj_2": "100",
+          "cj_3": "105",
+          "best_snatch": "80",
+          "best_cj": "105",
+          "total": "185"
+        },
+        {
+          "meet_name": "LBH Classic",
+          "date": "2016-03-19",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Carlos Lopez",
+          "body_weight_kg": "84.58",
+          "snatch_1": "70",
+          "snatch_2": "75",
+          "snatch_3": "80",
+          "cj_1": "95",
+          "cj_2": "-100",
+          "cj_3": "100",
+          "best_snatch": "80",
+          "best_cj": "100",
+          "total": "180"
+        },
+        {
+          "meet_name": "WBC Presents the 2015 War of Westchester",
+          "date": "2015-11-14",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Carlos Lopez",
+          "body_weight_kg": "86.2",
+          "snatch_1": "70",
+          "snatch_2": "72",
+          "snatch_3": "-75",
+          "cj_1": "90",
+          "cj_2": "-95",
+          "cj_3": "97",
+          "best_snatch": "72",
+          "best_cj": "97",
+          "total": "169"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Brooklyn Barbell Open",
+            "date": "2019-08-18",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Carlos Lopez",
+            "body_weight_kg": "82.5",
+            "snatch_1": "77",
+            "snatch_2": "80",
+            "snatch_3": "83",
+            "cj_1": "100",
+            "cj_2": "107",
+            "cj_3": "-112",
+            "best_snatch": "83",
+            "best_cj": "107",
+            "total": "190"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOC0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOC0xOCIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "15",
+            "athlete_name": "Carlos Lopez",
+            "total": "190",
+            "gender": "M",
+            "age": "36",
+            "club_name": "Manhattan Barbell",
+            "membership_number": "221468",
+            "wso": "New York"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "BROOKLYN BARBELL OPEN",
+            "date": "2018-08-19",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Carlos Lopez",
+            "body_weight_kg": "83.8",
+            "snatch_1": "75",
+            "snatch_2": "78",
+            "snatch_3": "81",
+            "cj_1": "105",
+            "cj_2": "-108",
+            "cj_3": "-111",
+            "best_snatch": "81",
+            "best_cj": "105",
+            "total": "186"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOC0xOSIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "13",
+            "athlete_name": "Carlos Lopez",
+            "total": "186",
+            "gender": "M",
+            "age": "35",
+            "club_name": "Manhattan Barbell",
+            "membership_number": "221468",
+            "wso": "New York"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2018 LBH Classic",
+            "date": "2018-03-10",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Carlos Lopez",
+            "body_weight_kg": "86.1",
+            "snatch_1": "70",
+            "snatch_2": "75",
+            "snatch_3": "80",
+            "cj_1": "100",
+            "cj_2": "105",
+            "cj_3": "-110",
+            "best_snatch": "80",
+            "best_cj": "105",
+            "total": "185"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMy0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMy0xMCIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "20",
+            "athlete_name": "Carlos Lopez",
+            "total": "185",
+            "gender": "M",
+            "age": "35",
+            "club_name": "Manhattan Barbell",
+            "membership_number": "221468",
+            "wso": "New York"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Brooklyn Barbell Open",
+            "date": "2016-08-28",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Carlos Lopez",
+            "body_weight_kg": "84.6",
+            "snatch_1": "70",
+            "snatch_2": "75",
+            "snatch_3": "80",
+            "cj_1": "95",
+            "cj_2": "100",
+            "cj_3": "105",
+            "best_snatch": "80",
+            "best_cj": "105",
+            "total": "185"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0yOCIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "20",
+            "athlete_name": "Carlos Lopez",
+            "total": "185",
+            "gender": "M",
+            "age": "33",
+            "club_name": "Manhattan Barbell",
+            "membership_number": "221468",
+            "wso": "New York"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "LBH Classic",
+            "date": "2016-03-19",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Carlos Lopez",
+            "body_weight_kg": "84.58",
+            "snatch_1": "70",
+            "snatch_2": "75",
+            "snatch_3": "80",
+            "cj_1": "95",
+            "cj_2": "-100",
+            "cj_3": "100",
+            "best_snatch": "80",
+            "best_cj": "100",
+            "total": "180"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMy0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMy0xOSIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "63",
+            "athlete_name": "Carlos Lopez",
+            "total": "180",
+            "gender": "M",
+            "age": "33",
+            "club_name": "Manhattan Barbell",
+            "membership_number": "221468",
+            "wso": "New York"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "WBC Presents the 2015 War of Westchester",
+            "date": "2015-11-14",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Carlos Lopez",
+            "body_weight_kg": "86.2",
+            "snatch_1": "70",
+            "snatch_2": "72",
+            "snatch_3": "-75",
+            "cj_1": "90",
+            "cj_2": "-95",
+            "cj_3": "97",
+            "best_snatch": "72",
+            "best_cj": "97",
+            "total": "169"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMS0xNCIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "19",
+            "athlete_name": "Carlos Lopez",
+            "total": "169",
+            "gender": "M",
+            "age": "32",
+            "club_name": "Manhattan Barbell",
+            "membership_number": "221468",
+            "wso": "New York"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 30161,
+      "athlete_name": "Carlos Lopez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/30161",
+      "contaminated_lifter_id": 14361,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T14:36:44.832Z",
+      "profile_data": {
+        "membership_number": "200898",
+        "birth_year": 1993,
+        "gender": "M",
+        "club_name": "LBH OF NYC DEPT OF PARKS",
+        "wso": "New York",
+        "national_rank": "20"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Metropolitan Championships",
+          "date": "2014-10-25",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Carlos Lopez",
+          "body_weight_kg": "117.56",
+          "snatch_1": "55",
+          "snatch_2": "60",
+          "snatch_3": "65",
+          "cj_1": "85",
+          "cj_2": "92",
+          "cj_3": "97",
+          "best_snatch": "65",
+          "best_cj": "97",
+          "total": "162"
+        },
+        {
+          "meet_name": "2014 Jerry Dunne Red-Light Open",
+          "date": "2014-08-10",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Carlos Lopez",
+          "body_weight_kg": "117.25",
+          "snatch_1": "50",
+          "snatch_2": "60",
+          "snatch_3": "-67",
+          "cj_1": "88",
+          "cj_2": "95",
+          "cj_3": "-100",
+          "best_snatch": "60",
+          "best_cj": "95",
+          "total": "155"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Metropolitan Championships",
+            "date": "2014-10-25",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Carlos Lopez",
+            "body_weight_kg": "117.56",
+            "snatch_1": "55",
+            "snatch_2": "60",
+            "snatch_3": "65",
+            "cj_1": "85",
+            "cj_2": "92",
+            "cj_3": "97",
+            "best_snatch": "65",
+            "best_cj": "97",
+            "total": "162"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMC0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMC0yNSIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "20",
+            "athlete_name": "Carlos Lopez",
+            "total": "162",
+            "gender": "M",
+            "age": "21",
+            "club_name": "LBH OF NYC DEPT OF PARKS",
+            "membership_number": "200898",
+            "wso": "New York"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2014 Jerry Dunne Red-Light Open",
+            "date": "2014-08-10",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Carlos Lopez",
+            "body_weight_kg": "117.25",
+            "snatch_1": "50",
+            "snatch_2": "60",
+            "snatch_3": "-67",
+            "cj_1": "88",
+            "cj_2": "95",
+            "cj_3": "-100",
+            "best_snatch": "60",
+            "best_cj": "95",
+            "total": "155"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0xMCIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "Carlos Lopez",
+            "total": "155",
+            "gender": "M",
+            "age": "21",
+            "club_name": "LBH OF NYC DEPT OF PARKS",
+            "membership_number": "200898",
+            "wso": "New York"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

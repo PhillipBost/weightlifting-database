@@ -1,0 +1,388 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T13:56:52.958Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Jacob Abney",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 7,
+    "total_reverse_lookups": 7,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 47083052
+  },
+  "data": [
+    {
+      "internal_id": 46892,
+      "athlete_name": "Jacob Abney",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/46892",
+      "contaminated_lifter_id": 44964,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T13:56:42.746Z",
+      "profile_data": {
+        "membership_number": "1048820",
+        "birth_year": 2005,
+        "gender": "M",
+        "club_name": "BODY SHOP X BARBELL CLUB",
+        "wso": "Carolina",
+        "national_rank": "5"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Carolinas WSO Championships",
+          "date": "2023-10-15",
+          "division": "Junior Men's 81kg",
+          "lifter_name": "Jacob Abney",
+          "body_weight_kg": "81",
+          "snatch_1": "76",
+          "snatch_2": "79",
+          "snatch_3": "82",
+          "cj_1": "100",
+          "cj_2": "103",
+          "cj_3": "106",
+          "best_snatch": "82",
+          "best_cj": "106",
+          "total": "188"
+        },
+        {
+          "meet_name": "2023 Iron Born Open",
+          "date": "2023-02-11",
+          "division": "Junior Men's 89kg",
+          "lifter_name": "Jacob Abney",
+          "body_weight_kg": "87.65",
+          "snatch_1": "73",
+          "snatch_2": "76",
+          "snatch_3": "-80",
+          "cj_1": "95",
+          "cj_2": "98",
+          "cj_3": "102",
+          "best_snatch": "76",
+          "best_cj": "102",
+          "total": "178"
+        },
+        {
+          "meet_name": "Carolinas State Championship",
+          "date": "2022-10-16",
+          "division": "Men's 16-17 Age Group 89kg",
+          "lifter_name": "Jacob Abney",
+          "body_weight_kg": "88.1",
+          "snatch_1": "70",
+          "snatch_2": "73",
+          "snatch_3": "76",
+          "cj_1": "93",
+          "cj_2": "96",
+          "cj_3": "100",
+          "best_snatch": "76",
+          "best_cj": "100",
+          "total": "176"
+        },
+        {
+          "meet_name": "BX-In House",
+          "date": "2022-05-20",
+          "division": "Men's 16-17 Age Group 89kg",
+          "lifter_name": "Jacob Abney",
+          "body_weight_kg": "88.9",
+          "snatch_1": "-75",
+          "snatch_2": "-75",
+          "snatch_3": "80",
+          "cj_1": "-95",
+          "cj_2": "100",
+          "cj_3": "105",
+          "best_snatch": "80",
+          "best_cj": "105",
+          "total": "185"
+        },
+        {
+          "meet_name": "South Carolina State Championships",
+          "date": "2021-10-23",
+          "division": "Men's 16-17 Age Group 89kg",
+          "lifter_name": "Jacob Abney",
+          "body_weight_kg": "88.25",
+          "snatch_1": "60",
+          "snatch_2": "63",
+          "snatch_3": "66",
+          "cj_1": "76",
+          "cj_2": "79",
+          "cj_3": "82",
+          "best_snatch": "66",
+          "best_cj": "82",
+          "total": "148"
+        },
+        {
+          "meet_name": "Lion's Roar Barbell Winter Classic",
+          "date": "2020-01-18",
+          "division": "Men's 14-15 Age Group 81kg",
+          "lifter_name": "Jacob Abney",
+          "body_weight_kg": "74.4",
+          "snatch_1": "30",
+          "snatch_2": "33",
+          "snatch_3": "36",
+          "cj_1": "40",
+          "cj_2": "43",
+          "cj_3": "46",
+          "best_snatch": "36",
+          "best_cj": "46",
+          "total": "82"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Carolinas WSO Championships",
+            "date": "2023-10-15",
+            "division": "Junior Men's 81kg",
+            "lifter_name": "Jacob Abney",
+            "body_weight_kg": "81",
+            "snatch_1": "76",
+            "snatch_2": "79",
+            "snatch_3": "82",
+            "cj_1": "100",
+            "cj_2": "103",
+            "cj_3": "106",
+            "best_snatch": "82",
+            "best_cj": "106",
+            "total": "188"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMC0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMC0xNSIsIndlaWdodF9jbGFzcyI6NjV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "Jacob Abney",
+            "total": "188",
+            "gender": "M",
+            "age": "18",
+            "club_name": "BODY SHOP X BARBELL CLUB",
+            "membership_number": "1048820",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2023 Iron Born Open",
+            "date": "2023-02-11",
+            "division": "Junior Men's 89kg",
+            "lifter_name": "Jacob Abney",
+            "body_weight_kg": "87.65",
+            "snatch_1": "73",
+            "snatch_2": "76",
+            "snatch_3": "-80",
+            "cj_1": "95",
+            "cj_2": "98",
+            "cj_3": "102",
+            "best_snatch": "76",
+            "best_cj": "102",
+            "total": "178"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMi0xMSIsIndlaWdodF9jbGFzcyI6NjZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Jacob Abney",
+            "total": "178",
+            "gender": "M",
+            "age": "18",
+            "club_name": "BODY SHOP X BARBELL CLUB",
+            "membership_number": "1048820",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Carolinas State Championship",
+            "date": "2022-10-16",
+            "division": "Men's 16-17 Age Group 89kg",
+            "lifter_name": "Jacob Abney",
+            "body_weight_kg": "88.1",
+            "snatch_1": "70",
+            "snatch_2": "73",
+            "snatch_3": "76",
+            "cj_1": "93",
+            "cj_2": "96",
+            "cj_3": "100",
+            "best_snatch": "76",
+            "best_cj": "100",
+            "total": "176"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMC0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMC0xNiIsIndlaWdodF9jbGFzcyI6N30=",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Jacob Abney",
+            "total": "176",
+            "gender": "M",
+            "age": "17",
+            "club_name": "BODY SHOP X BARBELL CLUB",
+            "membership_number": "1048820",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "BX-In House",
+            "date": "2022-05-20",
+            "division": "Men's 16-17 Age Group 89kg",
+            "lifter_name": "Jacob Abney",
+            "body_weight_kg": "88.9",
+            "snatch_1": "-75",
+            "snatch_2": "-75",
+            "snatch_3": "80",
+            "cj_1": "-95",
+            "cj_2": "100",
+            "cj_3": "105",
+            "best_snatch": "80",
+            "best_cj": "105",
+            "total": "185"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNS0yMCIsIndlaWdodF9jbGFzcyI6N30=",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Jacob Abney",
+            "total": "185",
+            "gender": "M",
+            "age": "17",
+            "club_name": "BODY SHOP X BARBELL CLUB",
+            "membership_number": "1048820",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "South Carolina State Championships",
+            "date": "2021-10-23",
+            "division": "Men's 16-17 Age Group 89kg",
+            "lifter_name": "Jacob Abney",
+            "body_weight_kg": "88.25",
+            "snatch_1": "60",
+            "snatch_2": "63",
+            "snatch_3": "66",
+            "cj_1": "76",
+            "cj_2": "79",
+            "cj_3": "82",
+            "best_snatch": "66",
+            "best_cj": "82",
+            "total": "148"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMC0yMyIsIndlaWdodF9jbGFzcyI6N30=",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Jacob Abney",
+            "total": "148",
+            "gender": "M",
+            "age": "16",
+            "club_name": "BODY SHOP X BARBELL CLUB",
+            "membership_number": "1048820",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Lion's Roar Barbell Winter Classic",
+            "date": "2020-01-18",
+            "division": "Men's 14-15 Age Group 81kg",
+            "lifter_name": "Jacob Abney",
+            "body_weight_kg": "74.4",
+            "snatch_1": "30",
+            "snatch_2": "33",
+            "snatch_3": "36",
+            "cj_1": "40",
+            "cj_2": "43",
+            "cj_3": "46",
+            "best_snatch": "36",
+            "best_cj": "46",
+            "total": "82"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMS0xOCIsIndlaWdodF9jbGFzcyI6Mjh9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Jacob Abney",
+            "total": "82",
+            "gender": "M",
+            "age": "15",
+            "club_name": "BODY SHOP X BARBELL CLUB",
+            "membership_number": "1048820",
+            "wso": "Carolina"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 64361,
+      "athlete_name": "Jacob Abney",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/64361",
+      "contaminated_lifter_id": 44964,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T13:56:52.957Z",
+      "profile_data": {
+        "membership_number": "1078264",
+        "birth_year": 2005,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Carolina",
+        "national_rank": "2"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2024 Carolinas WSO Championships",
+          "date": "2024-10-20",
+          "division": "Junior Men's 89kg",
+          "lifter_name": "Jacob Abney",
+          "body_weight_kg": "83.15",
+          "snatch_1": "70",
+          "snatch_2": "75",
+          "snatch_3": "80",
+          "cj_1": "90",
+          "cj_2": "95",
+          "cj_3": "100",
+          "best_snatch": "80",
+          "best_cj": "100",
+          "total": "180"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2024 Carolinas WSO Championships",
+            "date": "2024-10-20",
+            "division": "Junior Men's 89kg",
+            "lifter_name": "Jacob Abney",
+            "body_weight_kg": "83.15",
+            "snatch_1": "70",
+            "snatch_2": "75",
+            "snatch_3": "80",
+            "cj_1": "90",
+            "cj_2": "95",
+            "cj_3": "100",
+            "best_snatch": "80",
+            "best_cj": "100",
+            "total": "180"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0yMCIsIndlaWdodF9jbGFzcyI6NjZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Jacob Abney",
+            "total": "180",
+            "gender": "M",
+            "age": "19",
+            "club_name": "-",
+            "membership_number": "1078264",
+            "wso": "Carolina"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

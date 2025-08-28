@@ -1,0 +1,332 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T06:21:28.543Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Patrick Brown",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 6,
+    "total_reverse_lookups": 6,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 17394998
+  },
+  "data": [
+    {
+      "internal_id": 1372,
+      "athlete_name": "Patrick Brown",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/1372",
+      "contaminated_lifter_id": 12627,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T17:24:11.378Z",
+      "profile_data": {
+        "membership_number": "203912",
+        "birth_year": 1964,
+        "gender": "M",
+        "club_name": "IRON KNIGHT WEIGHTLIFTING",
+        "wso": "Pacific Northwest",
+        "national_rank": "67"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Bar Wars:Episode II",
+          "date": "2015-10-24",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Patrick Brown",
+          "body_weight_kg": "90.85",
+          "snatch_1": "72",
+          "snatch_2": "-76",
+          "snatch_3": "-76",
+          "cj_1": "85",
+          "cj_2": "92",
+          "cj_3": "-95",
+          "best_snatch": "72",
+          "best_cj": "92",
+          "total": "164"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Bar Wars:Episode II",
+            "date": "2015-10-24",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Patrick Brown",
+            "body_weight_kg": "90.85",
+            "snatch_1": "72",
+            "snatch_2": "-76",
+            "snatch_3": "-76",
+            "cj_1": "85",
+            "cj_2": "92",
+            "cj_3": "-95",
+            "best_snatch": "72",
+            "best_cj": "92",
+            "total": "164"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0yNCIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "67",
+            "athlete_name": "Patrick Brown",
+            "total": "164",
+            "gender": "M",
+            "age": "51",
+            "club_name": "IRON KNIGHT WEIGHTLIFTING",
+            "membership_number": "203912",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 35752,
+      "athlete_name": "Patrick Brown",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/35752",
+      "contaminated_lifter_id": 12627,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-27T06:21:26.542Z",
+      "profile_data": {
+        "membership_number": "1011694",
+        "birth_year": 1996,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Florida",
+        "national_rank": "7"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2018 Hawaii Open Weightlifting Championships",
+          "date": "2018-12-15",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Patrick Brown",
+          "body_weight_kg": "85.04",
+          "snatch_1": "113",
+          "snatch_2": "-118",
+          "snatch_3": "-118",
+          "cj_1": "-140",
+          "cj_2": "-140",
+          "cj_3": "0",
+          "best_snatch": "113",
+          "best_cj": "0",
+          "total": "0"
+        },
+        {
+          "meet_name": "Shamrocks & Snatches Open",
+          "date": "2018-03-10",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Patrick Brown",
+          "body_weight_kg": "83",
+          "snatch_1": "115",
+          "snatch_2": "120",
+          "snatch_3": "-125",
+          "cj_1": "140",
+          "cj_2": "-146",
+          "cj_3": "-146",
+          "best_snatch": "120",
+          "best_cj": "140",
+          "total": "260"
+        },
+        {
+          "meet_name": "Pensacola Sand Bar Slam",
+          "date": "2017-09-30",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Patrick Brown",
+          "body_weight_kg": "86.9",
+          "snatch_1": "105",
+          "snatch_2": "113",
+          "snatch_3": "120",
+          "cj_1": "137",
+          "cj_2": "143",
+          "cj_3": "0",
+          "best_snatch": "120",
+          "best_cj": "143",
+          "total": "263"
+        },
+        {
+          "meet_name": "Shamrocks & Snatches Open",
+          "date": "2017-03-04",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Patrick Brown",
+          "body_weight_kg": "84.88",
+          "snatch_1": "-95",
+          "snatch_2": "95",
+          "snatch_3": "100",
+          "cj_1": "126",
+          "cj_2": "132",
+          "cj_3": "-137",
+          "best_snatch": "100",
+          "best_cj": "132",
+          "total": "232"
+        },
+        {
+          "meet_name": "Black Box Classic",
+          "date": "2016-10-08",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Patrick Brown",
+          "body_weight_kg": "89.4",
+          "snatch_1": "80",
+          "snatch_2": "90",
+          "snatch_3": "95",
+          "cj_1": "115",
+          "cj_2": "115",
+          "cj_3": "115",
+          "best_snatch": "95",
+          "best_cj": "115",
+          "total": "210"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2018 Hawaii Open Weightlifting Championships",
+            "date": "2018-12-15",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Patrick Brown",
+            "body_weight_kg": "85.04",
+            "snatch_1": "113",
+            "snatch_2": "-118",
+            "snatch_3": "-118",
+            "cj_1": "-140",
+            "cj_2": "-140",
+            "cj_3": "0",
+            "best_snatch": "113",
+            "best_cj": "0",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0xNSIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Shamrocks & Snatches Open",
+            "date": "2018-03-10",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Patrick Brown",
+            "body_weight_kg": "83",
+            "snatch_1": "115",
+            "snatch_2": "120",
+            "snatch_3": "-125",
+            "cj_1": "140",
+            "cj_2": "-146",
+            "cj_3": "-146",
+            "best_snatch": "120",
+            "best_cj": "140",
+            "total": "260"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMy0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMy0xMCIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "7",
+            "athlete_name": "Patrick Brown",
+            "total": "260",
+            "gender": "M",
+            "age": "22",
+            "club_name": "-",
+            "membership_number": "1011694",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Pensacola Sand Bar Slam",
+            "date": "2017-09-30",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Patrick Brown",
+            "body_weight_kg": "86.9",
+            "snatch_1": "105",
+            "snatch_2": "113",
+            "snatch_3": "120",
+            "cj_1": "137",
+            "cj_2": "143",
+            "cj_3": "0",
+            "best_snatch": "120",
+            "best_cj": "143",
+            "total": "263"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wOS0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wOS0zMCIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Patrick Brown",
+            "total": "263",
+            "gender": "M",
+            "age": "21",
+            "club_name": "-",
+            "membership_number": "1011694",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Shamrocks & Snatches Open",
+            "date": "2017-03-04",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Patrick Brown",
+            "body_weight_kg": "84.88",
+            "snatch_1": "-95",
+            "snatch_2": "95",
+            "snatch_3": "100",
+            "cj_1": "126",
+            "cj_2": "132",
+            "cj_3": "-137",
+            "best_snatch": "100",
+            "best_cj": "132",
+            "total": "232"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0wNCIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "12",
+            "athlete_name": "Patrick Brown",
+            "total": "232",
+            "gender": "M",
+            "age": "21",
+            "club_name": "-",
+            "membership_number": "1011694",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Black Box Classic",
+            "date": "2016-10-08",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Patrick Brown",
+            "body_weight_kg": "89.4",
+            "snatch_1": "80",
+            "snatch_2": "90",
+            "snatch_3": "95",
+            "cj_1": "115",
+            "cj_2": "115",
+            "cj_3": "115",
+            "best_snatch": "95",
+            "best_cj": "115",
+            "total": "210"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0wOCIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "21",
+            "athlete_name": "Patrick Brown",
+            "total": "210",
+            "gender": "M",
+            "age": "20",
+            "club_name": "-",
+            "membership_number": "1011694",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    }
+  ]
+}

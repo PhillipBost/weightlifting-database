@@ -1,0 +1,200 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T04:43:21.751Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Jack Smith",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 3,
+    "total_reverse_lookups": 3,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 100271845
+  },
+  "data": [
+    {
+      "internal_id": 42703,
+      "athlete_name": "Jack Smith",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/42703",
+      "contaminated_lifter_id": 22041,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T04:43:08.933Z",
+      "profile_data": {
+        "membership_number": "222114",
+        "birth_year": 2002,
+        "gender": "M",
+        "club_name": "BURNSVILLE WEIGHTLIFTING CLUB",
+        "wso": "Minnesota-Dakotas",
+        "national_rank": "8"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Burnsville High School Open",
+          "date": "2016-02-13",
+          "division": "Men's 14-15 Age Group +85 kg",
+          "lifter_name": "Jack Smith",
+          "body_weight_kg": "95.34",
+          "snatch_1": "35",
+          "snatch_2": "38",
+          "snatch_3": "40",
+          "cj_1": "45",
+          "cj_2": "48",
+          "cj_3": "-52",
+          "best_snatch": "40",
+          "best_cj": "48",
+          "total": "88"
+        },
+        {
+          "meet_name": "Raider High School Open",
+          "date": "2016-01-23",
+          "division": "Men's 14-15 Age Group +85 kg",
+          "lifter_name": "Jack Smith",
+          "body_weight_kg": "94",
+          "snatch_1": "35",
+          "snatch_2": "38",
+          "snatch_3": "40",
+          "cj_1": "37",
+          "cj_2": "41",
+          "cj_3": "-44",
+          "best_snatch": "40",
+          "best_cj": "41",
+          "total": "81"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Burnsville High School Open",
+            "date": "2016-02-13",
+            "division": "Men's 14-15 Age Group +85 kg",
+            "lifter_name": "Jack Smith",
+            "body_weight_kg": "95.34",
+            "snatch_1": "35",
+            "snatch_2": "38",
+            "snatch_3": "40",
+            "cj_1": "45",
+            "cj_2": "48",
+            "cj_3": "-52",
+            "best_snatch": "40",
+            "best_cj": "48",
+            "total": "88"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMi0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMi0xMyIsIndlaWdodF9jbGFzcyI6MzEyfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "8",
+            "athlete_name": "Jack Smith",
+            "total": "88",
+            "gender": "M",
+            "age": "14",
+            "club_name": "BURNSVILLE WEIGHTLIFTING CLUB",
+            "membership_number": "222114",
+            "wso": "Minnesota-Dakotas"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Raider High School Open",
+            "date": "2016-01-23",
+            "division": "Men's 14-15 Age Group +85 kg",
+            "lifter_name": "Jack Smith",
+            "body_weight_kg": "94",
+            "snatch_1": "35",
+            "snatch_2": "38",
+            "snatch_3": "40",
+            "cj_1": "37",
+            "cj_2": "41",
+            "cj_3": "-44",
+            "best_snatch": "40",
+            "best_cj": "41",
+            "total": "81"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0yMyIsIndlaWdodF9jbGFzcyI6MzEyfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "Jack Smith",
+            "total": "81",
+            "gender": "M",
+            "age": "14",
+            "club_name": "BURNSVILLE WEIGHTLIFTING CLUB",
+            "membership_number": "222114",
+            "wso": "Minnesota-Dakotas"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 52684,
+      "athlete_name": "Jack Smith",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/52684",
+      "contaminated_lifter_id": 22041,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T04:43:21.750Z",
+      "profile_data": {
+        "membership_number": "1060286",
+        "birth_year": 2000,
+        "gender": "M",
+        "club_name": "Strong Barbell Club",
+        "wso": "Missouri Valley",
+        "national_rank": "7"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Rodger DeGarmo Memorial",
+          "date": "2021-12-18",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Jack Smith",
+          "body_weight_kg": "77.6",
+          "snatch_1": "65",
+          "snatch_2": "69",
+          "snatch_3": "74",
+          "cj_1": "100",
+          "cj_2": "105",
+          "cj_3": "0",
+          "best_snatch": "74",
+          "best_cj": "105",
+          "total": "179"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Rodger DeGarmo Memorial",
+            "date": "2021-12-18",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Jack Smith",
+            "body_weight_kg": "77.6",
+            "snatch_1": "65",
+            "snatch_2": "69",
+            "snatch_3": "74",
+            "cj_1": "100",
+            "cj_2": "105",
+            "cj_3": "0",
+            "best_snatch": "74",
+            "best_cj": "105",
+            "total": "179"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMi0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMi0xOCIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "7",
+            "athlete_name": "Jack Smith",
+            "total": "179",
+            "gender": "M",
+            "age": "21",
+            "club_name": "Strong Barbell Club",
+            "membership_number": "1060286",
+            "wso": "Missouri Valley"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

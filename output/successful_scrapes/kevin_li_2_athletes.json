@@ -1,0 +1,294 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T14:24:08.809Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Kevin Li",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 5,
+    "total_reverse_lookups": 5,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 48718903
+  },
+  "data": [
+    {
+      "internal_id": 61226,
+      "athlete_name": "Kevin Li",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/61226",
+      "contaminated_lifter_id": 55901,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T14:23:56.215Z",
+      "profile_data": {
+        "membership_number": "1073893",
+        "birth_year": 2004,
+        "gender": "M",
+        "club_name": "Northeastern University",
+        "wso": "New England",
+        "national_rank": "59"
+      },
+      "competition_history": [
+        {
+          "meet_name": "The 2025 National University Championships Powered by Rogue Fitness",
+          "date": "2025-02-27",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Kevin Li",
+          "body_weight_kg": "85.25",
+          "snatch_1": "90",
+          "snatch_2": "95",
+          "snatch_3": "-103",
+          "cj_1": "130",
+          "cj_2": "-135",
+          "cj_3": "-138",
+          "best_snatch": "95",
+          "best_cj": "130",
+          "total": "225"
+        },
+        {
+          "meet_name": "2024 New England WSO Championships",
+          "date": "2024-09-28",
+          "division": "Junior Men's 81kg",
+          "lifter_name": "Kevin Li",
+          "body_weight_kg": "79.78",
+          "snatch_1": "90",
+          "snatch_2": "95",
+          "snatch_3": "-101",
+          "cj_1": "-124",
+          "cj_2": "-124",
+          "cj_3": "125",
+          "best_snatch": "95",
+          "best_cj": "125",
+          "total": "220"
+        },
+        {
+          "meet_name": "The Nike 2024 National University Championships Powered by Rogue Fitness",
+          "date": "2024-03-01",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Kevin Li",
+          "body_weight_kg": "81",
+          "snatch_1": "75",
+          "snatch_2": "80",
+          "snatch_3": "-87",
+          "cj_1": "100",
+          "cj_2": "107",
+          "cj_3": "115",
+          "best_snatch": "80",
+          "best_cj": "115",
+          "total": "195"
+        },
+        {
+          "meet_name": "2023 December online qualifier (NUQ)",
+          "date": "2023-12-01",
+          "division": "Junior Men's 81kg",
+          "lifter_name": "Kevin Li",
+          "body_weight_kg": "79.1",
+          "snatch_1": "0",
+          "snatch_2": "0",
+          "snatch_3": "80",
+          "cj_1": "0",
+          "cj_2": "0",
+          "cj_3": "102",
+          "best_snatch": "80",
+          "best_cj": "102",
+          "total": "182"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "The 2025 National University Championships Powered by Rogue Fitness",
+            "date": "2025-02-27",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Kevin Li",
+            "body_weight_kg": "85.25",
+            "snatch_1": "90",
+            "snatch_2": "95",
+            "snatch_3": "-103",
+            "cj_1": "130",
+            "cj_2": "-135",
+            "cj_3": "-138",
+            "best_snatch": "95",
+            "best_cj": "130",
+            "total": "225"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMi0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMi0yNyIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "59",
+            "athlete_name": "Kevin Li",
+            "total": "225",
+            "gender": "M",
+            "age": "21",
+            "club_name": "Northeastern University",
+            "membership_number": "1073893",
+            "wso": "New England"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2024 New England WSO Championships",
+            "date": "2024-09-28",
+            "division": "Junior Men's 81kg",
+            "lifter_name": "Kevin Li",
+            "body_weight_kg": "79.78",
+            "snatch_1": "90",
+            "snatch_2": "95",
+            "snatch_3": "-101",
+            "cj_1": "-124",
+            "cj_2": "-124",
+            "cj_3": "125",
+            "best_snatch": "95",
+            "best_cj": "125",
+            "total": "220"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOS0yOCIsIndlaWdodF9jbGFzcyI6NjV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Kevin Li",
+            "total": "220",
+            "gender": "M",
+            "age": "20",
+            "club_name": "Northeastern University",
+            "membership_number": "1073893",
+            "wso": "New England"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The Nike 2024 National University Championships Powered by Rogue Fitness",
+            "date": "2024-03-01",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Kevin Li",
+            "body_weight_kg": "81",
+            "snatch_1": "75",
+            "snatch_2": "80",
+            "snatch_3": "-87",
+            "cj_1": "100",
+            "cj_2": "107",
+            "cj_3": "115",
+            "best_snatch": "80",
+            "best_cj": "115",
+            "total": "195"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMy0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMy0wMSIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "77",
+            "athlete_name": "Kevin Li",
+            "total": "195",
+            "gender": "M",
+            "age": "20",
+            "club_name": "Northeastern University",
+            "membership_number": "1073893",
+            "wso": "New England"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2023 December online qualifier (NUQ)",
+            "date": "2023-12-01",
+            "division": "Junior Men's 81kg",
+            "lifter_name": "Kevin Li",
+            "body_weight_kg": "79.1",
+            "snatch_1": "0",
+            "snatch_2": "0",
+            "snatch_3": "80",
+            "cj_1": "0",
+            "cj_2": "0",
+            "cj_3": "102",
+            "best_snatch": "80",
+            "best_cj": "102",
+            "total": "182"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMi0wMSIsIndlaWdodF9jbGFzcyI6NjV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Kevin Li",
+            "total": "182",
+            "gender": "M",
+            "age": "19",
+            "club_name": "Northeastern University",
+            "membership_number": "1073893",
+            "wso": "New England"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 57870,
+      "athlete_name": "Kevin Li",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/57870",
+      "contaminated_lifter_id": 55901,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T14:24:08.807Z",
+      "profile_data": {
+        "membership_number": "1069710",
+        "birth_year": 1989,
+        "gender": "M",
+        "club_name": "Speed Power Strength",
+        "wso": "California North Central",
+        "national_rank": "40"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Rite of Passage 2023",
+          "date": "2023-03-25",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Kevin Li",
+          "body_weight_kg": "73.8",
+          "snatch_1": "-56",
+          "snatch_2": "57",
+          "snatch_3": "60",
+          "cj_1": "68",
+          "cj_2": "72",
+          "cj_3": "76",
+          "best_snatch": "60",
+          "best_cj": "76",
+          "total": "136"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Rite of Passage 2023",
+            "date": "2023-03-25",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Kevin Li",
+            "body_weight_kg": "73.8",
+            "snatch_1": "-56",
+            "snatch_2": "57",
+            "snatch_3": "60",
+            "cj_1": "68",
+            "cj_2": "72",
+            "cj_3": "76",
+            "best_snatch": "60",
+            "best_cj": "76",
+            "total": "136"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMy0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMy0yNSIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "40",
+            "athlete_name": "Kevin Li",
+            "total": "136",
+            "gender": "M",
+            "age": "34",
+            "club_name": "Speed Power Strength",
+            "membership_number": "1069710",
+            "wso": "California North Central"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

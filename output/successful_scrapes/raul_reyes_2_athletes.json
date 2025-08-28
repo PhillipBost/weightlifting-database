@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T14:19:09.553Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Raul Reyes",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 48419647
+  },
+  "data": [
+    {
+      "internal_id": 61387,
+      "athlete_name": "Raul Reyes",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/61387",
+      "contaminated_lifter_id": 53840,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T14:18:59.333Z",
+      "profile_data": {
+        "membership_number": "1073809",
+        "birth_year": 1993,
+        "gender": "M",
+        "club_name": "Dynamis Barbell Club",
+        "wso": "DMV",
+        "national_rank": "9"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Rosedale Open 2024",
+          "date": "2024-01-13",
+          "division": "Open Men's +109kg",
+          "lifter_name": "Raul Reyes",
+          "body_weight_kg": "127.7",
+          "snatch_1": "57",
+          "snatch_2": "59",
+          "snatch_3": "63",
+          "cj_1": "70",
+          "cj_2": "75",
+          "cj_3": "81",
+          "best_snatch": "63",
+          "best_cj": "81",
+          "total": "144"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Rosedale Open 2024",
+            "date": "2024-01-13",
+            "division": "Open Men's +109kg",
+            "lifter_name": "Raul Reyes",
+            "body_weight_kg": "127.7",
+            "snatch_1": "57",
+            "snatch_2": "59",
+            "snatch_3": "63",
+            "cj_1": "70",
+            "cj_2": "75",
+            "cj_3": "81",
+            "best_snatch": "63",
+            "best_cj": "81",
+            "total": "144"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMS0xMyIsIndlaWdodF9jbGFzcyI6OTB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "Raul Reyes",
+            "total": "144",
+            "gender": "M",
+            "age": "31",
+            "club_name": "Dynamis Barbell Club",
+            "membership_number": "1073809",
+            "wso": "DMV"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 55710,
+      "athlete_name": "Raul Reyes",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/55710",
+      "contaminated_lifter_id": 53840,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T14:19:09.550Z",
+      "profile_data": {
+        "membership_number": "1066089",
+        "birth_year": 2005,
+        "gender": "M",
+        "club_name": "Deviant Strength",
+        "wso": "Texas-Oklahoma",
+        "national_rank": "4"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Friendswood Fall Qualifier",
+          "date": "2022-09-24",
+          "division": "Junior Men's 81kg",
+          "lifter_name": "Raul Reyes",
+          "body_weight_kg": "81",
+          "snatch_1": "56",
+          "snatch_2": "59",
+          "snatch_3": "63",
+          "cj_1": "64",
+          "cj_2": "68",
+          "cj_3": "75",
+          "best_snatch": "63",
+          "best_cj": "75",
+          "total": "138"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Friendswood Fall Qualifier",
+            "date": "2022-09-24",
+            "division": "Junior Men's 81kg",
+            "lifter_name": "Raul Reyes",
+            "body_weight_kg": "81",
+            "snatch_1": "56",
+            "snatch_2": "59",
+            "snatch_3": "63",
+            "cj_1": "64",
+            "cj_2": "68",
+            "cj_3": "75",
+            "best_snatch": "63",
+            "best_cj": "75",
+            "total": "138"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wOS0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wOS0yNCIsIndlaWdodF9jbGFzcyI6NjV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Raul Reyes",
+            "total": "138",
+            "gender": "M",
+            "age": "17",
+            "club_name": "Deviant Strength",
+            "membership_number": "1066089",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

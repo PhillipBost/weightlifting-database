@@ -1,0 +1,247 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T18:03:12.326Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Hailey Ramirez",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 4,
+    "total_reverse_lookups": 4,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 61862420
+  },
+  "data": [
+    {
+      "internal_id": 60116,
+      "athlete_name": "Hailey Ramirez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/60116",
+      "contaminated_lifter_id": 21889,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T18:02:55.432Z",
+      "profile_data": {
+        "membership_number": "1071058",
+        "birth_year": 2003,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "California South",
+        "national_rank": "12"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Spring Lift Off 2025 by Rep Max Performance",
+          "date": "2025-03-15",
+          "division": "Open Women's 71kg",
+          "lifter_name": "Hailey Ramirez",
+          "body_weight_kg": "68",
+          "snatch_1": "50",
+          "snatch_2": "-55",
+          "snatch_3": "-58",
+          "cj_1": "-75",
+          "cj_2": "75",
+          "cj_3": "-80",
+          "best_snatch": "50",
+          "best_cj": "75",
+          "total": "125"
+        },
+        {
+          "meet_name": "Fall Face Off 2023",
+          "date": "2023-09-30",
+          "division": "Open Women's 71kg",
+          "lifter_name": "Hailey Ramirez",
+          "body_weight_kg": "71",
+          "snatch_1": "35",
+          "snatch_2": "39",
+          "snatch_3": "41",
+          "cj_1": "-58",
+          "cj_2": "58",
+          "cj_3": "62",
+          "best_snatch": "41",
+          "best_cj": "62",
+          "total": "103"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Spring Lift Off 2025 by Rep Max Performance",
+            "date": "2025-03-15",
+            "division": "Open Women's 71kg",
+            "lifter_name": "Hailey Ramirez",
+            "body_weight_kg": "68",
+            "snatch_1": "50",
+            "snatch_2": "-55",
+            "snatch_3": "-58",
+            "cj_1": "-75",
+            "cj_2": "75",
+            "cj_3": "-80",
+            "best_snatch": "50",
+            "best_cj": "75",
+            "total": "125"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMy0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMy0xNSIsIndlaWdodF9jbGFzcyI6OTZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "12",
+            "athlete_name": "Hailey Ramirez",
+            "total": "125",
+            "gender": "F",
+            "age": "22",
+            "club_name": "-",
+            "membership_number": "1071058",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Fall Face Off 2023",
+            "date": "2023-09-30",
+            "division": "Open Women's 71kg",
+            "lifter_name": "Hailey Ramirez",
+            "body_weight_kg": "71",
+            "snatch_1": "35",
+            "snatch_2": "39",
+            "snatch_3": "41",
+            "cj_1": "-58",
+            "cj_2": "58",
+            "cj_3": "62",
+            "best_snatch": "41",
+            "best_cj": "62",
+            "total": "103"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wOS0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wOS0zMCIsIndlaWdodF9jbGFzcyI6OTZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "51",
+            "athlete_name": "Hailey Ramirez",
+            "total": "103",
+            "gender": "F",
+            "age": "20",
+            "club_name": "-",
+            "membership_number": "1071058",
+            "wso": "California South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 43638,
+      "athlete_name": "Hailey Ramirez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/43638",
+      "contaminated_lifter_id": 21889,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T18:03:12.325Z",
+      "profile_data": {
+        "membership_number": "1002088",
+        "birth_year": 2003,
+        "gender": "F",
+        "club_name": "JO CO WEIGHTLIFTING CLUB",
+        "wso": "Indiana",
+        "national_rank": "2"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Indiana State Championship and Open",
+          "date": "2016-06-04",
+          "division": "Women's 13 Under Age Group +58 Kg",
+          "lifter_name": "Hailey Ramirez",
+          "body_weight_kg": "63",
+          "snatch_1": "39",
+          "snatch_2": "42",
+          "snatch_3": "45",
+          "cj_1": "45",
+          "cj_2": "48",
+          "cj_3": "-51",
+          "best_snatch": "45",
+          "best_cj": "48",
+          "total": "93"
+        },
+        {
+          "meet_name": "Barbell Lift Off",
+          "date": "2016-02-13",
+          "division": "Women's 13 Under Age Group +58 Kg",
+          "lifter_name": "Hailey Ramirez",
+          "body_weight_kg": "62.4",
+          "snatch_1": "32",
+          "snatch_2": "35",
+          "snatch_3": "-38",
+          "cj_1": "40",
+          "cj_2": "43",
+          "cj_3": "46",
+          "best_snatch": "35",
+          "best_cj": "46",
+          "total": "81"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Indiana State Championship and Open",
+            "date": "2016-06-04",
+            "division": "Women's 13 Under Age Group +58 Kg",
+            "lifter_name": "Hailey Ramirez",
+            "body_weight_kg": "63",
+            "snatch_1": "39",
+            "snatch_2": "42",
+            "snatch_3": "45",
+            "cj_1": "45",
+            "cj_2": "48",
+            "cj_3": "-51",
+            "best_snatch": "45",
+            "best_cj": "48",
+            "total": "93"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0wNCIsIndlaWdodF9jbGFzcyI6MzA1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Hailey Ramirez",
+            "total": "93",
+            "gender": "F",
+            "age": "13",
+            "club_name": "JO CO WEIGHTLIFTING CLUB",
+            "membership_number": "1002088",
+            "wso": "Indiana"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Barbell Lift Off",
+            "date": "2016-02-13",
+            "division": "Women's 13 Under Age Group +58 Kg",
+            "lifter_name": "Hailey Ramirez",
+            "body_weight_kg": "62.4",
+            "snatch_1": "32",
+            "snatch_2": "35",
+            "snatch_3": "-38",
+            "cj_1": "40",
+            "cj_2": "43",
+            "cj_3": "46",
+            "best_snatch": "35",
+            "best_cj": "46",
+            "total": "81"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMi0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMi0xMyIsIndlaWdodF9jbGFzcyI6MzA1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Hailey Ramirez",
+            "total": "81",
+            "gender": "F",
+            "age": "13",
+            "club_name": "JO CO WEIGHTLIFTING CLUB",
+            "membership_number": "1002088",
+            "wso": "Indiana"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

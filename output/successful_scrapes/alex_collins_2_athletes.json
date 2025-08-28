@@ -1,0 +1,200 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T18:05:43.414Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Alex Collins",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 3,
+    "total_reverse_lookups": 3,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 62013508
+  },
+  "data": [
+    {
+      "internal_id": 61729,
+      "athlete_name": "Alex Collins",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/61729",
+      "contaminated_lifter_id": 5754,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T18:05:32.718Z",
+      "profile_data": {
+        "membership_number": "1074975",
+        "birth_year": 2011,
+        "gender": "M",
+        "club_name": "Lakeville South Strength",
+        "wso": "Minnesota-Dakotas",
+        "national_rank": "4"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Northfield Invite",
+          "date": "2025-02-01",
+          "division": "Men's 14-15 Age Group 89kg",
+          "lifter_name": "Alex Collins",
+          "body_weight_kg": "81.8",
+          "snatch_1": "-35",
+          "snatch_2": "35",
+          "snatch_3": "38",
+          "cj_1": "45",
+          "cj_2": "-47",
+          "cj_3": "47",
+          "best_snatch": "38",
+          "best_cj": "47",
+          "total": "85"
+        },
+        {
+          "meet_name": "Northfield High School Invite",
+          "date": "2024-02-10",
+          "division": "Men's 13 Under Age Group 73kg",
+          "lifter_name": "Alex Collins",
+          "body_weight_kg": "71.5",
+          "snatch_1": "22",
+          "snatch_2": "26",
+          "snatch_3": "29",
+          "cj_1": "34",
+          "cj_2": "-37",
+          "cj_3": "-40",
+          "best_snatch": "29",
+          "best_cj": "34",
+          "total": "63"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Northfield Invite",
+            "date": "2025-02-01",
+            "division": "Men's 14-15 Age Group 89kg",
+            "lifter_name": "Alex Collins",
+            "body_weight_kg": "81.8",
+            "snatch_1": "-35",
+            "snatch_2": "35",
+            "snatch_3": "38",
+            "cj_1": "45",
+            "cj_2": "-47",
+            "cj_3": "47",
+            "best_snatch": "38",
+            "best_cj": "47",
+            "total": "85"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMi0wMSIsIndlaWdodF9jbGFzcyI6Mjl9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Alex Collins",
+            "total": "85",
+            "gender": "M",
+            "age": "14",
+            "club_name": "Lakeville South Strength",
+            "membership_number": "1074975",
+            "wso": "Minnesota-Dakotas"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Northfield High School Invite",
+            "date": "2024-02-10",
+            "division": "Men's 13 Under Age Group 73kg",
+            "lifter_name": "Alex Collins",
+            "body_weight_kg": "71.5",
+            "snatch_1": "22",
+            "snatch_2": "26",
+            "snatch_3": "29",
+            "cj_1": "34",
+            "cj_2": "-37",
+            "cj_3": "-40",
+            "best_snatch": "29",
+            "best_cj": "34",
+            "total": "63"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMi0xMCIsIndlaWdodF9jbGFzcyI6NDl9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Alex Collins",
+            "total": "63",
+            "gender": "M",
+            "age": "13",
+            "club_name": "Lakeville South Strength",
+            "membership_number": "1074975",
+            "wso": "Minnesota-Dakotas"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 26164,
+      "athlete_name": "Alex Collins",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/26164",
+      "contaminated_lifter_id": 5754,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T18:05:43.412Z",
+      "profile_data": {
+        "membership_number": "180701",
+        "birth_year": 1991,
+        "gender": "M",
+        "club_name": "PITTSBURGH BBC",
+        "wso": "Pennsylvania-West Virginia",
+        "national_rank": "20"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Pittsburgh Open",
+          "date": "2013-01-26",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Alex Collins",
+          "body_weight_kg": "91.4",
+          "snatch_1": "60",
+          "snatch_2": "65",
+          "snatch_3": "70",
+          "cj_1": "90",
+          "cj_2": "95",
+          "cj_3": "100",
+          "best_snatch": "70",
+          "best_cj": "100",
+          "total": "170"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Pittsburgh Open",
+            "date": "2013-01-26",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Alex Collins",
+            "body_weight_kg": "91.4",
+            "snatch_1": "60",
+            "snatch_2": "65",
+            "snatch_3": "70",
+            "cj_1": "90",
+            "cj_2": "95",
+            "cj_3": "100",
+            "best_snatch": "70",
+            "best_cj": "100",
+            "total": "170"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMS0yNiIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "20",
+            "athlete_name": "Alex Collins",
+            "total": "170",
+            "gender": "M",
+            "age": "22",
+            "club_name": "PITTSBURGH BBC",
+            "membership_number": "180701",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

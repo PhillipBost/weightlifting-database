@@ -1,0 +1,426 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T07:45:04.281Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Michael Patterson",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 8,
+    "total_reverse_lookups": 8,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 22410736
+  },
+  "data": [
+    {
+      "internal_id": 52763,
+      "athlete_name": "Michael Patterson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/52763",
+      "contaminated_lifter_id": 49473,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T19:15:45.469Z",
+      "profile_data": {
+        "membership_number": "1060334",
+        "birth_year": 2004,
+        "gender": "M",
+        "club_name": "Uncommon Weightlifting Club",
+        "wso": "New York",
+        "national_rank": "2"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2022 Murder of Crows Open",
+          "date": "2022-06-11",
+          "division": "Junior Men's 109kg",
+          "lifter_name": "Michael Patterson",
+          "body_weight_kg": "109",
+          "snatch_1": "50",
+          "snatch_2": "55",
+          "snatch_3": "-60",
+          "cj_1": "62",
+          "cj_2": "67",
+          "cj_3": "72",
+          "best_snatch": "55",
+          "best_cj": "72",
+          "total": "127"
+        },
+        {
+          "meet_name": "Closed Meet - Uncommon High School Open",
+          "date": "2021-12-17",
+          "division": "Men's 16-17 Age Group +102kg",
+          "lifter_name": "Michael Patterson",
+          "body_weight_kg": "131.8",
+          "snatch_1": "35",
+          "snatch_2": "40",
+          "snatch_3": "45",
+          "cj_1": "40",
+          "cj_2": "50",
+          "cj_3": "60",
+          "best_snatch": "45",
+          "best_cj": "60",
+          "total": "105"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2022 Murder of Crows Open",
+            "date": "2022-06-11",
+            "division": "Junior Men's 109kg",
+            "lifter_name": "Michael Patterson",
+            "body_weight_kg": "109",
+            "snatch_1": "50",
+            "snatch_2": "55",
+            "snatch_3": "-60",
+            "cj_1": "62",
+            "cj_2": "67",
+            "cj_3": "72",
+            "best_snatch": "55",
+            "best_cj": "72",
+            "total": "127"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNi0xMSIsIndlaWdodF9jbGFzcyI6Njl9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Michael Patterson",
+            "total": "127",
+            "gender": "M",
+            "age": "18",
+            "club_name": "Uncommon Weightlifting Club",
+            "membership_number": "1060334",
+            "wso": "New York"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Closed Meet - Uncommon High School Open",
+            "date": "2021-12-17",
+            "division": "Men's 16-17 Age Group +102kg",
+            "lifter_name": "Michael Patterson",
+            "body_weight_kg": "131.8",
+            "snatch_1": "35",
+            "snatch_2": "40",
+            "snatch_3": "45",
+            "cj_1": "40",
+            "cj_2": "50",
+            "cj_3": "60",
+            "best_snatch": "45",
+            "best_cj": "60",
+            "total": "105"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMi0xNyIsIndlaWdodF9jbGFzcyI6MTB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Michael Patterson",
+            "total": "105",
+            "gender": "M",
+            "age": "17",
+            "club_name": "Uncommon Weightlifting Club",
+            "membership_number": "1060334",
+            "wso": "New York"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 51455,
+      "athlete_name": "Michael Patterson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/51455",
+      "contaminated_lifter_id": 49473,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-27T07:45:02.279Z",
+      "profile_data": {
+        "membership_number": "1057993",
+        "birth_year": 1983,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Florida",
+        "national_rank": "3"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2023 Pan American Masters",
+          "date": "2023-05-26",
+          "division": "Men's Masters (40-44) 67kg",
+          "lifter_name": "Michael Patterson",
+          "body_weight_kg": "66.93",
+          "snatch_1": "72",
+          "snatch_2": "75",
+          "snatch_3": "78",
+          "cj_1": "98",
+          "cj_2": "-102",
+          "cj_3": "102",
+          "best_snatch": "78",
+          "best_cj": "102",
+          "total": "180"
+        },
+        {
+          "meet_name": "2023 Florida WSO State Championships",
+          "date": "2023-05-18",
+          "division": "Men's Masters (40-44) 67kg",
+          "lifter_name": "Michael Patterson",
+          "body_weight_kg": "65.35",
+          "snatch_1": "69",
+          "snatch_2": "72",
+          "snatch_3": "-74",
+          "cj_1": "92",
+          "cj_2": "95",
+          "cj_3": "98",
+          "best_snatch": "72",
+          "best_cj": "98",
+          "total": "170"
+        },
+        {
+          "meet_name": "2023 National Masters Championships",
+          "date": "2023-03-17",
+          "division": "Men's Masters (40-44) 73kg",
+          "lifter_name": "Michael Patterson",
+          "body_weight_kg": "72.25",
+          "snatch_1": "71",
+          "snatch_2": "73",
+          "snatch_3": "76",
+          "cj_1": "92",
+          "cj_2": "95",
+          "cj_3": "-99",
+          "best_snatch": "76",
+          "best_cj": "95",
+          "total": "171"
+        },
+        {
+          "meet_name": "Downtown Tampa Open",
+          "date": "2022-08-27",
+          "division": "Men's Masters (35-39) 73kg",
+          "lifter_name": "Michael Patterson",
+          "body_weight_kg": "71.3",
+          "snatch_1": "70",
+          "snatch_2": "73",
+          "snatch_3": "77",
+          "cj_1": "91",
+          "cj_2": "97",
+          "cj_3": "100",
+          "best_snatch": "77",
+          "best_cj": "100",
+          "total": "177"
+        },
+        {
+          "meet_name": "2022 Howard Cohen American Masters",
+          "date": "2022-08-14",
+          "division": "Men's Masters (35-39) 73kg",
+          "lifter_name": "Michael Patterson",
+          "body_weight_kg": "71.85",
+          "snatch_1": "69",
+          "snatch_2": "-72",
+          "snatch_3": "-72",
+          "cj_1": "-94",
+          "cj_2": "-94",
+          "cj_3": "-94",
+          "best_snatch": "69",
+          "best_cj": "0",
+          "total": "0"
+        },
+        {
+          "meet_name": "2021 Howard Cohen American Masters",
+          "date": "2021-11-07",
+          "division": "Men's Masters (35-39) 67kg",
+          "lifter_name": "Michael Patterson",
+          "body_weight_kg": "65.75",
+          "snatch_1": "60",
+          "snatch_2": "63",
+          "snatch_3": "68",
+          "cj_1": "74",
+          "cj_2": "80",
+          "cj_3": "87",
+          "best_snatch": "68",
+          "best_cj": "87",
+          "total": "155"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2023 Pan American Masters",
+            "date": "2023-05-26",
+            "division": "Men's Masters (40-44) 67kg",
+            "lifter_name": "Michael Patterson",
+            "body_weight_kg": "66.93",
+            "snatch_1": "72",
+            "snatch_2": "75",
+            "snatch_3": "78",
+            "cj_1": "98",
+            "cj_2": "-102",
+            "cj_3": "102",
+            "best_snatch": "78",
+            "best_cj": "102",
+            "total": "180"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNS0yNiIsIndlaWdodF9jbGFzcyI6MTIzfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Michael Patterson",
+            "total": "180",
+            "gender": "M",
+            "age": "40",
+            "club_name": "-",
+            "membership_number": "1057993",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2023 Florida WSO State Championships",
+            "date": "2023-05-18",
+            "division": "Men's Masters (40-44) 67kg",
+            "lifter_name": "Michael Patterson",
+            "body_weight_kg": "65.35",
+            "snatch_1": "69",
+            "snatch_2": "72",
+            "snatch_3": "-74",
+            "cj_1": "92",
+            "cj_2": "95",
+            "cj_3": "98",
+            "best_snatch": "72",
+            "best_cj": "98",
+            "total": "170"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNS0xOCIsIndlaWdodF9jbGFzcyI6MTIzfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Michael Patterson",
+            "total": "170",
+            "gender": "M",
+            "age": "40",
+            "club_name": "-",
+            "membership_number": "1057993",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2023 National Masters Championships",
+            "date": "2023-03-17",
+            "division": "Men's Masters (40-44) 73kg",
+            "lifter_name": "Michael Patterson",
+            "body_weight_kg": "72.25",
+            "snatch_1": "71",
+            "snatch_2": "73",
+            "snatch_3": "76",
+            "cj_1": "92",
+            "cj_2": "95",
+            "cj_3": "-99",
+            "best_snatch": "76",
+            "best_cj": "95",
+            "total": "171"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMy0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMy0xNyIsIndlaWdodF9jbGFzcyI6MTI0fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "8",
+            "athlete_name": "Michael Patterson",
+            "total": "171",
+            "gender": "M",
+            "age": "40",
+            "club_name": "-",
+            "membership_number": "1057993",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Downtown Tampa Open",
+            "date": "2022-08-27",
+            "division": "Men's Masters (35-39) 73kg",
+            "lifter_name": "Michael Patterson",
+            "body_weight_kg": "71.3",
+            "snatch_1": "70",
+            "snatch_2": "73",
+            "snatch_3": "77",
+            "cj_1": "91",
+            "cj_2": "97",
+            "cj_3": "100",
+            "best_snatch": "77",
+            "best_cj": "100",
+            "total": "177"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wOC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wOC0yNyIsIndlaWdodF9jbGFzcyI6MTA0fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Michael Patterson",
+            "total": "177",
+            "gender": "M",
+            "age": "39",
+            "club_name": "-",
+            "membership_number": "1057993",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2022 Howard Cohen American Masters",
+            "date": "2022-08-14",
+            "division": "Men's Masters (35-39) 73kg",
+            "lifter_name": "Michael Patterson",
+            "body_weight_kg": "71.85",
+            "snatch_1": "69",
+            "snatch_2": "-72",
+            "snatch_3": "-72",
+            "cj_1": "-94",
+            "cj_2": "-94",
+            "cj_3": "-94",
+            "best_snatch": "69",
+            "best_cj": "0",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wOC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wOC0xNCIsIndlaWdodF9jbGFzcyI6MTA0fQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2021 Howard Cohen American Masters",
+            "date": "2021-11-07",
+            "division": "Men's Masters (35-39) 67kg",
+            "lifter_name": "Michael Patterson",
+            "body_weight_kg": "65.75",
+            "snatch_1": "60",
+            "snatch_2": "63",
+            "snatch_3": "68",
+            "cj_1": "74",
+            "cj_2": "80",
+            "cj_3": "87",
+            "best_snatch": "68",
+            "best_cj": "87",
+            "total": "155"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMS0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMS0wNyIsIndlaWdodF9jbGFzcyI6MTAzfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Michael Patterson",
+            "total": "155",
+            "gender": "M",
+            "age": "38",
+            "club_name": "-",
+            "membership_number": "1057993",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    }
+  ]
+}

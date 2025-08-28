@@ -1,0 +1,247 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T07:37:05.256Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Nicholas Palmer",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 4,
+    "total_reverse_lookups": 4,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 24295350
+  },
+  "data": [
+    {
+      "internal_id": 7613,
+      "athlete_name": "Nicholas Palmer",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/7613",
+      "contaminated_lifter_id": 637,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T07:36:43.568Z",
+      "profile_data": {
+        "membership_number": "1011995",
+        "birth_year": 1980,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Mountain South",
+        "national_rank": "13"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Arizona State Championships",
+          "date": "2016-10-09",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Nicholas Palmer",
+          "body_weight_kg": "89.95",
+          "snatch_1": "84",
+          "snatch_2": "-89",
+          "snatch_3": "89",
+          "cj_1": "11",
+          "cj_2": "117",
+          "cj_3": "-123",
+          "best_snatch": "89",
+          "best_cj": "117",
+          "total": "206"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Arizona State Championships",
+            "date": "2016-10-09",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Nicholas Palmer",
+            "body_weight_kg": "89.95",
+            "snatch_1": "84",
+            "snatch_2": "-89",
+            "snatch_3": "89",
+            "cj_1": "11",
+            "cj_2": "117",
+            "cj_3": "-123",
+            "best_snatch": "89",
+            "best_cj": "117",
+            "total": "206"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0wOSIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "13",
+            "athlete_name": "Nicholas Palmer",
+            "total": "206",
+            "gender": "M",
+            "age": "36",
+            "club_name": "-",
+            "membership_number": "1011995",
+            "wso": "Mountain South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 32877,
+      "athlete_name": "Nicholas Palmer",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/32877",
+      "contaminated_lifter_id": 637,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T07:37:05.253Z",
+      "profile_data": {
+        "membership_number": "176025",
+        "birth_year": 1995,
+        "gender": "M",
+        "club_name": "DEVILS WEIGHTLIFTING TEAM",
+        "wso": "New Jersey",
+        "national_rank": "3"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Danica Rue Invitational",
+          "date": "2013-06-01",
+          "division": "Open Men's 62 kg",
+          "lifter_name": "Nicholas Palmer",
+          "body_weight_kg": "60.53",
+          "snatch_1": "65",
+          "snatch_2": "70",
+          "snatch_3": "70",
+          "cj_1": "80",
+          "cj_2": "85",
+          "cj_3": "90",
+          "best_snatch": "70",
+          "best_cj": "90",
+          "total": "160"
+        },
+        {
+          "meet_name": "Rudy Sablo Memorial",
+          "date": "2012-09-16",
+          "division": "Open Men's 62 kg",
+          "lifter_name": "Nicholas Palmer",
+          "body_weight_kg": "58.8",
+          "snatch_1": "60",
+          "snatch_2": "64",
+          "snatch_3": "-68",
+          "cj_1": "77",
+          "cj_2": "81",
+          "cj_3": "-86",
+          "best_snatch": "64",
+          "best_cj": "81",
+          "total": "145"
+        },
+        {
+          "meet_name": "NJ State Championships",
+          "date": "2012-08-04",
+          "division": "Open Men's 62 kg",
+          "lifter_name": "Nicholas Palmer",
+          "body_weight_kg": "59.6",
+          "snatch_1": "57",
+          "snatch_2": "60",
+          "snatch_3": "-63",
+          "cj_1": "70",
+          "cj_2": "75",
+          "cj_3": "80",
+          "best_snatch": "60",
+          "best_cj": "80",
+          "total": "140"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Danica Rue Invitational",
+            "date": "2013-06-01",
+            "division": "Open Men's 62 kg",
+            "lifter_name": "Nicholas Palmer",
+            "body_weight_kg": "60.53",
+            "snatch_1": "65",
+            "snatch_2": "70",
+            "snatch_3": "70",
+            "cj_1": "80",
+            "cj_2": "85",
+            "cj_3": "90",
+            "best_snatch": "70",
+            "best_cj": "90",
+            "total": "160"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNi0wMSIsIndlaWdodF9jbGFzcyI6MzU1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Nicholas Palmer",
+            "total": "160",
+            "gender": "M",
+            "age": "18",
+            "club_name": "DEVILS WEIGHTLIFTING TEAM",
+            "membership_number": "176025",
+            "wso": "New Jersey"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Rudy Sablo Memorial",
+            "date": "2012-09-16",
+            "division": "Open Men's 62 kg",
+            "lifter_name": "Nicholas Palmer",
+            "body_weight_kg": "58.8",
+            "snatch_1": "60",
+            "snatch_2": "64",
+            "snatch_3": "-68",
+            "cj_1": "77",
+            "cj_2": "81",
+            "cj_3": "-86",
+            "best_snatch": "64",
+            "best_cj": "81",
+            "total": "145"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wOS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wOS0xNiIsIndlaWdodF9jbGFzcyI6MzU1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Nicholas Palmer",
+            "total": "145",
+            "gender": "M",
+            "age": "17",
+            "club_name": "DEVILS WEIGHTLIFTING TEAM",
+            "membership_number": "176025",
+            "wso": "New Jersey"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "NJ State Championships",
+            "date": "2012-08-04",
+            "division": "Open Men's 62 kg",
+            "lifter_name": "Nicholas Palmer",
+            "body_weight_kg": "59.6",
+            "snatch_1": "57",
+            "snatch_2": "60",
+            "snatch_3": "-63",
+            "cj_1": "70",
+            "cj_2": "75",
+            "cj_3": "80",
+            "best_snatch": "60",
+            "best_cj": "80",
+            "total": "140"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wOC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wOC0wNCIsIndlaWdodF9jbGFzcyI6MzU1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Nicholas Palmer",
+            "total": "140",
+            "gender": "M",
+            "age": "17",
+            "club_name": "DEVILS WEIGHTLIFTING TEAM",
+            "membership_number": "176025",
+            "wso": "New Jersey"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

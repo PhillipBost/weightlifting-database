@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T05:03:19.529Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Parker Jackson",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 101469623
+  },
+  "data": [
+    {
+      "internal_id": 27635,
+      "athlete_name": "Parker Jackson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/27635",
+      "contaminated_lifter_id": 4851,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T05:03:06.623Z",
+      "profile_data": {
+        "membership_number": "188127",
+        "birth_year": 1992,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Texas-Oklahoma",
+        "national_rank": "4"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2013 Copperhead Weightlifting Championships & American Open Qualifier",
+          "date": "2013-10-26",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Parker Jackson",
+          "body_weight_kg": "83.6",
+          "snatch_1": "110",
+          "snatch_2": "116",
+          "snatch_3": "120",
+          "cj_1": "140",
+          "cj_2": "145",
+          "cj_3": "146",
+          "best_snatch": "120",
+          "best_cj": "146",
+          "total": "266"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2013 Copperhead Weightlifting Championships & American Open Qualifier",
+            "date": "2013-10-26",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Parker Jackson",
+            "body_weight_kg": "83.6",
+            "snatch_1": "110",
+            "snatch_2": "116",
+            "snatch_3": "120",
+            "cj_1": "140",
+            "cj_2": "145",
+            "cj_3": "146",
+            "best_snatch": "120",
+            "best_cj": "146",
+            "total": "266"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMC0yNiIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Parker Jackson",
+            "total": "266",
+            "gender": "M",
+            "age": "21",
+            "club_name": "-",
+            "membership_number": "188127",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 57748,
+      "athlete_name": "Parker Jackson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/57748",
+      "contaminated_lifter_id": 4851,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T05:03:19.526Z",
+      "profile_data": {
+        "membership_number": "1068976",
+        "birth_year": 2011,
+        "gender": "M",
+        "club_name": "HASSLE FREE BBC",
+        "wso": "California North Central",
+        "national_rank": "2"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Bulldog Weightlifting 2023",
+          "date": "2023-03-11",
+          "division": "Men's 13 Under Age Group 49kg",
+          "lifter_name": "Parker Jackson",
+          "body_weight_kg": "46.3",
+          "snatch_1": "17",
+          "snatch_2": "20",
+          "snatch_3": "22",
+          "cj_1": "25",
+          "cj_2": "28",
+          "cj_3": "31",
+          "best_snatch": "22",
+          "best_cj": "31",
+          "total": "53"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Bulldog Weightlifting 2023",
+            "date": "2023-03-11",
+            "division": "Men's 13 Under Age Group 49kg",
+            "lifter_name": "Parker Jackson",
+            "body_weight_kg": "46.3",
+            "snatch_1": "17",
+            "snatch_2": "20",
+            "snatch_3": "22",
+            "cj_1": "25",
+            "cj_2": "28",
+            "cj_3": "31",
+            "best_snatch": "22",
+            "best_cj": "31",
+            "total": "53"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMy0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMy0xMSIsIndlaWdodF9jbGFzcyI6NDV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Parker Jackson",
+            "total": "53",
+            "gender": "M",
+            "age": "12",
+            "club_name": "HASSLE FREE BBC",
+            "membership_number": "1068976",
+            "wso": "California North Central"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

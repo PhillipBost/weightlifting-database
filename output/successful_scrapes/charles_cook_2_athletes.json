@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T11:54:00.749Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Charles Cook",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 39710843
+  },
+  "data": [
+    {
+      "internal_id": 11249,
+      "athlete_name": "Charles Cook",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/11249",
+      "contaminated_lifter_id": 23061,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T11:53:50.556Z",
+      "profile_data": {
+        "membership_number": "174167",
+        "birth_year": 1983,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Texas-Oklahoma",
+        "national_rank": "9"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2013 South Texas Open",
+          "date": "2013-08-17",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Charles Cook",
+          "body_weight_kg": "96.95",
+          "snatch_1": "95",
+          "snatch_2": "95",
+          "snatch_3": "100",
+          "cj_1": "115",
+          "cj_2": "120",
+          "cj_3": "125",
+          "best_snatch": "100",
+          "best_cj": "125",
+          "total": "225"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2013 South Texas Open",
+            "date": "2013-08-17",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Charles Cook",
+            "body_weight_kg": "96.95",
+            "snatch_1": "95",
+            "snatch_2": "95",
+            "snatch_3": "100",
+            "cj_1": "115",
+            "cj_2": "120",
+            "cj_3": "125",
+            "best_snatch": "100",
+            "best_cj": "125",
+            "total": "225"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wOC0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wOC0xNyIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "Charles Cook",
+            "total": "225",
+            "gender": "M",
+            "age": "30",
+            "club_name": "-",
+            "membership_number": "174167",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 41593,
+      "athlete_name": "Charles Cook",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/41593",
+      "contaminated_lifter_id": 23061,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T11:54:00.746Z",
+      "profile_data": {
+        "membership_number": "1003781",
+        "birth_year": 2001,
+        "gender": "M",
+        "club_name": "TEAM FLORIDA NORTHEAST",
+        "wso": "Florida",
+        "national_rank": "4"
+      },
+      "competition_history": [
+        {
+          "meet_name": "The Gainesville Winter Classic",
+          "date": "2016-02-20",
+          "division": "Open Men's 56 kg",
+          "lifter_name": "Charles Cook",
+          "body_weight_kg": "55",
+          "snatch_1": "35",
+          "snatch_2": "39",
+          "snatch_3": "-41",
+          "cj_1": "41",
+          "cj_2": "46",
+          "cj_3": "-50",
+          "best_snatch": "39",
+          "best_cj": "46",
+          "total": "85"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "The Gainesville Winter Classic",
+            "date": "2016-02-20",
+            "division": "Open Men's 56 kg",
+            "lifter_name": "Charles Cook",
+            "body_weight_kg": "55",
+            "snatch_1": "35",
+            "snatch_2": "39",
+            "snatch_3": "-41",
+            "cj_1": "41",
+            "cj_2": "46",
+            "cj_3": "-50",
+            "best_snatch": "39",
+            "best_cj": "46",
+            "total": "85"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMi0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMi0yMCIsIndlaWdodF9jbGFzcyI6MzU0fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Charles Cook",
+            "total": "85",
+            "gender": "M",
+            "age": "15",
+            "club_name": "TEAM FLORIDA NORTHEAST",
+            "membership_number": "1003781",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

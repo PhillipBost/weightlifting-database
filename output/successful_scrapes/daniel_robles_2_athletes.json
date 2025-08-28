@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T21:26:07.686Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Daniel Robles",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 74037780
+  },
+  "data": [
+    {
+      "internal_id": 5350,
+      "athlete_name": "Daniel Robles",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/5350",
+      "contaminated_lifter_id": 20814,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T21:25:56.195Z",
+      "profile_data": {
+        "membership_number": "200711",
+        "birth_year": 1977,
+        "gender": "M",
+        "club_name": "OKC BARBELL CLUB",
+        "wso": "Texas-Oklahoma",
+        "national_rank": "12"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Strength HQ Invitational 2.0",
+          "date": "2014-08-16",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Daniel Robles",
+          "body_weight_kg": "125.3",
+          "snatch_1": "45",
+          "snatch_2": "50",
+          "snatch_3": "52",
+          "cj_1": "50",
+          "cj_2": "55",
+          "cj_3": "57",
+          "best_snatch": "52",
+          "best_cj": "57",
+          "total": "109"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Strength HQ Invitational 2.0",
+            "date": "2014-08-16",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Daniel Robles",
+            "body_weight_kg": "125.3",
+            "snatch_1": "45",
+            "snatch_2": "50",
+            "snatch_3": "52",
+            "cj_1": "50",
+            "cj_2": "55",
+            "cj_3": "57",
+            "best_snatch": "52",
+            "best_cj": "57",
+            "total": "109"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0xNiIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "12",
+            "athlete_name": "Daniel Robles",
+            "total": "109",
+            "gender": "M",
+            "age": "37",
+            "club_name": "OKC BARBELL CLUB",
+            "membership_number": "200711",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 10618,
+      "athlete_name": "Daniel Robles",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/10618",
+      "contaminated_lifter_id": 20814,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T21:26:07.684Z",
+      "profile_data": {
+        "membership_number": "1010056",
+        "birth_year": 1983,
+        "gender": "M",
+        "club_name": "XCEL BARBELL CLUB",
+        "wso": "Mountain South",
+        "national_rank": "19"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Record Breakers 2018",
+          "date": "2018-10-27",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Daniel Robles",
+          "body_weight_kg": "80.06",
+          "snatch_1": "102",
+          "snatch_2": "105",
+          "snatch_3": "-110",
+          "cj_1": "122",
+          "cj_2": "130",
+          "cj_3": "133",
+          "best_snatch": "105",
+          "best_cj": "133",
+          "total": "238"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Record Breakers 2018",
+            "date": "2018-10-27",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Daniel Robles",
+            "body_weight_kg": "80.06",
+            "snatch_1": "102",
+            "snatch_2": "105",
+            "snatch_3": "-110",
+            "cj_1": "122",
+            "cj_2": "130",
+            "cj_3": "133",
+            "best_snatch": "105",
+            "best_cj": "133",
+            "total": "238"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yNyIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "19",
+            "athlete_name": "Daniel Robles",
+            "total": "238",
+            "gender": "M",
+            "age": "35",
+            "club_name": "XCEL BARBELL CLUB",
+            "membership_number": "1010056",
+            "wso": "Mountain South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

@@ -1,0 +1,285 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T06:45:35.876Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Steve Nguyen",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 5,
+    "total_reverse_lookups": 5,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 18842331
+  },
+  "data": [
+    {
+      "internal_id": 33180,
+      "athlete_name": "Steve Nguyen",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/33180",
+      "contaminated_lifter_id": 17105,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T17:54:40.969Z",
+      "profile_data": {
+        "membership_number": "1021558",
+        "birth_year": 1995,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "DMV",
+        "national_rank": "44"
+      },
+      "competition_history": [
+        {
+          "meet_name": "NOVAOpen",
+          "date": "2017-10-15",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Steve Nguyen",
+          "body_weight_kg": "69.4",
+          "snatch_1": "65",
+          "snatch_2": "68",
+          "snatch_3": "71",
+          "cj_1": "90",
+          "cj_2": "95",
+          "cj_3": "-100",
+          "best_snatch": "71",
+          "best_cj": "95",
+          "total": "166"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "NOVAOpen",
+            "date": "2017-10-15",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Steve Nguyen",
+            "body_weight_kg": "69.4",
+            "snatch_1": "65",
+            "snatch_2": "68",
+            "snatch_3": "71",
+            "cj_1": "90",
+            "cj_2": "95",
+            "cj_3": "-100",
+            "best_snatch": "71",
+            "best_cj": "95",
+            "total": "166"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0xNSIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "44",
+            "athlete_name": "Steve Nguyen",
+            "total": "166",
+            "gender": "M",
+            "age": "22",
+            "club_name": "-",
+            "membership_number": "1021558",
+            "wso": "DMV"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 23740,
+      "athlete_name": "Steve Nguyen",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/23740",
+      "contaminated_lifter_id": 17105,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-27T06:45:33.874Z",
+      "profile_data": {
+        "membership_number": "1002582",
+        "birth_year": 1990,
+        "gender": "M",
+        "club_name": "Team Juggernaut",
+        "wso": "California South",
+        "national_rank": "30"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2016 National University Championship",
+          "date": "2016-09-25",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Steve Nguyen",
+          "body_weight_kg": "76.5",
+          "snatch_1": "102",
+          "snatch_2": "106",
+          "snatch_3": "-110",
+          "cj_1": "132",
+          "cj_2": "-137",
+          "cj_3": "137",
+          "best_snatch": "106",
+          "best_cj": "137",
+          "total": "243"
+        },
+        {
+          "meet_name": "Double Barrel Open",
+          "date": "2016-08-21",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Steve Nguyen",
+          "body_weight_kg": "76.3",
+          "snatch_1": "95",
+          "snatch_2": "98",
+          "snatch_3": "-105",
+          "cj_1": "125",
+          "cj_2": "128",
+          "cj_3": "-136",
+          "best_snatch": "98",
+          "best_cj": "128",
+          "total": "226"
+        },
+        {
+          "meet_name": "California State GAmes",
+          "date": "2016-07-17",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Steve Nguyen",
+          "body_weight_kg": "74.5",
+          "snatch_1": "-105",
+          "snatch_2": "-105",
+          "snatch_3": "-105",
+          "cj_1": "-125",
+          "cj_2": "125",
+          "cj_3": "130",
+          "best_snatch": "0",
+          "best_cj": "130",
+          "total": "0"
+        },
+        {
+          "meet_name": "Battle of Iwo Jima Weightlifting Meet",
+          "date": "2016-01-23",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Steve Nguyen",
+          "body_weight_kg": "74.9",
+          "snatch_1": "92",
+          "snatch_2": "-96",
+          "snatch_3": "-97",
+          "cj_1": "120",
+          "cj_2": "-125",
+          "cj_3": "125",
+          "best_snatch": "92",
+          "best_cj": "125",
+          "total": "217"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2016 National University Championship",
+            "date": "2016-09-25",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Steve Nguyen",
+            "body_weight_kg": "76.5",
+            "snatch_1": "102",
+            "snatch_2": "106",
+            "snatch_3": "-110",
+            "cj_1": "132",
+            "cj_2": "-137",
+            "cj_3": "137",
+            "best_snatch": "106",
+            "best_cj": "137",
+            "total": "243"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOS0yNSIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "30",
+            "athlete_name": "Steve Nguyen",
+            "total": "243",
+            "gender": "M",
+            "age": "26",
+            "club_name": "Team Juggernaut",
+            "membership_number": "1002582",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Double Barrel Open",
+            "date": "2016-08-21",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Steve Nguyen",
+            "body_weight_kg": "76.3",
+            "snatch_1": "95",
+            "snatch_2": "98",
+            "snatch_3": "-105",
+            "cj_1": "125",
+            "cj_2": "128",
+            "cj_3": "-136",
+            "best_snatch": "98",
+            "best_cj": "128",
+            "total": "226"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0yMSIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "Steve Nguyen",
+            "total": "226",
+            "gender": "M",
+            "age": "26",
+            "club_name": "Team Juggernaut",
+            "membership_number": "1002582",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "California State GAmes",
+            "date": "2016-07-17",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Steve Nguyen",
+            "body_weight_kg": "74.5",
+            "snatch_1": "-105",
+            "snatch_2": "-105",
+            "snatch_3": "-105",
+            "cj_1": "-125",
+            "cj_2": "125",
+            "cj_3": "130",
+            "best_snatch": "0",
+            "best_cj": "130",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNy0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNy0xNyIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Battle of Iwo Jima Weightlifting Meet",
+            "date": "2016-01-23",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Steve Nguyen",
+            "body_weight_kg": "74.9",
+            "snatch_1": "92",
+            "snatch_2": "-96",
+            "snatch_3": "-97",
+            "cj_1": "120",
+            "cj_2": "-125",
+            "cj_3": "125",
+            "best_snatch": "92",
+            "best_cj": "125",
+            "total": "217"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0yMyIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Steve Nguyen",
+            "total": "217",
+            "gender": "M",
+            "age": "26",
+            "club_name": "Team Juggernaut",
+            "membership_number": "1002582",
+            "wso": "California South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    }
+  ]
+}

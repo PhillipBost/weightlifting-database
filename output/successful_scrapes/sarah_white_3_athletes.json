@@ -1,0 +1,315 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T03:46:58.005Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Sarah White",
+    "internal_ids_processed": 3,
+    "successful_scrapes": 3,
+    "failed_scrapes": 0,
+    "total_competitions_found": 5,
+    "total_reverse_lookups": 5,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 10488099
+  },
+  "data": [
+    {
+      "internal_id": 3083,
+      "athlete_name": "Sarah White",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/3083",
+      "contaminated_lifter_id": 7257,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T03:46:27.285Z",
+      "profile_data": {
+        "membership_number": "214730",
+        "birth_year": 1972,
+        "gender": "F",
+        "club_name": "LIFT LAB",
+        "wso": "Indiana",
+        "national_rank": "2"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Nationals Last Chance Qualifier",
+          "date": "2015-06-27",
+          "division": "Women's Masters (40-44) +75 kg",
+          "lifter_name": "Sarah White",
+          "body_weight_kg": "90",
+          "snatch_1": "25",
+          "snatch_2": "-30",
+          "snatch_3": "30",
+          "cj_1": "30",
+          "cj_2": "35",
+          "cj_3": "-40",
+          "best_snatch": "30",
+          "best_cj": "35",
+          "total": "65"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Nationals Last Chance Qualifier",
+            "date": "2015-06-27",
+            "division": "Women's Masters (40-44) +75 kg",
+            "lifter_name": "Sarah White",
+            "body_weight_kg": "90",
+            "snatch_1": "25",
+            "snatch_2": "-30",
+            "snatch_3": "30",
+            "cj_1": "30",
+            "cj_2": "35",
+            "cj_3": "-40",
+            "best_snatch": "30",
+            "best_cj": "35",
+            "total": "65"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNi0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNi0yNyIsIndlaWdodF9jbGFzcyI6NDAyfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Sarah White",
+            "total": "65",
+            "gender": "F",
+            "age": "43",
+            "club_name": "LIFT LAB",
+            "membership_number": "214730",
+            "wso": "Indiana"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 17730,
+      "athlete_name": "Sarah White",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/17730",
+      "contaminated_lifter_id": 7257,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T03:46:48.489Z",
+      "profile_data": {
+        "membership_number": "134457",
+        "birth_year": 1987,
+        "gender": "F",
+        "club_name": "TEAM BFS",
+        "wso": "New England",
+        "national_rank": "5"
+      },
+      "competition_history": [
+        {
+          "meet_name": "General Meng Yi Last qualifier",
+          "date": "2014-11-02",
+          "division": "Open Women's +75 Kg",
+          "lifter_name": "Sarah White",
+          "body_weight_kg": "108.9",
+          "snatch_1": "67",
+          "snatch_2": "70",
+          "snatch_3": "73",
+          "cj_1": "90",
+          "cj_2": "-94",
+          "cj_3": "-94",
+          "best_snatch": "73",
+          "best_cj": "90",
+          "total": "163"
+        },
+        {
+          "meet_name": "Crossfit Norwalk Open",
+          "date": "2014-09-28",
+          "division": "Open Women's +75 Kg",
+          "lifter_name": "Sarah White",
+          "body_weight_kg": "108.66",
+          "snatch_1": "-69",
+          "snatch_2": "69",
+          "snatch_3": "-72",
+          "cj_1": "87",
+          "cj_2": "92",
+          "cj_3": "-95",
+          "best_snatch": "69",
+          "best_cj": "92",
+          "total": "161"
+        },
+        {
+          "meet_name": "Connecticut Open Weightlifting Championships",
+          "date": "2014-08-10",
+          "division": "Open Women's +75 Kg",
+          "lifter_name": "Sarah White",
+          "body_weight_kg": "110.9",
+          "snatch_1": "68",
+          "snatch_2": "71",
+          "snatch_3": "73",
+          "cj_1": "88",
+          "cj_2": "91",
+          "cj_3": "93",
+          "best_snatch": "73",
+          "best_cj": "93",
+          "total": "166"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "General Meng Yi Last qualifier",
+            "date": "2014-11-02",
+            "division": "Open Women's +75 Kg",
+            "lifter_name": "Sarah White",
+            "body_weight_kg": "108.9",
+            "snatch_1": "67",
+            "snatch_2": "70",
+            "snatch_3": "73",
+            "cj_1": "90",
+            "cj_2": "-94",
+            "cj_3": "-94",
+            "best_snatch": "73",
+            "best_cj": "90",
+            "total": "163"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMS0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMS0wMiIsIndlaWdodF9jbGFzcyI6MzY4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "Sarah White",
+            "total": "163",
+            "gender": "F",
+            "age": "27",
+            "club_name": "TEAM BFS",
+            "membership_number": "134457",
+            "wso": "New England"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Crossfit Norwalk Open",
+            "date": "2014-09-28",
+            "division": "Open Women's +75 Kg",
+            "lifter_name": "Sarah White",
+            "body_weight_kg": "108.66",
+            "snatch_1": "-69",
+            "snatch_2": "69",
+            "snatch_3": "-72",
+            "cj_1": "87",
+            "cj_2": "92",
+            "cj_3": "-95",
+            "best_snatch": "69",
+            "best_cj": "92",
+            "total": "161"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOS0yOCIsIndlaWdodF9jbGFzcyI6MzY4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Sarah White",
+            "total": "161",
+            "gender": "F",
+            "age": "27",
+            "club_name": "TEAM BFS",
+            "membership_number": "134457",
+            "wso": "New England"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Connecticut Open Weightlifting Championships",
+            "date": "2014-08-10",
+            "division": "Open Women's +75 Kg",
+            "lifter_name": "Sarah White",
+            "body_weight_kg": "110.9",
+            "snatch_1": "68",
+            "snatch_2": "71",
+            "snatch_3": "73",
+            "cj_1": "88",
+            "cj_2": "91",
+            "cj_3": "93",
+            "best_snatch": "73",
+            "best_cj": "93",
+            "total": "166"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0xMCIsIndlaWdodF9jbGFzcyI6MzY4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Sarah White",
+            "total": "166",
+            "gender": "F",
+            "age": "27",
+            "club_name": "TEAM BFS",
+            "membership_number": "134457",
+            "wso": "New England"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 25845,
+      "athlete_name": "Sarah White",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/25845",
+      "contaminated_lifter_id": 7257,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T03:46:58.003Z",
+      "profile_data": {
+        "membership_number": "215128",
+        "birth_year": 1991,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "Carolina",
+        "national_rank": "12"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2015 Athletic Lab Summer Weightlifting Open",
+          "date": "2015-07-25",
+          "division": "Open Women's 58 kg",
+          "lifter_name": "Sarah White",
+          "body_weight_kg": "56.1",
+          "snatch_1": "40",
+          "snatch_2": "47",
+          "snatch_3": "47",
+          "cj_1": "53",
+          "cj_2": "57",
+          "cj_3": "59",
+          "best_snatch": "47",
+          "best_cj": "59",
+          "total": "106"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2015 Athletic Lab Summer Weightlifting Open",
+            "date": "2015-07-25",
+            "division": "Open Women's 58 kg",
+            "lifter_name": "Sarah White",
+            "body_weight_kg": "56.1",
+            "snatch_1": "40",
+            "snatch_2": "47",
+            "snatch_3": "47",
+            "cj_1": "53",
+            "cj_2": "57",
+            "cj_3": "59",
+            "best_snatch": "47",
+            "best_cj": "59",
+            "total": "106"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNy0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNy0yNSIsIndlaWdodF9jbGFzcyI6MzY0fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "12",
+            "athlete_name": "Sarah White",
+            "total": "106",
+            "gender": "F",
+            "age": "24",
+            "club_name": "-",
+            "membership_number": "215128",
+            "wso": "Carolina"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

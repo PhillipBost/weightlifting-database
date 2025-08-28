@@ -1,0 +1,341 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T08:36:46.231Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Emily Wagner",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 6,
+    "total_reverse_lookups": 6,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 27876325
+  },
+  "data": [
+    {
+      "internal_id": 8837,
+      "athlete_name": "Emily Wagner",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/8837",
+      "contaminated_lifter_id": 4097,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T08:36:18.419Z",
+      "profile_data": {
+        "membership_number": "189214",
+        "birth_year": 1981,
+        "gender": "F",
+        "club_name": "Set Fire Barbell",
+        "wso": "Ohio",
+        "national_rank": "3"
+      },
+      "competition_history": [
+        {
+          "meet_name": "End of the Year PR Meet",
+          "date": "2013-12-28",
+          "division": "Open Women's 58 kg",
+          "lifter_name": "Emily Wagner",
+          "body_weight_kg": "57.1",
+          "snatch_1": "48",
+          "snatch_2": "52",
+          "snatch_3": "55",
+          "cj_1": "62",
+          "cj_2": "65",
+          "cj_3": "72",
+          "best_snatch": "55",
+          "best_cj": "72",
+          "total": "127"
+        },
+        {
+          "meet_name": "Last Minute American Open Qualifier",
+          "date": "2013-11-02",
+          "division": "Open Women's 58 kg",
+          "lifter_name": "Emily Wagner",
+          "body_weight_kg": "55.2",
+          "snatch_1": "42",
+          "snatch_2": "-52",
+          "snatch_3": "-52",
+          "cj_1": "60",
+          "cj_2": "64",
+          "cj_3": "70",
+          "best_snatch": "42",
+          "best_cj": "70",
+          "total": "112"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "End of the Year PR Meet",
+            "date": "2013-12-28",
+            "division": "Open Women's 58 kg",
+            "lifter_name": "Emily Wagner",
+            "body_weight_kg": "57.1",
+            "snatch_1": "48",
+            "snatch_2": "52",
+            "snatch_3": "55",
+            "cj_1": "62",
+            "cj_2": "65",
+            "cj_3": "72",
+            "best_snatch": "55",
+            "best_cj": "72",
+            "total": "127"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMi0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMi0yOCIsIndlaWdodF9jbGFzcyI6MzY0fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Emily Wagner",
+            "total": "127",
+            "gender": "F",
+            "age": "32",
+            "club_name": "Set Fire Barbell",
+            "membership_number": "189214",
+            "wso": "Ohio"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Last Minute American Open Qualifier",
+            "date": "2013-11-02",
+            "division": "Open Women's 58 kg",
+            "lifter_name": "Emily Wagner",
+            "body_weight_kg": "55.2",
+            "snatch_1": "42",
+            "snatch_2": "-52",
+            "snatch_3": "-52",
+            "cj_1": "60",
+            "cj_2": "64",
+            "cj_3": "70",
+            "best_snatch": "42",
+            "best_cj": "70",
+            "total": "112"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMS0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMS0wMiIsIndlaWdodF9jbGFzcyI6MzY0fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Emily Wagner",
+            "total": "112",
+            "gender": "F",
+            "age": "32",
+            "club_name": "Set Fire Barbell",
+            "membership_number": "189214",
+            "wso": "Ohio"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 15940,
+      "athlete_name": "Emily Wagner",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/15940",
+      "contaminated_lifter_id": 4097,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T08:36:46.228Z",
+      "profile_data": {
+        "membership_number": "1009536",
+        "birth_year": 1986,
+        "gender": "F",
+        "club_name": "LAKESHORE BARBELL CLUB",
+        "wso": "Wisconsin",
+        "national_rank": "22"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Warrior Winter Classic- Wisconsin State Championship 2017",
+          "date": "2017-02-12",
+          "division": "Open Women's 90 kg",
+          "lifter_name": "Emily Wagner",
+          "body_weight_kg": "77.6",
+          "snatch_1": "40",
+          "snatch_2": "44",
+          "snatch_3": "48",
+          "cj_1": "52",
+          "cj_2": "56",
+          "cj_3": "60",
+          "best_snatch": "48",
+          "best_cj": "60",
+          "total": "108"
+        },
+        {
+          "meet_name": "BrewCity Open",
+          "date": "2016-12-03",
+          "division": "Open Women's 75 kg",
+          "lifter_name": "Emily Wagner",
+          "body_weight_kg": "74.9",
+          "snatch_1": "38",
+          "snatch_2": "43",
+          "snatch_3": "48",
+          "cj_1": "50",
+          "cj_2": "55",
+          "cj_3": "-60",
+          "best_snatch": "48",
+          "best_cj": "55",
+          "total": "103"
+        },
+        {
+          "meet_name": "Green Bay Barbell Open",
+          "date": "2016-10-01",
+          "division": "Open Women's 75 kg",
+          "lifter_name": "Emily Wagner",
+          "body_weight_kg": "74.5",
+          "snatch_1": "39",
+          "snatch_2": "42",
+          "snatch_3": "-45",
+          "cj_1": "49",
+          "cj_2": "-53",
+          "cj_3": "56",
+          "best_snatch": "42",
+          "best_cj": "56",
+          "total": "98"
+        },
+        {
+          "meet_name": "2016 Badger State Games",
+          "date": "2016-07-23",
+          "division": "Open Women's 75 kg",
+          "lifter_name": "Emily Wagner",
+          "body_weight_kg": "74.9",
+          "snatch_1": "-39",
+          "snatch_2": "-39",
+          "snatch_3": "39",
+          "cj_1": "49",
+          "cj_2": "54",
+          "cj_3": "-58",
+          "best_snatch": "39",
+          "best_cj": "54",
+          "total": "93"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Warrior Winter Classic- Wisconsin State Championship 2017",
+            "date": "2017-02-12",
+            "division": "Open Women's 90 kg",
+            "lifter_name": "Emily Wagner",
+            "body_weight_kg": "77.6",
+            "snatch_1": "40",
+            "snatch_2": "44",
+            "snatch_3": "48",
+            "cj_1": "52",
+            "cj_2": "56",
+            "cj_3": "60",
+            "best_snatch": "48",
+            "best_cj": "60",
+            "total": "108"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xMiIsIndlaWdodF9jbGFzcyI6MzY5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "22",
+            "athlete_name": "Emily Wagner",
+            "total": "108",
+            "gender": "F",
+            "age": "31",
+            "club_name": "LAKESHORE BARBELL CLUB",
+            "membership_number": "1009536",
+            "wso": "Wisconsin"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "BrewCity Open",
+            "date": "2016-12-03",
+            "division": "Open Women's 75 kg",
+            "lifter_name": "Emily Wagner",
+            "body_weight_kg": "74.9",
+            "snatch_1": "38",
+            "snatch_2": "43",
+            "snatch_3": "48",
+            "cj_1": "50",
+            "cj_2": "55",
+            "cj_3": "-60",
+            "best_snatch": "48",
+            "best_cj": "55",
+            "total": "103"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMi0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMi0wMyIsIndlaWdodF9jbGFzcyI6MzY3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "14",
+            "athlete_name": "Emily Wagner",
+            "total": "103",
+            "gender": "F",
+            "age": "30",
+            "club_name": "LAKESHORE BARBELL CLUB",
+            "membership_number": "1009536",
+            "wso": "Wisconsin"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Green Bay Barbell Open",
+            "date": "2016-10-01",
+            "division": "Open Women's 75 kg",
+            "lifter_name": "Emily Wagner",
+            "body_weight_kg": "74.5",
+            "snatch_1": "39",
+            "snatch_2": "42",
+            "snatch_3": "-45",
+            "cj_1": "49",
+            "cj_2": "-53",
+            "cj_3": "56",
+            "best_snatch": "42",
+            "best_cj": "56",
+            "total": "98"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0wMSIsIndlaWdodF9jbGFzcyI6MzY3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "15",
+            "athlete_name": "Emily Wagner",
+            "total": "98",
+            "gender": "F",
+            "age": "30",
+            "club_name": "LAKESHORE BARBELL CLUB",
+            "membership_number": "1009536",
+            "wso": "Wisconsin"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2016 Badger State Games",
+            "date": "2016-07-23",
+            "division": "Open Women's 75 kg",
+            "lifter_name": "Emily Wagner",
+            "body_weight_kg": "74.9",
+            "snatch_1": "-39",
+            "snatch_2": "-39",
+            "snatch_3": "39",
+            "cj_1": "49",
+            "cj_2": "54",
+            "cj_3": "-58",
+            "best_snatch": "39",
+            "best_cj": "54",
+            "total": "93"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNy0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNy0yMyIsIndlaWdodF9jbGFzcyI6MzY3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "Emily Wagner",
+            "total": "93",
+            "gender": "F",
+            "age": "30",
+            "club_name": "LAKESHORE BARBELL CLUB",
+            "membership_number": "1009536",
+            "wso": "Wisconsin"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

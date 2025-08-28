@@ -1,0 +1,323 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T09:19:10.044Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Ryan Taylor",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 0,
+    "failed_scrapes": 2,
+    "total_competitions_found": 6,
+    "total_reverse_lookups": 6,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 28056500
+  },
+  "data": [
+    {
+      "internal_id": 55031,
+      "athlete_name": "Ryan Taylor",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/55031",
+      "contaminated_lifter_id": 11813,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-27T09:18:52.460Z",
+      "profile_data": {
+        "membership_number": "1063064",
+        "birth_year": 1998,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Texas-Oklahoma",
+        "national_rank": "9"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2025 Oklahoma State Weightlifting Championship",
+          "date": "2025-05-10",
+          "division": "Open Men's 96kg",
+          "lifter_name": "Ryan Taylor",
+          "body_weight_kg": "91.15",
+          "snatch_1": "102",
+          "snatch_2": "106",
+          "snatch_3": "-112",
+          "cj_1": "128",
+          "cj_2": "135",
+          "cj_3": "-143",
+          "best_snatch": "106",
+          "best_cj": "135",
+          "total": "241"
+        },
+        {
+          "meet_name": "Southwest Showdown",
+          "date": "2024-10-19",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Ryan Taylor",
+          "body_weight_kg": "86.2",
+          "snatch_1": "96",
+          "snatch_2": "100",
+          "snatch_3": "-103",
+          "cj_1": "125",
+          "cj_2": "128",
+          "cj_3": "-131",
+          "best_snatch": "100",
+          "best_cj": "128",
+          "total": "228"
+        },
+        {
+          "meet_name": "2023 Oklahoma State Championship & Open",
+          "date": "2023-05-07",
+          "division": "Open Men's 96kg",
+          "lifter_name": "Ryan Taylor",
+          "body_weight_kg": "89.5",
+          "snatch_1": "-100",
+          "snatch_2": "-101",
+          "snatch_3": "-102",
+          "cj_1": "-125",
+          "cj_2": "127",
+          "cj_3": "-130",
+          "best_snatch": "0",
+          "best_cj": "127",
+          "total": "0"
+        },
+        {
+          "meet_name": "2022 Oklahoma State Championship & Open",
+          "date": "2022-07-31",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Ryan Taylor",
+          "body_weight_kg": "82.4",
+          "snatch_1": "-96",
+          "snatch_2": "99",
+          "snatch_3": "-104",
+          "cj_1": "122",
+          "cj_2": "-129",
+          "cj_3": "-130",
+          "best_snatch": "99",
+          "best_cj": "122",
+          "total": "221"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2025 Oklahoma State Weightlifting Championship",
+            "date": "2025-05-10",
+            "division": "Open Men's 96kg",
+            "lifter_name": "Ryan Taylor",
+            "body_weight_kg": "91.15",
+            "snatch_1": "102",
+            "snatch_2": "106",
+            "snatch_3": "-112",
+            "cj_1": "128",
+            "cj_2": "135",
+            "cj_3": "-143",
+            "best_snatch": "106",
+            "best_cj": "135",
+            "total": "241"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNS0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNS0xMCIsIndlaWdodF9jbGFzcyI6ODd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "Ryan Taylor",
+            "total": "241",
+            "gender": "M",
+            "age": "27",
+            "club_name": "-",
+            "membership_number": "1063064",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Southwest Showdown",
+            "date": "2024-10-19",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Ryan Taylor",
+            "body_weight_kg": "86.2",
+            "snatch_1": "96",
+            "snatch_2": "100",
+            "snatch_3": "-103",
+            "cj_1": "125",
+            "cj_2": "128",
+            "cj_3": "-131",
+            "best_snatch": "100",
+            "best_cj": "128",
+            "total": "228"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0xOSIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "27",
+            "athlete_name": "Ryan Taylor",
+            "total": "228",
+            "gender": "M",
+            "age": "26",
+            "club_name": "-",
+            "membership_number": "1063064",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2023 Oklahoma State Championship & Open",
+            "date": "2023-05-07",
+            "division": "Open Men's 96kg",
+            "lifter_name": "Ryan Taylor",
+            "body_weight_kg": "89.5",
+            "snatch_1": "-100",
+            "snatch_2": "-101",
+            "snatch_3": "-102",
+            "cj_1": "-125",
+            "cj_2": "127",
+            "cj_3": "-130",
+            "best_snatch": "0",
+            "best_cj": "127",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNS0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNS0wNyIsIndlaWdodF9jbGFzcyI6ODd9",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2022 Oklahoma State Championship & Open",
+            "date": "2022-07-31",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Ryan Taylor",
+            "body_weight_kg": "82.4",
+            "snatch_1": "-96",
+            "snatch_2": "99",
+            "snatch_3": "-104",
+            "cj_1": "122",
+            "cj_2": "-129",
+            "cj_3": "-130",
+            "best_snatch": "99",
+            "best_cj": "122",
+            "total": "221"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNy0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNy0zMSIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Ryan Taylor",
+            "total": "221",
+            "gender": "M",
+            "age": "24",
+            "club_name": "-",
+            "membership_number": "1063064",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    },
+    {
+      "internal_id": 15267,
+      "athlete_name": "Ryan Taylor",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/15267",
+      "contaminated_lifter_id": 11813,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-27T09:19:10.043Z",
+      "profile_data": {
+        "membership_number": "197981",
+        "birth_year": 1986,
+        "gender": "M",
+        "club_name": "Academy of Weightlifting",
+        "wso": "California South",
+        "national_rank": "26"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Southern Pacific LWC 33 Championships",
+          "date": "2015-03-29",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Ryan Taylor",
+          "body_weight_kg": "97.8",
+          "snatch_1": "105",
+          "snatch_2": "-110",
+          "snatch_3": "110",
+          "cj_1": "-140",
+          "cj_2": "-141",
+          "cj_3": "-141",
+          "best_snatch": "110",
+          "best_cj": "0",
+          "total": "0"
+        },
+        {
+          "meet_name": "Drive Pop Punch! June Boom Weightlifitng Competition",
+          "date": "2014-06-07",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Ryan Taylor",
+          "body_weight_kg": "92.8",
+          "snatch_1": "105",
+          "snatch_2": "110",
+          "snatch_3": "115",
+          "cj_1": "136",
+          "cj_2": "141",
+          "cj_3": "146",
+          "best_snatch": "115",
+          "best_cj": "146",
+          "total": "261"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Southern Pacific LWC 33 Championships",
+            "date": "2015-03-29",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Ryan Taylor",
+            "body_weight_kg": "97.8",
+            "snatch_1": "105",
+            "snatch_2": "-110",
+            "snatch_3": "110",
+            "cj_1": "-140",
+            "cj_2": "-141",
+            "cj_3": "-141",
+            "best_snatch": "110",
+            "best_cj": "0",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMy0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMy0yOSIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Drive Pop Punch! June Boom Weightlifitng Competition",
+            "date": "2014-06-07",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Ryan Taylor",
+            "body_weight_kg": "92.8",
+            "snatch_1": "105",
+            "snatch_2": "110",
+            "snatch_3": "115",
+            "cj_1": "136",
+            "cj_2": "141",
+            "cj_3": "146",
+            "best_snatch": "115",
+            "best_cj": "146",
+            "total": "261"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNi0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNi0wNyIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "26",
+            "athlete_name": "Ryan Taylor",
+            "total": "261",
+            "gender": "M",
+            "age": "28",
+            "club_name": "Academy of Weightlifting",
+            "membership_number": "197981",
+            "wso": "California South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    }
+  ]
+}

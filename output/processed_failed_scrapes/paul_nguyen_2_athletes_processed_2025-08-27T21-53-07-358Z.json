@@ -1,0 +1,426 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T23:15:34.464Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Paul Nguyen",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 8,
+    "total_reverse_lookups": 8,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 80604558
+  },
+  "data": [
+    {
+      "internal_id": 52981,
+      "athlete_name": "Paul Nguyen",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/52981",
+      "contaminated_lifter_id": 11518,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T23:15:14.260Z",
+      "profile_data": {
+        "membership_number": "1060805",
+        "birth_year": 1998,
+        "gender": "M",
+        "club_name": "Annex Weightlifting",
+        "wso": "California South",
+        "national_rank": "15"
+      },
+      "competition_history": [
+        {
+          "meet_name": "The 2023 Nike North American Open Series 2, powered by Rogue",
+          "date": "2023-09-17",
+          "division": "Open Men's 96kg",
+          "lifter_name": "Paul Nguyen",
+          "body_weight_kg": "94.65",
+          "snatch_1": "103",
+          "snatch_2": "106",
+          "snatch_3": "-109",
+          "cj_1": "131",
+          "cj_2": "-136",
+          "cj_3": "-140",
+          "best_snatch": "106",
+          "best_cj": "131",
+          "total": "237"
+        },
+        {
+          "meet_name": "Virus Classic at SoCal",
+          "date": "2023-04-29",
+          "division": "Open Men's 96kg",
+          "lifter_name": "Paul Nguyen",
+          "body_weight_kg": "95.9",
+          "snatch_1": "98",
+          "snatch_2": "-102",
+          "snatch_3": "-105",
+          "cj_1": "128",
+          "cj_2": "133",
+          "cj_3": "-138",
+          "best_snatch": "98",
+          "best_cj": "133",
+          "total": "231"
+        },
+        {
+          "meet_name": "Lunar New Year Open 2023",
+          "date": "2023-01-21",
+          "division": "Open Men's 102kg",
+          "lifter_name": "Paul Nguyen",
+          "body_weight_kg": "97.05",
+          "snatch_1": "-99",
+          "snatch_2": "99",
+          "snatch_3": "-105",
+          "cj_1": "127",
+          "cj_2": "132",
+          "cj_3": "137",
+          "best_snatch": "99",
+          "best_cj": "137",
+          "total": "236"
+        },
+        {
+          "meet_name": "2022 California South Championships",
+          "date": "2022-09-11",
+          "division": "Open Men's 96kg",
+          "lifter_name": "Paul Nguyen",
+          "body_weight_kg": "94.4",
+          "snatch_1": "96",
+          "snatch_2": "100",
+          "snatch_3": "104",
+          "cj_1": "-119",
+          "cj_2": "122",
+          "cj_3": "127",
+          "best_snatch": "104",
+          "best_cj": "127",
+          "total": "231"
+        },
+        {
+          "meet_name": "The Virus Classic at SoCal",
+          "date": "2022-04-16",
+          "division": "Open Men's 96kg",
+          "lifter_name": "Paul Nguyen",
+          "body_weight_kg": "95.98",
+          "snatch_1": "94",
+          "snatch_2": "-97",
+          "snatch_3": "99",
+          "cj_1": "-123",
+          "cj_2": "-123",
+          "cj_3": "-125",
+          "best_snatch": "99",
+          "best_cj": "0",
+          "total": "0"
+        },
+        {
+          "meet_name": "Lunar New Year Open VII , 2022",
+          "date": "2022-01-29",
+          "division": "Open Men's 96kg",
+          "lifter_name": "Paul Nguyen",
+          "body_weight_kg": "91",
+          "snatch_1": "90",
+          "snatch_2": "-93",
+          "snatch_3": "95",
+          "cj_1": "122",
+          "cj_2": "-127",
+          "cj_3": "127",
+          "best_snatch": "95",
+          "best_cj": "127",
+          "total": "222"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "The 2023 Nike North American Open Series 2, powered by Rogue",
+            "date": "2023-09-17",
+            "division": "Open Men's 96kg",
+            "lifter_name": "Paul Nguyen",
+            "body_weight_kg": "94.65",
+            "snatch_1": "103",
+            "snatch_2": "106",
+            "snatch_3": "-109",
+            "cj_1": "131",
+            "cj_2": "-136",
+            "cj_3": "-140",
+            "best_snatch": "106",
+            "best_cj": "131",
+            "total": "237"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wOS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wOS0xNyIsIndlaWdodF9jbGFzcyI6ODd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "15",
+            "athlete_name": "Paul Nguyen",
+            "total": "237",
+            "gender": "M",
+            "age": "25",
+            "club_name": "Annex Weightlifting",
+            "membership_number": "1060805",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Virus Classic at SoCal",
+            "date": "2023-04-29",
+            "division": "Open Men's 96kg",
+            "lifter_name": "Paul Nguyen",
+            "body_weight_kg": "95.9",
+            "snatch_1": "98",
+            "snatch_2": "-102",
+            "snatch_3": "-105",
+            "cj_1": "128",
+            "cj_2": "133",
+            "cj_3": "-138",
+            "best_snatch": "98",
+            "best_cj": "133",
+            "total": "231"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0yOSIsIndlaWdodF9jbGFzcyI6ODd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "22",
+            "athlete_name": "Paul Nguyen",
+            "total": "231",
+            "gender": "M",
+            "age": "25",
+            "club_name": "Annex Weightlifting",
+            "membership_number": "1060805",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Lunar New Year Open 2023",
+            "date": "2023-01-21",
+            "division": "Open Men's 102kg",
+            "lifter_name": "Paul Nguyen",
+            "body_weight_kg": "97.05",
+            "snatch_1": "-99",
+            "snatch_2": "99",
+            "snatch_3": "-105",
+            "cj_1": "127",
+            "cj_2": "132",
+            "cj_3": "137",
+            "best_snatch": "99",
+            "best_cj": "137",
+            "total": "236"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMS0yMSIsIndlaWdodF9jbGFzcyI6ODh9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "Paul Nguyen",
+            "total": "236",
+            "gender": "M",
+            "age": "25",
+            "club_name": "Annex Weightlifting",
+            "membership_number": "1060805",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2022 California South Championships",
+            "date": "2022-09-11",
+            "division": "Open Men's 96kg",
+            "lifter_name": "Paul Nguyen",
+            "body_weight_kg": "94.4",
+            "snatch_1": "96",
+            "snatch_2": "100",
+            "snatch_3": "104",
+            "cj_1": "-119",
+            "cj_2": "122",
+            "cj_3": "127",
+            "best_snatch": "104",
+            "best_cj": "127",
+            "total": "231"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wOS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wOS0xMSIsIndlaWdodF9jbGFzcyI6ODd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "8",
+            "athlete_name": "Paul Nguyen",
+            "total": "231",
+            "gender": "M",
+            "age": "24",
+            "club_name": "Annex Weightlifting",
+            "membership_number": "1060805",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The Virus Classic at SoCal",
+            "date": "2022-04-16",
+            "division": "Open Men's 96kg",
+            "lifter_name": "Paul Nguyen",
+            "body_weight_kg": "95.98",
+            "snatch_1": "94",
+            "snatch_2": "-97",
+            "snatch_3": "99",
+            "cj_1": "-123",
+            "cj_2": "-123",
+            "cj_3": "-125",
+            "best_snatch": "99",
+            "best_cj": "0",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNC0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNC0xNiIsIndlaWdodF9jbGFzcyI6ODd9",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Lunar New Year Open VII , 2022",
+            "date": "2022-01-29",
+            "division": "Open Men's 96kg",
+            "lifter_name": "Paul Nguyen",
+            "body_weight_kg": "91",
+            "snatch_1": "90",
+            "snatch_2": "-93",
+            "snatch_3": "95",
+            "cj_1": "122",
+            "cj_2": "-127",
+            "cj_3": "127",
+            "best_snatch": "95",
+            "best_cj": "127",
+            "total": "222"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMS0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMS0yOSIsIndlaWdodF9jbGFzcyI6ODd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "22",
+            "athlete_name": "Paul Nguyen",
+            "total": "222",
+            "gender": "M",
+            "age": "24",
+            "club_name": "Annex Weightlifting",
+            "membership_number": "1060805",
+            "wso": "California South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    },
+    {
+      "internal_id": 28242,
+      "athlete_name": "Paul Nguyen",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/28242",
+      "contaminated_lifter_id": 11518,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T23:15:34.462Z",
+      "profile_data": {
+        "membership_number": "207160",
+        "birth_year": 1992,
+        "gender": "M",
+        "club_name": "Trojan Weightlifting",
+        "wso": "California South",
+        "national_rank": "9"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2016 TCA New Year's Weightlifting Meet",
+          "date": "2016-01-09",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Paul Nguyen",
+          "body_weight_kg": "75.68",
+          "snatch_1": "78",
+          "snatch_2": "82",
+          "snatch_3": "86",
+          "cj_1": "105",
+          "cj_2": "-114",
+          "cj_3": "114",
+          "best_snatch": "86",
+          "best_cj": "114",
+          "total": "200"
+        },
+        {
+          "meet_name": "6th Annual Chikarasport St. Patty's Day Open",
+          "date": "2015-03-07",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Paul Nguyen",
+          "body_weight_kg": "75.46",
+          "snatch_1": "75",
+          "snatch_2": "80",
+          "snatch_3": "-85",
+          "cj_1": "95",
+          "cj_2": "100",
+          "cj_3": "105",
+          "best_snatch": "80",
+          "best_cj": "105",
+          "total": "185"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2016 TCA New Year's Weightlifting Meet",
+            "date": "2016-01-09",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Paul Nguyen",
+            "body_weight_kg": "75.68",
+            "snatch_1": "78",
+            "snatch_2": "82",
+            "snatch_3": "86",
+            "cj_1": "105",
+            "cj_2": "-114",
+            "cj_3": "114",
+            "best_snatch": "86",
+            "best_cj": "114",
+            "total": "200"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0wOSIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "Paul Nguyen",
+            "total": "200",
+            "gender": "M",
+            "age": "24",
+            "club_name": "Trojan Weightlifting",
+            "membership_number": "207160",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "6th Annual Chikarasport St. Patty's Day Open",
+            "date": "2015-03-07",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Paul Nguyen",
+            "body_weight_kg": "75.46",
+            "snatch_1": "75",
+            "snatch_2": "80",
+            "snatch_3": "-85",
+            "cj_1": "95",
+            "cj_2": "100",
+            "cj_3": "105",
+            "best_snatch": "80",
+            "best_cj": "105",
+            "total": "185"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMy0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMy0wNyIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "8",
+            "athlete_name": "Paul Nguyen",
+            "total": "185",
+            "gender": "M",
+            "age": "23",
+            "club_name": "Trojan Weightlifting",
+            "membership_number": "207160",
+            "wso": "California South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

@@ -1,0 +1,352 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T08:36:59.084Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Ashley Zepeda",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 0,
+    "failed_scrapes": 2,
+    "total_competitions_found": 7,
+    "total_reverse_lookups": 7,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 25525539
+  },
+  "data": [
+    {
+      "internal_id": 56116,
+      "athlete_name": "Ashley Zepeda",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/56116",
+      "contaminated_lifter_id": 47186,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-27T08:36:38.683Z",
+      "profile_data": {
+        "membership_number": "1066207",
+        "birth_year": 1993,
+        "gender": "F",
+        "club_name": "TEAM SOUL MIAMI",
+        "wso": "Florida",
+        "national_rank": "27"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2023 Florida WSO State Championships",
+          "date": "2023-05-20",
+          "division": "Open Women's 59kg",
+          "lifter_name": "Ashley Zepeda",
+          "body_weight_kg": "57.5",
+          "snatch_1": "-50",
+          "snatch_2": "-50",
+          "snatch_3": "51",
+          "cj_1": "70",
+          "cj_2": "73",
+          "cj_3": "-76",
+          "best_snatch": "51",
+          "best_cj": "73",
+          "total": "124"
+        },
+        {
+          "meet_name": "MIA Classic XI",
+          "date": "2023-01-14",
+          "division": "Open Women's 59kg",
+          "lifter_name": "Ashley Zepeda",
+          "body_weight_kg": "57.6",
+          "snatch_1": "50",
+          "snatch_2": "-52",
+          "snatch_3": "-52",
+          "cj_1": "-73",
+          "cj_2": "-73",
+          "cj_3": "-73",
+          "best_snatch": "50",
+          "best_cj": "0",
+          "total": "0"
+        },
+        {
+          "meet_name": "The Palm Beach Open '22 Part 2  (spooky edition)",
+          "date": "2022-10-23",
+          "division": "Open Women's 59kg",
+          "lifter_name": "Ashley Zepeda",
+          "body_weight_kg": "57.8",
+          "snatch_1": "-49",
+          "snatch_2": "49",
+          "snatch_3": "52",
+          "cj_1": "71",
+          "cj_2": "74",
+          "cj_3": "-77",
+          "best_snatch": "52",
+          "best_cj": "74",
+          "total": "126"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2023 Florida WSO State Championships",
+            "date": "2023-05-20",
+            "division": "Open Women's 59kg",
+            "lifter_name": "Ashley Zepeda",
+            "body_weight_kg": "57.5",
+            "snatch_1": "-50",
+            "snatch_2": "-50",
+            "snatch_3": "51",
+            "cj_1": "70",
+            "cj_2": "73",
+            "cj_3": "-76",
+            "best_snatch": "51",
+            "best_cj": "73",
+            "total": "124"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNS0yMCIsIndlaWdodF9jbGFzcyI6OTR9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "27",
+            "athlete_name": "Ashley Zepeda",
+            "total": "124",
+            "gender": "F",
+            "age": "30",
+            "club_name": "TEAM SOUL MIAMI",
+            "membership_number": "1066207",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "MIA Classic XI",
+            "date": "2023-01-14",
+            "division": "Open Women's 59kg",
+            "lifter_name": "Ashley Zepeda",
+            "body_weight_kg": "57.6",
+            "snatch_1": "50",
+            "snatch_2": "-52",
+            "snatch_3": "-52",
+            "cj_1": "-73",
+            "cj_2": "-73",
+            "cj_3": "-73",
+            "best_snatch": "50",
+            "best_cj": "0",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMS0xNCIsIndlaWdodF9jbGFzcyI6OTR9",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The Palm Beach Open '22 Part 2  (spooky edition)",
+            "date": "2022-10-23",
+            "division": "Open Women's 59kg",
+            "lifter_name": "Ashley Zepeda",
+            "body_weight_kg": "57.8",
+            "snatch_1": "-49",
+            "snatch_2": "49",
+            "snatch_3": "52",
+            "cj_1": "71",
+            "cj_2": "74",
+            "cj_3": "-77",
+            "best_snatch": "52",
+            "best_cj": "74",
+            "total": "126"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMC0yMyIsIndlaWdodF9jbGFzcyI6OTR9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "7",
+            "athlete_name": "Ashley Zepeda",
+            "total": "126",
+            "gender": "F",
+            "age": "29",
+            "club_name": "TEAM SOUL MIAMI",
+            "membership_number": "1066207",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    },
+    {
+      "internal_id": 48860,
+      "athlete_name": "Ashley Zepeda",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/48860",
+      "contaminated_lifter_id": 47186,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-27T08:36:59.084Z",
+      "profile_data": {
+        "membership_number": "1053335",
+        "birth_year": 1993,
+        "gender": "F",
+        "club_name": "TEAM SOUL MIAMI",
+        "wso": "Florida",
+        "national_rank": "13"
+      },
+      "competition_history": [
+        {
+          "meet_name": "The Iron Game Open",
+          "date": "2021-04-24",
+          "division": "Open Women's 55kg",
+          "lifter_name": "Ashley Zepeda",
+          "body_weight_kg": "53.7",
+          "snatch_1": "48",
+          "snatch_2": "51",
+          "snatch_3": "-54",
+          "cj_1": "70",
+          "cj_2": "-74",
+          "cj_3": "-74",
+          "best_snatch": "51",
+          "best_cj": "70",
+          "total": "121"
+        },
+        {
+          "meet_name": "The Palm Beach Open 2021",
+          "date": "2021-01-30",
+          "division": "Open Women's 55kg",
+          "lifter_name": "Ashley Zepeda",
+          "body_weight_kg": "52.6",
+          "snatch_1": "-49",
+          "snatch_2": "-49",
+          "snatch_3": "-50",
+          "cj_1": "69",
+          "cj_2": "71",
+          "cj_3": "-73",
+          "best_snatch": "0",
+          "best_cj": "71",
+          "total": "0"
+        },
+        {
+          "meet_name": "The Palm Beach Open 2021",
+          "date": "2021-01-30",
+          "division": "Open Women's 55kg",
+          "lifter_name": "Ashley Zepeda",
+          "body_weight_kg": "52.6",
+          "snatch_1": "-49",
+          "snatch_2": "-49",
+          "snatch_3": "-50",
+          "cj_1": "69",
+          "cj_2": "71",
+          "cj_3": "-73",
+          "best_snatch": "0",
+          "best_cj": "71",
+          "total": "0"
+        },
+        {
+          "meet_name": "The Palm Beach Open 2021",
+          "date": "2021-01-30",
+          "division": "Open Women's 55kg",
+          "lifter_name": "Ashley Zepeda",
+          "body_weight_kg": "52.6",
+          "snatch_1": "-49",
+          "snatch_2": "-49",
+          "snatch_3": "-50",
+          "cj_1": "69",
+          "cj_2": "71",
+          "cj_3": "-73",
+          "best_snatch": "0",
+          "best_cj": "71",
+          "total": "0"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "The Iron Game Open",
+            "date": "2021-04-24",
+            "division": "Open Women's 55kg",
+            "lifter_name": "Ashley Zepeda",
+            "body_weight_kg": "53.7",
+            "snatch_1": "48",
+            "snatch_2": "51",
+            "snatch_3": "-54",
+            "cj_1": "70",
+            "cj_2": "-74",
+            "cj_3": "-74",
+            "best_snatch": "51",
+            "best_cj": "70",
+            "total": "121"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNC0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNC0yNCIsIndlaWdodF9jbGFzcyI6OTN9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "13",
+            "athlete_name": "Ashley Zepeda",
+            "total": "121",
+            "gender": "F",
+            "age": "28",
+            "club_name": "TEAM SOUL MIAMI",
+            "membership_number": "1053335",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The Palm Beach Open 2021",
+            "date": "2021-01-30",
+            "division": "Open Women's 55kg",
+            "lifter_name": "Ashley Zepeda",
+            "body_weight_kg": "52.6",
+            "snatch_1": "-49",
+            "snatch_2": "-49",
+            "snatch_3": "-50",
+            "cj_1": "69",
+            "cj_2": "71",
+            "cj_3": "-73",
+            "best_snatch": "0",
+            "best_cj": "71",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMS0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMS0zMCIsIndlaWdodF9jbGFzcyI6OTN9",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The Palm Beach Open 2021",
+            "date": "2021-01-30",
+            "division": "Open Women's 55kg",
+            "lifter_name": "Ashley Zepeda",
+            "body_weight_kg": "52.6",
+            "snatch_1": "-49",
+            "snatch_2": "-49",
+            "snatch_3": "-50",
+            "cj_1": "69",
+            "cj_2": "71",
+            "cj_3": "-73",
+            "best_snatch": "0",
+            "best_cj": "71",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMS0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMS0zMCIsIndlaWdodF9jbGFzcyI6OTN9",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The Palm Beach Open 2021",
+            "date": "2021-01-30",
+            "division": "Open Women's 55kg",
+            "lifter_name": "Ashley Zepeda",
+            "body_weight_kg": "52.6",
+            "snatch_1": "-49",
+            "snatch_2": "-49",
+            "snatch_3": "-50",
+            "cj_1": "69",
+            "cj_2": "71",
+            "cj_3": "-73",
+            "best_snatch": "0",
+            "best_cj": "71",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMS0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMS0zMCIsIndlaWdodF9jbGFzcyI6OTN9",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    }
+  ]
+}

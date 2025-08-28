@@ -1,0 +1,247 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T09:04:19.100Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Jason Feinstein",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 4,
+    "total_reverse_lookups": 4,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 29529194
+  },
+  "data": [
+    {
+      "internal_id": 3425,
+      "athlete_name": "Jason Feinstein",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/3425",
+      "contaminated_lifter_id": 6211,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T09:04:03.630Z",
+      "profile_data": {
+        "membership_number": "184140",
+        "birth_year": 1973,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Ohio",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "FC PR Day",
+          "date": "2014-07-06",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Jason Feinstein",
+          "body_weight_kg": "92.5",
+          "snatch_1": "70",
+          "snatch_2": "75",
+          "snatch_3": "79",
+          "cj_1": "93",
+          "cj_2": "100",
+          "cj_3": "105",
+          "best_snatch": "79",
+          "best_cj": "105",
+          "total": "184"
+        },
+        {
+          "meet_name": "FC Barbell Open",
+          "date": "2013-11-24",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Jason Feinstein",
+          "body_weight_kg": "90.8",
+          "snatch_1": "70",
+          "snatch_2": "-75",
+          "snatch_3": "-75",
+          "cj_1": "90",
+          "cj_2": "96",
+          "cj_3": "102",
+          "best_snatch": "70",
+          "best_cj": "102",
+          "total": "172"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "FC PR Day",
+            "date": "2014-07-06",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Jason Feinstein",
+            "body_weight_kg": "92.5",
+            "snatch_1": "70",
+            "snatch_2": "75",
+            "snatch_3": "79",
+            "cj_1": "93",
+            "cj_2": "100",
+            "cj_3": "105",
+            "best_snatch": "79",
+            "best_cj": "105",
+            "total": "184"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNy0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNy0wNiIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Jason Feinstein",
+            "total": "184",
+            "gender": "M",
+            "age": "41",
+            "club_name": "-",
+            "membership_number": "184140",
+            "wso": "Ohio"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "FC Barbell Open",
+            "date": "2013-11-24",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Jason Feinstein",
+            "body_weight_kg": "90.8",
+            "snatch_1": "70",
+            "snatch_2": "-75",
+            "snatch_3": "-75",
+            "cj_1": "90",
+            "cj_2": "96",
+            "cj_3": "102",
+            "best_snatch": "70",
+            "best_cj": "102",
+            "total": "172"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMS0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMS0yNCIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "12",
+            "athlete_name": "Jason Feinstein",
+            "total": "172",
+            "gender": "M",
+            "age": "40",
+            "club_name": "-",
+            "membership_number": "184140",
+            "wso": "Ohio"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 13087,
+      "athlete_name": "Jason Feinstein",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/13087",
+      "contaminated_lifter_id": 6211,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T09:04:19.097Z",
+      "profile_data": {
+        "membership_number": "198870",
+        "birth_year": 1985,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Carolina",
+        "national_rank": "11"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Out of Step Barbell Open 3",
+          "date": "2014-09-13",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Jason Feinstein",
+          "body_weight_kg": "104.1",
+          "snatch_1": "0",
+          "snatch_2": "68",
+          "snatch_3": "0",
+          "cj_1": "90",
+          "cj_2": "94",
+          "cj_3": "0",
+          "best_snatch": "68",
+          "best_cj": "94",
+          "total": "162"
+        },
+        {
+          "meet_name": "2014 Bull City Barbell Open",
+          "date": "2014-08-02",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Jason Feinstein",
+          "body_weight_kg": "110",
+          "snatch_1": "61",
+          "snatch_2": "66",
+          "snatch_3": "-68",
+          "cj_1": "79",
+          "cj_2": "81",
+          "cj_3": "86",
+          "best_snatch": "66",
+          "best_cj": "86",
+          "total": "152"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Out of Step Barbell Open 3",
+            "date": "2014-09-13",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Jason Feinstein",
+            "body_weight_kg": "104.1",
+            "snatch_1": "0",
+            "snatch_2": "68",
+            "snatch_3": "0",
+            "cj_1": "90",
+            "cj_2": "94",
+            "cj_3": "0",
+            "best_snatch": "68",
+            "best_cj": "94",
+            "total": "162"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOS0xMyIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "11",
+            "athlete_name": "Jason Feinstein",
+            "total": "162",
+            "gender": "M",
+            "age": "29",
+            "club_name": "-",
+            "membership_number": "198870",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2014 Bull City Barbell Open",
+            "date": "2014-08-02",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Jason Feinstein",
+            "body_weight_kg": "110",
+            "snatch_1": "61",
+            "snatch_2": "66",
+            "snatch_3": "-68",
+            "cj_1": "79",
+            "cj_2": "81",
+            "cj_3": "86",
+            "best_snatch": "66",
+            "best_cj": "86",
+            "total": "152"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0wMiIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "17",
+            "athlete_name": "Jason Feinstein",
+            "total": "152",
+            "gender": "M",
+            "age": "29",
+            "club_name": "-",
+            "membership_number": "198870",
+            "wso": "Carolina"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

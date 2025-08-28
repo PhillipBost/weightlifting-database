@@ -1,0 +1,247 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T23:37:27.116Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Kayleen Murphy",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 4,
+    "total_reverse_lookups": 4,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 81917210
+  },
+  "data": [
+    {
+      "internal_id": 47382,
+      "athlete_name": "Kayleen Murphy",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/47382",
+      "contaminated_lifter_id": 12296,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T23:37:06.421Z",
+      "profile_data": {
+        "membership_number": "1049937",
+        "birth_year": 1988,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "Carolina",
+        "national_rank": "10"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2021 Iron Born Open",
+          "date": "2021-02-13",
+          "division": "Open Women's 64kg",
+          "lifter_name": "Kayleen Murphy",
+          "body_weight_kg": "63.9",
+          "snatch_1": "-40",
+          "snatch_2": "40",
+          "snatch_3": "43",
+          "cj_1": "55",
+          "cj_2": "59",
+          "cj_3": "-63",
+          "best_snatch": "43",
+          "best_cj": "59",
+          "total": "102"
+        },
+        {
+          "meet_name": "Legion Weightlifting I",
+          "date": "2020-09-12",
+          "division": "Open Women's 64kg",
+          "lifter_name": "Kayleen Murphy",
+          "body_weight_kg": "62.7",
+          "snatch_1": "35",
+          "snatch_2": "39",
+          "snatch_3": "40",
+          "cj_1": "50",
+          "cj_2": "54",
+          "cj_3": "54",
+          "best_snatch": "40",
+          "best_cj": "54",
+          "total": "94"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2021 Iron Born Open",
+            "date": "2021-02-13",
+            "division": "Open Women's 64kg",
+            "lifter_name": "Kayleen Murphy",
+            "body_weight_kg": "63.9",
+            "snatch_1": "-40",
+            "snatch_2": "40",
+            "snatch_3": "43",
+            "cj_1": "55",
+            "cj_2": "59",
+            "cj_3": "-63",
+            "best_snatch": "43",
+            "best_cj": "59",
+            "total": "102"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMi0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMi0xMyIsIndlaWdodF9jbGFzcyI6OTV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "Kayleen Murphy",
+            "total": "102",
+            "gender": "F",
+            "age": "33",
+            "club_name": "-",
+            "membership_number": "1049937",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Legion Weightlifting I",
+            "date": "2020-09-12",
+            "division": "Open Women's 64kg",
+            "lifter_name": "Kayleen Murphy",
+            "body_weight_kg": "62.7",
+            "snatch_1": "35",
+            "snatch_2": "39",
+            "snatch_3": "40",
+            "cj_1": "50",
+            "cj_2": "54",
+            "cj_3": "54",
+            "best_snatch": "40",
+            "best_cj": "54",
+            "total": "94"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wOS0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wOS0xMiIsIndlaWdodF9jbGFzcyI6OTV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "Kayleen Murphy",
+            "total": "94",
+            "gender": "F",
+            "age": "32",
+            "club_name": "-",
+            "membership_number": "1049937",
+            "wso": "Carolina"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 28439,
+      "athlete_name": "Kayleen Murphy",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/28439",
+      "contaminated_lifter_id": 12296,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T23:37:27.114Z",
+      "profile_data": {
+        "membership_number": "215612",
+        "birth_year": 1992,
+        "gender": "F",
+        "club_name": "PROVEN STRENGTH WEIGHTLIFTING",
+        "wso": "Mountain South",
+        "national_rank": "27"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Record Breakers 2015",
+          "date": "2015-10-24",
+          "division": "Open Women's +75 Kg",
+          "lifter_name": "Kayleen Murphy",
+          "body_weight_kg": "99.53",
+          "snatch_1": "43",
+          "snatch_2": "47",
+          "snatch_3": "-49",
+          "cj_1": "-73",
+          "cj_2": "74",
+          "cj_3": "-77",
+          "best_snatch": "47",
+          "best_cj": "74",
+          "total": "121"
+        },
+        {
+          "meet_name": "Hyperion Strong Barbell Smash",
+          "date": "2015-06-18",
+          "division": "Open Women's +75 Kg",
+          "lifter_name": "Kayleen Murphy",
+          "body_weight_kg": "97.98",
+          "snatch_1": "-38",
+          "snatch_2": "38",
+          "snatch_3": "40",
+          "cj_1": "45",
+          "cj_2": "50",
+          "cj_3": "-60",
+          "best_snatch": "40",
+          "best_cj": "50",
+          "total": "90"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Record Breakers 2015",
+            "date": "2015-10-24",
+            "division": "Open Women's +75 Kg",
+            "lifter_name": "Kayleen Murphy",
+            "body_weight_kg": "99.53",
+            "snatch_1": "43",
+            "snatch_2": "47",
+            "snatch_3": "-49",
+            "cj_1": "-73",
+            "cj_2": "74",
+            "cj_3": "-77",
+            "best_snatch": "47",
+            "best_cj": "74",
+            "total": "121"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0yNCIsIndlaWdodF9jbGFzcyI6MzY4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "27",
+            "athlete_name": "Kayleen Murphy",
+            "total": "121",
+            "gender": "F",
+            "age": "23",
+            "club_name": "PROVEN STRENGTH WEIGHTLIFTING",
+            "membership_number": "215612",
+            "wso": "Mountain South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Hyperion Strong Barbell Smash",
+            "date": "2015-06-18",
+            "division": "Open Women's +75 Kg",
+            "lifter_name": "Kayleen Murphy",
+            "body_weight_kg": "97.98",
+            "snatch_1": "-38",
+            "snatch_2": "38",
+            "snatch_3": "40",
+            "cj_1": "45",
+            "cj_2": "50",
+            "cj_3": "-60",
+            "best_snatch": "40",
+            "best_cj": "50",
+            "total": "90"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNi0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNi0xOCIsIndlaWdodF9jbGFzcyI6MzY4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Kayleen Murphy",
+            "total": "90",
+            "gender": "F",
+            "age": "23",
+            "club_name": "PROVEN STRENGTH WEIGHTLIFTING",
+            "membership_number": "215612",
+            "wso": "Mountain South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

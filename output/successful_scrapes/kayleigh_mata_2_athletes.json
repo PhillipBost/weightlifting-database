@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T14:22:30.411Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Kayleigh Mata",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 48620505
+  },
+  "data": [
+    {
+      "internal_id": 57834,
+      "athlete_name": "Kayleigh Mata",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/57834",
+      "contaminated_lifter_id": 55822,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T14:22:20.677Z",
+      "profile_data": {
+        "membership_number": "1068010",
+        "birth_year": 2004,
+        "gender": "F",
+        "club_name": "Unaffiliated",
+        "wso": "Florida",
+        "national_rank": "4"
+      },
+      "competition_history": [
+        {
+          "meet_name": "March Madness States Prep meet",
+          "date": "2023-03-18",
+          "division": "Junior Women's 76kg",
+          "lifter_name": "Kayleigh Mata",
+          "body_weight_kg": "72.15",
+          "snatch_1": "50",
+          "snatch_2": "53",
+          "snatch_3": "-55",
+          "cj_1": "-64",
+          "cj_2": "-65",
+          "cj_3": "65",
+          "best_snatch": "53",
+          "best_cj": "65",
+          "total": "118"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "March Madness States Prep meet",
+            "date": "2023-03-18",
+            "division": "Junior Women's 76kg",
+            "lifter_name": "Kayleigh Mata",
+            "body_weight_kg": "72.15",
+            "snatch_1": "50",
+            "snatch_2": "53",
+            "snatch_3": "-55",
+            "cj_1": "-64",
+            "cj_2": "-65",
+            "cj_3": "65",
+            "best_snatch": "53",
+            "best_cj": "65",
+            "total": "118"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMy0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMy0xOCIsIndlaWdodF9jbGFzcyI6Nzd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Kayleigh Mata",
+            "total": "118",
+            "gender": "F",
+            "age": "19",
+            "club_name": "Unaffiliated",
+            "membership_number": "1068010",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 59671,
+      "athlete_name": "Kayleigh Mata",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/59671",
+      "contaminated_lifter_id": 55822,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T14:22:30.409Z",
+      "profile_data": {
+        "membership_number": "1069238",
+        "birth_year": 2004,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "Florida",
+        "national_rank": "6"
+      },
+      "competition_history": [
+        {
+          "meet_name": "The Praelium 2023",
+          "date": "2023-08-05",
+          "division": "Junior Women's 76kg",
+          "lifter_name": "Kayleigh Mata",
+          "body_weight_kg": "74.55",
+          "snatch_1": "47",
+          "snatch_2": "51",
+          "snatch_3": "-53",
+          "cj_1": "61",
+          "cj_2": "66",
+          "cj_3": "68",
+          "best_snatch": "51",
+          "best_cj": "68",
+          "total": "119"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "The Praelium 2023",
+            "date": "2023-08-05",
+            "division": "Junior Women's 76kg",
+            "lifter_name": "Kayleigh Mata",
+            "body_weight_kg": "74.55",
+            "snatch_1": "47",
+            "snatch_2": "51",
+            "snatch_3": "-53",
+            "cj_1": "61",
+            "cj_2": "66",
+            "cj_3": "68",
+            "best_snatch": "51",
+            "best_cj": "68",
+            "total": "119"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wOC0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wOC0wNSIsIndlaWdodF9jbGFzcyI6Nzd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Kayleigh Mata",
+            "total": "119",
+            "gender": "F",
+            "age": "19",
+            "club_name": "-",
+            "membership_number": "1069238",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

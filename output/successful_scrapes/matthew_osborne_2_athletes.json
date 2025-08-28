@@ -1,0 +1,200 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T08:52:36.432Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Matthew Osborne",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 3,
+    "total_reverse_lookups": 3,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 28826526
+  },
+  "data": [
+    {
+      "internal_id": 7794,
+      "athlete_name": "Matthew Osborne",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/7794",
+      "contaminated_lifter_id": 5627,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T08:52:20.541Z",
+      "profile_data": {
+        "membership_number": "185014",
+        "birth_year": 1980,
+        "gender": "M",
+        "club_name": "LIBERTY BARBELL CLUB",
+        "wso": "Pennsylvania-West Virginia",
+        "national_rank": "3"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Liberty Barbell Club Open/Philadelphia City Championships",
+          "date": "2013-06-23",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Matthew Osborne",
+          "body_weight_kg": "82.1",
+          "snatch_1": "45",
+          "snatch_2": "48",
+          "snatch_3": "51",
+          "cj_1": "64",
+          "cj_2": "68",
+          "cj_3": "70",
+          "best_snatch": "51",
+          "best_cj": "70",
+          "total": "121"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Liberty Barbell Club Open/Philadelphia City Championships",
+            "date": "2013-06-23",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Matthew Osborne",
+            "body_weight_kg": "82.1",
+            "snatch_1": "45",
+            "snatch_2": "48",
+            "snatch_3": "51",
+            "cj_1": "64",
+            "cj_2": "68",
+            "cj_3": "70",
+            "best_snatch": "51",
+            "best_cj": "70",
+            "total": "121"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNi0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNi0yMyIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Matthew Osborne",
+            "total": "121",
+            "gender": "M",
+            "age": "33",
+            "club_name": "LIBERTY BARBELL CLUB",
+            "membership_number": "185014",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 21383,
+      "athlete_name": "Matthew Osborne",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/21383",
+      "contaminated_lifter_id": 5627,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T08:52:36.429Z",
+      "profile_data": {
+        "membership_number": "196544",
+        "birth_year": 1989,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "DMV",
+        "national_rank": "18"
+      },
+      "competition_history": [
+        {
+          "meet_name": "CMG Devlopmental",
+          "date": "2016-08-07",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Matthew Osborne",
+          "body_weight_kg": "82",
+          "snatch_1": "80",
+          "snatch_2": "82",
+          "snatch_3": "84",
+          "cj_1": "100",
+          "cj_2": "105",
+          "cj_3": "107",
+          "best_snatch": "84",
+          "best_cj": "107",
+          "total": "191"
+        },
+        {
+          "meet_name": "East Coast Classic",
+          "date": "2016-05-15",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Matthew Osborne",
+          "body_weight_kg": "82.53",
+          "snatch_1": "65",
+          "snatch_2": "70",
+          "snatch_3": "74",
+          "cj_1": "95",
+          "cj_2": "100",
+          "cj_3": "105",
+          "best_snatch": "74",
+          "best_cj": "105",
+          "total": "179"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "CMG Devlopmental",
+            "date": "2016-08-07",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Matthew Osborne",
+            "body_weight_kg": "82",
+            "snatch_1": "80",
+            "snatch_2": "82",
+            "snatch_3": "84",
+            "cj_1": "100",
+            "cj_2": "105",
+            "cj_3": "107",
+            "best_snatch": "84",
+            "best_cj": "107",
+            "total": "191"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0wNyIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "18",
+            "athlete_name": "Matthew Osborne",
+            "total": "191",
+            "gender": "M",
+            "age": "27",
+            "club_name": "-",
+            "membership_number": "196544",
+            "wso": "DMV"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "East Coast Classic",
+            "date": "2016-05-15",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Matthew Osborne",
+            "body_weight_kg": "82.53",
+            "snatch_1": "65",
+            "snatch_2": "70",
+            "snatch_3": "74",
+            "cj_1": "95",
+            "cj_2": "100",
+            "cj_3": "105",
+            "best_snatch": "74",
+            "best_cj": "105",
+            "total": "179"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0xNSIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "15",
+            "athlete_name": "Matthew Osborne",
+            "total": "179",
+            "gender": "M",
+            "age": "27",
+            "club_name": "-",
+            "membership_number": "196544",
+            "wso": "DMV"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

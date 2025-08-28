@@ -1,0 +1,247 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T05:26:31.547Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Marissa Taylor",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 4,
+    "total_reverse_lookups": 4,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 102861641
+  },
+  "data": [
+    {
+      "internal_id": 46185,
+      "athlete_name": "Marissa Taylor",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/46185",
+      "contaminated_lifter_id": 38481,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T05:26:18.797Z",
+      "profile_data": {
+        "membership_number": "1033154",
+        "birth_year": 2008,
+        "gender": "F",
+        "club_name": "Redline Athletics",
+        "wso": "Southern",
+        "national_rank": "2"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Last Chance U!",
+          "date": "2019-02-02",
+          "division": "Women's 13 Under Age Group 45kg",
+          "lifter_name": "Marissa Taylor",
+          "body_weight_kg": "40.7",
+          "snatch_1": "22",
+          "snatch_2": "24",
+          "snatch_3": "26",
+          "cj_1": "30",
+          "cj_2": "33",
+          "cj_3": "35",
+          "best_snatch": "26",
+          "best_cj": "35",
+          "total": "61"
+        },
+        {
+          "meet_name": "Christmas Invitational",
+          "date": "2018-12-15",
+          "division": "Women's 13 Under Age Group 45kg",
+          "lifter_name": "Marissa Taylor",
+          "body_weight_kg": "40.2",
+          "snatch_1": "19",
+          "snatch_2": "21",
+          "snatch_3": "23",
+          "cj_1": "26",
+          "cj_2": "29",
+          "cj_3": "32",
+          "best_snatch": "23",
+          "best_cj": "32",
+          "total": "55"
+        },
+        {
+          "meet_name": "2018 USAW Louisiana State Championship",
+          "date": "2018-11-18",
+          "division": "Women's 13 Under Age Group 45kg",
+          "lifter_name": "Marissa Taylor",
+          "body_weight_kg": "40.2",
+          "snatch_1": "18",
+          "snatch_2": "20",
+          "snatch_3": "22",
+          "cj_1": "25",
+          "cj_2": "28",
+          "cj_3": "31",
+          "best_snatch": "22",
+          "best_cj": "31",
+          "total": "53"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Last Chance U!",
+            "date": "2019-02-02",
+            "division": "Women's 13 Under Age Group 45kg",
+            "lifter_name": "Marissa Taylor",
+            "body_weight_kg": "40.7",
+            "snatch_1": "22",
+            "snatch_2": "24",
+            "snatch_3": "26",
+            "cj_1": "30",
+            "cj_2": "33",
+            "cj_3": "35",
+            "best_snatch": "26",
+            "best_cj": "35",
+            "total": "61"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMi0wMiIsIndlaWdodF9jbGFzcyI6NTV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Marissa Taylor",
+            "total": "61",
+            "gender": "F",
+            "age": "11",
+            "club_name": "Redline Athletics",
+            "membership_number": "1033154",
+            "wso": "Southern"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Christmas Invitational",
+            "date": "2018-12-15",
+            "division": "Women's 13 Under Age Group 45kg",
+            "lifter_name": "Marissa Taylor",
+            "body_weight_kg": "40.2",
+            "snatch_1": "19",
+            "snatch_2": "21",
+            "snatch_3": "23",
+            "cj_1": "26",
+            "cj_2": "29",
+            "cj_3": "32",
+            "best_snatch": "23",
+            "best_cj": "32",
+            "total": "55"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0xNSIsIndlaWdodF9jbGFzcyI6NTV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Marissa Taylor",
+            "total": "55",
+            "gender": "F",
+            "age": "10",
+            "club_name": "Redline Athletics",
+            "membership_number": "1033154",
+            "wso": "Southern"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2018 USAW Louisiana State Championship",
+            "date": "2018-11-18",
+            "division": "Women's 13 Under Age Group 45kg",
+            "lifter_name": "Marissa Taylor",
+            "body_weight_kg": "40.2",
+            "snatch_1": "18",
+            "snatch_2": "20",
+            "snatch_3": "22",
+            "cj_1": "25",
+            "cj_2": "28",
+            "cj_3": "31",
+            "best_snatch": "22",
+            "best_cj": "31",
+            "total": "53"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMS0xOCIsIndlaWdodF9jbGFzcyI6NTV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Marissa Taylor",
+            "total": "53",
+            "gender": "F",
+            "age": "10",
+            "club_name": "Redline Athletics",
+            "membership_number": "1033154",
+            "wso": "Southern"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 49600,
+      "athlete_name": "Marissa Taylor",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/49600",
+      "contaminated_lifter_id": 38481,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T05:26:31.544Z",
+      "profile_data": {
+        "membership_number": "1054614",
+        "birth_year": 1988,
+        "gender": "F",
+        "club_name": "Hidden Valley Weightlifting Club",
+        "wso": "Mountain South",
+        "national_rank": "8"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2021 ALEE Spring Open",
+          "date": "2021-03-20",
+          "division": "Open Women's 71kg",
+          "lifter_name": "Marissa Taylor",
+          "body_weight_kg": "66.6",
+          "snatch_1": "60",
+          "snatch_2": "0",
+          "snatch_3": "62",
+          "cj_1": "0",
+          "cj_2": "84",
+          "cj_3": "0",
+          "best_snatch": "62",
+          "best_cj": "84",
+          "total": "146"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2021 ALEE Spring Open",
+            "date": "2021-03-20",
+            "division": "Open Women's 71kg",
+            "lifter_name": "Marissa Taylor",
+            "body_weight_kg": "66.6",
+            "snatch_1": "60",
+            "snatch_2": "0",
+            "snatch_3": "62",
+            "cj_1": "0",
+            "cj_2": "84",
+            "cj_3": "0",
+            "best_snatch": "62",
+            "best_cj": "84",
+            "total": "146"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMy0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMy0yMCIsIndlaWdodF9jbGFzcyI6OTZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "8",
+            "athlete_name": "Marissa Taylor",
+            "total": "146",
+            "gender": "F",
+            "age": "33",
+            "club_name": "Hidden Valley Weightlifting Club",
+            "membership_number": "1054614",
+            "wso": "Mountain South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

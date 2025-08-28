@@ -1,0 +1,341 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T18:03:13.715Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Adam Ferguson",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 6,
+    "total_reverse_lookups": 6,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 26887153
+  },
+  "data": [
+    {
+      "internal_id": 9377,
+      "athlete_name": "Adam Ferguson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/9377",
+      "contaminated_lifter_id": 19912,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T18:03:03.987Z",
+      "profile_data": {
+        "membership_number": "1002078",
+        "birth_year": 1982,
+        "gender": "M",
+        "club_name": "Energy Barbell Club",
+        "wso": "DMV",
+        "national_rank": "21"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Occoquan Bay Barbell Open",
+          "date": "2017-12-02",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Adam Ferguson",
+          "body_weight_kg": "92.3",
+          "snatch_1": "60",
+          "snatch_2": "67",
+          "snatch_3": "75",
+          "cj_1": "-85",
+          "cj_2": "85",
+          "cj_3": "-95",
+          "best_snatch": "75",
+          "best_cj": "85",
+          "total": "160"
+        },
+        {
+          "meet_name": "NOVAOpen",
+          "date": "2017-10-15",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Adam Ferguson",
+          "body_weight_kg": "92.6",
+          "snatch_1": "65",
+          "snatch_2": "69",
+          "snatch_3": "74",
+          "cj_1": "88",
+          "cj_2": "95",
+          "cj_3": "-98",
+          "best_snatch": "74",
+          "best_cj": "95",
+          "total": "169"
+        },
+        {
+          "meet_name": "2017 Capital City Open",
+          "date": "2017-04-09",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Adam Ferguson",
+          "body_weight_kg": "91.8",
+          "snatch_1": "70",
+          "snatch_2": "74",
+          "snatch_3": "-77",
+          "cj_1": "90",
+          "cj_2": "-95",
+          "cj_3": "95",
+          "best_snatch": "74",
+          "best_cj": "95",
+          "total": "169"
+        },
+        {
+          "meet_name": "2017 Baltimore Open",
+          "date": "2017-01-29",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Adam Ferguson",
+          "body_weight_kg": "92.4",
+          "snatch_1": "68",
+          "snatch_2": "72",
+          "snatch_3": "-75",
+          "cj_1": "90",
+          "cj_2": "-94",
+          "cj_3": "-94",
+          "best_snatch": "72",
+          "best_cj": "90",
+          "total": "162"
+        },
+        {
+          "meet_name": "2016 Maryland Potomac Valley Open",
+          "date": "2016-06-05",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Adam Ferguson",
+          "body_weight_kg": "101.55",
+          "snatch_1": "62",
+          "snatch_2": "66",
+          "snatch_3": "70",
+          "cj_1": "85",
+          "cj_2": "89",
+          "cj_3": "-94",
+          "best_snatch": "70",
+          "best_cj": "89",
+          "total": "159"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Occoquan Bay Barbell Open",
+            "date": "2017-12-02",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Adam Ferguson",
+            "body_weight_kg": "92.3",
+            "snatch_1": "60",
+            "snatch_2": "67",
+            "snatch_3": "75",
+            "cj_1": "-85",
+            "cj_2": "85",
+            "cj_3": "-95",
+            "best_snatch": "75",
+            "best_cj": "85",
+            "total": "160"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMi0wMiIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "21",
+            "athlete_name": "Adam Ferguson",
+            "total": "160",
+            "gender": "M",
+            "age": "35",
+            "club_name": "Energy Barbell Club",
+            "membership_number": "1002078",
+            "wso": "DMV"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "NOVAOpen",
+            "date": "2017-10-15",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Adam Ferguson",
+            "body_weight_kg": "92.6",
+            "snatch_1": "65",
+            "snatch_2": "69",
+            "snatch_3": "74",
+            "cj_1": "88",
+            "cj_2": "95",
+            "cj_3": "-98",
+            "best_snatch": "74",
+            "best_cj": "95",
+            "total": "169"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0xNSIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "50",
+            "athlete_name": "Adam Ferguson",
+            "total": "169",
+            "gender": "M",
+            "age": "35",
+            "club_name": "Energy Barbell Club",
+            "membership_number": "1002078",
+            "wso": "DMV"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2017 Capital City Open",
+            "date": "2017-04-09",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Adam Ferguson",
+            "body_weight_kg": "91.8",
+            "snatch_1": "70",
+            "snatch_2": "74",
+            "snatch_3": "-77",
+            "cj_1": "90",
+            "cj_2": "-95",
+            "cj_3": "95",
+            "best_snatch": "74",
+            "best_cj": "95",
+            "total": "169"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNC0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNC0wOSIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "43",
+            "athlete_name": "Adam Ferguson",
+            "total": "169",
+            "gender": "M",
+            "age": "35",
+            "club_name": "Energy Barbell Club",
+            "membership_number": "1002078",
+            "wso": "DMV"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2017 Baltimore Open",
+            "date": "2017-01-29",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Adam Ferguson",
+            "body_weight_kg": "92.4",
+            "snatch_1": "68",
+            "snatch_2": "72",
+            "snatch_3": "-75",
+            "cj_1": "90",
+            "cj_2": "-94",
+            "cj_3": "-94",
+            "best_snatch": "72",
+            "best_cj": "90",
+            "total": "162"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMS0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMS0yOSIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "30",
+            "athlete_name": "Adam Ferguson",
+            "total": "162",
+            "gender": "M",
+            "age": "35",
+            "club_name": "Energy Barbell Club",
+            "membership_number": "1002078",
+            "wso": "DMV"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2016 Maryland Potomac Valley Open",
+            "date": "2016-06-05",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Adam Ferguson",
+            "body_weight_kg": "101.55",
+            "snatch_1": "62",
+            "snatch_2": "66",
+            "snatch_3": "70",
+            "cj_1": "85",
+            "cj_2": "89",
+            "cj_3": "-94",
+            "best_snatch": "70",
+            "best_cj": "89",
+            "total": "159"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0wNSIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "Adam Ferguson",
+            "total": "159",
+            "gender": "M",
+            "age": "34",
+            "club_name": "Energy Barbell Club",
+            "membership_number": "1002078",
+            "wso": "DMV"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 22053,
+      "athlete_name": "Adam Ferguson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/22053",
+      "contaminated_lifter_id": 19912,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T18:03:13.714Z",
+      "profile_data": {
+        "membership_number": "193793",
+        "birth_year": 1989,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Florida",
+        "national_rank": "25"
+      },
+      "competition_history": [
+        {
+          "meet_name": "The Iron Game Open",
+          "date": "2014-03-01",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Adam Ferguson",
+          "body_weight_kg": "90.1",
+          "snatch_1": "67",
+          "snatch_2": "68",
+          "snatch_3": "71",
+          "cj_1": "98",
+          "cj_2": "102",
+          "cj_3": "106",
+          "best_snatch": "71",
+          "best_cj": "106",
+          "total": "177"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "The Iron Game Open",
+            "date": "2014-03-01",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Adam Ferguson",
+            "body_weight_kg": "90.1",
+            "snatch_1": "67",
+            "snatch_2": "68",
+            "snatch_3": "71",
+            "cj_1": "98",
+            "cj_2": "102",
+            "cj_3": "106",
+            "best_snatch": "71",
+            "best_cj": "106",
+            "total": "177"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0wMSIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "25",
+            "athlete_name": "Adam Ferguson",
+            "total": "177",
+            "gender": "M",
+            "age": "25",
+            "club_name": "-",
+            "membership_number": "193793",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

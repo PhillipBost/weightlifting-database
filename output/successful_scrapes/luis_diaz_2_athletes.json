@@ -1,0 +1,435 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T14:33:16.435Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Luis Diaz",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 8,
+    "total_reverse_lookups": 8,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 49266529
+  },
+  "data": [
+    {
+      "internal_id": 22166,
+      "athlete_name": "Luis Diaz",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/22166",
+      "contaminated_lifter_id": 7339,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T14:32:43.350Z",
+      "profile_data": {
+        "membership_number": "1031416",
+        "birth_year": 1989,
+        "gender": "M",
+        "club_name": "Pre-Script Barbell",
+        "wso": "California North Central",
+        "national_rank": "6"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Spring Breaker",
+          "date": "2019-03-24",
+          "division": "Open Men's +109kg",
+          "lifter_name": "Luis Diaz",
+          "body_weight_kg": "111.8",
+          "snatch_1": "100",
+          "snatch_2": "104",
+          "snatch_3": "107",
+          "cj_1": "130",
+          "cj_2": "135",
+          "cj_3": "142",
+          "best_snatch": "107",
+          "best_cj": "142",
+          "total": "249"
+        },
+        {
+          "meet_name": "Nike 2018 American Open Series 3",
+          "date": "2018-09-16",
+          "division": "Open Men's 109kg",
+          "lifter_name": "Luis Diaz",
+          "body_weight_kg": "107.48",
+          "snatch_1": "90",
+          "snatch_2": "93",
+          "snatch_3": "-100",
+          "cj_1": "120",
+          "cj_2": "125",
+          "cj_3": "136",
+          "best_snatch": "93",
+          "best_cj": "136",
+          "total": "229"
+        },
+        {
+          "meet_name": "Silicon Valley Open",
+          "date": "2018-07-21",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Luis Diaz",
+          "body_weight_kg": "108.42",
+          "snatch_1": "92",
+          "snatch_2": "-96",
+          "snatch_3": "96",
+          "cj_1": "125",
+          "cj_2": "130",
+          "cj_3": "136",
+          "best_snatch": "96",
+          "best_cj": "136",
+          "total": "232"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Spring Breaker",
+            "date": "2019-03-24",
+            "division": "Open Men's +109kg",
+            "lifter_name": "Luis Diaz",
+            "body_weight_kg": "111.8",
+            "snatch_1": "100",
+            "snatch_2": "104",
+            "snatch_3": "107",
+            "cj_1": "130",
+            "cj_2": "135",
+            "cj_3": "142",
+            "best_snatch": "107",
+            "best_cj": "142",
+            "total": "249"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMy0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMy0yNCIsIndlaWdodF9jbGFzcyI6OTB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Luis Diaz",
+            "total": "249",
+            "gender": "M",
+            "age": "30",
+            "club_name": "Pre-Script Barbell",
+            "membership_number": "1031416",
+            "wso": "California North Central"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Nike 2018 American Open Series 3",
+            "date": "2018-09-16",
+            "division": "Open Men's 109kg",
+            "lifter_name": "Luis Diaz",
+            "body_weight_kg": "107.48",
+            "snatch_1": "90",
+            "snatch_2": "93",
+            "snatch_3": "-100",
+            "cj_1": "120",
+            "cj_2": "125",
+            "cj_3": "136",
+            "best_snatch": "93",
+            "best_cj": "136",
+            "total": "229"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOS0xNiIsIndlaWdodF9jbGFzcyI6ODl9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "15",
+            "athlete_name": "Luis Diaz",
+            "total": "229",
+            "gender": "M",
+            "age": "29",
+            "club_name": "Pre-Script Barbell",
+            "membership_number": "1031416",
+            "wso": "California North Central"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Silicon Valley Open",
+            "date": "2018-07-21",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Luis Diaz",
+            "body_weight_kg": "108.42",
+            "snatch_1": "92",
+            "snatch_2": "-96",
+            "snatch_3": "96",
+            "cj_1": "125",
+            "cj_2": "130",
+            "cj_3": "136",
+            "best_snatch": "96",
+            "best_cj": "136",
+            "total": "232"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNy0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNy0yMSIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "Luis Diaz",
+            "total": "232",
+            "gender": "M",
+            "age": "29",
+            "club_name": "Pre-Script Barbell",
+            "membership_number": "1031416",
+            "wso": "California North Central"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 32665,
+      "athlete_name": "Luis Diaz",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/32665",
+      "contaminated_lifter_id": 7339,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T14:33:16.433Z",
+      "profile_data": {
+        "membership_number": "197431",
+        "birth_year": 1995,
+        "gender": "M",
+        "club_name": "TEAM CONNECTICUT",
+        "wso": "New England",
+        "national_rank": "3"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Tri State Open Weightlifting Championships",
+          "date": "2015-01-25",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Luis Diaz",
+          "body_weight_kg": "109.69",
+          "snatch_1": "103",
+          "snatch_2": "109",
+          "snatch_3": "115",
+          "cj_1": "140",
+          "cj_2": "145",
+          "cj_3": "-148",
+          "best_snatch": "115",
+          "best_cj": "145",
+          "total": "260"
+        },
+        {
+          "meet_name": "Connecticut LWC State Championships",
+          "date": "2014-11-23",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Luis Diaz",
+          "body_weight_kg": "114.83",
+          "snatch_1": "98",
+          "snatch_2": "103",
+          "snatch_3": "108",
+          "cj_1": "135",
+          "cj_2": "140",
+          "cj_3": "-145",
+          "best_snatch": "108",
+          "best_cj": "140",
+          "total": "248"
+        },
+        {
+          "meet_name": "Crossfit Norwalk Open",
+          "date": "2014-09-28",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Luis Diaz",
+          "body_weight_kg": "110.84",
+          "snatch_1": "98",
+          "snatch_2": "-104",
+          "snatch_3": "-105",
+          "cj_1": "135",
+          "cj_2": "-140",
+          "cj_3": "140",
+          "best_snatch": "98",
+          "best_cj": "140",
+          "total": "238"
+        },
+        {
+          "meet_name": "Connecticut Open Weightlifting Championships",
+          "date": "2014-08-10",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Luis Diaz",
+          "body_weight_kg": "108.73",
+          "snatch_1": "95",
+          "snatch_2": "100",
+          "snatch_3": "105",
+          "cj_1": "135",
+          "cj_2": "140",
+          "cj_3": "-143",
+          "best_snatch": "105",
+          "best_cj": "140",
+          "total": "245"
+        },
+        {
+          "meet_name": "True Athletics Open, Junior and Masters",
+          "date": "2014-06-01",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Luis Diaz",
+          "body_weight_kg": "103.23",
+          "snatch_1": "88",
+          "snatch_2": "93",
+          "snatch_3": "-97",
+          "cj_1": "120",
+          "cj_2": "125",
+          "cj_3": "-130",
+          "best_snatch": "93",
+          "best_cj": "125",
+          "total": "218"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Tri State Open Weightlifting Championships",
+            "date": "2015-01-25",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Luis Diaz",
+            "body_weight_kg": "109.69",
+            "snatch_1": "103",
+            "snatch_2": "109",
+            "snatch_3": "115",
+            "cj_1": "140",
+            "cj_2": "145",
+            "cj_3": "-148",
+            "best_snatch": "115",
+            "best_cj": "145",
+            "total": "260"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMS0yNSIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Luis Diaz",
+            "total": "260",
+            "gender": "M",
+            "age": "20",
+            "club_name": "TEAM CONNECTICUT",
+            "membership_number": "197431",
+            "wso": "New England"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Connecticut LWC State Championships",
+            "date": "2014-11-23",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Luis Diaz",
+            "body_weight_kg": "114.83",
+            "snatch_1": "98",
+            "snatch_2": "103",
+            "snatch_3": "108",
+            "cj_1": "135",
+            "cj_2": "140",
+            "cj_3": "-145",
+            "best_snatch": "108",
+            "best_cj": "140",
+            "total": "248"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMS0yMyIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Luis Diaz",
+            "total": "248",
+            "gender": "M",
+            "age": "19",
+            "club_name": "TEAM CONNECTICUT",
+            "membership_number": "197431",
+            "wso": "New England"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Crossfit Norwalk Open",
+            "date": "2014-09-28",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Luis Diaz",
+            "body_weight_kg": "110.84",
+            "snatch_1": "98",
+            "snatch_2": "-104",
+            "snatch_3": "-105",
+            "cj_1": "135",
+            "cj_2": "-140",
+            "cj_3": "140",
+            "best_snatch": "98",
+            "best_cj": "140",
+            "total": "238"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOS0yOCIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "7",
+            "athlete_name": "Luis Diaz",
+            "total": "238",
+            "gender": "M",
+            "age": "19",
+            "club_name": "TEAM CONNECTICUT",
+            "membership_number": "197431",
+            "wso": "New England"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Connecticut Open Weightlifting Championships",
+            "date": "2014-08-10",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Luis Diaz",
+            "body_weight_kg": "108.73",
+            "snatch_1": "95",
+            "snatch_2": "100",
+            "snatch_3": "105",
+            "cj_1": "135",
+            "cj_2": "140",
+            "cj_3": "-143",
+            "best_snatch": "105",
+            "best_cj": "140",
+            "total": "245"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0xMCIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Luis Diaz",
+            "total": "245",
+            "gender": "M",
+            "age": "19",
+            "club_name": "TEAM CONNECTICUT",
+            "membership_number": "197431",
+            "wso": "New England"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "True Athletics Open, Junior and Masters",
+            "date": "2014-06-01",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Luis Diaz",
+            "body_weight_kg": "103.23",
+            "snatch_1": "88",
+            "snatch_2": "93",
+            "snatch_3": "-97",
+            "cj_1": "120",
+            "cj_2": "125",
+            "cj_3": "-130",
+            "best_snatch": "93",
+            "best_cj": "125",
+            "total": "218"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNi0wMSIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Luis Diaz",
+            "total": "218",
+            "gender": "M",
+            "age": "19",
+            "club_name": "TEAM CONNECTICUT",
+            "membership_number": "197431",
+            "wso": "New England"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

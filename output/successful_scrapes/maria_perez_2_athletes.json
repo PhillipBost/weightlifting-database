@@ -1,0 +1,247 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T07:21:42.574Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Maria Perez",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 4,
+    "total_reverse_lookups": 4,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 109772668
+  },
+  "data": [
+    {
+      "internal_id": 9378,
+      "athlete_name": "Maria Perez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/9378",
+      "contaminated_lifter_id": 32570,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T07:21:29.437Z",
+      "profile_data": {
+        "membership_number": "1021981",
+        "birth_year": 1982,
+        "gender": "F",
+        "club_name": "Back Room WLC",
+        "wso": "California South",
+        "national_rank": "4"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Battle of Pearl Harbor WLM 2019",
+          "date": "2019-10-26",
+          "division": "Women's Masters (35-39) 64kg",
+          "lifter_name": "Maria Perez",
+          "body_weight_kg": "63.3",
+          "snatch_1": "55",
+          "snatch_2": "58",
+          "snatch_3": "-61",
+          "cj_1": "68",
+          "cj_2": "72",
+          "cj_3": "76",
+          "best_snatch": "58",
+          "best_cj": "76",
+          "total": "134"
+        },
+        {
+          "meet_name": "2018 TCA Summer Lift-Off Weightlifting Meet",
+          "date": "2018-05-19",
+          "division": "Women's Masters (35-39) 63 kg",
+          "lifter_name": "Maria Perez",
+          "body_weight_kg": "60",
+          "snatch_1": "57",
+          "snatch_2": "-60",
+          "snatch_3": "-60",
+          "cj_1": "73",
+          "cj_2": "77",
+          "cj_3": "80",
+          "best_snatch": "57",
+          "best_cj": "80",
+          "total": "137"
+        },
+        {
+          "meet_name": "DTLA Halloween Classic 2017",
+          "date": "2017-10-28",
+          "division": "Women's Masters (35-39) 63 kg",
+          "lifter_name": "Maria Perez",
+          "body_weight_kg": "60.17",
+          "snatch_1": "51",
+          "snatch_2": "-55",
+          "snatch_3": "-55",
+          "cj_1": "65",
+          "cj_2": "72",
+          "cj_3": "77",
+          "best_snatch": "51",
+          "best_cj": "77",
+          "total": "128"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Battle of Pearl Harbor WLM 2019",
+            "date": "2019-10-26",
+            "division": "Women's Masters (35-39) 64kg",
+            "lifter_name": "Maria Perez",
+            "body_weight_kg": "63.3",
+            "snatch_1": "55",
+            "snatch_2": "58",
+            "snatch_3": "-61",
+            "cj_1": "68",
+            "cj_2": "72",
+            "cj_3": "76",
+            "best_snatch": "58",
+            "best_cj": "76",
+            "total": "134"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMC0yNiIsIndlaWdodF9jbGFzcyI6MTE1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Maria Perez",
+            "total": "134",
+            "gender": "F",
+            "age": "37",
+            "club_name": "Back Room WLC",
+            "membership_number": "1021981",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2018 TCA Summer Lift-Off Weightlifting Meet",
+            "date": "2018-05-19",
+            "division": "Women's Masters (35-39) 63 kg",
+            "lifter_name": "Maria Perez",
+            "body_weight_kg": "60",
+            "snatch_1": "57",
+            "snatch_2": "-60",
+            "snatch_3": "-60",
+            "cj_1": "73",
+            "cj_2": "77",
+            "cj_3": "80",
+            "best_snatch": "57",
+            "best_cj": "80",
+            "total": "137"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNS0xOSIsIndlaWdodF9jbGFzcyI6MzgyfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Maria Perez",
+            "total": "137",
+            "gender": "F",
+            "age": "36",
+            "club_name": "Back Room WLC",
+            "membership_number": "1021981",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "DTLA Halloween Classic 2017",
+            "date": "2017-10-28",
+            "division": "Women's Masters (35-39) 63 kg",
+            "lifter_name": "Maria Perez",
+            "body_weight_kg": "60.17",
+            "snatch_1": "51",
+            "snatch_2": "-55",
+            "snatch_3": "-55",
+            "cj_1": "65",
+            "cj_2": "72",
+            "cj_3": "77",
+            "best_snatch": "51",
+            "best_cj": "77",
+            "total": "128"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0yOCIsIndlaWdodF9jbGFzcyI6MzgyfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Maria Perez",
+            "total": "128",
+            "gender": "F",
+            "age": "35",
+            "club_name": "Back Room WLC",
+            "membership_number": "1021981",
+            "wso": "California South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 66988,
+      "athlete_name": "Maria Perez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/66988",
+      "contaminated_lifter_id": 32570,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T07:21:42.571Z",
+      "profile_data": {
+        "membership_number": "1082014",
+        "birth_year": 2009,
+        "gender": "F",
+        "club_name": "Ischyros",
+        "wso": "Florida",
+        "national_rank": "5"
+      },
+      "competition_history": [
+        {
+          "meet_name": "The Praelium (10th Anniversary)",
+          "date": "2025-08-01",
+          "division": "Women's 16-17 Age Group 53kg",
+          "lifter_name": "Maria Perez",
+          "body_weight_kg": "51",
+          "snatch_1": "-34",
+          "snatch_2": "-34",
+          "snatch_3": "34",
+          "cj_1": "-46",
+          "cj_2": "-50",
+          "cj_3": "50",
+          "best_snatch": "34",
+          "best_cj": "50",
+          "total": "84"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "The Praelium (10th Anniversary)",
+            "date": "2025-08-01",
+            "division": "Women's 16-17 Age Group 53kg",
+            "lifter_name": "Maria Perez",
+            "body_weight_kg": "51",
+            "snatch_1": "-34",
+            "snatch_2": "-34",
+            "snatch_3": "34",
+            "cj_1": "-46",
+            "cj_2": "-50",
+            "cj_3": "50",
+            "best_snatch": "34",
+            "best_cj": "50",
+            "total": "84"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wOC0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wOC0wMSIsIndlaWdodF9jbGFzcyI6NzY5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "Maria Perez",
+            "total": "84",
+            "gender": "F",
+            "age": "16",
+            "club_name": "Ischyros",
+            "membership_number": "1082014",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

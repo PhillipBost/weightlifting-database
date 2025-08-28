@@ -1,0 +1,285 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T23:51:31.432Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Steven Johnson",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 5,
+    "total_reverse_lookups": 5,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 47784869
+  },
+  "data": [
+    {
+      "internal_id": 10906,
+      "athlete_name": "Steven Johnson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/10906",
+      "contaminated_lifter_id": 1739,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T23:51:13.260Z",
+      "profile_data": {
+        "membership_number": "202148",
+        "birth_year": 1983,
+        "gender": "M",
+        "club_name": "Pinnacle Weightlifting",
+        "wso": "Mountain North",
+        "national_rank": "10"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Colorado State & Open",
+          "date": "2015-03-01",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Steven Johnson",
+          "body_weight_kg": "76.35",
+          "snatch_1": "78",
+          "snatch_2": "81",
+          "snatch_3": "84",
+          "cj_1": "108",
+          "cj_2": "111",
+          "cj_3": "114",
+          "best_snatch": "84",
+          "best_cj": "114",
+          "total": "198"
+        },
+        {
+          "meet_name": "Colorado Springs Open",
+          "date": "2014-10-18",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Steven Johnson",
+          "body_weight_kg": "75.8",
+          "snatch_1": "75",
+          "snatch_2": "75",
+          "snatch_3": "75",
+          "cj_1": "100",
+          "cj_2": "103",
+          "cj_3": "106",
+          "best_snatch": "75",
+          "best_cj": "106",
+          "total": "181"
+        },
+        {
+          "meet_name": "Pinnacle Weightlifting Fall Open",
+          "date": "2014-09-14",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Steven Johnson",
+          "body_weight_kg": "76.8",
+          "snatch_1": "70",
+          "snatch_2": "73",
+          "snatch_3": "78",
+          "cj_1": "93",
+          "cj_2": "96",
+          "cj_3": "98",
+          "best_snatch": "78",
+          "best_cj": "98",
+          "total": "176"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Colorado State & Open",
+            "date": "2015-03-01",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Steven Johnson",
+            "body_weight_kg": "76.35",
+            "snatch_1": "78",
+            "snatch_2": "81",
+            "snatch_3": "84",
+            "cj_1": "108",
+            "cj_2": "111",
+            "cj_3": "114",
+            "best_snatch": "84",
+            "best_cj": "114",
+            "total": "198"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMy0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMy0wMSIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "Steven Johnson",
+            "total": "198",
+            "gender": "M",
+            "age": "32",
+            "club_name": "Pinnacle Weightlifting",
+            "membership_number": "202148",
+            "wso": "Mountain North"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Colorado Springs Open",
+            "date": "2014-10-18",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Steven Johnson",
+            "body_weight_kg": "75.8",
+            "snatch_1": "75",
+            "snatch_2": "75",
+            "snatch_3": "75",
+            "cj_1": "100",
+            "cj_2": "103",
+            "cj_3": "106",
+            "best_snatch": "75",
+            "best_cj": "106",
+            "total": "181"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMC0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMC0xOCIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "14",
+            "athlete_name": "Steven Johnson",
+            "total": "181",
+            "gender": "M",
+            "age": "31",
+            "club_name": "Pinnacle Weightlifting",
+            "membership_number": "202148",
+            "wso": "Mountain North"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Pinnacle Weightlifting Fall Open",
+            "date": "2014-09-14",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Steven Johnson",
+            "body_weight_kg": "76.8",
+            "snatch_1": "70",
+            "snatch_2": "73",
+            "snatch_3": "78",
+            "cj_1": "93",
+            "cj_2": "96",
+            "cj_3": "98",
+            "best_snatch": "78",
+            "best_cj": "98",
+            "total": "176"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOS0xNCIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Steven Johnson",
+            "total": "176",
+            "gender": "M",
+            "age": "31",
+            "club_name": "Pinnacle Weightlifting",
+            "membership_number": "202148",
+            "wso": "Mountain North"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 12399,
+      "athlete_name": "Steven Johnson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/12399",
+      "contaminated_lifter_id": 1739,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T23:51:31.431Z",
+      "profile_data": {
+        "membership_number": "178181",
+        "birth_year": 1984,
+        "gender": "M",
+        "club_name": "K&M WEIGHTLIFTING",
+        "wso": "New England",
+        "national_rank": "6"
+      },
+      "competition_history": [
+        {
+          "meet_name": "The Ginny Robinson Memorial Developmental meet",
+          "date": "2013-10-20",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Steven Johnson",
+          "body_weight_kg": "104.7",
+          "snatch_1": "100",
+          "snatch_2": "102",
+          "snatch_3": "102",
+          "cj_1": "0",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "102",
+          "best_cj": "0",
+          "total": "0"
+        },
+        {
+          "meet_name": "Trinity College Open Weightlifting Championship",
+          "date": "2012-11-18",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Steven Johnson",
+          "body_weight_kg": "118.7",
+          "snatch_1": "95",
+          "snatch_2": "100",
+          "snatch_3": "101",
+          "cj_1": "122",
+          "cj_2": "115",
+          "cj_3": "120",
+          "best_snatch": "101",
+          "best_cj": "122",
+          "total": "223"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "The Ginny Robinson Memorial Developmental meet",
+            "date": "2013-10-20",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Steven Johnson",
+            "body_weight_kg": "104.7",
+            "snatch_1": "100",
+            "snatch_2": "102",
+            "snatch_3": "102",
+            "cj_1": "0",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "102",
+            "best_cj": "0",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMC0yMCIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Trinity College Open Weightlifting Championship",
+            "date": "2012-11-18",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Steven Johnson",
+            "body_weight_kg": "118.7",
+            "snatch_1": "95",
+            "snatch_2": "100",
+            "snatch_3": "101",
+            "cj_1": "122",
+            "cj_2": "115",
+            "cj_3": "120",
+            "best_snatch": "101",
+            "best_cj": "122",
+            "total": "223"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0xMS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0xMS0xOCIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Steven Johnson",
+            "total": "223",
+            "gender": "M",
+            "age": "28",
+            "club_name": "K&M WEIGHTLIFTING",
+            "membership_number": "178181",
+            "wso": "New England"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    }
+  ]
+}

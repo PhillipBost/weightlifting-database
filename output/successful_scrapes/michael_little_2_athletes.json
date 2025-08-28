@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T09:05:14.987Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Michael Little",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 29585081
+  },
+  "data": [
+    {
+      "internal_id": 7341,
+      "athlete_name": "Michael Little",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/7341",
+      "contaminated_lifter_id": 6506,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T09:04:55.005Z",
+      "profile_data": {
+        "membership_number": "189774",
+        "birth_year": 1980,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "-",
+        "national_rank": "6"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Iron Turkey Open",
+          "date": "2013-11-16",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Michael Little",
+          "body_weight_kg": "84.1",
+          "snatch_1": "55",
+          "snatch_2": "60",
+          "snatch_3": "64",
+          "cj_1": "80",
+          "cj_2": "90",
+          "cj_3": "90",
+          "best_snatch": "64",
+          "best_cj": "90",
+          "total": "154"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Iron Turkey Open",
+            "date": "2013-11-16",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Michael Little",
+            "body_weight_kg": "84.1",
+            "snatch_1": "55",
+            "snatch_2": "60",
+            "snatch_3": "64",
+            "cj_1": "80",
+            "cj_2": "90",
+            "cj_3": "90",
+            "best_snatch": "64",
+            "best_cj": "90",
+            "total": "154"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMS0xNiIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Michael Little",
+            "total": "154",
+            "gender": "M",
+            "age": "33",
+            "club_name": "-",
+            "membership_number": "189774",
+            "wso": "-"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 20804,
+      "athlete_name": "Michael Little",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/20804",
+      "contaminated_lifter_id": 6506,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T09:05:14.985Z",
+      "profile_data": {
+        "membership_number": "1035865",
+        "birth_year": 1989,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "California North Central",
+        "national_rank": "7"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Rite of Passage 2018",
+          "date": "2018-11-18",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Michael Little",
+          "body_weight_kg": "84.93",
+          "snatch_1": "102",
+          "snatch_2": "107",
+          "snatch_3": "-113",
+          "cj_1": "120",
+          "cj_2": "130",
+          "cj_3": "-135",
+          "best_snatch": "107",
+          "best_cj": "130",
+          "total": "237"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Rite of Passage 2018",
+            "date": "2018-11-18",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Michael Little",
+            "body_weight_kg": "84.93",
+            "snatch_1": "102",
+            "snatch_2": "107",
+            "snatch_3": "-113",
+            "cj_1": "120",
+            "cj_2": "130",
+            "cj_3": "-135",
+            "best_snatch": "107",
+            "best_cj": "130",
+            "total": "237"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMS0xOCIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "7",
+            "athlete_name": "Michael Little",
+            "total": "237",
+            "gender": "M",
+            "age": "29",
+            "club_name": "-",
+            "membership_number": "1035865",
+            "wso": "California North Central"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

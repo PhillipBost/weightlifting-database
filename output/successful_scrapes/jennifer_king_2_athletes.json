@@ -1,0 +1,247 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T23:05:13.050Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Jennifer King",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 4,
+    "total_reverse_lookups": 4,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 45006487
+  },
+  "data": [
+    {
+      "internal_id": 6937,
+      "athlete_name": "Jennifer King",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/6937",
+      "contaminated_lifter_id": 39934,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T23:05:03.543Z",
+      "profile_data": {
+        "membership_number": "1036190",
+        "birth_year": 1979,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "Mountain North",
+        "national_rank": "2"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Nike 2019 American Open Series 2",
+          "date": "2019-07-28",
+          "division": "Women's Masters (40-44) 71kg",
+          "lifter_name": "Jennifer King",
+          "body_weight_kg": "66.46",
+          "snatch_1": "-48",
+          "snatch_2": "48",
+          "snatch_3": "-50",
+          "cj_1": "65",
+          "cj_2": "69",
+          "cj_3": "-72",
+          "best_snatch": "48",
+          "best_cj": "69",
+          "total": "117"
+        },
+        {
+          "meet_name": "Barbells and Brews - Blue Moon - 2019",
+          "date": "2019-03-30",
+          "division": "Women's Masters (40-44) 64kg",
+          "lifter_name": "Jennifer King",
+          "body_weight_kg": "62.5",
+          "snatch_1": "45",
+          "snatch_2": "-49",
+          "snatch_3": "50",
+          "cj_1": "62",
+          "cj_2": "66",
+          "cj_3": "-71",
+          "best_snatch": "50",
+          "best_cj": "66",
+          "total": "116"
+        },
+        {
+          "meet_name": "Welcome to 2019",
+          "date": "2019-01-27",
+          "division": "Women's Masters (40-44) 64kg",
+          "lifter_name": "Jennifer King",
+          "body_weight_kg": "62.2",
+          "snatch_1": "40",
+          "snatch_2": "43",
+          "snatch_3": "46",
+          "cj_1": "58",
+          "cj_2": "62",
+          "cj_3": "67",
+          "best_snatch": "46",
+          "best_cj": "67",
+          "total": "113"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Nike 2019 American Open Series 2",
+            "date": "2019-07-28",
+            "division": "Women's Masters (40-44) 71kg",
+            "lifter_name": "Jennifer King",
+            "body_weight_kg": "66.46",
+            "snatch_1": "-48",
+            "snatch_2": "48",
+            "snatch_3": "-50",
+            "cj_1": "65",
+            "cj_2": "69",
+            "cj_3": "-72",
+            "best_snatch": "48",
+            "best_cj": "69",
+            "total": "117"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0yOCIsIndlaWdodF9jbGFzcyI6MTM2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Jennifer King",
+            "total": "117",
+            "gender": "F",
+            "age": "40",
+            "club_name": "-",
+            "membership_number": "1036190",
+            "wso": "Mountain North"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Barbells and Brews - Blue Moon - 2019",
+            "date": "2019-03-30",
+            "division": "Women's Masters (40-44) 64kg",
+            "lifter_name": "Jennifer King",
+            "body_weight_kg": "62.5",
+            "snatch_1": "45",
+            "snatch_2": "-49",
+            "snatch_3": "50",
+            "cj_1": "62",
+            "cj_2": "66",
+            "cj_3": "-71",
+            "best_snatch": "50",
+            "best_cj": "66",
+            "total": "116"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMy0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMy0zMCIsIndlaWdodF9jbGFzcyI6MTM1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Jennifer King",
+            "total": "116",
+            "gender": "F",
+            "age": "40",
+            "club_name": "-",
+            "membership_number": "1036190",
+            "wso": "Mountain North"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Welcome to 2019",
+            "date": "2019-01-27",
+            "division": "Women's Masters (40-44) 64kg",
+            "lifter_name": "Jennifer King",
+            "body_weight_kg": "62.2",
+            "snatch_1": "40",
+            "snatch_2": "43",
+            "snatch_3": "46",
+            "cj_1": "58",
+            "cj_2": "62",
+            "cj_3": "67",
+            "best_snatch": "46",
+            "best_cj": "67",
+            "total": "113"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0yNyIsIndlaWdodF9jbGFzcyI6MTM1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Jennifer King",
+            "total": "113",
+            "gender": "F",
+            "age": "40",
+            "club_name": "-",
+            "membership_number": "1036190",
+            "wso": "Mountain North"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 49576,
+      "athlete_name": "Jennifer King",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/49576",
+      "contaminated_lifter_id": 39934,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T23:05:13.048Z",
+      "profile_data": {
+        "membership_number": "1054551",
+        "birth_year": 1983,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "California North Central",
+        "national_rank": "2"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Gym's House Open",
+          "date": "2021-02-13",
+          "division": "Women's Masters (35-39) 64kg",
+          "lifter_name": "Jennifer King",
+          "body_weight_kg": "61.4",
+          "snatch_1": "51",
+          "snatch_2": "54",
+          "snatch_3": "-57",
+          "cj_1": "71",
+          "cj_2": "74",
+          "cj_3": "-77",
+          "best_snatch": "54",
+          "best_cj": "74",
+          "total": "128"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Gym's House Open",
+            "date": "2021-02-13",
+            "division": "Women's Masters (35-39) 64kg",
+            "lifter_name": "Jennifer King",
+            "body_weight_kg": "61.4",
+            "snatch_1": "51",
+            "snatch_2": "54",
+            "snatch_3": "-57",
+            "cj_1": "71",
+            "cj_2": "74",
+            "cj_3": "-77",
+            "best_snatch": "54",
+            "best_cj": "74",
+            "total": "128"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wMi0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wMi0xMyIsIndlaWdodF9jbGFzcyI6MTE1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Jennifer King",
+            "total": "128",
+            "gender": "F",
+            "age": "38",
+            "club_name": "-",
+            "membership_number": "1054551",
+            "wso": "California North Central"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

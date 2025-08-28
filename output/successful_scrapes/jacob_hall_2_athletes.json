@@ -1,0 +1,388 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T17:06:28.450Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Jacob Hall",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 7,
+    "total_reverse_lookups": 7,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 58458544
+  },
+  "data": [
+    {
+      "internal_id": 55375,
+      "athlete_name": "Jacob Hall",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/55375",
+      "contaminated_lifter_id": 41382,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T17:06:00.279Z",
+      "profile_data": {
+        "membership_number": "1064723",
+        "birth_year": 1994,
+        "gender": "M",
+        "club_name": "PITTSBURGH BBC",
+        "wso": "Pennsylvania-West Virginia",
+        "national_rank": "34"
+      },
+      "competition_history": [
+        {
+          "meet_name": "PBC Spring Qualifier",
+          "date": "2023-04-22",
+          "division": "Open Men's 96kg",
+          "lifter_name": "Jacob Hall",
+          "body_weight_kg": "92.6",
+          "snatch_1": "-70",
+          "snatch_2": "70",
+          "snatch_3": "74",
+          "cj_1": "88",
+          "cj_2": "93",
+          "cj_3": "96",
+          "best_snatch": "74",
+          "best_cj": "96",
+          "total": "170"
+        },
+        {
+          "meet_name": "2023 Pittsburgh Open",
+          "date": "2023-01-15",
+          "division": "Open Men's 96kg",
+          "lifter_name": "Jacob Hall",
+          "body_weight_kg": "94",
+          "snatch_1": "65",
+          "snatch_2": "-66",
+          "snatch_3": "66",
+          "cj_1": "-80",
+          "cj_2": "80",
+          "cj_3": "83",
+          "best_snatch": "66",
+          "best_cj": "83",
+          "total": "149"
+        },
+        {
+          "meet_name": "PBC Summer Open",
+          "date": "2022-07-31",
+          "division": "Open Men's 96kg",
+          "lifter_name": "Jacob Hall",
+          "body_weight_kg": "92.38",
+          "snatch_1": "58",
+          "snatch_2": "62",
+          "snatch_3": "66",
+          "cj_1": "75",
+          "cj_2": "80",
+          "cj_3": "-83",
+          "best_snatch": "66",
+          "best_cj": "80",
+          "total": "146"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "PBC Spring Qualifier",
+            "date": "2023-04-22",
+            "division": "Open Men's 96kg",
+            "lifter_name": "Jacob Hall",
+            "body_weight_kg": "92.6",
+            "snatch_1": "-70",
+            "snatch_2": "70",
+            "snatch_3": "74",
+            "cj_1": "88",
+            "cj_2": "93",
+            "cj_3": "96",
+            "best_snatch": "74",
+            "best_cj": "96",
+            "total": "170"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0yMiIsIndlaWdodF9jbGFzcyI6ODd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "34",
+            "athlete_name": "Jacob Hall",
+            "total": "170",
+            "gender": "M",
+            "age": "29",
+            "club_name": "PITTSBURGH BBC",
+            "membership_number": "1064723",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2023 Pittsburgh Open",
+            "date": "2023-01-15",
+            "division": "Open Men's 96kg",
+            "lifter_name": "Jacob Hall",
+            "body_weight_kg": "94",
+            "snatch_1": "65",
+            "snatch_2": "-66",
+            "snatch_3": "66",
+            "cj_1": "-80",
+            "cj_2": "80",
+            "cj_3": "83",
+            "best_snatch": "66",
+            "best_cj": "83",
+            "total": "149"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMS0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMS0xNSIsIndlaWdodF9jbGFzcyI6ODd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "22",
+            "athlete_name": "Jacob Hall",
+            "total": "149",
+            "gender": "M",
+            "age": "29",
+            "club_name": "PITTSBURGH BBC",
+            "membership_number": "1064723",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "PBC Summer Open",
+            "date": "2022-07-31",
+            "division": "Open Men's 96kg",
+            "lifter_name": "Jacob Hall",
+            "body_weight_kg": "92.38",
+            "snatch_1": "58",
+            "snatch_2": "62",
+            "snatch_3": "66",
+            "cj_1": "75",
+            "cj_2": "80",
+            "cj_3": "-83",
+            "best_snatch": "66",
+            "best_cj": "80",
+            "total": "146"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNy0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNy0zMSIsIndlaWdodF9jbGFzcyI6ODd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "12",
+            "athlete_name": "Jacob Hall",
+            "total": "146",
+            "gender": "M",
+            "age": "28",
+            "club_name": "PITTSBURGH BBC",
+            "membership_number": "1064723",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 42255,
+      "athlete_name": "Jacob Hall",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/42255",
+      "contaminated_lifter_id": 41382,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T17:06:28.447Z",
+      "profile_data": {
+        "membership_number": "1036197",
+        "birth_year": 2001,
+        "gender": "M",
+        "club_name": "CANNON FALLS WEIGHTLIFTING",
+        "wso": "Minnesota-Dakotas",
+        "national_rank": "5"
+      },
+      "competition_history": [
+        {
+          "meet_name": "RAIDER OPEN",
+          "date": "2020-01-11",
+          "division": "Junior Men's 96kg",
+          "lifter_name": "Jacob Hall",
+          "body_weight_kg": "90.1",
+          "snatch_1": "64",
+          "snatch_2": "67",
+          "snatch_3": "70",
+          "cj_1": "88",
+          "cj_2": "92",
+          "cj_3": "-95",
+          "best_snatch": "70",
+          "best_cj": "92",
+          "total": "162"
+        },
+        {
+          "meet_name": "Chatfield High School Open",
+          "date": "2019-12-21",
+          "division": "Junior Men's 89kg",
+          "lifter_name": "Jacob Hall",
+          "body_weight_kg": "88",
+          "snatch_1": "60",
+          "snatch_2": "64",
+          "snatch_3": "68",
+          "cj_1": "85",
+          "cj_2": "-90",
+          "cj_3": "91",
+          "best_snatch": "68",
+          "best_cj": "91",
+          "total": "159"
+        },
+        {
+          "meet_name": "Lakeville South High School Open",
+          "date": "2019-02-09",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Jacob Hall",
+          "body_weight_kg": "85.8",
+          "snatch_1": "55",
+          "snatch_2": "58",
+          "snatch_3": "-61",
+          "cj_1": "-75",
+          "cj_2": "80",
+          "cj_3": "85",
+          "best_snatch": "58",
+          "best_cj": "85",
+          "total": "143"
+        },
+        {
+          "meet_name": "Lakeville High School Open",
+          "date": "2020-02-15",
+          "division": "Junior Men's 96kg",
+          "lifter_name": "Jacob Hall",
+          "body_weight_kg": "91.6",
+          "snatch_1": "65",
+          "snatch_2": "-69",
+          "snatch_3": "69",
+          "cj_1": "-88",
+          "cj_2": "88",
+          "cj_3": "-94",
+          "best_snatch": "69",
+          "best_cj": "88",
+          "total": "157"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "RAIDER OPEN",
+            "date": "2020-01-11",
+            "division": "Junior Men's 96kg",
+            "lifter_name": "Jacob Hall",
+            "body_weight_kg": "90.1",
+            "snatch_1": "64",
+            "snatch_2": "67",
+            "snatch_3": "70",
+            "cj_1": "88",
+            "cj_2": "92",
+            "cj_3": "-95",
+            "best_snatch": "70",
+            "best_cj": "92",
+            "total": "162"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMS0xMSIsIndlaWdodF9jbGFzcyI6Njd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "Jacob Hall",
+            "total": "162",
+            "gender": "M",
+            "age": "19",
+            "club_name": "CANNON FALLS WEIGHTLIFTING",
+            "membership_number": "1036197",
+            "wso": "Minnesota-Dakotas"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Chatfield High School Open",
+            "date": "2019-12-21",
+            "division": "Junior Men's 89kg",
+            "lifter_name": "Jacob Hall",
+            "body_weight_kg": "88",
+            "snatch_1": "60",
+            "snatch_2": "64",
+            "snatch_3": "68",
+            "cj_1": "85",
+            "cj_2": "-90",
+            "cj_3": "91",
+            "best_snatch": "68",
+            "best_cj": "91",
+            "total": "159"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMi0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMi0yMSIsIndlaWdodF9jbGFzcyI6NjZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Jacob Hall",
+            "total": "159",
+            "gender": "M",
+            "age": "18",
+            "club_name": "CANNON FALLS WEIGHTLIFTING",
+            "membership_number": "1036197",
+            "wso": "Minnesota-Dakotas"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Lakeville South High School Open",
+            "date": "2019-02-09",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Jacob Hall",
+            "body_weight_kg": "85.8",
+            "snatch_1": "55",
+            "snatch_2": "58",
+            "snatch_3": "-61",
+            "cj_1": "-75",
+            "cj_2": "80",
+            "cj_3": "85",
+            "best_snatch": "58",
+            "best_cj": "85",
+            "total": "143"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMi0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMi0wOSIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "26",
+            "athlete_name": "Jacob Hall",
+            "total": "143",
+            "gender": "M",
+            "age": "18",
+            "club_name": "CANNON FALLS WEIGHTLIFTING",
+            "membership_number": "1036197",
+            "wso": "Minnesota-Dakotas"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Lakeville High School Open",
+            "date": "2020-02-15",
+            "division": "Junior Men's 96kg",
+            "lifter_name": "Jacob Hall",
+            "body_weight_kg": "91.6",
+            "snatch_1": "65",
+            "snatch_2": "-69",
+            "snatch_3": "69",
+            "cj_1": "-88",
+            "cj_2": "88",
+            "cj_3": "-94",
+            "best_snatch": "69",
+            "best_cj": "88",
+            "total": "157"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMi0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMi0xNSIsIndlaWdodF9jbGFzcyI6Njd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Jacob Hall",
+            "total": "157",
+            "gender": "M",
+            "age": "19",
+            "club_name": "CANNON FALLS WEIGHTLIFTING",
+            "membership_number": "1036197",
+            "wso": "Minnesota-Dakotas"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

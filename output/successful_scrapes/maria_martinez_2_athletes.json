@@ -1,0 +1,294 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T04:52:58.801Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Maria Martinez",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 5,
+    "total_reverse_lookups": 5,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 100848895
+  },
+  "data": [
+    {
+      "internal_id": 61112,
+      "athlete_name": "Maria Martinez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/61112",
+      "contaminated_lifter_id": 51833,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T04:52:45.841Z",
+      "profile_data": {
+        "membership_number": "1073406",
+        "birth_year": 1983,
+        "gender": "F",
+        "club_name": "West Chester Weightlifting",
+        "wso": "Pennsylvania-West Virginia",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Summer Developmental Meet at West Chester Weightlifting",
+          "date": "2024-07-19",
+          "division": "Women's Masters (40-44) 71kg",
+          "lifter_name": "Maria Martinez",
+          "body_weight_kg": "66.1",
+          "snatch_1": "41",
+          "snatch_2": "-43",
+          "snatch_3": "43",
+          "cj_1": "55",
+          "cj_2": "58",
+          "cj_3": "60",
+          "best_snatch": "43",
+          "best_cj": "60",
+          "total": "103"
+        },
+        {
+          "meet_name": "West Chester May Developmental Meet",
+          "date": "2024-05-10",
+          "division": "Women's Masters (40-44) 64kg",
+          "lifter_name": "Maria Martinez",
+          "body_weight_kg": "63.7",
+          "snatch_1": "37",
+          "snatch_2": "-40",
+          "snatch_3": "40",
+          "cj_1": "54",
+          "cj_2": "57",
+          "cj_3": "-60",
+          "best_snatch": "40",
+          "best_cj": "57",
+          "total": "97"
+        },
+        {
+          "meet_name": "Spring Developmental Meet",
+          "date": "2024-03-15",
+          "division": "Open Women's 64kg",
+          "lifter_name": "Maria Martinez",
+          "body_weight_kg": "63",
+          "snatch_1": "36",
+          "snatch_2": "-38",
+          "snatch_3": "38",
+          "cj_1": "50",
+          "cj_2": "53",
+          "cj_3": "56",
+          "best_snatch": "38",
+          "best_cj": "56",
+          "total": "94"
+        },
+        {
+          "meet_name": "West Chester Weightlifting Winter Classic",
+          "date": "2023-12-16",
+          "division": "Open Women's 64kg",
+          "lifter_name": "Maria Martinez",
+          "body_weight_kg": "62.4",
+          "snatch_1": "35",
+          "snatch_2": "-38",
+          "snatch_3": "-38",
+          "cj_1": "47",
+          "cj_2": "49",
+          "cj_3": "-52",
+          "best_snatch": "35",
+          "best_cj": "49",
+          "total": "84"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Summer Developmental Meet at West Chester Weightlifting",
+            "date": "2024-07-19",
+            "division": "Women's Masters (40-44) 71kg",
+            "lifter_name": "Maria Martinez",
+            "body_weight_kg": "66.1",
+            "snatch_1": "41",
+            "snatch_2": "-43",
+            "snatch_3": "43",
+            "cj_1": "55",
+            "cj_2": "58",
+            "cj_3": "60",
+            "best_snatch": "43",
+            "best_cj": "60",
+            "total": "103"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNy0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNy0xOSIsIndlaWdodF9jbGFzcyI6MTM2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Maria Martinez",
+            "total": "103",
+            "gender": "F",
+            "age": "41",
+            "club_name": "West Chester Weightlifting",
+            "membership_number": "1073406",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "West Chester May Developmental Meet",
+            "date": "2024-05-10",
+            "division": "Women's Masters (40-44) 64kg",
+            "lifter_name": "Maria Martinez",
+            "body_weight_kg": "63.7",
+            "snatch_1": "37",
+            "snatch_2": "-40",
+            "snatch_3": "40",
+            "cj_1": "54",
+            "cj_2": "57",
+            "cj_3": "-60",
+            "best_snatch": "40",
+            "best_cj": "57",
+            "total": "97"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNS0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNS0xMCIsIndlaWdodF9jbGFzcyI6MTM1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Maria Martinez",
+            "total": "97",
+            "gender": "F",
+            "age": "41",
+            "club_name": "West Chester Weightlifting",
+            "membership_number": "1073406",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Spring Developmental Meet",
+            "date": "2024-03-15",
+            "division": "Open Women's 64kg",
+            "lifter_name": "Maria Martinez",
+            "body_weight_kg": "63",
+            "snatch_1": "36",
+            "snatch_2": "-38",
+            "snatch_3": "38",
+            "cj_1": "50",
+            "cj_2": "53",
+            "cj_3": "56",
+            "best_snatch": "38",
+            "best_cj": "56",
+            "total": "94"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMy0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMy0xNSIsIndlaWdodF9jbGFzcyI6OTV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Maria Martinez",
+            "total": "94",
+            "gender": "F",
+            "age": "41",
+            "club_name": "West Chester Weightlifting",
+            "membership_number": "1073406",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "West Chester Weightlifting Winter Classic",
+            "date": "2023-12-16",
+            "division": "Open Women's 64kg",
+            "lifter_name": "Maria Martinez",
+            "body_weight_kg": "62.4",
+            "snatch_1": "35",
+            "snatch_2": "-38",
+            "snatch_3": "-38",
+            "cj_1": "47",
+            "cj_2": "49",
+            "cj_3": "-52",
+            "best_snatch": "35",
+            "best_cj": "49",
+            "total": "84"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMi0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMi0xNiIsIndlaWdodF9jbGFzcyI6OTV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "23",
+            "athlete_name": "Maria Martinez",
+            "total": "84",
+            "gender": "F",
+            "age": "40",
+            "club_name": "West Chester Weightlifting",
+            "membership_number": "1073406",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 53387,
+      "athlete_name": "Maria Martinez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/53387",
+      "contaminated_lifter_id": 51833,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T04:52:58.798Z",
+      "profile_data": {
+        "membership_number": "1062378",
+        "birth_year": 2002,
+        "gender": "F",
+        "club_name": "Emory University Weightlifting Club",
+        "wso": "Georgia",
+        "national_rank": "5"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Barbell Collective ONE 2022",
+          "date": "2022-03-26",
+          "division": "Junior Women's 81kg",
+          "lifter_name": "Maria Martinez",
+          "body_weight_kg": "76.8",
+          "snatch_1": "36",
+          "snatch_2": "39",
+          "snatch_3": "-42",
+          "cj_1": "48",
+          "cj_2": "51",
+          "cj_3": "54",
+          "best_snatch": "39",
+          "best_cj": "54",
+          "total": "93"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Barbell Collective ONE 2022",
+            "date": "2022-03-26",
+            "division": "Junior Women's 81kg",
+            "lifter_name": "Maria Martinez",
+            "body_weight_kg": "76.8",
+            "snatch_1": "36",
+            "snatch_2": "39",
+            "snatch_3": "-42",
+            "cj_1": "48",
+            "cj_2": "51",
+            "cj_3": "54",
+            "best_snatch": "39",
+            "best_cj": "54",
+            "total": "93"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMy0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMy0yNiIsIndlaWdodF9jbGFzcyI6Nzh9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "Maria Martinez",
+            "total": "93",
+            "gender": "F",
+            "age": "20",
+            "club_name": "Emory University Weightlifting Club",
+            "membership_number": "1062378",
+            "wso": "Georgia"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

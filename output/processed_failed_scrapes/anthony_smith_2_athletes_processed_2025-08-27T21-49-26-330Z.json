@@ -1,0 +1,98 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T05:42:36.651Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Anthony Smith",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 1,
+    "total_reverse_lookups": 1,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 15063106
+  },
+  "data": [
+    {
+      "internal_id": 24140,
+      "athlete_name": "Anthony Smith",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/24140",
+      "contaminated_lifter_id": 3443,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T16:28:39.511Z",
+      "profile_data": {
+        "membership_number": "1038659",
+        "birth_year": 1990,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Tennessee-Kentucky",
+        "national_rank": "24"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Nashville Weightlifting Club Open",
+          "date": "2019-04-06",
+          "division": "Open Men's 96kg",
+          "lifter_name": "Anthony Smith",
+          "body_weight_kg": "92.9",
+          "snatch_1": "93",
+          "snatch_2": "97",
+          "snatch_3": "99",
+          "cj_1": "120",
+          "cj_2": "125",
+          "cj_3": "128",
+          "best_snatch": "99",
+          "best_cj": "128",
+          "total": "227"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Nashville Weightlifting Club Open",
+            "date": "2019-04-06",
+            "division": "Open Men's 96kg",
+            "lifter_name": "Anthony Smith",
+            "body_weight_kg": "92.9",
+            "snatch_1": "93",
+            "snatch_2": "97",
+            "snatch_3": "99",
+            "cj_1": "120",
+            "cj_2": "125",
+            "cj_3": "128",
+            "best_snatch": "99",
+            "best_cj": "128",
+            "total": "227"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0wNiIsIndlaWdodF9jbGFzcyI6ODd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "24",
+            "athlete_name": "Anthony Smith",
+            "total": "227",
+            "gender": "M",
+            "age": "29",
+            "club_name": "-",
+            "membership_number": "1038659",
+            "wso": "Tennessee-Kentucky"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 5029,
+      "athlete_name": "Anthony Smith",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/5029",
+      "contaminated_lifter_id": 3443,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-27T05:42:34.648Z",
+      "profile_data": null,
+      "competition_history": [],
+      "biographical_data_by_competition": [],
+      "scraping_successful": false,
+      "error": "Assignment to constant variable."
+    }
+  ]
+}

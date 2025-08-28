@@ -1,0 +1,200 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T12:14:42.220Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Maria Ramirez",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 3,
+    "total_reverse_lookups": 3,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 40952314
+  },
+  "data": [
+    {
+      "internal_id": 7896,
+      "athlete_name": "Maria Ramirez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/7896",
+      "contaminated_lifter_id": 25364,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T12:14:32.626Z",
+      "profile_data": {
+        "membership_number": "1021612",
+        "birth_year": 1980,
+        "gender": "F",
+        "club_name": "KC WEIGHTLIFTING",
+        "wso": "Missouri Valley",
+        "national_rank": "5"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Missouri Valley Championships 2018",
+          "date": "2018-03-17",
+          "division": "Women's Masters (35-39) 63 kg",
+          "lifter_name": "Maria Ramirez",
+          "body_weight_kg": "61.1",
+          "snatch_1": "20",
+          "snatch_2": "23",
+          "snatch_3": "-26",
+          "cj_1": "30",
+          "cj_2": "33",
+          "cj_3": "-36",
+          "best_snatch": "23",
+          "best_cj": "33",
+          "total": "56"
+        },
+        {
+          "meet_name": "2016 Kansas State & Open Championships",
+          "date": "2016-08-28",
+          "division": "Women's Masters (35-39) 63 kg",
+          "lifter_name": "Maria Ramirez",
+          "body_weight_kg": "61.2",
+          "snatch_1": "15",
+          "snatch_2": "20",
+          "snatch_3": "-25",
+          "cj_1": "25",
+          "cj_2": "30",
+          "cj_3": "33",
+          "best_snatch": "20",
+          "best_cj": "33",
+          "total": "53"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Missouri Valley Championships 2018",
+            "date": "2018-03-17",
+            "division": "Women's Masters (35-39) 63 kg",
+            "lifter_name": "Maria Ramirez",
+            "body_weight_kg": "61.1",
+            "snatch_1": "20",
+            "snatch_2": "23",
+            "snatch_3": "-26",
+            "cj_1": "30",
+            "cj_2": "33",
+            "cj_3": "-36",
+            "best_snatch": "23",
+            "best_cj": "33",
+            "total": "56"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMy0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMy0xNyIsIndlaWdodF9jbGFzcyI6MzgyfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "Maria Ramirez",
+            "total": "56",
+            "gender": "F",
+            "age": "38",
+            "club_name": "KC WEIGHTLIFTING",
+            "membership_number": "1021612",
+            "wso": "Missouri Valley"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2016 Kansas State & Open Championships",
+            "date": "2016-08-28",
+            "division": "Women's Masters (35-39) 63 kg",
+            "lifter_name": "Maria Ramirez",
+            "body_weight_kg": "61.2",
+            "snatch_1": "15",
+            "snatch_2": "20",
+            "snatch_3": "-25",
+            "cj_1": "25",
+            "cj_2": "30",
+            "cj_3": "33",
+            "best_snatch": "20",
+            "best_cj": "33",
+            "total": "53"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0yOCIsIndlaWdodF9jbGFzcyI6MzgyfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Maria Ramirez",
+            "total": "53",
+            "gender": "F",
+            "age": "36",
+            "club_name": "KC WEIGHTLIFTING",
+            "membership_number": "1021612",
+            "wso": "Missouri Valley"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 59974,
+      "athlete_name": "Maria Ramirez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/59974",
+      "contaminated_lifter_id": 25364,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T12:14:42.217Z",
+      "profile_data": {
+        "membership_number": "1070913",
+        "birth_year": 1980,
+        "gender": "F",
+        "club_name": "KC WEIGHTLIFTING",
+        "wso": "Missouri Valley",
+        "national_rank": "3"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2023 Kansas State & Open Champhipship",
+          "date": "2023-09-09",
+          "division": "Women's Masters (40-44) 64kg",
+          "lifter_name": "Maria Ramirez",
+          "body_weight_kg": "60.2",
+          "snatch_1": "20",
+          "snatch_2": "22",
+          "snatch_3": "24",
+          "cj_1": "25",
+          "cj_2": "27",
+          "cj_3": "29",
+          "best_snatch": "24",
+          "best_cj": "29",
+          "total": "53"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2023 Kansas State & Open Champhipship",
+            "date": "2023-09-09",
+            "division": "Women's Masters (40-44) 64kg",
+            "lifter_name": "Maria Ramirez",
+            "body_weight_kg": "60.2",
+            "snatch_1": "20",
+            "snatch_2": "22",
+            "snatch_3": "24",
+            "cj_1": "25",
+            "cj_2": "27",
+            "cj_3": "29",
+            "best_snatch": "24",
+            "best_cj": "29",
+            "total": "53"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wOS0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wOS0wOSIsIndlaWdodF9jbGFzcyI6MTM1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Maria Ramirez",
+            "total": "53",
+            "gender": "F",
+            "age": "43",
+            "club_name": "KC WEIGHTLIFTING",
+            "membership_number": "1070913",
+            "wso": "Missouri Valley"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

@@ -1,0 +1,200 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T01:21:49.123Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Ian Martin",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 3,
+    "total_reverse_lookups": 3,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 88179217
+  },
+  "data": [
+    {
+      "internal_id": 10625,
+      "athlete_name": "Ian Martin",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/10625",
+      "contaminated_lifter_id": 7081,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T01:21:28.868Z",
+      "profile_data": {
+        "membership_number": "207970",
+        "birth_year": 1983,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Carolina",
+        "national_rank": "11"
+      },
+      "competition_history": [
+        {
+          "meet_name": "HWC Inaugural Meet 2015",
+          "date": "2015-03-21",
+          "division": "Open Men's 69 kg",
+          "lifter_name": "Ian Martin",
+          "body_weight_kg": "68.2",
+          "snatch_1": "74",
+          "snatch_2": "80",
+          "snatch_3": "82",
+          "cj_1": "96",
+          "cj_2": "100",
+          "cj_3": "105",
+          "best_snatch": "82",
+          "best_cj": "105",
+          "total": "187"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "HWC Inaugural Meet 2015",
+            "date": "2015-03-21",
+            "division": "Open Men's 69 kg",
+            "lifter_name": "Ian Martin",
+            "body_weight_kg": "68.2",
+            "snatch_1": "74",
+            "snatch_2": "80",
+            "snatch_3": "82",
+            "cj_1": "96",
+            "cj_2": "100",
+            "cj_3": "105",
+            "best_snatch": "82",
+            "best_cj": "105",
+            "total": "187"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMy0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMy0yMSIsIndlaWdodF9jbGFzcyI6MzU2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "11",
+            "athlete_name": "Ian Martin",
+            "total": "187",
+            "gender": "M",
+            "age": "32",
+            "club_name": "-",
+            "membership_number": "207970",
+            "wso": "Carolina"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 45511,
+      "athlete_name": "Ian Martin",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/45511",
+      "contaminated_lifter_id": 7081,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T01:21:49.121Z",
+      "profile_data": {
+        "membership_number": "1024615",
+        "birth_year": 2006,
+        "gender": "M",
+        "club_name": "Occoquan Bay Barbell Club",
+        "wso": "DMV",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "GRIT Weightlifting Championship",
+          "date": "2018-01-20",
+          "division": "Men's 13 Under Age Group 35 Kg",
+          "lifter_name": "Ian Martin",
+          "body_weight_kg": "32.5",
+          "snatch_1": "15",
+          "snatch_2": "17",
+          "snatch_3": "19",
+          "cj_1": "16",
+          "cj_2": "19",
+          "cj_3": "21",
+          "best_snatch": "19",
+          "best_cj": "21",
+          "total": "40"
+        },
+        {
+          "meet_name": "Occoquan Bay Barbell Open",
+          "date": "2017-12-02",
+          "division": "Men's 13 Under Age Group 35 Kg",
+          "lifter_name": "Ian Martin",
+          "body_weight_kg": "32",
+          "snatch_1": "14",
+          "snatch_2": "-16",
+          "snatch_3": "-16",
+          "cj_1": "16",
+          "cj_2": "-18",
+          "cj_3": "18",
+          "best_snatch": "14",
+          "best_cj": "18",
+          "total": "32"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "GRIT Weightlifting Championship",
+            "date": "2018-01-20",
+            "division": "Men's 13 Under Age Group 35 Kg",
+            "lifter_name": "Ian Martin",
+            "body_weight_kg": "32.5",
+            "snatch_1": "15",
+            "snatch_2": "17",
+            "snatch_3": "19",
+            "cj_1": "16",
+            "cj_2": "19",
+            "cj_3": "21",
+            "best_snatch": "19",
+            "best_cj": "21",
+            "total": "40"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMS0yMCIsIndlaWdodF9jbGFzcyI6MjkyfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Ian Martin",
+            "total": "40",
+            "gender": "M",
+            "age": "12",
+            "club_name": "Occoquan Bay Barbell Club",
+            "membership_number": "1024615",
+            "wso": "DMV"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Occoquan Bay Barbell Open",
+            "date": "2017-12-02",
+            "division": "Men's 13 Under Age Group 35 Kg",
+            "lifter_name": "Ian Martin",
+            "body_weight_kg": "32",
+            "snatch_1": "14",
+            "snatch_2": "-16",
+            "snatch_3": "-16",
+            "cj_1": "16",
+            "cj_2": "-18",
+            "cj_3": "18",
+            "best_snatch": "14",
+            "best_cj": "18",
+            "total": "32"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMi0wMiIsIndlaWdodF9jbGFzcyI6MjkyfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Ian Martin",
+            "total": "32",
+            "gender": "M",
+            "age": "11",
+            "club_name": "Occoquan Bay Barbell Club",
+            "membership_number": "1024615",
+            "wso": "DMV"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

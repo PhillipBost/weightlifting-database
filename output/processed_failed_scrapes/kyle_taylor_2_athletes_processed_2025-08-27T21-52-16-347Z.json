@@ -1,0 +1,332 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T05:47:26.512Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Kyle Taylor",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 6,
+    "total_reverse_lookups": 6,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 15352967
+  },
+  "data": [
+    {
+      "internal_id": 23974,
+      "athlete_name": "Kyle Taylor",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/23974",
+      "contaminated_lifter_id": 5950,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T16:37:09.821Z",
+      "profile_data": {
+        "membership_number": "1002287",
+        "birth_year": 1990,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Carolina",
+        "national_rank": "57"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Garage Classic",
+          "date": "2016-03-19",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Kyle Taylor",
+          "body_weight_kg": "75.2",
+          "snatch_1": "60",
+          "snatch_2": "70",
+          "snatch_3": "70",
+          "cj_1": "70",
+          "cj_2": "75",
+          "cj_3": "80",
+          "best_snatch": "70",
+          "best_cj": "80",
+          "total": "150"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Garage Classic",
+            "date": "2016-03-19",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Kyle Taylor",
+            "body_weight_kg": "75.2",
+            "snatch_1": "60",
+            "snatch_2": "70",
+            "snatch_3": "70",
+            "cj_1": "70",
+            "cj_2": "75",
+            "cj_3": "80",
+            "best_snatch": "70",
+            "best_cj": "80",
+            "total": "150"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMy0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMy0xOSIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "57",
+            "athlete_name": "Kyle Taylor",
+            "total": "150",
+            "gender": "M",
+            "age": "26",
+            "club_name": "-",
+            "membership_number": "1002287",
+            "wso": "Carolina"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 29834,
+      "athlete_name": "Kyle Taylor",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/29834",
+      "contaminated_lifter_id": 5950,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-27T05:47:24.507Z",
+      "profile_data": {
+        "membership_number": "182884",
+        "birth_year": 1993,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Florida",
+        "national_rank": "2"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Black Box Classic",
+          "date": "2015-04-04",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Kyle Taylor",
+          "body_weight_kg": "76.5",
+          "snatch_1": "108",
+          "snatch_2": "112",
+          "snatch_3": "118",
+          "cj_1": "135",
+          "cj_2": "140",
+          "cj_3": "-146",
+          "best_snatch": "118",
+          "best_cj": "140",
+          "total": "258"
+        },
+        {
+          "meet_name": "MDUSA Spring Open",
+          "date": "2014-05-04",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Kyle Taylor",
+          "body_weight_kg": "74.5",
+          "snatch_1": "108",
+          "snatch_2": "112",
+          "snatch_3": "112",
+          "cj_1": "134",
+          "cj_2": "138",
+          "cj_3": "140",
+          "best_snatch": "112",
+          "best_cj": "140",
+          "total": "252"
+        },
+        {
+          "meet_name": "Youth National Qualifier and Open",
+          "date": "2014-03-22",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Kyle Taylor",
+          "body_weight_kg": "74.7",
+          "snatch_1": "105",
+          "snatch_2": "108",
+          "snatch_3": "112",
+          "cj_1": "130",
+          "cj_2": "130",
+          "cj_3": "137",
+          "best_snatch": "112",
+          "best_cj": "137",
+          "total": "249"
+        },
+        {
+          "meet_name": "FWF State Championships",
+          "date": "2013-11-10",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Kyle Taylor",
+          "body_weight_kg": "75.1",
+          "snatch_1": "0",
+          "snatch_2": "0",
+          "snatch_3": "0",
+          "cj_1": "115",
+          "cj_2": "125",
+          "cj_3": "0",
+          "best_snatch": "0",
+          "best_cj": "125",
+          "total": "0"
+        },
+        {
+          "meet_name": "Orlando Open",
+          "date": "2013-05-18",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Kyle Taylor",
+          "body_weight_kg": "75.5",
+          "snatch_1": "95",
+          "snatch_2": "95",
+          "snatch_3": "102",
+          "cj_1": "115",
+          "cj_2": "123",
+          "cj_3": "123",
+          "best_snatch": "102",
+          "best_cj": "123",
+          "total": "225"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Black Box Classic",
+            "date": "2015-04-04",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Kyle Taylor",
+            "body_weight_kg": "76.5",
+            "snatch_1": "108",
+            "snatch_2": "112",
+            "snatch_3": "118",
+            "cj_1": "135",
+            "cj_2": "140",
+            "cj_3": "-146",
+            "best_snatch": "118",
+            "best_cj": "140",
+            "total": "258"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0wNCIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Kyle Taylor",
+            "total": "258",
+            "gender": "M",
+            "age": "22",
+            "club_name": "-",
+            "membership_number": "182884",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "MDUSA Spring Open",
+            "date": "2014-05-04",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Kyle Taylor",
+            "body_weight_kg": "74.5",
+            "snatch_1": "108",
+            "snatch_2": "112",
+            "snatch_3": "112",
+            "cj_1": "134",
+            "cj_2": "138",
+            "cj_3": "140",
+            "best_snatch": "112",
+            "best_cj": "140",
+            "total": "252"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNS0wNCIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Kyle Taylor",
+            "total": "252",
+            "gender": "M",
+            "age": "21",
+            "club_name": "-",
+            "membership_number": "182884",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Youth National Qualifier and Open",
+            "date": "2014-03-22",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Kyle Taylor",
+            "body_weight_kg": "74.7",
+            "snatch_1": "105",
+            "snatch_2": "108",
+            "snatch_3": "112",
+            "cj_1": "130",
+            "cj_2": "130",
+            "cj_3": "137",
+            "best_snatch": "112",
+            "best_cj": "137",
+            "total": "249"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0yMiIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Kyle Taylor",
+            "total": "249",
+            "gender": "M",
+            "age": "21",
+            "club_name": "-",
+            "membership_number": "182884",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "FWF State Championships",
+            "date": "2013-11-10",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Kyle Taylor",
+            "body_weight_kg": "75.1",
+            "snatch_1": "0",
+            "snatch_2": "0",
+            "snatch_3": "0",
+            "cj_1": "115",
+            "cj_2": "125",
+            "cj_3": "0",
+            "best_snatch": "0",
+            "best_cj": "125",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMS0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMS0xMCIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Orlando Open",
+            "date": "2013-05-18",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Kyle Taylor",
+            "body_weight_kg": "75.5",
+            "snatch_1": "95",
+            "snatch_2": "95",
+            "snatch_3": "102",
+            "cj_1": "115",
+            "cj_2": "123",
+            "cj_3": "123",
+            "best_snatch": "102",
+            "best_cj": "123",
+            "total": "225"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNS0xOCIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "Kyle Taylor",
+            "total": "225",
+            "gender": "M",
+            "age": "20",
+            "club_name": "-",
+            "membership_number": "182884",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    }
+  ]
+}

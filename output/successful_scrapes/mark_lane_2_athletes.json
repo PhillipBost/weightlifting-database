@@ -1,0 +1,388 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T23:26:35.318Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Mark Lane",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 7,
+    "total_reverse_lookups": 7,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 81265412
+  },
+  "data": [
+    {
+      "internal_id": 2396,
+      "athlete_name": "Mark Lane",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/2396",
+      "contaminated_lifter_id": 6122,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T23:26:22.199Z",
+      "profile_data": {
+        "membership_number": "124787",
+        "birth_year": 1970,
+        "gender": "M",
+        "club_name": "ATHLETIC LAB WLC",
+        "wso": "Carolina",
+        "national_rank": "38"
+      },
+      "competition_history": [
+        {
+          "meet_name": "National Masters Weightlifting Championships",
+          "date": "2017-03-12",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Mark Lane",
+          "body_weight_kg": "84.95",
+          "snatch_1": "-80",
+          "snatch_2": "80",
+          "snatch_3": "-87",
+          "cj_1": "100",
+          "cj_2": "-105",
+          "cj_3": "-105",
+          "best_snatch": "80",
+          "best_cj": "100",
+          "total": "180"
+        },
+        {
+          "meet_name": "2016 American Masters Weightlifting Championship",
+          "date": "2016-11-06",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Mark Lane",
+          "body_weight_kg": "84.24",
+          "snatch_1": "75",
+          "snatch_2": "79",
+          "snatch_3": "83",
+          "cj_1": "95",
+          "cj_2": "100",
+          "cj_3": "-104",
+          "best_snatch": "83",
+          "best_cj": "100",
+          "total": "183"
+        },
+        {
+          "meet_name": "2016 National Masters Championship",
+          "date": "2016-04-03",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Mark Lane",
+          "body_weight_kg": "84.7",
+          "snatch_1": "77",
+          "snatch_2": "82",
+          "snatch_3": "-87",
+          "cj_1": "97",
+          "cj_2": "-105",
+          "cj_3": "-105",
+          "best_snatch": "82",
+          "best_cj": "97",
+          "total": "179"
+        },
+        {
+          "meet_name": "2016 Baltimore Open",
+          "date": "2016-01-31",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Mark Lane",
+          "body_weight_kg": "84.45",
+          "snatch_1": "-77",
+          "snatch_2": "77",
+          "snatch_3": "82",
+          "cj_1": "-95",
+          "cj_2": "95",
+          "cj_3": "102",
+          "best_snatch": "82",
+          "best_cj": "102",
+          "total": "184"
+        },
+        {
+          "meet_name": "Nova Open",
+          "date": "2015-10-17",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Mark Lane",
+          "body_weight_kg": "84.4",
+          "snatch_1": "75",
+          "snatch_2": "-80",
+          "snatch_3": "80",
+          "cj_1": "95",
+          "cj_2": "100",
+          "cj_3": "-105",
+          "best_snatch": "80",
+          "best_cj": "100",
+          "total": "180"
+        },
+        {
+          "meet_name": "2015 Athletic Lab Summer Weightlifting Open",
+          "date": "2015-07-25",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Mark Lane",
+          "body_weight_kg": "84.5",
+          "snatch_1": "75",
+          "snatch_2": "80",
+          "snatch_3": "80",
+          "cj_1": "90",
+          "cj_2": "95",
+          "cj_3": "100",
+          "best_snatch": "80",
+          "best_cj": "100",
+          "total": "180"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "National Masters Weightlifting Championships",
+            "date": "2017-03-12",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Mark Lane",
+            "body_weight_kg": "84.95",
+            "snatch_1": "-80",
+            "snatch_2": "80",
+            "snatch_3": "-87",
+            "cj_1": "100",
+            "cj_2": "-105",
+            "cj_3": "-105",
+            "best_snatch": "80",
+            "best_cj": "100",
+            "total": "180"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0xMiIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "38",
+            "athlete_name": "Mark Lane",
+            "total": "180",
+            "gender": "M",
+            "age": "47",
+            "club_name": "ATHLETIC LAB WLC",
+            "membership_number": "124787",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2016 American Masters Weightlifting Championship",
+            "date": "2016-11-06",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Mark Lane",
+            "body_weight_kg": "84.24",
+            "snatch_1": "75",
+            "snatch_2": "79",
+            "snatch_3": "83",
+            "cj_1": "95",
+            "cj_2": "100",
+            "cj_3": "-104",
+            "best_snatch": "83",
+            "best_cj": "100",
+            "total": "183"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMS0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMS0wNiIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "35",
+            "athlete_name": "Mark Lane",
+            "total": "183",
+            "gender": "M",
+            "age": "46",
+            "club_name": "ATHLETIC LAB WLC",
+            "membership_number": "124787",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2016 National Masters Championship",
+            "date": "2016-04-03",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Mark Lane",
+            "body_weight_kg": "84.7",
+            "snatch_1": "77",
+            "snatch_2": "82",
+            "snatch_3": "-87",
+            "cj_1": "97",
+            "cj_2": "-105",
+            "cj_3": "-105",
+            "best_snatch": "82",
+            "best_cj": "97",
+            "total": "179"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0wMyIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "31",
+            "athlete_name": "Mark Lane",
+            "total": "179",
+            "gender": "M",
+            "age": "46",
+            "club_name": "ATHLETIC LAB WLC",
+            "membership_number": "124787",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2016 Baltimore Open",
+            "date": "2016-01-31",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Mark Lane",
+            "body_weight_kg": "84.45",
+            "snatch_1": "-77",
+            "snatch_2": "77",
+            "snatch_3": "82",
+            "cj_1": "-95",
+            "cj_2": "95",
+            "cj_3": "102",
+            "best_snatch": "82",
+            "best_cj": "102",
+            "total": "184"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0zMSIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "28",
+            "athlete_name": "Mark Lane",
+            "total": "184",
+            "gender": "M",
+            "age": "46",
+            "club_name": "ATHLETIC LAB WLC",
+            "membership_number": "124787",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Nova Open",
+            "date": "2015-10-17",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Mark Lane",
+            "body_weight_kg": "84.4",
+            "snatch_1": "75",
+            "snatch_2": "-80",
+            "snatch_3": "80",
+            "cj_1": "95",
+            "cj_2": "100",
+            "cj_3": "-105",
+            "best_snatch": "80",
+            "best_cj": "100",
+            "total": "180"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xNyIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "57",
+            "athlete_name": "Mark Lane",
+            "total": "180",
+            "gender": "M",
+            "age": "45",
+            "club_name": "ATHLETIC LAB WLC",
+            "membership_number": "124787",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2015 Athletic Lab Summer Weightlifting Open",
+            "date": "2015-07-25",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Mark Lane",
+            "body_weight_kg": "84.5",
+            "snatch_1": "75",
+            "snatch_2": "80",
+            "snatch_3": "80",
+            "cj_1": "90",
+            "cj_2": "95",
+            "cj_3": "100",
+            "best_snatch": "80",
+            "best_cj": "100",
+            "total": "180"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNy0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNy0yNSIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "32",
+            "athlete_name": "Mark Lane",
+            "total": "180",
+            "gender": "M",
+            "age": "45",
+            "club_name": "ATHLETIC LAB WLC",
+            "membership_number": "124787",
+            "wso": "Carolina"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 7668,
+      "athlete_name": "Mark Lane",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/7668",
+      "contaminated_lifter_id": 6122,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T23:26:35.316Z",
+      "profile_data": {
+        "membership_number": "181627",
+        "birth_year": 1980,
+        "gender": "M",
+        "club_name": "KNOXVILLE WEIGHTLIFTING CLUB",
+        "wso": "Tennessee-Kentucky",
+        "national_rank": "15"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2013 Hangle Barbell Open",
+          "date": "2013-02-09",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Mark Lane",
+          "body_weight_kg": "86.6",
+          "snatch_1": "65",
+          "snatch_2": "68",
+          "snatch_3": "73",
+          "cj_1": "90",
+          "cj_2": "95",
+          "cj_3": "100",
+          "best_snatch": "73",
+          "best_cj": "100",
+          "total": "173"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2013 Hangle Barbell Open",
+            "date": "2013-02-09",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Mark Lane",
+            "body_weight_kg": "86.6",
+            "snatch_1": "65",
+            "snatch_2": "68",
+            "snatch_3": "73",
+            "cj_1": "90",
+            "cj_2": "95",
+            "cj_3": "100",
+            "best_snatch": "73",
+            "best_cj": "100",
+            "total": "173"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMi0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMi0wOSIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "15",
+            "athlete_name": "Mark Lane",
+            "total": "173",
+            "gender": "M",
+            "age": "33",
+            "club_name": "KNOXVILLE WEIGHTLIFTING CLUB",
+            "membership_number": "181627",
+            "wso": "Tennessee-Kentucky"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

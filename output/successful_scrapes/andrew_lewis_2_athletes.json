@@ -1,0 +1,482 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T07:17:51.395Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Andrew Lewis",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 9,
+    "total_reverse_lookups": 9,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 23141489
+  },
+  "data": [
+    {
+      "internal_id": 4450,
+      "athlete_name": "Andrew Lewis",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/4450",
+      "contaminated_lifter_id": 17162,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T07:16:52.074Z",
+      "profile_data": {
+        "membership_number": "1014231",
+        "birth_year": 1975,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "New England",
+        "national_rank": "65"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Risto Olympia Cup Series- Event 1",
+          "date": "2017-01-14",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Andrew Lewis",
+          "body_weight_kg": "78",
+          "snatch_1": "45",
+          "snatch_2": "52",
+          "snatch_3": "-60",
+          "cj_1": "61",
+          "cj_2": "75",
+          "cj_3": "82",
+          "best_snatch": "52",
+          "best_cj": "82",
+          "total": "134"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Risto Olympia Cup Series- Event 1",
+            "date": "2017-01-14",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Andrew Lewis",
+            "body_weight_kg": "78",
+            "snatch_1": "45",
+            "snatch_2": "52",
+            "snatch_3": "-60",
+            "cj_1": "61",
+            "cj_2": "75",
+            "cj_3": "82",
+            "best_snatch": "52",
+            "best_cj": "82",
+            "total": "134"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMS0xNCIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "65",
+            "athlete_name": "Andrew Lewis",
+            "total": "134",
+            "gender": "M",
+            "age": "42",
+            "club_name": "-",
+            "membership_number": "1014231",
+            "wso": "New England"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 11739,
+      "athlete_name": "Andrew Lewis",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/11739",
+      "contaminated_lifter_id": 17162,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T07:17:51.393Z",
+      "profile_data": {
+        "membership_number": "179710",
+        "birth_year": 1984,
+        "gender": "M",
+        "club_name": "Waxman's Gym",
+        "wso": "California South",
+        "national_rank": "91"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Nike 2018 American Open Series 3",
+          "date": "2018-09-16",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Andrew Lewis",
+          "body_weight_kg": "80.7",
+          "snatch_1": "92",
+          "snatch_2": "95",
+          "snatch_3": "-99",
+          "cj_1": "114",
+          "cj_2": "119",
+          "cj_3": "-122",
+          "best_snatch": "95",
+          "best_cj": "119",
+          "total": "214"
+        },
+        {
+          "meet_name": "Southern California Championship",
+          "date": "2018-07-22",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Andrew Lewis",
+          "body_weight_kg": "80.4",
+          "snatch_1": "93",
+          "snatch_2": "-96",
+          "snatch_3": "-96",
+          "cj_1": "113",
+          "cj_2": "-117",
+          "cj_3": "117",
+          "best_snatch": "93",
+          "best_cj": "117",
+          "total": "210"
+        },
+        {
+          "meet_name": "Lunar New Open III",
+          "date": "2018-02-10",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Andrew Lewis",
+          "body_weight_kg": "83.95",
+          "snatch_1": "94",
+          "snatch_2": "97",
+          "snatch_3": "100",
+          "cj_1": "-108",
+          "cj_2": "120",
+          "cj_3": "125",
+          "best_snatch": "100",
+          "best_cj": "125",
+          "total": "225"
+        },
+        {
+          "meet_name": "DTLA Halloween Classic 2017",
+          "date": "2017-10-28",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Andrew Lewis",
+          "body_weight_kg": "81.59",
+          "snatch_1": "91",
+          "snatch_2": "94",
+          "snatch_3": "97",
+          "cj_1": "108",
+          "cj_2": "112",
+          "cj_3": "116",
+          "best_snatch": "97",
+          "best_cj": "116",
+          "total": "213"
+        },
+        {
+          "meet_name": "2017 TCA Fall Kick-Off Weightlifting Meet",
+          "date": "2017-09-09",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Andrew Lewis",
+          "body_weight_kg": "81.86",
+          "snatch_1": "90",
+          "snatch_2": "-95",
+          "snatch_3": "-95",
+          "cj_1": "107",
+          "cj_2": "110",
+          "cj_3": "113",
+          "best_snatch": "90",
+          "best_cj": "113",
+          "total": "203"
+        },
+        {
+          "meet_name": "2016 TCA Fall Kick-Off Weightlifting Meet",
+          "date": "2016-09-10",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Andrew Lewis",
+          "body_weight_kg": "81.24",
+          "snatch_1": "86",
+          "snatch_2": "90",
+          "snatch_3": "95",
+          "cj_1": "110",
+          "cj_2": "115",
+          "cj_3": "-120",
+          "best_snatch": "95",
+          "best_cj": "115",
+          "total": "210"
+        },
+        {
+          "meet_name": "SPLWC League Championships",
+          "date": "2016-05-21",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Andrew Lewis",
+          "body_weight_kg": "75.9",
+          "snatch_1": "88",
+          "snatch_2": "-91",
+          "snatch_3": "-92",
+          "cj_1": "113",
+          "cj_2": "-117",
+          "cj_3": "120",
+          "best_snatch": "88",
+          "best_cj": "120",
+          "total": "208"
+        },
+        {
+          "meet_name": "2016 TCA New Year's Weightlifting Meet",
+          "date": "2016-01-09",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Andrew Lewis",
+          "body_weight_kg": "75.18",
+          "snatch_1": "83",
+          "snatch_2": "87",
+          "snatch_3": "91",
+          "cj_1": "108",
+          "cj_2": "113",
+          "cj_3": "116",
+          "best_snatch": "91",
+          "best_cj": "116",
+          "total": "207"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Nike 2018 American Open Series 3",
+            "date": "2018-09-16",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Andrew Lewis",
+            "body_weight_kg": "80.7",
+            "snatch_1": "92",
+            "snatch_2": "95",
+            "snatch_3": "-99",
+            "cj_1": "114",
+            "cj_2": "119",
+            "cj_3": "-122",
+            "best_snatch": "95",
+            "best_cj": "119",
+            "total": "214"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOS0xNiIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "91",
+            "athlete_name": "Andrew Lewis",
+            "total": "214",
+            "gender": "M",
+            "age": "34",
+            "club_name": "Waxman's Gym",
+            "membership_number": "179710",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Southern California Championship",
+            "date": "2018-07-22",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Andrew Lewis",
+            "body_weight_kg": "80.4",
+            "snatch_1": "93",
+            "snatch_2": "-96",
+            "snatch_3": "-96",
+            "cj_1": "113",
+            "cj_2": "-117",
+            "cj_3": "117",
+            "best_snatch": "93",
+            "best_cj": "117",
+            "total": "210"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNy0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNy0yMiIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "17",
+            "athlete_name": "Andrew Lewis",
+            "total": "210",
+            "gender": "M",
+            "age": "34",
+            "club_name": "Waxman's Gym",
+            "membership_number": "179710",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Lunar New Open III",
+            "date": "2018-02-10",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Andrew Lewis",
+            "body_weight_kg": "83.95",
+            "snatch_1": "94",
+            "snatch_2": "97",
+            "snatch_3": "100",
+            "cj_1": "-108",
+            "cj_2": "120",
+            "cj_3": "125",
+            "best_snatch": "100",
+            "best_cj": "125",
+            "total": "225"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMi0xMCIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "14",
+            "athlete_name": "Andrew Lewis",
+            "total": "225",
+            "gender": "M",
+            "age": "34",
+            "club_name": "Waxman's Gym",
+            "membership_number": "179710",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "DTLA Halloween Classic 2017",
+            "date": "2017-10-28",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Andrew Lewis",
+            "body_weight_kg": "81.59",
+            "snatch_1": "91",
+            "snatch_2": "94",
+            "snatch_3": "97",
+            "cj_1": "108",
+            "cj_2": "112",
+            "cj_3": "116",
+            "best_snatch": "97",
+            "best_cj": "116",
+            "total": "213"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0yOCIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "31",
+            "athlete_name": "Andrew Lewis",
+            "total": "213",
+            "gender": "M",
+            "age": "33",
+            "club_name": "Waxman's Gym",
+            "membership_number": "179710",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2017 TCA Fall Kick-Off Weightlifting Meet",
+            "date": "2017-09-09",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Andrew Lewis",
+            "body_weight_kg": "81.86",
+            "snatch_1": "90",
+            "snatch_2": "-95",
+            "snatch_3": "-95",
+            "cj_1": "107",
+            "cj_2": "110",
+            "cj_3": "113",
+            "best_snatch": "90",
+            "best_cj": "113",
+            "total": "203"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wOS0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wOS0wOSIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Andrew Lewis",
+            "total": "203",
+            "gender": "M",
+            "age": "33",
+            "club_name": "Waxman's Gym",
+            "membership_number": "179710",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2016 TCA Fall Kick-Off Weightlifting Meet",
+            "date": "2016-09-10",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Andrew Lewis",
+            "body_weight_kg": "81.24",
+            "snatch_1": "86",
+            "snatch_2": "90",
+            "snatch_3": "95",
+            "cj_1": "110",
+            "cj_2": "115",
+            "cj_3": "-120",
+            "best_snatch": "95",
+            "best_cj": "115",
+            "total": "210"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOS0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOS0xMCIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "15",
+            "athlete_name": "Andrew Lewis",
+            "total": "210",
+            "gender": "M",
+            "age": "32",
+            "club_name": "Waxman's Gym",
+            "membership_number": "179710",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "SPLWC League Championships",
+            "date": "2016-05-21",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Andrew Lewis",
+            "body_weight_kg": "75.9",
+            "snatch_1": "88",
+            "snatch_2": "-91",
+            "snatch_3": "-92",
+            "cj_1": "113",
+            "cj_2": "-117",
+            "cj_3": "120",
+            "best_snatch": "88",
+            "best_cj": "120",
+            "total": "208"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0yMSIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "31",
+            "athlete_name": "Andrew Lewis",
+            "total": "208",
+            "gender": "M",
+            "age": "32",
+            "club_name": "Waxman's Gym",
+            "membership_number": "179710",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2016 TCA New Year's Weightlifting Meet",
+            "date": "2016-01-09",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Andrew Lewis",
+            "body_weight_kg": "75.18",
+            "snatch_1": "83",
+            "snatch_2": "87",
+            "snatch_3": "91",
+            "cj_1": "108",
+            "cj_2": "113",
+            "cj_3": "116",
+            "best_snatch": "91",
+            "best_cj": "116",
+            "total": "207"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0wOSIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "7",
+            "athlete_name": "Andrew Lewis",
+            "total": "207",
+            "gender": "M",
+            "age": "32",
+            "club_name": "Waxman's Gym",
+            "membership_number": "179710",
+            "wso": "California South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

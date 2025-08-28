@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T11:07:21.346Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Cody Smith",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 36911440
+  },
+  "data": [
+    {
+      "internal_id": 15814,
+      "athlete_name": "Cody Smith",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/15814",
+      "contaminated_lifter_id": 15339,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T11:07:11.455Z",
+      "profile_data": {
+        "membership_number": "180923",
+        "birth_year": 1986,
+        "gender": "M",
+        "club_name": "PACIFIC NORTHWEST BARBELL",
+        "wso": "Pacific Northwest",
+        "national_rank": "7"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Bad Mother Open",
+          "date": "2014-08-09",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Cody Smith",
+          "body_weight_kg": "103.6",
+          "snatch_1": "98",
+          "snatch_2": "101",
+          "snatch_3": "102",
+          "cj_1": "120",
+          "cj_2": "125",
+          "cj_3": "130",
+          "best_snatch": "102",
+          "best_cj": "130",
+          "total": "232"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Bad Mother Open",
+            "date": "2014-08-09",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Cody Smith",
+            "body_weight_kg": "103.6",
+            "snatch_1": "98",
+            "snatch_2": "101",
+            "snatch_3": "102",
+            "cj_1": "120",
+            "cj_2": "125",
+            "cj_3": "130",
+            "best_snatch": "102",
+            "best_cj": "130",
+            "total": "232"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0wOSIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "7",
+            "athlete_name": "Cody Smith",
+            "total": "232",
+            "gender": "M",
+            "age": "28",
+            "club_name": "PACIFIC NORTHWEST BARBELL",
+            "membership_number": "180923",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 16399,
+      "athlete_name": "Cody Smith",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/16399",
+      "contaminated_lifter_id": 15339,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T11:07:21.344Z",
+      "profile_data": {
+        "membership_number": "209237",
+        "birth_year": 1987,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Minnesota-Dakotas",
+        "national_rank": "20"
+      },
+      "competition_history": [
+        {
+          "meet_name": "North Dakota Weightlifting Open",
+          "date": "2015-04-11",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Cody Smith",
+          "body_weight_kg": "115.6",
+          "snatch_1": "57",
+          "snatch_2": "64",
+          "snatch_3": "70",
+          "cj_1": "75",
+          "cj_2": "91",
+          "cj_3": "-107",
+          "best_snatch": "70",
+          "best_cj": "91",
+          "total": "161"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "North Dakota Weightlifting Open",
+            "date": "2015-04-11",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Cody Smith",
+            "body_weight_kg": "115.6",
+            "snatch_1": "57",
+            "snatch_2": "64",
+            "snatch_3": "70",
+            "cj_1": "75",
+            "cj_2": "91",
+            "cj_3": "-107",
+            "best_snatch": "70",
+            "best_cj": "91",
+            "total": "161"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0xMSIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "20",
+            "athlete_name": "Cody Smith",
+            "total": "161",
+            "gender": "M",
+            "age": "28",
+            "club_name": "-",
+            "membership_number": "209237",
+            "wso": "Minnesota-Dakotas"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

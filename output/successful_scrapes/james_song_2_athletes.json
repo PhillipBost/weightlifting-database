@@ -1,0 +1,341 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T06:06:28.098Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "James Song",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 6,
+    "total_reverse_lookups": 6,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 105258192
+  },
+  "data": [
+    {
+      "internal_id": 27157,
+      "athlete_name": "James Song",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/27157",
+      "contaminated_lifter_id": 24779,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T06:06:15.445Z",
+      "profile_data": {
+        "membership_number": "1010999",
+        "birth_year": 1992,
+        "gender": "M",
+        "club_name": "IKON Strength",
+        "wso": "California South",
+        "national_rank": "28"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Nike 2018 American Open Series 3",
+          "date": "2018-09-16",
+          "division": "Open Men's 81kg",
+          "lifter_name": "James Song",
+          "body_weight_kg": "78.49",
+          "snatch_1": "104",
+          "snatch_2": "-111",
+          "snatch_3": "112",
+          "cj_1": "142",
+          "cj_2": "-150",
+          "cj_3": "-150",
+          "best_snatch": "112",
+          "best_cj": "142",
+          "total": "254"
+        },
+        {
+          "meet_name": "2017 American Open Finals",
+          "date": "2017-12-10",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "James Song",
+          "body_weight_kg": "76.11",
+          "snatch_1": "110",
+          "snatch_2": "115",
+          "snatch_3": "-118",
+          "cj_1": "140",
+          "cj_2": "-146",
+          "cj_3": "-150",
+          "best_snatch": "115",
+          "best_cj": "140",
+          "total": "255"
+        },
+        {
+          "meet_name": "Nike 2017 American Open Series 1",
+          "date": "2017-03-19",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "James Song",
+          "body_weight_kg": "76.76",
+          "snatch_1": "-107",
+          "snatch_2": "110",
+          "snatch_3": "118",
+          "cj_1": "137",
+          "cj_2": "143",
+          "cj_3": "-148",
+          "best_snatch": "118",
+          "best_cj": "143",
+          "total": "261"
+        },
+        {
+          "meet_name": "2016 American Open",
+          "date": "2016-12-11",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "James Song",
+          "body_weight_kg": "76.32",
+          "snatch_1": "112",
+          "snatch_2": "-116",
+          "snatch_3": "117",
+          "cj_1": "140",
+          "cj_2": "145",
+          "cj_3": "-150",
+          "best_snatch": "117",
+          "best_cj": "145",
+          "total": "262"
+        },
+        {
+          "meet_name": "Fortius Halloween Open",
+          "date": "2016-10-23",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "James Song",
+          "body_weight_kg": "75.27",
+          "snatch_1": "112",
+          "snatch_2": "113",
+          "snatch_3": "117",
+          "cj_1": "-139",
+          "cj_2": "139",
+          "cj_3": "-145",
+          "best_snatch": "117",
+          "best_cj": "139",
+          "total": "256"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Nike 2018 American Open Series 3",
+            "date": "2018-09-16",
+            "division": "Open Men's 81kg",
+            "lifter_name": "James Song",
+            "body_weight_kg": "78.49",
+            "snatch_1": "104",
+            "snatch_2": "-111",
+            "snatch_3": "112",
+            "cj_1": "142",
+            "cj_2": "-150",
+            "cj_3": "-150",
+            "best_snatch": "112",
+            "best_cj": "142",
+            "total": "254"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOS0xNiIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "28",
+            "athlete_name": "James Song",
+            "total": "254",
+            "gender": "M",
+            "age": "26",
+            "club_name": "IKON Strength",
+            "membership_number": "1010999",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2017 American Open Finals",
+            "date": "2017-12-10",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "James Song",
+            "body_weight_kg": "76.11",
+            "snatch_1": "110",
+            "snatch_2": "115",
+            "snatch_3": "-118",
+            "cj_1": "140",
+            "cj_2": "-146",
+            "cj_3": "-150",
+            "best_snatch": "115",
+            "best_cj": "140",
+            "total": "255"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMi0xMCIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "30",
+            "athlete_name": "James Song",
+            "total": "255",
+            "gender": "M",
+            "age": "25",
+            "club_name": "IKON Strength",
+            "membership_number": "1010999",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Nike 2017 American Open Series 1",
+            "date": "2017-03-19",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "James Song",
+            "body_weight_kg": "76.76",
+            "snatch_1": "-107",
+            "snatch_2": "110",
+            "snatch_3": "118",
+            "cj_1": "137",
+            "cj_2": "143",
+            "cj_3": "-148",
+            "best_snatch": "118",
+            "best_cj": "143",
+            "total": "261"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0xOSIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "James Song",
+            "total": "261",
+            "gender": "M",
+            "age": "25",
+            "club_name": "IKON Strength",
+            "membership_number": "1010999",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2016 American Open",
+            "date": "2016-12-11",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "James Song",
+            "body_weight_kg": "76.32",
+            "snatch_1": "112",
+            "snatch_2": "-116",
+            "snatch_3": "117",
+            "cj_1": "140",
+            "cj_2": "145",
+            "cj_3": "-150",
+            "best_snatch": "117",
+            "best_cj": "145",
+            "total": "262"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMi0xMSIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "20",
+            "athlete_name": "James Song",
+            "total": "262",
+            "gender": "M",
+            "age": "24",
+            "club_name": "IKON Strength",
+            "membership_number": "1010999",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Fortius Halloween Open",
+            "date": "2016-10-23",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "James Song",
+            "body_weight_kg": "75.27",
+            "snatch_1": "112",
+            "snatch_2": "113",
+            "snatch_3": "117",
+            "cj_1": "-139",
+            "cj_2": "139",
+            "cj_3": "-145",
+            "best_snatch": "117",
+            "best_cj": "139",
+            "total": "256"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0yMyIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "8",
+            "athlete_name": "James Song",
+            "total": "256",
+            "gender": "M",
+            "age": "24",
+            "club_name": "IKON Strength",
+            "membership_number": "1010999",
+            "wso": "California South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 39655,
+      "athlete_name": "James Song",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/39655",
+      "contaminated_lifter_id": 24779,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T06:06:28.096Z",
+      "profile_data": {
+        "membership_number": "1041536",
+        "birth_year": 1999,
+        "gender": "M",
+        "club_name": "Gary Karkuff",
+        "wso": "Pennsylvania-West Virginia",
+        "national_rank": "17"
+      },
+      "competition_history": [
+        {
+          "meet_name": "BASA Big Sunday Open",
+          "date": "2019-06-02",
+          "division": "Open Men's 73kg",
+          "lifter_name": "James Song",
+          "body_weight_kg": "71.1",
+          "snatch_1": "67",
+          "snatch_2": "67",
+          "snatch_3": "70",
+          "cj_1": "90",
+          "cj_2": "90",
+          "cj_3": "90",
+          "best_snatch": "70",
+          "best_cj": "90",
+          "total": "160"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "BASA Big Sunday Open",
+            "date": "2019-06-02",
+            "division": "Open Men's 73kg",
+            "lifter_name": "James Song",
+            "body_weight_kg": "71.1",
+            "snatch_1": "67",
+            "snatch_2": "67",
+            "snatch_3": "70",
+            "cj_1": "90",
+            "cj_2": "90",
+            "cj_3": "90",
+            "best_snatch": "70",
+            "best_cj": "90",
+            "total": "160"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNi0wMiIsIndlaWdodF9jbGFzcyI6ODR9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "17",
+            "athlete_name": "James Song",
+            "total": "160",
+            "gender": "M",
+            "age": "20",
+            "club_name": "Gary Karkuff",
+            "membership_number": "1041536",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

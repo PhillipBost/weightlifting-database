@@ -1,0 +1,247 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T16:35:12.153Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Jessica Pamanian",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 4,
+    "total_reverse_lookups": 4,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 21605590
+  },
+  "data": [
+    {
+      "internal_id": 11236,
+      "athlete_name": "Jessica Pamanian",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/11236",
+      "contaminated_lifter_id": 5392,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T16:35:02.002Z",
+      "profile_data": {
+        "membership_number": "203193",
+        "birth_year": 1983,
+        "gender": "F",
+        "club_name": "Brooklyn Training Hall",
+        "wso": "New York",
+        "national_rank": "24"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2016 American Open",
+          "date": "2016-12-11",
+          "division": "Open Women's 63 kg",
+          "lifter_name": "Jessica Pamanian",
+          "body_weight_kg": "62.06",
+          "snatch_1": "70",
+          "snatch_2": "-75",
+          "snatch_3": "75",
+          "cj_1": "92",
+          "cj_2": "96",
+          "cj_3": "101",
+          "best_snatch": "75",
+          "best_cj": "101",
+          "total": "176"
+        },
+        {
+          "meet_name": "Brooklyn Barbell Open",
+          "date": "2016-08-28",
+          "division": "Open Women's 63 kg",
+          "lifter_name": "Jessica Pamanian",
+          "body_weight_kg": "62.4",
+          "snatch_1": "73",
+          "snatch_2": "75",
+          "snatch_3": "77",
+          "cj_1": "92",
+          "cj_2": "97",
+          "cj_3": "100",
+          "best_snatch": "77",
+          "best_cj": "100",
+          "total": "177"
+        },
+        {
+          "meet_name": "Liberty Barbell Classic",
+          "date": "2016-05-01",
+          "division": "Open Women's 63 kg",
+          "lifter_name": "Jessica Pamanian",
+          "body_weight_kg": "61.05",
+          "snatch_1": "70",
+          "snatch_2": "72",
+          "snatch_3": "74",
+          "cj_1": "87",
+          "cj_2": "91",
+          "cj_3": "95",
+          "best_snatch": "74",
+          "best_cj": "95",
+          "total": "169"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2016 American Open",
+            "date": "2016-12-11",
+            "division": "Open Women's 63 kg",
+            "lifter_name": "Jessica Pamanian",
+            "body_weight_kg": "62.06",
+            "snatch_1": "70",
+            "snatch_2": "-75",
+            "snatch_3": "75",
+            "cj_1": "92",
+            "cj_2": "96",
+            "cj_3": "101",
+            "best_snatch": "75",
+            "best_cj": "101",
+            "total": "176"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMi0xMSIsIndlaWdodF9jbGFzcyI6MzY1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "24",
+            "athlete_name": "Jessica Pamanian",
+            "total": "176",
+            "gender": "F",
+            "age": "33",
+            "club_name": "Brooklyn Training Hall",
+            "membership_number": "203193",
+            "wso": "New York"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Brooklyn Barbell Open",
+            "date": "2016-08-28",
+            "division": "Open Women's 63 kg",
+            "lifter_name": "Jessica Pamanian",
+            "body_weight_kg": "62.4",
+            "snatch_1": "73",
+            "snatch_2": "75",
+            "snatch_3": "77",
+            "cj_1": "92",
+            "cj_2": "97",
+            "cj_3": "100",
+            "best_snatch": "77",
+            "best_cj": "100",
+            "total": "177"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0yOCIsIndlaWdodF9jbGFzcyI6MzY1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Jessica Pamanian",
+            "total": "177",
+            "gender": "F",
+            "age": "33",
+            "club_name": "Brooklyn Training Hall",
+            "membership_number": "203193",
+            "wso": "New York"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Liberty Barbell Classic",
+            "date": "2016-05-01",
+            "division": "Open Women's 63 kg",
+            "lifter_name": "Jessica Pamanian",
+            "body_weight_kg": "61.05",
+            "snatch_1": "70",
+            "snatch_2": "72",
+            "snatch_3": "74",
+            "cj_1": "87",
+            "cj_2": "91",
+            "cj_3": "95",
+            "best_snatch": "74",
+            "best_cj": "95",
+            "total": "169"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0wMSIsIndlaWdodF9jbGFzcyI6MzY1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Jessica Pamanian",
+            "total": "169",
+            "gender": "F",
+            "age": "33",
+            "club_name": "Brooklyn Training Hall",
+            "membership_number": "203193",
+            "wso": "New York"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 12637,
+      "athlete_name": "Jessica Pamanian",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/12637",
+      "contaminated_lifter_id": 5392,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T16:35:12.151Z",
+      "profile_data": {
+        "membership_number": "190030",
+        "birth_year": 1984,
+        "gender": "F",
+        "club_name": "Brooklyn Training Hall",
+        "wso": "New York",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Trinity College Open Weightlifting Championship",
+          "date": "2013-11-24",
+          "division": "Open Women's 69 kg",
+          "lifter_name": "Jessica Pamanian",
+          "body_weight_kg": "63.2",
+          "snatch_1": "60",
+          "snatch_2": "63",
+          "snatch_3": "69",
+          "cj_1": "80",
+          "cj_2": "84",
+          "cj_3": "90",
+          "best_snatch": "69",
+          "best_cj": "90",
+          "total": "159"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Trinity College Open Weightlifting Championship",
+            "date": "2013-11-24",
+            "division": "Open Women's 69 kg",
+            "lifter_name": "Jessica Pamanian",
+            "body_weight_kg": "63.2",
+            "snatch_1": "60",
+            "snatch_2": "63",
+            "snatch_3": "69",
+            "cj_1": "80",
+            "cj_2": "84",
+            "cj_3": "90",
+            "best_snatch": "69",
+            "best_cj": "90",
+            "total": "159"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMS0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMS0yNCIsIndlaWdodF9jbGFzcyI6MzY2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Jessica Pamanian",
+            "total": "159",
+            "gender": "F",
+            "age": "29",
+            "club_name": "Brooklyn Training Hall",
+            "membership_number": "190030",
+            "wso": "New York"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

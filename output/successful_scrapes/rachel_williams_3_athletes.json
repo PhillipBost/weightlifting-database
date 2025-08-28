@@ -1,0 +1,315 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T06:07:48.006Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Rachel Williams",
+    "internal_ids_processed": 3,
+    "successful_scrapes": 3,
+    "failed_scrapes": 0,
+    "total_competitions_found": 5,
+    "total_reverse_lookups": 5,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 18938100
+  },
+  "data": [
+    {
+      "internal_id": 2670,
+      "athlete_name": "Rachel Williams",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/2670",
+      "contaminated_lifter_id": 42382,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T06:07:14.073Z",
+      "profile_data": {
+        "membership_number": "1041282",
+        "birth_year": 1971,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "Minnesota-Dakotas",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Solcana Beginner Olympic Weightlifting Meet",
+          "date": "2019-05-11",
+          "division": "Women's Masters (45-49) 71kg",
+          "lifter_name": "Rachel Williams",
+          "body_weight_kg": "70.4",
+          "snatch_1": "-38",
+          "snatch_2": "38",
+          "snatch_3": "40",
+          "cj_1": "47",
+          "cj_2": "-55",
+          "cj_3": "-62",
+          "best_snatch": "40",
+          "best_cj": "47",
+          "total": "87"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Solcana Beginner Olympic Weightlifting Meet",
+            "date": "2019-05-11",
+            "division": "Women's Masters (45-49) 71kg",
+            "lifter_name": "Rachel Williams",
+            "body_weight_kg": "70.4",
+            "snatch_1": "-38",
+            "snatch_2": "38",
+            "snatch_3": "40",
+            "cj_1": "47",
+            "cj_2": "-55",
+            "cj_3": "-62",
+            "best_snatch": "40",
+            "best_cj": "47",
+            "total": "87"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0xMSIsIndlaWdodF9jbGFzcyI6MTU2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Rachel Williams",
+            "total": "87",
+            "gender": "F",
+            "age": "48",
+            "club_name": "-",
+            "membership_number": "1041282",
+            "wso": "Minnesota-Dakotas"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 27506,
+      "athlete_name": "Rachel Williams",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/27506",
+      "contaminated_lifter_id": 42382,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T06:07:38.203Z",
+      "profile_data": {
+        "membership_number": "1022649",
+        "birth_year": 1992,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "Mountain North",
+        "national_rank": "10"
+      },
+      "competition_history": [
+        {
+          "meet_name": "The Genesis Series Finals",
+          "date": "2019-12-14",
+          "division": "Open Women's 87kg",
+          "lifter_name": "Rachel Williams",
+          "body_weight_kg": "84.8",
+          "snatch_1": "52",
+          "snatch_2": "54",
+          "snatch_3": "56",
+          "cj_1": "-75",
+          "cj_2": "75",
+          "cj_3": "76",
+          "best_snatch": "56",
+          "best_cj": "76",
+          "total": "132"
+        },
+        {
+          "meet_name": "2017 Idaho State Weightlifting Championships",
+          "date": "2017-10-28",
+          "division": "Open Women's 90 kg",
+          "lifter_name": "Rachel Williams",
+          "body_weight_kg": "84.86",
+          "snatch_1": "-51",
+          "snatch_2": "51",
+          "snatch_3": "52",
+          "cj_1": "66",
+          "cj_2": "-68",
+          "cj_3": "68",
+          "best_snatch": "52",
+          "best_cj": "68",
+          "total": "120"
+        },
+        {
+          "meet_name": "Fireside Classic",
+          "date": "2017-09-02",
+          "division": "Open Women's 90 kg",
+          "lifter_name": "Rachel Williams",
+          "body_weight_kg": "84.04",
+          "snatch_1": "38",
+          "snatch_2": "39",
+          "snatch_3": "41",
+          "cj_1": "58",
+          "cj_2": "60",
+          "cj_3": "64",
+          "best_snatch": "41",
+          "best_cj": "64",
+          "total": "105"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "The Genesis Series Finals",
+            "date": "2019-12-14",
+            "division": "Open Women's 87kg",
+            "lifter_name": "Rachel Williams",
+            "body_weight_kg": "84.8",
+            "snatch_1": "52",
+            "snatch_2": "54",
+            "snatch_3": "56",
+            "cj_1": "-75",
+            "cj_2": "75",
+            "cj_3": "76",
+            "best_snatch": "56",
+            "best_cj": "76",
+            "total": "132"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMi0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMi0xNCIsIndlaWdodF9jbGFzcyI6OTl9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "Rachel Williams",
+            "total": "132",
+            "gender": "F",
+            "age": "27",
+            "club_name": "-",
+            "membership_number": "1022649",
+            "wso": "Mountain North"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2017 Idaho State Weightlifting Championships",
+            "date": "2017-10-28",
+            "division": "Open Women's 90 kg",
+            "lifter_name": "Rachel Williams",
+            "body_weight_kg": "84.86",
+            "snatch_1": "-51",
+            "snatch_2": "51",
+            "snatch_3": "52",
+            "cj_1": "66",
+            "cj_2": "-68",
+            "cj_3": "68",
+            "best_snatch": "52",
+            "best_cj": "68",
+            "total": "120"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0yOCIsIndlaWdodF9jbGFzcyI6MzY5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "38",
+            "athlete_name": "Rachel Williams",
+            "total": "120",
+            "gender": "F",
+            "age": "25",
+            "club_name": "-",
+            "membership_number": "1022649",
+            "wso": "Mountain North"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Fireside Classic",
+            "date": "2017-09-02",
+            "division": "Open Women's 90 kg",
+            "lifter_name": "Rachel Williams",
+            "body_weight_kg": "84.04",
+            "snatch_1": "38",
+            "snatch_2": "39",
+            "snatch_3": "41",
+            "cj_1": "58",
+            "cj_2": "60",
+            "cj_3": "64",
+            "best_snatch": "41",
+            "best_cj": "64",
+            "total": "105"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wOS0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wOS0wMiIsIndlaWdodF9jbGFzcyI6MzY5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "Rachel Williams",
+            "total": "105",
+            "gender": "F",
+            "age": "25",
+            "club_name": "-",
+            "membership_number": "1022649",
+            "wso": "Mountain North"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 58518,
+      "athlete_name": "Rachel Williams",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/58518",
+      "contaminated_lifter_id": 42382,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T06:07:48.003Z",
+      "profile_data": {
+        "membership_number": "1065757",
+        "birth_year": 1984,
+        "gender": "F",
+        "club_name": "Icon Performance Center LLC",
+        "wso": "New England",
+        "national_rank": "21"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Seacoast Open",
+          "date": "2023-04-22",
+          "division": "Open Women's 76kg",
+          "lifter_name": "Rachel Williams",
+          "body_weight_kg": "74.6",
+          "snatch_1": "36",
+          "snatch_2": "38",
+          "snatch_3": "39",
+          "cj_1": "45",
+          "cj_2": "47",
+          "cj_3": "49",
+          "best_snatch": "39",
+          "best_cj": "49",
+          "total": "88"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Seacoast Open",
+            "date": "2023-04-22",
+            "division": "Open Women's 76kg",
+            "lifter_name": "Rachel Williams",
+            "body_weight_kg": "74.6",
+            "snatch_1": "36",
+            "snatch_2": "38",
+            "snatch_3": "39",
+            "cj_1": "45",
+            "cj_2": "47",
+            "cj_3": "49",
+            "best_snatch": "39",
+            "best_cj": "49",
+            "total": "88"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0yMiIsIndlaWdodF9jbGFzcyI6OTd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "21",
+            "athlete_name": "Rachel Williams",
+            "total": "88",
+            "gender": "F",
+            "age": "39",
+            "club_name": "Icon Performance Center LLC",
+            "membership_number": "1065757",
+            "wso": "New England"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

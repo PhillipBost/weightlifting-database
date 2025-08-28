@@ -1,0 +1,230 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T05:34:38.865Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Andrew Thompson",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 0,
+    "failed_scrapes": 2,
+    "total_competitions_found": 4,
+    "total_reverse_lookups": 4,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 14585320
+  },
+  "data": [
+    {
+      "internal_id": 8615,
+      "athlete_name": "Andrew Thompson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/8615",
+      "contaminated_lifter_id": 2898,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-27T05:34:10.077Z",
+      "profile_data": null,
+      "competition_history": [],
+      "biographical_data_by_competition": [],
+      "scraping_successful": false,
+      "error": "Assignment to constant variable."
+    },
+    {
+      "internal_id": 9298,
+      "athlete_name": "Andrew Thompson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/9298",
+      "contaminated_lifter_id": 2898,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-27T05:34:38.863Z",
+      "profile_data": {
+        "membership_number": "170607",
+        "birth_year": 1982,
+        "gender": "M",
+        "club_name": "POSITION WEIGHTLIFTING",
+        "wso": "California South",
+        "national_rank": "14"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Barbarian Barbell's Last Chance Qualifier (American Open)",
+          "date": "2015-10-17",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Andrew Thompson",
+          "body_weight_kg": "90.6",
+          "snatch_1": "117",
+          "snatch_2": "-120",
+          "snatch_3": "-124",
+          "cj_1": "135",
+          "cj_2": "-143",
+          "cj_3": "143",
+          "best_snatch": "117",
+          "best_cj": "143",
+          "total": "260"
+        },
+        {
+          "meet_name": "California State Games",
+          "date": "2014-08-02",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Andrew Thompson",
+          "body_weight_kg": "90.25",
+          "snatch_1": "115",
+          "snatch_2": "-118",
+          "snatch_3": "-118",
+          "cj_1": "132",
+          "cj_2": "137",
+          "cj_3": "-142",
+          "best_snatch": "115",
+          "best_cj": "137",
+          "total": "252"
+        },
+        {
+          "meet_name": "2013 California State Games",
+          "date": "2013-07-21",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Andrew Thompson",
+          "body_weight_kg": "89",
+          "snatch_1": "110",
+          "snatch_2": "115",
+          "snatch_3": "115",
+          "cj_1": "130",
+          "cj_2": "132",
+          "cj_3": "134",
+          "best_snatch": "115",
+          "best_cj": "134",
+          "total": "249"
+        },
+        {
+          "meet_name": "California State Games",
+          "date": "2012-07-22",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Andrew Thompson",
+          "body_weight_kg": "88",
+          "snatch_1": "0",
+          "snatch_2": "0",
+          "snatch_3": "0",
+          "cj_1": "120",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "0",
+          "best_cj": "120",
+          "total": "0"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Barbarian Barbell's Last Chance Qualifier (American Open)",
+            "date": "2015-10-17",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Andrew Thompson",
+            "body_weight_kg": "90.6",
+            "snatch_1": "117",
+            "snatch_2": "-120",
+            "snatch_3": "-124",
+            "cj_1": "135",
+            "cj_2": "-143",
+            "cj_3": "143",
+            "best_snatch": "117",
+            "best_cj": "143",
+            "total": "260"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xNyIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "14",
+            "athlete_name": "Andrew Thompson",
+            "total": "260",
+            "gender": "M",
+            "age": "33",
+            "club_name": "POSITION WEIGHTLIFTING",
+            "membership_number": "170607",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "California State Games",
+            "date": "2014-08-02",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Andrew Thompson",
+            "body_weight_kg": "90.25",
+            "snatch_1": "115",
+            "snatch_2": "-118",
+            "snatch_3": "-118",
+            "cj_1": "132",
+            "cj_2": "137",
+            "cj_3": "-142",
+            "best_snatch": "115",
+            "best_cj": "137",
+            "total": "252"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0wMiIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "11",
+            "athlete_name": "Andrew Thompson",
+            "total": "252",
+            "gender": "M",
+            "age": "32",
+            "club_name": "POSITION WEIGHTLIFTING",
+            "membership_number": "170607",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2013 California State Games",
+            "date": "2013-07-21",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Andrew Thompson",
+            "body_weight_kg": "89",
+            "snatch_1": "110",
+            "snatch_2": "115",
+            "snatch_3": "115",
+            "cj_1": "130",
+            "cj_2": "132",
+            "cj_3": "134",
+            "best_snatch": "115",
+            "best_cj": "134",
+            "total": "249"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNy0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNy0yMSIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "12",
+            "athlete_name": "Andrew Thompson",
+            "total": "249",
+            "gender": "M",
+            "age": "31",
+            "club_name": "POSITION WEIGHTLIFTING",
+            "membership_number": "170607",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "California State Games",
+            "date": "2012-07-22",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Andrew Thompson",
+            "body_weight_kg": "88",
+            "snatch_1": "0",
+            "snatch_2": "0",
+            "snatch_3": "0",
+            "cj_1": "120",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "0",
+            "best_cj": "120",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wNy0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wNy0yMiIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    }
+  ]
+}

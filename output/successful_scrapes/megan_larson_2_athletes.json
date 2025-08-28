@@ -1,0 +1,247 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T03:27:52.013Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Megan Larson",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 4,
+    "total_reverse_lookups": 4,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 95742107
+  },
+  "data": [
+    {
+      "internal_id": 56875,
+      "athlete_name": "Megan Larson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/56875",
+      "contaminated_lifter_id": 51997,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T03:27:39.137Z",
+      "profile_data": {
+        "membership_number": "1067447",
+        "birth_year": 1995,
+        "gender": "F",
+        "club_name": "Wolf Pack Weightlifting",
+        "wso": "Pacific Northwest",
+        "national_rank": "20"
+      },
+      "competition_history": [
+        {
+          "meet_name": "The 2023 Nike North American Open Series 2, powered by Rogue",
+          "date": "2023-09-17",
+          "division": "Open Women's 81kg",
+          "lifter_name": "Megan Larson",
+          "body_weight_kg": "77.93",
+          "snatch_1": "53",
+          "snatch_2": "57",
+          "snatch_3": "61",
+          "cj_1": "72",
+          "cj_2": "77",
+          "cj_3": "80",
+          "best_snatch": "61",
+          "best_cj": "80",
+          "total": "141"
+        },
+        {
+          "meet_name": "Winter Lifting-Land",
+          "date": "2023-01-28",
+          "division": "Open Women's 81kg",
+          "lifter_name": "Megan Larson",
+          "body_weight_kg": "80",
+          "snatch_1": "54",
+          "snatch_2": "-58",
+          "snatch_3": "59",
+          "cj_1": "71",
+          "cj_2": "76",
+          "cj_3": "81",
+          "best_snatch": "59",
+          "best_cj": "81",
+          "total": "140"
+        },
+        {
+          "meet_name": "December online qualifier",
+          "date": "2022-12-01",
+          "division": "Open Women's 81kg",
+          "lifter_name": "Megan Larson",
+          "body_weight_kg": "80.9",
+          "snatch_1": "58",
+          "snatch_2": "0",
+          "snatch_3": "0",
+          "cj_1": "75",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "58",
+          "best_cj": "75",
+          "total": "133"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "The 2023 Nike North American Open Series 2, powered by Rogue",
+            "date": "2023-09-17",
+            "division": "Open Women's 81kg",
+            "lifter_name": "Megan Larson",
+            "body_weight_kg": "77.93",
+            "snatch_1": "53",
+            "snatch_2": "57",
+            "snatch_3": "61",
+            "cj_1": "72",
+            "cj_2": "77",
+            "cj_3": "80",
+            "best_snatch": "61",
+            "best_cj": "80",
+            "total": "141"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wOS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wOS0xNyIsIndlaWdodF9jbGFzcyI6OTh9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "20",
+            "athlete_name": "Megan Larson",
+            "total": "141",
+            "gender": "F",
+            "age": "28",
+            "club_name": "Wolf Pack Weightlifting",
+            "membership_number": "1067447",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Winter Lifting-Land",
+            "date": "2023-01-28",
+            "division": "Open Women's 81kg",
+            "lifter_name": "Megan Larson",
+            "body_weight_kg": "80",
+            "snatch_1": "54",
+            "snatch_2": "-58",
+            "snatch_3": "59",
+            "cj_1": "71",
+            "cj_2": "76",
+            "cj_3": "81",
+            "best_snatch": "59",
+            "best_cj": "81",
+            "total": "140"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMS0yOCIsIndlaWdodF9jbGFzcyI6OTh9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "13",
+            "athlete_name": "Megan Larson",
+            "total": "140",
+            "gender": "F",
+            "age": "28",
+            "club_name": "Wolf Pack Weightlifting",
+            "membership_number": "1067447",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "December online qualifier",
+            "date": "2022-12-01",
+            "division": "Open Women's 81kg",
+            "lifter_name": "Megan Larson",
+            "body_weight_kg": "80.9",
+            "snatch_1": "58",
+            "snatch_2": "0",
+            "snatch_3": "0",
+            "cj_1": "75",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "58",
+            "best_cj": "75",
+            "total": "133"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMi0wMSIsIndlaWdodF9jbGFzcyI6OTh9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Megan Larson",
+            "total": "133",
+            "gender": "F",
+            "age": "27",
+            "club_name": "Wolf Pack Weightlifting",
+            "membership_number": "1067447",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 53866,
+      "athlete_name": "Megan Larson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/53866",
+      "contaminated_lifter_id": 51997,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T03:27:52.011Z",
+      "profile_data": {
+        "membership_number": "1063000",
+        "birth_year": 1995,
+        "gender": "F",
+        "club_name": "Wolf Pack Weightlifting",
+        "wso": "Pacific Northwest",
+        "national_rank": "10"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Pilchuck Spring Classic",
+          "date": "2022-04-09",
+          "division": "Open Women's 87kg",
+          "lifter_name": "Megan Larson",
+          "body_weight_kg": "82.4",
+          "snatch_1": "40",
+          "snatch_2": "45",
+          "snatch_3": "-50",
+          "cj_1": "60",
+          "cj_2": "68",
+          "cj_3": "-75",
+          "best_snatch": "45",
+          "best_cj": "68",
+          "total": "113"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Pilchuck Spring Classic",
+            "date": "2022-04-09",
+            "division": "Open Women's 87kg",
+            "lifter_name": "Megan Larson",
+            "body_weight_kg": "82.4",
+            "snatch_1": "40",
+            "snatch_2": "45",
+            "snatch_3": "-50",
+            "cj_1": "60",
+            "cj_2": "68",
+            "cj_3": "-75",
+            "best_snatch": "45",
+            "best_cj": "68",
+            "total": "113"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNC0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNC0wOSIsIndlaWdodF9jbGFzcyI6OTl9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "Megan Larson",
+            "total": "113",
+            "gender": "F",
+            "age": "27",
+            "club_name": "Wolf Pack Weightlifting",
+            "membership_number": "1063000",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

@@ -1,0 +1,482 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T15:45:46.582Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "John Martin",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 9,
+    "total_reverse_lookups": 9,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 53616676
+  },
+  "data": [
+    {
+      "internal_id": 27901,
+      "athlete_name": "John Martin",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/27901",
+      "contaminated_lifter_id": 18338,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T15:45:36.749Z",
+      "profile_data": {
+        "membership_number": "1036270",
+        "birth_year": 1992,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Hawaii and International",
+        "national_rank": "6"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2025 Doc Yogi Memorial Weightlifting Meet",
+          "date": "2025-05-03",
+          "division": "Open Men's 81kg",
+          "lifter_name": "John Martin",
+          "body_weight_kg": "77.6",
+          "snatch_1": "95",
+          "snatch_2": "103",
+          "snatch_3": "-109",
+          "cj_1": "125",
+          "cj_2": "-131",
+          "cj_3": "-131",
+          "best_snatch": "103",
+          "best_cj": "125",
+          "total": "228"
+        },
+        {
+          "meet_name": "The 2024 Hawaii WSO Championships",
+          "date": "2024-07-14",
+          "division": "Open Men's 81kg",
+          "lifter_name": "John Martin",
+          "body_weight_kg": "76.9",
+          "snatch_1": "93",
+          "snatch_2": "-100",
+          "snatch_3": "100",
+          "cj_1": "120",
+          "cj_2": "-130",
+          "cj_3": "-130",
+          "best_snatch": "100",
+          "best_cj": "120",
+          "total": "220"
+        },
+        {
+          "meet_name": "2023 Doc Yogi Memorial",
+          "date": "2023-04-01",
+          "division": "Open Men's 81kg",
+          "lifter_name": "John Martin",
+          "body_weight_kg": "75.55",
+          "snatch_1": "90",
+          "snatch_2": "95",
+          "snatch_3": "102",
+          "cj_1": "120",
+          "cj_2": "125",
+          "cj_3": "130",
+          "best_snatch": "102",
+          "best_cj": "130",
+          "total": "232"
+        },
+        {
+          "meet_name": "Iron Classic",
+          "date": "2022-10-01",
+          "division": "Open Men's 81kg",
+          "lifter_name": "John Martin",
+          "body_weight_kg": "75",
+          "snatch_1": "95",
+          "snatch_2": "-100",
+          "snatch_3": "-102",
+          "cj_1": "120",
+          "cj_2": "125",
+          "cj_3": "130",
+          "best_snatch": "95",
+          "best_cj": "130",
+          "total": "225"
+        },
+        {
+          "meet_name": "Hawaii Open",
+          "date": "2022-03-19",
+          "division": "Open Men's 81kg",
+          "lifter_name": "John Martin",
+          "body_weight_kg": "74.1",
+          "snatch_1": "-90",
+          "snatch_2": "90",
+          "snatch_3": "-100",
+          "cj_1": "112",
+          "cj_2": "120",
+          "cj_3": "128",
+          "best_snatch": "90",
+          "best_cj": "128",
+          "total": "218"
+        },
+        {
+          "meet_name": "2019 Hawaii State Championships",
+          "date": "2019-10-19",
+          "division": "Open Men's 73kg",
+          "lifter_name": "John Martin",
+          "body_weight_kg": "73",
+          "snatch_1": "85",
+          "snatch_2": "-90",
+          "snatch_3": "-91",
+          "cj_1": "-115",
+          "cj_2": "115",
+          "cj_3": "-125",
+          "best_snatch": "85",
+          "best_cj": "115",
+          "total": "200"
+        },
+        {
+          "meet_name": "2019 Doc Yogi Memorial",
+          "date": "2019-03-16",
+          "division": "Open Men's 81kg",
+          "lifter_name": "John Martin",
+          "body_weight_kg": "77.45",
+          "snatch_1": "80",
+          "snatch_2": "85",
+          "snatch_3": "90",
+          "cj_1": "-114",
+          "cj_2": "114",
+          "cj_3": "-120",
+          "best_snatch": "90",
+          "best_cj": "114",
+          "total": "204"
+        },
+        {
+          "meet_name": "2018 Hawaii Open Weightlifting Championships",
+          "date": "2018-12-15",
+          "division": "Open Men's 81kg",
+          "lifter_name": "John Martin",
+          "body_weight_kg": "76.27",
+          "snatch_1": "75",
+          "snatch_2": "80",
+          "snatch_3": "-86",
+          "cj_1": "110",
+          "cj_2": "115",
+          "cj_3": "-120",
+          "best_snatch": "80",
+          "best_cj": "115",
+          "total": "195"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2025 Doc Yogi Memorial Weightlifting Meet",
+            "date": "2025-05-03",
+            "division": "Open Men's 81kg",
+            "lifter_name": "John Martin",
+            "body_weight_kg": "77.6",
+            "snatch_1": "95",
+            "snatch_2": "103",
+            "snatch_3": "-109",
+            "cj_1": "125",
+            "cj_2": "-131",
+            "cj_3": "-131",
+            "best_snatch": "103",
+            "best_cj": "125",
+            "total": "228"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNS0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNS0wMyIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "John Martin",
+            "total": "228",
+            "gender": "M",
+            "age": "33",
+            "club_name": "-",
+            "membership_number": "1036270",
+            "wso": "Hawaii and International"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The 2024 Hawaii WSO Championships",
+            "date": "2024-07-14",
+            "division": "Open Men's 81kg",
+            "lifter_name": "John Martin",
+            "body_weight_kg": "76.9",
+            "snatch_1": "93",
+            "snatch_2": "-100",
+            "snatch_3": "100",
+            "cj_1": "120",
+            "cj_2": "-130",
+            "cj_3": "-130",
+            "best_snatch": "100",
+            "best_cj": "120",
+            "total": "220"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNy0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNy0xNCIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "John Martin",
+            "total": "220",
+            "gender": "M",
+            "age": "32",
+            "club_name": "-",
+            "membership_number": "1036270",
+            "wso": "Hawaii and International"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2023 Doc Yogi Memorial",
+            "date": "2023-04-01",
+            "division": "Open Men's 81kg",
+            "lifter_name": "John Martin",
+            "body_weight_kg": "75.55",
+            "snatch_1": "90",
+            "snatch_2": "95",
+            "snatch_3": "102",
+            "cj_1": "120",
+            "cj_2": "125",
+            "cj_3": "130",
+            "best_snatch": "102",
+            "best_cj": "130",
+            "total": "232"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0wMSIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "John Martin",
+            "total": "232",
+            "gender": "M",
+            "age": "31",
+            "club_name": "-",
+            "membership_number": "1036270",
+            "wso": "Hawaii and International"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Iron Classic",
+            "date": "2022-10-01",
+            "division": "Open Men's 81kg",
+            "lifter_name": "John Martin",
+            "body_weight_kg": "75",
+            "snatch_1": "95",
+            "snatch_2": "-100",
+            "snatch_3": "-102",
+            "cj_1": "120",
+            "cj_2": "125",
+            "cj_3": "130",
+            "best_snatch": "95",
+            "best_cj": "130",
+            "total": "225"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMC0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMC0wMSIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "16",
+            "athlete_name": "John Martin",
+            "total": "225",
+            "gender": "M",
+            "age": "30",
+            "club_name": "-",
+            "membership_number": "1036270",
+            "wso": "Hawaii and International"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Hawaii Open",
+            "date": "2022-03-19",
+            "division": "Open Men's 81kg",
+            "lifter_name": "John Martin",
+            "body_weight_kg": "74.1",
+            "snatch_1": "-90",
+            "snatch_2": "90",
+            "snatch_3": "-100",
+            "cj_1": "112",
+            "cj_2": "120",
+            "cj_3": "128",
+            "best_snatch": "90",
+            "best_cj": "128",
+            "total": "218"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMy0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMy0xOSIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "John Martin",
+            "total": "218",
+            "gender": "M",
+            "age": "30",
+            "club_name": "-",
+            "membership_number": "1036270",
+            "wso": "Hawaii and International"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2019 Hawaii State Championships",
+            "date": "2019-10-19",
+            "division": "Open Men's 73kg",
+            "lifter_name": "John Martin",
+            "body_weight_kg": "73",
+            "snatch_1": "85",
+            "snatch_2": "-90",
+            "snatch_3": "-91",
+            "cj_1": "-115",
+            "cj_2": "115",
+            "cj_3": "-125",
+            "best_snatch": "85",
+            "best_cj": "115",
+            "total": "200"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMC0xOSIsIndlaWdodF9jbGFzcyI6ODR9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "8",
+            "athlete_name": "John Martin",
+            "total": "200",
+            "gender": "M",
+            "age": "27",
+            "club_name": "-",
+            "membership_number": "1036270",
+            "wso": "Hawaii and International"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2019 Doc Yogi Memorial",
+            "date": "2019-03-16",
+            "division": "Open Men's 81kg",
+            "lifter_name": "John Martin",
+            "body_weight_kg": "77.45",
+            "snatch_1": "80",
+            "snatch_2": "85",
+            "snatch_3": "90",
+            "cj_1": "-114",
+            "cj_2": "114",
+            "cj_3": "-120",
+            "best_snatch": "90",
+            "best_cj": "114",
+            "total": "204"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMy0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMy0xNiIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "John Martin",
+            "total": "204",
+            "gender": "M",
+            "age": "27",
+            "club_name": "-",
+            "membership_number": "1036270",
+            "wso": "Hawaii and International"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2018 Hawaii Open Weightlifting Championships",
+            "date": "2018-12-15",
+            "division": "Open Men's 81kg",
+            "lifter_name": "John Martin",
+            "body_weight_kg": "76.27",
+            "snatch_1": "75",
+            "snatch_2": "80",
+            "snatch_3": "-86",
+            "cj_1": "110",
+            "cj_2": "115",
+            "cj_3": "-120",
+            "best_snatch": "80",
+            "best_cj": "115",
+            "total": "195"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0xNSIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "25",
+            "athlete_name": "John Martin",
+            "total": "195",
+            "gender": "M",
+            "age": "26",
+            "club_name": "-",
+            "membership_number": "1036270",
+            "wso": "Hawaii and International"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 11981,
+      "athlete_name": "John Martin",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/11981",
+      "contaminated_lifter_id": 18338,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T15:45:46.580Z",
+      "profile_data": {
+        "membership_number": "183500",
+        "birth_year": 1984,
+        "gender": "M",
+        "club_name": "OCCAM ATHLETICS",
+        "wso": "California North Central",
+        "national_rank": "10"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Nor Cal Open",
+          "date": "2013-05-04",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "John Martin",
+          "body_weight_kg": "75.3",
+          "snatch_1": "85",
+          "snatch_2": "90",
+          "snatch_3": "93",
+          "cj_1": "105",
+          "cj_2": "110",
+          "cj_3": "115",
+          "best_snatch": "93",
+          "best_cj": "115",
+          "total": "208"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Nor Cal Open",
+            "date": "2013-05-04",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "John Martin",
+            "body_weight_kg": "75.3",
+            "snatch_1": "85",
+            "snatch_2": "90",
+            "snatch_3": "93",
+            "cj_1": "105",
+            "cj_2": "110",
+            "cj_3": "115",
+            "best_snatch": "93",
+            "best_cj": "115",
+            "total": "208"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNS0wNCIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "John Martin",
+            "total": "208",
+            "gender": "M",
+            "age": "29",
+            "club_name": "OCCAM ATHLETICS",
+            "membership_number": "183500",
+            "wso": "California North Central"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

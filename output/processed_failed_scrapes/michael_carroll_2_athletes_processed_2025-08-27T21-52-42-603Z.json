@@ -1,0 +1,191 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T23:50:26.197Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Michael Carroll",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 3,
+    "total_reverse_lookups": 3,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 47719634
+  },
+  "data": [
+    {
+      "internal_id": 47824,
+      "athlete_name": "Michael Carroll",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/47824",
+      "contaminated_lifter_id": 49315,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T23:50:15.991Z",
+      "profile_data": {
+        "membership_number": "1051390",
+        "birth_year": 1984,
+        "gender": "M",
+        "club_name": "Fifty-One Fifty Weightlifting Club",
+        "wso": "Mountain South",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2022 ALEE Spring Open",
+          "date": "2022-05-07",
+          "division": "Men's Masters (35-39) +109kg",
+          "lifter_name": "Michael Carroll",
+          "body_weight_kg": "134",
+          "snatch_1": "72",
+          "snatch_2": "77",
+          "snatch_3": "83",
+          "cj_1": "103",
+          "cj_2": "-108",
+          "cj_3": "109",
+          "best_snatch": "83",
+          "best_cj": "109",
+          "total": "192"
+        },
+        {
+          "meet_name": "Iron Athlete Spring Open",
+          "date": "2021-05-22",
+          "division": "Men's Masters (35-39) +109kg",
+          "lifter_name": "Michael Carroll",
+          "body_weight_kg": "124.6",
+          "snatch_1": "-80",
+          "snatch_2": "-80",
+          "snatch_3": "-80",
+          "cj_1": "98",
+          "cj_2": "103",
+          "cj_3": "107",
+          "best_snatch": "0",
+          "best_cj": "107",
+          "total": "0"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2022 ALEE Spring Open",
+            "date": "2022-05-07",
+            "division": "Men's Masters (35-39) +109kg",
+            "lifter_name": "Michael Carroll",
+            "body_weight_kg": "134",
+            "snatch_1": "72",
+            "snatch_2": "77",
+            "snatch_3": "83",
+            "cj_1": "103",
+            "cj_2": "-108",
+            "cj_3": "109",
+            "best_snatch": "83",
+            "best_cj": "109",
+            "total": "192"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNS0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNS0wNyIsIndlaWdodF9jbGFzcyI6MTEwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Michael Carroll",
+            "total": "192",
+            "gender": "M",
+            "age": "38",
+            "club_name": "Fifty-One Fifty Weightlifting Club",
+            "membership_number": "1051390",
+            "wso": "Mountain South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Iron Athlete Spring Open",
+            "date": "2021-05-22",
+            "division": "Men's Masters (35-39) +109kg",
+            "lifter_name": "Michael Carroll",
+            "body_weight_kg": "124.6",
+            "snatch_1": "-80",
+            "snatch_2": "-80",
+            "snatch_3": "-80",
+            "cj_1": "98",
+            "cj_2": "103",
+            "cj_3": "107",
+            "best_snatch": "0",
+            "best_cj": "107",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNS0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNS0yMiIsIndlaWdodF9jbGFzcyI6MTEwfQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    },
+    {
+      "internal_id": 55340,
+      "athlete_name": "Michael Carroll",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/55340",
+      "contaminated_lifter_id": 49315,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T23:50:26.195Z",
+      "profile_data": {
+        "membership_number": "1064392",
+        "birth_year": 2003,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Indiana",
+        "national_rank": "2"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2022 MASS Mania: Round Four",
+          "date": "2022-07-10",
+          "division": "Junior Men's 73kg",
+          "lifter_name": "Michael Carroll",
+          "body_weight_kg": "73",
+          "snatch_1": "-73",
+          "snatch_2": "75",
+          "snatch_3": "-80",
+          "cj_1": "100",
+          "cj_2": "106",
+          "cj_3": "-111",
+          "best_snatch": "75",
+          "best_cj": "106",
+          "total": "181"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2022 MASS Mania: Round Four",
+            "date": "2022-07-10",
+            "division": "Junior Men's 73kg",
+            "lifter_name": "Michael Carroll",
+            "body_weight_kg": "73",
+            "snatch_1": "-73",
+            "snatch_2": "75",
+            "snatch_3": "-80",
+            "cj_1": "100",
+            "cj_2": "106",
+            "cj_3": "-111",
+            "best_snatch": "75",
+            "best_cj": "106",
+            "total": "181"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNy0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNy0xMCIsIndlaWdodF9jbGFzcyI6NjR9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Michael Carroll",
+            "total": "181",
+            "gender": "M",
+            "age": "19",
+            "club_name": "-",
+            "membership_number": "1064392",
+            "wso": "Indiana"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

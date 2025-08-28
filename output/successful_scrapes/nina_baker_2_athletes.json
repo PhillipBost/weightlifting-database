@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T19:56:06.938Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Nina Baker",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 68637032
+  },
+  "data": [
+    {
+      "internal_id": 41882,
+      "athlete_name": "Nina Baker",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/41882",
+      "contaminated_lifter_id": 28585,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T19:55:55.572Z",
+      "profile_data": {
+        "membership_number": "1013642",
+        "birth_year": 2001,
+        "gender": "F",
+        "club_name": "Lakeville South Strength",
+        "wso": "Minnesota-Dakotas",
+        "national_rank": "4"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Rosemount High School Open",
+          "date": "2017-01-28",
+          "division": "Women's 16-17 Age Group 53 kg",
+          "lifter_name": "Nina Baker",
+          "body_weight_kg": "49.83",
+          "snatch_1": "22",
+          "snatch_2": "25",
+          "snatch_3": "27",
+          "cj_1": "27",
+          "cj_2": "31",
+          "cj_3": "-35",
+          "best_snatch": "27",
+          "best_cj": "31",
+          "total": "58"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Rosemount High School Open",
+            "date": "2017-01-28",
+            "division": "Women's 16-17 Age Group 53 kg",
+            "lifter_name": "Nina Baker",
+            "body_weight_kg": "49.83",
+            "snatch_1": "22",
+            "snatch_2": "25",
+            "snatch_3": "27",
+            "cj_1": "27",
+            "cj_2": "31",
+            "cj_3": "-35",
+            "best_snatch": "27",
+            "best_cj": "31",
+            "total": "58"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMS0yOCIsIndlaWdodF9jbGFzcyI6MzMxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Nina Baker",
+            "total": "58",
+            "gender": "F",
+            "age": "16",
+            "club_name": "Lakeville South Strength",
+            "membership_number": "1013642",
+            "wso": "Minnesota-Dakotas"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 41911,
+      "athlete_name": "Nina Baker",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/41911",
+      "contaminated_lifter_id": 28585,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T19:56:06.935Z",
+      "profile_data": {
+        "membership_number": "1015643",
+        "birth_year": 2001,
+        "gender": "F",
+        "club_name": "Lakeville South Strength",
+        "wso": "Minnesota-Dakotas",
+        "national_rank": "5"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Blaze High School Open",
+          "date": "2017-02-11",
+          "division": "Women's 16-17 Age Group 53 kg",
+          "lifter_name": "Nina Baker",
+          "body_weight_kg": "50.13",
+          "snatch_1": "23",
+          "snatch_2": "-27",
+          "snatch_3": "-27",
+          "cj_1": "28",
+          "cj_2": "31",
+          "cj_3": "-34",
+          "best_snatch": "23",
+          "best_cj": "31",
+          "total": "54"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Blaze High School Open",
+            "date": "2017-02-11",
+            "division": "Women's 16-17 Age Group 53 kg",
+            "lifter_name": "Nina Baker",
+            "body_weight_kg": "50.13",
+            "snatch_1": "23",
+            "snatch_2": "-27",
+            "snatch_3": "-27",
+            "cj_1": "28",
+            "cj_2": "31",
+            "cj_3": "-34",
+            "best_snatch": "23",
+            "best_cj": "31",
+            "total": "54"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xMSIsIndlaWdodF9jbGFzcyI6MzMxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "Nina Baker",
+            "total": "54",
+            "gender": "F",
+            "age": "16",
+            "club_name": "Lakeville South Strength",
+            "membership_number": "1015643",
+            "wso": "Minnesota-Dakotas"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

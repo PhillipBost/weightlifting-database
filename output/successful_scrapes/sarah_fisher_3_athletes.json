@@ -1,0 +1,268 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T06:45:05.678Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Sarah Fisher",
+    "internal_ids_processed": 3,
+    "successful_scrapes": 3,
+    "failed_scrapes": 0,
+    "total_competitions_found": 4,
+    "total_reverse_lookups": 4,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 21175772
+  },
+  "data": [
+    {
+      "internal_id": 2446,
+      "athlete_name": "Sarah Fisher",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/2446",
+      "contaminated_lifter_id": 14797,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T06:44:40.361Z",
+      "profile_data": {
+        "membership_number": "1036560",
+        "birth_year": 1970,
+        "gender": "F",
+        "club_name": "Composure Weightlifting",
+        "wso": "Mountain North",
+        "national_rank": "2"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Composure Weightlifting Open",
+          "date": "2019-01-05",
+          "division": "Women's Masters (45-49) 71kg",
+          "lifter_name": "Sarah Fisher",
+          "body_weight_kg": "67.74",
+          "snatch_1": "29",
+          "snatch_2": "31",
+          "snatch_3": "32",
+          "cj_1": "43",
+          "cj_2": "46",
+          "cj_3": "48",
+          "best_snatch": "32",
+          "best_cj": "48",
+          "total": "80"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Composure Weightlifting Open",
+            "date": "2019-01-05",
+            "division": "Women's Masters (45-49) 71kg",
+            "lifter_name": "Sarah Fisher",
+            "body_weight_kg": "67.74",
+            "snatch_1": "29",
+            "snatch_2": "31",
+            "snatch_3": "32",
+            "cj_1": "43",
+            "cj_2": "46",
+            "cj_3": "48",
+            "best_snatch": "32",
+            "best_cj": "48",
+            "total": "80"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0wNSIsIndlaWdodF9jbGFzcyI6MTU2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Sarah Fisher",
+            "total": "80",
+            "gender": "F",
+            "age": "49",
+            "club_name": "Composure Weightlifting",
+            "membership_number": "1036560",
+            "wso": "Mountain North"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 34385,
+      "athlete_name": "Sarah Fisher",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/34385",
+      "contaminated_lifter_id": 14797,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T06:44:55.752Z",
+      "profile_data": {
+        "membership_number": "199846",
+        "birth_year": 1996,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "Florida",
+        "national_rank": "22"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Summer Classic",
+          "date": "2015-08-01",
+          "division": "Open Women's 69 kg",
+          "lifter_name": "Sarah Fisher",
+          "body_weight_kg": "68.7",
+          "snatch_1": "42",
+          "snatch_2": "46",
+          "snatch_3": "48",
+          "cj_1": "52",
+          "cj_2": "56",
+          "cj_3": "60",
+          "best_snatch": "48",
+          "best_cj": "60",
+          "total": "108"
+        },
+        {
+          "meet_name": "Back to School Open",
+          "date": "2014-08-02",
+          "division": "Open Women's 69 kg",
+          "lifter_name": "Sarah Fisher",
+          "body_weight_kg": "68.8",
+          "snatch_1": "35",
+          "snatch_2": "38",
+          "snatch_3": "-40",
+          "cj_1": "43",
+          "cj_2": "47",
+          "cj_3": "50",
+          "best_snatch": "38",
+          "best_cj": "50",
+          "total": "88"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Summer Classic",
+            "date": "2015-08-01",
+            "division": "Open Women's 69 kg",
+            "lifter_name": "Sarah Fisher",
+            "body_weight_kg": "68.7",
+            "snatch_1": "42",
+            "snatch_2": "46",
+            "snatch_3": "48",
+            "cj_1": "52",
+            "cj_2": "56",
+            "cj_3": "60",
+            "best_snatch": "48",
+            "best_cj": "60",
+            "total": "108"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOC0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOC0wMSIsIndlaWdodF9jbGFzcyI6MzY2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "22",
+            "athlete_name": "Sarah Fisher",
+            "total": "108",
+            "gender": "F",
+            "age": "19",
+            "club_name": "-",
+            "membership_number": "199846",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Back to School Open",
+            "date": "2014-08-02",
+            "division": "Open Women's 69 kg",
+            "lifter_name": "Sarah Fisher",
+            "body_weight_kg": "68.8",
+            "snatch_1": "35",
+            "snatch_2": "38",
+            "snatch_3": "-40",
+            "cj_1": "43",
+            "cj_2": "47",
+            "cj_3": "50",
+            "best_snatch": "38",
+            "best_cj": "50",
+            "total": "88"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0wMiIsIndlaWdodF9jbGFzcyI6MzY2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "28",
+            "athlete_name": "Sarah Fisher",
+            "total": "88",
+            "gender": "F",
+            "age": "18",
+            "club_name": "-",
+            "membership_number": "199846",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 58234,
+      "athlete_name": "Sarah Fisher",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/58234",
+      "contaminated_lifter_id": 14797,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T06:45:05.676Z",
+      "profile_data": {
+        "membership_number": "1069649",
+        "birth_year": 1999,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "Pacific Northwest",
+        "national_rank": "3"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2023 Armor Classic",
+          "date": "2023-04-08",
+          "division": "Open Women's 87kg",
+          "lifter_name": "Sarah Fisher",
+          "body_weight_kg": "85.6",
+          "snatch_1": "53",
+          "snatch_2": "-56",
+          "snatch_3": "56",
+          "cj_1": "68",
+          "cj_2": "71",
+          "cj_3": "-74",
+          "best_snatch": "56",
+          "best_cj": "71",
+          "total": "127"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2023 Armor Classic",
+            "date": "2023-04-08",
+            "division": "Open Women's 87kg",
+            "lifter_name": "Sarah Fisher",
+            "body_weight_kg": "85.6",
+            "snatch_1": "53",
+            "snatch_2": "-56",
+            "snatch_3": "56",
+            "cj_1": "68",
+            "cj_2": "71",
+            "cj_3": "-74",
+            "best_snatch": "56",
+            "best_cj": "71",
+            "total": "127"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0wOCIsIndlaWdodF9jbGFzcyI6OTl9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Sarah Fisher",
+            "total": "127",
+            "gender": "F",
+            "age": "24",
+            "club_name": "-",
+            "membership_number": "1069649",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

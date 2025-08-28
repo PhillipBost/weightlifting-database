@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T03:29:16.426Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Gabriel Martinez",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 95826520
+  },
+  "data": [
+    {
+      "internal_id": 17922,
+      "athlete_name": "Gabriel Martinez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/17922",
+      "contaminated_lifter_id": 20234,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T03:29:04.028Z",
+      "profile_data": {
+        "membership_number": "187504",
+        "birth_year": 1987,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "-",
+        "national_rank": "24"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2014 Baltimore Open",
+          "date": "2014-02-09",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Gabriel Martinez",
+          "body_weight_kg": "85",
+          "snatch_1": "-75",
+          "snatch_2": "75",
+          "snatch_3": "-77",
+          "cj_1": "90",
+          "cj_2": "-97",
+          "cj_3": "97",
+          "best_snatch": "75",
+          "best_cj": "97",
+          "total": "172"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2014 Baltimore Open",
+            "date": "2014-02-09",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Gabriel Martinez",
+            "body_weight_kg": "85",
+            "snatch_1": "-75",
+            "snatch_2": "75",
+            "snatch_3": "-77",
+            "cj_1": "90",
+            "cj_2": "-97",
+            "cj_3": "97",
+            "best_snatch": "75",
+            "best_cj": "97",
+            "total": "172"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMi0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMi0wOSIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "24",
+            "athlete_name": "Gabriel Martinez",
+            "total": "172",
+            "gender": "M",
+            "age": "27",
+            "club_name": "-",
+            "membership_number": "187504",
+            "wso": "-"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 45640,
+      "athlete_name": "Gabriel Martinez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/45640",
+      "contaminated_lifter_id": 20234,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T03:29:16.424Z",
+      "profile_data": {
+        "membership_number": "1047614",
+        "birth_year": 2006,
+        "gender": "M",
+        "club_name": "Harvey's Army Weightlifting",
+        "wso": "Florida",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "The Praelium",
+          "date": "2019-11-24",
+          "division": "Men's 13 Under Age Group 67kg",
+          "lifter_name": "Gabriel Martinez",
+          "body_weight_kg": "62.7",
+          "snatch_1": "20",
+          "snatch_2": "22",
+          "snatch_3": "25",
+          "cj_1": "26",
+          "cj_2": "28",
+          "cj_3": "30",
+          "best_snatch": "25",
+          "best_cj": "30",
+          "total": "55"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "The Praelium",
+            "date": "2019-11-24",
+            "division": "Men's 13 Under Age Group 67kg",
+            "lifter_name": "Gabriel Martinez",
+            "body_weight_kg": "62.7",
+            "snatch_1": "20",
+            "snatch_2": "22",
+            "snatch_3": "25",
+            "cj_1": "26",
+            "cj_2": "28",
+            "cj_3": "30",
+            "best_snatch": "25",
+            "best_cj": "30",
+            "total": "55"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0yNCIsIndlaWdodF9jbGFzcyI6NDh9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Gabriel Martinez",
+            "total": "55",
+            "gender": "M",
+            "age": "13",
+            "club_name": "Harvey's Army Weightlifting",
+            "membership_number": "1047614",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

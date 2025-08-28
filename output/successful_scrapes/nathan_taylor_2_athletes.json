@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T06:59:28.926Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Nathan Taylor",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 108439020
+  },
+  "data": [
+    {
+      "internal_id": 57158,
+      "athlete_name": "Nathan Taylor",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/57158",
+      "contaminated_lifter_id": 5026,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T06:59:15.876Z",
+      "profile_data": {
+        "membership_number": "1067955",
+        "birth_year": 1994,
+        "gender": "M",
+        "club_name": "CLEAN SLATE WEIGHTLIFTING",
+        "wso": "Ohio",
+        "national_rank": "7"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Clean Slate WL Invitational",
+          "date": "2023-01-28",
+          "division": "Open Men's 109kg",
+          "lifter_name": "Nathan Taylor",
+          "body_weight_kg": "103.15",
+          "snatch_1": "100",
+          "snatch_2": "110",
+          "snatch_3": "-115",
+          "cj_1": "120",
+          "cj_2": "128",
+          "cj_3": "132",
+          "best_snatch": "110",
+          "best_cj": "132",
+          "total": "242"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Clean Slate WL Invitational",
+            "date": "2023-01-28",
+            "division": "Open Men's 109kg",
+            "lifter_name": "Nathan Taylor",
+            "body_weight_kg": "103.15",
+            "snatch_1": "100",
+            "snatch_2": "110",
+            "snatch_3": "-115",
+            "cj_1": "120",
+            "cj_2": "128",
+            "cj_3": "132",
+            "best_snatch": "110",
+            "best_cj": "132",
+            "total": "242"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMS0yOCIsIndlaWdodF9jbGFzcyI6ODl9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "7",
+            "athlete_name": "Nathan Taylor",
+            "total": "242",
+            "gender": "M",
+            "age": "29",
+            "club_name": "CLEAN SLATE WEIGHTLIFTING",
+            "membership_number": "1067955",
+            "wso": "Ohio"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 27536,
+      "athlete_name": "Nathan Taylor",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/27536",
+      "contaminated_lifter_id": 5026,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T06:59:28.923Z",
+      "profile_data": {
+        "membership_number": "188147",
+        "birth_year": 1992,
+        "gender": "M",
+        "club_name": "LSU - Shreveport",
+        "wso": "Florida",
+        "national_rank": "13"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2013 Hookgrip Open",
+          "date": "2013-10-06",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Nathan Taylor",
+          "body_weight_kg": "74.6",
+          "snatch_1": "65",
+          "snatch_2": "65",
+          "snatch_3": "70",
+          "cj_1": "80",
+          "cj_2": "85",
+          "cj_3": "90",
+          "best_snatch": "70",
+          "best_cj": "90",
+          "total": "160"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2013 Hookgrip Open",
+            "date": "2013-10-06",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Nathan Taylor",
+            "body_weight_kg": "74.6",
+            "snatch_1": "65",
+            "snatch_2": "65",
+            "snatch_3": "70",
+            "cj_1": "80",
+            "cj_2": "85",
+            "cj_3": "90",
+            "best_snatch": "70",
+            "best_cj": "90",
+            "total": "160"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMC0wNiIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "13",
+            "athlete_name": "Nathan Taylor",
+            "total": "160",
+            "gender": "M",
+            "age": "21",
+            "club_name": "LSU - Shreveport",
+            "membership_number": "188147",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

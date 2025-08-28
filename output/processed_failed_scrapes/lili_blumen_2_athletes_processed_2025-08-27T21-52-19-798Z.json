@@ -1,0 +1,144 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T05:44:17.145Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Lili Blumen",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 103927239
+  },
+  "data": [
+    {
+      "internal_id": 62943,
+      "athlete_name": "Lili Blumen",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/62943",
+      "contaminated_lifter_id": 60657,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T05:43:40.143Z",
+      "profile_data": {
+        "membership_number": "1075835",
+        "birth_year": 2008,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "New England",
+        "national_rank": "11"
+      },
+      "competition_history": [
+        {
+          "meet_name": "PRs for Puppies",
+          "date": "2024-05-11",
+          "division": "Junior Women's 59kg",
+          "lifter_name": "Lili Blumen",
+          "body_weight_kg": "56.9",
+          "snatch_1": "21",
+          "snatch_2": "22",
+          "snatch_3": "23",
+          "cj_1": "29",
+          "cj_2": "30",
+          "cj_3": "31",
+          "best_snatch": "23",
+          "best_cj": "31",
+          "total": "54"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "PRs for Puppies",
+            "date": "2024-05-11",
+            "division": "Junior Women's 59kg",
+            "lifter_name": "Lili Blumen",
+            "body_weight_kg": "56.9",
+            "snatch_1": "21",
+            "snatch_2": "22",
+            "snatch_3": "23",
+            "cj_1": "29",
+            "cj_2": "30",
+            "cj_3": "31",
+            "best_snatch": "23",
+            "best_cj": "31",
+            "total": "54"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNS0xMSIsIndlaWdodF9jbGFzcyI6NzR9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "11",
+            "athlete_name": "Lili Blumen",
+            "total": "54",
+            "gender": "F",
+            "age": "16",
+            "club_name": "-",
+            "membership_number": "1075835",
+            "wso": "New England"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 64128,
+      "athlete_name": "Lili Blumen",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/64128",
+      "contaminated_lifter_id": 60657,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T05:44:17.144Z",
+      "profile_data": {
+        "membership_number": null,
+        "birth_year": null,
+        "gender": null,
+        "club_name": null,
+        "wso": null,
+        "national_rank": null
+      },
+      "competition_history": [
+        {
+          "meet_name": "Barbells For Boobs 2024",
+          "date": "2024-10-19",
+          "division": "Women's 16-17 Age Group 64kg",
+          "lifter_name": "Lili Blumen",
+          "body_weight_kg": "60.4",
+          "snatch_1": "23",
+          "snatch_2": "24",
+          "snatch_3": "25",
+          "cj_1": "31",
+          "cj_2": "32",
+          "cj_3": "33",
+          "best_snatch": "25",
+          "best_cj": "33",
+          "total": "58"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Barbells For Boobs 2024",
+            "date": "2024-10-19",
+            "division": "Women's 16-17 Age Group 64kg",
+            "lifter_name": "Lili Blumen",
+            "body_weight_kg": "60.4",
+            "snatch_1": "23",
+            "snatch_2": "24",
+            "snatch_3": "25",
+            "cj_1": "31",
+            "cj_2": "32",
+            "cj_3": "33",
+            "best_snatch": "25",
+            "best_cj": "33",
+            "total": "58"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0xOSIsIndlaWdodF9jbGFzcyI6MTZ9",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    }
+  ]
+}

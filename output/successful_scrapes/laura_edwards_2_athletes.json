@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T01:48:14.202Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Laura Edwards",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 89764296
+  },
+  "data": [
+    {
+      "internal_id": 1585,
+      "athlete_name": "Laura Edwards",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/1585",
+      "contaminated_lifter_id": 19634,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T01:47:59.666Z",
+      "profile_data": {
+        "membership_number": "191941",
+        "birth_year": 1966,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "Florida",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Howard Cohen Classic",
+          "date": "2014-03-01",
+          "division": "Women's Masters (45-49) 69 kg",
+          "lifter_name": "Laura Edwards",
+          "body_weight_kg": "68.5",
+          "snatch_1": "40",
+          "snatch_2": "43",
+          "snatch_3": "-45",
+          "cj_1": "48",
+          "cj_2": "51",
+          "cj_3": "53",
+          "best_snatch": "43",
+          "best_cj": "53",
+          "total": "96"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Howard Cohen Classic",
+            "date": "2014-03-01",
+            "division": "Women's Masters (45-49) 69 kg",
+            "lifter_name": "Laura Edwards",
+            "body_weight_kg": "68.5",
+            "snatch_1": "40",
+            "snatch_2": "43",
+            "snatch_3": "-45",
+            "cj_1": "48",
+            "cj_2": "51",
+            "cj_3": "53",
+            "best_snatch": "43",
+            "best_cj": "53",
+            "total": "96"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0wMSIsIndlaWdodF9jbGFzcyI6NDE3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Laura Edwards",
+            "total": "96",
+            "gender": "F",
+            "age": "48",
+            "club_name": "-",
+            "membership_number": "191941",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 15107,
+      "athlete_name": "Laura Edwards",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/15107",
+      "contaminated_lifter_id": 19634,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T01:48:14.199Z",
+      "profile_data": {
+        "membership_number": "201052",
+        "birth_year": 1986,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "New York",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Rudy Sablo Memorial",
+          "date": "2014-09-21",
+          "division": "Open Women's 63 kg",
+          "lifter_name": "Laura Edwards",
+          "body_weight_kg": "61.54",
+          "snatch_1": "56",
+          "snatch_2": "61",
+          "snatch_3": "66",
+          "cj_1": "77",
+          "cj_2": "83",
+          "cj_3": "84",
+          "best_snatch": "66",
+          "best_cj": "84",
+          "total": "150"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Rudy Sablo Memorial",
+            "date": "2014-09-21",
+            "division": "Open Women's 63 kg",
+            "lifter_name": "Laura Edwards",
+            "body_weight_kg": "61.54",
+            "snatch_1": "56",
+            "snatch_2": "61",
+            "snatch_3": "66",
+            "cj_1": "77",
+            "cj_2": "83",
+            "cj_3": "84",
+            "best_snatch": "66",
+            "best_cj": "84",
+            "total": "150"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOS0yMSIsIndlaWdodF9jbGFzcyI6MzY1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Laura Edwards",
+            "total": "150",
+            "gender": "F",
+            "age": "28",
+            "club_name": "-",
+            "membership_number": "201052",
+            "wso": "New York"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

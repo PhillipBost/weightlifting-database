@@ -1,0 +1,550 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T05:30:27.201Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Ryan Jones",
+    "internal_ids_processed": 3,
+    "successful_scrapes": 3,
+    "failed_scrapes": 0,
+    "total_competitions_found": 10,
+    "total_reverse_lookups": 10,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 16697295
+  },
+  "data": [
+    {
+      "internal_id": 9379,
+      "athlete_name": "Ryan Jones",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/9379",
+      "contaminated_lifter_id": 28602,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T05:29:55.490Z",
+      "profile_data": {
+        "membership_number": "207964",
+        "birth_year": 1982,
+        "gender": "M",
+        "club_name": "IKON Strength",
+        "wso": "California South",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Left Coast Weightlifting Spring Open",
+          "date": "2021-05-16",
+          "division": "Men's Masters (35-39) +109kg",
+          "lifter_name": "Ryan Jones",
+          "body_weight_kg": "117.44",
+          "snatch_1": "125",
+          "snatch_2": "130",
+          "snatch_3": "-137",
+          "cj_1": "163",
+          "cj_2": "172",
+          "cj_3": "181",
+          "best_snatch": "130",
+          "best_cj": "181",
+          "total": "311"
+        },
+        {
+          "meet_name": "2019 Masters World Cup - U.S. Citizen",
+          "date": "2019-10-06",
+          "division": "Men's Masters (35-39) +109kg",
+          "lifter_name": "Ryan Jones",
+          "body_weight_kg": "115.7",
+          "snatch_1": "128",
+          "snatch_2": "-132",
+          "snatch_3": "136",
+          "cj_1": "-160",
+          "cj_2": "160",
+          "cj_3": "-166",
+          "best_snatch": "136",
+          "best_cj": "160",
+          "total": "296"
+        },
+        {
+          "meet_name": "Nike 2018 American Open Series 3",
+          "date": "2018-09-16",
+          "division": "Men's Masters (35-39) +109kg",
+          "lifter_name": "Ryan Jones",
+          "body_weight_kg": "118.91",
+          "snatch_1": "115",
+          "snatch_2": "122",
+          "snatch_3": "127",
+          "cj_1": "151",
+          "cj_2": "156",
+          "cj_3": "-160",
+          "best_snatch": "127",
+          "best_cj": "156",
+          "total": "283"
+        },
+        {
+          "meet_name": "Summertime in the LBwC & AOS3 Last Chance Qualifier (2 Day)",
+          "date": "2018-08-12",
+          "division": "Open Men's +109kg",
+          "lifter_name": "Ryan Jones",
+          "body_weight_kg": "114.7",
+          "snatch_1": "112",
+          "snatch_2": "120",
+          "snatch_3": "125",
+          "cj_1": "139",
+          "cj_2": "-151",
+          "cj_3": "155",
+          "best_snatch": "125",
+          "best_cj": "155",
+          "total": "280"
+        },
+        {
+          "meet_name": "Nike 2017 American Open Series 1",
+          "date": "2017-03-19",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Ryan Jones",
+          "body_weight_kg": "110.44",
+          "snatch_1": "-115",
+          "snatch_2": "-115",
+          "snatch_3": "115",
+          "cj_1": "145",
+          "cj_2": "150",
+          "cj_3": "155",
+          "best_snatch": "115",
+          "best_cj": "155",
+          "total": "270"
+        },
+        {
+          "meet_name": "Virus winter open",
+          "date": "2017-02-19",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Ryan Jones",
+          "body_weight_kg": "108.54",
+          "snatch_1": "110",
+          "snatch_2": "115",
+          "snatch_3": "122",
+          "cj_1": "-150",
+          "cj_2": "152",
+          "cj_3": "-162",
+          "best_snatch": "122",
+          "best_cj": "152",
+          "total": "274"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Left Coast Weightlifting Spring Open",
+            "date": "2021-05-16",
+            "division": "Men's Masters (35-39) +109kg",
+            "lifter_name": "Ryan Jones",
+            "body_weight_kg": "117.44",
+            "snatch_1": "125",
+            "snatch_2": "130",
+            "snatch_3": "-137",
+            "cj_1": "163",
+            "cj_2": "172",
+            "cj_3": "181",
+            "best_snatch": "130",
+            "best_cj": "181",
+            "total": "311"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNS0xNiIsIndlaWdodF9jbGFzcyI6MTEwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Ryan Jones",
+            "total": "311",
+            "gender": "M",
+            "age": "39",
+            "club_name": "IKON Strength",
+            "membership_number": "207964",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2019 Masters World Cup - U.S. Citizen",
+            "date": "2019-10-06",
+            "division": "Men's Masters (35-39) +109kg",
+            "lifter_name": "Ryan Jones",
+            "body_weight_kg": "115.7",
+            "snatch_1": "128",
+            "snatch_2": "-132",
+            "snatch_3": "136",
+            "cj_1": "-160",
+            "cj_2": "160",
+            "cj_3": "-166",
+            "best_snatch": "136",
+            "best_cj": "160",
+            "total": "296"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMC0wNiIsIndlaWdodF9jbGFzcyI6MTEwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Ryan Jones",
+            "total": "296",
+            "gender": "M",
+            "age": "37",
+            "club_name": "IKON Strength",
+            "membership_number": "207964",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Nike 2018 American Open Series 3",
+            "date": "2018-09-16",
+            "division": "Men's Masters (35-39) +109kg",
+            "lifter_name": "Ryan Jones",
+            "body_weight_kg": "118.91",
+            "snatch_1": "115",
+            "snatch_2": "122",
+            "snatch_3": "127",
+            "cj_1": "151",
+            "cj_2": "156",
+            "cj_3": "-160",
+            "best_snatch": "127",
+            "best_cj": "156",
+            "total": "283"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOS0xNiIsIndlaWdodF9jbGFzcyI6MTEwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Ryan Jones",
+            "total": "283",
+            "gender": "M",
+            "age": "36",
+            "club_name": "IKON Strength",
+            "membership_number": "207964",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Summertime in the LBwC & AOS3 Last Chance Qualifier (2 Day)",
+            "date": "2018-08-12",
+            "division": "Open Men's +109kg",
+            "lifter_name": "Ryan Jones",
+            "body_weight_kg": "114.7",
+            "snatch_1": "112",
+            "snatch_2": "120",
+            "snatch_3": "125",
+            "cj_1": "139",
+            "cj_2": "-151",
+            "cj_3": "155",
+            "best_snatch": "125",
+            "best_cj": "155",
+            "total": "280"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOC0xMiIsIndlaWdodF9jbGFzcyI6OTB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Ryan Jones",
+            "total": "280",
+            "gender": "M",
+            "age": "36",
+            "club_name": "IKON Strength",
+            "membership_number": "207964",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Nike 2017 American Open Series 1",
+            "date": "2017-03-19",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Ryan Jones",
+            "body_weight_kg": "110.44",
+            "snatch_1": "-115",
+            "snatch_2": "-115",
+            "snatch_3": "115",
+            "cj_1": "145",
+            "cj_2": "150",
+            "cj_3": "155",
+            "best_snatch": "115",
+            "best_cj": "155",
+            "total": "270"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0xOSIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Ryan Jones",
+            "total": "270",
+            "gender": "M",
+            "age": "35",
+            "club_name": "IKON Strength",
+            "membership_number": "207964",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Virus winter open",
+            "date": "2017-02-19",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Ryan Jones",
+            "body_weight_kg": "108.54",
+            "snatch_1": "110",
+            "snatch_2": "115",
+            "snatch_3": "122",
+            "cj_1": "-150",
+            "cj_2": "152",
+            "cj_3": "-162",
+            "best_snatch": "122",
+            "best_cj": "152",
+            "total": "274"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xOSIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "Ryan Jones",
+            "total": "274",
+            "gender": "M",
+            "age": "35",
+            "club_name": "IKON Strength",
+            "membership_number": "207964",
+            "wso": "California South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 20567,
+      "athlete_name": "Ryan Jones",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/20567",
+      "contaminated_lifter_id": 28602,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T05:30:17.062Z",
+      "profile_data": {
+        "membership_number": "1041745",
+        "birth_year": 1989,
+        "gender": "M",
+        "club_name": "Redline Athletics",
+        "wso": "Southern",
+        "national_rank": "3"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Annual Turkey Classic",
+          "date": "2019-11-23",
+          "division": "Open Men's +109kg",
+          "lifter_name": "Ryan Jones",
+          "body_weight_kg": "111",
+          "snatch_1": "100",
+          "snatch_2": "100",
+          "snatch_3": "105",
+          "cj_1": "125",
+          "cj_2": "130",
+          "cj_3": "135",
+          "best_snatch": "105",
+          "best_cj": "135",
+          "total": "240"
+        },
+        {
+          "meet_name": "Louisiana State Championship",
+          "date": "2019-08-11",
+          "division": "Open Men's +109kg",
+          "lifter_name": "Ryan Jones",
+          "body_weight_kg": "112.2",
+          "snatch_1": "100",
+          "snatch_2": "105",
+          "snatch_3": "105",
+          "cj_1": "125",
+          "cj_2": "128",
+          "cj_3": "130",
+          "best_snatch": "105",
+          "best_cj": "130",
+          "total": "235"
+        },
+        {
+          "meet_name": "Bar Wars - MAY THE 4th BE WITH YOU",
+          "date": "2019-05-04",
+          "division": "Open Men's +109kg",
+          "lifter_name": "Ryan Jones",
+          "body_weight_kg": "113.1",
+          "snatch_1": "95",
+          "snatch_2": "100",
+          "snatch_3": "104",
+          "cj_1": "120",
+          "cj_2": "125",
+          "cj_3": "125",
+          "best_snatch": "104",
+          "best_cj": "125",
+          "total": "229"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Annual Turkey Classic",
+            "date": "2019-11-23",
+            "division": "Open Men's +109kg",
+            "lifter_name": "Ryan Jones",
+            "body_weight_kg": "111",
+            "snatch_1": "100",
+            "snatch_2": "100",
+            "snatch_3": "105",
+            "cj_1": "125",
+            "cj_2": "130",
+            "cj_3": "135",
+            "best_snatch": "105",
+            "best_cj": "135",
+            "total": "240"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0yMyIsIndlaWdodF9jbGFzcyI6OTB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Ryan Jones",
+            "total": "240",
+            "gender": "M",
+            "age": "30",
+            "club_name": "Redline Athletics",
+            "membership_number": "1041745",
+            "wso": "Southern"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Louisiana State Championship",
+            "date": "2019-08-11",
+            "division": "Open Men's +109kg",
+            "lifter_name": "Ryan Jones",
+            "body_weight_kg": "112.2",
+            "snatch_1": "100",
+            "snatch_2": "105",
+            "snatch_3": "105",
+            "cj_1": "125",
+            "cj_2": "128",
+            "cj_3": "130",
+            "best_snatch": "105",
+            "best_cj": "130",
+            "total": "235"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOC0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOC0xMSIsIndlaWdodF9jbGFzcyI6OTB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Ryan Jones",
+            "total": "235",
+            "gender": "M",
+            "age": "30",
+            "club_name": "Redline Athletics",
+            "membership_number": "1041745",
+            "wso": "Southern"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Bar Wars - MAY THE 4th BE WITH YOU",
+            "date": "2019-05-04",
+            "division": "Open Men's +109kg",
+            "lifter_name": "Ryan Jones",
+            "body_weight_kg": "113.1",
+            "snatch_1": "95",
+            "snatch_2": "100",
+            "snatch_3": "104",
+            "cj_1": "120",
+            "cj_2": "125",
+            "cj_3": "125",
+            "best_snatch": "104",
+            "best_cj": "125",
+            "total": "229"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0wNCIsIndlaWdodF9jbGFzcyI6OTB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "Ryan Jones",
+            "total": "229",
+            "gender": "M",
+            "age": "30",
+            "club_name": "Redline Athletics",
+            "membership_number": "1041745",
+            "wso": "Southern"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 31163,
+      "athlete_name": "Ryan Jones",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/31163",
+      "contaminated_lifter_id": 28602,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T05:30:27.198Z",
+      "profile_data": {
+        "membership_number": "1043514",
+        "birth_year": 1994,
+        "gender": "M",
+        "club_name": "TEAM HOUSTON",
+        "wso": "Texas-Oklahoma",
+        "national_rank": "23"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Jet Engine CrossFit Invitational",
+          "date": "2019-08-10",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Ryan Jones",
+          "body_weight_kg": "89",
+          "snatch_1": "94",
+          "snatch_2": "-102",
+          "snatch_3": "-205",
+          "cj_1": "118",
+          "cj_2": "122",
+          "cj_3": "-126",
+          "best_snatch": "94",
+          "best_cj": "122",
+          "total": "216"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Jet Engine CrossFit Invitational",
+            "date": "2019-08-10",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Ryan Jones",
+            "body_weight_kg": "89",
+            "snatch_1": "94",
+            "snatch_2": "-102",
+            "snatch_3": "-205",
+            "cj_1": "118",
+            "cj_2": "122",
+            "cj_3": "-126",
+            "best_snatch": "94",
+            "best_cj": "122",
+            "total": "216"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOC0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOC0xMCIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "23",
+            "athlete_name": "Ryan Jones",
+            "total": "216",
+            "gender": "M",
+            "age": "25",
+            "club_name": "TEAM HOUSTON",
+            "membership_number": "1043514",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

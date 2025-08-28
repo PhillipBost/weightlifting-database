@@ -1,0 +1,294 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T09:48:06.270Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Alexander Peterson",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 5,
+    "total_reverse_lookups": 5,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 32156364
+  },
+  "data": [
+    {
+      "internal_id": 25168,
+      "athlete_name": "Alexander Peterson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/25168",
+      "contaminated_lifter_id": 9101,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T09:47:56.245Z",
+      "profile_data": {
+        "membership_number": "217243",
+        "birth_year": 1991,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Minnesota-Dakotas",
+        "national_rank": "28"
+      },
+      "competition_history": [
+        {
+          "meet_name": "The Minnesota Open",
+          "date": "2016-10-23",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Alexander Peterson",
+          "body_weight_kg": "100.12",
+          "snatch_1": "108",
+          "snatch_2": "112",
+          "snatch_3": "115",
+          "cj_1": "126",
+          "cj_2": "131",
+          "cj_3": "-135",
+          "best_snatch": "115",
+          "best_cj": "131",
+          "total": "246"
+        },
+        {
+          "meet_name": "Minnesota Championship",
+          "date": "2016-03-26",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Alexander Peterson",
+          "body_weight_kg": "97.22",
+          "snatch_1": "107",
+          "snatch_2": "110",
+          "snatch_3": "114",
+          "cj_1": "132",
+          "cj_2": "137",
+          "cj_3": "-141",
+          "best_snatch": "114",
+          "best_cj": "137",
+          "total": "251"
+        },
+        {
+          "meet_name": "2015 BrewCity Open",
+          "date": "2015-12-13",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Alexander Peterson",
+          "body_weight_kg": "92.9",
+          "snatch_1": "105",
+          "snatch_2": "108",
+          "snatch_3": "111",
+          "cj_1": "129",
+          "cj_2": "135",
+          "cj_3": "140",
+          "best_snatch": "111",
+          "best_cj": "140",
+          "total": "251"
+        },
+        {
+          "meet_name": "The Wisconsin Open",
+          "date": "2015-10-04",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Alexander Peterson",
+          "body_weight_kg": "92.7",
+          "snatch_1": "100",
+          "snatch_2": "-107",
+          "snatch_3": "-110",
+          "cj_1": "121",
+          "cj_2": "127",
+          "cj_3": "-132",
+          "best_snatch": "100",
+          "best_cj": "127",
+          "total": "227"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "The Minnesota Open",
+            "date": "2016-10-23",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Alexander Peterson",
+            "body_weight_kg": "100.12",
+            "snatch_1": "108",
+            "snatch_2": "112",
+            "snatch_3": "115",
+            "cj_1": "126",
+            "cj_2": "131",
+            "cj_3": "-135",
+            "best_snatch": "115",
+            "best_cj": "131",
+            "total": "246"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0yMyIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "28",
+            "athlete_name": "Alexander Peterson",
+            "total": "246",
+            "gender": "M",
+            "age": "25",
+            "club_name": "-",
+            "membership_number": "217243",
+            "wso": "Minnesota-Dakotas"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Minnesota Championship",
+            "date": "2016-03-26",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Alexander Peterson",
+            "body_weight_kg": "97.22",
+            "snatch_1": "107",
+            "snatch_2": "110",
+            "snatch_3": "114",
+            "cj_1": "132",
+            "cj_2": "137",
+            "cj_3": "-141",
+            "best_snatch": "114",
+            "best_cj": "137",
+            "total": "251"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMy0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMy0yNiIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "21",
+            "athlete_name": "Alexander Peterson",
+            "total": "251",
+            "gender": "M",
+            "age": "25",
+            "club_name": "-",
+            "membership_number": "217243",
+            "wso": "Minnesota-Dakotas"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2015 BrewCity Open",
+            "date": "2015-12-13",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Alexander Peterson",
+            "body_weight_kg": "92.9",
+            "snatch_1": "105",
+            "snatch_2": "108",
+            "snatch_3": "111",
+            "cj_1": "129",
+            "cj_2": "135",
+            "cj_3": "140",
+            "best_snatch": "111",
+            "best_cj": "140",
+            "total": "251"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMi0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMi0xMyIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Alexander Peterson",
+            "total": "251",
+            "gender": "M",
+            "age": "24",
+            "club_name": "-",
+            "membership_number": "217243",
+            "wso": "Minnesota-Dakotas"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The Wisconsin Open",
+            "date": "2015-10-04",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Alexander Peterson",
+            "body_weight_kg": "92.7",
+            "snatch_1": "100",
+            "snatch_2": "-107",
+            "snatch_3": "-110",
+            "cj_1": "121",
+            "cj_2": "127",
+            "cj_3": "-132",
+            "best_snatch": "100",
+            "best_cj": "127",
+            "total": "227"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0wNCIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "24",
+            "athlete_name": "Alexander Peterson",
+            "total": "227",
+            "gender": "M",
+            "age": "24",
+            "club_name": "-",
+            "membership_number": "217243",
+            "wso": "Minnesota-Dakotas"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 36790,
+      "athlete_name": "Alexander Peterson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/36790",
+      "contaminated_lifter_id": 9101,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T09:48:06.268Z",
+      "profile_data": {
+        "membership_number": "1002130",
+        "birth_year": 1997,
+        "gender": "M",
+        "club_name": "NORTHFIELD WLC",
+        "wso": "Minnesota-Dakotas",
+        "national_rank": "30"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Raider High School Open",
+          "date": "2016-01-23",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Alexander Peterson",
+          "body_weight_kg": "72.5",
+          "snatch_1": "50",
+          "snatch_2": "54",
+          "snatch_3": "58",
+          "cj_1": "60",
+          "cj_2": "66",
+          "cj_3": "71",
+          "best_snatch": "58",
+          "best_cj": "71",
+          "total": "129"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Raider High School Open",
+            "date": "2016-01-23",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Alexander Peterson",
+            "body_weight_kg": "72.5",
+            "snatch_1": "50",
+            "snatch_2": "54",
+            "snatch_3": "58",
+            "cj_1": "60",
+            "cj_2": "66",
+            "cj_3": "71",
+            "best_snatch": "58",
+            "best_cj": "71",
+            "total": "129"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0yMyIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "30",
+            "athlete_name": "Alexander Peterson",
+            "total": "129",
+            "gender": "M",
+            "age": "19",
+            "club_name": "NORTHFIELD WLC",
+            "membership_number": "1002130",
+            "wso": "Minnesota-Dakotas"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

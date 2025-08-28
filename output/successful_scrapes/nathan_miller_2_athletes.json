@@ -1,0 +1,294 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T21:45:23.257Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Nathan Miller",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 5,
+    "total_reverse_lookups": 5,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 75193351
+  },
+  "data": [
+    {
+      "internal_id": 7916,
+      "athlete_name": "Nathan Miller",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/7916",
+      "contaminated_lifter_id": 10166,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T21:45:01.463Z",
+      "profile_data": {
+        "membership_number": "162890",
+        "birth_year": 1980,
+        "gender": "M",
+        "club_name": "Fulcrum Barbell Club",
+        "wso": "Pacific Northwest",
+        "national_rank": "6"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Industrious Weightlifting Championships",
+          "date": "2018-04-07",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Nathan Miller",
+          "body_weight_kg": "106.45",
+          "snatch_1": "100",
+          "snatch_2": "-105",
+          "snatch_3": "-106",
+          "cj_1": "120",
+          "cj_2": "126",
+          "cj_3": "-130",
+          "best_snatch": "100",
+          "best_cj": "126",
+          "total": "226"
+        },
+        {
+          "meet_name": "Fulcrum Open",
+          "date": "2014-06-14",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Nathan Miller",
+          "body_weight_kg": "115.9",
+          "snatch_1": "82",
+          "snatch_2": "87",
+          "snatch_3": "92",
+          "cj_1": "110",
+          "cj_2": "115",
+          "cj_3": "120",
+          "best_snatch": "92",
+          "best_cj": "120",
+          "total": "212"
+        },
+        {
+          "meet_name": "South Sound Weightlifting Spring Open",
+          "date": "2014-03-29",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Nathan Miller",
+          "body_weight_kg": "112.8",
+          "snatch_1": "80",
+          "snatch_2": "85",
+          "snatch_3": "90",
+          "cj_1": "110",
+          "cj_2": "116",
+          "cj_3": "116",
+          "best_snatch": "90",
+          "best_cj": "116",
+          "total": "206"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Industrious Weightlifting Championships",
+            "date": "2018-04-07",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Nathan Miller",
+            "body_weight_kg": "106.45",
+            "snatch_1": "100",
+            "snatch_2": "-105",
+            "snatch_3": "-106",
+            "cj_1": "120",
+            "cj_2": "126",
+            "cj_3": "-130",
+            "best_snatch": "100",
+            "best_cj": "126",
+            "total": "226"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNC0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNC0wNyIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Nathan Miller",
+            "total": "226",
+            "gender": "M",
+            "age": "38",
+            "club_name": "Fulcrum Barbell Club",
+            "membership_number": "162890",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Fulcrum Open",
+            "date": "2014-06-14",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Nathan Miller",
+            "body_weight_kg": "115.9",
+            "snatch_1": "82",
+            "snatch_2": "87",
+            "snatch_3": "92",
+            "cj_1": "110",
+            "cj_2": "115",
+            "cj_3": "120",
+            "best_snatch": "92",
+            "best_cj": "120",
+            "total": "212"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNi0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNi0xNCIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Nathan Miller",
+            "total": "212",
+            "gender": "M",
+            "age": "34",
+            "club_name": "Fulcrum Barbell Club",
+            "membership_number": "162890",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "South Sound Weightlifting Spring Open",
+            "date": "2014-03-29",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Nathan Miller",
+            "body_weight_kg": "112.8",
+            "snatch_1": "80",
+            "snatch_2": "85",
+            "snatch_3": "90",
+            "cj_1": "110",
+            "cj_2": "116",
+            "cj_3": "116",
+            "best_snatch": "90",
+            "best_cj": "116",
+            "total": "206"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0yOSIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "14",
+            "athlete_name": "Nathan Miller",
+            "total": "206",
+            "gender": "M",
+            "age": "34",
+            "club_name": "Fulcrum Barbell Club",
+            "membership_number": "162890",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 13130,
+      "athlete_name": "Nathan Miller",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/13130",
+      "contaminated_lifter_id": 10166,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T21:45:23.255Z",
+      "profile_data": {
+        "membership_number": "194929",
+        "birth_year": 1985,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Texas-Oklahoma",
+        "national_rank": "5"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2015 Oklahoma State Championships of Weightlifting",
+          "date": "2015-07-25",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Nathan Miller",
+          "body_weight_kg": "101.1",
+          "snatch_1": "110",
+          "snatch_2": "115",
+          "snatch_3": "116",
+          "cj_1": "125",
+          "cj_2": "130",
+          "cj_3": "135",
+          "best_snatch": "116",
+          "best_cj": "135",
+          "total": "251"
+        },
+        {
+          "meet_name": "Oklahoma State Championships of Weightlifting",
+          "date": "2014-05-24",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Nathan Miller",
+          "body_weight_kg": "104.6",
+          "snatch_1": "103",
+          "snatch_2": "105",
+          "snatch_3": "115",
+          "cj_1": "125",
+          "cj_2": "125",
+          "cj_3": "135",
+          "best_snatch": "115",
+          "best_cj": "135",
+          "total": "250"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2015 Oklahoma State Championships of Weightlifting",
+            "date": "2015-07-25",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Nathan Miller",
+            "body_weight_kg": "101.1",
+            "snatch_1": "110",
+            "snatch_2": "115",
+            "snatch_3": "116",
+            "cj_1": "125",
+            "cj_2": "130",
+            "cj_3": "135",
+            "best_snatch": "116",
+            "best_cj": "135",
+            "total": "251"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNy0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNy0yNSIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "Nathan Miller",
+            "total": "251",
+            "gender": "M",
+            "age": "30",
+            "club_name": "-",
+            "membership_number": "194929",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Oklahoma State Championships of Weightlifting",
+            "date": "2014-05-24",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Nathan Miller",
+            "body_weight_kg": "104.6",
+            "snatch_1": "103",
+            "snatch_2": "105",
+            "snatch_3": "115",
+            "cj_1": "125",
+            "cj_2": "125",
+            "cj_3": "135",
+            "best_snatch": "115",
+            "best_cj": "135",
+            "total": "250"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNS0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNS0yNCIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "7",
+            "athlete_name": "Nathan Miller",
+            "total": "250",
+            "gender": "M",
+            "age": "29",
+            "club_name": "-",
+            "membership_number": "194929",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

@@ -1,0 +1,341 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T07:07:27.506Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Diane Miller",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 6,
+    "total_reverse_lookups": 6,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 108917600
+  },
+  "data": [
+    {
+      "internal_id": 2622,
+      "athlete_name": "Diane Miller",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/2622",
+      "contaminated_lifter_id": 11376,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T07:07:14.540Z",
+      "profile_data": {
+        "membership_number": "204120",
+        "birth_year": 1970,
+        "gender": "F",
+        "club_name": "DRAGONFIRE WEIGHTLIFTING",
+        "wso": "Pacific Northwest",
+        "national_rank": "2"
+      },
+      "competition_history": [
+        {
+          "meet_name": "War Games 2015  Battle for PRs",
+          "date": "2015-05-09",
+          "division": "Women's Masters (45-49) 63 kg",
+          "lifter_name": "Diane Miller",
+          "body_weight_kg": "62.7",
+          "snatch_1": "37",
+          "snatch_2": "-40",
+          "snatch_3": "-40",
+          "cj_1": "-52",
+          "cj_2": "52",
+          "cj_3": "-56",
+          "best_snatch": "37",
+          "best_cj": "52",
+          "total": "89"
+        },
+        {
+          "meet_name": "2015 National Masters Championships",
+          "date": "2015-04-12",
+          "division": "Women's Masters (45-49) 63 kg",
+          "lifter_name": "Diane Miller",
+          "body_weight_kg": "60.66",
+          "snatch_1": "-36",
+          "snatch_2": "36",
+          "snatch_3": "39",
+          "cj_1": "50",
+          "cj_2": "54",
+          "cj_3": "56",
+          "best_snatch": "39",
+          "best_cj": "56",
+          "total": "95"
+        },
+        {
+          "meet_name": "2015 Central Oregon Weightlifting Invitational",
+          "date": "2015-02-07",
+          "division": "Women's Masters (45-49) 63 kg",
+          "lifter_name": "Diane Miller",
+          "body_weight_kg": "62.5",
+          "snatch_1": "36",
+          "snatch_2": "-38",
+          "snatch_3": "-38",
+          "cj_1": "50",
+          "cj_2": "53",
+          "cj_3": "55",
+          "best_snatch": "36",
+          "best_cj": "55",
+          "total": "91"
+        },
+        {
+          "meet_name": "2015 Dariotis Memorial",
+          "date": "2015-01-03",
+          "division": "Women's Masters (45-49) 69 kg",
+          "lifter_name": "Diane Miller",
+          "body_weight_kg": "64.4",
+          "snatch_1": "34",
+          "snatch_2": "38",
+          "snatch_3": "38",
+          "cj_1": "49",
+          "cj_2": "53",
+          "cj_3": "53",
+          "best_snatch": "38",
+          "best_cj": "53",
+          "total": "91"
+        },
+        {
+          "meet_name": "Industrial Strength Classic",
+          "date": "2014-11-08",
+          "division": "Women's Masters (40-44) 69 kg",
+          "lifter_name": "Diane Miller",
+          "body_weight_kg": "65.9",
+          "snatch_1": "34",
+          "snatch_2": "36",
+          "snatch_3": "38",
+          "cj_1": "48",
+          "cj_2": "50",
+          "cj_3": "52",
+          "best_snatch": "38",
+          "best_cj": "52",
+          "total": "90"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "War Games 2015  Battle for PRs",
+            "date": "2015-05-09",
+            "division": "Women's Masters (45-49) 63 kg",
+            "lifter_name": "Diane Miller",
+            "body_weight_kg": "62.7",
+            "snatch_1": "37",
+            "snatch_2": "-40",
+            "snatch_3": "-40",
+            "cj_1": "-52",
+            "cj_2": "52",
+            "cj_3": "-56",
+            "best_snatch": "37",
+            "best_cj": "52",
+            "total": "89"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNS0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNS0wOSIsIndlaWdodF9jbGFzcyI6NDE2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Diane Miller",
+            "total": "89",
+            "gender": "F",
+            "age": "45",
+            "club_name": "DRAGONFIRE WEIGHTLIFTING",
+            "membership_number": "204120",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2015 National Masters Championships",
+            "date": "2015-04-12",
+            "division": "Women's Masters (45-49) 63 kg",
+            "lifter_name": "Diane Miller",
+            "body_weight_kg": "60.66",
+            "snatch_1": "-36",
+            "snatch_2": "36",
+            "snatch_3": "39",
+            "cj_1": "50",
+            "cj_2": "54",
+            "cj_3": "56",
+            "best_snatch": "39",
+            "best_cj": "56",
+            "total": "95"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0xMiIsIndlaWdodF9jbGFzcyI6NDE2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "7",
+            "athlete_name": "Diane Miller",
+            "total": "95",
+            "gender": "F",
+            "age": "45",
+            "club_name": "DRAGONFIRE WEIGHTLIFTING",
+            "membership_number": "204120",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2015 Central Oregon Weightlifting Invitational",
+            "date": "2015-02-07",
+            "division": "Women's Masters (45-49) 63 kg",
+            "lifter_name": "Diane Miller",
+            "body_weight_kg": "62.5",
+            "snatch_1": "36",
+            "snatch_2": "-38",
+            "snatch_3": "-38",
+            "cj_1": "50",
+            "cj_2": "53",
+            "cj_3": "55",
+            "best_snatch": "36",
+            "best_cj": "55",
+            "total": "91"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMi0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMi0wNyIsIndlaWdodF9jbGFzcyI6NDE2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Diane Miller",
+            "total": "91",
+            "gender": "F",
+            "age": "45",
+            "club_name": "DRAGONFIRE WEIGHTLIFTING",
+            "membership_number": "204120",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2015 Dariotis Memorial",
+            "date": "2015-01-03",
+            "division": "Women's Masters (45-49) 69 kg",
+            "lifter_name": "Diane Miller",
+            "body_weight_kg": "64.4",
+            "snatch_1": "34",
+            "snatch_2": "38",
+            "snatch_3": "38",
+            "cj_1": "49",
+            "cj_2": "53",
+            "cj_3": "53",
+            "best_snatch": "38",
+            "best_cj": "53",
+            "total": "91"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMS0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMS0wMyIsIndlaWdodF9jbGFzcyI6NDE3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Diane Miller",
+            "total": "91",
+            "gender": "F",
+            "age": "45",
+            "club_name": "DRAGONFIRE WEIGHTLIFTING",
+            "membership_number": "204120",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Industrial Strength Classic",
+            "date": "2014-11-08",
+            "division": "Women's Masters (40-44) 69 kg",
+            "lifter_name": "Diane Miller",
+            "body_weight_kg": "65.9",
+            "snatch_1": "34",
+            "snatch_2": "36",
+            "snatch_3": "38",
+            "cj_1": "48",
+            "cj_2": "50",
+            "cj_3": "52",
+            "best_snatch": "38",
+            "best_cj": "52",
+            "total": "90"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMS0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMS0wOCIsIndlaWdodF9jbGFzcyI6NDAwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Diane Miller",
+            "total": "90",
+            "gender": "F",
+            "age": "44",
+            "club_name": "DRAGONFIRE WEIGHTLIFTING",
+            "membership_number": "204120",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 36783,
+      "athlete_name": "Diane Miller",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/36783",
+      "contaminated_lifter_id": 11376,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T07:07:27.504Z",
+      "profile_data": {
+        "membership_number": "217411",
+        "birth_year": 1997,
+        "gender": "F",
+        "club_name": "KLAMATH BARBELL CLUB",
+        "wso": "Pacific Northwest",
+        "national_rank": "6"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2016 Savage Weightlifting Open",
+          "date": "2016-10-02",
+          "division": "Open Women's +75 Kg",
+          "lifter_name": "Diane Miller",
+          "body_weight_kg": "97.9",
+          "snatch_1": "-45",
+          "snatch_2": "45",
+          "snatch_3": "-50",
+          "cj_1": "58",
+          "cj_2": "62",
+          "cj_3": "65",
+          "best_snatch": "45",
+          "best_cj": "65",
+          "total": "110"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2016 Savage Weightlifting Open",
+            "date": "2016-10-02",
+            "division": "Open Women's +75 Kg",
+            "lifter_name": "Diane Miller",
+            "body_weight_kg": "97.9",
+            "snatch_1": "-45",
+            "snatch_2": "45",
+            "snatch_3": "-50",
+            "cj_1": "58",
+            "cj_2": "62",
+            "cj_3": "65",
+            "best_snatch": "45",
+            "best_cj": "65",
+            "total": "110"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0wMiIsIndlaWdodF9jbGFzcyI6MzY4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Diane Miller",
+            "total": "110",
+            "gender": "F",
+            "age": "19",
+            "club_name": "KLAMATH BARBELL CLUB",
+            "membership_number": "217411",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

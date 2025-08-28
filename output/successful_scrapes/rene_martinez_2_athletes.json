@@ -1,0 +1,200 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T05:43:28.608Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Rene Martinez",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 3,
+    "total_reverse_lookups": 3,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 103878702
+  },
+  "data": [
+    {
+      "internal_id": 3125,
+      "athlete_name": "Rene Martinez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/3125",
+      "contaminated_lifter_id": 34588,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T05:43:13.001Z",
+      "profile_data": {
+        "membership_number": "1028477",
+        "birth_year": 1972,
+        "gender": "F",
+        "club_name": "BAM Weightlifting Club",
+        "wso": "DMV",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2018 Turkey Meet",
+          "date": "2018-11-25",
+          "division": "Women's Masters (45-49) 59kg",
+          "lifter_name": "Rene Martinez",
+          "body_weight_kg": "58",
+          "snatch_1": "35",
+          "snatch_2": "38",
+          "snatch_3": "-40",
+          "cj_1": "41",
+          "cj_2": "44",
+          "cj_3": "50",
+          "best_snatch": "38",
+          "best_cj": "50",
+          "total": "88"
+        },
+        {
+          "meet_name": "BASA Big Sunday Open",
+          "date": "2018-06-03",
+          "division": "Women's Masters (45-49) 63 kg",
+          "lifter_name": "Rene Martinez",
+          "body_weight_kg": "62.2",
+          "snatch_1": "28",
+          "snatch_2": "31",
+          "snatch_3": "34",
+          "cj_1": "30",
+          "cj_2": "33",
+          "cj_3": "36",
+          "best_snatch": "34",
+          "best_cj": "36",
+          "total": "70"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2018 Turkey Meet",
+            "date": "2018-11-25",
+            "division": "Women's Masters (45-49) 59kg",
+            "lifter_name": "Rene Martinez",
+            "body_weight_kg": "58",
+            "snatch_1": "35",
+            "snatch_2": "38",
+            "snatch_3": "-40",
+            "cj_1": "41",
+            "cj_2": "44",
+            "cj_3": "50",
+            "best_snatch": "38",
+            "best_cj": "50",
+            "total": "88"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMS0yNSIsIndlaWdodF9jbGFzcyI6MTU0fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Rene Martinez",
+            "total": "88",
+            "gender": "F",
+            "age": "46",
+            "club_name": "BAM Weightlifting Club",
+            "membership_number": "1028477",
+            "wso": "DMV"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "BASA Big Sunday Open",
+            "date": "2018-06-03",
+            "division": "Women's Masters (45-49) 63 kg",
+            "lifter_name": "Rene Martinez",
+            "body_weight_kg": "62.2",
+            "snatch_1": "28",
+            "snatch_2": "31",
+            "snatch_3": "34",
+            "cj_1": "30",
+            "cj_2": "33",
+            "cj_3": "36",
+            "best_snatch": "34",
+            "best_cj": "36",
+            "total": "70"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0wMyIsIndlaWdodF9jbGFzcyI6NDE2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Rene Martinez",
+            "total": "70",
+            "gender": "F",
+            "age": "46",
+            "club_name": "BAM Weightlifting Club",
+            "membership_number": "1028477",
+            "wso": "DMV"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 26572,
+      "athlete_name": "Rene Martinez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/26572",
+      "contaminated_lifter_id": 34588,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T05:43:28.606Z",
+      "profile_data": {
+        "membership_number": "1004292",
+        "birth_year": 1991,
+        "gender": "M",
+        "club_name": "Gaines' Gym",
+        "wso": "Texas-Oklahoma",
+        "national_rank": "80"
+      },
+      "competition_history": [
+        {
+          "meet_name": "4th Annual BlackBox College Station Weightlifting Classic",
+          "date": "2016-03-26",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Rene Martinez",
+          "body_weight_kg": "78.6",
+          "snatch_1": "55",
+          "snatch_2": "59",
+          "snatch_3": "62",
+          "cj_1": "75",
+          "cj_2": "80",
+          "cj_3": "-85",
+          "best_snatch": "62",
+          "best_cj": "80",
+          "total": "142"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "4th Annual BlackBox College Station Weightlifting Classic",
+            "date": "2016-03-26",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Rene Martinez",
+            "body_weight_kg": "78.6",
+            "snatch_1": "55",
+            "snatch_2": "59",
+            "snatch_3": "62",
+            "cj_1": "75",
+            "cj_2": "80",
+            "cj_3": "-85",
+            "best_snatch": "62",
+            "best_cj": "80",
+            "total": "142"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMy0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMy0yNiIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "80",
+            "athlete_name": "Rene Martinez",
+            "total": "142",
+            "gender": "M",
+            "age": "25",
+            "club_name": "Gaines' Gym",
+            "membership_number": "1004292",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

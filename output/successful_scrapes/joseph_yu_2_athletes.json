@@ -1,0 +1,247 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T06:44:57.472Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Joseph Yu",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 4,
+    "total_reverse_lookups": 4,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 107567566
+  },
+  "data": [
+    {
+      "internal_id": 25803,
+      "athlete_name": "Joseph Yu",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/25803",
+      "contaminated_lifter_id": 37787,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T06:44:30.335Z",
+      "profile_data": {
+        "membership_number": "1033952",
+        "birth_year": 1991,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "DMV",
+        "national_rank": "16"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2018 NOVA Open",
+          "date": "2018-10-21",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Joseph Yu",
+          "body_weight_kg": "77.5",
+          "snatch_1": "88",
+          "snatch_2": "-91",
+          "snatch_3": "-91",
+          "cj_1": "-111",
+          "cj_2": "111",
+          "cj_3": "120",
+          "best_snatch": "88",
+          "best_cj": "120",
+          "total": "208"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2018 NOVA Open",
+            "date": "2018-10-21",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Joseph Yu",
+            "body_weight_kg": "77.5",
+            "snatch_1": "88",
+            "snatch_2": "-91",
+            "snatch_3": "-91",
+            "cj_1": "-111",
+            "cj_2": "111",
+            "cj_3": "120",
+            "best_snatch": "88",
+            "best_cj": "120",
+            "total": "208"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0yMSIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "16",
+            "athlete_name": "Joseph Yu",
+            "total": "208",
+            "gender": "M",
+            "age": "27",
+            "club_name": "-",
+            "membership_number": "1033952",
+            "wso": "DMV"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 55234,
+      "athlete_name": "Joseph Yu",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/55234",
+      "contaminated_lifter_id": 37787,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T06:44:57.469Z",
+      "profile_data": {
+        "membership_number": "1064901",
+        "birth_year": 1990,
+        "gender": "M",
+        "club_name": "NorCal Weightlifting",
+        "wso": "California North Central",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Tommy Kono XIX Championships",
+          "date": "2025-08-02",
+          "division": "Men's Masters (35-39) 110kg",
+          "lifter_name": "Joseph Yu",
+          "body_weight_kg": "97.2",
+          "snatch_1": "110",
+          "snatch_2": "-115",
+          "snatch_3": "-118",
+          "cj_1": "140",
+          "cj_2": "146",
+          "cj_3": "-151",
+          "best_snatch": "110",
+          "best_cj": "146",
+          "total": "256"
+        },
+        {
+          "meet_name": "Bulldog Weightlifting 2023",
+          "date": "2023-03-11",
+          "division": "Open Men's 96kg",
+          "lifter_name": "Joseph Yu",
+          "body_weight_kg": "92.3",
+          "snatch_1": "110",
+          "snatch_2": "-115",
+          "snatch_3": "-115",
+          "cj_1": "140",
+          "cj_2": "145",
+          "cj_3": "-150",
+          "best_snatch": "110",
+          "best_cj": "145",
+          "total": "255"
+        },
+        {
+          "meet_name": "Tommy Kono XVI",
+          "date": "2022-08-07",
+          "division": "Open Men's 96kg",
+          "lifter_name": "Joseph Yu",
+          "body_weight_kg": "92.4",
+          "snatch_1": "105",
+          "snatch_2": "110",
+          "snatch_3": "-115",
+          "cj_1": "130",
+          "cj_2": "140",
+          "cj_3": "-145",
+          "best_snatch": "110",
+          "best_cj": "140",
+          "total": "250"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Tommy Kono XIX Championships",
+            "date": "2025-08-02",
+            "division": "Men's Masters (35-39) 110kg",
+            "lifter_name": "Joseph Yu",
+            "body_weight_kg": "97.2",
+            "snatch_1": "110",
+            "snatch_2": "-115",
+            "snatch_3": "-118",
+            "cj_1": "140",
+            "cj_2": "146",
+            "cj_3": "-151",
+            "best_snatch": "110",
+            "best_cj": "146",
+            "total": "256"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wOC0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wOC0wMiIsIndlaWdodF9jbGFzcyI6Njk1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Joseph Yu",
+            "total": "256",
+            "gender": "M",
+            "age": "35",
+            "club_name": "NorCal Weightlifting",
+            "membership_number": "1064901",
+            "wso": "California North Central"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Bulldog Weightlifting 2023",
+            "date": "2023-03-11",
+            "division": "Open Men's 96kg",
+            "lifter_name": "Joseph Yu",
+            "body_weight_kg": "92.3",
+            "snatch_1": "110",
+            "snatch_2": "-115",
+            "snatch_3": "-115",
+            "cj_1": "140",
+            "cj_2": "145",
+            "cj_3": "-150",
+            "best_snatch": "110",
+            "best_cj": "145",
+            "total": "255"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMy0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMy0xMSIsIndlaWdodF9jbGFzcyI6ODd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Joseph Yu",
+            "total": "255",
+            "gender": "M",
+            "age": "33",
+            "club_name": "-",
+            "membership_number": "1064901",
+            "wso": "California North Central"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Tommy Kono XVI",
+            "date": "2022-08-07",
+            "division": "Open Men's 96kg",
+            "lifter_name": "Joseph Yu",
+            "body_weight_kg": "92.4",
+            "snatch_1": "105",
+            "snatch_2": "110",
+            "snatch_3": "-115",
+            "cj_1": "130",
+            "cj_2": "140",
+            "cj_3": "-145",
+            "best_snatch": "110",
+            "best_cj": "140",
+            "total": "250"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wOC0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wOC0wNyIsIndlaWdodF9jbGFzcyI6ODd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Joseph Yu",
+            "total": "250",
+            "gender": "M",
+            "age": "32",
+            "club_name": "-",
+            "membership_number": "1064901",
+            "wso": "California North Central"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

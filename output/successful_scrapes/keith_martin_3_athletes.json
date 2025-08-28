@@ -1,0 +1,456 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T04:15:00.994Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Keith Martin",
+    "internal_ids_processed": 3,
+    "successful_scrapes": 3,
+    "failed_scrapes": 0,
+    "total_competitions_found": 8,
+    "total_reverse_lookups": 8,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 12171088
+  },
+  "data": [
+    {
+      "internal_id": 3450,
+      "athlete_name": "Keith Martin",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/3450",
+      "contaminated_lifter_id": 10168,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T04:14:17.603Z",
+      "profile_data": {
+        "membership_number": "172668",
+        "birth_year": 1973,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Florida",
+        "national_rank": "4"
+      },
+      "competition_history": [
+        {
+          "meet_name": "The Praelium",
+          "date": "2019-11-24",
+          "division": "Open Men's 102kg",
+          "lifter_name": "Keith Martin",
+          "body_weight_kg": "101.15",
+          "snatch_1": "-74",
+          "snatch_2": "75",
+          "snatch_3": "78",
+          "cj_1": "87",
+          "cj_2": "91",
+          "cj_3": "94",
+          "best_snatch": "78",
+          "best_cj": "94",
+          "total": "172"
+        },
+        {
+          "meet_name": "Team Florida NE AO3 Qualifier",
+          "date": "2019-08-04",
+          "division": "Open Men's 102kg",
+          "lifter_name": "Keith Martin",
+          "body_weight_kg": "99.27",
+          "snatch_1": "70",
+          "snatch_2": "73",
+          "snatch_3": "76",
+          "cj_1": "85",
+          "cj_2": "88",
+          "cj_3": "92",
+          "best_snatch": "76",
+          "best_cj": "92",
+          "total": "168"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "The Praelium",
+            "date": "2019-11-24",
+            "division": "Open Men's 102kg",
+            "lifter_name": "Keith Martin",
+            "body_weight_kg": "101.15",
+            "snatch_1": "-74",
+            "snatch_2": "75",
+            "snatch_3": "78",
+            "cj_1": "87",
+            "cj_2": "91",
+            "cj_3": "94",
+            "best_snatch": "78",
+            "best_cj": "94",
+            "total": "172"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0yNCIsIndlaWdodF9jbGFzcyI6ODh9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Keith Martin",
+            "total": "172",
+            "gender": "M",
+            "age": "46",
+            "club_name": "-",
+            "membership_number": "172668",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Team Florida NE AO3 Qualifier",
+            "date": "2019-08-04",
+            "division": "Open Men's 102kg",
+            "lifter_name": "Keith Martin",
+            "body_weight_kg": "99.27",
+            "snatch_1": "70",
+            "snatch_2": "73",
+            "snatch_3": "76",
+            "cj_1": "85",
+            "cj_2": "88",
+            "cj_3": "92",
+            "best_snatch": "76",
+            "best_cj": "92",
+            "total": "168"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOC0wNCIsIndlaWdodF9jbGFzcyI6ODh9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "12",
+            "athlete_name": "Keith Martin",
+            "total": "168",
+            "gender": "M",
+            "age": "46",
+            "club_name": "-",
+            "membership_number": "172668",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 5432,
+      "athlete_name": "Keith Martin",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/5432",
+      "contaminated_lifter_id": 10168,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T04:14:51.395Z",
+      "profile_data": {
+        "membership_number": "211058",
+        "birth_year": 1977,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Texas-Oklahoma",
+        "national_rank": "10"
+      },
+      "competition_history": [
+        {
+          "meet_name": "State Championships",
+          "date": "2019-07-20",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Keith Martin",
+          "body_weight_kg": "88",
+          "snatch_1": "90",
+          "snatch_2": "95",
+          "snatch_3": "102",
+          "cj_1": "125",
+          "cj_2": "125",
+          "cj_3": "128",
+          "best_snatch": "102",
+          "best_cj": "128",
+          "total": "230"
+        },
+        {
+          "meet_name": "2017 Oklahoma State Championships of Weightlifting",
+          "date": "2017-07-08",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Keith Martin",
+          "body_weight_kg": "84.8",
+          "snatch_1": "-95",
+          "snatch_2": "95",
+          "snatch_3": "-100",
+          "cj_1": "120",
+          "cj_2": "126",
+          "cj_3": "-127",
+          "best_snatch": "95",
+          "best_cj": "126",
+          "total": "221"
+        },
+        {
+          "meet_name": "OKC Winter Invitational",
+          "date": "2017-01-21",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Keith Martin",
+          "body_weight_kg": "84.9",
+          "snatch_1": "95",
+          "snatch_2": "100",
+          "snatch_3": "101",
+          "cj_1": "120",
+          "cj_2": "128",
+          "cj_3": "128",
+          "best_snatch": "101",
+          "best_cj": "128",
+          "total": "229"
+        },
+        {
+          "meet_name": "2016 Oklahoma State Championships of Weightlifting",
+          "date": "2016-07-09",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Keith Martin",
+          "body_weight_kg": "84.9",
+          "snatch_1": "93",
+          "snatch_2": "97",
+          "snatch_3": "102",
+          "cj_1": "124",
+          "cj_2": "126",
+          "cj_3": "127",
+          "best_snatch": "102",
+          "best_cj": "127",
+          "total": "229"
+        },
+        {
+          "meet_name": "2015 Oklahoma State Championships of Weightlifting",
+          "date": "2015-07-25",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Keith Martin",
+          "body_weight_kg": "84.3",
+          "snatch_1": "88",
+          "snatch_2": "92",
+          "snatch_3": "98",
+          "cj_1": "115",
+          "cj_2": "120",
+          "cj_3": "127",
+          "best_snatch": "98",
+          "best_cj": "127",
+          "total": "225"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "State Championships",
+            "date": "2019-07-20",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Keith Martin",
+            "body_weight_kg": "88",
+            "snatch_1": "90",
+            "snatch_2": "95",
+            "snatch_3": "102",
+            "cj_1": "125",
+            "cj_2": "125",
+            "cj_3": "128",
+            "best_snatch": "102",
+            "best_cj": "128",
+            "total": "230"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0yMCIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "Keith Martin",
+            "total": "230",
+            "gender": "M",
+            "age": "42",
+            "club_name": "-",
+            "membership_number": "211058",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2017 Oklahoma State Championships of Weightlifting",
+            "date": "2017-07-08",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Keith Martin",
+            "body_weight_kg": "84.8",
+            "snatch_1": "-95",
+            "snatch_2": "95",
+            "snatch_3": "-100",
+            "cj_1": "120",
+            "cj_2": "126",
+            "cj_3": "-127",
+            "best_snatch": "95",
+            "best_cj": "126",
+            "total": "221"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNy0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNy0wOCIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "Keith Martin",
+            "total": "221",
+            "gender": "M",
+            "age": "40",
+            "club_name": "-",
+            "membership_number": "211058",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "OKC Winter Invitational",
+            "date": "2017-01-21",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Keith Martin",
+            "body_weight_kg": "84.9",
+            "snatch_1": "95",
+            "snatch_2": "100",
+            "snatch_3": "101",
+            "cj_1": "120",
+            "cj_2": "128",
+            "cj_3": "128",
+            "best_snatch": "101",
+            "best_cj": "128",
+            "total": "229"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMS0yMSIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "8",
+            "athlete_name": "Keith Martin",
+            "total": "229",
+            "gender": "M",
+            "age": "40",
+            "club_name": "-",
+            "membership_number": "211058",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2016 Oklahoma State Championships of Weightlifting",
+            "date": "2016-07-09",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Keith Martin",
+            "body_weight_kg": "84.9",
+            "snatch_1": "93",
+            "snatch_2": "97",
+            "snatch_3": "102",
+            "cj_1": "124",
+            "cj_2": "126",
+            "cj_3": "127",
+            "best_snatch": "102",
+            "best_cj": "127",
+            "total": "229"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNy0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNy0wOSIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "24",
+            "athlete_name": "Keith Martin",
+            "total": "229",
+            "gender": "M",
+            "age": "39",
+            "club_name": "-",
+            "membership_number": "211058",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2015 Oklahoma State Championships of Weightlifting",
+            "date": "2015-07-25",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Keith Martin",
+            "body_weight_kg": "84.3",
+            "snatch_1": "88",
+            "snatch_2": "92",
+            "snatch_3": "98",
+            "cj_1": "115",
+            "cj_2": "120",
+            "cj_3": "127",
+            "best_snatch": "98",
+            "best_cj": "127",
+            "total": "225"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNy0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNy0yNSIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "18",
+            "athlete_name": "Keith Martin",
+            "total": "225",
+            "gender": "M",
+            "age": "38",
+            "club_name": "-",
+            "membership_number": "211058",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 59836,
+      "athlete_name": "Keith Martin",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/59836",
+      "contaminated_lifter_id": 10168,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T04:15:00.992Z",
+      "profile_data": {
+        "membership_number": "1071619",
+        "birth_year": 1994,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Ohio",
+        "national_rank": "18"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2023 Ohio WSO Championships",
+          "date": "2023-08-20",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Keith Martin",
+          "body_weight_kg": "86.35",
+          "snatch_1": "76",
+          "snatch_2": "79",
+          "snatch_3": "-82",
+          "cj_1": "102",
+          "cj_2": "-105",
+          "cj_3": "105",
+          "best_snatch": "79",
+          "best_cj": "105",
+          "total": "184"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2023 Ohio WSO Championships",
+            "date": "2023-08-20",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Keith Martin",
+            "body_weight_kg": "86.35",
+            "snatch_1": "76",
+            "snatch_2": "79",
+            "snatch_3": "-82",
+            "cj_1": "102",
+            "cj_2": "-105",
+            "cj_3": "105",
+            "best_snatch": "79",
+            "best_cj": "105",
+            "total": "184"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wOC0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wOC0yMCIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "18",
+            "athlete_name": "Keith Martin",
+            "total": "184",
+            "gender": "M",
+            "age": "29",
+            "club_name": "-",
+            "membership_number": "1071619",
+            "wso": "Ohio"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

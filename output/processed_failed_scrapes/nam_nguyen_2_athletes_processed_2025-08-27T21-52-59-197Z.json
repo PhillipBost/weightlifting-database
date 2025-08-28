@@ -1,0 +1,191 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T04:29:53.945Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Nam Nguyen",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 3,
+    "total_reverse_lookups": 3,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 99464039
+  },
+  "data": [
+    {
+      "internal_id": 35878,
+      "athlete_name": "Nam Nguyen",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/35878",
+      "contaminated_lifter_id": 36019,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T04:29:09.902Z",
+      "profile_data": {
+        "membership_number": "1026731",
+        "birth_year": 1997,
+        "gender": "M",
+        "club_name": "BULGARIAN BARBELL CLUB",
+        "wso": "California North Central",
+        "national_rank": "46"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Midtown Open 1",
+          "date": "2018-02-10",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Nam Nguyen",
+          "body_weight_kg": "81.1",
+          "snatch_1": "50",
+          "snatch_2": "51",
+          "snatch_3": "53",
+          "cj_1": "61",
+          "cj_2": "66",
+          "cj_3": "71",
+          "best_snatch": "53",
+          "best_cj": "71",
+          "total": "124"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Midtown Open 1",
+            "date": "2018-02-10",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Nam Nguyen",
+            "body_weight_kg": "81.1",
+            "snatch_1": "50",
+            "snatch_2": "51",
+            "snatch_3": "53",
+            "cj_1": "61",
+            "cj_2": "66",
+            "cj_3": "71",
+            "best_snatch": "53",
+            "best_cj": "71",
+            "total": "124"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMi0xMCIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "46",
+            "athlete_name": "Nam Nguyen",
+            "total": "124",
+            "gender": "M",
+            "age": "21",
+            "club_name": "BULGARIAN BARBELL CLUB",
+            "membership_number": "1026731",
+            "wso": "California North Central"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 39314,
+      "athlete_name": "Nam Nguyen",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/39314",
+      "contaminated_lifter_id": 36019,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T04:29:53.944Z",
+      "profile_data": {
+        "membership_number": "1044090",
+        "birth_year": 1999,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "DMV",
+        "national_rank": "9"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Capital City Open (Men)",
+          "date": "2021-05-02",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Nam Nguyen",
+          "body_weight_kg": "85.95",
+          "snatch_1": "75",
+          "snatch_2": "80",
+          "snatch_3": "-85",
+          "cj_1": "100",
+          "cj_2": "105",
+          "cj_3": "110",
+          "best_snatch": "80",
+          "best_cj": "110",
+          "total": "190"
+        },
+        {
+          "meet_name": "Tough Temple Invitational",
+          "date": "2019-10-06",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Nam Nguyen",
+          "body_weight_kg": "76.54",
+          "snatch_1": "60",
+          "snatch_2": "67",
+          "snatch_3": "70",
+          "cj_1": "85",
+          "cj_2": "-90",
+          "cj_3": "-90",
+          "best_snatch": "70",
+          "best_cj": "85",
+          "total": "155"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Capital City Open (Men)",
+            "date": "2021-05-02",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Nam Nguyen",
+            "body_weight_kg": "85.95",
+            "snatch_1": "75",
+            "snatch_2": "80",
+            "snatch_3": "-85",
+            "cj_1": "100",
+            "cj_2": "105",
+            "cj_3": "110",
+            "best_snatch": "80",
+            "best_cj": "110",
+            "total": "190"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNS0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNS0wMiIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "Nam Nguyen",
+            "total": "190",
+            "gender": "M",
+            "age": "22",
+            "club_name": "-",
+            "membership_number": "1044090",
+            "wso": "DMV"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Tough Temple Invitational",
+            "date": "2019-10-06",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Nam Nguyen",
+            "body_weight_kg": "76.54",
+            "snatch_1": "60",
+            "snatch_2": "67",
+            "snatch_3": "70",
+            "cj_1": "85",
+            "cj_2": "-90",
+            "cj_3": "-90",
+            "best_snatch": "70",
+            "best_cj": "85",
+            "total": "155"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMC0wNiIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    }
+  ]
+}

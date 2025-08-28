@@ -1,0 +1,200 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T09:25:46.850Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Tanner Miller",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 3,
+    "total_reverse_lookups": 3,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 30816944
+  },
+  "data": [
+    {
+      "internal_id": 22362,
+      "athlete_name": "Tanner Miller",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/22362",
+      "contaminated_lifter_id": 7540,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T09:25:31.053Z",
+      "profile_data": {
+        "membership_number": "208531",
+        "birth_year": 1989,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Florida",
+        "national_rank": "8"
+      },
+      "competition_history": [
+        {
+          "meet_name": "The Iron Game Open",
+          "date": "2015-04-04",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Tanner Miller",
+          "body_weight_kg": "83.8",
+          "snatch_1": "93",
+          "snatch_2": "100",
+          "snatch_3": "107",
+          "cj_1": "125",
+          "cj_2": "-134",
+          "cj_3": "-138",
+          "best_snatch": "107",
+          "best_cj": "125",
+          "total": "232"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "The Iron Game Open",
+            "date": "2015-04-04",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Tanner Miller",
+            "body_weight_kg": "83.8",
+            "snatch_1": "93",
+            "snatch_2": "100",
+            "snatch_3": "107",
+            "cj_1": "125",
+            "cj_2": "-134",
+            "cj_3": "-138",
+            "best_snatch": "107",
+            "best_cj": "125",
+            "total": "232"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0wNCIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "8",
+            "athlete_name": "Tanner Miller",
+            "total": "232",
+            "gender": "M",
+            "age": "26",
+            "club_name": "-",
+            "membership_number": "208531",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 22580,
+      "athlete_name": "Tanner Miller",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/22580",
+      "contaminated_lifter_id": 7540,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T09:25:46.848Z",
+      "profile_data": {
+        "membership_number": "183615",
+        "birth_year": 1990,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Iowa-Nebraska",
+        "national_rank": "7"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2015 Iowa State and Open",
+          "date": "2015-12-12",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Tanner Miller",
+          "body_weight_kg": "103",
+          "snatch_1": "105",
+          "snatch_2": "-111",
+          "snatch_3": "-115",
+          "cj_1": "140",
+          "cj_2": "-145",
+          "cj_3": "-146",
+          "best_snatch": "105",
+          "best_cj": "140",
+          "total": "245"
+        },
+        {
+          "meet_name": "Des Moines Open",
+          "date": "2015-06-13",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Tanner Miller",
+          "body_weight_kg": "101.1",
+          "snatch_1": "100",
+          "snatch_2": "105",
+          "snatch_3": "110",
+          "cj_1": "130",
+          "cj_2": "136",
+          "cj_3": "140",
+          "best_snatch": "110",
+          "best_cj": "140",
+          "total": "250"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2015 Iowa State and Open",
+            "date": "2015-12-12",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Tanner Miller",
+            "body_weight_kg": "103",
+            "snatch_1": "105",
+            "snatch_2": "-111",
+            "snatch_3": "-115",
+            "cj_1": "140",
+            "cj_2": "-145",
+            "cj_3": "-146",
+            "best_snatch": "105",
+            "best_cj": "140",
+            "total": "245"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMi0xMiIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "7",
+            "athlete_name": "Tanner Miller",
+            "total": "245",
+            "gender": "M",
+            "age": "25",
+            "club_name": "-",
+            "membership_number": "183615",
+            "wso": "Iowa-Nebraska"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Des Moines Open",
+            "date": "2015-06-13",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Tanner Miller",
+            "body_weight_kg": "101.1",
+            "snatch_1": "100",
+            "snatch_2": "105",
+            "snatch_3": "110",
+            "cj_1": "130",
+            "cj_2": "136",
+            "cj_3": "140",
+            "best_snatch": "110",
+            "best_cj": "140",
+            "total": "250"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNi0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNi0xMyIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "12",
+            "athlete_name": "Tanner Miller",
+            "total": "250",
+            "gender": "M",
+            "age": "25",
+            "club_name": "-",
+            "membership_number": "183615",
+            "wso": "Iowa-Nebraska"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

@@ -1,0 +1,341 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T22:13:57.594Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Matthew Nathan",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 6,
+    "total_reverse_lookups": 6,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 76907688
+  },
+  "data": [
+    {
+      "internal_id": 35488,
+      "athlete_name": "Matthew Nathan",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/35488",
+      "contaminated_lifter_id": 15364,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T22:13:44.855Z",
+      "profile_data": {
+        "membership_number": "1020373",
+        "birth_year": 1996,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Georgia",
+        "national_rank": "6"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2019 Southern Open",
+          "date": "2019-01-05",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Matthew Nathan",
+          "body_weight_kg": "85.9",
+          "snatch_1": "100",
+          "snatch_2": "105",
+          "snatch_3": "-108",
+          "cj_1": "125",
+          "cj_2": "130",
+          "cj_3": "136",
+          "best_snatch": "105",
+          "best_cj": "136",
+          "total": "241"
+        },
+        {
+          "meet_name": "2018 Rocky Mountain State Games",
+          "date": "2018-07-29",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Matthew Nathan",
+          "body_weight_kg": "85.9",
+          "snatch_1": "-103",
+          "snatch_2": "103",
+          "snatch_3": "107",
+          "cj_1": "133",
+          "cj_2": "138",
+          "cj_3": "-142",
+          "best_snatch": "107",
+          "best_cj": "138",
+          "total": "245"
+        },
+        {
+          "meet_name": "Southern Open",
+          "date": "2018-01-06",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Matthew Nathan",
+          "body_weight_kg": "84.5",
+          "snatch_1": "100",
+          "snatch_2": "-106",
+          "snatch_3": "-110",
+          "cj_1": "-135",
+          "cj_2": "-135",
+          "cj_3": "135",
+          "best_snatch": "100",
+          "best_cj": "135",
+          "total": "235"
+        },
+        {
+          "meet_name": "Nike 2017 American Open Series 2",
+          "date": "2017-07-30",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Matthew Nathan",
+          "body_weight_kg": "83.99",
+          "snatch_1": "100",
+          "snatch_2": "-105",
+          "snatch_3": "-105",
+          "cj_1": "127",
+          "cj_2": "134",
+          "cj_3": "140",
+          "best_snatch": "100",
+          "best_cj": "140",
+          "total": "240"
+        },
+        {
+          "meet_name": "ALLSOUTH Barbell Invitational",
+          "date": "2017-06-17",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Matthew Nathan",
+          "body_weight_kg": "82.9",
+          "snatch_1": "90",
+          "snatch_2": "-95",
+          "snatch_3": "97",
+          "cj_1": "120",
+          "cj_2": "127",
+          "cj_3": "-134",
+          "best_snatch": "97",
+          "best_cj": "127",
+          "total": "224"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2019 Southern Open",
+            "date": "2019-01-05",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Matthew Nathan",
+            "body_weight_kg": "85.9",
+            "snatch_1": "100",
+            "snatch_2": "105",
+            "snatch_3": "-108",
+            "cj_1": "125",
+            "cj_2": "130",
+            "cj_3": "136",
+            "best_snatch": "105",
+            "best_cj": "136",
+            "total": "241"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0wNSIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Matthew Nathan",
+            "total": "241",
+            "gender": "M",
+            "age": "23",
+            "club_name": "-",
+            "membership_number": "1020373",
+            "wso": "Georgia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2018 Rocky Mountain State Games",
+            "date": "2018-07-29",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Matthew Nathan",
+            "body_weight_kg": "85.9",
+            "snatch_1": "-103",
+            "snatch_2": "103",
+            "snatch_3": "107",
+            "cj_1": "133",
+            "cj_2": "138",
+            "cj_3": "-142",
+            "best_snatch": "107",
+            "best_cj": "138",
+            "total": "245"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNy0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNy0yOSIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "22",
+            "athlete_name": "Matthew Nathan",
+            "total": "245",
+            "gender": "M",
+            "age": "22",
+            "club_name": "-",
+            "membership_number": "1020373",
+            "wso": "Georgia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Southern Open",
+            "date": "2018-01-06",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Matthew Nathan",
+            "body_weight_kg": "84.5",
+            "snatch_1": "100",
+            "snatch_2": "-106",
+            "snatch_3": "-110",
+            "cj_1": "-135",
+            "cj_2": "-135",
+            "cj_3": "135",
+            "best_snatch": "100",
+            "best_cj": "135",
+            "total": "235"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMS0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMS0wNiIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Matthew Nathan",
+            "total": "235",
+            "gender": "M",
+            "age": "22",
+            "club_name": "-",
+            "membership_number": "1020373",
+            "wso": "Georgia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Nike 2017 American Open Series 2",
+            "date": "2017-07-30",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Matthew Nathan",
+            "body_weight_kg": "83.99",
+            "snatch_1": "100",
+            "snatch_2": "-105",
+            "snatch_3": "-105",
+            "cj_1": "127",
+            "cj_2": "134",
+            "cj_3": "140",
+            "best_snatch": "100",
+            "best_cj": "140",
+            "total": "240"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNy0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNy0zMCIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "22",
+            "athlete_name": "Matthew Nathan",
+            "total": "240",
+            "gender": "M",
+            "age": "21",
+            "club_name": "-",
+            "membership_number": "1020373",
+            "wso": "Georgia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "ALLSOUTH Barbell Invitational",
+            "date": "2017-06-17",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Matthew Nathan",
+            "body_weight_kg": "82.9",
+            "snatch_1": "90",
+            "snatch_2": "-95",
+            "snatch_3": "97",
+            "cj_1": "120",
+            "cj_2": "127",
+            "cj_3": "-134",
+            "best_snatch": "97",
+            "best_cj": "127",
+            "total": "224"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNi0xNyIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "17",
+            "athlete_name": "Matthew Nathan",
+            "total": "224",
+            "gender": "M",
+            "age": "21",
+            "club_name": "-",
+            "membership_number": "1020373",
+            "wso": "Georgia"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 37392,
+      "athlete_name": "Matthew Nathan",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/37392",
+      "contaminated_lifter_id": 15364,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T22:13:57.592Z",
+      "profile_data": {
+        "membership_number": "208036",
+        "birth_year": 1998,
+        "gender": "M",
+        "club_name": "KINDRED WEIGHTLIFTING CLUB",
+        "wso": "Minnesota-Dakotas",
+        "national_rank": "27"
+      },
+      "competition_history": [
+        {
+          "meet_name": "North Dakota High School State Meet",
+          "date": "2015-02-21",
+          "division": "Open Men's 62 kg",
+          "lifter_name": "Matthew Nathan",
+          "body_weight_kg": "61.2",
+          "snatch_1": "50",
+          "snatch_2": "50",
+          "snatch_3": "50",
+          "cj_1": "70",
+          "cj_2": "75",
+          "cj_3": "75",
+          "best_snatch": "50",
+          "best_cj": "75",
+          "total": "125"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "North Dakota High School State Meet",
+            "date": "2015-02-21",
+            "division": "Open Men's 62 kg",
+            "lifter_name": "Matthew Nathan",
+            "body_weight_kg": "61.2",
+            "snatch_1": "50",
+            "snatch_2": "50",
+            "snatch_3": "50",
+            "cj_1": "70",
+            "cj_2": "75",
+            "cj_3": "75",
+            "best_snatch": "50",
+            "best_cj": "75",
+            "total": "125"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMi0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMi0yMSIsIndlaWdodF9jbGFzcyI6MzU1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "27",
+            "athlete_name": "Matthew Nathan",
+            "total": "125",
+            "gender": "M",
+            "age": "17",
+            "club_name": "KINDRED WEIGHTLIFTING CLUB",
+            "membership_number": "208036",
+            "wso": "Minnesota-Dakotas"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

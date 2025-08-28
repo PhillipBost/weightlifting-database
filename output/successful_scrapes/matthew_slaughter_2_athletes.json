@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T06:33:54.626Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Matthew Slaughter",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 106904720
+  },
+  "data": [
+    {
+      "internal_id": 16538,
+      "athlete_name": "Matthew Slaughter",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/16538",
+      "contaminated_lifter_id": 132,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T06:33:42.037Z",
+      "profile_data": {
+        "membership_number": "221282",
+        "birth_year": 1987,
+        "gender": "M",
+        "club_name": "Butcher Barbell",
+        "wso": "Mountain North",
+        "national_rank": "22"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Flat Irons Weightlifting Open",
+          "date": "2015-10-25",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Matthew Slaughter",
+          "body_weight_kg": "89.9",
+          "snatch_1": "105",
+          "snatch_2": "108",
+          "snatch_3": "109",
+          "cj_1": "136",
+          "cj_2": "141",
+          "cj_3": "141",
+          "best_snatch": "109",
+          "best_cj": "141",
+          "total": "250"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Flat Irons Weightlifting Open",
+            "date": "2015-10-25",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Matthew Slaughter",
+            "body_weight_kg": "89.9",
+            "snatch_1": "105",
+            "snatch_2": "108",
+            "snatch_3": "109",
+            "cj_1": "136",
+            "cj_2": "141",
+            "cj_3": "141",
+            "best_snatch": "109",
+            "best_cj": "141",
+            "total": "250"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0yNSIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "22",
+            "athlete_name": "Matthew Slaughter",
+            "total": "250",
+            "gender": "M",
+            "age": "28",
+            "club_name": "Butcher Barbell",
+            "membership_number": "221282",
+            "wso": "Mountain North"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 19708,
+      "athlete_name": "Matthew Slaughter",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/19708",
+      "contaminated_lifter_id": 132,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T06:33:54.624Z",
+      "profile_data": {
+        "membership_number": "177999",
+        "birth_year": 1988,
+        "gender": "M",
+        "club_name": "BLAZE WEIGHTLIFTING CLUB",
+        "wso": "Florida",
+        "national_rank": "6"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Blaze Barbell Throwdown",
+          "date": "2012-09-29",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Matthew Slaughter",
+          "body_weight_kg": "77",
+          "snatch_1": "65",
+          "snatch_2": "70",
+          "snatch_3": "75",
+          "cj_1": "95",
+          "cj_2": "102",
+          "cj_3": "110",
+          "best_snatch": "75",
+          "best_cj": "110",
+          "total": "185"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Blaze Barbell Throwdown",
+            "date": "2012-09-29",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Matthew Slaughter",
+            "body_weight_kg": "77",
+            "snatch_1": "65",
+            "snatch_2": "70",
+            "snatch_3": "75",
+            "cj_1": "95",
+            "cj_2": "102",
+            "cj_3": "110",
+            "best_snatch": "75",
+            "best_cj": "110",
+            "total": "185"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wOS0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wOS0yOSIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Matthew Slaughter",
+            "total": "185",
+            "gender": "M",
+            "age": "24",
+            "club_name": "BLAZE WEIGHTLIFTING CLUB",
+            "membership_number": "177999",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

@@ -1,0 +1,435 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T12:34:03.857Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Jackson Blizzard",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 8,
+    "total_reverse_lookups": 8,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 42113951
+  },
+  "data": [
+    {
+      "internal_id": 34601,
+      "athlete_name": "Jackson Blizzard",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/34601",
+      "contaminated_lifter_id": 28869,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T12:33:42.801Z",
+      "profile_data": {
+        "membership_number": "1016856",
+        "birth_year": 1996,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Carolina",
+        "national_rank": "2"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2023 Athletic Lab Weightlifting Summer Classic",
+          "date": "2023-06-03",
+          "division": "Open Men's 73kg",
+          "lifter_name": "Jackson Blizzard",
+          "body_weight_kg": "72.8",
+          "snatch_1": "92",
+          "snatch_2": "95",
+          "snatch_3": "98",
+          "cj_1": "120",
+          "cj_2": "125",
+          "cj_3": "-130",
+          "best_snatch": "98",
+          "best_cj": "125",
+          "total": "223"
+        },
+        {
+          "meet_name": "Nike 2018 American Open Series 1",
+          "date": "2018-03-04",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Jackson Blizzard",
+          "body_weight_kg": "74.45",
+          "snatch_1": "-90",
+          "snatch_2": "-90",
+          "snatch_3": "90",
+          "cj_1": "120",
+          "cj_2": "-125",
+          "cj_3": "-130",
+          "best_snatch": "90",
+          "best_cj": "120",
+          "total": "210"
+        },
+        {
+          "meet_name": "Athletic Lab Winter Classic",
+          "date": "2018-02-17",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Jackson Blizzard",
+          "body_weight_kg": "75.9",
+          "snatch_1": "-91",
+          "snatch_2": "91",
+          "snatch_3": "94",
+          "cj_1": "119",
+          "cj_2": "124",
+          "cj_3": "-130",
+          "best_snatch": "94",
+          "best_cj": "124",
+          "total": "218"
+        },
+        {
+          "meet_name": "Nike 2017 American Open Series 2",
+          "date": "2017-07-30",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Jackson Blizzard",
+          "body_weight_kg": "72.56",
+          "snatch_1": "87",
+          "snatch_2": "90",
+          "snatch_3": "-94",
+          "cj_1": "-113",
+          "cj_2": "116",
+          "cj_3": "-122",
+          "best_snatch": "90",
+          "best_cj": "116",
+          "total": "206"
+        },
+        {
+          "meet_name": "2017 East Carolina Weightlifting Open",
+          "date": "2017-03-04",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Jackson Blizzard",
+          "body_weight_kg": "72.24",
+          "snatch_1": "75",
+          "snatch_2": "80",
+          "snatch_3": "85",
+          "cj_1": "-112",
+          "cj_2": "-115",
+          "cj_3": "115",
+          "best_snatch": "85",
+          "best_cj": "115",
+          "total": "200"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2023 Athletic Lab Weightlifting Summer Classic",
+            "date": "2023-06-03",
+            "division": "Open Men's 73kg",
+            "lifter_name": "Jackson Blizzard",
+            "body_weight_kg": "72.8",
+            "snatch_1": "92",
+            "snatch_2": "95",
+            "snatch_3": "98",
+            "cj_1": "120",
+            "cj_2": "125",
+            "cj_3": "-130",
+            "best_snatch": "98",
+            "best_cj": "125",
+            "total": "223"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNi0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNi0wMyIsIndlaWdodF9jbGFzcyI6ODR9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Jackson Blizzard",
+            "total": "223",
+            "gender": "M",
+            "age": "27",
+            "club_name": "-",
+            "membership_number": "1016856",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Nike 2018 American Open Series 1",
+            "date": "2018-03-04",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Jackson Blizzard",
+            "body_weight_kg": "74.45",
+            "snatch_1": "-90",
+            "snatch_2": "-90",
+            "snatch_3": "90",
+            "cj_1": "120",
+            "cj_2": "-125",
+            "cj_3": "-130",
+            "best_snatch": "90",
+            "best_cj": "120",
+            "total": "210"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMy0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMy0wNCIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "37",
+            "athlete_name": "Jackson Blizzard",
+            "total": "210",
+            "gender": "M",
+            "age": "22",
+            "club_name": "-",
+            "membership_number": "1016856",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Athletic Lab Winter Classic",
+            "date": "2018-02-17",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Jackson Blizzard",
+            "body_weight_kg": "75.9",
+            "snatch_1": "-91",
+            "snatch_2": "91",
+            "snatch_3": "94",
+            "cj_1": "119",
+            "cj_2": "124",
+            "cj_3": "-130",
+            "best_snatch": "94",
+            "best_cj": "124",
+            "total": "218"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMi0xNyIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "Jackson Blizzard",
+            "total": "218",
+            "gender": "M",
+            "age": "22",
+            "club_name": "-",
+            "membership_number": "1016856",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Nike 2017 American Open Series 2",
+            "date": "2017-07-30",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Jackson Blizzard",
+            "body_weight_kg": "72.56",
+            "snatch_1": "87",
+            "snatch_2": "90",
+            "snatch_3": "-94",
+            "cj_1": "-113",
+            "cj_2": "116",
+            "cj_3": "-122",
+            "best_snatch": "90",
+            "best_cj": "116",
+            "total": "206"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNy0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNy0zMCIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "42",
+            "athlete_name": "Jackson Blizzard",
+            "total": "206",
+            "gender": "M",
+            "age": "21",
+            "club_name": "-",
+            "membership_number": "1016856",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2017 East Carolina Weightlifting Open",
+            "date": "2017-03-04",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Jackson Blizzard",
+            "body_weight_kg": "72.24",
+            "snatch_1": "75",
+            "snatch_2": "80",
+            "snatch_3": "85",
+            "cj_1": "-112",
+            "cj_2": "-115",
+            "cj_3": "115",
+            "best_snatch": "85",
+            "best_cj": "115",
+            "total": "200"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0wNCIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "Jackson Blizzard",
+            "total": "200",
+            "gender": "M",
+            "age": "21",
+            "club_name": "-",
+            "membership_number": "1016856",
+            "wso": "Carolina"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 42753,
+      "athlete_name": "Jackson Blizzard",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/42753",
+      "contaminated_lifter_id": 28869,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T12:34:03.855Z",
+      "profile_data": {
+        "membership_number": "1016389",
+        "birth_year": 2002,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Carolina",
+        "national_rank": "35"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Tier 1 Triple Crown",
+          "date": "2018-06-09",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Jackson Blizzard",
+          "body_weight_kg": "84.3",
+          "snatch_1": "52",
+          "snatch_2": "56",
+          "snatch_3": "61",
+          "cj_1": "64",
+          "cj_2": "68",
+          "cj_3": "71",
+          "best_snatch": "61",
+          "best_cj": "71",
+          "total": "132"
+        },
+        {
+          "meet_name": "95East Summer Classic",
+          "date": "2017-06-17",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Jackson Blizzard",
+          "body_weight_kg": "75.9",
+          "snatch_1": "39",
+          "snatch_2": "44",
+          "snatch_3": "49",
+          "cj_1": "50",
+          "cj_2": "55",
+          "cj_3": "62",
+          "best_snatch": "49",
+          "best_cj": "62",
+          "total": "111"
+        },
+        {
+          "meet_name": "2017 East Carolina Weightlifting Open",
+          "date": "2017-03-04",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Jackson Blizzard",
+          "body_weight_kg": "72.53",
+          "snatch_1": "32",
+          "snatch_2": "-35",
+          "snatch_3": "35",
+          "cj_1": "42",
+          "cj_2": "45",
+          "cj_3": "50",
+          "best_snatch": "35",
+          "best_cj": "50",
+          "total": "85"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Tier 1 Triple Crown",
+            "date": "2018-06-09",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Jackson Blizzard",
+            "body_weight_kg": "84.3",
+            "snatch_1": "52",
+            "snatch_2": "56",
+            "snatch_3": "61",
+            "cj_1": "64",
+            "cj_2": "68",
+            "cj_3": "71",
+            "best_snatch": "61",
+            "best_cj": "71",
+            "total": "132"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0wOSIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "35",
+            "athlete_name": "Jackson Blizzard",
+            "total": "132",
+            "gender": "M",
+            "age": "16",
+            "club_name": "-",
+            "membership_number": "1016389",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "95East Summer Classic",
+            "date": "2017-06-17",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Jackson Blizzard",
+            "body_weight_kg": "75.9",
+            "snatch_1": "39",
+            "snatch_2": "44",
+            "snatch_3": "49",
+            "cj_1": "50",
+            "cj_2": "55",
+            "cj_3": "62",
+            "best_snatch": "49",
+            "best_cj": "62",
+            "total": "111"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNi0xNyIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "21",
+            "athlete_name": "Jackson Blizzard",
+            "total": "111",
+            "gender": "M",
+            "age": "15",
+            "club_name": "-",
+            "membership_number": "1016389",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2017 East Carolina Weightlifting Open",
+            "date": "2017-03-04",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Jackson Blizzard",
+            "body_weight_kg": "72.53",
+            "snatch_1": "32",
+            "snatch_2": "-35",
+            "snatch_3": "35",
+            "cj_1": "42",
+            "cj_2": "45",
+            "cj_3": "50",
+            "best_snatch": "35",
+            "best_cj": "50",
+            "total": "85"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0wNCIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "Jackson Blizzard",
+            "total": "200",
+            "gender": "M",
+            "age": "21",
+            "club_name": "-",
+            "membership_number": "1016856",
+            "wso": "Carolina"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

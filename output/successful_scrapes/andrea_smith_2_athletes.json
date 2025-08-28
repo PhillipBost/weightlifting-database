@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T01:51:15.370Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Andrea Smith",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 89945464
+  },
+  "data": [
+    {
+      "internal_id": 11405,
+      "athlete_name": "Andrea Smith",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/11405",
+      "contaminated_lifter_id": 3944,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T01:51:02.714Z",
+      "profile_data": {
+        "membership_number": "188628",
+        "birth_year": 1983,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "Pacific Northwest",
+        "national_rank": "4"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Washington State Last Chance Qualifier",
+          "date": "2013-10-12",
+          "division": "Open Women's 69 kg",
+          "lifter_name": "Andrea Smith",
+          "body_weight_kg": "66.1",
+          "snatch_1": "46",
+          "snatch_2": "49",
+          "snatch_3": "51",
+          "cj_1": "59",
+          "cj_2": "59",
+          "cj_3": "64",
+          "best_snatch": "51",
+          "best_cj": "64",
+          "total": "115"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Washington State Last Chance Qualifier",
+            "date": "2013-10-12",
+            "division": "Open Women's 69 kg",
+            "lifter_name": "Andrea Smith",
+            "body_weight_kg": "66.1",
+            "snatch_1": "46",
+            "snatch_2": "49",
+            "snatch_3": "51",
+            "cj_1": "59",
+            "cj_2": "59",
+            "cj_3": "64",
+            "best_snatch": "51",
+            "best_cj": "64",
+            "total": "115"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMC0xMiIsIndlaWdodF9jbGFzcyI6MzY2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Andrea Smith",
+            "total": "115",
+            "gender": "F",
+            "age": "30",
+            "club_name": "-",
+            "membership_number": "188628",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 64283,
+      "athlete_name": "Andrea Smith",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/64283",
+      "contaminated_lifter_id": 3944,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T01:51:15.369Z",
+      "profile_data": {
+        "membership_number": "1076757",
+        "birth_year": 1981,
+        "gender": "F",
+        "club_name": "Iron Barbell Collective, LLC",
+        "wso": "Carolina",
+        "national_rank": "7"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2024 Carolinas WSO Championships",
+          "date": "2024-10-19",
+          "division": "Women's Masters (40-44) +87kg",
+          "lifter_name": "Andrea Smith",
+          "body_weight_kg": "110",
+          "snatch_1": "45",
+          "snatch_2": "48",
+          "snatch_3": "-52",
+          "cj_1": "65",
+          "cj_2": "70",
+          "cj_3": "-75",
+          "best_snatch": "48",
+          "best_cj": "70",
+          "total": "118"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2024 Carolinas WSO Championships",
+            "date": "2024-10-19",
+            "division": "Women's Masters (40-44) +87kg",
+            "lifter_name": "Andrea Smith",
+            "body_weight_kg": "110",
+            "snatch_1": "45",
+            "snatch_2": "48",
+            "snatch_3": "-52",
+            "cj_1": "65",
+            "cj_2": "70",
+            "cj_3": "-75",
+            "best_snatch": "48",
+            "best_cj": "70",
+            "total": "118"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0xOSIsIndlaWdodF9jbGFzcyI6MTQwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "7",
+            "athlete_name": "Andrea Smith",
+            "total": "118",
+            "gender": "F",
+            "age": "43",
+            "club_name": "Iron Barbell Collective, LLC",
+            "membership_number": "1076757",
+            "wso": "Carolina"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

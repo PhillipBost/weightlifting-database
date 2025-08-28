@@ -1,0 +1,435 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T18:21:53.714Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Jessica Anderson",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 8,
+    "total_reverse_lookups": 8,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 62983808
+  },
+  "data": [
+    {
+      "internal_id": 61983,
+      "athlete_name": "Jessica Anderson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/61983",
+      "contaminated_lifter_id": 41187,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T18:21:35.140Z",
+      "profile_data": {
+        "membership_number": "1074908",
+        "birth_year": 2015,
+        "gender": "F",
+        "club_name": "Del Mar Power",
+        "wso": "California North Central",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Strength Tank Winter Invitational",
+          "date": "2025-02-01",
+          "division": "Women's 13 Under Age Group 30kg",
+          "lifter_name": "Jessica Anderson",
+          "body_weight_kg": "27.4",
+          "snatch_1": "10",
+          "snatch_2": "11",
+          "snatch_3": "12",
+          "cj_1": "16",
+          "cj_2": "17",
+          "cj_3": "18",
+          "best_snatch": "12",
+          "best_cj": "18",
+          "total": "30"
+        },
+        {
+          "meet_name": "LAST CHANCE QUALIFIER",
+          "date": "2024-11-02",
+          "division": "Women's 13 Under Age Group 45kg",
+          "lifter_name": "Jessica Anderson",
+          "body_weight_kg": "41.4",
+          "snatch_1": "14",
+          "snatch_2": "15",
+          "snatch_3": "16",
+          "cj_1": "17",
+          "cj_2": "18",
+          "cj_3": "19",
+          "best_snatch": "16",
+          "best_cj": "19",
+          "total": "35"
+        },
+        {
+          "meet_name": "Fall Face Off",
+          "date": "2024-10-05",
+          "division": "Women's 13 Under Age Group 30kg",
+          "lifter_name": "Jessica Anderson",
+          "body_weight_kg": "26",
+          "snatch_1": "10",
+          "snatch_2": "11",
+          "snatch_3": "12",
+          "cj_1": "11",
+          "cj_2": "12",
+          "cj_3": "13",
+          "best_snatch": "12",
+          "best_cj": "13",
+          "total": "25"
+        },
+        {
+          "meet_name": "Bakersfield Barbell Bonanza 2024",
+          "date": "2024-05-05",
+          "division": "Women's 13 Under Age Group 30kg",
+          "lifter_name": "Jessica Anderson",
+          "body_weight_kg": "24.95",
+          "snatch_1": "8",
+          "snatch_2": "-13",
+          "snatch_3": "13",
+          "cj_1": "13",
+          "cj_2": "15",
+          "cj_3": "-16",
+          "best_snatch": "13",
+          "best_cj": "15",
+          "total": "28"
+        },
+        {
+          "meet_name": "Barbarian Barbell presents April Pulls 5!",
+          "date": "2024-04-13",
+          "division": "Women's 13 Under Age Group 30kg",
+          "lifter_name": "Jessica Anderson",
+          "body_weight_kg": "25.35",
+          "snatch_1": "8",
+          "snatch_2": "9",
+          "snatch_3": "10",
+          "cj_1": "11",
+          "cj_2": "14",
+          "cj_3": "-16",
+          "best_snatch": "10",
+          "best_cj": "14",
+          "total": "24"
+        },
+        {
+          "meet_name": "Bakersfield 2024 - National Qualifier",
+          "date": "2024-03-15",
+          "division": "Women's 13 Under Age Group 30kg",
+          "lifter_name": "Jessica Anderson",
+          "body_weight_kg": "24.7",
+          "snatch_1": "7",
+          "snatch_2": "9",
+          "snatch_3": "12",
+          "cj_1": "-11",
+          "cj_2": "11",
+          "cj_3": "-13",
+          "best_snatch": "12",
+          "best_cj": "11",
+          "total": "23"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Strength Tank Winter Invitational",
+            "date": "2025-02-01",
+            "division": "Women's 13 Under Age Group 30kg",
+            "lifter_name": "Jessica Anderson",
+            "body_weight_kg": "27.4",
+            "snatch_1": "10",
+            "snatch_2": "11",
+            "snatch_3": "12",
+            "cj_1": "16",
+            "cj_2": "17",
+            "cj_3": "18",
+            "best_snatch": "12",
+            "best_cj": "18",
+            "total": "30"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMi0wMSIsIndlaWdodF9jbGFzcyI6NTF9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Jessica Anderson",
+            "total": "30",
+            "gender": "F",
+            "age": "10",
+            "club_name": "Del Mar Power",
+            "membership_number": "1074908",
+            "wso": "California North Central"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "LAST CHANCE QUALIFIER",
+            "date": "2024-11-02",
+            "division": "Women's 13 Under Age Group 45kg",
+            "lifter_name": "Jessica Anderson",
+            "body_weight_kg": "41.4",
+            "snatch_1": "14",
+            "snatch_2": "15",
+            "snatch_3": "16",
+            "cj_1": "17",
+            "cj_2": "18",
+            "cj_3": "19",
+            "best_snatch": "16",
+            "best_cj": "19",
+            "total": "35"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMS0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMS0wMiIsIndlaWdodF9jbGFzcyI6NTV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Jessica Anderson",
+            "total": "35",
+            "gender": "F",
+            "age": "9",
+            "club_name": "Del Mar Power",
+            "membership_number": "1074908",
+            "wso": "California North Central"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Fall Face Off",
+            "date": "2024-10-05",
+            "division": "Women's 13 Under Age Group 30kg",
+            "lifter_name": "Jessica Anderson",
+            "body_weight_kg": "26",
+            "snatch_1": "10",
+            "snatch_2": "11",
+            "snatch_3": "12",
+            "cj_1": "11",
+            "cj_2": "12",
+            "cj_3": "13",
+            "best_snatch": "12",
+            "best_cj": "13",
+            "total": "25"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0wNSIsIndlaWdodF9jbGFzcyI6NTF9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Jessica Anderson",
+            "total": "25",
+            "gender": "F",
+            "age": "9",
+            "club_name": "Team Juanatas-Bowens",
+            "membership_number": "1074908",
+            "wso": "California North Central"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Bakersfield Barbell Bonanza 2024",
+            "date": "2024-05-05",
+            "division": "Women's 13 Under Age Group 30kg",
+            "lifter_name": "Jessica Anderson",
+            "body_weight_kg": "24.95",
+            "snatch_1": "8",
+            "snatch_2": "-13",
+            "snatch_3": "13",
+            "cj_1": "13",
+            "cj_2": "15",
+            "cj_3": "-16",
+            "best_snatch": "13",
+            "best_cj": "15",
+            "total": "28"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNS0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNS0wNSIsIndlaWdodF9jbGFzcyI6NTF9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Jessica Anderson",
+            "total": "28",
+            "gender": "F",
+            "age": "9",
+            "club_name": "Team Juanatas-Bowens",
+            "membership_number": "1074908",
+            "wso": "California North Central"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Barbarian Barbell presents April Pulls 5!",
+            "date": "2024-04-13",
+            "division": "Women's 13 Under Age Group 30kg",
+            "lifter_name": "Jessica Anderson",
+            "body_weight_kg": "25.35",
+            "snatch_1": "8",
+            "snatch_2": "9",
+            "snatch_3": "10",
+            "cj_1": "11",
+            "cj_2": "14",
+            "cj_3": "-16",
+            "best_snatch": "10",
+            "best_cj": "14",
+            "total": "24"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNC0xMyIsIndlaWdodF9jbGFzcyI6NTF9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Jessica Anderson",
+            "total": "24",
+            "gender": "F",
+            "age": "9",
+            "club_name": "Team Juanatas-Bowens",
+            "membership_number": "1074908",
+            "wso": "California North Central"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Bakersfield 2024 - National Qualifier",
+            "date": "2024-03-15",
+            "division": "Women's 13 Under Age Group 30kg",
+            "lifter_name": "Jessica Anderson",
+            "body_weight_kg": "24.7",
+            "snatch_1": "7",
+            "snatch_2": "9",
+            "snatch_3": "12",
+            "cj_1": "-11",
+            "cj_2": "11",
+            "cj_3": "-13",
+            "best_snatch": "12",
+            "best_cj": "11",
+            "total": "23"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMy0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMy0xNSIsIndlaWdodF9jbGFzcyI6NTF9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Jessica Anderson",
+            "total": "23",
+            "gender": "F",
+            "age": "9",
+            "club_name": "Team Juanatas-Bowens",
+            "membership_number": "1074908",
+            "wso": "California North Central"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 13636,
+      "athlete_name": "Jessica Anderson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/13636",
+      "contaminated_lifter_id": 41187,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T18:21:53.712Z",
+      "profile_data": {
+        "membership_number": "1039438",
+        "birth_year": 1985,
+        "gender": "F",
+        "club_name": "CHASING KILOS WEIGHTLIFTING",
+        "wso": "New York",
+        "national_rank": "21"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Brooklyn Barbell Open",
+          "date": "2019-08-18",
+          "division": "Open Women's 71kg",
+          "lifter_name": "Jessica Anderson",
+          "body_weight_kg": "68.6",
+          "snatch_1": "36",
+          "snatch_2": "38",
+          "snatch_3": "41",
+          "cj_1": "53",
+          "cj_2": "56",
+          "cj_3": "59",
+          "best_snatch": "41",
+          "best_cj": "59",
+          "total": "100"
+        },
+        {
+          "meet_name": "2019 LBH Classic",
+          "date": "2019-03-23",
+          "division": "Open Women's 71kg",
+          "lifter_name": "Jessica Anderson",
+          "body_weight_kg": "66.7",
+          "snatch_1": "36",
+          "snatch_2": "39",
+          "snatch_3": "-43",
+          "cj_1": "52",
+          "cj_2": "55",
+          "cj_3": "57",
+          "best_snatch": "39",
+          "best_cj": "57",
+          "total": "96"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Brooklyn Barbell Open",
+            "date": "2019-08-18",
+            "division": "Open Women's 71kg",
+            "lifter_name": "Jessica Anderson",
+            "body_weight_kg": "68.6",
+            "snatch_1": "36",
+            "snatch_2": "38",
+            "snatch_3": "41",
+            "cj_1": "53",
+            "cj_2": "56",
+            "cj_3": "59",
+            "best_snatch": "41",
+            "best_cj": "59",
+            "total": "100"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOC0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOC0xOCIsIndlaWdodF9jbGFzcyI6OTZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "21",
+            "athlete_name": "Jessica Anderson",
+            "total": "100",
+            "gender": "F",
+            "age": "34",
+            "club_name": "CHASING KILOS WEIGHTLIFTING",
+            "membership_number": "1039438",
+            "wso": "New York"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2019 LBH Classic",
+            "date": "2019-03-23",
+            "division": "Open Women's 71kg",
+            "lifter_name": "Jessica Anderson",
+            "body_weight_kg": "66.7",
+            "snatch_1": "36",
+            "snatch_2": "39",
+            "snatch_3": "-43",
+            "cj_1": "52",
+            "cj_2": "55",
+            "cj_3": "57",
+            "best_snatch": "39",
+            "best_cj": "57",
+            "total": "96"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMy0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMy0yMyIsIndlaWdodF9jbGFzcyI6OTZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "11",
+            "athlete_name": "Jessica Anderson",
+            "total": "96",
+            "gender": "F",
+            "age": "34",
+            "club_name": "CHASING KILOS WEIGHTLIFTING",
+            "membership_number": "1039438",
+            "wso": "New York"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

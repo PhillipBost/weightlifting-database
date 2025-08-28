@@ -1,0 +1,238 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T18:34:33.637Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Lauren Sanders",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 4,
+    "total_reverse_lookups": 4,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 63743731
+  },
+  "data": [
+    {
+      "internal_id": 65304,
+      "athlete_name": "Lauren Sanders",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/65304",
+      "contaminated_lifter_id": 51467,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T18:34:15.661Z",
+      "profile_data": {
+        "membership_number": "1080060",
+        "birth_year": 1995,
+        "gender": "F",
+        "club_name": "Tri State Barbell",
+        "wso": "New Jersey",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "TriState In House Meet",
+          "date": "2025-07-20",
+          "division": "Open Women's 86+kg",
+          "lifter_name": "Lauren Sanders",
+          "body_weight_kg": "89.2",
+          "snatch_1": "47",
+          "snatch_2": "50",
+          "snatch_3": "53",
+          "cj_1": "64",
+          "cj_2": "67",
+          "cj_3": "70",
+          "best_snatch": "53",
+          "best_cj": "70",
+          "total": "123"
+        },
+        {
+          "meet_name": "West Essex Open",
+          "date": "2025-01-26",
+          "division": "Open Women's +87kg",
+          "lifter_name": "Lauren Sanders",
+          "body_weight_kg": "87.25",
+          "snatch_1": "45",
+          "snatch_2": "48",
+          "snatch_3": "-53",
+          "cj_1": "58",
+          "cj_2": "64",
+          "cj_3": "70",
+          "best_snatch": "48",
+          "best_cj": "70",
+          "total": "118"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "TriState In House Meet",
+            "date": "2025-07-20",
+            "division": "Open Women's 86+kg",
+            "lifter_name": "Lauren Sanders",
+            "body_weight_kg": "89.2",
+            "snatch_1": "47",
+            "snatch_2": "50",
+            "snatch_3": "53",
+            "cj_1": "64",
+            "cj_2": "67",
+            "cj_3": "70",
+            "best_snatch": "53",
+            "best_cj": "70",
+            "total": "123"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNy0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNy0yMCIsIndlaWdodF9jbGFzcyI6NzAyfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Lauren Sanders",
+            "total": "123",
+            "gender": "F",
+            "age": "30",
+            "club_name": "Tri State Barbell",
+            "membership_number": "1080060",
+            "wso": "New Jersey"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "West Essex Open",
+            "date": "2025-01-26",
+            "division": "Open Women's +87kg",
+            "lifter_name": "Lauren Sanders",
+            "body_weight_kg": "87.25",
+            "snatch_1": "45",
+            "snatch_2": "48",
+            "snatch_3": "-53",
+            "cj_1": "58",
+            "cj_2": "64",
+            "cj_3": "70",
+            "best_snatch": "48",
+            "best_cj": "70",
+            "total": "118"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMS0yNiIsIndlaWdodF9jbGFzcyI6MTAwfQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    },
+    {
+      "internal_id": 53182,
+      "athlete_name": "Lauren Sanders",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/53182",
+      "contaminated_lifter_id": 51467,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T18:34:33.635Z",
+      "profile_data": {
+        "membership_number": "1061344",
+        "birth_year": 2003,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "Florida",
+        "national_rank": "29"
+      },
+      "competition_history": [
+        {
+          "meet_name": "O.C. States Qualifier",
+          "date": "2022-04-30",
+          "division": "Open Women's 64kg",
+          "lifter_name": "Lauren Sanders",
+          "body_weight_kg": "62.75",
+          "snatch_1": "34",
+          "snatch_2": "38",
+          "snatch_3": "40",
+          "cj_1": "49",
+          "cj_2": "53",
+          "cj_3": "56",
+          "best_snatch": "40",
+          "best_cj": "56",
+          "total": "96"
+        },
+        {
+          "meet_name": "February Fortis et  Fortior",
+          "date": "2022-02-26",
+          "division": "Junior Women's 64kg",
+          "lifter_name": "Lauren Sanders",
+          "body_weight_kg": "60.52",
+          "snatch_1": "31",
+          "snatch_2": "35",
+          "snatch_3": "37",
+          "cj_1": "47",
+          "cj_2": "51",
+          "cj_3": "53",
+          "best_snatch": "37",
+          "best_cj": "53",
+          "total": "90"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "O.C. States Qualifier",
+            "date": "2022-04-30",
+            "division": "Open Women's 64kg",
+            "lifter_name": "Lauren Sanders",
+            "body_weight_kg": "62.75",
+            "snatch_1": "34",
+            "snatch_2": "38",
+            "snatch_3": "40",
+            "cj_1": "49",
+            "cj_2": "53",
+            "cj_3": "56",
+            "best_snatch": "40",
+            "best_cj": "56",
+            "total": "96"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNC0zMCIsIndlaWdodF9jbGFzcyI6OTV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "29",
+            "athlete_name": "Lauren Sanders",
+            "total": "96",
+            "gender": "F",
+            "age": "19",
+            "club_name": "-",
+            "membership_number": "1061344",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "February Fortis et  Fortior",
+            "date": "2022-02-26",
+            "division": "Junior Women's 64kg",
+            "lifter_name": "Lauren Sanders",
+            "body_weight_kg": "60.52",
+            "snatch_1": "31",
+            "snatch_2": "35",
+            "snatch_3": "37",
+            "cj_1": "47",
+            "cj_2": "51",
+            "cj_3": "53",
+            "best_snatch": "37",
+            "best_cj": "53",
+            "total": "90"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMi0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMi0yNiIsIndlaWdodF9jbGFzcyI6NzV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Lauren Sanders",
+            "total": "90",
+            "gender": "F",
+            "age": "19",
+            "club_name": "-",
+            "membership_number": "1061344",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

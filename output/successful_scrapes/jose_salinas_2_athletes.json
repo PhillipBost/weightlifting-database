@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T09:26:05.649Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Jose Salinas",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 30835743
+  },
+  "data": [
+    {
+      "internal_id": 52609,
+      "athlete_name": "Jose Salinas",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/52609",
+      "contaminated_lifter_id": 7558,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T09:25:55.632Z",
+      "profile_data": {
+        "membership_number": "1060119",
+        "birth_year": 2000,
+        "gender": "M",
+        "club_name": "Bexar Barbell",
+        "wso": "Texas-Oklahoma",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2022 AUSTIN CITY WEIGHTLIFTING ♥ CUPID  QUALIFIER",
+          "date": "2022-02-21",
+          "division": "Open Men's 96kg",
+          "lifter_name": "Jose Salinas",
+          "body_weight_kg": "96",
+          "snatch_1": "68",
+          "snatch_2": "71",
+          "snatch_3": "74",
+          "cj_1": "93",
+          "cj_2": "97",
+          "cj_3": "100",
+          "best_snatch": "74",
+          "best_cj": "100",
+          "total": "174"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2022 AUSTIN CITY WEIGHTLIFTING ♥ CUPID  QUALIFIER",
+            "date": "2022-02-21",
+            "division": "Open Men's 96kg",
+            "lifter_name": "Jose Salinas",
+            "body_weight_kg": "96",
+            "snatch_1": "68",
+            "snatch_2": "71",
+            "snatch_3": "74",
+            "cj_1": "93",
+            "cj_2": "97",
+            "cj_3": "100",
+            "best_snatch": "74",
+            "best_cj": "100",
+            "total": "174"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wMi0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wMi0yMSIsIndlaWdodF9jbGFzcyI6ODd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Jose Salinas",
+            "total": "174",
+            "gender": "M",
+            "age": "22",
+            "club_name": "Bexar Barbell",
+            "membership_number": "1060119",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 9709,
+      "athlete_name": "Jose Salinas",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/9709",
+      "contaminated_lifter_id": 7558,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T09:26:05.646Z",
+      "profile_data": {
+        "membership_number": "208384",
+        "birth_year": 1982,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Florida",
+        "national_rank": "26"
+      },
+      "competition_history": [
+        {
+          "meet_name": "The Iron Game Open",
+          "date": "2015-04-04",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Jose Salinas",
+          "body_weight_kg": "70.75",
+          "snatch_1": "-65",
+          "snatch_2": "-65",
+          "snatch_3": "65",
+          "cj_1": "80",
+          "cj_2": "85",
+          "cj_3": "90",
+          "best_snatch": "65",
+          "best_cj": "90",
+          "total": "155"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "The Iron Game Open",
+            "date": "2015-04-04",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Jose Salinas",
+            "body_weight_kg": "70.75",
+            "snatch_1": "-65",
+            "snatch_2": "-65",
+            "snatch_3": "65",
+            "cj_1": "80",
+            "cj_2": "85",
+            "cj_3": "90",
+            "best_snatch": "65",
+            "best_cj": "90",
+            "total": "155"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0wNCIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "26",
+            "athlete_name": "Jose Salinas",
+            "total": "155",
+            "gender": "M",
+            "age": "33",
+            "club_name": "-",
+            "membership_number": "208384",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

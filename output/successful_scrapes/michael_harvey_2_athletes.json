@@ -1,0 +1,247 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T09:55:12.297Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Michael Harvey",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 4,
+    "total_reverse_lookups": 4,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 32582391
+  },
+  "data": [
+    {
+      "internal_id": 4208,
+      "athlete_name": "Michael Harvey",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/4208",
+      "contaminated_lifter_id": 9862,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T09:55:02.456Z",
+      "profile_data": {
+        "membership_number": "199515",
+        "birth_year": 1975,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Southern",
+        "national_rank": "23"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2015 Masters World Cup",
+          "date": "2015-08-13",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Michael Harvey",
+          "body_weight_kg": "89.37",
+          "snatch_1": "80",
+          "snatch_2": "85",
+          "snatch_3": "-90",
+          "cj_1": "100",
+          "cj_2": "-105",
+          "cj_3": "-105",
+          "best_snatch": "85",
+          "best_cj": "100",
+          "total": "185"
+        },
+        {
+          "meet_name": "CrossFit NOLA Open",
+          "date": "2015-04-04",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Michael Harvey",
+          "body_weight_kg": "92",
+          "snatch_1": "80",
+          "snatch_2": "85",
+          "snatch_3": "-88",
+          "cj_1": "101",
+          "cj_2": "106",
+          "cj_3": "110",
+          "best_snatch": "85",
+          "best_cj": "110",
+          "total": "195"
+        },
+        {
+          "meet_name": "Louisiana Christmas Invit.",
+          "date": "2014-12-20",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Michael Harvey",
+          "body_weight_kg": "93.7",
+          "snatch_1": "75",
+          "snatch_2": "80",
+          "snatch_3": "80",
+          "cj_1": "95",
+          "cj_2": "100",
+          "cj_3": "105",
+          "best_snatch": "80",
+          "best_cj": "105",
+          "total": "185"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2015 Masters World Cup",
+            "date": "2015-08-13",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Michael Harvey",
+            "body_weight_kg": "89.37",
+            "snatch_1": "80",
+            "snatch_2": "85",
+            "snatch_3": "-90",
+            "cj_1": "100",
+            "cj_2": "-105",
+            "cj_3": "-105",
+            "best_snatch": "85",
+            "best_cj": "100",
+            "total": "185"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOC0xMyIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "23",
+            "athlete_name": "Michael Harvey",
+            "total": "185",
+            "gender": "M",
+            "age": "40",
+            "club_name": "-",
+            "membership_number": "199515",
+            "wso": "Southern"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "CrossFit NOLA Open",
+            "date": "2015-04-04",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Michael Harvey",
+            "body_weight_kg": "92",
+            "snatch_1": "80",
+            "snatch_2": "85",
+            "snatch_3": "-88",
+            "cj_1": "101",
+            "cj_2": "106",
+            "cj_3": "110",
+            "best_snatch": "85",
+            "best_cj": "110",
+            "total": "195"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0wNCIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "24",
+            "athlete_name": "Michael Harvey",
+            "total": "195",
+            "gender": "M",
+            "age": "40",
+            "club_name": "-",
+            "membership_number": "199515",
+            "wso": "Southern"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Louisiana Christmas Invit.",
+            "date": "2014-12-20",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Michael Harvey",
+            "body_weight_kg": "93.7",
+            "snatch_1": "75",
+            "snatch_2": "80",
+            "snatch_3": "80",
+            "cj_1": "95",
+            "cj_2": "100",
+            "cj_3": "105",
+            "best_snatch": "80",
+            "best_cj": "105",
+            "total": "185"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMi0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMi0yMCIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "18",
+            "athlete_name": "Michael Harvey",
+            "total": "185",
+            "gender": "M",
+            "age": "39",
+            "club_name": "-",
+            "membership_number": "199515",
+            "wso": "Southern"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 27464,
+      "athlete_name": "Michael Harvey",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/27464",
+      "contaminated_lifter_id": 9862,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T09:55:12.294Z",
+      "profile_data": {
+        "membership_number": "213009",
+        "birth_year": 1992,
+        "gender": "M",
+        "club_name": "WEBER STATE WEIGHTLIFTING",
+        "wso": "Mountain South",
+        "national_rank": "18"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Summer Slang",
+          "date": "2015-06-13",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Michael Harvey",
+          "body_weight_kg": "91.17",
+          "snatch_1": "90",
+          "snatch_2": "100",
+          "snatch_3": "105",
+          "cj_1": "115",
+          "cj_2": "120",
+          "cj_3": "-125",
+          "best_snatch": "105",
+          "best_cj": "120",
+          "total": "225"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Summer Slang",
+            "date": "2015-06-13",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Michael Harvey",
+            "body_weight_kg": "91.17",
+            "snatch_1": "90",
+            "snatch_2": "100",
+            "snatch_3": "105",
+            "cj_1": "115",
+            "cj_2": "120",
+            "cj_3": "-125",
+            "best_snatch": "105",
+            "best_cj": "120",
+            "total": "225"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNi0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNi0xMyIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "18",
+            "athlete_name": "Michael Harvey",
+            "total": "225",
+            "gender": "M",
+            "age": "23",
+            "club_name": "WEBER STATE WEIGHTLIFTING",
+            "membership_number": "213009",
+            "wso": "Mountain South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

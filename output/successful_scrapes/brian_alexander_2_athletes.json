@@ -1,0 +1,435 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T15:43:33.221Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Brian Alexander",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 8,
+    "total_reverse_lookups": 8,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 53483315
+  },
+  "data": [
+    {
+      "internal_id": 6438,
+      "athlete_name": "Brian Alexander",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/6438",
+      "contaminated_lifter_id": 9224,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T15:43:23.254Z",
+      "profile_data": {
+        "membership_number": "1037480",
+        "birth_year": 1979,
+        "gender": "M",
+        "club_name": "Belmont Barbell Club",
+        "wso": "Carolina",
+        "national_rank": "31"
+      },
+      "competition_history": [
+        {
+          "meet_name": "QUEEN CITY CLASSIC VIII",
+          "date": "2025-05-10",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Brian Alexander",
+          "body_weight_kg": "86.3",
+          "snatch_1": "77",
+          "snatch_2": "82",
+          "snatch_3": "-87",
+          "cj_1": "95",
+          "cj_2": "99",
+          "cj_3": "-102",
+          "best_snatch": "82",
+          "best_cj": "99",
+          "total": "181"
+        },
+        {
+          "meet_name": "Asheville Small Business Benefit",
+          "date": "2025-02-08",
+          "division": "Men's Masters (45-49) 89kg",
+          "lifter_name": "Brian Alexander",
+          "body_weight_kg": "84.6",
+          "snatch_1": "-77",
+          "snatch_2": "77",
+          "snatch_3": "80",
+          "cj_1": "96",
+          "cj_2": "100",
+          "cj_3": "-104",
+          "best_snatch": "80",
+          "best_cj": "100",
+          "total": "180"
+        },
+        {
+          "meet_name": "Five Rings Weightlifting Kumite",
+          "date": "2023-01-14",
+          "division": "Men's Masters (40-44) 89kg",
+          "lifter_name": "Brian Alexander",
+          "body_weight_kg": "83.7",
+          "snatch_1": "78",
+          "snatch_2": "82",
+          "snatch_3": "86",
+          "cj_1": "97",
+          "cj_2": "100",
+          "cj_3": "104",
+          "best_snatch": "86",
+          "best_cj": "104",
+          "total": "190"
+        },
+        {
+          "meet_name": "QUEEN CITY CLASSIC 2022",
+          "date": "2022-05-21",
+          "division": "Men's Masters (40-44) 81kg",
+          "lifter_name": "Brian Alexander",
+          "body_weight_kg": "80.75",
+          "snatch_1": "73",
+          "snatch_2": "78",
+          "snatch_3": "-84",
+          "cj_1": "85",
+          "cj_2": "92",
+          "cj_3": "96",
+          "best_snatch": "78",
+          "best_cj": "96",
+          "total": "174"
+        },
+        {
+          "meet_name": "Belmont Barbell In House Qualifier",
+          "date": "2019-09-22",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Brian Alexander",
+          "body_weight_kg": "80.7",
+          "snatch_1": "70",
+          "snatch_2": "75",
+          "snatch_3": "-81",
+          "cj_1": "85",
+          "cj_2": "90",
+          "cj_3": "94",
+          "best_snatch": "75",
+          "best_cj": "94",
+          "total": "169"
+        },
+        {
+          "meet_name": "Battle For The Fallen 3",
+          "date": "2019-07-13",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Brian Alexander",
+          "body_weight_kg": "77.7",
+          "snatch_1": "70",
+          "snatch_2": "76",
+          "snatch_3": "-81",
+          "cj_1": "90",
+          "cj_2": "94",
+          "cj_3": "100",
+          "best_snatch": "76",
+          "best_cj": "100",
+          "total": "176"
+        },
+        {
+          "meet_name": "QUEEN CITY CLASSIC 2019",
+          "date": "2019-03-24",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Brian Alexander",
+          "body_weight_kg": "76.8",
+          "snatch_1": "-75",
+          "snatch_2": "-77",
+          "snatch_3": "80",
+          "cj_1": "88",
+          "cj_2": "93",
+          "cj_3": "-100",
+          "best_snatch": "80",
+          "best_cj": "93",
+          "total": "173"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "QUEEN CITY CLASSIC VIII",
+            "date": "2025-05-10",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Brian Alexander",
+            "body_weight_kg": "86.3",
+            "snatch_1": "77",
+            "snatch_2": "82",
+            "snatch_3": "-87",
+            "cj_1": "95",
+            "cj_2": "99",
+            "cj_3": "-102",
+            "best_snatch": "82",
+            "best_cj": "99",
+            "total": "181"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNS0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNS0xMCIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "31",
+            "athlete_name": "Brian Alexander",
+            "total": "181",
+            "gender": "M",
+            "age": "46",
+            "club_name": "Belmont Barbell Club",
+            "membership_number": "1037480",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Asheville Small Business Benefit",
+            "date": "2025-02-08",
+            "division": "Men's Masters (45-49) 89kg",
+            "lifter_name": "Brian Alexander",
+            "body_weight_kg": "84.6",
+            "snatch_1": "-77",
+            "snatch_2": "77",
+            "snatch_3": "80",
+            "cj_1": "96",
+            "cj_2": "100",
+            "cj_3": "-104",
+            "best_snatch": "80",
+            "best_cj": "100",
+            "total": "180"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMi0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMi0wOCIsIndlaWdodF9jbGFzcyI6MTQ2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Brian Alexander",
+            "total": "180",
+            "gender": "M",
+            "age": "46",
+            "club_name": "Belmont Barbell Club",
+            "membership_number": "1037480",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Five Rings Weightlifting Kumite",
+            "date": "2023-01-14",
+            "division": "Men's Masters (40-44) 89kg",
+            "lifter_name": "Brian Alexander",
+            "body_weight_kg": "83.7",
+            "snatch_1": "78",
+            "snatch_2": "82",
+            "snatch_3": "86",
+            "cj_1": "97",
+            "cj_2": "100",
+            "cj_3": "104",
+            "best_snatch": "86",
+            "best_cj": "104",
+            "total": "190"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMS0xNCIsIndlaWdodF9jbGFzcyI6MTI2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Brian Alexander",
+            "total": "190",
+            "gender": "M",
+            "age": "44",
+            "club_name": "Belmont Barbell Club",
+            "membership_number": "1037480",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "QUEEN CITY CLASSIC 2022",
+            "date": "2022-05-21",
+            "division": "Men's Masters (40-44) 81kg",
+            "lifter_name": "Brian Alexander",
+            "body_weight_kg": "80.75",
+            "snatch_1": "73",
+            "snatch_2": "78",
+            "snatch_3": "-84",
+            "cj_1": "85",
+            "cj_2": "92",
+            "cj_3": "96",
+            "best_snatch": "78",
+            "best_cj": "96",
+            "total": "174"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNS0yMSIsIndlaWdodF9jbGFzcyI6MTI1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "Brian Alexander",
+            "total": "174",
+            "gender": "M",
+            "age": "43",
+            "club_name": "Belmont Barbell",
+            "membership_number": "1037480",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Belmont Barbell In House Qualifier",
+            "date": "2019-09-22",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Brian Alexander",
+            "body_weight_kg": "80.7",
+            "snatch_1": "70",
+            "snatch_2": "75",
+            "snatch_3": "-81",
+            "cj_1": "85",
+            "cj_2": "90",
+            "cj_3": "94",
+            "best_snatch": "75",
+            "best_cj": "94",
+            "total": "169"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOS0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOS0yMiIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "22",
+            "athlete_name": "Brian Alexander",
+            "total": "169",
+            "gender": "M",
+            "age": "40",
+            "club_name": "Belmont Barbell",
+            "membership_number": "1037480",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Battle For The Fallen 3",
+            "date": "2019-07-13",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Brian Alexander",
+            "body_weight_kg": "77.7",
+            "snatch_1": "70",
+            "snatch_2": "76",
+            "snatch_3": "-81",
+            "cj_1": "90",
+            "cj_2": "94",
+            "cj_3": "100",
+            "best_snatch": "76",
+            "best_cj": "100",
+            "total": "176"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0xMyIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "24",
+            "athlete_name": "Brian Alexander",
+            "total": "176",
+            "gender": "M",
+            "age": "40",
+            "club_name": "Belmont Barbell",
+            "membership_number": "1037480",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "QUEEN CITY CLASSIC 2019",
+            "date": "2019-03-24",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Brian Alexander",
+            "body_weight_kg": "76.8",
+            "snatch_1": "-75",
+            "snatch_2": "-77",
+            "snatch_3": "80",
+            "cj_1": "88",
+            "cj_2": "93",
+            "cj_3": "-100",
+            "best_snatch": "80",
+            "best_cj": "93",
+            "total": "173"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMy0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMy0yNCIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "21",
+            "athlete_name": "Brian Alexander",
+            "total": "173",
+            "gender": "M",
+            "age": "40",
+            "club_name": "Belmont Barbell",
+            "membership_number": "1037480",
+            "wso": "Carolina"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 7877,
+      "athlete_name": "Brian Alexander",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/7877",
+      "contaminated_lifter_id": 9224,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T15:43:33.219Z",
+      "profile_data": {
+        "membership_number": "197295",
+        "birth_year": 1980,
+        "gender": "M",
+        "club_name": "ILLUMINE BARBELL CLUB",
+        "wso": "Illinois",
+        "national_rank": "30"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2015 IL State WL Championship & Strength Clinic",
+          "date": "2015-03-29",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Brian Alexander",
+          "body_weight_kg": "75.1",
+          "snatch_1": "80",
+          "snatch_2": "84",
+          "snatch_3": "-88",
+          "cj_1": "100",
+          "cj_2": "106",
+          "cj_3": "112",
+          "best_snatch": "84",
+          "best_cj": "112",
+          "total": "196"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2015 IL State WL Championship & Strength Clinic",
+            "date": "2015-03-29",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Brian Alexander",
+            "body_weight_kg": "75.1",
+            "snatch_1": "80",
+            "snatch_2": "84",
+            "snatch_3": "-88",
+            "cj_1": "100",
+            "cj_2": "106",
+            "cj_3": "112",
+            "best_snatch": "84",
+            "best_cj": "112",
+            "total": "196"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMy0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMy0yOSIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "30",
+            "athlete_name": "Brian Alexander",
+            "total": "196",
+            "gender": "M",
+            "age": "35",
+            "club_name": "ILLUMINE BARBELL CLUB",
+            "membership_number": "197295",
+            "wso": "Illinois"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

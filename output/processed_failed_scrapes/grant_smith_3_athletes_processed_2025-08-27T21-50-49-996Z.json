@@ -1,0 +1,260 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T12:33:42.953Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Grant Smith",
+    "internal_ids_processed": 3,
+    "successful_scrapes": 2,
+    "failed_scrapes": 1,
+    "total_competitions_found": 4,
+    "total_reverse_lookups": 4,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 9452597
+  },
+  "data": [
+    {
+      "internal_id": 21493,
+      "athlete_name": "Grant Smith",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/21493",
+      "contaminated_lifter_id": 3173,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T14:48:37.326Z",
+      "profile_data": {
+        "membership_number": "1012060",
+        "birth_year": 1989,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Pacific Northwest",
+        "national_rank": "9"
+      },
+      "competition_history": [
+        {
+          "meet_name": "WarGames 2017:  The Battle For PRs",
+          "date": "2017-05-06",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Grant Smith",
+          "body_weight_kg": "125",
+          "snatch_1": "-105",
+          "snatch_2": "105",
+          "snatch_3": "-110",
+          "cj_1": "-135",
+          "cj_2": "135",
+          "cj_3": "-137",
+          "best_snatch": "105",
+          "best_cj": "135",
+          "total": "240"
+        },
+        {
+          "meet_name": "Industrial Strength Weightlifting Classic",
+          "date": "2017-02-04",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Grant Smith",
+          "body_weight_kg": "130.3",
+          "snatch_1": "-100",
+          "snatch_2": "100",
+          "snatch_3": "105",
+          "cj_1": "130",
+          "cj_2": "135",
+          "cj_3": "-137",
+          "best_snatch": "105",
+          "best_cj": "135",
+          "total": "240"
+        },
+        {
+          "meet_name": "Iron Beaver Weightlifting Fall Classic",
+          "date": "2016-10-22",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Grant Smith",
+          "body_weight_kg": "133.7",
+          "snatch_1": "85",
+          "snatch_2": "-97",
+          "snatch_3": "-97",
+          "cj_1": "130",
+          "cj_2": "-137",
+          "cj_3": "-137",
+          "best_snatch": "85",
+          "best_cj": "130",
+          "total": "215"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "WarGames 2017:  The Battle For PRs",
+            "date": "2017-05-06",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Grant Smith",
+            "body_weight_kg": "125",
+            "snatch_1": "-105",
+            "snatch_2": "105",
+            "snatch_3": "-110",
+            "cj_1": "-135",
+            "cj_2": "135",
+            "cj_3": "-137",
+            "best_snatch": "105",
+            "best_cj": "135",
+            "total": "240"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNS0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNS0wNiIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "Grant Smith",
+            "total": "240",
+            "gender": "M",
+            "age": "28",
+            "club_name": "-",
+            "membership_number": "1012060",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Industrial Strength Weightlifting Classic",
+            "date": "2017-02-04",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Grant Smith",
+            "body_weight_kg": "130.3",
+            "snatch_1": "-100",
+            "snatch_2": "100",
+            "snatch_3": "105",
+            "cj_1": "130",
+            "cj_2": "135",
+            "cj_3": "-137",
+            "best_snatch": "105",
+            "best_cj": "135",
+            "total": "240"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0wNCIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Grant Smith",
+            "total": "240",
+            "gender": "M",
+            "age": "28",
+            "club_name": "-",
+            "membership_number": "1012060",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Iron Beaver Weightlifting Fall Classic",
+            "date": "2016-10-22",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Grant Smith",
+            "body_weight_kg": "133.7",
+            "snatch_1": "85",
+            "snatch_2": "-97",
+            "snatch_3": "-97",
+            "cj_1": "130",
+            "cj_2": "-137",
+            "cj_3": "-137",
+            "best_snatch": "85",
+            "best_cj": "130",
+            "total": "215"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0yMiIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "18",
+            "athlete_name": "Grant Smith",
+            "total": "215",
+            "gender": "M",
+            "age": "27",
+            "club_name": "-",
+            "membership_number": "1012060",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 41018,
+      "athlete_name": "Grant Smith",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/41018",
+      "contaminated_lifter_id": 3173,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T14:48:59.473Z",
+      "profile_data": {
+        "membership_number": "1017892",
+        "birth_year": 2000,
+        "gender": "M",
+        "club_name": "Trinity High School",
+        "wso": "Tennessee-Kentucky",
+        "national_rank": "6"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Third Annual Kentucky State Championship",
+          "date": "2017-03-26",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Grant Smith",
+          "body_weight_kg": "70",
+          "snatch_1": "50",
+          "snatch_2": "-55",
+          "snatch_3": "-55",
+          "cj_1": "75",
+          "cj_2": "-78",
+          "cj_3": "-78",
+          "best_snatch": "50",
+          "best_cj": "75",
+          "total": "125"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Third Annual Kentucky State Championship",
+            "date": "2017-03-26",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Grant Smith",
+            "body_weight_kg": "70",
+            "snatch_1": "50",
+            "snatch_2": "-55",
+            "snatch_3": "-55",
+            "cj_1": "75",
+            "cj_2": "-78",
+            "cj_3": "-78",
+            "best_snatch": "50",
+            "best_cj": "75",
+            "total": "125"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0yNiIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Grant Smith",
+            "total": "125",
+            "gender": "M",
+            "age": "17",
+            "club_name": "Trinity High School",
+            "membership_number": "1017892",
+            "wso": "Tennessee-Kentucky"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 34098,
+      "athlete_name": "Grant Smith",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/34098",
+      "contaminated_lifter_id": 3173,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-27T12:33:40.951Z",
+      "profile_data": null,
+      "competition_history": [],
+      "biographical_data_by_competition": [],
+      "scraping_successful": false,
+      "error": "Assignment to constant variable."
+    }
+  ]
+}

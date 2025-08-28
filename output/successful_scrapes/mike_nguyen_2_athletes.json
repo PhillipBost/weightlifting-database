@@ -1,0 +1,247 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T08:40:48.956Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Mike Nguyen",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 4,
+    "total_reverse_lookups": 4,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 28119050
+  },
+  "data": [
+    {
+      "internal_id": 11691,
+      "athlete_name": "Mike Nguyen",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/11691",
+      "contaminated_lifter_id": 4651,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T08:40:31.429Z",
+      "profile_data": {
+        "membership_number": "190714",
+        "birth_year": 1984,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Georgia",
+        "national_rank": "9"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Georgia/Alabama LWC Championships",
+          "date": "2013-12-14",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Mike Nguyen",
+          "body_weight_kg": "76.6",
+          "snatch_1": "90",
+          "snatch_2": "94",
+          "snatch_3": "-98",
+          "cj_1": "120",
+          "cj_2": "125",
+          "cj_3": "130",
+          "best_snatch": "94",
+          "best_cj": "130",
+          "total": "224"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Georgia/Alabama LWC Championships",
+            "date": "2013-12-14",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Mike Nguyen",
+            "body_weight_kg": "76.6",
+            "snatch_1": "90",
+            "snatch_2": "94",
+            "snatch_3": "-98",
+            "cj_1": "120",
+            "cj_2": "125",
+            "cj_3": "130",
+            "best_snatch": "94",
+            "best_cj": "130",
+            "total": "224"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMi0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMi0xNCIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "Mike Nguyen",
+            "total": "224",
+            "gender": "M",
+            "age": "29",
+            "club_name": "-",
+            "membership_number": "190714",
+            "wso": "Georgia"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 50487,
+      "athlete_name": "Mike Nguyen",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/50487",
+      "contaminated_lifter_id": 4651,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T08:40:48.954Z",
+      "profile_data": {
+        "membership_number": "1056131",
+        "birth_year": 1997,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Illinois",
+        "national_rank": "7"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Illinois State Series-West",
+          "date": "2021-05-22",
+          "division": "Open Men's 61kg",
+          "lifter_name": "Mike Nguyen",
+          "body_weight_kg": "60.5",
+          "snatch_1": "61",
+          "snatch_2": "70",
+          "snatch_3": "72",
+          "cj_1": "90",
+          "cj_2": "90",
+          "cj_3": "90",
+          "best_snatch": "72",
+          "best_cj": "90",
+          "total": "162"
+        },
+        {
+          "meet_name": "Illinois State Series-West",
+          "date": "2021-05-22",
+          "division": "Open Men's 61kg",
+          "lifter_name": "Mike Nguyen",
+          "body_weight_kg": "60.5",
+          "snatch_1": "61",
+          "snatch_2": "-70",
+          "snatch_3": "-72",
+          "cj_1": "-90",
+          "cj_2": "-90",
+          "cj_3": "-90",
+          "best_snatch": "61",
+          "best_cj": "0",
+          "total": "0"
+        },
+        {
+          "meet_name": "AO Series Online Qualifier - April",
+          "date": "2021-04-01",
+          "division": "Open Men's 61kg",
+          "lifter_name": "Mike Nguyen",
+          "body_weight_kg": "60.9",
+          "snatch_1": "70",
+          "snatch_2": "0",
+          "snatch_3": "0",
+          "cj_1": "83",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "70",
+          "best_cj": "83",
+          "total": "153"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Illinois State Series-West",
+            "date": "2021-05-22",
+            "division": "Open Men's 61kg",
+            "lifter_name": "Mike Nguyen",
+            "body_weight_kg": "60.5",
+            "snatch_1": "61",
+            "snatch_2": "70",
+            "snatch_3": "72",
+            "cj_1": "90",
+            "cj_2": "90",
+            "cj_3": "90",
+            "best_snatch": "72",
+            "best_cj": "90",
+            "total": "162"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNS0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNS0yMiIsIndlaWdodF9jbGFzcyI6ODJ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "7",
+            "athlete_name": "Mike Nguyen",
+            "total": "162",
+            "gender": "M",
+            "age": "24",
+            "club_name": "-",
+            "membership_number": "1056131",
+            "wso": "Illinois"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Illinois State Series-West",
+            "date": "2021-05-22",
+            "division": "Open Men's 61kg",
+            "lifter_name": "Mike Nguyen",
+            "body_weight_kg": "60.5",
+            "snatch_1": "61",
+            "snatch_2": "-70",
+            "snatch_3": "-72",
+            "cj_1": "-90",
+            "cj_2": "-90",
+            "cj_3": "-90",
+            "best_snatch": "61",
+            "best_cj": "0",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNS0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNS0yMiIsIndlaWdodF9jbGFzcyI6ODJ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "7",
+            "athlete_name": "Mike Nguyen",
+            "total": "162",
+            "gender": "M",
+            "age": "24",
+            "club_name": "-",
+            "membership_number": "1056131",
+            "wso": "Illinois"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "AO Series Online Qualifier - April",
+            "date": "2021-04-01",
+            "division": "Open Men's 61kg",
+            "lifter_name": "Mike Nguyen",
+            "body_weight_kg": "60.9",
+            "snatch_1": "70",
+            "snatch_2": "0",
+            "snatch_3": "0",
+            "cj_1": "83",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "70",
+            "best_cj": "83",
+            "total": "153"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNC0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNC0wMSIsIndlaWdodF9jbGFzcyI6ODJ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Mike Nguyen",
+            "total": "153",
+            "gender": "M",
+            "age": "24",
+            "club_name": "-",
+            "membership_number": "1056131",
+            "wso": "Illinois"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

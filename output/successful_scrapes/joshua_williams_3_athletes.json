@@ -1,0 +1,315 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T13:02:21.819Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Joshua Williams",
+    "internal_ids_processed": 3,
+    "successful_scrapes": 3,
+    "failed_scrapes": 0,
+    "total_competitions_found": 5,
+    "total_reverse_lookups": 5,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 8835256
+  },
+  "data": [
+    {
+      "internal_id": 29460,
+      "athlete_name": "Joshua Williams",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/29460",
+      "contaminated_lifter_id": 15876,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T13:02:01.942Z",
+      "profile_data": {
+        "membership_number": "216242",
+        "birth_year": 1993,
+        "gender": "M",
+        "club_name": "Tri State Barbell",
+        "wso": "New Jersey",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "TriState In House Meet",
+          "date": "2025-07-20",
+          "division": "Open Men's 71kg",
+          "lifter_name": "Joshua Williams",
+          "body_weight_kg": "69.3",
+          "snatch_1": "70",
+          "snatch_2": "-71",
+          "snatch_3": "0",
+          "cj_1": "105",
+          "cj_2": "115",
+          "cj_3": "-120",
+          "best_snatch": "70",
+          "best_cj": "115",
+          "total": "185"
+        },
+        {
+          "meet_name": "Kilodelphia Open (Uni Nats last chance qualifier)",
+          "date": "2021-10-30",
+          "division": "Open Men's 73kg",
+          "lifter_name": "Joshua Williams",
+          "body_weight_kg": "68.8",
+          "snatch_1": "-82",
+          "snatch_2": "82",
+          "snatch_3": "-85",
+          "cj_1": "114",
+          "cj_2": "-117",
+          "cj_3": "117",
+          "best_snatch": "82",
+          "best_cj": "117",
+          "total": "199"
+        },
+        {
+          "meet_name": "(2015 Hookgrip Classic)name change:2015 Hookgrip Spartkiad",
+          "date": "2015-10-04",
+          "division": "Open Men's 69 kg",
+          "lifter_name": "Joshua Williams",
+          "body_weight_kg": "67.3",
+          "snatch_1": "-70",
+          "snatch_2": "70",
+          "snatch_3": "73",
+          "cj_1": "90",
+          "cj_2": "95",
+          "cj_3": "-101",
+          "best_snatch": "73",
+          "best_cj": "95",
+          "total": "168"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "TriState In House Meet",
+            "date": "2025-07-20",
+            "division": "Open Men's 71kg",
+            "lifter_name": "Joshua Williams",
+            "body_weight_kg": "69.3",
+            "snatch_1": "70",
+            "snatch_2": "-71",
+            "snatch_3": "0",
+            "cj_1": "105",
+            "cj_2": "115",
+            "cj_3": "-120",
+            "best_snatch": "70",
+            "best_cj": "115",
+            "total": "185"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNy0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNy0yMCIsIndlaWdodF9jbGFzcyI6NzE1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Joshua Williams",
+            "total": "185",
+            "gender": "M",
+            "age": "32",
+            "club_name": "Tri State Barbell",
+            "membership_number": "216242",
+            "wso": "New Jersey"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Kilodelphia Open (Uni Nats last chance qualifier)",
+            "date": "2021-10-30",
+            "division": "Open Men's 73kg",
+            "lifter_name": "Joshua Williams",
+            "body_weight_kg": "68.8",
+            "snatch_1": "-82",
+            "snatch_2": "82",
+            "snatch_3": "-85",
+            "cj_1": "114",
+            "cj_2": "-117",
+            "cj_3": "117",
+            "best_snatch": "82",
+            "best_cj": "117",
+            "total": "199"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMC0zMCIsIndlaWdodF9jbGFzcyI6ODR9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "11",
+            "athlete_name": "Joshua Williams",
+            "total": "199",
+            "gender": "M",
+            "age": "28",
+            "club_name": "-",
+            "membership_number": "216242",
+            "wso": "New Jersey"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "(2015 Hookgrip Classic)name change:2015 Hookgrip Spartkiad",
+            "date": "2015-10-04",
+            "division": "Open Men's 69 kg",
+            "lifter_name": "Joshua Williams",
+            "body_weight_kg": "67.3",
+            "snatch_1": "-70",
+            "snatch_2": "70",
+            "snatch_3": "73",
+            "cj_1": "90",
+            "cj_2": "95",
+            "cj_3": "-101",
+            "best_snatch": "73",
+            "best_cj": "95",
+            "total": "168"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0wNCIsIndlaWdodF9jbGFzcyI6MzU2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "23",
+            "athlete_name": "Joshua Williams",
+            "total": "168",
+            "gender": "M",
+            "age": "22",
+            "club_name": "-",
+            "membership_number": "216242",
+            "wso": "New Jersey"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 30825,
+      "athlete_name": "Joshua Williams",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/30825",
+      "contaminated_lifter_id": 15876,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T13:02:11.701Z",
+      "profile_data": {
+        "membership_number": "1041481",
+        "birth_year": 1994,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "DMV",
+        "national_rank": "2"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Southside Classic",
+          "date": "2019-05-11",
+          "division": "Open Men's 109kg",
+          "lifter_name": "Joshua Williams",
+          "body_weight_kg": "106.9",
+          "snatch_1": "-80",
+          "snatch_2": "-80",
+          "snatch_3": "85",
+          "cj_1": "110",
+          "cj_2": "115",
+          "cj_3": "120",
+          "best_snatch": "85",
+          "best_cj": "120",
+          "total": "205"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Southside Classic",
+            "date": "2019-05-11",
+            "division": "Open Men's 109kg",
+            "lifter_name": "Joshua Williams",
+            "body_weight_kg": "106.9",
+            "snatch_1": "-80",
+            "snatch_2": "-80",
+            "snatch_3": "85",
+            "cj_1": "110",
+            "cj_2": "115",
+            "cj_3": "120",
+            "best_snatch": "85",
+            "best_cj": "120",
+            "total": "205"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0xMSIsIndlaWdodF9jbGFzcyI6ODl9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Joshua Williams",
+            "total": "205",
+            "gender": "M",
+            "age": "25",
+            "club_name": "-",
+            "membership_number": "1041481",
+            "wso": "DMV"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 67073,
+      "athlete_name": "Joshua Williams",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/67073",
+      "contaminated_lifter_id": 15876,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T13:02:21.817Z",
+      "profile_data": {
+        "membership_number": "1082651",
+        "birth_year": 1986,
+        "gender": "M",
+        "club_name": "Lupo Barbell Club",
+        "wso": "New York",
+        "national_rank": "4"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Soda City Classic",
+          "date": "2025-08-09",
+          "division": "Open Men's 88kg",
+          "lifter_name": "Joshua Williams",
+          "body_weight_kg": "83.55",
+          "snatch_1": "85",
+          "snatch_2": "89",
+          "snatch_3": "92",
+          "cj_1": "110",
+          "cj_2": "114",
+          "cj_3": "119",
+          "best_snatch": "92",
+          "best_cj": "119",
+          "total": "211"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Soda City Classic",
+            "date": "2025-08-09",
+            "division": "Open Men's 88kg",
+            "lifter_name": "Joshua Williams",
+            "body_weight_kg": "83.55",
+            "snatch_1": "85",
+            "snatch_2": "89",
+            "snatch_3": "92",
+            "cj_1": "110",
+            "cj_2": "114",
+            "cj_3": "119",
+            "best_snatch": "92",
+            "best_cj": "119",
+            "total": "211"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wOC0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wOC0wOSIsIndlaWdodF9jbGFzcyI6NzEzfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Joshua Williams",
+            "total": "211",
+            "gender": "M",
+            "age": "39",
+            "club_name": "Lupo Barbell Club",
+            "membership_number": "1082651",
+            "wso": "New York"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

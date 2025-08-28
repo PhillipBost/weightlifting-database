@@ -1,0 +1,332 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T00:06:16.247Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Katie Clements",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 6,
+    "total_reverse_lookups": 6,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 48669684
+  },
+  "data": [
+    {
+      "internal_id": 62250,
+      "athlete_name": "Katie Clements",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/62250",
+      "contaminated_lifter_id": 7328,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-27T00:05:39.519Z",
+      "profile_data": {
+        "membership_number": "1075620",
+        "birth_year": 1991,
+        "gender": "F",
+        "club_name": "ATHLETIC LAB WLC",
+        "wso": "Carolina",
+        "national_rank": "19"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Athletic Lab Weightlifting Club Spring Classic",
+          "date": "2024-04-06",
+          "division": "Open Women's 71kg",
+          "lifter_name": "Katie Clements",
+          "body_weight_kg": "68.3",
+          "snatch_1": "47",
+          "snatch_2": "50",
+          "snatch_3": "53",
+          "cj_1": "57",
+          "cj_2": "60",
+          "cj_3": "63",
+          "best_snatch": "53",
+          "best_cj": "63",
+          "total": "116"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Athletic Lab Weightlifting Club Spring Classic",
+            "date": "2024-04-06",
+            "division": "Open Women's 71kg",
+            "lifter_name": "Katie Clements",
+            "body_weight_kg": "68.3",
+            "snatch_1": "47",
+            "snatch_2": "50",
+            "snatch_3": "53",
+            "cj_1": "57",
+            "cj_2": "60",
+            "cj_3": "63",
+            "best_snatch": "53",
+            "best_cj": "63",
+            "total": "116"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNC0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNC0wNiIsIndlaWdodF9jbGFzcyI6OTZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "19",
+            "athlete_name": "Katie Clements",
+            "total": "116",
+            "gender": "F",
+            "age": "33",
+            "club_name": "ATHLETIC LAB WLC",
+            "membership_number": "1075620",
+            "wso": "Carolina"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 26536,
+      "athlete_name": "Katie Clements",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/26536",
+      "contaminated_lifter_id": 7328,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-27T00:06:16.245Z",
+      "profile_data": {
+        "membership_number": "218205",
+        "birth_year": 1991,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "Carolina",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "AO Series Online Qualifier - April",
+          "date": "2020-04-30",
+          "division": "Open Women's 64kg",
+          "lifter_name": "Katie Clements",
+          "body_weight_kg": "63.9",
+          "snatch_1": "60",
+          "snatch_2": "0",
+          "snatch_3": "0",
+          "cj_1": "70",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "60",
+          "best_cj": "70",
+          "total": "130"
+        },
+        {
+          "meet_name": "AO Series Online Qualifier - April",
+          "date": "2020-04-29",
+          "division": "Open Women's 71kg",
+          "lifter_name": "Katie Clements",
+          "body_weight_kg": "64",
+          "snatch_1": "60",
+          "snatch_2": "0",
+          "snatch_3": "0",
+          "cj_1": "70",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "60",
+          "best_cj": "70",
+          "total": "130"
+        },
+        {
+          "meet_name": "2016 East Carolina Weightlifting Open",
+          "date": "2016-04-10",
+          "division": "Open Women's 63 kg",
+          "lifter_name": "Katie Clements",
+          "body_weight_kg": "58.8",
+          "snatch_1": "50",
+          "snatch_2": "-53",
+          "snatch_3": "-55",
+          "cj_1": "58",
+          "cj_2": "61",
+          "cj_3": "-64",
+          "best_snatch": "50",
+          "best_cj": "61",
+          "total": "111"
+        },
+        {
+          "meet_name": "North Carolina State Championships",
+          "date": "2015-10-03",
+          "division": "Open Women's 58 kg",
+          "lifter_name": "Katie Clements",
+          "body_weight_kg": "57",
+          "snatch_1": "42",
+          "snatch_2": "44",
+          "snatch_3": "0",
+          "cj_1": "50",
+          "cj_2": "55",
+          "cj_3": "0",
+          "best_snatch": "44",
+          "best_cj": "55",
+          "total": "99"
+        },
+        {
+          "meet_name": "Labor Day Lift off",
+          "date": "2015-09-05",
+          "division": "Open Women's 58 kg",
+          "lifter_name": "Katie Clements",
+          "body_weight_kg": "57.62",
+          "snatch_1": "38",
+          "snatch_2": "41",
+          "snatch_3": "-45",
+          "cj_1": "48",
+          "cj_2": "52",
+          "cj_3": "-56",
+          "best_snatch": "41",
+          "best_cj": "52",
+          "total": "93"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "AO Series Online Qualifier - April",
+            "date": "2020-04-30",
+            "division": "Open Women's 64kg",
+            "lifter_name": "Katie Clements",
+            "body_weight_kg": "63.9",
+            "snatch_1": "60",
+            "snatch_2": "0",
+            "snatch_3": "0",
+            "cj_1": "70",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "60",
+            "best_cj": "70",
+            "total": "130"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wNC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wNC0zMCIsIndlaWdodF9jbGFzcyI6OTV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Katie Clements",
+            "total": "130",
+            "gender": "F",
+            "age": "29",
+            "club_name": "-",
+            "membership_number": "218205",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "AO Series Online Qualifier - April",
+            "date": "2020-04-29",
+            "division": "Open Women's 71kg",
+            "lifter_name": "Katie Clements",
+            "body_weight_kg": "64",
+            "snatch_1": "60",
+            "snatch_2": "0",
+            "snatch_3": "0",
+            "cj_1": "70",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "60",
+            "best_cj": "70",
+            "total": "130"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wNC0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wNC0yOSIsIndlaWdodF9jbGFzcyI6OTZ9",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2016 East Carolina Weightlifting Open",
+            "date": "2016-04-10",
+            "division": "Open Women's 63 kg",
+            "lifter_name": "Katie Clements",
+            "body_weight_kg": "58.8",
+            "snatch_1": "50",
+            "snatch_2": "-53",
+            "snatch_3": "-55",
+            "cj_1": "58",
+            "cj_2": "61",
+            "cj_3": "-64",
+            "best_snatch": "50",
+            "best_cj": "61",
+            "total": "111"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0xMCIsIndlaWdodF9jbGFzcyI6MzY1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "15",
+            "athlete_name": "Katie Clements",
+            "total": "111",
+            "gender": "F",
+            "age": "25",
+            "club_name": "-",
+            "membership_number": "218205",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "North Carolina State Championships",
+            "date": "2015-10-03",
+            "division": "Open Women's 58 kg",
+            "lifter_name": "Katie Clements",
+            "body_weight_kg": "57",
+            "snatch_1": "42",
+            "snatch_2": "44",
+            "snatch_3": "0",
+            "cj_1": "50",
+            "cj_2": "55",
+            "cj_3": "0",
+            "best_snatch": "44",
+            "best_cj": "55",
+            "total": "99"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0wMyIsIndlaWdodF9jbGFzcyI6MzY0fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "Katie Clements",
+            "total": "99",
+            "gender": "F",
+            "age": "24",
+            "club_name": "-",
+            "membership_number": "218205",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Labor Day Lift off",
+            "date": "2015-09-05",
+            "division": "Open Women's 58 kg",
+            "lifter_name": "Katie Clements",
+            "body_weight_kg": "57.62",
+            "snatch_1": "38",
+            "snatch_2": "41",
+            "snatch_3": "-45",
+            "cj_1": "48",
+            "cj_2": "52",
+            "cj_3": "-56",
+            "best_snatch": "41",
+            "best_cj": "52",
+            "total": "93"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOS0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOS0wNSIsIndlaWdodF9jbGFzcyI6MzY0fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "Katie Clements",
+            "total": "93",
+            "gender": "F",
+            "age": "24",
+            "club_name": "-",
+            "membership_number": "218205",
+            "wso": "Carolina"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    }
+  ]
+}

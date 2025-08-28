@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T11:31:38.757Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Andrea Callahan",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 38368851
+  },
+  "data": [
+    {
+      "internal_id": 12798,
+      "athlete_name": "Andrea Callahan",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/12798",
+      "contaminated_lifter_id": 18968,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T11:31:28.136Z",
+      "profile_data": {
+        "membership_number": "184802",
+        "birth_year": 1984,
+        "gender": "F",
+        "club_name": "OUTLIER BARBELL CLUB",
+        "wso": "California South",
+        "national_rank": "25"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Fortius Halloween",
+          "date": "2014-11-01",
+          "division": "Open Women's 69 kg",
+          "lifter_name": "Andrea Callahan",
+          "body_weight_kg": "67.8",
+          "snatch_1": "56",
+          "snatch_2": "59",
+          "snatch_3": "59",
+          "cj_1": "72",
+          "cj_2": "76",
+          "cj_3": "78",
+          "best_snatch": "59",
+          "best_cj": "78",
+          "total": "137"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Fortius Halloween",
+            "date": "2014-11-01",
+            "division": "Open Women's 69 kg",
+            "lifter_name": "Andrea Callahan",
+            "body_weight_kg": "67.8",
+            "snatch_1": "56",
+            "snatch_2": "59",
+            "snatch_3": "59",
+            "cj_1": "72",
+            "cj_2": "76",
+            "cj_3": "78",
+            "best_snatch": "59",
+            "best_cj": "78",
+            "total": "137"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMS0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMS0wMSIsIndlaWdodF9jbGFzcyI6MzY2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "25",
+            "athlete_name": "Andrea Callahan",
+            "total": "137",
+            "gender": "F",
+            "age": "30",
+            "club_name": "OUTLIER BARBELL CLUB",
+            "membership_number": "184802",
+            "wso": "California South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 64636,
+      "athlete_name": "Andrea Callahan",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/64636",
+      "contaminated_lifter_id": 18968,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T11:31:38.754Z",
+      "profile_data": {
+        "membership_number": "1068281",
+        "birth_year": 1985,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "Pacific Northwest",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2024 Armor Open",
+          "date": "2024-11-09",
+          "division": "Women's Masters (35-39) 71kg",
+          "lifter_name": "Andrea Callahan",
+          "body_weight_kg": "69.5",
+          "snatch_1": "50",
+          "snatch_2": "55",
+          "snatch_3": "-64",
+          "cj_1": "67",
+          "cj_2": "73",
+          "cj_3": "78",
+          "best_snatch": "55",
+          "best_cj": "78",
+          "total": "133"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2024 Armor Open",
+            "date": "2024-11-09",
+            "division": "Women's Masters (35-39) 71kg",
+            "lifter_name": "Andrea Callahan",
+            "body_weight_kg": "69.5",
+            "snatch_1": "50",
+            "snatch_2": "55",
+            "snatch_3": "-64",
+            "cj_1": "67",
+            "cj_2": "73",
+            "cj_3": "78",
+            "best_snatch": "55",
+            "best_cj": "78",
+            "total": "133"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMS0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMS0wOSIsIndlaWdodF9jbGFzcyI6MTE2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Andrea Callahan",
+            "total": "133",
+            "gender": "F",
+            "age": "39",
+            "club_name": "-",
+            "membership_number": "1068281",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

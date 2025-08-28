@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T14:22:49.569Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Robert Johnson",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 48639663
+  },
+  "data": [
+    {
+      "internal_id": 19989,
+      "athlete_name": "Robert Johnson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/19989",
+      "contaminated_lifter_id": 21451,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T14:22:39.526Z",
+      "profile_data": {
+        "membership_number": "1028552",
+        "birth_year": 1988,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Texas-Oklahoma",
+        "national_rank": "12"
+      },
+      "competition_history": [
+        {
+          "meet_name": "ATHLEO OPEN",
+          "date": "2018-06-02",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Robert Johnson",
+          "body_weight_kg": "158.7",
+          "snatch_1": "63",
+          "snatch_2": "73",
+          "snatch_3": "83",
+          "cj_1": "93",
+          "cj_2": "103",
+          "cj_3": "110",
+          "best_snatch": "83",
+          "best_cj": "110",
+          "total": "193"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "ATHLEO OPEN",
+            "date": "2018-06-02",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Robert Johnson",
+            "body_weight_kg": "158.7",
+            "snatch_1": "63",
+            "snatch_2": "73",
+            "snatch_3": "83",
+            "cj_1": "93",
+            "cj_2": "103",
+            "cj_3": "110",
+            "best_snatch": "83",
+            "best_cj": "110",
+            "total": "193"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0wMiIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "12",
+            "athlete_name": "Robert Johnson",
+            "total": "193",
+            "gender": "M",
+            "age": "30",
+            "club_name": "-",
+            "membership_number": "1028552",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 33158,
+      "athlete_name": "Robert Johnson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/33158",
+      "contaminated_lifter_id": 21451,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T14:22:49.567Z",
+      "profile_data": {
+        "membership_number": "1002056",
+        "birth_year": 1995,
+        "gender": "M",
+        "club_name": "CROSSFIT TURBINE",
+        "wso": "Illinois",
+        "national_rank": "3"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Charleston-Mattoon Weightlifting Club Open Winter Meet",
+          "date": "2016-01-16",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Robert Johnson",
+          "body_weight_kg": "100.2",
+          "snatch_1": "107",
+          "snatch_2": "-110",
+          "snatch_3": "112",
+          "cj_1": "138",
+          "cj_2": "-143",
+          "cj_3": "143",
+          "best_snatch": "112",
+          "best_cj": "143",
+          "total": "255"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Charleston-Mattoon Weightlifting Club Open Winter Meet",
+            "date": "2016-01-16",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Robert Johnson",
+            "body_weight_kg": "100.2",
+            "snatch_1": "107",
+            "snatch_2": "-110",
+            "snatch_3": "112",
+            "cj_1": "138",
+            "cj_2": "-143",
+            "cj_3": "143",
+            "best_snatch": "112",
+            "best_cj": "143",
+            "total": "255"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0xNiIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Robert Johnson",
+            "total": "255",
+            "gender": "M",
+            "age": "21",
+            "club_name": "CROSSFIT TURBINE",
+            "membership_number": "1002056",
+            "wso": "Illinois"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

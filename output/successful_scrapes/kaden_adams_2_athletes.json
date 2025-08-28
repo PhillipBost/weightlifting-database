@@ -1,0 +1,247 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T11:59:31.146Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Kaden Adams",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 4,
+    "total_reverse_lookups": 4,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 40041240
+  },
+  "data": [
+    {
+      "internal_id": 36479,
+      "athlete_name": "Kaden Adams",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/36479",
+      "contaminated_lifter_id": 23857,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T11:59:05.148Z",
+      "profile_data": {
+        "membership_number": "1006322",
+        "birth_year": 1997,
+        "gender": "M",
+        "club_name": "IRON FACTORY WEIGHTLIFTING",
+        "wso": "California South",
+        "national_rank": "15"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2016 Goodland Open",
+          "date": "2016-05-14",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Kaden Adams",
+          "body_weight_kg": "89.75",
+          "snatch_1": "80",
+          "snatch_2": "83",
+          "snatch_3": "-87",
+          "cj_1": "100",
+          "cj_2": "105",
+          "cj_3": "-112",
+          "best_snatch": "83",
+          "best_cj": "105",
+          "total": "188"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2016 Goodland Open",
+            "date": "2016-05-14",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Kaden Adams",
+            "body_weight_kg": "89.75",
+            "snatch_1": "80",
+            "snatch_2": "83",
+            "snatch_3": "-87",
+            "cj_1": "100",
+            "cj_2": "105",
+            "cj_3": "-112",
+            "best_snatch": "83",
+            "best_cj": "105",
+            "total": "188"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0xNCIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "15",
+            "athlete_name": "Kaden Adams",
+            "total": "188",
+            "gender": "M",
+            "age": "19",
+            "club_name": "IRON FACTORY WEIGHTLIFTING",
+            "membership_number": "1006322",
+            "wso": "California South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 40347,
+      "athlete_name": "Kaden Adams",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/40347",
+      "contaminated_lifter_id": 23857,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T11:59:31.144Z",
+      "profile_data": {
+        "membership_number": "1005194",
+        "birth_year": 2000,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Mountain South",
+        "national_rank": "30"
+      },
+      "competition_history": [
+        {
+          "meet_name": "AZHSWA High School & Youth Championship",
+          "date": "2017-02-18",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Kaden Adams",
+          "body_weight_kg": "71",
+          "snatch_1": "-68",
+          "snatch_2": "68",
+          "snatch_3": "73",
+          "cj_1": "88",
+          "cj_2": "91",
+          "cj_3": "93",
+          "best_snatch": "73",
+          "best_cj": "93",
+          "total": "166"
+        },
+        {
+          "meet_name": "Jingle Barbells Winter Classic - High School/Youth/Junior & Open",
+          "date": "2016-12-17",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Kaden Adams",
+          "body_weight_kg": "71",
+          "snatch_1": "67",
+          "snatch_2": "70",
+          "snatch_3": "73",
+          "cj_1": "85",
+          "cj_2": "88",
+          "cj_3": "90",
+          "best_snatch": "73",
+          "best_cj": "90",
+          "total": "163"
+        },
+        {
+          "meet_name": "Last Chance Qualifier",
+          "date": "2016-04-02",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Kaden Adams",
+          "body_weight_kg": "71.9",
+          "snatch_1": "58",
+          "snatch_2": "61",
+          "snatch_3": "65",
+          "cj_1": "76",
+          "cj_2": "80",
+          "cj_3": "85",
+          "best_snatch": "65",
+          "best_cj": "85",
+          "total": "150"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "AZHSWA High School & Youth Championship",
+            "date": "2017-02-18",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Kaden Adams",
+            "body_weight_kg": "71",
+            "snatch_1": "-68",
+            "snatch_2": "68",
+            "snatch_3": "73",
+            "cj_1": "88",
+            "cj_2": "91",
+            "cj_3": "93",
+            "best_snatch": "73",
+            "best_cj": "93",
+            "total": "166"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xOCIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "30",
+            "athlete_name": "Kaden Adams",
+            "total": "166",
+            "gender": "M",
+            "age": "17",
+            "club_name": "-",
+            "membership_number": "1005194",
+            "wso": "Mountain South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Jingle Barbells Winter Classic - High School/Youth/Junior & Open",
+            "date": "2016-12-17",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Kaden Adams",
+            "body_weight_kg": "71",
+            "snatch_1": "67",
+            "snatch_2": "70",
+            "snatch_3": "73",
+            "cj_1": "85",
+            "cj_2": "88",
+            "cj_3": "90",
+            "best_snatch": "73",
+            "best_cj": "90",
+            "total": "163"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMi0xNyIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "19",
+            "athlete_name": "Kaden Adams",
+            "total": "163",
+            "gender": "M",
+            "age": "16",
+            "club_name": "-",
+            "membership_number": "1005194",
+            "wso": "Mountain South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Last Chance Qualifier",
+            "date": "2016-04-02",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Kaden Adams",
+            "body_weight_kg": "71.9",
+            "snatch_1": "58",
+            "snatch_2": "61",
+            "snatch_3": "65",
+            "cj_1": "76",
+            "cj_2": "80",
+            "cj_3": "85",
+            "best_snatch": "65",
+            "best_cj": "85",
+            "total": "150"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0wMiIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "20",
+            "athlete_name": "Kaden Adams",
+            "total": "150",
+            "gender": "M",
+            "age": "16",
+            "club_name": "-",
+            "membership_number": "1005194",
+            "wso": "Mountain South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

@@ -1,0 +1,379 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T12:59:09.610Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "John Collins",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 7,
+    "total_reverse_lookups": 7,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 10979254
+  },
+  "data": [
+    {
+      "internal_id": 36281,
+      "athlete_name": "John Collins",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/36281",
+      "contaminated_lifter_id": 88,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T15:30:14.417Z",
+      "profile_data": {
+        "membership_number": "178096",
+        "birth_year": 1997,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Florida",
+        "national_rank": "25"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2013 Sunshine State Games",
+          "date": "2013-06-22",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "John Collins",
+          "body_weight_kg": "77",
+          "snatch_1": "77",
+          "snatch_2": "77",
+          "snatch_3": "83",
+          "cj_1": "100",
+          "cj_2": "105",
+          "cj_3": "109",
+          "best_snatch": "83",
+          "best_cj": "109",
+          "total": "192"
+        },
+        {
+          "meet_name": "Florida Pan Handle Classic",
+          "date": "2012-09-22",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "John Collins",
+          "body_weight_kg": "74.1",
+          "snatch_1": "63",
+          "snatch_2": "68",
+          "snatch_3": "-73",
+          "cj_1": "79",
+          "cj_2": "-84",
+          "cj_3": "-84",
+          "best_snatch": "68",
+          "best_cj": "79",
+          "total": "147"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2013 Sunshine State Games",
+            "date": "2013-06-22",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "John Collins",
+            "body_weight_kg": "77",
+            "snatch_1": "77",
+            "snatch_2": "77",
+            "snatch_3": "83",
+            "cj_1": "100",
+            "cj_2": "105",
+            "cj_3": "109",
+            "best_snatch": "83",
+            "best_cj": "109",
+            "total": "192"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNi0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNi0yMiIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "25",
+            "athlete_name": "John Collins",
+            "total": "192",
+            "gender": "M",
+            "age": "16",
+            "club_name": "-",
+            "membership_number": "178096",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Florida Pan Handle Classic",
+            "date": "2012-09-22",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "John Collins",
+            "body_weight_kg": "74.1",
+            "snatch_1": "63",
+            "snatch_2": "68",
+            "snatch_3": "-73",
+            "cj_1": "79",
+            "cj_2": "-84",
+            "cj_3": "-84",
+            "best_snatch": "68",
+            "best_cj": "79",
+            "total": "147"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wOS0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wOS0yMiIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "John Collins",
+            "total": "147",
+            "gender": "M",
+            "age": "15",
+            "club_name": "-",
+            "membership_number": "178096",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 19706,
+      "athlete_name": "John Collins",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/19706",
+      "contaminated_lifter_id": 88,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-27T12:59:07.609Z",
+      "profile_data": {
+        "membership_number": "165254",
+        "birth_year": 1988,
+        "gender": "M",
+        "club_name": "HUMBLE BEAST WEIGHTLIFTING",
+        "wso": "DMV",
+        "national_rank": "24"
+      },
+      "competition_history": [
+        {
+          "meet_name": "RVA Open",
+          "date": "2015-04-19",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "John Collins",
+          "body_weight_kg": "90.1",
+          "snatch_1": "-90",
+          "snatch_2": "-95",
+          "snatch_3": "96",
+          "cj_1": "110",
+          "cj_2": "117",
+          "cj_3": "123",
+          "best_snatch": "96",
+          "best_cj": "123",
+          "total": "219"
+        },
+        {
+          "meet_name": "2013 Capital City open",
+          "date": "2013-04-21",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "John Collins",
+          "body_weight_kg": "91.78",
+          "snatch_1": "95",
+          "snatch_2": "100",
+          "snatch_3": "105",
+          "cj_1": "125",
+          "cj_2": "130",
+          "cj_3": "135",
+          "best_snatch": "105",
+          "best_cj": "135",
+          "total": "240"
+        },
+        {
+          "meet_name": "2013 Baltimore Open",
+          "date": "2013-02-10",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "John Collins",
+          "body_weight_kg": "92.25",
+          "snatch_1": "90",
+          "snatch_2": "-95",
+          "snatch_3": "95",
+          "cj_1": "115",
+          "cj_2": "122",
+          "cj_3": "127",
+          "best_snatch": "95",
+          "best_cj": "127",
+          "total": "222"
+        },
+        {
+          "meet_name": "2012 Nova Open",
+          "date": "2012-10-27",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "John Collins",
+          "body_weight_kg": "90.93",
+          "snatch_1": "85",
+          "snatch_2": "90",
+          "snatch_3": "-95",
+          "cj_1": "107",
+          "cj_2": "112",
+          "cj_3": "116",
+          "best_snatch": "90",
+          "best_cj": "116",
+          "total": "206"
+        },
+        {
+          "meet_name": "2012 Baltimore Open",
+          "date": "2012-02-11",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "John Collins",
+          "body_weight_kg": "84.71",
+          "snatch_1": "0",
+          "snatch_2": "0",
+          "snatch_3": "0",
+          "cj_1": "125",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "0",
+          "best_cj": "125",
+          "total": "0"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "RVA Open",
+            "date": "2015-04-19",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "John Collins",
+            "body_weight_kg": "90.1",
+            "snatch_1": "-90",
+            "snatch_2": "-95",
+            "snatch_3": "96",
+            "cj_1": "110",
+            "cj_2": "117",
+            "cj_3": "123",
+            "best_snatch": "96",
+            "best_cj": "123",
+            "total": "219"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0xOSIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "24",
+            "athlete_name": "John Collins",
+            "total": "219",
+            "gender": "M",
+            "age": "27",
+            "club_name": "HUMBLE BEAST WEIGHTLIFTING",
+            "membership_number": "165254",
+            "wso": "DMV"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2013 Capital City open",
+            "date": "2013-04-21",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "John Collins",
+            "body_weight_kg": "91.78",
+            "snatch_1": "95",
+            "snatch_2": "100",
+            "snatch_3": "105",
+            "cj_1": "125",
+            "cj_2": "130",
+            "cj_3": "135",
+            "best_snatch": "105",
+            "best_cj": "135",
+            "total": "240"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNC0yMSIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "John Collins",
+            "total": "240",
+            "gender": "M",
+            "age": "25",
+            "club_name": "HUMBLE BEAST WEIGHTLIFTING",
+            "membership_number": "165254",
+            "wso": "DMV"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2013 Baltimore Open",
+            "date": "2013-02-10",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "John Collins",
+            "body_weight_kg": "92.25",
+            "snatch_1": "90",
+            "snatch_2": "-95",
+            "snatch_3": "95",
+            "cj_1": "115",
+            "cj_2": "122",
+            "cj_3": "127",
+            "best_snatch": "95",
+            "best_cj": "127",
+            "total": "222"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMi0xMCIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "John Collins",
+            "total": "222",
+            "gender": "M",
+            "age": "25",
+            "club_name": "HUMBLE BEAST WEIGHTLIFTING",
+            "membership_number": "165254",
+            "wso": "DMV"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2012 Nova Open",
+            "date": "2012-10-27",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "John Collins",
+            "body_weight_kg": "90.93",
+            "snatch_1": "85",
+            "snatch_2": "90",
+            "snatch_3": "-95",
+            "cj_1": "107",
+            "cj_2": "112",
+            "cj_3": "116",
+            "best_snatch": "90",
+            "best_cj": "116",
+            "total": "206"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0xMC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0xMC0yNyIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "12",
+            "athlete_name": "John Collins",
+            "total": "206",
+            "gender": "M",
+            "age": "24",
+            "club_name": "HUMBLE BEAST WEIGHTLIFTING",
+            "membership_number": "165254",
+            "wso": "DMV"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2012 Baltimore Open",
+            "date": "2012-02-11",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "John Collins",
+            "body_weight_kg": "84.71",
+            "snatch_1": "0",
+            "snatch_2": "0",
+            "snatch_3": "0",
+            "cj_1": "125",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "0",
+            "best_cj": "125",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wMi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wMi0xMSIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    }
+  ]
+}

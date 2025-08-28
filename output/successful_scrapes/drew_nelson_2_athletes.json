@@ -1,0 +1,247 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T13:18:46.895Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Drew Nelson",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 4,
+    "total_reverse_lookups": 4,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 44796989
+  },
+  "data": [
+    {
+      "internal_id": 16789,
+      "athlete_name": "Drew Nelson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/16789",
+      "contaminated_lifter_id": 36569,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T13:18:37.150Z",
+      "profile_data": {
+        "membership_number": "1020007",
+        "birth_year": 1987,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "New York",
+        "national_rank": "20"
+      },
+      "competition_history": [
+        {
+          "meet_name": "New York State Weightlifting Championships",
+          "date": "2021-10-24",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Drew Nelson",
+          "body_weight_kg": "86.75",
+          "snatch_1": "80",
+          "snatch_2": "86",
+          "snatch_3": "91",
+          "cj_1": "112",
+          "cj_2": "118",
+          "cj_3": "122",
+          "best_snatch": "91",
+          "best_cj": "122",
+          "total": "213"
+        },
+        {
+          "meet_name": "2nd Annual 315 Summer Showdown",
+          "date": "2018-06-09",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Drew Nelson",
+          "body_weight_kg": "84.3",
+          "snatch_1": "75",
+          "snatch_2": "80",
+          "snatch_3": "80",
+          "cj_1": "105",
+          "cj_2": "105",
+          "cj_3": "115",
+          "best_snatch": "80",
+          "best_cj": "115",
+          "total": "195"
+        },
+        {
+          "meet_name": "2nd Annual Lake Effect Lift Off",
+          "date": "2018-02-10",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Drew Nelson",
+          "body_weight_kg": "86.5",
+          "snatch_1": "70",
+          "snatch_2": "80",
+          "snatch_3": "90",
+          "cj_1": "100",
+          "cj_2": "105",
+          "cj_3": "110",
+          "best_snatch": "90",
+          "best_cj": "110",
+          "total": "200"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "New York State Weightlifting Championships",
+            "date": "2021-10-24",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Drew Nelson",
+            "body_weight_kg": "86.75",
+            "snatch_1": "80",
+            "snatch_2": "86",
+            "snatch_3": "91",
+            "cj_1": "112",
+            "cj_2": "118",
+            "cj_3": "122",
+            "best_snatch": "91",
+            "best_cj": "122",
+            "total": "213"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMC0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMC0yNCIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "20",
+            "athlete_name": "Drew Nelson",
+            "total": "213",
+            "gender": "M",
+            "age": "34",
+            "club_name": "-",
+            "membership_number": "1020007",
+            "wso": "New York"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2nd Annual 315 Summer Showdown",
+            "date": "2018-06-09",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Drew Nelson",
+            "body_weight_kg": "84.3",
+            "snatch_1": "75",
+            "snatch_2": "80",
+            "snatch_3": "80",
+            "cj_1": "105",
+            "cj_2": "105",
+            "cj_3": "115",
+            "best_snatch": "80",
+            "best_cj": "115",
+            "total": "195"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0wOSIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "25",
+            "athlete_name": "Drew Nelson",
+            "total": "195",
+            "gender": "M",
+            "age": "31",
+            "club_name": "-",
+            "membership_number": "1020007",
+            "wso": "New York"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2nd Annual Lake Effect Lift Off",
+            "date": "2018-02-10",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Drew Nelson",
+            "body_weight_kg": "86.5",
+            "snatch_1": "70",
+            "snatch_2": "80",
+            "snatch_3": "90",
+            "cj_1": "100",
+            "cj_2": "105",
+            "cj_3": "110",
+            "best_snatch": "90",
+            "best_cj": "110",
+            "total": "200"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMi0xMCIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "23",
+            "athlete_name": "Drew Nelson",
+            "total": "200",
+            "gender": "M",
+            "age": "31",
+            "club_name": "-",
+            "membership_number": "1020007",
+            "wso": "New York"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 43773,
+      "athlete_name": "Drew Nelson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/43773",
+      "contaminated_lifter_id": 36569,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T13:18:46.893Z",
+      "profile_data": {
+        "membership_number": "1038131",
+        "birth_year": 2003,
+        "gender": "M",
+        "club_name": "New Albany Barbell Club",
+        "wso": "Indiana",
+        "national_rank": "11"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Trinity vs Silver Creek In House Meet",
+          "date": "2019-01-19",
+          "division": "Open Men's 73kg",
+          "lifter_name": "Drew Nelson",
+          "body_weight_kg": "69.5",
+          "snatch_1": "70",
+          "snatch_2": "77",
+          "snatch_3": "79",
+          "cj_1": "84",
+          "cj_2": "90",
+          "cj_3": "95",
+          "best_snatch": "79",
+          "best_cj": "95",
+          "total": "174"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Trinity vs Silver Creek In House Meet",
+            "date": "2019-01-19",
+            "division": "Open Men's 73kg",
+            "lifter_name": "Drew Nelson",
+            "body_weight_kg": "69.5",
+            "snatch_1": "70",
+            "snatch_2": "77",
+            "snatch_3": "79",
+            "cj_1": "84",
+            "cj_2": "90",
+            "cj_3": "95",
+            "best_snatch": "79",
+            "best_cj": "95",
+            "total": "174"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0xOSIsIndlaWdodF9jbGFzcyI6ODR9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "11",
+            "athlete_name": "Drew Nelson",
+            "total": "174",
+            "gender": "M",
+            "age": "16",
+            "club_name": "New Albany Barbell Club",
+            "membership_number": "1038131",
+            "wso": "Indiana"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

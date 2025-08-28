@@ -1,0 +1,247 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T11:58:55.584Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Hannah Smith",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 4,
+    "total_reverse_lookups": 4,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 40005678
+  },
+  "data": [
+    {
+      "internal_id": 57024,
+      "athlete_name": "Hannah Smith",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/57024",
+      "contaminated_lifter_id": 23565,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T11:58:31.871Z",
+      "profile_data": {
+        "membership_number": "1067833",
+        "birth_year": 1993,
+        "gender": "F",
+        "club_name": "Schuster Athletics",
+        "wso": "New York",
+        "national_rank": "20"
+      },
+      "competition_history": [
+        {
+          "meet_name": "East Ave Classic 2",
+          "date": "2023-01-15",
+          "division": "Open Women's 64kg",
+          "lifter_name": "Hannah Smith",
+          "body_weight_kg": "60.4",
+          "snatch_1": "31",
+          "snatch_2": "33",
+          "snatch_3": "35",
+          "cj_1": "47",
+          "cj_2": "50",
+          "cj_3": "54",
+          "best_snatch": "35",
+          "best_cj": "54",
+          "total": "89"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "East Ave Classic 2",
+            "date": "2023-01-15",
+            "division": "Open Women's 64kg",
+            "lifter_name": "Hannah Smith",
+            "body_weight_kg": "60.4",
+            "snatch_1": "31",
+            "snatch_2": "33",
+            "snatch_3": "35",
+            "cj_1": "47",
+            "cj_2": "50",
+            "cj_3": "54",
+            "best_snatch": "35",
+            "best_cj": "54",
+            "total": "89"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMS0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMS0xNSIsIndlaWdodF9jbGFzcyI6OTV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "20",
+            "athlete_name": "Hannah Smith",
+            "total": "89",
+            "gender": "F",
+            "age": "30",
+            "club_name": "Schuster Athletics",
+            "membership_number": "1067833",
+            "wso": "New York"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 26707,
+      "athlete_name": "Hannah Smith",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/26707",
+      "contaminated_lifter_id": 23565,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T11:58:55.581Z",
+      "profile_data": {
+        "membership_number": "1007336",
+        "birth_year": 1991,
+        "gender": "F",
+        "club_name": "Pinnacle Weightlifting",
+        "wso": "Mountain North",
+        "national_rank": "17"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Rodger DeGarmo Memorial",
+          "date": "2016-10-15",
+          "division": "Open Women's 63 kg",
+          "lifter_name": "Hannah Smith",
+          "body_weight_kg": "60.5",
+          "snatch_1": "46",
+          "snatch_2": "-48",
+          "snatch_3": "49",
+          "cj_1": "-58",
+          "cj_2": "58",
+          "cj_3": "-61",
+          "best_snatch": "49",
+          "best_cj": "58",
+          "total": "107"
+        },
+        {
+          "meet_name": "Rocky Mountain State Games",
+          "date": "2016-07-24",
+          "division": "Open Women's 63 kg",
+          "lifter_name": "Hannah Smith",
+          "body_weight_kg": "61.2",
+          "snatch_1": "40",
+          "snatch_2": "43",
+          "snatch_3": "46",
+          "cj_1": "55",
+          "cj_2": "58",
+          "cj_3": "60",
+          "best_snatch": "46",
+          "best_cj": "60",
+          "total": "106"
+        },
+        {
+          "meet_name": "May Madness",
+          "date": "2016-05-14",
+          "division": "Open Women's 63 kg",
+          "lifter_name": "Hannah Smith",
+          "body_weight_kg": "62.9",
+          "snatch_1": "38",
+          "snatch_2": "40",
+          "snatch_3": "43",
+          "cj_1": "-53",
+          "cj_2": "55",
+          "cj_3": "58",
+          "best_snatch": "43",
+          "best_cj": "58",
+          "total": "101"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Rodger DeGarmo Memorial",
+            "date": "2016-10-15",
+            "division": "Open Women's 63 kg",
+            "lifter_name": "Hannah Smith",
+            "body_weight_kg": "60.5",
+            "snatch_1": "46",
+            "snatch_2": "-48",
+            "snatch_3": "49",
+            "cj_1": "-58",
+            "cj_2": "58",
+            "cj_3": "-61",
+            "best_snatch": "49",
+            "best_cj": "58",
+            "total": "107"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0xNSIsIndlaWdodF9jbGFzcyI6MzY1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "17",
+            "athlete_name": "Hannah Smith",
+            "total": "107",
+            "gender": "F",
+            "age": "25",
+            "club_name": "Pinnacle Weightlifting",
+            "membership_number": "1007336",
+            "wso": "Mountain North"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Rocky Mountain State Games",
+            "date": "2016-07-24",
+            "division": "Open Women's 63 kg",
+            "lifter_name": "Hannah Smith",
+            "body_weight_kg": "61.2",
+            "snatch_1": "40",
+            "snatch_2": "43",
+            "snatch_3": "46",
+            "cj_1": "55",
+            "cj_2": "58",
+            "cj_3": "60",
+            "best_snatch": "46",
+            "best_cj": "60",
+            "total": "106"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNy0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNy0yNCIsIndlaWdodF9jbGFzcyI6MzY1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "21",
+            "athlete_name": "Hannah Smith",
+            "total": "106",
+            "gender": "F",
+            "age": "25",
+            "club_name": "Pinnacle Weightlifting",
+            "membership_number": "1007336",
+            "wso": "Mountain North"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "May Madness",
+            "date": "2016-05-14",
+            "division": "Open Women's 63 kg",
+            "lifter_name": "Hannah Smith",
+            "body_weight_kg": "62.9",
+            "snatch_1": "38",
+            "snatch_2": "40",
+            "snatch_3": "43",
+            "cj_1": "-53",
+            "cj_2": "55",
+            "cj_3": "58",
+            "best_snatch": "43",
+            "best_cj": "58",
+            "total": "101"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0xNCIsIndlaWdodF9jbGFzcyI6MzY1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "7",
+            "athlete_name": "Hannah Smith",
+            "total": "101",
+            "gender": "F",
+            "age": "25",
+            "club_name": "Pinnacle Weightlifting",
+            "membership_number": "1007336",
+            "wso": "Mountain North"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

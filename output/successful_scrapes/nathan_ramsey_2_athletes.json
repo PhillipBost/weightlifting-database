@@ -1,0 +1,482 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T01:19:18.287Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Nathan Ramsey",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 9,
+    "total_reverse_lookups": 9,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 88028381
+  },
+  "data": [
+    {
+      "internal_id": 15368,
+      "athlete_name": "Nathan Ramsey",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/15368",
+      "contaminated_lifter_id": 23511,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T01:18:14.209Z",
+      "profile_data": {
+        "membership_number": "1039179",
+        "birth_year": 1986,
+        "gender": "M",
+        "club_name": "Out of Step Barbell",
+        "wso": "Carolina",
+        "national_rank": "18"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Halloween Weightlifting Spectacular",
+          "date": "2019-11-02",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Nathan Ramsey",
+          "body_weight_kg": "80",
+          "snatch_1": "93",
+          "snatch_2": "97",
+          "snatch_3": "-102",
+          "cj_1": "110",
+          "cj_2": "115",
+          "cj_3": "-120",
+          "best_snatch": "97",
+          "best_cj": "115",
+          "total": "212"
+        },
+        {
+          "meet_name": "QUEEN CITY CLASSIC 2019",
+          "date": "2019-03-24",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Nathan Ramsey",
+          "body_weight_kg": "79.2",
+          "snatch_1": "-92",
+          "snatch_2": "92",
+          "snatch_3": "100",
+          "cj_1": "110",
+          "cj_2": "-115",
+          "cj_3": "-115",
+          "best_snatch": "100",
+          "best_cj": "110",
+          "total": "210"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Halloween Weightlifting Spectacular",
+            "date": "2019-11-02",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Nathan Ramsey",
+            "body_weight_kg": "80",
+            "snatch_1": "93",
+            "snatch_2": "97",
+            "snatch_3": "-102",
+            "cj_1": "110",
+            "cj_2": "115",
+            "cj_3": "-120",
+            "best_snatch": "97",
+            "best_cj": "115",
+            "total": "212"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMS0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMS0wMiIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "18",
+            "athlete_name": "Nathan Ramsey",
+            "total": "212",
+            "gender": "M",
+            "age": "33",
+            "club_name": "Out of Step Barbell",
+            "membership_number": "1039179",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "QUEEN CITY CLASSIC 2019",
+            "date": "2019-03-24",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Nathan Ramsey",
+            "body_weight_kg": "79.2",
+            "snatch_1": "-92",
+            "snatch_2": "92",
+            "snatch_3": "100",
+            "cj_1": "110",
+            "cj_2": "-115",
+            "cj_3": "-115",
+            "best_snatch": "100",
+            "best_cj": "110",
+            "total": "210"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMy0yNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMy0yNCIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "11",
+            "athlete_name": "Nathan Ramsey",
+            "total": "210",
+            "gender": "M",
+            "age": "33",
+            "club_name": "Out of Step Barbell",
+            "membership_number": "1039179",
+            "wso": "Carolina"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 34647,
+      "athlete_name": "Nathan Ramsey",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/34647",
+      "contaminated_lifter_id": 23511,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T01:19:18.284Z",
+      "profile_data": {
+        "membership_number": "1010459",
+        "birth_year": 1996,
+        "gender": "M",
+        "club_name": "Notch8 Barbell [Archived]",
+        "wso": "Indiana",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2018 Freedom Classic",
+          "date": "2018-07-07",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Nathan Ramsey",
+          "body_weight_kg": "114",
+          "snatch_1": "-125",
+          "snatch_2": "-126",
+          "snatch_3": "126",
+          "cj_1": "155",
+          "cj_2": "163",
+          "cj_3": "167",
+          "best_snatch": "126",
+          "best_cj": "167",
+          "total": "293"
+        },
+        {
+          "meet_name": "Nike 2018 American Open Series 1",
+          "date": "2018-03-04",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Nathan Ramsey",
+          "body_weight_kg": "101.1",
+          "snatch_1": "-120",
+          "snatch_2": "120",
+          "snatch_3": "-125",
+          "cj_1": "152",
+          "cj_2": "-160",
+          "cj_3": "-160",
+          "best_snatch": "120",
+          "best_cj": "152",
+          "total": "272"
+        },
+        {
+          "meet_name": "Indiana Open",
+          "date": "2017-10-14",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Nathan Ramsey",
+          "body_weight_kg": "101.7",
+          "snatch_1": "115",
+          "snatch_2": "-120",
+          "snatch_3": "123",
+          "cj_1": "145",
+          "cj_2": "-152",
+          "cj_3": "-153",
+          "best_snatch": "123",
+          "best_cj": "145",
+          "total": "268"
+        },
+        {
+          "meet_name": "The Weightlifting Classic",
+          "date": "2017-07-29",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Nathan Ramsey",
+          "body_weight_kg": "104.5",
+          "snatch_1": "-115",
+          "snatch_2": "-115",
+          "snatch_3": "120",
+          "cj_1": "143",
+          "cj_2": "150",
+          "cj_3": "-160",
+          "best_snatch": "120",
+          "best_cj": "150",
+          "total": "270"
+        },
+        {
+          "meet_name": "The Arnold Weightlifting Championships",
+          "date": "2017-03-05",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Nathan Ramsey",
+          "body_weight_kg": "100.7",
+          "snatch_1": "111",
+          "snatch_2": "-117",
+          "snatch_3": "117",
+          "cj_1": "138",
+          "cj_2": "-147",
+          "cj_3": "-147",
+          "best_snatch": "117",
+          "best_cj": "138",
+          "total": "255"
+        },
+        {
+          "meet_name": "King of Kilos and Queen of Kilos",
+          "date": "2016-10-22",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Nathan Ramsey",
+          "body_weight_kg": "102",
+          "snatch_1": "105",
+          "snatch_2": "-112",
+          "snatch_3": "-112",
+          "cj_1": "137",
+          "cj_2": "143",
+          "cj_3": "-150",
+          "best_snatch": "105",
+          "best_cj": "143",
+          "total": "248"
+        },
+        {
+          "meet_name": "Kill Cliff Showdown",
+          "date": "2016-10-02",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Nathan Ramsey",
+          "body_weight_kg": "104",
+          "snatch_1": "95",
+          "snatch_2": "102",
+          "snatch_3": "114",
+          "cj_1": "125",
+          "cj_2": "136",
+          "cj_3": "143",
+          "best_snatch": "114",
+          "best_cj": "143",
+          "total": "257"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2018 Freedom Classic",
+            "date": "2018-07-07",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Nathan Ramsey",
+            "body_weight_kg": "114",
+            "snatch_1": "-125",
+            "snatch_2": "-126",
+            "snatch_3": "126",
+            "cj_1": "155",
+            "cj_2": "163",
+            "cj_3": "167",
+            "best_snatch": "126",
+            "best_cj": "167",
+            "total": "293"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNy0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNy0wNyIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Nathan Ramsey",
+            "total": "293",
+            "gender": "M",
+            "age": "22",
+            "club_name": "Notch8 Barbell [Archived]",
+            "membership_number": "1010459",
+            "wso": "Indiana"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Nike 2018 American Open Series 1",
+            "date": "2018-03-04",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Nathan Ramsey",
+            "body_weight_kg": "101.1",
+            "snatch_1": "-120",
+            "snatch_2": "120",
+            "snatch_3": "-125",
+            "cj_1": "152",
+            "cj_2": "-160",
+            "cj_3": "-160",
+            "best_snatch": "120",
+            "best_cj": "152",
+            "total": "272"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMy0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMy0wNCIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "17",
+            "athlete_name": "Nathan Ramsey",
+            "total": "272",
+            "gender": "M",
+            "age": "22",
+            "club_name": "Notch8 Barbell [Archived]",
+            "membership_number": "1010459",
+            "wso": "Indiana"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Indiana Open",
+            "date": "2017-10-14",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Nathan Ramsey",
+            "body_weight_kg": "101.7",
+            "snatch_1": "115",
+            "snatch_2": "-120",
+            "snatch_3": "123",
+            "cj_1": "145",
+            "cj_2": "-152",
+            "cj_3": "-153",
+            "best_snatch": "123",
+            "best_cj": "145",
+            "total": "268"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0xNCIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "Nathan Ramsey",
+            "total": "268",
+            "gender": "M",
+            "age": "21",
+            "club_name": "Notch8 Barbell [Archived]",
+            "membership_number": "1010459",
+            "wso": "Indiana"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The Weightlifting Classic",
+            "date": "2017-07-29",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Nathan Ramsey",
+            "body_weight_kg": "104.5",
+            "snatch_1": "-115",
+            "snatch_2": "-115",
+            "snatch_3": "120",
+            "cj_1": "143",
+            "cj_2": "150",
+            "cj_3": "-160",
+            "best_snatch": "120",
+            "best_cj": "150",
+            "total": "270"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNy0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNy0yOSIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Nathan Ramsey",
+            "total": "270",
+            "gender": "M",
+            "age": "21",
+            "club_name": "Notch8 Barbell [Archived]",
+            "membership_number": "1010459",
+            "wso": "Indiana"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The Arnold Weightlifting Championships",
+            "date": "2017-03-05",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Nathan Ramsey",
+            "body_weight_kg": "100.7",
+            "snatch_1": "111",
+            "snatch_2": "-117",
+            "snatch_3": "117",
+            "cj_1": "138",
+            "cj_2": "-147",
+            "cj_3": "-147",
+            "best_snatch": "117",
+            "best_cj": "138",
+            "total": "255"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0wNSIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "15",
+            "athlete_name": "Nathan Ramsey",
+            "total": "255",
+            "gender": "M",
+            "age": "21",
+            "club_name": "Notch8 Barbell [Archived]",
+            "membership_number": "1010459",
+            "wso": "Indiana"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "King of Kilos and Queen of Kilos",
+            "date": "2016-10-22",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Nathan Ramsey",
+            "body_weight_kg": "102",
+            "snatch_1": "105",
+            "snatch_2": "-112",
+            "snatch_3": "-112",
+            "cj_1": "137",
+            "cj_2": "143",
+            "cj_3": "-150",
+            "best_snatch": "105",
+            "best_cj": "143",
+            "total": "248"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0yMiIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "19",
+            "athlete_name": "Nathan Ramsey",
+            "total": "248",
+            "gender": "M",
+            "age": "20",
+            "club_name": "Notch8 Barbell [Archived]",
+            "membership_number": "1010459",
+            "wso": "Indiana"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Kill Cliff Showdown",
+            "date": "2016-10-02",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Nathan Ramsey",
+            "body_weight_kg": "104",
+            "snatch_1": "95",
+            "snatch_2": "102",
+            "snatch_3": "114",
+            "cj_1": "125",
+            "cj_2": "136",
+            "cj_3": "143",
+            "best_snatch": "114",
+            "best_cj": "143",
+            "total": "257"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0wMiIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "Nathan Ramsey",
+            "total": "257",
+            "gender": "M",
+            "age": "20",
+            "club_name": "Notch8 Barbell [Archived]",
+            "membership_number": "1010459",
+            "wso": "Indiana"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

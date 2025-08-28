@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T00:29:00.129Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Ryan White",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 85010223
+  },
+  "data": [
+    {
+      "internal_id": 5467,
+      "athlete_name": "Ryan White",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/5467",
+      "contaminated_lifter_id": 28229,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T00:28:48.251Z",
+      "profile_data": {
+        "membership_number": "1035923",
+        "birth_year": 1977,
+        "gender": "M",
+        "club_name": "Southern California Weightlifting Club",
+        "wso": "California South",
+        "national_rank": "17"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2018 Winter Classic",
+          "date": "2018-12-02",
+          "division": "Open Men's 73kg",
+          "lifter_name": "Ryan White",
+          "body_weight_kg": "72.58",
+          "snatch_1": "57",
+          "snatch_2": "60",
+          "snatch_3": "62",
+          "cj_1": "72",
+          "cj_2": "76",
+          "cj_3": "79",
+          "best_snatch": "62",
+          "best_cj": "79",
+          "total": "141"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2018 Winter Classic",
+            "date": "2018-12-02",
+            "division": "Open Men's 73kg",
+            "lifter_name": "Ryan White",
+            "body_weight_kg": "72.58",
+            "snatch_1": "57",
+            "snatch_2": "60",
+            "snatch_3": "62",
+            "cj_1": "72",
+            "cj_2": "76",
+            "cj_3": "79",
+            "best_snatch": "62",
+            "best_cj": "79",
+            "total": "141"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0wMiIsIndlaWdodF9jbGFzcyI6ODR9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "17",
+            "athlete_name": "Ryan White",
+            "total": "141",
+            "gender": "M",
+            "age": "41",
+            "club_name": "Southern California Weightlifting Club",
+            "membership_number": "1035923",
+            "wso": "California South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 25509,
+      "athlete_name": "Ryan White",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/25509",
+      "contaminated_lifter_id": 28229,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T00:29:00.126Z",
+      "profile_data": {
+        "membership_number": "1014257",
+        "birth_year": 1991,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Iowa-Nebraska",
+        "national_rank": "14"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Ames Open",
+          "date": "2017-01-21",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Ryan White",
+          "body_weight_kg": "72.9",
+          "snatch_1": "-75",
+          "snatch_2": "80",
+          "snatch_3": "86",
+          "cj_1": "102",
+          "cj_2": "105",
+          "cj_3": "107",
+          "best_snatch": "86",
+          "best_cj": "107",
+          "total": "193"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Ames Open",
+            "date": "2017-01-21",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Ryan White",
+            "body_weight_kg": "72.9",
+            "snatch_1": "-75",
+            "snatch_2": "80",
+            "snatch_3": "86",
+            "cj_1": "102",
+            "cj_2": "105",
+            "cj_3": "107",
+            "best_snatch": "86",
+            "best_cj": "107",
+            "total": "193"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMS0yMSIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "14",
+            "athlete_name": "Ryan White",
+            "total": "193",
+            "gender": "M",
+            "age": "26",
+            "club_name": "-",
+            "membership_number": "1014257",
+            "wso": "Iowa-Nebraska"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

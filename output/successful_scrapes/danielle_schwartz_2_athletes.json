@@ -1,0 +1,435 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T23:13:57.131Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Danielle Schwartz",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 8,
+    "total_reverse_lookups": 8,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 80507225
+  },
+  "data": [
+    {
+      "internal_id": 50903,
+      "athlete_name": "Danielle Schwartz",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/50903",
+      "contaminated_lifter_id": 21337,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T23:13:37.001Z",
+      "profile_data": {
+        "membership_number": "1056858",
+        "birth_year": 1998,
+        "gender": "F",
+        "club_name": "Mach 1 Barbell",
+        "wso": "New Jersey",
+        "national_rank": "4"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2025 USA Weightlifting New Jersey March Mayhem",
+          "date": "2025-03-23",
+          "division": "Open Women's 64kg",
+          "lifter_name": "Danielle Schwartz",
+          "body_weight_kg": "60.5",
+          "snatch_1": "45",
+          "snatch_2": "47",
+          "snatch_3": "50",
+          "cj_1": "58",
+          "cj_2": "62",
+          "cj_3": "-66",
+          "best_snatch": "50",
+          "best_cj": "62",
+          "total": "112"
+        },
+        {
+          "meet_name": "New Jersey Outdoor Classic",
+          "date": "2024-08-18",
+          "division": "Open Women's 64kg",
+          "lifter_name": "Danielle Schwartz",
+          "body_weight_kg": "60.27",
+          "snatch_1": "45",
+          "snatch_2": "48",
+          "snatch_3": "51",
+          "cj_1": "60",
+          "cj_2": "63",
+          "cj_3": "-66",
+          "best_snatch": "51",
+          "best_cj": "63",
+          "total": "114"
+        },
+        {
+          "meet_name": "Rutgers/RYPT Winter Classic",
+          "date": "2023-01-14",
+          "division": "Open Women's 64kg",
+          "lifter_name": "Danielle Schwartz",
+          "body_weight_kg": "62.7",
+          "snatch_1": "44",
+          "snatch_2": "-47",
+          "snatch_3": "50",
+          "cj_1": "60",
+          "cj_2": "63",
+          "cj_3": "-68",
+          "best_snatch": "50",
+          "best_cj": "63",
+          "total": "113"
+        },
+        {
+          "meet_name": "RYPT Summer Classic 2022",
+          "date": "2022-08-13",
+          "division": "Open Women's 64kg",
+          "lifter_name": "Danielle Schwartz",
+          "body_weight_kg": "60.2",
+          "snatch_1": "41",
+          "snatch_2": "45",
+          "snatch_3": "48",
+          "cj_1": "57",
+          "cj_2": "61",
+          "cj_3": "64",
+          "best_snatch": "48",
+          "best_cj": "64",
+          "total": "112"
+        },
+        {
+          "meet_name": "2022 Murder of Crows Open",
+          "date": "2022-06-11",
+          "division": "Open Women's 64kg",
+          "lifter_name": "Danielle Schwartz",
+          "body_weight_kg": "64",
+          "snatch_1": "40",
+          "snatch_2": "43",
+          "snatch_3": "-46",
+          "cj_1": "52",
+          "cj_2": "56",
+          "cj_3": "60",
+          "best_snatch": "43",
+          "best_cj": "60",
+          "total": "103"
+        },
+        {
+          "meet_name": "Stan Bailey memorial",
+          "date": "2021-07-17",
+          "division": "Open Women's 64kg",
+          "lifter_name": "Danielle Schwartz",
+          "body_weight_kg": "60.1",
+          "snatch_1": "35",
+          "snatch_2": "-40",
+          "snatch_3": "40",
+          "cj_1": "-46",
+          "cj_2": "48",
+          "cj_3": "-51",
+          "best_snatch": "40",
+          "best_cj": "48",
+          "total": "88"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2025 USA Weightlifting New Jersey March Mayhem",
+            "date": "2025-03-23",
+            "division": "Open Women's 64kg",
+            "lifter_name": "Danielle Schwartz",
+            "body_weight_kg": "60.5",
+            "snatch_1": "45",
+            "snatch_2": "47",
+            "snatch_3": "50",
+            "cj_1": "58",
+            "cj_2": "62",
+            "cj_3": "-66",
+            "best_snatch": "50",
+            "best_cj": "62",
+            "total": "112"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMy0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMy0yMyIsIndlaWdodF9jbGFzcyI6OTV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Danielle Schwartz",
+            "total": "112",
+            "gender": "F",
+            "age": "27",
+            "club_name": "Mach 1 Barbell",
+            "membership_number": "1056858",
+            "wso": "New Jersey"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "New Jersey Outdoor Classic",
+            "date": "2024-08-18",
+            "division": "Open Women's 64kg",
+            "lifter_name": "Danielle Schwartz",
+            "body_weight_kg": "60.27",
+            "snatch_1": "45",
+            "snatch_2": "48",
+            "snatch_3": "51",
+            "cj_1": "60",
+            "cj_2": "63",
+            "cj_3": "-66",
+            "best_snatch": "51",
+            "best_cj": "63",
+            "total": "114"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOC0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOC0xOCIsIndlaWdodF9jbGFzcyI6OTV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Danielle Schwartz",
+            "total": "114",
+            "gender": "F",
+            "age": "26",
+            "club_name": "Mach 1 Barbell",
+            "membership_number": "1056858",
+            "wso": "New Jersey"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Rutgers/RYPT Winter Classic",
+            "date": "2023-01-14",
+            "division": "Open Women's 64kg",
+            "lifter_name": "Danielle Schwartz",
+            "body_weight_kg": "62.7",
+            "snatch_1": "44",
+            "snatch_2": "-47",
+            "snatch_3": "50",
+            "cj_1": "60",
+            "cj_2": "63",
+            "cj_3": "-68",
+            "best_snatch": "50",
+            "best_cj": "63",
+            "total": "113"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMS0xNCIsIndlaWdodF9jbGFzcyI6OTV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "22",
+            "athlete_name": "Danielle Schwartz",
+            "total": "113",
+            "gender": "F",
+            "age": "25",
+            "club_name": "Mach 1 Barbell",
+            "membership_number": "1056858",
+            "wso": "New Jersey"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "RYPT Summer Classic 2022",
+            "date": "2022-08-13",
+            "division": "Open Women's 64kg",
+            "lifter_name": "Danielle Schwartz",
+            "body_weight_kg": "60.2",
+            "snatch_1": "41",
+            "snatch_2": "45",
+            "snatch_3": "48",
+            "cj_1": "57",
+            "cj_2": "61",
+            "cj_3": "64",
+            "best_snatch": "48",
+            "best_cj": "64",
+            "total": "112"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wOC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wOC0xMyIsIndlaWdodF9jbGFzcyI6OTV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "19",
+            "athlete_name": "Danielle Schwartz",
+            "total": "112",
+            "gender": "F",
+            "age": "24",
+            "club_name": "Mach 1 Barbell",
+            "membership_number": "1056858",
+            "wso": "New Jersey"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2022 Murder of Crows Open",
+            "date": "2022-06-11",
+            "division": "Open Women's 64kg",
+            "lifter_name": "Danielle Schwartz",
+            "body_weight_kg": "64",
+            "snatch_1": "40",
+            "snatch_2": "43",
+            "snatch_3": "-46",
+            "cj_1": "52",
+            "cj_2": "56",
+            "cj_3": "60",
+            "best_snatch": "43",
+            "best_cj": "60",
+            "total": "103"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNi0xMSIsIndlaWdodF9jbGFzcyI6OTV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "11",
+            "athlete_name": "Danielle Schwartz",
+            "total": "103",
+            "gender": "F",
+            "age": "24",
+            "club_name": "Mach 1 Barbell",
+            "membership_number": "1056858",
+            "wso": "New Jersey"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Stan Bailey memorial",
+            "date": "2021-07-17",
+            "division": "Open Women's 64kg",
+            "lifter_name": "Danielle Schwartz",
+            "body_weight_kg": "60.1",
+            "snatch_1": "35",
+            "snatch_2": "-40",
+            "snatch_3": "40",
+            "cj_1": "-46",
+            "cj_2": "48",
+            "cj_3": "-51",
+            "best_snatch": "40",
+            "best_cj": "48",
+            "total": "88"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNy0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNy0xNyIsIndlaWdodF9jbGFzcyI6OTV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "17",
+            "athlete_name": "Danielle Schwartz",
+            "total": "88",
+            "gender": "F",
+            "age": "23",
+            "club_name": "Mach 1 Barbell",
+            "membership_number": "1056858",
+            "wso": "New Jersey"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 15674,
+      "athlete_name": "Danielle Schwartz",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/15674",
+      "contaminated_lifter_id": 21337,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T23:13:57.129Z",
+      "profile_data": {
+        "membership_number": "1008584",
+        "birth_year": 1986,
+        "gender": "F",
+        "club_name": "Rebel Barbell Club",
+        "wso": "New York",
+        "national_rank": "18"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Intrepid Winter Open",
+          "date": "2016-11-19",
+          "division": "Open Women's 58 kg",
+          "lifter_name": "Danielle Schwartz",
+          "body_weight_kg": "54.05",
+          "snatch_1": "39",
+          "snatch_2": "43",
+          "snatch_3": "-46",
+          "cj_1": "53",
+          "cj_2": "-57",
+          "cj_3": "57",
+          "best_snatch": "43",
+          "best_cj": "57",
+          "total": "100"
+        },
+        {
+          "meet_name": "2016 Crow Hill Open",
+          "date": "2016-07-10",
+          "division": "Open Women's 53 kg",
+          "lifter_name": "Danielle Schwartz",
+          "body_weight_kg": "52",
+          "snatch_1": "38",
+          "snatch_2": "41",
+          "snatch_3": "-44",
+          "cj_1": "47",
+          "cj_2": "-51",
+          "cj_3": "51",
+          "best_snatch": "41",
+          "best_cj": "51",
+          "total": "92"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Intrepid Winter Open",
+            "date": "2016-11-19",
+            "division": "Open Women's 58 kg",
+            "lifter_name": "Danielle Schwartz",
+            "body_weight_kg": "54.05",
+            "snatch_1": "39",
+            "snatch_2": "43",
+            "snatch_3": "-46",
+            "cj_1": "53",
+            "cj_2": "-57",
+            "cj_3": "57",
+            "best_snatch": "43",
+            "best_cj": "57",
+            "total": "100"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMS0xOSIsIndlaWdodF9jbGFzcyI6MzY0fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "18",
+            "athlete_name": "Danielle Schwartz",
+            "total": "100",
+            "gender": "F",
+            "age": "30",
+            "club_name": "Rebel Barbell Club",
+            "membership_number": "1008584",
+            "wso": "New York"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2016 Crow Hill Open",
+            "date": "2016-07-10",
+            "division": "Open Women's 53 kg",
+            "lifter_name": "Danielle Schwartz",
+            "body_weight_kg": "52",
+            "snatch_1": "38",
+            "snatch_2": "41",
+            "snatch_3": "-44",
+            "cj_1": "47",
+            "cj_2": "-51",
+            "cj_3": "51",
+            "best_snatch": "41",
+            "best_cj": "51",
+            "total": "92"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNy0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNy0xMCIsIndlaWdodF9jbGFzcyI6MzYzfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "Danielle Schwartz",
+            "total": "92",
+            "gender": "F",
+            "age": "30",
+            "club_name": "Rebel Barbell Club",
+            "membership_number": "1008584",
+            "wso": "New York"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

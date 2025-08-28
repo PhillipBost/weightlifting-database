@@ -1,0 +1,247 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T16:20:15.344Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Katie Ford",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 4,
+    "total_reverse_lookups": 4,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 55685438
+  },
+  "data": [
+    {
+      "internal_id": 9578,
+      "athlete_name": "Katie Ford",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/9578",
+      "contaminated_lifter_id": 9429,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T16:19:56.687Z",
+      "profile_data": {
+        "membership_number": "1000915",
+        "birth_year": 1982,
+        "gender": "F",
+        "club_name": "BOISE BARBELL",
+        "wso": "Mountain North",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Oakland Open",
+          "date": "2016-01-31",
+          "division": "Open Women's +75 Kg",
+          "lifter_name": "Katie Ford",
+          "body_weight_kg": "137.01",
+          "snatch_1": "120",
+          "snatch_2": "-125",
+          "snatch_3": "125",
+          "cj_1": "125",
+          "cj_2": "165",
+          "cj_3": "-170",
+          "best_snatch": "125",
+          "best_cj": "165",
+          "total": "290"
+        },
+        {
+          "meet_name": "The Grove Classic",
+          "date": "2016-01-30",
+          "division": "Open Women's 75 kg",
+          "lifter_name": "Katie Ford",
+          "body_weight_kg": "72.68",
+          "snatch_1": "38",
+          "snatch_2": "42",
+          "snatch_3": "-47",
+          "cj_1": "60",
+          "cj_2": "62",
+          "cj_3": "64",
+          "best_snatch": "42",
+          "best_cj": "64",
+          "total": "106"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Oakland Open",
+            "date": "2016-01-31",
+            "division": "Open Women's +75 Kg",
+            "lifter_name": "Katie Ford",
+            "body_weight_kg": "137.01",
+            "snatch_1": "120",
+            "snatch_2": "-125",
+            "snatch_3": "125",
+            "cj_1": "125",
+            "cj_2": "165",
+            "cj_3": "-170",
+            "best_snatch": "125",
+            "best_cj": "165",
+            "total": "290"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0zMSIsIndlaWdodF9jbGFzcyI6MzY4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Katie Ford",
+            "total": "290",
+            "gender": "F",
+            "age": "34",
+            "club_name": "BOISE BARBELL",
+            "membership_number": "1000915",
+            "wso": "Mountain North"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The Grove Classic",
+            "date": "2016-01-30",
+            "division": "Open Women's 75 kg",
+            "lifter_name": "Katie Ford",
+            "body_weight_kg": "72.68",
+            "snatch_1": "38",
+            "snatch_2": "42",
+            "snatch_3": "-47",
+            "cj_1": "60",
+            "cj_2": "62",
+            "cj_3": "64",
+            "best_snatch": "42",
+            "best_cj": "64",
+            "total": "106"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0zMCIsIndlaWdodF9jbGFzcyI6MzY3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Katie Ford",
+            "total": "106",
+            "gender": "F",
+            "age": "34",
+            "club_name": "BOISE BARBELL",
+            "membership_number": "1000915",
+            "wso": "Mountain North"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 11214,
+      "athlete_name": "Katie Ford",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/11214",
+      "contaminated_lifter_id": 9429,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T16:20:15.342Z",
+      "profile_data": {
+        "membership_number": "207431",
+        "birth_year": 1983,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "New York",
+        "national_rank": "37"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Elmira Spring Open",
+          "date": "2015-04-25",
+          "division": "Open Women's 69 kg",
+          "lifter_name": "Katie Ford",
+          "body_weight_kg": "68.5",
+          "snatch_1": "43",
+          "snatch_2": "45",
+          "snatch_3": "47",
+          "cj_1": "58",
+          "cj_2": "59",
+          "cj_3": "61",
+          "best_snatch": "47",
+          "best_cj": "61",
+          "total": "108"
+        },
+        {
+          "meet_name": "TWNY Spring Fling Open",
+          "date": "2015-04-12",
+          "division": "Open Women's 69 kg",
+          "lifter_name": "Katie Ford",
+          "body_weight_kg": "67.7",
+          "snatch_1": "42",
+          "snatch_2": "44",
+          "snatch_3": "46",
+          "cj_1": "59",
+          "cj_2": "61",
+          "cj_3": "-63",
+          "best_snatch": "46",
+          "best_cj": "61",
+          "total": "107"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Elmira Spring Open",
+            "date": "2015-04-25",
+            "division": "Open Women's 69 kg",
+            "lifter_name": "Katie Ford",
+            "body_weight_kg": "68.5",
+            "snatch_1": "43",
+            "snatch_2": "45",
+            "snatch_3": "47",
+            "cj_1": "58",
+            "cj_2": "59",
+            "cj_3": "61",
+            "best_snatch": "47",
+            "best_cj": "61",
+            "total": "108"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0yNSIsIndlaWdodF9jbGFzcyI6MzY2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "37",
+            "athlete_name": "Katie Ford",
+            "total": "108",
+            "gender": "F",
+            "age": "32",
+            "club_name": "-",
+            "membership_number": "207431",
+            "wso": "New York"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "TWNY Spring Fling Open",
+            "date": "2015-04-12",
+            "division": "Open Women's 69 kg",
+            "lifter_name": "Katie Ford",
+            "body_weight_kg": "67.7",
+            "snatch_1": "42",
+            "snatch_2": "44",
+            "snatch_3": "46",
+            "cj_1": "59",
+            "cj_2": "61",
+            "cj_3": "-63",
+            "best_snatch": "46",
+            "best_cj": "61",
+            "total": "107"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNC0xMiIsIndlaWdodF9jbGFzcyI6MzY2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "15",
+            "athlete_name": "Katie Ford",
+            "total": "107",
+            "gender": "F",
+            "age": "32",
+            "club_name": "-",
+            "membership_number": "207431",
+            "wso": "New York"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

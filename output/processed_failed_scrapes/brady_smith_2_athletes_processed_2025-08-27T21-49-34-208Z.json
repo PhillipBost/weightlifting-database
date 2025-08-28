@@ -1,0 +1,285 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T00:05:30.636Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Brady Smith",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 5,
+    "total_reverse_lookups": 5,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 48624073
+  },
+  "data": [
+    {
+      "internal_id": 61892,
+      "athlete_name": "Brady Smith",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/61892",
+      "contaminated_lifter_id": 33212,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-27T00:05:21.026Z",
+      "profile_data": {
+        "membership_number": "1075001",
+        "birth_year": 2007,
+        "gender": "M",
+        "club_name": "Heavy Athletics",
+        "wso": "Mountain North",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2025 Mountain North WSO Championship",
+          "date": "2025-05-10",
+          "division": "Junior Men's 102kg",
+          "lifter_name": "Brady Smith",
+          "body_weight_kg": "98.2",
+          "snatch_1": "-100",
+          "snatch_2": "-101",
+          "snatch_3": "-101",
+          "cj_1": "113",
+          "cj_2": "117",
+          "cj_3": "120",
+          "best_snatch": "0",
+          "best_cj": "120",
+          "total": "0"
+        },
+        {
+          "meet_name": "2nd Annual Sabercat Slam",
+          "date": "2025-02-22",
+          "division": "Junior Men's 102kg",
+          "lifter_name": "Brady Smith",
+          "body_weight_kg": "98.4",
+          "snatch_1": "98",
+          "snatch_2": "-103",
+          "snatch_3": "-107",
+          "cj_1": "-115",
+          "cj_2": "115",
+          "cj_3": "-120",
+          "best_snatch": "98",
+          "best_cj": "115",
+          "total": "213"
+        },
+        {
+          "meet_name": "Rocky Mountain StateGames",
+          "date": "2024-07-27",
+          "division": "Men's 16-17 Age Group +102kg",
+          "lifter_name": "Brady Smith",
+          "body_weight_kg": "104.1",
+          "snatch_1": "90",
+          "snatch_2": "94",
+          "snatch_3": "100",
+          "cj_1": "105",
+          "cj_2": "110",
+          "cj_3": "115",
+          "best_snatch": "100",
+          "best_cj": "115",
+          "total": "215"
+        },
+        {
+          "meet_name": "Sabercat Slam",
+          "date": "2024-02-26",
+          "division": "Men's 16-17 Age Group +102kg",
+          "lifter_name": "Brady Smith",
+          "body_weight_kg": "102.3",
+          "snatch_1": "79",
+          "snatch_2": "82",
+          "snatch_3": "85",
+          "cj_1": "98",
+          "cj_2": "102",
+          "cj_3": "106",
+          "best_snatch": "85",
+          "best_cj": "106",
+          "total": "191"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2025 Mountain North WSO Championship",
+            "date": "2025-05-10",
+            "division": "Junior Men's 102kg",
+            "lifter_name": "Brady Smith",
+            "body_weight_kg": "98.2",
+            "snatch_1": "-100",
+            "snatch_2": "-101",
+            "snatch_3": "-101",
+            "cj_1": "113",
+            "cj_2": "117",
+            "cj_3": "120",
+            "best_snatch": "0",
+            "best_cj": "120",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNS0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNS0xMCIsIndlaWdodF9jbGFzcyI6Njh9",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2nd Annual Sabercat Slam",
+            "date": "2025-02-22",
+            "division": "Junior Men's 102kg",
+            "lifter_name": "Brady Smith",
+            "body_weight_kg": "98.4",
+            "snatch_1": "98",
+            "snatch_2": "-103",
+            "snatch_3": "-107",
+            "cj_1": "-115",
+            "cj_2": "115",
+            "cj_3": "-120",
+            "best_snatch": "98",
+            "best_cj": "115",
+            "total": "213"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMi0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMi0yMiIsIndlaWdodF9jbGFzcyI6Njh9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Brady Smith",
+            "total": "213",
+            "gender": "M",
+            "age": "18",
+            "club_name": "Heavy Athletics",
+            "membership_number": "1075001",
+            "wso": "Mountain North"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Rocky Mountain StateGames",
+            "date": "2024-07-27",
+            "division": "Men's 16-17 Age Group +102kg",
+            "lifter_name": "Brady Smith",
+            "body_weight_kg": "104.1",
+            "snatch_1": "90",
+            "snatch_2": "94",
+            "snatch_3": "100",
+            "cj_1": "105",
+            "cj_2": "110",
+            "cj_3": "115",
+            "best_snatch": "100",
+            "best_cj": "115",
+            "total": "215"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNy0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNy0yNyIsIndlaWdodF9jbGFzcyI6MTB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Brady Smith",
+            "total": "215",
+            "gender": "M",
+            "age": "17",
+            "club_name": "Heavy Athletics",
+            "membership_number": "1075001",
+            "wso": "Mountain North"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Sabercat Slam",
+            "date": "2024-02-26",
+            "division": "Men's 16-17 Age Group +102kg",
+            "lifter_name": "Brady Smith",
+            "body_weight_kg": "102.3",
+            "snatch_1": "79",
+            "snatch_2": "82",
+            "snatch_3": "85",
+            "cj_1": "98",
+            "cj_2": "102",
+            "cj_3": "106",
+            "best_snatch": "85",
+            "best_cj": "106",
+            "total": "191"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMi0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMi0yNiIsIndlaWdodF9jbGFzcyI6MTB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Brady Smith",
+            "total": "191",
+            "gender": "M",
+            "age": "17",
+            "club_name": "Heavy Athletics",
+            "membership_number": "1075001",
+            "wso": "Mountain North"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    },
+    {
+      "internal_id": 46434,
+      "athlete_name": "Brady Smith",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/46434",
+      "contaminated_lifter_id": 33212,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-27T00:05:30.634Z",
+      "profile_data": {
+        "membership_number": "1023991",
+        "birth_year": 2010,
+        "gender": "M",
+        "club_name": "BUTTE BARBELL CLUB",
+        "wso": "Mountain North",
+        "national_rank": "5"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2017 Montana State Weightliftig Championships and Gough-Karchut Classic",
+          "date": "2017-10-29",
+          "division": "Men's 13 Under Age Group 31 Kg",
+          "lifter_name": "Brady Smith",
+          "body_weight_kg": "22.8",
+          "snatch_1": "5",
+          "snatch_2": "6",
+          "snatch_3": "8",
+          "cj_1": "6",
+          "cj_2": "7",
+          "cj_3": "-9",
+          "best_snatch": "8",
+          "best_cj": "7",
+          "total": "15"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2017 Montana State Weightliftig Championships and Gough-Karchut Classic",
+            "date": "2017-10-29",
+            "division": "Men's 13 Under Age Group 31 Kg",
+            "lifter_name": "Brady Smith",
+            "body_weight_kg": "22.8",
+            "snatch_1": "5",
+            "snatch_2": "6",
+            "snatch_3": "8",
+            "cj_1": "6",
+            "cj_2": "7",
+            "cj_3": "-9",
+            "best_snatch": "8",
+            "best_cj": "7",
+            "total": "15"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0yOSIsIndlaWdodF9jbGFzcyI6MjkxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "Brady Smith",
+            "total": "15",
+            "gender": "M",
+            "age": "7",
+            "club_name": "BUTTE BARBELL CLUB",
+            "membership_number": "1023991",
+            "wso": "Mountain North"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

@@ -1,0 +1,200 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T01:01:41.285Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Emily Hu",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 3,
+    "total_reverse_lookups": 3,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 86971379
+  },
+  "data": [
+    {
+      "internal_id": 9521,
+      "athlete_name": "Emily Hu",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/9521",
+      "contaminated_lifter_id": 23438,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T01:01:28.629Z",
+      "profile_data": {
+        "membership_number": "1011257",
+        "birth_year": 1982,
+        "gender": "F",
+        "club_name": "THE SPORTS PALACE",
+        "wso": "California North Central",
+        "national_rank": "2"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Virus winter open",
+          "date": "2017-02-19",
+          "division": "Women's Masters (35-39) 63 kg",
+          "lifter_name": "Emily Hu",
+          "body_weight_kg": "58.7",
+          "snatch_1": "68",
+          "snatch_2": "-70",
+          "snatch_3": "-70",
+          "cj_1": "-85",
+          "cj_2": "85",
+          "cj_3": "-88",
+          "best_snatch": "68",
+          "best_cj": "85",
+          "total": "153"
+        },
+        {
+          "meet_name": "Hassle Free BBC Winter Breaker",
+          "date": "2016-12-18",
+          "division": "Open Women's 63 kg",
+          "lifter_name": "Emily Hu",
+          "body_weight_kg": "60.52",
+          "snatch_1": "67",
+          "snatch_2": "69",
+          "snatch_3": "70",
+          "cj_1": "80",
+          "cj_2": "84",
+          "cj_3": "87",
+          "best_snatch": "70",
+          "best_cj": "87",
+          "total": "157"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Virus winter open",
+            "date": "2017-02-19",
+            "division": "Women's Masters (35-39) 63 kg",
+            "lifter_name": "Emily Hu",
+            "body_weight_kg": "58.7",
+            "snatch_1": "68",
+            "snatch_2": "-70",
+            "snatch_3": "-70",
+            "cj_1": "-85",
+            "cj_2": "85",
+            "cj_3": "-88",
+            "best_snatch": "68",
+            "best_cj": "85",
+            "total": "153"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xOSIsIndlaWdodF9jbGFzcyI6MzgyfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Emily Hu",
+            "total": "153",
+            "gender": "F",
+            "age": "35",
+            "club_name": "THE SPORTS PALACE",
+            "membership_number": "1011257",
+            "wso": "California North Central"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Hassle Free BBC Winter Breaker",
+            "date": "2016-12-18",
+            "division": "Open Women's 63 kg",
+            "lifter_name": "Emily Hu",
+            "body_weight_kg": "60.52",
+            "snatch_1": "67",
+            "snatch_2": "69",
+            "snatch_3": "70",
+            "cj_1": "80",
+            "cj_2": "84",
+            "cj_3": "87",
+            "best_snatch": "70",
+            "best_cj": "87",
+            "total": "157"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMi0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMi0xOCIsIndlaWdodF9jbGFzcyI6MzY1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Emily Hu",
+            "total": "157",
+            "gender": "F",
+            "age": "34",
+            "club_name": "THE SPORTS PALACE",
+            "membership_number": "1011257",
+            "wso": "California North Central"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 28527,
+      "athlete_name": "Emily Hu",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/28527",
+      "contaminated_lifter_id": 23438,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T01:01:41.282Z",
+      "profile_data": {
+        "membership_number": "1004217",
+        "birth_year": 1992,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "Ohio",
+        "national_rank": "11"
+      },
+      "competition_history": [
+        {
+          "meet_name": "JT Memorial Open Olympic Lifting Meet",
+          "date": "2016-04-23",
+          "division": "Open Women's 58 kg",
+          "lifter_name": "Emily Hu",
+          "body_weight_kg": "57.2",
+          "snatch_1": "43",
+          "snatch_2": "48",
+          "snatch_3": "53",
+          "cj_1": "59",
+          "cj_2": "64",
+          "cj_3": "69",
+          "best_snatch": "53",
+          "best_cj": "69",
+          "total": "122"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "JT Memorial Open Olympic Lifting Meet",
+            "date": "2016-04-23",
+            "division": "Open Women's 58 kg",
+            "lifter_name": "Emily Hu",
+            "body_weight_kg": "57.2",
+            "snatch_1": "43",
+            "snatch_2": "48",
+            "snatch_3": "53",
+            "cj_1": "59",
+            "cj_2": "64",
+            "cj_3": "69",
+            "best_snatch": "53",
+            "best_cj": "69",
+            "total": "122"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0yMyIsIndlaWdodF9jbGFzcyI6MzY0fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "11",
+            "athlete_name": "Emily Hu",
+            "total": "122",
+            "gender": "F",
+            "age": "24",
+            "club_name": "-",
+            "membership_number": "1004217",
+            "wso": "Ohio"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T07:01:47.600Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Michelle Anderson",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 1,
+    "total_reverse_lookups": 1,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 19814055
+  },
+  "data": [
+    {
+      "internal_id": 10084,
+      "athlete_name": "Michelle Anderson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/10084",
+      "contaminated_lifter_id": 23531,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T18:14:35.063Z",
+      "profile_data": {
+        "membership_number": "130848",
+        "birth_year": 1982,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "Florida",
+        "national_rank": "15"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Blaze Barbell Invitational",
+          "date": "2017-03-05",
+          "division": "Women's Masters (35-39) 75 kg",
+          "lifter_name": "Michelle Anderson",
+          "body_weight_kg": "73.8",
+          "snatch_1": "25",
+          "snatch_2": "35",
+          "snatch_3": "45",
+          "cj_1": "45",
+          "cj_2": "50",
+          "cj_3": "55",
+          "best_snatch": "45",
+          "best_cj": "55",
+          "total": "100"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Blaze Barbell Invitational",
+            "date": "2017-03-05",
+            "division": "Women's Masters (35-39) 75 kg",
+            "lifter_name": "Michelle Anderson",
+            "body_weight_kg": "73.8",
+            "snatch_1": "25",
+            "snatch_2": "35",
+            "snatch_3": "45",
+            "cj_1": "45",
+            "cj_2": "50",
+            "cj_3": "55",
+            "best_snatch": "45",
+            "best_cj": "55",
+            "total": "100"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMy0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMy0wNSIsIndlaWdodF9jbGFzcyI6Mzg0fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "15",
+            "athlete_name": "Michelle Anderson",
+            "total": "100",
+            "gender": "F",
+            "age": "35",
+            "club_name": "-",
+            "membership_number": "130848",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 1722,
+      "athlete_name": "Michelle Anderson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/1722",
+      "contaminated_lifter_id": 23531,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-27T07:01:45.597Z",
+      "profile_data": null,
+      "competition_history": [],
+      "biographical_data_by_competition": [],
+      "scraping_successful": false,
+      "error": "Assignment to constant variable."
+    }
+  ]
+}

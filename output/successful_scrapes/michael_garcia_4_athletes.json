@@ -1,0 +1,430 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T01:50:26.441Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Michael Garcia",
+    "internal_ids_processed": 4,
+    "successful_scrapes": 4,
+    "failed_scrapes": 0,
+    "total_competitions_found": 7,
+    "total_reverse_lookups": 7,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 3496535
+  },
+  "data": [
+    {
+      "internal_id": 59639,
+      "athlete_name": "Michael Garcia",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/59639",
+      "contaminated_lifter_id": 20319,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T01:49:51.553Z",
+      "profile_data": {
+        "membership_number": "1071091",
+        "birth_year": 2007,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Florida",
+        "national_rank": "6"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Florida State Championships (WSO Championships)",
+          "date": "2024-05-04",
+          "division": "Men's 16-17 Age Group 89kg",
+          "lifter_name": "Michael Garcia",
+          "body_weight_kg": "88.9",
+          "snatch_1": "-73",
+          "snatch_2": "73",
+          "snatch_3": "-76",
+          "cj_1": "103",
+          "cj_2": "-107",
+          "cj_3": "-107",
+          "best_snatch": "73",
+          "best_cj": "103",
+          "total": "176"
+        },
+        {
+          "meet_name": "Tampa Bay Spring Classic 7",
+          "date": "2024-03-16",
+          "division": "Men's 16-17 Age Group 89kg",
+          "lifter_name": "Michael Garcia",
+          "body_weight_kg": "87.5",
+          "snatch_1": "73",
+          "snatch_2": "-75",
+          "snatch_3": "-75",
+          "cj_1": "100",
+          "cj_2": "-104",
+          "cj_3": "-107",
+          "best_snatch": "73",
+          "best_cj": "100",
+          "total": "173"
+        },
+        {
+          "meet_name": "Tampa Bay Holiday Classic 4 (NUQ)",
+          "date": "2023-12-16",
+          "division": "Men's 16-17 Age Group 89kg",
+          "lifter_name": "Michael Garcia",
+          "body_weight_kg": "89",
+          "snatch_1": "66",
+          "snatch_2": "70",
+          "snatch_3": "75",
+          "cj_1": "95",
+          "cj_2": "100",
+          "cj_3": "-105",
+          "best_snatch": "75",
+          "best_cj": "100",
+          "total": "175"
+        },
+        {
+          "meet_name": "The Praelium 2023",
+          "date": "2023-08-05",
+          "division": "Men's 16-17 Age Group 89kg",
+          "lifter_name": "Michael Garcia",
+          "body_weight_kg": "88.7",
+          "snatch_1": "66",
+          "snatch_2": "70",
+          "snatch_3": "-76",
+          "cj_1": "-98",
+          "cj_2": "-100",
+          "cj_3": "100",
+          "best_snatch": "70",
+          "best_cj": "100",
+          "total": "170"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Florida State Championships (WSO Championships)",
+            "date": "2024-05-04",
+            "division": "Men's 16-17 Age Group 89kg",
+            "lifter_name": "Michael Garcia",
+            "body_weight_kg": "88.9",
+            "snatch_1": "-73",
+            "snatch_2": "73",
+            "snatch_3": "-76",
+            "cj_1": "103",
+            "cj_2": "-107",
+            "cj_3": "-107",
+            "best_snatch": "73",
+            "best_cj": "103",
+            "total": "176"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNS0wNCIsIndlaWdodF9jbGFzcyI6N30=",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Michael Garcia",
+            "total": "176",
+            "gender": "M",
+            "age": "17",
+            "club_name": "-",
+            "membership_number": "1071091",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Tampa Bay Spring Classic 7",
+            "date": "2024-03-16",
+            "division": "Men's 16-17 Age Group 89kg",
+            "lifter_name": "Michael Garcia",
+            "body_weight_kg": "87.5",
+            "snatch_1": "73",
+            "snatch_2": "-75",
+            "snatch_3": "-75",
+            "cj_1": "100",
+            "cj_2": "-104",
+            "cj_3": "-107",
+            "best_snatch": "73",
+            "best_cj": "100",
+            "total": "173"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMy0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMy0xNiIsIndlaWdodF9jbGFzcyI6N30=",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Michael Garcia",
+            "total": "173",
+            "gender": "M",
+            "age": "17",
+            "club_name": "-",
+            "membership_number": "1071091",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Tampa Bay Holiday Classic 4 (NUQ)",
+            "date": "2023-12-16",
+            "division": "Men's 16-17 Age Group 89kg",
+            "lifter_name": "Michael Garcia",
+            "body_weight_kg": "89",
+            "snatch_1": "66",
+            "snatch_2": "70",
+            "snatch_3": "75",
+            "cj_1": "95",
+            "cj_2": "100",
+            "cj_3": "-105",
+            "best_snatch": "75",
+            "best_cj": "100",
+            "total": "175"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0xMi0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0xMi0xNiIsIndlaWdodF9jbGFzcyI6N30=",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Michael Garcia",
+            "total": "175",
+            "gender": "M",
+            "age": "16",
+            "club_name": "-",
+            "membership_number": "1071091",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The Praelium 2023",
+            "date": "2023-08-05",
+            "division": "Men's 16-17 Age Group 89kg",
+            "lifter_name": "Michael Garcia",
+            "body_weight_kg": "88.7",
+            "snatch_1": "66",
+            "snatch_2": "70",
+            "snatch_3": "-76",
+            "cj_1": "-98",
+            "cj_2": "-100",
+            "cj_3": "100",
+            "best_snatch": "70",
+            "best_cj": "100",
+            "total": "170"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wOC0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wOC0wNSIsIndlaWdodF9jbGFzcyI6N30=",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Michael Garcia",
+            "total": "170",
+            "gender": "M",
+            "age": "16",
+            "club_name": "-",
+            "membership_number": "1071091",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 11166,
+      "athlete_name": "Michael Garcia",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/11166",
+      "contaminated_lifter_id": 20319,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T01:50:01.631Z",
+      "profile_data": {
+        "membership_number": "189946",
+        "birth_year": 1983,
+        "gender": "M",
+        "club_name": "AXIOM LIFTING CLUB",
+        "wso": "California South",
+        "national_rank": "21"
+      },
+      "competition_history": [
+        {
+          "meet_name": "California State GAmes",
+          "date": "2016-07-17",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Michael Garcia",
+          "body_weight_kg": "104.1",
+          "snatch_1": "-87",
+          "snatch_2": "90",
+          "snatch_3": "96",
+          "cj_1": "115",
+          "cj_2": "122",
+          "cj_3": "-128",
+          "best_snatch": "96",
+          "best_cj": "122",
+          "total": "218"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "California State GAmes",
+            "date": "2016-07-17",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Michael Garcia",
+            "body_weight_kg": "104.1",
+            "snatch_1": "-87",
+            "snatch_2": "90",
+            "snatch_3": "96",
+            "cj_1": "115",
+            "cj_2": "122",
+            "cj_3": "-128",
+            "best_snatch": "96",
+            "best_cj": "122",
+            "total": "218"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNy0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNy0xNyIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "21",
+            "athlete_name": "Michael Garcia",
+            "total": "218",
+            "gender": "M",
+            "age": "33",
+            "club_name": "AXIOM LIFTING CLUB",
+            "membership_number": "189946",
+            "wso": "California South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 31018,
+      "athlete_name": "Michael Garcia",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/31018",
+      "contaminated_lifter_id": 20319,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T01:50:14.028Z",
+      "profile_data": {
+        "membership_number": "205498",
+        "birth_year": 1994,
+        "gender": "M",
+        "club_name": "BULLY BARBELL CLUB",
+        "wso": "Mountain North",
+        "national_rank": "32"
+      },
+      "competition_history": [
+        {
+          "meet_name": "CAN-ADA Shootout",
+          "date": "2014-10-11",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Michael Garcia",
+          "body_weight_kg": "84.2",
+          "snatch_1": "60",
+          "snatch_2": "60",
+          "snatch_3": "65",
+          "cj_1": "85",
+          "cj_2": "90",
+          "cj_3": "95",
+          "best_snatch": "65",
+          "best_cj": "95",
+          "total": "160"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "CAN-ADA Shootout",
+            "date": "2014-10-11",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Michael Garcia",
+            "body_weight_kg": "84.2",
+            "snatch_1": "60",
+            "snatch_2": "60",
+            "snatch_3": "65",
+            "cj_1": "85",
+            "cj_2": "90",
+            "cj_3": "95",
+            "best_snatch": "65",
+            "best_cj": "95",
+            "total": "160"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMC0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMC0xMSIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "32",
+            "athlete_name": "Michael Garcia",
+            "total": "160",
+            "gender": "M",
+            "age": "20",
+            "club_name": "BULLY BARBELL CLUB",
+            "membership_number": "205498",
+            "wso": "Mountain North"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 34214,
+      "athlete_name": "Michael Garcia",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/34214",
+      "contaminated_lifter_id": 20319,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T01:50:26.439Z",
+      "profile_data": {
+        "membership_number": "202119",
+        "birth_year": 1995,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Florida",
+        "national_rank": "37"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Jacked Classic",
+          "date": "2014-09-20",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Michael Garcia",
+          "body_weight_kg": "74.3",
+          "snatch_1": "59",
+          "snatch_2": "61",
+          "snatch_3": "66",
+          "cj_1": "74",
+          "cj_2": "80",
+          "cj_3": "82",
+          "best_snatch": "66",
+          "best_cj": "82",
+          "total": "148"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Jacked Classic",
+            "date": "2014-09-20",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Michael Garcia",
+            "body_weight_kg": "74.3",
+            "snatch_1": "59",
+            "snatch_2": "61",
+            "snatch_3": "66",
+            "cj_1": "74",
+            "cj_2": "80",
+            "cj_3": "82",
+            "best_snatch": "66",
+            "best_cj": "82",
+            "total": "148"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOS0yMCIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "37",
+            "athlete_name": "Michael Garcia",
+            "total": "148",
+            "gender": "M",
+            "age": "19",
+            "club_name": "-",
+            "membership_number": "202119",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

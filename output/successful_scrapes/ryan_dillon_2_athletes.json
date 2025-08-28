@@ -1,0 +1,200 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T02:14:12.102Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Ryan Dillon",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 3,
+    "total_reverse_lookups": 3,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 91322196
+  },
+  "data": [
+    {
+      "internal_id": 23737,
+      "athlete_name": "Ryan Dillon",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/23737",
+      "contaminated_lifter_id": 16640,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T02:13:56.378Z",
+      "profile_data": {
+        "membership_number": "1008159",
+        "birth_year": 1990,
+        "gender": "M",
+        "club_name": "BAY STATE BARBELL CLUB",
+        "wso": "New England",
+        "national_rank": "8"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Summer Solstice",
+          "date": "2016-06-19",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Ryan Dillon",
+          "body_weight_kg": "78.3",
+          "snatch_1": "83",
+          "snatch_2": "87",
+          "snatch_3": "92",
+          "cj_1": "110",
+          "cj_2": "115",
+          "cj_3": "120",
+          "best_snatch": "92",
+          "best_cj": "120",
+          "total": "212"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Summer Solstice",
+            "date": "2016-06-19",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Ryan Dillon",
+            "body_weight_kg": "78.3",
+            "snatch_1": "83",
+            "snatch_2": "87",
+            "snatch_3": "92",
+            "cj_1": "110",
+            "cj_2": "115",
+            "cj_3": "120",
+            "best_snatch": "92",
+            "best_cj": "120",
+            "total": "212"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0xOSIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "8",
+            "athlete_name": "Ryan Dillon",
+            "total": "212",
+            "gender": "M",
+            "age": "26",
+            "club_name": "BAY STATE BARBELL CLUB",
+            "membership_number": "1008159",
+            "wso": "New England"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 39653,
+      "athlete_name": "Ryan Dillon",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/39653",
+      "contaminated_lifter_id": 16640,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T02:14:12.100Z",
+      "profile_data": {
+        "membership_number": "1001788",
+        "birth_year": 1999,
+        "gender": "M",
+        "club_name": "MALVERN WEIGHTLIFTING CLUB",
+        "wso": "Pennsylvania-West Virginia",
+        "national_rank": "13"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Frank Spellman Classic",
+          "date": "2016-01-31",
+          "division": "Open Men's 69 kg",
+          "lifter_name": "Ryan Dillon",
+          "body_weight_kg": "67.4",
+          "snatch_1": "40",
+          "snatch_2": "45",
+          "snatch_3": "-48",
+          "cj_1": "50",
+          "cj_2": "-53",
+          "cj_3": "53",
+          "best_snatch": "45",
+          "best_cj": "53",
+          "total": "98"
+        },
+        {
+          "meet_name": "Frank Spellman Classic",
+          "date": "2016-01-31",
+          "division": "Open Men's 69 kg",
+          "lifter_name": "Ryan Dillon",
+          "body_weight_kg": "67.4",
+          "snatch_1": "40",
+          "snatch_2": "45",
+          "snatch_3": "-48",
+          "cj_1": "50",
+          "cj_2": "-53",
+          "cj_3": "53",
+          "best_snatch": "45",
+          "best_cj": "53",
+          "total": "98"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Frank Spellman Classic",
+            "date": "2016-01-31",
+            "division": "Open Men's 69 kg",
+            "lifter_name": "Ryan Dillon",
+            "body_weight_kg": "67.4",
+            "snatch_1": "40",
+            "snatch_2": "45",
+            "snatch_3": "-48",
+            "cj_1": "50",
+            "cj_2": "-53",
+            "cj_3": "53",
+            "best_snatch": "45",
+            "best_cj": "53",
+            "total": "98"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0zMSIsIndlaWdodF9jbGFzcyI6MzU2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "13",
+            "athlete_name": "Ryan Dillon",
+            "total": "98",
+            "gender": "M",
+            "age": "17",
+            "club_name": "MALVERN WEIGHTLIFTING CLUB",
+            "membership_number": "1001788",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Frank Spellman Classic",
+            "date": "2016-01-31",
+            "division": "Open Men's 69 kg",
+            "lifter_name": "Ryan Dillon",
+            "body_weight_kg": "67.4",
+            "snatch_1": "40",
+            "snatch_2": "45",
+            "snatch_3": "-48",
+            "cj_1": "50",
+            "cj_2": "-53",
+            "cj_3": "53",
+            "best_snatch": "45",
+            "best_cj": "53",
+            "total": "98"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0zMSIsIndlaWdodF9jbGFzcyI6MzU2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "13",
+            "athlete_name": "Ryan Dillon",
+            "total": "98",
+            "gender": "M",
+            "age": "17",
+            "club_name": "MALVERN WEIGHTLIFTING CLUB",
+            "membership_number": "1001788",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

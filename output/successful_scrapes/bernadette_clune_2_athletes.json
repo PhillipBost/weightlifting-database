@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T01:36:41.621Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Bernadette Clune",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 89071715
+  },
+  "data": [
+    {
+      "internal_id": 907,
+      "athlete_name": "Bernadette Clune",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/907",
+      "contaminated_lifter_id": 20154,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T01:36:28.628Z",
+      "profile_data": {
+        "membership_number": "192228",
+        "birth_year": 1960,
+        "gender": "F",
+        "club_name": "GENERATION BARBELL CLUB",
+        "wso": "Pennsylvania-West Virginia",
+        "national_rank": "3"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Generation Springs Classic",
+          "date": "2014-04-13",
+          "division": "Women's Masters (50-54) 69 kg",
+          "lifter_name": "Bernadette Clune",
+          "body_weight_kg": "68.93",
+          "snatch_1": "25",
+          "snatch_2": "27",
+          "snatch_3": "30",
+          "cj_1": "35",
+          "cj_2": "40",
+          "cj_3": "45",
+          "best_snatch": "30",
+          "best_cj": "45",
+          "total": "75"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Generation Springs Classic",
+            "date": "2014-04-13",
+            "division": "Women's Masters (50-54) 69 kg",
+            "lifter_name": "Bernadette Clune",
+            "body_weight_kg": "68.93",
+            "snatch_1": "25",
+            "snatch_2": "27",
+            "snatch_3": "30",
+            "cj_1": "35",
+            "cj_2": "40",
+            "cj_3": "45",
+            "best_snatch": "30",
+            "best_cj": "45",
+            "total": "75"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNC0xMyIsIndlaWdodF9jbGFzcyI6NDM0fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Bernadette Clune",
+            "total": "75",
+            "gender": "F",
+            "age": "54",
+            "club_name": "GENERATION BARBELL CLUB",
+            "membership_number": "192228",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 32456,
+      "athlete_name": "Bernadette Clune",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/32456",
+      "contaminated_lifter_id": 20154,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T01:36:41.619Z",
+      "profile_data": {
+        "membership_number": "192230",
+        "birth_year": 1994,
+        "gender": "F",
+        "club_name": "GENERATION BARBELL CLUB",
+        "wso": "Pennsylvania-West Virginia",
+        "national_rank": "20"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Generation Springs Classic",
+          "date": "2014-04-13",
+          "division": "Open Women's 69 kg",
+          "lifter_name": "Bernadette Clune",
+          "body_weight_kg": "67.98",
+          "snatch_1": "29",
+          "snatch_2": "32",
+          "snatch_3": "35",
+          "cj_1": "51",
+          "cj_2": "56",
+          "cj_3": "56",
+          "best_snatch": "35",
+          "best_cj": "56",
+          "total": "91"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Generation Springs Classic",
+            "date": "2014-04-13",
+            "division": "Open Women's 69 kg",
+            "lifter_name": "Bernadette Clune",
+            "body_weight_kg": "67.98",
+            "snatch_1": "29",
+            "snatch_2": "32",
+            "snatch_3": "35",
+            "cj_1": "51",
+            "cj_2": "56",
+            "cj_3": "56",
+            "best_snatch": "35",
+            "best_cj": "56",
+            "total": "91"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNC0xMyIsIndlaWdodF9jbGFzcyI6MzY2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "20",
+            "athlete_name": "Bernadette Clune",
+            "total": "91",
+            "gender": "F",
+            "age": "20",
+            "club_name": "GENERATION BARBELL CLUB",
+            "membership_number": "192230",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

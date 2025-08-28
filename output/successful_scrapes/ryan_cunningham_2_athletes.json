@@ -1,0 +1,388 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T18:23:27.192Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Ryan Cunningham",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 7,
+    "total_reverse_lookups": 7,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 63077286
+  },
+  "data": [
+    {
+      "internal_id": 62626,
+      "athlete_name": "Ryan Cunningham",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/62626",
+      "contaminated_lifter_id": 888,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T18:23:07.474Z",
+      "profile_data": {
+        "membership_number": "1075944",
+        "birth_year": 2007,
+        "gender": "M",
+        "club_name": "FORZA WEIGHTLIFTING CLUB",
+        "wso": "Illinois",
+        "national_rank": "16"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2025 National Junior Championships, Powered by Rogue Fitness",
+          "date": "2025-06-25",
+          "division": "Junior Men's 88kg",
+          "lifter_name": "Ryan Cunningham",
+          "body_weight_kg": "85.8",
+          "snatch_1": "100",
+          "snatch_2": "104",
+          "snatch_3": "-106",
+          "cj_1": "133",
+          "cj_2": "138",
+          "cj_3": "-143",
+          "best_snatch": "104",
+          "best_cj": "138",
+          "total": "242"
+        },
+        {
+          "meet_name": "The 2024 Nike North American Open Finals, powered by Rogue",
+          "date": "2024-12-05",
+          "division": "Men's 16-17 Age Group 89kg",
+          "lifter_name": "Ryan Cunningham",
+          "body_weight_kg": "87.81",
+          "snatch_1": "94",
+          "snatch_2": "-97",
+          "snatch_3": "97",
+          "cj_1": "117",
+          "cj_2": "121",
+          "cj_3": "126",
+          "best_snatch": "97",
+          "best_cj": "126",
+          "total": "223"
+        },
+        {
+          "meet_name": "Mid American Championships",
+          "date": "2024-10-27",
+          "division": "Men's 16-17 Age Group 89kg",
+          "lifter_name": "Ryan Cunningham",
+          "body_weight_kg": "88.7",
+          "snatch_1": "88",
+          "snatch_2": "92",
+          "snatch_3": "95",
+          "cj_1": "113",
+          "cj_2": "117",
+          "cj_3": "121",
+          "best_snatch": "95",
+          "best_cj": "121",
+          "total": "216"
+        },
+        {
+          "meet_name": "The 2024 Nike National Youth Championships, powered by Rogue",
+          "date": "2024-06-12",
+          "division": "Men's 16-17 Age Group 96kg",
+          "lifter_name": "Ryan Cunningham",
+          "body_weight_kg": "93.65",
+          "snatch_1": "81",
+          "snatch_2": "85",
+          "snatch_3": "90",
+          "cj_1": "108",
+          "cj_2": "-113",
+          "cj_3": "-114",
+          "best_snatch": "90",
+          "best_cj": "108",
+          "total": "198"
+        },
+        {
+          "meet_name": "April Online Qualifier (NUQ)",
+          "date": "2024-04-01",
+          "division": "Men's 16-17 Age Group 96kg",
+          "lifter_name": "Ryan Cunningham",
+          "body_weight_kg": "94.75",
+          "snatch_1": "0",
+          "snatch_2": "0",
+          "snatch_3": "86",
+          "cj_1": "0",
+          "cj_2": "0",
+          "cj_3": "115",
+          "best_snatch": "86",
+          "best_cj": "115",
+          "total": "201"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2025 National Junior Championships, Powered by Rogue Fitness",
+            "date": "2025-06-25",
+            "division": "Junior Men's 88kg",
+            "lifter_name": "Ryan Cunningham",
+            "body_weight_kg": "85.8",
+            "snatch_1": "100",
+            "snatch_2": "104",
+            "snatch_3": "-106",
+            "cj_1": "133",
+            "cj_2": "138",
+            "cj_3": "-143",
+            "best_snatch": "104",
+            "best_cj": "138",
+            "total": "242"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNi0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNi0yNSIsIndlaWdodF9jbGFzcyI6NzI3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "16",
+            "athlete_name": "Ryan Cunningham",
+            "total": "242",
+            "gender": "M",
+            "age": "18",
+            "club_name": "FORZA WEIGHTLIFTING CLUB",
+            "membership_number": "1075944",
+            "wso": "Illinois"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The 2024 Nike North American Open Finals, powered by Rogue",
+            "date": "2024-12-05",
+            "division": "Men's 16-17 Age Group 89kg",
+            "lifter_name": "Ryan Cunningham",
+            "body_weight_kg": "87.81",
+            "snatch_1": "94",
+            "snatch_2": "-97",
+            "snatch_3": "97",
+            "cj_1": "117",
+            "cj_2": "121",
+            "cj_3": "126",
+            "best_snatch": "97",
+            "best_cj": "126",
+            "total": "223"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMi0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMi0wNSIsIndlaWdodF9jbGFzcyI6N30=",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Ryan Cunningham",
+            "total": "223",
+            "gender": "M",
+            "age": "17",
+            "club_name": "FORZA WEIGHTLIFTING CLUB",
+            "membership_number": "1075944",
+            "wso": "Illinois"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Mid American Championships",
+            "date": "2024-10-27",
+            "division": "Men's 16-17 Age Group 89kg",
+            "lifter_name": "Ryan Cunningham",
+            "body_weight_kg": "88.7",
+            "snatch_1": "88",
+            "snatch_2": "92",
+            "snatch_3": "95",
+            "cj_1": "113",
+            "cj_2": "117",
+            "cj_3": "121",
+            "best_snatch": "95",
+            "best_cj": "121",
+            "total": "216"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMC0yNyIsIndlaWdodF9jbGFzcyI6N30=",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Ryan Cunningham",
+            "total": "216",
+            "gender": "M",
+            "age": "17",
+            "club_name": "FORZA WEIGHTLIFTING CLUB",
+            "membership_number": "1075944",
+            "wso": "Illinois"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The 2024 Nike National Youth Championships, powered by Rogue",
+            "date": "2024-06-12",
+            "division": "Men's 16-17 Age Group 96kg",
+            "lifter_name": "Ryan Cunningham",
+            "body_weight_kg": "93.65",
+            "snatch_1": "81",
+            "snatch_2": "85",
+            "snatch_3": "90",
+            "cj_1": "108",
+            "cj_2": "-113",
+            "cj_3": "-114",
+            "best_snatch": "90",
+            "best_cj": "108",
+            "total": "198"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNi0xMiIsIndlaWdodF9jbGFzcyI6OH0=",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "Ryan Cunningham",
+            "total": "198",
+            "gender": "M",
+            "age": "17",
+            "club_name": "FORZA WEIGHTLIFTING CLUB",
+            "membership_number": "1075944",
+            "wso": "Illinois"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "April Online Qualifier (NUQ)",
+            "date": "2024-04-01",
+            "division": "Men's 16-17 Age Group 96kg",
+            "lifter_name": "Ryan Cunningham",
+            "body_weight_kg": "94.75",
+            "snatch_1": "0",
+            "snatch_2": "0",
+            "snatch_3": "86",
+            "cj_1": "0",
+            "cj_2": "0",
+            "cj_3": "115",
+            "best_snatch": "86",
+            "best_cj": "115",
+            "total": "201"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNC0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNC0wMSIsIndlaWdodF9jbGFzcyI6OH0=",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Ryan Cunningham",
+            "total": "201",
+            "gender": "M",
+            "age": "17",
+            "club_name": "FORZA WEIGHTLIFTING CLUB",
+            "membership_number": "1075944",
+            "wso": "Illinois"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 8849,
+      "athlete_name": "Ryan Cunningham",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/8849",
+      "contaminated_lifter_id": 888,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T18:23:27.189Z",
+      "profile_data": {
+        "membership_number": "179334",
+        "birth_year": 1981,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "-",
+        "national_rank": "32"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Onaga Brick Road Junior & Open",
+          "date": "2013-05-04",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Ryan Cunningham",
+          "body_weight_kg": "72.4",
+          "snatch_1": "50",
+          "snatch_2": "56",
+          "snatch_3": "0",
+          "cj_1": "76",
+          "cj_2": "80",
+          "cj_3": "83",
+          "best_snatch": "56",
+          "best_cj": "83",
+          "total": "139"
+        },
+        {
+          "meet_name": "Iron Turkey Open",
+          "date": "2012-11-17",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Ryan Cunningham",
+          "body_weight_kg": "71.7",
+          "snatch_1": "45",
+          "snatch_2": "48",
+          "snatch_3": "51",
+          "cj_1": "0",
+          "cj_2": "55",
+          "cj_3": "62",
+          "best_snatch": "51",
+          "best_cj": "62",
+          "total": "113"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Onaga Brick Road Junior & Open",
+            "date": "2013-05-04",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Ryan Cunningham",
+            "body_weight_kg": "72.4",
+            "snatch_1": "50",
+            "snatch_2": "56",
+            "snatch_3": "0",
+            "cj_1": "76",
+            "cj_2": "80",
+            "cj_3": "83",
+            "best_snatch": "56",
+            "best_cj": "83",
+            "total": "139"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNS0wNCIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "32",
+            "athlete_name": "Ryan Cunningham",
+            "total": "139",
+            "gender": "M",
+            "age": "32",
+            "club_name": "-",
+            "membership_number": "179334",
+            "wso": "-"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Iron Turkey Open",
+            "date": "2012-11-17",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Ryan Cunningham",
+            "body_weight_kg": "71.7",
+            "snatch_1": "45",
+            "snatch_2": "48",
+            "snatch_3": "51",
+            "cj_1": "0",
+            "cj_2": "55",
+            "cj_3": "62",
+            "best_snatch": "51",
+            "best_cj": "62",
+            "total": "113"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0xMS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0xMS0xNyIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "7",
+            "athlete_name": "Ryan Cunningham",
+            "total": "113",
+            "gender": "M",
+            "age": "31",
+            "club_name": "-",
+            "membership_number": "179334",
+            "wso": "-"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

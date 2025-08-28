@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T08:46:35.925Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Ryan Anderson",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 28466019
+  },
+  "data": [
+    {
+      "internal_id": 23331,
+      "athlete_name": "Ryan Anderson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/23331",
+      "contaminated_lifter_id": 5113,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T08:46:26.272Z",
+      "profile_data": {
+        "membership_number": "181401",
+        "birth_year": 1990,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "California South",
+        "national_rank": "5"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Kansas State and Open Championship 2013",
+          "date": "2013-09-21",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Ryan Anderson",
+          "body_weight_kg": "75",
+          "snatch_1": "100",
+          "snatch_2": "100",
+          "snatch_3": "100",
+          "cj_1": "110",
+          "cj_2": "115",
+          "cj_3": "120",
+          "best_snatch": "100",
+          "best_cj": "120",
+          "total": "220"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Kansas State and Open Championship 2013",
+            "date": "2013-09-21",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Ryan Anderson",
+            "body_weight_kg": "75",
+            "snatch_1": "100",
+            "snatch_2": "100",
+            "snatch_3": "100",
+            "cj_1": "110",
+            "cj_2": "115",
+            "cj_3": "120",
+            "best_snatch": "100",
+            "best_cj": "120",
+            "total": "220"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wOS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wOS0yMSIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "Ryan Anderson",
+            "total": "220",
+            "gender": "M",
+            "age": "23",
+            "club_name": "-",
+            "membership_number": "181401",
+            "wso": "California South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 63235,
+      "athlete_name": "Ryan Anderson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/63235",
+      "contaminated_lifter_id": 5113,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T08:46:35.922Z",
+      "profile_data": {
+        "membership_number": "1077365",
+        "birth_year": 2012,
+        "gender": "F",
+        "club_name": "Pure Health Barbell",
+        "wso": "Texas-Oklahoma",
+        "national_rank": "2"
+      },
+      "competition_history": [
+        {
+          "meet_name": "PHP AO2 Tune-up",
+          "date": "2024-07-13",
+          "division": "Women's 13 Under Age Group 64kg",
+          "lifter_name": "Ryan Anderson",
+          "body_weight_kg": "61.4",
+          "snatch_1": "20",
+          "snatch_2": "22",
+          "snatch_3": "23",
+          "cj_1": "23",
+          "cj_2": "25",
+          "cj_3": "28",
+          "best_snatch": "23",
+          "best_cj": "28",
+          "total": "51"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "PHP AO2 Tune-up",
+            "date": "2024-07-13",
+            "division": "Women's 13 Under Age Group 64kg",
+            "lifter_name": "Ryan Anderson",
+            "body_weight_kg": "61.4",
+            "snatch_1": "20",
+            "snatch_2": "22",
+            "snatch_3": "23",
+            "cj_1": "23",
+            "cj_2": "25",
+            "cj_3": "28",
+            "best_snatch": "23",
+            "best_cj": "28",
+            "total": "51"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNy0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNy0xMyIsIndlaWdodF9jbGFzcyI6NTl9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Ryan Anderson",
+            "total": "51",
+            "gender": "F",
+            "age": "12",
+            "club_name": "Pure Health Barbell",
+            "membership_number": "1077365",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

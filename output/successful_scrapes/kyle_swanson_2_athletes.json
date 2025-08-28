@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T13:19:05.869Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Kyle Swanson",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 44815963
+  },
+  "data": [
+    {
+      "internal_id": 35585,
+      "athlete_name": "Kyle Swanson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/35585",
+      "contaminated_lifter_id": 36656,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T13:18:55.725Z",
+      "profile_data": {
+        "membership_number": "1025766",
+        "birth_year": 1996,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Minnesota-Dakotas",
+        "national_rank": "30"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2018 Beginner Weightlifting Meet",
+          "date": "2018-05-12",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Kyle Swanson",
+          "body_weight_kg": "76.28",
+          "snatch_1": "61",
+          "snatch_2": "-65",
+          "snatch_3": "66",
+          "cj_1": "84",
+          "cj_2": "-90",
+          "cj_3": "-96",
+          "best_snatch": "66",
+          "best_cj": "84",
+          "total": "150"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2018 Beginner Weightlifting Meet",
+            "date": "2018-05-12",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Kyle Swanson",
+            "body_weight_kg": "76.28",
+            "snatch_1": "61",
+            "snatch_2": "-65",
+            "snatch_3": "66",
+            "cj_1": "84",
+            "cj_2": "-90",
+            "cj_3": "-96",
+            "best_snatch": "66",
+            "best_cj": "84",
+            "total": "150"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNS0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNS0xMiIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "30",
+            "athlete_name": "Kyle Swanson",
+            "total": "150",
+            "gender": "M",
+            "age": "22",
+            "club_name": "-",
+            "membership_number": "1025766",
+            "wso": "Minnesota-Dakotas"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 44754,
+      "athlete_name": "Kyle Swanson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/44754",
+      "contaminated_lifter_id": 36656,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T13:19:05.867Z",
+      "profile_data": {
+        "membership_number": "1045883",
+        "birth_year": 2004,
+        "gender": "M",
+        "club_name": "AURORA WEIGHTLIFTING CLUB",
+        "wso": "Illinois",
+        "national_rank": "3"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Mid American Weightlifting Championships",
+          "date": "2019-10-26",
+          "division": "Men's 14-15 Age Group 73kg",
+          "lifter_name": "Kyle Swanson",
+          "body_weight_kg": "69.5",
+          "snatch_1": "35",
+          "snatch_2": "40",
+          "snatch_3": "45",
+          "cj_1": "45",
+          "cj_2": "50",
+          "cj_3": "55",
+          "best_snatch": "45",
+          "best_cj": "55",
+          "total": "100"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Mid American Weightlifting Championships",
+            "date": "2019-10-26",
+            "division": "Men's 14-15 Age Group 73kg",
+            "lifter_name": "Kyle Swanson",
+            "body_weight_kg": "69.5",
+            "snatch_1": "35",
+            "snatch_2": "40",
+            "snatch_3": "45",
+            "cj_1": "45",
+            "cj_2": "50",
+            "cj_3": "55",
+            "best_snatch": "45",
+            "best_cj": "55",
+            "total": "100"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMC0yNiIsIndlaWdodF9jbGFzcyI6Mjd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Kyle Swanson",
+            "total": "100",
+            "gender": "M",
+            "age": "15",
+            "club_name": "AURORA WEIGHTLIFTING CLUB",
+            "membership_number": "1045883",
+            "wso": "Illinois"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

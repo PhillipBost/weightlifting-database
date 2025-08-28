@@ -1,0 +1,200 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T13:10:13.556Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Jessica Kuhlman",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 3,
+    "total_reverse_lookups": 3,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 44283650
+  },
+  "data": [
+    {
+      "internal_id": 35545,
+      "athlete_name": "Jessica Kuhlman",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/35545",
+      "contaminated_lifter_id": 34389,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T13:10:02.279Z",
+      "profile_data": {
+        "membership_number": "1030719",
+        "birth_year": 1996,
+        "gender": "F",
+        "club_name": "DISPENZA WEIGHTLIFTING CLUB",
+        "wso": "DMV",
+        "national_rank": "14"
+      },
+      "competition_history": [
+        {
+          "meet_name": "The 2018 Charm City Open",
+          "date": "2018-07-14",
+          "division": "Open Women's 90 kg",
+          "lifter_name": "Jessica Kuhlman",
+          "body_weight_kg": "78.2",
+          "snatch_1": "56",
+          "snatch_2": "59",
+          "snatch_3": "-62",
+          "cj_1": "80",
+          "cj_2": "85",
+          "cj_3": "88",
+          "best_snatch": "59",
+          "best_cj": "88",
+          "total": "147"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "The 2018 Charm City Open",
+            "date": "2018-07-14",
+            "division": "Open Women's 90 kg",
+            "lifter_name": "Jessica Kuhlman",
+            "body_weight_kg": "78.2",
+            "snatch_1": "56",
+            "snatch_2": "59",
+            "snatch_3": "-62",
+            "cj_1": "80",
+            "cj_2": "85",
+            "cj_3": "88",
+            "best_snatch": "59",
+            "best_cj": "88",
+            "total": "147"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNy0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNy0xNCIsIndlaWdodF9jbGFzcyI6MzY5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "14",
+            "athlete_name": "Jessica Kuhlman",
+            "total": "147",
+            "gender": "F",
+            "age": "22",
+            "club_name": "DISPENZA WEIGHTLIFTING CLUB",
+            "membership_number": "1030719",
+            "wso": "DMV"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 35551,
+      "athlete_name": "Jessica Kuhlman",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/35551",
+      "contaminated_lifter_id": 34389,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T13:10:13.555Z",
+      "profile_data": {
+        "membership_number": "1047034",
+        "birth_year": 1996,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "DMV",
+        "national_rank": "3"
+      },
+      "competition_history": [
+        {
+          "meet_name": "No Matter What Open 2020",
+          "date": "2020-10-31",
+          "division": "Open Women's 81kg",
+          "lifter_name": "Jessica Kuhlman",
+          "body_weight_kg": "79.4",
+          "snatch_1": "70",
+          "snatch_2": "-73",
+          "snatch_3": "74",
+          "cj_1": "100",
+          "cj_2": "-106",
+          "cj_3": "-111",
+          "best_snatch": "74",
+          "best_cj": "100",
+          "total": "174"
+        },
+        {
+          "meet_name": "No Matter What Open 2020",
+          "date": "2020-10-31",
+          "division": "Open Women's 81kg",
+          "lifter_name": "Jessica Kuhlman",
+          "body_weight_kg": "79.4",
+          "snatch_1": "70",
+          "snatch_2": "73",
+          "snatch_3": "74",
+          "cj_1": "100",
+          "cj_2": "106",
+          "cj_3": "111",
+          "best_snatch": "74",
+          "best_cj": "111",
+          "total": "185"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "No Matter What Open 2020",
+            "date": "2020-10-31",
+            "division": "Open Women's 81kg",
+            "lifter_name": "Jessica Kuhlman",
+            "body_weight_kg": "79.4",
+            "snatch_1": "70",
+            "snatch_2": "-73",
+            "snatch_3": "74",
+            "cj_1": "100",
+            "cj_2": "-106",
+            "cj_3": "-111",
+            "best_snatch": "74",
+            "best_cj": "100",
+            "total": "174"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0xMC0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0xMC0zMSIsIndlaWdodF9jbGFzcyI6OTh9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Jessica Kuhlman",
+            "total": "185",
+            "gender": "F",
+            "age": "24",
+            "club_name": "-",
+            "membership_number": "1047034",
+            "wso": "DMV"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "No Matter What Open 2020",
+            "date": "2020-10-31",
+            "division": "Open Women's 81kg",
+            "lifter_name": "Jessica Kuhlman",
+            "body_weight_kg": "79.4",
+            "snatch_1": "70",
+            "snatch_2": "73",
+            "snatch_3": "74",
+            "cj_1": "100",
+            "cj_2": "106",
+            "cj_3": "111",
+            "best_snatch": "74",
+            "best_cj": "111",
+            "total": "185"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0xMC0zMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0xMC0zMSIsIndlaWdodF9jbGFzcyI6OTh9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Jessica Kuhlman",
+            "total": "185",
+            "gender": "F",
+            "age": "24",
+            "club_name": "-",
+            "membership_number": "1047034",
+            "wso": "DMV"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

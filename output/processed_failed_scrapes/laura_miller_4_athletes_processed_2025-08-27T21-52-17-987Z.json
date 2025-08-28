@@ -1,0 +1,750 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T10:43:28.549Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Laura Miller",
+    "internal_ids_processed": 4,
+    "successful_scrapes": 3,
+    "failed_scrapes": 1,
+    "total_competitions_found": 14,
+    "total_reverse_lookups": 14,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 2838193
+  },
+  "data": [
+    {
+      "internal_id": 6677,
+      "athlete_name": "Laura Miller",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/6677",
+      "contaminated_lifter_id": 16522,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T11:59:19.089Z",
+      "profile_data": {
+        "membership_number": "1023336",
+        "birth_year": 1979,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "Tennessee-Kentucky",
+        "national_rank": "3"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Kentucky Open Championship",
+          "date": "2017-10-22",
+          "division": "Women's Masters (35-39) +90 kg",
+          "lifter_name": "Laura Miller",
+          "body_weight_kg": "132.1",
+          "snatch_1": "44",
+          "snatch_2": "49",
+          "snatch_3": "52",
+          "cj_1": "65",
+          "cj_2": "-70",
+          "cj_3": "-70",
+          "best_snatch": "52",
+          "best_cj": "65",
+          "total": "117"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Kentucky Open Championship",
+            "date": "2017-10-22",
+            "division": "Women's Masters (35-39) +90 kg",
+            "lifter_name": "Laura Miller",
+            "body_weight_kg": "132.1",
+            "snatch_1": "44",
+            "snatch_2": "49",
+            "snatch_3": "52",
+            "cj_1": "65",
+            "cj_2": "-70",
+            "cj_3": "-70",
+            "best_snatch": "52",
+            "best_cj": "65",
+            "total": "117"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0yMiIsIndlaWdodF9jbGFzcyI6Mzg3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Laura Miller",
+            "total": "117",
+            "gender": "F",
+            "age": "38",
+            "club_name": "-",
+            "membership_number": "1023336",
+            "wso": "Tennessee-Kentucky"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 63262,
+      "athlete_name": "Laura Miller",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/63262",
+      "contaminated_lifter_id": 16522,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T12:01:17.880Z",
+      "profile_data": {
+        "membership_number": "1076897",
+        "birth_year": 1969,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "New Jersey",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2024 USA Weightlifting New Jersey Novice Lift Off",
+          "date": "2024-06-23",
+          "division": "Women's Masters (55-59) 55kg",
+          "lifter_name": "Laura Miller",
+          "body_weight_kg": "51.5",
+          "snatch_1": "30",
+          "snatch_2": "32",
+          "snatch_3": "35",
+          "cj_1": "40",
+          "cj_2": "42",
+          "cj_3": "45",
+          "best_snatch": "35",
+          "best_cj": "45",
+          "total": "80"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2024 USA Weightlifting New Jersey Novice Lift Off",
+            "date": "2024-06-23",
+            "division": "Women's Masters (55-59) 55kg",
+            "lifter_name": "Laura Miller",
+            "body_weight_kg": "51.5",
+            "snatch_1": "30",
+            "snatch_2": "32",
+            "snatch_3": "35",
+            "cj_1": "40",
+            "cj_2": "42",
+            "cj_3": "45",
+            "best_snatch": "35",
+            "best_cj": "45",
+            "total": "80"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNi0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNi0yMyIsIndlaWdodF9jbGFzcyI6MTkzfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Laura Miller",
+            "total": "80",
+            "gender": "F",
+            "age": "55",
+            "club_name": "-",
+            "membership_number": "1076897",
+            "wso": "New Jersey"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 27184,
+      "athlete_name": "Laura Miller",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/27184",
+      "contaminated_lifter_id": 16522,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-27T02:23:05.229Z",
+      "profile_data": {
+        "membership_number": "1007543",
+        "birth_year": 1992,
+        "gender": "F",
+        "club_name": "MISSISSIPPI BARBELL",
+        "wso": "Southern",
+        "national_rank": "3"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Bar Wars - MAY THE 4th BE WITH YOU",
+          "date": "2019-05-04",
+          "division": "Open Women's 87kg",
+          "lifter_name": "Laura Miller",
+          "body_weight_kg": "83.5",
+          "snatch_1": "67",
+          "snatch_2": "70",
+          "snatch_3": "73",
+          "cj_1": "90",
+          "cj_2": "93",
+          "cj_3": "97",
+          "best_snatch": "73",
+          "best_cj": "97",
+          "total": "170"
+        },
+        {
+          "meet_name": "2nd Annual GPX Open Presented By Mississippi Barbell",
+          "date": "2017-09-16",
+          "division": "Open Women's 90 kg",
+          "lifter_name": "Laura Miller",
+          "body_weight_kg": "83.8",
+          "snatch_1": "67",
+          "snatch_2": "70",
+          "snatch_3": "-73",
+          "cj_1": "85",
+          "cj_2": "90",
+          "cj_3": "-95",
+          "best_snatch": "70",
+          "best_cj": "90",
+          "total": "160"
+        },
+        {
+          "meet_name": "Nike 2017 American Open Series 2",
+          "date": "2017-07-30",
+          "division": "Open Women's 90 kg",
+          "lifter_name": "Laura Miller",
+          "body_weight_kg": "86.76",
+          "snatch_1": "67",
+          "snatch_2": "71",
+          "snatch_3": "-75",
+          "cj_1": "82",
+          "cj_2": "87",
+          "cj_3": "93",
+          "best_snatch": "71",
+          "best_cj": "93",
+          "total": "164"
+        },
+        {
+          "meet_name": "4th Annual Mississippi State Weightlifting Championship",
+          "date": "2017-06-03",
+          "division": "Open Women's 90 kg",
+          "lifter_name": "Laura Miller",
+          "body_weight_kg": "83.1",
+          "snatch_1": "65",
+          "snatch_2": "70",
+          "snatch_3": "-74",
+          "cj_1": "80",
+          "cj_2": "85",
+          "cj_3": "90",
+          "best_snatch": "70",
+          "best_cj": "90",
+          "total": "160"
+        },
+        {
+          "meet_name": "GPX Open Presented By Mississippi Barbell",
+          "date": "2016-10-08",
+          "division": "Open Women's +75 Kg",
+          "lifter_name": "Laura Miller",
+          "body_weight_kg": "80.37",
+          "snatch_1": "63",
+          "snatch_2": "66",
+          "snatch_3": "69",
+          "cj_1": "78",
+          "cj_2": "81",
+          "cj_3": "85",
+          "best_snatch": "69",
+          "best_cj": "85",
+          "total": "154"
+        },
+        {
+          "meet_name": "3rd Annual Mississippi State Weightlifting Championship",
+          "date": "2016-06-04",
+          "division": "Open Women's +75 Kg",
+          "lifter_name": "Laura Miller",
+          "body_weight_kg": "79.5",
+          "snatch_1": "58",
+          "snatch_2": "62",
+          "snatch_3": "66",
+          "cj_1": "75",
+          "cj_2": "78",
+          "cj_3": "-82",
+          "best_snatch": "66",
+          "best_cj": "78",
+          "total": "144"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Bar Wars - MAY THE 4th BE WITH YOU",
+            "date": "2019-05-04",
+            "division": "Open Women's 87kg",
+            "lifter_name": "Laura Miller",
+            "body_weight_kg": "83.5",
+            "snatch_1": "67",
+            "snatch_2": "70",
+            "snatch_3": "73",
+            "cj_1": "90",
+            "cj_2": "93",
+            "cj_3": "97",
+            "best_snatch": "73",
+            "best_cj": "97",
+            "total": "170"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0wNCIsIndlaWdodF9jbGFzcyI6OTl9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Laura Miller",
+            "total": "170",
+            "gender": "F",
+            "age": "27",
+            "club_name": "MISSISSIPPI BARBELL",
+            "membership_number": "1007543",
+            "wso": "Southern"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2nd Annual GPX Open Presented By Mississippi Barbell",
+            "date": "2017-09-16",
+            "division": "Open Women's 90 kg",
+            "lifter_name": "Laura Miller",
+            "body_weight_kg": "83.8",
+            "snatch_1": "67",
+            "snatch_2": "70",
+            "snatch_3": "-73",
+            "cj_1": "85",
+            "cj_2": "90",
+            "cj_3": "-95",
+            "best_snatch": "70",
+            "best_cj": "90",
+            "total": "160"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wOS0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wOS0xNiIsIndlaWdodF9jbGFzcyI6MzY5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Laura Miller",
+            "total": "160",
+            "gender": "F",
+            "age": "25",
+            "club_name": "MISSISSIPPI BARBELL",
+            "membership_number": "1007543",
+            "wso": "Southern"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Nike 2017 American Open Series 2",
+            "date": "2017-07-30",
+            "division": "Open Women's 90 kg",
+            "lifter_name": "Laura Miller",
+            "body_weight_kg": "86.76",
+            "snatch_1": "67",
+            "snatch_2": "71",
+            "snatch_3": "-75",
+            "cj_1": "82",
+            "cj_2": "87",
+            "cj_3": "93",
+            "best_snatch": "71",
+            "best_cj": "93",
+            "total": "164"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNy0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNy0zMCIsIndlaWdodF9jbGFzcyI6MzY5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "Laura Miller",
+            "total": "164",
+            "gender": "F",
+            "age": "25",
+            "club_name": "MISSISSIPPI BARBELL",
+            "membership_number": "1007543",
+            "wso": "Southern"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "4th Annual Mississippi State Weightlifting Championship",
+            "date": "2017-06-03",
+            "division": "Open Women's 90 kg",
+            "lifter_name": "Laura Miller",
+            "body_weight_kg": "83.1",
+            "snatch_1": "65",
+            "snatch_2": "70",
+            "snatch_3": "-74",
+            "cj_1": "80",
+            "cj_2": "85",
+            "cj_3": "90",
+            "best_snatch": "70",
+            "best_cj": "90",
+            "total": "160"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNi0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNi0wMyIsIndlaWdodF9jbGFzcyI6MzY5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Laura Miller",
+            "total": "160",
+            "gender": "F",
+            "age": "25",
+            "club_name": "MISSISSIPPI BARBELL",
+            "membership_number": "1007543",
+            "wso": "Southern"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "GPX Open Presented By Mississippi Barbell",
+            "date": "2016-10-08",
+            "division": "Open Women's +75 Kg",
+            "lifter_name": "Laura Miller",
+            "body_weight_kg": "80.37",
+            "snatch_1": "63",
+            "snatch_2": "66",
+            "snatch_3": "69",
+            "cj_1": "78",
+            "cj_2": "81",
+            "cj_3": "85",
+            "best_snatch": "69",
+            "best_cj": "85",
+            "total": "154"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0wOCIsIndlaWdodF9jbGFzcyI6MzY4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "8",
+            "athlete_name": "Laura Miller",
+            "total": "154",
+            "gender": "F",
+            "age": "24",
+            "club_name": "MISSISSIPPI BARBELL",
+            "membership_number": "1007543",
+            "wso": "Southern"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "3rd Annual Mississippi State Weightlifting Championship",
+            "date": "2016-06-04",
+            "division": "Open Women's +75 Kg",
+            "lifter_name": "Laura Miller",
+            "body_weight_kg": "79.5",
+            "snatch_1": "58",
+            "snatch_2": "62",
+            "snatch_3": "66",
+            "cj_1": "75",
+            "cj_2": "78",
+            "cj_3": "-82",
+            "best_snatch": "66",
+            "best_cj": "78",
+            "total": "144"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0wNCIsIndlaWdodF9jbGFzcyI6MzY4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "Laura Miller",
+            "total": "144",
+            "gender": "F",
+            "age": "24",
+            "club_name": "MISSISSIPPI BARBELL",
+            "membership_number": "1007543",
+            "wso": "Southern"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 18585,
+      "athlete_name": "Laura Miller",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/18585",
+      "contaminated_lifter_id": 16522,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-27T10:43:26.546Z",
+      "profile_data": {
+        "membership_number": "1006962",
+        "birth_year": 1988,
+        "gender": "F",
+        "club_name": "ROBINSON WEIGHTLIFTING CLUB",
+        "wso": "New York",
+        "national_rank": "39"
+      },
+      "competition_history": [
+        {
+          "meet_name": "RWL MEMORIAL DAY OPEN WEIGHTLIFTING COMPETITION",
+          "date": "2018-05-27",
+          "division": "Open Women's 69 kg",
+          "lifter_name": "Laura Miller",
+          "body_weight_kg": "67.9",
+          "snatch_1": "-50",
+          "snatch_2": "50",
+          "snatch_3": "54",
+          "cj_1": "58",
+          "cj_2": "62",
+          "cj_3": "65",
+          "best_snatch": "54",
+          "best_cj": "65",
+          "total": "119"
+        },
+        {
+          "meet_name": "7th Annual Ginny Robinson Memorial Breast Cancer Awareness Weightlifting Competition",
+          "date": "2017-10-08",
+          "division": "Open Women's 69 kg",
+          "lifter_name": "Laura Miller",
+          "body_weight_kg": "68.4",
+          "snatch_1": "48",
+          "snatch_2": "51",
+          "snatch_3": "53",
+          "cj_1": "58",
+          "cj_2": "61",
+          "cj_3": "-63",
+          "best_snatch": "53",
+          "best_cj": "61",
+          "total": "114"
+        },
+        {
+          "meet_name": "RWL MEMORIAL DAY OPEN WEIGHTLIFTING COMPETITION",
+          "date": "2017-05-27",
+          "division": "Open Women's 69 kg",
+          "lifter_name": "Laura Miller",
+          "body_weight_kg": "68.9",
+          "snatch_1": "48",
+          "snatch_2": "51",
+          "snatch_3": "-53",
+          "cj_1": "55",
+          "cj_2": "58",
+          "cj_3": "61",
+          "best_snatch": "51",
+          "best_cj": "61",
+          "total": "112"
+        },
+        {
+          "meet_name": "Atlantic States Open Weightlifting Championships",
+          "date": "2017-02-19",
+          "division": "Open Women's 69 kg",
+          "lifter_name": "Laura Miller",
+          "body_weight_kg": "68.5",
+          "snatch_1": "-47",
+          "snatch_2": "48",
+          "snatch_3": "51",
+          "cj_1": "-69",
+          "cj_2": "-69",
+          "cj_3": "-69",
+          "best_snatch": "51",
+          "best_cj": "0",
+          "total": "0"
+        },
+        {
+          "meet_name": "6th Annual Ginny Robinson Memorial Breast Cancer Awareness Weightlifting Competition",
+          "date": "2016-10-09",
+          "division": "Open Women's 69 kg",
+          "lifter_name": "Laura Miller",
+          "body_weight_kg": "68.1",
+          "snatch_1": "42",
+          "snatch_2": "45",
+          "snatch_3": "47",
+          "cj_1": "55",
+          "cj_2": "58",
+          "cj_3": "-61",
+          "best_snatch": "47",
+          "best_cj": "58",
+          "total": "105"
+        },
+        {
+          "meet_name": "RWL Memorial Day Open Weightlifting Competition",
+          "date": "2016-05-28",
+          "division": "Open Women's 69 kg",
+          "lifter_name": "Laura Miller",
+          "body_weight_kg": "66.9",
+          "snatch_1": "40",
+          "snatch_2": "43",
+          "snatch_3": "-45",
+          "cj_1": "50",
+          "cj_2": "53",
+          "cj_3": "55",
+          "best_snatch": "43",
+          "best_cj": "55",
+          "total": "98"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "RWL MEMORIAL DAY OPEN WEIGHTLIFTING COMPETITION",
+            "date": "2018-05-27",
+            "division": "Open Women's 69 kg",
+            "lifter_name": "Laura Miller",
+            "body_weight_kg": "67.9",
+            "snatch_1": "-50",
+            "snatch_2": "50",
+            "snatch_3": "54",
+            "cj_1": "58",
+            "cj_2": "62",
+            "cj_3": "65",
+            "best_snatch": "54",
+            "best_cj": "65",
+            "total": "119"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNS0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNS0yNyIsIndlaWdodF9jbGFzcyI6MzY2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "39",
+            "athlete_name": "Laura Miller",
+            "total": "119",
+            "gender": "F",
+            "age": "30",
+            "club_name": "ROBINSON WEIGHTLIFTING CLUB",
+            "membership_number": "1006962",
+            "wso": "New York"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "7th Annual Ginny Robinson Memorial Breast Cancer Awareness Weightlifting Competition",
+            "date": "2017-10-08",
+            "division": "Open Women's 69 kg",
+            "lifter_name": "Laura Miller",
+            "body_weight_kg": "68.4",
+            "snatch_1": "48",
+            "snatch_2": "51",
+            "snatch_3": "53",
+            "cj_1": "58",
+            "cj_2": "61",
+            "cj_3": "-63",
+            "best_snatch": "53",
+            "best_cj": "61",
+            "total": "114"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0wOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0wOCIsIndlaWdodF9jbGFzcyI6MzY2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "23",
+            "athlete_name": "Laura Miller",
+            "total": "114",
+            "gender": "F",
+            "age": "29",
+            "club_name": "ROBINSON WEIGHTLIFTING CLUB",
+            "membership_number": "1006962",
+            "wso": "New York"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "RWL MEMORIAL DAY OPEN WEIGHTLIFTING COMPETITION",
+            "date": "2017-05-27",
+            "division": "Open Women's 69 kg",
+            "lifter_name": "Laura Miller",
+            "body_weight_kg": "68.9",
+            "snatch_1": "48",
+            "snatch_2": "51",
+            "snatch_3": "-53",
+            "cj_1": "55",
+            "cj_2": "58",
+            "cj_3": "61",
+            "best_snatch": "51",
+            "best_cj": "61",
+            "total": "112"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNS0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNS0yNyIsIndlaWdodF9jbGFzcyI6MzY2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "16",
+            "athlete_name": "Laura Miller",
+            "total": "112",
+            "gender": "F",
+            "age": "29",
+            "club_name": "ROBINSON WEIGHTLIFTING CLUB",
+            "membership_number": "1006962",
+            "wso": "New York"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Atlantic States Open Weightlifting Championships",
+            "date": "2017-02-19",
+            "division": "Open Women's 69 kg",
+            "lifter_name": "Laura Miller",
+            "body_weight_kg": "68.5",
+            "snatch_1": "-47",
+            "snatch_2": "48",
+            "snatch_3": "51",
+            "cj_1": "-69",
+            "cj_2": "-69",
+            "cj_3": "-69",
+            "best_snatch": "51",
+            "best_cj": "0",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMi0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMi0xOSIsIndlaWdodF9jbGFzcyI6MzY2fQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "6th Annual Ginny Robinson Memorial Breast Cancer Awareness Weightlifting Competition",
+            "date": "2016-10-09",
+            "division": "Open Women's 69 kg",
+            "lifter_name": "Laura Miller",
+            "body_weight_kg": "68.1",
+            "snatch_1": "42",
+            "snatch_2": "45",
+            "snatch_3": "47",
+            "cj_1": "55",
+            "cj_2": "58",
+            "cj_3": "-61",
+            "best_snatch": "47",
+            "best_cj": "58",
+            "total": "105"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0wOSIsIndlaWdodF9jbGFzcyI6MzY2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "17",
+            "athlete_name": "Laura Miller",
+            "total": "105",
+            "gender": "F",
+            "age": "28",
+            "club_name": "ROBINSON WEIGHTLIFTING CLUB",
+            "membership_number": "1006962",
+            "wso": "New York"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "RWL Memorial Day Open Weightlifting Competition",
+            "date": "2016-05-28",
+            "division": "Open Women's 69 kg",
+            "lifter_name": "Laura Miller",
+            "body_weight_kg": "66.9",
+            "snatch_1": "40",
+            "snatch_2": "43",
+            "snatch_3": "-45",
+            "cj_1": "50",
+            "cj_2": "53",
+            "cj_3": "55",
+            "best_snatch": "43",
+            "best_cj": "55",
+            "total": "98"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNS0yOCIsIndlaWdodF9jbGFzcyI6MzY2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "12",
+            "athlete_name": "Laura Miller",
+            "total": "98",
+            "gender": "F",
+            "age": "28",
+            "club_name": "ROBINSON WEIGHTLIFTING CLUB",
+            "membership_number": "1006962",
+            "wso": "New York"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    }
+  ]
+}

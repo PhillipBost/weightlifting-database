@@ -1,0 +1,417 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T08:23:40.935Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Daniel Chun",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 8,
+    "total_reverse_lookups": 8,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 24727390
+  },
+  "data": [
+    {
+      "internal_id": 12904,
+      "athlete_name": "Daniel Chun",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/12904",
+      "contaminated_lifter_id": 15211,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T20:12:44.385Z",
+      "profile_data": {
+        "membership_number": "211434",
+        "birth_year": 1984,
+        "gender": "M",
+        "club_name": "IRON ATHLETE WEIGHTLIFTING CLUB",
+        "wso": "Mountain South",
+        "national_rank": "29"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Iron Athlete Open",
+          "date": "2015-08-01",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Daniel Chun",
+          "body_weight_kg": "79.8",
+          "snatch_1": "57",
+          "snatch_2": "60",
+          "snatch_3": "65",
+          "cj_1": "75",
+          "cj_2": "80",
+          "cj_3": "-87",
+          "best_snatch": "65",
+          "best_cj": "80",
+          "total": "145"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Iron Athlete Open",
+            "date": "2015-08-01",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Daniel Chun",
+            "body_weight_kg": "79.8",
+            "snatch_1": "57",
+            "snatch_2": "60",
+            "snatch_3": "65",
+            "cj_1": "75",
+            "cj_2": "80",
+            "cj_3": "-87",
+            "best_snatch": "65",
+            "best_cj": "80",
+            "total": "145"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wOC0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wOC0wMSIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "29",
+            "athlete_name": "Daniel Chun",
+            "total": "145",
+            "gender": "M",
+            "age": "31",
+            "club_name": "IRON ATHLETE WEIGHTLIFTING CLUB",
+            "membership_number": "211434",
+            "wso": "Mountain South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 12908,
+      "athlete_name": "Daniel Chun",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/12908",
+      "contaminated_lifter_id": 15211,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-27T08:23:38.932Z",
+      "profile_data": {
+        "membership_number": "1036380",
+        "birth_year": 1984,
+        "gender": "M",
+        "club_name": "Jerks That Jerk",
+        "wso": "DMV",
+        "national_rank": "2"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2024 Cap City Open",
+          "date": "2024-04-27",
+          "division": "Men's Masters (40-44) 109kg",
+          "lifter_name": "Daniel Chun",
+          "body_weight_kg": "105.1",
+          "snatch_1": "79",
+          "snatch_2": "82",
+          "snatch_3": "-85",
+          "cj_1": "102",
+          "cj_2": "107",
+          "cj_3": "-114",
+          "best_snatch": "82",
+          "best_cj": "107",
+          "total": "189"
+        },
+        {
+          "meet_name": "Rosedale Open 2024",
+          "date": "2024-01-13",
+          "division": "Men's Masters (40-44) 109kg",
+          "lifter_name": "Daniel Chun",
+          "body_weight_kg": "103.8",
+          "snatch_1": "-77",
+          "snatch_2": "-79",
+          "snatch_3": "-79",
+          "cj_1": "97",
+          "cj_2": "-102",
+          "cj_3": "106",
+          "best_snatch": "0",
+          "best_cj": "106",
+          "total": "0"
+        },
+        {
+          "meet_name": "2023 Cap City Open",
+          "date": "2023-04-16",
+          "division": "Open Men's 109kg",
+          "lifter_name": "Daniel Chun",
+          "body_weight_kg": "105.84",
+          "snatch_1": "75",
+          "snatch_2": "79",
+          "snatch_3": "81",
+          "cj_1": "98",
+          "cj_2": "102",
+          "cj_3": "105",
+          "best_snatch": "81",
+          "best_cj": "105",
+          "total": "186"
+        },
+        {
+          "meet_name": "Trident Classic",
+          "date": "2022-10-09",
+          "division": "Open Men's 102kg",
+          "lifter_name": "Daniel Chun",
+          "body_weight_kg": "99.4",
+          "snatch_1": "74",
+          "snatch_2": "78",
+          "snatch_3": "-81",
+          "cj_1": "-95",
+          "cj_2": "-95",
+          "cj_3": "-96",
+          "best_snatch": "78",
+          "best_cj": "0",
+          "total": "0"
+        },
+        {
+          "meet_name": "2022 Capital City Open",
+          "date": "2022-05-01",
+          "division": "Open Men's 102kg",
+          "lifter_name": "Daniel Chun",
+          "body_weight_kg": "101.95",
+          "snatch_1": "72",
+          "snatch_2": "75",
+          "snatch_3": "80",
+          "cj_1": "91",
+          "cj_2": "96",
+          "cj_3": "100",
+          "best_snatch": "80",
+          "best_cj": "100",
+          "total": "180"
+        },
+        {
+          "meet_name": "2019 Black & Red Open",
+          "date": "2019-07-13",
+          "division": "Open Men's 102kg",
+          "lifter_name": "Daniel Chun",
+          "body_weight_kg": "101.65",
+          "snatch_1": "65",
+          "snatch_2": "-68",
+          "snatch_3": "-68",
+          "cj_1": "-89",
+          "cj_2": "89",
+          "cj_3": "-93",
+          "best_snatch": "65",
+          "best_cj": "89",
+          "total": "154"
+        },
+        {
+          "meet_name": "2019 Baltimore Open",
+          "date": "2019-01-26",
+          "division": "Open Men's 109kg",
+          "lifter_name": "Daniel Chun",
+          "body_weight_kg": "102.85",
+          "snatch_1": "60",
+          "snatch_2": "-65",
+          "snatch_3": "65",
+          "cj_1": "-84",
+          "cj_2": "84",
+          "cj_3": "88",
+          "best_snatch": "65",
+          "best_cj": "88",
+          "total": "153"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2024 Cap City Open",
+            "date": "2024-04-27",
+            "division": "Men's Masters (40-44) 109kg",
+            "lifter_name": "Daniel Chun",
+            "body_weight_kg": "105.1",
+            "snatch_1": "79",
+            "snatch_2": "82",
+            "snatch_3": "-85",
+            "cj_1": "102",
+            "cj_2": "107",
+            "cj_3": "-114",
+            "best_snatch": "82",
+            "best_cj": "107",
+            "total": "189"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wNC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wNC0yNyIsIndlaWdodF9jbGFzcyI6MTI5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Daniel Chun",
+            "total": "189",
+            "gender": "M",
+            "age": "40",
+            "club_name": "Jerks That Jerk",
+            "membership_number": "1036380",
+            "wso": "DMV"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Rosedale Open 2024",
+            "date": "2024-01-13",
+            "division": "Men's Masters (40-44) 109kg",
+            "lifter_name": "Daniel Chun",
+            "body_weight_kg": "103.8",
+            "snatch_1": "-77",
+            "snatch_2": "-79",
+            "snatch_3": "-79",
+            "cj_1": "97",
+            "cj_2": "-102",
+            "cj_3": "106",
+            "best_snatch": "0",
+            "best_cj": "106",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wMS0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wMS0xMyIsIndlaWdodF9jbGFzcyI6MTI5fQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2023 Cap City Open",
+            "date": "2023-04-16",
+            "division": "Open Men's 109kg",
+            "lifter_name": "Daniel Chun",
+            "body_weight_kg": "105.84",
+            "snatch_1": "75",
+            "snatch_2": "79",
+            "snatch_3": "81",
+            "cj_1": "98",
+            "cj_2": "102",
+            "cj_3": "105",
+            "best_snatch": "81",
+            "best_cj": "105",
+            "total": "186"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0xNiIsIndlaWdodF9jbGFzcyI6ODl9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Daniel Chun",
+            "total": "186",
+            "gender": "M",
+            "age": "39",
+            "club_name": "Jerks That Jerk",
+            "membership_number": "1036380",
+            "wso": "DMV"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Trident Classic",
+            "date": "2022-10-09",
+            "division": "Open Men's 102kg",
+            "lifter_name": "Daniel Chun",
+            "body_weight_kg": "99.4",
+            "snatch_1": "74",
+            "snatch_2": "78",
+            "snatch_3": "-81",
+            "cj_1": "-95",
+            "cj_2": "-95",
+            "cj_3": "-96",
+            "best_snatch": "78",
+            "best_cj": "0",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMC0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMC0wOSIsIndlaWdodF9jbGFzcyI6ODh9",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2022 Capital City Open",
+            "date": "2022-05-01",
+            "division": "Open Men's 102kg",
+            "lifter_name": "Daniel Chun",
+            "body_weight_kg": "101.95",
+            "snatch_1": "72",
+            "snatch_2": "75",
+            "snatch_3": "80",
+            "cj_1": "91",
+            "cj_2": "96",
+            "cj_3": "100",
+            "best_snatch": "80",
+            "best_cj": "100",
+            "total": "180"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNS0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNS0wMSIsIndlaWdodF9jbGFzcyI6ODh9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Daniel Chun",
+            "total": "180",
+            "gender": "M",
+            "age": "38",
+            "club_name": "Jerks That Jerk",
+            "membership_number": "1036380",
+            "wso": "DMV"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2019 Black & Red Open",
+            "date": "2019-07-13",
+            "division": "Open Men's 102kg",
+            "lifter_name": "Daniel Chun",
+            "body_weight_kg": "101.65",
+            "snatch_1": "65",
+            "snatch_2": "-68",
+            "snatch_3": "-68",
+            "cj_1": "-89",
+            "cj_2": "89",
+            "cj_3": "-93",
+            "best_snatch": "65",
+            "best_cj": "89",
+            "total": "154"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0xMyIsIndlaWdodF9jbGFzcyI6ODh9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "12",
+            "athlete_name": "Daniel Chun",
+            "total": "154",
+            "gender": "M",
+            "age": "35",
+            "club_name": "Jerks That Jerk",
+            "membership_number": "1036380",
+            "wso": "DMV"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2019 Baltimore Open",
+            "date": "2019-01-26",
+            "division": "Open Men's 109kg",
+            "lifter_name": "Daniel Chun",
+            "body_weight_kg": "102.85",
+            "snatch_1": "60",
+            "snatch_2": "-65",
+            "snatch_3": "65",
+            "cj_1": "-84",
+            "cj_2": "84",
+            "cj_3": "88",
+            "best_snatch": "65",
+            "best_cj": "88",
+            "total": "153"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0yNiIsIndlaWdodF9jbGFzcyI6ODl9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "14",
+            "athlete_name": "Daniel Chun",
+            "total": "153",
+            "gender": "M",
+            "age": "35",
+            "club_name": "Jerks That Jerk",
+            "membership_number": "1036380",
+            "wso": "DMV"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    }
+  ]
+}

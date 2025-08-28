@@ -1,0 +1,260 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T11:19:35.648Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Daniel Miller",
+    "internal_ids_processed": 3,
+    "successful_scrapes": 2,
+    "failed_scrapes": 1,
+    "total_competitions_found": 4,
+    "total_reverse_lookups": 4,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 5005292
+  },
+  "data": [
+    {
+      "internal_id": 1741,
+      "athlete_name": "Daniel Miller",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/1741",
+      "contaminated_lifter_id": 21222,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T13:02:33.262Z",
+      "profile_data": {
+        "membership_number": "100604",
+        "birth_year": 1967,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "-",
+        "national_rank": "51"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Crown Town Showdown",
+          "date": "2015-12-12",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Daniel Miller",
+          "body_weight_kg": "73.3",
+          "snatch_1": "60",
+          "snatch_2": "-65",
+          "snatch_3": "-66",
+          "cj_1": "75",
+          "cj_2": "80",
+          "cj_3": "82",
+          "best_snatch": "60",
+          "best_cj": "82",
+          "total": "142"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Crown Town Showdown",
+            "date": "2015-12-12",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Daniel Miller",
+            "body_weight_kg": "73.3",
+            "snatch_1": "60",
+            "snatch_2": "-65",
+            "snatch_3": "-66",
+            "cj_1": "75",
+            "cj_2": "80",
+            "cj_3": "82",
+            "best_snatch": "60",
+            "best_cj": "82",
+            "total": "142"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMi0xMiIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "51",
+            "athlete_name": "Daniel Miller",
+            "total": "142",
+            "gender": "M",
+            "age": "48",
+            "club_name": "-",
+            "membership_number": "100604",
+            "wso": "-"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 22644,
+      "athlete_name": "Daniel Miller",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/22644",
+      "contaminated_lifter_id": 21222,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T13:02:54.333Z",
+      "profile_data": {
+        "membership_number": "1002866",
+        "birth_year": 1990,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Carolina",
+        "national_rank": "5"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Battle For The Fallen 3",
+          "date": "2019-07-13",
+          "division": "Open Men's +109kg",
+          "lifter_name": "Daniel Miller",
+          "body_weight_kg": "125.2",
+          "snatch_1": "102",
+          "snatch_2": "105",
+          "snatch_3": "108",
+          "cj_1": "127",
+          "cj_2": "130",
+          "cj_3": "-132",
+          "best_snatch": "108",
+          "best_cj": "130",
+          "total": "238"
+        },
+        {
+          "meet_name": "Battle For The Fallen II",
+          "date": "2018-06-02",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Daniel Miller",
+          "body_weight_kg": "124.1",
+          "snatch_1": "88",
+          "snatch_2": "95",
+          "snatch_3": "95",
+          "cj_1": "120",
+          "cj_2": "127",
+          "cj_3": "130",
+          "best_snatch": "95",
+          "best_cj": "130",
+          "total": "225"
+        },
+        {
+          "meet_name": "Athletic Lab Winter Classic",
+          "date": "2018-02-17",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Daniel Miller",
+          "body_weight_kg": "124.6",
+          "snatch_1": "78",
+          "snatch_2": "85",
+          "snatch_3": "91",
+          "cj_1": "118",
+          "cj_2": "126",
+          "cj_3": "-134",
+          "best_snatch": "91",
+          "best_cj": "126",
+          "total": "217"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Battle For The Fallen 3",
+            "date": "2019-07-13",
+            "division": "Open Men's +109kg",
+            "lifter_name": "Daniel Miller",
+            "body_weight_kg": "125.2",
+            "snatch_1": "102",
+            "snatch_2": "105",
+            "snatch_3": "108",
+            "cj_1": "127",
+            "cj_2": "130",
+            "cj_3": "-132",
+            "best_snatch": "108",
+            "best_cj": "130",
+            "total": "238"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0xMyIsIndlaWdodF9jbGFzcyI6OTB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "Daniel Miller",
+            "total": "238",
+            "gender": "M",
+            "age": "29",
+            "club_name": "-",
+            "membership_number": "1002866",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Battle For The Fallen II",
+            "date": "2018-06-02",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Daniel Miller",
+            "body_weight_kg": "124.1",
+            "snatch_1": "88",
+            "snatch_2": "95",
+            "snatch_3": "95",
+            "cj_1": "120",
+            "cj_2": "127",
+            "cj_3": "130",
+            "best_snatch": "95",
+            "best_cj": "130",
+            "total": "225"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0wMiIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "Daniel Miller",
+            "total": "225",
+            "gender": "M",
+            "age": "28",
+            "club_name": "-",
+            "membership_number": "1002866",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Athletic Lab Winter Classic",
+            "date": "2018-02-17",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Daniel Miller",
+            "body_weight_kg": "124.6",
+            "snatch_1": "78",
+            "snatch_2": "85",
+            "snatch_3": "91",
+            "cj_1": "118",
+            "cj_2": "126",
+            "cj_3": "-134",
+            "best_snatch": "91",
+            "best_cj": "126",
+            "total": "217"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wMi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wMi0xNyIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "Daniel Miller",
+            "total": "217",
+            "gender": "M",
+            "age": "28",
+            "club_name": "-",
+            "membership_number": "1002866",
+            "wso": "Carolina"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 40483,
+      "athlete_name": "Daniel Miller",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/40483",
+      "contaminated_lifter_id": 21222,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-27T11:19:33.647Z",
+      "profile_data": null,
+      "competition_history": [],
+      "biographical_data_by_competition": [],
+      "scraping_successful": false,
+      "error": "Assignment to constant variable."
+    }
+  ]
+}

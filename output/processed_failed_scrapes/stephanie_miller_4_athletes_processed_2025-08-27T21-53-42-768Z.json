@@ -1,0 +1,327 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T10:35:55.029Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Stephanie Miller",
+    "internal_ids_processed": 4,
+    "successful_scrapes": 3,
+    "failed_scrapes": 1,
+    "total_competitions_found": 5,
+    "total_reverse_lookups": 5,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 2384673
+  },
+  "data": [
+    {
+      "internal_id": 56932,
+      "athlete_name": "Stephanie Miller",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/56932",
+      "contaminated_lifter_id": 5300,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T11:42:10.170Z",
+      "profile_data": {
+        "membership_number": "1064109",
+        "birth_year": 1989,
+        "gender": "F",
+        "club_name": "BASA Weightlifting",
+        "wso": "DMV",
+        "national_rank": "8"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2023 Baltimore Open",
+          "date": "2023-01-15",
+          "division": "Open Women's 76kg",
+          "lifter_name": "Stephanie Miller",
+          "body_weight_kg": "75.7",
+          "snatch_1": "53",
+          "snatch_2": "-55",
+          "snatch_3": "56",
+          "cj_1": "63",
+          "cj_2": "65",
+          "cj_3": "68",
+          "best_snatch": "56",
+          "best_cj": "68",
+          "total": "124"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2023 Baltimore Open",
+            "date": "2023-01-15",
+            "division": "Open Women's 76kg",
+            "lifter_name": "Stephanie Miller",
+            "body_weight_kg": "75.7",
+            "snatch_1": "53",
+            "snatch_2": "-55",
+            "snatch_3": "56",
+            "cj_1": "63",
+            "cj_2": "65",
+            "cj_3": "68",
+            "best_snatch": "56",
+            "best_cj": "68",
+            "total": "124"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMS0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMS0xNSIsIndlaWdodF9jbGFzcyI6OTd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "8",
+            "athlete_name": "Stephanie Miller",
+            "total": "124",
+            "gender": "F",
+            "age": "34",
+            "club_name": "BASA Weightlifting",
+            "membership_number": "1064109",
+            "wso": "DMV"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 9807,
+      "athlete_name": "Stephanie Miller",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/9807",
+      "contaminated_lifter_id": 5300,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T11:42:19.699Z",
+      "profile_data": {
+        "membership_number": "1015139",
+        "birth_year": 1982,
+        "gender": "F",
+        "club_name": "The Athletes House",
+        "wso": "Carolina",
+        "national_rank": "10"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Jaylin Open",
+          "date": "2017-01-14",
+          "division": "Women's Masters (35-39) 69 kg",
+          "lifter_name": "Stephanie Miller",
+          "body_weight_kg": "67.5",
+          "snatch_1": "35",
+          "snatch_2": "38",
+          "snatch_3": "45",
+          "cj_1": "61",
+          "cj_2": "64",
+          "cj_3": "-69",
+          "best_snatch": "45",
+          "best_cj": "64",
+          "total": "109"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Jaylin Open",
+            "date": "2017-01-14",
+            "division": "Women's Masters (35-39) 69 kg",
+            "lifter_name": "Stephanie Miller",
+            "body_weight_kg": "67.5",
+            "snatch_1": "35",
+            "snatch_2": "38",
+            "snatch_3": "45",
+            "cj_1": "61",
+            "cj_2": "64",
+            "cj_3": "-69",
+            "best_snatch": "45",
+            "best_cj": "64",
+            "total": "109"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wMS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wMS0xNCIsIndlaWdodF9jbGFzcyI6MzgzfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "Stephanie Miller",
+            "total": "109",
+            "gender": "F",
+            "age": "35",
+            "club_name": "The Athletes House",
+            "membership_number": "1015139",
+            "wso": "Carolina"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 12255,
+      "athlete_name": "Stephanie Miller",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/12255",
+      "contaminated_lifter_id": 5300,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T11:42:32.162Z",
+      "profile_data": {
+        "membership_number": "1023443",
+        "birth_year": 1984,
+        "gender": "F",
+        "club_name": "ALLSOUTH Barbell",
+        "wso": "Georgia",
+        "national_rank": "72"
+      },
+      "competition_history": [
+        {
+          "meet_name": "The Garage Fall OPEN- Last Chance Qualification for AO FINALS",
+          "date": "2017-10-28",
+          "division": "Open Women's 69 kg",
+          "lifter_name": "Stephanie Miller",
+          "body_weight_kg": "67.9",
+          "snatch_1": "35",
+          "snatch_2": "37",
+          "snatch_3": "40",
+          "cj_1": "45",
+          "cj_2": "50",
+          "cj_3": "55",
+          "best_snatch": "40",
+          "best_cj": "55",
+          "total": "95"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "The Garage Fall OPEN- Last Chance Qualification for AO FINALS",
+            "date": "2017-10-28",
+            "division": "Open Women's 69 kg",
+            "lifter_name": "Stephanie Miller",
+            "body_weight_kg": "67.9",
+            "snatch_1": "35",
+            "snatch_2": "37",
+            "snatch_3": "40",
+            "cj_1": "45",
+            "cj_2": "50",
+            "cj_3": "55",
+            "best_snatch": "40",
+            "best_cj": "55",
+            "total": "95"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMC0yOCIsIndlaWdodF9jbGFzcyI6MzY2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "72",
+            "athlete_name": "Stephanie Miller",
+            "total": "95",
+            "gender": "F",
+            "age": "33",
+            "club_name": "ALLSOUTH Barbell",
+            "membership_number": "1023443",
+            "wso": "Georgia"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 12344,
+      "athlete_name": "Stephanie Miller",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/12344",
+      "contaminated_lifter_id": 5300,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-27T10:35:53.027Z",
+      "profile_data": {
+        "membership_number": "181887",
+        "birth_year": 1984,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "New York",
+        "national_rank": "9"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Connecticut Open Weightlifting Championships",
+          "date": "2013-07-21",
+          "division": "Open Women's 75 kg",
+          "lifter_name": "Stephanie Miller",
+          "body_weight_kg": "74",
+          "snatch_1": "54",
+          "snatch_2": "56",
+          "snatch_3": "56",
+          "cj_1": "70",
+          "cj_2": "73",
+          "cj_3": "75",
+          "best_snatch": "56",
+          "best_cj": "75",
+          "total": "131"
+        },
+        {
+          "meet_name": "Crossfit True Athletics open weightlifting champhionships",
+          "date": "2013-06-09",
+          "division": "Open Women's +75 Kg",
+          "lifter_name": "Stephanie Miller",
+          "body_weight_kg": "75",
+          "snatch_1": "53",
+          "snatch_2": "54",
+          "snatch_3": "57",
+          "cj_1": "69",
+          "cj_2": "70",
+          "cj_3": "73",
+          "best_snatch": "57",
+          "best_cj": "73",
+          "total": "130"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Connecticut Open Weightlifting Championships",
+            "date": "2013-07-21",
+            "division": "Open Women's 75 kg",
+            "lifter_name": "Stephanie Miller",
+            "body_weight_kg": "74",
+            "snatch_1": "54",
+            "snatch_2": "56",
+            "snatch_3": "56",
+            "cj_1": "70",
+            "cj_2": "73",
+            "cj_3": "75",
+            "best_snatch": "56",
+            "best_cj": "75",
+            "total": "131"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNy0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNy0yMSIsIndlaWdodF9jbGFzcyI6MzY3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "Stephanie Miller",
+            "total": "131",
+            "gender": "F",
+            "age": "29",
+            "club_name": "-",
+            "membership_number": "181887",
+            "wso": "New York"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Crossfit True Athletics open weightlifting champhionships",
+            "date": "2013-06-09",
+            "division": "Open Women's +75 Kg",
+            "lifter_name": "Stephanie Miller",
+            "body_weight_kg": "75",
+            "snatch_1": "53",
+            "snatch_2": "54",
+            "snatch_3": "57",
+            "cj_1": "69",
+            "cj_2": "70",
+            "cj_3": "73",
+            "best_snatch": "57",
+            "best_cj": "73",
+            "total": "130"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wNi0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wNi0wOSIsIndlaWdodF9jbGFzcyI6MzY4fQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    }
+  ]
+}

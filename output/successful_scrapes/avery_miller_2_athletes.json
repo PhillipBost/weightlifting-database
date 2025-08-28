@@ -1,0 +1,482 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T18:33:34.704Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Avery Miller",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 9,
+    "total_reverse_lookups": 9,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 63684798
+  },
+  "data": [
+    {
+      "internal_id": 65688,
+      "athlete_name": "Avery Miller",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/65688",
+      "contaminated_lifter_id": 9904,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T18:32:59.924Z",
+      "profile_data": {
+        "membership_number": "1080789",
+        "birth_year": 2009,
+        "gender": "F",
+        "club_name": "VERO BEACH WEIGHTLIFTING",
+        "wso": "Florida",
+        "national_rank": "5"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2025 National Youth Championships, Powered by Rogue Fitness",
+          "date": "2025-06-23",
+          "division": "Women's 16-17 Age Group 77+kg",
+          "lifter_name": "Avery Miller",
+          "body_weight_kg": "103.3",
+          "snatch_1": "64",
+          "snatch_2": "68",
+          "snatch_3": "72",
+          "cj_1": "83",
+          "cj_2": "88",
+          "cj_3": "92",
+          "best_snatch": "72",
+          "best_cj": "92",
+          "total": "164"
+        },
+        {
+          "meet_name": "2025 Florida State Championships (WSO Championships)",
+          "date": "2025-04-25",
+          "division": "Women's 16-17 Age Group +81kg",
+          "lifter_name": "Avery Miller",
+          "body_weight_kg": "103.05",
+          "snatch_1": "59",
+          "snatch_2": "-63",
+          "snatch_3": "63",
+          "cj_1": "76",
+          "cj_2": "81",
+          "cj_3": "-85",
+          "best_snatch": "63",
+          "best_cj": "81",
+          "total": "144"
+        },
+        {
+          "meet_name": "The 2025 Gator Weightlifting Spring Open (NUQ)",
+          "date": "2025-03-22",
+          "division": "Women's 16-17 Age Group +81kg",
+          "lifter_name": "Avery Miller",
+          "body_weight_kg": "100.36",
+          "snatch_1": "57",
+          "snatch_2": "61",
+          "snatch_3": "-65",
+          "cj_1": "73",
+          "cj_2": "78",
+          "cj_3": "82",
+          "best_snatch": "61",
+          "best_cj": "82",
+          "total": "143"
+        },
+        {
+          "meet_name": "VBW YEET MEET",
+          "date": "2025-03-09",
+          "division": "Women's 16-17 Age Group +81kg",
+          "lifter_name": "Avery Miller",
+          "body_weight_kg": "102.2",
+          "snatch_1": "59",
+          "snatch_2": "-64",
+          "snatch_3": "64",
+          "cj_1": "75",
+          "cj_2": "80",
+          "cj_3": "-85",
+          "best_snatch": "64",
+          "best_cj": "80",
+          "total": "144"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2025 National Youth Championships, Powered by Rogue Fitness",
+            "date": "2025-06-23",
+            "division": "Women's 16-17 Age Group 77+kg",
+            "lifter_name": "Avery Miller",
+            "body_weight_kg": "103.3",
+            "snatch_1": "64",
+            "snatch_2": "68",
+            "snatch_3": "72",
+            "cj_1": "83",
+            "cj_2": "88",
+            "cj_3": "92",
+            "best_snatch": "72",
+            "best_cj": "92",
+            "total": "164"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNi0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNi0yMyIsIndlaWdodF9jbGFzcyI6NzY0fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "Avery Miller",
+            "total": "164",
+            "gender": "F",
+            "age": "16",
+            "club_name": "VERO BEACH WEIGHTLIFTING",
+            "membership_number": "1080789",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2025 Florida State Championships (WSO Championships)",
+            "date": "2025-04-25",
+            "division": "Women's 16-17 Age Group +81kg",
+            "lifter_name": "Avery Miller",
+            "body_weight_kg": "103.05",
+            "snatch_1": "59",
+            "snatch_2": "-63",
+            "snatch_3": "63",
+            "cj_1": "76",
+            "cj_2": "81",
+            "cj_3": "-85",
+            "best_snatch": "63",
+            "best_cj": "81",
+            "total": "144"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNC0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNC0yNSIsIndlaWdodF9jbGFzcyI6MjB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "Avery Miller",
+            "total": "144",
+            "gender": "F",
+            "age": "16",
+            "club_name": "VERO BEACH WEIGHTLIFTING",
+            "membership_number": "1080789",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The 2025 Gator Weightlifting Spring Open (NUQ)",
+            "date": "2025-03-22",
+            "division": "Women's 16-17 Age Group +81kg",
+            "lifter_name": "Avery Miller",
+            "body_weight_kg": "100.36",
+            "snatch_1": "57",
+            "snatch_2": "61",
+            "snatch_3": "-65",
+            "cj_1": "73",
+            "cj_2": "78",
+            "cj_3": "82",
+            "best_snatch": "61",
+            "best_cj": "82",
+            "total": "143"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMy0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMy0yMiIsIndlaWdodF9jbGFzcyI6MjB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Avery Miller",
+            "total": "143",
+            "gender": "F",
+            "age": "16",
+            "club_name": "VERO BEACH WEIGHTLIFTING",
+            "membership_number": "1080789",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "VBW YEET MEET",
+            "date": "2025-03-09",
+            "division": "Women's 16-17 Age Group +81kg",
+            "lifter_name": "Avery Miller",
+            "body_weight_kg": "102.2",
+            "snatch_1": "59",
+            "snatch_2": "-64",
+            "snatch_3": "64",
+            "cj_1": "75",
+            "cj_2": "80",
+            "cj_3": "-85",
+            "best_snatch": "64",
+            "best_cj": "80",
+            "total": "144"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMy0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMy0wOSIsIndlaWdodF9jbGFzcyI6MjB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Avery Miller",
+            "total": "144",
+            "gender": "F",
+            "age": "16",
+            "club_name": "VERO BEACH WEIGHTLIFTING",
+            "membership_number": "1080789",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 44203,
+      "athlete_name": "Avery Miller",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/44203",
+      "contaminated_lifter_id": 9904,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T18:33:34.703Z",
+      "profile_data": {
+        "membership_number": "205896",
+        "birth_year": 2004,
+        "gender": "F",
+        "club_name": "LSU - Shreveport",
+        "wso": "Southern",
+        "national_rank": "2"
+      },
+      "competition_history": [
+        {
+          "meet_name": "HiTechplates inaugural",
+          "date": "2016-08-13",
+          "division": "Women's 13 Under Age Group +58 Kg",
+          "lifter_name": "Avery Miller",
+          "body_weight_kg": "65.4",
+          "snatch_1": "27",
+          "snatch_2": "29",
+          "snatch_3": "32",
+          "cj_1": "35",
+          "cj_2": "37",
+          "cj_3": "40",
+          "best_snatch": "32",
+          "best_cj": "40",
+          "total": "72"
+        },
+        {
+          "meet_name": "2016 National Youth Championship",
+          "date": "2016-06-26",
+          "division": "Women's 13 Under Age Group +58 Kg",
+          "lifter_name": "Avery Miller",
+          "body_weight_kg": "63.44",
+          "snatch_1": "-30",
+          "snatch_2": "30",
+          "snatch_3": "32",
+          "cj_1": "40",
+          "cj_2": "-42",
+          "cj_3": "42",
+          "best_snatch": "32",
+          "best_cj": "42",
+          "total": "74"
+        },
+        {
+          "meet_name": "2016 South Beauregard Open",
+          "date": "2016-04-02",
+          "division": "Women's 13 Under Age Group +58 Kg",
+          "lifter_name": "Avery Miller",
+          "body_weight_kg": "61.2",
+          "snatch_1": "26",
+          "snatch_2": "28",
+          "snatch_3": "32",
+          "cj_1": "34",
+          "cj_2": "38",
+          "cj_3": "-42",
+          "best_snatch": "32",
+          "best_cj": "38",
+          "total": "70"
+        },
+        {
+          "meet_name": "Gayle Hatch Christmas Meet",
+          "date": "2015-12-12",
+          "division": "Women's 13 Under Age Group +58 Kg",
+          "lifter_name": "Avery Miller",
+          "body_weight_kg": "58.2",
+          "snatch_1": "20",
+          "snatch_2": "25",
+          "snatch_3": "30",
+          "cj_1": "28",
+          "cj_2": "33",
+          "cj_3": "38",
+          "best_snatch": "30",
+          "best_cj": "38",
+          "total": "68"
+        },
+        {
+          "meet_name": "The Phil Andrews Invitational",
+          "date": "2014-12-13",
+          "division": "Women's 13 Under Age Group 53kg",
+          "lifter_name": "Avery Miller",
+          "body_weight_kg": "50.82",
+          "snatch_1": "15",
+          "snatch_2": "17",
+          "snatch_3": "19",
+          "cj_1": "17",
+          "cj_2": "20",
+          "cj_3": "23",
+          "best_snatch": "19",
+          "best_cj": "23",
+          "total": "42"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "HiTechplates inaugural",
+            "date": "2016-08-13",
+            "division": "Women's 13 Under Age Group +58 Kg",
+            "lifter_name": "Avery Miller",
+            "body_weight_kg": "65.4",
+            "snatch_1": "27",
+            "snatch_2": "29",
+            "snatch_3": "32",
+            "cj_1": "35",
+            "cj_2": "37",
+            "cj_3": "40",
+            "best_snatch": "32",
+            "best_cj": "40",
+            "total": "72"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0xMyIsIndlaWdodF9jbGFzcyI6MzA1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Avery Miller",
+            "total": "72",
+            "gender": "F",
+            "age": "12",
+            "club_name": "LSU - Shreveport",
+            "membership_number": "205896",
+            "wso": "Southern"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2016 National Youth Championship",
+            "date": "2016-06-26",
+            "division": "Women's 13 Under Age Group +58 Kg",
+            "lifter_name": "Avery Miller",
+            "body_weight_kg": "63.44",
+            "snatch_1": "-30",
+            "snatch_2": "30",
+            "snatch_3": "32",
+            "cj_1": "40",
+            "cj_2": "-42",
+            "cj_3": "42",
+            "best_snatch": "32",
+            "best_cj": "42",
+            "total": "74"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNi0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNi0yNiIsIndlaWdodF9jbGFzcyI6MzA1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "Avery Miller",
+            "total": "74",
+            "gender": "F",
+            "age": "12",
+            "club_name": "LSU - Shreveport",
+            "membership_number": "205896",
+            "wso": "Southern"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2016 South Beauregard Open",
+            "date": "2016-04-02",
+            "division": "Women's 13 Under Age Group +58 Kg",
+            "lifter_name": "Avery Miller",
+            "body_weight_kg": "61.2",
+            "snatch_1": "26",
+            "snatch_2": "28",
+            "snatch_3": "32",
+            "cj_1": "34",
+            "cj_2": "38",
+            "cj_3": "-42",
+            "best_snatch": "32",
+            "best_cj": "38",
+            "total": "70"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wNC0wMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wNC0wMiIsIndlaWdodF9jbGFzcyI6MzA1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Avery Miller",
+            "total": "70",
+            "gender": "F",
+            "age": "12",
+            "club_name": "LSU - Shreveport",
+            "membership_number": "205896",
+            "wso": "Southern"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Gayle Hatch Christmas Meet",
+            "date": "2015-12-12",
+            "division": "Women's 13 Under Age Group +58 Kg",
+            "lifter_name": "Avery Miller",
+            "body_weight_kg": "58.2",
+            "snatch_1": "20",
+            "snatch_2": "25",
+            "snatch_3": "30",
+            "cj_1": "28",
+            "cj_2": "33",
+            "cj_3": "38",
+            "best_snatch": "30",
+            "best_cj": "38",
+            "total": "68"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMi0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMi0xMiIsIndlaWdodF9jbGFzcyI6MzA1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Avery Miller",
+            "total": "68",
+            "gender": "F",
+            "age": "11",
+            "club_name": "LSU - Shreveport",
+            "membership_number": "205896",
+            "wso": "Southern"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The Phil Andrews Invitational",
+            "date": "2014-12-13",
+            "division": "Women's 13 Under Age Group 53kg",
+            "lifter_name": "Avery Miller",
+            "body_weight_kg": "50.82",
+            "snatch_1": "15",
+            "snatch_2": "17",
+            "snatch_3": "19",
+            "cj_1": "17",
+            "cj_2": "20",
+            "cj_3": "23",
+            "best_snatch": "19",
+            "best_cj": "23",
+            "total": "42"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0xMi0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0xMi0xMyIsIndlaWdodF9jbGFzcyI6MzAzfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Avery Miller",
+            "total": "42",
+            "gender": "F",
+            "age": "10",
+            "club_name": "LSU - Shreveport",
+            "membership_number": "205896",
+            "wso": "Southern"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

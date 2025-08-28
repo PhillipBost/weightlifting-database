@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T19:02:29.732Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Emma Lee",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 65419826
+  },
+  "data": [
+    {
+      "internal_id": 66464,
+      "athlete_name": "Emma Lee",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/66464",
+      "contaminated_lifter_id": 29879,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T19:02:19.364Z",
+      "profile_data": {
+        "membership_number": "1081850",
+        "birth_year": 2006,
+        "gender": "F",
+        "club_name": "University of Oregon Weightlifting Club",
+        "wso": "Pacific Northwest",
+        "national_rank": "6"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Mighty Oregon Duck Open",
+          "date": "2025-05-17",
+          "division": "Junior Women's 76kg",
+          "lifter_name": "Emma Lee",
+          "body_weight_kg": "73.3",
+          "snatch_1": "42",
+          "snatch_2": "45",
+          "snatch_3": "48",
+          "cj_1": "55",
+          "cj_2": "-58",
+          "cj_3": "60",
+          "best_snatch": "48",
+          "best_cj": "60",
+          "total": "108"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Mighty Oregon Duck Open",
+            "date": "2025-05-17",
+            "division": "Junior Women's 76kg",
+            "lifter_name": "Emma Lee",
+            "body_weight_kg": "73.3",
+            "snatch_1": "42",
+            "snatch_2": "45",
+            "snatch_3": "48",
+            "cj_1": "55",
+            "cj_2": "-58",
+            "cj_3": "60",
+            "best_snatch": "48",
+            "best_cj": "60",
+            "total": "108"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNS0xNyIsIndlaWdodF9jbGFzcyI6Nzd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Emma Lee",
+            "total": "108",
+            "gender": "F",
+            "age": "19",
+            "club_name": "University of Oregon Weightlifting Club",
+            "membership_number": "1081850",
+            "wso": "Pacific Northwest"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 44082,
+      "athlete_name": "Emma Lee",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/44082",
+      "contaminated_lifter_id": 29879,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T19:02:29.729Z",
+      "profile_data": {
+        "membership_number": "1018792",
+        "birth_year": 2003,
+        "gender": "F",
+        "club_name": "Champion Weightlifting",
+        "wso": "Missouri Valley",
+        "national_rank": "4"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Yellow Brick Road",
+          "date": "2017-04-29",
+          "division": "Women's 14-15 Age Group 48 kg",
+          "lifter_name": "Emma Lee",
+          "body_weight_kg": "47.3",
+          "snatch_1": "-20",
+          "snatch_2": "20",
+          "snatch_3": "-23",
+          "cj_1": "29",
+          "cj_2": "-32",
+          "cj_3": "32",
+          "best_snatch": "20",
+          "best_cj": "32",
+          "total": "52"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Yellow Brick Road",
+            "date": "2017-04-29",
+            "division": "Women's 14-15 Age Group 48 kg",
+            "lifter_name": "Emma Lee",
+            "body_weight_kg": "47.3",
+            "snatch_1": "-20",
+            "snatch_2": "20",
+            "snatch_3": "-23",
+            "cj_1": "29",
+            "cj_2": "-32",
+            "cj_3": "32",
+            "best_snatch": "20",
+            "best_cj": "32",
+            "total": "52"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNC0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNC0yOSIsIndlaWdodF9jbGFzcyI6MzE0fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Emma Lee",
+            "total": "52",
+            "gender": "F",
+            "age": "14",
+            "club_name": "Champion Weightlifting",
+            "membership_number": "1018792",
+            "wso": "Missouri Valley"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

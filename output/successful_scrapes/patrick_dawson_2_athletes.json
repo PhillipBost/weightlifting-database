@@ -1,0 +1,247 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T17:33:09.127Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Patrick Dawson",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 4,
+    "total_reverse_lookups": 4,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 60059221
+  },
+  "data": [
+    {
+      "internal_id": 6313,
+      "athlete_name": "Patrick Dawson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/6313",
+      "contaminated_lifter_id": 11309,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T17:32:52.223Z",
+      "profile_data": {
+        "membership_number": "1012266",
+        "birth_year": 1978,
+        "gender": "M",
+        "club_name": "Sacris Barbell",
+        "wso": "Mountain North",
+        "national_rank": "9"
+      },
+      "competition_history": [
+        {
+          "meet_name": "FRCF Spring WeightLifting Meet 2018",
+          "date": "2018-05-06",
+          "division": "Open Men's 62 kg",
+          "lifter_name": "Patrick Dawson",
+          "body_weight_kg": "61.2",
+          "snatch_1": "38",
+          "snatch_2": "42",
+          "snatch_3": "-56",
+          "cj_1": "50",
+          "cj_2": "56",
+          "cj_3": "-70",
+          "best_snatch": "42",
+          "best_cj": "56",
+          "total": "98"
+        },
+        {
+          "meet_name": "Barbells and Brews - Blue Moon",
+          "date": "2018-04-07",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Patrick Dawson",
+          "body_weight_kg": "92.3",
+          "snatch_1": "70",
+          "snatch_2": "75",
+          "snatch_3": "87",
+          "cj_1": "110",
+          "cj_2": "114",
+          "cj_3": "118",
+          "best_snatch": "87",
+          "best_cj": "118",
+          "total": "205"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "FRCF Spring WeightLifting Meet 2018",
+            "date": "2018-05-06",
+            "division": "Open Men's 62 kg",
+            "lifter_name": "Patrick Dawson",
+            "body_weight_kg": "61.2",
+            "snatch_1": "38",
+            "snatch_2": "42",
+            "snatch_3": "-56",
+            "cj_1": "50",
+            "cj_2": "56",
+            "cj_3": "-70",
+            "best_snatch": "42",
+            "best_cj": "56",
+            "total": "98"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNS0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNS0wNiIsIndlaWdodF9jbGFzcyI6MzU1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "Patrick Dawson",
+            "total": "98",
+            "gender": "M",
+            "age": "40",
+            "club_name": "Sacris Barbell",
+            "membership_number": "1012266",
+            "wso": "Mountain North"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Barbells and Brews - Blue Moon",
+            "date": "2018-04-07",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Patrick Dawson",
+            "body_weight_kg": "92.3",
+            "snatch_1": "70",
+            "snatch_2": "75",
+            "snatch_3": "87",
+            "cj_1": "110",
+            "cj_2": "114",
+            "cj_3": "118",
+            "best_snatch": "87",
+            "best_cj": "118",
+            "total": "205"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNC0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNC0wNyIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "17",
+            "athlete_name": "Patrick Dawson",
+            "total": "205",
+            "gender": "M",
+            "age": "40",
+            "club_name": "Sacris Barbell",
+            "membership_number": "1012266",
+            "wso": "Mountain North"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 14814,
+      "athlete_name": "Patrick Dawson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/14814",
+      "contaminated_lifter_id": 11309,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T17:33:09.126Z",
+      "profile_data": {
+        "membership_number": "222185",
+        "birth_year": 1986,
+        "gender": "M",
+        "club_name": "CROSSFIT EVOLVE BARBELL CLUB",
+        "wso": "Mountain North",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Colorado State + Open  Weightlifting Championship",
+          "date": "2016-02-14",
+          "division": "Open Men's 56 kg",
+          "lifter_name": "Patrick Dawson",
+          "body_weight_kg": "54.69",
+          "snatch_1": "53",
+          "snatch_2": "57",
+          "snatch_3": "-62",
+          "cj_1": "66",
+          "cj_2": "70",
+          "cj_3": "75",
+          "best_snatch": "57",
+          "best_cj": "75",
+          "total": "132"
+        },
+        {
+          "meet_name": "Precision Weightlifting Open",
+          "date": "2015-11-21",
+          "division": "Open Men's 56 kg",
+          "lifter_name": "Patrick Dawson",
+          "body_weight_kg": "54.2",
+          "snatch_1": "47",
+          "snatch_2": "50",
+          "snatch_3": "51",
+          "cj_1": "62",
+          "cj_2": "64",
+          "cj_3": "66",
+          "best_snatch": "51",
+          "best_cj": "66",
+          "total": "117"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Colorado State + Open  Weightlifting Championship",
+            "date": "2016-02-14",
+            "division": "Open Men's 56 kg",
+            "lifter_name": "Patrick Dawson",
+            "body_weight_kg": "54.69",
+            "snatch_1": "53",
+            "snatch_2": "57",
+            "snatch_3": "-62",
+            "cj_1": "66",
+            "cj_2": "70",
+            "cj_3": "75",
+            "best_snatch": "57",
+            "best_cj": "75",
+            "total": "132"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMi0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMi0xNCIsIndlaWdodF9jbGFzcyI6MzU0fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Patrick Dawson",
+            "total": "132",
+            "gender": "M",
+            "age": "30",
+            "club_name": "CROSSFIT EVOLVE BARBELL CLUB",
+            "membership_number": "222185",
+            "wso": "Mountain North"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Precision Weightlifting Open",
+            "date": "2015-11-21",
+            "division": "Open Men's 56 kg",
+            "lifter_name": "Patrick Dawson",
+            "body_weight_kg": "54.2",
+            "snatch_1": "47",
+            "snatch_2": "50",
+            "snatch_3": "51",
+            "cj_1": "62",
+            "cj_2": "64",
+            "cj_3": "66",
+            "best_snatch": "51",
+            "best_cj": "66",
+            "total": "117"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMS0yMSIsIndlaWdodF9jbGFzcyI6MzU0fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Patrick Dawson",
+            "total": "117",
+            "gender": "M",
+            "age": "29",
+            "club_name": "CROSSFIT EVOLVE BARBELL CLUB",
+            "membership_number": "222185",
+            "wso": "Mountain North"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

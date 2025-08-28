@@ -1,0 +1,379 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T07:09:49.764Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Ricky Moore",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 7,
+    "total_reverse_lookups": 7,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 20296219
+  },
+  "data": [
+    {
+      "internal_id": 12563,
+      "athlete_name": "Ricky Moore",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/12563",
+      "contaminated_lifter_id": 24776,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T18:23:49.554Z",
+      "profile_data": {
+        "membership_number": "1041751",
+        "birth_year": 1984,
+        "gender": "M",
+        "club_name": "Rising Tide Weightlifting",
+        "wso": "Carolina",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2020 HWC Winter Open",
+          "date": "2020-01-04",
+          "division": "Men's Masters (35-39) 96kg",
+          "lifter_name": "Ricky Moore",
+          "body_weight_kg": "93.9",
+          "snatch_1": "105",
+          "snatch_2": "109",
+          "snatch_3": "113",
+          "cj_1": "135",
+          "cj_2": "-139",
+          "cj_3": "-140",
+          "best_snatch": "113",
+          "best_cj": "135",
+          "total": "248"
+        },
+        {
+          "meet_name": "2019 East Coast Gold Lift Off",
+          "date": "2019-05-26",
+          "division": "Open Men's 96kg",
+          "lifter_name": "Ricky Moore",
+          "body_weight_kg": "93.8",
+          "snatch_1": "100",
+          "snatch_2": "105",
+          "snatch_3": "108",
+          "cj_1": "130",
+          "cj_2": "135",
+          "cj_3": "0",
+          "best_snatch": "108",
+          "best_cj": "135",
+          "total": "243"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2020 HWC Winter Open",
+            "date": "2020-01-04",
+            "division": "Men's Masters (35-39) 96kg",
+            "lifter_name": "Ricky Moore",
+            "body_weight_kg": "93.9",
+            "snatch_1": "105",
+            "snatch_2": "109",
+            "snatch_3": "113",
+            "cj_1": "135",
+            "cj_2": "-139",
+            "cj_3": "-140",
+            "best_snatch": "113",
+            "best_cj": "135",
+            "total": "248"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMS0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMS0wNCIsIndlaWdodF9jbGFzcyI6MTA3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Ricky Moore",
+            "total": "248",
+            "gender": "M",
+            "age": "36",
+            "club_name": "Rising Tide Weightlifting",
+            "membership_number": "1041751",
+            "wso": "Carolina"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2019 East Coast Gold Lift Off",
+            "date": "2019-05-26",
+            "division": "Open Men's 96kg",
+            "lifter_name": "Ricky Moore",
+            "body_weight_kg": "93.8",
+            "snatch_1": "100",
+            "snatch_2": "105",
+            "snatch_3": "108",
+            "cj_1": "130",
+            "cj_2": "135",
+            "cj_3": "0",
+            "best_snatch": "108",
+            "best_cj": "135",
+            "total": "243"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNS0yNiIsIndlaWdodF9jbGFzcyI6ODd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Ricky Moore",
+            "total": "243",
+            "gender": "M",
+            "age": "35",
+            "club_name": "Rising Tide Weightlifting",
+            "membership_number": "1041751",
+            "wso": "Carolina"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 22295,
+      "athlete_name": "Ricky Moore",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/22295",
+      "contaminated_lifter_id": 24776,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-27T07:09:47.762Z",
+      "profile_data": {
+        "membership_number": "1010415",
+        "birth_year": 1989,
+        "gender": "M",
+        "club_name": "INVICTUS ATHLETE WEIGHTLIFTING CLUB",
+        "wso": "California South",
+        "national_rank": "5"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Nike 2019 American Open Series 2",
+          "date": "2019-07-28",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Ricky Moore",
+          "body_weight_kg": "80.7",
+          "snatch_1": "-110",
+          "snatch_2": "111",
+          "snatch_3": "116",
+          "cj_1": "-145",
+          "cj_2": "-151",
+          "cj_3": "-151",
+          "best_snatch": "116",
+          "best_cj": "0",
+          "total": "0"
+        },
+        {
+          "meet_name": "2019 Fortius Open",
+          "date": "2019-04-07",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Ricky Moore",
+          "body_weight_kg": "80.78",
+          "snatch_1": "108",
+          "snatch_2": "-112",
+          "snatch_3": "114",
+          "cj_1": "-145",
+          "cj_2": "145",
+          "cj_3": "150",
+          "best_snatch": "114",
+          "best_cj": "150",
+          "total": "264"
+        },
+        {
+          "meet_name": "2017 American Open Finals",
+          "date": "2017-12-10",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Ricky Moore",
+          "body_weight_kg": "76.52",
+          "snatch_1": "110",
+          "snatch_2": "115",
+          "snatch_3": "-120",
+          "cj_1": "145",
+          "cj_2": "150",
+          "cj_3": "-156",
+          "best_snatch": "115",
+          "best_cj": "150",
+          "total": "265"
+        },
+        {
+          "meet_name": "2016 American Open",
+          "date": "2016-12-11",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Ricky Moore",
+          "body_weight_kg": "76.48",
+          "snatch_1": "115",
+          "snatch_2": "120",
+          "snatch_3": "-123",
+          "cj_1": "150",
+          "cj_2": "-155",
+          "cj_3": "-156",
+          "best_snatch": "120",
+          "best_cj": "150",
+          "total": "270"
+        },
+        {
+          "meet_name": "Fortius Halloween Open",
+          "date": "2016-10-23",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Ricky Moore",
+          "body_weight_kg": "76.16",
+          "snatch_1": "110",
+          "snatch_2": "115",
+          "snatch_3": "-120",
+          "cj_1": "141",
+          "cj_2": "146",
+          "cj_3": "150",
+          "best_snatch": "115",
+          "best_cj": "150",
+          "total": "265"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Nike 2019 American Open Series 2",
+            "date": "2019-07-28",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Ricky Moore",
+            "body_weight_kg": "80.7",
+            "snatch_1": "-110",
+            "snatch_2": "111",
+            "snatch_3": "116",
+            "cj_1": "-145",
+            "cj_2": "-151",
+            "cj_3": "-151",
+            "best_snatch": "116",
+            "best_cj": "0",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0yOCIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2019 Fortius Open",
+            "date": "2019-04-07",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Ricky Moore",
+            "body_weight_kg": "80.78",
+            "snatch_1": "108",
+            "snatch_2": "-112",
+            "snatch_3": "114",
+            "cj_1": "-145",
+            "cj_2": "145",
+            "cj_3": "150",
+            "best_snatch": "114",
+            "best_cj": "150",
+            "total": "264"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNC0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNC0wNyIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "5",
+            "athlete_name": "Ricky Moore",
+            "total": "264",
+            "gender": "M",
+            "age": "30",
+            "club_name": "INVICTUS ATHLETE WEIGHTLIFTING CLUB",
+            "membership_number": "1010415",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2017 American Open Finals",
+            "date": "2017-12-10",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Ricky Moore",
+            "body_weight_kg": "76.52",
+            "snatch_1": "110",
+            "snatch_2": "115",
+            "snatch_3": "-120",
+            "cj_1": "145",
+            "cj_2": "150",
+            "cj_3": "-156",
+            "best_snatch": "115",
+            "best_cj": "150",
+            "total": "265"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMi0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMi0xMCIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "20",
+            "athlete_name": "Ricky Moore",
+            "total": "265",
+            "gender": "M",
+            "age": "28",
+            "club_name": "INVICTUS ATHLETE WEIGHTLIFTING CLUB",
+            "membership_number": "1010415",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2016 American Open",
+            "date": "2016-12-11",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Ricky Moore",
+            "body_weight_kg": "76.48",
+            "snatch_1": "115",
+            "snatch_2": "120",
+            "snatch_3": "-123",
+            "cj_1": "150",
+            "cj_2": "-155",
+            "cj_3": "-156",
+            "best_snatch": "120",
+            "best_cj": "150",
+            "total": "270"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMi0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMi0xMSIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "11",
+            "athlete_name": "Ricky Moore",
+            "total": "270",
+            "gender": "M",
+            "age": "27",
+            "club_name": "INVICTUS ATHLETE WEIGHTLIFTING CLUB",
+            "membership_number": "1010415",
+            "wso": "California South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Fortius Halloween Open",
+            "date": "2016-10-23",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Ricky Moore",
+            "body_weight_kg": "76.16",
+            "snatch_1": "110",
+            "snatch_2": "115",
+            "snatch_3": "-120",
+            "cj_1": "141",
+            "cj_2": "146",
+            "cj_3": "150",
+            "best_snatch": "115",
+            "best_cj": "150",
+            "total": "265"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0xMC0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0xMC0yMyIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Ricky Moore",
+            "total": "265",
+            "gender": "M",
+            "age": "27",
+            "club_name": "INVICTUS ATHLETE WEIGHTLIFTING CLUB",
+            "membership_number": "1010415",
+            "wso": "California South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    }
+  ]
+}

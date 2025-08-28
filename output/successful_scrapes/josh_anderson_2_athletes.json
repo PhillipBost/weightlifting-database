@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T11:27:16.356Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Josh Anderson",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 38106450
+  },
+  "data": [
+    {
+      "internal_id": 10327,
+      "athlete_name": "Josh Anderson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/10327",
+      "contaminated_lifter_id": 18178,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T11:27:06.557Z",
+      "profile_data": {
+        "membership_number": "1010815",
+        "birth_year": 1983,
+        "gender": "M",
+        "club_name": "Strength Guild Weightlifting Academy",
+        "wso": "Missouri Valley",
+        "national_rank": "27"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2016 Kansas State & Open Championships",
+          "date": "2016-08-28",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Josh Anderson",
+          "body_weight_kg": "84.4",
+          "snatch_1": "70",
+          "snatch_2": "75",
+          "snatch_3": "-82",
+          "cj_1": "90",
+          "cj_2": "-95",
+          "cj_3": "-97",
+          "best_snatch": "75",
+          "best_cj": "90",
+          "total": "165"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2016 Kansas State & Open Championships",
+            "date": "2016-08-28",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Josh Anderson",
+            "body_weight_kg": "84.4",
+            "snatch_1": "70",
+            "snatch_2": "75",
+            "snatch_3": "-82",
+            "cj_1": "90",
+            "cj_2": "-95",
+            "cj_3": "-97",
+            "best_snatch": "75",
+            "best_cj": "90",
+            "total": "165"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0yOCIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "27",
+            "athlete_name": "Josh Anderson",
+            "total": "165",
+            "gender": "M",
+            "age": "33",
+            "club_name": "Strength Guild Weightlifting Academy",
+            "membership_number": "1010815",
+            "wso": "Missouri Valley"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 35750,
+      "athlete_name": "Josh Anderson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/35750",
+      "contaminated_lifter_id": 18178,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T11:27:16.353Z",
+      "profile_data": {
+        "membership_number": "178132",
+        "birth_year": 1996,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Mountain South",
+        "national_rank": "14"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Utah State Championships",
+          "date": "2013-03-16",
+          "division": "Open Men's 69 kg",
+          "lifter_name": "Josh Anderson",
+          "body_weight_kg": "68.49",
+          "snatch_1": "52",
+          "snatch_2": "58",
+          "snatch_3": "62",
+          "cj_1": "72",
+          "cj_2": "80",
+          "cj_3": "82",
+          "best_snatch": "62",
+          "best_cj": "82",
+          "total": "144"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Utah State Championships",
+            "date": "2013-03-16",
+            "division": "Open Men's 69 kg",
+            "lifter_name": "Josh Anderson",
+            "body_weight_kg": "68.49",
+            "snatch_1": "52",
+            "snatch_2": "58",
+            "snatch_3": "62",
+            "cj_1": "72",
+            "cj_2": "80",
+            "cj_3": "82",
+            "best_snatch": "62",
+            "best_cj": "82",
+            "total": "144"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMy0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMy0xNiIsIndlaWdodF9jbGFzcyI6MzU2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "14",
+            "athlete_name": "Josh Anderson",
+            "total": "144",
+            "gender": "M",
+            "age": "17",
+            "club_name": "-",
+            "membership_number": "178132",
+            "wso": "Mountain South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

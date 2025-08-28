@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T14:28:26.486Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Jiting Shen",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 48976580
+  },
+  "data": [
+    {
+      "internal_id": 64972,
+      "athlete_name": "Jiting Shen",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/64972",
+      "contaminated_lifter_id": 62572,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T14:28:16.585Z",
+      "profile_data": {
+        "membership_number": "1079557",
+        "birth_year": 1997,
+        "gender": "M",
+        "club_name": "Austin Barbell",
+        "wso": "Texas-Oklahoma",
+        "national_rank": "13"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Polar Express - Train Through Meet",
+          "date": "2024-12-21",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Jiting Shen",
+          "body_weight_kg": "81.15",
+          "snatch_1": "32",
+          "snatch_2": "34",
+          "snatch_3": "36",
+          "cj_1": "40",
+          "cj_2": "43",
+          "cj_3": "46",
+          "best_snatch": "36",
+          "best_cj": "46",
+          "total": "82"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Polar Express - Train Through Meet",
+            "date": "2024-12-21",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Jiting Shen",
+            "body_weight_kg": "81.15",
+            "snatch_1": "32",
+            "snatch_2": "34",
+            "snatch_3": "36",
+            "cj_1": "40",
+            "cj_2": "43",
+            "cj_3": "46",
+            "best_snatch": "36",
+            "best_cj": "46",
+            "total": "82"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0xMi0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0xMi0yMSIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "13",
+            "athlete_name": "Jiting Shen",
+            "total": "82",
+            "gender": "M",
+            "age": "27",
+            "club_name": "Austin Barbell",
+            "membership_number": "1079557",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 66900,
+      "athlete_name": "Jiting Shen",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/66900",
+      "contaminated_lifter_id": 62572,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T14:28:26.484Z",
+      "profile_data": {
+        "membership_number": "1081727",
+        "birth_year": 1997,
+        "gender": "M",
+        "club_name": "Austin Barbell",
+        "wso": "Texas-Oklahoma",
+        "national_rank": "29"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Bexar Brawl",
+          "date": "2025-07-26",
+          "division": "Open Men's 88kg",
+          "lifter_name": "Jiting Shen",
+          "body_weight_kg": "85.6",
+          "snatch_1": "53",
+          "snatch_2": "56",
+          "snatch_3": "59",
+          "cj_1": "75",
+          "cj_2": "80",
+          "cj_3": "-85",
+          "best_snatch": "59",
+          "best_cj": "80",
+          "total": "139"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Bexar Brawl",
+            "date": "2025-07-26",
+            "division": "Open Men's 88kg",
+            "lifter_name": "Jiting Shen",
+            "body_weight_kg": "85.6",
+            "snatch_1": "53",
+            "snatch_2": "56",
+            "snatch_3": "59",
+            "cj_1": "75",
+            "cj_2": "80",
+            "cj_3": "-85",
+            "best_snatch": "59",
+            "best_cj": "80",
+            "total": "139"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNy0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNy0yNiIsIndlaWdodF9jbGFzcyI6NzEzfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "29",
+            "athlete_name": "Jiting Shen",
+            "total": "139",
+            "gender": "M",
+            "age": "28",
+            "club_name": "Austin Barbell",
+            "membership_number": "1081727",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

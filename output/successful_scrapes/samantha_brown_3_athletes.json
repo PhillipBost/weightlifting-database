@@ -1,0 +1,268 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T04:09:57.058Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Samantha Brown",
+    "internal_ids_processed": 3,
+    "successful_scrapes": 3,
+    "failed_scrapes": 0,
+    "total_competitions_found": 4,
+    "total_reverse_lookups": 4,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 11867152
+  },
+  "data": [
+    {
+      "internal_id": 43108,
+      "athlete_name": "Samantha Brown",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/43108",
+      "contaminated_lifter_id": 33002,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T04:09:28.857Z",
+      "profile_data": {
+        "membership_number": "1024547",
+        "birth_year": 2002,
+        "gender": "F",
+        "club_name": "WESLEY WEIGHTLIFTERS",
+        "wso": "Missouri Valley",
+        "national_rank": "2"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Turkey Cup",
+          "date": "2017-11-18",
+          "division": "Women's 14-15 Age Group +69 kg",
+          "lifter_name": "Samantha Brown",
+          "body_weight_kg": "92.05",
+          "snatch_1": "32",
+          "snatch_2": "35",
+          "snatch_3": "37",
+          "cj_1": "43",
+          "cj_2": "46",
+          "cj_3": "48",
+          "best_snatch": "37",
+          "best_cj": "48",
+          "total": "85"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Turkey Cup",
+            "date": "2017-11-18",
+            "division": "Women's 14-15 Age Group +69 kg",
+            "lifter_name": "Samantha Brown",
+            "body_weight_kg": "92.05",
+            "snatch_1": "32",
+            "snatch_2": "35",
+            "snatch_3": "37",
+            "cj_1": "43",
+            "cj_2": "46",
+            "cj_3": "48",
+            "best_snatch": "37",
+            "best_cj": "48",
+            "total": "85"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0xMS0xOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0xMS0xOCIsIndlaWdodF9jbGFzcyI6MzE5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Samantha Brown",
+            "total": "85",
+            "gender": "F",
+            "age": "15",
+            "club_name": "WESLEY WEIGHTLIFTERS",
+            "membership_number": "1024547",
+            "wso": "Missouri Valley"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 49691,
+      "athlete_name": "Samantha Brown",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/49691",
+      "contaminated_lifter_id": 33002,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T04:09:38.345Z",
+      "profile_data": {
+        "membership_number": "1054755",
+        "birth_year": 1990,
+        "gender": "F",
+        "club_name": "TRIDENT WEIGHTLIFTING CLUB",
+        "wso": "DMV",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2021 Trident Classic",
+          "date": "2021-10-10",
+          "division": "Open Women's 81kg",
+          "lifter_name": "Samantha Brown",
+          "body_weight_kg": "79.65",
+          "snatch_1": "57",
+          "snatch_2": "59",
+          "snatch_3": "-61",
+          "cj_1": "-73",
+          "cj_2": "74",
+          "cj_3": "77",
+          "best_snatch": "59",
+          "best_cj": "77",
+          "total": "136"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2021 Trident Classic",
+            "date": "2021-10-10",
+            "division": "Open Women's 81kg",
+            "lifter_name": "Samantha Brown",
+            "body_weight_kg": "79.65",
+            "snatch_1": "57",
+            "snatch_2": "59",
+            "snatch_3": "-61",
+            "cj_1": "-73",
+            "cj_2": "74",
+            "cj_3": "77",
+            "best_snatch": "59",
+            "best_cj": "77",
+            "total": "136"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0xMC0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0xMC0xMCIsIndlaWdodF9jbGFzcyI6OTh9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Samantha Brown",
+            "total": "136",
+            "gender": "F",
+            "age": "31",
+            "club_name": "TRIDENT WEIGHTLIFTING CLUB",
+            "membership_number": "1054755",
+            "wso": "DMV"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 56493,
+      "athlete_name": "Samantha Brown",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/56493",
+      "contaminated_lifter_id": 33002,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T04:09:57.056Z",
+      "profile_data": {
+        "membership_number": "1066433",
+        "birth_year": 2004,
+        "gender": "F",
+        "club_name": "LINDENWOOD LIONS",
+        "wso": "Missouri Valley",
+        "national_rank": "52"
+      },
+      "competition_history": [
+        {
+          "meet_name": "The 2023 Nike National University Championships, powered by Rogue",
+          "date": "2023-03-03",
+          "division": "Open Women's 64kg",
+          "lifter_name": "Samantha Brown",
+          "body_weight_kg": "63.35",
+          "snatch_1": "53",
+          "snatch_2": "57",
+          "snatch_3": "-60",
+          "cj_1": "69",
+          "cj_2": "-73",
+          "cj_3": "-73",
+          "best_snatch": "57",
+          "best_cj": "69",
+          "total": "126"
+        },
+        {
+          "meet_name": "The Iowa Championship",
+          "date": "2022-11-05",
+          "division": "Open Women's 64kg",
+          "lifter_name": "Samantha Brown",
+          "body_weight_kg": "63.45",
+          "snatch_1": "45",
+          "snatch_2": "47",
+          "snatch_3": "51",
+          "cj_1": "63",
+          "cj_2": "-68",
+          "cj_3": "70",
+          "best_snatch": "51",
+          "best_cj": "70",
+          "total": "121"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "The 2023 Nike National University Championships, powered by Rogue",
+            "date": "2023-03-03",
+            "division": "Open Women's 64kg",
+            "lifter_name": "Samantha Brown",
+            "body_weight_kg": "63.35",
+            "snatch_1": "53",
+            "snatch_2": "57",
+            "snatch_3": "-60",
+            "cj_1": "69",
+            "cj_2": "-73",
+            "cj_3": "-73",
+            "best_snatch": "57",
+            "best_cj": "69",
+            "total": "126"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMy0wMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMy0wMyIsIndlaWdodF9jbGFzcyI6OTV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "52",
+            "athlete_name": "Samantha Brown",
+            "total": "126",
+            "gender": "F",
+            "age": "19",
+            "club_name": "LINDENWOOD LIONS",
+            "membership_number": "1066433",
+            "wso": "Missouri Valley"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The Iowa Championship",
+            "date": "2022-11-05",
+            "division": "Open Women's 64kg",
+            "lifter_name": "Samantha Brown",
+            "body_weight_kg": "63.45",
+            "snatch_1": "45",
+            "snatch_2": "47",
+            "snatch_3": "51",
+            "cj_1": "63",
+            "cj_2": "-68",
+            "cj_3": "70",
+            "best_snatch": "51",
+            "best_cj": "70",
+            "total": "121"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0xMS0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0xMS0wNSIsIndlaWdodF9jbGFzcyI6OTV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "12",
+            "athlete_name": "Samantha Brown",
+            "total": "121",
+            "gender": "F",
+            "age": "18",
+            "club_name": "LINDENWOOD LIONS",
+            "membership_number": "1066433",
+            "wso": "Missouri Valley"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

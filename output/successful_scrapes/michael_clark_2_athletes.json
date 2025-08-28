@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T23:40:05.720Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Michael Clark",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 82075814
+  },
+  "data": [
+    {
+      "internal_id": 65955,
+      "athlete_name": "Michael Clark",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/65955",
+      "contaminated_lifter_id": 19654,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T23:39:52.172Z",
+      "profile_data": {
+        "membership_number": "1081302",
+        "birth_year": 1978,
+        "gender": "M",
+        "club_name": "West Virginia Weightlifting",
+        "wso": "Pennsylvania-West Virginia",
+        "national_rank": "2"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2025 Pennsylvania-West Virginia WSO Championship",
+          "date": "2025-04-12",
+          "division": "Men's Masters (45-49) +109kg",
+          "lifter_name": "Michael Clark",
+          "body_weight_kg": "110.2",
+          "snatch_1": "65",
+          "snatch_2": "70",
+          "snatch_3": "75",
+          "cj_1": "75",
+          "cj_2": "80",
+          "cj_3": "85",
+          "best_snatch": "75",
+          "best_cj": "85",
+          "total": "160"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2025 Pennsylvania-West Virginia WSO Championship",
+            "date": "2025-04-12",
+            "division": "Men's Masters (45-49) +109kg",
+            "lifter_name": "Michael Clark",
+            "body_weight_kg": "110.2",
+            "snatch_1": "65",
+            "snatch_2": "70",
+            "snatch_3": "75",
+            "cj_1": "75",
+            "cj_2": "80",
+            "cj_3": "85",
+            "best_snatch": "75",
+            "best_cj": "85",
+            "total": "160"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNC0xMiIsIndlaWdodF9jbGFzcyI6MTUwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Michael Clark",
+            "total": "160",
+            "gender": "M",
+            "age": "47",
+            "club_name": "West Virginia Weightlifting",
+            "membership_number": "1081302",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 21666,
+      "athlete_name": "Michael Clark",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/21666",
+      "contaminated_lifter_id": 19654,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T23:40:05.718Z",
+      "profile_data": {
+        "membership_number": "185551",
+        "birth_year": 1989,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Georgia",
+        "national_rank": "8"
+      },
+      "competition_history": [
+        {
+          "meet_name": "18th Annual Matt Davis Memorial",
+          "date": "2014-04-12",
+          "division": "Open Men's 77 kg",
+          "lifter_name": "Michael Clark",
+          "body_weight_kg": "76",
+          "snatch_1": "95",
+          "snatch_2": "-100",
+          "snatch_3": "-100",
+          "cj_1": "120",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "95",
+          "best_cj": "120",
+          "total": "215"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "18th Annual Matt Davis Memorial",
+            "date": "2014-04-12",
+            "division": "Open Men's 77 kg",
+            "lifter_name": "Michael Clark",
+            "body_weight_kg": "76",
+            "snatch_1": "95",
+            "snatch_2": "-100",
+            "snatch_3": "-100",
+            "cj_1": "120",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "95",
+            "best_cj": "120",
+            "total": "215"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNC0xMiIsIndlaWdodF9jbGFzcyI6MzU3fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "8",
+            "athlete_name": "Michael Clark",
+            "total": "215",
+            "gender": "M",
+            "age": "25",
+            "club_name": "-",
+            "membership_number": "185551",
+            "wso": "Georgia"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

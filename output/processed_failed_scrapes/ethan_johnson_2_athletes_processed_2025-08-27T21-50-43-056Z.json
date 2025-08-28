@@ -1,0 +1,426 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T07:27:43.049Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Ethan Johnson",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 8,
+    "total_reverse_lookups": 8,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 21369504
+  },
+  "data": [
+    {
+      "internal_id": 57035,
+      "athlete_name": "Ethan Johnson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/57035",
+      "contaminated_lifter_id": 34042,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T18:50:14.006Z",
+      "profile_data": {
+        "membership_number": "1067194",
+        "birth_year": 2003,
+        "gender": "M",
+        "club_name": "Keep Pulling",
+        "wso": "Florida",
+        "national_rank": "7"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Orlando Strength Open 1hosted by UCF  (NUQ)",
+          "date": "2023-01-21",
+          "division": "Junior Men's 89kg",
+          "lifter_name": "Ethan Johnson",
+          "body_weight_kg": "81.95",
+          "snatch_1": "66",
+          "snatch_2": "70",
+          "snatch_3": "73",
+          "cj_1": "-88",
+          "cj_2": "88",
+          "cj_3": "91",
+          "best_snatch": "73",
+          "best_cj": "91",
+          "total": "164"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Orlando Strength Open 1hosted by UCF  (NUQ)",
+            "date": "2023-01-21",
+            "division": "Junior Men's 89kg",
+            "lifter_name": "Ethan Johnson",
+            "body_weight_kg": "81.95",
+            "snatch_1": "66",
+            "snatch_2": "70",
+            "snatch_3": "73",
+            "cj_1": "-88",
+            "cj_2": "88",
+            "cj_3": "91",
+            "best_snatch": "73",
+            "best_cj": "91",
+            "total": "164"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMS0yMSIsIndlaWdodF9jbGFzcyI6NjZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "7",
+            "athlete_name": "Ethan Johnson",
+            "total": "164",
+            "gender": "M",
+            "age": "20",
+            "club_name": "Keep Pulling",
+            "membership_number": "1067194",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 41257,
+      "athlete_name": "Ethan Johnson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/41257",
+      "contaminated_lifter_id": 34042,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-27T07:27:41.044Z",
+      "profile_data": {
+        "membership_number": "1028632",
+        "birth_year": 2001,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Florida",
+        "national_rank": "6"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2023 Florida WSO State Championships",
+          "date": "2023-05-21",
+          "division": "Open Men's 96kg",
+          "lifter_name": "Ethan Johnson",
+          "body_weight_kg": "93.2",
+          "snatch_1": "125",
+          "snatch_2": "130",
+          "snatch_3": "-133",
+          "cj_1": "150",
+          "cj_2": "155",
+          "cj_3": "160",
+          "best_snatch": "130",
+          "best_cj": "160",
+          "total": "290"
+        },
+        {
+          "meet_name": "The Gator Weightlifting Spring Open 2023",
+          "date": "2023-04-01",
+          "division": "Open Men's 96kg",
+          "lifter_name": "Ethan Johnson",
+          "body_weight_kg": "90",
+          "snatch_1": "120",
+          "snatch_2": "125",
+          "snatch_3": "130",
+          "cj_1": "150",
+          "cj_2": "154",
+          "cj_3": "159",
+          "best_snatch": "130",
+          "best_cj": "159",
+          "total": "289"
+        },
+        {
+          "meet_name": "Florida State Championships",
+          "date": "2019-07-21",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Ethan Johnson",
+          "body_weight_kg": "86.75",
+          "snatch_1": "107",
+          "snatch_2": "112",
+          "snatch_3": "116",
+          "cj_1": "139",
+          "cj_2": "143",
+          "cj_3": "-147",
+          "best_snatch": "116",
+          "best_cj": "143",
+          "total": "259"
+        },
+        {
+          "meet_name": "Black Box Open - Florida States Last Minute Qualifier",
+          "date": "2019-06-29",
+          "division": "Junior Men's 89kg",
+          "lifter_name": "Ethan Johnson",
+          "body_weight_kg": "86.3",
+          "snatch_1": "0",
+          "snatch_2": "0",
+          "snatch_3": "0",
+          "cj_1": "146",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "0",
+          "best_cj": "146",
+          "total": "0"
+        },
+        {
+          "meet_name": "2018 USA Weightlifting National Youth Championships",
+          "date": "2018-06-17",
+          "division": "Men's 16-17 Age Group 85 kg",
+          "lifter_name": "Ethan Johnson",
+          "body_weight_kg": "82.49",
+          "snatch_1": "101",
+          "snatch_2": "106",
+          "snatch_3": "111",
+          "cj_1": "135",
+          "cj_2": "-138",
+          "cj_3": "139",
+          "best_snatch": "111",
+          "best_cj": "139",
+          "total": "250"
+        },
+        {
+          "meet_name": "2018 Florida Cup",
+          "date": "2018-05-12",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Ethan Johnson",
+          "body_weight_kg": "84.75",
+          "snatch_1": "95",
+          "snatch_2": "100",
+          "snatch_3": "-105",
+          "cj_1": "-130",
+          "cj_2": "133",
+          "cj_3": "-142",
+          "best_snatch": "100",
+          "best_cj": "133",
+          "total": "233"
+        },
+        {
+          "meet_name": "Barbell MAYnia",
+          "date": "2018-04-21",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Ethan Johnson",
+          "body_weight_kg": "84.4",
+          "snatch_1": "90",
+          "snatch_2": "98",
+          "snatch_3": "102",
+          "cj_1": "115",
+          "cj_2": "131",
+          "cj_3": "-140",
+          "best_snatch": "102",
+          "best_cj": "131",
+          "total": "233"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2023 Florida WSO State Championships",
+            "date": "2023-05-21",
+            "division": "Open Men's 96kg",
+            "lifter_name": "Ethan Johnson",
+            "body_weight_kg": "93.2",
+            "snatch_1": "125",
+            "snatch_2": "130",
+            "snatch_3": "-133",
+            "cj_1": "150",
+            "cj_2": "155",
+            "cj_3": "160",
+            "best_snatch": "130",
+            "best_cj": "160",
+            "total": "290"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNS0yMSIsIndlaWdodF9jbGFzcyI6ODd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Ethan Johnson",
+            "total": "290",
+            "gender": "M",
+            "age": "22",
+            "club_name": "-",
+            "membership_number": "1028632",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The Gator Weightlifting Spring Open 2023",
+            "date": "2023-04-01",
+            "division": "Open Men's 96kg",
+            "lifter_name": "Ethan Johnson",
+            "body_weight_kg": "90",
+            "snatch_1": "120",
+            "snatch_2": "125",
+            "snatch_3": "130",
+            "cj_1": "150",
+            "cj_2": "154",
+            "cj_3": "159",
+            "best_snatch": "130",
+            "best_cj": "159",
+            "total": "289"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wNC0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wNC0wMSIsIndlaWdodF9jbGFzcyI6ODd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Ethan Johnson",
+            "total": "289",
+            "gender": "M",
+            "age": "22",
+            "club_name": "-",
+            "membership_number": "1028632",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Florida State Championships",
+            "date": "2019-07-21",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Ethan Johnson",
+            "body_weight_kg": "86.75",
+            "snatch_1": "107",
+            "snatch_2": "112",
+            "snatch_3": "116",
+            "cj_1": "139",
+            "cj_2": "143",
+            "cj_3": "-147",
+            "best_snatch": "116",
+            "best_cj": "143",
+            "total": "259"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0yMSIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "Ethan Johnson",
+            "total": "259",
+            "gender": "M",
+            "age": "18",
+            "club_name": "-",
+            "membership_number": "1028632",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Black Box Open - Florida States Last Minute Qualifier",
+            "date": "2019-06-29",
+            "division": "Junior Men's 89kg",
+            "lifter_name": "Ethan Johnson",
+            "body_weight_kg": "86.3",
+            "snatch_1": "0",
+            "snatch_2": "0",
+            "snatch_3": "0",
+            "cj_1": "146",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "0",
+            "best_cj": "146",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNi0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNi0yOSIsIndlaWdodF9jbGFzcyI6NjZ9",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2018 USA Weightlifting National Youth Championships",
+            "date": "2018-06-17",
+            "division": "Men's 16-17 Age Group 85 kg",
+            "lifter_name": "Ethan Johnson",
+            "body_weight_kg": "82.49",
+            "snatch_1": "101",
+            "snatch_2": "106",
+            "snatch_3": "111",
+            "cj_1": "135",
+            "cj_2": "-138",
+            "cj_3": "139",
+            "best_snatch": "111",
+            "best_cj": "139",
+            "total": "250"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0xNyIsIndlaWdodF9jbGFzcyI6MzI1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Ethan Johnson",
+            "total": "250",
+            "gender": "M",
+            "age": "17",
+            "club_name": "-",
+            "membership_number": "1028632",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2018 Florida Cup",
+            "date": "2018-05-12",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Ethan Johnson",
+            "body_weight_kg": "84.75",
+            "snatch_1": "95",
+            "snatch_2": "100",
+            "snatch_3": "-105",
+            "cj_1": "-130",
+            "cj_2": "133",
+            "cj_3": "-142",
+            "best_snatch": "100",
+            "best_cj": "133",
+            "total": "233"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNS0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNS0xMiIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "10",
+            "athlete_name": "Ethan Johnson",
+            "total": "233",
+            "gender": "M",
+            "age": "17",
+            "club_name": "-",
+            "membership_number": "1028632",
+            "wso": "Florida"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Barbell MAYnia",
+            "date": "2018-04-21",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Ethan Johnson",
+            "body_weight_kg": "84.4",
+            "snatch_1": "90",
+            "snatch_2": "98",
+            "snatch_3": "102",
+            "cj_1": "115",
+            "cj_2": "131",
+            "cj_3": "-140",
+            "best_snatch": "102",
+            "best_cj": "131",
+            "total": "233"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNC0yMSIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "8",
+            "athlete_name": "Ethan Johnson",
+            "total": "233",
+            "gender": "M",
+            "age": "17",
+            "club_name": "-",
+            "membership_number": "1028632",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    }
+  ]
+}

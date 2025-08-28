@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T05:42:06.801Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Jennifer Norman",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 103796895
+  },
+  "data": [
+    {
+      "internal_id": 11213,
+      "athlete_name": "Jennifer Norman",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/11213",
+      "contaminated_lifter_id": 37313,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T05:41:54.055Z",
+      "profile_data": {
+        "membership_number": "1035489",
+        "birth_year": 1983,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "Texas-Oklahoma",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Scrooge: A Weightlifting Meet",
+          "date": "2018-12-01",
+          "division": "Women's Masters (35-39) 64kg",
+          "lifter_name": "Jennifer Norman",
+          "body_weight_kg": "62.35",
+          "snatch_1": "42",
+          "snatch_2": "-47",
+          "snatch_3": "-47",
+          "cj_1": "61",
+          "cj_2": "-65",
+          "cj_3": "-65",
+          "best_snatch": "42",
+          "best_cj": "61",
+          "total": "103"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Scrooge: A Weightlifting Meet",
+            "date": "2018-12-01",
+            "division": "Women's Masters (35-39) 64kg",
+            "lifter_name": "Jennifer Norman",
+            "body_weight_kg": "62.35",
+            "snatch_1": "42",
+            "snatch_2": "-47",
+            "snatch_3": "-47",
+            "cj_1": "61",
+            "cj_2": "-65",
+            "cj_3": "-65",
+            "best_snatch": "42",
+            "best_cj": "61",
+            "total": "103"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMi0wMSIsIndlaWdodF9jbGFzcyI6MTE1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Jennifer Norman",
+            "total": "103",
+            "gender": "F",
+            "age": "35",
+            "club_name": "-",
+            "membership_number": "1035489",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 55466,
+      "athlete_name": "Jennifer Norman",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/55466",
+      "contaminated_lifter_id": 37313,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T05:42:06.799Z",
+      "profile_data": {
+        "membership_number": "1065623",
+        "birth_year": 1986,
+        "gender": "F",
+        "club_name": "Archon Weightlifting",
+        "wso": "Texas-Oklahoma",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "GoodVibes Weightlifting Meet",
+          "date": "2022-08-27",
+          "division": "Women's Masters (35-39) 87kg",
+          "lifter_name": "Jennifer Norman",
+          "body_weight_kg": "86",
+          "snatch_1": "58",
+          "snatch_2": "62",
+          "snatch_3": "65",
+          "cj_1": "75",
+          "cj_2": "79",
+          "cj_3": "82",
+          "best_snatch": "65",
+          "best_cj": "82",
+          "total": "147"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "GoodVibes Weightlifting Meet",
+            "date": "2022-08-27",
+            "division": "Women's Masters (35-39) 87kg",
+            "lifter_name": "Jennifer Norman",
+            "body_weight_kg": "86",
+            "snatch_1": "58",
+            "snatch_2": "62",
+            "snatch_3": "65",
+            "cj_1": "75",
+            "cj_2": "79",
+            "cj_3": "82",
+            "best_snatch": "65",
+            "best_cj": "82",
+            "total": "147"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wOC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wOC0yNyIsIndlaWdodF9jbGFzcyI6MTE5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Jennifer Norman",
+            "total": "147",
+            "gender": "F",
+            "age": "36",
+            "club_name": "Archon Weightlifting",
+            "membership_number": "1065623",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

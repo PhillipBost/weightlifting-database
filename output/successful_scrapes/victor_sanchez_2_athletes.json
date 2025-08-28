@@ -1,0 +1,388 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T22:36:35.017Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Victor Sanchez",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 7,
+    "total_reverse_lookups": 7,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 78265111
+  },
+  "data": [
+    {
+      "internal_id": 21062,
+      "athlete_name": "Victor Sanchez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/21062",
+      "contaminated_lifter_id": 10647,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T22:36:01.941Z",
+      "profile_data": {
+        "membership_number": "1010543",
+        "birth_year": 1989,
+        "gender": "M",
+        "club_name": "Bravura Weightlifting",
+        "wso": "Texas-Oklahoma",
+        "national_rank": "9"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Bravura WL Dia De Los Kilos",
+          "date": "2019-10-26",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Victor Sanchez",
+          "body_weight_kg": "80.9",
+          "snatch_1": "110",
+          "snatch_2": "115",
+          "snatch_3": "-118",
+          "cj_1": "142",
+          "cj_2": "-152",
+          "cj_3": "-152",
+          "best_snatch": "115",
+          "best_cj": "142",
+          "total": "257"
+        },
+        {
+          "meet_name": "Houston Open Championships (TSCQE)",
+          "date": "2019-09-22",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Victor Sanchez",
+          "body_weight_kg": "80.9",
+          "snatch_1": "-108",
+          "snatch_2": "110",
+          "snatch_3": "114",
+          "cj_1": "125",
+          "cj_2": "130",
+          "cj_3": "135",
+          "best_snatch": "114",
+          "best_cj": "135",
+          "total": "249"
+        },
+        {
+          "meet_name": "BVWL Developmental Meet",
+          "date": "2019-07-20",
+          "division": "Open Men's 89kg",
+          "lifter_name": "Victor Sanchez",
+          "body_weight_kg": "81.7",
+          "snatch_1": "102",
+          "snatch_2": "110",
+          "snatch_3": "-115",
+          "cj_1": "122",
+          "cj_2": "126",
+          "cj_3": "131",
+          "best_snatch": "110",
+          "best_cj": "131",
+          "total": "241"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Bravura WL Dia De Los Kilos",
+            "date": "2019-10-26",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Victor Sanchez",
+            "body_weight_kg": "80.9",
+            "snatch_1": "110",
+            "snatch_2": "115",
+            "snatch_3": "-118",
+            "cj_1": "142",
+            "cj_2": "-152",
+            "cj_3": "-152",
+            "best_snatch": "115",
+            "best_cj": "142",
+            "total": "257"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMC0yNiIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "Victor Sanchez",
+            "total": "257",
+            "gender": "M",
+            "age": "30",
+            "club_name": "Bravura Weightlifting",
+            "membership_number": "1010543",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Houston Open Championships (TSCQE)",
+            "date": "2019-09-22",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Victor Sanchez",
+            "body_weight_kg": "80.9",
+            "snatch_1": "-108",
+            "snatch_2": "110",
+            "snatch_3": "114",
+            "cj_1": "125",
+            "cj_2": "130",
+            "cj_3": "135",
+            "best_snatch": "114",
+            "best_cj": "135",
+            "total": "249"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOS0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOS0yMiIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Victor Sanchez",
+            "total": "249",
+            "gender": "M",
+            "age": "30",
+            "club_name": "Bravura Weightlifting",
+            "membership_number": "1010543",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "BVWL Developmental Meet",
+            "date": "2019-07-20",
+            "division": "Open Men's 89kg",
+            "lifter_name": "Victor Sanchez",
+            "body_weight_kg": "81.7",
+            "snatch_1": "102",
+            "snatch_2": "110",
+            "snatch_3": "-115",
+            "cj_1": "122",
+            "cj_2": "126",
+            "cj_3": "131",
+            "best_snatch": "110",
+            "best_cj": "131",
+            "total": "241"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0yMCIsIndlaWdodF9jbGFzcyI6ODZ9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "6",
+            "athlete_name": "Victor Sanchez",
+            "total": "241",
+            "gender": "M",
+            "age": "30",
+            "club_name": "Bravura Weightlifting",
+            "membership_number": "1010543",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 39727,
+      "athlete_name": "Victor Sanchez",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/39727",
+      "contaminated_lifter_id": 10647,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T22:36:35.014Z",
+      "profile_data": {
+        "membership_number": "204496",
+        "birth_year": 1999,
+        "gender": "M",
+        "club_name": "BURNSVILLE WEIGHTLIFTING CLUB",
+        "wso": "Minnesota-Dakotas",
+        "national_rank": "29"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Burnsville High School Open",
+          "date": "2016-02-13",
+          "division": "Open Men's 69 kg",
+          "lifter_name": "Victor Sanchez",
+          "body_weight_kg": "66.2",
+          "snatch_1": "44",
+          "snatch_2": "-46",
+          "snatch_3": "-47",
+          "cj_1": "60",
+          "cj_2": "62",
+          "cj_3": "65",
+          "best_snatch": "44",
+          "best_cj": "65",
+          "total": "109"
+        },
+        {
+          "meet_name": "Raider High School Open",
+          "date": "2016-01-23",
+          "division": "Open Men's 69 kg",
+          "lifter_name": "Victor Sanchez",
+          "body_weight_kg": "66.2",
+          "snatch_1": "38",
+          "snatch_2": "41",
+          "snatch_3": "-45",
+          "cj_1": "-58",
+          "cj_2": "59",
+          "cj_3": "61",
+          "best_snatch": "41",
+          "best_cj": "61",
+          "total": "102"
+        },
+        {
+          "meet_name": "Blaze High School Open",
+          "date": "2015-02-07",
+          "division": "Open Men's 62 kg",
+          "lifter_name": "Victor Sanchez",
+          "body_weight_kg": "59.2",
+          "snatch_1": "31",
+          "snatch_2": "-34",
+          "snatch_3": "35",
+          "cj_1": "44",
+          "cj_2": "47",
+          "cj_3": "50",
+          "best_snatch": "35",
+          "best_cj": "50",
+          "total": "85"
+        },
+        {
+          "meet_name": "Raider High School Open",
+          "date": "2015-01-17",
+          "division": "Open Men's 62 kg",
+          "lifter_name": "Victor Sanchez",
+          "body_weight_kg": "60.1",
+          "snatch_1": "25",
+          "snatch_2": "28",
+          "snatch_3": "-35",
+          "cj_1": "40",
+          "cj_2": "42",
+          "cj_3": "45",
+          "best_snatch": "28",
+          "best_cj": "45",
+          "total": "73"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Burnsville High School Open",
+            "date": "2016-02-13",
+            "division": "Open Men's 69 kg",
+            "lifter_name": "Victor Sanchez",
+            "body_weight_kg": "66.2",
+            "snatch_1": "44",
+            "snatch_2": "-46",
+            "snatch_3": "-47",
+            "cj_1": "60",
+            "cj_2": "62",
+            "cj_3": "65",
+            "best_snatch": "44",
+            "best_cj": "65",
+            "total": "109"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMi0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMi0xMyIsIndlaWdodF9jbGFzcyI6MzU2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "29",
+            "athlete_name": "Victor Sanchez",
+            "total": "109",
+            "gender": "M",
+            "age": "17",
+            "club_name": "BURNSVILLE WEIGHTLIFTING CLUB",
+            "membership_number": "204496",
+            "wso": "Minnesota-Dakotas"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Raider High School Open",
+            "date": "2016-01-23",
+            "division": "Open Men's 69 kg",
+            "lifter_name": "Victor Sanchez",
+            "body_weight_kg": "66.2",
+            "snatch_1": "38",
+            "snatch_2": "41",
+            "snatch_3": "-45",
+            "cj_1": "-58",
+            "cj_2": "59",
+            "cj_3": "61",
+            "best_snatch": "41",
+            "best_cj": "61",
+            "total": "102"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMS0yMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMS0yMyIsIndlaWdodF9jbGFzcyI6MzU2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "21",
+            "athlete_name": "Victor Sanchez",
+            "total": "102",
+            "gender": "M",
+            "age": "17",
+            "club_name": "BURNSVILLE WEIGHTLIFTING CLUB",
+            "membership_number": "204496",
+            "wso": "Minnesota-Dakotas"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Blaze High School Open",
+            "date": "2015-02-07",
+            "division": "Open Men's 62 kg",
+            "lifter_name": "Victor Sanchez",
+            "body_weight_kg": "59.2",
+            "snatch_1": "31",
+            "snatch_2": "-34",
+            "snatch_3": "35",
+            "cj_1": "44",
+            "cj_2": "47",
+            "cj_3": "50",
+            "best_snatch": "35",
+            "best_cj": "50",
+            "total": "85"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMi0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMi0wNyIsIndlaWdodF9jbGFzcyI6MzU1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "16",
+            "athlete_name": "Victor Sanchez",
+            "total": "85",
+            "gender": "M",
+            "age": "16",
+            "club_name": "BURNSVILLE WEIGHTLIFTING CLUB",
+            "membership_number": "204496",
+            "wso": "Minnesota-Dakotas"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Raider High School Open",
+            "date": "2015-01-17",
+            "division": "Open Men's 62 kg",
+            "lifter_name": "Victor Sanchez",
+            "body_weight_kg": "60.1",
+            "snatch_1": "25",
+            "snatch_2": "28",
+            "snatch_3": "-35",
+            "cj_1": "40",
+            "cj_2": "42",
+            "cj_3": "45",
+            "best_snatch": "28",
+            "best_cj": "45",
+            "total": "73"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wMS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wMS0xNyIsIndlaWdodF9jbGFzcyI6MzU1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "18",
+            "athlete_name": "Victor Sanchez",
+            "total": "73",
+            "gender": "M",
+            "age": "16",
+            "club_name": "BURNSVILLE WEIGHTLIFTING CLUB",
+            "membership_number": "204496",
+            "wso": "Minnesota-Dakotas"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

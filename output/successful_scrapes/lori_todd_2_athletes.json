@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T22:59:00.586Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Lori Todd",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 79610680
+  },
+  "data": [
+    {
+      "internal_id": 891,
+      "athlete_name": "Lori Todd",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/891",
+      "contaminated_lifter_id": 4879,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T22:58:48.272Z",
+      "profile_data": {
+        "membership_number": "1003297",
+        "birth_year": 1960,
+        "gender": "F",
+        "club_name": "BROAD RIPPLE BARBELL CLUB",
+        "wso": "Indiana",
+        "national_rank": "2"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Barbell Lift Off",
+          "date": "2016-02-13",
+          "division": "Women's Masters (55-59) 69 kg",
+          "lifter_name": "Lori Todd",
+          "body_weight_kg": "69",
+          "snatch_1": "25",
+          "snatch_2": "26",
+          "snatch_3": "27",
+          "cj_1": "35",
+          "cj_2": "37",
+          "cj_3": "39",
+          "best_snatch": "27",
+          "best_cj": "39",
+          "total": "66"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Barbell Lift Off",
+            "date": "2016-02-13",
+            "division": "Women's Masters (55-59) 69 kg",
+            "lifter_name": "Lori Todd",
+            "body_weight_kg": "69",
+            "snatch_1": "25",
+            "snatch_2": "26",
+            "snatch_3": "27",
+            "cj_1": "35",
+            "cj_2": "37",
+            "cj_3": "39",
+            "best_snatch": "27",
+            "best_cj": "39",
+            "total": "66"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wMi0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wMi0xMyIsIndlaWdodF9jbGFzcyI6NDUxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Lori Todd",
+            "total": "66",
+            "gender": "F",
+            "age": "56",
+            "club_name": "BROAD RIPPLE BARBELL CLUB",
+            "membership_number": "1003297",
+            "wso": "Indiana"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 6645,
+      "athlete_name": "Lori Todd",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/6645",
+      "contaminated_lifter_id": 4879,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T22:59:00.584Z",
+      "profile_data": {
+        "membership_number": "186627",
+        "birth_year": 1979,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "Texas-Oklahoma",
+        "national_rank": "13"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2013 Copperhead Weightlifting Championships & American Open Qualifier",
+          "date": "2013-10-26",
+          "division": "Open Women's 58 kg",
+          "lifter_name": "Lori Todd",
+          "body_weight_kg": "58",
+          "snatch_1": "47",
+          "snatch_2": "49",
+          "snatch_3": "49",
+          "cj_1": "55",
+          "cj_2": "60",
+          "cj_3": "62",
+          "best_snatch": "49",
+          "best_cj": "62",
+          "total": "111"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2013 Copperhead Weightlifting Championships & American Open Qualifier",
+            "date": "2013-10-26",
+            "division": "Open Women's 58 kg",
+            "lifter_name": "Lori Todd",
+            "body_weight_kg": "58",
+            "snatch_1": "47",
+            "snatch_2": "49",
+            "snatch_3": "49",
+            "cj_1": "55",
+            "cj_2": "60",
+            "cj_3": "62",
+            "best_snatch": "49",
+            "best_cj": "62",
+            "total": "111"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMC0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMC0yNiIsIndlaWdodF9jbGFzcyI6MzY0fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "13",
+            "athlete_name": "Lori Todd",
+            "total": "111",
+            "gender": "F",
+            "age": "34",
+            "club_name": "-",
+            "membership_number": "186627",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

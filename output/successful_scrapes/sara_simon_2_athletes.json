@@ -1,0 +1,200 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T09:34:44.522Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Sara Simon",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 3,
+    "total_reverse_lookups": 3,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 31354616
+  },
+  "data": [
+    {
+      "internal_id": 28505,
+      "athlete_name": "Sara Simon",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/28505",
+      "contaminated_lifter_id": 7871,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T09:34:32.372Z",
+      "profile_data": {
+        "membership_number": "1029513",
+        "birth_year": 1992,
+        "gender": "F",
+        "club_name": "Marble Weightlifting",
+        "wso": "New Jersey",
+        "national_rank": "56"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Nike 2018 American Open Series 2",
+          "date": "2018-07-29",
+          "division": "Open Women's 58 kg",
+          "lifter_name": "Sara Simon",
+          "body_weight_kg": "56.16",
+          "snatch_1": "44",
+          "snatch_2": "-47",
+          "snatch_3": "-48",
+          "cj_1": "57",
+          "cj_2": "-61",
+          "cj_3": "61",
+          "best_snatch": "44",
+          "best_cj": "61",
+          "total": "105"
+        },
+        {
+          "meet_name": "2018 Liberty Barbell Classic",
+          "date": "2018-05-19",
+          "division": "Open Women's 58 kg",
+          "lifter_name": "Sara Simon",
+          "body_weight_kg": "56.99",
+          "snatch_1": "42",
+          "snatch_2": "44",
+          "snatch_3": "-49",
+          "cj_1": "55",
+          "cj_2": "60",
+          "cj_3": "-64",
+          "best_snatch": "44",
+          "best_cj": "60",
+          "total": "104"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Nike 2018 American Open Series 2",
+            "date": "2018-07-29",
+            "division": "Open Women's 58 kg",
+            "lifter_name": "Sara Simon",
+            "body_weight_kg": "56.16",
+            "snatch_1": "44",
+            "snatch_2": "-47",
+            "snatch_3": "-48",
+            "cj_1": "57",
+            "cj_2": "-61",
+            "cj_3": "61",
+            "best_snatch": "44",
+            "best_cj": "61",
+            "total": "105"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNy0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNy0yOSIsIndlaWdodF9jbGFzcyI6MzY0fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "56",
+            "athlete_name": "Sara Simon",
+            "total": "105",
+            "gender": "F",
+            "age": "26",
+            "club_name": "Marble Weightlifting",
+            "membership_number": "1029513",
+            "wso": "New Jersey"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2018 Liberty Barbell Classic",
+            "date": "2018-05-19",
+            "division": "Open Women's 58 kg",
+            "lifter_name": "Sara Simon",
+            "body_weight_kg": "56.99",
+            "snatch_1": "42",
+            "snatch_2": "44",
+            "snatch_3": "-49",
+            "cj_1": "55",
+            "cj_2": "60",
+            "cj_3": "-64",
+            "best_snatch": "44",
+            "best_cj": "60",
+            "total": "104"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNS0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNS0xOSIsIndlaWdodF9jbGFzcyI6MzY0fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "14",
+            "athlete_name": "Sara Simon",
+            "total": "104",
+            "gender": "F",
+            "age": "26",
+            "club_name": "Marble Weightlifting",
+            "membership_number": "1029513",
+            "wso": "New Jersey"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 29734,
+      "athlete_name": "Sara Simon",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/29734",
+      "contaminated_lifter_id": 7871,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T09:34:44.520Z",
+      "profile_data": {
+        "membership_number": "215916",
+        "birth_year": 1993,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "Florida",
+        "national_rank": "36"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Southeast Classic",
+          "date": "2015-10-17",
+          "division": "Open Women's 58 kg",
+          "lifter_name": "Sara Simon",
+          "body_weight_kg": "55.3",
+          "snatch_1": "41",
+          "snatch_2": "44",
+          "snatch_3": "47",
+          "cj_1": "54",
+          "cj_2": "57",
+          "cj_3": "-61",
+          "best_snatch": "47",
+          "best_cj": "57",
+          "total": "104"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Southeast Classic",
+            "date": "2015-10-17",
+            "division": "Open Women's 58 kg",
+            "lifter_name": "Sara Simon",
+            "body_weight_kg": "55.3",
+            "snatch_1": "41",
+            "snatch_2": "44",
+            "snatch_3": "47",
+            "cj_1": "54",
+            "cj_2": "57",
+            "cj_3": "-61",
+            "best_snatch": "47",
+            "best_cj": "57",
+            "total": "104"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0xMC0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0xMC0xNyIsIndlaWdodF9jbGFzcyI6MzY0fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "36",
+            "athlete_name": "Sara Simon",
+            "total": "104",
+            "gender": "F",
+            "age": "22",
+            "club_name": "-",
+            "membership_number": "215916",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

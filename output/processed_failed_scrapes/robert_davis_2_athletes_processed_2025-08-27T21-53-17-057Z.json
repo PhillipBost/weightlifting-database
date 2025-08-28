@@ -1,0 +1,379 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T05:28:21.140Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Robert Davis",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 7,
+    "total_reverse_lookups": 7,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 14207595
+  },
+  "data": [
+    {
+      "internal_id": 47739,
+      "athlete_name": "Robert Davis",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/47739",
+      "contaminated_lifter_id": 2574,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T16:15:17.388Z",
+      "profile_data": {
+        "membership_number": "1054214",
+        "birth_year": 1994,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Florida",
+        "national_rank": "21"
+      },
+      "competition_history": [
+        {
+          "meet_name": "The Gator Weightlifting Spring Open",
+          "date": "2021-04-17",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Robert Davis",
+          "body_weight_kg": "79.1",
+          "snatch_1": "-89",
+          "snatch_2": "89",
+          "snatch_3": "-90",
+          "cj_1": "102",
+          "cj_2": "103",
+          "cj_3": "106",
+          "best_snatch": "89",
+          "best_cj": "106",
+          "total": "195"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "The Gator Weightlifting Spring Open",
+            "date": "2021-04-17",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Robert Davis",
+            "body_weight_kg": "79.1",
+            "snatch_1": "-89",
+            "snatch_2": "89",
+            "snatch_3": "-90",
+            "cj_1": "102",
+            "cj_2": "103",
+            "cj_3": "106",
+            "best_snatch": "89",
+            "best_cj": "106",
+            "total": "195"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wNC0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wNC0xNyIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "21",
+            "athlete_name": "Robert Davis",
+            "total": "195",
+            "gender": "M",
+            "age": "27",
+            "club_name": "-",
+            "membership_number": "1054214",
+            "wso": "Florida"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 8339,
+      "athlete_name": "Robert Davis",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/8339",
+      "contaminated_lifter_id": 2574,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-27T05:28:19.137Z",
+      "profile_data": {
+        "membership_number": "144126",
+        "birth_year": 1981,
+        "gender": "M",
+        "club_name": "Columbus Weightlifting",
+        "wso": "Ohio",
+        "national_rank": "8"
+      },
+      "competition_history": [
+        {
+          "meet_name": "The 2016 Ohio State Championships and Midwest Open",
+          "date": "2016-08-21",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Robert Davis",
+          "body_weight_kg": "92.75",
+          "snatch_1": "113",
+          "snatch_2": "119",
+          "snatch_3": "-125",
+          "cj_1": "133",
+          "cj_2": "139",
+          "cj_3": "143",
+          "best_snatch": "119",
+          "best_cj": "143",
+          "total": "262"
+        },
+        {
+          "meet_name": "FC Barbell Open",
+          "date": "2014-09-21",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Robert Davis",
+          "body_weight_kg": "93.9",
+          "snatch_1": "125",
+          "snatch_2": "130",
+          "snatch_3": "133",
+          "cj_1": "143",
+          "cj_2": "148",
+          "cj_3": "153",
+          "best_snatch": "133",
+          "best_cj": "153",
+          "total": "286"
+        },
+        {
+          "meet_name": "The Speed Shop Open 2014",
+          "date": "2014-08-30",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Robert Davis",
+          "body_weight_kg": "93.93",
+          "snatch_1": "122",
+          "snatch_2": "127",
+          "snatch_3": "-132",
+          "cj_1": "140",
+          "cj_2": "-145",
+          "cj_3": "150",
+          "best_snatch": "127",
+          "best_cj": "150",
+          "total": "277"
+        },
+        {
+          "meet_name": "FC PR Day",
+          "date": "2014-07-06",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Robert Davis",
+          "body_weight_kg": "97.5",
+          "snatch_1": "117",
+          "snatch_2": "122",
+          "snatch_3": "127",
+          "cj_1": "136",
+          "cj_2": "141",
+          "cj_3": "150",
+          "best_snatch": "127",
+          "best_cj": "150",
+          "total": "277"
+        },
+        {
+          "meet_name": "2nd Annual MidWest Strongest Unicorn",
+          "date": "2014-03-20",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Robert Davis",
+          "body_weight_kg": "99.5",
+          "snatch_1": "115",
+          "snatch_2": "120",
+          "snatch_3": "125",
+          "cj_1": "135",
+          "cj_2": "140",
+          "cj_3": "145",
+          "best_snatch": "125",
+          "best_cj": "145",
+          "total": "270"
+        },
+        {
+          "meet_name": "Pittsburgh Open Weightlifting Championships",
+          "date": "2012-02-04",
+          "division": "Open Men's 94 kg",
+          "lifter_name": "Robert Davis",
+          "body_weight_kg": "93.4",
+          "snatch_1": "0",
+          "snatch_2": "0",
+          "snatch_3": "0",
+          "cj_1": "157",
+          "cj_2": "0",
+          "cj_3": "0",
+          "best_snatch": "0",
+          "best_cj": "157",
+          "total": "0"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "The 2016 Ohio State Championships and Midwest Open",
+            "date": "2016-08-21",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Robert Davis",
+            "body_weight_kg": "92.75",
+            "snatch_1": "113",
+            "snatch_2": "119",
+            "snatch_3": "-125",
+            "cj_1": "133",
+            "cj_2": "139",
+            "cj_3": "143",
+            "best_snatch": "119",
+            "best_cj": "143",
+            "total": "262"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0yMSIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "8",
+            "athlete_name": "Robert Davis",
+            "total": "262",
+            "gender": "M",
+            "age": "35",
+            "club_name": "Columbus Weightlifting",
+            "membership_number": "144126",
+            "wso": "Ohio"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "FC Barbell Open",
+            "date": "2014-09-21",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Robert Davis",
+            "body_weight_kg": "93.9",
+            "snatch_1": "125",
+            "snatch_2": "130",
+            "snatch_3": "133",
+            "cj_1": "143",
+            "cj_2": "148",
+            "cj_3": "153",
+            "best_snatch": "133",
+            "best_cj": "153",
+            "total": "286"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOS0yMSIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Robert Davis",
+            "total": "286",
+            "gender": "M",
+            "age": "33",
+            "club_name": "Columbus Weightlifting",
+            "membership_number": "144126",
+            "wso": "Ohio"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The Speed Shop Open 2014",
+            "date": "2014-08-30",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Robert Davis",
+            "body_weight_kg": "93.93",
+            "snatch_1": "122",
+            "snatch_2": "127",
+            "snatch_3": "-132",
+            "cj_1": "140",
+            "cj_2": "-145",
+            "cj_3": "150",
+            "best_snatch": "127",
+            "best_cj": "150",
+            "total": "277"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wOC0zMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wOC0zMCIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Robert Davis",
+            "total": "277",
+            "gender": "M",
+            "age": "33",
+            "club_name": "Columbus Weightlifting",
+            "membership_number": "144126",
+            "wso": "Ohio"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "FC PR Day",
+            "date": "2014-07-06",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Robert Davis",
+            "body_weight_kg": "97.5",
+            "snatch_1": "117",
+            "snatch_2": "122",
+            "snatch_3": "127",
+            "cj_1": "136",
+            "cj_2": "141",
+            "cj_3": "150",
+            "best_snatch": "127",
+            "best_cj": "150",
+            "total": "277"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNy0wNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNy0wNiIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Robert Davis",
+            "total": "277",
+            "gender": "M",
+            "age": "33",
+            "club_name": "Columbus Weightlifting",
+            "membership_number": "144126",
+            "wso": "Ohio"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2nd Annual MidWest Strongest Unicorn",
+            "date": "2014-03-20",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Robert Davis",
+            "body_weight_kg": "99.5",
+            "snatch_1": "115",
+            "snatch_2": "120",
+            "snatch_3": "125",
+            "cj_1": "135",
+            "cj_2": "140",
+            "cj_3": "145",
+            "best_snatch": "125",
+            "best_cj": "145",
+            "total": "270"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMy0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMy0yMCIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Robert Davis",
+            "total": "270",
+            "gender": "M",
+            "age": "33",
+            "club_name": "Columbus Weightlifting",
+            "membership_number": "144126",
+            "wso": "Ohio"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Pittsburgh Open Weightlifting Championships",
+            "date": "2012-02-04",
+            "division": "Open Men's 94 kg",
+            "lifter_name": "Robert Davis",
+            "body_weight_kg": "93.4",
+            "snatch_1": "0",
+            "snatch_2": "0",
+            "snatch_3": "0",
+            "cj_1": "157",
+            "cj_2": "0",
+            "cj_3": "0",
+            "best_snatch": "0",
+            "best_cj": "157",
+            "total": "0"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0wMi0wNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0wMi0wNCIsIndlaWdodF9jbGFzcyI6MzU5fQ==",
+          "lookup_successful": false,
+          "biographical_data": null,
+          "error": null
+        }
+      ],
+      "scraping_successful": false
+    }
+  ]
+}

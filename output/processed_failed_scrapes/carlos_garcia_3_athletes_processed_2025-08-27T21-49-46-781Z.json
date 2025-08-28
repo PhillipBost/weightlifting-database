@@ -1,0 +1,260 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T11:46:07.482Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Carlos Garcia",
+    "internal_ids_processed": 3,
+    "successful_scrapes": 2,
+    "failed_scrapes": 1,
+    "total_competitions_found": 4,
+    "total_reverse_lookups": 4,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 6597126
+  },
+  "data": [
+    {
+      "internal_id": 28143,
+      "athlete_name": "Carlos Garcia",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/28143",
+      "contaminated_lifter_id": 17927,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T13:39:12.891Z",
+      "profile_data": {
+        "membership_number": "1010547",
+        "birth_year": 1992,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Southern",
+        "national_rank": "4"
+      },
+      "competition_history": [
+        {
+          "meet_name": "HiTechplates inaugural",
+          "date": "2016-08-13",
+          "division": "Open Men's 105 kg",
+          "lifter_name": "Carlos Garcia",
+          "body_weight_kg": "101.4",
+          "snatch_1": "95",
+          "snatch_2": "98",
+          "snatch_3": "104",
+          "cj_1": "120",
+          "cj_2": "126",
+          "cj_3": "131",
+          "best_snatch": "104",
+          "best_cj": "131",
+          "total": "235"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "HiTechplates inaugural",
+            "date": "2016-08-13",
+            "division": "Open Men's 105 kg",
+            "lifter_name": "Carlos Garcia",
+            "body_weight_kg": "101.4",
+            "snatch_1": "95",
+            "snatch_2": "98",
+            "snatch_3": "104",
+            "cj_1": "120",
+            "cj_2": "126",
+            "cj_3": "131",
+            "best_snatch": "104",
+            "best_cj": "131",
+            "total": "235"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOC0xMyIsIndlaWdodF9jbGFzcyI6MzYwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Carlos Garcia",
+            "total": "235",
+            "gender": "M",
+            "age": "24",
+            "club_name": "-",
+            "membership_number": "1010547",
+            "wso": "Southern"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 36152,
+      "athlete_name": "Carlos Garcia",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/36152",
+      "contaminated_lifter_id": 17927,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T13:39:37.073Z",
+      "profile_data": {
+        "membership_number": "1032957",
+        "birth_year": 1997,
+        "gender": "M",
+        "club_name": "LIFT LAB",
+        "wso": "Indiana",
+        "national_rank": "17"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2019 Indiana State Meet",
+          "date": "2019-07-13",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Carlos Garcia",
+          "body_weight_kg": "80.2",
+          "snatch_1": "77",
+          "snatch_2": "81",
+          "snatch_3": "85",
+          "cj_1": "104",
+          "cj_2": "110",
+          "cj_3": "114",
+          "best_snatch": "85",
+          "best_cj": "114",
+          "total": "199"
+        },
+        {
+          "meet_name": "Lift Lab AO Series 1 Last Chance Qualifier",
+          "date": "2019-01-26",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Carlos Garcia",
+          "body_weight_kg": "80.1",
+          "snatch_1": "70",
+          "snatch_2": "-75",
+          "snatch_3": "75",
+          "cj_1": "100",
+          "cj_2": "-105",
+          "cj_3": "107",
+          "best_snatch": "75",
+          "best_cj": "107",
+          "total": "182"
+        },
+        {
+          "meet_name": "Lift Lab AO 3 Last Chance Qualifier",
+          "date": "2018-08-11",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Carlos Garcia",
+          "body_weight_kg": "75.5",
+          "snatch_1": "64",
+          "snatch_2": "69",
+          "snatch_3": "73",
+          "cj_1": "85",
+          "cj_2": "92",
+          "cj_3": "-100",
+          "best_snatch": "73",
+          "best_cj": "92",
+          "total": "165"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2019 Indiana State Meet",
+            "date": "2019-07-13",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Carlos Garcia",
+            "body_weight_kg": "80.2",
+            "snatch_1": "77",
+            "snatch_2": "81",
+            "snatch_3": "85",
+            "cj_1": "104",
+            "cj_2": "110",
+            "cj_3": "114",
+            "best_snatch": "85",
+            "best_cj": "114",
+            "total": "199"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wNy0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wNy0xMyIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "17",
+            "athlete_name": "Carlos Garcia",
+            "total": "199",
+            "gender": "M",
+            "age": "22",
+            "club_name": "LIFT LAB",
+            "membership_number": "1032957",
+            "wso": "Indiana"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Lift Lab AO Series 1 Last Chance Qualifier",
+            "date": "2019-01-26",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Carlos Garcia",
+            "body_weight_kg": "80.1",
+            "snatch_1": "70",
+            "snatch_2": "-75",
+            "snatch_3": "75",
+            "cj_1": "100",
+            "cj_2": "-105",
+            "cj_3": "107",
+            "best_snatch": "75",
+            "best_cj": "107",
+            "total": "182"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0yNiIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "49",
+            "athlete_name": "Carlos Garcia",
+            "total": "182",
+            "gender": "M",
+            "age": "22",
+            "club_name": "LIFT LAB",
+            "membership_number": "1032957",
+            "wso": "Indiana"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Lift Lab AO 3 Last Chance Qualifier",
+            "date": "2018-08-11",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Carlos Garcia",
+            "body_weight_kg": "75.5",
+            "snatch_1": "64",
+            "snatch_2": "69",
+            "snatch_3": "73",
+            "cj_1": "85",
+            "cj_2": "92",
+            "cj_3": "-100",
+            "best_snatch": "73",
+            "best_cj": "92",
+            "total": "165"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wOC0xMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wOC0xMSIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "25",
+            "athlete_name": "Carlos Garcia",
+            "total": "165",
+            "gender": "M",
+            "age": "21",
+            "club_name": "LIFT LAB",
+            "membership_number": "1032957",
+            "wso": "Indiana"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 36322,
+      "athlete_name": "Carlos Garcia",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/36322",
+      "contaminated_lifter_id": 17927,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-27T11:46:05.479Z",
+      "profile_data": null,
+      "competition_history": [],
+      "biographical_data_by_competition": [],
+      "scraping_successful": false,
+      "error": "Assignment to constant variable."
+    }
+  ]
+}

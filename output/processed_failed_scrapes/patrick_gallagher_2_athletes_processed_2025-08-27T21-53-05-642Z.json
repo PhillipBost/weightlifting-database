@@ -1,0 +1,239 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T06:49:19.331Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Patrick Gallagher",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 4,
+    "total_reverse_lookups": 4,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 19065786
+  },
+  "data": [
+    {
+      "internal_id": 2955,
+      "athlete_name": "Patrick Gallagher",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/2955",
+      "contaminated_lifter_id": 17839,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T17:57:50.990Z",
+      "profile_data": {
+        "membership_number": "1045326",
+        "birth_year": 1971,
+        "gender": "M",
+        "club_name": "IRON ATHLETE WEIGHTLIFTING CLUB",
+        "wso": "Mountain South",
+        "national_rank": "12"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Iron Athlete Summer Open 2021",
+          "date": "2021-08-07",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Patrick Gallagher",
+          "body_weight_kg": "79.75",
+          "snatch_1": "80",
+          "snatch_2": "-86",
+          "snatch_3": "86",
+          "cj_1": "110",
+          "cj_2": "-115",
+          "cj_3": "-115",
+          "best_snatch": "86",
+          "best_cj": "110",
+          "total": "196"
+        },
+        {
+          "meet_name": "Phoenix Weightlifting Open",
+          "date": "2020-02-01",
+          "division": "Men's Masters (45-49) 81kg",
+          "lifter_name": "Patrick Gallagher",
+          "body_weight_kg": "79",
+          "snatch_1": "78",
+          "snatch_2": "-80",
+          "snatch_3": "80",
+          "cj_1": "106",
+          "cj_2": "110",
+          "cj_3": "-115",
+          "best_snatch": "80",
+          "best_cj": "110",
+          "total": "190"
+        },
+        {
+          "meet_name": "Phoenix Weightlifting Open",
+          "date": "2020-02-01",
+          "division": "Men's Masters (45-49) 55kg",
+          "lifter_name": "Patrick Gallagher",
+          "body_weight_kg": "0",
+          "snatch_1": "76",
+          "snatch_2": "-80",
+          "snatch_3": "80",
+          "cj_1": "106",
+          "cj_2": "110",
+          "cj_3": "-115",
+          "best_snatch": "80",
+          "best_cj": "110",
+          "total": "190"
+        },
+        {
+          "meet_name": "Iron Athlete Winter Open",
+          "date": "2019-12-14",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Patrick Gallagher",
+          "body_weight_kg": "79",
+          "snatch_1": "72",
+          "snatch_2": "75",
+          "snatch_3": "80",
+          "cj_1": "106",
+          "cj_2": "108",
+          "cj_3": "-112",
+          "best_snatch": "80",
+          "best_cj": "108",
+          "total": "188"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Iron Athlete Summer Open 2021",
+            "date": "2021-08-07",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Patrick Gallagher",
+            "body_weight_kg": "79.75",
+            "snatch_1": "80",
+            "snatch_2": "-86",
+            "snatch_3": "86",
+            "cj_1": "110",
+            "cj_2": "-115",
+            "cj_3": "-115",
+            "best_snatch": "86",
+            "best_cj": "110",
+            "total": "196"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMS0wOC0wNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMS0wOC0wNyIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "12",
+            "athlete_name": "Patrick Gallagher",
+            "total": "196",
+            "gender": "M",
+            "age": "50",
+            "club_name": "IRON ATHLETE WEIGHTLIFTING CLUB",
+            "membership_number": "1045326",
+            "wso": "Mountain South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Phoenix Weightlifting Open",
+            "date": "2020-02-01",
+            "division": "Men's Masters (45-49) 81kg",
+            "lifter_name": "Patrick Gallagher",
+            "body_weight_kg": "79",
+            "snatch_1": "78",
+            "snatch_2": "-80",
+            "snatch_3": "80",
+            "cj_1": "106",
+            "cj_2": "110",
+            "cj_3": "-115",
+            "best_snatch": "80",
+            "best_cj": "110",
+            "total": "190"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMi0wMSIsIndlaWdodF9jbGFzcyI6MTQ1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Patrick Gallagher",
+            "total": "190",
+            "gender": "M",
+            "age": "49",
+            "club_name": "IRON ATHLETE WEIGHTLIFTING CLUB",
+            "membership_number": "1045326",
+            "wso": "Mountain South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Phoenix Weightlifting Open",
+            "date": "2020-02-01",
+            "division": "Men's Masters (45-49) 55kg",
+            "lifter_name": "Patrick Gallagher",
+            "body_weight_kg": "0",
+            "snatch_1": "76",
+            "snatch_2": "-80",
+            "snatch_3": "80",
+            "cj_1": "106",
+            "cj_2": "110",
+            "cj_3": "-115",
+            "best_snatch": "80",
+            "best_cj": "110",
+            "total": "190"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMi0wMSIsIndlaWdodF9jbGFzcyI6MTQxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Patrick Gallagher",
+            "total": "190",
+            "gender": "M",
+            "age": "49",
+            "club_name": "IRON ATHLETE WEIGHTLIFTING CLUB",
+            "membership_number": "1045326",
+            "wso": "Mountain South"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Iron Athlete Winter Open",
+            "date": "2019-12-14",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Patrick Gallagher",
+            "body_weight_kg": "79",
+            "snatch_1": "72",
+            "snatch_2": "75",
+            "snatch_3": "80",
+            "cj_1": "106",
+            "cj_2": "108",
+            "cj_3": "-112",
+            "best_snatch": "80",
+            "best_cj": "108",
+            "total": "188"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0xMi0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0xMi0xNCIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "29",
+            "athlete_name": "Patrick Gallagher",
+            "total": "188",
+            "gender": "M",
+            "age": "48",
+            "club_name": "IRON ATHLETE WEIGHTLIFTING CLUB",
+            "membership_number": "1045326",
+            "wso": "Mountain South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 1925,
+      "athlete_name": "Patrick Gallagher",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/1925",
+      "contaminated_lifter_id": 17839,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-27T06:49:17.327Z",
+      "profile_data": null,
+      "competition_history": [],
+      "biographical_data_by_competition": [],
+      "scraping_successful": false,
+      "error": "Assignment to constant variable."
+    }
+  ]
+}

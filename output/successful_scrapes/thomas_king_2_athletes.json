@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T07:48:07.111Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Thomas King",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 24957206
+  },
+  "data": [
+    {
+      "internal_id": 1201,
+      "athlete_name": "Thomas King",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/1201",
+      "contaminated_lifter_id": 1234,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T07:47:57.483Z",
+      "profile_data": {
+        "membership_number": "178365",
+        "birth_year": 1963,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Carolina",
+        "national_rank": "12"
+      },
+      "competition_history": [
+        {
+          "meet_name": "North Carolina Weightlifting Championships",
+          "date": "2012-10-13",
+          "division": "Open Men's 85 kg",
+          "lifter_name": "Thomas King",
+          "body_weight_kg": "80.5",
+          "snatch_1": "75",
+          "snatch_2": "80",
+          "snatch_3": "82",
+          "cj_1": "95",
+          "cj_2": "100",
+          "cj_3": "102",
+          "best_snatch": "82",
+          "best_cj": "102",
+          "total": "184"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "North Carolina Weightlifting Championships",
+            "date": "2012-10-13",
+            "division": "Open Men's 85 kg",
+            "lifter_name": "Thomas King",
+            "body_weight_kg": "80.5",
+            "snatch_1": "75",
+            "snatch_2": "80",
+            "snatch_3": "82",
+            "cj_1": "95",
+            "cj_2": "100",
+            "cj_3": "102",
+            "best_snatch": "82",
+            "best_cj": "102",
+            "total": "184"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0xMC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0xMC0xMyIsIndlaWdodF9jbGFzcyI6MzU4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "12",
+            "athlete_name": "Thomas King",
+            "total": "184",
+            "gender": "M",
+            "age": "49",
+            "club_name": "-",
+            "membership_number": "178365",
+            "wso": "Carolina"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 39270,
+      "athlete_name": "Thomas King",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/39270",
+      "contaminated_lifter_id": 1234,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T07:48:07.109Z",
+      "profile_data": {
+        "membership_number": "1019213",
+        "birth_year": 1999,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Ohio",
+        "national_rank": "22"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2nd Annual JT Kalnay Memorial Olympic Lifting Meet",
+          "date": "2017-04-29",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "Thomas King",
+          "body_weight_kg": "106.35",
+          "snatch_1": "80",
+          "snatch_2": "-82",
+          "snatch_3": "-82",
+          "cj_1": "105",
+          "cj_2": "110",
+          "cj_3": "-115",
+          "best_snatch": "80",
+          "best_cj": "110",
+          "total": "190"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2nd Annual JT Kalnay Memorial Olympic Lifting Meet",
+            "date": "2017-04-29",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "Thomas King",
+            "body_weight_kg": "106.35",
+            "snatch_1": "80",
+            "snatch_2": "-82",
+            "snatch_3": "-82",
+            "cj_1": "105",
+            "cj_2": "110",
+            "cj_3": "-115",
+            "best_snatch": "80",
+            "best_cj": "110",
+            "total": "190"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNy0wNC0yOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNy0wNC0yOSIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "22",
+            "athlete_name": "Thomas King",
+            "total": "190",
+            "gender": "M",
+            "age": "18",
+            "club_name": "-",
+            "membership_number": "1019213",
+            "wso": "Ohio"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

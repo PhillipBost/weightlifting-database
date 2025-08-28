@@ -1,0 +1,221 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T04:52:33.764Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "James Williams",
+    "internal_ids_processed": 3,
+    "successful_scrapes": 3,
+    "failed_scrapes": 0,
+    "total_competitions_found": 3,
+    "total_reverse_lookups": 3,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 14423858
+  },
+  "data": [
+    {
+      "internal_id": 66165,
+      "athlete_name": "James Williams",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/66165",
+      "contaminated_lifter_id": 6371,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T04:52:14.102Z",
+      "profile_data": {
+        "membership_number": "1080461",
+        "birth_year": 2000,
+        "gender": "M",
+        "club_name": "Westminster Barbell",
+        "wso": "Pennsylvania-West Virginia",
+        "national_rank": "8"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2025 Cap City Open",
+          "date": "2025-04-27",
+          "division": "Open Men's 96kg",
+          "lifter_name": "James Williams",
+          "body_weight_kg": "91",
+          "snatch_1": "75",
+          "snatch_2": "79",
+          "snatch_3": "83",
+          "cj_1": "95",
+          "cj_2": "100",
+          "cj_3": "-107",
+          "best_snatch": "83",
+          "best_cj": "100",
+          "total": "183"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2025 Cap City Open",
+            "date": "2025-04-27",
+            "division": "Open Men's 96kg",
+            "lifter_name": "James Williams",
+            "body_weight_kg": "91",
+            "snatch_1": "75",
+            "snatch_2": "79",
+            "snatch_3": "83",
+            "cj_1": "95",
+            "cj_2": "100",
+            "cj_3": "-107",
+            "best_snatch": "83",
+            "best_cj": "100",
+            "total": "183"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wNC0yNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNC0yNyIsIndlaWdodF9jbGFzcyI6ODd9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "8",
+            "athlete_name": "James Williams",
+            "total": "183",
+            "gender": "M",
+            "age": "25",
+            "club_name": "Westminster Barbell",
+            "membership_number": "1080461",
+            "wso": "Pennsylvania-West Virginia"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 12021,
+      "athlete_name": "James Williams",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/12021",
+      "contaminated_lifter_id": 6371,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T04:52:23.657Z",
+      "profile_data": {
+        "membership_number": "152747",
+        "birth_year": 1984,
+        "gender": "M",
+        "club_name": "POWER AND GRACE PERFORMANCE.",
+        "wso": "Texas-Oklahoma",
+        "national_rank": "13"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2013 Texas State Weightlifting Championships",
+          "date": "2013-01-20",
+          "division": "Open Men's+105 kg",
+          "lifter_name": "James Williams",
+          "body_weight_kg": "115.7",
+          "snatch_1": "85",
+          "snatch_2": "92",
+          "snatch_3": "97",
+          "cj_1": "108",
+          "cj_2": "118",
+          "cj_3": "122",
+          "best_snatch": "97",
+          "best_cj": "122",
+          "total": "219"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2013 Texas State Weightlifting Championships",
+            "date": "2013-01-20",
+            "division": "Open Men's+105 kg",
+            "lifter_name": "James Williams",
+            "body_weight_kg": "115.7",
+            "snatch_1": "85",
+            "snatch_2": "92",
+            "snatch_3": "97",
+            "cj_1": "108",
+            "cj_2": "118",
+            "cj_3": "122",
+            "best_snatch": "97",
+            "best_cj": "122",
+            "total": "219"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMS0yMCIsIndlaWdodF9jbGFzcyI6MzYxfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "13",
+            "athlete_name": "James Williams",
+            "total": "219",
+            "gender": "M",
+            "age": "29",
+            "club_name": "POWER AND GRACE PERFORMANCE.",
+            "membership_number": "152747",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 65391,
+      "athlete_name": "James Williams",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/65391",
+      "contaminated_lifter_id": 6371,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T04:52:33.761Z",
+      "profile_data": {
+        "membership_number": "1080219",
+        "birth_year": 2006,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Carolina",
+        "national_rank": "13"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Athletic Lab Weightlifting Club 2025 Winter Classic",
+          "date": "2025-02-01",
+          "division": "Junior Men's 81kg",
+          "lifter_name": "James Williams",
+          "body_weight_kg": "77.1",
+          "snatch_1": "55",
+          "snatch_2": "60",
+          "snatch_3": "65",
+          "cj_1": "-82",
+          "cj_2": "82",
+          "cj_3": "85",
+          "best_snatch": "65",
+          "best_cj": "85",
+          "total": "150"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Athletic Lab Weightlifting Club 2025 Winter Classic",
+            "date": "2025-02-01",
+            "division": "Junior Men's 81kg",
+            "lifter_name": "James Williams",
+            "body_weight_kg": "77.1",
+            "snatch_1": "55",
+            "snatch_2": "60",
+            "snatch_3": "65",
+            "cj_1": "-82",
+            "cj_2": "82",
+            "cj_3": "85",
+            "best_snatch": "65",
+            "best_cj": "85",
+            "total": "150"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNS0wMi0wMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wMi0wMSIsIndlaWdodF9jbGFzcyI6NjV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "13",
+            "athlete_name": "James Williams",
+            "total": "150",
+            "gender": "M",
+            "age": "19",
+            "club_name": "-",
+            "membership_number": "1080219",
+            "wso": "Carolina"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

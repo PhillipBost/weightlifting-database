@@ -1,0 +1,98 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T06:50:52.027Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Robert Chen",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 1,
+    "failed_scrapes": 1,
+    "total_competitions_found": 1,
+    "total_reverse_lookups": 1,
+    "all_scrapes_successful": false,
+    "partial_processing_time_ms": 19158482
+  },
+  "data": [
+    {
+      "internal_id": 57285,
+      "athlete_name": "Robert Chen",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/57285",
+      "contaminated_lifter_id": 18095,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T17:59:03.874Z",
+      "profile_data": {
+        "membership_number": "1029406",
+        "birth_year": 1989,
+        "gender": "M",
+        "club_name": "Manhattan Barbell",
+        "wso": "New York",
+        "national_rank": "49"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2023 NYC Regional & Open",
+          "date": "2023-01-28",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Robert Chen",
+          "body_weight_kg": "74.2",
+          "snatch_1": "55",
+          "snatch_2": "60",
+          "snatch_3": "-64",
+          "cj_1": "-75",
+          "cj_2": "75",
+          "cj_3": "80",
+          "best_snatch": "60",
+          "best_cj": "80",
+          "total": "140"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2023 NYC Regional & Open",
+            "date": "2023-01-28",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Robert Chen",
+            "body_weight_kg": "74.2",
+            "snatch_1": "55",
+            "snatch_2": "60",
+            "snatch_3": "-64",
+            "cj_1": "-75",
+            "cj_2": "75",
+            "cj_3": "80",
+            "best_snatch": "60",
+            "best_cj": "80",
+            "total": "140"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMS0yOCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMS0yOCIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "49",
+            "athlete_name": "Robert Chen",
+            "total": "140",
+            "gender": "M",
+            "age": "34",
+            "club_name": "Manhattan Barbell",
+            "membership_number": "1029406",
+            "wso": "New York"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 20791,
+      "athlete_name": "Robert Chen",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/20791",
+      "contaminated_lifter_id": 18095,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-27T06:50:50.025Z",
+      "profile_data": null,
+      "competition_history": [],
+      "biographical_data_by_competition": [],
+      "scraping_successful": false,
+      "error": "Assignment to constant variable."
+    }
+  ]
+}

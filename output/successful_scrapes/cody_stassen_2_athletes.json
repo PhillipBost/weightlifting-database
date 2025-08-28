@@ -1,0 +1,200 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T14:19:34.467Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Cody Stassen",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 3,
+    "total_reverse_lookups": 3,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 48444561
+  },
+  "data": [
+    {
+      "internal_id": 57052,
+      "athlete_name": "Cody Stassen",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/57052",
+      "contaminated_lifter_id": 53729,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T14:19:24.279Z",
+      "profile_data": {
+        "membership_number": "1068321",
+        "birth_year": 2001,
+        "gender": "M",
+        "club_name": "Smash Barbell",
+        "wso": "Missouri Valley",
+        "national_rank": "3"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2024 Kansas State & Open Championships",
+          "date": "2024-09-14",
+          "division": "Open Men's 73kg",
+          "lifter_name": "Cody Stassen",
+          "body_weight_kg": "72",
+          "snatch_1": "75",
+          "snatch_2": "77",
+          "snatch_3": "82",
+          "cj_1": "95",
+          "cj_2": "100",
+          "cj_3": "105",
+          "best_snatch": "82",
+          "best_cj": "105",
+          "total": "187"
+        },
+        {
+          "meet_name": "Wichita Winter Throwdown",
+          "date": "2023-01-21",
+          "division": "Open Men's 81kg",
+          "lifter_name": "Cody Stassen",
+          "body_weight_kg": "73.8",
+          "snatch_1": "85",
+          "snatch_2": "88",
+          "snatch_3": "-90",
+          "cj_1": "120",
+          "cj_2": "123",
+          "cj_3": "-125",
+          "best_snatch": "88",
+          "best_cj": "123",
+          "total": "211"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2024 Kansas State & Open Championships",
+            "date": "2024-09-14",
+            "division": "Open Men's 73kg",
+            "lifter_name": "Cody Stassen",
+            "body_weight_kg": "72",
+            "snatch_1": "75",
+            "snatch_2": "77",
+            "snatch_3": "82",
+            "cj_1": "95",
+            "cj_2": "100",
+            "cj_3": "105",
+            "best_snatch": "82",
+            "best_cj": "105",
+            "total": "187"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyNC0wOS0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNC0wOS0xNCIsIndlaWdodF9jbGFzcyI6ODR9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Cody Stassen",
+            "total": "187",
+            "gender": "M",
+            "age": "23",
+            "club_name": "Smash Barbell",
+            "membership_number": "1068321",
+            "wso": "Missouri Valley"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Wichita Winter Throwdown",
+            "date": "2023-01-21",
+            "division": "Open Men's 81kg",
+            "lifter_name": "Cody Stassen",
+            "body_weight_kg": "73.8",
+            "snatch_1": "85",
+            "snatch_2": "88",
+            "snatch_3": "-90",
+            "cj_1": "120",
+            "cj_2": "123",
+            "cj_3": "-125",
+            "best_snatch": "88",
+            "best_cj": "123",
+            "total": "211"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMy0wMS0yMSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMy0wMS0yMSIsIndlaWdodF9jbGFzcyI6ODV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "8",
+            "athlete_name": "Cody Stassen",
+            "total": "211",
+            "gender": "M",
+            "age": "22",
+            "club_name": "-",
+            "membership_number": "1068321",
+            "wso": "Missouri Valley"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 55649,
+      "athlete_name": "Cody Stassen",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/55649",
+      "contaminated_lifter_id": 53729,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T14:19:34.465Z",
+      "profile_data": {
+        "membership_number": "1065655",
+        "birth_year": 2001,
+        "gender": "M",
+        "club_name": "-",
+        "wso": "Missouri Valley",
+        "national_rank": "4"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2022 Kansas State & Open Champhipship",
+          "date": "2022-09-10",
+          "division": "Open Men's 73kg",
+          "lifter_name": "Cody Stassen",
+          "body_weight_kg": "71",
+          "snatch_1": "65",
+          "snatch_2": "70",
+          "snatch_3": "80",
+          "cj_1": "90",
+          "cj_2": "95",
+          "cj_3": "100",
+          "best_snatch": "80",
+          "best_cj": "100",
+          "total": "180"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2022 Kansas State & Open Champhipship",
+            "date": "2022-09-10",
+            "division": "Open Men's 73kg",
+            "lifter_name": "Cody Stassen",
+            "body_weight_kg": "71",
+            "snatch_1": "65",
+            "snatch_2": "70",
+            "snatch_3": "80",
+            "cj_1": "90",
+            "cj_2": "95",
+            "cj_3": "100",
+            "best_snatch": "80",
+            "best_cj": "100",
+            "total": "180"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wOS0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wOS0xMCIsIndlaWdodF9jbGFzcyI6ODR9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Cody Stassen",
+            "total": "180",
+            "gender": "M",
+            "age": "21",
+            "club_name": "-",
+            "membership_number": "1065655",
+            "wso": "Missouri Valley"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

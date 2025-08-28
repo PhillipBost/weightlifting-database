@@ -1,0 +1,550 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T06:08:57.537Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Sara Anderson",
+    "internal_ids_processed": 3,
+    "successful_scrapes": 3,
+    "failed_scrapes": 0,
+    "total_competitions_found": 10,
+    "total_reverse_lookups": 10,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 19007631
+  },
+  "data": [
+    {
+      "internal_id": 44121,
+      "athlete_name": "Sara Anderson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/44121",
+      "contaminated_lifter_id": 26184,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T06:08:37.481Z",
+      "profile_data": {
+        "membership_number": "1011638",
+        "birth_year": 2003,
+        "gender": "F",
+        "club_name": "Adrenaline Warrior Weightlifting",
+        "wso": "Alabama",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "2020 Iron Born Open",
+          "date": "2020-02-22",
+          "division": "Women's 16-17 Age Group +81kg",
+          "lifter_name": "Sara Anderson",
+          "body_weight_kg": "115.1",
+          "snatch_1": "56",
+          "snatch_2": "59",
+          "snatch_3": "62",
+          "cj_1": "66",
+          "cj_2": "71",
+          "cj_3": "75",
+          "best_snatch": "62",
+          "best_cj": "75",
+          "total": "137"
+        },
+        {
+          "meet_name": "Nike 2019 American Open Series 3",
+          "date": "2019-09-15",
+          "division": "Women's 16-17 Age Group +81kg",
+          "lifter_name": "Sara Anderson",
+          "body_weight_kg": "110.65",
+          "snatch_1": "63",
+          "snatch_2": "67",
+          "snatch_3": "-70",
+          "cj_1": "76",
+          "cj_2": "81",
+          "cj_3": "-85",
+          "best_snatch": "67",
+          "best_cj": "81",
+          "total": "148"
+        },
+        {
+          "meet_name": "The Endless Summer Classic",
+          "date": "2019-08-10",
+          "division": "Women's 16-17 Age Group +81kg",
+          "lifter_name": "Sara Anderson",
+          "body_weight_kg": "110",
+          "snatch_1": "60",
+          "snatch_2": "64",
+          "snatch_3": "67",
+          "cj_1": "72",
+          "cj_2": "76",
+          "cj_3": "80",
+          "best_snatch": "67",
+          "best_cj": "80",
+          "total": "147"
+        },
+        {
+          "meet_name": "The HoWse Always Wins",
+          "date": "2019-01-12",
+          "division": "Women's 16-17 Age Group +81kg",
+          "lifter_name": "Sara Anderson",
+          "body_weight_kg": "101.6",
+          "snatch_1": "52",
+          "snatch_2": "56",
+          "snatch_3": "60",
+          "cj_1": "65",
+          "cj_2": "70",
+          "cj_3": "-75",
+          "best_snatch": "60",
+          "best_cj": "70",
+          "total": "130"
+        },
+        {
+          "meet_name": "Tennessee State Championship 2018",
+          "date": "2018-10-13",
+          "division": "Women's 14-15 Age Group +76kg",
+          "lifter_name": "Sara Anderson",
+          "body_weight_kg": "98.2",
+          "snatch_1": "53",
+          "snatch_2": "-57",
+          "snatch_3": "58",
+          "cj_1": "64",
+          "cj_2": "68",
+          "cj_3": "71",
+          "best_snatch": "58",
+          "best_cj": "71",
+          "total": "129"
+        },
+        {
+          "meet_name": "2018 USA Weightlifting National Youth Championships",
+          "date": "2018-06-17",
+          "division": "Women's 14-15 Age Group +69 kg",
+          "lifter_name": "Sara Anderson",
+          "body_weight_kg": "95.22",
+          "snatch_1": "48",
+          "snatch_2": "51",
+          "snatch_3": "-55",
+          "cj_1": "60",
+          "cj_2": "65",
+          "cj_3": "-69",
+          "best_snatch": "51",
+          "best_cj": "65",
+          "total": "116"
+        },
+        {
+          "meet_name": "QUEEN CITY CLASSIC",
+          "date": "2018-04-14",
+          "division": "Women's 14-15 Age Group +69 kg",
+          "lifter_name": "Sara Anderson",
+          "body_weight_kg": "92.4",
+          "snatch_1": "46",
+          "snatch_2": "50",
+          "snatch_3": "-53",
+          "cj_1": "56",
+          "cj_2": "60",
+          "cj_3": "-64",
+          "best_snatch": "50",
+          "best_cj": "60",
+          "total": "110"
+        },
+        {
+          "meet_name": "Mash Mafia Strength Picnic",
+          "date": "2016-09-17",
+          "division": "Women's 13 Under Age Group +58 Kg",
+          "lifter_name": "Sara Anderson",
+          "body_weight_kg": "90",
+          "snatch_1": "39",
+          "snatch_2": "-43",
+          "snatch_3": "43",
+          "cj_1": "50",
+          "cj_2": "54",
+          "cj_3": "58",
+          "best_snatch": "43",
+          "best_cj": "58",
+          "total": "101"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "2020 Iron Born Open",
+            "date": "2020-02-22",
+            "division": "Women's 16-17 Age Group +81kg",
+            "lifter_name": "Sara Anderson",
+            "body_weight_kg": "115.1",
+            "snatch_1": "56",
+            "snatch_2": "59",
+            "snatch_3": "62",
+            "cj_1": "66",
+            "cj_2": "71",
+            "cj_3": "75",
+            "best_snatch": "62",
+            "best_cj": "75",
+            "total": "137"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMi0yMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMi0yMiIsIndlaWdodF9jbGFzcyI6MjB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Sara Anderson",
+            "total": "137",
+            "gender": "F",
+            "age": "17",
+            "club_name": "Adrenaline Warrior Weightlifting",
+            "membership_number": "1011638",
+            "wso": "Alabama"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Nike 2019 American Open Series 3",
+            "date": "2019-09-15",
+            "division": "Women's 16-17 Age Group +81kg",
+            "lifter_name": "Sara Anderson",
+            "body_weight_kg": "110.65",
+            "snatch_1": "63",
+            "snatch_2": "67",
+            "snatch_3": "-70",
+            "cj_1": "76",
+            "cj_2": "81",
+            "cj_3": "-85",
+            "best_snatch": "67",
+            "best_cj": "81",
+            "total": "148"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOS0xNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOS0xNSIsIndlaWdodF9jbGFzcyI6MjB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Sara Anderson",
+            "total": "148",
+            "gender": "F",
+            "age": "16",
+            "club_name": "Adrenaline Warrior Weightlifting",
+            "membership_number": "1011638",
+            "wso": "Alabama"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The Endless Summer Classic",
+            "date": "2019-08-10",
+            "division": "Women's 16-17 Age Group +81kg",
+            "lifter_name": "Sara Anderson",
+            "body_weight_kg": "110",
+            "snatch_1": "60",
+            "snatch_2": "64",
+            "snatch_3": "67",
+            "cj_1": "72",
+            "cj_2": "76",
+            "cj_3": "80",
+            "best_snatch": "67",
+            "best_cj": "80",
+            "total": "147"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wOC0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wOC0xMCIsIndlaWdodF9jbGFzcyI6MjB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Sara Anderson",
+            "total": "147",
+            "gender": "F",
+            "age": "16",
+            "club_name": "Adrenaline Warrior Weightlifting",
+            "membership_number": "1011638",
+            "wso": "Alabama"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "The HoWse Always Wins",
+            "date": "2019-01-12",
+            "division": "Women's 16-17 Age Group +81kg",
+            "lifter_name": "Sara Anderson",
+            "body_weight_kg": "101.6",
+            "snatch_1": "52",
+            "snatch_2": "56",
+            "snatch_3": "60",
+            "cj_1": "65",
+            "cj_2": "70",
+            "cj_3": "-75",
+            "best_snatch": "60",
+            "best_cj": "70",
+            "total": "130"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0xMiIsIndlaWdodF9jbGFzcyI6MjB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Sara Anderson",
+            "total": "130",
+            "gender": "F",
+            "age": "16",
+            "club_name": "Adrenaline Warrior Weightlifting",
+            "membership_number": "1011638",
+            "wso": "Alabama"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Tennessee State Championship 2018",
+            "date": "2018-10-13",
+            "division": "Women's 14-15 Age Group +76kg",
+            "lifter_name": "Sara Anderson",
+            "body_weight_kg": "98.2",
+            "snatch_1": "53",
+            "snatch_2": "-57",
+            "snatch_3": "58",
+            "cj_1": "64",
+            "cj_2": "68",
+            "cj_3": "71",
+            "best_snatch": "58",
+            "best_cj": "71",
+            "total": "129"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0xMC0xMyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0xMC0xMyIsIndlaWdodF9jbGFzcyI6NDB9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Sara Anderson",
+            "total": "129",
+            "gender": "F",
+            "age": "15",
+            "club_name": "Adrenaline Warrior Weightlifting",
+            "membership_number": "1011638",
+            "wso": "Alabama"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2018 USA Weightlifting National Youth Championships",
+            "date": "2018-06-17",
+            "division": "Women's 14-15 Age Group +69 kg",
+            "lifter_name": "Sara Anderson",
+            "body_weight_kg": "95.22",
+            "snatch_1": "48",
+            "snatch_2": "51",
+            "snatch_3": "-55",
+            "cj_1": "60",
+            "cj_2": "65",
+            "cj_3": "-69",
+            "best_snatch": "51",
+            "best_cj": "65",
+            "total": "116"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNi0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNi0xNyIsIndlaWdodF9jbGFzcyI6MzE5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "Sara Anderson",
+            "total": "116",
+            "gender": "F",
+            "age": "15",
+            "club_name": "Adrenaline Warrior Weightlifting",
+            "membership_number": "1011638",
+            "wso": "Alabama"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "QUEEN CITY CLASSIC",
+            "date": "2018-04-14",
+            "division": "Women's 14-15 Age Group +69 kg",
+            "lifter_name": "Sara Anderson",
+            "body_weight_kg": "92.4",
+            "snatch_1": "46",
+            "snatch_2": "50",
+            "snatch_3": "-53",
+            "cj_1": "56",
+            "cj_2": "60",
+            "cj_3": "-64",
+            "best_snatch": "50",
+            "best_cj": "60",
+            "total": "110"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNC0xNCIsIndlaWdodF9jbGFzcyI6MzE5fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Sara Anderson",
+            "total": "110",
+            "gender": "F",
+            "age": "15",
+            "club_name": "Adrenaline Warrior Weightlifting",
+            "membership_number": "1011638",
+            "wso": "Alabama"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Mash Mafia Strength Picnic",
+            "date": "2016-09-17",
+            "division": "Women's 13 Under Age Group +58 Kg",
+            "lifter_name": "Sara Anderson",
+            "body_weight_kg": "90",
+            "snatch_1": "39",
+            "snatch_2": "-43",
+            "snatch_3": "43",
+            "cj_1": "50",
+            "cj_2": "54",
+            "cj_3": "58",
+            "best_snatch": "43",
+            "best_cj": "58",
+            "total": "101"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNi0wOS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNi0wOS0xNyIsIndlaWdodF9jbGFzcyI6MzA1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Sara Anderson",
+            "total": "101",
+            "gender": "F",
+            "age": "13",
+            "club_name": "Adrenaline Warrior Weightlifting",
+            "membership_number": "1011638",
+            "wso": "Alabama"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 31319,
+      "athlete_name": "Sara Anderson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/31319",
+      "contaminated_lifter_id": 26184,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T06:08:47.551Z",
+      "profile_data": {
+        "membership_number": "1029036",
+        "birth_year": 1994,
+        "gender": "F",
+        "club_name": "-",
+        "wso": "Tennessee-Kentucky",
+        "national_rank": "9"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Nashville Weightlifting Club Open",
+          "date": "2018-04-14",
+          "division": "Open Women's 69 kg",
+          "lifter_name": "Sara Anderson",
+          "body_weight_kg": "68.1",
+          "snatch_1": "69",
+          "snatch_2": "-72",
+          "snatch_3": "-72",
+          "cj_1": "77",
+          "cj_2": "80",
+          "cj_3": "84",
+          "best_snatch": "69",
+          "best_cj": "84",
+          "total": "153"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Nashville Weightlifting Club Open",
+            "date": "2018-04-14",
+            "division": "Open Women's 69 kg",
+            "lifter_name": "Sara Anderson",
+            "body_weight_kg": "68.1",
+            "snatch_1": "69",
+            "snatch_2": "-72",
+            "snatch_3": "-72",
+            "cj_1": "77",
+            "cj_2": "80",
+            "cj_3": "84",
+            "best_snatch": "69",
+            "best_cj": "84",
+            "total": "153"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNC0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNC0xNCIsIndlaWdodF9jbGFzcyI6MzY2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "Sara Anderson",
+            "total": "153",
+            "gender": "F",
+            "age": "24",
+            "club_name": "-",
+            "membership_number": "1029036",
+            "wso": "Tennessee-Kentucky"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 54867,
+      "athlete_name": "Sara Anderson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/54867",
+      "contaminated_lifter_id": 26184,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T06:08:57.534Z",
+      "profile_data": {
+        "membership_number": "1064521",
+        "birth_year": 1992,
+        "gender": "F",
+        "club_name": "Unaffiliated",
+        "wso": "Mountain South",
+        "national_rank": "29"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Fifty-One Fifty LT Summer Qualifier",
+          "date": "2022-07-16",
+          "division": "Open Women's +87kg",
+          "lifter_name": "Sara Anderson",
+          "body_weight_kg": "95.4",
+          "snatch_1": "25",
+          "snatch_2": "27",
+          "snatch_3": "-30",
+          "cj_1": "35",
+          "cj_2": "38",
+          "cj_3": "39",
+          "best_snatch": "27",
+          "best_cj": "39",
+          "total": "66"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Fifty-One Fifty LT Summer Qualifier",
+            "date": "2022-07-16",
+            "division": "Open Women's +87kg",
+            "lifter_name": "Sara Anderson",
+            "body_weight_kg": "95.4",
+            "snatch_1": "25",
+            "snatch_2": "27",
+            "snatch_3": "-30",
+            "cj_1": "35",
+            "cj_2": "38",
+            "cj_3": "39",
+            "best_snatch": "27",
+            "best_cj": "39",
+            "total": "66"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMi0wNy0xNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMi0wNy0xNiIsIndlaWdodF9jbGFzcyI6MTAwfQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "29",
+            "athlete_name": "Sara Anderson",
+            "total": "66",
+            "gender": "F",
+            "age": "30",
+            "club_name": "Unaffiliated",
+            "membership_number": "1064521",
+            "wso": "Mountain South"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

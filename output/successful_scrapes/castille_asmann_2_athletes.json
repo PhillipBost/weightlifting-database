@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-25T09:43:47.803Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Castille Asmann",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 2,
+    "total_reverse_lookups": 2,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 31897897
+  },
+  "data": [
+    {
+      "internal_id": 31752,
+      "athlete_name": "Castille Asmann",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/31752",
+      "contaminated_lifter_id": 8887,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-25T09:43:37.960Z",
+      "profile_data": {
+        "membership_number": "210964",
+        "birth_year": 1994,
+        "gender": "F",
+        "club_name": "4 Star Strength",
+        "wso": "Michigan",
+        "national_rank": "14"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Canusa Jeckyl Hyde Summer Open",
+          "date": "2015-06-14",
+          "division": "Open Women's 63 kg",
+          "lifter_name": "Castille Asmann",
+          "body_weight_kg": "59.2",
+          "snatch_1": "37",
+          "snatch_2": "39",
+          "snatch_3": "-41",
+          "cj_1": "52",
+          "cj_2": "55",
+          "cj_3": "57",
+          "best_snatch": "39",
+          "best_cj": "57",
+          "total": "96"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Canusa Jeckyl Hyde Summer Open",
+            "date": "2015-06-14",
+            "division": "Open Women's 63 kg",
+            "lifter_name": "Castille Asmann",
+            "body_weight_kg": "59.2",
+            "snatch_1": "37",
+            "snatch_2": "39",
+            "snatch_3": "-41",
+            "cj_1": "52",
+            "cj_2": "55",
+            "cj_3": "57",
+            "best_snatch": "39",
+            "best_cj": "57",
+            "total": "96"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNS0wNi0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNS0wNi0xNCIsIndlaWdodF9jbGFzcyI6MzY1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "14",
+            "athlete_name": "Castille Asmann",
+            "total": "96",
+            "gender": "F",
+            "age": "21",
+            "club_name": "4 Star Strength",
+            "membership_number": "210964",
+            "wso": "Michigan"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 33513,
+      "athlete_name": "Castille Asmann",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/33513",
+      "contaminated_lifter_id": 8887,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-25T09:43:47.801Z",
+      "profile_data": {
+        "membership_number": "191374",
+        "birth_year": 1995,
+        "gender": "F",
+        "club_name": "4 Star Strength",
+        "wso": "Michigan",
+        "national_rank": "9"
+      },
+      "competition_history": [
+        {
+          "meet_name": "XLR8 Barbell Clubs First Meet",
+          "date": "2014-02-09",
+          "division": "Open Women's 58 kg",
+          "lifter_name": "Castille Asmann",
+          "body_weight_kg": "57.6",
+          "snatch_1": "43",
+          "snatch_2": "46",
+          "snatch_3": "48",
+          "cj_1": "54",
+          "cj_2": "57",
+          "cj_3": "58",
+          "best_snatch": "48",
+          "best_cj": "58",
+          "total": "106"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "XLR8 Barbell Clubs First Meet",
+            "date": "2014-02-09",
+            "division": "Open Women's 58 kg",
+            "lifter_name": "Castille Asmann",
+            "body_weight_kg": "57.6",
+            "snatch_1": "43",
+            "snatch_2": "46",
+            "snatch_3": "48",
+            "cj_1": "54",
+            "cj_2": "57",
+            "cj_3": "58",
+            "best_snatch": "48",
+            "best_cj": "58",
+            "total": "106"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wMi0wOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wMi0wOSIsIndlaWdodF9jbGFzcyI6MzY0fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "9",
+            "athlete_name": "Castille Asmann",
+            "total": "106",
+            "gender": "F",
+            "age": "19",
+            "club_name": "4 Star Strength",
+            "membership_number": "191374",
+            "wso": "Michigan"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}

@@ -1,0 +1,435 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-26T06:00:56.712Z",
+    "script_name": "comprehensive-data-scraper",
+    "script_version": "1.0.0",
+    "athlete_name": "Teresa Wilson",
+    "internal_ids_processed": 2,
+    "successful_scrapes": 2,
+    "failed_scrapes": 0,
+    "total_competitions_found": 8,
+    "total_reverse_lookups": 8,
+    "all_scrapes_successful": true,
+    "partial_processing_time_ms": 104926806
+  },
+  "data": [
+    {
+      "internal_id": 21808,
+      "athlete_name": "Teresa Wilson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/21808",
+      "contaminated_lifter_id": 299,
+      "needs_new_lifter_id": false,
+      "scraped_at": "2025-08-26T06:00:14.314Z",
+      "profile_data": {
+        "membership_number": "1031563",
+        "birth_year": 1989,
+        "gender": "F",
+        "club_name": "DC WEIGHTLIFTING CLUB",
+        "wso": "DMV",
+        "national_rank": "45"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Rosedale Open",
+          "date": "2020-01-25",
+          "division": "Open Women's 64kg",
+          "lifter_name": "Teresa Wilson",
+          "body_weight_kg": "59.8",
+          "snatch_1": "33",
+          "snatch_2": "-35",
+          "snatch_3": "35",
+          "cj_1": "46",
+          "cj_2": "-49",
+          "cj_3": "-51",
+          "best_snatch": "35",
+          "best_cj": "46",
+          "total": "81"
+        },
+        {
+          "meet_name": "2019 Baltimore Open",
+          "date": "2019-01-26",
+          "division": "Open Women's 64kg",
+          "lifter_name": "Teresa Wilson",
+          "body_weight_kg": "62.76",
+          "snatch_1": "30",
+          "snatch_2": "33",
+          "snatch_3": "-36",
+          "cj_1": "-39",
+          "cj_2": "-40",
+          "cj_3": "40",
+          "best_snatch": "33",
+          "best_cj": "40",
+          "total": "73"
+        },
+        {
+          "meet_name": "2018 Black & Red Open",
+          "date": "2018-07-14",
+          "division": "Open Women's 69 kg",
+          "lifter_name": "Teresa Wilson",
+          "body_weight_kg": "63.75",
+          "snatch_1": "18",
+          "snatch_2": "22",
+          "snatch_3": "25",
+          "cj_1": "-22",
+          "cj_2": "22",
+          "cj_3": "25",
+          "best_snatch": "25",
+          "best_cj": "25",
+          "total": "50"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Rosedale Open",
+            "date": "2020-01-25",
+            "division": "Open Women's 64kg",
+            "lifter_name": "Teresa Wilson",
+            "body_weight_kg": "59.8",
+            "snatch_1": "33",
+            "snatch_2": "-35",
+            "snatch_3": "35",
+            "cj_1": "46",
+            "cj_2": "-49",
+            "cj_3": "-51",
+            "best_snatch": "35",
+            "best_cj": "46",
+            "total": "81"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAyMC0wMS0yNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyMC0wMS0yNSIsIndlaWdodF9jbGFzcyI6OTV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "45",
+            "athlete_name": "Teresa Wilson",
+            "total": "81",
+            "gender": "F",
+            "age": "31",
+            "club_name": "DC WEIGHTLIFTING CLUB",
+            "membership_number": "1031563",
+            "wso": "DMV"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2019 Baltimore Open",
+            "date": "2019-01-26",
+            "division": "Open Women's 64kg",
+            "lifter_name": "Teresa Wilson",
+            "body_weight_kg": "62.76",
+            "snatch_1": "30",
+            "snatch_2": "33",
+            "snatch_3": "-36",
+            "cj_1": "-39",
+            "cj_2": "-40",
+            "cj_3": "40",
+            "best_snatch": "33",
+            "best_cj": "40",
+            "total": "73"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOS0wMS0yNiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOS0wMS0yNiIsIndlaWdodF9jbGFzcyI6OTV9",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "46",
+            "athlete_name": "Teresa Wilson",
+            "total": "73",
+            "gender": "F",
+            "age": "30",
+            "club_name": "DC WEIGHTLIFTING CLUB",
+            "membership_number": "1031563",
+            "wso": "DMV"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2018 Black & Red Open",
+            "date": "2018-07-14",
+            "division": "Open Women's 69 kg",
+            "lifter_name": "Teresa Wilson",
+            "body_weight_kg": "63.75",
+            "snatch_1": "18",
+            "snatch_2": "22",
+            "snatch_3": "25",
+            "cj_1": "-22",
+            "cj_2": "22",
+            "cj_3": "25",
+            "best_snatch": "25",
+            "best_cj": "25",
+            "total": "50"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxOC0wNy0xNCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxOC0wNy0xNCIsIndlaWdodF9jbGFzcyI6MzY2fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "33",
+            "athlete_name": "Teresa Wilson",
+            "total": "50",
+            "gender": "F",
+            "age": "29",
+            "club_name": "DC WEIGHTLIFTING CLUB",
+            "membership_number": "1031563",
+            "wso": "DMV"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    },
+    {
+      "internal_id": 1942,
+      "athlete_name": "Teresa Wilson",
+      "usaw_url": "https://usaweightlifting.sport80.com/public/rankings/member/1942",
+      "contaminated_lifter_id": 299,
+      "needs_new_lifter_id": true,
+      "scraped_at": "2025-08-26T06:00:56.709Z",
+      "profile_data": {
+        "membership_number": "178968",
+        "birth_year": 1968,
+        "gender": "F",
+        "club_name": "GRASS IRON WEIGHTLIFTING",
+        "wso": "Texas-Oklahoma",
+        "national_rank": "1"
+      },
+      "competition_history": [
+        {
+          "meet_name": "Grass Iron Growler",
+          "date": "2014-04-05",
+          "division": "Women's Masters (45-49) 58 kg",
+          "lifter_name": "Teresa Wilson",
+          "body_weight_kg": "55.7",
+          "snatch_1": "37",
+          "snatch_2": "40",
+          "snatch_3": "42",
+          "cj_1": "48",
+          "cj_2": "51",
+          "cj_3": "53",
+          "best_snatch": "42",
+          "best_cj": "53",
+          "total": "95"
+        },
+        {
+          "meet_name": "Last Chance Qualifier",
+          "date": "2013-10-19",
+          "division": "Women's Masters (45-49) 58 kg",
+          "lifter_name": "Teresa Wilson",
+          "body_weight_kg": "55.7",
+          "snatch_1": "35",
+          "snatch_2": "37",
+          "snatch_3": "39",
+          "cj_1": "47",
+          "cj_2": "49",
+          "cj_3": "51",
+          "best_snatch": "39",
+          "best_cj": "51",
+          "total": "90"
+        },
+        {
+          "meet_name": "2013 South Texas Open",
+          "date": "2013-08-17",
+          "division": "Women's Masters (45-49) 58 kg",
+          "lifter_name": "Teresa Wilson",
+          "body_weight_kg": "56.25",
+          "snatch_1": "36",
+          "snatch_2": "38",
+          "snatch_3": "40",
+          "cj_1": "46",
+          "cj_2": "48",
+          "cj_3": "50",
+          "best_snatch": "40",
+          "best_cj": "50",
+          "total": "90"
+        },
+        {
+          "meet_name": "2013 Texas State Weightlifting Championships",
+          "date": "2013-01-20",
+          "division": "Women's Masters (45-49) 58 kg",
+          "lifter_name": "Teresa Wilson",
+          "body_weight_kg": "56.8",
+          "snatch_1": "35",
+          "snatch_2": "37",
+          "snatch_3": "39",
+          "cj_1": "45",
+          "cj_2": "48",
+          "cj_3": "50",
+          "best_snatch": "39",
+          "best_cj": "50",
+          "total": "89"
+        },
+        {
+          "meet_name": "GrassIron Invitational",
+          "date": "2012-11-17",
+          "division": "Women's Masters (40-44) 58 kg",
+          "lifter_name": "Teresa Wilson",
+          "body_weight_kg": "57",
+          "snatch_1": "33",
+          "snatch_2": "35",
+          "snatch_3": "37",
+          "cj_1": "43",
+          "cj_2": "45",
+          "cj_3": "47",
+          "best_snatch": "37",
+          "best_cj": "47",
+          "total": "84"
+        }
+      ],
+      "biographical_data_by_competition": [
+        {
+          "competition": {
+            "meet_name": "Grass Iron Growler",
+            "date": "2014-04-05",
+            "division": "Women's Masters (45-49) 58 kg",
+            "lifter_name": "Teresa Wilson",
+            "body_weight_kg": "55.7",
+            "snatch_1": "37",
+            "snatch_2": "40",
+            "snatch_3": "42",
+            "cj_1": "48",
+            "cj_2": "51",
+            "cj_3": "53",
+            "best_snatch": "42",
+            "best_cj": "53",
+            "total": "95"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxNC0wNC0wNSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxNC0wNC0wNSIsIndlaWdodF9jbGFzcyI6NDE1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Teresa Wilson",
+            "total": "95",
+            "gender": "F",
+            "age": "46",
+            "club_name": "GRASS IRON WEIGHTLIFTING",
+            "membership_number": "178968",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "Last Chance Qualifier",
+            "date": "2013-10-19",
+            "division": "Women's Masters (45-49) 58 kg",
+            "lifter_name": "Teresa Wilson",
+            "body_weight_kg": "55.7",
+            "snatch_1": "35",
+            "snatch_2": "37",
+            "snatch_3": "39",
+            "cj_1": "47",
+            "cj_2": "49",
+            "cj_3": "51",
+            "best_snatch": "39",
+            "best_cj": "51",
+            "total": "90"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0xMC0xOSIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0xMC0xOSIsIndlaWdodF9jbGFzcyI6NDE1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "3",
+            "athlete_name": "Teresa Wilson",
+            "total": "90",
+            "gender": "F",
+            "age": "45",
+            "club_name": "GRASS IRON WEIGHTLIFTING",
+            "membership_number": "178968",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2013 South Texas Open",
+            "date": "2013-08-17",
+            "division": "Women's Masters (45-49) 58 kg",
+            "lifter_name": "Teresa Wilson",
+            "body_weight_kg": "56.25",
+            "snatch_1": "36",
+            "snatch_2": "38",
+            "snatch_3": "40",
+            "cj_1": "46",
+            "cj_2": "48",
+            "cj_3": "50",
+            "best_snatch": "40",
+            "best_cj": "50",
+            "total": "90"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wOC0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wOC0xNyIsIndlaWdodF9jbGFzcyI6NDE1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "4",
+            "athlete_name": "Teresa Wilson",
+            "total": "90",
+            "gender": "F",
+            "age": "45",
+            "club_name": "GRASS IRON WEIGHTLIFTING",
+            "membership_number": "178968",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "2013 Texas State Weightlifting Championships",
+            "date": "2013-01-20",
+            "division": "Women's Masters (45-49) 58 kg",
+            "lifter_name": "Teresa Wilson",
+            "body_weight_kg": "56.8",
+            "snatch_1": "35",
+            "snatch_2": "37",
+            "snatch_3": "39",
+            "cj_1": "45",
+            "cj_2": "48",
+            "cj_3": "50",
+            "best_snatch": "39",
+            "best_cj": "50",
+            "total": "89"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMy0wMS0yMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMy0wMS0yMCIsIndlaWdodF9jbGFzcyI6NDE1fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "2",
+            "athlete_name": "Teresa Wilson",
+            "total": "89",
+            "gender": "F",
+            "age": "45",
+            "club_name": "GRASS IRON WEIGHTLIFTING",
+            "membership_number": "178968",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        },
+        {
+          "competition": {
+            "meet_name": "GrassIron Invitational",
+            "date": "2012-11-17",
+            "division": "Women's Masters (40-44) 58 kg",
+            "lifter_name": "Teresa Wilson",
+            "body_weight_kg": "57",
+            "snatch_1": "33",
+            "snatch_2": "35",
+            "snatch_3": "37",
+            "cj_1": "43",
+            "cj_2": "45",
+            "cj_3": "47",
+            "best_snatch": "37",
+            "best_cj": "47",
+            "total": "84"
+          },
+          "reverse_lookup_url": "https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAxMi0xMS0xNyIsImRhdGVfcmFuZ2VfZW5kIjoiMjAxMi0xMS0xNyIsIndlaWdodF9jbGFzcyI6Mzk4fQ==",
+          "lookup_successful": true,
+          "biographical_data": {
+            "national_rank": "1",
+            "athlete_name": "Teresa Wilson",
+            "total": "84",
+            "gender": "F",
+            "age": "44",
+            "club_name": "GRASS IRON WEIGHTLIFTING",
+            "membership_number": "178968",
+            "wso": "Texas-Oklahoma"
+          },
+          "error": null
+        }
+      ],
+      "scraping_successful": true
+    }
+  ]
+}
