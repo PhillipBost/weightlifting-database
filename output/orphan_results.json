@@ -1,0 +1,831 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-27T23:29:42.822Z",
+    "script_name": "membership-matcher",
+    "script_version": "1.0.0",
+    "total_orphans": 42,
+    "processing_time_ms": 2469,
+    "orphan_breakdown": {
+      "NO_MATCH": 39,
+      "MULTIPLE_MATCHES": 3
+    }
+  },
+  "data": [
+    {
+      "result_id": 421676,
+      "meet_id": 1509,
+      "current_lifter_id": 13821,
+      "athlete_name": "Cody Hanson",
+      "meet_name": "'The Jodi' Invitational",
+      "date": "2014-11-09",
+      "reason": "NO_MATCH",
+      "result_details": {
+        "body_weight": "140.83",
+        "age_category": "Open Men's",
+        "weight_class": "+105 kg",
+        "best_snatch": "79",
+        "best_cj": "103",
+        "total": "182",
+        "club_name": "HIGH DESERT ATHLETIC CLUB",
+        "wso": "Mountain South"
+      }
+    },
+    {
+      "result_id": 421866,
+      "meet_id": 6979,
+      "current_lifter_id": 32604,
+      "athlete_name": "Duy Tran",
+      "meet_name": "Money in the Bank 2025",
+      "date": "2027-07-27",
+      "reason": "NO_MATCH",
+      "result_details": {
+        "body_weight": "87.75",
+        "age_category": "Open Men's",
+        "weight_class": "88kg",
+        "best_snatch": "105",
+        "best_cj": "130",
+        "total": "235",
+        "club_name": "Team Aita",
+        "wso": "California North Central"
+      }
+    },
+    {
+      "result_id": 22214,
+      "meet_id": 246,
+      "current_lifter_id": 1551,
+      "athlete_name": "Elizabeth Brown",
+      "meet_name": "Onaga Blast Chance",
+      "date": "2015-07-11",
+      "reason": "NO_MATCH",
+      "result_details": {
+        "body_weight": "52.9",
+        "age_category": "Women's Masters (50-54)",
+        "weight_class": "53 kg",
+        "best_snatch": "48",
+        "best_cj": "63",
+        "total": "111",
+        "club_name": null,
+        "wso": null
+      }
+    },
+    {
+      "result_id": 152320,
+      "meet_id": 1616,
+      "current_lifter_id": 1551,
+      "athlete_name": "Elizabeth Brown",
+      "meet_name": "Pan-Am Masters Championships",
+      "date": "2015-06-07",
+      "reason": "NO_MATCH",
+      "result_details": {
+        "body_weight": "51.43",
+        "age_category": "Women's Masters (50-54)",
+        "weight_class": "53 kg",
+        "best_snatch": "49",
+        "best_cj": "63",
+        "total": "112",
+        "club_name": null,
+        "wso": null
+      }
+    },
+    {
+      "result_id": 22137,
+      "meet_id": 245,
+      "current_lifter_id": 1551,
+      "athlete_name": "Elizabeth Brown",
+      "meet_name": "Yellow Brick Road",
+      "date": "2015-04-25",
+      "reason": "NO_MATCH",
+      "result_details": {
+        "body_weight": "52.2",
+        "age_category": "Women's Masters (50-54)",
+        "weight_class": "53 kg",
+        "best_snatch": "48",
+        "best_cj": "65",
+        "total": "113",
+        "club_name": null,
+        "wso": null
+      }
+    },
+    {
+      "result_id": 25045,
+      "meet_id": 298,
+      "current_lifter_id": 1551,
+      "athlete_name": "Elizabeth Brown",
+      "meet_name": "2015 National Masters Championships",
+      "date": "2015-04-12",
+      "reason": "NO_MATCH",
+      "result_details": {
+        "body_weight": "51.98",
+        "age_category": "Women's Masters (50-54)",
+        "weight_class": "53 kg",
+        "best_snatch": "48",
+        "best_cj": "0",
+        "total": "0",
+        "club_name": null,
+        "wso": null
+      }
+    },
+    {
+      "result_id": 22313,
+      "meet_id": 248,
+      "current_lifter_id": 1551,
+      "athlete_name": "Elizabeth Brown",
+      "meet_name": "Pony Express",
+      "date": "2015-03-14",
+      "reason": "NO_MATCH",
+      "result_details": {
+        "body_weight": "51.8",
+        "age_category": "Women's Masters (50-54)",
+        "weight_class": "53 kg",
+        "best_snatch": "47",
+        "best_cj": "60",
+        "total": "107",
+        "club_name": null,
+        "wso": null
+      }
+    },
+    {
+      "result_id": 22008,
+      "meet_id": 242,
+      "current_lifter_id": 1551,
+      "athlete_name": "Elizabeth Brown",
+      "meet_name": "MISSOURI VALLEY Championships",
+      "date": "2015-01-17",
+      "reason": "NO_MATCH",
+      "result_details": {
+        "body_weight": "52.9",
+        "age_category": "Women's Masters (50-54)",
+        "weight_class": "53 kg",
+        "best_snatch": "50",
+        "best_cj": "65",
+        "total": "115",
+        "club_name": "MISSOURI VALLEY MASTERS",
+        "wso": "Missouri Valley"
+      }
+    },
+    {
+      "result_id": 62478,
+      "meet_id": 1162,
+      "current_lifter_id": 1551,
+      "athlete_name": "Elizabeth Brown",
+      "meet_name": "American Masters",
+      "date": "2014-11-02",
+      "reason": "NO_MATCH",
+      "result_details": {
+        "body_weight": "52.05",
+        "age_category": "Women's Masters (50-54)",
+        "weight_class": "53 kg",
+        "best_snatch": "50",
+        "best_cj": "65",
+        "total": "115",
+        "club_name": null,
+        "wso": null
+      }
+    },
+    {
+      "result_id": 73926,
+      "meet_id": 1482,
+      "current_lifter_id": 1551,
+      "athlete_name": "Elizabeth Brown",
+      "meet_name": "Kansas State and Open Championships",
+      "date": "2014-09-13",
+      "reason": "NO_MATCH",
+      "result_details": {
+        "body_weight": "52.6",
+        "age_category": "Women's Masters (50-54)",
+        "weight_class": "53 kg",
+        "best_snatch": "51",
+        "best_cj": "67",
+        "total": "118",
+        "club_name": "MISSOURI VALLEY MASTERS",
+        "wso": "Missouri Valley"
+      }
+    },
+    {
+      "result_id": 73801,
+      "meet_id": 1480,
+      "current_lifter_id": 1551,
+      "athlete_name": "Elizabeth Brown",
+      "meet_name": "Onaga Blast Chance",
+      "date": "2014-07-12",
+      "reason": "NO_MATCH",
+      "result_details": {
+        "body_weight": "52.5",
+        "age_category": "Women's Masters (50-54)",
+        "weight_class": "53 kg",
+        "best_snatch": "50",
+        "best_cj": "63",
+        "total": "113",
+        "club_name": null,
+        "wso": null
+      }
+    },
+    {
+      "result_id": 65803,
+      "meet_id": 1287,
+      "current_lifter_id": 1551,
+      "athlete_name": "Elizabeth Brown",
+      "meet_name": "39th National Men's and Women's USA Masters Weightlifting Championship",
+      "date": "2014-04-06",
+      "reason": "NO_MATCH",
+      "result_details": {
+        "body_weight": "51.66",
+        "age_category": "Women's Masters (50-54)",
+        "weight_class": "53 kg",
+        "best_snatch": "50",
+        "best_cj": "63",
+        "total": "113",
+        "club_name": null,
+        "wso": null
+      }
+    },
+    {
+      "result_id": 69494,
+      "meet_id": 1373,
+      "current_lifter_id": 1551,
+      "athlete_name": "Elizabeth Brown",
+      "meet_name": "2014 MISSOURI VALLEY Championship with Open Division",
+      "date": "2014-02-15",
+      "reason": "NO_MATCH",
+      "result_details": {
+        "body_weight": "52.2",
+        "age_category": "Women's Masters (50-54)",
+        "weight_class": "53 kg",
+        "best_snatch": "51",
+        "best_cj": "67",
+        "total": "118",
+        "club_name": "MISSOURI VALLEY MASTERS",
+        "wso": "Missouri Valley"
+      }
+    },
+    {
+      "result_id": 8186,
+      "meet_id": 692,
+      "current_lifter_id": 1551,
+      "athlete_name": "Elizabeth Brown",
+      "meet_name": "Onaga Christmas Open & Open",
+      "date": "2013-12-28",
+      "reason": "NO_MATCH",
+      "result_details": {
+        "body_weight": "52.8",
+        "age_category": "Women's Masters (50-54)",
+        "weight_class": "53 kg",
+        "best_snatch": "47",
+        "best_cj": "67",
+        "total": "114",
+        "club_name": "MISSOURI VALLEY MASTERS",
+        "wso": "Missouri Valley"
+      }
+    },
+    {
+      "result_id": 52688,
+      "meet_id": 1124,
+      "current_lifter_id": 1551,
+      "athlete_name": "Elizabeth Brown",
+      "meet_name": "American Masters",
+      "date": "2013-11-03",
+      "reason": "NO_MATCH",
+      "result_details": {
+        "body_weight": "52.15",
+        "age_category": "Women's Masters (50-54)",
+        "weight_class": "53 kg",
+        "best_snatch": "47",
+        "best_cj": "63",
+        "total": "110",
+        "club_name": null,
+        "wso": null
+      }
+    },
+    {
+      "result_id": 9160,
+      "meet_id": 716,
+      "current_lifter_id": 1551,
+      "athlete_name": "Elizabeth Brown",
+      "meet_name": "Kansas State and Open Championship 2013",
+      "date": "2013-09-21",
+      "reason": "NO_MATCH",
+      "result_details": {
+        "body_weight": "52.7",
+        "age_category": "Women's Masters (50-54)",
+        "weight_class": "53 kg",
+        "best_snatch": "47",
+        "best_cj": "65",
+        "total": "112",
+        "club_name": null,
+        "wso": null
+      }
+    },
+    {
+      "result_id": 13323,
+      "meet_id": 922,
+      "current_lifter_id": 1551,
+      "athlete_name": "Elizabeth Brown",
+      "meet_name": "Onaga Blast Chance Junior & Open",
+      "date": "2013-07-06",
+      "reason": "NO_MATCH",
+      "result_details": {
+        "body_weight": "52.6",
+        "age_category": "Women's Masters (50-54)",
+        "weight_class": "53 kg",
+        "best_snatch": "47",
+        "best_cj": "63",
+        "total": "110",
+        "club_name": null,
+        "wso": null
+      }
+    },
+    {
+      "result_id": 1864,
+      "meet_id": 699,
+      "current_lifter_id": 1551,
+      "athlete_name": "Elizabeth Brown",
+      "meet_name": "Onaga Christmas Open",
+      "date": "2012-12-29",
+      "reason": "NO_MATCH",
+      "result_details": {
+        "body_weight": "52.3",
+        "age_category": "Women's Masters (50-54)",
+        "weight_class": "53 kg",
+        "best_snatch": "50",
+        "best_cj": "65",
+        "total": "115",
+        "club_name": "MISSOURI VALLEY MASTERS",
+        "wso": "Missouri Valley"
+      }
+    },
+    {
+      "result_id": 5377,
+      "meet_id": 913,
+      "current_lifter_id": 1551,
+      "athlete_name": "Elizabeth Brown",
+      "meet_name": "Yellow Brick Open",
+      "date": "2012-05-05",
+      "reason": "NO_MATCH",
+      "result_details": {
+        "body_weight": "55",
+        "age_category": "Women's Masters (50-54)",
+        "weight_class": "58 kg",
+        "best_snatch": "0",
+        "best_cj": "62",
+        "total": "0",
+        "club_name": null,
+        "wso": null
+      }
+    },
+    {
+      "result_id": 5183,
+      "meet_id": 908,
+      "current_lifter_id": 1551,
+      "athlete_name": "Elizabeth Brown",
+      "meet_name": "Mo.Valley Schoolage Championships/and Open",
+      "date": "2012-02-11",
+      "reason": "NO_MATCH",
+      "result_details": {
+        "body_weight": "55.74",
+        "age_category": "Women's Masters (50-54)",
+        "weight_class": "58 kg",
+        "best_snatch": "0",
+        "best_cj": "62",
+        "total": "0",
+        "club_name": null,
+        "wso": null
+      }
+    },
+    {
+      "result_id": 5287,
+      "meet_id": 909,
+      "current_lifter_id": 1551,
+      "athlete_name": "Elizabeth Brown",
+      "meet_name": "Wounded Warrior Winter Open",
+      "date": "2012-01-14",
+      "reason": "NO_MATCH",
+      "result_details": {
+        "body_weight": "55.8",
+        "age_category": "Women's Masters (50-54)",
+        "weight_class": "58 kg",
+        "best_snatch": "0",
+        "best_cj": "60",
+        "total": "0",
+        "club_name": null,
+        "wso": null
+      }
+    },
+    {
+      "result_id": 378085,
+      "meet_id": 5987,
+      "current_lifter_id": 13285,
+      "athlete_name": "Eric Taylor",
+      "meet_name": "2023 Austin , Fit Fest",
+      "date": "2023-08-19",
+      "reason": "NO_MATCH",
+      "result_details": {
+        "body_weight": "79.9",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "best_snatch": "62",
+        "best_cj": "80",
+        "total": "142",
+        "club_name": null,
+        "wso": null
+      }
+    },
+    {
+      "result_id": 353413,
+      "meet_id": 5481,
+      "current_lifter_id": 13285,
+      "athlete_name": "Eric Taylor",
+      "meet_name": "AUSTIN CITY WEIGHTLIFTING THROWDOWN , FitFest",
+      "date": "2022-09-03",
+      "reason": "NO_MATCH",
+      "result_details": {
+        "body_weight": "78.35",
+        "age_category": "Open Men's",
+        "weight_class": "81kg",
+        "best_snatch": "60",
+        "best_cj": "83",
+        "total": "143",
+        "club_name": "Austin Barbell",
+        "wso": "California South"
+      }
+    },
+    {
+      "result_id": 224064,
+      "meet_id": 2748,
+      "current_lifter_id": 29908,
+      "athlete_name": "Ethan Howard",
+      "meet_name": "2017 Kansas State & Open Championships",
+      "date": "2017-08-27",
+      "reason": "MULTIPLE_MATCHES",
+      "potential_matches": [
+        {
+          "internal_id": 30619,
+          "membership_number": "169256"
+        },
+        {
+          "internal_id": 41972,
+          "membership_number": "1021751"
+        }
+      ],
+      "result_details": {
+        "body_weight": "125.6",
+        "best_snatch": "60",
+        "best_cj": "80",
+        "total": "140"
+      }
+    },
+    {
+      "result_id": 306996,
+      "meet_id": 4628,
+      "current_lifter_id": 34398,
+      "athlete_name": "Grace Wilson",
+      "meet_name": "VBW Friday Qualifier",
+      "date": "2020-09-25",
+      "reason": "MULTIPLE_MATCHES",
+      "potential_matches": [
+        {
+          "internal_id": 44475,
+          "membership_number": "1039359"
+        },
+        {
+          "internal_id": 48378,
+          "membership_number": "1052518"
+        }
+      ],
+      "result_details": {
+        "body_weight": "58.89",
+        "best_snatch": "47",
+        "best_cj": "53",
+        "total": "100"
+      }
+    },
+    {
+      "result_id": 149752,
+      "meet_id": 1605,
+      "current_lifter_id": 14708,
+      "athlete_name": "Logan Lewis",
+      "meet_name": "National Youth Championship",
+      "date": "2015-06-28",
+      "reason": "NO_MATCH",
+      "result_details": {
+        "body_weight": "75.9",
+        "age_category": "Men's 13 Under Age Group",
+        "weight_class": "+69 Kg",
+        "best_snatch": "36",
+        "best_cj": "45",
+        "total": "81",
+        "club_name": null,
+        "wso": null
+      }
+    },
+    {
+      "result_id": 32564,
+      "meet_id": 460,
+      "current_lifter_id": 14708,
+      "athlete_name": "Logan Lewis",
+      "meet_name": "Chatham County Oly Day",
+      "date": "2015-05-30",
+      "reason": "NO_MATCH",
+      "result_details": {
+        "body_weight": "73",
+        "age_category": "Men's 13 Under Age Group",
+        "weight_class": "+69 Kg",
+        "best_snatch": "40",
+        "best_cj": "51",
+        "total": "91",
+        "club_name": "The Athletes House",
+        "wso": "Georgia"
+      }
+    },
+    {
+      "result_id": 32676,
+      "meet_id": 463,
+      "current_lifter_id": 14708,
+      "athlete_name": "Logan Lewis",
+      "meet_name": "Coffee High Invitational",
+      "date": "2015-05-21",
+      "reason": "NO_MATCH",
+      "result_details": {
+        "body_weight": "68.7",
+        "age_category": "Men's 13 Under Age Group",
+        "weight_class": "69 Kg",
+        "best_snatch": "42",
+        "best_cj": "54",
+        "total": "96",
+        "club_name": "The Athletes House",
+        "wso": "Georgia"
+      }
+    },
+    {
+      "result_id": 281074,
+      "meet_id": 3993,
+      "current_lifter_id": 36327,
+      "athlete_name": "Quentin Patault",
+      "meet_name": "Rudy Sablo Memorial and WLDC Inaugural",
+      "date": "2019-11-23",
+      "reason": "MULTIPLE_MATCHES",
+      "potential_matches": [
+        {
+          "internal_id": 29,
+          "membership_number": "1050825"
+        },
+        {
+          "internal_id": 27953,
+          "membership_number": "1031465"
+        }
+      ],
+      "result_details": {
+        "body_weight": "80.3",
+        "best_snatch": "120",
+        "best_cj": "154",
+        "total": "274"
+      }
+    },
+    {
+      "result_id": 73105,
+      "meet_id": 1461,
+      "current_lifter_id": 658,
+      "athlete_name": "Thomas Hughes",
+      "meet_name": "Metropolitan Championships",
+      "date": "2014-10-25",
+      "reason": "NO_MATCH",
+      "result_details": {
+        "body_weight": "94.8",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "best_snatch": "75",
+        "best_cj": "0",
+        "total": "0",
+        "club_name": null,
+        "wso": null
+      }
+    },
+    {
+      "result_id": 67462,
+      "meet_id": 1334,
+      "current_lifter_id": 658,
+      "athlete_name": "Thomas Hughes",
+      "meet_name": "NJ Weightlifting Championships",
+      "date": "2014-06-07",
+      "reason": "NO_MATCH",
+      "result_details": {
+        "body_weight": "95.5",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "best_snatch": "79",
+        "best_cj": "95",
+        "total": "174",
+        "club_name": "-",
+        "wso": "New Jersey"
+      }
+    },
+    {
+      "result_id": 65708,
+      "meet_id": 1287,
+      "current_lifter_id": 658,
+      "athlete_name": "Thomas Hughes",
+      "meet_name": "39th National Men's and Women's USA Masters Weightlifting Championship",
+      "date": "2014-04-06",
+      "reason": "NO_MATCH",
+      "result_details": {
+        "body_weight": "92.49",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "best_snatch": "82",
+        "best_cj": "95",
+        "total": "177",
+        "club_name": "-",
+        "wso": "New Jersey"
+      }
+    },
+    {
+      "result_id": 52634,
+      "meet_id": 1124,
+      "current_lifter_id": 658,
+      "athlete_name": "Thomas Hughes",
+      "meet_name": "American Masters",
+      "date": "2013-11-03",
+      "reason": "NO_MATCH",
+      "result_details": {
+        "body_weight": "93.35",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "best_snatch": "75",
+        "best_cj": "95",
+        "total": "170",
+        "club_name": null,
+        "wso": null
+      }
+    },
+    {
+      "result_id": 7447,
+      "meet_id": 660,
+      "current_lifter_id": 658,
+      "athlete_name": "Thomas Hughes",
+      "meet_name": "Metropolitan Weightlifting Championships",
+      "date": "2013-10-19",
+      "reason": "NO_MATCH",
+      "result_details": {
+        "body_weight": "94.88",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "best_snatch": "80",
+        "best_cj": "95",
+        "total": "175",
+        "club_name": "-",
+        "wso": "New Jersey"
+      }
+    },
+    {
+      "result_id": 10172,
+      "meet_id": 759,
+      "current_lifter_id": 658,
+      "athlete_name": "Thomas Hughes",
+      "meet_name": "National Masters WLC",
+      "date": "2013-03-10",
+      "reason": "NO_MATCH",
+      "result_details": {
+        "body_weight": "92.56",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "best_snatch": "75",
+        "best_cj": "95",
+        "total": "170",
+        "club_name": null,
+        "wso": null
+      }
+    },
+    {
+      "result_id": 10329,
+      "meet_id": 760,
+      "current_lifter_id": 658,
+      "athlete_name": "Thomas Hughes",
+      "meet_name": "Hillsborough Raider Invitational",
+      "date": "2013-02-10",
+      "reason": "NO_MATCH",
+      "result_details": {
+        "body_weight": "93.9",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "best_snatch": "78",
+        "best_cj": "95",
+        "total": "173",
+        "club_name": "-",
+        "wso": "New Jersey"
+      }
+    },
+    {
+      "result_id": 2442,
+      "meet_id": 717,
+      "current_lifter_id": 658,
+      "athlete_name": "Thomas Hughes",
+      "meet_name": "2012 American Masters Weightlifting Championshsips",
+      "date": "2012-11-11",
+      "reason": "NO_MATCH",
+      "result_details": {
+        "body_weight": "90.9",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "best_snatch": "75",
+        "best_cj": "95",
+        "total": "170",
+        "club_name": null,
+        "wso": null
+      }
+    },
+    {
+      "result_id": 746,
+      "meet_id": 653,
+      "current_lifter_id": 658,
+      "athlete_name": "Thomas Hughes",
+      "meet_name": "Metropolitan Championships",
+      "date": "2012-10-27",
+      "reason": "NO_MATCH",
+      "result_details": {
+        "body_weight": "93",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "best_snatch": "75",
+        "best_cj": "95",
+        "total": "170",
+        "club_name": "-",
+        "wso": "New Jersey"
+      }
+    },
+    {
+      "result_id": 1966,
+      "meet_id": 703,
+      "current_lifter_id": 658,
+      "athlete_name": "Thomas Hughes",
+      "meet_name": "2012 Frederick Open",
+      "date": "2012-08-25",
+      "reason": "NO_MATCH",
+      "result_details": {
+        "body_weight": "95.53",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "best_snatch": "0",
+        "best_cj": "95",
+        "total": "0",
+        "club_name": null,
+        "wso": null
+      }
+    },
+    {
+      "result_id": 3242,
+      "meet_id": 757,
+      "current_lifter_id": 658,
+      "athlete_name": "Thomas Hughes",
+      "meet_name": "NJ State Championships",
+      "date": "2012-08-04",
+      "reason": "NO_MATCH",
+      "result_details": {
+        "body_weight": "93.91",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "best_snatch": "75",
+        "best_cj": "0",
+        "total": "0",
+        "club_name": null,
+        "wso": null
+      }
+    },
+    {
+      "result_id": 43002,
+      "meet_id": 1102,
+      "current_lifter_id": 658,
+      "athlete_name": "Thomas Hughes",
+      "meet_name": "National Masters",
+      "date": "2012-04-01",
+      "reason": "NO_MATCH",
+      "result_details": {
+        "body_weight": "93.45",
+        "age_category": "Open Men's",
+        "weight_class": "94 kg",
+        "best_snatch": "0",
+        "best_cj": "85",
+        "total": "0",
+        "club_name": null,
+        "wso": null
+      }
+    },
+    {
+      "result_id": 3134,
+      "meet_id": 755,
+      "current_lifter_id": 658,
+      "athlete_name": "Thomas Hughes",
+      "meet_name": "Raider Schoolage & Masters Invitational",
+      "date": "2012-02-12",
+      "reason": "NO_MATCH",
+      "result_details": {
+        "body_weight": "96.7",
+        "age_category": "Open Men's",
+        "weight_class": "105 kg",
+        "best_snatch": "0",
+        "best_cj": "105",
+        "total": "0",
+        "club_name": null,
+        "wso": null
+      }
+    }
+  ]
+}
