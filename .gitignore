@@ -17,10 +17,16 @@ yarn-error.log*
 # Output files and scraped data
 /output
 !output/contaminated_athletes.json
-!output/match_assignments.json
-!output/orphan_results.json
+!output/successful_scrapes/
+!output/successful_scrapes/**
+!output/failed_scrapes/
+!output/failed_scrapes/**
+!output/processed_failed_scrapes/
+!output/processed_failed_scrapes/**
 !output/scraped_athlete_profiles.json
 !output/database_results.json
+!output/match_assignments.json
+!output/orphan_results.json
 !output/reconstruction_report.json
 !logs/contamination-cleanup-master.log
 !logs/contamination-identifier.log
