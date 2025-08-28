@@ -115,7 +115,7 @@ function loadInputData(inputFile, options) {
     // Filter by specific athlete if requested
     if (options.athlete) {
         athletesToProcess = athletesToProcess.filter(a => a.athlete_name === options.athlete);
-        log(`🎯 Filtered to specific athlete: ${options.athlete}`);
+        log(`Target athlete: ${options.athlete}`);
     }
     
     // Create list of internal_ids to scrape
@@ -138,13 +138,13 @@ function loadInputData(inputFile, options) {
         });
     });
     
-    log(`📋 Found ${scrapingTasks.length} internal_id values to scrape`);
+    log(`Found ${scrapingTasks.length} internal_id values to scrape`);
     return scrapingTasks;
 }
 
 // Initialize browser
 async function initBrowser() {
-    log('🚀 Initializing browser...');
+    log('Initializing browser...');
     
     browser = await puppeteer.launch({
         headless: true,
@@ -159,19 +159,19 @@ async function initBrowser() {
     await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36');
     await page.setViewport({ width: 1280, height: 800 });
     
-    log('✅ Browser initialized successfully');
+    log('Browser initialized successfully');
 }
 
 // Build Sport80 URL for reverse lookup - FIXED VERSION
 function buildSport80URL(division, competitionDate) {
-    log(`    🔍 Building reverse lookup URL for: "${division}" on ${competitionDate}`);
+    log(`    Building reverse lookup URL for: "${division}" on ${competitionDate}`);
     
     // Determine if date is before 2025-06-01 to decide on (Inactive) prefix
     const competitionDateObj = new Date(competitionDate);
     const cutoffDate = new Date('2025-06-01');
     const shouldUseInactive = competitionDateObj < cutoffDate;
     
-    log(`    🗓️ Date: ${competitionDate}, Using inactive prefix: ${shouldUseInactive}`);
+    log(`    Date: ${competitionDate}, Using inactive prefix: ${shouldUseInactive}`);
     
     // Try exact matches - prioritizing inactive for old dates
     const divisionVariants = shouldUseInactive ? [
@@ -185,14 +185,14 @@ function buildSport80URL(division, competitionDate) {
     // Try each variant for exact matches ONLY
     for (const variant of divisionVariants) {
         if (divisionCodes[variant]) {
-            log(`    ✅ Found exact division match: "${variant}" -> ${divisionCodes[variant]}`);
+            log(`    Found exact division match: "${variant}" -> ${divisionCodes[variant]}`);
             return buildSport80URLWithCode(divisionCodes[variant], competitionDate);
         }
     }
     
     // NO PARTIAL MATCHING - fail if no exact match found
-    log(`    ❌ No exact division match found for: "${division}"`);
-    log(`    🔍 Tried variants: ${divisionVariants.join(', ')}`);
+    log(`    No exact division match found for: "${division}"`);
+    log(`    Tried variants: ${divisionVariants.join(', ')}`);
     
     throw new Error(`No exact division code found for: "${division}"`);
 }
@@ -213,12 +213,12 @@ async function scrapeBiographicalData(url, targetAthleteName) {
     // Check cache first
     const cacheKey = `${url}_${targetAthleteName}`;
     if (membershipCache.has(cacheKey)) {
-        log(`    📋 Using cached data for ${targetAthleteName}`);
+        log(`    Using cached data for ${targetAthleteName}`);
         return membershipCache.get(cacheKey);
     }
 
     try {
-        log(`    🌐 Scraping biographical data from reverse lookup...`);
+        log(`    Scraping biographical data from reverse lookup...`);
         await page.goto(url, { waitUntil: 'networkidle0', timeout: 30000 });
         await new Promise(resolve => setTimeout(resolve, 2000));
 
@@ -233,8 +233,8 @@ async function scrapeBiographicalData(url, targetAthleteName) {
             };
         });
         
-        log(`    🔍 Page debug: title="${pageContent.title}", tables=${pageContent.tableCount}, rows=${pageContent.rowCount}`);
-        log(`    📄 Page content preview: ${pageContent.bodyText.substring(0, 200)}...`);
+        log(`    Page debug: title="${pageContent.title}", tables=${pageContent.tableCount}, rows=${pageContent.rowCount}`);
+        log(`    Page content preview: ${pageContent.bodyText.substring(0, 200)}...`);
 
         // Extract biographical data for athlete with matching name
         let biographicalData = await page.evaluate((athleteName) => {
@@ -289,7 +289,7 @@ async function scrapeBiographicalData(url, targetAthleteName) {
 
         // If no match found on current page, try using the search box
         if (biographicalData.length === 0) {
-            log(`    🔍 No matches on current page, trying search box for: ${targetAthleteName}`);
+            log(`    No matches on current page, trying search box for: ${targetAthleteName}`);
             
             try {
                 // Type the athlete name in the search box
@@ -337,45 +337,45 @@ async function scrapeBiographicalData(url, targetAthleteName) {
                     return results;
                 }, targetAthleteName);
                 
-                log(`    🎯 Search box approach found ${biographicalData.length} matches`);
+                log(`    Search box approach found ${biographicalData.length} matches`);
                 
             } catch (searchError) {
-                log(`    ⚠️ Search box approach failed: ${searchError.message}`);
+                log(`    Search box approach failed: ${searchError.message}`);
             }
         }
 
         // Cache the result
         membershipCache.set(cacheKey, biographicalData);
         
-        log(`    📊 Found ${biographicalData.length} biographical matches for ${targetAthleteName}`);
+        log(`    Found ${biographicalData.length} biographical matches for ${targetAthleteName}`);
         return biographicalData;
 
     } catch (error) {
-        log(`    ❌ Error scraping biographical data: ${error.message}`);
+        log(`    Error scraping biographical data: ${error.message}`);
         return [];
     }
 }
 
 // Scrape individual athlete profile with reverse lookup - FIXED VERSION
-async function scrapeAthleteProfile(task, retryCount = 0) {
+async function scrapeAthleteProfile(task, retryCount = 0, retryInfo = null) {
     const { internal_id, usaw_url, athlete_name } = task;
     
-    log(`🔍 Scraping internal_id ${internal_id} (${athlete_name})`);
+    log(`Scraping internal_id ${internal_id} (${athlete_name})`);
     
     try {
         // STEP 1: Get competition history from member URL
-        log(`    🌐 Navigating to: ${usaw_url}`);
+        log(`    Navigating to: ${usaw_url}`);
         await page.goto(usaw_url, { 
             waitUntil: 'networkidle2',
             timeout: 30000 
         });
         
-        log(`    ✅ Page loaded successfully`);
+        log(`    Page loaded successfully`);
         
         // Wait for page content to load
         await page.waitForSelector('body', { timeout: 10000 });
         
-        log(`    🔍 Starting to scrape competition history...`);
+        log(`    Starting to scrape competition history...`);
         
         // Scrape competition history - FIXED PARSING
         const competitionHistory = await page.evaluate(() => {
@@ -446,10 +446,10 @@ async function scrapeAthleteProfile(task, retryCount = 0) {
             return competitions;
         });
         
-        log(`    📊 Found ${competitionHistory.length} competitions for reverse lookup`);
+        log(`    Found ${competitionHistory.length} competitions for reverse lookup`);
         
         if (competitionHistory.length === 0) {
-            log(`    ⚠️ No competitions found - checking page content...`);
+            log(`    No competitions found - checking page content...`);
             
             // Debug what's actually on the page when no competitions found
             const pageDebug = await page.evaluate(() => {
@@ -465,28 +465,31 @@ async function scrapeAthleteProfile(task, retryCount = 0) {
                 };
             });
             
-            log(`    📄 Page title: "${pageDebug.title}"`);
-            log(`    🔗 Actual URL: "${pageDebug.url}"`);
-            log(`    📝 Body preview: "${pageDebug.bodyTextPreview}"`);
-            log(`    📊 Tables: ${pageDebug.tableCount}, Rows: ${pageDebug.rowCount}`);
-            log(`    ❌ Has "no data" message: ${pageDebug.hasNoDataMessage}`);
+            log(`    Page title: "${pageDebug.title}"`);
+            log(`    Actual URL: "${pageDebug.url}"`);
+            log(`    Body preview: "${pageDebug.bodyTextPreview}"`);
+            log(`    Tables: ${pageDebug.tableCount}, Rows: ${pageDebug.rowCount}`);
+            log(`    Has "no data" message: ${pageDebug.hasNoDataMessage}`);
         }
         
         // Debug: Log the parsed competition data
         competitionHistory.forEach((comp, index) => {
-            log(`    🏋️ Competition ${index + 1}: date="${comp.date}", division="${comp.division}"`);
+            log(`    Competition ${index + 1}: date="${comp.date}", division="${comp.division}"`);
         });
         
         // STEP 2: Use reverse lookup to get biographical data from each competition
         const biographicalDataByCompetition = [];
-        
-        for (const competition of competitionHistory) {
+		let reverseLookupsAttempted = 0;
+		let successfulReverseLookups = 0;
+
+		for (const competition of competitionHistory) {
+			reverseLookupsAttempted++;
             let reverseUrl = null;
             let bioData = [];
             let lookupError = null;
             
             try {
-                log(`    🔍 Reverse lookup for: ${competition.date} - ${competition.division}`);
+                log(`    Reverse lookup for: ${competition.date} - ${competition.division}`);
                 
                 // Build Sport80 reverse lookup URL using the FULL division string
                 reverseUrl = buildSport80URL(
@@ -496,12 +499,22 @@ async function scrapeAthleteProfile(task, retryCount = 0) {
                 
                 // Scrape biographical data from that competition
                 bioData = await scrapeBiographicalData(reverseUrl, athlete_name);
+				
+				if (bioData.length > 0) {
+                    successfulReverseLookups++;
+                }
                 
             } catch (error) {
-                log(`    ❌ Reverse lookup failed for ${competition.date}: ${error.message}`);
+                log(`    Reverse lookup failed for ${competition.date}: ${error.message}`);
                 lookupError = error.message;
             }
             
+			if (reverseLookupsAttempted >= 2 && successfulReverseLookups === 0) {
+				log(`    Switching to fallback: extracting table data directly`);
+				const tableData = await extractCompetitionTable(page, internal_id);
+				// Skip remaining reverse lookups, use table data instead
+			}
+			
             // ALWAYS save the lookup attempt - successful or failed
             const lookupEntry = {
                 competition: competition,
@@ -512,7 +525,7 @@ async function scrapeAthleteProfile(task, retryCount = 0) {
             };
             
             if (lookupError) {
-                log(`    🔗 Failed lookup URL: ${reverseUrl || 'URL generation failed'}`);
+                log(`    Failed lookup URL: ${reverseUrl || 'URL generation failed'}`);
             }
             
             biographicalDataByCompetition.push(lookupEntry);
@@ -553,7 +566,7 @@ async function scrapeAthleteProfile(task, retryCount = 0) {
                     const competitionYear = new Date(successfulLookups[0].competition.date).getFullYear();
                     consolidatedProfile.birth_year = competitionYear - mostRecentBio.age;
                 } catch (error) {
-                    log(`    ⚠️ Could not compute birth year: ${error.message}`);
+                    log(`    Could not compute birth year: ${error.message}`);
                 }
             }
             
@@ -570,27 +583,41 @@ async function scrapeAthleteProfile(task, retryCount = 0) {
             actuallySuccessful = hasValidBiographicalData && allLookupsSuccessful;
             
             if (!allLookupsSuccessful) {
-                log(`    ⚠️ Partial success: ${successfulLookups.length}/${competitionHistory.length} reverse lookups successful`);
+                log(`    Partial success: ${successfulLookups.length}/${competitionHistory.length} reverse lookups successful`);
                 failedLookups.forEach(failed => {
-                    log(`    ❌ Failed lookup: ${failed.competition.date} - ${failed.competition.division} - ${failed.error || 'No biographical matches found'}`);
+                    log(`    Failed lookup: ${failed.competition.date} - ${failed.competition.division} - ${failed.error || 'No biographical matches found'}`);
                 });
             }
         }
         
         if (!actuallySuccessful) {
-            log(`    ❌ Scraping unsuccessful for internal_id ${internal_id}`);
-            log(`    📊 Competitions found: ${competitionHistory.length}, Successful reverse lookups: ${successfulLookups.length}/${competitionHistory.length}`);
+            log(`    Scraping unsuccessful for internal_id ${internal_id}`);
+            log(`    Competitions found: ${competitionHistory.length}, Successful reverse lookups: ${successfulLookups.length}/${competitionHistory.length}`);
             
-            if (failedLookups.length > 0) {
-                log(`    🔍 Failed lookups:`);
-                failedLookups.forEach(failed => {
-                    log(`      • ${failed.competition.date} - ${failed.competition.division}: ${failed.error || 'No matches found'}`);
-                    if (failed.reverse_lookup_url) {
-                        log(`        URL: ${failed.reverse_lookup_url}`);
-                    }
-                });
+            // Check historical failures from existing file data
+			let historicalFailures = 0;
+			if (retryInfo && retryInfo.hasExistingFile) {
+				// Count previous failures from the existing file
+				historicalFailures = retryInfo.failedInternalIds ? retryInfo.failedInternalIds.length : 0;
+			}
+
+			// Combine current run failures with historical failures
+			const totalFailureAttempts = failedLookups.length + historicalFailures;
+
+			// FALLBACK: If we have 2+ total failed attempts and no successful ones in current run, try table extraction
+			if (totalFailureAttempts >= 2 && successfulLookups.length === 0) {
+				log(`    Attempting fallback: ${totalFailureAttempts} total failed attempts across runs`);
+                log(`    Attempting fallback: extracting table data directly`);
+                const tableData = await extractCompetitionTable(page, internal_id);
+                if (tableData.length > 0) {
+                    log(`    Fallback successful: extracted ${tableData.length} competitions from table`);
+                    // Use table data instead
+                    competitionHistory = tableData;
+                    actuallySuccessful = true;
+                    scrapedProfile.fallback_data = true;
+                }
             }
-        }
+		}
         
         const scrapedProfile = {
             internal_id,
@@ -606,20 +633,20 @@ async function scrapeAthleteProfile(task, retryCount = 0) {
         };
         
         if (actuallySuccessful) {
-            log(`✅ Successfully scraped internal_id ${internal_id}: ${competitionHistory.length} competitions, ${successfulLookups.length}/${competitionHistory.length} successful reverse lookups`);
+            log(`Successfully scraped internal_id ${internal_id}: ${competitionHistory.length} competitions, ${successfulLookups.length}/${competitionHistory.length} successful reverse lookups`);
         } else {
-            log(`⚠️ Partially scraped internal_id ${internal_id}: ${competitionHistory.length} competitions, ${successfulLookups.length}/${competitionHistory.length} successful reverse lookups`);
+            log(`Partially scraped internal_id ${internal_id}: ${competitionHistory.length} competitions, ${successfulLookups.length}/${competitionHistory.length} successful reverse lookups`);
         }
         
         return scrapedProfile;
         
     } catch (error) {
-        log(`❌ Error scraping internal_id ${internal_id}: ${error.message}`);
+        log(`Error scraping internal_id ${internal_id}: ${error.message}`);
         
         if (retryCount < MAX_RETRIES) {
-            log(`🔄 Retrying internal_id ${internal_id} (attempt ${retryCount + 1}/${MAX_RETRIES})`);
+            log(`Retrying internal_id ${internal_id} (attempt ${retryCount + 1}/${MAX_RETRIES})`);
             await new Promise(resolve => setTimeout(resolve, REQUEST_DELAY * 2));
-            return scrapeAthleteProfile(task, retryCount + 1);
+            return scrapeAthleteProfile(task, retryCount + 1, retryInfo);
         }
         
         // Return failed result
@@ -639,9 +666,111 @@ async function scrapeAthleteProfile(task, retryCount = 0) {
     }
 }
 
+async function extractCompetitionTable(page, internal_id) {
+    try {
+        const url = `https://usaweightlifting.sport80.com/public/rankings/member/${internal_id}`;
+        await page.goto(url, { waitUntil: 'networkidle0', timeout: 30000 });
+        
+        // Extract competition table data directly from the profile page
+        const competitions = await page.evaluate(() => {
+            // Implementation to parse the table data from the athlete profile
+            // This needs to be implemented based on the actual table structure
+            const rows = document.querySelectorAll('table tbody tr');
+            return Array.from(rows).map(row => {
+                const cells = row.querySelectorAll('td');
+                return {
+                    meet_name: cells[0]?.textContent?.trim(),
+                    date: cells[1]?.textContent?.trim(),
+                    // ... extract other columns based on the table structure
+                };
+            });
+        });
+        
+        return competitions;
+    } catch (error) {
+        log(`    Failed to extract table data: ${error.message}`);
+        return [];
+    }
+}
+
+// Save individual athlete file immediately
+function saveIndividualAthleteFile(athleteName, athleteResults, processingStartTime) {
+    // Determine if all scrapes for this athlete were successful
+    const allSuccessful = athleteResults.every(result => result.scraping_successful);
+    
+    // Create safe filename
+    const safeFileName = athleteName.replace(/[^a-z0-9]/gi, '_').toLowerCase();
+    const fileName = `${safeFileName}_${athleteResults.length}_athletes.json`;
+    
+    // Choose directory based on success
+    const targetDir = allSuccessful ? SUCCESSFUL_SCRAPES_DIR : FAILED_SCRAPES_DIR;
+    const filePath = path.join(targetDir, fileName);
+    
+    // Create individual athlete file
+    const athleteOutput = {
+        metadata: {
+            timestamp: new Date().toISOString(),
+            script_name: 'comprehensive-data-scraper',
+            script_version: SCRIPT_VERSION,
+            athlete_name: athleteName,
+            internal_ids_processed: athleteResults.length,
+            successful_scrapes: athleteResults.filter(r => r.scraping_successful).length,
+            failed_scrapes: athleteResults.filter(r => !r.scraping_successful).length,
+            total_competitions_found: athleteResults.reduce((sum, r) => sum + (r.competition_history?.length || 0), 0),
+            total_reverse_lookups: athleteResults.reduce((sum, r) => sum + (r.biographical_data_by_competition?.length || 0), 0),
+            all_scrapes_successful: allSuccessful,
+            partial_processing_time_ms: Date.now() - processingStartTime
+        },
+        data: athleteResults
+    };
+    
+    fs.writeFileSync(filePath, JSON.stringify(athleteOutput, null, 2));
+    
+    const status = allSuccessful ? 'SUCCESS' : 'PARTIAL';
+    log(`${status} Individual file saved: ${filePath}`);
+    
+    return { filePath, allSuccessful };
+}
+
+// Skip athletes that have already been successfully processed
+function shouldRetryFailedInternalIds(athleteName, currentTasks) {
+    // Check both successful_scrapes and failed_scrapes directories
+    const dirs = [SUCCESSFUL_SCRAPES_DIR, FAILED_SCRAPES_DIR];
+    
+    for (const dir of dirs) {
+        if (!fs.existsSync(dir)) continue;
+        
+        const safeFileName = athleteName.replace(/[^a-z0-9]/gi, '_').toLowerCase();
+        const files = fs.readdirSync(dir).filter(f => f.startsWith(safeFileName));
+        
+        if (files.length > 0) {
+            const filePath = path.join(dir, files[0]);
+            const existingData = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+            
+            // Extract failed internal_ids that need retry
+            const failedInternalIds = existingData.data
+                .filter(result => !result.scraping_successful)
+                .map(result => result.internal_id);
+            
+            // Extract successful internal_ids to preserve
+            const successfulResults = existingData.data
+                .filter(result => result.scraping_successful);
+            
+            return {
+                hasExistingFile: true,
+                filePath: filePath,
+                failedInternalIds: failedInternalIds,
+                successfulResults: successfulResults,
+                needsRetry: failedInternalIds.length > 0
+            };
+        }
+    }
+    
+    return { hasExistingFile: false, needsRetry: true };
+}
 // Process all scraping tasks with immediate file saving
 async function processScrapingTasks(tasks) {
-    log(`📊 Starting to process ${tasks.length} scraping tasks`);
+    log(`Starting to process ${tasks.length} scraping tasks`);
     
     const results = [];
     const savedFiles = [];
@@ -657,35 +786,47 @@ async function processScrapingTasks(tasks) {
         athleteGroups[athleteName].push(task);
     });
     
-    log(`👥 Processing ${Object.keys(athleteGroups).length} distinct athlete names`);
+    log(`Processing ${Object.keys(athleteGroups).length} distinct athlete names`);
     
     // Process each athlete group completely before moving to next
     let athleteIndex = 0;
     for (const [athleteName, athleteTasks] of Object.entries(athleteGroups)) {
         athleteIndex++;
-        log(`\n🎯 Processing athlete ${athleteIndex}/${Object.keys(athleteGroups).length}: "${athleteName}" (${athleteTasks.length} internal_ids)`);
-        
-        const athleteResults = [];
+        log(`\nProcessing athlete ${athleteIndex}/${Object.keys(athleteGroups).length}: "${athleteName}" (${athleteTasks.length} internal_ids)`);
+		
+		const retryInfo = shouldRetryFailedInternalIds(athleteName, athleteTasks);
+		if (!retryInfo.needsRetry) {
+			log(`⏭️  Skipping ${athleteName} - already successfully processed ${athleteTasks.length} athletes`);
+			continue;
+		}
+
+		// Start with any existing successful results
+		const athleteResults = retryInfo.hasExistingFile ? [...retryInfo.successfulResults] : [];
+
+		// Filter tasks to only retry failed internal_ids
+		const tasksToProcess = retryInfo.hasExistingFile 
+			? athleteTasks.filter(task => retryInfo.failedInternalIds.includes(task.internal_id))
+			: athleteTasks;
         
         // Process all internal_ids for this athlete
-        for (let i = 0; i < athleteTasks.length; i++) {
-            const task = athleteTasks[i];
+		for (let i = 0; i < tasksToProcess.length; i++) {
+			const task = tasksToProcess[i];
             
-            log(`📋 Progress: ${i + 1}/${athleteTasks.length} - Processing internal_id ${task.internal_id} for ${athleteName}`);
+            log(`Progress: ${i + 1}/${athleteTasks.length} - Processing internal_id ${task.internal_id} for ${athleteName}`);
             
             try {
-                const result = await scrapeAthleteProfile(task);
+                const result = await scrapeAthleteProfile(task, 0, retryInfo);
                 athleteResults.push(result);
                 results.push(result);
                 
                 // Rate limiting between requests
                 if (i < athleteTasks.length - 1) {
-                    log(`⏳ Waiting ${REQUEST_DELAY}ms before next request...`);
+                    log(`Waiting ${REQUEST_DELAY}ms before next request...`);
                     await new Promise(resolve => setTimeout(resolve, REQUEST_DELAY));
                 }
                 
             } catch (error) {
-                log(`❌ Failed to process internal_id ${task.internal_id}: ${error.message}`);
+                log(`Failed to process internal_id ${task.internal_id}: ${error.message}`);
                 
                 // Add failed result
                 const failedResult = {
@@ -708,28 +849,28 @@ async function processScrapingTasks(tasks) {
         }
         
         // IMMEDIATELY save this athlete's file after completing all their internal_ids
-        log(`💾 Saving completed athlete file for: ${athleteName}`);
+        log(`Saving completed athlete file for: ${athleteName}`);
         const { filePath, allSuccessful } = saveIndividualAthleteFile(athleteName, athleteResults, processingStartTime);
         savedFiles.push({ athleteName, filePath, allSuccessful, resultCount: athleteResults.length });
         
-        log(`✅ Completed athlete "${athleteName}": ${athleteResults.filter(r => r.scraping_successful).length}/${athleteResults.length} successful scrapes`);
+        log(`Completed athlete "${athleteName}": ${athleteResults.filter(r => r.scraping_successful).length}/${athleteResults.length} successful scrapes`);
         
         // Brief pause between athletes
         if (athleteIndex < Object.keys(athleteGroups).length) {
-            log(`⏳ Brief pause before next athlete...`);
+            log(`Brief pause before next athlete...`);
             await new Promise(resolve => setTimeout(resolve, 1000));
         }
     }
     
     // Log summary of saved files
-    log(`\n📁 Individual files saved during processing:`);
+    log(`\nIndividual files saved during processing:`);
     const successfulFiles = savedFiles.filter(f => f.allSuccessful);
     const partialFiles = savedFiles.filter(f => !f.allSuccessful);
     
-    log(`   ✅ ${successfulFiles.length} successful athlete files → ${SUCCESSFUL_SCRAPES_DIR}/`);
+    log(`   ${successfulFiles.length} successful athlete files -> ${SUCCESSFUL_SCRAPES_DIR}/`);
     successfulFiles.forEach(f => log(`      ${f.athleteName} (${f.resultCount} athletes)`));
     
-    log(`   ⚠️  ${partialFiles.length} partial/failed athlete files → ${FAILED_SCRAPES_DIR}/`);
+    log(`   ${partialFiles.length} partial/failed athlete files -> ${FAILED_SCRAPES_DIR}/`);
     partialFiles.forEach(f => log(`      ${f.athleteName} (${f.resultCount} athletes)`));
     
     return results;
@@ -769,48 +910,9 @@ function generateStatistics(results) {
     return stats;
 }
 
-// Save individual athlete file immediately
-function saveIndividualAthleteFile(athleteName, athleteResults, processingStartTime) {
-    // Determine if all scrapes for this athlete were successful
-    const allSuccessful = athleteResults.every(result => result.scraping_successful);
-    
-    // Create safe filename
-    const safeFileName = athleteName.replace(/[^a-z0-9]/gi, '_').toLowerCase();
-    const fileName = `${safeFileName}_${athleteResults.length}_athletes.json`;
-    
-    // Choose directory based on success
-    const targetDir = allSuccessful ? SUCCESSFUL_SCRAPES_DIR : FAILED_SCRAPES_DIR;
-    const filePath = path.join(targetDir, fileName);
-    
-    // Create individual athlete file
-    const athleteOutput = {
-        metadata: {
-            timestamp: new Date().toISOString(),
-            script_name: 'comprehensive-data-scraper',
-            script_version: SCRIPT_VERSION,
-            athlete_name: athleteName,
-            internal_ids_processed: athleteResults.length,
-            successful_scrapes: athleteResults.filter(r => r.scraping_successful).length,
-            failed_scrapes: athleteResults.filter(r => !r.scraping_successful).length,
-            total_competitions_found: athleteResults.reduce((sum, r) => sum + (r.competition_history?.length || 0), 0),
-            total_reverse_lookups: athleteResults.reduce((sum, r) => sum + (r.biographical_data_by_competition?.length || 0), 0),
-            all_scrapes_successful: allSuccessful,
-            partial_processing_time_ms: Date.now() - processingStartTime
-        },
-        data: athleteResults
-    };
-    
-    fs.writeFileSync(filePath, JSON.stringify(athleteOutput, null, 2));
-    
-    const status = allSuccessful ? '✅ SUCCESS' : '⚠️ PARTIAL';
-    log(`${status} Individual file saved: ${filePath}`);
-    
-    return { filePath, allSuccessful };
-}
-
 // Save final master results file
 function saveMasterResults(results, stats, processingTimeMs) {
-    log('💾 Saving master results file...');
+    log('Saving master results file...');
     
     const masterOutput = {
         metadata: {
@@ -825,39 +927,16 @@ function saveMasterResults(results, stats, processingTimeMs) {
     };
     
     fs.writeFileSync(OUTPUT_FILE, JSON.stringify(masterOutput, null, 2));
-    log(`📋 Master file saved: ${OUTPUT_FILE}`);
+    log(`Master file saved: ${OUTPUT_FILE}`);
     
     return masterOutput;
-}
-// Save final master results file
-function saveMasterResults(results, stats, processingTimeMs) {
-    log('💾 Saving master results file...');
-    
-    // Also save master file for backwards compatibility
-    const masterOutput = {
-        metadata: {
-            timestamp: new Date().toISOString(),
-            script_name: 'comprehensive-data-scraper',
-            script_version: SCRIPT_VERSION,
-            internal_ids_processed: results.length,
-            processing_time_ms: processingTimeMs,
-            statistics: stats
-        },
-        data: results
-    };
-    
-    fs.writeFileSync(OUTPUT_FILE, JSON.stringify(masterOutput, null, 2));
-    log(`📋 Master file saved: ${OUTPUT_FILE}`);
-    
-    return masterOutput;
-}
 }
 
 // Cleanup browser
 async function cleanup() {
     if (browser) {
         await browser.close();
-        log('🧹 Browser closed');
+        log('Browser closed');
     }
 }
 
@@ -868,19 +947,19 @@ async function main() {
     try {
         // Setup
         ensureDirectories();
-        log('🚀 Starting comprehensive data scraping process');
+        log('Starting comprehensive data scraping process');
         
         // Parse command line options
         const options = parseArguments();
-        log(`📂 Input file: ${options.input}`);
-        if (options.athlete) log(`🎯 Target athlete: ${options.athlete}`);
-        if (options.internalId) log(`🎯 Target internal_id: ${options.internalId}`);
+        log(`Input file: ${options.input}`);
+        if (options.athlete) log(`Target athlete: ${options.athlete}`);
+        if (options.internalId) log(`Target internal_id: ${options.internalId}`);
         
         // Load input data
         const scrapingTasks = loadInputData(options.input, options);
         
         if (scrapingTasks.length === 0) {
-            log('ℹ️ No scraping tasks found');
+            log('No scraping tasks found');
             return;
         }
         
@@ -894,7 +973,7 @@ async function main() {
         const stats = generateStatistics(results);
         
         // Log summary
-        log('📊 Scraping Summary:');
+        log('Scraping Summary:');
         log(`   Total internal_ids processed: ${stats.total_internal_ids_processed}`);
         log(`   Successful scrapes: ${stats.successful_scrapes}`);
         log(`   Failed scrapes: ${stats.failed_scrapes}`);
@@ -905,14 +984,14 @@ async function main() {
         const processingTime = Date.now() - startTime;
         const output = saveMasterResults(results, stats, processingTime);
         
-        log(`✅ Process completed successfully in ${processingTime}ms`);
-        log(`📄 Next step: Run meet-results-collector.js`);
+        log(`Process completed successfully in ${processingTime}ms`);
+        log(`Next step: Run meet-results-collector.js`);
         
         return output;
         
     } catch (error) {
-        log(`❌ Process failed: ${error.message}`);
-        log(`🔍 Stack trace: ${error.stack}`);
+        log(`Process failed: ${error.message}`);
+        log(`Stack trace: ${error.stack}`);
         process.exit(1);
         
     } finally {
