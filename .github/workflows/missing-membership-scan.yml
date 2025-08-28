@@ -1,0 +1,146 @@
+name: Missing Membership Number Scan - Weekly Database Check
+
+on:
+  schedule:
+    # 4 AM EST Monday = 9 AM UTC Monday (Standard Time) / 8 AM UTC Monday (Daylight Time)
+    # Using 9 AM UTC to be safe during EST - runs weekly on Mondays
+    - cron: '0 9 * * 1'
+  workflow_dispatch:
+    inputs:
+      show_details:
+        description: 'Show detailed athlete information'
+        required: false
+        default: 'false'
+        type: boolean
+
+jobs:
+  missing-membership-scan:
+    runs-on: ubuntu-latest
+    
+    # Set timezone for the entire job
+    env:
+      TZ: America/New_York
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: |
+          echo "📦 Installing dependencies at: $(date +'%Y-%m-%d %H:%M:%S %Z')"
+          npm ci
+          
+      - name: Run Missing Membership Scan
+        run: |
+          echo "🔍 Starting missing membership number scan at: $(date +'%Y-%m-%d %H:%M:%S %Z')"
+          
+          # Set detailed output if requested
+          if [ "${{ github.event.inputs.show_details }}" = "true" ]; then
+            echo "📊 Running with detailed athlete information"
+            export SHOW_DETAILS=true
+          fi
+          
+          node missing-membership-scan.js
+          echo "✅ Missing membership scan completed at: $(date +'%Y-%m-%d %H:%M:%S %Z')"
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+          TZ: America/New_York
+
+      - name: Upload scan results for review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: missing-membership-scan-${{ github.run_number }}
+          path: |
+            output/missing_membership_scan_report.json
+            logs/missing-membership-scan.log
+          retention-days: 30
+
+      - name: Show scan summary
+        if: always()
+        run: |
+          echo "📊 MISSING MEMBERSHIP SCAN SUMMARY"
+          echo "=================================="
+          echo "Completed at: $(date +'%Y-%m-%d %H:%M:%S %Z')"
+          echo ""
+          
+          # Missing membership scan summary
+          if [ -f "output/missing_membership_scan_report.json" ]; then
+            node -e "
+              try {
+                const report = JSON.parse(require('fs').readFileSync('output/missing_membership_scan_report.json', 'utf8'));
+                const summary = report.summary;
+                console.log('🔍 Missing Membership Scan Results:');
+                console.log('   📊 Total lifters scanned:', summary.total_lifters || 0);
+                console.log('   ❌ Missing membership numbers:', summary.missing_membership_count || 0);
+                console.log('   ✅ Have membership numbers:', summary.has_membership_count || 0);
+                console.log('   📈 Missing percentage:', summary.missing_percentage || '0%');
+                
+                if (summary.missing_membership_count > 0) {
+                  console.log('');
+                  console.log('⚠️  Athletes missing membership numbers:');
+                  if (report.missing_membership_athletes) {
+                    const showLimit = 10;
+                    const athletes = report.missing_membership_athletes.slice(0, showLimit);
+                    athletes.forEach(athlete => {
+                      console.log('   • ' + athlete.athlete_name + ' (lifter_id: ' + athlete.lifter_id + ', internal_id: ' + athlete.internal_id + ')');
+                    });
+                    
+                    if (report.missing_membership_athletes.length > showLimit) {
+                      const remaining = report.missing_membership_athletes.length - showLimit;
+                      console.log('   ... and ' + remaining + ' more (see detailed report in artifacts)');
+                    }
+                  }
+                }
+              } catch (error) {
+                console.log('❌ Could not parse scan report:', error.message);
+              }
+            "
+          else
+            echo "🔍 Missing membership scan: No report found"
+          fi
+          
+          echo ""
+          echo "📁 Check the artifacts section above for detailed logs and reports"
+
+      - name: Notify on high missing count
+        if: always()
+        run: |
+          # Check if we have a high number of missing memberships (threshold: 50)
+          if [ -f "output/missing_membership_scan_report.json" ]; then
+            missing_count=$(node -e "
+              try {
+                const report = JSON.parse(require('fs').readFileSync('output/missing_membership_scan_report.json', 'utf8'));
+                console.log(report.summary.missing_membership_count || 0);
+              } catch (error) {
+                console.log(0);
+              }
+            ")
+            
+            if [ "$missing_count" -gt 50 ]; then
+              echo "⚠️  HIGH MISSING MEMBERSHIP COUNT DETECTED"
+              echo "=========================================="
+              echo "Missing count: $missing_count"
+              echo "This may indicate a problem with the contamination cleanup process"
+              echo "or missing membership data assignment."
+              echo ""
+              echo "Manual review recommended."
+            fi
+          fi
+
+      - name: Notify on failure
+        if: failure()
+        run: |
+          echo "❌ MISSING MEMBERSHIP SCAN FAILED"
+          echo "================================="
+          echo "Failed at: $(date +'%Y-%m-%d %H:%M:%S %Z')"
+          echo ""
+          echo "Please check the workflow logs and artifacts for error details."
+          echo "Manual intervention may be required."
