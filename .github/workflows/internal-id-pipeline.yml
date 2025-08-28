@@ -2,9 +2,9 @@ name: Internal ID Pipeline - Scrape and Upload
 
 on:
   schedule:
-    # 4 AM EST = 9 AM UTC (Standard Time) / 7 AM UTC (Daylight Time)
-    # Using 9 AM UTC to be safe during EST
-    - cron: '0 9 * * *'
+    # 4 AM EST Saturday = 9 AM UTC Saturday (Standard Time) / 8 AM UTC Saturday (Daylight Time)  
+    # Using 9 AM UTC to be safe during EST - runs weekly on Saturdays
+    - cron: '0 9 * * 6'
   workflow_dispatch:
     inputs:
       skip_scraper:
