@@ -16,6 +16,17 @@ yarn-error.log*
 
 # Output files and scraped data
 /output
+!output/contaminated_athletes.json
+!output/match_assignments.json
+!output/orphan_results.json
+!output/scraped_athlete_profiles.json
+!output/reconstruction_report.json
+!logs/contamination-cleanup-master.log
+!logs/contamination-identifier.log
+!logs/comprehensive-data-scraper.log
+!logs/meet-results-collector.log
+!logs/membership-matcher.log
+!logs/database-reconstructor.log
 Division Scrapers/
 meets_*.csv
 completed_divisions.csv
