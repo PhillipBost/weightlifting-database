@@ -261,7 +261,7 @@ async function createNewLifterRecord(lifterData, scrapedProfiles) {
     const newLifterData = {
         athlete_name: lifterData.athlete_name,
         internal_id: lifterData.internal_id,
-        membership_number: parseInt(lifterData.membership_number),
+        membership_number: null, // Don't copy contaminated membership numbers - leave null for manual assignment
         birth_year: lifterData.birth_year
     };
     
