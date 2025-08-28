@@ -357,7 +357,7 @@ async function scrapeBiographicalData(url, targetAthleteName) {
 }
 
 // Scrape individual athlete profile with reverse lookup - FIXED VERSION
-async function scrapeAthleteProfile(task, retryCount = 0) {
+async function scrapeAthleteProfile(task, retryCount = 0, retryInfo = null) {
     const { internal_id, usaw_url, athlete_name } = task;
     
     log(`Scraping internal_id ${internal_id} (${athlete_name})`);
@@ -479,8 +479,11 @@ async function scrapeAthleteProfile(task, retryCount = 0) {
         
         // STEP 2: Use reverse lookup to get biographical data from each competition
         const biographicalDataByCompetition = [];
-        
-        for (const competition of competitionHistory) {
+		let reverseLookupsAttempted = 0;
+		let successfulReverseLookups = 0;
+
+		for (const competition of competitionHistory) {
+			reverseLookupsAttempted++;
             let reverseUrl = null;
             let bioData = [];
             let lookupError = null;
@@ -496,12 +499,22 @@ async function scrapeAthleteProfile(task, retryCount = 0) {
                 
                 // Scrape biographical data from that competition
                 bioData = await scrapeBiographicalData(reverseUrl, athlete_name);
+				
+				if (bioData.length > 0) {
+                    successfulReverseLookups++;
+                }
                 
             } catch (error) {
                 log(`    Reverse lookup failed for ${competition.date}: ${error.message}`);
                 lookupError = error.message;
             }
             
+			if (reverseLookupsAttempted >= 2 && successfulReverseLookups === 0) {
+				log(`    Switching to fallback: extracting table data directly`);
+				const tableData = await extractCompetitionTable(page, internal_id);
+				// Skip remaining reverse lookups, use table data instead
+			}
+			
             // ALWAYS save the lookup attempt - successful or failed
             const lookupEntry = {
                 competition: competition,
@@ -581,16 +594,30 @@ async function scrapeAthleteProfile(task, retryCount = 0) {
             log(`    Scraping unsuccessful for internal_id ${internal_id}`);
             log(`    Competitions found: ${competitionHistory.length}, Successful reverse lookups: ${successfulLookups.length}/${competitionHistory.length}`);
             
-            if (failedLookups.length > 0) {
-                log(`    Failed lookups:`);
-                failedLookups.forEach(failed => {
-                    log(`      • ${failed.competition.date} - ${failed.competition.division}: ${failed.error || 'No matches found'}`);
-                    if (failed.reverse_lookup_url) {
-                        log(`        URL: ${failed.reverse_lookup_url}`);
-                    }
-                });
+            // Check historical failures from existing file data
+			let historicalFailures = 0;
+			if (retryInfo && retryInfo.hasExistingFile) {
+				// Count previous failures from the existing file
+				historicalFailures = retryInfo.failedInternalIds ? retryInfo.failedInternalIds.length : 0;
+			}
+
+			// Combine current run failures with historical failures
+			const totalFailureAttempts = failedLookups.length + historicalFailures;
+
+			// FALLBACK: If we have 2+ total failed attempts and no successful ones in current run, try table extraction
+			if (failedLookups.length >= 1 && successfulLookups.length === 0) {
+				log(`    Attempting fallback: ${totalFailureAttempts} total failed attempts across runs`);
+                log(`    Attempting fallback: extracting table data directly`);
+                const tableData = await extractCompetitionTable(page, internal_id);
+                if (tableData.length > 0) {
+                    log(`    Fallback successful: extracted ${tableData.length} competitions from table`);
+                    // Use table data instead
+                    competitionHistory = tableData;
+                    actuallySuccessful = true;
+                    scrapedProfile.fallback_data = true;
+                }
             }
-        }
+		}
         
         const scrapedProfile = {
             internal_id,
@@ -619,7 +646,7 @@ async function scrapeAthleteProfile(task, retryCount = 0) {
         if (retryCount < MAX_RETRIES) {
             log(`Retrying internal_id ${internal_id} (attempt ${retryCount + 1}/${MAX_RETRIES})`);
             await new Promise(resolve => setTimeout(resolve, REQUEST_DELAY * 2));
-            return scrapeAthleteProfile(task, retryCount + 1);
+            return scrapeAthleteProfile(task, retryCount + 1, retryInfo);
         }
         
         // Return failed result
@@ -636,6 +663,33 @@ async function scrapeAthleteProfile(task, retryCount = 0) {
             scraping_successful: false,
             error: error.message
         };
+    }
+}
+
+async function extractCompetitionTable(page, internal_id) {
+    try {
+        const url = `https://usaweightlifting.sport80.com/public/rankings/member/${internal_id}`;
+        await page.goto(url, { waitUntil: 'networkidle0', timeout: 30000 });
+        
+        // Extract competition table data directly from the profile page
+        const competitions = await page.evaluate(() => {
+            // Implementation to parse the table data from the athlete profile
+            // This needs to be implemented based on the actual table structure
+            const rows = document.querySelectorAll('table tbody tr');
+            return Array.from(rows).map(row => {
+                const cells = row.querySelectorAll('td');
+                return {
+                    meet_name: cells[0]?.textContent?.trim(),
+                    date: cells[1]?.textContent?.trim(),
+                    // ... extract other columns based on the table structure
+                };
+            });
+        });
+        
+        return competitions;
+    } catch (error) {
+        log(`    Failed to extract table data: ${error.message}`);
+        return [];
     }
 }
 
@@ -678,6 +732,76 @@ function saveIndividualAthleteFile(athleteName, athleteResults, processingStartT
     return { filePath, allSuccessful };
 }
 
+// Skip athletes that have already been successfully processed
+function shouldRetryFailedInternalIds(athleteName, currentTasks) {
+    // Check successful_scrapes, failed_scrapes, and processed_failed_scrapes directories
+    const PROCESSED_FAILED_SCRAPES_DIR = path.join(OUTPUT_DIR, 'processed_failed_scrapes');
+    const dirs = [SUCCESSFUL_SCRAPES_DIR, FAILED_SCRAPES_DIR, PROCESSED_FAILED_SCRAPES_DIR];
+    
+    // Get all internal_ids we're supposed to process for this athlete
+    const requestedInternalIds = new Set(currentTasks.map(task => task.internal_id));
+    const processedInternalIds = new Set();
+    const successfulResults = [];
+    let hasExistingFile = false;
+    let existingFilePath = null;
+    
+    // Check all directories for this athlete's files
+    for (const dir of dirs) {
+        if (!fs.existsSync(dir)) continue;
+        
+        const safeFileName = athleteName.replace(/[^a-z0-9]/gi, '_').toLowerCase();
+        const files = fs.readdirSync(dir).filter(f => f.startsWith(safeFileName));
+        
+        if (files.length > 0) {
+            const filePath = path.join(dir, files[0]);
+            
+            try {
+                const existingData = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+                
+                // Mark that we found an existing file
+                if (!hasExistingFile) {
+                    hasExistingFile = true;
+                    existingFilePath = filePath;
+                }
+                
+                // Track all internal_ids that have been processed in any directory
+                if (existingData.data && Array.isArray(existingData.data)) {
+                    existingData.data.forEach(result => {
+                        if (result.internal_id) {
+                            processedInternalIds.add(result.internal_id);
+                            
+                            // Keep successful results for preservation (only from writable directories)
+                            if (result.scraping_successful && (dir === SUCCESSFUL_SCRAPES_DIR || dir === FAILED_SCRAPES_DIR)) {
+                                successfulResults.push(result);
+                            }
+                        }
+                    });
+                }
+                
+                log(`Found existing file in ${path.basename(dir)}: ${files[0]} with ${existingData.data?.length || 0} internal_ids`);
+                
+            } catch (error) {
+                log(`Error reading existing file ${filePath}: ${error.message}`);
+            }
+        }
+    }
+    
+    // Determine which internal_ids still need processing
+    const internalIdsToRetry = Array.from(requestedInternalIds).filter(id => !processedInternalIds.has(id));
+    
+    log(`Internal ID analysis for ${athleteName}:`);
+    log(`  Requested: ${Array.from(requestedInternalIds).join(', ')}`);
+    log(`  Already processed: ${Array.from(processedInternalIds).join(', ')}`);
+    log(`  Need retry: ${internalIdsToRetry.join(', ')}`);
+    
+    return {
+        hasExistingFile: hasExistingFile,
+        filePath: existingFilePath,
+        failedInternalIds: internalIdsToRetry, // These are the ones that need processing
+        successfulResults: successfulResults,
+        needsRetry: internalIdsToRetry.length > 0
+    };
+}
 // Process all scraping tasks with immediate file saving
 async function processScrapingTasks(tasks) {
     log(`Starting to process ${tasks.length} scraping tasks`);
@@ -703,17 +827,29 @@ async function processScrapingTasks(tasks) {
     for (const [athleteName, athleteTasks] of Object.entries(athleteGroups)) {
         athleteIndex++;
         log(`\nProcessing athlete ${athleteIndex}/${Object.keys(athleteGroups).length}: "${athleteName}" (${athleteTasks.length} internal_ids)`);
-        
-        const athleteResults = [];
+		
+		const retryInfo = shouldRetryFailedInternalIds(athleteName, athleteTasks);
+		if (!retryInfo.needsRetry) {
+			log(`⏭️  Skipping ${athleteName} - already successfully processed ${athleteTasks.length} athletes`);
+			continue;
+		}
+
+		// Start with any existing successful results
+		const athleteResults = retryInfo.hasExistingFile ? [...retryInfo.successfulResults] : [];
+
+		// Filter tasks to only retry failed internal_ids
+		const tasksToProcess = retryInfo.hasExistingFile 
+			? athleteTasks.filter(task => retryInfo.failedInternalIds.includes(task.internal_id))
+			: athleteTasks;
         
         // Process all internal_ids for this athlete
-        for (let i = 0; i < athleteTasks.length; i++) {
-            const task = athleteTasks[i];
+		for (let i = 0; i < tasksToProcess.length; i++) {
+			const task = tasksToProcess[i];
             
             log(`Progress: ${i + 1}/${athleteTasks.length} - Processing internal_id ${task.internal_id} for ${athleteName}`);
             
             try {
-                const result = await scrapeAthleteProfile(task);
+                const result = await scrapeAthleteProfile(task, 0, retryInfo);
                 athleteResults.push(result);
                 results.push(result);
                 

@@ -175,10 +175,8 @@ function resultsMatch(dbResult, scrapedComp) {
 }
 
 // Find matching athlete for a database result
-// Find matching athlete for a database result
 function findMatchingAthlete(dbResult, athletesData) {
     const matches = [];
-    const seenAthletes = new Set(); // Track athletes we've already matched
     
     for (const athlete of athletesData) {
         // Only check athletes with the same name
@@ -186,14 +184,7 @@ function findMatchingAthlete(dbResult, athletesData) {
             continue;
         }
         
-        // Skip if we've already found a match for this specific athlete
-        const athleteKey = `${athlete.internal_id}_${athlete.membership_number}`;
-        if (seenAthletes.has(athleteKey)) {
-            continue;
-        }
-        
         // Check each competition in the athlete's history
-        let foundMatch = false;
         for (const competition of athlete.competition_history) {
             if (resultsMatch(dbResult, competition)) {
                 matches.push({
@@ -201,9 +192,6 @@ function findMatchingAthlete(dbResult, athletesData) {
                     competition: competition,
                     confidence: 'HIGH' // Exact match on date, meet, and results
                 });
-                seenAthletes.add(athleteKey);
-                foundMatch = true;
-                break; // Stop after first match for this athlete
             }
         }
     }

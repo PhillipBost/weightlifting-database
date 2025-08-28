@@ -24,6 +24,9 @@ const supabase = createClient(
 // Configuration
 const OUTPUT_DIR = './output';
 const LOGS_DIR = './logs';
+const SUCCESSFUL_SCRAPES_DIR = path.join(OUTPUT_DIR, 'successful_scrapes');
+const FAILED_SCRAPES_DIR = path.join(OUTPUT_DIR, 'failed_scrapes');
+const PROCESSED_FAILED_SCRAPES_DIR = path.join(OUTPUT_DIR, 'processed_failed_scrapes');
 const OUTPUT_FILE = path.join(OUTPUT_DIR, 'contaminated_athletes.json');
 const LOG_FILE = path.join(LOGS_DIR, 'contamination-identifier.log');
 const SCRIPT_VERSION = '1.0.0';
@@ -90,13 +93,53 @@ async function testConnection() {
     log('✅ Database connection successful');
 }
 
+// Get list of already processed athlete names to skip
+function getProcessedAthleteNames() {
+    const processedNames = new Set();
+    const checkDirectories = [SUCCESSFUL_SCRAPES_DIR, FAILED_SCRAPES_DIR, PROCESSED_FAILED_SCRAPES_DIR];
+    
+    log('Checking for already processed athletes to skip...');
+    
+    checkDirectories.forEach(dir => {
+        if (!fs.existsSync(dir)) return;
+        
+        try {
+            const files = fs.readdirSync(dir).filter(f => f.endsWith('.json'));
+            
+            files.forEach(fileName => {
+                try {
+                    const filePath = path.join(dir, fileName);
+                    const fileData = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+                    
+                    if (fileData.metadata && fileData.metadata.athlete_name) {
+                        processedNames.add(fileData.metadata.athlete_name);
+                    }
+                } catch (error) {
+                    log(`⚠️  Could not read processed file ${fileName}: ${error.message}`);
+                }
+            });
+            
+            log(`  Found ${files.length} processed files in ${path.basename(dir)}/`);
+        } catch (error) {
+            log(`⚠️  Could not read directory ${dir}: ${error.message}`);
+        }
+    });
+    
+    log(`📋 Found ${processedNames.size} athletes to skip (already processed)`);
+    return processedNames;
+}
+
 // Find contaminated athletes
 async function findContaminatedAthletes(options) {
     log('Querying for contaminated athletes...');
     
+    // Get list of processed athletes to skip
+    const processedNames = getProcessedAthleteNames();
+    
     let allAthletes = [];
     let from = 0;
     const pageSize = 1000;
+    let totalSkipped = 0;
     
     while (true) {
         log(`Fetching contaminated athletes ${from + 1} to ${from + pageSize}...`);
@@ -119,8 +162,19 @@ async function findContaminatedAthletes(options) {
             throw new Error(`Database query failed: ${error.message}`);
         }
         
-        allAthletes.push(...athletes);
-        log(`  Retrieved ${athletes.length} contaminated athletes (Total: ${allAthletes.length})`);
+        // Filter out already processed athletes (unless specific athlete requested)
+        const filteredAthletes = options.athlete ? athletes : athletes.filter(athlete => {
+            if (processedNames.has(athlete.athlete_name)) {
+                totalSkipped++;
+                return false;
+            }
+            return true;
+        });
+        
+        allAthletes.push(...filteredAthletes);
+        
+        const skippedThisBatch = athletes.length - filteredAthletes.length;
+        log(`  Retrieved ${athletes.length} contaminated athletes, skipped ${skippedThisBatch} already processed (Total: ${allAthletes.length}, Total skipped: ${totalSkipped})`);
         
         // Break if we got fewer than pageSize records (no more pages)
         if (athletes.length < pageSize) break;
@@ -135,7 +189,8 @@ async function findContaminatedAthletes(options) {
         from += pageSize;
     }
     
-    log(`✅ Found ${allAthletes.length} contaminated athlete records total`);
+    log(`✅ Found ${allAthletes.length} contaminated athlete records to process`);
+    log(`📋 Skipped ${totalSkipped} athletes (already processed)`);
     
     return allAthletes;
 }

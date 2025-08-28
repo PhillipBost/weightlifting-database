@@ -78,6 +78,17 @@ jobs:
           SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
           TZ: America/New_York
 
+      - name: Run Contamination Cleanup Pipeline
+        run: |
+          echo "🧹 Starting Contamination Cleanup Pipeline at: $(date +'%Y-%m-%d %H:%M:%S %Z')"
+          node contamination-cleanup-master.js
+          echo "✅ Contamination Cleanup Pipeline completed at: $(date +'%Y-%m-%d %H:%M:%S %Z')"
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+          TZ: America/New_York
+        continue-on-error: false
+
       - name: Upload artifacts for review
         if: always()
         uses: actions/upload-artifact@v4
@@ -86,6 +97,8 @@ jobs:
           path: |
             internal_ids.json
             internal_id_upload_errors.csv
+            output/
+            logs/
           retention-days: 7
 
       - name: Show completion summary
@@ -116,8 +129,21 @@ jobs:
             fi
           fi
           
+          # Contamination cleanup summary
+          if [ -f "output/reconstruction_report.json" ]; then
+            node -e "
+              const report = JSON.parse(require('fs').readFileSync('output/reconstruction_report.json', 'utf8'));
+              console.log('🧹 Contamination Cleanup Results:');
+              console.log('   📊 New lifters created:', report.execution_results.new_lifters_created.length);
+              console.log('   🔄 Meet results updated:', report.execution_results.meet_results_updated.length);
+              console.log('   ❌ Errors:', report.execution_results.errors.length);
+            "
+          else
+            echo "🧹 Contamination cleanup: No reconstruction report found"
+          fi
+          
           echo ""
-          echo "📁 Check the artifacts section above for detailed logs"
+          echo "📁 Check the artifacts section above for detailed logs and output files"
 
       - name: Notify on failure
         if: failure()
