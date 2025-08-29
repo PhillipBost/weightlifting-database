@@ -319,6 +319,49 @@ async function updateMeetResult(resultId, newLifterId) {
     }
 }
 
+// Clean up original lifter record by removing extra internal_ids that were split off
+async function cleanupOriginalLifterRecord(originalLifterId, internalIdsToRemove) {
+    // Build the update object to clear specific internal_id fields
+    const updateData = {};
+    
+    // Clear the internal_id fields that correspond to the split-off internal_ids
+    for (const internalId of internalIdsToRemove) {
+        // Find which internal_id field contains this value and clear it
+        const { data: currentRecord, error: fetchError } = await supabase
+            .from('lifters')
+            .select('internal_id, internal_id_2, internal_id_3, internal_id_4, internal_id_5, internal_id_6, internal_id_7, internal_id_8')
+            .eq('lifter_id', originalLifterId)
+            .single();
+        
+        if (fetchError) {
+            throw new Error(`Failed to fetch current lifter record ${originalLifterId}: ${fetchError.message}`);
+        }
+        
+        // Clear the field that contains this internal_id
+        if (currentRecord.internal_id_2 === internalId) updateData.internal_id_2 = null;
+        if (currentRecord.internal_id_3 === internalId) updateData.internal_id_3 = null;
+        if (currentRecord.internal_id_4 === internalId) updateData.internal_id_4 = null;
+        if (currentRecord.internal_id_5 === internalId) updateData.internal_id_5 = null;
+        if (currentRecord.internal_id_6 === internalId) updateData.internal_id_6 = null;
+        if (currentRecord.internal_id_7 === internalId) updateData.internal_id_7 = null;
+        if (currentRecord.internal_id_8 === internalId) updateData.internal_id_8 = null;
+    }
+    
+    // Only update if we have fields to clear
+    if (Object.keys(updateData).length > 0) {
+        const { error } = await supabase
+            .from('lifters')
+            .update(updateData)
+            .eq('lifter_id', originalLifterId);
+        
+        if (error) {
+            throw new Error(`Failed to cleanup lifter record ${originalLifterId}: ${error.message}`);
+        }
+        
+        log(`   🧹 Cleared ${Object.keys(updateData).join(', ')} from lifter_id ${originalLifterId}`);
+    }
+}
+
 // Execute the cleanup plan
 async function executeCleanupPlan(plan) {
     const executionReport = {
@@ -425,6 +468,40 @@ async function executeCleanupPlan(plan) {
             
             if (CURRENT_MODE !== EXECUTION_MODE.DRY_RUN) {
                 log(`   ✅ Updated ${updateCount} meet results`);
+            }
+        }
+        
+        // Step 3: Clean up original lifter records by removing extra internal_ids
+        if (plan.new_lifters_to_create.length > 0) {
+            log('\n🧹 Cleaning up original lifter records...');
+            
+            // Group new lifters by their original (contaminated) lifter_id
+            const cleanupGroups = {};
+            for (const newLifter of plan.new_lifters_to_create) {
+                const originalId = newLifter.old_lifter_id;
+                if (!cleanupGroups[originalId]) {
+                    cleanupGroups[originalId] = [];
+                }
+                cleanupGroups[originalId].push(newLifter.internal_id);
+            }
+            
+            // Clean up each original lifter record
+            for (const [originalLifterId, internalIdsToRemove] of Object.entries(cleanupGroups)) {
+                try {
+                    if (CURRENT_MODE === EXECUTION_MODE.DRY_RUN) {
+                        log(`   [DRY RUN] Would cleanup lifter_id ${originalLifterId}: remove internal_ids ${internalIdsToRemove.join(', ')}`);
+                    } else {
+                        await cleanupOriginalLifterRecord(parseInt(originalLifterId), internalIdsToRemove);
+                        log(`   ✅ Cleaned up lifter_id ${originalLifterId}`);
+                    }
+                } catch (error) {
+                    log(`   ❌ Failed to cleanup lifter_id ${originalLifterId}: ${error.message}`);
+                    executionReport.errors.push({
+                        operation: 'CLEANUP_LIFTER',
+                        lifter_id: originalLifterId,
+                        error: error.message
+                    });
+                }
             }
         }
         
