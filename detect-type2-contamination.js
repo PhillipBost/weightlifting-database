@@ -316,6 +316,99 @@ function detectContaminationIndicators(analysis) {
     analysis.confidence_score = Math.min(score, 1.0);
 }
 
+// Find athletes with duplicate names (True Type 2 contamination)
+async function getDuplicateNameAthletes(options) {
+    log('Finding athletes with duplicate names (True Type 2 contamination)...');
+    
+    // Get all lifter_ids grouped by athlete name where there are multiple lifter_ids
+    // Use pagination to handle large datasets
+    let allLifters = [];
+    let start = 0;
+    const batchSize = 1000;
+    let hasMore = true;
+    
+    while (hasMore) {
+        let query = supabase
+            .from('lifters')
+            .select('lifter_id, athlete_name, membership_number, internal_id')
+            .not('athlete_name', 'is', null)
+            .not('internal_id', 'is', null)
+            .range(start, start + batchSize - 1)
+            .order('lifter_id', { ascending: true });
+        
+        // Filter by specific athlete name if provided
+        if (options.athlete) {
+            query = query.eq('athlete_name', options.athlete);
+            if (start === 0) log(`🎯 Filtering for specific athlete: ${options.athlete}`);
+        }
+        
+        const { data: lifterBatch, error } = await query;
+        
+        if (error) {
+            throw new Error(`Failed to fetch lifters: ${error.message}`);
+        }
+        
+        if (lifterBatch.length === 0) {
+            hasMore = false;
+        } else {
+            allLifters.push(...lifterBatch);
+            start += batchSize;
+            
+            if (start % 5000 === 0) {
+                log(`Retrieved ${allLifters.length} lifters so far...`);
+            }
+            
+            // If we got less than the batch size, we're done
+            if (lifterBatch.length < batchSize) {
+                hasMore = false;
+            }
+            
+            // If filtering by specific athlete and we found results, we're done
+            if (options.athlete && lifterBatch.length > 0) {
+                hasMore = false;
+            }
+        }
+    }
+    
+    log(`Retrieved ${allLifters.length} lifters from database`);
+    
+    // Group by athlete name
+    const nameGroups = {};
+    allLifters.forEach(lifter => {
+        if (!nameGroups[lifter.athlete_name]) {
+            nameGroups[lifter.athlete_name] = [];
+        }
+        nameGroups[lifter.athlete_name].push(lifter);
+    });
+    
+    // Find names with multiple lifter_ids (potential Type 2 contamination)
+    const duplicateNameAthletes = [];
+    
+    for (const [athleteName, lifters] of Object.entries(nameGroups)) {
+        if (lifters.length > 1) {
+            log(`Found ${lifters.length} lifter_ids for "${athleteName}"`);
+            
+            // Add all lifters with this duplicate name
+            for (const lifter of lifters) {
+                duplicateNameAthletes.push({
+                    ...lifter,
+                    duplicate_count: lifters.length,
+                    lifter_ids_with_same_name: lifters.map(l => l.lifter_id)
+                });
+            }
+        }
+    }
+    
+    // Apply limit if specified
+    if (options.limit && duplicateNameAthletes.length > options.limit) {
+        log(`🔢 Limiting results to first ${options.limit} athletes`);
+        return duplicateNameAthletes.slice(0, options.limit);
+    }
+    
+    log(`Found ${duplicateNameAthletes.length} lifter_ids with duplicate names`);
+    return duplicateNameAthletes;
+}
+
 // Main detection function  
 async function detectType2Contamination() {
     const startTime = Date.now();
@@ -323,7 +416,7 @@ async function detectType2Contamination() {
     try {
         ensureDirectories();
         log('🔍 Starting Type 2 contamination detection');
-        log('Finding lifter_ids with multiple internal_ids...');
+        log('Finding athletes with duplicate names (True Type 2 contamination)...');
         log('='.repeat(60));
         
         // Parse options
@@ -331,11 +424,11 @@ async function detectType2Contamination() {
         if (options.athlete) log(`🎯 Target athlete: ${options.athlete}`);
         if (options.limit) log(`📊 Limit: ${options.limit}`);
         
-        // Get contaminated lifter_ids (simple database query)
-        const contaminatedLifters = await getContaminatedLifters(options);
+        // Get athletes with duplicate names
+        const duplicateNameAthletes = await getDuplicateNameAthletes(options);
         
-        if (contaminatedLifters.length === 0) {
-            log('✅ No contaminated lifter_ids found');
+        if (duplicateNameAthletes.length === 0) {
+            log('✅ No duplicate name athletes found');
             
             const report = {
                 metadata: {
@@ -345,7 +438,8 @@ async function detectType2Contamination() {
                     processing_time_ms: Date.now() - startTime
                 },
                 summary: {
-                    contaminated_found: 0
+                    contaminated_found: 0,
+                    unique_athlete_names: 0
                 },
                 contaminated_athletes: []
             };
@@ -356,25 +450,28 @@ async function detectType2Contamination() {
             return report;
         }
         
-        // Convert to simple list for cleanup script
-        const contaminatedAthletes = contaminatedLifters.map(lifter => ({
+        // Group results by athlete name for summary
+        const nameGroups = {};
+        duplicateNameAthletes.forEach(lifter => {
+            if (!nameGroups[lifter.athlete_name]) {
+                nameGroups[lifter.athlete_name] = [];
+            }
+            nameGroups[lifter.athlete_name].push(lifter);
+        });
+        
+        // Convert to format expected by cleanup script
+        const contaminatedAthletes = duplicateNameAthletes.map(lifter => ({
             lifter_id: lifter.lifter_id,
             athlete_name: lifter.athlete_name,
             membership_number: lifter.membership_number,
             internal_id: lifter.internal_id,
-            all_internal_ids: [
-                lifter.internal_id,
-                lifter.internal_id_2,
-                lifter.internal_id_3, 
-                lifter.internal_id_4,
-                lifter.internal_id_5,
-                lifter.internal_id_6,
-                lifter.internal_id_7,
-                lifter.internal_id_8
-            ].filter(Boolean)
+            duplicate_count: lifter.duplicate_count,
+            lifter_ids_with_same_name: lifter.lifter_ids_with_same_name,
+            confidence_score: 1.0, // High confidence for duplicate names
+            contamination_indicators: [`Duplicate name: ${lifter.duplicate_count} lifter_ids with name "${lifter.athlete_name}"`]
         }));
         
-        // Generate simple report
+        // Generate report
         const report = {
             metadata: {
                 timestamp: new Date().toISOString(),
@@ -383,7 +480,8 @@ async function detectType2Contamination() {
                 processing_time_ms: Date.now() - startTime
             },
             summary: {
-                contaminated_found: contaminatedAthletes.length
+                contaminated_found: contaminatedAthletes.length,
+                unique_athlete_names: Object.keys(nameGroups).length
             },
             contaminated_athletes: contaminatedAthletes
         };
@@ -395,14 +493,19 @@ async function detectType2Contamination() {
         // Final summary
         log('\n' + '='.repeat(60));
         log('✅ TYPE 2 CONTAMINATION DETECTION COMPLETE');
-        log(`   Contaminated lifter_ids found: ${contaminatedAthletes.length}`);
+        log(`   Duplicate name athletes found: ${contaminatedAthletes.length}`);
+        log(`   Unique athlete names with duplicates: ${Object.keys(nameGroups).length}`);
         log(`   Processing time: ${Date.now() - startTime}ms`);
         
-        if (contaminatedAthletes.length > 0) {
-            log('\n⚠️ CONTAMINATED LIFTER_IDS FOUND:');
-            contaminatedAthletes.forEach(athlete => {
-                log(`   • ${athlete.athlete_name} (lifter_id: ${athlete.lifter_id}) - ${athlete.all_internal_ids.length} internal_ids`);
+        if (Object.keys(nameGroups).length > 0) {
+            log('\n⚠️ ATHLETE NAMES WITH MULTIPLE LIFTER_IDS:');
+            Object.entries(nameGroups).slice(0, 10).forEach(([name, lifters]) => {
+                log(`   • ${name}: ${lifters.length} lifter_ids (${lifters.map(l => l.lifter_id).join(', ')})`);
             });
+            
+            if (Object.keys(nameGroups).length > 10) {
+                log(`   ... and ${Object.keys(nameGroups).length - 10} more (see full report)`);
+            }
         }
         
         return report;
