@@ -1,0 +1,227 @@
+name: Missing WSO Scan - Daily Meet Results Enhancement
+
+on:
+  schedule:
+    # 2 AM EST daily = 7 AM UTC daily (Standard Time) / 6 AM UTC daily (Daylight Time)
+    # Using 7 AM UTC to be safe during EST - runs daily
+    - cron: '0 7 * * *'
+  workflow_dispatch:
+    inputs:
+      show_details:
+        description: 'Show detailed meet results information'
+        required: false
+        default: 'false'
+        type: boolean
+      find_wso_data:
+        description: 'Attempt to find and assign WSO data using reverse URL lookup'
+        required: false
+        default: 'true'
+        type: boolean
+
+jobs:
+  missing-wso-scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360  # 6 hours timeout
+    
+    # Set timezone for the entire job
+    env:
+      TZ: America/New_York
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: |
+          echo "📦 Installing dependencies at: $(date +'%Y-%m-%d %H:%M:%S %Z')"
+          npm ci
+          
+      - name: Setup Chrome for Puppeteer
+        run: |
+          echo "🌐 Setting up Chrome for web scraping at: $(date +'%Y-%m-%d %H:%M:%S %Z')"
+          # Install Chrome dependencies
+          sudo apt-get update
+          sudo apt-get install -y \
+            fonts-liberation \
+            libasound2t64 \
+            libatk-bridge2.0-0 \
+            libatk1.0-0 \
+            libatspi2.0-0 \
+            libcups2 \
+            libdbus-1-3 \
+            libdrm2 \
+            libgtk-3-0 \
+            libnspr4 \
+            libnss3 \
+            libwayland-client0 \
+            libxcomposite1 \
+            libxdamage1 \
+            libxfixes3 \
+            libxkbcommon0 \
+            libxrandr2 \
+            xdg-utils
+          
+      - name: Run Missing WSO Scan
+        run: |
+          echo "🔍 Starting missing WSO data scan at: $(date +'%Y-%m-%d %H:%M:%S %Z')"
+          
+          # Set detailed output if requested
+          if [ "${{ github.event.inputs.show_details }}" = "true" ]; then
+            echo "📊 Running with detailed meet results information"
+            export SHOW_DETAILS=true
+          fi
+          
+          # Set WSO lookup if requested (default: true for scheduled runs)
+          if [ "${{ github.event.inputs.find_wso_data }}" = "true" ] || [ "${{ github.event_name }}" = "schedule" ]; then
+            echo "🔍 Running with WSO data lookup enabled"
+            export FIND_DATA=true
+          fi
+          
+          # Add show-details flag for scheduled runs to get comprehensive output
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            node missing-wso-scan.js --find-data --show-details
+          else
+            # Manual runs use the input parameters
+            if [ "${{ github.event.inputs.find_wso_data }}" = "true" ] && [ "${{ github.event.inputs.show_details }}" = "true" ]; then
+              node missing-wso-scan.js --find-data --show-details
+            elif [ "${{ github.event.inputs.find_wso_data }}" = "true" ]; then
+              node missing-wso-scan.js --find-data
+            elif [ "${{ github.event.inputs.show_details }}" = "true" ]; then
+              node missing-wso-scan.js --show-details
+            else
+              node missing-wso-scan.js
+            fi
+          fi
+          
+          echo "✅ Missing WSO scan completed at: $(date +'%Y-%m-%d %H:%M:%S %Z')"
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+          TZ: America/New_York
+
+      - name: Upload scan results for review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: missing-wso-scan-${{ github.run_number }}
+          path: |
+            output/missing_wso_scan_report.json
+            logs/missing-wso-scan.log
+          retention-days: 30
+
+      - name: Show scan summary
+        if: always()
+        run: |
+          echo "📊 MISSING WSO SCAN SUMMARY"
+          echo "============================"
+          echo "Completed at: $(date +'%Y-%m-%d %H:%M:%S %Z')"
+          echo ""
+          
+          # Missing WSO scan summary
+          if [ -f "output/missing_wso_scan_report.json" ]; then
+            node -e "
+              try {
+                const report = JSON.parse(require('fs').readFileSync('output/missing_wso_scan_report.json', 'utf8'));
+                const summary = report.summary;
+                console.log('🔍 Missing WSO Scan Results:');
+                console.log('   📊 Total meet results scanned:', summary.total_meet_results || 0);
+                console.log('   ❌ Missing WSO data:', summary.missing_wso_count || 0);
+                console.log('   📈 Missing percentage:', summary.missing_percentage || '0%');
+                console.log('   🔍 WSO lookups attempted:', summary.lookups_processed || 0);
+                console.log('   ✅ WSO data found:', summary.wso_data_found || 0);
+                
+                if (summary.missing_wso_count > 0) {
+                  console.log('');
+                  console.log('⚠️  Sample meet results missing WSO:');
+                  if (report.missing_wso_results) {
+                    const showLimit = 10;
+                    const results = report.missing_wso_results.slice(0, showLimit);
+                    results.forEach(result => {
+                      console.log('   • ' + result.lifter_name + ' (result_id: ' + result.result_id + ') - ' + 
+                                 (result.age_category || 'Unknown') + ' ' + (result.weight_class || 'Unknown') + 
+                                 ' on ' + (result.date || 'Unknown'));
+                    });
+                    
+                    if (report.missing_wso_results.length > showLimit) {
+                      const remaining = report.missing_wso_results.length - showLimit;
+                      console.log('   ... and ' + remaining + ' more (see detailed report in artifacts)');
+                    }
+                  }
+                }
+                
+                // Show top missing categories if available
+                if (report.patterns && report.patterns.by_age_category) {
+                  console.log('');
+                  console.log('📊 Top missing WSO by age category:');
+                  const topCategories = Object.entries(report.patterns.by_age_category)
+                    .sort(([,a], [,b]) => b - a)
+                    .slice(0, 5);
+                  topCategories.forEach(([category, count]) => {
+                    console.log('   • ' + category + ': ' + count);
+                  });
+                }
+              } catch (error) {
+                console.log('❌ Could not parse scan report:', error.message);
+              }
+            "
+          else
+            echo "🔍 Missing WSO scan: No report found"
+          fi
+          
+          echo ""
+          echo "📁 Check the artifacts section above for detailed logs and reports"
+
+      - name: Notify on high missing count
+        if: always()
+        run: |
+          # Check if we have a high number of missing WSO records (threshold: 1000)
+          if [ -f "output/missing_wso_scan_report.json" ]; then
+            missing_count=$(node -e "
+              try {
+                const report = JSON.parse(require('fs').readFileSync('output/missing_wso_scan_report.json', 'utf8'));
+                console.log(report.summary.missing_wso_count || 0);
+              } catch (error) {
+                console.log(0);
+              }
+            ")
+            
+            if [ "$missing_count" -gt 1000 ]; then
+              echo "⚠️  HIGH MISSING WSO COUNT DETECTED"
+              echo "=================================="
+              echo "Missing count: $missing_count"
+              echo "This may indicate a problem with the WSO data scraping process"
+              echo "or missing biographical data in recent meet results."
+              echo ""
+              echo "Consider running the script locally for faster processing."
+            fi
+          fi
+
+      - name: Show timeout warning if applicable
+        if: cancelled()
+        run: |
+          echo "⏰ WSO SCAN TIMED OUT AFTER 6 HOURS"
+          echo "==================================="
+          echo "The scan was cancelled due to timeout at: $(date +'%Y-%m-%d %H:%M:%S %Z')"
+          echo ""
+          echo "This is expected behavior for large datasets."
+          echo "Progress has been saved and the scan will continue from where it left off"
+          echo "in the next scheduled run."
+          echo ""
+          echo "For faster processing, consider running the script locally:"
+          echo "node missing-wso-scan.js --find-data"
+
+      - name: Notify on failure
+        if: failure()
+        run: |
+          echo "❌ MISSING WSO SCAN FAILED"
+          echo "=========================="
+          echo "Failed at: $(date +'%Y-%m-%d %H:%M:%S %Z')"
+          echo ""
+          echo "Please check the workflow logs and artifacts for error details."
+          echo "Manual intervention may be required."
