@@ -12,6 +12,17 @@ const supabase = createClient(
 // Import scraper function - adjust path as needed for GitHub
 const { scrapeOneMeet } = require('./scrapeOneMeet.js');
 
+// Extract meet internal_id from Sport80 URL
+function extractMeetInternalId(url) {
+    if (!url || typeof url !== 'string') {
+        return null;
+    }
+    
+    // Match pattern: https://usaweightlifting.sport80.com/public/rankings/results/7011
+    const match = url.match(/\/rankings\/results\/(\d+)/);
+    return match ? parseInt(match[1]) : null;
+}
+
 async function readCSVFile(filePath) {
     console.log(`📖 Reading CSV file: ${filePath}`);
     
@@ -44,7 +55,7 @@ async function getExistingMeetIds() {
     while (true) {
         const { data: meets, error } = await supabase
             .from('meets')
-            .select('meet_id')
+            .select('meet_id, meet_internal_id')
             .range(from, from + pageSize - 1);
         
         if (error) {
@@ -65,9 +76,13 @@ async function getExistingMeetIds() {
         }
     }
     
-    const existingIds = new Set(allMeets.map(m => m.meet_id));
-    console.log(`📊 Found ${existingIds.size} existing meets in database`);
-    return existingIds;
+    const existingMeetIds = new Set(allMeets.map(m => m.meet_id));
+    const existingInternalIds = new Set(allMeets.filter(m => m.meet_internal_id).map(m => m.meet_internal_id));
+    
+    console.log(`📊 Found ${existingMeetIds.size} existing meets in database`);
+    console.log(`📊 Found ${existingInternalIds.size} existing meet internal_ids`);
+    
+    return { meetIds: existingMeetIds, internalIds: existingInternalIds };
 }
 
 async function upsertMeetsToDatabase(meetings) {
@@ -87,6 +102,7 @@ async function upsertMeetsToDatabase(meetings) {
             // Transform CSV data to match database column names
             const dbRecords = batch.map(meet => ({
                 meet_id: meet.meet_id,
+                meet_internal_id: extractMeetInternalId(meet.URL),
                 Meet: meet.Meet,
                 Level: meet.Level,
                 Date: meet.Date,
@@ -255,12 +271,11 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
         return existing;
     }
     
-    // Create new lifter
+    // Create new lifter (gender and birth_year now go in meet_results, not lifters)
     const { data: newLifter, error: createError } = await supabase
         .from('lifters')
         .insert({
             athlete_name: cleanName,
-            gender: additionalData.gender || null,
             membership_number: additionalData.membership_number || null,
         })
         .select()
@@ -278,12 +293,14 @@ async function createMeetResult(resultData) {
     // Extract lifter data for calculations (don't insert these into DB)
     const { lifter_birth_year, lifter_gender, ...dbResultData } = resultData;
     
-    // Calculate competition age and qpoints
+    // Calculate competition age and qpoints, and include gender/birth_year in meet_results
     const enhancedResultData = {
         ...dbResultData,
         competition_age: resultData.date && lifter_birth_year ? 
             new Date(resultData.date).getFullYear() - lifter_birth_year : null,
-        qpoints: calculateQPoints(resultData.total, resultData.body_weight_kg, lifter_gender)
+        qpoints: calculateQPoints(resultData.total, resultData.body_weight_kg, lifter_gender),
+        gender: lifter_gender || null,
+        birth_year: lifter_birth_year || null
     };
     
     const { data, error } = await supabase
@@ -482,7 +499,7 @@ async function main() {
         
         // Get existing meets before import
         const beforeCount = await getExistingMeetCount();
-        const existingMeetIds = await getExistingMeetIds();
+        const existingMeetData = await getExistingMeetIds();
         
         // Determine which CSV file to import
         const currentYear = new Date().getFullYear();
@@ -496,12 +513,46 @@ async function main() {
             return;
         }
         
+        // Add meet_internal_id to meetings and filter duplicates
+        console.log('\n🔍 Processing meet internal IDs and checking for duplicates...');
+        let newMeetings = [];
+        let duplicatesByMeetId = 0;
+        let duplicatesByInternalId = 0;
+        
+        for (const meeting of meetings) {
+            const meetInternalId = extractMeetInternalId(meeting.URL);
+            
+            // Skip if already exists by meet_id
+            if (existingMeetData.meetIds.has(meeting.meet_id)) {
+                duplicatesByMeetId++;
+                continue;
+            }
+            
+            // Skip if already exists by meet_internal_id
+            if (meetInternalId && existingMeetData.internalIds.has(meetInternalId)) {
+                duplicatesByInternalId++;
+                continue;
+            }
+            
+            newMeetings.push(meeting);
+        }
+        
+        console.log(`📊 Duplicate detection results:`);
+        console.log(`   - Duplicates by meet_id: ${duplicatesByMeetId}`);
+        console.log(`   - Duplicates by meet_internal_id: ${duplicatesByInternalId}`);
+        console.log(`   - New meets to import: ${newMeetings.length}`);
+        
+        if (newMeetings.length === 0) {
+            console.log('✅ No new meets to import');
+            return;
+        }
+        
         // Import meets to database
         console.log('\n📥 Step 1: Importing meet metadata...');
-        const importResult = await upsertMeetsToDatabase(meetings);
+        const importResult = await upsertMeetsToDatabase(newMeetings);
         
-        // Find truly new meets (not just updated)
-        const newMeetIds = importResult.newMeetIds.filter(id => !existingMeetIds.has(id));
+        // All processed meetings are new since we filtered duplicates
+        const newMeetIds = importResult.newMeetIds;
         console.log(`📊 New meets detected: ${newMeetIds.length}`);
         
         // Import individual meet results for new meets only

@@ -82,7 +82,7 @@ jobs:
             export FIND_MEMBERSHIPS=true
           fi
           
-          node missing-membership-scan.js
+          node missing-biographical-data-scan.js --find-data --show-details
           echo "✅ Missing membership scan completed at: $(date +'%Y-%m-%d %H:%M:%S %Z')"
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
@@ -95,8 +95,8 @@ jobs:
         with:
           name: missing-membership-scan-${{ github.run_number }}
           path: |
-            output/missing_membership_scan_report.json
-            logs/missing-membership-scan.log
+            output/missing_biographical_data_scan_report.json
+            logs/missing-biographical-data-scan.log
           retention-days: 30
 
       - name: Show scan summary
@@ -108,31 +108,30 @@ jobs:
           echo ""
           
           # Missing membership scan summary
-          if [ -f "output/missing_membership_scan_report.json" ]; then
+          if [ -f "output/missing_biographical_data_scan_report.json" ]; then
             node -e "
               try {
-                const report = JSON.parse(require('fs').readFileSync('output/missing_membership_scan_report.json', 'utf8'));
+                const report = JSON.parse(require('fs').readFileSync('output/missing_biographical_data_scan_report.json', 'utf8'));
                 const summary = report.summary;
                 console.log('🔍 Missing Membership Scan Results:');
                 console.log('   📊 Total lifters scanned:', summary.total_lifters || 0);
                 console.log('   ❌ Missing membership numbers:', summary.missing_membership_count || 0);
-                console.log('   ✅ Have membership numbers:', summary.has_membership_count || 0);
                 console.log('   📈 Missing percentage:', summary.missing_percentage || '0%');
-                console.log('   🔍 Membership lookups attempted:', summary.memberships_processed || 0);
-                console.log('   ✅ Membership numbers found:', summary.memberships_found || 0);
+                console.log('   🔍 Biographical lookups attempted:', summary.lookups_processed || 0);
+                console.log('   ✅ Biographical data found:', summary.biographical_data_found || 0);
                 
                 if (summary.missing_membership_count > 0) {
                   console.log('');
                   console.log('⚠️  Athletes missing membership numbers:');
-                  if (report.missing_membership_athletes) {
+                  if (report.missing_data_athletes) {
                     const showLimit = 10;
-                    const athletes = report.missing_membership_athletes.slice(0, showLimit);
+                    const athletes = report.missing_data_athletes.slice(0, showLimit);
                     athletes.forEach(athlete => {
                       console.log('   • ' + athlete.athlete_name + ' (lifter_id: ' + athlete.lifter_id + ', internal_id: ' + athlete.internal_id + ')');
                     });
                     
-                    if (report.missing_membership_athletes.length > showLimit) {
-                      const remaining = report.missing_membership_athletes.length - showLimit;
+                    if (report.missing_data_athletes.length > showLimit) {
+                      const remaining = report.missing_data_athletes.length - showLimit;
                       console.log('   ... and ' + remaining + ' more (see detailed report in artifacts)');
                     }
                   }
@@ -152,10 +151,10 @@ jobs:
         if: always()
         run: |
           # Check if we have a high number of missing memberships (threshold: 50)
-          if [ -f "output/missing_membership_scan_report.json" ]; then
+          if [ -f "output/missing_biographical_data_scan_report.json" ]; then
             missing_count=$(node -e "
               try {
-                const report = JSON.parse(require('fs').readFileSync('output/missing_membership_scan_report.json', 'utf8'));
+                const report = JSON.parse(require('fs').readFileSync('output/missing_biographical_data_scan_report.json', 'utf8'));
                 console.log(report.summary.missing_membership_count || 0);
               } catch (error) {
                 console.log(0);
