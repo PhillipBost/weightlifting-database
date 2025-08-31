@@ -77,7 +77,7 @@ function createErrorLogger() {
     
     // Create new lifters file with headers if it doesn't exist
     if (!fs.existsSync(newLiftersFilePath)) {
-        const headers = ['timestamp', 'athlete_name', 'membership_number', 'gender', 'club_name', 'wso', 'birth_year', 'national_rank', 'division', 'note'];
+        const headers = ['timestamp', 'athlete_name', 'membership_number', 'scraped_gender', 'scraped_club_name', 'scraped_wso', 'scraped_birth_year', 'scraped_national_rank', 'division', 'note'];
         fs.writeFileSync(newLiftersFilePath, headers.join(',') + '\n');
     }
     
@@ -116,11 +116,6 @@ async function createNewLifter(athleteData) {
     const lifterData = {
         athlete_name: athleteData.athlete_name.toString().trim(),
         membership_number: athleteData.membership_number ? parseInt(athleteData.membership_number) : null,
-        gender: athleteData.gender?.toString().trim() || null,
-        club_name: athleteData.club_name?.toString().trim() || null,
-        wso: athleteData.wso?.toString().trim() || null,
-        birth_year: athleteData.birth_year ? parseInt(athleteData.birth_year) : null,
-        national_rank: athleteData.national_rank ? parseInt(athleteData.national_rank) : null,
         internal_id: null, // Will be populated later by internal_id script
         created_at: new Date().toISOString(),
         updated_at: new Date().toISOString()
@@ -143,7 +138,7 @@ async function createNewLifter(athleteData) {
 async function findLifterByName(athleteName) {
     const { data: lifters, error } = await supabase
         .from('lifters')
-        .select('lifter_id, athlete_name, membership_number, birth_year, wso, club_name')
+        .select('lifter_id, athlete_name, membership_number')
         .eq('athlete_name', athleteName);
     
     if (error) {
@@ -172,11 +167,6 @@ async function batchUpdateLifters(lifterUpdates) {
                 .from('lifters')
                 .update({
                     membership_number: update.membership_number,
-                    gender: update.gender,
-                    club_name: update.club_name,
-                    wso: update.wso,
-                    birth_year: update.birth_year,
-                    national_rank: update.national_rank,
                     updated_at: new Date().toISOString()
                 })
                 .eq('lifter_id', update.lifter_id)
@@ -316,34 +306,67 @@ async function processAthleteCSVFile(filePath, errorLogger) {
                 }
                 
                 if (matchingLifters.length > 1) {
-                    errorLogger.logError(athleteName, athleteData.membership_number, 'DUPLICATE_NAMES', `Found ${matchingLifters.length} lifters with same name`);
-                    duplicateCount++;
-                    continue;
+                    // Try to disambiguate using additional criteria
+                    console.log(`  🔍 Found ${matchingLifters.length} lifters named "${athleteName}" - attempting disambiguation...`);
+                    
+                    let bestMatch = null;
+                    let exactMatches = [];
+                    
+                    // Strategy 1: Match by membership number if available
+                    if (athleteData.membership_number) {
+                        const membershipMatches = matchingLifters.filter(l => 
+                            l.membership_number && l.membership_number.toString() === athleteData.membership_number.toString()
+                        );
+                        if (membershipMatches.length === 1) {
+                            bestMatch = membershipMatches[0];
+                            console.log(`    ✅ Matched by membership number: ${athleteData.membership_number}`);
+                        } else if (membershipMatches.length > 1) {
+                            console.log(`    ⚠️  Multiple lifters with same membership ${athleteData.membership_number}`);
+                        }
+                    }
+                    
+                    // Note: WSO/Club matching removed due to schema migration
+                    // WSO and club_name are now in meet_results table, not lifters table
+                    
+                    // Strategy 4: Create new lifter if no clear match (this is the key fix!)
+                    if (!bestMatch && exactMatches.length === 0) {
+                        console.log(`    ➕ No clear match found - will create new lifter for ${athleteName}`);
+                        console.log(`       New lifter details: Membership=${athleteData.membership_number}`);
+                        newLifters.push(athleteData);
+                        continue;
+                    }
+                    
+                    // If still ambiguous, log error and skip
+                    if (!bestMatch) {
+                        console.log(`    ❌ Still ambiguous after disambiguation - logging as duplicate`);
+                        errorLogger.logError(athleteName, athleteData.membership_number, 'DUPLICATE_NAMES', 
+                            `Found ${matchingLifters.length} lifters, ${exactMatches.length} potential matches after disambiguation`);
+                        duplicateCount++;
+                        continue;
+                    }
+                    
+                    // Use the best match we found
+                    const lifter = bestMatch;
+                    const lifterId = lifter.lifter_id;
+                    console.log(`    ✅ Using lifter_id ${lifterId} for ${athleteName}`);
+                } else {
+                    // Found exactly one lifter (original logic)
+                    var lifter = matchingLifters[0];
+                    var lifterId = lifter.lifter_id;
                 }
                 
-                // Found exactly one lifter
-                const lifter = matchingLifters[0];
-                const lifterId = lifter.lifter_id;
+                // Check if membership number needs updating
+                const membershipChanged = athleteData.membership_number && 
+                    lifter.membership_number !== parseInt(athleteData.membership_number);
                 
-                // Check if WSO or club changed
-                const wsoChanged = lifter.wso !== athleteData.wso;
-                const clubChanged = lifter.club_name !== athleteData.club_name;
-                
-                if (wsoChanged || clubChanged) {
-                    console.log(`  🔄 Affiliation change detected for ${athleteName}:`);
-                    if (wsoChanged) console.log(`    WSO: "${lifter.wso}" → "${athleteData.wso}"`);
-                    if (clubChanged) console.log(`    Club: "${lifter.club_name}" → "${athleteData.club_name}"`);
+                if (membershipChanged) {
+                    console.log(`  🔄 Membership change detected for ${athleteName}: ${lifter.membership_number} → ${athleteData.membership_number}`);
                 }
                 
-                // Prepare lifter update
+                // Prepare lifter update (only membership number now)
                 const updateData = {
                     lifter_id: lifterId,
-                    membership_number: athleteData.membership_number ? parseInt(athleteData.membership_number) : null,
-                    gender: athleteData.gender?.toString().trim() || null,
-                    club_name: athleteData.club_name?.toString().trim() || null,
-                    wso: athleteData.wso?.toString().trim() || null,
-                    birth_year: athleteData.birth_year ? parseInt(athleteData.birth_year) : null,
-                    national_rank: athleteData.national_rank ? parseInt(athleteData.national_rank) : null,
+                    membership_number: athleteData.membership_number ? parseInt(athleteData.membership_number) : lifter.membership_number,
                     athlete_name: athleteName
                 };
                 
