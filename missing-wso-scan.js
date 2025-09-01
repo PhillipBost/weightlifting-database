@@ -350,11 +350,11 @@ async function findBiographicalData(meetResult) {
     }
 }
 
-// Get meet results missing WSO data
-async function getMissingWsoResults() {
-    log('Scanning for meet results missing WSO data...');
+// Get meet results for WSO verification (ALL results, not just missing)
+async function getAllWsoResults() {
+    log('Scanning ALL meet results for WSO verification...');
     
-    let allMissingResults = [];
+    let allResults = [];
     let start = 0;
     const batchSize = 1000;
     let hasMore = true;
@@ -362,21 +362,20 @@ async function getMissingWsoResults() {
     while (hasMore) {
         const { data: batchData, error } = await supabase
             .from('meet_results')
-            .select('result_id, lifter_id, lifter_name, date, age_category, weight_class, meet_name, wso, gender, birth_year, club_name, national_rank, created_at, updated_at')
-            .is('wso', null)
+            .select('result_id, lifter_id, lifter_name, date, age_category, weight_class, meet_name, wso, gender, birth_year, club_name, national_rank, competition_age, created_at, updated_at')
             .not('age_category', 'is', null)
             .not('weight_class', 'is', null)
             .not('lifter_name', 'is', null)
-            .order('created_at', { ascending: false })
+            .order('date', { ascending: false }) // Process recent meets first
             .range(start, start + batchSize - 1);
         
         if (error) {
-            throw new Error(`Failed to fetch meet results missing WSO data: ${error.message}`);
+            throw new Error(`Failed to fetch meet results for WSO verification: ${error.message}`);
         }
         
         if (batchData && batchData.length > 0) {
-            allMissingResults.push(...batchData);
-            log(`  Batch ${Math.floor(start/batchSize) + 1}: Found ${batchData.length} results (Total: ${allMissingResults.length})`);
+            allResults.push(...batchData);
+            log(`  Batch ${Math.floor(start/batchSize) + 1}: Found ${batchData.length} results (Total: ${allResults.length})`);
             
             // Check if we got a full batch (indicates more records might exist)
             hasMore = batchData.length === batchSize;
@@ -386,8 +385,8 @@ async function getMissingWsoResults() {
         }
     }
     
-    log(`Found ${allMissingResults.length} total meet results missing WSO data`);
-    return allMissingResults;
+    log(`Found ${allResults.length} total meet results for WSO verification`);
+    return allResults;
 }
 
 // Get total meet results count for statistics
@@ -462,43 +461,117 @@ async function performWsoScan() {
             log('🔍 Running with WSO data lookup enabled');
         }
         
-        // Get data
-        const [missingResults, totalResults] = await Promise.all([
-            getMissingWsoResults(),
+        // Get data - ALL results for verification
+        const [allResults, totalResults] = await Promise.all([
+            getAllWsoResults(),
             getTotalMeetResultsCount()
         ]);
         
-        // Initialize browser if we need to find WSO data
+        // Initialize browser if we need to verify WSO data
         let foundData = [];
         let dataUpdates = 0;
-        if (options.findData && missingResults.length > 0) {
+        let verifiedCorrect = 0;
+        let correctedData = 0;
+        let skippedCount = 0;
+        let missingCount = allResults.filter(r => !r.wso).length;
+        
+        if (options.findData && allResults.length > 0) {
             await initBrowser();
             
-            log('\n🔍 Attempting to find WSO data using reverse URL lookup...');
+            log('\n🔍 Verifying ALL WSO data using reverse URL lookup...');
+            log(`   Processing ${allResults.length} total results`);
+            log(`   ${missingCount} missing WSO, ${allResults.length - missingCount} have existing WSO`);
             
-            // Process all results missing WSO data
-            const resultsToProcess = missingResults;
+            // Process ALL results for verification
+            const resultsToProcess = allResults;
             
             for (let i = 0; i < resultsToProcess.length; i++) {
                 const result = resultsToProcess[i];
                 log(`\n📋 [${i+1}/${resultsToProcess.length}] Processing ${result.lifter_name} (result_id: ${result.result_id})`);
                 
+                // Check if this result was recently updated (on or after 9/1/2025)
+                const skipDate = new Date('2025-09-01');
+                const updatedDate = result.updated_at ? new Date(result.updated_at) : new Date(result.created_at);
+                
+                if (updatedDate >= skipDate) {
+                    log(`    ⏭️ Skipping - already updated on ${updatedDate.toISOString().split('T')[0]} (>= 2025-09-01)`);
+                    skippedCount++;
+                    continue;
+                }
+                
                 const foundBiographicalData = await findBiographicalData(result);
                 
                 if (foundBiographicalData && foundBiographicalData.biographical_data) {
                     const bioData = foundBiographicalData.biographical_data;
+                    const existingWso = result.wso;
+                    const foundWso = bioData.wso;
                     
-                    // Build update object with only non-null values that are currently missing
+                    // Calculate competition age if we have birth year and competition date
+                    let calculatedAge = null;
+                    if (bioData.birth_year && result.date) {
+                        const competitionYear = new Date(result.date).getFullYear();
+                        calculatedAge = competitionYear - bioData.birth_year;
+                        log(`    🎂 Calculated competition age: ${calculatedAge} (${competitionYear} - ${bioData.birth_year})`);
+                    }
+                    
+                    log(`    💾 Existing WSO: ${existingWso || 'NULL'}`);
+                    log(`    🌐 Found WSO: ${foundWso || 'NULL'}`);
+                    log(`    👤 Current gender: ${result.gender || 'NULL'} → Found: ${bioData.gender || 'NULL'}`);
+                    log(`    📅 Current birth year: ${result.birth_year || 'NULL'} → Found: ${bioData.birth_year || 'NULL'}`);
+                    log(`    🏋️ Current club: ${result.club_name || 'NULL'} → Found: ${bioData.club_name || 'NULL'}`);
+                    log(`    🏆 Current national rank: ${result.national_rank || 'NULL'} → Found: ${bioData.national_rank || 'NULL'}`);
+                    log(`    🎯 Current competition age: ${result.competition_age || 'NULL'} → Calculated: ${calculatedAge || 'NULL'}`);
+                    
+                    // Build update object
                     const updateData = {
                         updated_at: new Date().toISOString()
                     };
                     
-                    // Update all biographical fields that are currently null and we have data for
-                    if (!result.wso && bioData.wso) updateData.wso = bioData.wso;
-                    if (!result.gender && bioData.gender) updateData.gender = bioData.gender;
-                    if (!result.birth_year && bioData.birth_year) updateData.birth_year = bioData.birth_year;
-                    if (!result.club_name && bioData.club_name) updateData.club_name = bioData.club_name;
-                    if (!result.national_rank && bioData.national_rank) updateData.national_rank = bioData.national_rank;
+                    let updateReason = '';
+                    
+                    // WSO comparison logic
+                    if (!existingWso && foundWso) {
+                        // Missing WSO - add it
+                        updateData.wso = foundWso;
+                        updateReason = 'Added missing WSO';
+                        log(`    ➕ Adding missing WSO: ${foundWso}`);
+                    } else if (existingWso && foundWso && existingWso !== foundWso) {
+                        // WSO mismatch - correct it
+                        updateData.wso = foundWso;
+                        updateReason = `Corrected WSO: ${existingWso} → ${foundWso}`;
+                        correctedData++;
+                        log(`    🔄 Correcting WSO: ${existingWso} → ${foundWso}`);
+                    } else if (existingWso && foundWso && existingWso === foundWso) {
+                        // WSO matches - verified correct
+                        verifiedCorrect++;
+                        log(`    ✅ WSO verified correct: ${existingWso}`);
+                    } else if (existingWso && !foundWso) {
+                        // Have WSO but couldn't verify - leave as is
+                        log(`    ⚠️ Could not verify existing WSO: ${existingWso}`);
+                    }
+                    
+                    // Update other biographical fields that are missing
+                    if (!result.gender && bioData.gender) {
+                        updateData.gender = bioData.gender;
+                        log(`    👤 Adding gender: ${bioData.gender}`);
+                    }
+                    if (!result.birth_year && bioData.birth_year) {
+                        updateData.birth_year = bioData.birth_year;
+                        log(`    📅 Adding birth year: ${bioData.birth_year}`);
+                    }
+                    if (!result.club_name && bioData.club_name) {
+                        updateData.club_name = bioData.club_name;
+                        log(`    🏋️ Adding club: ${bioData.club_name}`);
+                    }
+                    if (!result.national_rank && bioData.national_rank) {
+                        updateData.national_rank = bioData.national_rank;
+                        log(`    🏆 Adding national rank: ${bioData.national_rank}`);
+                    }
+                    // Add competition age if calculated and missing
+                    if (calculatedAge && !result.competition_age) {
+                        updateData.competition_age = calculatedAge;
+                        log(`    🎯 Adding competition age: ${calculatedAge}`);
+                    }
                     
                     // Only update if we have at least one new piece of data
                     const fieldsToUpdate = Object.keys(updateData).filter(key => key !== 'updated_at');
@@ -511,19 +584,35 @@ async function performWsoScan() {
                         if (error) {
                             log(`    ❌ Failed to update meet result: ${error.message}`);
                         } else {
-                            log(`    ✅ Updated result_id ${result.result_id} with ${fieldsToUpdate.length} biographical fields: ${fieldsToUpdate.join(', ')}`);
+                            log(`    ✅ Updated result_id ${result.result_id} with ${fieldsToUpdate.length} fields: ${fieldsToUpdate.join(', ')}`);
                             dataUpdates++;
                             foundData.push({
                                 result_id: result.result_id,
                                 lifter_name: result.lifter_name,
                                 lifter_id: result.lifter_id,
                                 updated_fields: fieldsToUpdate,
+                                update_reason: updateReason,
+                                existing_wso: existingWso,
+                                found_wso: foundWso,
                                 found_via: foundBiographicalData.found_via,
                                 biographical_data: bioData
                             });
                         }
+                    } else if (existingWso && foundWso && existingWso === foundWso) {
+                        // Record verification even if no update needed
+                        foundData.push({
+                            result_id: result.result_id,
+                            lifter_name: result.lifter_name,
+                            lifter_id: result.lifter_id,
+                            updated_fields: [],
+                            update_reason: 'Verified correct',
+                            existing_wso: existingWso,
+                            found_wso: foundWso,
+                            found_via: foundBiographicalData.found_via,
+                            biographical_data: bioData
+                        });
                     } else {
-                        log(`    ℹ️  No new biographical data to update for ${result.lifter_name}`);
+                        log(`    ℹ️  No updates needed for ${result.lifter_name}`);
                     }
                 }
                 
@@ -540,11 +629,12 @@ async function performWsoScan() {
             }
         }
         
-        // Calculate statistics
-        const missingCount = missingResults.length;
-        const missingPercentage = totalResults > 0 ? ((missingCount / totalResults) * 100).toFixed(2) + '%' : '0%';
+        // Calculate final statistics
+        const finalMissingCount = allResults.filter(r => !r.wso).length;
+        const missingPercentage = totalResults > 0 ? ((finalMissingCount / totalResults) * 100).toFixed(2) + '%' : '0%';
         
-        // Analyze patterns
+        // Analyze patterns - focus on the missing ones for pattern analysis
+        const missingResults = allResults.filter(r => !r.wso);
         const patterns = analyzeMissingWsoPatterns(missingResults);
         
         // Build report
@@ -559,10 +649,14 @@ async function performWsoScan() {
             },
             summary: {
                 total_meet_results: totalResults,
-                missing_wso_count: missingCount,
+                results_processed: allResults.length,
+                missing_wso_count: finalMissingCount,
                 missing_percentage: missingPercentage,
-                wso_data_found: dataUpdates,
-                lookups_processed: options.findData ? missingResults.length : 0
+                wso_data_updates: dataUpdates,
+                wso_verified_correct: verifiedCorrect,
+                wso_corrections_made: correctedData,
+                records_skipped: skippedCount,
+                lookups_processed: options.findData ? (allResults.length - skippedCount) : 0
             },
             patterns: patterns,
             missing_wso_results: options.showDetails ? missingResults : missingResults.slice(0, 20), // Limit for GitHub Actions
@@ -575,11 +669,16 @@ async function performWsoScan() {
         
         // Log summary
         log('\n' + '='.repeat(60));
-        log('✅ MISSING WSO SCAN COMPLETE');
-        log(`   Total meet results: ${totalResults}`);
-        log(`   Missing WSO data: ${missingCount} (${missingPercentage})`);
-        log(`   Recent results (30 days): ${patterns.recent_results}`);
-        log(`   Processing time: ${Date.now() - startTime}ms`);
+        log('✅ WSO VERIFICATION AND UPDATE COMPLETE');
+        log(`   Total meet results in database: ${totalResults.toLocaleString()}`);
+        log(`   Results processed: ${allResults.length.toLocaleString()}`);
+        log(`   Records skipped (updated >= 2025-09-01): ${skippedCount.toLocaleString()}`);
+        log(`   Records actually checked: ${(allResults.length - skippedCount).toLocaleString()}`);
+        log(`   Missing WSO data: ${finalMissingCount.toLocaleString()} (${missingPercentage})`);
+        log(`   WSO verified correct: ${verifiedCorrect.toLocaleString()}`);
+        log(`   WSO corrections made: ${correctedData.toLocaleString()}`);
+        log(`   Database updates: ${dataUpdates.toLocaleString()}`);
+        log(`   Processing time: ${Math.round((Date.now() - startTime) / 1000)}s`);
         
         // Show top missing categories
         log('\n📊 TOP MISSING WSO BY AGE CATEGORY:');
@@ -599,21 +698,27 @@ async function performWsoScan() {
         });
         
         if (options.findData) {
-            log(`\n🔍 WSO DATA LOOKUP RESULTS:`);
-            log(`   Lookups attempted: ${missingResults.length}`);
-            log(`   WSO data found and updated: ${dataUpdates}`);
+            log(`\n🔍 WSO VERIFICATION RESULTS:`);
+            log(`   Total lookups attempted: ${(allResults.length - skippedCount).toLocaleString()}`);
+            log(`   Records skipped (recently updated): ${skippedCount.toLocaleString()}`);
+            log(`   Records updated: ${dataUpdates.toLocaleString()}`);
+            log(`   WSO values verified correct: ${verifiedCorrect.toLocaleString()}`);
+            log(`   WSO values corrected: ${correctedData.toLocaleString()}`);
+            const checkedResults = allResults.length - skippedCount;
+            const verificationRate = checkedResults > 0 ? (((verifiedCorrect + correctedData) / checkedResults) * 100).toFixed(1) : '0';
+            log(`   Verification rate: ${verificationRate}%`);
         }
         
-        if (missingCount > 0) {
+        if (finalMissingCount > 0) {
             log('\n📋 SAMPLE MISSING WSO RESULTS:');
-            const sampleSize = Math.min(5, missingCount);
+            const sampleSize = Math.min(5, finalMissingCount);
             for (let i = 0; i < sampleSize; i++) {
                 const result = missingResults[i];
                 log(`   • ${result.lifter_name} (result_id: ${result.result_id}) - ${result.age_category} ${result.weight_class} on ${result.date}`);
             }
             
-            if (missingCount > sampleSize) {
-                log(`   ... and ${missingCount - sampleSize} more (see full report)`);
+            if (finalMissingCount > sampleSize) {
+                log(`   ... and ${finalMissingCount - sampleSize} more (see full report)`);
             }
         }
         
@@ -641,7 +746,7 @@ async function performWsoScan() {
 // Export for use by other scripts
 module.exports = { 
     performWsoScan,
-    getMissingWsoResults,
+    getAllWsoResults,
     analyzeMissingWsoPatterns
 };
 
