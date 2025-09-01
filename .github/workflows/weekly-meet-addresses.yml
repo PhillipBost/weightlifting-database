@@ -27,9 +27,9 @@ jobs:
       - name: Calculate date range (last month + current month)
         id: dates
         run: |
-          # Get current date components
+          # Get current date components (remove leading zeros to avoid octal interpretation)
           current_year=$(date +%Y)
-          current_month=$(date +%m)
+          current_month=$(date +%-m)  # %-m removes leading zeros
           
           # Calculate last month
           if [ $current_month -eq 1 ]; then
