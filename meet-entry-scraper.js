@@ -91,14 +91,27 @@ function parseArguments() {
 
 // Build Sport80 events URL with base64 encoded filters
 function buildEventsURL(fromDate, toDate) {
+    // Expand date range by +/- 7 days to catch week-long meets
+    const expandedFromDate = new Date(fromDate);
+    expandedFromDate.setDate(expandedFromDate.getDate() - 7);
+    
+    const expandedToDate = new Date(toDate);
+    expandedToDate.setDate(expandedToDate.getDate() + 7);
+    
+    const finalFromDate = expandedFromDate.toISOString().split('T')[0];
+    const finalToDate = expandedToDate.toISOString().split('T')[0];
+    
     const filters = {
-        from_date: fromDate,
-        to_date: toDate,
+        from_date: finalFromDate,
+        to_date: finalToDate,
         event_type: 11  // Filter to meets only
     };
     
     const encodedFilters = btoa(JSON.stringify(filters));
-    return `https://usaweightlifting.sport80.com/public/events?filters=${encodedFilters}`;
+    const url = `https://usaweightlifting.sport80.com/public/events?filters=${encodedFilters}`;
+    
+    log(`📅 Date range expanded: ${fromDate} to ${toDate} → ${finalFromDate} to ${finalToDate}`);
+    return url;
 }
 
 // Initialize browser
@@ -174,158 +187,256 @@ async function scrapeMeetBasicInfo() {
     return meetData;
 }
 
-// Click on meets to expand and look for entry list link
-async function expandMeetAndGetEntryLink(meetIndex) {
+// Find and click Entry List button for a specific meet
+async function findAndClickEntryButton(meetIndex) {
     try {
-        log(`Expanding meet ${meetIndex + 1} to find entry link...`);
+        log(`Looking for Entry List button for meet ${meetIndex + 1}...`);
         
-        // Find the expansion panel headers and click the correct one
-        const expansionHeaders = await page.$$('.v-expansion-panel-header');
+        // Get all meet rows (divs with class 'row no-gutters align-center')
+        const meetRows = await page.$$('.row.no-gutters.align-center');
         
-        if (meetIndex >= expansionHeaders.length) {
-            log(`Meet index ${meetIndex} out of range (found ${expansionHeaders.length} meets)`);
+        if (meetIndex >= meetRows.length) {
+            log(`Meet index ${meetIndex} out of range (found ${meetRows.length} meets)`);
             return null;
         }
         
-        const targetHeader = expansionHeaders[meetIndex];
+        const targetRow = meetRows[meetIndex];
         
-        // First, close any previously opened panels by checking if they're active
-        const activePanels = await page.$$('.v-expansion-panel--active');
-        for (const activePanel of activePanels) {
-            const activeHeader = await activePanel.$('.v-expansion-panel-header');
-            if (activeHeader && activeHeader !== targetHeader) {
-                await activeHeader.click();
-                log(`Closed previously active panel`);
-                await new Promise(resolve => setTimeout(resolve, 1000));
-            }
-        }
-        
-        // Click the expansion panel header to expand the panel
-        await targetHeader.click();
-        log(`Clicked expansion panel header for meet ${meetIndex + 1}`);
-        
-        // Wait for expansion panel to open
-        await new Promise(resolve => setTimeout(resolve, 2000));
-        
-        // Look for entry list link in the currently active expanded panel
-        const entryLinkInfo = await page.evaluate(() => {
-            // Look for the currently active expansion panel
-            const activePanel = document.querySelector('.v-expansion-panel--active');
-            if (!activePanel) {
-                return null;
-            }
+        // Look for Entry List button in this specific row
+        const entryButtonInfo = await page.evaluate((row) => {
+            // Find the meet name in this row
+            const meetNameElement = row.querySelector('strong');
+            const meetName = meetNameElement?.textContent?.trim() || 'Unknown';
             
-            // Look for "Entry List" or similar links within this panel
-            const listItems = activePanel.querySelectorAll('.v-list-item');
+            // Find all buttons in this row
+            const buttons = row.querySelectorAll('button.s80-btn');
             
-            for (const item of listItems) {
-                const titleElement = item.querySelector('.v-list-item__title');
-                if (titleElement) {
-                    const titleText = titleElement.textContent?.trim().toLowerCase();
-                    
-                    // Look for entry-related text
-                    if (titleText && (titleText.includes('entry') || titleText.includes('entries'))) {
-                        // Try to find a link
-                        const linkElement = item.querySelector('a') || item;
-                        const href = linkElement.getAttribute('href') || linkElement.onclick;
-                        
-                        return {
-                            text: titleElement.textContent?.trim(),
-                            href: href,
-                            found: true
-                        };
-                    }
+            for (const button of buttons) {
+                const buttonText = button.textContent?.trim();
+                if (buttonText && buttonText.includes('Entry List')) {
+                    return {
+                        found: true,
+                        meet_name: meetName,
+                        button_text: buttonText,
+                        aria_description: button.getAttribute('aria-description')
+                    };
                 }
             }
             
-            return { found: false };
-        });
+            return { found: false, meet_name: meetName };
+        }, targetRow);
         
-        log(`Entry link search for meet ${meetIndex + 1}: ${entryLinkInfo?.found ? 'Found' : 'Not found'}`);
-        if (entryLinkInfo?.found) {
-            log(`   Entry link: ${entryLinkInfo.text}`);
+        if (entryButtonInfo.found) {
+            log(`✅ Found Entry List button for: ${entryButtonInfo.meet_name}`);
+            log(`   Button text: "${entryButtonInfo.button_text}"`);
+            log(`   Aria description: "${entryButtonInfo.aria_description}"`);
+            
+            // Click the Entry List button (opens in new tab)
+            log(`🖱️ Clicking Entry List button (expects new tab)...`);
+            
+            // Get initial tab count
+            const initialPages = await browser.pages();
+            log(`📊 Initial tabs: ${initialPages.length}`);
+            
+            // Wait for new tab to open with timeout
+            const newPagePromise = Promise.race([
+                new Promise(resolve => {
+                    browser.once('targetcreated', target => {
+                        log(`🎯 New target created: ${target.type()}`);
+                        resolve(target);
+                    });
+                }),
+                new Promise((_, reject) => {
+                    setTimeout(() => reject(new Error('No new tab created within 10 seconds')), 10000);
+                })
+            ]);
+            
+            // Click the Entry List button directly
+            const button = await targetRow.$('button.s80-btn');
+            if (button) {
+                log(`🖱️ Clicking button...`);
+                await button.click();
+                log(`✅ Button clicked`);
+            } else {
+                throw new Error('Could not find button element to click');
+            }
+            
+            log(`🖱️ Entry List button clicked, waiting for new tab...`);
+            
+            // Wait for new tab to be created
+            const newTarget = await newPagePromise;
+            const newPage = await newTarget.page();
+            
+            if (!newPage) {
+                throw new Error('Failed to get new page from new tab');
+            }
+            
+            // Wait for the new tab content to load
+            await newPage.waitForSelector('body', { timeout: 30000 });
+            
+            const entryUrl = newPage.url();
+            log(`🌐 Entry List URL (new tab): ${entryUrl}`);
+            
+            const finalUrl = entryUrl;
+            return {
+                found: true,
+                meet_name: entryButtonInfo.meet_name,
+                entry_url: finalUrl,
+                button_text: entryButtonInfo.button_text,
+                newPage: newPage  // Return the new page for scraping
+            };
+            
+        } else {
+            log(`❌ No Entry List button found for: ${entryButtonInfo.meet_name}`);
+            return { 
+                found: false, 
+                meet_name: entryButtonInfo.meet_name 
+            };
         }
         
-        return entryLinkInfo;
-        
     } catch (error) {
-        log(`Error expanding meet ${meetIndex + 1}: ${error.message}`);
+        log(`Error finding Entry List button for meet ${meetIndex + 1}: ${error.message}`);
         return null;
     }
 }
 
-// Navigate to entry page and scrape entry data
-async function scrapeEntryData(entryUrl) {
+// Scrape entry data from a specific page (new tab)
+async function scrapeEntryDataFromPage(targetPage) {
     try {
-        log(`Navigating to entry page: ${entryUrl}`);
+        log(`Scraping entry data from page: ${targetPage.url()}`);
         
-        await page.goto(entryUrl, { waitUntil: 'networkidle0', timeout: 30000 });
-        await new Promise(resolve => setTimeout(resolve, 3000));
+        // Give the page time to fully load all entries
+        log(`⏳ Waiting for entry data to load...`);
+        await new Promise(resolve => setTimeout(resolve, 8000)); // Increased to 8 seconds
         
-        // Scrape entry data from the page
-        const entryData = await page.evaluate(() => {
-            const entries = [];
+        // Try to wait for table or entry content to be present
+        try {
+            await targetPage.waitForSelector('table, .entry-row, .athlete-entry, tr', { timeout: 10000 });
+            log(`✅ Entry content detected`);
+        } catch (e) {
+            log(`⚠️ No specific entry content detected, proceeding anyway`);
+        }
+        
+        // Scrape entry data with pagination
+        let allEntries = [];
+        let currentPage = 1;
+        let hasNextPage = true;
+        
+        while (hasNextPage && currentPage <= 10) { // Limit to 10 pages for safety
+            log(`📄 Scraping entries from page ${currentPage}...`);
             
-            // Look for table rows containing entry data
-            const rows = document.querySelectorAll('tr, .entry-row, .athlete-entry');
-            
-            for (const row of rows) {
-                const cells = row.querySelectorAll('td');
+            // Scrape current page entries
+            const pageEntries = await targetPage.evaluate(() => {
+                const entries = [];
                 
-                // Expect a certain number of columns for entry data
-                if (cells.length >= 8) {
-                    try {
-                        const entry = {
-                            member_id: cells[0]?.textContent?.trim() || null,
-                            first_name: cells[1]?.textContent?.trim() || null,
-                            last_name: cells[2]?.textContent?.trim() || null,
-                            state: cells[3]?.textContent?.trim() || null,
-                            birth_year: cells[4]?.textContent?.trim() || null,
-                            weightlifting_age: cells[5]?.textContent?.trim() || null,
-                            club: cells[6]?.textContent?.trim() || null,
-                            gender: cells[7]?.textContent?.trim() || null,
-                            division_declaration: cells[8]?.textContent?.trim() || null,
-                            weight_class_declaration: cells[9]?.textContent?.trim() || null,
-                            entry_total_declaration: cells[10]?.textContent?.trim() || null
-                        };
-                        
-                        // Clean up numeric fields
-                        if (entry.birth_year) {
-                            const year = parseInt(entry.birth_year);
-                            entry.birth_year = (year >= 1900 && year <= 2020) ? year : null;
+                // Look for table rows containing entry data
+                const rows = document.querySelectorAll('tr, .entry-row, .athlete-entry');
+                
+                for (const row of rows) {
+                    const cells = row.querySelectorAll('td');
+                    
+                    // Expect a certain number of columns for entry data
+                    if (cells.length >= 8) {
+                        try {
+                            const entry = {
+                                member_id: cells[0]?.textContent?.trim() || null,
+                                first_name: cells[1]?.textContent?.trim() || null,
+                                last_name: cells[2]?.textContent?.trim() || null,
+                                state: cells[3]?.textContent?.trim() || null,
+                                birth_year: cells[4]?.textContent?.trim() || null,
+                                weightlifting_age: cells[5]?.textContent?.trim() || null,
+                                club: cells[6]?.textContent?.trim() || null,
+                                gender: cells[7]?.textContent?.trim() || null,
+                                division_declaration: cells[8]?.textContent?.trim() || null,
+                                weight_class_declaration: cells[9]?.textContent?.trim() || null,
+                                entry_total_declaration: cells[10]?.textContent?.trim() || null
+                            };
+                            
+                            // Clean up numeric fields
+                            if (entry.birth_year) {
+                                const year = parseInt(entry.birth_year);
+                                entry.birth_year = (year >= 1900 && year <= 2020) ? year : null;
+                            }
+                            
+                            if (entry.weightlifting_age) {
+                                const age = parseInt(entry.weightlifting_age);
+                                entry.weightlifting_age = (age >= 0 && age <= 100) ? age : null;
+                            }
+                            
+                            if (entry.member_id) {
+                                const memberId = parseInt(entry.member_id);
+                                entry.member_id = (memberId > 0) ? memberId : null;
+                            }
+                            
+                            if (entry.entry_total_declaration) {
+                                const total = parseInt(entry.entry_total_declaration);
+                                entry.entry_total_declaration = (total > 0) ? total : null;
+                            }
+                            
+                            // Only add if we have essential data
+                            if (entry.first_name || entry.last_name || entry.member_id) {
+                                entries.push(entry);
+                            }
+                            
+                        } catch (error) {
+                            console.log('Error processing entry row:', error.message);
                         }
-                        
-                        if (entry.weightlifting_age) {
-                            const age = parseInt(entry.weightlifting_age);
-                            entry.weightlifting_age = (age >= 0 && age <= 100) ? age : null;
-                        }
-                        
-                        if (entry.member_id) {
-                            const memberId = parseInt(entry.member_id);
-                            entry.member_id = (memberId > 0) ? memberId : null;
-                        }
-                        
-                        if (entry.entry_total_declaration) {
-                            const total = parseInt(entry.entry_total_declaration);
-                            entry.entry_total_declaration = (total > 0) ? total : null;
-                        }
-                        
-                        // Only add if we have essential data
-                        if (entry.first_name || entry.last_name || entry.member_id) {
-                            entries.push(entry);
-                        }
-                        
-                    } catch (error) {
-                        console.log('Error processing entry row:', error.message);
                     }
                 }
-            }
+                
+                return entries;
+            });
             
-            return entries;
-        });
+            log(`   Found ${pageEntries.length} entries on page ${currentPage}`);
+            allEntries.push(...pageEntries);
+            
+            // Check for next page button and navigate
+            try {
+                const nextButtonSelectors = [
+                    '.v-pagination__next:not(.v-pagination__next--disabled)',
+                    '.pagination .next:not(.disabled)',
+                    'button[aria-label*="next" i]:not([disabled])',
+                    '.page-navigation .next:not(.disabled)'
+                ];
+                
+                let nextButton = null;
+                for (const selector of nextButtonSelectors) {
+                    try {
+                        nextButton = await targetPage.$(selector);
+                        if (nextButton) {
+                            const isClickable = await targetPage.evaluate((btn) => {
+                                return !btn.disabled && !btn.classList.contains('disabled');
+                            }, nextButton);
+                            
+                            if (isClickable) {
+                                log(`   Found next page button: ${selector}`);
+                                break;
+                            }
+                        }
+                    } catch (error) {
+                        continue;
+                    }
+                }
+                
+                if (nextButton) {
+                    await nextButton.click();
+                    await new Promise(resolve => setTimeout(resolve, 3000));
+                    await targetPage.waitForSelector('table, tr', { timeout: 10000 });
+                    log(`   Navigated to page ${currentPage + 1}`);
+                    currentPage++;
+                } else {
+                    log(`   No next page button found - finished at page ${currentPage}`);
+                    hasNextPage = false;
+                }
+                
+            } catch (error) {
+                log(`   Error navigating to next page: ${error.message}`);
+                hasNextPage = false;
+            }
+        }
         
-        log(`Scraped ${entryData.length} entries from entry page`);
-        return entryData;
+        log(`✅ Scraped ${allEntries.length} total entries across ${currentPage} pages`);
+        return allEntries;
         
     } catch (error) {
         log(`Error scraping entry data: ${error.message}`);
@@ -415,37 +526,48 @@ async function scrapeMeetEntries() {
                 log(`   ${i}: ${meet.meet_name}`);
             });
             
-            // For each meet, try to find entry link and scrape entries
+            // For each meet, try to find Entry List button and scrape entries
             for (let i = 0; i < meetData.length; i++) {
                 const meet = meetData[i];
                 log(`\n🔍 Processing meet: ${meet.meet_name}`);
+                log(`📍 Current directory URL: ${page.url()}`);
                 
-                const entryLinkInfo = await expandMeetAndGetEntryLink(i);
+                const entryButtonInfo = await findAndClickEntryButton(i);
                 
-                if (entryLinkInfo && entryLinkInfo.found && entryLinkInfo.href) {
-                    log(`Found entry link, navigating to scrape entries...`);
+                if (entryButtonInfo && entryButtonInfo.found && entryButtonInfo.entry_url) {
+                    log(`🌐 Entry List URL: ${entryButtonInfo.entry_url}`);
+                    log(`🔍 Scraping entry data from new tab...`);
                     
-                    // Navigate to entry page and scrape
-                    const entryData = await scrapeEntryData(entryLinkInfo.href);
+                    // Scrape entry data from the new tab
+                    const entryData = await scrapeEntryDataFromPage(entryButtonInfo.newPage);
                     
                     meet.entries = entryData;
-                    meet.entry_url = entryLinkInfo.href;
+                    meet.entry_url = entryButtonInfo.entry_url;
                     meet.entry_count = entryData.length;
+                    meet.directory_url = eventsURL;
                     
-                    // Return to events page
-                    await page.goto(eventsURL, { waitUntil: 'networkidle0', timeout: 30000 });
-                    await new Promise(resolve => setTimeout(resolve, 2000));
+                    log(`✅ Scraped ${entryData.length} entries`);
+                    
+                    // Close the new tab
+                    log(`🗙 Closing entry tab...`);
+                    await entryButtonInfo.newPage.close();
+                    
+                    // Main page should still be on directory - no need to navigate back
                 } else {
-                    log(`No entry link found for ${meet.meet_name}`);
+                    log(`❌ No Entry List button found for ${meet.meet_name}`);
                     meet.entries = [];
                     meet.entry_url = null;
                     meet.entry_count = 0;
+                    meet.directory_url = eventsURL;
                 }
+                
+                // Add URLs to meet data for visibility
+                meet.lookup_url = eventsURL;
                 
                 allMeetData.push(meet);
                 
                 // Small delay between meets
-                await new Promise(resolve => setTimeout(resolve, 1000));
+                await new Promise(resolve => setTimeout(resolve, 1500));
             }
             
             log(`Page ${currentPage} complete: ${meetData.length} meets processed`);
@@ -461,22 +583,48 @@ async function scrapeMeetEntries() {
             log('Browser closed');
         }
         
-        // Save results
+        // Load existing data if file exists
+        let existingData = { meets: [] };
+        if (fs.existsSync(OUTPUT_FILE)) {
+            try {
+                existingData = JSON.parse(fs.readFileSync(OUTPUT_FILE, 'utf8'));
+                log(`📂 Loaded existing data: ${existingData.meets?.length || 0} meets`);
+            } catch (error) {
+                log(`⚠️ Could not parse existing file, starting fresh: ${error.message}`);
+                existingData = { meets: [] };
+            }
+        }
+
+        // Merge new meets with existing ones (avoiding duplicates by meet name + date)
+        const existingMeets = existingData.meets || [];
+        const newMeets = allMeetData.filter(newMeet => {
+            return !existingMeets.some(existing => 
+                existing.meet_name === newMeet.meet_name && 
+                existing.date_range === newMeet.date_range
+            );
+        });
+        
+        const mergedMeets = [...existingMeets, ...newMeets];
+        log(`🔄 Merged data: ${existingMeets.length} existing + ${newMeets.length} new = ${mergedMeets.length} total meets`);
+
+        // Save results with merged data
         const report = {
             metadata: {
                 timestamp: new Date().toISOString(),
                 script_name: 'meet-entry-scraper',
-                date_range: {
-                    from: options.fromDate,
-                    to: options.toDate
-                },
+                date_ranges: [
+                    ...(existingData.metadata?.date_ranges || [existingData.metadata?.date_range].filter(Boolean) || []),
+                    { from: options.fromDate, to: options.toDate }
+                ],
                 processing_time_ms: Date.now() - startTime,
+                total_processing_time_ms: (existingData.metadata?.total_processing_time_ms || existingData.metadata?.processing_time_ms || 0) + (Date.now() - startTime),
                 pages_processed: currentPage - 1,
-                total_meets: allMeetData.length,
-                meets_with_entries: allMeetData.filter(m => m.entry_count > 0).length,
-                total_entries: allMeetData.reduce((sum, meet) => sum + meet.entry_count, 0)
+                total_meets: mergedMeets.length,
+                meets_with_entries: mergedMeets.filter(m => m.entry_count > 0).length,
+                total_entries: mergedMeets.reduce((sum, meet) => sum + meet.entry_count, 0),
+                new_meets_added: newMeets.length
             },
-            meets: allMeetData
+            meets: mergedMeets
         };
         
         fs.writeFileSync(OUTPUT_FILE, JSON.stringify(report, null, 2));
@@ -487,8 +635,10 @@ async function scrapeMeetEntries() {
         log('✅ MEET ENTRY SCRAPING COMPLETE');
         log(`   Date range: ${options.fromDate} to ${options.toDate}`);
         log(`   Pages processed: ${currentPage - 1}`);
-        log(`   Total meets found: ${allMeetData.length}`);
-        log(`   Meets with entries: ${report.metadata.meets_with_entries}`);
+        log(`   New meets found: ${allMeetData.length}`);
+        log(`   New meets with entries: ${allMeetData.filter(m => m.entry_count > 0).length}`);
+        log(`   Total meets in database: ${mergedMeets.length}`);
+        log(`   Total meets with entries: ${report.metadata.meets_with_entries}`);
         log(`   Total entries scraped: ${report.metadata.total_entries}`);
         log(`   Processing time: ${Date.now() - startTime}ms`);
         
