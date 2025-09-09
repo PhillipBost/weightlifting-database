@@ -293,12 +293,25 @@ async function createMeetResult(resultData) {
     // Extract lifter data for calculations (don't insert these into DB)
     const { lifter_birth_year, lifter_gender, ...dbResultData } = resultData;
     
-    // Calculate competition age and qpoints, and include gender/birth_year in meet_results
+    // Calculate competition age
+    const competition_age = resultData.date && lifter_birth_year ? 
+        new Date(resultData.date).getFullYear() - lifter_birth_year : null;
+    
+    // Calculate age-appropriate Q-scores
+    const qScores = calculateAgeAppropriateQScore(
+        resultData.total, 
+        resultData.body_weight_kg, 
+        lifter_gender, 
+        competition_age
+    );
+    
+    // Include all calculated values in meet_results
     const enhancedResultData = {
         ...dbResultData,
-        competition_age: resultData.date && lifter_birth_year ? 
-            new Date(resultData.date).getFullYear() - lifter_birth_year : null,
-        qpoints: calculateQPoints(resultData.total, resultData.body_weight_kg, lifter_gender),
+        competition_age,
+        qpoints: qScores.qpoints,
+        q_youth: qScores.q_youth,
+        q_masters: qScores.q_masters,
         gender: lifter_gender || null,
         birth_year: lifter_birth_year || null
     };
@@ -448,15 +461,51 @@ async function getExistingMeetCount() {
     }
 }
 
-function calculateQPoints(total, bodyWeight, gender) {
-    if (!total || !bodyWeight || !gender || total <= 0 || bodyWeight <= 0) {
-        return null;
+function calculateAgeAppropriateQScore(total, bodyWeight, gender, age) {
+    // Initialize all scores as null
+    const qScores = {
+        qpoints: null,
+        q_youth: null,
+        q_masters: null
+    };
+    
+    // Validate input data
+    if (!total || !bodyWeight || !gender || total <= 0 || bodyWeight <= 0 || !age) {
+        return qScores;
     }
     
     const totalNum = parseFloat(total);
     const bwNum = parseFloat(bodyWeight);
     const B = bwNum / 100;
     
+    // Age-based scoring according to Huebner's brackets:
+    // Ages ≤9: No Q-scoring
+    if (age <= 9) {
+        return qScores;
+    }
+    
+    // Ages 10-20: Q-youth only
+    if (age >= 10 && age <= 20) {
+        qScores.q_youth = calculateQScore(totalNum, B, gender);
+        return qScores;
+    }
+    
+    // Ages 21-30: Q-points only
+    if (age >= 21 && age <= 30) {
+        qScores.qpoints = calculateQScore(totalNum, B, gender);
+        return qScores;
+    }
+    
+    // Ages 31+: Q-masters only
+    if (age >= 31) {
+        qScores.q_masters = calculateQScore(totalNum, B, gender);
+        return qScores;
+    }
+    
+    return qScores;
+}
+
+function calculateQScore(totalNum, B, gender) {
     if (gender === 'M') {
         const denominator = 416.7 - 47.87 * Math.pow(B, -2) + 18.93 * Math.pow(B, 2);
         return Math.round((totalNum * 463.26 / denominator) * 1000) / 1000;
