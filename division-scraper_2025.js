@@ -225,6 +225,7 @@ function createAthleteCSV(membershipId, profileData, sourceDivision) {
         'Best C&J',
         'Total',
         'qpoints',
+        'qyouth',
         'qmasters',
         'sinclair',
         'sinclairmeltzerfaber',
@@ -271,32 +272,46 @@ function createAthleteCSV(membershipId, profileData, sourceDivision) {
                 }
             }
             
-            // Calculate Q-points using IWF formula
+            // Calculate age-appropriate Q-scores using IWF formula
             let qpoints = '';
-            if (comp.total && comp.bodyWeight && profile.gender) {
+            let qmasters = '';
+            let qyouth = '';
+            
+            if (comp.total && comp.bodyWeight && profile.gender && competitionAge) {
                 try {
                     const total = parseFloat(comp.total);
                     const bodyWeight = parseFloat(comp.bodyWeight);
                     const gender = profile.gender;
+                    const age = parseInt(competitionAge);
                     
-                    if (!isNaN(total) && !isNaN(bodyWeight) && total > 0 && bodyWeight > 0) {
-                        let qPointsValue;
+                    if (!isNaN(total) && !isNaN(bodyWeight) && total > 0 && bodyWeight > 0 && !isNaN(age)) {
                         const B = bodyWeight / 100;
+                        let qScoreValue;
                         
                         if (gender === 'M') {
                             const denominator = 416.7 - 47.87 * Math.pow(B, -2) + 18.93 * Math.pow(B, 2);
-                            qPointsValue = total * 463.26 / denominator;
+                            qScoreValue = total * 463.26 / denominator;
                         } else if (gender === 'F') {
                             const denominator = 266.5 - 19.44 * Math.pow(B, -2) + 18.61 * Math.pow(B, 2);
-                            qPointsValue = total * 306.54 / denominator;
+                            qScoreValue = total * 306.54 / denominator;
                         }
                         
-                        if (qPointsValue && !isNaN(qPointsValue)) {
-                            qpoints = qPointsValue.toFixed(3);
+                        if (qScoreValue && !isNaN(qScoreValue)) {
+                            const formattedScore = qScoreValue.toFixed(3);
+                            
+                            // Age-based scoring according to Huebner's brackets
+                            if (age >= 10 && age <= 20) {
+                                qyouth = formattedScore;  // Q-youth for ages 10-20
+                            } else if (age >= 21 && age <= 30) {
+                                qpoints = formattedScore; // Q-points for ages 21-30
+                            } else if (age >= 31) {
+                                qmasters = formattedScore; // Q-masters for ages 31+
+                            }
+                            // Ages ≤9 get no Q-scores (all remain empty)
                         }
                     }
                 } catch (error) {
-                    // If calculation fails, leave qpoints empty
+                    // If calculation fails, leave all Q-scores empty
                 }
             }
             
@@ -328,7 +343,8 @@ function createAthleteCSV(membershipId, profileData, sourceDivision) {
                 escapeCSV(comp.bestCJ),
                 escapeCSV(comp.total),
                 escapeCSV(qpoints),
-                '', // qmasters placeholder
+                escapeCSV(qyouth),
+                escapeCSV(qmasters),
                 '', // sinclair placeholder
                 '', // sinclairmeltzerfaber placeholder
                 '', // sinclairhuebnermetzerfaber placeholder
@@ -387,7 +403,8 @@ function createAthleteCSV(membershipId, profileData, sourceDivision) {
             '', // Best C&J - not available from division page
             escapeCSV(profile.total),
             '', // qpoints - can't calculate without body weight
-            '', // qmasters placeholder
+            '', // qyouth - can't calculate without body weight
+            '', // qmasters - can't calculate without body weight
             '', // sinclair placeholder
             '', // sinclairmeltzerfaber placeholder
             '', // sinclairhuebnermetzerfaber placeholder
