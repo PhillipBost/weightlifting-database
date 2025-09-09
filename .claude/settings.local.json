@@ -2,7 +2,21 @@
   "permissions": {
     "allow": [
       "WebFetch(domain:www.usaweightlifting.org)",
-      "Bash(node:*)"
+      "Bash(node:*)",
+      "Bash(claude mcp:*)",
+      "Bash(uvx:*)",
+      "Bash(pip --version)",
+      "Bash(pip install:*)",
+      "Bash(uv tool install:*)",
+      "Bash(python:*)",
+      "Bash(winget search:*)",
+      "Bash(powershell:*)",
+      "Bash(curl:*)",
+      "Bash(where python)",
+      "Bash(export:*)",
+      "WebSearch",
+      "mcp__serena__activate_project",
+      "WebFetch(domain:github.com)"
     ],
     "deny": [],
     "ask": []
