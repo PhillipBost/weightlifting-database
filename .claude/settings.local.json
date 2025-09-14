@@ -18,7 +18,14 @@
       "mcp__serena__activate_project",
       "WebFetch(domain:github.com)",
       "mcp__serena__get_symbols_overview",
-      "mcp__serena__search_for_pattern"
+      "mcp__serena__search_for_pattern",
+      "mcp__serena__read_file",
+      "WebFetch(domain:open-elevation.com)",
+      "WebFetch(domain:open-meteo.com)",
+      "mcp__serena__create_text_file",
+      "WebFetch(domain:api.open-meteo.com)",
+      "mcp__serena__replace_regex",
+      "mcp__serena__list_dir"
     ],
     "deny": [],
     "ask": []

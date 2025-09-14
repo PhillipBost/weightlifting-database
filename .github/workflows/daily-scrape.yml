@@ -47,7 +47,18 @@ jobs:
       - name: Create output directory structure
         run: |
           mkdir -p output/athletes
+          mkdir -p logs
           echo "📁 Created output directory structure"
+      
+      - name: Fetch elevation data for new meet locations
+        run: |
+          echo "🗻 Starting elevation fetch at: $(date +'%Y-%m-%d %H:%M:%S %Z')"
+          node elevation-fetcher.js
+          echo "✅ Elevation fetch completed at: $(date +'%Y-%m-%d %H:%M:%S %Z')"
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+          TZ: America/New_York
       
       - name: Upload CSV artifact (for debugging)
         if: always()
