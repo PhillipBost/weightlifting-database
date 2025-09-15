@@ -463,21 +463,20 @@ async function main() {
     global.isRunning = true;
 
     try {
-        console.log('🧪 TEST Historical Meet Scraper (2025 ONLY) - WITH URLs + meet_id');
-        console.log('================================================================');
-        console.log('⚠️  This is a TEST version - only processing 2025');
+        console.log('🏋️ Daily Meet Scraper (2025) - WITH URLs + meet_id');
+        console.log('=======================================================');
+        console.log('📅 Processing current year meets for daily scraper');
 
-        const result = await getTestHistoricalMeets();
+        const result = await getCurrentYearMeets();
 
-        console.log('\n🎉 TEST Historical scraping completed successfully!');
+        console.log('\n🎉 Daily scraping completed successfully!');
         console.log(`📊 Total meets extracted: ${result.totalMeets}`);
         console.log(`❌ Total errors logged: ${result.totalErrors}`);
         console.log(`📁 Files created: ${result.files.length} years processed`);
         console.log('\n💡 Files are saved in current directory');
-        console.log('🚀 If this works well, run the full historical scraper!');
 
     } catch (error) {
-        console.error('💥 TEST Historical scraper failed:', error.message);
+        console.error('💥 Daily scraper failed:', error.message);
         process.exit(1);
     } finally {
         global.isRunning = false;
@@ -501,7 +500,7 @@ if (require.main === module) {
 }
 
 module.exports = {
-    getTestHistoricalMeets
+    getCurrentYearMeets
 };
 
 // CSV utility functions with comma separation
@@ -536,18 +535,16 @@ function logError(errorFilePath, meetData, errorMessage) {
     appendCSVRow(errorFilePath, errorRow);
 }
 
-async function getTestHistoricalMeets() {
-    console.log(`🧪 Starting TEST historical meet scraper (2025 ONLY)...`);
+async function getCurrentYearMeets() {
+    console.log(`🏋️ Starting daily meet scraper (${new Date().getFullYear()})...`);
 
     const timestamp = new Date().toISOString().slice(0, 19).replace(/:/g, '-');
 
     // Create organized folder structure
     const outputDir = './';
-    const testDir = outputDir;
-    const errorsDir = '../../errors';
+    const errorsDir = './errors';
 
     ensureDirectoryExists(outputDir);
-    ensureDirectoryExists(testDir);
     ensureDirectoryExists(errorsDir);
 
     const url = 'https://usaweightlifting.sport80.com/public/rankings/results/';
@@ -578,8 +575,9 @@ async function getTestHistoricalMeets() {
         files: []
     };
 
-    // Only process 2025 for testing
-    const testYears = [2025];
+    // Process current year for daily scraper
+    const currentYear = new Date().getFullYear();
+    const yearsToProcess = [currentYear];
 
     try {
         await page.goto(url, { waitUntil: 'networkidle0' });
@@ -587,15 +585,15 @@ async function getTestHistoricalMeets() {
         // Set pagination to 50 results per page
         await setResultsPerPage(page);
 
-        // Process 2025
-        for (const year of testYears) {
-            console.log(`\n📅 Processing TEST year: ${year}`);
+        // Process current year
+        for (const year of yearsToProcess) {
+            console.log(`\n📅 Processing year: ${year}`);
 
             // Clear processed meet IDs for each year
             processedMeetIds.clear();
 
-            const csvFilePath = path.join(testDir, `meets_${year}.csv`);
-            const errorFilePath = path.join(errorsDir, `meet_errors_${year}_TEST_${timestamp}.csv`);
+            const csvFilePath = path.join(outputDir, `meets_${year}.csv`);
+            const errorFilePath = path.join(errorsDir, `meet_errors_${year}_${timestamp}.csv`);
 
             console.log(`📝 Output: ${csvFilePath}`);
             console.log(`❌ Errors: ${errorFilePath}`);
@@ -606,43 +604,73 @@ async function getTestHistoricalMeets() {
 
             // Note: Error file will be created only when first error occurs
 
-            const batchId = `test_historical_${year}_${timestamp}`;
+            const batchId = `daily_scraper_${year}_${timestamp}`;
 
             try {
                 // Navigate to the specific year
+                console.log(`🎯 Setting up date filters for ${year}...`);
                 await navigateToYear(page, year);
 
-                // Quick wait for data to load
-                await new Promise(resolve => setTimeout(resolve, 1000));
+                // Wait for data to load and verify we have results
+                console.log(`⏳ Waiting for filtered data to load for ${year}...`);
+                await new Promise(resolve => setTimeout(resolve, 2000));
+                
+                // Check if we have any data after filtering
+                const hasData = await page.evaluate(() => {
+                    const rows = document.querySelectorAll('.data-table tbody tr');
+                    return rows.length > 0;
+                });
+                
+                if (!hasData) {
+                    console.log(`⚠️ No data found for year ${year} after filtering - this might be expected`);
+                }
 
                 let meetCount = 0;
                 let errorCount = 0;
 
                 // Get meets from first page
                 let pageData = await getPageData(page);
+                console.log(`📄 Initial page data: ${pageData}`);
+                
                 const pageResult = await extractMeetsFromPage(page, csvFilePath, errorFilePath, batchId);
                 meetCount += pageResult.meetCount;
                 errorCount += pageResult.errorCount;
-
-                console.log(`📄 Page data: ${pageData}`);
+                
+                console.log(`📊 First page results: ${pageResult.meetCount} meets, ${pageResult.errorCount} errors`);
 
                 // Process remaining pages
+                let pageNumber = 2;
                 while (await handleTotalAthleteString(pageData)) {
-                    console.log('📄 Processing next page...');
+                    console.log(`📄 Processing page ${pageNumber}...`);
 
                     // Clear cache before next page
                     apiDataCache = [];
 
-                    // PAGINATION - slower wait for content to load
-                    await page.click('.data-table div div.v-data-table div.v-data-footer div.v-data-footer__icons-after');
-                    await new Promise(resolve => setTimeout(resolve, 1000)); // Increased from 200ms to prevent duplicate extraction
+                    try {
+                        // PAGINATION - slower wait for content to load
+                        await page.click('.data-table div div.v-data-table div.v-data-footer div.v-data-footer__icons-after');
+                        await new Promise(resolve => setTimeout(resolve, 1000));
 
-                    pageData = await getPageData(page);
-                    console.log(`📄 Page data: ${pageData}`);
+                        pageData = await getPageData(page);
+                        console.log(`📄 Page ${pageNumber} data: ${pageData}`);
 
-                    const pageResult = await extractMeetsFromPage(page, csvFilePath, errorFilePath, batchId);
-                    meetCount += pageResult.meetCount;
-                    errorCount += pageResult.errorCount;
+                        const pageResult = await extractMeetsFromPage(page, csvFilePath, errorFilePath, batchId);
+                        meetCount += pageResult.meetCount;
+                        errorCount += pageResult.errorCount;
+                        
+                        console.log(`📊 Page ${pageNumber} results: ${pageResult.meetCount} meets, ${pageResult.errorCount} errors`);
+                        pageNumber++;
+                        
+                        // Safety check to prevent infinite loops
+                        if (pageNumber > 100) {
+                            console.log('⚠️ Reached maximum page limit (100) - stopping pagination');
+                            break;
+                        }
+                        
+                    } catch (paginationError) {
+                        console.error(`❌ Error during pagination on page ${pageNumber}:`, paginationError.message);
+                        break;
+                    }
                 }
 
                 results.yearResults[year] = { meetCount, errorCount };
@@ -650,17 +678,27 @@ async function getTestHistoricalMeets() {
                 results.totalErrors += errorCount;
                 results.files.push({ year, meets: csvFilePath, errors: errorFilePath });
 
-                console.log(`✅ TEST Year ${year} completed: ${meetCount} meets, ${errorCount} errors`);
+                console.log(`✅ Year ${year} completed: ${meetCount} meets, ${errorCount} errors`);
 
             } catch (error) {
-                console.error(`💥 Error processing TEST year ${year}:`, error);
-                logError(errorFilePath, { year, error: 'Year processing failed' }, error.message);
+                console.error(`💥 Error processing year ${year}:`, error);
+                console.error(`📍 Stack trace:`, error.stack);
+                
+                // Try to capture page state for debugging
+                try {
+                    await page.screenshot({ path: `error_${year}_${timestamp}.png`, fullPage: true });
+                    console.log(`📸 Error screenshot saved: error_${year}_${timestamp}.png`);
+                } catch (screenshotError) {
+                    console.log('⚠️ Could not save error screenshot');
+                }
+                
+                logError(errorFilePath, { year, error: 'Year processing failed', stack: error.stack }, error.message);
                 results.yearResults[year] = { meetCount: 0, errorCount: 1 };
                 results.totalErrors += 1;
             }
         }
 
-        console.log('\n🧪 TEST Historical scraping completed!');
+        console.log('\n🎉 Daily scraping completed!');
         console.log(`📊 Total meets extracted: ${results.totalMeets}`);
         console.log(`❌ Total errors: ${results.totalErrors}`);
         console.log('\n📈 Year breakdown:');
@@ -671,7 +709,7 @@ async function getTestHistoricalMeets() {
         return results;
 
     } catch (error) {
-        console.error('💥 TEST Historical scraping failed:', error);
+        console.error('💥 Daily scraping failed:', error);
         throw error;
     } finally {
         await browser.close();
@@ -874,13 +912,12 @@ async function handleDateField(page, fieldSelector, targetYear, fieldType) {
 
         // If we have a complex date picker, handle it
         if (activeInterface.includes('date-picker') || activeInterface.includes('v-menu')) {
-            // Set Jan 1, 2025 for start field
+            // Set Jan 1 of target year for start field
             if (fieldType === 'start') {
-                await handleComplexDatePicker(page, 2025, activeInterface, 1, 1); // January 1, 2025
+                await handleComplexDatePicker(page, targetYear, activeInterface, 1, 1); // January 1 of target year
             } else if (fieldType === 'end') {
-                // Set last day of Dec 2025 for end field
-                const lastDayDec2025 = 31; // December always has 31 days
-                await handleComplexDatePicker(page, 2025, activeInterface, 12, lastDayDec2025); // December 31, 2025
+                // Set Dec 31 of target year for end field
+                await handleComplexDatePicker(page, targetYear, activeInterface, 12, 31); // December 31 of target year
             } else {
                 await handleComplexDatePicker(page, targetYear, activeInterface); // Default for other
             }
