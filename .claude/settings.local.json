@@ -32,7 +32,9 @@
       "WebFetch(domain:usaweightlifting.sport80.com)",
       "mcp__serena__find_file",
       "Bash(timeout:*)",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(gh run list:*)",
+      "mcp__serena__think_about_collected_information"
     ],
     "deny": [],
     "ask": []
