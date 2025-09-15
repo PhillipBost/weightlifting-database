@@ -1,0 +1,195 @@
+name: Weekly Club Data Scraping and Import
+
+on:
+  schedule:
+    # Run every Sunday at 7 AM UTC (after meet addresses)
+    - cron: '0 7 * * 0'
+  workflow_dispatch: # Allow manual triggering
+
+jobs:
+  scrape-and-import-clubs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30 # Timeout for club scraping and import
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm install
+      
+      - name: Create output and logs directories
+        run: |
+          mkdir -p output logs
+      
+      - name: Scrape club data
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+        run: |
+          echo "🏋️ Starting club data scraping..."
+          echo "Scraping USA Weightlifting barbell club directory..."
+          
+          node club-scraper.js
+      
+      - name: Check if clubs were scraped
+        id: check_clubs
+        run: |
+          if [ -f "output/club_data.json" ]; then
+            # Count clubs in the output file
+            club_count=$(node -e "
+              const fs = require('fs');
+              try {
+                const data = JSON.parse(fs.readFileSync('output/club_data.json', 'utf8'));
+                console.log(data.clubs ? data.clubs.length : 0);
+              } catch (e) {
+                console.log(0);
+              }
+            ")
+            
+            new_club_count=$(node -e "
+              const fs = require('fs');
+              try {
+                const data = JSON.parse(fs.readFileSync('output/club_data.json', 'utf8'));
+                console.log(data.metadata ? (data.metadata.new_clubs_added || 0) : 0);
+              } catch (e) {
+                console.log(0);
+              }
+            ")
+            
+            clubs_with_phone=$(node -e "
+              const fs = require('fs');
+              try {
+                const data = JSON.parse(fs.readFileSync('output/club_data.json', 'utf8'));
+                console.log(data.metadata ? (data.metadata.clubs_with_phone || 0) : 0);
+              } catch (e) {
+                console.log(0);
+              }
+            ")
+            
+            clubs_with_email=$(node -e "
+              const fs = require('fs');
+              try {
+                const data = JSON.parse(fs.readFileSync('output/club_data.json', 'utf8'));
+                console.log(data.metadata ? (data.metadata.clubs_with_email || 0) : 0);
+              } catch (e) {
+                console.log(0);
+              }
+            ")
+            
+            clubs_with_address=$(node -e "
+              const fs = require('fs');
+              try {
+                const data = JSON.parse(fs.readFileSync('output/club_data.json', 'utf8'));
+                console.log(data.metadata ? (data.metadata.clubs_with_address || 0) : 0);
+              } catch (e) {
+                console.log(0);
+              }
+            ")
+            
+            echo "club_count=$club_count" >> $GITHUB_OUTPUT
+            echo "new_club_count=$new_club_count" >> $GITHUB_OUTPUT
+            echo "clubs_with_phone=$clubs_with_phone" >> $GITHUB_OUTPUT
+            echo "clubs_with_email=$clubs_with_email" >> $GITHUB_OUTPUT
+            echo "clubs_with_address=$clubs_with_address" >> $GITHUB_OUTPUT
+            
+            echo "📊 Found $club_count total clubs ($new_club_count new)"
+            echo "📞 Clubs with phone: $clubs_with_phone"
+            echo "📧 Clubs with email: $clubs_with_email"
+            echo "📍 Clubs with address: $clubs_with_address"
+            
+            if [ $club_count -gt 0 ]; then
+              echo "has_clubs=true" >> $GITHUB_OUTPUT
+            else
+              echo "has_clubs=false" >> $GITHUB_OUTPUT
+            fi
+          else
+            echo "❌ No club_data.json file found"
+            echo "has_clubs=false" >> $GITHUB_OUTPUT
+            echo "club_count=0" >> $GITHUB_OUTPUT
+            echo "new_club_count=0" >> $GITHUB_OUTPUT
+            echo "clubs_with_phone=0" >> $GITHUB_OUTPUT
+            echo "clubs_with_email=0" >> $GITHUB_OUTPUT
+            echo "clubs_with_address=0" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Import club data to database
+        if: steps.check_clubs.outputs.has_clubs == 'true'
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+        run: |
+          echo "📊 Starting club data import..."
+          echo "Processing ${{ steps.check_clubs.outputs.club_count }} clubs"
+          
+          node club-importer.js
+      
+      - name: Upload results as artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: club-data-$(date +%Y-%m-%d)
+          path: |
+            output/club_data.json
+            logs/club-scraper.log
+            logs/club-importer.log
+          retention-days: 30
+      
+      - name: Create summary
+        if: always()
+        run: |
+          echo "## 🏋️ Weekly Club Data Scraping Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Date:** $(date +%Y-%m-%d)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          if [ "${{ steps.check_clubs.outputs.has_clubs }}" == "true" ]; then
+            echo "✅ **Status:** Successfully scraped and imported club data" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "**Results:**" >> $GITHUB_STEP_SUMMARY
+            echo "- 🏢 **Total Clubs:** ${{ steps.check_clubs.outputs.club_count }}" >> $GITHUB_STEP_SUMMARY
+            echo "- 🆕 **New Clubs Added:** ${{ steps.check_clubs.outputs.new_club_count }}" >> $GITHUB_STEP_SUMMARY
+            echo "- 📞 **Clubs with Phone:** ${{ steps.check_clubs.outputs.clubs_with_phone }}" >> $GITHUB_STEP_SUMMARY
+            echo "- 📧 **Clubs with Email:** ${{ steps.check_clubs.outputs.clubs_with_email }}" >> $GITHUB_STEP_SUMMARY
+            echo "- 📍 **Clubs with Address:** ${{ steps.check_clubs.outputs.clubs_with_address }}" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "**Actions Completed:**" >> $GITHUB_STEP_SUMMARY
+            echo "- 🔍 Scraped USA Weightlifting club directory" >> $GITHUB_STEP_SUMMARY
+            echo "- 📋 Extracted club names, addresses, phone numbers, and emails" >> $GITHUB_STEP_SUMMARY
+            echo "- 🔧 Normalized and validated club data" >> $GITHUB_STEP_SUMMARY
+            echo "- 📊 Imported to Supabase clubs table" >> $GITHUB_STEP_SUMMARY
+            echo "- 🔗 Updated meet_results with club_id references" >> $GITHUB_STEP_SUMMARY
+            
+            # Calculate data quality percentages
+            if [ ${{ steps.check_clubs.outputs.club_count }} -gt 0 ]; then
+              phone_pct=$(( ${{ steps.check_clubs.outputs.clubs_with_phone }} * 100 / ${{ steps.check_clubs.outputs.club_count }} ))
+              email_pct=$(( ${{ steps.check_clubs.outputs.clubs_with_email }} * 100 / ${{ steps.check_clubs.outputs.club_count }} ))
+              address_pct=$(( ${{ steps.check_clubs.outputs.clubs_with_address }} * 100 / ${{ steps.check_clubs.outputs.club_count }} ))
+              
+              echo "" >> $GITHUB_STEP_SUMMARY
+              echo "**Data Quality:**" >> $GITHUB_STEP_SUMMARY
+              echo "- Phone Coverage: ${phone_pct}%" >> $GITHUB_STEP_SUMMARY
+              echo "- Email Coverage: ${email_pct}%" >> $GITHUB_STEP_SUMMARY
+              echo "- Address Coverage: ${address_pct}%" >> $GITHUB_STEP_SUMMARY
+            fi
+          else
+            echo "⚠️ **Status:** No club data found or scraping failed" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "This may indicate an issue with the club directory website or scraping logic." >> $GITHUB_STEP_SUMMARY
+            echo "Check the logs for more details." >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Logs and data available in workflow artifacts**" >> $GITHUB_STEP_SUMMARY
+      
+      - name: Cleanup output files
+        if: always()
+        run: |
+          # Keep logs but clean up large output files to save space
+          rm -f output/club_data.json
