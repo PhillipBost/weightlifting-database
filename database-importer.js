@@ -85,6 +85,42 @@ async function getExistingMeetIds() {
     return { meetIds: existingMeetIds, internalIds: existingInternalIds };
 }
 
+async function findMeetsWithoutResults(meetings) {
+    console.log('🔍 Checking which meets are missing individual results...');
+    
+    const meetsWithoutResults = [];
+    
+    for (const meeting of meetings) {
+        try {
+            // Check if this meet already has results in the meet_results table
+            const { count, error } = await supabase
+                .from('meet_results')
+                .select('*', { count: 'exact', head: true })
+                .eq('meet_id', meeting.meet_id);
+            
+            if (error) {
+                console.log(`⚠️ Error checking results for meet ${meeting.meet_id}: ${error.message}`);
+                continue;
+            }
+            
+            if (count === 0) {
+                console.log(`📋 Meet ${meeting.meet_id} (${meeting.Meet}) has no results - needs import`);
+                meetsWithoutResults.push(meeting);
+            } else {
+                console.log(`✅ Meet ${meeting.meet_id} already has ${count} results`);
+            }
+            
+            // Small delay to avoid overwhelming the database
+            await new Promise(resolve => setTimeout(resolve, 100));
+            
+        } catch (error) {
+            console.error(`❌ Error checking meet ${meeting.meet_id}: ${error.message}`);
+        }
+    }
+    
+    return meetsWithoutResults;
+}
+
 async function upsertMeetsToDatabase(meetings) {
     console.log(`🔄 Upserting ${meetings.length} meets to database...`);
     
@@ -617,22 +653,25 @@ async function main() {
         console.log(`   - Duplicates by meet_internal_id: ${duplicatesByInternalId}`);
         console.log(`   - New meets to import: ${newMeetings.length}`);
         
-        if (newMeetings.length === 0) {
-            console.log('✅ No new meets to import');
-            return;
+        // Import meets to database (even if there are no new ones, we still need to check for missing results)
+        console.log('\n📥 Step 1: Importing meet metadata...');
+        let importResult = { newMeetIds: [], errorCount: 0 };
+        
+        if (newMeetings.length > 0) {
+            importResult = await upsertMeetsToDatabase(newMeetings);
+            console.log(`📊 New meet metadata imported: ${importResult.newMeetIds.length}`);
+        } else {
+            console.log('📊 No new meet metadata to import');
         }
         
-        // Import meets to database
-        console.log('\n📥 Step 1: Importing meet metadata...');
-        const importResult = await upsertMeetsToDatabase(newMeetings);
+        // Check for meets that don't have results yet (regardless of whether meet metadata is new)
+        console.log('\n🔍 Checking for meets missing individual results...');
+        const meetsWithoutResults = await findMeetsWithoutResults(meetings);
+        console.log(`📊 Meets missing results: ${meetsWithoutResults.length}`);
         
-        // All processed meetings are new since we filtered duplicates
-        const newMeetIds = importResult.newMeetIds;
-        console.log(`📊 New meets detected: ${newMeetIds.length}`);
-        
-        // Import individual meet results for new meets only
+        // Import individual meet results for meets that don't have results yet
         console.log('\n📥 Step 2: Importing individual meet results...');
-        const resultsImport = await scrapeAndImportMeetResults(newMeetIds, meetings);
+        const resultsImport = await scrapeAndImportMeetResults(meetsWithoutResults.map(m => m.meet_id), meetings);
         
         const afterCount = await getExistingMeetCount();
         
@@ -642,7 +681,8 @@ async function main() {
         console.log(`💾 Database before: ${beforeCount || 'unknown'} meets`);
         console.log(`💾 Database after: ${afterCount || 'unknown'} meets`);
         console.log(`➕ Net change: ${afterCount && beforeCount ? afterCount - beforeCount : 'unknown'} meets`);
-        console.log(`🆕 New meets processed: ${newMeetIds.length}`);
+        console.log(`🆕 New meet metadata processed: ${importResult.newMeetIds.length}`);
+        console.log(`🆕 Meets with results imported: ${meetsWithoutResults.length}`);
         console.log(`🏋️ Meet results imported: ${resultsImport.processed}`);
         console.log(`❌ Errors: ${importResult.errorCount + resultsImport.errors}`);
         
