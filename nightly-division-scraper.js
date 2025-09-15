@@ -332,7 +332,7 @@ async function handleComplexDatePicker(page, targetYear, interfaceSelector, targ
         
         for (let i = 0; i < totalMonthsDifference; i++) {
             await nextButton.click();
-            await page.waitForTimeout(25);
+            await new Promise(resolve => setTimeout(resolve, 25));
         }
 
         console.log(`✅ Completed ${totalMonthsDifference} forward navigation clicks`);
@@ -345,7 +345,7 @@ async function handleComplexDatePicker(page, targetYear, interfaceSelector, targ
         
         for (let i = 0; i < totalMonthsToGoBack; i++) {
             await prevButton.click();
-            await page.waitForTimeout(25);
+            await new Promise(resolve => setTimeout(resolve, 25));
         }
 
         console.log(`✅ Completed ${totalMonthsToGoBack} backward navigation clicks`);
@@ -365,7 +365,7 @@ async function handleComplexDatePicker(page, targetYear, interfaceSelector, targ
 
     // Now click on the target day
     console.log(`📅 Selecting day ${targetDay}`);
-    await page.waitForTimeout(200);
+    await new Promise(resolve => setTimeout(resolve, 200));
 
     const clickResult = await page.evaluate((day) => {
         const allButtons = document.querySelectorAll('button');
@@ -382,7 +382,7 @@ async function handleComplexDatePicker(page, targetYear, interfaceSelector, targ
 
     if (clickResult.success) {
         console.log(`✅ Clicked day ${targetDay}`);
-        await page.waitForTimeout(25);
+        await new Promise(resolve => setTimeout(resolve, 25));
     } else {
         console.log(`❌ Could not find day ${targetDay} button`);
     }
@@ -419,7 +419,7 @@ async function handleDateField(page, fieldSelector, targetYear, fieldType, targe
         
         // Click the date field to open its calendar
         await page.click(fieldSelector);
-        await page.waitForTimeout(200);
+        await new Promise(resolve => setTimeout(resolve, 200));
 
         // Look for various date picker interfaces that might have opened
         const datePickerInterfaces = [
@@ -453,14 +453,14 @@ async function handleDateField(page, fieldSelector, targetYear, fieldType, targe
         if (!activeInterface) {
             console.log(`⚠️ No ${fieldType} date picker interface found`);
             await page.keyboard.press('Escape');
-            await page.waitForTimeout(500);
+            await new Promise(resolve => setTimeout(resolve, 500));
             return;
         }
 
         if (activeInterface.includes('date-picker') || activeInterface.includes('v-menu')) {
             await handleComplexDatePicker(page, targetYear, activeInterface, targetMonth, targetDay);
             console.log(`🔚 Waiting for ${fieldType} date calendar to close...`);
-            await page.waitForTimeout(100);
+            await new Promise(resolve => setTimeout(resolve, 100));
         }
 
         console.log(`✅ ${fieldType} date field handling completed`);
@@ -468,7 +468,7 @@ async function handleDateField(page, fieldSelector, targetYear, fieldType, targe
     } catch (error) {
         console.error(`❌ Failed to handle ${fieldType} date field:`, error.message);
         await page.keyboard.press('Escape');
-        await page.waitForTimeout(500);
+        await new Promise(resolve => setTimeout(resolve, 500));
     }
 }
 
@@ -492,7 +492,7 @@ async function scrapeDivisionAthletes(page, division, divisionIndex, globalDivis
             const filterButton = await page.$('button[aria-label="Show Filters"]');
             if (filterButton) {
                 await filterButton.click();
-                await page.waitForTimeout(1000);
+                await new Promise(resolve => setTimeout(resolve, 1000));
             }
         }
         
@@ -503,7 +503,7 @@ async function scrapeDivisionAthletes(page, division, divisionIndex, globalDivis
         await page.keyboard.up('Control');
         
         await page.type('#weight_class', `${ageCategory} ${weightClass}`, {delay: 2});
-        await page.waitForTimeout(500);
+        await new Promise(resolve => setTimeout(resolve, 500));
         await page.keyboard.press('ArrowDown');
         
         // Special navigation for certain weight classes (from your original code)
@@ -551,13 +551,13 @@ async function scrapeDivisionAthletes(page, division, divisionIndex, globalDivis
         console.log(`   (Last month + Current month only)`);
         
         await handleDateField(page, '#form__date_range_start', startYear, 'start', startMonth, startDay);
-        await page.waitForTimeout(100);
+        await new Promise(resolve => setTimeout(resolve, 100));
         
         await handleDateField(page, '#form__date_range_end', endYear, 'end', endMonth, endDay);
-        await page.waitForTimeout(100);
+        await new Promise(resolve => setTimeout(resolve, 100));
         
         await page.click('body');
-        await page.waitForTimeout(500);
+        await new Promise(resolve => setTimeout(resolve, 500));
         
         // Apply filters
         const applyButton = await page.evaluateHandle(() => {
@@ -568,7 +568,7 @@ async function scrapeDivisionAthletes(page, division, divisionIndex, globalDivis
         if (applyButton) {
             await applyButton.click();
             // Wait for results to load (reduced wait time since less data)
-            await page.waitForTimeout(2000);
+            await new Promise(resolve => setTimeout(resolve, 2000));
         }
         
         // Extract athletes from results
@@ -613,7 +613,7 @@ async function scrapeDivisionAthletes(page, division, divisionIndex, globalDivis
             });
             
             if (nextPageExists) {
-                await page.waitForTimeout(1500); // Reduced wait time
+                await new Promise(resolve => setTimeout(resolve, 1500)); // Reduced wait time
                 currentPage++;
             } else {
                 hasMorePages = false;
