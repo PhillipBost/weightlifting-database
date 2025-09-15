@@ -470,8 +470,8 @@ async function main() {
         // Check Supabase connection
         console.log('🔗 Testing Supabase connection...');
         
-        if (!process.env.SUPABASE_URL || !process.env.SUPABASE_ANON_KEY) {
-            throw new Error('Missing Supabase environment variables (SUPABASE_URL, SUPABASE_ANON_KEY)');
+        if (!process.env.SUPABASE_URL || !process.env.SUPABASE_SECRET_KEY) {
+            throw new Error('Missing Supabase environment variables (SUPABASE_URL, SUPABASE_SECRET_KEY)');
         }
         
         // Test connection - ONLY add timeout here where it's most likely to hang
