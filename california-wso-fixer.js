@@ -59,44 +59,104 @@ async function generateMergedCountyBoundaries(counties, wsoName) {
 
     console.log(`Successfully fetched ${allFeatures.length} county boundaries`);
 
-    // Create MultiPolygon from all individual county polygons
-    // This is more reliable than turf.union which has issues with some Nominatim geometries
-    console.log(`Creating MultiPolygon from ${allFeatures.length} county boundaries...`);
+    // Try Turf.js union for true polygon merging (eliminates county borders)
+    // Fallback to MultiPolygon concatenation if union fails
+    console.log(`Attempting to union ${allFeatures.length} county boundaries...`);
 
-    const coordinates = [];
+    let unifiedFeature = null;
     const successfulCounties = [];
     const failedCounties = [];
+    let mergeMethod = "union_failed";
 
-    for (const feature of allFeatures) {
-        try {
-            if (feature.geometry.type === 'Polygon') {
-                coordinates.push(feature.geometry.coordinates);
-                successfulCounties.push(feature.properties.county);
-                console.log(`  ✓ Added ${feature.properties.county} County (Polygon)`);
-            } else if (feature.geometry.type === 'MultiPolygon') {
-                feature.geometry.coordinates.forEach(polyCoords => {
-                    coordinates.push(polyCoords);
-                });
-                successfulCounties.push(feature.properties.county);
-                console.log(`  ✓ Added ${feature.properties.county} County (MultiPolygon)`);
-            } else {
-                failedCounties.push(feature.properties.county);
-                console.log(`  ✗ Unknown geometry type for ${feature.properties.county} County: ${feature.geometry.type}`);
+    // Attempt Turf.js union for seamless boundaries
+    try {
+        if (allFeatures.length === 1) {
+            // Single county - no union needed
+            unifiedFeature = allFeatures[0];
+            successfulCounties.push(allFeatures[0].properties.county);
+            mergeMethod = "single_county";
+            console.log(`  ✓ Single county - no union needed`);
+        } else {
+            // Multiple counties - attempt union
+            console.log(`  🔄 Attempting union of ${allFeatures.length} counties...`);
+            
+            unifiedFeature = allFeatures[0];
+            successfulCounties.push(allFeatures[0].properties.county);
+            
+            for (let i = 1; i < allFeatures.length; i++) {
+                try {
+                    const nextFeature = allFeatures[i];
+                    const unionResult = union(unifiedFeature, nextFeature);
+                    
+                    if (unionResult && unionResult.geometry) {
+                        unifiedFeature = unionResult;
+                        successfulCounties.push(nextFeature.properties.county);
+                        console.log(`    ✓ Unioned ${nextFeature.properties.county} County (${i+1}/${allFeatures.length})`);
+                    } else {
+                        throw new Error('Union produced invalid geometry');
+                    }
+                } catch (unionError) {
+                    console.log(`    ⚠️ Union failed for ${allFeatures[i].properties.county}: ${unionError.message}`);
+                    failedCounties.push(allFeatures[i].properties.county);
+                    // Continue with what we have so far
+                }
             }
-        } catch (error) {
-            failedCounties.push(feature.properties.county);
-            console.error(`  ✗ Error processing ${feature.properties.county} County:`, error.message);
+            
+            if (successfulCounties.length > 1) {
+                mergeMethod = "turf_union_partial";
+                if (failedCounties.length === 0) {
+                    mergeMethod = "turf_union_complete";
+                    console.log(`  ✅ Complete union successful! Eliminated all county borders`);
+                } else {
+                    console.log(`  ✅ Partial union successful (${successfulCounties.length}/${allFeatures.length} counties)`);
+                }
+            } else {
+                throw new Error('Union failed for all counties except first');
+            }
         }
+    } catch (unionError) {
+        console.log(`  ❌ Turf union failed: ${unionError.message}`);
+        console.log(`  🔄 Falling back to MultiPolygon concatenation...`);
+        
+        // Fallback: MultiPolygon concatenation (original approach)
+        const coordinates = [];
+        successfulCounties.length = 0; // Clear array
+        failedCounties.length = 0;
+        
+        for (const feature of allFeatures) {
+            try {
+                if (feature.geometry.type === 'Polygon') {
+                    coordinates.push(feature.geometry.coordinates);
+                    successfulCounties.push(feature.properties.county);
+                } else if (feature.geometry.type === 'MultiPolygon') {
+                    feature.geometry.coordinates.forEach(polyCoords => {
+                        coordinates.push(polyCoords);
+                    });
+                    successfulCounties.push(feature.properties.county);
+                } else {
+                    failedCounties.push(feature.properties.county);
+                }
+            } catch (error) {
+                failedCounties.push(feature.properties.county);
+            }
+        }
+        
+        unifiedFeature = {
+            type: "Feature",
+            geometry: {
+                type: "MultiPolygon",
+                coordinates: coordinates
+            }
+        };
+        mergeMethod = "multipolygon_concatenation";
     }
 
-    const multiPolygonFeature = {
+    // Create final feature with comprehensive properties
+    const finalFeature = {
         type: "Feature",
-        geometry: {
-            type: "MultiPolygon",
-            coordinates: coordinates
-        },
+        geometry: unifiedFeature.geometry,
         properties: {
-            note: `MultiPolygon from ${successfulCounties.length}/${allFeatures.length} counties: ${counties.join(', ')}`,
+            note: `WSO territory: ${mergeMethod === "turf_union_complete" ? "Unified boundaries (no county borders)" : "Multiple county polygons"}`,
             states: ["California"],
             counties: counties,
             wso_name: wsoName,
@@ -105,16 +165,37 @@ async function generateMergedCountyBoundaries(counties, wsoName) {
             successful_counties: successfulCounties,
             failed_counties: failedCounties,
             success_rate: `${Math.round((successfulCounties.length / allFeatures.length) * 100)}%`,
-            merge_method: "multipolygon_concatenation"
+            merge_method: mergeMethod,
+            border_elimination: mergeMethod.includes("union"),
+            polygon_count_before: allFeatures.length,
+            polygon_count_after: unifiedFeature.geometry.type === "MultiPolygon" 
+                ? unifiedFeature.geometry.coordinates.length 
+                : 1,
+            borders_eliminated: mergeMethod === "turf_union_complete" 
+                ? allFeatures.length - 1 
+                : 0,
+            processing_date: new Date().toISOString()
         }
     };
 
-    console.log(`✓ MultiPolygon created: ${successfulCounties.length}/${allFeatures.length} counties (${Math.round((successfulCounties.length / allFeatures.length) * 100)}%)`);
+    const finalPolygonCount = finalFeature.geometry.type === "MultiPolygon" 
+        ? finalFeature.geometry.coordinates.length 
+        : 1;
+    
+    console.log(`✓ Processing complete: ${successfulCounties.length}/${allFeatures.length} counties (${Math.round((successfulCounties.length / allFeatures.length) * 100)}%)`);
+    console.log(`📊 Method: ${mergeMethod}`);
+    console.log(`🗺️  Result: ${finalPolygonCount} polygon(s)`);
+    
+    if (mergeMethod.includes("union")) {
+        const bordersEliminated = allFeatures.length - finalPolygonCount;
+        console.log(`🎯 County borders eliminated: ${bordersEliminated}`);
+    }
+    
     if (failedCounties.length > 0) {
-        console.log(`  Failed counties: ${failedCounties.join(', ')}`);
+        console.log(`⚠️ Failed counties: ${failedCounties.join(', ')}`);
     }
 
-    return multiPolygonFeature;
+    return finalFeature;
 }
 
 async function fixCaliforniaWSOs() {

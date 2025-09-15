@@ -1,0 +1,150 @@
+{
+  "export_date": "2025-09-15T20:31:37.418Z",
+  "total_wsos": 17,
+  "export_directory": "./exports/batch-dissolve",
+  "processing_instructions": "Use QGIS dissolve tool on each file",
+  "wsos": [
+    {
+      "wso_name": "California North Central",
+      "filename": "california-north-central-for-dissolve.geojson",
+      "original_polygons": 43,
+      "target_polygons": 1,
+      "borders_to_eliminate": 42,
+      "size_kb": 4971
+    },
+    {
+      "wso_name": "California South",
+      "filename": "california-south-for-dissolve.geojson",
+      "original_polygons": 23,
+      "target_polygons": 1,
+      "borders_to_eliminate": 22,
+      "size_kb": 1443
+    },
+    {
+      "wso_name": "Southern",
+      "filename": "southern-for-dissolve.geojson",
+      "original_polygons": 3,
+      "target_polygons": 1,
+      "borders_to_eliminate": 2,
+      "size_kb": 4
+    },
+    {
+      "wso_name": "Hawaii and International",
+      "filename": "hawaii-and-international-for-dissolve.geojson",
+      "original_polygons": 5,
+      "target_polygons": 1,
+      "borders_to_eliminate": 4,
+      "size_kb": 2
+    },
+    {
+      "wso_name": "Michigan",
+      "filename": "michigan-for-dissolve.geojson",
+      "original_polygons": 4,
+      "target_polygons": 1,
+      "borders_to_eliminate": 3,
+      "size_kb": 4
+    },
+    {
+      "wso_name": "Tennessee-Kentucky",
+      "filename": "tennessee-kentucky-for-dissolve.geojson",
+      "original_polygons": 2,
+      "target_polygons": 1,
+      "borders_to_eliminate": 1,
+      "size_kb": 3
+    },
+    {
+      "wso_name": "Texas-Oklahoma",
+      "filename": "texas-oklahoma-for-dissolve.geojson",
+      "original_polygons": 2,
+      "target_polygons": 1,
+      "borders_to_eliminate": 1,
+      "size_kb": 5
+    },
+    {
+      "wso_name": "DMV",
+      "filename": "dmv-for-dissolve.geojson",
+      "original_polygons": 7,
+      "target_polygons": 1,
+      "borders_to_eliminate": 6,
+      "size_kb": 4
+    },
+    {
+      "wso_name": "Mountain North",
+      "filename": "mountain-north-for-dissolve.geojson",
+      "original_polygons": 4,
+      "target_polygons": 1,
+      "borders_to_eliminate": 3,
+      "size_kb": 4
+    },
+    {
+      "wso_name": "Minnesota-Dakotas",
+      "filename": "minnesota-dakotas-for-dissolve.geojson",
+      "original_polygons": 3,
+      "target_polygons": 1,
+      "borders_to_eliminate": 2,
+      "size_kb": 4
+    },
+    {
+      "wso_name": "Pacific Northwest",
+      "filename": "pacific-northwest-for-dissolve.geojson",
+      "original_polygons": 43,
+      "target_polygons": 1,
+      "borders_to_eliminate": 42,
+      "size_kb": 29
+    },
+    {
+      "wso_name": "Carolina",
+      "filename": "carolina-for-dissolve.geojson",
+      "original_polygons": 2,
+      "target_polygons": 1,
+      "borders_to_eliminate": 1,
+      "size_kb": 3
+    },
+    {
+      "wso_name": "New England",
+      "filename": "new-england-for-dissolve.geojson",
+      "original_polygons": 7,
+      "target_polygons": 1,
+      "borders_to_eliminate": 6,
+      "size_kb": 5
+    },
+    {
+      "wso_name": "Missouri Valley",
+      "filename": "missouri-valley-for-dissolve.geojson",
+      "original_polygons": 2,
+      "target_polygons": 1,
+      "borders_to_eliminate": 1,
+      "size_kb": 2
+    },
+    {
+      "wso_name": "Iowa-Nebraska",
+      "filename": "iowa-nebraska-for-dissolve.geojson",
+      "original_polygons": 2,
+      "target_polygons": 1,
+      "borders_to_eliminate": 1,
+      "size_kb": 3
+    },
+    {
+      "wso_name": "Mountain South",
+      "filename": "mountain-south-for-dissolve.geojson",
+      "original_polygons": 4,
+      "target_polygons": 1,
+      "borders_to_eliminate": 3,
+      "size_kb": 3
+    },
+    {
+      "wso_name": "Pennsylvania-West Virginia",
+      "filename": "pennsylvania-west-virginia-for-dissolve.geojson",
+      "original_polygons": 2,
+      "target_polygons": 1,
+      "borders_to_eliminate": 1,
+      "size_kb": 3
+    }
+  ],
+  "next_steps": [
+    "1. Process each GeoJSON file in QGIS with dissolve tool",
+    "2. Export dissolved results with \"-dissolved\" suffix",
+    "3. Run import-dissolved-polygon.js for each WSO",
+    "4. Verify results with verify-dissolve-success.js"
+  ]
+}
