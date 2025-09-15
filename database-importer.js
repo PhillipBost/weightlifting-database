@@ -554,13 +554,39 @@ async function main() {
         const currentYear = new Date().getFullYear();
         const csvFilePath = `./meets_${currentYear}.csv`;
         
+        // Check if CSV file exists before attempting to read
+        console.log(`🔍 Looking for CSV file: ${csvFilePath}`);
+        if (!require('fs').existsSync(csvFilePath)) {
+            console.log(`❌ CSV file not found: ${csvFilePath}`);
+            console.log('💡 This usually means the meet scraper failed to run or complete successfully.');
+            console.log('💡 Check the scraper logs or run the scraper manually first.');
+            console.log('📋 Available CSV files in current directory:');
+            
+            const fs = require('fs');
+            const csvFiles = fs.readdirSync('.').filter(file => file.endsWith('.csv') && file.startsWith('meets_'));
+            if (csvFiles.length > 0) {
+                csvFiles.forEach(file => console.log(`   - ${file}`));
+                console.log(`💡 You might want to run the scraper first: node meet_scraper_2025.js`);
+            } else {
+                console.log('   - No meets_*.csv files found');
+            }
+            
+            process.exit(1);
+        }
+        
+        console.log(`✅ CSV file found: ${csvFilePath}`);
+        
         // Read CSV data
         const meetings = await readCSVFile(csvFilePath);
         
         if (meetings.length === 0) {
-            console.log('⚠️ No data found in CSV file');
+            console.log('⚠️ No data found in CSV file - file exists but is empty');
+            console.log('💡 This usually means the meet scraper ran but found no new meets');
+            console.log('💡 or encountered an error during data extraction.');
             return;
         }
+        
+        console.log(`📊 Found ${meetings.length} records in CSV file`);
         
         // Add meet_internal_id to meetings and filter duplicates
         console.log('\n🔍 Processing meet internal IDs and checking for duplicates...');
@@ -630,6 +656,15 @@ async function main() {
         
     } catch (error) {
         console.error('💥 Enhanced database import failed:', error.message);
+        console.error('📍 Stack trace:', error.stack);
+        
+        // Provide helpful troubleshooting information
+        console.log('\n🔧 Troubleshooting steps:');
+        console.log('1. Check if the meet scraper ran successfully: node meet_scraper_2025.js');
+        console.log('2. Verify Supabase environment variables are set');
+        console.log('3. Check network connectivity to Supabase');
+        console.log('4. Review the error message and stack trace above');
+        
         process.exit(1);
     }
 }
