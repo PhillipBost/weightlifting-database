@@ -238,6 +238,31 @@ async function updateRecentMeetResultsWithBiographicalData(lifterId, athleteData
         if (athleteData.national_rank) updateData.national_rank = parseInt(athleteData.national_rank) || null;
         if (athleteData.birth_year) updateData.birth_year = parseInt(athleteData.birth_year) || null;
         
+        // Calculate competition_age for each meet result if we have birth_year
+        if (athleteData.birth_year) {
+            // We need to calculate competition_age per result since dates vary
+            for (const result of meetResults) {
+                if (result.date) {
+                    const competitionYear = new Date(result.date).getFullYear();
+                    const birthYear = parseInt(athleteData.birth_year);
+                    const competitionAge = competitionYear - birthYear;
+                    
+                    // Update each result individually with its calculated competition_age
+                    await supabase
+                        .from('meet_results')
+                        .update({
+                            ...updateData,
+                            competition_age: competitionAge
+                        })
+                        .eq('result_id', result.result_id);
+                }
+            }
+            
+            console.log(`  ✅ Updated ${meetResults.length} meet_results with biographical data and competition_age`);
+            return { updated: meetResults.length, errors: 0 };
+        }
+        
+        // Bulk update for cases without birth_year (no competition_age calculation needed)
         const { error: updateError } = await supabase
             .from('meet_results')
             .update(updateData)
