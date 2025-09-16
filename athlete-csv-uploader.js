@@ -183,11 +183,11 @@ async function batchUpdateLifters(lifterUpdates) {
     console.log(`    ✅ Completed updating ${lifterUpdates.length} lifters`);
 }
 
-async function updateRecentMeetResultsWithCurrentAffiliation(lifterId, athleteData, errorLogger) {
-    // For nightly runs, we're seeing the athlete's CURRENT affiliation
-    // Update their recent meet results (current month + previous month) with this info
+async function updateRecentMeetResultsWithBiographicalData(lifterId, athleteData, errorLogger) {
+    // Update recent meet results with biographical data from division scraper
     
-    if (!athleteData.wso || !athleteData.club_name) {
+    // Skip if no useful biographical data to update
+    if (!athleteData.wso && !athleteData.club_name && !athleteData.gender && !athleteData.birth_year && !athleteData.national_rank) {
         return { updated: 0, errors: 0 };
     }
     
@@ -226,21 +226,28 @@ async function updateRecentMeetResultsWithCurrentAffiliation(lifterId, athleteDa
         
         console.log(`  📊 Found ${meetResults.length} meet_results to update`);
         
-        // Update ALL matching records with current affiliation
+        // Update ALL matching records with biographical data
+        const updateData = {
+            updated_at: new Date().toISOString()
+        };
+        
+        // Add fields that exist and have values
+        if (athleteData.wso) updateData.wso = athleteData.wso.toString().trim();
+        if (athleteData.club_name) updateData.club_name = athleteData.club_name.toString().trim();
+        if (athleteData.gender) updateData.gender = athleteData.gender.toString().trim();
+        if (athleteData.national_rank) updateData.national_rank = parseInt(athleteData.national_rank) || null;
+        if (athleteData.birth_year) updateData.birth_year = parseInt(athleteData.birth_year) || null;
+        
         const { error: updateError } = await supabase
             .from('meet_results')
-            .update({
-                wso: athleteData.wso.toString().trim(),
-                club_name: athleteData.club_name.toString().trim(),
-                updated_at: new Date().toISOString()
-            })
+            .update(updateData)
             .in('result_id', meetResults.map(r => r.result_id));
         
         if (updateError) {
             throw new Error(`Error updating meet results: ${updateError.message}`);
         }
         
-        console.log(`  ✅ Updated ${meetResults.length} meet_results with current WSO/club`);
+        console.log(`  ✅ Updated ${meetResults.length} meet_results with biographical data`);
         
         return { updated: meetResults.length, errors: 0 };
         
@@ -372,8 +379,8 @@ async function processAthleteCSVFile(filePath, errorLogger) {
                 
                 lifterUpdates.push(updateData);
                 
-                // Update recent meet_results with current affiliation
-                const meetResultsUpdate = await updateRecentMeetResultsWithCurrentAffiliation(
+                // Update recent meet_results with biographical data
+                const meetResultsUpdate = await updateRecentMeetResultsWithBiographicalData(
                     lifterId, 
                     athleteData, 
                     errorLogger
@@ -407,7 +414,7 @@ async function processAthleteCSVFile(filePath, errorLogger) {
                     const newLifterId = await createNewLifter(athleteData);
                     
                     // Also update meet_results for the new lifter
-                    const meetResultsUpdate = await updateRecentMeetResultsWithCurrentAffiliation(
+                    const meetResultsUpdate = await updateRecentMeetResultsWithBiographicalData(
                         newLifterId, 
                         athleteData, 
                         errorLogger
