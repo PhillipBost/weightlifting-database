@@ -42,6 +42,31 @@ jobs:
           echo "📦 Installing dependencies at: $(date +'%Y-%m-%d %H:%M:%S %Z')"
           npm ci
           
+      - name: Validate environment variables
+        run: |
+          echo "🔧 Validating environment variables at: $(date +'%Y-%m-%d %H:%M:%S %Z')"
+          
+          # Check if required environment variables are set
+          if [ -z "$SUPABASE_URL" ]; then
+            echo "❌ SUPABASE_URL environment variable is not set"
+            exit 1
+          fi
+          
+          if [ -z "$SUPABASE_SECRET_KEY" ]; then
+            echo "❌ SUPABASE_SECRET_KEY environment variable is not set"
+            exit 1
+          fi
+          
+          # Show (safe) information about the environment
+          echo "✅ Environment variables validated:"
+          echo "   - SUPABASE_URL: ${SUPABASE_URL:0:30}... (${#SUPABASE_URL} chars total)"
+          echo "   - SUPABASE_SECRET_KEY: eyJ****...${SUPABASE_SECRET_KEY: -4} (${#SUPABASE_SECRET_KEY} chars total)"
+          echo "   - TZ: $TZ"
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+          TZ: America/New_York
+          
       - name: Setup Chrome for Puppeteer
         run: |
           echo "🌐 Setting up Chrome for web scraping at: $(date +'%Y-%m-%d %H:%M:%S %Z')"
