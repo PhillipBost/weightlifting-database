@@ -21,11 +21,74 @@ const path = require('path');
 const puppeteer = require('puppeteer');
 const { createClient } = require('@supabase/supabase-js');
 
+// Validate environment variables
+function validateEnvironment() {
+    const requiredVars = ['SUPABASE_URL', 'SUPABASE_SECRET_KEY'];
+    const missing = requiredVars.filter(varName => !process.env[varName]);
+    
+    if (missing.length > 0) {
+        console.error('❌ Missing required environment variables:');
+        missing.forEach(varName => {
+            console.error(`   - ${varName}`);
+        });
+        console.error('\nPlease ensure these environment variables are set before running the script.');
+        process.exit(1);
+    }
+    
+    console.log('✅ Environment variables validated');
+}
+
+// Validate environment before proceeding
+validateEnvironment();
+
 // Initialize Supabase client
-const supabase = createClient(
-    process.env.SUPABASE_URL,
-    process.env.SUPABASE_SECRET_KEY
-);
+let supabase;
+
+// Initialize Supabase connection
+function initializeSupabase() {
+    try {
+        supabase = createClient(
+            process.env.SUPABASE_URL,
+            process.env.SUPABASE_SECRET_KEY
+        );
+        return supabase;
+    } catch (error) {
+        console.error('❌ Failed to initialize Supabase client:');
+        console.error(`   ${error.message}`);
+        process.exit(1);
+    }
+}
+
+// Test Supabase connection
+async function testSupabaseConnection() {
+    console.log('🔍 Testing Supabase connection...');
+    
+    try {
+        // Try a simple query to test connectivity
+        const { data, error } = await supabase
+            .from('meet_results')
+            .select('result_id')
+            .limit(1);
+        
+        if (error) {
+            console.error('❌ Supabase connection test failed:');
+            console.error(`   Error: ${error.message}`);
+            console.error(`   Code: ${error.code || 'N/A'}`);
+            console.error(`   Details: ${error.details || 'N/A'}`);
+            console.error(`   Hint: ${error.hint || 'N/A'}`);
+            throw new Error(`Supabase connection failed: ${error.message}`);
+        }
+        
+        console.log('✅ Supabase connection successful');
+        console.log(`   Database accessible, sample query returned ${data?.length || 0} records`);
+        return true;
+        
+    } catch (error) {
+        console.error('❌ Connection test failed with unexpected error:');
+        console.error(`   ${error.message}`);
+        throw error;
+    }
+}
 
 // Configuration
 const OUTPUT_DIR = './output';
@@ -391,17 +454,68 @@ async function getAllWsoResults() {
 
 // Get total meet results count for statistics
 async function getTotalMeetResultsCount() {
-    const { count, error } = await supabase
+    try {
+        log('Attempting to count total meet results...');
+        
+        const { count, error } = await supabase
+            .from('meet_results')
+            .select('result_id', { count: 'exact', head: true })
+            .not('age_category', 'is', null)
+            .not('weight_class', 'is', null);
+        
+        if (error) {
+            log(`❌ Supabase count error: ${error.message}`);
+            log(`   Error code: ${error.code || 'N/A'}`);
+            log(`   Error details: ${error.details || 'N/A'}`);
+            log(`   Error hint: ${error.hint || 'N/A'}`);
+            throw new Error(`Failed to count total meet results: ${error.message} (code: ${error.code || 'unknown'})`);
+        }
+        
+        if (count === null || count === undefined) {
+            log('⚠️  Count returned null/undefined, using fallback method...');
+            return await getTotalMeetResultsCountFallback();
+        }
+        
+        log(`✅ Successfully counted ${count} total meet results`);
+        return count;
+        
+    } catch (error) {
+        log(`❌ Unexpected error in getTotalMeetResultsCount: ${error.message}`);
+        log('   Attempting fallback counting method...');
+        
+        try {
+            return await getTotalMeetResultsCountFallback();
+        } catch (fallbackError) {
+            log(`❌ Fallback count method also failed: ${fallbackError.message}`);
+            throw new Error(`Both primary and fallback count methods failed. Primary: ${error.message}, Fallback: ${fallbackError.message}`);
+        }
+    }
+}
+
+// Fallback method to count meet results using alternative approach
+async function getTotalMeetResultsCountFallback() {
+    log('Using fallback method to count meet results...');
+    
+    // Try getting a small batch and checking if we can count at all
+    const { data, error } = await supabase
         .from('meet_results')
-        .select('result_id', { count: 'exact', head: true })
+        .select('result_id')
         .not('age_category', 'is', null)
-        .not('weight_class', 'is', null);
+        .not('weight_class', 'is', null)
+        .limit(1);
     
     if (error) {
-        throw new Error(`Failed to count total meet results: ${error.message}`);
+        throw new Error(`Fallback count failed - cannot access meet_results table: ${error.message}`);
     }
     
-    return count;
+    if (!data || data.length === 0) {
+        log('⚠️  No meet results found in database');
+        return 0;
+    }
+    
+    // If we can access the table, estimate count by using range queries
+    log('✅ Table accessible, but exact count unavailable. Proceeding without total count...');
+    return null; // Indicates we should proceed without total count
 }
 
 // Analyze missing WSO patterns
@@ -451,6 +565,12 @@ async function performWsoScan() {
     try {
         log('🔍 Starting missing WSO data scan');
         log('='.repeat(60));
+        
+        // Initialize Supabase client
+        initializeSupabase();
+        
+        // Test Supabase connection first
+        await testSupabaseConnection();
         
         // Parse options
         const options = parseArguments();
@@ -631,7 +751,9 @@ async function performWsoScan() {
         
         // Calculate final statistics
         const finalMissingCount = allResults.filter(r => !r.wso).length;
-        const missingPercentage = totalResults > 0 ? ((finalMissingCount / totalResults) * 100).toFixed(2) + '%' : '0%';
+        const missingPercentage = (totalResults && totalResults > 0) ? 
+            ((finalMissingCount / totalResults) * 100).toFixed(2) + '%' : 
+            (allResults.length > 0 ? ((finalMissingCount / allResults.length) * 100).toFixed(2) + '% (of processed)' : '0%');
         
         // Analyze patterns - focus on the missing ones for pattern analysis
         const missingResults = allResults.filter(r => !r.wso);
@@ -670,7 +792,7 @@ async function performWsoScan() {
         // Log summary
         log('\n' + '='.repeat(60));
         log('✅ WSO VERIFICATION AND UPDATE COMPLETE');
-        log(`   Total meet results in database: ${totalResults.toLocaleString()}`);
+        log(`   Total meet results in database: ${totalResults ? totalResults.toLocaleString() : 'Unknown (count failed)'}`);
         log(`   Results processed: ${allResults.length.toLocaleString()}`);
         log(`   Records skipped (updated >= 2025-09-01): ${skippedCount.toLocaleString()}`);
         log(`   Records actually checked: ${(allResults.length - skippedCount).toLocaleString()}`);
