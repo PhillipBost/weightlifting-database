@@ -54,65 +54,136 @@ function parseAddress(rawAddress) {
 }
 
 // Geocode address using Nominatim with fallback strategies
+// Remove suite/apartment information from address
+function removeSuiteInfo(address) {
+    if (!address || typeof address !== 'string') return address;
+    
+    return address
+        .replace(/,\s*(suite|ste|apt|apartment|unit|building|bldg|floor|fl|room|rm|#)\s*[a-z0-9\-\s]+/gi, '')
+        .replace(/\s+/g, ' ')
+        .replace(/,\s*,/g, ',')
+        .replace(/^,\s*|,\s*$/g, '')
+        .trim();
+}
+
 async function geocodeAddress(rawAddress) {
-    // Try different address formats
-    const addressVariants = [
+    // Helper function to remove country variations
+    function removeCountry(addr) {
+        return addr
+            .replace(/,?\s*(United States of America|United States|USA|US)\s*,?/gi, '')
+            .replace(/,\s*,/g, ',')  // Fix double commas
+            .replace(/^,\s*|,\s*$/g, '')  // Remove leading/trailing commas
+            .trim();
+    }
+    
+    // Helper function to remove street number (keep street name)
+    function removeStreetNumber(addr) {
+        return addr.replace(/^\d+\s+/, '').trim();
+    }
+    
+    // Clean base address first
+    const cleanBaseAddress = removeCountry(rawAddress);
+    const addressWithoutSuite = removeSuiteInfo(cleanBaseAddress);
+    const useSuiteVariants = addressWithoutSuite !== cleanBaseAddress;
+    
+    let addressVariants = [
         rawAddress, // Original full address
-        rawAddress.replace(', United States of America', ''), // Remove country
-        rawAddress.split(',').slice(-3).join(',').trim(), // Just city, state, zip
-        rawAddress.split(',').slice(-2).join(',').trim()  // Just state, zip
+        cleanBaseAddress, // Remove country variations
     ];
     
+    // Add suite-removed variants early in the process if suite info was detected
+    if (useSuiteVariants) {
+        addressVariants.push(
+            addressWithoutSuite, // Suite removed from clean address
+        );
+    }
+    
+    // Add street name without number variant
+    const fallbackBase = useSuiteVariants ? addressWithoutSuite : cleanBaseAddress;
+    const streetNameOnly = removeStreetNumber(fallbackBase);
+    if (streetNameOnly !== fallbackBase && streetNameOnly.length > 10) {
+        addressVariants.push(streetNameOnly);
+    }
+    
+    // Add broader fallbacks at the end - use the CLEANEST address for fallbacks
+    addressVariants.push(
+        fallbackBase.split(',').slice(-3).join(',').trim(), // City, state, zip from clean address
+        fallbackBase.split(',').slice(-2).join(',').trim()  // State, zip from clean address
+    );
+    
+    // Filter out empty/too short addresses and remove duplicates
+    addressVariants = [...new Set(addressVariants.filter(addr => addr && addr.length > 2))];
+
     for (let i = 0; i < addressVariants.length; i++) {
-        const address = addressVariants[i];
-        if (!address) continue;
+        const addressToTry = addressVariants[i];
         
         try {
-            const encodedAddress = encodeURIComponent(address);
-            const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodedAddress}&limit=1`;
+            // Show if this is a suite-removed variant
+            const isSuiteRemoved = useSuiteVariants && addressToTry === addressWithoutSuite;
+            const isStreetNameOnly = addressToTry === streetNameOnly;
+            let variantLabel = `Attempt ${i + 1}`;
+            if (isSuiteRemoved) variantLabel = `Attempt ${i + 1} (suite removed)`;
+            if (isStreetNameOnly) variantLabel = `Attempt ${i + 1} (street name only)`;
             
-            log(`  🌐 Attempt ${i + 1}: ${address.substring(0, 60)}...`);
+            log(`  🌐 ${variantLabel}: ${addressToTry.substring(0, 60)}...`);
+            
+            const params = new URLSearchParams({
+                q: addressToTry,
+                format: 'json',
+                limit: 1,
+                countrycodes: 'us',
+                addressdetails: 1
+            });
+
+            const url = `https://nominatim.openstreetmap.org/search?${params.toString()}`;
             
             const response = await fetch(url, {
                 headers: {
                     'User-Agent': 'WeightliftingMeetGeocoder/1.0'
                 }
             });
-            
+
             if (!response.ok) {
                 if (response.status === 403 || response.status === 429) {
                     log(`  ⚠️ Rate limited (${response.status}), waiting longer...`);
-                    await sleep(5000); // Wait 5 seconds for rate limits
+                    await sleep(5000);
                     continue;
                 }
                 throw new Error(`HTTP ${response.status}: ${response.statusText}`);
             }
-            
-            const data = await response.json();
-            
-            if (data.length > 0) {
-                const result = data[0];
-                log(`  ✅ Success with variant ${i + 1}: ${result.display_name.substring(0, 60)}...`);
-                return {
-                    latitude: parseFloat(result.lat),
-                    longitude: parseFloat(result.lon),
-                    display_name: result.display_name,
-                    success: true,
-                    attempt: i + 1
-                };
+
+            const results = await response.json();
+
+            if (results && results.length > 0) {
+                const result = results[0];
+                
+                if (result.lat && result.lon) {
+                    const precision = calculateAddressPrecision(addressToTry, result.display_name);
+                    log(`  ✅ Success with ${variantLabel} (precision: ${precision})`);
+                    return {
+                        latitude: parseFloat(result.lat),
+                        longitude: parseFloat(result.lon),
+                        display_name: result.display_name,
+                        precision_score: precision,
+                        success: true,
+                        attempt: i + 1
+                    };
+                }
             }
-            
-            log(`  📨 No results for variant ${i + 1}`);
-            
+
+            log(`  📨 No results for ${variantLabel}`);
+
+            // Small delay between attempts to be respectful to the API
+            if (i < addressVariants.length - 1) {
+                await sleep(500);
+            }
+
         } catch (error) {
-            log(`  ❌ Error with variant ${i + 1}: ${error.message}`);
-            continue;
+            log(`  ❌ Error with ${variantLabel}: ${error.message}`);
+            continue; // Try next variant
         }
-        
-        // Wait between attempts to avoid rate limiting
-        await sleep(500);
     }
-    
+
     return { success: false, error: 'No results found for any address variant' };
 }
 
@@ -122,28 +193,39 @@ function sleep(ms) {
 }
 
 // Calculate address precision score (higher = more precise)
-function calculateAddressPrecision(address) {
-    if (!address) return 0;
+function calculateAddressPrecision(address, displayName) {
+    if (!address && !displayName) return 0;
     
     let score = 0;
-    const parts = address.split(',').map(p => p.trim());
+    const addressToScore = address || displayName || '';
+    const parts = addressToScore.split(',').map(p => p.trim());
     
-    // Street address present = +3
-    if (parts.length > 0 && parts[0] && /\d+/.test(parts[0])) {
-        score += 3;
+    // Street number and name present = +4
+    if (parts.length > 0 && parts[0] && /\d+.*\w+/.test(parts[0])) {
+        score += 4;
     }
     
     // City present = +2  
-    if (parts.length > 1 && parts[1]) {
+    if (parts.length > 1 && parts[1] && parts[1].length > 2) {
         score += 2;
     }
     
     // State present = +1
-    if (parts.length > 2 && parts[2]) {
+    if (parts.length > 2 && parts[2] && parts[2].length >= 2) {
         score += 1;
     }
     
-    return score;
+    // ZIP code present = +1
+    if (addressToScore.match(/\b\d{5}(-\d{4})?\b/)) {
+        score += 1;
+    }
+    
+    // Penalty for vague results
+    if (displayName && displayName.toLowerCase().includes('united states')) {
+        score -= 2;
+    }
+    
+    return Math.max(0, score);
 }
 
 // Import a batch of records with upsert logic
@@ -184,8 +266,8 @@ async function importBatch(records) {
             log(`  ➕ Inserted new record for meet_id ${record.meet_id}`);
         } else {
             // Record exists, check if we should update
-            const existingPrecision = calculateAddressPrecision(existing.raw_address);
-            const newPrecision = calculateAddressPrecision(record.raw_address);
+            const existingPrecision = existing.geocode_precision_score || 0;
+            const newPrecision = record.geocode_precision_score || 0;
             
             if (newPrecision > existingPrecision && record.geocode_success) {
                 // New address is more precise and geocoded successfully
@@ -269,7 +351,8 @@ async function geocodeAndImport() {
             const meet = meetsWithAddresses[i];
             const progress = `${i + 1}/${meetsWithAddresses.length}`;
             
-            log(`🔄 [${progress}] Processing: ${meet.meet_name}`);
+            log(`
+🔄 [${progress}] Processing: ${meet.meet_name}`);
             
             // Try to link to existing meet
             const existingMeet = existingMeets.find(em => em.Meet === meet.meet_name);
@@ -292,6 +375,7 @@ async function geocodeAndImport() {
             if (geocodeResult.success) {
                 successCount++;
                 log(`  ✅ Geocoded: ${geocodeResult.latitude}, ${geocodeResult.longitude}`);
+                log(`  📊 Precision score: ${geocodeResult.precision_score}`);
             } else {
                 failureCount++;
                 log(`  ❌ Geocoding failed: ${geocodeResult.error}`);
@@ -305,6 +389,7 @@ async function geocodeAndImport() {
                 latitude: geocodeResult.success ? geocodeResult.latitude : null,
                 longitude: geocodeResult.success ? geocodeResult.longitude : null,
                 geocode_display_name: geocodeResult.success ? geocodeResult.display_name : null,
+                geocode_precision_score: geocodeResult.success ? geocodeResult.precision_score : null,
                 date_range: meet.date_range,
                 location_text: meet.location,
                 geocode_success: geocodeResult.success,
@@ -312,6 +397,11 @@ async function geocodeAndImport() {
             };
             
             importData.push(importRecord);
+            
+            // Debug: Show what we're about to import
+            if (geocodeResult.success) {
+                log(`  💾 Will import with precision_score: ${importRecord.geocode_precision_score}`);
+            }
             
             // Import batch when we have BATCH_SIZE records or at the end
             if (importData.length >= BATCH_SIZE || i === meetsWithAddresses.length - 1) {
