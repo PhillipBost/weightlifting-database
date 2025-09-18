@@ -81,6 +81,14 @@ async function ensureClubsTable() {
                     address TEXT,
                     phone TEXT,
                     email TEXT,
+                    latitude NUMERIC,
+                    longitude NUMERIC,
+                    elevation_meters NUMERIC,
+                    geocode_display_name TEXT,
+                    geocode_success BOOLEAN DEFAULT FALSE,
+                    geocode_error TEXT,
+                    elevation_source TEXT,
+                    elevation_fetched_at TIMESTAMP WITH TIME ZONE,
                     created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
                     updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
                 );
@@ -195,7 +203,7 @@ async function getExistingClubs() {
     while (true) {
         const { data: clubs, error } = await supabase
             .from('clubs')
-            .select('club_name, address, phone, email')
+            .select('club_name, address, phone, email, latitude, longitude, elevation_meters, geocode_success')
             .range(from, from + pageSize - 1);
         
         if (error) {
@@ -390,6 +398,33 @@ async function importClubData() {
         log(`   Clubs with phone: ${clubsWithPhone} (${(clubsWithPhone/normalizedClubs.length*100).toFixed(1)}%)`);
         log(`   Clubs with email: ${clubsWithEmail} (${(clubsWithEmail/normalizedClubs.length*100).toFixed(1)}%)`);
         log(`   Clubs with address: ${clubsWithAddress} (${(clubsWithAddress/normalizedClubs.length*100).toFixed(1)}%)`);
+        
+        // Get geographic data coverage from database
+        try {
+            const { data: geoStats } = await supabase
+                .from('clubs')
+                .select('latitude, longitude, elevation_meters, geocode_success')
+                .not('latitude', 'is', null);
+                
+            const clubsWithCoordinates = geoStats ? geoStats.length : 0;
+            const clubsWithElevation = geoStats ? geoStats.filter(c => c.elevation_meters !== null).length : 0;
+            const successfulGeocodes = geoStats ? geoStats.filter(c => c.geocode_success === true).length : 0;
+            
+            // Get total club count for percentages
+            const { count: totalClubCount } = await supabase
+                .from('clubs')
+                .select('*', { count: 'exact', head: true });
+            
+            if (totalClubCount > 0) {
+                log('
+🗺️ Geographic Data Coverage:');
+                log(`   Clubs with coordinates: ${clubsWithCoordinates} (${(clubsWithCoordinates/totalClubCount*100).toFixed(1)}%)`);
+                log(`   Successful geocodes: ${successfulGeocodes} (${(successfulGeocodes/totalClubCount*100).toFixed(1)}%)`);
+                log(`   Clubs with elevation: ${clubsWithElevation} (${(clubsWithElevation/totalClubCount*100).toFixed(1)}%)`);
+            }
+        } catch (geoError) {
+            log(`⚠️ Could not fetch geographic data summary: ${geoError.message}`);
+        }
         
         return results;
         

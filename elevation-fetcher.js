@@ -257,6 +257,186 @@ async function updateElevationData(results) {
     };
 }
 
+// Fetch elevation data for clubs table
+async function fetchAndUpdateClubElevations() {
+    const startTime = Date.now();
+    
+    try {
+        log('🏋️ Starting club elevation data fetch process...');
+        log('='.repeat(60));
+        
+        // Fetch clubs that need elevation data with pagination
+        log('🔍 Fetching clubs that need elevation data...');
+        let clubs = [];
+        let page = 0;
+        const pageSize = 1000;
+        let hasMore = true;
+        
+        while (hasMore) {
+            const { data, error: fetchError } = await supabase
+                .from('clubs')
+                .select('club_name, latitude, longitude, elevation_meters')
+                .not('latitude', 'is', null)
+                .not('longitude', 'is', null)
+                .is('elevation_meters', null)
+                .range(page * pageSize, (page + 1) * pageSize - 1);
+            
+            if (fetchError) {
+                throw new Error(`Failed to fetch clubs: ${fetchError.message}`);
+            }
+            
+            if (data && data.length > 0) {
+                clubs = clubs.concat(data);
+                hasMore = data.length === pageSize;
+                page++;
+                log(`📄 Fetched page ${page}, total clubs so far: ${clubs.length}`);
+            } else {
+                hasMore = false;
+            }
+        }
+        
+        if (!clubs || clubs.length === 0) {
+            log('✅ No clubs found that need elevation data');
+            return { total: 0, processed: 0, updated: 0, failed: 0 };
+        }
+        
+        log(`📊 Found ${clubs.length} clubs needing elevation data`);
+        
+        let totalProcessed = 0;
+        let totalUpdated = 0;
+        let totalFailed = 0;
+        
+        // Process clubs in batches
+        for (let i = 0; i < clubs.length; i += BATCH_SIZE) {
+            const batch = clubs.slice(i, i + BATCH_SIZE);
+            const batchNumber = Math.floor(i / BATCH_SIZE) + 1;
+            const totalBatches = Math.ceil(clubs.length / BATCH_SIZE);
+            
+            log(`\n🔄 Processing batch ${batchNumber}/${totalBatches} (${batch.length} clubs)`);
+            
+            // Prepare coordinates for API call
+            const coordinates = batch.map(club => ({
+                id: club.club_name, // Use club_name as identifier for clubs
+                latitude: parseFloat(club.latitude),
+                longitude: parseFloat(club.longitude),
+                club_name: club.club_name
+            }));
+            
+            // Validate coordinates
+            const validCoordinates = coordinates.filter(coord => 
+                !isNaN(coord.latitude) && !isNaN(coord.longitude) &&
+                coord.latitude >= -90 && coord.latitude <= 90 &&
+                coord.longitude >= -180 && coord.longitude <= 180
+            );
+            
+            if (validCoordinates.length !== coordinates.length) {
+                log(`  ⚠️ Filtered out ${coordinates.length - validCoordinates.length} invalid coordinates`);
+            }
+            
+            if (validCoordinates.length === 0) {
+                log(`  ⏭️ Skipping batch - no valid coordinates`);
+                continue;
+            }
+            
+            // Fetch elevation data
+            const results = await fetchElevationWithRetry(validCoordinates);
+            
+            // Update database with club-specific logic
+            const updateResults = await updateClubElevationData(results);
+            
+            totalProcessed += validCoordinates.length;
+            totalUpdated += updateResults.updated;
+            totalFailed += updateResults.failed;
+            
+            log(`  📊 Batch complete: ${updateResults.updated} updated, ${updateResults.failed} failed`);
+            
+            // Rate limiting between batches
+            if (i + BATCH_SIZE < clubs.length) {
+                log(`  ⏳ Waiting ${OPEN_METEO_DELAY}ms before next batch...`);
+                await sleep(OPEN_METEO_DELAY);
+            }
+        }
+        
+        // Summary
+        log('\n' + '='.repeat(60));
+        log('✅ CLUB ELEVATION FETCH COMPLETE');
+        log(`   Total clubs found: ${clubs.length}`);
+        log(`   Total processed: ${totalProcessed}`);
+        log(`   Successfully updated: ${totalUpdated}`);
+        log(`   Failed: ${totalFailed}`);
+        log(`   Success rate: ${totalProcessed > 0 ? ((totalUpdated / totalProcessed) * 100).toFixed(1) : 0}%`);
+        log(`   Processing time: ${Math.round((Date.now() - startTime) / 1000)}s`);
+        
+        return {
+            total: clubs.length,
+            processed: totalProcessed,
+            updated: totalUpdated,
+            failed: totalFailed
+        };
+        
+    } catch (error) {
+        log(`\n❌ Club elevation fetch failed: ${error.message}`);
+        log(`🔍 Stack trace: ${error.stack}`);
+        throw error;
+    }
+}
+
+// Update clubs table with elevation data
+async function updateClubElevationData(results) {
+    log(`  📤 Updating ${results.length} club records with elevation data...`);
+    
+    const updates = results.map(result => ({
+        club_name: result.id, // For clubs, id is the club_name
+        elevation_meters: result.elevation,
+        elevation_source: result.source,
+        elevation_fetched_at: new Date().toISOString(),
+        error: result.error || null
+    }));
+    
+    let updated = 0;
+    let failed = 0;
+    
+    // Update records individually to handle errors gracefully
+    for (const update of updates) {
+        try {
+            if (update.elevation_meters !== null) {
+                // Successful elevation fetch
+                const { error } = await supabase
+                    .from('clubs')
+                    .update({
+                        elevation_meters: update.elevation_meters,
+                        elevation_source: update.elevation_source,
+                        elevation_fetched_at: update.elevation_fetched_at
+                    })
+                    .eq('club_name', update.club_name);
+                
+                if (error) {
+                    throw new Error(error.message);
+                }
+                updated++;
+            } else {
+                // Failed elevation fetch - still update the timestamp to avoid retrying immediately
+                const { error } = await supabase
+                    .from('clubs')
+                    .update({
+                        elevation_fetched_at: update.elevation_fetched_at
+                    })
+                    .eq('club_name', update.club_name);
+                
+                if (error) {
+                    throw new Error(error.message);
+                }
+                failed++;
+            }
+        } catch (error) {
+            log(`    ❌ Failed to update club ${update.club_name}: ${error.message}`);
+            failed++;
+        }
+    }
+    
+    return { updated, failed };
+}
+
 // Main elevation fetching function
 async function fetchAndUpdateElevations() {
     const startTime = Date.now();
@@ -386,15 +566,47 @@ async function fetchAndUpdateElevations() {
 
 // Run if called directly
 if (require.main === module) {
-    fetchAndUpdateElevations()
-        .then(results => {
-            log(`\n🎉 Process completed successfully!`);
+    async function runBothElevationFetches() {
+        try {
+            log('🏋️ Starting comprehensive elevation data fetch...');
+            log('Will process both clubs and meet locations');
+            log('='.repeat(60));
+            
+            // First, fetch elevation for clubs
+            log('\n📍 PHASE 1: Processing barbell clubs...');
+            const clubResults = await fetchAndUpdateClubElevations();
+            
+            // Then, fetch elevation for meet locations  
+            log('\n📍 PHASE 2: Processing meet locations...');
+            const meetResults = await fetchAndUpdateElevations();
+            
+            // Summary
+            log('\n' + '='.repeat(60));
+            log('🎉 COMPREHENSIVE ELEVATION FETCH COMPLETE');
+            log('\n📊 CLUBS SUMMARY:');
+            log(`   Total clubs: ${clubResults.total}`);
+            log(`   Successfully updated: ${clubResults.updated}`);
+            log(`   Failed: ${clubResults.failed}`);
+            log(`   Success rate: ${clubResults.total > 0 ? ((clubResults.updated / clubResults.total) * 100).toFixed(1) : 0}%`);
+            
+            log('\n📊 MEET LOCATIONS SUMMARY:');
+            log(`   Total locations: ${meetResults.total}`);
+            log(`   Successfully updated: ${meetResults.updated}`);
+            log(`   Failed: ${meetResults.failed}`);
+            log(`   Success rate: ${meetResults.total > 0 ? ((meetResults.updated / meetResults.total) * 100).toFixed(1) : 0}%`);
+            
+            log('\n🎉 All elevation data processing completed successfully!');
             process.exit(0);
-        })
-        .catch(error => {
-            log(`\n💥 Process failed: ${error.message}`);
+            
+        } catch (error) {
+            log(`
+💥 Elevation fetch process failed: ${error.message}`);
+            log(`🔍 Stack trace: ${error.stack}`);
             process.exit(1);
-        });
+        }
+    }
+    
+    runBothElevationFetches();
 }
 
-module.exports = { fetchAndUpdateElevations };
+module.exports = { fetchAndUpdateElevations, fetchAndUpdateClubElevations };

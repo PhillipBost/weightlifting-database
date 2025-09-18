@@ -130,6 +130,79 @@ jobs:
           
           node club-importer.js
       
+      - name: Geocode club addresses
+        if: steps.check_clubs.outputs.has_clubs == 'true'
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+        run: |
+          echo "🗺️ Starting club geocoding..."
+          echo "Geocoding club addresses using Nominatim API"
+          
+          node club-geocoder.js
+      
+      - name: Fetch club elevation data
+        if: steps.check_clubs.outputs.has_clubs == 'true'
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+        run: |
+          echo "🏔️ Starting club elevation fetch..."
+          echo "Fetching elevation data for geocoded clubs"
+          
+          node -e "
+            const { fetchAndUpdateClubElevations } = require('./elevation-fetcher.js');
+            fetchAndUpdateClubElevations().then(results => {
+              console.log('✅ Club elevation fetch completed');
+              console.log(\`📊 Results: \${results.updated} updated, \${results.failed} failed\`);
+            }).catch(error => {
+              console.error('❌ Club elevation fetch failed:', error.message);
+              process.exit(1);
+            });
+          "
+      
+      - name: Check geographic data coverage
+        id: check_geo_data
+        if: steps.check_clubs.outputs.has_clubs == 'true'
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+        run: |
+          echo "📊 Checking geographic data coverage..."
+          
+          # Get geographic statistics from database
+          clubs_with_coordinates=$(node -e "
+            const { createClient } = require('@supabase/supabase-js');
+            const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SECRET_KEY);
+            supabase.from('clubs').select('latitude').not('latitude', 'is', null).then(({data}) => {
+              console.log(data ? data.length : 0);
+            }).catch(e => console.log(0));
+          ")
+          
+          clubs_with_elevation=$(node -e "
+            const { createClient } = require('@supabase/supabase-js');
+            const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SECRET_KEY);
+            supabase.from('clubs').select('elevation_meters').not('elevation_meters', 'is', null).then(({data}) => {
+              console.log(data ? data.length : 0);
+            }).catch(e => console.log(0));
+          ")
+          
+          successful_geocodes=$(node -e "
+            const { createClient } = require('@supabase/supabase-js');
+            const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SECRET_KEY);
+            supabase.from('clubs').select('geocode_success').eq('geocode_success', true).then(({data}) => {
+              console.log(data ? data.length : 0);
+            }).catch(e => console.log(0));
+          ")
+          
+          echo "clubs_with_coordinates=$clubs_with_coordinates" >> $GITHUB_OUTPUT
+          echo "clubs_with_elevation=$clubs_with_elevation" >> $GITHUB_OUTPUT
+          echo "successful_geocodes=$successful_geocodes" >> $GITHUB_OUTPUT
+          
+          echo "🗺️ Clubs with coordinates: $clubs_with_coordinates"
+          echo "🏔️ Clubs with elevation: $clubs_with_elevation"
+          echo "✅ Successful geocodes: $successful_geocodes"
+      
       - name: Upload results as artifacts
         if: always()
         uses: actions/upload-artifact@v4
@@ -139,6 +212,8 @@ jobs:
             output/club_data.json
             logs/club-scraper.log
             logs/club-importer.log
+            logs/club-geocoder.log
+            logs/elevation-fetch.log
           retention-days: 30
       
       - name: Create summary
@@ -164,7 +239,8 @@ jobs:
             echo "- 📋 Extracted club names, addresses, phone numbers, and emails" >> $GITHUB_STEP_SUMMARY
             echo "- 🔧 Normalized and validated club data" >> $GITHUB_STEP_SUMMARY
             echo "- 📊 Imported to Supabase clubs table" >> $GITHUB_STEP_SUMMARY
-            echo "- 🔗 Updated meet_results with club_id references" >> $GITHUB_STEP_SUMMARY
+            echo "- 🗺️ Geocoded club addresses" >> $GITHUB_STEP_SUMMARY
+            echo "- 🏔️ Fetched elevation data for clubs" >> $GITHUB_STEP_SUMMARY
             
             # Calculate data quality percentages
             if [ ${{ steps.check_clubs.outputs.club_count }} -gt 0 ]; then
@@ -177,6 +253,19 @@ jobs:
               echo "- Phone Coverage: ${phone_pct}%" >> $GITHUB_STEP_SUMMARY
               echo "- Email Coverage: ${email_pct}%" >> $GITHUB_STEP_SUMMARY
               echo "- Address Coverage: ${address_pct}%" >> $GITHUB_STEP_SUMMARY
+              
+              # Calculate geographic data coverage percentages if available
+              if [ -n "${{ steps.check_geo_data.outputs.clubs_with_coordinates }}" ]; then
+                coord_pct=$(( ${{ steps.check_geo_data.outputs.clubs_with_coordinates }} * 100 / ${{ steps.check_clubs.outputs.club_count }} ))
+                geocode_pct=$(( ${{ steps.check_geo_data.outputs.successful_geocodes }} * 100 / ${{ steps.check_clubs.outputs.club_count }} ))
+                elevation_pct=$(( ${{ steps.check_geo_data.outputs.clubs_with_elevation }} * 100 / ${{ steps.check_clubs.outputs.club_count }} ))
+                
+                echo "" >> $GITHUB_STEP_SUMMARY
+                echo "**Geographic Data Coverage:**" >> $GITHUB_STEP_SUMMARY
+                echo "- 🗺️ **Clubs with Coordinates:** ${{ steps.check_geo_data.outputs.clubs_with_coordinates }} (${coord_pct}%)" >> $GITHUB_STEP_SUMMARY
+                echo "- ✅ **Successful Geocodes:** ${{ steps.check_geo_data.outputs.successful_geocodes }} (${geocode_pct}%)" >> $GITHUB_STEP_SUMMARY
+                echo "- 🏔️ **Clubs with Elevation:** ${{ steps.check_geo_data.outputs.clubs_with_elevation }} (${elevation_pct}%)" >> $GITHUB_STEP_SUMMARY
+              fi
             fi
           else
             echo "⚠️ **Status:** No club data found or scraping failed" >> $GITHUB_STEP_SUMMARY
