@@ -43,7 +43,7 @@ jobs:
         if: ${{ github.event.inputs.skip_scraper != 'true' }}
         run: |
           echo "🕷️ Starting Internal ID Scraper at: $(date +'%Y-%m-%d %H:%M:%S %Z')"
-          node internal-id-scraper.js
+          node scripts/legacy/internal-id-scraper.js
           echo "✅ Internal ID Scraper completed at: $(date +'%Y-%m-%d %H:%M:%S %Z')"
         continue-on-error: false
 
@@ -71,7 +71,7 @@ jobs:
       - name: Run Internal ID Uploader
         run: |
           echo "📤 Starting Internal ID Uploader at: $(date +'%Y-%m-%d %H:%M:%S %Z')"
-          node internal-id-uploader.js
+          node scripts/legacy/internal-id-uploader.js
           echo "✅ Internal ID Uploader completed at: $(date +'%Y-%m-%d %H:%M:%S %Z')"
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
@@ -81,7 +81,7 @@ jobs:
       - name: Run Contamination Cleanup Pipeline
         run: |
           echo "🧹 Starting Contamination Cleanup Pipeline at: $(date +'%Y-%m-%d %H:%M:%S %Z')"
-          node contamination-cleanup-master.js
+          node scripts/analysis/contamination-cleanup-master.js
           echo "✅ Contamination Cleanup Pipeline completed at: $(date +'%Y-%m-%d %H:%M:%S %Z')"
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}

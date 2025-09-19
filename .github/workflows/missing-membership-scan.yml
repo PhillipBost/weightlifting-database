@@ -82,7 +82,7 @@ jobs:
             export FIND_MEMBERSHIPS=true
           fi
           
-          node missing-biographical-data-scan.js --find-data --show-details
+          node scripts/analysis/missing-biographical-data-scan.js --find-data --show-details
           echo "✅ Missing membership scan completed at: $(date +'%Y-%m-%d %H:%M:%S %Z')"
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}

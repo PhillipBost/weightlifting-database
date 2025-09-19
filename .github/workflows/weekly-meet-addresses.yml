@@ -75,7 +75,7 @@ jobs:
           echo "🏋️ Starting meet address scraping..."
           echo "Date range: ${{ steps.dates.outputs.from_date }} to ${{ steps.dates.outputs.to_date }}"
           
-          node meet-address-scraper.js \
+          node scripts/production/meet-address-scraper.js \
             --from-date "${{ steps.dates.outputs.from_date }}" \
             --to-date "${{ steps.dates.outputs.to_date }}"
       
@@ -116,7 +116,7 @@ jobs:
           echo "🌍 Starting geocoding and import..."
           echo "Processing ${{ steps.check_addresses.outputs.meet_count }} meets"
           
-          node geocode-and-import.js
+          node scripts/geographic/geocode-and-import.js
       
       - name: Upload results as artifacts
         if: always()

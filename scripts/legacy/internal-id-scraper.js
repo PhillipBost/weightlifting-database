@@ -2,7 +2,7 @@ const puppeteer = require('puppeteer');
 const fs = require('fs');
 
 const JSON_FILE = 'internal_ids.json';
-const CSV_FILE = 'internal_ids.csv';
+const CSV_FILE = '../../data/legacy/internal_ids.csv';
 const BATCH_SIZE = 50;
 const REQUEST_DELAY = 500; // ms
 const MAX_CONSECUTIVE_ERRORS = 10;

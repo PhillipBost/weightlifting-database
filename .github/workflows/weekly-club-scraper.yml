@@ -36,7 +36,7 @@ jobs:
           echo "🏋️ Starting club data scraping..."
           echo "Scraping USA Weightlifting barbell club directory..."
           
-          node club-scraper.js
+          node scripts/production/club-scraper.js
       
       - name: Check if clubs were scraped
         id: check_clubs
@@ -128,7 +128,7 @@ jobs:
           echo "📊 Starting club data import..."
           echo "Processing ${{ steps.check_clubs.outputs.club_count }} clubs"
           
-          node club-importer.js
+          node scripts/production/club-importer.js
       
       - name: Geocode club addresses
         if: steps.check_clubs.outputs.has_clubs == 'true'
@@ -139,7 +139,7 @@ jobs:
           echo "🗺️ Starting club geocoding..."
           echo "Geocoding club addresses using Nominatim API"
           
-          node club-geocoder.js
+          node scripts/geographic/club-geocoder.js
       
       - name: Fetch club elevation data
         if: steps.check_clubs.outputs.has_clubs == 'true'

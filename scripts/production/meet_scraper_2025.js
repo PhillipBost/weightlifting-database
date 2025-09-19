@@ -1,0 +1,943 @@
+const puppeteer = require('puppeteer');
+const fs = require('fs');
+const path = require('path');
+const {handleTotalAthleteString, getAmountMeetsOnPage} = require('../../utils/string_utils');
+
+// Ensure directories exist
+function ensureDirectoryExists(dirPath) {
+    if (!fs.existsSync(dirPath)) {
+        fs.mkdirSync(dirPath, { recursive: true });
+        console.log(`📁 Created directory: ${dirPath}`);
+    }
+}
+
+// Store API data for URL matching
+let apiDataCache = [];
+
+// Track processed meet IDs to prevent duplicates
+let processedMeetIds = new Set();
+
+// Setup API interception to capture URLs
+async function setupAPIInterception(page) {
+    console.log('🔗 Setting up API interception...');
+    
+    await page.setRequestInterception(true);
+    
+    page.on('request', (request) => {
+        request.continue();
+    });
+    
+    page.on('response', async (response) => {
+        const url = response.url();
+        if (url.includes('admin-usaw-rankings.sport80.com/api/events/table/data')) {
+            try {
+                const responseData = await response.json();
+                if (responseData && responseData.data) {
+                    console.log(`📡 Intercepted API data: ${responseData.data.length} records`);
+                    // Store the API data for URL extraction
+                    apiDataCache = responseData.data;
+                }
+            } catch (error) {
+                console.log('⚠️ Could not parse API response:', error.message);
+            }
+        }
+    });
+}
+
+// Function to match DOM data with API data and extract URLs + meet_id
+function matchAndExtractURLs(domMeets) {
+    return domMeets.map(domMeet => {
+        // Find matching API record by meet name and date
+        const apiMatch = apiDataCache.find(apiRecord => {
+            const meetMatch = apiRecord.meet === domMeet.meet;
+            const dateMatch = apiRecord.date === domMeet.date;
+            return meetMatch && dateMatch;
+        });
+        
+        let url = '';
+        let meetId = null;
+        
+        if (apiMatch && apiMatch.action && Array.isArray(apiMatch.action) && apiMatch.action.length > 0) {
+            const route = apiMatch.action[0].route;
+            if (route) {
+                url = `https://usaweightlifting.sport80.com${route}`;
+                // Extract meet_id from URL
+                meetId = route.split('/').pop();
+            }
+        }
+        
+        return {
+            meet_id: meetId ? parseInt(meetId) : null,
+            ...domMeet,
+            url: url
+        };
+    });
+}
+
+// Helper function for direct date input (HTML5 date input or text input)
+async function useDirectDateInput(page, dateSelector, targetYear) {
+    console.log('📝 Using direct date input method...');
+
+    // Try to set the date directly
+    const targetDate = `${targetYear}-01-01`; // January 1st of target year
+
+    await page.evaluate((selector, date) => {
+        const input = document.querySelector(selector);
+        if (input) {
+            input.value = date;
+            input.dispatchEvent(new Event('input', { bubbles: true }));
+            input.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+    }, dateSelector, targetDate);
+
+    console.log(`✅ Set date directly to ${targetDate}`);
+}
+
+// Helper function for complex date picker navigation (dynamic, robust) - ORIGINAL with FIXED day clicking
+async function handleComplexDatePicker(page, targetYear, interfaceSelector, targetMonth = 1, targetDay = 1) {
+    console.log(`🗓️ Navigating calendar (${interfaceSelector}) to ${targetMonth}/${targetDay}/${targetYear}...`);
+
+    // Get the container for the active calendar
+    const container = await page.$(interfaceSelector);
+    if (!container) throw new Error(`Could not find calendar container: ${interfaceSelector}`);
+
+    // Month name map
+    const monthMap = {
+        January: 1, February: 2, March: 3, April: 4, May: 5, June: 6,
+        July: 7, August: 8, September: 9, October: 10, November: 11, December: 12
+    };
+
+    // Helper to get current visible month/year for the active calendar
+    async function getCurrentMonthYear() {
+        // Get the bounding box of the calendar container
+        const containerBox = await container.boundingBox();
+        if (!containerBox) return null;
+
+        // Find all visible headers globally
+        const headers = await page.$$('.v-date-picker-header__value, .v-date-picker-header, [class*="date-picker"] [class*="header"]');
+        let closestHeader = null;
+        let minDistance = Infinity;
+
+        for (const header of headers) {
+            const isVisible = await header.evaluate(el => {
+                return el.offsetParent !== null && getComputedStyle(el).visibility !== 'hidden';
+            });
+            if (!isVisible) continue;
+
+            const headerBox = await header.boundingBox();
+            if (!headerBox) continue;
+
+            // Only consider headers that are above or near the calendar container
+            const verticalDistance = Math.abs(headerBox.y - containerBox.y);
+            if (verticalDistance < minDistance && verticalDistance < 150) { // 150px threshold
+                minDistance = verticalDistance;
+                closestHeader = header;
+            }
+        }
+
+        if (closestHeader) {
+            const text = (await (await closestHeader.getProperty('textContent')).jsonValue()).trim();
+            if (text.length > 0) {
+                console.log('🔎 [GLOBAL] Closest visible header:', text);
+            }
+            const match = text.match(/^(January|February|March|April|May|June|July|August|September|October|November|December) \d{4}$/);
+            if (match) {
+                const [monthName, yearStr] = text.split(' ');
+                return { monthName, year: parseInt(yearStr, 10), raw: text };
+            }
+        }
+        return null;
+    }
+
+    // Helper to click the previous month button in the active calendar
+    async function clickPrevMonth() {
+        // Get the bounding box of the calendar container
+        const containerBox = await container.boundingBox();
+        if (!containerBox) throw new Error('Could not get bounding box of calendar container');
+
+        // Find all visible "Previous month" buttons globally
+        const buttons = await page.$$('button[aria-label="Previous month"]');
+        let closestBtn = null;
+        let minDistance = Infinity;
+
+        for (const btn of buttons) {
+            const isVisible = await btn.evaluate(el => {
+                return el.offsetParent !== null && getComputedStyle(el).visibility !== 'hidden';
+            });
+            if (!isVisible) continue;
+
+            const btnBox = await btn.boundingBox();
+            if (!btnBox) continue;
+
+            // Only consider buttons that are above or near the calendar container
+            const verticalDistance = Math.abs(btnBox.y - containerBox.y);
+            if (verticalDistance < minDistance && verticalDistance < 150) { // 150px threshold
+                minDistance = verticalDistance;
+                closestBtn = btn;
+            }
+        }
+
+        if (!closestBtn) throw new Error('Could not find previous month button in the active calendar');
+        await closestBtn.click();
+        await new Promise(resolve => setTimeout(resolve, 100)); // FAST
+    }
+
+    // Loop until we reach the target month/year (max 24 tries)
+    let attempts = 0;
+    while (attempts < 200) {
+        const currentMonthYear = await getCurrentMonthYear();
+        if (!currentMonthYear) throw new Error('Could not determine current month/year in date picker');
+        const currentMonth = monthMap[currentMonthYear.monthName];
+        const currentYear = currentMonthYear.year;
+
+        console.log(`📅 Picker header detected: "${currentMonthYear.raw}"`);
+
+        if (currentMonth === targetMonth && currentYear === targetYear) {
+            console.log('✅ At the correct month and year.');
+            break;
+        }
+
+        // If we're before the target, break (shouldn't happen in this use case)
+        if (currentYear < targetYear || (currentYear === targetYear && currentMonth < targetMonth)) {
+            console.log('⚠️ Picker is before the target month/year. Not clicking further.');
+            break;
+        }
+
+        // Otherwise, click previous month and try again
+        await clickPrevMonth();
+        attempts++;
+    }
+
+    // Now click on the target day - FAST VERSION
+    console.log(`📅 Selecting day ${targetDay}`);
+
+    // Minimal wait time for calendar readiness
+    await new Promise(resolve => setTimeout(resolve, 100));
+
+    // Use filter() to find the correct button (handles multiple calendars)
+    const clickResult = await page.evaluate((day) => {
+        // Find ALL buttons with the target day text
+        const allButtons = document.querySelectorAll('button');
+        const dayButtons = Array.from(allButtons).filter(btn => btn.textContent.trim() === day.toString());
+        
+        if (dayButtons.length > 0) {
+            // For day 30, use the second button if multiple exist (END calendar)
+            // For other days, use the first button
+            const buttonIndex = (day === 31 && dayButtons.length > 1) ? 1 : 0;
+            const dayButton = dayButtons[buttonIndex];
+            
+            dayButton.click();
+            return { success: true };
+        }
+        return { success: false };
+    }, targetDay);
+
+    if (clickResult.success) {
+        console.log(`✅ Clicked day ${targetDay}`);
+        // Minimal wait time after click
+        await new Promise(resolve => setTimeout(resolve, 100));
+    } else {
+        console.log(`❌ Could not find day ${targetDay} button`);
+    }
+
+    // After selecting the day, click the OK button inside the calendar container
+    const okButtons = await container.$$('button, .v-btn, .s80-btn');
+    let okClicked = false;
+    for (const btn of okButtons) {
+        const text = (await (await btn.getProperty('textContent')).jsonValue()).trim().toLowerCase();
+        if (['ok', 'apply', 'done', 'select'].includes(text)) {
+            await btn.click();
+            okClicked = true;
+            console.log('✅ Clicked OK/APPLY button in calendar');
+            break;
+        }
+    }
+    if (!okClicked) {
+        console.log('⚠️ No OK/APPLY button found in calendar, calendar may close automatically');
+    }
+
+    console.log(`✅ Date picker navigation completed for ${targetMonth}/${targetDay}/${targetYear}`);
+}
+
+// Helper function for generic date navigation
+async function handleGenericDateNavigation(page, targetYear) {
+    console.log('🔧 Attempting generic date navigation...');
+
+    // Look for any input fields that might accept year input
+    const yearSet = await page.evaluate((year) => {
+        const inputs = Array.from(document.querySelectorAll('input, select'));
+
+        for (const input of inputs) {
+            if (input.type === 'number' || input.type === 'text') {
+                // Try setting the year
+                input.value = year.toString();
+                input.dispatchEvent(new Event('input', { bubbles: true }));
+                input.dispatchEvent(new Event('change', { bubbles: true }));
+                return true;
+            }
+        }
+        return false;
+    }, targetYear);
+
+    if (yearSet) {
+        console.log(`✅ Set year to ${targetYear} via generic input`);
+    } else {
+        throw new Error('Could not set year via any available method');
+    }
+}
+
+// Continue with the rest of the original navigation function after date picker handling
+async function completeNavigation(page, targetYear) {
+    console.log('🎯 Completing navigation setup...');
+
+    // Wait a moment for any changes to take effect
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    // Look for and click apply/submit buttons
+    const applySelectors = [
+        'button[type="submit"]',
+        'button:contains("Apply")',
+        'button.primary',
+        'button[aria-label*="Apply"]',
+        '.v-card__actions button',
+        'button.s80-btn'
+    ];
+
+    let applyClicked = false;
+    for (const selector of applySelectors) {
+        try {
+            // Handle the contains selector differently
+            if (selector.includes('contains')) {
+                const clicked = await page.evaluate(() => {
+                    const buttons = Array.from(document.querySelectorAll('button'));
+                    const applyButton = buttons.find(btn =>
+                        btn.textContent?.toLowerCase().includes('apply') ||
+                        btn.textContent?.toLowerCase().includes('submit') ||
+                        btn.textContent?.toLowerCase().includes('filter')
+                    );
+                    if (applyButton) {
+                        applyButton.click();
+                        return true;
+                    }
+                    return false;
+                });
+                if (clicked) {
+                    console.log('✅ Clicked apply button via text search');
+                    applyClicked = true;
+                    break;
+                }
+            } else {
+                await page.waitForSelector(selector, { timeout: 1000 });
+                await page.click(selector);
+                console.log(`✅ Clicked apply button: ${selector}`);
+                applyClicked = true;
+                break;
+            }
+        } catch (err) {
+            console.log(`❌ Apply selector failed: ${selector}`);
+        }
+    }
+
+    if (!applyClicked) {
+        console.log('⚠️ No apply button found, the filter might auto-apply...');
+    }
+
+    // Wait for page to update
+    await page.waitForNetworkIdle();
+    console.log(`✅ Navigation to ${targetYear} completed`);
+}
+
+async function setResultsPerPage(page) {
+    console.log('⚙️ Setting results per page to 50...');
+    await page.click('div.v-select__slot div.v-input__append-inner div.v-input__icon');
+    await new Promise(resolve => setTimeout(resolve, 300));
+    await page.click('div.v-menu__content div.v-list.v-select-list.v-sheet div.v-list-item.v-list-item--link:nth-of-type(6)');
+    console.log('✅ Set to 50 results per page');
+}
+
+async function getPageData(page) {
+    return await page.$eval(
+        ".data-table div div.v-data-table div.v-data-footer div.v-data-footer__pagination",
+        x => x.textContent
+    );
+}
+
+// UPDATED: Extract meets with meet_id and duplicate prevention
+async function extractMeetsFromPage(page, csvFilePath, errorFilePath, batchId) {
+    let meetCount = 0;
+    let errorCount = 0;
+
+    try {
+        // Wait a moment for API response to be captured
+        await new Promise(resolve => setTimeout(resolve, 500));
+        
+        const meetsOnPage = await page.evaluate(() => {
+            const rows = Array.from(document.querySelectorAll('.data-table tbody tr'));
+
+            return rows.map(row => {
+                try {
+                    const cells = Array.from(row.querySelectorAll('td'));
+                    if (cells.length >= 4) {
+                        return {
+                            meet: cells[0]?.textContent?.trim() || '',
+                            level: cells[1]?.textContent?.trim() || '',
+                            date: cells[2]?.textContent?.trim() || '',
+                            results: cells[3]?.textContent?.trim() || ''
+                        };
+                    }
+                    return null;
+                } catch (err) {
+                    return { error: err.message, rawHTML: row.innerHTML };
+                }
+            }).filter(meet => meet !== null);
+        });
+
+        console.log(`📊 Found ${meetsOnPage.length} meets on this page`);
+        console.log(`🔗 API cache has ${apiDataCache.length} records`);
+        
+        // Match DOM data with API data to get URLs and meet_ids
+        const meetsWithUrls = matchAndExtractURLs(meetsOnPage);
+
+        for (const meet of meetsWithUrls) {
+            try {
+                if (meet.error) {
+                    logError(errorFilePath, meet, `Failed to parse meet row: ${meet.error}`);
+                    errorCount++;
+                    continue;
+                }
+
+                // Skip if no meet_id (can't process without unique identifier)
+                if (!meet.meet_id) {
+                    console.log(`⚠️ SKIPPING: No meet_id found for ${meet.meet}`);
+                    logError(errorFilePath, meet, `No meet_id extracted from URL`);
+                    errorCount++;
+                    continue;
+                }
+
+                // Skip duplicates - Check if we've already processed this meet_id
+                if (processedMeetIds.has(meet.meet_id)) {
+                    console.log(`🚫 DUPLICATE: Meet ID ${meet.meet_id} already processed - skipping`);
+                    continue;
+                }
+
+                // Add to processed set
+                processedMeetIds.add(meet.meet_id);
+
+                const rowData = [
+                    meet.meet_id,        // First column: meet_id
+                    meet.meet,
+                    meet.level,
+                    meet.date,
+                    meet.results,
+                    meet.url || '',
+                    batchId,
+                    new Date().toISOString().slice(0, 19).replace('T', ' ')
+                ];
+
+                appendCSVRow(csvFilePath, rowData);
+                meetCount++;
+
+            } catch (error) {
+                console.error(`❌ Error processing meet:`, error);
+                logError(errorFilePath, meet, `Processing error: ${error.message}`);
+                errorCount++;
+            }
+        }
+
+    } catch (error) {
+        console.error(`💥 Error extracting meets from page:`, error);
+        logError(errorFilePath, { page: 'extraction_failed' }, `Page extraction error: ${error.message}`);
+        errorCount++;
+    }
+
+    return { meetCount, errorCount };
+}
+
+// Main execution
+async function main() {
+    // Prevent multiple simultaneous executions
+    if (global.isRunning) {
+        console.log('🚫 Script is already running, skipping duplicate execution');
+        return;
+    }
+    global.isRunning = true;
+
+    try {
+        console.log('🏋️ Daily Meet Scraper (2025) - WITH URLs + meet_id');
+        console.log('=======================================================');
+        console.log('📅 Processing current year meets for daily scraper');
+
+        const result = await getCurrentYearMeets();
+
+        console.log('\n🎉 Daily scraping completed successfully!');
+        console.log(`📊 Total meets extracted: ${result.totalMeets}`);
+        console.log(`❌ Total errors logged: ${result.totalErrors}`);
+        console.log(`📁 Files created: ${result.files.length} years processed`);
+        console.log('\n💡 Files are saved in current directory');
+
+    } catch (error) {
+        console.error('💥 Daily scraper failed:', error.message);
+        process.exit(1);
+    } finally {
+        global.isRunning = false;
+    }
+}
+
+// Run if called directly - prevent duplicate execution
+if (require.main === module) {
+    // Check if already running
+    if (process.env.SCRAPER_RUNNING) {
+        console.log('🚫 Scraper already running, exiting...');
+        process.exit(0);
+    }
+
+    // Set flag to prevent duplicates
+    process.env.SCRAPER_RUNNING = 'true';
+
+    main().finally(() => {
+        delete process.env.SCRAPER_RUNNING;
+    });
+}
+
+module.exports = {
+    getCurrentYearMeets
+};
+
+// CSV utility functions with comma separation
+function writeCSVHeader(filePath, headers) {
+    const headerCSV = headers.join(',') + '\n';
+    fs.writeFileSync(filePath, headerCSV);
+}
+
+function appendCSVRow(filePath, rowData) {
+    const escapedData = rowData.map(field => {
+        if (field === null || field === undefined) return '';
+        const str = String(field);
+        if (str.includes(',') || str.includes('"') || str.includes('\n')) {
+            return '"' + str.replace(/"/g, '""') + '"';
+        }
+        return str;
+    });
+    const csvRow = escapedData.join(',') + '\n';
+    fs.appendFileSync(filePath, csvRow);
+}
+
+function logError(errorFilePath, meetData, errorMessage) {
+    const timestamp = new Date().toISOString();
+    const errorRow = [timestamp, JSON.stringify(meetData), errorMessage];
+
+    // Create error file with headers only when first error occurs
+    if (!fs.existsSync(errorFilePath)) {
+        const errorHeaders = ['timestamp', 'meet_data', 'error_message'];
+        writeCSVHeader(errorFilePath, errorHeaders);
+    }
+
+    appendCSVRow(errorFilePath, errorRow);
+}
+
+async function getCurrentYearMeets() {
+    console.log(`🏋️ Starting daily meet scraper (${new Date().getFullYear()})...`);
+
+    const timestamp = new Date().toISOString().slice(0, 19).replace(/:/g, '-');
+
+    // Create organized folder structure
+    const outputDir = './';
+    const errorsDir = './errors';
+
+    ensureDirectoryExists(outputDir);
+    ensureDirectoryExists(errorsDir);
+
+    const url = 'https://usaweightlifting.sport80.com/public/rankings/results/';
+
+    const browser = await puppeteer.launch({
+        headless: "new",
+        args: [
+            '--no-sandbox',
+            '--disable-setuid-sandbox',
+            '--disable-dev-shm-usage',
+            '--disable-gpu',
+            '--no-first-run',
+            '--disable-extensions'
+        ],
+        slowMo: 25
+    });
+    
+    const page = await browser.newPage();
+    await page.setViewport({width: 1500, height: 1000});
+
+    // Setup API interception to capture URLs
+    await setupAPIInterception(page);
+
+    const results = {
+        totalMeets: 0,
+        totalErrors: 0,
+        yearResults: {},
+        files: []
+    };
+
+    // Process current year for daily scraper
+    const currentYear = new Date().getFullYear();
+    const yearsToProcess = [currentYear];
+
+    try {
+        await page.goto(url, { waitUntil: 'networkidle0' });
+
+        // Set pagination to 50 results per page
+        await setResultsPerPage(page);
+
+        // Process current year
+        for (const year of yearsToProcess) {
+            console.log(`\n📅 Processing year: ${year}`);
+
+            // Clear processed meet IDs for each year
+            processedMeetIds.clear();
+
+            const csvFilePath = path.join(outputDir, `meets_${year}.csv`);
+            const errorFilePath = path.join(errorsDir, `meet_errors_${year}_${timestamp}.csv`);
+
+            console.log(`📝 Output: ${csvFilePath}`);
+            console.log(`❌ Errors: ${errorFilePath}`);
+
+            // Initialize CSV file - UPDATED to include meet_id as first column
+            const meetHeaders = ['meet_id', 'Meet', 'Level', 'Date', 'Results', 'URL', 'batch_id', 'scraped_date'];
+            writeCSVHeader(csvFilePath, meetHeaders);
+
+            // Note: Error file will be created only when first error occurs
+
+            const batchId = `daily_scraper_${year}_${timestamp}`;
+
+            try {
+                // Navigate to the specific year
+                console.log(`🎯 Setting up date filters for ${year}...`);
+                await navigateToYear(page, year);
+
+                // Wait for data to load and verify we have results
+                console.log(`⏳ Waiting for filtered data to load for ${year}...`);
+                await new Promise(resolve => setTimeout(resolve, 2000));
+                
+                // Check if we have any data after filtering
+                const hasData = await page.evaluate(() => {
+                    const rows = document.querySelectorAll('.data-table tbody tr');
+                    return rows.length > 0;
+                });
+                
+                if (!hasData) {
+                    console.log(`⚠️ No data found for year ${year} after filtering - this might be expected`);
+                }
+
+                let meetCount = 0;
+                let errorCount = 0;
+
+                // Get meets from first page
+                let pageData = await getPageData(page);
+                console.log(`📄 Initial page data: ${pageData}`);
+                
+                const pageResult = await extractMeetsFromPage(page, csvFilePath, errorFilePath, batchId);
+                meetCount += pageResult.meetCount;
+                errorCount += pageResult.errorCount;
+                
+                console.log(`📊 First page results: ${pageResult.meetCount} meets, ${pageResult.errorCount} errors`);
+
+                // Process remaining pages
+                let pageNumber = 2;
+                while (await handleTotalAthleteString(pageData)) {
+                    console.log(`📄 Processing page ${pageNumber}...`);
+
+                    // Clear cache before next page
+                    apiDataCache = [];
+
+                    try {
+                        // PAGINATION - slower wait for content to load
+                        await page.click('.data-table div div.v-data-table div.v-data-footer div.v-data-footer__icons-after');
+                        await new Promise(resolve => setTimeout(resolve, 1000));
+
+                        pageData = await getPageData(page);
+                        console.log(`📄 Page ${pageNumber} data: ${pageData}`);
+
+                        const pageResult = await extractMeetsFromPage(page, csvFilePath, errorFilePath, batchId);
+                        meetCount += pageResult.meetCount;
+                        errorCount += pageResult.errorCount;
+                        
+                        console.log(`📊 Page ${pageNumber} results: ${pageResult.meetCount} meets, ${pageResult.errorCount} errors`);
+                        pageNumber++;
+                        
+                        // Safety check to prevent infinite loops
+                        if (pageNumber > 100) {
+                            console.log('⚠️ Reached maximum page limit (100) - stopping pagination');
+                            break;
+                        }
+                        
+                    } catch (paginationError) {
+                        console.error(`❌ Error during pagination on page ${pageNumber}:`, paginationError.message);
+                        break;
+                    }
+                }
+
+                results.yearResults[year] = { meetCount, errorCount };
+                results.totalMeets += meetCount;
+                results.totalErrors += errorCount;
+                results.files.push({ year, meets: csvFilePath, errors: errorFilePath });
+
+                console.log(`✅ Year ${year} completed: ${meetCount} meets, ${errorCount} errors`);
+
+            } catch (error) {
+                console.error(`💥 Error processing year ${year}:`, error);
+                console.error(`📍 Stack trace:`, error.stack);
+                
+                // Try to capture page state for debugging
+                try {
+                    await page.screenshot({ path: `error_${year}_${timestamp}.png`, fullPage: true });
+                    console.log(`📸 Error screenshot saved: error_${year}_${timestamp}.png`);
+                } catch (screenshotError) {
+                    console.log('⚠️ Could not save error screenshot');
+                }
+                
+                logError(errorFilePath, { year, error: 'Year processing failed', stack: error.stack }, error.message);
+                results.yearResults[year] = { meetCount: 0, errorCount: 1 };
+                results.totalErrors += 1;
+            }
+        }
+
+        console.log('\n🎉 Daily scraping completed!');
+        console.log(`📊 Total meets extracted: ${results.totalMeets}`);
+        console.log(`❌ Total errors: ${results.totalErrors}`);
+        console.log('\n📈 Year breakdown:');
+        for (const [year, stats] of Object.entries(results.yearResults)) {
+            console.log(`   ${year}: ${stats.meetCount} meets, ${stats.errorCount} errors`);
+        }
+
+        return results;
+
+    } catch (error) {
+        console.error('💥 Daily scraping failed:', error);
+        throw error;
+    } finally {
+        await browser.close();
+    }
+}
+
+// ORIGINAL navigateToYear function with improved apply button handling
+async function navigateToYear(page, targetYear) {
+    console.log(`🎯 Navigating to year ${targetYear}...`);
+
+    try {
+        // Wait for page to fully load - REMOVE SCREENSHOT
+        await page.waitForLoadState ? page.waitForLoadState('networkidle') : page.waitForNetworkIdle();
+
+        // Try multiple possible selectors for the filter button
+        const filterSelectors = [
+            'button[aria-label="Show Filters"]',  // This should work based on debug output
+            '.s80-btn.icon[aria-label="Show Filters"]',
+            'button.s80-btn.icon[aria-label="Show Filters"]',
+            '.data-table div.container.pb-0 div.s80-filter div.row.no-gutters .v-badge button.v-btn',
+            '.s80-filter button.v-btn',
+            'button.v-btn[aria-label*="filter"]',
+            'button.v-btn:has(.v-badge)',
+            '.v-badge button.v-btn'
+        ];
+
+        let filterButton = null;
+        for (const selector of filterSelectors) {
+            try {
+                console.log(`🔍 Trying filter selector: ${selector}`);
+                await page.waitForSelector(selector, { timeout: 2000 });
+                filterButton = selector;
+                console.log(`✅ Found filter button with: ${selector}`);
+                break;
+            } catch (err) {
+                console.log(`❌ Selector failed: ${selector}`);
+            }
+        }
+
+        if (!filterButton) {
+            console.log('🔍 No filter button found, checking page content...');
+            const pageContent = await page.evaluate(() => {
+                return {
+                    url: window.location.href,
+                    title: document.title,
+                    hasDataTable: !!document.querySelector('.data-table'),
+                    hasFilter: !!document.querySelector('[class*="filter"]'),
+                    buttonCount: document.querySelectorAll('button').length,
+                    allButtons: Array.from(document.querySelectorAll('button')).map(btn => ({
+                        text: btn.textContent?.trim(),
+                        classes: btn.className,
+                        ariaLabel: btn.getAttribute('aria-label')
+                    })).slice(0, 10)
+                };
+            });
+            console.log('📊 Page info:', pageContent);
+            throw new Error('Could not find filter button with any selector');
+        }
+
+        // Click the filter button
+        console.log('🔘 Clicking filter button...');
+        await page.click(filterButton);
+        await new Promise(resolve => setTimeout(resolve, 1000));
+
+        // Handle START date field first
+        console.log('📅 Setting START date range...');
+        await handleDateField(page, '#form__date_range_start', targetYear, 'start');
+
+        // Wait between date field operations - FAST
+        await new Promise(resolve => setTimeout(resolve, 100));
+
+        // Handle END date field second  
+        console.log('📅 Setting END date range...');
+        await handleDateField(page, '#form__date_range_end', targetYear, 'end');
+
+        // Wait before applying filter - FAST
+        await new Promise(resolve => setTimeout(resolve, 100));
+
+        // Wait before proceeding - dates are already set automatically
+        await new Promise(resolve => setTimeout(resolve, 100));
+
+        // Click away from calendar to properly dismiss it and apply the filter
+        console.log('🖱️ Clicking away from calendar to apply date filter...');
+        await page.click('body');
+        await new Promise(resolve => setTimeout(resolve, 500));
+
+        // Apply the filter - dates need to be submitted to server
+        console.log('🔄 Applying date filter to submit the date range...');
+        
+        const applySelectors = [
+            'div.v-card__actions.justify-end button.primary.my-2.v-btn.v-btn--is-elevated',
+            'button.primary.my-2.v-btn.v-btn--is-elevated',
+            'button.primary',
+            '.v-card__actions button.primary',
+            'button[type="submit"]',
+            '.v-card__actions button:last-child'
+        ];
+
+        let applyClicked = false;
+        for (const selector of applySelectors) {
+            try {
+                console.log(`🔍 Trying apply button selector: ${selector}`);
+                await page.waitForSelector(selector, { timeout: 2000 });
+                await page.click(selector);
+                console.log(`✅ Successfully clicked apply button with: ${selector}`);
+                applyClicked = true;
+                break;
+            } catch (err) {
+                console.log(`❌ Apply selector failed: ${selector}`);
+            }
+        }
+
+        if (!applyClicked) {
+            console.log('🔍 No specific apply button found, searching for buttons with "Apply" text...');
+            const textBasedApply = await page.evaluate(() => {
+                const buttons = Array.from(document.querySelectorAll('button'));
+                const applyButton = buttons.find(btn => {
+                    const text = btn.textContent?.toLowerCase() || '';
+                    return text.includes('apply') || text.includes('filter') || text.includes('submit');
+                });
+                if (applyButton) {
+                    applyButton.click();
+                    return true;
+                }
+                return false;
+            });
+            
+            if (textBasedApply) {
+                console.log('✅ Found and clicked apply button by text content');
+                applyClicked = true;
+            }
+        }
+
+        if (!applyClicked) {
+            console.log('⚠️ Could not find apply button - date filter may not be applied');
+        }
+
+        await new Promise(resolve => setTimeout(resolve, 1000)); // Wait for filter to process
+        console.log(`✅ Successfully navigated to ${targetYear}`);
+
+    } catch (error) {
+        console.error(`💥 Navigation to ${targetYear} failed:`, error.message);
+        await page.screenshot({ path: `debug_error_${targetYear}.png`, fullPage: true });
+        throw error;
+    }
+}
+
+// ORIGINAL handleDateField function - UNMODIFIED
+async function handleDateField(page, fieldSelector, targetYear, fieldType) {
+    console.log(`📅 Handling ${fieldType} date field: ${fieldSelector}`);
+
+    try {
+        // Check if the field exists
+        const fieldExists = await page.$(fieldSelector);
+        if (!fieldExists) {
+            console.log(`⚠️ ${fieldType} date field not found: ${fieldSelector}`);
+            return;
+        }
+
+        // Click the date field to open its calendar - NO SCREENSHOT
+        await page.click(fieldSelector);
+        await new Promise(resolve => setTimeout(resolve, 200)); // FAST
+
+        // Look for various date picker interfaces that might have opened
+        const datePickerInterfaces = [
+            '.v-date-picker',
+            '.s80-date-picker',
+            '.v-menu__content',
+            '[role="dialog"]',
+            '.v-dialog',
+            'input[type="date"]'
+        ];
+
+        let activeInterface = null;
+        for (const selector of datePickerInterfaces) {
+            try {
+                const element = await page.$(selector);
+                if (element) {
+                    const isVisible = await element.evaluate(el => {
+                        return el.offsetParent !== null && getComputedStyle(el).visibility !== 'hidden';
+                    });
+                    if (isVisible) {
+                        activeInterface = selector;
+                        console.log(`✅ Found active ${fieldType} date interface: ${selector}`);
+                        break;
+                    }
+                }
+            } catch (err) {
+                // Continue checking other selectors
+            }
+        }
+
+        if (!activeInterface) {
+            console.log(`⚠️ No ${fieldType} date picker interface found`);
+            // Try pressing Escape to close any open interface
+            await page.keyboard.press('Escape');
+            await new Promise(resolve => setTimeout(resolve, 500));
+            return;
+        }
+
+        // If we have a complex date picker, handle it
+        if (activeInterface.includes('date-picker') || activeInterface.includes('v-menu')) {
+            // Set Jan 1 of target year for start field
+            if (fieldType === 'start') {
+                await handleComplexDatePicker(page, targetYear, activeInterface, 1, 1); // January 1 of target year
+            } else if (fieldType === 'end') {
+                // Set Dec 31 of target year for end field
+                await handleComplexDatePicker(page, targetYear, activeInterface, 12, 31); // December 31 of target year
+            } else {
+                await handleComplexDatePicker(page, targetYear, activeInterface); // Default for other
+            }
+
+            // Close this individual calendar (use Escape instead of clicking Apply)
+            console.log(`🔚 Waiting for ${fieldType} date calendar to close...`);
+            await new Promise(resolve => setTimeout(resolve, 100)); // FAST
+
+        } else {
+            console.log(`⚠️ Unknown ${fieldType} date interface, attempting generic navigation...`);
+            await handleGenericDateNavigation(page, targetYear);
+        }
+
+        console.log(`✅ ${fieldType} date field handling completed`);
+
+    } catch (error) {
+        console.error(`❌ Failed to handle ${fieldType} date field:`, error.message);
+
+        // Always try to close any open calendar
+        await page.keyboard.press('Escape');
+        await new Promise(resolve => setTimeout(resolve, 500));
+    }
+}

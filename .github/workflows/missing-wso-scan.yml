@@ -110,17 +110,17 @@ jobs:
           
           # Add show-details flag for scheduled runs to get comprehensive output
           if [ "${{ github.event_name }}" = "schedule" ]; then
-            node missing-wso-scan.js --find-data --show-details
+            node scripts/analysis/missing-wso-scan.js --find-data --show-details
           else
             # Manual runs use the input parameters
             if [ "${{ github.event.inputs.find_wso_data }}" = "true" ] && [ "${{ github.event.inputs.show_details }}" = "true" ]; then
-              node missing-wso-scan.js --find-data --show-details
+              node scripts/analysis/missing-wso-scan.js --find-data --show-details
             elif [ "${{ github.event.inputs.find_wso_data }}" = "true" ]; then
-              node missing-wso-scan.js --find-data
+              node scripts/analysis/missing-wso-scan.js --find-data
             elif [ "${{ github.event.inputs.show_details }}" = "true" ]; then
-              node missing-wso-scan.js --show-details
+              node scripts/analysis/missing-wso-scan.js --show-details
             else
-              node missing-wso-scan.js
+              node scripts/analysis/missing-wso-scan.js
             fi
           fi
           
@@ -239,7 +239,7 @@ jobs:
           echo "in the next scheduled run."
           echo ""
           echo "For faster processing, consider running the script locally:"
-          echo "node missing-wso-scan.js --find-data"
+          echo "node scripts/analysis/missing-wso-scan.js --find-data"
 
       - name: Notify on failure
         if: failure()

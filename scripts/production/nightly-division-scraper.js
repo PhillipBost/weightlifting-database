@@ -40,7 +40,7 @@ function escapeCSV(value) {
 }
 
 function createExtractionIssuesLogger() {
-    const issuesFilePath = './athlete_extraction_details.csv';
+    const issuesFilePath = '../../data/logs/athlete_extraction_details.csv';
     
     if (!fs.existsSync(issuesFilePath)) {
         const headers = ['division_number', 'division_name', 'issue_type', 'athlete_name', 'membership_id', 'row_data', 'description', 'batch_day'];
@@ -66,8 +66,8 @@ function createExtractionIssuesLogger() {
 
 function loadDivisions() {
     // First, check if the activedivisions.csv file exists (from your uploaded file)
-    const divisionsFile = './activedivisions.csv';
-    const altDivisionsFile = './active divisions.csv';
+    const divisionsFile = '../../data/current/activedivisions.csv';
+    const altDivisionsFile = '../../data/current/active divisions.csv';
     
     let fileToUse = null;
     if (fs.existsSync(divisionsFile)) {
@@ -731,7 +731,7 @@ async function processBatchDivisions() {
     }
     
     // Setup logging
-    const logFile = `./completed_divisions_${CONFIG.DAY_NAME.toLowerCase()}.csv`;
+    const logFile = `../../data/logs/completed_divisions_${CONFIG.DAY_NAME.toLowerCase()}.csv`;
     if (!fs.existsSync(logFile)) {
         const headers = ['division_number', 'division_name', 'timestamp', 'athletes_found', 
                         'athletes_processed', 'athletes_skipped', 'status', 'time_seconds'];

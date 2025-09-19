@@ -41,7 +41,7 @@ jobs:
         run: |
           echo "🏋️ Starting Monday scraper (Divisions $DIVISION_START-$DIVISION_END)"
           echo "🕐 Start time: $(date +'%Y-%m-%d %H:%M:%S %Z')"
-          node nightly-division-scraper.js
+          node scripts/production/nightly-division-scraper.js
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}

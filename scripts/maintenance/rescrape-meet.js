@@ -5,7 +5,7 @@
  * Example: node rescrape-meet.js 6948
  */
 
-const { scrapeOneMeet } = require('./scrapeOneMeet.js');
+const { scrapeOneMeet } = require('../production/scrapeOneMeet.js');
 
 async function rescrapeMeet() {
     const meetId = process.argv[2];

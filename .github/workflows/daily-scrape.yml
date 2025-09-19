@@ -53,7 +53,7 @@ jobs:
       - name: Fetch elevation data for new meet locations
         run: |
           echo "🗻 Starting elevation fetch at: $(date +'%Y-%m-%d %H:%M:%S %Z')"
-          node elevation-fetcher.js
+          node scripts/geographic/elevation-fetcher.js
           echo "✅ Elevation fetch completed at: $(date +'%Y-%m-%d %H:%M:%S %Z')"
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}

@@ -5,11 +5,11 @@
   "description": "node scraper using puppeteer",
   "main": "main.js",
   "scripts": {
-    "start": "node daily_scraper.js",
-    "scrape": "node meet_scraper_2025.js",
-    "import": "node database-importer.js",
-    "test": "node meet_scraper_2025.js && node database-importer.js",
-    "division-scraper": "node division-scraper.js"
+    "start": "node scripts/maintenance/daily_scraper.js",
+    "scrape": "node scripts/production/meet_scraper_2025.js",
+    "import": "node scripts/production/database-importer.js",
+    "test": "node scripts/production/meet_scraper_2025.js && node scripts/production/database-importer.js",
+    "division-scraper": "node scripts/legacy/division-scraper.js"
   },
   "author": "Phil Bost",
   "license": "MIT",
