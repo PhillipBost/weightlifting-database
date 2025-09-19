@@ -11,6 +11,7 @@ require('dotenv').config();
 const fs = require('fs');
 const path = require('path');
 const { createClient } = require('@supabase/supabase-js');
+const { getWSOGeographyFromCoordinates } = require('../../utils/wso-geography-lookup');
 
 // Initialize Supabase client
 const supabase = createClient(
@@ -228,61 +229,54 @@ function calculateAddressPrecision(address, displayName) {
     return Math.max(0, score);
 }
 
-// Import a batch of records with upsert logic
+// Import a batch of records with upsert logic - targeting meets table
 async function importBatch(records) {
     for (const record of records) {
         if (!record.meet_id) {
-            // No meet_id link, just insert
-            const { error } = await supabase
-                .from('meet_locations')
-                .insert(record);
-            
-            if (error) {
-                throw new Error(`Insert failed for ${record.meet_name}: ${error.message}`);
-            }
+            // No meet_id link - skip this record as we need meet_id for meets table
+            log(`  ⚠️ Skipping record without meet_id: ${record.meet_name}`);
             continue;
         }
         
-        // Check if record exists for this meet_id
+        // Check if meet exists and get current location data
         const { data: existing, error: fetchError } = await supabase
-            .from('meet_locations')
-            .select('*')
+            .from('meets')
+            .select('meet_id, Meet, latitude, longitude, geocode_precision_score, geocode_success')
             .eq('meet_id', record.meet_id)
             .single();
         
-        if (fetchError && fetchError.code !== 'PGRST116') { // PGRST116 = no rows
+        if (fetchError) {
             throw new Error(`Fetch failed for meet_id ${record.meet_id}: ${fetchError.message}`);
         }
         
         if (!existing) {
-            // No existing record, insert new
+            log(`  ⚠️ Meet not found for meet_id ${record.meet_id}`);
+            continue;
+        }
+        
+        // Check if we should update - only update if new data is more precise or no existing location data
+        const existingPrecision = existing.geocode_precision_score || 0;
+        const newPrecision = record.geocode_precision_score || 0;
+        const hasExistingLocation = existing.latitude && existing.longitude;
+        
+        if (!hasExistingLocation || (newPrecision > existingPrecision && record.geocode_success)) {
+            // Update the meets table with location data
             const { error } = await supabase
-                .from('meet_locations')
-                .insert(record);
+                .from('meets')
+                .update(record)
+                .eq('meet_id', record.meet_id);
             
             if (error) {
-                throw new Error(`Insert failed for ${record.meet_name}: ${error.message}`);
+                throw new Error(`Update failed for meet_id ${record.meet_id}: ${error.message}`);
             }
-            log(`  ➕ Inserted new record for meet_id ${record.meet_id}`);
-        } else {
-            // Record exists, check if we should update
-            const existingPrecision = existing.geocode_precision_score || 0;
-            const newPrecision = record.geocode_precision_score || 0;
             
-            if (newPrecision > existingPrecision && record.geocode_success) {
-                // New address is more precise and geocoded successfully
-                const { error } = await supabase
-                    .from('meet_locations')
-                    .update(record)
-                    .eq('meet_id', record.meet_id);
-                
-                if (error) {
-                    throw new Error(`Update failed for meet_id ${record.meet_id}: ${error.message}`);
-                }
-                log(`  🔄 Updated with better precision (${newPrecision} > ${existingPrecision}) for meet_id ${record.meet_id}`);
+            if (!hasExistingLocation) {
+                log(`  ➕ Added location data to meet_id ${record.meet_id}`);
             } else {
-                log(`  ⏭️ Skipped update (precision ${newPrecision} <= ${existingPrecision}) for meet_id ${record.meet_id}`);
+                log(`  🔄 Updated with better precision (${newPrecision} > ${existingPrecision}) for meet_id ${record.meet_id}`);
             }
+        } else {
+            log(`  ⏭️ Skipped update (precision ${newPrecision} <= ${existingPrecision}) for meet_id ${record.meet_id}`);
         }
     }
 }
@@ -372,10 +366,27 @@ async function geocodeAndImport() {
             // Geocode address
             const geocodeResult = await geocodeAddress(meet.address);
             
+            let wsoGeography = null;
             if (geocodeResult.success) {
                 successCount++;
                 log(`  ✅ Geocoded: ${geocodeResult.latitude}, ${geocodeResult.longitude}`);
                 log(`  📊 Precision score: ${geocodeResult.precision_score}`);
+                
+                // Determine WSO geography from coordinates
+                try {
+                    wsoGeography = await getWSOGeographyFromCoordinates(
+                        geocodeResult.latitude, 
+                        geocodeResult.longitude, 
+                        supabase
+                    );
+                    if (wsoGeography) {
+                        log(`  🗺️ WSO Geography: ${wsoGeography}`);
+                    } else {
+                        log(`  ⚠️ No WSO geography found for coordinates`);
+                    }
+                } catch (error) {
+                    log(`  ⚠️ WSO geography lookup failed: ${error.message}`);
+                }
             } else {
                 failureCount++;
                 log(`  ❌ Geocoding failed: ${geocodeResult.error}`);
@@ -383,17 +394,22 @@ async function geocodeAndImport() {
             
             // Prepare data for import
             const importRecord = {
-                meet_id: meetId, // Foreign key link
-                meet_name: meet.meet_name,
+                // Remove meet_name as it's not a field in meets table (it's called 'Meet')
                 ...addressComponents,
                 latitude: geocodeResult.success ? geocodeResult.latitude : null,
                 longitude: geocodeResult.success ? geocodeResult.longitude : null,
                 geocode_display_name: geocodeResult.success ? geocodeResult.display_name : null,
                 geocode_precision_score: geocodeResult.success ? geocodeResult.precision_score : null,
+                geocode_strategy_used: geocodeResult.success ? `attempt_${geocodeResult.attempt}` : null,
                 date_range: meet.date_range,
                 location_text: meet.location,
                 geocode_success: geocodeResult.success,
-                geocode_error: geocodeResult.success ? null : geocodeResult.error
+                geocode_error: geocodeResult.success ? null : geocodeResult.error,
+                wso_geography: wsoGeography,
+                // Add elevation fields (will be populated by elevation-fetcher later)
+                elevation_meters: null,
+                elevation_source: null,
+                elevation_fetched_at: null
             };
             
             importData.push(importRecord);

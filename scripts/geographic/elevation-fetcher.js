@@ -205,7 +205,7 @@ async function fetchElevationWithRetry(coordinates) {
     }));
 }
 
-// Update database records with elevation data
+// Update meet_locations table with elevation data (legacy)
 async function updateElevationData(results) {
     const updates = [];
     const failures = [];
@@ -226,7 +226,7 @@ async function updateElevationData(results) {
         }
     }
     
-    log(`  📤 Updating ${updates.length} records with elevation data...`);
+    log(`  📤 Updating ${updates.length} meet_locations records with elevation data...`);
     
     // Update successful records
     for (const update of updates) {
@@ -241,11 +241,11 @@ async function updateElevationData(results) {
                 .eq('id', update.id);
             
             if (error) {
-                log(`  ❌ Failed to update record ${update.id}: ${error.message}`);
+                log(`  ❌ Failed to update meet_locations record ${update.id}: ${error.message}`);
                 failures.push({ id: update.id, error: error.message });
             }
         } catch (error) {
-            log(`  ❌ Database error for record ${update.id}: ${error.message}`);
+            log(`  ❌ Database error for meet_locations record ${update.id}: ${error.message}`);
             failures.push({ id: update.id, error: error.message });
         }
     }
@@ -255,6 +255,189 @@ async function updateElevationData(results) {
         failed: failures.length,
         failures
     };
+}
+
+// Update meets table with elevation data
+async function updateMeetElevationData(results) {
+    log(`  📤 Updating ${results.length} meets records with elevation data...`);
+    
+    const updates = results.map(result => ({
+        meet_id: result.id, // For meets, id is the meet_id
+        elevation_meters: result.elevation,
+        elevation_source: result.source,
+        elevation_fetched_at: new Date().toISOString(),
+        error: result.error || null
+    }));
+    
+    let updated = 0;
+    let failed = 0;
+    
+    // Update records individually to handle errors gracefully
+    for (const update of updates) {
+        try {
+            if (update.elevation_meters !== null) {
+                // Successful elevation fetch
+                const { error } = await supabase
+                    .from('meets')
+                    .update({
+                        elevation_meters: update.elevation_meters,
+                        elevation_source: update.elevation_source,
+                        elevation_fetched_at: update.elevation_fetched_at
+                    })
+                    .eq('meet_id', update.meet_id);
+                
+                if (error) {
+                    throw new Error(error.message);
+                }
+                updated++;
+            } else {
+                // Failed elevation fetch - still update the timestamp to avoid retrying immediately
+                const { error } = await supabase
+                    .from('meets')
+                    .update({
+                        elevation_fetched_at: update.elevation_fetched_at
+                    })
+                    .eq('meet_id', update.meet_id);
+                
+                if (error) {
+                    throw new Error(error.message);
+                }
+                failed++;
+            }
+        } catch (error) {
+            log(`    ❌ Failed to update meet ${update.meet_id}: ${error.message}`);
+            failed++;
+        }
+    }
+    
+    return { updated, failed };
+}
+
+// Fetch elevation data for meets table
+async function fetchAndUpdateMeetElevations() {
+    const startTime = Date.now();
+    
+    try {
+        log('🏟️ Starting meet elevation data fetch process...');
+        log('='.repeat(60));
+        
+        // Fetch meets that need elevation data with pagination
+        log('🔍 Fetching meets that need elevation data...');
+        let meets = [];
+        let page = 0;
+        const pageSize = 1000;
+        let hasMore = true;
+        
+        while (hasMore) {
+            const { data, error: fetchError } = await supabase
+                .from('meets')
+                .select('meet_id, Meet, latitude, longitude, elevation_meters')
+                .not('latitude', 'is', null)
+                .not('longitude', 'is', null)
+                .is('elevation_meters', null)
+                .range(page * pageSize, (page + 1) * pageSize - 1);
+            
+            if (fetchError) {
+                throw new Error(`Failed to fetch meets: ${fetchError.message}`);
+            }
+            
+            if (data && data.length > 0) {
+                meets = meets.concat(data);
+                hasMore = data.length === pageSize;
+                page++;
+                log(`📄 Fetched page ${page}, total meets so far: ${meets.length}`);
+            } else {
+                hasMore = false;
+            }
+        }
+        
+        if (!meets || meets.length === 0) {
+            log('✅ No meets found that need elevation data');
+            return { total: 0, processed: 0, updated: 0, failed: 0 };
+        }
+        
+        log(`📊 Found ${meets.length} meets needing elevation data`);
+        
+        let totalProcessed = 0;
+        let totalUpdated = 0;
+        let totalFailed = 0;
+        
+        // Process meets in batches
+        for (let i = 0; i < meets.length; i += BATCH_SIZE) {
+            const batch = meets.slice(i, i + BATCH_SIZE);
+            const batchNumber = Math.floor(i / BATCH_SIZE) + 1;
+            const totalBatches = Math.ceil(meets.length / BATCH_SIZE);
+            
+            log(`
+🔄 Processing batch ${batchNumber}/${totalBatches} (${batch.length} meets)`);
+            
+            // Prepare coordinates for API call
+            const coordinates = batch.map(meet => ({
+                id: meet.meet_id, // Use meet_id as identifier for meets
+                latitude: parseFloat(meet.latitude),
+                longitude: parseFloat(meet.longitude),
+                meet_name: meet.Meet
+            }));
+            
+            // Validate coordinates
+            const validCoordinates = coordinates.filter(coord => 
+                !isNaN(coord.latitude) && !isNaN(coord.longitude) &&
+                coord.latitude >= -90 && coord.latitude <= 90 &&
+                coord.longitude >= -180 && coord.longitude <= 180
+            );
+            
+            if (validCoordinates.length !== coordinates.length) {
+                log(`  ⚠️ Filtered out ${coordinates.length - validCoordinates.length} invalid coordinates`);
+            }
+            
+            if (validCoordinates.length === 0) {
+                log(`  ⏭️ Skipping batch - no valid coordinates`);
+                continue;
+            }
+            
+            // Fetch elevation data
+            const results = await fetchElevationWithRetry(validCoordinates);
+            
+            // Update database with meet-specific logic
+            const updateResults = await updateMeetElevationData(results);
+            
+            totalProcessed += validCoordinates.length;
+            totalUpdated += updateResults.updated;
+            totalFailed += updateResults.failed;
+            
+            log(`  📊 Batch complete: ${updateResults.updated} updated, ${updateResults.failed} failed`);
+            
+            // Rate limiting between batches
+            if (i + BATCH_SIZE < meets.length) {
+                log(`  ⏳ Waiting ${OPEN_METEO_DELAY}ms before next batch...`);
+                await sleep(OPEN_METEO_DELAY);
+            }
+        }
+        
+        // Summary
+        log('
+' + '='.repeat(60));
+        log('✅ MEET ELEVATION FETCH COMPLETE');
+        log(`   Total meets found: ${meets.length}`);
+        log(`   Total processed: ${totalProcessed}`);
+        log(`   Successfully updated: ${totalUpdated}`);
+        log(`   Failed: ${totalFailed}`);
+        log(`   Success rate: ${totalProcessed > 0 ? ((totalUpdated / totalProcessed) * 100).toFixed(1) : 0}%`);
+        log(`   Processing time: ${Math.round((Date.now() - startTime) / 1000)}s`);
+        
+        return {
+            total: meets.length,
+            processed: totalProcessed,
+            updated: totalUpdated,
+            failed: totalFailed
+        };
+        
+    } catch (error) {
+        log(`
+❌ Meet elevation fetch failed: ${error.message}`);
+        log(`🔍 Stack trace: ${error.stack}`);
+        throw error;
+    }
 }
 
 // Fetch elevation data for clubs table
@@ -564,38 +747,115 @@ async function fetchAndUpdateElevations() {
     }
 }
 
+// Parse command line arguments
+function parseArguments() {
+    const args = process.argv.slice(2);
+    const options = {
+        target: 'all' // Default to processing all tables
+    };
+    
+    for (let i = 0; i < args.length; i++) {
+        switch (args[i]) {
+            case '--meets':
+                options.target = 'meets';
+                break;
+            case '--clubs':
+                options.target = 'clubs';
+                break;
+            case '--meet-locations':
+                options.target = 'meet-locations';
+                break;
+            case '--all':
+                options.target = 'all';
+                break;
+            case '--help':
+                console.log(`
+Usage: node elevation-fetcher.js [options]
+
+Options:
+  --meets           Process only meets table elevation data
+  --clubs           Process only clubs table elevation data  
+  --meet-locations  Process only meet_locations table elevation data (legacy)
+  --all             Process all tables (default)
+  --help            Show this help message
+
+Examples:
+  node elevation-fetcher.js                # Process all tables
+  node elevation-fetcher.js --meets        # Process only meets table
+  node elevation-fetcher.js --clubs        # Process only clubs table
+`);
+                process.exit(0);
+                break;
+        }
+    }
+    
+    return options;
+}
+
 // Run if called directly
 if (require.main === module) {
-    async function runBothElevationFetches() {
+    async function runElevationFetch() {
         try {
-            log('🏋️ Starting comprehensive elevation data fetch...');
-            log('Will process both clubs and meet locations');
+            const options = parseArguments();
+            
+            log('🏔️ Starting elevation data fetch process...');
+            log(`Target: ${options.target}`);
             log('='.repeat(60));
             
-            // First, fetch elevation for clubs
-            log('\n📍 PHASE 1: Processing barbell clubs...');
-            const clubResults = await fetchAndUpdateClubElevations();
+            const results = {};
             
-            // Then, fetch elevation for meet locations  
-            log('\n📍 PHASE 2: Processing meet locations...');
-            const meetResults = await fetchAndUpdateElevations();
+            if (options.target === 'all' || options.target === 'clubs') {
+                log('
+📍 PROCESSING: Barbell clubs...');
+                results.clubs = await fetchAndUpdateClubElevations();
+            }
+            
+            if (options.target === 'all' || options.target === 'meets') {
+                log('
+📍 PROCESSING: Meet locations (meets table)...');
+                results.meets = await fetchAndUpdateMeetElevations();
+            }
+            
+            if (options.target === 'all' || options.target === 'meet-locations') {
+                log('
+📍 PROCESSING: Meet locations (legacy meet_locations table)...');
+                results.meetLocations = await fetchAndUpdateElevations();
+            }
             
             // Summary
-            log('\n' + '='.repeat(60));
-            log('🎉 COMPREHENSIVE ELEVATION FETCH COMPLETE');
-            log('\n📊 CLUBS SUMMARY:');
-            log(`   Total clubs: ${clubResults.total}`);
-            log(`   Successfully updated: ${clubResults.updated}`);
-            log(`   Failed: ${clubResults.failed}`);
-            log(`   Success rate: ${clubResults.total > 0 ? ((clubResults.updated / clubResults.total) * 100).toFixed(1) : 0}%`);
+            log('
+' + '='.repeat(60));
+            log('🎉 ELEVATION FETCH COMPLETE');
             
-            log('\n📊 MEET LOCATIONS SUMMARY:');
-            log(`   Total locations: ${meetResults.total}`);
-            log(`   Successfully updated: ${meetResults.updated}`);
-            log(`   Failed: ${meetResults.failed}`);
-            log(`   Success rate: ${meetResults.total > 0 ? ((meetResults.updated / meetResults.total) * 100).toFixed(1) : 0}%`);
+            if (results.clubs) {
+                log('
+📊 CLUBS SUMMARY:');
+                log(`   Total clubs: ${results.clubs.total}`);
+                log(`   Successfully updated: ${results.clubs.updated}`);
+                log(`   Failed: ${results.clubs.failed}`);
+                log(`   Success rate: ${results.clubs.total > 0 ? ((results.clubs.updated / results.clubs.total) * 100).toFixed(1) : 0}%`);
+            }
             
-            log('\n🎉 All elevation data processing completed successfully!');
+            if (results.meets) {
+                log('
+📊 MEETS SUMMARY:');
+                log(`   Total meets: ${results.meets.total}`);
+                log(`   Successfully updated: ${results.meets.updated}`);
+                log(`   Failed: ${results.meets.failed}`);
+                log(`   Success rate: ${results.meets.total > 0 ? ((results.meets.updated / results.meets.total) * 100).toFixed(1) : 0}%`);
+            }
+            
+            if (results.meetLocations) {
+                log('
+📊 MEET LOCATIONS (LEGACY) SUMMARY:');
+                log(`   Total locations: ${results.meetLocations.total}`);
+                log(`   Successfully updated: ${results.meetLocations.updated}`);
+                log(`   Failed: ${results.meetLocations.failed}`);
+                log(`   Success rate: ${results.meetLocations.total > 0 ? ((results.meetLocations.updated / results.meetLocations.total) * 100).toFixed(1) : 0}%`);
+            }
+            
+            log('
+🎉 All elevation data processing completed successfully!');
             process.exit(0);
             
         } catch (error) {
@@ -606,7 +866,11 @@ if (require.main === module) {
         }
     }
     
-    runBothElevationFetches();
+    runElevationFetch();
 }
 
-module.exports = { fetchAndUpdateElevations, fetchAndUpdateClubElevations };
+module.exports = { 
+    fetchAndUpdateElevations, 
+    fetchAndUpdateClubElevations, 
+    fetchAndUpdateMeetElevations 
+};
