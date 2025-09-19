@@ -22,9 +22,7 @@ const supabase = createClient(
 );
 
 // Configuration
-const OUTPUT_DIR = './output';
 const LOGS_DIR = './logs';
-const OUTPUT_FILE = path.join(OUTPUT_DIR, 'meet_addresses.json');
 const LOG_FILE = path.join(LOGS_DIR, 'meet-address-scraper.log');
 
 // Browser instance
@@ -33,9 +31,6 @@ let page = null;
 
 // Ensure directories exist
 function ensureDirectories() {
-    if (!fs.existsSync(OUTPUT_DIR)) {
-        fs.mkdirSync(OUTPUT_DIR, { recursive: true });
-    }
     if (!fs.existsSync(LOGS_DIR)) {
         fs.mkdirSync(LOGS_DIR, { recursive: true });
     }
@@ -293,6 +288,56 @@ async function goToNextPage() {
     }
 }
 
+// Get meets from database that need addresses
+async function getMeetsNeedingAddresses() {
+    try {
+        log('📊 Querying database for meets without addresses...');
+        
+        const { data, error, count } = await supabase
+            .from('meets')
+            .select('meet_id, Meet, "Date"', { count: 'exact' })
+            .is('address', null);
+            
+        if (error) {
+            throw new Error(`Failed to fetch meets: ${error.message}`);
+        }
+        
+        log(`📋 Found ${data?.length || 0} meets without addresses`);
+        return data || [];
+        
+    } catch (error) {
+        log(`❌ Database query failed: ${error.message}`);
+        throw error;
+    }
+}
+
+// Update meet with address data
+async function updateMeetAddress(meetId, meetName, addressData) {
+    try {
+        const updateData = {
+            address: addressData.address,
+            location_text: addressData.location,
+            date_range: addressData.date_range
+        };
+        
+        const { error } = await supabase
+            .from('meets')
+            .update(updateData)
+            .eq('meet_id', meetId);
+            
+        if (error) {
+            throw new Error(`Update failed for meet_id ${meetId}: ${error.message}`);
+        }
+        
+        log(`  ✅ Updated database: ${meetName}`);
+        return true;
+        
+    } catch (error) {
+        log(`  ❌ Database update failed for ${meetName}: ${error.message}`);
+        return false;
+    }
+}
+
 // Main scraping function
 async function scrapeMeetAddresses() {
     const startTime = Date.now();
@@ -302,6 +347,14 @@ async function scrapeMeetAddresses() {
         log(`🏋️ Starting meet address scraping for ${options.fromDate} to ${options.toDate}`);
         log('='.repeat(60));
         
+        // Get meets from database that need addresses
+        const meetsNeedingAddresses = await getMeetsNeedingAddresses();
+        
+        if (meetsNeedingAddresses.length === 0) {
+            log('✅ All meets already have addresses - nothing to scrape');
+            return { total: 0, processed: 0, updated: 0 };
+        }
+        
         await initBrowser();
         
         const eventsURL = buildEventsURL(options.fromDate, options.toDate);
@@ -310,38 +363,69 @@ async function scrapeMeetAddresses() {
         await page.goto(eventsURL, { waitUntil: 'networkidle0', timeout: 30000 });
         await new Promise(resolve => setTimeout(resolve, 3000));
         
-        let allMeetData = [];
+        let processedCount = 0;
+        let updatedCount = 0;
         let currentPage = 1;
         let hasNextPage = true;
         
         while (hasNextPage && currentPage <= 50) { // Limit to 50 pages for safety
-            log(`\n📄 Processing page ${currentPage}...`);
+            log(`
+📄 Processing page ${currentPage}...`);
             
             // Get basic meet data from current page
             const meetData = await scrapeMeetAddressesFromPage();
             
-            // Debug: log what meets we found
-            log(`\n📋 Found meets on page ${currentPage}:`);
-            meetData.forEach((meet, i) => {
-                log(`   ${i}: ${meet.meet_name}`);
-            });
-            
-            // For each meet, try to expand and get address
+            // For each meet found on page, check if it matches a database meet that needs an address
             for (let i = 0; i < meetData.length; i++) {
-                const meet = meetData[i];
-                const addressInfo = await expandMeetAndGetAddress(i);
+                const scrapedMeet = meetData[i];
                 
-                if (addressInfo) {
-                    meet.address = addressInfo;
+                // Find matching database meet
+                const dbMeet = meetsNeedingAddresses.find(m => m.Meet === scrapedMeet.meet_name);
+                
+                if (dbMeet) {
+                    log(`
+🎯 Found database match: ${scrapedMeet.meet_name} (meet_id: ${dbMeet.meet_id})`);
+                    
+                    // Try to expand and get address
+                    const addressInfo = await expandMeetAndGetAddress(i);
+                    
+                    if (addressInfo) {
+                        // Update database immediately
+                        const addressData = {
+                            address: addressInfo,
+                            location: scrapedMeet.location,
+                            date_range: scrapedMeet.date_range
+                        };
+                        
+                        const success = await updateMeetAddress(dbMeet.meet_id, scrapedMeet.meet_name, addressData);
+                        if (success) {
+                            updatedCount++;
+                            // Remove from needs list to avoid processing again
+                            const index = meetsNeedingAddresses.indexOf(dbMeet);
+                            if (index > -1) {
+                                meetsNeedingAddresses.splice(index, 1);
+                            }
+                        }
+                    } else {
+                        log(`  ⚠️ No address found for: ${scrapedMeet.meet_name}`);
+                    }
+                    
+                    processedCount++;
+                } else {
+                    log(`  ⏭️ Skipping (not in database or already has address): ${scrapedMeet.meet_name}`);
                 }
-                
-                allMeetData.push(meet);
                 
                 // Small delay between meets
                 await new Promise(resolve => setTimeout(resolve, 1000));
             }
             
-            log(`Page ${currentPage} complete: ${meetData.length} meets processed`);
+            log(`Page ${currentPage} complete: ${meetData.length} meets found, ${processedCount} processed`);
+            
+            // Check if we've processed all needed meets
+            if (meetsNeedingAddresses.length === 0) {
+                log('✅ All database meets have been processed - stopping early');
+                break;
+            }
             
             // Try to go to next page
             hasNextPage = await goToNextPage();
@@ -354,62 +438,23 @@ async function scrapeMeetAddresses() {
             log('Browser closed');
         }
         
-        // Load existing data if file exists
-        let existingData = { meets: [] };
-        if (fs.existsSync(OUTPUT_FILE)) {
-            try {
-                existingData = JSON.parse(fs.readFileSync(OUTPUT_FILE, 'utf8'));
-                log(`📂 Loaded existing data: ${existingData.meets?.length || 0} meets`);
-            } catch (error) {
-                log(`⚠️ Could not parse existing file, starting fresh: ${error.message}`);
-                existingData = { meets: [] };
-            }
-        }
-
-        // Merge new meets with existing ones (avoiding duplicates by meet name + date)
-        const existingMeets = existingData.meets || [];
-        const newMeets = allMeetData.filter(newMeet => {
-            return !existingMeets.some(existing => 
-                existing.meet_name === newMeet.meet_name && 
-                existing.date_range === newMeet.date_range
-            );
-        });
-        
-        const mergedMeets = [...existingMeets, ...newMeets];
-        log(`🔄 Merged data: ${existingMeets.length} existing + ${newMeets.length} new = ${mergedMeets.length} total meets`);
-
-        // Save results
-        const report = {
-            metadata: {
-                timestamp: new Date().toISOString(),
-                script_name: 'meet-address-scraper',
-                date_ranges: [
-                    ...(existingData.metadata?.date_ranges || [existingData.metadata?.date_range].filter(Boolean) || []),
-                    { from: options.fromDate, to: options.toDate }
-                ],
-                processing_time_ms: Date.now() - startTime,
-                total_processing_time_ms: (existingData.metadata?.total_processing_time_ms || existingData.metadata?.processing_time_ms || 0) + (Date.now() - startTime),
-                pages_processed: currentPage - 1,
-                total_meets: mergedMeets.length,
-                new_meets_added: newMeets.length
-            },
-            meets: mergedMeets
-        };
-        
-        fs.writeFileSync(OUTPUT_FILE, JSON.stringify(report, null, 2));
-        log(`📄 Results saved to: ${OUTPUT_FILE}`);
-        
         // Summary
         log('\n' + '='.repeat(60));
         log('✅ MEET ADDRESS SCRAPING COMPLETE');
         log(`   Date range: ${options.fromDate} to ${options.toDate}`);
         log(`   Pages processed: ${currentPage - 1}`);
-        log(`   New meets found: ${allMeetData.length}`);
-        log(`   New meets with addresses: ${allMeetData.filter(m => m.address).length}`);
-        log(`   Total meets in database: ${mergedMeets.length}`);
+        log(`   Meets processed: ${processedCount}`);
+        log(`   Database updates: ${updatedCount}`);
+        log(`   Remaining meets needing addresses: ${meetsNeedingAddresses.length}`);
         log(`   Processing time: ${Date.now() - startTime}ms`);
         
-        return report;
+        return {
+            total_pages: currentPage - 1,
+            meets_processed: processedCount,
+            database_updates: updatedCount,
+            remaining_needs_addresses: meetsNeedingAddresses.length,
+            processing_time_ms: Date.now() - startTime
+        };
         
     } catch (error) {
         log(`\n❌ Scraping failed: ${error.message}`);
