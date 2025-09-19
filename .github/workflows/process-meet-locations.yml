@@ -1,0 +1,82 @@
+name: Process Meet Locations (Consolidated)
+
+on:
+  workflow_dispatch:  # Manual trigger
+    inputs:
+      year:
+        description: 'Year to process (default: current year)'
+        required: false
+        default: '2024'
+      scrape_addresses:
+        description: 'Scrape new addresses first'
+        type: boolean
+        default: true
+      process_geocoding:
+        description: 'Process geocoding and import to meets table'
+        type: boolean
+        default: true
+      add_elevation:
+        description: 'Add elevation data to meets'
+        type: boolean
+        default: true
+
+jobs:
+  process-meet-locations:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120  # 2 hours max
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Setup Chrome for Puppeteer
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y chromium-browser
+          
+      - name: Set Chrome path for Puppeteer
+        run: echo "PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser" >> $GITHUB_ENV
+        
+      - name: Create output directories
+        run: |
+          mkdir -p output
+          mkdir -p logs
+          
+      - name: Step 1 - Scrape meet addresses
+        if: ${{ github.event.inputs.scrape_addresses == 'true' }}
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+        run: node scripts/production/meet-address-scraper.js --year ${{ github.event.inputs.year }}
+        
+      - name: Step 2 - Geocode and import to meets table
+        if: ${{ github.event.inputs.process_geocoding == 'true' }}
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+        run: node scripts/geographic/geocode-and-import.js
+        
+      - name: Step 3 - Add elevation data to meets
+        if: ${{ github.event.inputs.add_elevation == 'true' }}
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+        run: node scripts/geographic/elevation-fetcher.js --meets
+        
+      - name: Upload logs and output
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: processing-logs-${{ github.event.inputs.year }}
+          path: |
+            logs/
+            output/
+          retention-days: 30
