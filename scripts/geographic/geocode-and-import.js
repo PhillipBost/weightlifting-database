@@ -20,7 +20,6 @@ const supabase = createClient(
 );
 
 // Configuration
-const INPUT_FILE = './output/meet_addresses.json';
 const LOG_FILE = './logs/geocode-import.log';
 const NOMINATIM_DELAY = 1100; // 1.1 seconds between requests (Nominatim rate limit)
 
@@ -45,7 +44,7 @@ function parseAddress(rawAddress) {
     const streetAddress = parts.slice(0, -3).join(', ') || '';
     
     return {
-        raw_address: rawAddress,
+        address: rawAddress,
         street_address: streetAddress,
         city,
         state,
@@ -229,55 +228,46 @@ function calculateAddressPrecision(address, displayName) {
     return Math.max(0, score);
 }
 
-// Import a batch of records with upsert logic - targeting meets table
-async function importBatch(records) {
-    for (const record of records) {
-        if (!record.meet_id) {
-            // No meet_id link - skip this record as we need meet_id for meets table
-            log(`  ⚠️ Skipping record without meet_id: ${record.meet_name}`);
-            continue;
-        }
-        
-        // Check if meet exists and get current location data
-        const { data: existing, error: fetchError } = await supabase
+// Update a single meet record with geocoded data
+async function updateMeetWithGeocode(meetId, geocodeData) {
+    try {
+        const { error } = await supabase
             .from('meets')
-            .select('meet_id, Meet, latitude, longitude, geocode_precision_score, geocode_success')
-            .eq('meet_id', record.meet_id)
-            .single();
-        
-        if (fetchError) {
-            throw new Error(`Fetch failed for meet_id ${record.meet_id}: ${fetchError.message}`);
-        }
-        
-        if (!existing) {
-            log(`  ⚠️ Meet not found for meet_id ${record.meet_id}`);
-            continue;
-        }
-        
-        // Check if we should update - only update if new data is more precise or no existing location data
-        const existingPrecision = existing.geocode_precision_score || 0;
-        const newPrecision = record.geocode_precision_score || 0;
-        const hasExistingLocation = existing.latitude && existing.longitude;
-        
-        if (!hasExistingLocation || (newPrecision > existingPrecision && record.geocode_success)) {
-            // Update the meets table with location data
-            const { error } = await supabase
-                .from('meets')
-                .update(record)
-                .eq('meet_id', record.meet_id);
+            .update(geocodeData)
+            .eq('meet_id', meetId);
             
-            if (error) {
-                throw new Error(`Update failed for meet_id ${record.meet_id}: ${error.message}`);
-            }
-            
-            if (!hasExistingLocation) {
-                log(`  ➕ Added location data to meet_id ${record.meet_id}`);
-            } else {
-                log(`  🔄 Updated with better precision (${newPrecision} > ${existingPrecision}) for meet_id ${record.meet_id}`);
-            }
-        } else {
-            log(`  ⏭️ Skipped update (precision ${newPrecision} <= ${existingPrecision}) for meet_id ${record.meet_id}`);
+        if (error) {
+            throw new Error(`Update failed for meet_id ${meetId}: ${error.message}`);
         }
+        
+        return true;
+    } catch (error) {
+        log(`  ❌ Database update failed for meet_id ${meetId}: ${error.message}`);
+        return false;
+    }
+}
+
+// Get meets from database that need geocoding
+async function getMeetsNeedingGeocode() {
+    try {
+        log('📊 Querying database for meets that need geocoding...');
+        
+        const { data, error, count } = await supabase
+            .from('meets')
+            .select('meet_id, Meet, address, latitude, longitude, geocode_success', { count: 'exact' })
+            .not('address', 'is', null)
+            .or('latitude.is.null,geocode_success.eq.false');
+            
+        if (error) {
+            throw new Error(`Failed to fetch meets: ${error.message}`);
+        }
+        
+        log(`📋 Found ${data?.length || 0} meets that need geocoding`);
+        return data || [];
+        
+    } catch (error) {
+        log(`❌ Database query failed: ${error.message}`);
+        throw error;
     }
 }
 
@@ -289,76 +279,25 @@ async function geocodeAndImport() {
         log('🌍 Starting geocoding and import process...');
         log('='.repeat(60));
         
-        // Read input file
-        if (!fs.existsSync(INPUT_FILE)) {
-            throw new Error(`Input file not found: ${INPUT_FILE}`);
+        // Get meets from database that need geocoding
+        const meetsNeedingGeocode = await getMeetsNeedingGeocode();
+        
+        if (meetsNeedingGeocode.length === 0) {
+            log('✅ All meets with addresses already have geocoding - nothing to process');
+            return { total: 0, processed: 0, success: 0, failures: 0 };
         }
-        
-        const inputData = JSON.parse(fs.readFileSync(INPUT_FILE, 'utf8'));
-        const meets = inputData.meets || [];
-        
-        log(`📂 Loaded ${meets.length} meets from ${INPUT_FILE}`);
-        
-        // Filter meets that have addresses
-        const meetsWithAddresses = meets.filter(meet => meet.address);
-        log(`📍 Found ${meetsWithAddresses.length} meets with addresses`);
-        
-        // Get existing meets from database for linking (with pagination)
-        log('🔗 Fetching existing meets from database for linking...');
-        let existingMeets = [];
-        let page = 0;
-        const pageSize = 1000;
-        let hasMore = true;
-        
-        while (hasMore) {
-            const { data, error, count } = await supabase
-                .from('meets')
-                .select('meet_id, Meet', { count: 'exact' })
-                .range(page * pageSize, (page + 1) * pageSize - 1);
-            
-            if (error) {
-                throw new Error(`Failed to fetch existing meets: ${error.message}`);
-            }
-            
-            if (data && data.length > 0) {
-                existingMeets = existingMeets.concat(data);
-                hasMore = data.length === pageSize;
-                page++;
-                log(`📄 Fetched page ${page}, total so far: ${existingMeets.length}`);
-            } else {
-                hasMore = false;
-            }
-        }
-        
-        log(`📊 Found ${existingMeets.length} total existing meets in database`);
         
         let successCount = 0;
         let failureCount = 0;
-        let linkedCount = 0;
-        let unlinkedCount = 0;
-        let totalImported = 0;
-        const importData = [];
-        const BATCH_SIZE = 10;
+        let updatedCount = 0;
         
-        // Process each meet
-        for (let i = 0; i < meetsWithAddresses.length; i++) {
-            const meet = meetsWithAddresses[i];
-            const progress = `${i + 1}/${meetsWithAddresses.length}`;
+        // Process each meet that needs geocoding
+        for (let i = 0; i < meetsNeedingGeocode.length; i++) {
+            const meet = meetsNeedingGeocode[i];
+            const progress = `${i + 1}/${meetsNeedingGeocode.length}`;
             
             log(`
-🔄 [${progress}] Processing: ${meet.meet_name}`);
-            
-            // Try to link to existing meet
-            const existingMeet = existingMeets.find(em => em.Meet === meet.meet_name);
-            const meetId = existingMeet ? existingMeet.meet_id : null;
-            
-            if (meetId) {
-                linkedCount++;
-                log(`  🔗 Linked to meet_id: ${meetId}`);
-            } else {
-                unlinkedCount++;
-                log(`  ⚠️ No match found in database`);
-            }
+🔄 [${progress}] Processing: ${meet.Meet} (meet_id: ${meet.meet_id})`);
             
             // Parse address components
             const addressComponents = parseAddress(meet.address);
@@ -392,17 +331,14 @@ async function geocodeAndImport() {
                 log(`  ❌ Geocoding failed: ${geocodeResult.error}`);
             }
             
-            // Prepare data for import
-            const importRecord = {
-                // Remove meet_name as it's not a field in meets table (it's called 'Meet')
+            // Prepare data for database update
+            const updateData = {
                 ...addressComponents,
                 latitude: geocodeResult.success ? geocodeResult.latitude : null,
                 longitude: geocodeResult.success ? geocodeResult.longitude : null,
                 geocode_display_name: geocodeResult.success ? geocodeResult.display_name : null,
                 geocode_precision_score: geocodeResult.success ? geocodeResult.precision_score : null,
                 geocode_strategy_used: geocodeResult.success ? `attempt_${geocodeResult.attempt}` : null,
-                date_range: meet.date_range,
-                location_text: meet.location,
                 geocode_success: geocodeResult.success,
                 geocode_error: geocodeResult.success ? null : geocodeResult.error,
                 wso_geography: wsoGeography,
@@ -412,55 +348,36 @@ async function geocodeAndImport() {
                 elevation_fetched_at: null
             };
             
-            importData.push(importRecord);
-            
-            // Debug: Show what we're about to import
-            if (geocodeResult.success) {
-                log(`  💾 Will import with precision_score: ${importRecord.geocode_precision_score}`);
-            }
-            
-            // Import batch when we have BATCH_SIZE records or at the end
-            if (importData.length >= BATCH_SIZE || i === meetsWithAddresses.length - 1) {
-                log(`\n📤 Importing batch of ${importData.length} records to Supabase...`);
-                
-                try {
-                    await importBatch(importData);
-                    totalImported += importData.length;
-                    log(`✅ Successfully imported batch. Total imported: ${totalImported}`);
-                    
-                    // Clear the batch
-                    importData.length = 0;
-                } catch (error) {
-                    log(`❌ Batch import failed: ${error.message}`);
-                    throw error;
-                }
+            // Update database immediately
+            const success = await updateMeetWithGeocode(meet.meet_id, updateData);
+            if (success) {
+                updatedCount++;
+                log(`  ✅ Updated database for meet_id ${meet.meet_id}`);
             }
             
             // Rate limit: wait between requests
-            if (i < meetsWithAddresses.length - 1) {
+            if (i < meetsNeedingGeocode.length - 1) {
                 await sleep(NOMINATIM_DELAY);
             }
         }
         
-        log(`\n✅ All batches imported successfully!`);
+        
         
         // Summary
         log('\n' + '='.repeat(60));
         log('✅ GEOCODING AND IMPORT COMPLETE');
-        log(`   Total meets processed: ${meetsWithAddresses.length}`);
-        log(`   Successfully linked to database: ${linkedCount}`);
-        log(`   Unlinked (no match found): ${unlinkedCount}`);
+        log(`   Total meets processed: ${meetsNeedingGeocode.length}`);
+        log(`   Database updates: ${updatedCount}`);
         log(`   Successful geocodes: ${successCount}`);
         log(`   Failed geocodes: ${failureCount}`);
-        log(`   Geocoding success rate: ${((successCount / meetsWithAddresses.length) * 100).toFixed(1)}%`);
-        log(`   Linking success rate: ${((linkedCount / meetsWithAddresses.length) * 100).toFixed(1)}%`);
+        log(`   Geocoding success rate: ${((successCount / meetsNeedingGeocode.length) * 100).toFixed(1)}%`);
         log(`   Processing time: ${Math.round((Date.now() - startTime) / 1000)}s`);
         
         return {
-            total: meetsWithAddresses.length,
+            total: meetsNeedingGeocode.length,
             success: successCount,
             failures: failureCount,
-            imported: totalImported
+            updated: updatedCount
         };
         
     } catch (error) {
