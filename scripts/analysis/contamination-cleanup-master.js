@@ -17,10 +17,10 @@ const path = require('path');
 
 // Import all cleanup scripts
 const contaminationIdentifier = require('./contamination-identifier.js');
-const comprehensiveDataScraper = require('./comprehensive-data-scraper.js');
-const meetResultsCollector = require('./meet-results-collector.js');
-const membershipMatcher = require('./membership-matcher.js');
-const databaseReconstructor = require('./database-reconstructor.js');
+const comprehensiveDataScraper = require('../maintenance/comprehensive-data-scraper.js');
+const meetResultsCollector = require('../maintenance/meet-results-collector.js');
+const membershipMatcher = require('../maintenance/membership-matcher.js');
+const databaseReconstructor = require('../maintenance/database-reconstructor.js');
 
 // Configuration
 const OUTPUT_DIR = './output';

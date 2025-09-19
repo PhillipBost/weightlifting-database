@@ -12,7 +12,7 @@ const supabase = createClient(
 );
 
 const JSON_FILE = 'internal_ids.json';
-const ERROR_LOG_FILE = 'internal_id_upload_errors.csv';
+const ERROR_LOG_FILE = '../../data/legacy/internal_id_upload_errors.csv';
 
 // Timeout wrapper for database operations
 function withTimeout(promise, timeoutMs = 30000) {

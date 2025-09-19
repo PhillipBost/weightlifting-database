@@ -1,8 +1,8 @@
 const fs = require('fs');
 const csvParser = require('csv-parser');
 
-const CSV_FILE = 'internal_ids.csv';
-const JSON_FILE = 'internal_ids.json';
+const CSV_FILE = '../../data/legacy/internal_ids.csv';
+const JSON_FILE = '../../internal_ids.json';
 
 async function convertCsvToJson() {
   return new Promise((resolve, reject) => {
@@ -98,8 +98,8 @@ convertCsvToJson()
   .then(() => {
     console.log(`\n🎉 Ready to use the new JSON-based script!`);
     console.log(`The new script will automatically:`);
-    console.log(`- Load your existing ${Object.keys(require('./' + JSON_FILE).athletes).length} athletes`);
-    console.log(`- Start from ID ${require('./' + JSON_FILE).lastProcessedId + 1}`);
+    console.log(`- Load your existing ${Object.keys(require('../../' + JSON_FILE).athletes).length} athletes`);
+    console.log(`- Start from ID ${require('../../' + JSON_FILE).lastProcessedId + 1}`);
     console.log(`- Retry any gaps found in your data`);
   })
   .catch((error) => {

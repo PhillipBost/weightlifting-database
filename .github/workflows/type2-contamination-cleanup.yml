@@ -70,7 +70,7 @@ jobs:
         if: ${{ github.event.inputs.target_athletes == '' }}
         run: |
           echo "🔍 Starting Type 2 contamination detection at: $(date +'%Y-%m-%d %H:%M:%S %Z')"
-          node detect-type2-contamination.js
+          node scripts/analysis/detect-type2-contamination.js
           echo "✅ Detection completed at: $(date +'%Y-%m-%d %H:%M:%S %Z')"
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
@@ -94,7 +94,7 @@ jobs:
             export TARGET_ATHLETES="${{ github.event.inputs.target_athletes }}"
           fi
           
-          node meet-results-decontamination.js
+          node scripts/maintenance/meet-results-decontamination.js
           echo "✅ Type 2 contamination cleanup completed at: $(date +'%Y-%m-%d %H:%M:%S %Z')"
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
