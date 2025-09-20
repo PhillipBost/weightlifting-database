@@ -382,10 +382,30 @@ function extractStateFromAddress(address) {
     // Get state names sorted by length (longest first) to prioritize "West Virginia" over "Virginia"
     const stateNames = Object.values(US_STATES).sort((a, b) => b.length - a.length);
     
-    // Check for full state names (prioritizing longer names)
+    // Check for full state names (prioritizing longer names, with context validation)
     for (const state of stateNames) {
-        if (address.toLowerCase().includes(state.toLowerCase())) {
-            return state;
+        const stateLower = state.toLowerCase();
+        const addressLower = address.toLowerCase();
+        
+        if (addressLower.includes(stateLower)) {
+            // Additional validation: state should appear after comma or at end for proper context
+            const stateIndex = addressLower.indexOf(stateLower);
+            const beforeChar = stateIndex > 0 ? addressLower[stateIndex - 1] : '';
+            const afterIndex = stateIndex + stateLower.length;
+            const afterChar = afterIndex < addressLower.length ? addressLower[afterIndex] : '';
+            
+            // Valid contexts: after comma/space, or at word boundaries
+            if (beforeChar === ',' || beforeChar === ' ' || stateIndex === 0 || 
+                afterChar === ',' || afterChar === ' ' || afterChar === '.' || afterIndex === addressLower.length) {
+                // Extra check: avoid matching street names like "Georgia St"
+                if (afterChar === ' ') {
+                    const nextWord = addressLower.substring(afterIndex + 1).split(' ')[0].replace(/[,.]/, '');
+                    if (['st', 'street', 'ave', 'avenue', 'rd', 'road', 'blvd', 'boulevard', 'dr', 'drive', 'ln', 'lane', 'way', 'ct', 'court', 'pl', 'place'].includes(nextWord)) {
+                        continue; // Skip this match, it's likely a street name
+                    }
+                }
+                return state;
+            }
         }
     }
     
