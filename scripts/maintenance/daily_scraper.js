@@ -49,13 +49,13 @@ async function main() {
     
     try {
         // Step 1: Run meet scraper
-        await runScript('meet_scraper_2025.js');
+        await runScript('scripts/production/meet_scraper_2025.js');
         
         // Step 2: Wait 10 seconds
         await delay(10);
         
         // Step 3: Import to database
-        await runScript('database-importer.js');
+        await runScript('scripts/production/database-importer.js');
         
         console.log('\n🎉 Daily scraping and import completed successfully!');
         console.log(`🕐 End time: ${new Date().toLocaleString()}`);
