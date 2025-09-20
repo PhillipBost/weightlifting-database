@@ -53,18 +53,24 @@ function parseAddress(rawAddress) {
     };
 }
 
-// Geocode address using Nominatim with fallback strategies
-// Remove suite/apartment information from address
+// Remove suite/apartment information from address (improved to handle more patterns)
 function removeSuiteInfo(address) {
     if (!address || typeof address !== 'string') return address;
     
     return address
+        // Handle comma-separated suite info: ", Suite 123"
         .replace(/,\s*(suite|ste|apt|apartment|unit|building|bldg|floor|fl|room|rm|#)\s*[a-z0-9\-\s]+/gi, '')
+        // Handle space-separated suite info: " Suite 123" 
+        .replace(/\s+(suite|ste|apt|apartment|unit|building|bldg|floor|fl|room|rm|#)\s+[a-z0-9\-\s]+/gi, '')
+        // Handle dash-separated suite info: " - Ste F"
+        .replace(/\s*-\s*(suite|ste|apt|apartment|unit|building|bldg|floor|fl|room|rm|#)\s*[a-z0-9\-\s]+/gi, '')
         .replace(/\s+/g, ' ')
         .replace(/,\s*,/g, ',')
         .replace(/^,\s*|,\s*$/g, '')
         .trim();
 }
+
+// Geocode address using Nominatim with fallback strategies
 
 async function geocodeAddress(rawAddress) {
     // Helper function to remove country variations
@@ -126,6 +132,11 @@ async function geocodeAddress(rawAddress) {
             if (isStreetNameOnly) variantLabel = `Attempt ${i + 1} (street name only)`;
             
             log(`  🌐 ${variantLabel}: ${addressToTry.substring(0, 60)}...`);
+            
+            // Debug: show full address for first few
+            if (i === 0) {
+                log(`  🔍 DEBUG Full address: "${addressToTry}"`);
+            }
             
             const params = new URLSearchParams({
                 q: addressToTry,
@@ -247,23 +258,75 @@ async function updateMeetWithGeocode(meetId, geocodeData) {
     }
 }
 
-// Get meets from database that need geocoding
+// Determine if a meet's geocoding should be updated based on accuracy (from club-geocoder.js)
+function shouldUpdateGeocode(meet) {
+    // No existing geocoding data - always update
+    if (!meet.latitude || !meet.longitude || meet.geocode_success === null) {
+        return { update: true, reason: 'No existing geocoding data' };
+    }
+    
+    // Previous geocoding failed - always retry
+    if (!meet.geocode_success) {
+        return { update: true, reason: 'Previous geocoding failed, retrying' };
+    }
+    
+    // Use stored precision score if available
+    let existingPrecision = meet.geocode_precision_score;
+    
+    // If no stored precision score, calculate it from existing display_name and address
+    if (existingPrecision === null || existingPrecision === undefined) {
+        existingPrecision = calculateAddressPrecision(meet.address, meet.geocode_display_name);
+        log(`   📊 Calculated existing precision: ${existingPrecision} (no stored score)`);
+    } else {
+        log(`   📊 Existing precision score: ${existingPrecision} (from database)`);
+    }
+    
+    // High precision results (6+) - skip 
+    if (existingPrecision >= 6) {
+        return { update: false, reason: `High precision result (${existingPrecision}), skipping` };
+    }
+    
+    // Lower precision results should be re-attempted
+    return { update: true, reason: `Low precision score (${existingPrecision}), attempting to improve` };
+}
+
+// Get meets from database that need geocoding (using proven pagination pattern)
 async function getMeetsNeedingGeocode() {
     try {
         log('📊 Querying database for meets that need geocoding...');
         
-        const { data, error, count } = await supabase
-            .from('meets')
-            .select('meet_id, Meet, address, latitude, longitude, geocode_success', { count: 'exact' })
-            .not('address', 'is', null)
-            .or('latitude.is.null,geocode_success.eq.false');
+        let allMeets = [];
+        let from = 0;
+        const pageSize = 100;
+        
+        while (true) {
+            const { data, error } = await supabase
+                .from('meets')
+                .select('meet_id, Meet, address, latitude, longitude, geocode_success, geocode_precision_score, geocode_display_name')
+                .not('address', 'is', null)
+                .neq('address', '')
+                .range(from, from + pageSize - 1);
+                
+            if (error) {
+                throw new Error(`Failed to fetch meets: ${error.message}`);
+            }
             
-        if (error) {
-            throw new Error(`Failed to fetch meets: ${error.message}`);
+            if (!data || data.length === 0) {
+                break;
+            }
+            
+            allMeets.push(...data);
+            from += pageSize;
+            
+            log(`📄 Loaded ${allMeets.length} meets so far...`);
+            
+            if (data.length < pageSize) {
+                break; // Last page
+            }
         }
         
-        log(`📋 Found ${data?.length || 0} meets that need geocoding`);
-        return data || [];
+        log(`📋 Found ${allMeets.length} meets that need geocoding`);
+        return allMeets;
         
     } catch (error) {
         log(`❌ Database query failed: ${error.message}`);
@@ -290,6 +353,7 @@ async function geocodeAndImport() {
         let successCount = 0;
         let failureCount = 0;
         let updatedCount = 0;
+        let skipCount = 0;
         
         // Process each meet that needs geocoding
         for (let i = 0; i < meetsNeedingGeocode.length; i++) {
@@ -298,6 +362,15 @@ async function geocodeAndImport() {
             
             log(`
 🔄 [${progress}] Processing: ${meet.Meet} (meet_id: ${meet.meet_id})`);
+            log(`   Original Address: ${meet.address}`);
+
+            // Smart update logic: check if we should update based on accuracy
+            const shouldUpdate = shouldUpdateGeocode(meet);
+            if (!shouldUpdate.update) {
+                log(`   ⏭️ ${shouldUpdate.reason}`);
+                skipCount++;
+                continue;
+            }
             
             // Parse address components
             const addressComponents = parseAddress(meet.address);
@@ -367,6 +440,7 @@ async function geocodeAndImport() {
         log('\n' + '='.repeat(60));
         log('✅ GEOCODING AND IMPORT COMPLETE');
         log(`   Total meets processed: ${meetsNeedingGeocode.length}`);
+        log(`   High precision (skipped): ${skipCount}`);
         log(`   Database updates: ${updatedCount}`);
         log(`   Successful geocodes: ${successCount}`);
         log(`   Failed geocodes: ${failureCount}`);

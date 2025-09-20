@@ -293,17 +293,34 @@ async function getMeetsNeedingAddresses() {
     try {
         log('📊 Querying database for meets without addresses...');
         
-        const { data, error, count } = await supabase
-            .from('meets')
-            .select('meet_id, Meet, "Date"', { count: 'exact' })
-            .is('address', null);
+        let allMeets = [];
+        let page = 0;
+        const pageSize = 1000;
+        let hasMore = true;
+        
+        while (hasMore) {
+            const { data, error } = await supabase
+                .from('meets')
+                .select('meet_id, Meet, "Date"')
+                .is('address', null)
+                .range(page * pageSize, (page + 1) * pageSize - 1);
+                
+            if (error) {
+                throw new Error(`Failed to fetch meets: ${error.message}`);
+            }
             
-        if (error) {
-            throw new Error(`Failed to fetch meets: ${error.message}`);
+            if (data && data.length > 0) {
+                allMeets = allMeets.concat(data);
+                hasMore = data.length === pageSize;
+                page++;
+                log(`📄 Fetched page ${page}, total so far: ${allMeets.length}`);
+            } else {
+                hasMore = false;
+            }
         }
         
-        log(`📋 Found ${data?.length || 0} meets without addresses`);
-        return data || [];
+        log(`📋 Found ${allMeets.length} meets without addresses`);
+        return allMeets;
         
     } catch (error) {
         log(`❌ Database query failed: ${error.message}`);
@@ -379,8 +396,35 @@ async function scrapeMeetAddresses() {
             for (let i = 0; i < meetData.length; i++) {
                 const scrapedMeet = meetData[i];
                 
-                // Find matching database meet
-                const dbMeet = meetsNeedingAddresses.find(m => m.Meet === scrapedMeet.meet_name);
+                // Find matching database meet using name + date
+                const dbMeet = meetsNeedingAddresses.find(m => {
+                    // Try exact name match first
+                    if (m.Meet === scrapedMeet.meet_name) return true;
+                    
+                    // Try case-insensitive name match
+                    if (m.Meet?.toLowerCase() === scrapedMeet.meet_name?.toLowerCase()) return true;
+                    
+                    // If we have date info, try name + date matching
+                    if (scrapedMeet.date_range && m.Date) {
+                        const scrapedYear = scrapedMeet.date_range.match(/202\d/)?.[0];
+                        const dbYear = m.Date.match(/202\d/)?.[0];
+                        
+                        if (scrapedYear && dbYear && scrapedYear === dbYear) {
+                            // Same year + similar name (case insensitive, trimmed)
+                            const scrapedNameClean = scrapedMeet.meet_name?.toLowerCase().trim();
+                            const dbNameClean = m.Meet?.toLowerCase().trim();
+                            if (scrapedNameClean === dbNameClean) return true;
+                        }
+                    }
+                    
+                    return false;
+                });
+                
+                // Debug: show matching attempts
+                if (!dbMeet && i < 3) {
+                    log(`  🔍 DEBUG: No match for "${scrapedMeet.meet_name}" (${scrapedMeet.date_range})`);
+                    log(`  🔍 DEBUG: Checking against ${meetsNeedingAddresses.length} database meets`);
+                }
                 
                 if (dbMeet) {
                     log(`
