@@ -415,8 +415,7 @@ async function fetchAndUpdateMeetElevations() {
         }
         
         // Summary
-        log('
-' + '='.repeat(60));
+        log('\n' + '='.repeat(60));
         log('✅ MEET ELEVATION FETCH COMPLETE');
         log(`   Total meets found: ${meets.length}`);
         log(`   Total processed: ${totalProcessed}`);
@@ -823,8 +822,7 @@ if (require.main === module) {
             }
             
             // Summary
-            log('
-' + '='.repeat(60));
+            log('\n' + '='.repeat(60));
             log('🎉 ELEVATION FETCH COMPLETE');
             
             if (results.clubs) {
