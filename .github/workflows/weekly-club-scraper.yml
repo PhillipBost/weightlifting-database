@@ -9,7 +9,7 @@ on:
 jobs:
   scrape-and-import-clubs:
     runs-on: ubuntu-latest
-    timeout-minutes: 30 # Timeout for club scraping and import
+    timeout-minutes: 45 # Increased timeout for enhanced scraping with retries
     
     steps:
       - name: Checkout repository
@@ -32,11 +32,22 @@ jobs:
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+          RESUME_SCRAPING: 'false'  # Always start fresh in CI/CD
         run: |
-          echo "🏋️ Starting club data scraping..."
-          echo "Scraping USA Weightlifting barbell club directory..."
+          echo "🏋️ Starting enhanced club data scraping..."
+          echo "Scraping USA Weightlifting barbell club directory with improved error handling..."
           
-          node scripts/production/club-scraper.js
+          # Run with timeout and capture exit code
+          timeout 2400 node scripts/production/club-scraper.js || EXIT_CODE=$?
+          
+          if [ ${EXIT_CODE:-0} -eq 124 ]; then
+            echo "⚠️ Scraping timed out after 40 minutes, but may have partial results"
+          elif [ ${EXIT_CODE:-0} -ne 0 ]; then
+            echo "❌ Scraping failed with exit code ${EXIT_CODE}"
+            exit 1
+          else
+            echo "✅ Scraping completed successfully"
+          fi
       
       - name: Check if clubs were scraped
         id: check_clubs
@@ -235,9 +246,10 @@ jobs:
             echo "- 📍 **Clubs with Address:** ${{ steps.check_clubs.outputs.clubs_with_address }}" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
             echo "**Actions Completed:**" >> $GITHUB_STEP_SUMMARY
-            echo "- 🔍 Scraped USA Weightlifting club directory" >> $GITHUB_STEP_SUMMARY
+            echo "- 🔍 Scraped USA Weightlifting club directory with enhanced error handling" >> $GITHUB_STEP_SUMMARY
             echo "- 📋 Extracted club names, addresses, phone numbers, and emails" >> $GITHUB_STEP_SUMMARY
             echo "- 🔧 Normalized and validated club data" >> $GITHUB_STEP_SUMMARY
+            echo "- 🔄 Used retry logic and progressive saving for reliability" >> $GITHUB_STEP_SUMMARY
             echo "- 📊 Imported to Supabase clubs table" >> $GITHUB_STEP_SUMMARY
             echo "- 🗺️ Geocoded club addresses" >> $GITHUB_STEP_SUMMARY
             echo "- 🏔️ Fetched elevation data for clubs" >> $GITHUB_STEP_SUMMARY
