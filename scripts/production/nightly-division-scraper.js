@@ -65,16 +65,30 @@ function createExtractionIssuesLogger() {
 }
 
 function loadDivisions() {
-    // First, check if the activedivisions.csv file exists (from your uploaded file)
-    const divisionsFile = '../../data/current/activedivisions.csv';
-    const altDivisionsFile = '../../data/current/active divisions.csv';
-    
+    // Try multiple possible paths to support both local execution and GitHub Actions
+    const possiblePaths = [
+        // When running from scripts/production/ directory (local execution)
+        '../../data/current/activedivisions.csv',
+        '../../data/current/active divisions.csv',
+        // When running from repository root (GitHub Actions)
+        './data/current/activedivisions.csv',
+        './data/current/active divisions.csv',
+        // Absolute path fallback
+        'data/current/activedivisions.csv',
+        'data/current/active divisions.csv'
+    ];
+
     let fileToUse = null;
-    if (fs.existsSync(divisionsFile)) {
-        fileToUse = divisionsFile;
-    } else if (fs.existsSync(altDivisionsFile)) {
-        fileToUse = altDivisionsFile;
-    } else {
+    for (const filePath of possiblePaths) {
+        if (fs.existsSync(filePath)) {
+            fileToUse = filePath;
+            break;
+        }
+    }
+
+    if (!fileToUse) {
+        console.log('🔍 Searched for division files in these locations:');
+        possiblePaths.forEach(path => console.log(`   - ${path} (${fs.existsSync(path) ? 'found' : 'not found'})`));
         throw new Error('Division file not found! Looking for activedivisions.csv or "active divisions.csv"');
     }
     
