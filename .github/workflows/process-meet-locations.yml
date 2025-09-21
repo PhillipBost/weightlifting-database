@@ -1,12 +1,11 @@
 name: Process Meet Locations
 
 on:
+  schedule:
+    # 6 AM UTC daily (consistent with other nightly workflows)
+    - cron: '0 6 * * *'
   workflow_dispatch:  # Manual trigger
     inputs:
-      year:
-        description: 'Year to process (default: current year)'
-        required: false
-        default: '2024'
       scrape_addresses:
         description: 'Scrape new addresses first'
         type: boolean
@@ -49,23 +48,40 @@ jobs:
         run: |
           mkdir -p output
           mkdir -p logs
+
+      - name: Calculate date ranges (current month + last month)
+        run: |
+          # Calculate current month start and end
+          CURRENT_MONTH_START=$(date -d "$(date +%Y-%m-01)" +%Y-%m-%d)
+          CURRENT_MONTH_END=$(date -d "$(date +%Y-%m-01) +1 month -1 day" +%Y-%m-%d)
+
+          # Calculate last month start and end
+          LAST_MONTH_START=$(date -d "$(date +%Y-%m-01) -1 month" +%Y-%m-%d)
+          LAST_MONTH_END=$(date -d "$(date +%Y-%m-01) -1 day" +%Y-%m-%d)
+
+          # Set environment variables for the date range (last month start to current month end)
+          echo "FROM_DATE=$LAST_MONTH_START" >> $GITHUB_ENV
+          echo "TO_DATE=$CURRENT_MONTH_END" >> $GITHUB_ENV
+          echo "DATE_RANGE_LABEL=$(date -d "$LAST_MONTH_START" +%Y-%m)_to_$(date -d "$CURRENT_MONTH_END" +%Y-%m)" >> $GITHUB_ENV
+
+          echo "Processing meet locations from $LAST_MONTH_START to $CURRENT_MONTH_END"
           
       - name: Step 1 - Scrape meet addresses
-        if: ${{ github.event.inputs.scrape_addresses == 'true' }}
+        if: ${{ github.event.inputs.scrape_addresses != 'false' }}
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
-        run: node scripts/production/meet-address-scraper.js --year ${{ github.event.inputs.year }}
+        run: node scripts/production/meet-address-scraper.js --from-date $FROM_DATE --to-date $TO_DATE
         
       - name: Step 2 - Geocode and import to meets table
-        if: ${{ github.event.inputs.process_geocoding == 'true' }}
+        if: ${{ github.event.inputs.process_geocoding != 'false' }}
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
         run: node scripts/geographic/geocode-and-import.js
         
       - name: Step 3 - Add elevation data to meets
-        if: ${{ github.event.inputs.add_elevation == 'true' }}
+        if: ${{ github.event.inputs.add_elevation != 'false' }}
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
@@ -75,7 +91,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: processing-logs-${{ github.event.inputs.year }}
+          name: processing-logs-${{ env.DATE_RANGE_LABEL }}
           path: |
             logs/
             output/
