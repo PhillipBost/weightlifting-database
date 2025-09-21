@@ -368,8 +368,7 @@ async function fetchAndUpdateMeetElevations() {
             const batchNumber = Math.floor(i / BATCH_SIZE) + 1;
             const totalBatches = Math.ceil(meets.length / BATCH_SIZE);
             
-            log(`
-🔄 Processing batch ${batchNumber}/${totalBatches} (${batch.length} meets)`);
+            log(`\n🔄 Processing batch ${batchNumber}/${totalBatches} (${batch.length} meets)`);
             
             // Prepare coordinates for API call
             const coordinates = batch.map(meet => ({
@@ -432,8 +431,7 @@ async function fetchAndUpdateMeetElevations() {
         };
         
     } catch (error) {
-        log(`
-❌ Meet elevation fetch failed: ${error.message}`);
+        log(`\n❌ Meet elevation fetch failed: ${error.message}`);
         log(`🔍 Stack trace: ${error.stack}`);
         throw error;
     }
@@ -804,20 +802,17 @@ if (require.main === module) {
             const results = {};
             
             if (options.target === 'all' || options.target === 'clubs') {
-                log('
-📍 PROCESSING: Barbell clubs...');
+                log('\n📍 PROCESSING: Barbell clubs...');
                 results.clubs = await fetchAndUpdateClubElevations();
             }
             
             if (options.target === 'all' || options.target === 'meets') {
-                log('
-📍 PROCESSING: Meet locations (meets table)...');
+                log('\n📍 PROCESSING: Meet locations (meets table)...');
                 results.meets = await fetchAndUpdateMeetElevations();
             }
             
             if (options.target === 'all' || options.target === 'meet-locations') {
-                log('
-📍 PROCESSING: Meet locations (legacy meet_locations table)...');
+                log('\n📍 PROCESSING: Meet locations (legacy meet_locations table)...');
                 results.meetLocations = await fetchAndUpdateElevations();
             }
             
@@ -826,8 +821,7 @@ if (require.main === module) {
             log('🎉 ELEVATION FETCH COMPLETE');
             
             if (results.clubs) {
-                log('
-📊 CLUBS SUMMARY:');
+                log('\n📊 CLUBS SUMMARY:');
                 log(`   Total clubs: ${results.clubs.total}`);
                 log(`   Successfully updated: ${results.clubs.updated}`);
                 log(`   Failed: ${results.clubs.failed}`);
@@ -835,8 +829,7 @@ if (require.main === module) {
             }
             
             if (results.meets) {
-                log('
-📊 MEETS SUMMARY:');
+                log('\n📊 MEETS SUMMARY:');
                 log(`   Total meets: ${results.meets.total}`);
                 log(`   Successfully updated: ${results.meets.updated}`);
                 log(`   Failed: ${results.meets.failed}`);
@@ -844,21 +837,18 @@ if (require.main === module) {
             }
             
             if (results.meetLocations) {
-                log('
-📊 MEET LOCATIONS (LEGACY) SUMMARY:');
+                log('\n📊 MEET LOCATIONS (LEGACY) SUMMARY:');
                 log(`   Total locations: ${results.meetLocations.total}`);
                 log(`   Successfully updated: ${results.meetLocations.updated}`);
                 log(`   Failed: ${results.meetLocations.failed}`);
                 log(`   Success rate: ${results.meetLocations.total > 0 ? ((results.meetLocations.updated / results.meetLocations.total) * 100).toFixed(1) : 0}%`);
             }
             
-            log('
-🎉 All elevation data processing completed successfully!');
+            log('\n🎉 All elevation data processing completed successfully!');
             process.exit(0);
             
         } catch (error) {
-            log(`
-💥 Elevation fetch process failed: ${error.message}`);
+            log(`\n💥 Elevation fetch process failed: ${error.message}`);
             log(`🔍 Stack trace: ${error.stack}`);
             process.exit(1);
         }
