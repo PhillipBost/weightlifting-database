@@ -64,7 +64,7 @@ jobs:
                 const { data: wsos, error } = await supabase
                   .from('wso_information')
                   .select('name, barbell_clubs_count, recent_meets_count, active_lifters_count, estimated_population, analytics_updated_at')
-                  .order('wso_name');
+                  .order('name');
                 
                 if (error) throw error;
                 
