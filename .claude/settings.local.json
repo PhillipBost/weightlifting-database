@@ -41,7 +41,15 @@
       "mcp__serena__insert_after_symbol",
       "Bash(ls:*)",
       "Bash(tree:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(cat:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(gh workflow run:*)",
+      "Bash(DIVISION_START=1 DIVISION_END=3 DAY_NAME=test node nightly-division-scraper.js --dry-run)",
+      "Bash(git push:*)",
+      "WebFetch(domain:www.census.gov)",
+      "Bash(gh workflow:*)"
     ],
     "deny": [],
     "ask": []
