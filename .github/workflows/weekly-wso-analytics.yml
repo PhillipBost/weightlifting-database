@@ -81,7 +81,7 @@ jobs:
                   
                   if (lastUpdated === today) updatedToday++;
                   
-                  console.log(\`\${wso.name.padEnd(8\)} | \${String(wso.barbell_clubs_count || 0).padStart(5)} | \${String(wso.recent_meets_count || 0).padStart(5)} | \${String(wso.active_lifters_count || 0).padStart(7)} | \${String(wso.estimated_population || 0).padStart(10)} | \${lastUpdated}\`);
+                  console.log(\`\${wso.name.padEnd(8)} | \${String(wso.barbell_clubs_count || 0).padStart(5)} | \${String(wso.recent_meets_count || 0).padStart(5)} | \${String(wso.active_lifters_count || 0).padStart(7)} | \${String(wso.estimated_population || 0).padStart(10)} | \${lastUpdated}\`);
                 });
                 
                 console.log(\`\\n✅ Total WSOs: \${wsos.length}\`);
