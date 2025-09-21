@@ -42,6 +42,9 @@ athlete_upload_errors.csv
 new_lifters_created.csv
 temp_meet_*.csv
 *.csv
+# Allow critical division data files
+!data/current/activedivisions.csv
+!data/current/active\ divisions.csv
 
 
 # Error logs and temporary files
