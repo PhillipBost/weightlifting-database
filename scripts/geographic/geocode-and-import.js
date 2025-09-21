@@ -32,24 +32,22 @@ function log(message) {
     fs.appendFileSync(LOG_FILE, logMessage);
 }
 
-// Parse address into components
+// Parse address into components (improved intelligent parsing)
 function parseAddress(rawAddress) {
-    if (!rawAddress) return {};
+    // Import the intelligent parsing function
+    const { parseAddressIntelligently } = require('./fix-address-parsing');
     
-    const parts = rawAddress.split(', ');
-    const country = parts[parts.length - 2] || '';
-    const zipCode = parts[parts.length - 1] || '';
-    const state = parts[parts.length - 3] || '';
-    const city = parts[parts.length - 4] || '';
-    const streetAddress = parts.slice(0, -3).join(', ') || '';
+    // Use the new intelligent parsing algorithm
+    const parsed = parseAddressIntelligently(rawAddress);
     
+    // Return in the expected format for compatibility
     return {
         address: rawAddress,
-        street_address: streetAddress,
-        city,
-        state,
-        zip_code: zipCode,
-        country
+        street_address: parsed.street_address,
+        city: parsed.city,
+        state: parsed.state,
+        zip_code: parsed.zip_code,
+        country: parsed.country
     };
 }
 
