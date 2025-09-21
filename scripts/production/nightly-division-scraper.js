@@ -39,9 +39,34 @@ function escapeCSV(value) {
     return str;
 }
 
+function resolveDataPath(relativePath) {
+    // Try multiple possible paths to support both local execution and GitHub Actions
+    const possiblePaths = [
+        // When running from scripts/production/ directory (local execution)
+        `../../${relativePath}`,
+        // When running from repository root (GitHub Actions)
+        `./${relativePath}`,
+        // Absolute path fallback
+        relativePath
+    ];
+
+    for (const fullPath of possiblePaths) {
+        const dir = path.dirname(fullPath);
+        if (fs.existsSync(dir)) {
+            return fullPath;
+        }
+    }
+
+    // If none exist, return the GitHub Actions path and let ensureDirectoryExists create it
+    return `./${relativePath}`;
+}
+
 function createExtractionIssuesLogger() {
-    const issuesFilePath = '../../data/logs/athlete_extraction_details.csv';
-    
+    const issuesFilePath = resolveDataPath('data/logs/athlete_extraction_details.csv');
+
+    // Ensure the logs directory exists
+    ensureDirectoryExists(path.dirname(issuesFilePath));
+
     if (!fs.existsSync(issuesFilePath)) {
         const headers = ['division_number', 'division_name', 'issue_type', 'athlete_name', 'membership_id', 'row_data', 'description', 'batch_day'];
         fs.writeFileSync(issuesFilePath, headers.join(',') + '\n');
@@ -745,7 +770,11 @@ async function processBatchDivisions() {
     }
     
     // Setup logging
-    const logFile = `../../data/logs/completed_divisions_${CONFIG.DAY_NAME.toLowerCase()}.csv`;
+    const logFile = resolveDataPath(`data/logs/completed_divisions_${CONFIG.DAY_NAME.toLowerCase()}.csv`);
+
+    // Ensure the logs directory exists
+    ensureDirectoryExists(path.dirname(logFile));
+
     if (!fs.existsSync(logFile)) {
         const headers = ['division_number', 'division_name', 'timestamp', 'athletes_found', 
                         'athletes_processed', 'athletes_skipped', 'status', 'time_seconds'];
