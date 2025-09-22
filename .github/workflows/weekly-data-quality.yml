@@ -127,7 +127,7 @@ jobs:
           echo "🕐 Start time: $(date +'%Y-%m-%d %H:%M:%S %Z')"
           echo "📊 Show details: $SHOW_DETAILS"
 
-          node scripts/data-quality/missing-membership-scan.js 2>&1 | tee logs/missing-membership-scan.log
+          node scripts/analysis/missing-membership-scan.js 2>&1 | tee logs/missing-membership-scan.log
 
           if [ $? -eq 0 ]; then
             echo "✅ Missing membership scan completed successfully"
