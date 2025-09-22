@@ -346,6 +346,11 @@ async function getStatePopulation(stateName) {
 async function updateWSOAnalytics(wsoName, metrics) {
     log(`💾 Updating analytics for ${wsoName}...`);
     
+    // Calculate activity_factor
+    const activityFactor = metrics.activeLiftersCount > 0 
+        ? Math.round((metrics.totalParticipations / metrics.activeLiftersCount) * 100) / 100
+        : 0;
+    
     const { error } = await supabase
         .from('wso_information')
         .update({
@@ -353,7 +358,8 @@ async function updateWSOAnalytics(wsoName, metrics) {
             recent_meets_count: metrics.recentMeetsCount,
             active_lifters_count: metrics.activeLiftersCount,
             total_participations: metrics.totalParticipations,
-            estimated_population: metrics.estimatedPopulation
+            estimated_population: metrics.estimatedPopulation,
+            activity_factor: activityFactor
             // analytics_updated_at will be updated automatically by trigger
         })
         .eq('name', wsoName);
@@ -362,7 +368,7 @@ async function updateWSOAnalytics(wsoName, metrics) {
         throw new Error(`Failed to update analytics for ${wsoName}: ${error.message}`);
     }
     
-    log(`✅ Updated analytics for ${wsoName}: ${metrics.barbelClubsCount} clubs, ${metrics.recentMeetsCount} meets, ${metrics.activeLiftersCount} lifters, ${metrics.totalParticipations} participations, ${metrics.estimatedPopulation} population`);
+    log(`✅ Updated analytics for ${wsoName}: ${metrics.barbelClubsCount} clubs, ${metrics.recentMeetsCount} meets, ${metrics.activeLiftersCount} lifters, ${metrics.totalParticipations} participations, ${metrics.estimatedPopulation} population, ${activityFactor} activity_factor`);
 }
 
 async function calculateWSOMterics(wsoName) {
