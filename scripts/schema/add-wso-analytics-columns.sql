@@ -5,6 +5,7 @@ ALTER TABLE wso_information ADD COLUMN IF NOT EXISTS barbell_clubs_count INTEGER
 ALTER TABLE wso_information ADD COLUMN IF NOT EXISTS recent_meets_count INTEGER DEFAULT 0;
 ALTER TABLE wso_information ADD COLUMN IF NOT EXISTS active_lifters_count INTEGER DEFAULT 0;
 ALTER TABLE wso_information ADD COLUMN IF NOT EXISTS estimated_population BIGINT DEFAULT 0;
+ALTER TABLE wso_information ADD COLUMN IF NOT EXISTS total_participations INTEGER DEFAULT 0;
 ALTER TABLE wso_information ADD COLUMN IF NOT EXISTS analytics_updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW();
 
 -- Add comments to document the new fields
@@ -12,6 +13,7 @@ COMMENT ON COLUMN wso_information.barbell_clubs_count IS 'Number of barbell club
 COMMENT ON COLUMN wso_information.recent_meets_count IS 'Number of meets held in past 2 years within WSO boundaries';
 COMMENT ON COLUMN wso_information.active_lifters_count IS 'Number of lifters who competed in past 2 years within WSO region';
 COMMENT ON COLUMN wso_information.estimated_population IS 'Total population within WSO geographic boundaries';
+COMMENT ON COLUMN wso_information.total_participations IS 'Total number of athlete-meet combinations within WSO region during the past 2 years (individual participations, not unique meets)';
 COMMENT ON COLUMN wso_information.analytics_updated_at IS 'Timestamp of last analytics calculation update';
 
 -- Create or update trigger function for analytics_updated_at
@@ -22,7 +24,8 @@ BEGIN
     IF (NEW.barbell_clubs_count IS DISTINCT FROM OLD.barbell_clubs_count OR
         NEW.recent_meets_count IS DISTINCT FROM OLD.recent_meets_count OR
         NEW.active_lifters_count IS DISTINCT FROM OLD.active_lifters_count OR
-        NEW.estimated_population IS DISTINCT FROM OLD.estimated_population) THEN
+        NEW.estimated_population IS DISTINCT FROM OLD.estimated_population OR
+        NEW.total_participations IS DISTINCT FROM OLD.total_participations) THEN
         NEW.analytics_updated_at = NOW();
     END IF;
     RETURN NEW;

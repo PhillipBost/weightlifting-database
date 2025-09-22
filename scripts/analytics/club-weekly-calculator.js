@@ -117,6 +117,26 @@ async function calculateClubActiveLifters(clubName) {
     return count;
 }
 
+async function calculateClubTotalParticipations(clubName) {
+    log(`🎯 Calculating total participations count for "${clubName}"...`);
+    
+    // Count ALL meet_results records (not distinct) where club_name matches
+    // and the meet date is within our cutoff period
+    const { data: results, error } = await supabase
+        .from('meet_results')
+        .select('result_id, meets!inner(Date)')
+        .eq('club_name', clubName)
+        .gte('meets.Date', cutoffDate);
+    
+    if (error) {
+        throw new Error(`Failed to count total participations for ${clubName}: ${error.message}`);
+    }
+    
+    const count = results ? results.length : 0;
+    log(`   Found ${count} total participations for "${clubName}" since ${cutoffDate}`);
+    return count;
+}
+
 async function updateClubAnalytics(clubName, metrics) {
     log(`💾 Updating analytics for "${clubName}"...`);
     
@@ -124,7 +144,8 @@ async function updateClubAnalytics(clubName, metrics) {
         .from('clubs')
         .update({
             recent_meets_count: metrics.recentMeetsCount,
-            active_lifters_count: metrics.activeLiftersCount
+            active_lifters_count: metrics.activeLiftersCount,
+            total_participations: metrics.totalParticipations
             // analytics_updated_at will be updated automatically by trigger
         })
         .eq('club_name', clubName);
@@ -133,7 +154,7 @@ async function updateClubAnalytics(clubName, metrics) {
         throw new Error(`Failed to update analytics for ${clubName}: ${error.message}`);
     }
     
-    log(`✅ Updated analytics for "${clubName}": ${metrics.recentMeetsCount} meets, ${metrics.activeLiftersCount} lifters`);
+    log(`✅ Updated analytics for "${clubName}": ${metrics.recentMeetsCount} meets, ${metrics.activeLiftersCount} lifters, ${metrics.totalParticipations} participations`);
 }
 
 async function calculateClubMetrics(clubName) {
@@ -142,7 +163,8 @@ async function calculateClubMetrics(clubName) {
     try {
         const metrics = {
             recentMeetsCount: await calculateClubRecentMeets(clubName),
-            activeLiftersCount: await calculateClubActiveLifters(clubName)
+            activeLiftersCount: await calculateClubActiveLifters(clubName),
+            totalParticipations: await calculateClubTotalParticipations(clubName)
         };
         
         await updateClubAnalytics(clubName, metrics);
@@ -234,5 +256,6 @@ if (require.main === module) {
 module.exports = {
     calculateClubRecentMeets,
     calculateClubActiveLifters,
+    calculateClubTotalParticipations,
     calculateClubMetrics
 };
