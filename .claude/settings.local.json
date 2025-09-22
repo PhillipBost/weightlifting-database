@@ -52,7 +52,9 @@
       "Bash(gh workflow:*)",
       "Bash(for file in daily-division-scraper.yml weekly-data-collection.yml weekly-data-processing.yml)",
       "Bash(do echo \"Testing $file:\")",
-      "Bash(done)"
+      "Bash(done)",
+      "Bash(for file in *.yml)",
+      "Bash(do echo \"=== $file ===\")"
     ],
     "deny": [],
     "ask": []
