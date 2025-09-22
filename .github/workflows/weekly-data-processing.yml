@@ -376,8 +376,123 @@ jobs:
             logs/wso-analytics.log
           retention-days: 30
 
+  calculate-club-analytics:
+    needs: calculate-wso-analytics
+    if: ${{ always() && !inputs.skip_analytics }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 45 # Allow time for processing all clubs
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Create logs directory
+        run: mkdir -p logs
+
+      - name: Calculate club analytics
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+        run: |
+          echo "🏋️ Starting club analytics calculation..."
+          echo "Timestamp: $(date)"
+
+          # Run the club analytics calculation script
+          node scripts/analytics/club-weekly-calculator.js 2>&1 | tee logs/club-analytics.log
+
+          # Check if the script ran successfully
+          if [ $? -eq 0 ]; then
+            echo "✅ Club analytics calculation completed successfully"
+          else
+            echo "❌ Club analytics calculation failed"
+            exit 1
+          fi
+
+      - name: Validate club analytics results
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+        run: |
+          echo "🔍 Validating club analytics results..."
+
+          # Create a simple validation script inline
+          node -e "
+            const { createClient } = require('@supabase/supabase-js');
+
+            async function validateClubResults() {
+              const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SECRET_KEY);
+
+              try {
+                const { data: clubs, error } = await supabase
+                  .from('clubs')
+                  .select('club_name, recent_meets_count, active_lifters_count, analytics_updated_at')
+                  .not('recent_meets_count', 'is', null)
+                  .order('recent_meets_count', { ascending: false })
+                  .limit(10);
+
+                if (error) throw error;
+
+                console.log('📋 Top 10 clubs by recent meets:');
+                console.log('Club Name | Meets | Lifters | Last Updated');
+                console.log('----------|-------|---------|-------------');
+
+                let updatedToday = 0;
+                const today = new Date().toISOString().split('T')[0];
+
+                clubs.forEach(club => {
+                  const lastUpdated = club.analytics_updated_at ?
+                    new Date(club.analytics_updated_at).toISOString().split('T')[0] : 'Never';
+
+                  if (lastUpdated === today) updatedToday++;
+
+                  const name = club.club_name.length > 25 ? 
+                    club.club_name.substring(0, 22) + '...' : club.club_name;
+                  console.log(\`\${name.padEnd(25)} | \${String(club.recent_meets_count || 0).padStart(5)} | \${String(club.active_lifters_count || 0).padStart(7)} | \${lastUpdated}\`);
+                });
+
+                // Get total count of clubs updated today
+                const { count: totalUpdated } = await supabase
+                  .from('clubs')
+                  .select('*', { count: 'exact', head: true })
+                  .gte('analytics_updated_at', today + 'T00:00:00');
+
+                console.log(\`\n✅ Sample clubs shown above\`);
+                console.log(\`📅 Total clubs updated today: \${totalUpdated || 0}\`);
+
+                if ((totalUpdated || 0) === 0) {
+                  console.log('⚠️ Warning: No clubs were updated today');
+                  process.exit(1);
+                }
+
+              } catch (error) {
+                console.error('❌ Club validation failed:', error.message);
+                process.exit(1);
+              }
+            }
+
+            validateClubResults();
+          "
+
+      - name: Upload club analytics logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: club-analytics-logs-${{ github.run_number }}
+          path: |
+            logs/club-analytics.log
+          retention-days: 30
+
   create-summary:
-    needs: [assign-wso-geography, calculate-wso-analytics]
+    needs: [assign-wso-geography, calculate-wso-analytics, calculate-club-analytics]
     if: always()
     runs-on: ubuntu-latest
 
@@ -409,7 +524,7 @@ jobs:
 
           echo "" >> $GITHUB_STEP_SUMMARY
 
-          # Analytics summary
+          # WSO Analytics summary
           if [ "${{ inputs.skip_analytics }}" == "true" ]; then
             echo "### 📊 WSO Analytics: Skipped" >> $GITHUB_STEP_SUMMARY
           elif [ "${{ needs.calculate-wso-analytics.result }}" == "success" ]; then
@@ -419,6 +534,21 @@ jobs:
             echo "- **Data Sources:** Clubs table, meets table (past 2 years), meet results, demographics" >> $GITHUB_STEP_SUMMARY
           else
             echo "### 📊 WSO Analytics: ❌ Failed" >> $GITHUB_STEP_SUMMARY
+            echo "- **Status:** See workflow logs for details" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          # Club Analytics summary
+          if [ "${{ inputs.skip_analytics }}" == "true" ]; then
+            echo "### 🏋️ Club Analytics: Skipped" >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ needs.calculate-club-analytics.result }}" == "success" ]; then
+            echo "### 🏋️ Club Analytics: ✅ Success" >> $GITHUB_STEP_SUMMARY
+            echo "- **Status:** Successfully calculated analytics for all clubs" >> $GITHUB_STEP_SUMMARY
+            echo "- **Metrics:** Recent meets participated, active lifters associated" >> $GITHUB_STEP_SUMMARY
+            echo "- **Data Sources:** Meet results table (past 3 years), club associations" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "### 🏋️ Club Analytics: ❌ Failed" >> $GITHUB_STEP_SUMMARY
             echo "- **Status:** See workflow logs for details" >> $GITHUB_STEP_SUMMARY
           fi
 
