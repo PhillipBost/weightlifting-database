@@ -52,37 +52,62 @@ jobs:
         run: |
           echo "🔍 Checking for meets needing WSO geography assignment..."
 
-          # Count meets with null wso_geography
-          meets_needing_assignment=$(node -e "
+          # Count meets with null wso_geography using proper pagination to get accurate total
+          count_result=$(node -e "
             const { createClient } = require('@supabase/supabase-js');
 
-            async function checkMeets() {
+            async function countMeets() {
               const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SECRET_KEY);
 
               try {
-                const { data, error } = await supabase
-                  .from('meets')
-                  .select('meet_id', { count: 'exact' })
-                  .is('wso_geography', null);
+                let totalCount = 0;
+                let start = 0;
+                const batchSize = 1000;
+                let hasMore = true;
 
-                if (error) throw error;
-                console.log(data ? data.length : 0);
+                console.error('📊 Counting unassigned meets using pagination...');
+
+                while (hasMore) {
+                  const { data, error } = await supabase
+                    .from('meets')
+                    .select('meet_id')
+                    .is('wso_geography', null)
+                    .range(start, start + batchSize - 1);
+
+                  if (error) throw error;
+
+                  if (data && data.length > 0) {
+                    totalCount += data.length;
+                    console.error(\`  📦 Batch \${Math.floor(start/batchSize) + 1}: Found \${data.length} unassigned meets (Running total: \${totalCount})\`);
+
+                    hasMore = data.length === batchSize;
+                    start += batchSize;
+                  } else {
+                    hasMore = false;
+                  }
+                }
+
+                console.error(\`✅ Total unassigned meets: \${totalCount}\`);
+                console.log(totalCount);
               } catch (error) {
-                console.error('Error:', error.message);
+                console.error('❌ Error counting meets:', error.message);
                 console.log(0);
               }
             }
 
-            checkMeets();
+            countMeets();
           ")
 
+          meets_needing_assignment=$(echo "$count_result" | tail -n 1)
           echo "meets_needing_assignment=$meets_needing_assignment" >> $GITHUB_OUTPUT
-          echo "📊 Found $meets_needing_assignment meets needing WSO geography assignment"
+          echo "📊 Total unassigned meets found: $meets_needing_assignment"
 
           if [ $meets_needing_assignment -gt 0 ]; then
             echo "has_unassigned_meets=true" >> $GITHUB_OUTPUT
+            echo "✅ Will proceed with WSO assignment for $meets_needing_assignment meets"
           else
             echo "has_unassigned_meets=false" >> $GITHUB_OUTPUT
+            echo "ℹ️ No meets require WSO assignment"
           fi
 
       - name: Assign WSO geography to meets
@@ -104,6 +129,76 @@ jobs:
           else
             echo "❌ WSO geography assignment failed"
             exit 1
+          fi
+
+      - name: Verify assignment completeness
+        if: steps.check_meets.outputs.has_unassigned_meets == 'true'
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+        run: |
+          echo "🔍 Verifying WSO assignment completeness..."
+
+          # Count remaining unassigned meets after processing
+          remaining_unassigned=$(node -e "
+            const { createClient } = require('@supabase/supabase-js');
+
+            async function countRemaining() {
+              const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SECRET_KEY);
+
+              try {
+                let totalCount = 0;
+                let start = 0;
+                const batchSize = 1000;
+                let hasMore = true;
+
+                while (hasMore) {
+                  const { data, error } = await supabase
+                    .from('meets')
+                    .select('meet_id')
+                    .is('wso_geography', null)
+                    .range(start, start + batchSize - 1);
+
+                  if (error) throw error;
+
+                  if (data && data.length > 0) {
+                    totalCount += data.length;
+                    hasMore = data.length === batchSize;
+                    start += batchSize;
+                  } else {
+                    hasMore = false;
+                  }
+                }
+
+                console.log(totalCount);
+              } catch (error) {
+                console.error('❌ Error counting remaining meets:', error.message);
+                console.log(-1);
+              }
+            }
+
+            countRemaining();
+          ")
+
+          initial_count=${{ steps.check_meets.outputs.meets_needing_assignment }}
+
+          echo "📊 Assignment Verification Results:"
+          echo "   Initial unassigned: $initial_count"
+          echo "   Remaining unassigned: $remaining_unassigned"
+
+          if [ $remaining_unassigned -eq -1 ]; then
+            echo "❌ Failed to verify assignment completeness"
+            exit 1
+          elif [ $remaining_unassigned -eq 0 ]; then
+            echo "✅ Perfect! All meets have been assigned WSO geography"
+          else
+            processed=$((initial_count - remaining_unassigned))
+            echo "✅ Processed: $processed meets"
+            echo "⚠️ Remaining: $remaining_unassigned meets still need assignment"
+            if [ $remaining_unassigned -gt 100 ]; then
+              echo "❌ Too many meets remain unassigned, this indicates a problem"
+              exit 1
+            fi
           fi
 
       - name: Upload WSO assignment results
