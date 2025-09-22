@@ -49,7 +49,10 @@
       "Bash(DIVISION_START=1 DIVISION_END=3 DAY_NAME=test node nightly-division-scraper.js --dry-run)",
       "Bash(git push:*)",
       "WebFetch(domain:www.census.gov)",
-      "Bash(gh workflow:*)"
+      "Bash(gh workflow:*)",
+      "Bash(for file in daily-division-scraper.yml weekly-data-collection.yml weekly-data-processing.yml)",
+      "Bash(do echo \"Testing $file:\")",
+      "Bash(done)"
     ],
     "deny": [],
     "ask": []
