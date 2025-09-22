@@ -121,6 +121,30 @@ async function calculateActiveLiftersCount(wsoName) {
     return count;
 }
 
+async function calculateTotalParticipationsCount(wsoName) {
+    log(`🎯 Calculating total participations count for ${wsoName}...`);
+    
+    // For California WSOs, we need to count participations by county, not by wso_geography
+    if (wsoName.includes('California')) {
+        return await calculateCaliforniaTotalParticipations(wsoName);
+    }
+    
+    // Count ALL meet_results records (not distinct) within this WSO
+    const { data: results, error } = await supabase
+        .from('meet_results')
+        .select('result_id, meets!inner(wso_geography, Date)')
+        .eq('meets.wso_geography', wsoName)
+        .gte('meets.Date', cutoffDate);
+    
+    if (error) {
+        throw new Error(`Failed to count total participations for ${wsoName}: ${error.message}`);
+    }
+    
+    const count = results ? results.length : 0;
+    log(`   Found ${count} total participations in ${wsoName} since ${cutoffDate}`);
+    return count;
+}
+
 async function calculateEstimatedPopulation(wsoName) {
     log(`🌍 Calculating estimated population for ${wsoName}...`);
     
@@ -258,6 +282,7 @@ async function updateWSOAnalytics(wsoName, metrics) {
             barbell_clubs_count: metrics.barbelClubsCount,
             recent_meets_count: metrics.recentMeetsCount,
             active_lifters_count: metrics.activeLiftersCount,
+            total_participations: metrics.totalParticipations,
             estimated_population: metrics.estimatedPopulation
             // analytics_updated_at will be updated automatically by trigger
         })
@@ -267,7 +292,7 @@ async function updateWSOAnalytics(wsoName, metrics) {
         throw new Error(`Failed to update analytics for ${wsoName}: ${error.message}`);
     }
     
-    log(`✅ Updated analytics for ${wsoName}: ${metrics.barbelClubsCount} clubs, ${metrics.recentMeetsCount} meets, ${metrics.activeLiftersCount} lifters, ${metrics.estimatedPopulation} population`);
+    log(`✅ Updated analytics for ${wsoName}: ${metrics.barbelClubsCount} clubs, ${metrics.recentMeetsCount} meets, ${metrics.activeLiftersCount} lifters, ${metrics.totalParticipations} participations, ${metrics.estimatedPopulation} population`);
 }
 
 async function calculateWSOMterics(wsoName) {
@@ -278,6 +303,7 @@ async function calculateWSOMterics(wsoName) {
             barbelClubsCount: await calculateBarbelClubsCount(wsoName),
             recentMeetsCount: await calculateRecentMeetsCount(wsoName),
             activeLiftersCount: await calculateActiveLiftersCount(wsoName),
+            totalParticipations: await calculateTotalParticipationsCount(wsoName),
             estimatedPopulation: await calculateEstimatedPopulation(wsoName)
         };
         
@@ -536,10 +562,37 @@ async function calculateCaliforniaLiftersCount(wsoName) {
     return count;
 }
 
+async function calculateCaliforniaTotalParticipations(wsoName) {
+    log(`🎯 Calculating California total participations for ${wsoName}...`);
+    
+    // First get all California meets that match this WSO's counties
+    const matchingMeetIds = await getCaliforniaMeetIds(wsoName);
+    
+    if (matchingMeetIds.length === 0) {
+        log(`   No matching California meets found for ${wsoName}`);
+        return 0;
+    }
+    
+    // Count ALL meet_results records (not distinct) from those meets
+    const { data: results, error } = await supabase
+        .from('meet_results')
+        .select('result_id')
+        .in('meet_id', matchingMeetIds);
+    
+    if (error) {
+        throw new Error(`Failed to count total participations for ${wsoName}: ${error.message}`);
+    }
+    
+    const count = results ? results.length : 0;
+    log(`   Found ${count} total participations in ${wsoName} from ${matchingMeetIds.length} matching meets`);
+    return count;
+}
+
 module.exports = {
     calculateBarbelClubsCount,
     calculateRecentMeetsCount,
     calculateActiveLiftersCount,
+    calculateTotalParticipationsCount,
     calculateEstimatedPopulation,
     calculateWSOMterics
 };
