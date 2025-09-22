@@ -365,7 +365,7 @@ function parseArguments() {
 
 // Get meets from database
 async function getMeets() {
-    log('🔍 Fetching meets from database...');
+    log('🔍 Fetching meets needing WSO assignment from database...');
     
     let allMeets = [];
     let start = 0;
@@ -376,6 +376,7 @@ async function getMeets() {
         const { data: batchData, error } = await supabase
             .from('meets')
             .select('*')
+            .is('wso_geography', null)  // Only fetch meets that need WSO assignment
             .range(start, start + batchSize - 1);
         
         if (error) {
@@ -384,7 +385,7 @@ async function getMeets() {
         
         if (batchData && batchData.length > 0) {
             allMeets.push(...batchData);
-            log(`  📦 Batch ${Math.floor(start/batchSize) + 1}: Found ${batchData.length} meets (Total: ${allMeets.length})`);
+            log(`  📦 Batch ${Math.floor(start/batchSize) + 1}: Found ${batchData.length} meets needing assignment (Total: ${allMeets.length})`);
             
             hasMore = batchData.length === batchSize;
             start += batchSize;
@@ -393,7 +394,7 @@ async function getMeets() {
         }
     }
     
-    log(`Found ${allMeets.length} total meets`);
+    log(`Found ${allMeets.length} meets needing WSO assignment`);
     return allMeets;
 }
 
