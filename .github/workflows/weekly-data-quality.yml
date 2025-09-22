@@ -176,7 +176,7 @@ jobs:
           echo "🧹 Starting type2 contamination cleanup..."
           echo "🕐 Start time: $(date +'%Y-%m-%d %H:%M:%S %Z')"
 
-          node scripts/data-quality/type2-contamination-cleanup.js 2>&1 | tee logs/type2-contamination-cleanup.log
+          node scripts/analysis/contamination-cleanup-master.js 2>&1 | tee logs/type2-contamination-cleanup.log
 
           if [ $? -eq 0 ]; then
             echo "✅ Type2 contamination cleanup completed successfully"
