@@ -25,6 +25,78 @@ function log(message) {
     console.log(`[${timestamp}] ${message}`);
 }
 
+/**
+ * Paginated query helper to handle Supabase's 1000-record limit
+ * @param {string} tableName - The table to query
+ * @param {string} selectFields - Fields to select
+ * @param {Function} queryBuilder - Function that builds the query filters
+ * @param {Object} options - Options for pagination
+ * @returns {Array} All results across all pages
+ */
+async function paginatedQuery(tableName, selectFields, queryBuilder, options = {}) {
+    const batchSize = options.batchSize || 1000;
+    const maxRecords = options.maxRecords || 50000; // Safety limit
+    const logProgress = options.logProgress !== false; // Default to true
+
+    let allResults = [];
+    let start = 0;
+    let hasMore = true;
+    let batchCount = 0;
+
+    if (logProgress) {
+        log(`   📄 Starting paginated query on ${tableName} (batch size: ${batchSize})`);
+    }
+
+    while (hasMore && allResults.length < maxRecords) {
+        batchCount++;
+
+        // Build base query
+        let query = supabase
+            .from(tableName)
+            .select(selectFields);
+
+        // Apply filters using the query builder function
+        if (queryBuilder) {
+            query = queryBuilder(query);
+        }
+
+        // Add pagination
+        query = query.range(start, start + batchSize - 1);
+
+        const { data: batchData, error } = await query;
+
+        if (error) {
+            throw new Error(`Paginated query failed on ${tableName}: ${error.message}`);
+        }
+
+        if (batchData && batchData.length > 0) {
+            allResults.push(...batchData);
+
+            if (logProgress && batchCount > 1) { // Only log after first batch to avoid spam
+                log(`   📄 Batch ${batchCount}: Found ${batchData.length} records (Total: ${allResults.length})`);
+            }
+
+            // Check if we got a full batch (indicates more records might exist)
+            hasMore = batchData.length === batchSize;
+            start += batchSize;
+        } else {
+            hasMore = false;
+        }
+
+        // Safety check
+        if (allResults.length >= maxRecords) {
+            log(`   ⚠️ Reached maximum record limit (${maxRecords}) for ${tableName} query`);
+            break;
+        }
+    }
+
+    if (logProgress && batchCount > 1) {
+        log(`   ✅ Paginated query complete: ${allResults.length} total records from ${batchCount} batches`);
+    }
+
+    return allResults;
+}
+
 async function getAllWSOs() {
     log('📋 Fetching all WSO regions...');
     
@@ -96,15 +168,14 @@ async function calculateActiveLiftersCount(wsoName) {
     }
     
     // Get distinct lifters who competed in recent meets within this WSO
-    const { data: results, error } = await supabase
-        .from('meet_results')
-        .select('lifter_id, meets!inner(wso_geography, Date)')
-        .eq('meets.wso_geography', wsoName)
-        .gte('meets.Date', cutoffDate);
-    
-    if (error) {
-        throw new Error(`Failed to count active lifters for ${wsoName}: ${error.message}`);
-    }
+    // Use pagination to handle large WSOs with >1000 lifter participations
+    const results = await paginatedQuery(
+        'meet_results',
+        'lifter_id, meets!inner(wso_geography, Date)',
+        (query) => query
+            .eq('meets.wso_geography', wsoName)
+            .gte('meets.Date', cutoffDate)
+    );
     
     // Get unique lifter IDs
     const uniqueLifters = new Set();
@@ -130,15 +201,14 @@ async function calculateTotalParticipationsCount(wsoName) {
     }
     
     // Count ALL meet_results records (not distinct) within this WSO
-    const { data: results, error } = await supabase
-        .from('meet_results')
-        .select('result_id, meets!inner(wso_geography, Date)')
-        .eq('meets.wso_geography', wsoName)
-        .gte('meets.Date', cutoffDate);
-    
-    if (error) {
-        throw new Error(`Failed to count total participations for ${wsoName}: ${error.message}`);
-    }
+    // Use pagination to handle large WSOs with >1000 participations
+    const results = await paginatedQuery(
+        'meet_results',
+        'result_id, meets!inner(wso_geography, Date)',
+        (query) => query
+            .eq('meets.wso_geography', wsoName)
+            .gte('meets.Date', cutoffDate)
+    );
     
     const count = results ? results.length : 0;
     log(`   Found ${count} total participations in ${wsoName} since ${cutoffDate}`);
@@ -306,7 +376,15 @@ async function calculateWSOMterics(wsoName) {
             totalParticipations: await calculateTotalParticipationsCount(wsoName),
             estimatedPopulation: await calculateEstimatedPopulation(wsoName)
         };
-        
+
+        // Log summary with potential pagination info
+        log(`   📊 WSO ${wsoName} metrics: ${metrics.barbelClubsCount} clubs, ${metrics.recentMeetsCount} meets, ${metrics.activeLiftersCount} lifters, ${metrics.totalParticipations} participations`);
+
+        // Warn if participation count is suspiciously close to 1000 (might indicate truncation in old code)
+        if (metrics.totalParticipations === 1000) {
+            log(`   ⚠️ Total participations exactly 1000 - verify this is accurate and not truncated`);
+        }
+
         await updateWSOAnalytics(wsoName, metrics);
         return { success: true, metrics };
         
@@ -538,14 +616,13 @@ async function calculateCaliforniaLiftersCount(wsoName) {
     }
     
     // Get lifters from those meets
-    const { data: results, error } = await supabase
-        .from('meet_results')
-        .select('lifter_id')
-        .in('meet_id', matchingMeetIds);
-    
-    if (error) {
-        throw new Error(`Failed to count active lifters for ${wsoName}: ${error.message}`);
-    }
+    // Use pagination to handle cases where there are >1000 results
+    const results = await paginatedQuery(
+        'meet_results',
+        'lifter_id',
+        (query) => query.in('meet_id', matchingMeetIds),
+        { logProgress: matchingMeetIds.length > 10 } // Only log for large datasets
+    );
     
     // Get unique lifter IDs
     const uniqueLifters = new Set();
@@ -574,15 +651,14 @@ async function calculateCaliforniaTotalParticipations(wsoName) {
     }
     
     // Count ALL meet_results records (not distinct) from those meets
-    const { data: results, error } = await supabase
-        .from('meet_results')
-        .select('result_id')
-        .in('meet_id', matchingMeetIds);
-    
-    if (error) {
-        throw new Error(`Failed to count total participations for ${wsoName}: ${error.message}`);
-    }
-    
+    // Use pagination to handle cases where there are >1000 participations
+    const results = await paginatedQuery(
+        'meet_results',
+        'result_id',
+        (query) => query.in('meet_id', matchingMeetIds),
+        { logProgress: matchingMeetIds.length > 10 } // Only log for large datasets
+    );
+
     const count = results ? results.length : 0;
     log(`   Found ${count} total participations in ${wsoName} from ${matchingMeetIds.length} matching meets`);
     return count;
