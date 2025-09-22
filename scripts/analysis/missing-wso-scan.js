@@ -860,9 +860,47 @@ async function performWsoScan() {
         const executionSuccessful = true; // We successfully completed the scan
         const significantProgress = dataUpdates > 0 || verifiedCorrect > 0 || allResults.length > 500;
 
-        if (finalMissingCount > 1500 && !significantProgress) {
-            log(`\n⚠️  High number of unassigned meets (${finalMissingCount}) with no significant processing progress`);
+        // NEW: Check if remaining unassigned meets are legitimately unassignable (no addresses)
+        log('\n🔍 Checking addressability of remaining unassigned meets...');
+        
+        // Query for meets without addresses (cannot be assigned WSOs)
+        const { data: meetsWithoutAddresses, error: addressError } = await supabase
+            .from('meets')
+            .select('meet_id')
+            .or('address.is.null,address.eq.')
+            .limit(2000); // Safety limit
+
+        const addresslessCount = meetsWithoutAddresses ? meetsWithoutAddresses.length : 0;
+        
+        if (addressError) {
+            log(`⚠️  Could not verify addressless meets: ${addressError.message}`);
+            log(`   Proceeding with conservative exit logic...`);
+        } else {
+            log(`📊 Found ${addresslessCount.toLocaleString()} meets without addresses (legitimately unassignable)`);
+        }
+
+        // Calculate potentially problematic unassigned meets
+        const potentiallyAssignableUnassigned = Math.max(0, finalMissingCount - addresslessCount);
+        
+        log(`📊 Assignment Analysis:`);
+        log(`   Total missing WSO assignments: ${finalMissingCount.toLocaleString()}`);
+        log(`   Meets without addresses (expected): ${addresslessCount.toLocaleString()}`);
+        log(`   Potentially problematic unassigned: ${potentiallyAssignableUnassigned.toLocaleString()}`);
+
+        // Fail only if there are many potentially assignable meets that remain unassigned
+        // AND we didn't make significant progress
+        if (potentiallyAssignableUnassigned > 500 && !significantProgress) {
+            log(`
+❌ High number of potentially assignable meets remain unassigned (${potentiallyAssignableUnassigned}) with no significant processing progress`);
             log(`   This may indicate a systemic issue requiring investigation`);
+            log(`   Note: ${addresslessCount} meets without addresses are expected to remain unassigned`);
+            process.exit(1);
+        }
+
+        // Special case: if we couldn't check addresses, use more conservative threshold
+        if (addressError && finalMissingCount > 2000 && !significantProgress) {
+            log(`
+⚠️  Could not verify addressless status, but ${finalMissingCount} unassigned meets with no progress may indicate issues`);
             process.exit(1);
         }
 
