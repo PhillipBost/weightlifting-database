@@ -856,11 +856,26 @@ async function performWsoScan() {
             }
         }
         
+        // Determine exit code based on execution success vs data quality findings
+        const executionSuccessful = true; // We successfully completed the scan
+        const significantProgress = dataUpdates > 0 || verifiedCorrect > 0 || allResults.length > 500;
+
+        if (finalMissingCount > 1500 && !significantProgress) {
+            log(`\n⚠️  High number of unassigned meets (${finalMissingCount}) with no significant processing progress`);
+            log(`   This may indicate a systemic issue requiring investigation`);
+            process.exit(1);
+        }
+
+        log(`\n✅ WSO scan completed successfully`);
+        log(`   Execution successful: ${executionSuccessful}`);
+        log(`   Progress made: processed ${allResults.length} records, updated ${dataUpdates}, verified ${verifiedCorrect}`);
+
         return report;
-        
+
     } catch (error) {
-        log(`\n❌ Scan failed: ${error.message}`);
+        log(`\n❌ Scan failed with execution error: ${error.message}`);
         log(`🔍 Stack trace: ${error.stack}`);
+        log(`   This indicates a script execution failure, not just data quality issues`);
         process.exit(1);
     }
 }

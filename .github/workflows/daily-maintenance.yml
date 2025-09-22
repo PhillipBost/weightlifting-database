@@ -102,7 +102,7 @@ jobs:
           echo "🔍 Starting missing WSO scan..."
           echo "🕐 Start time: $(date +'%Y-%m-%d %H:%M:%S %Z')"
 
-          node scripts/data-quality/missing-wso-scan.js 2>&1 | tee logs/missing-wso-scan.log
+          node scripts/analysis/missing-wso-scan.js 2>&1 | tee logs/missing-wso-scan.log
 
           if [ $? -eq 0 ]; then
             echo "✅ Missing WSO scan completed successfully"
