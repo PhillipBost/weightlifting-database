@@ -21,7 +21,7 @@
  */
 
 const { createClient } = require('@supabase/supabase-js');
-const { assignWSOGeography } = require('./wso-assignment-engine');
+const { assignWSOGeography, extractStateFromAddress } = require('./wso-assignment-engine');
 const fs = require('fs');
 const path = require('path');
 require('dotenv').config({ path: '../../.env' });
@@ -548,90 +548,188 @@ async function analyzeMeets() {
     return analysis;
 }
 
+// Verify remaining unassigned meets after processing
+async function verifyAssignmentCompleteness() {
+    log('🔍 Verifying assignment completeness...');
+
+    let totalRemaining = 0;
+    let start = 0;
+    const batchSize = 1000;
+    let hasMore = true;
+
+    while (hasMore) {
+        const { data: batchData, error } = await supabase
+            .from('meets')
+            .select('meet_id, meet_name')
+            .is('wso_geography', null)
+            .range(start, start + batchSize - 1);
+
+        if (error) {
+            log(`⚠️ Error verifying completeness: ${error.message}`);
+            return -1;
+        }
+
+        if (batchData && batchData.length > 0) {
+            totalRemaining += batchData.length;
+
+            if (batchData.length <= 10) {
+                // Log details for small number of remaining meets
+                log(`  📋 Remaining unassigned meets:`);
+                batchData.forEach(meet => {
+                    log(`    - ID: ${meet.meet_id}, Name: ${meet.meet_name}`);
+                });
+            }
+
+            hasMore = batchData.length === batchSize;
+            start += batchSize;
+        } else {
+            hasMore = false;
+        }
+    }
+
+    log(`📊 Verification complete: ${totalRemaining} meets remain unassigned`);
+    return totalRemaining;
+}
+
 // Assign WSO geography to all meets
 async function assignAllMeets(dryRun = false) {
     log('🏋️ Starting meet WSO assignment process...');
-    
+
+    // Get initial count for verification
+    const initialMeets = await getMeets();
+    log(`📊 Initial unassigned meets: ${initialMeets.length}`);
+
     const [meets, historicalData] = await Promise.all([
-        getMeets(),
+        Promise.resolve(initialMeets), // Reuse the initial fetch
         getHistoricalMeetWSOData()
     ]);
-    
+
     const assignments = [];
     const summary = {
         total_processed: 0,
         successful_assignments: 0,
         failed_assignments: 0,
+        database_update_failures: 0,
         by_method: {},
         by_confidence: { high: 0, medium: 0, low: 0 },
         by_wso: {}
     };
-    
+
     log(`📊 Processing ${meets.length} meets...`);
-    
+
     for (let i = 0; i < meets.length; i++) {
         const meet = meets[i];
-        
+
         if (i % 100 === 0) {
-            log(`  📋 Progress: ${i}/${meets.length} meets processed`);
+            log(`  📋 Progress: ${i}/${meets.length} meets processed (${((i/meets.length)*100).toFixed(1)}%)`);
         }
-        
-        const assignment = await assignMeetWSO(meet, historicalData);
-        assignments.push(assignment);
-        
-        summary.total_processed++;
-        
-        if (assignment.assigned_wso) {
-            summary.successful_assignments++;
-            
-            // Count by method
-            summary.by_method[assignment.assignment_method] = 
-                (summary.by_method[assignment.assignment_method] || 0) + 1;
-            
-            // Count by confidence
-            if (assignment.confidence >= 0.8) summary.by_confidence.high++;
-            else if (assignment.confidence >= 0.6) summary.by_confidence.medium++;
-            else summary.by_confidence.low++;
-            
-            // Count by WSO
-            summary.by_wso[assignment.assigned_wso] = 
-                (summary.by_wso[assignment.assigned_wso] || 0) + 1;
-        } else {
+
+        try {
+            const assignment = await assignMeetWSO(meet, historicalData);
+            assignments.push(assignment);
+
+            summary.total_processed++;
+
+            if (assignment.assigned_wso) {
+                summary.successful_assignments++;
+
+                // Count by method
+                summary.by_method[assignment.assignment_method] =
+                    (summary.by_method[assignment.assignment_method] || 0) + 1;
+
+                // Count by confidence
+                if (assignment.confidence >= 0.8) summary.by_confidence.high++;
+                else if (assignment.confidence >= 0.6) summary.by_confidence.medium++;
+                else summary.by_confidence.low++;
+
+                // Count by WSO
+                summary.by_wso[assignment.assigned_wso] =
+                    (summary.by_wso[assignment.assigned_wso] || 0) + 1;
+            } else {
+                summary.failed_assignments++;
+            }
+        } catch (error) {
+            log(`  ❌ Error assigning WSO for meet ${meet.meet_id}: ${error.message}`);
             summary.failed_assignments++;
+
+            // Add failed assignment to track it
+            assignments.push({
+                meet_id: meet.meet_id,
+                meet_name: meet.meet_name,
+                original_wso: meet.wso_geography,
+                assigned_wso: null,
+                assignment_method: 'error',
+                confidence: 0,
+                details: {
+                    has_coordinates: !!(meet.latitude && meet.longitude),
+                    has_address: !!(meet.address || meet.city || meet.state),
+                    error_message: error.message
+                }
+            });
         }
     }
     
     // Update database if not dry run
     if (!dryRun) {
         log('💾 Updating database with WSO assignments...');
-        
+
         let updated = 0;
         let failed = 0;
-        
-        for (const assignment of assignments) {
-            if (assignment.assigned_wso) {
+        const successfulAssignments = assignments.filter(a => a.assigned_wso);
+
+        log(`  📊 Attempting to update ${successfulAssignments.length} meets in database...`);
+
+        // Process in smaller batches to avoid overwhelming the database
+        const batchSize = 50;
+        for (let i = 0; i < successfulAssignments.length; i += batchSize) {
+            const batch = successfulAssignments.slice(i, i + batchSize);
+            log(`  📦 Processing batch ${Math.floor(i/batchSize) + 1}/${Math.ceil(successfulAssignments.length/batchSize)}: ${batch.length} updates`);
+
+            for (const assignment of batch) {
                 try {
                     const { error } = await supabase
                         .from('meets')
                         .update({ wso_geography: assignment.assigned_wso })
                         .eq('meet_id', assignment.meet_id);
-                    
+
                     if (error) {
-                        log(`  ❌ Failed to update meet_id ${assignment.meet_id}: ${error.message}`);
+                        log(`    ❌ Failed to update meet_id ${assignment.meet_id}: ${error.message}`);
                         failed++;
+                        summary.database_update_failures++;
                     } else {
                         updated++;
                     }
                 } catch (error) {
-                    log(`  ❌ Error updating meet_id ${assignment.meet_id}: ${error.message}`);
+                    log(`    ❌ Error updating meet_id ${assignment.meet_id}: ${error.message}`);
                     failed++;
+                    summary.database_update_failures++;
                 }
             }
+
+            // Small delay between batches
+            if (i + batchSize < successfulAssignments.length) {
+                await new Promise(resolve => setTimeout(resolve, 100));
+            }
         }
-        
+
         log(`✅ Database update complete: ${updated} updated, ${failed} failed`);
+
+        // Verify the updates worked
+        const remainingCount = await verifyAssignmentCompleteness();
+        if (remainingCount >= 0) {
+            const expectedRemaining = initialMeets.length - updated;
+            log(`📊 Post-update verification:`);
+            log(`  - Expected remaining: ${expectedRemaining}`);
+            log(`  - Actual remaining: ${remainingCount}`);
+
+            if (remainingCount <= expectedRemaining + 10) { // Allow small discrepancy
+                log(`✅ Verification successful: remaining count is within expected range`);
+            } else {
+                log(`⚠️ Warning: More meets remain unassigned than expected`);
+            }
+        }
     }
-    
+
     return { assignments, summary };
 }
 
@@ -736,9 +834,8 @@ if (require.main === module) {
 
 module.exports = {
     assignMeetWSO,
-    extractStateFromAddress,
-    extractLocationFromMeetName,
-    assignWSO,
-    calculateConfidence,
+    getMeets,
+    verifyAssignmentCompleteness,
+    assignAllMeets,
     US_STATES
 };
