@@ -584,6 +584,7 @@ async function assignWSOGeography(meetData, supabaseClient = null, options = {})
 
     // STRATEGY 2: Address parsing for state extraction
     let extractedState = null;
+    let sourceField = null;
     const addressFields = [
         meetData.address, 
         meetData.city, 
@@ -595,6 +596,7 @@ async function assignWSOGeography(meetData, supabaseClient = null, options = {})
     for (const field of addressFields) {
         extractedState = extractStateFromAddress(field);
         if (extractedState) {
+            sourceField = field;
             assignment.details.extracted_state = extractedState;
             assignment.details.reasoning.push(`Extracted state: ${extractedState} from "${field}"`);
             break;
@@ -602,7 +604,7 @@ async function assignWSOGeography(meetData, supabaseClient = null, options = {})
     }
     
     if (extractedState) {
-        const wso = assignWSO(extractedState, meetData.address);
+        const wso = assignWSO(extractedState, sourceField);
         if (wso) {
             assignment.assigned_wso = wso;
             assignment.assignment_method = 'address_state';
@@ -630,7 +632,7 @@ async function assignWSOGeography(meetData, supabaseClient = null, options = {})
                 wso = meetLocation.value;
                 assignment.assignment_method = 'meet_name_region';
             } else if (meetLocation.type === 'state') {
-                wso = assignWSO(meetLocation.value, meetData.address);
+                wso = assignWSO(meetLocation.value, meetData.location_text || meetData.address);
                 assignment.assignment_method = 'meet_name_state';
             }
             
