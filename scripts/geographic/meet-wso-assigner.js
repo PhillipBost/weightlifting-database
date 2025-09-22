@@ -21,6 +21,7 @@
  */
 
 const { createClient } = require('@supabase/supabase-js');
+const { assignWSOGeography } = require('./wso-assignment-engine');
 const fs = require('fs');
 const path = require('path');
 require('dotenv').config({ path: '../../.env' });
@@ -360,173 +361,7 @@ function parseArguments() {
     };
 }
 
-// Extract state from address text
-function extractStateFromAddress(address) {
-    if (!address) return null;
-    
-    // Define US_STATES within function scope to avoid import issues
-    const US_STATES = {
-        'AL': 'Alabama', 'AK': 'Alaska', 'AZ': 'Arizona', 'AR': 'Arkansas', 'CA': 'California',
-        'CO': 'Colorado', 'CT': 'Connecticut', 'DE': 'Delaware', 'FL': 'Florida', 'GA': 'Georgia',
-        'HI': 'Hawaii', 'ID': 'Idaho', 'IL': 'Illinois', 'IN': 'Indiana', 'IA': 'Iowa',
-        'KS': 'Kansas', 'KY': 'Kentucky', 'LA': 'Louisiana', 'ME': 'Maine', 'MD': 'Maryland',
-        'MA': 'Massachusetts', 'MI': 'Michigan', 'MN': 'Minnesota', 'MS': 'Mississippi', 'MO': 'Missouri',
-        'MT': 'Montana', 'NE': 'Nebraska', 'NV': 'Nevada', 'NH': 'New Hampshire', 'NJ': 'New Jersey',
-        'NM': 'New Mexico', 'NY': 'New York', 'NC': 'North Carolina', 'ND': 'North Dakota', 'OH': 'Ohio',
-        'OK': 'Oklahoma', 'OR': 'Oregon', 'PA': 'Pennsylvania', 'RI': 'Rhode Island', 'SC': 'South Carolina',
-        'SD': 'South Dakota', 'TN': 'Tennessee', 'TX': 'Texas', 'UT': 'Utah', 'VT': 'Vermont',
-        'VA': 'Virginia', 'WA': 'Washington', 'WV': 'West Virginia', 'WI': 'Wisconsin', 'WY': 'Wyoming',
-        'DC': 'District of Columbia'
-    };
-    
-    // Get state names sorted by length (longest first) to prioritize "West Virginia" over "Virginia"
-    const stateNames = Object.values(US_STATES).sort((a, b) => b.length - a.length);
-    
-    // Check for full state names (prioritizing longer names, with context validation)
-    for (const state of stateNames) {
-        const stateLower = state.toLowerCase();
-        const addressLower = address.toLowerCase();
-        
-        if (addressLower.includes(stateLower)) {
-            // Additional validation: state should appear after comma or at end for proper context
-            const stateIndex = addressLower.indexOf(stateLower);
-            const beforeChar = stateIndex > 0 ? addressLower[stateIndex - 1] : '';
-            const afterIndex = stateIndex + stateLower.length;
-            const afterChar = afterIndex < addressLower.length ? addressLower[afterIndex] : '';
-            
-            // Valid contexts: after comma/space, or at word boundaries
-            if (beforeChar === ',' || beforeChar === ' ' || stateIndex === 0 || 
-                afterChar === ',' || afterChar === ' ' || afterChar === '.' || afterIndex === addressLower.length) {
-                // Extra check: avoid matching street names like "Georgia St"
-                if (afterChar === ' ') {
-                    const nextWord = addressLower.substring(afterIndex + 1).split(' ')[0].replace(/[,.]/, '');
-                    if (['st', 'street', 'ave', 'avenue', 'rd', 'road', 'blvd', 'boulevard', 'dr', 'drive', 'ln', 'lane', 'way', 'ct', 'court', 'pl', 'place'].includes(nextWord)) {
-                        continue; // Skip this match, it's likely a street name
-                    }
-                }
-                return state;
-            }
-        }
-    }
-    
-    // Check for common abbreviations after comma (avoid directional conflicts)
-    const stateAbbrevs = {
-        'AL': 'Alabama', 'AK': 'Alaska', 'AZ': 'Arizona', 'AR': 'Arkansas', 'CA': 'California',
-        'CO': 'Colorado', 'CT': 'Connecticut', 'DE': 'Delaware', 'FL': 'Florida', 'GA': 'Georgia',
-        'HI': 'Hawaii', 'ID': 'Idaho', 'IL': 'Illinois', 'IN': 'Indiana', 'IA': 'Iowa',
-        'KS': 'Kansas', 'KY': 'Kentucky', 'LA': 'Louisiana', 'ME': 'Maine', 'MD': 'Maryland',
-        'MA': 'Massachusetts', 'MI': 'Michigan', 'MN': 'Minnesota', 'MS': 'Mississippi', 'MO': 'Missouri',
-        'MT': 'Montana', 'NE': 'Nebraska', 'NV': 'Nevada', 'NH': 'New Hampshire', 'NJ': 'New Jersey',
-        'NM': 'New Mexico', 'NY': 'New York', 'NC': 'North Carolina', 'ND': 'North Dakota', 'OH': 'Ohio',
-        'OK': 'Oklahoma', 'OR': 'Oregon', 'PA': 'Pennsylvania', 'RI': 'Rhode Island', 'SC': 'South Carolina',
-        'SD': 'South Dakota', 'TN': 'Tennessee', 'TX': 'Texas', 'UT': 'Utah', 'VT': 'Vermont',
-        'VA': 'Virginia', 'WA': 'Washington', 'WV': 'West Virginia', 'WI': 'Wisconsin', 'WY': 'Wyoming',
-        'DC': 'District of Columbia'
-    };
-    
-    const directionalAbbrevs = ['NE', 'NW', 'SE', 'SW', 'N', 'S', 'E', 'W'];
-    
-    for (const [abbrev, state] of Object.entries(stateAbbrevs)) {
-        if (directionalAbbrevs.includes(abbrev)) {
-            // Only match directional abbreviations in clear state context
-            if (address.includes(', ' + abbrev + ' ') || address.includes(abbrev + ' ' + address.match(/\d{5}/)?.[0])) {
-                return state;
-            }
-        } else {
-            // Look for abbreviation after comma or with clear boundaries
-            if (address.includes(', ' + abbrev) || address.includes(' ' + abbrev + ' ') || address.endsWith(' ' + abbrev)) {
-                return state;
-            }
-        }
-    }
-    
-    return null;
-}
-
-// Extract state/region from meet name
-function extractLocationFromMeetName(meetName) {
-    if (!meetName) return null;
-    
-    // First check for regional patterns
-    for (const [region, pattern] of Object.entries(MEET_REGIONAL_PATTERNS)) {
-        if (pattern.test(meetName)) {
-            return { type: 'region', value: region };
-        }
-    }
-    
-    // Then check for state patterns
-    for (const [state, pattern] of Object.entries(MEET_LOCATION_PATTERNS)) {
-        if (pattern.test(meetName)) {
-            return { type: 'state', value: state };
-        }
-    }
-    
-    return null;
-}
-
-// Assign WSO based on state
-function assignWSO(state, address = null) {
-    if (!state) return null;
-    
-    // Special handling for California
-    if (state === 'California') {
-        if (address) {
-            const cityInfo = extractCaliforniaCity(address);
-            if (cityInfo) {
-                return `California ${cityInfo.region}`;
-            }
-        }
-        // Default to North Central if city unknown (most conservative choice)
-        return 'California North Central';
-    }
-    
-    // Find WSO that includes this state
-    for (const [wso, states] of Object.entries(WSO_MAPPINGS)) {
-        if (states.includes(state)) {
-            return wso;
-        }
-    }
-    
-    return null;
-}
-
-// Calculate confidence score for assignment
-function calculateConfidence(assignmentMethod, hasCoordinates, hasAddress, historicalMatch, meetNameMatch) {
-    let confidence = 0;
-    
-    switch (assignmentMethod) {
-        case 'coordinates':
-            confidence = 0.95;
-            break;
-        case 'address_state':
-            confidence = 0.85;
-            break;
-        case 'meet_name_region':
-            confidence = 0.90;
-            break;
-        case 'meet_name_state':
-            confidence = 0.80;
-            break;
-        case 'historical_data':
-            confidence = 0.85;
-            break;
-        case 'address_parsing':
-            confidence = 0.75;
-            break;
-        case 'fallback':
-            confidence = 0.50;
-            break;
-        default:
-            confidence = 0.30;
-    }
-    
-    // Boost confidence if multiple data sources agree
-    if (historicalMatch) confidence += 0.05;
-    if (meetNameMatch) confidence += 0.05;
-    if (hasCoordinates && hasAddress) confidence += 0.05;
-    
-    return Math.min(confidence, 1.0);
-}
+// All WSO assignment logic has been moved to the shared wso-assignment-engine.js module
 
 // Get meets from database
 async function getMeets() {
@@ -606,55 +441,53 @@ async function getHistoricalMeetWSOData() {
     return meetWSOMap;
 }
 
-// Assign WSO to a single meet
-function assignMeetWSO(meet, historicalData) {
-    const assignment = {
-        meet_id: meet.meet_id,
-        meet_name: meet.meet_name,
-        original_wso: meet.wso_geography,
-        assigned_wso: null,
-        assignment_method: null,
-        confidence: 0,
-        details: {
-            has_coordinates: !!(meet.latitude && meet.longitude),
-            has_address: !!(meet.address || meet.city || meet.state),
-            historical_match: false,
-            meet_name_match: false,
-            extracted_state: null,
-            meet_location: null,
-            reasoning: []
-        }
-    };
-    
-    // ADDRESS TEXT MATCHING APPROACH
-    // Extract state from address fields with high confidence
-    let extractedState = null;
-    const addressFields = [meet.address, meet.city, meet.state, meet.location_text, meet.street_address].filter(Boolean);
-    
-    // Check each address field for state information
-    for (const field of addressFields) {
-        extractedState = extractStateFromAddress(field);
-        if (extractedState) {
-            assignment.details.extracted_state = extractedState;
-            assignment.details.reasoning.push(`Extracted state: ${extractedState} from "${field}"`);
-            break;
-        }
+// Assign WSO to a single meet using shared assignment engine
+async function assignMeetWSO(meet, historicalData) {
+    try {
+        // Use the shared sophisticated assignment logic
+        const assignment = await assignWSOGeography(meet, supabase, {
+            includeHistoricalData: true,
+            logDetails: false
+        });
+        
+        // Transform the result to match the expected format for this script
+        return {
+            meet_id: meet.meet_id,
+            meet_name: meet.meet_name,
+            original_wso: meet.wso_geography,
+            assigned_wso: assignment.assigned_wso,
+            assignment_method: assignment.assignment_method,
+            confidence: assignment.confidence,
+            details: {
+                has_coordinates: assignment.details.has_coordinates,
+                has_address: assignment.details.has_address,
+                historical_match: assignment.details.historical_match,
+                meet_name_match: assignment.details.meet_name_match,
+                extracted_state: assignment.details.extracted_state,
+                meet_location: assignment.details.meet_location,
+                reasoning: assignment.details.reasoning
+            }
+        };
+    } catch (error) {
+        // Fallback in case of error
+        return {
+            meet_id: meet.meet_id,
+            meet_name: meet.meet_name,
+            original_wso: meet.wso_geography,
+            assigned_wso: null,
+            assignment_method: 'error',
+            confidence: 0,
+            details: {
+                has_coordinates: !!(meet.latitude && meet.longitude),
+                has_address: !!(meet.address || meet.city || meet.state),
+                historical_match: false,
+                meet_name_match: false,
+                extracted_state: null,
+                meet_location: null,
+                reasoning: [`Assignment failed: ${error.message}`]
+            }
+        };
     }
-    
-    // Only assign WSO if we have high confidence state information
-    if (extractedState) {
-        const wso = assignWSO(extractedState, meet.address);
-        if (wso) {
-            assignment.assigned_wso = wso;
-            assignment.assignment_method = 'address_state';
-            assignment.confidence = 0.90; // High confidence for address matching
-            assignment.details.reasoning.push(`Assigned WSO: ${wso} based on state: ${extractedState}`);
-        }
-    } else {
-        assignment.details.reasoning.push('No reliable state information found in address fields');
-    }
-    
-    return assignment;
 }
 
 // Analyze current meet data
@@ -742,7 +575,7 @@ async function assignAllMeets(dryRun = false) {
             log(`  📋 Progress: ${i}/${meets.length} meets processed`);
         }
         
-        const assignment = assignMeetWSO(meet, historicalData);
+        const assignment = await assignMeetWSO(meet, historicalData);
         assignments.push(assignment);
         
         summary.total_processed++;

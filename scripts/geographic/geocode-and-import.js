@@ -11,7 +11,7 @@ require('dotenv').config();
 const fs = require('fs');
 const path = require('path');
 const { createClient } = require('@supabase/supabase-js');
-const { getWSOGeographyFromCoordinates } = require('../../utils/wso-geography-lookup');
+const { assignWSOGeography } = require('./wso-assignment-engine');
 
 // Initialize Supabase client
 const supabase = createClient(
@@ -382,20 +382,28 @@ async function geocodeAndImport() {
                 log(`  ✅ Geocoded: ${geocodeResult.latitude}, ${geocodeResult.longitude}`);
                 log(`  📊 Precision score: ${geocodeResult.precision_score}`);
                 
-                // Determine WSO geography from coordinates
+                // Determine WSO geography using sophisticated assignment logic
                 try {
-                    wsoGeography = await getWSOGeographyFromCoordinates(
-                        geocodeResult.latitude, 
-                        geocodeResult.longitude, 
-                        supabase
-                    );
-                    if (wsoGeography) {
-                        log(`  🗺️ WSO Geography: ${wsoGeography}`);
+                    const meetData = {
+                        ...meet,
+                        ...addressComponents,
+                        latitude: geocodeResult.latitude,
+                        longitude: geocodeResult.longitude
+                    };
+                    
+                    const assignment = await assignWSOGeography(meetData, supabase, {
+                        includeHistoricalData: true,
+                        logDetails: false
+                    });
+                    
+                    if (assignment.assigned_wso) {
+                        wsoGeography = assignment.assigned_wso;
+                        log(`  🗺️ WSO Geography: ${wsoGeography} (method: ${assignment.assignment_method}, confidence: ${assignment.confidence.toFixed(2)})`);
                     } else {
-                        log(`  ⚠️ No WSO geography found for coordinates`);
+                        log(`  ⚠️ No WSO geography assigned - insufficient location data`);
                     }
                 } catch (error) {
-                    log(`  ⚠️ WSO geography lookup failed: ${error.message}`);
+                    log(`  ⚠️ WSO geography assignment failed: ${error.message}`);
                 }
             } else {
                 failureCount++;
