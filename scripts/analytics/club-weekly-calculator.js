@@ -140,12 +140,18 @@ async function calculateClubTotalParticipations(clubName) {
 async function updateClubAnalytics(clubName, metrics) {
     log(`💾 Updating analytics for "${clubName}"...`);
     
+    // Calculate activity_factor
+    const activityFactor = metrics.activeLiftersCount > 0 
+        ? Math.round((metrics.totalParticipations / metrics.activeLiftersCount) * 100) / 100
+        : 0;
+    
     const { error } = await supabase
         .from('clubs')
         .update({
             recent_meets_count: metrics.recentMeetsCount,
             active_lifters_count: metrics.activeLiftersCount,
-            total_participations: metrics.totalParticipations
+            total_participations: metrics.totalParticipations,
+            activity_factor: activityFactor
             // analytics_updated_at will be updated automatically by trigger
         })
         .eq('club_name', clubName);
@@ -154,7 +160,7 @@ async function updateClubAnalytics(clubName, metrics) {
         throw new Error(`Failed to update analytics for ${clubName}: ${error.message}`);
     }
     
-    log(`✅ Updated analytics for "${clubName}": ${metrics.recentMeetsCount} meets, ${metrics.activeLiftersCount} lifters, ${metrics.totalParticipations} participations`);
+    log(`✅ Updated analytics for "${clubName}": ${metrics.recentMeetsCount} meets, ${metrics.activeLiftersCount} lifters, ${metrics.totalParticipations} participations, ${activityFactor} activity_factor`);
 }
 
 async function calculateClubMetrics(clubName) {
