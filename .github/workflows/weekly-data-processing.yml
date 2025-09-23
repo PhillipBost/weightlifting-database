@@ -491,8 +491,128 @@ jobs:
             logs/club-analytics.log
           retention-days: 30
 
+  update-club-rolling-metrics:
+    needs: calculate-club-analytics
+    if: ${{ always() && !inputs.skip_analytics }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 60 # Allow time for processing all rolling metrics
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Create logs directory
+        run: mkdir -p logs
+
+      - name: Update monthly club rolling metrics
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+        run: |
+          echo "📊 Starting monthly club rolling metrics update..."
+          echo "Timestamp: $(date)"
+
+          # Update rolling metrics for the last 3 months to ensure data freshness
+          node scripts/analytics/update-monthly-club-metrics.js --last-n 3 2>&1 | tee logs/club-rolling-metrics.log
+
+          # Check if the script ran successfully
+          if [ $? -eq 0 ]; then
+            echo "✅ Club rolling metrics update completed successfully"
+          else
+            echo "❌ Club rolling metrics update failed"
+            exit 1
+          fi
+
+      - name: Validate rolling metrics
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+        run: |
+          echo "🔍 Validating rolling metrics data..."
+
+          # Quick validation of rolling metrics
+          node -e "
+            const { createClient } = require('@supabase/supabase-js');
+
+            async function validateRollingMetrics() {
+              const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SECRET_KEY);
+
+              try {
+                // Get current month metrics
+                const currentMonth = new Date().toISOString().substring(0, 7) + '-01';
+                
+                const { data: currentMetrics, error } = await supabase
+                  .from('club_rolling_metrics')
+                  .select('club_name, active_members_12mo, total_competitions_12mo')
+                  .eq('snapshot_month', currentMonth)
+                  .order('active_members_12mo', { ascending: false })
+                  .limit(5);
+
+                if (error) throw error;
+
+                console.log('📋 Top 5 clubs for current month rolling metrics:');
+                console.log('Club Name | Active Members (12mo) | Total Competitions (12mo)');
+                console.log('----------|----------------------|------------------------');
+
+                if (currentMetrics && currentMetrics.length > 0) {
+                  currentMetrics.forEach(club => {
+                    const name = club.club_name.length > 30 ? 
+                      club.club_name.substring(0, 27) + '...' : club.club_name;
+                    console.log(\`\${name.padEnd(30)} | \${String(club.active_members_12mo || 0).padStart(20)} | \${String(club.total_competitions_12mo || 0).padStart(22)}\`);
+                  });
+                } else {
+                  console.log('No current month data found');
+                }
+
+                // Count total rolling metrics records
+                const { count: totalRecords } = await supabase
+                  .from('club_rolling_metrics')
+                  .select('*', { count: 'exact', head: true });
+
+                // Count records updated today
+                const today = new Date().toISOString().split('T')[0];
+                const { count: updatedToday } = await supabase
+                  .from('club_rolling_metrics')
+                  .select('*', { count: 'exact', head: true })
+                  .gte('calculated_at', today + 'T00:00:00');
+
+                console.log(\`\n✅ Total rolling metrics records: \${totalRecords || 0}\`);
+                console.log(\`📅 Records updated today: \${updatedToday || 0}\`);
+
+                if ((updatedToday || 0) === 0) {
+                  console.log('⚠️ Warning: No rolling metrics were updated today');
+                  process.exit(1);
+                }
+
+              } catch (error) {
+                console.error('❌ Rolling metrics validation failed:', error.message);
+                process.exit(1);
+              }
+            }
+
+            validateRollingMetrics();
+          "
+
+      - name: Upload rolling metrics logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: club-rolling-metrics-logs-${{ github.run_number }}
+          path: |
+            logs/club-rolling-metrics.log
+          retention-days: 30
+
   create-summary:
-    needs: [assign-wso-geography, calculate-wso-analytics, calculate-club-analytics]
+    needs: [assign-wso-geography, calculate-wso-analytics, calculate-club-analytics, update-club-rolling-metrics]
     if: always()
     runs-on: ubuntu-latest
 
@@ -549,6 +669,22 @@ jobs:
             echo "- **Data Sources:** Meet results table (past 3 years), club associations" >> $GITHUB_STEP_SUMMARY
           else
             echo "### 🏋️ Club Analytics: ❌ Failed" >> $GITHUB_STEP_SUMMARY
+            echo "- **Status:** See workflow logs for details" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          # Club Rolling Metrics summary
+          if [ "${{ inputs.skip_analytics }}" == "true" ]; then
+            echo "### 📈 Club Rolling Metrics: Skipped" >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ needs.update-club-rolling-metrics.result }}" == "success" ]; then
+            echo "### 📈 Club Rolling Metrics: ✅ Success" >> $GITHUB_STEP_SUMMARY
+            echo "- **Status:** Successfully updated 12-month rolling membership metrics" >> $GITHUB_STEP_SUMMARY
+            echo "- **Metrics:** Active members per club (12-month rolling windows)" >> $GITHUB_STEP_SUMMARY
+            echo "- **Data Points:** 164+ monthly snapshots per club from 2012-present" >> $GITHUB_STEP_SUMMARY
+            echo "- **Purpose:** Optimized for fast graphing and trend analysis" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "### 📈 Club Rolling Metrics: ❌ Failed" >> $GITHUB_STEP_SUMMARY
             echo "- **Status:** See workflow logs for details" >> $GITHUB_STEP_SUMMARY
           fi
 
