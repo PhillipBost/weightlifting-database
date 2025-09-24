@@ -13,10 +13,11 @@ require('dotenv').config();
 
 const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SECRET_KEY);
 
-// Calculate date range for "recent" (current year + previous 2 full years)
-const currentYear = new Date().getFullYear();
-const startYear = currentYear - 2; // Two years back
-const cutoffDate = `${startYear}-01-01`; // Start of that year
+// Calculate date range for "recent" (past 12 months from current date)
+const currentDate = new Date();
+const cutoffDate = new Date(currentDate);
+cutoffDate.setFullYear(currentDate.getFullYear() - 1); // 12 months back
+const cutoffDateString = cutoffDate.toISOString().split('T')[0]; // Format as YYYY-MM-DD
 
 function log(message) {
     const timestamp = new Date().toISOString();
@@ -66,7 +67,7 @@ async function calculateClubRecentMeets(clubName) {
         .from('meet_results')
         .select('meet_id, meets!inner(Date)')
         .eq('club_name', clubName)
-        .gte('meets.Date', cutoffDate);
+        .gte('meets.Date', cutoffDateString);
     
     if (error) {
         throw new Error(`Failed to count recent meets for ${clubName}: ${error.message}`);
@@ -83,7 +84,7 @@ async function calculateClubRecentMeets(clubName) {
     }
     
     const count = uniqueMeetIds.size;
-    log(`   Found ${count} recent meets for "${clubName}" since ${cutoffDate}`);
+    log(`   Found ${count} recent meets for "${clubName}" since ${cutoffDateString}`);
     return count;
 }
 
@@ -96,7 +97,7 @@ async function calculateClubActiveLifters(clubName) {
         .from('meet_results')
         .select('lifter_id, meets!inner(Date)')
         .eq('club_name', clubName)
-        .gte('meets.Date', cutoffDate);
+        .gte('meets.Date', cutoffDateString);
     
     if (error) {
         throw new Error(`Failed to count active lifters for ${clubName}: ${error.message}`);
@@ -113,7 +114,7 @@ async function calculateClubActiveLifters(clubName) {
     }
     
     const count = uniqueLifters.size;
-    log(`   Found ${count} active lifters for "${clubName}" since ${cutoffDate}`);
+    log(`   Found ${count} active lifters for "${clubName}" since ${cutoffDateString}`);
     return count;
 }
 
@@ -126,14 +127,14 @@ async function calculateClubTotalParticipations(clubName) {
         .from('meet_results')
         .select('result_id, meets!inner(Date)')
         .eq('club_name', clubName)
-        .gte('meets.Date', cutoffDate);
+        .gte('meets.Date', cutoffDateString);
     
     if (error) {
         throw new Error(`Failed to count total participations for ${clubName}: ${error.message}`);
     }
     
     const count = results ? results.length : 0;
-    log(`   Found ${count} total participations for "${clubName}" since ${cutoffDate}`);
+    log(`   Found ${count} total participations for "${clubName}" since ${cutoffDateString}`);
     return count;
 }
 
@@ -184,7 +185,7 @@ async function calculateClubMetrics(clubName) {
 
 async function main() {
     log('🚀 Starting Club Weekly Analytics Calculation...');
-    log(`📊 Using cutoff date: ${cutoffDate} (includes ${startYear}, ${startYear + 1}, and ${currentYear})`);
+    log(`📊 Using cutoff date: ${cutoffDateString} (past 12 months from today)`);
     
     try {
         const clubs = await getAllClubs();
