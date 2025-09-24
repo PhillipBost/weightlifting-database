@@ -11,7 +11,7 @@ const supabase = createClient(
 
 async function populateClubRollingMetrics() {
     console.log('🎯 Starting club rolling metrics population...');
-    console.log('📅 Calculating 12-month rolling windows from 2012-01-01 to present');
+    console.log('📅 Calculating 12-month rolling windows with 6-month snapshots from 2012-01-01 to present');
     
     try {
         // First, let's see how many clubs we're dealing with
@@ -28,11 +28,11 @@ async function populateClubRollingMetrics() {
         
         // Execute the corrected CTE query to calculate rolling metrics
         const query = `
-            WITH monthly_snapshots AS (
+            WITH semiannual_snapshots AS (
                 SELECT generate_series(
                     '2012-01-01'::date,
                     date_trunc('month', CURRENT_DATE),
-                    '1 month'::interval
+                    '6 months'::interval
                 )::date AS snapshot_month
             ),
             club_metrics AS (
@@ -41,7 +41,7 @@ async function populateClubRollingMetrics() {
                     ms.snapshot_month,
                     COUNT(DISTINCT mr.lifter_id) as active_members_12mo,
                     COUNT(mr.result_id) as total_competitions_12mo
-                FROM monthly_snapshots ms
+                FROM semiannual_snapshots ms
                 CROSS JOIN (
                     SELECT DISTINCT club_name 
                     FROM meet_results 
@@ -73,21 +73,39 @@ async function populateClubRollingMetrics() {
         if (queryError) {
             // If RPC doesn't work, try direct query
             console.log('⚠️ RPC failed, trying direct query...');
-            const { data: directMetrics, error: directError } = await supabase
-                .from('meet_results')
-                .select(`
-                    club_name,
-                    date,
-                    lifter_id,
-                    result_id
-                `);
-                
-            if (directError) {
-                throw new Error(`Query failed: ${directError.message}`);
+
+            // Use a different approach: process clubs individually
+            console.log('📊 Using club-by-club processing approach...');
+
+            // First get all unique clubs
+            const { data: allClubsData, error: clubsError } = await supabase.rpc('exec_sql', {
+                sql: 'SELECT DISTINCT club_name FROM meet_results WHERE club_name IS NOT NULL AND club_name != \'\' ORDER BY club_name'
+            });
+
+            let allClubs;
+            if (clubsError || !allClubsData) {
+                // Fallback: try to get clubs using regular query (will be limited but better than nothing)
+                console.log('⚠️ RPC for clubs failed, using fallback method...');
+                const { data: clubsFallback, error: clubsFallbackError } = await supabase
+                    .from('meet_results')
+                    .select('club_name')
+                    .not('club_name', 'is', null)
+                    .neq('club_name', '');
+
+                if (clubsFallbackError) {
+                    throw new Error(`Failed to get clubs: ${clubsFallbackError.message}`);
+                }
+
+                allClubs = [...new Set(clubsFallback.map(c => c.club_name))].sort();
+            } else {
+                allClubs = allClubsData.map(row => row.club_name);
             }
-            
-            console.log('📊 Processing data manually...');
-            return await processDataManually(directMetrics);
+
+            console.log(`🏢 Found ${allClubs.length} unique clubs to process`);
+
+            // Now process each club individually with its own date ranges
+            console.log('📊 Processing clubs with individual queries...');
+            return await processClubsIndividually(allClubs);
         }
         
         if (!rollingMetrics || rollingMetrics.length === 0) {
@@ -147,10 +165,10 @@ async function processDataManually(meetResults) {
     
     while (currentMonth <= endDate) {
         months.push(new Date(currentMonth));
-        currentMonth.setMonth(currentMonth.getMonth() + 1);
+        currentMonth.setMonth(currentMonth.getMonth() + 6);
     }
     
-    console.log(`📅 Processing ${months.length} months of data...`);
+    console.log(`📅 Processing ${months.length} semi-annual snapshots...`);
     
     // Get unique clubs
     const clubs = [...new Set(meetResults
@@ -216,6 +234,94 @@ async function processDataManually(meetResults) {
     }
     
     console.log(`✅ Manual processing complete. Inserted ${inserted} records.`);
+}
+
+async function processClubsIndividually(allClubs) {
+    console.log('🔧 Processing clubs individually to avoid data limits...');
+
+    // Generate the 6-month snapshot dates
+    const startDate = new Date('2012-01-01');
+    const endDate = new Date();
+    endDate.setDate(1);
+
+    const currentMonth = new Date(startDate);
+    const months = [];
+
+    while (currentMonth <= endDate) {
+        months.push(new Date(currentMonth));
+        currentMonth.setMonth(currentMonth.getMonth() + 6);
+    }
+
+    console.log(`📅 Processing ${months.length} snapshot periods...`);
+    console.log(`🏢 Processing ${allClubs.length} clubs...`);
+
+    const results = [];
+    let processedClubs = 0;
+
+    for (const club of allClubs) {
+        if (processedClubs % 50 === 0) {
+            console.log(`🔄 Processing club ${processedClubs + 1}/${allClubs.length}: ${club.substring(0, 30)}...`);
+        }
+
+        for (const month of months) {
+            // Calculate 12-month window ending at this month
+            const windowStart = new Date(month);
+            windowStart.setFullYear(windowStart.getFullYear() - 1);
+            const windowEnd = month;
+
+            // Query data for this specific club and time window
+            const { data: clubData, error: clubError } = await supabase
+                .from('meet_results')
+                .select('lifter_id, result_id, date')
+                .eq('club_name', club)
+                .gte('date', windowStart.toISOString().substring(0, 10))
+                .lt('date', windowEnd.toISOString().substring(0, 10));
+
+            if (clubError) {
+                console.error(`❌ Error fetching data for ${club}:`, clubError.message);
+                continue;
+            }
+
+            const uniqueLifters = new Set((clubData || []).map(r => r.lifter_id));
+
+            results.push({
+                club_name: club,
+                snapshot_month: month.toISOString().substring(0, 10),
+                active_members_12mo: uniqueLifters.size,
+                total_competitions_12mo: (clubData || []).length,
+                unique_lifters_12mo: uniqueLifters.size
+            });
+        }
+
+        processedClubs++;
+    }
+
+    console.log(`📈 Calculated ${results.length} rolling metric records for all clubs`);
+
+    // Insert in batches
+    const batchSize = 1000;
+    let inserted = 0;
+
+    for (let i = 0; i < results.length; i += batchSize) {
+        const batch = results.slice(i, i + batchSize);
+
+        console.log(`💾 Inserting batch ${Math.floor(i / batchSize) + 1}/${Math.ceil(results.length / batchSize)}...`);
+
+        const { error: insertError } = await supabase
+            .from('club_rolling_metrics')
+            .upsert(batch, {
+                onConflict: 'club_name,snapshot_month'
+            });
+
+        if (insertError) {
+            console.error(`❌ Failed to insert batch:`, insertError.message);
+            continue;
+        }
+
+        inserted += batch.length;
+    }
+
+    console.log(`✅ Individual club processing complete. Inserted ${inserted} records.`);
 }
 
 async function showSampleResults() {

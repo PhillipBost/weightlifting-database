@@ -1,6 +1,6 @@
 -- Create table for club rolling membership metrics
--- This table stores monthly snapshots of 12-month rolling active member counts
--- Provides 164+ data points per club from 2012-01-01 to present
+-- This table stores semi-annual snapshots (Jan/Jul) of 12-month rolling active member counts
+-- Provides ~27 data points per club from 2012-01-01 to present
 
 BEGIN;
 
@@ -19,9 +19,9 @@ CREATE TABLE IF NOT EXISTS club_rolling_metrics (
 );
 
 -- Add comments for documentation
-COMMENT ON TABLE club_rolling_metrics IS 'Monthly snapshots of 12-month rolling club membership metrics';
+COMMENT ON TABLE club_rolling_metrics IS 'Semi-annual snapshots (Jan/Jul) of 12-month rolling club membership metrics';
 COMMENT ON COLUMN club_rolling_metrics.club_name IS 'Club name as it appears in meet_results';
-COMMENT ON COLUMN club_rolling_metrics.snapshot_month IS 'Month for which the rolling metrics are calculated (YYYY-MM-01)';
+COMMENT ON COLUMN club_rolling_metrics.snapshot_month IS 'Month for which the rolling metrics are calculated (YYYY-01-01 or YYYY-07-01)';
 COMMENT ON COLUMN club_rolling_metrics.active_members_12mo IS 'Number of unique lifters who competed for this club in the 12 months ending at snapshot_month';
 COMMENT ON COLUMN club_rolling_metrics.total_competitions_12mo IS 'Total number of competition participations by this club in the 12-month window';
 COMMENT ON COLUMN club_rolling_metrics.unique_lifters_12mo IS 'Number of unique lifters (same as active_members_12mo, kept for clarity)';
