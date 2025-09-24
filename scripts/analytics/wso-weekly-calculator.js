@@ -3,8 +3,8 @@
  * 
  * Calculates and updates weekly metrics for each WSO region:
  * - Number of barbell clubs associated
- * - Number of recent meets (past 2 years)
- * - Number of active lifters (past 2 years)
+ * - Number of recent meets (past 12 months)
+ * - Number of active lifters (past 12 months)
  * - Estimated population within boundaries
  * 
  * Designed to run weekly via GitHub Actions cron job
@@ -15,10 +15,11 @@ require('dotenv').config();
 
 const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SECRET_KEY);
 
-// Calculate date range for "recent" (current year + previous 2 full years)
-const currentYear = new Date().getFullYear();
-const startYear = currentYear - 2; // Two years back
-const cutoffDate = `${startYear}-01-01`; // Start of that year
+// Calculate date range for "recent" (past 12 months from current date)
+const currentDate = new Date();
+const cutoffDate = new Date(currentDate);
+cutoffDate.setFullYear(currentDate.getFullYear() - 1); // 12 months back
+const cutoffDateString = cutoffDate.toISOString().split('T')[0]; // Format as YYYY-MM-DD
 
 function log(message) {
     const timestamp = new Date().toISOString();
@@ -143,19 +144,19 @@ async function calculateRecentMeetsCount(wsoName) {
         return await calculateCaliforniaMeetsCount(wsoName);
     }
     
-    // Query meets within the past 2 years that have WSO assignment matching this region
+    // Query meets within the past 12 months that have WSO assignment matching this region
     const { data: meets, error } = await supabase
         .from('meets')
         .select('meet_id')
         .eq('wso_geography', wsoName)
-        .gte('Date', cutoffDate);
+        .gte('Date', cutoffDateString);
     
     if (error) {
         throw new Error(`Failed to count recent meets for ${wsoName}: ${error.message}`);
     }
     
     const count = meets ? meets.length : 0;
-    log(`   Found ${count} recent meets in ${wsoName} since ${cutoffDate}`);
+    log(`   Found ${count} recent meets in ${wsoName} since ${cutoffDateString}`);
     return count;
 }
 
@@ -167,14 +168,14 @@ async function calculateActiveLiftersCount(wsoName) {
         return await calculateCaliforniaLiftersCount(wsoName);
     }
     
-    // Get distinct lifters who competed in recent meets within this WSO
+    // Get distinct lifters who competed in meets within this WSO in the past 12 months
     // Use pagination to handle large WSOs with >1000 lifter participations
     const results = await paginatedQuery(
         'meet_results',
         'lifter_id, meets!inner(wso_geography, Date)',
         (query) => query
             .eq('meets.wso_geography', wsoName)
-            .gte('meets.Date', cutoffDate)
+            .gte('meets.Date', cutoffDateString)
     );
     
     // Get unique lifter IDs
@@ -188,7 +189,7 @@ async function calculateActiveLiftersCount(wsoName) {
     }
     
     const count = uniqueLifters.size;
-    log(`   Found ${count} active lifters in ${wsoName} since ${cutoffDate}`);
+    log(`   Found ${count} active lifters in ${wsoName} since ${cutoffDateString}`);
     return count;
 }
 
@@ -200,18 +201,18 @@ async function calculateTotalParticipationsCount(wsoName) {
         return await calculateCaliforniaTotalParticipations(wsoName);
     }
     
-    // Count ALL meet_results records (not distinct) within this WSO
+    // Count ALL meet_results records (not distinct) within this WSO in the past 12 months
     // Use pagination to handle large WSOs with >1000 participations
     const results = await paginatedQuery(
         'meet_results',
         'result_id, meets!inner(wso_geography, Date)',
         (query) => query
             .eq('meets.wso_geography', wsoName)
-            .gte('meets.Date', cutoffDate)
+            .gte('meets.Date', cutoffDateString)
     );
     
     const count = results ? results.length : 0;
-    log(`   Found ${count} total participations in ${wsoName} since ${cutoffDate}`);
+    log(`   Found ${count} total participations in ${wsoName} since ${cutoffDateString}`);
     return count;
 }
 
@@ -402,7 +403,7 @@ async function calculateWSOMterics(wsoName) {
 
 async function main() {
     log('🚀 Starting WSO Weekly Analytics Calculation...');
-    log(`📊 Using cutoff date: ${cutoffDate} (includes ${startYear}, ${startYear + 1}, and ${currentYear})`);
+    log(`📊 Using cutoff date: ${cutoffDateString} (past 12 months from ${currentDate.toISOString().split('T')[0]})`);
     
     try {
         const wsos = await getAllWSOs();
@@ -461,7 +462,7 @@ async function getCaliforniaMeetIds(wsoName) {
         .from('meets')
         .select('meet_id, location_text')
         .ilike('location_text', '%California%')
-        .gte('Date', cutoffDate);
+        .gte('Date', cutoffDateString);
     
     if (error || !allCaMeets) {
         return [];
@@ -570,14 +571,14 @@ async function calculateCaliforniaMeetsCount(wsoName) {
         .from('meets')
         .select('meet_id, location_text')
         .ilike('location_text', '%California%')
-        .gte('Date', cutoffDate);
+        .gte('Date', cutoffDateString);
     
     if (error) {
         throw new Error(`Failed to count recent meets for ${wsoName}: ${error.message}`);
     }
     
     if (!allCaMeets) {
-        log(`   No California meets found since ${cutoffDate}`);
+        log(`   No California meets found since ${cutoffDateString}`);
         return 0;
     }
     
@@ -605,7 +606,7 @@ async function calculateCaliforniaMeetsCount(wsoName) {
         );
     });
     
-    log(`   Found ${allCaMeets.length} total California meets since ${cutoffDate}`);
+    log(`   Found ${allCaMeets.length} total California meets since ${cutoffDateString}`);
     log(`   Matched ${matchingMeets.length} meets to ${wsoName} counties`);
     return matchingMeets.length;
 }
