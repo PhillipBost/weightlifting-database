@@ -1,0 +1,204 @@
+{
+  "metadata": {
+    "timestamp": "2025-09-27T13:19:18.986Z",
+    "script_name": "fix-wso-geography-contamination",
+    "script_version": "1.0.0",
+    "operation": "analyze"
+  },
+  "summary": {
+    "total_meets": 1000,
+    "contaminated_count": 9,
+    "valid_count": 991,
+    "contamination_rate": "0.90"
+  },
+  "contamination_by_wso": {
+    "Tennessee-Kentucky": {
+      "total_meets": 32,
+      "contaminated_meets": 8,
+      "contaminated_examples": [
+        {
+          "meet_name": "Bar Bender's Biathlon",
+          "actual_state": "North Carolina",
+          "correct_wso": "Carolina"
+        },
+        {
+          "meet_name": "Handle Barbell Open",
+          "actual_state": "North Carolina",
+          "correct_wso": "Carolina"
+        },
+        {
+          "meet_name": "2018 Stoneage Invitational",
+          "actual_state": "North Carolina",
+          "correct_wso": "Carolina"
+        },
+        {
+          "meet_name": "2013 Stoneage Invitational",
+          "actual_state": "North Carolina",
+          "correct_wso": "Carolina"
+        },
+        {
+          "meet_name": "(NUQ) Handle Barbell Invitational 2022",
+          "actual_state": "North Carolina",
+          "correct_wso": "Carolina"
+        },
+        {
+          "meet_name": "2016 Winter Gain Train Invitational",
+          "actual_state": "North Carolina",
+          "correct_wso": "Carolina"
+        },
+        {
+          "meet_name": "2014 Stoneage Weightlifting Meet",
+          "actual_state": "North Carolina",
+          "correct_wso": "Carolina"
+        },
+        {
+          "meet_name": "2016 Stoneage Invitational",
+          "actual_state": "North Carolina",
+          "correct_wso": "Carolina"
+        }
+      ],
+      "contamination_rate": "25.0"
+    },
+    "": {
+      "total_meets": 1,
+      "contaminated_meets": 1,
+      "contaminated_examples": [
+        {
+          "meet_name": "MISSOURI VALLEY Championships",
+          "actual_state": "Kansas"
+        }
+      ],
+      "contamination_rate": "100.0"
+    }
+  },
+  "contaminated_meets": [
+    {
+      "meet_id": 1966,
+      "meet_name": "Bar Bender's Biathlon",
+      "current_wso": "Tennessee-Kentucky",
+      "correct_wso": "Carolina",
+      "actual_state": "North Carolina",
+      "coordinates": {
+        "lat": 36.3024236,
+        "lng": -82.3692822
+      },
+      "location_text": "Johnson City, TN, United States",
+      "reason": "Should be Carolina based on location in North Carolina",
+      "confidence": "high"
+    },
+    {
+      "meet_id": 242,
+      "meet_name": "MISSOURI VALLEY Championships",
+      "current_wso": "",
+      "actual_state": "Kansas",
+      "coordinates": {
+        "lat": 39.7837304,
+        "lng": -100.445882
+      },
+      "location_text": ", , United States",
+      "reason": "Missing data",
+      "confidence": "high"
+    },
+    {
+      "meet_id": 824,
+      "meet_name": "Handle Barbell Open",
+      "current_wso": "Tennessee-Kentucky",
+      "correct_wso": "Carolina",
+      "actual_state": "North Carolina",
+      "coordinates": {
+        "lat": 36.3167671,
+        "lng": -82.352903
+      },
+      "location_text": "Johnson City, TN, United States",
+      "reason": "Should be Carolina based on location in North Carolina",
+      "confidence": "high"
+    },
+    {
+      "meet_id": 3543,
+      "meet_name": "2018 Stoneage Invitational",
+      "current_wso": "Tennessee-Kentucky",
+      "correct_wso": "Carolina",
+      "actual_state": "North Carolina",
+      "coordinates": {
+        "lat": 36.3167671,
+        "lng": -82.352903
+      },
+      "location_text": "Johnson City, TN, United States",
+      "reason": "Should be Carolina based on location in North Carolina",
+      "confidence": "high"
+    },
+    {
+      "meet_id": 689,
+      "meet_name": "2013 Stoneage Invitational",
+      "current_wso": "Tennessee-Kentucky",
+      "correct_wso": "Carolina",
+      "actual_state": "North Carolina",
+      "coordinates": {
+        "lat": 36.3167671,
+        "lng": -82.352903
+      },
+      "location_text": "Johnson City, TN, United States",
+      "reason": "Should be Carolina based on location in North Carolina",
+      "confidence": "high"
+    },
+    {
+      "meet_id": 5288,
+      "meet_name": "(NUQ) Handle Barbell Invitational 2022",
+      "current_wso": "Tennessee-Kentucky",
+      "correct_wso": "Carolina",
+      "actual_state": "North Carolina",
+      "coordinates": {
+        "lat": 36.3167671,
+        "lng": -82.352903
+      },
+      "location_text": "Johnson City, TN, United States",
+      "reason": "Should be Carolina based on location in North Carolina",
+      "confidence": "high"
+    },
+    {
+      "meet_id": 2305,
+      "meet_name": "2016 Winter Gain Train Invitational",
+      "current_wso": "Tennessee-Kentucky",
+      "correct_wso": "Carolina",
+      "actual_state": "North Carolina",
+      "coordinates": {
+        "lat": 36.3167671,
+        "lng": -82.352903
+      },
+      "location_text": "Johnson City, TN, United States",
+      "reason": "Should be Carolina based on location in North Carolina",
+      "confidence": "high"
+    },
+    {
+      "meet_id": 1585,
+      "meet_name": "2014 Stoneage Weightlifting Meet",
+      "current_wso": "Tennessee-Kentucky",
+      "correct_wso": "Carolina",
+      "actual_state": "North Carolina",
+      "coordinates": {
+        "lat": 36.3167671,
+        "lng": -82.352903
+      },
+      "location_text": "Johnson City, TN, United States",
+      "reason": "Should be Carolina based on location in North Carolina",
+      "confidence": "high"
+    },
+    {
+      "meet_id": 2224,
+      "meet_name": "2016 Stoneage Invitational",
+      "current_wso": "Tennessee-Kentucky",
+      "correct_wso": "Carolina",
+      "actual_state": "North Carolina",
+      "coordinates": {
+        "lat": 36.3167671,
+        "lng": -82.352903
+      },
+      "location_text": "Johnson City, TN, United States",
+      "reason": "Should be Carolina based on location in North Carolina",
+      "confidence": "high"
+    }
+  ],
+  "valid_assignments": 991,
+  "fix_results": null,
+  "update_results": null
+}
