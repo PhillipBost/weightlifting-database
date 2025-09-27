@@ -12,6 +12,7 @@ const fs = require('fs');
 const path = require('path');
 const { createClient } = require('@supabase/supabase-js');
 const { assignWSOGeography } = require('./wso-assignment-engine');
+const { validateWSOAssignment, preventContamination } = require('./wso-validation-engine');
 
 // Initialize Supabase client
 const supabase = createClient(
@@ -399,6 +400,22 @@ async function geocodeAndImport() {
                     if (assignment.assigned_wso) {
                         wsoGeography = assignment.assigned_wso;
                         log(`  🗺️ WSO Geography: ${wsoGeography} (method: ${assignment.assignment_method}, confidence: ${assignment.confidence.toFixed(2)})`);
+                        
+                        // CONTAMINATION PREVENTION: Validate the WSO assignment
+                        const validation = validateWSOAssignment(
+                            wsoGeography, 
+                            geocodeResult.latitude, 
+                            geocodeResult.longitude
+                        );
+                        
+                        if (!validation.isValid) {
+                            log(`  🚨 CONTAMINATION PREVENTED: ${validation.reason}`);
+                            log(`  🔧 Correcting: ${wsoGeography} → ${validation.correctWSO}`);
+                            wsoGeography = validation.correctWSO;
+                            log(`  ✅ Using corrected WSO: ${wsoGeography}`);
+                        } else {
+                            log(`  ✅ WSO assignment validated: ${wsoGeography} is correct`);
+                        }
                     } else {
                         log(`  ⚠️ No WSO geography assigned - insufficient location data`);
                     }
