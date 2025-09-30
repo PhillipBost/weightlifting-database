@@ -27,6 +27,54 @@ function log(message) {
 }
 
 /**
+ * Geographic filtering functions - point-in-polygon tests
+ * These match the frontend's geometric filtering approach
+ */
+
+// Helper function to check if a point is inside a GeoJSON polygon
+function pointInGeoJSON(point, geojson) {
+    if (!geojson) return false;
+
+    const [lng, lat] = point;
+
+    // Handle Feature wrapper
+    let geometry = geojson;
+    if (geojson.type === 'Feature') {
+        geometry = geojson.geometry;
+    }
+
+    if (!geometry || !geometry.coordinates) return false;
+
+    // Handle both Polygon and MultiPolygon geometries
+    if (geometry.type === 'Polygon') {
+        return pointInPolygon([lng, lat], geometry.coordinates[0]);
+    } else if (geometry.type === 'MultiPolygon') {
+        return geometry.coordinates.some((polygon) =>
+            pointInPolygon([lng, lat], polygon[0])
+        );
+    }
+
+    return false;
+}
+
+// Ray casting algorithm for point-in-polygon test
+function pointInPolygon(point, polygon) {
+    const [x, y] = point;
+    let inside = false;
+
+    for (let i = 0, j = polygon.length - 1; i < polygon.length; j = i++) {
+        const [xi, yi] = polygon[i];
+        const [xj, yj] = polygon[j];
+
+        if (((yi > y) !== (yj > y)) && (x < (xj - xi) * (y - yi) / (yj - yi) + xi)) {
+            inside = !inside;
+        }
+    }
+
+    return inside;
+}
+
+/**
  * Paginated query helper to handle Supabase's 1000-record limit
  * @param {string} tableName - The table to query
  * @param {string} selectFields - Fields to select
@@ -117,103 +165,242 @@ async function getAllWSOs() {
 async function calculateBarbelClubsCount(wsoName) {
     log(`🏋️ Calculating barbell clubs count for ${wsoName}...`);
     
-    // For California WSOs, we need to count clubs by county, not by wso_geography
-    if (wsoName.includes('California')) {
-        return await calculateCaliforniaClubsCount(wsoName);
+    // Get WSO territory boundary for geometric filtering
+    const { data: wsoData, error: wsoError } = await supabase
+        .from('wso_information')
+        .select('territory_geojson')
+        .eq('name', wsoName)
+        .single();
+    
+    if (wsoError) {
+        throw new Error(`Failed to get WSO boundary for ${wsoName}: ${wsoError.message}`);
     }
     
+    if (!wsoData || !wsoData.territory_geojson) {
+        log(`   No territory boundary found for ${wsoName}, returning 0`);
+        return 0;
+    }
+    
+    // Get ALL clubs with coordinates
     const { data: clubs, error } = await supabase
         .from('clubs')
-        .select('club_name')
-        .eq('wso_geography', wsoName);
+        .select('club_name, latitude, longitude')
+        .not('latitude', 'is', null)
+        .not('longitude', 'is', null);
     
     if (error) {
-        throw new Error(`Failed to count clubs for ${wsoName}: ${error.message}`);
+        throw new Error(`Failed to fetch clubs: ${error.message}`);
     }
     
-    const count = clubs ? clubs.length : 0;
-    log(`   Found ${count} barbell clubs in ${wsoName}`);
+    // Apply geometric filtering
+    const filteredClubs = clubs.filter(club => {
+        if (!club.latitude || !club.longitude) return false;
+        return pointInGeoJSON([club.longitude, club.latitude], wsoData.territory_geojson);
+    });
+    
+    const count = filteredClubs.length;
+    log(`   Found ${count} barbell clubs in ${wsoName} (geometric filtering)`);
     return count;
 }
 
 async function calculateRecentMeetsCount(wsoName) {
     log(`📅 Calculating recent meets count for ${wsoName}...`);
     
-    // For California WSOs, we need to count meets by county, not by wso_geography  
-    if (wsoName.includes('California')) {
-        return await calculateCaliforniaMeetsCount(wsoName);
+    // Get WSO territory boundary for geometric filtering
+    const { data: wsoData, error: wsoError } = await supabase
+        .from('wso_information')
+        .select('territory_geojson')
+        .eq('name', wsoName)
+        .single();
+    
+    if (wsoError) {
+        throw new Error(`Failed to get WSO boundary for ${wsoName}: ${wsoError.message}`);
     }
     
-    // Query meets within the past 12 months that have WSO assignment matching this region
+    if (!wsoData || !wsoData.territory_geojson) {
+        log(`   No territory boundary found for ${wsoName}, returning 0`);
+        return 0;
+    }
+    
+    // Get ALL recent meets with coordinates
     const { data: meets, error } = await supabase
         .from('meets')
-        .select('meet_id')
-        .eq('wso_geography', wsoName)
-        .gte('Date', cutoffDateString);
+        .select('meet_id, latitude, longitude')
+        .gte('Date', cutoffDateString)
+        .not('latitude', 'is', null)
+        .not('longitude', 'is', null);
     
     if (error) {
-        throw new Error(`Failed to count recent meets for ${wsoName}: ${error.message}`);
+        throw new Error(`Failed to fetch meets: ${error.message}`);
     }
     
-    const count = meets ? meets.length : 0;
-    log(`   Found ${count} recent meets in ${wsoName} since ${cutoffDateString}`);
+    // Apply geometric filtering
+    const filteredMeets = meets.filter(meet => {
+        if (!meet.latitude || !meet.longitude) return false;
+        return pointInGeoJSON([meet.longitude, meet.latitude], wsoData.territory_geojson);
+    });
+    
+    const count = filteredMeets.length;
+    log(`   Found ${count} recent meets in ${wsoName} since ${cutoffDateString} (geometric filtering)`);
     return count;
 }
 
 async function calculateActiveLiftersCount(wsoName) {
     log(`🏃 Calculating active lifters count for ${wsoName}...`);
     
-    // For California WSOs, we need to count lifters by county, not by wso_geography
-    if (wsoName.includes('California')) {
-        return await calculateCaliforniaLiftersCount(wsoName);
+    // Get WSO territory boundary for geometric filtering
+    const { data: wsoData, error: wsoError } = await supabase
+        .from('wso_information')
+        .select('territory_geojson')
+        .eq('name', wsoName)
+        .single();
+    
+    if (wsoError) {
+        throw new Error(`Failed to get WSO boundary for ${wsoName}: ${wsoError.message}`);
     }
     
-    // Get distinct lifters who competed in meets within this WSO in the past 12 months
-    // Use pagination to handle large WSOs with >1000 lifter participations
-    const results = await paginatedQuery(
-        'meet_results',
-        'lifter_id, meets!inner(wso_geography, Date)',
-        (query) => query
-            .eq('meets.wso_geography', wsoName)
-            .gte('meets.Date', cutoffDateString)
-    );
+    if (!wsoData || !wsoData.territory_geojson) {
+        log(`   No territory boundary found for ${wsoName}, returning 0`);
+        return 0;
+    }
     
-    // Get unique lifter IDs
+    // Get ALL recent meets with coordinates
+    const { data: meets, error: meetsError } = await supabase
+        .from('meets')
+        .select('meet_id, latitude, longitude')
+        .gte('Date', cutoffDateString)
+        .not('latitude', 'is', null)
+        .not('longitude', 'is', null);
+    
+    if (meetsError) {
+        throw new Error(`Failed to get meets for ${wsoName}: ${meetsError.message}`);
+    }
+    
+    if (!meets || meets.length === 0) {
+        log(`   No meets found for ${wsoName} since ${cutoffDateString}`);
+        return 0;
+    }
+    
+    // Apply geometric filtering to get meet IDs within WSO boundary
+    const filteredMeets = meets.filter(meet => {
+        if (!meet.latitude || !meet.longitude) return false;
+        return pointInGeoJSON([meet.longitude, meet.latitude], wsoData.territory_geojson);
+    });
+    
+    const meetIds = filteredMeets.map(m => m.meet_id);
+    log(`   Found ${meetIds.length} meets within ${wsoName} boundary`);
+    
+    if (meetIds.length === 0) {
+        return 0;
+    }
+    
+    // Batch the meet IDs to avoid URI length limits (max ~200 IDs per batch)
+    const batchSize = 200;
     const uniqueLifters = new Set();
-    if (results) {
-        results.forEach(result => {
-            if (result.lifter_id) {
-                uniqueLifters.add(result.lifter_id);
-            }
-        });
+    
+    for (let i = 0; i < meetIds.length; i += batchSize) {
+        const batchMeetIds = meetIds.slice(i, i + batchSize);
+        
+        // Query meet_results for this batch
+        const results = await paginatedQuery(
+            'meet_results',
+            'lifter_id',
+            (query) => query.in('meet_id', batchMeetIds)
+        );
+        
+        // Add lifter IDs to set
+        if (results) {
+            results.forEach(result => {
+                if (result.lifter_id) {
+                    uniqueLifters.add(result.lifter_id);
+                }
+            });
+        }
+        
+        if (meetIds.length > batchSize) {
+            log(`   Processed batch ${Math.floor(i / batchSize) + 1}/${Math.ceil(meetIds.length / batchSize)}: ${uniqueLifters.size} unique lifters so far`);
+        }
     }
     
     const count = uniqueLifters.size;
-    log(`   Found ${count} active lifters in ${wsoName} since ${cutoffDateString}`);
+    log(`   Found ${count} active lifters in ${wsoName} since ${cutoffDateString} (geometric filtering)`);
     return count;
 }
 
 async function calculateTotalParticipationsCount(wsoName) {
     log(`🎯 Calculating total participations count for ${wsoName}...`);
     
-    // For California WSOs, we need to count participations by county, not by wso_geography
-    if (wsoName.includes('California')) {
-        return await calculateCaliforniaTotalParticipations(wsoName);
+    // Get WSO territory boundary for geometric filtering
+    const { data: wsoData, error: wsoError } = await supabase
+        .from('wso_information')
+        .select('territory_geojson')
+        .eq('name', wsoName)
+        .single();
+    
+    if (wsoError) {
+        throw new Error(`Failed to get WSO boundary for ${wsoName}: ${wsoError.message}`);
     }
     
-    // Count ALL meet_results records (not distinct) within this WSO in the past 12 months
-    // Use pagination to handle large WSOs with >1000 participations
-    const results = await paginatedQuery(
-        'meet_results',
-        'result_id, meets!inner(wso_geography, Date)',
-        (query) => query
-            .eq('meets.wso_geography', wsoName)
-            .gte('meets.Date', cutoffDateString)
-    );
+    if (!wsoData || !wsoData.territory_geojson) {
+        log(`   No territory boundary found for ${wsoName}, returning 0`);
+        return 0;
+    }
     
-    const count = results ? results.length : 0;
-    log(`   Found ${count} total participations in ${wsoName} since ${cutoffDateString}`);
-    return count;
+    // Get ALL recent meets with coordinates
+    const { data: meets, error: meetsError } = await supabase
+        .from('meets')
+        .select('meet_id, latitude, longitude')
+        .gte('Date', cutoffDateString)
+        .not('latitude', 'is', null)
+        .not('longitude', 'is', null);
+    
+    if (meetsError) {
+        throw new Error(`Failed to get meets for ${wsoName}: ${meetsError.message}`);
+    }
+    
+    if (!meets || meets.length === 0) {
+        log(`   No meets found for ${wsoName} since ${cutoffDateString}`);
+        return 0;
+    }
+    
+    // Apply geometric filtering to get meet IDs within WSO boundary
+    const filteredMeets = meets.filter(meet => {
+        if (!meet.latitude || !meet.longitude) return false;
+        return pointInGeoJSON([meet.longitude, meet.latitude], wsoData.territory_geojson);
+    });
+    
+    const meetIds = filteredMeets.map(m => m.meet_id);
+    log(`   Found ${meetIds.length} meets within ${wsoName} boundary`);
+    
+    if (meetIds.length === 0) {
+        return 0;
+    }
+    
+    // Batch the meet IDs to avoid URI length limits (max ~200 IDs per batch)
+    const batchSize = 200;
+    let totalParticipations = 0;
+    
+    for (let i = 0; i < meetIds.length; i += batchSize) {
+        const batchMeetIds = meetIds.slice(i, i + batchSize);
+        
+        // Query meet_results for this batch
+        const results = await paginatedQuery(
+            'meet_results',
+            'result_id',
+            (query) => query.in('meet_id', batchMeetIds)
+        );
+        
+        if (results) {
+            totalParticipations += results.length;
+        }
+        
+        if (meetIds.length > batchSize) {
+            log(`   Processed batch ${Math.floor(i / batchSize) + 1}/${Math.ceil(meetIds.length / batchSize)}: ${totalParticipations} participations so far`);
+        }
+    }
+    
+    log(`   Found ${totalParticipations} total participations in ${wsoName} since ${cutoffDateString} (geometric filtering)`);
+    return totalParticipations;
 }
 
 async function calculateEstimatedPopulation(wsoName) {
@@ -241,12 +428,7 @@ async function calculateEstimatedPopulation(wsoName) {
         log(`   States data for ${wsoName}: "${wsoData.states}"`);
         log(`   Counties data for ${wsoName}: "${wsoData.counties}"`);
         
-        // Special handling for California WSOs - use county data
-        if (wsoName.includes('California')) {
-            return await calculateCaliforniaPopulation(wsoName, wsoData.counties);
-        }
-        
-        // Parse state list and calculate population for non-California WSOs
+        // Parse state list and calculate population
         let totalPopulation = 0;
         let states;
         
@@ -454,221 +636,6 @@ async function main() {
 // Handle command line execution
 if (require.main === module) {
     main();
-}
-
-async function getCaliforniaMeetIds(wsoName) {
-    // Get all California meets since cutoff date
-    const { data: allCaMeets, error } = await supabase
-        .from('meets')
-        .select('meet_id, location_text')
-        .ilike('location_text', '%California%')
-        .gte('Date', cutoffDateString);
-    
-    if (error || !allCaMeets) {
-        return [];
-    }
-    
-    // Get counties for this WSO
-    const { data: wsoData, error: wsoError } = await supabase
-        .from('wso_information')
-        .select('counties')
-        .eq('name', wsoName)
-        .single();
-    
-    if (wsoError || !wsoData?.counties) {
-        return [];
-    }
-    
-    // Filter meets by counties
-    const counties = Array.isArray(wsoData.counties) ? wsoData.counties : [];
-    const matchingMeets = allCaMeets.filter(meet => {
-        const location = (meet.location_text || '').toLowerCase();
-        return counties.some(county => 
-            location.includes(county.toLowerCase()) ||
-            location.includes(`${county.toLowerCase()} county`)
-        );
-    });
-    
-    return matchingMeets.map(meet => meet.meet_id);
-}
-
-async function calculateCaliforniaPopulation(wsoName, countiesData) {
-    log(`🌍 Calculating California population for ${wsoName}...`);
-    
-    if (!countiesData) {
-        log(`   No counties data found for ${wsoName}`);
-        return 0;
-    }
-    
-    // TODO: Implement county-based population lookup
-    // For now, return estimated values based on known CA population distribution
-    if (wsoName === 'California North Central') {
-        return 15000000; // Rough estimate for Northern California counties
-    } else if (wsoName === 'California South') {
-        return 24000000; // Rough estimate for Southern California counties  
-    }
-    
-    return 0;
-}
-
-async function calculateCaliforniaClubsCount(wsoName) {
-    log(`🏋️ Calculating California clubs count for ${wsoName}...`);
-    
-    // Get counties for this WSO
-    const { data: wsoData, error } = await supabase
-        .from('wso_information')
-        .select('counties')
-        .eq('name', wsoName)
-        .single();
-    
-    if (error || !wsoData?.counties) {
-        log(`   No counties data found for ${wsoName}`);
-        return 0;
-    }
-    
-    log(`   Counties for ${wsoName}: ${JSON.stringify(wsoData.counties)}`);
-    log(`   Counties type: ${typeof wsoData.counties}`);
-    
-    // Get all California clubs and match by county
-    const { data: allCaClubs, error: clubsError } = await supabase
-        .from('clubs')
-        .select('club_name, address, geocode_display_name')
-        .or('address.ilike.%California%,geocode_display_name.ilike.%California%');
-    
-    if (clubsError) {
-        throw new Error(`Failed to count clubs for ${wsoName}: ${clubsError.message}`);
-    }
-    
-    if (!allCaClubs) {
-        log(`   No California clubs found`);
-        return 0;
-    }
-    
-    // Filter clubs by counties for this WSO
-    const counties = Array.isArray(wsoData.counties) ? wsoData.counties : [];
-    const matchingClubs = allCaClubs.filter(club => {
-        const address = club.address || '';
-        const geocode = club.geocode_display_name || '';
-        const fullAddress = `${address} ${geocode}`.toLowerCase();
-        
-        // Check if any county name appears in the address
-        return counties.some(county => 
-            fullAddress.includes(county.toLowerCase()) ||
-            fullAddress.includes(`${county.toLowerCase()} county`)
-        );
-    });
-    
-    log(`   Found ${allCaClubs.length} total California clubs`);
-    log(`   Matched ${matchingClubs.length} clubs to ${wsoName} counties`);
-    return matchingClubs.length;
-}
-
-async function calculateCaliforniaMeetsCount(wsoName) {
-    log(`📅 Calculating California meets count for ${wsoName}...`);
-    
-    // Get all California meets and match by county
-    const { data: allCaMeets, error } = await supabase
-        .from('meets')
-        .select('meet_id, location_text')
-        .ilike('location_text', '%California%')
-        .gte('Date', cutoffDateString);
-    
-    if (error) {
-        throw new Error(`Failed to count recent meets for ${wsoName}: ${error.message}`);
-    }
-    
-    if (!allCaMeets) {
-        log(`   No California meets found since ${cutoffDateString}`);
-        return 0;
-    }
-    
-    // Get counties for this WSO
-    const { data: wsoData, error: wsoError } = await supabase
-        .from('wso_information')
-        .select('counties')
-        .eq('name', wsoName)
-        .single();
-    
-    if (wsoError || !wsoData?.counties) {
-        log(`   No counties data found for ${wsoName}`);
-        return 0;
-    }
-    
-    // Filter meets by counties for this WSO
-    const counties = Array.isArray(wsoData.counties) ? wsoData.counties : [];
-    const matchingMeets = allCaMeets.filter(meet => {
-        const location = (meet.location_text || '').toLowerCase();
-        
-        // Check if any county name appears in the location
-        return counties.some(county => 
-            location.includes(county.toLowerCase()) ||
-            location.includes(`${county.toLowerCase()} county`)
-        );
-    });
-    
-    log(`   Found ${allCaMeets.length} total California meets since ${cutoffDateString}`);
-    log(`   Matched ${matchingMeets.length} meets to ${wsoName} counties`);
-    return matchingMeets.length;
-}
-
-async function calculateCaliforniaLiftersCount(wsoName) {
-    log(`🏃 Calculating California lifters count for ${wsoName}...`);
-    
-    // First get all California meets that match this WSO's counties
-    const matchingMeetIds = await getCaliforniaMeetIds(wsoName);
-    
-    if (matchingMeetIds.length === 0) {
-        log(`   No matching California meets found for ${wsoName}`);
-        return 0;
-    }
-    
-    // Get lifters from those meets
-    // Use pagination to handle cases where there are >1000 results
-    const results = await paginatedQuery(
-        'meet_results',
-        'lifter_id',
-        (query) => query.in('meet_id', matchingMeetIds),
-        { logProgress: matchingMeetIds.length > 10 } // Only log for large datasets
-    );
-    
-    // Get unique lifter IDs
-    const uniqueLifters = new Set();
-    if (results) {
-        results.forEach(result => {
-            if (result.lifter_id) {
-                uniqueLifters.add(result.lifter_id);
-            }
-        });
-    }
-    
-    const count = uniqueLifters.size;
-    log(`   Found ${count} active lifters in ${wsoName} from ${matchingMeetIds.length} matching meets`);
-    return count;
-}
-
-async function calculateCaliforniaTotalParticipations(wsoName) {
-    log(`🎯 Calculating California total participations for ${wsoName}...`);
-    
-    // First get all California meets that match this WSO's counties
-    const matchingMeetIds = await getCaliforniaMeetIds(wsoName);
-    
-    if (matchingMeetIds.length === 0) {
-        log(`   No matching California meets found for ${wsoName}`);
-        return 0;
-    }
-    
-    // Count ALL meet_results records (not distinct) from those meets
-    // Use pagination to handle cases where there are >1000 participations
-    const results = await paginatedQuery(
-        'meet_results',
-        'result_id',
-        (query) => query.in('meet_id', matchingMeetIds),
-        { logProgress: matchingMeetIds.length > 10 } // Only log for large datasets
-    );
-
-    const count = results ? results.length : 0;
-    log(`   Found ${count} total participations in ${wsoName} from ${matchingMeetIds.length} matching meets`);
-    return count;
 }
 
 module.exports = {
