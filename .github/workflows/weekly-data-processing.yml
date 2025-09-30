@@ -131,6 +131,22 @@ jobs:
             exit 1
           fi
 
+      - name: Validate WSO state boundaries
+        if: steps.check_meets.outputs.has_unassigned_meets == 'true'
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+        run: |
+          echo "🔬 Validating WSO state boundary assignments..."
+          
+          node scripts/geographic/validate-state-boundaries.js --report 2>&1 | tee logs/wso-boundary-validation.log
+          
+          if [ $? -eq 0 ]; then
+            echo "✅ WSO boundary validation completed"
+          else
+            echo "⚠️ WSO boundary validation found issues (non-fatal, will be fixed in weekly cleanup)"
+          fi
+
       - name: Verify assignment completeness
         if: steps.check_meets.outputs.has_unassigned_meets == 'true'
         env:
@@ -267,8 +283,10 @@ jobs:
           name: wso-assignment-results-${{ github.run_number }}
           path: |
             output/meet_wso_assignments.json
+            output/wso_boundary_validation.json
             logs/wso-assignment.log
             logs/meet-wso-assigner.log
+            logs/wso-boundary-validation.log
           retention-days: 30
 
   calculate-wso-analytics:

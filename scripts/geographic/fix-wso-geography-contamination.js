@@ -40,6 +40,21 @@ const OUTPUT_FILE = path.join(OUTPUT_DIR, 'wso_geography_contamination_fix.json'
 const LOG_FILE = path.join(LOGS_DIR, 'fix-wso-geography-contamination.log');
 const SCRIPT_VERSION = '1.0.0';
 
+// US State abbreviation to full name mapping
+const US_STATES = {
+    'AL': 'Alabama', 'AK': 'Alaska', 'AZ': 'Arizona', 'AR': 'Arkansas', 'CA': 'California',
+    'CO': 'Colorado', 'CT': 'Connecticut', 'DE': 'Delaware', 'FL': 'Florida', 'GA': 'Georgia',
+    'HI': 'Hawaii', 'ID': 'Idaho', 'IL': 'Illinois', 'IN': 'Indiana', 'IA': 'Iowa',
+    'KS': 'Kansas', 'KY': 'Kentucky', 'LA': 'Louisiana', 'ME': 'Maine', 'MD': 'Maryland',
+    'MA': 'Massachusetts', 'MI': 'Michigan', 'MN': 'Minnesota', 'MS': 'Mississippi', 'MO': 'Missouri',
+    'MT': 'Montana', 'NE': 'Nebraska', 'NV': 'Nevada', 'NH': 'New Hampshire', 'NJ': 'New Jersey',
+    'NM': 'New Mexico', 'NY': 'New York', 'NC': 'North Carolina', 'ND': 'North Dakota', 'OH': 'Ohio',
+    'OK': 'Oklahoma', 'OR': 'Oregon', 'PA': 'Pennsylvania', 'RI': 'Rhode Island', 'SC': 'South Carolina',
+    'SD': 'South Dakota', 'TN': 'Tennessee', 'TX': 'Texas', 'UT': 'Utah', 'VT': 'Vermont',
+    'VA': 'Virginia', 'WA': 'Washington', 'WV': 'West Virginia', 'WI': 'Wisconsin', 'WY': 'Wyoming',
+    'DC': 'District of Columbia'
+};
+
 // WSO Geographic Mapping (from wso-assignment-engine.js)
 const WSO_MAPPINGS = {
     // Single State WSOs
@@ -75,59 +90,61 @@ const WSO_MAPPINGS = {
     'Hawaii and International': ['Hawaii']
 };
 
-// US State coordinate boundaries (from meet-wso-assigner.js)
+// US State coordinate boundaries - US Census Bureau NAD83 (2017)
+// Source: https://gist.github.com/a8dx/2340f9527af64f8ef8439366de981168
+// Last validated: 2025-09-29
 const STATE_BOUNDARIES = {
-    'Alabama': { minLat: 30.223, maxLat: 35.008, minLng: -88.473, maxLng: -84.889 },
-    'Alaska': { minLat: 54.0, maxLat: 71.4, minLng: -179.148, maxLng: -129.979 },
-    'Arizona': { minLat: 31.332, maxLat: 37.004, minLng: -114.816, maxLng: -109.045 },
-    'Arkansas': { minLat: 33.004, maxLat: 36.500, minLng: -94.618, maxLng: -89.644 },
-    'California': { minLat: 32.534, maxLat: 42.009, minLng: -124.409, maxLng: -114.131 },
-    'Colorado': { minLat: 36.993, maxLat: 41.003, minLng: -109.060, maxLng: -102.042 },
-    'Connecticut': { minLat: 40.980, maxLat: 42.050, minLng: -73.727, maxLng: -71.787 },
-    'Delaware': { minLat: 38.451, maxLat: 39.839, minLng: -75.789, maxLng: -75.049 },
-    'Florida': { minLat: 24.396, maxLat: 31.001, minLng: -87.635, maxLng: -79.974 },
-    'Georgia': { minLat: 30.356, maxLat: 35.000, minLng: -85.605, maxLng: -80.751 },
-    'Hawaii': { minLat: 18.911, maxLat: 28.402, minLng: -178.334, maxLng: -154.806 },
-    'Idaho': { minLat: 41.988, maxLat: 49.001, minLng: -117.243, maxLng: -111.044 },
-    'Illinois': { minLat: 36.970, maxLat: 42.508, minLng: -91.513, maxLng: -87.494 },
-    'Indiana': { minLat: 37.771, maxLat: 41.761, minLng: -88.098, maxLng: -84.784 },
-    'Iowa': { minLat: 40.375, maxLat: 43.502, minLng: -96.640, maxLng: -90.140 },
-    'Kansas': { minLat: 36.993, maxLat: 40.003, minLng: -102.052, maxLng: -94.588 },
-    'Kentucky': { minLat: 36.497, maxLat: 39.147, minLng: -89.571, maxLng: -81.965 },
-    'Louisiana': { minLat: 28.929, maxLat: 33.020, minLng: -94.043, maxLng: -88.817 },
-    'Maine': { minLat: 43.058, maxLat: 47.460, minLng: -71.084, maxLng: -66.885 },
-    'Maryland': { minLat: 37.911, maxLat: 39.723, minLng: -79.487, maxLng: -75.049 },
-    'Massachusetts': { minLat: 41.187, maxLat: 42.887, minLng: -73.508, maxLng: -69.858 },
-    'Michigan': { minLat: 41.696, maxLat: 48.306, minLng: -90.418, maxLng: -82.413 },
-    'Minnesota': { minLat: 43.499, maxLat: 49.384, minLng: -97.239, maxLng: -89.491 },
-    'Mississippi': { minLat: 30.173, maxLat: 35.008, minLng: -91.655, maxLng: -88.098 },
-    'Missouri': { minLat: 35.996, maxLat: 40.613, minLng: -95.774, maxLng: -89.099 },
-    'Montana': { minLat: 44.358, maxLat: 49.001, minLng: -116.050, maxLng: -104.039 },
-    'Nebraska': { minLat: 39.992, maxLat: 43.002, minLng: -104.053, maxLng: -95.308 },
-    'Nevada': { minLat: 35.002, maxLat: 42.002, minLng: -120.006, maxLng: -114.040 },
-    'New Hampshire': { minLat: 42.697, maxLat: 45.305, minLng: -72.557, maxLng: -70.610 },
-    'New Jersey': { minLat: 38.928, maxLat: 41.357, minLng: -75.560, maxLng: -73.894 },
-    'New Mexico': { minLat: 31.332, maxLat: 37.000, minLng: -109.050, maxLng: -103.002 },
-    'New York': { minLat: 40.496, maxLat: 45.016, minLng: -79.763, maxLng: -71.856 },
-    'North Carolina': { minLat: 33.752, maxLat: 36.588, minLng: -84.322, maxLng: -75.461 },
-    'North Dakota': { minLat: 45.935, maxLat: 49.001, minLng: -104.048, maxLng: -96.554 },
-    'Ohio': { minLat: 38.403, maxLat: 42.327, minLng: -84.820, maxLng: -80.519 },
-    'Oklahoma': { minLat: 33.616, maxLat: 37.002, minLng: -103.002, maxLng: -94.431 },
-    'Oregon': { minLat: 41.992, maxLat: 46.292, minLng: -124.566, maxLng: -116.463 },
-    'Pennsylvania': { minLat: 39.720, maxLat: 42.515, minLng: -80.519, maxLng: -74.690 },
-    'Rhode Island': { minLat: 41.146, maxLat: 42.019, minLng: -71.862, maxLng: -71.120 },
-    'South Carolina': { minLat: 32.034, maxLat: 35.216, minLng: -83.354, maxLng: -78.499 },
-    'South Dakota': { minLat: 42.480, maxLat: 45.945, minLng: -104.058, maxLng: -96.436 },
-    'Tennessee': { minLat: 34.983, maxLat: 36.678, minLng: -90.310, maxLng: -81.647 },
-    'Texas': { minLat: 25.837, maxLat: 36.501, minLng: -106.646, maxLng: -93.508 },
-    'Utah': { minLat: 36.998, maxLat: 42.002, minLng: -114.052, maxLng: -109.041 },
-    'Vermont': { minLat: 42.727, maxLat: 45.017, minLng: -73.437, maxLng: -71.465 },
-    'Virginia': { minLat: 36.541, maxLat: 39.466, minLng: -83.675, maxLng: -75.242 },
-    'Washington': { minLat: 45.544, maxLat: 49.002, minLng: -124.848, maxLng: -116.916 },
-    'West Virginia': { minLat: 37.202, maxLat: 40.638, minLng: -82.644, maxLng: -77.719 },
-    'Wisconsin': { minLat: 42.492, maxLat: 47.080, minLng: -92.889, maxLng: -86.805 },
-    'Wyoming': { minLat: 41.000, maxLat: 45.006, minLng: -111.056, maxLng: -104.052 },
-    'District of Columbia': { minLat: 38.791, maxLat: 38.996, minLng: -77.120, maxLng: -76.910 }
+    'Alabama': { minLat: 30.223334, maxLat: 35.008028, minLng: -88.473227, maxLng: -84.88908 },
+    'Alaska': { minLat: 51.214183, maxLat: 71.365162, minLng: -179.148909, maxLng: 179.77847 },
+    'Arizona': { minLat: 31.332177, maxLat: 37.00426, minLng: -114.81651, maxLng: -109.045223 },
+    'Arkansas': { minLat: 33.004106, maxLat: 36.4996, minLng: -94.617919, maxLng: -89.644395 },
+    'California': { minLat: 32.534156, maxLat: 42.009518, minLng: -124.409591, maxLng: -114.131211 },
+    'Colorado': { minLat: 36.992426, maxLat: 41.003444, minLng: -109.060253, maxLng: -102.041524 },
+    'Connecticut': { minLat: 40.980144, maxLat: 42.050587, minLng: -73.727775, maxLng: -71.786994 },
+    'Delaware': { minLat: 38.451013, maxLat: 39.839007, minLng: -75.788658, maxLng: -75.048939 },
+    'Florida': { minLat: 24.523096, maxLat: 31.000888, minLng: -87.634938, maxLng: -80.031362 },
+    'Georgia': { minLat: 30.357851, maxLat: 35.000659, minLng: -85.605165, maxLng: -80.839729 },
+    'Hawaii': { minLat: 18.910361, maxLat: 28.402123, minLng: -178.334698, maxLng: -154.806773 },
+    'Idaho': { minLat: 41.988057, maxLat: 49.001146, minLng: -117.243027, maxLng: -111.043564 },
+    'Illinois': { minLat: 36.970298, maxLat: 42.508481, minLng: -91.513079, maxLng: -87.494756 },
+    'Indiana': { minLat: 37.771742, maxLat: 41.760592, minLng: -88.09776, maxLng: -84.784579 },
+    'Iowa': { minLat: 40.375501, maxLat: 43.501196, minLng: -96.639704, maxLng: -90.140061 },
+    'Kansas': { minLat: 36.993016, maxLat: 40.003162, minLng: -102.051744, maxLng: -94.588413 },
+    'Kentucky': { minLat: 36.497129, maxLat: 39.147458, minLng: -89.571509, maxLng: -81.964971 },
+    'Louisiana': { minLat: 28.928609, maxLat: 33.019457, minLng: -94.043147, maxLng: -88.817017 },
+    'Maine': { minLat: 43.058401, maxLat: 47.459686, minLng: -71.083924, maxLng: -66.949895 },
+    'Maryland': { minLat: 37.911717, maxLat: 39.723043, minLng: -79.487651, maxLng: -75.048939 },
+    'Massachusetts': { minLat: 41.237964, maxLat: 42.886589, minLng: -73.508142, maxLng: -69.928393 },
+    'Michigan': { minLat: 41.696118, maxLat: 48.2388, minLng: -90.418136, maxLng: -82.413474 },
+    'Minnesota': { minLat: 43.499356, maxLat: 49.384358, minLng: -97.239209, maxLng: -89.491739 },
+    'Mississippi': { minLat: 30.173943, maxLat: 34.996052, minLng: -91.655009, maxLng: -88.097888 },
+    'Missouri': { minLat: 35.995683, maxLat: 40.61364, minLng: -95.774704, maxLng: -89.098843 },
+    'Montana': { minLat: 44.358221, maxLat: 49.00139, minLng: -116.050003, maxLng: -104.039138 },
+    'Nebraska': { minLat: 39.999998, maxLat: 43.001708, minLng: -104.053514, maxLng: -95.30829 },
+    'Nevada': { minLat: 35.001857, maxLat: 42.002207, minLng: -120.005746, maxLng: -114.039648 },
+    'New Hampshire': { minLat: 42.69699, maxLat: 45.305476, minLng: -72.557247, maxLng: -70.610621 },
+    'New Jersey': { minLat: 38.928519, maxLat: 41.357423, minLng: -75.559614, maxLng: -73.893979 },
+    'New Mexico': { minLat: 31.332301, maxLat: 37.000232, minLng: -109.050173, maxLng: -103.001964 },
+    'New York': { minLat: 40.496103, maxLat: 45.01585, minLng: -79.762152, maxLng: -71.856214 },
+    'North Carolina': { minLat: 33.842316, maxLat: 36.588117, minLng: -84.321869, maxLng: -75.460621 },
+    'North Dakota': { minLat: 45.935054, maxLat: 49.000574, minLng: -104.0489, maxLng: -96.554507 },
+    'Ohio': { minLat: 38.403202, maxLat: 42.327132, minLng: -84.820159, maxLng: -80.518693 },
+    'Oklahoma': { minLat: 33.615833, maxLat: 37.002206, minLng: -103.002565, maxLng: -94.430662 },
+    'Oregon': { minLat: 41.991794, maxLat: 46.292035, minLng: -124.566244, maxLng: -116.463504 },
+    'Pennsylvania': { minLat: 39.7198, maxLat: 42.26986, minLng: -80.519891, maxLng: -74.689516 },
+    'Rhode Island': { minLat: 41.146339, maxLat: 42.018798, minLng: -71.862772, maxLng: -71.12057 },
+    'South Carolina': { minLat: 32.0346, maxLat: 35.215402, minLng: -83.35391, maxLng: -78.54203 },
+    'South Dakota': { minLat: 42.479635, maxLat: 45.94545, minLng: -104.057698, maxLng: -96.436589 },
+    'Tennessee': { minLat: 34.982972, maxLat: 36.678118, minLng: -90.310298, maxLng: -81.6469 },
+    'Texas': { minLat: 25.837377, maxLat: 36.500704, minLng: -106.645646, maxLng: -93.508292 },
+    'Utah': { minLat: 36.997968, maxLat: 42.001567, minLng: -114.052962, maxLng: -109.041058 },
+    'Vermont': { minLat: 42.726853, maxLat: 45.016659, minLng: -73.43774, maxLng: -71.464555 },
+    'Virginia': { minLat: 36.540738, maxLat: 39.466012, minLng: -83.675395, maxLng: -75.242266 },
+    'Washington': { minLat: 45.543541, maxLat: 49.002494, minLng: -124.848974, maxLng: -116.915989 },
+    'West Virginia': { minLat: 37.201483, maxLat: 40.638801, minLng: -82.644739, maxLng: -77.719519 },
+    'Wisconsin': { minLat: 42.491983, maxLat: 47.080621, minLng: -92.888114, maxLng: -86.805415 },
+    'Wyoming': { minLat: 40.994746, maxLat: 45.005904, minLng: -111.056888, maxLng: -104.05216 },
+    'District of Columbia': { minLat: 38.791645, maxLat: 38.99511, minLng: -77.119759, maxLng: -76.909395 }
 };
 
 // Ensure directories exist
@@ -248,20 +265,38 @@ function validateWSOAssignment(currentWSO, actualState, lat, lng) {
 // Get meets with coordinates and WSO assignments for analysis
 async function getMeetsForAnalysis() {
     log('🔍 Fetching meets with coordinates and WSO assignments...');
-    
-    const { data: meets, error } = await supabase
-        .from('meets')
-        .select('meet_id, Meet, wso_geography, latitude, longitude, address, city, state, country')
-        .not('wso_geography', 'is', null)
-        .not('latitude', 'is', null)
-        .not('longitude', 'is', null);
-    
-    if (error) {
-        throw new Error(`Failed to fetch meets: ${error.message}`);
+
+    let allMeets = [];
+    let start = 0;
+    const batchSize = 1000;
+    let hasMore = true;
+
+    while (hasMore) {
+        const { data: batchData, error } = await supabase
+            .from('meets')
+            .select('meet_id, Meet, wso_geography, latitude, longitude, address, city, state, country')
+            .not('wso_geography', 'is', null)
+            .not('latitude', 'is', null)
+            .not('longitude', 'is', null)
+            .range(start, start + batchSize - 1);
+
+        if (error) {
+            throw new Error(`Failed to fetch meets: ${error.message}`);
+        }
+
+        if (batchData && batchData.length > 0) {
+            allMeets.push(...batchData);
+            log(`  Fetched batch ${Math.floor(start/batchSize) + 1}: ${batchData.length} meets (Total: ${allMeets.length})`);
+
+            hasMore = batchData.length === batchSize;
+            start += batchSize;
+        } else {
+            hasMore = false;
+        }
     }
-    
-    log(`Found ${meets.length} meets with coordinates and WSO assignments`);
-    return meets;
+
+    log(`Found ${allMeets.length} meets with coordinates and WSO assignments`);
+    return allMeets;
 }
 
 // Analyze contamination in WSO assignments
@@ -275,18 +310,35 @@ async function analyzeContamination() {
     for (const meet of meets) {
         const lat = parseFloat(meet.latitude);
         const lng = parseFloat(meet.longitude);
-        
+
         if (isNaN(lat) || isNaN(lng)) {
             continue;
         }
-        
-        // Find actual state based on coordinates
-        const actualState = findStateByCoordinates(lat, lng);
-        
+
+        // Prefer database state field over coordinate-based detection
+        // (coordinates have bounding box overlaps, state field is authoritative)
+        let actualState = null;
+
+        if (meet.state) {
+            // Normalize state name
+            const stateStr = meet.state.trim();
+            // Check if it's a full name or abbreviation
+            actualState = US_STATES[stateStr.toUpperCase()] || stateStr;
+            // Ensure it matches our state boundary keys
+            if (!STATE_BOUNDARIES[actualState]) {
+                actualState = null;
+            }
+        }
+
+        // Fall back to coordinate-based detection if state field missing/invalid
+        if (!actualState) {
+            actualState = findStateByCoordinates(lat, lng);
+        }
+
         if (!actualState) {
             continue;
         }
-        
+
         // Validate current WSO assignment
         const validation = validateWSOAssignment(meet.wso_geography, actualState, lat, lng);
         

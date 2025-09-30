@@ -15,7 +15,14 @@
       "mcp__serena__execute_shell_command",
       "mcp__serena__get_current_config",
       "mcp__serena__check_onboarding_performed",
-      "mcp__serena__onboarding"
+      "mcp__serena__onboarding",
+      "WebSearch",
+      "WebFetch(domain:gist.github.com)",
+      "WebFetch(domain:gist.githubusercontent.com)",
+      "Bash(python -c \"import yaml; yaml.safe_load(open(''weekly-data-processing.yml''))\")",
+      "Bash(python -c \"import yaml; yaml.safe_load(open(''weekly-data-quality.yml''))\")",
+      "Bash(npx js-yaml:*)",
+      "Bash(/dev/null)"
     ],
     "deny": [],
     "ask": []

@@ -69,8 +69,68 @@ function removeSuiteInfo(address) {
         .trim();
 }
 
-// Geocode address using Nominatim with fallback strategies
+// International event keywords for early detection
+const INTERNATIONAL_KEYWORDS = [
+    'world', 'olympic', 'pan am', 'panamerican', 'international',
+    'commonwealth', 'asian games', 'european', 'continental',
+    'ihf', 'iwf', 'rio', 'tokyo', 'beijing', 'athens', 'sydney'
+];
 
+// Known placeholder/default coordinates to flag
+const PLACEHOLDER_COORDINATES = [
+    { lat: 39.78, lng: -100.45, name: 'US Geographic Center (Kansas)' },
+    { lat: 39.83, lng: -98.58, name: 'US Geographic Center (alternate)' },
+    { lat: 33.66, lng: -117.87, name: 'Orange County CA Default' },
+    { lat: 37.09, lng: -95.71, name: 'US Center Point' },
+    { lat: 39.50, lng: -98.35, name: 'Lebanon KS (Geographic Center)' },
+];
+
+// Check if coordinates are placeholder/default values
+function isPlaceholderCoordinate(lat, lng) {
+    const tolerance = 0.05;
+    for (const placeholder of PLACEHOLDER_COORDINATES) {
+        if (Math.abs(lat - placeholder.lat) < tolerance && 
+            Math.abs(lng - placeholder.lng) < tolerance) {
+            return { isPlaceholder: true, name: placeholder.name };
+        }
+    }
+    return { isPlaceholder: false, name: null };
+}
+
+// Check if meet is likely an international event
+function isInternationalEvent(meetName) {
+    if (!meetName) return false;
+    const meetNameLower = meetName.toLowerCase();
+    return INTERNATIONAL_KEYWORDS.some(keyword => meetNameLower.includes(keyword));
+}
+
+// Extract state from geocoding result
+function extractStateFromGeocode(result) {
+    if (!result || !result.address) return null;
+    
+    // Try to extract state from address details
+    const addr = result.address;
+    
+    // Check various fields where state might appear
+    if (addr.state) return addr.state;
+    if (addr.state_district) return addr.state_district;
+    
+    // Parse from display_name as fallback
+    if (result.display_name) {
+        const parts = result.display_name.split(',').map(p => p.trim());
+        // State is typically the 3rd from last
+        if (parts.length >= 3) {
+            const statePart = parts[parts.length - 3];
+            // Remove ZIP if present
+            const stateMatch = statePart.match(/^([A-Za-z ]+)/);
+            if (stateMatch) return stateMatch[1].trim();
+        }
+    }
+    
+    return null;
+}
+
+// Geocode address using Nominatim with fallback strategies
 async function geocodeAddress(rawAddress) {
     // Helper function to remove country variations
     function removeCountry(addr) {
@@ -169,12 +229,31 @@ async function geocodeAddress(rawAddress) {
                 
                 if (result.lat && result.lon) {
                     const precision = calculateAddressPrecision(addressToTry, result.display_name);
+                    const lat = parseFloat(result.lat);
+                    const lng = parseFloat(result.lon);
+                    
+                    // Extract state from geocoding result
+                    const extractedState = extractStateFromGeocode(result);
+                    
+                    // Check for placeholder coordinates
+                    const placeholderCheck = isPlaceholderCoordinate(lat, lng);
+                    if (placeholderCheck.isPlaceholder) {
+                        log(`  ⚠️ WARNING: Placeholder coordinates detected (${placeholderCheck.name})`);
+                    }
+                    
                     log(`  ✅ Success with ${variantLabel} (precision: ${precision})`);
+                    if (extractedState) {
+                        log(`  📍 State extracted: ${extractedState}`);
+                    }
+                    
                     return {
-                        latitude: parseFloat(result.lat),
-                        longitude: parseFloat(result.lon),
+                        latitude: lat,
+                        longitude: lng,
                         display_name: result.display_name,
                         precision_score: precision,
+                        state_extracted: extractedState,
+                        is_placeholder: placeholderCheck.isPlaceholder,
+                        placeholder_type: placeholderCheck.name,
                         success: true,
                         attempt: i + 1
                     };
@@ -362,6 +441,34 @@ async function geocodeAndImport() {
             log(`
 🔄 [${progress}] Processing: ${meet.Meet} (meet_id: ${meet.meet_id})`);
             log(`   Original Address: ${meet.address}`);
+            
+            // Check for international events early
+            if (isInternationalEvent(meet.Meet)) {
+                log(`  🌍 International event detected - skipping WSO assignment`);
+                skipCount++;
+                
+                // Still geocode but don't assign WSO
+                const geocodeResult = await geocodeAddress(meet.address);
+                
+                if (geocodeResult.success) {
+                    const updateData = {
+                        latitude: geocodeResult.latitude,
+                        longitude: geocodeResult.longitude,
+                        state: geocodeResult.state_extracted || null,
+                        geocode_display_name: geocodeResult.display_name,
+                        geocode_precision_score: geocodeResult.precision_score,
+                        geocode_success: true,
+                        wso_geography: null, // Explicitly null for international events
+                        is_international_event: true
+                    };
+                    
+                    await updateMeetWithGeocode(meet.meet_id, updateData);
+                    log(`  ✅ Geocoded international event (no WSO assigned)`);
+                }
+                
+                await sleep(NOMINATIM_DELAY);
+                continue;
+            }
 
             // Smart update logic: check if we should update based on accuracy
             const shouldUpdate = shouldUpdateGeocode(meet);
@@ -432,12 +539,15 @@ async function geocodeAndImport() {
                 ...addressComponents,
                 latitude: geocodeResult.success ? geocodeResult.latitude : null,
                 longitude: geocodeResult.success ? geocodeResult.longitude : null,
+                state: geocodeResult.success && geocodeResult.state_extracted ? geocodeResult.state_extracted : addressComponents.state,
                 geocode_display_name: geocodeResult.success ? geocodeResult.display_name : null,
                 geocode_precision_score: geocodeResult.success ? geocodeResult.precision_score : null,
                 geocode_strategy_used: geocodeResult.success ? `attempt_${geocodeResult.attempt}` : null,
                 geocode_success: geocodeResult.success,
                 geocode_error: geocodeResult.success ? null : geocodeResult.error,
                 wso_geography: wsoGeography,
+                is_placeholder_coordinate: geocodeResult.success ? geocodeResult.is_placeholder : false,
+                placeholder_coordinate_type: geocodeResult.success ? geocodeResult.placeholder_type : null,
                 // Add elevation fields (will be populated by elevation-fetcher later)
                 elevation_meters: null,
                 elevation_source: null,
