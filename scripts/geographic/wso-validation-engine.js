@@ -154,6 +154,16 @@ function findStateByCoordinates(lat, lng) {
             return 'Michigan';
         }
         
+        if (matches.includes('Alabama') && matches.includes('Florida')) {
+            // Florida Panhandle area - latitude determines the state
+            // Florida Panhandle is below ~31°N, Alabama is above
+            if (lat < 31.0) {
+                return 'Florida';
+            } else {
+                return 'Alabama';
+            }
+        }
+        
         // Default to distance-based resolution for other conflicts
         for (const state of matches) {
             const bounds = STATE_BOUNDARIES[state];
