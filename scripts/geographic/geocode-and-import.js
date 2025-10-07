@@ -57,12 +57,8 @@ function removeSuiteInfo(address) {
     if (!address || typeof address !== 'string') return address;
     
     return address
-        // Handle comma-separated suite info: ", Suite 123"
-        .replace(/,\s*(suite|ste|apt|apartment|unit|building|bldg|floor|fl|room|rm|#)\s*[a-z0-9\-\s]+/gi, '')
-        // Handle space-separated suite info: " Suite 123" 
-        .replace(/\s+(suite|ste|apt|apartment|unit|building|bldg|floor|fl|room|rm|#)\s+[a-z0-9\-\s]+/gi, '')
-        // Handle dash-separated suite info: " - Ste F"
-        .replace(/\s*-\s*(suite|ste|apt|apartment|unit|building|bldg|floor|fl|room|rm|#)\s*[a-z0-9\-\s]+/gi, '')
+        // Handle suite/unit info - match until comma or end, not including commas in the match
+        .replace(/ (suite|ste|apt|apartment|unit|building|bldg|floor|fl|room|rm|#) [a-z0-9\-]+/gi, '')
         .replace(/\s+/g, ' ')
         .replace(/,\s*,/g, ',')
         .replace(/^,\s*|,\s*$/g, '')
@@ -171,25 +167,92 @@ async function geocodeAddress(rawAddress) {
     }
     
     // Add broader fallbacks at the end - use the CLEANEST address for fallbacks
-    addressVariants.push(
-        fallbackBase.split(',').slice(-3).join(',').trim(), // City, state, zip from clean address
-        fallbackBase.split(',').slice(-2).join(',').trim()  // State, zip from clean address
-    );
+    const cityStateFallback = fallbackBase.split(',').slice(-3).join(',').trim();
+    const stateZipFallback = fallbackBase.split(',').slice(-2).join(',').trim();
+    
+    // Also add city, state (without ZIP) as a very reliable fallback
+    const parts = fallbackBase.split(',').map(p => p.trim());
+    let cityStatOnly = '';
+    let zipOnly = '';
+    let stateOnly = '';
+    
+    if (parts.length >= 2) {
+        const lastPart = parts[parts.length - 1];
+
+        // Extract ZIP code from last part (5+ digits to handle malformed ZIPs like 352332519)
+        const zipMatch = lastPart.match(/\b(\d{5,}(?:-\d{4})?)\b/);
+        if (zipMatch) {
+            zipOnly = zipMatch[1];
+        }
+
+        // Extract state from last part (everything before ZIP if present)
+        let state = lastPart;
+        if (zipMatch) {
+            state = lastPart.replace(zipMatch[0], '').trim();
+        }
+
+        // If state is empty/invalid after ZIP removal, use second-to-last part as state
+        if (!state || state.length <= 1 || /^\d+$/.test(state)) {
+            if (parts.length >= 2) {
+                state = parts[parts.length - 2];
+            }
+        }
+
+        if (state && state.length > 1) {
+            stateOnly = state;
+
+            // Get city: if we used second-to-last as state, city is third-to-last
+            // Otherwise city is second-to-last
+            const cityIndex = (state === parts[parts.length - 2]) ? parts.length - 3 : parts.length - 2;
+
+            if (cityIndex >= 0 && parts[cityIndex]) {
+                const city = parts[cityIndex];
+                if (city) {
+                    cityStatOnly = `${city}, ${state}`;
+                }
+            }
+        }
+    }
+    
+    addressVariants.push(cityStateFallback);
+    addressVariants.push(stateZipFallback);
+    if (cityStatOnly) {
+        addressVariants.push(cityStatOnly);
+    }
+    
+    // Debug: Show what we extracted
+    console.log(`  🔍 DEBUG: Extracted from address - City: "${parts[parts.length - 3]}", State: "${parts[parts.length - 2]}", Last: "${parts[parts.length - 1]}"`);
+    console.log(`  🔍 DEBUG: cityStatOnly="${cityStatOnly}", zipOnly="${zipOnly}", stateOnly="${stateOnly}"`);
+    
+    // Add ZIP-only as fallback
+    if (zipOnly) {
+        addressVariants.push(zipOnly);
+    }
+    // Add state-only as final fallback (handles misspelled cities)
+    if (stateOnly) {
+        addressVariants.push(stateOnly);
+    }
     
     // Filter out empty/too short addresses and remove duplicates
     addressVariants = [...new Set(addressVariants.filter(addr => addr && addr.length > 2))];
+    
+    // DEBUG: Log all variants being tried
+    if (addressVariants.length > 0) {
+        log(`  📋 Will try ${addressVariants.length} address variants:`);
+        addressVariants.forEach((v, idx) => log(`     ${idx + 1}. "${v}"`));
+    }
 
     for (let i = 0; i < addressVariants.length; i++) {
         const addressToTry = addressVariants[i];
         
+        // Show if this is a suite-removed variant
+        const isSuiteRemoved = useSuiteVariants && addressToTry === addressWithoutSuite;
+        const isStreetNameOnly = addressToTry === streetNameOnly;
+        let variantLabel = `Attempt ${i + 1}`;
+        if (isSuiteRemoved) variantLabel = `Attempt ${i + 1} (suite removed)`;
+        if (isStreetNameOnly) variantLabel = `Attempt ${i + 1} (street name only)`;
+        
         try {
-            // Show if this is a suite-removed variant
-            const isSuiteRemoved = useSuiteVariants && addressToTry === addressWithoutSuite;
-            const isStreetNameOnly = addressToTry === streetNameOnly;
-            let variantLabel = `Attempt ${i + 1}`;
-            if (isSuiteRemoved) variantLabel = `Attempt ${i + 1} (suite removed)`;
-            if (isStreetNameOnly) variantLabel = `Attempt ${i + 1} (street name only)`;
-            
             log(`  🌐 ${variantLabel}: ${addressToTry.substring(0, 60)}...`);
             
             // Debug: show full address for first few
@@ -252,6 +315,7 @@ async function geocodeAddress(rawAddress) {
                         display_name: result.display_name,
                         precision_score: precision,
                         state_extracted: extractedState,
+                        state_from_address: stateOnly,
                         is_placeholder: placeholderCheck.isPlaceholder,
                         placeholder_type: placeholderCheck.name,
                         success: true,
@@ -359,7 +423,7 @@ function shouldUpdateGeocode(meet) {
         log(`   📊 Existing precision score: ${existingPrecision} (from database)`);
     }
     
-    // High precision results (6+) - skip 
+    // High precision results (6+) - skip
     if (existingPrecision >= 6) {
         return { update: false, reason: `High precision result (${existingPrecision}), skipping` };
     }
@@ -458,8 +522,8 @@ async function geocodeAndImport() {
                         geocode_display_name: geocodeResult.display_name,
                         geocode_precision_score: geocodeResult.precision_score,
                         geocode_success: true,
-                        wso_geography: null, // Explicitly null for international events
-                        is_international_event: true
+                        wso_geography: null // Explicitly null for international events
+                        // Note: is_international_event column not in schema yet
                     };
                     
                     await updateMeetWithGeocode(meet.meet_id, updateData);
@@ -523,6 +587,27 @@ async function geocodeAndImport() {
                         } else {
                             log(`  ✅ WSO assignment validated: ${wsoGeography} is correct`);
                         }
+                        
+                        // ADDRESS-BASED VALIDATION: Check if address state matches assigned WSO
+                        // This catches cases where coordinates fall in overlapping bounding boxes
+                        // but the address clearly states a different state (e.g., "Milton, Florida" vs Alabama)
+                        const addressState = geocodeResult.state_from_address || addressComponents.state;
+                        if (addressState && wsoGeography) {
+                            const { WSO_MAPPINGS, assignCorrectWSO } = require('./wso-validation-engine');
+
+                            // Get the correct WSO for the address state
+                            const addressBasedWSO = assignCorrectWSO(addressState, geocodeResult.latitude, geocodeResult.longitude);
+
+                            // Check if address-based WSO matches coordinate-based WSO
+                            if (addressBasedWSO && addressBasedWSO !== wsoGeography) {
+                                log(`  📍 Address-based validation: Address says "${addressState}" → ${addressBasedWSO}`);
+                                log(`  🔧 Overriding coordinate-based WSO: ${wsoGeography} → ${addressBasedWSO}`);
+                                wsoGeography = addressBasedWSO;
+                                log(`  ✅ Using address-based WSO: ${wsoGeography}`);
+                            } else if (addressBasedWSO === wsoGeography) {
+                                log(`  ✅ Address state "${addressState}" confirms WSO: ${wsoGeography}`);
+                            }
+                        }
                     } else {
                         log(`  ⚠️ No WSO geography assigned - insufficient location data`);
                     }
@@ -545,13 +630,8 @@ async function geocodeAndImport() {
                 geocode_strategy_used: geocodeResult.success ? `attempt_${geocodeResult.attempt}` : null,
                 geocode_success: geocodeResult.success,
                 geocode_error: geocodeResult.success ? null : geocodeResult.error,
-                wso_geography: wsoGeography,
-                is_placeholder_coordinate: geocodeResult.success ? geocodeResult.is_placeholder : false,
-                placeholder_coordinate_type: geocodeResult.success ? geocodeResult.placeholder_type : null,
-                // Add elevation fields (will be populated by elevation-fetcher later)
-                elevation_meters: null,
-                elevation_source: null,
-                elevation_fetched_at: null
+                wso_geography: wsoGeography
+                // Note: is_placeholder_coordinate, elevation fields not in schema yet
             };
             
             // Update database immediately

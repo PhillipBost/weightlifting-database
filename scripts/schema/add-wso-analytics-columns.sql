@@ -10,10 +10,10 @@ ALTER TABLE wso_information ADD COLUMN IF NOT EXISTS analytics_updated_at TIMEST
 
 -- Add comments to document the new fields
 COMMENT ON COLUMN wso_information.barbell_clubs_count IS 'Number of barbell clubs associated with this WSO region';
-COMMENT ON COLUMN wso_information.recent_meets_count IS 'Number of meets held in past 2 years within WSO boundaries';
-COMMENT ON COLUMN wso_information.active_lifters_count IS 'Number of lifters who competed in past 2 years within WSO region';
+COMMENT ON COLUMN wso_information.recent_meets_count IS 'Number of meets held in past 12 months within WSO boundaries';
+COMMENT ON COLUMN wso_information.active_lifters_count IS 'Number of lifters who competed in past 12 months within WSO region';
 COMMENT ON COLUMN wso_information.estimated_population IS 'Total population within WSO geographic boundaries';
-COMMENT ON COLUMN wso_information.total_participations IS 'Total number of athlete-meet combinations within WSO region during the past 2 years (individual participations, not unique meets)';
+COMMENT ON COLUMN wso_information.total_participations IS 'Total number of athlete-meet combinations within WSO region during the past 12 months (individual participations, not unique meets)';
 COMMENT ON COLUMN wso_information.analytics_updated_at IS 'Timestamp of last analytics calculation update';
 
 -- Create or update trigger function for analytics_updated_at

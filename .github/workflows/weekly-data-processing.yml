@@ -372,8 +372,7 @@ jobs:
                 console.log(\`📅 Updated today: \${updatedToday}\`);
 
                 if (updatedToday === 0) {
-                  console.log('⚠️ Warning: No WSOs were updated today');
-                  process.exit(1);
+                  console.log('⚠️ Warning: No WSOs were updated today - this is normal if analytics are up to date');
                 }
 
               } catch (error) {
@@ -667,7 +666,7 @@ jobs:
             echo "### 📊 WSO Analytics: ✅ Success" >> $GITHUB_STEP_SUMMARY
             echo "- **Status:** Successfully calculated WSO metrics for all regions" >> $GITHUB_STEP_SUMMARY
             echo "- **Metrics:** Barbell clubs, recent meets, active lifters, estimated population" >> $GITHUB_STEP_SUMMARY
-            echo "- **Data Sources:** Clubs table, meets table (past 2 years), meet results, demographics" >> $GITHUB_STEP_SUMMARY
+            echo "- **Data Sources:** Clubs table, meets table (past 12 months), meet results, demographics" >> $GITHUB_STEP_SUMMARY
           else
             echo "### 📊 WSO Analytics: ❌ Failed" >> $GITHUB_STEP_SUMMARY
             echo "- **Status:** See workflow logs for details" >> $GITHUB_STEP_SUMMARY
