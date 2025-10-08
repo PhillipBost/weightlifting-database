@@ -289,8 +289,66 @@ jobs:
             logs/wso-boundary-validation.log
           retention-days: 30
 
-  calculate-wso-analytics:
+  assign-club-wso-geography:
     needs: assign-wso-geography
+    if: ${{ always() && !inputs.skip_wso_assignment }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 45 # Allow time for processing all clubs
+
+    outputs:
+      clubs_processed: ${{ steps.assign_clubs.outputs.clubs_processed }}
+      assignment_successful: ${{ steps.assign_clubs.conclusion == 'success' }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Create output and logs directories
+        run: |
+          mkdir -p output logs
+
+      - name: Assign WSO geography to clubs
+        id: assign_clubs
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+        run: |
+          echo "🏋️ Starting club WSO geography assignment..."
+          echo "Timestamp: $(date)"
+
+          # Run the club WSO assignment script
+          node scripts/geographic/club-wso-assigner.js --assign 2>&1 | tee logs/club-wso-assignment.log
+
+          # Check if the script ran successfully
+          if [ $? -eq 0 ]; then
+            echo "✅ Club WSO geography assignment completed successfully"
+          else
+            echo "❌ Club WSO geography assignment failed"
+            exit 1
+          fi
+
+      - name: Upload club WSO assignment results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: club-wso-assignment-results-${{ github.run_number }}
+          path: |
+            output/club_wso_assignments.json
+            logs/club-wso-assignment.log
+            logs/club-wso-assigner.log
+          retention-days: 30
+
+  calculate-wso-analytics:
+    needs: [assign-wso-geography, assign-club-wso-geography]
     if: ${{ always() && !inputs.skip_analytics }}
     runs-on: ubuntu-latest
     timeout-minutes: 30 # Allow generous time for calculations
@@ -627,7 +685,7 @@ jobs:
           retention-days: 30
 
   create-summary:
-    needs: [assign-wso-geography, calculate-wso-analytics, calculate-club-analytics, update-club-rolling-metrics]
+    needs: [assign-wso-geography, assign-club-wso-geography, calculate-wso-analytics, calculate-club-analytics, update-club-rolling-metrics]
     if: always()
     runs-on: ubuntu-latest
 
@@ -654,6 +712,21 @@ jobs:
             fi
           else
             echo "### 🎯 WSO Geography Assignment: ❌ Failed" >> $GITHUB_STEP_SUMMARY
+            echo "- **Status:** See workflow logs for details" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          # Club WSO Assignment summary
+          if [ "${{ inputs.skip_wso_assignment }}" == "true" ]; then
+            echo "### 🏋️ Club WSO Geography Assignment: Skipped" >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ needs.assign-club-wso-geography.result }}" == "success" ]; then
+            echo "### 🏋️ Club WSO Geography Assignment: ✅ Success" >> $GITHUB_STEP_SUMMARY
+            echo "- **Status:** Successfully assigned WSO geography to all clubs using geospatial boundaries" >> $GITHUB_STEP_SUMMARY
+            echo "- **Methods:** Point-in-polygon for California, state mapping for other regions" >> $GITHUB_STEP_SUMMARY
+            echo "- **Data Sources:** Club coordinates, addresses, territory polygons" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "### 🏋️ Club WSO Geography Assignment: ❌ Failed" >> $GITHUB_STEP_SUMMARY
             echo "- **Status:** See workflow logs for details" >> $GITHUB_STEP_SUMMARY
           fi
 
