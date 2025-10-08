@@ -95,22 +95,22 @@ const CALIFORNIA_COUNTIES = {
         'Santa Clara', 'Solano', 'Sonoma',
         // Central Coast (3 counties)
         'Monterey', 'San Benito', 'Santa Cruz',
-        // Central Valley North (12 counties)
+        // Central Valley North (13 counties)
         'Sacramento', 'Yolo', 'Sutter', 'Yuba', 'Placer', 'El Dorado',
-        'Merced', 'Stanislaus', 'San Joaquin', 'Calaveras', 'Tuolumne', 'Mariposa',
+        'Merced', 'Stanislaus', 'San Joaquin', 'Calaveras', 'Tuolumne', 'Mariposa', 'Madera',
         // Central Valley - Boundary Counties (4 counties - north of SLO/Kern/SB)
         'Fresno', 'Kings', 'Tulare', 'Inyo',
-        // Northern Mountains (12 counties)
+        // Northern Mountains (13 counties)
         'Del Norte', 'Siskiyou', 'Modoc', 'Lassen', 'Shasta', 'Trinity',
-        'Tehama', 'Plumas', 'Glenn', 'Butte', 'Sierra', 'Nevada',
+        'Tehama', 'Plumas', 'Glenn', 'Butte', 'Colusa', 'Sierra', 'Nevada',
         // North Coast (3 counties)
         'Humboldt', 'Mendocino', 'Lake',
         // Sierra Nevada (3 counties)
         'Amador', 'Alpine', 'Mono'
     ],
     'South': [
-        // Southern Coast (3 counties)
-        'San Luis Obispo', 'Santa Barbara', 'Ventura',
+        // Southern Coast (4 counties)
+        'San Luis Obispo', 'Santa Barbara', 'Ventura', 'San Diego',
         // LA Metro (2 counties)
         'Los Angeles', 'Orange',
         // Inland Empire & Desert (3 counties)
