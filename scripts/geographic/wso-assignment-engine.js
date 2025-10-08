@@ -17,6 +17,8 @@
  */
 
 const { createClient } = require('@supabase/supabase-js');
+const booleanPointInPolygon = require('@turf/boolean-point-in-polygon').default;
+const { point } = require('@turf/helpers');
 
 // US State mappings
 const US_STATES = {
@@ -271,9 +273,43 @@ function findStateByCoordinates(lat, lng) {
 }
 
 /**
- * Assign California WSO based on coordinates 
+ * Assign California WSO based on coordinates using actual territory polygons
+ * 
+ * @param {number} lat - Latitude
+ * @param {number} lng - Longitude
+ * @param {Object} supabaseClient - Supabase client instance (optional)
+ * @returns {Promise<string|null>} - WSO name or null if couldn't determine
  */
-function assignCaliforniaWSO(lat, lng) {
+async function assignCaliforniaWSO(lat, lng, supabaseClient = null) {
+    // If we have a supabase client, use actual territory polygons for precise checking
+    if (supabaseClient) {
+        try {
+            // Fetch California WSO territories from database
+            const { data: californiaWSOs, error } = await supabaseClient
+                .from('wso_information')
+                .select('name, territory_geojson')
+                .in('name', ['California North Central', 'California South']);
+            
+            if (!error && californiaWSOs && californiaWSOs.length === 2) {
+                const testPoint = point([lng, lat]);
+                
+                // Check which territory contains this point
+                for (const wso of californiaWSOs) {
+                    if (wso.territory_geojson && wso.territory_geojson.geometry) {
+                        const isInside = booleanPointInPolygon(testPoint, wso.territory_geojson);
+                        if (isInside) {
+                            return wso.name;
+                        }
+                    }
+                }
+            }
+        } catch (error) {
+            // Fall through to fallback logic if geospatial check fails
+            console.warn(`Geospatial check failed, using fallback: ${error.message}`);
+        }
+    }
+    
+    // Fallback: Simple latitude-based division
     // North Central: roughly above 35.5°N
     // South: below 35.5°N
     if (lat >= 35.5) {
@@ -404,18 +440,32 @@ function extractLocationFromMeetName(meetName) {
 /**
  * Assign WSO based on state
  */
-function assignWSO(state, address = null) {
+async function assignWSO(state, address = null, lat = null, lng = null, supabaseClient = null) {
     if (!state) return null;
     
     // Special handling for California
     if (state === 'California') {
+        // Priority 1: Use coordinates with polygon checking if available
+        if (lat && lng && supabaseClient) {
+            const wso = await assignCaliforniaWSO(lat, lng, supabaseClient);
+            if (wso) return wso;
+        }
+        
+        // Priority 2: Use city name matching from address
         if (address) {
             const cityInfo = extractCaliforniaCity(address);
             if (cityInfo) {
                 return `California ${cityInfo.region}`;
             }
         }
-        // Default to North Central if city unknown (most conservative choice)
+        
+        // Fallback: Use simple latitude check if coordinates available
+        if (lat && lng) {
+            const wso = await assignCaliforniaWSO(lat, lng, null);
+            if (wso) return wso;
+        }
+        
+        // Default to North Central if no other method works (most conservative choice)
         return 'California North Central';
     }
     
@@ -563,9 +613,9 @@ async function assignWSOGeography(meetData, supabaseClient = null, options = {})
             if (state) {
                 let wso;
                 if (state === 'California') {
-                    wso = assignCaliforniaWSO(lat, lng);
+                    wso = await assignCaliforniaWSO(lat, lng, supabaseClient);
                 } else {
-                    wso = assignWSO(state);
+                    wso = await assignWSO(state, null, lat, lng, supabaseClient);
                 }
                 
                 if (wso) {
@@ -606,7 +656,10 @@ async function assignWSOGeography(meetData, supabaseClient = null, options = {})
     }
     
     if (extractedState) {
-        const wso = assignWSO(extractedState, sourceField);
+        // Pass coordinates if available for California polygon checking
+        const lat = meetData.latitude ? parseFloat(meetData.latitude) : null;
+        const lng = meetData.longitude ? parseFloat(meetData.longitude) : null;
+        const wso = await assignWSO(extractedState, sourceField, lat, lng, supabaseClient);
         if (wso) {
             assignment.assigned_wso = wso;
             assignment.assignment_method = 'address_state';
@@ -634,7 +687,9 @@ async function assignWSOGeography(meetData, supabaseClient = null, options = {})
                 wso = meetLocation.value;
                 assignment.assignment_method = 'meet_name_region';
             } else if (meetLocation.type === 'state') {
-                wso = assignWSO(meetLocation.value, meetData.location_text || meetData.address);
+                const lat = meetData.latitude ? parseFloat(meetData.latitude) : null;
+                const lng = meetData.longitude ? parseFloat(meetData.longitude) : null;
+                wso = await assignWSO(meetLocation.value, meetData.location_text || meetData.address, lat, lng, supabaseClient);
                 assignment.assignment_method = 'meet_name_state';
             }
             

@@ -20,6 +20,7 @@
  */
 
 const { createClient } = require('@supabase/supabase-js');
+const { assignWSOGeography } = require('./wso-assignment-engine');
 const fs = require('fs');
 const path = require('path');
 require('dotenv').config();
@@ -149,99 +150,7 @@ function parseArguments() {
     };
 }
 
-// Extract state from address text
-function extractStateFromAddress(address) {
-    if (!address) return null;
-    
-    // Directional abbreviations commonly used in street addresses that conflict with state codes
-    const DIRECTIONAL_ABBREVS = ['NE', 'NW', 'SE', 'SW', 'N', 'S', 'E', 'W'];
-    
-    // First, look for full state names (highest priority)
-    for (const fullName of Object.values(US_STATES)) {
-        const namePattern = new RegExp(`\b${fullName.replace(/\s/g, '\s+')}\b`, 'i');
-        if (namePattern.test(address)) {
-            return fullName;
-        }
-    }
-    
-    // Then look for state abbreviations (with proper context filtering)
-    for (const [abbrev, fullName] of Object.entries(US_STATES)) {
-        // Skip directional abbreviations unless they appear in clear state context
-        if (DIRECTIONAL_ABBREVS.includes(abbrev)) {
-            // Only match if state abbreviation appears after comma (clear state context)
-            const contextPattern = new RegExp(`,\s*${abbrev}\s+|${abbrev}\s+\d{5}`, 'i');
-            if (contextPattern.test(address)) {
-                return fullName;
-            }
-        } else {
-            // For non-directional abbreviations, use standard word boundary matching
-            const abbrevPattern = new RegExp(`\b${abbrev}\b|,\s*${abbrev}\b|\s${abbrev}$`, 'i');
-            if (abbrevPattern.test(address)) {
-                return fullName;
-            }
-        }
-    }
-    
-    return null;
-}
-
-// Assign WSO based on state
-function assignWSO(state, county = null) {
-    if (!state) return null;
-    
-    // Special handling for California
-    if (state === 'California') {
-        if (county) {
-            if (CALIFORNIA_COUNTIES['North Central'].includes(county)) {
-                return 'California North Central';
-            } else if (CALIFORNIA_COUNTIES['South'].includes(county)) {
-                return 'California South';
-            }
-        }
-        // Default to North Central if county unknown
-        return 'California North Central';
-    }
-    
-    // Find WSO that includes this state
-    for (const [wso, states] of Object.entries(WSO_MAPPINGS)) {
-        if (states.includes(state)) {
-            return wso;
-        }
-    }
-    
-    return null;
-}
-
-// Calculate confidence score for assignment
-function calculateConfidence(assignmentMethod, hasCoordinates, hasAddress, historicalMatch) {
-    let confidence = 0;
-    
-    switch (assignmentMethod) {
-        case 'coordinates':
-            confidence = 0.95;
-            break;
-        case 'address_state':
-            confidence = 0.85;
-            break;
-        case 'address_parsing':
-            confidence = 0.75;
-            break;
-        case 'historical_data':
-            confidence = 0.90;
-            break;
-        case 'fallback':
-            confidence = 0.50;
-            break;
-        default:
-            confidence = 0.30;
-    }
-    
-    // Boost confidence if multiple data sources agree
-    if (historicalMatch) confidence += 0.05;
-    if (hasCoordinates && hasAddress) confidence += 0.05;
-    
-    return Math.min(confidence, 1.0);
-}
+// Note: extractStateFromAddress, assignWSO, and calculateConfidence are now imported from wso-assignment-engine.js
 
 // Get clubs from database
 async function getClubs() {
@@ -321,76 +230,58 @@ async function getHistoricalWSOData() {
     return clubWSOMap;
 }
 
-// Assign WSO to a single club
-function assignClubWSO(club, historicalData) {
-    const assignment = {
-        club_name: club.club_name,
-        original_wso: club.wso_geography,
-        assigned_wso: null,
-        assignment_method: null,
-        confidence: 0,
-        details: {
-            has_coordinates: !!(club.latitude && club.longitude),
-            has_address: !!(club.address || club.city || club.state),
-            historical_match: false,
-            extracted_state: null,
-            reasoning: []
+// Assign WSO to a single club using shared assignment engine
+async function assignClubWSO(club, historicalData, supabaseClient) {
+    try {
+        // Use the shared sophisticated assignment logic
+        const assignment = await assignWSOGeography(club, supabaseClient, {
+            includeHistoricalData: false, // We'll handle historical data ourselves
+            logDetails: false
+        });
+        
+        // Check if historical data matches for confidence boost
+        const historicalWSO = historicalData[club.club_name];
+        if (historicalWSO && historicalWSO === assignment.assigned_wso) {
+            assignment.details.historical_match = true;
+            assignment.confidence = Math.min(assignment.confidence + 0.05, 1.0);
+            assignment.details.reasoning.push(`Historical data confirms: ${historicalWSO}`);
+        } else if (historicalWSO && assignment.assigned_wso) {
+            // Historical data conflicts with assignment
+            assignment.details.reasoning.push(`Note: Historical WSO was ${historicalWSO}, but coordinates/address indicate ${assignment.assigned_wso}`);
         }
-    };
-    
-    // Method 1: Historical data (highest priority for validation)
-    if (historicalData[club.club_name]) {
-        assignment.assigned_wso = historicalData[club.club_name];
-        assignment.assignment_method = 'historical_data';
-        assignment.details.historical_match = true;
-        assignment.details.reasoning.push(`Historical WSO: ${historicalData[club.club_name]}`);
-    }
-    
-    // Method 2: Parse club address/location
-    let extractedState = null;
-    const addressFields = [club.address, club.city, club.state, club.location].filter(Boolean);
-    
-    for (const field of addressFields) {
-        extractedState = extractStateFromAddress(field);
-        if (extractedState) {
-            assignment.details.extracted_state = extractedState;
-            assignment.details.reasoning.push(`Extracted state: ${extractedState} from "${field}"`);
-            break;
-        }
-    }
-    
-    // If no historical data, use extracted state
-    if (!assignment.assigned_wso && extractedState) {
-        const wso = assignWSO(extractedState);
-        if (wso) {
-            assignment.assigned_wso = wso;
-            assignment.assignment_method = 'address_state';
-            assignment.details.reasoning.push(`Assigned WSO: ${wso} based on state: ${extractedState}`);
-        }
-    }
-    
-    // Method 3: Fallback - try to extract from club name
-    if (!assignment.assigned_wso) {
-        const extractedFromName = extractStateFromAddress(club.club_name);
-        if (extractedFromName) {
-            const wso = assignWSO(extractedFromName);
-            if (wso) {
-                assignment.assigned_wso = wso;
-                assignment.assignment_method = 'club_name_parsing';
-                assignment.details.reasoning.push(`Assigned WSO: ${wso} from club name: ${club.club_name}`);
+        
+        // Transform the result to match the expected format for this script
+        return {
+            club_name: club.club_name,
+            original_wso: club.wso_geography,
+            assigned_wso: assignment.assigned_wso,
+            assignment_method: assignment.assignment_method,
+            confidence: assignment.confidence,
+            details: {
+                has_coordinates: assignment.details.has_coordinates,
+                has_address: assignment.details.has_address,
+                historical_match: assignment.details.historical_match,
+                extracted_state: assignment.details.extracted_state,
+                reasoning: assignment.details.reasoning
             }
-        }
+        };
+    } catch (error) {
+        // Fallback in case of error
+        return {
+            club_name: club.club_name,
+            original_wso: club.wso_geography,
+            assigned_wso: null,
+            assignment_method: 'error',
+            confidence: 0,
+            details: {
+                has_coordinates: !!(club.latitude && club.longitude),
+                has_address: !!(club.address || club.city || club.state),
+                historical_match: false,
+                extracted_state: null,
+                reasoning: [`Assignment failed: ${error.message}`]
+            }
+        };
     }
-    
-    // Calculate confidence score
-    assignment.confidence = calculateConfidence(
-        assignment.assignment_method,
-        assignment.details.has_coordinates,
-        assignment.details.has_address,
-        assignment.details.historical_match
-    );
-    
-    return assignment;
 }
 
 // Analyze current club data
@@ -469,7 +360,7 @@ async function assignAllClubs(dryRun = false) {
             log(`  📋 Progress: ${i}/${clubs.length} clubs processed`);
         }
         
-        const assignment = assignClubWSO(club, historicalData);
+        const assignment = await assignClubWSO(club, historicalData, supabase);
         assignments.push(assignment);
         
         summary.total_processed++;
