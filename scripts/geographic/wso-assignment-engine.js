@@ -236,40 +236,43 @@ const MEET_REGIONAL_PATTERNS = {
 };
 
 /**
- * Find state by coordinates using boundary checking
- * Uses point-in-polygon checking against WSO territories for accuracy
- * Falls back to bounding box only if point-in-polygon fails
+ * Find WSO by coordinates using point-in-polygon
+ * Direct WSO lookup - bypasses state mapping entirely
  */
-async function findStateByCoordinates(lat, lng, supabaseClient = null) {
-    // Try point-in-polygon check first if supabase client available
-    if (supabaseClient) {
-        try {
-            const { data: wsos, error } = await supabaseClient
-                .from('wso_information')
-                .select('name, states, territory_geojson')
-                .not('territory_geojson', 'is', null);
+async function findWSOByCoordinates(lat, lng, supabaseClient) {
+    if (!supabaseClient) return null;
 
-            if (!error && wsos) {
-                const testPoint = point([lng, lat]);
+    try {
+        const { data: wsos, error } = await supabaseClient
+            .from('wso_information')
+            .select('name, territory_geojson')
+            .not('territory_geojson', 'is', null);
 
-                // Check which WSO territory contains this point
-                for (const wso of wsos) {
-                    if (wso.territory_geojson && wso.territory_geojson.geometry) {
-                        const isInside = booleanPointInPolygon(testPoint, wso.territory_geojson);
-                        if (isInside && wso.states && wso.states.length > 0) {
-                            // Return the first state in the WSO
-                            // For multi-state WSOs, this is good enough for assignment
-                            return wso.states[0];
-                        }
+        if (!error && wsos) {
+            const testPoint = point([lng, lat]);
+
+            // Check which WSO territory contains this point
+            for (const wso of wsos) {
+                if (wso.territory_geojson && wso.territory_geojson.geometry) {
+                    const isInside = booleanPointInPolygon(testPoint, wso.territory_geojson);
+                    if (isInside) {
+                        return wso.name;
                     }
                 }
             }
-        } catch (error) {
-            console.warn(`Point-in-polygon check failed, falling back to bounding box: ${error.message}`);
         }
+    } catch (error) {
+        console.warn(`Point-in-polygon WSO lookup failed: ${error.message}`);
     }
 
-    // Fallback: Use bounding box (less accurate for border regions)
+    return null;
+}
+
+/**
+ * Find state by coordinates using bounding box checking
+ * Only used for validation - NOT for primary assignment
+ */
+function findStateByCoordinates(lat, lng) {
     const matches = [];
     for (const [state, bounds] of Object.entries(STATE_BOUNDARIES)) {
         if (lat >= bounds.minLat && lat <= bounds.maxLat &&
@@ -643,7 +646,7 @@ async function assignWSOGeography(meetData, supabaseClient = null, options = {})
         
         if (!isNaN(lat) && !isNaN(lng)) {
             // Get state from coordinates (ground truth)
-            const coordState = await findStateByCoordinates(lat, lng, supabaseClient);
+            const coordState = findStateByCoordinates(lat, lng);
             
             // Get state from state field (may be wrong)
             const stateValue = meetData.state.trim();
@@ -727,30 +730,46 @@ async function assignWSOGeography(meetData, supabaseClient = null, options = {})
         }
     }
 
-    // STRATEGY 2: Coordinate-based assignment
+    // STRATEGY 2: Coordinate-based assignment (using point-in-polygon)
     if (meetData.latitude && meetData.longitude) {
         const lat = parseFloat(meetData.latitude);
         const lng = parseFloat(meetData.longitude);
-        
+
         if (!isNaN(lat) && !isNaN(lng)) {
-            const state = await findStateByCoordinates(lat, lng, supabaseClient);
-            if (state) {
-                let wso;
-                if (state === 'California') {
-                    wso = await assignCaliforniaWSO(lat, lng, supabaseClient);
-                } else {
-                    wso = await assignWSO(state, null, lat, lng, supabaseClient);
+            // Try direct WSO lookup via point-in-polygon first
+            const wso = await findWSOByCoordinates(lat, lng, supabaseClient);
+
+            if (wso) {
+                assignment.assigned_wso = wso;
+                assignment.assignment_method = 'coordinates_polygon';
+                assignment.confidence = calculateConfidence('coordinates', true, assignment.details.has_address, false, false);
+                assignment.details.reasoning.push(`Point-in-polygon: ${wso} (${lat}, ${lng})`);
+
+                if (logDetails) {
+                    console.log(`✅ Point-in-polygon assignment: ${wso}`);
                 }
-                
-                if (wso) {
-                    assignment.assigned_wso = wso;
-                    assignment.assignment_method = 'coordinates';
-                    assignment.confidence = calculateConfidence('coordinates', true, assignment.details.has_address, false, false);
+                return assignment;
+            }
+
+            // Fallback to state-based lookup if point-in-polygon fails
+            const state = findStateByCoordinates(lat, lng);
+            if (state) {
+                let fallbackWSO;
+                if (state === 'California') {
+                    fallbackWSO = await assignCaliforniaWSO(lat, lng, supabaseClient);
+                } else {
+                    fallbackWSO = await assignWSO(state, null, lat, lng, supabaseClient);
+                }
+
+                if (fallbackWSO) {
+                    assignment.assigned_wso = fallbackWSO;
+                    assignment.assignment_method = 'coordinates_bbox';
+                    assignment.confidence = calculateConfidence('coordinates', true, assignment.details.has_address, false, false) * 0.9; // Slightly lower confidence
                     assignment.details.extracted_state = state;
-                    assignment.details.reasoning.push(`Coordinate-based: ${state} → ${wso} (${lat}, ${lng})`);
-                    
+                    assignment.details.reasoning.push(`Bounding box fallback: ${state} → ${fallbackWSO} (${lat}, ${lng})`);
+
                     if (logDetails) {
-                        console.log(`✅ Coordinate assignment: ${wso}`);
+                        console.log(`✅ Bounding box assignment: ${fallbackWSO}`);
                     }
                     return assignment;
                 }
@@ -865,6 +884,7 @@ module.exports = {
     assignWSO,
     calculateConfidence,
     findStateByCoordinates,
+    findWSOByCoordinates,
     assignCaliforniaWSO,
     extractCaliforniaCity,
     getHistoricalMeetWSOData,
