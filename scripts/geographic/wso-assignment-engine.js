@@ -285,6 +285,8 @@ async function findStateByCoordinates(lat, lng, supabaseClient = null) {
     // Multiple matches or no matches - can't determine state reliably
     return null;
 }
+
+/**
  * Assign California WSO based on coordinates using actual territory polygons
  * 
  * @param {number} lat - Latitude
