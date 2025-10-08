@@ -346,41 +346,26 @@ function extractCaliforniaCity(address) {
 
 /**
  * Extract state from address text
+ * 
+ * Strategy:
+ * 1. Look for state abbreviations after the LAST comma (most reliable)
+ * 2. Look for full state names after the LAST comma  
+ * 3. Avoid matching city names that happen to match state names (Washington, UT; Nevada, IA)
  */
 function extractStateFromAddress(address) {
     if (!address) return null;
     
-    // Get state names sorted by length (longest first) to prioritize "West Virginia" over "Virginia"
-    const stateNames = Object.values(US_STATES).sort((a, b) => b.length - a.length);
+    // Split by commas and get the last few components
+    // Typical format: "123 Main St, CityName, StateName, Country, ZIP"
+    const parts = address.split(',').map(p => p.trim());
     
-    // Check for full state names (prioritizing longer names, with context validation)
-    for (const state of stateNames) {
-        const stateLower = state.toLowerCase();
-        const addressLower = address.toLowerCase();
-        
-        if (addressLower.includes(stateLower)) {
-            // Additional validation: state should appear after comma or at end for proper context
-            const stateIndex = addressLower.indexOf(stateLower);
-            const beforeChar = stateIndex > 0 ? addressLower[stateIndex - 1] : '';
-            const afterIndex = stateIndex + stateLower.length;
-            const afterChar = afterIndex < addressLower.length ? addressLower[afterIndex] : '';
-            
-            // Valid contexts: after comma/space, or at word boundaries
-            if (beforeChar === ',' || beforeChar === ' ' || stateIndex === 0 || 
-                afterChar === ',' || afterChar === ' ' || afterChar === '.' || afterIndex === addressLower.length) {
-                // Extra check: avoid matching street names like "Georgia St"
-                if (afterChar === ' ') {
-                    const nextWord = addressLower.substring(afterIndex + 1).split(' ')[0].replace(/[,.]/, '');
-                    if (['st', 'street', 'ave', 'avenue', 'rd', 'road', 'blvd', 'boulevard', 'dr', 'drive', 'ln', 'lane', 'way', 'ct', 'court', 'pl', 'place'].includes(nextWord)) {
-                        continue; // Skip this match, it's likely a street name
-                    }
-                }
-                return state;
-            }
-        }
+    if (parts.length < 2) {
+        // No commas - can't reliably extract state
+        return null;
     }
     
-    // Check for common abbreviations after comma (avoid directional conflicts)
+    // Check the last 2-3 components for state (working backwards)
+    // This avoids matching city names like "Washington" in "Washington, Utah"
     const stateAbbrevs = {
         'AL': 'Alabama', 'AK': 'Alaska', 'AZ': 'Arizona', 'AR': 'Arkansas', 'CA': 'California',
         'CO': 'Colorado', 'CT': 'Connecticut', 'DE': 'Delaware', 'FL': 'Florida', 'GA': 'Georgia',
@@ -395,17 +380,46 @@ function extractStateFromAddress(address) {
         'DC': 'District of Columbia'
     };
     
-    const directionalAbbrevs = ['NE', 'NW', 'SE', 'SW', 'N', 'S', 'E', 'W'];
+    // Strategy 1: Look for 2-letter abbreviations in the last few components
+    // Check last 3 parts (could be: State, Country, ZIP or City, State, Country)
+    for (let i = Math.max(0, parts.length - 3); i < parts.length; i++) {
+        const part = parts[i].trim();
+        
+        // Check if this part is a 2-letter state abbreviation
+        // Exclude "United States" checks and country names
+        if (part.length === 2 && stateAbbrevs[part.toUpperCase()]) {
+            return stateAbbrevs[part.toUpperCase()];
+        }
+        
+        // Check if first word is a 2-letter abbreviation (e.g., "CA 90210")
+        const firstWord = part.split(' ')[0];
+        if (firstWord.length === 2 && stateAbbrevs[firstWord.toUpperCase()]) {
+            return stateAbbrevs[firstWord.toUpperCase()];
+        }
+    }
     
-    for (const [abbrev, state] of Object.entries(stateAbbrevs)) {
-        if (directionalAbbrevs.includes(abbrev)) {
-            // Only match directional abbreviations in clear state context
-            if (address.includes(', ' + abbrev + ' ') || address.includes(abbrev + ' ' + address.match(/\d{5}/)?.[0])) {
+    // Strategy 2: Look for full state names in the last few components
+    // Get state names sorted by length (longest first) to prioritize "West Virginia" over "Virginia"
+    const stateNames = Object.values(US_STATES).sort((a, b) => b.length - a.length);
+    
+    // Only check the last 3 components to avoid city name confusion
+    for (let i = Math.max(0, parts.length - 3); i < parts.length; i++) {
+        const part = parts[i].trim().toLowerCase();
+        
+        // Skip if this looks like a country name
+        if (part.includes('united states') || part.includes('usa') || part === 'america') {
+            continue;
+        }
+        
+        // Check if this part matches a full state name
+        for (const state of stateNames) {
+            if (part === state.toLowerCase()) {
                 return state;
             }
-        } else {
-            // Look for abbreviation after comma or with clear boundaries
-            if (address.includes(', ' + abbrev) || address.includes(' ' + abbrev + ' ') || address.endsWith(' ' + abbrev)) {
+            
+            // Also check if first word matches (e.g., "California 90210")
+            const firstWord = part.split(' ')[0];
+            if (firstWord === state.toLowerCase()) {
                 return state;
             }
         }
@@ -606,16 +620,75 @@ async function assignWSOGeography(meetData, supabaseClient = null, options = {})
         }
     }
 
-    // STRATEGY 1: Explicit state field (highest priority for clubs to avoid border issues)
-    // Check if there's a direct 'state' field that we can trust
-    if (meetData.state) {
-        const stateValue = meetData.state.trim();
+    // STRATEGY 1: Explicit state field (with coordinate validation)
+    // If coordinates exist, validate state field against them
+    // This catches bad address data like "Playa Del Rey, Washington" when coords say California
+    if (meetData.state && meetData.latitude && meetData.longitude) {
+        const lat = parseFloat(meetData.latitude);
+        const lng = parseFloat(meetData.longitude);
         
-        // For state field, check both direct lookup and extraction
-        // Direct lookup handles bare abbreviations like "NY", "CA", etc.
+        if (!isNaN(lat) && !isNaN(lng)) {
+            // Get state from coordinates (ground truth)
+            const coordState = findStateByCoordinates(lat, lng);
+            
+            // Get state from state field (may be wrong)
+            const stateValue = meetData.state.trim();
+            let extractedState = US_STATES[stateValue.toUpperCase()] || null;
+            if (!extractedState) {
+                extractedState = extractStateFromAddress(stateValue);
+            }
+            
+            // If they disagree, trust coordinates (95% confidence) over state field
+            if (coordState && extractedState && coordState !== extractedState) {
+                assignment.details.reasoning.push(`State field says ${extractedState} but coordinates say ${coordState} - trusting coordinates`);
+                
+                // Use coordinate-based state instead
+                let wso;
+                if (coordState === 'California') {
+                    wso = await assignCaliforniaWSO(lat, lng, supabaseClient);
+                } else {
+                    wso = await assignWSO(coordState, null, lat, lng, supabaseClient);
+                }
+                
+                if (wso) {
+                    assignment.assigned_wso = wso;
+                    assignment.assignment_method = 'coordinates_validated';
+                    assignment.confidence = calculateConfidence('coordinates', true, true, false, false);
+                    assignment.details.extracted_state = coordState;
+                    assignment.details.reasoning.push(`Coordinate-validated: ${coordState} → ${wso} (${lat}, ${lng})`);
+                    
+                    if (logDetails) {
+                        console.log(`✅ Coordinate-validated assignment: ${wso}`);
+                    }
+                    return assignment;
+                }
+            }
+            
+            // If they agree, use the state field (highest confidence)
+            if (coordState && extractedState && coordState === extractedState) {
+                const wso = await assignWSO(extractedState, meetData.address || meetData.city, lat, lng, supabaseClient);
+                
+                if (wso) {
+                    assignment.assigned_wso = wso;
+                    assignment.assignment_method = 'state_field_validated';
+                    assignment.confidence = calculateConfidence('state_field', true, true, false, false);
+                    assignment.details.extracted_state = extractedState;
+                    assignment.details.reasoning.push(`State field validated by coordinates: ${extractedState} → ${wso}`);
+                    
+                    if (logDetails) {
+                        console.log(`✅ Validated state field assignment: ${wso}`);
+                    }
+                    return assignment;
+                }
+            }
+        }
+    }
+    
+    // STRATEGY 1B: State field without coordinates (use cautiously)
+    if (meetData.state && (!meetData.latitude || !meetData.longitude)) {
+        const stateValue = meetData.state.trim();
         let extractedState = US_STATES[stateValue.toUpperCase()] || null;
         
-        // If not found, try extraction (handles full names and abbreviations with context)
         if (!extractedState) {
             extractedState = extractStateFromAddress(stateValue);
         }

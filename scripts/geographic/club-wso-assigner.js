@@ -20,7 +20,7 @@
  */
 
 const { createClient } = require('@supabase/supabase-js');
-const { assignWSOGeography } = require('./wso-assignment-engine');
+const { assignWSOGeography, extractStateFromAddress } = require('./wso-assignment-engine');
 const fs = require('fs');
 const path = require('path');
 require('dotenv').config();
@@ -519,8 +519,5 @@ if (require.main === module) {
 
 module.exports = {
     assignClubWSO,
-    extractStateFromAddress,
-    assignWSO,
-    calculateConfidence,
     US_STATES
 };
