@@ -23,7 +23,8 @@
       "Bash(python -c \"import yaml; yaml.safe_load(open(''weekly-data-quality.yml''))\")",
       "Bash(npx js-yaml:*)",
       "Bash(/dev/null)",
-      "mcp__serena__insert_after_symbol"
+      "mcp__serena__insert_after_symbol",
+      "Bash(npm install:*)"
     ],
     "deny": [],
     "ask": []

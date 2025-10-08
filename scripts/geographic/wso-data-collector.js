@@ -91,7 +91,7 @@ const WSO_DATA = {
     "California South": {
         geographic_type: "regional",
         states: ["California"],
-        counties: ["San Luis Obispo", "Santa Barbara", "Ventura", "Los Angeles", "Orange", "San Bernardino", "Riverside", "Imperial", "Kern"], // All counties south of Monterey, Kings, Tulare and Inyo Counties
+        counties: ["San Luis Obispo", "Santa Barbara", "Ventura", "San Diego", "Los Angeles", "Orange", "San Bernardino", "Riverside", "Imperial", "Kern"], // All counties south of Monterey, Kings, Tulare and Inyo Counties
         geographic_center_lat: 34.0, // Southern CA center
         geographic_center_lng: -118.0,
         official_url: "https://www.usaweightlifting.org/club-wso/wso-information/california-south",
@@ -146,7 +146,7 @@ const WSO_DATA = {
     "California North Central": {
         geographic_type: "regional",
         states: ["California"],
-        counties: ["Alameda", "Contra Costa", "Marin", "Napa", "San Francisco", "San Mateo", "Santa Clara", "Solano", "Sonoma", "Monterey", "San Benito", "Santa Cruz", "Sacramento", "Yolo", "Sutter", "Yuba", "Placer", "El Dorado", "Merced", "Stanislaus", "San Joaquin", "Calaveras", "Tuolumne", "Mariposa", "Fresno", "Kings", "Tulare", "Inyo", "Del Norte", "Siskiyou", "Modoc", "Lassen", "Shasta", "Trinity", "Tehama", "Plumas", "Glenn", "Butte", "Sierra", "Nevada", "Humboldt", "Mendocino", "Lake", "Amador", "Alpine", "Mono"], // All counties north of San Luis Obispo County, Kern County, and San Bernardino County
+        counties: ["Alameda", "Contra Costa", "Marin", "Napa", "San Francisco", "San Mateo", "Santa Clara", "Solano", "Sonoma", "Monterey", "San Benito", "Santa Cruz", "Sacramento", "Yolo", "Sutter", "Yuba", "Placer", "El Dorado", "Merced", "Stanislaus", "San Joaquin", "Calaveras", "Tuolumne", "Mariposa", "Madera", "Fresno", "Kings", "Tulare", "Inyo", "Del Norte", "Siskiyou", "Modoc", "Lassen", "Shasta", "Trinity", "Tehama", "Plumas", "Glenn", "Butte", "Colusa", "Sierra", "Nevada", "Humboldt", "Mendocino", "Lake", "Amador", "Alpine", "Mono"], // All counties north of San Luis Obispo County, Kern County, and San Bernardino County
         geographic_center_lat: 37.5, // North Central CA center
         geographic_center_lng: -121.0,
         official_url: "https://www.usaweightlifting.org/club-wso/wso-information/california-north-central",

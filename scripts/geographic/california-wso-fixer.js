@@ -1,6 +1,9 @@
 const { createClient } = require('@supabase/supabase-js');
 const union = require('@turf/union').default;
-const { polygon, multiPolygon } = require('@turf/helpers');
+const dissolve = require('@turf/dissolve').default;
+const { polygon, multiPolygon, feature, featureCollection } = require('@turf/helpers');
+const cleanCoords = require('@turf/clean-coords').default;
+const buffer = require('@turf/buffer').default;
 require('dotenv').config();
 
 const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SECRET_KEY);
@@ -12,44 +15,85 @@ async function generateMergedCountyBoundaries(counties, wsoName) {
 
     const allFeatures = [];
 
+    const maxRetries = 3;
+    const failedCounties = [];
+
     for (const county of counties) {
-        try {
-            console.log(`Fetching boundary for ${county} County, California...`);
+        let success = false;
+        let retryCount = 0;
 
-            // Use Nominatim to get county boundary
-            const query = `${county} County, California, USA`;
-            const nominatimUrl = `https://nominatim.openstreetmap.org/search?format=json&polygon_geojson=1&q=${encodeURIComponent(query)}&limit=1`;
-
-            const response = await fetch(nominatimUrl, {
-                headers: {
-                    'User-Agent': 'Weightlifting-Database/1.0'
+        while (!success && retryCount < maxRetries) {
+            try {
+                if (retryCount > 0) {
+                    console.log(`  Retry ${retryCount}/${maxRetries - 1} for ${county} County...`);
+                } else {
+                    console.log(`Fetching boundary for ${county} County, California...`);
                 }
-            });
 
-            if (!response.ok) {
-                console.log(`Failed to fetch ${county} County: ${response.status}`);
-                continue;
-            }
+                // Use Nominatim to get county boundary
+                const query = `${county} County, California, USA`;
+                const nominatimUrl = `https://nominatim.openstreetmap.org/search?format=json&polygon_geojson=1&q=${encodeURIComponent(query)}&limit=1`;
 
-            const data = await response.json();
-
-            if (data.length > 0 && data[0].geojson) {
-                console.log(`✓ Got boundary for ${county} County`);
-                allFeatures.push({
-                    type: "Feature",
-                    geometry: data[0].geojson,
-                    properties: { county: county }
+                const response = await fetch(nominatimUrl, {
+                    headers: {
+                        'User-Agent': 'Weightlifting-Database/1.0'
+                    }
                 });
-            } else {
-                console.log(`✗ No boundary found for ${county} County`);
+
+                if (!response.ok) {
+                    console.log(`  ⚠️ HTTP ${response.status} for ${county} County`);
+                    retryCount++;
+                    await new Promise(resolve => setTimeout(resolve, 2000));
+                    continue;
+                }
+
+                const data = await response.json();
+
+                if (data.length > 0 && data[0].geojson) {
+                    console.log(`  ✓ Got boundary for ${county} County`);
+
+                    // Create proper feature and clean geometry
+                    let countyFeature = feature(data[0].geojson, { county: county });
+
+                    // Clean coordinates to remove duplicate points
+                    countyFeature = cleanCoords(countyFeature);
+
+                    // Apply small buffer (0.001 degrees ≈ 111 meters) to fix topology issues AND ensure counties touch
+                    // This eliminates tiny gaps between adjacent counties that prevent proper merging
+                    countyFeature = buffer(countyFeature, 0.001, { units: 'degrees' });
+
+                    allFeatures.push(countyFeature);
+                    success = true;
+                } else {
+                    console.log(`  ✗ No boundary data returned for ${county} County`);
+                    retryCount++;
+                    await new Promise(resolve => setTimeout(resolve, 2000));
+                }
+
+                // Rate limiting - wait 1 second between requests
+                if (success) {
+                    await new Promise(resolve => setTimeout(resolve, 1000));
+                }
+
+            } catch (error) {
+                console.error(`  ❌ Error fetching ${county} County:`, error.message);
+                retryCount++;
+                if (retryCount < maxRetries) {
+                    await new Promise(resolve => setTimeout(resolve, 2000));
+                }
             }
-
-            // Rate limiting - wait 1 second between requests
-            await new Promise(resolve => setTimeout(resolve, 1000));
-
-        } catch (error) {
-            console.error(`Error fetching ${county} County:`, error.message);
         }
+
+        if (!success) {
+            failedCounties.push(county);
+            console.error(`  ❌ FAILED to fetch ${county} County after ${maxRetries} attempts`);
+        }
+    }
+
+    if (failedCounties.length > 0) {
+        console.log(`\n⚠️ WARNING: Failed to fetch ${failedCounties.length} counties:`);
+        failedCounties.forEach(c => console.log(`  - ${c} County`));
+        console.log(`This will result in HOLES in the boundary!\n`);
     }
 
     if (allFeatures.length === 0) {
@@ -65,7 +109,6 @@ async function generateMergedCountyBoundaries(counties, wsoName) {
 
     let unifiedFeature = null;
     const successfulCounties = [];
-    const failedCounties = [];
     let mergeMethod = "union_failed";
 
     // Attempt Turf.js union for seamless boundaries
@@ -77,41 +120,57 @@ async function generateMergedCountyBoundaries(counties, wsoName) {
             mergeMethod = "single_county";
             console.log(`  ✓ Single county - no union needed`);
         } else {
-            // Multiple counties - attempt union
-            console.log(`  🔄 Attempting union of ${allFeatures.length} counties...`);
-            
-            unifiedFeature = allFeatures[0];
-            successfulCounties.push(allFeatures[0].properties.county);
-            
-            for (let i = 1; i < allFeatures.length; i++) {
+            // Multiple counties - use dissolve to merge adjacent polygons
+            console.log(`  🔄 Using dissolve to merge ${allFeatures.length} counties...`);
+
+            try {
+                // Dissolve merges adjacent/overlapping polygons in a FeatureCollection
+                const fc = featureCollection(allFeatures);
+                const dissolved = dissolve(fc);
+
+                if (dissolved && dissolved.features && dissolved.features.length > 0) {
+                    // Dissolve returns a FeatureCollection, take the first (merged) feature
+                    unifiedFeature = dissolved.features[0];
+
+                    // Apply negative buffer to shrink back to original size (compensate for the positive buffer)
+                    console.log(`  🔄 Applying negative buffer to restore original boundary size...`);
+                    unifiedFeature = buffer(unifiedFeature, -0.0009, { units: 'degrees' });
+
+                    mergeMethod = "turf_dissolve";
+                    successfulCounties.push(...allFeatures.map(f => f.properties.county));
+
+                    const resultType = unifiedFeature.geometry.type;
+                    const polygonCount = resultType === 'MultiPolygon' ? unifiedFeature.geometry.coordinates.length : 1;
+                    console.log(`  ✅ Dissolve successful! Result: ${resultType} with ${polygonCount} polygon(s)`);
+
+                    if (polygonCount > 1) {
+                        console.log(`     (Multiple polygons likely due to islands/non-contiguous areas)`);
+                    }
+                } else {
+                    throw new Error('Dissolve produced no features');
+                }
+            } catch (dissolveError) {
+                console.log(`    ⚠️ Dissolve failed: ${dissolveError.message}`);
+                console.log(`  🔄 Falling back to union approach...`);
+
+                // Fallback to union
                 try {
-                    const nextFeature = allFeatures[i];
-                    const unionResult = union(unifiedFeature, nextFeature);
-                    
+                    const fc = featureCollection(allFeatures);
+                    const unionResult = union(fc);
+
                     if (unionResult && unionResult.geometry) {
-                        unifiedFeature = unionResult;
-                        successfulCounties.push(nextFeature.properties.county);
-                        console.log(`    ✓ Unioned ${nextFeature.properties.county} County (${i+1}/${allFeatures.length})`);
+                        console.log(`  🔄 Applying negative buffer to restore original boundary size...`);
+                        unifiedFeature = buffer(unionResult, -0.0009, { units: 'degrees' });
+
+                        mergeMethod = "turf_union_fallback";
+                        successfulCounties.push(...allFeatures.map(f => f.properties.county));
+                        console.log(`  ✅ Union fallback successful!`);
                     } else {
                         throw new Error('Union produced invalid geometry');
                     }
                 } catch (unionError) {
-                    console.log(`    ⚠️ Union failed for ${allFeatures[i].properties.county}: ${unionError.message}`);
-                    failedCounties.push(allFeatures[i].properties.county);
-                    // Continue with what we have so far
+                    throw new Error(`Both dissolve and union failed: ${dissolveError.message} / ${unionError.message}`);
                 }
-            }
-            
-            if (successfulCounties.length > 1) {
-                mergeMethod = "turf_union_partial";
-                if (failedCounties.length === 0) {
-                    mergeMethod = "turf_union_complete";
-                    console.log(`  ✅ Complete union successful! Eliminated all county borders`);
-                } else {
-                    console.log(`  ✅ Partial union successful (${successfulCounties.length}/${allFeatures.length} counties)`);
-                }
-            } else {
-                throw new Error('Union failed for all counties except first');
             }
         }
     } catch (unionError) {
