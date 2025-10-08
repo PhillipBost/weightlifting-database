@@ -84,15 +84,37 @@ const WSO_MAPPINGS = {
 };
 
 // California County Mappings
+// North Central: All counties NORTH of San Luis Obispo, Kern, and San Bernardino
+// South: All counties SOUTH of Monterey, Kings, Tulare, and Inyo
 const CALIFORNIA_COUNTIES = {
     'North Central': [
-        'Alameda', 'Contra Costa', 'Marin', 'Napa', 'San Francisco', 'San Mateo', 
-        'Santa Clara', 'Solano', 'Sonoma', 'Monterey', 'San Benito', 'Santa Cruz', 
-        'Merced', 'Stanislaus', 'San Joaquin', 'Calaveras', 'Tuolumne', 'Mariposa'
+        // Bay Area (9 counties)
+        'Alameda', 'Contra Costa', 'Marin', 'Napa', 'San Francisco', 'San Mateo',
+        'Santa Clara', 'Solano', 'Sonoma',
+        // Central Coast (3 counties)
+        'Monterey', 'San Benito', 'Santa Cruz',
+        // Central Valley North (12 counties)
+        'Sacramento', 'Yolo', 'Sutter', 'Yuba', 'Placer', 'El Dorado',
+        'Merced', 'Stanislaus', 'San Joaquin', 'Calaveras', 'Tuolumne', 'Mariposa',
+        // Central Valley - Boundary Counties (4 counties - north of SLO/Kern/SB)
+        'Fresno', 'Kings', 'Tulare', 'Inyo',
+        // Northern Mountains (12 counties)
+        'Del Norte', 'Siskiyou', 'Modoc', 'Lassen', 'Shasta', 'Trinity',
+        'Tehama', 'Plumas', 'Glenn', 'Butte', 'Sierra', 'Nevada',
+        // North Coast (3 counties)
+        'Humboldt', 'Mendocino', 'Lake',
+        // Sierra Nevada (3 counties)
+        'Amador', 'Alpine', 'Mono'
     ],
     'South': [
-        'Imperial', 'Riverside', 'San Bernardino', 'Orange', 'Los Angeles', 'Ventura', 
-        'Santa Barbara', 'Kern', 'Tulare', 'Fresno', 'Kings', 'Inyo'
+        // Southern Coast (3 counties)
+        'San Luis Obispo', 'Santa Barbara', 'Ventura',
+        // LA Metro (2 counties)
+        'Los Angeles', 'Orange',
+        // Inland Empire & Desert (3 counties)
+        'San Bernardino', 'Riverside', 'Imperial',
+        // Southern Central Valley (1 county)
+        'Kern'
     ]
 };
 
