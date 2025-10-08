@@ -237,42 +237,54 @@ const MEET_REGIONAL_PATTERNS = {
 
 /**
  * Find state by coordinates using boundary checking
+ * Uses point-in-polygon checking against WSO territories for accuracy
+ * Falls back to bounding box only if point-in-polygon fails
  */
-function findStateByCoordinates(lat, lng) {
+async function findStateByCoordinates(lat, lng, supabaseClient = null) {
+    // Try point-in-polygon check first if supabase client available
+    if (supabaseClient) {
+        try {
+            const { data: wsos, error } = await supabaseClient
+                .from('wso_information')
+                .select('name, states, territory_geojson')
+                .not('territory_geojson', 'is', null);
+
+            if (!error && wsos) {
+                const testPoint = point([lng, lat]);
+
+                // Check which WSO territory contains this point
+                for (const wso of wsos) {
+                    if (wso.territory_geojson && wso.territory_geojson.geometry) {
+                        const isInside = booleanPointInPolygon(testPoint, wso.territory_geojson);
+                        if (isInside && wso.states && wso.states.length > 0) {
+                            // Return the first state in the WSO
+                            // For multi-state WSOs, this is good enough for assignment
+                            return wso.states[0];
+                        }
+                    }
+                }
+            }
+        } catch (error) {
+            console.warn(`Point-in-polygon check failed, falling back to bounding box: ${error.message}`);
+        }
+    }
+
+    // Fallback: Use bounding box (less accurate for border regions)
     const matches = [];
     for (const [state, bounds] of Object.entries(STATE_BOUNDARIES)) {
-        if (lat >= bounds.minLat && lat <= bounds.maxLat && 
+        if (lat >= bounds.minLat && lat <= bounds.maxLat &&
             lng >= bounds.minLng && lng <= bounds.maxLng) {
             matches.push(state);
         }
     }
-    
-    if (matches.length === 0) {
-        return null;
-    } else if (matches.length === 1) {
-        return matches[0];
-    } else {
-        // Handle conflicts by choosing the best match based on distance from center
-        let bestMatch = matches[0];
-        let bestDistance = Infinity;
-        
-        for (const state of matches) {
-            const bounds = STATE_BOUNDARIES[state];
-            const centerLat = (bounds.minLat + bounds.maxLat) / 2;
-            const centerLng = (bounds.minLng + bounds.maxLng) / 2;
-            const distance = Math.sqrt(Math.pow(lat - centerLat, 2) + Math.pow(lng - centerLng, 2));
-            
-            if (distance < bestDistance) {
-                bestDistance = distance;
-                bestMatch = state;
-            }
-        }
-        
-        return bestMatch;
-    }
-}
 
-/**
+    if (matches.length === 1) {
+        return matches[0];
+    }
+
+    // Multiple matches or no matches - can't determine state reliably
+    return null;
+}
  * Assign California WSO based on coordinates using actual territory polygons
  * 
  * @param {number} lat - Latitude
@@ -629,7 +641,7 @@ async function assignWSOGeography(meetData, supabaseClient = null, options = {})
         
         if (!isNaN(lat) && !isNaN(lng)) {
             // Get state from coordinates (ground truth)
-            const coordState = findStateByCoordinates(lat, lng);
+            const coordState = await findStateByCoordinates(lat, lng, supabaseClient);
             
             // Get state from state field (may be wrong)
             const stateValue = meetData.state.trim();
@@ -719,7 +731,7 @@ async function assignWSOGeography(meetData, supabaseClient = null, options = {})
         const lng = parseFloat(meetData.longitude);
         
         if (!isNaN(lat) && !isNaN(lng)) {
-            const state = findStateByCoordinates(lat, lng);
+            const state = await findStateByCoordinates(lat, lng, supabaseClient);
             if (state) {
                 let wso;
                 if (state === 'California') {
