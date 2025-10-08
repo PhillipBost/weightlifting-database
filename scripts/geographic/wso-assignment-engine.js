@@ -486,6 +486,9 @@ function calculateConfidence(assignmentMethod, hasCoordinates, hasAddress, histo
     let confidence = 0;
     
     switch (assignmentMethod) {
+        case 'state_field':
+            confidence = 0.98; // Highest - explicit state field is most reliable
+            break;
         case 'coordinates':
             confidence = 0.95;
             break;
@@ -603,7 +606,41 @@ async function assignWSOGeography(meetData, supabaseClient = null, options = {})
         }
     }
 
-    // STRATEGY 1: Coordinate-based assignment
+    // STRATEGY 1: Explicit state field (highest priority for clubs to avoid border issues)
+    // Check if there's a direct 'state' field that we can trust
+    if (meetData.state) {
+        const stateValue = meetData.state.trim();
+        
+        // For state field, check both direct lookup and extraction
+        // Direct lookup handles bare abbreviations like "NY", "CA", etc.
+        let extractedState = US_STATES[stateValue.toUpperCase()] || null;
+        
+        // If not found, try extraction (handles full names and abbreviations with context)
+        if (!extractedState) {
+            extractedState = extractStateFromAddress(stateValue);
+        }
+        
+        if (extractedState) {
+            const lat = meetData.latitude ? parseFloat(meetData.latitude) : null;
+            const lng = meetData.longitude ? parseFloat(meetData.longitude) : null;
+            const wso = await assignWSO(extractedState, meetData.address || meetData.city, lat, lng, supabaseClient);
+            
+            if (wso) {
+                assignment.assigned_wso = wso;
+                assignment.assignment_method = 'state_field';
+                assignment.confidence = calculateConfidence('state_field', !!(lat && lng), true, false, false);
+                assignment.details.extracted_state = extractedState;
+                assignment.details.reasoning.push(`State field: ${extractedState} → ${wso}`);
+                
+                if (logDetails) {
+                    console.log(`✅ State field assignment: ${wso}`);
+                }
+                return assignment;
+            }
+        }
+    }
+
+    // STRATEGY 2: Coordinate-based assignment
     if (meetData.latitude && meetData.longitude) {
         const lat = parseFloat(meetData.latitude);
         const lng = parseFloat(meetData.longitude);
@@ -634,7 +671,7 @@ async function assignWSOGeography(meetData, supabaseClient = null, options = {})
         }
     }
 
-    // STRATEGY 2: Address parsing for state extraction
+    // STRATEGY 3: Address parsing for state extraction
     let extractedState = null;
     let sourceField = null;
     const addressFields = [
@@ -673,7 +710,7 @@ async function assignWSOGeography(meetData, supabaseClient = null, options = {})
         }
     }
 
-    // STRATEGY 3: Meet name analysis
+    // STRATEGY 4: Meet name analysis
     if (meetData.meet_name || meetData.name) {
         const meetName = meetData.meet_name || meetData.name;
         const meetLocation = extractLocationFromMeetName(meetName);
@@ -706,7 +743,7 @@ async function assignWSOGeography(meetData, supabaseClient = null, options = {})
         }
     }
 
-    // STRATEGY 4: Historical data matching
+    // STRATEGY 5: Historical data matching
     if (includeHistoricalData && (meetData.meet_name || meetData.name)) {
         const meetName = meetData.meet_name || meetData.name;
         if (historicalData[meetName]) {
