@@ -1,10 +1,11 @@
 /**
  * Club Weekly Analytics Calculator
- * 
+ *
  * Calculates and updates weekly metrics for each club:
- * - Number of recent meets (past 3 years) where club members participated
- * - Number of active lifters (past 3 years) associated with the club
- * 
+ * - Number of recent meets (past 24 months) where club members participated
+ * - Number of active lifters (past 24 months) associated with the club
+ * - Total participations (past 24 months)
+ *
  * Designed to run weekly via GitHub Actions cron job
  */
 
@@ -13,10 +14,10 @@ require('dotenv').config();
 
 const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SECRET_KEY);
 
-// Calculate date range for "recent" (past 12 months from current date)
+// Calculate date range for all metrics (past 24 months from current date)
 const currentDate = new Date();
 const cutoffDate = new Date(currentDate);
-cutoffDate.setFullYear(currentDate.getFullYear() - 1); // 12 months back
+cutoffDate.setFullYear(currentDate.getFullYear() - 2); // 24 months back
 const cutoffDateString = cutoffDate.toISOString().split('T')[0]; // Format as YYYY-MM-DD
 
 function log(message) {
@@ -90,19 +91,19 @@ async function calculateClubRecentMeets(clubName) {
 
 async function calculateClubActiveLifters(clubName) {
     log(`🏃 Calculating active lifters count for "${clubName}"...`);
-    
+
     // Count distinct lifter_ids from meet_results where club_name matches
-    // and the meet date is within our cutoff period
+    // and the meet date is within our 24-month cutoff period
     const { data: results, error } = await supabase
         .from('meet_results')
         .select('lifter_id, meets!inner(Date)')
         .eq('club_name', clubName)
         .gte('meets.Date', cutoffDateString);
-    
+
     if (error) {
         throw new Error(`Failed to count active lifters for ${clubName}: ${error.message}`);
     }
-    
+
     // Get unique lifter IDs
     const uniqueLifters = new Set();
     if (results) {
@@ -112,7 +113,7 @@ async function calculateClubActiveLifters(clubName) {
             }
         });
     }
-    
+
     const count = uniqueLifters.size;
     log(`   Found ${count} active lifters for "${clubName}" since ${cutoffDateString}`);
     return count;
@@ -185,8 +186,8 @@ async function calculateClubMetrics(clubName) {
 
 async function main() {
     log('🚀 Starting Club Weekly Analytics Calculation...');
-    log(`📊 Using cutoff date: ${cutoffDateString} (past 12 months from today)`);
-    
+    log(`📊 Using cutoff date: ${cutoffDateString} (past 24 months from today)`);
+
     try {
         const clubs = await getAllClubs();
         

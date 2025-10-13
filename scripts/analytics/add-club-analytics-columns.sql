@@ -10,9 +10,9 @@ ALTER TABLE clubs ADD COLUMN IF NOT EXISTS total_participations INTEGER DEFAULT 
 ALTER TABLE clubs ADD COLUMN IF NOT EXISTS analytics_updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW();
 
 -- Add comment for documentation
-COMMENT ON COLUMN clubs.recent_meets_count IS 'Number of meets this club participated in during the past 12 months';
-COMMENT ON COLUMN clubs.active_lifters_count IS 'Number of unique lifters associated with this club who competed during the past 12 months';
-COMMENT ON COLUMN clubs.total_participations IS 'Total number of athlete-meet combinations for this club during the past 12 months (individual participations, not unique meets)';
+COMMENT ON COLUMN clubs.recent_meets_count IS 'Number of meets this club participated in during the past 24 months';
+COMMENT ON COLUMN clubs.active_lifters_count IS 'Number of unique lifters associated with this club who competed during the past 24 months';
+COMMENT ON COLUMN clubs.total_participations IS 'Total number of athlete-meet combinations for this club during the past 24 months (individual participations, not unique meets)';
 COMMENT ON COLUMN clubs.analytics_updated_at IS 'Last time analytics were calculated for this club';
 
 -- Create trigger to update analytics_updated_at when analytics columns are modified
