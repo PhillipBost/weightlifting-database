@@ -125,7 +125,7 @@ jobs:
   process-meet-locations:
     if: ${{ !inputs.skip_location_processing }}
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 240
 
     steps:
       - name: Checkout repository

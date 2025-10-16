@@ -23,10 +23,6 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 45 # Generous timeout for scraping and geocoding
 
-    outputs:
-      has_addresses: ${{ steps.check_addresses.outputs.has_addresses }}
-      meet_count: ${{ steps.check_addresses.outputs.meet_count }}
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -95,42 +91,13 @@ jobs:
             --from-date "${{ steps.dates.outputs.from_date }}" \
             --to-date "${{ steps.dates.outputs.to_date }}"
 
-      - name: Check if addresses were scraped
-        id: check_addresses
-        run: |
-          if [ -f "output/meet_addresses.json" ]; then
-            # Count meets in the output file
-            meet_count=$(node -e "
-              const fs = require('fs');
-              try {
-                const data = JSON.parse(fs.readFileSync('output/meet_addresses.json', 'utf8'));
-                console.log(data.meets ? data.meets.length : 0);
-              } catch (e) {
-                console.log(0);
-              }
-            ")
-            echo "meet_count=$meet_count" >> $GITHUB_OUTPUT
-            echo "📊 Found $meet_count meets with addresses"
-
-            if [ $meet_count -gt 0 ]; then
-              echo "has_addresses=true" >> $GITHUB_OUTPUT
-            else
-              echo "has_addresses=false" >> $GITHUB_OUTPUT
-            fi
-          else
-            echo "❌ No meet_addresses.json file found"
-            echo "has_addresses=false" >> $GITHUB_OUTPUT
-            echo "meet_count=0" >> $GITHUB_OUTPUT
-          fi
-
       - name: Geocode and import addresses
-        if: steps.check_addresses.outputs.has_addresses == 'true'
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
         run: |
           echo "🌍 Starting geocoding and import..."
-          echo "Processing ${{ steps.check_addresses.outputs.meet_count }} meets"
+          echo "📍 Geocoding meets that need coordinates..."
 
           node scripts/geographic/geocode-and-import.js
 
@@ -140,7 +107,6 @@ jobs:
         with:
           name: meet-addresses-${{ steps.dates.outputs.from_date }}-to-${{ steps.dates.outputs.to_date }}
           path: |
-            output/meet_addresses.json
             logs/meet-address-scraper.log
             logs/geocode-import.log
           retention-days: 30
@@ -214,14 +180,8 @@ jobs:
             echo "### 📍 Meet Addresses: Skipped" >> $GITHUB_STEP_SUMMARY
           elif [ "${{ needs.scrape-meet-addresses.result }}" == "success" ]; then
             echo "### 📍 Meet Addresses: ✅ Success" >> $GITHUB_STEP_SUMMARY
-            echo "- **Meets Found:** ${{ needs.scrape-meet-addresses.outputs.meet_count }}" >> $GITHUB_STEP_SUMMARY
-
-            if [ "${{ needs.scrape-meet-addresses.outputs.has_addresses }}" == "true" ]; then
-              echo "- **Status:** Successfully scraped and geocoded meet addresses" >> $GITHUB_STEP_SUMMARY
-              echo "- **Actions:** Scraped directory → Geocoded → Imported to database" >> $GITHUB_STEP_SUMMARY
-            else
-              echo "- **Status:** No new meets found for date range" >> $GITHUB_STEP_SUMMARY
-            fi
+            echo "- **Status:** Successfully scraped addresses and geocoded meets" >> $GITHUB_STEP_SUMMARY
+            echo "- **Actions:** Scraped directory → Updated database → Geocoded coordinates" >> $GITHUB_STEP_SUMMARY
           else
             echo "### 📍 Meet Addresses: ❌ Failed" >> $GITHUB_STEP_SUMMARY
             echo "- **Status:** See workflow logs for details" >> $GITHUB_STEP_SUMMARY
