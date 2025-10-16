@@ -59,7 +59,8 @@ async function main() {
         
         console.log('\n🎉 Daily scraping and import completed successfully!');
         console.log(`🕐 End time: ${new Date().toLocaleString()}`);
-        
+        process.exit(0); // Exit cleanly so the process doesn't hang
+
     } catch (error) {
         console.log('\n💥 Daily pipeline failed:', error.message);
         console.log(`🕐 Failed at: ${new Date().toLocaleString()}`);
