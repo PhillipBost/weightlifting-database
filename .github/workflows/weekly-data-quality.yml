@@ -123,6 +123,7 @@ jobs:
           SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
           SHOW_DETAILS: ${{ inputs.show_details || 'false' }}
         run: |
+          set -o pipefail
           echo "🔍 Starting missing membership number scan..."
           echo "🕐 Start time: $(date +'%Y-%m-%d %H:%M:%S %Z')"
           echo "📊 Show details: $SHOW_DETAILS"
@@ -173,6 +174,7 @@ jobs:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
         run: |
+          set -o pipefail
           echo "🧹 Starting WSO geography contamination cleanup..."
           echo "🕐 Start time: $(date +'%Y-%m-%d %H:%M:%S %Z')"
 
@@ -223,6 +225,7 @@ jobs:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
         run: |
+          set -o pipefail
           echo "🧹 Starting type2 contamination cleanup..."
           echo "🕐 Start time: $(date +'%Y-%m-%d %H:%M:%S %Z')"
 
@@ -272,10 +275,11 @@ jobs:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
         run: |
+          set -o pipefail
           echo "🔗 Starting internal ID pipeline..."
           echo "🕐 Start time: $(date +'%Y-%m-%d %H:%M:%S %Z')"
 
-          node scripts/data-processing/internal-id-pipeline.js 2>&1 | tee logs/internal-id-pipeline.log
+          node scripts/maintenance/add-meet-internal-ids.js 2>&1 | tee logs/internal-id-pipeline.log
 
           if [ $? -eq 0 ]; then
             echo "✅ Internal ID pipeline completed successfully"
