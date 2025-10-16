@@ -51,10 +51,11 @@ jobs:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
         run: |
+          set -o pipefail
           echo "🏋️ Starting daily meet scraper..."
           echo "🕐 Start time: $(date +'%Y-%m-%d %H:%M:%S %Z')"
 
-          node scripts/production/daily-meet-scraper.js 2>&1 | tee logs/daily-meet-scraper.log
+          node scripts/maintenance/daily_scraper.js 2>&1 | tee logs/daily-meet-scraper.log
 
           if [ $? -eq 0 ]; then
             echo "✅ Daily meet scraper completed successfully"
@@ -99,6 +100,7 @@ jobs:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
         run: |
+          set -o pipefail
           echo "🔍 Starting missing WSO scan..."
           echo "🕐 Start time: $(date +'%Y-%m-%d %H:%M:%S %Z')"
 
@@ -146,10 +148,11 @@ jobs:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
         run: |
+          set -o pipefail
           echo "📍 Starting meet location processing..."
           echo "🕐 Start time: $(date +'%Y-%m-%d %H:%M:%S %Z')"
 
-          node scripts/geographic/process-meet-locations.js 2>&1 | tee logs/process-meet-locations.log
+          node scripts/geographic/geocode-and-import.js 2>&1 | tee logs/process-meet-locations.log
 
           if [ $? -eq 0 ]; then
             echo "✅ Meet location processing completed successfully"
