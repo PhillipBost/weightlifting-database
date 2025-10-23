@@ -100,6 +100,8 @@ jobs:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
           LIMIT_RECORDS: 10000
+          FIND_DATA: true
+          DATE_FILTER_MONTHS: 2
         run: |
           set -o pipefail
           echo "🔍 Starting missing WSO scan..."
