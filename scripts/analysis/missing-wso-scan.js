@@ -114,6 +114,9 @@ let page = null;
 // Cache for biographical lookups to avoid duplicate requests
 const biographicalCache = new Map();
 
+// Global debug mode flag
+let debugMode = false;
+
 // Ensure directories exist
 function ensureDirectories() {
     if (!fs.existsSync(OUTPUT_DIR)) {
@@ -122,15 +125,39 @@ function ensureDirectories() {
     if (!fs.existsSync(LOGS_DIR)) {
         fs.mkdirSync(LOGS_DIR, { recursive: true });
     }
+    
+    // Create screenshots directory if debug mode enabled
+    const screenshotsDir = './screenshots';
+    if (!fs.existsSync(screenshotsDir)) {
+        fs.mkdirSync(screenshotsDir, { recursive: true });
+    }
 }
 
 // Logging utility
 function log(message) {
     const timestamp = new Date().toISOString();
-    const logMessage = `[${timestamp}] ${message}\n`;
+    const logMessage = `[${timestamp}] ${message}
+`;
     
     console.log(message);
     fs.appendFileSync(LOG_FILE, logMessage);
+}
+
+// Screenshot utility - saves screenshots for debugging
+async function saveScreenshot(page, label, errorFlag = false) {
+    if (!debugMode) return; // Only save screenshots in debug mode
+    
+    try {
+        const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+        const errorPrefix = errorFlag ? 'ERROR_' : '';
+        const filename = `screenshots/${errorPrefix}${label}_${timestamp}.png`;
+        
+        await page.screenshot({ path: filename, fullPage: true });
+        log(`    📸 Screenshot saved: ${filename}`);
+        return filename;
+    } catch (error) {
+        log(`    ⚠️  Failed to save screenshot: ${error.message}`);
+    }
 }
 
 // Parse command line arguments
@@ -138,7 +165,8 @@ function parseArguments() {
     const args = process.argv.slice(2);
     const options = {
         showDetails: process.env.SHOW_DETAILS === 'true' || args.includes('--show-details'),
-        findData: process.env.FIND_DATA === 'true' || args.includes('--find-data')
+        findData: process.env.FIND_DATA === 'true' || args.includes('--find-data'),
+        debug: process.env.DEBUG === 'true' || args.includes('--debug')
     };
     
     return options;
@@ -209,6 +237,196 @@ function buildSport80URL(division, competitionDate) {
     return null;
 }
 
+// Helper function to intercept API responses and extract athlete data
+async function extractDataFromAPIResponse(page, targetAthleteName, maxRetries = 3) {
+    let apiData = [];
+    let requestsIntercepted = 0;
+    let retryCount = 0;
+    
+    try {
+        log(`    🔗 Setting up API interception for ${targetAthleteName}...`);
+        
+        // Enable request interception
+        await page.setRequestInterception(true);
+        
+        // Track intercepted API responses
+        page.on('response', async (response) => {
+            try {
+                const url = response.url();
+                const status = response.status();
+                
+                // Look for JSON API responses (not HTML)
+                if (status === 200 && url.includes('sport80') && !url.includes('.png') && !url.includes('.svg')) {
+                    const contentType = response.headers()['content-type'] || '';
+                    
+                    if (contentType.includes('application/json')) {
+                        requestsIntercepted++;
+                        
+                        try {
+                            const jsonData = await response.json();
+                            
+                            // Look for athlete data in response
+                            if (jsonData && typeof jsonData === 'object') {
+                                const jsonString = JSON.stringify(jsonData);
+                                
+                                // Check if response contains athlete name
+                                if (jsonString.includes(targetAthleteName)) {
+                                    log(`    ✓ API response contains athlete data: ${url}`);
+                                    
+                                    // Try to extract athlete object from various possible structures
+                                    if (Array.isArray(jsonData)) {
+                                        apiData = apiData.concat(jsonData);
+                                    } else if (jsonData.data && Array.isArray(jsonData.data)) {
+                                        apiData = apiData.concat(jsonData.data);
+                                    } else if (jsonData.results && Array.isArray(jsonData.results)) {
+                                        apiData = apiData.concat(jsonData.results);
+                                    } else if (jsonData.athletes && Array.isArray(jsonData.athletes)) {
+                                        apiData = apiData.concat(jsonData.athletes);
+                                    }
+                                    
+                                    if (debugMode) {
+                                        log(`       Extracted ${apiData.length} potential athlete records`);
+                                    }
+                                }
+                            }
+                        } catch (parseError) {
+                            // Response might not be JSON, continue
+                        }
+                    }
+                }
+            } catch (error) {
+                // Continue on response processing errors
+            }
+        });
+        
+        // Allow all requests to continue
+        page.on('request', (request) => {
+            request.continue();
+        });
+        
+        log(`    ⏳ Waiting for API responses to be intercepted...`);
+        await new Promise(resolve => setTimeout(resolve, 3000));
+        
+        if (apiData.length > 0) {
+            log(`    ✅ API interception successful - found ${apiData.length} records`);
+            
+            // Parse athlete data from API response
+            const athleteRecord = apiData.find(record => {
+                const recordString = JSON.stringify(record);
+                return recordString.includes(targetAthleteName);
+            });
+            
+            if (athleteRecord) {
+                log(`    ✓ Found matching athlete record in API data`);
+                
+                // Extract fields based on common API response structure
+                const parsed = {
+                    athlete_name: athleteRecord.name || athleteRecord.athlete_name || athleteRecord.lifter_name || null,
+                    wso: athleteRecord.wso || athleteRecord.world_standing_order || athleteRecord.worldStandingOrder || null,
+                    gender: athleteRecord.gender || athleteRecord.sex || null,
+                    birth_year: athleteRecord.birth_year || athleteRecord.birthYear || athleteRecord.dob ? new Date(athleteRecord.dob).getFullYear() : null,
+                    club_name: athleteRecord.club_name || athleteRecord.club || athleteRecord.team || null,
+                    national_rank: athleteRecord.national_rank || athleteRecord.rank || athleteRecord.ranking || null,
+                    total: athleteRecord.total || athleteRecord.score || null,
+                    membership_number: athleteRecord.membership_number || athleteRecord.membershipNumber || null,
+                    level: athleteRecord.level || athleteRecord.class || null
+                };
+                
+                return parsed;
+            }
+        } else {
+            log(`    ⚠️  No API data intercepted (${requestsIntercepted} JSON responses processed)`);
+        }
+        
+        // Disable request interception
+        await page.setRequestInterception(false);
+        page.removeAllListeners('response');
+        page.removeAllListeners('request');
+        
+        return null;
+    } catch (error) {
+        log(`    ❌ API interception failed: ${error.message}`);
+        try {
+            await page.setRequestInterception(false);
+            page.removeAllListeners('response');
+            page.removeAllListeners('request');
+        } catch (cleanupError) {
+            // Ignore cleanup errors
+        }
+        return null;
+    }
+}
+
+// Helper function to detect table cell indices based on headers
+async function detectTableCellIndices(page) {
+    try {
+        const indices = await page.evaluate(() => {
+            const headerRow = document.querySelector('thead tr') || 
+                             document.querySelector('tr:first-child');
+            
+            if (!headerRow) {
+                return null;
+            }
+            
+            const headers = Array.from(headerRow.querySelectorAll('th, td'))
+                .map(h => h.textContent.trim().toLowerCase());
+            
+            const mapping = {
+                national_rank: null,
+                total: null,
+                athlete_name: null,
+                gender: null,
+                birth_year: null,
+                club_name: null,
+                membership_number: null,
+                level: null,
+                wso: null
+            };
+            
+            // Try to find each field by matching header text
+            const fieldPatterns = {
+                national_rank: /rank|#/i,
+                total: /total|score/i,
+                athlete_name: /name|athlete|lifter/i,
+                gender: /gender|sex/i,
+                birth_year: /birth|year|age/i,
+                club_name: /club|team|group/i,
+                membership_number: /member|id|number/i,
+                level: /level|class/i,
+                wso: /wso|world.*standing|standing.*order/i
+            };
+            
+            // Match headers to field patterns
+            for (const [field, pattern] of Object.entries(fieldPatterns)) {
+                for (let i = 0; i < headers.length; i++) {
+                    if (pattern.test(headers[i])) {
+                        mapping[field] = i;
+                        break;
+                    }
+                }
+            }
+            
+            return mapping;
+        });
+        
+        if (indices) {
+            if (debugMode) {
+                log(`    🔍 Detected cell indices from table headers:`);
+                Object.entries(indices).forEach(([field, index]) => {
+                    log(`       ${field}: column ${index !== null ? index : 'NOT FOUND'}`);
+                });
+            }
+            return indices;
+        }
+    } catch (error) {
+        if (debugMode) {
+            log(`    ⚠️  Could not detect table headers: ${error.message}`);
+        }
+    }
+    
+    return null;
+}
+
 // Scrape biographical data from Sport80 reverse lookup
 async function scrapeBiographicalData(url, targetAthleteName) {
     // Check cache first
@@ -220,43 +438,139 @@ async function scrapeBiographicalData(url, targetAthleteName) {
 
     try {
         log(`    Scraping biographical data from reverse lookup with pagination...`);
-        await page.goto(url, { waitUntil: 'networkidle0', timeout: 30000 });
-        await new Promise(resolve => setTimeout(resolve, 2000));
+        
+        // Navigate to the page with longer timeout for Vue rendering
+        log(`    Navigating to URL: ${url}`);
+        await page.goto(url, { waitUntil: 'networkidle0', timeout: 45000 });
+        
+        // Wait for Vue to render the table - try multiple strategies
+        log(`    Waiting for Vue table to render...`);
+        
+        try {
+            // Strategy 1: Wait for table tbody with rows
+            await page.waitForSelector('table tbody tr', { timeout: 15000 }).catch(() => {
+                log(`    Strategy 1 failed: table tbody tr not found`);
+                throw new Error('Table selector not found');
+            });
+            
+            log(`    ✓ Found table with rows`);
+        } catch (err) {
+            // Strategy 2: Wait for any tr elements
+            log(`    Trying alternative selector: tr`);
+            await page.waitForSelector('tr', { timeout: 10000 }).catch(() => {
+                throw new Error('No table rows found');
+            });
+            
+            log(`    ✓ Found table rows (alternative selector)`);
+        }
+        
+        // Wait for table to be populated with data (not empty)
+        log(`    Waiting for table data to populate...`);
+        await page.waitForFunction(
+            () => {
+                const rows = document.querySelectorAll('tr, .athlete-row, .result-row');
+                // Ensure we have rows with actual content (at least 5 chars)
+                return rows.length > 0 && 
+                       Array.from(rows).some(row => row.textContent.trim().length > 5);
+            },
+            { timeout: 15000 }
+        );
+        
+        log(`    ✓ Table populated with data`);
+        
+        // Additional wait for Vue reactivity
+        await new Promise(resolve => setTimeout(resolve, 3000));
+        
+        // Save screenshot if debug mode enabled
+        await saveScreenshot(page, `page_${currentPage}_loaded`);
 
         let allBiographicalData = [];
         let currentPage = 1;
         let hasNextPage = true;
+        let cellIndices = null; // Will be detected from headers
         
         // Loop through all pages to find the athlete
         while (hasNextPage && currentPage <= 10) { // Limit to 10 pages max for safety
             log(`    Checking page ${currentPage} for ${targetAthleteName}`);
             
-            // Scrape current page
-            let biographicalData = await page.evaluate((athleteName) => {
+            // Detect cell indices on first page
+            if (currentPage === 1 && !cellIndices) {
+                log(`    Detecting table structure...`);
+                cellIndices = await detectTableCellIndices(page);
+                
+                if (!cellIndices) {
+                    log(`    ⚠️  Could not detect table headers, will use default indices`);
+                    // Use default fallback indices
+                    cellIndices = {
+                        national_rank: 0,
+                        total: 2,
+                        athlete_name: 3,
+                        gender: 4,
+                        birth_year: 5,
+                        club_name: 6,
+                        membership_number: 7,
+                        level: 8,
+                        wso: 12
+                    };
+                }
+            }
+            
+            // Scrape current page with diagnostic logging
+            let biographicalData = await page.evaluate((athleteName, debugEnabled, indices) => {
                 const results = [];
+                const diagnostics = {
+                    totalRows: 0,
+                    matchingRows: 0,
+                    rowsWithEnoughCells: 0,
+                    sampleRow: null,
+                    tableHeaders: [],
+                    cellCounts: {}
+                };
+                
+                // Log table headers if available
+                const headerCells = document.querySelectorAll('th');
+                if (headerCells.length > 0) {
+                    diagnostics.tableHeaders = Array.from(headerCells).map(h => h.textContent.trim()).slice(0, 15);
+                }
                 
                 // Look for table rows containing athlete data
                 const rows = document.querySelectorAll('tr, .athlete-row, .result-row');
+                diagnostics.totalRows = rows.length;
                 
                 for (const row of rows) {
                     const text = row.textContent;
+                    const cells = row.querySelectorAll('td');
+                    
+                    // Track cell count distribution
+                    const cellCount = cells.length;
+                    diagnostics.cellCounts[cellCount] = (diagnostics.cellCounts[cellCount] || 0) + 1;
                     
                     // Check if this row contains the target athlete's name
                     if (text.includes(athleteName)) {
-                        // Try to extract structured data from table cells
-                        const cells = row.querySelectorAll('td');
+                        diagnostics.matchingRows++;
                         
+                        // Try to extract structured data from table cells
                         if (cells.length >= 8) { // Expect enough columns for full athlete data
+                            diagnostics.rowsWithEnoughCells++;
+                            
+                            // Capture sample row for debugging
+                            if (!diagnostics.sampleRow && cells.length > 0) {
+                                diagnostics.sampleRow = {
+                                    cellCount: cells.length,
+                                    cellContents: Array.from(cells).slice(0, 15).map(c => c.textContent.trim().substring(0, 30))
+                                };
+                            }
+                            
                             const athleteData = {
-                                national_rank: cells[0]?.textContent?.trim() || null,
-                                total: cells[2]?.textContent?.trim() || null,
-                                athlete_name: cells[3]?.textContent?.trim() || null,
-                                gender: cells[4]?.textContent?.trim() || null,
-                                birth_year: cells[5]?.textContent?.trim() || null,
-                                club_name: cells[6]?.textContent?.trim() || null,
-                                membership_number: cells[7]?.textContent?.trim() || null,
-                                level: cells[8]?.textContent?.trim() || null,
-                                wso: cells[12]?.textContent?.trim() || null
+                                national_rank: cells[indices.national_rank]?.textContent?.trim() || null,
+                                total: cells[indices.total]?.textContent?.trim() || null,
+                                athlete_name: cells[indices.athlete_name]?.textContent?.trim() || null,
+                                gender: cells[indices.gender]?.textContent?.trim() || null,
+                                birth_year: cells[indices.birth_year]?.textContent?.trim() || null,
+                                club_name: cells[indices.club_name]?.textContent?.trim() || null,
+                                membership_number: cells[indices.membership_number]?.textContent?.trim() || null,
+                                level: cells[indices.level]?.textContent?.trim() || null,
+                                wso: cells[indices.wso]?.textContent?.trim() || null
                             };
                             
                             // Clean up and validate data
@@ -284,8 +598,44 @@ async function scrapeBiographicalData(url, targetAthleteName) {
                     }
                 }
                 
-                return results;
-            }, targetAthleteName);
+                // Return both results and diagnostics
+                return {
+                    results: results,
+                    diagnostics: diagnostics
+                };
+            }, targetAthleteName, debugMode, cellIndices);
+            
+            // Extract results and diagnostics
+            const diagnostics = biographicalData.diagnostics;
+            biographicalData = biographicalData.results;
+            
+            // Log diagnostic information if debug mode enabled
+            if (debugMode) {
+                log(`    📊 Page ${currentPage} diagnostics:`);
+                log(`       Total rows found: ${diagnostics.totalRows}`);
+                log(`       Rows matching athlete name: ${diagnostics.matchingRows}`);
+                log(`       Rows with enough cells (≥8): ${diagnostics.rowsWithEnoughCells}`);
+                
+                if (diagnostics.tableHeaders.length > 0) {
+                    log(`       Table headers: ${diagnostics.tableHeaders.join(' | ')}`);
+                }
+                
+                if (Object.keys(diagnostics.cellCounts).length > 0) {
+                    const cellDistribution = Object.entries(diagnostics.cellCounts)
+                        .sort((a, b) => b[1] - a[1])
+                        .slice(0, 3)
+                        .map(([count, freq]) => `${count} cells (${freq} rows)`)
+                        .join(', ');
+                    log(`       Cell count distribution (top 3): ${cellDistribution}`);
+                }
+                
+                if (diagnostics.sampleRow) {
+                    log(`       Sample row structure (${diagnostics.sampleRow.cellCount} cells):`);
+                    diagnostics.sampleRow.cellContents.forEach((content, idx) => {
+                        log(`         [${idx}]: ${content}`);
+                    });
+                }
+            }
             
             // Add results from this page
             allBiographicalData.push(...biographicalData);
@@ -293,6 +643,9 @@ async function scrapeBiographicalData(url, targetAthleteName) {
             // If we found matches on this page, we can stop searching
             if (biographicalData.length > 0) {
                 log(`    ✅ Found ${biographicalData.length} biographical matches for ${targetAthleteName} on page ${currentPage}`);
+                // Save screenshot of successful match
+                const safeName = targetAthleteName.replace(/[^a-z0-9]/gi, '_');
+                await saveScreenshot(page, `match_found_${safeName}`);
                 break;
             }
             
@@ -372,12 +725,25 @@ async function scrapeBiographicalData(url, targetAthleteName) {
             log(`    Found ${allBiographicalData.length} total biographical matches for ${targetAthleteName} across ${currentPage} pages`);
             return allBiographicalData[0]; // Return the first/best match
         } else {
-            log(`    No biographical data found for ${targetAthleteName} across ${currentPage} pages`);
-            return null;
+            log(`    No biographical data found for ${targetAthleteName} across ${currentPage} pages using HTML scraping`);
+            
+            // Try API interception as fallback
+            log(`    Attempting API interception as fallback method...`);
+            const apiData = await extractDataFromAPIResponse(page, targetAthleteName);
+            
+            if (apiData && apiData.athlete_name) {
+                log(`    ✅ Successfully extracted data from API response`);
+                return apiData;
+            } else {
+                log(`    API interception also failed - no data found for ${targetAthleteName}`);
+                return null;
+            }
         }
         
     } catch (error) {
         log(`    Error scraping biographical data: ${error.message}`);
+        // Save error screenshot
+        await saveScreenshot(page, `error_${targetAthleteName.replace(/[^a-z0-9]/gi, '_')}`, true);
         return null;
     }
 }
@@ -608,11 +974,15 @@ async function performWsoScan() {
         
         // Parse options
         const options = parseArguments();
+        debugMode = options.debug; // Set global debug flag
         if (options.showDetails) {
             log('📊 Running with detailed output enabled');
         }
         if (options.findData) {
             log('🔍 Running with WSO data lookup enabled');
+        }
+        if (options.debug) {
+            log('🐛 Running in DEBUG mode - extra diagnostics will be logged');
         }
         
         // Get data - ALL results for verification
