@@ -422,19 +422,38 @@ async function getAllWsoResults() {
         log(`⚠️  LIMIT_RECORDS set to ${limitRecords} (for testing/debugging)`);
     }
     
+    // Date filtering for competition date (when the meet occurred)
+    const dateFilterMonths = process.env.DATE_FILTER_MONTHS ? 
+        parseInt(process.env.DATE_FILTER_MONTHS) : null;
+    
+    let cutoffDate = null;
+    if (dateFilterMonths) {
+        const cutoff = new Date();
+        cutoff.setMonth(cutoff.getMonth() - dateFilterMonths);
+        cutoffDate = cutoff.toISOString().split('T')[0]; // YYYY-MM-DD
+        log(`📅 Filtering to competitions on or after ${cutoffDate} (last ${dateFilterMonths} months)`);
+    }
+    
     let allResults = [];
     let start = 0;
     const batchSize = 1000;
     let hasMore = true;
     
     while (hasMore) {
-        const { data: batchData, error } = await supabase
+        let query = supabase
             .from('meet_results')
             .select('result_id, lifter_id, lifter_name, date, age_category, weight_class, meet_name, wso, gender, birth_year, club_name, national_rank, competition_age, created_at, updated_at')
             .not('age_category', 'is', null)
             .not('weight_class', 'is', null)
             .not('lifter_name', 'is', null)
-            .is('wso', null)  // Only fetch records not yet processed
+            .is('wso', null);  // Only fetch records not yet processed
+        
+        // Apply date filter if specified (filters by competition date)
+        if (cutoffDate) {
+            query = query.gte('date', cutoffDate);
+        }
+        
+        const { data: batchData, error } = await query
             .order('result_id', { ascending: true })  // Use indexed primary key for efficiency
             .range(start, start + batchSize - 1);
         
