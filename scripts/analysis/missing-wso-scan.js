@@ -320,16 +320,34 @@ async function extractDataFromAPIResponse(page, targetAthleteName, maxRetries = 
                 log(`    ✓ Found matching athlete record in API data`);
                 
                 // Extract fields based on common API response structure
+                // Handle new API field names and {type: "unset"} objects
+                const competitionDate = athleteRecord.date || athleteRecord.competition_date;
+                let birthYear = extractValue(athleteRecord.birth_year) || extractValue(athleteRecord.birthYear);
+                
+                // Calculate birth year from lifter_age if available
+                if (!birthYear && athleteRecord.lifter_age && competitionDate) {
+                    const competitionYear = new Date(competitionDate).getFullYear();
+                    birthYear = competitionYear - athleteRecord.lifter_age;
+                }
+                
+                // Handle birth year from DOB if still not available
+                if (!birthYear && athleteRecord.dob) {
+                    const dobDate = new Date(athleteRecord.dob);
+                    if (!isNaN(dobDate.getTime())) {
+                        birthYear = dobDate.getFullYear();
+                    }
+                }
+                
                 const parsed = {
-                    athlete_name: athleteRecord.name || athleteRecord.athlete_name || athleteRecord.lifter_name || null,
-                    wso: athleteRecord.wso || athleteRecord.world_standing_order || athleteRecord.worldStandingOrder || null,
-                    gender: athleteRecord.gender || athleteRecord.sex || null,
-                    birth_year: athleteRecord.birth_year || athleteRecord.birthYear || athleteRecord.dob ? new Date(athleteRecord.dob).getFullYear() : null,
-                    club_name: athleteRecord.club_name || athleteRecord.club || athleteRecord.team || null,
-                    national_rank: athleteRecord.national_rank || athleteRecord.rank || athleteRecord.ranking || null,
-                    total: athleteRecord.total || athleteRecord.score || null,
-                    membership_number: athleteRecord.membership_number || athleteRecord.membershipNumber || null,
-                    level: athleteRecord.level || athleteRecord.class || null
+                    athlete_name: extractValue(athleteRecord.name) || extractValue(athleteRecord.athlete_name) || extractValue(athleteRecord.lifter_name) || null,
+                    wso: extractValue(athleteRecord.wso) || extractValue(athleteRecord.world_standing_order) || extractValue(athleteRecord.worldStandingOrder) || null,
+                    gender: extractValue(athleteRecord.gender) || extractValue(athleteRecord.sex) || null,
+                    birth_year: birthYear || null,
+                    club_name: extractValue(athleteRecord.club_name) || extractValue(athleteRecord.club) || extractValue(athleteRecord.team) || null,
+                    national_rank: extractValue(athleteRecord.national_ranking) || extractValue(athleteRecord.national_rank) || extractValue(athleteRecord.rank) || extractValue(athleteRecord.ranking) || null,
+                    total: extractValue(athleteRecord.total) || extractValue(athleteRecord.score) || null,
+                    membership_number: extractValue(athleteRecord.membership) || extractValue(athleteRecord.membership_number) || extractValue(athleteRecord.membershipNumber) || null,
+                    level: extractValue(athleteRecord.level) || extractValue(athleteRecord.class) || null
                 };
                 
                 return parsed;
@@ -802,48 +820,99 @@ async function getAllWsoResults() {
     
     let allResults = [];
     let start = 0;
-    const batchSize = 1000;
+    // Reduce batch size when date filtering is active to avoid timeouts
+    const batchSize = cutoffDate ? 500 : 1000;
     let hasMore = true;
+    let retryCount = 0;
+    const maxRetries = 2;
     
     while (hasMore) {
-        let query = supabase
-            .from('meet_results')
-            .select('result_id, lifter_id, lifter_name, date, age_category, weight_class, meet_name, wso, gender, birth_year, club_name, national_rank, competition_age, created_at, updated_at')
-            .not('age_category', 'is', null)
-            .not('weight_class', 'is', null)
-            .not('lifter_name', 'is', null)
-            .is('wso', null);  // Only fetch records not yet processed
-        
-        // Apply date filter if specified (filters by competition date)
-        if (cutoffDate) {
-            query = query.gte('date', cutoffDate);
-        }
-        
-        const { data: batchData, error } = await query
-            .order('result_id', { ascending: true })  // Use indexed primary key for efficiency
-            .range(start, start + batchSize - 1);
-        
-        if (error) {
-            throw new Error(`Failed to fetch meet results for WSO verification: ${error.message}`);
-        }
-        
-        if (batchData && batchData.length > 0) {
-            allResults.push(...batchData);
-            log(`  Batch ${Math.floor(start/batchSize) + 1}: Found ${batchData.length} results (Total: ${allResults.length})`);
+        try {
+            let query = supabase
+                .from('meet_results')
+                .select('result_id, lifter_id, lifter_name, date, age_category, weight_class, meet_name, wso, gender, birth_year, club_name, national_rank, competition_age, created_at, updated_at')
+                .not('age_category', 'is', null)
+                .not('weight_class', 'is', null)
+                .not('lifter_name', 'is', null)
+                .is('wso', null);  // Only fetch records not yet processed
             
-            // Check if we've hit the limit (for testing)
-            if (limitRecords && allResults.length >= limitRecords) {
-                log(`  Reached LIMIT_RECORDS of ${limitRecords}, stopping batch fetch`);
-                allResults = allResults.slice(0, limitRecords);
-                hasMore = false;
-                break;
+            // Apply date filter if specified (filters by competition date)
+            if (cutoffDate) {
+                query = query.gte('date', cutoffDate);
             }
             
-            // Check if we got a full batch (indicates more records might exist)
-            hasMore = batchData.length === batchSize;
-            start += batchSize;
-        } else {
-            hasMore = false;
+            // Add timeout handling with AbortController if supported
+            let batchData, error;
+            
+            try {
+                const result = await Promise.race([
+                    query.order('result_id', { ascending: true }).range(start, start + batchSize - 1),
+                    new Promise((_, reject) => 
+                        setTimeout(() => reject(new Error('Query timeout after 30 seconds')), 30000)
+                    )
+                ]);
+                
+                batchData = result?.data;
+                error = result?.error;
+            } catch (timeoutError) {
+                if (timeoutError.message.includes('timeout') && retryCount < maxRetries) {
+                    // Timeout occurred, try fallback query without wso filter
+                    log(`⚠️  Query timeout at batch ${Math.floor(start/batchSize) + 1}, attempting fallback query...`);
+                    retryCount++;
+                    
+                    // Fallback: simpler query without the wso=null filter
+                    const fallbackResult = await query
+                        .order('result_id', { ascending: true })
+                        .range(start, start + batchSize - 1);
+                    
+                    batchData = fallbackResult.data;
+                    error = fallbackResult.error;
+                    
+                    if (batchData) {
+                        // Filter out records that already have WSO
+                        batchData = batchData.filter(r => !r.wso);
+                        log(`  Fallback query returned ${batchData.length} records (after filtering out existing WSO)`);
+                    }
+                } else {
+                    throw timeoutError;
+                }
+            }
+            
+            if (error) {
+                throw new Error(`Failed to fetch meet results for WSO verification: ${error.message}`);
+            }
+            
+            if (batchData && batchData.length > 0) {
+                allResults.push(...batchData);
+                log(`  Batch ${Math.floor(start/batchSize) + 1}: Found ${batchData.length} results (Total: ${allResults.length})`);
+                
+                // Check if we've hit the limit (for testing)
+                if (limitRecords && allResults.length >= limitRecords) {
+                    log(`  Reached LIMIT_RECORDS of ${limitRecords}, stopping batch fetch`);
+                    allResults = allResults.slice(0, limitRecords);
+                    hasMore = false;
+                    break;
+                }
+                
+                // Check if we got a full batch (indicates more records might exist)
+                hasMore = batchData.length === batchSize;
+                start += batchSize;
+                retryCount = 0; // Reset retry count on success
+            } else {
+                hasMore = false;
+            }
+        } catch (error) {
+            log(`❌ Error fetching batch at offset ${start}: ${error.message}`);
+            
+            if (retryCount < maxRetries) {
+                retryCount++;
+                log(`  Retrying (attempt ${retryCount} of ${maxRetries})...`);
+                // Wait before retry
+                await new Promise(resolve => setTimeout(resolve, 2000));
+            } else {
+                log(`  Max retries exceeded, continuing with fetched results so far...`);
+                hasMore = false;
+            }
         }
     }
     
@@ -856,19 +925,30 @@ async function getTotalMeetResultsCount() {
     try {
         log('Attempting to count missing WSO records...');
         
-        const { count, error } = await supabase
+        // Try with timeout to prevent hanging
+        const countPromise = supabase
             .from('meet_results')
             .select('result_id', { count: 'exact', head: true })
             .not('age_category', 'is', null)
             .not('weight_class', 'is', null)
             .is('wso', null);
         
+        const countWithTimeout = Promise.race([
+            countPromise,
+            new Promise((_, reject) => 
+                setTimeout(() => reject(new Error('Count query timeout after 15 seconds')), 15000)
+            )
+        ]);
+        
+        const { count, error } = await countWithTimeout;
+        
         if (error) {
             log(`❌ Supabase count error: ${error.message}`);
             log(`   Error code: ${error.code || 'N/A'}`);
             log(`   Error details: ${error.details || 'N/A'}`);
             log(`   Error hint: ${error.hint || 'N/A'}`);
-            throw new Error(`Failed to count total meet results: ${error.message} (code: ${error.code || 'unknown'})`);
+            log('   Falling back to simple count method...');
+            return await getTotalMeetResultsCountFallback();
         }
         
         if (count === null || count === undefined) {
@@ -880,14 +960,15 @@ async function getTotalMeetResultsCount() {
         return count;
         
     } catch (error) {
-        log(`❌ Unexpected error in getTotalMeetResultsCount: ${error.message}`);
+        log(`⚠️  Error in getTotalMeetResultsCount: ${error.message}`);
         log('   Attempting fallback counting method...');
         
         try {
             return await getTotalMeetResultsCountFallback();
         } catch (fallbackError) {
-            log(`❌ Fallback count method also failed: ${fallbackError.message}`);
-            throw new Error(`Both primary and fallback count methods failed. Primary: ${error.message}, Fallback: ${fallbackError.message}`);
+            log(`⚠️  Fallback count method also failed: ${fallbackError.message}`);
+            log('   Proceeding without total count (will use relative percentages)');
+            return null; // Return null instead of throwing to allow script to continue
         }
     }
 }
@@ -956,6 +1037,13 @@ function analyzeMissingWsoPatterns(missingResults) {
     }
     
     return patterns;
+}
+
+// Helper function to extract value from field, handling {type: "unset"} objects
+function extractValue(field) {
+    if (!field) return null;
+    if (typeof field === 'object' && field.type === 'unset') return null;
+    return field;
 }
 
 // Main scan function
