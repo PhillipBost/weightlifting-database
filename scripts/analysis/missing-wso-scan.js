@@ -499,13 +499,13 @@ async function scrapeBiographicalData(url, targetAthleteName) {
         // Additional wait for Vue reactivity
         await new Promise(resolve => setTimeout(resolve, 3000));
         
-        // Save screenshot if debug mode enabled
-        await saveScreenshot(page, `page_${currentPage}_loaded`);
-
         let allBiographicalData = [];
         let currentPage = 1;
         let hasNextPage = true;
         let cellIndices = null; // Will be detected from headers
+        
+        // Save screenshot if debug mode enabled
+        await saveScreenshot(page, `page_${currentPage}_loaded`);
         
         // Loop through all pages to find the athlete
         while (hasNextPage && currentPage <= 10) { // Limit to 10 pages max for safety
