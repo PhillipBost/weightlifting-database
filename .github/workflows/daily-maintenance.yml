@@ -99,6 +99,7 @@ jobs:
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+          LIMIT_RECORDS: 10000
         run: |
           set -o pipefail
           echo "🔍 Starting missing WSO scan..."

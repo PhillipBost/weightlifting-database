@@ -413,7 +413,7 @@ async function findBiographicalData(meetResult) {
     }
 }
 
-// Get meet results for WSO verification (ALL results, not just missing)
+// Get meet results for WSO verification (records missing WSO)
 async function getAllWsoResults() {
     log('Scanning meet results for WSO verification...');
     
@@ -434,7 +434,7 @@ async function getAllWsoResults() {
             .not('age_category', 'is', null)
             .not('weight_class', 'is', null)
             .not('lifter_name', 'is', null)
-            .lt('updated_at', '2025-09-01')  // Only fetch records not yet processed
+            .is('wso', null)  // Only fetch records not yet processed
             .order('result_id', { ascending: true })  // Use indexed primary key for efficiency
             .range(start, start + batchSize - 1);
         
@@ -469,13 +469,14 @@ async function getAllWsoResults() {
 // Get total meet results count for statistics
 async function getTotalMeetResultsCount() {
     try {
-        log('Attempting to count total meet results...');
+        log('Attempting to count missing WSO records...');
         
         const { count, error } = await supabase
             .from('meet_results')
             .select('result_id', { count: 'exact', head: true })
             .not('age_category', 'is', null)
-            .not('weight_class', 'is', null);
+            .not('weight_class', 'is', null)
+            .is('wso', null);
         
         if (error) {
             log(`❌ Supabase count error: ${error.message}`);
