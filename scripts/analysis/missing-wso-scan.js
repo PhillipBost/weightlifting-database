@@ -95,7 +95,9 @@ const OUTPUT_DIR = './output';
 const LOGS_DIR = './logs';
 const OUTPUT_FILE = path.join(OUTPUT_DIR, 'missing_wso_scan_report.json');
 const LOG_FILE = path.join(LOGS_DIR, 'missing-wso-scan.log');
+const CHECKPOINT_FILE = path.join(OUTPUT_DIR, 'wso_scan_checkpoint.json');
 const SCRIPT_VERSION = '1.0.0';
+const CHECKPOINT_INTERVAL = 10; // Save checkpoint every N results
 
 // Load division codes for base64 URL generation
 let divisionCodes = {};
@@ -125,11 +127,54 @@ function ensureDirectories() {
     if (!fs.existsSync(LOGS_DIR)) {
         fs.mkdirSync(LOGS_DIR, { recursive: true });
     }
-    
+
     // Create screenshots directory if debug mode enabled
     const screenshotsDir = './screenshots';
     if (!fs.existsSync(screenshotsDir)) {
         fs.mkdirSync(screenshotsDir, { recursive: true });
+    }
+}
+
+// Load checkpoint from previous run
+function loadCheckpoint() {
+    try {
+        if (fs.existsSync(CHECKPOINT_FILE)) {
+            const checkpointData = JSON.parse(fs.readFileSync(CHECKPOINT_FILE, 'utf8'));
+            log(`✅ Loaded checkpoint: ${checkpointData.processed_result_ids.length} results already processed`);
+            log(`   Last processed result_id: ${checkpointData.last_result_id}`);
+            log(`   Previous stats - Updated: ${checkpointData.stats.updated}, Verified: ${checkpointData.stats.verified}`);
+            return checkpointData;
+        }
+    } catch (error) {
+        log(`⚠️  Could not load checkpoint: ${error.message}`);
+    }
+    return null;
+}
+
+// Save checkpoint during processing
+function saveCheckpoint(processedIds, lastResultId, stats) {
+    try {
+        const checkpoint = {
+            timestamp: new Date().toISOString(),
+            processed_result_ids: processedIds,
+            last_result_id: lastResultId,
+            stats: stats
+        };
+        fs.writeFileSync(CHECKPOINT_FILE, JSON.stringify(checkpoint, null, 2));
+    } catch (error) {
+        log(`⚠️  Failed to save checkpoint: ${error.message}`);
+    }
+}
+
+// Delete checkpoint after successful completion
+function deleteCheckpoint() {
+    try {
+        if (fs.existsSync(CHECKPOINT_FILE)) {
+            fs.unlinkSync(CHECKPOINT_FILE);
+            log(`✅ Checkpoint cleared after successful completion`);
+        }
+    } catch (error) {
+        log(`⚠️  Could not delete checkpoint: ${error.message}`);
     }
 }
 
@@ -1049,17 +1094,17 @@ function extractValue(field) {
 // Main scan function
 async function performWsoScan() {
     const startTime = Date.now();
-    
+
     try {
         log('🔍 Starting missing WSO data scan');
         log('='.repeat(60));
-        
+
         // Initialize Supabase client
         initializeSupabase();
-        
+
         // Test Supabase connection first
         await testSupabaseConnection();
-        
+
         // Parse options
         const options = parseArguments();
         debugMode = options.debug; // Set global debug flag
@@ -1072,35 +1117,50 @@ async function performWsoScan() {
         if (options.debug) {
             log('🐛 Running in DEBUG mode - extra diagnostics will be logged');
         }
-        
+
+        // Load checkpoint from previous run
+        const checkpoint = loadCheckpoint();
+        const processedResultIds = new Set(checkpoint?.processed_result_ids || []);
+        let previousStats = checkpoint?.stats || { updated: 0, verified: 0 };
+
         // Get data - ALL results for verification
         const [allResults, totalResults] = await Promise.all([
             getAllWsoResults(),
             getTotalMeetResultsCount()
         ]);
-        
+
+        // Filter out already-processed results
+        const resultsToProcess = allResults.filter(r => !processedResultIds.has(r.result_id));
+
+        if (processedResultIds.size > 0) {
+            log(`\n📌 RESUMING FROM CHECKPOINT`);
+            log(`   Already processed: ${processedResultIds.size} results`);
+            log(`   Remaining to process: ${resultsToProcess.length} results`);
+            log(`   Previous run stats - Updated: ${previousStats.updated}, Verified: ${previousStats.verified}`);
+        }
+
         // Initialize browser if we need to verify WSO data
         let foundData = [];
-        let dataUpdates = 0;
-        let verifiedCorrect = 0;
+        let dataUpdates = previousStats.updated || 0;
+        let verifiedCorrect = previousStats.verified || 0;
         let correctedData = 0;
         let skippedCount = 0;
         let missingCount = allResults.filter(r => !r.wso).length;
         
-        if (options.findData && allResults.length > 0) {
+        if (options.findData && resultsToProcess.length > 0) {
             await initBrowser();
-            
-            log('\n🔍 Verifying ALL WSO data using reverse URL lookup...');
-            log(`   Processing ${allResults.length} total results`);
+
+            log('\n🔍 Verifying WSO data using reverse URL lookup...');
+            log(`   Total results in database: ${allResults.length}`);
+            log(`   Results to process this run: ${resultsToProcess.length}`);
             log(`   ${missingCount} missing WSO, ${allResults.length - missingCount} have existing WSO`);
-            
-            // Process ALL results for verification
-            const resultsToProcess = allResults;
-            
+
             for (let i = 0; i < resultsToProcess.length; i++) {
                 const result = resultsToProcess[i];
+                const globalIndex = processedResultIds.size + i + 1;
+                const totalToProcess = processedResultIds.size + resultsToProcess.length;
                 log(`
-📋 [${i+1}/${resultsToProcess.length}] Processing ${result.lifter_name} (result_id: ${result.result_id})`);
+📋 [${globalIndex}/${totalToProcess}] Processing ${result.lifter_name} (result_id: ${result.result_id})`);
                 
                 const foundBiographicalData = await findBiographicalData(result);
                 
@@ -1219,6 +1279,19 @@ async function performWsoScan() {
                     }
                 }
                 
+                // Add result to processed set
+                processedResultIds.add(result.result_id);
+
+                // Save checkpoint every N results
+                if ((i + 1) % CHECKPOINT_INTERVAL === 0) {
+                    saveCheckpoint(
+                        Array.from(processedResultIds),
+                        result.result_id,
+                        { updated: dataUpdates, verified: verifiedCorrect }
+                    );
+                    log(`    💾 Checkpoint saved (${processedResultIds.size} results processed)`);
+                }
+
                 // Rate limiting between results
                 if (i < resultsToProcess.length - 1) {
                     await new Promise(resolve => setTimeout(resolve, 3000));
@@ -1389,7 +1462,10 @@ async function performWsoScan() {
 
         log(`\n✅ WSO scan completed successfully`);
         log(`   Execution successful: ${executionSuccessful}`);
-        log(`   Progress made: processed ${allResults.length} records, updated ${dataUpdates}, verified ${verifiedCorrect}`);
+        log(`   Progress made: processed ${processedResultIds.size} records, updated ${dataUpdates}, verified ${verifiedCorrect}`);
+
+        // Clear checkpoint after successful completion
+        deleteCheckpoint();
 
         return report;
 
