@@ -77,7 +77,7 @@ jobs:
   missing-wso-scan:
     if: ${{ !inputs.skip_wso_scan }}
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 240
 
     steps:
       - name: Checkout repository
