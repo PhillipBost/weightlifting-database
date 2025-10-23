@@ -27,7 +27,12 @@
       "Bash(npm install:*)",
       "Bash(psql:*)",
       "WebFetch(domain:iwf.sport)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "mcp__serena__insert_before_symbol",
+      "Bash(pkill -f \"node scripts/production/iwf-\")",
+      "Bash(grep -A 15 \"--- 60 kg Men\")",
+      "Bash(git checkout:*)",
+      "mcp__serena__replace_symbol_body"
     ],
     "deny": [],
     "ask": []

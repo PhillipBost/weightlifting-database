@@ -415,7 +415,12 @@ async function findBiographicalData(meetResult) {
 
 // Get meet results for WSO verification (ALL results, not just missing)
 async function getAllWsoResults() {
-    log('Scanning ALL meet results for WSO verification...');
+    log('Scanning meet results for WSO verification...');
+    
+    const limitRecords = process.env.LIMIT_RECORDS ? parseInt(process.env.LIMIT_RECORDS) : null;
+    if (limitRecords) {
+        log(`⚠️  LIMIT_RECORDS set to ${limitRecords} (for testing/debugging)`);
+    }
     
     let allResults = [];
     let start = 0;
@@ -429,7 +434,8 @@ async function getAllWsoResults() {
             .not('age_category', 'is', null)
             .not('weight_class', 'is', null)
             .not('lifter_name', 'is', null)
-            .order('date', { ascending: false }) // Process recent meets first
+            .lt('updated_at', '2025-09-01')  // Only fetch records not yet processed
+            .order('result_id', { ascending: true })  // Use indexed primary key for efficiency
             .range(start, start + batchSize - 1);
         
         if (error) {
@@ -440,6 +446,14 @@ async function getAllWsoResults() {
             allResults.push(...batchData);
             log(`  Batch ${Math.floor(start/batchSize) + 1}: Found ${batchData.length} results (Total: ${allResults.length})`);
             
+            // Check if we've hit the limit (for testing)
+            if (limitRecords && allResults.length >= limitRecords) {
+                log(`  Reached LIMIT_RECORDS of ${limitRecords}, stopping batch fetch`);
+                allResults = allResults.slice(0, limitRecords);
+                hasMore = false;
+                break;
+            }
+            
             // Check if we got a full batch (indicates more records might exist)
             hasMore = batchData.length === batchSize;
             start += batchSize;
@@ -448,7 +462,7 @@ async function getAllWsoResults() {
         }
     }
     
-    log(`Found ${allResults.length} total meet results for WSO verification`);
+    log(`Found ${allResults.length} meet results for WSO verification`);
     return allResults;
 }
 
@@ -607,17 +621,8 @@ async function performWsoScan() {
             
             for (let i = 0; i < resultsToProcess.length; i++) {
                 const result = resultsToProcess[i];
-                log(`\n📋 [${i+1}/${resultsToProcess.length}] Processing ${result.lifter_name} (result_id: ${result.result_id})`);
-                
-                // Check if this result was recently updated (on or after 9/1/2025)
-                const skipDate = new Date('2025-09-01');
-                const updatedDate = result.updated_at ? new Date(result.updated_at) : new Date(result.created_at);
-                
-                if (updatedDate >= skipDate) {
-                    log(`    ⏭️ Skipping - already updated on ${updatedDate.toISOString().split('T')[0]} (>= 2025-09-01)`);
-                    skippedCount++;
-                    continue;
-                }
+                log(`
+📋 [${i+1}/${resultsToProcess.length}] Processing ${result.lifter_name} (result_id: ${result.result_id})`);
                 
                 const foundBiographicalData = await findBiographicalData(result);
                 
