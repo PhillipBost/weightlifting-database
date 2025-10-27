@@ -45,7 +45,7 @@ const config = require('./iwf-config');
  * @param {string} eventDate - Event date (YYYY-MM-DD)
  * @returns {Promise<Object>} - Scraper result data
  */
-async function runScraper(eventId, year, eventDate) {
+async function runScraper(eventId, year, eventDate, endpoint) {
     console.log(`\n${'='.repeat(80)}`);
     console.log(`SCRAPING EVENT ${eventId}`);
     console.log('='.repeat(80));
@@ -55,10 +55,10 @@ async function runScraper(eventId, year, eventDate) {
 
     try {
         // Initialize browser
-        await scraper.initializeBrowser();
+        await scraper.initBrowser();
 
         // Scrape event results
-        const result = await scraper.scrapeEventResults(eventId, year, eventDate, null);
+        const result = await scraper.scrapeEventResults(eventId, year, eventDate, endpoint);
 
         // Close browser
         await scraper.closeBrowser();
@@ -156,7 +156,7 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
 
         // Step 3: Scrape event results
         console.log(`\n🌐 Scraping event results...`);
-        const scraperResult = await runScraper(eventId, year, eventDate);
+        const scraperResult = await runScraper(eventId, year, eventDate, meetMetadata?.endpoint || null);
 
         if (!scraperResult.success) {
             throw new Error('Failed to scrape event results');
@@ -191,7 +191,7 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
         if (meetMetadata.location_city || meetMetadata.location_country) {
             console.log(`\n📍 Upserting meet location...`);
             const locationData = meetManager.parseLocationData(meetMetadata);
-            await meetManager.upsertIWFMeetLocation(meet.db_meet_id, locationData);
+            await meetManager.upsertIWFMeetLocation(meet.iwf_meet_id, locationData);
         }
 
         // Step 6: Import results with YTD calculations
@@ -203,7 +203,8 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
             {
                 Meet: meet.Meet,
                 Date: meet.Date,
-                Level: meet.Level
+                Level: meet.Level,
+                iwf_meet_id: meet.iwf_meet_id  // Pass IWF event ID for correct foreign key
             },
             {
                 batchSize: options.batchSize || 100,

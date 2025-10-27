@@ -17,10 +17,13 @@ const config = require('./iwf-config');
 const lifterManager = require('./iwf-lifter-manager');
 
 // ============================================================================
-// YTD CALCULATION
+// YTD CALCULATION (DEPRECATED - Use Database Trigger Instead)
 // ============================================================================
+// NOTE: YTD calculation is now handled by database trigger calculate_iwf_ytd_bests()
+// This function is kept for reference but is no longer called during import.
 
 /**
+ * @deprecated YTD is now calculated by database trigger calculate_iwf_ytd_bests()
  * Calculate Year-to-Date (YTD) best performances for a lifter
  * This is RETROSPECTIVE: finds best performance in same calendar year BEFORE this meet
  *
@@ -50,7 +53,7 @@ async function calculateYTDBests(lifterId, meetDate, currentResults) {
         const { data: previousResults, error } = await config.supabaseIWF
             .from('iwf_meet_results')
             .select('best_snatch, best_cj, total, date')
-            .eq('iwf_lifter_id', lifterId)  // lifterId is db_lifter_id from lifters table
+            .eq('db_lifter_id', lifterId)  // lifterId is db_lifter_id from lifters table
             .gte('date', `${meetYear}-01-01`)
             .lt('date', meetDate);  // BEFORE this meet date
 
@@ -121,30 +124,31 @@ async function calculateYTDBests(lifterId, meetDate, currentResults) {
  * @param {Object} meetInfo - Meet context (date, name, etc.)
  * @returns {Object} - Database-ready result record
  */
-function mapAthleteToResultRecord(athlete, meetId, lifterId, meetInfo) {
+function mapAthleteToResultRecord(athlete, meetId, lifter, meetInfo) {
     return {
         // Foreign keys
-        iwf_meet_id: meetId,
-        iwf_lifter_id: lifterId,
+        db_meet_id: meetId,
+        iwf_meet_id: meetInfo?.iwf_meet_id,  // Store IWF's official event ID (should always be provided)
+        db_lifter_id: lifter.db_lifter_id,
 
         // Competition context
         meet_name: meetInfo.Meet || null,
         date: meetInfo.Date || null,
         age_category: athlete.age_category || 'Senior',  // Default to Senior if not specified
         weight_class: athlete.weight_class || null,
-        lifter_name: athlete.name || null,
+        lifter_name: lifter.athlete_name || null,
         body_weight_kg: athlete.body_weight || null,
 
         // Lift attempts (stored as text to preserve format)
-        snatch_lift_1: athlete.snatch_1 !== undefined ? String(athlete.snatch_1) : null,
-        snatch_lift_2: athlete.snatch_2 !== undefined ? String(athlete.snatch_2) : null,
-        snatch_lift_3: athlete.snatch_3 !== undefined ? String(athlete.snatch_3) : null,
-        best_snatch: athlete.best_snatch !== undefined ? String(athlete.best_snatch) : null,
-        cj_lift_1: athlete.cj_1 !== undefined ? String(athlete.cj_1) : null,
-        cj_lift_2: athlete.cj_2 !== undefined ? String(athlete.cj_2) : null,
-        cj_lift_3: athlete.cj_3 !== undefined ? String(athlete.cj_3) : null,
-        best_cj: athlete.best_cj !== undefined ? String(athlete.best_cj) : null,
-        total: athlete.total !== undefined ? String(athlete.total) : null,
+        snatch_lift_1: athlete.snatch_1 !== undefined && athlete.snatch_1 !== null ? String(athlete.snatch_1) : '0',
+        snatch_lift_2: athlete.snatch_2 !== undefined && athlete.snatch_2 !== null ? String(athlete.snatch_2) : '0',
+        snatch_lift_3: athlete.snatch_3 !== undefined && athlete.snatch_3 !== null ? String(athlete.snatch_3) : '0',
+        best_snatch: athlete.best_snatch !== undefined && athlete.best_snatch !== null ? String(athlete.best_snatch) : '0',
+        cj_lift_1: athlete.cj_1 !== undefined && athlete.cj_1 !== null ? String(athlete.cj_1) : '0',
+        cj_lift_2: athlete.cj_2 !== undefined && athlete.cj_2 !== null ? String(athlete.cj_2) : '0',
+        cj_lift_3: athlete.cj_3 !== undefined && athlete.cj_3 !== null ? String(athlete.cj_3) : '0',
+        best_cj: athlete.best_cj !== undefined && athlete.best_cj !== null ? String(athlete.best_cj) : '0',
+        total: athlete.total !== undefined && athlete.total !== null ? String(athlete.total) : '0',
 
         // Analytics - Successful attempts
         snatch_successful_attempts: athlete.snatch_successful_attempts || 0,
@@ -166,7 +170,8 @@ function mapAthleteToResultRecord(athlete, meetId, lifterId, meetInfo) {
         gender: athlete.gender || null,
         birth_year: athlete.birth_year || null,
         competition_age: athlete.competition_age || null,
-        country: athlete.nation || null,  // 'nation' from scraper → 'country' in DB
+        country_code: lifter.country_code || null,
+        country_name: lifter.country_name || null,
         competition_group: athlete.group || null,  // 'group' from scraper → 'competition_group' in DB
         rank: (athlete.rank && athlete.rank !== '---') ? parseInt(athlete.rank) : null,  // DNF athletes have rank "---" → null
 
@@ -198,7 +203,7 @@ async function insertResultRecord(resultData) {
         const { data, error } = await config.supabaseIWF
             .from('iwf_meet_results')
             .insert(resultData)
-            .select('iwf_result_id, iwf_meet_id, iwf_lifter_id, lifter_name')
+            .select('*')
             .single();
 
         if (error) {
@@ -248,35 +253,21 @@ async function insertResultRecord(resultData) {
 async function importAthleteResult(athlete, meetId, meetInfo) {
     try {
         // Step 1: Find or create lifter
-        const lifter = await lifterManager.findOrCreateIWFLifter(
+        const lifter = await lifterManager.findOrCreateLifter(
             athlete.name,
             athlete.nation,
-            {
-                gender: athlete.gender,
-                birth_year: athlete.birth_year
-            }
+            athlete.birth_year,
+            athlete.gender,
+            athlete.iwf_lifter_id,
+            athlete.iwf_athlete_url
         );
 
         // Step 2: Map athlete data to result record
-        const resultRecord = mapAthleteToResultRecord(athlete, meetId, lifter.db_lifter_id, meetInfo);
+        const resultRecord = mapAthleteToResultRecord(athlete, meetId, lifter, meetInfo);
 
-        // Step 3: Calculate YTD bests
-        const ytdBests = await calculateYTDBests(
-            lifter.db_lifter_id,
-            meetInfo.Date,
-            {
-                best_snatch: athlete.best_snatch,
-                best_cj: athlete.best_cj,
-                total: athlete.total
-            }
-        );
-
-        // Add YTD bests to result record
-        resultRecord.best_snatch_ytd = ytdBests.best_snatch_ytd;
-        resultRecord.best_cj_ytd = ytdBests.best_cj_ytd;
-        resultRecord.best_total_ytd = ytdBests.best_total_ytd;
-
-        // Step 4: Insert result record
+        // Step 3: Insert result record (YTD is calculated by database trigger)
+        // Note: best_snatch_ytd, best_cj_ytd, best_total_ytd are calculated automatically
+        // by the database trigger calculate_iwf_ytd_bests() on INSERT/UPDATE
         const insertResult = await insertResultRecord(resultRecord);
 
         return {
@@ -311,9 +302,17 @@ async function importAthleteResult(athlete, meetId, meetInfo) {
 async function batchImportResults(athletes, meetId, meetInfo, options = {}) {
     const batchSize = options.batchSize || 100;
     const delayMs = options.delayMs || 200;
+    const limit = options.limit || null;
+    
+    // Apply limit if specified
+    const athletesToProcess = limit ? athletes.slice(0, limit) : athletes;
+    const limitApplied = limit && limit < athletes.length;
 
     const summary = {
         totalAthletes: athletes.length,
+        limitApplied: limitApplied,
+        limitValue: limit,
+        processedAthletes: athletesToProcess.length,
         processed: 0,
         successful: 0,
         duplicates: 0,
@@ -355,7 +354,7 @@ async function batchImportResults(athletes, meetId, meetInfo, options = {}) {
 
             // Progress indicator
             if ((i + 1) % 50 === 0) {
-                console.log(`  📊 Progress: ${i + 1}/${athletes.length} (${Math.round((i + 1) / athletes.length * 100)}%)`);
+                console.log(`  📊 Progress: ${i + 1}/${athletesToProcess.length} (${Math.round((i + 1) / athletesToProcess.length * 100)}%)`);
             }
 
             // Batch delay to avoid overwhelming database
@@ -403,18 +402,58 @@ async function importMeetResults(mensWeightClasses, womensWeightClasses, meetId,
         }
     };
 
+    // Collect all athletes from both genders
+    const mensAthletes = (mensWeightClasses && mensWeightClasses.weight_classes) 
+        ? mensWeightClasses.weight_classes.flatMap(wc => wc.athletes || [])
+        : [];
+    const womensAthletes = (womensWeightClasses && womensWeightClasses.weight_classes)
+        ? womensWeightClasses.weight_classes.flatMap(wc => wc.athletes || [])
+        : [];
+
+    // Apply limit across BOTH genders if specified
+    const limit = options.limit || null;
+    let mensToImport = mensAthletes;
+    let womensToImport = womensAthletes;
+    
+    if (limit) {
+        const totalAvailable = mensAthletes.length + womensAthletes.length;
+        console.log(`
+⚠️  LIMIT APPLIED: ${limit} of ${totalAvailable} total athletes`);
+        
+        if (limit <= mensAthletes.length) {
+            // Limit fits entirely within men's results
+            mensToImport = mensAthletes.slice(0, limit);
+            womensToImport = [];
+        } else {
+            // Import all men, remaining from women
+            mensToImport = mensAthletes;
+            const remainingLimit = limit - mensAthletes.length;
+            womensToImport = womensAthletes.slice(0, remainingLimit);
+        }
+    }
+
     // Import men's results
-    if (mensWeightClasses && mensWeightClasses.weight_classes) {
-        console.log('\n=== IMPORTING MEN\'S RESULTS ===');
-        const mensAthletes = mensWeightClasses.weight_classes.flatMap(wc => wc.athletes || []);
-        combinedSummary.mens = await batchImportResults(mensAthletes, meetId, meetInfo, options);
+    if (mensToImport.length > 0) {
+        console.log(`
+=== IMPORTING MEN'S RESULTS ===`);
+        combinedSummary.mens = await batchImportResults(
+            mensToImport, 
+            meetId, 
+            meetInfo, 
+            { ...options, limit: null }  // Don't apply limit again in batch
+        );
     }
 
     // Import women's results
-    if (womensWeightClasses && womensWeightClasses.weight_classes) {
-        console.log('\n=== IMPORTING WOMEN\'S RESULTS ===');
-        const womensAthletes = womensWeightClasses.weight_classes.flatMap(wc => wc.athletes || []);
-        combinedSummary.womens = await batchImportResults(womensAthletes, meetId, meetInfo, options);
+    if (womensToImport.length > 0) {
+        console.log(`
+=== IMPORTING WOMEN'S RESULTS ===`);
+        combinedSummary.womens = await batchImportResults(
+            womensToImport, 
+            meetId, 
+            meetInfo, 
+            { ...options, limit: null }  // Don't apply limit again in batch
+        );
     }
 
     // Calculate combined totals
