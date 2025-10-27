@@ -127,7 +127,6 @@ async function calculateYTDBests(lifterId, meetDate, currentResults) {
 function mapAthleteToResultRecord(athlete, meetId, lifter, meetInfo) {
     return {
         // Foreign keys
-        iwf_meet_id: meetInfo.iwf_meet_id,  // TEXT - IWF event ID
         db_meet_id: meetId,                  // BIGINT - Database meet PK
         db_lifter_id: lifter.db_lifter_id,   // BIGINT - Database lifter PK
 
@@ -213,9 +212,6 @@ async function insertResultRecord(resultData) {
                 };
             }
 
-            // Log full error details for debugging
-            console.error(`[Insert Error Details] Code: ${error.code}, Message: ${error.message}, Details: ${JSON.stringify(error)}`);
-
             return {
                 success: false,
                 result: null,
@@ -263,11 +259,6 @@ async function importAthleteResult(athlete, meetId, meetInfo) {
 
         // Step 2: Map athlete data to result record
         const resultRecord = mapAthleteToResultRecord(athlete, meetId, lifter, meetInfo);
-
-        // Debug: Log the record being inserted
-        if (athlete.name === 'K Duong') {
-            console.log(`[Debug] Result record for K Duong:`, JSON.stringify(resultRecord, null, 2));
-        }
 
         // Step 3: Insert result record (YTD is calculated by database trigger)
         // Note: best_snatch_ytd, best_cj_ytd, best_total_ytd are calculated automatically
