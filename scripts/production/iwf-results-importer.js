@@ -128,7 +128,6 @@ function mapAthleteToResultRecord(athlete, meetId, lifter, meetInfo) {
     return {
         // Foreign keys
         db_meet_id: meetId,
-        iwf_meet_id: meetInfo?.iwf_meet_id,  // Store IWF's official event ID (should always be provided)
         db_lifter_id: lifter.db_lifter_id,
 
         // Competition context
@@ -166,12 +165,8 @@ function mapAthleteToResultRecord(athlete, meetId, lifter, meetInfo) {
         bounce_back_cj_2: athlete.bounce_back_cj_2 !== undefined ? athlete.bounce_back_cj_2 : null,
         bounce_back_cj_3: athlete.bounce_back_cj_3 !== undefined ? athlete.bounce_back_cj_3 : null,
 
-        // Athlete data
-        gender: athlete.gender || null,
-        birth_year: athlete.birth_year || null,
+        // Competition-specific data (not denormalized from lifters table)
         competition_age: athlete.competition_age || null,
-        country_code: lifter.country_code || null,
-        country_name: lifter.country_name || null,
         competition_group: athlete.group || null,  // 'group' from scraper → 'competition_group' in DB
         rank: (athlete.rank && athlete.rank !== '---') ? parseInt(athlete.rank) : null,  // DNF athletes have rank "---" → null
 
