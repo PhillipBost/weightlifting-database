@@ -129,6 +129,7 @@ function mapAthleteToResultRecord(athlete, meetId, lifter, meetInfo) {
         // Foreign keys
         db_meet_id: meetId,
         db_lifter_id: lifter.db_lifter_id,
+        iwf_meet_id: meetInfo.iwf_meet_id,
 
         // Competition context
         meet_name: meetInfo.Meet || null,
