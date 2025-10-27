@@ -164,6 +164,24 @@ function mapCountryCodeToName(code) {
         'TUN': 'Tunisia',
         'UGA': 'Uganda',
         'ZIM': 'Zimbabwe',
+
+        // Special/Neutral codes
+        'VAN': 'Vanuatu',
+        'AIN': 'Individual Neutral Athletes',
+        'WRT': 'Weightlifting Refugee Team',
+        'ISR': 'Israel',
+        'KUW': 'Kuwait',
+        'MLT': 'Malta',
+        'INA': 'Indonesia',
+        'BRN': 'Bahrain',
+        'UAE': 'United Arab Emirates',
+        'TGA': 'Tonga',
+        'PRK': 'North Korea',
+        'PLE': 'Palestine',
+        'NMI': 'Northern Mariana Islands',
+        'NGR': 'Nigeria',
+        'KSA': 'Saudi Arabia',
+        'IRI': 'Iran',
     };
 
     return countryMap[code] || null;
@@ -172,72 +190,96 @@ function mapCountryCodeToName(code) {
 /**
  * Normalize athlete name for storage
  * Converts "LASTNAME Firstname" → "Firstname LASTNAME" format
- * Preserves mixed case (e.g., "Hao WANG", "Lasha TALAKHADZE")
+ * Handles compound last names (e.g., "FELIX DA SILVA Thiago" → "Thiago FELIX DA SILVA")
+ * Handles suffixes (Jr, Sr, II, III, IV, etc.)
+ * Removes country codes that leaked from extraction
  *
  * Detection logic:
- * - If first word is all caps: "LASTNAME Firstname" → reorder to "Firstname LASTNAME"
- * - If only 2 words and second is all caps: "Firstname LASTNAME" → keep as-is
- * - If entire name is all caps: likely "LASTNAME FIRSTNAME" in caps → keep as-is
- * - Otherwise: keep as provided
+ * - Extract and preserve suffixes (Jr, Sr, II, III, etc.)
+ * - Remove any 3-letter all-caps country codes
+ * - Find first mixed-case word (that's the first name)
+ * - Everything else is last name
+ * - Append suffix at end
  *
- * @param {string} name - Athlete name from IWF results (e.g., "WANG Hao", "Hao WANG", "wang hao")
- * @returns {string} - Formatted name as "Firstname LASTNAME"
+ * @param {string} name - Athlete name from IWF results (e.g., "WANG Hao", "AGAD Fernando Jr", "FELIX DA SILVA Thiago")
+ * @returns {string} - Formatted name as "Firstname LASTNAME" or "Firstname LASTNAME Jr"
  */
 function normalizeName(name) {
     if (!name || typeof name !== 'string') {
         return '';
     }
 
-    const trimmed = name.trim();
+    let trimmed = name.trim();
     if (!trimmed) {
         return '';
     }
 
-    // Split name into parts
-    const parts = trimmed.split(/\s+/);
+    // Step 1: Extract and remove suffixes (Jr, Sr, II, III, IV, V, VI, VII, VIII, IX, X, etc.)
+    let suffix = null;
+    const suffixPattern = /\s+(Jr\.?|Sr\.?|II|III|IV|V|VI|VII|VIII|IX|X|XI|XII)(?:\s|$)/i;
+    const suffixMatch = trimmed.match(suffixPattern);
+    if (suffixMatch) {
+        suffix = suffixMatch[1].replace(/\.$/, '');  // Remove trailing dot if present
+        trimmed = trimmed.replace(suffixPattern, ' ').trim();
+    }
+
+    // Step 2: Remove any 3-letter country codes (leaked from extraction)
+    trimmed = trimmed.replace(/\s+([A-Z]{3})\s*(?:\([A-Z]{3}\))?(?=\s|$)/g, ' ').trim();
+
+    // Step 3: Split into parts
+    const parts = trimmed.split(/\s+/).filter(p => p.length > 0);
     if (parts.length === 0) {
         return '';
     }
 
-    // If only one word, return as-is
+    // If only one word, return as-is (plus suffix if present)
     if (parts.length === 1) {
-        return parts[0];
+        return suffix ? `${parts[0]} ${suffix}` : parts[0];
     }
 
-    // Check capitalization patterns
+    // Step 4: Detect LASTNAME position using IWF naming pattern
+    // IWF format: LASTNAME FirstNames/Initials
+    // LASTNAME = first word if mixed-case, OR consecutive all-caps words >1 char until hitting initial or mixed-case
+    let lastNameEndIndex = 0;
     const firstWord = parts[0];
-    const secondWord = parts[1];
-    const lastWord = parts[parts.length - 1];
+    const hasUpper = /[A-Z]/.test(firstWord);
+    const hasLower = /[a-z]/.test(firstWord);
+    
+    if (hasUpper && hasLower) {
+        // First word is mixed-case (e.g., AlQAHTANI) → it's the LASTNAME
+        lastNameEndIndex = 1;
+    } else {
+        // Collect consecutive all-caps multi-character words
+        for (let i = 0; i < parts.length; i++) {
+            const word = parts[i];
+            const isAllCaps = word.toUpperCase() === word;
+            const isMultiChar = word.length > 1;
+            
+            if (isAllCaps && isMultiChar) {
+                // This is part of LASTNAME
+                lastNameEndIndex = i + 1;
+            } else {
+                // Stop at first single-letter word (initial) or mixed-case word
+                break;
+            }
+        }
+    }
+    
+    let finalName = trimmed;  // Default: keep as-is
 
-    const isFirstWordAllCaps = firstWord.toUpperCase() === firstWord && firstWord.length > 1;
-    const isSecondWordAllCaps = secondWord && secondWord.toUpperCase() === secondWord && secondWord.length > 1;
-    const isLastWordAllCaps = lastWord && lastWord.toUpperCase() === lastWord && lastWord.length > 1;
-    const isEntireNameAllCaps = trimmed.toUpperCase() === trimmed;
-
-    // If entire name is all caps, it's probably "LASTNAME FIRSTNAME" - keep as-is
-    if (isEntireNameAllCaps) {
-        return trimmed;
+    // Step 5: Rearrange: move LASTNAME to end
+    if (lastNameEndIndex > 0 && lastNameEndIndex < parts.length) {
+        const lastName = parts.slice(0, lastNameEndIndex).join(' ');
+        const givenName = parts.slice(lastNameEndIndex).join(' ');
+        finalName = `${givenName} ${lastName}`;
     }
 
-    // If first word is all caps (but not the whole name), it's "LASTNAME Firstname" format
-    if (isFirstWordAllCaps && !isEntireNameAllCaps) {
-        // Move first word to end
-        const given = parts.slice(1).join(' ');
-        return `${given} ${firstWord}`;
+    // Step 6: Add suffix back at the end
+    if (suffix) {
+        finalName = `${finalName} ${suffix}`;
     }
 
-    // If we have 2 words and the second is all caps, it's "Firstname LASTNAME" - keep as-is
-    if (parts.length === 2 && isSecondWordAllCaps && !isFirstWordAllCaps) {
-        return trimmed;
-    }
-
-    // If last word is all caps (and first isn't), it's "Firstname LASTNAME" - keep as-is
-    if (isLastWordAllCaps && !isFirstWordAllCaps) {
-        return trimmed;
-    }
-
-    // Default: keep as provided
-    return trimmed;
+    return finalName;
 }
 
 /**
@@ -259,23 +301,28 @@ function getMatchKey(name) {
 // ============================================================================
 
 /**
- * Find existing lifter or create new one based on name + country matching
+ * Find existing lifter or create new one using IWF ID, with fallback to name+country matching
  *
- * IWF has no membership numbers, so we match on athlete_name + country_code combination.
+ * Matching priority:
+ * 1. IWF Lifter ID (iwf_lifter_id) - globally unique, primary key
+ * 2. Athlete name + country code combination - fallback for athletes without IWF profile
+ *
  * Names are stored in "Firstname LASTNAME" format and matched case-insensitively.
  * Same name in different countries = different lifters (correct behavior).
  *
  * Example:
- *   - "WANG Hao" (CHN) stored as "Hao WANG"
- *   - "WANG Hao" (USA) stored as "Hao WANG" - same formatted name, different country = different lifter
+ *   - "WANG Hao" (CHN) from IWF profile ID 14318 → matched by ID, stored as "Hao WANG"
+ *   - "WANG Hao" (USA) with no IWF ID → matched by name+country, different lifter
  *
- * @param {string} name - Athlete name as appears in IWF results (e.g., "WANG Hao", "Hao WANG")
+ * @param {string} name - Athlete name as appears in IWF results
  * @param {string} country - 3-letter country code (USA, CHN, GBR, etc.)
  * @param {number} birthYear - Year of birth (integer, optional)
  * @param {string} gender - 'M' or 'F' (optional)
+ * @param {number} iWFLifterId - IWF official athlete ID from profile URL (optional, primary key)
+ * @param {string} iWFAthleteUrl - Full URL to IWF athlete profile (optional)
  * @returns {Object|null} - Lifter object with db_lifter_id or null on error
  */
-async function findOrCreateLifter(name, country, birthYear, gender) {
+async function findOrCreateLifter(name, country, birthYear, gender, iWFLifterId, iWFAthleteUrl) {
     // Validate required parameters
     if (!name || !country) {
         console.error('[Lifter Manager] Error: Missing required parameters (name, country)');
@@ -297,7 +344,13 @@ async function findOrCreateLifter(name, country, birthYear, gender) {
     const countryName = mapCountryCodeToName(country);
 
     try {
-        // Step 1: Query all lifters with same country, then match by name (case-insensitive)
+        // Step 1: Skip IWF lifter ID lookup if it doesn't exist in the schema
+        // The schema currently stores iwf_lifter_id as the auto-increment PK,
+        // not as the IWF official athlete ID. IWF ID matching should be added
+        // after schema migration to separate db_lifter_id (PK) from iwf_lifter_id (IWF official ID).
+        // For now, rely on name+country matching (Step 2).
+
+        // Step 2: Fallback to name + country matching (for athletes without IWF profile)
         const { data: liftersInCountry, error: searchError } = await config.supabaseIWF
             .from('iwf_lifters')
             .select('*')
@@ -316,23 +369,27 @@ async function findOrCreateLifter(name, country, birthYear, gender) {
 
             if (existingLifter) {
                 console.log(`[Lifter Manager] Found existing: ${normalizedName} (${country})`);
+                // Schema note: iwf_lifter_id is the auto-increment PK in current schema.
+                // IWF official athlete ID tracking will be added after schema migration.
                 return existingLifter;
             }
         }
 
-        // Step 2: If not found, create new lifter
+        // Step 3: If not found by IWF ID or name+country, create new lifter
         const newLifterData = {
             athlete_name: normalizedName,      // Store as "Firstname LASTNAME" format
             gender: gender || null,
             birth_year: birthYear || null,
             country_code: country,              // 3-letter code (USA, CHN, etc.)
-            country_name: countryName          // Full country name (United States, China, etc.)
+            country_name: countryName,          // Full country name (United States, China, etc.)
+            iwf_lifter_id: iWFLifterId || null,      // IWF official athlete ID from profile URL
+            iwf_athlete_url: iWFAthleteUrl || null   // Full URL to IWF athlete profile
         };
 
         const { data: newLifter, error: insertError } = await config.supabaseIWF
             .from('iwf_lifters')
             .insert([newLifterData])
-            .select()
+            .select('*')
             .single();
 
         if (insertError) {
@@ -340,7 +397,16 @@ async function findOrCreateLifter(name, country, birthYear, gender) {
             return null;
         }
 
-        console.log(`[Lifter Manager] Created new: ${normalizedName} (${country}${countryName ? ' - ' + countryName : ''})`);
+        if (!newLifter) {
+            console.error(`[Lifter Manager] Insert succeeded but no data returned for: ${normalizedName}`);
+            return null;
+        }
+
+        if (!newLifter.db_lifter_id) {
+            console.warn(`[Lifter Manager] Warning: db_lifter_id is null for ${normalizedName}. Full lifter object:`, JSON.stringify(newLifter));
+        }
+
+        console.log(`[Lifter Manager] Created new: ${normalizedName} (${country}${countryName ? ' - ' + countryName : ''}) - ID: ${newLifter.db_lifter_id}`);
         return newLifter;
 
     } catch (error) {

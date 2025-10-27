@@ -33,21 +33,22 @@ async function findExistingMeet(eventId) {
     }
 
     try {
-        const { data, error} = await config.supabaseIWF
+        // Query by iwf_meet_id (which stores the IWF event ID)
+        let { data, error } = await config.supabaseIWF
             .from('iwf_meets')
-            .select('db_meet_id, event_id, meet, date, level, url')
-            .eq('event_id', eventId.toString())
+            .select('*')
+            .eq('iwf_meet_id', eventId.toString())
             .maybeSingle();
 
         if (error) {
-            console.error(`Error finding meet: ${error.message}`);
+            console.warn(`Warning querying iwf_meets: ${error.message}`);
             return null;
         }
 
         return data;
 
     } catch (error) {
-        console.error(`Error in findExistingMeet: ${error.message}`);
+        console.warn(`Error in findExistingMeet: ${error.message}`);
         return null;
     }
 }
@@ -67,7 +68,7 @@ async function checkMeetHasResults(meetId) {
         const { count, error } = await config.supabaseIWF
             .from('iwf_meet_results')
             .select('*', { count: 'exact', head: true })
-            .eq('db_meet_id', meetId);
+            .eq('iwf_meet_id', meetId);
 
         if (error) {
             console.error(`Error checking meet results: ${error.message}`);
@@ -106,14 +107,12 @@ async function upsertIWFMeet(meetData) {
     }
 
     const insertData = {
-        event_id: meetData.event_id.toString(),
+        iwf_meet_id: meetData.event_id.toString(),
         meet: meetData.Meet || meetData.meet || null,
         level: meetData.Level || meetData.level || null,
         date: meetData.Date || meetData.date || null,
-        results: meetData.Results || meetData.results || 'Available',
+        results: null,
         url: meetData.URL || meetData.url || null,
-        location_city: meetData.location_city || null,
-        location_country: meetData.location_country || null,
         batch_id: meetData.batch_id || null,
         scraped_date: meetData.scraped_date || new Date().toISOString(),
         created_at: new Date().toISOString(),
@@ -126,31 +125,42 @@ async function upsertIWFMeet(meetData) {
         const isNew = !existingMeet;
 
         // Upsert: insert new or update existing based on event_id unique constraint
-        const { data: upsertedMeet, error } = await config.supabaseIWF
+        const { error } = await config.supabaseIWF
             .from('iwf_meets')
             .upsert(insertData, {
-                onConflict: 'event_id',
+                onConflict: 'iwf_meet_id',
                 ignoreDuplicates: false
-            })
-            .select('db_meet_id, event_id, meet, date, level')
-            .single();
+            });
+
+        // Fetch back the created/updated record
+        const { data: upsertedMeet } = await config.supabaseIWF
+            .from('iwf_meets')
+            .select('*')
+            .eq('iwf_meet_id', meetData.event_id.toString())
+            .maybeSingle();
 
         if (error) {
             throw new Error(`Error upserting meet: ${error.message}`);
         }
 
+        const meetId = upsertedMeet.iwf_meet_id;
+
+        if (!meetId) {
+            throw new Error(`Database returned meet but no iwf_meet_id: ${JSON.stringify(upsertedMeet)}`);
+        }
+
         if (isNew) {
-            console.log(`  ➕ Created new meet: ${upsertedMeet.meet} (ID: ${upsertedMeet.db_meet_id})`);
+            console.log(`  ➕ Created new meet: ${upsertedMeet.meet} (ID: ${meetId})`);
         } else {
-            console.log(`  🔄 Updated existing meet: ${upsertedMeet.meet} (ID: ${upsertedMeet.db_meet_id})`);
+            console.log(`  🔄 Updated existing meet: ${upsertedMeet.meet} (ID: ${meetId})`);
         }
 
         return {
-            db_meet_id: upsertedMeet.db_meet_id,
-            event_id: upsertedMeet.event_id,
-            Meet: upsertedMeet.meet,  // Return as Meet for backward compatibility
-            Date: upsertedMeet.date,  // Return as Date for backward compatibility
-            Level: upsertedMeet.level, // Return as Level for backward compatibility
+            db_meet_id: meetId,                     // Database PK (iwf_meet_id in current schema)
+            iwf_meet_id: upsertedMeet.iwf_meet_id,  // Event ID (stored in iwf_meet_id column)
+            Meet: upsertedMeet.meet,
+            Date: upsertedMeet.date,
+            Level: upsertedMeet.level,
             isNew: isNew
         };
 
@@ -179,7 +189,7 @@ async function findExistingLocation(meetId) {
         const { data, error } = await config.supabaseIWF
             .from('iwf_meet_locations')
             .select('*')
-            .eq('iwf_meet_id', meetId)
+            .eq('iwf_meet_id', meetId.toString())
             .maybeSingle();
 
         if (error) {
@@ -210,9 +220,16 @@ async function findExistingLocation(meetId) {
  * @param {string} [locationData.venue_name] - Venue/facility name
  * @returns {Object} - { iwf_location_id, db_meet_id, isNew }
  */
-async function upsertIWFMeetLocation(meetId, locationData = {}) {
+async function upsertIWFMeetLocation(meetId, locationData = {}, shouldGeocode = true) {
     if (!meetId) {
         throw new Error('Meet ID is required to upsert location');
+    }
+
+    // Geocode if we have city/country and coordinates not provided
+    if (shouldGeocode && locationData.city && locationData.country && !locationData.latitude) {
+        const coords = await geocodeLocation(locationData.city, locationData.country);
+        locationData.latitude = coords.latitude;
+        locationData.longitude = coords.longitude;
     }
 
     // Check if location already exists
@@ -220,7 +237,7 @@ async function upsertIWFMeetLocation(meetId, locationData = {}) {
     const isNew = !existingLocation;
 
     const insertData = {
-        iwf_meet_id: meetId,
+        iwf_meet_id: meetId.toString(),
         address: locationData.address || null,
         location_text: locationData.location_text || null,
         date_range: locationData.date_range || null,
@@ -241,7 +258,7 @@ async function upsertIWFMeetLocation(meetId, locationData = {}) {
                 onConflict: 'iwf_meet_id',
                 ignoreDuplicates: false
             })
-            .select('iwf_location_id, iwf_meet_id, city, country, venue_name')
+            .select('db_location_id, iwf_meet_id, city, country, venue_name')
             .single();
 
         if (error) {
@@ -255,7 +272,7 @@ async function upsertIWFMeetLocation(meetId, locationData = {}) {
         }
 
         return {
-            iwf_location_id: upsertedLocation.iwf_location_id,
+            db_location_id: upsertedLocation.db_location_id,
             iwf_meet_id: upsertedLocation.iwf_meet_id,
             isNew: isNew
         };
@@ -294,14 +311,14 @@ function extractMeetMetadata(eventId, year) {
         const fileContent = fs.readFileSync(eventsFilePath, 'utf8');
         const eventsData = JSON.parse(fileContent);
 
-        // Ensure events data is an array
-        if (!Array.isArray(eventsData)) {
-            console.warn(`  ⚠️ Events file contains invalid data (not an array)`);
+        // Ensure events data has valid structure
+        if (!eventsData.events || !Array.isArray(eventsData.events)) {
+            console.warn(`  ⚠️ Events file contains invalid data (missing or invalid events array)`);
             return null;
         }
 
         // Find event in the events data
-        const event = eventsData.find(e => e.event_id === eventId.toString());
+        const event = eventsData.events.find(e => e.event_id === eventId.toString());
 
         if (!event) {
             console.warn(`  ⚠️ Event ${eventId} not found in ${eventsFilePath}`);
@@ -314,10 +331,10 @@ function extractMeetMetadata(eventId, year) {
             Meet: event.event_name,
             Level: event.Level || 'International',
             Date: event.date,
-            Results: 'Available',
             URL: event.url,
-            location_city: event.city,
-            location_country: event.country,
+            endpoint: event.endpoint || null,
+            location_city: event.location_city || null,
+            location_country: event.location_country || null,
             batch_id: `event_discovery_${year}`,
             scraped_date: new Date().toISOString()
         };
@@ -340,19 +357,77 @@ function parseLocationData(meetData) {
         return {};
     }
 
+    // Import country mapping from iwf-lifter-manager
+    const { mapCountryCodeToName } = require('./iwf-lifter-manager');
+    
+    // Convert country code to full name
+    const countryName = meetData.location_country 
+        ? mapCountryCodeToName(meetData.location_country) || meetData.location_country
+        : null;
+
     return {
         city: meetData.location_city || null,
-        country: meetData.location_country || null,
-        location_text: meetData.location_city && meetData.location_country
-            ? `${meetData.location_city}, ${meetData.location_country}`
+        country: countryName,
+        location_text: meetData.location_city && countryName
+            ? `${meetData.location_city}, ${countryName}`
             : null,
         date_range: meetData.Date || null,
-        // Coordinates and venue_name typically not available from event discovery
-        // Can be added later via geocoding or manual enrichment
         latitude: null,
         longitude: null,
         venue_name: null
     };
+}
+
+// ============================================================================
+// GEOCODING FUNCTIONS
+// ============================================================================
+
+/**
+ * Geocode location using Nominatim API
+ * Respects 1-second rate limit per Nominatim usage policy
+ * 
+ * @param {string} city - City name
+ * @param {string} country - Full country name
+ * @returns {Promise<Object>} - { latitude, longitude } or { latitude: null, longitude: null }
+ */
+async function geocodeLocation(city, country) {
+    if (!city || !country) {
+        return { latitude: null, longitude: null };
+    }
+
+    const query = `${city}, ${country}`;
+    const url = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(query)}&format=json&limit=1`;
+
+    try {
+        // Rate limiting: 1 request per second per Nominatim usage policy
+        await new Promise(resolve => setTimeout(resolve, 1000));
+
+        const response = await fetch(url, {
+            headers: {
+                'User-Agent': 'IWF-Database-Geocoder/1.0'
+            }
+        });
+
+        if (!response.ok) {
+            console.warn(`  ⚠️  Geocoding failed for "${query}": HTTP ${response.status}`);
+            return { latitude: null, longitude: null };
+        }
+
+        const results = await response.json();
+
+        if (results && results.length > 0) {
+            const lat = parseFloat(results[0].lat);
+            const lon = parseFloat(results[0].lon);
+            console.log(`  ✓ Geocoded "${query}": ${lat.toFixed(4)}, ${lon.toFixed(4)}`);
+            return { latitude: lat, longitude: lon };
+        } else {
+            console.warn(`  ⚠️  No geocoding results for "${query}"`);
+            return { latitude: null, longitude: null };
+        }
+    } catch (error) {
+        console.warn(`  ⚠️  Geocoding error for "${query}": ${error.message}`);
+        return { latitude: null, longitude: null };
+    }
 }
 
 // ============================================================================
@@ -379,7 +454,7 @@ async function batchUpsertMeets(meetsData) {
             // Also upsert location if we have location data
             if (meetData.location_city || meetData.location_country) {
                 const locationData = parseLocationData(meetData);
-                await upsertIWFMeetLocation(meet.db_meet_id, locationData);
+                await upsertIWFMeetLocation(meet.iwf_meet_id, locationData);
             }
 
             results.push({
@@ -433,6 +508,9 @@ module.exports = {
     // Metadata functions
     extractMeetMetadata,
     parseLocationData,
+
+    // Geocoding functions
+    geocodeLocation,
 
     // Batch functions
     batchUpsertMeets,

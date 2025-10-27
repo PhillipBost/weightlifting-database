@@ -127,9 +127,8 @@ async function calculateYTDBests(lifterId, meetDate, currentResults) {
 function mapAthleteToResultRecord(athlete, meetId, lifter, meetInfo) {
     return {
         // Foreign keys
-        db_meet_id: meetId,
-        db_lifter_id: lifter.db_lifter_id,
-        iwf_meet_id: meetInfo.iwf_meet_id,
+        iwf_meet_id: meetId,
+        iwf_lifter_id: lifter.iwf_lifter_id,
 
         // Competition context
         meet_name: meetInfo.Meet || null,
