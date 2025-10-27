@@ -33,11 +33,11 @@ async function findExistingMeet(eventId) {
     }
 
     try {
-        // Query by event_id (which stores the IWF event ID)
+        // Query by iwf_meet_id (TEXT column storing IWF event ID)
         let { data, error } = await config.supabaseIWF
             .from('iwf_meets')
             .select('*')
-            .eq('event_id', eventId.toString())
+            .eq('iwf_meet_id', eventId.toString())
             .maybeSingle();
 
         if (error) {
@@ -107,7 +107,7 @@ async function upsertIWFMeet(meetData) {
     }
 
     const insertData = {
-        event_id: meetData.event_id.toString(),
+        iwf_meet_id: meetData.event_id.toString(),  // TEXT column storing IWF event ID
         meet: meetData.Meet || meetData.meet || null,
         level: meetData.Level || meetData.level || null,
         date: meetData.Date || meetData.date || null,
@@ -124,11 +124,11 @@ async function upsertIWFMeet(meetData) {
         const existingMeet = await findExistingMeet(meetData.event_id);
         const isNew = !existingMeet;
 
-        // Upsert: insert new or update existing based on event_id unique constraint
+        // Upsert: insert new or update existing based on iwf_meet_id unique constraint
         const { error } = await config.supabaseIWF
             .from('iwf_meets')
             .upsert(insertData, {
-                onConflict: 'event_id',
+                onConflict: 'iwf_meet_id',
                 ignoreDuplicates: false
             });
 
@@ -136,7 +136,7 @@ async function upsertIWFMeet(meetData) {
         const { data: upsertedMeet } = await config.supabaseIWF
             .from('iwf_meets')
             .select('*')
-            .eq('event_id', meetData.event_id.toString())
+            .eq('iwf_meet_id', meetData.event_id.toString())
             .maybeSingle();
 
         if (error) {
@@ -156,8 +156,8 @@ async function upsertIWFMeet(meetData) {
         }
 
         return {
-            db_meet_id: meetId,                     // Auto-generated database PK
-            iwf_meet_id: upsertedMeet.event_id,    // IWF event ID (e.g., "661")
+            db_meet_id: meetId,                      // Auto-generated database PK
+            iwf_meet_id: upsertedMeet.iwf_meet_id,  // IWF event ID (TEXT, e.g., "661")
             Meet: upsertedMeet.meet,
             Date: upsertedMeet.date,
             Level: upsertedMeet.level,
