@@ -344,11 +344,19 @@ async function findOrCreateLifter(name, country, birthYear, gender, iWFLifterId,
     const countryName = mapCountryCodeToName(country);
 
     try {
-        // Step 1: Skip IWF lifter ID lookup if it doesn't exist in the schema
-        // The schema currently stores iwf_lifter_id as the auto-increment PK,
-        // not as the IWF official athlete ID. IWF ID matching should be added
-        // after schema migration to separate db_lifter_id (PK) from iwf_lifter_id (IWF official ID).
-        // For now, rely on name+country matching (Step 2).
+        // Step 1: If we have an IWF lifter ID, use that as primary key (globally unique)
+        if (iWFLifterId) {
+            const { data: lifterByIWFId, error: iwfSearchError } = await config.supabaseIWF
+                .from('iwf_lifters')
+                .select('*')
+                .eq('iwf_lifter_id', iWFLifterId)
+                .single();
+
+            if (!iwfSearchError && lifterByIWFId) {
+                console.log(`[Lifter Manager] Found existing by IWF ID: ${normalizedName} (${country})`);
+                return lifterByIWFId;
+            }
+        }
 
         // Step 2: Fallback to name + country matching (for athletes without IWF profile)
         const { data: liftersInCountry, error: searchError } = await config.supabaseIWF
@@ -369,8 +377,23 @@ async function findOrCreateLifter(name, country, birthYear, gender, iWFLifterId,
 
             if (existingLifter) {
                 console.log(`[Lifter Manager] Found existing: ${normalizedName} (${country})`);
-                // Schema note: iwf_lifter_id is the auto-increment PK in current schema.
-                // IWF official athlete ID tracking will be added after schema migration.
+                // Update with IWF ID and URL if we have them and they're not already set
+                if ((iWFLifterId || iWFAthleteUrl) && (!existingLifter.iwf_lifter_id || !existingLifter.iwf_athlete_url)) {
+                    const updateData = {};
+                    if (iWFLifterId && !existingLifter.iwf_lifter_id) {
+                        updateData.iwf_lifter_id = iWFLifterId;
+                    }
+                    if (iWFAthleteUrl && !existingLifter.iwf_athlete_url) {
+                        updateData.iwf_athlete_url = iWFAthleteUrl;
+                    }
+
+                    if (Object.keys(updateData).length > 0) {
+                        await config.supabaseIWF
+                            .from('iwf_lifters')
+                            .update(updateData)
+                            .eq('db_lifter_id', existingLifter.db_lifter_id);
+                    }
+                }
                 return existingLifter;
             }
         }

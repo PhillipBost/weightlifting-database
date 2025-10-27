@@ -33,11 +33,11 @@ async function findExistingMeet(eventId) {
     }
 
     try {
-        // Query by iwf_meet_id (which stores the IWF event ID)
+        // Query by event_id (which stores the IWF event ID)
         let { data, error } = await config.supabaseIWF
             .from('iwf_meets')
             .select('*')
-            .eq('iwf_meet_id', eventId.toString())
+            .eq('event_id', eventId.toString())
             .maybeSingle();
 
         if (error) {
@@ -107,7 +107,7 @@ async function upsertIWFMeet(meetData) {
     }
 
     const insertData = {
-        iwf_meet_id: meetData.event_id.toString(),
+        event_id: meetData.event_id.toString(),
         meet: meetData.Meet || meetData.meet || null,
         level: meetData.Level || meetData.level || null,
         date: meetData.Date || meetData.date || null,
@@ -128,7 +128,7 @@ async function upsertIWFMeet(meetData) {
         const { error } = await config.supabaseIWF
             .from('iwf_meets')
             .upsert(insertData, {
-                onConflict: 'iwf_meet_id',
+                onConflict: 'event_id',
                 ignoreDuplicates: false
             });
 
@@ -136,17 +136,17 @@ async function upsertIWFMeet(meetData) {
         const { data: upsertedMeet } = await config.supabaseIWF
             .from('iwf_meets')
             .select('*')
-            .eq('iwf_meet_id', meetData.event_id.toString())
+            .eq('event_id', meetData.event_id.toString())
             .maybeSingle();
 
         if (error) {
             throw new Error(`Error upserting meet: ${error.message}`);
         }
 
-        const meetId = upsertedMeet.iwf_meet_id;
+        const meetId = upsertedMeet.db_meet_id;
 
         if (!meetId) {
-            throw new Error(`Database returned meet but no iwf_meet_id: ${JSON.stringify(upsertedMeet)}`);
+            throw new Error(`Database returned meet but no db_meet_id: ${JSON.stringify(upsertedMeet)}`);
         }
 
         if (isNew) {
@@ -156,8 +156,8 @@ async function upsertIWFMeet(meetData) {
         }
 
         return {
-            db_meet_id: meetId,                     // Database PK (iwf_meet_id in current schema)
-            iwf_meet_id: upsertedMeet.iwf_meet_id,  // Event ID (stored in iwf_meet_id column)
+            db_meet_id: meetId,                     // Auto-generated database PK
+            iwf_meet_id: upsertedMeet.event_id,    // IWF event ID (e.g., "661")
             Meet: upsertedMeet.meet,
             Date: upsertedMeet.date,
             Level: upsertedMeet.level,
