@@ -109,25 +109,36 @@ const SELECTORS = {
     eventLocation: '.event-location, span[class*="location"]',
     moreInfoLink: 'a[href*="event_id"], button[class*="more-info"]',
 
-    // Event detail page navigation
+    // Event detail page navigation - CRITICAL: MUST click these to load athlete data
+    // The IWF website has multiple result views (Total, Snatch/C&J) controlled by filter buttons.
+    // To extract athlete data with snatch/clean&jerk attempts, you MUST first click the appropriate filter.
+    // ONLY after clicking will the athlete card data be visible in the DOM.
+    //
+    // Men's results: Click div.single__event__filter[data-target="men_snatchjerk"]
+    // Women's results: Click div.single__event__filter[data-target="women_snatchjerk"]
+    // Then wait for content to load before parsing athlete cards.
     menTab: [
-        '#results_mens_snatch',
-        '[data-target="men_snatchjerk"]',
-        'div.single__event__filter:has-text("Men\'s Snatch")',
-        'button:has-text("Men\'s Snatch, Clean & Jerk")'
+        'div.single__event__filter[data-target="men_snatchjerk"]',  // Most reliable selector
+        '#results_mens_snatch',                                      // By ID fallback
+        'div[data-target="men_snatchjerk"]'                          // Generic fallback
     ],
 
     womenTab: [
-        '#results_womens_snatch',
-        '[data-target="women_snatchjerk"]',
-        'div.single__event__filter:has-text("Women\'s Snatch")',
-        'button:has-text("Women\'s Snatch, Clean & Jerk")'
+        'div.single__event__filter[data-target="women_snatchjerk"]',  // Most reliable selector
+        '#results_womens_snatch',                                      // By ID fallback
+        'div[data-target="women_snatchjerk"]'                          // Generic fallback
     ],
 
-    // Results table selectors
-    resultsTable: 'table, .results-table, div[class*="results"]',
-    weightClassHeader: 'h2, h3, div.weight-class-header, .category-header',
-    athleteRow: 'tr, .athlete-row, div[class*="athlete"]',
+    // Results display selectors
+    // IWF uses div.card elements (NOT HTML tables) to display athlete results
+    // Each weight class has athletes displayed as card elements with hierarchical divs
+    resultsContainer: 'div.results, div.results__container, div[id*="result__container"]',
+    weightClassHeader: 'h2, h3',  // Weight class headers like "55 kg Men"
+    athleteCard: 'div.card:not(.card__legend)',  // Individual athlete result cards (excludes legend/header card)
+    
+    // DEPRECATED - IWF doesn't use tables anymore
+    // resultsTable: 'table, .results-table, div[class*="results"]',
+    // athleteRow: 'tr, .athlete-row, div[class*="athlete"]',
 
     // Pagination selectors
     nextPageButton: [
@@ -433,6 +444,25 @@ module.exports = {
 
         const endpoint = module.exports.determineEndpoint(year, eventDate);
 
+        switch (endpoint) {
+            case 'MODERN':
+                return `${URLS.MODERN.EVENT_DETAIL}${eventId}`;
+            case 'MID_RANGE':
+                return `${URLS.MID_RANGE.EVENT_DETAIL}${eventId}`;
+            case 'HISTORICAL':
+                return `${URLS.HISTORICAL.EVENT_DETAIL}${eventId}`;
+            default:
+                return `${URLS.MODERN.EVENT_DETAIL}${eventId}`;
+        }
+    },
+
+    /**
+     * Build event detail URL from known endpoint (no recalculation needed)
+     * @param {string} eventId - Event ID to view
+     * @param {string} endpoint - Endpoint type ('MODERN', 'MID_RANGE', or 'HISTORICAL')
+     * @returns {string} - Complete URL for event detail page
+     */
+    buildEventDetailURLFromEndpoint: (eventId, endpoint) => {
         switch (endpoint) {
             case 'MODERN':
                 return `${URLS.MODERN.EVENT_DETAIL}${eventId}`;

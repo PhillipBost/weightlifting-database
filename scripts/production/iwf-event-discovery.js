@@ -16,61 +16,9 @@ const fs = require('fs');
 const path = require('path');
 const puppeteer = require('puppeteer');
 const config = require('./iwf-config');
-
-// ============================================================================
-// LOGGING SETUP
-// ============================================================================
+const { log, logError, retryOperation, ensureDirectories } = require('./iwf-logger');
 
 const LOG_FILE = config.LOGGING.EVENT_DISCOVERY_LOG;
-
-function ensureDirectories() {
-    const dirs = [
-        config.LOGGING.LOGS_DIR,
-        config.LOGGING.ERRORS_DIR,
-        config.LOGGING.OUTPUT_DIR
-    ];
-
-    dirs.forEach(dir => {
-        if (!fs.existsSync(dir)) {
-            fs.mkdirSync(dir, { recursive: true });
-        }
-    });
-}
-
-function log(message, level = 'INFO') {
-    const timestamp = new Date().toISOString();
-    const logMessage = `[${timestamp}] [${level}] ${message}`;
-
-    console.log(logMessage);
-    fs.appendFileSync(LOG_FILE, logMessage + '\n');
-}
-
-function logError(error, context = {}) {
-    const timestamp = new Date().toISOString();
-    const errorObj = {
-        timestamp,
-        context,
-        error_message: error.message,
-        stack_trace: error.stack
-    };
-
-    log(`ERROR: ${error.message}`, 'ERROR');
-
-    const errorFile = path.join(config.LOGGING.ERRORS_DIR, 'iwf-event-discovery-errors.json');
-    let errors = [];
-
-    if (fs.existsSync(errorFile)) {
-        try {
-            errors = JSON.parse(fs.readFileSync(errorFile, 'utf8'));
-        } catch (e) {
-            // File might be corrupted, start fresh
-            errors = [];
-        }
-    }
-
-    errors.push(errorObj);
-    fs.writeFileSync(errorFile, JSON.stringify(errors, null, 2));
-}
 
 // ============================================================================
 // COMMAND LINE ARGUMENT PARSING
@@ -101,18 +49,14 @@ function parseArguments() {
             case '--help':
                 console.log(`
 IWF Event Discovery - Usage:
-  node iwf-event-discovery.js                           # Default years from config
-  node iwf-event-discovery.js --year 2025               # Single year
-  node iwf-event-discovery.js --from-year 2024 --to-year 2025  # Year range
-  node iwf-event-discovery.js --help                    # Show this help
+  node iwf-event-discovery.js                                 # Default years
+  node iwf-event-discovery.js --year 2025                     # Single year
+  node iwf-event-discovery.js --from-year 2024 --to-year 2025 # Year range
+  node iwf-event-discovery.js --help                          # Show this help
                 `);
                 process.exit(0);
         }
     }
-
-    // Use config defaults if not specified
-    if (!options.startYear) options.startYear = config.YEARS.START;
-    if (!options.endYear) options.endYear = config.YEARS.END;
 
     return options;
 }
@@ -144,31 +88,6 @@ async function closeBrowser() {
         await browser.close();
         log('Browser closed');
     }
-}
-
-// ============================================================================
-// RETRY LOGIC
-// ============================================================================
-
-async function retryOperation(operation, maxRetries = config.RETRY.NETWORK_REQUESTS, context = '') {
-    let lastError;
-
-    for (let attempt = 1; attempt <= maxRetries; attempt++) {
-        try {
-            return await operation();
-        } catch (error) {
-            lastError = error;
-            log(`Attempt ${attempt}/${maxRetries} failed for ${context}: ${error.message}`, 'WARN');
-
-            if (attempt < maxRetries) {
-                const backoff = config.RETRY.INITIAL_BACKOFF_MS * Math.pow(config.RETRY.BACKOFF_MULTIPLIER, attempt - 1);
-                log(`Retrying in ${backoff}ms...`, 'WARN');
-                await new Promise(resolve => setTimeout(resolve, backoff));
-            }
-        }
-    }
-
-    throw lastError;
 }
 
 // ============================================================================
@@ -293,12 +212,11 @@ async function extractEventData(cardHandle, endpointInfo) {
         if (eventData.url) {
             eventData.event_id = extractEventId(eventData.url);
 
-            // Build proper event detail URL using config
+            // Build proper event detail URL using the endpoint we're already on
             if (eventData.event_id) {
-                eventData.url = config.buildEventDetailURL(
+                eventData.url = config.buildEventDetailURLFromEndpoint(
                     eventData.event_id,
-                    endpointInfo.year,
-                    eventData.date
+                    endpointInfo.endpoint
                 );
             }
         }

@@ -15,6 +15,7 @@
 
 const config = require('./iwf-config');
 const lifterManager = require('./iwf-lifter-manager');
+const analytics = require('./iwf-analytics');
 
 // ============================================================================
 // YTD CALCULATION (DEPRECATED - Use Database Trigger Instead)
@@ -138,6 +139,12 @@ function mapAthleteToResultRecord(athlete, meetId, lifter, meetInfo) {
         lifter_name: lifter.athlete_name || null,
         body_weight_kg: athlete.body_weight || null,
 
+        // Athlete data with fallbacks from lifter record
+        gender: athlete.gender || lifter.gender || null,
+        birth_year: athlete.birth_year || lifter.birth_year || null,
+        country_code: lifter.country_code || null,
+        country_name: lifter.country_name || null,
+
         // Lift attempts (stored as text to preserve format)
         snatch_lift_1: athlete.snatch_1 !== undefined && athlete.snatch_1 !== null ? String(athlete.snatch_1) : '0',
         snatch_lift_2: athlete.snatch_2 !== undefined && athlete.snatch_2 !== null ? String(athlete.snatch_2) : '0',
@@ -195,23 +202,60 @@ function mapAthleteToResultRecord(athlete, meetId, lifter, meetInfo) {
  */
 async function insertResultRecord(resultData) {
     try {
-        const { data, error } = await config.supabaseIWF
+        // Step 1: Check if record exists with composite key (db_meet_id, db_lifter_id, weight_class)
+        // Handle duplicates by querying all matching records
+        const { data: existingRecords, error: checkError } = await config.supabaseIWF
             .from('iwf_meet_results')
-            .insert(resultData)
-            .select('*')
-            .single();
+            .select('db_result_id, total')
+            .eq('db_meet_id', resultData.db_meet_id)
+            .eq('db_lifter_id', resultData.db_lifter_id)
+            .eq('weight_class', resultData.weight_class)
+            .order('db_result_id', { ascending: true });
+
+        if (checkError) {
+            return {
+                success: false,
+                result: null,
+                error: checkError.message,
+                isDuplicate: false
+            };
+        }
+
+        // Handle duplicates: prefer record with non-zero total, else use first
+        let existing = null;
+        if (existingRecords && existingRecords.length > 0) {
+            existing = existingRecords.find(r =>
+                r.total && r.total !== '0' && r.total !== '---'
+            ) || existingRecords[0];
+        }
+
+        // Step 2: Update existing record or insert new
+        let data, error;
+
+        if (existing) {
+            // Record exists - UPDATE with new values (fixes corrupted decimals)
+            const { data: updated, error: updateError } = await config.supabaseIWF
+                .from('iwf_meet_results')
+                .update(resultData)
+                .eq('db_result_id', existing.db_result_id)
+                .select('*')
+                .single();
+
+            data = updated;
+            error = updateError;
+        } else {
+            // Record doesn't exist - INSERT
+            const { data: inserted, error: insertError } = await config.supabaseIWF
+                .from('iwf_meet_results')
+                .insert(resultData)
+                .select('*')
+                .single();
+
+            data = inserted;
+            error = insertError;
+        }
 
         if (error) {
-            // Check for duplicate constraint violation
-            if (error.code === '23505') {
-                return {
-                    success: false,
-                    result: null,
-                    error: 'Duplicate result',
-                    isDuplicate: true
-                };
-            }
-
             return {
                 success: false,
                 result: null,
@@ -257,10 +301,14 @@ async function importAthleteResult(athlete, meetId, meetInfo) {
             athlete.iwf_athlete_url
         );
 
-        // Step 2: Map athlete data to result record
-        const resultRecord = mapAthleteToResultRecord(athlete, meetId, lifter, meetInfo);
+        // Step 2: Enrich athlete data with analytics calculations
+        // This calculates: qpoints, q_youth, q_masters, competition_age, successful attempts, bounce-back metrics
+        const enrichedAthlete = await analytics.enrichAthleteWithAnalytics(athlete, meetInfo);
 
-        // Step 3: Insert result record (YTD is calculated by database trigger)
+        // Step 3: Map enriched athlete data to result record
+        const resultRecord = mapAthleteToResultRecord(enrichedAthlete, meetId, lifter, meetInfo);
+
+        // Step 4: Insert result record (YTD is calculated by database trigger)
         // Note: best_snatch_ytd, best_cj_ytd, best_total_ytd are calculated automatically
         // by the database trigger calculate_iwf_ytd_bests() on INSERT/UPDATE
         const insertResult = await insertResultRecord(resultRecord);
