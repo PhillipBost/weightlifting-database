@@ -123,8 +123,35 @@ function calculateCompetitionAge(birthYear, competitionDate) {
         return null;
     }
 
-    const competitionYear = parseInt(competitionDate.substring(0, 4));
-    if (isNaN(competitionYear)) {
+    let competitionYear = null;
+
+    // Try format: YYYY-MM-DD or any string starting with 4-digit year
+    const yearMatch = competitionDate.match(/^(\d{4})/);
+    if (yearMatch) {
+        competitionYear = parseInt(yearMatch[1]);
+    }
+
+    // Try format: "Month DD, YYYY" (extract year from end)
+    if (!yearMatch) {
+        const commaParts = competitionDate.split(',');
+        if (commaParts.length >= 2) {
+            const yearStr = commaParts[commaParts.length - 1].trim();
+            const year = parseInt(yearStr);
+            if (!isNaN(year) && year > 1900 && year < 2100) {
+                competitionYear = year;
+            }
+        }
+    }
+
+    // Try extracting any 4-digit year if above failed
+    if (competitionYear === null || isNaN(competitionYear)) {
+        const allYearMatch = competitionDate.match(/\b(19|20)\d{2}\b/);
+        if (allYearMatch) {
+            competitionYear = parseInt(allYearMatch[0]);
+        }
+    }
+
+    if (competitionYear === null || isNaN(competitionYear) || competitionYear < 1900 || competitionYear > 2100) {
         return null;
     }
 
@@ -242,17 +269,19 @@ function calculateQScore(totalNum, B, gender) {
  * - Ages 21-30: Q-points only
  * - Ages 31+: Q-masters only
  *
- * ⚠️ INCOMPLETE: Youth Q-scores (ages 10-20) currently use base Huebner formula
- * TODO: Implement age-specific multipliers from youth_factors table (must be copied from USAW Supabase)
- * See: .iwf/IWF-schema.md for requirements
+ * Uses Huebner's age brackets with youth_factors multipliers:
+ * - Ages ≤9: No scoring
+ * - Ages 10-20: Q-youth with age-specific multiplier from youth_factors
+ * - Ages 21-30: Q-points only
+ * - Ages 31+: Q-masters only
  *
  * @param {string|number} total - Competition total (kg)
  * @param {string|number} bodyWeight - Competition bodyweight (kg)
  * @param {string} gender - 'M' for men, 'F' for women
  * @param {number} age - Competition age
- * @returns {Object} - { qpoints, q_youth, q_masters }
+ * @returns {Promise<Object>} - { qpoints, q_youth, q_masters }
  */
-function calculateAgeAppropriateQScore(total, bodyWeight, gender, age) {
+async function calculateAgeAppropriateQScore(total, bodyWeight, gender, age) {
     // Initialize all scores as null
     const qScores = {
         qpoints: null,
@@ -280,9 +309,32 @@ function calculateAgeAppropriateQScore(total, bodyWeight, gender, age) {
         return qScores;
     }
 
-    // Ages 10-20: Q-youth only
+    // Ages 10-20: Q-youth with age-specific multiplier from youth_factors
     if (age >= 10 && age <= 20) {
-        qScores.q_youth = calculateQScore(totalNum, B, gender);
+        const baseScore = calculateQScore(totalNum, B, gender);
+        
+        // Try to fetch youth multiplier from youth_factors table
+        try {
+            const config = require('./iwf-config');
+            const { data, error } = await config.supabaseIWF
+                .from('youth_factors')
+                .select('multiplier')
+                .eq('age', age)
+                .eq('gender', gender)
+                .maybeSingle();
+
+            if (!error && data && data.multiplier) {
+                qScores.q_youth = Math.round((baseScore * data.multiplier) * 1000) / 1000;
+            } else {
+                // Fallback to base Huebner if no multiplier found
+                qScores.q_youth = baseScore;
+            }
+        } catch (err) {
+            // Fallback to base Huebner if database query fails
+            console.warn(`Warning: Could not fetch youth multiplier for age ${age}: ${err.message}`);
+            qScores.q_youth = baseScore;
+        }
+        
         return qScores;
     }
 
@@ -313,13 +365,13 @@ function calculateAgeAppropriateQScore(total, bodyWeight, gender, age) {
  * @param {Object} meetInfo - Meet context (date, meet_name, event_id)
  * @returns {Object} - Enhanced athlete object with all analytics fields
  */
-function enrichAthleteWithAnalytics(athlete, meetInfo = {}) {
+async function enrichAthleteWithAnalytics(athlete, meetInfo = {}) {
     try {
         // Parse birth year from birth_date field (DD.MM.YYYY format)
         const birthYear = parseBirthYear(athlete.birth_date);
 
-        // Extract gender from weight_class field
-        const gender = extractGenderFromWeightClass(athlete.weight_class);
+        // Use gender from scraper (M/F from tab), fall back to weight_class extraction
+        let gender = athlete.gender || extractGenderFromWeightClass(athlete.weight_class);
 
         // Calculate competition age
         const competitionAge = calculateCompetitionAge(birthYear, meetInfo.date);
@@ -330,8 +382,8 @@ function enrichAthleteWithAnalytics(athlete, meetInfo = {}) {
         // Calculate bounce-back metrics
         const bounceBack = calculateBounceBack(athlete);
 
-        // Calculate Q-scores
-        const qScores = calculateAgeAppropriateQScore(
+        // Calculate Q-scores (now async with youth_factors lookup)
+        const qScores = await calculateAgeAppropriateQScore(
             athlete.total,
             athlete.body_weight,
             gender,
