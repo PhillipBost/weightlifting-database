@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 const { createClient } = require('@supabase/supabase-js');
 const minimist = require('minimist');
+require('dotenv').config();
 
 const supabaseIWF = createClient(
     process.env.SUPABASE_IWF_URL,
@@ -10,6 +11,7 @@ const supabaseIWF = createClient(
 const argv = minimist(process.argv.slice(2));
 const FILTER_YEAR = argv.year ? parseInt(argv.year) : null;
 const LIMIT = argv.limit ? parseInt(argv.limit) : null;
+const ALL = argv.all;
 const BATCH_SIZE = 100;
 const DELAY_MS = 500;
 
@@ -20,25 +22,81 @@ async function getResultsToBackfill() {
         console.log(`Filtering by year: ${FILTER_YEAR}`);
     }
     
-    let query = supabaseIWF
-        .from('iwf_meet_results')
-        .select('result_id, db_lifter_id, date', { count: 'exact' });
+    // Build base query for count
+    let countQuery = supabaseIWF
+        .from('iwf_meet_results');
     
     if (FILTER_YEAR) {
         const startDate = `${FILTER_YEAR}-01-01`;
         const endDate = `${FILTER_YEAR}-12-31`;
-        query = query.gte('date', startDate).lte('date', endDate);
+        countQuery = countQuery.gte('date', startDate).lte('date', endDate);
     }
     
-    if (LIMIT) {
-        query = query.limit(LIMIT);
+    // Get total count
+    const { count, error: countError } = await countQuery.select('*', { count: 'exact', head: true });
+    if (countError) {
+        throw new Error(`Failed to get count: ${countError.message}`);
+    }
+    if (count === null || count === undefined) {
+        throw new Error('Count not returned from query');
+    }
+    
+    console.log(`Total records available: ${count}`);
+    
+    // Build base query for data (with select, no count option)
+    let dataQuery = supabaseIWF
+        .from('iwf_meet_results')
+        .select('db_result_id, db_lifter_id, date');
+    
+    if (FILTER_YEAR) {
+        const startDate = `${FILTER_YEAR}-01-01`;
+        const endDate = `${FILTER_YEAR}-12-31`;
+        dataQuery = dataQuery.gte('date', startDate).lte('date', endDate);
+    }
+    
+    let data;
+    if (ALL && LIMIT === null) {
+        console.log(`Fetching ALL ${count} records via pagination...`);
+        data = [];
+        let offset = 0;
+        const pageSize = 1000;
+        while (offset < count) {
+            const end = Math.min(offset + pageSize - 1, count - 1);
+            const pageQuery = dataQuery
+                .range(offset, end);
+            const { data: pageData, error: pageError } = await pageQuery;
+            if (pageError) {
+                throw new Error(`Failed to fetch page at offset ${offset}: ${pageError.message}`);
+            }
+            console.log(`Fetched page at offset ${offset}: ${pageData.length} records`);
+            if (pageData.length === 0) {
+                console.warn(`Warning: Empty page at offset ${offset}, stopping pagination`);
+                break;
+            }
+            data = data.concat(pageData);
+            offset += pageSize;
+        }
+        // Sort by date ascending in JS
+        data.sort((a, b) => a.date ? (b.date ? a.date.localeCompare(b.date) : -1) : 1);
+        console.log(`Fetched and sorted ${data.length} records via pagination`);
+    } else if (LIMIT !== null) {
+        const limitedQuery = dataQuery.limit(LIMIT).order('date', { ascending: true });
         console.log(`LIMIT APPLIED: Processing only ${LIMIT} records`);
-    }
-    
-    const { data, count, error } = await query.order('date', { ascending: true });
-    
-    if (error) {
-        throw new Error(`Failed to fetch results: ${error.message}`);
+        const { data: limitedData, error } = await limitedQuery;
+        if (error) {
+            throw new Error(`Failed to fetch limited results: ${error.message}`);
+        }
+        data = limitedData;
+    } else {
+        // Default to first 1000
+        const defaultLimit = 1000;
+        const defaultQuery = dataQuery.limit(defaultLimit).order('date', { ascending: true });
+        console.log(`Applying default limit of ${defaultLimit} records (total available: ${count})`);
+        const { data: defaultData, error } = await defaultQuery;
+        if (error) {
+            throw new Error(`Failed to fetch default results: ${error.message}`);
+        }
+        data = defaultData;
     }
     
     console.log(`Found ${data.length} records to backfill (total available: ${count})`);
@@ -49,7 +107,7 @@ async function triggerYTDRecalculation(resultId) {
     const { error } = await supabaseIWF
         .from('iwf_meet_results')
         .update({ updated_at: new Date().toISOString() })
-        .eq('result_id', resultId);
+        .eq('db_result_id', resultId);
     
     if (error) {
         console.error(`Failed to update record ${resultId}: ${error.message}`);
@@ -121,9 +179,15 @@ async function main() {
             return;
         }
         
-        console.log(`Processing ${results.length} records in batches of ${BATCH_SIZE}...\n`);
+        // Filter out invalid records
+        const validResults = results.filter(r => r.db_result_id !== undefined && r.db_result_id !== null);
+        if (validResults.length !== results.length) {
+            console.warn(`Filtered out ${results.length - validResults.length} records with invalid db_result_id`);
+        }
         
-        const resultIds = results.map(r => r.result_id);
+        console.log(`Processing ${validResults.length} valid records in batches of ${BATCH_SIZE}...\n`);
+        
+        const resultIds = validResults.map(r => r.db_result_id);
         const batches = [];
         
         for (let i = 0; i < resultIds.length; i += BATCH_SIZE) {
