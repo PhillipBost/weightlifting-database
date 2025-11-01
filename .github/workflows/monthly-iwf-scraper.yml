@@ -1,0 +1,105 @@
+name: Monthly IWF Scraper
+
+on:
+  schedule:
+    # Run at 2 AM UTC on 1st of each month
+    - cron: '0 2 1 * *'
+
+  # Allow manual trigger
+  workflow_dispatch:
+    inputs:
+      year:
+        description: 'Year to scrape (default: current year)'
+        required: false
+        type: string
+
+# CRITICAL: Prevent parallel workflow runs
+concurrency:
+  group: iwf-scraper
+  cancel-in-progress: false  # Queue instead of cancel
+
+jobs:
+  scrape-iwf:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120  # Increased from 60 to allow for 5-second inter-event delays
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Validate no parallel imports
+        run: node scripts/maintenance/validate-no-parallel-runs.js
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Create output directories
+        run: |
+          mkdir -p output logs errors
+
+      - name: Run IWF scraper
+        run: |
+          set -o pipefail
+          YEAR=${{ github.event.inputs.year || 'current' }}
+          if [ "$YEAR" = "current" ]; then
+            YEAR=$(date +%Y)
+          fi
+          node scripts/production/iwf-main.js --year $YEAR 2>&1 | tee logs/iwf-scraper.log
+        env:
+          # IWF Database credentials (separate from USAW)
+          SUPABASE_IWF_URL: ${{ secrets.SUPABASE_IWF_URL }}
+          SUPABASE_IWF_SECRET_KEY: ${{ secrets.SUPABASE_IWF_SECRET_KEY }}
+
+      - name: Upload logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: iwf-scraper-logs
+          path: |
+            logs/
+            errors/
+          retention-days: 30
+
+      - name: Upload summary
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: iwf-scraper-summary
+          path: output/iwf-scraper-summary-*.json
+          retention-days: 90
+
+      - name: Create issue on failure
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `IWF Scraper failed - ${new Date().toISOString().split('T')[0]}`,
+              body: `The monthly IWF scraper workflow failed.
+
+Check the logs:
+- [Workflow logs](https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId})
+- Artifacts available in workflow details
+
+Year attempted: ${{ github.event.inputs.year || 'current' }}`,
+              labels: ['automation', 'iwf-scraper']
+            })
+
+      - name: Report summary to step
+        if: always()
+        run: |
+          echo "## IWF Scraper Execution Summary" >> $GITHUB_STEP_SUMMARY
+          echo "- **Status**: ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Year**: ${{ github.event.inputs.year || 'current' }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Workflow**: [Run #${{ github.run_number }}](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})" >> $GITHUB_STEP_SUMMARY
+          if [ -f output/iwf-scraper-summary-*.json ]; then
+            echo "- **Summary artifact**: Available in workflow" >> $GITHUB_STEP_SUMMARY
+          fi

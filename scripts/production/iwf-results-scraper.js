@@ -1,13 +1,32 @@
 /**
  * IWF RESULTS SCRAPER MODULE
  *
- * Navigates to IWF event detail pages and extracts competition results.
- * Handles tab switching between men's and women's results, weight class
- * extraction, and athlete performance data.
+ * @module iwf-results-scraper
+ *
+ * Navigates to IWF event detail pages and extracts complete competition results.
+ * Uses Puppeteer (headless Chrome) to scrape dynamic content from IWF website.
+ *
+ * Features:
+ * - Tab switching between men's and women's results (critical for data visibility)
+ * - Weight class detection and athlete grouping
+ * - Complete lift attempt extraction (snatch 1-3, C&J 1-3)
+ * - Body weight, rank, and biographical data parsing
+ * - Pagination support for large competitions
+ * - CSV export for processed data
+ *
+ * Important DOM Notes:
+ * - IWF uses div.card elements (NOT tables) for athlete results
+ * - Men's/women's data only visible after clicking respective filter tabs
+ * - Must click div.single__event__filter[data-target="men_snatchjerk"] first
+ * - Weight class headers use h2/h3 elements
  *
  * Usage:
  *   node iwf-results-scraper.js --event-id 661 --year 2025
  *   node iwf-results-scraper.js --event-id 621 --year 2025 --date "2025-05-09"
+ *   node iwf-results-scraper.js --help
+ *
+ * Output:
+ *   Creates CSV file: output/iwf_results_EVENTID_YEAR.csv
  */
 
 require('dotenv').config();
@@ -625,6 +644,17 @@ async function scrapeEventResults(eventId, year = null, eventDate = null, endpoi
         log(`Event URL: ${eventUrl}`);
         log(`Endpoint: ${result.endpoint || 'UNKNOWN'}`);
 
+        // Set cache-busting headers BEFORE navigation
+        await page.setExtraHTTPHeaders({
+            'Cache-Control': 'no-cache, no-store, must-revalidate, max-age=0',
+            'Pragma': 'no-cache',
+            'Expires': '0',
+            'X-Request-ID': `event-${eventId}-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
+            'X-IWF-Event-ID': String(eventId)
+        });
+
+        log(`Cache-busting headers set for event ${eventId}`);
+
         // Navigate to event detail page with retry
         await retryOperation(async () => {
             await page.goto(eventUrl, {
@@ -634,6 +664,28 @@ async function scrapeEventResults(eventId, year = null, eventDate = null, endpoi
         }, config.RETRY.NETWORK_REQUESTS, `navigate to event ${eventId}`);
 
         log('Page loaded successfully');
+
+        // *** VERIFY URL ACTUALLY CHANGED ***
+        const currentUrl = await page.url();
+        log(`Current URL after navigation: ${currentUrl}`);
+
+        // Extract event_id from current URL
+        const urlEventIdMatch = currentUrl.match(/event_id=(\d+)/);
+        const currentEventId = urlEventIdMatch ? urlEventIdMatch[1] : null;
+
+        if (currentEventId !== String(eventId)) {
+            const errorMsg =
+                `URL mismatch after navigation!\n` +
+                `Expected event_id: ${eventId}\n` +
+                `Actual event_id: ${currentEventId}\n` +
+                `Current URL: ${currentUrl}\n` +
+                `This indicates CDN cache contamination. Retrying...`;
+
+            log(errorMsg, 'ERROR');
+            throw new Error(errorMsg);
+        }
+
+        log(`✓ URL verified: event_id=${eventId} matches`);
         result.navigation_success = true;
 
         // Wait for dynamic content
