@@ -5,6 +5,23 @@
  * results scraper system. Manages IWF-specific URLs, selectors, rate limiting,
  * batch processing, and database connection.
  *
+ * @module iwf-config
+ *
+ * Environment Variables Required:
+ * - SUPABASE_IWF_URL: IWF Supabase project URL
+ * - SUPABASE_IWF_SECRET_KEY: IWF Supabase service role key
+ *
+ * Environment Variables Optional (overrides):
+ * - IWF_EVENT_DELAY: Milliseconds between events (default: 2000)
+ * - IWF_WC_DELAY: Milliseconds between weight classes (default: 1000)
+ * - IWF_PAGE_DELAY: Milliseconds after page load (default: 3000)
+ * - IWF_REQUEST_TIMEOUT: Request timeout in milliseconds (default: 30000)
+ * - IWF_EVENTS_BATCH: Events per batch (default: 10)
+ * - IWF_RESULTS_BATCH: Results per database batch (default: 100)
+ * - IWF_MAX_RETRIES: Maximum retry attempts (default: 3)
+ * - IWF_START_YEAR: Starting year for scraping (default: 2024)
+ * - IWF_END_YEAR: Ending year for scraping (default: 2025)
+ *
  * IMPORTANT: Uses separate IWF database credentials (SUPABASE_IWF_URL, SUPABASE_IWF_SECRET_KEY)
  * NOT the regular USAW database credentials (SUPABASE_URL, SUPABASE_SECRET_KEY)
  */
@@ -205,8 +222,8 @@ const EVENT_TYPES = {
 // ============================================================================
 
 const TIMING = {
-    // Delay between processing events (2 seconds)
-    EVENT_DELAY_MS: parseInt(process.env.IWF_EVENT_DELAY) || 2000,
+    // Delay between processing events (5 seconds - increased to allow CDN cache expiry and prevent phantom records)
+    EVENT_DELAY_MS: parseInt(process.env.IWF_EVENT_DELAY) || 5000,
 
     // Delay between weight classes (1 second)
     WEIGHT_CLASS_DELAY_MS: parseInt(process.env.IWF_WC_DELAY) || 1000,
@@ -375,9 +392,19 @@ module.exports = {
 
     /**
      * Determine which endpoint to use based on year
+     *
+     * Handles split years (2025, 2018) where events span multiple endpoints.
+     * For split years without a specific date, defaults to the safer assumption.
+     *
      * @param {number} year - Year to check
      * @param {string} eventDate - Optional event date (YYYY-MM-DD) for precise split handling
      * @returns {string} - 'MODERN', 'MID_RANGE', or 'HISTORICAL'
+     *
+     * @example
+     * determineEndpoint(2024)  // Returns 'MID_RANGE'
+     * determineEndpoint(2025, '2025-07-15')  // Returns 'MODERN' (after June 1)
+     * determineEndpoint(2025, '2025-03-20')  // Returns 'MID_RANGE' (before June 1)
+     * determineEndpoint(2018)  // Returns 'MID_RANGE' (default for split year)
      */
     determineEndpoint: (year, eventDate = null) => {
         // Handle specific date splits for 2025 and 2018
@@ -410,9 +437,19 @@ module.exports = {
 
     /**
      * Build event listing URL for specific year
+     *
+     * Automatically selects correct endpoint based on year and optional date.
+     *
      * @param {number} year - Year to scrape
      * @param {string} eventDate - Optional event date for precise endpoint selection
      * @returns {string} - Complete URL for event listing page
+     *
+     * @example
+     * buildEventListingURL(2024)
+     * // Returns: 'https://iwf.sport/results/results-by-events/results-by-events-2018-2025/?event_year=2024'
+     *
+     * buildEventListingURL(2025, '2025-07-01')
+     * // Returns: 'https://iwf.sport/results/results-by-events/?event_year=2025'
      */
     buildEventListingURL: (year, eventDate = null) => {
         const endpoint = module.exports.determineEndpoint(year, eventDate);
@@ -431,10 +468,21 @@ module.exports = {
 
     /**
      * Build event detail URL for specific event ID
+     *
+     * Automatically selects correct endpoint based on year and optional date.
+     * If no year provided, defaults to MODERN endpoint (most recent).
+     *
      * @param {string} eventId - Event ID to view
      * @param {number} year - Year of event (to determine endpoint)
      * @param {string} eventDate - Optional event date for precise endpoint selection
      * @returns {string} - Complete URL for event detail page
+     *
+     * @example
+     * buildEventDetailURL('661', 2025)
+     * // Returns: 'https://iwf.sport/results/results-by-events/results-by-events-2018-2025/?event_id=661'
+     *
+     * buildEventDetailURL('661')
+     * // Returns: 'https://iwf.sport/results/results-by-events/?event_id=661' (defaults to MODERN)
      */
     buildEventDetailURL: (eventId, year = null, eventDate = null) => {
         // If no year provided, default to MODERN endpoint (most recent)
@@ -458,9 +506,17 @@ module.exports = {
 
     /**
      * Build event detail URL from known endpoint (no recalculation needed)
+     *
+     * Use this when you already know which endpoint the event belongs to,
+     * avoiding the overhead of recalculating based on year/date.
+     *
      * @param {string} eventId - Event ID to view
      * @param {string} endpoint - Endpoint type ('MODERN', 'MID_RANGE', or 'HISTORICAL')
      * @returns {string} - Complete URL for event detail page
+     *
+     * @example
+     * buildEventDetailURLFromEndpoint('661', 'MID_RANGE')
+     * // Returns: 'https://iwf.sport/results/results-by-events/results-by-events-2018-2025/?event_id=661'
      */
     buildEventDetailURLFromEndpoint: (eventId, endpoint) => {
         switch (endpoint) {
@@ -477,9 +533,20 @@ module.exports = {
 
     /**
      * Get year range for scraping (handles split years)
+     *
+     * Returns array of year objects with endpoint information and URLs.
+     * Adds notes for split years (2025, 2018) that span multiple endpoints.
+     *
      * @param {number} startYear - Starting year
      * @param {number} endYear - Ending year
      * @returns {Array} - Array of year objects with endpoint info
+     *
+     * @example
+     * getYearRange(2024, 2025)
+     * // Returns: [
+     * //   { year: 2024, endpoint: 'MID_RANGE', url: '...' },
+     * //   { year: 2025, endpoint: 'MID_RANGE', url: '...', note: 'Split year...' }
+     * // ]
      */
     getYearRange: (startYear, endYear) => {
         const start = startYear || YEARS.START;
@@ -509,10 +576,21 @@ module.exports = {
 
     /**
      * Get all endpoints that need to be scraped for a given year range
-     * Handles split years (2025, 2018) by including both endpoints
+     *
+     * Handles split years (2025, 2018) by including BOTH endpoints for those years.
+     * Returns array of endpoint objects ready for scraping, including date ranges.
+     *
      * @param {number} startYear - Starting year
      * @param {number} endYear - Ending year
-     * @returns {Array} - Array of {endpoint, year, url} objects to scrape
+     * @returns {Array} - Array of {endpoint, year, url, dateRange} objects to scrape
+     *
+     * @example
+     * getEndpointsToScrape(2024, 2025)
+     * // Returns: [
+     * //   { endpoint: 'MID_RANGE', year: 2024, url: '...', dateRange: '2024-01-01 to 2024-12-31' },
+     * //   { endpoint: 'MID_RANGE', year: 2025, url: '...', dateRange: '2025-01-01 to 2025-05-31' },
+     * //   { endpoint: 'MODERN', year: 2025, url: '...', dateRange: '2025-06-01 to 2025-12-31' }
+     * // ]
      */
     getEndpointsToScrape: (startYear, endYear) => {
         const start = startYear || YEARS.START;
