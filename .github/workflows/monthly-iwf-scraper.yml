@@ -100,6 +100,6 @@ Year attempted: ${{ github.event.inputs.year || 'current' }}`,
           echo "- **Status**: ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
           echo "- **Year**: ${{ github.event.inputs.year || 'current' }}" >> $GITHUB_STEP_SUMMARY
           echo "- **Workflow**: [Run #${{ github.run_number }}](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})" >> $GITHUB_STEP_SUMMARY
-          if [ -f output/iwf-scraper-summary-*.json ]; then
+          if ls output/iwf-scraper-summary-*.json 1> /dev/null 2>&1; then
             echo "- **Summary artifact**: Available in workflow" >> $GITHUB_STEP_SUMMARY
           fi

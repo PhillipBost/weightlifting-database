@@ -1,10 +1,32 @@
 /**
  * IWF Analytics Module
  *
- * Calculates performance analytics for International Weightlifting Federation competition results
- * Includes: successful attempts, bounce-back analysis, Q-scores (Huebner formula)
- *
  * @module iwf-analytics
+ *
+ * Calculates performance analytics for International Weightlifting Federation competition results.
+ *
+ * Analytics Calculated:
+ * - **Successful Attempts**: Counts successful snatch and clean & jerk attempts
+ * - **Bounce-Back Metrics**: Recovery performance after missed attempts
+ * - **Q-Scores (Huebner Formula)**: Normalized performance scores across bodyweights
+ *   - Q-points: Ages 21-30 (standard scoring)
+ *   - Q-youth: Ages 10-20 (with age-specific multipliers from youth_factors table)
+ *   - Q-masters: Ages 31+ (masters scoring)
+ * - **Age and Gender**: Parsed from birth date and weight class
+ * - **Competition Age**: Calculated from birth year and competition date
+ *
+ * Main Export:
+ * - `enrichAthleteWithAnalytics(athlete, meetInfo)` - Applies all analytics to athlete data
+ *
+ * @example
+ * const { enrichAthleteWithAnalytics } = require('./iwf-analytics');
+ *
+ * const enriched = await enrichAthleteWithAnalytics(athleteData, {
+ *   date: '2025-03-15',
+ *   meet_name: 'World Championships',
+ *   event_id: '661'
+ * });
+ * // Returns athlete with added fields: snatch_successful_attempts, qpoints, etc.
  */
 
 // ============================================================================

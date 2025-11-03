@@ -182,8 +182,72 @@ function mapCountryCodeToName(code) {
         'NGR': 'Nigeria',
         'KSA': 'Saudi Arabia',
         'IRI': 'Iran',
+        'ARU': 'Aruba',
+        'ASA': 'American Samoa',
+        'BDI': 'Burundi',
+        'BLR': 'Belarus',
+        'BOL': 'Bolivia',
+        'BRU': 'Brunei',
+        'CGO': 'Republic of the Congo',
+        'COD': 'Democratic Republic of the Congo',
+        'COK': 'Cook Islands',
+        'COM': 'Comoros',
+        'CPV': 'Cape Verde',
+        'CUR': 'Curaçao',
+        'ENG': 'England',
+        'ESA': 'El Salvador',
+        'FSM': 'Federated States of Micronesia',
+        'GAM': 'The Gambia',
+        'GEQ': 'Equatorial Guinea',
+        'GIB': 'Gibraltar',
+        'GUI': 'Guinea',
+        'GUM': 'Guam',
+        'GUY': 'Guyana',
+        'HON': 'Honduras',
+        'IOA': 'Independent Olympic Athletes',
+        'IRQ': 'Iraq',
+        'KIR': 'Kiribati',
+        'KRI': 'Kiribati',
+        'LBA': 'Libya',
+        'LBR': 'Liberia',
+        'LES': 'Lesotho',
+        'MAC': 'Macao',
+        'MAD': 'Madagascar',
+        'MAW': 'Malawi',
+        'MHL': 'Marshall Islands',
+        'MTN': 'Mauritania',
+        'NCA': 'Nicaragua',
+        'NCL': 'New Caledonia',
+        'NIC': 'Nicaragua',
+        'NIR': 'Northern Ireland',
+        'NIU': 'Niue',
+        'NRU': 'Nauru',
+        'NT': 'Northern Territory Australia',
+        'OMA': 'Oman',
+        'PLW': 'Palau',
+        'ROC': 'Republic of China',
+        'RWF': 'Russian Weightlifting Federation',
+        'SCO': 'Scotland',
+        'SEN': 'Senegal',
+        'SEY': 'Seychelles',
+        'SLE': 'Sierra Leone',
+        'SLO': 'Slovenia',
+        'SOL': 'Solomon Islands',
+        'SRI': 'Sri Lanka',
+        'SWZ': 'Eswatini',
+        'SYR': 'Syria',
+        'TAH': 'Tahiti',
+        'TCA': 'Turks and Caicos Islands',
+        'TLS': 'Timor-Leste',
+        'TTO': 'Trinidad and Tobago',
+        'TUV': 'Tuvalu',
+        'VIN': 'Saint Vincent and the Grenadines',
+        'WAL': 'Wales',
+        'WLF': 'Wallis and Futuna',
+        'YEM': 'Yemen',
+        'ZAM': 'Zambia',
+        'ZAN': 'Zanzibar',
     };
-
     return countryMap[code] || null;
 }
 
@@ -358,7 +422,8 @@ async function findOrCreateLifter(name, country, birthYear, gender, iWFLifterId,
             }
         }
 
-        // Step 2: Fallback to name + country matching (for athletes without IWF profile)
+        // Step 2: Fallback to name + country matching with birth_year consideration
+        // Matching hierarchy: name+country+birth_year → name+country (with warning)
         const { data: liftersInCountry, error: searchError } = await config.supabaseIWF
             .from('iwf_lifters')
             .select('*')
@@ -369,19 +434,56 @@ async function findOrCreateLifter(name, country, birthYear, gender, iWFLifterId,
             return null;
         }
 
-        // Find lifter with matching name (case-insensitive)
+        let existingLifter = null;
+
         if (liftersInCountry && liftersInCountry.length > 0) {
-            const existingLifter = liftersInCountry.find(
-                lifter => getMatchKey(lifter.athlete_name) === matchKey
-            );
+            // First priority: match by name + country + birth_year (if birth_year available)
+            if (birthYear) {
+                existingLifter = liftersInCountry.find(
+                    lifter => getMatchKey(lifter.athlete_name) === matchKey && lifter.birth_year === birthYear
+                );
+
+                if (existingLifter) {
+                    console.log(`[Lifter Manager] Found existing by name+country+birth_year: ${normalizedName} (${country}, born ${birthYear})`);
+                }
+            }
+
+            // Fallback: match by name + country only (if no birth_year match found)
+            if (!existingLifter) {
+                const nameMatches = liftersInCountry.filter(
+                    lifter => getMatchKey(lifter.athlete_name) === matchKey
+                );
+
+                if (nameMatches.length > 0) {
+                    existingLifter = nameMatches[0];
+
+                    // Warn if multiple athletes with same name in same country (potential collision)
+                    if (nameMatches.length > 1) {
+                        const otherBirthYears = nameMatches
+                            .map(l => l.birth_year || 'unknown')
+                            .join(', ');
+                        console.warn(`[Lifter Manager] WARNING: ${nameMatches.length} athletes named "${normalizedName}" in ${country}. ` +
+                            `Matched by name only. Birth years: ${otherBirthYears}. ` +
+                            `Current athlete birth year: ${birthYear || 'unknown'}. ` +
+                            `Consider providing more distinguishing data.`);
+                    } else if (birthYear && existingLifter.birth_year && existingLifter.birth_year !== birthYear) {
+                        // Single match but birth year differs - potential mismatch
+                        console.warn(`[Lifter Manager] WARNING: Name match but birth year differs. ` +
+                            `Expected ${birthYear}, found ${existingLifter.birth_year} for ${normalizedName} (${country}). ` +
+                            `Matched by name only due to missing IWF ID.`);
+                    }
+
+                    console.log(`[Lifter Manager] Found existing by name+country: ${normalizedName} (${country})`);
+                }
+            }
 
             if (existingLifter) {
-                console.log(`[Lifter Manager] Found existing: ${normalizedName} (${country})`);
                 // Update with IWF ID and URL if we have them and they're not already set
                 if ((iWFLifterId || iWFAthleteUrl) && (!existingLifter.iwf_lifter_id || !existingLifter.iwf_athlete_url)) {
                     const updateData = {};
                     if (iWFLifterId && !existingLifter.iwf_lifter_id) {
                         updateData.iwf_lifter_id = iWFLifterId;
+                        console.log(`[Lifter Manager] Updating lifter ${existingLifter.db_lifter_id} with IWF ID: ${iWFLifterId}`);
                     }
                     if (iWFAthleteUrl && !existingLifter.iwf_athlete_url) {
                         updateData.iwf_athlete_url = iWFAthleteUrl;

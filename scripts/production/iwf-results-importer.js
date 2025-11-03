@@ -202,14 +202,14 @@ function mapAthleteToResultRecord(athlete, meetId, lifter, meetInfo) {
  */
 async function insertResultRecord(resultData) {
     try {
-        // Step 1: Check if record exists with composite key (db_meet_id, db_lifter_id, weight_class)
+        // Step 1: Check if record exists with composite key (db_meet_id, db_lifter_id)
+        // Weight class is not included - athletes have one result per meet (can vary across meets)
         // Handle duplicates by querying all matching records
         const { data: existingRecords, error: checkError } = await config.supabaseIWF
             .from('iwf_meet_results')
             .select('db_result_id, total')
             .eq('db_meet_id', resultData.db_meet_id)
             .eq('db_lifter_id', resultData.db_lifter_id)
-            .eq('weight_class', resultData.weight_class)
             .order('db_result_id', { ascending: true });
 
         if (checkError) {
@@ -362,7 +362,8 @@ async function batchImportResults(athletes, meetId, meetInfo, options = {}) {
         errors: 0,
         newLifters: 0,
         existingLifters: 0,
-        errorDetails: []
+        errorDetails: [],
+        affectedLifterIds: new Set()  // Track unique lifter IDs imported
     };
 
     console.log(`\n📥 Importing ${athletes.length} results...`);
@@ -377,6 +378,10 @@ async function batchImportResults(athletes, meetId, meetInfo, options = {}) {
 
             if (importResult.success) {
                 summary.successful++;
+                // Track lifter ID for YTD backfill
+                if (importResult.lifter?.db_lifter_id) {
+                    summary.affectedLifterIds.add(importResult.lifter.db_lifter_id);
+                }
                 if (importResult.lifter?.isNew) {
                     summary.newLifters++;
                 } else {
@@ -442,7 +447,8 @@ async function importMeetResults(mensWeightClasses, womensWeightClasses, meetId,
             errors: 0,
             newLifters: 0,
             existingLifters: 0
-        }
+        },
+        affectedLifterIds: new Set()  // Track all unique lifter IDs affected
     };
 
     // Collect all athletes from both genders
@@ -499,7 +505,7 @@ async function importMeetResults(mensWeightClasses, womensWeightClasses, meetId,
         );
     }
 
-    // Calculate combined totals
+    // Calculate combined totals and merge affected lifter IDs
     if (combinedSummary.mens) {
         combinedSummary.total.totalAthletes += combinedSummary.mens.totalAthletes;
         combinedSummary.total.processed += combinedSummary.mens.processed;
@@ -508,6 +514,10 @@ async function importMeetResults(mensWeightClasses, womensWeightClasses, meetId,
         combinedSummary.total.errors += combinedSummary.mens.errors;
         combinedSummary.total.newLifters += combinedSummary.mens.newLifters;
         combinedSummary.total.existingLifters += combinedSummary.mens.existingLifters;
+        // Merge affected lifter IDs
+        combinedSummary.mens.affectedLifterIds.forEach(id => {
+            combinedSummary.affectedLifterIds.add(id);
+        });
     }
 
     if (combinedSummary.womens) {
@@ -518,7 +528,14 @@ async function importMeetResults(mensWeightClasses, womensWeightClasses, meetId,
         combinedSummary.total.errors += combinedSummary.womens.errors;
         combinedSummary.total.newLifters += combinedSummary.womens.newLifters;
         combinedSummary.total.existingLifters += combinedSummary.womens.existingLifters;
+        // Merge affected lifter IDs
+        combinedSummary.womens.affectedLifterIds.forEach(id => {
+            combinedSummary.affectedLifterIds.add(id);
+        });
     }
+
+    // Convert Set to Array for serialization
+    combinedSummary.affectedLifterIds = Array.from(combinedSummary.affectedLifterIds);
 
     return combinedSummary;
 }

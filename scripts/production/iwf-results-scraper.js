@@ -409,10 +409,19 @@ function parseAttemptHTML(htmlContent, gender) {
                     const name = $card.find('.col-7.not__cell__767 p').first().text().trim();
                     const nation = $card.find('.col-3.not__cell__767 p').first().text().trim().replace(/[^A-Z]/g, '');
 
-                    // Get or create athlete object
+                    // Extract birth year BEFORE athlete lookup (needed for unique key)
+                    const bornText = $card.find('.col-5.not__cell__767 p').first().text().trim().replace(/Born:\s*/, '');
+                    const birthYearMatch = bornText.match(/[0-9]{4}/)?.[0];
+                    const birthYear = (birthYearMatch && birthYearMatch !== 'null') ? parseInt(birthYearMatch) : null;
 
+                    // Get or create athlete object using name+nation+birth_year as unique key
+                    // (rank is NOT unique - different athletes can have same rank)
+                    const athleteKey = `${name}-${nation}-${birthYear}`;
 
-                    let athlete = athleteMap.get(rank);
+                    // DEBUG: Log extraction
+                    console.log(`[DEBUG] Card: name="${name}", nation="${nation}", bornText="${bornText}", birthYear=${birthYear}, athleteKey="${athleteKey}"`);
+
+                    let athlete = athleteMap.get(athleteKey);
 
 
                     if (!athlete) {
@@ -466,17 +475,6 @@ function parseAttemptHTML(htmlContent, gender) {
                     
 
 
-                        // Extract birth info
-
-
-                        const bornText = $card.find('.col-5.not__cell__767 p').first().text().trim().replace(/Born:\s*/, '');
-
-
-                        const birthYearMatch = bornText.match(/[0-9]{4}/)?.[0];
-                        const birthYear = (birthYearMatch && birthYearMatch !== 'null') ? parseInt(birthYearMatch) : null;
-
-
-
                         // Extract bodyweight
 
 
@@ -515,7 +513,7 @@ function parseAttemptHTML(htmlContent, gender) {
                             best_cj: null,
                             total: null
                         };
-                        athleteMap.set(rank, athlete);
+                        athleteMap.set(athleteKey, athlete);
                     }
 
                     // Extract attempts (in the col-md-3 section)
