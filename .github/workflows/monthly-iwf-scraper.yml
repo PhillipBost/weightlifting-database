@@ -79,17 +79,21 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
+            const issueBody = [
+              'The monthly IWF scraper workflow failed.',
+              '',
+              'Check the logs:',
+              `- [Workflow logs](https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId})`,
+              '- Artifacts available in workflow details',
+              '',
+              'Year attempted: ${{ github.event.inputs.year || \'current\' }}'
+            ].join('\n');
+
             github.rest.issues.create({
               owner: context.repo.owner,
               repo: context.repo.repo,
               title: `IWF Scraper failed - ${new Date().toISOString().split('T')[0]}`,
-              body: `The monthly IWF scraper workflow failed.
-
-Check the logs:
-- [Workflow logs](https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId})
-- Artifacts available in workflow details
-
-Year attempted: ${{ github.event.inputs.year || 'current' }}`,
+              body: issueBody,
               labels: ['automation', 'iwf-scraper']
             })
 

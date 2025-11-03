@@ -3,7 +3,9 @@
     "allow": [
       "Bash(python:*)",
       "Read(//c/Users/phill/Downloads/**)",
-      "Bash(test:*)"
+      "Bash(test:*)",
+      "Bash(npx js-yaml:*)",
+      "Bash(/dev/null)"
     ],
     "deny": [],
     "ask": []
