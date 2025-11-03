@@ -152,6 +152,67 @@ async function backfillYTDForBatch(resultIds, batchNumber, totalBatches) {
     return { successCount, errorCount };
 }
 
+/**
+ * Backfill YTD for specific lifters in a specific year
+ * Used by orchestrator for targeted backfill after imports
+ * @param {number} year - Year to backfill
+ * @param {Array<number>} lifterIds - Array of db_lifter_id values to backfill
+ * @returns {Object} - { success: number, errors: number }
+ */
+async function backfillYTDForLiftersInYear(year, lifterIds) {
+    if (!lifterIds || lifterIds.length === 0) {
+        return { success: 0, errors: 0 };
+    }
+
+    try {
+        const startDate = `${year}-01-01`;
+        const endDate = `${year}-12-31`;
+
+        // Query results for these lifters in this year
+        const { data: results, error } = await supabaseIWF
+            .from('iwf_meet_results')
+            .select('db_result_id')
+            .in('db_lifter_id', lifterIds)
+            .gte('date', startDate)
+            .lte('date', endDate)
+            .order('date', { ascending: true });
+
+        if (error) {
+            throw new Error(`Failed to query lifter results: ${error.message}`);
+        }
+
+        if (!results || results.length === 0) {
+            return { success: 0, errors: 0 };
+        }
+
+        const resultIds = results.map(r => r.db_result_id);
+        const batches = [];
+
+        for (let i = 0; i < resultIds.length; i += BATCH_SIZE) {
+            batches.push(resultIds.slice(i, i + BATCH_SIZE));
+        }
+
+        let totalSuccess = 0;
+        let totalErrors = 0;
+
+        for (let i = 0; i < batches.length; i++) {
+            const batchResult = await backfillYTDForBatch(batches[i], i + 1, batches.length);
+            totalSuccess += batchResult.successCount;
+            totalErrors += batchResult.errorCount;
+
+            if (i < batches.length - 1) {
+                await new Promise(resolve => setTimeout(resolve, DELAY_MS));
+            }
+        }
+
+        return { success: totalSuccess, errors: totalErrors };
+
+    } catch (error) {
+        console.error(`Error backfilling lifters for year ${year}:`, error.message);
+        throw error;
+    }
+}
+
 async function main() {
     console.log('\n' + '='.repeat(80));
     console.log('IWF YTD BACKFILL SCRIPT');
@@ -245,5 +306,6 @@ if (require.main === module) {
 
 module.exports = {
     triggerYTDRecalculation,
-    backfillYTDForBatch
+    backfillYTDForBatch,
+    backfillYTDForLiftersInYear
 };

@@ -1,12 +1,31 @@
 #!/usr/bin/env node
 /**
- * IWF Database Importer - Main Orchestrator Script
+ * IWF Database Importer - Complete Import Pipeline Orchestrator
  *
- * Coordinates complete IWF results import workflow:
- * 1. Scrape event results
- * 2. Upsert meet and location records
- * 3. Import athlete results with YTD calculations
- * 4. Generate comprehensive summary
+ * @module iwf-database-importer
+ *
+ * Coordinates complete IWF results import workflow from scraping through database storage.
+ *
+ * Pipeline Stages:
+ * 1. **Event Results Scraping**: Calls iwf-results-scraper to extract competition data
+ * 2. **Analytics Enrichment**: Calculates successful attempts, bounce-back, Q-scores
+ * 3. **Lifter Management**: Finds or creates lifter records with name normalization
+ * 4. **Meet Management**: Creates meet records with geocoded location data
+ * 5. **Location Management**: Geocodes meet cities using Nominatim API
+ * 6. **Results Import**: Batch imports results with conflict resolution (upsert)
+ * 7. **YTD Calculation**: Calculates year-to-date bests for each lifter chronologically
+ * 8. **Summary Generation**: Creates comprehensive import report
+ *
+ * Key Features:
+ * - Intelligent deduplication (finds existing lifters by name/birth year/country)
+ * - Batch processing with configurable batch sizes
+ * - Comprehensive error handling with retry logic
+ * - YTD backfill tracking (returns affected lifters for targeted backfill)
+ * - Dry run mode for testing
+ * - Force mode to re-import existing events
+ *
+ * Main Export:
+ * - `importEventToDatabase(eventId, year, date, options)` - Complete import pipeline
  *
  * Usage:
  *   # Single event import
@@ -20,8 +39,6 @@
  *
  *   # Dry run (scrape but don't import)
  *   node iwf-database-importer.js --event-id 661 --year 2025 --dry-run
- *
- * @module iwf-database-importer
  */
 
 const fs = require('fs');
@@ -100,7 +117,8 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
         meet: null,
         importStats: null,
         errors: [],
-        executionTimeMs: 0
+        executionTimeMs: 0,
+        affectedLifters: []  // Will be populated with {db_lifter_id, year} objects
     };
 
     try {
@@ -214,6 +232,15 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
 
         summary.importStats = importStats;
         summary.success = true;
+
+        // Populate affected lifters for YTD backfill
+        if (importStats.affectedLifterIds && importStats.affectedLifterIds.length > 0) {
+            const meetYear = new Date(meet.Date).getFullYear();
+            summary.affectedLifters = importStats.affectedLifterIds.map(id => ({
+                db_lifter_id: id,
+                year: meetYear
+            }));
+        }
 
         // Step 7: Print summary
         console.log(`\n${'='.repeat(80)}`);

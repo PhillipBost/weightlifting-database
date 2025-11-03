@@ -5,10 +5,23 @@
  * Handles three separate URL endpoints (MODERN, MID_RANGE, HISTORICAL) and
  * split years (2025, 2018) where events span multiple endpoints.
  *
+ * @module iwf-event-discovery
+ *
+ * Features:
+ * - Multi-endpoint scraping (MODERN, MID_RANGE, HISTORICAL)
+ * - Pagination support across event listings
+ * - Automatic deduplication for split years
+ * - Retry logic with exponential backoff
+ * - JSON export organized by year
+ *
  * Usage:
- *   node iwf-event-discovery.js                           # Default years from config
- *   node iwf-event-discovery.js --year 2025               # Single year
- *   node iwf-event-discovery.js --from-year 2024 --to-year 2025  # Year range
+ *   node iwf-event-discovery.js                                 # Default years from config
+ *   node iwf-event-discovery.js --year 2025                     # Single year
+ *   node iwf-event-discovery.js --from-year 2024 --to-year 2025 # Year range
+ *   node iwf-event-discovery.js --help                          # Show usage
+ *
+ * Output:
+ *   Creates JSON files in output/ directory: iwf_events_YYYY.json
  */
 
 require('dotenv').config();
@@ -24,6 +37,18 @@ const LOG_FILE = config.LOGGING.EVENT_DISCOVERY_LOG;
 // COMMAND LINE ARGUMENT PARSING
 // ============================================================================
 
+/**
+ * Parse command line arguments for year range selection
+ *
+ * @returns {{startYear: number|null, endYear: number|null}} Parsed options
+ *
+ * @example
+ * // --year 2025
+ * // Returns: { startYear: 2025, endYear: 2025 }
+ *
+ * // --from-year 2024 --to-year 2025
+ * // Returns: { startYear: 2024, endYear: 2025 }
+ */
 function parseArguments() {
     const args = process.argv.slice(2);
     const options = {
@@ -68,6 +93,16 @@ IWF Event Discovery - Usage:
 let browser = null;
 let page = null;
 
+/**
+ * Initialize Puppeteer browser instance with configured settings
+ *
+ * Creates browser and page instances used throughout scraping process.
+ * Configures user agent and viewport according to config settings.
+ *
+ * @async
+ * @returns {Promise<void>}
+ * @throws {Error} If browser fails to launch
+ */
 async function initBrowser() {
     log('Initializing Puppeteer browser...');
 
@@ -83,6 +118,12 @@ async function initBrowser() {
     log('Browser initialized successfully');
 }
 
+/**
+ * Close Puppeteer browser instance and cleanup resources
+ *
+ * @async
+ * @returns {Promise<void>}
+ */
 async function closeBrowser() {
     if (browser) {
         await browser.close();
@@ -95,8 +136,17 @@ async function closeBrowser() {
 // ============================================================================
 
 /**
- * Try multiple selector patterns to find event cards
- * Returns array of element handles or empty array if none found
+ * Try multiple selector patterns to find event cards on current page
+ *
+ * Uses progressive selector fallback strategy to handle HTML structure changes.
+ * Primary selector: 'a.card' (current IWF structure as of 2025).
+ *
+ * @async
+ * @returns {Promise<{cards: Array, selector: string|null}>} Object containing array of element handles and successful selector
+ *
+ * @example
+ * const { cards, selector } = await findEventCards();
+ * console.log(`Found ${cards.length} cards using ${selector}`);
  */
 async function findEventCards() {
     // IWF uses <a class="card"> for event cards
@@ -128,7 +178,17 @@ async function findEventCards() {
 }
 
 /**
- * Extract event_id from URL string
+ * Extract event_id from URL string using multiple pattern matching
+ *
+ * Tries various URL patterns to extract numeric event ID.
+ *
+ * @param {string} url - URL string containing event ID
+ * @returns {string|null} Extracted event ID or null if not found
+ *
+ * @example
+ * extractEventId('?event_id=661')  // Returns: '661'
+ * extractEventId('https://iwf.sport/event/123')  // Returns: '123'
+ * extractEventId('invalid-url')  // Returns: null
  */
 function extractEventId(url) {
     if (!url) return null;
@@ -153,12 +213,30 @@ function extractEventId(url) {
 
 /**
  * Extract event data from a single event card element
- * Based on actual IWF HTML structure:
+ *
+ * Parses IWF HTML structure to extract event details:
+ * - Event ID and name
+ * - Date (as displayed on IWF site)
+ * - Location (city and country)
+ * - Endpoint information
+ *
+ * HTML Structure (as of 2025):
+ * ```html
  * <a href="?event_id=661" class="card">
  *   <p class="title"><span class="text">Event Name</span></p>
  *   <p class="normal__text">Date</p>
  *   <p class="normal__text">City, <strong>COUNTRY</strong></p>
  * </a>
+ * ```
+ *
+ * @async
+ * @param {ElementHandle} cardHandle - Puppeteer element handle for event card
+ * @param {{endpoint: string, year: number}} endpointInfo - Endpoint metadata
+ * @returns {Promise<Object|null>} Event object with extracted data or null if extraction fails
+ *
+ * @example
+ * const eventData = await extractEventData(cardHandle, { endpoint: 'MID_RANGE', year: 2025 });
+ * // Returns: { event_id: '661', event_name: 'World Championships', ... }
  */
 async function extractEventData(cardHandle, endpointInfo) {
     try {
@@ -232,7 +310,18 @@ async function extractEventData(cardHandle, endpointInfo) {
 
 /**
  * Check for and click next page button if it exists
- * Returns true if navigation successful, false if no more pages
+ *
+ * Tries multiple pagination selectors and checks if button is disabled.
+ * Handles navigation and waits for page load before returning.
+ *
+ * @async
+ * @returns {Promise<boolean>} True if navigation successful, false if no more pages
+ *
+ * @example
+ * const hasNextPage = await handlePagination();
+ * if (hasNextPage) {
+ *   // Process next page
+ * }
  */
 async function handlePagination() {
     try {
@@ -278,7 +367,22 @@ async function handlePagination() {
 }
 
 /**
- * Scrape events from a single endpoint
+ * Scrape events from a single endpoint (with pagination support)
+ *
+ * Navigates to endpoint URL, extracts all event cards across paginated results,
+ * and returns array of event objects. Includes retry logic for navigation failures.
+ *
+ * @async
+ * @param {{endpoint: string, year: number, url: string, dateRange: string}} endpointInfo - Endpoint configuration
+ * @returns {Promise<Array>} Array of event objects
+ *
+ * @example
+ * const events = await scrapeEndpoint({
+ *   endpoint: 'MID_RANGE',
+ *   year: 2025,
+ *   url: 'https://iwf.sport/...',
+ *   dateRange: '2025-01-01 to 2025-05-31'
+ * });
  */
 async function scrapeEndpoint(endpointInfo) {
     log(`\n${'='.repeat(60)}`);
@@ -356,6 +460,16 @@ async function scrapeEndpoint(endpointInfo) {
 
 /**
  * Save events to JSON file grouped by year
+ *
+ * Creates output file with metadata (year, timestamp, event count)
+ * and array of event objects. File saved to output/ directory.
+ *
+ * @param {Array} events - Array of event objects to save
+ * @param {number} year - Year for filename
+ *
+ * @example
+ * saveEventsToFile(events, 2025);
+ * // Creates: output/iwf_events_2025.json
  */
 function saveEventsToFile(events, year) {
     const outputFile = path.join(config.LOGGING.OUTPUT_DIR, `iwf_events_${year}.json`);
@@ -378,6 +492,21 @@ function saveEventsToFile(events, year) {
 // MAIN FUNCTION
 // ============================================================================
 
+/**
+ * Main entry point for IWF event discovery
+ *
+ * Orchestrates the complete event discovery process:
+ * 1. Parses command line arguments
+ * 2. Determines which endpoints to scrape
+ * 3. Initializes browser
+ * 4. Scrapes each endpoint (with rate limiting)
+ * 5. Deduplicates results for split years
+ * 6. Saves results to JSON files by year
+ *
+ * @async
+ * @returns {Promise<void>}
+ * @throws {Error} If critical failure occurs during scraping
+ */
 async function main() {
     const startTime = Date.now();
 

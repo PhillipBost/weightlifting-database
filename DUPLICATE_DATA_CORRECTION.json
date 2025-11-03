@@ -1,0 +1,554 @@
+{
+  "metadata": {
+    "description": "Duplicate results data for manual correction",
+    "total_records": 28,
+    "duplicate_pairs": 14,
+    "extraction_date": "2025-10-31",
+    "instructions": "Correct athlete data, add missing iwf_lifter_id, verify birth years, and mark for delete/split/merge"
+  },
+  "events": [
+    {
+      "db_meet_id": 656,
+      "meet_name": "26th MEN's and 6th WOMEN's JUNIOR WORLD CHAMPIONSHIPS",
+      "date": "2000-07-02",
+      "location": "Unknown"
+    },
+    {
+      "db_meet_id": 673,
+      "meet_name": "75th MEN's and 18th WOMEN's WORLD CHAMPIONSHIPS",
+      "date": "2006-09-30",
+      "location": "Unknown"
+    },
+    {
+      "db_meet_id": 681,
+      "meet_name": "76th MEN's and 19th WOMEN's WORLD CHAMPIONSHIPS",
+      "date": "2007-09-14",
+      "location": "Unknown"
+    },
+    {
+      "db_meet_id": 683,
+      "meet_name": "SOUTHEAST ASIAN GAMES",
+      "date": "2009-12-10",
+      "location": "Unknown"
+    },
+    {
+      "db_meet_id": 687,
+      "meet_name": "PAN ARAB GAMES",
+      "date": "2011-12-09",
+      "location": "Unknown"
+    },
+    {
+      "db_meet_id": 688,
+      "meet_name": "XXIX OLYMPIC GAMES",
+      "date": "2008-08-09",
+      "location": "Unknown"
+    },
+    {
+      "db_meet_id": 725,
+      "meet_name": "AFRICAN JUNIOR CHAMPIONSHIPS",
+      "date": "2013-10-28",
+      "location": "Unknown"
+    },
+    {
+      "db_meet_id": 726,
+      "meet_name": "COMMONWEALTH GAMES",
+      "date": "2010-10-03",
+      "location": "Unknown"
+    },
+    {
+      "db_meet_id": 727,
+      "meet_name": "EUROPEAN CHAMPIONSHIPS",
+      "date": "2008-04-11",
+      "location": "Unknown"
+    },
+    {
+      "db_meet_id": 835,
+      "meet_name": "OCEANIA JUNIOR CHAMPIONSHIPS",
+      "date": "2013-07-12",
+      "location": "Unknown"
+    },
+    {
+      "db_meet_id": 836,
+      "meet_name": "2011 IWF JUNIOR WORLD CHAMPIONSHIPS",
+      "date": "2011-06-29",
+      "location": "Unknown"
+    },
+    {
+      "db_meet_id": 1013,
+      "meet_name": "Pan-American Youth Championships",
+      "date": "2022-11-20",
+      "location": "Unknown"
+    },
+    {
+      "db_meet_id": 1024,
+      "meet_name": "African Junior Championships",
+      "date": "2023-10-26",
+      "location": "Unknown"
+    },
+    {
+      "db_meet_id": 1144,
+      "meet_name": "Asian Championships",
+      "date": "2024-02-03",
+      "location": "Unknown"
+    }
+  ],
+  "athletes": [
+    {
+      "db_lifter_id": 25620,
+      "athlete_name": "Robert HAWKINS",
+      "birth_year": 1980,
+      "iwf_lifter_id": null,
+      "country_code": "Unknown",
+      "note": "Appears only at one event - likely correct"
+    },
+    {
+      "db_lifter_id": 25063,
+      "athlete_name": "Tigran MARTIROSYAN",
+      "birth_year": 1983,
+      "iwf_lifter_id": null,
+      "country_code": "Unknown",
+      "note": "CRITICAL: Appears in MANY events with different weight classes at SAME meet. Verify this is one person or multiple athletes with same name."
+    },
+    {
+      "db_lifter_id": 27524,
+      "athlete_name": "Phyo PYAE",
+      "birth_year": 1989,
+      "iwf_lifter_id": null,
+      "country_code": "Unknown",
+      "note": "Appears at one event with two weight classes - verify"
+    },
+    {
+      "db_lifter_id": 27389,
+      "athlete_name": "Nor Khasida Binti ABDUL HALIM",
+      "birth_year": 1991,
+      "iwf_lifter_id": null,
+      "country_code": "Unknown",
+      "note": "Appears at two events with different weight classes"
+    },
+    {
+      "db_lifter_id": 37814,
+      "athlete_name": "Oscar YAX",
+      "birth_year": 2005,
+      "iwf_lifter_id": null,
+      "country_code": "Unknown",
+      "note": "Young athlete - two weight classes at same event (youth competition)"
+    },
+    {
+      "db_lifter_id": 38619,
+      "athlete_name": "Amira Mohamed Abdelrahman Ibrahim ELKADY",
+      "birth_year": 2006,
+      "iwf_lifter_id": null,
+      "country_code": "Unknown",
+      "note": "Young female athlete - two weight classes at same event"
+    },
+    {
+      "db_lifter_id": 38478,
+      "athlete_name": "Hanan Y M A H ALAMEER",
+      "birth_year": 1993,
+      "iwf_lifter_id": null,
+      "country_code": "Unknown",
+      "note": "Female athlete - one weight class with valid total, one with 0"
+    }
+  ],
+  "duplicate_pairs": [
+    {
+      "pair_id": 1,
+      "db_meet_id": 656,
+      "db_lifter_id": 25620,
+      "athlete_name": "Robert HAWKINS",
+      "birth_year": 1980,
+      "meet_name": "26th MEN's and 6th WOMEN's JUNIOR WORLD CHAMPIONSHIPS",
+      "meet_date": "2000-07-02",
+      "records": [
+        {
+          "db_result_id": 79268,
+          "weight_class": "85 kg",
+          "body_weight_kg": 84.79,
+          "total": 255,
+          "action": "KEEP",
+          "reason": "Higher total"
+        },
+        {
+          "db_result_id": 79126,
+          "weight_class": "77 kg",
+          "body_weight_kg": 76.43,
+          "total": 250,
+          "action": "DELETE",
+          "reason": "Lower total"
+        }
+      ],
+      "question": "Is this one athlete competing in two weight classes, or two different athletes?"
+    },
+    {
+      "pair_id": 2,
+      "db_meet_id": 673,
+      "db_lifter_id": 25063,
+      "athlete_name": "Tigran MARTIROSYAN",
+      "birth_year": 1983,
+      "meet_name": "75th MEN's and 18th WOMEN's WORLD CHAMPIONSHIPS",
+      "meet_date": "2006-09-30",
+      "records": [
+        {
+          "db_result_id": 82763,
+          "weight_class": "85 kg",
+          "body_weight_kg": 84.41,
+          "total": 375,
+          "action": "KEEP",
+          "reason": "Higher total"
+        },
+        {
+          "db_result_id": 82450,
+          "weight_class": "69 kg",
+          "body_weight_kg": 68.9,
+          "total": 311,
+          "action": "DELETE",
+          "reason": "Lower total"
+        }
+      ],
+      "question": "Same athlete, different weight classes? Or merged lifters?"
+    },
+    {
+      "pair_id": 3,
+      "db_meet_id": 681,
+      "db_lifter_id": 25063,
+      "athlete_name": "Tigran MARTIROSYAN",
+      "birth_year": 1983,
+      "meet_name": "76th MEN's and 19th WOMEN's WORLD CHAMPIONSHIPS",
+      "meet_date": "2007-09-14",
+      "records": [
+        {
+          "db_result_id": 83895,
+          "weight_class": "85 kg",
+          "body_weight_kg": 82.47,
+          "total": 359,
+          "action": "KEEP",
+          "reason": "Valid total"
+        },
+        {
+          "db_result_id": 83510,
+          "weight_class": "69 kg",
+          "body_weight_kg": 68.89,
+          "total": 0,
+          "action": "DELETE",
+          "reason": "Zero total"
+        }
+      ],
+      "question": "Same athlete moving up weight class?"
+    },
+    {
+      "pair_id": 4,
+      "db_meet_id": 683,
+      "db_lifter_id": 27524,
+      "athlete_name": "Phyo PYAE",
+      "birth_year": 1989,
+      "meet_name": "SOUTHEAST ASIAN GAMES",
+      "meet_date": "2009-12-10",
+      "records": [
+        {
+          "db_result_id": 83216,
+          "weight_class": "56 kg",
+          "body_weight_kg": 55.03,
+          "total": 266,
+          "action": "KEEP",
+          "reason": "Higher total"
+        },
+        {
+          "db_result_id": 83284,
+          "weight_class": "77 kg",
+          "body_weight_kg": 70.46,
+          "total": 245,
+          "action": "DELETE",
+          "reason": "Lower total, suspicious body weight (70.46 in 77kg)"
+        }
+      ],
+      "question": "Body weight inconsistency - 55kg then 70kg at same event?"
+    },
+    {
+      "pair_id": 5,
+      "db_meet_id": 687,
+      "db_lifter_id": 25063,
+      "athlete_name": "Tigran MARTIROSYAN",
+      "birth_year": 1983,
+      "meet_name": "PAN ARAB GAMES",
+      "meet_date": "2011-12-09",
+      "records": [
+        {
+          "db_result_id": 84068,
+          "weight_class": "85 kg",
+          "body_weight_kg": 83.78,
+          "total": 380,
+          "action": "KEEP",
+          "reason": "Valid total"
+        },
+        {
+          "db_result_id": 83838,
+          "weight_class": "69 kg",
+          "body_weight_kg": 68.9,
+          "total": 0,
+          "action": "DELETE",
+          "reason": "Zero total"
+        }
+      ],
+      "question": "Consistent pattern - 69kg attempts failed?"
+    },
+    {
+      "pair_id": 6,
+      "db_meet_id": 688,
+      "db_lifter_id": 25063,
+      "athlete_name": "Tigran MARTIROSYAN",
+      "birth_year": 1983,
+      "meet_name": "XXIX OLYMPIC GAMES",
+      "meet_date": "2008-08-09",
+      "records": [
+        {
+          "db_result_id": 84065,
+          "weight_class": "85 kg",
+          "body_weight_kg": 83.78,
+          "total": 380,
+          "action": "KEEP",
+          "reason": "Valid total"
+        },
+        {
+          "db_result_id": 83835,
+          "weight_class": "69 kg",
+          "body_weight_kg": 68.9,
+          "total": 0,
+          "action": "DELETE",
+          "reason": "Zero total"
+        }
+      ],
+      "question": "Same pattern at Olympics - data entry error?"
+    },
+    {
+      "pair_id": 7,
+      "db_meet_id": 725,
+      "db_lifter_id": 25063,
+      "athlete_name": "Tigran MARTIROSYAN",
+      "birth_year": 1983,
+      "meet_name": "AFRICAN JUNIOR CHAMPIONSHIPS",
+      "meet_date": "2013-10-28",
+      "records": [
+        {
+          "db_result_id": 88744,
+          "weight_class": "85 kg",
+          "body_weight_kg": 83.57,
+          "total": 377,
+          "action": "KEEP",
+          "reason": "Higher total"
+        },
+        {
+          "db_result_id": 88488,
+          "weight_class": "69 kg",
+          "body_weight_kg": 68.88,
+          "total": 346,
+          "action": "DELETE",
+          "reason": "Lower total"
+        }
+      ],
+      "question": "Suspicion: Two different 'Tigran MARTIROSYAN' athletes?"
+    },
+    {
+      "pair_id": 8,
+      "db_meet_id": 726,
+      "db_lifter_id": 25063,
+      "athlete_name": "Tigran MARTIROSYAN",
+      "birth_year": 1983,
+      "meet_name": "COMMONWEALTH GAMES",
+      "meet_date": "2010-10-03",
+      "records": [
+        {
+          "db_result_id": 88817,
+          "weight_class": "85 kg",
+          "body_weight_kg": 83.57,
+          "total": 377,
+          "action": "KEEP",
+          "reason": "Higher total"
+        },
+        {
+          "db_result_id": 88535,
+          "weight_class": "69 kg",
+          "body_weight_kg": 68.88,
+          "total": 346,
+          "action": "DELETE",
+          "reason": "Lower total"
+        }
+      ],
+      "question": "Check IWF.sport - is this one athlete or two?"
+    },
+    {
+      "pair_id": 9,
+      "db_meet_id": 727,
+      "db_lifter_id": 25063,
+      "athlete_name": "Tigran MARTIROSYAN",
+      "birth_year": 1983,
+      "meet_name": "EUROPEAN CHAMPIONSHIPS",
+      "meet_date": "2008-04-11",
+      "records": [
+        {
+          "db_result_id": 88820,
+          "weight_class": "85 kg",
+          "body_weight_kg": 83.57,
+          "total": 377,
+          "action": "KEEP",
+          "reason": "Higher total"
+        },
+        {
+          "db_result_id": 88567,
+          "weight_class": "69 kg",
+          "body_weight_kg": 68.88,
+          "total": 346,
+          "action": "DELETE",
+          "reason": "Lower total"
+        }
+      ],
+      "question": "CRITICAL DATA: Check birth year - is this really 1983?"
+    },
+    {
+      "pair_id": 10,
+      "db_meet_id": 835,
+      "db_lifter_id": 27389,
+      "athlete_name": "Nor Khasida Binti ABDUL HALIM",
+      "birth_year": 1991,
+      "meet_name": "OCEANIA JUNIOR CHAMPIONSHIPS",
+      "meet_date": "2013-07-12",
+      "records": [
+        {
+          "db_result_id": 101633,
+          "weight_class": "69 kg",
+          "body_weight_kg": 68.93,
+          "total": 180,
+          "action": "KEEP",
+          "reason": "Higher total"
+        },
+        {
+          "db_result_id": 101558,
+          "weight_class": "63 kg",
+          "body_weight_kg": 62.45,
+          "total": 141,
+          "action": "DELETE",
+          "reason": "Lower total"
+        }
+      ],
+      "question": "Female athlete - weight progression seems reasonable"
+    },
+    {
+      "pair_id": 11,
+      "db_meet_id": 836,
+      "db_lifter_id": 27389,
+      "athlete_name": "Nor Khasida Binti ABDUL HALIM",
+      "birth_year": 1991,
+      "meet_name": "2011 IWF JUNIOR WORLD CHAMPIONSHIPS",
+      "meet_date": "2011-06-29",
+      "records": [
+        {
+          "db_result_id": 101300,
+          "weight_class": "69 kg",
+          "body_weight_kg": 68.93,
+          "total": 180,
+          "action": "KEEP",
+          "reason": "Higher total"
+        },
+        {
+          "db_result_id": 101217,
+          "weight_class": "63 kg",
+          "body_weight_kg": 62.45,
+          "total": 141,
+          "action": "DELETE",
+          "reason": "Lower total"
+        }
+      ],
+      "question": "Same athlete, appears at 2011 and 2013 Junior championships"
+    },
+    {
+      "pair_id": 12,
+      "db_meet_id": 1013,
+      "db_lifter_id": 37814,
+      "athlete_name": "Oscar YAX",
+      "birth_year": 2005,
+      "meet_name": "Pan-American Youth Championships",
+      "meet_date": "2022-11-20",
+      "records": [
+        {
+          "db_result_id": 122137,
+          "weight_class": "61 kg",
+          "body_weight_kg": 60.8,
+          "total": 175,
+          "action": "KEEP",
+          "reason": "Higher total"
+        },
+        {
+          "db_result_id": 122130,
+          "weight_class": "55 kg",
+          "body_weight_kg": 54.6,
+          "total": 155,
+          "action": "DELETE",
+          "reason": "Lower total"
+        }
+      ],
+      "question": "Young male youth athlete - reasonable progression"
+    },
+    {
+      "pair_id": 13,
+      "db_meet_id": 1024,
+      "db_lifter_id": 38619,
+      "athlete_name": "Amira Mohamed Abdelrahman Ibrahim ELKADY",
+      "birth_year": 2006,
+      "meet_name": "African Junior Championships",
+      "meet_date": "2023-10-26",
+      "records": [
+        {
+          "db_result_id": 124220,
+          "weight_class": "81 kg",
+          "body_weight_kg": 76.3,
+          "total": 212,
+          "action": "KEEP",
+          "reason": "Higher total"
+        },
+        {
+          "db_result_id": 124189,
+          "weight_class": "71 kg",
+          "body_weight_kg": 69.5,
+          "total": 195,
+          "action": "DELETE",
+          "reason": "Lower total"
+        }
+      ],
+      "question": "Young female - weight classes seem high for age 17"
+    },
+    {
+      "pair_id": 14,
+      "db_meet_id": 1144,
+      "db_lifter_id": 38478,
+      "athlete_name": "Hanan Y M A H ALAMEER",
+      "birth_year": 1993,
+      "meet_name": "Asian Championships",
+      "meet_date": "2024-02-03",
+      "records": [
+        {
+          "db_result_id": 141300,
+          "weight_class": "71 kg",
+          "body_weight_kg": 70.9,
+          "total": 125,
+          "action": "KEEP",
+          "reason": "Valid total"
+        },
+        {
+          "db_result_id": 141267,
+          "weight_class": "64 kg",
+          "body_weight_kg": 64,
+          "total": 0,
+          "action": "DELETE",
+          "reason": "Zero total"
+        }
+      ],
+      "question": "Female athlete - low total, possible injury?"
+    }
+  ],
+  "instructions": {
+    "step_1": "Review each pair and verify with IWF.sport (https://iwf.sport/athletes/) whether records should be merged or split",
+    "step_2": "For 'Tigran MARTIROSYAN' especially - check birth year and whether this is 1 or 2 athletes",
+    "step_3": "Add iwf_lifter_id for each athlete if available",
+    "step_4": "Mark each record as: DELETE, KEEP, or SPLIT (create new lifter)",
+    "step_5": "Return corrected JSON and we'll run upsert/delete script"
+  }
+}

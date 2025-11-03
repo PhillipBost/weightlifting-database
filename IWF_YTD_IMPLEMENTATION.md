@@ -51,6 +51,41 @@ node scripts/maintenance/backfill-iwf-ytd.js --year 2025
 node scripts/maintenance/backfill-iwf-ytd.js --limit 100
 ```
 
+**Functions:**
+- `backfillYTDForLiftersInYear(year, lifterIds)` - Targeted backfill for specific lifters in a specific year (used by orchestrator)
+- `triggerYTDRecalculation(resultId)` - Trigger recalculation for a single result
+- `backfillYTDForBatch(resultIds, batchNumber, totalBatches)` - Process batch of result IDs
+
+### 4. Orchestrator Integration
+**File:** `scripts/production/iwf-main.js`
+
+**Automatic YTD Backfill:**
+The orchestrator now automatically performs targeted YTD backfill after importing events. This ensures correct YTD values even when events are imported out of chronological order.
+
+**How it works:**
+1. During import, affected lifter IDs are tracked
+2. After all events complete, lifters are grouped by year
+3. Backfill runs only for affected lifters in each year
+4. Results are logged and included in summary
+
+**Efficiency:**
+- **Before:** Backfill all 6000 lifters competing in 2025
+- **After:** Backfill only the 10 lifters in the imported event
+
+**Usage:**
+```bash
+# Normal import - YTD backfill runs automatically
+node scripts/production/iwf-main.js --event-id 661 --year 2025
+
+# Skip YTD backfill (for testing or debugging)
+node scripts/production/iwf-main.js --event-id 661 --year 2025 --skip-ytd-backfill
+```
+
+**Files Modified:**
+- `iwf-results-importer.js` - Tracks affected lifter IDs during import
+- `iwf-database-importer.js` - Extracts affected lifters and years
+- `iwf-main.js` - Coordinates backfill after all events complete
+
 ## Implementation Steps
 
 ### Step 1: Apply Database Migration
@@ -71,17 +106,28 @@ SELECT proname FROM pg_proc
 WHERE proname = 'calculate_iwf_ytd_bests';
 ```
 
-### Step 2: Backfill Existing Data (Optional)
-If you have existing records, recalculate their YTD values:
+### Step 2: Backfill Existing Data (If Needed)
+**Note:** The orchestrator now automatically backfills YTD for newly imported events. Manual backfill is only needed for historical data imported before this feature was added.
+
+If you have existing records without YTD values, recalculate them:
 ```bash
-node scripts/maintenance/backfill-iwf-ytd.js
+# Backfill all records (time-intensive)
+node scripts/maintenance/backfill-iwf-ytd.js --all
+
+# Backfill specific year
+node scripts/maintenance/backfill-iwf-ytd.js --year 2025 --all
 ```
 
 ### Step 3: Test New Imports
-Import a test event to verify YTD calculation works:
+Import a test event to verify YTD calculation and automatic backfill:
 ```bash
 node scripts/production/iwf-main.js --event-id 661 --year 2025 --limit 5
 ```
+
+The orchestrator will:
+1. Import the event results
+2. Automatically backfill YTD for affected lifters
+3. Display backfill summary in logs
 
 Verify in database:
 ```sql
@@ -101,13 +147,43 @@ LIMIT 10;
 3. Inserts record with YTD values
 4. No automatic updates if data changes
 
-**After (Database-Driven):**
+**Current (Database-Driven + Automatic Backfill):**
 1. Importer reads athlete data
-2. YTD fields set to NULL
+2. YTD fields set to NULL on insert
 3. Database trigger fires on INSERT
 4. Trigger queries previous results for same lifter
 5. Trigger updates YTD fields automatically
-6. Trigger fires again on UPDATE if data changes
+6. **After all events import, orchestrator backfills affected lifters**
+7. Ensures correct YTD even when events import out of order
+
+### Orchestrator Workflow
+
+```
+FOR each event:
+  ├─ Import results (trigger calculates initial YTD)
+  └─ Track affected lifter IDs and year
+
+AFTER all events complete:
+  ├─ Group affected lifters by year
+  ├─ FOR each year:
+  │   └─ Backfill YTD for specific lifters only
+  └─ Display backfill summary
+```
+
+**Why Backfill is Needed:**
+Even with the database trigger, YTD can be incorrect if events are imported out of chronological order:
+
+```
+Example Problem:
+- Import Event B (Feb 20, 2025) → YTD = NULL (no earlier events in DB yet)
+- Import Event A (Jan 15, 2025) → YTD = NULL (first event)
+- Result: Event B has wrong YTD (should reference Event A)
+
+Solution:
+- After both imports, backfill recalculates Event B's YTD
+- Trigger fires again, now finds Event A as previous result
+- YTD now correct
+```
 
 ### Example: Multiple Meets Same Year
 
@@ -130,10 +206,12 @@ Meet C (Mar 10, 2025):
 ## Benefits
 
 1. **Consistency**: Matches USAW database pattern
-2. **Automatic**: YTD updates whenever data changes
+2. **Automatic**: YTD updates whenever data changes, orchestrator backfills after imports
 3. **Reliable**: Database-level calculation handles edge cases
 4. **Performance**: Reduces Node.js processing overhead
-5. **Retroactive**: Historical records can be recalculated
+5. **Efficient**: Targeted backfill only processes affected lifters (not entire database)
+6. **Correct**: Handles out-of-order imports automatically
+7. **Retroactive**: Historical records can be recalculated
 
 ## Troubleshooting
 
