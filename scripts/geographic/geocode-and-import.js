@@ -345,6 +345,41 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+// Fetch elevation data using open-meteo API
+async function fetchElevation(latitude, longitude) {
+    try {
+        const url = `https://api.open-meteo.com/v1/elevation?latitude=${latitude}&longitude=${longitude}`;
+
+        const response = await fetch(url, {
+            headers: {
+                'User-Agent': 'WeightliftingMeetGeocoder/1.0'
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+
+        const data = await response.json();
+
+        if (data && data.elevation && data.elevation.length > 0) {
+            const elevation = data.elevation[0];
+            log(`  📏 Elevation: ${elevation}m (source: open-meteo)`);
+            return {
+                success: true,
+                elevation: elevation,
+                source: 'open-meteo'
+            };
+        }
+
+        return { success: false, error: 'No elevation data returned' };
+
+    } catch (error) {
+        log(`  ⚠️ Elevation fetch failed: ${error.message}`);
+        return { success: false, error: error.message, elevation: null };
+    }
+}
+
 // Calculate address precision score (higher = more precise)
 function calculateAddressPrecision(address, displayName) {
     if (!address && !displayName) return 0;
@@ -436,40 +471,88 @@ function shouldUpdateGeocode(meet) {
 async function getMeetsNeedingGeocode() {
     try {
         log('📊 Querying database for meets that need geocoding...');
-        
+        log('   Filtering: geocode_precision_score ≤ 3 or NULL');
+
         let allMeets = [];
         let from = 0;
         const pageSize = 100;
-        
+
         while (true) {
             const { data, error } = await supabase
                 .from('meets')
-                .select('meet_id, Meet, address, latitude, longitude, geocode_success, geocode_precision_score, geocode_display_name')
+                .select('meet_id, Meet, address, latitude, longitude, geocode_success, geocode_precision_score, geocode_display_name, Date')
                 .not('address', 'is', null)
                 .neq('address', '')
+                .or('geocode_precision_score.is.null,geocode_precision_score.lte.3')
                 .range(from, from + pageSize - 1);
-                
+
             if (error) {
                 throw new Error(`Failed to fetch meets: ${error.message}`);
             }
-            
+
             if (!data || data.length === 0) {
                 break;
             }
-            
+
             allMeets.push(...data);
             from += pageSize;
-            
+
             log(`📄 Loaded ${allMeets.length} meets so far...`);
-            
+
             if (data.length < pageSize) {
                 break; // Last page
             }
         }
-        
+
         log(`📋 Found ${allMeets.length} meets that need geocoding`);
         return allMeets;
-        
+
+    } catch (error) {
+        log(`❌ Database query failed: ${error.message}`);
+        throw error;
+    }
+}
+
+// Get meets that have coordinates but missing elevation data
+async function getMeetsMissingElevation() {
+    try {
+        log('📊 Querying database for meets missing elevation data...');
+        log('   Filtering: has lat/long but elevation_meters is NULL');
+
+        let allMeets = [];
+        let from = 0;
+        const pageSize = 100;
+
+        while (true) {
+            const { data, error } = await supabase
+                .from('meets')
+                .select('meet_id, Meet, latitude, longitude, elevation_meters')
+                .not('latitude', 'is', null)
+                .not('longitude', 'is', null)
+                .is('elevation_meters', null)
+                .range(from, from + pageSize - 1);
+
+            if (error) {
+                throw new Error(`Failed to fetch meets: ${error.message}`);
+            }
+
+            if (!data || data.length === 0) {
+                break;
+            }
+
+            allMeets.push(...data);
+            from += pageSize;
+
+            log(`📄 Loaded ${allMeets.length} meets so far...`);
+
+            if (data.length < pageSize) {
+                break; // Last page
+            }
+        }
+
+        log(`📋 Found ${allMeets.length} meets missing elevation`);
+        return allMeets;
+
     } catch (error) {
         log(`❌ Database query failed: ${error.message}`);
         throw error;
@@ -479,11 +562,11 @@ async function getMeetsNeedingGeocode() {
 // Main import function
 async function geocodeAndImport() {
     const startTime = Date.now();
-    
+
     try {
         log('🌍 Starting geocoding and import process...');
         log('='.repeat(60));
-        
+
         // Get meets from database that need geocoding
         const meetsNeedingGeocode = await getMeetsNeedingGeocode();
         
@@ -510,11 +593,14 @@ async function geocodeAndImport() {
             if (isInternationalEvent(meet.Meet)) {
                 log(`  🌍 International event detected - skipping WSO assignment`);
                 skipCount++;
-                
+
                 // Still geocode but don't assign WSO
                 const geocodeResult = await geocodeAddress(meet.address);
-                
+
                 if (geocodeResult.success) {
+                    // Fetch elevation
+                    const elevationResult = await fetchElevation(geocodeResult.latitude, geocodeResult.longitude);
+
                     const updateData = {
                         latitude: geocodeResult.latitude,
                         longitude: geocodeResult.longitude,
@@ -522,14 +608,17 @@ async function geocodeAndImport() {
                         geocode_display_name: geocodeResult.display_name,
                         geocode_precision_score: geocodeResult.precision_score,
                         geocode_success: true,
-                        wso_geography: null // Explicitly null for international events
+                        wso_geography: null, // Explicitly null for international events
+                        elevation_meters: elevationResult.success ? elevationResult.elevation : null,
+                        elevation_source: elevationResult.success ? elevationResult.source : null,
+                        elevation_fetched_at: elevationResult.success ? new Date().toISOString() : null
                         // Note: is_international_event column not in schema yet
                     };
-                    
+
                     await updateMeetWithGeocode(meet.meet_id, updateData);
                     log(`  ✅ Geocoded international event (no WSO assigned)`);
                 }
-                
+
                 await sleep(NOMINATIM_DELAY);
                 continue;
             }
@@ -618,7 +707,20 @@ async function geocodeAndImport() {
                 failureCount++;
                 log(`  ❌ Geocoding failed: ${geocodeResult.error}`);
             }
-            
+
+            // Fetch elevation if geocoding was successful
+            let elevationMeters = null;
+            let elevationSource = null;
+            let elevationFetchedAt = null;
+            if (geocodeResult.success) {
+                const elevationResult = await fetchElevation(geocodeResult.latitude, geocodeResult.longitude);
+                if (elevationResult.success) {
+                    elevationMeters = elevationResult.elevation;
+                    elevationSource = elevationResult.source;
+                    elevationFetchedAt = new Date().toISOString();
+                }
+            }
+
             // Prepare data for database update
             const updateData = {
                 ...addressComponents,
@@ -630,8 +732,11 @@ async function geocodeAndImport() {
                 geocode_strategy_used: geocodeResult.success ? `attempt_${geocodeResult.attempt}` : null,
                 geocode_success: geocodeResult.success,
                 geocode_error: geocodeResult.success ? null : geocodeResult.error,
-                wso_geography: wsoGeography
-                // Note: is_placeholder_coordinate, elevation fields not in schema yet
+                wso_geography: wsoGeography,
+                elevation_meters: elevationMeters,
+                elevation_source: elevationSource,
+                elevation_fetched_at: elevationFetchedAt
+                // Note: is_placeholder_coordinate field not in schema yet
             };
             
             // Update database immediately
@@ -646,25 +751,91 @@ async function geocodeAndImport() {
                 await sleep(NOMINATIM_DELAY);
             }
         }
-        
-        
-        
+
+        // PHASE 2: Fetch elevation for meets that have coordinates but missing elevation
+        log('\n' + '='.repeat(60));
+        log('📏 PHASE 2: FETCHING MISSING ELEVATION DATA');
+        log('='.repeat(60));
+
+        const meetsMissingElevation = await getMeetsMissingElevation();
+        let elevationSuccessCount = 0;
+        let elevationFailureCount = 0;
+
+        if (meetsMissingElevation.length > 0) {
+            for (let i = 0; i < meetsMissingElevation.length; i++) {
+                const meet = meetsMissingElevation[i];
+                const progress = `${i + 1}/${meetsMissingElevation.length}`;
+
+                log(`\n🔄 [${progress}] Fetching elevation: ${meet.Meet} (meet_id: ${meet.meet_id})`);
+                log(`   Coordinates: ${meet.latitude}, ${meet.longitude}`);
+
+                // Fetch elevation
+                const elevationResult = await fetchElevation(meet.latitude, meet.longitude);
+
+                if (elevationResult.success) {
+                    elevationSuccessCount++;
+
+                    // Update only elevation fields
+                    const updateData = {
+                        elevation_meters: elevationResult.elevation,
+                        elevation_source: elevationResult.source,
+                        elevation_fetched_at: new Date().toISOString()
+                    };
+
+                    const success = await updateMeetWithGeocode(meet.meet_id, updateData);
+                    if (success) {
+                        log(`  ✅ Updated elevation for meet_id ${meet.meet_id}`);
+                    }
+                } else {
+                    elevationFailureCount++;
+                    log(`  ❌ Elevation fetch failed: ${elevationResult.error}`);
+                }
+
+                // Small delay between requests
+                if (i < meetsMissingElevation.length - 1) {
+                    await sleep(500);
+                }
+            }
+        } else {
+            log('✅ All meets with coordinates already have elevation data');
+        }
+
         // Summary
         log('\n' + '='.repeat(60));
         log('✅ GEOCODING AND IMPORT COMPLETE');
+        log('');
+        log('📍 GEOCODING PHASE:');
         log(`   Total meets processed: ${meetsNeedingGeocode.length}`);
         log(`   High precision (skipped): ${skipCount}`);
         log(`   Database updates: ${updatedCount}`);
         log(`   Successful geocodes: ${successCount}`);
         log(`   Failed geocodes: ${failureCount}`);
-        log(`   Geocoding success rate: ${((successCount / meetsNeedingGeocode.length) * 100).toFixed(1)}%`);
-        log(`   Processing time: ${Math.round((Date.now() - startTime) / 1000)}s`);
-        
+        if (meetsNeedingGeocode.length > 0) {
+            log(`   Geocoding success rate: ${((successCount / meetsNeedingGeocode.length) * 100).toFixed(1)}%`);
+        }
+        log('');
+        log('📏 ELEVATION PHASE:');
+        log(`   Total meets processed: ${meetsMissingElevation.length}`);
+        log(`   Successful elevation fetches: ${elevationSuccessCount}`);
+        log(`   Failed elevation fetches: ${elevationFailureCount}`);
+        if (meetsMissingElevation.length > 0) {
+            log(`   Elevation success rate: ${((elevationSuccessCount / meetsMissingElevation.length) * 100).toFixed(1)}%`);
+        }
+        log('');
+        log(`   Total processing time: ${Math.round((Date.now() - startTime) / 1000)}s`);
+
         return {
-            total: meetsNeedingGeocode.length,
-            success: successCount,
-            failures: failureCount,
-            updated: updatedCount
+            geocoding: {
+                total: meetsNeedingGeocode.length,
+                success: successCount,
+                failures: failureCount,
+                updated: updatedCount
+            },
+            elevation: {
+                total: meetsMissingElevation.length,
+                success: elevationSuccessCount,
+                failures: elevationFailureCount
+            }
         };
         
     } catch (error) {

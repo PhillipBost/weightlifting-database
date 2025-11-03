@@ -21,7 +21,7 @@ jobs:
   scrape-meet-addresses:
     if: ${{ !inputs.skip_meets }}
     runs-on: ubuntu-latest
-    timeout-minutes: 45 # Generous timeout for scraping and geocoding
+    timeout-minutes: 360 # 6 hours for scraping and geocoding all low-precision meets
 
     steps:
       - name: Checkout repository
@@ -97,7 +97,7 @@ jobs:
           SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
         run: |
           echo "🌍 Starting geocoding and import..."
-          echo "📍 Geocoding meets that need coordinates..."
+          echo "📍 Geocoding meets with precision score ≤3 or NULL..."
 
           node scripts/geographic/geocode-and-import.js
 
