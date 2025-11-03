@@ -6,7 +6,8 @@
       "Bash(test:*)",
       "Bash(npx js-yaml:*)",
       "Bash(/dev/null)",
-      "Bash(git log:*)"
+      "Bash(git log:*)",
+      "Bash(node -e:*)"
     ],
     "deny": [],
     "ask": []
