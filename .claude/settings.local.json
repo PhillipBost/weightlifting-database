@@ -5,7 +5,8 @@
       "Read(//c/Users/phill/Downloads/**)",
       "Bash(test:*)",
       "Bash(npx js-yaml:*)",
-      "Bash(/dev/null)"
+      "Bash(/dev/null)",
+      "Bash(git log:*)"
     ],
     "deny": [],
     "ask": []

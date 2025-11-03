@@ -79,6 +79,7 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
+            const year = context.payload.inputs?.year || 'current';
             const issueBody = [
               'The monthly IWF scraper workflow failed.',
               '',
@@ -86,7 +87,7 @@ jobs:
               `- [Workflow logs](https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId})`,
               '- Artifacts available in workflow details',
               '',
-              'Year attempted: ${{ github.event.inputs.year || \'current\' }}'
+              `Year attempted: ${year}`
             ].join('\n');
 
             github.rest.issues.create({
