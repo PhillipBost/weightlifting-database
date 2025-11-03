@@ -33,7 +33,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
           cache: 'npm'
 
       - name: Install dependencies
@@ -43,6 +43,20 @@ jobs:
         run: |
           mkdir -p output logs errors
 
+      - name: Discover IWF events
+        run: |
+          set -o pipefail
+          YEAR=${{ github.event.inputs.year || 'current' }}
+          if [ "$YEAR" = "current" ]; then
+            YEAR=$(date +%Y)
+          fi
+          echo "Discovering events for year $YEAR..."
+          node scripts/production/iwf-event-discovery.js --year $YEAR 2>&1 | tee logs/iwf-event-discovery.log
+        env:
+          # IWF Database credentials (separate from USAW)
+          SUPABASE_IWF_URL: ${{ secrets.SUPABASE_IWF_URL }}
+          SUPABASE_IWF_SECRET_KEY: ${{ secrets.SUPABASE_IWF_SECRET_KEY }}
+
       - name: Run IWF scraper
         run: |
           set -o pipefail
@@ -50,6 +64,7 @@ jobs:
           if [ "$YEAR" = "current" ]; then
             YEAR=$(date +%Y)
           fi
+          echo "Running orchestrator for year $YEAR..."
           node scripts/production/iwf-main.js --year $YEAR 2>&1 | tee logs/iwf-scraper.log
         env:
           # IWF Database credentials (separate from USAW)
