@@ -4,7 +4,9 @@ const path = require('path');
 
 // =================================================================
 // BATCH DIVISION SCRAPER - Processes specific range of divisions
-// Scrapes only LAST MONTH + CURRENT MONTH data for efficiency
+// Default: Scrapes LAST MONTH + CURRENT MONTH data for efficiency
+// Custom Date Range: Set START_DATE and END_DATE environment variables
+//   Example: START_DATE=2025-09-01 END_DATE=2025-10-31 node scripts/production/nightly-division-scraper.js
 // =================================================================
 const CONFIG = {
     OVERWRITE_EXISTING_FILES: false,
@@ -19,7 +21,7 @@ const CONFIG = {
     // For testing - process fewer divisions
     TEST_MODE: process.env.TEST_MODE === 'true',
     TEST_LIMIT: 3,
-    // Date range: last month + current month only
+    // Date range: last month + current month (or custom via START_DATE/END_DATE env vars)
     MONTHS_TO_SCRAPE: 2
 };
 
@@ -562,32 +564,52 @@ async function scrapeDivisionAthletes(page, division, divisionIndex, globalDivis
 
         await page.keyboard.press('Enter');
 
-        // Set date range (last month + current month only)
-        const today = new Date();
-        const currentYear = today.getFullYear();
-        const currentMonth = today.getMonth() + 1; // JavaScript months are 0-based, so add 1
-        const currentDay = today.getDate();
+        // Set date range - supports custom dates via environment variables or defaults to last month + current month
+        let startYear, startMonth, startDay, endYear, endMonth, endDay;
 
-        // Calculate last month
-        let lastMonth = currentMonth - 1;
-        let lastMonthYear = currentYear;
-        if (lastMonth === 0) {
-            lastMonth = 12;
-            lastMonthYear = currentYear - 1;
+        if (process.env.START_DATE && process.env.END_DATE) {
+            // Custom date range from environment variables (format: YYYY-MM-DD)
+            const startDate = new Date(process.env.START_DATE);
+            const endDate = new Date(process.env.END_DATE);
+
+            startYear = startDate.getFullYear();
+            startMonth = startDate.getMonth() + 1;
+            startDay = startDate.getDate();
+
+            endYear = endDate.getFullYear();
+            endMonth = endDate.getMonth() + 1;
+            endDay = endDate.getDate();
+
+            console.log(`📅 Setting custom date range: ${startMonth}/${startDay}/${startYear} to ${endMonth}/${endDay}/${endYear}`);
+            console.log(`   (Custom range from START_DATE and END_DATE environment variables)`);
+        } else {
+            // Default: last month + current month only
+            const today = new Date();
+            const currentYear = today.getFullYear();
+            const currentMonth = today.getMonth() + 1; // JavaScript months are 0-based, so add 1
+            const currentDay = today.getDate();
+
+            // Calculate last month
+            let lastMonth = currentMonth - 1;
+            let lastMonthYear = currentYear;
+            if (lastMonth === 0) {
+                lastMonth = 12;
+                lastMonthYear = currentYear - 1;
+            }
+
+            // Start date: First day of last month
+            startYear = lastMonthYear;
+            startMonth = lastMonth;
+            startDay = 1;
+
+            // End date: Last day of current month
+            endYear = currentYear;
+            endMonth = currentMonth;
+            endDay = new Date(currentYear, currentMonth, 0).getDate(); // Last day of current month
+
+            console.log(`📅 Setting date range: ${startMonth}/${startDay}/${startYear} to ${endMonth}/${endDay}/${endYear}`);
+            console.log(`   (Last month + Current month only)`);
         }
-
-        // Start date: First day of last month
-        const startYear = lastMonthYear;
-        const startMonth = lastMonth;
-        const startDay = 1;
-
-        // End date: Today (or last day of current month)
-        const endYear = currentYear;
-        const endMonth = currentMonth;
-        const endDay = new Date(currentYear, currentMonth, 0).getDate(); // Last day of current month
-
-        console.log(`📅 Setting date range: ${startMonth}/${startDay}/${startYear} to ${endMonth}/${endDay}/${endYear}`);
-        console.log(`   (Last month + Current month only)`);
 
         await handleDateField(page, '#form__date_range_start', startYear, 'start', startMonth, startDay);
         await new Promise(resolve => setTimeout(resolve, 100));
