@@ -726,7 +726,7 @@ async function uploadBatchToSupabase() {
     console.log('\n📤 Uploading batch to Supabase using existing uploader...');
 
     // Check for YOUR existing uploader
-    const uploaderPath = './athlete-csv-uploader.js';
+    const uploaderPath = './scripts/production/athlete-csv-uploader.js';
     if (!fs.existsSync(uploaderPath)) {
         console.log('⚠️  athlete-csv-uploader.js not found - skipping upload');
         console.log('   This should be your existing uploader that updates the lifters table');
