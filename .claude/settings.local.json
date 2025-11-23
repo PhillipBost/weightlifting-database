@@ -7,7 +7,19 @@
       "Bash(npx js-yaml:*)",
       "Bash(/dev/null)",
       "Bash(git log:*)",
-      "Bash(node -e:*)"
+      "Bash(node -e:*)",
+      "WebSearch",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:supabase.com)",
+      "mcp__serena__create_text_file",
+      "mcp__serena__activate_project",
+      "Bash(claude mcp add:*)",
+      "Bash(del \".claude\\mcp.json\")",
+      "Bash(claude mcp list:*)",
+      "Bash(dir:*)",
+      "Bash(cd:*)",
+      "Bash(if [ -f output/athletes/athlete_*.csv ])",
+      "Bash(fi)"
     ],
     "deny": [],
     "ask": []
