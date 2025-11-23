@@ -71,7 +71,7 @@ function createExtractionIssuesLogger() {
         const headers = ['division_number', 'division_name', 'issue_type', 'athlete_name', 'membership_id', 'row_data', 'description', 'batch_day'];
         fs.writeFileSync(issuesFilePath, headers.join(',') + '\n');
     }
-    
+
     return {
         logIssue: (divisionNumber, divisionName, issueType, athleteName, membershipId, rowData, description) => {
             const row = [
@@ -116,11 +116,11 @@ function loadDivisions() {
         possiblePaths.forEach(path => console.log(`   - ${path} (${fs.existsSync(path) ? 'found' : 'not found'})`));
         throw new Error('Division file not found! Looking for activedivisions.csv or "active divisions.csv"');
     }
-    
+
     console.log(`📋 Loading divisions from: ${fileToUse}`);
     const content = fs.readFileSync(fileToUse, 'utf8');
     const lines = content.split('\n').map(line => line.trim()).filter(line => line);
-    
+
     // Skip header if present
     const firstLine = lines[0];
     const isHeader = firstLine && (
@@ -128,9 +128,9 @@ function loadDivisions() {
         firstLine.toLowerCase().includes('age') ||
         firstLine.toLowerCase().includes('weight')
     );
-    
+
     const divisions = isHeader ? lines.slice(1) : lines;
-    
+
     console.log(`📋 Loaded ${divisions.length} total divisions`);
     return divisions;
 }
@@ -139,45 +139,45 @@ function getDivisionsForBatch(divisions) {
     // Adjust indices (environment uses 1-based, array is 0-based)
     const startIdx = CONFIG.DIVISION_START - 1;
     const endIdx = CONFIG.DIVISION_END;
-    
+
     const batchDivisions = divisions.slice(startIdx, endIdx);
-    
+
     console.log(`📅 ${CONFIG.DAY_NAME} Batch Configuration:`);
     console.log(`   Total divisions available: ${divisions.length}`);
     console.log(`   Requested range: ${CONFIG.DIVISION_START} to ${CONFIG.DIVISION_END}`);
     console.log(`   Actual divisions to process: ${batchDivisions.length}`);
-    
+
     if (batchDivisions.length > 0) {
         console.log(`   First division: ${batchDivisions[0]}`);
         console.log(`   Last division: ${batchDivisions[batchDivisions.length - 1]}`);
     }
-    
+
     if (CONFIG.TEST_MODE) {
         console.log(`⚠️  TEST MODE: Limiting to ${CONFIG.TEST_LIMIT} divisions`);
         return batchDivisions.slice(0, CONFIG.TEST_LIMIT);
     }
-    
+
     return batchDivisions;
 }
 
 function splitAgeCategoryAndWeightClass(combinedString) {
     if (!combinedString) return { ageCategory: '', weightClass: '' };
-    
+
     const weightClassPattern = /(\+?\d+\+?\s*kg)$/i;
     const match = combinedString.match(weightClassPattern);
-    
+
     if (match) {
         const weightClass = match[1].trim();
         const ageCategory = combinedString.replace(weightClassPattern, '').trim();
         return { ageCategory, weightClass };
     }
-    
+
     return { ageCategory: combinedString, weightClass: '' };
 }
 
 function isAthleteAlreadyProcessed(membershipId) {
     if (!membershipId) return false;
-    
+
     const athleteFile = path.join('./output/athletes', `athlete_${membershipId}.csv`);
     return fs.existsSync(athleteFile) && !CONFIG.OVERWRITE_EXISTING_FILES;
 }
@@ -185,10 +185,10 @@ function isAthleteAlreadyProcessed(membershipId) {
 function createAthleteCSV(membershipId, profileData, sourceDivision) {
     const athletesDir = './output/athletes';
     ensureDirectoryExists(athletesDir);
-    
+
     const athleteFile = path.join(athletesDir, `athlete_${membershipId}.csv`);
     const profile = profileData.profileData;
-    
+
     const headers = [
         'membership_number', 'athlete_name', 'gender', 'club_name', 'wso',
         'national_rank', 'internal_id', 'lifter_age', 'competition_age',
@@ -199,14 +199,14 @@ function createAthleteCSV(membershipId, profileData, sourceDivision) {
         'qmasters', 'sinclair', 'sinclairmeltzerfaber',
         'sinclairhuebnermetzerfaber', 'batch_id', 'batch_date'
     ];
-    
+
     const timestamp = new Date().toISOString();
     const batchId = `${CONFIG.DAY_NAME.toLowerCase()}_${membershipId}_${Date.now()}`;
-    
+
     let csvContent = headers.join(',') + '\n';
-    
+
     const { ageCategory, weightClass } = splitAgeCategoryAndWeightClass(sourceDivision);
-    
+
     let birthYear = '';
     if (profile.lifterAge && profile.liftDate) {
         try {
@@ -215,9 +215,9 @@ function createAthleteCSV(membershipId, profileData, sourceDivision) {
             if (!isNaN(age) && !isNaN(liftYear)) {
                 birthYear = liftYear - age;
             }
-        } catch (error) {}
+        } catch (error) { }
     }
-    
+
     const row = [
         escapeCSV(profile.membershipId),
         escapeCSV(profile.athleteName),
@@ -241,10 +241,10 @@ function createAthleteCSV(membershipId, profileData, sourceDivision) {
         escapeCSV(batchId),
         escapeCSV(timestamp)
     ];
-    
+
     csvContent += row.join(',') + '\n';
     fs.writeFileSync(athleteFile, csvContent);
-    
+
     return { filePath: athleteFile };
 }
 
@@ -322,7 +322,7 @@ async function handleComplexDatePicker(page, targetYear, interfaceSelector, targ
         if (!closestBtn) throw new Error('Could not find previous month button in the active calendar');
         return closestBtn;
     }
-    
+
     async function getNextMonthButton() {
         const containerBox = await container.boundingBox();
         if (!containerBox) throw new Error('Could not get bounding box of calendar container');
@@ -353,10 +353,10 @@ async function handleComplexDatePicker(page, targetYear, interfaceSelector, targ
 
     const currentMonthYear = await getCurrentMonthYear();
     if (!currentMonthYear) throw new Error('Could not determine current month/year in date picker');
-    
+
     const currentMonth = monthMap[currentMonthYear.monthName];
     const currentYear = currentMonthYear.year;
-    
+
     console.log(`📅 Starting from: ${currentMonthYear.raw}`);
 
     const totalMonthsDifference = (targetYear - currentYear) * 12 + (targetMonth - currentMonth);
@@ -366,9 +366,9 @@ async function handleComplexDatePicker(page, targetYear, interfaceSelector, targ
     } else if (totalMonthsDifference > 0) {
         // Need to go forward
         console.log(`🚀 Need to go forward ${totalMonthsDifference} months - executing rapid clicks...`);
-        
+
         const nextButton = await getNextMonthButton();
-        
+
         for (let i = 0; i < totalMonthsDifference; i++) {
             await nextButton.click();
             await new Promise(resolve => setTimeout(resolve, 25));
@@ -379,9 +379,9 @@ async function handleComplexDatePicker(page, targetYear, interfaceSelector, targ
         // Need to go backward
         const totalMonthsToGoBack = Math.abs(totalMonthsDifference);
         console.log(`🚀 Need to go back ${totalMonthsToGoBack} months - executing rapid clicks...`);
-        
+
         const prevButton = await getPrevMonthButton();
-        
+
         for (let i = 0; i < totalMonthsToGoBack; i++) {
             await prevButton.click();
             await new Promise(resolve => setTimeout(resolve, 25));
@@ -396,7 +396,7 @@ async function handleComplexDatePicker(page, targetYear, interfaceSelector, targ
         const finalMonth = monthMap[finalMonthYear.monthName];
         const finalYear = finalMonthYear.year;
         console.log(`📅 Final position: ${finalMonthYear.raw}`);
-        
+
         if (finalMonth !== targetMonth || finalYear !== targetYear) {
             console.log(`⚠️ Navigation ended at wrong position. Expected: ${targetMonth}/${targetYear}, Got: ${finalMonth}/${finalYear}`);
         }
@@ -409,7 +409,7 @@ async function handleComplexDatePicker(page, targetYear, interfaceSelector, targ
     const clickResult = await page.evaluate((day) => {
         const allButtons = document.querySelectorAll('button');
         const dayButtons = Array.from(allButtons).filter(btn => btn.textContent.trim() === day.toString());
-        
+
         if (dayButtons.length > 0) {
             const buttonIndex = (dayButtons.length > 1) ? 1 : 0;
             const dayButton = dayButtons[buttonIndex];
@@ -425,7 +425,7 @@ async function handleComplexDatePicker(page, targetYear, interfaceSelector, targ
     } else {
         console.log(`❌ Could not find day ${targetDay} button`);
     }
-    
+
     // After selecting the day, click the OK button inside the calendar container    
     const okButtons = await container.$$('button, .v-btn, .s80-btn');
     let okClicked = false;
@@ -455,7 +455,7 @@ async function handleDateField(page, fieldSelector, targetYear, fieldType, targe
             console.log(`⚠️ ${fieldType} date field not found: ${fieldSelector}`);
             return;
         }
-        
+
         // Click the date field to open its calendar
         await page.click(fieldSelector);
         await new Promise(resolve => setTimeout(resolve, 200));
@@ -514,9 +514,9 @@ async function handleDateField(page, fieldSelector, targetYear, fieldType, targe
 // Main scraping function for a division
 async function scrapeDivisionAthletes(page, division, divisionIndex, globalDivisionNumber, issuesLogger) {
     console.log(`\n🏋️ Scraping division #${globalDivisionNumber}: ${division}`);
-    
+
     const { ageCategory, weightClass } = splitAgeCategoryAndWeightClass(division);
-    
+
     try {
         // Navigate to rankings page for first division only
         if (divisionIndex === 0) {
@@ -525,7 +525,7 @@ async function scrapeDivisionAthletes(page, division, divisionIndex, globalDivis
                 waitUntil: 'networkidle0',
                 timeout: 30000
             });
-            await page.waitForSelector('text=Select Filters', {timeout: 10000});
+            await page.waitForSelector('text=Select Filters', { timeout: 10000 });
         } else {
             // Click Show Filters for subsequent divisions
             const filterButton = await page.$('button[aria-label="Show Filters"]');
@@ -534,17 +534,17 @@ async function scrapeDivisionAthletes(page, division, divisionIndex, globalDivis
                 await new Promise(resolve => setTimeout(resolve, 1000));
             }
         }
-        
+
         // Set weight class
         await page.click('#weight_class');
         await page.keyboard.down('Control');
         await page.keyboard.press('a');
         await page.keyboard.up('Control');
-        
-        await page.type('#weight_class', `${ageCategory} ${weightClass}`, {delay: 2});
+
+        await page.type('#weight_class', `${ageCategory} ${weightClass}`, { delay: 2 });
         await new Promise(resolve => setTimeout(resolve, 500));
         await page.keyboard.press('ArrowDown');
-        
+
         // Special navigation for certain weight classes (from your original code)
         if ((ageCategory.includes("Men's") && (weightClass === "81kg" || weightClass === "55kg" || weightClass === "69 kg")) ||
             (ageCategory.includes("Men's 13 Under Age Group") && (weightClass === "39kg" || weightClass === "40kg" || weightClass === "44kg" || weightClass === "48kg" || weightClass === "49kg" || weightClass === "55kg")) ||
@@ -553,21 +553,21 @@ async function scrapeDivisionAthletes(page, division, divisionIndex, globalDivis
             (ageCategory.includes("Men's 16-17 Age Group") && (weightClass === "49kg" || weightClass === "55kg" || weightClass === "69 kg" || weightClass === "81kg"))) {
             await page.keyboard.press('ArrowDown');
         }
-        
+
         if ((ageCategory.includes("Men's 13 Under Age Group") && weightClass === "36kg") ||
             (ageCategory.includes("Men's 14-15 Age Group") && weightClass === "44kg")) {
             await page.keyboard.press('ArrowDown');
             await page.keyboard.press('ArrowDown');
         }
-        
+
         await page.keyboard.press('Enter');
-        
+
         // Set date range (last month + current month only)
         const today = new Date();
         const currentYear = today.getFullYear();
         const currentMonth = today.getMonth() + 1; // JavaScript months are 0-based, so add 1
         const currentDay = today.getDate();
-        
+
         // Calculate last month
         let lastMonth = currentMonth - 1;
         let lastMonthYear = currentYear;
@@ -575,72 +575,100 @@ async function scrapeDivisionAthletes(page, division, divisionIndex, globalDivis
             lastMonth = 12;
             lastMonthYear = currentYear - 1;
         }
-        
+
         // Start date: First day of last month
         const startYear = lastMonthYear;
         const startMonth = lastMonth;
         const startDay = 1;
-        
+
         // End date: Today (or last day of current month)
         const endYear = currentYear;
         const endMonth = currentMonth;
         const endDay = new Date(currentYear, currentMonth, 0).getDate(); // Last day of current month
-        
+
         console.log(`📅 Setting date range: ${startMonth}/${startDay}/${startYear} to ${endMonth}/${endDay}/${endYear}`);
         console.log(`   (Last month + Current month only)`);
-        
+
         await handleDateField(page, '#form__date_range_start', startYear, 'start', startMonth, startDay);
         await new Promise(resolve => setTimeout(resolve, 100));
-        
+
         await handleDateField(page, '#form__date_range_end', endYear, 'end', endMonth, endDay);
         await new Promise(resolve => setTimeout(resolve, 100));
-        
+
         await page.click('body');
         await new Promise(resolve => setTimeout(resolve, 500));
-        
+
         // Apply filters
         const applyButton = await page.evaluateHandle(() => {
             const buttons = Array.from(document.querySelectorAll('button'));
             return buttons.find(btn => btn.textContent?.includes('Apply'));
         });
-        
+
         if (applyButton) {
             await applyButton.click();
             // Wait for results to load (reduced wait time since less data)
             await new Promise(resolve => setTimeout(resolve, 2000));
         }
-        
+
         // Extract athletes from results
         let allAthletes = [];
         let hasMorePages = true;
         let currentPage = 1;
-        
+
         while (hasMorePages) {
             const pageAthletes = await page.evaluate(() => {
+                // Dynamic Column Mapping
+                const headers = Array.from(document.querySelectorAll('.v-data-table__wrapper thead th'))
+                    .map(th => th.textContent.trim().toLowerCase());
+
+                // Map required fields to column indices
+                const colMap = {
+                    nationalRank: headers.findIndex(h => h.includes('rank')),
+                    athleteName: headers.findIndex(h => h.includes('athlete') || h.includes('lifter') && !h.includes('age')),
+                    total: headers.findIndex(h => h.includes('total')),
+                    gender: headers.findIndex(h => h.includes('gender')),
+                    lifterAge: headers.findIndex(h => h.includes('age')),
+                    club: headers.findIndex(h => h.includes('club') || h.includes('team')),
+                    membershipId: headers.findIndex(h => h.includes('member') || h.includes('id')),
+                    liftDate: headers.findIndex(h => h.includes('date')),
+                    wso: headers.findIndex(h => h.includes('wso') || h.includes('lws') || h.includes('state'))
+                };
+
+                // Fallback to hardcoded indices if headers aren't found (backward compatibility)
+                if (colMap.athleteName === -1) colMap.athleteName = 3;
+                if (colMap.total === -1) colMap.total = 2;
+                if (colMap.gender === -1) colMap.gender = 4;
+                if (colMap.lifterAge === -1) colMap.lifterAge = 5;
+                if (colMap.club === -1) colMap.club = 6;
+                if (colMap.membershipId === -1) colMap.membershipId = 7;
+                if (colMap.liftDate === -1) colMap.liftDate = 9;
+                if (colMap.wso === -1) colMap.wso = 12;
+                if (colMap.nationalRank === -1) colMap.nationalRank = 0;
+
                 const rows = Array.from(document.querySelectorAll('.v-data-table__wrapper tbody tr'));
                 return rows.map(row => {
                     const cells = Array.from(row.querySelectorAll('td'));
                     const cellTexts = cells.map(cell => cell.textContent?.trim() || '');
-                    
-                    if (cellTexts.length < 8) return null;
-                    
+
+                    if (cellTexts.length < 5) return null; // Basic validation
+
                     return {
-                        nationalRank: cellTexts[0],
-                        athleteName: cellTexts[3],
-                        total: cellTexts[2],
-                        gender: cellTexts[4],
-                        lifterAge: cellTexts[5],
-                        club: cellTexts[6],
-                        membershipId: cellTexts[7],
-                        liftDate: cellTexts[9],
-                        wso: cellTexts[12] || ''
+                        nationalRank: colMap.nationalRank > -1 ? cellTexts[colMap.nationalRank] : '',
+                        athleteName: colMap.athleteName > -1 ? cellTexts[colMap.athleteName] : '',
+                        total: colMap.total > -1 ? cellTexts[colMap.total] : '',
+                        gender: colMap.gender > -1 ? cellTexts[colMap.gender] : '',
+                        lifterAge: colMap.lifterAge > -1 ? cellTexts[colMap.lifterAge] : '',
+                        club: colMap.club > -1 ? cellTexts[colMap.club] : '',
+                        membershipId: colMap.membershipId > -1 ? cellTexts[colMap.membershipId] : '',
+                        liftDate: colMap.liftDate > -1 ? cellTexts[colMap.liftDate] : '',
+                        wso: colMap.wso > -1 ? cellTexts[colMap.wso] : ''
                     };
                 }).filter(a => a && a.membershipId);
             });
-            
+
             allAthletes = allAthletes.concat(pageAthletes);
             console.log(`   Page ${currentPage}: Found ${pageAthletes.length} athletes (Total: ${allAthletes.length})`);
-            
+
             // Check for next page
             const nextPageExists = await page.evaluate(() => {
                 const nextBtn = document.querySelector('.v-data-footer__icons-after .v-btn:not([disabled])');
@@ -650,7 +678,7 @@ async function scrapeDivisionAthletes(page, division, divisionIndex, globalDivis
                 }
                 return false;
             });
-            
+
             if (nextPageExists) {
                 await new Promise(resolve => setTimeout(resolve, 1500)); // Reduced wait time
                 currentPage++;
@@ -658,20 +686,20 @@ async function scrapeDivisionAthletes(page, division, divisionIndex, globalDivis
                 hasMorePages = false;
             }
         }
-        
+
         // Remove duplicates
-        const uniqueAthletes = allAthletes.filter((athlete, index, arr) => 
+        const uniqueAthletes = allAthletes.filter((athlete, index, arr) =>
             arr.findIndex(a => a.membershipId === athlete.membershipId) === index
         );
-        
+
         console.log(`   Total unique athletes: ${uniqueAthletes.length}`);
-        
+
         return {
             success: true,
             athletes: uniqueAthletes,
             totalFound: uniqueAthletes.length
         };
-        
+
     } catch (error) {
         console.error(`❌ Error scraping division: ${error.message}`);
         issuesLogger.logIssue(
@@ -694,9 +722,9 @@ async function scrapeDivisionAthletes(page, division, divisionIndex, globalDivis
 // Upload function for batch - uses YOUR EXISTING athlete-csv-uploader.js
 async function uploadBatchToSupabase() {
     const { spawn } = require('child_process');
-    
+
     console.log('\n📤 Uploading batch to Supabase using existing uploader...');
-    
+
     // Check for YOUR existing uploader
     const uploaderPath = './athlete-csv-uploader.js';
     if (!fs.existsSync(uploaderPath)) {
@@ -705,7 +733,7 @@ async function uploadBatchToSupabase() {
         console.log('   Run manually later: node athlete-csv-uploader.js');
         return;
     }
-    
+
     // Count files before upload
     const athletesDir = './output/athletes';
     let fileCountBefore = 0;
@@ -713,7 +741,7 @@ async function uploadBatchToSupabase() {
         fileCountBefore = fs.readdirSync(athletesDir).filter(f => f.endsWith('.csv')).length;
         console.log(`   Files to upload: ${fileCountBefore}`);
     }
-    
+
     try {
         // Run YOUR existing uploader which handles the lifters table properly
         await new Promise((resolve, reject) => {
@@ -721,7 +749,7 @@ async function uploadBatchToSupabase() {
                 stdio: 'inherit',
                 env: { ...process.env }
             });
-            
+
             child.on('close', (code) => {
                 if (code === 0) {
                     console.log('✅ Upload completed successfully');
@@ -732,13 +760,13 @@ async function uploadBatchToSupabase() {
                     resolve(); // Still resolve, don't reject
                 }
             });
-            
+
             child.on('error', (error) => {
                 console.log(`❌ Failed to start uploader: ${error.message}`);
                 reject(error);
             });
         });
-        
+
         // Count remaining files after upload
         let fileCountAfter = 0;
         if (fs.existsSync(athletesDir)) {
@@ -746,7 +774,7 @@ async function uploadBatchToSupabase() {
             console.log(`   Files remaining: ${fileCountAfter}`);
             console.log(`   Files processed: ${fileCountBefore - fileCountAfter}`);
         }
-        
+
     } catch (error) {
         console.log(`⚠️  Upload process failed: ${error.message}`);
         console.log('   You can run manually later: node athlete-csv-uploader.js');
@@ -760,15 +788,15 @@ async function processBatchDivisions() {
     console.log(`🎯 Division Range: ${CONFIG.DIVISION_START} to ${CONFIG.DIVISION_END}`);
     console.log(`📆 Date Range: Last month + Current month only`);
     console.log(`🕐 Start time: ${new Date().toLocaleString('en-US', { timeZone: 'America/New_York' })}`);
-    
+
     const allDivisions = loadDivisions();
     const batchDivisions = getDivisionsForBatch(allDivisions);
-    
+
     if (batchDivisions.length === 0) {
         console.log('❌ No divisions to process in this range');
         return;
     }
-    
+
     // Setup logging
     const logFile = resolveDataPath(`data/logs/completed_divisions_${CONFIG.DAY_NAME.toLowerCase()}.csv`);
 
@@ -776,16 +804,16 @@ async function processBatchDivisions() {
     ensureDirectoryExists(path.dirname(logFile));
 
     if (!fs.existsSync(logFile)) {
-        const headers = ['division_number', 'division_name', 'timestamp', 'athletes_found', 
-                        'athletes_processed', 'athletes_skipped', 'status', 'time_seconds'];
+        const headers = ['division_number', 'division_name', 'timestamp', 'athletes_found',
+            'athletes_processed', 'athletes_skipped', 'status', 'time_seconds'];
         fs.writeFileSync(logFile, headers.join(',') + '\n');
     }
-    
+
     const issuesLogger = createExtractionIssuesLogger();
-    
+
     // Launch browser with proper arguments for GitHub Actions
     const isGitHubActions = process.env.GITHUB_ACTIONS === 'true';
-    
+
     const browser = await puppeteer.launch({
         headless: isGitHubActions ? "new" : true,  // Use 'new' headless mode in GitHub Actions
         args: [
@@ -825,45 +853,45 @@ async function processBatchDivisions() {
         },
         slowMo: 25
     });
-    
+
     console.log('✅ Browser launched successfully');
-    
+
     const page = await browser.newPage();
     await page.setViewport({ width: 1500, height: 1000 });
-    
+
     let totalAthletesProcessed = 0;
     let totalDivisionsProcessed = 0;
-    
+
     try {
         for (let i = 0; i < batchDivisions.length; i++) {
             const division = batchDivisions[i];
             const globalDivisionNumber = CONFIG.DIVISION_START + i;
             const startTime = Date.now();
-            
+
             console.log(`\n${'='.repeat(60)}`);
             console.log(`Processing ${i + 1}/${batchDivisions.length} (Global #${globalDivisionNumber})`);
-            
+
             const result = await scrapeDivisionAthletes(
-                page, 
-                division, 
-                i, 
-                globalDivisionNumber, 
+                page,
+                division,
+                i,
+                globalDivisionNumber,
                 issuesLogger
             );
-            
+
             let athletesProcessed = 0;
             let athletesSkipped = 0;
-            
+
             if (result.success && result.athletes.length > 0) {
                 // Process each athlete
                 for (const athlete of result.athletes) {
                     if (!athlete.membershipId) continue;
-                    
+
                     if (isAthleteAlreadyProcessed(athlete.membershipId)) {
                         athletesSkipped++;
                         continue;
                     }
-                    
+
                     try {
                         const profileData = {
                             success: true,
@@ -881,11 +909,11 @@ async function processBatchDivisions() {
                                 competitionHistory: []
                             }
                         };
-                        
+
                         createAthleteCSV(athlete.membershipId, profileData, division);
                         athletesProcessed++;
                         totalAthletesProcessed++;
-                        
+
                     } catch (error) {
                         console.error(`   ❌ Error processing ${athlete.athleteName}: ${error.message}`);
                         issuesLogger.logIssue(
@@ -900,7 +928,7 @@ async function processBatchDivisions() {
                     }
                 }
             }
-            
+
             // Log division completion
             const timeSeconds = Math.round((Date.now() - startTime) / 1000);
             const logRow = [
@@ -914,48 +942,48 @@ async function processBatchDivisions() {
                 timeSeconds
             ];
             fs.appendFileSync(logFile, logRow.join(',') + '\n');
-            
+
             console.log(`   ✅ Division complete: ${athletesProcessed} processed, ${athletesSkipped} skipped`);
             console.log(`   ⏱️ Time: ${timeSeconds} seconds`);
             totalDivisionsProcessed++;
-            
+
             // Upload batch every 10 divisions or at the end
             if ((i + 1) % 10 === 0 || i === batchDivisions.length - 1) {
                 await uploadBatchToSupabase();
             }
-            
+
             // Delay between divisions
             if (i < batchDivisions.length - 1) {
                 await new Promise(resolve => setTimeout(resolve, CONFIG.DELAY_BETWEEN_DIVISIONS));
             }
         }
-        
+
     } catch (error) {
         console.error('💥 Fatal error:', error);
         throw error;
     } finally {
         await browser.close();
     }
-    
+
     // Final upload
     await uploadBatchToSupabase();
-    
+
     console.log('\n' + '='.repeat(60));
     console.log('🎉 Batch Processing Complete!');
     console.log(`📊 Summary for ${CONFIG.DAY_NAME}:`);
     console.log(`   Divisions processed: ${totalDivisionsProcessed}/${batchDivisions.length}`);
     console.log(`   Athletes processed: ${totalAthletesProcessed}`);
     console.log(`   Athletes CSV files created: ${totalAthletesProcessed}`);
-    
+
     // Check how many files remain
     const athletesDir = './output/athletes';
     if (fs.existsSync(athletesDir)) {
         const remainingFiles = fs.readdirSync(athletesDir).filter(f => f.endsWith('.csv'));
         console.log(`   Files pending upload: ${remainingFiles.length}`);
     }
-    
+
     console.log(`🕐 End time: ${new Date().toLocaleString('en-US', { timeZone: 'America/New_York' })}`);
-    
+
     return {
         divisionsProcessed: totalDivisionsProcessed,
         athletesProcessed: totalAthletesProcessed
