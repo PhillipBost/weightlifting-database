@@ -19,7 +19,10 @@
       "Bash(dir:*)",
       "Bash(cd:*)",
       "Bash(if [ -f output/athletes/athlete_*.csv ])",
-      "Bash(fi)"
+      "Bash(fi)",
+      "Bash(find:*)",
+      "mcp__serena__read_file",
+      "mcp__serena__search_for_pattern"
     ],
     "deny": [],
     "ask": []
