@@ -62,7 +62,7 @@ async function testCaliforniaWSOs() {
 
         // Test direct query vs paginated query for comparison
         const { data: directResults, error } = await supabase
-            .from('meet_results')
+            .from('usaw_meet_results')
             .select('result_id, meets!inner(wso_geography, Date)')
             .eq('meets.wso_geography', testWSO)
             .gte('meets.Date', '2023-01-01'); // Last 2+ years

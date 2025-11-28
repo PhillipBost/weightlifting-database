@@ -50,7 +50,7 @@ async function updateCompleteCountyAssignments() {
         console.log(`List: ${counties.join(', ')}\n`);
 
         const { error } = await supabase
-            .from('wso_information')
+            .from('usaw_wso_information')
             .update({
                 counties: counties,
                 updated_at: new Date().toISOString()

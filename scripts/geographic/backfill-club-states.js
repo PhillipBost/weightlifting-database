@@ -75,7 +75,7 @@ async function getAllClubs() {
 
     while (hasMore) {
         const { data: batchData, error } = await supabase
-            .from('clubs')
+            .from('usaw_clubs')
             .select('club_name, address, state, latitude, longitude, wso_geography')
             .range(start, start + batchSize - 1);
 
@@ -85,7 +85,7 @@ async function getAllClubs() {
 
         if (batchData && batchData.length > 0) {
             allClubs.push(...batchData);
-            log(`  📦 Batch ${Math.floor(start/batchSize) + 1}: Found ${batchData.length} clubs (Total: ${allClubs.length})`);
+            log(`  📦 Batch ${Math.floor(start / batchSize) + 1}: Found ${batchData.length} clubs (Total: ${allClubs.length})`);
 
             hasMore = batchData.length === batchSize;
             start += batchSize;
@@ -210,7 +210,7 @@ async function performBackfill(dryRun = false) {
         const club = clubs[i];
 
         if (i % 100 === 0) {
-            log(`  📋 Progress: ${i}/${clubs.length} clubs processed (${((i/clubs.length)*100).toFixed(1)}%)`);
+            log(`  📋 Progress: ${i}/${clubs.length} clubs processed (${((i / clubs.length) * 100).toFixed(1)}%)`);
         }
 
         results.total_processed++;
@@ -252,7 +252,7 @@ async function performBackfill(dryRun = false) {
         if (!dryRun) {
             try {
                 const { error } = await supabase
-                    .from('clubs')
+                    .from('usaw_clubs')
                     .update({ state: extraction.state })
                     .eq('club_name', club.club_name);
 
@@ -361,7 +361,7 @@ async function main() {
 
             log('\n📍 Updates by state:');
             Object.entries(results.by_state)
-                .sort(([,a], [,b]) => b - a)
+                .sort(([, a], [, b]) => b - a)
                 .slice(0, 10)
                 .forEach(([state, count]) => {
                     log(`  ${state}: ${count}`);
@@ -377,7 +377,7 @@ async function main() {
 
             log('\n📈 Verification Results:');
             log(`  Total clubs: ${verification.total_clubs}`);
-            log(`  With state: ${verification.with_state} (${((verification.with_state/verification.total_clubs)*100).toFixed(1)}%)`);
+            log(`  With state: ${verification.with_state} (${((verification.with_state / verification.total_clubs) * 100).toFixed(1)}%)`);
             log(`  Without state: ${verification.without_state}`);
 
             if (verification.problematic_clubs.length > 0) {

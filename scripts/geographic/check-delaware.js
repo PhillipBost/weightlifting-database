@@ -5,38 +5,38 @@ const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SEC
 
 async function checkDelaware() {
   console.log('🔍 Checking Delaware assignments...');
-  
+
   const { data: delawareClubs, error } = await supabase
-    .from('clubs')
+    .from('usaw_clubs')
     .select('club_name, address, wso_geography')
     .eq('wso_geography', 'Delaware');
-    
+
   if (error) {
     console.error('Error:', error);
     return;
   }
-  
+
   console.log(`Found ${delawareClubs.length} clubs assigned to "Delaware"`);
   delawareClubs.forEach(club => {
     console.log(`- ${club.club_name}`);
     console.log(`  Address: ${club.address}`);
     console.log('');
   });
-  
+
   // Also check what WSO assignments exist
   const { data: allWSOs } = await supabase
-    .from('clubs')
+    .from('usaw_clubs')
     .select('wso_geography')
     .not('wso_geography', 'is', null);
-    
+
   const wsoCount = {};
   allWSOs.forEach(club => {
     wsoCount[club.wso_geography] = (wsoCount[club.wso_geography] || 0) + 1;
   });
-  
+
   console.log('\nAll WSO assignments and counts:');
   Object.entries(wsoCount)
-    .sort(([,a], [,b]) => b - a)
+    .sort(([, a], [, b]) => b - a)
     .forEach(([wso, count]) => {
       console.log(`  ${wso}: ${count}`);
     });

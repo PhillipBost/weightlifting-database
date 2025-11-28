@@ -2,8 +2,8 @@ const { createClient } = require('@supabase/supabase-js');
 require('dotenv').config();
 
 const supabase = createClient(
-  process.env.SUPABASE_URL,
-  process.env.SUPABASE_SECRET_KEY
+    process.env.SUPABASE_URL,
+    process.env.SUPABASE_SECRET_KEY
 );
 
 async function addActivityFactorColumn() {
@@ -13,7 +13,7 @@ async function addActivityFactorColumn() {
         // First, let's check if column exists by trying to query it
         console.log('🔍 Checking if activity_factor column exists...');
         const { error: testError } = await supabase
-            .from('club_rolling_metrics')
+            .from('usaw_club_rolling_metrics')
             .select('activity_factor')
             .limit(1);
 
@@ -48,7 +48,7 @@ async function calculateAndUpdateActivityFactor() {
     while (true) {
         // Fetch batch of records
         const { data: records, error: fetchError } = await supabase
-            .from('club_rolling_metrics')
+            .from('usaw_club_rolling_metrics')
             .select('id, club_name, snapshot_month, total_competitions_12mo, unique_lifters_12mo')
             .range(offset, offset + batchSize - 1)
             .order('id');
@@ -83,7 +83,7 @@ async function calculateAndUpdateActivityFactor() {
         // Update records in batch
         if (updates.length > 0) {
             const { error: updateError } = await supabase
-                .from('club_rolling_metrics')
+                .from('usaw_club_rolling_metrics')
                 .upsert(updates, { onConflict: 'id' });
 
             if (updateError) {

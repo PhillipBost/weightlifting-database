@@ -12,7 +12,7 @@ async function testBatchFetch() {
   try {
     // First get total count
     const { count, error: countError } = await supabase
-      .from('meet_results')
+      .from('usaw_meet_results')
       .select('*', { count: 'exact', head: true });
 
     if (countError) {
@@ -32,7 +32,7 @@ async function testBatchFetch() {
       console.log(`Fetching batch ${batchCount + 1} starting at ${start}...`);
 
       const { data: batch, error: batchError } = await supabase
-        .from('meet_results')
+        .from('usaw_meet_results')
         .select('club_name, date, lifter_id, result_id')
         .range(start, start + batchSize - 1);
 

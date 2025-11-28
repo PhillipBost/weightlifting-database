@@ -28,7 +28,7 @@ const NOMINATIM_DELAY = 1100; // 1.1 seconds between requests (Nominatim rate li
 function log(message) {
     const timestamp = new Date().toISOString();
     const logMessage = `[${timestamp}] ${message}\n`;
-    
+
     console.log(message);
     fs.appendFileSync(LOG_FILE, logMessage);
 }
@@ -37,10 +37,10 @@ function log(message) {
 function parseAddress(rawAddress) {
     // Import the intelligent parsing function
     const { parseAddressIntelligently } = require('./fix-address-parsing');
-    
+
     // Use the new intelligent parsing algorithm
     const parsed = parseAddressIntelligently(rawAddress);
-    
+
     // Return in the expected format for compatibility
     return {
         address: rawAddress,
@@ -55,7 +55,7 @@ function parseAddress(rawAddress) {
 // Remove suite/apartment information from address (improved to handle more patterns)
 function removeSuiteInfo(address) {
     if (!address || typeof address !== 'string') return address;
-    
+
     return address
         // Handle suite/unit info - match until comma or end, not including commas in the match
         .replace(/ (suite|ste|apt|apartment|unit|building|bldg|floor|fl|room|rm|#) [a-z0-9\-]+/gi, '')
@@ -85,7 +85,7 @@ const PLACEHOLDER_COORDINATES = [
 function isPlaceholderCoordinate(lat, lng) {
     const tolerance = 0.05;
     for (const placeholder of PLACEHOLDER_COORDINATES) {
-        if (Math.abs(lat - placeholder.lat) < tolerance && 
+        if (Math.abs(lat - placeholder.lat) < tolerance &&
             Math.abs(lng - placeholder.lng) < tolerance) {
             return { isPlaceholder: true, name: placeholder.name };
         }
@@ -103,14 +103,14 @@ function isInternationalEvent(meetName) {
 // Extract state from geocoding result
 function extractStateFromGeocode(result) {
     if (!result || !result.address) return null;
-    
+
     // Try to extract state from address details
     const addr = result.address;
-    
+
     // Check various fields where state might appear
     if (addr.state) return addr.state;
     if (addr.state_district) return addr.state_district;
-    
+
     // Parse from display_name as fallback
     if (result.display_name) {
         const parts = result.display_name.split(',').map(p => p.trim());
@@ -122,7 +122,7 @@ function extractStateFromGeocode(result) {
             if (stateMatch) return stateMatch[1].trim();
         }
     }
-    
+
     return null;
 }
 
@@ -136,46 +136,46 @@ async function geocodeAddress(rawAddress) {
             .replace(/^,\s*|,\s*$/g, '')  // Remove leading/trailing commas
             .trim();
     }
-    
+
     // Helper function to remove street number (keep street name)
     function removeStreetNumber(addr) {
         return addr.replace(/^\d+\s+/, '').trim();
     }
-    
+
     // Clean base address first
     const cleanBaseAddress = removeCountry(rawAddress);
     const addressWithoutSuite = removeSuiteInfo(cleanBaseAddress);
     const useSuiteVariants = addressWithoutSuite !== cleanBaseAddress;
-    
+
     let addressVariants = [
         rawAddress, // Original full address
         cleanBaseAddress, // Remove country variations
     ];
-    
+
     // Add suite-removed variants early in the process if suite info was detected
     if (useSuiteVariants) {
         addressVariants.push(
             addressWithoutSuite, // Suite removed from clean address
         );
     }
-    
+
     // Add street name without number variant
     const fallbackBase = useSuiteVariants ? addressWithoutSuite : cleanBaseAddress;
     const streetNameOnly = removeStreetNumber(fallbackBase);
     if (streetNameOnly !== fallbackBase && streetNameOnly.length > 10) {
         addressVariants.push(streetNameOnly);
     }
-    
+
     // Add broader fallbacks at the end - use the CLEANEST address for fallbacks
     const cityStateFallback = fallbackBase.split(',').slice(-3).join(',').trim();
     const stateZipFallback = fallbackBase.split(',').slice(-2).join(',').trim();
-    
+
     // Also add city, state (without ZIP) as a very reliable fallback
     const parts = fallbackBase.split(',').map(p => p.trim());
     let cityStatOnly = '';
     let zipOnly = '';
     let stateOnly = '';
-    
+
     if (parts.length >= 2) {
         const lastPart = parts[parts.length - 1];
 
@@ -213,17 +213,17 @@ async function geocodeAddress(rawAddress) {
             }
         }
     }
-    
+
     addressVariants.push(cityStateFallback);
     addressVariants.push(stateZipFallback);
     if (cityStatOnly) {
         addressVariants.push(cityStatOnly);
     }
-    
+
     // Debug: Show what we extracted
     console.log(`  🔍 DEBUG: Extracted from address - City: "${parts[parts.length - 3]}", State: "${parts[parts.length - 2]}", Last: "${parts[parts.length - 1]}"`);
     console.log(`  🔍 DEBUG: cityStatOnly="${cityStatOnly}", zipOnly="${zipOnly}", stateOnly="${stateOnly}"`);
-    
+
     // Add ZIP-only as fallback
     if (zipOnly) {
         addressVariants.push(zipOnly);
@@ -232,10 +232,10 @@ async function geocodeAddress(rawAddress) {
     if (stateOnly) {
         addressVariants.push(stateOnly);
     }
-    
+
     // Filter out empty/too short addresses and remove duplicates
     addressVariants = [...new Set(addressVariants.filter(addr => addr && addr.length > 2))];
-    
+
     // DEBUG: Log all variants being tried
     if (addressVariants.length > 0) {
         log(`  📋 Will try ${addressVariants.length} address variants:`);
@@ -244,22 +244,22 @@ async function geocodeAddress(rawAddress) {
 
     for (let i = 0; i < addressVariants.length; i++) {
         const addressToTry = addressVariants[i];
-        
+
         // Show if this is a suite-removed variant
         const isSuiteRemoved = useSuiteVariants && addressToTry === addressWithoutSuite;
         const isStreetNameOnly = addressToTry === streetNameOnly;
         let variantLabel = `Attempt ${i + 1}`;
         if (isSuiteRemoved) variantLabel = `Attempt ${i + 1} (suite removed)`;
         if (isStreetNameOnly) variantLabel = `Attempt ${i + 1} (street name only)`;
-        
+
         try {
             log(`  🌐 ${variantLabel}: ${addressToTry.substring(0, 60)}...`);
-            
+
             // Debug: show full address for first few
             if (i === 0) {
                 log(`  🔍 DEBUG Full address: "${addressToTry}"`);
             }
-            
+
             const params = new URLSearchParams({
                 q: addressToTry,
                 format: 'json',
@@ -269,7 +269,7 @@ async function geocodeAddress(rawAddress) {
             });
 
             const url = `https://nominatim.openstreetmap.org/search?${params.toString()}`;
-            
+
             const response = await fetch(url, {
                 headers: {
                     'User-Agent': 'WeightliftingMeetGeocoder/1.0'
@@ -289,26 +289,26 @@ async function geocodeAddress(rawAddress) {
 
             if (results && results.length > 0) {
                 const result = results[0];
-                
+
                 if (result.lat && result.lon) {
                     const precision = calculateAddressPrecision(addressToTry, result.display_name);
                     const lat = parseFloat(result.lat);
                     const lng = parseFloat(result.lon);
-                    
+
                     // Extract state from geocoding result
                     const extractedState = extractStateFromGeocode(result);
-                    
+
                     // Check for placeholder coordinates
                     const placeholderCheck = isPlaceholderCoordinate(lat, lng);
                     if (placeholderCheck.isPlaceholder) {
                         log(`  ⚠️ WARNING: Placeholder coordinates detected (${placeholderCheck.name})`);
                     }
-                    
+
                     log(`  ✅ Success with ${variantLabel} (precision: ${precision})`);
                     if (extractedState) {
                         log(`  📍 State extracted: ${extractedState}`);
                     }
-                    
+
                     return {
                         latitude: lat,
                         longitude: lng,
@@ -383,36 +383,36 @@ async function fetchElevation(latitude, longitude) {
 // Calculate address precision score (higher = more precise)
 function calculateAddressPrecision(address, displayName) {
     if (!address && !displayName) return 0;
-    
+
     let score = 0;
     const addressToScore = address || displayName || '';
     const parts = addressToScore.split(',').map(p => p.trim());
-    
+
     // Street number and name present = +4
     if (parts.length > 0 && parts[0] && /\d+.*\w+/.test(parts[0])) {
         score += 4;
     }
-    
+
     // City present = +2  
     if (parts.length > 1 && parts[1] && parts[1].length > 2) {
         score += 2;
     }
-    
+
     // State present = +1
     if (parts.length > 2 && parts[2] && parts[2].length >= 2) {
         score += 1;
     }
-    
+
     // ZIP code present = +1
     if (addressToScore.match(/\b\d{5}(-\d{4})?\b/)) {
         score += 1;
     }
-    
+
     // Penalty for vague results
     if (displayName && displayName.toLowerCase().includes('united states')) {
         score -= 2;
     }
-    
+
     return Math.max(0, score);
 }
 
@@ -420,14 +420,14 @@ function calculateAddressPrecision(address, displayName) {
 async function updateMeetWithGeocode(meetId, geocodeData) {
     try {
         const { error } = await supabase
-            .from('meets')
+            .from('usaw_meets')
             .update(geocodeData)
             .eq('meet_id', meetId);
-            
+
         if (error) {
             throw new Error(`Update failed for meet_id ${meetId}: ${error.message}`);
         }
-        
+
         return true;
     } catch (error) {
         log(`  ❌ Database update failed for meet_id ${meetId}: ${error.message}`);
@@ -441,15 +441,15 @@ function shouldUpdateGeocode(meet) {
     if (!meet.latitude || !meet.longitude || meet.geocode_success === null) {
         return { update: true, reason: 'No existing geocoding data' };
     }
-    
+
     // Previous geocoding failed - always retry
     if (!meet.geocode_success) {
         return { update: true, reason: 'Previous geocoding failed, retrying' };
     }
-    
+
     // Use stored precision score if available
     let existingPrecision = meet.geocode_precision_score;
-    
+
     // If no stored precision score, calculate it from existing display_name and address
     if (existingPrecision === null || existingPrecision === undefined) {
         existingPrecision = calculateAddressPrecision(meet.address, meet.geocode_display_name);
@@ -457,12 +457,12 @@ function shouldUpdateGeocode(meet) {
     } else {
         log(`   📊 Existing precision score: ${existingPrecision} (from database)`);
     }
-    
+
     // High precision results (6+) - skip
     if (existingPrecision >= 6) {
         return { update: false, reason: `High precision result (${existingPrecision}), skipping` };
     }
-    
+
     // Lower precision results should be re-attempted
     return { update: true, reason: `Low precision score (${existingPrecision}), attempting to improve` };
 }
@@ -479,7 +479,7 @@ async function getMeetsNeedingGeocode() {
 
         while (true) {
             const { data, error } = await supabase
-                .from('meets')
+                .from('usaw_meets')
                 .select('meet_id, Meet, address, latitude, longitude, geocode_success, geocode_precision_score, geocode_display_name, Date')
                 .not('address', 'is', null)
                 .neq('address', '')
@@ -525,7 +525,7 @@ async function getMeetsMissingElevation() {
 
         while (true) {
             const { data, error } = await supabase
-                .from('meets')
+                .from('usaw_meets')
                 .select('meet_id, Meet, latitude, longitude, elevation_meters')
                 .not('latitude', 'is', null)
                 .not('longitude', 'is', null)
@@ -569,26 +569,26 @@ async function geocodeAndImport() {
 
         // Get meets from database that need geocoding
         const meetsNeedingGeocode = await getMeetsNeedingGeocode();
-        
+
         if (meetsNeedingGeocode.length === 0) {
             log('✅ All meets with addresses already have geocoding - nothing to process');
             return { total: 0, processed: 0, success: 0, failures: 0 };
         }
-        
+
         let successCount = 0;
         let failureCount = 0;
         let updatedCount = 0;
         let skipCount = 0;
-        
+
         // Process each meet that needs geocoding
         for (let i = 0; i < meetsNeedingGeocode.length; i++) {
             const meet = meetsNeedingGeocode[i];
             const progress = `${i + 1}/${meetsNeedingGeocode.length}`;
-            
+
             log(`
 🔄 [${progress}] Processing: ${meet.Meet} (meet_id: ${meet.meet_id})`);
             log(`   Original Address: ${meet.address}`);
-            
+
             // Check for international events early
             if (isInternationalEvent(meet.Meet)) {
                 log(`  🌍 International event detected - skipping WSO assignment`);
@@ -630,19 +630,19 @@ async function geocodeAndImport() {
                 skipCount++;
                 continue;
             }
-            
+
             // Parse address components
             const addressComponents = parseAddress(meet.address);
-            
+
             // Geocode address
             const geocodeResult = await geocodeAddress(meet.address);
-            
+
             let wsoGeography = null;
             if (geocodeResult.success) {
                 successCount++;
                 log(`  ✅ Geocoded: ${geocodeResult.latitude}, ${geocodeResult.longitude}`);
                 log(`  📊 Precision score: ${geocodeResult.precision_score}`);
-                
+
                 // Determine WSO geography using sophisticated assignment logic
                 try {
                     const meetData = {
@@ -651,23 +651,23 @@ async function geocodeAndImport() {
                         latitude: geocodeResult.latitude,
                         longitude: geocodeResult.longitude
                     };
-                    
+
                     const assignment = await assignWSOGeography(meetData, supabase, {
                         includeHistoricalData: true,
                         logDetails: false
                     });
-                    
+
                     if (assignment.assigned_wso) {
                         wsoGeography = assignment.assigned_wso;
                         log(`  🗺️ WSO Geography: ${wsoGeography} (method: ${assignment.assignment_method}, confidence: ${assignment.confidence.toFixed(2)})`);
-                        
+
                         // CONTAMINATION PREVENTION: Validate the WSO assignment
                         const validation = validateWSOAssignment(
-                            wsoGeography, 
-                            geocodeResult.latitude, 
+                            wsoGeography,
+                            geocodeResult.latitude,
                             geocodeResult.longitude
                         );
-                        
+
                         if (!validation.isValid) {
                             log(`  🚨 CONTAMINATION PREVENTED: ${validation.reason}`);
                             log(`  🔧 Correcting: ${wsoGeography} → ${validation.correctWSO}`);
@@ -676,7 +676,7 @@ async function geocodeAndImport() {
                         } else {
                             log(`  ✅ WSO assignment validated: ${wsoGeography} is correct`);
                         }
-                        
+
                         // ADDRESS-BASED VALIDATION: Check if address state matches assigned WSO
                         // This catches cases where coordinates fall in overlapping bounding boxes
                         // but the address clearly states a different state (e.g., "Milton, Florida" vs Alabama)
@@ -738,14 +738,14 @@ async function geocodeAndImport() {
                 elevation_fetched_at: elevationFetchedAt
                 // Note: is_placeholder_coordinate field not in schema yet
             };
-            
+
             // Update database immediately
             const success = await updateMeetWithGeocode(meet.meet_id, updateData);
             if (success) {
                 updatedCount++;
                 log(`  ✅ Updated database for meet_id ${meet.meet_id}`);
             }
-            
+
             // Rate limit: wait between requests
             if (i < meetsNeedingGeocode.length - 1) {
                 await sleep(NOMINATIM_DELAY);
@@ -837,7 +837,7 @@ async function geocodeAndImport() {
                 failures: elevationFailureCount
             }
         };
-        
+
     } catch (error) {
         log(`\n❌ Process failed: ${error.message}`);
         log(`🔍 Stack trace: ${error.stack}`);

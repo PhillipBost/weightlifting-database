@@ -9,7 +9,7 @@ async function fixCaliforniaAssignments() {
 
   // Get all California meets
   const { data: californiaMeets, error } = await supabase
-    .from('meets')
+    .from('usaw_meets')
     .select('*')
     .eq('wso_geography', 'California North Central');
 
@@ -30,7 +30,7 @@ async function fixCaliforniaAssignments() {
     if (assignment.assigned_wso && assignment.assigned_wso !== meet.wso_geography) {
       // Update the assignment
       const { error: updateError } = await supabase
-        .from('meets')
+        .from('usaw_meets')
         .update({ wso_geography: assignment.assigned_wso })
         .eq('meet_id', meet.meet_id);
 

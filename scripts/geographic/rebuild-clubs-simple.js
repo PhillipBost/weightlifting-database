@@ -60,7 +60,7 @@ const STATE_TO_WSO = {
 
 function extractStateFromAddress(address) {
     if (!address) return null;
-    
+
     // Simple string matching for full state names first
     const stateNames = [
         'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
@@ -75,14 +75,14 @@ function extractStateFromAddress(address) {
         'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming',
         'District of Columbia'
     ];
-    
+
     // Check for full state names
     for (const state of stateNames) {
         if (address.toLowerCase().includes(state.toLowerCase())) {
             return state;
         }
     }
-    
+
     // Check for common abbreviations after comma
     const stateAbbrevs = {
         'AL': 'Alabama', 'AK': 'Alaska', 'AZ': 'Arizona', 'AR': 'Arkansas', 'CA': 'California',
@@ -97,10 +97,10 @@ function extractStateFromAddress(address) {
         'VA': 'Virginia', 'WA': 'Washington', 'WV': 'West Virginia', 'WI': 'Wisconsin', 'WY': 'Wyoming',
         'DC': 'District of Columbia'
     };
-    
+
     // Skip directional abbreviations when not clearly state codes
     const directionalAbbrevs = ['NE', 'NW', 'SE', 'SW', 'N', 'S', 'E', 'W'];
-    
+
     for (const [abbrev, state] of Object.entries(stateAbbrevs)) {
         if (directionalAbbrevs.includes(abbrev)) {
             // Only match if after comma or with zip code
@@ -114,15 +114,15 @@ function extractStateFromAddress(address) {
             }
         }
     }
-    
+
     return null;
 }
 
 function assignCaliforniaWSO(address) {
     if (!address) return 'California North Central'; // Default
-    
+
     const addressLower = address.toLowerCase();
-    
+
     // Simple keyword matching for Southern California
     const southKeywords = [
         'los angeles', 'san diego', 'orange', 'riverside', 'san bernardino',
@@ -130,81 +130,81 @@ function assignCaliforniaWSO(address) {
         'hollywood', 'beverly hills', 'santa monica', 'long beach',
         'anaheim', 'huntington beach', 'irvine', 'chula vista'
     ];
-    
+
     for (const keyword of southKeywords) {
         if (addressLower.includes(keyword)) {
             return 'California South';
         }
     }
-    
+
     return 'California North Central'; // Default
 }
 
 function assignWSO(state, address) {
     if (!state || !STATE_TO_WSO[state]) return null;
-    
+
     // Special handling for California
     if (state === 'California') {
         return assignCaliforniaWSO(address);
     }
-    
+
     return STATE_TO_WSO[state];
 }
 
 async function rebuildClubsSimple() {
     console.log('🔄 Simple rebuild with correct WSO mapping...');
-    
+
     try {
         // Test the functions first
         console.log('🧪 Testing state extraction:');
         const testCases = [
             'Sacramento, California',
-            'Los Angeles, California', 
+            'Los Angeles, California',
             'Austin, Texas',
             'Portland, Oregon'
         ];
-        
+
         testCases.forEach(address => {
             const state = extractStateFromAddress(address);
             const wso = assignWSO(state, address);
             console.log(`  "${address}" → ${state} → ${wso}`);
         });
-        
+
         if (testCases.every(addr => extractStateFromAddress(addr) === null)) {
             console.log('\\n❌ State extraction test failed - aborting');
             return;
         }
-        
+
         // Get all clubs
         const { data: clubs, error } = await supabase
-            .from('clubs')
+            .from('usaw_clubs')
             .select('club_name, address');
-            
+
         if (error) throw error;
-        
+
         console.log(`\\nProcessing ${clubs.length} clubs...`);
-        
+
         let assigned = 0;
         let failed = 0;
         const assignments = [];
-        
+
         for (let i = 0; i < clubs.length; i++) {
             const club = clubs[i];
-            
+
             if (i % 100 === 0) {
                 console.log(`  Progress: ${i}/${clubs.length} clubs processed`);
             }
-            
+
             const extractedState = extractStateFromAddress(club.address);
-            
+
             if (extractedState) {
                 const wso = assignWSO(extractedState, club.address);
                 if (wso) {
                     const { error: updateError } = await supabase
-                        .from('clubs')
+                        .from('usaw_clubs')
                         .update({ wso_geography: wso })
                         .eq('club_name', club.club_name);
-                        
+
                     if (!updateError) {
                         assigned++;
                         assignments.push({
@@ -223,12 +223,12 @@ async function rebuildClubsSimple() {
                 failed++;
             }
         }
-        
+
         console.log(`\\n✅ Simple rebuild complete:`);
         console.log(`  Successfully assigned: ${assigned}`);
         console.log(`  Failed assignments: ${failed}`);
-        console.log(`  Assignment rate: ${((assigned/clubs.length)*100).toFixed(1)}%`);
-        
+        console.log(`  Assignment rate: ${((assigned / clubs.length) * 100).toFixed(1)}%`);
+
         // Show assignments by WSO
         const wsoGroups = {};
         assignments.forEach(assignment => {
@@ -237,14 +237,14 @@ async function rebuildClubsSimple() {
             }
             wsoGroups[assignment.assigned_wso].push(assignment);
         });
-        
+
         console.log(`\\n📋 Assignments by WSO:`);
         Object.entries(wsoGroups)
-            .sort(([,a], [,b]) => b.length - a.length)
+            .sort(([, a], [, b]) => b.length - a.length)
             .forEach(([wso, clubList]) => {
                 console.log(`  ${wso}: ${clubList.length} clubs`);
             });
-        
+
     } catch (error) {
         console.error('Error:', error.message);
     }

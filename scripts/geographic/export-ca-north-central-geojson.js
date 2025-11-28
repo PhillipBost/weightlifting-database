@@ -14,43 +14,43 @@ const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SEC
 
 async function exportCaliforniaNorthCentralGeoJSON() {
     console.log('=== Exporting California North Central GeoJSON for Dissolve Processing ===\n');
-    
+
     try {
         // Fetch California North Central WSO data
         const { data: wsoData, error } = await supabase
-            .from('wso_information')
+            .from('usaw_wso_information')
             .select('*')
             .eq('name', 'California North Central')
             .single();
-        
+
         if (error) {
             console.error('❌ Error fetching WSO data:', error);
             return;
         }
-        
+
         if (!wsoData) {
             console.error('❌ California North Central WSO not found in database');
             return;
         }
-        
+
         console.log('✅ Found California North Central WSO data');
         console.log(`📊 Counties: ${wsoData.counties ? wsoData.counties.length : 'Unknown'}`);
-        
+
         // Check GeoJSON structure
         const territoryGeoJSON = wsoData.territory_geojson;
-        
+
         if (!territoryGeoJSON) {
             console.error('❌ No territory_geojson data found');
             return;
         }
-        
+
         console.log(`🗺️  Geometry Type: ${territoryGeoJSON.geometry.type}`);
-        
+
         if (territoryGeoJSON.geometry.type === 'MultiPolygon') {
             const polygonCount = territoryGeoJSON.geometry.coordinates.length;
             console.log(`📍 Polygon Count: ${polygonCount} (these are the county borders to dissolve)`);
         }
-        
+
         // Prepare export data with metadata for processing
         const exportData = {
             type: 'FeatureCollection',
@@ -66,8 +66,8 @@ async function exportCaliforniaNorthCentralGeoJSON() {
                         export_date: new Date().toISOString(),
                         export_purpose: 'dissolve_processing',
                         processing_note: 'MultiPolygon to be dissolved into single polygon',
-                        original_polygon_count: territoryGeoJSON.geometry.type === 'MultiPolygon' 
-                            ? territoryGeoJSON.geometry.coordinates.length 
+                        original_polygon_count: territoryGeoJSON.geometry.type === 'MultiPolygon'
+                            ? territoryGeoJSON.geometry.coordinates.length
                             : 1,
                         target_polygon_count: 1,
                         dissolve_method: 'qgis_external'
@@ -88,7 +88,7 @@ async function exportCaliforniaNorthCentralGeoJSON() {
                 ]
             }
         };
-        
+
         // Create exports directory if it doesn't exist
         const exportsDir = './exports';
         try {
@@ -97,17 +97,17 @@ async function exportCaliforniaNorthCentralGeoJSON() {
             console.log('📁 Creating exports directory...');
             await fs.mkdir(exportsDir, { recursive: true });
         }
-        
+
         // Write GeoJSON file
         const filename = 'ca-north-central-for-dissolve.geojson';
         const filepath = path.join(exportsDir, filename);
-        
+
         await fs.writeFile(filepath, JSON.stringify(exportData, null, 2));
-        
+
         console.log(`\n✅ Export completed successfully!`);
         console.log(`📄 File: ${filepath}`);
         console.log(`📊 Size: ${(JSON.stringify(exportData).length / 1024).toFixed(2)} KB`);
-        
+
         // Display processing summary
         console.log('\n📋 Export Summary:');
         console.log(`   WSO Name: ${wsoData.name}`);
@@ -117,16 +117,16 @@ async function exportCaliforniaNorthCentralGeoJSON() {
             console.log(`   Polygons to Dissolve: ${territoryGeoJSON.geometry.coordinates.length}`);
         }
         console.log(`   Target Result: Single unified polygon`);
-        
+
         console.log('\n🎯 Next Steps:');
         console.log('   1. Run: node gdal-convert-to-shapefile.js');
         console.log('   2. Open Shapefile in QGIS');
         console.log('   3. Use Vector → Geoprocessing Tools → Dissolve');
         console.log('   4. Export dissolved result as GeoJSON');
         console.log('   5. Run: node import-dissolved-polygon.js');
-        
+
         return filepath;
-        
+
     } catch (error) {
         console.error('❌ Export failed:', error);
     }

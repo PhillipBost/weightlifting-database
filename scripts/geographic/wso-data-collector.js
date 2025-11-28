@@ -314,7 +314,7 @@ async function analyzeCurrentWSOs() {
     console.log('🔍 Analyzing current WSO values in database...');
 
     const { data, error } = await supabase
-        .from('meet_results')
+        .from('usaw_meet_results')
         .select('wso')
         .not('wso', 'is', null);
 
@@ -330,7 +330,7 @@ async function analyzeCurrentWSOs() {
     });
 
     const sortedWSOs = Object.entries(wsoCount)
-        .sort(([,a], [,b]) => b - a);
+        .sort(([, a], [, b]) => b - a);
 
     console.log('\\n📊 WSO Usage Statistics:');
     console.log('========================');
@@ -353,7 +353,7 @@ async function populateWSOs() {
     for (const [wsoName, data] of Object.entries(WSO_DATA)) {
         try {
             const { error } = await supabase
-                .from('wso_information')
+                .from('usaw_wso_information')
                 .upsert({
                     name: wsoName,
                     geographic_type: data.geographic_type,

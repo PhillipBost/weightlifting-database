@@ -18,7 +18,7 @@ async function simulateOldCountLogic() {
 
     try {
         const { data, error } = await supabase
-            .from('meets')
+            .from('usaw_meets')
             .select('meet_id', { count: 'exact' })
             .is('wso_geography', null);
 
@@ -47,7 +47,7 @@ async function simulateNewCountLogic() {
 
         while (hasMore) {
             const { data, error } = await supabase
-                .from('meets')
+                .from('usaw_meets')
                 .select('meet_id')
                 .is('wso_geography', null)
                 .range(start, start + batchSize - 1);
@@ -56,7 +56,7 @@ async function simulateNewCountLogic() {
 
             if (data && data.length > 0) {
                 totalCount += data.length;
-                console.log(`    📦 Batch ${Math.floor(start/batchSize) + 1}: Found ${data.length} unassigned meets (Running total: ${totalCount})`);
+                console.log(`    📦 Batch ${Math.floor(start / batchSize) + 1}: Found ${data.length} unassigned meets (Running total: ${totalCount})`);
 
                 hasMore = data.length === batchSize;
                 start += batchSize;
@@ -123,7 +123,7 @@ async function simulatePostAssignmentVerification(initialCount) {
 
 async function main() {
     console.log('🧪 GitHub Action Logic Test Suite');
-    console.log('=' .repeat(60));
+    console.log('='.repeat(60));
 
     try {
         // Test count verification

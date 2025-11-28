@@ -12,7 +12,7 @@ async function investigateClubDiscrepancy() {
   try {
     // Count total unique clubs in meet_results
     const { data: allClubs, error: allError } = await supabase
-      .from('meet_results')
+      .from('usaw_meet_results')
       .select('club_name')
       .not('club_name', 'is', null)
       .neq('club_name', '');
@@ -24,7 +24,7 @@ async function investigateClubDiscrepancy() {
 
     // Count clubs in rolling metrics
     const { data: rollingClubs, error: rollingError } = await supabase
-      .from('club_rolling_metrics')
+      .from('usaw_club_rolling_metrics')
       .select('club_name');
 
     if (rollingError) throw rollingError;
@@ -41,7 +41,7 @@ async function investigateClubDiscrepancy() {
 
       // Check if some missing clubs have recent data
       const { data: recentData, error: recentError } = await supabase
-        .from('meet_results')
+        .from('usaw_meet_results')
         .select('club_name, date')
         .in('club_name', missingClubs.slice(0, 5))
         .order('date', { ascending: false })
@@ -57,7 +57,7 @@ async function investigateClubDiscrepancy() {
       // Check if missing clubs have any data at all
       const sampleMissingClub = missingClubs[0];
       const { data: sampleData, error: sampleError } = await supabase
-        .from('meet_results')
+        .from('usaw_meet_results')
         .select('club_name, date, lifter_name')
         .eq('club_name', sampleMissingClub)
         .order('date', { ascending: false })

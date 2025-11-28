@@ -34,7 +34,7 @@ async function getAllClubsComprehensive() {
       console.log(`📅 Fetching clubs from ${startDate.substring(0, 4)}...`);
 
       const { data: yearData, error: yearError } = await supabase
-        .from('meet_results')
+        .from('usaw_meet_results')
         .select('club_name')
         .gte('date', startDate)
         .lte('date', endDate)
@@ -57,11 +57,11 @@ async function getAllClubsComprehensive() {
         yearData.forEach(row => {
           const clubName = row.club_name;
           if (clubName &&
-              clubName.trim() !== '' &&
-              clubName.trim() !== 'null' &&
-              clubName.trim() !== '-' &&
-              clubName.trim() !== '.' &&
-              clubName.trim().toLowerCase() !== 'null') {
+            clubName.trim() !== '' &&
+            clubName.trim() !== 'null' &&
+            clubName.trim() !== '-' &&
+            clubName.trim() !== '.' &&
+            clubName.trim().toLowerCase() !== 'null') {
             allClubs.add(clubName.trim());
           }
         });

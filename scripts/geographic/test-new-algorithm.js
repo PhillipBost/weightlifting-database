@@ -11,7 +11,7 @@ async function testNewAlgorithm() {
 
   // Get a small sample of meets with coordinates
   const { data: meets, error } = await supabase
-    .from('meets')
+    .from('usaw_meets')
     .select('*')
     .not('latitude', 'is', null)
     .not('longitude', 'is', null)

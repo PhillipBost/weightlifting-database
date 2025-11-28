@@ -8,7 +8,7 @@ async function checkAssignmentStats() {
 
   // Count total assigned
   const { data: assigned, error: assignedError } = await supabase
-    .from('meets')
+    .from('usaw_meets')
     .select('wso_geography')
     .not('wso_geography', 'is', null);
 
@@ -27,7 +27,7 @@ async function checkAssignmentStats() {
 
   console.log('\nAssignments by WSO:');
   Object.entries(counts)
-    .sort(([,a], [,b]) => b - a)
+    .sort(([, a], [, b]) => b - a)
     .forEach(([wso, count]) => {
       console.log(`  ${wso}: ${count}`);
     });

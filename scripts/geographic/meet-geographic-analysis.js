@@ -25,7 +25,7 @@ async function analyzeSingleMeet(meetId) {
 
     // Get meet information
     const { data: meet, error: meetError } = await supabase
-        .from('meets')
+        .from('usaw_meets')
         .select('*')
         .eq('meet_id', meetId)
         .single();
@@ -37,7 +37,7 @@ async function analyzeSingleMeet(meetId) {
 
     // Get meet results with WSO data
     const { data: results, error: resultsError } = await supabase
-        .from('meet_results')
+        .from('usaw_meet_results')
         .select('*')
         .eq('meet_id', meetId);
 
@@ -71,7 +71,7 @@ async function analyzeSingleMeet(meetId) {
     console.log('\\n🗺️  WSO Participation:');
     console.log('======================');
     Object.entries(diversity.wso_participation)
-        .sort(([,a], [,b]) => b - a)
+        .sort(([, a], [, b]) => b - a)
         .forEach(([wso, count]) => {
             const distance = diversity.average_travel_distances[wso];
             const distanceStr = distance ? ` (${Math.round(distance)} km away)` : '';
@@ -97,7 +97,7 @@ async function analyzeNationalMeets() {
 
     // Find meets that are likely national (by name patterns)
     const { data: meets, error } = await supabase
-        .from('meets')
+        .from('usaw_meets')
         .select('meet_id, meet_name, date, city, state, latitude, longitude')
         .or('meet_name.ilike.%national%,meet_name.ilike.%championship%,meet_name.ilike.%american open%')
         .not('latitude', 'is', null)
@@ -114,7 +114,7 @@ async function analyzeNationalMeets() {
 
     for (const meet of meets) {
         const { data: results } = await supabase
-            .from('meet_results')
+            .from('usaw_meet_results')
             .select('wso')
             .eq('meet_id', meet.meet_id);
 
@@ -147,7 +147,7 @@ async function performTravelAnalysis() {
 
     // Find meets with the highest travel burden
     const { data: meetsWithCoords, error } = await supabase
-        .from('meets')
+        .from('usaw_meets')
         .select('meet_id, meet_name, date, city, state, latitude, longitude')
         .not('latitude', 'is', null)
         .not('longitude', 'is', null)
@@ -166,7 +166,7 @@ async function performTravelAnalysis() {
 
     for (const meet of meetsWithCoords) {
         const { data: results } = await supabase
-            .from('meet_results')
+            .from('usaw_meet_results')
             .select('wso')
             .eq('meet_id', meet.meet_id);
 

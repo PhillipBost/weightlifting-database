@@ -76,7 +76,7 @@ async function countUnassignedMeets() {
 
     while (hasMore) {
         const { data, error } = await supabase
-            .from('meets')
+            .from('usaw_meets')
             .select('meet_id')
             .is('wso_geography', null)
             .range(start, start + batchSize - 1);
@@ -87,7 +87,7 @@ async function countUnassignedMeets() {
 
         if (data && data.length > 0) {
             totalCount += data.length;
-            log(`  📦 Batch ${Math.floor(start/batchSize) + 1}: Found ${data.length} unassigned meets (Running total: ${totalCount})`);
+            log(`  📦 Batch ${Math.floor(start / batchSize) + 1}: Found ${data.length} unassigned meets (Running total: ${totalCount})`);
 
             hasMore = data.length === batchSize;
             start += batchSize;
@@ -111,7 +111,7 @@ async function listUnassignedMeets() {
 
     while (hasMore) {
         const { data, error } = await supabase
-            .from('meets')
+            .from('usaw_meets')
             .select('meet_id, start_date, end_date, city, state, address, latitude, longitude')
             .is('wso_geography', null)
             .range(start, start + batchSize - 1);
@@ -122,7 +122,7 @@ async function listUnassignedMeets() {
 
         if (data && data.length > 0) {
             unassignedMeets.push(...data);
-            log(`  📦 Batch ${Math.floor(start/batchSize) + 1}: Found ${data.length} unassigned meets`);
+            log(`  📦 Batch ${Math.floor(start / batchSize) + 1}: Found ${data.length} unassigned meets`);
 
             hasMore = data.length === batchSize;
             start += batchSize;
@@ -189,7 +189,7 @@ async function validateExistingAssignments() {
 
     while (hasMore) {
         const { data, error } = await supabase
-            .from('meets')
+            .from('usaw_meets')
             .select('meet_id, wso_geography')
             .not('wso_geography', 'is', null)
             .range(start, start + batchSize - 1);
@@ -199,7 +199,7 @@ async function validateExistingAssignments() {
         }
 
         if (data && data.length > 0) {
-            log(`  📦 Batch ${Math.floor(start/batchSize) + 1}: Validating ${data.length} assigned meets`);
+            log(`  📦 Batch ${Math.floor(start / batchSize) + 1}: Validating ${data.length} assigned meets`);
 
             data.forEach(meet => {
                 results.total_assigned++;
@@ -233,7 +233,7 @@ async function generateSummaryReport() {
 
     // Get total meets count
     const { count: totalMeets, error: countError } = await supabase
-        .from('meets')
+        .from('usaw_meets')
         .select('*', { count: 'exact', head: true });
 
     if (countError) {
@@ -323,7 +323,7 @@ async function main() {
             if (options.full) {
                 log('\n📈 WSO Distribution:');
                 Object.entries(summary.wso_distribution)
-                    .sort(([,a], [,b]) => b - a)
+                    .sort(([, a], [, b]) => b - a)
                     .forEach(([wso, count]) => {
                         log(`  ${wso}: ${count} meets`);
                     });

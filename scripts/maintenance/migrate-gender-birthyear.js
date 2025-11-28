@@ -21,62 +21,62 @@ const supabase = createClient(
 // Migrate data in batches
 async function migrateGenderBirthYear() {
     console.log('🔄 Starting migration of gender and birth_year from lifters to meet_results...');
-    
+
     let totalLifters = 0;
     let totalMeetResults = 0;
     let processedLifters = 0;
     let updatedResults = 0;
-    
+
     try {
         // Get total counts for progress tracking
         const { count: lifterCount } = await supabase
-            .from('lifters')
+            .from('usaw_lifters')
             .select('lifter_id', { count: 'exact' })
             .not('gender', 'is', null);
-        
+
         const { count: resultCount } = await supabase
-            .from('meet_results')
+            .from('usaw_meet_results')
             .select('result_id', { count: 'exact' });
-        
+
         totalLifters = lifterCount || 0;
         totalMeetResults = resultCount || 0;
-        
+
         console.log(`📊 Found ${totalLifters} lifters with gender data`);
         console.log(`📊 Found ${totalMeetResults} total meet results to potentially update`);
-        
+
         const batchSize = 100;
         let offset = 0;
-        
+
         while (true) {
             // Get batch of lifters with gender/birth_year data
             const { data: lifters, error: liftersError } = await supabase
-                .from('lifters')
+                .from('usaw_lifters')
                 .select('lifter_id, gender, birth_year')
                 .not('gender', 'is', null)
                 .range(offset, offset + batchSize - 1);
-            
+
             if (liftersError) {
                 throw new Error(`Failed to fetch lifters: ${liftersError.message}`);
             }
-            
+
             if (!lifters || lifters.length === 0) {
                 break;
             }
-            
-            console.log(`\n📦 Processing batch ${Math.floor(offset/batchSize) + 1}: ${lifters.length} lifters (offset ${offset})`);
-            
+
+            console.log(`\n📦 Processing batch ${Math.floor(offset / batchSize) + 1}: ${lifters.length} lifters (offset ${offset})`);
+
             // Process each lifter in the batch
             for (const lifter of lifters) {
                 processedLifters++;
-                
+
                 if (processedLifters % 50 === 0) {
                     console.log(`  📊 Progress: ${processedLifters}/${totalLifters} lifters processed`);
                 }
-                
+
                 try {
                     // Update all meet_results for this lifter_id
                     const { data: updateData, error: updateError } = await supabase
-                        .from('meet_results')
+                        .from('usaw_meet_results')
                         .update({
                             gender: lifter.gender,
                             birth_year: lifter.birth_year,
@@ -84,33 +84,33 @@ async function migrateGenderBirthYear() {
                         })
                         .eq('lifter_id', lifter.lifter_id)
                         .select('result_id');
-                    
+
                     if (updateError) {
                         console.error(`    ❌ Error updating meet_results for lifter_id ${lifter.lifter_id}: ${updateError.message}`);
                         continue;
                     }
-                    
+
                     const updatedCount = updateData ? updateData.length : 0;
                     updatedResults += updatedCount;
-                    
+
                     if (updatedCount > 0) {
                         console.log(`    ✅ Updated ${updatedCount} meet results for lifter_id ${lifter.lifter_id}`);
                     }
-                    
+
                 } catch (error) {
                     console.error(`    ❌ Error processing lifter_id ${lifter.lifter_id}: ${error.message}`);
                 }
             }
-            
+
             offset += batchSize;
         }
-        
+
         console.log(`\n📊 Migration Summary:`);
         console.log(`  • Processed ${processedLifters} lifters`);
         console.log(`  • Updated ${updatedResults} meet results`);
-        
+
         return { processedLifters, updatedResults };
-        
+
     } catch (error) {
         console.error(`\n❌ Migration failed: ${error.message}`);
         throw error;
@@ -126,7 +126,7 @@ async function removeColumnsFromLifters() {
     console.log('-- Remove gender column from lifters');
     console.log('ALTER TABLE lifters DROP COLUMN IF EXISTS gender;');
     console.log('');
-    console.log('-- Remove birth_year column from lifters'); 
+    console.log('-- Remove birth_year column from lifters');
     console.log('ALTER TABLE lifters DROP COLUMN IF EXISTS birth_year;');
     console.log('');
     console.log('After running these commands, gender and birth_year will only exist in meet_results.');
@@ -135,32 +135,32 @@ async function removeColumnsFromLifters() {
 // Verify the migration worked
 async function verifyMigration() {
     console.log(`\n🔍 Verifying migration results...`);
-    
+
     try {
         // Check sample of meet_results have gender/birth_year populated
         const { data: sampleResults, error: sampleError } = await supabase
-            .from('meet_results')
+            .from('usaw_meet_results')
             .select('result_id, lifter_id, lifter_name, gender, birth_year')
             .not('gender', 'is', null)
             .limit(5);
-        
+
         if (sampleError) {
             throw new Error(`Failed to verify migration: ${sampleError.message}`);
         }
-        
+
         console.log(`✅ Sample meet_results with migrated data:`);
         sampleResults.forEach((result, i) => {
-            console.log(`  ${i+1}. ${result.lifter_name} (lifter_id: ${result.lifter_id}) - Gender: ${result.gender}, Birth Year: ${result.birth_year}`);
+            console.log(`  ${i + 1}. ${result.lifter_name} (lifter_id: ${result.lifter_id}) - Gender: ${result.gender}, Birth Year: ${result.birth_year}`);
         });
-        
+
         // Count total results with gender data
         const { count: genderCount } = await supabase
-            .from('meet_results')
+            .from('usaw_meet_results')
             .select('result_id', { count: 'exact' })
             .not('gender', 'is', null);
-        
+
         console.log(`\n📊 Total meet_results with gender data: ${genderCount}`);
-        
+
     } catch (error) {
         console.error(`❌ Verification failed: ${error.message}`);
     }
@@ -171,29 +171,29 @@ async function main() {
     try {
         console.log('🚀 Starting gender and birth_year migration');
         console.log('='.repeat(60));
-        
+
         // Test database connection
-        const { error: testError } = await supabase.from('lifters').select('lifter_id').limit(1);
+        const { error: testError } = await supabase.from('usaw_lifters').select('lifter_id').limit(1);
         if (testError) {
             throw new Error(`Database connection failed: ${testError.message}`);
         }
         console.log('✅ Database connection successful');
-        
+
         // Run the migration
         const results = await migrateGenderBirthYear();
-        
+
         // Verify the migration worked
         await verifyMigration();
-        
+
         // Show instructions to remove columns from lifters table
         await removeColumnsFromLifters();
-        
+
         console.log('\\n' + '='.repeat(60));
         console.log('✅ MIGRATION COMPLETE');
         console.log(`📊 Successfully migrated data for ${results.processedLifters} lifters`);
         console.log(`📊 Updated ${results.updatedResults} meet result records`);
         console.log('\\n⚠️  Don\'t forget to run the SQL commands above to remove the columns from lifters table!');
-        
+
     } catch (error) {
         console.error(`\\n❌ Migration failed: ${error.message}`);
         console.error(`🔍 Stack trace: ${error.stack}`);

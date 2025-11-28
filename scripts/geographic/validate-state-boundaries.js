@@ -157,7 +157,7 @@ async function getMeetsForValidation() {
 
     while (hasMore) {
         const { data: batchData, error } = await supabase
-            .from('meets')
+            .from('usaw_meets')
             .select('meet_id, Meet, wso_geography, latitude, longitude, address, city, state, country, location_text')
             .not('wso_geography', 'is', null)
             .range(start, start + batchSize - 1);
@@ -168,7 +168,7 @@ async function getMeetsForValidation() {
 
         if (batchData && batchData.length > 0) {
             allMeets.push(...batchData);
-            log(`  📦 Batch ${Math.floor(start/batchSize) + 1}: Found ${batchData.length} meets (Total: ${allMeets.length})`);
+            log(`  📦 Batch ${Math.floor(start / batchSize) + 1}: Found ${batchData.length} meets (Total: ${allMeets.length})`);
 
             hasMore = batchData.length === batchSize;
             start += batchSize;

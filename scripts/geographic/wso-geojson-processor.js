@@ -206,7 +206,7 @@ async function createWSOTerritories() {
 
     // Get WSO definitions from database
     const { data: wsos, error } = await supabase
-        .from('wso_information')
+        .from('usaw_wso_information')
         .select('name, geographic_type, states, counties');
 
     if (error) {
@@ -234,10 +234,10 @@ async function createWSOTerritories() {
             const stateFeature = stateData.features.find(f => {
                 const props = f.properties;
                 return props.name === stateName ||
-                       props.name_en === stateName ||
-                       props.NAME === stateName ||
-                       props.STUSPS === stateName ||  // State abbreviation
-                       props.NAME_1 === stateName;
+                    props.name_en === stateName ||
+                    props.NAME === stateName ||
+                    props.STUSPS === stateName ||  // State abbreviation
+                    props.NAME_1 === stateName;
             });
 
             if (stateFeature) {
@@ -269,16 +269,16 @@ async function createWSOTerritories() {
                 const stateFeature = stateData.features.find(f => {
                     const props = f.properties;
                     return props.name === stateName ||
-                           props.name_en === stateName ||
-                           props.NAME === stateName ||
-                           props.STUSPS === stateName ||
-                           props.NAME_1 === stateName ||
-                           (stateName === 'District of Columbia' && (
-                               props.name === 'Washington D.C.' ||
-                               props.NAME === 'Washington D.C.' ||
-                               props.name === 'District of Columbia' ||
-                               props.NAME === 'District of Columbia'
-                           ));
+                        props.name_en === stateName ||
+                        props.NAME === stateName ||
+                        props.STUSPS === stateName ||
+                        props.NAME_1 === stateName ||
+                        (stateName === 'District of Columbia' && (
+                            props.name === 'Washington D.C.' ||
+                            props.NAME === 'Washington D.C.' ||
+                            props.name === 'District of Columbia' ||
+                            props.NAME === 'District of Columbia'
+                        ));
                 });
 
                 if (stateFeature) {
@@ -321,9 +321,9 @@ async function createWSOTerritories() {
                 const californiaFeature = stateData.features.find(f => {
                     const props = f.properties;
                     return props.name === 'California' ||
-                           props.name_en === 'California' ||
-                           props.NAME === 'California' ||
-                           props.NAME_1 === 'California';
+                        props.name_en === 'California' ||
+                        props.NAME === 'California' ||
+                        props.NAME_1 === 'California';
                 });
 
                 if (californiaFeature) {
@@ -354,9 +354,9 @@ async function createWSOTerritories() {
                 const hawaiiFeature = stateData.features.find(f => {
                     const props = f.properties;
                     return props.name === 'Hawaii' ||
-                           props.name_en === 'Hawaii' ||
-                           props.NAME === 'Hawaii' ||
-                           props.NAME_1 === 'Hawaii';
+                        props.name_en === 'Hawaii' ||
+                        props.NAME === 'Hawaii' ||
+                        props.NAME_1 === 'Hawaii';
                 });
 
                 if (hawaiiFeature) {
@@ -430,7 +430,7 @@ async function updateDatabase() {
         console.log(`\\n📍 Updating: ${wsoName}`);
 
         const { error } = await supabase
-            .from('wso_information')
+            .from('usaw_wso_information')
             .update({ territory_geojson: geoJsonData })
             .eq('name', wsoName);
 

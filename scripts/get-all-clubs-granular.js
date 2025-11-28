@@ -29,7 +29,7 @@ async function getAllClubsGranular() {
       }
 
       const { data: letterData, error: letterError } = await supabase
-        .from('meet_results')
+        .from('usaw_meet_results')
         .select('club_name')
         .gte('club_name', letter)
         .lt('club_name', nextChar)
@@ -52,11 +52,11 @@ async function getAllClubsGranular() {
         letterData.forEach(row => {
           const clubName = row.club_name;
           if (clubName &&
-              clubName.trim() !== '' &&
-              clubName.trim() !== 'null' &&
-              clubName.trim() !== '-' &&
-              clubName.trim() !== '.' &&
-              clubName.trim().toLowerCase() !== 'null') {
+            clubName.trim() !== '' &&
+            clubName.trim() !== 'null' &&
+            clubName.trim() !== '-' &&
+            clubName.trim() !== '.' &&
+            clubName.trim().toLowerCase() !== 'null') {
 
             const trimmedName = clubName.trim();
 

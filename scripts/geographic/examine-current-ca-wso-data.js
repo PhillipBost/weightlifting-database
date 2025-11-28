@@ -8,7 +8,7 @@ async function examineCurrentData() {
 
     // Get California WSOs
     const { data: californiaWSOs, error } = await supabase
-        .from('wso_information')
+        .from('usaw_wso_information')
         .select('*')
         .in('name', ['California North Central', 'California South']);
 
@@ -30,13 +30,13 @@ async function examineCurrentData() {
         if (wso.counties) {
             console.log(`  Counties: ${wso.counties.join(', ')}`);
         }
-        
+
         if (wso.territory_geojson) {
             const geojson = wso.territory_geojson;
             console.log(`\nGeoJSON Status: Present`);
             console.log(`  Type: ${geojson.type}`);
             console.log(`  Geometry Type: ${geojson.geometry?.type || 'Unknown'}`);
-            
+
             if (geojson.properties) {
                 console.log(`  Properties:`);
                 Object.keys(geojson.properties).forEach(key => {
@@ -50,7 +50,7 @@ async function examineCurrentData() {
                     }
                 });
             }
-            
+
             // Check if this looks like a single county or merged counties
             if (geojson.geometry?.type === 'Polygon') {
                 console.log(`  Geometry: Single Polygon (likely one county)`);
@@ -58,7 +58,7 @@ async function examineCurrentData() {
                 const polygonCount = geojson.geometry.coordinates?.length || 0;
                 console.log(`  Geometry: MultiPolygon with ${polygonCount} polygon sets`);
             }
-            
+
             // Look for clues in properties about what county this actually represents
             if (geojson.properties?.county) {
                 console.log(`  ⚠️  WARNING: This appears to be from ${geojson.properties.county} County only!`);
@@ -72,10 +72,10 @@ async function examineCurrentData() {
         } else {
             console.log(`\nGeoJSON Status: Missing`);
         }
-        
+
         console.log(`Last Updated: ${wso.updated_at}`);
     }
-    
+
     console.log('\n=== Summary ===');
     console.log('Current california-wso-fixer.js has a bug:');
     console.log('- It fetches multiple county boundaries');

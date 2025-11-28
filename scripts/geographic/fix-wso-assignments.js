@@ -126,7 +126,7 @@ function ensureDirectories() {
 function log(message) {
     const timestamp = new Date().toISOString();
     const logMessage = `[${timestamp}] ${message}\n`;
-    
+
     console.log(message);
     fs.appendFileSync(LOG_FILE, logMessage);
 }
@@ -134,19 +134,19 @@ function log(message) {
 // Check if coordinates are within a state's boundaries
 function isCoordinateInState(lat, lng, state) {
     if (!STATE_BOUNDARIES[state]) return false;
-    
+
     const bounds = STATE_BOUNDARIES[state];
-    return lat >= bounds.minLat && lat <= bounds.maxLat && 
-           lng >= bounds.minLng && lng <= bounds.maxLng;
+    return lat >= bounds.minLat && lat <= bounds.maxLat &&
+        lng >= bounds.minLng && lng <= bounds.maxLng;
 }
 
 // Validate WSO assignment against coordinates
 function validateWSO(wso, lat, lng) {
     if (!wso || !lat || !lng) return false;
-    
+
     const states = WSO_MAPPINGS[wso];
     if (!states) return false;
-    
+
     // Check if coordinates fall within any of the WSO's states
     return states.some(state => isCoordinateInState(lat, lng, state));
 }
@@ -154,28 +154,28 @@ function validateWSO(wso, lat, lng) {
 // Find problematic assignments
 async function findProblematicAssignments() {
     log('🔍 Finding problematic WSO assignments...');
-    
+
     const { data: meets, error } = await supabase
-        .from('meets')
+        .from('usaw_meets')
         .select('meet_id, Meet, wso_geography, latitude, longitude, city, state, country, geocode_success')
         .not('wso_geography', 'is', null)
         .not('latitude', 'is', null)
         .not('longitude', 'is', null);
-    
+
     if (error) {
         throw new Error(`Failed to fetch meets: ${error.message}`);
     }
-    
+
     const problematic = [];
-    
+
     for (const meet of meets) {
         const lat = parseFloat(meet.latitude);
         const lng = parseFloat(meet.longitude);
-        
+
         if (isNaN(lat) || isNaN(lng)) continue;
-        
+
         const isValid = validateWSO(meet.wso_geography, lat, lng);
-        
+
         if (!isValid) {
             // Find which state the coordinates actually fall in
             let actualState = null;
@@ -185,7 +185,7 @@ async function findProblematicAssignments() {
                     break;
                 }
             }
-            
+
             problematic.push({
                 meet_id: meet.meet_id,
                 name: meet.Meet,
@@ -197,27 +197,27 @@ async function findProblematicAssignments() {
             });
         }
     }
-    
+
     return problematic;
 }
 
 // Fix incorrect assignments
 async function fixIncorrectAssignments(problematic, dryRun = false) {
     log(`🔧 ${dryRun ? 'Analyzing' : 'Fixing'} ${problematic.length} problematic assignments...`);
-    
+
     let fixed = 0;
     let failed = 0;
-    
+
     for (const meet of problematic) {
         try {
             if (!dryRun) {
                 // Set WSO to null for incorrect assignments
                 // We're being conservative and only removing bad assignments
                 const { error } = await supabase
-                    .from('meets')
+                    .from('usaw_meets')
                     .update({ wso_geography: null })
                     .eq('meet_id', meet.meet_id);
-                
+
                 if (error) {
                     log(`❌ Failed to fix meet_id ${meet.meet_id}: ${error.message}`);
                     failed++;
@@ -232,28 +232,28 @@ async function fixIncorrectAssignments(problematic, dryRun = false) {
             failed++;
         }
     }
-    
+
     return { fixed, failed };
 }
 
 // Reset all WSO assignments
 async function resetAllWSO() {
     log('🔄 Resetting all WSO assignments...');
-    
+
     const { error } = await supabase
-        .from('meets')
+        .from('usaw_meets')
         .update({ wso_geography: null })
         .not('wso_geography', 'is', null);
-    
+
     if (error) {
         throw new Error(`Failed to reset WSO assignments: ${error.message}`);
     }
-    
+
     const { count } = await supabase
-        .from('meets')
+        .from('usaw_meets')
         .select('*', { count: 'exact', head: true })
         .not('wso_geography', 'is', null);
-    
+
     log(`✅ Reset complete. Remaining assignments: ${count || 0}`);
 }
 
@@ -271,24 +271,24 @@ function parseArguments() {
 // Main function
 async function main() {
     const startTime = Date.now();
-    
+
     try {
         ensureDirectories();
-        
+
         log('🔧 Starting WSO Assignment Fix Script');
         log('='.repeat(60));
-        
+
         const options = parseArguments();
-        
+
         if (options.reset) {
             log('🔄 Running reset mode...');
             await resetAllWSO();
-            
+
         } else if (options.analyze || options.fix) {
             const problematic = await findProblematicAssignments();
-            
+
             log(`\n📊 Found ${problematic.length} problematic assignments:`);
-            
+
             // Show examples
             const examples = problematic.slice(0, 10);
             examples.forEach((meet, index) => {
@@ -296,24 +296,24 @@ async function main() {
                 log(`     Location: ${meet.location_text}`);
                 log(`     Coordinates: ${meet.coordinates.lat}, ${meet.coordinates.lng}`);
             });
-            
+
             if (problematic.length > 10) {
                 log(`  ... and ${problematic.length - 10} more`);
             }
-            
+
             if (options.fix) {
                 const { fixed, failed } = await fixIncorrectAssignments(problematic, options.dryRun);
-                
+
                 log(`\n✅ Fix Results:`);
                 log(`  Fixed: ${fixed}`);
                 log(`  Failed: ${failed}`);
-                
+
                 if (options.dryRun) {
                     log(`\n🔍 This was a dry run - no changes made`);
                     log(`Run with --fix (without --dry-run) to apply changes`);
                 }
             }
-            
+
         } else {
             log('WSO Assignment Fix Script');
             log('==========================');
@@ -329,10 +329,10 @@ async function main() {
             log('  node fix-wso-assignments.js --fix --dry-run');
             log('  node fix-wso-assignments.js --fix');
         }
-        
+
         const processingTime = Math.round((Date.now() - startTime) / 1000);
         log(`\n⏱️ Processing completed in ${processingTime}s`);
-        
+
     } catch (error) {
         log(`\n❌ Script failed: ${error.message}`);
         log(`🔍 Stack trace: ${error.stack}`);

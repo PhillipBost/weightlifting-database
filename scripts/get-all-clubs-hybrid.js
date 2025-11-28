@@ -33,7 +33,7 @@ async function getAllClubsHybrid() {
         console.log(`📅 Fetching ${startYear.substring(0, 4)}-${endYear.substring(0, 4)} clubs ${startLetter}-${endLetter}...`);
 
         const { data: segmentData, error: segmentError } = await supabase
-          .from('meet_results')
+          .from('usaw_meet_results')
           .select('club_name')
           .gte('date', startYear)
           .lte('date', endYear)
@@ -58,11 +58,11 @@ async function getAllClubsHybrid() {
           segmentData.forEach(row => {
             const clubName = row.club_name;
             if (clubName &&
-                clubName.trim() !== '' &&
-                clubName.trim() !== 'null' &&
-                clubName.trim() !== '-' &&
-                clubName.trim() !== '.' &&
-                clubName.trim().toLowerCase() !== 'null') {
+              clubName.trim() !== '' &&
+              clubName.trim() !== 'null' &&
+              clubName.trim() !== '-' &&
+              clubName.trim() !== '.' &&
+              clubName.trim().toLowerCase() !== 'null') {
 
               const trimmedName = clubName.trim();
               if (!allClubs.has(trimmedName)) {

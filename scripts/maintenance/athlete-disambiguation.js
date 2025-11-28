@@ -31,38 +31,38 @@ class AthleteDisambiguationSystem {
 
     // Step 1: Get contaminated athletes from database
     async getContaminatedAthletes() {
-		let allAthletes = [];
-		let from = 0;
-		const pageSize = 1000;
-		
-		while (true) {
-			console.log(`Fetching athletes ${from + 1} to ${from + pageSize}...`);
-			
-			const { data: athletes, error } = await supabase
-				.from('lifters')
-				.select('athlete_name, internal_id, internal_id_2, internal_id_3, internal_id_4, internal_id_5')
-				.or('internal_id_2.not.is.null,internal_id_3.not.is.null,internal_id_4.not.is.null,internal_id_5.not.is.null')
-				.range(from, from + pageSize - 1);
+        let allAthletes = [];
+        let from = 0;
+        const pageSize = 1000;
 
-			if (error) throw new Error(`Database error: ${error.message}`);
-			
-			allAthletes.push(...athletes);
-			console.log(`  Retrieved ${athletes.length} athletes`);
-			
-			if (athletes.length < pageSize) break; // No more records
-			from += pageSize;
-		}
-		
-		console.log(`Found ${allAthletes.length} contaminated athletes to process`);
-		return allAthletes;
-	}
+        while (true) {
+            console.log(`Fetching athletes ${from + 1} to ${from + pageSize}...`);
+
+            const { data: athletes, error } = await supabase
+                .from('usaw_lifters')
+                .select('athlete_name, internal_id, internal_id_2, internal_id_3, internal_id_4, internal_id_5')
+                .or('internal_id_2.not.is.null,internal_id_3.not.is.null,internal_id_4.not.is.null,internal_id_5.not.is.null')
+                .range(from, from + pageSize - 1);
+
+            if (error) throw new Error(`Database error: ${error.message}`);
+
+            allAthletes.push(...athletes);
+            console.log(`  Retrieved ${athletes.length} athletes`);
+
+            if (athletes.length < pageSize) break; // No more records
+            from += pageSize;
+        }
+
+        console.log(`Found ${allAthletes.length} contaminated athletes to process`);
+        return allAthletes;
+    }
 
     // Step 2: Get all competitions for a contaminated athlete
     async getAthleteCompetitions(athleteName) {
-		
-		const { data: competitions, error } = await supabase
-			.from('meet_results')
-			.select(`
+
+        const { data: competitions, error } = await supabase
+            .from('usaw_meet_results')
+            .select(`
 				meet_id,
 				date,
 				age_category,
@@ -70,15 +70,15 @@ class AthleteDisambiguationSystem {
 				lifter_name,
 				lifter_id
 			`)
-			.eq('lifter_name', athleteName)
-			.not('date', 'is', null)
-			.not('age_category', 'is', null);
+            .eq('lifter_name', athleteName)
+            .not('date', 'is', null)
+            .not('age_category', 'is', null);
 
-		if (error) throw new Error(`Error getting competitions for ${athleteName}: ${error.message}`);
-		
-		console.log(`  Found ${competitions.length} competitions for ${athleteName}`);
-		return competitions;
-	}
+        if (error) throw new Error(`Error getting competitions for ${athleteName}: ${error.message}`);
+
+        console.log(`  Found ${competitions.length} competitions for ${athleteName}`);
+        return competitions;
+    }
 
     // Step 3: Build Sport80 URL for a specific competition
     buildSport80URL(ageCategory, weightClass, competitionDate) {
@@ -89,25 +89,25 @@ class AthleteDisambiguationSystem {
             ageCategory,                                        // Just age category
             weightClass,                                        // Just weight class
         ];
-        
+
         console.log(`    Looking for division: ${ageCategory} + ${weightClass}`);
-        
+
         for (const variant of divisionVariants) {
             if (this.divisionCodes[variant]) {
                 console.log(`    Found exact match: "${variant}" -> ${this.divisionCodes[variant]}`);
                 return this.buildSport80URLWithCode(this.divisionCodes[variant], competitionDate);
             }
         }
-        
+
         // Log some available divisions for debugging
         const availableDivisions = Object.keys(this.divisionCodes)
             .filter(div => div.includes(ageCategory) || div.includes(weightClass))
             .slice(0, 3);
-        
+
         console.log(`    No match found. Similar available: ${availableDivisions.join(', ')}`);
         throw new Error(`No division code found for: "${ageCategory} ${weightClass}"`);
     }
-    
+
     buildSport80URLWithCode(weightClassCode, competitionDate) {
         const filters = {
             date_range_start: competitionDate,
@@ -118,10 +118,10 @@ class AthleteDisambiguationSystem {
         const encodedFilters = btoa(JSON.stringify(filters));
         return `https://usaweightlifting.sport80.com/public/rankings/all?filters=${encodedFilters}`;
     }
-	
-	async scrapeInternalIdCompetitions(internalId) {
+
+    async scrapeInternalIdCompetitions(internalId) {
         const memberUrl = `https://usaweightlifting.sport80.com/public/rankings/member/${internalId}`;
-        
+
         try {
             await this.page.goto(memberUrl, { waitUntil: 'networkidle0', timeout: 30000 });
             await new Promise(resolve => setTimeout(resolve, 2000));
@@ -129,14 +129,14 @@ class AthleteDisambiguationSystem {
             const competitions = await this.page.evaluate(() => {
                 const results = [];
                 const rows = document.querySelectorAll('tr, .competition-row');
-                
+
                 for (const row of rows) {
                     const text = row.textContent;
                     // Extract competition date, age category, weight class from row
                     // This will depend on Sport80's member page structure
                     // Return array of competition objects with date, age_category, weight_class
                 }
-                
+
                 return results;
             });
 
@@ -164,13 +164,13 @@ class AthleteDisambiguationSystem {
             // Extract membership numbers for athletes with matching names
             const membershipData = await this.page.evaluate((athleteName) => {
                 const results = [];
-                
+
                 // Look for table rows or list items containing athlete data
                 const rows = document.querySelectorAll('tr, .athlete-row, .result-row');
-                
+
                 for (const row of rows) {
                     const text = row.textContent;
-                    
+
                     // If this row contains the athlete name we're looking for
                     if (text.toLowerCase().includes(athleteName.toLowerCase())) {
                         // Look for membership number patterns (usually numbers)
@@ -184,13 +184,13 @@ class AthleteDisambiguationSystem {
                         }
                     }
                 }
-                
+
                 return results;
             }, targetAthleteName);
 
             // Cache the result
             this.membershipCache.set(cacheKey, membershipData);
-            
+
             console.log(`    Found ${membershipData.length} membership matches for ${targetAthleteName}`);
             return membershipData;
 
@@ -202,44 +202,44 @@ class AthleteDisambiguationSystem {
 
     // Step 5: Process a single contaminated athlete
     async processContaminatedAthlete(athlete) {
-		console.log(`\nProcessing contaminated athlete: ${athlete.athlete_name}`);
-		
-		const competitionMemberships = [];
-		
-		// Collect all internal IDs
-		const internalIds = [
-			athlete.internal_id,
-			athlete.internal_id_2,
-			athlete.internal_id_3,
-			athlete.internal_id_4,
-			athlete.internal_id_5,
-			athlete.internal_id_6,
-			athlete.internal_id_7,
-			athlete.internal_id_8
-		].filter(id => id !== null);
-		
+        console.log(`\nProcessing contaminated athlete: ${athlete.athlete_name}`);
 
-		const competitions = await this.getAthleteCompetitions(athlete.athlete_name);
-		if (competitions.length === 0) {
-			console.log(`  No competitions found for ${athlete.athlete_name}`);
-			return null;
-		}
+        const competitionMemberships = [];
 
-		// Group competitions by internal_id AND membership number
-		const competitionGroups = {};
-		const unidentifiedCompetitions = [];
+        // Collect all internal IDs
+        const internalIds = [
+            athlete.internal_id,
+            athlete.internal_id_2,
+            athlete.internal_id_3,
+            athlete.internal_id_4,
+            athlete.internal_id_5,
+            athlete.internal_id_6,
+            athlete.internal_id_7,
+            athlete.internal_id_8
+        ].filter(id => id !== null);
+
+
+        const competitions = await this.getAthleteCompetitions(athlete.athlete_name);
+        if (competitions.length === 0) {
+            console.log(`  No competitions found for ${athlete.athlete_name}`);
+            return null;
+        }
+
+        // Group competitions by internal_id AND membership number
+        const competitionGroups = {};
+        const unidentifiedCompetitions = [];
 
         // Process each competition
         for (const competition of competitions) {
             try {
                 // Build Sport80 URL
                 const url = this.buildSport80URL(competition.age_category, competition.weight_class, competition.date);
-                
+
                 console.log(`  Processing competition: ${competition.date} - ${competition.age_category} ${competition.weight_class}`);
-                
+
                 // Scrape membership numbers
                 const membershipData = await this.scrapeMembershipNumbers(url, competition.lifter_name);
-                
+
                 // Associate membership numbers with this competition
                 competitionMemberships.push({
                     ...competition,
@@ -276,7 +276,7 @@ class AthleteDisambiguationSystem {
             if (competition.membershipNumbers && competition.membershipNumbers.length > 0) {
                 // Take the first membership number found (could be enhanced to handle multiple)
                 const membershipNumber = competition.membershipNumbers[0].membershipNumber;
-                
+
                 if (!membershipGroups.has(membershipNumber)) {
                     membershipGroups.set(membershipNumber, []);
                 }
@@ -325,7 +325,7 @@ class AthleteDisambiguationSystem {
     async saveAnalysis(athleteData, splitPlan) {
         const timestamp = new Date().toISOString();
         const filename = `athlete_analysis_${athleteData.athleteName.replace(/[^a-zA-Z0-9]/g, '_')}_${timestamp.split('T')[0]}.json`;
-        
+
         const analysisData = {
             timestamp: timestamp,
             athleteName: athleteData.athleteName,
@@ -337,7 +337,7 @@ class AthleteDisambiguationSystem {
 
         fs.writeFileSync(`analysis_output/${filename}`, JSON.stringify(analysisData, null, 2));
         console.log(`  Analysis saved to: ${filename}`);
-        
+
         return analysisData;
     }
 
@@ -384,7 +384,7 @@ class AthleteDisambiguationSystem {
         };
 
         fs.writeFileSync('analysis_output/summary_report.json', JSON.stringify(summary, null, 2));
-        
+
         console.log('\n=== DISAMBIGUATION SUMMARY ===');
         console.log(`Total athletes processed: ${summary.totalProcessed}`);
         console.log(`Athletes requiring split: ${summary.requiresSplit}`);
@@ -403,13 +403,13 @@ class AthleteDisambiguationSystem {
 // Usage example
 async function main() {
     const disambiguator = new AthleteDisambiguationSystem();
-    
+
     try {
         await disambiguator.init();
-        
+
         // Process first 10 contaminated athletes
         await disambiguator.processAllContaminatedAthletes();
-        
+
     } catch (error) {
         console.error('Disambiguation failed:', error);
     } finally {

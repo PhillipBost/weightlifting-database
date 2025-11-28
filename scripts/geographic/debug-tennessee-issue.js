@@ -21,7 +21,7 @@ const WSO_MAPPINGS = {
 
 function findStateByCoordinates(lat, lng) {
     for (const [state, bounds] of Object.entries(STATE_BOUNDARIES)) {
-        if (lat >= bounds.minLat && lat <= bounds.maxLat && 
+        if (lat >= bounds.minLat && lat <= bounds.maxLat &&
             lng >= bounds.minLng && lng <= bounds.maxLng) {
             console.log(`  Coordinates ${lat}, ${lng} fall within ${state}`);
             return state;
@@ -41,38 +41,38 @@ function getCorrectWSO(state) {
 
 async function debugTennesseeIssue() {
     console.log('🔍 Debugging Tennessee WSO assignment issue...');
-    
+
     const { data: tennesseeMeets, error } = await supabase
-        .from('meets')
+        .from('usaw_meets')
         .select('meet_id, Meet, wso_geography, latitude, longitude, city, state')
         .ilike('city', '%Johnson City%')
         .limit(3);
-    
+
     if (error) {
         console.error('Error:', error.message);
         return;
     }
-    
+
     if (!tennesseeMeets || tennesseeMeets.length === 0) {
         console.log('No Johnson City meets found');
         return;
     }
-    
+
     console.log(`\nFound ${tennesseeMeets.length} Johnson City meets:`);
-    
+
     for (const meet of tennesseeMeets) {
         console.log(`\n📍 ${meet.Meet}`);
         console.log(`   Current WSO: ${meet.wso_geography}`);
         console.log(`   Location: ${meet.city}, ${meet.state}`);
         console.log(`   Coordinates: ${meet.latitude}, ${meet.longitude}`);
-        
+
         const lat = parseFloat(meet.latitude);
         const lng = parseFloat(meet.longitude);
-        
+
         if (!isNaN(lat) && !isNaN(lng)) {
             const actualState = findStateByCoordinates(lat, lng);
             const correctWSO = getCorrectWSO(actualState);
-            
+
             console.log(`   Actual state by coordinates: ${actualState}`);
             console.log(`   Correct WSO should be: ${correctWSO}`);
             console.log(`   Status: ${meet.wso_geography === correctWSO ? '✅ CORRECT' : '❌ INCORRECT'}`);

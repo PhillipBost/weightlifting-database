@@ -60,10 +60,10 @@ function ensureDirectories() {
 function log(message) {
     const timestamp = new Date().toISOString();
     const logMessage = `[${timestamp}] ${message}\n`;
-    
+
     // Console output
     console.log(message);
-    
+
     // File output
     fs.appendFileSync(LOG_FILE, logMessage);
 }
@@ -71,14 +71,14 @@ function log(message) {
 // Load match assignments
 function loadMatchAssignments() {
     log('Loading match assignments...');
-    
+
     if (!fs.existsSync(MATCH_FILE)) {
         throw new Error(`Match assignments file not found: ${MATCH_FILE}`);
     }
-    
+
     const content = fs.readFileSync(MATCH_FILE, 'utf8');
     const data = JSON.parse(content);
-    
+
     log(`Loaded ${data.data.length} match assignments`);
     return data.data;
 }
@@ -86,15 +86,15 @@ function loadMatchAssignments() {
 // Load orphan results
 function loadOrphanResults() {
     log('Loading orphan results...');
-    
+
     if (!fs.existsSync(ORPHAN_FILE)) {
         log('No orphan results file found - assuming all results were matched');
         return [];
     }
-    
+
     const content = fs.readFileSync(ORPHAN_FILE, 'utf8');
     const data = JSON.parse(content);
-    
+
     log(`Loaded ${data.data.length} orphan results`);
     return data.data;
 }
@@ -102,10 +102,10 @@ function loadOrphanResults() {
 // Group matches by internal_id to determine new lifter creation needs
 function analyzeLifterCreationNeeds(matches) {
     const athleteMap = new Map();
-    
+
     for (const match of matches) {
         const internalId = match.matched_to.internal_id;
-        
+
         if (!athleteMap.has(internalId)) {
             athleteMap.set(internalId, {
                 internal_id: internalId,
@@ -118,28 +118,28 @@ function analyzeLifterCreationNeeds(matches) {
                 meet_count: 0
             });
         }
-        
+
         const athlete = athleteMap.get(internalId);
         athlete.result_ids.push(match.result_id);
         athlete.meet_count++;
     }
-    
+
     return athleteMap;
 }
 
 // Create cleanup plan
 function createCleanupPlan(matches, orphans) {
     log('\nAnalyzing cleanup requirements...');
-    
+
     const athleteMap = analyzeLifterCreationNeeds(matches);
-    
+
     const plan = {
         new_lifters_to_create: [],
         existing_lifters_to_update: [],
         meet_results_to_update: [],
         orphan_results: orphans
     };
-    
+
     // Separate athletes needing new lifter_ids from those keeping existing ones
     for (const [internalId, athlete] of athleteMap) {
         if (athlete.needs_new_lifter_id) {
@@ -163,13 +163,13 @@ function createCleanupPlan(matches, orphans) {
             });
         }
     }
-    
+
     // Create meet result update list
     for (const match of matches) {
         plan.meet_results_to_update.push({
             result_id: match.result_id,
             current_lifter_id: match.current_lifter_id,
-            new_lifter_id: match.matched_to.needs_new_lifter_id ? 
+            new_lifter_id: match.matched_to.needs_new_lifter_id ?
                 `NEW_${match.matched_to.internal_id}` : // Placeholder until created
                 match.matched_to.contaminated_lifter_id,
             internal_id: match.matched_to.internal_id,
@@ -178,7 +178,7 @@ function createCleanupPlan(matches, orphans) {
             date: match.date
         });
     }
-    
+
     return plan;
 }
 
@@ -187,10 +187,10 @@ function displayCleanupPlan(plan) {
     console.log('\n' + '='.repeat(60));
     console.log('📋 DATABASE RECONSTRUCTION PLAN');
     console.log('='.repeat(60));
-    
+
     console.log('\n1️⃣ NEW LIFTER RECORDS TO CREATE:');
     console.log(`   Total: ${plan.new_lifters_to_create.length} new lifter records\n`);
-    
+
     for (const lifter of plan.new_lifters_to_create) {
         console.log(`   • ${lifter.athlete_name} (ID: ${lifter.internal_id})`);
         console.log(`     - Membership: ${lifter.membership_number}`);
@@ -198,20 +198,20 @@ function displayCleanupPlan(plan) {
         console.log(`     - Will reassign ${lifter.meet_count} meet results`);
         console.log();
     }
-    
+
     console.log('\n2️⃣ EXISTING LIFTERS TO UPDATE:');
     console.log(`   Total: ${plan.existing_lifters_to_update.length} lifters keeping current ID\n`);
-    
+
     for (const lifter of plan.existing_lifters_to_update) {
         console.log(`   • ${lifter.athlete_name} (ID: ${lifter.internal_id})`);
         console.log(`     - Keeping lifter_id: ${lifter.lifter_id}`);
         console.log(`     - Has ${lifter.meet_count} correctly assigned results`);
         console.log();
     }
-    
+
     console.log('\n3️⃣ MEET RESULTS TO UPDATE:');
     console.log(`   Total: ${plan.meet_results_to_update.length} results to reassign\n`);
-    
+
     // Group by athlete for display
     const resultsByAthlete = {};
     for (const result of plan.meet_results_to_update) {
@@ -220,21 +220,21 @@ function displayCleanupPlan(plan) {
         }
         resultsByAthlete[result.athlete_name].push(result);
     }
-    
+
     for (const [name, results] of Object.entries(resultsByAthlete)) {
         console.log(`   ${name}: ${results.length} results`);
     }
-    
+
     if (plan.orphan_results.length > 0) {
         console.log('\n⚠️ ORPHAN RESULTS (need manual review):');
         console.log(`   Total: ${plan.orphan_results.length} unmatched results\n`);
-        
+
         for (const orphan of plan.orphan_results) {
             console.log(`   • ${orphan.athlete_name} - ${orphan.meet_name} (${orphan.date})`);
             console.log(`     Reason: ${orphan.reason}`);
         }
     }
-    
+
     console.log('\n' + '='.repeat(60));
 }
 
@@ -244,7 +244,7 @@ async function getUserConfirmation(message) {
         input: process.stdin,
         output: process.stdout
     });
-    
+
     return new Promise((resolve) => {
         rl.question(`\n${message} (yes/no): `, (answer) => {
             rl.close();
@@ -257,14 +257,14 @@ async function getUserConfirmation(message) {
 async function createNewLifterRecord(lifterData, scrapedProfiles) {
     // Find the scraped profile data for this internal_id
     const profile = scrapedProfiles.find(p => p.internal_id === lifterData.internal_id);
-    
+
     const newLifterData = {
         athlete_name: lifterData.athlete_name,
         internal_id: lifterData.internal_id,
         membership_number: null, // Don't copy contaminated membership numbers - leave null for manual assignment
         birth_year: lifterData.birth_year
     };
-    
+
     // Add additional fields if available from scraped profile
     if (profile) {
         if (profile.profile_data.gender) newLifterData.gender = profile.profile_data.gender;
@@ -276,44 +276,44 @@ async function createNewLifterRecord(lifterData, scrapedProfiles) {
             newLifterData.national_rank = parseInt(profile.profile_data.national_rank);
         }
     }
-    
+
     // Check if lifter with this internal_id already exists
-	const { data: existingLifter, error: findError } = await supabase
-		.from('lifters')
-		.select('lifter_id, athlete_name')
-		.eq('internal_id', lifterData.internal_id)
-		.single();
+    const { data: existingLifter, error: findError } = await supabase
+        .from('usaw_lifters')
+        .select('lifter_id, athlete_name')
+        .eq('internal_id', lifterData.internal_id)
+        .single();
 
-	if (findError && findError.code !== 'PGRST116') {
-		throw new Error(`Failed to check for existing lifter: ${findError.message}`);
-	}
+    if (findError && findError.code !== 'PGRST116') {
+        throw new Error(`Failed to check for existing lifter: ${findError.message}`);
+    }
 
-	if (existingLifter) {
-		log(`   ↻ Lifter already exists for internal_id ${lifterData.internal_id}: ${existingLifter.athlete_name} (lifter_id: ${existingLifter.lifter_id})`);
-		return existingLifter.lifter_id;
-	}
+    if (existingLifter) {
+        log(`   ↻ Lifter already exists for internal_id ${lifterData.internal_id}: ${existingLifter.athlete_name} (lifter_id: ${existingLifter.lifter_id})`);
+        return existingLifter.lifter_id;
+    }
 
-	// Create new lifter only if none exists
-	const { data, error } = await supabase
-		.from('lifters')
-		.insert(newLifterData)
-		.select('lifter_id')
-		.single();
+    // Create new lifter only if none exists
+    const { data, error } = await supabase
+        .from('usaw_lifters')
+        .insert(newLifterData)
+        .select('lifter_id')
+        .single();
 
-	if (error) {
-		throw new Error(`Failed to create lifter: ${error.message}`);
-	}
+    if (error) {
+        throw new Error(`Failed to create lifter: ${error.message}`);
+    }
 
-	return data.lifter_id;
+    return data.lifter_id;
 }
 
 // Update meet result with new lifter_id
 async function updateMeetResult(resultId, newLifterId) {
     const { error } = await supabase
-        .from('meet_results')
+        .from('usaw_meet_results')
         .update({ lifter_id: newLifterId })
         .eq('result_id', resultId);
-    
+
     if (error) {
         throw new Error(`Failed to update result ${resultId}: ${error.message}`);
     }
@@ -323,20 +323,20 @@ async function updateMeetResult(resultId, newLifterId) {
 async function cleanupOriginalLifterRecord(originalLifterId, internalIdsToRemove) {
     // Build the update object to clear specific internal_id fields
     const updateData = {};
-    
+
     // Clear the internal_id fields that correspond to the split-off internal_ids
     for (const internalId of internalIdsToRemove) {
         // Find which internal_id field contains this value and clear it
         const { data: currentRecord, error: fetchError } = await supabase
-            .from('lifters')
+            .from('usaw_lifters')
             .select('internal_id, internal_id_2, internal_id_3, internal_id_4, internal_id_5, internal_id_6, internal_id_7, internal_id_8')
             .eq('lifter_id', originalLifterId)
             .single();
-        
+
         if (fetchError) {
             throw new Error(`Failed to fetch current lifter record ${originalLifterId}: ${fetchError.message}`);
         }
-        
+
         // Clear the field that contains this internal_id
         if (currentRecord.internal_id_2 === internalId) updateData.internal_id_2 = null;
         if (currentRecord.internal_id_3 === internalId) updateData.internal_id_3 = null;
@@ -346,18 +346,18 @@ async function cleanupOriginalLifterRecord(originalLifterId, internalIdsToRemove
         if (currentRecord.internal_id_7 === internalId) updateData.internal_id_7 = null;
         if (currentRecord.internal_id_8 === internalId) updateData.internal_id_8 = null;
     }
-    
+
     // Only update if we have fields to clear
     if (Object.keys(updateData).length > 0) {
         const { error } = await supabase
-            .from('lifters')
+            .from('usaw_lifters')
             .update(updateData)
             .eq('lifter_id', originalLifterId);
-        
+
         if (error) {
             throw new Error(`Failed to cleanup lifter record ${originalLifterId}: ${error.message}`);
         }
-        
+
         log(`   🧹 Cleared ${Object.keys(updateData).join(', ')} from lifter_id ${originalLifterId}`);
     }
 }
@@ -371,15 +371,15 @@ async function executeCleanupPlan(plan) {
         meet_results_updated: [],
         errors: []
     };
-    
+
     try {
         // Step 1: Create new lifter records
         if (plan.new_lifters_to_create.length > 0) {
             log('\n📝 Creating new lifter records...');
-            
+
             // Load scraped profiles for additional data
             const scrapedProfiles = loadScrapedProfilesForUpdate();
-            
+
             for (const lifterToCreate of plan.new_lifters_to_create) {
                 try {
                     if (CURRENT_MODE === EXECUTION_MODE.DRY_RUN) {
@@ -389,7 +389,7 @@ async function executeCleanupPlan(plan) {
                         const newLifterId = await createNewLifterRecord(lifterToCreate, scrapedProfiles);
                         lifterToCreate.new_lifter_id = newLifterId;
                         log(`   ↻ Using lifter_id ${newLifterId} for ${lifterToCreate.athlete_name} (internal_id: ${lifterToCreate.internal_id})`);
-                        
+
                         executionReport.new_lifters_created.push({
                             internal_id: lifterToCreate.internal_id,
                             new_lifter_id: newLifterId,
@@ -406,75 +406,75 @@ async function executeCleanupPlan(plan) {
                 }
             }
         }
-        
+
         // Step 2: Update meet results
         if (plan.meet_results_to_update.length > 0) {
             log('\n🔄 Updating meet results...');
-            
+
             let updateCount = 0;
             for (const result of plan.meet_results_to_update) {
-				try {
-					// Determine the actual new lifter_id
-					let newLifterId = result.new_lifter_id;
-					
-					// Handle the case where new_lifter_id is a number instead of string
-					if (typeof result.new_lifter_id === 'number') {
-						newLifterId = result.new_lifter_id;
-						// Skip the string processing for numeric lifter_ids
-					} else if (result.new_lifter_id && typeof result.new_lifter_id === 'string' && result.new_lifter_id.startsWith('NEW_')) {
-						// Find the newly created lifter_id
-						const internalId = parseInt(result.new_lifter_id.replace('NEW_', ''));
-						const newLifter = plan.new_lifters_to_create.find(l => l.internal_id === internalId);
-						newLifterId = newLifter?.new_lifter_id;
-						
-						if (!newLifterId) {
-							throw new Error(`Could not find new lifter_id for internal_id ${internalId}`);
-						}
-					} else if (result.matched_to?.needs_new_lifter_id) {
-						// Handle missing new_lifter_id - create the expected format
-						const internalId = result.matched_to.internal_id;
-						const newLifter = plan.new_lifters_to_create.find(l => l.internal_id === internalId);
-						newLifterId = newLifter?.new_lifter_id;
-					} else {
-						// Use existing lifter_id
-						newLifterId = result.current_lifter_id;
-					}
-					
-					if (CURRENT_MODE === EXECUTION_MODE.DRY_RUN) {
-						log(`   [DRY RUN] Would update result ${result.result_id}: lifter_id ${result.current_lifter_id} → ${newLifterId}`);
-					} else {
-						await updateMeetResult(result.result_id, newLifterId);
-						updateCount++;
-						
-						if (updateCount % 10 === 0) {
-							log(`   ... updated ${updateCount}/${plan.meet_results_to_update.length} results`);
-						}
-						
-						executionReport.meet_results_updated.push({
-							result_id: result.result_id,
-							old_lifter_id: result.current_lifter_id,
-							new_lifter_id: newLifterId
-						});
-					}
-				} catch (error) {
-					log(`   ❌ Failed to update result ${result.result_id}: ${error.message}`);
-					executionReport.errors.push({
-						operation: 'UPDATE_RESULT',
-						result_id: result.result_id,
-						error: error.message
-					});
-				}
-			}
-            
+                try {
+                    // Determine the actual new lifter_id
+                    let newLifterId = result.new_lifter_id;
+
+                    // Handle the case where new_lifter_id is a number instead of string
+                    if (typeof result.new_lifter_id === 'number') {
+                        newLifterId = result.new_lifter_id;
+                        // Skip the string processing for numeric lifter_ids
+                    } else if (result.new_lifter_id && typeof result.new_lifter_id === 'string' && result.new_lifter_id.startsWith('NEW_')) {
+                        // Find the newly created lifter_id
+                        const internalId = parseInt(result.new_lifter_id.replace('NEW_', ''));
+                        const newLifter = plan.new_lifters_to_create.find(l => l.internal_id === internalId);
+                        newLifterId = newLifter?.new_lifter_id;
+
+                        if (!newLifterId) {
+                            throw new Error(`Could not find new lifter_id for internal_id ${internalId}`);
+                        }
+                    } else if (result.matched_to?.needs_new_lifter_id) {
+                        // Handle missing new_lifter_id - create the expected format
+                        const internalId = result.matched_to.internal_id;
+                        const newLifter = plan.new_lifters_to_create.find(l => l.internal_id === internalId);
+                        newLifterId = newLifter?.new_lifter_id;
+                    } else {
+                        // Use existing lifter_id
+                        newLifterId = result.current_lifter_id;
+                    }
+
+                    if (CURRENT_MODE === EXECUTION_MODE.DRY_RUN) {
+                        log(`   [DRY RUN] Would update result ${result.result_id}: lifter_id ${result.current_lifter_id} → ${newLifterId}`);
+                    } else {
+                        await updateMeetResult(result.result_id, newLifterId);
+                        updateCount++;
+
+                        if (updateCount % 10 === 0) {
+                            log(`   ... updated ${updateCount}/${plan.meet_results_to_update.length} results`);
+                        }
+
+                        executionReport.meet_results_updated.push({
+                            result_id: result.result_id,
+                            old_lifter_id: result.current_lifter_id,
+                            new_lifter_id: newLifterId
+                        });
+                    }
+                } catch (error) {
+                    log(`   ❌ Failed to update result ${result.result_id}: ${error.message}`);
+                    executionReport.errors.push({
+                        operation: 'UPDATE_RESULT',
+                        result_id: result.result_id,
+                        error: error.message
+                    });
+                }
+            }
+
             if (CURRENT_MODE !== EXECUTION_MODE.DRY_RUN) {
                 log(`   ✅ Updated ${updateCount} meet results`);
             }
         }
-        
+
         // Step 3: Clean up original lifter records by removing extra internal_ids
         if (plan.new_lifters_to_create.length > 0) {
             log('\n🧹 Cleaning up original lifter records...');
-            
+
             // Group new lifters by their original (contaminated) lifter_id
             const cleanupGroups = {};
             for (const newLifter of plan.new_lifters_to_create) {
@@ -484,7 +484,7 @@ async function executeCleanupPlan(plan) {
                 }
                 cleanupGroups[originalId].push(newLifter.internal_id);
             }
-            
+
             // Clean up each original lifter record
             for (const [originalLifterId, internalIdsToRemove] of Object.entries(cleanupGroups)) {
                 try {
@@ -504,7 +504,7 @@ async function executeCleanupPlan(plan) {
                 }
             }
         }
-        
+
     } catch (error) {
         log(`\n❌ Critical error during execution: ${error.message}`);
         executionReport.errors.push({
@@ -512,7 +512,7 @@ async function executeCleanupPlan(plan) {
             error: error.message
         });
     }
-    
+
     executionReport.completed_at = new Date().toISOString();
     return executionReport;
 }
@@ -521,10 +521,10 @@ async function executeCleanupPlan(plan) {
 function loadScrapedProfilesForUpdate() {
     const scrapedDir = './output/successful_scrapes';
     const profiles = [];
-    
+
     if (fs.existsSync(scrapedDir)) {
         const files = fs.readdirSync(scrapedDir).filter(f => f.endsWith('.json'));
-        
+
         for (const file of files) {
             const content = fs.readFileSync(path.join(scrapedDir, file), 'utf8');
             const data = JSON.parse(content);
@@ -533,7 +533,7 @@ function loadScrapedProfilesForUpdate() {
             }
         }
     }
-    
+
     return profiles;
 }
 
@@ -553,7 +553,7 @@ function saveExecutionReport(report, plan) {
         },
         execution_results: report
     };
-    
+
     fs.writeFileSync(REPORT_FILE, JSON.stringify(fullReport, null, 2));
     log(`\n📄 Execution report saved to: ${REPORT_FILE}`);
 }
@@ -561,30 +561,30 @@ function saveExecutionReport(report, plan) {
 // Main execution function
 async function main() {
     const startTime = Date.now();
-    
+
     try {
         // Setup
         ensureDirectories();
         log('🚀 Starting database reconstruction process');
         log(`📋 Execution mode: ${CURRENT_MODE}`);
-        log('=' .repeat(60));
-        
+        log('='.repeat(60));
+
         // Load data
         const matches = loadMatchAssignments();
         const orphans = loadOrphanResults();
-        
+
         // Create cleanup plan
         const plan = createCleanupPlan(matches, orphans);
-        
+
         // Display plan
         displayCleanupPlan(plan);
-        
+
         // Get confirmation if in interactive mode
         if (CURRENT_MODE === EXECUTION_MODE.INTERACTIVE) {
             const proceed = await getUserConfirmation(
                 '⚠️ This will modify the database. Do you want to proceed?'
             );
-            
+
             if (!proceed) {
                 log('\n❌ Operation cancelled by user');
                 process.exit(0);
@@ -592,13 +592,13 @@ async function main() {
         } else if (CURRENT_MODE === EXECUTION_MODE.DRY_RUN) {
             log('\n🔍 Running in DRY RUN mode - no changes will be made');
         }
-        
+
         // Execute the plan
         const executionReport = await executeCleanupPlan(plan);
-        
+
         // Save report
         saveExecutionReport(executionReport, plan);
-        
+
         // Final summary
         const processingTime = Date.now() - startTime;
         log('\n' + '='.repeat(60));
@@ -607,13 +607,13 @@ async function main() {
         log(`   Meet results updated: ${executionReport.meet_results_updated.length}`);
         log(`   Errors encountered: ${executionReport.errors.length}`);
         log(`   Processing time: ${processingTime}ms`);
-        
+
         if (plan.orphan_results.length > 0) {
             log(`\n⚠️ Remember to manually review ${plan.orphan_results.length} orphan results`);
         }
-        
+
         return executionReport;
-        
+
     } catch (error) {
         log(`\n❌ Process failed: ${error.message}`);
         log(`🔍 Stack trace: ${error.stack}`);

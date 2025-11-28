@@ -5,8 +5,8 @@ require('dotenv').config();
 
 // Initialize Supabase client
 const supabase = createClient(
-  process.env.SUPABASE_URL,
-  process.env.SUPABASE_SECRET_KEY
+    process.env.SUPABASE_URL,
+    process.env.SUPABASE_SECRET_KEY
 );
 
 async function populateClubRollingMetricsEfficient() {
@@ -45,7 +45,7 @@ async function populateClubRollingMetricsEfficient() {
             console.log(`📊 Fetching data for window: ${windowStartStr} to ${snapshotDate}`);
 
             const { data: windowData, error: windowError } = await supabase
-                .from('meet_results')
+                .from('usaw_meet_results')
                 .select('club_name, lifter_id, result_id')
                 .gte('date', windowStartStr)
                 .lt('date', snapshotDate)
@@ -101,7 +101,7 @@ async function populateClubRollingMetricsEfficient() {
             console.log(`💾 Inserting batch ${Math.floor(i / batchSize) + 1}/${Math.ceil(allResults.length / batchSize)} (${batch.length} records)...`);
 
             const { error: insertError } = await supabase
-                .from('club_rolling_metrics')
+                .from('usaw_club_rolling_metrics')
                 .upsert(batch, {
                     onConflict: 'club_name,snapshot_month'
                 });
@@ -141,7 +141,7 @@ async function showSampleResults() {
     try {
         // Get a sample of results
         const { data: sample, error } = await supabase
-            .from('club_rolling_metrics')
+            .from('usaw_club_rolling_metrics')
             .select('*')
             .order('active_members_12mo', { ascending: false })
             .limit(10);
@@ -162,7 +162,7 @@ async function showSampleResults() {
 
         // Get summary stats
         const { count, error: countError } = await supabase
-            .from('club_rolling_metrics')
+            .from('usaw_club_rolling_metrics')
             .select('*', { count: 'exact', head: true });
 
         if (!countError && count) {

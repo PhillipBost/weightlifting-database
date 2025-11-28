@@ -15,7 +15,7 @@ const supabase = createClient(
 
   while (true) {
     const { data, error } = await supabase
-      .from('meets')
+      .from('usaw_meets')
       .select('meet_id, Meet, Date, address, geocode_success, geocode_error')
       .not('address', 'is', null)
       .range(from, from + pageSize - 1);

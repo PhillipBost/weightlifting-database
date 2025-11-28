@@ -41,7 +41,7 @@ async function getAllClubsRobust() {
       console.log(`📅 Fetching clubs active between ${startDate} and ${endDate}...`);
 
       const { data: periodData, error: periodError } = await supabase
-        .from('meet_results')
+        .from('usaw_meet_results')
         .select('club_name')
         .gte('date', startDate)
         .lte('date', endDate)
@@ -61,10 +61,10 @@ async function getAllClubsRobust() {
         periodData.forEach(row => {
           const clubName = row.club_name;
           if (clubName &&
-              clubName.trim() !== '' &&
-              clubName.trim() !== 'null' &&
-              clubName.trim() !== '-' &&
-              clubName.trim().toLowerCase() !== 'null') {
+            clubName.trim() !== '' &&
+            clubName.trim() !== 'null' &&
+            clubName.trim() !== '-' &&
+            clubName.trim().toLowerCase() !== 'null') {
             allClubs.add(clubName.trim());
           }
         });

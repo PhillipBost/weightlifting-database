@@ -23,7 +23,7 @@ class WSOGeographicUtils {
         }
 
         const { data, error } = await this.supabase
-            .from('wso_information')
+            .from('usaw_wso_information')
             .select('*')
             .eq('active_status', true);
 
@@ -53,7 +53,7 @@ class WSOGeographicUtils {
         }
 
         const { data, error } = await this.supabase
-            .from('wso_information')
+            .from('usaw_wso_information')
             .select('*')
             .eq('name', wsoName)
             .eq('active_status', true)
@@ -82,11 +82,11 @@ class WSOGeographicUtils {
         const dLat = (lat2 - lat1) * Math.PI / 180;
         const dLng = (lng2 - lng1) * Math.PI / 180;
 
-        const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
-                  Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
-                  Math.sin(dLng/2) * Math.sin(dLng/2);
+        const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+            Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+            Math.sin(dLng / 2) * Math.sin(dLng / 2);
 
-        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
         const distance = R * c;
 
         return Math.round(distance * 10) / 10; // Round to 1 decimal place

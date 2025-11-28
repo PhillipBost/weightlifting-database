@@ -161,7 +161,7 @@ function ensureDirectories() {
 function log(message) {
     const timestamp = new Date().toISOString();
     const logMessage = `[${timestamp}] ${message}\n`;
-    
+
     console.log(message);
     fs.appendFileSync(LOG_FILE, logMessage);
 }
@@ -181,12 +181,12 @@ function parseArguments() {
 function findStateByCoordinates(lat, lng) {
     const matches = [];
     for (const [state, bounds] of Object.entries(STATE_BOUNDARIES)) {
-        if (lat >= bounds.minLat && lat <= bounds.maxLat && 
+        if (lat >= bounds.minLat && lat <= bounds.maxLat &&
             lng >= bounds.minLng && lng <= bounds.maxLng) {
             matches.push(state);
         }
     }
-    
+
     if (matches.length === 0) {
         return null;
     } else if (matches.length === 1) {
@@ -195,19 +195,19 @@ function findStateByCoordinates(lat, lng) {
         // Handle conflicts by choosing the best match based on distance from center
         let bestMatch = matches[0];
         let bestDistance = Infinity;
-        
+
         for (const state of matches) {
             const bounds = STATE_BOUNDARIES[state];
             const centerLat = (bounds.minLat + bounds.maxLat) / 2;
             const centerLng = (bounds.minLng + bounds.maxLng) / 2;
             const distance = Math.sqrt(Math.pow(lat - centerLat, 2) + Math.pow(lng - centerLng, 2));
-            
+
             if (distance < bestDistance) {
                 bestDistance = distance;
                 bestMatch = state;
             }
         }
-        
+
         return bestMatch;
     }
 }
@@ -227,34 +227,34 @@ function assignCaliforniaWSO(lat, lng) {
 // Assign WSO based on state and coordinates
 function assignCorrectWSO(state, lat, lng) {
     if (!state) return null;
-    
+
     // Special handling for California - use coordinates for regional assignment
     if (state === 'California') {
         return assignCaliforniaWSO(lat, lng);
     }
-    
+
     // Find WSO that includes this state
     for (const [wso, states] of Object.entries(WSO_MAPPINGS)) {
         if (states.includes(state)) {
             return wso;
         }
     }
-    
+
     return null;
 }
 
 // Validate if current WSO assignment is correct
 function validateWSOAssignment(currentWSO, actualState, lat, lng) {
     if (!currentWSO || !actualState) return { isValid: false, reason: 'Missing data' };
-    
+
     const correctWSO = assignCorrectWSO(actualState, lat, lng);
-    
+
     if (!correctWSO) {
         return { isValid: false, reason: 'Cannot determine correct WSO' };
     }
-    
+
     const isValid = currentWSO === correctWSO;
-    
+
     return {
         isValid,
         correctWSO,
@@ -273,7 +273,7 @@ async function getMeetsForAnalysis() {
 
     while (hasMore) {
         const { data: batchData, error } = await supabase
-            .from('meets')
+            .from('usaw_meets')
             .select('meet_id, Meet, wso_geography, latitude, longitude, address, city, state, country')
             .not('wso_geography', 'is', null)
             .not('latitude', 'is', null)
@@ -286,7 +286,7 @@ async function getMeetsForAnalysis() {
 
         if (batchData && batchData.length > 0) {
             allMeets.push(...batchData);
-            log(`  Fetched batch ${Math.floor(start/batchSize) + 1}: ${batchData.length} meets (Total: ${allMeets.length})`);
+            log(`  Fetched batch ${Math.floor(start / batchSize) + 1}: ${batchData.length} meets (Total: ${allMeets.length})`);
 
             hasMore = batchData.length === batchSize;
             start += batchSize;
@@ -302,11 +302,11 @@ async function getMeetsForAnalysis() {
 // Analyze contamination in WSO assignments
 async function analyzeContamination() {
     log('🧬 Analyzing WSO geography contamination...');
-    
+
     const meets = await getMeetsForAnalysis();
     const contaminated = [];
     const validAssignments = [];
-    
+
     for (const meet of meets) {
         const lat = parseFloat(meet.latitude);
         const lng = parseFloat(meet.longitude);
@@ -341,7 +341,7 @@ async function analyzeContamination() {
 
         // Validate current WSO assignment
         const validation = validateWSOAssignment(meet.wso_geography, actualState, lat, lng);
-        
+
         if (!validation.isValid) {
             contaminated.push({
                 meet_id: meet.meet_id,
@@ -363,17 +363,17 @@ async function analyzeContamination() {
             });
         }
     }
-    
+
     // Generate contamination statistics by WSO
     const contaminationStats = {};
     const wsoTotals = {};
-    
+
     // Count total meets per WSO
     for (const meet of meets) {
         const wso = meet.wso_geography;
         wsoTotals[wso] = (wsoTotals[wso] || 0) + 1;
     }
-    
+
     // Count contaminated meets per WSO
     for (const contam of contaminated) {
         const wso = contam.current_wso;
@@ -391,15 +391,15 @@ async function analyzeContamination() {
             correct_wso: contam.correct_wso
         });
     }
-    
+
     // Calculate contamination rates
     for (const [wso, stats] of Object.entries(contaminationStats)) {
         stats.contamination_rate = ((stats.contaminated_meets / stats.total_meets) * 100).toFixed(1);
     }
-    
+
     log(`Found ${contaminated.length} contaminated meets out of ${meets.length} total`);
     log(`Found ${validAssignments.length} correctly assigned meets`);
-    
+
     return {
         contaminated,
         validAssignments,
@@ -416,9 +416,9 @@ async function analyzeContamination() {
 // Fix contaminated WSO assignments in meets table
 async function fixMeetsTable(contaminatedMeets, dryRun = false) {
     log(`🔧 ${dryRun ? 'DRY RUN: Would fix' : 'Fixing'} ${contaminatedMeets.length} contaminated meets...`);
-    
+
     const fixResults = [];
-    
+
     for (const meet of contaminatedMeets) {
         const fixResult = {
             meet_id: meet.meet_id,
@@ -428,14 +428,14 @@ async function fixMeetsTable(contaminatedMeets, dryRun = false) {
             success: false,
             error: null
         };
-        
+
         if (!dryRun) {
             try {
                 const { error } = await supabase
-                    .from('meets')
+                    .from('usaw_meets')
                     .update({ wso_geography: meet.correct_wso })
                     .eq('meet_id', meet.meet_id);
-                
+
                 if (error) {
                     fixResult.error = error.message;
                     log(`❌ Failed to fix meet ${meet.meet_id}: ${error.message}`);
@@ -451,27 +451,27 @@ async function fixMeetsTable(contaminatedMeets, dryRun = false) {
             fixResult.success = true; // For dry run
             log(`🔍 Would fix meet ${meet.meet_id}: ${meet.current_wso} → ${meet.correct_wso}`);
         }
-        
+
         fixResults.push(fixResult);
     }
-    
+
     const successCount = fixResults.filter(r => r.success).length;
     const failureCount = fixResults.filter(r => !r.success).length;
-    
+
     log(`${dryRun ? 'DRY RUN: Would have fixed' : 'Fixed'} ${successCount} meets successfully`);
     if (failureCount > 0) {
         log(`❌ Failed to fix ${failureCount} meets`);
     }
-    
+
     return fixResults;
 }
 
 // Update meet_results table with corrected WSO geography
 async function updateMeetResultsTable(contaminatedMeets, dryRun = false) {
     log(`🔄 ${dryRun ? 'DRY RUN: Would update' : 'Updating'} meet_results table...`);
-    
+
     const updateResults = [];
-    
+
     for (const meet of contaminatedMeets) {
         const updateResult = {
             meet_id: meet.meet_id,
@@ -482,30 +482,30 @@ async function updateMeetResultsTable(contaminatedMeets, dryRun = false) {
             success: false,
             error: null
         };
-        
+
         if (!dryRun) {
             try {
                 // First count how many records will be affected
                 const { count, error: countError } = await supabase
-                    .from('meet_results')
+                    .from('usaw_meet_results')
                     .select('*', { count: 'exact', head: true })
                     .eq('meet_id', meet.meet_id);
-                
+
                 if (countError) {
                     updateResult.error = `Count error: ${countError.message}`;
                     log(`❌ Failed to count records for meet ${meet.meet_id}: ${countError.message}`);
                     updateResults.push(updateResult);
                     continue;
                 }
-                
+
                 updateResult.affected_records = count;
-                
+
                 // Update the records
                 const { error: updateError } = await supabase
-                    .from('meet_results')
+                    .from('usaw_meet_results')
                     .update({ wso: meet.correct_wso })
                     .eq('meet_id', meet.meet_id);
-                
+
                 if (updateError) {
                     updateResult.error = updateError.message;
                     log(`❌ Failed to update meet_results for meet ${meet.meet_id}: ${updateError.message}`);
@@ -521,10 +521,10 @@ async function updateMeetResultsTable(contaminatedMeets, dryRun = false) {
             // For dry run, still count the records that would be affected
             try {
                 const { count, error: countError } = await supabase
-                    .from('meet_results')
+                    .from('usaw_meet_results')
                     .select('*', { count: 'exact', head: true })
                     .eq('meet_id', meet.meet_id);
-                
+
                 if (!countError) {
                     updateResult.affected_records = count;
                     updateResult.success = true;
@@ -534,19 +534,19 @@ async function updateMeetResultsTable(contaminatedMeets, dryRun = false) {
                 log(`⚠️ Could not count records for meet ${meet.meet_id}: ${error.message}`);
             }
         }
-        
+
         updateResults.push(updateResult);
     }
-    
+
     const totalRecordsAffected = updateResults.reduce((sum, r) => sum + r.affected_records, 0);
     const successCount = updateResults.filter(r => r.success).length;
     const failureCount = updateResults.filter(r => !r.success).length;
-    
+
     log(`${dryRun ? 'DRY RUN: Would have updated' : 'Updated'} ${totalRecordsAffected} meet_results records across ${successCount} meets`);
     if (failureCount > 0) {
         log(`❌ Failed to update ${failureCount} meets in meet_results`);
     }
-    
+
     return updateResults;
 }
 
@@ -566,42 +566,42 @@ function generateReport(analysisResult, fixResults = null, updateResults = null,
         fix_results: fixResults || null,
         update_results: updateResults || null
     };
-    
+
     return report;
 }
 
 // Main execution function
 async function main() {
     const startTime = Date.now();
-    
+
     try {
         ensureDirectories();
         log('🔍 WSO Geography Contamination Fix Script Started');
-        log('=' .repeat(60));
-        
+        log('='.repeat(60));
+
         const options = parseArguments();
-        
+
         if (!options.analyze && !options.fix && !options.validate && !options.dryRun) {
             log('❌ Please specify operation: --analyze, --fix, --validate, or --dry-run');
             process.exit(1);
         }
-        
+
         // Step 1: Analyze contamination
         const analysisResult = await analyzeContamination();
-        
+
         // Display contamination summary
         log('\n📊 CONTAMINATION ANALYSIS RESULTS');
-        log('=' .repeat(40));
+        log('='.repeat(40));
         log(`Total meets analyzed: ${analysisResult.summary.total_meets}`);
         log(`Contaminated meets: ${analysisResult.summary.contaminated_count}`);
         log(`Valid assignments: ${analysisResult.summary.valid_count}`);
         log(`Overall contamination rate: ${analysisResult.summary.contamination_rate}%`);
-        
+
         if (Object.keys(analysisResult.contaminationStats).length > 0) {
             log('\n🦠 CONTAMINATION BY WSO:');
             for (const [wso, stats] of Object.entries(analysisResult.contaminationStats)) {
                 log(`  ${wso}: ${stats.contamination_rate}% (${stats.contaminated_meets}/${stats.total_meets} meets)`);
-                
+
                 // Show examples
                 const examples = stats.contaminated_examples.slice(0, 3);
                 for (const example of examples) {
@@ -612,32 +612,32 @@ async function main() {
                 }
             }
         }
-        
+
         let fixResults = null;
         let updateResults = null;
-        
+
         // Step 2: Fix contamination if requested
         if (options.fix || options.dryRun) {
             if (analysisResult.contaminated.length === 0) {
                 log('\n✅ No contaminated meets found - nothing to fix');
             } else {
                 log(`\n🔧 ${options.dryRun ? 'DRY RUN: Simulating fixes' : 'Fixing contamination'}...`);
-                
+
                 // Fix meets table
                 fixResults = await fixMeetsTable(analysisResult.contaminated, options.dryRun);
-                
+
                 // Update meet_results table
                 updateResults = await updateMeetResultsTable(analysisResult.contaminated, options.dryRun);
             }
         }
-        
+
         // Step 3: Generate and save report
         const report = generateReport(analysisResult, fixResults, updateResults, options);
         fs.writeFileSync(OUTPUT_FILE, JSON.stringify(report, null, 2));
         log(`\n📄 Report saved to: ${OUTPUT_FILE}`);
-        
+
         // Final summary
-        log('\n' + '=' .repeat(60));
+        log('\n' + '='.repeat(60));
         log('✅ WSO GEOGRAPHY CONTAMINATION FIX COMPLETE');
         if (options.fix && !options.dryRun) {
             const fixedCount = fixResults ? fixResults.filter(r => r.success).length : 0;
@@ -650,7 +650,7 @@ async function main() {
             log(`   Analysis found ${analysisResult.contaminated.length} contaminated meets`);
         }
         log(`   Processing time: ${Date.now() - startTime}ms`);
-        
+
     } catch (error) {
         log(`\n❌ Script failed: ${error.message}`);
         log(`🔍 Stack trace: ${error.stack}`);
