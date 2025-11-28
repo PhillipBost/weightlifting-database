@@ -32,7 +32,7 @@ function parseArguments() {
         meetId: null,
         athleteName: null
     };
-    
+
     for (let i = 0; i < args.length; i++) {
         switch (args[i]) {
             case '--meet-id':
@@ -45,7 +45,7 @@ function parseArguments() {
                 break;
         }
     }
-    
+
     return options;
 }
 
@@ -54,7 +54,7 @@ function extractMeetInternalId(url) {
     if (!url || typeof url !== 'string') {
         return null;
     }
-    
+
     const match = url.match(/\/rankings\/results\/(\d+)/);
     return match ? parseInt(match[1]) : null;
 }
@@ -80,29 +80,29 @@ async function initBrowser() {
 // Scrape actual results from Sport80 meet page
 async function scrapeActualMeetResults(meetUrl) {
     console.log(`🕷️  Scraping actual results from: ${meetUrl}`);
-    
+
     await initBrowser();
-    
+
     try {
-        await page.goto(meetUrl, { 
+        await page.goto(meetUrl, {
             waitUntil: 'networkidle2',
-            timeout: 30000 
+            timeout: 30000
         });
-        
+
         await page.waitForSelector('body', { timeout: 10000 });
         await new Promise(resolve => setTimeout(resolve, 2000));
-        
+
         // Scrape all results from the page
         const actualResults = await page.evaluate(() => {
             const results = [];
-            
+
             // Look for table rows containing results
             const rows = document.querySelectorAll('table tr');
-            
+
             for (let i = 1; i < rows.length; i++) { // Skip header row
                 const row = rows[i];
                 const cells = row.querySelectorAll('td');
-                
+
                 if (cells.length >= 10) { // Ensure we have enough columns
                     const result = {
                         lifter_name: cells[3]?.textContent?.trim() || null,
@@ -118,20 +118,20 @@ async function scrapeActualMeetResults(meetUrl) {
                         total: cells[13]?.textContent?.trim() || null,
                         division: cells[2]?.textContent?.trim() || null
                     };
-                    
+
                     // Only add if we have a lifter name
                     if (result.lifter_name) {
                         results.push(result);
                     }
                 }
             }
-            
+
             return results;
         });
-        
+
         console.log(`📊 Scraped ${actualResults.length} results from Sport80`);
         return actualResults;
-        
+
     } catch (error) {
         console.error(`❌ Error scraping meet results: ${error.message}`);
         return [];
@@ -150,51 +150,51 @@ async function closeBrowser() {
 // Get meet results for a specific meet internal_id
 async function getMeetResultsForMeet(meetInternalId) {
     console.log(`🔍 Getting meet results for meet internal_id ${meetInternalId}...`);
-    
+
     // First, find the meet_id for this internal_id
     const { data: meetInfo, error: meetError } = await supabase
-        .from('meets')
+        .from('usaw_meets')
         .select('meet_id, Meet, Date, URL')
         .eq('meet_internal_id', meetInternalId)
         .single();
-    
+
     if (meetError) {
         throw new Error(`Failed to find meet with internal_id ${meetInternalId}: ${meetError.message}`);
     }
-    
+
     console.log(`📅 Found meet: "${meetInfo.Meet}" on ${meetInfo.Date}`);
     console.log(`🔗 URL: ${meetInfo.URL}`);
-    
+
     // Get all results for this meet from database
     const { data: dbResults, error: resultsError } = await supabase
-        .from('meet_results')
+        .from('usaw_meet_results')
         .select('*')
         .eq('meet_id', meetInfo.meet_id)
         .order('lifter_name');
-    
+
     if (resultsError) {
         throw new Error(`Failed to get meet results: ${resultsError.message}`);
     }
-    
+
     console.log(`📊 Found ${dbResults.length} results in database`);
-    
+
     // Also scrape actual results from Sport80
     const actualResults = await scrapeActualMeetResults(meetInfo.URL);
-    
+
     // Compare database vs actual results
     console.log('\n🔍 COMPARING DATABASE VS ACTUAL RESULTS:');
     console.log(`📊 Database results: ${dbResults.length}`);
     console.log(`🕷️  Actual Sport80 results: ${actualResults.length}`);
-    
+
     if (dbResults.length !== actualResults.length) {
         console.log(`⚠️  MISMATCH: ${actualResults.length - dbResults.length} results missing from database!`);
-        
+
         // Find missing athletes
         const dbNames = new Set(dbResults.map(r => r.lifter_name.toLowerCase()));
-        const missingAthletes = actualResults.filter(r => 
+        const missingAthletes = actualResults.filter(r =>
             !dbNames.has(r.lifter_name.toLowerCase())
         );
-        
+
         if (missingAthletes.length > 0) {
             console.log('\n👻 MISSING ATHLETES (in Sport80 but not in database):');
             missingAthletes.forEach((athlete, index) => {
@@ -202,13 +202,13 @@ async function getMeetResultsForMeet(meetInternalId) {
                 console.log(`   ${index + 1}. ${athlete.lifter_name} - Total: ${total} (Division: ${athlete.division})`);
             });
         }
-        
+
         // Find extra athletes (shouldn't happen)
         const actualNames = new Set(actualResults.map(r => r.lifter_name.toLowerCase()));
-        const extraAthletes = dbResults.filter(r => 
+        const extraAthletes = dbResults.filter(r =>
             !actualNames.has(r.lifter_name.toLowerCase())
         );
-        
+
         if (extraAthletes.length > 0) {
             console.log('\n🤔 EXTRA ATHLETES (in database but not in Sport80):');
             extraAthletes.forEach((athlete, index) => {
@@ -219,30 +219,30 @@ async function getMeetResultsForMeet(meetInternalId) {
     } else {
         console.log('✅ Counts match - no missing results');
     }
-    
+
     return { meetInfo, dbResults, actualResults };
 }
 
 // Check if results are orphaned (not findable on athlete profiles)
 async function checkForOrphanResults(results, meetInternalId) {
     console.log(`\n🔍 Checking if results are orphaned (not linked to athlete profiles)...`);
-    
+
     let orphanResults = [];
     let linkedResults = [];
     let errorResults = [];
-    
+
     for (let i = 0; i < results.length; i++) {
         const result = results[i];
-        console.log(`\n📋 [${i+1}/${results.length}] Checking ${result.lifter_name}...`);
-        
+        console.log(`\n📋 [${i + 1}/${results.length}] Checking ${result.lifter_name}...`);
+
         try {
             // Try to find this athlete in the lifters table
             const { data: athlete, error: athleteError } = await supabase
-                .from('lifters')
+                .from('usaw_lifters')
                 .select('lifter_id, athlete_name, internal_id')
                 .eq('lifter_id', result.lifter_id)
                 .single();
-            
+
             if (athleteError) {
                 console.log(`   ❌ No lifter found for lifter_id ${result.lifter_id}`);
                 errorResults.push({
@@ -251,9 +251,9 @@ async function checkForOrphanResults(results, meetInternalId) {
                 });
                 continue;
             }
-            
+
             console.log(`   ✅ Found lifter: ${athlete.athlete_name} (internal_id: ${athlete.internal_id})`);
-            
+
             // If athlete has internal_id, check if this meet appears on their profile
             if (athlete.internal_id) {
                 // We would need to scrape their profile to check, but for now
@@ -271,7 +271,7 @@ async function checkForOrphanResults(results, meetInternalId) {
                 });
                 console.log(`   👻 Potential orphan: No internal_id`);
             }
-            
+
         } catch (error) {
             console.log(`   ❌ Error checking ${result.lifter_name}: ${error.message}`);
             errorResults.push({
@@ -280,27 +280,27 @@ async function checkForOrphanResults(results, meetInternalId) {
             });
         }
     }
-    
+
     return { orphanResults, linkedResults, errorResults };
 }
 
 // Analyze specific athlete across all meets
 async function analyzeAthleteAcrossMeets(athleteName) {
     console.log(`🔍 Analyzing all meet results for "${athleteName}"...`);
-    
+
     // Get all meet results for this athlete name
     const { data: results, error } = await supabase
-        .from('meet_results')
+        .from('usaw_meet_results')
         .select('*')
         .ilike('lifter_name', `%${athleteName}%`)
         .order('date');
-    
+
     if (error) {
         throw new Error(`Failed to get results for ${athleteName}: ${error.message}`);
     }
-    
+
     console.log(`📊 Found ${results.length} total results for "${athleteName}"`);
-    
+
     // Group by lifter_id
     const byLifterId = {};
     results.forEach(result => {
@@ -309,40 +309,40 @@ async function analyzeAthleteAcrossMeets(athleteName) {
         }
         byLifterId[result.lifter_id].push(result);
     });
-    
+
     console.log(`👤 Results span ${Object.keys(byLifterId).length} different lifter_ids`);
-    
+
     // Check each lifter_id
     for (const [lifterId, lifterResults] of Object.entries(byLifterId)) {
         console.log(`\n📋 Lifter ID ${lifterId} (${lifterResults.length} results):`);
-        
+
         // Get lifter info
         const { data: lifter, error: lifterError } = await supabase
-            .from('lifters')
+            .from('usaw_lifters')
             .select('lifter_id, athlete_name, internal_id')
             .eq('lifter_id', parseInt(lifterId))
             .single();
-        
+
         if (lifterError) {
             console.log(`   ❌ No lifter record found`);
             continue;
         }
-        
+
         console.log(`   ✅ Lifter: ${lifter.athlete_name}`);
         console.log(`   🔗 Internal ID: ${lifter.internal_id || 'None'}`);
-        console.log(`   📅 Date range: ${lifterResults[0].date} to ${lifterResults[lifterResults.length-1].date}`);
-        
+        console.log(`   📅 Date range: ${lifterResults[0].date} to ${lifterResults[lifterResults.length - 1].date}`);
+
         // Show sample results
         lifterResults.slice(0, 3).forEach(result => {
             const total = result.total || 'Bombed';
             console.log(`      • ${result.date}: ${result.meet_name} - Total: ${total}`);
         });
-        
+
         if (lifterResults.length > 3) {
             console.log(`      ... and ${lifterResults.length - 3} more`);
         }
     }
-    
+
     return { results, byLifterId };
 }
 
@@ -350,37 +350,37 @@ async function analyzeAthleteAcrossMeets(athleteName) {
 async function main() {
     try {
         const options = parseArguments();
-        
+
         console.log('🔍 ORPHAN MEET RESULTS ANALYSIS');
         console.log('='.repeat(60));
-        
+
         // Test database connection
-        const { error: testError } = await supabase.from('meets').select('meet_id').limit(1);
+        const { error: testError } = await supabase.from('usaw_meets').select('meet_id').limit(1);
         if (testError) {
             throw new Error(`Database connection failed: ${testError.message}`);
         }
         console.log('✅ Database connection successful\n');
-        
+
         if (options.athleteName) {
             // Analyze specific athlete across all meets
             await analyzeAthleteAcrossMeets(options.athleteName);
-            
+
         } else if (options.meetId) {
             // Analyze specific meet for orphan results
             const meetInternalId = parseInt(options.meetId);
             const { meetInfo, dbResults, actualResults } = await getMeetResultsForMeet(meetInternalId);
-            
+
             // Only analyze database results for orphans if we have them
             if (dbResults.length > 0) {
                 const analysis = await checkForOrphanResults(dbResults, meetInternalId);
-                
+
                 console.log('\n' + '='.repeat(60));
                 console.log('📊 ORPHAN ANALYSIS RESULTS (DATABASE ONLY)');
                 console.log('='.repeat(60));
                 console.log(`🔗 Linked results (have internal_id): ${analysis.linkedResults.length}`);
                 console.log(`👻 Potential orphan results: ${analysis.orphanResults.length}`);
                 console.log(`❌ Error results: ${analysis.errorResults.length}`);
-                
+
                 if (analysis.orphanResults.length > 0) {
                     console.log('\n👻 POTENTIAL ORPHAN RESULTS:');
                     analysis.orphanResults.forEach(result => {
@@ -389,14 +389,14 @@ async function main() {
                     });
                 }
             }
-            
+
         } else {
             console.log('Please specify either --meet-id or --athlete option');
             console.log('Examples:');
             console.log('  node find-orphan-meet-results.js --meet-id 7011');
             console.log('  node find-orphan-meet-results.js --athlete "Brian Le"');
         }
-        
+
     } catch (error) {
         console.error(`\n❌ Analysis failed: ${error.message}`);
         console.error(`🔍 Stack trace: ${error.stack}`);
@@ -408,11 +408,11 @@ async function main() {
 }
 
 // Export for potential use by other scripts
-module.exports = { 
+module.exports = {
     getMeetResultsForMeet,
     checkForOrphanResults,
     analyzeAthleteAcrossMeets,
-    main 
+    main
 };
 
 // Run if called directly

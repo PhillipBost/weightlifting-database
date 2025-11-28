@@ -29,7 +29,7 @@ async function getAllClubsAlphabetical() {
       console.log(`📅 Fetching clubs ${startLetter}-${endLetter}...`);
 
       const { data: rangeData, error: rangeError } = await supabase
-        .from('meet_results')
+        .from('usaw_meet_results')
         .select('club_name')
         .gte('club_name', startLetter)
         .lt('club_name', String.fromCharCode(endLetter.charCodeAt(0) + 1)) // Next letter after endLetter
@@ -53,18 +53,18 @@ async function getAllClubsAlphabetical() {
         rangeData.forEach(row => {
           const clubName = row.club_name;
           if (clubName &&
-              clubName.trim() !== '' &&
-              clubName.trim() !== 'null' &&
-              clubName.trim() !== '-' &&
-              clubName.trim() !== '.' &&
-              clubName.trim().toLowerCase() !== 'null') {
+            clubName.trim() !== '' &&
+            clubName.trim() !== 'null' &&
+            clubName.trim() !== '-' &&
+            clubName.trim() !== '.' &&
+            clubName.trim().toLowerCase() !== 'null') {
 
             const trimmedName = clubName.trim();
             const firstChar = trimmedName.charAt(0).toUpperCase();
 
             // Verify it's actually in our expected range
             if ((startLetter === '0' && /^[0-9]/.test(firstChar)) ||
-                (startLetter !== '0' && firstChar >= startLetter && firstChar <= endLetter)) {
+              (startLetter !== '0' && firstChar >= startLetter && firstChar <= endLetter)) {
               allClubs.add(trimmedName);
               addedInRange++;
             }

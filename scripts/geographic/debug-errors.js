@@ -6,22 +6,22 @@ const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SEC
 
 async function debugSpecificErrors() {
   console.log('🔍 Debugging specific error cases...\n');
-  
+
   // Query the specific problematic meets
   const errorMeetIds = [6943, 6902, 6840, 6798];
-  
+
   for (const meetId of errorMeetIds) {
     const { data: meet, error } = await supabase
-      .from('meets')
+      .from('usaw_meets')
       .select('*')
       .eq('meet_id', meetId)
       .single();
-      
+
     if (error) {
       console.error(`Error fetching meet ${meetId}:`, error.message);
       continue;
     }
-    
+
     console.log(`=== MEET ${meetId} ===`);
     console.log(`Meet Name: ${meet.Meet}`);
     console.log(`Address: ${meet.address || 'N/A'}`);
@@ -29,7 +29,7 @@ async function debugSpecificErrors() {
     console.log(`State: ${meet.state || 'N/A'}`);
     console.log(`Current WSO: ${meet.wso_geography || 'None'}`);
     console.log(`Coordinates: ${meet.latitude}, ${meet.longitude}`);
-    
+
     // Test the assignment
     const assignment = assignMeetWSO(meet, {});
     console.log(`\nAssignment Result:`);

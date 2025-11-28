@@ -37,7 +37,7 @@ function ensureDirectories() {
 function log(message) {
     const timestamp = new Date().toISOString();
     const logMessage = `[${timestamp}] ${message}\n`;
-    
+
     console.log(message);
     fs.appendFileSync(LOG_FILE, logMessage);
 }
@@ -55,12 +55,12 @@ const US_STATES = {
     'oklahoma': 'OK', 'oregon': 'OR', 'pennsylvania': 'PA', 'rhode island': 'RI', 'south carolina': 'SC',
     'south dakota': 'SD', 'tennessee': 'TN', 'texas': 'TX', 'utah': 'UT', 'vermont': 'VT',
     'virginia': 'VA', 'washington': 'WA', 'west virginia': 'WV', 'wisconsin': 'WI', 'wyoming': 'WY',
-    
+
     // US Territories and Military
     'district of columbia': 'DC', 'american samoa': 'AS', 'guam': 'GU', 'northern mariana islands': 'MP',
     'puerto rico': 'PR', 'us virgin islands': 'VI', 'virgin islands': 'VI',
     'armed forces americas': 'AA', 'armed forces europe': 'AE', 'armed forces pacific': 'AP',
-    
+
     // Common abbreviations
     'al': 'AL', 'ak': 'AK', 'az': 'AZ', 'ar': 'AR', 'ca': 'CA', 'co': 'CO', 'ct': 'CT', 'de': 'DE',
     'fl': 'FL', 'ga': 'GA', 'hi': 'HI', 'id': 'ID', 'il': 'IL', 'in': 'IN', 'ia': 'IA', 'ks': 'KS',
@@ -95,7 +95,7 @@ function parseAddressIntelligently(rawAddress) {
 
     const originalAddress = rawAddress.trim();
     let parts = originalAddress.split(',').map(p => p.trim()).filter(p => p.length > 0);
-    
+
     if (parts.length === 0) {
         return {
             street_address: '',
@@ -118,7 +118,7 @@ function parseAddressIntelligently(rawAddress) {
     let zipIndex = -1;
     let zipPart = '';
     const zipRegex = /\b\d{5}(-\d{4})?\b/;
-    
+
     for (let i = parts.length - 1; i >= 0; i--) {
         const match = parts[i].match(zipRegex);
         if (match) {
@@ -146,16 +146,16 @@ function parseAddressIntelligently(rawAddress) {
     // Strategy 3: State Detection
     let stateIndex = -1;
     let detectedState = '';
-    
+
     // Check parts from right to left, but skip country and ZIP parts
     for (let i = parts.length - 1; i >= 0; i--) {
         if (i === countryIndex) continue; // Skip country part
-        
+
         const partLower = parts[i].toLowerCase().trim();
-        
+
         // Check if this part (or zipPart if this is zip index) contains a state
         const textToCheck = (i === zipIndex && zipPart) ? zipPart.toLowerCase() : partLower;
-        
+
         if (US_STATES[textToCheck]) {
             stateIndex = i;
             detectedState = US_STATES[textToCheck];
@@ -163,7 +163,7 @@ function parseAddressIntelligently(rawAddress) {
             parsing_method += 'state_detected,';
             break;
         }
-        
+
         // Check if part contains state as substring (for cases like "CA 90210")
         for (const [stateName, stateAbbr] of Object.entries(US_STATES)) {
             if (textToCheck.includes(stateName) && stateName.length > 2) {
@@ -174,14 +174,14 @@ function parseAddressIntelligently(rawAddress) {
                 break;
             }
         }
-        
+
         if (detectedState) break;
     }
 
     // Strategy 4: City Detection
     // City is typically the part before the state (if state found) or before ZIP
     let cityIndex = -1;
-    
+
     if (stateIndex > 0) {
         // City is likely the part before state
         cityIndex = stateIndex - 1;
@@ -208,7 +208,7 @@ function parseAddressIntelligently(rawAddress) {
     // Everything before the city (or remaining parts if no clear city)
     const usedIndices = new Set([countryIndex, zipIndex, stateIndex, cityIndex].filter(i => i >= 0));
     const streetParts = [];
-    
+
     for (let i = 0; i < parts.length; i++) {
         if (!usedIndices.has(i)) {
             streetParts.push(parts[i]);
@@ -217,7 +217,7 @@ function parseAddressIntelligently(rawAddress) {
             break;
         }
     }
-    
+
     // If we have a clear city, only take parts before it
     if (cityIndex >= 0) {
         street_address = parts.slice(0, cityIndex).join(', ');
@@ -258,7 +258,7 @@ function parseAddressIntelligently(rawAddress) {
     city = city.trim();
     state = state.trim();
     zip_code = zip_code.trim();
-    
+
     // Remove country information from other fields if it leaked in
     const countryPattern = new RegExp(COUNTRY_VARIATIONS.join('|'), 'gi');
     street_address = street_address.replace(countryPattern, '').replace(/,?\s*,?$/, '').trim();
@@ -327,49 +327,49 @@ function calculateParsingConfidence(parsed, original) {
 async function getProblematicMeets(limit = null) {
     try {
         log('🔍 Querying for meets with problematic address data...');
-        
+
         let allMeets = [];
         let from = 0;
         const pageSize = 100;
-        
+
         while (true) {
             let query = supabase
-                .from('meets')
+                .from('usaw_meets')
                 .select('meet_id, Meet, address, street_address, city, state, zip_code, country')
                 .not('address', 'is', null)
                 .neq('address', '');
-                
+
             // Add problematic data filters
             query = query.or('zip_code.ilike.%united states%,state.ilike.%county%,city.is.null,street_address.is.null');
-            
+
             const { data, error } = await query.range(from, from + pageSize - 1);
-                
+
             if (error) {
                 throw new Error(`Failed to fetch meets: ${error.message}`);
             }
-            
+
             if (!data || data.length === 0) {
                 break;
             }
-            
+
             allMeets.push(...data);
             from += pageSize;
-            
+
             log(`📄 Loaded ${allMeets.length} problematic meets so far...`);
-            
+
             if (data.length < pageSize) {
                 break; // Last page
             }
-            
+
             if (limit && allMeets.length >= limit) {
                 allMeets = allMeets.slice(0, limit);
                 break;
             }
         }
-        
+
         log(`📋 Found ${allMeets.length} meets with problematic address data`);
         return allMeets;
-        
+
     } catch (error) {
         log(`❌ Database query failed: ${error.message}`);
         throw error;
@@ -381,17 +381,17 @@ async function getProblematicMeets(limit = null) {
  */
 async function previewChanges(meets) {
     log('\n📊 PREVIEW: Address parsing changes that would be applied\n');
-    log('=' .repeat(100));
-    
+    log('='.repeat(100));
+
     let improvements = 0;
     let degradations = 0;
     let noChange = 0;
-    
+
     for (let i = 0; i < Math.min(meets.length, 20); i++) { // Show first 20 examples
         const meet = meets[i];
         const parsed = parseAddressIntelligently(meet.address);
         const confidence = calculateParsingConfidence(parsed, meet.address);
-        
+
         log(`\n🏟️  Meet: ${meet.Meet} (ID: ${meet.meet_id})`);
         log(`📍 Original Address: ${meet.address}`);
         log(`\n   CURRENT → PROPOSED`);
@@ -401,11 +401,11 @@ async function previewChanges(meets) {
         log(`   ZIP     : "${meet.zip_code || ''}" → "${parsed.zip_code}"`);
         log(`   Country : "${meet.country || ''}" → "${parsed.country}"`);
         log(`   📊 Confidence: ${confidence}% | Method: ${parsed.parsing_method}`);
-        
+
         // Determine if this is an improvement
         const currentValid = !!(meet.city && meet.state && !meet.zip_code?.includes('United States'));
         const newValid = !!(parsed.city && parsed.state && parsed.zip_code && confidence > 50);
-        
+
         if (newValid && !currentValid) {
             improvements++;
             log(`   ✅ IMPROVEMENT`);
@@ -417,17 +417,17 @@ async function previewChanges(meets) {
             log(`   ➡️  SIMILAR QUALITY`);
         }
     }
-    
+
     if (meets.length > 20) {
         log(`\n... and ${meets.length - 20} more records`);
     }
-    
+
     log(`\n📈 PREVIEW SUMMARY:`);
     log(`   Total records: ${meets.length}`);
     log(`   Likely improvements: ${improvements}/20`);
     log(`   Potential degradations: ${degradations}/20`);
     log(`   Similar quality: ${noChange}/20`);
-    
+
     return { improvements, degradations, noChange };
 }
 
@@ -436,31 +436,31 @@ async function previewChanges(meets) {
  */
 async function applyFixes(meets) {
     log('\n🔧 Applying address parsing fixes to database...\n');
-    
+
     let successCount = 0;
     let failureCount = 0;
     let skipCount = 0;
-    
+
     for (let i = 0; i < meets.length; i++) {
         const meet = meets[i];
         const progress = `${i + 1}/${meets.length}`;
-        
+
         log(`🔄 [${progress}] Processing: ${meet.Meet} (ID: ${meet.meet_id})`);
-        
+
         try {
             const parsed = parseAddressIntelligently(meet.address);
             const confidence = calculateParsingConfidence(parsed, meet.address);
-            
+
             // Only apply if confidence is reasonable
             if (confidence < 30) {
                 log(`   ⏭️  Skipping: Low confidence (${confidence}%)`);
                 skipCount++;
                 continue;
             }
-            
+
             // Update database (only existing columns)
             const { error } = await supabase
-                .from('meets')
+                .from('usaw_meets')
                 .update({
                     street_address: parsed.street_address,
                     city: parsed.city,
@@ -469,27 +469,27 @@ async function applyFixes(meets) {
                     country: parsed.country
                 })
                 .eq('meet_id', meet.meet_id);
-                
+
             if (error) {
                 throw new Error(`Update failed: ${error.message}`);
             }
-            
+
             successCount++;
             log(`   ✅ Updated (confidence: ${confidence}%)`);
-            
+
         } catch (error) {
             failureCount++;
             log(`   ❌ Failed: ${error.message}`);
         }
     }
-    
+
     log(`\n📊 EXECUTION SUMMARY:`);
     log(`   Total processed: ${meets.length}`);
     log(`   Successful updates: ${successCount}`);
     log(`   Skipped (low confidence): ${skipCount}`);
     log(`   Failed: ${failureCount}`);
     log(`   Success rate: ${((successCount / meets.length) * 100).toFixed(1)}%`);
-    
+
     return { successCount, failureCount, skipCount };
 }
 
@@ -503,7 +503,7 @@ function parseArguments() {
         execute: false,
         limit: null
     };
-    
+
     for (let i = 0; i < args.length; i++) {
         switch (args[i]) {
             case '--preview':
@@ -518,12 +518,12 @@ function parseArguments() {
                 break;
         }
     }
-    
+
     // Default to preview if no mode specified
     if (!options.preview && !options.execute) {
         options.preview = true;
     }
-    
+
     return options;
 }
 
@@ -532,42 +532,42 @@ function parseArguments() {
  */
 async function main() {
     const startTime = Date.now();
-    
+
     try {
         ensureDirectories();
-        
+
         log('🔧 Starting address parsing fix process...');
-        log('=' .repeat(60));
-        
+        log('='.repeat(60));
+
         const options = parseArguments();
-        
+
         if (options.preview) {
             log('🔍 PREVIEW MODE: Will show proposed changes without applying them');
         } else if (options.execute) {
             log('⚡ EXECUTION MODE: Will apply changes to database');
         }
-        
+
         if (options.limit) {
             log(`📊 Processing limit: ${options.limit} records`);
         }
-        
+
         // Get problematic meets
         const meets = await getProblematicMeets(options.limit);
-        
+
         if (meets.length === 0) {
             log('✅ No problematic address data found - nothing to fix');
             return;
         }
-        
+
         if (options.preview) {
             await previewChanges(meets);
             log('\n💡 To apply these changes, run: node fix-address-parsing.js --execute');
         } else if (options.execute) {
             await applyFixes(meets);
         }
-        
+
         log(`\n⏱️  Total processing time: ${Math.round((Date.now() - startTime) / 1000)}s`);
-        
+
     } catch (error) {
         log(`\n❌ Process failed: ${error.message}`);
         log(`🔍 Stack trace: ${error.stack}`);
@@ -580,8 +580,8 @@ if (require.main === module) {
     main();
 }
 
-module.exports = { 
-    parseAddressIntelligently, 
+module.exports = {
+    parseAddressIntelligently,
     calculateParsingConfidence,
     US_STATES,
     COUNTRY_VARIATIONS

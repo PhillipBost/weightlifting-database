@@ -13,20 +13,20 @@ async function finalMatrixValidation() {
   try {
     // Get total counts
     const { count: totalCount, error: totalError } = await supabase
-      .from('club_rolling_metrics')
+      .from('usaw_club_rolling_metrics')
       .select('*', { count: 'exact', head: true });
 
     const { count: zeroCount, error: zeroError } = await supabase
-      .from('club_rolling_metrics')
+      .from('usaw_club_rolling_metrics')
       .select('*', { count: 'exact', head: true })
       .eq('active_members_12mo', 0);
 
     const { data: periods, error: periodsError } = await supabase
-      .from('club_rolling_metrics')
+      .from('usaw_club_rolling_metrics')
       .select('snapshot_month');
 
     const { data: clubs, error: clubsError } = await supabase
-      .from('club_rolling_metrics')
+      .from('usaw_club_rolling_metrics')
       .select('club_name');
 
     if (totalError || zeroError || periodsError || clubsError) {
@@ -58,7 +58,7 @@ async function finalMatrixValidation() {
 
     for (const club of sampleClubs) {
       const { data: clubRecords, error: clubError } = await supabase
-        .from('club_rolling_metrics')
+        .from('usaw_club_rolling_metrics')
         .select('snapshot_month, active_members_12mo')
         .eq('club_name', club)
         .order('snapshot_month')

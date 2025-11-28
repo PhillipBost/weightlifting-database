@@ -77,7 +77,7 @@ async function getMultiPolygonWSOs() {
     log('🔍 Finding WSOs with MultiPolygon geometries...');
 
     const { data: wsos, error } = await supabase
-        .from('wso_information')
+        .from('usaw_wso_information')
         .select('name, territory_geojson, geographic_type')
         .not('territory_geojson', 'is', null);
 
@@ -147,7 +147,7 @@ async function processSingleWSO(wso, options = {}) {
     log(`  💾 Updating database...`);
 
     const { error: updateError } = await supabase
-        .from('wso_information')
+        .from('usaw_wso_information')
         .update({
             territory_geojson: dissolved,
             updated_at: new Date().toISOString()

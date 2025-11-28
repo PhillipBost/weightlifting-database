@@ -23,7 +23,7 @@ async function testClubCalculator() {
         // Get a sample club that likely has data
         console.log('🔍 Finding a club with recent activity...');
         const { data: sampleClubs, error } = await supabase
-            .from('meet_results')
+            .from('usaw_meet_results')
             .select('club_name')
             .not('club_name', 'is', null)
             .gte('date', '2022-01-01')  // Recent data
@@ -53,7 +53,7 @@ async function testClubCalculator() {
         // Test full metrics calculation
         console.log('3️⃣ Testing full metrics calculation...');
         const result = await calculator.calculateClubMetrics(testClubName);
-        
+
         if (result.success) {
             console.log('✅ Full metrics calculation succeeded');
             console.log(`   Recent meets: ${result.metrics.recentMeetsCount}`);
@@ -63,10 +63,10 @@ async function testClubCalculator() {
         }
 
         console.log('\n🔍 Verifying database update...');
-        
+
         // Check if the club was updated in the database
         const { data: updatedClub, error: fetchError } = await supabase
-            .from('clubs')
+            .from('usaw_clubs')
             .select('club_name, recent_meets_count, active_lifters_count, analytics_updated_at')
             .eq('club_name', testClubName)
             .single();

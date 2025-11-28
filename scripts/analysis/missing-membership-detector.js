@@ -52,46 +52,46 @@ function logWithTimestamp(message) {
 function calculatePriorityScore(lifter, recentResultsCount, latestResultDate) {
     let score = 0;
     const now = new Date();
-    
+
     // Internal ID availability (highest priority)
     if (lifter.internal_id) score += PRIORITY_WEIGHTS.HAS_INTERNAL_ID;
     if (lifter.internal_id_2) score += PRIORITY_WEIGHTS.MULTIPLE_INTERNAL_IDS;
-    
+
     // Recent activity scoring
     if (latestResultDate) {
         const daysSinceLastResult = (now - new Date(latestResultDate)) / (1000 * 60 * 60 * 24);
-        
+
         if (daysSinceLastResult < 180) {  // 6 months
             score += PRIORITY_WEIGHTS.RECENT_RESULT;
         } else if (daysSinceLastResult < 730) {  // 2 years
             score += PRIORITY_WEIGHTS.RECENT_ACTIVITY;
         }
     }
-    
+
     // Result volume (indicates active athlete)
     if (recentResultsCount >= 10) {
         score += PRIORITY_WEIGHTS.HIGH_RESULT_COUNT;
     } else if (recentResultsCount >= 5) {
         score += PRIORITY_WEIGHTS.HIGH_RESULT_COUNT * 0.5;
     }
-    
+
     return Math.round(score);
 }
 
 // Determine priority category
 function getPriorityCategory(score) {
     if (score >= 75) return 'HIGH';
-    if (score >= 40) return 'MEDIUM'; 
+    if (score >= 40) return 'MEDIUM';
     return 'LOW';
 }
 
 // Get comprehensive lifter data with activity analysis
 async function getMissingMembershipLifters() {
     logWithTimestamp('🔍 Scanning lifters table for missing membership numbers...');
-    
+
     // Get all lifters without membership numbers
     const { data: missingLifters, error } = await supabase
-        .from('lifters')
+        .from('usaw_lifters')
         .select(`
             lifter_id,
             athlete_name, 
@@ -108,49 +108,49 @@ async function getMissingMembershipLifters() {
         `)
         .is('membership_number', null)
         .order('lifter_id');
-    
+
     if (error) {
         throw new Error(`Failed to fetch lifters: ${error.message}`);
     }
-    
+
     logWithTimestamp(`📊 Found ${missingLifters.length} lifters without membership numbers`);
-    
+
     // Enrich each lifter with activity data
     const enrichedLifters = [];
-    
+
     for (let i = 0; i < missingLifters.length; i++) {
         const lifter = missingLifters[i];
-        
+
         if ((i + 1) % 100 === 0) {
             logWithTimestamp(`📊 Processing lifter ${i + 1}/${missingLifters.length}...`);
         }
-        
+
         // Get recent meet results activity
         const { data: recentResults, error: resultsError } = await supabase
-            .from('meet_results')
+            .from('usaw_meet_results')
             .select('result_id, date, meet_name, wso, club_name')
             .eq('lifter_id', lifter.lifter_id)
             .gte('date', '2020-01-01') // Last 4+ years
             .order('date', { ascending: false });
-        
+
         if (resultsError) {
             console.warn(`⚠️  Could not fetch results for lifter_id ${lifter.lifter_id}: ${resultsError.message}`);
             continue;
         }
-        
+
         const recentResultsCount = recentResults?.length || 0;
         const latestResultDate = recentResults?.[0]?.date || null;
         const latestWSO = recentResults?.[0]?.wso || null;
         const latestClub = recentResults?.[0]?.club_name || null;
-        
+
         // Calculate priority score
         const priorityScore = calculatePriorityScore(lifter, recentResultsCount, latestResultDate);
         const priorityCategory = getPriorityCategory(priorityScore);
-        
+
         // Count available internal IDs
         const internalIds = [
             lifter.internal_id,
-            lifter.internal_id_2, 
+            lifter.internal_id_2,
             lifter.internal_id_3,
             lifter.internal_id_4,
             lifter.internal_id_5,
@@ -158,7 +158,7 @@ async function getMissingMembershipLifters() {
             lifter.internal_id_7,
             lifter.internal_id_8
         ].filter(id => id !== null);
-        
+
         enrichedLifters.push({
             ...lifter,
             recent_results_count: recentResultsCount,
@@ -172,7 +172,7 @@ async function getMissingMembershipLifters() {
             scraping_feasible: internalIds.length > 0
         });
     }
-    
+
     return enrichedLifters;
 }
 
@@ -202,7 +202,7 @@ function generateAnalysis(lifters) {
                 latest_result_date: l.latest_result_date
             }))
     };
-    
+
     return stats;
 }
 
@@ -214,14 +214,14 @@ function saveResults(lifters, analysis) {
         analysis: analysis,
         lifters: lifters.sort((a, b) => b.priority_score - a.priority_score)
     };
-    
+
     fs.writeFileSync(REPORT_FILE, JSON.stringify(report, null, 2));
     logWithTimestamp(`📁 Saved detailed report to ${REPORT_FILE}`);
-    
+
     // Save CSV for easy processing
     const headers = [
         'lifter_id',
-        'athlete_name', 
+        'athlete_name',
         'priority_category',
         'priority_score',
         'internal_id',
@@ -232,9 +232,9 @@ function saveResults(lifters, analysis) {
         'latest_club',
         'scraping_feasible'
     ];
-    
+
     let csvContent = headers.join(',') + '\n';
-    
+
     lifters
         .sort((a, b) => b.priority_score - a.priority_score)
         .forEach(lifter => {
@@ -253,7 +253,7 @@ function saveResults(lifters, analysis) {
             ];
             csvContent += row.join(',') + '\n';
         });
-    
+
     fs.writeFileSync(CSV_FILE, csvContent);
     logWithTimestamp(`📁 Saved priority CSV to ${CSV_FILE}`);
 }
@@ -263,25 +263,25 @@ async function main() {
     console.log('🎯 MISSING MEMBERSHIP NUMBER DETECTOR');
     console.log('=====================================');
     logWithTimestamp('Starting comprehensive membership analysis...');
-    
+
     try {
         // Test database connection
-        const { error: testError } = await supabase.from('lifters').select('lifter_id').limit(1);
+        const { error: testError } = await supabase.from('usaw_lifters').select('lifter_id').limit(1);
         if (testError) {
             throw new Error(`Database connection failed: ${testError.message}`);
         }
         logWithTimestamp('✅ Database connection successful');
-        
+
         // Get missing membership lifters
         const lifters = await getMissingMembershipLifters();
-        
+
         // Generate analysis
         logWithTimestamp('📊 Generating priority analysis...');
         const analysis = generateAnalysis(lifters);
-        
+
         // Save results
         saveResults(lifters, analysis);
-        
+
         // Display summary
         console.log('\n📊 MISSING MEMBERSHIP ANALYSIS SUMMARY');
         console.log('======================================');
@@ -290,27 +290,27 @@ async function main() {
         console.log(`   HIGH Priority:   ${analysis.by_priority.HIGH} lifters`);
         console.log(`   MEDIUM Priority: ${analysis.by_priority.MEDIUM} lifters`);
         console.log(`   LOW Priority:    ${analysis.by_priority.LOW} lifters`);
-        
+
         console.log(`\n🔍 Scraping Feasibility:`);
         console.log(`   Can be scraped:     ${analysis.scraping_feasible} lifters (have internal_id)`);
         console.log(`   Need manual lookup: ${analysis.total_missing_membership - analysis.scraping_feasible} lifters`);
-        
+
         console.log(`\n📈 Activity Insights:`);
         console.log(`   Have recent activity: ${analysis.has_recent_activity} lifters`);
         console.log(`   Have internal_id:     ${analysis.has_internal_id} lifters`);
         console.log(`   Have backup IDs:      ${analysis.has_multiple_internal_ids} lifters`);
-        
+
         console.log(`\n🏆 Top 5 Priority Lifters:`);
         analysis.top_priorities.slice(0, 5).forEach((lifter, i) => {
             console.log(`   ${i + 1}. ${lifter.athlete_name} (Score: ${lifter.priority_score}, ID: ${lifter.internal_id}, Results: ${lifter.recent_results_count})`);
         });
-        
+
         console.log(`\n✅ Analysis complete! Check output files:`);
         console.log(`   📋 Detailed report: ${REPORT_FILE}`);
         console.log(`   📊 Priority CSV: ${CSV_FILE}`);
-        
+
         logWithTimestamp('🎉 Missing membership detection completed successfully!');
-        
+
     } catch (error) {
         console.error(`\n❌ Detection failed: ${error.message}`);
         console.error(`🔍 Stack trace: ${error.stack}`);

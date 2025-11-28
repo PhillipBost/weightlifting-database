@@ -77,7 +77,7 @@ const CA_SOUTH_COUNTIES = [
 
 function extractStateFromAddress(address) {
     if (!address) return null;
-    
+
     const US_STATES = {
         'AL': 'Alabama', 'AK': 'Alaska', 'AZ': 'Arizona', 'AR': 'Arkansas', 'CA': 'California',
         'CO': 'Colorado', 'CT': 'Connecticut', 'DE': 'Delaware', 'FL': 'Florida', 'GA': 'Georgia',
@@ -91,9 +91,9 @@ function extractStateFromAddress(address) {
         'VA': 'Virginia', 'WA': 'Washington', 'WV': 'West Virginia', 'WI': 'Wisconsin', 'WY': 'Wyoming',
         'DC': 'District of Columbia'
     };
-    
+
     const DIRECTIONAL_ABBREVS = ['NE', 'NW', 'SE', 'SW', 'N', 'S', 'E', 'W'];
-    
+
     // First, look for full state names
     for (const fullName of Object.values(US_STATES)) {
         const namePattern = new RegExp(`\b${fullName.replace(/\s/g, '\s+')}\b`, 'i');
@@ -101,7 +101,7 @@ function extractStateFromAddress(address) {
             return fullName;
         }
     }
-    
+
     // Then look for state abbreviations
     for (const [abbrev, fullName] of Object.entries(US_STATES)) {
         if (DIRECTIONAL_ABBREVS.includes(abbrev)) {
@@ -178,7 +178,7 @@ async function rebuildAllClubsCorrectWSO() {
         
         // Get all clubs
         const { data: clubs, error } = await supabase
-            .from('clubs')
+            .from('usaw_clubs')
             .select('club_name, address');
             
         if (error) throw error;
@@ -202,7 +202,7 @@ async function rebuildAllClubsCorrectWSO() {
                 const wso = assignWSO(extractedState, club.address);
                 if (wso) {
                     const { error: updateError } = await supabase
-                        .from('clubs')
+                        .from('usaw_clubs')
                         .update({ wso_geography: wso })
                         .eq('club_name', club.club_name);
                         

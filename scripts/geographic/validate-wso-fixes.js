@@ -11,7 +11,7 @@ async function validateWSOfixes() {
     console.log('============================');
 
     const { data: californiaWSOs, error: caError } = await supabase
-        .from('wso_information')
+        .from('usaw_wso_information')
         .select('*')
         .in('name', ['California North Central', 'California South']);
 
@@ -68,7 +68,7 @@ async function validateWSOfixes() {
     console.log('===================================');
 
     const { data: multiStateWSOs, error: msError } = await supabase
-        .from('wso_information')
+        .from('usaw_wso_information')
         .select('name, states, territory_geojson')
         .not('territory_geojson->properties->shared_borders', 'is', null);
 

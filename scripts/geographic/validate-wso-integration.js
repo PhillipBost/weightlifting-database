@@ -23,7 +23,7 @@ async function validateJoins() {
     try {
         // Test join with meet_results
         const { data: joinResults, error: joinError } = await supabase
-            .from('meet_results')
+            .from('usaw_meet_results')
             .select(`
                 result_id,
                 lifter_name,
@@ -70,7 +70,7 @@ async function findMissingWSOs() {
 
     // Get all unique WSOs from meet_results
     const { data: meetResultsWSOs, error: resultsError } = await supabase
-        .from('meet_results')
+        .from('usaw_meet_results')
         .select('wso')
         .not('wso', 'is', null);
 
@@ -81,7 +81,7 @@ async function findMissingWSOs() {
 
     // Get all WSOs from wso_information
     const { data: wsoInfoRecords, error: wsoError } = await supabase
-        .from('wso_information')
+        .from('usaw_wso_information')
         .select('name');
 
     if (wsoError) {
@@ -153,7 +153,7 @@ async function validateDataConsistency() {
     console.log('==============================');
 
     const { data: wsoRecords, error } = await supabase
-        .from('wso_information')
+        .from('usaw_wso_information')
         .select('*');
 
     if (error) {

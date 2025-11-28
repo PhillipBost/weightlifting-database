@@ -148,56 +148,56 @@ async function paginatedQuery(tableName, selectFields, queryBuilder, options = {
 
 async function getAllWSOs() {
     log('📋 Fetching all WSO regions...');
-    
+
     const { data: wsos, error } = await supabase
-        .from('wso_information')
+        .from('usaw_wso_information')
         .select('name')
         .order('name');
-    
+
     if (error) {
         throw new Error(`Failed to fetch WSOs: ${error.message}`);
     }
-    
+
     log(`✅ Found ${wsos.length} WSO regions`);
     return wsos;
 }
 
 async function calculateBarbelClubsCount(wsoName) {
     log(`🏋️ Calculating barbell clubs count for ${wsoName}...`);
-    
+
     // Get WSO territory boundary for geometric filtering
     const { data: wsoData, error: wsoError } = await supabase
-        .from('wso_information')
+        .from('usaw_wso_information')
         .select('territory_geojson')
         .eq('name', wsoName)
         .single();
-    
+
     if (wsoError) {
         throw new Error(`Failed to get WSO boundary for ${wsoName}: ${wsoError.message}`);
     }
-    
+
     if (!wsoData || !wsoData.territory_geojson) {
         log(`   No territory boundary found for ${wsoName}, returning 0`);
         return 0;
     }
-    
+
     // Get ALL clubs with coordinates
     const { data: clubs, error } = await supabase
-        .from('clubs')
+        .from('usaw_clubs')
         .select('club_name, latitude, longitude')
         .not('latitude', 'is', null)
         .not('longitude', 'is', null);
-    
+
     if (error) {
         throw new Error(`Failed to fetch clubs: ${error.message}`);
     }
-    
+
     // Apply geometric filtering
     const filteredClubs = clubs.filter(club => {
         if (!club.latitude || !club.longitude) return false;
         return pointInGeoJSON([club.longitude, club.latitude], wsoData.territory_geojson);
     });
-    
+
     const count = filteredClubs.length;
     log(`   Found ${count} barbell clubs in ${wsoName} (geometric filtering)`);
     return count;
@@ -205,41 +205,41 @@ async function calculateBarbelClubsCount(wsoName) {
 
 async function calculateRecentMeetsCount(wsoName) {
     log(`📅 Calculating recent meets count for ${wsoName}...`);
-    
+
     // Get WSO territory boundary for geometric filtering
     const { data: wsoData, error: wsoError } = await supabase
-        .from('wso_information')
+        .from('usaw_wso_information')
         .select('territory_geojson')
         .eq('name', wsoName)
         .single();
-    
+
     if (wsoError) {
         throw new Error(`Failed to get WSO boundary for ${wsoName}: ${wsoError.message}`);
     }
-    
+
     if (!wsoData || !wsoData.territory_geojson) {
         log(`   No territory boundary found for ${wsoName}, returning 0`);
         return 0;
     }
-    
+
     // Get ALL recent meets with coordinates
     const { data: meets, error } = await supabase
-        .from('meets')
+        .from('usaw_meets')
         .select('meet_id, latitude, longitude')
         .gte('Date', cutoffDateString)
         .not('latitude', 'is', null)
         .not('longitude', 'is', null);
-    
+
     if (error) {
         throw new Error(`Failed to fetch meets: ${error.message}`);
     }
-    
+
     // Apply geometric filtering
     const filteredMeets = meets.filter(meet => {
         if (!meet.latitude || !meet.longitude) return false;
         return pointInGeoJSON([meet.longitude, meet.latitude], wsoData.territory_geojson);
     });
-    
+
     const count = filteredMeets.length;
     log(`   Found ${count} recent meets in ${wsoName} since ${cutoffDateString} (geometric filtering)`);
     return count;
@@ -247,67 +247,67 @@ async function calculateRecentMeetsCount(wsoName) {
 
 async function calculateActiveLiftersCount(wsoName) {
     log(`🏃 Calculating active lifters count for ${wsoName}...`);
-    
+
     // Get WSO territory boundary for geometric filtering
     const { data: wsoData, error: wsoError } = await supabase
-        .from('wso_information')
+        .from('usaw_wso_information')
         .select('territory_geojson')
         .eq('name', wsoName)
         .single();
-    
+
     if (wsoError) {
         throw new Error(`Failed to get WSO boundary for ${wsoName}: ${wsoError.message}`);
     }
-    
+
     if (!wsoData || !wsoData.territory_geojson) {
         log(`   No territory boundary found for ${wsoName}, returning 0`);
         return 0;
     }
-    
+
     // Get ALL recent meets with coordinates
     const { data: meets, error: meetsError } = await supabase
-        .from('meets')
+        .from('usaw_meets')
         .select('meet_id, latitude, longitude')
         .gte('Date', cutoffDateString)
         .not('latitude', 'is', null)
         .not('longitude', 'is', null);
-    
+
     if (meetsError) {
         throw new Error(`Failed to get meets for ${wsoName}: ${meetsError.message}`);
     }
-    
+
     if (!meets || meets.length === 0) {
         log(`   No meets found for ${wsoName} since ${cutoffDateString}`);
         return 0;
     }
-    
+
     // Apply geometric filtering to get meet IDs within WSO boundary
     const filteredMeets = meets.filter(meet => {
         if (!meet.latitude || !meet.longitude) return false;
         return pointInGeoJSON([meet.longitude, meet.latitude], wsoData.territory_geojson);
     });
-    
+
     const meetIds = filteredMeets.map(m => m.meet_id);
     log(`   Found ${meetIds.length} meets within ${wsoName} boundary`);
-    
+
     if (meetIds.length === 0) {
         return 0;
     }
-    
+
     // Batch the meet IDs to avoid URI length limits (max ~200 IDs per batch)
     const batchSize = 200;
     const uniqueLifters = new Set();
-    
+
     for (let i = 0; i < meetIds.length; i += batchSize) {
         const batchMeetIds = meetIds.slice(i, i + batchSize);
-        
+
         // Query meet_results for this batch
         const results = await paginatedQuery(
             'meet_results',
             'lifter_id',
             (query) => query.in('meet_id', batchMeetIds)
         );
-        
+
         // Add lifter IDs to set
         if (results) {
             results.forEach(result => {
@@ -316,12 +316,12 @@ async function calculateActiveLiftersCount(wsoName) {
                 }
             });
         }
-        
+
         if (meetIds.length > batchSize) {
             log(`   Processed batch ${Math.floor(i / batchSize) + 1}/${Math.ceil(meetIds.length / batchSize)}: ${uniqueLifters.size} unique lifters so far`);
         }
     }
-    
+
     const count = uniqueLifters.size;
     log(`   Found ${count} active lifters in ${wsoName} since ${cutoffDateString} (geometric filtering)`);
     return count;
@@ -329,109 +329,109 @@ async function calculateActiveLiftersCount(wsoName) {
 
 async function calculateTotalParticipationsCount(wsoName) {
     log(`🎯 Calculating total participations count for ${wsoName}...`);
-    
+
     // Get WSO territory boundary for geometric filtering
     const { data: wsoData, error: wsoError } = await supabase
-        .from('wso_information')
+        .from('usaw_wso_information')
         .select('territory_geojson')
         .eq('name', wsoName)
         .single();
-    
+
     if (wsoError) {
         throw new Error(`Failed to get WSO boundary for ${wsoName}: ${wsoError.message}`);
     }
-    
+
     if (!wsoData || !wsoData.territory_geojson) {
         log(`   No territory boundary found for ${wsoName}, returning 0`);
         return 0;
     }
-    
+
     // Get ALL recent meets with coordinates
     const { data: meets, error: meetsError } = await supabase
-        .from('meets')
+        .from('usaw_meets')
         .select('meet_id, latitude, longitude')
         .gte('Date', cutoffDateString)
         .not('latitude', 'is', null)
         .not('longitude', 'is', null);
-    
+
     if (meetsError) {
         throw new Error(`Failed to get meets for ${wsoName}: ${meetsError.message}`);
     }
-    
+
     if (!meets || meets.length === 0) {
         log(`   No meets found for ${wsoName} since ${cutoffDateString}`);
         return 0;
     }
-    
+
     // Apply geometric filtering to get meet IDs within WSO boundary
     const filteredMeets = meets.filter(meet => {
         if (!meet.latitude || !meet.longitude) return false;
         return pointInGeoJSON([meet.longitude, meet.latitude], wsoData.territory_geojson);
     });
-    
+
     const meetIds = filteredMeets.map(m => m.meet_id);
     log(`   Found ${meetIds.length} meets within ${wsoName} boundary`);
-    
+
     if (meetIds.length === 0) {
         return 0;
     }
-    
+
     // Batch the meet IDs to avoid URI length limits (max ~200 IDs per batch)
     const batchSize = 200;
     let totalParticipations = 0;
-    
+
     for (let i = 0; i < meetIds.length; i += batchSize) {
         const batchMeetIds = meetIds.slice(i, i + batchSize);
-        
+
         // Query meet_results for this batch
         const results = await paginatedQuery(
             'meet_results',
             'result_id',
             (query) => query.in('meet_id', batchMeetIds)
         );
-        
+
         if (results) {
             totalParticipations += results.length;
         }
-        
+
         if (meetIds.length > batchSize) {
             log(`   Processed batch ${Math.floor(i / batchSize) + 1}/${Math.ceil(meetIds.length / batchSize)}: ${totalParticipations} participations so far`);
         }
     }
-    
+
     log(`   Found ${totalParticipations} total participations in ${wsoName} since ${cutoffDateString} (geometric filtering)`);
     return totalParticipations;
 }
 
 async function calculateEstimatedPopulation(wsoName) {
     log(`🌍 Calculating estimated population for ${wsoName}...`);
-    
+
     try {
         // Get the WSO geographic information to determine which states/counties are included
         const { data: wsoData, error: wsoError } = await supabase
-            .from('wso_information')
+            .from('usaw_wso_information')
             .select('states, counties, territory_geojson')
             .eq('name', wsoName)
             .single();
-        
+
         if (wsoError || !wsoData) {
             throw new Error(`Failed to fetch WSO geographic data: ${wsoError?.message || 'No data found'}`);
         }
-        
+
         // For now, use a simplified approach based on state assignments
         // TODO: Implement more sophisticated boundary-based calculation using territory_geojson
         if (!wsoData.states) {
             log(`   No state list found for ${wsoName}, returning 0`);
             return 0;
         }
-        
+
         log(`   States data for ${wsoName}: "${wsoData.states}"`);
         log(`   Counties data for ${wsoName}: "${wsoData.counties}"`);
-        
+
         // Parse state list and calculate population
         let totalPopulation = 0;
         let states;
-        
+
         if (typeof wsoData.states === 'string') {
             states = wsoData.states.split(',').map(s => s.trim());
         } else if (Array.isArray(wsoData.states)) {
@@ -440,7 +440,7 @@ async function calculateEstimatedPopulation(wsoName) {
             log(`   Unexpected states data type: ${typeof wsoData.states}`);
             return 0;
         }
-        
+
         for (const state of states) {
             const cleanState = state.trim();
             log(`   Looking up population for: "${cleanState}"`);
@@ -452,10 +452,10 @@ async function calculateEstimatedPopulation(wsoName) {
                 log(`   Warning: Could not get population for "${cleanState}": ${error.message}`);
             }
         }
-        
+
         log(`   Total estimated population for ${wsoName}: ${totalPopulation.toLocaleString()}`);
         return totalPopulation;
-        
+
     } catch (error) {
         log(`   Error calculating population for ${wsoName}: ${error.message}`);
         return 0;
@@ -517,25 +517,25 @@ async function getStatePopulation(stateName) {
         'Wisconsin': 5910000,
         'Wyoming': 584000
     };
-    
+
     const population = statePopulations[stateName];
     if (!population) {
         throw new Error(`Population data not available for ${stateName}`);
     }
-    
+
     return population;
 }
 
 async function updateWSOAnalytics(wsoName, metrics) {
     log(`💾 Updating analytics for ${wsoName}...`);
-    
+
     // Calculate activity_factor
-    const activityFactor = metrics.activeLiftersCount > 0 
+    const activityFactor = metrics.activeLiftersCount > 0
         ? Math.round((metrics.totalParticipations / metrics.activeLiftersCount) * 100) / 100
         : 0;
-    
+
     const { error } = await supabase
-        .from('wso_information')
+        .from('usaw_wso_information')
         .update({
             barbell_clubs_count: metrics.barbelClubsCount,
             recent_meets_count: metrics.recentMeetsCount,
@@ -546,17 +546,17 @@ async function updateWSOAnalytics(wsoName, metrics) {
             // analytics_updated_at will be updated automatically by trigger
         })
         .eq('name', wsoName);
-    
+
     if (error) {
         throw new Error(`Failed to update analytics for ${wsoName}: ${error.message}`);
     }
-    
+
     log(`✅ Updated analytics for ${wsoName}: ${metrics.barbelClubsCount} clubs, ${metrics.recentMeetsCount} meets, ${metrics.activeLiftersCount} lifters, ${metrics.totalParticipations} participations, ${metrics.estimatedPopulation} population, ${activityFactor} activity_factor`);
 }
 
 async function calculateWSOMterics(wsoName) {
     log(`\n🔢 Calculating metrics for ${wsoName}...`);
-    
+
     try {
         const metrics = {
             barbelClubsCount: await calculateBarbelClubsCount(wsoName),
@@ -576,7 +576,7 @@ async function calculateWSOMterics(wsoName) {
 
         await updateWSOAnalytics(wsoName, metrics);
         return { success: true, metrics };
-        
+
     } catch (error) {
         log(`❌ Error calculating metrics for ${wsoName}: ${error.message}`);
         return { success: false, error: error.message };
@@ -586,7 +586,7 @@ async function calculateWSOMterics(wsoName) {
 async function main() {
     log('🚀 Starting WSO Weekly Analytics Calculation...');
     log(`📊 Using cutoff date: ${cutoffDateString} (past 12 months from ${currentDate.toISOString().split('T')[0]})`);
-    
+
     try {
         const wsos = await getAllWSOs();
         const results = {
@@ -594,11 +594,11 @@ async function main() {
             failed: 0,
             errors: []
         };
-        
+
         // Process each WSO
         for (const wso of wsos) {
             const result = await calculateWSOMterics(wso.name);
-            
+
             if (result.success) {
                 results.successful++;
             } else {
@@ -609,24 +609,24 @@ async function main() {
                 });
             }
         }
-        
+
         // Summary
         log('\n📈 WSO Analytics Calculation Complete!');
         log(`✅ Successfully processed: ${results.successful} WSOs`);
         log(`❌ Failed to process: ${results.failed} WSOs`);
-        
+
         if (results.errors.length > 0) {
             log('\n❌ Errors encountered:');
             results.errors.forEach(err => {
                 log(`   ${err.wso}: ${err.error}`);
             });
         }
-        
+
         // Exit with error code if any failures occurred
         if (results.failed > 0) {
             process.exit(1);
         }
-        
+
     } catch (error) {
         log(`💥 Fatal error: ${error.message}`);
         process.exit(1);

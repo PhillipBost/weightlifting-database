@@ -133,7 +133,7 @@ function ensureDirectories() {
 function log(message) {
     const timestamp = new Date().toISOString();
     const logMessage = `[${timestamp}] ${message}\n`;
-    
+
     console.log(message);
     fs.appendFileSync(LOG_FILE, logMessage);
 }
@@ -155,33 +155,33 @@ function parseArguments() {
 // Get clubs from database
 async function getClubs() {
     log('🔍 Fetching clubs from database...');
-    
+
     let allClubs = [];
     let start = 0;
     const batchSize = 1000;
     let hasMore = true;
-    
+
     while (hasMore) {
         const { data: batchData, error } = await supabase
-            .from('clubs')
+            .from('usaw_clubs')
             .select('*')
             .range(start, start + batchSize - 1);
-        
+
         if (error) {
             throw new Error(`Failed to fetch clubs: ${error.message}`);
         }
-        
+
         if (batchData && batchData.length > 0) {
             allClubs.push(...batchData);
-            log(`  📦 Batch ${Math.floor(start/batchSize) + 1}: Found ${batchData.length} clubs (Total: ${allClubs.length})`);
-            
+            log(`  📦 Batch ${Math.floor(start / batchSize) + 1}: Found ${batchData.length} clubs (Total: ${allClubs.length})`);
+
             hasMore = batchData.length === batchSize;
             start += batchSize;
         } else {
             hasMore = false;
         }
     }
-    
+
     log(`Found ${allClubs.length} total clubs`);
     return allClubs;
 }
@@ -189,43 +189,43 @@ async function getClubs() {
 // Get historical WSO data from meet results
 async function getHistoricalWSOData() {
     log('📊 Fetching historical WSO data from meet results...');
-    
+
     const { data, error } = await supabase
-        .from('meet_results')
+        .from('usaw_meet_results')
         .select('club_name, wso')
         .not('club_name', 'is', null)
         .not('wso', 'is', null);
-    
+
     if (error) {
         log(`⚠️ Error fetching historical data: ${error.message}`);
         return {};
     }
-    
+
     // Create club -> WSO mapping from historical data
     const historicalData = {};
     for (const result of data) {
         const clubName = result.club_name.trim();
         const wso = result.wso.trim();
-        
+
         if (!historicalData[clubName]) {
             historicalData[clubName] = {};
         }
-        
+
         if (!historicalData[clubName][wso]) {
             historicalData[clubName][wso] = 0;
         }
-        
+
         historicalData[clubName][wso]++;
     }
-    
+
     // Convert to most common WSO per club
     const clubWSOMap = {};
     for (const [clubName, wsoData] of Object.entries(historicalData)) {
         const mostCommonWSO = Object.entries(wsoData)
-            .sort(([,a], [,b]) => b - a)[0][0];
+            .sort(([, a], [, b]) => b - a)[0][0];
         clubWSOMap[clubName] = mostCommonWSO;
     }
-    
+
     log(`Found historical WSO data for ${Object.keys(clubWSOMap).length} clubs`);
     return clubWSOMap;
 }
@@ -238,7 +238,7 @@ async function assignClubWSO(club, historicalData, supabaseClient) {
             includeHistoricalData: false, // We'll handle historical data ourselves
             logDetails: false
         });
-        
+
         // Check if historical data matches for confidence boost
         const historicalWSO = historicalData[club.club_name];
         if (historicalWSO && historicalWSO === assignment.assigned_wso) {
@@ -249,7 +249,7 @@ async function assignClubWSO(club, historicalData, supabaseClient) {
             // Historical data conflicts with assignment
             assignment.details.reasoning.push(`Note: Historical WSO was ${historicalWSO}, but coordinates/address indicate ${assignment.assigned_wso}`);
         }
-        
+
         // Transform the result to match the expected format for this script
         return {
             club_name: club.club_name,
@@ -287,7 +287,7 @@ async function assignClubWSO(club, historicalData, supabaseClient) {
 // Analyze current club data
 async function analyzeClubs() {
     log('🔍 Analyzing current club data...');
-    
+
     const clubs = await getClubs();
     const analysis = {
         total_clubs: clubs.length,
@@ -298,49 +298,49 @@ async function analyzeClubs() {
         by_state: {},
         current_wso_assignments: {}
     };
-    
+
     for (const club of clubs) {
         // Count location data availability
         if (club.latitude && club.longitude) analysis.with_coordinates++;
         if (club.address || club.city || club.state) analysis.with_address++;
         if (club.wso_geography) analysis.with_wso_assigned++;
-        
+
         if (!club.latitude && !club.longitude && !club.address && !club.city && !club.state) {
             analysis.without_location_data++;
         }
-        
+
         // Extract state for analysis
         const addressFields = [club.address, club.city, club.state, club.location].filter(Boolean);
         let extractedState = null;
-        
+
         for (const field of addressFields) {
             extractedState = extractStateFromAddress(field);
             if (extractedState) break;
         }
-        
+
         if (extractedState) {
             analysis.by_state[extractedState] = (analysis.by_state[extractedState] || 0) + 1;
         }
-        
+
         // Count current WSO assignments
         if (club.wso_geography) {
-            analysis.current_wso_assignments[club.wso_geography] = 
+            analysis.current_wso_assignments[club.wso_geography] =
                 (analysis.current_wso_assignments[club.wso_geography] || 0) + 1;
         }
     }
-    
+
     return analysis;
 }
 
 // Assign WSO geography to all clubs
 async function assignAllClubs(dryRun = false) {
     log('🏋️ Starting club WSO assignment process...');
-    
+
     const [clubs, historicalData] = await Promise.all([
         getClubs(),
         getHistoricalWSOData()
     ]);
-    
+
     const assignments = [];
     const summary = {
         total_processed: 0,
@@ -350,56 +350,56 @@ async function assignAllClubs(dryRun = false) {
         by_confidence: { high: 0, medium: 0, low: 0 },
         by_wso: {}
     };
-    
+
     log(`📊 Processing ${clubs.length} clubs...`);
-    
+
     for (let i = 0; i < clubs.length; i++) {
         const club = clubs[i];
-        
+
         if (i % 100 === 0) {
             log(`  📋 Progress: ${i}/${clubs.length} clubs processed`);
         }
-        
+
         const assignment = await assignClubWSO(club, historicalData, supabase);
         assignments.push(assignment);
-        
+
         summary.total_processed++;
-        
+
         if (assignment.assigned_wso) {
             summary.successful_assignments++;
-            
+
             // Count by method
-            summary.by_method[assignment.assignment_method] = 
+            summary.by_method[assignment.assignment_method] =
                 (summary.by_method[assignment.assignment_method] || 0) + 1;
-            
+
             // Count by confidence
             if (assignment.confidence >= 0.8) summary.by_confidence.high++;
             else if (assignment.confidence >= 0.6) summary.by_confidence.medium++;
             else summary.by_confidence.low++;
-            
+
             // Count by WSO
-            summary.by_wso[assignment.assigned_wso] = 
+            summary.by_wso[assignment.assigned_wso] =
                 (summary.by_wso[assignment.assigned_wso] || 0) + 1;
         } else {
             summary.failed_assignments++;
         }
     }
-    
+
     // Update database if not dry run
     if (!dryRun) {
         log('💾 Updating database with WSO assignments...');
-        
+
         let updated = 0;
         let failed = 0;
-        
+
         for (const assignment of assignments) {
             if (assignment.assigned_wso) {
                 try {
                     const { error } = await supabase
-                        .from('clubs')
+                        .from('usaw_clubs')
                         .update({ wso_geography: assignment.assigned_wso })
                         .eq('club_name', assignment.club_name);
-                    
+
                     if (error) {
                         log(`  ❌ Failed to update ${assignment.club_name}: ${error.message}`);
                         failed++;
@@ -412,10 +412,10 @@ async function assignAllClubs(dryRun = false) {
                 }
             }
         }
-        
+
         log(`✅ Database update complete: ${updated} updated, ${failed} failed`);
     }
-    
+
     return { assignments, summary };
 }
 
@@ -437,26 +437,26 @@ function generateReport(assignments, summary, analysis) {
             unassigned: assignments.filter(a => !a.assigned_wso).length
         }
     };
-    
+
     // Save to file
     fs.writeFileSync(OUTPUT_FILE, JSON.stringify(report, null, 2));
     log(`📊 Assignment report saved to: ${OUTPUT_FILE}`);
-    
+
     return report;
 }
 
 // Main function
 async function main() {
     const startTime = Date.now();
-    
+
     try {
         ensureDirectories();
-        
+
         log('🏋️ Starting Club WSO Assignment Script');
         log('='.repeat(60));
-        
+
         const options = parseArguments();
-        
+
         if (options.analyze) {
             log('📊 Running analysis mode...');
             const analysis = await analyzeClubs();
@@ -467,28 +467,28 @@ async function main() {
             log(`  With WSO assigned: ${analysis.with_wso_assigned}`);
             log(`  Without location data: ${analysis.without_location_data}`);
             log(`  States represented: ${Object.keys(analysis.by_state).length}`);
-            
+
         } else if (options.assign) {
             log('🎯 Running assignment mode...');
             const analysis = await analyzeClubs();
             const { assignments, summary } = await assignAllClubs(options.dryRun);
             const report = generateReport(assignments, summary, analysis);
-            
+
             log('\n✅ Assignment Complete:');
             log(`  Successfully assigned: ${summary.successful_assignments}/${summary.total_processed}`);
             log(`  Assignment rate: ${((summary.successful_assignments / summary.total_processed) * 100).toFixed(1)}%`);
             log(`  High confidence: ${summary.by_confidence.high}`);
             log(`  Medium confidence: ${summary.by_confidence.medium}`);
             log(`  Low confidence: ${summary.by_confidence.low}`);
-            
+
         } else if (options.validate || options.report) {
             log('🔍 Running validation/report mode...');
             const analysis = await analyzeClubs();
             const { assignments, summary } = await assignAllClubs(true); // Dry run
             const report = generateReport(assignments, summary, analysis);
-            
+
             log('\n📋 Validation Report Generated');
-            
+
         } else {
             log('Club WSO Assignment Script');
             log('============================');
@@ -502,10 +502,10 @@ async function main() {
             log('');
             log('Example: node club-wso-assigner.js --assign');
         }
-        
+
         const processingTime = Math.round((Date.now() - startTime) / 1000);
         log(`\n⏱️ Processing completed in ${processingTime}s`);
-        
+
     } catch (error) {
         log(`\n❌ Script failed: ${error.message}`);
         log(`🔍 Stack trace: ${error.stack}`);

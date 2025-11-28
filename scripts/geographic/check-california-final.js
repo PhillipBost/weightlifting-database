@@ -5,12 +5,12 @@ const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SEC
 
 async function checkCalifornia() {
   const { data: caSouth } = await supabase
-    .from('meets')
+    .from('usaw_meets')
     .select('wso_geography')
     .eq('wso_geography', 'California South');
 
   const { data: caNorth } = await supabase
-    .from('meets')
+    .from('usaw_meets')
     .select('wso_geography')
     .eq('wso_geography', 'California North Central');
 
@@ -19,7 +19,7 @@ async function checkCalifornia() {
 
   // Check sample
   const { data: sample } = await supabase
-    .from('meets')
+    .from('usaw_meets')
     .select('Meet, address, wso_geography')
     .or('wso_geography.eq.California North Central,wso_geography.eq.California South')
     .limit(10);

@@ -13,19 +13,19 @@ async function finalComprehensiveValidation() {
   try {
     // Get rolling metrics stats
     const { count, error: countError } = await supabase
-      .from('club_rolling_metrics')
+      .from('usaw_club_rolling_metrics')
       .select('*', { count: 'exact', head: true });
 
     if (countError) throw countError;
 
     const { data: periods, error: periodsError } = await supabase
-      .from('club_rolling_metrics')
+      .from('usaw_club_rolling_metrics')
       .select('snapshot_month');
 
     if (periodsError) throw periodsError;
 
     const { data: clubs, error: clubsError } = await supabase
-      .from('club_rolling_metrics')
+      .from('usaw_club_rolling_metrics')
       .select('club_name');
 
     if (clubsError) throw clubsError;
@@ -48,7 +48,7 @@ async function finalComprehensiveValidation() {
 
     // Check recent activity
     const { data: recentActive, error: recentError } = await supabase
-      .from('club_rolling_metrics')
+      .from('usaw_club_rolling_metrics')
       .select('*')
       .eq('snapshot_month', '2025-07-01')
       .gte('active_members_12mo', 1)

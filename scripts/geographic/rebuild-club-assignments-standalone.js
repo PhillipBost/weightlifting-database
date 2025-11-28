@@ -6,7 +6,7 @@ const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SEC
 // Self-contained state extraction function
 function extractStateFromAddress(address) {
     if (!address) return null;
-    
+
     const US_STATES = {
         'AL': 'Alabama', 'AK': 'Alaska', 'AZ': 'Arizona', 'AR': 'Arkansas', 'CA': 'California',
         'CO': 'Colorado', 'CT': 'Connecticut', 'DE': 'Delaware', 'FL': 'Florida', 'GA': 'Georgia',
@@ -20,9 +20,9 @@ function extractStateFromAddress(address) {
         'VA': 'Virginia', 'WA': 'Washington', 'WV': 'West Virginia', 'WI': 'Wisconsin', 'WY': 'Wyoming',
         'DC': 'District of Columbia'
     };
-    
+
     const DIRECTIONAL_ABBREVS = ['NE', 'NW', 'SE', 'SW', 'N', 'S', 'E', 'W'];
-    
+
     // First, look for full state names (highest priority)
     for (const fullName of Object.values(US_STATES)) {
         const namePattern = new RegExp(`\\b${fullName.replace(/\\s/g, '\\s+')}\\b`, 'i');
@@ -30,7 +30,7 @@ function extractStateFromAddress(address) {
             return fullName;
         }
     }
-    
+
     // Then look for state abbreviations (with proper context filtering)
     for (const [abbrev, fullName] of Object.entries(US_STATES)) {
         if (DIRECTIONAL_ABBREVS.includes(abbrev)) {
@@ -45,14 +45,14 @@ function extractStateFromAddress(address) {
             }
         }
     }
-    
+
     return null;
 }
 
 // Self-contained WSO assignment function
 function assignWSO(state, address) {
     if (!state) return null;
-    
+
     const WSO_ASSIGNMENTS = {
         'Alabama': 'Alabama',
         'Alaska': 'Alaska',
@@ -106,58 +106,58 @@ function assignWSO(state, address) {
         'Wyoming': 'Wyoming',
         'District of Columbia': 'Maryland'
     };
-    
+
     return WSO_ASSIGNMENTS[state] || null;
 }
 
 async function rebuildAllClubAssignments() {
     console.log('🔄 Rebuilding all club WSO assignments from scratch...');
     console.log('Using standalone functions to avoid import issues\\n');
-    
+
     try {
         // Test the function first
         console.log('🧪 Testing state extraction function:');
         const testAddress = '123 Main St, Sacramento, California';
         const testResult = extractStateFromAddress(testAddress);
         console.log(`  "${testAddress}" → ${testResult || 'None'}\\n`);
-        
+
         if (!testResult) {
             console.log('❌ State extraction test failed! Aborting rebuild.');
             return;
         }
-        
+
         // Get all clubs
         const { data: clubs, error } = await supabase
-            .from('clubs')
+            .from('usaw_clubs')
             .select('club_name, address');
-            
+
         if (error) throw error;
-        
+
         console.log(`Processing ${clubs.length} clubs...`);
-        
+
         let assigned = 0;
         let failed = 0;
         const assignments = [];
-        
+
         for (let i = 0; i < clubs.length; i++) {
             const club = clubs[i];
-            
+
             if (i % 50 === 0) {
                 console.log(`  Progress: ${i}/${clubs.length} clubs processed`);
             }
-            
+
             // Try to extract state from address
             const extractedState = extractStateFromAddress(club.address);
-            
+
             if (extractedState) {
                 const wso = assignWSO(extractedState, club.address);
                 if (wso) {
                     // Update the database
                     const { error: updateError } = await supabase
-                        .from('clubs')
+                        .from('usaw_clubs')
                         .update({ wso_geography: wso })
                         .eq('club_name', club.club_name);
-                        
+
                     if (!updateError) {
                         assigned++;
                         assignments.push({
@@ -177,18 +177,18 @@ async function rebuildAllClubAssignments() {
                 failed++;
             }
         }
-        
+
         console.log(`\\n✅ Rebuild complete:`);
         console.log(`  Successfully assigned: ${assigned}`);
         console.log(`  Failed assignments: ${failed}`);
-        console.log(`  Assignment rate: ${((assigned/clubs.length)*100).toFixed(1)}%`);
-        
+        console.log(`  Assignment rate: ${((assigned / clubs.length) * 100).toFixed(1)}%`);
+
         // Show some example assignments
         console.log(`\\n📋 Sample assignments:`);
         assignments.slice(0, 10).forEach(assignment => {
             console.log(`  ${assignment.club_name}: ${assignment.extracted_state} → ${assignment.assigned_wso}`);
         });
-        
+
     } catch (error) {
         console.error('Error:', error.message);
     }

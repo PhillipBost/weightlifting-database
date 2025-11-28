@@ -56,33 +56,33 @@ function pointInGeoJSON(point, geojson) {
 
 async function checkMeet(searchTerm) {
     log(`=== Checking Meet: "${searchTerm}" ===\n`);
-    
+
     // Search for meet
     const { data: meets, error: searchError } = await supabase
-        .from('meets')
+        .from('usaw_meets')
         .select('meet_id, Meet, Date, address, latitude, longitude, wso_geography')
         .ilike('Meet', `%${searchTerm}%`)
         .order('Date', { ascending: false });
-    
+
     if (searchError) {
         log(`❌ Error: ${searchError.message}`);
         return;
     }
-    
+
     if (!meets || meets.length === 0) {
         log(`❌ No meets found matching "${searchTerm}"`);
         return;
     }
-    
+
     log(`✅ Found ${meets.length} meet(s) matching "${searchTerm}":\n`);
-    
+
     // Get Alabama boundary
     const { data: wsoData } = await supabase
-        .from('wso_information')
+        .from('usaw_wso_information')
         .select('name, territory_geojson')
         .eq('name', 'Alabama')
         .single();
-    
+
     // Check each meet
     for (const meet of meets) {
         log(`Meet: ${meet.Meet}`);
@@ -90,7 +90,7 @@ async function checkMeet(searchTerm) {
         log(`Address: ${meet.address || 'N/A'}`);
         log(`Coordinates: ${meet.latitude}, ${meet.longitude}`);
         log(`WSO Geography: ${meet.wso_geography || 'NULL'}`);
-        
+
         if (!meet.latitude || !meet.longitude) {
             log(`❌ ISSUE: Missing coordinates!`);
             log(`   This meet will be excluded from analytics (requires coordinates)\n`);
@@ -98,12 +98,12 @@ async function checkMeet(searchTerm) {
             // Test if in Alabama boundary
             const inBoundary = pointInGeoJSON([meet.longitude, meet.latitude], wsoData.territory_geojson);
             log(`In Alabama boundary: ${inBoundary ? '✅ YES' : '❌ NO'}`);
-            
+
             if (!inBoundary) {
                 log(`⚠️  ISSUE: Coordinates outside Alabama boundary!`);
                 log(`   Expected: Birmingham, AL should be around 33.52°N, -86.80°W`);
                 log(`   Actual: ${meet.latitude}°N, ${meet.longitude}°W`);
-                
+
                 // Check if coordinates might be swapped
                 const swappedInBoundary = pointInGeoJSON([meet.latitude, meet.longitude], wsoData.territory_geojson);
                 if (swappedInBoundary) {
@@ -112,27 +112,27 @@ async function checkMeet(searchTerm) {
                 }
             }
         }
-        
+
         log('');
     }
-    
+
     // Additional check: Look for recent Alabama meets
     log(`\n=== Recent Alabama Meets (past 2 years) ===\n`);
-    
+
     const twoYearsAgo = new Date();
     twoYearsAgo.setFullYear(twoYearsAgo.getFullYear() - 2);
     const cutoffString = twoYearsAgo.toISOString().split('T')[0];
-    
+
     const { data: recentMeets } = await supabase
-        .from('meets')
+        .from('usaw_meets')
         .select('meet_id, Meet, Date, address, latitude, longitude, wso_geography')
         .gte('Date', cutoffString)
         .or('address.ilike.%Alabama%,address.ilike.%AL %,address.ilike.%, AL,%')
         .order('Date', { ascending: false });
-    
+
     if (recentMeets && recentMeets.length > 0) {
         log(`Found ${recentMeets.length} recent meets with Alabama in address:\n`);
-        
+
         recentMeets.slice(0, 10).forEach(meet => {
             const hasCoords = meet.latitude && meet.longitude;
             const coordsSymbol = hasCoords ? '📍' : '❌';
@@ -151,7 +151,7 @@ async function checkMeet(searchTerm) {
 
 async function main() {
     const args = process.argv.slice(2);
-    
+
     if (args.length === 0 || args.includes('--help')) {
         console.log('Check Specific Meet Coordinates');
         console.log('================================\n');
@@ -162,9 +162,9 @@ async function main() {
         console.log('  node scripts/analytics/check-specific-meet.js "Alabama Open"');
         return;
     }
-    
+
     const searchTerm = args[0];
-    
+
     try {
         await checkMeet(searchTerm);
     } catch (error) {

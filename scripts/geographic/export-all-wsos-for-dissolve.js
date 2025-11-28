@@ -14,31 +14,31 @@ const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SEC
 
 async function identifyWSosNeedingDissolve() {
     console.log('🔍 Identifying WSOs needing dissolve processing...\n');
-    
+
     const { data: allWSOs, error } = await supabase
-        .from('wso_information')
+        .from('usaw_wso_information')
         .select('*')
         .not('territory_geojson', 'is', null);
-    
+
     if (error) {
         console.error('❌ Error fetching WSO data:', error);
         return [];
     }
-    
+
     const wsosNeedingDissolve = [];
-    
+
     for (const wso of allWSOs) {
         const geometry = wso.territory_geojson?.geometry;
-        
+
         if (!geometry) continue;
-        
+
         let needsDissolve = false;
         let polygonCount = 0;
         let reason = '';
-        
+
         if (geometry.type === 'MultiPolygon') {
             polygonCount = geometry.coordinates.length;
-            
+
             if (polygonCount > 1) {
                 needsDissolve = true;
                 reason = `MultiPolygon with ${polygonCount} parts - internal borders visible`;
@@ -50,7 +50,7 @@ async function identifyWSosNeedingDissolve() {
         } else {
             reason = `Unexpected geometry type: ${geometry.type}`;
         }
-        
+
         const wsoInfo = {
             name: wso.name,
             geographic_type: wso.geographic_type,
@@ -63,16 +63,16 @@ async function identifyWSosNeedingDissolve() {
             priority: needsDissolve ? 'HIGH' : 'LOW',
             data: wso
         };
-        
+
         if (needsDissolve) {
             wsosNeedingDissolve.push(wsoInfo);
         }
-        
+
         console.log(`${needsDissolve ? '🔴' : '✅'} ${wso.name}: ${reason}`);
     }
-    
+
     console.log(`\n📊 Summary: ${wsosNeedingDissolve.length} WSOs need dissolve processing`);
-    
+
     return wsosNeedingDissolve;
 }
 
@@ -81,10 +81,10 @@ async function exportWSO(wsoInfo, outputDir) {
     const safeName = wso.name.toLowerCase()
         .replace(/[^a-z0-9]+/g, '-')
         .replace(/^-+|-+$/g, '');
-    
+
     const filename = `${safeName}-for-dissolve.geojson`;
     const filepath = path.join(outputDir, filename);
-    
+
     // Prepare export data
     const exportData = {
         type: 'FeatureCollection',
@@ -118,12 +118,12 @@ async function exportWSO(wsoInfo, outputDir) {
             estimated_borders_to_eliminate: wsoInfo.polygon_count - 1
         }
     };
-    
+
     await fs.writeFile(filepath, JSON.stringify(exportData, null, 2));
-    
+
     console.log(`   📄 Exported: ${filename}`);
     console.log(`   📊 ${wsoInfo.polygon_count} polygons → target: 1 polygon`);
-    
+
     return {
         wso_name: wso.name,
         filename: filename,
@@ -135,15 +135,15 @@ async function exportWSO(wsoInfo, outputDir) {
 
 async function exportAllWSOs() {
     console.log('=== Export All WSOs for Dissolve Processing ===\n');
-    
+
     // Identify WSOs needing dissolve
     const wsosNeedingDissolve = await identifyWSosNeedingDissolve();
-    
+
     if (wsosNeedingDissolve.length === 0) {
         console.log('✅ No WSOs need dissolve processing!');
         return;
     }
-    
+
     // Create exports directory
     const exportsDir = './exports/batch-dissolve';
     try {
@@ -153,25 +153,25 @@ async function exportAllWSOs() {
         console.error('❌ Failed to create export directory:', error);
         return;
     }
-    
+
     console.log(`\n🚀 Exporting ${wsosNeedingDissolve.length} WSOs...\n`);
-    
+
     const exportResults = [];
-    
+
     for (const wsoInfo of wsosNeedingDissolve) {
         console.log(`--- Exporting ${wsoInfo.name} ---`);
-        
+
         try {
             const result = await exportWSO(wsoInfo, exportsDir);
             exportResults.push(result);
-            
+
         } catch (error) {
             console.error(`❌ Failed to export ${wsoInfo.name}:`, error);
         }
-        
+
         console.log('');
     }
-    
+
     // Create processing manifest
     const manifest = {
         export_date: new Date().toISOString(),
@@ -193,65 +193,65 @@ async function exportAllWSOs() {
             '4. Verify results with verify-dissolve-success.js'
         ]
     };
-    
+
     const manifestPath = path.join(exportsDir, 'dissolve-processing-manifest.json');
     await fs.writeFile(manifestPath, JSON.stringify(manifest, null, 2));
-    
+
     // Summary report
     console.log('=== Export Summary ===');
     console.log(`✅ Exported ${exportResults.length} WSOs for dissolve processing`);
     console.log(`📁 Location: ${exportsDir}`);
-    
+
     console.log('\n📊 WSOs by Priority:');
     const highPriority = wsosNeedingDissolve.filter(w => w.priority === 'HIGH');
     console.log(`   🔴 High Priority: ${highPriority.length} WSOs (multiple polygons)`);
-    
+
     console.log('\n📋 Exported WSOs:');
     exportResults.forEach(r => {
         console.log(`   ${r.wso_name}: ${r.polygon_count} → 1 polygon (${r.size_kb} KB)`);
     });
-    
+
     const totalBorders = exportResults.reduce((sum, r) => sum + (r.polygon_count - 1), 0);
     console.log(`\n🎯 Total Borders to Eliminate: ${totalBorders}`);
-    
+
     console.log(`\n📄 Processing manifest: ${manifestPath}`);
-    
+
     console.log('\n🎯 Next Steps:');
     console.log('   1. Open each GeoJSON file in QGIS');
     console.log('   2. Use Processing Toolbox → Dissolve on each file');
     console.log('   3. Export dissolved results');
     console.log('   4. Run import scripts for each WSO');
     console.log('   5. Use verify-dissolve-success.js to confirm results');
-    
+
     return exportResults;
 }
 
 async function exportSpecificWSOs(wsoNames) {
     console.log(`=== Export Specific WSOs: ${wsoNames.join(', ')} ===\n`);
-    
+
     const { data: specificWSOs, error } = await supabase
-        .from('wso_information')
+        .from('usaw_wso_information')
         .select('*')
         .in('name', wsoNames)
         .not('territory_geojson', 'is', null);
-    
+
     if (error) {
         console.error('❌ Error fetching specific WSO data:', error);
         return;
     }
-    
+
     const exportsDir = './exports/specific-dissolve';
     await fs.mkdir(exportsDir, { recursive: true });
-    
+
     const exportResults = [];
-    
+
     for (const wso of specificWSOs) {
         const geometry = wso.territory_geojson?.geometry;
         if (!geometry) continue;
-        
+
         const polygonCount = geometry.type === 'MultiPolygon' ? geometry.coordinates.length : 1;
         const needsDissolve = geometry.type === 'MultiPolygon' && polygonCount > 1;
-        
+
         if (needsDissolve) {
             const wsoInfo = {
                 data: wso,
@@ -260,14 +260,14 @@ async function exportSpecificWSOs(wsoNames) {
                 priority: 'HIGH',
                 reason: `Requested WSO with ${polygonCount} polygons`
             };
-            
+
             const result = await exportWSO(wsoInfo, exportsDir);
             exportResults.push(result);
         } else {
             console.log(`⚠️ ${wso.name}: No dissolve needed (${geometry.type})`);
         }
     }
-    
+
     console.log(`\n✅ Exported ${exportResults.length} specific WSOs`);
     return exportResults;
 }
@@ -275,16 +275,16 @@ async function exportSpecificWSOs(wsoNames) {
 // Main execution
 async function main() {
     const args = process.argv.slice(2);
-    
+
     if (args.includes('--california-south')) {
         await exportSpecificWSOs(['California South']);
     } else if (args.includes('--multi-state')) {
         // Export only multi-state WSOs
         const { data: multiStateWSOs, error } = await supabase
-            .from('wso_information')
+            .from('usaw_wso_information')
             .select('name')
             .eq('geographic_type', 'multi_state');
-        
+
         if (!error && multiStateWSOs.length > 0) {
             const names = multiStateWSOs.map(w => w.name);
             await exportSpecificWSOs(names);

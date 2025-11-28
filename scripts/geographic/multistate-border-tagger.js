@@ -71,7 +71,7 @@ async function tagMultiStateBorders() {
 
     // Get all multi-state WSOs
     const { data: allWSOs, error } = await supabase
-        .from('wso_information')
+        .from('usaw_wso_information')
         .select('*');
 
     if (error) {
@@ -109,7 +109,7 @@ async function tagMultiStateBorders() {
 
             // Update the WSO
             const { error: updateError } = await supabase
-                .from('wso_information')
+                .from('usaw_wso_information')
                 .update({
                     territory_geojson: updatedGeojson,
                     updated_at: new Date().toISOString()
@@ -130,7 +130,7 @@ async function tagMultiStateBorders() {
 
     // Get updated data to show results
     const { data: updatedWSOs } = await supabase
-        .from('wso_information')
+        .from('usaw_wso_information')
         .select('name, territory_geojson')
         .not('territory_geojson->properties->shared_borders', 'is', null);
 
@@ -150,7 +150,7 @@ async function verifyBorderTags() {
     console.log('\n=== Verifying Border Tags ===');
 
     const { data: taggedWSOs, error } = await supabase
-        .from('wso_information')
+        .from('usaw_wso_information')
         .select('name, states, territory_geojson')
         .not('territory_geojson->properties->shared_borders', 'is', null);
 

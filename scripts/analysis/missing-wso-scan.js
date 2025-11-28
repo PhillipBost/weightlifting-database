@@ -25,7 +25,7 @@ const { createClient } = require('@supabase/supabase-js');
 function validateEnvironment() {
     const requiredVars = ['SUPABASE_URL', 'SUPABASE_SECRET_KEY'];
     const missing = requiredVars.filter(varName => !process.env[varName]);
-    
+
     if (missing.length > 0) {
         console.error('❌ Missing required environment variables:');
         missing.forEach(varName => {
@@ -34,7 +34,7 @@ function validateEnvironment() {
         console.error('\nPlease ensure these environment variables are set before running the script.');
         process.exit(1);
     }
-    
+
     console.log('✅ Environment variables validated');
 }
 
@@ -62,14 +62,14 @@ function initializeSupabase() {
 // Test Supabase connection
 async function testSupabaseConnection() {
     console.log('🔍 Testing Supabase connection...');
-    
+
     try {
         // Try a simple query to test connectivity
         const { data, error } = await supabase
-            .from('meet_results')
+            .from('usaw_meet_results')
             .select('result_id')
             .limit(1);
-        
+
         if (error) {
             console.error('❌ Supabase connection test failed:');
             console.error(`   Error: ${error.message}`);
@@ -78,11 +78,11 @@ async function testSupabaseConnection() {
             console.error(`   Hint: ${error.hint || 'N/A'}`);
             throw new Error(`Supabase connection failed: ${error.message}`);
         }
-        
+
         console.log('✅ Supabase connection successful');
         console.log(`   Database accessible, sample query returned ${data?.length || 0} records`);
         return true;
-        
+
     } catch (error) {
         console.error('❌ Connection test failed with unexpected error:');
         console.error(`   ${error.message}`);
@@ -183,7 +183,7 @@ function log(message) {
     const timestamp = new Date().toISOString();
     const logMessage = `[${timestamp}] ${message}
 `;
-    
+
     console.log(message);
     fs.appendFileSync(LOG_FILE, logMessage);
 }
@@ -191,12 +191,12 @@ function log(message) {
 // Screenshot utility - saves screenshots for debugging
 async function saveScreenshot(page, label, errorFlag = false) {
     if (!debugMode) return; // Only save screenshots in debug mode
-    
+
     try {
         const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
         const errorPrefix = errorFlag ? 'ERROR_' : '';
         const filename = `screenshots/${errorPrefix}${label}_${timestamp}.png`;
-        
+
         await page.screenshot({ path: filename, fullPage: true });
         log(`    📸 Screenshot saved: ${filename}`);
         return filename;
@@ -213,14 +213,14 @@ function parseArguments() {
         findData: process.env.FIND_DATA === 'true' || args.includes('--find-data'),
         debug: process.env.DEBUG === 'true' || args.includes('--debug')
     };
-    
+
     return options;
 }
 
 // Initialize browser for USAW scraping
 async function initBrowser() {
     log('Initializing browser for WSO lookup...');
-    
+
     browser = await puppeteer.launch({
         headless: true,
         args: [
@@ -233,7 +233,7 @@ async function initBrowser() {
     page = await browser.newPage();
     await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36');
     await page.setViewport({ width: 1280, height: 800 });
-    
+
     log('Browser initialized successfully');
 }
 
@@ -252,12 +252,12 @@ function buildSport80URLWithCode(weightClassCode, competitionDate) {
 // Build Sport80 URL for reverse lookup
 function buildSport80URL(division, competitionDate) {
     log(`    Building reverse lookup URL for: "${division}" on ${competitionDate}`);
-    
+
     // Determine if date is before 2025-06-01 to decide on (Inactive) prefix
     const competitionDateObj = new Date(competitionDate);
     const cutoffDate = new Date('2025-06-01');
     const shouldUseInactive = competitionDateObj < cutoffDate;
-    
+
     // Try exact matches - prioritizing inactive for old dates
     const divisionVariants = shouldUseInactive ? [
         `(Inactive) ${division}`,  // Priority for pre-2025
@@ -266,7 +266,7 @@ function buildSport80URL(division, competitionDate) {
         division,                  // Priority for post-2025  
         `(Inactive) ${division}`   // Fallback
     ];
-    
+
     // Try each variant for exact matches ONLY
     for (const variant of divisionVariants) {
         log(`    Checking division variant: "${variant}"`);
@@ -277,7 +277,7 @@ function buildSport80URL(division, competitionDate) {
             log(`    No match for variant: "${variant}"`);
         }
     }
-    
+
     log(`    No division match found for: "${division}"`);
     return null;
 }
@@ -287,37 +287,37 @@ async function extractDataFromAPIResponse(page, targetAthleteName, maxRetries = 
     let apiData = [];
     let requestsIntercepted = 0;
     let retryCount = 0;
-    
+
     try {
         log(`    🔗 Setting up API interception for ${targetAthleteName}...`);
-        
+
         // Enable request interception
         await page.setRequestInterception(true);
-        
+
         // Track intercepted API responses
         page.on('response', async (response) => {
             try {
                 const url = response.url();
                 const status = response.status();
-                
+
                 // Look for JSON API responses (not HTML)
                 if (status === 200 && url.includes('sport80') && !url.includes('.png') && !url.includes('.svg')) {
                     const contentType = response.headers()['content-type'] || '';
-                    
+
                     if (contentType.includes('application/json')) {
                         requestsIntercepted++;
-                        
+
                         try {
                             const jsonData = await response.json();
-                            
+
                             // Look for athlete data in response
                             if (jsonData && typeof jsonData === 'object') {
                                 const jsonString = JSON.stringify(jsonData);
-                                
+
                                 // Check if response contains athlete name
                                 if (jsonString.includes(targetAthleteName)) {
                                     log(`    ✓ API response contains athlete data: ${url}`);
-                                    
+
                                     // Try to extract athlete object from various possible structures
                                     if (Array.isArray(jsonData)) {
                                         apiData = apiData.concat(jsonData);
@@ -328,7 +328,7 @@ async function extractDataFromAPIResponse(page, targetAthleteName, maxRetries = 
                                     } else if (jsonData.athletes && Array.isArray(jsonData.athletes)) {
                                         apiData = apiData.concat(jsonData.athletes);
                                     }
-                                    
+
                                     if (debugMode) {
                                         log(`       Extracted ${apiData.length} potential athlete records`);
                                     }
@@ -343,38 +343,38 @@ async function extractDataFromAPIResponse(page, targetAthleteName, maxRetries = 
                 // Continue on response processing errors
             }
         });
-        
+
         // Allow all requests to continue
         page.on('request', (request) => {
             request.continue();
         });
-        
+
         log(`    ⏳ Waiting for API responses to be intercepted...`);
         await new Promise(resolve => setTimeout(resolve, 3000));
-        
+
         if (apiData.length > 0) {
             log(`    ✅ API interception successful - found ${apiData.length} records`);
-            
+
             // Parse athlete data from API response
             const athleteRecord = apiData.find(record => {
                 const recordString = JSON.stringify(record);
                 return recordString.includes(targetAthleteName);
             });
-            
+
             if (athleteRecord) {
                 log(`    ✓ Found matching athlete record in API data`);
-                
+
                 // Extract fields based on common API response structure
                 // Handle new API field names and {type: "unset"} objects
                 const competitionDate = athleteRecord.date || athleteRecord.competition_date;
                 let birthYear = extractValue(athleteRecord.birth_year) || extractValue(athleteRecord.birthYear);
-                
+
                 // Calculate birth year from lifter_age if available
                 if (!birthYear && athleteRecord.lifter_age && competitionDate) {
                     const competitionYear = new Date(competitionDate).getFullYear();
                     birthYear = competitionYear - athleteRecord.lifter_age;
                 }
-                
+
                 // Handle birth year from DOB if still not available
                 if (!birthYear && athleteRecord.dob) {
                     const dobDate = new Date(athleteRecord.dob);
@@ -382,7 +382,7 @@ async function extractDataFromAPIResponse(page, targetAthleteName, maxRetries = 
                         birthYear = dobDate.getFullYear();
                     }
                 }
-                
+
                 const parsed = {
                     athlete_name: extractValue(athleteRecord.name) || extractValue(athleteRecord.athlete_name) || extractValue(athleteRecord.lifter_name) || null,
                     wso: extractValue(athleteRecord.wso) || extractValue(athleteRecord.world_standing_order) || extractValue(athleteRecord.worldStandingOrder) || null,
@@ -394,18 +394,18 @@ async function extractDataFromAPIResponse(page, targetAthleteName, maxRetries = 
                     membership_number: extractValue(athleteRecord.membership) || extractValue(athleteRecord.membership_number) || extractValue(athleteRecord.membershipNumber) || null,
                     level: extractValue(athleteRecord.level) || extractValue(athleteRecord.class) || null
                 };
-                
+
                 return parsed;
             }
         } else {
             log(`    ⚠️  No API data intercepted (${requestsIntercepted} JSON responses processed)`);
         }
-        
+
         // Disable request interception
         await page.setRequestInterception(false);
         page.removeAllListeners('response');
         page.removeAllListeners('request');
-        
+
         return null;
     } catch (error) {
         log(`    ❌ API interception failed: ${error.message}`);
@@ -424,16 +424,16 @@ async function extractDataFromAPIResponse(page, targetAthleteName, maxRetries = 
 async function detectTableCellIndices(page) {
     try {
         const indices = await page.evaluate(() => {
-            const headerRow = document.querySelector('thead tr') || 
-                             document.querySelector('tr:first-child');
-            
+            const headerRow = document.querySelector('thead tr') ||
+                document.querySelector('tr:first-child');
+
             if (!headerRow) {
                 return null;
             }
-            
+
             const headers = Array.from(headerRow.querySelectorAll('th, td'))
                 .map(h => h.textContent.trim().toLowerCase());
-            
+
             const mapping = {
                 national_rank: null,
                 total: null,
@@ -445,7 +445,7 @@ async function detectTableCellIndices(page) {
                 level: null,
                 wso: null
             };
-            
+
             // Try to find each field by matching header text
             const fieldPatterns = {
                 national_rank: /rank|#/i,
@@ -458,7 +458,7 @@ async function detectTableCellIndices(page) {
                 level: /level|class/i,
                 wso: /wso|world.*standing|standing.*order/i
             };
-            
+
             // Match headers to field patterns
             for (const [field, pattern] of Object.entries(fieldPatterns)) {
                 for (let i = 0; i < headers.length; i++) {
@@ -468,10 +468,10 @@ async function detectTableCellIndices(page) {
                     }
                 }
             }
-            
+
             return mapping;
         });
-        
+
         if (indices) {
             if (debugMode) {
                 log(`    🔍 Detected cell indices from table headers:`);
@@ -486,7 +486,7 @@ async function detectTableCellIndices(page) {
             log(`    ⚠️  Could not detect table headers: ${error.message}`);
         }
     }
-    
+
     return null;
 }
 
@@ -501,21 +501,21 @@ async function scrapeBiographicalData(url, targetAthleteName) {
 
     try {
         log(`    Scraping biographical data from reverse lookup with pagination...`);
-        
+
         // Navigate to the page with longer timeout for Vue rendering
         log(`    Navigating to URL: ${url}`);
         await page.goto(url, { waitUntil: 'networkidle0', timeout: 45000 });
-        
+
         // Wait for Vue to render the table - try multiple strategies
         log(`    Waiting for Vue table to render...`);
-        
+
         try {
             // Strategy 1: Wait for table tbody with rows
             await page.waitForSelector('table tbody tr', { timeout: 15000 }).catch(() => {
                 log(`    Strategy 1 failed: table tbody tr not found`);
                 throw new Error('Table selector not found');
             });
-            
+
             log(`    ✓ Found table with rows`);
         } catch (err) {
             // Strategy 2: Wait for any tr elements
@@ -523,44 +523,44 @@ async function scrapeBiographicalData(url, targetAthleteName) {
             await page.waitForSelector('tr', { timeout: 10000 }).catch(() => {
                 throw new Error('No table rows found');
             });
-            
+
             log(`    ✓ Found table rows (alternative selector)`);
         }
-        
+
         // Wait for table to be populated with data (not empty)
         log(`    Waiting for table data to populate...`);
         await page.waitForFunction(
             () => {
                 const rows = document.querySelectorAll('tr, .athlete-row, .result-row');
                 // Ensure we have rows with actual content (at least 5 chars)
-                return rows.length > 0 && 
-                       Array.from(rows).some(row => row.textContent.trim().length > 5);
+                return rows.length > 0 &&
+                    Array.from(rows).some(row => row.textContent.trim().length > 5);
             },
             { timeout: 15000 }
         );
-        
+
         log(`    ✓ Table populated with data`);
-        
+
         // Additional wait for Vue reactivity
         await new Promise(resolve => setTimeout(resolve, 3000));
-        
+
         let allBiographicalData = [];
         let currentPage = 1;
         let hasNextPage = true;
         let cellIndices = null; // Will be detected from headers
-        
+
         // Save screenshot if debug mode enabled
         await saveScreenshot(page, `page_${currentPage}_loaded`);
-        
+
         // Loop through all pages to find the athlete
         while (hasNextPage && currentPage <= 10) { // Limit to 10 pages max for safety
             log(`    Checking page ${currentPage} for ${targetAthleteName}`);
-            
+
             // Detect cell indices on first page
             if (currentPage === 1 && !cellIndices) {
                 log(`    Detecting table structure...`);
                 cellIndices = await detectTableCellIndices(page);
-                
+
                 if (!cellIndices) {
                     log(`    ⚠️  Could not detect table headers, will use default indices`);
                     // Use default fallback indices
@@ -577,7 +577,7 @@ async function scrapeBiographicalData(url, targetAthleteName) {
                     };
                 }
             }
-            
+
             // Scrape current page with diagnostic logging
             let biographicalData = await page.evaluate((athleteName, debugEnabled, indices) => {
                 const results = [];
@@ -589,33 +589,33 @@ async function scrapeBiographicalData(url, targetAthleteName) {
                     tableHeaders: [],
                     cellCounts: {}
                 };
-                
+
                 // Log table headers if available
                 const headerCells = document.querySelectorAll('th');
                 if (headerCells.length > 0) {
                     diagnostics.tableHeaders = Array.from(headerCells).map(h => h.textContent.trim()).slice(0, 15);
                 }
-                
+
                 // Look for table rows containing athlete data
                 const rows = document.querySelectorAll('tr, .athlete-row, .result-row');
                 diagnostics.totalRows = rows.length;
-                
+
                 for (const row of rows) {
                     const text = row.textContent;
                     const cells = row.querySelectorAll('td');
-                    
+
                     // Track cell count distribution
                     const cellCount = cells.length;
                     diagnostics.cellCounts[cellCount] = (diagnostics.cellCounts[cellCount] || 0) + 1;
-                    
+
                     // Check if this row contains the target athlete's name
                     if (text.includes(athleteName)) {
                         diagnostics.matchingRows++;
-                        
+
                         // Try to extract structured data from table cells
                         if (cells.length >= 8) { // Expect enough columns for full athlete data
                             diagnostics.rowsWithEnoughCells++;
-                            
+
                             // Capture sample row for debugging
                             if (!diagnostics.sampleRow && cells.length > 0) {
                                 diagnostics.sampleRow = {
@@ -623,7 +623,7 @@ async function scrapeBiographicalData(url, targetAthleteName) {
                                     cellContents: Array.from(cells).slice(0, 15).map(c => c.textContent.trim().substring(0, 30))
                                 };
                             }
-                            
+
                             const athleteData = {
                                 national_rank: cells[indices.national_rank]?.textContent?.trim() || null,
                                 total: cells[indices.total]?.textContent?.trim() || null,
@@ -635,54 +635,54 @@ async function scrapeBiographicalData(url, targetAthleteName) {
                                 level: cells[indices.level]?.textContent?.trim() || null,
                                 wso: cells[indices.wso]?.textContent?.trim() || null
                             };
-                            
+
                             // Clean up and validate data
                             if (athleteData.birth_year) {
                                 const year = parseInt(athleteData.birth_year);
                                 athleteData.birth_year = (year >= 1900 && year <= 2020) ? year : null;
                             }
-                            
+
                             if (athleteData.membership_number) {
                                 const membership = parseInt(athleteData.membership_number);
                                 athleteData.membership_number = (membership > 0) ? membership : null;
                             }
-                            
+
                             if (athleteData.national_rank) {
                                 const rank = parseInt(athleteData.national_rank);
                                 athleteData.national_rank = (rank > 0) ? rank : null;
                             }
-                            
+
                             // Only add if athlete name matches
-                            if (athleteData.athlete_name && 
+                            if (athleteData.athlete_name &&
                                 athleteData.athlete_name.includes(athleteName)) {
                                 results.push(athleteData);
                             }
                         }
                     }
                 }
-                
+
                 // Return both results and diagnostics
                 return {
                     results: results,
                     diagnostics: diagnostics
                 };
             }, targetAthleteName, debugMode, cellIndices);
-            
+
             // Extract results and diagnostics
             const diagnostics = biographicalData.diagnostics;
             biographicalData = biographicalData.results;
-            
+
             // Log diagnostic information if debug mode enabled
             if (debugMode) {
                 log(`    📊 Page ${currentPage} diagnostics:`);
                 log(`       Total rows found: ${diagnostics.totalRows}`);
                 log(`       Rows matching athlete name: ${diagnostics.matchingRows}`);
                 log(`       Rows with enough cells (≥8): ${diagnostics.rowsWithEnoughCells}`);
-                
+
                 if (diagnostics.tableHeaders.length > 0) {
                     log(`       Table headers: ${diagnostics.tableHeaders.join(' | ')}`);
                 }
-                
+
                 if (Object.keys(diagnostics.cellCounts).length > 0) {
                     const cellDistribution = Object.entries(diagnostics.cellCounts)
                         .sort((a, b) => b[1] - a[1])
@@ -691,7 +691,7 @@ async function scrapeBiographicalData(url, targetAthleteName) {
                         .join(', ');
                     log(`       Cell count distribution (top 3): ${cellDistribution}`);
                 }
-                
+
                 if (diagnostics.sampleRow) {
                     log(`       Sample row structure (${diagnostics.sampleRow.cellCount} cells):`);
                     diagnostics.sampleRow.cellContents.forEach((content, idx) => {
@@ -699,10 +699,10 @@ async function scrapeBiographicalData(url, targetAthleteName) {
                     });
                 }
             }
-            
+
             // Add results from this page
             allBiographicalData.push(...biographicalData);
-            
+
             // If we found matches on this page, we can stop searching
             if (biographicalData.length > 0) {
                 log(`    ✅ Found ${biographicalData.length} biographical matches for ${targetAthleteName} on page ${currentPage}`);
@@ -711,7 +711,7 @@ async function scrapeBiographicalData(url, targetAthleteName) {
                 await saveScreenshot(page, `match_found_${safeName}`);
                 break;
             }
-            
+
             // Check for next page button and click it
             try {
                 // Multiple possible selectors for the next button
@@ -722,10 +722,10 @@ async function scrapeBiographicalData(url, targetAthleteName) {
                     'button[aria-label*="next" i]',
                     '.v-btn:has(i.mdi-chevron-right):last-of-type'
                 ];
-                
+
                 let nextButton = null;
                 let selectorUsed = '';
-                
+
                 // Try each selector until we find a clickable next button
                 for (const selector of nextButtonSelectors) {
                     try {
@@ -733,18 +733,18 @@ async function scrapeBiographicalData(url, targetAthleteName) {
                         if (buttons.length > 0) {
                             // For chevron selectors, get the last one (usually "next")
                             const candidateButton = buttons[buttons.length - 1];
-                            
+
                             // Check if button is enabled/clickable
                             const isClickable = await page.evaluate((btn) => {
                                 const button = btn.closest('button');
                                 if (!button) return false;
-                                
-                                return !button.disabled && 
-                                       !button.classList.contains('v-btn--disabled') &&
-                                       !button.classList.contains('disabled') &&
-                                       button.getAttribute('disabled') === null;
+
+                                return !button.disabled &&
+                                    !button.classList.contains('v-btn--disabled') &&
+                                    !button.classList.contains('disabled') &&
+                                    button.getAttribute('disabled') === null;
                             }, candidateButton);
-                            
+
                             if (isClickable) {
                                 nextButton = candidateButton;
                                 selectorUsed = selector;
@@ -756,20 +756,20 @@ async function scrapeBiographicalData(url, targetAthleteName) {
                         continue;
                     }
                 }
-                
+
                 if (nextButton) {
                     log(`    Moving to page ${currentPage + 1} using selector: ${selectorUsed}...`);
-                    
+
                     // Click the button (or its parent button element)
                     await page.evaluate((btn) => {
                         const button = btn.closest('button') || btn;
                         button.click();
                     }, nextButton);
-                    
+
                     // Wait for page to load
                     await new Promise(resolve => setTimeout(resolve, 3000));
                     await page.waitForSelector('table', { timeout: 10000 });
-                    
+
                     currentPage++;
                 } else {
                     log(`    No clickable next page button found - stopping at page ${currentPage}`);
@@ -780,20 +780,20 @@ async function scrapeBiographicalData(url, targetAthleteName) {
                 hasNextPage = false;
             }
         }
-        
+
         // Cache the result
         biographicalCache.set(cacheKey, allBiographicalData);
-        
+
         if (allBiographicalData.length > 0) {
             log(`    Found ${allBiographicalData.length} total biographical matches for ${targetAthleteName} across ${currentPage} pages`);
             return allBiographicalData[0]; // Return the first/best match
         } else {
             log(`    No biographical data found for ${targetAthleteName} across ${currentPage} pages using HTML scraping`);
-            
+
             // Try API interception as fallback
             log(`    Attempting API interception as fallback method...`);
             const apiData = await extractDataFromAPIResponse(page, targetAthleteName);
-            
+
             if (apiData && apiData.athlete_name) {
                 log(`    ✅ Successfully extracted data from API response`);
                 return apiData;
@@ -802,7 +802,7 @@ async function scrapeBiographicalData(url, targetAthleteName) {
                 return null;
             }
         }
-        
+
     } catch (error) {
         log(`    Error scraping biographical data: ${error.message}`);
         // Save error screenshot
@@ -817,12 +817,12 @@ async function findBiographicalData(meetResult) {
         if (meetResult.age_category && meetResult.weight_class && meetResult.date) {
             const division = `${meetResult.age_category} ${meetResult.weight_class}`;
             const reverseUrl = buildSport80URL(division, meetResult.date);
-            
+
             if (reverseUrl) {
                 log(`    Trying reverse lookup for ${meetResult.lifter_name} in ${division} on ${meetResult.date}`);
                 log(`    Generated URL: ${reverseUrl}`);
                 const biographicalData = await scrapeBiographicalData(reverseUrl, meetResult.lifter_name);
-                
+
                 if (biographicalData) {
                     log(`    ✅ Found biographical data via reverse lookup`);
                     return {
@@ -832,10 +832,10 @@ async function findBiographicalData(meetResult) {
                 }
             }
         }
-        
+
         log(`    No suitable data for reverse lookup - cannot find biographical data`);
         return null;
-        
+
     } catch (error) {
         log(`    Error finding biographical data for ${meetResult.lifter_name}: ${error.message}`);
         return null;
@@ -845,16 +845,16 @@ async function findBiographicalData(meetResult) {
 // Get meet results for WSO verification (records missing WSO)
 async function getAllWsoResults() {
     log('Scanning meet results for WSO verification...');
-    
+
     const limitRecords = process.env.LIMIT_RECORDS ? parseInt(process.env.LIMIT_RECORDS) : null;
     if (limitRecords) {
         log(`⚠️  LIMIT_RECORDS set to ${limitRecords} (for testing/debugging)`);
     }
-    
+
     // Date filtering for competition date (when the meet occurred)
-    const dateFilterMonths = process.env.DATE_FILTER_MONTHS ? 
+    const dateFilterMonths = process.env.DATE_FILTER_MONTHS ?
         parseInt(process.env.DATE_FILTER_MONTHS) : null;
-    
+
     let cutoffDate = null;
     if (dateFilterMonths) {
         const cutoff = new Date();
@@ -862,7 +862,7 @@ async function getAllWsoResults() {
         cutoffDate = cutoff.toISOString().split('T')[0]; // YYYY-MM-DD
         log(`📅 Filtering to competitions on or after ${cutoffDate} (last ${dateFilterMonths} months)`);
     }
-    
+
     let allResults = [];
     let start = 0;
     // Reduce batch size when date filtering is active to avoid timeouts
@@ -870,49 +870,49 @@ async function getAllWsoResults() {
     let hasMore = true;
     let retryCount = 0;
     const maxRetries = 2;
-    
+
     while (hasMore) {
         try {
             let query = supabase
-                .from('meet_results')
+                .from('usaw_meet_results')
                 .select('result_id, lifter_id, lifter_name, date, age_category, weight_class, meet_name, wso, gender, birth_year, club_name, national_rank, competition_age, created_at, updated_at')
                 .not('age_category', 'is', null)
                 .not('weight_class', 'is', null)
                 .not('lifter_name', 'is', null)
                 .is('wso', null);  // Only fetch records not yet processed
-            
+
             // Apply date filter if specified (filters by competition date)
             if (cutoffDate) {
                 query = query.gte('date', cutoffDate);
             }
-            
+
             // Add timeout handling with AbortController if supported
             let batchData, error;
-            
+
             try {
                 const result = await Promise.race([
                     query.order('result_id', { ascending: true }).range(start, start + batchSize - 1),
-                    new Promise((_, reject) => 
+                    new Promise((_, reject) =>
                         setTimeout(() => reject(new Error('Query timeout after 30 seconds')), 30000)
                     )
                 ]);
-                
+
                 batchData = result?.data;
                 error = result?.error;
             } catch (timeoutError) {
                 if (timeoutError.message.includes('timeout') && retryCount < maxRetries) {
                     // Timeout occurred, try fallback query without wso filter
-                    log(`⚠️  Query timeout at batch ${Math.floor(start/batchSize) + 1}, attempting fallback query...`);
+                    log(`⚠️  Query timeout at batch ${Math.floor(start / batchSize) + 1}, attempting fallback query...`);
                     retryCount++;
-                    
+
                     // Fallback: simpler query without the wso=null filter
                     const fallbackResult = await query
                         .order('result_id', { ascending: true })
                         .range(start, start + batchSize - 1);
-                    
+
                     batchData = fallbackResult.data;
                     error = fallbackResult.error;
-                    
+
                     if (batchData) {
                         // Filter out records that already have WSO
                         batchData = batchData.filter(r => !r.wso);
@@ -922,15 +922,15 @@ async function getAllWsoResults() {
                     throw timeoutError;
                 }
             }
-            
+
             if (error) {
                 throw new Error(`Failed to fetch meet results for WSO verification: ${error.message}`);
             }
-            
+
             if (batchData && batchData.length > 0) {
                 allResults.push(...batchData);
-                log(`  Batch ${Math.floor(start/batchSize) + 1}: Found ${batchData.length} results (Total: ${allResults.length})`);
-                
+                log(`  Batch ${Math.floor(start / batchSize) + 1}: Found ${batchData.length} results (Total: ${allResults.length})`);
+
                 // Check if we've hit the limit (for testing)
                 if (limitRecords && allResults.length >= limitRecords) {
                     log(`  Reached LIMIT_RECORDS of ${limitRecords}, stopping batch fetch`);
@@ -938,7 +938,7 @@ async function getAllWsoResults() {
                     hasMore = false;
                     break;
                 }
-                
+
                 // Check if we got a full batch (indicates more records might exist)
                 hasMore = batchData.length === batchSize;
                 start += batchSize;
@@ -948,7 +948,7 @@ async function getAllWsoResults() {
             }
         } catch (error) {
             log(`❌ Error fetching batch at offset ${start}: ${error.message}`);
-            
+
             if (retryCount < maxRetries) {
                 retryCount++;
                 log(`  Retrying (attempt ${retryCount} of ${maxRetries})...`);
@@ -960,7 +960,7 @@ async function getAllWsoResults() {
             }
         }
     }
-    
+
     log(`Found ${allResults.length} meet results for WSO verification`);
     return allResults;
 }
@@ -969,24 +969,24 @@ async function getAllWsoResults() {
 async function getTotalMeetResultsCount() {
     try {
         log('Attempting to count missing WSO records...');
-        
+
         // Try with timeout to prevent hanging
         const countPromise = supabase
-            .from('meet_results')
+            .from('usaw_meet_results')
             .select('result_id', { count: 'exact', head: true })
             .not('age_category', 'is', null)
             .not('weight_class', 'is', null)
             .is('wso', null);
-        
+
         const countWithTimeout = Promise.race([
             countPromise,
-            new Promise((_, reject) => 
+            new Promise((_, reject) =>
                 setTimeout(() => reject(new Error('Count query timeout after 15 seconds')), 15000)
             )
         ]);
-        
+
         const { count, error } = await countWithTimeout;
-        
+
         if (error) {
             log(`❌ Supabase count error: ${error.message}`);
             log(`   Error code: ${error.code || 'N/A'}`);
@@ -995,19 +995,19 @@ async function getTotalMeetResultsCount() {
             log('   Falling back to simple count method...');
             return await getTotalMeetResultsCountFallback();
         }
-        
+
         if (count === null || count === undefined) {
             log('⚠️  Count returned null/undefined, using fallback method...');
             return await getTotalMeetResultsCountFallback();
         }
-        
+
         log(`✅ Successfully counted ${count} total meet results`);
         return count;
-        
+
     } catch (error) {
         log(`⚠️  Error in getTotalMeetResultsCount: ${error.message}`);
         log('   Attempting fallback counting method...');
-        
+
         try {
             return await getTotalMeetResultsCountFallback();
         } catch (fallbackError) {
@@ -1021,24 +1021,24 @@ async function getTotalMeetResultsCount() {
 // Fallback method to count meet results using alternative approach
 async function getTotalMeetResultsCountFallback() {
     log('Using fallback method to count meet results...');
-    
+
     // Try getting a small batch and checking if we can count at all
     const { data, error } = await supabase
-        .from('meet_results')
+        .from('usaw_meet_results')
         .select('result_id')
         .not('age_category', 'is', null)
         .not('weight_class', 'is', null)
         .limit(1);
-    
+
     if (error) {
         throw new Error(`Fallback count failed - cannot access meet_results table: ${error.message}`);
     }
-    
+
     if (!data || data.length === 0) {
         log('⚠️  No meet results found in database');
         return 0;
     }
-    
+
     // If we can access the table, estimate count by using range queries
     log('✅ Table accessible, but exact count unavailable. Proceeding without total count...');
     return null; // Indicates we should proceed without total count
@@ -1053,34 +1053,34 @@ function analyzeMissingWsoPatterns(missingResults) {
         by_meet: {},                 // Count by meet
         by_creation_date: {}
     };
-    
+
     const thirtyDaysAgo = new Date();
     thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
-    
+
     for (const result of missingResults) {
         // Check if recent
         const createdAt = new Date(result.created_at);
         if (createdAt > thirtyDaysAgo) {
             patterns.recent_results++;
         }
-        
+
         // Group by age category
         const ageCategory = result.age_category || 'Unknown';
         patterns.by_age_category[ageCategory] = (patterns.by_age_category[ageCategory] || 0) + 1;
-        
+
         // Group by weight class
         const weightClass = result.weight_class || 'Unknown';
         patterns.by_weight_class[weightClass] = (patterns.by_weight_class[weightClass] || 0) + 1;
-        
+
         // Group by meet
         const meetName = result.meet_name || 'Unknown';
         patterns.by_meet[meetName] = (patterns.by_meet[meetName] || 0) + 1;
-        
+
         // Group by creation date
         const dateKey = createdAt.toISOString().split('T')[0]; // YYYY-MM-DD
         patterns.by_creation_date[dateKey] = (patterns.by_creation_date[dateKey] || 0) + 1;
     }
-    
+
     return patterns;
 }
 
@@ -1146,7 +1146,7 @@ async function performWsoScan() {
         let correctedData = 0;
         let skippedCount = 0;
         let missingCount = allResults.filter(r => !r.wso).length;
-        
+
         if (options.findData && resultsToProcess.length > 0) {
             await initBrowser();
 
@@ -1161,14 +1161,14 @@ async function performWsoScan() {
                 const totalToProcess = processedResultIds.size + resultsToProcess.length;
                 log(`
 📋 [${globalIndex}/${totalToProcess}] Processing ${result.lifter_name} (result_id: ${result.result_id})`);
-                
+
                 const foundBiographicalData = await findBiographicalData(result);
-                
+
                 if (foundBiographicalData && foundBiographicalData.biographical_data) {
                     const bioData = foundBiographicalData.biographical_data;
                     const existingWso = result.wso;
                     const foundWso = bioData.wso;
-                    
+
                     // Calculate competition age if we have birth year and competition date
                     let calculatedAge = null;
                     if (bioData.birth_year && result.date) {
@@ -1176,7 +1176,7 @@ async function performWsoScan() {
                         calculatedAge = competitionYear - bioData.birth_year;
                         log(`    🎂 Calculated competition age: ${calculatedAge} (${competitionYear} - ${bioData.birth_year})`);
                     }
-                    
+
                     log(`    💾 Existing WSO: ${existingWso || 'NULL'}`);
                     log(`    🌐 Found WSO: ${foundWso || 'NULL'}`);
                     log(`    👤 Current gender: ${result.gender || 'NULL'} → Found: ${bioData.gender || 'NULL'}`);
@@ -1184,14 +1184,14 @@ async function performWsoScan() {
                     log(`    🏋️ Current club: ${result.club_name || 'NULL'} → Found: ${bioData.club_name || 'NULL'}`);
                     log(`    🏆 Current national rank: ${result.national_rank || 'NULL'} → Found: ${bioData.national_rank || 'NULL'}`);
                     log(`    🎯 Current competition age: ${result.competition_age || 'NULL'} → Calculated: ${calculatedAge || 'NULL'}`);
-                    
+
                     // Build update object
                     const updateData = {
                         updated_at: new Date().toISOString()
                     };
-                    
+
                     let updateReason = '';
-                    
+
                     // WSO comparison logic
                     if (!existingWso && foundWso) {
                         // Missing WSO - add it
@@ -1212,7 +1212,7 @@ async function performWsoScan() {
                         // Have WSO but couldn't verify - leave as is
                         log(`    ⚠️ Could not verify existing WSO: ${existingWso}`);
                     }
-                    
+
                     // Update other biographical fields that are missing
                     if (!result.gender && bioData.gender) {
                         updateData.gender = bioData.gender;
@@ -1235,15 +1235,15 @@ async function performWsoScan() {
                         updateData.competition_age = calculatedAge;
                         log(`    🎯 Adding competition age: ${calculatedAge}`);
                     }
-                    
+
                     // Only update if we have at least one new piece of data
                     const fieldsToUpdate = Object.keys(updateData).filter(key => key !== 'updated_at');
                     if (fieldsToUpdate.length > 0) {
                         const { error } = await supabase
-                            .from('meet_results')
+                            .from('usaw_meet_results')
                             .update(updateData)
                             .eq('result_id', result.result_id);
-                        
+
                         if (error) {
                             log(`    ❌ Failed to update meet result: ${error.message}`);
                         } else {
@@ -1278,7 +1278,7 @@ async function performWsoScan() {
                         log(`    ℹ️  No updates needed for ${result.lifter_name}`);
                     }
                 }
-                
+
                 // Add result to processed set
                 processedResultIds.add(result.result_id);
 
@@ -1297,24 +1297,24 @@ async function performWsoScan() {
                     await new Promise(resolve => setTimeout(resolve, 3000));
                 }
             }
-            
+
             // Close browser
             if (browser) {
                 await browser.close();
                 log('\nBrowser closed');
             }
         }
-        
+
         // Calculate final statistics
         const finalMissingCount = allResults.filter(r => !r.wso).length;
-        const missingPercentage = (totalResults && totalResults > 0) ? 
-            ((finalMissingCount / totalResults) * 100).toFixed(2) + '%' : 
+        const missingPercentage = (totalResults && totalResults > 0) ?
+            ((finalMissingCount / totalResults) * 100).toFixed(2) + '%' :
             (allResults.length > 0 ? ((finalMissingCount / allResults.length) * 100).toFixed(2) + '% (of processed)' : '0%');
-        
+
         // Analyze patterns - focus on the missing ones for pattern analysis
         const missingResults = allResults.filter(r => !r.wso);
         const patterns = analyzeMissingWsoPatterns(missingResults);
-        
+
         // Build report
         const report = {
             metadata: {
@@ -1340,11 +1340,11 @@ async function performWsoScan() {
             missing_wso_results: options.showDetails ? missingResults : missingResults.slice(0, 20), // Limit for GitHub Actions
             found_wso_data: foundData
         };
-        
+
         // Save report
         fs.writeFileSync(OUTPUT_FILE, JSON.stringify(report, null, 2));
         log(`📄 Scan report saved to: ${OUTPUT_FILE}`);
-        
+
         // Log summary
         log('\n' + '='.repeat(60));
         log('✅ WSO VERIFICATION AND UPDATE COMPLETE');
@@ -1357,24 +1357,24 @@ async function performWsoScan() {
         log(`   WSO corrections made: ${correctedData.toLocaleString()}`);
         log(`   Database updates: ${dataUpdates.toLocaleString()}`);
         log(`   Processing time: ${Math.round((Date.now() - startTime) / 1000)}s`);
-        
+
         // Show top missing categories
         log('\n📊 TOP MISSING WSO BY AGE CATEGORY:');
         const topAgeCategories = Object.entries(patterns.by_age_category)
-            .sort(([,a], [,b]) => b - a)
+            .sort(([, a], [, b]) => b - a)
             .slice(0, 5);
         topAgeCategories.forEach(([category, count]) => {
             log(`   ${category}: ${count}`);
         });
-        
+
         log('\n📊 TOP MISSING WSO BY WEIGHT CLASS:');
         const topWeightClasses = Object.entries(patterns.by_weight_class)
-            .sort(([,a], [,b]) => b - a)
+            .sort(([, a], [, b]) => b - a)
             .slice(0, 5);
         topWeightClasses.forEach(([weightClass, count]) => {
             log(`   ${weightClass}: ${count}`);
         });
-        
+
         if (options.findData) {
             log(`\n🔍 WSO VERIFICATION RESULTS:`);
             log(`   Total lookups attempted: ${(allResults.length - skippedCount).toLocaleString()}`);
@@ -1386,7 +1386,7 @@ async function performWsoScan() {
             const verificationRate = checkedResults > 0 ? (((verifiedCorrect + correctedData) / checkedResults) * 100).toFixed(1) : '0';
             log(`   Verification rate: ${verificationRate}%`);
         }
-        
+
         if (finalMissingCount > 0) {
             log('\n📋 SAMPLE MISSING WSO RESULTS:');
             const sampleSize = Math.min(5, finalMissingCount);
@@ -1394,40 +1394,40 @@ async function performWsoScan() {
                 const result = missingResults[i];
                 log(`   • ${result.lifter_name} (result_id: ${result.result_id}) - ${result.age_category} ${result.weight_class} on ${result.date}`);
             }
-            
+
             if (finalMissingCount > sampleSize) {
                 log(`   ... and ${finalMissingCount - sampleSize} more (see full report)`);
             }
         }
-        
+
         if (foundData.length > 0) {
             log('\n✅ WSO DATA FOUND AND UPDATED:');
             foundData.slice(0, 10).forEach(found => { // Show first 10
                 log(`   • ${found.lifter_name} (result_id: ${found.result_id}) -> updated ${found.updated_fields.join(', ')}`);
                 log(`     Found via: ${found.found_via}`);
             });
-            
+
             if (foundData.length > 10) {
                 log(`   ... and ${foundData.length - 10} more updates`);
             }
         }
-        
+
         // Determine exit code based on execution success vs data quality findings
         const executionSuccessful = true; // We successfully completed the scan
         const significantProgress = dataUpdates > 0 || verifiedCorrect > 0 || allResults.length > 500;
 
         // NEW: Check if remaining unassigned meets are legitimately unassignable (no addresses)
         log('\n🔍 Checking addressability of remaining unassigned meets...');
-        
+
         // Query for meets without addresses (cannot be assigned WSOs)
         const { data: meetsWithoutAddresses, error: addressError } = await supabase
-            .from('meets')
+            .from('usaw_meets')
             .select('meet_id')
             .or('address.is.null,address.eq.')
             .limit(2000); // Safety limit
 
         const addresslessCount = meetsWithoutAddresses ? meetsWithoutAddresses.length : 0;
-        
+
         if (addressError) {
             log(`⚠️  Could not verify addressless meets: ${addressError.message}`);
             log(`   Proceeding with conservative exit logic...`);
@@ -1437,7 +1437,7 @@ async function performWsoScan() {
 
         // Calculate potentially problematic unassigned meets
         const potentiallyAssignableUnassigned = Math.max(0, finalMissingCount - addresslessCount);
-        
+
         log(`📊 Assignment Analysis:`);
         log(`   Total missing WSO assignments: ${finalMissingCount.toLocaleString()}`);
         log(`   Meets without addresses (expected): ${addresslessCount.toLocaleString()}`);
@@ -1478,7 +1478,7 @@ async function performWsoScan() {
 }
 
 // Export for use by other scripts
-module.exports = { 
+module.exports = {
     performWsoScan,
     getAllWsoResults,
     analyzeMissingWsoPatterns

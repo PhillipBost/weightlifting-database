@@ -40,7 +40,7 @@ async function exportAllWSOs() {
     console.log('================================');
 
     const { data: wsos, error } = await supabase
-        .from('wso_information')
+        .from('usaw_wso_information')
         .select('*')
         .not('territory_geojson', 'is', null);
 
@@ -95,7 +95,7 @@ async function exportSpecificWSO(wsoName) {
     console.log('='.repeat(20 + wsoName.length));
 
     const { data: wso, error } = await supabase
-        .from('wso_information')
+        .from('usaw_wso_information')
         .select('*')
         .eq('name', wsoName)
         .not('territory_geojson', 'is', null)
@@ -145,7 +145,7 @@ async function exportMeetsWithWSOs() {
 
     // Get meets with coordinates
     const { data: meets, error: meetsError } = await supabase
-        .from('meets')
+        .from('usaw_meets')
         .select('meet_id, meet_name, date, city, state, latitude, longitude')
         .not('latitude', 'is', null)
         .not('longitude', 'is', null)
@@ -159,7 +159,7 @@ async function exportMeetsWithWSOs() {
     // Get WSO participation data for these meets
     const meetIds = meets.map(m => m.meet_id);
     const { data: participation, error: participationError } = await supabase
-        .from('meet_results')
+        .from('usaw_meet_results')
         .select('meet_id, wso')
         .in('meet_id', meetIds)
         .not('wso', 'is', null);
@@ -263,7 +263,7 @@ function startAPIServer(port = 3001) {
             } else if (pathname === '/api/wso/list') {
                 // Get list of available WSOs
                 const { data: wsos, error } = await supabase
-                    .from('wso_information')
+                    .from('usaw_wso_information')
                     .select('name, geographic_type, states, population_estimate')
                     .eq('active_status', true)
                     .order('name');

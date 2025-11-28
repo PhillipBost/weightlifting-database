@@ -176,12 +176,12 @@ async function generateMergedCountyBoundaries(counties, wsoName) {
     } catch (unionError) {
         console.log(`  ❌ Turf union failed: ${unionError.message}`);
         console.log(`  🔄 Falling back to MultiPolygon concatenation...`);
-        
+
         // Fallback: MultiPolygon concatenation (original approach)
         const coordinates = [];
         successfulCounties.length = 0; // Clear array
         failedCounties.length = 0;
-        
+
         for (const feature of allFeatures) {
             try {
                 if (feature.geometry.type === 'Polygon') {
@@ -199,7 +199,7 @@ async function generateMergedCountyBoundaries(counties, wsoName) {
                 failedCounties.push(feature.properties.county);
             }
         }
-        
+
         unifiedFeature = {
             type: "Feature",
             geometry: {
@@ -227,29 +227,29 @@ async function generateMergedCountyBoundaries(counties, wsoName) {
             merge_method: mergeMethod,
             border_elimination: mergeMethod.includes("union"),
             polygon_count_before: allFeatures.length,
-            polygon_count_after: unifiedFeature.geometry.type === "MultiPolygon" 
-                ? unifiedFeature.geometry.coordinates.length 
+            polygon_count_after: unifiedFeature.geometry.type === "MultiPolygon"
+                ? unifiedFeature.geometry.coordinates.length
                 : 1,
-            borders_eliminated: mergeMethod === "turf_union_complete" 
-                ? allFeatures.length - 1 
+            borders_eliminated: mergeMethod === "turf_union_complete"
+                ? allFeatures.length - 1
                 : 0,
             processing_date: new Date().toISOString()
         }
     };
 
-    const finalPolygonCount = finalFeature.geometry.type === "MultiPolygon" 
-        ? finalFeature.geometry.coordinates.length 
+    const finalPolygonCount = finalFeature.geometry.type === "MultiPolygon"
+        ? finalFeature.geometry.coordinates.length
         : 1;
-    
+
     console.log(`✓ Processing complete: ${successfulCounties.length}/${allFeatures.length} counties (${Math.round((successfulCounties.length / allFeatures.length) * 100)}%)`);
     console.log(`📊 Method: ${mergeMethod}`);
     console.log(`🗺️  Result: ${finalPolygonCount} polygon(s)`);
-    
+
     if (mergeMethod.includes("union")) {
         const bordersEliminated = allFeatures.length - finalPolygonCount;
         console.log(`🎯 County borders eliminated: ${bordersEliminated}`);
     }
-    
+
     if (failedCounties.length > 0) {
         console.log(`⚠️ Failed counties: ${failedCounties.join(', ')}`);
     }
@@ -262,7 +262,7 @@ async function fixCaliforniaWSOs() {
 
     // Get California WSOs
     const { data: californiaWSOs, error } = await supabase
-        .from('wso_information')
+        .from('usaw_wso_information')
         .select('*')
         .in('name', ['California North Central', 'California South']);
 
@@ -298,7 +298,7 @@ async function fixCaliforniaWSOs() {
         console.log(`Updating ${wso.name} with new boundary...`);
 
         const { error: updateError } = await supabase
-            .from('wso_information')
+            .from('usaw_wso_information')
             .update({
                 territory_geojson: mergedBoundary,
                 updated_at: new Date().toISOString()
@@ -320,7 +320,7 @@ async function identifyMultiStateWSOs() {
     console.log('\n=== Identifying Multi-State WSOs ===');
 
     const { data: allWSOs, error } = await supabase
-        .from('wso_information')
+        .from('usaw_wso_information')
         .select('wso_id, name, states, geographic_type');
 
     if (error) {

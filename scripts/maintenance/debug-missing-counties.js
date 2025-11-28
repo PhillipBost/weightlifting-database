@@ -21,7 +21,7 @@ async function debugMissingCounties() {
 
     // Get current WSO data
     const { data: californiaWSOs, error } = await supabase
-        .from('wso_information')
+        .from('usaw_wso_information')
         .select('*')
         .in('name', ['California North Central', 'California South']);
 

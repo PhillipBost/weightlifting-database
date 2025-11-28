@@ -34,7 +34,7 @@ function ensureDirectories() {
 function log(message) {
     const timestamp = new Date().toISOString();
     const logMessage = `[${timestamp}] ${message}\n`;
-    
+
     console.log(message);
     fs.appendFileSync(LOG_FILE, logMessage);
 }
@@ -49,43 +49,43 @@ function log(message) {
 // Calculate address precision score (higher = more precise)
 function calculateAddressPrecision(address, displayName) {
     if (!address && !displayName) return 0;
-    
+
     let score = 0;
     const addressToScore = address || displayName || '';
     const parts = addressToScore.split(',').map(p => p.trim());
-    
+
     // Street number and name present = +4
     if (parts.length > 0 && parts[0] && /\d+.*\w+/.test(parts[0])) {
         score += 4;
     }
-    
+
     // City present = +2  
     if (parts.length > 1 && parts[1] && parts[1].length > 2) {
         score += 2;
     }
-    
+
     // State present = +1
     if (parts.length > 2 && parts[2] && parts[2].length >= 2) {
         score += 1;
     }
-    
+
     // ZIP code present = +1
     if (addressToScore.match(/\b\d{5}(-\d{4})?\b/)) {
         score += 1;
     }
-    
+
     // Penalty for vague results
     if (displayName && displayName.toLowerCase().includes('united states')) {
         score -= 2;
     }
-    
+
     return Math.max(0, score);
 }
 
 // Remove suite/apartment information from address
 function removeSuiteInfo(address) {
     if (!address || typeof address !== 'string') return address;
-    
+
     return address
         .replace(/,\s*(suite|ste|apt|apartment|unit|building|bldg|floor|fl|room|rm|#)\s*[a-z0-9\-\s]+/gi, '')
         .replace(/\s+/g, ' ')
@@ -133,48 +133,48 @@ async function tryGeocodeVariants(baseAddress, strategy) {
             .replace(/^,\s*|,\s*$/g, '')  // Remove leading/trailing commas
             .trim();
     }
-    
+
     // Helper function to remove street number (keep street name)
     function removeStreetNumber(addr) {
         return addr.replace(/^\d+\s+/, '').trim();
     }
-    
+
     // Clean base address first
     const cleanBaseAddress = removeCountry(baseAddress);
     const addressWithoutSuite = removeSuiteInfo(cleanBaseAddress);
     const useSuiteVariants = addressWithoutSuite !== cleanBaseAddress;
-    
+
     let addressVariants = [
         baseAddress, // Original full address
         cleanBaseAddress, // Remove country variations
     ];
-    
+
     // Add suite-removed variants early in the process if suite info was detected
     if (useSuiteVariants) {
         addressVariants.push(
             addressWithoutSuite, // Suite removed from clean address
         );
     }
-    
+
     // Add street name without number variant
     const fallbackBase = useSuiteVariants ? addressWithoutSuite : cleanBaseAddress;
     const streetNameOnly = removeStreetNumber(fallbackBase);
     if (streetNameOnly !== fallbackBase && streetNameOnly.length > 10) {
         addressVariants.push(streetNameOnly);
     }
-    
+
     // Add broader fallbacks at the end - use the CLEANEST address for fallbacks
     addressVariants.push(
         fallbackBase.split(',').slice(-3).join(',').trim(), // City, state, zip from clean address
         fallbackBase.split(',').slice(-2).join(',').trim()  // State, zip from clean address
     );
-    
+
     // Filter out empty/too short addresses and remove duplicates
     addressVariants = [...new Set(addressVariants.filter(addr => addr && addr.length > 2))];
 
     for (let i = 0; i < addressVariants.length; i++) {
         const addressToTry = addressVariants[i];
-        
+
         try {
             // Show if this is a suite-removed variant
             const isSuiteRemoved = useSuiteVariants && addressToTry === addressWithoutSuite;
@@ -182,9 +182,9 @@ async function tryGeocodeVariants(baseAddress, strategy) {
             let variantLabel = `${strategy} variant ${i + 1}`;
             if (isSuiteRemoved) variantLabel = `${strategy} (suite removed) variant ${i + 1}`;
             if (isStreetNameOnly) variantLabel = `${strategy} (street name only) variant ${i + 1}`;
-            
+
             log(`    🔍 Trying ${variantLabel}: ${addressToTry}`);
-            
+
             const params = new URLSearchParams({
                 q: addressToTry,
                 format: 'json',
@@ -194,7 +194,7 @@ async function tryGeocodeVariants(baseAddress, strategy) {
             });
 
             const url = `https://nominatim.openstreetmap.org/search?${params.toString()}`;
-            
+
             const response = await fetch(url, {
                 headers: {
                     'User-Agent': 'WeightliftingDatabase/1.0'
@@ -214,7 +214,7 @@ async function tryGeocodeVariants(baseAddress, strategy) {
 
             if (results && results.length > 0) {
                 const result = results[0];
-                
+
                 if (result.lat && result.lon) {
                     const precision = calculateAddressPrecision(addressToTry, result.display_name);
                     log(`    ✅ Success with ${variantLabel} (precision: ${precision})`);
@@ -267,15 +267,15 @@ function shouldUpdateGeocode(club) {
     if (!club.latitude || !club.longitude || club.geocode_success === null) {
         return { update: true, reason: 'No existing geocoding data' };
     }
-    
+
     // Previous geocoding failed - always retry
     if (!club.geocode_success) {
         return { update: true, reason: 'Previous geocoding failed, retrying' };
     }
-    
+
     // Use stored precision score if available (from previous runs with this improved script)
     let existingPrecision = club.geocode_precision_score;
-    
+
     // If no stored precision score, calculate it from existing display_name and address
     if (existingPrecision === null || existingPrecision === undefined) {
         existingPrecision = calculateAddressPrecision(club.address, club.geocode_display_name);
@@ -283,49 +283,49 @@ function shouldUpdateGeocode(club) {
     } else {
         log(`   📊 Existing precision score: ${existingPrecision} (from database)`);
     }
-    
+
     // High precision results (6+) - skip 
     if (existingPrecision >= 6) {
         return { update: false, reason: `High precision result (${existingPrecision}), skipping` };
     }
-    
+
     // Lower precision results should be re-attempted
     return { update: true, reason: `Low precision score (${existingPrecision}), attempting to improve` };
 }
 
 async function getClubsNeedingGeocoding() {
     log('🔍 Getting clubs that need geocoding...');
-    
+
     let allClubs = [];
     let from = 0;
     const pageSize = 100;
-    
+
     while (true) {
         const { data: clubs, error } = await supabase
-            .from('clubs')
+            .from('usaw_clubs')
             .select('club_name, address, latitude, longitude, geocode_success, geocode_display_name, geocode_precision_score')
             .not('address', 'is', null)
             .neq('address', '')
             .range(from, from + pageSize - 1);
-        
+
         if (error) {
             throw new Error(`Failed to get clubs: ${error.message}`);
         }
-        
+
         if (!clubs || clubs.length === 0) {
             break;
         }
-        
+
         allClubs.push(...clubs);
         from += pageSize;
-        
+
         log(`📄 Loaded ${allClubs.length} clubs so far...`);
-        
+
         if (clubs.length < pageSize) {
             break; // Last page
         }
     }
-    
+
     log(`📊 Found ${allClubs.length} clubs needing geocoding`);
     return allClubs;
 }
@@ -345,7 +345,7 @@ async function updateClubGeocoding(clubName, geocodeResult) {
     };
 
     const { error } = await supabase
-        .from('clubs')
+        .from('usaw_clubs')
         .update(updateData)
         .eq('club_name', clubName);
 
@@ -358,7 +358,7 @@ async function updateClubGeocoding(clubName, geocodeResult) {
 function testAddressStandardization() {
     console.log('🧪 Testing address standardization...');
     console.log('='.repeat(50));
-    
+
     const testAddresses = [
         '123 Main St, Suite 456, Springfield, IL 62701, United States of America',
         '789 Oak Ave, Apt 12B, Chicago, Illinois 60601',
@@ -366,7 +366,7 @@ function testAddressStandardization() {
         'PO Box 123, Denver, CO 80202',
         '321 Park Blvd, Unit #5, Los Angeles, California 90210, USA'
     ];
-    
+
     testAddresses.forEach((address, index) => {
         console.log(`\nTest ${index + 1}: ${address}`);
         const variations = standardizeAddress(address);
@@ -375,7 +375,7 @@ function testAddressStandardization() {
             console.log(`  ${idx + 1}: ${variation}`);
         });
     });
-    
+
     console.log('\n' + '='.repeat(50));
     console.log('✅ Address standardization test complete');
 }
@@ -383,7 +383,7 @@ function testAddressStandardization() {
 // Main geocoding function
 async function geocodeClubs() {
     const startTime = Date.now();
-    
+
     try {
         ensureDirectories();
         log('🏋️ Starting club geocoding process...');
@@ -391,7 +391,7 @@ async function geocodeClubs() {
 
         // Get clubs that need geocoding
         const clubs = await getClubsNeedingGeocoding();
-        
+
         if (clubs.length === 0) {
             log('✅ No clubs found that need geocoding');
             return;
@@ -404,7 +404,7 @@ async function geocodeClubs() {
         // Process each club
         for (let i = 0; i < clubs.length; i++) {
             const club = clubs[i];
-            
+
             log(`\n📍 Processing club ${i + 1}/${clubs.length}: ${club.club_name}`);
             log(`   Original Address: ${club.address}`);
 
@@ -419,7 +419,7 @@ async function geocodeClubs() {
 
                 // Geocode the address using proven approach
                 const geocodeResult = await geocodeAddress(club.address);
-                
+
                 if (geocodeResult.success) {
                     successCount++;
                     log(`   ✅ Geocoded: ${geocodeResult.latitude}, ${geocodeResult.longitude}`);
@@ -439,7 +439,7 @@ async function geocodeClubs() {
             } catch (error) {
                 failureCount++;
                 log(`   ❌ Processing error: ${error.message}`);
-                
+
                 // Try to update with error info
                 try {
                     await updateClubGeocoding(club.club_name, {

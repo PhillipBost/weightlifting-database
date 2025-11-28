@@ -244,7 +244,7 @@ async function findWSOByCoordinates(lat, lng, supabaseClient) {
 
     try {
         const { data: wsos, error } = await supabaseClient
-            .from('wso_information')
+            .from('usaw_wso_information')
             .select('name, territory_geojson')
             .not('territory_geojson', 'is', null);
 
@@ -303,13 +303,13 @@ async function assignCaliforniaWSO(lat, lng, supabaseClient = null) {
         try {
             // Fetch California WSO territories from database
             const { data: californiaWSOs, error } = await supabaseClient
-                .from('wso_information')
+                .from('usaw_wso_information')
                 .select('name, territory_geojson')
                 .in('name', ['California North Central', 'California South']);
-            
+
             if (!error && californiaWSOs && californiaWSOs.length === 2) {
                 const testPoint = point([lng, lat]);
-                
+
                 // Check which territory contains this point
                 for (const wso of californiaWSOs) {
                     if (wso.territory_geojson && wso.territory_geojson.geometry) {
@@ -325,7 +325,7 @@ async function assignCaliforniaWSO(lat, lng, supabaseClient = null) {
             console.warn(`Geospatial check failed, using fallback: ${error.message}`);
         }
     }
-    
+
     // Fallback: Simple latitude-based division
     // North Central: roughly above 35.5°N
     // South: below 35.5°N
@@ -341,23 +341,23 @@ async function assignCaliforniaWSO(lat, lng, supabaseClient = null) {
  */
 function extractCaliforniaCity(address) {
     if (!address) return null;
-    
+
     const addressLower = address.toLowerCase();
-    
+
     // Check South cities first (more specific matches)
     for (const city of CALIFORNIA_CITIES['South']) {
         if (addressLower.includes(city)) {
             return { city, region: 'South' };
         }
     }
-    
+
     // Check North Central cities second
     for (const city of CALIFORNIA_CITIES['North Central']) {
         if (addressLower.includes(city)) {
             return { city, region: 'North Central' };
         }
     }
-    
+
     return null;
 }
 
@@ -371,16 +371,16 @@ function extractCaliforniaCity(address) {
  */
 function extractStateFromAddress(address) {
     if (!address) return null;
-    
+
     // Split by commas and get the last few components
     // Typical format: "123 Main St, CityName, StateName, Country, ZIP"
     const parts = address.split(',').map(p => p.trim());
-    
+
     if (parts.length < 2) {
         // No commas - can't reliably extract state
         return null;
     }
-    
+
     // Check the last 2-3 components for state (working backwards)
     // This avoids matching city names like "Washington" in "Washington, Utah"
     const stateAbbrevs = {
@@ -396,44 +396,44 @@ function extractStateFromAddress(address) {
         'VA': 'Virginia', 'WA': 'Washington', 'WV': 'West Virginia', 'WI': 'Wisconsin', 'WY': 'Wyoming',
         'DC': 'District of Columbia'
     };
-    
+
     // Strategy 1: Look for 2-letter abbreviations in the last few components
     // Check last 3 parts (could be: State, Country, ZIP or City, State, Country)
     for (let i = Math.max(0, parts.length - 3); i < parts.length; i++) {
         const part = parts[i].trim();
-        
+
         // Check if this part is a 2-letter state abbreviation
         // Exclude "United States" checks and country names
         if (part.length === 2 && stateAbbrevs[part.toUpperCase()]) {
             return stateAbbrevs[part.toUpperCase()];
         }
-        
+
         // Check if first word is a 2-letter abbreviation (e.g., "CA 90210")
         const firstWord = part.split(' ')[0];
         if (firstWord.length === 2 && stateAbbrevs[firstWord.toUpperCase()]) {
             return stateAbbrevs[firstWord.toUpperCase()];
         }
     }
-    
+
     // Strategy 2: Look for full state names in the last few components
     // Get state names sorted by length (longest first) to prioritize "West Virginia" over "Virginia"
     const stateNames = Object.values(US_STATES).sort((a, b) => b.length - a.length);
-    
+
     // Only check the last 3 components to avoid city name confusion
     for (let i = Math.max(0, parts.length - 3); i < parts.length; i++) {
         const part = parts[i].trim().toLowerCase();
-        
+
         // Skip if this looks like a country name
         if (part.includes('united states') || part.includes('usa') || part === 'america') {
             continue;
         }
-        
+
         // Check if this part matches a full state name
         for (const state of stateNames) {
             if (part === state.toLowerCase()) {
                 return state;
             }
-            
+
             // Also check if first word matches (e.g., "California 90210")
             const firstWord = part.split(' ')[0];
             if (firstWord === state.toLowerCase()) {
@@ -441,7 +441,7 @@ function extractStateFromAddress(address) {
             }
         }
     }
-    
+
     return null;
 }
 
@@ -450,21 +450,21 @@ function extractStateFromAddress(address) {
  */
 function extractLocationFromMeetName(meetName) {
     if (!meetName) return null;
-    
+
     // First check for regional patterns
     for (const [region, pattern] of Object.entries(MEET_REGIONAL_PATTERNS)) {
         if (pattern.test(meetName)) {
             return { type: 'region', value: region };
         }
     }
-    
+
     // Then check for state patterns
     for (const [state, pattern] of Object.entries(MEET_LOCATION_PATTERNS)) {
         if (pattern.test(meetName)) {
             return { type: 'state', value: state };
         }
     }
-    
+
     return null;
 }
 
@@ -473,7 +473,7 @@ function extractLocationFromMeetName(meetName) {
  */
 async function assignWSO(state, address = null, lat = null, lng = null, supabaseClient = null) {
     if (!state) return null;
-    
+
     // Special handling for California
     if (state === 'California') {
         // Priority 1: Use coordinates with polygon checking if available
@@ -481,7 +481,7 @@ async function assignWSO(state, address = null, lat = null, lng = null, supabase
             const wso = await assignCaliforniaWSO(lat, lng, supabaseClient);
             if (wso) return wso;
         }
-        
+
         // Priority 2: Use city name matching from address
         if (address) {
             const cityInfo = extractCaliforniaCity(address);
@@ -489,24 +489,24 @@ async function assignWSO(state, address = null, lat = null, lng = null, supabase
                 return `California ${cityInfo.region}`;
             }
         }
-        
+
         // Fallback: Use simple latitude check if coordinates available
         if (lat && lng) {
             const wso = await assignCaliforniaWSO(lat, lng, null);
             if (wso) return wso;
         }
-        
+
         // Default to North Central if no other method works (most conservative choice)
         return 'California North Central';
     }
-    
+
     // Find WSO that includes this state
     for (const [wso, states] of Object.entries(WSO_MAPPINGS)) {
         if (states.includes(state)) {
             return wso;
         }
     }
-    
+
     return null;
 }
 
@@ -515,7 +515,7 @@ async function assignWSO(state, address = null, lat = null, lng = null, supabase
  */
 function calculateConfidence(assignmentMethod, hasCoordinates, hasAddress, historicalMatch, meetNameMatch) {
     let confidence = 0;
-    
+
     switch (assignmentMethod) {
         case 'state_field':
             confidence = 0.98; // Highest - explicit state field is most reliable
@@ -544,12 +544,12 @@ function calculateConfidence(assignmentMethod, hasCoordinates, hasAddress, histo
         default:
             confidence = 0.30;
     }
-    
+
     // Boost confidence if multiple data sources agree
     if (historicalMatch) confidence += 0.05;
     if (meetNameMatch) confidence += 0.05;
     if (hasCoordinates && hasAddress) confidence += 0.05;
-    
+
     return Math.min(confidence, 1.0);
 }
 
@@ -558,41 +558,41 @@ function calculateConfidence(assignmentMethod, hasCoordinates, hasAddress, histo
  */
 async function getHistoricalMeetWSOData(supabaseClient) {
     const { data, error } = await supabaseClient
-        .from('meet_results')
+        .from('usaw_meet_results')
         .select('meet_name, wso')
         .not('meet_name', 'is', null)
         .not('wso', 'is', null);
-    
+
     if (error) {
         console.warn(`Warning: Could not fetch historical data: ${error.message}`);
         return {};
     }
-    
+
     // Create meet -> WSO mapping from historical data
     const historicalData = {};
     for (const result of data) {
         const meetName = result.meet_name.trim();
         const wso = result.wso.trim();
-        
+
         if (!historicalData[meetName]) {
             historicalData[meetName] = {};
         }
-        
+
         if (!historicalData[meetName][wso]) {
             historicalData[meetName][wso] = 0;
         }
-        
+
         historicalData[meetName][wso]++;
     }
-    
+
     // Convert to most common WSO per meet
     const meetWSOMap = {};
     for (const [meetName, wsoData] of Object.entries(historicalData)) {
         const mostCommonWSO = Object.entries(wsoData)
-            .sort(([,a], [,b]) => b - a)[0][0];
+            .sort(([, a], [, b]) => b - a)[0][0];
         meetWSOMap[meetName] = mostCommonWSO;
     }
-    
+
     return meetWSOMap;
 }
 
@@ -643,22 +643,22 @@ async function assignWSOGeography(meetData, supabaseClient = null, options = {})
     if (meetData.state && meetData.latitude && meetData.longitude) {
         const lat = parseFloat(meetData.latitude);
         const lng = parseFloat(meetData.longitude);
-        
+
         if (!isNaN(lat) && !isNaN(lng)) {
             // Get state from coordinates (ground truth)
             const coordState = findStateByCoordinates(lat, lng);
-            
+
             // Get state from state field (may be wrong)
             const stateValue = meetData.state.trim();
             let extractedState = US_STATES[stateValue.toUpperCase()] || null;
             if (!extractedState) {
                 extractedState = extractStateFromAddress(stateValue);
             }
-            
+
             // If they disagree, trust coordinates (95% confidence) over state field
             if (coordState && extractedState && coordState !== extractedState) {
                 assignment.details.reasoning.push(`State field says ${extractedState} but coordinates say ${coordState} - trusting coordinates`);
-                
+
                 // Use coordinate-based state instead
                 let wso;
                 if (coordState === 'California') {
@@ -666,32 +666,32 @@ async function assignWSOGeography(meetData, supabaseClient = null, options = {})
                 } else {
                     wso = await assignWSO(coordState, null, lat, lng, supabaseClient);
                 }
-                
+
                 if (wso) {
                     assignment.assigned_wso = wso;
                     assignment.assignment_method = 'coordinates_validated';
                     assignment.confidence = calculateConfidence('coordinates', true, true, false, false);
                     assignment.details.extracted_state = coordState;
                     assignment.details.reasoning.push(`Coordinate-validated: ${coordState} → ${wso} (${lat}, ${lng})`);
-                    
+
                     if (logDetails) {
                         console.log(`✅ Coordinate-validated assignment: ${wso}`);
                     }
                     return assignment;
                 }
             }
-            
+
             // If they agree, use the state field (highest confidence)
             if (coordState && extractedState && coordState === extractedState) {
                 const wso = await assignWSO(extractedState, meetData.address || meetData.city, lat, lng, supabaseClient);
-                
+
                 if (wso) {
                     assignment.assigned_wso = wso;
                     assignment.assignment_method = 'state_field_validated';
                     assignment.confidence = calculateConfidence('state_field', true, true, false, false);
                     assignment.details.extracted_state = extractedState;
                     assignment.details.reasoning.push(`State field validated by coordinates: ${extractedState} → ${wso}`);
-                    
+
                     if (logDetails) {
                         console.log(`✅ Validated state field assignment: ${wso}`);
                     }
@@ -700,28 +700,28 @@ async function assignWSOGeography(meetData, supabaseClient = null, options = {})
             }
         }
     }
-    
+
     // STRATEGY 1B: State field without coordinates (use cautiously)
     if (meetData.state && (!meetData.latitude || !meetData.longitude)) {
         const stateValue = meetData.state.trim();
         let extractedState = US_STATES[stateValue.toUpperCase()] || null;
-        
+
         if (!extractedState) {
             extractedState = extractStateFromAddress(stateValue);
         }
-        
+
         if (extractedState) {
             const lat = meetData.latitude ? parseFloat(meetData.latitude) : null;
             const lng = meetData.longitude ? parseFloat(meetData.longitude) : null;
             const wso = await assignWSO(extractedState, meetData.address || meetData.city, lat, lng, supabaseClient);
-            
+
             if (wso) {
                 assignment.assigned_wso = wso;
                 assignment.assignment_method = 'state_field';
                 assignment.confidence = calculateConfidence('state_field', !!(lat && lng), true, false, false);
                 assignment.details.extracted_state = extractedState;
                 assignment.details.reasoning.push(`State field: ${extractedState} → ${wso}`);
-                
+
                 if (logDetails) {
                     console.log(`✅ State field assignment: ${wso}`);
                 }
@@ -781,13 +781,13 @@ async function assignWSOGeography(meetData, supabaseClient = null, options = {})
     let extractedState = null;
     let sourceField = null;
     const addressFields = [
-        meetData.address, 
-        meetData.city, 
-        meetData.state, 
-        meetData.location_text, 
+        meetData.address,
+        meetData.city,
+        meetData.state,
+        meetData.location_text,
         meetData.street_address
     ].filter(Boolean);
-    
+
     for (const field of addressFields) {
         extractedState = extractStateFromAddress(field);
         if (extractedState) {
@@ -797,7 +797,7 @@ async function assignWSOGeography(meetData, supabaseClient = null, options = {})
             break;
         }
     }
-    
+
     if (extractedState) {
         // Pass coordinates if available for California polygon checking
         const lat = meetData.latitude ? parseFloat(meetData.latitude) : null;
@@ -808,7 +808,7 @@ async function assignWSOGeography(meetData, supabaseClient = null, options = {})
             assignment.assignment_method = 'address_state';
             assignment.confidence = calculateConfidence('address_state', assignment.details.has_coordinates, true, false, false);
             assignment.details.reasoning.push(`Address-based: ${extractedState} → ${wso}`);
-            
+
             if (logDetails) {
                 console.log(`✅ Address assignment: ${wso}`);
             }
@@ -820,11 +820,11 @@ async function assignWSOGeography(meetData, supabaseClient = null, options = {})
     if (meetData.meet_name || meetData.name) {
         const meetName = meetData.meet_name || meetData.name;
         const meetLocation = extractLocationFromMeetName(meetName);
-        
+
         if (meetLocation) {
             assignment.details.meet_location = meetLocation;
             assignment.details.meet_name_match = true;
-            
+
             let wso = null;
             if (meetLocation.type === 'region') {
                 wso = meetLocation.value;
@@ -835,12 +835,12 @@ async function assignWSOGeography(meetData, supabaseClient = null, options = {})
                 wso = await assignWSO(meetLocation.value, meetData.location_text || meetData.address, lat, lng, supabaseClient);
                 assignment.assignment_method = 'meet_name_state';
             }
-            
+
             if (wso) {
                 assignment.assigned_wso = wso;
                 assignment.confidence = calculateConfidence(assignment.assignment_method, assignment.details.has_coordinates, assignment.details.has_address, false, true);
                 assignment.details.reasoning.push(`Meet name analysis: "${meetName}" → ${meetLocation.value} → ${wso}`);
-                
+
                 if (logDetails) {
                     console.log(`✅ Meet name assignment: ${wso}`);
                 }
@@ -859,7 +859,7 @@ async function assignWSOGeography(meetData, supabaseClient = null, options = {})
             assignment.confidence = calculateConfidence('historical_data', assignment.details.has_coordinates, assignment.details.has_address, true, false);
             assignment.details.historical_match = true;
             assignment.details.reasoning.push(`Historical data: "${meetName}" → ${wso}`);
-            
+
             if (logDetails) {
                 console.log(`✅ Historical assignment: ${wso}`);
             }
@@ -872,7 +872,7 @@ async function assignWSOGeography(meetData, supabaseClient = null, options = {})
     if (logDetails) {
         console.log(`❌ No WSO assignment possible for meet`);
     }
-    
+
     return assignment;
 }
 

@@ -13,7 +13,7 @@ async function debugPopulateData() {
     // Test the exact query from populate script
     console.log('📊 Testing direct query from populate script...');
     const { data: directMetrics, error: directError } = await supabase
-      .from('meet_results')
+      .from('usaw_meet_results')
       .select(`
         club_name,
         date,
@@ -37,7 +37,7 @@ async function debugPopulateData() {
 
     // Compare with direct club query
     const { data: allClubs, error: clubError } = await supabase
-      .from('meet_results')
+      .from('usaw_meet_results')
       .select('club_name')
       .not('club_name', 'is', null)
       .neq('club_name', '');
@@ -62,7 +62,7 @@ async function debugPopulateData() {
 
     // Test a much smaller query to see if it behaves differently
     const { data: smallQuery, error: smallError } = await supabase
-      .from('meet_results')
+      .from('usaw_meet_results')
       .select('club_name')
       .limit(1000);
 

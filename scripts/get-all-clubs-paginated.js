@@ -22,7 +22,7 @@ async function getAllClubsPaginated() {
       console.log(`📄 Fetching page ${page + 1} (records ${start} to ${end})...`);
 
       const { data: pageData, error: pageError } = await supabase
-        .from('meet_results')
+        .from('usaw_meet_results')
         .select('club_name')
         .not('club_name', 'is', null)
         .neq('club_name', '')
@@ -48,11 +48,11 @@ async function getAllClubsPaginated() {
       pageData.forEach(row => {
         const clubName = row.club_name;
         if (clubName &&
-            clubName.trim() !== '' &&
-            clubName.trim() !== 'null' &&
-            clubName.trim() !== '-' &&
-            clubName.trim() !== '.' &&
-            clubName.trim().toLowerCase() !== 'null') {
+          clubName.trim() !== '' &&
+          clubName.trim() !== 'null' &&
+          clubName.trim() !== '-' &&
+          clubName.trim() !== '.' &&
+          clubName.trim().toLowerCase() !== 'null') {
 
           const trimmedName = clubName.trim();
           if (!allClubs.has(trimmedName)) {

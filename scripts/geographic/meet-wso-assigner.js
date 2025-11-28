@@ -163,23 +163,23 @@ const CALIFORNIA_CITIES = {
 // Extract city from California address
 function extractCaliforniaCity(address) {
     if (!address) return null;
-    
+
     const addressLower = address.toLowerCase();
-    
+
     // Check South cities first (more specific matches)
     for (const city of CALIFORNIA_CITIES['South']) {
         if (addressLower.includes(city)) {
             return { city, region: 'South' };
         }
     }
-    
+
     // Check North Central cities second
     for (const city of CALIFORNIA_CITIES['North Central']) {
         if (addressLower.includes(city)) {
             return { city, region: 'North Central' };
         }
     }
-    
+
     return null;
 }
 // US State coordinate boundaries - US Census Bureau NAD83 (2017)
@@ -243,12 +243,12 @@ const STATE_BOUNDARIES = {
 function findStateByCoordinates(lat, lng) {
     const matches = [];
     for (const [state, bounds] of Object.entries(STATE_BOUNDARIES)) {
-        if (lat >= bounds.minLat && lat <= bounds.maxLat && 
+        if (lat >= bounds.minLat && lat <= bounds.maxLat &&
             lng >= bounds.minLng && lng <= bounds.maxLng) {
             matches.push(state);
         }
     }
-    
+
     if (matches.length === 0) {
         return null;
     } else if (matches.length === 1) {
@@ -258,19 +258,19 @@ function findStateByCoordinates(lat, lng) {
         // For overlapping boundaries, choose based on distance from center
         let bestMatch = matches[0];
         let bestDistance = Infinity;
-        
+
         for (const state of matches) {
             const bounds = STATE_BOUNDARIES[state];
             const centerLat = (bounds.minLat + bounds.maxLat) / 2;
             const centerLng = (bounds.minLng + bounds.maxLng) / 2;
             const distance = Math.sqrt(Math.pow(lat - centerLat, 2) + Math.pow(lng - centerLng, 2));
-            
+
             if (distance < bestDistance) {
                 bestDistance = distance;
                 bestMatch = state;
             }
         }
-        
+
         return bestMatch;
     }
 }
@@ -368,7 +368,7 @@ function ensureDirectories() {
 function log(message) {
     const timestamp = new Date().toISOString();
     const logMessage = `[${timestamp}] ${message}\n`;
-    
+
     console.log(message);
     fs.appendFileSync(LOG_FILE, logMessage);
 }
@@ -390,34 +390,34 @@ function parseArguments() {
 // Get meets from database
 async function getMeets() {
     log('🔍 Fetching meets needing WSO assignment from database...');
-    
+
     let allMeets = [];
     let start = 0;
     const batchSize = 1000;
     let hasMore = true;
-    
+
     while (hasMore) {
         const { data: batchData, error } = await supabase
-            .from('meets')
+            .from('usaw_meets')
             .select('*')
             .is('wso_geography', null)  // Only fetch meets that need WSO assignment
             .range(start, start + batchSize - 1);
-        
+
         if (error) {
             throw new Error(`Failed to fetch meets: ${error.message}`);
         }
-        
+
         if (batchData && batchData.length > 0) {
             allMeets.push(...batchData);
-            log(`  📦 Batch ${Math.floor(start/batchSize) + 1}: Found ${batchData.length} meets needing assignment (Total: ${allMeets.length})`);
-            
+            log(`  📦 Batch ${Math.floor(start / batchSize) + 1}: Found ${batchData.length} meets needing assignment (Total: ${allMeets.length})`);
+
             hasMore = batchData.length === batchSize;
             start += batchSize;
         } else {
             hasMore = false;
         }
     }
-    
+
     log(`Found ${allMeets.length} meets needing WSO assignment`);
     return allMeets;
 }
@@ -425,43 +425,43 @@ async function getMeets() {
 // Get historical WSO data from meet results
 async function getHistoricalMeetWSOData() {
     log('📊 Fetching historical WSO data from meet results...');
-    
+
     const { data, error } = await supabase
-        .from('meet_results')
+        .from('usaw_meet_results')
         .select('meet_name, wso')
         .not('meet_name', 'is', null)
         .not('wso', 'is', null);
-    
+
     if (error) {
         log(`⚠️ Error fetching historical data: ${error.message}`);
         return {};
     }
-    
+
     // Create meet -> WSO mapping from historical data
     const historicalData = {};
     for (const result of data) {
         const meetName = result.meet_name.trim();
         const wso = result.wso.trim();
-        
+
         if (!historicalData[meetName]) {
             historicalData[meetName] = {};
         }
-        
+
         if (!historicalData[meetName][wso]) {
             historicalData[meetName][wso] = 0;
         }
-        
+
         historicalData[meetName][wso]++;
     }
-    
+
     // Convert to most common WSO per meet
     const meetWSOMap = {};
     for (const [meetName, wsoData] of Object.entries(historicalData)) {
         const mostCommonWSO = Object.entries(wsoData)
-            .sort(([,a], [,b]) => b - a)[0][0];
+            .sort(([, a], [, b]) => b - a)[0][0];
         meetWSOMap[meetName] = mostCommonWSO;
     }
-    
+
     log(`Found historical WSO data for ${Object.keys(meetWSOMap).length} meets`);
     return meetWSOMap;
 }
@@ -474,7 +474,7 @@ async function assignMeetWSO(meet, historicalData) {
             includeHistoricalData: true,
             logDetails: false
         });
-        
+
         // Transform the result to match the expected format for this script
         return {
             meet_id: meet.meet_id,
@@ -518,7 +518,7 @@ async function assignMeetWSO(meet, historicalData) {
 // Analyze current meet data
 async function analyzeMeets() {
     log('🔍 Analyzing current meet data...');
-    
+
     const meets = await getMeets();
     const analysis = {
         total_meets: meets.length,
@@ -530,36 +530,36 @@ async function analyzeMeets() {
         current_wso_assignments: {},
         by_year: {}
     };
-    
+
     for (const meet of meets) {
         // Count location data availability
         if (meet.latitude && meet.longitude) analysis.with_coordinates++;
         if (meet.address || meet.city || meet.state || meet.street_address) analysis.with_address++;
         if (meet.wso_geography) analysis.with_wso_assigned++;
-        
+
         if (!meet.latitude && !meet.longitude && !meet.address && !meet.city && !meet.state && !meet.street_address) {
             analysis.without_location_data++;
         }
-        
+
         // Extract state for analysis
         const addressFields = [meet.address, meet.city, meet.state, meet.street_address, meet.location_text].filter(Boolean);
         let extractedState = null;
-        
+
         for (const field of addressFields) {
             extractedState = extractStateFromAddress(field);
             if (extractedState) break;
         }
-        
+
         if (extractedState) {
             analysis.by_state[extractedState] = (analysis.by_state[extractedState] || 0) + 1;
         }
-        
+
         // Count current WSO assignments
         if (meet.wso_geography) {
-            analysis.current_wso_assignments[meet.wso_geography] = 
+            analysis.current_wso_assignments[meet.wso_geography] =
                 (analysis.current_wso_assignments[meet.wso_geography] || 0) + 1;
         }
-        
+
         // Count by year
         if (meet.start_date) {
             const year = new Date(meet.start_date).getFullYear();
@@ -568,7 +568,7 @@ async function analyzeMeets() {
             }
         }
     }
-    
+
     return analysis;
 }
 
@@ -583,7 +583,7 @@ async function verifyAssignmentCompleteness() {
 
     while (hasMore) {
         const { data: batchData, error } = await supabase
-            .from('meets')
+            .from('usaw_meets')
             .select('meet_id, meet_name')
             .is('wso_geography', null)
             .range(start, start + batchSize - 1);
@@ -645,7 +645,7 @@ async function assignAllMeets(dryRun = false) {
         const meet = meets[i];
 
         if (i % 100 === 0) {
-            log(`  📋 Progress: ${i}/${meets.length} meets processed (${((i/meets.length)*100).toFixed(1)}%)`);
+            log(`  📋 Progress: ${i}/${meets.length} meets processed (${((i / meets.length) * 100).toFixed(1)}%)`);
         }
 
         try {
@@ -692,7 +692,7 @@ async function assignAllMeets(dryRun = false) {
             });
         }
     }
-    
+
     // Update database if not dry run
     if (!dryRun) {
         log('💾 Updating database with WSO assignments...');
@@ -707,12 +707,12 @@ async function assignAllMeets(dryRun = false) {
         const batchSize = 50;
         for (let i = 0; i < successfulAssignments.length; i += batchSize) {
             const batch = successfulAssignments.slice(i, i + batchSize);
-            log(`  📦 Processing batch ${Math.floor(i/batchSize) + 1}/${Math.ceil(successfulAssignments.length/batchSize)}: ${batch.length} updates`);
+            log(`  📦 Processing batch ${Math.floor(i / batchSize) + 1}/${Math.ceil(successfulAssignments.length / batchSize)}: ${batch.length} updates`);
 
             for (const assignment of batch) {
                 try {
                     const { error } = await supabase
-                        .from('meets')
+                        .from('usaw_meets')
                         .update({ wso_geography: assignment.assigned_wso })
                         .eq('meet_id', assignment.meet_id);
 
@@ -775,26 +775,26 @@ function generateReport(assignments, summary, analysis) {
             unassigned: assignments.filter(a => !a.assigned_wso).length
         }
     };
-    
+
     // Save to file
     fs.writeFileSync(OUTPUT_FILE, JSON.stringify(report, null, 2));
     log(`📊 Assignment report saved to: ${OUTPUT_FILE}`);
-    
+
     return report;
 }
 
 // Main function
 async function main() {
     const startTime = Date.now();
-    
+
     try {
         ensureDirectories();
-        
+
         log('🏋️ Starting Meet WSO Assignment Script');
         log('='.repeat(60));
-        
+
         const options = parseArguments();
-        
+
         if (options.analyze) {
             log('📊 Running analysis mode...');
             const analysis = await analyzeMeets();
@@ -806,28 +806,28 @@ async function main() {
             log(`  Without location data: ${analysis.without_location_data}`);
             log(`  States represented: ${Object.keys(analysis.by_state).length}`);
             log(`  Years covered: ${Object.keys(analysis.by_year).length}`);
-            
+
         } else if (options.assign) {
             log('🎯 Running assignment mode...');
             const analysis = await analyzeMeets();
             const { assignments, summary } = await assignAllMeets(options.dryRun);
             const report = generateReport(assignments, summary, analysis);
-            
+
             log('\n✅ Assignment Complete:');
             log(`  Successfully assigned: ${summary.successful_assignments}/${summary.total_processed}`);
             log(`  Assignment rate: ${((summary.successful_assignments / summary.total_processed) * 100).toFixed(1)}%`);
             log(`  High confidence: ${summary.by_confidence.high}`);
             log(`  Medium confidence: ${summary.by_confidence.medium}`);
             log(`  Low confidence: ${summary.by_confidence.low}`);
-            
+
         } else if (options.validate || options.report) {
             log('🔍 Running validation/report mode...');
             const analysis = await analyzeMeets();
             const { assignments, summary } = await assignAllMeets(true); // Dry run
             const report = generateReport(assignments, summary, analysis);
-            
+
             log('\n📋 Validation Report Generated');
-            
+
         } else {
             log('Meet WSO Assignment Script');
             log('============================');
@@ -841,10 +841,10 @@ async function main() {
             log('');
             log('Example: node meet-wso-assigner.js --assign');
         }
-        
+
         const processingTime = Math.round((Date.now() - startTime) / 1000);
         log(`\n⏱️ Processing completed in ${processingTime}s`);
-        
+
     } catch (error) {
         log(`\n❌ Script failed: ${error.message}`);
         log(`🔍 Stack trace: ${error.stack}`);

@@ -5,8 +5,8 @@ require('dotenv').config();
 
 // Initialize Supabase client
 const supabase = createClient(
-  process.env.SUPABASE_URL,
-  process.env.SUPABASE_SECRET_KEY
+    process.env.SUPABASE_URL,
+    process.env.SUPABASE_SECRET_KEY
 );
 
 /**
@@ -18,20 +18,20 @@ const supabase = createClient(
 async function getClubTimeSeries(clubName, startDate = '2012-01-01', endDate = null) {
     try {
         let query = supabase
-            .from('club_rolling_metrics')
+            .from('usaw_club_rolling_metrics')
             .select('snapshot_month, active_members_12mo, total_competitions_12mo')
             .eq('club_name', clubName)
             .gte('snapshot_month', startDate)
             .order('snapshot_month');
-        
+
         if (endDate) {
             query = query.lte('snapshot_month', endDate);
         }
-        
+
         const { data, error } = await query;
-        
+
         if (error) throw error;
-        
+
         return {
             success: true,
             data: data.map(row => ({
@@ -41,7 +41,7 @@ async function getClubTimeSeries(clubName, startDate = '2012-01-01', endDate = n
             })),
             dataPoints: data.length
         };
-        
+
     } catch (error) {
         return {
             success: false,
@@ -58,16 +58,16 @@ async function getTopClubs(month = null, limit = 20) {
         if (!month) {
             month = new Date().toISOString().substring(0, 7) + '-01';
         }
-        
+
         const { data, error } = await supabase
-            .from('club_rolling_metrics')
+            .from('usaw_club_rolling_metrics')
             .select('club_name, active_members_12mo, total_competitions_12mo')
             .eq('snapshot_month', month)
             .order('active_members_12mo', { ascending: false })
             .limit(limit);
-        
+
         if (error) throw error;
-        
+
         return {
             success: true,
             data: data.map((row, index) => ({
@@ -79,7 +79,7 @@ async function getTopClubs(month = null, limit = 20) {
             month: month,
             totalClubs: data.length
         };
-        
+
     } catch (error) {
         return {
             success: false,
@@ -104,32 +104,32 @@ async function getMonthlyAggregates(startDate = '2012-01-01', endDate = null) {
             FROM club_rolling_metrics
             WHERE snapshot_month >= $1
         `;
-        
+
         const params = [startDate];
-        
+
         if (endDate) {
             query += ` AND snapshot_month <= $2`;
             params.push(endDate);
         }
-        
+
         query += ` GROUP BY snapshot_month ORDER BY snapshot_month`;
-        
+
         const { data, error } = await supabase.rpc('exec_sql_with_params', {
             sql: query,
             params: params
         });
-        
+
         if (error) {
             // Fallback to manual aggregation if RPC fails
             return await getMonthlyAggregatesManual(startDate, endDate);
         }
-        
+
         return {
             success: true,
             data: data || [],
             dataPoints: data?.length || 0
         };
-        
+
     } catch (error) {
         return {
             success: false,
@@ -143,22 +143,22 @@ async function getMonthlyAggregates(startDate = '2012-01-01', endDate = null) {
 async function getMonthlyAggregatesManual(startDate, endDate) {
     try {
         let query = supabase
-            .from('club_rolling_metrics')
+            .from('usaw_club_rolling_metrics')
             .select('snapshot_month, club_name, active_members_12mo, total_competitions_12mo')
             .gte('snapshot_month', startDate)
             .order('snapshot_month');
-        
+
         if (endDate) {
             query = query.lte('snapshot_month', endDate);
         }
-        
+
         const { data, error } = await query;
-        
+
         if (error) throw error;
-        
+
         // Group by month and calculate aggregates
         const monthlyData = new Map();
-        
+
         data.forEach(row => {
             const month = row.snapshot_month;
             if (!monthlyData.has(month)) {
@@ -169,30 +169,30 @@ async function getMonthlyAggregatesManual(startDate, endDate) {
                     competitions: 0
                 });
             }
-            
+
             const monthData = monthlyData.get(month);
             monthData.clubs.add(row.club_name);
             monthData.members.push(row.active_members_12mo);
             monthData.competitions += row.total_competitions_12mo;
         });
-        
+
         // Convert to final format
         const aggregates = Array.from(monthlyData.values()).map(monthData => ({
             snapshot_month: monthData.snapshot_month,
             active_clubs: monthData.clubs.size,
-            avg_members_per_club: monthData.members.length > 0 ? 
+            avg_members_per_club: monthData.members.length > 0 ?
                 Math.round(monthData.members.reduce((a, b) => a + b, 0) / monthData.members.length * 10) / 10 : 0,
             total_active_members: monthData.members.reduce((a, b) => a + b, 0),
             largest_club_size: Math.max(...monthData.members),
             total_competitions: monthData.competitions
         })).sort((a, b) => a.snapshot_month.localeCompare(b.snapshot_month));
-        
+
         return {
             success: true,
             data: aggregates,
             dataPoints: aggregates.length
         };
-        
+
     } catch (error) {
         return {
             success: false,
@@ -206,26 +206,26 @@ async function getMonthlyAggregatesManual(startDate, endDate) {
 async function getMultiClubComparison(clubNames, startDate = '2022-01-01', endDate = null) {
     try {
         let query = supabase
-            .from('club_rolling_metrics')
+            .from('usaw_club_rolling_metrics')
             .select('club_name, snapshot_month, active_members_12mo')
             .in('club_name', clubNames)
             .gte('snapshot_month', startDate)
             .order('snapshot_month');
-        
+
         if (endDate) {
             query = query.lte('snapshot_month', endDate);
         }
-        
+
         const { data, error } = await query;
-        
+
         if (error) throw error;
-        
+
         // Organize data by club for easy charting
         const clubData = {};
         clubNames.forEach(club => {
             clubData[club] = [];
         });
-        
+
         data.forEach(row => {
             if (clubData[row.club_name]) {
                 clubData[row.club_name].push({
@@ -234,13 +234,13 @@ async function getMultiClubComparison(clubNames, startDate = '2022-01-01', endDa
                 });
             }
         });
-        
+
         return {
             success: true,
             data: clubData,
             totalDataPoints: data.length
         };
-        
+
     } catch (error) {
         return {
             success: false,
@@ -262,10 +262,10 @@ async function getMultiClubHistoricalChart(options = {}) {
 
     try {
         console.log(`🎯 Getting historical data for top ${clubCount} clubs from ${startDate}...`);
-        
+
         // Step 1: Identify the top clubs based on sorting criteria
         const topClubs = await getTopActiveClubs(clubCount, minActivityThreshold, sortBy);
-        
+
         if (!topClubs.success || topClubs.data.length === 0) {
             return {
                 success: false,
@@ -273,31 +273,31 @@ async function getMultiClubHistoricalChart(options = {}) {
                 data: []
             };
         }
-        
+
         const clubNames = topClubs.data.map(club => club.name);
         console.log(`📊 Selected clubs: ${clubNames.slice(0, 5).join(', ')}${clubNames.length > 5 ? ` + ${clubNames.length - 5} more` : ''}`);
-        
+
         // Step 2: Get historical data for these clubs
         let query = supabase
-            .from('club_rolling_metrics')
+            .from('usaw_club_rolling_metrics')
             .select('club_name, snapshot_month, active_members_12mo')
             .in('club_name', clubNames)
             .gte('snapshot_month', startDate)
             .order('snapshot_month');
-        
+
         if (endDate) {
             query = query.lte('snapshot_month', endDate);
         }
-        
+
         const { data, error } = await query;
-        
+
         if (error) throw error;
-        
+
         console.log(`📈 Retrieved ${data.length} data points for historical chart`);
-        
+
         // Step 3: Structure data for multi-line chart
         const chartData = structureMultiLineData(data, clubNames);
-        
+
         return {
             success: true,
             data: chartData,
@@ -316,7 +316,7 @@ async function getMultiClubHistoricalChart(options = {}) {
                 }))
             }
         };
-        
+
     } catch (error) {
         return {
             success: false,
@@ -333,22 +333,22 @@ async function getTopActiveClubs(limit = 25, minActivityThreshold = 10, sortBy =
         const recentDate = new Date();
         recentDate.setFullYear(recentDate.getFullYear() - 1);
         const recentDateStr = recentDate.toISOString().substring(0, 7) + '-01';
-        
+
         // Query for club performance metrics
         const { data, error } = await supabase
-            .from('club_rolling_metrics')
+            .from('usaw_club_rolling_metrics')
             .select('club_name, snapshot_month, active_members_12mo')
             .gte('active_members_12mo', 1); // Exclude zero-activity periods
-        
+
         if (error) throw error;
-        
+
         // Analyze each club's performance
         const clubStats = new Map();
-        
+
         data.forEach(row => {
             const club = row.club_name;
             const isRecent = row.snapshot_month >= recentDateStr;
-            
+
             if (!clubStats.has(club)) {
                 clubStats.set(club, {
                     name: club,
@@ -359,17 +359,17 @@ async function getTopActiveClubs(limit = 25, minActivityThreshold = 10, sortBy =
                     memberSum: 0
                 });
             }
-            
+
             const stats = clubStats.get(club);
             stats.totalDataPoints++;
             stats.memberSum += row.active_members_12mo;
             stats.peakMembers = Math.max(stats.peakMembers, row.active_members_12mo);
-            
+
             if (isRecent) {
                 stats.recentMembers = Math.max(stats.recentMembers, row.active_members_12mo);
             }
         });
-        
+
         // Calculate averages and filter
         const clubs = Array.from(clubStats.values())
             .map(club => ({
@@ -377,7 +377,7 @@ async function getTopActiveClubs(limit = 25, minActivityThreshold = 10, sortBy =
                 averageMembers: Math.round(club.memberSum / club.totalDataPoints * 10) / 10
             }))
             .filter(club => club.recentMembers >= minActivityThreshold);
-        
+
         // Sort based on criteria
         clubs.sort((a, b) => {
             switch (sortBy) {
@@ -390,13 +390,13 @@ async function getTopActiveClubs(limit = 25, minActivityThreshold = 10, sortBy =
                     return b.peakMembers - a.peakMembers;
             }
         });
-        
+
         return {
             success: true,
             data: clubs.slice(0, limit),
             totalClubs: clubs.length
         };
-        
+
     } catch (error) {
         return {
             success: false,
@@ -410,7 +410,7 @@ async function getTopActiveClubs(limit = 25, minActivityThreshold = 10, sortBy =
 function structureMultiLineData(rawData, clubNames) {
     // Group data by month to create consistent time series
     const monthMap = new Map();
-    
+
     rawData.forEach(row => {
         const month = row.snapshot_month;
         if (!monthMap.has(month)) {
@@ -418,11 +418,11 @@ function structureMultiLineData(rawData, clubNames) {
         }
         monthMap.get(month)[row.club_name] = row.active_members_12mo;
     });
-    
+
     // Convert to array and sort by month
     const months = Array.from(monthMap.values())
         .sort((a, b) => a.month.localeCompare(b.month));
-    
+
     // Ensure all clubs have data for all months (fill with null for missing data)
     months.forEach(monthData => {
         clubNames.forEach(club => {
@@ -431,7 +431,7 @@ function structureMultiLineData(rawData, clubNames) {
             }
         });
     });
-    
+
     return {
         months: months.map(m => m.month),
         clubs: clubNames,
@@ -448,14 +448,14 @@ async function getAvailableClubs(minActivityLevel = 5) {
     try {
         // Get clubs that have had at least minActivityLevel members in recent months
         const { data, error } = await supabase
-            .from('club_rolling_metrics')
+            .from('usaw_club_rolling_metrics')
             .select('club_name, active_members_12mo')
             .gte('snapshot_month', '2023-01-01')
             .gte('active_members_12mo', minActivityLevel)
             .order('club_name');
-        
+
         if (error) throw error;
-        
+
         // Get unique clubs with their peak activity
         const clubMap = new Map();
         data.forEach(row => {
@@ -467,16 +467,16 @@ async function getAvailableClubs(minActivityLevel = 5) {
                 });
             }
         });
-        
+
         const clubs = Array.from(clubMap.values())
             .sort((a, b) => b.peakMembers - a.peakMembers);
-        
+
         return {
             success: true,
             data: clubs,
             totalClubs: clubs.length
         };
-        
+
     } catch (error) {
         return {
             success: false,
@@ -489,7 +489,7 @@ async function getAvailableClubs(minActivityLevel = 5) {
 // CLI interface for testing
 async function main() {
     const args = process.argv.slice(2);
-    
+
     if (args.includes('--help')) {
         console.log(`
 Graph Data Endpoints - Test CLI
@@ -513,12 +513,12 @@ Examples:
         `);
         return;
     }
-    
+
     const command = args[0];
-    
+
     try {
         let result;
-        
+
         switch (command) {
             case 'club':
                 const clubName = args[1];
@@ -528,21 +528,21 @@ Examples:
                 }
                 result = await getClubTimeSeries(clubName);
                 break;
-                
+
             case 'top':
                 const month = args[1];
                 const limit = args[2] ? parseInt(args[2]) : 20;
                 result = await getTopClubs(month, limit);
                 break;
-                
+
             case 'aggregates':
                 result = await getMonthlyAggregates();
                 break;
-                
+
             case 'clubs':
                 result = await getAvailableClubs();
                 break;
-                
+
             case 'compare':
                 const clubList = args[1];
                 if (!clubList) {
@@ -552,7 +552,7 @@ Examples:
                 const clubs = clubList.split(',').map(name => name.trim());
                 result = await getMultiClubComparison(clubs);
                 break;
-                
+
             case 'historical':
                 const count = args[1] ? parseInt(args[1]) : 25;
                 const sortBy = args[2] || 'peak';
@@ -561,14 +561,14 @@ Examples:
                     sortBy: sortBy
                 });
                 break;
-                
+
             default:
                 console.error('Unknown command. Use --help for usage information.');
                 return;
         }
-        
+
         console.log(JSON.stringify(result, null, 2));
-        
+
     } catch (error) {
         console.error('Error:', error.message);
         process.exit(1);

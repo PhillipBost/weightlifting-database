@@ -57,22 +57,22 @@ function log(message) {
 
 async function findTerritoryFiles() {
     log('🔍 Finding all WSO territory GeoJSON files...');
-    
+
     const territoriesDir = './geojson_data/wso_territories';
     const files = await fs.readdir(territoriesDir);
-    
+
     // Filter for individual territory files (exclude all_wso_territories.geojson)
-    const territoryFiles = files.filter(f => 
-        f.endsWith('.geojson') && 
+    const territoryFiles = files.filter(f =>
+        f.endsWith('.geojson') &&
         f !== 'all_wso_territories.geojson'
     );
-    
+
     log(`✅ Found ${territoryFiles.length} territory files`);
-    
+
     return territoryFiles.map(filename => {
         const baseName = filename.replace('.geojson', '');
         const wsoName = wsoNameMapping[baseName];
-        
+
         return {
             filename,
             filepath: path.join(territoriesDir, filename),
@@ -86,7 +86,7 @@ async function loadGeoJSON(filepath) {
     try {
         const content = await fs.readFile(filepath, 'utf8');
         const geoData = JSON.parse(content);
-        
+
         // Validate it's a Feature or FeatureCollection
         if (geoData.type === 'Feature') {
             return { success: true, feature: geoData };
@@ -102,17 +102,17 @@ async function loadGeoJSON(filepath) {
 
 async function checkWSOExists(wsoName) {
     const { data, error } = await supabase
-        .from('wso_information')
+        .from('usaw_wso_information')
         .select('name, territory_geojson')
         .eq('name', wsoName)
         .single();
-    
+
     if (error) {
         return { exists: false, error: error.message };
     }
-    
-    return { 
-        exists: true, 
+
+    return {
+        exists: true,
         wso: data,
         hasGeometry: data.territory_geojson !== null && data.territory_geojson !== undefined
     };
@@ -120,25 +120,25 @@ async function checkWSOExists(wsoName) {
 
 async function importSingleWSO(fileInfo, options = {}) {
     const { dryRun = false, force = false } = options;
-    
+
     log(`\n--- ${fileInfo.filename} ---`);
     log(`🎯 Target WSO: ${fileInfo.wsoName}`);
-    
+
     // Check if WSO exists in database
     const wsoCheck = await checkWSOExists(fileInfo.wsoName);
-    
+
     if (!wsoCheck.exists) {
         log(`❌ WSO not found in database: ${fileInfo.wsoName}`);
-        return { 
-            success: false, 
+        return {
+            success: false,
             wsoName: fileInfo.wsoName,
             filename: fileInfo.filename,
-            error: 'WSO not found in database' 
+            error: 'WSO not found in database'
         };
     }
-    
+
     log(`✅ Found WSO in database: ${fileInfo.wsoName}`);
-    
+
     // Check if territory_geojson already exists
     if (wsoCheck.hasGeometry && !force) {
         log(`ℹ️  territory_geojson already exists (use --force to overwrite)`);
@@ -150,16 +150,16 @@ async function importSingleWSO(fileInfo, options = {}) {
             reason: 'Geometry already exists'
         };
     }
-    
+
     if (wsoCheck.hasGeometry && force) {
         log(`⚠️  Overwriting existing territory_geojson (--force mode)`);
     } else {
         log(`📍 territory_geojson is NULL - importing...`);
     }
-    
+
     // Load GeoJSON file
     const geoResult = await loadGeoJSON(fileInfo.filepath);
-    
+
     if (!geoResult.success) {
         log(`❌ Failed to load GeoJSON: ${geoResult.error}`);
         return {
@@ -169,16 +169,16 @@ async function importSingleWSO(fileInfo, options = {}) {
             error: `Failed to load GeoJSON: ${geoResult.error}`
         };
     }
-    
+
     const feature = geoResult.feature;
     const geometryType = feature.geometry.type;
-    const polygonCount = geometryType === 'MultiPolygon' 
-        ? feature.geometry.coordinates.length 
+    const polygonCount = geometryType === 'MultiPolygon'
+        ? feature.geometry.coordinates.length
         : 1;
-    
+
     log(`📊 Geometry type: ${geometryType}`);
     log(`📊 Polygon count: ${polygonCount}`);
-    
+
     if (dryRun) {
         log(`🔍 DRY RUN - Would import ${geometryType} with ${polygonCount} polygon(s)`);
         return {
@@ -190,18 +190,18 @@ async function importSingleWSO(fileInfo, options = {}) {
             polygonCount
         };
     }
-    
+
     // Update database
     log(`💾 Updating database...`);
-    
+
     const { error: updateError } = await supabase
-        .from('wso_information')
+        .from('usaw_wso_information')
         .update({
             territory_geojson: feature,
             updated_at: new Date().toISOString()
         })
         .eq('name', fileInfo.wsoName);
-    
+
     if (updateError) {
         log(`❌ Database update failed: ${updateError.message}`);
         return {
@@ -211,9 +211,9 @@ async function importSingleWSO(fileInfo, options = {}) {
             error: `Database update failed: ${updateError.message}`
         };
     }
-    
+
     log(`✅ Successfully imported territory_geojson`);
-    
+
     return {
         success: true,
         wsoName: fileInfo.wsoName,
@@ -226,43 +226,43 @@ async function importSingleWSO(fileInfo, options = {}) {
 
 async function importAllTerritories(options = {}) {
     log('=== Import WSO Territory GeoJSON Files ===\n');
-    
+
     const { dryRun = false, force = false } = options;
-    
+
     if (dryRun) {
         log('🔍 DRY RUN MODE - No database changes will be made\n');
     }
-    
+
     if (force) {
         log('⚠️  FORCE MODE - Will overwrite existing territory_geojson data\n');
     }
-    
+
     const territoryFiles = await findTerritoryFiles();
-    
+
     if (territoryFiles.length === 0) {
         log('❌ No territory GeoJSON files found');
         return;
     }
-    
+
     log(`\n🚀 Processing ${territoryFiles.length} files...\n`);
-    
+
     const results = [];
-    
+
     for (const fileInfo of territoryFiles) {
         const result = await importSingleWSO(fileInfo, options);
         results.push(result);
     }
-    
+
     // Generate summary report
     log('\n' + '='.repeat(70));
     log('=== IMPORT SUMMARY ===');
     log('='.repeat(70));
-    
+
     const successful = results.filter(r => r.success && !r.skipped && !r.dryRun);
     const skipped = results.filter(r => r.skipped);
     const failed = results.filter(r => !r.success);
     const dryRunResults = results.filter(r => r.dryRun);
-    
+
     log(`✅ Successfully imported: ${successful.length}`);
     log(`⏭️  Skipped (already exists): ${skipped.length}`);
     log(`❌ Failed: ${failed.length}`);
@@ -270,14 +270,14 @@ async function importAllTerritories(options = {}) {
         log(`🔍 Dry run results: ${dryRunResults.length}`);
     }
     log(`📊 Total processed: ${results.length}`);
-    
+
     if (successful.length > 0) {
         log('\n✅ Successfully Imported:');
         successful.forEach(r => {
             log(`   ${r.wsoName}: ${r.geometryType} (${r.polygonCount} polygon(s))`);
         });
     }
-    
+
     if (skipped.length > 0) {
         log('\n⏭️  Skipped (already have territory_geojson):');
         skipped.forEach(r => {
@@ -285,26 +285,26 @@ async function importAllTerritories(options = {}) {
         });
         log(`   Use --force to overwrite existing data`);
     }
-    
+
     if (failed.length > 0) {
         log('\n❌ Failed:');
         failed.forEach(r => {
             log(`   ${r.wsoName}: ${r.error}`);
         });
     }
-    
+
     if (dryRun) {
         log('\n🔍 Dry Run Complete - No changes made to database');
         log('   Run without --dry-run to actually import the data');
     }
-    
+
     if (!dryRun && successful.length > 0) {
         log('\n🎯 Next Steps:');
         log('   1. Verify imports: node scripts/geographic/validate-wso-territories.js');
         log('   2. Re-run analytics: node scripts/analytics/wso-weekly-calculator.js');
         log('   3. Check Alabama active_lifters_count is now non-zero');
     }
-    
+
     return results;
 }
 
@@ -312,7 +312,7 @@ async function main() {
     const args = process.argv.slice(2);
     const dryRun = args.includes('--dry-run');
     const force = args.includes('--force');
-    
+
     if (args.includes('--help')) {
         console.log('Import WSO Territory GeoJSON Files');
         console.log('===================================\n');
@@ -328,7 +328,7 @@ async function main() {
         console.log('  node scripts/geographic/import-wso-territories.js --force');
         return;
     }
-    
+
     try {
         await importAllTerritories({ dryRun, force });
     } catch (error) {

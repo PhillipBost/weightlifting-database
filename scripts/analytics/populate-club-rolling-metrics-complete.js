@@ -5,8 +5,8 @@ require('dotenv').config();
 
 // Initialize Supabase client
 const supabase = createClient(
-  process.env.SUPABASE_URL,
-  process.env.SUPABASE_SECRET_KEY
+    process.env.SUPABASE_URL,
+    process.env.SUPABASE_SECRET_KEY
 );
 
 async function populateCompleteClubRollingMetrics() {
@@ -38,7 +38,7 @@ async function populateCompleteClubRollingMetrics() {
                 console.log(`   📄 Fetching page ${page + 1} (records ${start} to ${end})...`);
 
                 const { data: pageData, error: pageError } = await supabase
-                    .from('meet_results')
+                    .from('usaw_meet_results')
                     .select('club_name')
                     .not('club_name', 'is', null)
                     .neq('club_name', '')
@@ -140,7 +140,7 @@ async function populateCompleteClubRollingMetrics() {
                 const windowRangeEnd = windowRangeStart + windowPageSize - 1;
 
                 const { data: pageWindowData, error: windowError } = await supabase
-                    .from('meet_results')
+                    .from('usaw_meet_results')
                     .select('club_name, lifter_id, result_id')
                     .gte('date', windowStartStr)
                     .lt('date', snapshotDate)
@@ -248,7 +248,7 @@ async function populateCompleteClubRollingMetrics() {
             console.log(`💾 Inserting batch ${Math.floor(i / batchSize) + 1}/${Math.ceil(allResults.length / batchSize)} (${batch.length} records)...`);
 
             const { error: insertError } = await supabase
-                .from('club_rolling_metrics')
+                .from('usaw_club_rolling_metrics')
                 .upsert(batch, {
                     onConflict: 'club_name,snapshot_month'
                 });
@@ -259,7 +259,7 @@ async function populateCompleteClubRollingMetrics() {
             }
 
             inserted += batch.length;
-            console.log(`   ✅ Progress: ${inserted}/${allResults.length} records (${((inserted/allResults.length)*100).toFixed(1)}%)`);
+            console.log(`   ✅ Progress: ${inserted}/${allResults.length} records (${((inserted / allResults.length) * 100).toFixed(1)}%)`);
         }
 
         console.log('\n🎉 COMPLETE club rolling metrics population finished!');
@@ -282,7 +282,7 @@ async function showZeroRecordsSample() {
 
     try {
         const { data: zeroSample, error } = await supabase
-            .from('club_rolling_metrics')
+            .from('usaw_club_rolling_metrics')
             .select('*')
             .eq('active_members_12mo', 0)
             .order('club_name')
@@ -306,11 +306,11 @@ async function showZeroRecordsSample() {
 
         // Get final summary
         const { count, error: countError } = await supabase
-            .from('club_rolling_metrics')
+            .from('usaw_club_rolling_metrics')
             .select('*', { count: 'exact', head: true });
 
         const { data: zeroCount, error: zeroCountError } = await supabase
-            .from('club_rolling_metrics')
+            .from('usaw_club_rolling_metrics')
             .select('*', { count: 'exact', head: true })
             .eq('active_members_12mo', 0);
 

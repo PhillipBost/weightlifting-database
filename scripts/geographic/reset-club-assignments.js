@@ -5,33 +5,33 @@ const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SEC
 
 async function resetAllClubAssignments() {
   console.log('🔄 Resetting all club WSO assignments to null...');
-  
+
   try {
     const { error } = await supabase
-      .from('clubs')
+      .from('usaw_clubs')
       .update({ wso_geography: null })
       .neq('wso_geography', null);
-      
+
     if (error) {
       console.error('Error:', error.message);
       return;
     }
-    
+
     console.log('✅ All club WSO assignments have been reset to null');
-    
+
     // Verify the reset
     const { data: checkData, error: checkError } = await supabase
-      .from('clubs')
+      .from('usaw_clubs')
       .select('wso_geography')
       .not('wso_geography', 'is', null);
-      
+
     if (checkError) {
       console.error('Error checking:', checkError.message);
       return;
     }
-    
+
     console.log(`Remaining non-null assignments: ${checkData.length}`);
-    
+
   } catch (error) {
     console.error('Exception:', error.message);
   }
