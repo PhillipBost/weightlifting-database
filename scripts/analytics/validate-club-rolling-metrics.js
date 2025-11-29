@@ -47,7 +47,7 @@ async function validateMonthRange() {
         }
 
         if (!monthStats || monthStats.length === 0) {
-            throw new Error('No data found in club_rolling_metrics table');
+            throw new Error('No data found in usaw_club_rolling_metrics table');
         }
 
         const firstMonth = new Date(monthStats[0].snapshot_month);

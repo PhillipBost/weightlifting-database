@@ -44,7 +44,7 @@ async function updateClubMetrics(targetMonth = null) {
                 COUNT(DISTINCT lifter_id) as active_members_12mo,
                 COUNT(result_id) as total_competitions_12mo,
                 COUNT(DISTINCT lifter_id) as unique_lifters_12mo
-            FROM meet_results
+            FROM usaw_meet_results
             WHERE 
                 club_name IS NOT NULL 
                 AND club_name != ''
