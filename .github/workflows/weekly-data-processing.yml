@@ -408,7 +408,7 @@ jobs:
 
               try {
                 const { data: wsos, error } = await supabase
-                  .from('wso_information')
+                  .from('usaw_wso_information')
                   .select('name, barbell_clubs_count, recent_meets_count, active_lifters_count, total_participations, estimated_population, activity_factor, analytics_updated_at')
                   .order('name');
 
@@ -513,7 +513,7 @@ jobs:
 
               try {
                 const { data: clubs, error } = await supabase
-                  .from('clubs')
+                  .from('usaw_clubs')
                   .select('club_name, recent_meets_count, active_lifters_count, total_participations, activity_factor, analytics_updated_at')
                   .not('recent_meets_count', 'is', null)
                   .order('recent_meets_count', { ascending: false })
@@ -541,7 +541,7 @@ jobs:
 
                 // Get total count of clubs updated today
                 const { count: totalUpdated } = await supabase
-                  .from('clubs')
+                  .from('usaw_clubs')
                   .select('*', { count: 'exact', head: true })
                   .gte('analytics_updated_at', today + 'T00:00:00');
 
@@ -631,7 +631,7 @@ jobs:
                 const currentMonth = new Date().toISOString().substring(0, 7) + '-01';
                 
                 const { data: currentMetrics, error } = await supabase
-                  .from('club_rolling_metrics')
+                  .from('usaw_club_rolling_metrics')
                   .select('club_name, active_members_12mo, total_competitions_12mo')
                   .eq('snapshot_month', currentMonth)
                   .order('active_members_12mo', { ascending: false })
@@ -655,13 +655,13 @@ jobs:
 
                 // Count total rolling metrics records
                 const { count: totalRecords } = await supabase
-                  .from('club_rolling_metrics')
+                  .from('usaw_club_rolling_metrics')
                   .select('*', { count: 'exact', head: true });
 
                 // Count records updated today
                 const today = new Date().toISOString().split('T')[0];
                 const { count: updatedToday } = await supabase
-                  .from('club_rolling_metrics')
+                  .from('usaw_club_rolling_metrics')
                   .select('*', { count: 'exact', head: true })
                   .gte('calculated_at', today + 'T00:00:00');
 
