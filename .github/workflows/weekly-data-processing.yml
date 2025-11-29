@@ -69,7 +69,7 @@ jobs:
 
                 while (hasMore) {
                   const { data, error } = await supabase
-                    .from('meets')
+                    .from('usaw_meets')
                     .select('meet_id')
                     .is('wso_geography', null)
                     .range(start, start + batchSize - 1);
@@ -172,7 +172,7 @@ jobs:
 
                 while (hasMore) {
                   const { data, error } = await supabase
-                    .from('meets')
+                    .from('usaw_meets')
                     .select('meet_id')
                     .is('wso_geography', null)
                     .range(start, start + batchSize - 1);
@@ -229,7 +229,7 @@ jobs:
                   
                   while (hasMore) {
                     const { data, error } = await supabase
-                      .from('meets')
+                      .from('usaw_meets')
                       .select('meet_id')
                       .is('wso_geography', null)
                       .or('address.is.null,address.eq.')
