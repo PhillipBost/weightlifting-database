@@ -303,7 +303,7 @@ async function calculateActiveLiftersCount(wsoName) {
 
         // Query meet_results for this batch
         const results = await paginatedQuery(
-            'meet_results',
+            'usaw_meet_results',
             'lifter_id',
             (query) => query.in('meet_id', batchMeetIds)
         );
@@ -385,7 +385,7 @@ async function calculateTotalParticipationsCount(wsoName) {
 
         // Query meet_results for this batch
         const results = await paginatedQuery(
-            'meet_results',
+            'usaw_meet_results',
             'result_id',
             (query) => query.in('meet_id', batchMeetIds)
         );
