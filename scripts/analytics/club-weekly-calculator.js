@@ -66,9 +66,9 @@ async function calculateClubRecentMeets(clubName) {
     // and the meet date is within our cutoff period
     const { data: results, error } = await supabase
         .from('usaw_meet_results')
-        .select('meet_id, meets!inner(Date)')
+        .select('meet_id, usaw_meets!inner(Date)')
         .eq('club_name', clubName)
-        .gte('meets.Date', cutoffDateString);
+        .gte('usaw_meets.Date', cutoffDateString);
 
     if (error) {
         throw new Error(`Failed to count recent meets for ${clubName}: ${error.message}`);
@@ -96,9 +96,9 @@ async function calculateClubActiveLifters(clubName) {
     // and the meet date is within our 24-month cutoff period
     const { data: results, error } = await supabase
         .from('usaw_meet_results')
-        .select('lifter_id, meets!inner(Date)')
+        .select('lifter_id, usaw_meets!inner(Date)')
         .eq('club_name', clubName)
-        .gte('meets.Date', cutoffDateString);
+        .gte('usaw_meets.Date', cutoffDateString);
 
     if (error) {
         throw new Error(`Failed to count active lifters for ${clubName}: ${error.message}`);
@@ -126,9 +126,9 @@ async function calculateClubTotalParticipations(clubName) {
     // and the meet date is within our cutoff period
     const { data: results, error } = await supabase
         .from('usaw_meet_results')
-        .select('result_id, meets!inner(Date)')
+        .select('result_id, usaw_meets!inner(Date)')
         .eq('club_name', clubName)
-        .gte('meets.Date', cutoffDateString);
+        .gte('usaw_meets.Date', cutoffDateString);
 
     if (error) {
         throw new Error(`Failed to count total participations for ${clubName}: ${error.message}`);
