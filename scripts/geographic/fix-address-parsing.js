@@ -134,8 +134,15 @@ function parseAddressIntelligently(rawAddress) {
     // Strategy 2: Country Detection and Removal
     let countryIndex = -1;
     for (let i = parts.length - 1; i >= 0; i--) {
-        const partLower = parts[i].toLowerCase();
-        if (COUNTRY_VARIATIONS.some(country => partLower.includes(country))) {
+        const partLower = parts[i].toLowerCase().trim();
+        // Use exact match or word boundary check, not substring includes
+        if (COUNTRY_VARIATIONS.some(country => {
+            // Exact match
+            if (partLower === country) return true;
+            // Word boundary match (e.g., "United States, 12345" should match)
+            const regex = new RegExp(`\\b${country.replace(/\s+/g, '\\s+')}\\b`, 'i');
+            return regex.test(partLower);
+        })) {
             countryIndex = i;
             country = 'United States';
             parsing_method += 'country_detected,';
@@ -260,7 +267,8 @@ function parseAddressIntelligently(rawAddress) {
     zip_code = zip_code.trim();
 
     // Remove country information from other fields if it leaked in
-    const countryPattern = new RegExp(COUNTRY_VARIATIONS.join('|'), 'gi');
+    // Use word boundaries to avoid removing "us" from words like "Houston", "Muskegon", etc.
+    const countryPattern = new RegExp(COUNTRY_VARIATIONS.map(c => `\\b${c.replace(/\s+/g, '\\s+')}\\b`).join('|'), 'gi');
     street_address = street_address.replace(countryPattern, '').replace(/,?\s*,?$/, '').trim();
     city = city.replace(countryPattern, '').replace(/,?\s*,?$/, '').trim();
     state = state.replace(countryPattern, '').replace(/,?\s*,?$/, '').trim();
