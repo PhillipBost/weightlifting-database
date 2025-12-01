@@ -22,7 +22,11 @@
       "Bash(fi)",
       "Bash(find:*)",
       "mcp__serena__read_file",
-      "mcp__serena__search_for_pattern"
+      "mcp__serena__search_for_pattern",
+      "mcp__serena__find_file",
+      "Bash(if [ -d \"scripts/test\" ])",
+      "Bash(then echo \"Directory exists\")",
+      "Bash(else mkdir -p scripts/test)"
     ],
     "deny": [],
     "ask": []
