@@ -335,6 +335,10 @@ async function processAthleteCSVFile(filePath, errorLogger) {
                     continue;
                 }
 
+                // Declare lifter and lifterId before if/else to avoid scoping issues
+                let lifter;
+                let lifterId;
+
                 if (matchingLifters.length > 1) {
                     // Try to disambiguate using additional criteria
                     console.log(`  🔍 Found ${matchingLifters.length} lifters named "${athleteName}" - attempting disambiguation...`);
@@ -376,13 +380,13 @@ async function processAthleteCSVFile(filePath, errorLogger) {
                     }
 
                     // Use the best match we found
-                    const lifter = bestMatch;
-                    const lifterId = lifter.lifter_id;
+                    lifter = bestMatch;
+                    lifterId = lifter.lifter_id;
                     console.log(`    ✅ Using lifter_id ${lifterId} for ${athleteName}`);
                 } else {
                     // Found exactly one lifter (original logic)
-                    var lifter = matchingLifters[0];
-                    var lifterId = lifter.lifter_id;
+                    lifter = matchingLifters[0];
+                    lifterId = lifter.lifter_id;
                 }
 
                 // Check if membership number needs updating
