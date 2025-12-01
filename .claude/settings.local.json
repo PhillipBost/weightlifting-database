@@ -26,7 +26,8 @@
       "mcp__serena__find_file",
       "Bash(if [ -d \"scripts/test\" ])",
       "Bash(then echo \"Directory exists\")",
-      "Bash(else mkdir -p scripts/test)"
+      "Bash(else mkdir -p scripts/test)",
+      "Bash(psql:*)"
     ],
     "deny": [],
     "ask": []
