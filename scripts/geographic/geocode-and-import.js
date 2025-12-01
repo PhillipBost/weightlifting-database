@@ -131,7 +131,10 @@ async function geocodeAddress(rawAddress) {
     // Helper function to remove country variations
     function removeCountry(addr) {
         return addr
-            .replace(/,?\s*(United States of America|United States|USA|US)\s*,?/gi, '')
+            // Match country with commas, but preserve one comma for proper formatting
+            .replace(/,\s*\b(United States of America|United States|USA|US)\b\s*,/gi, ',')
+            // Handle country at the end (after last comma)
+            .replace(/,\s*\b(United States of America|United States|USA|US)\b\s*$/gi, '')
             .replace(/,\s*,/g, ',')  // Fix double commas
             .replace(/^,\s*|,\s*$/g, '')  // Remove leading/trailing commas
             .trim();
