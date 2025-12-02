@@ -239,6 +239,141 @@ async function expandMeetAndGetAddress(meetIndex) {
     }
 }
 
+// Extract GPS coordinates from Google Maps iframe
+async function extractGoogleMapsCoordinates(page) {
+    try {
+        log('🗺️ Attempting to extract Google Maps coordinates...');
+
+        // Wait for iframe to load within the active panel (20s timeout with polling)
+        const iframeLoaded = await page.waitForFunction(
+            () => {
+                const activePanel = document.querySelector('.v-expansion-panel--active');
+                if (!activePanel) return false;
+
+                const iframe = activePanel.querySelector('iframe[src*="google.com/maps"]');
+                return iframe !== null;
+            },
+            { timeout: 20000, polling: 1000 }
+        ).catch(() => false);
+
+        if (!iframeLoaded) {
+            log('   ℹ️ No Google Maps iframe found in active panel');
+            return null;
+        }
+
+        // Get the iframe's src URL from the ACTIVE PANEL (prevents coordinate leakage!)
+        const iframeSrc = await page.evaluate(() => {
+            const activePanel = document.querySelector('.v-expansion-panel--active');
+            if (!activePanel) return null;
+            const iframe = activePanel.querySelector('iframe[src*="google.com/maps"]');
+            return iframe ? iframe.src : null;
+        });
+
+        if (!iframeSrc) {
+            log('   ℹ️ Could not get iframe src from active panel');
+            return null;
+        }
+
+        // Find the frame that matches THIS SPECIFIC iframe's src (not just any Google Maps frame)
+        const frames = page.frames();
+        const googleMapsFrame = frames.find(frame => frame.url() === iframeSrc);
+
+        if (!googleMapsFrame) {
+            log('   ℹ️ Google Maps frame not found (no frame matches the active panel\'s iframe src)');
+            return null;
+        }
+
+        log('   🔍 Found Google Maps frame, waiting for "View larger map" link...');
+
+        // Wait for link to load within the frame context (5s timeout)
+        let linkElement = null;
+        try {
+            linkElement = await googleMapsFrame.waitForSelector(
+                'a[aria-label="View larger map"]',
+                { timeout: 5000 }
+            );
+        } catch (error) {
+            log('   ℹ️ No "View larger map" link found in iframe (timed out after 5s)');
+            return null;
+        }
+
+        if (!linkElement) {
+            log('   ℹ️ No "View larger map" link found in iframe');
+            return null;
+        }
+
+        log('   🔗 Found Google Maps link, extracting href...');
+
+        // Get the href from the link (simpler and more reliable than opening new tab)
+        const mapsUrl = await linkElement.evaluate(el => el.href);
+
+        if (!mapsUrl) {
+            log('   ⚠️ Link found but href is empty');
+            return null;
+        }
+
+        log(`   🌐 Google Maps URL: ${mapsUrl.substring(0, 100)}...`);
+
+        // Parse coordinates from URL
+        const coordinates = parseCoordinatesFromUrl(mapsUrl);
+
+        if (coordinates) {
+            log(`   📍 Extracted: ${coordinates.latitude}, ${coordinates.longitude}`);
+            return {
+                latitude: coordinates.latitude,
+                longitude: coordinates.longitude,
+                source_url: mapsUrl,
+                strategy: 'sport80_google_maps_link'
+            };
+        } else {
+            log('   ⚠️ Could not parse coordinates from URL');
+            return null;
+        }
+
+    } catch (error) {
+        log(`   ❌ Error extracting coordinates: ${error.message}`);
+        return null;
+    }
+}
+
+// Parse latitude/longitude from Google Maps URL
+function parseCoordinatesFromUrl(url) {
+    try {
+        const urlObj = new URL(url);
+        const params = urlObj.searchParams;
+
+        // Try different parameter patterns (priority order)
+        const patterns = [
+            params.get('ll'),      // ll=40.460986,-75.876225
+            params.get('q'),       // q=40.460986,-75.876225
+            params.get('center')   // center=40.460986,-75.876225
+        ];
+
+        for (const pattern of patterns) {
+            if (!pattern) continue;
+
+            // Extract lat,lng from pattern
+            const match = pattern.match(/(-?\d+\.?\d*),\s*(-?\d+\.?\d*)/);
+            if (match) {
+                const lat = parseFloat(match[1]);
+                const lng = parseFloat(match[2]);
+
+                // Basic validation (just check if they're numbers)
+                if (!isNaN(lat) && !isNaN(lng)) {
+                    return {
+                        latitude: lat,
+                        longitude: lng
+                    };
+                }
+            }
+        }
+
+        return null;
+    } catch (error) {
+        return null;
+    }
+}
+
 // Check if there's a next page and navigate to it
 async function goToNextPage() {
     try {
@@ -288,10 +423,10 @@ async function goToNextPage() {
     }
 }
 
-// Get meets from database that need addresses
+// Get meets from database that need addresses or coordinate updates
 async function getMeetsNeedingAddresses() {
     try {
-        log('📊 Querying database for meets without addresses...');
+        log('📊 Querying database for meets needing updates...');
 
         let allMeets = [];
         let page = 0;
@@ -301,8 +436,8 @@ async function getMeetsNeedingAddresses() {
         while (hasMore) {
             const { data, error } = await supabase
                 .from('usaw_meets')
-                .select('meet_id, Meet, "Date"')
-                .is('address', null)
+                .select('meet_id, Meet, "Date", address, geocode_precision_score')
+                .or('address.is.null,geocode_precision_score.is.null,geocode_precision_score.lte.5')
                 .range(page * pageSize, (page + 1) * pageSize - 1);
 
             if (error) {
@@ -319,7 +454,14 @@ async function getMeetsNeedingAddresses() {
             }
         }
 
-        log(`📋 Found ${allMeets.length} meets without addresses`);
+        // Show breakdown of what needs updating
+        const needsAddress = allMeets.filter(m => !m.address).length;
+        const needsCoordinates = allMeets.filter(m => m.address && (!m.geocode_precision_score || m.geocode_precision_score <= 5)).length;
+
+        log(`📋 Found ${allMeets.length} meets needing updates:`);
+        log(`   - ${needsAddress} need addresses`);
+        log(`   - ${needsCoordinates} need coordinate improvements`);
+
         return allMeets;
 
     } catch (error) {
@@ -328,14 +470,23 @@ async function getMeetsNeedingAddresses() {
     }
 }
 
-// Update meet with address data
-async function updateMeetAddress(meetId, meetName, addressData) {
+// Update meet with address data and optional coordinate data
+async function updateMeetAddress(meetId, meetName, addressData, coordinateData = null) {
     try {
         const updateData = {
             address: addressData.address,
             location_text: addressData.location,
             date_range: addressData.date_range
         };
+
+        // Add coordinate data if provided
+        if (coordinateData) {
+            updateData.latitude = coordinateData.latitude;
+            updateData.longitude = coordinateData.longitude;
+            updateData.geocode_precision_score = 6;
+            updateData.geocode_strategy_used = coordinateData.strategy;
+            updateData.geocode_display_name = `Direct coordinates from Sport80: ${coordinateData.source_url}`;
+        }
 
         const { error } = await supabase
             .from('usaw_meets')
@@ -346,7 +497,7 @@ async function updateMeetAddress(meetId, meetName, addressData) {
             throw new Error(`Update failed for meet_id ${meetId}: ${error.message}`);
         }
 
-        log(`  ✅ Updated database: ${meetName}`);
+        log(`  ✅ Updated database: ${meetName}${coordinateData ? ' (with coordinates)' : ''}`);
         return true;
 
     } catch (error) {
@@ -434,14 +585,29 @@ async function scrapeMeetAddresses() {
                     const addressInfo = await expandMeetAndGetAddress(i);
 
                     if (addressInfo) {
-                        // Update database immediately
+                        // Prepare address data
                         const addressData = {
                             address: addressInfo,
                             location: scrapedMeet.location,
                             date_range: scrapedMeet.date_range
                         };
 
-                        const success = await updateMeetAddress(dbMeet.meet_id, scrapedMeet.meet_name, addressData);
+                        // Try to extract Google Maps coordinates
+                        let coordinateData = null;
+                        try {
+                            coordinateData = await extractGoogleMapsCoordinates(page);
+                            if (coordinateData) {
+                                log(`   📍 Extracted coordinates: ${coordinateData.latitude}, ${coordinateData.longitude}`);
+                            } else {
+                                log(`   ℹ️ No Google Maps coordinates available`);
+                            }
+                        } catch (error) {
+                            log(`   ⚠️ Coordinate extraction failed: ${error.message}`);
+                            // Continue with address-only update
+                        }
+
+                        // Update database with address and coordinates (if available)
+                        const success = await updateMeetAddress(dbMeet.meet_id, scrapedMeet.meet_name, addressData, coordinateData);
                         if (success) {
                             updatedCount++;
                             // Remove from needs list to avoid processing again
