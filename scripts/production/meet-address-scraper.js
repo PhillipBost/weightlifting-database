@@ -283,23 +283,36 @@ async function extractGoogleMapsCoordinates(page) {
             return null;
         }
 
-        log('   🔍 Found Google Maps frame, waiting for "View larger map" link...');
+        log('   🔍 Found Google Maps frame, searching for "View larger map" link...');
 
-        // Wait for link to load within the frame context (10s timeout)
+        // Try multiple selectors to find the link (different meets may have different structures)
+        const linkSelectors = [
+            'a[aria-label="View larger map"]',           // Most common
+            'a[aria-label*="larger map" i]',             // Case-insensitive partial match
+            'a[aria-label*="View" i][aria-label*="map" i]',  // Contains both words
+            'a[href*="maps.google.com"]',                // Any link to Google Maps
+            'a[target="_blank"]'                         // Opens in new tab
+        ];
+
         let linkElement = null;
-        try {
-            linkElement = await googleMapsFrame.waitForSelector(
-                'a[aria-label="View larger map"]',
-                { timeout: 10000 }
-            );
-        } catch (error) {
-            log(`   ℹ️ No "View larger map" link found in iframe (timed out after 10s)`);
-            log(`   ⚠️ Timeout details: ${error.message}`);
-            return null;
+        let usedSelector = null;
+
+        for (const selector of linkSelectors) {
+            try {
+                linkElement = await googleMapsFrame.waitForSelector(selector, { timeout: 2000 });
+                if (linkElement) {
+                    usedSelector = selector;
+                    log(`   ✅ Found link using selector: ${selector}`);
+                    break;
+                }
+            } catch (error) {
+                // Try next selector
+                continue;
+            }
         }
 
         if (!linkElement) {
-            log('   ℹ️ No "View larger map" link found in iframe');
+            log(`   ℹ️ No "View larger map" link found after trying ${linkSelectors.length} selectors`);
             return null;
         }
 
