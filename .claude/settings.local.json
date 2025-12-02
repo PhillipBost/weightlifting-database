@@ -27,7 +27,8 @@
       "Bash(if [ -d \"scripts/test\" ])",
       "Bash(then echo \"Directory exists\")",
       "Bash(else mkdir -p scripts/test)",
-      "Bash(psql:*)"
+      "Bash(psql:*)",
+      "mcp__serena__get_symbols_overview"
     ],
     "deny": [],
     "ask": []
