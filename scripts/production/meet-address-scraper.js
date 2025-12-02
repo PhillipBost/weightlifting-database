@@ -285,15 +285,16 @@ async function extractGoogleMapsCoordinates(page) {
 
         log('   🔍 Found Google Maps frame, waiting for "View larger map" link...');
 
-        // Wait for link to load within the frame context (5s timeout)
+        // Wait for link to load within the frame context (10s timeout)
         let linkElement = null;
         try {
             linkElement = await googleMapsFrame.waitForSelector(
                 'a[aria-label="View larger map"]',
-                { timeout: 5000 }
+                { timeout: 10000 }
             );
         } catch (error) {
-            log('   ℹ️ No "View larger map" link found in iframe (timed out after 5s)');
+            log(`   ℹ️ No "View larger map" link found in iframe (timed out after 10s)`);
+            log(`   ⚠️ Timeout details: ${error.message}`);
             return null;
         }
 
