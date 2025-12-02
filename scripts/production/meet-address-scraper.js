@@ -274,6 +274,20 @@ async function extractGoogleMapsCoordinates(page) {
             return null;
         }
 
+        // Strategy 1: Try to extract from the iframe src directly (most reliable if present)
+        log(`   🔍 Checking iframe src for coordinates: ${iframeSrc.substring(0, 100)}...`);
+        const srcCoordinates = parseCoordinatesFromUrl(iframeSrc);
+        if (srcCoordinates) {
+            log(`   📍 Extracted from iframe src: ${srcCoordinates.latitude}, ${srcCoordinates.longitude}`);
+            return {
+                latitude: srcCoordinates.latitude,
+                longitude: srcCoordinates.longitude,
+                source_url: iframeSrc,
+                strategy: 'sport80_google_maps_iframe_src'
+            };
+        }
+
+        // Strategy 2: Look for "View larger map" link
         // Find the frame that matches THIS SPECIFIC iframe's src (not just any Google Maps frame)
         const frames = page.frames();
         const googleMapsFrame = frames.find(frame => frame.url() === iframeSrc);
@@ -311,38 +325,34 @@ async function extractGoogleMapsCoordinates(page) {
             }
         }
 
-        if (!linkElement) {
-            log(`   ℹ️ No "View larger map" link found after trying ${linkSelectors.length} selectors`);
-            return null;
-        }
+        if (linkElement) {
+            log('   🔗 Found Google Maps link, extracting href...');
 
-        log('   🔗 Found Google Maps link, extracting href...');
+            // Get the href from the link (simpler and more reliable than opening new tab)
+            const mapsUrl = await linkElement.evaluate(el => el.href);
 
-        // Get the href from the link (simpler and more reliable than opening new tab)
-        const mapsUrl = await linkElement.evaluate(el => el.href);
+            if (mapsUrl) {
+                log(`   🌐 Google Maps URL: ${mapsUrl.substring(0, 100)}...`);
 
-        if (!mapsUrl) {
-            log('   ⚠️ Link found but href is empty');
-            return null;
-        }
+                // Parse coordinates from URL
+                const coordinates = parseCoordinatesFromUrl(mapsUrl);
 
-        log(`   🌐 Google Maps URL: ${mapsUrl.substring(0, 100)}...`);
-
-        // Parse coordinates from URL
-        const coordinates = parseCoordinatesFromUrl(mapsUrl);
-
-        if (coordinates) {
-            log(`   📍 Extracted: ${coordinates.latitude}, ${coordinates.longitude}`);
-            return {
-                latitude: coordinates.latitude,
-                longitude: coordinates.longitude,
-                source_url: mapsUrl,
-                strategy: 'sport80_google_maps_link'
-            };
+                if (coordinates) {
+                    log(`   📍 Extracted from link: ${coordinates.latitude}, ${coordinates.longitude}`);
+                    return {
+                        latitude: coordinates.latitude,
+                        longitude: coordinates.longitude,
+                        source_url: mapsUrl,
+                        strategy: 'sport80_google_maps_link'
+                    };
+                }
+            }
         } else {
-            log('   ⚠️ Could not parse coordinates from URL');
-            return null;
+            log(`   ℹ️ No "View larger map" link found after trying ${linkSelectors.length} selectors`);
         }
+
+        log('   ⚠️ Could not parse coordinates from any source');
+        return null;
 
     } catch (error) {
         log(`   ❌ Error extracting coordinates: ${error.message}`);
@@ -353,14 +363,51 @@ async function extractGoogleMapsCoordinates(page) {
 // Parse latitude/longitude from Google Maps URL
 function parseCoordinatesFromUrl(url) {
     try {
+        // Handle partial URLs or just paths
+        if (!url.startsWith('http')) {
+            // If it's just a path or query, try to make it a full URL for parsing
+            if (url.startsWith('/')) {
+                url = 'https://www.google.com' + url;
+            } else {
+                return null;
+            }
+        }
+
         const urlObj = new URL(url);
         const params = urlObj.searchParams;
+        const path = urlObj.pathname;
 
-        // Try different parameter patterns (priority order)
+        // 1. Check for @lat,lng format in path (e.g. /maps/place/.../@40.7128,-74.0060,15z)
+        // This is very common in "View larger map" links
+        const atMatch = path.match(/@(-?\d+\.\d+),(-?\d+\.\d+)/);
+        if (atMatch) {
+            return {
+                latitude: parseFloat(atMatch[1]),
+                longitude: parseFloat(atMatch[2])
+            };
+        }
+
+        // 2. Check for embed API protobuf format (e.g. !2d-74.0060!3d40.7128)
+        // This is common in iframe src URLs
+        // !2d longitude !3d latitude (note the order!)
+        if (url.includes('!2d') && url.includes('!3d')) {
+            const lngMatch = url.match(/!2d(-?\d+\.\d+)/);
+            const latMatch = url.match(/!3d(-?\d+\.\d+)/);
+
+            if (lngMatch && latMatch) {
+                return {
+                    latitude: parseFloat(latMatch[1]),
+                    longitude: parseFloat(lngMatch[1])
+                };
+            }
+        }
+
+        // 3. Check for standard query parameters
         const patterns = [
             params.get('ll'),      // ll=40.460986,-75.876225
             params.get('q'),       // q=40.460986,-75.876225
-            params.get('center')   // center=40.460986,-75.876225
+            params.get('center'),  // center=40.460986,-75.876225
+            params.get('sll')      // sll=40.460986,-75.876225 (search location)
         ];
 
         for (const pattern of patterns) {
