@@ -469,8 +469,19 @@ async function goToNextPage() {
 
         if (nextButton) {
             await nextButton.click();
-            await new Promise(resolve => setTimeout(resolve, 3000));
-            await page.waitForNetworkIdle();
+            await new Promise(resolve => setTimeout(resolve, 1000)); // Shorter initial delay
+
+            // Wait for content to reload instead of network idle
+            await page.waitForFunction(
+                () => {
+                    const panels = document.querySelectorAll('.v-expansion-panel-header');
+                    return panels.length > 0;
+                },
+                { timeout: 15000 } // 15 second timeout
+            );
+
+            // Additional short delay to ensure content is stable
+            await new Promise(resolve => setTimeout(resolve, 1000));
             log('Successfully navigated to next page');
             return true;
         } else {
