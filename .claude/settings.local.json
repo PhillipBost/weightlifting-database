@@ -1,35 +1,7 @@
 {
   "permissions": {
     "allow": [
-      "Bash(python:*)",
-      "Read(//c/Users/phill/Downloads/**)",
-      "Bash(test:*)",
-      "Bash(npx js-yaml:*)",
-      "Bash(/dev/null)",
-      "Bash(git log:*)",
-      "Bash(node -e:*)",
-      "WebSearch",
-      "WebFetch(domain:github.com)",
-      "WebFetch(domain:supabase.com)",
-      "mcp__serena__create_text_file",
-      "mcp__serena__activate_project",
-      "Bash(claude mcp add:*)",
-      "Bash(del \".claude\\mcp.json\")",
-      "Bash(claude mcp list:*)",
-      "Bash(dir:*)",
-      "Bash(cd:*)",
-      "Bash(if [ -f output/athletes/athlete_*.csv ])",
-      "Bash(fi)",
-      "Bash(find:*)",
-      "mcp__serena__read_file",
-      "mcp__serena__search_for_pattern",
-      "mcp__serena__find_file",
-      "Bash(if [ -d \"scripts/test\" ])",
-      "Bash(then echo \"Directory exists\")",
-      "Bash(else mkdir -p scripts/test)",
-      "Bash(psql:*)",
-      "mcp__serena__get_symbols_overview",
-      "mcp__serena__think_about_collected_information"
+      "Bash(ssh:*)"
     ],
     "deny": [],
     "ask": []
