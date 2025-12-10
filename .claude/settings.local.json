@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "Bash(ssh:*)"
+      "Bash(ssh:*)",
+      "Bash(powershell.exe -Command:*)",
+      "Bash(powershell.exe -ExecutionPolicy Bypass -File \".\\scripts\\backup\\pull-backup.ps1\")",
+      "Bash(powershell.exe -ExecutionPolicy Bypass -File \"create-scheduled-task.ps1\")",
+      "Bash(cat:*)"
     ],
     "deny": [],
     "ask": []

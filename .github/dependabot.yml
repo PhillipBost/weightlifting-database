@@ -1,0 +1,17 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    allow:
+      - dependency-type: "all"
+    groups:
+      all-dependencies:
+        dependency-type: "all"
+        update-types:
+          - "minor"
+          - "patch"
+    open-pull-requests-limit: 1
+    pull-request-branch-name:
+      separator: "/"

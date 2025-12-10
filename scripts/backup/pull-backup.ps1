@@ -14,9 +14,9 @@
 # CONFIGURATION - UPDATE THESE VALUES
 # ============================================================================
 
-$HETZNER_IP = "YOUR_HETZNER_IP_HERE"           # e.g., "159.69.123.45"
-$SSH_USER = "root"                              # Usually 'root' for Hetzner
-$REMOTE_BACKUP_PATH = "/data/coolify/backups"  # Update after finding actual path
+$HETZNER_IP = "46.62.223.85"
+$SSH_USER = "root"
+$REMOTE_BACKUP_PATH = "/data/coolify/backups/databases/root-team-0/weightlifting-db-supabase-db-zoss8scsow00wsssgkck0g88"
 $LOCAL_BACKUP_DIR = "C:\Backups\Weightlifting-DB"
 $LOG_FILE = "$PSScriptRoot\backup-pull.log"
 $RETENTION_DAYS = 30                            # Keep local backups for 30 days
@@ -57,7 +57,7 @@ if (-not (Test-Path $LOCAL_BACKUP_DIR)) {
 
 # Find all backup files on remote server (modified in last 48 hours)
 Write-Log "Scanning for backup files on remote server..."
-$findCommand = "find $REMOTE_BACKUP_PATH -name '*.dump' -type f -mtime -2 2>/dev/null || find $REMOTE_BACKUP_PATH -name '*backup*.sql' -type f -mtime -2 2>/dev/null || find $REMOTE_BACKUP_PATH -name '*.sql.gz' -type f -mtime -2 2>/dev/null"
+$findCommand = "find $REMOTE_BACKUP_PATH -type f \( -name '*.dump' -o -name '*.dmp' -o -name '*backup*.sql' -o -name '*.sql.gz' \) -mmin -2880 2>/dev/null"
 $remoteBackups = ssh "$SSH_USER@$HETZNER_IP" "$findCommand" 2>&1
 
 if ($LASTEXITCODE -ne 0 -or [string]::IsNullOrWhiteSpace($remoteBackups)) {
