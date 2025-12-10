@@ -1,9 +1,9 @@
-name: Weekly Data Processing Pipeline
+name: Daily Data Processing Pipeline
 
 on:
   schedule:
-    # Run every Sunday at 6:30 AM UTC (30 minutes after data collection)
-    - cron: '30 6 * * 0'
+    # Run daily at 3:30 AM UTC (10:30 PM EST, 6.5 hours after data collection starts)
+    - cron: '30 3 * * *'
   workflow_dispatch: # Allow manual triggering
     inputs:
       skip_wso_assignment:
@@ -146,7 +146,7 @@ jobs:
           if [ $? -eq 0 ]; then
             echo "✅ WSO boundary validation completed"
           else
-            echo "⚠️ WSO boundary validation found issues (non-fatal, will be fixed in weekly cleanup)"
+            echo "⚠️ WSO boundary validation found issues (non-fatal, will be fixed in daily cleanup)"
           fi
 
       - name: Verify assignment completeness
@@ -698,7 +698,7 @@ jobs:
     steps:
       - name: Create comprehensive summary
         run: |
-          echo "## 🔄 Weekly Data Processing Summary" >> $GITHUB_STEP_SUMMARY
+          echo "## 🔄 Daily Data Processing Summary" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "**Timestamp:** $(date)" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
@@ -784,13 +784,15 @@ jobs:
 
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### 🔄 Pipeline Integration" >> $GITHUB_STEP_SUMMARY
-          echo "- **Previous Step:** Weekly Data Collection (meet addresses + club scraping)" >> $GITHUB_STEP_SUMMARY
+          echo "- **Previous Step:** Daily Data Collection (meet addresses + club scraping)" >> $GITHUB_STEP_SUMMARY
           echo "- **Current Step:** Data Processing (WSO assignment + analytics calculation)" >> $GITHUB_STEP_SUMMARY
-          echo "- **Schedule:** Runs 30 minutes after data collection completes" >> $GITHUB_STEP_SUMMARY
+          echo "- **Schedule:** Runs at 3:30 AM UTC (6.5 hours after data collection starts)" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "### 📅 Weekly Schedule Overview" >> $GITHUB_STEP_SUMMARY
-          echo "- **6:00 AM UTC:** Data Collection (meet addresses + clubs)" >> $GITHUB_STEP_SUMMARY
-          echo "- **6:30 AM UTC:** Data Processing (WSO assignment + analytics)" >> $GITHUB_STEP_SUMMARY
+          echo "### 📅 Daily Schedule Overview" >> $GITHUB_STEP_SUMMARY
+          echo "- **9:00 PM UTC:** Data Collection (meet addresses + clubs)" >> $GITHUB_STEP_SUMMARY
+          echo "- **3:30 AM UTC:** Data Processing (WSO assignment + analytics)" >> $GITHUB_STEP_SUMMARY
+          echo "- **8:00 AM UTC:** Division Scraper" >> $GITHUB_STEP_SUMMARY
+          echo "- **9:00 AM UTC:** Data Quality" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "**Processing logs available in workflow artifacts**" >> $GITHUB_STEP_SUMMARY
 
