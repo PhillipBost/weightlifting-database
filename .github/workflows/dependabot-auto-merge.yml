@@ -4,15 +4,6 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
   workflow_dispatch:
-    inputs:
-      simulate:
-        description: 'Set to true to simulate a Dependabot run'
-        required: false
-        default: 'false'
-      pull_number:
-        description: 'Pull request number to operate on (required when simulating)'
-        required: false
-        default: ''
 
 permissions:
   contents: write
@@ -20,7 +11,7 @@ permissions:
 
 jobs:
   audit:
-    if: ${{ github.actor == 'dependabot[bot]' || (github.event_name == 'workflow_dispatch' && github.event.inputs.simulate == 'true') }}
+    if: ${{ github.actor == 'dependabot[bot]' || github.event_name == 'workflow_dispatch' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -41,25 +32,25 @@ jobs:
         run: npm audit --audit-level=moderate
 
       - name: Approve Dependabot PR
+        if: ${{ github.event_name == 'pull_request' }}
         uses: actions/github-script@v6
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const owner = context.repo.owner;
             const repo = context.repo.repo;
-            const pull_number = context.payload.pull_request ? context.payload.pull_request.number : Number(github.context.payload.inputs.pull_number);
-            if (!pull_number) throw new Error('pull_number not provided for manual run');
+            const pull_number = context.payload.pull_request.number;
             await github.rest.pulls.createReview({ owner, repo, pull_number, event: 'APPROVE' });
 
       - name: Enable auto-merge for this PR (only if labeled `security`)
+        if: ${{ github.event_name == 'pull_request' }}
         uses: actions/github-script@v6
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const owner = context.repo.owner;
             const repo = context.repo.repo;
-            const pull_number = context.payload.pull_request ? context.payload.pull_request.number : Number(github.context.payload.inputs.pull_number);
-            if (!pull_number) throw new Error('pull_number not provided for manual run');
+            const pull_number = context.payload.pull_request.number;
             // Fetch labels for the PR
             const { data: labels } = await github.rest.issues.listLabelsOnIssue({ owner, repo, issue_number: pull_number });
             const hasSecurity = labels.some(l => l.name === 'security');
