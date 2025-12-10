@@ -40,7 +40,7 @@ jobs:
             const pull_number = context.payload.pull_request.number;
             await github.rest.pulls.createReview({ owner, repo, pull_number, event: 'APPROVE' });
 
-      - name: Enable auto-merge for this PR (via REST API)
+      - name: Enable auto-merge for this PR (only if labeled `security`)
         uses: actions/github-script@v6
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -48,7 +48,14 @@ jobs:
             const owner = context.repo.owner;
             const repo = context.repo.repo;
             const pull_number = context.payload.pull_request.number;
-            // Try the REST endpoint to enable auto-merge for the PR
+            // Fetch labels for the PR
+            const { data: labels } = await github.rest.issues.listLabelsOnIssue({ owner, repo, issue_number: pull_number });
+            const hasSecurity = labels.some(l => l.name === 'security');
+            if (!hasSecurity) {
+              core.info('PR not labeled security — skipping auto-merge.');
+              return;
+            }
+            // Enable auto-merge
             await github.request('PUT /repos/{owner}/{repo}/pulls/{pull_number}/auto-merge', {
               owner,
               repo,
