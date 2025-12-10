@@ -1,9 +1,9 @@
-name: Monthly IWF Scraper
+name: Daily IWF Scraper
 
 on:
   schedule:
-    # Run at 2 AM UTC on 1st of each month
-    - cron: '0 2 1 * *'
+    # Run daily at 10 PM UTC (5 PM EST)
+    - cron: '0 22 * * *'
 
   # Allow manual trigger
   workflow_dispatch:
@@ -96,7 +96,7 @@ jobs:
           script: |
             const year = context.payload.inputs?.year || 'current';
             const issueBody = [
-              'The monthly IWF scraper workflow failed.',
+              'The daily IWF scraper workflow failed.',
               '',
               'Check the logs:',
               `- [Workflow logs](https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId})`,
@@ -110,7 +110,7 @@ jobs:
               repo: context.repo.repo,
               title: `IWF Scraper failed - ${new Date().toISOString().split('T')[0]}`,
               body: issueBody,
-              labels: ['automation', 'iwf-scraper']
+              labels: ['automation', 'iwf-scraper', 'daily-run']
             })
 
       - name: Report summary to step
