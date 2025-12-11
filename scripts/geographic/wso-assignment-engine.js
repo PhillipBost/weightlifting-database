@@ -239,23 +239,88 @@ const MEET_REGIONAL_PATTERNS = {
  * Find WSO by coordinates using point-in-polygon
  * Direct WSO lookup - bypasses state mapping entirely
  */
-async function findWSOByCoordinates(lat, lng, supabaseClient) {
-    if (!supabaseClient) return null;
+/**
+ * Compute Bounding Box for a GeoJSON geometry
+ * Supports Polygon and MultiPolygon
+ * Returns [minLng, minLat, maxLng, maxLat]
+ */
+function computeBBox(geometry) {
+    let minLng = Infinity, minLat = Infinity, maxLng = -Infinity, maxLat = -Infinity;
 
+    function processCoords(coords) {
+        // [lng, lat]
+        if (typeof coords[0] === 'number') {
+            const lng = coords[0];
+            const lat = coords[1];
+            if (lng < minLng) minLng = lng;
+            if (lat < minLat) minLat = lat;
+            if (lng > maxLng) maxLng = lng;
+            if (lat > maxLat) maxLat = lat;
+        } else {
+            coords.forEach(processCoords);
+        }
+    }
+
+    if (geometry && geometry.coordinates) {
+        processCoords(geometry.coordinates);
+    }
+
+    return [minLng, minLat, maxLng, maxLat];
+}
+
+/**
+ * Check if point is in BBox
+ */
+function isPointInBBox(pointCoords, bbox) {
+    const [lng, lat] = pointCoords;
+    return lng >= bbox[0] && lat >= bbox[1] && lng <= bbox[2] && lat <= bbox[3];
+}
+
+/**
+ * Find WSO by coordinates using point-in-polygon
+ * Direct WSO lookup - bypasses state mapping entirely
+ */
+async function findWSOByCoordinates(lat, lng, supabaseClient, cachedWSOs = null) {
+    if (!supabaseClient && !cachedWSOs) return null;
+
+    const start = Date.now();
     try {
-        const { data: wsos, error } = await supabaseClient
-            .from('usaw_wso_information')
-            .select('name, territory_geojson')
-            .not('territory_geojson', 'is', null);
+        let wsos = cachedWSOs;
 
-        if (!error && wsos) {
+        // Fetch if not cached
+        if (!wsos && supabaseClient) {
+            const { data, error } = await supabaseClient
+                .from('usaw_wso_information')
+                .select('name, territory_geojson')
+                .not('territory_geojson', 'is', null);
+
+            if (!error) wsos = data;
+        }
+
+        if (wsos) {
             const testPoint = point([lng, lat]);
+            const pointCoords = [lng, lat];
 
             // Check which WSO territory contains this point
             for (const wso of wsos) {
                 if (wso.territory_geojson && wso.territory_geojson.geometry) {
+
+                    // Optimization: Compute and check BBox first
+                    if (!wso._bbox) {
+                        wso._bbox = computeBBox(wso.territory_geojson.geometry);
+                    }
+
+                    // Fast reject using BBox
+                    if (!isPointInBBox(pointCoords, wso._bbox)) {
+                        continue;
+                    }
+
+                    // Expensive check
                     const isInside = booleanPointInPolygon(testPoint, wso.territory_geojson);
+
                     if (isInside) {
+                        // const duration = Date.now() - start;
+                        // if (duration > 100) console.log(`WSO Lookup took ${duration}ms (Match: ${wso.name})`);
                         return wso.name;
                     }
                 }
@@ -297,17 +362,28 @@ function findStateByCoordinates(lat, lng) {
  * @param {Object} supabaseClient - Supabase client instance (optional)
  * @returns {Promise<string|null>} - WSO name or null if couldn't determine
  */
-async function assignCaliforniaWSO(lat, lng, supabaseClient = null) {
-    // If we have a supabase client, use actual territory polygons for precise checking
-    if (supabaseClient) {
+async function assignCaliforniaWSO(lat, lng, supabaseClient = null, cachedWSOs = null) {
+    // If we have data (cached or via client), use actual territory polygons for precise checking
+    if (supabaseClient || cachedWSOs) {
         try {
-            // Fetch California WSO territories from database
-            const { data: californiaWSOs, error } = await supabaseClient
-                .from('usaw_wso_information')
-                .select('name, territory_geojson')
-                .in('name', ['California North Central', 'California South']);
+            let californiaWSOs = null;
 
-            if (!error && californiaWSOs && californiaWSOs.length === 2) {
+            if (cachedWSOs) {
+                // Filter from cache
+                californiaWSOs = cachedWSOs.filter(w =>
+                    w.name === 'California North Central' || w.name === 'California South'
+                );
+            } else if (supabaseClient) {
+                // Fetch California WSO territories from database
+                const { data, error } = await supabaseClient
+                    .from('usaw_wso_information')
+                    .select('name, territory_geojson')
+                    .in('name', ['California North Central', 'California South']);
+
+                if (!error) californiaWSOs = data;
+            }
+
+            if (californiaWSOs && californiaWSOs.length >= 1) {
                 const testPoint = point([lng, lat]);
 
                 // Check which territory contains this point
@@ -471,14 +547,14 @@ function extractLocationFromMeetName(meetName) {
 /**
  * Assign WSO based on state
  */
-async function assignWSO(state, address = null, lat = null, lng = null, supabaseClient = null) {
+async function assignWSO(state, address = null, lat = null, lng = null, supabaseClient = null, options = {}) {
     if (!state) return null;
 
     // Special handling for California
     if (state === 'California') {
         // Priority 1: Use coordinates with polygon checking if available
-        if (lat && lng && supabaseClient) {
-            const wso = await assignCaliforniaWSO(lat, lng, supabaseClient);
+        if (lat && lng && (supabaseClient || options.cachedWSOs)) {
+            const wso = await assignCaliforniaWSO(lat, lng, supabaseClient, options.cachedWSOs);
             if (wso) return wso;
         }
 
@@ -492,7 +568,7 @@ async function assignWSO(state, address = null, lat = null, lng = null, supabase
 
         // Fallback: Use simple latitude check if coordinates available
         if (lat && lng) {
-            const wso = await assignCaliforniaWSO(lat, lng, null);
+            const wso = await assignCaliforniaWSO(lat, lng, null, null);
             if (wso) return wso;
         }
 
@@ -605,9 +681,12 @@ async function getHistoricalMeetWSOData(supabaseClient) {
  * @returns {Object} Assignment result with WSO, method, confidence, and details
  */
 async function assignWSOGeography(meetData, supabaseClient = null, options = {}) {
+    const start = Date.now();
     const {
         includeHistoricalData = true,
-        logDetails = false
+        logDetails = false,
+        cachedWSOs = null,
+        historicalDataMap = null
     } = options;
 
     const assignment = {
@@ -626,8 +705,9 @@ async function assignWSOGeography(meetData, supabaseClient = null, options = {})
     };
 
     // Get historical data if requested and client provided
-    let historicalData = {};
-    if (includeHistoricalData && supabaseClient) {
+    let historicalData = historicalDataMap || {};
+
+    if (!historicalDataMap && includeHistoricalData && supabaseClient) {
         try {
             historicalData = await getHistoricalMeetWSOData(supabaseClient);
         } catch (error) {
@@ -662,9 +742,9 @@ async function assignWSOGeography(meetData, supabaseClient = null, options = {})
                 // Use coordinate-based state instead
                 let wso;
                 if (coordState === 'California') {
-                    wso = await assignCaliforniaWSO(lat, lng, supabaseClient);
+                    wso = await assignCaliforniaWSO(lat, lng, supabaseClient, cachedWSOs);
                 } else {
-                    wso = await assignWSO(coordState, null, lat, lng, supabaseClient);
+                    wso = await assignWSO(coordState, null, lat, lng, supabaseClient, options);
                 }
 
                 if (wso) {
@@ -683,7 +763,7 @@ async function assignWSOGeography(meetData, supabaseClient = null, options = {})
 
             // If they agree, use the state field (highest confidence)
             if (coordState && extractedState && coordState === extractedState) {
-                const wso = await assignWSO(extractedState, meetData.address || meetData.city, lat, lng, supabaseClient);
+                const wso = await assignWSO(extractedState, meetData.address || meetData.city, lat, lng, supabaseClient, options);
 
                 if (wso) {
                     assignment.assigned_wso = wso;
@@ -713,7 +793,7 @@ async function assignWSOGeography(meetData, supabaseClient = null, options = {})
         if (extractedState) {
             const lat = meetData.latitude ? parseFloat(meetData.latitude) : null;
             const lng = meetData.longitude ? parseFloat(meetData.longitude) : null;
-            const wso = await assignWSO(extractedState, meetData.address || meetData.city, lat, lng, supabaseClient);
+            const wso = await assignWSO(extractedState, meetData.address || meetData.city, lat, lng, supabaseClient, options);
 
             if (wso) {
                 assignment.assigned_wso = wso;
@@ -737,7 +817,7 @@ async function assignWSOGeography(meetData, supabaseClient = null, options = {})
 
         if (!isNaN(lat) && !isNaN(lng)) {
             // Try direct WSO lookup via point-in-polygon first
-            const wso = await findWSOByCoordinates(lat, lng, supabaseClient);
+            const wso = await findWSOByCoordinates(lat, lng, supabaseClient, cachedWSOs);
 
             if (wso) {
                 assignment.assigned_wso = wso;
@@ -756,9 +836,9 @@ async function assignWSOGeography(meetData, supabaseClient = null, options = {})
             if (state) {
                 let fallbackWSO;
                 if (state === 'California') {
-                    fallbackWSO = await assignCaliforniaWSO(lat, lng, supabaseClient);
+                    fallbackWSO = await assignCaliforniaWSO(lat, lng, supabaseClient, cachedWSOs);
                 } else {
-                    fallbackWSO = await assignWSO(state, null, lat, lng, supabaseClient);
+                    fallbackWSO = await assignWSO(state, null, lat, lng, supabaseClient, options);
                 }
 
                 if (fallbackWSO) {
@@ -802,7 +882,7 @@ async function assignWSOGeography(meetData, supabaseClient = null, options = {})
         // Pass coordinates if available for California polygon checking
         const lat = meetData.latitude ? parseFloat(meetData.latitude) : null;
         const lng = meetData.longitude ? parseFloat(meetData.longitude) : null;
-        const wso = await assignWSO(extractedState, sourceField, lat, lng, supabaseClient);
+        const wso = await assignWSO(extractedState, sourceField, lat, lng, supabaseClient, options);
         if (wso) {
             assignment.assigned_wso = wso;
             assignment.assignment_method = 'address_state';
@@ -832,7 +912,7 @@ async function assignWSOGeography(meetData, supabaseClient = null, options = {})
             } else if (meetLocation.type === 'state') {
                 const lat = meetData.latitude ? parseFloat(meetData.latitude) : null;
                 const lng = meetData.longitude ? parseFloat(meetData.longitude) : null;
-                wso = await assignWSO(meetLocation.value, meetData.location_text || meetData.address, lat, lng, supabaseClient);
+                wso = await assignWSO(meetLocation.value, meetData.location_text || meetData.address, lat, lng, supabaseClient, options);
                 assignment.assignment_method = 'meet_name_state';
             }
 
@@ -871,6 +951,11 @@ async function assignWSOGeography(meetData, supabaseClient = null, options = {})
     assignment.details.reasoning.push('No WSO assignment method succeeded');
     if (logDetails) {
         console.log(`❌ No WSO assignment possible for meet`);
+    }
+
+    const duration = Date.now() - start;
+    if (duration > 1000) {
+        console.log(`⚠️ Slow assignment for ${meetData.meet_name || meetData.meet_id}: ${duration}ms`);
     }
 
     return assignment;

@@ -24,7 +24,7 @@ const { createClient } = require('@supabase/supabase-js');
 const { assignWSOGeography, extractStateFromAddress } = require('./wso-assignment-engine');
 const fs = require('fs');
 const path = require('path');
-require('dotenv').config({ path: '../../.env' });
+require('dotenv').config({ path: path.resolve(__dirname, '../../.env') });
 
 const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SECRET_KEY);
 
@@ -466,13 +466,31 @@ async function getHistoricalMeetWSOData() {
     return meetWSOMap;
 }
 
+// Get WSO reference data for caching
+async function getWSOReferenceData() {
+    log('Fetching WSO reference data for caching...');
+    const { data: wsos, error } = await supabase
+        .from('usaw_wso_information')
+        .select('name, territory_geojson')
+        .not('territory_geojson', 'is', null);
+
+    if (error) {
+        log(`⚠️ Error fetching WSO reference data: ${error.message}`);
+        return null;
+    }
+    log(`Downloaded ${wsos.length} WSO territories for caching`);
+    return wsos;
+}
+
 // Assign WSO to a single meet using shared assignment engine
-async function assignMeetWSO(meet, historicalData) {
+async function assignMeetWSO(meet, historicalData, cachedWSOs) {
     try {
         // Use the shared sophisticated assignment logic
         const assignment = await assignWSOGeography(meet, supabase, {
             includeHistoricalData: true,
-            logDetails: false
+            logDetails: false,
+            cachedWSOs: cachedWSOs,
+            historicalDataMap: historicalData
         });
 
         // Transform the result to match the expected format for this script
@@ -623,9 +641,10 @@ async function assignAllMeets(dryRun = false) {
     const initialMeets = await getMeets();
     log(`📊 Initial unassigned meets: ${initialMeets.length}`);
 
-    const [meets, historicalData] = await Promise.all([
+    const [meets, historicalData, cachedWSOs] = await Promise.all([
         Promise.resolve(initialMeets), // Reuse the initial fetch
-        getHistoricalMeetWSOData()
+        getHistoricalMeetWSOData(),
+        getWSOReferenceData()
     ]);
 
     const assignments = [];
@@ -644,12 +663,13 @@ async function assignAllMeets(dryRun = false) {
     for (let i = 0; i < meets.length; i++) {
         const meet = meets[i];
 
-        if (i % 100 === 0) {
-            log(`  📋 Progress: ${i}/${meets.length} meets processed (${((i / meets.length) * 100).toFixed(1)}%)`);
+        // Debug logging for every meet to find the hang
+        if (i < 20 || i % 100 === 0) {
+            log(`  Processing meet ${i + 1}/${meets.length}: ${meet.meet_id} - ${meet.meet_name}`);
         }
 
         try {
-            const assignment = await assignMeetWSO(meet, historicalData);
+            const assignment = await assignMeetWSO(meet, historicalData, cachedWSOs);
             assignments.push(assignment);
 
             summary.total_processed++;
