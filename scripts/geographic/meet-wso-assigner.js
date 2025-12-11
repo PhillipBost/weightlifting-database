@@ -602,7 +602,7 @@ async function verifyAssignmentCompleteness() {
     while (hasMore) {
         const { data: batchData, error } = await supabase
             .from('usaw_meets')
-            .select('meet_id, meet_name')
+            .select('meet_id, name')
             .is('wso_geography', null)
             .range(start, start + batchSize - 1);
 
@@ -618,7 +618,7 @@ async function verifyAssignmentCompleteness() {
                 // Log details for small number of remaining meets
                 log(`  📋 Remaining unassigned meets:`);
                 batchData.forEach(meet => {
-                    log(`    - ID: ${meet.meet_id}, Name: ${meet.meet_name}`);
+                    log(`    - ID: ${meet.meet_id}, Name: ${meet.name}`);
                 });
             }
 
@@ -665,7 +665,7 @@ async function assignAllMeets(dryRun = false) {
 
         // Debug logging for every meet to find the hang
         if (i < 20 || i % 100 === 0) {
-            log(`  Processing meet ${i + 1}/${meets.length}: ${meet.meet_id} - ${meet.meet_name}`);
+            log(`  Processing meet ${i + 1}/${meets.length}: ${meet.meet_id} - ${meet.name || meet.meet_name}`);
         }
 
         try {
