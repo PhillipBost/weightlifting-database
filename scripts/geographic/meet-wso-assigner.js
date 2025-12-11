@@ -496,7 +496,7 @@ async function assignMeetWSO(meet, historicalData, cachedWSOs) {
         // Transform the result to match the expected format for this script
         return {
             meet_id: meet.meet_id,
-            meet_name: meet.meet_name,
+            meet_name: meet.Meet || meet.meet_name,
             original_wso: meet.wso_geography,
             assigned_wso: assignment.assigned_wso,
             assignment_method: assignment.assignment_method,
@@ -602,7 +602,7 @@ async function verifyAssignmentCompleteness() {
     while (hasMore) {
         const { data: batchData, error } = await supabase
             .from('usaw_meets')
-            .select('meet_id, name')
+            .select('meet_id, Meet')
             .is('wso_geography', null)
             .range(start, start + batchSize - 1);
 
@@ -618,7 +618,7 @@ async function verifyAssignmentCompleteness() {
                 // Log details for small number of remaining meets
                 log(`  📋 Remaining unassigned meets:`);
                 batchData.forEach(meet => {
-                    log(`    - ID: ${meet.meet_id}, Name: ${meet.name}`);
+                    log(`    - ID: ${meet.meet_id}, Name: ${meet.Meet}`);
                 });
             }
 
@@ -665,7 +665,7 @@ async function assignAllMeets(dryRun = false) {
 
         // Debug logging for every meet to find the hang
         if (i < 20 || i % 100 === 0) {
-            log(`  Processing meet ${i + 1}/${meets.length}: ${meet.meet_id} - ${meet.name || meet.meet_name}`);
+            log(`  Processing meet ${i + 1}/${meets.length}: ${meet.meet_id} - ${meet.Meet || meet.meet_name}`);
         }
 
         try {
