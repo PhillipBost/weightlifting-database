@@ -200,13 +200,13 @@ BEGIN
         RETURN NEW;
     END IF;
 
-    -- Ages 31+: Q-masters only
-    IF v_age >= 31 THEN
-        IF NEW.gender = 'M' THEN
+    -- Ages 31+: Q-masters only (use central is_master_age predicate)
+    IF public.is_master_age(NEW.gender, v_age) THEN
+        IF upper(coalesce(NEW.gender, '')) = 'M' THEN
             v_denominator := 416.7 - 47.87 * POWER(v_B, -2) + 18.93 * POWER(v_B, 2);
             v_qscore := ROUND((v_total * 463.26 / v_denominator)::NUMERIC, 3);
             NEW.q_masters := v_qscore;
-        ELSIF NEW.gender = 'F' THEN
+        ELSIF upper(coalesce(NEW.gender, '')) = 'F' THEN
             v_denominator := 266.5 - 19.44 * POWER(v_B, -2) + 18.61 * POWER(v_B, 2);
             v_qscore := ROUND((v_total * 306.54 / v_denominator)::NUMERIC, 3);
             NEW.q_masters := v_qscore;
@@ -242,6 +242,18 @@ $$ LANGUAGE plpgsql;
 -- ============================================================================
 -- TRIGGERS
 -- ============================================================================
+-- TRIGGER 1: Calculate analytics on INSERT
+CREATE TRIGGER iwf_meet_results_analytics_insert_trigger
+    BEFORE INSERT ON iwf_meet_results
+    FOR EACH ROW
+    EXECUTE FUNCTION calculate_iwf_analytics();
+
+-- Ensure idempotency when running this migration multiple times
+DROP TRIGGER IF EXISTS iwf_meet_results_analytics_insert_trigger ON iwf_meet_results;
+DROP TRIGGER IF EXISTS iwf_meet_results_analytics_update_trigger ON iwf_meet_results;
+DROP TRIGGER IF EXISTS iwf_meet_results_manual_override_trigger ON iwf_meet_results;
+DROP TRIGGER IF EXISTS iwf_meet_results_qpoints_auto_update ON iwf_meet_results;
+DROP TRIGGER IF EXISTS iwf_meet_results_competition_age_trigger ON iwf_meet_results;
 
 -- TRIGGER 1: Calculate analytics on INSERT
 CREATE TRIGGER iwf_meet_results_analytics_insert_trigger

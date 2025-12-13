@@ -25,7 +25,7 @@ SELECT
         WHEN competition_age::integer < 10 THEN 'Too young (< 10)'
         WHEN competition_age::integer BETWEEN 10 AND 20 THEN 'Youth'
         WHEN competition_age::integer BETWEEN 21 AND 30 THEN 'Open'
-        WHEN competition_age::integer >= 31 THEN 'Masters'
+        WHEN public.is_master_age(gender, competition_age) THEN 'Masters'
     END as age_bracket
 FROM meet_results
 WHERE (competition_age IS NULL OR competition_age::integer < 10)

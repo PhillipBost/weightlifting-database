@@ -35,7 +35,7 @@ BEGIN
     SELECT COUNT(*) INTO invalid_masters
     FROM meet_results
     WHERE q_masters IS NOT NULL
-      AND (competition_age IS NULL OR competition_age::integer < 31);
+      AND NOT public.is_master_age(gender, competition_age);
 
     RAISE NOTICE '================================================';
     RAISE NOTICE 'Q-Points Comprehensive Cleanup - Starting';
@@ -94,7 +94,7 @@ BEGIN
     UPDATE meet_results
     SET qpoints = NULL,
         q_youth = NULL
-    WHERE competition_age::integer >= 31
+    WHERE public.is_master_age(gender, competition_age)
       AND (qpoints IS NOT NULL OR q_youth IS NOT NULL);
 
     GET DIAGNOSTICS rows_updated = ROW_COUNT;
