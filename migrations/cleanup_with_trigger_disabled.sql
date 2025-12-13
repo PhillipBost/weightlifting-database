@@ -35,7 +35,7 @@ WHERE competition_age::integer BETWEEN 21 AND 30
 UPDATE meet_results
 SET qpoints = NULL,
     q_youth = NULL
-WHERE competition_age::integer >= 31
+WHERE public.is_master_age(gender, competition_age)
   AND (qpoints IS NOT NULL OR q_youth IS NOT NULL);
 
 -- ================================================================
@@ -74,11 +74,11 @@ WHERE qpoints IS NOT NULL
 UNION ALL
 
 SELECT
-    'Invalid q_masters (not ages 31+)',
+    'Invalid q_masters (not masters by predicate)',
     COUNT(*),
     CASE WHEN COUNT(*) = 0 THEN 'PASS ✓' ELSE 'FAIL ✗' END
 FROM meet_results
 WHERE q_masters IS NOT NULL
-  AND (competition_age IS NULL OR competition_age::integer < 31)
+  AND NOT public.is_master_age(gender, competition_age)
 
 ORDER BY check_name;

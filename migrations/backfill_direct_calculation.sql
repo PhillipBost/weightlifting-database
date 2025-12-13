@@ -22,11 +22,11 @@ SET q_youth = ROUND(
 )
 WHERE m.result_id IN (SELECT result_id FROM youth_to_update);
 
--- For masters (31+) - calculate q_masters
+-- For masters - calculate q_masters using central predicate
 WITH masters_to_update AS (
     SELECT result_id
     FROM meet_results
-    WHERE competition_age::integer >= 31
+    WHERE public.is_master_age(gender, competition_age)
       AND q_masters IS NULL
       AND total IS NOT NULL
       AND total::numeric > 0
@@ -59,10 +59,10 @@ WHERE competition_age::integer BETWEEN 10 AND 20
 UNION ALL
 
 SELECT
-    'Missing q_masters for masters (31+)',
+    'Missing q_masters for masters (predicate)',
     COUNT(*)
 FROM meet_results
-WHERE competition_age::integer >= 31
+WHERE public.is_master_age(gender, competition_age)
   AND q_masters IS NULL
   AND total IS NOT NULL
   AND total::numeric > 0

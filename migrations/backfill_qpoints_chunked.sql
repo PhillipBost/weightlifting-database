@@ -35,8 +35,8 @@ BEGIN
              AND body_weight_kg::numeric > 0
              AND gender IS NOT NULL)
             OR
-            -- Masters missing q_masters
-            (competition_age::integer >= 31
+            -- Masters missing q_masters (predicate)
+            (public.is_master_age(gender, competition_age)
              AND q_masters IS NULL
              AND total IS NOT NULL
              AND total::numeric > 0
@@ -84,10 +84,10 @@ WHERE competition_age::integer BETWEEN 21 AND 30
 UNION ALL
 
 SELECT
-    'Missing q_masters for masters (31+)',
+    'Missing q_masters for masters (predicate)',
     COUNT(*)
 FROM meet_results
-WHERE competition_age::integer >= 31
+WHERE public.is_master_age(gender, competition_age)
   AND q_masters IS NULL
   AND total IS NOT NULL
   AND total::numeric > 0
@@ -111,7 +111,7 @@ SELECT
           AND body_weight_kg IS NOT NULL AND body_weight_kg::numeric > 0 AND gender IS NOT NULL
     ) + (
         SELECT COUNT(*) FROM meet_results
-        WHERE competition_age::integer >= 31
+        WHERE public.is_master_age(gender, competition_age)
           AND q_masters IS NULL AND total IS NOT NULL AND total::numeric > 0
           AND body_weight_kg IS NOT NULL AND body_weight_kg::numeric > 0 AND gender IS NOT NULL
     );
