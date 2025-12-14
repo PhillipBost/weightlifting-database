@@ -31,7 +31,7 @@ async function analyzeQScoreContamination() {
         const { data: wrongQScores, error: wrongError } = await supabase
             .from('usaw_meet_results')
             .select('lifter_name, competition_age, birth_year, date, qpoints, q_youth, q_masters, total, body_weight_kg, gender')
-            .or('and(competition_age.lte.9,or(qpoints.not.is.null,q_youth.not.is.null,q_masters.not.is.null)),and(competition_age.gte.10,competition_age.lte.20,or(qpoints.not.is.null,q_masters.not.is.null)),and(competition_age.gte.21,competition_age.lte.30,or(q_youth.not.is.null,q_masters.not.is.null)),and(gender.eq.M,competition_age.gte.31,competition_age.lte.75,or(qpoints.not.is.null,q_youth.not.is.null)),and(gender.eq.F,competition_age.gte.31,competition_age.lte.110,or(qpoints.not.is.null,q_youth.not.is.null))')
+            .or('and(competition_age.lte.9,or(qpoints.not.is.null,q_youth.not.is.null,q_masters.not.is.null)),and(competition_age.gte.10,competition_age.lte.20,or(qpoints.not.is.null,q_masters.not.is.null)),and(competition_age.gte.21,competition_age.lte.30,or(q_youth.not.is.null,q_masters.not.is.null)),and(gender.eq.M,competition_age.gte.31,competition_age.lte.75,or(qpoints.not.is.null,q_youth.not.is.null)),and(gender.eq.F,competition_age.gte.31,competition_age.lte.90,or(qpoints.not.is.null,q_youth.not.is.null)))')
             .limit(20)
             .order('competition_age', { ascending: true });
 
@@ -47,7 +47,7 @@ async function analyzeQScoreContamination() {
                     let expected = 'None';
                     if (age >= 10 && age <= 20) expected = 'Q-youth only';
                     else if (age >= 21 && age <= 30) expected = 'Q-points only';
-                    else if ((record.gender === 'M' && age >= 31 && age <= 75) || (record.gender === 'F' && age >= 31 && age <= 110)) expected = 'Q-masters only';
+                    else if ((record.gender === 'M' && age >= 31 && age <= 75) || (record.gender === 'F' && age >= 31 && age <= 90)) expected = 'Q-masters only';
 
                 console.log(`${(record.lifter_name || 'Unknown').substring(0, 20).padEnd(20)} | ${String(age).padEnd(3)} | ${String(record.qpoints || '').padEnd(8)} | ${String(record.q_youth || '').padEnd(7)} | ${String(record.q_masters || '').padEnd(9)} | ${expected}`);
             });
@@ -95,7 +95,7 @@ async function analyzeQScoreContamination() {
         const { count: ages31WithWrongQ, error: error31 } = await supabase
             .from('usaw_meet_results')
             .select('*', { count: 'exact', head: true })
-            .or('and(gender.eq.M,competition_age.gte.31,competition_age.lte.75,or(qpoints.not.is.null,q_youth.not.is.null)),and(gender.eq.F,competition_age.gte.31,competition_age.lte.110,or(qpoints.not.is.null,q_youth.not.is.null))');
+            .or('and(gender.eq.M,competition_age.gte.31,competition_age.lte.75,or(qpoints.not.is.null,q_youth.not.is.null)),and(gender.eq.F,competition_age.gte.31,competition_age.lte.90,or(qpoints.not.is.null,q_youth.not.is.null))');
 
         if (!error31) {
             console.log(`   Ages 31+ with Q-points/Q-youth: ${ages31WithWrongQ || 0} records (should have Q-masters only)`);
@@ -187,8 +187,8 @@ async function cleanQScoreContamination() {
             totalCleaned += cleaned2130 || 0;
         }
 
-        // Clean Masters ranges: Men 31-75; Women 31-110 - Keep only Q-masters
-        console.log('🧽 Cleaning masters ranges (Men 31-75, Women 31-110) (keeping Q-masters only)...');
+        // Clean Masters ranges: Men 31-75; Women 31-90 - Keep only Q-masters
+        console.log('🧽 Cleaning masters ranges (Men 31-75, Women 31-90) (keeping Q-masters only)...');
 
         // Men 31-75
         const { count: cleaned31m, error: error31m } = await supabase
@@ -206,19 +206,19 @@ async function cleanQScoreContamination() {
             totalCleaned += cleaned31m || 0;
         }
 
-        // Women 31-110
+        // Women 31-90
         const { count: cleaned31f, error: error31f } = await supabase
             .from('usaw_meet_results')
             .update({ qpoints: null, q_youth: null })
             .gte('competition_age', 31)
-            .lte('competition_age', 110)
+            .lte('competition_age', 90)
             .eq('gender', 'F')
             .or('qpoints.not.is.null,q_youth.not.is.null');
 
         if (error31f) {
-            console.error('❌ Error cleaning women 31-110:', error31f.message);
+            console.error('❌ Error cleaning women 31-90:', error31f.message);
         } else {
-            console.log(`✅ Cleaned ${cleaned31f || 0} records for women 31-110`);
+            console.log(`✅ Cleaned ${cleaned31f || 0} records for women 31-90`);
             totalCleaned += cleaned31f || 0;
         }
 

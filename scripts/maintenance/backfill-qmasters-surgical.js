@@ -27,7 +27,7 @@ function parseArgs() {
 
 async function fetchCandidatesToSet(batchSize) {
     // q_masters IS NULL but should be set: total/bodyweight present and master-age by gender
-    const orFilter = 'and(gender.eq.M,competition_age.gte.31,competition_age.lte.75),and(gender.eq.F,competition_age.gte.31,competition_age.lte.110)';
+    const orFilter = 'and(gender.eq.M,competition_age.gte.31,competition_age.lte.75),and(gender.eq.F,competition_age.gte.31,competition_age.lte.90)';
     const { data, error } = await config.supabaseIWF
         .from('iwf_meet_results')
         .select('*')
@@ -46,7 +46,7 @@ async function fetchCandidatesToSet(batchSize) {
 
 async function fetchCandidatesToUnset(batchSize) {
     // q_masters IS NOT NULL but should be unset (age/gender outside masters definition)
-    const orFilter = 'and(gender.eq.M,competition_age.lt.31),and(gender.eq.M,competition_age.gt.75),and(gender.eq.F,competition_age.lt.31),and(gender.eq.F,competition_age.gt.110),gender.is.null,not(gender.in.(M,F)),competition_age.is.null';
+    const orFilter = 'and(gender.eq.M,competition_age.lt.31),and(gender.eq.M,competition_age.gt.75),and(gender.eq.F,competition_age.lt.31),and(gender.eq.F,competition_age.gt.90),gender.is.null,not(gender.in.(M,F)),competition_age.is.null';
     const { data, error } = await config.supabaseIWF
         .from('iwf_meet_results')
         .select('*')
