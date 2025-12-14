@@ -304,8 +304,8 @@ function createAthleteCSV(membershipId, profileData, sourceDivision) {
                                 qyouth = formattedScore;  // Q-youth for ages 10-20
                             } else if (age >= 21 && age <= 30) {
                                 qpoints = formattedScore; // Q-points for ages 21-30
-                            } else if ((gender === 'M' && age >= 31 && age <= 75) || (gender === 'F' && age >= 31 && age <= 110)) {
-                                qmasters = formattedScore; // Q-masters for masters ranges (M:31-75, F:31-110)
+                            } else if ((gender === 'M' && age >= 31 && age <= 75) || (gender === 'F' && age >= 31 && age <= 90)) {
+                                qmasters = formattedScore; // Q-masters for masters ranges (M:31-75, F:31-90)
                             }
                             // Ages ≤9 get no Q-scores (all remain empty)
                         }
