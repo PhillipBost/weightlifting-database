@@ -31,7 +31,7 @@ async function analyzeQScoreContamination() {
         const { data: wrongQScores, error: wrongError } = await supabase
             .from('usaw_meet_results')
             .select('lifter_name, competition_age, birth_year, date, qpoints, q_youth, q_masters, total, body_weight_kg, gender')
-            .or('and(competition_age.lte.9,or(qpoints.not.is.null,q_youth.not.is.null,q_masters.not.is.null)),and(competition_age.gte.10,competition_age.lte.20,or(qpoints.not.is.null,q_masters.not.is.null)),and(competition_age.gte.21,competition_age.lte.30,or(q_youth.not.is.null,q_masters.not.is.null)),and(competition_age.gte.31,or(qpoints.not.is.null,q_youth.not.is.null))')
+            .or('and(competition_age.lte.9,or(qpoints.not.is.null,q_youth.not.is.null,q_masters.not.is.null)),and(competition_age.gte.10,competition_age.lte.20,or(qpoints.not.is.null,q_masters.not.is.null)),and(competition_age.gte.21,competition_age.lte.30,or(q_youth.not.is.null,q_masters.not.is.null)),and(gender.eq.M,competition_age.gte.31,competition_age.lte.75,or(qpoints.not.is.null,q_youth.not.is.null)),and(gender.eq.F,competition_age.gte.31,competition_age.lte.110,or(qpoints.not.is.null,q_youth.not.is.null))')
             .limit(20)
             .order('competition_age', { ascending: true });
 
@@ -44,10 +44,10 @@ async function analyzeQScoreContamination() {
 
             wrongQScores?.forEach(record => {
                 const age = record.competition_age;
-                let expected = 'None';
-                if (age >= 10 && age <= 20) expected = 'Q-youth only';
-                else if (age >= 21 && age <= 30) expected = 'Q-points only';
-                else if (age >= 31) expected = 'Q-masters only';
+                    let expected = 'None';
+                    if (age >= 10 && age <= 20) expected = 'Q-youth only';
+                    else if (age >= 21 && age <= 30) expected = 'Q-points only';
+                    else if ((record.gender === 'M' && age >= 31 && age <= 75) || (record.gender === 'F' && age >= 31 && age <= 110)) expected = 'Q-masters only';
 
                 console.log(`${(record.lifter_name || 'Unknown').substring(0, 20).padEnd(20)} | ${String(age).padEnd(3)} | ${String(record.qpoints || '').padEnd(8)} | ${String(record.q_youth || '').padEnd(7)} | ${String(record.q_masters || '').padEnd(9)} | ${expected}`);
             });
@@ -91,12 +91,11 @@ async function analyzeQScoreContamination() {
             console.log(`   Ages 21-30 with Q-youth/Q-masters: ${ages2130WithWrongQ || 0} records (should have Q-points only)`);
         }
 
-        // Ages 31+ with wrong Q-scores
+        // Ages meeting masters predicate with wrong Q-scores
         const { count: ages31WithWrongQ, error: error31 } = await supabase
             .from('usaw_meet_results')
             .select('*', { count: 'exact', head: true })
-            .gte('competition_age', 31)
-            .or('qpoints.not.is.null,q_youth.not.is.null');
+            .or('and(gender.eq.M,competition_age.gte.31,competition_age.lte.75,or(qpoints.not.is.null,q_youth.not.is.null)),and(gender.eq.F,competition_age.gte.31,competition_age.lte.110,or(qpoints.not.is.null,q_youth.not.is.null))');
 
         if (!error31) {
             console.log(`   Ages 31+ with Q-points/Q-youth: ${ages31WithWrongQ || 0} records (should have Q-masters only)`);
@@ -188,22 +187,39 @@ async function cleanQScoreContamination() {
             totalCleaned += cleaned2130 || 0;
         }
 
-        // Clean Ages 31+: Keep only Q-masters
-        console.log('🧽 Cleaning ages 31+ (keeping Q-masters only)...');
-        const { count: cleaned31, error: error31 } = await supabase
+        // Clean Masters ranges: Men 31-75; Women 31-110 - Keep only Q-masters
+        console.log('🧽 Cleaning masters ranges (Men 31-75, Women 31-110) (keeping Q-masters only)...');
+
+        // Men 31-75
+        const { count: cleaned31m, error: error31m } = await supabase
             .from('usaw_meet_results')
-            .update({
-                qpoints: null,
-                q_youth: null
-            })
+            .update({ qpoints: null, q_youth: null })
             .gte('competition_age', 31)
+            .lte('competition_age', 75)
+            .eq('gender', 'M')
             .or('qpoints.not.is.null,q_youth.not.is.null');
 
-        if (error31) {
-            console.error('❌ Error cleaning ages 31+:', error31.message);
+        if (error31m) {
+            console.error('❌ Error cleaning men 31-75:', error31m.message);
         } else {
-            console.log(`✅ Cleaned ${cleaned31 || 0} records for ages 31+`);
-            totalCleaned += cleaned31 || 0;
+            console.log(`✅ Cleaned ${cleaned31m || 0} records for men 31-75`);
+            totalCleaned += cleaned31m || 0;
+        }
+
+        // Women 31-110
+        const { count: cleaned31f, error: error31f } = await supabase
+            .from('usaw_meet_results')
+            .update({ qpoints: null, q_youth: null })
+            .gte('competition_age', 31)
+            .lte('competition_age', 110)
+            .eq('gender', 'F')
+            .or('qpoints.not.is.null,q_youth.not.is.null');
+
+        if (error31f) {
+            console.error('❌ Error cleaning women 31-110:', error31f.message);
+        } else {
+            console.log(`✅ Cleaned ${cleaned31f || 0} records for women 31-110`);
+            totalCleaned += cleaned31f || 0;
         }
 
         console.log(`\n🎉 Cleanup complete! Total records cleaned: ${totalCleaned}`);
