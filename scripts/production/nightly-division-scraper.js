@@ -137,21 +137,90 @@ function loadDivisions() {
     return divisions;
 }
 
+function loadDivisionCodes() {
+    // Try multiple possible paths to support both local execution and GitHub Actions
+    const possiblePaths = [
+        // When running from scripts/production/ directory (local execution)
+        '../../division_base64_codes.json',
+        // When running from repository root (GitHub Actions)
+        './division_base64_codes.json',
+        // Absolute path fallback
+        'division_base64_codes.json'
+    ];
+
+    let fileToUse = null;
+    for (const filePath of possiblePaths) {
+        if (fs.existsSync(filePath)) {
+            fileToUse = filePath;
+            break;
+        }
+    }
+
+    if (!fileToUse) {
+        console.log('🔍 Searched for division codes file in these locations:');
+        possiblePaths.forEach(path => console.log(`   - ${path} (${fs.existsSync(path) ? 'found' : 'not found'})`));
+        throw new Error('Division codes file not found! Looking for division_base64_codes.json');
+    }
+
+    const content = fs.readFileSync(fileToUse, 'utf8');
+    const data = JSON.parse(content);
+    return data.division_codes || {};
+}
+
 function getDivisionsForBatch(divisions) {
-    // Adjust indices (environment uses 1-based, array is 0-based)
-    const startIdx = CONFIG.DIVISION_START - 1;
-    const endIdx = CONFIG.DIVISION_END;
+    let batchDivisions = [];
+    
+    // Support both range (DIVISION_START/END) and list (DIVISION_LIST) modes
+    if (process.env.DIVISION_LIST) {
+        // Parse comma-separated or range-based list: "1,5,10-15,32,50-52"
+        const parts = process.env.DIVISION_LIST.split(',').map(p => p.trim());
+        const indices = new Set();
+        
+        for (const part of parts) {
+            if (part.includes('-')) {
+                // Handle range like "10-15"
+                const [start, end] = part.split('-').map(p => parseInt(p.trim()));
+                for (let i = start; i <= end; i++) {
+                    indices.add(i - 1); // Convert to 0-based index
+                }
+            } else {
+                // Handle individual number like "32"
+                const num = parseInt(part);
+                if (!isNaN(num)) {
+                    indices.add(num - 1); // Convert to 0-based index
+                }
+            }
+        }
+        
+        // Sort indices and get corresponding divisions
+        const sortedIndices = Array.from(indices).sort((a, b) => a - b);
+        batchDivisions = sortedIndices.map(idx => divisions[idx]).filter(d => d);
+        
+        console.log(`📅 ${CONFIG.DAY_NAME} Batch Configuration:`);
+        console.log(`   Total divisions available: ${divisions.length}`);
+        console.log(`   Division list: ${process.env.DIVISION_LIST}`);
+        console.log(`   Selected divisions: ${sortedIndices.map(i => i + 1).join(', ')}`);
+        console.log(`   Actual divisions to process: ${batchDivisions.length}`);
+        
+        if (batchDivisions.length > 0) {
+            console.log(`   Divisions: ${batchDivisions.join(', ')}`);
+        }
+    } else {
+        // Original range-based logic
+        const startIdx = CONFIG.DIVISION_START - 1;
+        const endIdx = CONFIG.DIVISION_END;
+        
+        batchDivisions = divisions.slice(startIdx, endIdx);
 
-    const batchDivisions = divisions.slice(startIdx, endIdx);
+        console.log(`📅 ${CONFIG.DAY_NAME} Batch Configuration:`);
+        console.log(`   Total divisions available: ${divisions.length}`);
+        console.log(`   Requested range: ${CONFIG.DIVISION_START} to ${CONFIG.DIVISION_END}`);
+        console.log(`   Actual divisions to process: ${batchDivisions.length}`);
 
-    console.log(`📅 ${CONFIG.DAY_NAME} Batch Configuration:`);
-    console.log(`   Total divisions available: ${divisions.length}`);
-    console.log(`   Requested range: ${CONFIG.DIVISION_START} to ${CONFIG.DIVISION_END}`);
-    console.log(`   Actual divisions to process: ${batchDivisions.length}`);
-
-    if (batchDivisions.length > 0) {
-        console.log(`   First division: ${batchDivisions[0]}`);
-        console.log(`   Last division: ${batchDivisions[batchDivisions.length - 1]}`);
+        if (batchDivisions.length > 0) {
+            console.log(`   First division: ${batchDivisions[0]}`);
+            console.log(`   Last division: ${batchDivisions[batchDivisions.length - 1]}`);
+        }
     }
 
     if (CONFIG.TEST_MODE) {
@@ -518,117 +587,88 @@ async function handleDateField(page, fieldSelector, targetYear, fieldType, targe
     }
 }
 
+// Build rankings URL with base64-encoded filters
+function buildRankingsURL(divisionName, divisionCodes, startDate, endDate) {
+    const weightClassCode = divisionCodes[divisionName];
+    
+    if (!weightClassCode) {
+        throw new Error(`No division code found for: ${divisionName}`);
+    }
+
+    // Format dates as YYYY-MM-DD
+    const startDateStr = `${startDate.getFullYear()}-${String(startDate.getMonth() + 1).padStart(2, '0')}-${String(startDate.getDate()).padStart(2, '0')}`;
+    const endDateStr = `${endDate.getFullYear()}-${String(endDate.getMonth() + 1).padStart(2, '0')}-${String(endDate.getDate()).padStart(2, '0')}`;
+
+    const filters = {
+        date_range_start: startDateStr,
+        date_range_end: endDateStr,
+        weight_class: weightClassCode
+    };
+
+    const jsonStr = JSON.stringify(filters);
+    const base64Encoded = Buffer.from(jsonStr).toString('base64');
+
+    return `https://usaweightlifting.sport80.com/public/rankings/all?filters=${encodeURIComponent(base64Encoded)}`;
+}
+
 // Main scraping function for a division
-async function scrapeDivisionAthletes(page, division, divisionIndex, globalDivisionNumber, issuesLogger) {
+async function scrapeDivisionAthletes(page, division, divisionIndex, globalDivisionNumber, issuesLogger, divisionCodes) {
     console.log(`\n🏋️ Scraping division #${globalDivisionNumber}: ${division}`);
 
-    const { ageCategory, weightClass } = splitAgeCategoryAndWeightClass(division);
-
     try {
-        // Navigate to rankings page for first division only
-        if (divisionIndex === 0) {
-            console.log('Navigating to rankings page...');
-            await page.goto('https://usaweightlifting.sport80.com/public/rankings/all', {
-                waitUntil: 'networkidle0',
-                timeout: 30000
-            });
-            await page.waitForSelector('text=Select Filters', { timeout: 10000 });
-        } else {
-            // Click Show Filters for subsequent divisions
-            const filterButton = await page.$('button[aria-label="Show Filters"]');
-            if (filterButton) {
-                await filterButton.click();
-                await new Promise(resolve => setTimeout(resolve, 1000));
-            }
-        }
-
-        // Set weight class
-        await page.click('#weight_class');
-        await page.keyboard.down('Control');
-        await page.keyboard.press('a');
-        await page.keyboard.up('Control');
-
-        await page.type('#weight_class', `${ageCategory} ${weightClass}`, { delay: 2 });
-        await new Promise(resolve => setTimeout(resolve, 500));
-        await page.keyboard.press('ArrowDown');
-
-        // Special navigation for certain weight classes (from your original code)
-        if ((ageCategory.includes("Men's") && (weightClass === "81kg" || weightClass === "55kg" || weightClass === "69 kg")) ||
-            (ageCategory.includes("Men's 13 Under Age Group") && (weightClass === "39kg" || weightClass === "40kg" || weightClass === "44kg" || weightClass === "48kg" || weightClass === "49kg" || weightClass === "55kg")) ||
-            (ageCategory.includes("Men's 11 Under Age Group") && (weightClass === "40kg" || weightClass === "44kg" || weightClass === "48kg")) ||
-            (ageCategory.includes("Men's 14-15 Age Group") && (weightClass === "48kg" || weightClass === "49kg" || weightClass === "55kg")) ||
-            (ageCategory.includes("Men's 16-17 Age Group") && (weightClass === "49kg" || weightClass === "55kg" || weightClass === "69 kg" || weightClass === "81kg"))) {
-            await page.keyboard.press('ArrowDown');
-        }
-
-        if ((ageCategory.includes("Men's 13 Under Age Group") && weightClass === "36kg") ||
-            (ageCategory.includes("Men's 14-15 Age Group") && weightClass === "44kg")) {
-            await page.keyboard.press('ArrowDown');
-            await page.keyboard.press('ArrowDown');
-        }
-
-        await page.keyboard.press('Enter');
-
-        // Set date range - supports custom dates via environment variables or defaults to last month + current month
-        let startYear, startMonth, startDay, endYear, endMonth, endDay;
+        // Calculate date range
+        let startDate, endDate;
 
         if (process.env.START_DATE && process.env.END_DATE) {
             // Custom date range from environment variables (format: YYYY-MM-DD)
-            const startDate = new Date(process.env.START_DATE);
-            const endDate = new Date(process.env.END_DATE);
+            startDate = new Date(process.env.START_DATE);
+            endDate = new Date(process.env.END_DATE);
 
-            startYear = startDate.getFullYear();
-            startMonth = startDate.getMonth() + 1;
-            startDay = startDate.getDate();
+            const startMonth = startDate.getMonth() + 1;
+            const startDay = startDate.getDate();
+            const startYear = startDate.getFullYear();
+            const endMonth = endDate.getMonth() + 1;
+            const endDay = endDate.getDate();
+            const endYear = endDate.getFullYear();
 
-            endYear = endDate.getFullYear();
-            endMonth = endDate.getMonth() + 1;
-            endDay = endDate.getDate();
-
-            console.log(`📅 Setting custom date range: ${startMonth}/${startDay}/${startYear} to ${endMonth}/${endDay}/${endYear}`);
+            console.log(`📅 Using custom date range: ${startMonth}/${startDay}/${startYear} to ${endMonth}/${endDay}/${endYear}`);
             console.log(`   (Custom range from START_DATE and END_DATE environment variables)`);
         } else {
             // Default: last N months (CONFIG.MONTHS_TO_SCRAPE) including current
             const today = new Date();
             const currentYear = today.getFullYear();
-            const currentMonth = today.getMonth() + 1; // JavaScript months are 0-based, so add 1
+            const currentMonth = today.getMonth() + 1;
 
-            const monthsBack = Math.max(1, CONFIG.MONTHS_TO_SCRAPE - 1); // number of months before current
-            const startDateObj = new Date(currentYear, currentMonth - 1 - monthsBack, 1);
+            const monthsBack = Math.max(1, CONFIG.MONTHS_TO_SCRAPE - 1);
+            startDate = new Date(currentYear, currentMonth - 1 - monthsBack, 1);
 
-            startYear = startDateObj.getFullYear();
-            startMonth = startDateObj.getMonth() + 1;
-            startDay = 1;
+            endDate = new Date(currentYear, currentMonth, 0); // Last day of current month
 
-            // End date: Last day of current month
-            endYear = currentYear;
-            endMonth = currentMonth;
-            endDay = new Date(currentYear, currentMonth, 0).getDate(); // Last day of current month
+            const startMonth = startDate.getMonth() + 1;
+            const startDay = startDate.getDate();
+            const startYear = startDate.getFullYear();
+            const endMonth = endDate.getMonth() + 1;
+            const endDay = endDate.getDate();
+            const endYear = endDate.getFullYear();
 
-            console.log(`📅 Setting date range: ${startMonth}/${startDay}/${startYear} to ${endMonth}/${endDay}/${endYear}`);
+            console.log(`📅 Using date range: ${startMonth}/${startDay}/${startYear} to ${endMonth}/${endDay}/${endYear}`);
             console.log(`   (Last ${CONFIG.MONTHS_TO_SCRAPE} months including current)`);
         }
 
-        await handleDateField(page, '#form__date_range_start', startYear, 'start', startMonth, startDay);
-        await new Promise(resolve => setTimeout(resolve, 100));
-
-        await handleDateField(page, '#form__date_range_end', endYear, 'end', endMonth, endDay);
-        await new Promise(resolve => setTimeout(resolve, 100));
-
-        await page.click('body');
-        await new Promise(resolve => setTimeout(resolve, 500));
-
-        // Apply filters
-        const applyButton = await page.evaluateHandle(() => {
-            const buttons = Array.from(document.querySelectorAll('button'));
-            return buttons.find(btn => btn.textContent?.includes('Apply'));
+        // Build and navigate to URL with base64-encoded filters
+        const rankingsURL = buildRankingsURL(division, divisionCodes, startDate, endDate);
+        console.log(`🌐 Navigating to: ${rankingsURL}`);
+        
+        await page.goto(rankingsURL, {
+            waitUntil: 'networkidle0',
+            timeout: 30000
         });
 
-        if (applyButton) {
-            await applyButton.click();
-            // Wait for results to load (reduced wait time since less data)
-            await new Promise(resolve => setTimeout(resolve, 2000));
-        }
+        // Wait for page to fully populate (3-5 seconds for dynamic content)
+        console.log(`⏳ Waiting for page to fully load and populate...`);
+        await new Promise(resolve => setTimeout(resolve, 5000));
+
+        // Filters are already applied via URL, no need to click Apply button
 
         // Extract athletes from results
         let allAthletes = [];
@@ -824,6 +864,7 @@ async function processBatchDivisions() {
     console.log(`🕐 Start time: ${new Date().toLocaleString('en-US', { timeZone: 'America/New_York' })}`);
 
     const allDivisions = loadDivisions();
+    const divisionCodes = loadDivisionCodes();
     const batchDivisions = getDivisionsForBatch(allDivisions);
 
     if (batchDivisions.length === 0) {
@@ -921,7 +962,8 @@ async function processBatchDivisions() {
                         division,
                         i,
                         globalDivisionNumber,
-                        issuesLogger
+                        issuesLogger,
+                        divisionCodes
                     );
                     break; // success
                 } catch (err) {
