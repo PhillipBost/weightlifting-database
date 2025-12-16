@@ -19,11 +19,11 @@ SET q_youth = NULL,  -- Explicitly set to NULL to trigger calculation
     updated_at = NOW()
 WHERE result_id IN (SELECT result_id FROM missing_youth);
 
--- For masters missing q_masters
+-- For masters missing q_masters (uses central is_master_age predicate)
 WITH missing_masters AS (
     SELECT result_id
     FROM meet_results
-    WHERE competition_age::integer >= 31
+    WHERE public.is_master_age(gender, competition_age)
       AND q_masters IS NULL
       AND total IS NOT NULL
       AND total::numeric > 0
@@ -53,10 +53,10 @@ WHERE competition_age::integer BETWEEN 10 AND 20
 UNION ALL
 
 SELECT
-    'Missing q_masters for masters (31+)',
+    'Missing q_masters for masters (predicate)',
     COUNT(*)
 FROM meet_results
-WHERE competition_age::integer >= 31
+WHERE public.is_master_age(gender, competition_age)
   AND q_masters IS NULL
   AND total IS NOT NULL
   AND total::numeric > 0

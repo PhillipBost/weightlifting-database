@@ -532,8 +532,8 @@ function calculateAgeAppropriateQScore(total, bodyWeight, gender, age) {
         return qScores;
     }
 
-    // Ages 31+: Q-masters only
-    if (age >= 31) {
+    // Ages 31+: Q-masters only (gender-aware bounds)
+    if ((gender === 'M' && age >= 31 && age <= 75) || (gender === 'F' && age >= 31 && age <= 90)) {
         qScores.q_masters = calculateQScore(totalNum, B, gender);
         return qScores;
     }

@@ -107,12 +107,12 @@ BEGIN
     END IF;
 
     -- Ages 31+: Q-masters only (standard Huebner, no age adjustment)
-    IF v_age >= 31 THEN
-        IF NEW.gender = 'M' THEN
+    IF public.is_master_age(NEW.gender, v_age) THEN
+        IF upper(coalesce(NEW.gender, '')) = 'M' THEN
             v_denominator := 416.7 - 47.87 * POWER(v_B, -2) + 18.93 * POWER(v_B, 2);
             v_qscore := ROUND((v_total * 463.26 / v_denominator)::NUMERIC, 3);
             NEW.q_masters := v_qscore;
-        ELSIF NEW.gender = 'F' THEN
+        ELSIF upper(coalesce(NEW.gender, '')) = 'F' THEN
             v_denominator := 266.5 - 19.44 * POWER(v_B, -2) + 18.61 * POWER(v_B, 2);
             v_qscore := ROUND((v_total * 306.54 / v_denominator)::NUMERIC, 3);
             NEW.q_masters := v_qscore;

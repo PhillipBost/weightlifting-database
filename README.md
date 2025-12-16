@@ -1,5 +1,8 @@
 # USAW Database Fields & Processes Matrix
 
+> **[View Full Schema Documentation (SCHEMA.md)](SCHEMA.md)**
+
+
 ## All Processes
 
 | Code | Process/File | Trigger | Status | Description |

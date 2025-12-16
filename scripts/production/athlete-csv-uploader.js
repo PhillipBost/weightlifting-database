@@ -192,87 +192,101 @@ async function updateRecentMeetResultsWithBiographicalData(lifterId, athleteData
     }
 
     try {
-        // Calculate date range: first day of previous month to today
-        const today = new Date();
-        const currentMonth = today.getMonth();
-        const currentYear = today.getFullYear();
-
-        let previousMonth = currentMonth - 1;
-        let previousMonthYear = currentYear;
-        if (previousMonth < 0) {
-            previousMonth = 11;
-            previousMonthYear = currentYear - 1;
+        // Use the lift_date from the CSV to find the specific meet result (within ±5 days)
+        if (!athleteData.lift_date) {
+            console.log(`  ⚠️ No lift_date in CSV - cannot match specific meet result`);
+            return { updated: 0, errors: 0 };
         }
 
-        const startDate = new Date(previousMonthYear, previousMonth, 1);
-        const dateString = startDate.toISOString().split('T')[0];
+        const liftDate = new Date(athleteData.lift_date.toString().trim());
+        const dateMinus5 = new Date(liftDate);
+        dateMinus5.setDate(liftDate.getDate() - 5);
+        const datePlus5 = new Date(liftDate);
+        datePlus5.setDate(liftDate.getDate() + 5);
 
-        console.log(`  🔄 Updating meet_results for lifter ${lifterId} since ${dateString}`);
+        const startDate = dateMinus5.toISOString().split('T')[0];
+        const endDate = datePlus5.toISOString().split('T')[0];
 
-        // Find ALL meet results in the date range (not just empty ones)
+        console.log(`  🔄 Looking for meet_result for lifter ${lifterId} between ${startDate} and ${endDate}`);
+
+        // Find meet results within ±5 days, also fetch current field values to check if empty
         const { data: meetResults, error: findError } = await supabase
             .from('usaw_meet_results')
-            .select('result_id, date, meet_name')
+            .select('result_id, date, meet_name, competition_age, wso, club_name, gender, birth_year, national_rank')
             .eq('lifter_id', lifterId)
-            .gte('date', dateString);
+            .gte('date', startDate)
+            .lte('date', endDate);
 
         if (findError) {
             throw new Error(`Error finding meet results: ${findError.message}`);
         }
 
         if (!meetResults || meetResults.length === 0) {
+            console.log(`  ℹ️ No meet result found within ±5 days of ${athleteData.lift_date}`);
             return { updated: 0, errors: 0 };
         }
 
-        console.log(`  📊 Found ${meetResults.length} meet_results to update`);
+        console.log(`  📊 Found ${meetResults.length} meet_result(s) within date range`);
 
-        // Update ALL matching records with biographical data
-        const updateData = {
-            updated_at: new Date().toISOString()
-        };
+        // Update each meet result - overwrite biographical fields from rankings page
+        let updatedCount = 0;
+        
+        for (const result of meetResults) {
+            const updateData = {
+                updated_at: new Date().toISOString()
+            };
+            
+            let hasUpdates = false;
 
-        // Add fields that exist and have values
-        if (athleteData.wso) updateData.wso = athleteData.wso.toString().trim();
-        if (athleteData.club_name) updateData.club_name = athleteData.club_name.toString().trim();
-        if (athleteData.gender) updateData.gender = athleteData.gender.toString().trim();
-        if (athleteData.national_rank) updateData.national_rank = parseInt(athleteData.national_rank) || null;
-        if (athleteData.birth_year) updateData.birth_year = parseInt(athleteData.birth_year) || null;
-
-        // Calculate competition_age for each meet result since trigger isn't working
-        if (athleteData.birth_year) {
-            const birthYear = parseInt(athleteData.birth_year);
-            for (const result of meetResults) {
-                if (result.date) {
-                    const competitionYear = new Date(result.date).getFullYear();
-                    const competitionAge = competitionYear - birthYear;
-
-                    await supabase
-                        .from('usaw_meet_results')
-                        .update({
-                            ...updateData,
-                            competition_age: competitionAge
-                        })
-                        .eq('result_id', result.result_id);
+            // Always update biographical fields if they exist in CSV (rankings page is authoritative)
+            if (athleteData.wso) {
+                updateData.wso = athleteData.wso.toString().trim();
+                hasUpdates = true;
+            }
+            if (athleteData.club_name) {
+                updateData.club_name = athleteData.club_name.toString().trim();
+                hasUpdates = true;
+            }
+            if (athleteData.gender) {
+                updateData.gender = athleteData.gender.toString().trim();
+                hasUpdates = true;
+            }
+            if (athleteData.national_rank) {
+                updateData.national_rank = parseInt(athleteData.national_rank) || null;
+                hasUpdates = true;
+            }
+            if (athleteData.birth_year) {
+                updateData.birth_year = parseInt(athleteData.birth_year) || null;
+                hasUpdates = true;
+            }
+            if (athleteData.competition_age) {
+                const compAge = parseInt(athleteData.competition_age);
+                if (!isNaN(compAge)) {
+                    updateData.competition_age = compAge;
+                    hasUpdates = true;
+                    console.log(`  📅 Updating competition_age to ${compAge} for result ${result.result_id} (date: ${result.date})`);
                 }
             }
 
-            console.log(`  ✅ Updated ${meetResults.length} meet_results with biographical data and competition_age`);
-            return { updated: meetResults.length, errors: 0 };
+            // Update if we have any data from the rankings page
+            if (hasUpdates) {
+                const { error: updateError } = await supabase
+                    .from('usaw_meet_results')
+                    .update(updateData)
+                    .eq('result_id', result.result_id);
+
+                if (updateError) {
+                    console.log(`  ⚠️ Failed to update result ${result.result_id}: ${updateError.message}`);
+                } else {
+                    updatedCount++;
+                }
+            } else {
+                console.log(`  ℹ️ No biographical data in CSV for result ${result.result_id} - skipping`);
+            }
         }
 
-        // Bulk update for cases without birth_year (no competition_age calculation needed)
-        const { error: updateError } = await supabase
-            .from('usaw_meet_results')
-            .update(updateData)
-            .in('result_id', meetResults.map(r => r.result_id));
-
-        if (updateError) {
-            throw new Error(`Error updating meet results: ${updateError.message}`);
-        }
-
-        console.log(`  ✅ Updated ${meetResults.length} meet_results with biographical data`);
-
-        return { updated: meetResults.length, errors: 0 };
+        console.log(`  ✅ Updated ${updatedCount}/${meetResults.length} meet_result(s) with biographical data`);
+        return { updated: updatedCount, errors: 0 }; // Not updating already-populated fields is not an error
 
     } catch (error) {
         console.error(`  💥 Error updating meet_results:`, error.message);
