@@ -169,11 +169,12 @@ async function queryIncompleteResults(skipList) {
 
     let query = supabase
         .from('usaw_meet_results')
-        .select('result_id, lifter_id, lifter_name, date, gender, age_category, weight_class, competition_age, wso, club_name, total')
+        .select('result_id, lifter_id, lifter_name, date, meet_id, gender, age_category, weight_class, competition_age, wso, club_name, total')
         .is('wso', null)
         .filter('total', 'gt', '0')  // Filter as text comparison since total is stored as text
         .not('age_category', 'is', null)
         .not('weight_class', 'is', null)
+        .not('meet_id', 'is', null)
         .order('date', { ascending: false });
 
     // Apply date filters
@@ -236,6 +237,73 @@ function buildRankingsURL(divisionCode, startDate, endDate) {
     const base64Encoded = Buffer.from(jsonStr).toString('base64');
 
     return `https://usaweightlifting.sport80.com/public/rankings/all?filters=${encodeURIComponent(base64Encoded)}`;
+}
+
+// ========================================
+// ATHLETE DATE SCRAPING
+// ========================================
+
+async function scrapeAthleteSpecificDate(page, meetId, lifterName) {
+    try {
+        const url = `https://usaweightlifting.sport80.com/public/rankings/results/${meetId}`;
+
+        console.log(`\n📅 Scraping athlete date from official results: ${url}`);
+
+        await page.goto(url, {
+            waitUntil: 'networkidle0',
+            timeout: 30000
+        });
+
+        // Wait for page to populate
+        await new Promise(resolve => setTimeout(resolve, 3000));
+
+        const athleteData = await page.evaluate((targetName) => {
+            // Dynamic Column Mapping - similar to division scraper
+            const headers = Array.from(document.querySelectorAll('.v-data-table__wrapper thead th'))
+                .map(th => th.textContent.trim().toLowerCase());
+
+            // Map athlete name and date columns
+            const athleteNameIdx = headers.findIndex(h =>
+                h.includes('athlete') || h.includes('lifter') || h.includes('name')
+            );
+            const dateIdx = headers.findIndex(h => h.includes('date'));
+
+            // Fallback indices if headers not found
+            const nameIdx = athleteNameIdx !== -1 ? athleteNameIdx : 1; // Usually column 1
+            const dateColIdx = dateIdx !== -1 ? dateIdx : 3; // Usually column 3
+
+            const rows = Array.from(document.querySelectorAll('.v-data-table__wrapper tbody tr'));
+
+            for (const row of rows) {
+                const cells = Array.from(row.querySelectorAll('td'));
+                if (cells.length > Math.max(nameIdx, dateColIdx)) {
+                    const athleteName = cells[nameIdx]?.textContent?.trim() || '';
+                    const athleteDate = cells[dateColIdx]?.textContent?.trim() || '';
+
+                    if (athleteName === targetName && athleteDate) {
+                        return {
+                            name: athleteName,
+                            date: athleteDate
+                        };
+                    }
+                }
+            }
+
+            return null; // Athlete not found
+        }, lifterName);
+
+        if (athleteData) {
+            console.log(`   ✅ Found athlete date: ${athleteData.date}`);
+            return athleteData.date;
+        } else {
+            console.log(`   ❌ Athlete "${lifterName}" not found in meet results`);
+            return null;
+        }
+
+    } catch (error) {
+        console.error(`   ❌ Error scraping athlete date: ${error.message}`);
+        return null;
+    }
 }
 
 // ========================================
@@ -442,10 +510,6 @@ function smartSortDivisions(divisions, result) {
 }
 
 async function findAndUpdateResult(page, result, divisions, stats) {
-    const resultDate = new Date(result.date);
-    const startDate = addDays(resultDate, -CONFIG.DATE_WINDOW_DAYS);
-    const endDate = addDays(resultDate, CONFIG.DATE_WINDOW_DAYS);
-
     console.log(`\n${'='.repeat(70)}`);
     console.log(`🎯 Processing result_id ${result.result_id}: ${result.lifter_name}`);
     console.log(`${'='.repeat(70)}`);
@@ -455,6 +519,7 @@ async function findAndUpdateResult(page, result, divisions, stats) {
     console.log(`   Lifter ID: ${result.lifter_id}`);
     console.log(`   Lifter Name: ${result.lifter_name}`);
     console.log(`   Meet Date: ${result.date}`);
+    console.log(`   Meet ID: ${result.meet_id}`);
     console.log(`   Gender: ${result.gender === 'M' ? 'Male' : result.gender === 'F' ? 'Female' : result.gender || '❌ MISSING'}`);
     console.log(`   Age Category: ${result.age_category}`);
     console.log(`   Weight Class: ${result.weight_class}`);
@@ -462,6 +527,22 @@ async function findAndUpdateResult(page, result, divisions, stats) {
     console.log(`   Competition Age: ${result.competition_age || '❌ MISSING'}`);
     console.log(`   WSO: ${result.wso || '❌ MISSING'}`);
     console.log(`   Club: ${result.club_name || '❌ MISSING'}`);
+
+    // First, scrape the athlete's specific date from the official results page
+    const athleteSpecificDateStr = await scrapeAthleteSpecificDate(page, result.meet_id, result.lifter_name);
+
+    let searchDate;
+    if (athleteSpecificDateStr) {
+        searchDate = new Date(athleteSpecificDateStr);
+        console.log(`\n📅 Using athlete-specific date: ${athleteSpecificDateStr}`);
+    } else {
+        // Fallback to meet date if athlete date not found
+        searchDate = new Date(result.date);
+        console.log(`\n📅 Athlete-specific date not found, using meet date: ${result.date}`);
+    }
+
+    const startDate = addDays(searchDate, -CONFIG.DATE_WINDOW_DAYS);
+    const endDate = addDays(searchDate, CONFIG.DATE_WINDOW_DAYS);
 
     // For NULL gender results, determine gender from scraped data or use both division sets
     let divisionsToSearch = divisions;
@@ -498,9 +579,9 @@ async function findAndUpdateResult(page, result, divisions, stats) {
         // Look for exact name match
         for (const athlete of athletes) {
             if (athlete.athleteName === result.lifter_name) {
-                // Check date proximity
+                // Check date proximity (use searchDate which may be athlete-specific or meet date)
                 const athleteDate = new Date(athlete.liftDate);
-                const daysDiff = Math.abs((athleteDate - resultDate) / (1000 * 60 * 60 * 24));
+                const daysDiff = Math.abs((athleteDate - searchDate) / (1000 * 60 * 60 * 24));
 
                 if (daysDiff <= CONFIG.DATE_WINDOW_DAYS) {
                     console.log(`\n   ✅ ✅ ✅ MATCH FOUND! ✅ ✅ ✅`);
