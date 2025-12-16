@@ -41,11 +41,11 @@ BEGIN
 
     SELECT COUNT(*) INTO masters_missing
     FROM meet_results
-    WHERE competition_age >= 31
-      AND q_masters IS NULL
-      AND total IS NOT NULL
-      AND total::numeric > 0  -- Exclude bombed out (total = 0)
-      AND body_weight_kg IS NOT NULL;
+      WHERE public.is_master_age(gender, competition_age)
+        AND q_masters IS NULL
+        AND total IS NOT NULL
+        AND total::numeric > 0  -- Exclude bombed out (total = 0)
+        AND body_weight_kg IS NOT NULL;
 
     RAISE NOTICE '================================================';
     RAISE NOTICE 'Q-Points Comprehensive Backfill - Starting';
@@ -81,13 +81,13 @@ BEGIN
                  AND body_weight_kg IS NOT NULL
                  AND gender IS NOT NULL)
                 OR
-                -- Masters missing q_masters
-                (competition_age >= 31
-                 AND q_masters IS NULL
-                 AND total IS NOT NULL
-                 AND total::numeric > 0  -- Exclude bombed out
-                 AND body_weight_kg IS NOT NULL
-                 AND gender IS NOT NULL)
+                 -- Masters missing q_masters (predicate)
+                 (public.is_master_age(gender, competition_age)
+                   AND q_masters IS NULL
+                   AND total IS NOT NULL
+                   AND total::numeric > 0  -- Exclude bombed out
+                   AND body_weight_kg IS NOT NULL
+                   AND gender IS NOT NULL)
             LIMIT batch_size
         )
         UPDATE meet_results
@@ -132,12 +132,12 @@ BEGIN
 
     SELECT COUNT(*) INTO masters_missing
     FROM meet_results
-    WHERE competition_age >= 31
-      AND q_masters IS NULL
-      AND total IS NOT NULL
-      AND total::numeric > 0  -- Exclude bombed out
-      AND body_weight_kg IS NOT NULL
-      AND gender IS NOT NULL;
+      WHERE public.is_master_age(gender, competition_age)
+        AND q_masters IS NULL
+        AND total IS NOT NULL
+        AND total::numeric > 0  -- Exclude bombed out
+        AND body_weight_kg IS NOT NULL
+        AND gender IS NOT NULL;
 
     RAISE NOTICE '================================================';
     RAISE NOTICE 'Q-Points Comprehensive Backfill - Complete';
@@ -147,6 +147,8 @@ BEGIN
     RAISE NOTICE 'Remaining missing q_youth (ages 10-20): %', youth_missing;
     RAISE NOTICE 'Remaining missing qpoints (ages 21-30): %', open_missing;
     RAISE NOTICE 'Remaining missing q_masters (ages 31+): %', masters_missing;
+      RAISE NOTICE 'Remaining missing q_masters (predicate): %', masters_missing;
+      RAISE NOTICE 'Remaining missing q_masters (predicate): %', masters_missing;
     RAISE NOTICE 'Total still missing: %', youth_missing + open_missing + masters_missing;
 
     IF youth_missing + open_missing + masters_missing = 0 THEN

@@ -284,6 +284,21 @@ function calculateQScore(totalNum, B, gender) {
 }
 
 /**
+ * Returns true if the given (gender, age) meets the masters definition
+ * Men: 31-75 inclusive
+ * Women: 31-90 inclusive
+ * Excludes ages > 90 for women, > 75 for men
+ */
+function isMasterAge(gender, age) {
+    if (!age || isNaN(age)) return false;
+    if (!gender || typeof gender !== 'string') return false;
+    const g = gender.toUpperCase();
+    if (g === 'M') return age >= 31 && age <= 75;
+    if (g === 'F') return age >= 31 && age <= 90;
+    return false;
+}
+
+/**
  * Calculates age-appropriate Q-scores based on athlete's competition age
  * Uses Huebner's age brackets:
  * - Ages ≤9: No scoring
@@ -366,8 +381,8 @@ async function calculateAgeAppropriateQScore(total, bodyWeight, gender, age) {
         return qScores;
     }
 
-    // Ages 31+: Q-masters only
-    if (age >= 31) {
+    // Ages 31+: Q-masters only (use isMasterAge predicate)
+    if (isMasterAge(gender, age)) {
         qScores.q_masters = calculateQScore(totalNum, B, gender);
         return qScores;
     }

@@ -12,6 +12,13 @@ AS $function$
       youth_age_factor DECIMAL;
       calculated_qpoints DECIMAL;
   BEGIN
+      -- Calculate competition_age explicitly (to use in conditional checks)
+      IF NEW.date IS NOT NULL AND NEW.birth_year IS NOT NULL THEN
+          competition_age := EXTRACT(YEAR FROM NEW.date::date) - NEW.birth_year;
+      ELSE
+          competition_age := NULL;
+      END IF;
+
       -- Only recalculate if the input columns have changed OR if any Q-score is missing
       IF (TG_OP = 'INSERT') OR
          (OLD.total IS DISTINCT FROM NEW.total) OR
@@ -19,8 +26,8 @@ AS $function$
          (OLD.competition_age IS DISTINCT FROM NEW.competition_age) OR
          (OLD.gender IS DISTINCT FROM NEW.gender) OR
          (OLD.qpoints IS NULL) OR
-         (OLD.q_youth IS NULL AND (EXTRACT(YEAR FROM NEW.date::date) - NEW.birth_year) BETWEEN 10 AND 20) OR
-         (OLD.q_masters IS NULL AND (EXTRACT(YEAR FROM NEW.date::date) - NEW.birth_year) >= 31) THEN
+         (OLD.q_youth IS NULL AND competition_age BETWEEN 10 AND 20) OR
+         (OLD.q_masters IS NULL AND public.is_master_age(NEW.gender, competition_age)) THEN
 
           -- Get gender from the meet_results record being inserted/updated (NEW.gender)
           lifter_gender := NEW.gender;
@@ -67,10 +74,10 @@ AS $function$
               NEW.qpoints := NULL;
           END IF;
 
-          -- 2. Set q_masters (ONLY for ages >= 31, uses base qpoints)
+          -- 2. Set q_masters (ONLY for rows that satisfy is_master_age predicate)
           -- Note: We use calculated_qpoints here, even if NEW.qpoints is NULL (because age > 30)
           IF calculated_qpoints IS NOT NULL AND calculated_qpoints > 0 AND
-             competition_age IS NOT NULL AND competition_age >= 31 AND
+             competition_age IS NOT NULL AND public.is_master_age(lifter_gender, competition_age) AND
              lifter_gender IS NOT NULL THEN
               masters_age_factor := get_age_factor(competition_age, lifter_gender);
               NEW.q_masters := ROUND(calculated_qpoints * masters_age_factor, 2);
