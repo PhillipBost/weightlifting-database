@@ -1,4 +1,4 @@
-// Debug script to find the correct Sport80 search field selector
+// Debug script to analyze Sport80 search field timing and state changes
 require('dotenv').config();
 const puppeteer = require('puppeteer');
 
@@ -7,7 +7,8 @@ async function debugSearchField() {
     const page = await browser.newPage();
     
     // Go to a sample rankings page
-    const url = 'https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMjAwOS0wNC0xMiIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wOC0yMCIsIndlaWdodF9jbGFzcyI6Nzc2fQ%3D%3D';
+    const url = 'https://usaweightlifting.sport80.com/public/rankings/all?filters=eyJkYXRlX3JhbmdlX3N0YXJ0IjoiMTk5OC0wNC0xMCIsImRhdGVfcmFuZ2VfZW5kIjoiMjAyNS0wNy0xNiIsIndlaWdodF9jbGFzcyI6NzA0fQ%3D%3D';
+    const athleteName = 'Jailene Silveri';
     
     console.log('Opening page...');
     await page.goto(url, { waitUntil: 'networkidle0', timeout: 30000 });
@@ -21,100 +22,120 @@ async function debugSearchField() {
     });
     console.log(`Initial row count: ${initialCount}`);
     
-    console.log('\nTrying .v-text-field input selector...');
+    console.log(`\nTyping "${athleteName}" and monitoring state changes...\n`);
     
-    try {
-        await page.waitForSelector('.v-text-field input', { timeout: 5000 });
-        console.log('✓ Found .v-text-field input');
+    // Clear and focus
+    await page.waitForSelector('.v-text-field input', { timeout: 5000 });
+    await page.evaluate(() => {
+        const input = document.querySelector('.v-text-field input');
+        input.value = '';
+        input.focus();
+    });
+    
+    const startTime = Date.now();
+    
+    // Start typing
+    await page.type('.v-text-field input', athleteName);
+    const typingEndTime = Date.now();
+    console.log(`[${((typingEndTime - startTime) / 1000).toFixed(2)}s] Finished typing`);
+    
+    // Monitor all state changes
+    let previousCount = initialCount;
+    let firstChangeTime = null;
+    let lastChangeTime = null;
+    let stableStartTime = null;
+    let finalCount = null;
+    
+    console.log('\nMonitoring row count and DOM state (checking every 200ms for 30 seconds)...\n');
+    
+    for (let i = 0; i < 150; i++) {
+        await new Promise(resolve => setTimeout(resolve, 200));
+        const elapsed = ((Date.now() - startTime) / 1000).toFixed(2);
         
-        // Check input properties before typing
-        const inputInfo = await page.evaluate(() => {
+        const currentState = await page.evaluate(() => {
+            const rows = document.querySelectorAll('.v-data-table__wrapper tbody tr');
             const input = document.querySelector('.v-text-field input');
+            
+            // Check for loading indicators
+            const loadingIndicator = document.querySelector('.v-progress-linear, .v-overlay--active, .v-skeleton-loader');
+            const isLoading = !!loadingIndicator;
+            
+            // Check table wrapper for any busy/loading classes
+            const tableWrapper = document.querySelector('.v-data-table__wrapper');
+            const wrapperClasses = tableWrapper ? tableWrapper.className : '';
+            
             return {
-                value: input.value,
-                type: input.type,
-                placeholder: input.placeholder,
-                id: input.id,
-                className: input.className
+                rowCount: rows.length,
+                inputValue: input ? input.value : '',
+                isLoading: isLoading,
+                wrapperClasses: wrapperClasses
             };
         });
-        console.log('Input field before typing:', inputInfo);
         
-        // Clear and type
-        console.log('\nClearing input...');
-        await page.evaluate(() => {
-            const input = document.querySelector('.v-text-field input');
-            input.value = '';
-            input.focus();
-        });
+        const currentCount = currentState.rowCount;
         
-        console.log('Typing "Jace Doty"...');
-        await page.type('.v-text-field input', 'Jace Doty');
-        
-        // Check input after typing
-        const afterTyping = await page.evaluate(() => {
-            const input = document.querySelector('.v-text-field input');
-            return input.value;
-        });
-        console.log(`Input value after typing: "${afterTyping}"`);
-        
-        // Monitor row count changes
-        console.log('\nMonitoring row count changes (checking every 500ms for 15 seconds)...');
-        for (let i = 0; i < 30; i++) {
-            await new Promise(resolve => setTimeout(resolve, 500));
-            const count = await page.evaluate(() => {
-                return document.querySelectorAll('.v-data-table__wrapper tbody tr').length;
-            });
-            console.log(`  [${(i * 0.5).toFixed(1)}s] Row count: ${count}`);
+        // Detect changes
+        if (currentCount !== previousCount) {
+            if (firstChangeTime === null) {
+                firstChangeTime = Date.now();
+                console.log(`[${elapsed}s] 🔄 FIRST CHANGE: ${previousCount} → ${currentCount} rows (${((firstChangeTime - typingEndTime) / 1000).toFixed(2)}s after typing)`);
+            } else {
+                console.log(`[${elapsed}s] 🔄 CHANGE: ${previousCount} → ${currentCount} rows`);
+            }
+            lastChangeTime = Date.now();
+            stableStartTime = null;
+        } else {
+            // Count is stable
+            if (stableStartTime === null && lastChangeTime !== null) {
+                stableStartTime = Date.now();
+            }
             
-            if (count === 1) {
-                console.log(`\n✅ SUCCESS! Filtered down to 1 row after ${(i * 0.5).toFixed(1)} seconds`);
+            // If stable for 2 seconds after changes started, consider it done
+            if (stableStartTime && (Date.now() - stableStartTime) >= 2000 && finalCount === null) {
+                finalCount = currentCount;
+                const totalTime = ((Date.now() - startTime) / 1000).toFixed(2);
+                const filterTime = lastChangeTime ? ((lastChangeTime - firstChangeTime) / 1000).toFixed(2) : 'N/A';
+                
+                console.log(`\n[${elapsed}s] ✅ STABLE: ${finalCount} rows (stable for 2s)`);
+                console.log(`\n📊 TIMING SUMMARY:`);
+                console.log(`   Typing completed: ${((typingEndTime - startTime) / 1000).toFixed(2)}s`);
+                console.log(`   First change detected: ${firstChangeTime ? ((firstChangeTime - startTime) / 1000).toFixed(2) : 'Never'}s`);
+                console.log(`   Last change detected: ${lastChangeTime ? ((lastChangeTime - startTime) / 1000).toFixed(2) : 'Never'}s`);
+                console.log(`   Filtering duration: ${filterTime}s`);
+                console.log(`   Total time: ${totalTime}s`);
+                console.log(`   Initial rows: ${initialCount}`);
+                console.log(`   Final rows: ${finalCount}`);
+                
+                if (finalCount === 1) {
+                    const athleteData = await page.evaluate(() => {
+                        const row = document.querySelector('.v-data-table__wrapper tbody tr');
+                        if (row) {
+                            const cells = Array.from(row.querySelectorAll('td'));
+                            return cells.map(c => c.textContent.trim());
+                        }
+                        return null;
+                    });
+                    console.log(`\n✅ SUCCESS! Found athlete:`, athleteData);
+                } else if (finalCount < initialCount) {
+                    console.log(`\n✅ Filtering worked (reduced from ${initialCount} to ${finalCount})`);
+                } else {
+                    console.log(`\n⚠️  No filtering occurred (still ${finalCount} rows)`);
+                }
+                
+                console.log('\n\nClosing browser in 5 seconds...');
+                await new Promise(resolve => setTimeout(resolve, 5000));
                 break;
             }
         }
         
-        const finalCount = await page.evaluate(() => {
-            return document.querySelectorAll('.v-data-table__wrapper tbody tr').length;
-        });
-        
-        console.log(`\nFinal row count: ${finalCount}`);
-        
-        if (finalCount === 1) {
-            console.log('\n✅ Filter worked correctly!');
-            
-            // Show the filtered athlete
-            const athleteInfo = await page.evaluate(() => {
-                const row = document.querySelector('.v-data-table__wrapper tbody tr');
-                const cells = Array.from(row.querySelectorAll('td'));
-                return cells.map(c => c.textContent.trim());
-            });
-            console.log('Athlete data:', athleteInfo);
-        } else {
-            console.log('\n❌ Filter did NOT work - still showing multiple rows');
-            console.log('\nDumping search input events...');
-            
-            // Try triggering input event manually
-            await page.evaluate(() => {
-                const input = document.querySelector('.v-text-field input');
-                input.dispatchEvent(new Event('input', { bubbles: true }));
-                input.dispatchEvent(new Event('change', { bubbles: true }));
-            });
-            
-            await new Promise(resolve => setTimeout(resolve, 3000));
-            
-            const afterEvent = await page.evaluate(() => {
-                return document.querySelectorAll('.v-data-table__wrapper tbody tr').length;
-            });
-            console.log(`After manually triggering events: ${afterEvent} rows`);
-        }
-        
-    } catch (err) {
-        console.log(`❌ Error: ${err.message}`);
+        previousCount = currentCount;
     }
     
-    console.log('\n\nBrowser will stay open for manual inspection...');
-    console.log('Press Ctrl+C when done.');
-    await new Promise(() => {}); // Keep browser open
+    if (finalCount === null) {
+        console.log('\n\n⚠️  No stable state reached after 30 seconds');
+    }
+    
+    await browser.close();
 }
 
 debugSearchField().catch(console.error);
