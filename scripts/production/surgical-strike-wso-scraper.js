@@ -319,22 +319,46 @@ async function scrapeDivisionRankings(page, divisionName, divisionCode, startDat
             timeout: 30000
         });
 
-        // Wait for page to fully populate (same as nightly scraper)
-        await new Promise(resolve => setTimeout(resolve, 5000));
+        // Wait for table to actually load (wait for rows to appear)
+        await page.waitForSelector('.v-data-table__wrapper tbody tr', { timeout: 15000 });
+        // Give Vue.js time to finish rendering
+        await new Promise(resolve => setTimeout(resolve, 2000));
 
         // Input athlete name into search field to filter results
         try {
-            await page.waitForSelector('#search', { timeout: 5000 });
+            await page.waitForSelector('.v-text-field input', { timeout: 5000 });
             // Clear the search field first
             await page.evaluate(() => {
-                const searchInput = document.querySelector('#search');
+                const searchInput = document.querySelector('.v-text-field input');
                 searchInput.value = '';
                 searchInput.focus();
             });
             // Type the athlete name
-            await page.type('#search', lifterName);
-            // Wait for search filtering to complete
-            await new Promise(resolve => setTimeout(resolve, 3000));
+            await page.type('.v-text-field input', lifterName);
+            
+            // Wait for Vue to filter the table - monitoring shows it can take up to 12+ seconds
+            console.log(`      Waiting for table filtering...`);
+            let previousCount = await page.evaluate(() => {
+                return document.querySelectorAll('.v-data-table__wrapper tbody tr').length;
+            });
+            
+            // Monitor for up to 20 seconds, checking every 0.5s
+            for (let i = 0; i < 40; i++) {
+                await new Promise(resolve => setTimeout(resolve, 500));
+                const currentCount = await page.evaluate(() => {
+                    return document.querySelectorAll('.v-data-table__wrapper tbody tr').length;
+                });
+                
+                // Only check for stabilization after 10 seconds minimum
+                if (i >= 20 && currentCount === previousCount && currentCount !== 30) {
+                    console.log(`      Table filtered after ${(i * 0.5).toFixed(1)}s`);
+                    break;
+                }
+                previousCount = currentCount;
+            }
+            
+            // Give extra buffer for rendering
+            await new Promise(resolve => setTimeout(resolve, 1000));
         } catch (searchError) {
             console.log(`      ⚠️  Search field not found or failed, continuing with unfiltered results`);
         }
@@ -648,12 +672,15 @@ async function findAndUpdateResult(page, result, divisions, stats) {
         // Smart sort: prioritize divisions matching age_category + weight_class
         const sortedDivisions = smartSortDivisions(divisions, result);
         const totalDivisions = sortedDivisions.length;
-        console.log(`   Total Divisions to Search: ${totalDivisions} (smart-sorted, exact match first)`);
+        console.log(`   Total Divisions to Search: 1 (exact match only)`);
 
-        for (const [divisionName, divisionCode] of sortedDivisions) {
+        // Only search first division (exact match)
+        const divisionsToSearch = sortedDivisions.slice(0, 1);
+
+        for (const [divisionName, divisionCode] of divisionsToSearch) {
             divisionsSearched++;
 
-            console.log(`   [${divisionsSearched}/${totalDivisions}] Searching: ${divisionName}`);
+            console.log(`   Searching: ${divisionName}`);
 
             const url = buildRankingsURL(divisionCode, broadStartDate, broadEndDate);
             console.log(`      URL: ${url}`);
