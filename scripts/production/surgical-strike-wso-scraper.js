@@ -75,6 +75,7 @@ function loadUnresolvedList() {
             const data = fs.readFileSync(CONFIG.UNRESOLVED_PATH, 'utf8');
             const unresolvedList = JSON.parse(data);
             console.log(`📋 Loaded ${unresolvedList.length} unresolved results from skip list`);
+            console.log(`   File: ${CONFIG.UNRESOLVED_PATH}`);
             return new Set(unresolvedList.map(r => r.result_id));
         } catch (error) {
             console.warn(`⚠️  Failed to load unresolved list: ${error.message}`);
@@ -82,6 +83,7 @@ function loadUnresolvedList() {
         }
     }
     console.log(`📋 No existing unresolved list found`);
+    console.log(`   Expected path: ${CONFIG.UNRESOLVED_PATH}`);
     return new Set();
 }
 
@@ -169,13 +171,12 @@ async function queryIncompleteResults(skipList) {
 
     let query = supabase
         .from('usaw_meet_results')
-        .select('result_id, lifter_id, lifter_name, date, meet_id, gender, age_category, weight_class, competition_age, wso, club_name, total')
+        .select('result_id, lifter_id, lifter_name, meet_id, gender, age_category, weight_class, competition_age, wso, club_name, total')
         .is('wso', null)
         .filter('total', 'gt', '0')  // Filter as text comparison since total is stored as text
         .not('age_category', 'is', null)
         .not('weight_class', 'is', null)
-        .not('meet_id', 'is', null)
-        .order('date', { ascending: false });
+        .not('meet_id', 'is', null);
 
     // Apply date filters
     if (CONFIG.START_DATE) {
@@ -210,9 +211,47 @@ async function queryIncompleteResults(skipList) {
 
     console.log(`   Found ${data.length} results missing WSO`);
 
+    // Get unique meet_ids to fetch correct dates from usaw_meets
+    const meetIds = [...new Set(data.map(r => r.meet_id))];
+    console.log(`   Fetching dates for ${meetIds.length} unique meets...`);
+
+    // Query usaw_meets for the correct dates in batches (to avoid URI too long error)
+    const BATCH_SIZE = 100;
+    const allMeets = [];
+    
+    for (let i = 0; i < meetIds.length; i += BATCH_SIZE) {
+        const batch = meetIds.slice(i, i + BATCH_SIZE);
+        const { data: meets, error: meetsError } = await supabase
+            .from('usaw_meets')
+            .select('meet_id, Date')
+            .in('meet_id', batch);
+
+        if (meetsError) {
+            throw new Error(`Failed to fetch meet dates (batch ${Math.floor(i / BATCH_SIZE) + 1}): ${meetsError.message}`);
+        }
+
+        allMeets.push(...meets);
+    }
+
+    console.log(`   Fetched ${allMeets.length} meet dates`);
+
+    // Create a map of meet_id -> date
+    const meetDates = new Map(allMeets.map(m => [m.meet_id, m.Date]));
+
+    // Add correct meet dates to results and sort by date
+    const resultsWithDates = data.map(result => ({
+        ...result,
+        date: meetDates.get(result.meet_id) || null
+    })).sort((a, b) => {
+        // Sort by date ascending (oldest first)
+        const dateA = new Date(a.date || '9999-12-31');
+        const dateB = new Date(b.date || '9999-12-31');
+        return dateA - dateB;
+    });
+
     // Filter out results in skip list
-    const filtered = data.filter(r => !skipList.has(r.result_id));
-    const skipped = data.length - filtered.length;
+    const filtered = resultsWithDates.filter(r => !skipList.has(r.result_id));
+    const skipped = resultsWithDates.length - filtered.length;
 
     if (skipped > 0) {
         console.log(`   Skipped ${skipped} results from unresolved list`);
@@ -257,48 +296,86 @@ async function scrapeAthleteSpecificDate(page, meetId, lifterName) {
         // Wait for page to populate
         await new Promise(resolve => setTimeout(resolve, 3000));
 
-        const athleteData = await page.evaluate((targetName) => {
-            // Dynamic Column Mapping - similar to division scraper
-            const headers = Array.from(document.querySelectorAll('.v-data-table__wrapper thead th'))
-                .map(th => th.textContent.trim().toLowerCase());
+        // Get meet name from the page
+        const meetName = await page.evaluate(() => {
+            // Try to find meet name in various common locations
+            const h1 = document.querySelector('h1');
+            const h2 = document.querySelector('h2');
+            const title = document.querySelector('.meet-title, .event-title, .competition-title');
+            
+            if (title) return title.textContent.trim();
+            if (h1) return h1.textContent.trim();
+            if (h2) return h2.textContent.trim();
+            return 'Unknown Meet';
+        });
 
-            // Map athlete name and date columns
-            const athleteNameIdx = headers.findIndex(h =>
-                h.includes('athlete') || h.includes('lifter') || h.includes('name')
-            );
-            const dateIdx = headers.findIndex(h => h.includes('date'));
+        console.log(`   Meet: ${meetName}`);
 
-            // Fallback indices if headers not found
-            const nameIdx = athleteNameIdx !== -1 ? athleteNameIdx : 1; // Usually column 1
-            const dateColIdx = dateIdx !== -1 ? dateIdx : 3; // Usually column 3
+        // Search through all pages for the athlete
+        let hasMorePages = true;
+        let currentPage = 1;
 
-            const rows = Array.from(document.querySelectorAll('.v-data-table__wrapper tbody tr'));
+        while (hasMorePages) {
+            const athleteData = await page.evaluate((targetName) => {
+                // Dynamic Column Mapping - similar to division scraper
+                const headers = Array.from(document.querySelectorAll('.v-data-table__wrapper thead th'))
+                    .map(th => th.textContent.trim().toLowerCase());
 
-            for (const row of rows) {
-                const cells = Array.from(row.querySelectorAll('td'));
-                if (cells.length > Math.max(nameIdx, dateColIdx)) {
-                    const athleteName = cells[nameIdx]?.textContent?.trim() || '';
-                    const athleteDate = cells[dateColIdx]?.textContent?.trim() || '';
+                // Map athlete name and date columns
+                const athleteNameIdx = headers.findIndex(h =>
+                    h.includes('athlete') || h.includes('lifter') || h.includes('name')
+                );
+                const dateIdx = headers.findIndex(h => h.includes('date'));
 
-                    if (athleteName === targetName && athleteDate) {
-                        return {
-                            name: athleteName,
-                            date: athleteDate
-                        };
+                // Fallback indices if headers not found
+                const nameIdx = athleteNameIdx !== -1 ? athleteNameIdx : 1; // Usually column 1
+                const dateColIdx = dateIdx !== -1 ? dateIdx : 3; // Usually column 3
+
+                const rows = Array.from(document.querySelectorAll('.v-data-table__wrapper tbody tr'));
+
+                for (const row of rows) {
+                    const cells = Array.from(row.querySelectorAll('td'));
+                    if (cells.length > Math.max(nameIdx, dateColIdx)) {
+                        const athleteName = cells[nameIdx]?.textContent?.trim() || '';
+                        const athleteDate = cells[dateColIdx]?.textContent?.trim() || '';
+
+                        if (athleteName === targetName && athleteDate) {
+                            return {
+                                name: athleteName,
+                                date: athleteDate
+                            };
+                        }
                     }
                 }
+
+                return null; // Athlete not found on this page
+            }, lifterName);
+
+            if (athleteData) {
+                console.log(`   ✅ Found athlete date: ${athleteData.date} (page ${currentPage})`);
+                return athleteData.date;
             }
 
-            return null; // Athlete not found
-        }, lifterName);
+            // Check for next page
+            const nextPageExists = await page.evaluate(() => {
+                const nextBtn = document.querySelector('.v-data-footer__icons-after .v-btn:not([disabled])');
+                if (nextBtn && !nextBtn.disabled) {
+                    nextBtn.click();
+                    return true;
+                }
+                return false;
+            });
 
-        if (athleteData) {
-            console.log(`   ✅ Found athlete date: ${athleteData.date}`);
-            return athleteData.date;
-        } else {
-            console.log(`   ❌ Athlete "${lifterName}" not found in meet results`);
-            return null;
+            if (nextPageExists) {
+                await new Promise(resolve => setTimeout(resolve, 1500));
+                currentPage++;
+            } else {
+                hasMorePages = false;
+            }
         }
+
+        console.log(`   ❌ Athlete "${lifterName}" not found in meet results (searched ${currentPage} page${currentPage > 1 ? 's' : ''})`);
+        return null;
 
     } catch (error) {
         console.error(`   ❌ Error scraping athlete date: ${error.message}`);
@@ -310,6 +387,81 @@ async function scrapeAthleteSpecificDate(page, meetId, lifterName) {
 // SCRAPING LOGIC
 // ========================================
 
+/**
+ * Scrape division rankings with automatic date-range splitting if the dataset is too large
+ * When the website crashes due to too much data, this function splits the date range
+ * and tries smaller chunks, prioritizing earlier dates.
+ */
+async function scrapeDivisionRankingsWithSplitting(page, divisionName, divisionCode, startDate, endDate, lifterName, depth = 0) {
+    const maxDepth = 3; // Maximum split depth (splits into 2^3 = 8 chunks max)
+    const daysDiff = Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24));
+    
+    try {
+        // Try scraping with the current date range
+        const athletes = await scrapeDivisionRankings(page, divisionName, divisionCode, startDate, endDate, lifterName);
+        
+        // Check if we got suspiciously few results for a large date range
+        // ONLY check when NOT filtering by name (if filtering by name, 0 results is legitimate)
+        // If the range is > 365 days and we got 0 athletes WITHOUT name filtering, the API likely crashed
+        if (!lifterName && athletes.length === 0 && daysDiff > 365 && depth < maxDepth) {
+            console.log(`      ⚠️ 0 athletes in ${daysDiff}-day range - likely API failure. Splitting...`);
+            throw new Error('Suspected API failure - empty results on large range');
+        }
+        
+        return athletes;
+    } catch (error) {
+        // If we hit max depth or the date range is too small to split, return empty
+        if (depth >= maxDepth || daysDiff <= 1) {
+            console.log(`      ⚠️ Failed to load data (depth ${depth}, ${daysDiff} days). Skipping this range.`);
+            return [];
+        }
+        
+        // Split the date range in half
+        console.log(`      📅 Splitting ${daysDiff}-day range into smaller chunks...`);
+        const midpoint = new Date((startDate.getTime() + endDate.getTime()) / 2);
+        
+        const earlierUrl = buildRankingsURL(divisionCode, startDate, midpoint);
+        const laterUrl = buildRankingsURL(divisionCode, midpoint, endDate);
+        
+        console.log(`      Earlier: ${formatDate(startDate)} to ${formatDate(midpoint)}`);
+        console.log(`         URL: ${earlierUrl}`);
+        console.log(`      Later: ${formatDate(midpoint)} to ${formatDate(endDate)}`);
+        console.log(`         URL: ${laterUrl}`);
+        
+        // Try earlier period first (most important - prioritize early dates)
+        const earlierAthletes = await scrapeDivisionRankingsWithSplitting(
+            page, divisionName, divisionCode, startDate, midpoint, lifterName, depth + 1
+        );
+        
+        // If we found the athlete in the earlier period, STOP - don't search later periods
+        // This ensures we get the EARLIEST match
+        if (lifterName && earlierAthletes.length > 0) {
+            console.log(`      ✅ Found athlete in earlier period - skipping later period`);
+            return earlierAthletes;
+        }
+        
+        // Only try later period if athlete NOT found in earlier period
+        const laterAthletes = await scrapeDivisionRankingsWithSplitting(
+            page, divisionName, divisionCode, midpoint, endDate, lifterName, depth + 1
+        );
+        
+        // When NOT filtering by name, combine all results
+        if (!lifterName) {
+            const allAthletes = [...earlierAthletes, ...laterAthletes];
+            const seen = new Set();
+            return allAthletes.filter(athlete => {
+                const key = `${athlete.athleteName}-${athlete.liftDate}`;
+                if (seen.has(key)) return false;
+                seen.add(key);
+                return true;
+            });
+        }
+        
+        // When filtering by name, return whichever period found the athlete
+        return laterAthletes; // Earlier was empty, so return later results
+    }
+}
+
 async function scrapeDivisionRankings(page, divisionName, divisionCode, startDate, endDate, lifterName) {
     try {
         const url = buildRankingsURL(divisionCode, startDate, endDate);
@@ -320,9 +472,23 @@ async function scrapeDivisionRankings(page, divisionName, divisionCode, startDat
         });
 
         // Wait for table to actually load (wait for rows to appear)
+        // If this fails, it likely means the dataset is too large and the API crashed
         await page.waitForSelector('.v-data-table__wrapper tbody tr', { timeout: 15000 });
         // Give Vue.js time to finish rendering
         await new Promise(resolve => setTimeout(resolve, 2000));
+
+        // Get initial results count before filtering
+        const initialStats = await page.evaluate(() => {
+            const totalText = document.querySelector('.v-data-footer__pagination')?.textContent || '';
+            const match = totalText.match(/of (\d+)/);
+            const totalResults = match ? parseInt(match[1]) : null;
+            const visibleRows = document.querySelectorAll('.v-data-table__wrapper tbody tr').length;
+            return { totalResults, visibleRows };
+        });
+        
+        if (initialStats.totalResults) {
+            console.log(`      Loaded ${initialStats.totalResults} total results (${initialStats.visibleRows} visible on page 1)`);
+        }
 
         // Input athlete name into search field to filter results
         try {
@@ -336,24 +502,50 @@ async function scrapeDivisionRankings(page, divisionName, divisionCode, startDat
             // Type the athlete name
             await page.type('.v-text-field input', lifterName);
             
-            // Wait for Vue to filter the table - monitoring shows it can take up to 12+ seconds
-            console.log(`      Waiting for table filtering...`);
-            let previousCount = await page.evaluate(() => {
+            // Wait for Vue.js filtering by detecting row count changes
+            console.log(`      Filtering for athlete: "${lifterName}"...`);
+            
+            const initialRowCount = await page.evaluate(() => {
                 return document.querySelectorAll('.v-data-table__wrapper tbody tr').length;
             });
             
-            // Monitor for up to 20 seconds, checking every 0.5s
-            for (let i = 0; i < 40; i++) {
-                await new Promise(resolve => setTimeout(resolve, 500));
+            const checkInterval = 200; // Check every 200ms for responsiveness
+            const maxIterations = 200; // 40 second timeout (handles slow networks)
+            const stabilityChecks = 10; // Must be stable for 2s (10 × 200ms)
+            
+            let firstChangeDetected = false;
+            let previousCount = initialRowCount;
+            let stableCount = 0;
+            let iterationOfFirstChange = null;
+            
+            for (let i = 0; i < maxIterations; i++) {
+                await new Promise(resolve => setTimeout(resolve, checkInterval));
+                
                 const currentCount = await page.evaluate(() => {
                     return document.querySelectorAll('.v-data-table__wrapper tbody tr').length;
                 });
                 
-                // Only check for stabilization after 10 seconds minimum
-                if (i >= 20 && currentCount === previousCount && currentCount !== 30) {
-                    console.log(`      Table filtered after ${(i * 0.5).toFixed(1)}s`);
-                    break;
+                // Detect when filtering changes the row count
+                if (!firstChangeDetected && currentCount !== initialRowCount) {
+                    firstChangeDetected = true;
+                    iterationOfFirstChange = i;
+                    console.log(`      Filtering detected at ${((i + 1) * checkInterval / 1000).toFixed(1)}s (${initialRowCount} → ${currentCount} rows)`);
                 }
+                
+                // Once changed, watch for stability
+                if (firstChangeDetected) {
+                    if (currentCount === previousCount) {
+                        stableCount++;
+                        if (stableCount >= stabilityChecks) {
+                            const totalTime = ((i + 1) * checkInterval / 1000).toFixed(1);
+                            console.log(`      Table stable after ${totalTime}s`);
+                            break;
+                        }
+                    } else {
+                        stableCount = 0;
+                    }
+                }
+                
                 previousCount = currentCount;
             }
             
@@ -362,6 +554,53 @@ async function scrapeDivisionRankings(page, divisionName, divisionCode, startDat
         } catch (searchError) {
             console.log(`      ⚠️  Search field not found or failed, continuing with unfiltered results`);
         }
+
+        // Verify search filter is still applied before extraction
+        const searchStatus = await page.evaluate(() => {
+            const searchInput = document.querySelector('.v-text-field input');
+            return {
+                exists: !!searchInput,
+                value: searchInput?.value || '',
+                rowCount: document.querySelectorAll('.v-data-table__wrapper tbody tr').length
+            };
+        });
+        
+        console.log(`      Search field value: "${searchStatus.value}" (${searchStatus.rowCount} rows visible)`);
+        
+        // If search was cleared, re-apply it
+        if (lifterName && searchStatus.exists && searchStatus.value !== lifterName) {
+            console.log(`      ⚠️ Search was cleared! Re-applying filter...`);
+            await page.evaluate((name) => {
+                const searchInput = document.querySelector('.v-text-field input');
+                searchInput.value = name;
+                searchInput.dispatchEvent(new Event('input', { bubbles: true }));
+            }, lifterName);
+            
+            // Wait for filter to apply again
+            await new Promise(resolve => setTimeout(resolve, 3000));
+        }
+
+        // Check final row count before extraction
+        const finalStatus = await page.evaluate(() => {
+            const rowCount = document.querySelectorAll('.v-data-table__wrapper tbody tr').length;
+            const firstRow = document.querySelector('.v-data-table__wrapper tbody tr');
+            let isEmptyState = false;
+            
+            if (firstRow && rowCount === 1) {
+                const firstCell = firstRow.querySelector('td');
+                const text = firstCell?.textContent?.trim() || '';
+                isEmptyState = text.toLowerCase().includes('please select');
+            }
+            
+            return { rowCount, isEmptyState };
+        });
+        
+        if (finalStatus.isEmptyState) {
+            console.log(`      ℹ️  No results found for athlete "${lifterName}" in this division/date range (0 matches)`);
+            return [];
+        }
+        
+        console.log(`      Extracting from ${finalStatus.rowCount} table row(s)...`);
 
         // Extract athletes from results (EXACT SAME LOGIC as nightly-division-scraper.js)
         let allAthletes = [];
@@ -410,7 +649,16 @@ async function scrapeDivisionRankings(page, divisionName, divisionCode, startDat
                 if (colMap.nationalRank === -1) colMap.nationalRank = 0;
 
                 const rows = Array.from(document.querySelectorAll('.v-data-table__wrapper tbody tr'));
-                return rows.map(row => {
+                
+                // Debug: Return raw row data for troubleshooting
+                const debugInfo = {
+                    rowCount: rows.length,
+                    headers: headers,
+                    colMap: colMap,
+                    firstRowCells: rows.length > 0 ? Array.from(rows[0].querySelectorAll('td')).map(c => c.textContent?.trim() || '') : []
+                };
+                
+                const athletes = rows.map(row => {
                     const cells = Array.from(row.querySelectorAll('td'));
                     const cellTexts = cells.map(cell => cell.textContent?.trim() || '');
 
@@ -428,9 +676,24 @@ async function scrapeDivisionRankings(page, divisionName, divisionCode, startDat
                         gender: colMap.gender > -1 ? cellTexts[colMap.gender] : ''
                     };
                 }).filter(a => a && a.athleteName);
+                
+                return { athletes, debugInfo };
             });
 
-            allAthletes = allAthletes.concat(pageAthletes);
+            // Log debug info if extraction failed but rows exist
+            if (pageAthletes.athletes.length === 0 && pageAthletes.debugInfo.rowCount > 0) {
+                const debug = pageAthletes.debugInfo;
+                console.log(`      ⚠️ Extraction found ${debug.rowCount} row(s) but 0 athletes with names`);
+                console.log(`      Headers: ${debug.headers.join(', ')}`);
+                console.log(`      Athlete name column index: ${debug.colMap.athleteName}`);
+                console.log(`      First row data: ${JSON.stringify(debug.firstRowCells)}`);
+            }
+
+            allAthletes = allAthletes.concat(pageAthletes.athletes);
+
+            if (pageAthletes.athletes.length > 0) {
+                console.log(`      Page ${currentPage}: Extracted ${pageAthletes.athletes.length} athlete(s)`);
+            }
 
             // Check for next page
             const nextPageExists = await page.evaluate(() => {
@@ -453,6 +716,19 @@ async function scrapeDivisionRankings(page, divisionName, divisionCode, startDat
         return allAthletes;
 
     } catch (error) {
+        // Re-throw timeout and network errors so the splitting function can handle them
+        // These indicate the dataset is too large or the API is struggling
+        if (error.message.includes('timeout') || 
+            error.message.includes('Navigation') ||
+            error.message.includes('net::ERR') ||
+            error.message.includes('ERR_FAILED') ||
+            error.message.includes('empty state') ||
+            error.message.includes('API likely failed')) {
+            console.error(`      ⚠️ Dataset too large or API failed: ${error.message}`);
+            throw error; // Let the splitting function handle this
+        }
+        
+        // For other errors, log and return empty
         console.error(`      ❌ Error scraping division: ${error.message}`);
         return [];
     }
@@ -580,15 +856,43 @@ async function findAndUpdateResult(page, result, divisions, stats) {
 
     // Find the athlete's specific division
     const athleteDivisionName = `${result.age_category} ${result.weight_class}`;
-    const athleteDivisionCode = divisions[athleteDivisionName];
+    let athleteDivisionCode;
+    
+    // Determine if division is active or inactive based on meet date (already declared above)
+    const activeDivisionCutoff = new Date('2025-06-01');
+    const isActiveDivision = meetDate >= activeDivisionCutoff;
+    
+    if (isActiveDivision) {
+        // June 1, 2025 or later - use active division
+        athleteDivisionCode = divisions[athleteDivisionName];
+    } else {
+        // Before June 1, 2025 - use inactive division
+        const inactiveName = `(Inactive) ${athleteDivisionName}`;
+        athleteDivisionCode = divisions[inactiveName];
+        if (athleteDivisionCode) {
+            console.log(`\n🏷️  Athlete's Division: ${inactiveName} (code: ${athleteDivisionCode}) [Pre-June 2025]`);
+        }
+    }
+    
+    // If still not found, try the opposite
+    if (!athleteDivisionCode) {
+        if (isActiveDivision) {
+            const inactiveName = `(Inactive) ${athleteDivisionName}`;
+            athleteDivisionCode = divisions[inactiveName];
+        } else {
+            athleteDivisionCode = divisions[athleteDivisionName];
+        }
+    }
+    
+    if (athleteDivisionCode && isActiveDivision) {
+        console.log(`\n🏷️  Athlete's Division: ${athleteDivisionName} (code: ${athleteDivisionCode})`);
+    }
 
     if (!athleteDivisionCode) {
         console.log(`\n❌ Could not find division code for: ${athleteDivisionName}`);
         stats.unresolved++;
         return false;
     }
-
-    console.log(`\n🏷️  Athlete's Division: ${athleteDivisionName} (code: ${athleteDivisionCode})`);
 
     // THREE-STEP FALLBACK STRATEGY
     let matchFound = false;
@@ -599,9 +903,9 @@ async function findAndUpdateResult(page, result, divisions, stats) {
     // STEP 1: Exact Division + Meet Date
     // ========================================
     console.log(`\n🔍 STEP 1: Exact Division + Meet Date`);
-    const step1StartDate = addDays(meetDate, -2);
-    const step1EndDate = addDays(meetDate, 2);
-    console.log(`   Date Range: ${formatDate(step1StartDate)} to ${formatDate(step1EndDate)} (±2 days around meet date)`);
+    const step1StartDate = addDays(meetDate, -5);
+    const step1EndDate = addDays(meetDate, 5);
+    console.log(`   Date Range: ${formatDate(step1StartDate)} to ${formatDate(step1EndDate)} (±5 days around meet date)`);
 
     const step1Url = buildRankingsURL(athleteDivisionCode, step1StartDate, step1EndDate);
     console.log(`   URL: ${step1Url}`);
@@ -625,9 +929,9 @@ async function findAndUpdateResult(page, result, divisions, stats) {
     if (!matchFound && athleteSpecificDateStr) {
         console.log(`\n🔍 STEP 2: Exact Division + Athlete's Scraped Date`);
         const athleteDate = new Date(athleteSpecificDateStr);
-        const step2StartDate = addDays(athleteDate, -2);
-        const step2EndDate = addDays(athleteDate, 2);
-        console.log(`   Date Range: ${formatDate(step2StartDate)} to ${formatDate(step2EndDate)} (±2 days around athlete date: ${athleteSpecificDateStr})`);
+        const step2StartDate = addDays(athleteDate, -5);
+        const step2EndDate = addDays(athleteDate, 5);
+        console.log(`   Date Range: ${formatDate(step2StartDate)} to ${formatDate(step2EndDate)} (±5 days around athlete date: ${athleteSpecificDateStr})`);
 
         const step2Url = buildRankingsURL(athleteDivisionCode, step2StartDate, step2EndDate);
         console.log(`   URL: ${step2Url}`);
@@ -644,6 +948,8 @@ async function findAndUpdateResult(page, result, divisions, stats) {
                 break;
             }
         }
+    } else if (!matchFound && !athleteSpecificDateStr) {
+        console.log(`\n⏭️  STEP 2: Skipped (no athlete-specific date found)`);
     }
 
     // ========================================
@@ -685,7 +991,8 @@ async function findAndUpdateResult(page, result, divisions, stats) {
             const url = buildRankingsURL(divisionCode, broadStartDate, broadEndDate);
             console.log(`      URL: ${url}`);
 
-            const athletes = await scrapeDivisionRankings(page, divisionName, divisionCode, broadStartDate, broadEndDate, result.lifter_name);
+            // Use splitting function to handle large datasets
+            const athletes = await scrapeDivisionRankingsWithSplitting(page, divisionName, divisionCode, broadStartDate, broadEndDate, result.lifter_name);
 
             console.log(`      Found ${athletes.length} athletes in this division`);
 
