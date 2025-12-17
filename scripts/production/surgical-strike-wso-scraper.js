@@ -325,9 +325,16 @@ async function scrapeDivisionRankings(page, divisionName, divisionCode, startDat
         // Input athlete name into search field to filter results
         try {
             await page.waitForSelector('#search', { timeout: 5000 });
+            // Clear the search field first
+            await page.evaluate(() => {
+                const searchInput = document.querySelector('#search');
+                searchInput.value = '';
+                searchInput.focus();
+            });
+            // Type the athlete name
             await page.type('#search', lifterName);
             // Wait for search filtering to complete
-            await new Promise(resolve => setTimeout(resolve, 2000));
+            await new Promise(resolve => setTimeout(resolve, 3000));
         } catch (searchError) {
             console.log(`      ⚠️  Search field not found or failed, continuing with unfiltered results`);
         }
@@ -542,128 +549,202 @@ async function findAndUpdateResult(page, result, divisions, stats) {
     const athleteSpecificDateStr = await scrapeAthleteSpecificDate(page, result.meet_id, result.lifter_name);
     const meetDate = new Date(result.date);
 
-    let startDate, endDate;
     if (athleteSpecificDateStr) {
-        const athleteDate = new Date(athleteSpecificDateStr);
         console.log(`\n📅 Athlete-specific date: ${athleteSpecificDateStr}`);
-        console.log(`📅 Meet date on file: ${result.date}`);
+    }
+    console.log(`📅 Meet date on file: ${result.date}`);
 
-        // Create date range that spans from athlete date through meet date ±5 days each side
-        const dateMin = new Date(Math.min(athleteDate.getTime(), meetDate.getTime()));
-        const dateMax = new Date(Math.max(athleteDate.getTime(), meetDate.getTime()));
+    // Find the athlete's specific division
+    const athleteDivisionName = `${result.age_category} ${result.weight_class}`;
+    const athleteDivisionCode = divisions[athleteDivisionName];
 
-        startDate = addDays(dateMin, -CONFIG.DATE_WINDOW_DAYS);
-        endDate = addDays(dateMax, CONFIG.DATE_WINDOW_DAYS);
-
-        console.log(`📅 Search range: ${formatDate(startDate)} to ${formatDate(endDate)} (spanning athlete→meet dates ±${CONFIG.DATE_WINDOW_DAYS} days)`);
-    } else {
-        // Fallback to meet date ±5 days if athlete date not found
-        startDate = addDays(meetDate, -CONFIG.DATE_WINDOW_DAYS);
-        endDate = addDays(meetDate, CONFIG.DATE_WINDOW_DAYS);
-        console.log(`📅 Athlete-specific date not found, using meet date ±${CONFIG.DATE_WINDOW_DAYS} days: ${formatDate(startDate)} to ${formatDate(endDate)}`);
+    if (!athleteDivisionCode) {
+        console.log(`\n❌ Could not find division code for: ${athleteDivisionName}`);
+        stats.unresolved++;
+        return false;
     }
 
-    // For NULL gender results, determine gender from scraped data or use both division sets
-    let divisionsToSearch = divisions;
-    if (!result.gender) {
-        console.log(`\n⚠️  Gender is NULL - will search all divisions to infer gender from match`);
-    }
+    console.log(`\n🏷️  Athlete's Division: ${athleteDivisionName} (code: ${athleteDivisionCode})`);
 
-    // Display search strategy
-    console.log(`\n🔍 SEARCH STRATEGY:`);
-    console.log(`   Date Range: ${formatDate(startDate)} to ${formatDate(endDate)} (±${CONFIG.DATE_WINDOW_DAYS} days)`);
-    console.log(`   Target Division: ${result.age_category} ${result.weight_class}`);
-
-    // Smart sort: prioritize divisions matching age_category + weight_class
-    const sortedDivisions = smartSortDivisions(divisionsToSearch, result);
-    const totalDivisions = sortedDivisions.length;
-    console.log(`   Total Divisions to Search: ${totalDivisions} (smart-sorted, exact match first)`);
-    console.log(``);
-
+    // THREE-STEP FALLBACK STRATEGY
+    let matchFound = false;
+    let stepUsed = 0;
     let divisionsSearched = 0;
 
-    // Search through divisions (smart-sorted)
-    for (const [divisionName, divisionCode] of sortedDivisions) {
+    // ========================================
+    // STEP 1: Exact Division + Meet Date
+    // ========================================
+    console.log(`\n🔍 STEP 1: Exact Division + Meet Date`);
+    const step1StartDate = addDays(meetDate, -2);
+    const step1EndDate = addDays(meetDate, 2);
+    console.log(`   Date Range: ${formatDate(step1StartDate)} to ${formatDate(step1EndDate)} (±2 days around meet date)`);
+
+    const step1Url = buildRankingsURL(athleteDivisionCode, step1StartDate, step1EndDate);
+    console.log(`   URL: ${step1Url}`);
+
+    const step1Athletes = await scrapeDivisionRankings(page, athleteDivisionName, athleteDivisionCode, step1StartDate, step1EndDate, result.lifter_name);
+    divisionsSearched++;
+    console.log(`   Found ${step1Athletes.length} athletes`);
+
+    for (const athlete of step1Athletes) {
+        if (athlete.athleteName === result.lifter_name) {
+            console.log(`\n   ✅ ✅ ✅ MATCH FOUND in STEP 1! ✅ ✅ ✅`);
+            matchFound = await processMatch(result, athlete, athleteDivisionName, divisionsSearched, stats);
+            stepUsed = 1;
+            break;
+        }
+    }
+
+    // ========================================
+    // STEP 2: Exact Division + Athlete's Scraped Date (if available)
+    // ========================================
+    if (!matchFound && athleteSpecificDateStr) {
+        console.log(`\n🔍 STEP 2: Exact Division + Athlete's Scraped Date`);
+        const athleteDate = new Date(athleteSpecificDateStr);
+        const step2StartDate = addDays(athleteDate, -2);
+        const step2EndDate = addDays(athleteDate, 2);
+        console.log(`   Date Range: ${formatDate(step2StartDate)} to ${formatDate(step2EndDate)} (±2 days around athlete date: ${athleteSpecificDateStr})`);
+
+        const step2Url = buildRankingsURL(athleteDivisionCode, step2StartDate, step2EndDate);
+        console.log(`   URL: ${step2Url}`);
+
+        const step2Athletes = await scrapeDivisionRankings(page, athleteDivisionName, athleteDivisionCode, step2StartDate, step2EndDate, result.lifter_name);
         divisionsSearched++;
+        console.log(`   Found ${step2Athletes.length} athletes`);
 
-        console.log(`   [${divisionsSearched}/${totalDivisions}] Searching: ${divisionName}`);
-
-        const url = buildRankingsURL(divisionCode, startDate, endDate);
-        console.log(`      URL: ${url}`);
-
-        const athletes = await scrapeDivisionRankings(page, divisionName, divisionCode, startDate, endDate, result.lifter_name);
-
-        console.log(`      Found ${athletes.length} athletes in this division`);
-
-        // Look for exact name match
-        for (const athlete of athletes) {
+        for (const athlete of step2Athletes) {
             if (athlete.athleteName === result.lifter_name) {
-                // Check if athlete's date falls within our search range
-                const athleteDate = new Date(athlete.liftDate);
-
-                if (athleteDate >= startDate && athleteDate <= endDate) {
-                    console.log(`\n   ✅ ✅ ✅ MATCH FOUND! ✅ ✅ ✅`);
-                    console.log(`      Division: ${divisionName}`);
-                    console.log(`      Athlete: ${athlete.athleteName}`);
-                    console.log(`      Athlete date: ${athlete.liftDate} (within search range)`);
-                    console.log(`      WSO: ${athlete.wso}, Club: ${athlete.club}, Age: ${athlete.lifterAge}`);
-                    console.log(`      Divisions searched before match: ${divisionsSearched}/${totalDivisions}\n`);
-
-                    // Build update data (only null fields)
-                    const updateData = {};
-                    if (!result.competition_age && athlete.lifterAge) {
-                        updateData.competition_age = parseInt(athlete.lifterAge);
-                    }
-                    if (!result.wso && athlete.wso) {
-                        updateData.wso = athlete.wso;
-                    }
-                    if (!result.club_name && athlete.club) {
-                        updateData.club_name = athlete.club;
-                    }
-                    // Update gender if it was NULL and we found it in scraped data
-                    if (!result.gender && athlete.gender) {
-                        updateData.gender = athlete.gender;
-                    }
-
-                    if (Object.keys(updateData).length === 0) {
-                        console.log(`      No new data to update`);
-                        stats.skipped++;
-                        return true; // Match found but nothing to update
-                    }
-
-                    // Log update
-                    logUpdate(result, updateData, divisionName, divisionsSearched);
-
-                    // Apply update if not dry run
-                    if (!CONFIG.DRY_RUN) {
-                        const { error } = await supabase
-                            .from('usaw_meet_results')
-                            .update(updateData)
-                            .eq('result_id', result.result_id);
-
-                        if (error) {
-                            console.error(`      ❌ Database update failed: ${error.message}`);
-                            stats.errors++;
-                            return false;
-                        }
-
-                        console.log(`      ✅ Database updated successfully`);
-                        stats.updated++;
-                    } else {
-                        console.log(`      🔍 DRY RUN - would update with:`, updateData);
-                        stats.updated++;
-                    }
-
-                    return true; // Short-circuit: stop searching
-                }
+                console.log(`\n   ✅ ✅ ✅ MATCH FOUND in STEP 2! ✅ ✅ ✅`);
+                matchFound = await processMatch(result, athlete, athleteDivisionName, divisionsSearched, stats);
+                stepUsed = 2;
+                break;
             }
         }
     }
 
-    console.log(`\n   ❌ No match found after exhaustively searching all ${divisionsSearched} divisions`);
-    stats.unresolved++;
+    // ========================================
+    // STEP 3: Broad Search + Name Filter (Fallback)
+    // ========================================
+    if (!matchFound) {
+        console.log(`\n🔍 STEP 3: Broad Search + Name Filter (Fallback)`);
 
-    return false; // No match found
+        // Create date range that spans from athlete date through meet date ±5 days each side
+        let broadStartDate, broadEndDate;
+        if (athleteSpecificDateStr) {
+            const athleteDate = new Date(athleteSpecificDateStr);
+            const dateMin = new Date(Math.min(athleteDate.getTime(), meetDate.getTime()));
+            const dateMax = new Date(Math.max(athleteDate.getTime(), meetDate.getTime()));
+
+            broadStartDate = addDays(dateMin, -CONFIG.DATE_WINDOW_DAYS);
+            broadEndDate = addDays(dateMax, CONFIG.DATE_WINDOW_DAYS);
+        } else {
+            broadStartDate = addDays(meetDate, -CONFIG.DATE_WINDOW_DAYS);
+            broadEndDate = addDays(meetDate, CONFIG.DATE_WINDOW_DAYS);
+        }
+
+        console.log(`   Date Range: ${formatDate(broadStartDate)} to ${formatDate(broadEndDate)} (spanning dates ±${CONFIG.DATE_WINDOW_DAYS} days)`);
+        console.log(`   Searching across prioritized divisions with name filtering`);
+
+        // Smart sort: prioritize divisions matching age_category + weight_class
+        const sortedDivisions = smartSortDivisions(divisions, result);
+        const totalDivisions = sortedDivisions.length;
+        console.log(`   Total Divisions to Search: ${totalDivisions} (smart-sorted, exact match first)`);
+
+        for (const [divisionName, divisionCode] of sortedDivisions) {
+            divisionsSearched++;
+
+            console.log(`   [${divisionsSearched}/${totalDivisions}] Searching: ${divisionName}`);
+
+            const url = buildRankingsURL(divisionCode, broadStartDate, broadEndDate);
+            console.log(`      URL: ${url}`);
+
+            const athletes = await scrapeDivisionRankings(page, divisionName, divisionCode, broadStartDate, broadEndDate, result.lifter_name);
+
+            console.log(`      Found ${athletes.length} athletes in this division`);
+
+            // Look for exact name match
+            for (const athlete of athletes) {
+                if (athlete.athleteName === result.lifter_name) {
+                    // Check if athlete's date falls within our search range
+                    const athleteDate = new Date(athlete.liftDate);
+
+                    if (athleteDate >= broadStartDate && athleteDate <= broadEndDate) {
+                        console.log(`\n   ✅ ✅ ✅ MATCH FOUND in STEP 3! ✅ ✅ ✅`);
+                        console.log(`      Division: ${divisionName}`);
+                        console.log(`      Athlete: ${athlete.athleteName}`);
+                        console.log(`      Athlete date: ${athlete.liftDate} (within search range)`);
+                        console.log(`      WSO: ${athlete.wso}, Club: ${athlete.club}, Age: ${athlete.lifterAge}`);
+                        console.log(`      Divisions searched before match: ${divisionsSearched}/${totalDivisions}\n`);
+
+                        matchFound = await processMatch(result, athlete, divisionName, divisionsSearched, stats);
+                        stepUsed = 3;
+                        break;
+                    }
+                }
+            }
+
+            if (matchFound) break;
+        }
+    }
+
+    if (!matchFound) {
+        console.log(`\n   ❌ No match found after all search steps (${divisionsSearched} divisions total)`);
+        stats.unresolved++;
+        return false;
+    }
+
+    console.log(`\n🏆 Match found using Step ${stepUsed} after searching ${divisionsSearched} division(s)`);
+    return true;
+}
+
+// Helper function to process a successful match
+async function processMatch(result, athlete, divisionName, divisionsSearched, stats) {
+    // Build update data (only null fields)
+    const updateData = {};
+    if (!result.competition_age && athlete.lifterAge) {
+        updateData.competition_age = parseInt(athlete.lifterAge);
+    }
+    if (!result.wso && athlete.wso) {
+        updateData.wso = athlete.wso;
+    }
+    if (!result.club_name && athlete.club) {
+        updateData.club_name = athlete.club;
+    }
+    // Update gender if it was NULL and we found it in scraped data
+    if (!result.gender && athlete.gender) {
+        updateData.gender = athlete.gender;
+    }
+
+    if (Object.keys(updateData).length === 0) {
+        console.log(`      No new data to update`);
+        stats.skipped++;
+        return true; // Match found but nothing to update
+    }
+
+    // Log update
+    logUpdate(result, updateData, divisionName, divisionsSearched);
+
+    // Apply update if not dry run
+    if (!CONFIG.DRY_RUN) {
+        const { error } = await supabase
+            .from('usaw_meet_results')
+            .update(updateData)
+            .eq('result_id', result.result_id);
+
+        if (error) {
+            console.error(`      ❌ Database update failed: ${error.message}`);
+            stats.errors++;
+            return false;
+        }
+
+        console.log(`      ✅ Database updated successfully`);
+        stats.updated++;
+    } else {
+        console.log(`      🔍 DRY RUN - would update with:`, updateData);
+        stats.updated++;
+    }
+
+    return true;
 }
 
 function logUpdate(result, updateData, divisionName, divisionsSearched) {
