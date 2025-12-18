@@ -19,6 +19,11 @@ const CONFIG = {
     GENDER_FILTER: process.env.GENDER_FILTER || null, // 'M' or 'F'
     MAX_RESULTS: process.env.MAX_RESULTS ? parseInt(process.env.MAX_RESULTS) : null,
     DRY_RUN: process.env.DRY_RUN === 'true',
+
+    // Targeting (optional) - restrict to a single athlete
+    TARGET_LIFTER_ID: process.env.TARGET_LIFTER_ID ? parseInt(process.env.TARGET_LIFTER_ID) : (process.env.LIFTER_ID ? parseInt(process.env.LIFTER_ID) : null),
+    TARGET_INTERNAL_ID: process.env.TARGET_INTERNAL_ID ? parseInt(process.env.TARGET_INTERNAL_ID) : null,
+    TARGET_MEMBERSHIP_NUMBER: process.env.TARGET_MEMBERSHIP_NUMBER ? parseInt(process.env.TARGET_MEMBERSHIP_NUMBER) : null,
     
     // Scraping settings
     HEADLESS: true,
@@ -171,7 +176,7 @@ async function queryIncompleteResults(skipList) {
     
     let query = supabase
         .from('usaw_meet_results')
-        .select('result_id, lifter_id, lifter_name, meet_id, gender, age_category, weight_class, competition_age, wso, club_name, total')
+        .select('result_id, lifter_id, lifter_name, meet_id, date, gender, age_category, weight_class, competition_age, wso, club_name, total')
         .is('competition_age', null)
         .filter('total', 'gt', '0')  // Filter as text comparison since total is stored as text
         .not('age_category', 'is', null)
@@ -239,11 +244,18 @@ async function queryIncompleteResults(skipList) {
     // Create a map of meet_id -> date
     const meetDates = new Map(allMeets.map(m => [m.meet_id, m.Date]));
 
-    // Add correct meet dates to results
-    let resultsWithDates = data.map(result => ({
-        ...result,
-        date: meetDates.get(result.meet_id) || null
-    }));
+    // Prefer the per-result date for scraping windows (this matches the Sport80 member results page).
+    // Keep the meet table date separately for diagnostics, since meet names can repeat across years.
+    let resultsWithDates = data.map(result => {
+        const meetDate = meetDates.get(result.meet_id) || null;
+        const rawDate = result.date || null;
+        return {
+            ...result,
+            raw_date: rawDate,
+            meet_date: meetDate,
+            date: rawDate || meetDate || null
+        };
+    });
 
     // Apply date filters if specified
     if (CONFIG.START_DATE) {
@@ -297,7 +309,7 @@ function buildRankingsURL(divisionCode, startDate, endDate) {
 // ATHLETE DATE SCRAPING
 // ========================================
 
-async function scrapeAthleteSpecificDate(page, meetId, lifterName) {
+async function scrapeAthleteSpecificDate(page, meetId, lifterName, targetInternalId = null) {
     try {
         const url = `https://usaweightlifting.sport80.com/public/rankings/results/${meetId}`;
 
@@ -326,7 +338,7 @@ async function scrapeAthleteSpecificDate(page, meetId, lifterName) {
 
         console.log(`   Meet: ${meetName}`);
 
-        const athleteData = await page.evaluate((targetName) => {
+        const athleteData = await page.evaluate((targetName, internalId) => {
             // Dynamic Column Mapping - similar to division scraper
             const headers = Array.from(document.querySelectorAll('.v-data-table__wrapper thead th'))
                 .map(th => th.textContent.trim().toLowerCase());
@@ -349,17 +361,28 @@ async function scrapeAthleteSpecificDate(page, meetId, lifterName) {
                     const athleteName = cells[nameIdx]?.textContent?.trim() || '';
                     const athleteDate = cells[dateColIdx]?.textContent?.trim() || '';
 
-                    if (athleteName === targetName && athleteDate) {
-                        return {
-                            name: athleteName,
-                            date: athleteDate
-                        };
+                    // If we have an internal_id target, prefer matching by member link.
+                    if (internalId) {
+                        const memberLink = row.querySelector(`a[href*="/public/rankings/member/${internalId}"]`);
+                        if (memberLink && athleteDate) {
+                            return {
+                                name: athleteName,
+                                date: athleteDate
+                            };
+                        }
+                    } else {
+                        if (athleteName === targetName && athleteDate) {
+                            return {
+                                name: athleteName,
+                                date: athleteDate
+                            };
+                        }
                     }
                 }
             }
 
             return null; // Athlete not found
-        }, lifterName);
+        }, lifterName, targetInternalId);
 
         if (athleteData) {
             console.log(`   ✅ Found athlete date: ${athleteData.date}`);
@@ -482,7 +505,8 @@ async function scrapeDivisionRankings(page, divisionName, divisionCode, startDat
         }
         
         // Input athlete name into search field to filter results (if provided)
-        if (lifterName) {
+        // NOTE: If targeting by internal_id, we avoid name filtering to prevent name-change mismatches.
+        if (lifterName && !CONFIG.TARGET_INTERNAL_ID) {
             try {
                 await page.waitForSelector('.v-text-field input', { timeout: 5000 });
                 // Clear the search field first
@@ -589,7 +613,7 @@ async function scrapeDivisionRankings(page, divisionName, divisionCode, startDat
         });
         
         if (finalStatus.isEmptyState) {
-            console.log(`      ℹ️  No results found for athlete "${lifterName}" in this division/date range (0 matches)`);
+            console.log(`      ℹ️  No results found in this division/date range (0 matches)`);
             return [];
         }
         
@@ -651,13 +675,27 @@ async function scrapeDivisionRankings(page, divisionName, divisionCode, startDat
                     const rawAge = colMap.lifterAge > -1 ? cellTexts[colMap.lifterAge] : '';
                     const numericAge = rawAge.match(/\d{1,3}/)?.[0] || '';
                     
+                    // Try to capture Sport80 internal member id from any link in the row, if present
+                    const anyMemberLink = row.querySelector('a[href*="/public/rankings/member/"]') || row.querySelector('a[href*="/rankings/member/"]');
+                    const internalId = (() => {
+                        const href = anyMemberLink?.getAttribute('href') || '';
+                        const match = href.match(/member\/(\d+)/);
+                        return match ? match[1] : '';
+                    })();
+
+                    // Also capture membership/member-id column text (often contains the numeric id we need)
+                    const membershipIdRaw = colMap.membershipId > -1 ? (cellTexts[colMap.membershipId] || '') : '';
+                    const membershipId = (membershipIdRaw.match(/\d{3,}/)?.[0]) || '';
+
                     return {
                         athleteName: colMap.athleteName > -1 ? cellTexts[colMap.athleteName] : '',
                         lifterAge: numericAge,
                         club: colMap.club > -1 ? cellTexts[colMap.club] : '',
                         liftDate: colMap.liftDate > -1 ? cellTexts[colMap.liftDate] : '',
                         wso: colMap.wso > -1 ? cellTexts[colMap.wso] : '',
-                        gender: colMap.gender > -1 ? cellTexts[colMap.gender] : ''
+                        gender: colMap.gender > -1 ? cellTexts[colMap.gender] : '',
+                        internalId,
+                        membershipId
                     };
                 }).filter(a => a && a.athleteName);
             });
@@ -686,6 +724,30 @@ async function scrapeDivisionRankings(page, divisionName, divisionCode, startDat
             }
         }
         
+        // If targeting by internal_id, filter deterministically here.
+        if (CONFIG.TARGET_INTERNAL_ID) {
+            const target = String(CONFIG.TARGET_INTERNAL_ID);
+            const targetMembership = CONFIG.TARGET_MEMBERSHIP_NUMBER ? String(CONFIG.TARGET_MEMBERSHIP_NUMBER) : null;
+            const filtered = allAthletes.filter(a =>
+                (a.internalId && String(a.internalId) === target) ||
+                (a.membershipId && String(a.membershipId) === target) ||
+                (targetMembership && a.membershipId && String(a.membershipId) === targetMembership)
+            );
+
+            const targetLabel = targetMembership ? `${target} or membership_number ${targetMembership}` : target;
+            console.log(`      Target filter: ${filtered.length}/${allAthletes.length} row(s) match ${targetLabel}`);
+
+            if (filtered.length === 0 && allAthletes.length > 0) {
+                const sample = allAthletes.slice(0, 5).map(a => ({
+                    athleteName: a.athleteName,
+                    internalId: a.internalId,
+                    membershipId: a.membershipId
+                }));
+                console.log(`      Sample extracted ids: ${JSON.stringify(sample)}`);
+            }
+            return filtered;
+        }
+
         return allAthletes;
         
     } catch (error) {
@@ -755,6 +817,12 @@ async function queryIncompleteResults(skipList) {
         .not('age_category', 'is', null)
         .not('weight_class', 'is', null)
         .not('meet_id', 'is', null);
+
+    // Optional: restrict to a specific lifter_id (true surgical strike)
+    if (CONFIG.TARGET_LIFTER_ID) {
+        query = query.eq('lifter_id', CONFIG.TARGET_LIFTER_ID);
+        console.log(`   Filtering: lifter_id = ${CONFIG.TARGET_LIFTER_ID}`);
+    }
     
     // Apply date filters at database level (performance optimization using usaw_meet_results.date)
     // Note: Additional date filters will be applied after fetching accurate dates from usaw_meets
@@ -1060,7 +1128,10 @@ async function findAndUpdateResult(page, result, divisions, stats) {
     console.log(`\n📊 CURRENT DATA:`);
     console.log(`   Lifter ID: ${result.lifter_id}`);
     console.log(`   Lifter Name: ${result.lifter_name}`);
-    console.log(`   Meet Date: ${result.date}`);
+    console.log(`   Result Date (Sport80): ${result.date}`);
+    if (result.meet_date && result.meet_date !== result.date) {
+        console.log(`   Meet Table Date (usaw_meets.Date): ${result.meet_date}`);
+    }
     console.log(`   Gender: ${result.gender === 'M' ? 'Male' : result.gender === 'F' ? 'Female' : result.gender || '❌ MISSING'}`);
     console.log(`   Age Category: ${result.age_category}`);
     console.log(`   Weight Class: ${result.weight_class}`);
@@ -1069,8 +1140,28 @@ async function findAndUpdateResult(page, result, divisions, stats) {
     console.log(`   WSO: ${result.wso || '❌ MISSING'}`);
     console.log(`   Club: ${result.club_name || '❌ MISSING'}`);
     
+    const isAthleteMatch = (athleteRow) => {
+        if (CONFIG.TARGET_INTERNAL_ID) {
+            const targetInternal = String(CONFIG.TARGET_INTERNAL_ID);
+            const targetMembership = CONFIG.TARGET_MEMBERSHIP_NUMBER ? String(CONFIG.TARGET_MEMBERSHIP_NUMBER) : null;
+            const rowInternal = String(athleteRow?.internalId || '');
+            const rowMembership = String(athleteRow?.membershipId || '');
+            return (
+                (rowInternal && rowInternal === targetInternal) ||
+                (rowMembership && rowMembership === targetInternal) ||
+                (targetMembership && rowMembership && rowMembership === targetMembership)
+            );
+        }
+        return athleteRow?.athleteName === result.lifter_name;
+    };
+
     // First, scrape the athlete's specific date from the official results page
-    const athleteSpecificDateStr = await scrapeAthleteSpecificDate(page, result.meet_id, result.lifter_name);
+    const athleteSpecificDateStr = await scrapeAthleteSpecificDate(
+        page,
+        result.meet_id,
+        result.lifter_name,
+        CONFIG.TARGET_INTERNAL_ID
+    );
     const meetDate = new Date(result.date);
 
     if (athleteSpecificDateStr) {
@@ -1151,12 +1242,20 @@ async function findAndUpdateResult(page, result, divisions, stats) {
     divisionsSearched++;
     console.log(`   Found ${step1Athletes.length} athletes`);
 
-    for (const athlete of step1Athletes) {
-        if (athlete.athleteName === result.lifter_name) {
-            console.log(`\n   ✅ ✅ ✅ MATCH FOUND in STEP 1! ✅ ✅ ✅`);
-            matchFound = await processMatch(result, athlete, athleteDivisionName, divisionsSearched, stats);
-            stepUsed = 1;
-            break;
+    // In single-athlete mode, the division scraper already filters rows down to the target.
+    // If we got any rows back, we can treat the first row as the match and stop here.
+    if (!matchFound && CONFIG.TARGET_INTERNAL_ID && step1Athletes.length > 0) {
+        console.log(`\n   ✅ ✅ ✅ MATCH FOUND in STEP 1! ✅ ✅ ✅`);
+        matchFound = await processMatch(result, step1Athletes[0], athleteDivisionName, divisionsSearched, stats);
+        stepUsed = 1;
+    } else {
+        for (const athlete of step1Athletes) {
+            if (isAthleteMatch(athlete)) {
+                console.log(`\n   ✅ ✅ ✅ MATCH FOUND in STEP 1! ✅ ✅ ✅`);
+                matchFound = await processMatch(result, athlete, athleteDivisionName, divisionsSearched, stats);
+                stepUsed = 1;
+                break;
+            }
         }
     }
 
@@ -1177,12 +1276,18 @@ async function findAndUpdateResult(page, result, divisions, stats) {
         divisionsSearched++;
         console.log(`   Found ${step2Athletes.length} athletes`);
 
-        for (const athlete of step2Athletes) {
-            if (athlete.athleteName === result.lifter_name) {
-                console.log(`\n   ✅ ✅ ✅ MATCH FOUND in STEP 2! ✅ ✅ ✅`);
-                matchFound = await processMatch(result, athlete, athleteDivisionName, divisionsSearched, stats);
-                stepUsed = 2;
-                break;
+        if (!matchFound && CONFIG.TARGET_INTERNAL_ID && step2Athletes.length > 0) {
+            console.log(`\n   ✅ ✅ ✅ MATCH FOUND in STEP 2! ✅ ✅ ✅`);
+            matchFound = await processMatch(result, step2Athletes[0], athleteDivisionName, divisionsSearched, stats);
+            stepUsed = 2;
+        } else {
+            for (const athlete of step2Athletes) {
+                if (isAthleteMatch(athlete)) {
+                    console.log(`\n   ✅ ✅ ✅ MATCH FOUND in STEP 2! ✅ ✅ ✅`);
+                    matchFound = await processMatch(result, athlete, athleteDivisionName, divisionsSearched, stats);
+                    stepUsed = 2;
+                    break;
+                }
             }
         }
     } else if (!matchFound && !athleteSpecificDateStr) {
@@ -1298,9 +1403,9 @@ async function findAndUpdateResult(page, result, divisions, stats) {
             
             console.log(`      Found ${athletes.length} athletes in this division`);
             
-            // Look for exact name match
+            // Look for match
             for (const athlete of athletes) {
-                if (athlete.athleteName === result.lifter_name) {
+                if (isAthleteMatch(athlete)) {
                     console.log(`\n   ✅ ✅ ✅ MATCH FOUND in STEP 3! ✅ ✅ ✅`);
                     matchFound = await processMatch(result, athlete, divisionName, divisionsSearched, stats);
                     stepUsed = 3;
@@ -1451,8 +1556,36 @@ async function main() {
     };
     
     try {
-        // Load skip list
-        const skipList = loadUnresolvedList();
+        // Load skip list (but ignore it for single-athlete surgical strikes)
+        const skipList = CONFIG.TARGET_LIFTER_ID ? new Set() : loadUnresolvedList();
+        if (CONFIG.TARGET_LIFTER_ID) {
+            console.log(`📋 Skip list ignored (single-athlete mode)`);
+        }
+
+        // If targeting by lifter_id, hydrate TARGET_INTERNAL_ID / TARGET_MEMBERSHIP_NUMBER from usaw_lifters when possible
+        if (CONFIG.TARGET_LIFTER_ID && !CONFIG.TARGET_INTERNAL_ID) {
+            const { data: lifter, error: lifterError } = await supabase
+                .from('usaw_lifters')
+            .select('internal_id, membership_number')
+                .eq('lifter_id', CONFIG.TARGET_LIFTER_ID)
+                .maybeSingle();
+
+            if (lifterError) {
+                throw new Error(`Failed to fetch internal_id for lifter_id ${CONFIG.TARGET_LIFTER_ID}: ${lifterError.message}`);
+            }
+
+            if (lifter?.internal_id) {
+                CONFIG.TARGET_INTERNAL_ID = lifter.internal_id;
+                console.log(`   Target internal_id: ${CONFIG.TARGET_INTERNAL_ID}`);
+            } else {
+                console.log(`   Target internal_id: N/A (will rely on name matching)`);
+            }
+
+            if (lifter?.membership_number) {
+                CONFIG.TARGET_MEMBERSHIP_NUMBER = lifter.membership_number;
+                console.log(`   Target membership_number: ${CONFIG.TARGET_MEMBERSHIP_NUMBER}`);
+            }
+        }
         
         // Query incomplete results
         const incompleteResults = await queryIncompleteResults(skipList);
@@ -1513,12 +1646,17 @@ async function main() {
         }
         
         // Save unresolved list
-        if (unresolvedResults.length > 0) {
+        // NOTE: Avoid mutating the global unresolved skip list during DRY_RUN or when doing a single-athlete surgical strike.
+        if (!CONFIG.DRY_RUN && !CONFIG.TARGET_LIFTER_ID && unresolvedResults.length > 0) {
             saveUnresolvedList(unresolvedResults);
         }
         
-        // Close browser
-        await browser.close();
+        // Close browser (don't let Puppeteer temp-profile cleanup errors crash the run)
+        try {
+            await browser.close();
+        } catch (closeError) {
+            console.warn(`\n⚠️  Browser close warning (continuing): ${closeError.message}`);
+        }
         
         // Display final summary
         console.log(`\n${'='.repeat(70)}`);
@@ -1535,7 +1673,7 @@ async function main() {
             console.log(`\n✅ Updates logged to: ${CONFIG.UPDATES_LOG_PATH}`);
         }
         
-        if (unresolvedResults.length > 0) {
+        if (!CONFIG.DRY_RUN && !CONFIG.TARGET_LIFTER_ID && unresolvedResults.length > 0) {
             console.log(`\n📋 Unresolved results logged to: ${CONFIG.UNRESOLVED_PATH}`);
         }
         
