@@ -951,17 +951,24 @@ async function findAndUpdateResult(page, result, divisions, stats) {
     const step1Url = buildRankingsURL(athleteDivisionCode, step1StartDate, step1EndDate);
     console.log(`   URL: ${step1Url}`);
 
-    const step1Athletes = await scrapeDivisionRankings(page, athleteDivisionName, athleteDivisionCode, step1StartDate, step1EndDate, result.lifter_name);
+    // Scrape without name filter to get all athletes
+    const step1Athletes = await scrapeDivisionRankingsWithSplitting(page, athleteDivisionName, athleteDivisionCode, step1StartDate, step1EndDate, null);
     divisionsSearched++;
     console.log(`   Found ${step1Athletes.length} athletes`);
 
-    for (const athlete of step1Athletes) {
-        if (athlete.athleteName === result.lifter_name) {
-            console.log(`\n   ✅ ✅ ✅ MATCH FOUND in STEP 1! ✅ ✅ ✅`);
-            matchFound = await processMatch(result, athlete, athleteDivisionName, divisionsSearched, stats);
-            stepUsed = 1;
-            break;
-        }
+    // Check for multi-athlete updates
+    const step1Matches = await findAthleteMatchesInScrapedData(step1Athletes, result, step1StartDate, step1EndDate);
+    if (step1Matches.length > 0) {
+        console.log(`\n   📊 Processing ${step1Matches.length} additional athletes from this division...`);
+        await batchUpdateAthletes(step1Matches, athleteDivisionName, divisionsSearched, stats);
+    }
+
+    // Check if target athlete was found
+    const targetAthlete = step1Athletes.find(a => a.athleteName === result.lifter_name);
+    if (targetAthlete) {
+        console.log(`\n   ✅ ✅ ✅ MATCH FOUND in STEP 1! ✅ ✅ ✅`);
+        matchFound = await processMatch(result, targetAthlete, athleteDivisionName, divisionsSearched, stats);
+        stepUsed = 1;
     }
 
     // ========================================
@@ -1120,6 +1127,130 @@ async function processMatch(result, athlete, divisionName, divisionsSearched, st
     }
 
     return true;
+}
+
+async function findAthleteMatchesInScrapedData(allAthletes, targetResult, startDate, endDate) {
+    console.log(`🔍 Checking ${allAthletes.length} athletes from scraped data for missing data...`);
+
+    if (allAthletes.length === 0) {
+        return [];
+    }
+
+    // Get athlete names to query
+    const athleteNames = allAthletes.map(a => a.athleteName).filter(name => name);
+
+    if (athleteNames.length === 0) {
+        return [];
+    }
+
+    // Query database for athletes missing ANY data within date range
+    let query = supabase
+        .from('usaw_meet_results')
+        .select('result_id, lifter_id, lifter_name, wso, club_name, competition_age, gender, total')
+        .in('lifter_name', athleteNames)
+        .gte('date', formatDate(startDate))
+        .lte('date', formatDate(endDate));
+
+    // Apply additional filters to match the original result
+    if (targetResult.age_category) {
+        query = query.eq('age_category', targetResult.age_category);
+    }
+    if (targetResult.weight_class) {
+        query = query.eq('weight_class', targetResult.weight_class);
+    }
+
+    const { data: potentialResults, error } = await query;
+
+    if (error) {
+        console.warn(`⚠️  Failed to query for missing athletes: ${error.message}`);
+        return [];
+    }
+
+    console.log(`   Found ${potentialResults.length} potential matches within date range`);
+
+    // Match scraped athletes with database results and check for missing data
+    const matches = [];
+    for (const dbResult of potentialResults) {
+        const scrapedAthlete = allAthletes.find(a => 
+            a.athleteName.toLowerCase() === dbResult.lifter_name.toLowerCase()
+        );
+
+        if (scrapedAthlete) {
+            // Check if scraped data provides ANY new information
+            const hasNewData = (
+                (!dbResult.competition_age && scrapedAthlete.lifterAge) ||
+                (!dbResult.club_name && scrapedAthlete.club) ||
+                (!dbResult.wso && scrapedAthlete.wso) ||
+                (!dbResult.gender && scrapedAthlete.gender) ||
+                (!dbResult.total && scrapedAthlete.total)
+            );
+
+            if (hasNewData) {
+                matches.push({
+                    dbResult,
+                    scrapedData: scrapedAthlete
+                });
+            }
+        }
+    }
+
+    console.log(`   ${matches.length} athletes have new data to update`);
+    return matches;
+}
+
+async function batchUpdateAthletes(matches, divisionName, divisionsSearched, stats) {
+    for (const { dbResult, scrapedData } of matches) {
+        try {
+            // Build update data for ALL missing fields
+            const updateData = {};
+            if (!dbResult.competition_age && scrapedData.lifterAge) {
+                updateData.competition_age = parseInt(scrapedData.lifterAge);
+            }
+            if (!dbResult.club_name && scrapedData.club) {
+                updateData.club_name = scrapedData.club;
+            }
+            if (!dbResult.wso && scrapedData.wso) {
+                updateData.wso = scrapedData.wso;
+            }
+            if (!dbResult.gender && scrapedData.gender) {
+                updateData.gender = scrapedData.gender;
+            }
+            if (!dbResult.total && scrapedData.total) {
+                updateData.total = scrapedData.total;
+            }
+
+            if (Object.keys(updateData).length === 0) {
+                stats.skipped++;
+                continue;
+            }
+
+            // Log update
+            logUpdate(dbResult, updateData, divisionName, divisionsSearched);
+
+            // Apply update if not dry run
+            if (!CONFIG.DRY_RUN) {
+                const { error } = await supabase
+                    .from('usaw_meet_results')
+                    .update(updateData)
+                    .eq('result_id', dbResult.result_id);
+
+                if (error) {
+                    console.error(`   ❌ Failed to update ${dbResult.lifter_name}: ${error.message}`);
+                    stats.errors++;
+                } else {
+                    console.log(`   ✅ Updated: ${dbResult.lifter_name} (${Object.keys(updateData).join(', ')})`);
+                    stats.updated++;
+                }
+            } else {
+                console.log(`   🔍 DRY RUN: Would update ${dbResult.lifter_name} with:`, updateData);
+                stats.updated++;
+            }
+
+        } catch (error) {
+            console.error(`   ❌ Error updating ${dbResult.lifter_name}: ${error.message}`);
+            stats.errors++;
+        }
+    }
 }
 
 function logUpdate(result, updateData, divisionName, divisionsSearched) {
