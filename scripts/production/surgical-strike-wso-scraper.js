@@ -87,6 +87,34 @@ function loadUnresolvedList() {
     return new Set();
 }
 
+function saveUnresolvedResult(unresolvedResult) {
+    if (CONFIG.DRY_RUN) return; // Don't save in dry run mode
+
+    ensureDirectoryExists(path.dirname(CONFIG.UNRESOLVED_PATH));
+
+    // Load existing
+    let existing = [];
+    if (fs.existsSync(CONFIG.UNRESOLVED_PATH)) {
+        try {
+            existing = JSON.parse(fs.readFileSync(CONFIG.UNRESOLVED_PATH, 'utf8'));
+        } catch (error) {
+            console.warn(`⚠️  Failed to load existing unresolved list: ${error.message}`);
+        }
+    }
+
+    // Check if this result is already in the list
+    const existingIds = new Set(existing.map(r => r.result_id));
+    if (existingIds.has(unresolvedResult.result_id)) {
+        return; // Already saved
+    }
+
+    // Add the new result
+    existing.push(unresolvedResult);
+
+    fs.writeFileSync(CONFIG.UNRESOLVED_PATH, JSON.stringify(existing, null, 2));
+    console.log(`💾 Saved unresolved result ${unresolvedResult.result_id} to skip list (total: ${existing.length})`);
+}
+
 function saveUnresolvedList(unresolvedResults) {
     ensureDirectoryExists(path.dirname(CONFIG.UNRESOLVED_PATH));
 
@@ -218,7 +246,7 @@ async function queryIncompleteResults(skipList) {
     // Query usaw_meets for the correct dates in batches (to avoid URI too long error)
     const BATCH_SIZE = 100;
     const allMeets = [];
-    
+
     for (let i = 0; i < meetIds.length; i += BATCH_SIZE) {
         const batch = meetIds.slice(i, i + BATCH_SIZE);
         const { data: meets, error: meetsError } = await supabase
@@ -891,6 +919,19 @@ async function findAndUpdateResult(page, result, divisions, stats) {
     if (!athleteDivisionCode) {
         console.log(`\n❌ Could not find division code for: ${athleteDivisionName}`);
         stats.unresolved++;
+
+        // Save unresolved result immediately
+        saveUnresolvedResult({
+            result_id: result.result_id,
+            lifter_name: result.lifter_name,
+            date: result.date,
+            gender: result.gender,
+            age_category: result.age_category,
+            weight_class: result.weight_class,
+            timestamp: new Date().toISOString(),
+            divisions_searched: Object.keys(divisions).length
+        });
+
         return false;
     }
 
@@ -1181,17 +1222,15 @@ async function main() {
         console.log(`🔄 Processing ${incompleteResults.length} results missing WSO`);
         console.log(`${'='.repeat(70)}`);
 
-        const unresolvedResults = [];
-
         // Process each incomplete result
         for (const result of incompleteResults) {
             stats.processed++;
 
             const matchFound = await findAndUpdateResult(page, result, divisions, stats);
 
+            // If no match found, save as unresolved result
             if (!matchFound) {
-                // Add to unresolved list
-                unresolvedResults.push({
+                saveUnresolvedResult({
                     result_id: result.result_id,
                     lifter_name: result.lifter_name,
                     date: result.date,
@@ -1208,11 +1247,6 @@ async function main() {
                 console.log(`\n📊 Progress: ${stats.processed}/${incompleteResults.length} results processed`);
                 console.log(`   Updated: ${stats.updated}, Skipped: ${stats.skipped}, Unresolved: ${stats.unresolved}, Errors: ${stats.errors}`);
             }
-        }
-
-        // Save unresolved list
-        if (unresolvedResults.length > 0) {
-            saveUnresolvedList(unresolvedResults);
         }
 
         // Close browser
@@ -1233,7 +1267,7 @@ async function main() {
             console.log(`\n✅ Updates logged to: ${CONFIG.UPDATES_LOG_PATH}`);
         }
 
-        if (unresolvedResults.length > 0) {
+        if (stats.unresolved > 0) {
             console.log(`\n📋 Unresolved results logged to: ${CONFIG.UNRESOLVED_PATH}`);
         }
 
