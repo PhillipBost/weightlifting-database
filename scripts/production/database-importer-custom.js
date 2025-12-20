@@ -156,6 +156,8 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
         throw new Error('Lifter name is required');
     }
 
+    console.log(`  🔍 Looking for lifter: "${cleanName}"`);
+
     // First try to find existing lifter by name
     const { data: existing, error: findError } = await supabase
         .from('usaw_lifters')
@@ -169,10 +171,16 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
 
     if (existing) {
         console.log(`  ✅ Found existing lifter: ${cleanName} (ID: ${existing.lifter_id})`);
+        
+        // Run base64 URL lookup protocol for existing lifter
+        console.log(`  🔍 Running base64 URL lookup protocol for existing lifter...`);
+        // TODO: Implement base64 URL lookup protocol here
+        
         return existing;
     }
 
     // Create new lifter (gender and birth_year now go in meet_results, not lifters)
+    console.log(`  ➕ Creating new lifter: ${cleanName}`);
     const { data: newLifter, error: createError } = await supabase
         .from('usaw_lifters')
         .insert({
@@ -186,7 +194,7 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
         throw new Error(`Error creating lifter: ${createError.message}`);
     }
 
-    console.log(`  ➕ Created new lifter: ${cleanName} (ID: ${newLifter.lifter_id})`);
+    console.log(`  ✅ Created new lifter: ${cleanName} (ID: ${newLifter.lifter_id})`);
     return newLifter;
 }
 
@@ -324,3 +332,4 @@ module.exports = {
     extractMeetInternalId,
     readCSVFile,
     findOrCreateLifter
+};
