@@ -16,6 +16,32 @@ const supabase = createClient(
 // Import scraper function - adjust path as needed for GitHub
 const { scrapeOneMeet } = require('./scrapeOneMeet.js');
 
+// Load division codes for Base64 URL lookup
+const DIVISION_CODES_PATH = path.join(__dirname, '../../division_base64_codes.json');
+let divisionCodes = {};
+if (fs.existsSync(DIVISION_CODES_PATH)) {
+    const divisionData = JSON.parse(fs.readFileSync(DIVISION_CODES_PATH, 'utf8'));
+    divisionCodes = divisionData.division_codes;
+    console.log(`✅ Loaded ${Object.keys(divisionCodes).length} division codes for Tier 1 verification`);
+} else {
+    console.warn(`⚠️ Division codes file not found at ${DIVISION_CODES_PATH} - Tier 1 verification will be disabled`);
+}
+
+// Date utility functions for Tier 1
+function formatDate(date) {
+    const d = new Date(date);
+    const year = d.getFullYear();
+    const month = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+}
+
+function addDays(date, days) {
+    const result = new Date(date);
+    result.setDate(result.getDate() + days);
+    return result;
+}
+
 // Extract meet internal_id from Sport80 URL
 function extractMeetInternalId(url) {
     if (!url || typeof url !== 'string') {
@@ -234,17 +260,437 @@ async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId) {
     }
 }
 
-// Two-tier verification system for lifter resolution
-async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, targetMeetId) {
-    console.log(`  🔍 Tier 1: Running base64 URL lookup protocol...`);
-    console.log(`    Checking ${potentialLifterIds.length} potential lifter(s) against meet ${targetMeetId}`);
+// ========================================
+// TIER 1 HELPER FUNCTIONS
+// ========================================
 
-    // TODO: Implement base64 URL lookup protocol
-    // This would query rankings with specific meet filters and check if the lifter appears
+function buildRankingsURL(divisionCode, startDate, endDate) {
+    const filters = {
+        date_range_start: formatDate(startDate),
+        date_range_end: formatDate(endDate),
+        weight_class: divisionCode
+    };
 
-    // For now, return inconclusive result to trigger Tier 2
-    console.log(`    ⚠️ Base64 URL lookup inconclusive - proceeding to Tier 2`);
-    return null;
+    const jsonStr = JSON.stringify(filters);
+    const base64Encoded = Buffer.from(jsonStr).toString('base64');
+
+    return `https://usaweightlifting.sport80.com/public/rankings/all?filters=${encodeURIComponent(base64Encoded)}`;
+}
+
+async function scrapeDivisionRankings(page, divisionCode, startDate, endDate) {
+    try {
+        const url = buildRankingsURL(divisionCode, startDate, endDate);
+        console.log(`    🌐 URL: ${url}`);
+
+        await page.goto(url, {
+            waitUntil: 'networkidle0',
+            timeout: 30000
+        });
+
+        // Wait for table to load
+        await page.waitForSelector('.v-data-table__wrapper tbody tr', { timeout: 15000 });
+        await new Promise(resolve => setTimeout(resolve, 2000));
+
+        // Extract all athletes from all pages
+        let allAthletes = [];
+        let hasMorePages = true;
+        let currentPage = 1;
+
+        while (hasMorePages) {
+            const pageAthletes = await page.evaluate(() => {
+                const headers = Array.from(document.querySelectorAll('.v-data-table__wrapper thead th'))
+                    .map(th => th.textContent.trim().toLowerCase());
+
+                // Dynamic column mapping
+                const colMap = {
+                    nationalRank: headers.findIndex(h => h.includes('rank')),
+                    athleteName: headers.findIndex(h => h.includes('athlete') || h.includes('lifter') && !h.includes('age')),
+                    lifterAge: headers.findIndex(h => h.includes('lifter') && h.includes('age') || h.includes('comp') && h.includes('age') && !h.includes('category')),
+                    club: headers.findIndex(h => h.includes('club') || h.includes('team')),
+                    liftDate: headers.findIndex(h => h.includes('date')),
+                    level: headers.findIndex(h => h.includes('level')),
+                    wso: headers.findIndex(h => h.includes('wso') || h.includes('lws') || h.includes('state')),
+                    total: headers.findIndex(h => h.includes('total')),
+                    gender: headers.findIndex(h => h.includes('gender'))
+                };
+
+                // Fallbacks
+                if (colMap.nationalRank === -1) colMap.nationalRank = 0;
+                if (colMap.athleteName === -1) colMap.athleteName = 3;
+                if (colMap.club === -1) colMap.club = 6;
+                if (colMap.liftDate === -1) colMap.liftDate = 9;
+                if (colMap.level === -1) colMap.level = 11;
+                if (colMap.wso === -1) colMap.wso = 12;
+
+                const rows = Array.from(document.querySelectorAll('.v-data-table__wrapper tbody tr'));
+
+                return rows.map(row => {
+                    const cells = Array.from(row.querySelectorAll('td'));
+                    const cellTexts = cells.map(cell => cell.textContent?.trim() || '');
+
+                    if (cellTexts.length < 5) return null;
+
+                    const rawAge = colMap.lifterAge > -1 ? cellTexts[colMap.lifterAge] : '';
+                    const numericAge = rawAge.match(/\d{1,3}/)?.[0] || '';
+
+                    // Extract internal_id from the athlete name link
+                    let internalId = null;
+                    if (colMap.athleteName > -1) {
+                        const nameCell = cells[colMap.athleteName];
+                        const link = nameCell.querySelector('a[href*="/member/"]');
+                        if (link) {
+                            const href = link.getAttribute('href');
+                            // Extract ID from URLs like /public/rankings/member/12345
+                            const match = href.match(/\/member\/(\d+)/);
+                            if (match) {
+                                internalId = parseInt(match[1]);
+                            }
+                        }
+                    }
+
+                    return {
+                        nationalRank: colMap.nationalRank > -1 ? cellTexts[colMap.nationalRank] : '',
+                        athleteName: colMap.athleteName > -1 ? cellTexts[colMap.athleteName] : '',
+                        internalId: internalId,
+                        lifterAge: numericAge,
+                        club: colMap.club > -1 ? cellTexts[colMap.club] : '',
+                        liftDate: colMap.liftDate > -1 ? cellTexts[colMap.liftDate] : '',
+                        level: colMap.level > -1 ? cellTexts[colMap.level] : '',
+                        wso: colMap.wso > -1 ? cellTexts[colMap.wso] : '',
+                        total: colMap.total > -1 ? cellTexts[colMap.total] : '',
+                        gender: colMap.gender > -1 ? cellTexts[colMap.gender] : ''
+                    };
+                }).filter(a => a && a.athleteName);
+            });
+
+            allAthletes = allAthletes.concat(pageAthletes);
+            console.log(`      Page ${currentPage}: Extracted ${pageAthletes.length} athlete(s)`);
+
+            // Check for next page
+            const nextPageExists = await page.evaluate(() => {
+                const nextBtn = document.querySelector('.v-data-footer__icons-after .v-btn:not([disabled])');
+                if (nextBtn && !nextBtn.disabled) {
+                    nextBtn.click();
+                    return true;
+                }
+                return false;
+            });
+
+            if (nextPageExists) {
+                await new Promise(resolve => setTimeout(resolve, 1500));
+                currentPage++;
+            } else {
+                hasMorePages = false;
+            }
+        }
+
+        console.log(`    ✅ Scraped ${allAthletes.length} total athletes from division`);
+        return allAthletes;
+
+    } catch (error) {
+        console.log(`    ❌ Error scraping division: ${error.message}`);
+        return [];
+    }
+}
+
+async function batchEnrichAthletes(scrapedAthletes, startDate, endDate, ageCategory, weightClass) {
+    if (scrapedAthletes.length === 0) return;
+
+    console.log(`    📊 Batch enrichment: Processing ${scrapedAthletes.length} athletes from scraped data...`);
+
+    // Get athlete names to query
+    const athleteNames = scrapedAthletes.map(a => a.athleteName).filter(name => name);
+    if (athleteNames.length === 0) return;
+
+    // Query database for athletes in this division/date range who have missing data
+    // Note: Scraped rankings contain athletes from ALL meets in this division/date range
+    const { data: potentialResults, error } = await supabase
+        .from('usaw_meet_results')
+        .select('result_id, lifter_id, lifter_name, wso, club_name, competition_age, gender, meet_id, date')
+        .in('lifter_name', athleteNames)
+        .gte('date', formatDate(startDate))
+        .lte('date', formatDate(endDate))
+        .eq('age_category', ageCategory)
+        .eq('weight_class', weightClass);
+
+    if (error) {
+        console.warn(`    ⚠️  Batch enrichment query failed: ${error.message}`);
+        return;
+    }
+
+    console.log(`    📝 Found ${potentialResults.length} potential database matches`);
+
+    // Match scraped athletes with database results and update
+    let updateCount = 0;
+    let lifterIdUpdates = 0;
+
+    for (const dbResult of potentialResults) {
+        const scrapedAthlete = scrapedAthletes.find(a =>
+            a.athleteName.toLowerCase() === dbResult.lifter_name.toLowerCase()
+        );
+
+        if (scrapedAthlete) {
+            // Update meet results
+            const updateData = {};
+            if (!dbResult.competition_age && scrapedAthlete.lifterAge) {
+                updateData.competition_age = parseInt(scrapedAthlete.lifterAge);
+            }
+            if (!dbResult.club_name && scrapedAthlete.club) {
+                updateData.club_name = scrapedAthlete.club;
+            }
+            if (!dbResult.wso && scrapedAthlete.wso) {
+                updateData.wso = scrapedAthlete.wso;
+            }
+            if (!dbResult.gender && scrapedAthlete.gender) {
+                updateData.gender = scrapedAthlete.gender;
+            }
+            if (!dbResult.national_rank && scrapedAthlete.nationalRank) {
+                updateData.national_rank = parseInt(scrapedAthlete.nationalRank);
+            }
+
+            if (Object.keys(updateData).length > 0) {
+                const { error: updateError } = await supabase
+                    .from('usaw_meet_results')
+                    .update(updateData)
+                    .eq('result_id', dbResult.result_id);
+
+                if (!updateError) {
+                    updateCount++;
+                    console.log(`      ✅ Enriched: ${dbResult.lifter_name} (${Object.keys(updateData).join(', ')})`);
+                }
+            }
+
+            // Also update usaw_lifters.internal_id if missing
+            if (scrapedAthlete.internalId) {
+                const { data: lifterData, error: lifterFetchError } = await supabase
+                    .from('usaw_lifters')
+                    .select('lifter_id, internal_id')
+                    .eq('lifter_id', dbResult.lifter_id)
+                    .single();
+
+                if (!lifterFetchError && lifterData && !lifterData.internal_id) {
+                    const { error: lifterUpdateError } = await supabase
+                        .from('usaw_lifters')
+                        .update({ internal_id: scrapedAthlete.internalId })
+                        .eq('lifter_id', dbResult.lifter_id);
+
+                    if (!lifterUpdateError) {
+                        lifterIdUpdates++;
+                        console.log(`      🔗 Linked internal_id ${scrapedAthlete.internalId} to ${dbResult.lifter_name}`);
+                    }
+                }
+            }
+        }
+    }
+
+    if (updateCount > 0 || lifterIdUpdates > 0) {
+        console.log(`    🎉 Batch enrichment complete: Updated ${updateCount} result(s), ${lifterIdUpdates} internal_id(s)`);
+    } else {
+        console.log(`    ℹ️  No additional data to enrich`);
+    }
+
+    // Also check if we can enrich the meet's Level field
+    // Find the most common level from scraped data (all athletes from one meet should have same level)
+    const levels = scrapedAthletes
+        .map(a => a.level)
+        .filter(level => level && level.trim() !== '');
+
+    if (levels.length > 0) {
+        // Get the most common level value
+        const levelCounts = {};
+        levels.forEach(level => {
+            levelCounts[level] = (levelCounts[level] || 0) + 1;
+        });
+        const mostCommonLevel = Object.keys(levelCounts).reduce((a, b) =>
+            levelCounts[a] > levelCounts[b] ? a : b
+        );
+
+        // Find meets in this date range that need Level enrichment
+        const meetIds = [...new Set(potentialResults.map(r => r.meet_id))];
+
+        for (const meetId of meetIds) {
+            // Check if meet's Level is missing or "Unknown"
+            const { data: meetData, error: meetError } = await supabase
+                .from('usaw_meets')
+                .select('meet_id, Level')
+                .eq('meet_id', meetId)
+                .single();
+
+            if (!meetError && meetData && (!meetData.Level || meetData.Level === 'Unknown')) {
+                // Update the meet's Level
+                const { error: updateError } = await supabase
+                    .from('usaw_meets')
+                    .update({ Level: mostCommonLevel })
+                    .eq('meet_id', meetId);
+
+                if (!updateError) {
+                    console.log(`      📍 Updated meet ${meetId} Level: ${mostCommonLevel}`);
+                }
+            }
+        }
+    }
+}
+
+// ========================================
+// TWO-TIER VERIFICATION SYSTEM
+// ========================================
+
+async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, targetMeetId, eventDate, ageCategory, weightClass) {
+    console.log(`  🔍 Tier 1: Base64 URL Lookup Protocol (Division Rankings)`);
+
+    // Check if division codes are loaded
+    if (Object.keys(divisionCodes).length === 0) {
+        console.log(`    ⚠️ Division codes not loaded - skipping Tier 1`);
+        return null;
+    }
+
+    // Validate required data
+    if (!eventDate || !ageCategory || !weightClass) {
+        console.log(`    ⚠️ Missing required data (date, age category, or weight class) - skipping Tier 1`);
+        return null;
+    }
+
+    // Map age category + weight class to division name
+    const divisionName = `${ageCategory} ${weightClass}`;
+
+    // Determine if division is active or inactive based on meet date
+    const meetDate = new Date(eventDate);
+    const activeDivisionCutoff = new Date('2025-06-01');
+    const isActiveDivision = meetDate >= activeDivisionCutoff;
+
+    let divisionCode;
+    if (isActiveDivision) {
+        divisionCode = divisionCodes[divisionName];
+    } else {
+        const inactiveName = `(Inactive) ${divisionName}`;
+        divisionCode = divisionCodes[inactiveName];
+    }
+
+    // Try opposite if not found
+    if (!divisionCode) {
+        if (isActiveDivision) {
+            const inactiveName = `(Inactive) ${divisionName}`;
+            divisionCode = divisionCodes[inactiveName];
+        } else {
+            divisionCode = divisionCodes[divisionName];
+        }
+    }
+
+    if (!divisionCode) {
+        console.log(`    ❌ Division not found: "${divisionName}" - skipping Tier 1`);
+        return null;
+    }
+
+    console.log(`    📋 Division: ${divisionName} ${isActiveDivision ? '' : '(Inactive)'} (code: ${divisionCode})`);
+    console.log(`    📅 Date Range: ${formatDate(addDays(meetDate, -5))} to ${formatDate(addDays(meetDate, 5))} (±5 days)`);
+
+    let browser;
+    try {
+        browser = await puppeteer.launch({
+            headless: true,
+            args: [
+                '--no-sandbox',
+                '--disable-setuid-sandbox',
+                '--disable-dev-shm-usage',
+                '--disable-gpu',
+                '--no-first-run',
+                '--disable-extensions'
+            ]
+        });
+
+        const page = await browser.newPage();
+        await page.setViewport({ width: 1500, height: 1000 });
+
+        // Calculate date range
+        const startDate = addDays(meetDate, -5);
+        const endDate = addDays(meetDate, 5);
+
+        // Scrape division rankings
+        const scrapedAthletes = await scrapeDivisionRankings(page, divisionCode, startDate, endDate);
+
+        if (scrapedAthletes.length === 0) {
+            console.log(`    ℹ️  No athletes found in division rankings`);
+            return null;
+        }
+
+        // BATCH ENRICHMENT - Update all matching athletes in the database
+        await batchEnrichAthletes(scrapedAthletes, startDate, endDate, ageCategory, weightClass);
+
+        // VERIFICATION - Check if target lifter was found
+        const targetAthlete = scrapedAthletes.find(a =>
+            a.athleteName.toLowerCase() === lifterName.toLowerCase()
+        );
+
+        if (targetAthlete) {
+            console.log(`    ✅ Tier 1 VERIFIED: "${lifterName}" found in division rankings`);
+
+            // Try to disambiguate using internal_id if we have it
+            if (potentialLifterIds.length === 1) {
+                // Single candidate - return it
+                return {
+                    lifterId: potentialLifterIds[0],
+                    scrapedData: targetAthlete
+                };
+            }
+
+            // Multiple candidates - use internal_id to disambiguate
+            if (targetAthlete.internalId) {
+                console.log(`    🔗 Using internal_id ${targetAthlete.internalId} to disambiguate ${potentialLifterIds.length} candidates`);
+
+                // Query database to find which lifter_id has this internal_id
+                const { data: matchedLifter, error } = await supabase
+                    .from('usaw_lifters')
+                    .select('lifter_id, internal_id')
+                    .in('lifter_id', potentialLifterIds)
+                    .eq('internal_id', targetAthlete.internalId)
+                    .single();
+
+                if (!error && matchedLifter) {
+                    console.log(`    ✅ Disambiguated via internal_id: Using lifter ${matchedLifter.lifter_id}`);
+                    return {
+                        lifterId: matchedLifter.lifter_id,
+                        scrapedData: targetAthlete
+                    };
+                }
+
+                // No match by internal_id - check if any candidates have null internal_id
+                const { data: nullInternalIdCandidates, error: nullError } = await supabase
+                    .from('usaw_lifters')
+                    .select('lifter_id, internal_id')
+                    .in('lifter_id', potentialLifterIds)
+                    .is('internal_id', null);
+
+                if (!nullError && nullInternalIdCandidates && nullInternalIdCandidates.length === 1) {
+                    // Only one candidate has null internal_id - assume it's them and populate it
+                    const lifterId = nullInternalIdCandidates[0].lifter_id;
+                    console.log(`    🔗 Linking internal_id ${targetAthlete.internalId} to lifter ${lifterId}`);
+
+                    await supabase
+                        .from('usaw_lifters')
+                        .update({ internal_id: targetAthlete.internalId })
+                        .eq('lifter_id', lifterId);
+
+                    return {
+                        lifterId: lifterId,
+                        scrapedData: targetAthlete
+                    };
+                }
+            }
+
+            // Can't disambiguate - fall back to Tier 2
+            console.log(`    ⚠️ Multiple candidates exist (${potentialLifterIds.length}) - proceeding to Tier 2 for disambiguation`);
+            return null;
+        }
+
+        console.log(`    ❌ Tier 1: "${lifterName}" not found in division rankings`);
+        return null;
+
+    } catch (error) {
+        console.log(`    ⚠️ Tier 1 verification failed (technical error): ${error.message}`);
+        return null;
+    } finally {
+        if (browser) await browser.close();
+    }
 }
 
 async function runSport80MemberUrlVerification(lifterName, potentialLifterIds, targetMeetId) {
@@ -330,7 +776,22 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
         console.log(`  ✅ Found 1 existing lifter: ${cleanName} (ID: ${lifterIds[0]})`);
 
         // Tier 1: Base64 URL lookup protocol
-        await runBase64UrlLookupProtocol(cleanName, lifterIds, additionalData.targetMeetId);
+        const tier1Result = await runBase64UrlLookupProtocol(
+            cleanName,
+            lifterIds,
+            additionalData.targetMeetId,
+            additionalData.eventDate,
+            additionalData.ageCategory,
+            additionalData.weightClass
+        );
+
+        if (tier1Result) {
+            const verifiedLifter = existingLifters.find(l => l.lifter_id === tier1Result.lifterId);
+            console.log(`  ✅ Verified via Tier 1: ${cleanName} (ID: ${tier1Result.lifterId})`);
+            // Attach scraped data for enrichment
+            verifiedLifter.scrapedData = tier1Result.scrapedData;
+            return verifiedLifter;
+        }
 
         // Tier 2: Sport80 member URL verification (fallback)
         const verifiedLifterId = await runSport80MemberUrlVerification(cleanName, lifterIds, additionalData.targetMeetId);
@@ -348,11 +809,20 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
     console.log(`  ⚠️ Found ${lifterIds.length} existing lifters with name "${cleanName}" - disambiguating...`);
 
     // Tier 1: Base64 URL lookup protocol
-    const base64Result = await runBase64UrlLookupProtocol(cleanName, lifterIds, additionalData.targetMeetId);
+    const base64Result = await runBase64UrlLookupProtocol(
+        cleanName,
+        lifterIds,
+        additionalData.targetMeetId,
+        additionalData.eventDate,
+        additionalData.ageCategory,
+        additionalData.weightClass
+    );
 
     if (base64Result) {
-        const verifiedLifter = existingLifters.find(l => l.lifter_id === base64Result);
-        console.log(`  ✅ Verified via Tier 1: ${cleanName} (ID: ${base64Result})`);
+        const verifiedLifter = existingLifters.find(l => l.lifter_id === base64Result.lifterId);
+        console.log(`  ✅ Verified via Tier 1: ${cleanName} (ID: ${base64Result.lifterId})`);
+        // Attach scraped data for enrichment
+        verifiedLifter.scrapedData = base64Result.scrapedData;
         return verifiedLifter;
     }
 
@@ -433,9 +903,17 @@ async function processMeetCsvFile(csvFilePath, meetId, meetName) {
                 }
 
                 // Find or create lifter with two-tier verification system
-                const lifter = await findOrCreateLifter(lifterName, { targetMeetId: meetId });
+                // Pass additional data needed for Tier 1 verification
+                const lifter = await findOrCreateLifter(lifterName, {
+                    targetMeetId: meetId,
+                    eventDate: row.Date?.trim() || null,
+                    ageCategory: row['Age Category']?.trim() || null,
+                    weightClass: row['Weight Class']?.trim() || null,
+                    membership_number: row['Membership Number']?.trim() || null
+                });
 
                 // Create meet result with proper lifter_id
+                // Apply scraped data from Tier 1 verification if available
                 const resultData = {
                     meet_id: meetId,
                     lifter_id: lifter.lifter_id,
@@ -453,31 +931,24 @@ async function processMeetCsvFile(csvFilePath, meetId, meetName) {
                     cj_lift_2: row['C&J Lift 2']?.toString().trim() || null,
                     cj_lift_3: row['C&J Lift 3']?.toString().trim() || null,
                     best_cj: row['Best C&J']?.toString().trim() || null,
-                    total: row.Total?.toString().trim() || null
+                    total: row.Total?.toString().trim() || null,
+                    // Enrich with scraped data from Tier 1 if available
+                    club_name: lifter.scrapedData?.club || row.Club?.toString().trim() || null,
+                    wso: lifter.scrapedData?.wso || null,
+                    competition_age: lifter.scrapedData?.lifterAge ? parseInt(lifter.scrapedData.lifterAge) : null,
+                    gender: lifter.scrapedData?.gender || null,
+                    national_rank: lifter.scrapedData?.nationalRank ? parseInt(lifter.scrapedData.nationalRank) : null
                 };
 
                 // Upsert to database (insert new, update existing)
                 const { error: insertError } = await supabase
                     .from('usaw_meet_results')
                     .upsert(resultData, {
-                        onConflict: 'meet_id, lifter_id', // Assuming composite key or just insert
+                        onConflict: 'meet_id, lifter_id',
                         ignoreDuplicates: false
                     });
 
-                // If upsert fails, try simple insert if we suspect it's not a conflict, 
-                // but usually for results we just want to insert. 
-                // However, the previous code context implies sophisticated import.
-                // Let's stick to insert for results as dupes might be separate entries if not careful,
-                // but typically meet_id + lifter_id is unique per meet unless multiple entries.
-                // Re-reading usage: "incorporate the meet results ... determine whether a lifter ... exists"
-                // I'll use simple insert for now as that's safer than potentially wrong upsert keys without schema knowledge.
-                // Actually, let's look at the `upsertMeetsToDatabase` above, it used upsert.
-                // For results, often there is no unique constraint on (meet_id, lifter_id) if someone competes in multiple categories? 
-                // USAW usually one entry per meet.
-                // Let's use `insert` and log error.
-
                 if (insertError) {
-                    // Check if it's unique violation
                     if (insertError.code === '23505') {
                         console.log(`  ⚠️ Result already exists for ${lifterName}`);
                     } else {
@@ -509,5 +980,5 @@ module.exports = {
     upsertMeetsToDatabase,
     processMeetCsvFile,
     verifyLifterParticipationInMeet,
-    scrapeOneMeet // Exporting this as well since it was imported at top
+    scrapeOneMeet
 };
