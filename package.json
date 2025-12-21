@@ -9,11 +9,14 @@
     "scrape": "node scripts/production/meet_scraper_2025.js",
     "import": "node scripts/production/database-importer.js",
     "test": "node scripts/production/meet_scraper_2025.js && node scripts/production/database-importer.js",
+    "test:pbt": "jest tests/internal-id-extraction.test.js --verbose",
     "division-scraper": "node scripts/legacy/division-scraper.js"
   },
   "author": "Phil Bost",
   "license": "MIT",
   "devDependencies": {
+    "fast-check": "^4.5.1",
+    "jest": "^30.2.0",
     "nodemon": "^3.1.10"
   },
   "dependencies": {

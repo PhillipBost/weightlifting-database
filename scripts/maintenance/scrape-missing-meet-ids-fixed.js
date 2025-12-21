@@ -11,10 +11,19 @@ const {
 } = require('../production/database-importer-custom.js');
 
 /**
- * Scrape Missing Meet ID Gaps
+ * Scrape Missing Meet ID Gaps - Enhanced Version
  * 
  * This script identifies gaps in the sequential meet_internal_id sequence
- * and scrapes the missing meets from Sport80.
+ * and scrapes the missing meets from Sport80 with enhanced functionality:
+ * 
+ * Enhanced Features:
+ * - Extracts athlete internal_ids during scraping process
+ * - Integrates base64 lookup fallback for missing internal_ids
+ * - Provides internal_id coverage statistics
+ * - Uses enhanced athlete matching in database import
+ * - Maintains backward compatibility with existing command-line parameters
+ * 
+ * Requirements covered: 1.1, 1.2, 1.3, 3.1, 3.2, 3.3
  */
 
 async function findGaps(existingIds) {
@@ -46,6 +55,14 @@ async function getMeetMetadataFromCsv(filePath, internalId) {
     
     if (parsed.data && parsed.data.length > 0) {
         const firstRow = parsed.data[0];
+        
+        // Count athletes with internal_ids for enhanced reporting
+        const athletesWithInternalIds = parsed.data.filter(row => 
+            row.Internal_ID && row.Internal_ID !== 'null' && row.Internal_ID !== ''
+        ).length;
+        
+        console.log(`📊 Meet ${internalId}: ${parsed.data.length} total athletes, ${athletesWithInternalIds} with internal_ids`);
+        
         return {
             meet_id: internalId, // Using internal_id as meet_id for consistency
             Meet: firstRow.Meet || `Meet ${internalId}`,
@@ -54,7 +71,8 @@ async function getMeetMetadataFromCsv(filePath, internalId) {
             Level: firstRow.Level || 'Unknown',
             Results: parsed.data.length,
             batch_id: 'gap-recovery-' + new Date().toISOString().split('T')[0],
-            scraped_date: new Date().toISOString()
+            scraped_date: new Date().toISOString(),
+            athletes_with_internal_ids: athletesWithInternalIds
         };
     }
     return null;
@@ -97,7 +115,7 @@ async function main() {
             console.log(`\n🛠️ Processing Gap ID: ${gapId}`);
             
             try {
-                console.log(`🌐 Scraping meet ${gapId}...`);
+                console.log(`🌐 Scraping meet ${gapId} with enhanced internal_id extraction...`);
                 await scrapeOneMeet(gapId, tempFile);
 
                 if (!fs.existsSync(tempFile) || fs.statSync(tempFile).size < 100) {
@@ -106,16 +124,17 @@ async function main() {
                     continue;
                 }
 
-                console.log(`📄 Extracting metadata...`);
+                console.log(`📄 Extracting metadata with internal_id statistics...`);
                 const meetMetadata = await getMeetMetadataFromCsv(tempFile, gapId);
                 
                 if (meetMetadata) {
                     console.log(`📥 Importing meet metadata: ${meetMetadata.Meet}`);
+                    console.log(`📊 Internal ID coverage: ${meetMetadata.athletes_with_internal_ids}/${meetMetadata.Results} athletes`);
                     await upsertMeetsToDatabase([meetMetadata]);
 
-                    console.log(`📥 Importing results...`);
+                    console.log(`📥 Importing results with enhanced athlete matching...`);
                     await processMeetCsvFile(tempFile, gapId, meetMetadata.Meet);
-                    console.log(`✅ Successfully recovered meet ${gapId}`);
+                    console.log(`✅ Successfully recovered meet ${gapId} with enhanced functionality`);
                 }
 
             } catch (error) {

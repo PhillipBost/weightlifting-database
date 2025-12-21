@@ -3,6 +3,274 @@ const puppeteer = require('puppeteer')
 const { createCSVfromArray, writeCSV } = require('../../utils/csv_utils');
 const {handleTotalAthleteString, getAmountMeetsOnPage} = require('../../utils/string_utils')
 const {getAthletesOnPage} = require('../../utils/scraping_utils')
+const fs = require('fs');
+const path = require('path');
+
+// Load division codes for Base64 URL lookup
+const DIVISION_CODES_PATH = path.join(__dirname, '../../division_base64_codes.json');
+let divisionCodes = {};
+if (fs.existsSync(DIVISION_CODES_PATH)) {
+    const divisionData = JSON.parse(fs.readFileSync(DIVISION_CODES_PATH, 'utf8'));
+    divisionCodes = divisionData.division_codes;
+    console.log(`✅ Loaded ${Object.keys(divisionCodes).length} division codes for base64 lookup`);
+} else {
+    console.warn(`⚠️ Division codes file not found at ${DIVISION_CODES_PATH} - Base64 lookup will be disabled`);
+}
+
+// Date utility functions
+function formatDate(date) {
+    const d = new Date(date);
+    const year = d.getFullYear();
+    const month = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+}
+
+function addDays(date, days) {
+    const result = new Date(date);
+    result.setDate(result.getDate() + days);
+    return result;
+}
+
+// Build rankings URL for base64 lookup
+function buildRankingsURL(divisionCode, startDate, endDate) {
+    const filters = {
+        date_range_start: formatDate(startDate),
+        date_range_end: formatDate(endDate),
+        weight_class: divisionCode
+    };
+
+    const jsonStr = JSON.stringify(filters);
+    const base64Encoded = Buffer.from(jsonStr).toString('base64');
+
+    return `https://usaweightlifting.sport80.com/public/rankings/all?filters=${encodeURIComponent(base64Encoded)}`;
+}
+
+// Scrape division rankings for base64 lookup
+async function scrapeDivisionRankings(page, divisionCode, startDate, endDate) {
+    try {
+        const url = buildRankingsURL(divisionCode, startDate, endDate);
+        console.log(`    🌐 Base64 lookup URL: ${url}`);
+
+        await page.goto(url, {
+            waitUntil: 'networkidle0',
+            timeout: 30000
+        });
+
+        // Wait for table to load
+        await page.waitForSelector('.v-data-table__wrapper tbody tr', { timeout: 15000 });
+        await new Promise(resolve => setTimeout(resolve, 2000));
+
+        // Extract athletes from the page
+        const pageAthletes = await page.evaluate(() => {
+            const headers = Array.from(document.querySelectorAll('.v-data-table__wrapper thead th'))
+                .map(th => th.textContent.trim().toLowerCase());
+
+            // Dynamic column mapping
+            const colMap = {
+                nationalRank: headers.findIndex(h => h.includes('rank')),
+                athleteName: headers.findIndex(h => h.includes('athlete') || h.includes('lifter') && !h.includes('age')),
+                lifterAge: headers.findIndex(h => h.includes('lifter') && h.includes('age') || h.includes('comp') && h.includes('age') && !h.includes('category')),
+                club: headers.findIndex(h => h.includes('club') || h.includes('team')),
+                liftDate: headers.findIndex(h => h.includes('date')),
+                level: headers.findIndex(h => h.includes('level')),
+                wso: headers.findIndex(h => h.includes('wso') || h.includes('lws') || h.includes('state')),
+                total: headers.findIndex(h => h.includes('total')),
+                gender: headers.findIndex(h => h.includes('gender'))
+            };
+
+            // Fallbacks
+            if (colMap.nationalRank === -1) colMap.nationalRank = 0;
+            if (colMap.athleteName === -1) colMap.athleteName = 3;
+            if (colMap.club === -1) colMap.club = 6;
+            if (colMap.liftDate === -1) colMap.liftDate = 9;
+            if (colMap.level === -1) colMap.level = 11;
+            if (colMap.wso === -1) colMap.wso = 12;
+
+            const rows = Array.from(document.querySelectorAll('.v-data-table__wrapper tbody tr'));
+
+            return rows.map(row => {
+                const cells = Array.from(row.querySelectorAll('td'));
+                const cellTexts = cells.map(cell => cell.textContent?.trim() || '');
+
+                if (cellTexts.length < 5) return null;
+
+                const rawAge = colMap.lifterAge > -1 ? cellTexts[colMap.lifterAge] : '';
+                const numericAge = rawAge.match(/\d{1,3}/)?.[0] || '';
+
+                // Extract internal_id from the athlete name link
+                let internalId = null;
+                if (colMap.athleteName > -1) {
+                    const nameCell = cells[colMap.athleteName];
+                    const link = nameCell.querySelector('a[href*="/member/"]');
+                    if (link) {
+                        const href = link.getAttribute('href');
+                        // Extract ID from URLs like /public/rankings/member/12345
+                        const match = href.match(/\/member\/(\d+)/);
+                        if (match) {
+                            internalId = parseInt(match[1]);
+                        }
+                    }
+                }
+
+                return {
+                    nationalRank: colMap.nationalRank > -1 ? cellTexts[colMap.nationalRank] : '',
+                    athleteName: colMap.athleteName > -1 ? cellTexts[colMap.athleteName] : '',
+                    internalId: internalId,
+                    lifterAge: numericAge,
+                    club: colMap.club > -1 ? cellTexts[colMap.club] : '',
+                    liftDate: colMap.liftDate > -1 ? cellTexts[colMap.liftDate] : '',
+                    level: colMap.level > -1 ? cellTexts[colMap.level] : '',
+                    wso: colMap.wso > -1 ? cellTexts[colMap.wso] : '',
+                    total: colMap.total > -1 ? cellTexts[colMap.total] : '',
+                    gender: colMap.gender > -1 ? cellTexts[colMap.gender] : ''
+                };
+            }).filter(a => a && a.athleteName);
+        });
+
+        console.log(`    ✅ Base64 lookup found ${pageAthletes.length} athletes`);
+        return pageAthletes;
+
+    } catch (error) {
+        console.log(`    ❌ Error in base64 lookup: ${error.message}`);
+        return [];
+    }
+}
+
+// Perform base64 lookup fallback for athletes missing internal_ids
+async function performBase64LookupFallback(page, filePath) {
+    console.log('🔍 Starting base64 lookup fallback for athletes missing internal_ids...');
+    
+    if (Object.keys(divisionCodes).length === 0) {
+        console.log('⚠️ No division codes available - skipping base64 lookup fallback');
+        return;
+    }
+
+    // Read the current CSV file to find athletes missing internal_ids
+    if (!fs.existsSync(filePath)) {
+        console.log('⚠️ CSV file not found - skipping base64 lookup fallback');
+        return;
+    }
+
+    const csvContent = fs.readFileSync(filePath, 'utf8');
+    const lines = csvContent.split('\n').filter(line => line.trim());
+    
+    if (lines.length < 2) {
+        console.log('⚠️ No athlete data found - skipping base64 lookup fallback');
+        return;
+    }
+
+    const headers = lines[0].split('|');
+    const internalIdIndex = headers.findIndex(h => h.trim() === 'Internal_ID');
+    const nameIndex = headers.findIndex(h => h.trim() === 'Name' || h.includes('Name'));
+    const ageCategoryIndex = headers.findIndex(h => h.trim() === 'Age Category');
+    const weightClassIndex = headers.findIndex(h => h.trim() === 'Weight Class');
+
+    if (internalIdIndex === -1 || nameIndex === -1) {
+        console.log('⚠️ Required columns not found - skipping base64 lookup fallback');
+        return;
+    }
+
+    // Find athletes missing internal_ids
+    const athletesNeedingLookup = [];
+    for (let i = 1; i < lines.length; i++) {
+        const cells = lines[i].split('|');
+        const internalId = cells[internalIdIndex]?.trim();
+        
+        if (!internalId || internalId === 'null' || internalId === '') {
+            const athleteName = cells[nameIndex]?.trim();
+            const ageCategory = ageCategoryIndex > -1 ? cells[ageCategoryIndex]?.trim() : '';
+            const weightClass = weightClassIndex > -1 ? cells[weightClassIndex]?.trim() : '';
+            
+            if (athleteName) {
+                athletesNeedingLookup.push({
+                    lineIndex: i,
+                    name: athleteName,
+                    ageCategory: ageCategory,
+                    weightClass: weightClass,
+                    originalLine: lines[i]
+                });
+            }
+        }
+    }
+
+    console.log(`📊 Found ${athletesNeedingLookup.length} athletes missing internal_ids`);
+
+    if (athletesNeedingLookup.length === 0) {
+        return;
+    }
+
+    // Attempt base64 lookup for missing athletes
+    let enrichedCount = 0;
+    const updatedLines = [...lines];
+
+    // Create a reasonable date range for lookup (last 2 years)
+    const endDate = new Date();
+    const startDate = addDays(endDate, -730); // 2 years back
+
+    for (const athlete of athletesNeedingLookup.slice(0, 5)) { // Limit to first 5 to avoid overwhelming the system
+        console.log(`🔍 Attempting base64 lookup for: ${athlete.name}`);
+        
+        // Try to find a matching division code
+        let matchingDivisionCode = null;
+        const searchKey = `${athlete.ageCategory} ${athlete.weightClass}`.trim();
+        
+        // Look for exact match first
+        if (divisionCodes[searchKey]) {
+            matchingDivisionCode = divisionCodes[searchKey];
+        } else {
+            // Try partial matches
+            for (const [divisionName, code] of Object.entries(divisionCodes)) {
+                if (divisionName.includes(athlete.ageCategory) && divisionName.includes(athlete.weightClass)) {
+                    matchingDivisionCode = code;
+                    break;
+                }
+            }
+        }
+
+        if (!matchingDivisionCode) {
+            console.log(`    ⚠️ No matching division code found for ${searchKey}`);
+            continue;
+        }
+
+        try {
+            const scrapedAthletes = await scrapeDivisionRankings(page, matchingDivisionCode, startDate, endDate);
+            
+            // Look for matching athlete by name
+            const matchingAthlete = scrapedAthletes.find(scraped => 
+                scraped.athleteName.toLowerCase().includes(athlete.name.toLowerCase()) ||
+                athlete.name.toLowerCase().includes(scraped.athleteName.toLowerCase())
+            );
+
+            if (matchingAthlete && matchingAthlete.internalId) {
+                console.log(`    ✅ Found internal_id ${matchingAthlete.internalId} for ${athlete.name}`);
+                
+                // Update the line with the found internal_id
+                const cells = athlete.originalLine.split('|');
+                cells[internalIdIndex] = matchingAthlete.internalId.toString();
+                updatedLines[athlete.lineIndex] = cells.join('|');
+                enrichedCount++;
+            } else {
+                console.log(`    ❌ No matching athlete found in base64 lookup for ${athlete.name}`);
+            }
+
+            // Respectful delay between lookups
+            await new Promise(resolve => setTimeout(resolve, 1000));
+
+        } catch (error) {
+            console.log(`    ❌ Base64 lookup failed for ${athlete.name}: ${error.message}`);
+        }
+    }
+
+    // Write updated CSV if any athletes were enriched
+    if (enrichedCount > 0) {
+        const updatedCsv = updatedLines.join('\n');
+        fs.writeFileSync(filePath, updatedCsv);
+        console.log(`✅ Successfully enriched ${enrichedCount} athletes with internal_ids via base64 lookup`);
+    } else {
+        console.log('ℹ️ No athletes were enriched via base64 lookup');
+    }
+}
 
 async function scrapeOneMeet(meetNumber, filePath){
     let baseUrl = 'https://usaweightlifting.sport80.com/public/rankings/results/'
@@ -49,6 +317,9 @@ async function scrapeOneMeet(meetNumber, filePath){
 			// Replace the combined "Age Category" header with separate headers
 			tableHeaderData.splice(2, 1, 'Age Category', 'Weight Class');
 		}
+		
+		// Add Internal_ID column header
+		tableHeaderData.push('Internal_ID');
     
 		let headerCSV = tableHeaderData.join('|');
 		headerCSV += '\n'
@@ -78,6 +349,13 @@ async function scrapeOneMeet(meetNumber, filePath){
     // console.log('getting resourses...')
     // console.log(await getPageData())
     // console.log('done scraping')
+
+    // Perform base64 lookup fallback for athletes missing internal_ids
+    try {
+        await performBase64LookupFallback(page, filePath);
+    } catch (error) {
+        console.log('⚠️ Base64 lookup fallback failed:', error.message);
+    }
 
     await browser.close();
 }
