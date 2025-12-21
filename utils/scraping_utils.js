@@ -12,10 +12,27 @@ async function getAthletesOnPage(athletesOnPage, page , filePath){
         let athleteData = await page.evaluate((index)=>{
             let selector = ".data-table div div.v-data-table div.v-data-table__wrapper table tbody tr:nth-of-type("+ index +") td > div"
             let elArr = Array.from(document.querySelectorAll(`${selector}`))
+            
+            // Extract internal_id from athlete name link (first column)
+            let internal_id = null;
+            let nameSelector = ".data-table div div.v-data-table div.v-data-table__wrapper table tbody tr:nth-of-type("+ index +") td:first-child a";
+            let nameLink = document.querySelector(nameSelector);
+            if (nameLink && nameLink.href) {
+                // Match pattern /member/{id} in the URL
+                let memberMatch = nameLink.href.match(/\/member\/(\d+)/);
+                if (memberMatch) {
+                    internal_id = parseInt(memberMatch[1]);
+                }
+            }
+            
             elArr = elArr.map((x)=>{
                 let el = x.textContent.replace('|', ',')
                 return  el.trim()
             })
+            
+            // Add internal_id to the athlete data array
+            elArr.push(internal_id);
+            
             return elArr
         },i)
         
