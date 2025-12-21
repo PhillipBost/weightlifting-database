@@ -208,8 +208,10 @@ async function performBase64LookupFallback(page, filePath) {
     const endDate = new Date();
     const startDate = addDays(endDate, -730); // 2 years back
 
-    for (const athlete of athletesNeedingLookup.slice(0, 5)) { // Limit to first 5 to avoid overwhelming the system
-        console.log(`🔍 Attempting base64 lookup for: ${athlete.name}`);
+    console.log(`🔍 Attempting base64 lookup for ${athletesNeedingLookup.length} athletes missing internal_ids...`);
+
+    for (const [athleteIndex, athlete] of athletesNeedingLookup.entries()) {
+        console.log(`🔍 Base64 lookup ${athleteIndex + 1}/${athletesNeedingLookup.length}: ${athlete.name}`);
         
         // Try to find a matching division code
         let matchingDivisionCode = null;
@@ -254,8 +256,8 @@ async function performBase64LookupFallback(page, filePath) {
                 console.log(`    ❌ No matching athlete found in base64 lookup for ${athlete.name}`);
             }
 
-            // Respectful delay between lookups
-            await new Promise(resolve => setTimeout(resolve, 1000));
+            // Respectful delay between lookups (increased to be more server-friendly)
+            await new Promise(resolve => setTimeout(resolve, 1500));
 
         } catch (error) {
             console.log(`    ❌ Base64 lookup failed for ${athlete.name}: ${error.message}`);
@@ -266,10 +268,16 @@ async function performBase64LookupFallback(page, filePath) {
     if (enrichedCount > 0) {
         const updatedCsv = updatedLines.join('\n');
         fs.writeFileSync(filePath, updatedCsv);
-        console.log(`✅ Successfully enriched ${enrichedCount} athletes with internal_ids via base64 lookup`);
+        console.log(`✅ Successfully enriched ${enrichedCount}/${athletesNeedingLookup.length} athletes with internal_ids via base64 lookup`);
     } else {
-        console.log('ℹ️ No athletes were enriched via base64 lookup');
+        console.log(`ℹ️ No athletes were enriched via base64 lookup (0/${athletesNeedingLookup.length} attempts successful)`);
     }
+    
+    // Summary of identification coverage
+    const totalAthletes = lines.length - 1; // Subtract header
+    const athletesWithIds = totalAthletes - athletesNeedingLookup.length + enrichedCount;
+    console.log(`📊 Final internal_id coverage: ${athletesWithIds}/${totalAthletes} athletes (${Math.round(athletesWithIds/totalAthletes*100)}%)`);
+    console.log(`📊 Athletes requiring name-only matching: ${totalAthletes - athletesWithIds}`);
 }
 
 async function scrapeOneMeet(meetNumber, filePath){
