@@ -4,7 +4,6 @@ const { createClient } = require('@supabase/supabase-js');
 const fs = require('fs');
 const Papa = require('papaparse');
 const path = require('path');
-const puppeteer = require('puppeteer');
 
 // Initialize Supabase client
 const supabase = createClient(
@@ -14,9 +13,6 @@ const supabase = createClient(
 
 // Import scraper function - adjust path as needed for GitHub
 const { scrapeOneMeet } = require('./scrapeOneMeet.js');
-
-// Import Sport80 search function for enhanced matching
-const { searchSport80ForLifter } = require('./searchSport80ForLifter.js');
 
 // Extract meet internal_id from Sport80 URL
 function extractMeetInternalId(url) {
@@ -291,163 +287,6 @@ async function scrapeAndImportMeetResults(newMeetIds, meetings) {
     return { processed: processedResults, errors: errorCount };
 }
 
-// REAL Sport80 member page verification using puppeteer
-async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId) {
-    // Get target meet information for enhanced matching
-    const { data: targetMeet, error: meetError } = await supabase
-        .from('usaw_meets')
-        .select('meet_id, meet_internal_id, Meet, Date')
-        .eq('meet_id', targetMeetId)
-        .single();
-    
-    if (meetError) {
-        console.log(`    ❌ Error getting meet info: ${meetError.message}`);
-        return false;
-    }
-
-    const memberUrl = `https://usaweightlifting.sport80.com/public/rankings/member/${lifterInternalId}`;
-    console.log(`    🌐 Visiting: ${memberUrl}`);
-    console.log(`    🎯 Looking for: "${targetMeet.Meet}" on ${targetMeet.Date}`);
-
-    let browser;
-    try {
-        browser = await puppeteer.launch({
-            headless: true,
-            args: [
-                '--no-sandbox',
-                '--disable-setuid-sandbox',
-                '--disable-dev-shm-usage',
-                '--disable-gpu',
-                '--no-first-run',
-                '--disable-extensions'
-            ]
-        });
-
-        const page = await browser.newPage();
-        await page.setViewport({ width: 1500, height: 1000 });
-
-        // Navigate to the member page
-        await page.goto(memberUrl, {
-            waitUntil: 'networkidle0',
-            timeout: 30000
-        });
-
-        // Wait for the page to load and extract the page content
-        const pageData = await page.evaluate(() => {
-            // Extract meet information from the page
-            const meetRows = Array.from(document.querySelectorAll('.data-table div div.v-data-table div.v-data-table__wrapper table tbody tr'));
-
-            const meetInfo = meetRows.map(row => {
-                const cells = Array.from(row.querySelectorAll('td'));
-                if (cells.length < 2) return null;
-
-                const meetName = cells[0]?.textContent?.trim();
-                const meetDate = cells[1]?.textContent?.trim();
-
-                return {
-                    name: meetName,
-                    date: meetDate
-                };
-            }).filter(Boolean);
-
-            return meetInfo;
-        });
-
-        // Match by meet name and date
-        const foundMeet = pageData.find(meet => {
-            const nameMatch = meet.name === targetMeet.Meet;
-            const dateMatch = meet.date === targetMeet.Date;
-            return nameMatch && dateMatch;
-        });
-
-        if (foundMeet) {
-            console.log(`    ✅ VERIFIED: "${foundMeet.name}" on ${foundMeet.date} found in athlete's history`);
-            return true;
-        } else {
-            console.log(`    ❌ NOT FOUND: "${targetMeet.Meet}" on ${targetMeet.Date} not in athlete's history`);
-            return false;
-        }
-
-    } catch (error) {
-        console.log(`    ❌ Error accessing member page: ${error.message}`);
-        return false;
-    } finally {
-        if (browser) {
-            await browser.close();
-        }
-    }
-}
-
-// Tier 2 verification for athlete disambiguation
-async function runSport80MemberUrlVerification(lifterName, potentialLifterIds, targetMeetId) {
-    console.log(`  🔍 Tier 2: Running Sport80 member URL verification for ${potentialLifterIds.length} candidates...`);
-
-    for (const lifterId of potentialLifterIds) {
-        try {
-            // Get the lifter's internal_id to build the member URL
-            const { data: lifter, error } = await supabase
-                .from('usaw_lifters')
-                .select('internal_id, athlete_name')
-                .eq('lifter_id', lifterId)
-                .single();
-
-            if (error) {
-                console.log(`    ❌ Error fetching lifter ${lifterId}: ${error.message}`);
-                continue;
-            }
-
-            if (lifter?.internal_id) {
-                console.log(`    🔍 Checking lifter ${lifterId} (internal_id: ${lifter.internal_id})...`);
-
-                // REAL verification: Visit the member page and check if they participated in target meet
-                const verified = await verifyLifterParticipationInMeet(lifter.internal_id, targetMeetId);
-
-                if (verified) {
-                    console.log(`    ✅ CONFIRMED: Using lifter ${lifterId} for meet ${targetMeetId}`);
-                    return lifterId;
-                }
-            } else {
-                console.log(`    🔍 Lifter ${lifterId} (${lifter.athlete_name}) has no internal_id - attempting Sport80 search...`);
-                
-                // For lifters without internal_ids, search Sport80 to find their internal_id
-                const foundInternalId = await searchSport80ForLifter(lifter.athlete_name);
-                
-                if (foundInternalId) {
-                    console.log(`    🎯 Found internal_id ${foundInternalId} for ${lifter.athlete_name} via Sport80 search`);
-                    
-                    // Verify this lifter participated in the target meet
-                    const verified = await verifyLifterParticipationInMeet(foundInternalId, targetMeetId);
-                    
-                    if (verified) {
-                        // Update the lifter record with the found internal_id
-                        const { error: updateError } = await supabase
-                            .from('usaw_lifters')
-                            .update({ internal_id: foundInternalId })
-                            .eq('lifter_id', lifterId);
-                            
-                        if (!updateError) {
-                            console.log(`    ✅ CONFIRMED & ENRICHED: Using lifter ${lifterId} for meet ${targetMeetId} (added internal_id ${foundInternalId})`);
-                        } else {
-                            console.log(`    ✅ CONFIRMED: Using lifter ${lifterId} for meet ${targetMeetId} (internal_id update failed: ${updateError.message})`);
-                        }
-                        
-                        return lifterId;
-                    }
-                } else {
-                    console.log(`    ❌ Could not find ${lifter.athlete_name} in Sport80 search`);
-                }
-            }
-
-        } catch (error) {
-            console.log(`    ❌ Error checking lifter ${lifterId}: ${error.message}`);
-            continue;
-        }
-    }
-
-    console.log(`    ❌ No matches found in Tier 2 verification`);
-    return null;
-}
-
 // Meet results import functions (adapted from meet_file_importer.js)
 async function findOrCreateLifter(lifterName, additionalData = {}) {
     const cleanName = lifterName?.toString().trim();
@@ -455,113 +294,36 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
         throw new Error('Lifter name is required');
     }
 
-    console.log(`  🔍 Looking for lifter: "${cleanName}"`);
-
-    // Find ALL existing lifters by name (not just one)
-    const { data: existingLifters, error: findError } = await supabase
+    // First try to find existing lifter by name
+    const { data: existing, error: findError } = await supabase
         .from('usaw_lifters')
-        .select('lifter_id, athlete_name, internal_id')
-        .eq('athlete_name', cleanName);
+        .select('lifter_id, athlete_name')
+        .eq('athlete_name', cleanName)
+        .maybeSingle();
 
     if (findError) {
         throw new Error(`Error finding lifter: ${findError.message}`);
     }
 
-    const lifterIds = existingLifters ? existingLifters.map(l => l.lifter_id) : [];
-
-    if (lifterIds.length === 0) {
-        // No existing lifter found - create new one
-        console.log(`  ➕ Creating new lifter: ${cleanName}`);
-        
-        const { data: newLifter, error: createError } = await supabase
-            .from('usaw_lifters')
-            .insert({
-                athlete_name: cleanName,
-                membership_number: additionalData.membership_number || null,
-                internal_id: additionalData.internal_id || null
-            })
-            .select()
-            .single();
-
-        if (createError) {
-            throw new Error(`Error creating lifter: ${createError.message}`);
-        }
-
-        console.log(`  ✅ Created new lifter: ${cleanName} (ID: ${newLifter.lifter_id})`);
-        return newLifter;
+    if (existing) {
+        return existing;
     }
 
-    if (lifterIds.length === 1) {
-        // Single match found - use it
-        const existingLifter = existingLifters[0];
-        console.log(`  ✅ Found 1 existing lifter: ${cleanName} (ID: ${lifterIds[0]})`);
-
-        // If we have a target meet, verify participation using Tier 2
-        if (additionalData.targetMeetId) {
-            const verifiedLifterId = await runSport80MemberUrlVerification(cleanName, lifterIds, additionalData.targetMeetId);
-
-            if (verifiedLifterId) {
-                const verifiedLifter = existingLifters.find(l => l.lifter_id === verifiedLifterId);
-                console.log(`  ✅ Verified lifter: ${cleanName} (ID: ${verifiedLifterId})`);
-                return verifiedLifter;
-            } else {
-                // Verification failed - create new lifter as fallback
-                console.log(`  ⚠️ Could not verify lifter ${cleanName} - creating new record`);
-                
-                const { data: newLifter, error: createError } = await supabase
-                    .from('usaw_lifters')
-                    .insert({
-                        athlete_name: cleanName,
-                        membership_number: additionalData.membership_number || null,
-                        internal_id: additionalData.internal_id || null
-                    })
-                    .select()
-                    .single();
-
-                if (createError) {
-                    throw new Error(`Error creating fallback lifter: ${createError.message}`);
-                }
-
-                console.log(`  ➕ Created fallback lifter: ${cleanName} (ID: ${newLifter.lifter_id})`);
-                return newLifter;
-            }
-        }
-
-        return existingLifter;
-    }
-
-    // Multiple matches found - use Tier 2 verification to disambiguate
-    console.log(`  ⚠️ Found ${lifterIds.length} existing lifters with name "${cleanName}" - disambiguating...`);
-
-    // If we have a target meet, use Tier 2 verification
-    if (additionalData.targetMeetId) {
-        const verifiedLifterId = await runSport80MemberUrlVerification(cleanName, lifterIds, additionalData.targetMeetId);
-
-        if (verifiedLifterId) {
-            const verifiedLifter = existingLifters.find(l => l.lifter_id === verifiedLifterId);
-            console.log(`  ✅ Verified via Tier 2: ${cleanName} (ID: ${verifiedLifterId})`);
-            return verifiedLifter;
-        }
-    }
-
-    // FALLBACK: If we can't disambiguate, create a new lifter record
-    console.log(`  ⚠️ Could not disambiguate lifter "${cleanName}" - ${lifterIds.length} candidates found but none verified - creating new record`);
-    
+    // Create new lifter (gender and birth_year now go in meet_results, not lifters)
     const { data: newLifter, error: createError } = await supabase
         .from('usaw_lifters')
         .insert({
             athlete_name: cleanName,
             membership_number: additionalData.membership_number || null,
-            internal_id: additionalData.internal_id || null
         })
         .select()
         .single();
 
     if (createError) {
-        throw new Error(`Error creating disambiguation fallback lifter: ${createError.message}`);
+        throw new Error(`Error creating lifter: ${createError.message}`);
     }
 
-    console.log(`  ➕ Created disambiguation fallback lifter: ${cleanName} (ID: ${newLifter.lifter_id})`);
+    console.log(`  ➕ Created new lifter: ${cleanName}`);
     return newLifter;
 }
 
@@ -666,15 +428,8 @@ async function processMeetCsvFile(csvFilePath, meetId, meetName) {
         // Process each lifter result
         for (const [index, row] of validResults.entries()) {
             try {
-                // Find or create lifter with enhanced matching
-                const lifter = await findOrCreateLifter(row.Lifter, {
-                    targetMeetId: meetId,
-                    eventDate: row.Date?.trim() || null,
-                    ageCategory: row['Age Category']?.trim() || null,
-                    weightClass: row['Weight Class']?.trim() || null,
-                    membership_number: row['Membership Number']?.trim() || null,
-                    internal_id: row['Internal_ID'] ? parseInt(row['Internal_ID']) : null
-                });
+                // Find or create lifter
+                const lifter = await findOrCreateLifter(row.Lifter);
 
                 // Create meet result with lifter data for calculations
                 const resultData = {
@@ -964,6 +719,5 @@ if (require.main === module) {
 module.exports = {
     main,
     readCSVFile,
-    upsertMeetsToDatabase,
-    findOrCreateLifter
+    upsertMeetsToDatabase
 };

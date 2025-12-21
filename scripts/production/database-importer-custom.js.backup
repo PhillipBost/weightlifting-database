@@ -16,9 +16,6 @@ const supabase = createClient(
 // Import scraper function - adjust path as needed for GitHub
 const { scrapeOneMeet } = require('./scrapeOneMeet.js');
 
-// Import Sport80 search function for Tier 2 verification
-const { searchSport80ForLifter } = require('./searchSport80ForLifter.js');
-
 // Load division codes for Base64 URL lookup
 const DIVISION_CODES_PATH = path.join(__dirname, '../../division_base64_codes.json');
 let divisionCodes = {};
@@ -181,21 +178,8 @@ async function upsertMeetsToDatabase(meetings) {
 
 // REAL Sport80 member page verification using puppeteer
 async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId) {
-    // Get target meet information for enhanced matching
-    const { data: targetMeet, error: meetError } = await supabase
-        .from('usaw_meets')
-        .select('meet_id, meet_internal_id, Meet, Date')
-        .eq('meet_id', targetMeetId)
-        .single();
-    
-    if (meetError) {
-        console.log(`    ❌ Error getting meet info: ${meetError.message}`);
-        return false;
-    }
-
     const memberUrl = `https://usaweightlifting.sport80.com/public/rankings/member/${lifterInternalId}`;
     console.log(`    🌐 Visiting: ${memberUrl}`);
-    console.log(`    🎯 Looking for: "${targetMeet.Meet}" on ${targetMeet.Date}`);
 
     let browser;
     try {
@@ -232,27 +216,37 @@ async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId) {
                 const meetName = cells[0]?.textContent?.trim();
                 const meetDate = cells[1]?.textContent?.trim();
 
+                // Extract meet ID from the URL if available
+                const link = cells[0]?.querySelector('a');
+                const meetUrl = link?.getAttribute('href');
+                let meetId = null;
+
+                if (meetUrl) {
+                    const match = meetUrl.match(/\/rankings\/results\/(\d+)/);
+                    if (match) {
+                        meetId = parseInt(match[1]);
+                    }
+                }
+
                 return {
                     name: meetName,
-                    date: meetDate
+                    date: meetDate,
+                    meetId: meetId,
+                    url: meetUrl
                 };
             }).filter(Boolean);
 
             return meetInfo;
         });
 
-        // Match by meet name and date
-        const foundMeet = pageData.find(meet => {
-            const nameMatch = meet.name === targetMeet.Meet;
-            const dateMatch = meet.date === targetMeet.Date;
-            return nameMatch && dateMatch;
-        });
+        // Check if the target meet ID appears in the athlete's meet history
+        const foundMeet = pageData.find(meet => meet.meetId === targetMeetId);
 
         if (foundMeet) {
-            console.log(`    ✅ VERIFIED: "${foundMeet.name}" on ${foundMeet.date} found in athlete's history`);
+            console.log(`    ✅ VERIFIED: Lifter participated in meet ${targetMeetId} (${foundMeet.name})`);
             return true;
         } else {
-            console.log(`    ❌ NOT FOUND: "${targetMeet.Meet}" on ${targetMeet.Date} not in athlete's history`);
+            console.log(`    ❌ NOT FOUND: Meet ${targetMeetId} not in athlete's meet history`);
             return false;
         }
 
@@ -629,8 +623,6 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
 
         if (targetAthlete) {
             console.log(`    ✅ Tier 1 VERIFIED: "${lifterName}" found in division rankings`);
-            console.log(`    🔍 DEBUG: targetAthlete.internalId = ${targetAthlete.internalId}`);
-            console.log(`    🔍 DEBUG: potentialLifterIds = [${potentialLifterIds.join(', ')}]`);
 
             // Try to disambiguate using internal_id if we have it
             if (potentialLifterIds.length === 1) {
@@ -653,8 +645,6 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
                     .eq('internal_id', targetAthlete.internalId)
                     .single();
 
-                console.log(`    🔍 DEBUG: Query result - error: ${error?.message || 'none'}, matchedLifter: ${JSON.stringify(matchedLifter)}`);
-
                 if (!error && matchedLifter) {
                     console.log(`    ✅ Disambiguated via internal_id: Using lifter ${matchedLifter.lifter_id}`);
                     return {
@@ -669,8 +659,6 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
                     .select('lifter_id, internal_id')
                     .in('lifter_id', potentialLifterIds)
                     .is('internal_id', null);
-
-                console.log(`    🔍 DEBUG: Null internal_id candidates: ${JSON.stringify(nullInternalIdCandidates)}`);
 
                 if (!nullError && nullInternalIdCandidates && nullInternalIdCandidates.length === 1) {
                     // Only one candidate has null internal_id - assume it's them and populate it
@@ -687,8 +675,6 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
                         scrapedData: targetAthlete
                     };
                 }
-            } else {
-                console.log(`    ⚠️ DEBUG: No internal_id available from scraped data for disambiguation`);
             }
 
             // Can't disambiguate - fall back to Tier 2
@@ -777,118 +763,16 @@ async function runSport80MemberUrlVerification(lifterName, potentialLifterIds, t
 }
 
 // Lifter management with proper foreign key resolution and two-tier verification
-// Enhanced logging utility for athlete matching
-class MatchingLogger {
-    constructor(lifterName, additionalData = {}) {
-        this.lifterName = lifterName;
-        this.additionalData = additionalData;
-        this.sessionId = Date.now() + '-' + Math.random().toString(36).substr(2, 9);
-        this.steps = [];
-        this.startTime = Date.now();
-    }
-
-    log(step, data) {
-        const logEntry = {
-            timestamp: new Date().toISOString(),
-            session_id: this.sessionId,
-            athlete_name: this.lifterName,
-            internal_id: this.additionalData.internal_id || null,
-            step: step,
-            ...data
-        };
-        
-        this.steps.push(logEntry);
-        
-        // Console output for immediate visibility
-        const prefix = this.getStepPrefix(step);
-        console.log(`${prefix} [${step}] ${data.message || JSON.stringify(data)}`);
-        
-        return logEntry;
-    }
-
-    getStepPrefix(step) {
-        const prefixes = {
-            'init': '🔍',
-            'internal_id_query': '🎯',
-            'internal_id_match': '✅',
-            'internal_id_conflict': '⚠️',
-            'internal_id_duplicate': '❌',
-            'name_query': '📝',
-            'name_match_single': '✅',
-            'name_match_multiple': '⚠️',
-            'name_match_none': '➕',
-            'enrichment': '🔄',
-            'tier1_verification': '🔍',
-            'tier2_verification': '🔍',
-            'disambiguation': '🎲',
-            'fallback_create': '➕',
-            'success': '✅',
-            'error': '❌'
-        };
-        return prefixes[step] || '📋';
-    }
-
-    getSummary() {
-        const duration = Date.now() - this.startTime;
-        return {
-            session_id: this.sessionId,
-            athlete_name: this.lifterName,
-            internal_id: this.additionalData.internal_id || null,
-            duration_ms: duration,
-            steps_count: this.steps.length,
-            steps: this.steps
-        };
-    }
-
-    logFinalResult(result, strategy) {
-        this.log('success', {
-            message: `Matching completed successfully`,
-            strategy: strategy,
-            lifter_id: result?.lifter_id || null,
-            matched_name: result?.athlete_name || null,
-            matched_internal_id: result?.internal_id || null,
-            duration_ms: Date.now() - this.startTime
-        });
-    }
-
-    logError(error, step = 'error') {
-        this.log(step, {
-            message: `Error occurred: ${error.message}`,
-            error_type: error.constructor.name,
-            stack: error.stack
-        });
-    }
-}
-
 async function findOrCreateLifter(lifterName, additionalData = {}) {
     const cleanName = lifterName?.toString().trim();
     if (!cleanName) {
         throw new Error('Lifter name is required');
     }
 
-    // Initialize structured logging
-    const logger = new MatchingLogger(cleanName, additionalData);
-    
-    logger.log('init', {
-        message: `Starting athlete matching process`,
-        athlete_name: cleanName,
-        internal_id: additionalData.internal_id || null,
-        target_meet_id: additionalData.targetMeetId || null,
-        event_date: additionalData.eventDate || null,
-        age_category: additionalData.ageCategory || null,
-        weight_class: additionalData.weightClass || null
-    });
-
     console.log(`  🔍 Looking for lifter: "${cleanName}"`);
     
     // Priority 1: If we have an internal_id, use it for matching first
     if (additionalData.internal_id) {
-        logger.log('internal_id_query', {
-            message: `Querying by internal_id: ${additionalData.internal_id}`,
-            internal_id: additionalData.internal_id,
-            query_type: 'internal_id_priority'
-        });
-        
         console.log(`  🎯 Checking internal_id: ${additionalData.internal_id}`);
         
         const { data: internalIdLifters, error: internalIdError } = await supabase
@@ -897,126 +781,51 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
             .eq('internal_id', additionalData.internal_id);
 
         if (internalIdError) {
-            logger.log('error', {
-                message: `Database error during internal_id query: ${internalIdError.message}`,
-                error_code: internalIdError.code,
-                query_type: 'internal_id_priority'
-            });
             console.log(`  ⚠️ Error checking internal_id: ${internalIdError.message}`);
-        } else {
-            logger.log('internal_id_query', {
-                message: `Internal_id query returned ${internalIdLifters?.length || 0} results`,
-                results_count: internalIdLifters?.length || 0,
-                results: internalIdLifters?.map(l => ({
-                    lifter_id: l.lifter_id,
-                    athlete_name: l.athlete_name,
-                    internal_id: l.internal_id
-                })) || []
-            });
-
-            if (internalIdLifters && internalIdLifters.length > 1) {
-                // Multiple lifters with same internal_id - this is a data integrity issue
-                logger.log('internal_id_duplicate', {
-                    message: `Data integrity issue: Multiple lifters found with same internal_id`,
-                    internal_id: additionalData.internal_id,
-                    duplicate_count: internalIdLifters.length,
-                    duplicates: internalIdLifters.map(l => ({
-                        lifter_id: l.lifter_id,
-                        athlete_name: l.athlete_name
-                    }))
-                });
-                
-                console.log(`  ❌ DUPLICATE DETECTION: Found ${internalIdLifters.length} lifters with internal_id ${additionalData.internal_id}`);
-                console.log(`  📋 Duplicate lifters: ${internalIdLifters.map(l => `${l.athlete_name} (ID: ${l.lifter_id})`).join(', ')}`);
-                
-                // Check if any of them match the current name
-                const nameMatch = internalIdLifters.find(l => l.athlete_name === cleanName);
-                if (nameMatch) {
-                    logger.logFinalResult(nameMatch, 'internal_id_with_name_disambiguation');
-                    console.log(`  ✅ Using name-matching duplicate: ${cleanName} (ID: ${nameMatch.lifter_id})`);
-                    return nameMatch;
-                } else {
-                    // No name match - log for manual resolution and continue with name-based matching
-                    logger.log('internal_id_conflict', {
-                        message: `No name match among duplicates, continuing with name-based matching`,
-                        expected_name: cleanName,
-                        found_names: internalIdLifters.map(l => l.athlete_name)
-                    });
-                    console.log(`  ⚠️ No name match among duplicates - continuing with name-based matching`);
-                }
-            } else if (internalIdLifters && internalIdLifters.length === 1) {
-                const existingLifter = internalIdLifters[0];
-                
-                // Check if names match
-                if (existingLifter.athlete_name === cleanName) {
-                    logger.logFinalResult(existingLifter, 'internal_id_exact_match');
-                    console.log(`  ✅ Found exact match by internal_id: ${cleanName} (ID: ${existingLifter.lifter_id})`);
-                    return existingLifter;
-                } else {
-                    // Internal_id matches but name doesn't - log conflict for manual resolution
-                    logger.log('internal_id_conflict', {
-                        message: `Internal_id exists but name mismatch`,
-                        internal_id: additionalData.internal_id,
-                        existing_name: existingLifter.athlete_name,
-                        requested_name: cleanName,
-                        existing_lifter_id: existingLifter.lifter_id
-                    });
-                    console.log(`  ⚠️ Internal_id conflict: ID ${additionalData.internal_id} exists for "${existingLifter.athlete_name}" but current name is "${cleanName}"`);
-                    // Continue with name-based matching as fallback
-                }
+        } else if (internalIdLifters && internalIdLifters.length > 1) {
+            // Multiple lifters with same internal_id - this is a data integrity issue
+            console.log(`  ❌ DUPLICATE DETECTION: Found ${internalIdLifters.length} lifters with internal_id ${additionalData.internal_id}`);
+            console.log(`  📋 Duplicate lifters: ${internalIdLifters.map(l => `${l.athlete_name} (ID: ${l.lifter_id})`).join(', ')}`);
+            
+            // Check if any of them match the current name
+            const nameMatch = internalIdLifters.find(l => l.athlete_name === cleanName);
+            if (nameMatch) {
+                console.log(`  ✅ Using name-matching duplicate: ${cleanName} (ID: ${nameMatch.lifter_id})`);
+                return nameMatch;
             } else {
-                logger.log('internal_id_query', {
-                    message: `No lifters found with internal_id ${additionalData.internal_id}`,
-                    internal_id: additionalData.internal_id,
-                    results_count: 0
-                });
+                // No name match - log for manual resolution and continue with name-based matching
+                console.log(`  ⚠️ No name match among duplicates - continuing with name-based matching`);
+            }
+        } else if (internalIdLifters && internalIdLifters.length === 1) {
+            const existingLifter = internalIdLifters[0];
+            
+            // Check if names match
+            if (existingLifter.athlete_name === cleanName) {
+                console.log(`  ✅ Found exact match by internal_id: ${cleanName} (ID: ${existingLifter.lifter_id})`);
+                return existingLifter;
+            } else {
+                // Internal_id matches but name doesn't - log conflict for manual resolution
+                console.log(`  ⚠️ Internal_id conflict: ID ${additionalData.internal_id} exists for "${existingLifter.athlete_name}" but current name is "${cleanName}"`);
+                // Continue with name-based matching as fallback
             }
         }
-    } else {
-        logger.log('init', {
-            message: `No internal_id provided, skipping internal_id matching`,
-            internal_id: null
-        });
     }
 
     // Find ALL existing lifters by name (not just one)
-    logger.log('name_query', {
-        message: `Querying by athlete name: "${cleanName}"`,
-        athlete_name: cleanName,
-        query_type: 'name_based'
-    });
-
     const { data: existingLifters, error: findError } = await supabase
         .from('usaw_lifters')
         .select('lifter_id, athlete_name, internal_id')
         .eq('athlete_name', cleanName);
 
     if (findError) {
-        logger.logError(new Error(`Error finding lifter: ${findError.message}`), 'name_query');
         throw new Error(`Error finding lifter: ${findError.message}`);
     }
 
     const lifterIds = existingLifters ? existingLifters.map(l => l.lifter_id) : [];
-    
-    logger.log('name_query', {
-        message: `Name query returned ${lifterIds.length} results`,
-        results_count: lifterIds.length,
-        results: existingLifters?.map(l => ({
-            lifter_id: l.lifter_id,
-            athlete_name: l.athlete_name,
-            internal_id: l.internal_id
-        })) || []
-    });
 
     if (lifterIds.length === 0) {
         // No existing lifter found - create new one
-        logger.log('name_match_none', {
-            message: `No existing lifter found, creating new record`,
-            athlete_name: cleanName,
-            action: 'create_new'
-        });
         console.log(`  ➕ Creating new lifter: ${cleanName}`);
-        
         const { data: newLifter, error: createError } = await supabase
             .from('usaw_lifters')
             .insert({
@@ -1028,11 +837,9 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
             .single();
 
         if (createError) {
-            logger.logError(new Error(`Error creating lifter: ${createError.message}`), 'name_match_none');
             throw new Error(`Error creating lifter: ${createError.message}`);
         }
 
-        logger.logFinalResult(newLifter, 'create_new');
         console.log(`  ✅ Created new lifter: ${cleanName} (ID: ${newLifter.lifter_id})`);
         return newLifter;
     }
@@ -1041,21 +848,7 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
         // Single match found - update with internal_id if we have it and they don't
         const existingLifter = existingLifters[0];
         
-        logger.log('name_match_single', {
-            message: `Single lifter found by name`,
-            lifter_id: existingLifter.lifter_id,
-            athlete_name: existingLifter.athlete_name,
-            existing_internal_id: existingLifter.internal_id,
-            provided_internal_id: additionalData.internal_id
-        });
-        
         if (additionalData.internal_id && !existingLifter.internal_id) {
-            logger.log('enrichment', {
-                message: `Attempting to enrich lifter with internal_id`,
-                lifter_id: existingLifter.lifter_id,
-                internal_id: additionalData.internal_id,
-                action: 'enrich_internal_id'
-            });
             console.log(`  🔄 Enriching lifter ${cleanName} with internal_id: ${additionalData.internal_id}`);
             
             // Check for conflicts: ensure no other lifter already has this internal_id
@@ -1066,21 +859,8 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
                 .neq('lifter_id', existingLifter.lifter_id);
                 
             if (conflictError) {
-                logger.log('error', {
-                    message: `Error checking for internal_id conflicts: ${conflictError.message}`,
-                    error_code: conflictError.code,
-                    action: 'conflict_check'
-                });
                 console.log(`  ⚠️ Error checking for internal_id conflicts: ${conflictError.message}`);
             } else if (conflictCheck && conflictCheck.length > 0) {
-                logger.log('internal_id_conflict', {
-                    message: `Internal_id conflict detected during enrichment`,
-                    internal_id: additionalData.internal_id,
-                    conflicting_lifter_id: conflictCheck[0].lifter_id,
-                    conflicting_athlete_name: conflictCheck[0].athlete_name,
-                    target_lifter_id: existingLifter.lifter_id,
-                    action: 'enrichment_blocked'
-                });
                 console.log(`  ❌ Internal_id conflict detected: ${additionalData.internal_id} already assigned to ${conflictCheck[0].athlete_name} (ID: ${conflictCheck[0].lifter_id})`);
                 console.log(`  ⚠️ Cannot enrich ${cleanName} (ID: ${existingLifter.lifter_id}) - manual resolution required`);
             } else {
@@ -1093,39 +873,20 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
                     .single();
                     
                 if (updateError) {
-                    logger.log('error', {
-                        message: `Failed to update internal_id: ${updateError.message}`,
-                        error_code: updateError.code,
-                        action: 'enrichment_update'
-                    });
                     console.log(`  ⚠️ Failed to update internal_id: ${updateError.message}`);
                 } else {
-                    logger.logFinalResult(updatedLifter, 'single_match_enriched');
                     console.log(`  ✅ Updated lifter with internal_id: ${cleanName} (ID: ${existingLifter.lifter_id})`);
                     return updatedLifter;
                 }
             }
         } else if (additionalData.internal_id && existingLifter.internal_id && existingLifter.internal_id !== additionalData.internal_id) {
             // Existing lifter has different internal_id - log mismatch for manual resolution
-            logger.log('internal_id_conflict', {
-                message: `Internal_id mismatch detected`,
-                lifter_id: existingLifter.lifter_id,
-                existing_internal_id: existingLifter.internal_id,
-                provided_internal_id: additionalData.internal_id,
-                action: 'mismatch_detected'
-            });
             console.log(`  ⚠️ Internal_id mismatch for ${cleanName}: existing=${existingLifter.internal_id}, new=${additionalData.internal_id}`);
         }
         
         console.log(`  ✅ Found 1 existing lifter: ${cleanName} (ID: ${lifterIds[0]})`);
 
         // Tier 1: Base64 URL lookup protocol
-        logger.log('tier1_verification', {
-            message: `Starting Tier 1 verification for single match`,
-            lifter_id: existingLifter.lifter_id,
-            verification_type: 'base64_url_lookup'
-        });
-
         const tier1Result = await runBase64UrlLookupProtocol(
             cleanName,
             lifterIds,
@@ -1137,7 +898,6 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
 
         if (tier1Result) {
             const verifiedLifter = existingLifters.find(l => l.lifter_id === tier1Result.lifterId);
-            logger.logFinalResult(verifiedLifter, 'tier1_verified');
             console.log(`  ✅ Verified via Tier 1: ${cleanName} (ID: ${tier1Result.lifterId})`);
             // Attach scraped data for enrichment
             verifiedLifter.scrapedData = tier1Result.scrapedData;
@@ -1145,28 +905,15 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
         }
 
         // Tier 2: Sport80 member URL verification (fallback)
-        logger.log('tier2_verification', {
-            message: `Starting Tier 2 verification`,
-            lifter_id: existingLifter.lifter_id,
-            verification_type: 'sport80_member_url'
-        });
-
         const verifiedLifterId = await runSport80MemberUrlVerification(cleanName, lifterIds, additionalData.targetMeetId);
 
         if (verifiedLifterId) {
             const verifiedLifter = existingLifters.find(l => l.lifter_id === verifiedLifterId);
-            logger.logFinalResult(verifiedLifter, 'tier2_verified');
             console.log(`  ✅ Verified lifter: ${cleanName} (ID: ${verifiedLifterId})`);
             return verifiedLifter;
         } else {
             // FALLBACK: Create new lifter if verification fails but we have valid data
-            logger.log('fallback_create', {
-                message: `Verification failed, creating new lifter record`,
-                reason: 'verification_failed',
-                original_lifter_id: existingLifter.lifter_id
-            });
             console.log(`  ⚠️ Could not verify lifter ${cleanName} through two-tier verification - creating new record`);
-            
             const { data: newLifter, error: createError } = await supabase
                 .from('usaw_lifters')
                 .insert({
@@ -1178,39 +925,21 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
                 .single();
 
             if (createError) {
-                logger.logError(new Error(`Error creating fallback lifter: ${createError.message}`), 'fallback_create');
                 throw new Error(`Error creating fallback lifter: ${createError.message}`);
             }
 
-            logger.logFinalResult(newLifter, 'verification_fallback');
             console.log(`  ➕ Created fallback lifter: ${cleanName} (ID: ${newLifter.lifter_id})`);
             return newLifter;
         }
     }
 
     // Multiple matches found - use two-tier verification to disambiguate
-    logger.log('name_match_multiple', {
-        message: `Multiple lifters found with same name, starting disambiguation`,
-        matches_count: lifterIds.length,
-        matches: existingLifters.map(l => ({
-            lifter_id: l.lifter_id,
-            athlete_name: l.athlete_name,
-            internal_id: l.internal_id
-        }))
-    });
     console.log(`  ⚠️ Found ${lifterIds.length} existing lifters with name "${cleanName}" - disambiguating...`);
 
     // If we have internal_id, try to use it for disambiguation first
     if (additionalData.internal_id) {
-        logger.log('disambiguation', {
-            message: `Attempting disambiguation via internal_id`,
-            internal_id: additionalData.internal_id,
-            candidates_count: existingLifters.length
-        });
-
         const internalIdMatch = existingLifters.find(l => l.internal_id === additionalData.internal_id);
         if (internalIdMatch) {
-            logger.logFinalResult(internalIdMatch, 'internal_id_disambiguation');
             console.log(`  ✅ Disambiguated via internal_id: ${cleanName} (ID: ${internalIdMatch.lifter_id})`);
             return internalIdMatch;
         }
@@ -1220,12 +949,6 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
         if (nullInternalIdLifters.length === 1) {
             // Only one candidate without internal_id - enrich it
             const candidateLifter = nullInternalIdLifters[0];
-            
-            logger.log('enrichment', {
-                message: `Single candidate without internal_id found for enrichment`,
-                candidate_lifter_id: candidateLifter.lifter_id,
-                internal_id: additionalData.internal_id
-            });
             
             // Check for conflicts before enriching
             const { data: conflictCheck, error: conflictError } = await supabase
@@ -1244,7 +967,6 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
                     .single();
                     
                 if (!updateError) {
-                    logger.logFinalResult(updatedLifter, 'disambiguation_enriched');
                     console.log(`  ✅ Enriched and selected lifter: ${cleanName} (ID: ${candidateLifter.lifter_id})`);
                     return updatedLifter;
                 }
@@ -1253,12 +975,6 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
     }
 
     // Tier 1: Base64 URL lookup protocol
-    logger.log('tier1_verification', {
-        message: `Starting Tier 1 verification for disambiguation`,
-        candidates_count: lifterIds.length,
-        verification_type: 'base64_url_lookup'
-    });
-
     const base64Result = await runBase64UrlLookupProtocol(
         cleanName,
         lifterIds,
@@ -1270,7 +986,6 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
 
     if (base64Result) {
         const verifiedLifter = existingLifters.find(l => l.lifter_id === base64Result.lifterId);
-        logger.logFinalResult(verifiedLifter, 'tier1_disambiguation');
         console.log(`  ✅ Verified via Tier 1: ${cleanName} (ID: ${base64Result.lifterId})`);
         // Attach scraped data for enrichment
         verifiedLifter.scrapedData = base64Result.scrapedData;
@@ -1278,30 +993,17 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
     }
 
     // Tier 2: Sport80 member URL verification (fallback)
-    logger.log('tier2_verification', {
-        message: `Starting Tier 2 verification for disambiguation`,
-        candidates_count: lifterIds.length,
-        verification_type: 'sport80_member_url'
-    });
-
     const verifiedLifterId = await runSport80MemberUrlVerification(cleanName, lifterIds, additionalData.targetMeetId);
 
     if (verifiedLifterId) {
         const verifiedLifter = existingLifters.find(l => l.lifter_id === verifiedLifterId);
-        logger.logFinalResult(verifiedLifter, 'tier2_disambiguation');
         console.log(`  ✅ Verified via Tier 2: ${cleanName} (ID: ${verifiedLifterId})`);
         return verifiedLifter;
     }
 
     // FALLBACK: If we can't disambiguate, create a new lifter record
     // This ensures we don't lose athlete data due to disambiguation failures
-    logger.log('fallback_create', {
-        message: `Could not disambiguate, creating new lifter record`,
-        candidates_count: existingLifters.length,
-        reason: 'disambiguation_failed'
-    });
     console.log(`  ⚠️ Could not disambiguate lifter "${cleanName}" - ${lifterIds.length} candidates found but none verified - creating new record`);
-    
     const { data: newLifter, error: createError } = await supabase
         .from('usaw_lifters')
         .insert({
@@ -1313,11 +1015,9 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
         .single();
 
     if (createError) {
-        logger.logError(new Error(`Error creating disambiguation fallback lifter: ${createError.message}`), 'fallback_create');
         throw new Error(`Error creating disambiguation fallback lifter: ${createError.message}`);
     }
 
-    logger.logFinalResult(newLifter, 'disambiguation_fallback');
     console.log(`  ➕ Created disambiguation fallback lifter: ${cleanName} (ID: ${newLifter.lifter_id})`);
     return newLifter;
 }
