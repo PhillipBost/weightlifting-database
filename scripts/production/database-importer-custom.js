@@ -220,41 +220,70 @@ async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId) {
             timeout: 30000
         });
 
-        // Wait for the page to load and extract the page content
-        const pageData = await page.evaluate(() => {
-            // Extract meet information from the page
-            const meetRows = Array.from(document.querySelectorAll('.data-table div div.v-data-table div.v-data-table__wrapper table tbody tr'));
+        // Wait for table to load
+        await page.waitForSelector('.data-table div div.v-data-table div.v-data-table__wrapper table tbody tr', { timeout: 15000 });
+        await new Promise(resolve => setTimeout(resolve, 2000));
 
-            const meetInfo = meetRows.map(row => {
-                const cells = Array.from(row.querySelectorAll('td'));
-                if (cells.length < 2) return null;
+        // Search through all pages of meet history
+        let foundMeet = null;
+        let currentPage = 1;
+        let hasMorePages = true;
 
-                const meetName = cells[0]?.textContent?.trim();
-                const meetDate = cells[1]?.textContent?.trim();
+        while (hasMorePages && !foundMeet) {
+            console.log(`    📄 Checking page ${currentPage} of meet history...`);
 
-                return {
-                    name: meetName,
-                    date: meetDate
-                };
-            }).filter(Boolean);
+            // Extract meet information from current page
+            const pageData = await page.evaluate(() => {
+                const meetRows = Array.from(document.querySelectorAll('.data-table div div.v-data-table div.v-data-table__wrapper table tbody tr'));
 
-            return meetInfo;
-        });
+                const meetInfo = meetRows.map(row => {
+                    const cells = Array.from(row.querySelectorAll('td'));
+                    if (cells.length < 2) return null;
 
-        // Match by meet name and date
-        const foundMeet = pageData.find(meet => {
-            const nameMatch = meet.name === targetMeet.Meet;
-            const dateMatch = meet.date === targetMeet.Date;
-            return nameMatch && dateMatch;
-        });
+                    const meetName = cells[0]?.textContent?.trim();
+                    const meetDate = cells[1]?.textContent?.trim();
 
-        if (foundMeet) {
-            console.log(`    ✅ VERIFIED: "${foundMeet.name}" on ${foundMeet.date} found in athlete's history`);
-            return true;
-        } else {
-            console.log(`    ❌ NOT FOUND: "${targetMeet.Meet}" on ${targetMeet.Date} not in athlete's history`);
-            return false;
+                    return {
+                        name: meetName,
+                        date: meetDate
+                    };
+                }).filter(Boolean);
+
+                return meetInfo;
+            });
+
+            // Match by meet name and date
+            foundMeet = pageData.find(meet => {
+                const nameMatch = meet.name === targetMeet.Meet;
+                const dateMatch = meet.date === targetMeet.Date;
+                return nameMatch && dateMatch;
+            });
+
+            if (foundMeet) {
+                console.log(`    ✅ VERIFIED: "${foundMeet.name}" on ${foundMeet.date} found on page ${currentPage}`);
+                return true;
+            }
+
+            // Check for next page
+            hasMorePages = await page.evaluate(() => {
+                const nextBtn = document.querySelector('.v-data-footer__icons-after button:not([disabled])');
+                if (nextBtn && !nextBtn.disabled) {
+                    nextBtn.click();
+                    return true;
+                }
+                return false;
+            });
+
+            if (hasMorePages) {
+                // Wait for next page to load
+                await new Promise(resolve => setTimeout(resolve, 3000));
+                await page.waitForSelector('.data-table div div.v-data-table div.v-data-table__wrapper table tbody tr', { timeout: 10000 });
+                currentPage++;
+            }
         }
+
+        console.log(`    ❌ NOT FOUND: "${targetMeet.Meet}" on ${targetMeet.Date} not found in ${currentPage} page(s) of history`);
+        return false;
 
     } catch (error) {
         console.log(`    ❌ Error accessing member page: ${error.message}`);
@@ -269,6 +298,110 @@ async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId) {
 // ========================================
 // TIER 1 HELPER FUNCTIONS
 // ========================================
+
+// Extract internal_id by clicking a specific athlete's row on rankings page
+async function extractInternalIdByClicking(page, divisionCode, startDate, endDate, targetAthleteName) {
+    try {
+        const url = buildRankingsURL(divisionCode, startDate, endDate);
+        console.log(`      🌐 Loading rankings page for clicking...`);
+
+        await page.goto(url, {
+            waitUntil: 'networkidle0',
+            timeout: 30000
+        });
+
+        // Wait for table to load
+        await page.waitForSelector('.v-data-table__wrapper tbody tr', { timeout: 15000 });
+        await new Promise(resolve => setTimeout(resolve, 4000)); // Give Vue.js time to render
+
+        // Find the target athlete across all pages
+        let found = false;
+        let currentPage = 1;
+
+        while (!found) {
+            // Search for target athlete on current page
+            const athleteData = await page.evaluate((targetName) => {
+                const rows = Array.from(document.querySelectorAll('.v-data-table__wrapper tbody tr'));
+                
+                for (let index = 0; index < rows.length; index++) {
+                    const row = rows[index];
+                    const cells = Array.from(row.querySelectorAll('td'));
+                    const athleteName = cells[3]?.textContent?.trim() || '';
+                    
+                    if (athleteName.toLowerCase().includes(targetName.toLowerCase()) ||
+                        targetName.toLowerCase().includes(athleteName.toLowerCase())) {
+                        
+                        return {
+                            found: true,
+                            rowIndex: index,
+                            athleteName: athleteName,
+                            isClickable: row.classList.contains('row-clickable')
+                        };
+                    }
+                }
+                
+                return { found: false };
+            }, targetAthleteName);
+
+            if (athleteData.found) {
+                console.log(`      ✅ Found "${athleteData.athleteName}" on page ${currentPage}`);
+                
+                if (!athleteData.isClickable) {
+                    console.log(`      ⚠️ Row is not clickable`);
+                    return null;
+                }
+
+                // Click the row and wait for navigation
+                console.log(`      🖱️ Clicking row...`);
+                
+                await Promise.all([
+                    page.waitForNavigation({ waitUntil: 'networkidle0', timeout: 10000 }),
+                    page.evaluate((rowIndex) => {
+                        const rows = document.querySelectorAll('.v-data-table__wrapper tbody tr');
+                        if (rows[rowIndex]) {
+                            rows[rowIndex].click();
+                        }
+                    }, athleteData.rowIndex)
+                ]);
+                
+                // Extract internal_id from destination URL
+                const currentUrl = page.url();
+                const match = currentUrl.match(/\/member\/(\d+)/);
+                
+                if (match) {
+                    return parseInt(match[1]);
+                } else {
+                    console.log(`      ❌ No internal_id in URL: ${currentUrl}`);
+                    return null;
+                }
+            }
+
+            // Check for next page
+            const hasNextPage = await page.evaluate(() => {
+                const nextBtn = document.querySelector('.v-data-footer__icons-after button:not([disabled])');
+                if (nextBtn && !nextBtn.disabled) {
+                    nextBtn.click();
+                    return true;
+                }
+                return false;
+            });
+
+            if (hasNextPage) {
+                console.log(`      ⏭️ Moving to page ${currentPage + 1}...`);
+                await new Promise(resolve => setTimeout(resolve, 4000));
+                await page.waitForSelector('.v-data-table__wrapper tbody tr', { timeout: 10000 });
+                currentPage++;
+            } else {
+                console.log(`      ❌ Athlete not found on any page`);
+                return null;
+            }
+        }
+
+    } catch (error) {
+        console.log(`      ❌ Error extracting internal_id: ${error.message}`);
+        return null;
+    }
+}
 
 function buildRankingsURL(divisionCode, startDate, endDate) {
     const filters = {
@@ -339,9 +472,10 @@ async function scrapeDivisionRankings(page, divisionCode, startDate, endDate) {
                     const rawAge = colMap.lifterAge > -1 ? cellTexts[colMap.lifterAge] : '';
                     const numericAge = rawAge.match(/\d{1,3}/)?.[0] || '';
 
-                    // Extract internal_id from the athlete name link
+                    // Extract internal_id from clickable row (Vue.js table)
                     let internalId = null;
                     if (colMap.athleteName > -1) {
+                        // First try traditional link approach (fallback)
                         const nameCell = cells[colMap.athleteName];
                         const link = nameCell.querySelector('a[href*="/member/"]');
                         if (link) {
@@ -352,6 +486,7 @@ async function scrapeDivisionRankings(page, divisionCode, startDate, endDate) {
                                 internalId = parseInt(match[1]);
                             }
                         }
+                        // Note: Vue.js clickable rows will be handled separately
                     }
 
                     return {
@@ -364,9 +499,28 @@ async function scrapeDivisionRankings(page, divisionCode, startDate, endDate) {
                         level: colMap.level > -1 ? cellTexts[colMap.level] : '',
                         wso: colMap.wso > -1 ? cellTexts[colMap.wso] : '',
                         total: colMap.total > -1 ? cellTexts[colMap.total] : '',
-                        gender: colMap.gender > -1 ? cellTexts[colMap.gender] : ''
+                        gender: colMap.gender > -1 ? cellTexts[colMap.gender] : '',
+                        _rowIndex: rows.indexOf(row), // Store row index for internal_id extraction
+                        _hasClickableRow: row.classList.contains('row-clickable'),
+                        _rowClasses: row.className // Debug: capture all row classes
                     };
                 }).filter(a => a && a.athleteName);
+            });
+
+            // Extract internal_ids from clickable rows (Vue.js approach)
+            const athletesNeedingInternalIds = pageAthletes.filter(a => a._hasClickableRow && !a.internalId);
+            const totalClickableRows = pageAthletes.filter(a => a._hasClickableRow).length;
+            
+            console.log(`      📊 Page ${currentPage}: ${pageAthletes.length} athletes, ${totalClickableRows} clickable rows`);
+            
+            // Note: We don't extract internal_ids here - that's done in Tier 1.5 if needed
+            // Tier 1 focuses on extracting rankings data (national_rank, club, etc.)
+
+            // Clean up temporary properties
+            pageAthletes.forEach(athlete => {
+                delete athlete._rowIndex;
+                delete athlete._hasClickableRow;
+                delete athlete._rowClasses; // Clean up debug property
             });
 
             allAthletes = allAthletes.concat(pageAthletes);
@@ -383,7 +537,13 @@ async function scrapeDivisionRankings(page, divisionCode, startDate, endDate) {
             });
 
             if (nextPageExists) {
-                await new Promise(resolve => setTimeout(resolve, 1500));
+                console.log(`      ⏳ Moving to page ${currentPage + 1}, waiting for Vue.js re-render...`);
+                await new Promise(resolve => setTimeout(resolve, 3000)); // Increased wait time
+                
+                // Wait for table to stabilize after pagination
+                await page.waitForSelector('.v-data-table__wrapper tbody tr', { timeout: 10000 });
+                await new Promise(resolve => setTimeout(resolve, 1000)); // Additional stabilization time
+                
                 currentPage++;
             } else {
                 hasMorePages = false;
@@ -629,8 +789,30 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
 
         if (targetAthlete) {
             console.log(`    ✅ Tier 1 VERIFIED: "${lifterName}" found in division rankings`);
-            console.log(`    🔍 DEBUG: targetAthlete.internalId = ${targetAthlete.internalId}`);
-            console.log(`    🔍 DEBUG: potentialLifterIds = [${potentialLifterIds.join(', ')}]`);
+
+            // Tier 1.5: If athlete found but missing internal_id, extract it by clicking their row
+            if (!targetAthlete.internalId && potentialLifterIds.length > 0) {
+                console.log(`    🔗 Tier 1.5: Extracting internal_id for "${lifterName}" via row clicking...`);
+                
+                try {
+                    const extractedId = await extractInternalIdByClicking(
+                        page,
+                        divisionCode,
+                        startDate,
+                        endDate,
+                        lifterName
+                    );
+                    
+                    if (extractedId) {
+                        targetAthlete.internalId = extractedId;
+                        console.log(`    ✅ Tier 1.5: Extracted internal_id ${extractedId}`);
+                    } else {
+                        console.log(`    ⚠️ Tier 1.5: Could not extract internal_id`);
+                    }
+                } catch (error) {
+                    console.log(`    ⚠️ Tier 1.5: Failed to extract internal_id - ${error.message}`);
+                }
+            }
 
             // Try to disambiguate using internal_id if we have it
             if (potentialLifterIds.length === 1) {
@@ -653,8 +835,6 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
                     .eq('internal_id', targetAthlete.internalId)
                     .single();
 
-                console.log(`    🔍 DEBUG: Query result - error: ${error?.message || 'none'}, matchedLifter: ${JSON.stringify(matchedLifter)}`);
-
                 if (!error && matchedLifter) {
                     console.log(`    ✅ Disambiguated via internal_id: Using lifter ${matchedLifter.lifter_id}`);
                     return {
@@ -669,8 +849,6 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
                     .select('lifter_id, internal_id')
                     .in('lifter_id', potentialLifterIds)
                     .is('internal_id', null);
-
-                console.log(`    🔍 DEBUG: Null internal_id candidates: ${JSON.stringify(nullInternalIdCandidates)}`);
 
                 if (!nullError && nullInternalIdCandidates && nullInternalIdCandidates.length === 1) {
                     // Only one candidate has null internal_id - assume it's them and populate it
@@ -687,8 +865,6 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
                         scrapedData: targetAthlete
                     };
                 }
-            } else {
-                console.log(`    ⚠️ DEBUG: No internal_id available from scraped data for disambiguation`);
             }
 
             // Can't disambiguate - fall back to Tier 2
@@ -1467,5 +1643,6 @@ module.exports = {
     upsertMeetsToDatabase,
     processMeetCsvFile,
     verifyLifterParticipationInMeet,
-    scrapeOneMeet
+    scrapeOneMeet,
+    findOrCreateLifter
 };
