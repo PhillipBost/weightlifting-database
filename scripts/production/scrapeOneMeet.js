@@ -46,8 +46,55 @@ function buildRankingsURL(divisionCode, startDate, endDate) {
     return `https://usaweightlifting.sport80.com/public/rankings/all?filters=${encodeURIComponent(base64Encoded)}`;
 }
 
+// Extract internal_id for a specific athlete by clicking their row
+async function extractInternalIdByClicking(page, athleteName, rowIndex) {
+    try {
+        console.log(`    🖱️ Clicking row for: ${athleteName}...`);
+        
+        // Click the row and wait for navigation
+        await Promise.all([
+            page.waitForNavigation({ waitUntil: 'networkidle0', timeout: 10000 }),
+            page.evaluate((rowIndex) => {
+                const rows = document.querySelectorAll('.v-data-table__wrapper tbody tr');
+                if (rows[rowIndex]) {
+                    rows[rowIndex].click();
+                }
+            }, rowIndex)
+        ]);
+        
+        // Extract internal_id from destination URL
+        const currentUrl = page.url();
+        const match = currentUrl.match(/\/member\/(\d+)/);
+        
+        if (match) {
+            const internalId = parseInt(match[1]);
+            console.log(`    ✅ Extracted internal_id ${internalId} for ${athleteName}`);
+            
+            // Navigate back to rankings page
+            await page.goBack({ waitUntil: 'networkidle0', timeout: 10000 });
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            
+            return internalId;
+        } else {
+            console.log(`    ❌ No internal_id found in URL: ${currentUrl}`);
+            await page.goBack({ waitUntil: 'networkidle0', timeout: 10000 });
+            return null;
+        }
+        
+    } catch (error) {
+        console.log(`    ❌ Failed to extract internal_id for ${athleteName}: ${error.message}`);
+        // Try to recover by going back
+        try {
+            await page.goBack({ waitUntil: 'networkidle0', timeout: 5000 });
+        } catch (e) {
+            console.log(`    ⚠️ Cannot navigate back after error`);
+        }
+        return null;
+    }
+}
+
 // Scrape division rankings for base64 lookup
-async function scrapeDivisionRankings(page, divisionCode, startDate, endDate) {
+async function scrapeDivisionRankings(page, divisionCode, startDate, endDate, targetAthleteName = null) {
     try {
         const url = buildRankingsURL(divisionCode, startDate, endDate);
         console.log(`    🌐 Base64 lookup URL: ${url}`);
@@ -89,7 +136,7 @@ async function scrapeDivisionRankings(page, divisionCode, startDate, endDate) {
 
             const rows = Array.from(document.querySelectorAll('.v-data-table__wrapper tbody tr'));
 
-            return rows.map(row => {
+            return rows.map((row, index) => {
                 const cells = Array.from(row.querySelectorAll('td'));
                 const cellTexts = cells.map(cell => cell.textContent?.trim() || '');
 
@@ -98,14 +145,13 @@ async function scrapeDivisionRankings(page, divisionCode, startDate, endDate) {
                 const rawAge = colMap.lifterAge > -1 ? cellTexts[colMap.lifterAge] : '';
                 const numericAge = rawAge.match(/\d{1,3}/)?.[0] || '';
 
-                // Extract internal_id from the athlete name link
+                // Extract internal_id from the athlete name link (if available)
                 let internalId = null;
                 if (colMap.athleteName > -1) {
                     const nameCell = cells[colMap.athleteName];
                     const link = nameCell.querySelector('a[href*="/member/"]');
                     if (link) {
                         const href = link.getAttribute('href');
-                        // Extract ID from URLs like /public/rankings/member/12345
                         const match = href.match(/\/member\/(\d+)/);
                         if (match) {
                             internalId = parseInt(match[1]);
@@ -123,9 +169,36 @@ async function scrapeDivisionRankings(page, divisionCode, startDate, endDate) {
                     level: colMap.level > -1 ? cellTexts[colMap.level] : '',
                     wso: colMap.wso > -1 ? cellTexts[colMap.wso] : '',
                     total: colMap.total > -1 ? cellTexts[colMap.total] : '',
-                    gender: colMap.gender > -1 ? cellTexts[colMap.gender] : ''
+                    gender: colMap.gender > -1 ? cellTexts[colMap.gender] : '',
+                    rowIndex: index,
+                    isClickable: row.classList.contains('row-clickable')
                 };
             }).filter(a => a && a.athleteName);
+        });
+
+        // Note: We don't extract internal_ids for all athletes here because clicking
+        // rows is a "one-way street" - after clicking one row, others become unclickable.
+        // Instead, we extract internal_id only for the specific target athlete if provided.
+        
+        if (targetAthleteName) {
+            // Find the target athlete in the results
+            const targetAthlete = pageAthletes.find(a => 
+                a.athleteName.toLowerCase().includes(targetAthleteName.toLowerCase()) ||
+                targetAthleteName.toLowerCase().includes(a.athleteName.toLowerCase())
+            );
+            
+            if (targetAthlete && targetAthlete.isClickable && !targetAthlete.internalId) {
+                const extractedId = await extractInternalIdByClicking(page, targetAthlete.athleteName, targetAthlete.rowIndex);
+                if (extractedId) {
+                    targetAthlete.internalId = extractedId;
+                }
+            }
+        }
+
+        // Clean up temporary properties
+        pageAthletes.forEach(athlete => {
+            delete athlete.rowIndex;
+            delete athlete.isClickable;
         });
 
         console.log(`    ✅ Base64 lookup found ${pageAthletes.length} athletes`);
@@ -236,7 +309,7 @@ async function performBase64LookupFallback(page, filePath) {
         }
 
         try {
-            const scrapedAthletes = await scrapeDivisionRankings(page, matchingDivisionCode, startDate, endDate);
+            const scrapedAthletes = await scrapeDivisionRankings(page, matchingDivisionCode, startDate, endDate, athlete.name);
             
             // Look for matching athlete by name
             const matchingAthlete = scrapedAthletes.find(scraped => 
