@@ -1604,10 +1604,11 @@ async function processMeetCsvFile(csvFilePath, meetId, meetName) {
                 };
 
                 // Upsert to database (insert new, update existing)
+                // Use new constraint that includes weight_class to allow multiple results per athlete
                 const { error: insertError } = await supabase
                     .from('usaw_meet_results')
                     .upsert(resultData, {
-                        onConflict: 'meet_id, lifter_id',
+                        onConflict: 'meet_id, lifter_id, weight_class',
                         ignoreDuplicates: false
                     });
 
