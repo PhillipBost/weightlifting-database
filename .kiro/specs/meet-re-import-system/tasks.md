@@ -233,8 +233,8 @@ This implementation plan creates a focused meet re-import system that identifies
     - Replace simple line.split(',') with proper Papa.parse parsing
     - _Requirements: Data integrity, correct analysis_
 
-- [ ] 13. Enhance Tier 2 verification with bodyweight/total matching
-  - [ ] 13.1 Update verifyLifterParticipationInMeet function in database-importer-custom-extreme-fix.js
+- [x] 13. Enhance Tier 2 verification with bodyweight/total matching
+  - [x] 13.1 Update verifyLifterParticipationInMeet function in database-importer-custom-extreme-fix.js
     - **PROBLEM**: Only checks meet name + date, ignores performance data
     - **SOLUTION**: Extract bodyweight from Sport80 member page and compare with expected
     - **SOLUTION**: Extract total from Sport80 member page and compare with expected
@@ -242,7 +242,7 @@ This implementation plan creates a focused meet re-import system that identifies
     - Return verification result with performance match details
     - _Requirements: 3.3, 3.4, accurate athlete matching_
 
-  - [ ] 13.2 Update Tier 2 calls to pass expected bodyweight/total
+  - [x] 13.2 Update Tier 2 calls to pass expected bodyweight/total
     - **PROBLEM**: Tier 2 verification calls don't pass expected performance data
     - **SOLUTION**: Pass bodyweight and total from CSV data to verification function
     - Update function signature and all call sites
