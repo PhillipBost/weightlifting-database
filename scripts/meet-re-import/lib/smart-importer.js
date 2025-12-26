@@ -253,7 +253,7 @@ class SmartImporter {
             
             this.logger.info(`📄 Created filtered CSV with ${missingAthletes.length} missing results`);
             
-            // Use existing proven import infrastructure WITH same-name athletes fix
+            // Use existing proven import infrastructure WITH enhanced Tier 2 verification
             const { processMeetCsvFile } = require('../../production/database-importer-custom-extreme-fix');
             
             this.logger.info(`🔄 Importing missing results using proven infrastructure...`);
