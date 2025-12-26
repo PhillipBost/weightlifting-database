@@ -248,15 +248,15 @@ This implementation plan creates a focused meet re-import system that identifies
     - Update function signature and all call sites
     - _Requirements: 3.3, 3.4, prevent incorrect assignments_
 
-- [ ] 14. Fix Vanessa Rodriguez incorrect assignment
-  - [ ] 14.1 Delete incorrect result from meet 7142
+- [x] 14. Fix Vanessa Rodriguez incorrect assignment
+  - [x] 14.1 Delete incorrect result from meet 7142
     - **SPECIFIC CASE**: Result assigned to lifter_id 4199 (internal_id 28381)
     - **PROBLEM**: BW=75.4kg, Total=130kg assigned to wrong athlete
     - **CORRECT TARGET**: Should be assigned to internal_id 59745
     - Query and delete the specific incorrect result
     - _Requirements: Data integrity, correct athlete assignment_
 
-  - [ ] 14.2 Re-import Vanessa Rodriguez with enhanced verification
+  - [x] 14.2 Re-import Vanessa Rodriguez with enhanced verification
     - Use enhanced Tier 2 verification to assign to correct athlete
     - Verify assignment to lifter with internal_id 59745
     - Confirm bodyweight and total match Sport80 member page data

@@ -196,6 +196,10 @@ async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId, e
     const memberUrl = `https://usaweightlifting.sport80.com/public/rankings/member/${lifterInternalId}`;
     console.log(`    🌐 Visiting: ${memberUrl}`);
     console.log(`    🎯 Looking for: "${targetMeet.Meet}" on ${targetMeet.Date}`);
+    
+    if (expectedBodyweight || expectedTotal) {
+        console.log(`    📊 Expected: BW=${expectedBodyweight}kg, Total=${expectedTotal}kg`);
+    }
 
     let browser;
     try {
@@ -232,9 +236,13 @@ async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId, e
         while (hasMorePages && !foundMeet) {
             console.log(`    📄 Checking page ${currentPage} of meet history...`);
 
-            // Extract meet information from current page
+            // Extract meet information from current page with ENHANCED data extraction
             const pageData = await page.evaluate(() => {
                 const meetRows = Array.from(document.querySelectorAll('.data-table div div.v-data-table div.v-data-table__wrapper table tbody tr'));
+
+                // Get headers to understand column structure
+                const headers = Array.from(document.querySelectorAll('.data-table div div.v-data-table div.v-data-table__wrapper table thead th'))
+                    .map(th => th.textContent.trim());
 
                 const meetInfo = meetRows.map(row => {
                     const cells = Array.from(row.querySelectorAll('td'));
@@ -242,10 +250,56 @@ async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId, e
 
                     const meetName = cells[0]?.textContent?.trim();
                     const meetDate = cells[1]?.textContent?.trim();
+                    
+                    // ENHANCED: Extract bodyweight and total from the row
+                    // Based on the user's console output, the structure is:
+                    // ['Meet', 'Date', 'Age Category', 'Lifter', 'Body Weight (Kg)', 'Snatch Lift 1', 'Snatch Lift 2', 'Snatch Lift 3', 'C&J Lift 1', 'C&J Lift 2', 'C&J Lift 3', 'Best Snatch', 'Best C&J', 'Total']
+                    
+                    let bodyweight = null;
+                    let bestSnatch = null;
+                    let bestCJ = null;
+                    let total = null;
+                    
+                    // Find bodyweight column (usually index 4: 'Body Weight (Kg)')
+                    if (cells[4]) {
+                        const bwText = cells[4].textContent?.trim();
+                        if (bwText && !isNaN(parseFloat(bwText))) {
+                            bodyweight = parseFloat(bwText);
+                        }
+                    }
+                    
+                    // Find best snatch column (usually index 11: 'Best Snatch')
+                    if (cells[11]) {
+                        const snatchText = cells[11].textContent?.trim();
+                        if (snatchText && !isNaN(parseFloat(snatchText))) {
+                            bestSnatch = parseFloat(snatchText);
+                        }
+                    }
+                    
+                    // Find best C&J column (usually index 12: 'Best C&J')
+                    if (cells[12]) {
+                        const cjText = cells[12].textContent?.trim();
+                        if (cjText && !isNaN(parseFloat(cjText))) {
+                            bestCJ = parseFloat(cjText);
+                        }
+                    }
+                    
+                    // Find total column (usually index 13: 'Total')
+                    if (cells[13]) {
+                        const totalText = cells[13].textContent?.trim();
+                        if (totalText && !isNaN(parseFloat(totalText))) {
+                            total = parseFloat(totalText);
+                        }
+                    }
 
                     return {
                         name: meetName,
-                        date: meetDate
+                        date: meetDate,
+                        bodyweight: bodyweight,
+                        bestSnatch: bestSnatch,
+                        bestCJ: bestCJ,
+                        total: total,
+                        rawCells: cells.map(c => c.textContent?.trim()) // For debugging
                     };
                 }).filter(Boolean);
 
@@ -278,8 +332,33 @@ async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId, e
             });
 
             if (foundMeet) {
-                console.log(`    ✅ VERIFIED: "${foundMeet.name}" on ${foundMeet.date} found on page ${currentPage}`);
-                return true;
+                console.log(`    ✅ FOUND MEET: "${foundMeet.name}" on ${foundMeet.date} found on page ${currentPage}`);
+                console.log(`    📊 Sport80 Data: BW=${foundMeet.bodyweight}kg, Total=${foundMeet.total}kg`);
+                
+                // ENHANCED: Compare bodyweight and total if provided
+                let bodyweightMatch = true;
+                let totalMatch = true;
+                
+                if (expectedBodyweight && foundMeet.bodyweight) {
+                    const bwDiff = Math.abs(expectedBodyweight - foundMeet.bodyweight);
+                    bodyweightMatch = bwDiff <= 2.0; // Allow 2kg tolerance for bodyweight
+                    console.log(`    ⚖️  Bodyweight: Expected=${expectedBodyweight}kg, Found=${foundMeet.bodyweight}kg, Diff=${bwDiff.toFixed(1)}kg, Match=${bodyweightMatch}`);
+                }
+                
+                if (expectedTotal && foundMeet.total) {
+                    const totalDiff = Math.abs(expectedTotal - foundMeet.total);
+                    totalMatch = totalDiff <= 5; // Allow 5kg tolerance for total
+                    console.log(`    🏋️  Total: Expected=${expectedTotal}kg, Found=${foundMeet.total}kg, Diff=${totalDiff.toFixed(1)}kg, Match=${totalMatch}`);
+                }
+                
+                if (bodyweightMatch && totalMatch) {
+                    console.log(`    ✅ VERIFIED: Meet found with matching performance data`);
+                    return true;
+                } else {
+                    console.log(`    ❌ PERFORMANCE MISMATCH: Meet found but performance data doesn't match`);
+                    console.log(`    📋 Raw cells for debugging:`, foundMeet.rawCells);
+                    return false;
+                }
             }
 
             // Check for next page
@@ -918,8 +997,11 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
     }
 }
 
-async function runSport80MemberUrlVerification(lifterName, potentialLifterIds, targetMeetId) {
+async function runSport80MemberUrlVerification(lifterName, potentialLifterIds, targetMeetId, expectedBodyweight = null, expectedTotal = null) {
     console.log(`  🔍 Tier 2: Running Sport80 member URL verification for ${potentialLifterIds.length} candidates...`);
+    if (expectedBodyweight || expectedTotal) {
+        console.log(`  📊 Expected performance: BW=${expectedBodyweight}kg, Total=${expectedTotal}kg`);
+    }
 
     for (const lifterId of potentialLifterIds) {
         try {
@@ -938,8 +1020,8 @@ async function runSport80MemberUrlVerification(lifterName, potentialLifterIds, t
             if (lifter?.internal_id) {
                 console.log(`    🔍 Checking lifter ${lifterId} (internal_id: ${lifter.internal_id})...`);
 
-                // REAL verification: Visit the member page and check if they participated in target meet
-                const verified = await verifyLifterParticipationInMeet(lifter.internal_id, targetMeetId);
+                // ENHANCED verification: Visit the member page and check if they participated in target meet WITH performance data matching
+                const verified = await verifyLifterParticipationInMeet(lifter.internal_id, targetMeetId, expectedBodyweight, expectedTotal);
 
                 if (verified) {
                     console.log(`    ✅ CONFIRMED: Using lifter ${lifterId} for meet ${targetMeetId}`);
@@ -954,8 +1036,10 @@ async function runSport80MemberUrlVerification(lifterName, potentialLifterIds, t
                 if (foundInternalId) {
                     console.log(`    🎯 Found internal_id ${foundInternalId} for ${lifter.athlete_name} via Sport80 search`);
                     
-                    // Verify this lifter participated in the target meet
-                    const verified = await verifyLifterParticipationInMeet(foundInternalId, targetMeetId);
+                    // ENHANCED verification: Verify this lifter participated in the target meet WITH performance data matching
+                    const expectedBodyweight = additionalData.bodyweight ? parseFloat(additionalData.bodyweight) : null;
+                    const expectedTotal = additionalData.total ? parseFloat(additionalData.total) : null;
+                    const verified = await verifyLifterParticipationInMeet(foundInternalId, targetMeetId, expectedBodyweight, expectedTotal);
                     
                     if (verified) {
                         // Update the lifter record with the found internal_id
@@ -1410,7 +1494,9 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
             verification_type: 'sport80_member_url'
         });
 
-        const verifiedLifterId = await runSport80MemberUrlVerification(cleanName, lifterIds, additionalData.targetMeetId);
+        const expectedBodyweight = additionalData.bodyweight ? parseFloat(additionalData.bodyweight) : null;
+        const expectedTotal = additionalData.total ? parseFloat(additionalData.total) : null;
+        const verifiedLifterId = await runSport80MemberUrlVerification(cleanName, lifterIds, additionalData.targetMeetId, expectedBodyweight, expectedTotal);
 
         if (verifiedLifterId) {
             const verifiedLifter = existingLifters.find(l => l.lifter_id === verifiedLifterId);
@@ -1546,7 +1632,9 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
             strategy: 'same_division_skip_tier1'
         });
 
-        const verifiedLifterId = await runSport80MemberUrlVerification(cleanName, lifterIds, additionalData.targetMeetId);
+        const expectedBodyweight = additionalData.bodyweight ? parseFloat(additionalData.bodyweight) : null;
+        const expectedTotal = additionalData.total ? parseFloat(additionalData.total) : null;
+        const verifiedLifterId = await runSport80MemberUrlVerification(cleanName, lifterIds, additionalData.targetMeetId, expectedBodyweight, expectedTotal);
 
         if (verifiedLifterId) {
             const verifiedLifter = existingLifters.find(l => l.lifter_id === verifiedLifterId);
@@ -1628,7 +1716,9 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
             verification_type: 'sport80_member_url'
         });
 
-        const verifiedLifterId = await runSport80MemberUrlVerification(cleanName, lifterIds, additionalData.targetMeetId);
+        const expectedBodyweight = additionalData.bodyweight ? parseFloat(additionalData.bodyweight) : null;
+        const expectedTotal = additionalData.total ? parseFloat(additionalData.total) : null;
+        const verifiedLifterId = await runSport80MemberUrlVerification(cleanName, lifterIds, additionalData.targetMeetId, expectedBodyweight, expectedTotal);
 
         if (verifiedLifterId) {
             const verifiedLifter = existingLifters.find(l => l.lifter_id === verifiedLifterId);
@@ -1853,6 +1943,7 @@ async function processMeetCsvFile(csvFilePath, meetId, meetName) {
                     ageCategory: row['Age Category']?.trim() || null,
                     weightClass: row['Weight Class']?.trim() || null,
                     bodyweight: row['Body Weight (Kg)']?.toString().trim() || null,
+                    total: row.Total?.toString().trim() || null,
                     membership_number: row['Membership Number']?.trim() || null,
                     internal_id: row['Internal_ID'] ? parseInt(row['Internal_ID']) : null
                 });
