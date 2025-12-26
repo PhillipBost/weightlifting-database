@@ -121,25 +121,43 @@ class DetailedReImportOrchestrator {
 
     /**
      * Analyze scraped CSV data to understand what we're importing
+     * Uses Papa.parse with pipe delimiter like database-importer.js
      */
     async _analyzeScrapedData(csvFile) {
         try {
             const csvContent = await fs.readFile(csvFile, 'utf8');
-            const lines = csvContent.split('\n').filter(line => line.trim());
             
-            // Skip header line
-            const dataLines = lines.slice(1);
+            // Parse CSV with pipe delimiter using Papa.parse like working database-importer.js
+            const Papa = require('papaparse');
+            const parsed = Papa.parse(csvContent, {
+                header: true,
+                delimiter: '|',
+                dynamicTyping: true,
+                skipEmptyLines: true
+            });
+
+            if (parsed.errors.length > 0) {
+                this.logger.warn('⚠️ CSV parsing warnings:', parsed.errors);
+            }
+
+            // Filter out invalid rows using column names like working database-importer.js
+            const validRows = parsed.data.filter(row => {
+                return row &&
+                    typeof row === 'object' &&
+                    row.Lifter &&
+                    typeof row.Lifter === 'string' &&
+                    row.Lifter.trim() !== '';
+            });
             
             return {
-                athleteCount: dataLines.length,
-                athletes: dataLines.map((line, index) => {
-                    const columns = line.split(',');
+                athleteCount: validRows.length,
+                athletes: validRows.map((row, index) => {
                     return {
                         rowNumber: index + 1,
-                        name: columns[0] || 'Unknown',
-                        club: columns[1] || 'Unknown',
-                        bodyweight: columns[2] || 'Unknown',
-                        total: columns[3] || 'Unknown'
+                        name: row.Lifter || 'Unknown',
+                        club: row.Club || 'Unknown',
+                        bodyweight: row['Body Weight (Kg)'] || 'Unknown',
+                        total: row.Total || 'Unknown'
                     };
                 })
             };
@@ -158,8 +176,8 @@ class DetailedReImportOrchestrator {
         };
 
         try {
-            // Use existing database importer but with enhanced logging
-            const processMeetCsvFile = require('../../scripts/production/database-importer-custom').processMeetCsvFile;
+            // Use existing database importer WITH same-name athletes fix
+            const processMeetCsvFile = require('../../scripts/production/database-importer-custom-extreme-fix').processMeetCsvFile;
             
             this.logger.info(`Importing ${scrapedData.athleteCount} athletes...`);
             

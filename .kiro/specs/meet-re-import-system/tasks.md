@@ -147,6 +147,66 @@ This implementation plan creates a focused meet re-import system that identifies
 - [x] 9. Final checkpoint - Ensure all tests pass
   - Ensure all tests pass, ask the user if questions arise.
 
+- [-] 10. CRITICAL BUG FIX: Same Name Different Athletes Issue (CONSERVATIVE APPROACH WITH GUARDRAILS)
+  - [x] 10.1 Analyze current athlete disambiguation logic (READ-ONLY ANALYSIS)
+    - **GUARDRAIL**: NO CODE CHANGES - Analysis and documentation only
+    - **GUARDRAIL**: Do not modify any existing files during analysis
+    - Document current findOrCreateLifter() behavior with same-name athletes
+    - Identify specific cases where Vanessa Rodriguez/Molly Raines overwrites occur
+    - Map out existing Tier 1/Tier 2 verification flow that must be preserved
+    - Document exact bodyweight differences in problem cases (Vanessa: different athletes, Molly: 47kg vs 82kg)
+    - _Requirements: 8.1, 8.4_
+
+  - [x] 10.2 Create isolated test environment with strict safety measures
+    - **GUARDRAIL**: Create separate test script that does NOT touch production database
+    - **GUARDRAIL**: Use completely fake test data only - no real meet IDs (use 99990-99999 range)
+    - **GUARDRAIL**: Test script must include automatic cleanup and rollback functionality
+    - **GUARDRAIL**: Test script must validate normal cases still work (Sebastian Flores type scenarios)
+    - Create controlled test cases only for extreme bodyweight differences (40+ kg apart)
+    - Test cases must prove normal matching (1-10kg differences) still uses existing athletes
+    - _Requirements: 8.1, 8.2, 8.3_
+
+  - [x] 10.3 Implement minimal targeted fix with extreme constraints
+    - **GUARDRAIL**: Only modify disambiguation logic for extreme cases (40+ kg bodyweight difference AND different weight class categories)
+    - **GUARDRAIL**: Preserve all existing Tier 1 and Tier 2 verification logic completely unchanged
+    - **GUARDRAIL**: New logic only triggers as absolute last resort after all existing verification fails
+    - **GUARDRAIL**: Must pass through existing verification first - no bypassing or short-circuiting
+    - **GUARDRAIL**: Changes must be minimal and surgical - no refactoring of existing code
+    - Add extreme difference detection only (40+ kg bodyweight AND completely different weight class categories like Youth vs Senior)
+    - Only create new lifter when existing verification fails AND extreme differences detected
+    - _Requirements: 8.2, 8.3, 8.4_
+
+  - [x] 10.4 Add minimal logging for extreme cases only
+    - **GUARDRAIL**: Only log when extreme differences are detected (40+ kg apart AND different categories)
+    - **GUARDRAIL**: Do not add verbose logging to normal athlete matching flow
+    - **GUARDRAIL**: Do not modify existing console output or logging patterns
+    - Log only when new lifter is created due to extreme differences
+    - Show specific criteria that triggered the extreme difference detection
+    - _Requirements: 8.5_
+
+  - [x] 10.5 Validate fix with comprehensive isolated testing
+    - **GUARDRAIL**: Test only with fake data in completely isolated environment
+    - **GUARDRAIL**: Verify normal cases (Sebastian Flores type: 1-5kg differences) still use existing athletes
+    - **GUARDRAIL**: Verify moderate cases (10-20kg differences) still use existing athletes  
+    - **GUARDRAIL**: Verify extreme cases (40+ kg differences) create new athletes only when verification fails
+    - **GUARDRAIL**: Confirm zero regression in Tier 1/Tier 2 verification success rates
+    - Test that existing athlete matching behavior is completely preserved
+    - _Requirements: 8.1, 8.2, 8.3_
+
+  - [x] 10.6 Production validation with extensive monitoring and rollback plan
+    - **GUARDRAIL**: Deploy with extensive monitoring and immediate rollback capability
+    - **GUARDRAIL**: Monitor for any increase in new lifter creation rates
+    - **GUARDRAIL**: Immediate rollback if normal matching behavior changes at all
+    - **GUARDRAIL**: Test on single low-risk meet first before any broader deployment
+    - **GUARDRAIL**: Require explicit approval before processing any meet with existing results
+    - Monitor that Sebastian Flores type cases continue to use existing athletes
+    - _Requirements: 8.1, 8.2, 8.3_
+
+- [x] 11. Final validation checkpoint
+  - Ensure all critical bug fixes pass tests
+  - Verify same-name different-athlete scenarios work correctly
+  - Confirm no data overwrites occur for legitimate separate athletes
+
 ## Notes
 
 - Tasks marked with `*` are optional and can be skipped for faster MVP
@@ -156,3 +216,66 @@ This implementation plan creates a focused meet re-import system that identifies
 - Unit tests validate specific examples and edge cases
 - The system leverages existing proven athlete matching infrastructure
 - No modifications to critical existing scripts (scrapeOneMeet.js, database-importer-custom.js)
+
+## CRITICAL BUG FIXES - PHASE 3 (CORRECTED)
+
+- [-] 12. Fix CSV column parsing bug in meet re-import system
+  - [x] 12.1 Fix SmartImporter._parseScrapedData column mapping
+    - **PROBLEM**: Using array indices instead of column names like working database-importer.js
+    - **WORKING APPROACH**: `row['Best Snatch']`, `row['Body Weight (Kg)']`, `row.Lifter`
+    - **BROKEN APPROACH**: `columns[11]`, `columns[4]`, `columns[3]`
+    - Replace array index parsing with column name parsing to match working importer
+    - _Requirements: Data integrity, correct parsing_
+
+  - [x] 12.2 Fix DetailedOrchestrator._analyzeScrapedData parsing
+    - **PROBLEM**: Assumes comma-separated format, should be pipe-separated
+    - **WORKING APPROACH**: Parse with Papa.parse using pipe delimiter like database-importer.js
+    - Replace simple line.split(',') with proper Papa.parse parsing
+    - _Requirements: Data integrity, correct analysis_
+
+- [ ] 13. Enhance Tier 2 verification with bodyweight/total matching
+  - [ ] 13.1 Update verifyLifterParticipationInMeet function in database-importer-custom-extreme-fix.js
+    - **PROBLEM**: Only checks meet name + date, ignores performance data
+    - **SOLUTION**: Extract bodyweight from Sport80 member page and compare with expected
+    - **SOLUTION**: Extract total from Sport80 member page and compare with expected
+    - Add tolerance-based matching (±2kg bodyweight, ±5kg total)
+    - Return verification result with performance match details
+    - _Requirements: 3.3, 3.4, accurate athlete matching_
+
+  - [ ] 13.2 Update Tier 2 calls to pass expected bodyweight/total
+    - **PROBLEM**: Tier 2 verification calls don't pass expected performance data
+    - **SOLUTION**: Pass bodyweight and total from CSV data to verification function
+    - Update function signature and all call sites
+    - _Requirements: 3.3, 3.4, prevent incorrect assignments_
+
+- [ ] 14. Fix Vanessa Rodriguez incorrect assignment
+  - [ ] 14.1 Delete incorrect result from meet 7142
+    - **SPECIFIC CASE**: Result assigned to lifter_id 4199 (internal_id 28381)
+    - **PROBLEM**: BW=75.4kg, Total=130kg assigned to wrong athlete
+    - **CORRECT TARGET**: Should be assigned to internal_id 59745
+    - Query and delete the specific incorrect result
+    - _Requirements: Data integrity, correct athlete assignment_
+
+  - [ ] 14.2 Re-import Vanessa Rodriguez with enhanced verification
+    - Use enhanced Tier 2 verification to assign to correct athlete
+    - Verify assignment to lifter with internal_id 59745
+    - Confirm bodyweight and total match Sport80 member page data
+    - _Requirements: 3.3, 3.4, correct athlete matching_
+
+- [ ] 15. Test fixes with Vanessa Rodriguez case
+  - [ ] 15.1 Test enhanced Tier 2 verification
+    - Test internal_id 59745 (should match BW=75.4kg, Total=130kg)
+    - Test internal_id 28381 (should NOT match BW=75.4kg, Total=130kg)
+    - Verify tolerance ranges work correctly
+    - _Requirements: 3.3, 3.4, system reliability_
+
+  - [ ] 15.2 Test meet re-import system with fixes
+    - Run re-import on meet 7142 with corrected CSV parsing
+    - Verify Vanessa Rodriguez assigns to correct athlete (internal_id 59745)
+    - Confirm no regressions in existing functionality
+    - _Requirements: 1.1-1.5, 2.1-2.3, 3.1-3.4, 4.1-4.2_
+
+- [ ] 16. Final validation checkpoint
+  - Ensure all critical bugs are fixed
+  - Verify Vanessa Rodriguez case is resolved correctly
+  - Confirm system works end-to-end with correct data parsing

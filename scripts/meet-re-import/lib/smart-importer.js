@@ -115,46 +115,53 @@ class SmartImporter {
     }
 
     /**
-     * Parse scraped CSV data
+     * Parse scraped CSV data using column names like working database-importer.js
      */
     async _parseScrapedData(csvFile) {
         try {
             const csvContent = await fs.readFile(csvFile, 'utf8');
-            const lines = csvContent.split('\n').filter(line => line.trim());
             
-            // Filter out any header lines - data lines should have meet names, not column headers
-            const dataLines = lines.filter(line => {
-                const columns = line.split('|');
-                // Skip lines that look like headers (contain "Lifter" or other header terms)
-                const lifterName = columns[4] || '';
-                return lifterName && 
-                       !lifterName.toLowerCase().includes('lifter') &&
-                       !lifterName.toLowerCase().includes('name') &&
-                       lifterName !== 'Body Weight (Kg)' &&
-                       lifterName !== 'Total';
+            // Parse CSV with pipe delimiter using Papa.parse like working database-importer.js
+            const Papa = require('papaparse');
+            const parsed = Papa.parse(csvContent, {
+                header: true,
+                delimiter: '|',
+                dynamicTyping: true,
+                skipEmptyLines: true
+            });
+
+            if (parsed.errors.length > 0) {
+                this.logger.warn('⚠️ CSV parsing warnings:', parsed.errors);
+            }
+
+            // Filter out invalid rows using column names like working database-importer.js
+            const validRows = parsed.data.filter(row => {
+                return row &&
+                    typeof row === 'object' &&
+                    row.Lifter &&
+                    typeof row.Lifter === 'string' &&
+                    row.Lifter.trim() !== '';
             });
             
-            return dataLines.map((line, index) => {
-                const columns = line.split('|');
-                
+            return validRows.map((row, index) => {
                 return {
                     rowNumber: index + 1,
-                    meetName: columns[0] || '',           // Meet name
-                    date: columns[1] || '',               // Date
-                    ageCategory: columns[2] || '',        // Age Category (e.g., "Open Men's")
-                    weightClass: columns[3] || '',        // Weight Class (e.g., "+105 kg")
-                    name: columns[4] || 'Unknown',        // Lifter name
-                    bodyweight: columns[5] || '',         // Body Weight (Kg)
-                    snatchLift1: columns[6] || '',        // Snatch Lift 1
-                    snatchLift2: columns[7] || '',        // Snatch Lift 2
-                    snatchLift3: columns[8] || '',        // Snatch Lift 3
-                    bestSnatch: columns[9] || '',         // Best Snatch
-                    cjLift1: columns[10] || '',           // C&J Lift 1
-                    cjLift2: columns[11] || '',           // C&J Lift 2
-                    cjLift3: columns[12] || '',           // C&J Lift 3
-                    bestCJ: columns[13] || '',            // Best C&J
-                    total: columns[14] || '',             // Total
-                    club: ''                              // Club not in this CSV format
+                    meetName: row.Meet || '',                           // Meet name
+                    date: row.Date || '',                               // Date
+                    ageCategory: row['Age Category'] || '',             // Age Category (e.g., "Open Men's")
+                    weightClass: row['Weight Class'] || '',             // Weight Class (e.g., "+105 kg")
+                    name: row.Lifter || 'Unknown',                      // Lifter name
+                    bodyweight: row['Body Weight (Kg)'] || '',          // Body Weight (Kg)
+                    snatchLift1: row['Snatch Lift 1'] || '',            // Snatch Lift 1
+                    snatchLift2: row['Snatch Lift 2'] || '',            // Snatch Lift 2
+                    snatchLift3: row['Snatch Lift 3'] || '',            // Snatch Lift 3
+                    bestSnatch: row['Best Snatch'] || '',               // Best Snatch
+                    cjLift1: row['C&J Lift 1'] || '',                  // C&J Lift 1
+                    cjLift2: row['C&J Lift 2'] || '',                  // C&J Lift 2
+                    cjLift3: row['C&J Lift 3'] || '',                  // C&J Lift 3
+                    bestCJ: row['Best C&J'] || '',                      // Best C&J
+                    total: row.Total || '',                             // Total
+                    club: row.Club || ''                                // Club
                 };
             });
         } catch (error) {
@@ -246,8 +253,8 @@ class SmartImporter {
             
             this.logger.info(`📄 Created filtered CSV with ${missingAthletes.length} missing results`);
             
-            // Use existing proven import infrastructure
-            const { processMeetCsvFile } = require('../../production/database-importer-custom');
+            // Use existing proven import infrastructure WITH same-name athletes fix
+            const { processMeetCsvFile } = require('../../production/database-importer-custom-extreme-fix');
             
             this.logger.info(`🔄 Importing missing results using proven infrastructure...`);
             
