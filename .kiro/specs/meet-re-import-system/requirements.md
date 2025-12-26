@@ -103,7 +103,19 @@ Develop a comprehensive meet re-import system to re-scrape existing meets from S
 4. WHEN athlete linkages are updated, THE Meet_Re_Import_System SHALL log the old and new linkages with detailed reasoning
 5. WHEN errors occur, THE Meet_Re_Import_System SHALL log comprehensive error details including Sport80 responses and database states
 
-### Requirement 8: Selective Re-Import Capabilities
+### Requirement 8: Same Name Different Athlete Handling
+
+**User Story:** As a database administrator, I want the system to correctly handle multiple different athletes with the same name competing in the same meet, so that each athlete's results are stored separately without overwrites.
+
+#### Acceptance Criteria
+
+1. WHEN multiple athletes with identical names compete in the same meet, THE Meet_Re_Import_System SHALL treat them as separate individuals
+2. WHEN athletes have the same name but different bodyweights, THE Meet_Re_Import_System SHALL create separate database records for each athlete
+3. WHEN athletes have the same name but different weight classes, THE Meet_Re_Import_System SHALL store results for each weight class separately
+4. WHEN disambiguating same-name athletes, THE Meet_Re_Import_System SHALL use objective criteria including bodyweight, weight class, and internal_id when available
+5. WHEN same-name athletes are processed, THE Meet_Re_Import_System SHALL log the disambiguation process clearly showing how each athlete was identified
+
+### Requirement 9: Selective Re-Import Capabilities
 
 **User Story:** As a database administrator, I want to selectively re-import specific meets or athlete data, so that I can target known problem areas without reprocessing the entire database.
 

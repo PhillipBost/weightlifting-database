@@ -10,7 +10,7 @@ The Meet Re-Import System addresses cases where meets were previously imported b
 
 - **Intelligent Meet Detection**: Compares Sport80 vs database result counts to identify incomplete meets
 - **Skip Management**: Avoids reprocessing already-complete meets for efficiency
-- **Existing Infrastructure Integration**: Uses proven `scrapeOneMeet.js` and `database-importer-custom.js` components
+- **Existing Infrastructure Integration**: Uses proven `scrapeOneMeet.js` and `database-importer-custom-extreme-fix.js` components
 - **Comprehensive Logging**: Detailed progress tracking and error reporting
 - **Flexible Filtering**: Support for date ranges, specific meets, and athlete-based filtering
 - **Batch Processing**: Configurable batch sizes with rate limiting
@@ -47,7 +47,7 @@ scripts/meet-re-import/
 
 ### ReImportOrchestrator
 - Coordinates the re-import workflow
-- Integrates with existing `scrapeOneMeet.js` and `database-importer-custom.js`
+- Integrates with existing `scrapeOneMeet.js` and `database-importer-custom-extreme-fix.js`
 - Provides error isolation and batch processing
 
 ### ProgressReporter
@@ -130,7 +130,7 @@ for (const meet of incompleteMeets) {
 The system leverages existing proven components without modification:
 
 - **scrapeOneMeet.js**: Used for re-scraping meets with internal_id extraction and base64 lookup fallback
-- **database-importer-custom.js**: Used for importing results with enhanced athlete matching and Tier 2 verification
+- **database-importer-custom-extreme-fix.js**: Used for importing results with enhanced athlete matching, same-name disambiguation, and Tier 2 verification
 - **searchSport80ForLifter.js**: Used for athlete verification when needed
 - **division_base64_codes.json**: Used for base64 lookup fallback
 

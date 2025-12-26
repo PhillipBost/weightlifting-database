@@ -276,6 +276,9 @@ class ReImportConfiguration {
         
         // Dry run mode
         this.dryRun = options.dryRun || false;
+        
+        // Analyze only mode (like dry run but specifically for analysis)
+        this.analyzeOnly = options.analyzeOnly || false;
     }
 
     /**

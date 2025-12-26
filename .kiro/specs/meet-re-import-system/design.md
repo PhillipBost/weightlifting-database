@@ -260,6 +260,26 @@ class SearchResultProcessor {
 *For any* re-import session, the system should generate a summary report showing meets processed, completed, and any failures.
 **Validates: Requirements 7.4**
 
+### Property 11: Same Name Different Athletes Separation
+*For any* meet containing multiple athletes with identical names but different bodyweights or weight classes, each athlete should be treated as a separate individual with distinct database records.
+**Validates: Requirements 8.1**
+
+### Property 12: Bodyweight-Based Athlete Distinction
+*For any* pair of athletes with the same name but different bodyweights, the system should create separate database records for each athlete.
+**Validates: Requirements 8.2**
+
+### Property 13: Weight Class-Based Result Separation
+*For any* pair of athletes with the same name but different weight classes, the system should store results for each weight class separately without overwriting.
+**Validates: Requirements 8.3**
+
+### Property 14: Objective Disambiguation Criteria
+*For any* disambiguation process involving same-name athletes, the system should use objective criteria including bodyweight, weight class, and internal_id when available.
+**Validates: Requirements 8.4**
+
+### Property 15: Disambiguation Process Logging
+*For any* processing of same-name athletes, the system should log the disambiguation process clearly showing how each athlete was identified.
+**Validates: Requirements 8.5**
+
 <function_calls>
 <invoke name="prework">
 <parameter name="featureName">meet-re-import-system

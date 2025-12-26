@@ -168,7 +168,8 @@ Examples:
             timeoutMs: args.timeout,
             logLevel: args['log-level'],
             dryRun: args['dry-run'],
-            forceReImport: args.force
+            forceReImport: args.force,
+            analyzeOnly: args['analyze-only'] // Add analyze-only flag
         });
     }
 
@@ -211,8 +212,8 @@ Examples:
 
             this.logger.info(`Found ${incompleteMeets.length} incomplete meets to process`);
 
-            if (config.dryRun) {
-                this.logger.info('DRY RUN MODE - Would process the following meets:');
+            if (config.dryRun || config.analyzeOnly) {
+                this.logger.info(`${config.analyzeOnly ? 'ANALYZE-ONLY' : 'DRY RUN'} MODE - Would process the following meets:`);
                 incompleteMeets.forEach(meet => {
                     const discrepancy = meet.completenessResult.sport80ResultCount - meet.completenessResult.databaseResultCount;
                     console.log(`  📋 Meet ${meet.id}: ${meet.name} (${discrepancy} missing results)`);
