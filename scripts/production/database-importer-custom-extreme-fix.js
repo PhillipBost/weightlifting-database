@@ -809,7 +809,7 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
             console.log(`    ✅ Tier 1 VERIFIED: "${lifterName}" found in division rankings`);
 
             // Tier 1.5: If athlete found but missing internal_id, extract it by clicking their row
-            if (!targetAthlete.internalId && potentialLifterIds.length > 0) {
+            if (!targetAthlete.internalId) {
                 console.log(`    🔗 Tier 1.5: Extracting internal_id for "${lifterName}" via row clicking...`);
                 
                 try {
@@ -833,7 +833,14 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
             }
 
             // Try to disambiguate using internal_id if we have it
-            if (potentialLifterIds.length === 1) {
+            if (potentialLifterIds.length === 0) {
+                // New athlete case - return scraped data for enrichment
+                console.log(`    ✅ Tier 1: Found new athlete "${lifterName}" in rankings - returning scraped data`);
+                return {
+                    lifterId: null, // No existing lifter ID since this is new
+                    scrapedData: targetAthlete
+                };
+            } else if (potentialLifterIds.length === 1) {
                 // Single candidate - return it
                 return {
                     lifterId: potentialLifterIds[0],
@@ -1213,14 +1220,57 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
     });
 
     if (lifterIds.length === 0) {
-        // No existing lifter found - create new one
+        // No existing lifter found - attempt Tier 1 verification to extract internal_id before creating new record
         logger.log('name_match_none', {
-            message: `No existing lifter found, creating new record`,
+            message: `No existing lifter found, attempting Tier 1 verification before creating new record`,
             athlete_name: cleanName,
-            action: 'create_new'
+            action: 'tier1_before_create'
         });
-        console.log(`  ➕ Creating new lifter: ${cleanName}`);
+        console.log(`  ➕ No existing lifter found - attempting Tier 1 verification for: ${cleanName}`);
         
+        // Tier 1: Base64 URL lookup protocol for new athletes
+        console.log(`  🔍 DEBUG: Checking Tier 1 requirements for ${cleanName}:`);
+        console.log(`    - eventDate: ${additionalData.eventDate}`);
+        console.log(`    - ageCategory: ${additionalData.ageCategory}`);
+        console.log(`    - weightClass: ${additionalData.weightClass}`);
+        
+        let tier1Result = null;
+        
+        if (additionalData.eventDate && additionalData.ageCategory && additionalData.weightClass) {
+            console.log(`  🚀 Starting Tier 1 verification for new athlete: ${cleanName}`);
+            
+            logger.log('tier1_verification', {
+                message: `Starting Tier 1 verification for new athlete`,
+                athlete_name: cleanName,
+                verification_type: 'base64_url_lookup_new_athlete'
+            });
+
+            tier1Result = await runBase64UrlLookupProtocol(
+                cleanName,
+                [], // No existing lifter IDs since this is a new athlete
+                additionalData.targetMeetId,
+                additionalData.eventDate,
+                additionalData.ageCategory,
+                additionalData.weightClass
+            );
+
+            // Enrich additionalData with Tier 1 results if found
+            if (tier1Result && tier1Result.scrapedData) {
+                console.log(`  ✅ Tier 1 found data for new athlete: ${cleanName}`);
+                
+                // Extract internal_id if found
+                if (tier1Result.scrapedData.internalId && !additionalData.internal_id) {
+                    additionalData.internal_id = tier1Result.scrapedData.internalId;
+                    console.log(`  🔗 Extracted internal_id: ${additionalData.internal_id}`);
+                }
+            } else {
+                console.log(`  ❌ Tier 1 verification found no data for new athlete: ${cleanName}`);
+            }
+        } else {
+            console.log(`  ⚠️ Missing required data for Tier 1 verification (date, age category, or weight class)`);
+        }
+        
+        // Create new lifter with enriched data
         const { data: newLifter, error: createError } = await supabase
             .from('usaw_lifters')
             .insert({
@@ -1236,7 +1286,12 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
             throw new Error(`Error creating lifter: ${createError.message}`);
         }
 
-        logger.logFinalResult(newLifter, 'create_new');
+        // Attach scraped data for enrichment if available
+        if (tier1Result && tier1Result.scrapedData) {
+            newLifter.scrapedData = tier1Result.scrapedData;
+        }
+
+        logger.logFinalResult(newLifter, 'create_new_with_tier1');
         console.log(`  ✅ Created new lifter: ${cleanName} (ID: ${newLifter.lifter_id})`);
         return newLifter;
     }
