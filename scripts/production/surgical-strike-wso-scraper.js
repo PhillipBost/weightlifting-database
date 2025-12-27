@@ -389,18 +389,22 @@ Examples:
      */
     async queryIncompleteResults(skipList) {
         if (this.config.force) {
-            this.logger.info('Querying database for results (force mode - including results with WSO)...');
+            this.logger.info('Querying database for results (force mode - including results with WSO and total=0)...');
         } else {
-            this.logger.info('Querying database for results missing WSO...');
+            this.logger.info('Querying database for results missing WSO (excluding total=0)...');
         }
 
         let query = this.supabase
             .from('usaw_meet_results')
             .select('result_id, lifter_id, lifter_name, meet_id, gender, age_category, weight_class, competition_age, wso, club_name, total')
-            .filter('total', 'gt', '0')
             .not('age_category', 'is', null)
             .not('weight_class', 'is', null)
             .not('meet_id', 'is', null);
+
+        // Only filter by total > 0 if not in force mode (force mode includes results with total=0)
+        if (!this.config.force) {
+            query = query.filter('total', 'gt', '0');
+        }
 
         // Only filter by missing WSO if not in force mode
         if (!this.config.force) {

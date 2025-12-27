@@ -63,7 +63,7 @@ class MeetReImportCLI {
     parseArguments(argv) {
         const args = minimist(argv.slice(2), {
             string: ['meet-ids', 'start-date', 'end-date', 'athlete-name', 'log-level'],
-            number: ['batch-size', 'delay', 'limit', 'timeout'],
+            number: ['batch-size', 'delay', 'limit', 'timeout', 'date-window'],
             boolean: ['dry-run', 'force', 'help', 'version', 'analyze-only'],
             alias: {
                 'h': 'help',
@@ -77,7 +77,8 @@ class MeetReImportCLI {
                 'batch-size': 10,
                 'delay': 2000,
                 'timeout': 30000,
-                'log-level': 'info'
+                'log-level': 'info',
+                'date-window': 5
             }
         });
 
@@ -108,6 +109,7 @@ Options:
   --delay <ms>            Delay between meets in milliseconds (default: 2000)
   --limit <n>             Maximum number of meets to process
   --timeout <ms>          Timeout for each meet operation (default: 30000)
+  --date-window <n>       Date window in days for base64 URL lookups (default: 5)
   --log-level <level>     Log level: error, warn, info, debug (default: info)
   --dry-run, -d           Show what would be done without actually doing it
   --force, -f             Force re-import even for complete meets
@@ -129,6 +131,12 @@ Examples:
 
   # Process with custom batch size and delay
   node re-import-meets.js --batch-size=5 --delay=3000 --limit=50
+
+  # Expand date window for base64 URL lookups to 15 days
+  node re-import-meets.js --meet-ids=2308 --date-window=15
+
+  # Narrow date window to 1 day for precise matching
+  node re-import-meets.js --meet-ids=2308 --date-window=1
         `);
     }
 
@@ -161,6 +169,11 @@ Examples:
      * @returns {ReImportConfiguration}
      */
     createConfiguration(args) {
+        // Set date window as environment variable for database-importer to use
+        if (args['date-window']) {
+            process.env.DATE_WINDOW_DAYS = args['date-window'].toString();
+        }
+
         return new ReImportConfiguration({
             batchSize: args['batch-size'],
             delayBetweenMeets: args.delay,
@@ -169,7 +182,8 @@ Examples:
             logLevel: args['log-level'],
             dryRun: args['dry-run'],
             forceReImport: args.force,
-            analyzeOnly: args['analyze-only'] // Add analyze-only flag
+            analyzeOnly: args['analyze-only'], // Add analyze-only flag
+            dateWindow: args['date-window'] || parseInt(process.env.DATE_WINDOW_DAYS) || 5
         });
     }
 
