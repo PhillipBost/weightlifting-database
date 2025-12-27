@@ -279,6 +279,9 @@ class ReImportConfiguration {
         
         // Analyze only mode (like dry run but specifically for analysis)
         this.analyzeOnly = options.analyzeOnly || false;
+        
+        // Date window for base64 URL lookups (in days, default: 5)
+        this.dateWindow = options.dateWindow || parseInt(process.env.DATE_WINDOW_DAYS) || 5;
     }
 
     /**

@@ -232,6 +232,7 @@ async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId, e
         let foundMeet = null;
         let currentPage = 1;
         let hasMorePages = true;
+        let allCompetitions = [];
 
         while (hasMorePages && !foundMeet) {
             console.log(`    📄 Checking page ${currentPage} of meet history...`);
@@ -306,9 +307,45 @@ async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId, e
                 return meetInfo;
             });
 
+            // Collect all competitions for logging
+            allCompetitions = allCompetitions.concat(pageData);
+            console.log(`    📋 Page ${currentPage}: Found ${pageData.length} competition(s)`);
+
+            // Log competitions near the target date for debugging (on first page)
+            if (currentPage === 1 && pageData.length > 0) {
+                const targetDate = targetMeet.Date;
+                const nearbyCompetitions = pageData.filter(meet => {
+                    if (!meet.date || !targetDate) return false;
+                    try {
+                        const sport80Date = new Date(meet.date);
+                        const targetDateObj = new Date(targetDate);
+                        const daysDifference = Math.abs((sport80Date - targetDateObj) / (1000 * 60 * 60 * 24));
+                        return daysDifference <= 30; // Within 30 days
+                    } catch {
+                        return false;
+                    }
+                });
+                
+                if (nearbyCompetitions.length > 0) {
+                    console.log(`    📅 Competitions near target date (${targetDate}):`);
+                    nearbyCompetitions.forEach(comp => {
+                        console.log(`       - "${comp.name}" on ${comp.date} (BW: ${comp.bodyweight}kg, Total: ${comp.total}kg)`);
+                    });
+                }
+            }
+
             // Match by meet name and date (with ±5 day tolerance)
+            // Enhanced: Allow partial name matches
             foundMeet = pageData.find(meet => {
-                const nameMatch = meet.name === targetMeet.Meet;
+                // Enhanced name matching: allow partial matches
+                let nameMatch = false;
+                if (meet.name && targetMeet.Meet) {
+                    const meetName = meet.name.toLowerCase().trim();
+                    const targetName = targetMeet.Meet.toLowerCase().trim();
+                    nameMatch = meetName === targetName || 
+                               meetName.includes(targetName) || 
+                               targetName.includes(meetName);
+                }
                 
                 // Date matching with ±5 day tolerance
                 let dateMatch = false;
@@ -326,6 +363,10 @@ async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId, e
                         // Fallback to exact string match if date parsing fails
                         dateMatch = meet.date === targetMeet.Date;
                     }
+                }
+                
+                if (nameMatch && !dateMatch) {
+                    console.log(`    ⚠️  Name match but date mismatch: "${meet.name}" (${meet.date}) vs "${targetMeet.Meet}" (${targetMeet.Date})`);
                 }
                 
                 return nameMatch && dateMatch;
@@ -363,7 +404,7 @@ async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId, e
 
             // Check for next page
             hasMorePages = await page.evaluate(() => {
-                const nextBtn = document.querySelector('.v-data-footer__icons-after button:not([disabled])');
+                const nextBtn = document.querySelector('.v-data-footer__icons-after .v-btn:not([disabled])');
                 if (nextBtn && !nextBtn.disabled) {
                     nextBtn.click();
                     return true;
@@ -373,13 +414,14 @@ async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId, e
 
             if (hasMorePages) {
                 // Wait for next page to load
-                await new Promise(resolve => setTimeout(resolve, 3000));
+                await new Promise(resolve => setTimeout(resolve, 1500));
                 await page.waitForSelector('.data-table div div.v-data-table div.v-data-table__wrapper table tbody tr', { timeout: 10000 });
                 currentPage++;
             }
         }
 
         console.log(`    ❌ NOT FOUND: "${targetMeet.Meet}" on ${targetMeet.Date} not found in ${currentPage} page(s) of history`);
+        console.log(`    📊 Total competitions checked: ${allCompetitions.length} across ${currentPage} page(s)`);
         return false;
 
     } catch (error) {
@@ -509,8 +551,12 @@ function buildRankingsURL(divisionCode, startDate, endDate) {
 
     const jsonStr = JSON.stringify(filters);
     const base64Encoded = Buffer.from(jsonStr).toString('base64');
+    const fullUrl = `https://usaweightlifting.sport80.com/public/rankings/all?filters=${encodeURIComponent(base64Encoded)}`;
 
-    return `https://usaweightlifting.sport80.com/public/rankings/all?filters=${encodeURIComponent(base64Encoded)}`;
+    // Log base64 URL every time it's generated
+    console.log(`    🔗 Base64 URL: ${fullUrl}`);
+
+    return fullUrl;
 }
 
 async function scrapeDivisionRankings(page, divisionCode, startDate, endDate) {
@@ -801,6 +847,9 @@ async function batchEnrichAthletes(scrapedAthletes, startDate, endDate, ageCateg
 async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, targetMeetId, eventDate, ageCategory, weightClass) {
     console.log(`  🔍 Tier 1: Base64 URL Lookup Protocol (Division Rankings)`);
 
+    // Get configurable date window from environment variable (default: 5 days)
+    const dateWindowDays = parseInt(process.env.DATE_WINDOW_DAYS) || 5;
+
     // Check if division codes are loaded
     if (Object.keys(divisionCodes).length === 0) {
         console.log(`    ⚠️ Division codes not loaded - skipping Tier 1`);
@@ -845,7 +894,7 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
     }
 
     console.log(`    📋 Division: ${divisionName} ${isActiveDivision ? '' : '(Inactive)'} (code: ${divisionCode})`);
-    console.log(`    📅 Date Range: ${formatDate(addDays(meetDate, -5))} to ${formatDate(addDays(meetDate, 5))} (±5 days)`);
+    console.log(`    📅 Date Range: ${formatDate(addDays(meetDate, -dateWindowDays))} to ${formatDate(addDays(meetDate, dateWindowDays))} (±${dateWindowDays} days)`);
 
     let browser;
     try {
@@ -864,9 +913,9 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
         const page = await browser.newPage();
         await page.setViewport({ width: 1500, height: 1000 });
 
-        // Calculate date range
-        const startDate = addDays(meetDate, -5);
-        const endDate = addDays(meetDate, 5);
+        // Calculate date range using configurable window
+        const startDate = addDays(meetDate, -dateWindowDays);
+        const endDate = addDays(meetDate, dateWindowDays);
 
         // Scrape division rankings
         const scrapedAthletes = await scrapeDivisionRankings(page, divisionCode, startDate, endDate);
