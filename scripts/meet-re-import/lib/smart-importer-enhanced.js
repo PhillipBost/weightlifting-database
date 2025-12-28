@@ -1,26 +1,28 @@
 /**
- * Smart Importer - Only processes missing athletes
+ * Smart Importer - Only processes missing athletes with athlete name filtering support
  * 
  * Compares scraped data against database and only processes what's actually missing
+ * Supports filtering to only process specific athletes when specified
  */
 
 const fs = require('fs').promises;
 const csv = require('csv-parser');
 const { createReadStream } = require('fs');
 
-class SmartImporter {
+class SmartImporterEnhanced {
     constructor(supabaseClient, logger) {
         this.supabase = supabaseClient;
         this.logger = logger;
     }
 
     /**
-     * Import ALL results from Sport80 for a meet (treating Sport80 as source of truth)
-     */
-    /**
      * Import only missing results from a meet
+     * @param {string} csvFile - Path to scraped CSV file
+     * @param {number} meetId - Database meet ID
+     * @param {string} meetName - Meet name
+     * @param {string} athleteName - Optional athlete name to filter for
      */
-    async importMissingAthletes(csvFile, meetId, meetName) {
+    async importMissingAthletes(csvFile, meetId, meetName, athleteName = null) {
         try {
             // Step 1: Get existing results in database for this meet
             this.logger.info('🔍 Checking existing results in database...');
@@ -29,10 +31,35 @@ class SmartImporter {
 
             // Step 2: Parse scraped CSV data
             this.logger.info('📄 Analyzing scraped data...');
-            const scrapedAthletes = await this._parseScrapedData(csvFile);
+            let scrapedAthletes = await this._parseScrapedData(csvFile);
             this.logger.info(`📊 Found ${scrapedAthletes.length} results in scraped data`);
 
-            // Step 3: Identify missing results
+            // Step 3: Apply athlete name filter if specified
+            if (athleteName) {
+                const normalizedTargetName = this._normalizeAthleteName(athleteName);
+                const originalCount = scrapedAthletes.length;
+                scrapedAthletes = scrapedAthletes.filter(athlete => {
+                    const athleteNameNormalized = this._normalizeAthleteName(athlete.name);
+                    return athleteNameNormalized === normalizedTargetName;
+                });
+                
+                this.logger.info(`🎯 Applied athlete filter: "${athleteName}" - found ${scrapedAthletes.length} of ${originalCount} athletes matching`);
+                
+                if (scrapedAthletes.length === 0) {
+                    this.logger.warn(`⚠️ No athletes found matching name "${athleteName}"`);
+                    return {
+                        processed: 0,
+                        imported: 0,
+                        skipped: originalCount,
+                        errors: [{
+                            name: athleteName,
+                            reason: `No athlete found with name "${athleteName}"`
+                        }]
+                    };
+                }
+            }
+
+            // Step 4: Identify missing results
             const missingAthletes = this._identifyMissingAthletes(scrapedAthletes, existingResults);
             
             if (missingAthletes.length === 0) {
@@ -51,10 +78,10 @@ class SmartImporter {
             });
             console.log(''); // Add spacing
 
-            // Step 4: Process only missing results
+            // Step 5: Process only missing results
             const results = await this._processMissingAthletes(missingAthletes, meetId, meetName);
 
-            // Step 5: Summary
+            // Step 6: Summary
             this.logger.info(`\n📋 Import Summary:`);
             this.logger.info(`   Total scraped: ${scrapedAthletes.length}`);
             this.logger.info(`   Already existed: ${existingResults.length}`);
@@ -305,22 +332,6 @@ class SmartImporter {
     }
 
     /**
-     * Match and import a single athlete using existing logic
-     */
-    async _matchAndImportAthlete(athlete, meetId, meetName) {
-        try {
-            // This method is no longer used - we now use batch import via processMeetCsvFile
-            // This is kept for backward compatibility but should not be called
-            throw new Error('_matchAndImportAthlete is deprecated - use _importMissingAthletesBatch instead');
-        } catch (error) {
-            return {
-                success: false,
-                error: error.message
-            };
-        }
-    }
-
-    /**
      * Create a temporary CSV file with only missing results in the format expected by processMeetCsvFile
      */
     async _createFilteredCsvFile(missingAthletes, meetId, meetName) {
@@ -404,4 +415,4 @@ class SmartImporter {
     }
 }
 
-module.exports = { SmartImporter };
+module.exports = { SmartImporterEnhanced };
