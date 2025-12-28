@@ -1,3 +1,69 @@
+#!/usr/bin/env node
+
+/**
+ * Gap Scraper - Modernized Version
+ * 
+ * Identifies gaps in the sequential meet_internal_id sequence
+ * and scrapes the missing meets from Sport80 with enhanced functionality.
+ */
+
+// Check for help/version flags FIRST, before loading any heavy dependencies
+const minimist = require('minimist');
+if (require.main === module) {
+    const quickArgs = minimist(process.argv.slice(2), {
+        boolean: ['help', 'version', 'h', 'v'],
+        alias: { 'h': 'help', 'v': 'version' }
+    });
+    
+    if (quickArgs.help || quickArgs.h) {
+        console.log(`
+Gap Scraper - Missing Meet ID Gap Recovery
+
+Usage: node scrape-missing-meet-ids-fixed.js [options]
+
+Options:
+  --dry-run, -d           Show what would be done without actually doing it
+  --max-gaps <n>          Maximum number of gaps to process (default: 5)
+  --start-id <n>          Start ID filter (only process gaps >= this ID)
+  --end-id <n>            End ID filter (only process gaps <= this ID)
+  --log-level <level>     Log level: error, warn, info, debug (default: info)
+  --no-metadata         Skip tiered metadata scraping after import
+  --date-window <n>     Date window in days for metadata lookup (default: 5)
+  --help, -h              Show this help message
+  --version, -v           Show version information
+
+Environment Variables (used as fallback if CLI args not provided):
+  DRY_RUN                 Set to 'true' for dry run mode
+  MAX_GAPS                Maximum number of gaps to process
+  START_ID                Start ID filter
+  END_ID                  End ID filter
+
+Examples:
+  # Process first 10 gaps
+  node scrape-missing-meet-ids-fixed.js --max-gaps=10
+
+  # Process gaps in a specific range
+  node scrape-missing-meet-ids-fixed.js --start-id=1000 --end-id=2000
+
+  # Dry run to see what would be processed
+  node scrape-missing-meet-ids-fixed.js --dry-run --max-gaps=5
+
+  # Process with debug logging
+  node scrape-missing-meet-ids-fixed.js --max-gaps=3 --log-level=debug
+        `);
+        process.exit(0);
+    }
+    
+    if (quickArgs.version || quickArgs.v) {
+        try {
+            const packageJson = require('../../package.json');
+            console.log(`Gap Scraper v${packageJson.version}`);
+        } catch (e) {
+            console.log('Gap Scraper v1.0.0');
+        }
+        process.exit(0);
+    }
+}
 require('dotenv').config();
 const fs = require('fs');
 const path = require('path');
@@ -78,84 +144,3 @@ async function getMeetMetadataFromCsv(filePath, internalId) {
     return null;
 }
 
-async function main() {
-    const DRY_RUN = process.env.DRY_RUN === 'true';
-    const MAX_GAPS = parseInt(process.env.MAX_GAPS) || 5;
-    const START_ID = parseInt(process.env.START_ID) || null;
-    const END_ID = parseInt(process.env.END_ID) || null;
-
-    console.log('🚀 Starting Gap Recovery Script');
-    console.log(`⚙️ Settings: DRY_RUN=${DRY_RUN}, MAX_GAPS=${MAX_GAPS}`);
-
-    try {
-        const { internalIds } = await getExistingMeetIds();
-        let gaps = await findGaps(internalIds);
-
-        if (START_ID || END_ID) {
-            gaps = gaps.filter(id => {
-                if (START_ID && id < START_ID) return false;
-                if (END_ID && id > END_ID) return false;
-                return true;
-            });
-            console.log(`🎯 Filtered to ${gaps.length} gaps within range ${START_ID || 'min'} to ${END_ID || 'max'}`);
-        }
-
-        console.log(`📊 Found ${gaps.length} total gaps in database.`);
-        
-        const toProcess = gaps.slice(0, MAX_GAPS);
-        console.log(`⏭️ Processing first ${toProcess.length} gaps: ${toProcess.join(', ')}`);
-
-        if (DRY_RUN) {
-            console.log('⚠️ DRY RUN: No data will be scraped or imported.');
-            return;
-        }
-
-        for (const gapId of toProcess) {
-            const tempFile = path.join(__dirname, `../../temp_gap_${gapId}.csv`);
-            console.log(`\n🛠️ Processing Gap ID: ${gapId}`);
-            
-            try {
-                console.log(`🌐 Scraping meet ${gapId} with enhanced internal_id extraction...`);
-                await scrapeOneMeet(gapId, tempFile);
-
-                if (!fs.existsSync(tempFile) || fs.statSync(tempFile).size < 100) {
-                    console.log(`⚠️ No data found for meet ${gapId}. It might be empty or invalid.`);
-                    if (fs.existsSync(tempFile)) fs.unlinkSync(tempFile);
-                    continue;
-                }
-
-                console.log(`📄 Extracting metadata with internal_id statistics...`);
-                const meetMetadata = await getMeetMetadataFromCsv(tempFile, gapId);
-                
-                if (meetMetadata) {
-                    console.log(`📥 Importing meet metadata: ${meetMetadata.Meet}`);
-                    console.log(`📊 Internal ID coverage: ${meetMetadata.athletes_with_internal_ids}/${meetMetadata.Results} athletes`);
-                    await upsertMeetsToDatabase([meetMetadata]);
-
-                    console.log(`📥 Importing results with enhanced athlete matching...`);
-                    await processMeetCsvFile(tempFile, gapId, meetMetadata.Meet);
-                    console.log(`✅ Successfully recovered meet ${gapId} with enhanced functionality`);
-                }
-
-            } catch (error) {
-                console.error(`❌ Failed to process gap ${gapId}:`, error.message);
-            } finally {
-                if (fs.existsSync(tempFile)) {
-                    fs.unlinkSync(tempFile);
-                    console.log(`🧹 Cleaned up temp file: ${tempFile}`);
-                }
-            }
-
-            // Respectful delay
-            await new Promise(resolve => setTimeout(resolve, 2000));
-        }
-
-        console.log('\n🏁 Gap recovery process completed.');
-
-    } catch (error) {
-        console.error('💥 Fatal error:', error.message);
-        process.exit(1);
-    }
-}
-
-main();

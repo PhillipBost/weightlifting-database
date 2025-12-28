@@ -187,7 +187,7 @@ async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId) {
         .select('meet_id, meet_internal_id, Meet, Date')
         .eq('meet_id', targetMeetId)
         .single();
-    
+
     if (meetError) {
         console.log(`    ❌ Error getting meet info: ${meetError.message}`);
         return false;
@@ -253,9 +253,37 @@ async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId) {
             });
 
             // Match by meet name and date
+            // Match by meet name and date (with fuzzy logic)
             foundMeet = pageData.find(meet => {
-                const nameMatch = meet.name === targetMeet.Meet;
-                const dateMatch = meet.date === targetMeet.Date;
+                // Name match: Case-insensitive, trimmed
+                const nameMatch = meet.name && targetMeet.Meet &&
+                    meet.name.trim().toLowerCase() === targetMeet.Meet.trim().toLowerCase();
+
+                // Date match: Allow +/- 5 days difference
+                let dateMatch = false;
+                if (meet.date && targetMeet.Date) {
+                    try {
+                        const d1 = new Date(meet.date);
+                        const d2 = new Date(targetMeet.Date);
+
+                        // Check if valid dates
+                        if (!isNaN(d1.getTime()) && !isNaN(d2.getTime())) {
+                            const diffTime = Math.abs(d1 - d2);
+                            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                            dateMatch = diffDays <= 5;
+
+                            if (nameMatch && !dateMatch && diffDays <= 10) {
+                                console.log(`      ⚠️ Name matched but date difference is ${diffDays} days (${meet.date} vs ${targetMeet.Date})`);
+                            }
+                        } else {
+                            // Fallback to strict string match if dates invalid
+                            dateMatch = meet.date === targetMeet.Date;
+                        }
+                    } catch (e) {
+                        dateMatch = meet.date === targetMeet.Date;
+                    }
+                }
+
                 return nameMatch && dateMatch;
             });
 
@@ -322,15 +350,15 @@ async function extractInternalIdByClicking(page, divisionCode, startDate, endDat
             // Search for target athlete on current page
             const athleteData = await page.evaluate((targetName) => {
                 const rows = Array.from(document.querySelectorAll('.v-data-table__wrapper tbody tr'));
-                
+
                 for (let index = 0; index < rows.length; index++) {
                     const row = rows[index];
                     const cells = Array.from(row.querySelectorAll('td'));
                     const athleteName = cells[3]?.textContent?.trim() || '';
-                    
+
                     if (athleteName.toLowerCase().includes(targetName.toLowerCase()) ||
                         targetName.toLowerCase().includes(athleteName.toLowerCase())) {
-                        
+
                         return {
                             found: true,
                             rowIndex: index,
@@ -339,13 +367,13 @@ async function extractInternalIdByClicking(page, divisionCode, startDate, endDat
                         };
                     }
                 }
-                
+
                 return { found: false };
             }, targetAthleteName);
 
             if (athleteData.found) {
                 console.log(`      ✅ Found "${athleteData.athleteName}" on page ${currentPage}`);
-                
+
                 if (!athleteData.isClickable) {
                     console.log(`      ⚠️ Row is not clickable`);
                     return null;
@@ -353,7 +381,7 @@ async function extractInternalIdByClicking(page, divisionCode, startDate, endDat
 
                 // Click the row and wait for navigation
                 console.log(`      🖱️ Clicking row...`);
-                
+
                 await Promise.all([
                     page.waitForNavigation({ waitUntil: 'networkidle0', timeout: 10000 }),
                     page.evaluate((rowIndex) => {
@@ -363,11 +391,11 @@ async function extractInternalIdByClicking(page, divisionCode, startDate, endDat
                         }
                     }, athleteData.rowIndex)
                 ]);
-                
+
                 // Extract internal_id from destination URL
                 const currentUrl = page.url();
                 const match = currentUrl.match(/\/member\/(\d+)/);
-                
+
                 if (match) {
                     return parseInt(match[1]);
                 } else {
@@ -510,9 +538,9 @@ async function scrapeDivisionRankings(page, divisionCode, startDate, endDate) {
             // Extract internal_ids from clickable rows (Vue.js approach)
             const athletesNeedingInternalIds = pageAthletes.filter(a => a._hasClickableRow && !a.internalId);
             const totalClickableRows = pageAthletes.filter(a => a._hasClickableRow).length;
-            
+
             console.log(`      📊 Page ${currentPage}: ${pageAthletes.length} athletes, ${totalClickableRows} clickable rows`);
-            
+
             // Note: We don't extract internal_ids here - that's done in Tier 1.5 if needed
             // Tier 1 focuses on extracting rankings data (national_rank, club, etc.)
 
@@ -539,11 +567,11 @@ async function scrapeDivisionRankings(page, divisionCode, startDate, endDate) {
             if (nextPageExists) {
                 console.log(`      ⏳ Moving to page ${currentPage + 1}, waiting for Vue.js re-render...`);
                 await new Promise(resolve => setTimeout(resolve, 3000)); // Increased wait time
-                
+
                 // Wait for table to stabilize after pagination
                 await page.waitForSelector('.v-data-table__wrapper tbody tr', { timeout: 10000 });
                 await new Promise(resolve => setTimeout(resolve, 1000)); // Additional stabilization time
-                
+
                 currentPage++;
             } else {
                 hasMorePages = false;
@@ -793,7 +821,7 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
             // Tier 1.5: If athlete found but missing internal_id, extract it by clicking their row
             if (!targetAthlete.internalId && potentialLifterIds.length > 0) {
                 console.log(`    🔗 Tier 1.5: Extracting internal_id for "${lifterName}" via row clicking...`);
-                
+
                 try {
                     const extractedId = await extractInternalIdByClicking(
                         page,
@@ -802,7 +830,7 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
                         endDate,
                         lifterName
                     );
-                    
+
                     if (extractedId) {
                         targetAthlete.internalId = extractedId;
                         console.log(`    ✅ Tier 1.5: Extracted internal_id ${extractedId}`);
@@ -912,29 +940,29 @@ async function runSport80MemberUrlVerification(lifterName, potentialLifterIds, t
                 }
             } else {
                 console.log(`    🔍 Lifter ${lifterId} (${lifter.athlete_name}) has no internal_id - attempting Sport80 search...`);
-                
+
                 // NEW: For lifters without internal_ids, search Sport80 to find their internal_id
                 const foundInternalId = await searchSport80ForLifter(lifter.athlete_name);
-                
+
                 if (foundInternalId) {
                     console.log(`    🎯 Found internal_id ${foundInternalId} for ${lifter.athlete_name} via Sport80 search`);
-                    
+
                     // Verify this lifter participated in the target meet
                     const verified = await verifyLifterParticipationInMeet(foundInternalId, targetMeetId);
-                    
+
                     if (verified) {
                         // Update the lifter record with the found internal_id
                         const { error: updateError } = await supabase
                             .from('usaw_lifters')
                             .update({ internal_id: foundInternalId })
                             .eq('lifter_id', lifterId);
-                            
+
                         if (!updateError) {
                             console.log(`    ✅ CONFIRMED & ENRICHED: Using lifter ${lifterId} for meet ${targetMeetId} (added internal_id ${foundInternalId})`);
                         } else {
                             console.log(`    ✅ CONFIRMED: Using lifter ${lifterId} for meet ${targetMeetId} (internal_id update failed: ${updateError.message})`);
                         }
-                        
+
                         return lifterId;
                     }
                 } else {
@@ -972,13 +1000,13 @@ class MatchingLogger {
             step: step,
             ...data
         };
-        
+
         this.steps.push(logEntry);
-        
+
         // Console output for immediate visibility
         const prefix = this.getStepPrefix(step);
         console.log(`${prefix} [${step}] ${data.message || JSON.stringify(data)}`);
-        
+
         return logEntry;
     }
 
@@ -1044,7 +1072,7 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
 
     // Initialize structured logging
     const logger = new MatchingLogger(cleanName, additionalData);
-    
+
     logger.log('init', {
         message: `Starting athlete matching process`,
         athlete_name: cleanName,
@@ -1056,7 +1084,7 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
     });
 
     console.log(`  🔍 Looking for lifter: "${cleanName}"`);
-    
+
     // Priority 1: If we have an internal_id, use it for matching first
     if (additionalData.internal_id) {
         logger.log('internal_id_query', {
@@ -1064,9 +1092,9 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
             internal_id: additionalData.internal_id,
             query_type: 'internal_id_priority'
         });
-        
+
         console.log(`  🎯 Checking internal_id: ${additionalData.internal_id}`);
-        
+
         const { data: internalIdLifters, error: internalIdError } = await supabase
             .from('usaw_lifters')
             .select('lifter_id, athlete_name, internal_id')
@@ -1101,10 +1129,10 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
                         athlete_name: l.athlete_name
                     }))
                 });
-                
+
                 console.log(`  ❌ DUPLICATE DETECTION: Found ${internalIdLifters.length} lifters with internal_id ${additionalData.internal_id}`);
                 console.log(`  📋 Duplicate lifters: ${internalIdLifters.map(l => `${l.athlete_name} (ID: ${l.lifter_id})`).join(', ')}`);
-                
+
                 // Check if any of them match the current name
                 const nameMatch = internalIdLifters.find(l => l.athlete_name === cleanName);
                 if (nameMatch) {
@@ -1122,7 +1150,7 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
                 }
             } else if (internalIdLifters && internalIdLifters.length === 1) {
                 const existingLifter = internalIdLifters[0];
-                
+
                 // Check if names match
                 if (existingLifter.athlete_name === cleanName) {
                     logger.logFinalResult(existingLifter, 'internal_id_exact_match');
@@ -1173,7 +1201,7 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
     }
 
     const lifterIds = existingLifters ? existingLifters.map(l => l.lifter_id) : [];
-    
+
     logger.log('name_query', {
         message: `Name query returned ${lifterIds.length} results`,
         results_count: lifterIds.length,
@@ -1192,7 +1220,7 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
             action: 'create_new'
         });
         console.log(`  ➕ Creating new lifter: ${cleanName}`);
-        
+
         const { data: newLifter, error: createError } = await supabase
             .from('usaw_lifters')
             .insert({
@@ -1216,7 +1244,7 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
     if (lifterIds.length === 1) {
         // Single match found - update with internal_id if we have it and they don't
         const existingLifter = existingLifters[0];
-        
+
         logger.log('name_match_single', {
             message: `Single lifter found by name`,
             lifter_id: existingLifter.lifter_id,
@@ -1224,7 +1252,7 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
             existing_internal_id: existingLifter.internal_id,
             provided_internal_id: additionalData.internal_id
         });
-        
+
         if (additionalData.internal_id && !existingLifter.internal_id) {
             logger.log('enrichment', {
                 message: `Attempting to enrich lifter with internal_id`,
@@ -1233,14 +1261,14 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
                 action: 'enrich_internal_id'
             });
             console.log(`  🔄 Enriching lifter ${cleanName} with internal_id: ${additionalData.internal_id}`);
-            
+
             // Check for conflicts: ensure no other lifter already has this internal_id
             const { data: conflictCheck, error: conflictError } = await supabase
                 .from('usaw_lifters')
                 .select('lifter_id, athlete_name')
                 .eq('internal_id', additionalData.internal_id)
                 .neq('lifter_id', existingLifter.lifter_id);
-                
+
             if (conflictError) {
                 logger.log('error', {
                     message: `Error checking for internal_id conflicts: ${conflictError.message}`,
@@ -1267,7 +1295,7 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
                     .eq('lifter_id', existingLifter.lifter_id)
                     .select()
                     .single();
-                    
+
                 if (updateError) {
                     logger.log('error', {
                         message: `Failed to update internal_id: ${updateError.message}`,
@@ -1292,7 +1320,7 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
             });
             console.log(`  ⚠️ Internal_id mismatch for ${cleanName}: existing=${existingLifter.internal_id}, new=${additionalData.internal_id}`);
         }
-        
+
         console.log(`  ✅ Found 1 existing lifter: ${cleanName} (ID: ${lifterIds[0]})`);
 
         // Tier 1: Base64 URL lookup protocol
@@ -1342,7 +1370,7 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
                 original_lifter_id: existingLifter.lifter_id
             });
             console.log(`  ⚠️ Could not verify lifter ${cleanName} through two-tier verification - creating new record`);
-            
+
             const { data: newLifter, error: createError } = await supabase
                 .from('usaw_lifters')
                 .insert({
@@ -1390,35 +1418,35 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
             console.log(`  ✅ Disambiguated via internal_id: ${cleanName} (ID: ${internalIdMatch.lifter_id})`);
             return internalIdMatch;
         }
-        
+
         // Check if any lifter has null internal_id that we can enrich
         const nullInternalIdLifters = existingLifters.filter(l => !l.internal_id);
         if (nullInternalIdLifters.length === 1) {
             // Only one candidate without internal_id - enrich it
             const candidateLifter = nullInternalIdLifters[0];
-            
+
             logger.log('enrichment', {
                 message: `Single candidate without internal_id found for enrichment`,
                 candidate_lifter_id: candidateLifter.lifter_id,
                 internal_id: additionalData.internal_id
             });
-            
+
             // Check for conflicts before enriching
             const { data: conflictCheck, error: conflictError } = await supabase
                 .from('usaw_lifters')
                 .select('lifter_id, athlete_name')
                 .eq('internal_id', additionalData.internal_id);
-                
+
             if (!conflictError && (!conflictCheck || conflictCheck.length === 0)) {
                 console.log(`  🔄 Enriching candidate lifter ${cleanName} with internal_id: ${additionalData.internal_id}`);
-                
+
                 const { data: updatedLifter, error: updateError } = await supabase
                     .from('usaw_lifters')
                     .update({ internal_id: additionalData.internal_id })
                     .eq('lifter_id', candidateLifter.lifter_id)
                     .select()
                     .single();
-                    
+
                 if (!updateError) {
                     logger.logFinalResult(updatedLifter, 'disambiguation_enriched');
                     console.log(`  ✅ Enriched and selected lifter: ${cleanName} (ID: ${candidateLifter.lifter_id})`);
@@ -1477,7 +1505,7 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
         reason: 'disambiguation_failed'
     });
     console.log(`  ⚠️ Could not disambiguate lifter "${cleanName}" - ${lifterIds.length} candidates found but none verified - creating new record`);
-    
+
     const { data: newLifter, error: createError } = await supabase
         .from('usaw_lifters')
         .insert({
@@ -1645,5 +1673,6 @@ module.exports = {
     processMeetCsvFile,
     verifyLifterParticipationInMeet,
     scrapeOneMeet,
-    findOrCreateLifter
+    findOrCreateLifter,
+    runBase64UrlLookupProtocol
 };
