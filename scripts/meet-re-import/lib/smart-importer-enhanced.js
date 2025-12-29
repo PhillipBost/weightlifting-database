@@ -42,9 +42,9 @@ class SmartImporterEnhanced {
                     const athleteNameNormalized = this._normalizeAthleteName(athlete.name);
                     return athleteNameNormalized === normalizedTargetName;
                 });
-                
+
                 this.logger.info(`🎯 Applied athlete filter: "${athleteName}" - found ${scrapedAthletes.length} of ${originalCount} athletes matching`);
-                
+
                 if (scrapedAthletes.length === 0) {
                     this.logger.warn(`⚠️ No athletes found matching name "${athleteName}"`);
                     return {
@@ -61,7 +61,7 @@ class SmartImporterEnhanced {
 
             // Step 4: Identify missing results
             const missingAthletes = this._identifyMissingAthletes(scrapedAthletes, existingResults);
-            
+
             if (missingAthletes.length === 0) {
                 this.logger.info('✅ No missing results found - all results already in database');
                 return {
@@ -147,7 +147,7 @@ class SmartImporterEnhanced {
     async _parseScrapedData(csvFile) {
         try {
             const csvContent = await fs.readFile(csvFile, 'utf8');
-            
+
             // Parse CSV with pipe delimiter using Papa.parse like working database-importer.js
             const Papa = require('papaparse');
             const parsed = Papa.parse(csvContent, {
@@ -169,7 +169,7 @@ class SmartImporterEnhanced {
                     typeof row.Lifter === 'string' &&
                     row.Lifter.trim() !== '';
             });
-            
+
             return validRows.map((row, index) => {
                 return {
                     rowNumber: index + 1,
@@ -207,7 +207,7 @@ class SmartImporterEnhanced {
             const hasMatch = existingResults.some(existingResult => {
                 return this._resultsMatch(scrapedAthlete, existingResult);
             });
-            
+
             return !hasMatch;
         });
     }
@@ -217,22 +217,22 @@ class SmartImporterEnhanced {
      * Uses multiple attributes for more precise matching
      */
     _resultsMatch(scrapedAthlete, existingResult) {
-        const nameMatch = this._normalizeAthleteName(scrapedAthlete.name) === 
-                         this._normalizeAthleteName(existingResult.name);
-        
+        const nameMatch = this._normalizeAthleteName(scrapedAthlete.name) ===
+            this._normalizeAthleteName(existingResult.name);
+
         // If names don't match, definitely not the same
         if (!nameMatch) {
             return false;
         }
-        
+
         // For duplicate names, require BOTH bodyweight AND total to match
         // This ensures we can distinguish between different results with the same name
-        const bodyweightMatch = this._normalizeBodyweight(scrapedAthlete.bodyweight) === 
-                               this._normalizeBodyweight(existingResult.bodyweight);
-        
-        const totalMatch = this._normalizeTotal(scrapedAthlete.total) === 
-                          this._normalizeTotal(existingResult.total);
-        
+        const bodyweightMatch = this._normalizeBodyweight(scrapedAthlete.bodyweight) ===
+            this._normalizeBodyweight(existingResult.bodyweight);
+
+        const totalMatch = this._normalizeTotal(scrapedAthlete.total) ===
+            this._normalizeTotal(existingResult.total);
+
         // Require both bodyweight and total to match for precise identification
         return nameMatch && bodyweightMatch && totalMatch;
     }
@@ -277,21 +277,21 @@ class SmartImporterEnhanced {
         try {
             // Create a temporary CSV file with only missing results
             const tempCsvFile = await this._createFilteredCsvFile(missingAthletes, meetId, meetName);
-            
+
             this.logger.info(`📄 Created filtered CSV with ${missingAthletes.length} missing results`);
-            
+
             // Use existing proven import infrastructure WITH enhanced Tier 2 verification
-            const { processMeetCsvFile } = require('../../production/database-importer-custom-extreme-fix');
-            
+            const { processMeetCsvFile } = require('../../production/database-importer-custom');
+
             this.logger.info(`🔄 Importing missing results using proven infrastructure...`);
-            
+
             // Import using existing logic (includes athlete matching, Tier 1/2 verification, etc.)
             const importResult = await processMeetCsvFile(tempCsvFile, meetId, meetName);
-            
+
             // Update results based on import outcome
             results.imported = importResult.processed || 0;
             results.errors = [];
-            
+
             // If there were errors, create error entries
             if (importResult.errors && importResult.errors > 0) {
                 // We don't have detailed error info from processMeetCsvFile, so create generic entries
@@ -303,7 +303,7 @@ class SmartImporterEnhanced {
                     });
                 }
             }
-            
+
             // Clean up temporary file
             const fs = require('fs').promises;
             try {
@@ -312,21 +312,21 @@ class SmartImporterEnhanced {
             } catch (cleanupError) {
                 this.logger.warn(`⚠️ Failed to clean up temporary file: ${cleanupError.message}`);
             }
-            
+
             this.logger.info(`✅ Import completed: ${results.imported} imported, ${results.errors.length} errors`);
-            
+
             return results;
 
         } catch (error) {
             this.logger.error(`❌ Batch import failed: ${error.message}`);
-            
+
             // Mark all as errors
             results.imported = 0;
             results.errors = missingAthletes.map(athlete => ({
                 name: athlete.name,
                 reason: `Batch import failed: ${error.message}`
             }));
-            
+
             return results;
         }
     }
@@ -337,48 +337,48 @@ class SmartImporterEnhanced {
     async _createFilteredCsvFile(missingAthletes, meetId, meetName) {
         const path = require('path');
         const os = require('os');
-        
+
         // Create temporary file path
         const tempDir = os.tmpdir();
         const timestamp = Date.now();
         const tempFilePath = path.join(tempDir, `missing_results_${meetId}_${timestamp}.csv`);
-        
+
         // Get meet details for CSV data
         const { data: meetData, error: meetError } = await this.supabase
             .from('usaw_meets')
             .select('Meet, Date')
             .eq('meet_id', meetId)
             .single();
-            
+
         if (meetError) {
             this.logger.warn(`⚠️ Could not fetch meet details: ${meetError.message}`);
         }
-        
+
         const meetDate = meetData?.Date || new Date().toISOString().split('T')[0];
         const actualMeetName = meetData?.Meet || meetName;
-        
+
         // Create CSV header (matching the format expected by processMeetCsvFile)
         const csvHeader = [
             'Meet',
-            'Date', 
+            'Date',
             'Age Category',
             'Weight Class',
             'Lifter',
             'Body Weight (Kg)',
             'Snatch Lift 1',
-            'Snatch Lift 2', 
+            'Snatch Lift 2',
             'Snatch Lift 3',
             'Best Snatch',
             'C&J Lift 1',
             'C&J Lift 2',
-            'C&J Lift 3', 
+            'C&J Lift 3',
             'Best C&J',
             'Total',
             'Club',
             'Membership Number',
             'Internal_ID'
         ].join('|');
-        
+
         // Create CSV rows for missing athletes
         const csvRows = missingAthletes.map(athlete => {
             return [
@@ -402,15 +402,15 @@ class SmartImporterEnhanced {
                 ''                                     // Internal_ID (will be extracted during import)
             ].join('|');
         });
-        
+
         // Combine header and rows
         const csvContent = [csvHeader, ...csvRows].join('\n');
-        
+
         // Write to temporary file
         await fs.writeFile(tempFilePath, csvContent, 'utf8');
-        
+
         this.logger.debug(`📄 Created temporary CSV file: ${tempFilePath}`);
-        
+
         return tempFilePath;
     }
 }

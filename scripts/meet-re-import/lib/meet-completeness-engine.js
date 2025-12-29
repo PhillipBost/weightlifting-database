@@ -28,7 +28,7 @@ class MeetCompletenessEngine {
      */
     async getIncompleteMeets(filters = {}) {
         this.logger.info('Starting incomplete meet identification', { filters });
-        
+
         try {
             // Get candidate meets from database
             const candidateMeets = await this._getCandidateMeets(filters);
@@ -38,7 +38,13 @@ class MeetCompletenessEngine {
             const incompleteMeets = [];
             for (const meet of candidateMeets) {
                 const completenessResult = await this.analyzeMeetCompleteness(meet.id);
-                if (!completenessResult.isComplete) {
+
+                // If force is enabled or meet is incomplete, add it to the list
+                if (this.options.force || !completenessResult.isComplete) {
+                    if (this.options.force && completenessResult.isComplete) {
+                        this.logger.info(`Force enabled - including complete meet ${meet.id}`);
+                    }
+
                     incompleteMeets.push({
                         ...meet,
                         completenessResult
@@ -62,7 +68,7 @@ class MeetCompletenessEngine {
      */
     async analyzeMeetCompleteness(meetId) {
         this.logger.debug(`Analyzing completeness for meet ${meetId}`);
-        
+
         try {
             // Get meet details from database
             const meetDetails = await this._getMeetDetails(meetId);
@@ -76,12 +82,40 @@ class MeetCompletenessEngine {
                 sport80_id: meetDetails.sport80_id
             });
 
-            // Get result counts
+            // 1. Check for incomplete results (rows with NULL totals) - FAST DB CHECK
+            // We prioritize this because if we have NULLs, the meet is definitely incomplete 
+            // and we don't need to waste time scraping Sport80 to count rows.
+            const hasIncompleteResults = await this._hasIncompleteResults(meetId);
+
+            if (hasIncompleteResults) {
+                this.logger.info(`Meet ${meetId} has incomplete results (NULL values) - marked incomplete without scraping`, { meetName: meetDetails.name });
+
+                // Return early with incomplete status
+                return {
+                    meetId,
+                    meetInternalId: meetDetails.sport80_id,
+                    meetName: meetDetails.name,
+                    meetDate: meetDetails.date,
+                    sport80ResultCount: null, // Skipped
+                    databaseResultCount: null, // Skipped (or we could fetch it, but effectively irrelevant if we know it's broken)
+                    resultCountMatch: false,
+                    hasIncompleteResults: true,
+                    isComplete: false,
+                    discrepancy: 0,
+                    lastCheckedDate: new Date(),
+                    status: 'incomplete_metadata', // distinguish
+                    errorLog: []
+                };
+            }
+
+            // 2. Get result counts - SLOW EXTERNAL CHECK
+            // Only proceed to scrape Sport80 if we don't have obvious data gaps
             const databaseCount = await this._getDatabaseResultCount(meetId);
             const sport80Count = await this._getSport80ResultCount(meetDetails.sport80_id);
 
             // Compare counts and determine completeness
             const resultCountMatch = sport80Count === databaseCount;
+            // Meet is incomplete if counts don't match OR if we have incomplete (NULL) results (already checked above)
             const isComplete = resultCountMatch;
             const discrepancy = sport80Count - databaseCount;
 
@@ -95,7 +129,7 @@ class MeetCompletenessEngine {
                     status: discrepancy > 0 ? 'incomplete' : 'database_has_more'
                 });
             } else {
-                this.logger.debug(`Meet ${meetId} result counts match`, {
+                this.logger.debug(`Meet ${meetId} result counts match and data is complete`, {
                     meetName: meetDetails.name,
                     count: sport80Count
                 });
@@ -109,6 +143,7 @@ class MeetCompletenessEngine {
                 sport80ResultCount: sport80Count,
                 databaseResultCount: databaseCount,
                 resultCountMatch,
+                hasIncompleteResults: false, // We know this is false because we passed the check above
                 isComplete,
                 discrepancy,
                 lastCheckedDate: new Date(),
@@ -122,7 +157,7 @@ class MeetCompletenessEngine {
                 databaseCount,
                 discrepancy
             });
-            
+
             return result;
 
         } catch (error) {
@@ -231,7 +266,7 @@ class MeetCompletenessEngine {
      */
     async _getDatabaseResultCount(meetId) {
         this.logger.debug(`Querying database result count for meet ${meetId}`);
-        
+
         const { count, error } = await this.supabase
             .from('usaw_meet_results')
             .select('*', { count: 'exact', head: true })
@@ -244,8 +279,32 @@ class MeetCompletenessEngine {
 
         const resultCount = count || 0;
         this.logger.debug(`Database result count for meet ${meetId}: ${resultCount}`);
-        
+
         return resultCount;
+    }
+
+    /**
+     * Check if meet has incomplete results (NULL values)
+     * @private
+     */
+    async _hasIncompleteResults(meetId) {
+        // We consider a result incomplete if Total is NULL (or 0, though database stores 0 correctly now)
+        // Strictly searching for NULLs in key fields
+        const { count, error } = await this.supabase
+            .from('usaw_meet_results')
+            .select('*', { count: 'exact', head: true })
+            .eq('meet_id', meetId)
+            // Check if Total is NULL. 
+            // Note: Some bomb-outs might genuinely have 0 Total, but scraped data usually has 0. 
+            // If it's NULL, it's definitely an issue.
+            .is('total', null);
+
+        if (error) {
+            this.logger.error(`Failed to check incomplete results for meet ${meetId}`, { error: error.message });
+            return false; // Assume false on error to avoid blocking, or throw?
+        }
+
+        return count > 0;
     }
 
     /**
@@ -254,9 +313,9 @@ class MeetCompletenessEngine {
      */
     async _getSport80ResultCount(sport80Id) {
         const puppeteer = require('puppeteer');
-        
+
         this.logger.debug(`Extracting Sport80 result count for meet ${sport80Id}`);
-        
+
         let browser;
         try {
             browser = await puppeteer.launch({
@@ -270,24 +329,24 @@ class MeetCompletenessEngine {
                     '--disable-extensions'
                 ]
             });
-            
+
             const page = await browser.newPage();
             await page.setViewport({ width: 1500, height: 1000 });
-            
+
             const url = `https://usaweightlifting.sport80.com/public/rankings/results/${sport80Id}`;
             this.logger.debug(`Navigating to Sport80 meet page: ${url}`);
-            
+
             await page.goto(url, {
                 waitUntil: 'networkidle0',
                 timeout: 30000
             });
-            
+
             // Check if meet exists by looking for the data table
             const tableExists = await page.$('.data-table div div.v-data-table div.v-data-table__wrapper table');
             if (!tableExists) {
                 throw new Error(`Meet ${sport80Id} not found or has no results table`);
             }
-            
+
             // Get pagination info to determine total result count
             const paginationText = await page.$eval(
                 ".data-table div div.v-data-table div.v-data-footer div.v-data-footer__pagination",
@@ -296,7 +355,7 @@ class MeetCompletenessEngine {
                 // If no pagination element, check if there are any results at all
                 return null;
             });
-            
+
             if (!paginationText) {
                 // No pagination means either no results or very few results
                 // Count rows directly
@@ -308,7 +367,7 @@ class MeetCompletenessEngine {
                         const cells = row.querySelectorAll('td');
                         if (cells.length > 0) {
                             // Check if this is a header row by looking for "Snatch Lift 1" text
-                            const isHeaderRow = Array.from(cells).some(cell => 
+                            const isHeaderRow = Array.from(cells).some(cell =>
                                 cell.textContent.includes('Snatch Lift 1')
                             );
                             if (!isHeaderRow) {
@@ -318,24 +377,24 @@ class MeetCompletenessEngine {
                     }
                     return validRows;
                 });
-                
+
                 this.logger.debug(`No pagination found, counted ${rowCount} rows directly`);
                 return rowCount;
             }
-            
+
             // Parse pagination text like "1-30 of 150" to get total count
             const totalMatch = paginationText.match(/of (\d+)/);
             if (!totalMatch) {
                 throw new Error(`Could not parse pagination text: ${paginationText}`);
             }
-            
+
             const totalCount = parseInt(totalMatch[1]);
             this.logger.debug(`Extracted total result count: ${totalCount} from pagination: ${paginationText}`);
-            
+
             return totalCount;
-            
+
         } catch (error) {
-            this.logger.error(`Failed to extract Sport80 result count for meet ${sport80Id}`, { 
+            this.logger.error(`Failed to extract Sport80 result count for meet ${sport80Id}`, {
                 error: error.message,
                 url: `https://usaweightlifting.sport80.com/public/rankings/results/${sport80Id}`
             });
