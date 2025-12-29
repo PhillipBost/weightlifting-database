@@ -27,7 +27,7 @@ class DetailedReImportOrchestrator {
      */
     async reImportMeet(meetId, meetDetails) {
         this.logger.logMeetStart(meetId, meetDetails.name);
-        
+
         const result = {
             meetId,
             meetName: meetDetails.name,
@@ -49,7 +49,7 @@ class DetailedReImportOrchestrator {
             // Step 1: Scrape from Sport80
             this.logger.logScrapeStart(meetId);
             const tempFile = await this._scrapeFromSport80(meetId, meetDetails.sport80_id);
-            
+
             if (!tempFile) {
                 throw new Error('Failed to scrape meet from Sport80');
             }
@@ -61,7 +61,7 @@ class DetailedReImportOrchestrator {
             // Step 3: Import only missing athletes with detailed tracking
             this.logger.logImportStart(meetId);
             const importResult = await this.smartImporter.importMissingAthletes(tempFile, meetId, meetDetails.name);
-            
+
             result.athleteDetails = importResult.errors || [];
 
             // Step 4: Verify results
@@ -106,13 +106,13 @@ class DetailedReImportOrchestrator {
             // Use existing scrapeOneMeet function
             const { scrapeOneMeet } = require('../../../scripts/production/scrapeOneMeet');
             const tempFile = path.join(this.options.tempDir, `meet_${meetId}_${Date.now()}.csv`);
-            
+
             // Ensure temp directory exists
             await fs.mkdir(this.options.tempDir, { recursive: true });
-            
+
             await scrapeOneMeet(sport80Id, tempFile);
             return tempFile;
-            
+
         } catch (error) {
             this.logger.error(`Failed to scrape meet ${meetId}: ${error.message}`);
             return null;
@@ -126,7 +126,7 @@ class DetailedReImportOrchestrator {
     async _analyzeScrapedData(csvFile) {
         try {
             const csvContent = await fs.readFile(csvFile, 'utf8');
-            
+
             // Parse CSV with pipe delimiter using Papa.parse like working database-importer.js
             const Papa = require('papaparse');
             const parsed = Papa.parse(csvContent, {
@@ -148,7 +148,7 @@ class DetailedReImportOrchestrator {
                     typeof row.Lifter === 'string' &&
                     row.Lifter.trim() !== '';
             });
-            
+
             return {
                 athleteCount: validRows.length,
                 athletes: validRows.map((row, index) => {
@@ -177,15 +177,16 @@ class DetailedReImportOrchestrator {
 
         try {
             // Use existing database importer WITH same-name athletes fix
-            const processMeetCsvFile = require('../../scripts/production/database-importer-custom-extreme-fix').processMeetCsvFile;
-            
+            // Use the main custom database importer (which now includes duplicate fixes and fuzzy date matching)
+            const processMeetCsvFile = require('../../scripts/production/database-importer-custom').processMeetCsvFile;
+
             this.logger.info(`Importing ${scrapedData.athleteCount} athletes...`);
-            
+
             // Process each athlete and track results
             for (let i = 0; i < scrapedData.athletes.length; i++) {
                 const athlete = scrapedData.athletes[i];
                 this.logger.logAthleteProcessing(athlete.name, 'importing');
-                
+
                 // Track this athlete
                 result.athleteDetails.push({
                     name: athlete.name,
@@ -197,7 +198,7 @@ class DetailedReImportOrchestrator {
 
             // Run the actual import
             await processMeetCsvFile(csvFile, meetId, meetName);
-            
+
             // Mark all as successful for now (we'd need to modify the importer for detailed tracking)
             result.athleteDetails.forEach(athlete => {
                 athlete.status = 'imported';
@@ -206,7 +207,7 @@ class DetailedReImportOrchestrator {
 
         } catch (error) {
             this.logger.error(`Import failed: ${error.message}`);
-            
+
             // Mark all remaining athletes as failed
             result.athleteDetails.forEach(athlete => {
                 if (athlete.status === 'processing') {
@@ -275,7 +276,7 @@ class DetailedReImportOrchestrator {
                 const meetResult = await this.reImportMeet(meet.id, meet);
                 results.meetResults.push(meetResult);
                 results.processedMeets++;
-                
+
                 if (meetResult.success) {
                     results.successfulMeets++;
                     results.totalResultsAdded += meetResult.resultsAdded;
@@ -291,10 +292,10 @@ class DetailedReImportOrchestrator {
         }
 
         results.duration = Date.now() - startTime;
-        
+
         this.logger.logImportSummary(
             results.processedMeets,
-            results.successfulMeets, 
+            results.successfulMeets,
             results.failedMeets
         );
 

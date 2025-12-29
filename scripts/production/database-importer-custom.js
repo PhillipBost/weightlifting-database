@@ -618,9 +618,24 @@ async function batchEnrichAthletes(scrapedAthletes, startDate, endDate, ageCateg
     let updateCount = 0;
     let lifterIdUpdates = 0;
 
+    // Build a map of name counts to detect duplicates
+    const nameCounts = scrapedAthletes.reduce((acc, a) => {
+        const key = a.athleteName.toLowerCase();
+        acc[key] = (acc[key] || 0) + 1;
+        return acc;
+    }, {});
+
     for (const dbResult of potentialResults) {
+        const nameLower = dbResult.lifter_name.toLowerCase();
+
+        // Skip if this name appears multiple times in the rankings (ambiguous)
+        if (nameCounts[nameLower] > 1) {
+            console.log(`      ⚠️  Skipping batch enrichment for "${dbResult.lifter_name}" due to duplicate names in rankings`);
+            continue;
+        }
+
         const scrapedAthlete = scrapedAthletes.find(a =>
-            a.athleteName.toLowerCase() === dbResult.lifter_name.toLowerCase()
+            a.athleteName.toLowerCase() === nameLower
         );
 
         if (scrapedAthlete) {
@@ -845,6 +860,29 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
             // Try to disambiguate using internal_id if we have it
             if (potentialLifterIds.length === 1) {
                 // Single candidate - return it
+
+                // TARGETED UPDATE: We know this is the correct lifter, so update metadata safely
+                if (targetAthlete.internalId) {
+                    const updateData = {};
+                    if (targetAthlete.club) updateData.club_name = targetAthlete.club;
+                    if (targetAthlete.wso) updateData.wso = targetAthlete.wso;
+                    if (targetAthlete.nationalRank) updateData.national_rank = parseInt(targetAthlete.nationalRank);
+
+                    if (Object.keys(updateData).length > 0) {
+                        try {
+                            await supabase
+                                .from('usaw_meet_results')
+                                .update(updateData)
+                                .eq('meet_id', targetMeetId)
+                                .eq('lifter_id', potentialLifterIds[0]);
+
+                            console.log(`      ✅ Targeted Enrichment: Updated metadata for ${lifterName} (ID: ${potentialLifterIds[0]})`);
+                        } catch (err) {
+                            console.log(`      ⚠️ Targeted Enrichment Error: ${err.message}`);
+                        }
+                    }
+                }
+
                 return {
                     lifterId: potentialLifterIds[0],
                     scrapedData: targetAthlete
@@ -865,6 +903,27 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
 
                 if (!error && matchedLifter) {
                     console.log(`    ✅ Disambiguated via internal_id: Using lifter ${matchedLifter.lifter_id}`);
+
+                    // TARGETED UPDATE: We disambiguated via internal_id, so update metadata safely
+                    const updateData = {};
+                    if (targetAthlete.club) updateData.club_name = targetAthlete.club;
+                    if (targetAthlete.wso) updateData.wso = targetAthlete.wso;
+                    if (targetAthlete.nationalRank) updateData.national_rank = parseInt(targetAthlete.nationalRank);
+
+                    if (Object.keys(updateData).length > 0) {
+                        try {
+                            await supabase
+                                .from('usaw_meet_results')
+                                .update(updateData)
+                                .eq('meet_id', targetMeetId)
+                                .eq('lifter_id', matchedLifter.lifter_id);
+
+                            console.log(`      ✅ Targeted Enrichment: Updated metadata for ${lifterName} (ID: ${matchedLifter.lifter_id})`);
+                        } catch (err) {
+                            console.log(`      ⚠️ Targeted Enrichment Error: ${err.message}`);
+                        }
+                    }
+
                     return {
                         lifterId: matchedLifter.lifter_id,
                         scrapedData: targetAthlete
@@ -1363,7 +1422,20 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
             console.log(`  ✅ Verified lifter: ${cleanName} (ID: ${verifiedLifterId})`);
             return verifiedLifter;
         } else {
-            // FALLBACK: Create new lifter if verification fails but we have valid data
+            // FALLBACK: If verification fails but we have at least one likely match, reuse the first one
+            // This handles cases where duplicates already exist - we pick one (usually oldest) instead of creating a new one
+            if (lifterIds.length >= 1) {
+                const selectedLifter = existingLifters[0];
+                logger.log('verification_soft_fail', {
+                    message: `Verification failed but ${lifterIds.length} match(es) found - reusing existing record`,
+                    lifter_id: selectedLifter.lifter_id,
+                    candidates_count: lifterIds.length
+                });
+                console.log(`  ⚠️ Verification failed but reusing existing matching lifter: ${cleanName} (ID: ${selectedLifter.lifter_id})`);
+                return selectedLifter;
+            }
+
+            // FALLBACK: Create new lifter if verification fails AND we don't have a clear single candidate
             logger.log('fallback_create', {
                 message: `Verification failed, creating new lifter record`,
                 reason: 'verification_failed',
@@ -1497,14 +1569,27 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
         return verifiedLifter;
     }
 
-    // FALLBACK: If we can't disambiguate, create a new lifter record
-    // This ensures we don't lose athlete data due to disambiguation failures
+    // FALLBACK: If we can't disambiguate, reused the first existing lifter record
+    // This avoids creating duplicates when we have multiple unverified candidates
+    // User preference: Reuse simplistic match over correct-but-duplicate new record
+    if (existingLifters.length > 0) {
+        const selectedLifter = existingLifters[0];
+        logger.log('verification_soft_fail', {
+            message: `Disambiguation failed but ${existingLifters.length} match(es) found - reusing first existing record`,
+            lifter_id: selectedLifter.lifter_id,
+            candidates_count: existingLifters.length,
+            reason: 'disambiguation_fallback_reuse'
+        });
+        console.log(`  ⚠️ Disambiguation failed but reusing existing matching lifter: ${cleanName} (ID: ${selectedLifter.lifter_id})`);
+        return selectedLifter;
+    }
+
+    // This should theoretically not be reached if lifterIds.length > 1, but safety fallback
     logger.log('fallback_create', {
-        message: `Could not disambiguate, creating new lifter record`,
-        candidates_count: existingLifters.length,
-        reason: 'disambiguation_failed'
+        message: `Could not disambiguate and no existing lifters found (unexpected), creating new lifter record`,
+        reason: 'disambiguation_failed_no_candidates'
     });
-    console.log(`  ⚠️ Could not disambiguate lifter "${cleanName}" - ${lifterIds.length} candidates found but none verified - creating new record`);
+    console.log(`  ⚠️ Could not disambiguate lifter "${cleanName}" and no existing candidates - creating new record`);
 
     const { data: newLifter, error: createError } = await supabase
         .from('usaw_lifters')
@@ -1521,7 +1606,7 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
         throw new Error(`Error creating disambiguation fallback lifter: ${createError.message}`);
     }
 
-    logger.logFinalResult(newLifter, 'disambiguation_fallback');
+    logger.logFinalResult(newLifter, 'disambiguation_fallback_create');
     console.log(`  ➕ Created disambiguation fallback lifter: ${cleanName} (ID: ${newLifter.lifter_id})`);
     return newLifter;
 }
@@ -1582,6 +1667,18 @@ async function processMeetCsvFile(csvFilePath, meetId, meetName) {
         // Process each lifter result with proper lifter management
         for (const [index, row] of validResults.entries()) {
             try {
+                // HELPER: Safely parse lift values to handle '0' correctly (don't convert to null)
+                const parseLiftValue = (val, fieldName) => {
+                    if (val === undefined || val === null) return null;
+                    const str = String(val).trim();
+                    if (str === '' || str === '---' || str.toLowerCase() === 'null') return null;
+                    // Debug log for Total field to trace issues
+                    if (fieldName === 'Total' && (str === '0' || str === 0 || str === 'null')) {
+                        console.log(`  🐞 DEBUG: Parsing Total value: "${val}" -> "${str}"`);
+                    }
+                    return str;
+                };
+
                 const lifterName = String(row?.Lifter || '').trim();
 
                 if (!lifterName) {
@@ -1614,15 +1711,15 @@ async function processMeetCsvFile(csvFilePath, meetId, meetName) {
                     weight_class: row['Weight Class']?.trim() || null,
                     lifter_name: lifterName,
                     body_weight_kg: row['Body Weight (Kg)']?.toString().trim() || null,
-                    snatch_lift_1: row['Snatch Lift 1']?.toString().trim() || null,
-                    snatch_lift_2: row['Snatch Lift 2']?.toString().trim() || null,
-                    snatch_lift_3: row['Snatch Lift 3']?.toString().trim() || null,
-                    best_snatch: row['Best Snatch']?.toString().trim() || null,
-                    cj_lift_1: row['C&J Lift 1']?.toString().trim() || null,
-                    cj_lift_2: row['C&J Lift 2']?.toString().trim() || null,
-                    cj_lift_3: row['C&J Lift 3']?.toString().trim() || null,
-                    best_cj: row['Best C&J']?.toString().trim() || null,
-                    total: row.Total?.toString().trim() || null,
+                    snatch_lift_1: parseLiftValue(row['Snatch Lift 1'], 'Snatch1'),
+                    snatch_lift_2: parseLiftValue(row['Snatch Lift 2'], 'Snatch2'),
+                    snatch_lift_3: parseLiftValue(row['Snatch Lift 3'], 'Snatch3'),
+                    best_snatch: parseLiftValue(row['Best Snatch'], 'BestSnatch'),
+                    cj_lift_1: parseLiftValue(row['C&J Lift 1'], 'CJ1'),
+                    cj_lift_2: parseLiftValue(row['C&J Lift 2'], 'CJ2'),
+                    cj_lift_3: parseLiftValue(row['C&J Lift 3'], 'CJ3'),
+                    best_cj: parseLiftValue(row['Best C&J'], 'BestCJ'),
+                    total: parseLiftValue(row.Total, 'Total'),
                     // Enrich with scraped data from Tier 1 if available
                     club_name: lifter.scrapedData?.club || row.Club?.toString().trim() || null,
                     wso: lifter.scrapedData?.wso || null,
@@ -1630,6 +1727,8 @@ async function processMeetCsvFile(csvFilePath, meetId, meetName) {
                     gender: lifter.scrapedData?.gender || null,
                     national_rank: lifter.scrapedData?.nationalRank ? parseInt(lifter.scrapedData.nationalRank) : null
                 };
+
+                // Clean up any incomplete results logic removed per user request (update only)
 
                 // Upsert to database (insert new, update existing)
                 // Use new constraint that includes weight_class to allow multiple results per athlete

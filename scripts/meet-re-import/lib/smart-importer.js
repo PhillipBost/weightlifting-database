@@ -34,7 +34,7 @@ class SmartImporter {
 
             // Step 3: Identify missing results
             const missingAthletes = this._identifyMissingAthletes(scrapedAthletes, existingResults);
-            
+
             if (missingAthletes.length === 0) {
                 this.logger.info('✅ No missing results found - all results already in database');
                 return {
@@ -120,7 +120,7 @@ class SmartImporter {
     async _parseScrapedData(csvFile) {
         try {
             const csvContent = await fs.readFile(csvFile, 'utf8');
-            
+
             // Parse CSV with pipe delimiter using Papa.parse like working database-importer.js
             const Papa = require('papaparse');
             const parsed = Papa.parse(csvContent, {
@@ -142,7 +142,7 @@ class SmartImporter {
                     typeof row.Lifter === 'string' &&
                     row.Lifter.trim() !== '';
             });
-            
+
             return validRows.map((row, index) => {
                 return {
                     rowNumber: index + 1,
@@ -152,15 +152,15 @@ class SmartImporter {
                     weightClass: row['Weight Class'] || '',             // Weight Class (e.g., "+105 kg")
                     name: row.Lifter || 'Unknown',                      // Lifter name
                     bodyweight: row['Body Weight (Kg)'] || '',          // Body Weight (Kg)
-                    snatchLift1: row['Snatch Lift 1'] || '',            // Snatch Lift 1
-                    snatchLift2: row['Snatch Lift 2'] || '',            // Snatch Lift 2
-                    snatchLift3: row['Snatch Lift 3'] || '',            // Snatch Lift 3
-                    bestSnatch: row['Best Snatch'] || '',               // Best Snatch
-                    cjLift1: row['C&J Lift 1'] || '',                  // C&J Lift 1
-                    cjLift2: row['C&J Lift 2'] || '',                  // C&J Lift 2
-                    cjLift3: row['C&J Lift 3'] || '',                  // C&J Lift 3
-                    bestCJ: row['Best C&J'] || '',                      // Best C&J
-                    total: row.Total || '',                             // Total
+                    snatchLift1: (row['Snatch Lift 1'] !== null && row['Snatch Lift 1'] !== undefined) ? row['Snatch Lift 1'] : '',
+                    snatchLift2: (row['Snatch Lift 2'] !== null && row['Snatch Lift 2'] !== undefined) ? row['Snatch Lift 2'] : '',
+                    snatchLift3: (row['Snatch Lift 3'] !== null && row['Snatch Lift 3'] !== undefined) ? row['Snatch Lift 3'] : '',
+                    bestSnatch: (row['Best Snatch'] !== null && row['Best Snatch'] !== undefined) ? row['Best Snatch'] : '',
+                    cjLift1: (row['C&J Lift 1'] !== null && row['C&J Lift 1'] !== undefined) ? row['C&J Lift 1'] : '',
+                    cjLift2: (row['C&J Lift 2'] !== null && row['C&J Lift 2'] !== undefined) ? row['C&J Lift 2'] : '',
+                    cjLift3: (row['C&J Lift 3'] !== null && row['C&J Lift 3'] !== undefined) ? row['C&J Lift 3'] : '',
+                    bestCJ: (row['Best C&J'] !== null && row['Best C&J'] !== undefined) ? row['Best C&J'] : '',
+                    total: (row.Total !== null && row.Total !== undefined) ? row.Total : '',
                     club: row.Club || ''                                // Club
                 };
             });
@@ -180,7 +180,7 @@ class SmartImporter {
             const hasMatch = existingResults.some(existingResult => {
                 return this._resultsMatch(scrapedAthlete, existingResult);
             });
-            
+
             return !hasMatch;
         });
     }
@@ -190,23 +190,32 @@ class SmartImporter {
      * Uses multiple attributes for more precise matching
      */
     _resultsMatch(scrapedAthlete, existingResult) {
-        const nameMatch = this._normalizeAthleteName(scrapedAthlete.name) === 
-                         this._normalizeAthleteName(existingResult.name);
-        
+        const nameMatch = this._normalizeAthleteName(scrapedAthlete.name) ===
+            this._normalizeAthleteName(existingResult.name);
+
         // If names don't match, definitely not the same
         if (!nameMatch) {
             return false;
         }
-        
+
         // For duplicate names, require BOTH bodyweight AND total to match
         // This ensures we can distinguish between different results with the same name
-        const bodyweightMatch = this._normalizeBodyweight(scrapedAthlete.bodyweight) === 
-                               this._normalizeBodyweight(existingResult.bodyweight);
-        
-        const totalMatch = this._normalizeTotal(scrapedAthlete.total) === 
-                          this._normalizeTotal(existingResult.total);
-        
+        const bodyweightMatch = this._normalizeBodyweight(scrapedAthlete.bodyweight) ===
+            this._normalizeBodyweight(existingResult.bodyweight);
+
+        // Check for incomplete DB record (NULL total) when scraped result has a value
+        const dbTotal = this._normalizeTotal(existingResult.total);
+        const scrapedTotal = this._normalizeTotal(scrapedAthlete.total);
+
+        // If DB is missing total but scraped has one (even '0'), it's a mismatch (needs update)
+        if (dbTotal === '' && scrapedTotal !== '') {
+            return false;
+        }
+
+        const totalMatch = dbTotal === scrapedTotal;
+
         // Require both bodyweight and total to match for precise identification
+        // Note: usage of && ensures that if totals mismatch (e.g. NULL vs 0), it returns false.
         return nameMatch && bodyweightMatch && totalMatch;
     }
 
@@ -222,7 +231,7 @@ class SmartImporter {
      * Normalize total for comparison
      */
     _normalizeTotal(total) {
-        if (!total) return '';
+        if (total === null || total === undefined || total === '') return '';
         return total.toString().trim().replace(/[^\d]/g, '');
     }
 
@@ -250,21 +259,21 @@ class SmartImporter {
         try {
             // Create a temporary CSV file with only missing results
             const tempCsvFile = await this._createFilteredCsvFile(missingAthletes, meetId, meetName);
-            
+
             this.logger.info(`📄 Created filtered CSV with ${missingAthletes.length} missing results`);
-            
+
             // Use existing proven import infrastructure WITH enhanced Tier 2 verification
-            const { processMeetCsvFile } = require('../../production/database-importer-custom-extreme-fix');
-            
+            const { processMeetCsvFile } = require('../../production/database-importer-custom');
+
             this.logger.info(`🔄 Importing missing results using proven infrastructure...`);
-            
+
             // Import using existing logic (includes athlete matching, Tier 1/2 verification, etc.)
             const importResult = await processMeetCsvFile(tempCsvFile, meetId, meetName);
-            
+
             // Update results based on import outcome
             results.imported = importResult.processed || 0;
             results.errors = [];
-            
+
             // If there were errors, create error entries
             if (importResult.errors && importResult.errors > 0) {
                 // We don't have detailed error info from processMeetCsvFile, so create generic entries
@@ -276,7 +285,7 @@ class SmartImporter {
                     });
                 }
             }
-            
+
             // Clean up temporary file
             const fs = require('fs').promises;
             try {
@@ -285,21 +294,21 @@ class SmartImporter {
             } catch (cleanupError) {
                 this.logger.warn(`⚠️ Failed to clean up temporary file: ${cleanupError.message}`);
             }
-            
+
             this.logger.info(`✅ Import completed: ${results.imported} imported, ${results.errors.length} errors`);
-            
+
             return results;
 
         } catch (error) {
             this.logger.error(`❌ Batch import failed: ${error.message}`);
-            
+
             // Mark all as errors
             results.imported = 0;
             results.errors = missingAthletes.map(athlete => ({
                 name: athlete.name,
                 reason: `Batch import failed: ${error.message}`
             }));
-            
+
             return results;
         }
     }
@@ -326,48 +335,48 @@ class SmartImporter {
     async _createFilteredCsvFile(missingAthletes, meetId, meetName) {
         const path = require('path');
         const os = require('os');
-        
+
         // Create temporary file path
         const tempDir = os.tmpdir();
         const timestamp = Date.now();
         const tempFilePath = path.join(tempDir, `missing_results_${meetId}_${timestamp}.csv`);
-        
+
         // Get meet details for CSV data
         const { data: meetData, error: meetError } = await this.supabase
             .from('usaw_meets')
             .select('Meet, Date')
             .eq('meet_id', meetId)
             .single();
-            
+
         if (meetError) {
             this.logger.warn(`⚠️ Could not fetch meet details: ${meetError.message}`);
         }
-        
+
         const meetDate = meetData?.Date || new Date().toISOString().split('T')[0];
         const actualMeetName = meetData?.Meet || meetName;
-        
+
         // Create CSV header (matching the format expected by processMeetCsvFile)
         const csvHeader = [
             'Meet',
-            'Date', 
+            'Date',
             'Age Category',
             'Weight Class',
             'Lifter',
             'Body Weight (Kg)',
             'Snatch Lift 1',
-            'Snatch Lift 2', 
+            'Snatch Lift 2',
             'Snatch Lift 3',
             'Best Snatch',
             'C&J Lift 1',
             'C&J Lift 2',
-            'C&J Lift 3', 
+            'C&J Lift 3',
             'Best C&J',
             'Total',
             'Club',
             'Membership Number',
             'Internal_ID'
         ].join('|');
-        
+
         // Create CSV rows for missing athletes
         const csvRows = missingAthletes.map(athlete => {
             return [
@@ -385,21 +394,21 @@ class SmartImporter {
                 athlete.cjLift2 || '',                 // C&J Lift 2
                 athlete.cjLift3 || '',                 // C&J Lift 3
                 athlete.bestCJ || '',                  // Best C&J
-                athlete.total || '',                   // Total
+                (athlete.total !== null && athlete.total !== undefined) ? athlete.total : '', // Total - preserve 0!
                 athlete.club || '',                    // Club
                 '',                                    // Membership Number (unknown)
                 ''                                     // Internal_ID (will be extracted during import)
             ].join('|');
         });
-        
+
         // Combine header and rows
         const csvContent = [csvHeader, ...csvRows].join('\n');
-        
+
         // Write to temporary file
         await fs.writeFile(tempFilePath, csvContent, 'utf8');
-        
+
         this.logger.debug(`📄 Created temporary CSV file: ${tempFilePath}`);
-        
+
         return tempFilePath;
     }
 }

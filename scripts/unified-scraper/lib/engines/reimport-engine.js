@@ -66,6 +66,25 @@ class ReImportEngine {
                 await new Promise(r => setTimeout(r, this.config.delay));
             }
         }
+
+        // BACKFILL: After re-importing meets, run WSO backfill to populate metadata for newly added/updated results
+        // This ensures the user's requirement of "filling gaps" is met immediately
+        if (session.completed > 0) {
+            this.logger.info('Starting WSO Backfill for re-imported meets...');
+            const { WsoBackfillEngine } = require('./wso-backfill-engine');
+            const processedMeetIds = incompleteMeets.map(m => m.id);
+
+            // Create a config specifically for backfill targeting these meets
+            const backfillConfig = {
+                ...this.config,
+                meetIds: processedMeetIds
+                // force: true removed to avoid processing already-complete athletes
+            };
+
+            const backfillEngine = new WsoBackfillEngine(this.supabase, backfillConfig, this.logger);
+            await backfillEngine.run(session);
+            this.logger.info('WSO Backfill completed for re-imported meets');
+        }
     }
 }
 

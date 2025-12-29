@@ -31,6 +31,7 @@ class WsoBackfillEngine {
         this.logger.info(`Processing ${results.length} results...`);
 
         for (const result of results) {
+            console.log(''); // Separator between athletes
             try {
                 // Determine potential lifter IDs (if we need them for Tier 1.5/2)
                 const potentialLifterIds = result.lifter_id ? [result.lifter_id] : [];
@@ -79,36 +80,30 @@ class WsoBackfillEngine {
                         );
 
                         if (found) {
-                            success = true;
-                            // Enforce the link in DB (verifyLifterParticipationInMeet doesn't seem to update DB, just verifies)
-                            // But surgical-strike logic did update.
-                            // We should probably rely on the fact that if we verify it, we can maybe trigger an update?
-                            // Actually verifyLifterParticipationInMeet just returns true/false.
-                            // We might need to manually update if verified?
+                            // Identity Verified via Tier 2
+                            this.logger.info(`✅ Tier 2 verified participation for ${result.lifter_name} (Internal ID: ${lifter.internal_id})`);
 
-                            // For now, let's just mark success and maybe update wso/club if we scraped it?
-                            // verifyLifterParticipationInMeet doesn't return the data, just boolean.
-                            // Access to member page data would be needed. 
+                            // NOW: Re-run Tier 1 (rankings) with the specific verified lifter ID to get metadata
+                            this.logger.info(`Running Tier 1 (Base64) with verified lifter ID ${lifter.lifter_id}...`);
 
-                            // Limitation: verifyLifterParticipationInMeet in database-importer-custom.js doesn't return the data.
-                            // surgical-strike-wso-scraper.js implements its own `scrapeAthleteMemberPage`.
-                            // Maybe I SHOULD have copied that?
+                            const tier1Result = await runBase64UrlLookupProtocol(
+                                result.lifter_name,
+                                [lifter.lifter_id], // Pass verified ID
+                                result.meet_id,
+                                result.date,
+                                result.age_category,
+                                result.weight_class
+                            );
 
-                            // For now, assume if Tier 1 failed, we fallback to just logging it, or if Tier 2 passes we trust the existing data?
-                            // But WSO backfill is ABOUT populating missing data.
-                            // If Tier 1 (Rankings) failed, we might not have the WSO/Club data.
-                            // Member page usually has Club/WSO? checking member page scraping logic...
-                            // In surgical-strike, scrapeAthleteMemberPage extracted: meet_name, date, division, body_weight, lifts...
-                            // It does NOT seem to extract WSO/Club from the member history table!
-                            // So Tier 2 is mainly for verifying identity to link internal_id.
-
-                            // So if Tier 1 fails (not in rankings), and Tier 2 succeeds (found in history), 
-                            // we still might not have WSO/Club if it's not on the history table.
-                            // Thus runBase64UrlLookupProtocol is the primary source for WSO/Club.
-
-                            if (success) {
+                            if (tier1Result) {
+                                success = true;
                                 session.completed++;
-                                this.logger.info(`✅ Tier 2 verified participation for ${result.lifter_name} (Internal ID: ${lifter.internal_id})`);
+                                this.logger.info(`✅ Tier 1 success (after Identity Verification) for ${result.lifter_name}`);
+                            } else {
+                                // We verified identity but failed to scrape rankings (maybe missing from rankings?)
+                                success = true;
+                                session.completed++;
+                                this.logger.warn(`⚠️ Identity verified but failed to scrape metadata from rankings for ${result.lifter_name}`);
                             }
                             break;
                         }
