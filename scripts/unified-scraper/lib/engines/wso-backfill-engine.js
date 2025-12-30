@@ -51,7 +51,8 @@ class WsoBackfillEngine {
                         result.meet_id,
                         result.date,
                         result.age_category,
-                        result.weight_class
+                        result.weight_class,
+                        result.body_weight_kg
                     );
 
                     if (tier1Result) {
@@ -74,25 +75,38 @@ class WsoBackfillEngine {
                     for (const lifter of lifters) {
                         if (!lifter.internal_id) continue;
 
-                        const found = await verifyLifterParticipationInMeet(
+                        const resultVerification = await verifyLifterParticipationInMeet(
                             lifter.internal_id,
                             result.meet_id
                         );
 
-                        if (found) {
+                        if (resultVerification.verified) {
                             // Identity Verified via Tier 2
                             this.logger.info(`✅ Tier 2 verified participation for ${result.lifter_name} (Internal ID: ${lifter.internal_id})`);
 
+                            // Check metadata for gender to infer category if unknown
+                            let lookupCategory = result.age_category;
+                            let metaMsg = '';
+
+                            const isUnknownCategory = !result.age_category || result.age_category === '-' || result.age_category === 'Unknown';
+                            if (isUnknownCategory && resultVerification.metadata && resultVerification.metadata.gender) {
+                                const gender = resultVerification.metadata.gender;
+                                lookupCategory = (gender === 'M') ? "Open Men's" : "Open Women's";
+                                metaMsg = ` (Inferred Category: ${lookupCategory})`;
+                                this.logger.info(`  🔄 Inferred Age Category from Tier 2 metadata: ${lookupCategory}`);
+                            }
+
                             // NOW: Re-run Tier 1 (rankings) with the specific verified lifter ID to get metadata
-                            this.logger.info(`Running Tier 1 (Base64) with verified lifter ID ${lifter.lifter_id}...`);
+                            this.logger.info(`Running Tier 1 (Base64) with verified lifter ID ${lifter.lifter_id}${metaMsg}...`);
 
                             const tier1Result = await runBase64UrlLookupProtocol(
                                 result.lifter_name,
                                 [lifter.lifter_id], // Pass verified ID
                                 result.meet_id,
                                 result.date,
-                                result.age_category,
-                                result.weight_class
+                                lookupCategory, // Use inferred or original category
+                                result.weight_class,
+                                result.body_weight_kg
                             );
 
                             if (tier1Result) {
@@ -133,7 +147,8 @@ class WsoBackfillEngine {
         // ... (Logic from surgical-strike-wso-scraper.js)
         let query = this.supabase
             .from('usaw_meet_results')
-            .select('result_id, lifter_id, lifter_name, meet_id, gender, age_category, weight_class, competition_age, wso, club_name, total, date')
+            // QUERY MODIFICATION
+            .select('result_id, lifter_id, lifter_name, meet_id, gender, age_category, weight_class, body_weight_kg, competition_age, wso, club_name, total, date')
             .not('age_category', 'is', null)
             .not('weight_class', 'is', null)
             .not('meet_id', 'is', null);
@@ -148,7 +163,16 @@ class WsoBackfillEngine {
         }
 
         if (this.config.athleteName) {
-            query = query.eq('lifter_name', this.config.athleteName);
+            // Handle "Double space fuzzy" - match both "Name Surname" and "Name  Surname"
+            const name = this.config.athleteName;
+            const doubleSpaced = name.replace(/ /g, '  ');
+
+            if (name !== doubleSpaced) {
+                // Use OR filter with ilike to handle both variations case-insensitively
+                query = query.or(`lifter_name.ilike.${name},lifter_name.ilike.${doubleSpaced}`);
+            } else {
+                query = query.ilike('lifter_name', name);
+            }
         }
 
         if (this.config.genderFilter) {
