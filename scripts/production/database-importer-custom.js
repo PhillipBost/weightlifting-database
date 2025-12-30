@@ -190,7 +190,7 @@ async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId) {
 
     if (meetError) {
         console.log(`    ❌ Error getting meet info: ${meetError.message}`);
-        return false;
+        return { verified: false };
     }
 
     const memberUrl = `https://usaweightlifting.sport80.com/public/rankings/member/${lifterInternalId}`;
@@ -228,29 +228,58 @@ async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId) {
         let foundMeet = null;
         let currentPage = 1;
         let hasMorePages = true;
+        let extractedGender = null;
 
         while (hasMorePages && !foundMeet) {
             console.log(`    📄 Checking page ${currentPage} of meet history...`);
 
             // Extract meet information from current page
+            // Also extract CATEGORY column to infer gender if possible
             const pageData = await page.evaluate(() => {
                 const meetRows = Array.from(document.querySelectorAll('.data-table div div.v-data-table div.v-data-table__wrapper table tbody tr'));
 
                 const meetInfo = meetRows.map(row => {
                     const cells = Array.from(row.querySelectorAll('td'));
-                    if (cells.length < 2) return null;
+                    if (cells.length < 3) return null;
 
                     const meetName = cells[0]?.textContent?.trim();
                     const meetDate = cells[1]?.textContent?.trim();
+                    const ageCategory = cells[2]?.textContent?.trim(); // "Open Men's 67kg" etc
 
                     return {
                         name: meetName,
-                        date: meetDate
+                        date: meetDate,
+                        category: ageCategory
                     };
                 }).filter(Boolean);
 
                 return meetInfo;
             });
+
+            // Try to infer gender from any row on this page if we haven't yet
+            if (!extractedGender && pageData.length > 0) {
+                for (const row of pageData) {
+                    if (row.category) {
+                        const catLower = row.category.toLowerCase();
+                        if (catLower.includes("men's") && !catLower.includes("women's")) {
+                            extractedGender = 'M';
+                            break;
+                        } else if (catLower.includes("women's")) {
+                            extractedGender = 'F';
+                            break;
+                        } else if (catLower.includes("boys")) {
+                            extractedGender = 'M';
+                            break;
+                        } else if (catLower.includes("girls")) {
+                            extractedGender = 'F';
+                            break;
+                        }
+                    }
+                }
+                if (extractedGender) {
+                    console.log(`    🚻 Extracted Gender from history: ${extractedGender}`);
+                }
+            }
 
             // Match by meet name and date
             // Match by meet name and date (with fuzzy logic)
@@ -270,10 +299,18 @@ async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId) {
                         if (!isNaN(d1.getTime()) && !isNaN(d2.getTime())) {
                             const diffTime = Math.abs(d1 - d2);
                             const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-                            dateMatch = diffDays <= 5;
 
-                            if (nameMatch && !dateMatch && diffDays <= 10) {
-                                console.log(`      ⚠️ Name matched but date difference is ${diffDays} days (${meet.date} vs ${targetMeet.Date})`);
+                            // Determine allowed window based on meet name type
+                            // "Online Qualifier" meets often span up to a month (User specified +/- 30 days strictly for "Online Qualifier")
+                            const isOnlineQualifier = (targetMeet.Meet || '').toLowerCase().includes('online qualifier');
+                            const allowedDays = isOnlineQualifier ? 30 : 14; // 30 for "Online Qualifier", 14 for standard
+
+                            dateMatch = diffDays <= allowedDays;
+
+                            if (nameMatch && dateMatch && diffDays > 5) {
+                                console.log(`      ⚠️ Name matched and date within extended window (${diffDays} days). Allowed: ${allowedDays} days (${isOnlineQualifier ? 'Online Qualifier' : 'Standard'})`);
+                            } else if (nameMatch && !dateMatch && diffDays <= 60) {
+                                console.log(`      ⚠️ Name matched but date difference is ${diffDays} days (${meet.date} vs ${targetMeet.Date}). Limit: ${allowedDays}`);
                             }
                         } else {
                             // Fallback to strict string match if dates invalid
@@ -289,7 +326,12 @@ async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId) {
 
             if (foundMeet) {
                 console.log(`    ✅ VERIFIED: "${foundMeet.name}" on ${foundMeet.date} found on page ${currentPage}`);
-                return true;
+                return {
+                    verified: true,
+                    metadata: {
+                        gender: extractedGender
+                    }
+                };
             }
 
             // Check for next page
@@ -311,11 +353,11 @@ async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId) {
         }
 
         console.log(`    ❌ NOT FOUND: "${targetMeet.Meet}" on ${targetMeet.Date} not found in ${currentPage} page(s) of history`);
-        return false;
+        return { verified: false };
 
     } catch (error) {
         console.log(`    ❌ Error accessing member page: ${error.message}`);
-        return false;
+        return { verified: false };
     } finally {
         if (browser) {
             await browser.close();
@@ -522,6 +564,7 @@ async function scrapeDivisionRankings(page, divisionCode, startDate, endDate) {
                         athleteName: colMap.athleteName > -1 ? cellTexts[colMap.athleteName] : '',
                         internalId: internalId,
                         lifterAge: numericAge,
+                        competitionAge: numericAge, // Ensure this property exists for enrichment
                         club: colMap.club > -1 ? cellTexts[colMap.club] : '',
                         liftDate: colMap.liftDate > -1 ? cellTexts[colMap.liftDate] : '',
                         level: colMap.level > -1 ? cellTexts[colMap.level] : '',
@@ -600,7 +643,7 @@ async function batchEnrichAthletes(scrapedAthletes, startDate, endDate, ageCateg
     // Note: Scraped rankings contain athletes from ALL meets in this division/date range
     const { data: potentialResults, error } = await supabase
         .from('usaw_meet_results')
-        .select('result_id, lifter_id, lifter_name, wso, club_name, competition_age, gender, meet_id, date')
+        .select('result_id, lifter_id, lifter_name, wso, club_name, competition_age, gender, meet_id, date, national_rank')
         .in('lifter_name', athleteNames)
         .gte('date', formatDate(startDate))
         .lte('date', formatDate(endDate))
@@ -744,8 +787,187 @@ async function batchEnrichAthletes(scrapedAthletes, startDate, endDate, ageCateg
 // TWO-TIER VERIFICATION SYSTEM
 // ========================================
 
-async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, targetMeetId, eventDate, ageCategory, weightClass) {
-    console.log(`  🔍 Tier 1: Base64 URL Lookup Protocol (Division Rankings)`);
+// Helper to calculate standard IWF weight class from bodyweight and date
+function calculateStandardWeightClass(ageCategory, bodyWeight, eventDateStr) {
+    if (!bodyWeight || isNaN(bodyWeight)) return null;
+    const itemDate = new Date(eventDateStr);
+    const bw = parseFloat(bodyWeight);
+
+    // Normalize Age Category/Gender
+    const category = (ageCategory || '').toLowerCase();
+    const isFemale = category.includes('women') || (category.includes('female') && !category.includes('male'));
+
+    // Determine Era
+    const DATE_JUNE_2025 = new Date('2025-06-01');
+    const DATE_NOV_2018 = new Date('2018-11-01');
+    const DATE_JAN_1998 = new Date('1998-01-01');
+
+    let era = 'legacy'; // Default to oldest if very old
+    if (itemDate >= DATE_JUNE_2025) era = 'current';
+    else if (itemDate >= DATE_NOV_2018) era = 'historical_2018';
+    else if (itemDate >= DATE_JAN_1998) era = 'historical_1998';
+
+    // Determine Category Type (Youth, Junior, Senior)
+    let type = 'senior';
+    const catLower = category.toLowerCase();
+    if (catLower.includes('youth') || catLower.includes('under') || catLower.match(/\d+-\d+/)) {
+        type = 'youth';
+    } else if (catLower.includes('junior')) {
+        type = 'junior';
+    }
+
+    // Define Weight Classes Mapping
+    const weightClasses = {
+        current: {
+            youth: {
+                // Updated for June 2025 Rules (Verified via IWF 2025 + User Feedback)
+                // Men: 32, 36, 40, 44, 48, 52, 56, 60, 65, 71, 79, 88, 94, 102+
+                // Women: 30, 33, 36, 40, 44, 48, 53, 58, 63, 69, 77, 81+
+                M: [32, 36, 40, 44, 48, 52, 56, 60, 65, 71, 79, 88, 94, 102],
+                F: [30, 33, 36, 40, 44, 48, 53, 58, 63, 69, 77, 81]
+            },
+            junior: {
+                M: [55, 61, 67, 73, 81, 89, 96, 102, 109],
+                F: [45, 49, 55, 59, 64, 71, 76, 81, 87]
+            },
+            senior: {
+                M: [55, 61, 67, 73, 81, 89, 96, 102, 109],
+                F: [45, 49, 55, 59, 64, 71, 76, 81, 87]
+            }
+        },
+        historical_2018: {
+            youth: {
+                M: [32, 36, 39, 44, 49, 55, 61, 67, 73, 81, 89, 96, 102],
+                F: [30, 33, 36, 40, 45, 49, 55, 59, 64, 71, 76, 81]
+            },
+            junior: {
+                M: [55, 61, 67, 73, 81, 89, 96, 102, 109],
+                F: [45, 49, 55, 59, 64, 71, 76, 81, 87]
+            },
+            senior: {
+                M: [55, 61, 67, 73, 81, 89, 96, 102, 109],
+                F: [45, 49, 55, 59, 64, 71, 76, 81, 87]
+            }
+        },
+        historical_1998: {
+            youth: {
+                M: [31, 35, 39, 44, 50, 56, 62, 69, 77, 85, 94, 105],
+                F: [31, 35, 39, 44, 48, 53, 58, 63, 69]
+            },
+            junior: {
+                M: [56, 62, 69, 77, 85, 94, 105],
+                F: [48, 53, 58, 63, 69, 75, 90]
+            },
+            senior: {
+                M: [56, 62, 69, 77, 85, 94, 105],
+                F: [48, 53, 58, 63, 69, 75, 90]
+            }
+        }
+    };
+
+    // Select limits based on Era, Type, and Gender
+    const limits = weightClasses[era][type][isFemale ? 'F' : 'M'];
+
+    // Find class
+    for (const limit of limits) {
+        if (bw <= limit) return `${limit}kg`;
+    }
+
+    // If heavier than all limits, return highest+kg
+    const maxLimit = limits[limits.length - 1];
+    return `${maxLimit}+kg`;
+}
+
+// Helper to generate alternative divisions for Tier 1.7 verification
+function generateAlternativeDivisions(originalCategory, bodyWeight, eventDateStr) {
+    if (!originalCategory || !bodyWeight) return [];
+
+    const catLower = originalCategory.toLowerCase();
+    const isFemale = catLower.includes('women') || (catLower.includes('female') && !catLower.includes('male'));
+    const genderStr = isFemale ? "Women's" : "Men's";
+
+    // Ordered hierarchy for search
+    const hierarchy = [
+        `${genderStr} 11 Under Age Group`,
+        `${genderStr} 13 Under Age Group`,
+        `${genderStr} 14-15 Age Group`,
+        `${genderStr} 16-17 Age Group`,
+        `Junior ${genderStr}`,
+        `Open ${genderStr}`
+    ];
+
+    // Find current index
+    let currentIndex = -1;
+    for (let i = 0; i < hierarchy.length; i++) {
+        // Create simplified key (e.g. "13 Under", "Junior") to match robustly
+        const coreKey = hierarchy[i].replace("Men's", "").replace("Women's", "").replace("Age Group", "").trim();
+        if (originalCategory.includes(coreKey)) {
+            currentIndex = i;
+            break;
+        }
+    }
+
+    const indices = new Set();
+
+    // Always include Open (last index) as ultimate fallback
+    indices.add(hierarchy.length - 1);
+
+    if (currentIndex !== -1) {
+        indices.add(currentIndex);
+        // Add 2 Adjacent Down
+        if (currentIndex - 1 >= 0) indices.add(currentIndex - 1);
+        if (currentIndex - 2 >= 0) indices.add(currentIndex - 2);
+        // Add 2 Adjacent Up
+        if (currentIndex + 1 < hierarchy.length) indices.add(currentIndex + 1);
+        if (currentIndex + 2 < hierarchy.length) indices.add(currentIndex + 2);
+    }
+
+    const candidates = [];
+
+    // PRIORITY 1: The Original Category (but with calculated weight class) - equivalent to Tier 1.6
+    if (currentIndex !== -1) {
+        const cat = hierarchy[currentIndex];
+        const wClass = calculateStandardWeightClass(cat, bodyWeight, eventDateStr);
+        if (wClass) {
+            candidates.push({ category: cat, weightClass: wClass });
+        }
+    }
+
+    // PRIORITY 2: Adjacent / Alternative Categories (Tier 1.7)
+    // Sort indices to ensure logical checking order (Youngest -> Oldest), EXCLUDING current index
+    const sortedIndices = Array.from(indices).sort((a, b) => a - b);
+
+    for (const i of sortedIndices) {
+        if (i === currentIndex) continue; // Already added as Priority 1
+
+        const cat = hierarchy[i];
+        const wClass = calculateStandardWeightClass(cat, bodyWeight, eventDateStr);
+        if (wClass) {
+            candidates.push({ category: cat, weightClass: wClass });
+        }
+    }
+
+    // Filter duplicates (e.g. if multiple categories map to same name/class)
+    const uniqueCandidates = [];
+    const seen = new Set();
+    for (const c of candidates) {
+        const key = `${c.category}|${c.weightClass}`;
+        if (!seen.has(key)) {
+            seen.add(key);
+            uniqueCandidates.push(c);
+        }
+    }
+
+    return uniqueCandidates;
+}
+
+async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, targetMeetId, eventDate, ageCategory, weightClass, bodyweight = null, isFallbackCheck = false) {
+    if (!isFallbackCheck) {
+        console.log(`  🔍 Tier 1: Base64 URL Lookup Protocol (Division Rankings)`);
+    } else {
+        // Simplified log to reduce confusion
+        console.log(`  🔍 Tier 1 (Alternative): Checking division ${ageCategory} ${weightClass}...`);
+    }
 
     // Check if division codes are loaded
     if (Object.keys(divisionCodes).length === 0) {
@@ -762,36 +984,73 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
     // Map age category + weight class to division name
     const divisionName = `${ageCategory} ${weightClass}`;
 
+    // Generate alternative division name with different spacing for 'kg'
+    // e.g. "Open Men's 56kg" -> "Open Men's 56 kg" OR "Open Men's 56 kg" -> "Open Men's 56kg"
+    let divisionNameAlt = '';
+    if (weightClass.includes(' kg')) {
+        divisionNameAlt = `${ageCategory} ${weightClass.replace(' kg', 'kg')}`;
+    } else {
+        divisionNameAlt = `${ageCategory} ${weightClass.replace('kg', ' kg')}`;
+    }
+
     // Determine if division is active or inactive based on meet date
     const meetDate = new Date(eventDate);
     const activeDivisionCutoff = new Date('2025-06-01');
     const isActiveDivision = meetDate >= activeDivisionCutoff;
 
     let divisionCode;
-    if (isActiveDivision) {
-        divisionCode = divisionCodes[divisionName];
-    } else {
-        const inactiveName = `(Inactive) ${divisionName}`;
-        divisionCode = divisionCodes[inactiveName];
-    }
 
-    // Try opposite if not found
-    if (!divisionCode) {
+    // Helper to check code for a given name
+    const checkCode = (name) => {
         if (isActiveDivision) {
-            const inactiveName = `(Inactive) ${divisionName}`;
-            divisionCode = divisionCodes[inactiveName];
+            return divisionCodes[name] || divisionCodes[`(Inactive) ${name}`];
         } else {
-            divisionCode = divisionCodes[divisionName];
+            return divisionCodes[`(Inactive) ${name}`] || divisionCodes[name];
+        }
+    };
+
+    // Try original format
+    divisionCode = checkCode(divisionName);
+
+    // Try alternative format if not found
+    if (!divisionCode && divisionNameAlt) {
+        divisionCode = checkCode(divisionNameAlt);
+        if (divisionCode) {
+            console.log(`    ⚠️ Division Found using alternative formatting: "${divisionNameAlt}" (original: "${divisionName}")`);
         }
     }
 
     if (!divisionCode) {
-        console.log(`    ❌ Division not found: "${divisionName}" - skipping Tier 1`);
+        console.log(`    ❌ Division not found: "${divisionName}" (No Base64 code available, cannot generate URL)`);
+
+        // TIER 1.6 FALLBACK LOGIC (Division Not Found)
+        if (!isFallbackCheck && bodyweight) {
+            const calculatedClass = calculateStandardWeightClass(ageCategory, bodyweight, eventDate);
+
+            // Only proceed if calculated class is different and valid
+            if (calculatedClass && calculatedClass !== weightClass) {
+                console.log(`    ⚠️ Tier 1 failed (Invalid Division). Bodyweight (${bodyweight}kg) suggests alternative class: ${calculatedClass}`);
+
+                // Recursively call with new weight class and fallback flag
+                return await runBase64UrlLookupProtocol(
+                    lifterName,
+                    potentialLifterIds,
+                    targetMeetId,
+                    eventDate,
+                    ageCategory,
+                    calculatedClass,
+                    bodyweight,
+                    true
+                );
+            }
+        }
+
+        console.log(`    ❌ ... skipping Tier 1`);
         return null;
     }
 
     console.log(`    📋 Division: ${divisionName} ${isActiveDivision ? '' : '(Inactive)'} (code: ${divisionCode})`);
-    console.log(`    📅 Date Range: ${formatDate(addDays(meetDate, -5))} to ${formatDate(addDays(meetDate, 5))} (±5 days)`);
+    console.log(`    📅 Date Range: ${formatDate(addDays(meetDate, -3))} to ${formatDate(addDays(meetDate, 10))} (-3/+10 days)`);
 
     let browser;
     try {
@@ -810,9 +1069,9 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
         const page = await browser.newPage();
         await page.setViewport({ width: 1500, height: 1000 });
 
-        // Calculate date range
-        const startDate = addDays(meetDate, -5);
-        const endDate = addDays(meetDate, 5);
+        // Calculate date range: -3 days (buffer) to +10 days (long meets)
+        const startDate = addDays(meetDate, -3);
+        const endDate = addDays(meetDate, 10);
 
         // Scrape division rankings
         const scrapedAthletes = await scrapeDivisionRankings(page, divisionCode, startDate, endDate);
@@ -831,7 +1090,8 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
         );
 
         if (targetAthlete) {
-            console.log(`    ✅ Tier 1 VERIFIED: "${lifterName}" found in division rankings`);
+            console.log(`    ✅ Tier 1${isFallbackCheck ? '.6' : ''} VERIFIED: "${lifterName}" found in division rankings`);
+
 
             // Tier 1.5: If athlete found but missing internal_id, extract it by clicking their row
             if (!targetAthlete.internalId && potentialLifterIds.length > 0) {
@@ -866,7 +1126,9 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
                     const updateData = {};
                     if (targetAthlete.club) updateData.club_name = targetAthlete.club;
                     if (targetAthlete.wso) updateData.wso = targetAthlete.wso;
+                    if (targetAthlete.gender) updateData.gender = targetAthlete.gender;
                     if (targetAthlete.nationalRank) updateData.national_rank = parseInt(targetAthlete.nationalRank);
+                    if (targetAthlete.competitionAge) updateData.competition_age = parseInt(targetAthlete.competitionAge);
 
                     if (Object.keys(updateData).length > 0) {
                         try {
@@ -908,7 +1170,9 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
                     const updateData = {};
                     if (targetAthlete.club) updateData.club_name = targetAthlete.club;
                     if (targetAthlete.wso) updateData.wso = targetAthlete.wso;
+                    if (targetAthlete.gender) updateData.gender = targetAthlete.gender;
                     if (targetAthlete.nationalRank) updateData.national_rank = parseInt(targetAthlete.nationalRank);
+                    if (targetAthlete.competitionAge) updateData.competition_age = parseInt(targetAthlete.competitionAge);
 
                     if (Object.keys(updateData).length > 0) {
                         try {
@@ -954,12 +1218,58 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
                 }
             }
 
+            // If no potential lifters provided (New Athlete or Test Case), return the scraped match
+            if (potentialLifterIds.length === 0) {
+                return {
+                    lifterId: null,
+                    scrapedData: targetAthlete
+                };
+            }
+
             // Can't disambiguate - fall back to Tier 2
             console.log(`    ⚠️ Multiple candidates exist (${potentialLifterIds.length}) - proceeding to Tier 2 for disambiguation`);
             return null;
         }
 
-        console.log(`    ❌ Tier 1: "${lifterName}" not found in division rankings`);
+        // TIER 1.6 FALLBACK LOGIC
+        // TIER 1.7 MULTI-DIVISION SEARCH
+        if (!targetAthlete && !isFallbackCheck && bodyweight) {
+            console.log(`    ⚠️ Tier 1 failed. Initiating Extended Search (Tier 1.6 / 1.7) based on bodyweight (${bodyweight}kg)...`);
+
+            const candidates = generateAlternativeDivisions(ageCategory, bodyweight, eventDate);
+            console.log(`    📊 Generated ${candidates.length} candidate divisions to search`);
+
+            for (const cand of candidates) {
+                // Skip if identical to what we just ran (optimization)
+                if (cand.category === ageCategory && cand.weightClass === weightClass) continue;
+
+                // Determine Tier Label
+                // Tier 1.6: Same Age, Different Weight
+                // Tier 1.7: Different Age (Multi-Division)
+                const tierLabel = (cand.category === ageCategory) ? "Tier 1.6" : "Tier 1.7";
+
+                console.log(`    🔍 ${tierLabel}: Checking alternative: ${cand.category} / ${cand.weightClass}...`);
+
+                // Recursively call with new parameters
+                const result = await runBase64UrlLookupProtocol(
+                    lifterName,
+                    potentialLifterIds,
+                    targetMeetId,
+                    eventDate,
+                    cand.category,
+                    cand.weightClass,
+                    bodyweight,
+                    true // Mark as fallback to prevent infinite recursion
+                );
+
+                if (result) {
+                    console.log(`    ✅ ${tierLabel} Success: Found athlete in ${cand.category}`);
+                    return result; // Return immediately on success
+                }
+            }
+        }
+
+        console.log(`    ❌ Tier 1${isFallbackCheck ? '.6' : ''}: "${lifterName}" not found in division rankings`);
         return null;
 
     } catch (error) {
@@ -970,6 +1280,7 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
     }
 }
 
+// Sport80 member URL verification wrapper
 async function runSport80MemberUrlVerification(lifterName, potentialLifterIds, targetMeetId) {
     console.log(`  🔍 Tier 2: Running Sport80 member URL verification for ${potentialLifterIds.length} candidates...`);
 
@@ -991,11 +1302,14 @@ async function runSport80MemberUrlVerification(lifterName, potentialLifterIds, t
                 console.log(`    🔍 Checking lifter ${lifterId} (internal_id: ${lifter.internal_id})...`);
 
                 // REAL verification: Visit the member page and check if they participated in target meet
-                const verified = await verifyLifterParticipationInMeet(lifter.internal_id, targetMeetId);
+                const result = await verifyLifterParticipationInMeet(lifter.internal_id, targetMeetId);
 
-                if (verified) {
+                if (result.verified) {
                     console.log(`    ✅ CONFIRMED: Using lifter ${lifterId} for meet ${targetMeetId}`);
-                    return lifterId;
+                    return {
+                        lifterId: lifterId,
+                        metadata: result.metadata
+                    };
                 }
             } else {
                 console.log(`    🔍 Lifter ${lifterId} (${lifter.athlete_name}) has no internal_id - attempting Sport80 search...`);
@@ -1007,9 +1321,9 @@ async function runSport80MemberUrlVerification(lifterName, potentialLifterIds, t
                     console.log(`    🎯 Found internal_id ${foundInternalId} for ${lifter.athlete_name} via Sport80 search`);
 
                     // Verify this lifter participated in the target meet
-                    const verified = await verifyLifterParticipationInMeet(foundInternalId, targetMeetId);
+                    const result = await verifyLifterParticipationInMeet(foundInternalId, targetMeetId);
 
-                    if (verified) {
+                    if (result.verified) {
                         // Update the lifter record with the found internal_id
                         const { error: updateError } = await supabase
                             .from('usaw_lifters')
@@ -1022,7 +1336,10 @@ async function runSport80MemberUrlVerification(lifterName, potentialLifterIds, t
                             console.log(`    ✅ CONFIRMED: Using lifter ${lifterId} for meet ${targetMeetId} (internal_id update failed: ${updateError.message})`);
                         }
 
-                        return lifterId;
+                        return {
+                            lifterId: lifterId,
+                            metadata: result.metadata
+                        };
                     }
                 } else {
                     console.log(`    ❌ Could not find ${lifter.athlete_name} in Sport80 search`);
@@ -1395,7 +1712,8 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
             additionalData.targetMeetId,
             additionalData.eventDate,
             additionalData.ageCategory,
-            additionalData.weightClass
+            additionalData.weightClass,
+            additionalData.bodyweight // Pass bodyweight for Tier 1.6
         );
 
         if (tier1Result) {
@@ -1414,12 +1732,42 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
             verification_type: 'sport80_member_url'
         });
 
-        const verifiedLifterId = await runSport80MemberUrlVerification(cleanName, lifterIds, additionalData.targetMeetId);
+        const tier2Result = await runSport80MemberUrlVerification(cleanName, lifterIds, additionalData.targetMeetId);
 
-        if (verifiedLifterId) {
+        if (tier2Result) {
+            // Handle both object return (new) and string return (old)
+            const verifiedLifterId = (typeof tier2Result === 'object' && tier2Result.lifterId) ? tier2Result.lifterId : tier2Result;
+            const metadata = (typeof tier2Result === 'object') ? tier2Result.metadata : null;
+
             const verifiedLifter = existingLifters.find(l => l.lifter_id === verifiedLifterId);
             logger.logFinalResult(verifiedLifter, 'tier2_verified');
             console.log(`  ✅ Verified lifter: ${cleanName} (ID: ${verifiedLifterId})`);
+
+            // Check if we can improve Tier 1 search using metadata (Tier 1.6 Enhanced Fallback)
+            const isUnknownCategory = !additionalData.ageCategory || additionalData.ageCategory === '-' || additionalData.ageCategory === 'Unknown';
+            if (metadata && metadata.gender && isUnknownCategory) {
+                console.log(`  🔄 Tier 1.6 Enhanced: Metadata extracted from Tier 2 (Gender: ${metadata.gender})`);
+
+                // Construct inferred category
+                const inferredCategory = (metadata.gender === 'M') ? "Open Men's" : "Open Women's";
+                console.log(`  🔄 Retrying Tier 1 with inferred category: "${inferredCategory}"...`);
+
+                const tier1RetryResult = await runBase64UrlLookupProtocol(
+                    cleanName,
+                    [verifiedLifterId],
+                    additionalData.targetMeetId,
+                    additionalData.eventDate,
+                    inferredCategory, // Use inferred category
+                    additionalData.weightClass,
+                    additionalData.bodyweight
+                );
+
+                if (tier1RetryResult) {
+                    console.log(`  ✅ Tier 1.6 Success: Found athlete with inferred category`);
+                    verifiedLifter.scrapedData = tier1RetryResult.scrapedData;
+                }
+            }
+
             return verifiedLifter;
         } else {
             // FALLBACK: If verification fails but we have at least one likely match, reuse the first one
@@ -1541,7 +1889,8 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
         additionalData.targetMeetId,
         additionalData.eventDate,
         additionalData.ageCategory,
-        additionalData.weightClass
+        additionalData.weightClass,
+        additionalData.bodyweight // Pass bodyweight for Tier 1.6
     );
 
     if (base64Result) {
@@ -1697,7 +2046,8 @@ async function processMeetCsvFile(csvFilePath, meetId, meetName) {
                     ageCategory: row['Age Category']?.trim() || null,
                     weightClass: row['Weight Class']?.trim() || null,
                     membership_number: row['Membership Number']?.trim() || null,
-                    internal_id: row['Internal_ID'] ? parseInt(row['Internal_ID']) : null
+                    internal_id: row['Internal_ID'] ? parseInt(row['Internal_ID']) : null,
+                    bodyweight: row['Body Weight (Kg)']?.toString().trim() || null
                 });
 
                 // Create meet result with proper lifter_id

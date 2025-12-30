@@ -27,6 +27,7 @@ class MeetCompletenessEngine {
      * @returns {Promise<Array>} Array of incomplete meet records
      */
     async getIncompleteMeets(filters = {}) {
+        console.log('[MeetCompletenessEngine] Native Log: Starting incomplete meet identification', filters);
         this.logger.info('Starting incomplete meet identification', { filters });
 
         try {

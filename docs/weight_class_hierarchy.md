@@ -1,0 +1,219 @@
+# Weight Class Organization Chart
+
+- Current (June 2025-Present)
+  - Women
+    - Youth and below (ages 0-17)
+      - 36kg
+      - 40kg
+      - 44kg
+      - 48kg
+      - 53kg
+      - 58kg
+      - 63kg
+      - 63+kg
+      - 69kg
+      - 69+kg
+      - 77kg
+      - 77+kg
+    - Junior (15-20 years of age)
+      - 48kg
+      - 53kg
+      - 58kg
+      - 63kg
+      - 69kg
+      - 77kg
+      - 86kg
+      - 86+kg
+    - Senior / Open (15 years of age and older)
+      - 48kg
+      - 53kg
+      - 58kg
+      - 63kg
+      - 69kg
+      - 77kg
+      - 86kg
+      - 86+kg
+  - Men
+    - Youth and below (ages 0-17)
+      - 40kg
+      - 44kg
+      - 48kg
+      - 52kg
+      - 56kg
+      - 60kg
+      - 65kg
+      - 65+kg
+      - 71kg
+      - 79kg
+      - 79+kg
+      - 88kg
+      - 94kg
+      - 94+kg
+    - Junior (15-20 years of age)
+      - 60kg
+      - 65kg
+      - 71kg
+      - 79kg
+      - 88kg
+      - 94kg
+      - 110kg
+      - 110+kg
+    - Senior / Open (15 years of age and older)
+      - 60kg
+      - 65kg
+      - 71kg
+      - 79kg
+      - 88kg
+      - 94kg
+      - 110kg
+      - 110+kg
+- Historical (November 2018-May 2025)
+  - Women
+    - Youth and below (ages 0-17)
+      - 30kg
+      - 33kg
+      - 36kg
+      - 40kg
+      - 45kg
+      - 49kg
+      - 55kg
+      - 59kg
+      - 64kg
+      - 64+kg
+      - 71kg
+      - 76kg
+      - 76+kg
+      - 81kg
+      - 81+kg
+    - Junior (15-20 years of age)
+      - 45kg
+      - 49kg
+      - 55kg
+      - 59kg
+      - 64kg
+      - 71kg
+      - 76kg
+      - 81kg
+      - 87kg
+      - 87+kg
+    - Senior / Open (15 years of age and older)
+      - 45kg
+      - 49kg
+      - 55kg
+      - 59kg
+      - 64kg
+      - 71kg
+      - 76kg
+      - 81kg
+      - 87kg
+      - 87+kg
+  - Men
+    - Youth and below (ages 0-17)
+      - 32kg
+      - 36kg
+      - 39kg
+      - 44kg
+      - 49kg
+      - 55kg
+      - 61kg
+      - 67kg
+      - 73kg
+      - 73+kg
+      - 81kg
+      - 89kg
+      - 89+kg
+      - 96kg
+      - 102kg
+      - 102+kg
+    - Junior (15-20 years of age)
+      - 55kg
+      - 61kg
+      - 67kg
+      - 73kg
+      - 81kg
+      - 89kg
+      - 96kg
+      - 102kg
+      - 109kg
+      - 109+kg
+    - Senior / Open (15 years of age and older)
+      - 55kg
+      - 61kg
+      - 67kg
+      - 73kg
+      - 81kg
+      - 89kg
+      - 96kg
+      - 102kg
+      - 109kg
+      - 109+kg
+- Historical (January 1998-October 2018)
+  - Women
+    - Youth and below (ages 0-17)
+      - 31kg
+      - 35kg
+      - 39kg
+      - 44kg
+      - 48kg
+      - 53kg
+      - 58kg
+      - 58+kg
+      - 63kg
+      - 69kg
+      - 69+kg
+    - Junior (15-20 years of age)
+      - 48kg
+      - 53kg
+      - 58kg
+      - 63kg
+      - 69kg
+      - 75kg
+      - 75+kg
+      - 90kg
+      - 90+kg
+    - Senior / Open (15 years of age and older)
+      - 48kg
+      - 53kg
+      - 58kg
+      - 63kg
+      - 69kg
+      - 75kg
+      - 75+kg
+      - 90kg
+      - 90+kg
+  - Men
+    - Youth and below (ages 0-17)
+      - 31kg
+      - 35kg
+      - 39kg
+      - 44kg
+      - 50kg
+      - 56kg
+      - 62kg
+      - 69kg
+      - 69+kg
+      - 77kg
+      - 85kg
+      - 85+kg
+      - 94kg
+      - 94+kg
+      - 105kg
+      - 105+kg
+    - Junior (15-20 years of age)
+      - 56kg
+      - 62kg
+      - 69kg
+      - 77kg
+      - 85kg
+      - 94kg
+      - 105kg
+      - 105+kg
+    - Senior / Open (15 years of age and older)
+      - 56kg
+      - 62kg
+      - 69kg
+      - 77kg
+      - 85kg
+      - 94kg
+      - 105kg
+      - 105+kg
