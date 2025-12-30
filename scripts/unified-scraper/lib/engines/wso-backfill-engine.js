@@ -84,6 +84,46 @@ class WsoBackfillEngine {
                             // Identity Verified via Tier 2
                             this.logger.info(`✅ Tier 2 verified participation for ${result.lifter_name} (Internal ID: ${lifter.internal_id})`);
 
+                            // DECONTAMINATION: Check if the verified lifter matches the current result's lifter_id
+                            if (result.lifter_id && lifter.lifter_id && result.lifter_id !== lifter.lifter_id) {
+                                this.logger.info(`  ♻️ Decontamination: Reassigning result ${result.result_id} from Lifter ${result.lifter_id} to Verified Lifter ${lifter.lifter_id}`);
+
+                                const { error: reassignmentError } = await this.supabase
+                                    .from('usaw_meet_results')
+                                    .update({ lifter_id: lifter.lifter_id })
+                                    .eq('result_id', result.result_id);
+
+                                if (reassignmentError) {
+                                    this.logger.error(`  ❌ Failed to reassign lifter: ${reassignmentError.message}`);
+                                } else {
+                                    this.logger.info(`  ✅ Result reassigned successfully`);
+
+                                    // PHANTOM CLEANUP: Check if old lifter has any remaining results
+                                    // If not, delete the phantom lifter to keep DB clean
+                                    const oldLifterId = result.lifter_id;
+                                    const { count } = await this.supabase
+                                        .from('usaw_meet_results')
+                                        .select('*', { count: 'exact', head: true })
+                                        .eq('lifter_id', oldLifterId);
+
+                                    if (count === 0) {
+                                        this.logger.info(`  🗑️ Phantom Lifter Cleanup: Lifter ${oldLifterId} has 0 results remaining. Deleting...`);
+                                        const { error: deleteError } = await this.supabase
+                                            .from('usaw_lifters')
+                                            .delete()
+                                            .eq('lifter_id', oldLifterId);
+
+                                        if (deleteError) {
+                                            this.logger.error(`  ❌ Failed to delete phantom lifter: ${deleteError.message}`);
+                                        } else {
+                                            this.logger.info(`  ✅ Phantom lifter ${oldLifterId} deleted successfully`);
+                                        }
+                                    } else {
+                                        this.logger.info(`  ℹ️ Old Lifter ${oldLifterId} still has ${count} results. Keeping record.`);
+                                    }
+                                }
+                            }
+
                             // Check metadata for gender to infer category if unknown
                             let lookupCategory = result.age_category;
                             let metaMsg = '';
