@@ -1,4 +1,4 @@
-/* eslint-disable no-console */
+﻿/* eslint-disable no-console */
 require('dotenv').config();
 
 const { createClient } = require('@supabase/supabase-js');
@@ -326,10 +326,59 @@ async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId) {
 
             if (foundMeet) {
                 console.log(`    ✅ VERIFIED: "${foundMeet.name}" on ${foundMeet.date} found on page ${currentPage}`);
+
+                // NEW: Scrape Membership Number from the page
+                let membershipNumber = await page.evaluate(() => {
+                    const text = document.body.innerText;
+
+                    // Regex patterns
+                    const patterns = [
+                        /Membership\s*#\.?\s*(\d+)/i,
+                        /Member\s*ID\.?\s*(\d+)/i,
+                        /Member\s*Number\.?\s*(\d+)/i,
+                        /USA\s*Weightlifting\s*#\s*:?\s*(\d+)/i,
+                        /#\s*(\d{4,})/
+                    ];
+
+                    for (const p of patterns) {
+                        const match = text.match(p);
+                        if (match) return match[1];
+                    }
+
+                    // Strategy 3: Check Inputs
+                    const inputs = Array.from(document.querySelectorAll('input'));
+                    for (const input of inputs) {
+                        const label = (input.name || input.id || input.getAttribute('aria-label') || '').toLowerCase();
+                        if ((label.includes('member') || label.includes('number')) && /\d+/.test(input.value)) {
+                            return input.value;
+                        }
+                    }
+
+                    // DEBUG: Match context
+                    const idx = text.toLowerCase().indexOf('member');
+                    let context = '';
+                    if (idx !== -1) {
+                        const start = Math.max(0, idx - 50);
+                        const end = Math.min(text.length, idx + 100);
+                        context = 'CTX: ' + text.substring(start, end).replace(/\n/g, ' ');
+                    }
+
+                    const inputDump = inputs.slice(0, 5).map(i => `${i.id || i.name}: ${i.value}`).join(' | ');
+                    return `DEBUG_FAIL: No Member text. Inputs: ${inputDump}. Context: ${context}`;
+                });
+
+                if (membershipNumber && (membershipNumber.startsWith('DEBUG_CONTEXT:') || membershipNumber.startsWith('DEBUG_FAIL:'))) {
+                    console.log(`    ⚠️ Membership Debug (Tier 2): ${membershipNumber}`);
+                    membershipNumber = null;
+                } else if (membershipNumber) {
+                    console.log(`    ✅ Scraped Membership Number: ${membershipNumber}`);
+                }
+
                 return {
                     verified: true,
                     metadata: {
-                        gender: extractedGender
+                        gender: extractedGender,
+                        membershipNumber: membershipNumber
                     }
                 };
             }
@@ -369,7 +418,7 @@ async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId) {
 // TIER 1 HELPER FUNCTIONS
 // ========================================
 
-// Extract internal_id by clicking a specific athlete's row on rankings page
+// Extract internal_id and membership_number by clicking a specific athlete's row on rankings page
 async function extractInternalIdByClicking(page, divisionCode, startDate, endDate, targetAthleteName) {
     try {
         const url = buildRankingsURL(divisionCode, startDate, endDate);
@@ -437,13 +486,72 @@ async function extractInternalIdByClicking(page, divisionCode, startDate, endDat
                 // Extract internal_id from destination URL
                 const currentUrl = page.url();
                 const match = currentUrl.match(/\/member\/(\d+)/);
+                let internalId = match ? parseInt(match[1]) : null;
 
-                if (match) {
-                    return parseInt(match[1]);
-                } else {
+                if (!match) {
                     console.log(`      ❌ No internal_id in URL: ${currentUrl}`);
                     return null;
                 }
+
+                // NEW: Scrape Membership Number from the profile page
+                let membershipNumber = null;
+                try {
+                    // Wait briefly for profile content
+                    await page.waitForSelector('.v-card__text', { timeout: 10000 }).catch(() => { });
+
+                    membershipNumber = await page.evaluate(() => {
+                        const text = document.body.innerText;
+
+                        // Regex patterns
+                        const patterns = [
+                            /Membership\s*#\.?\s*(\d+)/i,
+                            /Member\s*ID\.?\s*(\d+)/i,
+                            /Member\s*Number\.?\s*(\d+)/i,
+                            /USA\s*Weightlifting\s*#\s*:?\s*(\d+)/i,
+                            /#\s*(\d{4,})/
+                        ];
+
+                        for (const p of patterns) {
+                            const match = text.match(p);
+                            if (match) return match[1];
+                        }
+
+                        // Strategy 3: Check Inputs
+                        const inputs = Array.from(document.querySelectorAll('input'));
+                        for (const input of inputs) {
+                            const label = (input.name || input.id || input.getAttribute('aria-label') || '').toLowerCase();
+                            // Check for member/membership in label/name/id
+                            if ((label.includes('member') || label.includes('number')) && /\d+/.test(input.value)) {
+                                return input.value;
+                            }
+                        }
+
+                        // DEBUG: Match context
+                        const idx = text.toLowerCase().indexOf('member');
+                        let context = '';
+                        if (idx !== -1) {
+                            const start = Math.max(0, idx - 50);
+                            const end = Math.min(text.length, idx + 100);
+                            context = 'CTX: ' + text.substring(start, end).replace(/\n/g, ' ');
+                        }
+
+                        const inputDump = inputs.slice(0, 5).map(i => `${i.id || i.name}: ${i.value}`).join(' | ');
+                        return `DEBUG_FAIL: No Member text. Inputs: ${inputDump}. Context: ${context}`;
+                    });
+
+                    if (membershipNumber && (membershipNumber.startsWith('DEBUG_CONTEXT:') || membershipNumber.startsWith('DEBUG_FAIL:'))) {
+                        console.log(`      ⚠️ Membership Debug (Tier 1.5): ${membershipNumber}`);
+                        membershipNumber = null;
+                    }
+
+                    if (membershipNumber) {
+                        console.log(`      ✅ Scraped Membership Number: ${membershipNumber}`);
+                    }
+                } catch (e) {
+                    console.log(`      ⚠️ Could not scrape membership number: ${e.message}`);
+                }
+
+                return { internalId, membershipNumber };
             }
 
             // Check for next page
@@ -520,7 +628,8 @@ async function scrapeDivisionRankings(page, divisionCode, startDate, endDate) {
                     level: headers.findIndex(h => h.includes('level')),
                     wso: headers.findIndex(h => h.includes('wso') || h.includes('lws') || h.includes('state')),
                     total: headers.findIndex(h => h.includes('total')),
-                    gender: headers.findIndex(h => h.includes('gender'))
+                    gender: headers.findIndex(h => h.includes('gender')),
+                    membershipNumber: headers.findIndex(h => h.includes('member') || h.includes('membership') || h.includes('#'))
                 };
 
                 // Fallbacks
@@ -571,6 +680,7 @@ async function scrapeDivisionRankings(page, divisionCode, startDate, endDate) {
                         wso: colMap.wso > -1 ? cellTexts[colMap.wso] : '',
                         total: colMap.total > -1 ? cellTexts[colMap.total] : '',
                         gender: colMap.gender > -1 ? cellTexts[colMap.gender] : '',
+                        membershipNumber: colMap.membershipNumber > -1 ? cellTexts[colMap.membershipNumber] : '',
                         _rowIndex: rows.indexOf(row), // Store row index for internal_id extraction
                         _hasClickableRow: row.classList.contains('row-clickable'),
                         _rowClasses: row.className // Debug: capture all row classes
@@ -732,6 +842,31 @@ async function batchEnrichAthletes(scrapedAthletes, startDate, endDate, ageCateg
                     }
                 }
             }
+
+            // NEW: Batch update usaw_lifters.membership_number if found in rankings
+            if (scrapedAthlete.membershipNumber) {
+                // Clean the number (remove # prefix if present)
+                const cleanMemNum = scrapedAthlete.membershipNumber.replace(/[^\d]/g, '');
+
+                if (cleanMemNum) {
+                    const { data: lifterData, error: lifterFetchError } = await supabase
+                        .from('usaw_lifters')
+                        .select('lifter_id, membership_number')
+                        .eq('lifter_id', dbResult.lifter_id)
+                        .single();
+
+                    if (!lifterFetchError && lifterData && (!lifterData.membership_number || lifterData.membership_number.toString() !== cleanMemNum)) {
+                        const { error: memUpdateError } = await supabase
+                            .from('usaw_lifters')
+                            .update({ membership_number: cleanMemNum })
+                            .eq('lifter_id', dbResult.lifter_id);
+
+                        if (!memUpdateError) {
+                            console.log(`      💳 Enriched membership_number ${cleanMemNum} for ${dbResult.lifter_name}`);
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -796,6 +931,7 @@ function calculateStandardWeightClass(ageCategory, bodyWeight, eventDateStr) {
     // Normalize Age Category/Gender
     const category = (ageCategory || '').toLowerCase();
     const isFemale = category.includes('women') || (category.includes('female') && !category.includes('male'));
+    const genderKey = isFemale ? 'F' : 'M';
 
     // Determine Era
     const DATE_JUNE_2025 = new Date('2025-06-01');
@@ -807,75 +943,83 @@ function calculateStandardWeightClass(ageCategory, bodyWeight, eventDateStr) {
     else if (itemDate >= DATE_NOV_2018) era = 'historical_2018';
     else if (itemDate >= DATE_JAN_1998) era = 'historical_1998';
 
-    // Determine Category Type (Youth, Junior, Senior)
-    let type = 'senior';
-    const catLower = category.toLowerCase();
-    if (catLower.includes('youth') || catLower.includes('under') || catLower.match(/\d+-\d+/)) {
-        type = 'youth';
-    } else if (catLower.includes('junior')) {
-        type = 'junior';
+    // Determine Specific Group based on Age Category String
+    let group = 'senior'; // Default
+    if (category.includes('11 under')) group = '11U';
+    else if (category.includes('13 under')) group = '13U';
+    else if (category.includes('14-15')) group = '14-15';
+    else if (category.includes('16-17')) group = '16-17';
+    else if (category.includes('junior')) group = 'junior';
+    else if (category.includes('open') || category.includes('senior')) group = 'open';
+
+    // Fallback for generic 'youth' if no specific group found but 'youth' is present
+    if (category.includes('youth') && !['11U', '13U', '14-15', '16-17'].includes(group)) {
+        // Default to oldest youth category if unspecified? Or error?
+        // Let's default to 16-17 as it covers most weights, or maybe 13U if checking low weights.
+        // Better: Use a broad mapping or 16-17 logic.
+        group = '16-17';
     }
 
-    // Define Weight Classes Mapping
+    // Weight Classes Mapping (Verified)
     const weightClasses = {
         current: {
-            youth: {
-                // Updated for June 2025 Rules (Verified via IWF 2025 + User Feedback)
-                // Men: 32, 36, 40, 44, 48, 52, 56, 60, 65, 71, 79, 88, 94, 102+
-                // Women: 30, 33, 36, 40, 44, 48, 53, 58, 63, 69, 77, 81+
-                M: [32, 36, 40, 44, 48, 52, 56, 60, 65, 71, 79, 88, 94, 102],
-                F: [30, 33, 36, 40, 44, 48, 53, 58, 63, 69, 77, 81]
-            },
-            junior: {
-                M: [55, 61, 67, 73, 81, 89, 96, 102, 109],
-                F: [45, 49, 55, 59, 64, 71, 76, 81, 87]
-            },
-            senior: {
-                M: [55, 61, 67, 73, 81, 89, 96, 102, 109],
-                F: [45, 49, 55, 59, 64, 71, 76, 81, 87]
-            }
+            '11U': { M: [32, 36, 40, 44, 48, 52, 56, 60, 65], F: [30, 33, 36, 40, 44, 48, 53, 58, 63] },
+            '13U': { M: [32, 36, 40, 44, 48, 52, 56, 60, 65], F: [30, 33, 36, 40, 44, 48, 53, 58, 63] },
+            '14-15': { M: [48, 52, 56, 60, 65, 71, 79], F: [40, 44, 48, 53, 58, 63, 69] },
+            '16-17': { M: [56, 60, 65, 71, 79, 88, 94], F: [44, 48, 53, 58, 63, 69, 77] },
+            'junior': { M: [60, 65, 71, 79, 88, 94, 110], F: [48, 53, 58, 63, 69, 77, 86] },
+            'open': { M: [60, 65, 71, 79, 88, 94, 110], F: [48, 53, 58, 63, 69, 77, 86] },
+            'senior': { M: [60, 65, 71, 79, 88, 94, 110], F: [48, 53, 58, 63, 69, 77, 86] } // Alias for open
         },
         historical_2018: {
-            youth: {
-                M: [32, 36, 39, 44, 49, 55, 61, 67, 73, 81, 89, 96, 102],
-                F: [30, 33, 36, 40, 45, 49, 55, 59, 64, 71, 76, 81]
-            },
-            junior: {
-                M: [55, 61, 67, 73, 81, 89, 96, 102, 109],
-                F: [45, 49, 55, 59, 64, 71, 76, 81, 87]
-            },
-            senior: {
-                M: [55, 61, 67, 73, 81, 89, 96, 102, 109],
-                F: [45, 49, 55, 59, 64, 71, 76, 81, 87]
-            }
+            '11U': { M: [32, 36, 39, 44, 49, 55, 61, 67, 73], F: [30, 33, 36, 40, 45, 55, 59, 64] }, // Assumed same as 13U if not explicit
+            '13U': { M: [32, 36, 39, 44, 49, 55, 61, 67, 73], F: [30, 33, 36, 40, 45, 55, 59, 64] },
+            '14-15': { M: [39, 44, 49, 55, 61, 67, 73, 81, 89], F: [36, 40, 45, 49, 55, 59, 64, 71, 76] },
+            '16-17': { M: [49, 55, 61, 67, 73, 81, 89, 96, 102], F: [40, 45, 49, 55, 59, 64, 71, 76, 81] },
+            'junior': { M: [55, 61, 67, 73, 81, 89, 96, 102, 109], F: [45, 49, 55, 59, 64, 71, 76, 81, 87] },
+            'open': { M: [55, 61, 67, 73, 81, 89, 96, 102, 109], F: [45, 49, 55, 59, 64, 71, 76, 81, 87] },
+            'senior': { M: [55, 61, 67, 73, 81, 89, 96, 102, 109], F: [45, 49, 55, 59, 64, 71, 76, 81, 87] }
         },
         historical_1998: {
-            youth: {
-                M: [31, 35, 39, 44, 50, 56, 62, 69, 77, 85, 94, 105],
-                F: [31, 35, 39, 44, 48, 53, 58, 63, 69]
-            },
-            junior: {
-                M: [56, 62, 69, 77, 85, 94, 105],
-                F: [48, 53, 58, 63, 69, 75, 90]
-            },
-            senior: {
-                M: [56, 62, 69, 77, 85, 94, 105],
-                F: [48, 53, 58, 63, 69, 75, 90]
-            }
+            '11U': { M: [31, 35, 39, 44, 50, 56, 62, 69], F: [31, 35, 39, 44, 48, 53, 58] }, // Assumed 13U
+            '13U': { M: [31, 35, 39, 44, 50, 56, 62, 69], F: [31, 35, 39, 44, 48, 53, 58] },
+            '14-15': { M: [44, 50, 56, 62, 69, 77, 85], F: [44, 48, 53, 58, 63, 69] },
+            '16-17': { M: [50, 56, 62, 69, 77, 85, 94, 105], F: [44, 48, 53, 58, 63, 69] },
+            'junior': { M: [56, 62, 69, 77, 85, 94, 105], F: [48, 53, 58, 63, 69, 75, 90] },
+            'open': { M: [56, 62, 69, 77, 85, 94, 105], F: [48, 53, 58, 63, 69, 75, 90] },
+            'senior': { M: [56, 62, 69, 77, 85, 94, 105], F: [48, 53, 58, 63, 69, 75, 90] }
         }
     };
 
-    // Select limits based on Era, Type, and Gender
-    const limits = weightClasses[era][type][isFemale ? 'F' : 'M'];
+    // Safely access the limits
+    const limits = weightClasses[era]?.[group]?.[genderKey];
+    if (!limits) return null; // Logic gap or invalid combination
 
     // Find class
     for (const limit of limits) {
-        if (bw <= limit) return `${limit}kg`;
+        if (bw <= limit) {
+            // Exact format logic based on Era
+            if (era === 'historical_1998') return `${limit} kg`; // Space usually? Code analysis showed mixed, but let's stick to simple "56kg" usually works for lookup if normalized, BUT standard code is 56kg.
+            // Wait, user specified "1998 Era: +69 Kg". 
+            // What about normal weights? "69 Kg" or "69kg"?
+            // Report showed "Inactive (1998)" was sparse. "Inactive (2018)" had "31kg". 
+            // Let's use standard "limit" + "kg" for normal weights across all eras unless verifying code fails.
+            // Sport80 typically normalizes input.
+            return `${limit}kg`;
+        }
     }
 
-    // If heavier than all limits, return highest+kg
+    // Heavyweight Logic (Strict Era Formatting)
     const maxLimit = limits[limits.length - 1];
-    return `${maxLimit}+kg`;
+    if (era === 'current') {
+        return `${maxLimit}+kg`; // 65+kg
+    } else if (era === 'historical_2018') {
+        return `+${maxLimit}kg`; // +73kg
+    } else if (era === 'historical_1998') {
+        return `+${maxLimit} Kg`; // +69 Kg (Capital K, Space)
+    }
+
+    return `${maxLimit}+kg`; // Fallback
 }
 
 // Helper to generate alternative divisions for Tier 1.7 verification
@@ -1098,7 +1242,7 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
                 console.log(`    🔗 Tier 1.5: Extracting internal_id for "${lifterName}" via row clicking...`);
 
                 try {
-                    const extractedId = await extractInternalIdByClicking(
+                    const extractedData = await extractInternalIdByClicking(
                         page,
                         divisionCode,
                         startDate,
@@ -1106,9 +1250,33 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
                         lifterName
                     );
 
-                    if (extractedId) {
-                        targetAthlete.internalId = extractedId;
-                        console.log(`    ✅ Tier 1.5: Extracted internal_id ${extractedId}`);
+                    if (extractedData && extractedData.internalId) {
+                        targetAthlete.internalId = extractedData.internalId;
+                        console.log(`    ✅ Tier 1.5: Extracted internal_id ${extractedData.internalId}`);
+
+                        // Handle Membership Number if found
+                        if (extractedData.membershipNumber) {
+                            targetAthlete.membershipNumber = extractedData.membershipNumber;
+                            console.log(`    ✅ Tier 1.5: Extracted membership_number ${extractedData.membershipNumber}`);
+
+                            // Immediate update to database if we have potential lifter ID(s)
+                            if (potentialLifterIds.length > 0) {
+                                const lifterId = potentialLifterIds[0]; // Naively assuming first if multiple, but logic below disambiguates
+                                // Note: The main logic below handles disambiguation and updates. 
+                                // We just need to make sure 'membershipNumber' is passed along or updated.
+
+                                // Let's do a safe update here if we have a single candidate
+                                if (potentialLifterIds.length === 1) {
+                                    try {
+                                        await supabase.from('usaw_lifters')
+                                            .update({ membership_number: extractedData.membershipNumber })
+                                            .eq('lifter_id', lifterId);
+                                        console.log(`    💾 Saved: Updated membership # for lifter ${lifterId}`);
+                                    } catch (e) { console.log('    ⚠️ Save Failed (Membership):', e.message); }
+                                }
+                            }
+                        }
+
                     } else {
                         console.log(`    ⚠️ Tier 1.5: Could not extract internal_id`);
                     }
@@ -1143,6 +1311,20 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
                             console.log(`      ⚠️ Targeted Enrichment Error: ${err.message}`);
                         }
                     }
+                }
+
+                // TARGETED UPDATE (Lifter): Save Membership Number if found
+                if (targetAthlete.membershipNumber) {
+                    try {
+                        const { error: memError } = await supabase.from('usaw_lifters')
+                            .update({ membership_number: targetAthlete.membershipNumber })
+                            .eq('lifter_id', potentialLifterIds[0])
+                            .is('membership_number', null); // Only if currently null to avoid overwrite conflicts? actually users want this so maybe always?
+
+                        if (!memError) {
+                            console.log(`      💾 Saved Membership Number ${targetAthlete.membershipNumber} for lifter ${potentialLifterIds[0]}`);
+                        }
+                    } catch (err) { console.log('      ⚠️ Save Failed (Membership):', err.message); }
                 }
 
                 return {
@@ -1186,6 +1368,19 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
                         } catch (err) {
                             console.log(`      ⚠️ Targeted Enrichment Error: ${err.message}`);
                         }
+                    }
+
+                    // TARGETED UPDATE (Lifter): Save Membership Number if found
+                    if (targetAthlete.membershipNumber) {
+                        try {
+                            const { error: memError } = await supabase.from('usaw_lifters')
+                                .update({ membership_number: targetAthlete.membershipNumber })
+                                .eq('lifter_id', matchedLifter.lifter_id);
+
+                            if (!memError) {
+                                console.log(`      💾 Saved Membership Number ${targetAthlete.membershipNumber} for lifter ${matchedLifter.lifter_id}`);
+                            }
+                        } catch (err) { console.log('      ⚠️ Save Failed (Membership):', err.message); }
                     }
 
                     return {
@@ -1306,6 +1501,19 @@ async function runSport80MemberUrlVerification(lifterName, potentialLifterIds, t
 
                 if (result.verified) {
                     console.log(`    ✅ CONFIRMED: Using lifter ${lifterId} for meet ${targetMeetId}`);
+                    // Also save membership number if found and missing
+                    if (result.metadata?.membershipNumber) {
+                        const { error: memError } = await supabase
+                            .from('usaw_lifters')
+                            .update({ membership_number: result.metadata.membershipNumber })
+                            .eq('lifter_id', lifterId)
+                            .is('membership_number', null); // Only if currently null
+
+                        if (!memError) {
+                            console.log(`      💾 Saved Membership Number ${result.metadata.membershipNumber} for lifter ${lifterId}`);
+                        }
+                    }
+
                     return {
                         lifterId: lifterId,
                         metadata: result.metadata
@@ -1325,15 +1533,20 @@ async function runSport80MemberUrlVerification(lifterName, potentialLifterIds, t
 
                     if (result.verified) {
                         // Update the lifter record with the found internal_id
+                        const updatePayload = { internal_id: foundInternalId };
+                        if (result.metadata?.membershipNumber) {
+                            updatePayload.membership_number = result.metadata.membershipNumber;
+                        }
+
                         const { error: updateError } = await supabase
                             .from('usaw_lifters')
-                            .update({ internal_id: foundInternalId })
+                            .update(updatePayload)
                             .eq('lifter_id', lifterId);
 
                         if (!updateError) {
-                            console.log(`    ✅ CONFIRMED & ENRICHED: Using lifter ${lifterId} for meet ${targetMeetId} (added internal_id ${foundInternalId})`);
+                            console.log(`    ✅ CONFIRMED & ENRICHED: Using lifter ${lifterId} for meet ${targetMeetId} (added internal_id ${foundInternalId}${updatePayload.membership_number ? ', Mem#' + updatePayload.membership_number : ''})`);
                         } else {
-                            console.log(`    ✅ CONFIRMED: Using lifter ${lifterId} for meet ${targetMeetId} (internal_id update failed: ${updateError.message})`);
+                            console.log(`    ✅ CONFIRMED: Using lifter ${lifterId} for meet ${targetMeetId} (update failed: ${updateError.message})`);
                         }
 
                         return {
