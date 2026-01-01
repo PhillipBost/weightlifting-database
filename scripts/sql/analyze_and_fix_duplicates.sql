@@ -22,7 +22,9 @@ WITH TrueDuplicateNames AS (
     SELECT athlete_name
     FROM usaw_lifters
     GROUP BY athlete_name
-    HAVING COUNT(DISTINCT lifter_id) > COUNT(DISTINCT membership_number) 
+    -- Update: use GREATEST to respect explicit distinct identity via Internal ID
+    -- This avoids flagging "Andrew Smith" (5 unique internal IDs) as a duplicate group just because one missing mem#.
+    HAVING COUNT(DISTINCT lifter_id) > GREATEST(COUNT(DISTINCT membership_number), COUNT(DISTINCT internal_id))
        AND COUNT(DISTINCT lifter_id) > 1
 )
 SELECT 
