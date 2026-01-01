@@ -53,12 +53,13 @@ class UnifiedConfiguration {
 class UnifiedSession {
     constructor(mode) {
         this.id = this._generateSessionId(mode);
-        this.startTime = new Date();
         this.endTime = null;
         this.processed = 0;
         this.completed = 0;
         this.failed = 0;
         this.skipped = 0;
+        this.completedWithoutMetadata = 0;
+        this.startTime = Date.now();
         this.errors = [];
         this.results = [];
         this.summary = '';

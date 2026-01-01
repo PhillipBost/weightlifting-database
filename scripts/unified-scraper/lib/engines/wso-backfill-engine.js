@@ -84,6 +84,23 @@ class WsoBackfillEngine {
                             // Identity Verified via Tier 2
                             this.logger.info(`✅ Tier 2 verified participation for ${result.lifter_name} (Internal ID: ${lifter.internal_id})`);
 
+                            // METADATA UPDATE: Membership Number
+                            if (resultVerification.metadata && resultVerification.metadata.membershipNumber) {
+                                const memNum = resultVerification.metadata.membershipNumber;
+                                this.logger.info(`  📝 Found Membership Number: ${memNum}`);
+
+                                const { error: memError } = await this.supabase
+                                    .from('usaw_lifters')
+                                    .update({ membership_number: memNum })
+                                    .eq('lifter_id', lifter.lifter_id);
+
+                                if (memError) {
+                                    this.logger.warn(`  ⚠️ Failed to save membership number: ${memError.message}`);
+                                } else {
+                                    this.logger.info(`  💾 Saved membership number ${memNum}`);
+                                }
+                            }
+
                             // DECONTAMINATION: Check if the verified lifter matches the current result's lifter_id
                             if (result.lifter_id && lifter.lifter_id && result.lifter_id !== lifter.lifter_id) {
                                 this.logger.info(`  ♻️ Decontamination: Reassigning result ${result.result_id} from Lifter ${result.lifter_id} to Verified Lifter ${lifter.lifter_id}`);
@@ -154,13 +171,40 @@ class WsoBackfillEngine {
                                 session.completed++;
                                 this.logger.info(`✅ Tier 1 success (after Identity Verification) for ${result.lifter_name}`);
                             } else {
-                                // We verified identity but failed to scrape rankings (maybe missing from rankings?)
+                                // We verified identity but failed to scrape metadata (no total or not in rankings)
                                 success = true;
-                                session.completed++;
-                                this.logger.warn(`⚠️ Identity verified but failed to scrape metadata from rankings for ${result.lifter_name}`);
+                                session.completedWithoutMetadata++;
+                                this.logger.info(`ℹ️ Identity verified, but metadata enrichment skipped (no total or not in rankings) for ${result.lifter_name}`);
                             }
                             break;
                         }
+                    }
+                }
+
+                if (!success && lifters.length > 0) {
+                    this.logger.info(`⚠️ Tier 2 failed/skipped. Attempting Tier 1 Discovery for ${lifters.length} candidates...`);
+
+                    // Use the result's category or infer from gender if possible (defaulting to Open if desperate)
+                    let discoveryCategory = result.age_category;
+                    if ((!discoveryCategory || discoveryCategory === 'Unknown') && result.gender) {
+                        discoveryCategory = (result.gender === 'M') ? "Open Men's" : "Open Women's";
+                    }
+
+                    const potentialIds = lifters.map(l => l.lifter_id);
+                    const tier1Result = await runBase64UrlLookupProtocol(
+                        result.lifter_name,
+                        potentialIds,
+                        result.meet_id,
+                        result.date,
+                        discoveryCategory,
+                        result.weight_class,
+                        result.body_weight_kg
+                    );
+
+                    if (tier1Result) {
+                        success = true;
+                        session.completed++;
+                        this.logger.info(`✅ Tier 1 Discovery Success: Disambiguated/Verified via Rankings Search`);
                     }
                 }
 
