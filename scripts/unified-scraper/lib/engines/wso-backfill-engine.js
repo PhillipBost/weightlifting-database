@@ -112,11 +112,33 @@ class WsoBackfillEngine {
                                     .update({ lifter_id: lifter.lifter_id })
                                     .eq('result_id', result.result_id);
 
+                                let cleanupNeeded = false;
+
                                 if (reassignmentError) {
-                                    this.logger.error(`  ❌ Failed to reassign lifter: ${reassignmentError.message}`);
+                                    if (reassignmentError.message && reassignmentError.message.includes('unique constraint')) {
+                                        this.logger.warn(`  ⚠️ Conflict detected: Verified Lifter ${lifter.lifter_id} already has a result for this meet/weight class.`);
+                                        this.logger.info(`  🗑️ Resolution: Deleting redundant result ${result.result_id} from Ghost Lifter ${result.lifter_id} to resolve conflict.`);
+
+                                        const { error: conflictDeleteError } = await this.supabase
+                                            .from('usaw_meet_results')
+                                            .delete()
+                                            .eq('result_id', result.result_id);
+
+                                        if (conflictDeleteError) {
+                                            this.logger.error(`  ❌ Failed to delete conflicting result: ${conflictDeleteError.message}`);
+                                        } else {
+                                            this.logger.info(`  ✅ Redundant result deleted.`);
+                                            cleanupNeeded = true;
+                                        }
+                                    } else {
+                                        this.logger.error(`  ❌ Failed to reassign lifter: ${reassignmentError.message}`);
+                                    }
                                 } else {
                                     this.logger.info(`  ✅ Result reassigned successfully`);
+                                    cleanupNeeded = true;
+                                }
 
+                                if (cleanupNeeded) {
                                     // PHANTOM CLEANUP: Check if old lifter has any remaining results
                                     // If not, delete the phantom lifter to keep DB clean
                                     const oldLifterId = result.lifter_id;

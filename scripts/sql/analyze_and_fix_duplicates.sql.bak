@@ -11,6 +11,28 @@
     - Only change ROLLBACK to COMMIT when you are absolutely sure.
     - Always backup your database before running DELETE/UPDATE operations.
 */
+
+ℹ️  Initialized Supabase client
+ℹ️  Starting session: wso-2026-01-02T03-31-45-340Z (Mode: wso)
+ℹ️  Starting WSO Backfill Engine
+ℹ️  Processing 2 results...
+
+ℹ️  Duplicate names detected for Caden Chapman, skipping Tier 1
+ℹ️  Attempting Tier 2 (Member Page) for Caden Chapman...
+    🐞 DEBUG verifyLifterParticipationInMeet: internalId=67723, meetId=7143, name=Caden Chapman
+    🌐 Visiting: https://usaweightlifting.sport80.com/public/rankings/member/67723
+    🎯 Looking for: "2025 Virus Weightlifting Finals, Powered by Rogue Fitness" on 2025-12-07
+    📄 Checking page 1 of meet history...
+    🔍 DEBUG: Extracted 2 meets from page 1. First 3: [
+  '2025 Virus Weightlifting Finals, Powered by Rogue Fitness (2025-12-05)',
+  'USAW University Regional Championships South East Region 4 (NUQ) (2025-10-26)'
+]
+    🚻 Extracted Gender from history: M
+    ✅ VERIFIED: "2025 Virus Weightlifting Finals, Powered by Rogue Fitness" on 2025-12-05 found on page 1
+ℹ️  ✅ Tier 2 verified participation for Caden Chapman (Internal ID: 67723)
+ℹ️    ♻️ Decontamination: Reassigning result 439595 from Lifter 200819 to Verified Lifter 199950
+❌ ERROR:   ❌ Failed to reassign lifter: duplicate key value violates unique constraint "meet_results_meet_id_lifter_id_weight_class_key"
+ℹ️  Running Tier 1 (Base64) with verified lifter ID 199950...
 -- 1.1b List "Safely Deletable Simple Ghosts"
 -- This filters for cases where:
 -- 1. There is EXACTLY ONE "Active" lifter (>0 results).
