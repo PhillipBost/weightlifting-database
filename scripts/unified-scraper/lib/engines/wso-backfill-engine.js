@@ -79,7 +79,8 @@ class WsoBackfillEngine {
                         const resultVerification = await verifyLifterParticipationInMeet(
                             lifter.internal_id,
                             result.meet_id,
-                            result.lifter_name
+                            result.lifter_name,
+                            result.weight_class // Pass weight class for enhanced verification
                         );
 
                         if (resultVerification.verified) {

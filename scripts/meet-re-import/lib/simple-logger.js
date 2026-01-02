@@ -8,10 +8,10 @@ class SimpleLogger {
     constructor(component = '', options = {}) {
         this.component = component;
         this.logLevel = options.logLevel || 'info';
-        
+
         this.levels = {
             error: 0,
-            warn: 1, 
+            warn: 1,
             info: 2,
             debug: 3
         };
@@ -52,7 +52,7 @@ class SimpleLogger {
     // Specialized logging methods with clean output
     logMeetStart(meetId, meetName) {
         console.log(`\n🏋️  Processing Meet ${meetId}: ${meetName}`);
-        console.log('=' .repeat(60));
+        console.log('='.repeat(60));
     }
 
     logMeetComplete(meetId, resultsAdded) {
@@ -68,7 +68,7 @@ class SimpleLogger {
     }
 
     logAthleteProcessing(athleteName, action) {
-        console.log(`  👤 Processing: ${athleteName} (${action})`);
+        console.log(`\n  👤 Processing: ${athleteName} (${action})`);
     }
 
     logAthleteSuccess(athleteName, method) {
@@ -84,16 +84,16 @@ class SimpleLogger {
         console.log(`   Processed: ${processed}`);
         console.log(`   Successful: ${successful}`);
         console.log(`   Failed: ${failed}`);
-        console.log(`   Success Rate: ${((successful/processed)*100).toFixed(1)}%`);
+        console.log(`   Success Rate: ${((successful / processed) * 100).toFixed(1)}%`);
     }
 
     logSessionStart(sessionId) {
         console.log(`\n🚀 Starting re-import session: ${sessionId}`);
-        console.log('=' .repeat(70));
+        console.log('='.repeat(70));
     }
 
     logSessionEnd(sessionId, summary) {
-        console.log('\n' + '=' .repeat(70));
+        console.log('\n' + '='.repeat(70));
         console.log(`🏁 Session ${sessionId} completed`);
         console.log(`   Duration: ${summary.durationMinutes} minutes`);
         console.log(`   Meets processed: ${summary.meetsProcessed}`);

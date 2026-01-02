@@ -60,7 +60,13 @@ class DetailedReImportOrchestrator {
 
             // Step 3: Import only missing athletes with detailed tracking
             this.logger.logImportStart(meetId);
-            const importResult = await this.smartImporter.importMissingAthletes(tempFile, meetId, meetDetails.name, this.options.force);
+            const importResult = await this.smartImporter.importMissingAthletes(
+                tempFile,
+                meetId,
+                meetDetails.name,
+                this.options.athleteName, // Correctly pass athleteName as 4th arg
+                this.options.force        // Pass force as 5th arg
+            );
 
             result.athleteDetails = importResult.errors || [];
 

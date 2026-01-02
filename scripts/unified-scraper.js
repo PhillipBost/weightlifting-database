@@ -151,6 +151,7 @@ Mode: gaps
             session.complete();
             this.logger.info(`Session completed in ${session.getDuration()}ms`);
             this.logger.info(`Stats: Completed=${session.completed}, Partial(No Metadata)=${session.completedWithoutMetadata}, Failed=${session.failed}, Skipped=${session.skipped}`);
+            console.log(''); // Ensure final newline for visual separation
 
         } catch (error) {
             this.logger.error('Fatal Error:', error);
