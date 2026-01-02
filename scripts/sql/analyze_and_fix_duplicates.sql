@@ -12,36 +12,27 @@
     - Always backup your database before running DELETE/UPDATE operations.
 */
 
--- =====================================================================================
--- SECTION 1: ANALYSIS - UNDERSTAND THE PROBLEM
--- =====================================================================================
+ℹ️  Initialized Supabase client
+ℹ️  Starting session: wso-2026-01-02T03-31-45-340Z (Mode: wso)
+ℹ️  Starting WSO Backfill Engine
+ℹ️  Processing 2 results...
 
--- 1.1 List "True Duplicates" and their Result Counts
--- This distinguishes "Ghost" duplicates (0 results) from "Active" duplicates (has results).
-WITH TrueDuplicateNames AS (
-    SELECT athlete_name
-    FROM usaw_lifters
-    GROUP BY athlete_name
-    -- Update: use GREATEST to respect explicit distinct identity via Internal ID
-    -- This avoids flagging "Andrew Smith" (5 unique internal IDs) as a duplicate group just because one missing mem#.
-    HAVING COUNT(DISTINCT lifter_id) > GREATEST(COUNT(DISTINCT membership_number), COUNT(DISTINCT internal_id))
-       AND COUNT(DISTINCT lifter_id) > 1
-)
-SELECT 
-    l.athlete_name,
-    l.lifter_id,
-    l.membership_number,
-    l.internal_id,
-    COUNT(r.result_id) as result_count,
-    STRING_AGG(DISTINCT r.meet_id::text, ',') as meet_ids,
-    MIN(r.date) as first_meet,
-    MAX(r.date) as last_meet
-FROM usaw_lifters l
-JOIN TrueDuplicateNames tdn ON l.athlete_name = tdn.athlete_name
-LEFT JOIN usaw_meet_results r ON l.lifter_id = r.lifter_id
-GROUP BY l.athlete_name, l.lifter_id, l.membership_number
-ORDER BY l.athlete_name, result_count DESC;
-
+ℹ️  Duplicate names detected for Caden Chapman, skipping Tier 1
+ℹ️  Attempting Tier 2 (Member Page) for Caden Chapman...
+    🐞 DEBUG verifyLifterParticipationInMeet: internalId=67723, meetId=7143, name=Caden Chapman
+    🌐 Visiting: https://usaweightlifting.sport80.com/public/rankings/member/67723
+    🎯 Looking for: "2025 Virus Weightlifting Finals, Powered by Rogue Fitness" on 2025-12-07
+    📄 Checking page 1 of meet history...
+    🔍 DEBUG: Extracted 2 meets from page 1. First 3: [
+  '2025 Virus Weightlifting Finals, Powered by Rogue Fitness (2025-12-05)',
+  'USAW University Regional Championships South East Region 4 (NUQ) (2025-10-26)'
+]
+    🚻 Extracted Gender from history: M
+    ✅ VERIFIED: "2025 Virus Weightlifting Finals, Powered by Rogue Fitness" on 2025-12-05 found on page 1
+ℹ️  ✅ Tier 2 verified participation for Caden Chapman (Internal ID: 67723)
+ℹ️    ♻️ Decontamination: Reassigning result 439595 from Lifter 200819 to Verified Lifter 199950
+❌ ERROR:   ❌ Failed to reassign lifter: duplicate key value violates unique constraint "meet_results_meet_id_lifter_id_weight_class_key"
+ℹ️  Running Tier 1 (Base64) with verified lifter ID 199950...
 -- 1.1b List "Safely Deletable Simple Ghosts"
 -- This filters for cases where:
 -- 1. There is EXACTLY ONE "Active" lifter (>0 results).
@@ -70,18 +61,23 @@ PotentialSafeList AS (
     FROM usaw_lifters l
     JOIN AthleteStats s ON l.athlete_name = s.athlete_name
     LEFT JOIN usaw_meet_results r ON l.lifter_id = r.lifter_id
-    WHERE s.active_lifters_count = 1 
-      AND s.ghost_lifters_count > 0 
-    GROUP BY l.athlete_name, l.lifter_id, l.membership_number, l.internal_id, s.active_membership_num, s.active_internal_id
+    WHERE s.ghost_lifters_count > 0 
+    GROUP BY l.athlete_name, l.lifter_id, l.membership_number, l.internal_id, s.active_membership_num, s.active_internal_id, s.active_lifters_count, s.ghost_lifters_count
     HAVING 
           COUNT(r.result_id) > 0 -- Include Active for context
           OR 
           (   -- Safe Ghost Logic: 
-              -- 1. Membership # is NULL or matches Active
-              (l.membership_number IS NULL OR l.membership_number = s.active_membership_num)
-              AND
-              -- 2. Internal ID is NULL or matches Active (NEW)
-              (l.internal_id IS NULL OR l.internal_id = s.active_internal_id)
+              -- CASE A: Single Active Lifter (Standard)
+              (s.active_lifters_count = 1)
+              OR
+              -- CASE B: Multiple Active Lifters, but Ghost matches ONE of them specifically via Metadata
+              (
+                  l.membership_number IS NOT NULL AND l.membership_number = s.active_membership_num
+              )
+              OR
+              (
+                  l.internal_id IS NOT NULL AND l.internal_id = s.active_internal_id
+              )
           )
 )
 SELECT * FROM PotentialSafeList
@@ -214,19 +210,43 @@ ROLLBACK; -- Change to COMMIT when ready to apply
 -- STEP A: DEBUG PREVIEW - Check how many rows will be deleted
 -- Highlight lines just below here to TEST first
 /*
-SELECT COUNT(*) as rows_to_delete
+/*
+SELECT 
+    l.athlete_name,
+    'TO_DELETE' as action,
+    l.lifter_id as ghost_id,
+    l.membership_number as ghost_mem_num,
+    l.internal_id as ghost_internal_id,
+    '>> MATCHES >>' as correlation,
+    active.lifter_id as keep_active_id,
+    active.membership_number as keep_active_mem_num,
+    active.internal_id as keep_active_internal_id,
+    active.result_count as active_result_count
 FROM usaw_lifters l
-LEFT JOIN usaw_meet_results r ON l.lifter_id = r.lifter_id
-WHERE r.result_id IS NULL 
-AND EXISTS (
-    SELECT 1 
+LEFT JOIN usaw_meet_results r ON l.lifter_id = r.lifter_id,
+LATERAL (
+    SELECT 
+        active_l.lifter_id, 
+        active_l.membership_number, 
+        active_l.internal_id,
+        COUNT(active_r.result_id) as result_count
     FROM usaw_lifters active_l
     JOIN usaw_meet_results active_r ON active_l.lifter_id = active_r.lifter_id
     WHERE active_l.athlete_name = l.athlete_name 
     AND active_l.lifter_id != l.lifter_id
-    AND (l.membership_number IS NULL OR (active_l.membership_number IS NOT NULL AND active_l.membership_number = l.membership_number))
-    AND (l.internal_id IS NULL OR (active_l.internal_id IS NOT NULL AND active_l.internal_id = l.internal_id))
-);
+    AND (
+        l.membership_number IS NULL 
+        OR (active_l.membership_number IS NOT NULL AND active_l.membership_number = l.membership_number)
+    )
+    AND (
+        l.internal_id IS NULL 
+        OR (active_l.internal_id IS NOT NULL AND active_l.internal_id = l.internal_id)
+    )
+    GROUP BY active_l.lifter_id, active_l.membership_number, active_l.internal_id
+    LIMIT 1 -- Pick the best matching active lifter to show as the 'reason'
+) active
+WHERE r.result_id IS NULL; 
+*/
 */
 
 -- STEP B: EXECUTE DELETE

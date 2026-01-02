@@ -65,19 +65,21 @@ class WsoBackfillEngine {
                 }
 
                 // TIER 2: Member Page Verification (if T1 failed or duplicates)
+                let lifters = [];
                 if (!success) {
                     this.logger.info(`Attempting Tier 2 (Member Page) for ${result.lifter_name}...`);
 
                     // We need the internal_id to run Tier 2
                     // Fetch lifter(s) with this name
-                    const lifters = await this.findLiftersWithSameName(result.lifter_name);
+                    lifters = await this.findLiftersWithSameName(result.lifter_name);
 
                     for (const lifter of lifters) {
                         if (!lifter.internal_id) continue;
 
                         const resultVerification = await verifyLifterParticipationInMeet(
                             lifter.internal_id,
-                            result.meet_id
+                            result.meet_id,
+                            result.lifter_name
                         );
 
                         if (resultVerification.verified) {
@@ -297,7 +299,7 @@ class WsoBackfillEngine {
             .from('usaw_lifters')
             .select('lifter_id, athlete_name, internal_id')
             .eq('athlete_name', lifterName)
-            .not('internal_id', 'is', null);
+
         return data || [];
     }
 
