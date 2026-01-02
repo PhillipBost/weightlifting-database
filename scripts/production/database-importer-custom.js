@@ -181,8 +181,8 @@ async function upsertMeetsToDatabase(meetings) {
 }
 
 // REAL Sport80 member page verification using puppeteer
-async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId, athleteName) {
-    console.log(`    🐞 DEBUG verifyLifterParticipationInMeet: internalId=${lifterInternalId}, meetId=${targetMeetId}, name=${athleteName}`);
+async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId, athleteName, requiredWeightClass = null) {
+    console.log(`    🐞 DEBUG verifyLifterParticipationInMeet: internalId=${lifterInternalId}, meetId=${targetMeetId}, name=${athleteName}, wc=${requiredWeightClass}`);
     // Get target meet information for enhanced matching
     const { data: targetMeet, error: meetError } = await supabase
         .from('usaw_meets')
@@ -346,7 +346,30 @@ async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId, a
                     }
                 }
 
-                if (nameMatch && dateMatch) {
+                // ENHANCED VERIFICATION: Check Weight Class match
+                let weightClassMatch = true;
+                if (nameMatch && dateMatch && requiredWeightClass && requiredWeightClass !== 'Unknown' && meet.category) {
+                    const cleanRequired = requiredWeightClass.replace('kg', '').trim().toLowerCase();
+                    const cleanCategory = meet.category.toLowerCase();
+
+                    if (cleanRequired.startsWith('+')) {
+                        if (!cleanCategory.includes(cleanRequired)) {
+                            weightClassMatch = false;
+                        }
+                    } else {
+                        if (!cleanCategory.includes(cleanRequired)) {
+                            weightClassMatch = false;
+                        }
+                    }
+
+                    if (!weightClassMatch) {
+                        console.log(`      ⛔ Weight Class Mismatch: Required "${requiredWeightClass}" vs History "${meet.category}"`);
+                    } else {
+                        console.log(`      ✅ Weight Class Verified: "${meet.category}" matches "${requiredWeightClass}"`);
+                    }
+                }
+
+                if (nameMatch && dateMatch && weightClassMatch) {
                     foundMeet = meet;
                     break;
                 }
@@ -2436,7 +2459,7 @@ async function processMeetCsvFile(csvFilePath, meetId, meetName) {
                     continue;
                 }
 
-                console.log(`  🔍 Processing athlete ${index + 1}/${validResults.length}: ${lifterName}`);
+                console.log(`\n  🔍 Processing athlete ${index + 1}/${validResults.length}: ${lifterName}`);
 
                 // Find or create lifter with two-tier verification system
                 // Pass additional data needed for Tier 1 verification
@@ -2458,7 +2481,7 @@ async function processMeetCsvFile(csvFilePath, meetId, meetName) {
                     meet_name: row.Meet?.trim() || meetName,
                     date: row.Date?.trim() || null,
                     age_category: row['Age Category']?.trim() || null,
-                    weight_class: row['Weight Class']?.trim() || null,
+                    weight_class: row['Weight Class']?.trim() || 'Unknown',
                     lifter_name: lifterName,
                     body_weight_kg: row['Body Weight (Kg)']?.toString().trim() || null,
                     snatch_lift_1: parseLiftValue(row['Snatch Lift 1'], 'Snatch1'),

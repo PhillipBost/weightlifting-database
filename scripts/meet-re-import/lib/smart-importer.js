@@ -19,8 +19,13 @@ class SmartImporter {
      */
     /**
      * Import only missing results from a meet
+     * @param {string} csvFile - Path to scraped CSV file
+     * @param {number} meetId - Database meet ID
+     * @param {string} meetName - Meet name
+     * @param {string} athleteName - Optional athlete name to filter for
+     * @param {boolean} force - If true, re-import matching athletes even if they exist
      */
-    async importMissingAthletes(csvFile, meetId, meetName, force = false) {
+    async importMissingAthletes(csvFile, meetId, meetName, athleteName = null, force = false) {
         try {
             // Step 1: Get existing results in database for this meet
             this.logger.info('🔍 Checking existing results in database...');
@@ -29,13 +34,38 @@ class SmartImporter {
 
             // Step 2: Parse scraped CSV data
             this.logger.info('📄 Analyzing scraped data...');
-            const scrapedAthletes = await this._parseScrapedData(csvFile);
+            let scrapedAthletes = await this._parseScrapedData(csvFile);
             this.logger.info(`📊 Found ${scrapedAthletes.length} results in scraped data`);
 
-            // Step 3: Identify results to process
+            // Step 3: Apply athlete name filter if specified
+            if (athleteName) {
+                const normalizedTargetName = this._normalizeAthleteName(athleteName);
+                const originalCount = scrapedAthletes.length;
+                scrapedAthletes = scrapedAthletes.filter(athlete => {
+                    const athleteNameNormalized = this._normalizeAthleteName(athlete.name);
+                    return athleteNameNormalized === normalizedTargetName;
+                });
+
+                this.logger.info(`🎯 Applied athlete filter: "${athleteName}" - found ${scrapedAthletes.length} of ${originalCount} athletes matching`);
+
+                if (scrapedAthletes.length === 0) {
+                    this.logger.warn(`⚠️ No athletes found matching name "${athleteName}"`);
+                    return {
+                        processed: 0,
+                        imported: 0,
+                        skipped: originalCount,
+                        errors: [{
+                            name: athleteName,
+                            reason: `No athlete found with name "${athleteName}"`
+                        }]
+                    };
+                }
+            }
+
+            // Step 4: Identify results to process (or force all if force=true)
             let missingAthletes;
             if (force) {
-                this.logger.info('⚠️ FORCE MODE: Ignoring existing results check - processing all scraped data');
+                this.logger.info('⚠️ FORCE MODE: Ignoring existing results check - processing all matching athletes');
                 missingAthletes = scrapedAthletes;
             } else {
                 missingAthletes = this._identifyMissingAthletes(scrapedAthletes, existingResults);
