@@ -1,4 +1,4 @@
-﻿/* eslint-disable no-console */
+/* eslint-disable no-console */
 require('dotenv').config();
 
 const { createClient } = require('@supabase/supabase-js');
@@ -15,6 +15,7 @@ const supabase = createClient(
 
 // Import scraper function - adjust path as needed for GitHub
 const { scrapeOneMeet } = require('./scrapeOneMeet.js');
+const { handleTotalAthleteString, getAmountMeetsOnPage } = require('../../utils/string_utils');
 
 // Import Sport80 search function for Tier 2 verification
 const { searchSport80ForLifter } = require('./searchSport80ForLifter.js');
@@ -180,7 +181,8 @@ async function upsertMeetsToDatabase(meetings) {
 }
 
 // REAL Sport80 member page verification using puppeteer
-async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId) {
+async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId, athleteName) {
+    console.log(`    🐞 DEBUG verifyLifterParticipationInMeet: internalId=${lifterInternalId}, meetId=${targetMeetId}, name=${athleteName}`);
     // Get target meet information for enhanced matching
     const { data: targetMeet, error: meetError } = await supabase
         .from('usaw_meets')
@@ -256,6 +258,10 @@ async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId) {
                 return meetInfo;
             });
 
+            if (currentPage === 1) {
+                console.log(`    🔍 DEBUG: Extracted ${pageData.length} meets from page 1. First 3:`, pageData.slice(0, 3).map(m => `${m.name} (${m.date})`));
+            }
+
             // Try to infer gender from any row on this page if we haven't yet
             if (!extractedGender && pageData.length > 0) {
                 for (const row of pageData) {
@@ -283,7 +289,8 @@ async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId) {
 
             // Match by meet name and date
             // Match by meet name and date (with fuzzy logic)
-            foundMeet = pageData.find(meet => {
+            // Use for...of loop to support await inside
+            for (const meet of pageData) {
                 // Name match: Case-insensitive, trimmed
                 const nameMatch = meet.name && targetMeet.Meet &&
                     meet.name.trim().toLowerCase() === targetMeet.Meet.trim().toLowerCase();
@@ -314,15 +321,36 @@ async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId) {
                             }
                         } else {
                             // Fallback to strict string match if dates invalid
+                            console.log(`      ⚠️ Invalid date format: ${meet.date} or ${targetMeet.Date}, falling back to strict string match.`);
                             dateMatch = meet.date === targetMeet.Date;
                         }
                     } catch (e) {
+                        console.log(`      ⚠️ Date comparison error: ${e.message}`);
                         dateMatch = meet.date === targetMeet.Date;
                     }
                 }
 
-                return nameMatch && dateMatch;
-            });
+                // SMART TIER 2: Verify Lifter Presence on Meet Page
+                // If Name Matches but Date Mismatches, check the OFFICIAL Meet Results Page.
+                // If the athlete is LISTED in the results, then they participated (ignoring date mismatch).
+                if (nameMatch && !dateMatch) {
+                    console.log(`      ℹ️  Possible DB Date Mismatch. Checking official meet page for presence of "${athleteName}"...`);
+                    const isPresent = await verifyLifterOnMeetPage(browser, targetMeetId, athleteName);
+
+                    if (isPresent) {
+                        console.log(`      Found: Name Match + Date Mismatch (DB: ${targetMeet.Date} vs Member: ${meet.date})`);
+                        console.log(`      ✅ SMART VERIFY: Athlete "${athleteName}" found on Official Meet Page. Confirming participation despite date mismatch.`);
+                        dateMatch = true;
+                    } else {
+                        console.log(`      ❌ Smart Verify Failed: "${athleteName}" NOT found on Official Meet Page.`);
+                    }
+                }
+
+                if (nameMatch && dateMatch) {
+                    foundMeet = meet;
+                    break;
+                }
+            }
 
             if (foundMeet) {
                 console.log(`    ✅ VERIFIED: "${foundMeet.name}" on ${foundMeet.date} found on page ${currentPage}`);
@@ -368,7 +396,8 @@ async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId) {
                 });
 
                 if (membershipNumber && (membershipNumber.startsWith('DEBUG_CONTEXT:') || membershipNumber.startsWith('DEBUG_FAIL:'))) {
-                    console.log(`    ⚠️ Membership Debug (Tier 2): ${membershipNumber}`);
+                    // Only log DEBUG_FAIL if we really need it (commented out for production cleanliness)
+                    // console.log(`    ⚠️ Membership Debug (Tier 2): ${membershipNumber}`);
                     membershipNumber = null;
                 } else if (membershipNumber) {
                     console.log(`    ✅ Scraped Membership Number: ${membershipNumber}`);
@@ -411,6 +440,98 @@ async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId) {
         if (browser) {
             await browser.close();
         }
+    }
+}
+
+// Helper to check if athlete exists on official meet results page
+// Helper to check if athlete exists on official meet results page
+async function verifyLifterOnMeetPage(browser, meetId, athleteName) {
+    let page;
+    try {
+        page = await browser.newPage();
+        const url = `https://usaweightlifting.sport80.com/public/rankings/results/${meetId}`;
+
+        console.log(`      🔎 Checking official meet page for presence of "${athleteName}"...`);
+        await page.goto(url, { waitUntil: 'networkidle0', timeout: 30000 });
+
+        // Wait for table to load
+        await page.waitForSelector('.data-table div div.v-data-table div.v-data-table__wrapper table tbody tr', { timeout: 15000 });
+
+        // Helper to get pagination text
+        const getPageData = async () => {
+            try {
+                return await page.$eval(
+                    ".data-table div div.v-data-table div.v-data-footer div.v-data-footer__pagination",
+                    x => x.textContent
+                );
+            } catch (e) {
+                return null;
+            }
+        };
+
+        // Helper to check for athlete on current page
+        const checkPageForAthlete = async (targetName) => {
+            return await page.evaluate((targetName) => {
+                const rows = Array.from(document.querySelectorAll('.data-table div div.v-data-table div.v-data-table__wrapper table tbody tr'));
+                const nameParts = targetName.toLowerCase().split(' ').map(p => p.trim()).filter(p => p.length > 0);
+
+                for (const row of rows) {
+                    const rowText = row.innerText.toLowerCase();
+                    const allPartsFound = nameParts.every(part => rowText.includes(part));
+                    if (allPartsFound) {
+                        return true;
+                    }
+                }
+                return false;
+            }, targetName);
+        };
+
+        // Pagination loop
+        let pageData = await getPageData();
+        let found = false;
+        let pageNum = 1;
+
+        // Check first page
+        found = await checkPageForAthlete(athleteName);
+        if (found) {
+            console.log(`      ✅ Found "${athleteName}" on page ${pageNum}`);
+            return true;
+        }
+
+        while (!found && handleTotalAthleteString(pageData)) {
+            pageNum++;
+            console.log(`      ➡️ Checking next page (${pageNum})...`);
+
+            await Promise.all([
+                page.waitForNetworkIdle(),
+                page.click('.data-table div div.v-data-table div.v-data-footer div.v-data-footer__icons-after'),
+            ]);
+
+            // Short wait to ensure DOM update
+            await new Promise(r => setTimeout(r, 1000));
+
+            pageData = await getPageData();
+            found = await checkPageForAthlete(athleteName);
+
+            if (found) {
+                console.log(`      ✅ Found "${athleteName}" on page ${pageNum}`);
+                return true;
+            }
+        }
+
+        if (found) {
+            console.log(`      ✅ Smart Verify Success: Found "${athleteName}" on Official Meet Page.`);
+            return true;
+        } else {
+            console.log(`      ❌ Smart Verify Failed: "${athleteName}" NOT found on Official Meet Page after checking ${pageNum} pages.`);
+            return false;
+        }
+
+    } catch (e) {
+        console.log(`      ⚠️ Error searching meet page: ${e.message}`);
+        return false;
+    } finally {
+        if (page) await page.close();
     }
 }
 
@@ -540,7 +661,8 @@ async function extractInternalIdByClicking(page, divisionCode, startDate, endDat
                     });
 
                     if (membershipNumber && (membershipNumber.startsWith('DEBUG_CONTEXT:') || membershipNumber.startsWith('DEBUG_FAIL:'))) {
-                        console.log(`      ⚠️ Membership Debug (Tier 1.5): ${membershipNumber}`);
+                        // Only log DEBUG_FAIL if we really need it (commented out for production cleanliness)
+                        // console.log(`      ⚠️ Membership Debug (Tier 1.5): ${membershipNumber}`);
                         membershipNumber = null;
                     }
 
@@ -1392,19 +1514,71 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
                 // No match by internal_id - check if any candidates have null internal_id
                 const { data: nullInternalIdCandidates, error: nullError } = await supabase
                     .from('usaw_lifters')
-                    .select('lifter_id, internal_id')
+                    .select('lifter_id, internal_id, membership_number') // Added membership_number for metadata match
                     .in('lifter_id', potentialLifterIds)
                     .is('internal_id', null);
 
-                if (!nullError && nullInternalIdCandidates && nullInternalIdCandidates.length === 1) {
-                    // Only one candidate has null internal_id - assume it's them and populate it
-                    const lifterId = nullInternalIdCandidates[0].lifter_id;
+                if (!nullError && nullInternalIdCandidates && nullInternalIdCandidates.length >= 1) {
+                    // Logic to resolve which candidate to link:
+                    // 1. Metadata Match: Does one of them already have the scraped membership number?
+                    // 2. Context Match: Does one of them own the result for the CURRENT meet?
+                    // 3. Fallback: Arbitrary first one.
+
+                    let bestCandidate = nullInternalIdCandidates[0]; // Default fallback
+                    let resolutionMethod = 'Arbitrary (Fallback)';
+
+                    // 1. Metadata Match
+                    if (targetAthlete.membershipNumber) {
+                        const metaMatch = nullInternalIdCandidates.find(c => c.membership_number === targetAthlete.membershipNumber);
+                        if (metaMatch) {
+                            bestCandidate = metaMatch;
+                            resolutionMethod = `Metadata Match (Mem# ${targetAthlete.membershipNumber})`;
+                        }
+                    }
+
+                    // 2. Context Match (if no metadata match yet)
+                    if (resolutionMethod === 'Arbitrary (Fallback)') {
+                        const { data: contextResults } = await supabase
+                            .from('usaw_meet_results')
+                            .select('lifter_id')
+                            .eq('meet_id', targetMeetId)
+                            .in('lifter_id', nullInternalIdCandidates.map(c => c.lifter_id));
+
+                        if (contextResults && contextResults.length > 0) {
+                            // Link to the lifter who presumably just competed in this meet
+                            const participantId = contextResults[0].lifter_id;
+                            const contextMatch = nullInternalIdCandidates.find(c => c.lifter_id === participantId);
+                            if (contextMatch) {
+                                bestCandidate = contextMatch;
+                                resolutionMethod = `Context Match (Meet Participation)`;
+                            }
+                        }
+                    }
+
+                    if (nullInternalIdCandidates.length > 1) {
+                        console.log(`    ⚠️ Duplicate Resolution: Found ${nullInternalIdCandidates.length} unlinked candidates. Resolved via ${resolutionMethod} -> ID: ${bestCandidate.lifter_id}`);
+                    }
+
+                    const lifterId = bestCandidate.lifter_id;
                     console.log(`    🔗 Linking internal_id ${targetAthlete.internalId} to lifter ${lifterId}`);
 
                     await supabase
                         .from('usaw_lifters')
                         .update({ internal_id: targetAthlete.internalId })
                         .eq('lifter_id', lifterId);
+
+                    // TARGETED UPDATE (Lifter): Save Membership Number if found (SAME AS ABOVE)
+                    if (targetAthlete.membershipNumber) {
+                        try {
+                            const { error: memError } = await supabase.from('usaw_lifters')
+                                .update({ membership_number: targetAthlete.membershipNumber })
+                                .eq('lifter_id', lifterId);
+
+                            if (!memError) {
+                                console.log(`      💾 Saved Membership Number ${targetAthlete.membershipNumber} for lifter ${lifterId}`);
+                            }
+                        } catch (err) { console.log('      ⚠️ Save Failed (Membership):', err.message); }
+                    }
 
                     return {
                         lifterId: lifterId,
@@ -1477,6 +1651,7 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
 
 // Sport80 member URL verification wrapper
 async function runSport80MemberUrlVerification(lifterName, potentialLifterIds, targetMeetId) {
+    console.log(`    🐞 DEBUG runSport80MemberUrlVerification: name=${lifterName}, ids=${potentialLifterIds}, meet=${targetMeetId}`);
     console.log(`  🔍 Tier 2: Running Sport80 member URL verification for ${potentialLifterIds.length} candidates...`);
 
     for (const lifterId of potentialLifterIds) {
@@ -1497,7 +1672,7 @@ async function runSport80MemberUrlVerification(lifterName, potentialLifterIds, t
                 console.log(`    🔍 Checking lifter ${lifterId} (internal_id: ${lifter.internal_id})...`);
 
                 // REAL verification: Visit the member page and check if they participated in target meet
-                const result = await verifyLifterParticipationInMeet(lifter.internal_id, targetMeetId);
+                const result = await verifyLifterParticipationInMeet(lifter.internal_id, targetMeetId, lifterName);
 
                 if (result.verified) {
                     console.log(`    ✅ CONFIRMED: Using lifter ${lifterId} for meet ${targetMeetId}`);
@@ -1529,7 +1704,7 @@ async function runSport80MemberUrlVerification(lifterName, potentialLifterIds, t
                     console.log(`    🎯 Found internal_id ${foundInternalId} for ${lifter.athlete_name} via Sport80 search`);
 
                     // Verify this lifter participated in the target meet
-                    const result = await verifyLifterParticipationInMeet(foundInternalId, targetMeetId);
+                    const result = await verifyLifterParticipationInMeet(foundInternalId, targetMeetId, lifter.athlete_name);
 
                     if (result.verified) {
                         // Update the lifter record with the found internal_id
