@@ -387,16 +387,16 @@ class SmartImporterEnhanced {
                 athlete.ageCategory || '',             // Age Category (e.g., "Open Men's")
                 athlete.weightClass || '',             // Weight Class (e.g., "+105 kg")
                 athlete.name,                          // Lifter
-                athlete.bodyweight || '',              // Body Weight (Kg)
-                athlete.snatchLift1 || '',             // Snatch Lift 1
-                athlete.snatchLift2 || '',             // Snatch Lift 2
-                athlete.snatchLift3 || '',             // Snatch Lift 3
-                athlete.bestSnatch || '',              // Best Snatch
-                athlete.cjLift1 || '',                 // C&J Lift 1
-                athlete.cjLift2 || '',                 // C&J Lift 2
-                athlete.cjLift3 || '',                 // C&J Lift 3
-                athlete.bestCJ || '',                  // Best C&J
-                athlete.total || '',                   // Total
+                athlete.bodyweight !== undefined && athlete.bodyweight !== null ? athlete.bodyweight : '', // Body Weight (Kg)
+                athlete.snatchLift1 !== undefined && athlete.snatchLift1 !== null ? athlete.snatchLift1 : '', // Snatch Lift 1
+                athlete.snatchLift2 !== undefined && athlete.snatchLift2 !== null ? athlete.snatchLift2 : '', // Snatch Lift 2
+                athlete.snatchLift3 !== undefined && athlete.snatchLift3 !== null ? athlete.snatchLift3 : '', // Snatch Lift 3
+                athlete.bestSnatch !== undefined && athlete.bestSnatch !== null ? athlete.bestSnatch : '',    // Best Snatch
+                athlete.cjLift1 !== undefined && athlete.cjLift1 !== null ? athlete.cjLift1 : '',             // C&J Lift 1
+                athlete.cjLift2 !== undefined && athlete.cjLift2 !== null ? athlete.cjLift2 : '',             // C&J Lift 2
+                athlete.cjLift3 !== undefined && athlete.cjLift3 !== null ? athlete.cjLift3 : '',             // C&J Lift 3
+                athlete.bestCJ !== undefined && athlete.bestCJ !== null ? athlete.bestCJ : '',                // Best C&J
+                athlete.total !== undefined && athlete.total !== null ? athlete.total : '',                   // Total
                 athlete.club || '',                    // Club
                 '',                                    // Membership Number (unknown)
                 ''                                     // Internal_ID (will be extracted during import)

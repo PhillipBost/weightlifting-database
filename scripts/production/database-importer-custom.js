@@ -2297,9 +2297,12 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
         verification_type: 'sport80_member_url'
     });
 
-    const verifiedLifterId = await runSport80MemberUrlVerification(cleanName, lifterIds, additionalData.targetMeetId);
+    const tier2Result = await runSport80MemberUrlVerification(cleanName, lifterIds, additionalData.targetMeetId);
 
-    if (verifiedLifterId) {
+    if (tier2Result) {
+        // Handle both object return (new) and string return (old)
+        const verifiedLifterId = (typeof tier2Result === 'object' && tier2Result.lifterId) ? tier2Result.lifterId : tier2Result;
+
         const verifiedLifter = existingLifters.find(l => l.lifter_id === verifiedLifterId);
         logger.logFinalResult(verifiedLifter, 'tier2_disambiguation');
         console.log(`  ✅ Verified via Tier 2: ${cleanName} (ID: ${verifiedLifterId})`);
@@ -2409,10 +2412,19 @@ async function processMeetCsvFile(csvFilePath, meetId, meetName) {
                     if (val === undefined || val === null) return null;
                     const str = String(val).trim();
                     if (str === '' || str === '---' || str.toLowerCase() === 'null') return null;
+
                     // Debug log for Total field to trace issues
                     if (fieldName === 'Total' && (str === '0' || str === 0 || str === 'null')) {
                         console.log(`  🐞 DEBUG: Parsing Total value: "${val}" -> "${str}"`);
                     }
+
+                    // Try to parse as float to return actual number type to Supabase
+                    // This ensures "0" string becomes 0 number, preventing any potential "empty string = null" coercion
+                    const num = parseFloat(str);
+                    if (!isNaN(num)) {
+                        return num;
+                    }
+
                     return str;
                 };
 

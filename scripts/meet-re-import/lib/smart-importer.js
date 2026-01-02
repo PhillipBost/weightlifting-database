@@ -20,7 +20,7 @@ class SmartImporter {
     /**
      * Import only missing results from a meet
      */
-    async importMissingAthletes(csvFile, meetId, meetName) {
+    async importMissingAthletes(csvFile, meetId, meetName, force = false) {
         try {
             // Step 1: Get existing results in database for this meet
             this.logger.info('🔍 Checking existing results in database...');
@@ -32,8 +32,14 @@ class SmartImporter {
             const scrapedAthletes = await this._parseScrapedData(csvFile);
             this.logger.info(`📊 Found ${scrapedAthletes.length} results in scraped data`);
 
-            // Step 3: Identify missing results
-            const missingAthletes = this._identifyMissingAthletes(scrapedAthletes, existingResults);
+            // Step 3: Identify results to process
+            let missingAthletes;
+            if (force) {
+                this.logger.info('⚠️ FORCE MODE: Ignoring existing results check - processing all scraped data');
+                missingAthletes = scrapedAthletes;
+            } else {
+                missingAthletes = this._identifyMissingAthletes(scrapedAthletes, existingResults);
+            }
 
             if (missingAthletes.length === 0) {
                 this.logger.info('✅ No missing results found - all results already in database');
@@ -385,15 +391,15 @@ class SmartImporter {
                 athlete.ageCategory || '',             // Age Category (e.g., "Open Men's")
                 athlete.weightClass || '',             // Weight Class (e.g., "+105 kg")
                 athlete.name,                          // Lifter
-                athlete.bodyweight || '',              // Body Weight (Kg)
-                athlete.snatchLift1 || '',             // Snatch Lift 1
-                athlete.snatchLift2 || '',             // Snatch Lift 2
-                athlete.snatchLift3 || '',             // Snatch Lift 3
-                athlete.bestSnatch || '',              // Best Snatch
-                athlete.cjLift1 || '',                 // C&J Lift 1
-                athlete.cjLift2 || '',                 // C&J Lift 2
-                athlete.cjLift3 || '',                 // C&J Lift 3
-                athlete.bestCJ || '',                  // Best C&J
+                athlete.bodyweight !== undefined && athlete.bodyweight !== null ? athlete.bodyweight : '', // Body Weight (Kg)
+                athlete.snatchLift1 !== undefined && athlete.snatchLift1 !== null ? athlete.snatchLift1 : '', // Snatch Lift 1
+                athlete.snatchLift2 !== undefined && athlete.snatchLift2 !== null ? athlete.snatchLift2 : '', // Snatch Lift 2
+                athlete.snatchLift3 !== undefined && athlete.snatchLift3 !== null ? athlete.snatchLift3 : '', // Snatch Lift 3
+                athlete.bestSnatch !== undefined && athlete.bestSnatch !== null ? athlete.bestSnatch : '',    // Best Snatch
+                athlete.cjLift1 !== undefined && athlete.cjLift1 !== null ? athlete.cjLift1 : '',             // C&J Lift 1
+                athlete.cjLift2 !== undefined && athlete.cjLift2 !== null ? athlete.cjLift2 : '',             // C&J Lift 2
+                athlete.cjLift3 !== undefined && athlete.cjLift3 !== null ? athlete.cjLift3 : '',             // C&J Lift 3
+                athlete.bestCJ !== undefined && athlete.bestCJ !== null ? athlete.bestCJ : '',                // Best C&J
                 (athlete.total !== null && athlete.total !== undefined) ? athlete.total : '', // Total - preserve 0!
                 athlete.club || '',                    // Club
                 '',                                    // Membership Number (unknown)
