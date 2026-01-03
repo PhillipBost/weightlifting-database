@@ -56,6 +56,8 @@ Stores profiles for USAW athletes.
 
 ### `usaw_meet_results`
 Individual athlete results linked to meets.
+> [!NOTE]
+> Unique key constraint on `(meet_id, lifter_id, weight_class)`.
 | Column | Type | Constraints | Description |
 | :--- | :--- | :--- | :--- |
 | `result_id` | `bigint` | **PK**, NOT NULL | Default: `nextval('meet_results_result_id_seq')` |
@@ -64,7 +66,7 @@ Individual athlete results linked to meets.
 | `meet_name` | `text` | | |
 | `date` | `text` | | |
 | `age_category` | `text` | | |
-| `weight_class` | `text` | | |
+| `weight_class` | `text` | NOT NULL | |
 | `lifter_name` | `text` | | |
 | `body_weight_kg` | `text` | | |
 | `snatch_lift_1`..`3` | `text` | | |
