@@ -32,6 +32,16 @@ class UnifiedConfiguration {
         this.unresolvedPath = options.unresolvedPath || path.join(__dirname, '../../../logs/surgical-strike-wso-unresolved.json');
         this.updatesLogPath = options.updatesLogPath || path.join(__dirname, `../../../logs/wso-updates-${new Date().toISOString().split('T')[0]}.csv`);
 
+        // Targeted Search Flags (WSO Mode)
+        this.missingWso = options.missingWso || false; // Target results missing WSO
+        this.missingClub = options.missingClub || false; // Target results missing Club
+        this.missingAge = options.missingAge || false; // Target results missing Competition Age
+        this.missingGender = options.missingGender || false; // Target results missing Gender
+        this.missingRank = options.missingRank || false; // Target results missing National Rank
+        this.missingMembership = options.missingMembership || false; // Target results missing Membership Number
+
+        this.excludeZeroTotal = options.excludeZeroTotal || false; // Exclude Total=0 even in force mode
+
         // Gap Scraper specific
         this.maxGaps = options.maxGaps || 5;
         this.startId = options.startId || null;

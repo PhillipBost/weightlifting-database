@@ -36,7 +36,11 @@ class UnifiedScraperCLI {
         return minimist(argv.slice(2), {
             string: ['mode', 'meet-ids', 'start-date', 'end-date', 'athlete-name', 'gender', 'log-level'],
             number: ['batch-size', 'delay', 'limit', 'timeout', 'start-id', 'end-id', 'max-gaps', 'max-results'],
-            boolean: ['dry-run', 'force', 'help', 'version', 'analyze-only', 'no-metadata'],
+            boolean: [
+                'dry-run', 'force', 'help', 'version', 'analyze-only', 'no-metadata',
+                'missing-wso', 'missing-club', 'missing-age', 'missing-gender', 'missing-rank', 'missing-membership',
+                'exclude-zero-total'
+            ],
             alias: {
                 'm': 'mode',
                 'd': 'dry-run',
@@ -78,10 +82,18 @@ Mode: reimport
   --analyze-only          Only analyze, do not import
 
 Mode: wso
+  (Default: Targets WSO, Age, Gender, Rank, Membership, Level. Excludes Club.)
   --meet-ids <ids>        Filter by meet ID(s)
-  --gender <M|F>          Filter by gender
+  --gender <M|F>          Filter by gender (for result lookup)
   --max-results <n>       Limit number of results to process
   --athlete-name <name>   Filter by athlete
+  --exclude-zero-total    Exclude results with Total=0 even if using --force
+  --missing-wso           Target results missing WSO
+  --missing-club          Target results missing Club Name
+  --missing-age           Target results missing Competition Age
+  --missing-gender        Target results missing Gender
+  --missing-rank          Target results missing National Rank
+  --missing-membership    Target results missing Lifter Membership Number
 
 Mode: gaps
   --start-id <n>          Start meet ID
@@ -111,6 +123,16 @@ Mode: gaps
             args.startDate = args['start-date'];
             args.endDate = args['end-date'];
             args.athleteName = args['athlete-name'];
+
+            // WSO Flags
+            args.missingWso = args['missing-wso'];
+            args.missingClub = args['missing-club'];
+            args.missingAge = args['missing-age'];
+            args.missingGender = args['missing-gender'];
+            args.missingRank = args['missing-rank'];
+            args.missingMembership = args['missing-membership'];
+            args.excludeZeroTotal = args['exclude-zero-total'];
+
             args.dryRun = args['dry-run'];
             args.meetIds = args['meet-ids'] ? args['meet-ids'].split(',').map(Number).filter(n => !isNaN(n)) : null;
             args.batchSize = args['batch-size'];

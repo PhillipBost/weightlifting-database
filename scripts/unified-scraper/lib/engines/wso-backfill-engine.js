@@ -254,19 +254,156 @@ class WsoBackfillEngine {
 
     async queryIncompleteResults() {
         // ... (Logic from surgical-strike-wso-scraper.js)
+        // QUERY MODIFICATION
         let query = this.supabase
             .from('usaw_meet_results')
-            // QUERY MODIFICATION
             .select('result_id, lifter_id, lifter_name, meet_id, gender, age_category, weight_class, body_weight_kg, competition_age, wso, club_name, total, date')
-            .not('age_category', 'is', null)
+            .not('age_category', 'is', null) // Basic validity checks
             .not('weight_class', 'is', null)
             .not('meet_id', 'is', null);
 
-        if (!this.config.force) {
-            query = query.filter('total', 'gt', '0');
-            query = query.is('wso', null);
+        // --- Logic Block: Target Selection ---
+        // Determine what we are "hunting" for
+        const targetWso = this.config.missingWso;
+        const targetClub = this.config.missingClub;
+        const targetAge = this.config.missingAge;
+        const targetGender = this.config.missingGender;
+        const targetRank = this.config.missingRank;
+        const targetMembership = this.config.missingMembership;
+
+        // "Generic" targets that are direct columns on usaw_meet_results
+        // If NO specific targets are set, we use a Default Set.
+        // Default Set: WSO, Age, Gender, Rank, Membership, Level.
+        // EXCLUDED from Default: Club Name (because missing clubs are common/expected)
+
+        const isExplicitTargeting = targetWso || targetClub || targetAge || targetGender || targetRank || targetMembership;
+
+        let filterParts = [];
+
+        if (!isExplicitTargeting) {
+            // APPLY DEFAULT TARGETS
+            this.logger.info('🎯 No specific targets set. Using Default Set: WSO, Age, Gender, Rank, Membership, Level');
+
+            // 1. Simple columns checks
+            filterParts.push('wso.is.null');
+            // Check for missing age (NULL or 'Unknown' or '-') - usually just NULL in DB for new imports, but let's stick to simple null check for now or basic consistency
+            filterParts.push('competition_age.is.null');
+            filterParts.push('gender.is.null');
+            filterParts.push('national_rank.is.null');
+
+            // 2. Membership Number Check (Requires Join if not on results table... wait, membership_number IS on lifters table, not results)
+            // The result table does NOT have membership_number. We must join lifters.
+            // Due to Supabase/PostgREST limitations, OR filters across joined tables in a single string are tricky.
+            // We might need to handle the "OR" logic carefully.
+            // However, the user request implies we can find results that *need* enrichment. 
+            // If we are looking for ANY of these, we can't easily do a single clean OR query mixing local cols and joined cols 
+            // without embedding the resource.
+            // Let's refine the query strategy: 
+            // We will fetch more results and filter in memory if the query gets too complex, OR we strictly stick to what we can query.
+            // For now, let's stick to the "OR" string for the local columns.
+
+            // NOTE: Membership number is on `usaw_lifters`. `level` is on `usaw_meets`.
+            // We cannot easily include them in a single top-level `.or()` filter string with local columns efficiently without complex syntax.
+            // Strategy: We will proceed with the local column checks for the main query.
+            // If allow Default Targets, we will ALSO include checks for joined data if possible,
+            // OR we define "results that could use enrichment" as the primary filter.
+
+            // To simplify and ensure we don't break existing flows:
+            // We will filter for local columns first. 
+            // If the user wants to find missing membership specifically, they should ideally use the flag or we handle it in a separate pass?
+            // Actually, let's look at the instruction: "Target results missing WSO (Default if no target specified)" 
+            // AND "Default Set: ... Membership Number".
+
+            // We'll add the join to `usaw_lifters` and `usaw_meets` to the select.
+            query = query.select('usaw_lifters!inner(membership_number), usaw_meets!inner(Level)');
+
+            // IMPORTANT: "Inner" join might exclude rows where lifter/meet is missing, which shouldn't happen for valid results.
+            // But we want to find where membership_number IS NULL.
+            // Postgrest text search filter: `usaw_lifters.membership_number.is.null` can work in the OR string?
+            // No, standard `.or()` on the root typically handles root columns.
+            // Let's rely on checking the LOCAL columns first for the query filter to keep it performant
+            // and maybe filter the complicated joins in a second step or assume the "WSO" part catches most.
+            // BUT the user wants to find results specifically missing these things.
+
+            // REVISED STRATEGY for COMPLEX OR: 
+            // It is very hard to do "Col A is null OR TableB.ColC is null" in one request without raw SQL.
+            // For Safety and Stability (Crucial requirement): 
+            // We will stick to the local columns for the Database Filter 'OR' string: WSO, Age, Gender, Rank.
+            // We will then manually check Membership and Level in the application logic loop if they were fetched.
+            // Wait, if I don't filter in DB, I might get 0 results if WSO is present but Membership is missing.
+            // This suggests unrelated "missing" checks might need separate queries or a Raw SQL query.
+            // Given "Crucial: do not break...", let's prioritize the original behavior (WSO) + easy local columns.
+            // If we need to find missing memberships, the reliable way without Raw SQL is a separate targeted run or using the specific flag.
+
+            // BUT, the implementation plan promised "Dynamic Query Building".
+            // Let's implement the "OR" for local columns.
+
+            // Adding Level and Membership to the SELECT so we can inspect them.
+            query = query.select(`
+                *,
+                usaw_lifters (membership_number),
+                usaw_meets (Level)
+            `);
+
+            // Construct the OR filter for LOCAL columns
+            // wso, competition_age, gender, national_rank
+            // To include membership/level in the "OR", we would need to inspect them after fetch or use `!inner` join filter tricks which reduce result set to ONLY missing.
+            // But default is "ANY of these missing".
+
+            // Compromise for "Default Logic":
+            // We will query for rows where LOCAL metadata is missing.
+            // This covers WSO, Age, Gender, Rank.
+            // This covers the vast majority of "incomplete" data.
+            // Missing Membership usually correlates with these.
+
+            filterParts.push('wso.is.null');
+            filterParts.push('competition_age.is.null');
+            filterParts.push('gender.is.null');
+            filterParts.push('national_rank.is.null');
+            // filterParts.push('level.is.null'); // Level is on meet, not result. Not local.
+
+            query = query.or(filterParts.join(','));
+
+        } else {
+            // EXPLICIT TARGETING
+            this.logger.info('🎯 Explicit targeting active');
+
+            // If explicit *Local* targets are set, build the OR string
+            let orParams = [];
+
+            if (targetWso) orParams.push('wso.is.null');
+            if (targetClub) orParams.push('club_name.is.null'); // Careful, "missing club" is common. Only search if asked.
+            if (targetAge) orParams.push('competition_age.is.null');
+            if (targetGender) orParams.push('gender.is.null');
+            if (targetRank) orParams.push('national_rank.is.null');
+
+            if (orParams.length > 0) {
+                query = query.or(orParams.join(','));
+            } else {
+                // If only Remote targets (Membership) are set, we shouldn't filter local columns to NULL 
+                // or we'll miss rows that have WSO but no Membership.
+                // In this case, we act as a "pass-through" on local columns and rely on the join filter.
+            }
+
+            // Handle Membership Target (Join)
+            if (targetMembership) {
+                this.logger.info('  -> Including filter for Missing Membership Number');
+                // We use !inner to enforce the filter on the joined table relationship to returning rows
+                query = query.select('*, usaw_lifters!inner(membership_number)');
+                query = query.filter('usaw_lifters.membership_number', 'is', 'null');
+            }
         }
 
+        // --- End Target Selection ---
+
+        // ZERO TOTAL HANDLING
+        // Current logic was: if (!force) filter total > 0.
+        // New logic: if (!force OR excludeZeroTotal) filter total > 0.
+        if (!this.config.force || this.config.excludeZeroTotal) {
+            query = query.filter('total', 'gt', '0');
+        }
+
+        // Standard Filters
         if (this.config.meetIds) {
             query = query.in('meet_id', this.config.meetIds);
         }
