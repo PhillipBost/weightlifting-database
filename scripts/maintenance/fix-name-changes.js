@@ -261,13 +261,26 @@ async function processGroup(group, page) {
         logAction(memNum, 'DRY_MERGE', `Would merge [${removeLifters.map(l => l.lifter_id)}] into ${keepLifter.lifter_id}`);
     } else {
         // REAL MERGE
-        for (const loser of removeLifters) {
-            console.log(`      ⚡ Merging ${loser.lifter_id} -> ${keepLifter.lifter_id}...`);
+        // Check if KeepLifter needs Internal ID (Scenario: Missing on keeper, present on loser)
+        // We do this ONCE before processing losers.
+        const donorWithId = removeLifters.find(l => l.internal_id);
+        if (!keepLifter.internal_id && donorWithId) {
+            console.log(`      💡 Transferring Internal ID ${donorWithId.internal_id} from ${donorWithId.athlete_name} to ${keepLifter.athlete_name}...`);
+            const { error: idError } = await supabase
+                .from('usaw_lifters')
+                .update({ internal_id: donorWithId.internal_id })
+                .eq('lifter_id', keepLifter.lifter_id);
 
-            // Fetch loser's results to migrate one-by-one (or batch, but we need error handling per row for unique constraints)
-            // It is safer to batch update, then handle failures.
-            // But wait, we can't batch update if SOME fail due to constraint.
-            // Loop is safer for the "Decontamination" logic.
+            if (idError) {
+                console.error(`      ❌ Error transferring internal_id: ${idError.message}`);
+            } else {
+                console.log(`      ✅ Internal ID transferred.`);
+                keepLifter.internal_id = donorWithId.internal_id; // Update local obj
+            }
+        }
+
+        for (const loser of removeLifters) {
+            console.log(`      ⚡ Merging ${loser.athlete_name} (${loser.lifter_id}) -> ${keepLifter.athlete_name} (${keepLifter.lifter_id})...`);
 
             const { data: loserResults } = await supabase
                 .from('usaw_meet_results')
@@ -275,16 +288,17 @@ async function processGroup(group, page) {
                 .eq('lifter_id', loser.lifter_id);
 
             for (const res of loserResults) {
-                // Try Update
+                // Try Update (Move ID AND Update Name)
                 const { error: moveError } = await supabase
                     .from('usaw_meet_results')
-                    .update({ lifter_id: keepLifter.lifter_id })
+                    .update({
+                        lifter_id: keepLifter.lifter_id,
+                        lifter_name: keepLifter.athlete_name // Sync name!
+                    })
                     .eq('result_id', res.result_id);
 
                 if (moveError) {
                     if (moveError.message.includes('unique constraint')) {
-                        // CONSTRAINT VIOLATION: CorrectID already has a result for this meet/weight.
-                        // Since we verified history, we assume this is a DUPLICATE entry.
                         console.log(`         ♻️ Constraint conflict on Result ${res.result_id}. Deleting duplicate.`);
                         await supabase.from('usaw_meet_results').delete().eq('result_id', res.result_id);
                     } else {
