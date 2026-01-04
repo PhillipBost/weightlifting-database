@@ -358,6 +358,7 @@ class WsoBackfillEngine {
                 // Missing Membership usually correlates with these.
 
                 filterParts.push('wso.is.null');
+                filterParts.push('wso.eq.'); // Also catch empty strings
                 filterParts.push('competition_age.is.null');
                 filterParts.push('gender.is.null');
                 filterParts.push('national_rank.is.null');
@@ -372,7 +373,10 @@ class WsoBackfillEngine {
             // If explicit *Local* targets are set, build the OR string
             let orParams = [];
 
-            if (targetWso) orParams.push('wso.is.null');
+            if (targetWso) {
+                orParams.push('wso.is.null');
+                orParams.push('wso.eq.');
+            }
             if (targetClub) orParams.push('club_name.is.null'); // Careful, "missing club" is common. Only search if asked.
             if (targetAge) orParams.push('competition_age.is.null');
             if (targetGender) orParams.push('gender.is.null');
