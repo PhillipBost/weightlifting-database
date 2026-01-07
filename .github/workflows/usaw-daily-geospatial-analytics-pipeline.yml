@@ -1,0 +1,803 @@
+name: USAW Daily Geospatial & Analytics Pipeline
+
+on:
+  schedule:
+    # Run daily at 3:30 AM UTC (10:30 PM EST, 6.5 hours after data collection starts)
+    - cron: '30 3 * * *'
+  workflow_dispatch: # Allow manual triggering
+    inputs:
+      skip_wso_assignment:
+        description: 'Skip WSO geography assignment'
+        required: false
+        type: boolean
+        default: false
+      skip_analytics:
+        description: 'Skip WSO analytics calculation'
+        required: false
+        type: boolean
+        default: false
+
+jobs:
+  assign-wso-geography:
+    if: ${{ !inputs.skip_wso_assignment }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30 # Allow generous time for WSO assignments
+
+    outputs:
+      meets_processed: ${{ steps.check_meets.outputs.meets_needing_assignment }}
+      assignment_successful: ${{ steps.assign.conclusion == 'success' }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Create output and logs directories
+        run: |
+          mkdir -p output logs
+
+      - name: Check meets needing WSO assignment
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+        id: check_meets
+        run: |
+          echo "🔍 Checking for meets needing WSO geography assignment..."
+
+          # Count meets with null wso_geography using proper pagination to get accurate total
+          count_result=$(node -e "
+            const { createClient } = require('@supabase/supabase-js');
+
+            async function countMeets() {
+              const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SECRET_KEY);
+
+              try {
+                let totalCount = 0;
+                let start = 0;
+                const batchSize = 1000;
+                let hasMore = true;
+
+                console.error('📊 Counting unassigned meets using pagination...');
+
+                while (hasMore) {
+                  const { data, error } = await supabase
+                    .from('usaw_meets')
+                    .select('meet_id')
+                    .is('wso_geography', null)
+                    .range(start, start + batchSize - 1);
+
+                  if (error) throw error;
+
+                  if (data && data.length > 0) {
+                    totalCount += data.length;
+                    console.error(\`  📦 Batch \${Math.floor(start/batchSize) + 1}: Found \${data.length} unassigned meets (Running total: \${totalCount})\`);
+
+                    hasMore = data.length === batchSize;
+                    start += batchSize;
+                  } else {
+                    hasMore = false;
+                  }
+                }
+
+                console.error(\`✅ Total unassigned meets: \${totalCount}\`);
+                console.log(totalCount);
+              } catch (error) {
+                console.error('❌ Error counting meets:', error.message);
+                console.log(0);
+              }
+            }
+
+            countMeets();
+          ")
+
+          meets_needing_assignment=$(echo "$count_result" | tail -n 1)
+          echo "meets_needing_assignment=$meets_needing_assignment" >> $GITHUB_OUTPUT
+          echo "📊 Total unassigned meets found: $meets_needing_assignment"
+
+          if [ $meets_needing_assignment -gt 0 ]; then
+            echo "has_unassigned_meets=true" >> $GITHUB_OUTPUT
+            echo "✅ Will proceed with WSO assignment for $meets_needing_assignment meets"
+          else
+            echo "has_unassigned_meets=false" >> $GITHUB_OUTPUT
+            echo "ℹ️ No meets require WSO assignment"
+          fi
+
+      - name: Assign WSO geography to meets
+        id: assign
+        if: steps.check_meets.outputs.has_unassigned_meets == 'true'
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+        run: |
+          set -o pipefail
+          echo "🎯 Starting WSO geography assignment..."
+          echo "Processing ${{ steps.check_meets.outputs.meets_needing_assignment }} meets"
+
+          # Run the WSO assignment script
+          node scripts/geographic/meet-wso-assigner.js --assign 2>&1 | tee logs/wso-assignment.log
+
+          # Check if the script ran successfully
+          if [ $? -eq 0 ]; then
+            echo "✅ WSO geography assignment completed successfully"
+          else
+            echo "❌ WSO geography assignment failed"
+            exit 1
+          fi
+
+      - name: Validate WSO state boundaries
+        if: steps.check_meets.outputs.has_unassigned_meets == 'true'
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+        run: |
+          set -o pipefail
+          echo "🔬 Validating WSO state boundary assignments..."
+
+          node scripts/geographic/validate-state-boundaries.js --report 2>&1 | tee logs/wso-boundary-validation.log
+
+          if [ $? -eq 0 ]; then
+            echo "✅ WSO boundary validation completed"
+          else
+            echo "⚠️ WSO boundary validation found issues (non-fatal, will be fixed in daily cleanup)"
+          fi
+
+      - name: Verify assignment completeness
+        if: steps.check_meets.outputs.has_unassigned_meets == 'true'
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+        run: |
+          echo "🔍 Verifying WSO assignment completeness..."
+
+          # Count remaining unassigned meets after processing
+          remaining_unassigned=$(node -e "
+            const { createClient } = require('@supabase/supabase-js');
+
+            async function countRemaining() {
+              const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SECRET_KEY);
+
+              try {
+                let totalCount = 0;
+                let start = 0;
+                const batchSize = 1000;
+                let hasMore = true;
+
+                while (hasMore) {
+                  const { data, error } = await supabase
+                    .from('usaw_meets')
+                    .select('meet_id')
+                    .is('wso_geography', null)
+                    .range(start, start + batchSize - 1);
+
+                  if (error) throw error;
+
+                  if (data && data.length > 0) {
+                    totalCount += data.length;
+                    hasMore = data.length === batchSize;
+                    start += batchSize;
+                  } else {
+                    hasMore = false;
+                  }
+                }
+
+                console.log(totalCount);
+              } catch (error) {
+                console.error('❌ Error counting remaining meets:', error.message);
+                console.log(-1);
+              }
+            }
+
+            countRemaining();
+          ")
+
+          initial_count=${{ steps.check_meets.outputs.meets_needing_assignment }}
+
+          echo "📊 Assignment Verification Results:"
+          echo "   Initial unassigned: $initial_count"
+          echo "   Remaining unassigned: $remaining_unassigned"
+
+          if [ $remaining_unassigned -eq -1 ]; then
+            echo "❌ Failed to verify assignment completeness"
+            exit 1
+          elif [ $remaining_unassigned -eq 0 ]; then
+            echo "✅ Perfect! All meets have been assigned WSO geography"
+          else
+            processed=$((initial_count - remaining_unassigned))
+            echo "✅ Processed: $processed meets"
+            echo "⚠️ Remaining: $remaining_unassigned meets still need assignment"
+            
+            # Check if remaining meets are legitimately unassignable (no addresses)
+            addressless_count=$(node -e "
+              const { createClient } = require('@supabase/supabase-js');
+              
+              async function countAddressless() {
+                const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SECRET_KEY);
+                
+                try {
+                  let totalCount = 0;
+                  let start = 0;
+                  const batchSize = 1000;
+                  let hasMore = true;
+                  
+                  while (hasMore) {
+                    const { data, error } = await supabase
+                      .from('usaw_meets')
+                      .select('meet_id')
+                      .is('wso_geography', null)
+                      .or('address.is.null,address.eq.')
+                      .range(start, start + batchSize - 1);
+                    
+                    if (error) throw error;
+                    
+                    if (data && data.length > 0) {
+                      totalCount += data.length;
+                      hasMore = data.length === batchSize;
+                      start += batchSize;
+                    } else {
+                      hasMore = false;
+                    }
+                  }
+                  
+                  console.log(totalCount);
+                } catch (error) {
+                  console.error('❌ Error counting addressless meets:', error.message);
+                  console.log(-1);
+                }
+              }
+              
+              countAddressless();
+            ")
+            
+            potentially_assignable=$((remaining_unassigned - addressless_count))
+            
+            echo "📊 Assignment Analysis:"
+            echo "   Meets without addresses (expected): $addressless_count"
+            echo "   Potentially problematic unassigned: $potentially_assignable"
+            
+            if [ $addressless_count -eq -1 ]; then
+              echo "⚠️ Could not verify addressless meets, using conservative threshold"
+              if [ $remaining_unassigned -gt 1500 ]; then
+                echo "❌ Too many meets remain unassigned ($remaining_unassigned > 1500), this indicates a problem"
+                exit 1
+              fi
+            elif [ $potentially_assignable -gt 500 ]; then
+              echo "❌ Too many potentially assignable meets remain unassigned ($potentially_assignable > 500)"
+              echo "   Note: $addressless_count meets without addresses are expected to remain unassigned"
+              exit 1
+            else
+              echo "✅ Remaining unassigned meets are within expected range"
+              echo "   Most unassigned meets ($addressless_count) lack addresses and cannot be assigned WSOs"
+            fi
+          fi
+
+      - name: Upload WSO assignment results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: wso-assignment-results-${{ github.run_number }}
+          path: |
+            output/meet_wso_assignments.json
+            output/wso_boundary_validation.json
+            logs/wso-assignment.log
+            logs/meet-wso-assigner.log
+            logs/wso-boundary-validation.log
+          retention-days: 30
+
+  assign-club-wso-geography:
+    needs: assign-wso-geography
+    if: ${{ always() && !inputs.skip_wso_assignment }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 45 # Allow time for processing all clubs
+
+    outputs:
+      clubs_processed: ${{ steps.assign_clubs.outputs.clubs_processed }}
+      assignment_successful: ${{ steps.assign_clubs.conclusion == 'success' }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Create output and logs directories
+        run: |
+          mkdir -p output logs
+
+      - name: Assign WSO geography to clubs
+        id: assign_clubs
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+        run: |
+          set -o pipefail
+          echo "🏋️ Starting club WSO geography assignment..."
+          echo "Timestamp: $(date)"
+
+          # Run the club WSO assignment script
+          node scripts/geographic/club-wso-assigner.js --assign 2>&1 | tee logs/club-wso-assignment.log
+
+          # Check if the script ran successfully
+          if [ $? -eq 0 ]; then
+            echo "✅ Club WSO geography assignment completed successfully"
+          else
+            echo "❌ Club WSO geography assignment failed"
+            exit 1
+          fi
+
+      - name: Upload club WSO assignment results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: club-wso-assignment-results-${{ github.run_number }}
+          path: |
+            output/club_wso_assignments.json
+            logs/club-wso-assignment.log
+            logs/club-wso-assigner.log
+          retention-days: 30
+
+  calculate-wso-analytics:
+    needs: [assign-wso-geography, assign-club-wso-geography]
+    if: ${{ always() && !inputs.skip_analytics }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30 # Allow generous time for calculations
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Create logs directory
+        run: mkdir -p logs
+
+      - name: Calculate WSO analytics
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+        run: |
+          set -o pipefail
+          echo "📊 Starting WSO analytics calculation..."
+          echo "Timestamp: $(date)"
+
+          # Run the analytics calculation script
+          node scripts/analytics/wso-weekly-calculator.js 2>&1 | tee logs/wso-analytics.log
+
+          # Check if the script ran successfully
+          if [ $? -eq 0 ]; then
+            echo "✅ WSO analytics calculation completed successfully"
+          else
+            echo "❌ WSO analytics calculation failed"
+            exit 1
+          fi
+
+      - name: Validate analytics results
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+        run: |
+          echo "🔍 Validating analytics results..."
+
+          # Create a simple validation script inline
+          node -e "
+            const { createClient } = require('@supabase/supabase-js');
+
+            async function validateResults() {
+              const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SECRET_KEY);
+
+              try {
+                const { data: wsos, error } = await supabase
+                  .from('usaw_wso_information')
+                  .select('name, barbell_clubs_count, recent_meets_count, active_lifters_count, total_participations, estimated_population, activity_factor, analytics_updated_at')
+                  .order('name');
+
+                if (error) throw error;
+
+                console.log('📋 Analytics validation results:');
+                console.log('WSO Name | Clubs | Meets | Lifters | Particip | Population | ActFactor | Last Updated');
+                console.log('----------|-------|---------|----------|---------------|----------|-------|---------|----------|-------------|----------|-------|---------|----------|-------------|----------|-------|---------|----------|---------------|----------|-------|---------|----------|-------------|----------|-------|---------|----------|---------------|----------|-------|---------|----------|----------------|----------|-------|---------|----------|---------------|----------|-------|---------|----------|-------------|----------|-------|---------|----------|-------------|----------|-------|---------|----------|---------------|----------|-------|---------|----------|-------------|----------|-------|---------|----------|---------------|----------|-------|---------|----------|----------------|----------|-------|---------|----------|---------------|----------|-------|---------|----------|-------------|----------|-------|---------|----------|-------------|----------|-------|---------|----------|---------------|----------|-------|---------|----------|-------------|----------|-------|---------|----------|---------------|----------|-------|---------|----------|----------------|----------|-------|---------|----------|---------------|----------|-------|---------|----------|-------------|----------|-------|---------|----------|-------------|----------|-------|---------|----------|---------------|----------|-------|---------|----------|-------------|----------|-------|---------|----------|---------------|----------|-------|---------|----------|----------------|----------|-------|---------|----------|---------------|----------|-------|---------|----------|-------------|----------|-------|---------|----------|-------------|----------|-------|---------|----------|---------------|----------|-------|---------|----------|-------------|----------|-------|---------|----------|---------------|----------|-------|---------|----------|-------------------|----------|-------|---------|----------|---------------|----------|-------|---------|----------|-------------|----------|-------|---------|----------|-------------|----------|-------|---------|----------|---------------|----------|-------|---------|----------|-------------|----------|-------|---------|----------|---------------|----------|-------|---------|----------|-----------------------|-------|---------|----------|-------------');
+
+                let updatedToday = 0;
+                const today = new Date().toISOString().split('T')[0];
+
+                wsos.forEach(wso => {
+                  const lastUpdated = wso.analytics_updated_at ?
+                    new Date(wso.analytics_updated_at).toISOString().split('T')[0] : 'Never';
+
+                  if (lastUpdated === today) updatedToday++;
+
+                  console.log(\`\${wso.name.padEnd(8)} | \${String(wso.barbell_clubs_count || 0).padStart(5)} | \${String(wso.recent_meets_count || 0).padStart(5)} | \${String(wso.active_lifters_count || 0).padStart(7)} | \${String(wso.total_participations || 0).padStart(8)} | \${String(wso.estimated_population || 0).padStart(10)} | \${String(wso.activity_factor || 0).padStart(9)} | \${lastUpdated}\`);
+                });
+
+                console.log(\`\\n✅ Total WSOs: \${wsos.length}\`);
+                console.log(\`📅 Updated today: \${updatedToday}\`);
+
+                if (updatedToday === 0) {
+                  console.log('⚠️ Warning: No WSOs were updated today - this is normal if analytics are up to date');
+                }
+
+              } catch (error) {
+                console.error('❌ Validation failed:', error.message);
+                process.exit(1);
+              }
+            }
+
+            validateResults();
+          "
+
+      - name: Upload analytics logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: wso-analytics-logs-${{ github.run_number }}
+          path: |
+            logs/wso-analytics.log
+          retention-days: 30
+
+  calculate-club-analytics:
+    needs: calculate-wso-analytics
+    if: ${{ always() && !inputs.skip_analytics }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 45 # Allow time for processing all clubs
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Create logs directory
+        run: mkdir -p logs
+
+      - name: Calculate club analytics
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+        run: |
+          set -o pipefail
+          echo "🏋️ Starting club analytics calculation..."
+          echo "Timestamp: $(date)"
+
+          # Run the club analytics calculation script
+          node scripts/analytics/club-weekly-calculator.js 2>&1 | tee logs/club-analytics.log
+
+          # Check if the script ran successfully
+          if [ $? -eq 0 ]; then
+            echo "✅ Club analytics calculation completed successfully"
+          else
+            echo "❌ Club analytics calculation failed"
+            exit 1
+          fi
+
+      - name: Validate club analytics results
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+        run: |
+          echo "🔍 Validating club analytics results..."
+
+          # Create a simple validation script inline
+          node -e "
+            const { createClient } = require('@supabase/supabase-js');
+
+            async function validateClubResults() {
+              const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SECRET_KEY);
+
+              try {
+                const { data: clubs, error } = await supabase
+                  .from('usaw_clubs')
+                  .select('club_name, recent_meets_count, active_lifters_count, total_participations, activity_factor, analytics_updated_at')
+                  .not('recent_meets_count', 'is', null)
+                  .order('recent_meets_count', { ascending: false })
+                  .limit(10);
+
+                if (error) throw error;
+
+                console.log('📋 Top 10 clubs by recent meets:');
+                console.log('Club Name | Meets | Lifters | Particip | ActFactor | Last Updated');
+                console.log('----------|-------|---------|----------|---------------|----------|-------|---------|----------|-------------|----------|-------|---------|----------|-------------|----------|-------|---------|----------|---------------|----------|-------|---------|----------|-------------|----------|-------|---------|----------|---------------|----------|-------|---------|----------|-----------------|----------|-------|---------|----------|---------------|----------|-------|---------|----------|-------------|----------|-------|---------|----------|-------------|----------|-------|---------|----------|---------------|----------|-------|---------|----------|-------------|----------|-------|---------|----------|---------------|----------|-------|---------|----------|----------------|----------|-------|---------|----------|---------------|----------|-------|---------|----------|-------------|----------|-------|---------|----------|-------------|----------|-------|---------|----------|---------------|----------|-------|---------|----------|-------------|----------|-------|---------|----------|---------------|----------|-------|---------|----------|----------------|----------|-------|---------|----------|---------------|----------|-------|---------|----------|-------------|----------|-------|---------|----------|-------------|----------|-------|---------|----------|---------------|----------|-------|---------|----------|-------------|----------|-------|---------|----------|---------------|----------|-------|---------|----------|-----------------------|-------|---------|----------|-------------');
+
+                let updatedToday = 0;
+                const today = new Date().toISOString().split('T')[0];
+
+                clubs.forEach(club => {
+                  const lastUpdated = club.analytics_updated_at ?
+                    new Date(club.analytics_updated_at).toISOString().split('T')[0] : 'Never';
+
+                  if (lastUpdated === today) updatedToday++;
+
+                  const name = club.club_name.length > 25 ? 
+                    club.club_name.substring(0, 22) + '...' : club.club_name;
+                  console.log(\`\${name.padEnd(25)} | \${String(club.recent_meets_count || 0).padStart(5)} | \${String(club.active_lifters_count || 0).padStart(7)} | \${String(club.total_participations || 0).padStart(8)} | \${String(club.activity_factor || 0).padStart(9)} | \${lastUpdated}\`);
+                });
+
+                // Get total count of clubs updated today
+                const { count: totalUpdated } = await supabase
+                  .from('usaw_clubs')
+                  .select('*', { count: 'exact', head: true })
+                  .gte('analytics_updated_at', today + 'T00:00:00');
+
+                console.log(\`\n✅ Sample clubs shown above\`);
+                console.log(\`📅 Total clubs updated today: \${totalUpdated || 0}\`);
+
+                if ((totalUpdated || 0) === 0) {
+                  console.log('⚠️ Warning: No clubs were updated today - this is normal if analytics are up to date');
+                }
+
+              } catch (error) {
+                console.error('❌ Club validation failed:', error.message);
+                process.exit(1);
+              }
+            }
+
+            validateClubResults();
+          "
+
+      - name: Upload club analytics logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: club-analytics-logs-${{ github.run_number }}
+          path: |
+            logs/club-analytics.log
+          retention-days: 30
+
+  update-club-rolling-metrics:
+    needs: calculate-club-analytics
+    if: ${{ always() && !inputs.skip_analytics }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 60 # Allow time for processing all rolling metrics
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Create logs directory
+        run: mkdir -p logs
+
+      - name: Update monthly club rolling metrics
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+        run: |
+          set -o pipefail
+          echo "📊 Starting monthly club rolling metrics update..."
+          echo "Timestamp: $(date)"
+
+          # Update rolling metrics for the last 3 months to ensure data freshness
+          node scripts/analytics/update-monthly-club-metrics.js --last-n 3 2>&1 | tee logs/club-rolling-metrics.log
+
+          # Check if the script ran successfully
+          if [ $? -eq 0 ]; then
+            echo "✅ Club rolling metrics update completed successfully"
+          else
+            echo "❌ Club rolling metrics update failed"
+            exit 1
+          fi
+
+      - name: Validate rolling metrics
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+        run: |
+          echo "🔍 Validating rolling metrics data..."
+
+          # Quick validation of rolling metrics
+          node -e "
+            const { createClient } = require('@supabase/supabase-js');
+
+            async function validateRollingMetrics() {
+              const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SECRET_KEY);
+
+              try {
+                // Get current month metrics
+                const currentMonth = new Date().toISOString().substring(0, 7) + '-01';
+                
+                const { data: currentMetrics, error } = await supabase
+                  .from('usaw_club_rolling_metrics')
+                  .select('club_name, active_members_12mo, total_competitions_12mo')
+                  .eq('snapshot_month', currentMonth)
+                  .order('active_members_12mo', { ascending: false })
+                  .limit(5);
+
+                if (error) throw error;
+
+                console.log('📋 Top 5 clubs for current month rolling metrics:');
+                console.log('Club Name | Active Members (12mo) | Total Competitions (12mo)');
+                console.log('----------|----------------------|------------------------');
+
+                if (currentMetrics && currentMetrics.length > 0) {
+                  currentMetrics.forEach(club => {
+                    const name = club.club_name.length > 30 ? 
+                      club.club_name.substring(0, 27) + '...' : club.club_name;
+                    console.log(\`\${name.padEnd(30)} | \${String(club.active_members_12mo || 0).padStart(20)} | \${String(club.total_competitions_12mo || 0).padStart(22)}\`);
+                  });
+                } else {
+                  console.log('No current month data found');
+                }
+
+                // Count total rolling metrics records
+                const { count: totalRecords } = await supabase
+                  .from('usaw_club_rolling_metrics')
+                  .select('*', { count: 'exact', head: true });
+
+                // Count records updated today
+                const today = new Date().toISOString().split('T')[0];
+                const { count: updatedToday } = await supabase
+                  .from('usaw_club_rolling_metrics')
+                  .select('*', { count: 'exact', head: true })
+                  .gte('calculated_at', today + 'T00:00:00');
+
+                console.log(\`\n✅ Total rolling metrics records: \${totalRecords || 0}\`);
+                console.log(\`📅 Records updated today: \${updatedToday || 0}\`);
+
+                if ((updatedToday || 0) === 0) {
+                  console.log('⚠️ Warning: No rolling metrics were updated today - this is normal if metrics are up to date');
+                }
+
+              } catch (error) {
+                console.error('❌ Rolling metrics validation failed:', error.message);
+                process.exit(1);
+              }
+            }
+
+            validateRollingMetrics();
+          "
+
+      - name: Upload rolling metrics logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: club-rolling-metrics-logs-${{ github.run_number }}
+          path: |
+            logs/club-rolling-metrics.log
+          retention-days: 30
+
+  create-summary:
+    needs: [assign-wso-geography, assign-club-wso-geography, calculate-wso-analytics, calculate-club-analytics, update-club-rolling-metrics]
+    if: always()
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Create comprehensive summary
+        run: |
+          echo "## 🔄 Daily Data Processing Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Timestamp:** $(date)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          # WSO Assignment summary
+          if [ "${{ inputs.skip_wso_assignment }}" == "true" ]; then
+            echo "### 🎯 WSO Geography Assignment: Skipped" >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ needs.assign-wso-geography.result }}" == "success" ]; then
+            echo "### 🎯 WSO Geography Assignment: ✅ Success" >> $GITHUB_STEP_SUMMARY
+            echo "- **Meets Processed:** ${{ needs.assign-wso-geography.outputs.meets_processed }}" >> $GITHUB_STEP_SUMMARY
+
+            if [ "${{ needs.assign-wso-geography.outputs.meets_processed }}" -gt 0 ]; then
+              echo "- **Status:** Successfully assigned WSO geography to meets with missing values" >> $GITHUB_STEP_SUMMARY
+              echo "- **Methods:** Coordinate boundaries, address parsing, meet name analysis, historical data" >> $GITHUB_STEP_SUMMARY
+            else
+              echo "- **Status:** No meets required WSO assignment" >> $GITHUB_STEP_SUMMARY
+            fi
+          else
+            echo "### 🎯 WSO Geography Assignment: ❌ Failed" >> $GITHUB_STEP_SUMMARY
+            echo "- **Status:** See workflow logs for details" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          # Club WSO Assignment summary
+          if [ "${{ inputs.skip_wso_assignment }}" == "true" ]; then
+            echo "### 🏋️ Club WSO Geography Assignment: Skipped" >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ needs.assign-club-wso-geography.result }}" == "success" ]; then
+            echo "### 🏋️ Club WSO Geography Assignment: ✅ Success" >> $GITHUB_STEP_SUMMARY
+            echo "- **Status:** Successfully assigned WSO geography to all clubs using geospatial boundaries" >> $GITHUB_STEP_SUMMARY
+            echo "- **Methods:** Point-in-polygon for California, state mapping for other regions" >> $GITHUB_STEP_SUMMARY
+            echo "- **Data Sources:** Club coordinates, addresses, territory polygons" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "### 🏋️ Club WSO Geography Assignment: ❌ Failed" >> $GITHUB_STEP_SUMMARY
+            echo "- **Status:** See workflow logs for details" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          # WSO Analytics summary
+          if [ "${{ inputs.skip_analytics }}" == "true" ]; then
+            echo "### 📊 WSO Analytics: Skipped" >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ needs.calculate-wso-analytics.result }}" == "success" ]; then
+            echo "### 📊 WSO Analytics: ✅ Success" >> $GITHUB_STEP_SUMMARY
+            echo "- **Status:** Successfully calculated WSO metrics for all regions" >> $GITHUB_STEP_SUMMARY
+            echo "- **Metrics:** Barbell clubs, recent meets, active lifters, estimated population" >> $GITHUB_STEP_SUMMARY
+            echo "- **Data Sources:** Clubs table, meets table (past 12 months), meet results, demographics" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "### 📊 WSO Analytics: ❌ Failed" >> $GITHUB_STEP_SUMMARY
+            echo "- **Status:** See workflow logs for details" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          # Club Analytics summary
+          if [ "${{ inputs.skip_analytics }}" == "true" ]; then
+            echo "### 🏋️ Club Analytics: Skipped" >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ needs.calculate-club-analytics.result }}" == "success" ]; then
+            echo "### 🏋️ Club Analytics: ✅ Success" >> $GITHUB_STEP_SUMMARY
+            echo "- **Status:** Successfully calculated analytics for all clubs" >> $GITHUB_STEP_SUMMARY
+            echo "- **Metrics:** Recent meets participated, active lifters associated" >> $GITHUB_STEP_SUMMARY
+            echo "- **Data Sources:** Meet results table (past 3 years), club associations" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "### 🏋️ Club Analytics: ❌ Failed" >> $GITHUB_STEP_SUMMARY
+            echo "- **Status:** See workflow logs for details" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          # Club Rolling Metrics summary
+          if [ "${{ inputs.skip_analytics }}" == "true" ]; then
+            echo "### 📈 Club Rolling Metrics: Skipped" >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ needs.update-club-rolling-metrics.result }}" == "success" ]; then
+            echo "### 📈 Club Rolling Metrics: ✅ Success" >> $GITHUB_STEP_SUMMARY
+            echo "- **Status:** Successfully updated 12-month rolling membership metrics" >> $GITHUB_STEP_SUMMARY
+            echo "- **Metrics:** Active members per club (12-month rolling windows)" >> $GITHUB_STEP_SUMMARY
+            echo "- **Data Points:** 164+ monthly snapshots per club from 2012-present" >> $GITHUB_STEP_SUMMARY
+            echo "- **Purpose:** Optimized for fast graphing and trend analysis" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "### 📈 Club Rolling Metrics: ❌ Failed" >> $GITHUB_STEP_SUMMARY
+            echo "- **Status:** See workflow logs for details" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 🔄 Pipeline Integration" >> $GITHUB_STEP_SUMMARY
+          echo "- **Previous Step:** Daily Data Collection (meet addresses + club scraping)" >> $GITHUB_STEP_SUMMARY
+          echo "- **Current Step:** Data Processing (WSO assignment + analytics calculation)" >> $GITHUB_STEP_SUMMARY
+          echo "- **Schedule:** Runs at 3:30 AM UTC (6.5 hours after data collection starts)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 📅 Daily Schedule Overview" >> $GITHUB_STEP_SUMMARY
+          echo "- **9:00 PM UTC:** Data Collection (meet addresses + clubs)" >> $GITHUB_STEP_SUMMARY
+          echo "- **3:30 AM UTC:** Data Processing (WSO assignment + analytics)" >> $GITHUB_STEP_SUMMARY
+          echo "- **8:00 AM UTC:** Division Scraper" >> $GITHUB_STEP_SUMMARY
+          echo "- **9:00 AM UTC:** Data Quality" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Processing logs available in workflow artifacts**" >> $GITHUB_STEP_SUMMARY
+
+      - name: Cleanup temporary files
+        if: always()
+        run: |
+          # Clean up any temporary files if needed
+          echo "🧹 Cleanup completed"

@@ -1,0 +1,319 @@
+name: USAW Daily Data Quality Improvement Pipeline
+
+on:
+  schedule:
+    # Run daily at 9 AM UTC (4 AM EST) - All jobs run every day
+    - cron: '0 9 * * *'
+  workflow_dispatch:
+    inputs:
+      skip_membership_scan:
+        description: 'Skip missing membership scan'
+        required: false
+        type: boolean
+        default: false
+      skip_contamination_cleanup:
+        description: 'Skip contamination cleanup jobs'
+        required: false
+        type: boolean
+        default: false
+      skip_internal_id:
+        description: 'Skip internal ID pipeline'
+        required: false
+        type: boolean
+        default: false
+      show_details:
+        description: 'Show detailed output'
+        required: false
+        type: boolean
+        default: false
+
+jobs:
+  missing-membership-scan:
+    if: ${{ !inputs.skip_membership_scan }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Create directories
+        run: mkdir -p logs
+
+      - name: Run missing membership scan
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+          SHOW_DETAILS: ${{ inputs.show_details || 'false' }}
+        run: |
+          set -o pipefail
+          echo "🔍 Starting missing membership number scan..."
+          echo "🕐 Start time: $(date +'%Y-%m-%d %H:%M:%S %Z')"
+          echo "📊 Show details: $SHOW_DETAILS"
+
+          node scripts/analysis/missing-membership-scan.js 2>&1 | tee logs/missing-membership-scan.log
+
+          if [ $? -eq 0 ]; then
+            echo "✅ Missing membership scan completed successfully"
+          else
+            echo "❌ Missing membership scan failed"
+            exit 1
+          fi
+
+      - name: Upload membership scan results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: membership-scan-${{ github.run_number }}
+          path: |
+            logs/missing-membership-scan.log
+            output/missing_membership_*.csv
+          retention-days: 30
+
+  wso-contamination-cleanup:
+    if: ${{ !inputs.skip_contamination_cleanup }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Create directories
+        run: mkdir -p logs output
+
+      - name: Run WSO contamination cleanup
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+        run: |
+          set -o pipefail
+          echo "🧹 Starting WSO geography contamination cleanup..."
+          echo "🕐 Start time: $(date +'%Y-%m-%d %H:%M:%S %Z')"
+
+          node scripts/geographic/fix-wso-geography-contamination.js --fix 2>&1 | tee logs/wso-contamination-cleanup.log
+
+          if [ $? -eq 0 ]; then
+            echo "✅ WSO contamination cleanup completed successfully"
+          else
+            echo "❌ WSO contamination cleanup failed"
+            exit 1
+          fi
+
+      - name: Upload WSO cleanup results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: wso-contamination-cleanup-${{ github.run_number }}
+          path: |
+            logs/wso-contamination-cleanup.log
+            logs/fix-wso-geography-contamination.log
+            output/wso_geography_contamination_fix.json
+          retention-days: 30
+
+  type2-contamination-cleanup:
+    if: ${{ !inputs.skip_contamination_cleanup }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Create directories
+        run: mkdir -p logs
+
+      - name: Run type2 contamination cleanup
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+        run: |
+          set -o pipefail
+          echo "🧹 Starting type2 contamination cleanup..."
+          echo "🕐 Start time: $(date +'%Y-%m-%d %H:%M:%S %Z')"
+
+          node scripts/analysis/contamination-cleanup-master.js 2>&1 | tee logs/type2-contamination-cleanup.log
+
+          if [ $? -eq 0 ]; then
+            echo "✅ Type2 contamination cleanup completed successfully"
+          else
+            echo "❌ Type2 contamination cleanup failed"
+            exit 1
+          fi
+
+      - name: Upload contamination cleanup results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: contamination-cleanup-${{ github.run_number }}
+          path: |
+            logs/type2-contamination-cleanup.log
+            output/contamination_*.csv
+          retention-days: 30
+
+  internal-id-pipeline:
+    if: ${{ !inputs.skip_internal_id }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Create directories
+        run: mkdir -p logs
+
+      - name: Run internal ID pipeline
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+        run: |
+          set -o pipefail
+          echo "🔗 Starting internal ID pipeline..."
+          echo "🕐 Start time: $(date +'%Y-%m-%d %H:%M:%S %Z')"
+
+          node scripts/maintenance/add-meet-internal-ids.js 2>&1 | tee logs/internal-id-pipeline.log
+
+          if [ $? -eq 0 ]; then
+            echo "✅ Internal ID pipeline completed successfully"
+          else
+            echo "❌ Internal ID pipeline failed"
+            exit 1
+          fi
+
+      - name: Upload internal ID pipeline results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: internal-id-pipeline-${{ github.run_number }}
+          path: |
+            logs/internal-id-pipeline.log
+            output/internal_id_*.csv
+          retention-days: 30
+
+  create-summary:
+    needs: [missing-membership-scan, wso-contamination-cleanup, type2-contamination-cleanup, internal-id-pipeline]
+    if: always()
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Create data quality summary
+        run: |
+          echo "## 🔍 Daily Data Quality Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Date:** $(date)" >> $GITHUB_STEP_SUMMARY
+          echo "**Trigger:** ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          # WSO contamination cleanup summary
+          if [ "${{ inputs.skip_contamination_cleanup }}" != "true" ]; then
+            if [ "${{ needs.wso-contamination-cleanup.result }}" == "success" ]; then
+              echo "### 🗺️ WSO Geography Contamination Cleanup: ✅ Success" >> $GITHUB_STEP_SUMMARY
+              echo "- **Schedule:** Daily at 9:00 AM UTC" >> $GITHUB_STEP_SUMMARY
+              echo "- **Purpose:** Fix meets assigned to incorrect WSO regions" >> $GITHUB_STEP_SUMMARY
+              echo "- **Status:** Successfully corrected geographic assignments" >> $GITHUB_STEP_SUMMARY
+              echo "- **Actions:** Validated coordinates vs WSO boundaries, corrected violations" >> $GITHUB_STEP_SUMMARY
+            elif [ "${{ needs.wso-contamination-cleanup.result }}" == "failure" ]; then
+              echo "### 🗺️ WSO Geography Contamination Cleanup: ❌ Failed" >> $GITHUB_STEP_SUMMARY
+            else
+              echo "### 🗺️ WSO Geography Contamination Cleanup: ⏭️ Skipped" >> $GITHUB_STEP_SUMMARY
+            fi
+            echo "" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          # Membership scan summary
+          if [ "${{ inputs.skip_membership_scan }}" != "true" ]; then
+            if [ "${{ needs.missing-membership-scan.result }}" == "success" ]; then
+              echo "### 👥 Missing Membership Scan: ✅ Success" >> $GITHUB_STEP_SUMMARY
+              echo "- **Schedule:** Daily at 9:00 AM UTC" >> $GITHUB_STEP_SUMMARY
+              echo "- **Purpose:** Identify athletes missing membership numbers" >> $GITHUB_STEP_SUMMARY
+              echo "- **Status:** Successfully scanned database for membership gaps" >> $GITHUB_STEP_SUMMARY
+            elif [ "${{ needs.missing-membership-scan.result }}" == "failure" ]; then
+              echo "### 👥 Missing Membership Scan: ❌ Failed" >> $GITHUB_STEP_SUMMARY
+            else
+              echo "### 👥 Missing Membership Scan: ⏭️ Skipped" >> $GITHUB_STEP_SUMMARY
+            fi
+            echo "" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          # Type2 contamination cleanup summary
+          if [ "${{ inputs.skip_contamination_cleanup }}" != "true" ]; then
+            if [ "${{ needs.type2-contamination-cleanup.result }}" == "success" ]; then
+              echo "### 🧹 Type2 Contamination Cleanup: ✅ Success" >> $GITHUB_STEP_SUMMARY
+              echo "- **Schedule:** Daily at 9:00 AM UTC" >> $GITHUB_STEP_SUMMARY
+              echo "- **Purpose:** Clean up type2 data contamination issues" >> $GITHUB_STEP_SUMMARY
+              echo "- **Status:** Successfully cleaned contaminated records" >> $GITHUB_STEP_SUMMARY
+            elif [ "${{ needs.type2-contamination-cleanup.result }}" == "failure" ]; then
+              echo "### 🧹 Type2 Contamination Cleanup: ❌ Failed" >> $GITHUB_STEP_SUMMARY
+            else
+              echo "### 🧹 Type2 Contamination Cleanup: ⏭️ Skipped" >> $GITHUB_STEP_SUMMARY
+            fi
+            echo "" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          # Internal ID pipeline summary
+          if [ "${{ inputs.skip_internal_id }}" != "true" ]; then
+            if [ "${{ needs.internal-id-pipeline.result }}" == "success" ]; then
+              echo "### 🔗 Internal ID Pipeline: ✅ Success" >> $GITHUB_STEP_SUMMARY
+              echo "- **Schedule:** Daily at 9:00 AM UTC" >> $GITHUB_STEP_SUMMARY
+              echo "- **Purpose:** Process and assign internal identifiers" >> $GITHUB_STEP_SUMMARY
+              echo "- **Status:** Successfully processed ID assignments" >> $GITHUB_STEP_SUMMARY
+            elif [ "${{ needs.internal-id-pipeline.result }}" == "failure" ]; then
+              echo "### 🔗 Internal ID Pipeline: ❌ Failed" >> $GITHUB_STEP_SUMMARY
+            else
+              echo "### 🔗 Internal ID Pipeline: ⏭️ Skipped" >> $GITHUB_STEP_SUMMARY
+            fi
+            echo "" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 📅 Daily Data Quality Schedule" >> $GITHUB_STEP_SUMMARY
+          echo "- **9:00 AM UTC (4 AM EST):** All quality jobs run daily" >> $GITHUB_STEP_SUMMARY
+          echo "  - Missing membership scan" >> $GITHUB_STEP_SUMMARY
+          echo "  - WSO contamination cleanup" >> $GITHUB_STEP_SUMMARY
+          echo "  - Type2 contamination cleanup" >> $GITHUB_STEP_SUMMARY
+          echo "  - Internal ID pipeline" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 🎯 Quality Assurance" >> $GITHUB_STEP_SUMMARY
+          echo "This pipeline ensures:" >> $GITHUB_STEP_SUMMARY
+          echo "- 📊 **Data completeness**: Identifies missing required fields" >> $GITHUB_STEP_SUMMARY
+          echo "- 🧹 **Data cleanliness**: Removes contamination and inconsistencies" >> $GITHUB_STEP_SUMMARY
+          echo "- 🔗 **Data integrity**: Maintains proper ID relationships" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Quality reports available in workflow artifacts**" >> $GITHUB_STEP_SUMMARY
