@@ -10,7 +10,7 @@ This document provides a one-page overview of the automated workflows in this re
 | **4:00 AM** | 9:00 AM | `usaw-daily-data-quality-improvement-pipeline` | Integrity checks & self-healing (Member IDs, WSO fixes) | ~30-60 mins |
 | **12:00 PM** | 5:00 PM | `usaw-daily-discovery-pipeline` | **Discovery Phase**: Finds new meets & processes locations | ~20-60 mins |
 | **4:00 PM** | 9:00 PM | `usaw-daily-wso-club-directory-pipeline` | **Deep Scraping**: Meet addresses & Club directory | ~6 hours (max) |
-| **5:00 PM** | 10:00 PM | `usaw-daily-iwf-results-pipeline` | Scrapes international (IWF) events | ~2 hours |
+| **5:00 PM** | 10:00 PM | `iwf-daily-results-pipeline` | Scrapes international (IWF) events | ~2 hours |
 | **10:30 PM** | 3:30 AM* | `usaw-daily-geospatial-analytics-pipeline` | **Analytics Phase**: WSO assignment & Rolling metrics | ~2 hours |
 
 *UTC time is the following day.
@@ -55,8 +55,8 @@ This document provides a one-page overview of the automated workflows in this re
     - **Rolling Metrics:** Updates 12-month rolling stats for trend analysis.
 - **Timing:** Runs late at night to ensure all data collection from earlier in the day is included.
 
-### 6. USAW Daily IWF Results Pipeline
-- **File:** `.github/workflows/usaw-daily-iwf-results-pipeline.yml`
+### 6. IWF Daily Results Pipeline
+- **File:** `.github/workflows/iwf-daily-results-pipeline.yml`
 - **What it does:** Syncs international results from the IWF database.
 - **Scope:** Checks for new events and results in the IWF ecosystem.
 
