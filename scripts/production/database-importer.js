@@ -847,8 +847,23 @@ async function main() {
         const existingMeetData = await getExistingMeetIds();
 
         // Determine which CSV file to import
-        const currentYear = new Date().getFullYear();
-        const csvFilePath = `./meets_${currentYear}.csv`;
+        let targetYear = new Date().getFullYear();
+
+        // Check for --date argument
+        const dateArg = process.argv.find(arg => arg.startsWith('--date='));
+        if (dateArg) {
+            const val = dateArg.split('=')[1]; // YYYY-MM
+            if (val && val.includes('-')) {
+                const yearPart = val.split('-')[0];
+                const parsedYear = parseInt(yearPart, 10);
+                if (!isNaN(parsedYear)) {
+                    console.log(`📅 Date argument detected: ${val} -> Using year ${parsedYear}`);
+                    targetYear = parsedYear;
+                }
+            }
+        }
+
+        const csvFilePath = `./meets_${targetYear}.csv`;
 
         // Check if CSV file exists before attempting to read
         console.log(`🔍 Looking for CSV file: ${csvFilePath}`);

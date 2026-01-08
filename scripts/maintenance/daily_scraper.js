@@ -58,7 +58,7 @@ async function main() {
         await delay(10);
 
         // Step 3: Import to database
-        await runScript('scripts/production/database-importer.js');
+        await runScript('scripts/production/database-importer.js', args);
 
         // Step 4: Pipeline Handoff - Reimport & WSO Backfill
         const scrapedMeetsPath = 'output/scraped_meets.json';
