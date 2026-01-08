@@ -1,7 +1,7 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 const path = require('path');
-const {handleTotalAthleteString, getAmountMeetsOnPage} = require('../../utils/string_utils');
+const { handleTotalAthleteString, getAmountMeetsOnPage } = require('../../utils/string_utils');
 
 // Ensure directories exist
 function ensureDirectoryExists(dirPath) {
@@ -20,13 +20,13 @@ let processedMeetIds = new Set();
 // Setup API interception to capture URLs
 async function setupAPIInterception(page) {
     console.log('🔗 Setting up API interception...');
-    
+
     await page.setRequestInterception(true);
-    
+
     page.on('request', (request) => {
         request.continue();
     });
-    
+
     page.on('response', async (response) => {
         const url = response.url();
         if (url.includes('admin-usaw-rankings.sport80.com/api/events/table/data')) {
@@ -53,10 +53,10 @@ function matchAndExtractURLs(domMeets) {
             const dateMatch = apiRecord.date === domMeet.date;
             return meetMatch && dateMatch;
         });
-        
+
         let url = '';
         let meetId = null;
-        
+
         if (apiMatch && apiMatch.action && Array.isArray(apiMatch.action) && apiMatch.action.length > 0) {
             const route = apiMatch.action[0].route;
             if (route) {
@@ -65,7 +65,7 @@ function matchAndExtractURLs(domMeets) {
                 meetId = route.split('/').pop();
             }
         }
-        
+
         return {
             meet_id: meetId ? parseInt(meetId) : null,
             ...domMeet,
@@ -79,7 +79,7 @@ async function useDirectDateInput(page, dateSelector, targetYear) {
     console.log('📝 Using direct date input method...');
 
     // Try to set the date directly
-    const targetDate = `${targetYear}-01-01`; // January 1st of target year
+    const targetDate = `${targetYear}-01-01`; // Default to Jan 1st if no specific date logic passed (legacy fallback)
 
     await page.evaluate((selector, date) => {
         const input = document.querySelector(selector);
@@ -219,13 +219,13 @@ async function handleComplexDatePicker(page, targetYear, interfaceSelector, targ
         // Find ALL buttons with the target day text
         const allButtons = document.querySelectorAll('button');
         const dayButtons = Array.from(allButtons).filter(btn => btn.textContent.trim() === day.toString());
-        
+
         if (dayButtons.length > 0) {
             // For day 30, use the second button if multiple exist (END calendar)
             // For other days, use the first button
             const buttonIndex = (day === 31 && dayButtons.length > 1) ? 1 : 0;
             const dayButton = dayButtons[buttonIndex];
-            
+
             dayButton.click();
             return { success: true };
         }
@@ -370,7 +370,7 @@ async function extractMeetsFromPage(page, csvFilePath, errorFilePath, batchId) {
     try {
         // Wait a moment for API response to be captured
         await new Promise(resolve => setTimeout(resolve, 500));
-        
+
         const meetsOnPage = await page.evaluate(() => {
             const rows = Array.from(document.querySelectorAll('.data-table tbody tr'));
 
@@ -394,7 +394,7 @@ async function extractMeetsFromPage(page, csvFilePath, errorFilePath, batchId) {
 
         console.log(`📊 Found ${meetsOnPage.length} meets on this page`);
         console.log(`🔗 API cache has ${apiDataCache.length} records`);
-        
+
         // Match DOM data with API data to get URLs and meet_ids
         const meetsWithUrls = matchAndExtractURLs(meetsOnPage);
 
@@ -454,7 +454,7 @@ async function extractMeetsFromPage(page, csvFilePath, errorFilePath, batchId) {
 }
 
 // Main execution
-async function main() {
+async function main(dateConfig = null) {
     // Prevent multiple simultaneous executions
     if (global.isRunning) {
         console.log('🚫 Script is already running, skipping duplicate execution');
@@ -465,9 +465,11 @@ async function main() {
     try {
         console.log('🏋️ Daily Meet Scraper (2025) - WITH URLs + meet_id');
         console.log('=======================================================');
-        console.log('📅 Processing current year meets for daily scraper');
+        if (!dateConfig && !process.argv.find(arg => arg.startsWith('--date='))) {
+            console.log('📅 Processing current year meets for daily scraper (Default)');
+        }
 
-        const result = await getCurrentYearMeets();
+        const result = await getCurrentYearMeets(dateConfig);
 
         console.log('\n🎉 Daily scraping completed successfully!');
         console.log(`📊 Total meets extracted: ${result.totalMeets}`);
@@ -483,6 +485,36 @@ async function main() {
     }
 }
 
+function parseDateArg(arg) {
+    if (!arg) return null;
+    // Format: YYYY-MM
+    const parts = arg.split('-');
+    if (parts.length !== 2) {
+        console.warn('⚠️ Invalid date format. Expected YYYY-MM. Using default.');
+        return null;
+    }
+    const year = parseInt(parts[0], 10);
+    const month = parseInt(parts[1], 10);
+
+    if (isNaN(year) || isNaN(month) || month < 1 || month > 12) {
+        console.warn('⚠️ Invalid date values. Using default.');
+        return null;
+    }
+
+    // Calculate last day of month
+    const lastDay = new Date(year, month, 0).getDate();
+
+    console.log(`🎯 Targeted Scrape Mode: ${year}-${String(month).padStart(2, '0')}`);
+
+    return {
+        year,
+        startMonth: month,
+        startDay: 1,
+        endMonth: month,
+        endDay: lastDay
+    };
+}
+
 // Run if called directly - prevent duplicate execution
 if (require.main === module) {
     // Check if already running
@@ -494,9 +526,19 @@ if (require.main === module) {
     // Set flag to prevent duplicates
     process.env.SCRAPER_RUNNING = 'true';
 
-    main().finally(() => {
+    // Parse CLI args for --date=YYYY-MM
+    const dateArg = process.argv.find(arg => arg.startsWith('--date='));
+    let dateConfig = null;
+    if (dateArg) {
+        const val = dateArg.split('=')[1];
+        dateConfig = parseDateArg(val);
+    }
+
+    main(dateConfig).finally(() => {
         delete process.env.SCRAPER_RUNNING;
     });
+} else {
+    // Exported main doesn't auto-run
 }
 
 module.exports = {
@@ -535,8 +577,14 @@ function logError(errorFilePath, meetData, errorMessage) {
     appendCSVRow(errorFilePath, errorRow);
 }
 
-async function getCurrentYearMeets() {
-    console.log(`🏋️ Starting daily meet scraper (${new Date().getFullYear()})...`);
+async function getCurrentYearMeets(dateConfig = null) {
+    const currentYear = new Date().getFullYear();
+    const effectiveYear = dateConfig ? dateConfig.year : currentYear;
+
+    console.log(`🏋️ Starting daily meet scraper (${effectiveYear})...`);
+    if (dateConfig) {
+        console.log(`🎯 Date Filter: ${dateConfig.year}-${dateConfig.startMonth}-01 to ${dateConfig.year}-${dateConfig.endMonth}-${dateConfig.endDay}`);
+    }
 
     const timestamp = new Date().toISOString().slice(0, 19).replace(/:/g, '-');
 
@@ -561,9 +609,9 @@ async function getCurrentYearMeets() {
         ],
         slowMo: 25
     });
-    
+
     const page = await browser.newPage();
-    await page.setViewport({width: 1500, height: 1000});
+    await page.setViewport({ width: 1500, height: 1000 });
 
     // Setup API interception to capture URLs
     await setupAPIInterception(page);
@@ -575,9 +623,8 @@ async function getCurrentYearMeets() {
         files: []
     };
 
-    // Process current year for daily scraper
-    const currentYear = new Date().getFullYear();
-    const yearsToProcess = [currentYear];
+    // Process target year
+    const yearsToProcess = [effectiveYear];
 
     try {
         await page.goto(url, { waitUntil: 'networkidle0' });
@@ -609,18 +656,18 @@ async function getCurrentYearMeets() {
             try {
                 // Navigate to the specific year
                 console.log(`🎯 Setting up date filters for ${year}...`);
-                await navigateToYear(page, year);
+                await navigateToYear(page, year, dateConfig);
 
                 // Wait for data to load and verify we have results
                 console.log(`⏳ Waiting for filtered data to load for ${year}...`);
                 await new Promise(resolve => setTimeout(resolve, 2000));
-                
+
                 // Check if we have any data after filtering
                 const hasData = await page.evaluate(() => {
                     const rows = document.querySelectorAll('.data-table tbody tr');
                     return rows.length > 0;
                 });
-                
+
                 if (!hasData) {
                     console.log(`⚠️ No data found for year ${year} after filtering - this might be expected`);
                 }
@@ -631,11 +678,11 @@ async function getCurrentYearMeets() {
                 // Get meets from first page
                 let pageData = await getPageData(page);
                 console.log(`📄 Initial page data: ${pageData}`);
-                
+
                 const pageResult = await extractMeetsFromPage(page, csvFilePath, errorFilePath, batchId);
                 meetCount += pageResult.meetCount;
                 errorCount += pageResult.errorCount;
-                
+
                 console.log(`📊 First page results: ${pageResult.meetCount} meets, ${pageResult.errorCount} errors`);
 
                 // Process remaining pages
@@ -657,16 +704,16 @@ async function getCurrentYearMeets() {
                         const pageResult = await extractMeetsFromPage(page, csvFilePath, errorFilePath, batchId);
                         meetCount += pageResult.meetCount;
                         errorCount += pageResult.errorCount;
-                        
+
                         console.log(`📊 Page ${pageNumber} results: ${pageResult.meetCount} meets, ${pageResult.errorCount} errors`);
                         pageNumber++;
-                        
+
                         // Safety check to prevent infinite loops
                         if (pageNumber > 100) {
                             console.log('⚠️ Reached maximum page limit (100) - stopping pagination');
                             break;
                         }
-                        
+
                     } catch (paginationError) {
                         console.error(`❌ Error during pagination on page ${pageNumber}:`, paginationError.message);
                         break;
@@ -683,7 +730,7 @@ async function getCurrentYearMeets() {
             } catch (error) {
                 console.error(`💥 Error processing year ${year}:`, error);
                 console.error(`📍 Stack trace:`, error.stack);
-                
+
                 // Try to capture page state for debugging
                 try {
                     await page.screenshot({ path: `error_${year}_${timestamp}.png`, fullPage: true });
@@ -691,7 +738,7 @@ async function getCurrentYearMeets() {
                 } catch (screenshotError) {
                     console.log('⚠️ Could not save error screenshot');
                 }
-                
+
                 logError(errorFilePath, { year, error: 'Year processing failed', stack: error.stack }, error.message);
                 results.yearResults[year] = { meetCount: 0, errorCount: 1 };
                 results.totalErrors += 1;
@@ -717,8 +764,14 @@ async function getCurrentYearMeets() {
 }
 
 // ORIGINAL navigateToYear function with improved apply button handling
-async function navigateToYear(page, targetYear) {
-    console.log(`🎯 Navigating to year ${targetYear}...`);
+async function navigateToYear(page, targetYear, dateConfig = null) {
+    // Determine start/end dates
+    const startMonth = dateConfig ? dateConfig.startMonth : 1;
+    const startDay = dateConfig ? dateConfig.startDay : 1;
+    const endMonth = dateConfig ? dateConfig.endMonth : 12;
+    const endDay = dateConfig ? dateConfig.endDay : 31; // Simplistic end day for year default
+
+    console.log(`🎯 Navigating to range ${startMonth}/${startDay}/${targetYear} - ${endMonth}/${endDay}/${targetYear}...`);
 
     try {
         // Wait for page to fully load - REMOVE SCREENSHOT
@@ -775,15 +828,15 @@ async function navigateToYear(page, targetYear) {
         await new Promise(resolve => setTimeout(resolve, 1000));
 
         // Handle START date field first
-        console.log('📅 Setting START date range...');
-        await handleDateField(page, '#form__date_range_start', targetYear, 'start');
+        console.log(`📅 Setting START date range to ${startMonth}/${startDay}/${targetYear}...`);
+        await handleDateField(page, '#form__date_range_start', targetYear, 'start', startMonth, startDay);
 
         // Wait between date field operations - FAST
         await new Promise(resolve => setTimeout(resolve, 100));
 
         // Handle END date field second  
-        console.log('📅 Setting END date range...');
-        await handleDateField(page, '#form__date_range_end', targetYear, 'end');
+        console.log(`📅 Setting END date range to ${endMonth}/${endDay}/${targetYear}...`);
+        await handleDateField(page, '#form__date_range_end', targetYear, 'end', endMonth, endDay);
 
         // Wait before applying filter - FAST
         await new Promise(resolve => setTimeout(resolve, 100));
@@ -798,7 +851,7 @@ async function navigateToYear(page, targetYear) {
 
         // Apply the filter - dates need to be submitted to server
         console.log('🔄 Applying date filter to submit the date range...');
-        
+
         const applySelectors = [
             'div.v-card__actions.justify-end button.primary.my-2.v-btn.v-btn--is-elevated',
             'button.primary.my-2.v-btn.v-btn--is-elevated',
@@ -836,7 +889,7 @@ async function navigateToYear(page, targetYear) {
                 }
                 return false;
             });
-            
+
             if (textBasedApply) {
                 console.log('✅ Found and clicked apply button by text content');
                 applyClicked = true;
@@ -858,7 +911,7 @@ async function navigateToYear(page, targetYear) {
 }
 
 // ORIGINAL handleDateField function - UNMODIFIED
-async function handleDateField(page, fieldSelector, targetYear, fieldType) {
+async function handleDateField(page, fieldSelector, targetYear, fieldType, targetMonth = null, targetDay = null) {
     console.log(`📅 Handling ${fieldType} date field: ${fieldSelector}`);
 
     try {
@@ -912,14 +965,17 @@ async function handleDateField(page, fieldSelector, targetYear, fieldType) {
 
         // If we have a complex date picker, handle it
         if (activeInterface.includes('date-picker') || activeInterface.includes('v-menu')) {
-            // Set Jan 1 of target year for start field
+            // Set specific date or default
             if (fieldType === 'start') {
-                await handleComplexDatePicker(page, targetYear, activeInterface, 1, 1); // January 1 of target year
+                const month = targetMonth || 1;
+                const day = targetDay || 1;
+                await handleComplexDatePicker(page, targetYear, activeInterface, month, day);
             } else if (fieldType === 'end') {
-                // Set Dec 31 of target year for end field
-                await handleComplexDatePicker(page, targetYear, activeInterface, 12, 31); // December 31 of target year
+                const month = targetMonth || 12;
+                const day = targetDay || 31;
+                await handleComplexDatePicker(page, targetYear, activeInterface, month, day);
             } else {
-                await handleComplexDatePicker(page, targetYear, activeInterface); // Default for other
+                await handleComplexDatePicker(page, targetYear, activeInterface); // Default
             }
 
             // Close this individual calendar (use Escape instead of clicking Apply)

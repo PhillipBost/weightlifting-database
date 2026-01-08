@@ -21,6 +21,11 @@ on:
         required: false
         type: boolean
         default: false
+      target_date:
+        description: 'Target Date (YYYY-MM)'
+        required: false
+        type: string
+        default: ''
 
 jobs:
   daily-meet-scraper:
@@ -55,7 +60,12 @@ jobs:
           echo "🏋️ Starting daily meet scraper..."
           echo "🕐 Start time: $(date +'%Y-%m-%d %H:%M:%S %Z')"
 
-          node scripts/maintenance/daily_scraper.js 2>&1 | tee logs/daily-meet-scraper.log
+          if [ -n "${{ inputs.target_date }}" ]; then
+            echo "📅 Running for target date: ${{ inputs.target_date }}"
+            node scripts/maintenance/daily_scraper.js --date="${{ inputs.target_date }}" 2>&1 | tee logs/daily-meet-scraper.log
+          else
+            node scripts/maintenance/daily_scraper.js 2>&1 | tee logs/daily-meet-scraper.log
+          fi
 
           if [ $? -eq 0 ]; then
             echo "✅ Daily meet scraper completed successfully"

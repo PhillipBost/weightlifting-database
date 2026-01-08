@@ -50,7 +50,9 @@ async function main() {
 
     try {
         // Step 1: Run meet scraper
-        await runScript('scripts/production/meet_scraper_2025.js');
+        // Pass any command line arguments (like --date=2025-12) to the scraper
+        const args = process.argv.slice(2);
+        await runScript('scripts/production/meet_scraper_2025.js', args);
 
         // Step 2: Wait 10 seconds
         await delay(10);
