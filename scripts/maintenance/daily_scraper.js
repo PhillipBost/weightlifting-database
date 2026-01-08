@@ -4,31 +4,32 @@ console.log('📋 Files in current directory:', require('fs').readdirSync('.'));
 
 const { spawn } = require('child_process');
 const path = require('path');
+const fs = require('fs');
 
-async function runScript(scriptName) {
+async function runScript(scriptName, args = []) {
     return new Promise((resolve, reject) => {
         console.log(`🚀 Starting ${scriptName}...`);
+        if (args.length > 0) console.log(`   Args: ${args.join(' ')}`);
         console.log(`📅 ${new Date().toISOString()}`);
-        console.log(`🔍 About to spawn: node ${scriptName}`);
-        
-        const child = spawn('node', [scriptName], {
-            stdio: 'inherit', // This will show the script output in real-time
+
+        const child = spawn('node', [scriptName, ...args], {
+            stdio: 'inherit',
             cwd: process.cwd()
         });
-        
+
         console.log(`✅ Spawn created for ${scriptName}`);
-        
+
         child.on('close', (code) => {
             console.log(`📊 ${scriptName} process closed with code: ${code}`);
             if (code === 0) {
-                console.log(`✅ ${scriptName} completed successfully (exit code: ${code})`);
+                console.log(`✅ ${scriptName} completed successfully`);
                 resolve(code);
             } else {
                 console.log(`❌ ${scriptName} failed with exit code: ${code}`);
                 reject(new Error(`${scriptName} failed with exit code: ${code}`));
             }
         });
-        
+
         child.on('error', (error) => {
             console.log(`💥 Error running ${scriptName}:`, error.message);
             reject(error);
@@ -46,17 +47,50 @@ async function main() {
     console.log('==========================================');
     console.log(`📍 Working directory: ${process.cwd()}`);
     console.log(`🕐 Start time: ${new Date().toLocaleString('en-US', { timeZone: 'America/New_York' })}`);
-    
+
     try {
         // Step 1: Run meet scraper
         await runScript('scripts/production/meet_scraper_2025.js');
-        
+
         // Step 2: Wait 10 seconds
         await delay(10);
-        
+
         // Step 3: Import to database
         await runScript('scripts/production/database-importer.js');
-        
+
+        // Step 4: Pipeline Handoff - Reimport & WSO Backfill
+        const scrapedMeetsPath = 'output/scraped_meets.json';
+        if (fs.existsSync(scrapedMeetsPath)) {
+            console.log('\n🔄 Checking for scraped meets to post-process...');
+            const meetIds = JSON.parse(fs.readFileSync(scrapedMeetsPath, 'utf8'));
+
+            if (meetIds && meetIds.length > 0) {
+                console.log(`🎯 Found ${meetIds.length} meets to post-process: ${meetIds.join(', ')}`);
+                const meetIdString = meetIds.join(',');
+
+                // Step 4a: Run Reimport (Data Quality Check)
+                console.log('\n🔍 Step 4a: Running Data Quality Reimport (Catching zero-totals)...');
+                await runScript('scripts/unified-scraper.js', [
+                    '--mode=reimport',
+                    `--meet-ids=${meetIdString}`,
+                    '--force'
+                ]);
+
+                // Step 4b: Run WSO Backfill (Metadata Enrichment)
+                console.log('\n🌍 Step 4b: Running WSO Metadata Backfill...');
+                // Note: No --force needed here as we want to fill missing data
+                await runScript('scripts/unified-scraper.js', [
+                    '--mode=wso',
+                    `--meet-ids=${meetIdString}`
+                ]);
+
+            } else {
+                console.log('ℹ️ Scraped meets file exists but is empty. No post-processing needed.');
+            }
+        } else {
+            console.log('ℹ️ No scraped_meets.json found. Skipping post-processing.');
+        }
+
         console.log('\n🎉 Daily scraping and import completed successfully!');
         console.log(`🕐 End time: ${new Date().toLocaleString()}`);
         process.exit(0); // Exit cleanly so the process doesn't hang

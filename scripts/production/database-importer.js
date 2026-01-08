@@ -202,6 +202,19 @@ async function scrapeAndImportMeetResults(newMeetIds, meetings) {
 
     console.log(`📋 Found ${meetsToProcess.length} meets to scrape results for`);
 
+    // WRITE MEETS TO JSON FOR PIPELINE HANDOFF
+    try {
+        const outputDir = './output';
+        if (!fs.existsSync(outputDir)) {
+            fs.mkdirSync(outputDir, { recursive: true });
+        }
+        const meetIdsToProcess = meetsToProcess.map(m => m.meet_id);
+        fs.writeFileSync(path.join(outputDir, 'scraped_meets.json'), JSON.stringify(meetIdsToProcess, null, 2));
+        console.log(`💾 Exported ${meetIdsToProcess.length} meet IDs to ${path.join(outputDir, 'scraped_meets.json')}`);
+    } catch (err) {
+        console.error('⚠️ Failed to export meet IDs for pipeline:', err.message);
+    }
+
     let processedResults = 0;
     let errorCount = 0;
     const tempFiles = [];
@@ -299,7 +312,7 @@ async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId) {
         .select('meet_id, meet_internal_id, Meet, Date')
         .eq('meet_id', targetMeetId)
         .single();
-    
+
     if (meetError) {
         console.log(`    ❌ Error getting meet info: ${meetError.message}`);
         return false;
@@ -408,29 +421,29 @@ async function runSport80MemberUrlVerification(lifterName, potentialLifterIds, t
                 }
             } else {
                 console.log(`    🔍 Lifter ${lifterId} (${lifter.athlete_name}) has no internal_id - attempting Sport80 search...`);
-                
+
                 // For lifters without internal_ids, search Sport80 to find their internal_id
                 const foundInternalId = await searchSport80ForLifter(lifter.athlete_name);
-                
+
                 if (foundInternalId) {
                     console.log(`    🎯 Found internal_id ${foundInternalId} for ${lifter.athlete_name} via Sport80 search`);
-                    
+
                     // Verify this lifter participated in the target meet
                     const verified = await verifyLifterParticipationInMeet(foundInternalId, targetMeetId);
-                    
+
                     if (verified) {
                         // Update the lifter record with the found internal_id
                         const { error: updateError } = await supabase
                             .from('usaw_lifters')
                             .update({ internal_id: foundInternalId })
                             .eq('lifter_id', lifterId);
-                            
+
                         if (!updateError) {
                             console.log(`    ✅ CONFIRMED & ENRICHED: Using lifter ${lifterId} for meet ${targetMeetId} (added internal_id ${foundInternalId})`);
                         } else {
                             console.log(`    ✅ CONFIRMED: Using lifter ${lifterId} for meet ${targetMeetId} (internal_id update failed: ${updateError.message})`);
                         }
-                        
+
                         return lifterId;
                     }
                 } else {
@@ -472,7 +485,7 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
     if (lifterIds.length === 0) {
         // No existing lifter found - create new one
         console.log(`  ➕ Creating new lifter: ${cleanName}`);
-        
+
         const { data: newLifter, error: createError } = await supabase
             .from('usaw_lifters')
             .insert({
@@ -507,7 +520,7 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
             } else {
                 // Verification failed - create new lifter as fallback
                 console.log(`  ⚠️ Could not verify lifter ${cleanName} - creating new record`);
-                
+
                 const { data: newLifter, error: createError } = await supabase
                     .from('usaw_lifters')
                     .insert({
@@ -546,7 +559,7 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
 
     // FALLBACK: If we can't disambiguate, create a new lifter record
     console.log(`  ⚠️ Could not disambiguate lifter "${cleanName}" - ${lifterIds.length} candidates found but none verified - creating new record`);
-    
+
     const { data: newLifter, error: createError } = await supabase
         .from('usaw_lifters')
         .insert({
