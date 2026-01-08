@@ -75,6 +75,12 @@ class DetailedReImportOrchestrator {
             result.resultsAfter = await this._getDatabaseResultCount(meetId);
             result.resultsAdded = result.resultsAfter - result.resultsBefore;
 
+            // Step 4b: Check for phantom records (Extra records in DB that are not in scraped data)
+            if (result.resultsAfter > scrapedData.athleteCount) {
+                this.logger.warn(`⚠️ Mismatch detected: DB has ${result.resultsAfter} results, Scrape has ${scrapedData.athleteCount}. Investigating phantom records...`);
+                await this._identifyAndLogPhantomRecords(meetId, scrapedData.athletes);
+            }
+
             // Step 5: Report results
             if (importResult.imported > 0) {
                 this.logger.logMeetComplete(meetId, importResult.imported);
@@ -163,7 +169,8 @@ class DetailedReImportOrchestrator {
                         name: row.Lifter || 'Unknown',
                         club: row.Club || 'Unknown',
                         bodyweight: row['Body Weight (Kg)'] || 'Unknown',
-                        total: row.Total || 'Unknown'
+                        // Fix: 0 is falsy, but valid for totals. explicit check.
+                        total: (row.Total !== null && row.Total !== undefined && row.Total !== '') ? row.Total : 'Unknown'
                     };
                 })
             };
@@ -306,6 +313,107 @@ class DetailedReImportOrchestrator {
         );
 
         return results;
+    }
+
+    /**
+     * Identify and log records present in DB but missing from scrape
+     */
+    async _identifyAndLogPhantomRecords(meetId, scrapedAthletes) {
+        try {
+            // Fetch all results for this meet
+            const { data: dbResults, error } = await this.supabase
+                .from('usaw_meet_results')
+                .select('result_id, lifter_name, total, body_weight_kg, date')
+                .eq('meet_id', meetId);
+
+            if (error) {
+                this.logger.error(`Failed to fetch DB results for phantom check: ${error.message}`);
+                return;
+            }
+
+            // Helper to create normalization key
+            const createKey = (name, total) => {
+                const normName = name ? name.trim().toLowerCase() : '';
+
+                // Normalize total: treat '---', null, undefined, 0, '0' as identical '0'
+                let normTotal = '0';
+                if (total !== null && total !== undefined) {
+                    const strTotal = String(total).trim();
+                    if (strTotal !== '' && strTotal !== '---' && strTotal !== '--' && strTotal !== '0') {
+                        normTotal = strTotal;
+                    }
+                }
+
+                return `${normName}|${normTotal}`;
+            };
+
+            // Build Set of Scraped Keys
+            const scrapedKeys = new Set();
+            scrapedAthletes.forEach(a => {
+                scrapedKeys.add(createKey(a.name, a.total));
+            });
+
+            // Also build a name-only set for fuzzier matching if needed (optional, keeping strict for now)
+
+            const phantomRecords = [];
+            dbResults.forEach(r => {
+                const key = createKey(r.lifter_name, r.total);
+                if (!scrapedKeys.has(key)) {
+                    // Double check if we have a duplicate of a valid record in DB vs just a missing one?
+                    // For now, if it's not in scraped set, it's suspect.
+                    phantomRecords.push(r);
+                } else {
+                    // Check for duplicates?
+                    // If DB has 2, scrape has 1, the key exists in Set, so this logic won't catch it.
+                    // But strictly speaking, "Phantom" usually means "Not in source".
+                    // If user wants to catch duplicates, we need Map counting.
+                    // Let's implement Map counting for robustness.
+                }
+            });
+
+            // Re-implement with counting to catch duplicates too
+            const scrapedMap = new Map();
+            scrapedAthletes.forEach(a => {
+                const key = createKey(a.name, a.total);
+                scrapedMap.set(key, (scrapedMap.get(key) || 0) + 1);
+            });
+
+            const dbMap = new Map();
+            dbResults.forEach(r => {
+                const key = createKey(r.lifter_name, r.total);
+                if (!dbMap.has(key)) dbMap.set(key, []);
+                dbMap.get(key).push(r);
+            });
+
+            const finalPhantomList = [];
+
+            dbMap.forEach((rows, key) => {
+                const scrapeCount = scrapedMap.get(key) || 0;
+                const dbCount = rows.length;
+
+                if (dbCount > scrapeCount) {
+                    const extraCount = dbCount - scrapeCount;
+                    // Take the last 'extraCount' rows as phantoms
+                    // (Arbitrary choice, but usually fine for duplicates)
+                    for (let i = 0; i < extraCount; i++) {
+                        // We take from the end of the array
+                        finalPhantomList.push(rows[rows.length - 1 - i]);
+                    }
+                }
+            });
+
+            if (finalPhantomList.length > 0) {
+                this.logger.warn(`👻 Found ${finalPhantomList.length} PHANTOM records in database (missing from Sport80):`);
+                finalPhantomList.forEach(r => {
+                    this.logger.warn(`   - ID: ${r.result_id} | Name: ${r.lifter_name} | Total: ${r.total} | BW: ${r.body_weight_kg}`);
+                });
+            } else {
+                this.logger.info('   No specific phantom records identified (counts mismatch might be due to normalization issues?)');
+            }
+
+        } catch (error) {
+            this.logger.error(`Error during phantom record identification: ${error.message}`);
+        }
     }
 }
 
