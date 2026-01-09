@@ -181,8 +181,8 @@ async function upsertMeetsToDatabase(meetings) {
 }
 
 // REAL Sport80 member page verification using puppeteer
-async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId, athleteName, requiredWeightClass = null) {
-    console.log(`    🐞 DEBUG verifyLifterParticipationInMeet: internalId=${lifterInternalId}, meetId=${targetMeetId}, name=${athleteName}, wc=${requiredWeightClass}`);
+async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId, athleteName, requiredWeightClass = null, requiredTotal = null) {
+    console.log(`    🐞 DEBUG verifyLifterParticipationInMeet: internalId=${lifterInternalId}, meetId=${targetMeetId}, name=${athleteName}, wc=${requiredWeightClass}, total=${requiredTotal}`);
     // Get target meet information for enhanced matching
     const { data: targetMeet, error: meetError } = await supabase
         .from('usaw_meets')
@@ -237,7 +237,9 @@ async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId, a
 
             // Extract meet information from current page
             // Also extract CATEGORY column to infer gender if possible
-            const pageData = await page.evaluate(() => {
+            // Extract meet information from current page
+            // Also extract CATEGORY column to infer gender if possible
+            const pageData = await page.evaluate((targetName, targetDate) => {
                 const meetRows = Array.from(document.querySelectorAll('.data-table div div.v-data-table div.v-data-table__wrapper table tbody tr'));
 
                 const meetInfo = meetRows.map(row => {
@@ -248,10 +250,21 @@ async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId, a
                     const meetDate = cells[1]?.textContent?.trim();
                     const ageCategory = cells[2]?.textContent?.trim(); // "Open Men's 67kg" etc
 
+                    // Try to extract Total (usually around index 6, but let's be safe and check header or assume standard layout)
+                    // Standard Layout: Meet, Date, Cat, BW, Sn, CJ, Total, Place, Points
+                    const totalStr = cells[6]?.textContent?.trim();
+                    const total = totalStr && !isNaN(parseFloat(totalStr)) ? parseFloat(totalStr) : null;
+
+                    // DEBUG: Log cells if this looks like the target meet
+                    if (meetName && targetMeetName && meetName.toLowerCase().includes(targetMeetName.toLowerCase().substring(0, 10))) {
+                        console.log(`      🐞 DEBUG ROW for "${meetName}": [${cells.map((c, i) => `${i}:${c.textContent.trim()}`).join(', ')}]`);
+                    }
+
                     return {
                         name: meetName,
                         date: meetDate,
-                        category: ageCategory
+                        category: ageCategory,
+                        total: total
                     };
                 }).filter(Boolean);
 
@@ -369,7 +382,18 @@ async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId, a
                     }
                 }
 
-                if (nameMatch && dateMatch && weightClassMatch) {
+                // NEW: Check Total Match
+                let totalMatch = true;
+                if (nameMatch && dateMatch && requiredTotal !== null && meet.total !== null) {
+                    if (Math.abs(meet.total - requiredTotal) > 0.1) {
+                        totalMatch = false;
+                        console.log(`      ⛔ Total Mismatch: Required ${requiredTotal} vs History ${meet.total}`);
+                    } else {
+                        console.log(`      ✅ Total Verified: ${meet.total} matches ${requiredTotal}`);
+                    }
+                }
+
+                if (nameMatch && dateMatch && weightClassMatch && totalMatch) {
                     foundMeet = meet;
                     break;
                 }
@@ -563,7 +587,7 @@ async function verifyLifterOnMeetPage(browser, meetId, athleteName) {
 // ========================================
 
 // Extract internal_id and membership_number by clicking a specific athlete's row on rankings page
-async function extractInternalIdByClicking(page, divisionCode, startDate, endDate, targetAthleteName) {
+async function extractInternalIdByClicking(page, divisionCode, startDate, endDate, targetAthleteName, expectedTotal = null) {
     try {
         const url = buildRankingsURL(divisionCode, startDate, endDate);
         console.log(`      🌐 Loading rankings page for clicking...`);
@@ -583,31 +607,78 @@ async function extractInternalIdByClicking(page, divisionCode, startDate, endDat
 
         while (!found) {
             // Search for target athlete on current page
-            const athleteData = await page.evaluate((targetName) => {
+            const athleteData = await page.evaluate((targetName, expTotal) => {
+                const headers = Array.from(document.querySelectorAll('.v-data-table__wrapper thead th'))
+                    .map(th => th.textContent.trim().toLowerCase());
+
+                // Dynamic Column Mapping for Rankings Page
+                const colMap = {
+                    athleteName: headers.findIndex(h => h.includes('athlete') || h.includes('lifter') || h.includes('name')),
+                    total: headers.findIndex(h => h.includes('total'))
+                };
+
+                // Fallbacks if headers not found (standard layout)
+                if (colMap.athleteName === -1) colMap.athleteName = 3;
+                if (colMap.total === -1) colMap.total = 8;
+
                 const rows = Array.from(document.querySelectorAll('.v-data-table__wrapper tbody tr'));
+                const candidates = [];
 
                 for (let index = 0; index < rows.length; index++) {
                     const row = rows[index];
                     const cells = Array.from(row.querySelectorAll('td'));
-                    const athleteName = cells[3]?.textContent?.trim() || '';
+                    const athleteName = cells[colMap.athleteName]?.textContent?.trim() || '';
 
                     if (athleteName.toLowerCase().includes(targetName.toLowerCase()) ||
                         targetName.toLowerCase().includes(athleteName.toLowerCase())) {
 
-                        return {
+                        const totalStr = cells[colMap.total]?.textContent?.trim();
+                        const total = totalStr && !isNaN(parseFloat(totalStr)) ? parseFloat(totalStr) : null;
+
+                        candidates.push({
                             found: true,
                             rowIndex: index,
                             athleteName: athleteName,
-                            isClickable: row.classList.contains('row-clickable')
-                        };
+                            isClickable: row.classList.contains('row-clickable'),
+                            total: total
+                        });
                     }
                 }
 
-                return { found: false };
-            }, targetAthleteName);
+                // If we have candidates, try to find the best match
+                if (candidates.length > 0) {
+                    let selected = candidates[0];
+                    let matchType = 'default';
+
+                    if (expTotal !== null) {
+                        // Try strict total match
+                        const totalMatch = candidates.find(c => c.total !== null && Math.abs(c.total - expTotal) <= 0.1);
+                        if (totalMatch) {
+                            selected = totalMatch;
+                            matchType = 'exact_total';
+                        }
+                    }
+
+                    return {
+                        ...selected,
+                        _debugCandidates: candidates.map(c => ({
+                            name: c.athleteName,
+                            total: c.total,
+                            matchType: (c === selected) ? 'SELECTED' : 'rejected'
+                        })),
+                        _debugExpTotal: expTotal
+                    };
+                }
+
+                return { found: false, _debugCandidates: [], _debugExpTotal: expTotal };
+            }, targetAthleteName, expectedTotal);
 
             if (athleteData.found) {
                 console.log(`      ✅ Found "${athleteData.athleteName}" on page ${currentPage}`);
+                if (athleteData._debugCandidates) {
+                    console.log(`      🐞 DEBUG CANDIDATES (ExpTotal: ${athleteData._debugExpTotal}):`);
+                    console.log(JSON.stringify(athleteData._debugCandidates, null, 2));
+                }
 
                 if (!athleteData.isClickable) {
                     console.log(`      ⚠️ Row is not clickable`);
@@ -615,7 +686,7 @@ async function extractInternalIdByClicking(page, divisionCode, startDate, endDat
                 }
 
                 // Click the row and wait for navigation
-                console.log(`      🖱️ Clicking row...`);
+                console.log(`      🖱️ Clicking row... (Total: ${athleteData.total || 'N/A'})`);
 
                 await Promise.all([
                     page.waitForNavigation({ waitUntil: 'networkidle0', timeout: 10000 }),
@@ -898,7 +969,7 @@ async function batchEnrichAthletes(scrapedAthletes, startDate, endDate, ageCateg
     // Note: Scraped rankings contain athletes from ALL meets in this division/date range
     const { data: potentialResults, error } = await supabase
         .from('usaw_meet_results')
-        .select('result_id, lifter_id, lifter_name, wso, club_name, competition_age, gender, meet_id, date, national_rank')
+        .select('result_id, lifter_id, lifter_name, wso, club_name, competition_age, gender, meet_id, date, national_rank, total')
         .in('lifter_name', athleteNames)
         .gte('date', formatDate(startDate))
         .lte('date', formatDate(endDate))
@@ -925,16 +996,35 @@ async function batchEnrichAthletes(scrapedAthletes, startDate, endDate, ageCateg
 
     for (const dbResult of potentialResults) {
         const nameLower = dbResult.lifter_name.toLowerCase();
+        let scrapedAthlete = null;
 
-        // Skip if this name appears multiple times in the rankings (ambiguous)
+        // Handle duplicates via Total disambiguation
         if (nameCounts[nameLower] > 1) {
-            console.log(`      ⚠️  Skipping batch enrichment for "${dbResult.lifter_name}" due to duplicate names in rankings`);
-            continue;
-        }
+            if (dbResult.total !== null && dbResult.total !== undefined) {
+                const dbTotal = parseFloat(dbResult.total);
+                const candidates = scrapedAthletes.filter(a => a.athleteName.toLowerCase() === nameLower);
 
-        const scrapedAthlete = scrapedAthletes.find(a =>
-            a.athleteName.toLowerCase() === nameLower
-        );
+                // Find candidate with matching total (tolerance 0.1)
+                scrapedAthlete = candidates.find(a => {
+                    const scrapedTotal = a.total && !isNaN(parseFloat(a.total)) ? parseFloat(a.total) : null;
+                    return scrapedTotal !== null && Math.abs(scrapedTotal - dbTotal) <= 0.1;
+                });
+
+                if (scrapedAthlete) {
+                    // console.log(`      ✅ Disambiguated enrichment for "${dbResult.lifter_name}" by Total (${dbTotal})`);
+                } else {
+                    console.log(`      ⚠️  Skipping batch enrichment for "${dbResult.lifter_name}" (Duplicate Name, Total Mismatch [DB: ${dbTotal}])`);
+                    continue;
+                }
+            } else {
+                console.log(`      ⚠️  Skipping batch enrichment for "${dbResult.lifter_name}" (Duplicate Name, DB missing Total)`);
+                continue;
+            }
+        } else {
+            scrapedAthlete = scrapedAthletes.find(a =>
+                a.athleteName.toLowerCase() === nameLower
+            );
+        }
 
         if (scrapedAthlete) {
             // Update meet results
@@ -1250,7 +1340,7 @@ function generateAlternativeDivisions(originalCategory, bodyWeight, eventDateStr
     return uniqueCandidates;
 }
 
-async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, targetMeetId, eventDate, ageCategory, weightClass, bodyweight = null, isFallbackCheck = false) {
+async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, targetMeetId, eventDate, ageCategory, weightClass, bodyweight = null, isFallbackCheck = false, expectedTotal = null) {
     if (!isFallbackCheck) {
         console.log(`  🔍 Tier 1: Base64 URL Lookup Protocol (Division Rankings)`);
     } else {
@@ -1374,9 +1464,27 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
         await batchEnrichAthletes(scrapedAthletes, startDate, endDate, ageCategory, weightClass);
 
         // VERIFICATION - Check if target lifter was found
-        const targetAthlete = scrapedAthletes.find(a =>
-            a.athleteName.toLowerCase() === lifterName.toLowerCase()
-        );
+        let targetAthlete = null;
+
+        if (expectedTotal) {
+            targetAthlete = scrapedAthletes.find(a =>
+                a.athleteName.toLowerCase() === lifterName.toLowerCase() &&
+                a.total &&
+                Math.abs(parseFloat(a.total) - parseFloat(expectedTotal)) <= 0.1
+            );
+
+            if (!targetAthlete) {
+                console.log(`    ⚠️ Precise match with Total ${expectedTotal} failed. Trying name-only match as fallback...`);
+                // Fallback to name only if precise total match fails (maybe total logic differs slightly)
+                targetAthlete = scrapedAthletes.find(a =>
+                    a.athleteName.toLowerCase() === lifterName.toLowerCase()
+                );
+            }
+        } else {
+            targetAthlete = scrapedAthletes.find(a =>
+                a.athleteName.toLowerCase() === lifterName.toLowerCase()
+            );
+        }
 
         if (targetAthlete) {
             console.log(`    ✅ Tier 1${isFallbackCheck ? '.6' : ''} VERIFIED: "${lifterName}" found in division rankings`);
@@ -1392,7 +1500,8 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
                         divisionCode,
                         startDate,
                         endDate,
-                        lifterName
+                        lifterName,
+                        expectedTotal
                     );
 
                     if (extractedData && extractedData.internalId) {
@@ -1651,7 +1760,8 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
                     cand.category,
                     cand.weightClass,
                     bodyweight,
-                    true // Mark as fallback to prevent infinite recursion
+                    true, // Mark as fallback to prevent infinite recursion
+                    expectedTotal
                 );
 
                 if (result) {
@@ -2124,7 +2234,9 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
             additionalData.eventDate,
             additionalData.ageCategory,
             additionalData.weightClass,
-            additionalData.bodyweight // Pass bodyweight for Tier 1.6
+            additionalData.bodyweight, // Pass bodyweight for Tier 1.6
+            false, // isFallbackCheck
+            additionalData.expectedTotal // Pass expectedTotal
         );
 
         if (tier1Result) {
@@ -2301,7 +2413,9 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
         additionalData.eventDate,
         additionalData.ageCategory,
         additionalData.weightClass,
-        additionalData.bodyweight // Pass bodyweight for Tier 1.6
+        additionalData.bodyweight, // Pass bodyweight for Tier 1.6
+        false, // isFallbackCheck
+        additionalData.expectedTotal // Pass expectedTotal
     );
 
     if (base64Result) {
@@ -2470,7 +2584,8 @@ async function processMeetCsvFile(csvFilePath, meetId, meetName) {
                     weightClass: row['Weight Class']?.trim() || null,
                     membership_number: row['Membership Number']?.trim() || null,
                     internal_id: row['Internal_ID'] ? parseInt(row['Internal_ID']) : null,
-                    bodyweight: row['Body Weight (Kg)']?.toString().trim() || null
+                    bodyweight: row['Body Weight (Kg)']?.toString().trim() || null,
+                    expectedTotal: parseLiftValue(row.Total, 'Total') // Check for Total match in Tier 1.5
                 });
 
                 // Create meet result with proper lifter_id
@@ -2502,6 +2617,146 @@ async function processMeetCsvFile(csvFilePath, meetId, meetName) {
                 };
 
                 // Clean up any incomplete results logic removed per user request (update only)
+
+                // --------------------------------------------------------------------------------
+                // Check if this result would overwrite an existing one with different data
+                const { data: existingConflict } = await supabase
+                    .from('usaw_meet_results')
+                    .select('result_id, total, body_weight_kg')
+                    .eq('meet_id', meetId)
+                    .eq('lifter_id', lifter.lifter_id)
+                    .eq('weight_class', resultData.weight_class) // Constraint is (meet_id, lifter_id, weight_class)
+                    .maybeSingle();
+
+                // if (!existingConflict) console.log(`  🐞 No existing result found for lifter ${lifter.lifter_id}`);
+                // if (existingConflict) console.log(`  🐞 Found existing result: Total=${existingConflict.total}`);
+
+                if (existingConflict) {
+                    // Helper to normalize totals for comparison (handle 0 vs null vs string mismatch)
+                    const normDbTotal = (existingConflict.total === null || existingConflict.total === undefined) ? 'null' : parseFloat(existingConflict.total);
+                    const normNewTotal = (resultData.total === null || resultData.total === undefined) ? 'null' : parseFloat(resultData.total);
+
+                    // Strict collision check: Both must be numbers and different (tolerance 0.1)
+                    const isTotalConflict = (typeof normDbTotal === 'number' && typeof normNewTotal === 'number' && Math.abs(normDbTotal - normNewTotal) > 0.1);
+
+                    if (isTotalConflict) {
+                        console.log(`  ⚠️ COLLISION DETECTED: '${lifterName}' (ID: ${lifter.lifter_id}) has existing result with Total ${normDbTotal}, new is ${normNewTotal}.`);
+                        console.log(`  🔄 Attempting to find ALTERNATIVE existing lifter identity...`);
+
+                        // 1. Find other candidates with same name
+                        const { data: otherCandidates } = await supabase
+                            .from('usaw_lifters')
+                            .select('lifter_id, internal_id, membership_number')
+                            .eq('athlete_name', lifterName)
+                            .neq('lifter_id', lifter.lifter_id); // Exclude the one we collided with
+
+                        let switchedToCandidate = false;
+
+                        if (otherCandidates && otherCandidates.length > 0) {
+                            console.log(`  🔎 Found ${otherCandidates.length} potential alternative candidate(s).`);
+
+                            for (const candidate of otherCandidates) {
+                                console.log(`    Checking candidate ID: ${candidate.lifter_id} (Internal: ${candidate.internal_id || 'None'})...`);
+
+                                // Check if this candidate ALSO has a conflicting result in this meet
+                                const { data: candConflict } = await supabase
+                                    .from('usaw_meet_results')
+                                    .select('result_id, total')
+                                    .eq('meet_id', meetId)
+                                    .eq('lifter_id', candidate.lifter_id)
+                                    .eq('weight_class', resultData.weight_class)
+                                    .maybeSingle();
+
+                                if (candConflict) {
+                                    const normCandTotal = (candConflict.total === null || candConflict.total === undefined) ? 'null' : parseFloat(candConflict.total);
+                                    if (typeof normNewTotal === 'number' && typeof normCandTotal === 'number' && Math.abs(normCandTotal - normNewTotal) > 0.1) {
+                                        console.log(`    ❌ Candidate ${candidate.lifter_id} ALSO has a conflicting result (Total: ${normCandTotal}). Skipping.`);
+                                        continue;
+                                    }
+                                    // If match, we can merge/update this candidate. Ideally verify first.
+                                }
+
+                                // Verify participation if possible
+                                if (candidate.internal_id) {
+                                    // Run verification
+                                    const verification = await verifyLifterParticipationInMeet(candidate.internal_id, meetId, lifterName, null, parseFloat(resultData.total));
+                                    if (verification.verified) {
+                                        console.log(`    ✅ Candidate ${candidate.lifter_id} VERIFIED via Sport80 history! Switching identity.`);
+                                        resultData.lifter_id = candidate.lifter_id;
+                                        // Also use their info for enrichment
+                                        if (verification.metadata?.membershipNumber) {
+                                            resultData.membership_number = verification.metadata.membershipNumber;
+                                        }
+
+                                        // --------------------------------------------------------------------------------
+                                        // NEW: Run Tier 1 Verification to get full metadata (Club, WSO, etc.) for this candidate
+                                        // --------------------------------------------------------------------------------
+                                        console.log(`    🔄 runBase64UrlLookupProtocol for metadata enrichment on candidate...`);
+                                        try {
+                                            const tier1Data = await runBase64UrlLookupProtocol(
+                                                lifterName,
+                                                [candidate.lifter_id],
+                                                meetId,
+                                                row.Date || resultData.date,
+                                                row['Age Category'] || resultData.age_category,
+                                                row['Weight Class'] || resultData.weight_class,
+                                                row['Body Weight (Kg)'] || resultData.body_weight_kg,
+                                                false, // isFallbackCheck
+                                                parseFloat(resultData.total) // expectedTotal
+                                            );
+
+                                            if (tier1Data && tier1Data.scrapedData) {
+                                                console.log(`    ✅ Tier 1 Enrichment Successful for candidate ${candidate.lifter_id}`);
+                                                // Enrich resultData
+                                                if (tier1Data.scrapedData.club) resultData.club_name = tier1Data.scrapedData.club;
+                                                if (tier1Data.scrapedData.wso) resultData.wso = tier1Data.scrapedData.wso;
+                                                if (tier1Data.scrapedData.gender) resultData.gender = tier1Data.scrapedData.gender;
+                                                if (tier1Data.scrapedData.lifterAge) resultData.competition_age = parseInt(tier1Data.scrapedData.lifterAge);
+                                                if (tier1Data.scrapedData.nationalRank) resultData.national_rank = parseInt(tier1Data.scrapedData.nationalRank);
+                                            } else {
+                                                console.log(`    ℹ️  Tier 1 lookup returned no data (likely not in rankings for this specific class/date).`);
+                                            }
+                                        } catch (err) {
+                                            console.log(`    ⚠️ Tier 1 Enrichment Failed: ${err.message}`);
+                                        }
+                                        // --------------------------------------------------------------------------------
+
+                                        switchedToCandidate = true;
+                                        break; // Found our guy
+                                    } else {
+                                        console.log(`    ⚠️ Candidate ${candidate.lifter_id} not found in meet history.`);
+                                    }
+                                } else {
+                                    console.log(`    ⚠️ Candidate ${candidate.lifter_id} has no internal_id, cannot verify deeply. Skipping conservative match.`);
+                                    // In theory we could assume it's him if he has no other result, but risky.
+                                }
+                            }
+                        }
+
+                        if (!switchedToCandidate) {
+                            console.log(`  🔄 No suitable existing candidate found/verified. Branching Identity: Creating NEW lifter record...`);
+
+                            // Create a BRAND NEW lifter record for this second person
+                            const { data: splitLifter, error: splitError } = await supabase
+                                .from('usaw_lifters')
+                                .insert({
+                                    athlete_name: lifterName,
+                                    membership_number: row['Membership Number']?.trim() || null,
+                                    internal_id: row['Internal_ID'] ? parseInt(row['Internal_ID']) : null
+                                })
+                                .select()
+                                .single();
+
+                            if (!splitError && splitLifter) {
+                                console.log(`  ✅ Branching Successful: Created Lifter ID ${splitLifter.lifter_id} for the second '${lifterName}'`);
+                                resultData.lifter_id = splitLifter.lifter_id;
+                            } else {
+                                console.error(`  ❌ Branching Failed: ${splitError?.message}`);
+                            }
+                        }
+                    }
+                }
+                // --------------------------------------------------------------------------------
 
                 // Upsert to database (insert new, update existing)
                 // Use new constraint that includes weight_class to allow multiple results per athlete
