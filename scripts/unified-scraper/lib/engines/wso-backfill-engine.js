@@ -52,7 +52,11 @@ class WsoBackfillEngine {
                         result.date,
                         result.age_category,
                         result.weight_class,
-                        result.body_weight_kg
+                        result.body_weight_kg,
+                        false, // isFallbackCheck
+                        result.total,
+                        result.best_snatch,
+                        result.best_cj
                     );
 
                     if (tier1Result) {
@@ -80,7 +84,10 @@ class WsoBackfillEngine {
                             lifter.internal_id,
                             result.meet_id,
                             result.lifter_name,
-                            result.weight_class // Pass weight class for enhanced verification
+                            result.weight_class, // Pass weight class for enhanced verification
+                            result.total,
+                            result.best_snatch,
+                            result.best_cj
                         );
 
                         if (resultVerification.verified) {
@@ -188,7 +195,11 @@ class WsoBackfillEngine {
                                 result.date,
                                 lookupCategory, // Use inferred or original category
                                 result.weight_class,
-                                result.body_weight_kg
+                                result.body_weight_kg,
+                                false, // isFallbackCheck
+                                result.total,
+                                result.best_snatch,
+                                result.best_cj
                             );
 
                             if (tier1Result) {
@@ -221,9 +232,14 @@ class WsoBackfillEngine {
                         potentialIds,
                         result.meet_id,
                         result.date,
+                        result.date,
                         discoveryCategory,
                         result.weight_class,
-                        result.body_weight_kg
+                        result.body_weight_kg,
+                        false,
+                        result.total,
+                        result.best_snatch,
+                        result.best_cj
                     );
 
                     if (tier1Result) {
@@ -257,7 +273,7 @@ class WsoBackfillEngine {
         // QUERY MODIFICATION
         let query = this.supabase
             .from('usaw_meet_results')
-            .select('result_id, lifter_id, lifter_name, meet_id, gender, age_category, weight_class, body_weight_kg, competition_age, wso, club_name, total, date')
+            .select('result_id, lifter_id, lifter_name, meet_id, gender, age_category, weight_class, body_weight_kg, competition_age, wso, club_name, total, best_snatch, best_cj, date')
             .not('meet_id', 'is', null);
 
         // --- Logic Block: Target Selection ---

@@ -181,8 +181,8 @@ async function upsertMeetsToDatabase(meetings) {
 }
 
 // REAL Sport80 member page verification using puppeteer
-async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId, athleteName, requiredWeightClass = null, requiredTotal = null) {
-    console.log(`    🐞 DEBUG verifyLifterParticipationInMeet: internalId=${lifterInternalId}, meetId=${targetMeetId}, name=${athleteName}, wc=${requiredWeightClass}, total=${requiredTotal}`);
+async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId, athleteName, requiredWeightClass = null, requiredTotal = null, requiredSnatch = null, requiredCJ = null) {
+    console.log(`    🐞 DEBUG verifyLifterParticipationInMeet: internalId=${lifterInternalId}, meetId=${targetMeetId}, name=${athleteName}, wc=${requiredWeightClass}, total=${requiredTotal}, sn=${requiredSnatch}, cj=${requiredCJ}`);
     // Get target meet information for enhanced matching
     const { data: targetMeet, error: meetError } = await supabase
         .from('usaw_meets')
@@ -252,11 +252,18 @@ async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId, a
 
                     // Try to extract Total (usually around index 6, but let's be safe and check header or assume standard layout)
                     // Standard Layout: Meet, Date, Cat, BW, Sn, CJ, Total, Place, Points
+                    // Snatch = 4, CJ = 5, Total = 6
+                    const snatchStr = cells[4]?.textContent?.trim();
+                    const snatch = snatchStr && !isNaN(parseFloat(snatchStr)) ? parseFloat(snatchStr) : null;
+
+                    const cjStr = cells[5]?.textContent?.trim();
+                    const cj = cjStr && !isNaN(parseFloat(cjStr)) ? parseFloat(cjStr) : null;
+
                     const totalStr = cells[6]?.textContent?.trim();
                     const total = totalStr && !isNaN(parseFloat(totalStr)) ? parseFloat(totalStr) : null;
 
                     // DEBUG: Log cells if this looks like the target meet
-                    if (meetName && targetMeetName && meetName.toLowerCase().includes(targetMeetName.toLowerCase().substring(0, 10))) {
+                    if (meetName && targetName && meetName.toLowerCase().includes(targetName.toLowerCase().substring(0, 10))) {
                         console.log(`      🐞 DEBUG ROW for "${meetName}": [${cells.map((c, i) => `${i}:${c.textContent.trim()}`).join(', ')}]`);
                     }
 
@@ -264,12 +271,14 @@ async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId, a
                         name: meetName,
                         date: meetDate,
                         category: ageCategory,
-                        total: total
+                        total: total,
+                        snatch: snatch,
+                        cj: cj
                     };
                 }).filter(Boolean);
 
                 return meetInfo;
-            });
+            }, targetMeet.Meet, targetMeet.Date);
 
             if (currentPage === 1) {
                 console.log(`    🔍 DEBUG: Extracted ${pageData.length} meets from page 1. First 3:`, pageData.slice(0, 3).map(m => `${m.name} (${m.date})`));
@@ -393,7 +402,29 @@ async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId, a
                     }
                 }
 
-                if (nameMatch && dateMatch && weightClassMatch && totalMatch) {
+                // NEW: Check Snatch Match
+                let snatchMatch = true;
+                if (nameMatch && dateMatch && requiredSnatch !== null && meet.snatch !== null) {
+                    if (Math.abs(meet.snatch - requiredSnatch) > 0.1) {
+                        snatchMatch = false;
+                        console.log(`      ⛔ Snatch Mismatch: Required ${requiredSnatch} vs History ${meet.snatch}`);
+                    } else {
+                        console.log(`      ✅ Snatch Verified: ${meet.snatch} matches ${requiredSnatch}`);
+                    }
+                }
+
+                // NEW: Check C&J Match
+                let cjMatch = true;
+                if (nameMatch && dateMatch && requiredCJ !== null && meet.cj !== null) {
+                    if (Math.abs(meet.cj - requiredCJ) > 0.1) {
+                        cjMatch = false;
+                        console.log(`      ⛔ C&J Mismatch: Required ${requiredCJ} vs History ${meet.cj}`);
+                    } else {
+                        console.log(`      ✅ C&J Verified: ${meet.cj} matches ${requiredCJ}`);
+                    }
+                }
+
+                if (nameMatch && dateMatch && weightClassMatch && totalMatch && snatchMatch && cjMatch) {
                     foundMeet = meet;
                     break;
                 }
@@ -587,7 +618,7 @@ async function verifyLifterOnMeetPage(browser, meetId, athleteName) {
 // ========================================
 
 // Extract internal_id and membership_number by clicking a specific athlete's row on rankings page
-async function extractInternalIdByClicking(page, divisionCode, startDate, endDate, targetAthleteName, expectedTotal = null) {
+async function extractInternalIdByClicking(page, divisionCode, startDate, endDate, targetAthleteName, expectedTotal = null, expectedSnatch = null, expectedCJ = null, expectedBodyweight = null) {
     try {
         const url = buildRankingsURL(divisionCode, startDate, endDate);
         console.log(`      🌐 Loading rankings page for clicking...`);
@@ -607,19 +638,34 @@ async function extractInternalIdByClicking(page, divisionCode, startDate, endDat
 
         while (!found) {
             // Search for target athlete on current page
-            const athleteData = await page.evaluate((targetName, expTotal) => {
+            const athleteData = await page.evaluate((targetName, expTotal, expSnatch, expCJ, expBodyweight) => {
                 const headers = Array.from(document.querySelectorAll('.v-data-table__wrapper thead th'))
                     .map(th => th.textContent.trim().toLowerCase());
 
-                // Dynamic Column Mapping for Rankings Page
-                const colMap = {
-                    athleteName: headers.findIndex(h => h.includes('athlete') || h.includes('lifter') || h.includes('name')),
-                    total: headers.findIndex(h => h.includes('total'))
-                };
+                // Debug headers
+                console.log('TABLE HEADERS:', headers);
 
-                // Fallbacks if headers not found (standard layout)
-                if (colMap.athleteName === -1) colMap.athleteName = 3;
-                if (colMap.total === -1) colMap.total = 8;
+                // Detect if we are in "Card/Mobile" view where cells have labels (e.g., "Total 172")
+                const isCardView = headers.length <= 1 || headers[0].includes('Sort by');
+
+                let colMap = { athleteName: -1, total: -1, snatch: -1, cj: -1, bodyweight: -1 };
+
+                if (!isCardView) {
+                    // Standard Table View Logic
+                    colMap = {
+                        athleteName: headers.findIndex(h => h.includes('athlete') || h.includes('lifter') || h.includes('name')),
+                        total: headers.findIndex(h => h.includes('total')),
+                        snatch: headers.findIndex(h => h === 'sn' || h.includes('snatch')),
+                        cj: headers.findIndex(h => h === 'cj' || h.includes('clean') || h.includes('jerk')),
+                        bodyweight: headers.findIndex(h => h.includes('bodyweight') || h.includes('bw') || h === 'wt')
+                    };
+                    // Fallbacks
+                    if (colMap.athleteName === -1) colMap.athleteName = 1;
+                    if (colMap.total === -1) colMap.total = 6;
+                    if (colMap.snatch === -1) colMap.snatch = 4;
+                    if (colMap.cj === -1) colMap.cj = 5;
+                    if (colMap.bodyweight === -1) colMap.bodyweight = 3; // Standard: Lifter, Club, BW, S, C, T
+                }
 
                 const rows = Array.from(document.querySelectorAll('.v-data-table__wrapper tbody tr'));
                 const candidates = [];
@@ -627,56 +673,139 @@ async function extractInternalIdByClicking(page, divisionCode, startDate, endDat
                 for (let index = 0; index < rows.length; index++) {
                     const row = rows[index];
                     const cells = Array.from(row.querySelectorAll('td'));
-                    const athleteName = cells[colMap.athleteName]?.textContent?.trim() || '';
+
+                    let athleteName = '';
+                    let total = null;
+                    let snatch = null;
+                    let cj = null;
+                    let bodyweight = null;
+
+                    if (isCardView) {
+                        // Parse "Label Value" format
+                        cells.forEach(cell => {
+                            const text = cell.textContent.trim();
+                            if (text.startsWith('Name ')) athleteName = text.replace('Name ', '').trim();
+
+                            // "Total 172"
+                            if (text.startsWith('Total ')) {
+                                const val = text.replace('Total ', '').trim();
+                                if (!isNaN(parseFloat(val))) total = parseFloat(val);
+                            }
+                            // "Bodyweight 80.1"
+                            if (text.startsWith('Bodyweight ')) {
+                                const val = text.replace('Bodyweight ', '').trim();
+                                if (!isNaN(parseFloat(val))) bodyweight = parseFloat(val);
+                            }
+                        });
+
+                        // Fallback if "Name " prefix is missing but name is in standard slots
+                        if (!athleteName) {
+                            if (cells[3] && cells[3].textContent.includes('Name ')) {
+                                athleteName = cells[3].textContent.replace('Name ', '').trim();
+                            }
+                        }
+                    } else {
+                        // Standard Column Logic
+                        athleteName = cells[colMap.athleteName]?.textContent?.trim() || '';
+                        if (!athleteName && cells.length > 3) {
+                            if (cells[1]?.textContent?.length > 3) athleteName = cells[1].textContent.trim();
+                        }
+
+                        const totalStr = cells[colMap.total]?.textContent?.trim();
+                        total = totalStr && !isNaN(parseFloat(totalStr)) ? parseFloat(totalStr) : null;
+
+                        const bwStr = cells[colMap.bodyweight]?.textContent?.trim();
+                        bodyweight = bwStr && !isNaN(parseFloat(bwStr)) ? parseFloat(bwStr) : null;
+
+                        const snatchStr = cells[colMap.snatch]?.textContent?.trim();
+                        snatch = snatchStr && !isNaN(parseFloat(snatchStr)) ? parseFloat(snatchStr) : null;
+
+                        const cjStr = cells[colMap.cj]?.textContent?.trim();
+                        cj = cjStr && !isNaN(parseFloat(cjStr)) && parseFloat(cjStr) < 400 ? parseFloat(cjStr) : null;
+                    }
 
                     if (athleteName.toLowerCase().includes(targetName.toLowerCase()) ||
                         targetName.toLowerCase().includes(athleteName.toLowerCase())) {
 
-                        const totalStr = cells[colMap.total]?.textContent?.trim();
-                        const total = totalStr && !isNaN(parseFloat(totalStr)) ? parseFloat(totalStr) : null;
+                        // DEBUG row content
+                        const debugCells = cells.map((c, i) => isCardView ? c.textContent.trim() : `[${i}] ${c.textContent.trim()}`);
+                        console.log(`MATCHED ROW ${index} (CardView: ${isCardView}):`, debugCells.join(' | '));
 
                         candidates.push({
-                            found: true,
                             rowIndex: index,
                             athleteName: athleteName,
-                            isClickable: row.classList.contains('row-clickable'),
-                            total: total
+                            total: total,
+                            snatch: snatch,
+                            cj: cj,
+                            bodyweight: bodyweight
                         });
                     }
                 }
 
-                // If we have candidates, try to find the best match
-                if (candidates.length > 0) {
-                    let selected = candidates[0];
-                    let matchType = 'default';
+                // FILTERING LOGIC
+                let selected = null;
+                let matchType = 'none';
 
-                    if (expTotal !== null) {
-                        // Try strict total match
-                        const totalMatch = candidates.find(c => c.total !== null && Math.abs(c.total - expTotal) <= 0.1);
-                        if (totalMatch) {
-                            selected = totalMatch;
-                            matchType = 'exact_total';
-                        }
-                    }
+                // 1. Filter by Total (Strict)
+                let validCandidates = candidates.filter(c => {
+                    if (expTotal === null || c.total === null) return true;
+                    // Allow small variance (floating point)
+                    return Math.abs(c.total - expTotal) < 0.1;
+                });
 
-                    return {
-                        ...selected,
-                        _debugCandidates: candidates.map(c => ({
-                            name: c.athleteName,
-                            total: c.total,
-                            matchType: (c === selected) ? 'SELECTED' : 'rejected'
-                        })),
-                        _debugExpTotal: expTotal
-                    };
+                // 1.5 Filter by Bodyweight (Strict)
+                if (expBodyweight !== null) {
+                    const strictBW = validCandidates.filter(c => c.bodyweight !== null && Math.abs(c.bodyweight - expBodyweight) < 0.2); // 0.2kg tolerance
+                    if (strictBW.length > 0) validCandidates = strictBW;
                 }
 
-                return { found: false, _debugCandidates: [], _debugExpTotal: expTotal };
-            }, targetAthleteName, expectedTotal);
+                // 2. Filter by Snatch/CJ if available (Strict) - Only if Card View didn't force them null
+                if (!isCardView) {
+                    if (expSnatch !== null) {
+                        const strictSnatch = validCandidates.filter(c => c.snatch !== null && Math.abs(c.snatch - expSnatch) < 1);
+                        if (strictSnatch.length > 0) validCandidates = strictSnatch;
+                    }
+
+                    if (expCJ !== null) {
+                        const strictCJ = validCandidates.filter(c => c.cj !== null && Math.abs(c.cj - expCJ) < 1);
+                        if (strictCJ.length > 0) validCandidates = strictCJ;
+                    }
+                }
+
+                if (validCandidates.length === 1) {
+                    selected = validCandidates[0];
+                    matchType = 'strict_match';
+                    console.log(`  ✅ Exact match found: ${selected.athleteName} (Total: ${selected.total})`);
+                } else if (validCandidates.length > 1) {
+                    console.log(`  ⚠️ Ambiguous matches remain: ${validCandidates.length}`);
+                    matchType = 'ambiguous';
+                    selected = null;
+                } else {
+                    console.log(`  ⚠️ No match found after detailed filtering.`);
+                    matchType = 'no_match';
+                }
+
+                return {
+                    found: !!selected,
+                    rowIndex: selected ? selected.rowIndex : -1,
+                    athleteName: selected ? selected.athleteName : '',
+                    total: selected ? selected.total : null,
+                    isClickable: true, // Assuming true if found
+                    _debugCandidates: candidates.map(c => ({
+                        rowIndex: c.rowIndex,
+                        athleteName: c.athleteName,
+                        total: c.total,
+                        bodyweight: c.bodyweight,
+                        matchType: (selected && c.rowIndex === selected.rowIndex) ? 'SELECTED' : 'rejected'
+                    })),
+                    _debugExp: { total: expTotal, bodyweight: expBodyweight }
+                };
+            }, targetAthleteName, expectedTotal, expectedSnatch, expectedCJ, expectedBodyweight);
 
             if (athleteData.found) {
                 console.log(`      ✅ Found "${athleteData.athleteName}" on page ${currentPage}`);
                 if (athleteData._debugCandidates) {
-                    console.log(`      🐞 DEBUG CANDIDATES (ExpTotal: ${athleteData._debugExpTotal}):`);
+                    console.log(`      🐞 DEBUG CANDIDATES (Exp: ${JSON.stringify(athleteData._debugExp)}):`);
                     console.log(JSON.stringify(athleteData._debugCandidates, null, 2));
                 }
 
@@ -741,24 +870,8 @@ async function extractInternalIdByClicking(page, divisionCode, startDate, endDat
                             }
                         }
 
-                        // DEBUG: Match context
-                        const idx = text.toLowerCase().indexOf('member');
-                        let context = '';
-                        if (idx !== -1) {
-                            const start = Math.max(0, idx - 50);
-                            const end = Math.min(text.length, idx + 100);
-                            context = 'CTX: ' + text.substring(start, end).replace(/\n/g, ' ');
-                        }
-
-                        const inputDump = inputs.slice(0, 5).map(i => `${i.id || i.name}: ${i.value}`).join(' | ');
-                        return `DEBUG_FAIL: No Member text. Inputs: ${inputDump}. Context: ${context}`;
+                        return null; // Silent failure here is fine, we just won't get usage
                     });
-
-                    if (membershipNumber && (membershipNumber.startsWith('DEBUG_CONTEXT:') || membershipNumber.startsWith('DEBUG_FAIL:'))) {
-                        // Only log DEBUG_FAIL if we really need it (commented out for production cleanliness)
-                        // console.log(`      ⚠️ Membership Debug (Tier 1.5): ${membershipNumber}`);
-                        membershipNumber = null;
-                    }
 
                     if (membershipNumber) {
                         console.log(`      ✅ Scraped Membership Number: ${membershipNumber}`);
@@ -768,6 +881,15 @@ async function extractInternalIdByClicking(page, divisionCode, startDate, endDat
                 }
 
                 return { internalId, membershipNumber };
+            } else {
+                if (athleteData._debugCandidates && athleteData._debugCandidates.length > 0) {
+                    console.log(`      ⚠️ Candidates found but no strict match/unique selection (Exp: ${JSON.stringify(athleteData._debugExp)}):`);
+                    console.log(JSON.stringify(athleteData._debugCandidates, null, 2));
+                    // If we have candidates but failed to select, it is safer to stop or try next page?
+                    // If we are looking for a name match, it is possible they are on the next page? 
+                    // Unlikely if we found name matches but they were rejected by strict criteria.
+                    // But we should continue just in case there is a better name match on next page (e.g. "John Smith" vs "John Smith Jr")
+                }
             }
 
             // Check for next page
@@ -786,7 +908,7 @@ async function extractInternalIdByClicking(page, divisionCode, startDate, endDat
                 await page.waitForSelector('.v-data-table__wrapper tbody tr', { timeout: 10000 });
                 currentPage++;
             } else {
-                console.log(`      ❌ Athlete not found on any page`);
+                console.log(`      ❌ Athlete not found (or no strict match) on any page`);
                 return null;
             }
         }
@@ -1340,7 +1462,7 @@ function generateAlternativeDivisions(originalCategory, bodyWeight, eventDateStr
     return uniqueCandidates;
 }
 
-async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, targetMeetId, eventDate, ageCategory, weightClass, bodyweight = null, isFallbackCheck = false, expectedTotal = null) {
+async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, targetMeetId, eventDate, ageCategory, weightClass, bodyweight = null, isFallbackCheck = false, expectedTotal = null, expectedSnatch = null, expectedCJ = null) {
     if (!isFallbackCheck) {
         console.log(`  🔍 Tier 1: Base64 URL Lookup Protocol (Division Rankings)`);
     } else {
@@ -1419,7 +1541,10 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
                     ageCategory,
                     calculatedClass,
                     bodyweight,
-                    true
+                    true,
+                    expectedTotal,
+                    expectedSnatch,
+                    expectedCJ
                 );
             }
         }
@@ -1446,6 +1571,8 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
         });
 
         const page = await browser.newPage();
+        // Forward console logs from browser to Node.js
+        page.on('console', msg => console.log('    🖥️ BROWSER LOG:', msg.text()));
         await page.setViewport({ width: 1500, height: 1000 });
 
         // Calculate date range: -3 days (buffer) to +10 days (long meets)
@@ -1501,7 +1628,10 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
                         startDate,
                         endDate,
                         lifterName,
-                        expectedTotal
+                        expectedTotal,
+                        expectedSnatch,
+                        expectedCJ,
+                        bodyweight
                     );
 
                     if (extractedData && extractedData.internalId) {
@@ -2236,7 +2366,9 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
             additionalData.weightClass,
             additionalData.bodyweight, // Pass bodyweight for Tier 1.6
             false, // isFallbackCheck
-            additionalData.expectedTotal // Pass expectedTotal
+            additionalData.expectedTotal, // Pass expectedTotal
+            additionalData.expectedSnatch,
+            additionalData.expectedCJ
         );
 
         if (tier1Result) {
@@ -2585,7 +2717,9 @@ async function processMeetCsvFile(csvFilePath, meetId, meetName) {
                     membership_number: row['Membership Number']?.trim() || null,
                     internal_id: row['Internal_ID'] ? parseInt(row['Internal_ID']) : null,
                     bodyweight: row['Body Weight (Kg)']?.toString().trim() || null,
-                    expectedTotal: parseLiftValue(row.Total, 'Total') // Check for Total match in Tier 1.5
+                    expectedTotal: parseLiftValue(row.Total, 'Total'), // Check for Total match in Tier 1.5
+                    expectedSnatch: parseLiftValue(row['Best Snatch'], 'BestSnatch'),
+                    expectedCJ: parseLiftValue(row['Best C&J'], 'BestCJ')
                 });
 
                 // Create meet result with proper lifter_id
