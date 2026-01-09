@@ -170,6 +170,7 @@ class SmartImporter {
                 this.logger.warn('⚠️ CSV parsing warnings:', parsed.errors);
             }
 
+
             // Filter out invalid rows using column names like working database-importer.js
             const validRows = parsed.data.filter(row => {
                 return row &&
@@ -179,25 +180,50 @@ class SmartImporter {
                     row.Lifter.trim() !== '';
             });
 
+            // Helper to match column names fuzzily
+            const findVal = (row, keys, ...patterns) => {
+                // Try exact match first for speed
+                for (const pattern of patterns) {
+                    if (row[pattern] !== undefined && row[pattern] !== null && row[pattern] !== '') return row[pattern];
+                }
+
+                // Try fuzzy match
+                for (const pattern of patterns) {
+                    const cleanPattern = pattern.toLowerCase().replace(/[^a-z0-9]/g, '');
+                    const matchedKey = keys.find(k => {
+                        const cleanKey = k.toLowerCase().replace(/[^a-z0-9]/g, '');
+                        return cleanKey === cleanPattern || cleanKey.includes(cleanPattern);
+                    });
+                    if (matchedKey && row[matchedKey] !== undefined && row[matchedKey] !== null) {
+                        return row[matchedKey];
+                    }
+                }
+                return '';
+            };
+
             return validRows.map((row, index) => {
+                const keys = Object.keys(row);
                 return {
                     rowNumber: index + 1,
-                    meetName: row.Meet || '',                           // Meet name
-                    date: row.Date || '',                               // Date
-                    ageCategory: row['Age Category'] || '',             // Age Category (e.g., "Open Men's")
-                    weightClass: row['Weight Class'] || '',             // Weight Class (e.g., "+105 kg")
-                    name: row.Lifter || 'Unknown',                      // Lifter name
-                    bodyweight: row['Body Weight (Kg)'] || '',          // Body Weight (Kg)
-                    snatchLift1: (row['Snatch Lift 1'] !== null && row['Snatch Lift 1'] !== undefined) ? row['Snatch Lift 1'] : '',
-                    snatchLift2: (row['Snatch Lift 2'] !== null && row['Snatch Lift 2'] !== undefined) ? row['Snatch Lift 2'] : '',
-                    snatchLift3: (row['Snatch Lift 3'] !== null && row['Snatch Lift 3'] !== undefined) ? row['Snatch Lift 3'] : '',
-                    bestSnatch: (row['Best Snatch'] !== null && row['Best Snatch'] !== undefined) ? row['Best Snatch'] : '',
-                    cjLift1: (row['C&J Lift 1'] !== null && row['C&J Lift 1'] !== undefined) ? row['C&J Lift 1'] : '',
-                    cjLift2: (row['C&J Lift 2'] !== null && row['C&J Lift 2'] !== undefined) ? row['C&J Lift 2'] : '',
-                    cjLift3: (row['C&J Lift 3'] !== null && row['C&J Lift 3'] !== undefined) ? row['C&J Lift 3'] : '',
-                    bestCJ: (row['Best C&J'] !== null && row['Best C&J'] !== undefined) ? row['Best C&J'] : '',
-                    total: (row.Total !== null && row.Total !== undefined) ? row.Total : '',
-                    club: row.Club || ''                                // Club
+                    meetName: row.Meet || '',
+                    date: row.Date || '',
+                    ageCategory: row['Age Category'] || '',
+                    weightClass: row['Weight Class'] || '',
+                    name: findVal(row, keys, 'Lifter', 'Name', 'Athlete'),
+                    bodyweight: findVal(row, keys, 'Body Weight (Kg)', 'Body Weight', 'BW'),
+
+                    snatchLift1: findVal(row, keys, 'Snatch Lift 1', 'Snatch 1', 'Sn 1'),
+                    snatchLift2: findVal(row, keys, 'Snatch Lift 2', 'Snatch 2', 'Sn 2'),
+                    snatchLift3: findVal(row, keys, 'Snatch Lift 3', 'Snatch 3', 'Sn 3'),
+                    bestSnatch: findVal(row, keys, 'Best Snatch', 'Best Sn', 'Snatch'),
+
+                    cjLift1: findVal(row, keys, 'C&J Lift 1', 'CJ Lift 1', 'Clean & Jerk 1'),
+                    cjLift2: findVal(row, keys, 'C&J Lift 2', 'CJ Lift 2', 'Clean & Jerk 2'),
+                    cjLift3: findVal(row, keys, 'C&J Lift 3', 'CJ Lift 3', 'Clean & Jerk 3'),
+                    bestCJ: findVal(row, keys, 'Best C&J', 'Best CJ', 'C&J', 'Clean & Jerk'),
+
+                    total: findVal(row, keys, 'Total', 'Tot'),
+                    club: findVal(row, keys, 'Club', 'Team')
                 };
             });
         } catch (error) {

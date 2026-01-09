@@ -161,6 +161,8 @@ class DetailedReImportOrchestrator {
                     row.Lifter.trim() !== '';
             });
 
+
+
             return {
                 athleteCount: validRows.length,
                 athletes: validRows.map((row, index) => {
@@ -170,7 +172,16 @@ class DetailedReImportOrchestrator {
                         club: row.Club || 'Unknown',
                         bodyweight: row['Body Weight (Kg)'] || 'Unknown',
                         // Fix: 0 is falsy, but valid for totals. explicit check.
-                        total: (row.Total !== null && row.Total !== undefined && row.Total !== '') ? row.Total : 'Unknown'
+                        total: (row.Total !== null && row.Total !== undefined && row.Total !== '') ? row.Total : 'Unknown',
+                        // Capture Snatch and C&J data for disambiguation
+                        snatchLift1: row['Snatch Lift 1'],
+                        snatchLift2: row['Snatch Lift 2'],
+                        snatchLift3: row['Snatch Lift 3'],
+                        bestSnatch: row['Best Snatch'],
+                        cjLift1: row['C&J Lift 1'],
+                        cjLift2: row['C&J Lift 2'],
+                        cjLift3: row['C&J Lift 3'],
+                        bestCJ: row['Best C&J']
                     };
                 })
             };
