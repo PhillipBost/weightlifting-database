@@ -192,7 +192,7 @@ class WsoBackfillEngine {
                                 result.lifter_name,
                                 [lifter.lifter_id], // Pass verified ID
                                 result.meet_id,
-                                result.date,
+                                resultVerification.foundDate || result.date,
                                 lookupCategory, // Use inferred or original category
                                 result.weight_class,
                                 result.body_weight_kg,
