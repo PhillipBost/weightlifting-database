@@ -32,11 +32,36 @@ if (fs.existsSync(DIVISION_CODES_PATH)) {
 }
 
 // Date utility functions for Tier 1
+function parseDateRobust(dateInput) {
+    if (typeof dateInput === 'string' && dateInput.startsWith('-')) {
+        // Handle "-0001-11-30" format manually
+        const parts = dateInput.split('-');
+        // parts[0] is "", parts[1] is year, parts[2] is month, parts[3] is day
+        if (parts.length >= 4) {
+            const year = -parseInt(parts[1]);
+            const month = parseInt(parts[2]) - 1;
+            const day = parseInt(parts[3]);
+            const d = new Date();
+            d.setFullYear(year, month, day);
+            d.setHours(0, 0, 0, 0);
+            return d;
+        }
+    }
+    return new Date(dateInput);
+}
+
 function formatDate(date) {
     const d = new Date(date);
     const year = d.getFullYear();
     const month = String(d.getMonth() + 1).padStart(2, '0');
     const day = String(d.getDate()).padStart(2, '0');
+
+    // Handle negative years explicitly to ensure YYYY format (e.g. -0001)
+    if (year < 0) {
+        const absYear = Math.abs(year);
+        return `-${String(absYear).padStart(4, '0')}-${month}-${day}`;
+    }
+
     return `${year}-${month}-${day}`;
 }
 
@@ -250,12 +275,34 @@ async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId, a
                     date: headers.findIndex(h => h.includes('date')),
                     category: headers.findIndex(h => h.includes('category') || h.includes('division') || h.includes('group') || h.includes('cat')),
                     bodyweight: headers.findIndex(h => h.includes('body') || h.includes('bw') || h.includes('wt') || h === 'bw'),
-                    snatch: headers.findIndex(h => h.includes('snatch') || h === 'sn'),
-                    cj: headers.findIndex(h => h.includes('clean') || h.includes('jerk') || h.includes('c&j') || h === 'cj'),
+                    snatch: -1,
+                    cj: -1,
                     total: headers.findIndex(h => h.includes('total')),
                     place: headers.findIndex(h => h.includes('place') || h.includes('rank')),
                     points: headers.findIndex(h => h.includes('point') || h.includes('lws') || h.includes('sinclair'))
                 };
+
+                // Smart Column Mapping for Snatch (Prioritize "Best Snatch")
+                const bestSnatchIdx = headers.indexOf('best snatch');
+                if (bestSnatchIdx !== -1) {
+                    colMap.snatch = bestSnatchIdx;
+                } else {
+                    // Fallback to searching for "snatch" if no "best snatch"
+                    colMap.snatch = headers.findIndex(h => h.includes('snatch') || h === 'sn');
+                }
+
+                // Smart Column Mapping for C&J (Prioritize "Best C&J")
+                const bestCjIdx = headers.indexOf('best c&j');
+                const bestCleanIdx = headers.indexOf('best clean & jerk');
+
+                if (bestCjIdx !== -1) {
+                    colMap.cj = bestCjIdx;
+                } else if (bestCleanIdx !== -1) {
+                    colMap.cj = bestCleanIdx;
+                } else {
+                    // Fallback
+                    colMap.cj = headers.findIndex(h => h.includes('clean') || h.includes('jerk') || h.includes('c&j') || h === 'cj');
+                }
 
                 // Fallbacks if headers missing or not matched (Standard Layout: Meet, Date, Cat, BW, Sn, CJ, Total)
                 if (colMap.meet === -1) colMap.meet = 0;
@@ -527,6 +574,7 @@ async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId, a
 
                 return {
                     verified: true,
+                    foundDate: foundMeet.date,
                     metadata: {
                         gender: extractedGender,
                         membershipNumber: membershipNumber
@@ -1539,7 +1587,8 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
     }
 
     // Determine if division is active or inactive based on meet date
-    const meetDate = new Date(eventDate);
+    // Determine if division is active or inactive based on meet date
+    const meetDate = parseDateRobust(eventDate);
     const activeDivisionCutoff = new Date('2025-06-01');
     const isActiveDivision = meetDate >= activeDivisionCutoff;
 

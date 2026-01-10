@@ -8,7 +8,7 @@ const supabase = createClient(
 );
 
 async function verifyDatabaseConstraints() {
-    console.log('🔍 Verifying database constraints on meet_results table...\n');
+    console.log('🔍 Verifying database constraints on usaw_meet_results table...\n');
 
     try {
         // Since Supabase doesn't easily expose constraint metadata, we'll test behavior
@@ -16,7 +16,7 @@ async function verifyDatabaseConstraints() {
 
         // First, let's see what the current table structure looks like
         const { data: sampleData, error: sampleError } = await supabase
-            .from('meet_results')
+            .from('usaw_meet_results')
             .select('meet_id, lifter_id, weight_class')
             .limit(5);
 
@@ -24,7 +24,7 @@ async function verifyDatabaseConstraints() {
             throw sampleError;
         }
 
-        console.log('📋 Sample data from meet_results:');
+        console.log('📋 Sample data from usaw_meet_results:');
         sampleData.forEach((row, index) => {
             console.log(`   ${index + 1}. meet_id: ${row.meet_id}, lifter_id: ${row.lifter_id}, weight_class: ${row.weight_class}`);
         });
@@ -44,7 +44,7 @@ async function testConstraintsBehavior() {
     try {
         // First, find an existing lifter and meet to use for testing
         const { data: existingResult, error: existingError } = await supabase
-            .from('meet_results')
+            .from('usaw_meet_results')
             .select('meet_id, lifter_id, weight_class')
             .limit(1);
 
@@ -64,7 +64,7 @@ async function testConstraintsBehavior() {
 
         console.log(`\n📝 Attempting insert with different weight_class (${differentWeightClass})...`);
         const { data: insert1, error: error1 } = await supabase
-            .from('meet_results')
+            .from('usaw_meet_results')
             .insert({
                 meet_id: testMeetId,
                 lifter_id: testLifterId,
@@ -91,8 +91,8 @@ async function testConstraintsBehavior() {
 
                 if (error1.message.includes('meet_results_meet_id_lifter_id_key')) {
                     console.log('   🎯 IDENTIFIED: Old constraint "meet_results_meet_id_lifter_id_key" is still active');
-                } else if (error1.message.includes('meet_results_unique_performance_key')) {
-                    console.log('   🎯 IDENTIFIED: New constraint "meet_results_unique_performance_key" is active');
+                } else if (error1.message.includes('usaw_meet_results_unique_performance_key')) {
+                    console.log('   🎯 IDENTIFIED: New constraint "usaw_meet_results_unique_performance_key" is active');
                 }
             }
         } else {
@@ -105,7 +105,7 @@ async function testConstraintsBehavior() {
             // Clean up the test record we just inserted
             console.log('\n🧹 Cleaning up test record...');
             await supabase
-                .from('meet_results')
+                .from('usaw_meet_results')
                 .delete()
                 .eq('result_id', insert1[0].result_id);
             console.log('   ✅ Test record cleaned up');
@@ -116,7 +116,7 @@ async function testConstraintsBehavior() {
         console.log('===================================');
 
         if (error1 && (error1.message.includes('duplicate key') || error1.message.includes('unique constraint'))) {
-            console.log('🚨 OLD CONSTRAINT STILL ACTIVE: meet_results_meet_id_lifter_id_key');
+            console.log('🚨 OLD CONSTRAINT STILL ACTIVE: usaw_meet_results_meet_id_lifter_id_key');
             console.log('   - Database rejects (meet_id, lifter_id) duplicates even with different weight_class');
             console.log('   - Migration was NOT successful');
             console.log('   - This explains the Molly Raines upsert failure');
@@ -128,7 +128,7 @@ async function testConstraintsBehavior() {
             console.log('   3. Verify the old constraint is dropped and new constraint is created');
 
         } else if (!error1) {
-            console.log('✅ NEW CONSTRAINT ACTIVE: meet_results_unique_performance_key');
+            console.log('✅ NEW CONSTRAINT ACTIVE: usaw_meet_results_unique_performance_key');
             console.log('   - Database allows (meet_id, lifter_id) duplicates with different weight_class');
             console.log('   - Migration was SUCCESSFUL');
             console.log('   - Molly Raines case should work now');
