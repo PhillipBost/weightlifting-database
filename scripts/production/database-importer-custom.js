@@ -3091,7 +3091,7 @@ async function processMeetCsvFile(csvFilePath, meetId, meetName) {
                 const { error: insertError } = await supabase
                     .from('usaw_meet_results')
                     .upsert(resultData, {
-                        onConflict: 'meet_id, lifter_id, weight_class',
+                        onConflict: 'meet_id, lifter_id, weight_class, best_snatch, best_cj, total',
                         ignoreDuplicates: false
                     });
 
