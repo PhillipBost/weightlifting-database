@@ -3036,11 +3036,44 @@ async function processMeetCsvFile(csvFilePath, meetId, meetName) {
                                 .from('usaw_lifters')
                                 .insert({
                                     athlete_name: lifterName,
-                                    membership_number: row['Membership Number']?.trim() || null,
-                                    internal_id: row['Internal_ID'] ? parseInt(row['Internal_ID']) : null
+                                    membership_number: row['Membership Number']?.trim() || lifter.scrapedData?.membershipNumber || null,
+                                    internal_id: row['Internal_ID'] ? parseInt(row['Internal_ID']) : (lifter.scrapedData?.internalId || null)
                                 })
                                 .select()
                                 .single();
+
+                            // FIX: If we assigned scraped metadata to this NEW lifter, we must ensure the OLD lifter (lifter.lifter_id) 
+                            // does not hold onto it, otherwise we have a constraint violation or stale data issue.
+                            // The scraper likely JUST assigned it to 'lifter' in Tier 1.5 logic above.
+                            if (!splitError && splitLifter && lifter.scrapedData) {
+                                const metaMem = lifter.scrapedData.membershipNumber;
+                                const metaInt = lifter.scrapedData.internalId;
+
+                                if (metaMem || metaInt) {
+                                    console.log(`    Transferring metadata from collision source (${lifter.lifter_id}) to new lifter (${splitLifter.lifter_id})...`);
+
+                                    // 1. Clear from old lifter (conditionally, only if they match what we are moving)
+                                    // We use a safe query that only clears if it matches, to avoid nuking unrelated data
+                                    const clearPayload = {};
+                                    if (metaMem) clearPayload.membership_number = null;
+                                    if (metaInt) clearPayload.internal_id = null;
+
+                                    if (Object.keys(clearPayload).length > 0) {
+                                        let query = supabase.from('usaw_lifters').update(clearPayload).eq('lifter_id', lifter.lifter_id);
+
+                                        // Specificity: only clear if it matches the transferred value
+                                        if (metaMem) query = query.eq('membership_number', metaMem);
+                                        if (metaInt) query = query.eq('internal_id', metaInt);
+
+                                        const { error: clearError } = await query;
+                                        if (!clearError) {
+                                            console.log(`    ✅ Released metadata from incorrect match ${lifter.lifter_id}`);
+                                        } else {
+                                            console.log(`    ⚠️ Failed to release metadata from ${lifter.lifter_id}: ${clearError.message}`);
+                                        }
+                                    }
+                                }
+                            }
 
                             if (!splitError && splitLifter) {
                                 console.log(`  ✅ Branching Successful: Created Lifter ID ${splitLifter.lifter_id} for the second '${lifterName}'`);
