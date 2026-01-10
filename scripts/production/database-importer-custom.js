@@ -240,36 +240,61 @@ async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId, a
             // Extract meet information from current page
             // Also extract CATEGORY column to infer gender if possible
             const pageData = await page.evaluate((targetName, targetDate) => {
+                // Get table headers for dynamic mapping
+                const thCells = Array.from(document.querySelectorAll('.data-table div div.v-data-table div.v-data-table__wrapper table thead th'));
+                const headers = thCells.map(th => th.textContent.trim().toLowerCase());
+
+                // Dynamic mapping of columns
+                const colMap = {
+                    meet: headers.findIndex(h => h.includes('event') || h.includes('meet') || h.includes('competition')),
+                    date: headers.findIndex(h => h.includes('date')),
+                    category: headers.findIndex(h => h.includes('category') || h.includes('division') || h.includes('group') || h.includes('cat')),
+                    bodyweight: headers.findIndex(h => h.includes('body') || h.includes('bw') || h.includes('wt') || h === 'bw'),
+                    snatch: headers.findIndex(h => h.includes('snatch') || h === 'sn'),
+                    cj: headers.findIndex(h => h.includes('clean') || h.includes('jerk') || h.includes('c&j') || h === 'cj'),
+                    total: headers.findIndex(h => h.includes('total')),
+                    place: headers.findIndex(h => h.includes('place') || h.includes('rank')),
+                    points: headers.findIndex(h => h.includes('point') || h.includes('lws') || h.includes('sinclair'))
+                };
+
+                // Fallbacks if headers missing or not matched (Standard Layout: Meet, Date, Cat, BW, Sn, CJ, Total)
+                if (colMap.meet === -1) colMap.meet = 0;
+                if (colMap.date === -1) colMap.date = 1;
+                if (colMap.category === -1) colMap.category = 2;
+                if (colMap.bodyweight === -1) colMap.bodyweight = 3;
+                if (colMap.snatch === -1) colMap.snatch = 4;
+                if (colMap.cj === -1) colMap.cj = 5;
+                if (colMap.total === -1) colMap.total = 6;
+                // Debug headers if needed (will log to browser console/stdout)
+                // console.log('Dynamic Headers:', headers, 'Map:', JSON.stringify(colMap));
+
                 const meetRows = Array.from(document.querySelectorAll('.data-table div div.v-data-table div.v-data-table__wrapper table tbody tr'));
 
                 const meetInfo = meetRows.map(row => {
                     const cells = Array.from(row.querySelectorAll('td'));
                     if (cells.length < 3) return null;
 
-                    const meetName = cells[0]?.textContent?.trim();
-                    const meetDate = cells[1]?.textContent?.trim();
-                    const ageCategory = cells[2]?.textContent?.trim(); // "Open Men's 67kg" etc
+                    const meetName = cells[colMap.meet]?.textContent?.trim();
+                    const meetDate = cells[colMap.date]?.textContent?.trim();
+                    const ageCategory = cells[colMap.category]?.textContent?.trim(); // "Open Men's 67kg" etc
 
-                    // Try to extract Total (usually around index 6, but let's be safe and check header or assume standard layout)
-                    // Standard Layout: Meet, Date, Cat, BW, Sn, CJ, Total, Place, Points
-
-                    const bwStr = cells[3]?.textContent?.trim();
+                    const bwStr = cells[colMap.bodyweight]?.textContent?.trim();
                     const bodyweight = bwStr && !isNaN(parseFloat(bwStr)) ? parseFloat(bwStr) : null;
 
-                    // Snatch = 4, CJ = 5, Total = 6
-                    const snatchStr = cells[4]?.textContent?.trim();
+                    const snatchStr = cells[colMap.snatch]?.textContent?.trim();
                     const snatch = snatchStr && !isNaN(parseFloat(snatchStr)) ? parseFloat(snatchStr) : null;
 
-                    const cjStr = cells[5]?.textContent?.trim();
+                    const cjStr = cells[colMap.cj]?.textContent?.trim();
                     const cj = cjStr && !isNaN(parseFloat(cjStr)) ? parseFloat(cjStr) : null;
 
-                    const totalStr = cells[6]?.textContent?.trim();
+                    const totalStr = cells[colMap.total]?.textContent?.trim();
                     const total = totalStr && !isNaN(parseFloat(totalStr)) ? parseFloat(totalStr) : null;
 
                     // DEBUG: Log cells if this looks like the target meet. Relaxed condition for debugging.
                     const debugTarget = targetName ? targetName.toLowerCase().substring(0, 5) : 'xxxxx';
                     if (meetName && (meetName.toLowerCase().includes(debugTarget) || meetName.includes('Arnold'))) {
-                        console.log(`      🐞 DEBUG ROW for "${meetName}": [${cells.map((c, i) => `${i}:${c.textContent.trim()}`).join(', ')}]`);
+                        // Simplify logging to avoid spam
+                        // console.log(`      🐞 DEBUG ROW for "${meetName}": [${cells.map((c, i) => `${i}:${c.textContent.trim()}`).join(', ')}]`);
                     }
 
                     return {
@@ -2615,6 +2640,102 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
         logger.logFinalResult(verifiedLifter, 'tier2_disambiguation');
         console.log(`  ✅ Verified via Tier 2: ${cleanName} (ID: ${verifiedLifterId})`);
         return verifiedLifter;
+    }
+
+    // NEW: Disambiguation by Exclusion (Check if candidates already have results in this meet)
+    // If a candidate already has a result in this meet, they are likely NOT the person for this NEW result
+    // (unless we are re-importing the same result, which we check via bodyweight/total compatibility)
+    if (additionalData.targetMeetId && existingLifters.length > 0) {
+        console.log(`  🔍 Disambiguating by Exclusion: Checking candidates for existing results in meet ${additionalData.targetMeetId}...`);
+
+        const { data: existingMeetResults, error: emrError } = await supabase
+            .from('usaw_meet_results')
+            .select('lifter_id, body_weight_kg, total')
+            .eq('meet_id', additionalData.targetMeetId)
+            .in('lifter_id', lifterIds);
+
+        if (!emrError && existingMeetResults) {
+            const occupiedLifterIds = new Set(existingMeetResults.map(r => r.lifter_id));
+            const freeCandidates = existingLifters.filter(l => !occupiedLifterIds.has(l.lifter_id));
+
+            if (freeCandidates.length > 0) {
+                // Found candidates who do not have a result yet - prioritize them!
+                // If multiple match, we default to the first one (safest assumption for now)
+                const bestFit = freeCandidates[0];
+
+                logger.logFinalResult(bestFit, 'disambiguation_by_exclusion');
+                console.log(`  ✅ Disambiguation by Exclusion: Selected ${bestFit.athlete_name} (ID: ${bestFit.lifter_id}) as they have no result in this meet yet (vs ${occupiedLifterIds.size} occupied candidates).`);
+                return bestFit;
+            } else {
+                // All candidates are occupied. Check strictly for compatibility (Duplicate Re-import?)
+                // If the new result matches an existing result's traits (BW, Total), it's likely a re-import.
+                // If strictly incompatible, it implies a different person -> Create New Lifter.
+
+                const compatibleResult = existingMeetResults.find(r => {
+                    // Check Bodyweight similarity (0.5kg tolerance)
+                    let bwMatch = false;
+                    // If either is missing bodyweight, we can't rule it out, so permissive match? 
+                    // No, if missing, we can't confirm it's same result. But we also can't confirm conflict.
+                    // Let's go strict: if one has BW, other must match.
+                    if (additionalData.bodyweight && r.body_weight_kg) {
+                        bwMatch = Math.abs(parseFloat(additionalData.bodyweight) - parseFloat(r.body_weight_kg)) < 0.5;
+                    } else {
+                        // If no BW to compare, fall back to Total
+                        bwMatch = true;
+                    }
+
+                    // Check Total similarity
+                    let totalMatch = false;
+                    if (additionalData.expectedTotal !== null && r.total !== null) {
+                        totalMatch = Math.abs(additionalData.expectedTotal - parseFloat(r.total)) < 0.1;
+                    } else {
+                        totalMatch = true;
+                    }
+
+                    return bwMatch && totalMatch;
+                });
+
+                if (compatibleResult) {
+                    // Compatible match found - treat as re-import
+                    const matchedLifter = existingLifters.find(l => l.lifter_id === compatibleResult.lifter_id);
+                    console.log(`  ⚠️ Found existing compatible result for ${matchedLifter.athlete_name} (ID: ${matchedLifter.lifter_id}) - assuming re-import/update.`);
+                    logger.log('verification_soft_fail', {
+                        message: `All candidates occupied, but compatible result found - reusing`,
+                        lifter_id: matchedLifter.lifter_id,
+                        reason: 'compatible_occupied_candidate'
+                    });
+                    return matchedLifter;
+                } else {
+                    // All candidates occupied by conflicting results.
+                    console.log(`  ⚠️ All candidates have conflicting results in this meet. Creating NEW lifter.`);
+                    logger.log('fallback_create', {
+                        message: `All existing candidates occupied by conflicting results`,
+                        reason: 'exclusion_conflict_all_occupied'
+                    });
+
+                    // Force create new logic below
+                    // We can just proceed to create new lifter by skipping the fallback block below
+                    // Setting existingLifters to empty to trigger creation at end of function? 
+                    // No, cleaner to just call create here.
+
+                    const { data: newLifter, error: createError } = await supabase
+                        .from('usaw_lifters')
+                        .insert({
+                            athlete_name: cleanName,
+                            membership_number: additionalData.membership_number || null,
+                            internal_id: additionalData.internal_id || null
+                        })
+                        .select()
+                        .single();
+
+                    if (!createError) {
+                        logger.logFinalResult(newLifter, 'exclusion_created_new');
+                        console.log(`  ➕ Created NEW lifter to resolve conflict: ${cleanName} (ID: ${newLifter.lifter_id})`);
+                        return newLifter;
+                    }
+                }
+            }
+        }
     }
 
     // FALLBACK: If we can't disambiguate, reused the first existing lifter record
