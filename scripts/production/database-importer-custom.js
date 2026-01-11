@@ -206,7 +206,7 @@ async function upsertMeetsToDatabase(meetings) {
 }
 
 // REAL Sport80 member page verification using puppeteer
-async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId, athleteName, requiredWeightClass = null, requiredTotal = null, requiredSnatch = null, requiredCJ = null, requiredBodyweight = null) {
+async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId, athleteName, requiredWeightClass = null, requiredTotal = null, requiredSnatch = null, requiredCJ = null, requiredBodyweight = null, browser = null) {
     console.log(`    🐞 DEBUG verifyLifterParticipationInMeet: internalId=${lifterInternalId}, meetId=${targetMeetId}, name=${athleteName}, wc=${requiredWeightClass}, total=${requiredTotal}, sn=${requiredSnatch}, cj=${requiredCJ}, bw=${requiredBodyweight}`);
     // Get target meet information for enhanced matching
     const { data: targetMeet, error: meetError } = await supabase
@@ -224,21 +224,29 @@ async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId, a
     console.log(`    🌐 Visiting: ${memberUrl}`);
     console.log(`    🎯 Looking for: "${targetMeet.Meet}" on ${targetMeet.Date}`);
 
-    let browser;
-    try {
-        browser = await puppeteer.launch({
-            headless: true,
-            args: [
-                '--no-sandbox',
-                '--disable-setuid-sandbox',
-                '--disable-dev-shm-usage',
-                '--disable-gpu',
-                '--no-first-run',
-                '--disable-extensions'
-            ]
-        });
+    let localBrowserInstance = null;
+    let browserToUse = browser;
+    let page = null;
 
-        const page = await browser.newPage();
+    try {
+        if (!browserToUse) {
+            // console.log('    🖥️ Launching local browser for Tier 2 (no shared instance)...');
+            localBrowserInstance = await puppeteer.launch({
+                headless: true,
+                args: [
+                    '--no-sandbox',
+                    '--disable-setuid-sandbox',
+                    '--disable-dev-shm-usage',
+                    '--disable-gpu',
+                    '--no-first-run',
+                    '--disable-extensions'
+                ]
+            });
+            browserToUse = localBrowserInstance;
+        }
+
+        page = await browserToUse.newPage();
+        // await page.setViewport({ width: 1500, height: 1000 });
         await page.setViewport({ width: 1500, height: 1000 });
 
         // Navigate to the member page
@@ -437,7 +445,7 @@ async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId, a
                 // If the athlete is LISTED in the results, then they participated (ignoring date mismatch).
                 if (nameMatch && !dateMatch) {
                     console.log(`      ℹ️  Possible DB Date Mismatch. Checking official meet page for presence of "${athleteName}"...`);
-                    const isPresent = await verifyLifterOnMeetPage(browser, targetMeetId, athleteName);
+                    const isPresent = await verifyLifterOnMeetPage(browserToUse, targetMeetId, athleteName);
 
                     if (isPresent) {
                         console.log(`      Found: Name Match + Date Mismatch (DB: ${targetMeet.Date} vs Member: ${meet.date})`);
@@ -607,8 +615,12 @@ async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId, a
         console.log(`    ❌ Error accessing member page: ${error.message}`);
         return { verified: false };
     } finally {
-        if (browser) {
-            await browser.close();
+        if (localBrowserInstance) {
+            await localBrowserInstance.close();
+        } else if (page) {
+            try {
+                if (!page.isClosed()) await page.close();
+            } catch (e) { /* ignore */ }
         }
     }
 }
@@ -1554,7 +1566,7 @@ function generateAlternativeDivisions(originalCategory, bodyWeight, eventDateStr
     return uniqueCandidates;
 }
 
-async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, targetMeetId, eventDate, ageCategory, weightClass, bodyweight = null, isFallbackCheck = false, expectedTotal = null, expectedSnatch = null, expectedCJ = null) {
+async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, targetMeetId, eventDate, ageCategory, weightClass, bodyweight = null, isFallbackCheck = false, expectedTotal = null, expectedSnatch = null, expectedCJ = null, browser = null) {
     if (!isFallbackCheck) {
         console.log(`  🔍 Tier 1: Base64 URL Lookup Protocol (Division Rankings)`);
     } else {
@@ -1637,7 +1649,8 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
                     true,
                     expectedTotal,
                     expectedSnatch,
-                    expectedCJ
+                    expectedCJ,
+                    browser
                 );
             }
         }
@@ -1649,23 +1662,32 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
     console.log(`    📋 Division: ${divisionName} ${isActiveDivision ? '' : '(Inactive)'} (code: ${divisionCode})`);
     console.log(`    📅 Date Range: ${formatDate(addDays(meetDate, -3))} to ${formatDate(addDays(meetDate, 10))} (-3/+10 days)`);
 
-    let browser;
-    try {
-        browser = await puppeteer.launch({
-            headless: true,
-            args: [
-                '--no-sandbox',
-                '--disable-setuid-sandbox',
-                '--disable-dev-shm-usage',
-                '--disable-gpu',
-                '--no-first-run',
-                '--disable-extensions'
-            ]
-        });
+    let localBrowserInstance = null;
+    let page = null;
 
-        const page = await browser.newPage();
+    try {
+        if (browser) {
+            page = await browser.newPage();
+        } else {
+            // Fallback: Launch local browser if no shared instance provided
+            // console.log('    🖥️ Launching local browser for Tier 1 (no shared instance)...');
+            localBrowserInstance = await puppeteer.launch({
+                headless: true,
+                args: [
+                    '--no-sandbox',
+                    '--disable-setuid-sandbox',
+                    '--disable-dev-shm-usage',
+                    '--disable-gpu',
+                    '--no-first-run',
+                    '--disable-extensions'
+                ]
+            });
+            page = await localBrowserInstance.newPage();
+        }
+
         // Forward console logs from browser to Node.js
         page.on('console', msg => console.log('    🖥️ BROWSER LOG:', msg.text()));
+        // await page.setViewport({ width: 1500, height: 1000 }); // Optional, speeds up if omitted? Keep for safety.
         await page.setViewport({ width: 1500, height: 1000 });
 
         // Calculate date range: -3 days (buffer) to +10 days (long meets)
@@ -1984,7 +2006,10 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
                     cand.weightClass,
                     bodyweight,
                     true, // Mark as fallback to prevent infinite recursion
-                    expectedTotal
+                    expectedTotal,
+                    null,
+                    null,
+                    browser
                 );
 
                 if (result) {
@@ -2001,12 +2026,19 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
         console.log(`    ⚠️ Tier 1 verification failed (technical error): ${error.message}`);
         return null;
     } finally {
-        if (browser) await browser.close();
+        if (page) {
+            try {
+                if (!page.isClosed()) await page.close();
+            } catch (e) { /* ignore */ }
+        }
+        if (localBrowserInstance) {
+            await localBrowserInstance.close();
+        }
     }
 }
 
 // Sport80 member URL verification wrapper
-async function runSport80MemberUrlVerification(lifterName, potentialLifterIds, targetMeetId, weightClass = null, total = null, snatch = null, cj = null, bodyweight = null) {
+async function runSport80MemberUrlVerification(lifterName, potentialLifterIds, targetMeetId, weightClass = null, total = null, snatch = null, cj = null, bodyweight = null, browser = null) {
     console.log(`    🐞 DEBUG runSport80MemberUrlVerification: name=${lifterName}, ids=${potentialLifterIds}, meet=${targetMeetId}, wc=${weightClass}, tot=${total}, sn=${snatch}, cj=${cj}, bw=${bodyweight}`);
     console.log(`  🔍 Tier 2: Running Sport80 member URL verification for ${potentialLifterIds.length} candidates...`);
 
@@ -2028,7 +2060,7 @@ async function runSport80MemberUrlVerification(lifterName, potentialLifterIds, t
                 console.log(`    🔍 Checking lifter ${lifterId} (internal_id: ${lifter.internal_id})...`);
 
                 // REAL verification: Visit the member page and check if they participated in target meet
-                const result = await verifyLifterParticipationInMeet(lifter.internal_id, targetMeetId, lifterName, weightClass, total, snatch, cj, bodyweight);
+                const result = await verifyLifterParticipationInMeet(lifter.internal_id, targetMeetId, lifterName, weightClass, total, snatch, cj, bodyweight, browser);
 
                 if (result.verified) {
                     console.log(`    ✅ CONFIRMED: Using lifter ${lifterId} for meet ${targetMeetId}`);
@@ -2060,7 +2092,7 @@ async function runSport80MemberUrlVerification(lifterName, potentialLifterIds, t
                     console.log(`    🎯 Found internal_id ${foundInternalId} for ${lifter.athlete_name} via Sport80 search`);
 
                     // Verify this lifter participated in the target meet
-                    const result = await verifyLifterParticipationInMeet(foundInternalId, targetMeetId, lifter.athlete_name, weightClass, total, snatch, cj, bodyweight);
+                    const result = await verifyLifterParticipationInMeet(foundInternalId, targetMeetId, lifter.athlete_name, weightClass, total, snatch, cj, bodyweight, browser);
 
                     if (result.verified) {
                         // Update the lifter record with the found internal_id
@@ -2184,7 +2216,7 @@ class MatchingLogger {
     }
 }
 
-async function findOrCreateLifter(lifterName, additionalData = {}) {
+async function findOrCreateLifter(lifterName, browser, additionalData = {}) {
     const cleanName = lifterName?.toString().trim();
     if (!cleanName) {
         throw new Error('Lifter name is required');
@@ -2461,7 +2493,8 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
             false, // isFallbackCheck
             additionalData.expectedTotal, // Pass expectedTotal
             additionalData.expectedSnatch,
-            additionalData.expectedCJ
+            additionalData.expectedCJ,
+            browser // Pass shared browser
         );
 
         if (tier1Result) {
@@ -2488,7 +2521,8 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
             additionalData.expectedTotal,
             additionalData.expectedSnatch,
             additionalData.expectedCJ,
-            additionalData.bodyweight
+            additionalData.bodyweight,
+            browser // Pass shared browser
         );
 
         if (tier2Result) {
@@ -2516,7 +2550,12 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
                     additionalData.eventDate,
                     inferredCategory, // Use inferred category
                     additionalData.weightClass,
-                    additionalData.bodyweight
+                    additionalData.bodyweight,
+                    false, // isFallbackCheck
+                    additionalData.expectedTotal,
+                    null,
+                    null,
+                    browser // Pass shared browser
                 );
 
                 if (tier1RetryResult) {
@@ -2651,7 +2690,8 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
         false, // isFallbackCheck
         additionalData.expectedTotal, // Pass expectedTotal
         additionalData.expectedSnatch,
-        additionalData.expectedCJ
+        additionalData.expectedCJ,
+        browser // Pass shared browser
     );
 
     if (base64Result) {
@@ -2678,7 +2718,8 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
         additionalData.expectedTotal,
         additionalData.expectedSnatch,
         additionalData.expectedCJ,
-        additionalData.bodyweight
+        additionalData.bodyweight,
+        browser // Pass shared browser
     );
 
     if (tier2Result) {
@@ -2834,7 +2875,13 @@ async function processMeetCsvFile(csvFilePath, meetId, meetName) {
     console.log(`\n📄 Processing: ${fileName}`);
     console.log(`🏋️ Meet: ${meetName} (ID: ${meetId})`);
 
+    let browser = null;
     try {
+        console.log('    🖥️ Launching shared browser instance for meet verification...');
+        browser = await puppeteer.launch({
+            headless: true,
+            args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage', '--disable-gpu', '--no-first-run', '--disable-extensions']
+        });
         // Read CSV file
         const csvContent = fs.readFileSync(csvFilePath, 'utf8');
 
@@ -2919,7 +2966,7 @@ async function processMeetCsvFile(csvFilePath, meetId, meetName) {
 
                 // Find or create lifter with two-tier verification system
                 // Pass additional data needed for Tier 1 verification
-                const lifter = await findOrCreateLifter(lifterName, {
+                const lifter = await findOrCreateLifter(lifterName, browser, {
                     targetMeetId: meetId,
                     eventDate: row.Date?.trim() || null,
                     ageCategory: row['Age Category']?.trim() || null,
@@ -3023,7 +3070,7 @@ async function processMeetCsvFile(csvFilePath, meetId, meetName) {
                                 // Verify participation if possible
                                 if (candidate.internal_id) {
                                     // Run verification
-                                    const verification = await verifyLifterParticipationInMeet(candidate.internal_id, meetId, lifterName, null, parseFloat(resultData.total));
+                                    const verification = await verifyLifterParticipationInMeet(candidate.internal_id, meetId, lifterName, null, parseFloat(resultData.total), null, null, null, browser);
                                     if (verification.verified) {
                                         console.log(`    ✅ Candidate ${candidate.lifter_id} VERIFIED via Sport80 history! Switching identity.`);
                                         resultData.lifter_id = candidate.lifter_id;
@@ -3167,6 +3214,10 @@ async function processMeetCsvFile(csvFilePath, meetId, meetName) {
     } catch (error) {
         console.error(`❌ Error processing file ${fileName}:`, error.message);
         return { processed: 0, errors: 1 };
+    } finally {
+        if (browser) {
+            await browser.close();
+        }
     }
 }
 
