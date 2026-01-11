@@ -38,7 +38,7 @@ class UnifiedScraperCLI {
             number: ['batch-size', 'delay', 'limit', 'timeout', 'start-id', 'end-id', 'max-gaps', 'max-results'],
             boolean: [
                 'dry-run', 'force', 'help', 'version', 'analyze-only', 'no-metadata',
-                'missing-wso', 'missing-club', 'missing-age', 'missing-gender', 'missing-rank', 'missing-membership',
+                'missing-wso', 'missing-club', 'missing-age', 'missing-gender', 'missing-rank', 'missing-membership', 'missing-internal-id',
                 'exclude-zero-total'
             ],
             alias: {
@@ -94,6 +94,7 @@ Mode: wso
   --missing-gender        Target results missing Gender
   --missing-rank          Target results missing National Rank
   --missing-membership    Target results missing Lifter Membership Number
+  --missing-internal-id   Target results missing Lifter Internal ID (Sport80 ID)
 
 Mode: gaps
   --start-id <n>          Start meet ID
@@ -130,7 +131,9 @@ Mode: gaps
             args.missingAge = args['missing-age'];
             args.missingGender = args['missing-gender'];
             args.missingRank = args['missing-rank'];
+            args.missingRank = args['missing-rank'];
             args.missingMembership = args['missing-membership'];
+            args.missingInternalId = args['missing-internal-id'];
             args.excludeZeroTotal = args['exclude-zero-total'];
 
             args.dryRun = args['dry-run'];
