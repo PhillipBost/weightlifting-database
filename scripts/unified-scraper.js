@@ -78,7 +78,7 @@ Mode: reimport
   --meet-ids <ids>        Comma-separated list of meet IDs
   --start-date <date>     YYYY-MM-DD
   --end-date <date>       YYYY-MM-DD
-  --athlete-name <name>   Filter by athlete
+  --athlete-name <name>   Filter by athlete (Can be repeated or comma-separated)
   --analyze-only          Only analyze, do not import
 
 Mode: wso
@@ -86,7 +86,7 @@ Mode: wso
   --meet-ids <ids>        Filter by meet ID(s)
   --gender <M|F>          Filter by gender (for result lookup)
   --max-results <n>       Limit number of results to process
-  --athlete-name <name>   Filter by athlete
+  --athlete-name <name>   Filter by athlete (Can be repeated or comma-separated for multiple)
   --exclude-zero-total    Exclude results with Total=0 even if using --force
   --missing-wso           Target results missing WSO
   --missing-club          Target results missing Club Name
@@ -140,6 +140,20 @@ Mode: gaps
             args.meetIds = args['meet-ids'] ? args['meet-ids'].split(',').map(Number).filter(n => !isNaN(n)) : null;
             args.batchSize = args['batch-size'];
             args.logLevel = args['log-level'];
+
+            // Support multiple athlete names
+            let athleteNames = [];
+            const rawName = args['athlete-name'];
+            if (rawName) {
+                if (Array.isArray(rawName)) {
+                    athleteNames = rawName;
+                } else {
+                    // Support comma-separated strings inside a single flag
+                    athleteNames = String(rawName).split(',').map(s => s.trim()).filter(s => s.length > 0);
+                }
+            }
+            args.athleteNames = athleteNames;
+            args.athleteName = athleteNames.length > 0 ? athleteNames[0] : null; // Legacy support
 
             const config = new UnifiedConfiguration(args);
             const validationErrors = config.validate();

@@ -23,6 +23,7 @@ class UnifiedConfiguration {
         this.startDate = options.startDate || null;
         this.endDate = options.endDate || null;
         this.athleteName = options.athleteName || null;
+        this.athleteNames = options.athleteNames || [];
         this.limit = options.limit || null;
         this.analyzeOnly = options.analyzeOnly || false;
 

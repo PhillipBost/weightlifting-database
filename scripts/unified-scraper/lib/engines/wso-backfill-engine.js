@@ -308,13 +308,19 @@ class WsoBackfillEngine {
 
             // Standard Filters
             if (this.config.meetIds) q = q.in('meet_id', this.config.meetIds);
-            if (this.config.athleteName) {
-                const name = this.config.athleteName;
-                const doubleSpaced = name.replace(/ /g, '  ');
-                if (name !== doubleSpaced) {
-                    q = q.or(`lifter_name.ilike.${name},lifter_name.ilike.${doubleSpaced}`);
-                } else {
-                    q = q.ilike('lifter_name', name);
+            if (this.config.athleteNames && this.config.athleteNames.length > 0) {
+                const queries = [];
+                this.config.athleteNames.forEach(name => {
+                    const doubleSpaced = name.replace(/ /g, '  ');
+                    if (name !== doubleSpaced) {
+                        queries.push(`lifter_name.ilike.${name}`);
+                        queries.push(`lifter_name.ilike.${doubleSpaced}`);
+                    } else {
+                        queries.push(`lifter_name.ilike.${name}`);
+                    }
+                });
+                if (queries.length > 0) {
+                    q = q.or(queries.join(','));
                 }
             }
             if (this.config.genderFilter) q = q.eq('gender', this.config.genderFilter);

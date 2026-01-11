@@ -25,7 +25,7 @@ class SmartImporter {
      * @param {string} athleteName - Optional athlete name to filter for
      * @param {boolean} force - If true, re-import matching athletes even if they exist
      */
-    async importMissingAthletes(csvFile, meetId, meetName, athleteName = null, force = false) {
+    async importMissingAthletes(csvFile, meetId, meetName, athleteNames = [], force = false) {
         try {
             // Step 1: Get existing results in database for this meet
             this.logger.info('🔍 Checking existing results in database...');
@@ -38,25 +38,29 @@ class SmartImporter {
             this.logger.info(`📊 Found ${scrapedAthletes.length} results in scraped data`);
 
             // Step 3: Apply athlete name filter if specified
-            if (athleteName) {
-                const normalizedTargetName = this._normalizeAthleteName(athleteName);
+            // Support legacy single string or array
+            const targetNames = Array.isArray(athleteNames) ? athleteNames : (athleteNames ? [athleteNames] : []);
+
+            if (targetNames.length > 0) {
+                const normalizedTargetNames = targetNames.map(n => this._normalizeAthleteName(n));
                 const originalCount = scrapedAthletes.length;
+
                 scrapedAthletes = scrapedAthletes.filter(athlete => {
                     const athleteNameNormalized = this._normalizeAthleteName(athlete.name);
-                    return athleteNameNormalized === normalizedTargetName;
+                    return normalizedTargetNames.includes(athleteNameNormalized); // Check ANY match
                 });
 
-                this.logger.info(`🎯 Applied athlete filter: "${athleteName}" - found ${scrapedAthletes.length} of ${originalCount} athletes matching`);
+                this.logger.info(`🎯 Applied athlete filter: "${targetNames.join(', ')}" - found ${scrapedAthletes.length} of ${originalCount} athletes matching`);
 
                 if (scrapedAthletes.length === 0) {
-                    this.logger.warn(`⚠️ No athletes found matching name "${athleteName}"`);
+                    this.logger.warn(`⚠️ No athletes found matching names "${targetNames.join(', ')}"`);
                     return {
                         processed: 0,
                         imported: 0,
                         skipped: originalCount,
                         errors: [{
-                            name: athleteName,
-                            reason: `No athlete found with name "${athleteName}"`
+                            name: targetNames.join(', '),
+                            reason: `No athlete found with specified names`
                         }]
                     };
                 }
