@@ -35,6 +35,9 @@ UPDATE usaw_lifters
 SET athlete_name = 'Johanna Griffith'
 WHERE lifter_id = 64360;
 COMMIT;
---4. Delete the "Ghost" Lifter
+--4a. Delete the "Ghost" Results
+DELETE FROM usaw_meet_results
+WHERE lifter_id IN (14437, 14438, 14439);
+--4b. Delete the "Ghost" Lifters
 DELETE FROM usaw_lifters
-WHERE lifter_id = 14437;
+WHERE lifter_id IN (14437, 14438, 14439);

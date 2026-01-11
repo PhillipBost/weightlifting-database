@@ -64,7 +64,7 @@ class DetailedReImportOrchestrator {
                 tempFile,
                 meetId,
                 meetDetails.name,
-                this.options.athleteName, // Correctly pass athleteName as 4th arg
+                this.options.athleteNames, // Correctly pass athleteNames array as 4th arg
                 this.options.force        // Pass force as 5th arg
             );
 
