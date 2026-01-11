@@ -135,6 +135,13 @@ class MeetCompletenessEngine {
                     discrepancy,
                     status: discrepancy > 0 ? 'incomplete' : 'database_has_more'
                 });
+
+                // If Sport80 has MORE results, check for duplicates
+                // This helps identify if the "missing" results are actually just duplicates 
+                // that our import logic correctly de-duplicated
+                if (sport80Count > databaseCount) {
+                    await this._findDuplicates(meetId, meetDetails.sport80_id);
+                }
             } else {
                 this.logger.debug(`Meet ${meetId} result counts match and data is complete`, {
                     meetName: meetDetails.name,
@@ -409,6 +416,108 @@ class MeetCompletenessEngine {
         } finally {
             if (browser) {
                 await browser.close();
+            }
+        }
+    }
+
+    /**
+     * Find and log duplicate results from Sport80
+     * @private
+     */
+    async _findDuplicates(meetId, sport80Id) {
+        this.logger.info(`🔍 Investigating discrepancies for meet ${meetId}...`);
+
+        const path = require('path');
+        const os = require('os');
+        const fs = require('fs');
+        const { scrapeOneMeet } = require('../../production/scrapeOneMeet');
+
+        const tempDir = os.tmpdir();
+        const tempFile = path.join(tempDir, `discrepancy_check_${meetId}_${Date.now()}.csv`);
+
+        try {
+            this.logger.info(`   🌐 Scraping Sport80 for duplicate analysis (Meet ${sport80Id})...`);
+
+            // Scrape the meet
+            await scrapeOneMeet(sport80Id, tempFile);
+
+            if (!fs.existsSync(tempFile)) {
+                this.logger.warn('   ⚠️ Scrape failed - no output file created');
+                return;
+            }
+
+            // Read and parse the scraped CSV
+            const content = fs.readFileSync(tempFile, 'utf8');
+            const lines = content.split('\n').filter(line => line.trim());
+
+            if (lines.length < 2) {
+                this.logger.warn('   ⚠️ Scraped file is empty or missing headers');
+                return;
+            }
+
+            const header = lines[0].split('|').map(h => h.trim());
+            const rows = lines.slice(1).map((line, index) => {
+                const cells = line.split('|').map(c => c.trim());
+                const row = {};
+                header.forEach((h, i) => {
+                    row[h] = cells[i] || '';
+                });
+                return row;
+            });
+
+            this.logger.info(`   📊 Analyzed ${rows.length} scraped records for duplicates...`);
+
+            // Find duplicates using a Map
+            const seen = new Map();
+            const duplicates = [];
+
+            rows.forEach((row, index) => {
+                // Create a unique key for the result
+                // Name + Division (Age Category + Weight Class) + Total + Best Snatch + Best CJ
+                // This combination is almost certainly unique for a single event
+
+                // Helper to normalize
+                const norm = (val) => String(val || '').toLowerCase().trim();
+
+                const key = [
+                    norm(row['Name'] || row['Lifter']),
+                    norm(row['Age Category']),
+                    norm(row['Weight Class']),
+                    norm(row['Total']),
+                    norm(row['Best Snatch']),
+                    norm(row['Best C&J'])
+                ].join('||');
+
+                if (seen.has(key)) {
+                    duplicates.push({
+                        original: seen.get(key),
+                        duplicate: { ...row, rowIndex: index + 2 } // +2 for 1-based index including header
+                    });
+                } else {
+                    seen.set(key, { ...row, rowIndex: index + 2 });
+                }
+            });
+
+            if (duplicates.length > 0) {
+                this.logger.info(`   🚨 Found ${duplicates.length} DUPLICATE results on Sport80:`);
+                duplicates.forEach((dup, i) => {
+                    const r = dup.duplicate;
+                    this.logger.info(`      ${i + 1}. ${r['Name'] || r['Lifter']} (${r['Age Category']} / ${r['Weight Class']}) - Total: ${r['Total']} [Rows: ${dup.original.rowIndex} & ${dup.duplicate.rowIndex}]`);
+                });
+            } else {
+                this.logger.info('   ✨ No obvious duplicates found in scraped data (discrepancy might be ghost records in DB)');
+            }
+
+        } catch (error) {
+            this.logger.error(`   ❌ Failed to analyze duplicates: ${error.message}`);
+        } finally {
+            // Clean up
+            if (fs.existsSync(tempFile)) {
+                try {
+                    fs.unlinkSync(tempFile);
+                } catch (e) {
+                    // Ignore cleanup error
+                }
             }
         }
     }
