@@ -1788,6 +1788,20 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
             if (potentialLifterIds.length === 1) {
                 // Single candidate - return it
 
+                // NEW: Ensure internal_id is linked to the lifter (Fix for Regression)
+                if (targetAthlete.internalId) {
+                    try {
+                        await supabase
+                            .from('usaw_lifters')
+                            .update({ internal_id: targetAthlete.internalId })
+                            .eq('lifter_id', potentialLifterIds[0]);
+
+                        console.log(`    🔗 Linked internal_id ${targetAthlete.internalId} to lifter ${potentialLifterIds[0]}`);
+                    } catch (e) {
+                        console.log('    ⚠️ Failed to link internal_id:', e.message);
+                    }
+                }
+
                 // TARGETED UPDATE: We know this is the correct lifter, so update metadata safely
                 if (targetAthlete.internalId) {
                     const updateData = {};
