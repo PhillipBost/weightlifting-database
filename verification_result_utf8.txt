@@ -1,0 +1,33 @@
+🧪 Analyzing Meat 2748 (known to have duplicates)...
+[DEBUG] Analyzing completeness for meet 2748 
+[DEBUG] Meet details for 2748: {"name":"2017 Kansas State & Open Championships","date":"2017-08-26","sport80_id":2748}
+[DEBUG] Querying database result count for meet 2748 
+[DEBUG] Database result count for meet 2748: 124 
+[DEBUG] Extracting Sport80 result count for meet 2748 
+[DEBUG] Navigating to Sport80 meet page: https://usaweightlifting.sport80.com/public/rankings/results/2748 
+[DEBUG] Extracted total result count: 125 from pagination: 1-30 of 125 
+[INFO] Meet 2748 has result count discrepancy {"meetName":"2017 Kansas State & Open Championships","sport80Count":125,"databaseCount":124,"discrepancy":1,"status":"incomplete"}
+[INFO] 🔍 Investigating discrepancies for meet 2748... 
+[INFO]    🌐 Scraping Sport80 for duplicate analysis (Meet 2748)... 
+[INFO]    📊 Analyzed 125 scraped records for duplicates... 
+[INFO]    🚨 Found 1 DUPLICATE results on Sport80: 
+[INFO]       1. Ethan Howard (Open Men's / +105 kg) - Total: 140 [Rows: 56 & 58] 
+[DEBUG] Meet 2748 completeness analysis completed {"isComplete":false,"sport80Count":125,"databaseCount":124,"discrepancy":1}
+✅ Analysis Logged
+
+📊 Result Summary:
+{
+  "meetId": 2748,
+  "meetInternalId": 2748,
+  "meetName": "2017 Kansas State & Open Championships",
+  "meetDate": "2017-08-26",
+  "sport80ResultCount": 125,
+  "databaseResultCount": 124,
+  "resultCountMatch": false,
+  "hasIncompleteResults": false,
+  "isComplete": false,
+  "discrepancy": 1,
+  "lastCheckedDate": "2026-01-11T02:22:04.209Z",
+  "status": "incomplete",
+  "errorLog": []
+}
