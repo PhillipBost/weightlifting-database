@@ -37,8 +37,14 @@ class MeetCompletenessEngine {
 
             // Analyze each meet for completeness
             const incompleteMeets = [];
+            const totalCandidates = candidateMeets.length;
+            let processedCount = 0;
+
             for (const meet of candidateMeets) {
+                processedCount++;
                 const completenessResult = await this.analyzeMeetCompleteness(meet.id);
+
+                this.logger.info(`Meet number ${meet.id} analysis complete (meet ${processedCount} out of ${totalCandidates})`);
 
                 // If force is enabled or meet is incomplete, add it to the list
                 if (this.options.force || !completenessResult.isComplete) {
