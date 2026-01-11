@@ -1182,7 +1182,7 @@ async function scrapeDivisionRankings(page, divisionCode, startDate, endDate) {
     }
 }
 
-async function batchEnrichAthletes(scrapedAthletes, startDate, endDate, ageCategory, weightClass, forceUpdate = false) {
+async function batchEnrichAthletes(scrapedAthletes, startDate, endDate, ageCategory, weightClass, forceUpdate = false, targetLifterName = null) {
     if (scrapedAthletes.length === 0) return;
 
     console.log(`    📊 Batch enrichment: Processing ${scrapedAthletes.length} athletes from scraped data...`);
@@ -1253,26 +1253,31 @@ async function batchEnrichAthletes(scrapedAthletes, startDate, endDate, ageCateg
         }
 
         if (scrapedAthlete) {
+            // SCOPED FORCE: Only force update if this is the target lifter
+            // All other athletes get standard "fill missing only" treatment
+            const isTarget = targetLifterName && dbResult.lifter_name.toLowerCase() === targetLifterName.toLowerCase();
+            const shouldForce = forceUpdate && isTarget;
+
             // Update meet results
             const updateData = {};
-            if ((!dbResult.competition_age || forceUpdate) && scrapedAthlete.lifterAge) {
+            if ((!dbResult.competition_age || shouldForce) && scrapedAthlete.lifterAge) {
                 updateData.competition_age = parseInt(scrapedAthlete.lifterAge);
             }
-            if ((!dbResult.club_name || forceUpdate) && scrapedAthlete.club) {
+            if ((!dbResult.club_name || shouldForce) && scrapedAthlete.club) {
                 updateData.club_name = scrapedAthlete.club;
             }
-            if ((!dbResult.wso || forceUpdate) && scrapedAthlete.wso) {
+            if ((!dbResult.wso || shouldForce) && scrapedAthlete.wso) {
                 updateData.wso = scrapedAthlete.wso;
             }
-            if ((!dbResult.gender || forceUpdate) && scrapedAthlete.gender) {
+            if ((!dbResult.gender || shouldForce) && scrapedAthlete.gender) {
                 updateData.gender = scrapedAthlete.gender;
             }
-            if ((!dbResult.national_rank || forceUpdate) && scrapedAthlete.nationalRank) {
+            if ((!dbResult.national_rank || shouldForce) && scrapedAthlete.nationalRank) {
                 updateData.national_rank = parseInt(scrapedAthlete.nationalRank);
             }
 
             // CRITICAL: Clear derived/trigger-based fields if forcing update to allow recalculation
-            if (forceUpdate) {
+            if (shouldForce) {
                 updateData.qpoints = null;
                 updateData.q_masters = null;
                 updateData.q_youth = null;
@@ -1712,7 +1717,8 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
         }
 
         // BATCH ENRICHMENT - Update all matching athletes in the database
-        await batchEnrichAthletes(scrapedAthletes, startDate, endDate, ageCategory, weightClass, forceUpdate);
+        // Pass lifterName as targetLifterName to scope forceUpdate
+        await batchEnrichAthletes(scrapedAthletes, startDate, endDate, ageCategory, weightClass, forceUpdate, lifterName);
 
         // VERIFICATION - Check if target lifter was found
         let targetAthlete = null;
