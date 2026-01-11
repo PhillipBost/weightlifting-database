@@ -56,7 +56,9 @@ class WsoBackfillEngine {
                         false, // isFallbackCheck
                         result.total,
                         result.best_snatch,
-                        result.best_cj
+                        result.best_cj,
+                        null, // browser (optional)
+                        this.config.force // forceUpdate
                     );
 
                     if (tier1Result) {
@@ -199,7 +201,9 @@ class WsoBackfillEngine {
                                 false, // isFallbackCheck
                                 result.total,
                                 result.best_snatch,
-                                result.best_cj
+                                result.best_cj,
+                                null, // browser
+                                this.config.force // forceUpdate
                             );
 
                             if (tier1Result) {
@@ -232,14 +236,15 @@ class WsoBackfillEngine {
                         potentialIds,
                         result.meet_id,
                         result.date,
-                        result.date,
                         discoveryCategory,
                         result.weight_class,
                         result.body_weight_kg,
                         false,
                         result.total,
                         result.best_snatch,
-                        result.best_cj
+                        result.best_cj,
+                        null,
+                        this.config.force
                     );
 
                     if (tier1Result) {
@@ -320,78 +325,94 @@ class WsoBackfillEngine {
             return q;
         };
 
-        // 1. LOCAL MISSING COLUMNS QUERY
-        // Include if ANY local target is set OR if we are in Default Mode
-        const runLocalQuery = !isExplicitTargeting || (targetWso || targetClub || targetAge || targetGender || targetRank);
+        // 1. FORCE MODE WITH SCOPE
+        // If --force is used AND we have specific targets (meet or athlete), 
+        // we want to process ALL results matching the scope, regardless of whether they have missing data.
+        const isForcedScope = this.config.force && (this.config.meetIds || this.config.athleteName);
 
-        if (runLocalQuery) {
+        if (isForcedScope) {
+            this.logger.info('💪 Force Mode with Scope detected: Bypassing "missing data" checks.');
             let q = this.supabase.from('usaw_meet_results');
             q = baseFilter(q);
 
-            const filterParts = [];
-            if (!isExplicitTargeting) {
-                // DEFAULT SET (Local)
-                this.logger.info('🎯 No specific targets set. Using Default Set: WSO, Age, Gender, Rank, Membership, Internal ID');
-                filterParts.push('wso.is.null');
-                filterParts.push('wso.eq.');
-                filterParts.push('competition_age.is.null');
-                filterParts.push('gender.is.null');
-                filterParts.push('national_rank.is.null');
-            } else {
-                // EXPLICIT LOCAL
-                if (targetWso) {
+            // We still need to select the right columns to make the processing logic work
+            q = q.select(`
+                result_id, lifter_id, lifter_name, meet_id, gender, age_category, weight_class, body_weight_kg, competition_age, wso, club_name, total, best_snatch, best_cj, date,
+                usaw_lifters (membership_number, internal_id),
+                usaw_meets (Level)
+            `);
+
+            queriesToRun.push({ name: 'Forced Scope Query', query: q });
+
+        } else {
+            // STANDARD MODE (Existing Logic)
+
+            // 1. LOCAL MISSING COLUMNS QUERY
+            // Include if ANY local target is set OR if we are in Default Mode
+            const runLocalQuery = !isExplicitTargeting || (targetWso || targetClub || targetAge || targetGender || targetRank);
+
+            if (runLocalQuery) {
+                let q = this.supabase.from('usaw_meet_results');
+                q = baseFilter(q);
+
+                const filterParts = [];
+                if (!isExplicitTargeting) {
+                    // DEFAULT SET (Local)
+                    this.logger.info('🎯 No specific targets set. Using Default Set: WSO, Age, Gender, Rank, Membership, Internal ID');
                     filterParts.push('wso.is.null');
                     filterParts.push('wso.eq.');
+                    filterParts.push('competition_age.is.null');
+                    filterParts.push('gender.is.null');
+                    filterParts.push('national_rank.is.null');
+                } else {
+                    // EXPLICIT LOCAL
+                    if (targetWso) {
+                        filterParts.push('wso.is.null');
+                        filterParts.push('wso.eq.');
+                    }
+                    if (targetClub) filterParts.push('club_name.is.null');
+                    if (targetAge) filterParts.push('competition_age.is.null');
+                    if (targetGender) filterParts.push('gender.is.null');
+                    if (targetRank) filterParts.push('national_rank.is.null');
                 }
-                if (targetClub) filterParts.push('club_name.is.null');
-                if (targetAge) filterParts.push('competition_age.is.null');
-                if (targetGender) filterParts.push('gender.is.null');
-                if (targetRank) filterParts.push('national_rank.is.null');
+
+                if (filterParts.length > 0) {
+                    q = q.or(filterParts.join(','));
+                    queriesToRun.push({ name: 'Local Missing', query: q });
+                }
             }
 
-            if (filterParts.length > 0) {
-                q = q.or(filterParts.join(','));
-                queriesToRun.push({ name: 'Local Missing', query: q });
+            // 2. REMOTE MISSING QUERY: MEMBERSHIP
+            // Explicit or Default
+            if (!isExplicitTargeting || targetMembership) {
+                let q = this.supabase.from('usaw_meet_results');
+                q = baseFilter(q);
+
+                q = q.select(`
+                    result_id, lifter_id, lifter_name, meet_id, gender, age_category, weight_class, body_weight_kg, competition_age, wso, club_name, total, best_snatch, best_cj, date,
+                    usaw_lifters!inner(membership_number, internal_id),
+                    usaw_meets(Level)
+                `);
+
+                q = q.filter('usaw_lifters.membership_number', 'is', 'null');
+                queriesToRun.push({ name: 'Missing Membership', query: q });
             }
-        }
 
-        // 2. REMOTE MISSING QUERY: MEMBERSHIP
-        // Explicit or Default
-        if (!isExplicitTargeting || targetMembership) {
-            let q = this.supabase.from('usaw_meet_results');
-            q = baseFilter(q);
-            // Use !inner to filter by joined column
-            // We must rewrite select to ensure !inner is used for filtering but compatible with fetching
-            // Actually, we can just add the filter on the relationship
-            // NOTE: The base selectString uses standard join. We need to add !inner to the select for filtering to work? 
-            // Or just use the filter syntax `usaw_lifters!inner(membership_number)` in select.
-            // Let's modify the select for this specific query to enforce inner join on lifters
+            // 3. REMOTE MISSING QUERY: INTERNAL ID
+            // Explicit or Default
+            if (!isExplicitTargeting || targetInternalId) {
+                let q = this.supabase.from('usaw_meet_results');
+                q = baseFilter(q);
 
-            // Re-apply select with !inner for lifters
-            q = q.select(`
-                result_id, lifter_id, lifter_name, meet_id, gender, age_category, weight_class, body_weight_kg, competition_age, wso, club_name, total, best_snatch, best_cj, date,
-                usaw_lifters!inner(membership_number, internal_id),
-                usaw_meets(Level)
-            `);
+                q = q.select(`
+                    result_id, lifter_id, lifter_name, meet_id, gender, age_category, weight_class, body_weight_kg, competition_age, wso, club_name, total, best_snatch, best_cj, date,
+                    usaw_lifters!inner(membership_number, internal_id),
+                    usaw_meets(Level)
+                `);
 
-            q = q.filter('usaw_lifters.membership_number', 'is', 'null');
-            queriesToRun.push({ name: 'Missing Membership', query: q });
-        }
-
-        // 3. REMOTE MISSING QUERY: INTERNAL ID
-        // Explicit or Default
-        if (!isExplicitTargeting || targetInternalId) {
-            let q = this.supabase.from('usaw_meet_results');
-            q = baseFilter(q);
-
-            q = q.select(`
-                result_id, lifter_id, lifter_name, meet_id, gender, age_category, weight_class, body_weight_kg, competition_age, wso, club_name, total, best_snatch, best_cj, date,
-                usaw_lifters!inner(membership_number, internal_id),
-                usaw_meets(Level)
-            `);
-
-            q = q.filter('usaw_lifters.internal_id', 'is', 'null');
-            queriesToRun.push({ name: 'Missing Internal ID', query: q });
+                q = q.filter('usaw_lifters.internal_id', 'is', 'null');
+                queriesToRun.push({ name: 'Missing Internal ID', query: q });
+            }
         }
 
         // EXECUTE ALL QUERIES

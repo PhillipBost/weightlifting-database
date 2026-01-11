@@ -1182,7 +1182,7 @@ async function scrapeDivisionRankings(page, divisionCode, startDate, endDate) {
     }
 }
 
-async function batchEnrichAthletes(scrapedAthletes, startDate, endDate, ageCategory, weightClass) {
+async function batchEnrichAthletes(scrapedAthletes, startDate, endDate, ageCategory, weightClass, forceUpdate = false) {
     if (scrapedAthletes.length === 0) return;
 
     console.log(`    📊 Batch enrichment: Processing ${scrapedAthletes.length} athletes from scraped data...`);
@@ -1255,20 +1255,28 @@ async function batchEnrichAthletes(scrapedAthletes, startDate, endDate, ageCateg
         if (scrapedAthlete) {
             // Update meet results
             const updateData = {};
-            if (!dbResult.competition_age && scrapedAthlete.lifterAge) {
+            if ((!dbResult.competition_age || forceUpdate) && scrapedAthlete.lifterAge) {
                 updateData.competition_age = parseInt(scrapedAthlete.lifterAge);
             }
-            if (!dbResult.club_name && scrapedAthlete.club) {
+            if ((!dbResult.club_name || forceUpdate) && scrapedAthlete.club) {
                 updateData.club_name = scrapedAthlete.club;
             }
-            if (!dbResult.wso && scrapedAthlete.wso) {
+            if ((!dbResult.wso || forceUpdate) && scrapedAthlete.wso) {
                 updateData.wso = scrapedAthlete.wso;
             }
-            if (!dbResult.gender && scrapedAthlete.gender) {
+            if ((!dbResult.gender || forceUpdate) && scrapedAthlete.gender) {
                 updateData.gender = scrapedAthlete.gender;
             }
-            if (!dbResult.national_rank && scrapedAthlete.nationalRank) {
+            if ((!dbResult.national_rank || forceUpdate) && scrapedAthlete.nationalRank) {
                 updateData.national_rank = parseInt(scrapedAthlete.nationalRank);
+            }
+
+            // CRITICAL: Clear derived/trigger-based fields if forcing update to allow recalculation
+            if (forceUpdate) {
+                updateData.qpoints = null;
+                updateData.q_masters = null;
+                updateData.q_youth = null;
+                updateData.birth_year = null;
             }
 
             if (Object.keys(updateData).length > 0) {
@@ -1566,7 +1574,7 @@ function generateAlternativeDivisions(originalCategory, bodyWeight, eventDateStr
     return uniqueCandidates;
 }
 
-async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, targetMeetId, eventDate, ageCategory, weightClass, bodyweight = null, isFallbackCheck = false, expectedTotal = null, expectedSnatch = null, expectedCJ = null, browser = null) {
+async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, targetMeetId, eventDate, ageCategory, weightClass, bodyweight = null, isFallbackCheck = false, expectedTotal = null, expectedSnatch = null, expectedCJ = null, browser = null, forceUpdate = false) {
     if (!isFallbackCheck) {
         console.log(`  🔍 Tier 1: Base64 URL Lookup Protocol (Division Rankings)`);
     } else {
@@ -1650,7 +1658,8 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
                     expectedTotal,
                     expectedSnatch,
                     expectedCJ,
-                    browser
+                    browser,
+                    forceUpdate
                 );
             }
         }
@@ -1703,7 +1712,7 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
         }
 
         // BATCH ENRICHMENT - Update all matching athletes in the database
-        await batchEnrichAthletes(scrapedAthletes, startDate, endDate, ageCategory, weightClass);
+        await batchEnrichAthletes(scrapedAthletes, startDate, endDate, ageCategory, weightClass, forceUpdate);
 
         // VERIFICATION - Check if target lifter was found
         let targetAthlete = null;
@@ -2023,7 +2032,8 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
                     expectedTotal,
                     null,
                     null,
-                    browser
+                    browser,
+                    forceUpdate
                 );
 
                 if (result) {
