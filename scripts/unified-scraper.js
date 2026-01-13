@@ -82,7 +82,7 @@ Mode: reimport
   --analyze-only          Only analyze, do not import
 
 Mode: wso
-  (Default: Targets WSO, Age, Gender, Rank, Membership, Level. Excludes Club.)
+  (Default: Targets WSO, Age, Gender, Membership, Level. Excludes Club, Rank.)
   --meet-ids <ids>        Filter by meet ID(s)
   --gender <M|F>          Filter by gender (for result lookup)
   --max-results <n>       Limit number of results to process

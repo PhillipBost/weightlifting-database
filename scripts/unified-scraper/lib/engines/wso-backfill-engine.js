@@ -364,12 +364,11 @@ class WsoBackfillEngine {
                 const filterParts = [];
                 if (!isExplicitTargeting) {
                     // DEFAULT SET (Local)
-                    this.logger.info('🎯 No specific targets set. Using Default Set: WSO, Age, Gender, Rank, Membership, Internal ID');
+                    this.logger.info('🎯 No specific targets set. Using Default Set: WSO, Age, Gender, Membership, Internal ID');
                     filterParts.push('wso.is.null');
                     filterParts.push('wso.eq.');
                     filterParts.push('competition_age.is.null');
                     filterParts.push('gender.is.null');
-                    filterParts.push('national_rank.is.null');
                 } else {
                     // EXPLICIT LOCAL
                     if (targetWso) {
