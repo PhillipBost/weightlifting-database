@@ -45,6 +45,28 @@ function log(message) {
     fs.appendFileSync(LOG_FILE, logMessage);
 }
 
+return options;
+}
+
+// Parse date arg from --date=YYYY-MM format
+function parseDateArg(dateStr) {
+    if (!dateStr) return null;
+    const parts = dateStr.split('-');
+    if (parts.length < 2) return null;
+
+    const year = parseInt(parts[0]);
+    const month = parseInt(parts[1]);
+
+    if (isNaN(year) || isNaN(month)) return null;
+
+    // Calculate start and end of month
+    const startDate = `${year}-${String(month).padStart(2, '0')}-01`;
+    const lastDay = new Date(year, month, 0).getDate();
+    const endDate = `${year}-${String(month).padStart(2, '0')}-${String(lastDay).padStart(2, '0')}`;
+
+    return { fromDate: startDate, toDate: endDate };
+}
+
 // Parse command line arguments
 function parseArguments() {
     const args = process.argv.slice(2);
@@ -54,21 +76,30 @@ function parseArguments() {
     };
 
     for (let i = 0; i < args.length; i++) {
-        switch (args[i]) {
-            case '--year':
-                const year = args[i + 1];
-                options.fromDate = `${year}-01-01`;
-                options.toDate = `${year}-12-31`;
-                i++;
-                break;
-            case '--from-date':
-                options.fromDate = args[i + 1];
-                i++;
-                break;
-            case '--to-date':
-                options.toDate = args[i + 1];
-                i++;
-                break;
+        if (args[i].startsWith('--date=')) {
+            const dateVal = args[i].split('=')[1];
+            const dateRange = parseDateArg(dateVal);
+            if (dateRange) {
+                options.fromDate = dateRange.fromDate;
+                options.toDate = dateRange.toDate;
+            }
+        } else {
+            switch (args[i]) {
+                case '--year':
+                    const year = args[i + 1];
+                    options.fromDate = `${year}-01-01`;
+                    options.toDate = `${year}-12-31`;
+                    i++;
+                    break;
+                case '--from-date':
+                    options.fromDate = args[i + 1];
+                    i++;
+                    break;
+                case '--to-date':
+                    options.toDate = args[i + 1];
+                    i++;
+                    break;
+            }
         }
     }
 
