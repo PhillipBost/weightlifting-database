@@ -45,8 +45,6 @@ function log(message) {
     fs.appendFileSync(LOG_FILE, logMessage);
 }
 
-return options;
-}
 
 // Parse date arg from --date=YYYY-MM format
 function parseDateArg(dateStr) {
@@ -589,6 +587,18 @@ async function updateMeetAddress(meetId, meetName, addressData, coordinateData =
             updateData.geocode_precision_score = 6;
             updateData.geocode_strategy_used = coordinateData.strategy;
             updateData.geocode_display_name = `Direct coordinates from Sport80: ${coordinateData.source_url}`;
+            updateData.geocode_success = true;
+        } else {
+            // If we are updating the address text but don't have new coordinates,
+            // we MUST reset the geocoding status so the geocoder knows to re-process this meet.
+            // (Previously, if we improved the address but the score was low, the geocoder might ignore it 
+            // or the loop logic would get stuck).
+            updateData.geocode_precision_score = null;
+            updateData.geocode_success = null;
+            updateData.geocode_strategy_used = null;
+            updateData.latitude = null;
+            updateData.longitude = null;
+            updateData.geocode_display_name = null;
         }
 
         const { error } = await supabase
