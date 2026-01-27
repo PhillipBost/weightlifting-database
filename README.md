@@ -2,13 +2,12 @@
 
 > **[View Full Schema Documentation (SCHEMA.md)](SCHEMA.md)**
 
-
 ## All Processes
 
 | Code | Process/File | Trigger | Status | Description |
 |------|-------------|---------|--------|-------------|
 | **DAILY** | `daily-scrape.yml` | Daily 2AM EST | ✅ Active | GitHub Action: Runs D1→D2→D3→D4 |
-| &nbsp;&nbsp;&nbsp;&nbsp;D1 | `meet_scraper_2025.js` | Called by daily-scrape.yml | ✅ Active | Daily meet metadata scraping |
+| &nbsp;&nbsp;&nbsp;&nbsp;D1 | `meet_scraper.js` | Called by daily-scrape.yml | ✅ Active | Daily meet metadata scraping |
 | &nbsp;&nbsp;&nbsp;&nbsp;D2 | `database-importer.js` + `scrapeOneMeet.js` | Called by daily-scrape.yml | ✅ Active | Meet data import + individual results scraping |
 | &nbsp;&nbsp;&nbsp;&nbsp;D3 | `nightly-division-scraper.js` | Called by daily-scrape.yml | ✅ Active | Division-based athlete scraping (recent 2 months) |
 | &nbsp;&nbsp;&nbsp;&nbsp;D4 | `athlete-csv-uploader.js` | Called by D3 automatically | ✅ Active | Athlete data upload & lifter table updates |
@@ -41,6 +40,7 @@
 ## Database Field Coverage
 
 ### meets Table - Daily Meet Process (D1)
+
 | Field Name | Type | Status | Notes |
 |------------|------|--------|-------|
 | meet_id | int (PK) | ✓ Populated | Unique identifier from USAW URLs |
@@ -53,6 +53,7 @@
 | scraped_date | timestamp | ✓ Populated | When meet was first scraped |
 
 ### lifters Table - Multiple Processes
+
 | Field Name | Type | D2 | Division Scrapers | Uploaders | ID System | Notes |
 |------------|------|----|--------------------|-----------|-----------|-------|
 | lifter_id | int (PK) | ✓ | | ✓ | | Auto-increment, created when first encountered |
@@ -72,6 +73,7 @@
 | updated_at | timestamp | ✓ | | ✓ | | Automatic timestamps |
 
 ### meet_results Table - Meet Data Import (D2)
+
 | Field Name | Type | Status | Notes |
 |------------|------|--------|-------|
 | result_id | int (PK) | ✓ Populated | Auto-increment |
@@ -96,12 +98,14 @@
 | club_name | text | ✓ Updated by Uploaders | Club at time of competition |
 
 **Legend:**
+
 - ✓ = Process populates this field
 - ❌ = Process scrapes data but doesn't upload to database  
 - ⚪ = Manual process
 
 **Process Groups:**
-- **Daily Meet Process**: D1 (meet_scraper_2025.js) → D2 (database-importer.js + scrapeOneMeet.js)
+
+- **Daily Meet Process**: D1 (meet_scraper.js) → D2 (database-importer.js + scrapeOneMeet.js)
 - **Division Scrapers**: D3 + M1 + T1 + W1 + Th1 + F1 + S1 + Su1 (all use nightly-division-scraper.js)
 - **Uploader Process**: D4 + M2 + T2 + W2 + Th2 + F2 + S2 + Su2 (all use athlete-csv-uploader.js)
 - **Internal ID System**: ID1 + ID2 - DEACTIVATED

@@ -52,7 +52,7 @@ async function main() {
         // Step 1: Run meet scraper
         // Pass any command line arguments (like --date=2025-12) to the scraper
         const args = process.argv.slice(2);
-        await runScript('scripts/production/meet_scraper_2025.js', args);
+        await runScript('scripts/production/meet_scraper.js', args);
 
         // Step 2: Wait 10 seconds
         await delay(10);
@@ -79,17 +79,19 @@ async function main() {
                 console.log(`🎯 Found ${meetIds.length} meets to post-process: ${meetIds.join(', ')}`);
                 const meetIdString = meetIds.join(',');
 
-                // Step 4a: Run Reimport (Data Quality Check)
-                console.log('\n🔍 Step 4a: Running Data Quality Reimport (Catching zero-totals)...');
+                // Step 6a: Run Reimport (Data Quality Check)
+                console.log('\n🔍 Step 6a: Running Data Quality Reimport (High Fidelity)...');
+                // The user wants to FORCE this for all new meets to ensure we get the best data immediately
+                // This uses the "Custom" importer under the hood which has the multi-tier verification
                 await runScript('scripts/unified-scraper.js', [
                     '--mode=reimport',
                     `--meet-ids=${meetIdString}`,
                     '--force'
                 ]);
 
-                // Step 4b: Run WSO Backfill (Metadata Enrichment)
-                console.log('\n🌍 Step 4b: Running WSO Metadata Backfill...');
-                // Note: No --force needed here as we want to fill missing data
+                // Step 6b: Run WSO Backfill (Metadata Enrichment)
+                console.log('\n🌍 Step 6b: Running WSO Metadata Backfill...');
+                // Run without restrictive flags to catch anything that needs metadata
                 await runScript('scripts/unified-scraper.js', [
                     '--mode=wso',
                     `--meet-ids=${meetIdString}`
