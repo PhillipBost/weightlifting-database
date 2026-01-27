@@ -486,7 +486,13 @@ async function getMeetsNeedingGeocode() {
                 .select('meet_id, Meet, address, latitude, longitude, geocode_success, geocode_precision_score, geocode_display_name, Date')
                 .not('address', 'is', null)
                 .neq('address', '')
-                .or('geocode_precision_score.is.null,geocode_precision_score.lte.3')
+                // OPTIMIZATION: By default, only get meets that have NEVER been geocoded or failed completely.
+                // We stop automatically retrying low-precision (score 1-3) results every day because they likely won't improve
+                // without a better address, and it wastes massive amounts of API time.
+                // To retry low precision matches, use the --retry-low-precision flag.
+                .or(process.argv.includes('--retry-low-precision')
+                    ? 'geocode_precision_score.is.null,geocode_precision_score.lte.3,geocode_success.is.false'
+                    : 'geocode_precision_score.is.null,geocode_success.is.false')
                 .range(from, from + pageSize - 1);
 
             if (error) {

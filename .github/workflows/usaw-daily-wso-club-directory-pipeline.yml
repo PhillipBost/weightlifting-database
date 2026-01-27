@@ -3,7 +3,7 @@ name: USAW Daily WSO & Club Directory Pipeline
 on:
   schedule:
     # Run daily at 9 PM UTC (4 PM EST)
-    # - cron: '0 21 * * *'
+    - cron: '0 21 * * *'
   workflow_dispatch: # Allow manual triggering
     inputs:
       skip_meets:
@@ -19,7 +19,9 @@ on:
 
 jobs:
   scrape-meet-addresses:
-    if: ${{ !inputs.skip_meets }}
+    # Only run on manual trigger (and if not skipped)
+    # This prevents it from running on the daily schedule, which is handled by the discovery pipeline now
+    if: ${{ github.event_name == 'workflow_dispatch' && !inputs.skip_meets }}
     runs-on: ubuntu-latest
     timeout-minutes: 360 # 6 hours for scraping and geocoding all low-precision meets
 
