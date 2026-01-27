@@ -114,10 +114,10 @@ jobs:
           DATE_FILTER_MONTHS: 2
         run: |
           set -o pipefail
-          echo "🔍 Starting missing WSO scan..."
+          echo "🔍 Starting unified WSO backfill (catch-all)..."
           echo "🕐 Start time: $(date +'%Y-%m-%d %H:%M:%S %Z')"
 
-          node scripts/analysis/missing-wso-scan.js 2>&1 | tee logs/missing-wso-scan.log
+          node scripts/unified-scraper.js --mode=wso 2>&1 | tee logs/missing-wso-scan.log
 
           if [ $? -eq 0 ]; then
             echo "✅ Missing WSO scan completed successfully"

@@ -881,7 +881,7 @@ async function main() {
             const csvFiles = fs.readdirSync('.').filter(file => file.endsWith('.csv') && file.startsWith('meets_'));
             if (csvFiles.length > 0) {
                 csvFiles.forEach(file => console.log(`   - ${file}`));
-                console.log(`💡 You might want to run the scraper first: node meet_scraper_2025.js`);
+                console.log(`💡 You might want to run the scraper first: node meet_scraper.js`);
             } else {
                 console.log('   - No meets_*.csv files found');
             }
@@ -979,7 +979,7 @@ async function main() {
 
         // Provide helpful troubleshooting information
         console.log('\n🔧 Troubleshooting steps:');
-        console.log('1. Check if the meet scraper ran successfully: node meet_scraper_2025.js');
+        console.log('1. Check if the meet scraper ran successfully: node meet_scraper.js');
         console.log('2. Verify Supabase environment variables are set');
         console.log('3. Check network connectivity to Supabase');
         console.log('4. Review the error message and stack trace above');
