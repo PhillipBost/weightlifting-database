@@ -10,7 +10,7 @@ on:
         description: 'Skip meet address scraping'
         required: false
         type: boolean
-        default: false
+        default: true
       skip_clubs:
         description: 'Skip club scraping'
         required: false
