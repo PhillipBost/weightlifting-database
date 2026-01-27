@@ -340,10 +340,14 @@ async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId) {
         await page.setViewport({ width: 1500, height: 1000 });
 
         // Navigate to the member page
-        await page.goto(memberUrl, {
-            waitUntil: 'networkidle0',
-            timeout: 30000
-        });
+        try {
+            await page.goto(memberUrl, {
+                waitUntil: 'domcontentloaded',
+                timeout: 30000
+            });
+        } catch (e) {
+            console.log(`    ⚠️ Navigation warning: ${e.message} - continuing to wait for selector...`);
+        }
 
         // Wait for the page to load and extract the page content
         const pageData = await page.evaluate(() => {

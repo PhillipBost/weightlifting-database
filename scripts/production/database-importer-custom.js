@@ -250,10 +250,14 @@ async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId, a
         await page.setViewport({ width: 1500, height: 1000 });
 
         // Navigate to the member page
-        await page.goto(memberUrl, {
-            waitUntil: 'networkidle0',
-            timeout: 30000
-        });
+        try {
+            await page.goto(memberUrl, {
+                waitUntil: 'domcontentloaded',
+                timeout: 30000
+            });
+        } catch (e) {
+            console.log(`    ⚠️ Navigation warning: ${e.message} - continuing to wait for selector...`);
+        }
 
         // Wait for table to load
         await page.waitForSelector('.data-table div div.v-data-table div.v-data-table__wrapper table tbody tr', { timeout: 15000 });
@@ -634,7 +638,11 @@ async function verifyLifterOnMeetPage(browser, meetId, athleteName) {
         const url = `https://usaweightlifting.sport80.com/public/rankings/results/${meetId}`;
 
         console.log(`      🔎 Checking official meet page for presence of "${athleteName}"...`);
-        await page.goto(url, { waitUntil: 'networkidle0', timeout: 30000 });
+        try {
+            await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 });
+        } catch (e) {
+            console.log(`      ⚠️ Navigation warning (Official Meet Page): ${e.message}`);
+        }
 
         // Wait for table to load
         await page.waitForSelector('.data-table div div.v-data-table div.v-data-table__wrapper table tbody tr', { timeout: 15000 });
@@ -727,10 +735,14 @@ async function extractInternalIdByClicking(page, divisionCode, startDate, endDat
         const url = buildRankingsURL(divisionCode, startDate, endDate);
         console.log(`      🌐 Loading rankings page for clicking...`);
 
-        await page.goto(url, {
-            waitUntil: 'networkidle0',
-            timeout: 30000
-        });
+        try {
+            await page.goto(url, {
+                waitUntil: 'domcontentloaded',
+                timeout: 30000
+            });
+        } catch (e) {
+            console.log(`      ⚠️ Navigation warning (Rankings Click): ${e.message}`);
+        }
 
         // Wait for table to load
         await page.waitForSelector('.v-data-table__wrapper tbody tr', { timeout: 15000 });
@@ -1041,10 +1053,14 @@ async function scrapeDivisionRankings(page, divisionCode, startDate, endDate) {
         const url = buildRankingsURL(divisionCode, startDate, endDate);
         console.log(`    🌐 URL: ${url}`);
 
-        await page.goto(url, {
-            waitUntil: 'networkidle0',
-            timeout: 30000
-        });
+        try {
+            await page.goto(url, {
+                waitUntil: 'domcontentloaded',
+                timeout: 30000
+            });
+        } catch (e) {
+            console.log(`    ⚠️ Navigation warning (Rankings Scrape): ${e.message}`);
+        }
 
         // Wait for table to load
         await page.waitForSelector('.v-data-table__wrapper tbody tr', { timeout: 15000 });
