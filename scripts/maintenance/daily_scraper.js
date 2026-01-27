@@ -57,10 +57,19 @@ async function main() {
         // Step 2: Wait 10 seconds
         await delay(10);
 
-        // Step 3: Import to database
+        // Step 3: Run address scraper (New Step)
+        console.log('\n📍 Step 3: Running Meet Address Scraper...');
+        // Pass the same args (e.g., --date=...) to the address scraper
+        await runScript('scripts/production/meet-address-scraper.js', args);
+
+        // Step 4: Run geocoder (New Step)
+        console.log('\n🌍 Step 4: Running Geocoder...');
+        await runScript('scripts/geographic/geocode-and-import.js');
+
+        // Step 5: Import to database
         await runScript('scripts/production/database-importer.js', args);
 
-        // Step 4: Pipeline Handoff - Reimport & WSO Backfill
+        // Step 6: Pipeline Handoff - Reimport & WSO Backfill
         const scrapedMeetsPath = 'output/scraped_meets.json';
         if (fs.existsSync(scrapedMeetsPath)) {
             console.log('\n🔄 Checking for scraped meets to post-process...');

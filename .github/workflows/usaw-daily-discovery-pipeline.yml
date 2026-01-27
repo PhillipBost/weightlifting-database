@@ -31,7 +31,7 @@ jobs:
   daily-meet-scraper:
     if: ${{ !inputs.skip_meet_scraper }}
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 360
 
     steps:
       - name: Checkout repository

@@ -3,7 +3,7 @@ name: USAW Daily WSO & Club Directory Pipeline
 on:
   schedule:
     # Run daily at 9 PM UTC (4 PM EST)
-    - cron: '0 21 * * *'
+    # - cron: '0 21 * * *'
   workflow_dispatch: # Allow manual triggering
     inputs:
       skip_meets:
