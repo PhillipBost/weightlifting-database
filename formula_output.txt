@@ -1,0 +1,38 @@
+--- Cell Values & Formulas ---
+Cell G2:
+  Formula: IF(B2="m",
+INDEX(params_sen_men!$C:$C,MATCH(D2,params_sen_men!$A:$A,0)),
+INDEX(params_sen_women!$C:$C,MATCH(D2,params_sen_women!$A:$A,0)))
+  Result: 0.0749343057174629
+  Formula Obj: IF(B2="m",
+INDEX(params_sen_men!$C:$C,MATCH(D2,params_sen_men!$A:$A,0)),
+INDEX(params_sen_women!$C:$C,MATCH(D2,params_sen_women!$A:$A,0)))
+Cell H2:
+  Formula: IF(B2="m",
+    INDEX(params_sen_men!$D:$D, MATCH(D2, params_sen_men!$A:$A, 0)),
+    INDEX(params_sen_women!$D:$D, MATCH(D2, params_sen_women!$A:$A, 0))
+)
+  Result: 5.73088359898392
+  Formula Obj: IF(B2="m",
+    INDEX(params_sen_men!$D:$D, MATCH(D2, params_sen_men!$A:$A, 0)),
+    INDEX(params_sen_women!$D:$D, MATCH(D2, params_sen_women!$A:$A, 0))
+)
+Cell I2:
+  Formula: _xlfn.LET(_xlpm.q_val,E2,
+     _xlpm.mu_val,F2,
+     _xlpm.sigma_val,G2,
+     _xlpm.nu_val, H2,
+     _xlpm.ratio, _xlpm.q_val / _xlpm.mu_val,
+     _xlpm.z_val, IF(_xlpm.nu_val <> 0, (POWER(_xlpm.ratio, _xlpm.nu_val) - 1) / (_xlpm.nu_val * _xlpm.sigma_val), LN(_xlpm.ratio) / _xlpm.sigma_val),
+     400 + 50 * _xlfn.NORM.S.INV((_xlfn.NORM.S.DIST(_xlpm.z_val, TRUE) - IF(_xlpm.nu_val > 0, _xlfn.NORM.S.DIST(-1 / (_xlpm.sigma_val * ABS(_xlpm.nu_val)), TRUE), 0)) / _xlfn.NORM.S.DIST(1 / (_xlpm.sigma_val * ABS(_xlpm.nu_val)), TRUE)))
+  Result: 467.7200110190282
+  Formula Obj: _xlfn.LET(_xlpm.q_val,E2,
+     _xlpm.mu_val,F2,
+     _xlpm.sigma_val,G2,
+     _xlpm.nu_val, H2,
+     _xlpm.ratio, _xlpm.q_val / _xlpm.mu_val,
+     _xlpm.z_val, IF(_xlpm.nu_val <> 0, (POWER(_xlpm.ratio, _xlpm.nu_val) - 1) / (_xlpm.nu_val * _xlpm.sigma_val), LN(_xlpm.ratio) / _xlpm.sigma_val),
+     400 + 50 * _xlfn.NORM.S.INV((_xlfn.NORM.S.DIST(_xlpm.z_val, TRUE) - IF(_xlpm.nu_val > 0, _xlfn.NORM.S.DIST(-1 / (_xlpm.sigma_val * ABS(_xlpm.nu_val)), TRUE), 0)) / _xlfn.NORM.S.DIST(1 / (_xlpm.sigma_val * ABS(_xlpm.nu_val)), TRUE)))
+Cell J2:
+Cell K2:
+Cell L2:

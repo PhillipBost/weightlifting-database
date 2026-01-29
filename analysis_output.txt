@@ -1,0 +1,116 @@
+
+--- Inspecting: GAMX files v2.0/GAMX_calculator_allages.xlsx ---
+
+Sheet: GAMX
+Total Rows: 16
+Row 1: [null,"Category","Sex","Age","Body mass","Total","mu","sigma","nu","GAMX",null,"Web app"]
+Row 2: [null,"Senior","m",null,75,350,{"formula":"IF(B2=\"m\",\nINDEX(\nparams_sen_men!$B:$B,\nMATCH(D2,params_sen_men!$A:$A,0),\n),\nINDEX(\nparams_sen_women!$B:$B,\nMATCH(D2,params_sen_women!$A:$A,0),\n))","result":323.007398977703,"ref":"F2","shareType":"array"},{"formula":"IF(B2=\"m\",\nINDEX(params_sen_men!$C:$C,MATCH(D2,params_sen_men!$A:$A,0)),\nINDEX(params_sen_women!$C:$C,MATCH(D2,params_sen_women!$A:$A,0)))","result":0.0749343057174629},{"formula":"IF(B2=\"m\",\n    INDEX(params_sen_men!$D:$D, MATCH(D2, params_sen_men!$A:$A, 0)),\n    INDEX(params_sen_women!$D:$D, MATCH(D2, params_sen_women!$A:$A, 0))\n)","result":5.73088359898392},{"formula":"_xlfn.LET(_xlpm.q_val,E2,\n     _xlpm.mu_val,F2,\n     _xlpm.sigma_val,G2,\n     _xlpm.nu_val, H2,\n     _xlpm.ratio, _xlpm.q_val / _xlpm.mu_val,\n     _xlpm.z_val, IF(_xlpm.nu_val <> 0, (POWER(_xlpm.ratio, _xlpm.nu_val) - 1) / (_xlpm.nu_val * _xlpm.sigma_val), LN(_xlpm.ratio) / _xlpm.sigma_val),\n     400 + 50 * _xlfn.NORM.S.INV((_xlfn.NORM.S.DIST(_xlpm.z_val, TRUE) - IF(_xlpm.nu_val > 0, _xlfn.NORM.S.DIST(-1 / (_xlpm.sigma_val * ABS(_xlpm.nu_val)), TRUE), 0)) / _xlfn.NORM.S.DIST(1 / (_xlpm.sigma_val * ABS(_xlpm.nu_val)), TRUE)))","result":467.7200110190282},null,"https://huebner.shinyapps.io/GAMX/"]
+Row 3: []
+Row 4: [null,"Senior","f",null,77.3,200,{"formula":"IF(B4=\"m\",\nINDEX(\nparams_sen_men!$B:$B,\nMATCH(D4,params_sen_men!$A:$A,0),\n),\nINDEX(\nparams_sen_women!$B:$B,\nMATCH(D4,params_sen_women!$A:$A,0),\n))","result":225.890720492621,"ref":"F4","shareType":"array"},{"formula":"IF(B4=\"m\",\nINDEX(params_sen_men!$C:$C,MATCH(D4,params_sen_men!$A:$A,0)),\nINDEX(params_sen_women!$C:$C,MATCH(D4,params_sen_women!$A:$A,0)))","result":0.105595818598319},{"formula":"IF(B4=\"m\",\n    INDEX(params_sen_men!$D:$D, MATCH(D4, params_sen_men!$A:$A, 0)),\n    INDEX(params_sen_women!$D:$D, MATCH(D4, params_sen_women!$A:$A, 0))\n)","result":2.27406925569144},{"formula":"_xlfn.LET(_xlpm.q_val,E4,\n     _xlpm.mu_val,F4,\n     _xlpm.sigma_val,G4,\n     _xlpm.nu_val, H4,\n     _xlpm.ratio, _xlpm.q_val / _xlpm.mu_val,\n     _xlpm.z_val, IF(_xlpm.nu_val <> 0, (POWER(_xlpm.ratio, _xlpm.nu_val) - 1) / (_xlpm.nu_val * _xlpm.sigma_val), LN(_xlpm.ratio) / _xlpm.sigma_val),\n     400 + 50 * _xlfn.NORM.S.INV((_xlfn.NORM.S.DIST(_xlpm.z_val, TRUE) - IF(_xlpm.nu_val > 0, _xlfn.NORM.S.DIST(-1 / (_xlpm.sigma_val * ABS(_xlpm.nu_val)), TRUE), 0)) / _xlfn.NORM.S.DIST(1 / (_xlpm.sigma_val * ABS(_xlpm.nu_val)), TRUE)))","result":349.64629770696797}]
+Row 5: []
+
+Sheet: params_sen_men
+Total Rows: 1502
+Row 1: [null,"bmass","mu","sigma","nu"]
+Row 2: [null,40,142.607201371497,0.0721786037061184,8.28998234269886]
+Row 3: [null,40.1,143.42115051752,0.0721898274912594,8.2798174127641]
+Row 4: [null,40.2,144.233072390843,0.0722010250605237,8.26967780024019]
+Row 5: [null,40.3,145.042977064888,0.0722121965401305,8.25956337932615]
+
+Sheet: params_sen_women
+Total Rows: 1502
+Row 1: [null,"bmass","mu","sigma","nu"]
+Row 2: [null,40,139.84517902566,0.105418410031735,2.51920118100869]
+Row 3: [null,40.1,140.29053613201,0.105419087628915,2.51827214096936]
+Row 4: [null,40.2,140.73478400407,0.105419763542768,2.51734541485531]
+Row 5: [null,40.3,141.177928153572,0.105420437781648,2.51642099116877]
+
+Sheet: params_iwf_men
+Total Rows: 44829
+Row 1: [null,"age","bmass","mu","sigma","nu"]
+Row 2: [null,13,30,107.015332626579,0.200903448458153,5.79567424135041]
+Row 3: [null,13,30.1,107.235468281141,0.200921998270805,5.78894634219138]
+Row 4: [null,13,30.2,107.456056765267,0.200940549796198,5.78224075783007]
+Row 5: [null,13,30.3,107.677099010449,0.200959103034489,5.77555734073023]
+
+Sheet: params_iwf_wom
+Total Rows: 44829
+Row 1: [null,"age","bmass","mu","sigma","nu"]
+Row 2: [null,13,30,83.6633362463863,0.130201151485658,3.5679328301032]
+Row 3: [null,13,30.1,83.9032477165971,0.130210361888731,3.56355478563506]
+Row 4: [null,13,30.2,84.1438471526017,0.130219572943346,3.55919126207076]
+Row 5: [null,13,30.3,84.3851365271985,0.13022878464955,3.55484216340407]
+
+Sheet: params_mas_wom
+Total Rows: 91562
+Row 1: [null,"age","bmass","mu","sigma","nu"]
+Row 2: [null,30,40,116.96520398309822,0.1260250277862402,1.335814302597659]
+Row 3: [null,31,40,116.06178006948019,0.12687841882048997,1.3163837535032152]
+Row 4: [null,32,40,115.16533408382612,0.12773758867717006,1.2969532044087715]
+Row 5: [null,33,40,114.27581212953461,0.12860257648815218,1.277522655314328]
+
+Sheet: params_mas_men
+Total Rows: 99067
+Row 1: [null,"age","bmass","mu","sigma","nu"]
+Row 2: [null,30,40,115.17420840157955,0.08353170377823649,2.5715037443826003]
+Row 3: [null,31,40,115.02351734058125,0.08407896456457231,2.5466239562915245]
+Row 4: [null,32,40,114.87302344000774,0.08462981074848437,2.521744168200448]
+Row 5: [null,33,40,114.72272644189935,0.08518426581982629,2.496864380109372]
+
+Sheet: params_U_men
+Total Rows: 21715
+Row 1: [null,"age","bmass","mu","sigma","nu"]
+Row 2: [null,7,25,39.5042311721406,0.11826284634809,-0.253321861948289]
+Row 3: [null,7,25.1,39.612246450963,0.118227592666429,-0.253545759857131]
+Row 4: [null,7,25.2,39.7207216438258,0.118192489570707,-0.253768767513488]
+Row 5: [null,7,25.3,39.8296694328333,0.118157535822034,-0.253990891968893]
+
+Sheet: params_U_wom
+Total Rows: 21715
+Row 1: [null,"age","bmass","mu","sigma","nu"]
+Row 2: [null,7,25,37.5852036966166,0.219346622858584,-0.461827605125784]
+Row 3: [null,7,25.1,37.6495330154765,0.219293119128166,-0.461378112511367]
+Row 4: [null,7,25.2,37.7138363308841,0.219239841037731,-0.460930407148645]
+Row 5: [null,7,25.3,37.7781175093802,0.219186786743873,-0.460484474881113]
+
+--- Inspecting: GAMX files v2.0/GAMX_seniors_snatch_cj.xlsx ---
+
+Sheet: GAMX
+Total Rows: 10
+Row 1: [null,"Category","Sex","Body mass","Snatch","mu","sigma","nu","GAMX-S","GAMX-S",null,"Web app"]
+Row 2: [null,"Senior","m",85.23,150,{"formula":"_xlfn.LET(_xlpm.exact_ind,MATCH(C2,snatch_sen_men!A:A,0),_xlpm.low_closest_ind,MATCH(C2,snatch_sen_men!A:A,1),_xlpm.high_closest_ind,_xlpm.low_closest_ind+1,_xlpm.low_ratio,C2-INDEX(snatch_sen_men!A:A,_xlpm.low_closest_ind),_xlpm.high_ratio,INDEX(snatch_sen_men!A:A,_xlpm.high_closest_ind)-C2,IFERROR(INDEX(snatch_sen_men!B:B,_xlpm.exact_ind),(_xlpm.high_ratio*INDEX(snatch_sen_men!B:B,_xlpm.low_closest_ind)+_xlpm.low_ratio*INDEX(snatch_sen_men!B:B,_xlpm.high_closest_ind))/(_xlpm.low_ratio+_xlpm.high_ratio)))","result":153.75560998560516,"ref":"E2","shareType":"array"},{"formula":"_xlfn.LET(_xlpm.exact_ind,MATCH(C2,snatch_sen_men!A:A,0),\n_xlpm.low_closest_ind,MATCH(C2,snatch_sen_men!A:A,1),\n_xlpm.high_closest_ind,_xlpm.low_closest_ind+1,\n_xlpm.low_ratio,C2-INDEX(snatch_sen_men!A:A,_xlpm.low_closest_ind),\n_xlpm.high_ratio,INDEX(snatch_sen_men!A:A,_xlpm.high_closest_ind)-C2,\nIFERROR(INDEX(snatch_sen_men!C:C,_xlpm.exact_ind),\n(_xlpm.high_ratio*INDEX(snatch_sen_men!C:C,_xlpm.low_closest_ind)+_xlpm.low_ratio*INDEX(snatch_sen_men!C:C,_xlpm.high_closest_ind))/(_xlpm.low_ratio+_xlpm.high_ratio)))","result":0.08076758974600008,"ref":"F2","shareType":"array"},{"formula":"_xlfn.LET(_xlpm.exact_ind,MATCH(C2,snatch_sen_men!A:A,0),\n_xlpm.low_closest_ind,MATCH(C2,snatch_sen_men!A:A,1),\n_xlpm.high_closest_ind,_xlpm.low_closest_ind+1,\n_xlpm.low_ratio,C2-INDEX(snatch_sen_men!A:A,_xlpm.low_closest_ind),\n_xlpm.high_ratio,INDEX(snatch_sen_men!A:A,_xlpm.high_closest_ind)-C2,\nIFERROR(INDEX(snatch_sen_men!D:D,_xlpm.exact_ind),\n(_xlpm.high_ratio*INDEX(snatch_sen_men!D:D,_xlpm.low_closest_ind)+_xlpm.low_ratio*INDEX(snatch_sen_men!D:D,_xlpm.high_closest_ind))/(_xlpm.low_ratio+_xlpm.high_ratio)))","result":4.997635632683468,"ref":"G2","shareType":"array"},{"formula":"_xlfn.LET(_xlpm.q_val,D2,\n     _xlpm.mu_val,E2,\n     _xlpm.sigma_val,F2,\n     _xlpm.nu_val, G2,\n     _xlpm.ratio, _xlpm.q_val / _xlpm.mu_val,\n     _xlpm.z_val, IF(_xlpm.nu_val <> 0, (POWER(_xlpm.ratio, _xlpm.nu_val) - 1) / (_xlpm.nu_val * _xlpm.sigma_val), LN(_xlpm.ratio) / _xlpm.sigma_val),\n     1000 + 100 * _xlfn.NORM.S.INV((_xlfn.NORM.S.DIST(_xlpm.z_val, TRUE) - IF(_xlpm.nu_val > 0, _xlfn.NORM.S.DIST(-1 / (_xlpm.sigma_val * ABS(_xlpm.nu_val)), TRUE), 0)) / _xlfn.NORM.S.DIST(1 / (_xlpm.sigma_val * ABS(_xlpm.nu_val)), TRUE)))","result":970.1296830973457},{"formula":"ROUND(H2,2)","result":970.13},null,{"text":"https://huebner.shinyapps.io/GAMX_teams/","hyperlink":"https://huebner.shinyapps.io/GAMX_teams/"}]
+Row 3: [null,"Senior","f",53.52,90,{"formula":"_xlfn.LET(_xlpm.exact_ind,MATCH(C3,snatch_sen_wom!A:A,0),\n_xlpm.low_closest_ind,MATCH(C3,snatch_sen_wom!A:A,1),\n_xlpm.high_closest_ind,_xlpm.low_closest_ind+1,\n_xlpm.low_ratio,C3-INDEX(snatch_sen_wom!A:A,_xlpm.low_closest_ind),\n_xlpm.high_ratio,INDEX(snatch_sen_wom!A:A,_xlpm.high_closest_ind)-C3,\nIFERROR(INDEX(snatch_sen_wom!B:B,_xlpm.exact_ind),\n(_xlpm.high_ratio*INDEX(snatch_sen_wom!B:B,_xlpm.low_closest_ind)+_xlpm.low_ratio*INDEX(snatch_sen_wom!B:B,_xlpm.high_closest_ind))/(_xlpm.low_ratio+_xlpm.high_ratio)))","result":83.00803432958223,"ref":"E3","shareType":"array"},{"formula":"_xlfn.LET(_xlpm.exact_ind,MATCH(C3,snatch_sen_wom!A:A,0),\n_xlpm.low_closest_ind,MATCH(C3,snatch_sen_wom!A:A,1),\n_xlpm.high_closest_ind,_xlpm.low_closest_ind+1,\n_xlpm.low_ratio,C3-INDEX(snatch_sen_wom!A:A,_xlpm.low_closest_ind),\n_xlpm.high_ratio,INDEX(snatch_sen_wom!A:A,_xlpm.high_closest_ind)-C3,\nIFERROR(INDEX(snatch_sen_wom!C:C,_xlpm.exact_ind),\n(_xlpm.high_ratio*INDEX(snatch_sen_wom!C:C,_xlpm.low_closest_ind)+_xlpm.low_ratio*INDEX(snatch_sen_wom!C:C,_xlpm.high_closest_ind))/(_xlpm.low_ratio+_xlpm.high_ratio)))","result":0.10674340790085915,"ref":"F3","shareType":"array"},{"formula":"_xlfn.LET(_xlpm.exact_ind,MATCH(C3,snatch_sen_wom!A:A,0),\n_xlpm.low_closest_ind,MATCH(C3,snatch_sen_wom!A:A,1),\n_xlpm.high_closest_ind,_xlpm.low_closest_ind+1,\n_xlpm.low_ratio,C3-INDEX(snatch_sen_wom!A:A,_xlpm.low_closest_ind),\n_xlpm.high_ratio,INDEX(snatch_sen_wom!A:A,_xlpm.high_closest_ind)-C3,\nIFERROR(INDEX(snatch_sen_wom!D:D,_xlpm.exact_ind),\n(_xlpm.low_ratio*INDEX(snatch_sen_wom!D:D,_xlpm.low_closest_ind)+_xlpm.high_ratio*INDEX(snatch_sen_wom!D:D,_xlpm.high_closest_ind))/(_xlpm.low_ratio+_xlpm.high_ratio)))","result":2.59377301573761,"ref":"G3","shareType":"array"},{"formula":"_xlfn.LET(_xlpm.q_val,D3,\n     _xlpm.mu_val,E3,\n     _xlpm.sigma_val,F3,\n     _xlpm.nu_val, G3,\n     _xlpm.ratio, _xlpm.q_val / _xlpm.mu_val,\n     _xlpm.z_val, IF(_xlpm.nu_val <> 0, (POWER(_xlpm.ratio, _xlpm.nu_val) - 1) / (_xlpm.nu_val * _xlpm.sigma_val), LN(_xlpm.ratio) / _xlpm.sigma_val),\n     1000 + 100 * _xlfn.NORM.S.INV((_xlfn.NORM.S.DIST(_xlpm.z_val, TRUE) - IF(_xlpm.nu_val > 0, _xlfn.NORM.S.DIST(-1 / (_xlpm.sigma_val * ABS(_xlpm.nu_val)), TRUE), 0)) / _xlfn.NORM.S.DIST(1 / (_xlpm.sigma_val * ABS(_xlpm.nu_val)), TRUE)))","result":1084.2846160599138},{"formula":"ROUND(H3,2)","result":1084.28,"ref":"I3:I8","shareType":"shared"}]
+Row 4: []
+Row 5: []
+
+Sheet: cj_sen_men
+Total Rows: 1502
+Row 1: [null,"bmass","mu","sigma","nu"]
+Row 2: [null,40,102.33944905190069,0.07801736364860767,6.188131091547107]
+Row 3: [null,40.1,102.54153700434459,0.07801620987460194,6.1830399460559375]
+Row 4: [null,40.2,102.74402401639757,0.07801505611765903,6.17796148089045]
+Row 5: [null,40.3,102.94691087607562,0.07801390237777864,6.17289563304272]
+
+Sheet: cj_sen_wom
+Total Rows: 1502
+Row 1: [null,"bmass","mu","sigma","nu"]
+Row 2: [null,40,80.35768541519977,0.11322457596563915,1.9971252659853826]
+Row 3: [null,40.1,80.53570806066546,0.11320938363986233,1.9986388625164802]
+Row 4: [null,40.2,80.71412509357691,0.11319419335257201,2.0001486891893014]
+Row 5: [null,40.3,80.89293738765153,0.11317900510349466,2.00165476473609]
+
+Sheet: snatch_sen_men
+Total Rows: 1502
+Row 1: [null,"bmass","mu","sigma","nu"]
+Row 2: [null,40,82.29145977959395,0.08560398846099505,8.827214113697702]
+Row 3: [null,40.1,82.45363919806981,0.08560264154986974,8.814573890609829]
+Row 4: [null,40.2,82.61613823858006,0.08560129465993699,8.801965150052894]
+Row 5: [null,40.3,82.77895753103326,0.0855999477911965,8.789387735591728]
+
+Sheet: snatch_sen_wom
+Total Rows: 1502
+Row 1: [null,"bmass","mu","sigma","nu"]
+Row 2: [null,40,65.00907580853115,0.1082110181407582,2.563759962138822]
+Row 3: [null,40.1,65.13999098281343,0.10820008924399109,2.5640163425395506]
+Row 4: [null,40.2,65.27116979386705,0.10818916145100048,2.564272084383203]
+Row 5: [null,40.3,65.40261277260343,0.108178234761675,2.564527190842738]
