@@ -26,5 +26,5 @@ jobs:
     - name: Run IWF Sanctions Scraper
       env:
         SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-        SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
       run: node scripts/production/scrape-iwf-sanctions.js
