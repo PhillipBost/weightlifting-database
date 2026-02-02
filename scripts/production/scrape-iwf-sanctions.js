@@ -13,13 +13,22 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 async function scrapeSanctions() {
     console.log('🚀 Starting IWF Sanctions Scraper...');
 
+    // Launch with Desktop-like settings
     const browser = await puppeteer.launch({
         headless: "new",
-        args: ['--no-sandbox', '--disable-setuid-sandbox']
+        defaultViewport: { width: 1920, height: 1080 },
+        args: [
+            '--no-sandbox',
+            '--disable-setuid-sandbox',
+            '--window-size=1920,1080'
+        ]
     });
 
     try {
         const page = await browser.newPage();
+
+        // Set a standard Desktop User Agent
+        await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36');
 
         // Navigate
         console.log('Navigating to https://iwf.sport/anti-doping/sanctions/ ...');
@@ -48,17 +57,39 @@ async function scrapeSanctions() {
 
                     // Name and Nation
                     const nameCol = cols.eq(0);
-                    const name = nameCol.find('.col-7 p.title strong').text().trim();
+                    const nameSelector = '.col-7 p.title strong';
+                    const name = nameCol.find(nameSelector).text().trim();
                     const nation = nameCol.find('.col-5 p.title').text().trim().replace(/[\n\r]+/g, '').trim();
 
-                    // Dates
+                    // Dates - Search by text "From:" and "Until:" for robustness
+                    let fromText = '';
+                    let untilText = '';
                     const dateCol = cols.eq(1);
-                    const fromText = dateCol.find('.col-6').eq(0).find('p.normal__text').text().replace('From:', '').trim();
-                    const untilText = dateCol.find('.col-6').eq(1).find('p.normal__text').text().replace('Until:', '').trim();
 
-                    // Event / Substance
-                    const eventText = card.find('.col-md-2').eq(0).find('p.normal__text').text().replace('Event type*:', '').trim();
-                    const substanceText = card.find('.col-md-2').eq(1).find('p.normal__text').text().replace('Substance/ADRV:', '').trim();
+                    // Robust extraction: Iterate p.normal__text and check content
+                    dateCol.find('p.normal__text').each((_, el) => {
+                        const t = $(el).text();
+                        if (t.includes('From:')) fromText = t.replace('From:', '').trim();
+                        if (t.includes('Until:')) untilText = t.replace('Until:', '').trim();
+                    });
+
+                    // Fallback to old position-based if text-search fails (rare but possible if layout matches old)
+                    if (!fromText && dateCol.find('.col-6').eq(0).length) {
+                        fromText = dateCol.find('.col-6').eq(0).find('p.normal__text').text().replace('From:', '').trim();
+                    }
+                    if (!untilText && dateCol.find('.col-6').eq(1).length) {
+                        untilText = dateCol.find('.col-6').eq(1).find('p.normal__text').text().replace('Until:', '').trim();
+                    }
+
+                    // Event / Substance - Search by text
+                    let eventText = '';
+                    let substanceText = '';
+
+                    card.find('.col-md-2 p.normal__text').each((_, el) => {
+                        const t = $(el).text();
+                        if (t.includes('Event type*:')) eventText = t.replace('Event type*:', '').trim();
+                        if (t.includes('Substance/ADRV:')) substanceText = t.replace('Substance/ADRV:', '').trim();
+                    });
 
                     if (name) {
                         sanctions.push({
@@ -68,7 +99,8 @@ async function scrapeSanctions() {
                             until: untilText,
                             event: eventText,
                             substance: substanceText,
-                            yearGroup: yearText
+                            yearGroup: yearText,
+                            _rawHtml: (fromText ? null : card.html()) // Save raw HTML if critical data missing
                         });
                     }
                 });
@@ -80,19 +112,37 @@ async function scrapeSanctions() {
         // Detect duplicates before processing
         const uniqueSanctions = [];
         const seen = new Set();
+        let invalidCount = 0;
 
         for (const s of sanctions) {
-            // Create a unique signature based on the DB unique constraint columns
-            const sig = `${s.name}|${s.from}|${s.substance}`;
+            // [Adjusted Strategy]
+            // We ALLOW missing fields now because historical data (e.g. 2009) often lacks "From" date or "Substance".
+            // We only skip if the NAME is missing (which shouldn't happen due to previous checks).
+
+            if (!s.name) {
+                invalidCount++;
+                continue;
+            }
+
+            // Create a unique signature based on KEY fields
+            // Use fallback strings to ensure uniqueness even if fields are null
+            const safeFrom = s.from || 'UNKNOWN_START';
+            const safeSubstance = s.substance || 'UNKNOWN_SUBSTANCE';
+
+            const sig = `${s.name}|${safeFrom}|${safeSubstance}`;
+
             if (seen.has(sig)) {
-                console.log(`⚠️  Duplicate found in source (skipping): ${s.name} | ${s.from} | ${s.substance}`);
+                // console.log(`Duplicate found: ${s.name}`);
             } else {
                 seen.add(sig);
                 uniqueSanctions.push(s);
             }
         }
 
-        console.log(`Processing ${uniqueSanctions.length} unique sanctions (dropped ${sanctions.length - uniqueSanctions.length} duplicates).`);
+        console.log(`Processing ${uniqueSanctions.length} unique sanctions.`);
+        if (invalidCount > 0) {
+            console.warn(`Dropped ${invalidCount} rows with no name.`);
+        }
 
         // Process in batches
         for (const sanction of uniqueSanctions) {
@@ -171,14 +221,15 @@ async function processSanction(sanction) {
 
     // [Handle Suffix Titles like "FIRSTNAME/Ms."]
     // Example: "CALLES CELENIA/Ms." -> "Ms. CELENIA CALLES"
-    if (/\/(Ms\.|Mr\.|Mrs\.?)/i.test(cleanName)) {
+    // Relaxed Regex: Allow "Ms" without dot
+    if (/\/(Ms\.?|Mr\.?|Mrs\.?)/i.test(cleanName)) {
         const parts = cleanName.split(' ');
-        const suffixIndex = parts.findIndex(p => /\/(Ms\.|Mr\.|Mrs\.?)/i.test(p));
+        const suffixIndex = parts.findIndex(p => /\/(Ms\.?|Mr\.?|Mrs\.?)/i.test(p));
 
         if (suffixIndex !== -1) {
             // Extract title
-            const match = parts[suffixIndex].match(/\/(Ms\.|Mr\.|Mrs\.?)/i);
-            const title = match[1]; // "Ms." or "Mr." usually
+            const match = parts[suffixIndex].match(/\/(Ms\.?|Mr\.?|Mrs\.?)/i);
+            const title = match[1]; // "Ms." or "Mr"
 
             // Clean the firstname part
             const firstname = parts[suffixIndex].replace(match[0], '');
@@ -187,8 +238,8 @@ async function processSanction(sanction) {
             const surnameParts = parts.filter((_, idx) => idx !== suffixIndex);
 
             // Reconstruct: Title Firstname Surname
-            const normTitle = title.charAt(0).toUpperCase() + title.slice(1).toLowerCase();
-            if (!normTitle.endsWith('.') && normTitle.length <= 3) normTitle += '.';
+            let normTitle = title.replace('.', '').toLowerCase();
+            normTitle = normTitle.charAt(0).toUpperCase() + normTitle.slice(1) + '.'; // Force "Ms."
 
             cleanName = `${normTitle} ${firstname} ${surnameParts.join(' ')}`;
         }
@@ -201,6 +252,9 @@ async function processSanction(sanction) {
 
     let firstLowerIndex = -1;
     for (let i = 0; i < parts.length; i++) {
+        // Skip Title if checking for mixed case words
+        if (/^(Ms\.|Mr\.|Mrs\.)$/.test(parts[i])) continue;
+
         if (/[a-z]/.test(parts[i])) { // Word has ANY lowercase letter
             firstLowerIndex = i;
             break;
@@ -211,6 +265,10 @@ async function processSanction(sanction) {
     if (firstLowerIndex > 0) {
         // The parts BEFORE firstLowerIndex are the "Surname/Prefix" (ALLCAPS).
         // The parts FROM firstLowerIndex are the "Firstname" (TitleCase).
+
+        // Handle if index 0 is Title (Ms. SURNAME Firstname) -> Unusual but possible
+        // Standard expected: SURNAME Firstname
+
         const surnameParts = parts.slice(0, firstLowerIndex);
         const firstnameParts = parts.slice(firstLowerIndex);
 
