@@ -1,0 +1,30 @@
+name: Monthly Sanctions Update
+
+on:
+  schedule:
+    # Runs at 08:00 UTC on the 1st of every month
+    - cron: '0 8 1 * *'
+  workflow_dispatch:
+
+jobs:
+  update-sanctions:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        cache: 'npm'
+
+    - name: Install Dependencies
+      run: npm ci
+
+    - name: Run IWF Sanctions Scraper
+      env:
+        SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+        SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+      run: node scripts/production/scrape-iwf-sanctions.js
