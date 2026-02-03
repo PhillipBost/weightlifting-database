@@ -2,7 +2,7 @@
 
 > [!IMPORTANT]
 > This document is the **definitive source** for the database schema, based on the provided SQL definition.
-> Last Updated: 2025-12-13
+> Last Updated: 2026-02-03
 
 ## USAW Tables (National)
 
@@ -83,6 +83,12 @@ Individual athlete results linked to meets.
 | `club_name` | `varchar` | | |
 | `updated_at` | `timestamp` | DEFAULT now() | |
 | `created_at` | `timestamp` | DEFAULT now() | |
+| `gamx_u` | `numeric` | | |
+| `gamx_a` | `numeric` | | |
+| `gamx_masters` | `numeric` | | |
+| `gamx_total` | `numeric` | | |
+| `gamx_s` | `numeric` | | |
+| `gamx_j` | `numeric` | | |
 | `gender` | `text` | | |
 | `birth_year` | `integer` | | |
 | `national_rank` | `integer` | | |
@@ -122,7 +128,7 @@ Individual athlete results linked to meets.
 | `analytics_updated_at` | `timestamptz` | DEFAULT now() | |
 | `total_participations` | `integer` | DEFAULT 0 | |
 | `activity_factor` | `numeric` | DEFAULT 0 | |
-| `state` | `varchar` | | |
+| `state` | `varchar` | | Extracted from address/coords |
 
 ### `usaw_club_rolling_metrics`
 | Column | Type | Constraints | Description |
@@ -195,7 +201,7 @@ Individual athlete results linked to meets.
 | Column | Type | Constraints | Description |
 | :--- | :--- | :--- | :--- |
 | `db_meet_id` | `bigint` | **PK**, NOT NULL, UNIQUE | Generated ALWAYS AS IDENTITY |
-| `iwf_meet_id` | `text` | NOT NULL, UNIQUE | |
+| `iwf_event_id` | `bigint` | UNIQUE | Official IWF Event ID |
 | `meet` | `text` | | |
 | `level` | `text` | | |
 | `date` | `text` | | |
@@ -209,7 +215,7 @@ Individual athlete results linked to meets.
 ### `iwf_lifters`
 | Column | Type | Constraints | Description |
 | :--- | :--- | :--- | :--- |
-| `db_lifter_id` | `bigint` | **PK**, NOT NULL | Default: `nextval('iwf_lifters_iwf_lifter_id_seq')` |
+| `db_lifter_id` | `bigint` | **PK**, NOT NULL | Default: `nextval('iwf_lifters_db_lifter_id_seq')` |
 | `athlete_name` | `text` | NOT NULL | |
 | `gender` | `text` | | |
 | `birth_year` | `integer` | | |
@@ -217,7 +223,7 @@ Individual athlete results linked to meets.
 | `updated_at` | `timestamp` | DEFAULT now() | |
 | `country_code` | `varchar` | | |
 | `country_name` | `text` | | |
-| `iwf_lifter_id` | `bigint` | UNIQUE | |
+| `iwf_lifter_id` | `bigint` | UNIQUE | Official IWF Lifter ID |
 | `iwf_athlete_url` | `text` | | |
 
 ### `iwf_meet_results`
@@ -257,6 +263,12 @@ Individual athlete results linked to meets.
 | `q_youth` | `numeric` | | |
 | `created_at` | `timestamp` | DEFAULT now() | |
 | `updated_at` | `timestamp` | DEFAULT now() | |
+| `gamx_u` | `numeric` | | |
+| `gamx_a` | `numeric` | | |
+| `gamx_masters` | `numeric` | | |
+| `gamx_total` | `numeric` | | |
+| `gamx_s` | `numeric` | | |
+| `gamx_j` | `numeric` | | |
 | `manual_override` | `boolean` | DEFAULT false | |
 | `country_code` | `varchar` | | |
 | `country_name` | `text` | | |
@@ -276,6 +288,96 @@ Individual athlete results linked to meets.
 | `venue_name` | `text` | | |
 | `created_at` | `timestamp` | DEFAULT now() | |
 | `updated_at` | `timestamp` | DEFAULT now() | |
+
+### `iwf_sanctions`
+| Column | Type | Constraints | Description |
+| :--- | :--- | :--- | :--- |
+| `id` | `uuid` | **PK**, NOT NULL | Default: `gen_random_uuid()` |
+| `name` | `text` | NOT NULL | |
+| `gender` | `text` | | |
+| `nation` | `text` | | |
+| `start_date` | `text` | | |
+| `end_date` | `text` | | Text because 'RETIRED' is possible |
+| `event_type` | `text` | | |
+| `substance` | `text` | | |
+| `sanction_year_group` | `text` | | e.g. "2022" |
+| `db_lifter_id` | `bigint` | | Link to `iwf_lifters.db_lifter_id` |
+| `notes` | `text` | | |
+| `duration` | `text` | | |
+| `created_at` | `timestamptz` | DEFAULT now() | |
+
+---
+
+## GAMX Tables (Calculation Factors)
+
+### `gamx_u_factors`
+Factors for Age 7-20.
+| Column | Type | Constraints | Description |
+| :--- | :--- | :--- | :--- |
+| `id` | `bigint` | **PK**, Generated Always | |
+| `gender` | `text` | NOT NULL | 'm' or 'f' |
+| `age` | `integer` | NOT NULL | |
+| `bodyweight` | `numeric` | NOT NULL | |
+| `mu` | `numeric` | NOT NULL | |
+| `sigma` | `numeric` | NOT NULL | |
+| `nu` | `numeric` | NOT NULL | |
+
+### `gamx_a_factors`
+Factors for Age 13-30.
+| Column | Type | Constraints | Description |
+| :--- | :--- | :--- | :--- |
+| `id` | `bigint` | **PK**, Generated Always | |
+| `gender` | `text` | NOT NULL | 'm' or 'f' |
+| `age` | `integer` | NOT NULL | |
+| `bodyweight` | `numeric` | NOT NULL | |
+| `mu` | `numeric` | NOT NULL | |
+| `sigma` | `numeric` | NOT NULL | |
+| `nu` | `numeric` | NOT NULL | |
+
+### `gamx_masters_factors`
+Factors for Age 30-95.
+| Column | Type | Constraints | Description |
+| :--- | :--- | :--- | :--- |
+| `id` | `bigint` | **PK**, Generated Always | |
+| `gender` | `text` | NOT NULL | 'm' or 'f' |
+| `age` | `integer` | NOT NULL | |
+| `bodyweight` | `numeric` | NOT NULL | |
+| `mu` | `numeric` | NOT NULL | |
+| `sigma` | `numeric` | NOT NULL | |
+| `nu` | `numeric` | NOT NULL | |
+
+### `gamx_points_factors`
+Factors for Senior Total (Weight based only).
+| Column | Type | Constraints | Description |
+| :--- | :--- | :--- | :--- |
+| `id` | `bigint` | **PK**, Generated Always | |
+| `gender` | `text` | NOT NULL | 'm' or 'f' |
+| `bodyweight` | `numeric` | NOT NULL | |
+| `mu` | `numeric` | NOT NULL | |
+| `sigma` | `numeric` | NOT NULL | |
+| `nu` | `numeric` | NOT NULL | |
+
+### `gamx_s_factors`
+Factors for Snatch (Weight based only).
+| Column | Type | Constraints | Description |
+| :--- | :--- | :--- | :--- |
+| `id` | `bigint` | **PK**, Generated Always | |
+| `gender` | `text` | NOT NULL | 'm' or 'f' |
+| `bodyweight` | `numeric` | NOT NULL | |
+| `mu` | `numeric` | NOT NULL | |
+| `sigma` | `numeric` | NOT NULL | |
+| `nu` | `numeric` | NOT NULL | |
+
+### `gamx_j_factors`
+Factors for Clean & Jerk (Weight based only).
+| Column | Type | Constraints | Description |
+| :--- | :--- | :--- | :--- |
+| `id` | `bigint` | **PK**, Generated Always | |
+| `gender` | `text` | NOT NULL | 'm' or 'f' |
+| `bodyweight` | `numeric` | NOT NULL | |
+| `mu` | `numeric` | NOT NULL | |
+| `sigma` | `numeric` | NOT NULL | |
+| `nu` | `numeric` | NOT NULL | |
 
 ---
 
