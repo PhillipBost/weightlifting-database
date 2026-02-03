@@ -150,12 +150,16 @@ async function scrapeSanctions() {
         const yearsToProcess = new Set();
         const scYears = Object.keys(uniqueCountsByYear);
 
+        // [FORCE RECHECK LOGIC]
+        const forceRecheck = process.env.FORCE_RECHECK === 'true';
+        if (forceRecheck) console.log('⚠️  FORCE_RECHECK enabled: Checking ALL years for data improvements...');
+
         for (const year of scYears) {
             const sCount = uniqueCountsByYear[year];
             const dCount = dbCountsByYear[year] || 0;
 
-            if (sCount !== dCount) {
-                console.log(`⚠️  Mismatch in ${year}: DB=${dCount}, Scraper=${sCount}. Marking for update.`);
+            if (forceRecheck || sCount !== dCount) {
+                if (!forceRecheck) console.log(`⚠️  Mismatch in ${year}: DB=${dCount}, Scraper=${sCount}. Marking for update.`);
                 yearsToProcess.add(year);
             }
         }
@@ -291,7 +295,42 @@ async function processSanction(sanction) {
     const exists = existingRecords && existingRecords.length > 0;
 
     if (exists) {
-        // console.log(`⏭️  Skipping existing: ${cleanName}`);
+        // [DATA IMPROVEMENT CHECK]
+        // If we found a record, but our scraped data is "better" (has text date where DB has NULL), UPDATE it.
+        const r = existingRecords[0]; // The specific record
+
+        // We need to fetch the existing fields to compare.
+        // Wait, 'select('id')' only fetched ID. We need more to compare.
+        // Let's assume we need to update if local has text and we are in FORCE_RECHECK, 
+        // OR just unconditionally update date fields if they are missing in DB but present here.
+        // To be safe/efficient, let's fetch current state *now* if we plan to improve.
+
+        const { data: current } = await supabase.from('iwf_sanctions').select('start_date, end_date').eq('id', r.id).single();
+
+        if (current) {
+            let needsUpdate = false;
+            let updates = {};
+
+            // Check End Date (LIFE, CAS)
+            if (endDate && !current.end_date) {
+                console.log(`✨  Improving Record ${cleanName}: EndDate NULL -> "${endDate}"`);
+                updates.end_date = endDate;
+                needsUpdate = true;
+            }
+            // Check Start Date (RETIRED)
+            if (startDate && !current.start_date) {
+                console.log(`✨  Improving Record ${cleanName}: StartDate NULL -> "${startDate}"`);
+                updates.start_date = startDate;
+                needsUpdate = true;
+            }
+
+            if (needsUpdate) {
+                const { error: upErr } = await supabase.from('iwf_sanctions').update(updates).eq('id', r.id);
+                if (upErr) console.error(`❌ Error updating ${cleanName}:`, upErr.message);
+                else console.log(`✅ Updated ${cleanName}`);
+            }
+        }
+
         return;
     }
 
@@ -330,6 +369,14 @@ async function findLifter(nameVal, nationVal) {
 function parseDate(dateStr) {
     if (!dateStr) return null;
     let cleanStr = dateStr.trim().replace(/\.\./g, '.');
+
+    // [Check for Special Text Values First]
+    // If it contains "LIFE", "CAS", "RETIRED", or "year", return the raw text (cleaned)
+    // The DB column is TEXT, so this is allowed.
+    if (/(LIFE|CAS|RETIRED|year|month|provisional)/i.test(cleanStr)) {
+        return cleanStr;
+    }
+
     let result = null;
     if (/^\d{4}-\d{2}-\d{2}$/.test(cleanStr)) result = cleanStr;
     else if (/^(\d{1,2})\.(\d{1,2})\.(\d{4})$/.test(cleanStr)) {
@@ -340,11 +387,16 @@ function parseDate(dateStr) {
         let match = cleanStr.match(/^(\d{1,2})-(\d{1,2})-(\d{4})$/);
         result = `${match[3]}-${match[2].padStart(2, '0')}-${match[1].padStart(2, '0')}`;
     }
+
     if (result) {
         const year = parseInt(result.split('-')[0], 10);
         if (year < 1990 || year > 2040) return null;
-    } else return null;
-    return result;
+        return result;
+    }
+
+    // Fallback: If it's not a date but has length, maybe return it? 
+    // Safest to return null unless it matches valid text patterns to avoid preserving garbage like "From:"
+    return null;
 }
 
 function calculateFriendlyDuration(start, end) {
