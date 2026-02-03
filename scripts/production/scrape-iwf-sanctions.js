@@ -11,7 +11,7 @@ console.log(`🔑 Using Supabase Key: ${supabaseKey ? '***' + supabaseKey.slice(
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 async function scrapeSanctions() {
-    console.log('🚀 Starting IWF Sanctions Scraper...');
+    console.log('🚀 Starting IWF Sanctions Scraper (Smart Incremental)...');
 
     // Launch with Desktop-like settings
     const browser = await puppeteer.launch({
@@ -26,11 +26,8 @@ async function scrapeSanctions() {
 
     try {
         const page = await browser.newPage();
-
-        // Set a standard Desktop User Agent
         await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36');
 
-        // Navigate
         console.log('Navigating to https://iwf.sport/anti-doping/sanctions/ ...');
         await page.goto('https://iwf.sport/anti-doping/sanctions/', {
             waitUntil: 'networkidle2',
@@ -41,7 +38,9 @@ async function scrapeSanctions() {
         const content = await page.content();
         const $ = cheerio.load(content);
 
-        const sanctions = [];
+        // 1. GATHER SCRAPED DATA (In Memory)
+        const scrapedSanctions = [];
+        const scrapedCountsByYear = {};
 
         $('.results__title').each((i, titleEl) => {
             const yearText = $(titleEl).find('h2').text().trim();
@@ -49,103 +48,129 @@ async function scrapeSanctions() {
 
             if (cardsContainer.length) {
                 cardsContainer.children('.card').each((j, cardEl) => {
-                    // Skip legend card
                     if ($(cardEl).hasClass('card__legend')) return;
 
                     const card = $(cardEl);
-                    const cols = card.find('.col-md-4');
+                    const cardHtml = card.html();
 
-                    // Name and Nation
-                    const nameCol = cols.eq(0);
-                    const nameSelector = '.col-7 p.title strong';
-                    const name = nameCol.find(nameSelector).text().trim();
-                    const nation = nameCol.find('.col-5 p.title').text().trim().replace(/[\n\r]+/g, '').trim();
+                    // --- Robust Parsing ---
+                    // [Filter Bad Footer Cards]
+                    if (card.text().includes('IC - In Competition')) return;
 
-                    // Dates - Search by text "From:" and "Until:" for robustness
+                    let name = card.find('.title strong').text().trim();
+                    if (!name) name = card.find('strong').first().text().trim();
+                    if (name && name.length < 3) return;
+
+                    let nation = card.find('.col-5 p.title').text().trim().replace(/[\n\r]+/g, '').trim();
+                    if (!nation) {
+                        const match = card.text().match(/\b[A-Z]{3}\b/);
+                        if (match) nation = match[0];
+                    }
+
                     let fromText = '';
                     let untilText = '';
-                    const dateCol = cols.eq(1);
-
-                    // Robust extraction: Iterate p.normal__text and check content
-                    dateCol.find('p.normal__text').each((_, el) => {
-                        const t = $(el).text();
-                        if (t.includes('From:')) fromText = t.replace('From:', '').trim();
-                        if (t.includes('Until:')) untilText = t.replace('Until:', '').trim();
-                    });
-
-                    // Fallback to old position-based if text-search fails (rare but possible if layout matches old)
-                    if (!fromText && dateCol.find('.col-6').eq(0).length) {
-                        fromText = dateCol.find('.col-6').eq(0).find('p.normal__text').text().replace('From:', '').trim();
-                    }
-                    if (!untilText && dateCol.find('.col-6').eq(1).length) {
-                        untilText = dateCol.find('.col-6').eq(1).find('p.normal__text').text().replace('Until:', '').trim();
-                    }
-
-                    // Event / Substance - Search by text
                     let eventText = '';
                     let substanceText = '';
 
-                    card.find('.col-md-2 p.normal__text').each((_, el) => {
+                    card.find('p.normal__text').each((_, el) => {
                         const t = $(el).text();
+                        if (t.includes('From:')) fromText = t.replace('From:', '').trim();
+                        if (t.includes('Until:')) untilText = t.replace('Until:', '').trim();
                         if (t.includes('Event type*:')) eventText = t.replace('Event type*:', '').trim();
                         if (t.includes('Substance/ADRV:')) substanceText = t.replace('Substance/ADRV:', '').trim();
                     });
 
+                    // CI Diagnostic
+                    if (i === 0 && j === 0) {
+                        console.log('--- [CI DIAGNOSTIC] HTML of First Card ---');
+                        console.log(cardHtml.substring(0, 300) + '...');
+                        console.log(`--- [CI DIAGNOSTIC] Extracted: Name=${name}, Nation=${nation}, From=${fromText}`);
+                    }
+
                     if (name) {
-                        sanctions.push({
+                        const s = {
                             name,
                             nation,
                             from: fromText,
                             until: untilText,
                             event: eventText,
                             substance: substanceText,
-                            yearGroup: yearText,
-                            _rawHtml: (fromText ? null : card.html()) // Save raw HTML if critical data missing
-                        });
+                            yearGroup: yearText
+                        };
+                        scrapedSanctions.push(s);
+                        scrapedCountsByYear[yearText] = (scrapedCountsByYear[yearText] || 0) + 1;
                     }
                 });
             }
         });
 
-        console.log(`Found ${sanctions.length} raw sanctions.`);
-
-        // Detect duplicates before processing
-        const uniqueSanctions = [];
+        // Unique Filter
+        const uniqueScraped = [];
         const seen = new Set();
-        let invalidCount = 0;
+        const uniqueCountsByYear = {}; // Recalculate based on unique
 
-        for (const s of sanctions) {
-            // [Adjusted Strategy]
-            // We ALLOW missing fields now because historical data (e.g. 2009) often lacks "From" date or "Substance".
-            // We only skip if the NAME is missing (which shouldn't happen due to previous checks).
-
-            if (!s.name) {
-                invalidCount++;
-                continue;
-            }
-
-            // Create a unique signature based on KEY fields
-            // Use fallback strings to ensure uniqueness even if fields are null
+        for (const s of scrapedSanctions) {
             const safeFrom = s.from || 'UNKNOWN_START';
             const safeSubstance = s.substance || 'UNKNOWN_SUBSTANCE';
-
             const sig = `${s.name}|${safeFrom}|${safeSubstance}`;
 
-            if (seen.has(sig)) {
-                // console.log(`Duplicate found: ${s.name}`);
-            } else {
+            if (!seen.has(sig)) {
                 seen.add(sig);
-                uniqueSanctions.push(s);
+                uniqueScraped.push(s);
+                uniqueCountsByYear[s.yearGroup] = (uniqueCountsByYear[s.yearGroup] || 0) + 1;
             }
         }
 
-        console.log(`Processing ${uniqueSanctions.length} unique sanctions.`);
-        if (invalidCount > 0) {
-            console.warn(`Dropped ${invalidCount} rows with no name.`);
+        console.log(`📊 Scraped Total: ${uniqueScraped.length} unique records.`);
+
+        // 2. FETCH DB STATS
+        const { data: dbRows, error: dbError } = await supabase
+            .from('iwf_sanctions')
+            .select('id, sanction_year_group');
+
+        if (dbError) throw dbError;
+
+        const dbCountsByYear = {};
+        dbRows.forEach(r => {
+            const y = r.sanction_year_group || 'Unknown';
+            dbCountsByYear[y] = (dbCountsByYear[y] || 0) + 1;
+        });
+
+        const totalDbCount = dbRows.length;
+        const totalScrapedCount = uniqueScraped.length;
+
+        console.log(`📊 Database Total: ${totalDbCount} records.`);
+
+        // 3. GLOBAL CHECK
+        if (totalDbCount === totalScrapedCount) {
+            console.log('✅ Global counts match exactly. Checking if Year Groups differ...');
         }
 
-        // Process in batches
-        for (const sanction of uniqueSanctions) {
+        // 4. GROUP CHECK
+        const yearsToProcess = new Set();
+        const scYears = Object.keys(uniqueCountsByYear);
+
+        for (const year of scYears) {
+            const sCount = uniqueCountsByYear[year];
+            const dCount = dbCountsByYear[year] || 0;
+
+            if (sCount !== dCount) {
+                console.log(`⚠️  Mismatch in ${year}: DB=${dCount}, Scraper=${sCount}. Marking for update.`);
+                yearsToProcess.add(year);
+            }
+        }
+
+        if (yearsToProcess.size === 0) {
+            console.log('🎉 All Year Group counts match. NO UPDATES REQUIRED.');
+            return; // EXIT
+        }
+
+        console.log(`🔄 Processing updates for ${yearsToProcess.size} year groups: ${Array.from(yearsToProcess).join(', ')}`);
+
+        // 5. DRILL DOWN & INSERT
+        const candidates = uniqueScraped.filter(s => yearsToProcess.has(s.yearGroup));
+
+        for (const sanction of candidates) {
             await processSanction(sanction);
         }
 
@@ -157,36 +182,19 @@ async function scrapeSanctions() {
 }
 
 async function processSanction(sanction) {
-    // 1. Parse Data
     let { name, nation, from, until, event, substance, yearGroup } = sanction;
 
-    // [Manual Data Fixes for Known Source Typos]
-    // Fix: Lukasz GRELA (07.04.202 -> 2020-07-04)
-    if (name.includes('GRELA') && from && from.includes('202') && from.length < 10) {
-        // Force correct date
-        from = '2020-07-04';
-    }
+    // [CLEANING]
+    if (name.includes('GRELA') && from && from.includes('202') && from.length < 10) from = '2020-07-04';
 
     let cleanName = name;
     let gender = null;
     let notes = [];
 
-    // [Gender]
-    if (cleanName.toLowerCase().includes('(m)')) {
-        gender = 'M';
-        cleanName = cleanName.replace(/\(m\)/gi, '');
-    } else if (cleanName.toLowerCase().includes('(w)')) {
-        gender = 'W';
-        cleanName = cleanName.replace(/\(w\)/gi, '');
-    }
+    if (cleanName.toLowerCase().includes('(m)')) { gender = 'M'; cleanName = cleanName.replace(/\(m\)/gi, ''); }
+    else if (cleanName.toLowerCase().includes('(w)')) { gender = 'W'; cleanName = cleanName.replace(/\(w\)/gi, ''); }
+    if (/re-analysis/i.test(cleanName)) { notes.push('Re-analysis'); cleanName = cleanName.replace(/re-analysis/gi, ''); }
 
-    // [Re-analysis] - Extract to notes
-    if (/re-analysis/i.test(cleanName)) {
-        notes.push('Re-analysis');
-        cleanName = cleanName.replace(/re-analysis/gi, '');
-    }
-
-    // [Dates in Name] 01.05.2025
     const dateRegexInName = /(\d{2}[.-]\d{2}[.-]\d{4})/g;
     let dateMatch;
     while ((dateMatch = dateRegexInName.exec(cleanName)) !== null) {
@@ -194,107 +202,68 @@ async function processSanction(sanction) {
         cleanName = cleanName.replace(dateMatch[1], '');
     }
 
-    // [Suspended by]
     if (cleanName.includes('*')) {
         const parts = cleanName.split('*');
         cleanName = parts[0];
         if (parts[1]) notes.push(parts[1].trim());
     }
 
-    // [Parentheses Content]
     const parenRegex = /\(([^)]+)\)/g;
     let match;
     while ((match = parenRegex.exec(cleanName)) !== null) {
         const content = match[1].trim();
-        if (content && !notes.includes(content)) {
-            notes.push(content);
-        }
+        if (content && !notes.includes(content)) notes.push(content);
     }
     cleanName = cleanName.replace(/\([^)]*\)/g, '');
 
-    // [Whitespace / Punctuation]
     cleanName = cleanName.replace(/\s+/g, ' ').trim();
-    // Remove leading/trailing non-alphanumeric chars (like wild dashes)
     cleanName = cleanName.replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, '');
-    // Remove "Ms." / "Mr." prefixes (Standard)
     cleanName = cleanName.replace(/^(Ms\.|Mr\.|Mrs\.)\s*/i, '');
 
-    // [Handle Suffix Titles like "FIRSTNAME/Ms."]
-    // Example: "CALLES CELENIA/Ms." -> "Ms. CELENIA CALLES"
-    // Relaxed Regex: Allow "Ms" without dot
     if (/\/(Ms\.?|Mr\.?|Mrs\.?)/i.test(cleanName)) {
         const parts = cleanName.split(' ');
         const suffixIndex = parts.findIndex(p => /\/(Ms\.?|Mr\.?|Mrs\.?)/i.test(p));
-
         if (suffixIndex !== -1) {
-            // Extract title
             const match = parts[suffixIndex].match(/\/(Ms\.?|Mr\.?|Mrs\.?)/i);
-            const title = match[1]; // "Ms." or "Mr"
-
-            // Clean the firstname part
+            const title = match[1];
             const firstname = parts[suffixIndex].replace(match[0], '');
-
-            // Collect surname parts (everything else)
             const surnameParts = parts.filter((_, idx) => idx !== suffixIndex);
-
-            // Reconstruct: Title Firstname Surname
             let normTitle = title.replace('.', '').toLowerCase();
-            normTitle = normTitle.charAt(0).toUpperCase() + normTitle.slice(1) + '.'; // Force "Ms."
-
+            normTitle = normTitle.charAt(0).toUpperCase() + normTitle.slice(1) + '.';
             cleanName = `${normTitle} ${firstname} ${surnameParts.join(' ')}`;
         }
     }
 
-    // [Name Case Handling]
-    // Goal: "LOPEZ LOPEZ Yeison" -> "Yeison LOPEZ LOPEZ"
-    // Strategy: Split into words. Find the index where "Lowercase-containing words" start.
     const parts = cleanName.split(' ');
-
     let firstLowerIndex = -1;
     for (let i = 0; i < parts.length; i++) {
-        // Skip Title if checking for mixed case words
         if (/^(Ms\.|Mr\.|Mrs\.)$/.test(parts[i])) continue;
-
-        if (/[a-z]/.test(parts[i])) { // Word has ANY lowercase letter
-            firstLowerIndex = i;
-            break;
-        }
+        if (/[a-z]/.test(parts[i])) { firstLowerIndex = i; break; }
     }
-
-    // If we found a lowercase word, and it wasn't the very first word...
     if (firstLowerIndex > 0) {
-        // The parts BEFORE firstLowerIndex are the "Surname/Prefix" (ALLCAPS).
-        // The parts FROM firstLowerIndex are the "Firstname" (TitleCase).
-
-        // Handle if index 0 is Title (Ms. SURNAME Firstname) -> Unusual but possible
-        // Standard expected: SURNAME Firstname
-
         const surnameParts = parts.slice(0, firstLowerIndex);
         const firstnameParts = parts.slice(firstLowerIndex);
-
         cleanName = [...firstnameParts, ...surnameParts].join(' ');
     }
+    cleanName = cleanName.trim();
 
-    // [Date Conversion & Duration]
+    // [VALIDATION] Ensure name didn't become empty after cleaning
+    if (!cleanName || cleanName.length < 2) {
+        console.warn(`⚠️  Skipping garbage record (Name became empty): "${name}"`);
+        return;
+    }
+
     const startDate = parseDate(from);
-    // Note: If parseDate returns null, strict mode will leave it null
-
     const endDate = parseDate(until);
     const duration = calculateFriendlyDuration(startDate, endDate);
-
     const notesStr = notes.length > 0 ? notes.join('; ') : null;
 
-    // 2. Match Lifter
+    // 2. Lifter Match
     let dbLiferId = null;
     try {
-        // matchStrategy: 1. Exact Name match
-        // Attempt 1: As cleaned
         let candidates = await findLifter(cleanName, nation);
-
-        if (candidates.match) {
-            dbLiferId = candidates.id;
-        } else {
-            // Attempt 2: Swapping first/last name if 2 words (fallback)
+        if (candidates.match) dbLiferId = candidates.id;
+        else {
             const nameParts = cleanName.split(' ');
             if (nameParts.length === 2) {
                 const reversed = `${nameParts[1]} ${nameParts[0]}`;
@@ -302,41 +271,34 @@ async function processSanction(sanction) {
                 if (revCand.match) dbLiferId = revCand.id;
             }
         }
-    } catch (e) {
-        console.error('Error matching lifter:', e);
+    } catch (e) { console.error(e); }
+
+    // 3. CHECK EXISTENCE (INSERT IF NOT EXISTS)
+    let query = supabase.from('iwf_sanctions').select('id').eq('name', cleanName);
+
+    if (startDate) query = query.eq('start_date', startDate);
+    else query = query.is('start_date', null);
+
+    // Fix: Handle empty string vs NULL ambiguity for substance
+    if (substance) {
+        query = query.eq('substance', substance);
+    } else {
+        // Check for EITHER null OR empty string
+        query = query.or('substance.is.null,substance.eq.""');
     }
 
-    // 3. Upsert
-    // [Smart Upsert Strategy]
-    // We want to preserve manual edits to 'db_lifter_id' and 'gender' if the scraper finds nothing (NULL).
-    // Check if record exists first.
-    let finalLifterId = dbLiferId;
-    let finalGender = gender;
+    const { data: existingRecords } = await query;
+    const exists = existingRecords && existingRecords.length > 0;
 
-    const { data: existingRecord } = await supabase
-        .from('iwf_sanctions')
-        .select('id, db_lifter_id, gender')
-        .eq('name', cleanName)
-        .eq('start_date', startDate)
-        .eq('substance', substance)
-        .maybeSingle();
-
-    if (existingRecord) {
-        // preserve DB value if we have nothing better
-        if (existingRecord.db_lifter_id && !finalLifterId) {
-            finalLifterId = existingRecord.db_lifter_id;
-        }
-        // Optional: If you trust your manual overrides MORE than the scraper even if scraper found something:
-        // finalLifterId = existingRecord.db_lifter_id || finalLifterId; 
-
-        if (existingRecord.gender && !finalGender) {
-            finalGender = existingRecord.gender;
-        }
+    if (exists) {
+        // console.log(`⏭️  Skipping existing: ${cleanName}`);
+        return;
     }
 
+    // Insert New
     const payload = {
         name: cleanName,
-        gender: finalGender,
+        gender: gender,
         nation: nation,
         start_date: startDate,
         end_date: endDate,
@@ -345,113 +307,67 @@ async function processSanction(sanction) {
         event_type: event,
         substance: substance,
         sanction_year_group: yearGroup,
-        db_lifter_id: finalLifterId
+        db_lifter_id: dbLiferId
     };
 
-    const { error: upsertError } = await supabase
-        .from('iwf_sanctions')
-        .upsert(payload, { onConflict: 'name, start_date, substance' });
+    const { error } = await supabase.from('iwf_sanctions').insert(payload);
 
-    if (upsertError) {
-        console.error(`Error saving sanction for ${cleanName}:`, upsertError.message);
-    } else {
-        process.stdout.write('.');
-    }
+    if (error) console.error(`❌ Error inserting ${cleanName}:`, error.message);
+    else console.log(`✅ Inserted new: ${cleanName}`);
 }
 
 async function findLifter(nameVal, nationVal) {
-    // Search by athlete_name (ilike) and country_code
-    // FIX: Corrected columns `athlete_name` and `country_code` confirmed by debug.
     const { data } = await supabase
         .from('iwf_lifters')
         .select('db_lifter_id, athlete_name, country_code')
         .eq('country_code', nationVal)
         .ilike('athlete_name', nameVal);
 
-    if (data && data.length === 1) {
-        return { match: true, id: data[0].db_lifter_id };
-    }
+    if (data && data.length === 1) return { match: true, id: data[0].db_lifter_id };
     return { match: false, candidates: data };
 }
 
 function parseDate(dateStr) {
     if (!dateStr) return null;
-    let cleanStr = dateStr.trim();
-    // Use heuristic to fix double dots e.g. 13.04..2015
-    cleanStr = cleanStr.replace(/\.\./g, '.');
-
+    let cleanStr = dateStr.trim().replace(/\.\./g, '.');
     let result = null;
-
-    // 1. Format: YYYY-MM-DD
-    if (/^\d{4}-\d{2}-\d{2}$/.test(cleanStr)) {
-        result = cleanStr;
-    }
-    // 2. Format: DD.MM.YYYY
-    else {
+    if (/^\d{4}-\d{2}-\d{2}$/.test(cleanStr)) result = cleanStr;
+    else if (/^(\d{1,2})\.(\d{1,2})\.(\d{4})$/.test(cleanStr)) {
         let match = cleanStr.match(/^(\d{1,2})\.(\d{1,2})\.(\d{4})$/);
-        if (match) {
-            result = `${match[3]}-${match[2].padStart(2, '0')}-${match[1].padStart(2, '0')}`;
-        }
-        // 3. Format: DD-MM-YYYY
-        else {
-            match = cleanStr.match(/^(\d{1,2})-(\d{1,2})-(\d{4})$/);
-            if (match) {
-                result = `${match[3]}-${match[2].padStart(2, '0')}-${match[1].padStart(2, '0')}`;
-            }
-        }
+        result = `${match[3]}-${match[2].padStart(2, '0')}-${match[1].padStart(2, '0')}`;
     }
-
-    // 4. Sanity Check: Year Range (1990 - 2040)
-    // This prevents "Year 202" from being accepted
+    else if (/^(\d{1,2})-(\d{1,2})-(\d{4})$/.test(cleanStr)) {
+        let match = cleanStr.match(/^(\d{1,2})-(\d{1,2})-(\d{4})$/);
+        result = `${match[3]}-${match[2].padStart(2, '0')}-${match[1].padStart(2, '0')}`;
+    }
     if (result) {
         const year = parseInt(result.split('-')[0], 10);
-        if (year < 1990 || year > 2040) {
-            // console.warn(`⚠️  Date out of sensible range (dropped): ${dateStr} -> ${result}`);
-            return null;
-        }
-    } else {
-        // If regex didn't match anything valid (like "07.04.202"), return null instead of raw garbage
-        return null;
-    }
-
+        if (year < 1990 || year > 2040) return null;
+    } else return null;
     return result;
 }
 
 function calculateFriendlyDuration(start, end) {
     if (!start || !end) return null;
     if (end.toUpperCase() === 'LIFE') return 'LIFE';
-
-    // Basic validation YYYY-MM-DD
-    const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
-    if (!dateRegex.test(start) || !dateRegex.test(end)) return null;
-
     const d1 = new Date(start);
     const d2 = new Date(end);
-
     if (isNaN(d1) || isNaN(d2)) return null;
-
-    // Calculate diff
-    // Logic: years, months, days
     let years = d2.getFullYear() - d1.getFullYear();
     let months = d2.getMonth() - d1.getMonth();
     let days = d2.getDate() - d1.getDate();
-
     if (days < 0) {
         months--;
-        // Get days in previous month
-        const prevMonth = new Date(d2.getFullYear(), d2.getMonth(), 0);
-        days += prevMonth.getDate();
+        days += new Date(d2.getFullYear(), d2.getMonth(), 0).getDate();
     }
     if (months < 0) {
         years--;
         months += 12;
     }
-
     const parts = [];
     if (years > 0) parts.push(`${years} year${years > 1 ? 's' : ''}`);
     if (months > 0) parts.push(`${months} month${months > 1 ? 's' : ''}`);
     if (days > 0) parts.push(`${days} day${days > 1 ? 's' : ''}`);
-
     return parts.length > 0 ? parts.join(' ') : '0 days';
 }
 
