@@ -791,12 +791,19 @@ async function processEntries(meetId, meetName, entries, eventDate, meetDetails 
                     // stats.unchangedEntries was already incremented above
                 } else {
                     stats.failedEntries++;
-                    log(`    ❌ Upsert failed for ${fullName}: ${error?.message || 'Unknown error'}`);
+                    const msg = `Upsert failed for ${fullName}: ${error?.message || 'Unknown error'}`;
+                    log(`    ❌ ${msg}`);
+                    try {
+                        fs.appendFileSync('logs/failed_entries.csv', `${new Date().toISOString()},"${meetName}","${fullName}","${error?.message || 'Unknown error'}"\n`);
+                    } catch (err) { /* ignore log write error */ }
                 }
 
             } catch (e) {
                 stats.failedEntries++;
                 log(`    ❌ Error processing entry for '${entry.first_name}': ${e.message}`);
+                try {
+                    fs.appendFileSync('logs/failed_entries.csv', `${new Date().toISOString()},"${meetName}","${entry.first_name} ${entry.last_name}","${e.message}"\n`);
+                } catch (err) { /* ignore log write error */ }
             }
         }
     }
@@ -921,7 +928,9 @@ async function run() {
                     entriesUpdated: 0,
                     entriesSkipped: 0,
                     dbErrors: 0,
-                    unmatchedMeets: 0
+                    dbErrors: 0,
+                    unmatchedMeets: 0,
+                    failedMeets: [] // Track meets with errors for summary
                 };
             }
             global.scraperStats.meetsFound += meets.length;
@@ -1048,6 +1057,14 @@ async function run() {
                         global.scraperStats.entriesUnchanged = (global.scraperStats.entriesUnchanged || 0) + (stats.unchangedEntries || 0);
                         global.scraperStats.dbErrors += stats.failedEntries;
                         global.scraperStats.entriesSkipped += (entries.length - (stats.newEntries + stats.updatedEntries + (stats.unchangedEntries || 0) + stats.failedEntries));
+
+                        if (stats.failedEntries > 0) {
+                            global.scraperStats.failedMeets.push({
+                                name: m.meet_name,
+                                date: m.date_range,
+                                failures: stats.failedEntries
+                            });
+                        }
                     } else {
                         // Entries found was 0
                         global.scraperStats.meetsSkipped++;
@@ -1137,6 +1154,19 @@ async function run() {
         console.log(`Entries Failed/Skip: ${global.scraperStats.dbErrors + global.scraperStats.entriesSkipped}`);
         console.log('--------------------------------------------------------------------------------');
         console.log(`Unmatched Meets:     ${global.scraperStats.unmatchedMeets}`);
+        console.log(`Unmatched Meets:     ${global.scraperStats.unmatchedMeets}`);
+        console.log('--------------------------------------------------------------------------------');
+
+        if (global.scraperStats.failedMeets && global.scraperStats.failedMeets.length > 0) {
+            console.log('\nMEETS WITH FAILURES:');
+            console.log('--------------------------------------------------------------------------------');
+            global.scraperStats.failedMeets.forEach(m => {
+                console.log(`[${m.failures} entries failed] ${m.name} (${m.date})`);
+            });
+            console.log('--------------------------------------------------------------------------------');
+        }
+
+        console.log('See logs/failed_entries.csv for individual error details.');
         console.log('################################################################################');
 
     } catch (e) {
