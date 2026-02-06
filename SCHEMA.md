@@ -7,7 +7,9 @@
 ## USAW Tables (National)
 
 ### `usaw_meets`
+
 Stores details for USA Weightlifting sanctioned competitions.
+
 | Column | Type | Constraints | Description |
 | :--- | :--- | :--- | :--- |
 | `meet_id` | `bigint` | **PK**, NOT NULL | Primary Key |
@@ -39,8 +41,62 @@ Stores details for USA Weightlifting sanctioned competitions.
 | `date_range` | `text` | | |
 | `wso_geography` | `text` | | |
 
+### `usaw_meet_listings`
+
+Stores upcoming meet announcements scraped from Sport80, potentially before they have results. Acts as the parent for `usaw_meet_entries`.
+
+| Column | Type | Constraints | Description |
+| :--- | :--- | :--- | :--- |
+| `listing_id` | `integer` | **PK**, SERIAL | |
+| `meet_name` | `text` | NOT NULL | |
+| `event_date` | `text` | | Date or range string from source |
+| `date_range` | `text` | | Original format |
+| `meet_type` | `text` | | |
+| `address` | `text` | | |
+| `organizer` | `text` | | |
+| `contact_phone` | `text` | | |
+| `contact_email` | `text` | | |
+| `registration_open` | `date` | | |
+| `registration_close` | `date` | | |
+| `entries_on_platform` | `text` | | |
+| `has_entry_list` | `boolean` | DEFAULT false | |
+| `meet_id` | `integer` | **FK** | References `usaw_meets(meet_id)` |
+| `entry_count` | `integer` | DEFAULT 0 | Count of entries entries |
+| `first_discovered_at` | `timestamp` | DEFAULT NOW() | |
+| `last_seen_at` | `timestamp` | DEFAULT NOW() | |
+| `last_scraped_at` | `timestamp` | | |
+
+### `usaw_meet_entries`
+
+Stores entry lists for upcoming and past meets scraped from Sport80.
+> [!NOTE]
+> Entries are linked to `usaw_meet_listings` via `listing_id`.
+> Unique key constraint on `(listing_id, membership_number)`.
+
+| Column | Type | Constraints | Description |
+| :--- | :--- | :--- | :--- |
+| `id` | `bigint` | **PK**, NOT NULL | Generated ALWAYS AS IDENTITY |
+| `listing_id` | `integer` | **FK**, NOT NULL | References `usaw_meet_listings(listing_id)` |
+| `meet_id` | `bigint` | **Deprecated** | References `usaw_meets(meet_id)`. Use `listing_id`. |
+| `athlete_id` | `bigint` | **FK** | References `usaw_lifters(lifter_id)` |
+| `membership_number` | `text` | | USAW Membership Number |
+| `first_name` | `text` | | |
+| `last_name` | `text` | | |
+| `state` | `text` | | |
+| `birth_year` | `integer` | | |
+| `weightlifting_age` | `integer` | | |
+| `club` | `text` | | |
+| `gender` | `text` | | |
+| `division` | `text` | | |
+| `weight_class` | `text` | | |
+| `entry_total` | `numeric` | | |
+| `created_at` | `timestamptz` | DEFAULT now() | |
+| `updated_at` | `timestamptz` | DEFAULT now() | |
+
 ### `usaw_lifters`
+
 Stores profiles for USAW athletes.
+
 | Column | Type | Constraints | Description |
 | :--- | :--- | :--- | :--- |
 | `lifter_id` | `bigint` | **PK**, NOT NULL | Default: `nextval('lifters_lifter_id_seq')` |
@@ -55,6 +111,7 @@ Stores profiles for USAW athletes.
 | `internal_id_2`..`8` | `integer` | | Additional internal IDs |
 
 ### `usaw_meet_results`
+
 Individual athlete results linked to meets.
 > [!NOTE]
 > Unique key constraint on `(meet_id, lifter_id, weight_class)`.
@@ -104,6 +161,7 @@ Individual athlete results linked to meets.
 | `bounce_back_cj_3` | `boolean` | | |
 
 ### `usaw_clubs`
+
 | Column | Type | Constraints | Description |
 | :--- | :--- | :--- | :--- |
 | `club_name` | `text` | **PK**, NOT NULL | |
@@ -131,6 +189,7 @@ Individual athlete results linked to meets.
 | `state` | `varchar` | | Extracted from address/coords |
 
 ### `usaw_club_rolling_metrics`
+
 | Column | Type | Constraints | Description |
 | :--- | :--- | :--- | :--- |
 | `id` | `bigint` | **PK**, NOT NULL | Default: `nextval('club_rolling_metrics_id_seq')` |
@@ -143,6 +202,7 @@ Individual athlete results linked to meets.
 | `activity_factor` | `numeric` | | |
 
 ### `usaw_meet_locations`
+
 | Column | Type | Constraints | Description |
 | :--- | :--- | :--- | :--- |
 | `id` | `integer` | **PK**, NOT NULL | Default: `nextval('meet_locations_id_seq')` |
@@ -168,6 +228,7 @@ Individual athlete results linked to meets.
 | `geocode_precision_score` | `numeric` | | |
 
 ### `usaw_wso_information`
+
 | Column | Type | Constraints | Description |
 | :--- | :--- | :--- | :--- |
 | `wso_id` | `integer` | NOT NULL, UNIQUE | Default: `nextval('wso_information_wso_id_seq')` |
@@ -198,6 +259,7 @@ Individual athlete results linked to meets.
 ## IWF Tables (International)
 
 ### `iwf_meets`
+
 | Column | Type | Constraints | Description |
 | :--- | :--- | :--- | :--- |
 | `db_meet_id` | `bigint` | **PK**, NOT NULL, UNIQUE | Generated ALWAYS AS IDENTITY |
@@ -213,6 +275,7 @@ Individual athlete results linked to meets.
 | `updated_at` | `timestamptz` | | |
 
 ### `iwf_lifters`
+
 | Column | Type | Constraints | Description |
 | :--- | :--- | :--- | :--- |
 | `db_lifter_id` | `bigint` | **PK**, NOT NULL | Default: `nextval('iwf_lifters_db_lifter_id_seq')` |
@@ -227,6 +290,7 @@ Individual athlete results linked to meets.
 | `iwf_athlete_url` | `text` | | |
 
 ### `iwf_meet_results`
+
 | Column | Type | Constraints | Description |
 | :--- | :--- | :--- | :--- |
 | `db_result_id` | `bigint` | **PK**, NOT NULL, UNIQUE | Generated ALWAYS AS IDENTITY |
@@ -274,6 +338,7 @@ Individual athlete results linked to meets.
 | `country_name` | `text` | | |
 
 ### `iwf_meet_locations`
+
 | Column | Type | Constraints | Description |
 | :--- | :--- | :--- | :--- |
 | `db_location_id` | `bigint` | **PK**, NOT NULL | Default: `nextval('iwf_meet_locations_db_location_id_seq')` |
@@ -290,6 +355,7 @@ Individual athlete results linked to meets.
 | `updated_at` | `timestamp` | DEFAULT now() | |
 
 ### `iwf_sanctions`
+
 | Column | Type | Constraints | Description |
 | :--- | :--- | :--- | :--- |
 | `id` | `uuid` | **PK**, NOT NULL | Default: `gen_random_uuid()` |
@@ -311,7 +377,9 @@ Individual athlete results linked to meets.
 ## GAMX Tables (Calculation Factors)
 
 ### `gamx_u_factors`
+
 Factors for Age 7-20.
+
 | Column | Type | Constraints | Description |
 | :--- | :--- | :--- | :--- |
 | `id` | `bigint` | **PK**, Generated Always | |
@@ -323,7 +391,9 @@ Factors for Age 7-20.
 | `nu` | `numeric` | NOT NULL | |
 
 ### `gamx_a_factors`
+
 Factors for Age 13-30.
+
 | Column | Type | Constraints | Description |
 | :--- | :--- | :--- | :--- |
 | `id` | `bigint` | **PK**, Generated Always | |
@@ -335,7 +405,9 @@ Factors for Age 13-30.
 | `nu` | `numeric` | NOT NULL | |
 
 ### `gamx_masters_factors`
+
 Factors for Age 30-95.
+
 | Column | Type | Constraints | Description |
 | :--- | :--- | :--- | :--- |
 | `id` | `bigint` | **PK**, Generated Always | |
@@ -347,7 +419,9 @@ Factors for Age 30-95.
 | `nu` | `numeric` | NOT NULL | |
 
 ### `gamx_points_factors`
+
 Factors for Senior Total (Weight based only).
+
 | Column | Type | Constraints | Description |
 | :--- | :--- | :--- | :--- |
 | `id` | `bigint` | **PK**, Generated Always | |
@@ -358,7 +432,9 @@ Factors for Senior Total (Weight based only).
 | `nu` | `numeric` | NOT NULL | |
 
 ### `gamx_s_factors`
+
 Factors for Snatch (Weight based only).
+
 | Column | Type | Constraints | Description |
 | :--- | :--- | :--- | :--- |
 | `id` | `bigint` | **PK**, Generated Always | |
@@ -369,7 +445,9 @@ Factors for Snatch (Weight based only).
 | `nu` | `numeric` | NOT NULL | |
 
 ### `gamx_j_factors`
+
 Factors for Clean & Jerk (Weight based only).
+
 | Column | Type | Constraints | Description |
 | :--- | :--- | :--- | :--- |
 | `id` | `bigint` | **PK**, Generated Always | |
@@ -384,6 +462,7 @@ Factors for Clean & Jerk (Weight based only).
 ## Use & System Tables
 
 ### `profiles`
+
 | Column | Type | Constraints | Description |
 | :--- | :--- | :--- | :--- |
 | `id` | `uuid` | **PK**, NOT NULL | |
@@ -394,6 +473,7 @@ Factors for Clean & Jerk (Weight based only).
 | `updated_at` | `timestamptz` | DEFAULT now() | |
 
 ### `youth_factors`
+
 | Column | Type | Constraints | Description |
 | :--- | :--- | :--- | :--- |
 | `id` | `integer` | **PK**, NOT NULL | |
@@ -403,6 +483,7 @@ Factors for Clean & Jerk (Weight based only).
 | `factor` | `numeric` | NOT NULL | |
 
 ### `q_masters_backfill_audit`
+
 | Column | Type | Constraints | Description |
 | :--- | :--- | :--- | :--- |
 | `audit_id` | `bigint` | **PK**, NOT NULL | |
@@ -419,6 +500,7 @@ Factors for Clean & Jerk (Weight based only).
 | `notes` | `text` | | |
 
 ### `test_github_actions`
+
 | Column | Type | Constraints | Description |
 | :--- | :--- | :--- | :--- |
 | `id` | `integer` | **PK**, NOT NULL | |

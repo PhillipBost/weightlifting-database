@@ -183,8 +183,55 @@ jobs:
             logs/process-meet-locations.log
           retention-days: 7
 
+  daily-meet-entry-scraper:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Create directories
+        run: mkdir -p logs
+
+      - name: Scrape upcoming meet entries
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+        run: |
+          set -o pipefail
+          echo "📋 Starting daily meet entry scraper..."
+          echo "🕐 Start time: $(date +'%Y-%m-%d %H:%M:%S %Z')"
+
+          node scripts/production/meet-entry-scraper-db.js --days 120 --headless 2>&1 | tee logs/daily-meet-entry-scraper.log
+
+          if [ $? -eq 0 ]; then
+            echo "✅ Daily meet entry scraper completed successfully"
+          else
+            echo "❌ Daily meet entry scraper failed"
+            exit 1
+          fi
+
+      - name: Upload meet entry scraper results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: meet-entry-scraper-${{ github.run_number }}
+          path: |
+            logs/daily-meet-entry-scraper.log
+          retention-days: 7
+
   create-summary:
-    needs: [daily-meet-scraper, missing-wso-scan, process-meet-locations]
+    needs: [daily-meet-scraper, missing-wso-scan, process-meet-locations, daily-meet-entry-scraper]
     if: always()
     runs-on: ubuntu-latest
 
@@ -235,10 +282,22 @@ jobs:
           fi
 
           echo "" >> $GITHUB_STEP_SUMMARY
+
+          # Meet entry scraper summary
+          if [ "${{ needs.daily-meet-entry-scraper.result }}" == "success" ]; then
+            echo "### 📋 Meet Entry Scraper: ✅ Success" >> $GITHUB_STEP_SUMMARY
+            echo "- **Status:** Successfully scraped upcoming meet entries" >> $GITHUB_STEP_SUMMARY
+            echo "- **Purpose:** Keep meet entry lists fresh (120-day lookahead)" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "### 📋 Meet Entry Scraper: ❌ Failed" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          echo "" >> $GITHUB_STEP_SUMMARY
           echo "### 📋 Maintenance Overview" >> $GITHUB_STEP_SUMMARY
           echo "This daily pipeline ensures:" >> $GITHUB_STEP_SUMMARY
           echo "- 🔄 **Data freshness**: New meets and results are discovered daily" >> $GITHUB_STEP_SUMMARY
           echo "- 🎯 **Data quality**: Missing WSO assignments are identified and flagged" >> $GITHUB_STEP_SUMMARY
           echo "- 📍 **Location accuracy**: Meet locations are geocoded and standardized" >> $GITHUB_STEP_SUMMARY
+          echo "- 📋 **Entry lists**: Upcoming meet entries are kept up-to-date" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "**Maintenance logs available in workflow artifacts**" >> $GITHUB_STEP_SUMMARY
