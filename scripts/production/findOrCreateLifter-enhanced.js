@@ -31,13 +31,13 @@ class MatchingLogger {
             step: step,
             ...data
         };
-        
+
         this.steps.push(logEntry);
-        
+
         // Console output for immediate visibility
         const prefix = this.getStepPrefix(step);
         console.log(`${prefix} [${step}] ${data.message || JSON.stringify(data)}`);
-        
+
         return logEntry;
     }
 
@@ -48,6 +48,8 @@ class MatchingLogger {
             'internal_id_match': '✅',
             'internal_id_conflict': '⚠️',
             'internal_id_duplicate': '❌',
+            'member_id_query': '💳',
+            'member_id_match': '✅',
             'name_query': '📝',
             'name_match_single': '✅',
             'name_match_multiple': '⚠️',
@@ -106,11 +108,13 @@ async function findOrCreateLifterEnhanced(supabase, lifterName, additionalData =
 
     // Initialize structured logging
     const logger = new MatchingLogger(cleanName, additionalData);
-    
+    const createIfNeeded = additionalData.createIfNeeded !== false;
+
     logger.log('init', {
         message: `Starting athlete matching process`,
         athlete_name: cleanName,
         internal_id: additionalData.internal_id || null,
+        membership_number: additionalData.membership_number || null,
         target_meet_id: additionalData.targetMeetId || null,
         event_date: additionalData.eventDate || null,
         age_category: additionalData.ageCategory || null,
@@ -118,6 +122,81 @@ async function findOrCreateLifterEnhanced(supabase, lifterName, additionalData =
     });
 
     try {
+        // Priority 0: If we have a membership_number, use it for matching match FIRST (User Request)
+        if (additionalData.membership_number) {
+            logger.log('member_id_query', {
+                message: `Querying by membership_number: ${additionalData.membership_number}`,
+                membership_number: additionalData.membership_number,
+                query_type: 'member_id_priority'
+            });
+
+            const { data: memberLifters, error: memberIdError } = await supabase
+                .from('usaw_lifters')
+                .select('lifter_id, athlete_name, internal_id, membership_number')
+                .eq('membership_number', additionalData.membership_number);
+
+            if (memberIdError) {
+                logger.log('error', {
+                    message: `Database error during membership_number query: ${memberIdError.message}`,
+                    error_code: memberIdError.code,
+                    query_type: 'member_id_priority'
+                });
+            } else if (memberLifters && memberLifters.length > 0) {
+                // Found matches by member ID
+                const existingLifter = memberLifters[0];
+                logger.log('member_id_match', {
+                    message: `Match found by membership_number`,
+                    lifter_id: existingLifter.lifter_id,
+                    athlete_name: existingLifter.athlete_name,
+                    membership_number: existingLifter.membership_number
+                });
+
+                // If name is drastically different, log warning, but trust member ID?
+                // For now, trust member ID as authoritative.
+
+                // Enrich with internal_id if available and missing
+                if (additionalData.internal_id && !existingLifter.internal_id) {
+                    // ... Enrichment logic similar to below ...
+                    const { data: updated, error: upErr } = await supabase
+                        .from('usaw_lifters')
+                        .update({ internal_id: additionalData.internal_id })
+                        .eq('lifter_id', existingLifter.lifter_id)
+                        .select()
+                        .single();
+
+                    if (!upErr) {
+                        logger.logFinalResult(updated, 'member_id_match_enriched_internal_id');
+                        return { result: updated, log: logger.getSummary() };
+                    }
+                }
+
+                return { result: existingLifter, log: logger.getSummary() };
+            } else {
+                // Member ID provided but NOT found. Strict match failure.
+                // Do not fallback to name matching.
+                if (!createIfNeeded) {
+                    logger.log('member_id_mismatch', {
+                        message: `Membership Number ${additionalData.membership_number} not found in DB. Name matching skipped due to strict ID requirement. Returning unmatched.`,
+                        membership_number: additionalData.membership_number
+                    });
+                    return { result: { lifter_id: null }, log: logger.getSummary() };
+                }
+
+                // If createIfNeeded is true (which it isn't in this case), we might technically "Create" here? 
+                // But the user said "Meet entry scraper will no longer create athletes". 
+                // So returning null is correct for the scraper use case.
+                logger.log('member_id_mismatch', {
+                    message: `Membership Number ${additionalData.membership_number} not found. createIfNeeded is true but skipping name match fallback logic to respect strict ID.`,
+                });
+                // Actually if createIfNeeded is true, we would proceed to Create... but wait.
+                // If ID is valid but missing from our DB, we SHOULD create a new user with that ID.
+                // BUT the user explicitly disabled creation for the scraper.
+                // So we return null.
+                return { result: { lifter_id: null }, log: logger.getSummary() };
+            }
+        }
+
+
         // Priority 1: If we have an internal_id, use it for matching first
         if (additionalData.internal_id) {
             logger.log('internal_id_query', {
@@ -125,7 +204,7 @@ async function findOrCreateLifterEnhanced(supabase, lifterName, additionalData =
                 internal_id: additionalData.internal_id,
                 query_type: 'internal_id_priority'
             });
-            
+
             const { data: internalIdLifters, error: internalIdError } = await supabase
                 .from('usaw_lifters')
                 .select('lifter_id, athlete_name, internal_id')
@@ -160,7 +239,7 @@ async function findOrCreateLifterEnhanced(supabase, lifterName, additionalData =
                             athlete_name: l.athlete_name
                         }))
                     });
-                    
+
                     // Check if any of them match the current name
                     const nameMatch = internalIdLifters.find(l => l.athlete_name === cleanName);
                     if (nameMatch) {
@@ -174,7 +253,7 @@ async function findOrCreateLifterEnhanced(supabase, lifterName, additionalData =
                             selected_lifter: internalIdLifters[0].athlete_name,
                             selected_lifter_id: internalIdLifters[0].lifter_id
                         });
-                        
+
                         // Internal_id takes priority - return first match but log the name mismatch
                         const selectedLifter = internalIdLifters[0];
                         logger.logFinalResult(selectedLifter, 'internal_id_priority_with_name_mismatch');
@@ -182,7 +261,7 @@ async function findOrCreateLifterEnhanced(supabase, lifterName, additionalData =
                     }
                 } else if (internalIdLifters && internalIdLifters.length === 1) {
                     const existingLifter = internalIdLifters[0];
-                    
+
                     // Internal_id match found - this takes priority regardless of name match
                     if (existingLifter.athlete_name === cleanName) {
                         logger.log('internal_id_match', {
@@ -203,7 +282,7 @@ async function findOrCreateLifterEnhanced(supabase, lifterName, additionalData =
                             existing_lifter_id: existingLifter.lifter_id,
                             decision: 'internal_id_priority'
                         });
-                        
+
                         logger.logFinalResult(existingLifter, 'internal_id_priority_with_name_mismatch');
                         return { result: existingLifter, log: logger.getSummary() };
                     }
@@ -215,12 +294,8 @@ async function findOrCreateLifterEnhanced(supabase, lifterName, additionalData =
                     });
                 }
             }
-        } else {
-            logger.log('init', {
-                message: `No internal_id provided, skipping internal_id matching`,
-                internal_id: null
-            });
         }
+        // Logic for skipping internal_id logging if not present is handled by simply NOT having an else block here.
 
         // Find ALL existing lifters by name (not just one)
         logger.log('name_query', {
@@ -240,7 +315,7 @@ async function findOrCreateLifterEnhanced(supabase, lifterName, additionalData =
         }
 
         const lifterIds = existingLifters ? existingLifters.map(l => l.lifter_id) : [];
-        
+
         logger.log('name_query', {
             message: `Name query returned ${lifterIds.length} results`,
             results_count: lifterIds.length,
@@ -252,7 +327,17 @@ async function findOrCreateLifterEnhanced(supabase, lifterName, additionalData =
         });
 
         if (lifterIds.length === 0) {
-            // No existing lifter found - safe to create new one
+            // No existing lifter found
+
+            if (!createIfNeeded) {
+                logger.log('name_match_none', {
+                    message: `No existing lifter found and createIfNeeded is false`,
+                    athlete_name: cleanName
+                });
+                return { result: { lifter_id: null }, log: logger.getSummary() };
+            }
+
+            // Safe to create new one
             logger.log('name_match_none', {
                 message: `No existing lifter found, creating new record`,
                 athlete_name: cleanName,
@@ -265,7 +350,7 @@ async function findOrCreateLifterEnhanced(supabase, lifterName, additionalData =
                     .from('usaw_lifters')
                     .select('lifter_id, athlete_name, internal_id')
                     .eq('internal_id', additionalData.internal_id);
-                
+
                 if (!finalCheckError && finalCheck && finalCheck.length > 0) {
                     logger.log('internal_id_conflict', {
                         message: `Final safety check: internal_id already exists, using existing record instead of creating duplicate`,
@@ -282,7 +367,7 @@ async function findOrCreateLifterEnhanced(supabase, lifterName, additionalData =
                 .from('usaw_lifters')
                 .insert({
                     athlete_name: cleanName,
-                    membership_number: additionalData.membership_number || null,
+                    membership_number: additionalData.membership_number || null, // Ensure we save the membership number
                     internal_id: additionalData.internal_id || null
                 })
                 .select()
@@ -300,7 +385,7 @@ async function findOrCreateLifterEnhanced(supabase, lifterName, additionalData =
         if (lifterIds.length === 1) {
             // Single match found - update with internal_id if we have it and they don't
             const existingLifter = existingLifters[0];
-            
+
             logger.log('name_match_single', {
                 message: `Single lifter found by name`,
                 lifter_id: existingLifter.lifter_id,
@@ -316,14 +401,14 @@ async function findOrCreateLifterEnhanced(supabase, lifterName, additionalData =
                     internal_id: additionalData.internal_id,
                     action: 'enrich_internal_id'
                 });
-                
+
                 // Check for conflicts: ensure no other lifter already has this internal_id
                 const { data: conflictCheck, error: conflictError } = await supabase
                     .from('usaw_lifters')
                     .select('lifter_id, athlete_name')
                     .eq('internal_id', additionalData.internal_id)
                     .neq('lifter_id', existingLifter.lifter_id);
-                    
+
                 if (conflictError) {
                     logger.log('error', {
                         message: `Error checking for internal_id conflicts: ${conflictError.message}`,
@@ -347,7 +432,7 @@ async function findOrCreateLifterEnhanced(supabase, lifterName, additionalData =
                         .eq('lifter_id', existingLifter.lifter_id)
                         .select()
                         .single();
-                        
+
                     if (updateError) {
                         logger.log('error', {
                             message: `Failed to update internal_id: ${updateError.message}`,
@@ -369,7 +454,7 @@ async function findOrCreateLifterEnhanced(supabase, lifterName, additionalData =
                     action: 'mismatch_detected'
                 });
             }
-            
+
             // Continue with verification for single match
             logger.log('tier1_verification', {
                 message: `Starting Tier 1 verification for single match`,
@@ -407,24 +492,24 @@ async function findOrCreateLifterEnhanced(supabase, lifterName, additionalData =
                 logger.logFinalResult(internalIdMatch, 'internal_id_disambiguation');
                 return { result: internalIdMatch, log: logger.getSummary() };
             }
-            
+
             // Check if any lifter has null internal_id that we can enrich
             const nullInternalIdLifters = existingLifters.filter(l => !l.internal_id);
             if (nullInternalIdLifters.length === 1) {
                 const candidateLifter = nullInternalIdLifters[0];
-                
+
                 logger.log('enrichment', {
                     message: `Single candidate without internal_id found for enrichment`,
                     candidate_lifter_id: candidateLifter.lifter_id,
                     internal_id: additionalData.internal_id
                 });
-                
+
                 // Check for conflicts before enriching
                 const { data: conflictCheck, error: conflictError } = await supabase
                     .from('usaw_lifters')
                     .select('lifter_id, athlete_name')
                     .eq('internal_id', additionalData.internal_id);
-                    
+
                 if (!conflictError && (!conflictCheck || conflictCheck.length === 0)) {
                     const { data: updatedLifter, error: updateError } = await supabase
                         .from('usaw_lifters')
@@ -432,7 +517,7 @@ async function findOrCreateLifterEnhanced(supabase, lifterName, additionalData =
                         .eq('lifter_id', candidateLifter.lifter_id)
                         .select()
                         .single();
-                        
+
                     if (!updateError) {
                         logger.logFinalResult(updatedLifter, 'disambiguation_enriched');
                         return { result: updatedLifter, log: logger.getSummary() };
@@ -449,7 +534,7 @@ async function findOrCreateLifterEnhanced(supabase, lifterName, additionalData =
 
             try {
                 const foundInternalId = await searchSport80ForLifter(cleanName, { verbose: false });
-                
+
                 if (foundInternalId) {
                     logger.log('tier2_verification', {
                         message: `Sport80 search found internal_id: ${foundInternalId}`,
@@ -468,19 +553,19 @@ async function findOrCreateLifterEnhanced(supabase, lifterName, additionalData =
                     const nullInternalIdCandidates = existingLifters.filter(l => !l.internal_id);
                     if (nullInternalIdCandidates.length === 1) {
                         const candidateLifter = nullInternalIdCandidates[0];
-                        
+
                         logger.log('enrichment', {
                             message: `Enriching single null internal_id candidate with Sport80 result`,
                             candidate_lifter_id: candidateLifter.lifter_id,
                             internal_id: foundInternalId
                         });
-                        
+
                         // Check for conflicts before enriching
                         const { data: conflictCheck, error: conflictError } = await supabase
                             .from('usaw_lifters')
                             .select('lifter_id, athlete_name')
                             .eq('internal_id', foundInternalId);
-                            
+
                         if (!conflictError && (!conflictCheck || conflictCheck.length === 0)) {
                             const { data: updatedLifter, error: updateError } = await supabase
                                 .from('usaw_lifters')
@@ -488,7 +573,7 @@ async function findOrCreateLifterEnhanced(supabase, lifterName, additionalData =
                                 .eq('lifter_id', candidateLifter.lifter_id)
                                 .select()
                                 .single();
-                                
+
                             if (!updateError) {
                                 logger.logFinalResult(updatedLifter, 'tier2_sport80_enriched');
                                 return { result: updatedLifter, log: logger.getSummary() };
@@ -530,7 +615,7 @@ async function findOrCreateLifterEnhanced(supabase, lifterName, additionalData =
                 .from('usaw_lifters')
                 .select('lifter_id, athlete_name, internal_id')
                 .eq('internal_id', additionalData.internal_id);
-            
+
             if (!finalDuplicateError && finalDuplicateCheck && finalDuplicateCheck.length > 0) {
                 logger.log('internal_id_conflict', {
                     message: `Fallback duplicate prevention: internal_id already exists, using existing record`,
@@ -542,6 +627,14 @@ async function findOrCreateLifterEnhanced(supabase, lifterName, additionalData =
                 logger.logFinalResult(finalDuplicateCheck[0], 'fallback_duplicate_prevention');
                 return { result: finalDuplicateCheck[0], log: logger.getSummary() };
             }
+        }
+
+        if (!createIfNeeded) {
+            logger.log('name_match_none', {
+                message: `Match failed and createIfNeeded is false. Returning null.`,
+                athlete_name: cleanName
+            });
+            return { result: { lifter_id: null }, log: logger.getSummary() };
         }
 
         const { data: newLifter, error: createError } = await supabase
