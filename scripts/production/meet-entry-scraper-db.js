@@ -895,7 +895,7 @@ async function run() {
         let hasNext = true;
         let pageNum = 1;
 
-        while (hasNext && pageNum <= 10) {
+        while (hasNext) {
             log(`Processing directory page ${pageNum}...`);
 
             try {
