@@ -523,26 +523,48 @@ function parseDateString(dateStr) {
     return date.toISOString().split('T')[0];
 }
 
-// Extract start date from date range string
-// e.g., "Mar 08-09, 2026" => "2026-03-08"
-// e.g., "Mar 08, 2026" => "2026-03-08"
-function parseStartDateFromRange(dateRange) {
-    if (!dateRange) return null;
+// Helper to separate date from time/timezone junk
+function cleanDatePart(str) {
+    if (!str) return '';
+    return str
+        .replace(/\d{1,2}:\d{2}\s+(AM|PM)/gi, '') // Remove time
+        .replace(/\([A-Z]+\)/g, '')               // Remove timezone
+        .trim();
+}
 
-    // Try to extract just the first date part before any dash
-    // "Mar 08-09, 2026" => "Mar 08, 2026"
-    const parts = dateRange.split('-');
-    if (parts.length > 1) {
-        // Multi-day event: extract month, first day, and year
-        const match = dateRange.match(/([A-Za-z]+)\s+(\d+)(?:-\d+)?,\s+(\d{4})/);
-        if (match) {
-            const [, month, day, year] = match;
-            return parseDateString(`${month} ${day}, ${year}`);
+// Robust date parser (handles ranges, ordinals, etc.)
+function parseDatesFromEventDate(eventDate) {
+    if (!eventDate) return { start: null, end: null };
+
+    const parts = eventDate.split(' - ');
+
+    if (parts.length === 2) {
+        // Range: "Start - End"
+        const startRaw = cleanDatePart(parts[0]);
+        const endRaw = cleanDatePart(parts[1]);
+
+        const start = parseDateString(startRaw);
+        const end = parseDateString(endRaw);
+
+        return { start, end };
+    }
+
+    if (parts.length === 1) {
+        // Single date
+        const raw = cleanDatePart(parts[0]);
+        const date = parseDateString(raw);
+        if (date) {
+            return { start: date, end: date }; // Single day event has same start/end
         }
     }
 
-    // Single day event or couldn't parse range: parse as-is
-    return parseDateString(dateRange);
+    return { start: null, end: null };
+}
+
+// COMPATIBILITY WRAPPER for existing findMeet usage
+function parseStartDateFromRange(dateRange) {
+    const { start } = parseDatesFromEventDate(dateRange);
+    return start;
 }
 
 async function findMeet(meetData) {
@@ -585,9 +607,15 @@ async function upsertMeetListing(meetData, meetDetails, matchedMeetId = null) {
         return null;
     }
 
+
+    // Parse start and end dates for sorting
+    const { start, end } = parseDatesFromEventDate(date_range);
+
     const listingData = {
         meet_name,
         event_date: date_range,  // Store full date range as TEXT
+        start_date: start,
+        end_date: end,
         meet_type: meetDetails.meetType || null,
         address: meetDetails.address || null,
         organizer: meetDetails.organizer || null,
