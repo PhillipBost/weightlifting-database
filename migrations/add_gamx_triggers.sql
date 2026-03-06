@@ -60,9 +60,9 @@ NEW.gamx_masters := get_gamx_score('masters', NEW.gender, v_age, v_bw, v_total);
 -- Pass NULL for age if your logic for 'total' ignores it.
 NEW.gamx_total := get_gamx_score('total', NEW.gender, v_age, v_bw, v_total);
 -- 5. GAMX Snatch
-NEW.gamx_s := get_gamx_score('s', NEW.gender, NULL, v_bw, v_snatch);
+NEW.gamx_s := get_gamx_score('s', NEW.gender, v_age, v_bw, v_snatch);
 -- 6. GAMX Clean & Jerk
-NEW.gamx_j := get_gamx_score('j', NEW.gender, NULL, v_bw, v_cj);
+NEW.gamx_j := get_gamx_score('j', NEW.gender, v_age, v_bw, v_cj);
 RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;
