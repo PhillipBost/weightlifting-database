@@ -74,6 +74,24 @@ jobs:
             exit 1
           fi
 
+      - name: Resolve unmatched meet listings
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+        run: |
+          set -o pipefail
+          echo "🔗 Resolving unmatched meet listings..."
+          echo "🕐 Start time: $(date +'%Y-%m-%d %H:%M:%S %Z')"
+
+          node scripts/maintenance/resolve-unmatched-listings.js 2>&1 | tee logs/resolve-unmatched-listings.log
+
+          if [ $? -eq 0 ]; then
+            echo "✅ Unmatched meet listings resolved successfully"
+          else
+            echo "❌ Resolving unmatched meet listings failed"
+            exit 1
+          fi
+
       - name: Upload daily scraper results
         if: always()
         uses: actions/upload-artifact@v4
@@ -82,6 +100,7 @@ jobs:
           path: |
             output/
             logs/daily-meet-scraper.log
+            logs/resolve-unmatched-listings.log
           retention-days: 7
 
   missing-wso-scan:

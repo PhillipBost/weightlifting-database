@@ -582,7 +582,7 @@ async function findMeet(meetData) {
 
     // Try exact match on name AND date
     let { data } = await supabase
-        .from('meets')
+        .from('usaw_meets')
         .select('meet_id, Meet, Date')
         .eq('Meet', meet_name)
         .eq('Date', startDate)
