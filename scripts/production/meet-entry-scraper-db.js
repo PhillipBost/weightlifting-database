@@ -618,6 +618,7 @@ async function upsertMeetListing(meetData, meetDetails, matchedMeetId = null) {
         end_date: end,
         meet_type: meetDetails.meetType || null,
         address: meetDetails.address || null,
+        location_text: meetData.location || null, // Capture from basic info loop
         organizer: meetDetails.organizer || null,
         contact_phone: meetDetails.phone || null,  // Fixed: was meetDetails.contactPhone
         contact_email: meetDetails.email || null,  // Fixed: was meetDetails.contactEmail

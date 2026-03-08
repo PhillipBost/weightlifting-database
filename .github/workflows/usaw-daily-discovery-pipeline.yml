@@ -221,6 +221,24 @@ jobs:
             exit 1
           fi
 
+      - name: Geocode upcoming meet listings
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+        run: |
+          set -o pipefail
+          echo "📍 Starting meet listings geocoding..."
+          echo "🕐 Start time: $(date +'%Y-%m-%d %H:%M:%S %Z')"
+
+          node scripts/geographic/geocode-meet-listings.js 2>&1 | tee logs/geocode-meet-listings.log
+
+          if [ $? -eq 0 ]; then
+            echo "✅ Meet listings geocoding completed successfully"
+          else
+            echo "❌ Meet listings geocoding failed"
+            exit 1
+          fi
+
       - name: Upload meet entry scraper results
         if: always()
         uses: actions/upload-artifact@v4
@@ -228,6 +246,7 @@ jobs:
           name: meet-entry-scraper-${{ github.run_number }}
           path: |
             logs/daily-meet-entry-scraper.log
+            logs/geocode-meet-listings.log
           retention-days: 7
 
   create-summary:
@@ -286,8 +305,8 @@ jobs:
           # Meet entry scraper summary
           if [ "${{ needs.daily-meet-entry-scraper.result }}" == "success" ]; then
             echo "### 📋 Meet Entry Scraper: ✅ Success" >> $GITHUB_STEP_SUMMARY
-            echo "- **Status:** Successfully scraped upcoming meet entries" >> $GITHUB_STEP_SUMMARY
-            echo "- **Purpose:** Keep meet entry lists fresh (120-day lookahead)" >> $GITHUB_STEP_SUMMARY
+            echo "- **Status:** Successfully scraped upcoming meet entries and geocoded listings locations" >> $GITHUB_STEP_SUMMARY
+            echo "- **Purpose:** Keep meet entry lists fresh (120-day lookahead) and accurate locations" >> $GITHUB_STEP_SUMMARY
           else
             echo "### 📋 Meet Entry Scraper: ❌ Failed" >> $GITHUB_STEP_SUMMARY
           fi
