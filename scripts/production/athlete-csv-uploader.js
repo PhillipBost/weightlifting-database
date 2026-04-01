@@ -376,19 +376,14 @@ async function processAthleteCSVFile(filePath, errorLogger) {
                     // Note: WSO/Club matching removed due to schema migration
                     // WSO and club_name are now in meet_results table, not lifters table
 
-                    // Strategy 4: Create new lifter if no clear match (this is the key fix!)
-                    if (!bestMatch && exactMatches.length === 0) {
-                        console.log(`    ➕ No clear match found - will create new lifter for ${athleteName}`);
-                        console.log(`       New lifter details: Membership=${athleteData.membership_number}`);
-                        newLifters.push(athleteData);
-                        continue;
-                    }
-
-                    // If still ambiguous, log error and skip
+                    // Strategy 4: Skip if no clear match found.
+                    // The division scraper should ONLY enrich existing lifters — never create new ones.
+                    // Creating a new record when disambiguation fails is what causes weekly duplicate growth.
                     if (!bestMatch) {
-                        console.log(`    ❌ Still ambiguous after disambiguation - logging as duplicate`);
-                        errorLogger.logError(athleteName, athleteData.membership_number, 'DUPLICATE_NAMES',
-                            `Found ${matchingLifters.length} lifters, ${exactMatches.length} potential matches after disambiguation`);
+                        console.log(`    ⏭️ Cannot disambiguate ${matchingLifters.length} lifters named "${athleteName}" - skipping (will not create duplicate)`);
+                        console.log(`       Membership=${athleteData.membership_number}. Fix duplicates in DB to allow future matching.`);
+                        errorLogger.logError(athleteName, athleteData.membership_number, 'AMBIGUOUS_SKIP',
+                            `Found ${matchingLifters.length} lifters, could not disambiguate by membership number. Skipped to prevent duplicate creation.`);
                         duplicateCount++;
                         continue;
                     }
