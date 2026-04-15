@@ -39,19 +39,42 @@ function parseLift(val) {
     return isNaN(num) ? 0 : num;
 }
 
+function parseAttempt(val) {
+    if (!val || val === '---' || val === '0') return null;
+    const num = parseFloat(val);
+    if (isNaN(num) || num === 0) return null;
+    return Math.abs(num); // IWF uses negative values for failed attempts; compare magnitude only
+}
+
 function hasPhysicsOverlap(iwfResult, usawResult) {
-    const iT = parseLift(iwfResult.total);
-    const uT = parseLift(usawResult.total);
-    const iS = parseLift(iwfResult.best_snatch);
-    const uS = parseLift(usawResult.best_snatch);
-    const iC = parseLift(iwfResult.best_cj);
-    const uC = parseLift(usawResult.best_cj);
-    
-    if (iT > 0 && uT > 0 && Math.abs(iT - uT) <= 10) return true;
-    if (iS > 0 && uS > 0 && Math.abs(iS - uS) <= 10) return true;
-    if (iC > 0 && uC > 0 && Math.abs(iC - uC) <= 10) return true;
-    if (iT === 0 && uT === 0 && iS === 0 && uS === 0 && iC === 0 && uC === 0) return true;
-    return false;
+    // Require at least 4 out of 6 individual attempts to match within 1kg.
+    // Only count an attempt slot if BOTH sides recorded a non-zero weight for it.
+    const slots = [
+        [parseAttempt(iwfResult.snatch_lift_1), parseAttempt(usawResult.snatch_lift_1)],
+        [parseAttempt(iwfResult.snatch_lift_2), parseAttempt(usawResult.snatch_lift_2)],
+        [parseAttempt(iwfResult.snatch_lift_3), parseAttempt(usawResult.snatch_lift_3)],
+        [parseAttempt(iwfResult.cj_lift_1),     parseAttempt(usawResult.cj_lift_1)],
+        [parseAttempt(iwfResult.cj_lift_2),     parseAttempt(usawResult.cj_lift_2)],
+        [parseAttempt(iwfResult.cj_lift_3),     parseAttempt(usawResult.cj_lift_3)],
+    ];
+
+    const validSlots = slots.filter(([i, u]) => i !== null && u !== null);
+
+    // Edge case: bomb-out (athlete recorded nothing in either system)
+    if (validSlots.length === 0) {
+        const iTotal = parseLift(iwfResult.total);
+        const uTotal = parseLift(usawResult.total);
+        return iTotal === 0 && uTotal === 0;
+    }
+
+    // Need at least 4 matched slots, and at least 4 valid slots to compare
+    if (validSlots.length < 4) {
+        // Fallback: fewer than 4 recorded attempts on either side — require all valid slots to match
+        return validSlots.every(([i, u]) => Math.abs(i - u) <= 1);
+    }
+
+    const matchedSlots = validSlots.filter(([i, u]) => Math.abs(i - u) <= 1);
+    return matchedSlots.length >= 4;
 }
 
 function getDelta(iA, uA) {
@@ -60,7 +83,7 @@ function getDelta(iA, uA) {
     return Math.abs(tDiff);
 }
 
-function evaluateIdentity(iAthlete, uAthlete) {
+function evaluateIdentity(iAthlete, uAthlete, isUsaAthlete) {
     const iwfTokens = tokenize(iAthlete.lifter_name);
     const usawTokens = tokenize(uAthlete.lifter_name);
     
@@ -82,9 +105,10 @@ function evaluateIdentity(iAthlete, uAthlete) {
          // E.g. Anna Sierra / Anna Rucker (Maiden Name Change)
          if (physicsMatch) return "MATCH";
          else return "NO_MATCH";  // Ignore mismatched random people sharing a first name
-    } else if (physicsMatch && parseLift(iAthlete.total) > 0) {
-         // ZERO name overlap (e.g. Tiffany Wohlers vs Tiffiny Yaskus spelling error + maiden name combo)
-         // But PERFECT physical tie. Flag as ambiguous so user can manually verify!
+    } else if (isUsaAthlete && physicsMatch && parseLift(iAthlete.total) > 0) {
+         // ZERO name overlap but PERFECT physical tie.
+         // Only flag for USA athletes — for international athletes this is almost certainly a coincidence
+         // (hundreds of lifters at a World Championships, lift-value collisions are random noise).
          return "AMBIGUOUS_PHYSICS_ONLY";
     }
     
@@ -115,16 +139,52 @@ const MANUAL_MEET_MAP = {
 
 const MANUAL_ATHLETE_MAP = {
     // IWF Athlete ID -> USAW Athlete ID
-    55229: 29088 // Tiffany Wohlers -> Tiffiny Yaskus (Zero Name Overlap Typo + Maiden)
+    55229: 29088, // Tiffany Wohlers -> Tiffiny Yaskus (typo + maiden name)
+    45801: 25583, // Bastian Lopez Farias (CHI) -> bastian lopez farias (bad USAW data, only made attempts recorded)
+    54357: 1291,  // Sean Michael RIGSBY (IRL) -> Sean Rigsby
+    55449: 23538, // IWF 17680 -> USAW 1004315
+    52680: 198126, // Xavier LUSIGNAN (IWF duplicate A) -> Xavier Lusignan (USAW)
+    58978: 198126  // Xavier LUSIGNAN (IWF duplicate B) -> Xavier Lusignan (USAW)
+};
+
+// IWF athlete profiles confirmed to be the same real-world person.
+// Written to iwf_athlete_aliases at execution time so the front end can merge them.
+const IWF_DUPLICATE_MAP = {
+    // Primary IWF db_lifter_id -> Array of duplicate IWF db_lifter_ids
+    52680: [58978]  // Both are Xavier LUSIGNAN; 52680 is the older/primary profile
+};
+
+const BLACKLIST_ATHLETE_MAP = {
+    // IWF Athlete ID -> Array of USAW Athlete IDs to explicitly ignore
+    47076: [35566], // Jose Rivera
+    48535: [3331],  // Minh Quang NGUYEN (VIE) -> Quang Nguyen
+    46489: [4335],  // Elio Oudany GUERRA ARANOZ (CUB) -> Elio Guerra
+    46686: [16339], // Thi Hong NGUYEN (VIE) -> Nguyen Nguyen
+    46698: [16339], // Thi Hang Nga NGUYEN (VIE) -> Nguyen Nguyen
+    46716: [16339], // Thi Sinh NGUYEN (VIE) -> Nguyen Nguyen
+    50754: [34307], // Jonathan JOHNSON (SLE) -> Jonathan Johnson
+    47257: [21162], // Kabsuali Silas BOB (KIR) -> Kabsuali Bob (different athlete, IWF 51337 is the match)
+    52610: [1108],  // Juan Luis CAMPOS DE LA CRUZ (DOM) -> Luis Cruz
+    48524: [25486], // Edgar CAPARROS RUBIO (ESP) -> edgar rubio (different weight class)
+    43777: [28963], // David Aurelio MENDOZA GARCIA (HON) -> david garcia
+    51840: [53321], // Thi Huong NGUYEN (VIE) -> Thi Nguyen
+    53294: [35377], // Tuan Anh PHAM (VIE) -> Anh Pham
+    470176: [55566], // Rivero JOSE -> USAW 55566
+    49681: [38528],  // Medgina CELESTIN (HAI) -> Medgina Celestin (USAW)
+    53657: [38799],  // Alejandro ANDRADE HERNANDEZ (MEX) -> Alejandro Hernandez
+    58338: [202481]  // Hector Jesus LOPEZ QUEVEDO (PER) -> Jesus Lopez
 };
 
 async function run() {
     console.log("Starting Bi-Directional Event & Physics Athlete Mapping...");
 
-    console.log("\n[PIPELINE 1] Fetching IWF Meets with USA athletes...");
-    const iwfUsaTargetResults = await fetchAll(supabaseIwf, 'iwf_meet_results', 'db_meet_id, db_lifter_id, lifter_name, total, best_snatch, best_cj', 'country_code', 'USA');
+    // Step 1: Find all IWF meets that had USA athletes — these are the anchor events we can confidently map.
+    // We still use USA athletes as the *anchor* to discover relevant meets, because we trust that
+    // if a USAW-registered athlete competed at an IWF meet, USAW also logged that event.
+    console.log("\n[PIPELINE 1] Discovering IWF meets via USA athletes (anchor step)...");
+    const iwfUsaResultsForDiscovery = await fetchAll(supabaseIwf, 'iwf_meet_results', 'db_meet_id', 'country_code', 'USA');
     
-    const iwfTargetMeetIds = [...new Set(iwfUsaTargetResults.map(r => r.db_meet_id))];
+    const iwfTargetMeetIds = [...new Set(iwfUsaResultsForDiscovery.map(r => r.db_meet_id))];
     const { data: iwfMeetsData } = await supabaseIwf.from('iwf_meets').select('db_meet_id, meet, date').in('db_meet_id', iwfTargetMeetIds);
     const iwfMeets = iwfMeetsData || [];
 
@@ -180,13 +240,26 @@ async function run() {
     }
     console.log(`Successfully mapped ${meetMapPairs.length} overarching events strictly by date and text!`);
 
+    // Step 2: Now fetch ALL athletes (any nationality) from just the mapped IWF meets.
+    // This is the scope expansion: we no longer restrict to USA-flagged IWF athletes.
+    // Event confinement is our integrity boundary — only athletes physically at the same event are compared.
+    console.log("\n[FULL ROSTER FETCH] Fetching all athletes from mapped IWF meets (any nationality)...");
+    const mappedIwfMeetIds = [...new Set(meetMapPairs.map(p => p.iwf_meet_id))];
+    const iwfAllMeetResults = [];
+    for (let i = 0; i < mappedIwfMeetIds.length; i += 100) {
+        const chunk = mappedIwfMeetIds.slice(i, i + 100);
+        const { data } = await supabaseIwf.from('iwf_meet_results').select('db_meet_id, db_lifter_id, lifter_name, country_code, snatch_lift_1, snatch_lift_2, snatch_lift_3, best_snatch, cj_lift_1, cj_lift_2, cj_lift_3, best_cj, total').in('db_meet_id', chunk);
+        if (data) iwfAllMeetResults.push(...data);
+    }
+    console.log(`Loaded ${iwfAllMeetResults.length} IWF results across ${mappedIwfMeetIds.length} meets.`);
+
     console.log("\n[TRIPLE-LOCK VALIDATION] Checking name overlap AND exact physical lifts inside confined events...");
     
     const usawTargetMeetIds = [...new Set(meetMapPairs.map(m => m.usaw_meet_id))];
     const usawMeetResults = [];
     for (let i = 0; i < usawTargetMeetIds.length; i += 100) {
         const chunk = usawTargetMeetIds.slice(i, i + 100);
-        const { data } = await supabase.from('usaw_meet_results').select('lifter_id, lifter_name, meet_id, total, best_snatch, best_cj').in('meet_id', chunk);
+        const { data } = await supabase.from('usaw_meet_results').select('lifter_id, lifter_name, meet_id, snatch_lift_1, snatch_lift_2, snatch_lift_3, best_snatch, cj_lift_1, cj_lift_2, cj_lift_3, best_cj, total').in('meet_id', chunk);
         if (data) usawMeetResults.push(...data);
     }
     
@@ -196,7 +269,7 @@ async function run() {
     const unmatchedAliases = [];
     
     for (const pair of meetMapPairs) {
-        const iRoster = iwfUsaTargetResults.filter(r => r.db_meet_id === pair.iwf_meet_id);
+        const iRoster = iwfAllMeetResults.filter(r => r.db_meet_id === pair.iwf_meet_id);
         const uRoster = usawMeetResults.filter(r => r.meet_id === pair.usaw_meet_id);
         
         for (const iAthlete of iRoster) {
@@ -219,12 +292,14 @@ async function run() {
                 }
             }
 
+            const isUsaAthlete = iAthlete.country_code === 'USA';
+
             let possibleIdentities = [];
             let physicallyMismatchedButNameMatched = [];
             let physicsOnlyMatches = [];
             
             for (const uAthlete of uRoster) {
-                const status = evaluateIdentity(iAthlete, uAthlete);
+                const status = evaluateIdentity(iAthlete, uAthlete, isUsaAthlete);
                 if (status === "MATCH") possibleIdentities.push(uAthlete);
                 else if (status === "PHYSICS_FAILED") physicallyMismatchedButNameMatched.push(uAthlete);
                 else if (status === "AMBIGUOUS_PHYSICS_ONLY") physicsOnlyMatches.push(uAthlete);
@@ -254,59 +329,70 @@ async function run() {
 
             if (possibleIdentities.length === 1) {
                 const uAthlete = possibleIdentities[0];
-                verifiedAliases.push({
-                    usaw_lifter_id: uAthlete.lifter_id,
-                    usaw_name: uAthlete.lifter_name,
-                    iwf_db_lifter_id: iAthlete.db_lifter_id,
-                    iwf_name: iAthlete.lifter_name,
-                    match_confidence: 100, // Physical confirmation makes this absolute 100%
-                    verification_event: verificationEventContext,
-                    lift_comparison: {
-                        iwf_lifts: `Snatch: ${iAthlete.best_snatch || '---'}, CJ: ${iAthlete.best_cj || '---'}, Total: ${iAthlete.total || '---'}`,
-                        usaw_lifts: `Snatch: ${uAthlete.best_snatch || '---'}, CJ: ${uAthlete.best_cj || '---'}, Total: ${uAthlete.total || '---'}`
-                    }
-                });
+                // Skip blacklisted pairs (applies to both Phase 1 and Phase 2)
+                if (BLACKLIST_ATHLETE_MAP[iAthlete.db_lifter_id]?.includes(uAthlete.lifter_id)) {
+                    unmatchedAliases.push({
+                        iwf_country: iAthlete.country_code,
+                        iwf_db_lifter_id: iAthlete.db_lifter_id,
+                        iwf_name: iAthlete.lifter_name,
+                        verification_event: verificationEventContext
+                    });
+                } else {
+                    verifiedAliases.push({
+                        iwf_country: iAthlete.country_code,
+                        usaw_lifter_id: uAthlete.lifter_id,
+                        usaw_name: uAthlete.lifter_name,
+                        iwf_db_lifter_id: iAthlete.db_lifter_id,
+                        iwf_name: iAthlete.lifter_name,
+                        match_confidence: 100,
+                        verification_event: verificationEventContext,
+                        lift_comparison: {
+                            iwf_lifts: `S1:${iAthlete.snatch_lift_1||'--'} S2:${iAthlete.snatch_lift_2||'--'} S3:${iAthlete.snatch_lift_3||'--'} | CJ1:${iAthlete.cj_lift_1||'--'} CJ2:${iAthlete.cj_lift_2||'--'} CJ3:${iAthlete.cj_lift_3||'--'} | Best: ${iAthlete.best_snatch}/${iAthlete.best_cj}/${iAthlete.total}`,
+                            usaw_lifts: `S1:${uAthlete.snatch_lift_1||'--'} S2:${uAthlete.snatch_lift_2||'--'} S3:${uAthlete.snatch_lift_3||'--'} | CJ1:${uAthlete.cj_lift_1||'--'} CJ2:${uAthlete.cj_lift_2||'--'} CJ3:${uAthlete.cj_lift_3||'--'} | Best: ${uAthlete.best_snatch}/${uAthlete.best_cj}/${uAthlete.total}`
+                        }
+                    });
+                }
             } else if (possibleIdentities.length > 1) {
-                // Found multiple physical matches for the same name at this event
                 ambiguousAliases.push({
+                    iwf_country: iAthlete.country_code,
                     iwf_db_lifter_id: iAthlete.db_lifter_id,
                     iwf_name: iAthlete.lifter_name,
                     verification_event: verificationEventContext,
-                    iwf_lifts: `Snatch: ${iAthlete.best_snatch || '---'}, CJ: ${iAthlete.best_cj || '---'}, Total: ${iAthlete.total || '---'}`,
+                    iwf_lifts: `S1:${iAthlete.snatch_lift_1||'--'} S2:${iAthlete.snatch_lift_2||'--'} S3:${iAthlete.snatch_lift_3||'--'} | CJ1:${iAthlete.cj_lift_1||'--'} CJ2:${iAthlete.cj_lift_2||'--'} CJ3:${iAthlete.cj_lift_3||'--'}`,
                     reason: "Multiple Name+Physics Matches",
                     possible_matches: possibleIdentities.map(u => ({
                         usaw_lifter_id: u.lifter_id, usaw_name: u.lifter_name,
-                        usaw_lifts: `Snatch: ${u.best_snatch || '---'}, CJ: ${u.best_cj || '---'}, Total: ${u.total || '---'}`
+                        usaw_lifts: `S1:${u.snatch_lift_1||'--'} S2:${u.snatch_lift_2||'--'} S3:${u.snatch_lift_3||'--'} | CJ1:${u.cj_lift_1||'--'} CJ2:${u.cj_lift_2||'--'} CJ3:${u.cj_lift_3||'--'}`
                     }))
                 });
             } else if (physicsOnlyMatches.length > 0) {
-                // Name didn't match at all, but PERFECT physical tie! (e.g. Typo + Maiden Name combo)
                 ambiguousAliases.push({
+                    iwf_country: iAthlete.country_code,
                     iwf_db_lifter_id: iAthlete.db_lifter_id,
                     iwf_name: iAthlete.lifter_name,
                     verification_event: verificationEventContext,
-                    iwf_lifts: `Snatch: ${iAthlete.best_snatch || '---'}, CJ: ${iAthlete.best_cj || '---'}, Total: ${iAthlete.total || '---'}`,
+                    iwf_lifts: `S1:${iAthlete.snatch_lift_1||'--'} S2:${iAthlete.snatch_lift_2||'--'} S3:${iAthlete.snatch_lift_3||'--'} | CJ1:${iAthlete.cj_lift_1||'--'} CJ2:${iAthlete.cj_lift_2||'--'} CJ3:${iAthlete.cj_lift_3||'--'}`,
                     reason: "Zero Name Overlap, but Lifts Matched Perfectly",
                     possible_matches: physicsOnlyMatches.map(u => ({
                         usaw_lifter_id: u.lifter_id, usaw_name: u.lifter_name,
-                        usaw_lifts: `Snatch: ${u.best_snatch || '---'}, CJ: ${u.best_cj || '---'}, Total: ${u.total || '---'}`
+                        usaw_lifts: `S1:${u.snatch_lift_1||'--'} S2:${u.snatch_lift_2||'--'} S3:${u.snatch_lift_3||'--'} | CJ1:${u.cj_lift_1||'--'} CJ2:${u.cj_lift_2||'--'} CJ3:${u.cj_lift_3||'--'}`
                     }))
                 });
             } else if (physicallyMismatchedButNameMatched.length > 0) {
-                // Name matched, but lifts didn't
                 physicsFailedAliases.push({
+                    iwf_country: iAthlete.country_code,
                     iwf_db_lifter_id: iAthlete.db_lifter_id,
                     iwf_name: iAthlete.lifter_name,
                     verification_event: verificationEventContext,
-                    iwf_lifts: `Snatch: ${iAthlete.best_snatch || '---'}, CJ: ${iAthlete.best_cj || '---'}, Total: ${iAthlete.total || '---'}`,
+                    iwf_lifts: `S1:${iAthlete.snatch_lift_1||'--'} S2:${iAthlete.snatch_lift_2||'--'} S3:${iAthlete.snatch_lift_3||'--'} | CJ1:${iAthlete.cj_lift_1||'--'} CJ2:${iAthlete.cj_lift_2||'--'} CJ3:${iAthlete.cj_lift_3||'--'}`,
                     failed_physics_matches: physicallyMismatchedButNameMatched.map(u => ({
                         usaw_lifter_id: u.lifter_id, usaw_name: u.lifter_name,
-                        usaw_lifts: `Snatch: ${u.best_snatch || '---'}, CJ: ${u.best_cj || '---'}, Total: ${u.total || '---'}`
+                        usaw_lifts: `S1:${u.snatch_lift_1||'--'} S2:${u.snatch_lift_2||'--'} S3:${u.snatch_lift_3||'--'} | CJ1:${u.cj_lift_1||'--'} CJ2:${u.cj_lift_2||'--'} CJ3:${u.cj_lift_3||'--'}`
                     }))
                 });
             } else {
-                // Name didn't even match anyone in the roster, or USAW roster was empty
                 unmatchedAliases.push({
+                    iwf_country: iAthlete.country_code,
                     iwf_db_lifter_id: iAthlete.db_lifter_id,
                     iwf_name: iAthlete.lifter_name,
                     verification_event: verificationEventContext
@@ -330,19 +416,119 @@ async function run() {
     const finalAmbiguous = ambiguousAliases.filter(a => !securedIwfIds.has(a.iwf_db_lifter_id));
     const finalUnmatched = unmatchedAliases.filter(a => !securedIwfIds.has(a.iwf_db_lifter_id));
 
-    console.log(`\nResults: ${finalAliasesToInsert.length} athletes absolutely verified via physics and event confinement.`);
-    console.log(`- ${finalPhysicsFailed.length} athletes matched names but FAILED physics verification.`);
-    console.log(`- ${finalUnmatched.length} IWF athletes were completely unmapped at their aligned USAW event.`);
-    
-    fs.writeFileSync('output/athlete_physics_linking.json', JSON.stringify({ 
-        verified: finalAliasesToInsert,
-        name_matched_physics_failed: finalPhysicsFailed,
-        ambiguous: finalAmbiguous,
-        completely_unmatched_at_event: finalUnmatched
+    // --- PHASE 2: GLOBAL FALLBACK (NON-USAW FLAGS) ---
+    console.log(`\n[PHASE 2] Global Fallback Matching (Non-USAW flags & missing events)...`);
+    try {
+        const existingAliases = await fetchAll(supabase, 'athlete_aliases', 'iwf_db_lifter_id, usaw_lifter_id');
+        const existingIwfSet = new Set(existingAliases.map(a => a.iwf_db_lifter_id));
+        for (const a of finalAliasesToInsert) existingIwfSet.add(a.iwf_db_lifter_id);
+
+        console.log(`  Fetching distinct_usaw_lifters_view...`);
+        const usawViewData = await fetchAll(supabase, 'distinct_usaw_lifters_view', 'lifter_id, lifter_name, birth_year');
+        
+        console.log(`  Fetching full IWF roster...`);
+        const iwfLifters = await fetchAll(supabaseIwf, 'iwf_lifters', 'db_lifter_id, athlete_name, birth_year, country_code');
+        
+        const unmatchedIwf = iwfLifters.filter(i => !existingIwfSet.has(i.db_lifter_id) && i.birth_year);
+        
+        console.log(`  Scanning ${unmatchedIwf.length} unmatched IWF athletes against ${usawViewData.length} USAW combinations...`);
+        let fallbackMatches = 0;
+        
+        // Group and Pre-tokenize USAW lifters by birth_year to avoid regex inside the inner loop
+        const usawByBirthYear = {};
+        for (const u of usawViewData) {
+             if (!usawByBirthYear[u.birth_year]) usawByBirthYear[u.birth_year] = [];
+             usawByBirthYear[u.birth_year].push({ ...u, tokens: tokenize(u.lifter_name) });
+        }
+        
+        for (const iAthlete of unmatchedIwf) {
+            const iTokens = tokenize(iAthlete.athlete_name);
+            if (iTokens.length < 2) continue;
+            
+            const potentialUsaw = usawByBirthYear[iAthlete.birth_year] || [];
+            const candidates = [];
+            
+            for (const uAthlete of potentialUsaw) {
+                const uTokens = uAthlete.tokens;
+                if (uTokens.length < 2) continue;
+                
+                // Skip blacklisted pairs
+                if (BLACKLIST_ATHLETE_MAP[iAthlete.db_lifter_id]?.includes(uAthlete.lifter_id)) {
+                    continue;
+                }
+
+                const overlap = uTokens.filter(t => iTokens.includes(t));
+                if (overlap.length === uTokens.length) {
+                    candidates.push(uAthlete);
+                }
+            }
+            
+            if (candidates.length === 1) {
+                const uAthlete = candidates[0];
+                finalAliasesToInsert.push({
+                    usaw_lifter_id: uAthlete.lifter_id,
+                    iwf_db_lifter_id: iAthlete.db_lifter_id,
+                    match_confidence: 90, // Indicates secondary heuristic match (Name + DOB subset)
+                    verification_event: { note: "Phase 2 Fallback: Exact birth_year + identical name token subset" },
+                    iwf_country: iAthlete.country_code,
+                    usaw_name: uAthlete.lifter_name,
+                    iwf_name: iAthlete.athlete_name
+                });
+                securedIwfIds.add(iAthlete.db_lifter_id);
+                fallbackMatches++;
+            }
+        }
+        
+        console.log(`  ✓ Phase 2 fallback found ${fallbackMatches} new non-intersecting links!`);
+        
+        // Purge newly found ones from final physics failed / unmatched lists so they don't pollute diagnostics
+        const remP = finalPhysicsFailed.filter(a => !securedIwfIds.has(a.iwf_db_lifter_id));
+        finalPhysicsFailed.length = 0; finalPhysicsFailed.push(...remP);
+        
+        const remA = finalAmbiguous.filter(a => !securedIwfIds.has(a.iwf_db_lifter_id));
+        finalAmbiguous.length = 0; finalAmbiguous.push(...remA);
+
+        const remU = finalUnmatched.filter(a => !securedIwfIds.has(a.iwf_db_lifter_id));
+        finalUnmatched.length = 0; finalUnmatched.push(...remU);
+
+    } catch (err) {
+        console.log(`  [SKIPPED] Fallback matching requires distinct_usaw_lifters_view. Error: ${err.message}`);
+    }
+
+    // Split all result arrays by USA vs international for separate diagnostic files
+    const split = (arr) => ({
+        usa: arr.filter(a => a.iwf_country === 'USA'),
+        international: arr.filter(a => a.iwf_country !== 'USA')
+    });
+
+    const vSplit = split(finalAliasesToInsert);
+    const pfSplit = split(finalPhysicsFailed);
+    const aSplit = split(finalAmbiguous);
+    const uSplit = split(finalUnmatched);
+
+    console.log(`\nResults: ${finalAliasesToInsert.length} athletes verified (${vSplit.usa.length} USA, ${vSplit.international.length} international).`);
+    console.log(`- Physics Failed: ${finalPhysicsFailed.length} (${pfSplit.usa.length} USA, ${pfSplit.international.length} intl)`);
+    console.log(`- Ambiguous: ${finalAmbiguous.length} (${aSplit.usa.length} USA, ${aSplit.international.length} intl)`);
+    console.log(`- Unmatched/Ghosted: ${finalUnmatched.length} (${uSplit.usa.length} USA, ${uSplit.international.length} intl)`);
+
+    fs.writeFileSync('output/athlete_linking_usa.json', JSON.stringify({
+        verified: vSplit.usa,
+        name_matched_physics_failed: pfSplit.usa,
+        ambiguous: aSplit.usa
     }, null, 2));
 
+    fs.writeFileSync('output/athlete_linking_international.json', JSON.stringify({
+        verified: vSplit.international,
+        name_matched_physics_failed: pfSplit.international,
+        ambiguous: aSplit.international
+    }, null, 2));
+
+    console.log('\nOutput written to:');
+    console.log('  output/athlete_linking_usa.json');
+    console.log('  output/athlete_linking_international.json');
+
     if (process.argv.includes('--execute')) {
-        console.log(`\nExecuting Database Insertion for ${finalAliasesToInsert.length} physically-verified aliases...`);
+        console.log(`\nExecuting Database Insertion for ${finalAliasesToInsert.length} physically-verified cross-federation aliases...`);
         const { error: insertError } = await supabase
             .from('athlete_aliases')
             .upsert(
@@ -353,15 +539,48 @@ async function run() {
                 })),
                 { onConflict: 'usaw_lifter_id,iwf_db_lifter_id' }
             );
-            
+
         if (insertError) {
             console.error("Failed to insert aliases into Supabase:", insertError);
         } else {
-            console.log("Success! athlete_aliases heavily populated.");
+            console.log("Success! athlete_aliases populated.");
+        }
+
+        // Upsert IWF Duplicate Identities
+        const iwfDuplicates = [];
+        for (const [primaryId, duplicates] of Object.entries(IWF_DUPLICATE_MAP)) {
+            for (const duplicateId of duplicates) {
+                iwfDuplicates.push({
+                    usaw_lifter_id: null,
+                    iwf_db_lifter_id: parseInt(primaryId),
+                    iwf_db_lifter_id_2: duplicateId,
+                    match_confidence: 100,
+                    manual_override: true
+                });
+            }
+        }
+
+        if (iwfDuplicates.length > 0) {
+            console.log(`\nExecuting Database Insertion for ${iwfDuplicates.length} IWF duplicate identities...`);
+            for (const dup of iwfDuplicates) {
+                await supabase.from('athlete_aliases')
+                              .delete()
+                              .eq('iwf_db_lifter_id', dup.iwf_db_lifter_id)
+                              .eq('iwf_db_lifter_id_2', dup.iwf_db_lifter_id_2);
+            }
+    
+            const { error: dupError } = await supabase
+                .from('athlete_aliases')
+                .insert(iwfDuplicates);
+            
+            if (dupError) {
+                console.error('ERROR during IWF duplicates insert:', dupError.message);
+            } else {
+                console.log("Success! IWF identity pairs registered.");
+            }
         }
     } else {
-        console.log("\nA mapping diagnostic report has been saved to output/athlete_physics_linking.json.");
-        console.log("To inject the physically confident aliases into your database, append the --execute flag:");
+        console.log("\nTo inject the verified aliases into the database, append the --execute flag:");
         console.log("node scripts/maintenance/link_iwf_usaw_athletes.js --execute");
     }
 }
