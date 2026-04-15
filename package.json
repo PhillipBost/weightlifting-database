@@ -20,7 +20,7 @@
     "nodemon": "^3.1.10"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.86.0",
+    "@supabase/supabase-js": "^2.102.1",
     "@turf/boolean-point-in-polygon": "^7.2.0",
     "@turf/buffer": "^7.2.0",
     "@turf/clean-coords": "^7.2.0",
@@ -38,12 +38,12 @@
     "csv-parser": "^3.0.0",
     "csv-stringify": "^6.4.0",
     "csv-writer": "^1.6.0",
-    "dotenv": "^17.2.3",
+    "dotenv": "^17.4.1",
     "exceljs": "^4.4.0",
     "fast-csv": "^4.3.6",
     "lodash": "^4.17.21",
     "minimist": "^1.2.8",
-    "papaparse": "^5.4.1",
+    "papaparse": "^5.5.3",
     "puppeteer": "^24.31.0"
   }
 }

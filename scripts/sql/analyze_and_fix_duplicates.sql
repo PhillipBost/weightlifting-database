@@ -221,8 +221,8 @@ ROLLBACK;
 -- 4.1 EXECUTE DELETION (Highlight and Run this Part)
 -- STEP A: DEBUG PREVIEW - Check how many rows will be deleted
 -- Highlight lines just below here to TEST first
-/*
- /*
+
+ 
  SELECT 
  l.athlete_name,
  'TO_DELETE' as action,
@@ -259,8 +259,8 @@ ROLLBACK;
  ) active
  WHERE r.result_id IS NULL
  ORDER BY l.athlete_name ASC; 
- */
-* / -- STEP B: EXECUTE DELETE
+
+-- STEP B: EXECUTE DELETE
 DELETE FROM usaw_lifters
 WHERE lifter_id IN (
         SELECT l.lifter_id
