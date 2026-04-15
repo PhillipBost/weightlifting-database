@@ -170,6 +170,8 @@ const BLACKLIST_ATHLETE_MAP = {
     51840: [53321], // Thi Huong NGUYEN (VIE) -> Thi Nguyen
     53294: [35377], // Tuan Anh PHAM (VIE) -> Anh Pham
     470176: [55566], // Rivero JOSE -> USAW 55566
+    52608: [198126],  // Luis Manuel LAURET RODRIGUEZ old profile
+    58978: [198126],  // Luis Manuel LAURET RODRIGUEZ new profile
     49681: [38528],  // Medgina CELESTIN (HAI) -> Medgina Celestin (USAW)
     53657: [38799],  // Alejandro ANDRADE HERNANDEZ (MEX) -> Alejandro Hernandez
     58338: [202481]  // Hector Jesus LOPEZ QUEVEDO (PER) -> Jesus Lopez
