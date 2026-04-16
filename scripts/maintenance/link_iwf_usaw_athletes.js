@@ -1,4 +1,5 @@
 require('dotenv').config();
+const { MANUAL_ATHLETE_MAP, BLACKLIST_ATHLETE_MAP, IWF_DUPLICATE_MAP, MANUAL_MEET_MAP } = require('../shared/athlete-mappings.js');
 const { createClient } = require('@supabase/supabase-js');
 const fs = require('fs');
 
@@ -130,52 +131,6 @@ async function fetchAll(client, table, select, filterCol, filterVal) {
     return allData;
 }
 
-const MANUAL_MEET_MAP = {
-    // IWF Meet ID -> Array of USAW Meet IDs
-    1509: [3760],       // CSLP Senior Cup -> Tamas Ajan Cup
-    1510: [3760],       // CSLP Junior Cup -> Tamas Ajan Cup
-    1564: [4312, 4436]  // 2020 Arnold Festival -> Nike American Open Series 1 AND USAW ROGUE Challenge
-};
-
-const MANUAL_ATHLETE_MAP = {
-    // IWF Athlete ID -> USAW Athlete ID
-    55229: 29088, // Tiffany Wohlers -> Tiffiny Yaskus (typo + maiden name)
-    45801: 25583, // Bastian Lopez Farias (CHI) -> bastian lopez farias (bad USAW data, only made attempts recorded)
-    54357: 1291,  // Sean Michael RIGSBY (IRL) -> Sean Rigsby
-    55449: 23538, // IWF 17680 -> USAW 1004315
-    52680: 198126, // Xavier LUSIGNAN (IWF duplicate A) -> Xavier Lusignan (USAW)
-    58978: 198126  // Xavier LUSIGNAN (IWF duplicate B) -> Xavier Lusignan (USAW)
-};
-
-// IWF athlete profiles confirmed to be the same real-world person.
-// Written to iwf_athlete_aliases at execution time so the front end can merge them.
-const IWF_DUPLICATE_MAP = {
-    // Primary IWF db_lifter_id -> Array of duplicate IWF db_lifter_ids
-    52680: [58978]  // Both are Xavier LUSIGNAN; 52680 is the older/primary profile
-};
-
-const BLACKLIST_ATHLETE_MAP = {
-    // IWF Athlete ID -> Array of USAW Athlete IDs to explicitly ignore
-    47076: [35566], // Jose Rivera
-    48535: [3331],  // Minh Quang NGUYEN (VIE) -> Quang Nguyen
-    46489: [4335],  // Elio Oudany GUERRA ARANOZ (CUB) -> Elio Guerra
-    46686: [16339], // Thi Hong NGUYEN (VIE) -> Nguyen Nguyen
-    46698: [16339], // Thi Hang Nga NGUYEN (VIE) -> Nguyen Nguyen
-    46716: [16339], // Thi Sinh NGUYEN (VIE) -> Nguyen Nguyen
-    50754: [34307], // Jonathan JOHNSON (SLE) -> Jonathan Johnson
-    47257: [21162], // Kabsuali Silas BOB (KIR) -> Kabsuali Bob (different athlete, IWF 51337 is the match)
-    52610: [1108],  // Juan Luis CAMPOS DE LA CRUZ (DOM) -> Luis Cruz
-    48524: [25486], // Edgar CAPARROS RUBIO (ESP) -> edgar rubio (different weight class)
-    43777: [28963], // David Aurelio MENDOZA GARCIA (HON) -> david garcia
-    51840: [53321], // Thi Huong NGUYEN (VIE) -> Thi Nguyen
-    53294: [35377], // Tuan Anh PHAM (VIE) -> Anh Pham
-    470176: [55566], // Rivero JOSE -> USAW 55566
-    52608: [198126],  // Luis Manuel LAURET RODRIGUEZ old profile
-    58978: [198126],  // Luis Manuel LAURET RODRIGUEZ new profile
-    49681: [38528],  // Medgina CELESTIN (HAI) -> Medgina Celestin (USAW)
-    53657: [38799],  // Alejandro ANDRADE HERNANDEZ (MEX) -> Alejandro Hernandez
-    58338: [202481]  // Hector Jesus LOPEZ QUEVEDO (PER) -> Jesus Lopez
-};
 
 async function run() {
     console.log("Starting Bi-Directional Event & Physics Athlete Mapping...");

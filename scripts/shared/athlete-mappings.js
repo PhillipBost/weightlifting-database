@@ -1,0 +1,93 @@
+/**
+ * SHARED ATHLETE MAPPINGS
+ * 
+ * This is the SINGLE SOURCE OF TRUTH for all manual athlete mappings.
+ * Both maintenance and production scripts load from this file.
+ * 
+ * DO NOT DUPLICATE THESE LISTS IN ANY OTHER FILES.
+ */
+
+module.exports = {
+
+    /**
+     * MANUAL OVERRIDE MAPPINGS
+     * These athletes will ALWAYS be matched, bypassing all validation logic.
+     * Format: IWF_ID -> USAW_ID
+     */
+    MANUAL_ATHLETE_MAP: {
+        55229: 29088, // Tiffany Wohlers (IWF) -> Tiffiny Yaskus (USAW)
+        45801: 25583, // Bastian Andres LOPEZ FARIAS (CHI) -> bastian lopez farias (USAW
+        54357: 1291,  // Sean Michael RIGSBY (IRL) -> Sean Rigsby (USAW)
+        55449: 23538, // Yvgeni Sientje HENDERSON (Jamaica) -> Yvgeni Henderson (USAW)
+        52680: 198126, // Xavier LUSIGNAN (IWF duplicate A) -> Xavier Lusignan (USAW)
+        58978: 198126, // Xavier LUSIGNAN (IWF duplicate B) -> Xavier Lusignan (USAW)
+		51387: 199755, // Muhammad Nooh Dastgir BUTT (PAK) -> Nooh Dastgir Butt (USAW)
+		55844: 199857, // Roni SHAHAM (ISR) -> Roni Shaham (USAW)
+		44573: 200187, // Oleg CHEN (RUS) -> Oleg Chen (USAW)
+		47972: 195587, // Daulet MAINAZOROV (KGZ) -> Daulet Mainazorov
+		56466: 201886, // Stefano CATALDI (GBR) -> Stefano Cataldi
+		53394: 203403, // Emil MOLDODOSOV (KGZ) -> Emil Moldodosov
+		57468: 203425, // Tatiana MELNICHENKO (KGZ) -> Tatiana Melnichenko
+		55538: 62265, // Issi Massei AGRAIT CALO (PUR) -> Issi Massei Agrait Calo (USAW)
+		55084: 62809, // Adijat Adenike OLARINOYE (NGR) -> Olarinoye  Adijat Adenike (USAW)
+		54233: 195460, // Elzar TAIIROV (KGZ) -> Elzar Taiirov (USAW)
+		56446: 60799, // Melissa Doreen LIN	(CAN) -> Melissa Lin (USAW)
+		49320: 60825, // Terry HAN (NZL) -> Terry Han (USAW)
+		48490: 62040, // Mustaqeem Mahmood BUTT (PAK) -> mustaqeem butt (USAW)
+		56937: 62083, // Raymond Hipol SANTOS (NMI) -> Raymond Santos (USAW)
+		56445: 62096, // Naomie Mia LUSIGNAN (CAN) -> Naomie Lusignan (USAW)
+		55511: 62264 // Yomar Andres LOPEZ CAMERON (PUR) -> Yomar Andres Lopez Cameron (USAW)
+
+    },
+
+    /**
+     * BLACKLIST MAPPINGS
+     * These pairs will NEVER be matched, even if everything else matches perfectly.
+     * Format: IWF_ID -> [ ARRAY OF USAW_IDS TO IGNORE ]
+     */
+    BLACKLIST_ATHLETE_MAP: {
+        47076: [35566], // Jose Rivera
+        48535: [3331], // Minh Quang NGUYEN (VIE) -> Quang Nguyen
+        46489: [4335], // Elio Oudany GUERRA ARANOZ (CUB) -> Elio Guerra
+        46686: [16339], // Thi Hong NGUYEN (VIE) -> Nguyen Nguyen
+        46698: [16339], // Thi Hang Nga NGUYEN (VIE) -> Nguyen Nguyen
+        46716: [16339], // Thi Sinh NGUYEN (VIE) -> Nguyen Nguyen
+        50754: [34307], // Jonathan JOHNSON (SLE) -> Jonathan Johnson
+        47257: [21162], // Kabsuali Silas BOB (KIR) -> Kabsuali Bob
+        52610: [1108], // Juan Luis CAMPOS DE LA CRUZ (DOM) -> Luis Cruz
+        48524: [25486], // Edgar CAPARROS RUBIO (ESP) -> edgar rubio
+        43777: [28963], // David Aurelio MENDOZA GARCIA (HON) -> david garcia
+        51840: [53321], // Thi Huong NGUYEN (VIE) -> Thi Nguyen
+        53294: [35377], // Tuan Anh PHAM (VIE) -> Anh Pham
+        470176: [55566], // Rivero JOSE -> USAW 55566
+        49681: [38528], // Medgina CELESTIN (HAI) -> Medgina Celestin
+        53657: [38799], // Alejandro ANDRADE HERNANDEZ (MEX) -> Alejandro Hernandez
+        58338: [202481], // Hector Jesus LOPEZ QUEVEDO (PER) -> Jesus Lopez
+        52680: [198126], // IWF 52680 -> not USAW 198126
+        58978: [198126], // IWF 58978 -> not USAW 198126
+		58978: [198126] // Luis Manuel LAURET RODRIGUEZ	(IWF) -> now Luis Rodriguez (USAW)
+		
+
+    },
+
+    /**
+     * IWF DUPLICATE ATHLETE MAPPINGS
+     * Multiple IWF profiles that belong to the same real world athlete
+     * Format: PRIMARY_IWF_ID -> [ ARRAY OF DUPLICATE IWF_IDS ]
+     */
+    IWF_DUPLICATE_MAP: {
+        52680: [58978]  // Both are Xavier LUSIGNAN; 52680 is the older/primary profile
+    },
+
+    /**
+     * MANUAL MEET MAPPINGS
+     * IWF meet ids that explicitly map to USAW meet ids
+     * Format: IWF_MEET_ID -> [ ARRAY OF USAW_MEET_IDS ]
+     */
+    MANUAL_MEET_MAP: {
+        1509: [3760],
+        1510: [3760],
+        1564: [4312, 4436]
+    }
+
+};
