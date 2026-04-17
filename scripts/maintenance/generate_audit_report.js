@@ -10,8 +10,37 @@ async function run() {
     if (!fs.existsSync(JSON_PATH)) return console.error('No athlete_linking_international.json found. Run the maintenance script first.');
     
     const raw = JSON.parse(fs.readFileSync(JSON_PATH, 'utf8'));
-    // Combine verified + phase 2 fallback matches (all entries in the verified array)
-    const allMatches = raw.verified || [];
+    // Flatten candidates from ambiguous matches
+    const ambiguousFlattened = (raw.ambiguous || []).flatMap(m => 
+        (m.possible_matches || []).map(cand => ({
+            usaw_lifter_id: cand.usaw_lifter_id,
+            usaw_name: cand.usaw_name,
+            iwf_db_lifter_id: m.iwf_db_lifter_id,
+            iwf_name: m.iwf_name
+        }))
+    );
+
+    // Flatten candidates from physics failed
+    const failedFlattened = (raw.name_matched_physics_failed || []).flatMap(m => 
+        (m.failed_physics_matches || []).map(cand => ({
+            usaw_lifter_id: cand.usaw_lifter_id,
+            usaw_name: cand.usaw_name,
+            iwf_db_lifter_id: m.iwf_db_lifter_id,
+            iwf_name: m.iwf_name
+        }))
+    );
+
+    // Combine ALL categories into flat pairs
+    // Filter out manually overridden (whitelisted) athletes from the verified list
+    const filteredVerified = (raw.verified || []).filter(v => 
+        !(v.lift_comparison && v.lift_comparison.iwf_lifts === "MANUAL OVERRIDE")
+    );
+
+    const allMatches = [
+        ...filteredVerified,
+        ...ambiguousFlattened,
+        ...failedFlattened
+    ];
     console.log(`Loaded ${allMatches.length} international pairings from athlete_linking_international.json.`);
     const matches = allMatches;
     const csvRows = ['USAW_ID,IWF_ID,IWF_NAME,USAW_NAME,SOURCE,DATE,MEET,WEIGHT_CLASS,BW,BIRTH_YEAR,COMP_AGE,SN1,SN2,SN3,BEST_SN,CJ1,CJ2,CJ3,BEST_CJ,TOTAL,COUNTRY'];
