@@ -36,8 +36,14 @@ module.exports = {
 		48490: 62040, // Mustaqeem Mahmood BUTT (PAK) -> mustaqeem butt (USAW)
 		56937: 62083, // Raymond Hipol SANTOS (NMI) -> Raymond Santos (USAW)
 		56445: 62096, // Naomie Mia LUSIGNAN (CAN) -> Naomie Lusignan (USAW)
-		55511: 62264 // Yomar Andres LOPEZ CAMERON (PUR) -> Yomar Andres Lopez Cameron (USAW)
-
+		55511: 62264, // Yomar Andres LOPEZ CAMERON (PUR) -> Yomar Andres Lopez Cameron (USAW)
+		51757: 58191, // Brandon James HOLM	(GUM) -> Brandon Holm (USAW)
+		57890: 58623, // May HAZAN (ISR) -> May Hazan (USAW)
+		59362: 59418, // Laura CARRUTHERS (CAN) -> Laura Carruthers (USAW)
+		52919: 60044, // Nina STERCKX (BEL) -> Nina Sterckx (USAW)
+		58645: 60468, // Malachi John Fejeran LUJAN	(GUM) -> Malachi John Lujan (USAW)
+		51987: 60702, // Bekdoolot RASULBEKOV (KGZ) -> Bekdoolot Rasulbekov (USAW)
+		50193: 57627 // Malek Faed Naji MOUSA (JOR) -> malek mousa (USAW)
     },
 
     /**
@@ -65,9 +71,18 @@ module.exports = {
         58338: [202481], // Hector Jesus LOPEZ QUEVEDO (PER) -> Jesus Lopez
         52680: [198126], // IWF 52680 -> not USAW 198126
         58978: [198126], // IWF 58978 -> not USAW 198126
-		58978: [198126] // Luis Manuel LAURET RODRIGUEZ	(IWF) -> now Luis Rodriguez (USAW)
-		
-
+		58978: [198126], // Luis Manuel LAURET RODRIGUEZ	(IWF) -> now Luis Rodriguez (USAW)
+		52975: [60433], // Carlos David TREJO GONZALEZ (VEN) carlos gonzalez (USAW)
+		59422: [57875], // Adan Alexander GARCIA ROSAS (MEX) -> Alexander Garcia (USAW)
+		58553: [58056], // Alex Edgar TAPIA LEON (BOL) -> Alex Edgar (USAW)
+		50202: [57378], // Shoug Ahmed Al Maoani ISAA (UAE) -> Ahmed Ahmed (USAW)
+		49653: [57378], // Ahmed Valdy NJOYA (CMR) -> Ahmed Ahmed (USAW)
+		51105: [57378], // Ahmed Fathi A. ABUFES (LBA) -> Ahmed Ahmed (USAW)
+		51945: [57378], // Ahmed Salim Said AL-HABSI (OMA) -> Ahmed Ahmed (USAW)
+		51999: [57378], // Ahmed Abdelghani Said ELTAMADI (EGY) -> Ahmed Ahmed (USAW)
+		52005: [57378], // Ahmed Sayed Ashour ALI (EGY) -> Ahmed Ahmed (USAW)
+		52007: [57378], // Ahmed Tolba Mohamed Elbasiony RAMKH (EGY) -> Ahmed Ahmed (USAW)
+		52206: [57378] // Haidar Ahmed M ALGHANNAM (KSA) -> Ahmed Ahmed (USAW)
     },
 
     /**

@@ -36,8 +36,14 @@ module.exports = {
 		48490: 62040, // Mustaqeem Mahmood BUTT (PAK) -> mustaqeem butt (USAW)
 		56937: 62083, // Raymond Hipol SANTOS (NMI) -> Raymond Santos (USAW)
 		56445: 62096, // Naomie Mia LUSIGNAN (CAN) -> Naomie Lusignan (USAW)
-		55511: 62264 // Yomar Andres LOPEZ CAMERON (PUR) -> Yomar Andres Lopez Cameron (USAW)
-
+		55511: 62264, // Yomar Andres LOPEZ CAMERON (PUR) -> Yomar Andres Lopez Cameron (USAW)
+		51757: 58191, // Brandon James HOLM	(GUM) -> Brandon Holm (USAW)
+		57890: 58623, // May HAZAN (ISR) -> May Hazan (USAW)
+		59362: 59418, // Laura CARRUTHERS (CAN) -> Laura Carruthers (USAW)
+		52919: 60044, // Nina STERCKX (BEL) -> Nina Sterckx (USAW)
+		58645: 60468, // Malachi John Fejeran LUJAN	(GUM) -> Malachi John Lujan (USAW)
+		51987: 60702, // Bekdoolot RASULBEKOV (KGZ) -> Bekdoolot Rasulbekov (USAW)
+		50193: 57627 // Malek Faed Naji MOUSA (JOR) -> malek mousa (USAW)
     },
 
     /**
@@ -47,27 +53,36 @@ module.exports = {
      */
     BLACKLIST_ATHLETE_MAP: {
         47076: [35566], // Jose Rivera
-        48535: [3331],  // Minh Quang NGUYEN (VIE) -> Quang Nguyen
-        46489: [4335],  // Elio Oudany GUERRA ARANOZ (CUB) -> Elio Guerra
+        48535: [3331], // Minh Quang NGUYEN (VIE) -> Quang Nguyen
+        46489: [4335], // Elio Oudany GUERRA ARANOZ (CUB) -> Elio Guerra
         46686: [16339], // Thi Hong NGUYEN (VIE) -> Nguyen Nguyen
         46698: [16339], // Thi Hang Nga NGUYEN (VIE) -> Nguyen Nguyen
         46716: [16339], // Thi Sinh NGUYEN (VIE) -> Nguyen Nguyen
         50754: [34307], // Jonathan JOHNSON (SLE) -> Jonathan Johnson
         47257: [21162], // Kabsuali Silas BOB (KIR) -> Kabsuali Bob
-        52610: [1108],  // Juan Luis CAMPOS DE LA CRUZ (DOM) -> Luis Cruz
+        52610: [1108], // Juan Luis CAMPOS DE LA CRUZ (DOM) -> Luis Cruz
         48524: [25486], // Edgar CAPARROS RUBIO (ESP) -> edgar rubio
         43777: [28963], // David Aurelio MENDOZA GARCIA (HON) -> david garcia
         51840: [53321], // Thi Huong NGUYEN (VIE) -> Thi Nguyen
         53294: [35377], // Tuan Anh PHAM (VIE) -> Anh Pham
         470176: [55566], // Rivero JOSE -> USAW 55566
-        49681: [38528],  // Medgina CELESTIN (HAI) -> Medgina Celestin
-        53657: [38799],   // Alejandro ANDRADE HERNANDEZ (MEX) -> Alejandro Hernandez
+        49681: [38528], // Medgina CELESTIN (HAI) -> Medgina Celestin
+        53657: [38799], // Alejandro ANDRADE HERNANDEZ (MEX) -> Alejandro Hernandez
         58338: [202481], // Hector Jesus LOPEZ QUEVEDO (PER) -> Jesus Lopez
         52680: [198126], // IWF 52680 -> not USAW 198126
-        58978: [198126],  // IWF 58978 -> not USAW 198126
-		58978: [198126] // Luis Manuel LAURET RODRIGUEZ	(IWF) -> now Luis Rodriguez (USAW)
-		
-
+        58978: [198126], // IWF 58978 -> not USAW 198126
+		58978: [198126], // Luis Manuel LAURET RODRIGUEZ	(IWF) -> now Luis Rodriguez (USAW)
+		52975: [60433], // Carlos David TREJO GONZALEZ (VEN) carlos gonzalez (USAW)
+		59422: [57875], // Adan Alexander GARCIA ROSAS (MEX) -> Alexander Garcia (USAW)
+		58553: [58056], // Alex Edgar TAPIA LEON (BOL) -> Alex Edgar (USAW)
+		50202: [57378], // Shoug Ahmed Al Maoani ISAA (UAE) -> Ahmed Ahmed (USAW)
+		49653: [57378], // Ahmed Valdy NJOYA (CMR) -> Ahmed Ahmed (USAW)
+		51105: [57378], // Ahmed Fathi A. ABUFES (LBA) -> Ahmed Ahmed (USAW)
+		51945: [57378], // Ahmed Salim Said AL-HABSI	Ahmed Ahmed
+		51999: [57378], // Ahmed Abdelghani Said ELTAMADI	Ahmed Ahmed
+		52005: [57378], // Ahmed Sayed Ashour ALI	Ahmed Ahmed
+		52007: [57378], // Ahmed Tolba Mohamed Elbasiony RAMKH	Ahmed Ahmed
+		52206: [57378] // Haidar Ahmed M ALGHANNAM	Ahmed Ahmed
     },
 
     /**
