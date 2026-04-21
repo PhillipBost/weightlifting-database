@@ -345,8 +345,14 @@ async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId) {
                 waitUntil: 'domcontentloaded',
                 timeout: 30000
             });
+            
+            // Fixed: Wait for the results table to actually render and hydrate
+            console.log(`    ⏳ Waiting for results table to hydrate...`);
+            await page.waitForSelector('.v-data-table__wrapper table tbody tr', { timeout: 15000 });
+            // Small extra buffer for Vue.js to fully populate the rows
+            await new Promise(resolve => setTimeout(resolve, 2000));
         } catch (e) {
-            console.log(`    ⚠️ Navigation warning: ${e.message} - continuing to wait for selector...`);
+            console.log(`    ⚠️ Navigation or rendering timeout: ${e.message} - table might be empty`);
         }
 
         // Wait for the page to load and extract the page content
@@ -490,6 +496,11 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
         // No existing lifter found - create new one
         console.log(`  ➕ Creating new lifter: ${cleanName}`);
 
+        if (process.env.DRY_RUN === 'true') {
+            console.log(`  [DRY RUN] Would create new lifter: ${cleanName}`);
+            return { lifter_id: 'DRY_RUN_ID', athlete_name: cleanName };
+        }
+
         const { data: newLifter, error: createError } = await supabase
             .from('usaw_lifters')
             .insert({
@@ -524,6 +535,11 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
             } else {
                 // Verification failed - create new lifter as fallback
                 console.log(`  ⚠️ Could not verify lifter ${cleanName} - creating new record`);
+
+                if (process.env.DRY_RUN === 'true') {
+                    console.log(`  [DRY RUN] Would create fallback lifter: ${cleanName}`);
+                    return { lifter_id: 'DRY_RUN_FALLBACK_ID', athlete_name: cleanName };
+                }
 
                 const { data: newLifter, error: createError } = await supabase
                     .from('usaw_lifters')

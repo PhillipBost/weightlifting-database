@@ -17,7 +17,7 @@ module.exports = {
     MANUAL_ATHLETE_MAP: {
         55229: 29088, // Tiffany Wohlers (IWF) -> Tiffiny Yaskus (USAW)
         45801: 25583, // Bastian Andres LOPEZ FARIAS (CHI) -> bastian lopez farias (USAW
-        54357: 1291, // Sean Michael RIGSBY (IRL) -> Sean Rigsby (USAW)
+        54357: 1291,  // Sean Michael RIGSBY (IRL) -> Sean Rigsby (USAW)
         55449: 23538, // Yvgeni Sientje HENDERSON (Jamaica) -> Yvgeni Henderson (USAW)
         52680: 198126, // Xavier LUSIGNAN (IWF duplicate A) -> Xavier Lusignan (USAW)
         58978: 198126, // Xavier LUSIGNAN (IWF duplicate B) -> Xavier Lusignan (USAW)
@@ -78,11 +78,25 @@ module.exports = {
 		50202: [57378], // Shoug Ahmed Al Maoani ISAA (UAE) -> Ahmed Ahmed (USAW)
 		49653: [57378], // Ahmed Valdy NJOYA (CMR) -> Ahmed Ahmed (USAW)
 		51105: [57378], // Ahmed Fathi A. ABUFES (LBA) -> Ahmed Ahmed (USAW)
-		51945: [57378], // Ahmed Salim Said AL-HABSI	Ahmed Ahmed
-		51999: [57378], // Ahmed Abdelghani Said ELTAMADI	Ahmed Ahmed
-		52005: [57378], // Ahmed Sayed Ashour ALI	Ahmed Ahmed
-		52007: [57378], // Ahmed Tolba Mohamed Elbasiony RAMKH	Ahmed Ahmed
-		52206: [57378] // Haidar Ahmed M ALGHANNAM	Ahmed Ahmed
+		51945: [57378], // Ahmed Salim Said AL-HABSI (OMA) -> Ahmed Ahmed (USAW)
+		51999: [57378], // Ahmed Abdelghani Said ELTAMADI (EGY) -> Ahmed Ahmed (USAW)
+		52005: [57378], // Ahmed Sayed Ashour ALI (EGY) -> Ahmed Ahmed (USAW)
+		52007: [57378], // Ahmed Tolba Mohamed Elbasiony RAMKH (EGY) -> Ahmed Ahmed (USAW)
+		52206: [57378], // Haidar Ahmed M ALGHANNAM (KSA) -> Ahmed Ahmed (USAW)
+		44867: [198677], // Huisol LEE (KOR) -> Alex Lee (USAW)
+		50516: [198677], // Jessica Yen Lee LAI (AUS) -> Alex Lee (USAW)
+		51251: [198677], // Jieun LEE (KOR) -> Alex Lee (USAW)
+		52598: [198677], // Matthew Ming Hin LEE (CAN) -> Alex Lee (USAW)
+		52094: [198677], // Sangyeon LEE (KOR) -> Alex Lee (USAW)
+		48915: [198677], // Seulki LEE (KOR) -> Alex Lee (USAW)
+		58350: [59150], // 	Estefany MONTEJANO CASTILLO (MEX) -> Jesse Castillo (USAW)
+		58606: [40705], // Itzel Sophia MORALES ALICEA (PER) -> Jade Morales (USAW)
+		47071: [38678], // Alexander HERNANDEZ MARTINEZ (PER) -> Laura Alexander (USAW)
+		55501: [40043], // Fabian Jose MARQUEZ LUCES (VEN) -> Mario Marquez (USAW)
+		49357: [34213], // Dahui PARK (KOR) -> Mariah Park (USAW)
+		54863: [34213], // Hyejeong PARK (KOR) -> Mariah Park (USAW)
+
+
     },
 
     /**
