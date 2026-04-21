@@ -82,7 +82,21 @@ module.exports = {
 		51999: [57378], // Ahmed Abdelghani Said ELTAMADI (EGY) -> Ahmed Ahmed (USAW)
 		52005: [57378], // Ahmed Sayed Ashour ALI (EGY) -> Ahmed Ahmed (USAW)
 		52007: [57378], // Ahmed Tolba Mohamed Elbasiony RAMKH (EGY) -> Ahmed Ahmed (USAW)
-		52206: [57378] // Haidar Ahmed M ALGHANNAM (KSA) -> Ahmed Ahmed (USAW)
+		52206: [57378], // Haidar Ahmed M ALGHANNAM (KSA) -> Ahmed Ahmed (USAW)
+		44867: [198677], // Huisol LEE (KOR) -> Alex Lee (USAW)
+		50516: [198677], // Jessica Yen Lee LAI (AUS) -> Alex Lee (USAW)
+		51251: [198677], // Jieun LEE (KOR) -> Alex Lee (USAW)
+		52598: [198677], // Matthew Ming Hin LEE (CAN) -> Alex Lee (USAW)
+		52094: [198677], // Sangyeon LEE (KOR) -> Alex Lee (USAW)
+		48915: [198677], // Seulki LEE (KOR) -> Alex Lee (USAW)
+		58350: [59150], // 	Estefany MONTEJANO CASTILLO (MEX) -> Jesse Castillo (USAW)
+		58606: [40705], // Itzel Sophia MORALES ALICEA (PER) -> Jade Morales (USAW)
+		47071: [38678], // Alexander HERNANDEZ MARTINEZ (PER) -> Laura Alexander (USAW)
+		55501: [40043], // Fabian Jose MARQUEZ LUCES (VEN) -> Mario Marquez (USAW)
+		49357: [34213], // Dahui PARK (KOR) -> Mariah Park (USAW)
+		54863: [34213] // Hyejeong PARK (KOR) -> Mariah Park (USAW)
+
+
     },
 
     /**

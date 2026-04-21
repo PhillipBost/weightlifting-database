@@ -255,8 +255,14 @@ async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId, a
                 waitUntil: 'domcontentloaded',
                 timeout: 30000
             });
+
+            // Fixed: Wait for the results table to actually render and hydrate
+            console.log(`    ⏳ Waiting for results table to hydrate...`);
+            await page.waitForSelector('.v-data-table__wrapper table tbody tr', { timeout: 15000 });
+            // Small extra buffer for Vue.js to fully populate the rows
+            await new Promise(resolve => setTimeout(resolve, 2000));
         } catch (e) {
-            console.log(`    ⚠️ Navigation warning: ${e.message} - continuing to wait for selector...`);
+            console.log(`    ⚠️ Navigation or rendering timeout: ${e.message} - table might be empty`);
         }
 
         // Wait for table to load
@@ -2419,6 +2425,11 @@ async function findOrCreateLifter(lifterName, browser, additionalData = {}) {
         });
         console.log(`  ➕ Creating new lifter: ${cleanName}`);
 
+        if (process.env.DRY_RUN === 'true') {
+            console.log(`  [DRY RUN] Would create new lifter: ${cleanName}`);
+            return { lifter_id: 'DRY_RUN_ID', athlete_name: cleanName };
+        }
+
         const { data: newLifter, error: createError } = await supabase
             .from('usaw_lifters')
             .insert({
@@ -2632,6 +2643,11 @@ async function findOrCreateLifter(lifterName, browser, additionalData = {}) {
                 original_lifter_id: existingLifter.lifter_id
             });
             console.log(`  ⚠️ Could not verify lifter ${cleanName} through two-tier verification - creating new record`);
+
+            if (process.env.DRY_RUN === 'true') {
+                console.log(`  [DRY RUN] Would create fallback lifter: ${cleanName}`);
+                return { lifter_id: 'DRY_RUN_FALLBACK_ID', athlete_name: cleanName };
+            }
 
             const { data: newLifter, error: createError } = await supabase
                 .from('usaw_lifters')
@@ -2849,10 +2865,10 @@ async function findOrCreateLifter(lifterName, browser, additionalData = {}) {
                         reason: 'exclusion_conflict_all_occupied'
                     });
 
-                    // Force create new logic below
-                    // We can just proceed to create new lifter by skipping the fallback block below
-                    // Setting existingLifters to empty to trigger creation at end of function? 
-                    // No, cleaner to just call create here.
+                    if (process.env.DRY_RUN === 'true') {
+                        console.log(`  [DRY RUN] Would create new lifter: ${cleanName}`);
+                        return { lifter_id: 'DRY_RUN_ID', athlete_name: cleanName };
+                    }
 
                     const { data: newLifter, error: createError } = await supabase
                         .from('usaw_lifters')
