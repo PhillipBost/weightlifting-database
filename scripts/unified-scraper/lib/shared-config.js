@@ -42,6 +42,7 @@ class UnifiedConfiguration {
         this.missingMembership = options.missingMembership || false; // Target results missing Membership Number
 
         this.excludeZeroTotal = options.excludeZeroTotal || false; // Exclude Total=0 even in force mode
+        this.membershipDuplicates = options.membershipDuplicates || false; // Target athletes with duplicate membership numbers
 
         // Gap Scraper specific
         this.maxGaps = options.maxGaps || 5;

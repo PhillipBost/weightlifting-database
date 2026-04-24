@@ -10,29 +10,23 @@ CREATE OR REPLACE FUNCTION public.refresh_athlete_json_trigger()
  LANGUAGE plpgsql
 AS $function$
 DECLARE
-  v_lifter_id BIGINT;
+  v_usaw_id BIGINT;
+  v_iwf_id BIGINT;
 BEGIN
   -- TABLE AWARENESS: Distinguish between USAW (lifter_id) and IWF (db_lifter_id)
-  -- This prevents "record 'new' has no field 'db_lifter_id'" crashes on USAW inserts.
-  IF TG_TABLE_NAME = 'usaw_meet_results' THEN
-    v_lifter_id := NEW.lifter_id;
-  ELSIF TG_TABLE_NAME = 'iwf_meet_results' THEN
-    v_lifter_id := NEW.db_lifter_id;
-  ELSE
-    -- Default to lifter_id for standard lifters tables
-    BEGIN
-        v_lifter_id := NEW.lifter_id;
-    EXCEPTION WHEN OTHERS THEN
-        v_lifter_id := NULL;
-    END;
+  IF TG_TABLE_NAME = 'usaw_meet_results' OR TG_TABLE_NAME = 'usaw_lifters' THEN
+    v_usaw_id := NEW.lifter_id;
+  ELSIF TG_TABLE_NAME = 'iwf_meet_results' OR TG_TABLE_NAME = 'iwf_lifters' THEN
+    v_iwf_id := NEW.db_lifter_id;
   END IF;
 
   -- Only attempt refresh if we have a valid ID
-  IF v_lifter_id IS NOT NULL THEN
+  IF v_usaw_id IS NOT NULL OR v_iwf_id IS NOT NULL THEN
       PERFORM net.http_post(
         url := 'http://46.62.223.85:8889/refresh-athlete',
         body := jsonb_build_object(
-          'lifter_id', v_lifter_id,
+          'usaw_id', v_usaw_id,
+          'iwf_id', v_iwf_id,
           'secret', 'YPanfk8C8bZqzCr38vjoHMxlsVE3s4Ht'
         ),
         headers := '{"Content-Type": "application/json"}'::jsonb

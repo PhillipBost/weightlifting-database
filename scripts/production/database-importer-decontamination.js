@@ -71,6 +71,20 @@ function addDays(date, days) {
     return result;
 }
 
+// Build rankings URL for base64 lookup
+function buildRankingsURL(divisionCode, startDate, endDate) {
+    const filters = {
+        date_range_start: formatDate(startDate),
+        date_range_end: formatDate(endDate),
+        weight_class: divisionCode
+    };
+
+    const jsonStr = JSON.stringify(filters);
+    const base64Encoded = Buffer.from(jsonStr).toString('base64');
+
+    return `https://usaweightlifting.sport80.com/public/rankings/all?filters=${encodeURIComponent(base64Encoded)}`;
+}
+
 // Extract meet internal_id from Sport80 URL
 function extractMeetInternalId(url) {
     if (!url || typeof url !== 'string') {
@@ -206,401 +220,136 @@ async function upsertMeetsToDatabase(meetings) {
 }
 
 // REAL Sport80 member page verification using puppeteer
-async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId, athleteName, requiredWeightClass = null, requiredTotal = null, requiredSnatch = null, requiredCJ = null, requiredBodyweight = null, browser = null) {
-    console.log(`    🐞 DEBUG verifyLifterParticipationInMeet: internalId=${lifterInternalId}, meetId=${targetMeetId}, name=${athleteName}, wc=${requiredWeightClass}, total=${requiredTotal}, sn=${requiredSnatch}, cj=${requiredCJ}, bw=${requiredBodyweight}`);
-    // Get target meet information for enhanced matching
-    const { data: targetMeet, error: meetError } = await supabase
-        .from('usaw_meets')
-        .select('meet_id, meet_internal_id, Meet, Date')
-        .eq('meet_id', targetMeetId)
-        .single();
-
-    if (meetError) {
-        console.log(`    ❌ Error getting meet info: ${meetError.message}`);
-        return { verified: false };
+// REAL Sport80 member page verification using puppeteer
+async function verifyLifterParticipationInMeet(
+    browser,
+    internalId,
+    athleteName,
+    evidenceResults = [], // NEW: Full set of unique results from the duplicate record
+    providedBrowser = null,
+    knownMembershipNumber = null
+) {
+    const isCollisionCheck = evidenceResults.length > 0;
+    if (isCollisionCheck) {
+        console.log(`    🔍 [Forensic-Audit] Verifying Carrier Identity for ${athleteName} (Internal ID: ${internalId})`);
+        console.log(`    🔍 Evidence Set Size: ${evidenceResults.length} results.`);
     }
 
-    const memberUrl = `https://usaweightlifting.sport80.com/public/rankings/member/${lifterInternalId}`;
-    console.log(`    🌐 Visiting: ${memberUrl}`);
-    console.log(`    🎯 Looking for: "${targetMeet.Meet}" on ${targetMeet.Date}`);
-
     let localBrowserInstance = null;
-    let browserToUse = browser;
     let page = null;
+    let foundTargetMeet = null;
+    let foundMasterLandmark = null;
 
     try {
-        if (!browserToUse) {
-            // console.log('    🖥️ Launching local browser for Tier 2 (no shared instance)...');
-            localBrowserInstance = await puppeteer.launch({
+        if (providedBrowser) {
+            page = await providedBrowser.newPage();
+        } else if (browser) {
+            page = await browser.newPage();
+        } else {
+            localBrowserInstance = await puppeteer.launch({ 
                 headless: true,
-                args: [
-                    '--no-sandbox',
-                    '--disable-setuid-sandbox',
-                    '--disable-dev-shm-usage',
-                    '--disable-gpu',
-                    '--no-first-run',
-                    '--disable-extensions'
-                ]
+                args: ['--no-sandbox', '--disable-setuid-sandbox']
             });
-            browserToUse = localBrowserInstance;
+            page = await localBrowserInstance.newPage();
         }
 
-        page = await browserToUse.newPage();
-        // await page.setViewport({ width: 1500, height: 1000 });
-        await page.setViewport({ width: 1500, height: 1000 });
+        await page.setViewport({ width: 1366, height: 768 });
 
-        // Navigate to the member page
+        const url = `https://usaweightlifting.sport80.com/public/rankings/member/${internalId}`;
+        await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
+
+        // Wait for results table
         try {
-            await page.goto(memberUrl, {
-                waitUntil: 'domcontentloaded',
-                timeout: 30000
-            });
-
-            // Fixed: Wait for the results table to actually render and hydrate
-            console.log(`    ⏳ Waiting for results table to hydrate...`);
-            await page.waitForSelector('.v-data-table__wrapper table tbody tr', { timeout: 15000 });
-            // Small extra buffer for Vue.js to fully populate the rows
-            await new Promise(resolve => setTimeout(resolve, 2000));
+            await page.waitForSelector('.data-table div div.v-data-table div.v-data-table__wrapper table tbody tr', { timeout: 15000 });
         } catch (e) {
-            console.log(`    ⚠️ Navigation or rendering timeout: ${e.message} - table might be empty`);
+            console.log(`    ⚠️ No results table found for member ${internalId}`);
+            return { verified: false };
         }
 
-        // Wait for table to load
-        await page.waitForSelector('.data-table div div.v-data-table div.v-data-table__wrapper table tbody tr', { timeout: 15000 });
-        await new Promise(resolve => setTimeout(resolve, 2000));
-
-        // Search through all pages of meet history
-        let foundMeet = null;
-        let currentPage = 1;
         let hasMorePages = true;
-        let extractedGender = null;
+        let currentPage = 1;
+        const MAX_PAGES = 15; 
+        let personaConflictCount = 0;
+        let conflicts = [];
 
-        while (hasMorePages && !foundMeet) {
-            console.log(`    📄 Checking page ${currentPage} of meet history...`);
+        while (hasMorePages && currentPage <= MAX_PAGES) {
+            const pageData = await page.evaluate(() => {
+                const rows = Array.from(document.querySelectorAll('.data-table div div.v-data-table div.v-data-table__wrapper table tbody tr'));
+                return rows.map(row => {
+                    const cells = row.querySelectorAll('td');
+                    if (cells.length < 5) return null;
 
-            // Extract meet information from current page
-            // Also extract CATEGORY column to infer gender if possible
-            // Extract meet information from current page
-            // Also extract CATEGORY column to infer gender if possible
-            const pageData = await page.evaluate((targetName, targetDate) => {
-                // Get table headers for dynamic mapping
-                const thCells = Array.from(document.querySelectorAll('.data-table div div.v-data-table div.v-data-table__wrapper table thead th'));
-                const headers = thCells.map(th => th.textContent.trim().toLowerCase());
+                    const name = cells[0].innerText.trim();
+                    const date = cells[1].innerText.trim();
+                    
+                    // Total is usually the last column (index 13 in the current Sport80 layout)
+                    const totalCell = cells[cells.length - 1];
+                    const total = parseFloat(totalCell.innerText.trim()) || 0;
+                    
+                    const weightClass = cells[2].innerText.trim();
 
-                // Dynamic mapping of columns
-                const colMap = {
-                    meet: headers.findIndex(h => h.includes('event') || h.includes('meet') || h.includes('competition')),
-                    date: headers.findIndex(h => h.includes('date')),
-                    category: headers.findIndex(h => h.includes('category') || h.includes('division') || h.includes('group') || h.includes('cat')),
-                    bodyweight: headers.findIndex(h => h.includes('body') || h.includes('bw') || h.includes('wt') || h === 'bw'),
-                    snatch: -1,
-                    cj: -1,
-                    total: headers.findIndex(h => h.includes('total')),
-                    place: headers.findIndex(h => h.includes('place') || h.includes('rank')),
-                    points: headers.findIndex(h => h.includes('point') || h.includes('lws') || h.includes('sinclair'))
-                };
-
-                // Smart Column Mapping for Snatch (Prioritize "Best Snatch")
-                const bestSnatchIdx = headers.indexOf('best snatch');
-                if (bestSnatchIdx !== -1) {
-                    colMap.snatch = bestSnatchIdx;
-                } else {
-                    // Fallback to searching for "snatch" if no "best snatch"
-                    colMap.snatch = headers.findIndex(h => h.includes('snatch') || h === 'sn');
-                }
-
-                // Smart Column Mapping for C&J (Prioritize "Best C&J")
-                const bestCjIdx = headers.indexOf('best c&j');
-                const bestCleanIdx = headers.indexOf('best clean & jerk');
-
-                if (bestCjIdx !== -1) {
-                    colMap.cj = bestCjIdx;
-                } else if (bestCleanIdx !== -1) {
-                    colMap.cj = bestCleanIdx;
-                } else {
-                    // Fallback
-                    colMap.cj = headers.findIndex(h => h.includes('clean') || h.includes('jerk') || h.includes('c&j') || h === 'cj');
-                }
-
-                // Fallbacks if headers missing or not matched (Standard Layout: Meet, Date, Cat, BW, Sn, CJ, Total)
-                if (colMap.meet === -1) colMap.meet = 0;
-                if (colMap.date === -1) colMap.date = 1;
-                if (colMap.category === -1) colMap.category = 2;
-                if (colMap.bodyweight === -1) colMap.bodyweight = 3;
-                if (colMap.snatch === -1) colMap.snatch = 4;
-                if (colMap.cj === -1) colMap.cj = 5;
-                if (colMap.total === -1) colMap.total = 6;
-                // Debug headers if needed (will log to browser console/stdout)
-                // console.log('Dynamic Headers:', headers, 'Map:', JSON.stringify(colMap));
-
-                const meetRows = Array.from(document.querySelectorAll('.data-table div div.v-data-table div.v-data-table__wrapper table tbody tr'));
-
-                const meetInfo = meetRows.map(row => {
-                    const cells = Array.from(row.querySelectorAll('td'));
-                    if (cells.length < 3) return null;
-
-                    const meetName = cells[colMap.meet]?.textContent?.trim();
-                    const meetDate = cells[colMap.date]?.textContent?.trim();
-                    const ageCategory = cells[colMap.category]?.textContent?.trim(); // "Open Men's 67kg" etc
-
-                    const bwStr = cells[colMap.bodyweight]?.textContent?.trim();
-                    const bodyweight = bwStr && !isNaN(parseFloat(bwStr)) ? parseFloat(bwStr) : null;
-
-                    const snatchStr = cells[colMap.snatch]?.textContent?.trim();
-                    const snatch = snatchStr && !isNaN(parseFloat(snatchStr)) ? parseFloat(snatchStr) : null;
-
-                    const cjStr = cells[colMap.cj]?.textContent?.trim();
-                    const cj = cjStr && !isNaN(parseFloat(cjStr)) ? parseFloat(cjStr) : null;
-
-                    const totalStr = cells[colMap.total]?.textContent?.trim();
-                    const total = totalStr && !isNaN(parseFloat(totalStr)) ? parseFloat(totalStr) : null;
-
-                    // DEBUG: Log cells if this looks like the target meet. Relaxed condition for debugging.
-                    const debugTarget = targetName ? targetName.toLowerCase().substring(0, 5) : 'xxxxx';
-                    if (meetName && (meetName.toLowerCase().includes(debugTarget) || meetName.includes('Arnold'))) {
-                        // Simplify logging to avoid spam
-                        // console.log(`      🐞 DEBUG ROW for "${meetName}": [${cells.map((c, i) => `${i}:${c.textContent.trim()}`).join(', ')}]`);
-                    }
-
-                    return {
-                        name: meetName,
-                        date: meetDate,
-                        category: ageCategory,
-                        total: total,
-                        snatch: snatch,
-                        cj: cj,
-                        bodyweight: bodyweight
-                    };
+                    return { name, date, total, weightClass };
                 }).filter(Boolean);
+            });
 
-                return meetInfo;
-
-                return meetInfo;
-            }, targetMeet.Meet, targetMeet.Date);
-
-            if (currentPage === 1) {
-                console.log(`    🔍 DEBUG: Extracted ${pageData.length} meets from page 1. First 3:`, pageData.slice(0, 3).map(m => `${m.name} (${m.date})`));
+            console.log(`    🐞 DEBUG: Extracted ${pageData.length} rows from Page ${currentPage}.`);
+            if (pageData.length > 0) {
+                console.log(`    🐞 Sample Top Row: "${pageData[0].name}" on ${pageData[0].date} (Total: ${pageData[0].total})`);
             }
 
-            // Try to infer gender from any row on this page if we haven't yet
-            if (!extractedGender && pageData.length > 0) {
-                for (const row of pageData) {
-                    if (row.category) {
-                        const catLower = row.category.toLowerCase();
-                        if (catLower.includes("men's") && !catLower.includes("women's")) {
-                            extractedGender = 'M';
-                            break;
-                        } else if (catLower.includes("women's")) {
-                            extractedGender = 'F';
-                            break;
-                        } else if (catLower.includes("boys")) {
-                            extractedGender = 'M';
-                            break;
-                        } else if (catLower.includes("girls")) {
-                            extractedGender = 'F';
-                            break;
-                        }
-                    }
-                }
-                if (extractedGender) {
-                    console.log(`    🚻 Extracted Gender from history: ${extractedGender}`);
-                }
-            }
-
-            // Match by meet name and date
-            // Match by meet name and date (with fuzzy logic)
-            // Use for...of loop to support await inside
             for (const meet of pageData) {
-                // Name match: Case-insensitive, trimmed
-                const nameMatch = meet.name && targetMeet.Meet &&
-                    meet.name.trim().toLowerCase() === targetMeet.Meet.trim().toLowerCase();
+                // Check each piece of evidence against the rows on this page
+                for (const evidence of evidenceResults) {
+                    if (evidence.found) continue;
 
-                // Date match: Allow +/- 5 days difference
-                let dateMatch = false;
-                if (meet.date && targetMeet.Date) {
-                    try {
+                    const nameMatch = meet.name && evidence.Meet &&
+                        meet.name.trim().toLowerCase() === evidence.Meet.trim().toLowerCase();
+                    
+                    let dateMatch = false;
+                    if (meet.date && evidence.Date) {
                         const d1 = new Date(meet.date);
-                        const d2 = new Date(targetMeet.Date);
-
-                        // Check if valid dates
+                        const d2 = new Date(evidence.Date);
                         if (!isNaN(d1.getTime()) && !isNaN(d2.getTime())) {
-                            const diffTime = Math.abs(d1 - d2);
-                            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                            const diffDays = Math.ceil(Math.abs(d1 - d2) / (1000 * 60 * 60 * 24));
+                            const isOnlineQualifier = (evidence.Meet || '').toLowerCase().includes('online qualifier');
+                            dateMatch = diffDays <= (isOnlineQualifier ? 35 : 14);
+                        }
+                    }
 
-                            // Determine allowed window based on meet name type
-                            // "Online Qualifier" meets often span up to a month (User specified +/- 30 days strictly for "Online Qualifier")
-                            const isOnlineQualifier = (targetMeet.Meet || '').toLowerCase().includes('online qualifier');
-                            const allowedDays = isOnlineQualifier ? 30 : 14; // 30 for "Online Qualifier", 14 for standard
+                    const sport80Total = parseFloat(meet.total);
+                    const dbTotal = parseFloat(evidence.Total);
+                    const totalMatch = !isNaN(sport80Total) && !isNaN(dbTotal) && Math.abs(sport80Total - dbTotal) < 0.5;
 
-                            dateMatch = diffDays <= allowedDays;
-
-                            if (nameMatch && dateMatch && diffDays > 5) {
-                                console.log(`      ⚠️ Name matched and date within extended window (${diffDays} days). Allowed: ${allowedDays} days (${isOnlineQualifier ? 'Online Qualifier' : 'Standard'})`);
-                            } else if (nameMatch && !dateMatch && diffDays <= 60) {
-                                console.log(`      ⚠️ Name matched but date difference is ${diffDays} days (${meet.date} vs ${targetMeet.Date}). Limit: ${allowedDays}`);
-                            }
+                    if (nameMatch && dateMatch) {
+                        if (totalMatch) {
+                            evidence.found = true;
+                            evidence.sport80Metadata = {
+                                weightClass: meet.weightClass,
+                                name: meet.name,
+                                date: meet.date,
+                                total: meet.total
+                            };
+                            console.log(`    ✅ [Forensic-Audit] Verified result: "${meet.name}" (${meet.date}) (Total: ${meet.total})`);
                         } else {
-                            // Fallback to strict string match if dates invalid
-                            console.log(`      ⚠️ Invalid date format: ${meet.date} or ${targetMeet.Date}, falling back to strict string match.`);
-                            dateMatch = meet.date === targetMeet.Date;
-                        }
-                    } catch (e) {
-                        console.log(`      ⚠️ Date comparison error: ${e.message}`);
-                        dateMatch = meet.date === targetMeet.Date;
-                    }
-                }
-
-                // SMART TIER 2: Verify Lifter Presence on Meet Page
-                // If Name Matches but Date Mismatches, check the OFFICIAL Meet Results Page.
-                // If the athlete is LISTED in the results, then they participated (ignoring date mismatch).
-                if (nameMatch && !dateMatch) {
-                    console.log(`      ℹ️  Possible DB Date Mismatch. Checking official meet page for presence of "${athleteName}"...`);
-                    const isPresent = await verifyLifterOnMeetPage(browserToUse, targetMeetId, athleteName);
-
-                    if (isPresent) {
-                        console.log(`      Found: Name Match + Date Mismatch (DB: ${targetMeet.Date} vs Member: ${meet.date})`);
-                        console.log(`      ✅ SMART VERIFY: Athlete "${athleteName}" found on Official Meet Page. Confirming participation despite date mismatch.`);
-                        dateMatch = true;
-                    } else {
-                        console.log(`      ❌ Smart Verify Failed: "${athleteName}" NOT found on Official Meet Page.`);
-                    }
-                }
-
-                // ENHANCED VERIFICATION: Check Weight Class match
-                let weightClassMatch = true;
-                if (nameMatch && dateMatch && requiredWeightClass && requiredWeightClass !== 'Unknown' && meet.category) {
-                    const cleanRequired = requiredWeightClass.replace('kg', '').trim().toLowerCase();
-                    const cleanCategory = meet.category.toLowerCase();
-
-                    if (cleanRequired.startsWith('+')) {
-                        if (!cleanCategory.includes(cleanRequired)) {
-                            weightClassMatch = false;
-                        }
-                    } else {
-                        if (!cleanCategory.includes(cleanRequired)) {
-                            weightClassMatch = false;
+                            // Date and Name match but TOTAL is significantly different
+                            console.log(`    ⚠️ [Persona-Conflict] Found result match for "${meet.name}" on ${meet.date} but Total mismatched (Sport80: ${sport80Total} vs DB: ${dbTotal})`);
+                            personaConflictCount++;
+                            conflicts.push({
+                                meet: meet.name,
+                                date: meet.date,
+                                sport80Total: sport80Total,
+                                dbTotal: dbTotal
+                            });
                         }
                     }
-
-                    if (!weightClassMatch) {
-                        console.log(`      ⛔ Weight Class Mismatch: Required "${requiredWeightClass}" vs History "${meet.category}"`);
-                    } else {
-                        console.log(`      ✅ Weight Class Verified: "${meet.category}" matches "${requiredWeightClass}"`);
-                    }
-                }
-
-                // NEW: Check Total Match
-                let totalMatch = true;
-                if (nameMatch && dateMatch && requiredTotal !== null && meet.total !== null) {
-                    if (Math.abs(meet.total - requiredTotal) > 0.1) {
-                        totalMatch = false;
-                        console.log(`      ⛔ Total Mismatch: Required ${requiredTotal} vs History ${meet.total}`);
-                    } else {
-                        console.log(`      ✅ Total Verified: ${meet.total} matches ${requiredTotal}`);
-                    }
-                }
-
-                // NEW: Check Snatch Match
-                let snatchMatch = true;
-                if (nameMatch && dateMatch && requiredSnatch !== null && meet.snatch !== null) {
-                    if (Math.abs(meet.snatch - requiredSnatch) > 0.1) {
-                        snatchMatch = false;
-                        console.log(`      ⛔ Snatch Mismatch: Required ${requiredSnatch} vs History ${meet.snatch}`);
-                    } else {
-                        console.log(`      ✅ Snatch Verified: ${meet.snatch} matches ${requiredSnatch}`);
-                    }
-                }
-
-                // NEW: Check C&J Match
-                let cjMatch = true;
-                if (nameMatch && dateMatch && requiredCJ !== null && meet.cj !== null) {
-                    if (Math.abs(meet.cj - requiredCJ) > 0.1) {
-                        cjMatch = false;
-                        console.log(`      ⛔ C&J Mismatch: Required ${requiredCJ} vs History ${meet.cj}`);
-                    } else {
-                        console.log(`      ✅ C&J Verified: ${meet.cj} matches ${requiredCJ}`);
-                    }
-                }
-
-                // NEW: Check Bodyweight Match
-                let bodyweightMatch = true;
-                if (nameMatch && dateMatch && requiredBodyweight !== null && meet.bodyweight !== null) {
-                    if (Math.abs(meet.bodyweight - requiredBodyweight) > 0.25) { // 0.25kg tolerance
-                        bodyweightMatch = false;
-                        console.log(`      ⛔ Bodyweight Mismatch: Required ${requiredBodyweight} vs History ${meet.bodyweight}`);
-                    } else {
-                        console.log(`      ✅ Bodyweight Verified: "${meet.bodyweight}" matches "${requiredBodyweight}"`);
-                    }
-                }
-
-                if (nameMatch && dateMatch && weightClassMatch && totalMatch && snatchMatch && cjMatch && bodyweightMatch) {
-                    foundMeet = meet;
-                    break;
                 }
             }
 
-            if (foundMeet) {
-                console.log(`    ✅ VERIFIED: "${foundMeet.name}" on ${foundMeet.date} found on page ${currentPage}`);
+            // Check if all evidence has been matched
+            const someConflicts = personaConflictCount > 0;
+            const allMatched = evidenceResults.every(e => e.found) && !someConflicts;
+            if (allMatched && isCollisionCheck) break;
 
-                // NEW: Scrape Membership Number from the page
-                let membershipNumber = await page.evaluate(() => {
-                    const text = document.body.innerText;
-
-                    // Regex patterns
-                    const patterns = [
-                        /Membership\s*#\.?\s*(\d+)/i,
-                        /Member\s*ID\.?\s*(\d+)/i,
-                        /Member\s*Number\.?\s*(\d+)/i,
-                        /USA\s*Weightlifting\s*#\s*:?\s*(\d+)/i,
-                        /#\s*(\d{4,})/
-                    ];
-
-                    for (const p of patterns) {
-                        const match = text.match(p);
-                        if (match) return match[1];
-                    }
-
-                    // Strategy 3: Check Inputs
-                    const inputs = Array.from(document.querySelectorAll('input'));
-                    for (const input of inputs) {
-                        const label = (input.name || input.id || input.getAttribute('aria-label') || '').toLowerCase();
-                        if ((label.includes('member') || label.includes('number')) && /\d+/.test(input.value)) {
-                            return input.value;
-                        }
-                    }
-
-                    // DEBUG: Match context
-                    const idx = text.toLowerCase().indexOf('member');
-                    let context = '';
-                    if (idx !== -1) {
-                        const start = Math.max(0, idx - 50);
-                        const end = Math.min(text.length, idx + 100);
-                        context = 'CTX: ' + text.substring(start, end).replace(/\n/g, ' ');
-                    }
-
-                    const inputDump = inputs.slice(0, 5).map(i => `${i.id || i.name}: ${i.value}`).join(' | ');
-                    return `DEBUG_FAIL: No Member text. Inputs: ${inputDump}. Context: ${context}`;
-                });
-
-                if (membershipNumber && (membershipNumber.startsWith('DEBUG_CONTEXT:') || membershipNumber.startsWith('DEBUG_FAIL:'))) {
-                    // Only log DEBUG_FAIL if we really need it (commented out for production cleanliness)
-                    // console.log(`    ⚠️ Membership Debug (Tier 2): ${membershipNumber}`);
-                    membershipNumber = null;
-                } else if (membershipNumber) {
-                    console.log(`    ✅ Scraped Membership Number: ${membershipNumber}`);
-                }
-
-                return {
-                    verified: true,
-                    foundDate: foundMeet.date,
-                    metadata: {
-                        gender: extractedGender,
-                        membershipNumber: membershipNumber
-                    }
-                };
-            }
-
-            // Check for next page
             hasMorePages = await page.evaluate(() => {
                 const nextBtn = document.querySelector('.v-data-footer__icons-after button:not([disabled])');
                 if (nextBtn && !nextBtn.disabled) {
@@ -611,29 +360,93 @@ async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId, a
             });
 
             if (hasMorePages) {
-                // Wait for next page to load
                 await new Promise(resolve => setTimeout(resolve, 3000));
-                await page.waitForSelector('.data-table div div.v-data-table div.v-data-table__wrapper table tbody tr', { timeout: 10000 });
                 currentPage++;
             }
         }
 
-        console.log(`    ❌ NOT FOUND: "${targetMeet.Meet}" on ${targetMeet.Date} not found in ${currentPage} page(s) of history`);
-        return { verified: false };
+        const allVerified = isCollisionCheck ? evidenceResults.every(e => e.found) : true;
+
+        if (allVerified) {
+            // MEMBERSHIP DISCOVERY PROTOCOL (Base64 Ranking Lookup)
+            // We use the first verified result as a 'landmark' to find the Membership Number via rankings.
+            let membershipNumber = null;
+            const landmark = evidenceResults.find(e => e.found && e.sport80Metadata);
+            
+            if (landmark && divisionCodes) {
+                const divisionCode = divisionCodes[landmark.sport80Metadata.weightClass];
+                if (divisionCode) {
+                    const resultDate = new Date(landmark.sport80Metadata.date);
+                    // Search in a narrow window around the meet date
+                    const startDate = addDays(resultDate, -7);
+                    const endDate = addDays(resultDate, 14);
+                    
+                    const lookupUrl = buildRankingsURL(divisionCode, startDate, endDate);
+                    console.log(`    🔍 [Membership Discovery] Performing Base64 Ranking Lookup: ${lookupUrl}`);
+                    
+                    try {
+                        const browserToUse = providedBrowser || browser || localBrowserInstance;
+                        const lookupPage = await browserToUse.newPage();
+                        await lookupPage.goto(lookupUrl, { waitUntil: 'networkidle2', timeout: 30000 });
+                        await lookupPage.waitForSelector('.v-data-table__wrapper tbody tr', { timeout: 15000 });
+
+                        membershipNumber = await lookupPage.evaluate((targetName, targetTotal) => {
+                            const rows = Array.from(document.querySelectorAll('.v-data-table__wrapper tbody tr'));
+                            for (const row of rows) {
+                                const cells = row.querySelectorAll('td');
+                                if (cells.length < 5) continue;
+                                
+                                const name = cells[3]?.innerText.trim();
+                                const total = parseFloat(cells[13]?.innerText.trim());
+                                const memNum = cells[2]?.innerText.trim(); // Membership # column
+                                
+                                if (name && name.toLowerCase().includes(targetName.toLowerCase()) && 
+                                    Math.abs(total - targetTotal) < 0.5) {
+                                    return memNum;
+                                }
+                            }
+                            return null;
+                        }, athleteName, parseFloat(landmark.sport80Metadata.total));
+                        
+                        await lookupPage.close();
+                        if (membershipNumber) console.log(`    ✅ [Membership Discovery] Found Mem# ${membershipNumber} via Rankings.`);
+                    } catch (e) {
+                        console.log(`    ⚠️ [Membership Discovery] Base64 Lookup Failed: ${e.message}`);
+                    }
+                }
+            }
+
+            return {
+                verified: true,
+                career_verified: allVerified,
+                persona_conflict: personaConflictCount > 0,
+                conflicts: conflicts,
+                foundDate: evidenceResults.length > 0 ? evidenceResults[0].Date : null,
+                metadata: {
+                    membershipNumber: membershipNumber
+                }
+            };
+        }
+
+        if (isCollisionCheck) {
+            const missingCount = evidenceResults.filter(e => !e.found).length;
+            console.log(`    ❌ [Forensic-Audit] REFUTED: Missing ${missingCount} of ${evidenceResults.length} evidence results.`);
+            evidenceResults.filter(e => !e.found).forEach(e => {
+                console.log(`       - Missing: ${e.Meet} (${e.Date})`);
+            });
+        }
+        
+        return { verified: false, evidenceResults };
 
     } catch (error) {
-        console.log(`    ❌ Error accessing member page: ${error.message}`);
+        console.log(`    ⚠️ Tier 2 verification failed: ${error.message}`);
         return { verified: false };
     } finally {
-        if (localBrowserInstance) {
-            await localBrowserInstance.close();
-        } else if (page) {
-            try {
-                if (!page.isClosed()) await page.close();
-            } catch (e) { /* ignore */ }
-        }
+        if (page && !page.isClosed()) await page.close();
+        if (localBrowserInstance) await localBrowserInstance.close();
     }
 }
+
 
 // Helper to check if athlete exists on official meet results page
 // Helper to check if athlete exists on official meet results page
@@ -2109,6 +1922,61 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
     }
 }
 
+/**
+ * TRIAL DECONTAMINATION UTILITY: Identifies the Master profile for a given membership/name pair.
+ * The Master is defined as the record with the most results OR the primary intended record.
+ */
+async function identifySameNameMaster(membershipNumber, athleteName) {
+    if (!membershipNumber || !athleteName) return null;
+
+    console.log(`    🔍 [Trial] Identifying Master for Mem# ${membershipNumber} (${athleteName})...`);
+
+    const { data: candidates, error } = await supabase
+        .from('usaw_lifters')
+        .select(`
+            lifter_id, 
+            athlete_name, 
+            internal_id, 
+            membership_number
+        `)
+        .eq('membership_number', membershipNumber);
+
+    if (error || !candidates || candidates.length <= 1) return null;
+
+    // Filter to same-name matches (case-insensitive)
+    const sameNameMatches = candidates.filter(c => 
+        c.athlete_name.toLowerCase().trim() === athleteName.toLowerCase().trim()
+    );
+
+    if (sameNameMatches.length <= 1) return null;
+
+    // Fetch result counts for these candidates to determine "Master"
+    const candidatesWithCounts = [];
+    for (const c of sameNameMatches) {
+        const { count } = await supabase
+            .from('usaw_meet_results')
+            .select('*', { count: 'exact', head: true })
+            .eq('lifter_id', c.lifter_id);
+        
+        candidatesWithCounts.push({ ...c, results: count || 0 });
+    }
+
+    // Sort by results (desc) then by internal_id presence
+    candidatesWithCounts.sort((a, b) => {
+        if (b.results !== a.results) return b.results - a.results;
+        if (a.internal_id && !b.internal_id) return -1;
+        if (b.internal_id && !a.internal_id) return 1;
+        return a.lifter_id - b.lifter_id;
+    });
+
+    const master = candidatesWithCounts[0];
+    console.log(`    🏆 [Trial] Master Identified: ${master.athlete_name} (ID: ${master.lifter_id}, results: ${master.results})`);
+    if (candidatesWithCounts.length > 1) {
+        console.log(`    📊 [Trial] Candidates: ${candidatesWithCounts.map(c => `ID ${c.lifter_id} (${c.results})`).join(', ')}`);
+    }
+    return master;
+}
+
 // Sport80 member URL verification wrapper
 async function runSport80MemberUrlVerification(lifterName, potentialLifterIds, targetMeetId, weightClass = null, total = null, snatch = null, cj = null, bodyweight = null, browser = null) {
     console.log(`    🐞 DEBUG runSport80MemberUrlVerification: name=${lifterName}, ids=${potentialLifterIds}, meet=${targetMeetId}, wc=${weightClass}, tot=${total}, sn=${snatch}, cj=${cj}, bw=${bodyweight}`);
@@ -2136,13 +2004,26 @@ async function runSport80MemberUrlVerification(lifterName, potentialLifterIds, t
 
                 if (result.verified) {
                     console.log(`    ✅ CONFIRMED: Using lifter ${lifterId} for meet ${targetMeetId}`);
-                    // Also save membership number if found and missing
+                    
+                    // TRIAL: Master Discovery
                     if (result.metadata?.membershipNumber) {
+                        const masterLifter = await identifySameNameMaster(result.metadata.membershipNumber, lifterName);
+                        
+                        if (masterLifter && masterLifter.lifter_id !== lifterId) {
+                            console.log(`    🚨 [Trial] Collision Detected: Verified result belongs to Master ${masterLifter.lifter_id} instead of Redirecting Candidate ${lifterId}`);
+                            return {
+                                lifterId: masterLifter.lifter_id,
+                                metadata: result.metadata,
+                                decontaminationRequired: true,
+                                sourceDuplicateId: lifterId
+                            };
+                        }
+
                         const { error: memError } = await supabase
                             .from('usaw_lifters')
                             .update({ membership_number: result.metadata.membershipNumber })
                             .eq('lifter_id', lifterId)
-                            .is('membership_number', null); // Only if currently null
+                            .is('membership_number', null);
 
                         if (!memError) {
                             console.log(`      💾 Saved Membership Number ${result.metadata.membershipNumber} for lifter ${lifterId}`);
