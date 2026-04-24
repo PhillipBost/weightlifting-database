@@ -39,7 +39,7 @@ class UnifiedScraperCLI {
             boolean: [
                 'dry-run', 'force', 'help', 'version', 'analyze-only', 'no-metadata',
                 'missing-wso', 'missing-club', 'missing-age', 'missing-gender', 'missing-rank', 'missing-membership', 'missing-internal-id',
-                'exclude-zero-total'
+                'exclude-zero-total', 'membership-duplicates'
             ],
             alias: {
                 'm': 'mode',
@@ -131,8 +131,8 @@ Mode: gaps
             args.missingAge = args['missing-age'];
             args.missingGender = args['missing-gender'];
             args.missingRank = args['missing-rank'];
-            args.missingRank = args['missing-rank'];
             args.missingMembership = args['missing-membership'];
+            args.membershipDuplicates = args['membership-duplicates'];
             args.missingInternalId = args['missing-internal-id'];
             args.excludeZeroTotal = args['exclude-zero-total'];
 

@@ -127,6 +127,70 @@ GROUP BY l.athlete_name,
     r.total
 HAVING COUNT(DISTINCT r.lifter_id) > 1
 ORDER BY l.athlete_name;
+
+-- 1.3 CROSS-NAME RESULT COLLISIONS
+-- Finds exact result matches across DIFFERENT names/profiles
+-- This exposes Nicknames, Marriage name changes, and Typos.
+SELECT 
+    r.meet_id,
+    r.meet_name,
+    r.date,
+    r.total,
+    r.best_snatch,
+    r.best_cj,
+    COUNT(DISTINCT r.lifter_id) as profiles_involved,
+    -- Show all names and IDs sharing this performance
+    STRING_AGG(DISTINCT l.athlete_name || ' (ID: ' || l.lifter_id || ')', ' | ') as humans_involved,
+    -- Show all membership numbers sharing this performance
+    STRING_AGG(DISTINCT COALESCE(l.membership_number::text, 'No Mem#'), ' | ') as membership_numbers
+FROM usaw_meet_results r
+JOIN usaw_lifters l ON r.lifter_id = l.lifter_id
+GROUP BY 
+    r.meet_id, 
+    r.meet_name, 
+    r.date, 
+    r.total, 
+    r.best_snatch, 
+    r.best_cj
+HAVING 
+    COUNT(DISTINCT r.lifter_id) > 1
+ORDER BY 
+    profiles_involved DESC, 
+    r.date DESC;
+
+-- 1.4 MEMBERSHIP COLLISION ROADMAP
+-- Focuses ONLY on the 294 groups sharing membership numbers.
+-- Identifies which results are "Redundant" (already on another ID) vs "Unique".
+WITH CollisionGroups AS (
+    SELECT membership_number, COUNT(*) as id_count
+    FROM usaw_lifters
+    WHERE membership_number IS NOT NULL
+    GROUP BY membership_number
+    HAVING COUNT(*) > 1
+)
+SELECT 
+    l.membership_number,
+    l.athlete_name,
+    l.lifter_id,
+    r.meet_name,
+    r.date,
+    r.total,
+    -- FLAG: Would this move cause a collision on the Master?
+    EXISTS (
+        SELECT 1 
+        FROM usaw_meet_results r2
+        JOIN usaw_lifters l2 ON r2.lifter_id = l2.lifter_id
+        WHERE l2.membership_number = l.membership_number
+          AND l2.lifter_id != l.lifter_id
+          AND r2.meet_name = r.meet_name
+          AND r2.date = r.date
+    ) as IS_REDUNDANT_RECORD
+FROM usaw_lifters l
+JOIN usaw_meet_results r ON l.lifter_id = r.lifter_id
+WHERE l.membership_number IN (SELECT membership_number FROM CollisionGroups)
+ORDER BY l.membership_number, r.date DESC, l.lifter_id;
+
+
 -- =====================================================================================
 -- SECTION 2: CHECK CONSTRAINTS
 -- =====================================================================================
