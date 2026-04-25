@@ -10,7 +10,10 @@
     "import": "node scripts/production/database-importer.js",
     "test": "node scripts/production/meet_scraper.js && node scripts/production/database-importer.js",
     "test:pbt": "jest tests/internal-id-extraction.test.js --verbose",
-    "division-scraper": "node scripts/legacy/division-scraper.js"
+    "division-scraper": "node scripts/legacy/division-scraper.js",
+    "generate:stats": "node scripts/production/generate-population-stats.js",
+    "seed:full": "node scripts/production/seed.js",
+    "refresh:all": "node scripts/production/generate-population-stats.js && node scripts/production/seed.js"
   },
   "author": "Phil Bost",
   "license": "MIT",
@@ -45,7 +48,7 @@
     "lodash": "^4.17.21",
     "minimist": "^1.2.8",
     "papaparse": "^5.5.3",
-    "pg": "^8.11.3",
+    "pg": "^8.20.0",
     "puppeteer": "^24.31.0"
   }
 }

@@ -13,6 +13,217 @@ const clientConfig = {
 };
 
 const OUTPUT_DIR = process.env.OUTPUT_DIR || '/var/www/athlete-data';
+const SHARDS_DIR = path.join(OUTPUT_DIR, 'shards');
+
+// ── Population Stats Loader ──────────────────────────────────────────────────
+let _populationStats = null;
+function getPopulationStats() {
+    if (_populationStats) return _populationStats;
+    const p = path.join(OUTPUT_DIR, 'population_stats.json');
+    if (fs.existsSync(p)) {
+        try {
+            _populationStats = JSON.parse(fs.readFileSync(p, 'utf8'));
+        } catch (e) {
+            _populationStats = {};
+        }
+    }
+    return _populationStats || {};
+}
+
+// ── Metric Calculation Logic ──────────────────────────────────────────────────
+const parseAttempt = (s) => {
+    if (s === null || s === undefined || s === '' || s === '0' || s === '---') return null;
+    if (typeof s === 'number') return s;
+    const n = parseInt(s);
+    return isNaN(n) ? null : n;
+};
+const isSuccess = (v) => { const n = parseAttempt(v); return n !== null && n > 0; };
+const isMiss = (v) => { const n = parseAttempt(v); return n !== null && n < 0; };
+
+function calculateLifterMetrics(results, windowYears = null) {
+    const metrics = {
+        successRate: null, snatchSuccessRate: null, cleanJerkSuccessRate: null,
+        consistencyScore: null, clutchPerformance: null, bounceBackRate: null,
+        snatchBounceBackRate: null, cleanJerkBounceBackRate: null,
+        competitionFrequency: null, qScorePerformance: null,
+        openingStrategy: null, jumpPercentage: null
+    };
+    if (!results || results.length === 0) return metrics;
+
+    const now = new Date();
+    const rollingCutoff = new Date();
+    rollingCutoff.setMonth(now.getMonth() - 36);
+
+    const filtered = windowYears ? results.filter(r => {
+        const d = r.date ? new Date(r.date) : null;
+        return d && !isNaN(d.getTime()) && d >= rollingCutoff;
+    }) : results;
+
+    if (filtered.length === 0) return metrics;
+
+    let totalAtt = 0, totalSucc = 0, snAtt = 0, snSucc = 0, cjAtt = 0, cjSucc = 0;
+    let clutchSit = 0, clutchSucc = 0, sbbSit = 0, sbbSucc = 0, cbbSit = 0, cbbSucc = 0;
+    const totals = [], years = new Set(), qScores = [];
+    const openPercs = [], jumpPercs = [];
+
+    filtered.forEach((r, idx) => {
+        const d = r.date ? new Date(r.date) : null;
+        if (d && !isNaN(d.getTime())) {
+            const year = d.getFullYear();
+            if (year >= 1980 && year <= 2030) years.add(year);
+        }
+
+        const sn = [r.snatch_lift_1, r.snatch_lift_2, r.snatch_lift_3];
+        const cj = [r.cj_lift_1, r.cj_lift_2, r.cj_lift_3];
+        sn.forEach(v => { const n = parseAttempt(v); if (n !== null) { totalAtt++; snAtt++; if (n > 0) { totalSucc++; snSucc++; } } });
+        cj.forEach(v => { const n = parseAttempt(v); if (n !== null) { totalAtt++; cjAtt++; if (n > 0) { totalSucc++; cjSucc++; } } });
+        if (isMiss(sn[0]) && isMiss(sn[1]) && parseAttempt(sn[2]) !== null) { clutchSit++; if (isSuccess(sn[2])) clutchSucc++; }
+        if (isMiss(cj[0]) && isMiss(cj[1]) && parseAttempt(cj[2]) !== null) { clutchSit++; if (isSuccess(cj[2])) clutchSucc++; }
+        if (isMiss(sn[0]) && parseAttempt(sn[1]) !== null) { sbbSit++; if (isSuccess(sn[1])) sbbSucc++; }
+        if (isMiss(cj[0]) && parseAttempt(cj[1]) !== null) { cbbSit++; if (isSuccess(cj[1])) cbbSucc++; }
+        const t = parseAttempt(r.total); if (t && t > 0) totals.push(t);
+        const qs = [parseAttempt(r.qpoints), parseAttempt(r.q_youth), parseAttempt(r.q_masters)].filter(v => v !== null);
+        if (qs.length > 0) qScores.push(Math.max(...qs));
+        const s1 = parseAttempt(sn[0]), s2 = parseAttempt(sn[1]), s3 = parseAttempt(sn[2]);
+        const c1 = parseAttempt(cj[0]), c2 = parseAttempt(cj[1]), c3 = parseAttempt(cj[2]);
+
+        // Opening Strategy: (Opening Snatch + Opening CJ) / Previous Best Total
+        const prev = results[idx + 1];
+        if (prev) {
+            const prevBest = parseAttempt(prev.total);
+            const openingTotal = (s1 ? Math.abs(s1) : 0) + (c1 ? Math.abs(c1) : 0);
+            if (prevBest && openingTotal > 0) openPercs.push((openingTotal / prevBest) * 100);
+        }
+
+        // Jumps: Percent increase between attempts (regardless of make/miss)
+        if (s1 && s2) jumpPercs.push(((Math.abs(s2) - Math.abs(s1)) / Math.abs(s1)) * 100);
+        if (s2 && s3) jumpPercs.push(((Math.abs(s3) - Math.abs(s2)) / Math.abs(s2)) * 100);
+        if (c1 && c2) jumpPercs.push(((Math.abs(c2) - Math.abs(c1)) / Math.abs(c1)) * 100);
+        if (c2 && c3) jumpPercs.push(((Math.abs(c3) - Math.abs(c2)) / Math.abs(c2)) * 100);
+    });
+
+    if (totalAtt > 0) metrics.successRate = (totalSucc / totalAtt) * 100;
+    if (snAtt > 0) metrics.snatchSuccessRate = (snSucc / snAtt) * 100;
+    if (cjAtt > 0) metrics.cleanJerkSuccessRate = (cjSucc / cjAtt) * 100;
+    if (clutchSit > 0) metrics.clutchPerformance = (clutchSucc / clutchSit) * 100;
+    if (sbbSit > 0) metrics.snatchBounceBackRate = (sbbSucc / sbbSit) * 100;
+    if (cbbSit > 0) metrics.cleanJerkBounceBackRate = (cbbSucc / cbbSit) * 100;
+    if (sbbSit + cbbSit > 0) metrics.bounceBackRate = ((sbbSucc + cbbSucc) / (sbbSit + cbbSit)) * 100;
+    if (totals.length >= 2) {
+        const mean = totals.reduce((a, b) => a + b, 0) / totals.length;
+        const variance = totals.reduce((a, b) => a + Math.pow(b - mean, 2), 0) / totals.length;
+        metrics.consistencyScore = Math.max(0, 100 - (Math.sqrt(variance) / mean) * 100);
+    }
+    if (filtered.length >= 2) {
+        const sortedDates = filtered
+            .map(r => r.date ? new Date(r.date) : null)
+            .filter(d => d && !isNaN(d.getTime()))
+            .sort((a, b) => a - b);
+
+        if (sortedDates.length >= 2) {
+            const first = sortedDates[0];
+            const last = sortedDates[sortedDates.length - 1];
+            // Interval-based frequency: (Meets - 1) / Span. Floor span at 90 days to prevent spikes.
+            const diffDays = Math.max(90, (last - first) / (1000 * 60 * 60 * 24));
+            metrics.competitionFrequency = ((filtered.length - 1) / diffDays) * 365.25;
+        } else {
+            metrics.competitionFrequency = 0;
+        }
+    } else {
+        metrics.competitionFrequency = 0;
+    }
+    if (qScores.length > 0) metrics.qScorePerformance = Math.max(...qScores);
+    if (openPercs.length > 0) metrics.openingStrategy = openPercs.reduce((a, b) => a + b, 0) / openPercs.length;
+    if (jumpPercs.length > 0) metrics.jumpPercentage = jumpPercs.reduce((a, b) => a + b, 0) / jumpPercs.length;
+
+    return metrics;
+}
+
+function computePercentile(val, dist) {
+    if (!dist || dist.length === 0 || val === null) return null;
+
+    // Find the first index >= val (start of the tie)
+    let low = 0, high = dist.length;
+    while (low < high) {
+        let mid = (low + high) >> 1;
+        if (dist[mid] < val) low = mid + 1;
+        else high = mid;
+    }
+    const start = low;
+
+    // Find the first index > val (end of the tie)
+    low = 0; high = dist.length;
+    while (low < high) {
+        let mid = (low + high) >> 1;
+        if (dist[mid] <= val) low = mid + 1;
+        else high = mid;
+    }
+    const end = low;
+
+    // Standard statistical percentile: (Below + 0.5 * At) / Total
+    const midPoint = start + (0.5 * (end - start));
+    return Math.round((midPoint / dist.length) * 100);
+}
+
+function normalizeAgeCategory(rawCategory, meetName) {
+    let category = null;
+    const catStr = (rawCategory || '').toLowerCase();
+    const meetStr = (meetName || '').toLowerCase();
+    if (catStr.includes('youth') || catStr.includes('age group')) category = 'Youth';
+    else if (catStr.includes('junior')) category = 'Junior';
+    else if (catStr.includes('masters') || catStr.includes('master')) category = 'Masters';
+    else if (catStr.includes('senior') || catStr.includes('open')) category = 'Senior';
+    if (!category || (category === 'Senior' && (meetStr.includes('junior') || meetStr.includes('youth') || meetStr.includes('master')))) {
+        if (meetStr.includes('youth')) return 'Youth';
+        if (meetStr.includes('junior')) return 'Junior';
+        if (meetStr.includes('master')) return 'Masters';
+    }
+    return category || (catStr ? 'Senior' : null);
+}
+
+function getDemographicBucketKeys(dataSource, gender, ageCategory, meetName) {
+    const keys = [`${dataSource}_all`];
+    const g = (gender || '').toString().toLowerCase().startsWith('f') ? 'F' : ((gender || '').toString().toLowerCase().startsWith('m') ? 'M' : null);
+    const a = normalizeAgeCategory(ageCategory, meetName);
+    if (g) keys.push(`${dataSource}_${g}`);
+    if (a) {
+        keys.push(`${dataSource}_${a}`);
+        if (g) keys.push(`${dataSource}_${g}_${a}`);
+    }
+    return keys;
+}
+
+function getAthletePercentiles(results, gender, source) {
+    const stats = getPopulationStats();
+    const recentRes = (results || []).find(r => r.date);
+    if (!recentRes || !stats) return null;
+    
+    const bucket = getDemographicBucketKeys(source, gender, recentRes.age_category, recentRes.meet_name).reverse().find(k => stats[k]);
+    if (!bucket) return null;
+
+    const bStats = stats[bucket];
+    const careerMetrics = calculateLifterMetrics(results, null);
+    const recentMetrics = calculateLifterMetrics(results, 3);
+
+    const out = {
+        bucket,
+        sampleSize: bStats.successRate?.sampleSize,
+        career: {},
+        recent: {}
+    };
+
+    const keys = ['successRate', 'snatchSuccessRate', 'cleanJerkSuccessRate', 'consistencyScore', 'clutchPerformance', 'bounceBackRate', 'snatchBounceBackRate', 'cleanJerkBounceBackRate', 'competitionFrequency', 'qScorePerformance'];
+
+    keys.forEach(k => {
+        out.career[k] = computePercentile(careerMetrics[k], bStats[k]?.distribution);
+        out.recent[k] = computePercentile(recentMetrics[k], bStats[k]?.distribution);
+    });
+
+    if (recentMetrics.openingStrategy !== null) out.recent.openingStrategyRaw = recentMetrics.openingStrategy;
+    if (recentMetrics.jumpPercentage !== null) out.recent.jumpPercentageRaw = recentMetrics.jumpPercentage;
+
+    return out;
+}
 
 /**
  * THE ASSEMBLER - Phase 4.5 (UNIFIED SINGLE-QUERY)
@@ -20,7 +231,7 @@ const OUTPUT_DIR = process.env.OUTPUT_DIR || '/var/www/athlete-data';
  */
 async function generateAthlete(params, externalClient = null) {
     const { usaw_id, iwf_id } = typeof params === 'object' ? params : { usaw_id: params };
-    
+
     const client = externalClient || new Client(clientConfig);
     if (!externalClient) await client.connect();
 
@@ -198,6 +409,7 @@ async function generateAthlete(params, externalClient = null) {
 
         const countryCode = row.country_code || 'USA';
         const countryName = row.country_name || 'United States';
+        const gender = latestUsaw?.gender || latestIwf?.gender || null;
 
         const data = {
             athlete_name: row.usaw_athlete_name || row.iwf_athlete_name,
@@ -206,13 +418,17 @@ async function generateAthlete(params, externalClient = null) {
             internal_id: row.internal_id,
             country_code: countryCode,
             country_name: countryName,
-            gender: latestUsaw?.gender || latestIwf?.gender || null,
+            gender: gender,
             wso: (row.usaw_results || []).find(r => r.wso && r.wso.trim() !== '')?.wso || null,
             club_name: (row.usaw_results || []).find(r => r.club_name && r.club_name.trim() !== '')?.club_name || null,
             iwf_profiles: row.iwf_profiles,
             external_links: externalLinks,
             usaw_results: row.usaw_results,
-            iwf_results: row.iwf_results
+            iwf_results: row.iwf_results,
+            population_percentiles: {
+                usaw: getAthletePercentiles(row.usaw_results, gender, 'usaw'),
+                iwf: getAthletePercentiles(row.iwf_results, gender, 'iwf')
+            }
         };
 
         const jsonStr = JSON.stringify(data);
