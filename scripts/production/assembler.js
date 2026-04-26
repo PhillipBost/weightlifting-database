@@ -390,6 +390,7 @@ async function generateAthlete(params, externalClient = null) {
                        jsonb_build_object(
                             'id', r.db_result_id,
                             'meet_id', r.db_meet_id,
+                            'iwf_meet_id', m.iwf_meet_id,
                             'date', r.date,
                             'meet_name', r.meet_name,
                             'meets', jsonb_build_object('Level', m.level), -- FIXED: Lowercase for IWF table
