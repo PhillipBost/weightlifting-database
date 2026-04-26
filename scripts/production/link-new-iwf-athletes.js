@@ -137,11 +137,6 @@ async function run() {
         console.error('ERROR: SUPABASE_URL and SUPABASE_SECRET_KEY are required.');
         process.exit(1);
     }
-    if (!process.env.SUPABASE_IWF_URL || !process.env.SUPABASE_IWF_SECRET_KEY) {
-        console.error('ERROR: SUPABASE_IWF_URL and SUPABASE_IWF_SECRET_KEY are required.');
-        process.exit(1);
-    }
-
     // Step 1: Find IWF meets and lifters recently updated (scoped anchor)
     console.log(`\n[1/5] Finding IWF meets updated in last ${lookbackDays} days...`);
     const { data: recentResults, error: recentErr } = await supabaseIwf

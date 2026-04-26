@@ -171,77 +171,63 @@ function computePercentile(val, dist) {
     return Math.round((midPoint / dist.length) * 100);
 }
 
-function normalizeAgeCategory(rawCategory, meetName) {
-    let category = null;
-    const catStr = (rawCategory || '').toLowerCase();
-    const meetStr = (meetName || '').toLowerCase();
-    if (catStr.includes('youth') || catStr.includes('age group')) category = 'Youth';
-    else if (catStr.includes('junior')) category = 'Junior';
-    else if (catStr.includes('masters') || catStr.includes('master')) category = 'Masters';
-    else if (catStr.includes('senior') || catStr.includes('open')) category = 'Senior';
-    if (!category || (category === 'Senior' && (meetStr.includes('junior') || meetStr.includes('youth') || meetStr.includes('master')))) {
-        if (meetStr.includes('youth')) return 'Youth';
-        if (meetStr.includes('junior')) return 'Junior';
-        if (meetStr.includes('master')) return 'Masters';
-    }
-    return category || (catStr ? 'Senior' : null);
+function getQualifyingBuckets(source, gender, age) {
+    if (age === null || age === undefined || !gender) return [];
+    const g = gender.toString().toLowerCase().startsWith('f') ? 'F' : 'M';
+    const buckets = [];
+
+    // IWF Age Group Rules
+    if (age < 13) buckets.push(`${source}_${g}_U13`);
+    if (age >= 13 && age <= 17) buckets.push(`${source}_${g}_Youth`);
+    if (age >= 15 && age <= 20) buckets.push(`${source}_${g}_Junior`);
+    if (age >= 15) buckets.push(`${source}_${g}_Senior`);
+    if (age >= 35) buckets.push(`${source}_${g}_Masters`);
+
+    return buckets;
 }
 
-function getDemographicBucketKeys(dataSource, gender, ageCategory, meetName) {
-    const keys = [`${dataSource}_all`];
-    const g = (gender || '').toString().toLowerCase().startsWith('f') ? 'F' : ((gender || '').toString().toLowerCase().startsWith('m') ? 'M' : null);
-    const a = normalizeAgeCategory(ageCategory, meetName);
-    if (g) keys.push(`${dataSource}_${g}`);
-    if (a) {
-        keys.push(`${dataSource}_${a}`);
-        if (g) keys.push(`${dataSource}_${g}_${a}`);
-    }
-    return keys;
+function getBucketLabel(key) {
+    const parts = key.split('_');
+    const source = parts[0].toUpperCase();
+    const gender = parts[1] === 'F' ? 'Female' : 'Male';
+    const category = parts[2];
+    return `${source} ${gender} ${category}`;
 }
 
-function getAthletePercentiles(results, gender, source) {
+function getAthletePercentiles(results, gender, source, birthYear) {
     if (!results || results.length === 0) return null;
     const stats = getPopulationStats();
-    
-    // Calculate metrics for current career and recent window
+
     const careerMetrics = calculateLifterMetrics(results, null);
     const recentMetrics = calculateLifterMetrics(results, 36);
-    
-    // Get latest meet for demographic context
+
     const latestRes = results.sort((a, b) => new Date(b.date) - new Date(a.date))[0];
-    
-    const out = { senior: { career: {}, recent: {} }, age_group: { career: {}, recent: {} } };
-    
-    // Perspective 1: Senior (Open)
-    const seniorKey = `${source}_${gender.startsWith('f') ? 'F' : 'M'}_Senior`;
-    const sStats = stats[seniorKey];
-    if (sStats) {
-        out.senior.bucket = seniorKey;
-        out.senior.sampleSize = sStats.successRate?.sampleSize;
-        const keys = ['successRate', 'snatchSuccessRate', 'cleanJerkSuccessRate', 'consistencyScore', 'clutchPerformance', 'bounceBackRate', 'snatchBounceBackRate', 'cleanJerkBounceBackRate', 'competitionFrequency', 'qScorePerformance'];
-        keys.forEach(k => {
-            out.senior.career[k] = computePercentile(careerMetrics[k], sStats[k]?.distribution);
-            out.senior.recent[k] = computePercentile(recentMetrics[k], sStats[k]?.distribution);
-        });
-    }
+    const compYear = new Date(latestRes.date).getFullYear();
+    const age = birthYear ? compYear - birthYear : null;
 
-    // Perspective 2: Age Group (Specific)
-    const ageKey = getDemographicBucketKeys(source, gender, latestRes.age_category, latestRes.meet_name).reverse().find(k => stats[k]);
-    if (ageKey) {
-        const aStats = stats[ageKey];
-        out.age_group.bucket = ageKey;
-        out.age_group.sampleSize = aStats.successRate?.sampleSize;
-        const keys = ['successRate', 'snatchSuccessRate', 'cleanJerkSuccessRate', 'consistencyScore', 'clutchPerformance', 'bounceBackRate', 'snatchBounceBackRate', 'cleanJerkBounceBackRate', 'competitionFrequency', 'qScorePerformance'];
-        keys.forEach(k => {
-            out.age_group.career[k] = computePercentile(careerMetrics[k], aStats[k]?.distribution);
-            out.age_group.recent[k] = computePercentile(recentMetrics[k], aStats[k]?.distribution);
-        });
-    }
+    const buckets = getQualifyingBuckets(source, gender, age);
+    const out = {};
 
-    if (recentMetrics.openingStrategy !== null) out.senior.recent.openingStrategyRaw = recentMetrics.openingStrategy;
-    if (recentMetrics.jumpPercentage !== null) out.senior.recent.jumpPercentageRaw = recentMetrics.jumpPercentage;
+    buckets.forEach(bKey => {
+        const bStats = stats[bKey];
+        if (bStats) {
+            out[bKey] = {
+                bucket: getBucketLabel(bKey),
+                sampleSize: bStats.successRate?.sampleSize || 0,
+                career: {},
+                recent: {}
+            };
+            const keys = ['successRate', 'snatchSuccessRate', 'cleanJerkSuccessRate', 'consistencyScore', 'clutchPerformance', 'bounceBackRate', 'snatchBounceBackRate', 'cleanJerkBounceBackRate', 'competitionFrequency', 'qScorePerformance'];
+            keys.forEach(k => {
+                out[bKey].career[k] = computePercentile(careerMetrics[k], bStats[k]?.distribution);
+                out[bKey].recent[k] = computePercentile(recentMetrics[k], bStats[k]?.distribution);
+            });
+            if (recentMetrics.openingStrategy !== null) out[bKey].recent.openingStrategyRaw = recentMetrics.openingStrategy;
+            if (recentMetrics.jumpPercentage !== null) out[bKey].recent.jumpPercentageRaw = recentMetrics.jumpPercentage;
+        }
+    });
 
-    return out;
+    return Object.keys(out).length > 0 ? out : null;
 }
 
 function computeHistoricalPercentile(val, metricMap) {
@@ -266,11 +252,11 @@ function computeHistoricalPercentile(val, metricMap) {
     }
     const end = low;
 
-    // Mid-point logic: (start + end) / 2
-    return Math.round((start + end) / 2);
+    const midPoint = start + (0.5 * (end - start));
+    return Math.round(midPoint);
 }
 
-function getYearlySnapshots(results, gender, source) {
+function getYearlySnapshots(results, gender, source, birthYear) {
     if (!results || results.length === 0) return null;
     const hist = getHistoricalBenchmarks();
     const snapshots = {};
@@ -278,45 +264,33 @@ function getYearlySnapshots(results, gender, source) {
     const years = [...new Set(results.map(r => r.date ? new Date(r.date).getFullYear() : null).filter(y => y !== null))].sort();
 
     years.forEach(year => {
-        // Cumulative career up to that year
         const yearResults = results.filter(r => r.date && new Date(r.date).getFullYear() <= year);
         const metrics = calculateLifterMetrics(yearResults, null);
-        const latestRes = yearResults.sort((a, b) => new Date(b.date) - new Date(a.date))[0];
 
         if (!hist[year]) return;
 
+        const age = birthYear ? year - birthYear : null;
+        const buckets = getQualifyingBuckets(source, gender, age);
         const snapshot = {};
 
-        // Perspective 1: Senior (Open)
-        const seniorKey = `${source}_${gender.startsWith('f') ? 'F' : 'M'}_Senior`;
-        if (hist[year][seniorKey]) {
-            const bStats = hist[year][seniorKey];
-            snapshot.senior = {
-                bucket: seniorKey,
-                sampleSize: bStats.successRate?.sampleSize || 0,
-                metrics: {}
-            };
-            ['successRate', 'snatchSuccessRate', 'cleanJerkSuccessRate', 'qScorePerformance'].forEach(k => {
-                snapshot.senior.metrics[k] = { value: metrics[k], percentile: computeHistoricalPercentile(metrics[k], bStats[k]) };
-            });
-        }
-
-        // Perspective 2: Age Group
-        const ageKey = getDemographicBucketKeys(source, gender, latestRes.age_category, latestRes.meet_name).reverse().find(k => hist[year][k]);
-        if (ageKey) {
-            const bStats = hist[year][ageKey];
-            snapshot.age_group = {
-                bucket: ageKey,
-                sampleSize: bStats.successRate?.sampleSize || 0,
-                metrics: {}
-            };
-            ['successRate', 'snatchSuccessRate', 'cleanJerkSuccessRate', 'qScorePerformance'].forEach(k => {
-                snapshot.age_group.metrics[k] = { value: metrics[k], percentile: computeHistoricalPercentile(metrics[k], bStats[k]) };
-            });
-        }
+        buckets.forEach(bKey => {
+            if (hist[year][bKey]) {
+                const bStats = hist[year][bKey];
+                snapshot[bKey] = {
+                    bucket: getBucketLabel(bKey),
+                    sampleSize: bStats.successRate?.sampleSize || 0,
+                    metrics: {}
+                };
+                const metricKeys = ['successRate', 'snatchSuccessRate', 'cleanJerkSuccessRate', 'qScorePerformance', 'competitionFrequency', 'clutchPerformance', 'bounceBackRate', 'snatchBounceBackRate', 'cleanJerkBounceBackRate'];
+                metricKeys.forEach(k => {
+                    snapshot[bKey].metrics[k] = { value: metrics[k], percentile: computeHistoricalPercentile(metrics[k], bStats[k]) };
+                });
+            }
+        });
 
         if (Object.keys(snapshot).length > 0) snapshots[year] = snapshot;
     });
+
     return Object.keys(snapshots).length > 0 ? snapshots : null;
 }
 
@@ -402,8 +376,9 @@ async function generateAthlete(params, externalClient = null) {
                             'gamx_masters', r.gamx_masters,
                             'wso', r.wso,
                             'club_name', r.club_name,
-                            'gender', r.gender
-                        ) ORDER BY r.date DESC
+                            'gender', r.gender,
+                            'birth_year', r.birth_year
+                        ) ORDER BY r.date::DATE DESC
                     ) as results
                 FROM usaw_meet_results r
                 LEFT JOIN usaw_meets m ON r.meet_id = m.meet_id
@@ -440,8 +415,9 @@ async function generateAthlete(params, externalClient = null) {
                             'gamx_u', r.gamx_u,
                             'gamx_a', r.gamx_a,
                             'gamx_masters', r.gamx_masters,
-                            'gender', r.gender
-                        ) ORDER BY r.date DESC
+                            'gender', r.gender,
+                            'birth_year', r.birth_year
+                        ) ORDER BY r.date::DATE DESC
                     ) as results
                 FROM iwf_meet_results r
                 LEFT JOIN iwf_meets m ON r.db_meet_id = m.db_meet_id
@@ -497,36 +473,35 @@ async function generateAthlete(params, externalClient = null) {
         const latestUsaw = (row.usaw_results || []).find(r => r.date);
         const latestIwf = (row.iwf_results || []).find(r => r.date);
 
-        const externalLinks = [
-            row.internal_id, row.internal_id_2, row.internal_id_3, row.internal_id_4,
-            row.internal_id_5, row.internal_id_6, row.internal_id_7, row.internal_id_8
-        ].filter(id => id !== null && id !== '');
+        // Extract most reliable birth year
+        const birthYear = (row.usaw_results || []).find(r => r.birth_year)?.birth_year || (row.iwf_results || []).find(r => r.birth_year)?.birth_year;
 
-        const countryCode = row.country_code || 'USA';
-        const countryName = row.country_name || 'United States';
-        const gender = latestUsaw?.gender || latestIwf?.gender || null;
+        const externalLinks = [
+            ...(row.iwf_profiles || []).map(p => ({ type: 'iwf', url: p.url })),
+            row.membership_number ? { type: 'usaw', url: `https://usaweightlifting.sport80.com/public/rankings/results/${row.membership_number}` } : null
+        ].filter(Boolean);
 
         const data = {
-            athlete_name: row.usaw_athlete_name || row.iwf_athlete_name,
+            id: usaw_id || iwf_id,
+            linked_usaw_id: row.membership_number,
+            linked_iwf_id: row.prime_iwf_official_id,
+            usaw_athlete_name: row.usaw_athlete_name,
             iwf_athlete_name: row.iwf_athlete_name,
-            membership_number: row.membership_number,
-            internal_id: row.internal_id,
-            country_code: countryCode,
-            country_name: countryName,
-            gender: gender,
-            wso: (row.usaw_results || []).find(r => r.wso && r.wso.trim() !== '')?.wso || null,
-            club_name: (row.usaw_results || []).find(r => r.club_name && r.club_name.trim() !== '')?.club_name || null,
-            iwf_profiles: row.iwf_profiles,
+            athlete_name: row.usaw_athlete_name || row.iwf_athlete_name,
+            birthYear,
+            country_code: row.country_code || 'USA',
+            country_name: row.country_name || 'United States',
+            gender: row.gender || (latestUsaw?.gender) || (latestIwf?.gender),
             external_links: externalLinks,
             usaw_results: row.usaw_results,
             iwf_results: row.iwf_results,
             population_percentiles: {
-                usaw: getAthletePercentiles(row.usaw_results, gender, 'usaw'),
-                iwf: getAthletePercentiles(row.iwf_results, gender, 'iwf')
+                usaw: getAthletePercentiles(row.usaw_results, row.gender || latestUsaw?.gender, 'usaw', birthYear),
+                iwf: getAthletePercentiles(row.iwf_results, row.gender || latestIwf?.gender, 'iwf', birthYear)
             },
             historical_stats: {
-                usaw: getYearlySnapshots(row.usaw_results, gender, 'usaw'),
-                iwf: getYearlySnapshots(row.iwf_results, gender, 'iwf')
+                usaw: getYearlySnapshots(row.usaw_results, row.gender || latestUsaw?.gender, 'usaw', birthYear),
+                iwf: getYearlySnapshots(row.iwf_results, row.gender || latestIwf?.gender, 'iwf', birthYear)
             }
         };
 

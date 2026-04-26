@@ -92,32 +92,19 @@ function calculateLifterMetrics(results) {
     return metrics;
 }
 
-function normalizeAgeCategory(rawCategory, meetName) {
-    let category = null;
-    const catStr = (rawCategory || '').toLowerCase();
-    const meetStr = (meetName || '').toLowerCase();
-    if (catStr.includes('youth') || catStr.includes('age group')) category = 'Youth';
-    else if (catStr.includes('junior')) category = 'Junior';
-    else if (catStr.includes('masters') || catStr.includes('master')) category = 'Masters';
-    else if (catStr.includes('senior') || catStr.includes('open')) category = 'Senior';
-    if (!category || (category === 'Senior' && (meetStr.includes('junior') || meetStr.includes('youth') || meetStr.includes('master')))) {
-        if (meetStr.includes('youth')) return 'Youth';
-        if (meetStr.includes('junior')) return 'Junior';
-        if (meetStr.includes('master')) return 'Masters';
-    }
-    return category || (catStr ? 'Senior' : null);
-}
+function getQualifyingBuckets(source, gender, age) {
+    if (age === null || age === undefined || !gender) return [];
+    const g = gender.toString().toLowerCase().startsWith('f') ? 'F' : 'M';
+    const buckets = [`${source}_${g}_all`];
+    
+    // IWF Age Group Rules
+    if (age < 13) buckets.push(`${source}_${g}_U13`);
+    if (age >= 13 && age <= 17) buckets.push(`${source}_${g}_Youth`);
+    if (age >= 15 && age <= 20) buckets.push(`${source}_${g}_Junior`);
+    if (age >= 15) buckets.push(`${source}_${g}_Senior`);
+    if (age >= 35) buckets.push(`${source}_${g}_Masters`);
 
-function getDemographicBucketKeys(dataSource, gender, ageCategory, meetName) {
-    const keys = [`${dataSource}_all`];
-    const g = (gender || '').toString().toLowerCase().startsWith('f') ? 'F' : ((gender || '').toString().toLowerCase().startsWith('m') ? 'M' : null);
-    const a = normalizeAgeCategory(ageCategory, meetName);
-    if (g) keys.push(`${dataSource}_${g}`);
-    if (a) {
-        keys.push(`${dataSource}_${a}`);
-        if (g) keys.push(`${dataSource}_${g}_${a}`);
-    }
-    return keys;
+    return buckets;
 }
 
 const createEmptyBucket = () => {
@@ -132,7 +119,7 @@ async function run() {
     const client = new Client(clientConfig);
     try {
         await client.connect();
-        console.log('[POPULATION STATS] Building universal benchmarks (Everyone included)...');
+        console.log('[POPULATION STATS] Building inclusive benchmarks (Everyone included)...');
 
         const sources = [
             { name: 'usaw', table: 'usaw_meet_results', idCol: 'lifter_id' },
@@ -140,6 +127,7 @@ async function run() {
         ];
 
         const buckets = {};
+        const currentYear = new Date().getFullYear();
 
         for (const source of sources) {
             console.log(`[POPULATION STATS] Processing ${source.name}...`);
@@ -153,10 +141,12 @@ async function run() {
             });
 
             Object.values(athletes).forEach(results => {
-                // Inclusion: EVERYONE is included once via their career metrics
                 const metrics = calculateLifterMetrics(results);
                 const latest = results[0];
-                const bucketKeys = getDemographicBucketKeys(source.name, latest.gender, latest.age_category, latest.meet_name);
+                const birthYear = results.find(r => r.birth_year)?.birth_year;
+                const age = birthYear ? currentYear - birthYear : null;
+                
+                const bucketKeys = getQualifyingBuckets(source.name, latest.gender, age);
 
                 bucketKeys.forEach(k => {
                     if (!buckets[k]) buckets[k] = createEmptyBucket();
