@@ -43,7 +43,8 @@ module.exports = {
 		52919: 60044, // Nina STERCKX (BEL) -> Nina Sterckx (USAW)
 		58645: 60468, // Malachi John Fejeran LUJAN	(GUM) -> Malachi John Lujan (USAW)
 		51987: 60702, // Bekdoolot RASULBEKOV (KGZ) -> Bekdoolot Rasulbekov (USAW)
-		50193: 57627 // Malek Faed Naji MOUSA (JOR) -> malek mousa (USAW)
+		50193: 57627, // Malek Faed Naji MOUSA (JOR) -> malek mousa (USAW)
+		11095: 151040 // Andrew Ettinger (IWF) -> Andrew Ettinger (USAW)
     },
 
     /**
