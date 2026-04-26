@@ -21,13 +21,19 @@ function getPopulationStats() {
     if (_populationStats) return _populationStats;
     const p = path.join(OUTPUT_DIR, 'population_stats.json');
     if (fs.existsSync(p)) {
-        try {
-            _populationStats = JSON.parse(fs.readFileSync(p, 'utf8'));
-        } catch (e) {
-            _populationStats = {};
-        }
+        try { _populationStats = JSON.parse(fs.readFileSync(p, 'utf8')); } catch (e) { _populationStats = {}; }
     }
     return _populationStats || {};
+}
+
+let _historicalBenchmarks = null;
+function getHistoricalBenchmarks() {
+    if (_historicalBenchmarks) return _historicalBenchmarks;
+    const p = path.join(OUTPUT_DIR, 'historical_benchmarks.json');
+    if (fs.existsSync(p)) {
+        try { _historicalBenchmarks = JSON.parse(fs.readFileSync(p, 'utf8')); } catch (e) { _historicalBenchmarks = {}; }
+    }
+    return _historicalBenchmarks || {};
 }
 
 // ── Metric Calculation Logic ──────────────────────────────────────────────────
@@ -194,35 +200,124 @@ function getDemographicBucketKeys(dataSource, gender, ageCategory, meetName) {
 }
 
 function getAthletePercentiles(results, gender, source) {
+    if (!results || results.length === 0) return null;
     const stats = getPopulationStats();
-    const recentRes = (results || []).find(r => r.date);
-    if (!recentRes || !stats) return null;
     
-    const bucket = getDemographicBucketKeys(source, gender, recentRes.age_category, recentRes.meet_name).reverse().find(k => stats[k]);
-    if (!bucket) return null;
-
-    const bStats = stats[bucket];
+    // Calculate metrics for current career and recent window
     const careerMetrics = calculateLifterMetrics(results, null);
-    const recentMetrics = calculateLifterMetrics(results, 3);
+    const recentMetrics = calculateLifterMetrics(results, 36);
+    
+    // Get latest meet for demographic context
+    const latestRes = results.sort((a, b) => new Date(b.date) - new Date(a.date))[0];
+    
+    const out = { senior: { career: {}, recent: {} }, age_group: { career: {}, recent: {} } };
+    
+    // Perspective 1: Senior (Open)
+    const seniorKey = `${source}_${gender.startsWith('f') ? 'F' : 'M'}_Senior`;
+    const sStats = stats[seniorKey];
+    if (sStats) {
+        out.senior.bucket = seniorKey;
+        out.senior.sampleSize = sStats.successRate?.sampleSize;
+        const keys = ['successRate', 'snatchSuccessRate', 'cleanJerkSuccessRate', 'consistencyScore', 'clutchPerformance', 'bounceBackRate', 'snatchBounceBackRate', 'cleanJerkBounceBackRate', 'competitionFrequency', 'qScorePerformance'];
+        keys.forEach(k => {
+            out.senior.career[k] = computePercentile(careerMetrics[k], sStats[k]?.distribution);
+            out.senior.recent[k] = computePercentile(recentMetrics[k], sStats[k]?.distribution);
+        });
+    }
 
-    const out = {
-        bucket,
-        sampleSize: bStats.successRate?.sampleSize,
-        career: {},
-        recent: {}
-    };
+    // Perspective 2: Age Group (Specific)
+    const ageKey = getDemographicBucketKeys(source, gender, latestRes.age_category, latestRes.meet_name).reverse().find(k => stats[k]);
+    if (ageKey) {
+        const aStats = stats[ageKey];
+        out.age_group.bucket = ageKey;
+        out.age_group.sampleSize = aStats.successRate?.sampleSize;
+        const keys = ['successRate', 'snatchSuccessRate', 'cleanJerkSuccessRate', 'consistencyScore', 'clutchPerformance', 'bounceBackRate', 'snatchBounceBackRate', 'cleanJerkBounceBackRate', 'competitionFrequency', 'qScorePerformance'];
+        keys.forEach(k => {
+            out.age_group.career[k] = computePercentile(careerMetrics[k], aStats[k]?.distribution);
+            out.age_group.recent[k] = computePercentile(recentMetrics[k], aStats[k]?.distribution);
+        });
+    }
 
-    const keys = ['successRate', 'snatchSuccessRate', 'cleanJerkSuccessRate', 'consistencyScore', 'clutchPerformance', 'bounceBackRate', 'snatchBounceBackRate', 'cleanJerkBounceBackRate', 'competitionFrequency', 'qScorePerformance'];
-
-    keys.forEach(k => {
-        out.career[k] = computePercentile(careerMetrics[k], bStats[k]?.distribution);
-        out.recent[k] = computePercentile(recentMetrics[k], bStats[k]?.distribution);
-    });
-
-    if (recentMetrics.openingStrategy !== null) out.recent.openingStrategyRaw = recentMetrics.openingStrategy;
-    if (recentMetrics.jumpPercentage !== null) out.recent.jumpPercentageRaw = recentMetrics.jumpPercentage;
+    if (recentMetrics.openingStrategy !== null) out.senior.recent.openingStrategyRaw = recentMetrics.openingStrategy;
+    if (recentMetrics.jumpPercentage !== null) out.senior.recent.jumpPercentageRaw = recentMetrics.jumpPercentage;
 
     return out;
+}
+
+function computeHistoricalPercentile(val, metricMap) {
+    if (!metricMap || !metricMap.map || val === null) return null;
+    const map = metricMap.map;
+
+    // Find the first index where map[i] >= val (start of tie)
+    let low = 0, high = 100;
+    while (low < high) {
+        let mid = (low + high) >> 1;
+        if (map[mid] < val) low = mid + 1;
+        else high = mid;
+    }
+    const start = low;
+
+    // Find the first index where map[i] > val (end of tie)
+    low = 0; high = 100;
+    while (low < high) {
+        let mid = (low + high) >> 1;
+        if (map[mid] <= val) low = mid + 1;
+        else high = mid;
+    }
+    const end = low;
+
+    // Mid-point logic: (start + end) / 2
+    return Math.round((start + end) / 2);
+}
+
+function getYearlySnapshots(results, gender, source) {
+    if (!results || results.length === 0) return null;
+    const hist = getHistoricalBenchmarks();
+    const snapshots = {};
+
+    const years = [...new Set(results.map(r => r.date ? new Date(r.date).getFullYear() : null).filter(y => y !== null))].sort();
+
+    years.forEach(year => {
+        // Cumulative career up to that year
+        const yearResults = results.filter(r => r.date && new Date(r.date).getFullYear() <= year);
+        const metrics = calculateLifterMetrics(yearResults, null);
+        const latestRes = yearResults.sort((a, b) => new Date(b.date) - new Date(a.date))[0];
+
+        if (!hist[year]) return;
+
+        const snapshot = {};
+
+        // Perspective 1: Senior (Open)
+        const seniorKey = `${source}_${gender.startsWith('f') ? 'F' : 'M'}_Senior`;
+        if (hist[year][seniorKey]) {
+            const bStats = hist[year][seniorKey];
+            snapshot.senior = {
+                bucket: seniorKey,
+                sampleSize: bStats.successRate?.sampleSize || 0,
+                metrics: {}
+            };
+            ['successRate', 'snatchSuccessRate', 'cleanJerkSuccessRate', 'qScorePerformance'].forEach(k => {
+                snapshot.senior.metrics[k] = { value: metrics[k], percentile: computeHistoricalPercentile(metrics[k], bStats[k]) };
+            });
+        }
+
+        // Perspective 2: Age Group
+        const ageKey = getDemographicBucketKeys(source, gender, latestRes.age_category, latestRes.meet_name).reverse().find(k => hist[year][k]);
+        if (ageKey) {
+            const bStats = hist[year][ageKey];
+            snapshot.age_group = {
+                bucket: ageKey,
+                sampleSize: bStats.successRate?.sampleSize || 0,
+                metrics: {}
+            };
+            ['successRate', 'snatchSuccessRate', 'cleanJerkSuccessRate', 'qScorePerformance'].forEach(k => {
+                snapshot.age_group.metrics[k] = { value: metrics[k], percentile: computeHistoricalPercentile(metrics[k], bStats[k]) };
+            });
+        }
+
+        if (Object.keys(snapshot).length > 0) snapshots[year] = snapshot;
+    });
+    return Object.keys(snapshots).length > 0 ? snapshots : null;
 }
 
 /**
@@ -428,6 +523,10 @@ async function generateAthlete(params, externalClient = null) {
             population_percentiles: {
                 usaw: getAthletePercentiles(row.usaw_results, gender, 'usaw'),
                 iwf: getAthletePercentiles(row.iwf_results, gender, 'iwf')
+            },
+            historical_stats: {
+                usaw: getYearlySnapshots(row.usaw_results, gender, 'usaw'),
+                iwf: getYearlySnapshots(row.iwf_results, gender, 'iwf')
             }
         };
 
