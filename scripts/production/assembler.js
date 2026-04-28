@@ -14,6 +14,72 @@ const clientConfig = {
 
 const OUTPUT_DIR = process.env.OUTPUT_DIR || '/var/www/athlete-data';
 const SHARDS_DIR = path.join(OUTPUT_DIR, 'shards');
+const { calculateCompetitionAge, getEligibleDivisions } = require('../shared/division-logic');
+
+// ── Achievement Aggregator ──────────────────────────────────────────────────
+function aggregateAchievements(rankings) {
+    const achievements = {
+        medal_counts: {
+            gold: { total_lift: 0, snatch: 0, cj: 0, combined_total: 0 },
+            silver: { total_lift: 0, snatch: 0, cj: 0, combined_total: 0 },
+            bronze: { total_lift: 0, snatch: 0, cj: 0, combined_total: 0 }
+        },
+        levels: {
+            local: { gold: 0, silver: 0, bronze: 0 },
+            national: { gold: 0, silver: 0, bronze: 0 },
+            international: { gold: 0, silver: 0, bronze: 0 }
+        },
+        medals: []
+    };
+
+    if (!rankings || !Array.isArray(rankings)) return achievements;
+
+    rankings.forEach(r => {
+        const ranks = {
+            total_lift: r.total_rank,
+            snatch: r.snatch_rank,
+            cj: r.cj_rank
+        };
+
+        const level = r.level === 'International' ? 'international' :
+                      (r.level === 'National' || r.level === 'North American Open Series') ? 'national' :
+                      'local';
+
+        let hasMedal = false;
+        Object.entries(ranks).forEach(([type, rank]) => {
+            if (rank >= 1 && rank <= 3) {
+                const medal = rank === 1 ? 'gold' : rank === 2 ? 'silver' : 'bronze';
+                achievements.medal_counts[medal][type]++;
+                achievements.medal_counts[medal].combined_total++;
+                achievements.levels[level][medal]++;
+                hasMedal = true;
+            }
+        });
+
+        if (hasMedal) {
+            achievements.medals.push({
+                result_id: r.result_id,
+                meet_name: r.meet_name,
+                date: r.date,
+                level: r.level,
+                division: r.division,
+                ranks: ranks
+            });
+        }
+    });
+
+    // Sort medals by date descending
+    achievements.medals.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+    // Summary of combined medal counts (Snatch + CJ + Total)
+    achievements.summary = {
+        gold: achievements.medal_counts.gold.combined_total,
+        silver: achievements.medal_counts.silver.combined_total,
+        bronze: achievements.medal_counts.bronze.combined_total
+    };
+
+    return achievements;
+}
 
 // ── Population Stats Loader ──────────────────────────────────────────────────
 let _populationStats = null;
@@ -435,6 +501,25 @@ async function generateAthlete(params, externalClient = null) {
                 FROM iwf_lifters il
                 WHERE il.db_lifter_id IN (SELECT id FROM all_iwf_db_ids)
             ),
+            usaw_rankings_agg AS (
+                SELECT 
+                    jsonb_agg(
+                        jsonb_build_object(
+                            'result_id', dr.result_id,
+                            'division', dr.division_name,
+                            'snatch_rank', dr.snatch_rank,
+                            'cj_rank', dr.cj_rank,
+                            'total_rank', dr.total_rank,
+                            'meet_name', m."Meet",
+                            'date', m."Date",
+                            'level', m."Level"
+                        )
+                    ) as rankings
+                FROM usaw_division_rankings dr
+                JOIN usaw_meet_results r ON dr.result_id = r.result_id
+                JOIN usaw_meets m ON r.meet_id = m.meet_id
+                WHERE dr.athlete_id IN (SELECT id FROM all_usaw_internal_ids)
+            ),
             id_collector AS (
                 -- Final collection of every ID type for the Triple-Writer shard generation
                 SELECT jsonb_build_object(
@@ -457,6 +542,7 @@ async function generateAthlete(params, externalClient = null) {
                 COALESCE(ura.results, '[]'::jsonb) as usaw_results,
                 COALESCE(ira.results, '[]'::jsonb) as iwf_results,
                 COALESCE(ipa.profiles, '[]'::jsonb) as iwf_profiles,
+                COALESCE(urn.rankings, '[]'::jsonb) as usaw_rankings,
                 idc.ids as shard_ids
             FROM (SELECT 1) dummy
             LEFT JOIN usaw_lifters ul ON ul.lifter_id = (SELECT id FROM all_usaw_internal_ids LIMIT 1)
@@ -464,6 +550,7 @@ async function generateAthlete(params, externalClient = null) {
             LEFT JOIN usaw_results_agg ura ON true
             LEFT JOIN iwf_results_agg ira ON true
             LEFT JOIN iwf_profiles_agg ipa ON true
+            LEFT JOIN usaw_rankings_agg urn ON true
             LEFT JOIN id_collector idc ON true;
         `;
 
@@ -497,6 +584,7 @@ async function generateAthlete(params, externalClient = null) {
             external_links: externalLinks,
             usaw_results: row.usaw_results,
             iwf_results: row.iwf_results,
+            achievements: aggregateAchievements(row.usaw_rankings),
             population_percentiles: {
                 usaw: getAthletePercentiles(row.usaw_results, row.gender || latestUsaw?.gender, 'usaw', birthYear),
                 iwf: getAthletePercentiles(row.iwf_results, row.gender || latestIwf?.gender, 'iwf', birthYear)

@@ -123,11 +123,11 @@ async function initBrowser(headless = true) {
     await page.setViewport({ width: 1280, height: 800 });
 }
 
-function buildEventsURL(fromDate, toDate, pageNum = 1) {
+function buildEventsURL(fromDate, toDate) {
     // Use the Locator directory - more comprehensive than /public/events.
     // It includes developmental, club, and interclub meets that are hidden
     // from the main public events directory.
-    return `https://usaweightlifting.sport80.com/pub/e_locator/meets/find?from_date=${fromDate}&to_date=${toDate}&sort=soonest&page=${pageNum}`;
+    return `https://usaweightlifting.sport80.com/pub/e_locator/meets/find?from_date=${fromDate}&to_date=${toDate}&sort=soonest`;
 }
 
 /**
@@ -139,18 +139,11 @@ function buildEventsURL(fromDate, toDate, pageNum = 1) {
 async function scrapeLocatorMeets() {
     return await page.evaluate(() => {
         const el = document.getElementById('app');
-        if (!el) return { meets: [], totalPages: 0, totalMeets: 0 };
+        if (!el) return [];
         try {
             const data = JSON.parse(el.getAttribute('data-page'));
-            const props = data.props || {};
-            const eventsProp = props.events;
-            
-            // Handle both flat array and paginated object structure
-            const meetsList = Array.isArray(eventsProp) ? eventsProp : (eventsProp && eventsProp.data) || [];
-            const totalPages = props.total_pages || 0;
-            const totalMeets = props.result_count || 0;
-
-            if (!Array.isArray(meetsList)) return { meets: [], totalPages, totalMeets };
+            const meetsList = data.props && data.props.events;
+            if (!Array.isArray(meetsList)) return [];
 
             // Month name -> number map for ISO date construction
             const monthMap = { Jan:0,Feb:1,Mar:2,Apr:3,May:4,Jun:5,Jul:6,Aug:7,Sep:8,Oct:9,Nov:10,Dec:11 };
@@ -177,7 +170,7 @@ async function scrapeLocatorMeets() {
                 return `${monthNames[parsed.monthNum]} ${parsed.dayNum}${suffix(parsed.dayNum)} ${parsed.yearNum}`;
             };
 
-            const mappedMeets = meetsList.map(m => {
+            return meetsList.map(m => {
                 // Parse nested date object: { day, month, year, to_date: { day, month, year } }
                 const startParsed = parseDateObj(m.date);
                 const endParsed   = parseDateObj(m.date && m.date.to_date) || startParsed;
@@ -212,10 +205,8 @@ async function scrapeLocatorMeets() {
                     entry_list_url:     m.entry_list_url || null,
                 };
             });
-
-            return { meets: mappedMeets, totalPages, totalMeets };
         } catch (e) {
-            return { meets: [], totalPages: 0, totalMeets: 0 };
+            return [];
         }
     });
 }
@@ -1285,14 +1276,15 @@ async function run() {
     await initBrowser(headless);
 
     try {
+        const url = buildEventsURL(fromDate, toDate);
+        log(`Navigating to ${url}`);
+        await page.goto(url, { waitUntil: 'networkidle0', timeout: 60000 });
+
         let hasNext = true;
         let pageNum = 1;
-        let totalPages = 1;
 
         while (hasNext) {
-            const url = buildEventsURL(fromDate, toDate, pageNum);
-            log(`Navigating to ${url}`);
-            await page.goto(url, { waitUntil: 'networkidle2', timeout: 60000 });
+            log(`Processing directory page ${pageNum}...`);
 
             try {
                 // Locator uses card-based layout, not accordion
@@ -1303,17 +1295,8 @@ async function run() {
                 break;
             }
 
-            const result = await scrapeLocatorMeets();
-            const meets = result.meets;
-            totalPages = result.totalPages || totalPages;
-            const totalMeets = result.totalMeets;
-
-            if (pageNum === 1) {
-                log(`📅 Directory Summary: Found ${totalMeets} meets across ${totalPages} pages.`);
-            }
-
-            log(`Processing directory page ${pageNum} of ${totalPages}...`);
-            log(`Found ${meets.length} meets on this page.`);
+            const meets = await scrapeLocatorMeets();
+            log(`Found ${meets.length} meets.`);
 
             // Initialize batch stats if first run
             if (!global.scraperStats) {
@@ -1510,11 +1493,53 @@ async function run() {
                 }
             }
 
-            // Check if we have more pages
-            if (pageNum < totalPages) {
+
+            log(`Checking for Next button (Page ${pageNum})...`);
+
+            // Checks if next button exists and is not disabled
+            const hasNextPageBtn = await page.evaluate(() => {
+                // Method 1: Standard Vuetify class
+                let btn = document.querySelector('.v-pagination__next');
+
+                // Method 2: Find button with chevron-right icon (User feedback)
+                if (!btn) {
+                    const icon = document.querySelector('.mdi-chevron-right');
+                    if (icon) {
+                        btn = icon.closest('button') || icon.closest('div[role="button"]');
+                    }
+                }
+
+                if (!btn) return false;
+
+                // Check disabled state
+                if (btn.classList.contains('v-pagination__next--disabled')) return false;
+                if (btn.classList.contains('v-pagination__navigation--disabled')) return false; // Another common Vuetify disabled class
+                if (btn.hasAttribute('disabled')) return false;
+                if (btn.getAttribute('aria-disabled') === 'true') return false;
+
+                return true;
+            });
+
+            if (hasNextPageBtn) {
+                log(`  🖱️ Clicking Next button...`);
+                await page.evaluate(() => {
+                    // Try class click first
+                    const btn = document.querySelector('.v-pagination__next');
+                    if (btn) {
+                        btn.click();
+                    } else {
+                        // Fallback to icon parent
+                        const icon = document.querySelector('.mdi-chevron-right');
+                        if (icon) {
+                            const parent = icon.closest('button') || icon.closest('div[role="button"]');
+                            if (parent) parent.click();
+                        }
+                    }
+                });
+                await new Promise(r => setTimeout(r, 4000)); // Generous wait
                 pageNum++;
             } else {
-                log(`  🛑 No more pages (${pageNum}/${totalPages}).`);
+                log(`  🛑 No more pages (Next button disabled or missing).`);
                 hasNext = false;
             }
         }
