@@ -16,6 +16,7 @@ require('dotenv').config();
 const puppeteer = require('puppeteer');
 const { createClient } = require('@supabase/supabase-js');
 const { findOrCreateLifterEnhanced } = require('./findOrCreateLifter-enhanced');
+const minimist = require('minimist');
 const fs = require('fs');
 const path = require('path');
 
@@ -24,6 +25,8 @@ const supabase = createClient(
     process.env.SUPABASE_URL,
     process.env.SUPABASE_SECRET_KEY
 );
+
+let isDryRun = false;
 
 // Logging helper
 function log(msg) {
@@ -110,10 +113,10 @@ function getWSOFromState(state) {
 
 let browser, page;
 
-async function initBrowser() {
-    log('Initializing browser...');
+async function initBrowser(headless = true) {
+    log(`Initializing browser (headless: ${headless})...`);
     browser = await puppeteer.launch({
-        headless: true,
+        headless: headless === true || headless === 'true',
         args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage']
     });
     page = await browser.newPage();
@@ -121,41 +124,90 @@ async function initBrowser() {
 }
 
 function buildEventsURL(fromDate, toDate) {
-    const filters = {
-        from_date: fromDate,
-        to_date: toDate,
-        event_type: 11 // Weightlifting
-    };
-    const filtersStr = Buffer.from(JSON.stringify(filters)).toString('base64');
-    return `https://usaweightlifting.sport80.com/public/events?filters=${filtersStr}`;
+    // Use the Locator directory - more comprehensive than /public/events.
+    // It includes developmental, club, and interclub meets that are hidden
+    // from the main public events directory.
+    return `https://usaweightlifting.sport80.com/pub/e_locator/meets/find?from_date=${fromDate}&to_date=${toDate}&sort=soonest`;
 }
 
-async function scrapeMeetBasicInfo() {
+/**
+ * Scrapes meet list from the Locator directory (e_locator/meets/find).
+ * Reads the Inertia.js data-page JSON to get ALL meet metadata in one shot:
+ * eid, name, date, GPS, address, organizer, registration windows, etc.
+ * This is much faster and more complete than the old accordion-based approach.
+ */
+async function scrapeLocatorMeets() {
     return await page.evaluate(() => {
-        const meetRows = document.querySelectorAll('.row.no-gutters.align-center');
-        const meets = [];
+        const el = document.getElementById('app');
+        if (!el) return [];
+        try {
+            const data = JSON.parse(el.getAttribute('data-page'));
+            const meetsList = data.props && data.props.events;
+            if (!Array.isArray(meetsList)) return [];
 
-        for (const row of meetRows) {
-            const nameEl = row.querySelector('strong');
-            const infoEl = row.querySelector('span.d-block.mt-2.grey--text');
+            // Month name -> number map for ISO date construction
+            const monthMap = { Jan:0,Feb:1,Mar:2,Apr:3,May:4,Jun:5,Jul:6,Aug:7,Sep:8,Oct:9,Nov:10,Dec:11 };
 
-            if (nameEl && infoEl) {
-                const meetName = nameEl.textContent.trim();
-                const infoText = infoEl.textContent.trim();
+            const parseDateObj = (d) => {
+                if (!d || !d.day || !d.month || !d.year) return null;
+                const dayNum = parseInt(d.day, 10);
+                const monthNum = monthMap[d.month]; // 0-indexed
+                const yearNum = parseInt(d.year, 10);
+                if (isNaN(dayNum) || monthNum === undefined || isNaN(yearNum)) return null;
+                return { dayNum, monthNum, yearNum };
+            };
 
-                const parts = infoText.split(' - ');
-                let dateRange = infoText;
-                let location = '';
+            const toISODate = (parsed) => {
+                if (!parsed) return null;
+                return `${parsed.yearNum}-${String(parsed.monthNum + 1).padStart(2, '0')}-${String(parsed.dayNum).padStart(2, '0')}`;
+            };
 
-                if (parts.length >= 2) {
-                    location = parts[parts.length - 1].trim();
-                    dateRange = parts.slice(0, parts.length - 1).join(' - ').trim();
+            const monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+            const toHuman = (parsed) => {
+                if (!parsed) return null;
+                const s = ['st','nd','rd'];
+                const suffix = (d) => s[(d % 10) - 1] && d < 11 || d > 13 ? (s[(d % 10) - 1] || 'th') : 'th';
+                return `${monthNames[parsed.monthNum]} ${parsed.dayNum}${suffix(parsed.dayNum)} ${parsed.yearNum}`;
+            };
+
+            return meetsList.map(m => {
+                // Parse nested date object: { day, month, year, to_date: { day, month, year } }
+                const startParsed = parseDateObj(m.date);
+                const endParsed   = parseDateObj(m.date && m.date.to_date) || startParsed;
+
+                const startISO  = toISODate(startParsed);
+                const endISO    = toISODate(endParsed);
+                const startHuman = toHuman(startParsed);
+                const endHuman   = toHuman(endParsed);
+
+                let dateRange = '';
+                if (startHuman && endHuman) {
+                    dateRange = startHuman === endHuman ? startHuman : `${startHuman} - ${endHuman}`;
                 }
 
-                meets.push({ meet_name: meetName, date_range: dateRange, location: location });
-            }
+                return {
+                    eid:                m.id || null,
+                    meet_name:          m.name || null,
+                    date_range:         dateRange,
+                    start_date:         startISO,
+                    end_date:           endISO,
+                    location:           m.location || null,
+                    latitude:           m.latitude || null,
+                    longitude:          m.longitude || null,
+                    organizer:          m.organiser_name || null,
+                    contact_email:      m.organiser_email || null,
+                    contact_phone:      m.organiser_phone || null,
+                    entries_on_platform: m.entries_on_platform || false,
+                    registration_open:  m.entry_open_timestamp || null,
+                    registration_close: m.entry_close_timestamp || null,
+                    has_entries:        m.has_entries || false,
+                    meet_type:          m.meet_type || null,
+                    entry_list_url:     m.entry_list_url || null,
+                };
+            });
+        } catch (e) {
+            return [];
         }
-        return meets;
     });
 }
 
@@ -247,96 +299,273 @@ async function scrapeDetailedMeetInfo(rowIndex) {
 
 async function scrapeInnerMeetDetails(targetPage) {
     try {
-        // Wait for the icon to appear (wizard page load)
-        await targetPage.waitForSelector('.s80-icon.mdi-information, .mdi-information', { timeout: 10000 }).catch(() => { });
+        // 1. Extract eid from the container
+        const eid = await targetPage.evaluate(() => {
+            const container = document.querySelector('.container--fluid[eid]');
+            return container ? container.getAttribute('eid') : null;
+        });
 
-        return await targetPage.evaluate(async () => {
-            let description = '';
+        let description = null;
+        let locatorDetails = {};
 
-            const infoIcon = document.querySelector('.s80-icon.mdi-information, .mdi-information');
+        if (eid) {
+            log(`    🔍 Found Sport80 eid: ${eid}. Fetching extended details from locator...`);
+            locatorDetails = await scrapeLocatorDetails(eid);
+            description = locatorDetails.description;
+        }
 
-            if (infoIcon) {
-                // Go up to the icon container (.v-list-item__icon)
-                const iconContainer = infoIcon.closest('.v-list-item__icon');
+        // 2. Fallback: try to find the information icon on the current page if locator failed or no eid
+        if (!description) {
+            await targetPage.waitForSelector('.s80-icon.mdi-information, .mdi-information', { timeout: 5000 }).catch(() => { });
 
-                if (iconContainer) {
-                    // content is usually the next sibling
-                    const contentContainer = iconContainer.nextElementSibling;
+            const infoResult = await targetPage.evaluate(async () => {
+                let desc = '';
+                const infoIcon = document.querySelector('.s80-icon.mdi-information, .mdi-information');
 
-                    if (contentContainer && contentContainer.classList.contains('v-list-item__content')) {
-                        // Check for "Show more" inside this content
-                        // Note: User says: <span class="text-padding">Show more</span> in a clickable element.
-                        // We'll search for 'Show more' text.
-                        const buttons = Array.from(contentContainer.querySelectorAll('button, .v-btn, [role="button"], span.text-padding'));
+                if (infoIcon) {
+                    const iconContainer = infoIcon.closest('.v-list-item__icon');
+                    if (iconContainer) {
+                        const contentContainer = iconContainer.nextElementSibling;
+                        if (contentContainer && contentContainer.classList.contains('v-list-item__content')) {
+                            const buttons = Array.from(contentContainer.querySelectorAll('button, .v-btn, [role="button"], span.text-padding'));
+                            const showMoreBtn = buttons.find(b => b.textContent && b.textContent.toLowerCase().includes('show more'));
 
-                        const showMoreBtn = buttons.find(b => b.textContent && b.textContent.toLowerCase().includes('show more'));
-
-                        if (showMoreBtn) {
-                            showMoreBtn.click();
-                            await new Promise(r => setTimeout(r, 1500)); // Wait for dialog animation
-                        }
-
-                        // Check if a dialog opened!
-                        // User snippet: <div class="s80-card dialog-card">...<div class="dialog-content">...
-                        const dialogContent = document.querySelector('.dialog-card .dialog-content');
-
-                        if (dialogContent) {
-                            // Loop through children to get clean text (skipping images if possible, or just textContent)
-                            // innerText preserves newlines better than textContent
-                            description = dialogContent.innerText || dialogContent.textContent;
-
-                            // Close the dialog
-                            const closeBtn = document.querySelector('.dialog-card .close-button, .dialog-card button.close-button');
-                            if (closeBtn) {
-                                closeBtn.click();
-                                await new Promise(r => setTimeout(r, 800)); // Wait for close
+                            if (showMoreBtn) {
+                                showMoreBtn.click();
+                                await new Promise(r => setTimeout(r, 1500));
                             }
-                        } else {
-                            // Fallback: Extract text from the specific container if no dialog appeared
-                            description = contentContainer.innerText || contentContainer.textContent;
 
-                            // Clean up "Show more" text itself if it remains
-                            description = description.replace(/Show more/gi, '').replace(/Show less/gi, '');
+                            const dialogContent = document.querySelector('.dialog-card .dialog-content');
+                            if (dialogContent) {
+                                desc = dialogContent.innerText || dialogContent.textContent;
+                                const closeBtn = document.querySelector('.dialog-card .close-button, .dialog-card button.close-button');
+                                if (closeBtn) closeBtn.click();
+                            } else {
+                                desc = contentContainer.innerText || contentContainer.textContent;
+                                desc = desc.replace(/Show more/gi, '').replace(/Show less/gi, '');
+                            }
                         }
-
-                        description = description.trim();
-
-                        // Clean up known "junk" that might be appended
-                        // "Get Started" is the footer junk.
-                        if (description.includes('Get Started')) {
-                            description = description.split('Get Started')[0].trim();
-                        }
-                        if (description.includes('Organizer')) { // prevent running into organizer details
-                            description = description.split('Organizer')[0].trim();
-                        }
-                    } else {
-                        return { description: null, error: 'No content sibling found' };
-                    }
-                } else {
-                    // Fallback to previous parent logic if structure differs
-                    const parent = infoIcon.closest('.row') || infoIcon.closest('.v-list-item');
-                    if (parent) {
-                        description = parent.textContent.trim();
                     }
                 }
-            } else {
-                return { description: null, error: 'No info icon found' };
-            }
+                return desc;
+            });
+            description = infoResult;
+        }
 
-            return { description };
-        });
+        return { 
+            description, 
+            eid,
+            address: locatorDetails.address,
+            latitude: locatorDetails.latitude,
+            longitude: locatorDetails.longitude
+        };
     } catch (e) {
         log(`  ⚠️ Failed to scrape inner details: ${e.message}`);
         return { description: null };
     }
 }
 
+/**
+ * Scrapes the Sport80 locator view page for the meet description and coordinates
+ */
+async function scrapeLocatorDetails(eid) {
+    let locatorPage = null;
+    try {
+        locatorPage = await browser.newPage();
+        await locatorPage.setViewport({ width: 1280, height: 800 });
+        const url = `https://usaweightlifting.sport80.com/pub/e_locator/meets/view/${eid}`;
+        
+        await locatorPage.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
+        
+        // Wait for content
+        await locatorPage.waitForSelector('.v-card, .v-list-item', { timeout: 10000 }).catch(() => {});
+
+        const details = await locatorPage.evaluate(() => {
+            const el = document.getElementById('app');
+            if (!el) return {};
+            
+            try {
+                const data = JSON.parse(el.getAttribute('data-page'));
+                const event = data.props.event;
+                const additionalInfo = data.props.additional_info || [];
+                
+                // 1. Extract description (from additional_info)
+                let description = '';
+                for (const info of additionalInfo) {
+                    if (info.label === 'Information' || info.label === 'About') {
+                        description = info.text || '';
+                        break;
+                    }
+                }
+                
+                // Clean up HTML from description
+                const cleanDescription = description
+                    .replace(/<br\s*\/?>/gi, '\n')
+                    .replace(/<\/p>/gi, '\n')
+                    .replace(/<[^>]*>/g, '')
+                    .replace(/&nbsp;/g, ' ')
+                    .replace(/\n\s*\n/g, '\n')
+                    .trim();
+
+                return {
+                    description: cleanDescription || null,
+                    address: event.location || null,
+                    latitude: event.latitude || null,
+                    longitude: event.longitude || null
+                };
+            } catch (e) {
+                return {};
+            }
+        });
+
+        // 3. Fallback to iframe extraction if Inertia data is missing coordinates (unlikely but safe)
+        if (!details.latitude || !details.longitude) {
+            const coords = await extractCoordinatesFromLocator(locatorPage);
+            if (coords) {
+                details.latitude = coords.latitude;
+                details.longitude = coords.longitude;
+            }
+        }
+
+        return details;
+    } catch (e) {
+        log(`    ⚠️ Error scraping locator details for ${eid}: ${e.message}`);
+        return {};
+    } finally {
+        if (locatorPage) await locatorPage.close();
+    }
+}
+
+/**
+ * Helper to extract GPS coordinates from Google Maps iframe on locator page
+ */
+async function extractCoordinatesFromLocator(page) {
+    try {
+        const iframeSrc = await page.evaluate(() => {
+            const iframe = document.querySelector('iframe[src*="google.com/maps"]');
+            return iframe ? iframe.src : null;
+        });
+
+        if (!iframeSrc) return null;
+
+        // Parse from URL params or path
+        const parseCoords = (url) => {
+            // !2d longitude !3d latitude
+            const lngMatch = url.match(/!2d(-?\d+\.\d+)/);
+            const latMatch = url.match(/!3d(-?\d+\.\d+)/);
+            if (lngMatch && latMatch) {
+                return { latitude: parseFloat(latMatch[1]), longitude: parseFloat(lngMatch[1]) };
+            }
+            // @lat,lng
+            const atMatch = url.match(/@(-?\d+\.\d+),(-?\d+\.\d+)/);
+            if (atMatch) {
+                return { latitude: parseFloat(atMatch[1]), longitude: parseFloat(atMatch[2]) };
+            }
+            return null;
+        };
+
+        let coords = parseCoords(iframeSrc);
+        if (coords) return coords;
+
+        // Strategy 2: Find "View larger map" link
+        const frames = page.frames();
+        const mapFrame = frames.find(f => f.url().includes('google.com/maps'));
+        if (mapFrame) {
+            const mapUrl = await mapFrame.evaluate(() => {
+                const link = document.querySelector('a[href*="maps.google.com"]');
+                return link ? link.href : null;
+            });
+            if (mapUrl) return parseCoords(mapUrl);
+        }
+
+        return null;
+    } catch (e) {
+        return null;
+    }
+}
+
+/**
+ * Navigates to the locator view page for a given eid, finds the entry list
+ * link, navigates to it, and returns the page.
+ * This replaces findAndClickEntryButton which required a row index on the
+ * old accordion-based /public/events page.
+ */
+async function navigateToLocatorForEntries(eid, entryListUrl = null) {
+    let viewPage = null;
+    try {
+        // Fast path: if we already have the entry list URL from the search results JSON, use it directly
+        if (entryListUrl) {
+            log(`  🔗 Using entry_list_url from locator JSON: ${entryListUrl}`);
+            viewPage = await browser.newPage();
+            await viewPage.setViewport({ width: 1280, height: 800 });
+            await viewPage.goto(entryListUrl, { waitUntil: 'networkidle2', timeout: 30000 });
+            return viewPage;
+        }
+
+        // Slow path: navigate to locator view page and extract the entry list link
+        const locatorUrl = `https://usaweightlifting.sport80.com/pub/e_locator/meets/view/${eid}`;
+        viewPage = await browser.newPage();
+        await viewPage.setViewport({ width: 1280, height: 800 });
+        log(`  📋 Navigating to locator view for eid ${eid}...`);
+        await viewPage.goto(locatorUrl, { waitUntil: 'networkidle2', timeout: 30000 });
+
+        // Try to extract the entry list URL from data-page JSON first
+        const foundUrl = await viewPage.evaluate(() => {
+            try {
+                const el = document.getElementById('app');
+                if (!el) return null;
+                const data = JSON.parse(el.getAttribute('data-page'));
+                const props = data.props || {};
+                if (props.entry_list_url) return props.entry_list_url;
+                if (props.event && props.event.entry_list_url) return props.event.entry_list_url;
+            } catch (e) { /* fall through */ }
+            return null;
+        });
+
+        if (foundUrl) {
+            log(`  🔗 Found entry list URL in data-page: ${foundUrl}`);
+            await viewPage.goto(foundUrl, { waitUntil: 'networkidle2', timeout: 30000 });
+            return viewPage;
+        }
+
+        // Fallback: find Entry List link in DOM
+        const entryLinkHandle = await viewPage.evaluateHandle(() => {
+            const links = Array.from(document.querySelectorAll('a'));
+            return links.find(a => {
+                const txt = (a.textContent || '').trim();
+                return txt.includes('Entry List') || txt.includes('View Public Entries') || txt.includes('Public Entries');
+            });
+        });
+
+        if (entryLinkHandle && entryLinkHandle.asElement()) {
+            log(`  🔗 Found Entry List link in DOM, clicking...`);
+            await Promise.all([
+                viewPage.waitForNavigation({ waitUntil: 'networkidle2', timeout: 15000 }).catch(() => {}),
+                entryLinkHandle.asElement().click()
+            ]);
+            return viewPage;
+        }
+
+        log(`  (No Entry List link found on locator view page for eid ${eid})`);
+        await viewPage.close().catch(() => {});
+        return null;
+    } catch (e) {
+        log(`  ⚠️ Could not navigate to entry list for eid ${eid}: ${e.message}`);
+        if (viewPage) await viewPage.close().catch(() => {});
+        return null;
+    }
+}
+
+
 async function findEntryButtonOnWizard(targetPage) {
     try {
         // Look for "View Public Entries" link/button
         const btnHandle = await targetPage.evaluateHandle(() => {
-            const elements = Array.from(document.querySelectorAll('a, button, div[role="button"], span.v-btn__content'));
-            return elements.find(el => el.textContent.trim().includes('View Public Entries') || el.textContent.trim().includes('Public Entries'));
+            const elements = Array.from(document.querySelectorAll('a, button, div[role="button"], span.v-btn__content, span.text-padding'));
+            return elements.find(el => {
+                const txt = el.textContent.trim();
+                return txt.includes('Entry List') || txt.includes('View Public Entries') || txt.includes('Public Entries');
+            });
         });
 
         if (btnHandle.asElement()) {
@@ -421,6 +650,27 @@ async function scrapeEntriesFromPage(targetPage) {
     let allEntries = [];
     let currentPage = 1;
     let hasNextPage = true;
+    let lastPageFingerprint = '';
+
+    // Extract total records from header if available
+    const totalRecords = await targetPage.evaluate(() => {
+        const h2 = Array.from(document.querySelectorAll('h2')).find(el => el.textContent.includes('Records'));
+        if (h2) {
+            const match = h2.textContent.match(/(\d+)\s+Records/);
+            return match ? parseInt(match[1]) : null;
+        }
+        // Fallback to footer
+        const footer = document.querySelector('.v-data-footer__pagination');
+        if (footer) {
+            const match = footer.textContent.match(/of\s+(\d+)/);
+            return match ? parseInt(match[1]) : null;
+        }
+        return null;
+    });
+
+    if (totalRecords) {
+        log(`  📄 Found ${totalRecords} total records. Scraping pages...`);
+    }
 
     // Loop until next button disabled
     while (hasNextPage) {
@@ -466,23 +716,32 @@ async function scrapeEntriesFromPage(targetPage) {
         });
 
         if (pageEntries.length > 0) {
+            // Check if we are stuck on the same page
+            const currentFingerprint = pageEntries[0].member_id + pageEntries[pageEntries.length - 1].member_id;
+            if (currentFingerprint === lastPageFingerprint) {
+                log(`    ⚠️ Page content did not change. Stopping pagination to prevent loop.`);
+                hasNextPage = false;
+                break;
+            }
+            lastPageFingerprint = currentFingerprint;
             allEntries.push(...pageEntries);
-        } else {
-            // If a page is empty, maybe we reached the end or it's loading?
-            // But valid pagination usually has data.
         }
 
         // Improved Next Button logic
         const clickedNext = await targetPage.evaluate(() => {
-            // 1. Try standard Vuetify class
-            let nextBtn = document.querySelector('.v-pagination__next:not(.v-pagination__next--disabled)');
+            // 1. Try ARIA label (most robust for accessibility/Vuetify)
+            let nextBtn = document.querySelector("button[aria-label='Next page']:not([disabled])");
 
-            // 2. Try identifying by icon if class not found or matches disabled
+            // 2. Try standard Vuetify class
+            if (!nextBtn) {
+                nextBtn = document.querySelector('.v-pagination__next:not(.v-pagination__next--disabled)');
+            }
+
+            // 3. Try identifying by icon
             if (!nextBtn) {
                 const icon = document.querySelector('.v-pagination__next .mdi-chevron-right, .mdi-chevron-right');
                 if (icon) {
-                    // Check if parent is disabled
-                    const btnCandidate = icon.closest('button') || icon.closest('div[role="button"]') || icon.closest('.v-pagination__next');
+                    const btnCandidate = icon.closest('button') || icon.closest('div[role="button"]');
                     if (btnCandidate) {
                         const isDisabled = btnCandidate.classList.contains('v-pagination__next--disabled') ||
                             btnCandidate.hasAttribute('disabled') ||
@@ -570,22 +829,23 @@ function parseStartDateFromRange(dateRange) {
 async function findMeet(meetData) {
     const { meet_name, date_range } = meetData;
 
-    // Extract start date from the date range
-    const startDate = parseStartDateFromRange(date_range);
+    // Extract start and end dates from the date range
+    const { start: startDate, end: endDate } = parseDatesFromEventDate(date_range);
 
     // Only match if we have both name AND date
     // This prevents incorrect matches between different years of the same meet
-    if (!startDate) {
+    if (!startDate || !endDate) {
         // Cannot match without a valid date
         return null;
     }
 
-    // Try exact match on name AND date
+    // Try match on name AND date falling between start and end date
     let { data } = await supabase
         .from('usaw_meets')
         .select('meet_id, Meet, Date')
         .eq('Meet', meet_name)
-        .eq('Date', startDate)
+        .gte('Date', startDate)
+        .lte('Date', endDate)
         .limit(1);
 
     if (data && data.length > 0) {
@@ -611,34 +871,81 @@ async function upsertMeetListing(meetData, meetDetails, matchedMeetId = null) {
     // Parse start and end dates for sorting
     const { start, end } = parseDatesFromEventDate(date_range);
 
+    // Parse granular address fields
+    const { parseAddressIntelligently } = require('../geographic/fix-address-parsing');
+    const parsedAddr = parseAddressIntelligently(meetDetails.address || meetData.location || '');
+
     const listingData = {
         meet_name,
-        event_date: date_range,  // Store full date range as TEXT
+        event_date: date_range,
         start_date: start,
         end_date: end,
         meet_type: meetDetails.meetType || null,
         address: meetDetails.address || null,
-        location_text: meetData.location || null, // Capture from basic info loop
+        street_address: parsedAddr.street_address || null,
+        city: parsedAddr.city || null,
+        state: parsedAddr.state || null,
+        zip_code: parsedAddr.zip_code || null,
+        country: parsedAddr.country || 'United States',
+        meet_description: meetDetails.description || null,
+        latitude: meetDetails.latitude || null,
+        longitude: meetDetails.longitude || null,
+        location_text: meetData.location || null,
         organizer: meetDetails.organizer || null,
-        contact_phone: meetDetails.phone || null,  // Fixed: was meetDetails.contactPhone
-        contact_email: meetDetails.email || null,  // Fixed: was meetDetails.contactEmail
-        registration_open: meetDetails.registrationOpen || null,
-        registration_close: meetDetails.registrationClose || null,
-        entries_on_platform: meetDetails.entriesOnPlatform || null,
+        contact_phone: meetDetails.contact_phone || meetDetails.phone || null,
+        contact_email: meetDetails.contact_email || meetDetails.email || null,
+        registration_open: meetDetails.registration_open || meetDetails.registrationOpen || null,
+        registration_close: meetDetails.registration_close || meetDetails.registrationClose || null,
+        entries_on_platform: meetDetails.entries_on_platform ?? meetDetails.entriesOnPlatform ?? null,
         meet_id: matchedMeetId,
-        meet_match_status: matchedMeetId ? 'matched' : 'unmatched', // Added meet_match_status
+        meet_match_status: matchedMeetId ? 'matched' : 'unmatched',
         last_seen_at: new Date().toISOString()
     };
 
-    // Upsert: insert if new, update last_seen_at if exists
-    const { data, error } = await supabase
+    // Check for existing record to provide clear logging
+    const { data: existing } = await supabase
         .from('usaw_meet_listings')
-        .upsert(listingData, {
-            onConflict: 'meet_name,event_date',
-            ignoreDuplicates: false
-        })
-        .select('listing_id, meet_id')
-        .single();
+        .select('listing_id')
+        .eq('meet_name', meet_name)
+        .eq('event_date', date_range)
+        .maybeSingle();
+
+    if (existing) {
+        log(`  ✅ Match found in usaw_meet_listings (Scraper): ID ${existing.listing_id}`);
+    } else {
+        log(`  ➕ No existing listing found for "${meet_name}". Prepared to insert new record.`);
+    }
+
+    // Upsert: insert if new, update last_seen_at if exists
+    let data = { listing_id: 'DRY-RUN-LISTING', meet_id: matchedMeetId };
+    let error = null;
+
+    if (isDryRun) {
+        if (existing) {
+            data.listing_id = existing.listing_id;
+            log(`    [DRY RUN] Would UPDATE listing ${data.listing_id} for "${meet_name}"`);
+        } else {
+            log(`    [DRY RUN] Would INSERT NEW listing for "${meet_name}"`);
+        }
+        // Print a preview of what would be written
+        const pad = (s) => String(s).padEnd(24);
+        const preview = Object.entries(listingData)
+            .filter(([, v]) => v !== null && v !== undefined && v !== '')
+            .map(([k, v]) => `      ${pad(k)} ${v}`)
+            .join('\n');
+        log(`    [DRY RUN] Listing data preview:\n${preview}`);
+    } else {
+        const { data: upsertData, error: upsertError } = await supabase
+            .from('usaw_meet_listings')
+            .upsert(listingData, {
+                onConflict: 'meet_name,event_date',
+                ignoreDuplicates: false
+            })
+            .select('listing_id, meet_id')
+            .single();
+        data = upsertData;
+        error = upsertError;
+    }
 
     if (error) {
         log(`  ❌ Failed to upsert listing for "${meet_name}": ${error.message}`);
@@ -652,6 +959,11 @@ async function upsertMeetListing(meetData, meetDetails, matchedMeetId = null) {
 async function updateListingEntryStatus(listingId, hasEntryList) {
     if (!listingId) return;
 
+    if (isDryRun) {
+        log(`    [DRY RUN] Would update listing entry status for ID ${listingId}`);
+        return;
+    }
+
     await supabase.from('usaw_meet_listings').update({
         has_entry_list: hasEntryList,
         last_scraped_at: new Date().toISOString()
@@ -660,6 +972,11 @@ async function updateListingEntryStatus(listingId, hasEntryList) {
 
 async function updateMeetEntryStatus(meetId, hasEntryList) {
     if (!meetId) return; // Can't update if no ID
+
+    if (isDryRun) {
+        log(`    [DRY RUN] Would update meet entry status for ID ${meetId}`);
+        return;
+    }
 
     await supabase.from('usaw_meets').update({
         has_entry_list: hasEntryList,
@@ -680,6 +997,8 @@ async function processEntries(meetId, meetName, entries, eventDate, meetDetails 
 
                 // 1. Find or Create Lifter
                 const fullName = `${entry.first_name} ${lastName}`;
+                log(`  ➡️ Processing: ${fullName} (ID: ${entry.member_id || 'N/A'})`);
+                
                 const lifterData = {
                     membership_number: entry.member_id,
                     ageCategory: entry.division,
@@ -703,7 +1022,11 @@ async function processEntries(meetId, meetName, entries, eventDate, meetDetails 
                 }
 
                 if (!lifterId) {
-                    const { result } = await findOrCreateLifterEnhanced(supabase, fullName, { ...lifterData, createIfNeeded: false });
+                    const { result } = await findOrCreateLifterEnhanced(supabase, fullName, { 
+                        ...lifterData, 
+                        createIfNeeded: false,
+                        dryRun: isDryRun 
+                    });
                     lifterId = result.lifter_id;
 
                     if (lifterId) {
@@ -780,28 +1103,37 @@ async function processEntries(meetId, meetName, entries, eventDate, meetDetails 
 
                     if (hasChanges) {
                         // Only update if data actually changed
-                        const { data: updateData, error: updateError } = await supabase
-                            .from('usaw_meet_entries')
-                            .update(entryRecord)
-                            .eq('id', existingRecord.id)
-                            .select('created_at, updated_at')
-                            .single();
-                        upsertData = updateData;
-                        error = updateError;
+                        if (isDryRun) {
+                            log(`    [DRY RUN] Would update entry for ${fullName}`);
+                            upsertData = { created_at: '2000-01-01', updated_at: new Date().toISOString() };
+                        } else {
+                            const { data: updateData, error: updateError } = await supabase
+                                .from('usaw_meet_entries')
+                                .update(entryRecord)
+                                .eq('id', existingRecord.id)
+                                .select('created_at, updated_at')
+                                .single();
+                            upsertData = updateData;
+                            error = updateError;
+                        }
                     } else {
                         // No changes, skip UPDATE
-                        // Don't set upsertData - we'll skip the new/updated check below
                         stats.unchangedEntries = (stats.unchangedEntries || 0) + 1;
                     }
                 } else {
                     // Insert new record
-                    const { data: insertData, error: insertError } = await supabase
-                        .from('usaw_meet_entries')
-                        .insert(entryRecord)
-                        .select('created_at, updated_at')
-                        .single();
-                    upsertData = insertData;
-                    error = insertError;
+                    if (isDryRun) {
+                        log(`    [DRY RUN] Would insert entry for ${fullName}`);
+                        upsertData = { created_at: new Date().toISOString(), updated_at: new Date().toISOString() };
+                    } else {
+                        const { data: insertData, error: insertError } = await supabase
+                            .from('usaw_meet_entries')
+                            .insert(entryRecord)
+                            .select('created_at, updated_at')
+                            .single();
+                        upsertData = insertData;
+                        error = insertError;
+                    }
                 }
 
                 if (!error && upsertData) {
@@ -858,6 +1190,8 @@ OPTIONS:
   --days N                   Scrape from today to N days ahead
   --year YYYY                Scrape entire year (Jan 1 - Dec 31)
   --headless                 Run browser in headless mode (default: true)
+  --dry-run                  Run without writing to the database
+  --meta-only                Only scrape meet details/locations, skip entries
   --help                     Show this help message
 
 EXAMPLES:
@@ -881,32 +1215,50 @@ ENVIRONMENT VARIABLES:
 }
 
 async function run() {
-    const args = process.argv.slice(2);
+    const argv = minimist(process.argv.slice(2), {
+        string: ['from', 'to', 'year', 'days'],
+        boolean: ['headless', 'dry-run', 'meta-only', 'help'],
+        alias: { h: 'help', d: 'dry-run', m: 'meta-only' },
+        default: { headless: true }
+    });
 
     // Show help if requested
-    if (args.includes('--help') || args.includes('-h')) {
+    if (argv.help) {
         showHelp();
     }
 
-    let fromDate, toDate;
+    if (argv['dry-run']) {
+        isDryRun = true;
+        log('🛡️ DRY RUN MODE ENABLED. No database writes will occur.');
+    }
 
-    // Priority: --from/--to > --year > --days > default
-    if (args.includes('--from') && args.includes('--to')) {
-        fromDate = args[args.indexOf('--from') + 1];
-        toDate = args[args.indexOf('--to') + 1];
+    let fromDate = argv.from;
+    let toDate = argv.to;
+    let days = argv.days;
+    let year = argv.year;
+    const headless = argv.headless;
 
+    // Fallback: If no flags but we have positional arguments that look like dates
+    if (!fromDate && !toDate && !days && !year && argv._.length >= 2) {
+        if (/^\d{4}-\d{2}-\d{2}$/.test(argv._[0]) && /^\d{4}-\d{2}-\d{2}$/.test(argv._[1])) {
+            fromDate = argv._[0];
+            toDate = argv._[1];
+            log(`📅 Detected positional dates: ${fromDate} to ${toDate}`);
+        }
+    }
+
+    if (fromDate && toDate) {
         // Validate date format
         if (!/^\d{4}-\d{2}-\d{2}$/.test(fromDate) || !/^\d{4}-\d{2}-\d{2}$/.test(toDate)) {
             console.error('❌ Error: Dates must be in YYYY-MM-DD format');
             console.error('   Example: --from 2026-03-01 --to 2026-03-31');
             process.exit(1);
         }
-    } else if (args.includes('--year')) {
-        const y = args[args.indexOf('--year') + 1];
-        fromDate = `${y}-01-01`;
-        toDate = `${y}-12-31`;
-    } else if (args.includes('--days')) {
-        const d = parseInt(args[args.indexOf('--days') + 1]);
+    } else if (year) {
+        fromDate = `${year}-01-01`;
+        toDate = `${year}-12-31`;
+    } else if (days) {
+        const d = parseInt(days);
         const now = new Date();
         fromDate = now.toISOString().split('T')[0];
         const future = new Date(now);
@@ -920,8 +1272,8 @@ async function run() {
         toDate = future.toISOString().split('T')[0];
     }
 
-    log(`Starting scrape for ${fromDate} to ${toDate}`);
-    await initBrowser();
+    log(`🚀 Starting scrape from ${fromDate} to ${toDate}`);
+    await initBrowser(headless);
 
     try {
         const url = buildEventsURL(fromDate, toDate);
@@ -935,14 +1287,15 @@ async function run() {
             log(`Processing directory page ${pageNum}...`);
 
             try {
-                await page.waitForSelector('.row.no-gutters.align-center, .v-expansion-panel', { timeout: 15000 });
+                // Locator uses card-based layout, not accordion
+                await page.waitForSelector('#app[data-page]', { timeout: 15000 });
                 await new Promise(r => setTimeout(r, 1000));
             } catch (e) {
                 log('  ⚠️ No meets found (timeout).');
                 break;
             }
 
-            const meets = await scrapeMeetBasicInfo();
+            const meets = await scrapeLocatorMeets();
             log(`Found ${meets.length} meets.`);
 
             // Initialize batch stats if first run
@@ -952,14 +1305,15 @@ async function run() {
                     meetsFound: 0,
                     meetsWithEntries: 0,
                     meetsSkipped: 0,
+                    metaOnlyMeets: 0,
                     totalEntriesScraped: 0,
                     newEntriesAdded: 0,
                     entriesUpdated: 0,
                     entriesSkipped: 0,
                     dbErrors: 0,
-                    dbErrors: 0,
                     unmatchedMeets: 0,
-                    failedMeets: [] // Track meets with errors for summary
+                    failedMeets: [], // Track meets with errors for summary
+                    skippedMeetsDetails: [] // Track meets that were skipped (no access)
                 };
             }
             global.scraperStats.meetsFound += meets.length;
@@ -975,19 +1329,42 @@ async function run() {
                 let meetId = null;
 
                 if (dbMeet) {
-                    log(`  ✅ Match found in DB: ID ${dbMeet.meet_id}`);
+                    log(`  ✅ Match found in usaw_meets (Results): ID ${dbMeet.meet_id}`);
                     meetId = dbMeet.meet_id;
                 } else {
-                    log(`  ⚠️ No match in DB for "${m.meet_name}". Saving entries as unmatched.`);
+                    log(`  ⚠️ No match in usaw_meets for "${m.meet_name}". Saving as unmatched.`);
                     global.scraperStats.unmatchedMeets++;
                     // Log to CSV for review
                     const logLine = `${new Date().toISOString()},"${m.meet_name}","${m.date_range}"\n`;
                     fs.appendFileSync('logs/unmatched_meets.csv', logLine);
                 }
 
-                // Scrape detailed meet info from expansion panel
-                log(`  📋 Extracting meet details...`);
-                const meetDetails = await scrapeDetailedMeetInfo(i);
+                // Build meetDetails from locator JSON - already have GPS, organizer, etc.
+                // No need for accordion expansion click (scrapeDetailedMeetInfo) anymore.
+                log(`  📋 Meet details from locator JSON (eid: ${m.eid || 'N/A'})`);
+                const meetDetails = {
+                    address:          m.location || null,
+                    organizer:        m.organizer || null,
+                    email:            m.contact_email || null,
+                    phone:            m.contact_phone || null,
+                    meetType:         m.meet_type || null,
+                    latitude:         m.latitude || null,
+                    longitude:        m.longitude || null,
+                    entriesOnPlatform: m.entries_on_platform || false,
+                    registrationOpen: m.registration_open || null,
+                    registrationClose: m.registration_close || null,
+                    description:      null // fetched below from locator view if needed
+                };
+
+                // Fetch full description from locator view page (if we have an eid)
+                if (m.eid) {
+                    const locDetails = await scrapeLocatorDetails(m.eid);
+                    if (locDetails.description) meetDetails.description = locDetails.description;
+                    // Override GPS with locator view data if missing from search results
+                    if (!meetDetails.latitude && locDetails.latitude) meetDetails.latitude = locDetails.latitude;
+                    if (!meetDetails.longitude && locDetails.longitude) meetDetails.longitude = locDetails.longitude;
+                    if (!meetDetails.address && locDetails.address) meetDetails.address = locDetails.address;
+                }
 
                 // Create or update meet listing (captures ALL meets, matched or not)
                 const listing = await upsertMeetListing(m, meetDetails, meetId);
@@ -1000,18 +1377,15 @@ async function run() {
 
                 const listingId = listing.listing_id;
 
-                const entryPage = await findAndClickEntryButton(i);
+                // Navigate to entry list — use entry_list_url from locator JSON if available
+                const entryPage = m.eid ? await navigateToLocatorForEntries(m.eid, m.entry_list_url) : null;
 
                 if (entryPage) {
-                    // Scrape inner details (Description, etc.)
-                    log(`  🔍 Checking for inner meet details...`);
-                    const innerDetails = await scrapeInnerMeetDetails(entryPage);
-                    if (innerDetails.description) {
-                        log(`  Memo: Found description (${innerDetails.description.length} chars). Updating listing.`);
-                        await supabase
-                            .from('usaw_meet_listings')
-                            .update({ meet_description: innerDetails.description })
-                            .eq('listing_id', listingId);
+                    if (argv['meta-only']) {
+                        log(`  \u23ed\ufe0f --meta-only flag set. Skipping entry scraping for "${m.meet_name}".`);
+                        global.scraperStats.metaOnlyMeets++;
+                        if (entryPage && !entryPage.isClosed()) await entryPage.close().catch(() => { });
+                        continue;
                     }
 
                     // On the wizard page, we now need to find the "View Public Entries" button to proceed
@@ -1061,8 +1435,8 @@ async function run() {
                             if (newTarget && !entriesPageToScrape.isClosed()) await entriesPageToScrape.close();
                         }
                     } else {
-                        log(`  ⚠️ Could not find "View Public Entries" button on wizard page. Checking if we are already on list page...`);
-                        // Fallback: Check if table is already there (some meets might skip wizard?)
+                        log(`  🔍 Initial button not found on wizard, checking if entry list is already visible...`);
+                        // Fallback: Check if table is already there (some meets might skip wizard or are direct-link)
                         entries = await scrapeEntriesFromPage(entryPage);
                     }
 
@@ -1105,6 +1479,10 @@ async function run() {
                 } else {
                     log(`  (No entry list button available)`);
                     global.scraperStats.meetsSkipped++;
+                    global.scraperStats.skippedMeetsDetails.push({
+                        name: m.meet_name,
+                        reason: 'No Access/Entry List button available'
+                    });
                     // Update both meet and listing to reflect no entry list
                     if (meetId) {
                         await updateMeetEntryStatus(meetId, false);
@@ -1174,6 +1552,7 @@ async function run() {
         console.log(`Run Time:            ${new Date().toISOString()}`);
         console.log(`Meets Found:         ${global.scraperStats.meetsFound}`);
         console.log(`Meets w/ Entries:    ${global.scraperStats.meetsWithEntries}`);
+        console.log(`Meets (Meta Only):   ${global.scraperStats.metaOnlyMeets}`);
         console.log(`Meets Skipped:       ${global.scraperStats.meetsSkipped}`);
         console.log('--------------------------------------------------------------------------------');
         console.log(`Total Entries Found: ${global.scraperStats.totalEntriesScraped}`);
@@ -1182,17 +1561,23 @@ async function run() {
         console.log(`Entries Unchanged:   ${global.scraperStats.entriesUnchanged || 0}`);
         console.log(`Entries Failed/Skip: ${global.scraperStats.dbErrors + global.scraperStats.entriesSkipped}`);
         console.log('--------------------------------------------------------------------------------');
-        console.log(`Unmatched Meets:     ${global.scraperStats.unmatchedMeets}`);
-        console.log(`Unmatched Meets:     ${global.scraperStats.unmatchedMeets}`);
+        console.log(`Unmatched (Master):  ${global.scraperStats.unmatchedMeets}`);
         console.log('--------------------------------------------------------------------------------');
 
         if (global.scraperStats.failedMeets && global.scraperStats.failedMeets.length > 0) {
             console.log('\nMEETS WITH FAILURES:');
             console.log('--------------------------------------------------------------------------------');
             global.scraperStats.failedMeets.forEach(m => {
-                console.log(`[${m.failures} entries failed] ${m.name} (${m.date})`);
+                console.log(`- ${m.name}: ${m.failures} errors`);
             });
+        }
+
+        if (global.scraperStats.skippedMeetsDetails && global.scraperStats.skippedMeetsDetails.length > 0) {
+            console.log('\nMEETS SKIPPED (No inner details available):');
             console.log('--------------------------------------------------------------------------------');
+            global.scraperStats.skippedMeetsDetails.forEach(m => {
+                console.log(`- ${m.name}: ${m.reason}`);
+            });
         }
 
         console.log('See logs/failed_entries.csv for individual error details.');

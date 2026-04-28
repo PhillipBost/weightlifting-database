@@ -7,6 +7,10 @@
   "scripts": {
     "start": "node scripts/maintenance/daily_scraper.js",
     "scrape": "node scripts/production/meet_scraper.js",
+    "scrape:meets": "node scripts/production/meet-entry-scraper-db.js",
+    "scrape:meets:dry": "node scripts/production/meet-entry-scraper-db.js --dry-run",
+    "scrape:meets:meta": "node scripts/production/meet-entry-scraper-db.js --meta-only",
+    "scrape:meets:meta:dry": "node scripts/production/meet-entry-scraper-db.js --meta-only --dry-run",
     "import": "node scripts/production/database-importer.js",
     "test": "node scripts/production/meet_scraper.js && node scripts/production/database-importer.js",
     "test:pbt": "jest tests/internal-id-extraction.test.js --verbose",

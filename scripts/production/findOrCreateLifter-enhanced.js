@@ -34,9 +34,9 @@ class MatchingLogger {
 
         this.steps.push(logEntry);
 
-        // Console output for immediate visibility
+        // Console output for immediate visibility - NOW INCLUDES NAME
         const prefix = this.getStepPrefix(step);
-        console.log(`${prefix} [${step}] ${data.message || JSON.stringify(data)}`);
+        console.log(`${prefix} [${step}] [${this.lifterName}] ${data.message || JSON.stringify(data)}`);
 
         return logEntry;
     }
@@ -111,7 +111,7 @@ async function findOrCreateLifterEnhanced(supabase, lifterName, additionalData =
     const createIfNeeded = additionalData.createIfNeeded !== false;
 
     logger.log('init', {
-        message: `Starting athlete matching process`,
+        message: `Starting athlete matching process for "${lifterName}"`,
         athlete_name: cleanName,
         internal_id: additionalData.internal_id || null,
         membership_number: additionalData.membership_number || null,
@@ -125,7 +125,7 @@ async function findOrCreateLifterEnhanced(supabase, lifterName, additionalData =
         // Priority 0: If we have a membership_number, use it for matching match FIRST (User Request)
         if (additionalData.membership_number) {
             logger.log('member_id_query', {
-                message: `Querying by membership_number: ${additionalData.membership_number}`,
+                message: `Querying for "${lifterName}" by membership_number: ${additionalData.membership_number}`,
                 membership_number: additionalData.membership_number,
                 query_type: 'member_id_priority'
             });
@@ -156,7 +156,15 @@ async function findOrCreateLifterEnhanced(supabase, lifterName, additionalData =
 
                 // Enrich with internal_id if available and missing
                 if (additionalData.internal_id && !existingLifter.internal_id) {
-                    // ... Enrichment logic similar to below ...
+                    if (additionalData.dryRun) {
+                        logger.log('enrichment', {
+                            message: `[DRY RUN] Would enrich lifter ${existingLifter.lifter_id} with internal_id ${additionalData.internal_id}`,
+                            lifter_id: existingLifter.lifter_id,
+                            internal_id: additionalData.internal_id
+                        });
+                        return { result: { ...existingLifter, internal_id: additionalData.internal_id }, log: logger.getSummary() };
+                    }
+                    
                     const { data: updated, error: upErr } = await supabase
                         .from('usaw_lifters')
                         .update({ internal_id: additionalData.internal_id })
@@ -344,6 +352,14 @@ async function findOrCreateLifterEnhanced(supabase, lifterName, additionalData =
                 action: 'create_new'
             });
 
+            if (additionalData.dryRun) {
+                logger.log('create_new', {
+                    message: `[DRY RUN] Would create new lifter: ${cleanName}`,
+                    athlete_name: cleanName
+                });
+                return { result: { lifter_id: 'DRY-RUN-ID', athlete_name: cleanName }, log: logger.getSummary() };
+            }
+
             // Before creating, do a final check if internal_id exists (defensive programming)
             if (additionalData.internal_id) {
                 const { data: finalCheck, error: finalCheckError } = await supabase
@@ -426,6 +442,15 @@ async function findOrCreateLifterEnhanced(supabase, lifterName, additionalData =
                     });
                 } else {
                     // No conflicts - proceed with enrichment
+                    if (additionalData.dryRun) {
+                        logger.log('enrichment', {
+                            message: `[DRY RUN] Would enrich lifter ${existingLifter.lifter_id} with internal_id ${additionalData.internal_id}`,
+                            lifter_id: existingLifter.lifter_id,
+                            internal_id: additionalData.internal_id
+                        });
+                        return { result: { ...existingLifter, internal_id: additionalData.internal_id }, log: logger.getSummary() };
+                    }
+
                     const { data: updatedLifter, error: updateError } = await supabase
                         .from('usaw_lifters')
                         .update({ internal_id: additionalData.internal_id })
@@ -511,6 +536,15 @@ async function findOrCreateLifterEnhanced(supabase, lifterName, additionalData =
                     .eq('internal_id', additionalData.internal_id);
 
                 if (!conflictError && (!conflictCheck || conflictCheck.length === 0)) {
+                    if (additionalData.dryRun) {
+                        logger.log('enrichment', {
+                            message: `[DRY RUN] Would enrich lifter ${candidateLifter.lifter_id} with internal_id ${additionalData.internal_id}`,
+                            lifter_id: candidateLifter.lifter_id,
+                            internal_id: additionalData.internal_id
+                        });
+                        return { result: { ...candidateLifter, internal_id: additionalData.internal_id }, log: logger.getSummary() };
+                    }
+
                     const { data: updatedLifter, error: updateError } = await supabase
                         .from('usaw_lifters')
                         .update({ internal_id: additionalData.internal_id })
@@ -567,6 +601,15 @@ async function findOrCreateLifterEnhanced(supabase, lifterName, additionalData =
                             .eq('internal_id', foundInternalId);
 
                         if (!conflictError && (!conflictCheck || conflictCheck.length === 0)) {
+                            if (additionalData.dryRun) {
+                                logger.log('enrichment', {
+                                    message: `[DRY RUN] Would enrich lifter ${candidateLifter.lifter_id} with internal_id ${foundInternalId}`,
+                                    lifter_id: candidateLifter.lifter_id,
+                                    internal_id: foundInternalId
+                                });
+                                return { result: { ...candidateLifter, internal_id: foundInternalId }, log: logger.getSummary() };
+                            }
+
                             const { data: updatedLifter, error: updateError } = await supabase
                                 .from('usaw_lifters')
                                 .update({ internal_id: foundInternalId })
@@ -635,6 +678,14 @@ async function findOrCreateLifterEnhanced(supabase, lifterName, additionalData =
                 athlete_name: cleanName
             });
             return { result: { lifter_id: null }, log: logger.getSummary() };
+        }
+
+        if (additionalData.dryRun) {
+            logger.log('create_new', {
+                message: `[DRY RUN] Would create fallback lifter: ${cleanName}`,
+                athlete_name: cleanName
+            });
+            return { result: { lifter_id: 'DRY-RUN-ID', athlete_name: cleanName }, log: logger.getSummary() };
         }
 
         const { data: newLifter, error: createError } = await supabase
