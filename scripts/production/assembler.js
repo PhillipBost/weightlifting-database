@@ -479,11 +479,12 @@ async function generateAthlete(params, externalClient = null) {
 
         const externalLinks = [
             ...(row.iwf_profiles || []).map(p => ({ type: 'iwf', url: p.url })),
-            row.membership_number ? { type: 'usaw', url: `https://usaweightlifting.sport80.com/public/rankings/results/${row.membership_number}` } : null
+            row.internal_id ? { type: 'usaw', url: `https://usaweightlifting.sport80.com/public/rankings/member/${row.internal_id}` } : null
         ].filter(Boolean);
 
         const data = {
             id: usaw_id || iwf_id,
+            internal_id: row.internal_id,
             linked_usaw_id: row.membership_number,
             linked_iwf_id: row.prime_iwf_official_id,
             usaw_athlete_name: row.usaw_athlete_name,
