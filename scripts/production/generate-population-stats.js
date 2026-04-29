@@ -93,10 +93,12 @@ function calculateLifterMetrics(results) {
 }
 
 function getQualifyingBuckets(source, gender, age) {
-    if (age === null || age === undefined || !gender) return [];
+    if (!gender) return [];
     const g = gender.toString().toLowerCase().startsWith('f') ? 'F' : 'M';
     const buckets = [`${source}_${g}_all`];
     
+    if (age === null || age === undefined) return buckets;
+
     // IWF Age Group Rules
     if (age < 13) buckets.push(`${source}_${g}_U13`);
     if (age >= 13 && age <= 17) buckets.push(`${source}_${g}_Youth`);

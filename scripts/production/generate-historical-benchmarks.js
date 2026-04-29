@@ -75,9 +75,12 @@ function calculateLifterMetrics(results) {
 }
 
 function getDemographicBucketKeys(source, gender, age) {
-    if (age === null || age === undefined || !gender) return [];
+    if (!gender) return [];
     const g = gender.toString().toLowerCase().startsWith('f') ? 'F' : 'M';
-    const buckets = [];
+    const buckets = [`${source}_${g}_all`];
+    
+    if (age === null || age === undefined) return buckets;
+
     if (age < 13) buckets.push(`${source}_${g}_U13`);
     if (age >= 13 && age <= 17) buckets.push(`${source}_${g}_Youth`);
     if (age >= 15 && age <= 20) buckets.push(`${source}_${g}_Junior`);
@@ -157,8 +160,8 @@ function captureYearlyMap(historicalMaps, year, athleteStates, sourceName) {
             });
         });
 
-        if (totalAtt >= 12 && s.birthYear && s.gender) {
-            const age = year - s.birthYear;
+        if (totalAtt >= 12 && s.gender) {
+            const age = (s.birthYear && year) ? year - s.birthYear : null;
             const metrics = calculateLifterMetrics(s.results);
             const keys = getDemographicBucketKeys(sourceName, s.gender, age);
             keys.forEach(k => {

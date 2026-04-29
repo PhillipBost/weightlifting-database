@@ -87,9 +87,18 @@ function getPopulationStats() {
     if (_populationStats) return _populationStats;
     const p = path.join(OUTPUT_DIR, 'population_stats.json');
     if (fs.existsSync(p)) {
-        try { _populationStats = JSON.parse(fs.readFileSync(p, 'utf8')); } catch (e) { _populationStats = {}; }
+        try { 
+            _populationStats = JSON.parse(fs.readFileSync(p, 'utf8')); 
+            console.log(`[ASSEMBLER] Population stats loaded successfully from ${p}`);
+        } catch (e) { 
+            console.error(`[ASSEMBLER] Failed to parse population stats at ${p}:`, e);
+            _populationStats = {}; 
+        }
+    } else {
+        console.warn(`[ASSEMBLER] WARNING: population_stats.json missing at ${p}. Analytics will be empty.`);
+        _populationStats = {};
     }
-    return _populationStats || {};
+    return _populationStats;
 }
 
 let _historicalBenchmarks = null;
@@ -97,9 +106,18 @@ function getHistoricalBenchmarks() {
     if (_historicalBenchmarks) return _historicalBenchmarks;
     const p = path.join(OUTPUT_DIR, 'historical_benchmarks.json');
     if (fs.existsSync(p)) {
-        try { _historicalBenchmarks = JSON.parse(fs.readFileSync(p, 'utf8')); } catch (e) { _historicalBenchmarks = {}; }
+        try { 
+            _historicalBenchmarks = JSON.parse(fs.readFileSync(p, 'utf8')); 
+            console.log(`[ASSEMBLER] Historical benchmarks loaded successfully from ${p}`);
+        } catch (e) { 
+            console.error(`[ASSEMBLER] Failed to parse historical benchmarks at ${p}:`, e);
+            _historicalBenchmarks = {}; 
+        }
+    } else {
+        console.warn(`[ASSEMBLER] WARNING: historical_benchmarks.json missing at ${p}. Historical stats will be empty.`);
+        _historicalBenchmarks = {};
     }
-    return _historicalBenchmarks || {};
+    return _historicalBenchmarks;
 }
 
 // ── Metric Calculation Logic ──────────────────────────────────────────────────
@@ -124,7 +142,7 @@ function calculateLifterMetrics(results, windowYears = null) {
 
     const now = new Date();
     const rollingCutoff = new Date();
-    rollingCutoff.setMonth(now.getMonth() - 36);
+    rollingCutoff.setFullYear(now.getFullYear() - 3); // Standard 3-year rolling window
 
     const filtered = windowYears ? results.filter(r => {
         const d = r.date ? new Date(r.date) : null;
@@ -240,7 +258,7 @@ function computePercentile(val, dist) {
 function getQualifyingBuckets(source, gender, age) {
     if (age === null || age === undefined || !gender) return [];
     const g = gender.toString().toLowerCase().startsWith('f') ? 'F' : 'M';
-    const buckets = [];
+    const buckets = [`${source}_${g}_all` || `${source}_${g}_all` ]; // Added synchronized _all bucket
 
     // IWF Age Group Rules
     if (age < 13) buckets.push(`${source}_${g}_U13`);
@@ -374,17 +392,49 @@ async function generateAthlete(params, externalClient = null) {
         // Phase 1: Identity Resolution (Public Identifier -> Internal Join Key)
         let resolvedUsawId = null;
         if (usaw_id) {
-            const lookup = await client.query('SELECT lifter_id FROM usaw_lifters WHERE membership_number = $1 LIMIT 1', [usaw_id]);
+            const idStr = usaw_id.toString();
+            const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(idStr);
+            const isNumeric = /^\d+$/.test(idStr);
+
+            let filter;
+            if (isUuid) {
+                filter = 'lifter_id = $1::uuid';
+            } else if (isNumeric) {
+                // Check both membership and numeric lifter_id using text casting for safety
+                filter = 'membership_number::text = $1 OR lifter_id::text = $1';
+            } else {
+                filter = 'membership_number::text = $1';
+            }
+
+            const lookup = await client.query(`SELECT lifter_id FROM usaw_lifters WHERE ${filter} LIMIT 1`, [idStr]);
             resolvedUsawId = lookup.rows[0]?.lifter_id || null;
             
-            // If we found a lifter_id, we use it for all internal joins.
-            // If not found, we fallback to null to avoid namespace collisions with Membership Numbers.
+            if (usaw_id && !resolvedUsawId) {
+                console.warn(`[ASSEMBLER] Warning: Failed to resolve USAW ID ${usaw_id} to an internal lifter_id`);
+            }
         }
 
         let resolvedIwfId = null;
         if (iwf_id) {
-            const lookup = await client.query('SELECT db_lifter_id FROM iwf_lifters WHERE iwf_lifter_id = $1 LIMIT 1', [iwf_id]);
+            const idStr = iwf_id.toString();
+            const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(idStr);
+            const isNumeric = /^\d+$/.test(idStr);
+
+            let filter;
+            if (isUuid) {
+                filter = 'db_lifter_id = $1::uuid';
+            } else if (isNumeric) {
+                filter = 'iwf_lifter_id::text = $1 OR db_lifter_id::text = $1';
+            } else {
+                filter = 'iwf_lifter_id::text = $1';
+            }
+
+            const lookup = await client.query(`SELECT db_lifter_id FROM iwf_lifters WHERE ${filter} LIMIT 1`, [idStr]);
             resolvedIwfId = lookup.rows[0]?.db_lifter_id || null;
+
+            if (iwf_id && !resolvedIwfId) {
+                console.warn(`[ASSEMBLER] Warning: Failed to resolve IWF ID ${iwf_id} to an internal db_lifter_id`);
+            }
         }
 
         const query = `
@@ -578,12 +628,10 @@ async function generateAthlete(params, externalClient = null) {
         const iwfRes = row.iwf_results || [];
 
         // Greedy detection: Find most recent non-null birth year and gender across history
-        const birthYear = row.birth_year 
-            || usawRes.find(r => r.birth_year)?.birth_year 
+        const birthYear = usawRes.find(r => r.birth_year)?.birth_year 
             || iwfRes.find(r => r.birth_year)?.birth_year;
             
-        const gender = row.gender 
-            || usawRes.find(r => r.gender)?.gender 
+        const gender = usawRes.find(r => r.gender)?.gender 
             || iwfRes.find(r => r.gender)?.gender;
 
         const latestUsaw = usawRes.find(r => r.date);
