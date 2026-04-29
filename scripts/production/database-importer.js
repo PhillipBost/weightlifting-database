@@ -5,6 +5,9 @@ const fs = require('fs');
 const Papa = require('papaparse');
 const path = require('path');
 const puppeteer = require('puppeteer');
+const args = require('minimist')(process.argv.slice(2));
+
+const DRY_RUN = args['dry-run'] || args.d || process.env.DRY_RUN === 'true';
 
 // Initialize Supabase client
 const supabase = createClient(
@@ -14,6 +17,9 @@ const supabase = createClient(
 
 // Import scraper function - adjust path as needed for GitHub
 const { scrapeOneMeet } = require('./scrapeOneMeet.js');
+
+// Import ranking engine for automated podium calculation
+const { generateDivisionRankings } = require('./ranking-engine.js');
 
 // Import Sport80 search function for enhanced matching
 const { searchSport80ForLifter } = require('./searchSport80ForLifter.js');
@@ -154,23 +160,28 @@ async function upsertMeetsToDatabase(meetings) {
                 scraped_date: meet.scraped_date
             }));
 
-            // Upsert to database (insert new, update existing)
-            const { data, error } = await supabase
-                .from('usaw_meets')
-                .upsert(dbRecords, {
-                    onConflict: 'meet_id',
-                    count: 'exact'
-                })
-                .select('meet_id'); // Get the meet_ids that were processed
-
-            if (error) {
-                console.error(`❌ Batch ${Math.floor(i / batchSize) + 1} failed:`, error);
-                errorCount += batch.length;
+            if (DRY_RUN) {
+                console.log(`  [DRY RUN] Would upsert ${dbRecords.length} meets to database`);
+                newMeetIds.push(...batch.map(m => m.meet_id));
             } else {
-                console.log(`✅ Batch ${Math.floor(i / batchSize) + 1} completed successfully`);
-                // Track which meets were processed (could be new or updated)
-                if (data) {
-                    newMeetIds.push(...data.map(d => d.meet_id));
+                // Upsert to database (insert new, update existing)
+                const { data, error } = await supabase
+                    .from('usaw_meets')
+                    .upsert(dbRecords, {
+                        onConflict: 'meet_id',
+                        count: 'exact'
+                    })
+                    .select('meet_id'); // Get the meet_ids that were processed
+
+                if (error) {
+                    console.error(`❌ Batch ${Math.floor(i / batchSize) + 1} failed:`, error);
+                    errorCount += batch.length;
+                } else {
+                    console.log(`✅ Batch ${Math.floor(i / batchSize) + 1} completed successfully`);
+                    // Track which meets were processed (could be new or updated)
+                    if (data) {
+                        newMeetIds.push(...data.map(d => d.meet_id));
+                    }
                 }
             }
 
@@ -279,6 +290,17 @@ async function scrapeAndImportMeetResults(newMeetIds, meetings) {
                 const result = await processMeetCsvFile(tempFile, meetId, meetInfo.Meet);
                 processedResults += result.processed;
                 errorCount += result.errors;
+
+                // ROUTINE INTEGRATION: Generate rankings for this meet immediately after import
+                if (result.processed > 0) {
+                    console.log(`\n[PIPELINE] 🏆 Results imported for "${meetInfo.Meet}". Calculating rankings...`);
+                    try {
+                        await generateDivisionRankings(meetId);
+                        console.log(`[PIPELINE] ✅ Rankings successfully persisted for Meet ID: ${meetId}`);
+                    } catch (rankErr) {
+                        console.error(`[PIPELINE] ⚠️ Ranking engine failed for meet ${meetId}:`, rankErr.message);
+                    }
+                }
 
             } catch (error) {
                 console.error(`❌ Failed to import results from ${tempFile}:`, error.message);
@@ -625,6 +647,11 @@ async function createMeetResult(resultData) {
         birth_year: lifter_birth_year || null
     };
 
+    if (DRY_RUN) {
+        console.log(`  [DRY RUN] Would create meet result for lifter ID ${resultData.lifter_id}`);
+        return { result_id: 'DRY_RUN_RESULT_ID' };
+    }
+
     const { data, error } = await supabase
         .from('usaw_meet_results')
         .insert(enhancedResultData)  // Insert without the temporary lifter fields
@@ -829,12 +856,14 @@ function calculateQScore(totalNum, B, gender) {
         const denominator = 266.5 - 19.44 * Math.pow(B, -2) + 18.61 * Math.pow(B, 2);
         return Math.round((totalNum * 306.54 / denominator) * 1000) / 1000;
     }
-
     return null;
 }
 
 async function main() {
-    console.log('🗄️ Enhanced Database Import Started');
+    console.log('\n🗄️ Enhanced Database Import Started');
+    if (DRY_RUN) {
+        console.log('🔍 DRY RUN MODE ENABLED - No database changes will be made.');
+    }
     console.log('===================================');
     console.log(`🕐 Start time: ${new Date().toLocaleString('en-US', { timeZone: 'America/New_York' })}`);
 
@@ -868,22 +897,24 @@ async function main() {
 
         // Determine which CSV file to import
         let targetYear = new Date().getFullYear();
+        let csvFilePath = args.file || args.f;
 
-        // Check for --date argument
-        const dateArg = process.argv.find(arg => arg.startsWith('--date='));
-        if (dateArg) {
-            const val = dateArg.split('=')[1]; // YYYY-MM
-            if (val && val.includes('-')) {
-                const yearPart = val.split('-')[0];
-                const parsedYear = parseInt(yearPart, 10);
-                if (!isNaN(parsedYear)) {
-                    console.log(`📅 Date argument detected: ${val} -> Using year ${parsedYear}`);
-                    targetYear = parsedYear;
+        if (!csvFilePath) {
+            // Check for --date argument (legacy support)
+            const dateArg = process.argv.find(arg => arg.startsWith('--date='));
+            if (dateArg) {
+                const val = dateArg.split('=')[1]; // YYYY-MM
+                if (val && val.includes('-')) {
+                    const yearPart = val.split('-')[0];
+                    const parsedYear = parseInt(yearPart, 10);
+                    if (!isNaN(parsedYear)) {
+                        console.log(`📅 Date argument detected: ${val} -> Using year ${parsedYear}`);
+                        targetYear = parsedYear;
+                    }
                 }
             }
+            csvFilePath = `./meets_${targetYear}.csv`;
         }
-
-        const csvFilePath = `./meets_${targetYear}.csv`;
 
         // Check if CSV file exists before attempting to read
         console.log(`🔍 Looking for CSV file: ${csvFilePath}`);

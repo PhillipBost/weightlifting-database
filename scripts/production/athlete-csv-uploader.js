@@ -5,12 +5,18 @@ const { createClient } = require('@supabase/supabase-js');
 const fs = require('fs');
 const Papa = require('papaparse');
 const path = require('path');
+const args = require('minimist')(process.argv.slice(2));
+
+const DRY_RUN = args['dry-run'] || args.d || process.env.DRY_RUN === 'true';
 
 // Initialize Supabase client - SIMPLE VERSION
 const supabase = createClient(
     process.env.SUPABASE_URL,
     process.env.SUPABASE_SECRET_KEY
 );
+
+// Import ranking engine for re-calculating rankings after biographical updates
+const { generateDivisionRankings } = require('./ranking-engine.js');
 
 // MINIMAL timeout wrapper - only for the most critical operations
 function withTimeout(promise, timeoutMs = 30000) {
@@ -121,6 +127,11 @@ async function createNewLifter(athleteData) {
         updated_at: new Date().toISOString()
     };
 
+    if (DRY_RUN) {
+        console.log(`  [DRY RUN] Would create new lifter: ${athleteData.athlete_name}`);
+        return 'DRY_RUN_LIFTER_ID';
+    }
+
     const { data: newLifter, error } = await supabase
         .from('usaw_lifters')
         .insert(lifterData)
@@ -161,18 +172,22 @@ async function batchUpdateLifters(lifterUpdates) {
 
         console.log(`    📦 Processing update batch ${batchNumber}/${totalBatches} (${batch.length} lifters)...`);
 
-        // Update each lifter in the batch
-        const updatePromises = batch.map(update =>
-            supabase
-                .from('usaw_lifters')
-                .update({
-                    membership_number: update.membership_number,
-                    updated_at: new Date().toISOString()
-                })
-                .eq('lifter_id', update.lifter_id)
-        );
+        if (DRY_RUN) {
+            console.log(`    [DRY RUN] Would batch update ${batch.length} lifters`);
+        } else {
+            // Update each lifter in the batch
+            const updatePromises = batch.map(update =>
+                supabase
+                    .from('usaw_lifters')
+                    .update({
+                        membership_number: update.membership_number,
+                        updated_at: new Date().toISOString()
+                    })
+                    .eq('lifter_id', update.lifter_id)
+            );
 
-        await Promise.all(updatePromises);
+            await Promise.all(updatePromises);
+        }
 
         // Small delay between batches
         if (i + batchSize < lifterUpdates.length) {
@@ -212,7 +227,7 @@ async function updateRecentMeetResultsWithBiographicalData(lifterId, athleteData
         // Find meet results within ±5 days, also fetch current field values to check if empty
         const { data: meetResults, error: findError } = await supabase
             .from('usaw_meet_results')
-            .select('result_id, date, meet_name, competition_age, wso, club_name, gender, birth_year, national_rank')
+            .select('result_id, meet_id, date, meet_name, competition_age, wso, club_name, gender, birth_year, national_rank')
             .eq('lifter_id', lifterId)
             .gte('date', startDate)
             .lte('date', endDate);
@@ -270,15 +285,20 @@ async function updateRecentMeetResultsWithBiographicalData(lifterId, athleteData
 
             // Update if we have any data from the rankings page
             if (hasUpdates) {
-                const { error: updateError } = await supabase
-                    .from('usaw_meet_results')
-                    .update(updateData)
-                    .eq('result_id', result.result_id);
-
-                if (updateError) {
-                    console.log(`  ⚠️ Failed to update result ${result.result_id}: ${updateError.message}`);
-                } else {
+                if (DRY_RUN) {
+                    console.log(`  [DRY RUN] Would update result ${result.result_id} with biographical data`);
                     updatedCount++;
+                } else {
+                    const { error: updateError } = await supabase
+                        .from('usaw_meet_results')
+                        .update(updateData)
+                        .eq('result_id', result.result_id);
+
+                    if (updateError) {
+                        console.log(`  ⚠️ Failed to update result ${result.result_id}: ${updateError.message}`);
+                    } else {
+                        updatedCount++;
+                    }
                 }
             } else {
                 console.log(`  ℹ️ No biographical data in CSV for result ${result.result_id} - skipping`);
@@ -286,7 +306,11 @@ async function updateRecentMeetResultsWithBiographicalData(lifterId, athleteData
         }
 
         console.log(`  ✅ Updated ${updatedCount}/${meetResults.length} meet_result(s) with biographical data`);
-        return { updated: updatedCount, errors: 0 }; // Not updating already-populated fields is not an error
+        
+        // Return the meet_ids that were affected so they can be re-ranked
+        const affectedMeetIds = updatedCount > 0 ? [...new Set(meetResults.map(r => r.meet_id))] : [];
+        
+        return { updated: updatedCount, errors: 0, affectedMeetIds };
 
     } catch (error) {
         console.error(`  💥 Error updating meet_results:`, error.message);
@@ -323,6 +347,7 @@ async function processAthleteCSVFile(filePath, errorLogger) {
         // Process records and prepare updates
         const lifterUpdates = [];
         const newLifters = [];
+        const affectedMeets = new Set();
         let meetResultsUpdated = 0;
         let notFoundCount = 0;
         let duplicateCount = 0;
@@ -424,6 +449,11 @@ async function processAthleteCSVFile(filePath, errorLogger) {
                 meetResultsUpdated += meetResultsUpdate.updated;
                 errorCount += meetResultsUpdate.errors;
 
+                // Track affected meets for re-ranking
+                if (meetResultsUpdate.affectedMeetIds) {
+                    meetResultsUpdate.affectedMeetIds.forEach(id => affectedMeets.add(id));
+                }
+
             } catch (error) {
                 errorLogger.logError(athleteData.athlete_name, athleteData.membership_number, 'LOOKUP_ERROR', error.message);
                 errorCount++;
@@ -458,6 +488,11 @@ async function processAthleteCSVFile(filePath, errorLogger) {
                     meetResultsUpdated += meetResultsUpdate.updated;
                     errorCount += meetResultsUpdate.errors;
 
+                    // Track affected meets for re-ranking
+                    if (meetResultsUpdate.affectedMeetIds) {
+                        meetResultsUpdate.affectedMeetIds.forEach(id => affectedMeets.add(id));
+                    }
+
                     // Create division string from Age Category and Weight Class for logging
                     const divisionString = `${athleteData['Age Category'] || ''} ${athleteData['Weight Class'] || ''}`.trim();
                     const enrichedAthleteData = {
@@ -479,6 +514,19 @@ async function processAthleteCSVFile(filePath, errorLogger) {
         }
 
         console.log(`  📊 Results: ${lifterUpdates.length} updated, ${newLiftersCreated} created, ${meetResultsUpdated} meet_results updated, ${duplicateCount} duplicates, ${errorCount} errors`);
+
+        // ROUTINE INTEGRATION: Re-calculate rankings for all affected meets
+        if (affectedMeets.size > 0) {
+            console.log(`\n[PIPELINE] 🏆 Biographical data updated for ${affectedMeets.size} meets. Re-calculating rankings...`);
+            for (const meetId of affectedMeets) {
+                try {
+                    await generateDivisionRankings(meetId);
+                } catch (rankErr) {
+                    console.error(`  ⚠️ Ranking engine failed for meet ${meetId}:`, rankErr.message);
+                }
+            }
+            console.log(`[PIPELINE] ✅ All affected meet rankings refreshed.`);
+        }
 
         return {
             updated: lifterUpdates.length,
@@ -506,6 +554,9 @@ async function processAthleteCSVFile(filePath, errorLogger) {
 
 async function main() {
     console.log('🏋️ Athlete CSV to Supabase Upload Started (Nightly Version)');
+    if (DRY_RUN) {
+        console.log('🔍 DRY RUN MODE ENABLED - No database changes will be made.');
+    }
     console.log('========================================================');
     console.log(`🕐 Start time: ${new Date().toLocaleString('en-US', { timeZone: 'America/New_York' })}`);
 
