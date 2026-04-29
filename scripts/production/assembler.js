@@ -371,6 +371,22 @@ async function generateAthlete(params, externalClient = null) {
     if (!externalClient) await client.connect();
 
     try {
+        // Phase 1: Identity Resolution (Public Identifier -> Internal Join Key)
+        let resolvedUsawId = null;
+        if (usaw_id) {
+            const lookup = await client.query('SELECT lifter_id FROM usaw_lifters WHERE membership_number = $1 LIMIT 1', [usaw_id]);
+            resolvedUsawId = lookup.rows[0]?.lifter_id || null;
+            
+            // If we found a lifter_id, we use it for all internal joins.
+            // If not found, we fallback to null to avoid namespace collisions with Membership Numbers.
+        }
+
+        let resolvedIwfId = null;
+        if (iwf_id) {
+            const lookup = await client.query('SELECT db_lifter_id FROM iwf_lifters WHERE iwf_lifter_id = $1 LIMIT 1', [iwf_id]);
+            resolvedIwfId = lookup.rows[0]?.db_lifter_id || null;
+        }
+
         const query = `
             WITH RECURSIVE athlete_identity AS (
                 -- Anchor row
@@ -554,15 +570,24 @@ async function generateAthlete(params, externalClient = null) {
             LEFT JOIN id_collector idc ON true;
         `;
 
-        const res = await client.query(query, [usaw_id || null, iwf_id || null]);
+        const res = await client.query(query, [resolvedUsawId || null, resolvedIwfId || null]);
         if (res.rows.length === 0) return { success: false, message: 'Lifter not found' };
 
         const row = res.rows[0];
-        const latestUsaw = (row.usaw_results || []).find(r => r.date);
-        const latestIwf = (row.iwf_results || []).find(r => r.date);
+        const usawRes = row.usaw_results || [];
+        const iwfRes = row.iwf_results || [];
 
-        // Extract most reliable birth year
-        const birthYear = (row.usaw_results || []).find(r => r.birth_year)?.birth_year || (row.iwf_results || []).find(r => r.birth_year)?.birth_year;
+        // Greedy detection: Find most recent non-null birth year and gender across history
+        const birthYear = row.birth_year 
+            || usawRes.find(r => r.birth_year)?.birth_year 
+            || iwfRes.find(r => r.birth_year)?.birth_year;
+            
+        const gender = row.gender 
+            || usawRes.find(r => r.gender)?.gender 
+            || iwfRes.find(r => r.gender)?.gender;
+
+        const latestUsaw = usawRes.find(r => r.date);
+        const latestIwf = iwfRes.find(r => r.date);
 
         const externalLinks = [
             ...(row.iwf_profiles || []).map(p => ({ type: 'iwf', url: p.url })),
@@ -580,18 +605,18 @@ async function generateAthlete(params, externalClient = null) {
             birthYear,
             country_code: row.country_code || 'USA',
             country_name: row.country_name || 'United States',
-            gender: row.gender || (latestUsaw?.gender) || (latestIwf?.gender),
+            gender: gender,
             external_links: externalLinks,
             usaw_results: row.usaw_results,
             iwf_results: row.iwf_results,
             achievements: aggregateAchievements(row.usaw_rankings),
             population_percentiles: {
-                usaw: getAthletePercentiles(row.usaw_results, row.gender || latestUsaw?.gender, 'usaw', birthYear),
-                iwf: getAthletePercentiles(row.iwf_results, row.gender || latestIwf?.gender, 'iwf', birthYear)
+                usaw: getAthletePercentiles(row.usaw_results, gender, 'usaw', birthYear),
+                iwf: getAthletePercentiles(row.iwf_results, gender, 'iwf', birthYear)
             },
             historical_stats: {
-                usaw: getYearlySnapshots(row.usaw_results, row.gender || latestUsaw?.gender, 'usaw', birthYear),
-                iwf: getYearlySnapshots(row.iwf_results, row.gender || latestIwf?.gender, 'iwf', birthYear)
+                usaw: getYearlySnapshots(row.usaw_results, gender, 'usaw', birthYear),
+                iwf: getYearlySnapshots(row.iwf_results, gender, 'iwf', birthYear)
             }
         };
 
