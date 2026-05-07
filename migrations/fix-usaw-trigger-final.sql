@@ -27,7 +27,7 @@ BEGIN
         body := jsonb_build_object(
           'usaw_id', v_usaw_id,
           'iwf_id', v_iwf_id,
-          'secret', '***REMOVED_SECRET***'
+          'secret', current_setting('app.webhook_secret')
         ),
         headers := '{"Content-Type": "application/json"}'::jsonb
       );
