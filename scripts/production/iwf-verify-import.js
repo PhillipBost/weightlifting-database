@@ -8,8 +8,8 @@ require('dotenv').config();
 const { createClient } = require('@supabase/supabase-js');
 
 const supabaseIWF = createClient(
-    process.env.SUPABASE_IWF_URL,
-    process.env.SUPABASE_IWF_SECRET_KEY
+    process.env.SUPABASE_URL,
+    process.env.SUPABASE_SECRET_KEY
 );
 
 async function verifyImport() {

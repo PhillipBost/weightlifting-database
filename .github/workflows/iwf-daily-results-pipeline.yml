@@ -53,9 +53,8 @@ jobs:
           echo "Discovering events for year $YEAR..."
           node scripts/production/iwf-event-discovery.js --year $YEAR 2>&1 | tee logs/iwf-event-discovery.log
         env:
-          # IWF Database credentials (separate from USAW)
-          SUPABASE_IWF_URL: ${{ secrets.SUPABASE_IWF_URL }}
-          SUPABASE_IWF_SECRET_KEY: ${{ secrets.SUPABASE_IWF_SECRET_KEY }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
 
       - name: Run IWF scraper
         run: |
@@ -67,9 +66,8 @@ jobs:
           echo "Running orchestrator for year $YEAR..."
           node scripts/production/iwf-main.js --year $YEAR 2>&1 | tee logs/iwf-scraper.log
         env:
-          # IWF Database credentials (separate from USAW)
-          SUPABASE_IWF_URL: ${{ secrets.SUPABASE_IWF_URL }}
-          SUPABASE_IWF_SECRET_KEY: ${{ secrets.SUPABASE_IWF_SECRET_KEY }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
 
       - name: Link IWF athletes to USAW profiles
         if: success()
@@ -81,9 +79,6 @@ jobs:
           # USAW Database credentials
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
-          # IWF Database credentials
-          SUPABASE_IWF_URL: ${{ secrets.SUPABASE_IWF_URL }}
-          SUPABASE_IWF_SECRET_KEY: ${{ secrets.SUPABASE_IWF_SECRET_KEY }}
 
       - name: Upload logs on failure
         if: failure()

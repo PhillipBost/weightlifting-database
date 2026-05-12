@@ -8,8 +8,8 @@
  * @module iwf-config
  *
  * Environment Variables Required:
- * - SUPABASE_IWF_URL: IWF Supabase project URL
- * - SUPABASE_IWF_SECRET_KEY: IWF Supabase service role key
+ * - SUPABASE_URL: Supabase project URL
+ * - SUPABASE_SECRET_KEY: Supabase service role key
  *
  * Environment Variables Optional (overrides):
  * - IWF_EVENT_DELAY: Milliseconds between events (default: 2000)
@@ -22,8 +22,7 @@
  * - IWF_START_YEAR: Starting year for scraping (default: 2024)
  * - IWF_END_YEAR: Ending year for scraping (default: 2025)
  *
- * IMPORTANT: Uses separate IWF database credentials (SUPABASE_IWF_URL, SUPABASE_IWF_SECRET_KEY)
- * NOT the regular USAW database credentials (SUPABASE_URL, SUPABASE_SECRET_KEY)
+ * IMPORTANT: Now uses shared database credentials (SUPABASE_URL, SUPABASE_SECRET_KEY)
  */
 
 require('dotenv').config();
@@ -34,19 +33,18 @@ const { createClient } = require('@supabase/supabase-js');
 // ============================================================================
 
 /**
- * IWF Supabase client - connects to separate IWF database
- * Uses SUPABASE_IWF_URL and SUPABASE_IWF_SECRET_KEY environment variables
+ * IWF Supabase client - connects to shared database
+ * Uses SUPABASE_URL and SUPABASE_SECRET_KEY environment variables
  */
 const supabaseIWF = createClient(
-    process.env.SUPABASE_IWF_URL,
-    process.env.SUPABASE_IWF_SECRET_KEY
+    process.env.SUPABASE_URL,
+    process.env.SUPABASE_SECRET_KEY
 );
 
-// Verify IWF credentials are set
-if (!process.env.SUPABASE_IWF_URL || !process.env.SUPABASE_IWF_SECRET_KEY) {
-    console.warn('⚠️  WARNING: IWF database credentials not found in environment variables');
-    console.warn('   Required: SUPABASE_IWF_URL and SUPABASE_IWF_SECRET_KEY');
-    console.warn('   Note: These are separate from USAW database credentials');
+// Verify database credentials are set
+if (!process.env.SUPABASE_URL || !process.env.SUPABASE_SECRET_KEY) {
+    console.warn('⚠️  WARNING: Database credentials not found in environment variables');
+    console.warn('   Required: SUPABASE_URL and SUPABASE_SECRET_KEY');
 }
 
 // ============================================================================

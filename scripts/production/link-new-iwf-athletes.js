@@ -25,9 +25,10 @@ const supabase = createClient(
     process.env.SUPABASE_SECRET_KEY
 );
 
-const supabaseIwf = process.env.SUPABASE_IWF_URL
-    ? createClient(process.env.SUPABASE_IWF_URL, process.env.SUPABASE_IWF_SECRET_KEY)
-    : supabase;
+const supabaseIwf = createClient(
+    process.env.SUPABASE_URL,
+    process.env.SUPABASE_SECRET_KEY
+);
 
 
 // ============================================================================

@@ -4,8 +4,8 @@ const minimist = require('minimist');
 require('dotenv').config();
 
 const supabaseIWF = createClient(
-    process.env.SUPABASE_IWF_URL,
-    process.env.SUPABASE_IWF_SECRET_KEY
+    process.env.SUPABASE_URL,
+    process.env.SUPABASE_SECRET_KEY
 );
 
 const argv = minimist(process.argv.slice(2));
@@ -292,7 +292,7 @@ async function main() {
         console.error('\nBACKFILL FAILED:', error.message);
         console.error('Stack trace:', error.stack);
         console.log('\nTroubleshooting:');
-        console.log('1. Verify SUPABASE_IWF_URL and SUPABASE_IWF_SECRET_KEY are set');
+        console.log('1. Verify SUPABASE_URL and SUPABASE_SECRET_KEY are set');
         console.log('2. Check network connectivity to Supabase');
         console.log('3. Verify iwf_meet_results table exists');
         console.log('4. Verify calculate_iwf_ytd_bests() trigger exists');

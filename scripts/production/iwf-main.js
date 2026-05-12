@@ -106,8 +106,8 @@ Examples:
   node iwf-main.js --from-year 2024 --to-year 2025
 
 Environment Variables:
-  SUPABASE_IWF_URL          IWF database URL
-  SUPABASE_IWF_SECRET_KEY   IWF database secret key
+  SUPABASE_URL              IWF database URL
+  SUPABASE_SECRET_KEY       IWF database secret key
     `);
 }
 
@@ -128,17 +128,17 @@ Environment Variables:
  *
  * @example
  * await verifyDatabaseConnection();
- * // Throws error if SUPABASE_IWF_URL or SUPABASE_IWF_SECRET_KEY not set
+ * // Throws error if SUPABASE_URL or SUPABASE_SECRET_KEY not set
  * // Throws error if any required table is missing
  */
 async function verifyDatabaseConnection() {
     log('Verifying IWF database connection...', 'INFO');
 
     // Check environment variables
-    if (!process.env.SUPABASE_IWF_URL || !process.env.SUPABASE_IWF_SECRET_KEY) {
+    if (!process.env.SUPABASE_URL || !process.env.SUPABASE_SECRET_KEY) {
         throw new Error(
-            'Missing IWF database credentials.\n' +
-            'Set SUPABASE_IWF_URL and SUPABASE_IWF_SECRET_KEY environment variables.'
+            'Missing database credentials.\n' +
+            'Set SUPABASE_URL and SUPABASE_SECRET_KEY environment variables.'
         );
     }
 

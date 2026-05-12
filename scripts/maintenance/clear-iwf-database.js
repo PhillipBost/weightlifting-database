@@ -14,11 +14,11 @@
 require('dotenv').config();
 const { createClient } = require('@supabase/supabase-js');
 
-const supabaseUrl = process.env.SUPABASE_IWF_URL;
-const supabaseKey = process.env.SUPABASE_IWF_SECRET_KEY;
+const supabaseUrl = process.env.SUPABASE_URL;
+const supabaseKey = process.env.SUPABASE_SECRET_KEY;
 
 if (!supabaseUrl || !supabaseKey) {
-  console.error('❌ Missing SUPABASE_IWF_URL or SUPABASE_IWF_SECRET_KEY');
+  console.error('❌ Missing SUPABASE_URL or SUPABASE_SECRET_KEY');
   process.exit(1);
 }
 
