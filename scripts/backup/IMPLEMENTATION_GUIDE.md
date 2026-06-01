@@ -42,10 +42,10 @@ ssh root@46.62.223.85 "echo 'SSH test successful'"
 
 ```powershell
 # List existing SSH keys
-Get-ChildItem C:\Users\phill\.ssh\
+Get-ChildItem C:\Users\PB\.ssh\
 
 # Display public key
-Get-Content C:\Users\phill\.ssh\id_rsa.pub
+Get-Content C:\Users\PB\.ssh\id_rsa.pub
 ```
 
 #### 1.3 Generate New Key (Only if Needed)
@@ -54,17 +54,17 @@ Get-Content C:\Users\phill\.ssh\id_rsa.pub
 
 ```powershell
 # Generate Ed25519 key WITHOUT passphrase
-ssh-keygen -t ed25519 -C "weightlifting-backup" -f C:\Users\phill\.ssh\id_ed25519_backup -N '""'
+ssh-keygen -t ed25519 -C "weightlifting-backup" -f C:\Users\PB\.ssh\id_ed25519_backup -N '""'
 
 # View the public key
-Get-Content C:\Users\phill\.ssh\id_ed25519_backup.pub
+Get-Content C:\Users\PB\.ssh\id_ed25519_backup.pub
 ```
 
 #### 1.4 Copy Public Key to Server
 
 ```powershell
 # Display your public key (copy the output)
-Get-Content C:\Users\phill\.ssh\id_rsa.pub
+Get-Content C:\Users\PB\.ssh\id_rsa.pub
 
 # SSH to server (will prompt for password this time)
 ssh root@46.62.223.85
@@ -94,7 +94,7 @@ ssh root@46.62.223.85 "echo 'Passwordless SSH works!'"
 **Troubleshooting:**
 - Still asks for password → Check file permissions on server: `ls -la ~/.ssh/`
 - Connection refused → Verify server is running, check firewall rules
-- Wrong key → Try: `ssh -i C:\Users\phill\.ssh\id_rsa root@46.62.223.85 "echo test"`
+- Wrong key → Try: `ssh -i C:\Users\PB\.ssh\id_rsa root@46.62.223.85 "echo test"`
 
 **Success Criteria:**
 - ✅ SSH connection works without password prompt
@@ -249,7 +249,7 @@ Get-ExecutionPolicy -Scope CurrentUser
 
 ```powershell
 # Navigate to project directory
-cd "C:\Users\phill\Desktop\Bost Laboratory Services\Weightlifting\weightlifting-database"
+cd "C:\Users\PB\Desktop\Bost Laboratory Services\Weightlifting\weightlifting-database"
 
 # Run the script
 .\scripts\backup\pull-backup.ps1
@@ -362,9 +362,9 @@ Click **New**:
 - **Program/script:** `powershell.exe`
 - **Add arguments:**
 ```
--ExecutionPolicy Bypass -NoProfile -File "C:\Users\phill\Desktop\Bost Laboratory Services\Weightlifting\weightlifting-database\scripts\backup\pull-backup.ps1"
+-ExecutionPolicy Bypass -NoProfile -File "C:\Users\PB\Desktop\Bost Laboratory Services\Weightlifting\weightlifting-database\scripts\backup\pull-backup.ps1"
 ```
-- **Start in:** `C:\Users\phill\Desktop\Bost Laboratory Services\Weightlifting\weightlifting-database`
+- **Start in:** `C:\Users\PB\Desktop\Bost Laboratory Services\Weightlifting\weightlifting-database`
 
 #### Conditions Tab
 - ☐ Start the task only if the computer is on AC power (UNCHECKED)
@@ -700,7 +700,7 @@ Edit `scripts/backup/setup-instructions.md`, add at end:
 
 **Configuration Summary**:
 - Hetzner Server IP: 46.62.223.85
-- SSH Key: C:\Users\phill\.ssh\id_rsa (passwordless)
+- SSH Key: C:\Users\PB\.ssh\id_rsa (passwordless)
 - Coolify Backup Schedule: 1:30 AM daily
 - Remote Backup Path: [Your actual path]
 - Local Backup Directory: C:\Backups\Weightlifting-DB\
@@ -764,7 +764,7 @@ Get-Content "scripts\backup\backup-pull.log" -Tail 20
 ### Manual Operations
 ```powershell
 # Run backup pull manually
-cd "C:\Users\phill\Desktop\Bost Laboratory Services\Weightlifting\weightlifting-database"
+cd "C:\Users\PB\Desktop\Bost Laboratory Services\Weightlifting\weightlifting-database"
 .\scripts\backup\pull-backup.ps1
 
 # Check Task Scheduler status

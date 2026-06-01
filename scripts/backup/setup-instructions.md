@@ -22,14 +22,14 @@ ssh root@YOUR_HETZNER_IP "echo 'SSH access works'"
 1. **Generate SSH key** (if you don't have one):
 ```powershell
 ssh-keygen -t ed25519 -C "weightlifting-backup"
-# Press Enter to accept default location: C:\Users\phill\.ssh\id_ed25519
+# Press Enter to accept default location: C:\Users\PB\.ssh\id_ed25519
 # Press Enter twice for no passphrase (required for automation)
 ```
 
 2. **Copy public key to Hetzner server**:
 ```powershell
 # View your public key
-type C:\Users\phill\.ssh\id_ed25519.pub
+type C:\Users\PB\.ssh\id_ed25519.pub
 
 # Copy the output, then SSH to your server:
 ssh root@YOUR_HETZNER_IP
@@ -97,7 +97,7 @@ The PowerShell script is located at:
 
 Test the script manually:
 ```powershell
-cd "C:\Users\phill\Desktop\Bost Laboratory Services\Weightlifting\weightlifting-database"
+cd "C:\Users\PB\Desktop\Bost Laboratory Services\Weightlifting\weightlifting-database"
 .\scripts\backup\pull-backup.ps1
 ```
 
@@ -124,8 +124,8 @@ cd "C:\Users\phill\Desktop\Bost Laboratory Services\Weightlifting\weightlifting-
 - Click **New**
 - Action: **Start a program**
 - Program/script: `powershell.exe`
-- Add arguments: `-ExecutionPolicy Bypass -File "C:\Users\phill\Desktop\Bost Laboratory Services\Weightlifting\weightlifting-database\scripts\backup\pull-backup.ps1"`
-- Start in: `C:\Users\phill\Desktop\Bost Laboratory Services\Weightlifting\weightlifting-database`
+- Add arguments: `-ExecutionPolicy Bypass -File "C:\Users\PB\Desktop\Bost Laboratory Services\Weightlifting\weightlifting-database\scripts\backup\pull-backup.ps1"`
+- Start in: `C:\Users\PB\Desktop\Bost Laboratory Services\Weightlifting\weightlifting-database`
 
 ### Conditions Tab
 - **Uncheck** "Start the task only if the computer is on AC power"
@@ -165,7 +165,7 @@ Wait for the scheduled run (1:30am backup, 2:00am pull) and check results in the
 Get-ChildItem "C:\Backups\Weightlifting-DB\" | Sort-Object LastWriteTime -Descending
 
 # View pull script log
-Get-Content "C:\Users\phill\Desktop\Bost Laboratory Services\Weightlifting\weightlifting-database\scripts\backup\backup-pull.log" -Tail 50
+Get-Content "C:\Users\PB\Desktop\Bost Laboratory Services\Weightlifting\weightlifting-database\scripts\backup\backup-pull.log" -Tail 50
 ```
 
 ### Check Task Scheduler History

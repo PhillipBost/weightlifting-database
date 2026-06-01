@@ -3,8 +3,8 @@
 
 $action = New-ScheduledTaskAction `
     -Execute 'powershell.exe' `
-    -Argument '-ExecutionPolicy Bypass -NoProfile -File "C:\Users\phill\Desktop\Bost Laboratory Services\Weightlifting\weightlifting-database\scripts\backup\pull-backup.ps1"' `
-    -WorkingDirectory 'C:\Users\phill\Desktop\Bost Laboratory Services\Weightlifting\weightlifting-database'
+    -Argument '-ExecutionPolicy Bypass -NoProfile -File "C:\Users\PB\Desktop\Bost Laboratory Services\Weightlifting\weightlifting-database\scripts\backup\pull-backup.ps1"' `
+    -WorkingDirectory 'C:\Users\PB\Desktop\Bost Laboratory Services\Weightlifting\weightlifting-database'
 
 $trigger = New-ScheduledTaskTrigger -Daily -At 2:00AM
 
@@ -19,7 +19,7 @@ $settings = New-ScheduledTaskSettingsSet `
 
 $principal = New-ScheduledTaskPrincipal `
     -UserId $env:USERNAME `
-    -RunLevel Highest
+    -RunLevel Limited
 
 Register-ScheduledTask `
     -TaskName 'Weightlifting DB Backup Pull' `

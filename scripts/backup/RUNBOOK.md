@@ -81,10 +81,10 @@ Get-ChildItem "C:\Backups\Weightlifting-DB\" | Where-Object {$_.LastWriteTime -g
 
 ```powershell
 # Search for errors in last week
-Get-Content "C:\Users\phill\Desktop\Bost Laboratory Services\Weightlifting\weightlifting-database\scripts\backup\backup-pull.log" | Select-String -Pattern "ERROR" | Select-Object -Last 10
+Get-Content "C:\Users\PB\Desktop\Bost Laboratory Services\Weightlifting\weightlifting-database\scripts\backup\backup-pull.log" | Select-String -Pattern "ERROR" | Select-Object -Last 10
 
 # Verify successful completions
-Get-Content "C:\Users\phill\Desktop\Bost Laboratory Services\Weightlifting\weightlifting-database\scripts\backup\backup-pull.log" | Select-String -Pattern "Backup pull completed successfully" | Select-Object -Last 7
+Get-Content "C:\Users\PB\Desktop\Bost Laboratory Services\Weightlifting\weightlifting-database\scripts\backup\backup-pull.log" | Select-String -Pattern "Backup pull completed successfully" | Select-Object -Last 7
 ```
 
 **Expected:** No ERROR entries (or only historical errors before fixes)
@@ -193,7 +193,7 @@ Write-Host "Growth rate: $growthRate%"
 
 ```powershell
 # Run manual backup pull to verify system health
-cd "C:\Users\phill\Desktop\Bost Laboratory Services\Weightlifting\weightlifting-database"
+cd "C:\Users\PB\Desktop\Bost Laboratory Services\Weightlifting\weightlifting-database"
 .\scripts\backup\pull-backup.ps1
 ```
 
@@ -385,7 +385,7 @@ Update `README.md`:
 **Quick Fix:**
 ```powershell
 # Run manual backup pull
-cd "C:\Users\phill\Desktop\Bost Laboratory Services\Weightlifting\weightlifting-database"
+cd "C:\Users\PB\Desktop\Bost Laboratory Services\Weightlifting\weightlifting-database"
 .\scripts\backup\pull-backup.ps1
 ```
 
@@ -423,12 +423,12 @@ cd "C:\Users\phill\Desktop\Bost Laboratory Services\Weightlifting\weightlifting-
    **If asks for password:**
    - SSH keys not configured properly
    - Re-run Phase 1 from IMPLEMENTATION_GUIDE.md
-   - Verify: `Get-Content C:\Users\phill\.ssh\id_rsa.pub` matches server's `~/.ssh/authorized_keys`
+   - Verify: `Get-Content C:\Users\PB\.ssh\id_rsa.pub` matches server's `~/.ssh/authorized_keys`
 
 3. **Check SSH key permissions**
    ```powershell
    # View SSH key permissions
-   Get-ChildItem C:\Users\phill\.ssh\ | Select-Object Name, Mode
+   Get-ChildItem C:\Users\PB\.ssh\ | Select-Object Name, Mode
    ```
 
 **Quick Fix:**
@@ -438,7 +438,7 @@ ssh root@46.62.223.85 "cat ~/.ssh/authorized_keys"
 # Verify your public key is listed
 
 # If not, add it:
-$pubKey = Get-Content C:\Users\phill\.ssh\id_rsa.pub
+$pubKey = Get-Content C:\Users\PB\.ssh\id_rsa.pub
 # SSH to server and run: echo "$pubKey" >> ~/.ssh/authorized_keys
 ```
 
