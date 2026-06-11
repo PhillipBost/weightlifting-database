@@ -44,7 +44,28 @@ module.exports = {
 		58645: 60468, // Malachi John Fejeran LUJAN	(GUM) -> Malachi John Lujan (USAW)
 		51987: 60702, // Bekdoolot RASULBEKOV (KGZ) -> Bekdoolot Rasulbekov (USAW)
 		50193: 57627, // Malek Faed Naji MOUSA (JOR) -> malek mousa (USAW)
-		11095: 151040 // Andrew Ettinger (IWF) -> Andrew Ettinger (USAW)
+		11095: 151040, // Andrew Ettinger (IWF) -> Andrew Ettinger (USAW)
+		56254: 36169, // Anna SIERRA (IWF) -> Anna Rucker (USAW)
+		53338: 7752,  // Taylor Nicole TURNER (IWF) -> Taylor Wilkins (USAW)
+		55583: 7752,  // Taylor Nicole WILKINS (IWF) -> Taylor Wilkins (USAW)
+		55312: 930,   // Nicole Anne LIM (IWF) -> Nicole Blackwell (USAW)
+		50801: 18223, // Jessie Nicole BRADLEY (IWF) -> Jessie Stemo (USAW)
+		47111: 3487,  // Samantha Jean ZIMMERMAN (IWF) -> Samantha Poeth (USAW)
+		52750: 87,    // Stephanie Kristin SPENCER (IWF) -> Stephanie Lemmen (USAW)
+		53345: 10843, // Adrianne ACOSTA (IWF) -> Adrianne Haider (USAW)
+		53340: 14654, // Danielle Marie ROBERTS (IWF) -> Danielle Gunnin (USAW)
+		54755: 16744, // Jillian Marie SEAMON (IWF) -> Jillian Hall (USAW)
+		55203: 15966, // Briana Daniella SFAMURRI (IWF) -> Briana Russo (USAW)
+		51940: 8140,  // Shala Sherina MC MILLAN (IWF) -> Shala McMillan (USAW)
+		55518: 27178, // D AGOSTINO Mangosong Chrisanto (IWF) -> Chrisanto D'Agostino (USAW)
+		52108: 9433,  // Matthew Scott MC CARTY (IWF) -> Matthew McCarty (USAW)
+		54437: 11185, // Nicole Brittanie DENIES (IWF) -> Nicole Deines (USAW)
+		53330: 15636, // Shannon L MC NAMES (IWF) -> Shannon McNames (USAW)
+		55520: 1577,  // Morgan MC (IWF) -> Morgan McCullough (USAW)
+		56016: 4606,  // Hanale Nalunui KAU (IWF) -> Hanale Kauha'aha'a (USAW)
+		52751: 6962,  // Jennyfer Kang ROBERTS (IWF) -> Jennyfer Roberts (USAW)
+		52752: 1075,  // Robert Thomas BLACKWELL (IWF) -> Robert Blackwell (USAW)
+		56119: 198793 // Annalee Chole SMITH (IWF) -> Chloe Smith (USAW)
     },
 
     /**
@@ -53,6 +74,7 @@ module.exports = {
      * Format: IWF_ID -> [ ARRAY OF USAW_IDS TO IGNORE ]
      */
     BLACKLIST_ATHLETE_MAP: {
+        52118: [23719], // Rachel LEBLANC-BAZINET (IWF) -> Camille Leblanc-bazinet (USAW)
         47076: [35566], // Jose Rivera
         48535: [3331], // Minh Quang NGUYEN (VIE) -> Quang Nguyen
         46489: [4335], // Elio Oudany GUERRA ARANOZ (CUB) -> Elio Guerra

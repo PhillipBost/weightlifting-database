@@ -45,7 +45,7 @@ function parseAttempt(val) {
     if (!val || val === '---' || val === '0') return null;
     const num = parseFloat(val);
     if (isNaN(num) || num === 0) return null;
-    return Math.abs(num); // IWF uses negative values for failed attempts; compare magnitude only
+    return num; // Keep negative sign to distinguish makes from misses
 }
 
 function hasPhysicsOverlap(iwfResult, usawResult) {
@@ -72,10 +72,10 @@ function hasPhysicsOverlap(iwfResult, usawResult) {
     // Need at least 4 matched slots, and at least 4 valid slots to compare
     if (validSlots.length < 4) {
         // Fallback: fewer than 4 recorded attempts on either side — require all valid slots to match
-        return validSlots.every(([i, u]) => Math.abs(i - u) <= 1);
+        return validSlots.every(([i, u]) => i === u);
     }
 
-    const matchedSlots = validSlots.filter(([i, u]) => Math.abs(i - u) <= 1);
+    const matchedSlots = validSlots.filter(([i, u]) => i === u);
     return matchedSlots.length >= 4;
 }
 
@@ -86,35 +86,101 @@ function getDelta(iA, uA) {
 }
 
 function evaluateIdentity(iAthlete, uAthlete, isUsaAthlete) {
-    const iwfTokens = tokenize(iAthlete.lifter_name);
-    const usawTokens = tokenize(uAthlete.lifter_name);
-    
-    if (iAthlete.lifter_name.toLowerCase().trim() === uAthlete.lifter_name.toLowerCase().trim()) return "MATCH";
-
-    const overlap = usawTokens.filter(t => iwfTokens.includes(t));
-    const physicsMatch = hasPhysicsOverlap(iAthlete, uAthlete);
-    
-    // Strong naming match (2+ words, or 1 word that is specifically the last name)
-    const strongNameMatch = overlap.length >= 2 || (overlap.length === 1 && overlap[0] === usawTokens[usawTokens.length - 1]);
-    
-    // Weak naming match (1 word, but it's just the first name or middle name)
-    const weakNameMatch = overlap.length === 1 && overlap[0] !== usawTokens[usawTokens.length - 1];
-
-    if (strongNameMatch) {
-         if (physicsMatch) return "MATCH";
-         else return "PHYSICS_FAILED";
-    } else if (weakNameMatch) {
-         // E.g. Anna Sierra / Anna Rucker (Maiden Name Change)
-         if (physicsMatch) return "MATCH";
-         else return "NO_MATCH";  // Ignore mismatched random people sharing a first name
-    } else if (isUsaAthlete && physicsMatch && parseLift(iAthlete.total) > 0) {
-         // ZERO name overlap but PERFECT physical tie.
-         // Only flag for USA athletes — for international athletes this is almost certainly a coincidence
-         // (hundreds of lifters at a World Championships, lift-value collisions are random noise).
-         return "AMBIGUOUS_PHYSICS_ONLY";
+    // 1. Birth Year Validation (Strict Match Enforced)
+    if (iAthlete.birth_year && uAthlete.birth_year && iAthlete.birth_year !== uAthlete.birth_year) {
+        return { status: "NO_MATCH", score: 0 };
     }
+
+    let score = 0;
+    const iName = (iAthlete.lifter_name || iAthlete.athlete_name || "").toLowerCase().trim();
+    const uName = (uAthlete.lifter_name || uAthlete.athlete_name || "").toLowerCase().trim();
     
-    return "NO_MATCH";
+    const iwfTokens = tokenize(iAthlete.lifter_name || iAthlete.athlete_name);
+    const usawTokens = tokenize(uAthlete.lifter_name || uAthlete.athlete_name);
+
+    // 2. Name Match Scoring
+    if (iName === uName && iName.length > 0) {
+        score += 80;
+    } else {
+        const overlap = usawTokens.filter(t => iwfTokens.includes(t));
+        
+        // Strong naming match (2+ words)
+        const strongNameMatch = overlap.length >= 2;
+        // Last-name-only match (1 token, specifically the last name)
+        const lastNameOnlyMatch = overlap.length === 1 && overlap[0] === usawTokens[usawTokens.length - 1];
+        // Weak naming match (1 word, but it's just the first name or middle name)
+        const weakNameMatch = overlap.length === 1 && overlap[0] !== usawTokens[usawTokens.length - 1];
+
+        if (strongNameMatch) {
+            score += 60;
+        } else if (lastNameOnlyMatch) {
+            score += 40;
+        } else if (weakNameMatch) {
+            score += 10;
+        } else {
+            return { status: "NO_MATCH", score: 0 };
+        }
+    }
+
+    // 3. Birth Year Match Bonus
+    if (iAthlete.birth_year && uAthlete.birth_year && iAthlete.birth_year === uAthlete.birth_year) {
+        score += 20;
+    }
+
+    // 4. Physical Lift & Total Verification
+
+    // Compare individual attempts exactly (+5 for match, -10 for mismatch)
+    const attempts = [
+        [parseAttempt(iAthlete.snatch_lift_1), parseAttempt(uAthlete.snatch_lift_1)],
+        [parseAttempt(iAthlete.snatch_lift_2), parseAttempt(uAthlete.snatch_lift_2)],
+        [parseAttempt(iAthlete.snatch_lift_3), parseAttempt(uAthlete.snatch_lift_3)],
+        [parseAttempt(iAthlete.cj_lift_1),     parseAttempt(uAthlete.cj_lift_1)],
+        [parseAttempt(iAthlete.cj_lift_2),     parseAttempt(uAthlete.cj_lift_2)],
+        [parseAttempt(iAthlete.cj_lift_3),     parseAttempt(uAthlete.cj_lift_3)],
+    ];
+
+    for (const [i, u] of attempts) {
+        if (i !== null && u !== null) {
+            if (i === u) {
+                score += 5;
+            } else {
+                score -= 10;
+            }
+        }
+    }
+
+    const iTotal = parseLift(iAthlete.total);
+    const uTotal = parseLift(uAthlete.total);
+    
+    // Compare non-zero posted Totals (Exact)
+    if (iTotal > 0 && uTotal > 0 && iTotal === uTotal) {
+        score += 20;
+    }
+
+    const iBestSnatch = parseLift(iAthlete.best_snatch);
+    const uBestSnatch = parseLift(uAthlete.best_snatch);
+    const iBestCj = parseLift(iAthlete.best_cj);
+    const uBestCj = parseLift(uAthlete.best_cj);
+
+    // Compare non-zero best lifts (Exact)
+    if (iBestSnatch > 0 && uBestSnatch > 0 && iBestSnatch === uBestSnatch) {
+        score += 10;
+    }
+    if (iBestCj > 0 && uBestCj > 0 && iBestCj === uBestCj) {
+        score += 10;
+    }
+
+    // Cap score at 100
+    score = Math.min(score, 100);
+
+    // 5. Determine status
+    if (score >= 100) {
+        return { status: "MATCH", score };
+    } else if (score >= 70) {
+        return { status: "AMBIGUOUS", score };
+    } else {
+        return { status: "NO_MATCH", score };
+    }
 }
 
 async function fetchAll(client, table, select, filterCol, filterVal) {
@@ -206,7 +272,7 @@ async function run() {
     const iwfAllMeetResults = [];
     for (let i = 0; i < mappedIwfMeetIds.length; i += 100) {
         const chunk = mappedIwfMeetIds.slice(i, i + 100);
-        const { data } = await supabaseIwf.from('iwf_meet_results').select('db_meet_id, db_lifter_id, lifter_name, country_code, snatch_lift_1, snatch_lift_2, snatch_lift_3, best_snatch, cj_lift_1, cj_lift_2, cj_lift_3, best_cj, total').in('db_meet_id', chunk);
+        const { data } = await supabaseIwf.from('iwf_meet_results').select('db_meet_id, db_lifter_id, lifter_name, country_code, birth_year, snatch_lift_1, snatch_lift_2, snatch_lift_3, best_snatch, cj_lift_1, cj_lift_2, cj_lift_3, best_cj, total').in('db_meet_id', chunk);
         if (data) iwfAllMeetResults.push(...data);
     }
     console.log(`Loaded ${iwfAllMeetResults.length} IWF results across ${mappedIwfMeetIds.length} meets.`);
@@ -217,7 +283,7 @@ async function run() {
     const usawMeetResults = [];
     for (let i = 0; i < usawTargetMeetIds.length; i += 100) {
         const chunk = usawTargetMeetIds.slice(i, i + 100);
-        const { data } = await supabase.from('usaw_meet_results').select('lifter_id, lifter_name, meet_id, snatch_lift_1, snatch_lift_2, snatch_lift_3, best_snatch, cj_lift_1, cj_lift_2, cj_lift_3, best_cj, total').in('meet_id', chunk);
+        const { data } = await supabase.from('usaw_meet_results').select('lifter_id, lifter_name, meet_id, birth_year, snatch_lift_1, snatch_lift_2, snatch_lift_3, best_snatch, cj_lift_1, cj_lift_2, cj_lift_3, best_cj, total').in('meet_id', chunk);
         if (data) usawMeetResults.push(...data);
     }
     
@@ -253,14 +319,20 @@ async function run() {
             const isUsaAthlete = iAthlete.country_code === 'USA';
 
             let possibleIdentities = [];
-            let physicallyMismatchedButNameMatched = [];
             let physicsOnlyMatches = [];
             
             for (const uAthlete of uRoster) {
-                const status = evaluateIdentity(iAthlete, uAthlete, isUsaAthlete);
-                if (status === "MATCH") possibleIdentities.push(uAthlete);
-                else if (status === "PHYSICS_FAILED") physicallyMismatchedButNameMatched.push(uAthlete);
-                else if (status === "AMBIGUOUS_PHYSICS_ONLY") physicsOnlyMatches.push(uAthlete);
+                if (BLACKLIST_ATHLETE_MAP[iAthlete.db_lifter_id]?.includes(uAthlete.lifter_id)) {
+                    continue;
+                }
+                const res = evaluateIdentity(iAthlete, uAthlete, isUsaAthlete);
+                if (res.status === "MATCH") {
+                    uAthlete.calculated_score = res.score;
+                    possibleIdentities.push(uAthlete);
+                } else if (res.status === "AMBIGUOUS") {
+                    uAthlete.calculated_score = res.score;
+                    physicsOnlyMatches.push(uAthlete);
+                }
             }
             
             const verificationEventContext = {
@@ -302,7 +374,7 @@ async function run() {
                         usaw_name: uAthlete.lifter_name,
                         iwf_db_lifter_id: iAthlete.db_lifter_id,
                         iwf_name: iAthlete.lifter_name,
-                        match_confidence: 100,
+                        match_confidence: uAthlete.calculated_score,
                         verification_event: verificationEventContext,
                         lift_comparison: {
                             iwf_lifts: `S1:${iAthlete.snatch_lift_1||'--'} S2:${iAthlete.snatch_lift_2||'--'} S3:${iAthlete.snatch_lift_3||'--'} | CJ1:${iAthlete.cj_lift_1||'--'} CJ2:${iAthlete.cj_lift_2||'--'} CJ3:${iAthlete.cj_lift_3||'--'} | Best: ${iAthlete.best_snatch}/${iAthlete.best_cj}/${iAthlete.total}`,
@@ -330,20 +402,8 @@ async function run() {
                     iwf_name: iAthlete.lifter_name,
                     verification_event: verificationEventContext,
                     iwf_lifts: `S1:${iAthlete.snatch_lift_1||'--'} S2:${iAthlete.snatch_lift_2||'--'} S3:${iAthlete.snatch_lift_3||'--'} | CJ1:${iAthlete.cj_lift_1||'--'} CJ2:${iAthlete.cj_lift_2||'--'} CJ3:${iAthlete.cj_lift_3||'--'}`,
-                    reason: "Zero Name Overlap, but Lifts Matched Perfectly",
+                    reason: `Ambiguous match (Score: ${physicsOnlyMatches[0].calculated_score})`,
                     possible_matches: physicsOnlyMatches.map(u => ({
-                        usaw_lifter_id: u.lifter_id, usaw_name: u.lifter_name,
-                        usaw_lifts: `S1:${u.snatch_lift_1||'--'} S2:${u.snatch_lift_2||'--'} S3:${u.snatch_lift_3||'--'} | CJ1:${u.cj_lift_1||'--'} CJ2:${u.cj_lift_2||'--'} CJ3:${u.cj_lift_3||'--'}`
-                    }))
-                });
-            } else if (physicallyMismatchedButNameMatched.length > 0) {
-                physicsFailedAliases.push({
-                    iwf_country: iAthlete.country_code,
-                    iwf_db_lifter_id: iAthlete.db_lifter_id,
-                    iwf_name: iAthlete.lifter_name,
-                    verification_event: verificationEventContext,
-                    iwf_lifts: `S1:${iAthlete.snatch_lift_1||'--'} S2:${iAthlete.snatch_lift_2||'--'} S3:${iAthlete.snatch_lift_3||'--'} | CJ1:${iAthlete.cj_lift_1||'--'} CJ2:${iAthlete.cj_lift_2||'--'} CJ3:${iAthlete.cj_lift_3||'--'}`,
-                    failed_physics_matches: physicallyMismatchedButNameMatched.map(u => ({
                         usaw_lifter_id: u.lifter_id, usaw_name: u.lifter_name,
                         usaw_lifts: `S1:${u.snatch_lift_1||'--'} S2:${u.snatch_lift_2||'--'} S3:${u.snatch_lift_3||'--'} | CJ1:${u.cj_lift_1||'--'} CJ2:${u.cj_lift_2||'--'} CJ3:${u.cj_lift_3||'--'}`
                     }))
