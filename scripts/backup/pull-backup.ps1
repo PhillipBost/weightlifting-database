@@ -41,7 +41,7 @@ Write-Log "=========================================="
 
 # Verify SSH connectivity
 Write-Log "Testing SSH connection to $SSH_USER@$HETZNER_IP..."
-$sshTest = ssh "$SSH_USER@$HETZNER_IP" "echo 'SSH connection successful'" 2>&1
+$sshTest = ssh -o BatchMode=yes -o ConnectTimeout=15 "$SSH_USER@$HETZNER_IP" "echo 'SSH connection successful'" 2>&1
 if ($LASTEXITCODE -ne 0) {
     Write-Log "ERROR: SSH connection failed. Check SSH key authentication."
     Write-Log "Error details: $sshTest"
@@ -58,7 +58,7 @@ if (-not (Test-Path $LOCAL_BACKUP_DIR)) {
 # Find all backup files on remote server (modified in last 48 hours)
 Write-Log "Scanning for backup files on remote server..."
 $findCommand = "find $REMOTE_BACKUP_PATH -type f \( -name '*.dump' -o -name '*.dmp' -o -name '*backup*.sql' -o -name '*.sql.gz' \) -mmin -2880 2>/dev/null"
-$remoteBackups = ssh "$SSH_USER@$HETZNER_IP" "$findCommand" 2>&1
+$remoteBackups = ssh -o BatchMode=yes -o ConnectTimeout=15 "$SSH_USER@$HETZNER_IP" "$findCommand" 2>&1
 
 if ($LASTEXITCODE -ne 0 -or [string]::IsNullOrWhiteSpace($remoteBackups)) {
     Write-Log "ERROR: No recent backup files found on remote server"
@@ -88,7 +88,7 @@ foreach ($remoteFile in $remoteBackupArray) {
     Write-Log "Downloading: $filename"
 
     # Use SCP to download file
-    scp "${SSH_USER}@${HETZNER_IP}:${remoteFile}" "$localFile" 2>&1 | Out-Null
+    scp -o BatchMode=yes -o ConnectTimeout=15 "${SSH_USER}@${HETZNER_IP}:${remoteFile}" "$localFile" 2>&1 | Out-Null
 
     if ($LASTEXITCODE -eq 0) {
         $fileSize = (Get-Item $localFile).Length / 1MB
