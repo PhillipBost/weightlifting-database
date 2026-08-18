@@ -327,7 +327,7 @@ async function scrapeAndImportMeetResults(newMeetIds, meetings) {
 }
 
 // REAL Sport80 member page verification using puppeteer
-async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId) {
+async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId, eventDate = null) {
     // Get target meet information for enhanced matching
     const { data: targetMeet, error: meetError } = await supabase
         .from('usaw_meets')
@@ -342,7 +342,7 @@ async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId) {
 
     const memberUrl = `https://usaweightlifting.sport80.com/public/rankings/member/${lifterInternalId}`;
     console.log(`    🌐 Visiting: ${memberUrl}`);
-    console.log(`    🎯 Looking for: "${targetMeet.Meet}" on ${targetMeet.Date}`);
+    console.log(`    🎯 Looking for: "${targetMeet.Meet}" on ${eventDate || targetMeet.Date}`);
 
     let browser;
     try {
@@ -399,9 +399,10 @@ async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId) {
         });
 
         // Match by meet name and date
+        const expectedDate = eventDate || targetMeet.Date;
         const foundMeet = pageData.find(meet => {
             const nameMatch = meet.name === targetMeet.Meet;
-            const dateMatch = meet.date === targetMeet.Date;
+            const dateMatch = meet.date === expectedDate;
             return nameMatch && dateMatch;
         });
 
@@ -409,7 +410,7 @@ async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId) {
             console.log(`    ✅ VERIFIED: "${foundMeet.name}" on ${foundMeet.date} found in athlete's history`);
             return true;
         } else {
-            console.log(`    ❌ NOT FOUND: "${targetMeet.Meet}" on ${targetMeet.Date} not in athlete's history`);
+            console.log(`    ❌ NOT FOUND: "${targetMeet.Meet}" on ${expectedDate} not in athlete's history`);
             return false;
         }
 
@@ -424,7 +425,7 @@ async function verifyLifterParticipationInMeet(lifterInternalId, targetMeetId) {
 }
 
 // Tier 2 verification for athlete disambiguation
-async function runSport80MemberUrlVerification(lifterName, potentialLifterIds, targetMeetId) {
+async function runSport80MemberUrlVerification(lifterName, potentialLifterIds, targetMeetId, eventDate = null) {
     console.log(`  🔍 Tier 2: Running Sport80 member URL verification for ${potentialLifterIds.length} candidates...`);
 
     for (const lifterId of potentialLifterIds) {
@@ -445,7 +446,7 @@ async function runSport80MemberUrlVerification(lifterName, potentialLifterIds, t
                 console.log(`    🔍 Checking lifter ${lifterId} (internal_id: ${lifter.internal_id})...`);
 
                 // REAL verification: Visit the member page and check if they participated in target meet
-                const verified = await verifyLifterParticipationInMeet(lifter.internal_id, targetMeetId);
+                const verified = await verifyLifterParticipationInMeet(lifter.internal_id, targetMeetId, eventDate);
 
                 if (verified) {
                     console.log(`    ✅ CONFIRMED: Using lifter ${lifterId} for meet ${targetMeetId}`);
@@ -461,7 +462,7 @@ async function runSport80MemberUrlVerification(lifterName, potentialLifterIds, t
                     console.log(`    🎯 Found internal_id ${foundInternalId} for ${lifter.athlete_name} via Sport80 search`);
 
                     // Verify this lifter participated in the target meet
-                    const verified = await verifyLifterParticipationInMeet(foundInternalId, targetMeetId);
+                    const verified = await verifyLifterParticipationInMeet(foundInternalId, targetMeetId, eventDate);
 
                     if (verified) {
                         // Update the lifter record with the found internal_id
@@ -548,7 +549,7 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
 
         // If we have a target meet, verify participation using Tier 2
         if (additionalData.targetMeetId) {
-            const verifiedLifterId = await runSport80MemberUrlVerification(cleanName, lifterIds, additionalData.targetMeetId);
+            const verifiedLifterId = await runSport80MemberUrlVerification(cleanName, lifterIds, additionalData.targetMeetId, additionalData.eventDate);
 
             if (verifiedLifterId) {
                 const verifiedLifter = existingLifters.find(l => l.lifter_id === verifiedLifterId);
@@ -590,7 +591,7 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
 
     // If we have a target meet, use Tier 2 verification
     if (additionalData.targetMeetId) {
-        const verifiedLifterId = await runSport80MemberUrlVerification(cleanName, lifterIds, additionalData.targetMeetId);
+        const verifiedLifterId = await runSport80MemberUrlVerification(cleanName, lifterIds, additionalData.targetMeetId, additionalData.eventDate);
 
         if (verifiedLifterId) {
             const verifiedLifter = existingLifters.find(l => l.lifter_id === verifiedLifterId);
