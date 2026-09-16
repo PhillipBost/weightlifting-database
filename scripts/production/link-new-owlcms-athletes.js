@@ -357,37 +357,37 @@ async function main() {
         }
 
         // -------------------------------------------------------------
-        // Candidate Step 2: Search USAW Lifters by Last Name (with blacklist)
+        // Candidate Step 2: Search USAW Lifters (Demographic Anchor: Gender + Birth Year)
         // -------------------------------------------------------------
         let usawCandidates = [];
-        if (lastName.length >= 3) {
-            const { data: uCandidates } = await supabase
-                .from('usaw_lifters')
-                .select('lifter_id, athlete_name, membership_number')
-                .ilike('athlete_name', `%${lastName}%`)
-                .limit(10);
+        if (oLifter.gender && oLifter.birth_year && lastName.length >= 2) {
+            const { data: uResults } = await supabase
+                .from('usaw_meet_results')
+                .select('lifter_id, lifter_name, birth_year, gender, total, date')
+                .eq('gender', oLifter.gender.toUpperCase())
+                .eq('birth_year', oLifter.birth_year)
+                .ilike('lifter_name', `%${lastName}%`);
 
-            for (const u of uCandidates || []) {
-                if (blacklist.includes(u.lifter_id)) continue;
+            const candidateMap = new Map();
+            for (const r of uResults || []) {
+                if (blacklist.includes(r.lifter_id)) continue;
 
-                // Verify birth year via usaw_meet_results
-                const { data: uRes } = await supabase
-                    .from('usaw_meet_results')
-                    .select('birth_year, gender, total, date')
-                    .eq('lifter_id', u.lifter_id)
-                    .order('date', { ascending: false })
-                    .limit(3);
+                const uBirthYear = r.birth_year ? parseInt(r.birth_year, 10) : null;
+                const uGender = r.gender || null;
 
-                const uBirthYear = uRes?.[0]?.birth_year ? parseInt(uRes[0].birth_year, 10) : null;
-                const uGender = uRes?.[0]?.gender || null;
-
-                if (!oLifter.birth_year || !uBirthYear || oLifter.birth_year === uBirthYear) {
-                    u.birth_year = uBirthYear;
-                    u.gender = uGender;
-                    u.results = uRes || [];
-                    usawCandidates.push(u);
+                if (!candidateMap.has(r.lifter_id)) {
+                    candidateMap.set(r.lifter_id, {
+                        lifter_id: r.lifter_id,
+                        athlete_name: r.lifter_name,
+                        birth_year: uBirthYear,
+                        gender: uGender,
+                        results: []
+                    });
                 }
+                candidateMap.get(r.lifter_id).results.push(r);
             }
+
+            usawCandidates = Array.from(candidateMap.values());
         }
 
         // -------------------------------------------------------------

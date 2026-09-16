@@ -2,6 +2,13 @@
 
 All notable changes to the Weightlifting Database project will be documented in this file.
 
+## [Fixed] - 2026-09-16 (Eastern Time)
+
+- **Universal Demographic Candidate Retrieval for USAW (`scripts/production/link-new-owlcms-athletes.js`)**:
+  - Replaced unanchored `lastName`-only query with strict demographic gate `(gender, birth_year, lastName)` on `usaw_meet_results`.
+  - Eliminated arbitrary `.limit(10)` truncation that previously discarded valid candidates sharing common American surnames (e.g. Jones, Smith).
+  - Brought USAW candidate discovery into 100% architectural symmetry with IWF candidate retrieval.
+
 ## [Fixed] - 2026-09-15 (Eastern Time)
 
 - **OWLCMS Daemon Signal Listener Reconnect Leak (`scripts/production/owlcms-event-daemon.js`)**:

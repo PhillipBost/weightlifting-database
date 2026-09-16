@@ -17,3 +17,9 @@
    - Persistent worker daemon (`scripts/production/owlcms-event-daemon.js`) connects to PostgreSQL via `LISTEN owlcms_pipeline_event`.
    - Wakes up instantaneously upon `INSERT` on `owlcms_lifters` (`link_status = 'PENDING'`) or `athlete_aliases`.
    - Debounces burst imports (1500ms window), executes `runPipeline()`, and automatically updates affected static shards on disk without polling or open inbound firewall ports.
+5. **Universal Demographic Anchoring Across Federations**:
+   - Cross-federation candidate discovery across ALL federations (USAW, IWF) must strictly enforce the identical demographic anchor: `(gender, birth_year)`.
+   - Never query candidate pools using unanchored surname filters or arbitrary limits on `usaw_lifters`.
+   - Because `usaw_lifters` stores demographics at the competition level, USAW candidate resolution must query `usaw_meet_results` by `(gender = oLifter.gender, birth_year = oLifter.birth_year, last_name)` before evaluating token overlap.
+   - Never rely on federation-specific identifiers (e.g. domestic membership numbers) for cross-federation imports.
+
