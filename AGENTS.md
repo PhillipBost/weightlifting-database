@@ -22,4 +22,10 @@
    - Never query candidate pools using unanchored surname filters or arbitrary limits on `usaw_lifters`.
    - Because `usaw_lifters` stores demographics at the competition level, USAW candidate resolution must query `usaw_meet_results` by `(gender = oLifter.gender, birth_year = oLifter.birth_year, last_name)` before evaluating token overlap.
    - Never rely on federation-specific identifiers (e.g. domestic membership numbers) for cross-federation imports.
-
+6. **Multi-Federation Peer Parity & Graph Enrichment**:
+   - Federations (USAW, IWF, OWLCMS) are equal peer nodes in an identity graph.
+   - USAW is never treated as a "primary" bucket that supersedes or erases IWF records, nor is IWF a "fallback" to be dropped when a USAW match exists.
+   - Cross-federation matching must evaluate USAW and IWF candidate pools independently.
+   - An athlete matching both federations must have both links persisted in `athlete_aliases`.
+   - Code must never contain mutual erasure logic (e.g. `iwf_db_lifter_id: resolvedUsawId ? null : resolvedIwfId`) or winner-take-all federation competition.
+   - Re-evaluation passes must check existing aliases for missing federation links rather than filtering them out via `!linkedIds.has(l.lifter_id)`.
