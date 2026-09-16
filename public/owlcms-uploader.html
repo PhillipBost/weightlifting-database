@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OWLCMS JSONv2 Competition Importer | WeightliftingDB</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-gradient: radial-gradient(circle at 50% 0%, #171b26 0%, #0d1017 100%);
+      --card-bg: rgba(22, 27, 39, 0.75);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-border-hover: rgba(56, 189, 248, 0.4);
+      --accent-blue: #38bdf8;
+      --accent-cyan: #06b6d4;
+      --accent-emerald: #10b981;
+      --accent-amber: #f59e0b;
+      --accent-rose: #f43f5e;
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --glow-blue: rgba(56, 189, 248, 0.15);
+      --surface-inner: rgba(13, 16, 23, 0.6);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-gradient);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2.5rem 1.5rem;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Subtle background grid pattern */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .badge-header {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      color: var(--accent-blue);
+      font-size: 0.825rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent-blue);
+      box-shadow: 0 0 10px var(--accent-blue);
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      background: linear-gradient(135deg, #ffffff 30%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.5rem;
+    }
+
+    p.subtitle {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.5;
+    }
+
+    /* Card & Glassmorphism */
+    .card {
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--card-border);
+      border-radius: 1.25rem;
+      padding: 2rem;
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5), 0 0 50px -20px var(--glow-blue);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    /* Drop Zone */
+    .drop-zone {
+      border: 2px dashed rgba(255, 255, 255, 0.15);
+      border-radius: 1rem;
+      padding: 3rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.25rem;
+      cursor: pointer;
+      background: var(--surface-inner);
+      transition: all 0.25s ease;
+      position: relative;
+      text-align: center;
+    }
+
+    .drop-zone:hover, .drop-zone.dragover {
+      border-color: var(--accent-blue);
+      background: rgba(56, 189, 248, 0.04);
+      box-shadow: 0 0 30px rgba(56, 189, 248, 0.15);
+      transform: translateY(-2px);
+    }
+
+    .upload-icon-wrapper {
+      width: 64px;
+      height: 64px;
+      border-radius: 1rem;
+      background: rgba(56, 189, 248, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-blue);
+      box-shadow: 0 0 25px rgba(56, 189, 248, 0.2);
+      transition: transform 0.25s ease;
+    }
+
+    .drop-zone:hover .upload-icon-wrapper {
+      transform: scale(1.08);
+    }
+
+    .drop-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .drop-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      max-width: 400px;
+    }
+
+    .browse-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-main);
+      padding: 0.6rem 1.25rem;
+      border-radius: 0.75rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s, transform 0.15s;
+    }
+
+    .browse-btn:hover {
+      background: rgba(255, 255, 255, 0.14);
+      border-color: rgba(255, 255, 255, 0.25);
+      transform: translateY(-1px);
+    }
+
+    input[type="file"] {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    /* Preview Panel */
+    .preview-panel {
+      display: none;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      animation: fadeIn 0.3s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .file-meta-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      background: var(--surface-inner);
+      padding: 1rem 1.25rem;
+      border-radius: 0.75rem;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .file-info {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .file-icon {
+      color: var(--accent-cyan);
+    }
+
+    .file-name {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text-main);
+      word-break: break-all;
+    }
+
+    .file-size {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .clear-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-dim);
+      cursor: pointer;
+      padding: 0.35rem;
+      border-radius: 0.4rem;
+      display: flex;
+      align-items: center;
+      transition: color 0.2s, background 0.2s;
+    }
+
+    .clear-btn:hover {
+      color: var(--accent-rose);
+      background: rgba(244, 63, 94, 0.1);
+    }
+
+    /* Metadata Inspection Grid */
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.85rem;
+    }
+
+    .meta-item {
+      background: var(--surface-inner);
+      padding: 0.85rem 1rem;
+      border-radius: 0.75rem;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .meta-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-dim);
+      margin-bottom: 0.35rem;
+      font-weight: 600;
+    }
+
+    .meta-val {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-main);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* Actions */
+    .action-row {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      margin-top: 0.5rem;
+    }
+
+    .btn-submit {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+      color: #ffffff;
+      border: none;
+      padding: 0.95rem 1.75rem;
+      border-radius: 0.75rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 10px 25px -5px rgba(2, 132, 199, 0.4);
+      transition: all 0.2s ease;
+    }
+
+    .btn-submit:hover:not(:disabled) {
+      background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+      box-shadow: 0 12px 30px -5px rgba(56, 189, 248, 0.5);
+      transform: translateY(-2px);
+    }
+
+    .btn-submit:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .btn-dryrun {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-muted);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 0.95rem 1.5rem;
+      border-radius: 0.75rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-dryrun:hover:not(:disabled) {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--text-main);
+    }
+
+    /* Spinner */
+    .spinner {
+      width: 20px;
+      height: 20px;
+      border: 2.5px solid rgba(255, 255, 255, 0.3);
+      border-top-color: #ffffff;
+      border-radius: 50%;
+      animation: spin 0.75s linear infinite;
+      display: none;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Notification Banners */
+    .alert-banner {
+      display: none;
+      padding: 1.25rem;
+      border-radius: 0.85rem;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      animation: fadeIn 0.25s ease-out;
+    }
+
+    .alert-banner.success {
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #34d399;
+    }
+
+    .alert-banner.error {
+      background: rgba(244, 63, 94, 0.12);
+      border: 1px solid rgba(244, 63, 94, 0.3);
+      color: #fb7185;
+    }
+
+    .stats-summary {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(16, 185, 129, 0.2);
+    }
+
+    .stat-box {
+      text-align: center;
+      padding: 0.75rem;
+      background: rgba(16, 185, 129, 0.08);
+      border-radius: 0.6rem;
+    }
+
+    .stat-num {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #ffffff;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #6ee7b7;
+      margin-top: 0.25rem;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: auto;
+      padding-top: 2rem;
+      font-size: 0.825rem;
+      color: var(--text-dim);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="badge-header">
+        <span class="badge-dot"></span>
+        OWLCMS Integration Engine
+      </div>
+      <h1>Import Competition Data</h1>
+      <p class="subtitle">Upload OWLCMS JSON Version 2 (<code>CompetitionDataV2</code>) exports directly into the database.</p>
+    </header>
+
+    <div class="card">
+      <div id="alertBox" class="alert-banner"></div>
+
+      <div class="drop-zone" id="dropZone">
+        <input type="file" id="fileInput" accept=".json,application/json">
+        <div class="upload-icon-wrapper">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="17 8 12 3 7 8"></polyline>
+            <line x1="12" y1="3" x2="12" y2="15"></line>
+          </svg>
+        </div>
+        <div>
+          <div class="drop-title">Drop your OWLCMS JSONv2 file here</div>
+          <div class="drop-desc">Supports full meet exports (.json) including sessions, platform attempts, and rankings.</div>
+        </div>
+        <button type="button" class="browse-btn" id="browseBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          Browse Local File
+        </button>
+      </div>
+
+      <!-- Preview Inspection Panel -->
+      <div class="preview-panel" id="previewPanel">
+        <div class="file-meta-header">
+          <div class="file-info">
+            <div class="file-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+            </div>
+            <div>
+              <div class="file-name" id="fileNameDisplay">—</div>
+              <div class="file-size" id="fileSizeDisplay">—</div>
+            </div>
+          </div>
+          <button type="button" class="clear-btn" id="clearBtn" title="Remove file">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <div class="meta-grid">
+          <div class="meta-item">
+            <div class="meta-label">Competition Name</div>
+            <div class="meta-val" id="metaMeetName">—</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">Event Dates</div>
+            <div class="meta-val" id="metaDates">—</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">City / Venue</div>
+            <div class="meta-val" id="metaLocation">—</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">Athletes Detected</div>
+            <div class="meta-val" id="metaAthletesCount">—</div>
+          </div>
+        </div>
+
+        <div class="action-row">
+          <button type="button" class="btn-submit" id="btnImport">
+            <span class="spinner" id="importSpinner"></span>
+            <span id="importBtnText">Import Competition Data</span>
+          </button>
+          <button type="button" class="btn-dryrun" id="btnDryRun">Test Dry-Run</button>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      OWLCMS JSONv2 Ingestion • Single Platform Appearance Standard • Supabase PostgreSQL
+    </footer>
+  </div>
+
+  <script>
+    let selectedFile = null;
+    let parsedJson = null;
+
+    const fileInput = document.getElementById('fileInput');
+    const dropZone = document.getElementById('dropZone');
+    const browseBtn = document.getElementById('browseBtn');
+    const previewPanel = document.getElementById('previewPanel');
+    const clearBtn = document.getElementById('clearBtn');
+    const alertBox = document.getElementById('alertBox');
+    const btnImport = document.getElementById('btnImport');
+    const btnDryRun = document.getElementById('btnDryRun');
+    const importSpinner = document.getElementById('importSpinner');
+    const importBtnText = document.getElementById('importBtnText');
+
+    const fileNameDisplay = document.getElementById('fileNameDisplay');
+    const fileSizeDisplay = document.getElementById('fileSizeDisplay');
+    const metaMeetName = document.getElementById('metaMeetName');
+    const metaDates = document.getElementById('metaDates');
+    const metaLocation = document.getElementById('metaLocation');
+    const metaAthletesCount = document.getElementById('metaAthletesCount');
+
+    // Drag and Drop Events
+    ['dragenter', 'dragover'].forEach(name => {
+      dropZone.addEventListener(name, (e) => {
+        e.preventDefault();
+        dropZone.classList.add('dragover');
+      });
+    });
+
+    ['dragleave', 'drop'].forEach(name => {
+      dropZone.addEventListener(name, (e) => {
+        e.preventDefault();
+        dropZone.classList.remove('dragover');
+      });
+    });
+
+    dropZone.addEventListener('drop', (e) => {
+      const files = e.dataTransfer.files;
+      if (files.length > 0) handleFileSelect(files[0]);
+    });
+
+    fileInput.addEventListener('change', (e) => {
+      if (e.target.files.length > 0) handleFileSelect(e.target.files[0]);
+    });
+
+    browseBtn.addEventListener('click', () => fileInput.click());
+
+    clearBtn.addEventListener('click', () => resetForm());
+
+    function formatBytes(bytes) {
+      if (bytes < 1024) return bytes + ' B';
+      if (bytes < 1048576) return (bytes / 1024).toFixed(1) + ' KB';
+      return (bytes / 1048576).toFixed(2) + ' MB';
+    }
+
+    function formatDate(raw) {
+      if (!raw) return '—';
+      if (Array.isArray(raw)) return `${raw[0]}-${String(raw[1]).padStart(2, '0')}-${String(raw[2]).padStart(2, '0')}`;
+      return String(raw).split('T')[0];
+    }
+
+    function resetForm() {
+      selectedFile = null;
+      parsedJson = null;
+      fileInput.value = '';
+      previewPanel.style.display = 'none';
+      dropZone.style.display = 'flex';
+      hideAlert();
+    }
+
+    function showAlert(type, htmlContent) {
+      alertBox.className = `alert-banner ${type}`;
+      alertBox.innerHTML = htmlContent;
+      alertBox.style.display = 'block';
+    }
+
+    function hideAlert() {
+      alertBox.style.display = 'none';
+    }
+
+    function handleFileSelect(file) {
+      hideAlert();
+      if (!file.name.endsWith('.json')) {
+        showAlert('error', '<strong>Invalid File Format:</strong> Please upload a JSON (.json) file exported from OWLCMS.');
+        return;
+      }
+
+      selectedFile = file;
+      fileNameDisplay.textContent = file.name;
+      fileSizeDisplay.textContent = formatBytes(file.size);
+
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        try {
+          parsedJson = JSON.parse(e.target.result);
+          validateAndDisplay(parsedJson);
+        } catch (err) {
+          showAlert('error', `<strong>JSON Parse Error:</strong> Could not parse file contents: ${err.message}`);
+          resetForm();
+        }
+      };
+      reader.readAsText(file);
+    }
+
+    function validateAndDisplay(json) {
+      const version = json.formatVersion || json.version;
+      if (!version || !String(version).startsWith('2')) {
+        showAlert('error', `<strong>Unsupported OWLCMS Format:</strong> Format version '${version || 'Unknown'}' is not supported. This importer requires OWLCMS JSON Version 2 (CompetitionDataV2).`);
+        resetForm();
+        return;
+      }
+
+      const comp = json.competition || {};
+      const athletes = json.athletes || json.competitors || [];
+
+      metaMeetName.textContent = comp.competitionName || comp.name || 'OWLCMS Competition';
+      
+      const sDate = formatDate(comp.competitionDate || json.startDate);
+      const eDate = formatDate(comp.competitionEndDate || comp.competitionDate || json.endDate);
+      metaDates.textContent = sDate === eDate ? sDate : `${sDate} → ${eDate}`;
+      
+      const loc = comp.competitionCity || comp.competitionSite || comp.country || json.city || '—';
+      metaLocation.textContent = loc;
+
+      metaAthletesCount.textContent = `${athletes.length} Lifters`;
+
+      previewPanel.style.display = 'flex';
+    }
+
+    async function executeIngestion(isDryRun) {
+      if (!parsedJson) return;
+
+      hideAlert();
+      btnImport.disabled = true;
+      btnDryRun.disabled = true;
+      importSpinner.style.display = 'inline-block';
+      importBtnText.textContent = isDryRun ? 'Validating Payload...' : 'Importing Data into Supabase...';
+
+      try {
+        const response = await fetch('/api/upload-owlcms', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            fileName: selectedFile.name,
+            dryRun: isDryRun,
+            payload: parsedJson
+          })
+        });
+
+        const result = await response.json();
+
+        if (!response.ok || !result.success) {
+          throw new Error(result.error || result.message || 'Import failed');
+        }
+
+        if (isDryRun) {
+          showAlert('success', `
+            <strong>Dry-Run Succeeded!</strong><br>
+            Payload validated successfully. Found <strong>${result.athletes_found} athletes</strong> for meet "<em>${result.meet.meet_name}</em>". Ready for real import.
+          `);
+        } else {
+          showAlert('success', `
+            <strong>Import Completed Successfully!</strong><br>
+            Competition "<em>${result.meet_name}</em>" (Meet ID: <code>${result.meet_id}</code>) has been ingested into Supabase.
+            <div class="stats-summary">
+              <div class="stat-box">
+                <div class="stat-num">${result.lifters_created}</div>
+                <div class="stat-label">Lifters Created</div>
+              </div>
+              <div class="stat-box">
+                <div class="stat-num">${result.lifters_reused || 0}</div>
+                <div class="stat-label">Lifters Reused</div>
+              </div>
+              <div class="stat-box">
+                <div class="stat-num">${result.total_results_imported}</div>
+                <div class="stat-label">Results Recorded</div>
+              </div>
+            </div>
+          `);
+        }
+      } catch (err) {
+        showAlert('error', `<strong>Ingestion Error:</strong> ${err.message}`);
+      } finally {
+        btnImport.disabled = false;
+        btnDryRun.disabled = false;
+        importSpinner.style.display = 'none';
+        importBtnText.textContent = 'Import Competition Data';
+      }
+    }
+
+    btnImport.addEventListener('click', () => executeIngestion(false));
+    btnDryRun.addEventListener('click', () => executeIngestion(true));
+  </script>
+</body>
+</html>

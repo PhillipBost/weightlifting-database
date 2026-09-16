@@ -383,7 +383,7 @@ function getYearlySnapshots(results, gender, source, birthYear) {
  * Finalized logic to solve the 'relation not found' issue.
  */
 async function generateAthlete(params, externalClient = null) {
-    const { usaw_id, iwf_id } = typeof params === 'object' ? params : { usaw_id: params };
+    const { usaw_id, iwf_id, owlcms_id } = typeof params === 'object' ? params : { usaw_id: params };
 
     const client = externalClient || new Client(clientConfig);
     if (!externalClient) await client.connect();
@@ -437,26 +437,43 @@ async function generateAthlete(params, externalClient = null) {
             }
         }
 
+        let resolvedOwlcmsId = null;
+        if (owlcms_id) {
+            const idStr = owlcms_id.toString();
+            const lookup = await client.query(`SELECT lifter_id FROM owlcms_lifters WHERE lifter_id::text = $1 LIMIT 1`, [idStr]);
+            resolvedOwlcmsId = lookup.rows[0]?.lifter_id || null;
+
+            if (owlcms_id && !resolvedOwlcmsId) {
+                console.warn(`[ASSEMBLER] Warning: Failed to resolve OWLCMS ID ${owlcms_id} to an internal lifter_id`);
+            }
+        }
+
         const query = `
             WITH RECURSIVE athlete_identity AS (
                 -- Anchor row
-                SELECT usaw_lifter_id, iwf_db_lifter_id, iwf_db_lifter_id_2
+                SELECT usaw_lifter_id, iwf_db_lifter_id, iwf_db_lifter_id_2, owlcms_lifter_id, owlcms_lifter_id_2
                 FROM athlete_aliases
                 WHERE (usaw_lifter_id = $1 AND $1 IS NOT NULL)
                    OR (iwf_db_lifter_id = $2 AND $2 IS NOT NULL)
                    OR (iwf_db_lifter_id_2 = $2 AND $2 IS NOT NULL)
+                   OR (owlcms_lifter_id = $3 AND $3 IS NOT NULL)
+                   OR (owlcms_lifter_id_2 = $3 AND $3 IS NOT NULL)
                 
                 UNION
                 
-                -- Follow the alias chains
-                SELECT aa.usaw_lifter_id, aa.iwf_db_lifter_id, aa.iwf_db_lifter_id_2
+                -- Follow the alias chains across USAW, IWF, and OWLCMS
+                SELECT aa.usaw_lifter_id, aa.iwf_db_lifter_id, aa.iwf_db_lifter_id_2, aa.owlcms_lifter_id, aa.owlcms_lifter_id_2
                 FROM athlete_aliases aa
                 JOIN athlete_identity ai ON (
-                    aa.iwf_db_lifter_id = ai.iwf_db_lifter_id OR
-                    aa.iwf_db_lifter_id = ai.iwf_db_lifter_id_2 OR
-                    aa.iwf_db_lifter_id_2 = ai.iwf_db_lifter_id OR
-                    aa.iwf_db_lifter_id_2 = ai.iwf_db_lifter_id_2 OR
-                    (aa.usaw_lifter_id = ai.usaw_lifter_id AND aa.usaw_lifter_id IS NOT NULL)
+                    (aa.iwf_db_lifter_id = ai.iwf_db_lifter_id AND aa.iwf_db_lifter_id IS NOT NULL) OR
+                    (aa.iwf_db_lifter_id = ai.iwf_db_lifter_id_2 AND aa.iwf_db_lifter_id IS NOT NULL) OR
+                    (aa.iwf_db_lifter_id_2 = ai.iwf_db_lifter_id AND aa.iwf_db_lifter_id_2 IS NOT NULL) OR
+                    (aa.iwf_db_lifter_id_2 = ai.iwf_db_lifter_id_2 AND aa.iwf_db_lifter_id_2 IS NOT NULL) OR
+                    (aa.usaw_lifter_id = ai.usaw_lifter_id AND aa.usaw_lifter_id IS NOT NULL) OR
+                    (aa.owlcms_lifter_id = ai.owlcms_lifter_id AND aa.owlcms_lifter_id IS NOT NULL) OR
+                    (aa.owlcms_lifter_id = ai.owlcms_lifter_id_2 AND aa.owlcms_lifter_id IS NOT NULL) OR
+                    (aa.owlcms_lifter_id_2 = ai.owlcms_lifter_id AND aa.owlcms_lifter_id_2 IS NOT NULL) OR
+                    (aa.owlcms_lifter_id_2 = ai.owlcms_lifter_id_2 AND aa.owlcms_lifter_id_2 IS NOT NULL)
                 )
             ),
             all_iwf_db_ids AS (
@@ -473,6 +490,15 @@ async function generateAthlete(params, externalClient = null) {
                     SELECT usaw_lifter_id as id FROM athlete_identity WHERE usaw_lifter_id IS NOT NULL
                     UNION
                     SELECT $1 as id WHERE $1 IS NOT NULL
+                ) ids
+            ),
+            all_owlcms_internal_ids AS (
+                SELECT DISTINCT id FROM (
+                    SELECT owlcms_lifter_id as id FROM athlete_identity WHERE owlcms_lifter_id IS NOT NULL
+                    UNION
+                    SELECT owlcms_lifter_id_2 as id FROM athlete_identity WHERE owlcms_lifter_id_2 IS NOT NULL
+                    UNION
+                    SELECT $3::bigint as id WHERE $3 IS NOT NULL
                 ) ids
             ),
             usaw_results_agg AS (
@@ -556,6 +582,74 @@ async function generateAthlete(params, externalClient = null) {
                 LEFT JOIN iwf_meets m ON r.db_meet_id = m.db_meet_id
                 WHERE r.db_lifter_id IN (SELECT id FROM all_iwf_db_ids)
             ),
+            owlcms_results_agg AS (
+                SELECT 
+                    jsonb_agg(
+                        jsonb_build_object(
+                            'id', r.result_id,
+                            'meet_id', r.meet_id,
+                            'meet_name', m.meet_name,
+                            'date', m.start_date,
+                            'end_date', m.end_date,
+                            'city', m.city,
+                            'venue', m.country,
+                            'organizer', m.organizer,
+                            'category', r.category,
+                            'body_weight_kg', r.body_weight_kg,
+                            'scale_weight_kg', r.scale_weight_kg,
+                            'gender', r.gender,
+                            'birth_year', r.birth_year,
+                            'competition_age', r.competition_age,
+                            'session_name', r.session_name,
+                            'lot_number', r.lot_number,
+                            'start_number', r.start_number,
+                            'snatch_lift_1', r.snatch_1,
+                            'snatch_lift_2', r.snatch_2,
+                            'snatch_lift_3', r.snatch_3,
+                            'best_snatch', r.best_snatch,
+                            'snatch_timestamps', jsonb_build_object('t1', r.snatch_1_time, 't2', r.snatch_2_time, 't3', r.snatch_3_time),
+                            'cj_lift_1', r.cj_1,
+                            'cj_lift_2', r.cj_2,
+                            'cj_lift_3', r.cj_3,
+                            'best_cj', r.best_cj,
+                            'cj_timestamps', jsonb_build_object('t1', r.cj_1_time, 't2', r.cj_2_time, 't3', r.cj_3_time),
+                            'total', r.total,
+                            'sinclair', r.sinclair,
+                            'robi', r.robi,
+                            'gamx', r.gamx,
+                            'gamx_total', r.gamx_total,
+                            'gamx_u', r.gamx_u,
+                            'gamx_a', r.gamx_a,
+                            'gamx_s', r.gamx_s,
+                            'gamx_j', r.gamx_j,
+                            'gamx_masters', r.gamx_masters,
+                            'qpoints', r.qpoints,
+                            'q_youth', r.q_youth,
+                            'q_masters', r.q_masters,
+                            'attempts_summary', jsonb_build_object(
+                                'snatch_made', r.snatch_successful_attempts,
+                                'cj_made', r.cj_successful_attempts,
+                                'total_made', r.total_successful_attempts
+                            ),
+                            'bounce_back', jsonb_build_object(
+                                'snatch_2', r.bounce_back_snatch_2,
+                                'snatch_3', r.bounce_back_snatch_3,
+                                'cj_2', r.bounce_back_cj_2,
+                                'cj_3', r.bounce_back_cj_3
+                            ),
+                            'ytd_bests', jsonb_build_object(
+                                'snatch', r.best_snatch_ytd,
+                                'cj', r.best_cj_ytd,
+                                'total', r.best_total_ytd
+                            ),
+                            'eligible_for_ranking', r.eligible_for_individual_ranking,
+                            'participations', r.participations
+                        ) ORDER BY m.start_date DESC
+                    ) as results
+                FROM owlcms_meet_results r
+                JOIN owlcms_meets m ON r.meet_id = m.meet_id
+                WHERE r.lifter_id IN (SELECT id FROM all_owlcms_internal_ids)
+            ),
             iwf_profiles_agg AS (
                 SELECT 
                     jsonb_agg(
@@ -587,11 +681,12 @@ async function generateAthlete(params, externalClient = null) {
                 WHERE dr.athlete_id IN (SELECT id FROM all_usaw_internal_ids)
             ),
             id_collector AS (
-                -- Final collection of every ID type for the Triple-Writer shard generation
+                -- Final collection of every ID type for shard generation
                 SELECT jsonb_build_object(
                     'usaw_ids', (SELECT jsonb_agg(DISTINCT membership_number) FROM usaw_lifters WHERE lifter_id IN (SELECT id FROM all_usaw_internal_ids) AND membership_number IS NOT NULL),
                     'iwf_ids', (SELECT jsonb_agg(DISTINCT iwf_lifter_id) FROM iwf_lifters WHERE db_lifter_id IN (SELECT id FROM all_iwf_db_ids) AND iwf_lifter_id IS NOT NULL),
-                    'internal_ids', (SELECT jsonb_agg(DISTINCT id) FROM all_usaw_internal_ids)
+                    'internal_ids', (SELECT jsonb_agg(DISTINCT id) FROM all_usaw_internal_ids),
+                    'owlcms_ids', (SELECT jsonb_agg(DISTINCT id) FROM all_owlcms_internal_ids)
                 ) as ids
             )
             SELECT 
@@ -603,36 +698,45 @@ async function generateAthlete(params, externalClient = null) {
                 il.db_lifter_id as prime_iwf_db_id,
                 il.iwf_lifter_id as prime_iwf_official_id,
                 il.athlete_name as iwf_athlete_name,
-                il.country_code,
-                il.country_name,
+                il.country_code as iwf_country_code,
+                il.country_name as iwf_country_name,
+                ol.lifter_id as prime_owlcms_id,
+                ol.athlete_name as owlcms_athlete_name,
+                ol.country_code as owlcms_country_code,
                 COALESCE(ura.results, '[]'::jsonb) as usaw_results,
                 COALESCE(ira.results, '[]'::jsonb) as iwf_results,
+                COALESCE(ora.results, '[]'::jsonb) as owlcms_results,
                 COALESCE(ipa.profiles, '[]'::jsonb) as iwf_profiles,
                 COALESCE(urn.rankings, '[]'::jsonb) as usaw_rankings,
                 idc.ids as shard_ids
             FROM (SELECT 1) dummy
             LEFT JOIN usaw_lifters ul ON ul.lifter_id = (SELECT id FROM all_usaw_internal_ids LIMIT 1)
             LEFT JOIN iwf_lifters il ON il.db_lifter_id = (SELECT id FROM all_iwf_db_ids LIMIT 1)
+            LEFT JOIN owlcms_lifters ol ON ol.lifter_id = (SELECT id FROM all_owlcms_internal_ids LIMIT 1)
             LEFT JOIN usaw_results_agg ura ON true
             LEFT JOIN iwf_results_agg ira ON true
+            LEFT JOIN owlcms_results_agg ora ON true
             LEFT JOIN iwf_profiles_agg ipa ON true
             LEFT JOIN usaw_rankings_agg urn ON true
             LEFT JOIN id_collector idc ON true;
         `;
 
-        const res = await client.query(query, [resolvedUsawId || null, resolvedIwfId || null]);
+        const res = await client.query(query, [resolvedUsawId || null, resolvedIwfId || null, resolvedOwlcmsId || null]);
         if (res.rows.length === 0) return { success: false, message: 'Lifter not found' };
 
         const row = res.rows[0];
         const usawRes = row.usaw_results || [];
         const iwfRes = row.iwf_results || [];
+        const owlcmsRes = row.owlcms_results || [];
 
         // Greedy detection: Find most recent non-null birth year and gender across history
         const birthYear = usawRes.find(r => r.birth_year)?.birth_year 
-            || iwfRes.find(r => r.birth_year)?.birth_year;
+            || iwfRes.find(r => r.birth_year)?.birth_year
+            || owlcmsRes.find(r => r.birth_year)?.birth_year;
             
         const gender = usawRes.find(r => r.gender)?.gender 
-            || iwfRes.find(r => r.gender)?.gender;
+            || iwfRes.find(r => r.gender)?.gender
+            || owlcmsRes.find(r => r.gender)?.gender;
 
         const latestUsaw = usawRes.find(r => r.date);
         const latestIwf = iwfRes.find(r => r.date);
@@ -642,21 +746,28 @@ async function generateAthlete(params, externalClient = null) {
             row.internal_id ? { type: 'usaw', url: `https://usaweightlifting.sport80.com/public/rankings/member/${row.internal_id}` } : null
         ].filter(Boolean);
 
+        const athleteName = row.usaw_athlete_name || row.iwf_athlete_name || row.owlcms_athlete_name;
+        const countryCode = row.iwf_country_code || row.owlcms_country_code || 'USA';
+        const countryName = row.iwf_country_name || (countryCode === 'CAN' ? 'Canada' : 'United States');
+
         const data = {
-            id: usaw_id || iwf_id,
+            id: usaw_id || iwf_id || owlcms_id,
             internal_id: row.internal_id,
             linked_usaw_id: row.membership_number,
             linked_iwf_id: row.prime_iwf_official_id,
+            linked_owlcms_id: row.prime_owlcms_id,
             usaw_athlete_name: row.usaw_athlete_name,
             iwf_athlete_name: row.iwf_athlete_name,
-            athlete_name: row.usaw_athlete_name || row.iwf_athlete_name,
+            owlcms_athlete_name: row.owlcms_athlete_name,
+            athlete_name: athleteName,
             birthYear,
-            country_code: row.country_code || 'USA',
-            country_name: row.country_name || 'United States',
+            country_code: countryCode,
+            country_name: countryName,
             gender: gender,
             external_links: externalLinks,
             usaw_results: row.usaw_results,
             iwf_results: row.iwf_results,
+            owlcms_results: row.owlcms_results,
             achievements: aggregateAchievements(row.usaw_rankings),
             population_percentiles: {
                 usaw: getAthletePercentiles(row.usaw_results, gender, 'usaw', birthYear),
@@ -677,21 +788,32 @@ async function generateAthlete(params, externalClient = null) {
             const shard = idStr.slice(-2).padStart(2, '0');
             const dir = path.join(OUTPUT_DIR, type, shard);
             const file = path.join(dir, `${idStr}.json.gz`);
-            if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-            fs.writeFileSync(file, compressed);
-            fs.chmodSync(file, 0o644);
+            try {
+                if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+                fs.writeFileSync(file, compressed);
+                try { fs.chmodSync(file, 0o644); } catch {}
+            } catch (writeErr) {
+                console.warn(`[ASSEMBLER] Could not write shard to ${file}: ${writeErr.message}`);
+            }
         };
 
-        // Triple-Writer Shard generation using IDs collected in the same query
+        // Quad-Writer Shard generation using IDs collected in the query
         const shardIds = row.shard_ids || {};
         if (shardIds.usaw_ids) shardIds.usaw_ids.forEach(id => writeFile('usaw', id));
         if (shardIds.iwf_ids) shardIds.iwf_ids.forEach(id => writeFile('iwf', id));
         if (shardIds.internal_ids) shardIds.internal_ids.forEach(id => writeFile('internal', id));
+        if (shardIds.owlcms_ids) shardIds.owlcms_ids.forEach(id => writeFile('owlcms', id));
 
-        return { success: true, shards_written: (shardIds.usaw_ids?.length || 0) + (shardIds.iwf_ids?.length || 0) + (shardIds.internal_ids?.length || 0) };
+        return { 
+            success: true, 
+            shards_written: (shardIds.usaw_ids?.length || 0) + 
+                            (shardIds.iwf_ids?.length || 0) + 
+                            (shardIds.internal_ids?.length || 0) +
+                            (shardIds.owlcms_ids?.length || 0)
+        };
 
     } catch (err) {
-        console.error(`[ASSEMBLER] Universal Fatal Error for USAW:${usaw_id}, IWF:${iwf_id}:`, err);
+        console.error(`[ASSEMBLER] Universal Fatal Error for USAW:${usaw_id}, IWF:${iwf_id}, OWLCMS:${owlcms_id}:`, err);
         return { success: false, error: err.message };
     } finally {
         if (!externalClient) await client.end();

@@ -140,6 +140,20 @@ module.exports = {
         1509: [3760],
         1510: [3760],
         1564: [4312, 4436]
-    }
+    },
+
+    /**
+     * OWLCMS MANUAL OVERRIDE MAPPINGS
+     * Maps an OWLCMS lifter_id directly to their verified USAW or IWF profile.
+     * Format: OWLCMS_LIFTER_ID -> { type: 'IWF' | 'USAW', id: number, note?: string }
+     */
+    OWLCMS_MANUAL_MAP: {},
+
+    /**
+     * OWLCMS BLACKLIST MAPPINGS
+     * Candidate matches that should NEVER be linked.
+     * Format: OWLCMS_LIFTER_ID -> [ ARRAY OF REJECTED IWF_OR_USAW_IDS ]
+     */
+    OWLCMS_BLACKLIST_MAP: {}
 
 };

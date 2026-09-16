@@ -17,7 +17,11 @@
     "division-scraper": "node scripts/legacy/division-scraper.js",
     "generate:stats": "node scripts/production/generate-population-stats.js",
     "seed:full": "node scripts/production/seed.js",
-    "refresh:all": "node scripts/production/generate-population-stats.js && node scripts/production/seed.js"
+    "refresh:all": "node scripts/production/generate-population-stats.js && node scripts/production/seed.js",
+    "import:owlcms": "node scripts/production/owlcms-importer.js",
+    "uploader": "node scripts/production/owlcms-upload-server.js",
+    "pipeline:owlcms": "node scripts/production/run-owlcms-pipeline.js",
+    "daemon:owlcms": "node scripts/production/owlcms-event-daemon.js"
   },
   "author": "Phil Bost",
   "license": "MIT",
