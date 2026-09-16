@@ -2,6 +2,12 @@
 
 All notable changes to the Weightlifting Database project will be documented in this file.
 
+## [Fixed] - 2026-09-15 (Eastern Time)
+
+- **OWLCMS Daemon Signal Listener Reconnect Leak (`scripts/production/owlcms-event-daemon.js`)**:
+  - Moved `process.on('SIGINT')` and `process.on('SIGTERM')` listeners and graceful shutdown handlers to top-level scope.
+  - Eliminated `MaxListenersExceededWarning` during automated PostgreSQL reconnect loops.
+
 ## [Changed] - 2026-09-15 (Eastern Time)
 
 - **OWLCMS Database-Driven Review Queue Support (`owlcms_lifters` & `link-new-owlcms-athletes.js`)**:

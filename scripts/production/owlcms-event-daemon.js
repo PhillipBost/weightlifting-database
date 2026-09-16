@@ -81,6 +81,7 @@ function triggerDebouncedPipeline(eventPayload) {
 async function startDaemon() {
     const config = getPgConfig();
     const client = new Client(config);
+    activeClient = client;
 
     client.on('notification', msg => {
         if (msg.channel === 'owlcms_pipeline_event') {
@@ -109,24 +110,32 @@ async function startDaemon() {
 
     function reconnect() {
         try { client.end(); } catch {}
+        activeClient = null;
         console.log('[DAEMON] Scheduling reconnect in 5 seconds...');
         setTimeout(startDaemon, 5000);
     }
-
-    // Graceful shutdown handling
-    const shutdown = async () => {
-        console.log('\n[DAEMON] Shutting down gracefully...');
-        if (debounceTimer) clearTimeout(debounceTimer);
-        try {
-            await client.query('UNLISTEN owlcms_pipeline_event');
-            await client.end();
-        } catch {}
-        process.exit(0);
-    };
-
-    process.on('SIGINT', shutdown);
-    process.on('SIGTERM', shutdown);
 }
+
+let activeClient = null;
+let isShuttingDown = false;
+
+// Graceful shutdown handling (registered once)
+const shutdown = async () => {
+    if (isShuttingDown) return;
+    isShuttingDown = true;
+    console.log('\n[DAEMON] Shutting down gracefully...');
+    if (debounceTimer) clearTimeout(debounceTimer);
+    if (activeClient) {
+        try {
+            await activeClient.query('UNLISTEN owlcms_pipeline_event');
+            await activeClient.end();
+        } catch {}
+    }
+    process.exit(0);
+};
+
+process.on('SIGINT', shutdown);
+process.on('SIGTERM', shutdown);
 
 if (require.main === module) {
     startDaemon();
