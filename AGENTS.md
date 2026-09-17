@@ -29,3 +29,7 @@
    - An athlete matching both federations must have both links persisted in `athlete_aliases`.
    - Code must never contain mutual erasure logic (e.g. `iwf_db_lifter_id: resolvedUsawId ? null : resolvedIwfId`) or winner-take-all federation competition.
    - Re-evaluation passes must check existing aliases for missing federation links rather than filtering them out via `!linkedIds.has(l.lifter_id)`.
+7. **Repository Cleanliness, Git Mutability & Pairwise Graph Integrity**:
+   - Never execute `git commit`, `git push`, or any repository-level git mutation without prior explicit user consent.
+   - Never write scratch files, test dumps, temporary output files, or logs into the workspace root. All investigative scripts and one-off artifacts must reside strictly within the dedicated scratch directory.
+   - `public.athlete_aliases` is strictly a pairwise edge table enforcing `check_alias_type = 2` (exactly two non-null entity IDs per row). Cross-federation enrichment (e.g. USAW + IWF + OWLCMS) and intra-federation duplicate linking (IWF $\leftrightarrow$ IWF, OWLCMS $\leftrightarrow$ OWLCMS) must always be inserted as distinct pairwise rows (`USAW ── OWLCMS`, `IWF ── OWLCMS`, `OWLCMS ── OWLCMS_2`), never combined into a 3-way row.

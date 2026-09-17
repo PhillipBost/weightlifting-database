@@ -12,8 +12,9 @@ All notable changes to the Weightlifting Database project will be documented in 
 - **Multi-Federation Peer Parity & Graph Enrichment (`scripts/production/link-new-owlcms-athletes.js`)**:
   - Eliminated single-destination routing and mutual erasure logic (`iwf_db_lifter_id: resolvedUsawId ? null : resolvedIwfId`).
   - Decoupled candidate discovery into independent USAW and IWF evaluation loops so that dual-federation athletes (competing both in USAW domestic and IWF international circuits) link to both profiles simultaneously.
-  - Added existing alias enrichment to update existing records in `public.athlete_aliases` with newly discovered cross-federation links without overwriting or deleting prior relationships.
   - Refactored candidate filter to allow re-evaluation and graph enrichment across already-linked athletes.
+  - Refactored alias persistence to insert distinct pairwise edges (strictly enforcing PostgreSQL `check_alias_type = 2`) for dual-federation athletes (`USAW ── OWLCMS` and `IWF ── OWLCMS`) rather than invalid 3-way rows.
+
 
 ## [Fixed] - 2026-09-15 (Eastern Time)
 
