@@ -17,6 +17,7 @@ const crypto = require('crypto');
 const { promisify } = require('util');
 
 const gzipAsync = promisify(zlib.gzip);
+const { resolveOrDiscoverFederation } = require('./federation-resolver.js');
 
 /**
  * Initialize default Supabase client from environment
@@ -213,6 +214,21 @@ async function importOwlcmsJson(data, options = {}) {
     const country = comp.competitionSite || comp.country || data.country || null;
     const organizer = comp.competitionOrganizer || comp.federation || data.organizer || null;
     const formatVersion = String(data.formatVersion || data.version || '2.0');
+
+    // Resolve canonical federation via Living Federation Registry
+    const rawFed = comp.federation || organizer;
+    let federationId = null;
+    let federationMeta = null;
+    if (rawFed) {
+        try {
+            federationMeta = await resolveOrDiscoverFederation(rawFed, { countryCode: country });
+            if (federationMeta) {
+                federationId = federationMeta.id;
+            }
+        } catch (fedErr) {
+            console.warn(`[OWLCMS_IMPORTER] Federation resolution warning: ${fedErr.message}`);
+        }
+    }
     
     const meetRow = {
         meet_name: meetName,
@@ -221,6 +237,7 @@ async function importOwlcmsJson(data, options = {}) {
         city: city,
         country: country,
         organizer: organizer,
+        federation_id: federationId,
         format_version: formatVersion,
         source_file_name: sourceFileName,
         raw_payload: data // Preserves complete meet config, ageGroups, championships, records, officials
@@ -236,7 +253,8 @@ async function importOwlcmsJson(data, options = {}) {
                 end_date: endDate,
                 city,
                 country,
-                organizer,
+                federation_id: federationId,
+                federation: federationMeta,
                 source_file_name: sourceFileName,
                 raw_storage_path: `meets/{meet_id}/${sanitizedFileName}`,
                 raw_storage_bytes: rawStorageBytes,

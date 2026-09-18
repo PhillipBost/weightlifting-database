@@ -39,5 +39,7 @@
      - **USAW Ingestion** (`link-new-usaw-athletes.js`): `USAW ↔ USAW`, `USAW ↔ IWF`, `USAW ↔ OWLCMS`.
      - **IWF Ingestion** (`link-new-iwf-athletes.js`): `IWF ↔ IWF`, `IWF ↔ USAW`, `IWF ↔ OWLCMS`.
    - Every cross-federation link must adhere to universal demographic anchoring `(gender, birth_year)` and strictly pairwise alias integrity (`check_alias_type = 2`).
-
-
+9. **Living Federation & Regional Registry (`public.federation_registry`)**:
+   - Meets ingested across all federations link to canonical governing bodies via `federation_id` in `public.owlcms_meets`.
+   - Resolution must query `search_federations(query_text)` to match against `known_aliases` (Rank 100), `short_code` (Rank 90), or `canonical_name` (Rank 80).
+   - **Auto-Discovery Protocol**: When an ingested meet specifies an unseen or unrecognized federation/club, the system non-destructively captures it (`is_verified = false`) in `public.federation_registry` rather than failing or rejecting the meet.

@@ -2,6 +2,23 @@
 
 All notable changes to the Weightlifting Database project will be documented in this file.
 
+## [Added] - 2026-09-18 (Eastern Time)
+
+- **Living Federation & Regional Registry (`migrations/create_federation_registry.sql`)**:
+  - Created `public.federation_registry` table with hierarchical parent-child relationships (`parent_federation_id`), ISO-3 country codes, level classifications (`international`, `continental`, `national`, `regional_state_wso`, `club`), and GIN-indexed `known_aliases` array.
+  - Implemented ranked search RPC `public.search_federations(query_text TEXT)` returning weighted matches (Rank 100 exact alias, Rank 90 short code, Rank 80 canonical name, Rank 70 alias substring).
+  - Added foreign key column `federation_id UUID REFERENCES public.federation_registry(id) ON DELETE SET NULL` to `public.owlcms_meets`.
+
+- **Governing Body Seeding & USAW WSO Migration (`scripts/production/seed-federation-registry.js`)**:
+  - Migrated all 26 existing USAW WSOs from `usaw_wso_information` into `federation_registry` under USAW.
+  - Seeded Canada (Weightlifting Canada Haltérophilie / WCH) + 10 provincial associations (OWA, FHQ, BCWA, etc.).
+  - Seeded Brazil (CBLP) + 7 state federations (FELP / São Paulo, FEPERJ / Rio de Janeiro, etc.).
+  - Seeded international/continental bodies (IWF, PAWF, EWF) and Latin American NGBs (Colombia, Mexico, Ecuador, Venezuela, Peru).
+
+- **Federation Auto-Discovery & Importer Integration (`scripts/production/federation-resolver.js` & `scripts/production/owlcms-importer.js`)**:
+  - Added resolution utility supporting high-confidence matching and non-destructive auto-discovery (`is_verified = false`) for unseen bodies to guarantee zero upload failures.
+  - Integrated canonical federation resolution into `owlcms-importer.js` to link uploaded meets directly to their canonical governing body.
+
 ## [Added] - 2026-09-16 (Eastern Time)
 
 - **Full Symmetrical Identity Pairing Pipelines (`USAW ↔ OWLCMS` and `IWF ↔ OWLCMS`)**:
