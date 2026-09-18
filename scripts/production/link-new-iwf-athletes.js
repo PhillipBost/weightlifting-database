@@ -18,7 +18,8 @@
 require('dotenv').config();
 const { createClient } = require('@supabase/supabase-js');
 const minimist = require('minimist');
-const { MANUAL_ATHLETE_MAP, BLACKLIST_ATHLETE_MAP, IWF_DUPLICATE_MAP, MANUAL_MEET_MAP } = require('../shared/athlete-mappings.js');
+const { MANUAL_ATHLETE_MAP, BLACKLIST_ATHLETE_MAP, IWF_DUPLICATE_MAP, MANUAL_MEET_MAP, OWLCMS_MANUAL_MAP, OWLCMS_BLACKLIST_MAP } = require('../shared/athlete-mappings.js');
+const { generateAthlete } = require('./assembler.js');
 
 const supabase = createClient(
     process.env.SUPABASE_URL,
@@ -51,6 +52,44 @@ function tokenize(name) {
 function tokenizeMeet(name) {
     if (!name) return [];
     return name.toLowerCase().replace(/-/g, ' ').replace(/[^a-z\s]/g, '').split(/\s+/).filter(x => x.length > 2);
+}
+
+function extractCountryCode(owlcmsLifter) {
+    if (owlcmsLifter.country_code && owlcmsLifter.country_code.trim().length === 3) {
+        return owlcmsLifter.country_code.trim().toUpperCase();
+    }
+    const club = (owlcmsLifter.club_name || '').trim().toUpperCase();
+    if (club.length === 3) return club;
+    const canadianProvinces = [
+        'ONTARIO', 'QUÉBEC', 'QUEBEC', 'ALBERTA', 'BRITISH COLUMBIA',
+        'SASKATCHEWAN', 'MANITOBA', 'NOVA SCOTIA', 'NEW BRUNSWICK', 'NEWFOUNDLAND', 'PEI'
+    ];
+    if (canadianProvinces.includes(club)) return 'CAN';
+    if (club === 'USA' || club.includes('USA')) return 'USA';
+    return null;
+}
+
+function calculateNameScoreOwlcms(nameA, nameB) {
+    const tokensA = tokenize(nameA);
+    const tokensB = tokenize(nameB);
+    if (tokensA.length === 0 || tokensB.length === 0) return 0;
+
+    const strA = tokensA.join(' ');
+    const strB = tokensB.join(' ');
+    if (strA === strB) return 80;
+
+    const overlap = tokensA.filter(t => tokensB.includes(t));
+    const overlapCount = overlap.length;
+
+    if (overlapCount >= 2) return 65;
+
+    const isLastNameMatch = overlapCount === 1 && (
+        overlap[0] === tokensA[tokensA.length - 1] || 
+        overlap[0] === tokensB[tokensB.length - 1]
+    );
+    if (isLastNameMatch) return 35;
+
+    return 0;
 }
 
 function parseLift(val) {
@@ -211,11 +250,16 @@ async function fetchAll(client, table, select, filterCol, filterVal) {
 
 async function run() {
     const args = minimist(process.argv.slice(2), { default: { days: 3 } });
+    const isDryRun = args['dry-run'] || args.d || false;
+    const isAll = args.all || false;
+    const isVerbose = args.verbose || args.v || false;
     const lookbackDays = parseInt(args.days) || 3;
     const cutoffDate = new Date(Date.now() - lookbackDays * 24 * 60 * 60 * 1000);
 
     console.log(`\n[IWF ATHLETE LINKER] Starting production run`);
-    console.log(`  Lookback window: ${lookbackDays} days (since ${cutoffDate.toISOString().split('T')[0]})`);
+    if (isDryRun) console.log(`  MODE: DRY RUN (no database writes)`);
+    if (isVerbose) console.log(`  VERBOSITY: Verbose logging enabled`);
+    console.log(`  Lookback window: ${isAll ? 'ALL (Full Historical Corpus)' : `${lookbackDays} days (since ${cutoffDate.toISOString().split('T')[0]})`}`);
 
     // Verify credentials
     if (!process.env.SUPABASE_URL || !process.env.SUPABASE_SECRET_KEY) {
@@ -223,21 +267,31 @@ async function run() {
         process.exit(1);
     }
     // Step 1: Find IWF meets and lifters recently updated (scoped anchor)
-    console.log(`\n[1/5] Finding IWF meets updated in last ${lookbackDays} days...`);
-    const { data: recentResults, error: recentErr } = await supabaseIwf
-        .from('iwf_meet_results')
-        .select('db_meet_id, db_lifter_id')
-        .gte('updated_at', cutoffDate.toISOString());
+    console.log(`\n[1/5] Finding IWF meets updated in ${isAll ? 'full database' : `last ${lookbackDays} days`}...`);
+    let recentMeetIds = [];
+    let recentLifterIds = [];
 
-    if (recentErr) {
-        console.error('ERROR fetching recent IWF results:', recentErr.message);
-        process.exit(1);
+    if (isAll) {
+        const { data: allMeets } = await supabaseIwf.from('iwf_meets').select('db_meet_id');
+        recentMeetIds = (allMeets || []).map(m => m.db_meet_id);
+        const allLifters = await fetchAll(supabaseIwf, 'iwf_lifters', 'db_lifter_id');
+        recentLifterIds = (allLifters || []).map(l => l.db_lifter_id);
+    } else {
+        const { data: recentResults, error: recentErr } = await supabaseIwf
+            .from('iwf_meet_results')
+            .select('db_meet_id, db_lifter_id')
+            .gte('updated_at', cutoffDate.toISOString());
+
+        if (recentErr) {
+            console.error('ERROR fetching recent IWF results:', recentErr.message);
+            process.exit(1);
+        }
+
+        recentMeetIds = [...new Set((recentResults || []).map(r => r.db_meet_id))];
+        recentLifterIds = [...new Set((recentResults || []).map(r => r.db_lifter_id))];
     }
 
-    const recentMeetIds = [...new Set((recentResults || []).map(r => r.db_meet_id))];
-    const recentLifterIds = [...new Set((recentResults || []).map(r => r.db_lifter_id))];
-
-    if (recentMeetIds.length === 0) {
+    if (recentMeetIds.length === 0 && !isAll) {
         console.log('No new IWF meet data found within lookback window. Nothing to link.');
         process.exit(0);
     }
@@ -457,7 +511,177 @@ async function run() {
         console.error(`  [ERROR] Fallback matching failed: ${err.message}`);
     }
 
-    // Deduplicate
+    // --- PHASE 3: OWLCMS CROSS-FEDERATION MATCHING (IWF ↔ OWLCMS) ---
+    console.log(`\n[PHASE 3] OWLCMS Cross-Federation Matching (IWF ↔ OWLCMS)...`);
+    const verifiedIwfOwlcmsAliases = [];
+    const newlyLinkedOwlcmsAthletes = [];
+
+    try {
+        // Fetch existing IWF <-> OWLCMS pairwise links
+        const existingIwfOwlcmsLinks = await fetchAll(
+            supabase,
+            'athlete_aliases',
+            'iwf_db_lifter_id, owlcms_lifter_id'
+        );
+        const existingPairSet = new Set(
+            existingIwfOwlcmsLinks
+                .filter(a => a.iwf_db_lifter_id && a.owlcms_lifter_id)
+                .map(a => `${a.iwf_db_lifter_id}-${a.owlcms_lifter_id}`)
+        );
+
+        // Fetch all OWLCMS lifters with demographics
+        const { data: owlcmsLifters, error: oErr } = await supabase
+            .from('owlcms_lifters')
+            .select('lifter_id, athlete_name, gender, birth_year, country_code, club_name, link_status, rejected_candidate_ids');
+
+        if (oErr) {
+            console.error('  [ERROR] Failed to fetch OWLCMS lifters:', oErr.message);
+        } else if (owlcmsLifters && owlcmsLifters.length > 0) {
+            // Index OWLCMS lifters by dual demographic anchor: gender_birthYear
+            const owlcmsByDemographic = new Map();
+            for (const o of owlcmsLifters) {
+                if (!o.birth_year || !o.gender) continue;
+                const key = `${o.gender.toUpperCase()}_${o.birth_year}`;
+                if (!owlcmsByDemographic.has(key)) owlcmsByDemographic.set(key, []);
+                owlcmsByDemographic.get(key).push({
+                    ...o,
+                    tokens: tokenize(o.athlete_name)
+                });
+            }
+
+            // Fetch profiles for IWF lifters in the target cohort
+            const iwfTargetProfiles = [];
+            for (let i = 0; i < recentLifterIds.length; i += 1000) {
+                const chunk = recentLifterIds.slice(i, i + 1000);
+                const { data } = await supabaseIwf
+                    .from('iwf_lifters')
+                    .select('db_lifter_id, athlete_name, birth_year, gender, country_code')
+                    .in('db_lifter_id', chunk);
+                if (data) iwfTargetProfiles.push(...data);
+            }
+
+            let phase3Comparisons = 0;
+            let phase3InPool = 0;
+            let phase3DemoIsolated = 0;
+
+            for (const iAthlete of iwfTargetProfiles) {
+                if (!iAthlete.birth_year || !iAthlete.gender) continue;
+
+                const demoKey = `${iAthlete.gender.toUpperCase()}_${iAthlete.birth_year}`;
+                const potentialOwlcms = owlcmsByDemographic.get(demoKey) || [];
+                if (potentialOwlcms.length === 0) {
+                    phase3DemoIsolated++;
+                    if (isVerbose) {
+                        console.log(`  ⚪ [IWF ${iAthlete.db_lifter_id}] "${iAthlete.athlete_name}" (${demoKey}): 0 OWLCMS in cohort`);
+                    }
+                    continue;
+                }
+
+                phase3InPool++;
+                if (isVerbose) {
+                    console.log(`  🔍 [IWF ${iAthlete.db_lifter_id}] "${iAthlete.athlete_name}" (${demoKey}): Comparing against ${potentialOwlcms.length} OWLCMS candidate(s)...`);
+                }
+
+                for (const oLifter of potentialOwlcms) {
+                    phase3Comparisons++;
+                    const pairKey = `${iAthlete.db_lifter_id}-${oLifter.lifter_id}`;
+                    if (existingPairSet.has(pairKey)) {
+                        if (isVerbose) {
+                            console.log(`     ✓ Edge already exists: IWF[${iAthlete.db_lifter_id}] ── OWLCMS[${oLifter.lifter_id}]`);
+                        }
+                        continue;
+                    }
+
+                    // Check manual map and blacklists
+                    const blacklist = (OWLCMS_BLACKLIST_MAP && OWLCMS_BLACKLIST_MAP[oLifter.lifter_id]) || [];
+                    const dbRejected = Array.isArray(oLifter.rejected_candidate_ids) ? oLifter.rejected_candidate_ids : [];
+                    if (blacklist.includes(iAthlete.db_lifter_id) || dbRejected.includes(iAthlete.db_lifter_id)) {
+                        if (isVerbose) {
+                            console.log(`     ✕ Pair blacklisted: IWF[${iAthlete.db_lifter_id}] ── OWLCMS[${oLifter.lifter_id}]`);
+                        }
+                        continue;
+                    }
+
+                    const manualOverride = OWLCMS_MANUAL_MAP && OWLCMS_MANUAL_MAP[oLifter.lifter_id];
+                    const isWhitelisted = manualOverride && manualOverride.type === 'IWF' && manualOverride.id === iAthlete.db_lifter_id;
+
+                    let score = 0;
+                    let breakdown = [];
+
+                    if (isWhitelisted) {
+                        score = 100;
+                        breakdown.push('Manual Whitelist Override');
+                    } else {
+                        const nameScore = calculateNameScoreOwlcms(iAthlete.athlete_name, oLifter.athlete_name);
+                        if (nameScore === 0) continue;
+                        score += nameScore;
+                        breakdown.push(`Name: +${nameScore}`);
+
+                        // Birth year exact bonus
+                        score += 20;
+                        breakdown.push('Birth Year: +20');
+
+                        // Country comparison
+                        const oCountry = extractCountryCode(oLifter);
+                        if (iAthlete.country_code && oCountry) {
+                            if (iAthlete.country_code === oCountry) {
+                                score += 15;
+                                breakdown.push(`Country (${oCountry}): +15`);
+                            } else {
+                                score -= 15;
+                                breakdown.push(`Country Divergence (${iAthlete.country_code} vs ${oCountry}): -15`);
+                            }
+                        }
+                    }
+
+                    const finalScore = Math.min(Math.max(score, 0), 100);
+
+                    if (finalScore >= 80) {
+                        console.log(`  🎯 MATCH: IWF[${iAthlete.db_lifter_id}] "${iAthlete.athlete_name}" ── OWLCMS[${oLifter.lifter_id}] "${oLifter.athlete_name}" (Score: ${finalScore})`);
+                        console.log(`     Evidence: ${breakdown.join(', ')}`);
+                        verifiedIwfOwlcmsAliases.push({
+                            usaw_lifter_id: null,
+                            iwf_db_lifter_id: iAthlete.db_lifter_id,
+                            owlcms_lifter_id: oLifter.lifter_id,
+                            match_confidence: finalScore,
+                            manual_override: isWhitelisted
+                        });
+                        existingPairSet.add(pairKey);
+                        newlyLinkedOwlcmsAthletes.push({
+                            iwf_id: iAthlete.db_lifter_id,
+                            owlcms_id: oLifter.lifter_id,
+                            name: oLifter.athlete_name
+                        });
+                    } else if (finalScore >= 60 && oLifter.link_status !== 'LINKED') {
+                        console.log(`  ⚠️ REVIEW: IWF[${iAthlete.db_lifter_id}] "${iAthlete.athlete_name}" ── OWLCMS[${oLifter.lifter_id}] "${oLifter.athlete_name}" (Score: ${finalScore})`);
+                        if (!isDryRun) {
+                            await supabase
+                                .from('owlcms_lifters')
+                                .update({
+                                    link_status: 'REVIEW_NEEDED',
+                                    review_candidate: {
+                                        type: 'IWF',
+                                        candidate_id: iAthlete.db_lifter_id,
+                                        candidate_name: iAthlete.athlete_name,
+                                        score: finalScore,
+                                        reason: breakdown.join(', ')
+                                    }
+                                })
+                                .eq('lifter_id', oLifter.lifter_id);
+                        }
+                    } else if (isVerbose) {
+                        console.log(`     vs OWLCMS[${oLifter.lifter_id}] "${oLifter.athlete_name}": Score ${finalScore} below review threshold`);
+                    }
+                }
+            }
+            console.log(`  ✓ Phase 3 checked ${phase3InPool} IWF lifters in OWLCMS cohorts (${phase3Comparisons} pairwise comparisons).`);
+            console.log(`  ✓ Phase 3 found ${verifiedIwfOwlcmsAliases.length} new IWF ↔ OWLCMS pairwise links!`);
+        }
+    } catch (err) {
+        console.error(`  [ERROR] OWLCMS cross-federation matching failed: ${err.message}`);
+    }
+
+    // Deduplicate USAW <-> IWF aliases
     const uniqueAliasMap = new Map();
     for (const a of verifiedAliases) {
         const key = `${a.usaw_lifter_id}-${a.iwf_db_lifter_id}`;
@@ -465,26 +689,72 @@ async function run() {
     }
     const finalAliases = Array.from(uniqueAliasMap.values());
 
-    console.log(`  Verified ${finalAliases.length} new athlete aliases.`);
+    console.log(`\n  Verified ${finalAliases.length} new USAW ↔ IWF aliases.`);
+    console.log(`  Verified ${verifiedIwfOwlcmsAliases.length} new IWF ↔ OWLCMS aliases.`);
 
-    if (finalAliases.length === 0) {
-        console.log('No new links found. athlete_aliases unchanged.');
+    if (finalAliases.length === 0 && verifiedIwfOwlcmsAliases.length === 0) {
+        console.log('No new links found across federations. athlete_aliases unchanged.');
         process.exit(0);
     }
 
     // Step 5: Upsert into athlete_aliases
-    console.log(`\n[5/5] Inserting ${finalAliases.length} aliases into athlete_aliases...`);
-    const { error: insertError } = await supabase
-        .from('athlete_aliases')
-        .upsert(finalAliases, { onConflict: 'usaw_lifter_id,iwf_db_lifter_id' });
+    if (finalAliases.length > 0) {
+        console.log(`\n[5/5] Inserting ${finalAliases.length} USAW ↔ IWF aliases into athlete_aliases...`);
+        if (!isDryRun) {
+            const { error: insertError } = await supabase
+                .from('athlete_aliases')
+                .upsert(finalAliases, { onConflict: 'usaw_lifter_id,iwf_db_lifter_id' });
 
-    if (insertError) {
-        console.error('ERROR inserting aliases:', insertError.message, insertError.code);
-        process.exit(1);
+            if (insertError) {
+                console.error('ERROR inserting USAW ↔ IWF aliases:', insertError.message, insertError.code);
+                process.exit(1);
+            }
+            console.log(`✓ Successfully upserted ${finalAliases.length} USAW ↔ IWF athlete aliases.`);
+        } else {
+            console.log(`[DRY RUN] Would insert ${finalAliases.length} USAW ↔ IWF aliases.`);
+        }
     }
 
-    console.log(`\n✓ Successfully upserted ${finalAliases.length} athlete aliases.`);
-    console.log('[IWF ATHLETE LINKER] Done.\n');
+    if (verifiedIwfOwlcmsAliases.length > 0) {
+        console.log(`\nInserting ${verifiedIwfOwlcmsAliases.length} IWF ↔ OWLCMS pairwise aliases into athlete_aliases...`);
+        if (!isDryRun) {
+            for (const pair of verifiedIwfOwlcmsAliases) {
+                const { error: insErr } = await supabase.from('athlete_aliases').insert(pair);
+                if (insErr) {
+                    console.error(`  ❌ Error inserting IWF[${pair.iwf_db_lifter_id}] ── OWLCMS[${pair.owlcms_lifter_id}]:`, insErr.message);
+                } else {
+                    console.log(`  ✅ Inserted pairwise edge: IWF[${pair.iwf_db_lifter_id}] ── OWLCMS[${pair.owlcms_lifter_id}]`);
+                }
+            }
+
+            // Update OWLCMS lifters link_status
+            const linkedOwlcmsIds = [...new Set(newlyLinkedOwlcmsAthletes.map(a => a.owlcms_id))];
+            if (linkedOwlcmsIds.length > 0) {
+                await supabase
+                    .from('owlcms_lifters')
+                    .update({ link_status: 'LINKED', review_candidate: null })
+                    .in('lifter_id', linkedOwlcmsIds);
+            }
+
+            // Trigger static shard generation
+            console.log(`\n📦 Triggering static shard generation for ${newlyLinkedOwlcmsAthletes.length} linked athlete(s)...`);
+            for (const athlete of newlyLinkedOwlcmsAthletes) {
+                try {
+                    if (!process.env.DB_HOST && !process.env.DATABASE_URL) break;
+                    await generateAthlete({
+                        iwf_id: athlete.iwf_id,
+                        owlcms_id: athlete.owlcms_id
+                    });
+                } catch (shardErr) {
+                    console.warn(`  ⚠️ Shard generation skipped for "${athlete.name}": ${shardErr.message}`);
+                }
+            }
+        } else {
+            console.log(`[DRY RUN] Would insert ${verifiedIwfOwlcmsAliases.length} IWF ↔ OWLCMS pairwise aliases.`);
+        }
+    }
+
+    console.log('\n[IWF ATHLETE LINKER] Done.\n');
     process.exit(0);
 }
 

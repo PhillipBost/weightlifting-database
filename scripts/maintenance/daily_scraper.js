@@ -97,6 +97,16 @@ async function main() {
                     `--meet-ids=${meetIdString}`
                 ]);
 
+                // Step 6c: Cross-Federation Linking (USAW ↔ OWLCMS)
+                console.log('\n🔗 Step 6c: Running USAW ↔ OWLCMS Cross-Federation Linking for new meets...');
+                try {
+                    await runScript('scripts/production/link-new-usaw-athletes.js', [
+                        `--meet-ids=${meetIdString}`
+                    ]);
+                } catch (linkErr) {
+                    console.warn(`⚠️ Warning: Post-scrape USAW ↔ OWLCMS linking encountered an issue: ${linkErr.message}`);
+                }
+
             } else {
                 console.log('ℹ️ Scraped meets file exists but is empty. No post-processing needed.');
             }
@@ -104,7 +114,16 @@ async function main() {
             console.log('ℹ️ No scraped_meets.json found. Skipping post-processing.');
         }
 
+        // Step 7: General USAW ↔ OWLCMS lookback reconciliation
+        console.log('\n🔗 Step 7: Reconciling USAW ↔ OWLCMS aliases (last 3 days)...');
+        try {
+            await runScript('scripts/production/link-new-usaw-athletes.js', ['--days=3']);
+        } catch (reconErr) {
+            console.warn(`⚠️ Warning: USAW ↔ OWLCMS reconciliation encountered an issue: ${reconErr.message}`);
+        }
+
         console.log('\n🎉 Daily scraping and import completed successfully!');
+
         console.log(`🕐 End time: ${new Date().toLocaleString()}`);
         process.exit(0); // Exit cleanly so the process doesn't hang
 

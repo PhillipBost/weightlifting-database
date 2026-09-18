@@ -2,7 +2,16 @@
 
 All notable changes to the Weightlifting Database project will be documented in this file.
 
+## [Added] - 2026-09-16 (Eastern Time)
+
+- **Full Symmetrical Identity Pairing Pipelines (`USAW ↔ OWLCMS` and `IWF ↔ OWLCMS`)**:
+  - Built `scripts/production/link-new-usaw-athletes.js` to cross-reference newly ingested/scraped USAW lifters against existing OWLCMS lifters under strict universal demographic anchoring `(gender, birth_year)`.
+  - Added Step 6c & Step 7 to `scripts/maintenance/daily_scraper.js` to automatically reconcile newly scraped USAW meets against OWLCMS athlete profiles.
+  - Implemented Phase 3 (`IWF ↔ OWLCMS`) in `scripts/production/link-new-iwf-athletes.js` and `scripts/maintenance/link_iwf_usaw_athletes.js` to evaluate incoming IWF athletes against OWLCMS lifters.
+  - Enforced pairwise alias integrity (`check_alias_type = 2`) and automated static shard generation (`assembler.js`) across all new cross-federation links.
+
 ## [Fixed] - 2026-09-16 (Eastern Time)
+
 
 - **Universal Demographic Candidate Retrieval for USAW (`scripts/production/link-new-owlcms-athletes.js`)**:
   - Replaced unanchored `lastName`-only query with strict demographic gate `(gender, birth_year, lastName)` on `usaw_meet_results`.

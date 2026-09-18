@@ -33,3 +33,11 @@
    - Never execute `git commit`, `git push`, or any repository-level git mutation without prior explicit user consent.
    - Never write scratch files, test dumps, temporary output files, or logs into the workspace root. All investigative scripts and one-off artifacts must reside strictly within the dedicated scratch directory.
    - `public.athlete_aliases` is strictly a pairwise edge table enforcing `check_alias_type = 2` (exactly two non-null entity IDs per row). Cross-federation enrichment (e.g. USAW + IWF + OWLCMS) and intra-federation duplicate linking (IWF $\leftrightarrow$ IWF, OWLCMS $\leftrightarrow$ OWLCMS) must always be inserted as distinct pairwise rows (`USAW ── OWLCMS`, `IWF ── OWLCMS`, `OWLCMS ── OWLCMS_2`), never combined into a 3-way row.
+8. **Full Symmetrical Identity Pairing Across Federations**:
+   - Ingestion pipelines for each federation (OWLCMS, USAW, IWF) must symmetrically evaluate incoming/presumed-new athletes against existing athletes across all federations:
+     - **OWLCMS Ingestion** (`link-new-owlcms-athletes.js`): `OWLCMS ↔ OWLCMS`, `OWLCMS ↔ USAW`, `OWLCMS ↔ IWF`.
+     - **USAW Ingestion** (`link-new-usaw-athletes.js`): `USAW ↔ USAW`, `USAW ↔ IWF`, `USAW ↔ OWLCMS`.
+     - **IWF Ingestion** (`link-new-iwf-athletes.js`): `IWF ↔ IWF`, `IWF ↔ USAW`, `IWF ↔ OWLCMS`.
+   - Every cross-federation link must adhere to universal demographic anchoring `(gender, birth_year)` and strictly pairwise alias integrity (`check_alias_type = 2`).
+
+
