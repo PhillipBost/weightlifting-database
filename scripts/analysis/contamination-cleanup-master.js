@@ -14,6 +14,11 @@
 require('dotenv').config();
 const fs = require('fs');
 const path = require('path');
+const { createClient } = require('@supabase/supabase-js');
+
+const supabase = (process.env.SUPABASE_URL && (process.env.SUPABASE_SECRET_KEY || process.env.SUPABASE_SERVICE_ROLE_KEY))
+    ? createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SECRET_KEY || process.env.SUPABASE_SERVICE_ROLE_KEY)
+    : null;
 
 // Import all cleanup scripts
 const contaminationIdentifier = require('./contamination-identifier.js');
@@ -50,6 +55,70 @@ function log(message) {
     fs.appendFileSync(LOG_FILE, logMessage);
 }
 
+// Stage homonym splits to PostgreSQL admin_review_queue
+async function stageHomonymCollisions(athletes, logFn = console.log) {
+    if (!supabase) {
+        logFn('⚠️ Supabase credentials missing; skipping admin_review_queue staging.');
+        return;
+    }
+    try {
+        logFn('🔍 Checking admin_review_queue for existing homonym_split records...');
+        let existingItems = [];
+        let page = 0;
+        while (true) {
+            const { data, error } = await supabase
+                .from('admin_review_queue')
+                .select('id, title, primary_entity_id')
+                .eq('category', 'homonym_split')
+                .range(page * 1000, (page + 1) * 1000 - 1);
+            if (error || !data || data.length === 0) break;
+            existingItems.push(...data);
+            if (data.length < 1000) break;
+            page++;
+        }
+
+        const existingLifterIds = new Set(existingItems.map(e => e.primary_entity_id).filter(Boolean));
+        const existingTitlePrefixes = new Set(existingItems.map(e => (e.title || '').toLowerCase().split('(')[0].trim()));
+
+        const toInsert = [];
+        for (const a of athletes) {
+            const nameLower = (a.athlete_name || '').toLowerCase().trim();
+            if (existingLifterIds.has(a.lifter_id) || existingTitlePrefixes.has(nameLower)) {
+                continue;
+            }
+
+            const internalIds = a.internal_ids || [a.internal_id].filter(Boolean);
+            toInsert.push({
+                category: 'homonym_split',
+                status: 'PENDING',
+                title: `${a.athlete_name} (${internalIds.length || 2} Distinct Profiles Collapsed)`,
+                primary_entity_type: 'usaw_lifters',
+                primary_entity_id: a.lifter_id,
+                confidence_score: Math.min(60 + (internalIds.length || 2) * 10, 100),
+                evidence: {
+                    athlete_name: a.athlete_name,
+                    internal_ids: internalIds,
+                    detected_at: new Date().toISOString()
+                }
+            });
+        }
+
+        if (toInsert.length === 0) {
+            logFn('   ✓ All identified homonym collision records already exist in admin_review_queue.');
+            return;
+        }
+
+        const { error: insErr } = await supabase.from('admin_review_queue').insert(toInsert);
+        if (insErr) {
+            logFn(`   ❌ Error inserting ${toInsert.length} homonym collision items: ${insErr.message}`);
+        } else {
+            logFn(`   ✅ Successfully staged ${toInsert.length} new homonym collision items into admin_review_queue.`);
+        }
+    } catch (err) {
+        logFn(`   ⚠️ Failed to stage homonym collisions to admin_review_queue: ${err.message}`);
+    }
+}
+
 // Execute cleanup pipeline
 async function executeCleanupPipeline() {
     const pipelineStart = Date.now();
@@ -68,6 +137,12 @@ async function executeCleanupPipeline() {
         const step1Time = Date.now() - step1Start;
         log(`✅ Step 1 completed in ${step1Time}ms`);
         log(`   Output: ${contaminatedData?.metadata?.contaminated_lifter_id_count || 'Unknown'} contaminated lifter_id values found`);
+        
+        // STEP 1b: Stage newly identified homonym collisions to admin_review_queue
+        if (contaminatedData?.data?.length > 0) {
+            log('\n📥 Staging homonym collisions to admin_review_queue...');
+            await stageHomonymCollisions(contaminatedData.data, log);
+        }
         
         // STEP 2: Scrape comprehensive athlete data
         log('\n🕷️  STEP 2: Running comprehensive-data-scraper.js');

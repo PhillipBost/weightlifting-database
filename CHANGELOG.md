@@ -4,6 +4,14 @@ All notable changes to the Weightlifting Database project will be documented in 
 
 ## [Added] - 2026-09-18 (Eastern Time)
 
+- **Admin Review Queue & Daily Pipeline Integration (`public.admin_review_queue`)**:
+  - Established unified PostgreSQL table `public.admin_review_queue` spanning all four data quality and identity resolution streams: `cross_federation`, `homonym_split`, `name_change_merge`, and `iwf_duplicate`.
+  - Created [`scripts/production/populate-admin-review-queue.js`](file:///c:/Users/PB/Desktop/Bost%20Laboratory%20Services/Weightlifting/weightlifting-database/scripts/production/populate-admin-review-queue.js) to stage baseline historical candidates: 1,103 homonym splits, 169 USAW name change merges, and 14 IWF duplicate records.
+  - Created [`scripts/production/scan-usaw-name-changes.js`](file:///c:/Users/PB/Desktop/Bost%20Laboratory%20Services/Weightlifting/weightlifting-database/scripts/production/scan-usaw-name-changes.js) to detect shared USAW membership numbers across differing surnames.
+  - Wired Step 8 into [`scripts/maintenance/daily_scraper.js`](file:///c:/Users/PB/Desktop/Bost%20Laboratory%20Services/Weightlifting/weightlifting-database/scripts/maintenance/daily_scraper.js) to automatically run the name change scan during the daily USAW scrape.
+  - Updated [`scripts/analysis/contamination-cleanup-master.js`](file:///c:/Users/PB/Desktop/Bost%20Laboratory%20Services/Weightlifting/weightlifting-database/scripts/analysis/contamination-cleanup-master.js) to automatically stage newly identified homonym collisions directly into `public.admin_review_queue` during daily 4:00 AM EST runs.
+  - Updated [`scripts/production/link-new-iwf-athletes.js`](file:///c:/Users/PB/Desktop/Bost%20Laboratory%20Services/Weightlifting/weightlifting-database/scripts/production/link-new-iwf-athletes.js) to capture ambiguous IWF ↔ USAW and IWF ↔ OWLCMS candidates and stage them into `public.admin_review_queue` with deduplication during daily 5:00 PM EST runs.
+
 - **Living Federation & Regional Registry (`migrations/create_federation_registry.sql`)**:
   - Created `public.federation_registry` table with hierarchical parent-child relationships (`parent_federation_id`), ISO-3 country codes, level classifications (`international`, `continental`, `national`, `regional_state_wso`, `club`), and GIN-indexed `known_aliases` array.
   - Implemented ranked search RPC `public.search_federations(query_text TEXT)` returning weighted matches (Rank 100 exact alias, Rank 90 short code, Rank 80 canonical name, Rank 70 alias substring).

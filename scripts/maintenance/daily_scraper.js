@@ -122,6 +122,14 @@ async function main() {
             console.warn(`⚠️ Warning: USAW ↔ OWLCMS reconciliation encountered an issue: ${reconErr.message}`);
         }
 
+        // Step 8: Scan USAW Name Changes & Marriages for Admin Review Queue
+        console.log('\n💍 Step 8: Scanning USAW Name Changes & Shared Memberships...');
+        try {
+            await runScript('scripts/production/scan-usaw-name-changes.js');
+        } catch (nameChangeErr) {
+            console.warn(`⚠️ Warning: Name change scan encountered an issue: ${nameChangeErr.message}`);
+        }
+
         console.log('\n🎉 Daily scraping and import completed successfully!');
 
         console.log(`🕐 End time: ${new Date().toLocaleString()}`);

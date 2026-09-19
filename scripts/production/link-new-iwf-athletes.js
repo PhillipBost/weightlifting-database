@@ -382,6 +382,7 @@ async function run() {
     }
 
     const verifiedAliases = [];
+    const ambiguousPairs = [];
 
     for (const pair of meetMapPairs) {
         const iRoster = iwfAllMeetResults.filter(r => r.db_meet_id === pair.iwf_meet_id);
@@ -413,6 +414,12 @@ async function run() {
                 if (res.status === 'MATCH') {
                     uAthlete.calculated_score = res.score;
                     possibleIdentities.push(uAthlete);
+                } else if (res.status === 'AMBIGUOUS') {
+                    ambiguousPairs.push({
+                        iAthlete,
+                        uAthlete,
+                        score: res.score
+                    });
                 }
             }
 
@@ -515,6 +522,7 @@ async function run() {
     console.log(`\n[PHASE 3] OWLCMS Cross-Federation Matching (IWF ↔ OWLCMS)...`);
     const verifiedIwfOwlcmsAliases = [];
     const newlyLinkedOwlcmsAthletes = [];
+    const ambiguousOwlcmsPairs = [];
 
     try {
         // Fetch existing IWF <-> OWLCMS pairwise links
@@ -654,6 +662,12 @@ async function run() {
                         });
                     } else if (finalScore >= 60 && oLifter.link_status !== 'LINKED') {
                         console.log(`  ⚠️ REVIEW: IWF[${iAthlete.db_lifter_id}] "${iAthlete.athlete_name}" ── OWLCMS[${oLifter.lifter_id}] "${oLifter.athlete_name}" (Score: ${finalScore})`);
+                        ambiguousOwlcmsPairs.push({
+                            iAthlete,
+                            oLifter,
+                            score: finalScore,
+                            reason: breakdown.join(', ')
+                        });
                         if (!isDryRun) {
                             await supabase
                                 .from('owlcms_lifters')
@@ -691,6 +705,99 @@ async function run() {
 
     console.log(`\n  Verified ${finalAliases.length} new USAW ↔ IWF aliases.`);
     console.log(`  Verified ${verifiedIwfOwlcmsAliases.length} new IWF ↔ OWLCMS aliases.`);
+
+    // --- STAGE AMBIGUOUS CROSS-FEDERATION PAIRS TO ADMIN_REVIEW_QUEUE ---
+    const allAmbiguousToStage = [];
+
+    for (const item of ambiguousPairs) {
+        allAmbiguousToStage.push({
+            category: 'cross_federation',
+            status: 'PENDING',
+            title: `Borderline Match: IWF[${item.iAthlete.db_lifter_id}] "${item.iAthlete.athlete_name}" ↔ USAW[${item.uAthlete.lifter_id}] "${item.uAthlete.athlete_name}" (Score: ${item.score})`,
+            primary_entity_type: 'iwf_lifters',
+            primary_entity_id: item.iAthlete.db_lifter_id,
+            candidate_entity_type: 'usaw_lifters',
+            candidate_entity_id: item.uAthlete.lifter_id,
+            confidence_score: item.score,
+            evidence: {
+                federations: ['IWF', 'USAW'],
+                iwf_athlete: {
+                    db_lifter_id: item.iAthlete.db_lifter_id,
+                    athlete_name: item.iAthlete.athlete_name,
+                    country_code: item.iAthlete.country_code
+                },
+                usaw_athlete: {
+                    lifter_id: item.uAthlete.lifter_id,
+                    athlete_name: item.uAthlete.athlete_name
+                },
+                score: item.score,
+                detected_at: new Date().toISOString()
+            }
+        });
+    }
+
+    for (const item of ambiguousOwlcmsPairs) {
+        allAmbiguousToStage.push({
+            category: 'cross_federation',
+            status: 'PENDING',
+            title: `Borderline Match: IWF[${item.iAthlete.db_lifter_id}] "${item.iAthlete.athlete_name}" ↔ OWLCMS[${item.oLifter.lifter_id}] "${item.oLifter.athlete_name}" (Score: ${item.score})`,
+            primary_entity_type: 'iwf_lifters',
+            primary_entity_id: item.iAthlete.db_lifter_id,
+            candidate_entity_type: 'owlcms_lifters',
+            candidate_entity_id: item.oLifter.lifter_id,
+            confidence_score: item.score,
+            evidence: {
+                federations: ['IWF', 'OWLCMS'],
+                iwf_athlete: {
+                    db_lifter_id: item.iAthlete.db_lifter_id,
+                    athlete_name: item.iAthlete.athlete_name,
+                    country_code: item.iAthlete.country_code
+                },
+                owlcms_athlete: {
+                    lifter_id: item.oLifter.lifter_id,
+                    athlete_name: item.oLifter.athlete_name
+                },
+                reason: item.reason,
+                score: item.score,
+                detected_at: new Date().toISOString()
+            }
+        });
+    }
+
+    if (allAmbiguousToStage.length > 0) {
+        console.log(`\nStaging ${allAmbiguousToStage.length} ambiguous cross-federation candidates to admin_review_queue...`);
+        try {
+            const { data: existingQ } = await supabase
+                .from('admin_review_queue')
+                .select('primary_entity_id, candidate_entity_id')
+                .eq('category', 'cross_federation');
+
+            const existingSet = new Set(
+                (existingQ || []).map(q => `${q.primary_entity_id}-${q.candidate_entity_id}`)
+            );
+
+            const queueRecords = allAmbiguousToStage.filter(
+                rec => !existingSet.has(`${rec.primary_entity_id}-${rec.candidate_entity_id}`)
+            );
+
+            if (queueRecords.length > 0) {
+                if (!isDryRun) {
+                    const { error: insErr } = await supabase.from('admin_review_queue').insert(queueRecords);
+                    if (insErr) {
+                        console.error('  ❌ Error inserting ambiguous cross_federation items:', insErr.message);
+                    } else {
+                        console.log(`  ✅ Staged ${queueRecords.length} new ambiguous cross_federation pairs into admin_review_queue.`);
+                    }
+                } else {
+                    console.log(`  [DRY RUN] Would stage ${queueRecords.length} new ambiguous cross_federation pairs into admin_review_queue.`);
+                }
+            } else {
+                console.log('  ✓ All ambiguous cross-federation pairs already staged in admin_review_queue.');
+            }
+        } catch (qErr) {
+            console.error('  ⚠️ Error checking/staging ambiguous pairs to admin_review_queue:', qErr.message);
+        }
+    }
 
     if (finalAliases.length === 0 && verifiedIwfOwlcmsAliases.length === 0) {
         console.log('No new links found across federations. athlete_aliases unchanged.');
