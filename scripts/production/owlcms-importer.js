@@ -221,12 +221,12 @@ async function importOwlcmsJson(data, options = {}) {
     let federationMeta = null;
     if (rawFed) {
         try {
-            federationMeta = await resolveOrDiscoverFederation(rawFed, { countryCode: country });
+            federationMeta = await resolveOrDiscoverFederation(rawFed, { countryCode: country, asOfDate: startDate });
             if (federationMeta) {
                 federationId = federationMeta.id;
             }
         } catch (fedErr) {
-            console.warn(`[OWLCMS_IMPORTER] Federation resolution warning: ${fedErr.message}`);
+            console.warn(`[owlcms_importer] Federation resolution warning: ${fedErr.message}`);
         }
     }
     

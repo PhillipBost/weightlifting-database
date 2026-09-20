@@ -2,11 +2,23 @@
 
 All notable changes to the Weightlifting Database project will be documented in this file.
 
+## [Added] - 2026-09-20 (Eastern Time)
+
+- **Canadian Provinces & Territories Living Registry (`scripts/production/seed-vetted-canadian-provinces.js`)**:
+  - Populated all 13 Canadian regional bodies under Weightlifting Canada Haltérophilie (WCH) with `short_code = NULL` (maintaining parity with USAW WSOs) and `level = 'regional_state_wso'`.
+  - Enriched existing Fédération d'haltérophilie du Québec (FHQ) record with official websites, bilingual aliases (`Québec`, `Quebec`), and two-letter code `QC`.
+  - Mapped verified corporate names and domains for 9 incorporated Provincial Associations, while registering Yukon and the non-corporate jurisdictions (Northwest Territories, Nunavut, Prince Edward Island) sourced from the Weightlifting Canada Haltérophilie Athletes' Council.
+  - Linked all 13 entities via `public.federation_affiliations` with `relationship_type = 'regional_subdivision'`.
+
 ## [Fixed] - 2026-09-20 (Eastern Time)
 
 - **USA Weightlifting (USAW) Daily Meet Scraper (`scripts/production/meet_scraper.js`)**:
   - Hardened `setResultsPerPage` against timing race conditions on GitHub Actions (GHA) virtual machine runners by adding explicit `waitForSelector` guards on dropdown triggers and menu items.
   - Added non-blocking error handling and fallback so timing delays log a warning and proceed with default pagination rather than terminating the daily ingestion pipeline.
+- **Federation Search RPC Ranking & Short Query Substring Guard (`migrations/fix_search_federations_ranking.sql`)**:
+  - Resolved an ordering defect in `public.search_federations` where PostgreSQL `DISTINCT ON (c.id)` emitted candidate results ordered by Universally Unique Identifier (UUID) alphanumeric string value rather than `match_rank DESC`.
+  - Wrapped deduplicated candidates in an outer query explicitly sorted by `match_rank DESC, is_temporally_exact DESC, is_verified DESC, canonical_name ASC`.
+  - Added a character-length guard on substring matching (`length(trim(query_text)) >= 3`) to prevent two-letter queries (e.g. `AB`, `ON`, `SK`, `NS`) from matching inside unrelated words like "Association" or "Federation".
 
 ## [Added] - 2026-09-19 (Eastern Time)
 

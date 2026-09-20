@@ -23,16 +23,20 @@ const supabase = createClient(
 /**
  * Searches the registry for candidate matches using the search_federations RPC.
  * @param {string} queryText - Federation name, short code, or alias
+ * @param {string} [asOfDate] - YYYY-MM-DD competition date for Point-in-Time matching
  * @returns {Promise<Array>} List of matches ranked by confidence
  */
-async function searchFederations(queryText) {
+async function searchFederations(queryText, asOfDate = null) {
     if (!queryText || typeof queryText !== 'string' || queryText.trim().length === 0) {
         return [];
     }
 
-    const { data, error } = await supabase.rpc('search_federations', {
-        query_text: queryText.trim()
-    });
+    const rpcParams = { query_text: queryText.trim() };
+    if (asOfDate) {
+        rpcParams.as_of_date = asOfDate;
+    }
+
+    const { data, error } = await supabase.rpc('search_federations', rpcParams);
 
     if (error) {
         console.error(`[FederationResolver] Search error for "${queryText}":`, error.message);
@@ -51,6 +55,7 @@ async function searchFederations(queryText) {
  * @param {string} [options.countryCode] - ISO-3 country code if known
  * @param {string} [options.level] - Inferred level ('national', 'regional_state_wso', 'club')
  * @param {string} [options.parentFederationId] - Parent federation UUID if known
+ * @param {string} [options.asOfDate] - YYYY-MM-DD date for Point-in-Time matching
  * @returns {Promise<{ id: string, canonicalName: string, isNew: boolean, matchRank: number }>}
  */
 async function resolveOrDiscoverFederation(rawName, options = {}) {
@@ -59,18 +64,22 @@ async function resolveOrDiscoverFederation(rawName, options = {}) {
     }
 
     const cleanName = rawName.trim();
-    const matches = await searchFederations(cleanName);
+    const matches = await searchFederations(cleanName, options.asOfDate || null);
 
-    // If strong match found (Rank >= 80), use it
-    if (matches.length > 0 && matches[0].match_rank >= 80) {
+    // If strong match found (Rank >= 75), use it
+    if (matches.length > 0 && matches[0].match_rank >= 75) {
         const top = matches[0];
         return {
             id: top.id,
             canonicalName: top.canonical_name,
-            shortCode: top.short_code,
+            matchedName: top.matched_name,
+            matchedAcronym: top.matched_acronym,
+            matchedLanguage: top.matched_language,
+            shortCode: top.matched_acronym,
             countryCode: top.country_code,
             level: top.level,
-            parentName: top.parent_name,
+            parentName: null,
+            isTemporallyExact: top.is_temporally_exact,
             isNew: false,
             matchRank: top.match_rank
         };
