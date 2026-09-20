@@ -2,6 +2,23 @@
 
 All notable changes to the Weightlifting Database project will be documented in this file.
 
+## [Fixed] - 2026-09-20 (Eastern Time)
+
+- **USA Weightlifting (USAW) Daily Meet Scraper (`scripts/production/meet_scraper.js`)**:
+  - Hardened `setResultsPerPage` against timing race conditions on GitHub Actions (GHA) virtual machine runners by adding explicit `waitForSelector` guards on dropdown triggers and menu items.
+  - Added non-blocking error handling and fallback so timing delays log a warning and proceed with default pagination rather than terminating the daily ingestion pipeline.
+
+## [Added] - 2026-09-19 (Eastern Time)
+
+- **Longitudinal Living Federation Registry (`migrations/create_longitudinal_federation_registry.sql`)**:
+  - Restructured federation governance into a multi-table temporal model: `public.federation_registry`, `public.federation_localizations`, `public.federation_affiliations`, and `public.federation_headquarters`.
+  - Added temporal boundaries (`valid_from`, `valid_until`), `name_type`, and mandatory `citation` references to `federation_localizations`.
+  - Added headquarters relocation tracking (`public.federation_headquarters`) for historical administrative seats.
+  - Implemented Point-in-Time ranked search RPC `public.search_federations(query_text TEXT, as_of_date DATE DEFAULT CURRENT_DATE)` prioritizing names and acronyms actively valid on competition dates (Rank 100 temporally exact vs. Rank 85 historical match).
+  - Seeded vetted baseline: Apex International (IWF with historical French names `FIH`, `FIHC`, `FHI` and Budapest → Lausanne relocation history) + 5 Continental Confederations (PAWF, EWF, AWF, WFA, OWF) with bidirectional affiliation edges (`scripts/production/seed-vetted-baseline.js`).
+  - Seeded vetted National Governing Bodies (Batch 2): USA Weightlifting (`USAW` with historical `USWF` and dual IWF + PAWF governance), Weightlifting Canada Haltérophilie (`WCH` with historical `CWFHC` and dual IWF + PAWF governance), and Fédération d'haltérophilie du Québec (`FHQ` under WCH) (`scripts/production/seed-vetted-batch2.js`).
+  - Linked active owlcms meets (Meet 1 → WCH, Meets 2 & 3 → FHQ).
+
 ## [Added] - 2026-09-18 (Eastern Time)
 
 - **Admin Review Queue & Daily Pipeline Integration (`public.admin_review_queue`)**:

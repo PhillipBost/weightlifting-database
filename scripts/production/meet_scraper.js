@@ -349,10 +349,20 @@ async function completeNavigation(page, targetYear) {
 
 async function setResultsPerPage(page) {
     console.log('⚙️ Setting results per page to 50...');
-    await page.click('div.v-select__slot div.v-input__append-inner div.v-input__icon');
-    await new Promise(resolve => setTimeout(resolve, 300));
-    await page.click('div.v-menu__content div.v-list.v-select-list.v-sheet div.v-list-item.v-list-item--link:nth-of-type(6)');
-    console.log('✅ Set to 50 results per page');
+    try {
+        const selectTrigger = 'div.v-select__slot div.v-input__append-inner div.v-input__icon';
+        await page.waitForSelector(selectTrigger, { timeout: 5000 });
+        await page.click(selectTrigger);
+
+        const targetOptionSelector = 'div.v-menu__content div.v-list.v-select-list.v-sheet div.v-list-item.v-list-item--link:nth-of-type(6)';
+        await page.waitForSelector(targetOptionSelector, { timeout: 5000 });
+        await page.click(targetOptionSelector);
+
+        console.log('✅ Set to 50 results per page');
+        await new Promise(resolve => setTimeout(resolve, 1000));
+    } catch (err) {
+        console.warn(`⚠️ Could not set results per page to 50 (${err.message}). Continuing with default page size...`);
+    }
 }
 
 async function getPageData(page) {
