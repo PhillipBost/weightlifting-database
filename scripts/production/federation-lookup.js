@@ -12,6 +12,17 @@
  *   GET  /api/federations/lineage/:id    -> getFederationLineage()
  *   POST /api/federations/resolve        -> resolveCascadeInputs()
  *
+ * Supabase-native equivalents (for direct service-role callers such as the
+ * owanalytics.org frontend gateway — the frontend does NOT proxy through
+ * this server for read-only lookups):
+ *   GET  /api/federations/options  -> rpc('list_federation_options', ...)
+ *   GET  /api/federations/lineage  -> rpc('get_federation_lineage', ...)
+ *   POST /api/federations/resolve  -> documented client-side recipe over
+ *                                     rpc('search_federations', ...)
+ * See docs/GEOGRAPHY_ORGANIZER_CASCADE_API.md §8. These HTTP routes remain
+ * for the importer's own pipeline; parity is verified in
+ * migrations/verify-federation-cascade-rpcs.sql.
+ *
  * Security model:
  *   - All functions run server-side with the service role.
  *   - Anonymous/anon-key database access is blocked by Row-Level Security
@@ -194,8 +205,15 @@ async function listFederationOptions(params = {}) {
 // (Lineage and cascade resolution functions follow below.)
 
 /**
- * Complete parent chain (lineage) for a federation, over affiliation edges,
+ * Affiliation walk for a federation, over affiliation edges,
  * with Point-in-Time filtering of edge effective windows.
+ *
+ * Recognised-autonomy model (2026-09-22): a hop means "affiliated with /
+ * recognised by", never "subordinate to", unless the edge type is explicitly
+ * hierarchical (e.g. regional_subdivision). Continental confederations are
+ * autonomous roots alongside the International Weightlifting Federation (IWF);
+ * multiple roots are normal (a National Governing Body (NGB) belongs to both
+ * the International Weightlifting Federation (IWF) and its continental body).
  *
  * Multi-parent graphs are supported: every active parent edge is followed
  * (e.g., a national body with both an international and a continental edge),
@@ -269,7 +287,11 @@ async function getFederationLineage(id, asOfDate = null) {
         frontier = next;
     }
 
-    // Roots = hops whose parent never appears as a via_child further up
+    // Terminals = hops whose parent never appears as a via_child further up
+    // (no outgoing affiliation edge). Terminals are NOT command roots: under the
+    // recognised-autonomy model a hop means "affiliated with / recognised by",
+    // and continental confederations are autonomous peers of the International
+    // Weightlifting Federation (IWF).
     const roots = hops.filter(h =>
         h.parent && !hops.some(o => o.via_child_id === h.parent.id)
     );

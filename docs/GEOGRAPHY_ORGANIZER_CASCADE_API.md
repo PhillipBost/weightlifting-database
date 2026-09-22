@@ -5,6 +5,9 @@
 > competition-scope inference contract. It is the reusable contract for the
 > collaborator website: collaborators call these HTTP endpoints only and never
 > receive database or service-role credentials.
+> Direct service-role callers (e.g., the owanalytics.org frontend gateway) call
+> Supabase itself instead — see **§8 Supabase-native surface** for the RPC
+> equivalents of §2–§4 and the resolve recipe.
 
 **Acronyms (defined at first use):** owlcms = Online Weightlifting Competition
 Management System · PIT = Point-in-Time · RLS = Row-Level Security ·
@@ -110,10 +113,18 @@ Notes:
 
 ## 3. `GET /api/federations/lineage/:id?as_of_date=`
 
-Complete parent chain from a recognized organizer, over affiliation edges,
+Affiliation walk from a recognized organizer, over affiliation edges,
 with PIT filtering of edge effective windows. Unlike the older governance
 route (which lists active immediate parents/children without date filtering),
 this walks the full multi-parent graph (depth cap 6, cycle-guarded).
+
+Recognised-autonomy model (2026-09-22): a hop means "affiliated with /
+recognised by", never "subordinate to", unless the edge type is explicitly
+hierarchical (e.g. `regional_subdivision`). Continental confederations are
+autonomous peer bodies recognised within the International Weightlifting
+Federation (IWF) framework — no `continental -> International Weightlifting
+Federation (IWF)` edge exists, so no Pan American Weightlifting Federation
+(PAWF) -> International Weightlifting Federation (IWF) hop should ever appear.
 
 **Live-verified example — FHQ with `as_of_date=2026-06-05`:**
 
@@ -137,7 +148,9 @@ this walks the full multi-parent graph (depth cap 6, cycle-guarded).
 
 Treat `is_verified: false` edges (such as FHQ → WCH today) as **suggestions the
 uploader may confirm**, not established facts. `404` is returned when the id
-does not exist.
+does not exist. Multiple roots are normal — and neither root is subordinate to
+the other: the International Weightlifting Federation (IWF) and the Pan
+American Weightlifting Federation (PAWF) are autonomous peers.
 
 ---
 
@@ -252,5 +265,111 @@ organizer path.
   service-role credentials must never be shipped to client code.
 - owlcms tables carry public-read RLS policies; `owlcms_meet_teams` follows the
   same pattern (public read, service-role writes).
+
+---
+
+## 8. Supabase-native surface (direct service-role callers)
+
+The owanalytics.org frontend gateway calls Supabase directly with the service
+role — the same way `/api/federations/search` already calls `search_federations`
+— and does **not** proxy read-only lookups through the upload server (port
+8890). The port-8890 routes remain for the importer's own pipeline. The two
+structural lookups are deployed SQL RPCs (migration
+`create_federation_cascade_rpcs.sql`, run manually per protocol); resolve is a
+documented client-side recipe over the existing `search_federations` RPC.
+
+### 8.1 `rpc('list_federation_options', …)` — replaces §2 `GET /api/federations/options`
+
+Signature: `list_federation_options(p_level TEXT DEFAULT NULL, p_parent_id UUID DEFAULT NULL, p_query TEXT DEFAULT NULL, p_as_of_date DATE DEFAULT CURRENT_DATE, p_limit INT DEFAULT 50, p_offset INT DEFAULT 0)`
+→ rows `{ id, canonical_name, short_code, country_code, level, parent_federation_id, is_verified, known_aliases, display_names (JSONB), total_count (BIGINT) }`, ordered by `canonical_name`.
+
+- Same level values, parent constraint, and `q` semantics as §2 (≥ 3 chars
+  enables substring; shorter requires exact match on canonical name, short
+  code, or alias).
+- `display_names` is the PIT-filtered localization array — a genuine advantage
+  over PostgREST embeds, which cannot express the NULL-tolerant
+  `valid_from`/`valid_until` window filtering.
+- `total_count` repeats on every row; derive `has_more = offset + limit < total_count`.
+- An invalid `p_level` raises error `22023`; an empty result is a legitimate
+  "no options", not an error.
+
+```js
+const { data, error } = await supabase.rpc('list_federation_options', {
+  p_level: 'regional_state_wso',
+  p_parent_id: wchId,
+  p_as_of_date: '2026-06-05',
+  p_limit: 200
+});
+// data: FHQ + 12 sibling provincial bodies; data[0].total_count === 13
+```
+
+### 8.2 `rpc('get_federation_lineage', …)` — replaces §3 `GET /api/federations/lineage/:id`
+
+Signature: `get_federation_lineage(p_entity_id UUID, p_as_of_date DATE DEFAULT CURRENT_DATE)`
+→ flat hop rows `{ depth, parent_id, parent_canonical_name, parent_short_code, parent_level, relationship_type, is_verified, citation, effective_start, effective_end, is_root }`, ordered by `depth`.
+
+- Same semantics as §3: multi-parent recursive walk, depth cap 6, cycle-guarded,
+  edges filtered to those active on the PIT date. Recognised-autonomy model:
+  a hop means "affiliated with / recognised by", never "subordinate to";
+  continentals are autonomous roots alongside the International Weightlifting
+  Federation (IWF). All §3 UI rules apply
+  unchanged (`is_verified: false` hops are suggestions, multiple roots are normal).
+- Unknown id **raises** (`P0002`) — map to a 404-style UI state; an entity with
+  no affiliations returns an **empty array** (missing association, not an error).
+
+```js
+const { data, error } = await supabase.rpc('get_federation_lineage', {
+  p_entity_id: fhqId, p_as_of_date: '2026-06-05'
+});
+// data: [{ depth: 1, parent_short_code: 'WCH', is_verified: false, … },
+//        { depth: 2, parent_short_code: 'IWF',  is_verified: true,  … },
+//        { depth: 2, parent_short_code: 'PAWF', is_verified: true,  … }]
+```
+
+### 8.3 Resolve recipe — replaces §4 `POST /api/federations/resolve`
+
+No new RPC is needed; compose from `search_federations` plus this exact
+classification rule (mirrors the HTTP endpoint):
+
+1. Deduplicate `records[].recordFederation` values (and team-name analysis) locally.
+2. For each field (organizer, federation, host country, each deduplicated
+   record code), call `supabase.rpc('search_federations', { query_text, as_of_date })`.
+3. Classify each result: `[]` or top `match_rank < 75` → `no_match` · two or
+   more rows tied at the top rank (≥ 75) → `ambiguous` (uploader must choose) ·
+   single top row → `unique` with `confidence_tier = 'exact'` (rank ≥ 90) or
+   `'substring'` (75–89) · empty source field → `missing_in_source`.
+4. `suggested_scope` from a `unique` federation's `level`: `international →
+   international`, `continental → continental`, `national → national`,
+   `regional_state_wso → regional`, else `unknown`. Never upgrade scope from
+   team/record evidence (§4 rules apply unchanged; club names never prove "local").
+5. Submit final choices via `uploaderSelections` on `POST /api/upload-owlcms` (§5).
+
+### 8.4 Documented PostgREST query patterns (fallback, no RPC)
+
+Service-role key required (RLS blocks anonymous reads). Useful when a simple
+list with embedded names suffices:
+
+```text
+GET {SUPABASE_URL}/rest/v1/federation_registry
+    ?select=id,canonical_name,short_code,country_code,level,parent_federation_id,
+            is_verified,known_aliases,
+            federation_localizations(language_code,full_name,acronym,name_type,
+                                     valid_from,valid_until)
+    &level=eq.national&order=canonical_name.asc&limit=200
+
+# Children of a selected parent via the denormalized column: &parent_federation_id=eq.{uuid}
+
+# Immediate parent edges for an entity (raw edges — NOT a full walk):
+GET {SUPABASE_URL}/rest/v1/federation_affiliations
+    ?select=*,parent:federation_registry!federation_affiliations_parent_id_fkey(id,canonical_name,short_code,level)
+    &child_id=eq.{uuid}&is_active=eq.true
+```
+
+Notes: the embed hint names the parent foreign-key constraint — if the deployed
+constraint name differs, look it up (`SELECT conname FROM pg_constraint WHERE
+conrelid = 'federation_affiliations'::regclass AND contype = 'f';`) and adjust.
+PostgREST alone cannot perform the recursive multi-parent walk or the
+NULL-tolerant PIT name filtering in one call — that is exactly what §8.1 and
+§8.2 provide.
 
 

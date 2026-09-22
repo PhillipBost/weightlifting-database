@@ -2,6 +2,24 @@
 
 All notable changes to the Weightlifting Database project will be documented in this file.
 
+## [Fixed] - 2026-09-22 (Eastern Time)
+
+- **Recognised-Autonomy Model: Continental Confederations Are Not Subordinate to the International Weightlifting Federation (IWF) (`migrations/remove-continental-confederation-parent-edges-2026-09-22.sql` — applied manually 2026-09-22 after review, per project protocol; verified `0` remaining edges, 5 Continentals at `0` outgoing, Fédération d'haltérophilie du Québec (FHQ) exactly 3 rows with no depth-3 hop)**:
+  - Removes the 5 `continental_confederation -> International Weightlifting Federation (IWF)` edges (Asian Weightlifting Federation (AWF), European Weightlifting Federation (EWF), Oceania Weightlifting Federation (OWF), Pan American Weightlifting Federation (PAWF), Weightlifting Federation of Africa (WFA)) that mis-modeled autonomous recognition as subordination. Continentals become roots alongside the International Weightlifting Federation (IWF); National Governing Bodies (NGBs) keep dual direct membership (`international_member` + `continental_member`).
+  - A hop in `public.federation_affiliations` now means "affiliated with / recognised by", never "subordinate to", unless the edge type is explicitly hierarchical (e.g. `regional_subdivision`).
+  - `scripts/production/seed-vetted-baseline.js` no longer seeds these edges (re-seeding cannot resurrect them); wording updated in `scripts/production/federation-lookup.js`, `docs/GEOGRAPHY_ORGANIZER_CASCADE_API.md` (§3, §8.2), and `migrations/create_federation_cascade_rpcs.sql`.
+  - Supersedes `migrations/verify-affiliation-verification-2026-09-21.sql` §4 (expected `IWF continental_confederation=5`, now `0`).
+  - Read-only verification companion: `migrations/verify-remove-continental-confederation-edges-2026-09-22.sql` (zero remaining edges, continental root status, Weightlifting Canada Haltérophilie (WCH) dual membership, Fédération d'haltérophilie du Québec (FHQ) exactly 3 rows with no depth-3 hop).
+
+## [Added] - 2026-09-22 (Eastern Time)
+
+- **Federation Cascade Supabase RPCs (`migrations/create_federation_cascade_rpcs.sql` — applied manually 2026-09-22 after review, per project protocol; verified via the read-only companion script: functions exist, counts match, parent/PIT/pagination pass, P0002 error path confirmed)**:
+  - `public.list_federation_options(p_level, p_parent_id, p_query, p_as_of_date, p_limit, p_offset)` — Point-in-Time (PIT)-filtered cascade option lists (level- and parent-constrained, explicit `total_count`, clamped pagination 1–200, JSONB `display_names`) so direct service-role callers (the owanalytics.org frontend gateway) can use `supabase.rpc()` instead of proxying through the port-8890 upload server.
+  - `public.get_federation_lineage(p_entity_id, p_as_of_date)` — recursive multi-parent lineage walk over `federation_affiliations` (depth cap 6, cycle-guarded, PIT edge filtering, `is_root` flag); unknown id raises `P0002`, absent affiliations return an empty set.
+  - `EXECUTE` granted to `anon, authenticated, service_role`, mirroring the deployed `search_federations` convention. The HTTP routes on the upload server remain for the importer's own pipeline; the RPC surface, the client-side resolve recipe over `search_federations`, and PostgREST fallback patterns are documented in `docs/GEOGRAPHY_ORGANIZER_CASCADE_API.md` §8.
+  - Read-only verification companion: `migrations/verify-federation-cascade-rpcs.sql`.
+
+
 ## [Added] - 2026-09-21 (Eastern Time)
 
 - **Geographic/Organizer Cascade & Competition-Scope Backend Support (`migrations/add_owlcms_geography_organizer_scope.sql` — applied manually 2026-09-21 after review, per project protocol; verified via the read-only companion script)**:

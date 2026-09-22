@@ -130,10 +130,7 @@ const entities = [
                 citation: 'PAWF Statutes Article 1'
             }
         ],
-        affiliation: {
-            relationship_type: 'continental_confederation',
-            parent_short_code: 'IWF'
-        }
+        // Recognised-autonomy model (2026-09-22): no affiliation edge - continental is autonomous
     },
     {
         registry: {
@@ -172,10 +169,7 @@ const entities = [
                 citation: 'EWF Constitution Article 1.3'
             }
         ],
-        affiliation: {
-            relationship_type: 'continental_confederation',
-            parent_short_code: 'IWF'
-        }
+        // Recognised-autonomy model (2026-09-22): no affiliation edge - continental is autonomous
     },
     {
         registry: {
@@ -203,10 +197,7 @@ const entities = [
                 citation: 'AWF Constitution Article 1'
             }
         ],
-        affiliation: {
-            relationship_type: 'continental_confederation',
-            parent_short_code: 'IWF'
-        }
+        // Recognised-autonomy model (2026-09-22): no affiliation edge - continental is autonomous
     },
     {
         registry: {
@@ -244,10 +235,7 @@ const entities = [
                 citation: 'WFA Statutes / IWF Directory'
             }
         ],
-        affiliation: {
-            relationship_type: 'continental_confederation',
-            parent_short_code: 'IWF'
-        }
+        // Recognised-autonomy model (2026-09-22): no affiliation edge - continental is autonomous
     },
     {
         registry: {
@@ -275,10 +263,7 @@ const entities = [
                 citation: 'OWF Constitution / IWF Directory'
             }
         ],
-        affiliation: {
-            relationship_type: 'continental_confederation',
-            parent_short_code: 'IWF'
-        }
+        // Recognised-autonomy model (2026-09-22): no affiliation edge - continental is autonomous
     }
 ];
 
