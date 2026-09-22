@@ -2,6 +2,27 @@
 
 All notable changes to the Weightlifting Database project will be documented in this file.
 
+## [Added] - 2026-09-21 (Eastern Time)
+
+- **Geographic/Organizer Cascade & Competition-Scope Backend Support (`migrations/add_owlcms_geography_organizer_scope.sql` — applied manually 2026-09-21 after review, per project protocol; verified via the read-only companion script)**:
+  - Adds `venue`, `host_country_code`, `organizer_federation_id`, `competition_scope` (check-constrained to international/continental/national/regional/local/unknown), `scope_evidence`, `geography_inference`, and `uploader_selections` columns to `public.owlcms_meets` so host geography, organizer identity, and competition scope stop being conflated with the legacy free-text `country`/`organizer` columns.
+  - Creates `public.owlcms_meet_teams` (team_code, team_name, team_kind: delegation/subdivision/club/unknown, raw JSONB) with a NULL-tolerant deduplication unique index, moving per-competition team/delegation representation off the permanent `owlcms_lifters.club_name` column.
+  - Applies the deployed `owlcms_grants.sql` access pattern: Row Level Security (RLS) enabled, public read policy, service-role-only writes. Historical rows are left NULL — no backfill, and no federation registry rows are seeded.
+  - Ships a read-only companion verification script (`migrations/verify-owlcms-geography-organizer-scope.sql`).
+- **Venue/Country Conflation Fix (`scripts/production/owlcms-importer.js`)**:
+  - `competition.competitionSite` (verified venue free-text: school names, street addresses, sometimes a city) is now stored in `owlcms_meets.venue` and can never land in `country`. Verified previously: 4/4 deployed meet rows held venue strings in `country`.
+  - Organizer resolution is now SEARCH-ONLY with explicit statuses (`no_match | unique | ambiguous | lookup_failed`); unmatched club organizers are recorded as evidence and never auto-inserted into the registry (no pre-seeding). Adoption requires exact-tier matches (match_rank >= 90).
+  - `competition_scope` is derived conservatively from the sanctioning federation's registry level only; deduplicated `(recordFederation, recordName)` record sets and team analysis are stored as corroboration in `scope_evidence` and never upgrade the scope. Club team names never prove a local event.
+  - Per-meet teams are captured (JSONv2 `teams[]` by code, legacy `athlete.team` strings), with `team_kind = 'delegation'` assigned only to unambiguous 3-letter uppercase codes.
+  - Dry-run mode is now strictly read-only: federation resolution (which can auto-discover registry rows) is skipped during dry-runs.
+  - New inference helpers (`extractMeetTeams`, `extractRecordEvidence`, `inferCompetitionScope`, `classifyTeamKind`, `summarizeCandidates`, `classifyCandidates`) are exported for testability.
+- **Federation Cascade Lookup API (`scripts/production/federation-lookup.js` + `scripts/production/owlcms-upload-server.js`)**:
+  - `GET /api/federations/options` — PIT-filtered, parent-constrained option lists with explicit `total_count`/`has_more` pagination (fixes the hard `LIMIT 10` silent truncation of `search_federations`).
+  - `GET /api/federations/lineage/:id` — full multi-parent lineage walk over affiliation edges with `as_of_date` Point-in-Time (PIT) filtering (the governance route lacks date filtering).
+  - `POST /api/federations/resolve` — batch search-only resolution (organizer, federation, host country, deduplicated record federations, team names) with explicit `no_match | unique | ambiguous | missing_in_source` statuses and evidence.
+  - `POST /api/upload-owlcms` accepts an optional `uploaderSelections` object persisted to `owlcms_meets.uploader_selections`, keeping uploader-confirmed selections permanently distinguishable from server inference.
+  - Full contract documented in `docs/GEOGRAPHY_ORGANIZER_CASCADE_API.md` (includes the collaborator-website security model: application API only; anon-key database reads are RLS-blocked).
+
 ## [Added] - 2026-09-20 (Eastern Time)
 
 - **Canadian Provinces & Territories Living Registry (`scripts/production/seed-vetted-canadian-provinces.js`)**:

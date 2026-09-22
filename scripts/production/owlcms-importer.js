@@ -6,6 +6,18 @@
  *   2. owlcms_lifters      - Athlete biographical profiles (UTF-8 preserved, homonym-safe)
  *   3. owlcms_meet_results - Single platform appearance per row, signed attempts,
  *                            timestamps, and participations JSONB.
+ *   4. owlcms_meet_teams   - Per-competition team/delegation entries (code, name, kind).
+ *
+ * Geography/organizer/scope capture (2026-09-21):
+ *   - competition.competitionSite is VENUE free-text and is stored in
+ *     owlcms_meets.venue. It is never treated as a country (the owlcms format
+ *     has no host-country field).
+ *   - Organizer identity is resolved SEARCH-ONLY against the federation
+ *     registry; unmatched organizers (typically clubs) are recorded as
+ *     evidence and never auto-inserted (no registry pre-seeding).
+ *   - competition_scope is derived conservatively from the sanctioning
+ *     federation's registry level; team/record evidence is stored as
+ *     corroboration only and never upgrades the scope.
  */
 
 require('dotenv').config();
@@ -17,7 +29,7 @@ const crypto = require('crypto');
 const { promisify } = require('util');
 
 const gzipAsync = promisify(zlib.gzip);
-const { resolveOrDiscoverFederation } = require('./federation-resolver.js');
+const { resolveOrDiscoverFederation, searchFederations } = require('./federation-resolver.js');
 
 /**
  * Initialize default Supabase client from environment
@@ -132,6 +144,151 @@ function sanitizeArchiveFileName(fileName) {
     return `${sanitized || 'export'}.json.gz`;
 }
 
+// ---------------------------------------------------------------------------
+// Geography / organizer / competition-scope inference helpers (2026-09-21)
+// ---------------------------------------------------------------------------
+
+/**
+ * Map a sanctioning federation's registry level to a competition scope.
+ * Club and unresolved levels intentionally map to 'unknown':
+ * a club organizer or club team names never prove a local event (USAW
+ * national events use club names as team names).
+ */
+const SCOPE_BY_SANCTION_LEVEL = {
+    international: 'international',
+    continental: 'continental',
+    national: 'national',
+    regional_state_wso: 'regional'
+};
+
+/**
+ * Classify a team label from the owlcms export.
+ * Only an unambiguous 3-letter uppercase code is classified 'delegation'.
+ * Club vs province/state CANNOT be distinguished from source data, so those
+ * stay 'unknown' for the uploader to confirm.
+ */
+function classifyTeamKind(name) {
+    return (typeof name === 'string' && /^[A-Z]{3}$/.test(name.trim())) ? 'delegation' : 'unknown';
+}
+
+/**
+ * Extract per-meet team/delegation entries.
+ * JSONv2 exports carry a top-level teams[] array ({id, name}); legacy full
+ * database exports carry display strings on athlete.team instead.
+ * Deduplicated in memory by (code, name).
+ */
+function extractMeetTeams(data, athletes) {
+    const teams = [];
+    const seen = new Set();
+    const add = (code, name, raw) => {
+        const key = `${code || ''}|${name}`;
+        if (seen.has(key)) return;
+        seen.add(key);
+        teams.push({ team_code: code, team_name: name, team_kind: classifyTeamKind(name), raw: raw || null });
+    };
+    if (Array.isArray(data.teams)) {
+        for (const t of data.teams) {
+            if (t && t.name !== undefined && String(t.name).trim() !== '') {
+                add(t.id !== undefined ? String(t.id) : null, String(t.name).trim(), t);
+            }
+        }
+    } else {
+        for (const a of athletes) {
+            if (a && a.team !== undefined && a.team !== null && String(a.team).trim() !== '') {
+                add(null, String(a.team).trim(), null);
+            }
+        }
+    }
+    return teams;
+}
+
+/**
+ * Deduplicated reference-record evidence.
+ * records[] rows are per (age group x bodyweight category x lift) inside a
+ * record set; repeated rows are NOT independent confirmations, so evidence is
+ * deduplicated by (recordFederation, recordName).
+ */
+function extractRecordEvidence(data) {
+    const sets = [];
+    const seen = new Set();
+    if (Array.isArray(data.records)) {
+        for (const r of data.records) {
+            if (!r) continue;
+            const fed = (r.recordFederation !== undefined && r.recordFederation !== null) ? String(r.recordFederation) : null;
+            const label = (r.recordName !== undefined && r.recordName !== null) ? String(r.recordName) : null;
+            if (!fed && !label) continue;
+            const key = `${fed || ''}|${label || ''}`;
+            if (seen.has(key)) continue;
+            seen.add(key);
+            sets.push({ record_federation: fed, record_name: label });
+        }
+    }
+    return {
+        raw_record_rows: Array.isArray(data.records) ? data.records.length : 0,
+        deduplicated_record_sets: sets,
+        distinct_record_federations: [...new Set(sets.map(s => s.record_federation).filter(Boolean))]
+    };
+}
+
+/**
+ * Derive a conservative competition-scope suggestion with full evidence.
+ * Basis is the resolved sanctioning federation's registry level ONLY;
+ * team/record evidence is recorded as corroboration and never upgrades scope.
+ */
+function inferCompetitionScope(federationMeta, recordEvidence, meetTeams) {
+    const sanctionLevel = (federationMeta && federationMeta.level) ? federationMeta.level : null;
+    const delegationTeams = meetTeams.filter(t => t.team_kind === 'delegation').map(t => t.team_name);
+    return {
+        suggested_scope: SCOPE_BY_SANCTION_LEVEL[sanctionLevel] || 'unknown',
+        basis: sanctionLevel ? 'sanction_federation_level' : 'unresolved_sanction_federation',
+        sanction_federation_level: sanctionLevel,
+        record_evidence: recordEvidence,
+        team_evidence: {
+            team_count: meetTeams.length,
+            delegation_code_teams: delegationTeams,
+            delegation_code_count: delegationTeams.length,
+            club_or_subdivision_teams_unknown: meetTeams.filter(t => t.team_kind === 'unknown').length
+        },
+        caveats: [
+            'Club team names never prove a local event (USAW national events use club names as team names).',
+            'Reference record rows are deduplicated by (recordFederation, recordName); repeated rows are not independent confirmations.',
+            'Team and record evidence is corroboration only and never upgrades the suggested scope.'
+        ]
+    };
+}
+
+/**
+ * Summarize ranked search_federations candidates for evidence records.
+ */
+function summarizeCandidates(matches) {
+    return (matches || []).map(m => ({
+        id: m.id,
+        canonical_name: m.canonical_name,
+        matched_name: m.matched_name,
+        matched_acronym: m.matched_acronym,
+        level: m.level,
+        country_code: m.country_code,
+        is_verified: m.is_verified,
+        is_temporally_exact: m.is_temporally_exact,
+        match_rank: m.match_rank
+    }));
+}
+
+/**
+ * Classify ranked candidates into a lookup status.
+ * Statuses: no_match | unique | ambiguous
+ * 'unique' with top rank >= 90 is exact-tier (adoptable); 75-89 is substring-tier.
+ */
+function classifyCandidates(candidates) {
+    if (!candidates || candidates.length === 0 || candidates[0].match_rank < 75) {
+        return 'no_match';
+    }
+    if (candidates.length > 1 && candidates[1].match_rank === candidates[0].match_rank) {
+        return 'ambiguous';
+    }
+    return 'unique';
+}
+
 /**
  * Validate that payload is an OWLCMS Version 2 export
  */
@@ -174,7 +331,8 @@ async function importOwlcmsJson(data, options = {}) {
         sourceFileName = 'upload.json',
         dryRun = false,
         client = null,
-        rawBuffer = null
+        rawBuffer = null,
+        uploaderSelections = null
     } = options;
     
     // 1. Validation
@@ -211,15 +369,29 @@ async function importOwlcmsJson(data, options = {}) {
     const startDate = normalizeDate(comp.competitionDate || comp.localizedCompetitionDate || data.startDate);
     const endDate = normalizeDate(comp.competitionEndDate || comp.competitionDate || data.endDate);
     const city = comp.competitionCity || data.city || null;
-    const country = comp.competitionSite || comp.country || data.country || null;
+
+    // competitionSite is the venue free-text (verified across all available
+    // exports: school names, street addresses, or a city name). It must NEVER
+    // be treated as a country. The owlcms format has no host-country field;
+    // comp.country / data.country are the only legitimate sources and are
+    // absent in every observed export.
+    const venue = comp.competitionSite || null;
+    const hostCountryRaw = comp.country || data.country || null;
+    const country = hostCountryRaw;
     const organizer = comp.competitionOrganizer || comp.federation || data.organizer || null;
     const formatVersion = String(data.formatVersion || data.version || '2.0');
 
-    // Resolve canonical federation via Living Federation Registry
+    // Reference-record and team evidence (deduplicated; see helper docs)
+    const recordEvidence = extractRecordEvidence(data);
+    const meetTeams = extractMeetTeams(data, athletes);
+
+    // Resolve canonical sanctioning federation via Living Federation Registry.
+    // Skipped in dry-run mode: resolution can auto-discover registry rows and a
+    // dry-run must remain strictly read-only.
     const rawFed = comp.federation || organizer;
     let federationId = null;
     let federationMeta = null;
-    if (rawFed) {
+    if (rawFed && !dryRun) {
         try {
             federationMeta = await resolveOrDiscoverFederation(rawFed, { countryCode: country, asOfDate: startDate });
             if (federationMeta) {
@@ -229,15 +401,96 @@ async function importOwlcmsJson(data, options = {}) {
             console.warn(`[owlcms_importer] Federation resolution warning: ${fedErr.message}`);
         }
     }
+
+    // Organizer candidate resolution — SEARCH ONLY. Boundary rule: never
+    // pre-seed or synthesize federation_registry records; unmatched organizers
+    // (typically clubs) are recorded as evidence, never inserted.
+    let organizerCandidate = {
+        status: dryRun && organizer ? 'skipped_dry_run' : (organizer ? 'no_match' : 'missing_in_source'),
+        raw: organizer,
+        candidates: [],
+        adopted_id: null
+    };
+    if (organizer && !dryRun) {
+        try {
+            const candidates = summarizeCandidates(await searchFederations(organizer, startDate));
+            const status = classifyCandidates(candidates);
+            organizerCandidate = {
+                status,
+                raw: organizer,
+                candidates,
+                // Adopt only exact-tier matches (rank >= 90: exact canonical
+                // name, short code, or temporally-exact localized name)
+                adopted_id: (status === 'unique' && candidates[0].match_rank >= 90) ? candidates[0].id : null
+            };
+        } catch (orgErr) {
+            console.warn(`[owlcms_importer] Organizer lookup warning: ${orgErr.message}`);
+            organizerCandidate = { status: 'lookup_failed', raw: organizer, candidates: [], adopted_id: null };
+        }
+    }
+
+    // Host-country candidate resolution — SEARCH ONLY (future-proofing; every
+    // observed export lacks the source field). Adopted only when the match is
+    // exact-tier AND national-level; the adopted value is the candidate's
+    // registry country code, never a raw string.
+    let hostCountry = {
+        status: dryRun && hostCountryRaw ? 'skipped_dry_run' : (hostCountryRaw ? 'no_match' : 'missing_in_source'),
+        raw: hostCountryRaw,
+        candidates: [],
+        adopted_code: null
+    };
+    if (hostCountryRaw && !dryRun) {
+        try {
+            const candidates = summarizeCandidates(await searchFederations(hostCountryRaw, startDate));
+            const status = classifyCandidates(candidates);
+            hostCountry = {
+                status,
+                raw: hostCountryRaw,
+                candidates,
+                adopted_code: (status === 'unique' && candidates[0].match_rank >= 95 && candidates[0].level === 'national' && candidates[0].country_code)
+                    ? candidates[0].country_code
+                    : null
+            };
+        } catch (countryErr) {
+            console.warn(`[owlcms_importer] Host country lookup warning: ${countryErr.message}`);
+            hostCountry = { status: 'lookup_failed', raw: hostCountryRaw, candidates: [], adopted_code: null };
+        }
+    }
+
+    // Conservative competition-scope suggestion + full evidence
+    const scopeEvidence = inferCompetitionScope(federationMeta, recordEvidence, meetTeams);
     
     const meetRow = {
         meet_name: meetName,
         start_date: startDate,
         end_date: endDate,
         city: city,
+        // genuine host-country text only; venue free-text no longer lands here
         country: country,
+        venue: venue,
+        host_country_code: hostCountry.adopted_code,
         organizer: organizer,
+        organizer_federation_id: organizerCandidate.adopted_id,
         federation_id: federationId,
+        competition_scope: scopeEvidence.suggested_scope,
+        scope_evidence: scopeEvidence,
+        geography_inference: {
+            as_of_date: startDate,
+            venue_raw: venue,
+            competition_city_raw: city,
+            host_country: hostCountry,
+            sanction_federation: {
+                raw: rawFed,
+                resolved_id: federationId,
+                canonical_name: federationMeta ? federationMeta.canonicalName : null,
+                level: federationMeta ? federationMeta.level : null,
+                match_rank: federationMeta ? federationMeta.matchRank : null
+            },
+            organizer: organizerCandidate,
+            scope: scopeEvidence
+        },
+        // Only ever set from explicit uploader input; never inferred
+        uploader_selections: uploaderSelections || null,
         format_version: formatVersion,
         source_file_name: sourceFileName,
         raw_payload: data // Preserves complete meet config, ageGroups, championships, records, officials
@@ -253,14 +506,21 @@ async function importOwlcmsJson(data, options = {}) {
                 end_date: endDate,
                 city,
                 country,
+                venue,
+                host_country_code: hostCountry.adopted_code,
+                organizer,
+                organizer_federation_id: organizerCandidate.adopted_id,
                 federation_id: federationId,
                 federation: federationMeta,
+                competition_scope: scopeEvidence.suggested_scope,
+                scope_evidence: scopeEvidence,
                 source_file_name: sourceFileName,
                 raw_storage_path: `meets/{meet_id}/${sanitizedFileName}`,
                 raw_storage_bytes: rawStorageBytes,
                 raw_storage_hash: rawStorageHash,
                 raw_payload_hash: rawPayloadHash
             },
+            meet_teams: meetTeams,
             athletes_found: athletes.length,
             message: `Validation passed. Dry-run completed: ${athletes.length} athlete records parsed.`
         };
@@ -280,6 +540,30 @@ async function importOwlcmsJson(data, options = {}) {
     const meetId = insertedMeet.meet_id;
     const storagePath = `meets/${meetId}/${sanitizedFileName}`;
     console.log(`[OWLCMS_IMPORTER] Created meet_id ${meetId}: "${meetName}"`);
+
+    // 3b. Capture per-competition team/delegation representation
+    //     (non-fatal: a failure here never blocks result ingestion)
+    if (meetTeams.length > 0) {
+        try {
+            const teamRows = meetTeams.map(t => ({
+                meet_id: meetId,
+                team_code: t.team_code,
+                team_name: t.team_name,
+                team_kind: t.team_kind,
+                raw: t.raw
+            }));
+            const { error: teamInsertError } = await supabase
+                .from('owlcms_meet_teams')
+                .insert(teamRows);
+            if (teamInsertError) {
+                console.warn(`[OWLCMS_IMPORTER] Meet team capture non-fatal error: ${teamInsertError.message}`);
+            } else {
+                console.log(`[OWLCMS_IMPORTER] Captured ${teamRows.length} meet team entries.`);
+            }
+        } catch (teamErr) {
+            console.warn(`[OWLCMS_IMPORTER] Meet team capture non-fatal error: ${teamErr.message}`);
+        }
+    }
 
     // 4. Archive compressed payload to Hetzner Supabase Storage container
     try {
@@ -510,7 +794,13 @@ async function importOwlcmsJson(data, options = {}) {
         end_date: endDate,
         city: city,
         country: country,
+        venue: venue,
+        host_country_code: hostCountry.adopted_code,
         organizer: organizer,
+        organizer_federation_id: organizerCandidate.adopted_id,
+        federation_id: federationId,
+        competition_scope: scopeEvidence.suggested_scope,
+        teams_captured: meetTeams.length,
         source_file_name: sourceFileName,
         raw_storage_path: storagePath,
         raw_storage_bytes: rawStorageBytes,
@@ -573,5 +863,12 @@ module.exports = {
     normalizeAttempt,
     compressPayload,
     calculateSha256,
-    sanitizeArchiveFileName
+    sanitizeArchiveFileName,
+    // Geography / organizer / competition-scope helpers (2026-09-21)
+    classifyTeamKind,
+    extractMeetTeams,
+    extractRecordEvidence,
+    inferCompetitionScope,
+    summarizeCandidates,
+    classifyCandidates
 };
