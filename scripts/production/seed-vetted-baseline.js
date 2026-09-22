@@ -104,7 +104,7 @@ const entities = [
             level: 'continental',
             headquarters_city: 'Lima',
             headquarters_country_code: 'PER',
-            official_website: 'https://panamwf.org',
+            official_website: 'https://panampesas.org/',
             known_aliases: ['PAWF', 'Pan American Weightlifting Federation', 'Federación Panamericana de Levantamiento de Pesas', 'FPLP'],
             is_verified: true
         },
@@ -187,7 +187,7 @@ const entities = [
             headquarters_city: 'Doha',
             headquarters_country_code: 'QAT',
             headquarters_address: 'P.O. Box 2473, Doha',
-            official_website: 'https://awfsports.org',
+            official_website: 'https://awf.sport/',
             known_aliases: ['AWF', 'Asian Weightlifting Federation'],
             is_verified: true
         },
