@@ -108,4 +108,9 @@ scripts/sandbox/*
 tmp/*
 .serena/
 
+
 owlcms data/
+
+# Scratch workspace — one-off investigation artifacts only
+scratch/*
+!scratch/wfa-africa-verification-report.md
