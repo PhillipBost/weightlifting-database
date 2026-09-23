@@ -61,7 +61,7 @@ optional parent constraint and PIT name filtering.
 | Param | Required | Meaning |
 |---|---|---|
 | `level` | no | One of `international`, `continental`, `national`, `regional_state_wso`, `club` |
-| `parent_id` | no | UUID; restricts to direct children (`registry.parent_federation_id`) |
+| `parent_id` | no | UUID; restricts to direct children via `registry.parent_federation_id` **or** an active `federation_affiliations` edge (Point-in-Time (PIT)-filtered) — the edge path is authoritative for National Governing Bodies (NGBs), whose `parent_federation_id` is `NULL` |
 | `q` | no | Search text; ≥ 3 characters enables substring matching, shorter requires exact match |
 | `as_of_date` | no | `YYYY-MM-DD`; display names filtered to those valid on the date |
 | `limit` | no | Page size 1–200, default 50 |
@@ -285,7 +285,13 @@ Signature: `list_federation_options(p_level TEXT DEFAULT NULL, p_parent_id UUID 
 
 - Same level values, parent constraint, and `q` semantics as §2 (≥ 3 chars
   enables substring; shorter requires exact match on canonical name, short
-  code, or alias).
+  code, or alias). The parent constraint is **affiliations-aware**: a child
+  matches when `parent_federation_id = p_parent_id` **or** an active,
+  PIT-filtered `federation_affiliations` edge links it to `p_parent_id` —
+  required because National Governing Bodies (NGBs) carry
+  `parent_federation_id = NULL` with dual membership, so a legacy-column-only
+  filter returns 0 rows under a continent (Ecuador missing under the Pan
+  American Weightlifting Federation (PAWF), reported 2026-09-22).
 - `display_names` is the PIT-filtered localization array — a genuine advantage
   over PostgREST embeds, which cannot express the NULL-tolerant
   `valid_from`/`valid_until` window filtering.

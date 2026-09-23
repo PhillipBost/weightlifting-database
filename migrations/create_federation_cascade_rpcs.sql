@@ -96,7 +96,27 @@ BEGIN
               AND (fl.valid_until IS NULL OR fl.valid_until >= v_target)
         ) loc ON true
         WHERE (p_level IS NULL OR f.level = p_level)
-          AND (p_parent_id IS NULL OR f.parent_federation_id = p_parent_id)
+          AND (
+              p_parent_id IS NULL
+              OR f.parent_federation_id = p_parent_id
+              -- National Governing Bodies (NGBs) carry parent_federation_id = NULL
+              -- with dual membership via affiliation edges (international_member to
+              -- the International Weightlifting Federation (IWF) plus
+              -- continental_member to their confederation). A legacy-column-only
+              -- filter returns 0 rows for e.g. level=national under PAWF (Pan
+              -- American Weightlifting Federation) — reported 2026-09-22: Ecuador
+              -- missing. The EXISTS clause below is the authoritative parent
+              -- check at every level; the legacy column is a fast-path only.
+              OR EXISTS (
+                  SELECT 1
+                  FROM public.federation_affiliations fa
+                  WHERE fa.child_id = f.id
+                    AND fa.parent_id = p_parent_id
+                    AND fa.is_active = true
+                    AND (fa.effective_start IS NULL OR fa.effective_start <= v_target)
+                    AND (fa.effective_end IS NULL OR fa.effective_end >= v_target)
+              )
+          )
           AND (
                 v_clean_query IS NULL
              OR lower(f.canonical_name) LIKE '%' || lower(v_clean_query) || '%'

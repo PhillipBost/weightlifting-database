@@ -108,7 +108,10 @@ function classifyCandidates(candidates) {
  *
  * @param {Object} params
  *   level       - 'international' | 'continental' | 'national' | 'regional_state_wso' | 'club' (optional)
- *   parent_id   - UUID; restricts to direct children via registry.parent_federation_id (optional)
+ *   parent_id   - UUID; restricts to children via registry.parent_federation_id
+ *                 OR active federation_affiliations edges (authoritative for
+ *                 National Governing Bodies (NGBs), which carry
+ *                 parent_federation_id = NULL with dual membership) (optional)
  *   q           - search text; >= 3 chars enables substring, shorter requires exact match (optional)
  *   as_of_date  - 'YYYY-MM-DD'; filters display names to those valid on the date (optional)
  *   limit       - page size, 1-200, default 50
@@ -139,14 +142,46 @@ async function listFederationOptions(params = {}) {
         .order('canonical_name', { ascending: true })
         .limit(1000);
     if (level) query = query.eq('level', level);
-    if (parent_id) query = query.eq('parent_federation_id', parent_id);
+    // NOTE: no .eq('parent_federation_id', parent_id) here — National Governing
+    // Bodies (NGBs) carry parent_federation_id = NULL, so a legacy-only filter
+    // returns 0 rows (Ecuador missing under PAWF — reported 2026-09-22). The
+    // parent constraint is applied AFTER the edge union below so both paths
+    // stay in parity with the list_federation_options Remote Procedure Call
+    // (RPC).
+
+    // Affiliations-aware union: active federation_affiliations edges are
+    // authoritative for NGB dual membership (international_member to the
+    // International Weightlifting Federation (IWF) plus continental_member
+    // to their confederation). Merge legacy children and edge children so
+    // this HTTP path keeps parity with the list_federation_options RPC.
+    let edgeChildIds = [];
+    if (parent_id) {
+        const edgeRes = await client
+            .from('federation_affiliations')
+            .select('child_id,effective_start,effective_end')
+            .eq('parent_id', parent_id)
+            .eq('is_active', true);
+        if (edgeRes.error) throw new Error(`Affiliation edge lookup failed: ${edgeRes.error.message}`);
+        const edgeTarget = as_of_date || new Date().toISOString().slice(0, 10);
+        edgeChildIds = (edgeRes.data || [])
+            .filter(r => (!r.effective_start || r.effective_start <= edgeTarget) &&
+                         (!r.effective_end || r.effective_end >= edgeTarget))
+            .map(r => r.child_id);
+    }
 
     const { data: registryRows, error } = await query;
     if (error) throw new Error(`Registry lookup failed: ${error.message}`);
 
+    let baseRows = registryRows || [];
+    if (parent_id) {
+        const edgeSet = new Set(edgeChildIds);
+        baseRows = baseRows.filter(r =>
+            r.parent_federation_id === parent_id || edgeSet.has(r.id));
+    }
+
     // Point-in-Time active display names
     const locByFed = {};
-    const ids = (registryRows || []).map(r => r.id);
+    const ids = baseRows.map(r => r.id);
     if (ids.length > 0) {
         const { data: locs, error: locError } = await client
             .from('federation_localizations')
@@ -168,7 +203,7 @@ async function listFederationOptions(params = {}) {
         }
     }
 
-    let items = (registryRows || []).map(r => Object.assign({}, r, { display_names: locByFed[r.id] || [] }));
+    let items = baseRows.map(r => Object.assign({}, r, { display_names: locByFed[r.id] || [] }));
 
     // Optional text filter: exact match at any length; substring only for >= 3 chars
     if (q && String(q).trim() !== '') {

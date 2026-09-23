@@ -19,14 +19,16 @@ ORDER BY p.proname;
 --   get_federation_lineage  | p_entity_id uuid, p_as_of_date date                                                                | s
 
 -- 2. EXECUTE privileges mirror the search_federations convention
--- NOTE: the correct view is role_routine_grants (Postgres renamed function
--- grants to routine grants); role_function_grants does not exist (42P01).
-SELECT specific_name, grantee, privilege_type
+-- NOTE: filter on routine_name — role_routine_grants stores the bare routine
+-- name there; specific_name holds the internal signature string
+-- (e.g. 'list_federation_options(text,uuid,text,date,int,int)'), so a
+-- specific_name IN (...) predicate matches nothing (0 rows, corrected 2026-09-22).
+SELECT routine_name, grantee, privilege_type
 FROM information_schema.role_routine_grants
 WHERE specific_schema = 'public'
-  AND specific_name IN ('list_federation_options', 'get_federation_lineage')
-ORDER BY specific_name, grantee;
--- Expected: EXECUTE for anon, authenticated, service_role on BOTH functions.
+  AND routine_name IN ('list_federation_options', 'get_federation_lineage')
+ORDER BY routine_name, grantee;
+-- Expected: EXECUTE for anon, authenticated, service_role on BOTH functions (6 rows).
 
 -- 3. Option counts match the underlying registry (total_count integrity)
 SELECT 'options(national)' AS source, max(total_count) AS n
@@ -95,3 +97,43 @@ FROM public.get_federation_lineage(
 SELECT count(*) AS page_rows, max(total_count) AS total
 FROM public.list_federation_options(p_level => 'national', p_limit => 5);
 -- Expected: page_rows = 5, total = 198 (has_more = 0 + 5 < 198 => true).
+
+-- 10. Affiliations-aware parent filter (Ecuador under PAWF)
+-- Pre-fix behaviour: 0 rows (NGBs carry parent_federation_id = NULL, so the
+-- legacy-column-only filter missed all 40 Pan American Weightlifting
+-- Federation (PAWF) members). The option count must equal the count of
+-- active continental_member edges to PAWF, and Ecuador must be present.
+-- Presence check: Ecuador's canonical name is Spanish ("Federación Ecuatoriana
+-- de Levantamiento de Pesas") — LIKE '%ecuador%' never matches it; identify
+-- by short_code/alias instead (first manual run 2026-09-22: counts 40/40,
+-- assertion corrected).
+SELECT 'pawf_national_options' AS source, count(*) AS n,
+       bool_or(short_code = 'ECU'
+               OR EXISTS (SELECT 1 FROM unnest(known_aliases) a
+                          WHERE lower(trim(a)) = 'ecuador')) AS has_ecuador
+FROM public.list_federation_options(
+    p_level => 'national',
+    p_parent_id => (SELECT id FROM public.federation_registry WHERE short_code = 'PAWF'),
+    p_limit => 200
+)
+UNION ALL
+SELECT 'pawf_continental_member_edges', count(*), NULL
+FROM public.federation_affiliations fa
+JOIN public.federation_registry p ON p.id = fa.parent_id
+WHERE p.short_code = 'PAWF'
+  AND fa.relationship_type = 'continental_member'
+  AND fa.is_active = true;
+-- Expected: both n values EQUAL (40); has_ecuador = true.
+
+-- 11. Affiliations-aware parent filter with Point-in-Time (PIT) date
+SELECT count(*) AS n,
+       bool_or(short_code = 'ECU'
+               OR EXISTS (SELECT 1 FROM unnest(known_aliases) a
+                          WHERE lower(trim(a)) = 'ecuador')) AS has_ecuador
+FROM public.list_federation_options(
+    p_level => 'national',
+    p_parent_id => (SELECT id FROM public.federation_registry WHERE short_code = 'PAWF'),
+    p_as_of_date => DATE '2026-06-05',
+    p_limit => 200
+);
+-- Expected: n = 40 (edges have NULL effective windows and always qualify), has_ecuador = true.
