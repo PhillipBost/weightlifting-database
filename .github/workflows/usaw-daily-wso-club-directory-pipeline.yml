@@ -154,6 +154,24 @@ jobs:
             exit 1
           fi
 
+      - name: Geocode clubs
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+        run: |
+          set -o pipefail
+          echo "📍 Starting club geocoding..."
+          node scripts/geographic/club-geocoder.js 2>&1 | tee logs/club-geocoder.log
+
+      - name: Assign club WSO geography
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+        run: |
+          set -o pipefail
+          echo "🗺️ Assigning club WSO geography..."
+          node scripts/geographic/club-wso-assigner.js --assign 2>&1 | tee logs/club-wso-assigner.log
+
       - name: Upload club results as artifacts
         if: always()
         uses: actions/upload-artifact@v4
@@ -162,6 +180,8 @@ jobs:
           path: |
             output/clubs.json
             logs/club-scraper.log
+            logs/club-geocoder.log
+            logs/club-wso-assigner.log
           retention-days: 30
 
   create-summary:

@@ -4,6 +4,11 @@ All notable changes to the Weightlifting Database project will be documented in 
 
 ## [Added] - 2026-09-25 (Eastern Time)
 
+- **Automated USA Weightlifting (USAW) Club Geocoding & Weightlifting State Organization (WSO) Assignment (`.github/workflows/usaw-daily-wso-club-directory-pipeline.yml`)**:
+  - Integrated `scripts/geographic/club-geocoder.js` and `scripts/geographic/club-wso-assigner.js --assign` into the daily USA Weightlifting (USAW) directory workflow following `club-scraper.js`.
+  - Configured caching and smart precision checks so previously geocoded clubs (`score >= 6`) are skipped instantly, while newly discovered or stubbed community and collegiate clubs are geocoded via OpenStreetMap (OSM) Nominatim and assigned their corresponding WSO territories overnight.
+  - Successfully executed local verification: 37 newly added clubs geocoded, 676 skipped, and 714 / 737 clubs assigned WSO geography (96.9% assignment rate, 100% high confidence).
+
 - **USA Weightlifting (USAW) Specialty Clubs & Collegiate University Programs Synchronization (`migrations/add_specialty_clubs_and_university_programs.sql`, `scripts/production/sync-usaw-specialty-clubs.js`, `.github/workflows/usaw-specialty-clubs-pipeline.yml`)**:
   - Implemented schema additions to support USA Weightlifting (USAW) specialty directories:
     - Added community and contact columns to `public.usaw_clubs`: `contact_name`, `instagram`, `website_url`, `community_designation`, `is_bipoc_owned`, `is_lgbtqia_owned`.
