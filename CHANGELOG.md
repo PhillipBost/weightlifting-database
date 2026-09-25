@@ -2,6 +2,43 @@
 
 All notable changes to the Weightlifting Database project will be documented in this file.
 
+## [Added] - 2026-09-25 (Eastern Time)
+
+- **USA Weightlifting (USAW) Specialty Clubs & Collegiate University Programs Synchronization (`migrations/add_specialty_clubs_and_university_programs.sql`, `scripts/production/sync-usaw-specialty-clubs.js`, `.github/workflows/usaw-specialty-clubs-pipeline.yml`)**:
+  - Implemented schema additions to support USA Weightlifting (USAW) specialty directories:
+    - Added community and contact columns to `public.usaw_clubs`: `contact_name`, `instagram`, `website_url`, `community_designation`, `is_bipoc_owned`, `is_lgbtqia_owned`.
+    - Created dedicated collegiate table `public.usaw_university_programs` (`program_id`, `school_name`, `state`, `city`, `associated_usaw_club`, `instagram`, `website_url`, `source_sheet`) with relational foreign-key linking to `public.usaw_clubs(club_name)` and uniqueness constraint on `(school_name, state)`.
+  - Authored standalone synchronizer script `scripts/production/sync-usaw-specialty-clubs.js`:
+    - Dynamically discovers the active Content Management System (CMS) Contentstack Excel (`.xlsx`) download Uniform Resource Locator (URL) from `https://www.usaweightlifting.org/navigation/clubs/university-programs` and parses collegiate rosters across all 50 states.
+    - Scrapes and parses the Black, Indigenous, and People of Color (BIPOC) and Lesbian, Gay, Bisexual, Transgender, Queer, Intersex, and Asexual+ (LGBTQIA+) club directory table from `https://www.usaweightlifting.org/club-wso/bipoc-lgbtqia-clubs`.
+    - Automatically stubs missing collegiate/community clubs into `public.usaw_clubs` to ensure referential integrity while enriching existing clubs with community designations, contact persons, and social handles.
+  - Deployed GitHub Actions (GHA) recurring workflow `.github/workflows/usaw-specialty-clubs-pipeline.yml` scheduled to run monthly on the 1st at 04:00 Universal Time Coordinated (UTC) / 00:00 Eastern Daylight Time (EDT) with manual dispatch support.
+  - Successfully executed initial database population: 62 collegiate university programs upserted, 15 existing clubs enriched, and 20 community clubs stubbed.
+
+## [Fixed] - 2026-09-24 (Eastern Time)
+
+- **Competition Scope Precision & Domestic Subdivision Separation (`scripts/production/federation-lookup.js`, `scripts/production/owlcms-importer.js`, `migrations/add_state_provincial_competition_scope.sql`)**:
+  - Corrected competition scope derivation to strictly separate cross-border Regional Federations from domestic state/provincial subdivisions:
+    - Multi-nation Regional & Intercontinental Regional bodies (`regional`, `intercontinental_regional`) map to `competition_scope = 'regional'`.
+    - Domestic subdivisions (`regional_state_wso`, e.g., USA Weightlifting (USAW) Weightlifting State Organizations (WSOs), Canadian Provincial Federations) map to `competition_scope = 'state_provincial'`.
+  - Authored standalone migration `migrations/add_state_provincial_competition_scope.sql` (generated for manual execution per protocol) to expand `public.owlcms_meets.competition_scope` CHECK constraint with `'state_provincial'`.
+  - Updated `docs/GEOGRAPHY_ORGANIZER_CASCADE_API.md` contract documentation accordingly.
+
+## [Added] - 2026-09-24 (Eastern Time)
+
+- **Regional, Intercontinental & Masters Federation Taxonomy & Entity Expansion (`migrations/add_regional_and_masters_levels.sql` & `scripts/production/seed-vetted-regional-and-masters-federations.js` — applied and verified in live database)**:
+  - Expanded `public.federation_registry.level` CHECK constraint with `global_international`, `intercontinental_regional`, and `regional` tiers while preserving backward compatibility with `international`.
+  - Reclassified the International Weightlifting Federation (IWF) to `level = 'global_international'`.
+  - Expanded `public.federation_affiliations.relationship_type` CHECK constraint to include `regional_confederation`, `intercontinental_confederation`, and `regional_member`.
+  - Updated `public.list_federation_options` Remote Procedure Call (RPC) parameter validation and level matching to accept the new levels and support bidirectional compatibility between `international` and `global_international`.
+  - Updated `scripts/production/federation-lookup.js` with `ALLOWED_LEVELS` and `SCOPE_BY_SANCTION_LEVEL` mappings (`global_international → international`, `intercontinental_regional / regional → regional`).
+  - Enforced Rule 11 in `AGENTS.md` (Authentic Primary-Source Representation: Zero Artificial Identifiers), ensuring genuine real-world acronym collisions (such as Arabic Weightlifting Federation `AWF` vs Asian Weightlifting Federation `AWF` vs Australian Weightlifting Federation `AWF`) are modeled faithfully with authentic acronyms in `public.federation_localizations` and `short_code = NULL` on regional registry entities.
+  - Ingested 23 vetted entities with complete localizations, primary-source citations, and verified affiliation edges:
+    - 2 Global Masters: United Masters Weightlifting Federation (UMWF), International Masters Weightlifting Association (IMWA).
+    - 3 Intercontinental Regional: Commonwealth Weightlifting Federation (CWF), Mediterranean Weightlifting Federation (MWF), Arabic Weightlifting Federation (AWF).
+    - 18 Regional: South American Weightlifting Confederation (CSLP), Central American and Caribbean Weightlifting Confederation (CCCLP), North American Weightlifting Committee (NAWC), Nordic Weightlifting Federation (NWF), Visegrad Four Weightlifting Federation (V4WF), European Union Weightlifting Confederation (EUWC), Small States of Europe Weightlifting Commission (SSEWC), South Asian Weightlifting Federation (SAWF), East Asian Weightlifting Federation (EAWF), West Asian Weightlifting Federation (WAWF), Central Asian Weightlifting Federation (CAWF), Southeast Asian Weightlifting Federation (SEAWF), Pacific Islands Weightlifting Federation (PIWF), and the 5 Weightlifting Federation of Africa (WFA) Zonal Federations (North, West, Central, East, South Zones).
+  - Shipped verification script `migrations/verify-regional-and-masters-federations.sql` verifying 100% data and ranking integrity.
+
 ## [Fixed] - 2026-09-22 (Eastern Time)
 
 - **Affiliations-Aware Parent Filter for Cascade Options — Ecuador Missing Under the Pan American Weightlifting Federation (PAWF) (`migrations/create_federation_cascade_rpcs.sql` — re-generate `list_federation_options` with the affiliations-aware parent filter; generated, NOT yet applied since this fix; run manually per project protocol, then `migrations/verify-federation-cascade-rpcs.sql` blocks 10–11)**:

@@ -187,6 +187,32 @@ Individual athlete results linked to meets.
 | `total_participations` | `integer` | DEFAULT 0 | |
 | `activity_factor` | `numeric` | DEFAULT 0 | |
 | `state` | `varchar` | | Extracted from address/coords |
+| `contact_name` | `text` | | Contact person / owner / coach |
+| `instagram` | `text` | | Instagram handle or profile URL |
+| `website_url` | `text` | | Official club website URL |
+| `community_designation` | `text` | | Community designation (e.g. Black owned, LGBTQIA+) |
+| `is_bipoc_owned` | `boolean` | DEFAULT false | Flag for BIPOC owned / affiliated clubs |
+| `is_lgbtqia_owned` | `boolean` | DEFAULT false | Flag for LGBTQIA+ owned / affiliated clubs |
+
+### `usaw_university_programs`
+
+Collegiate weightlifting programs tracked by USAW.
+
+| Column | Type | Constraints | Description |
+| :--- | :--- | :--- | :--- |
+| `program_id` | `integer` | **PK**, GENERATED ALWAYS AS IDENTITY | Primary Key |
+| `school_name` | `text` | NOT NULL | University or College name |
+| `state` | `text` | NOT NULL | State where university resides |
+| `city` | `text` | | Campus city / municipality |
+| `associated_usaw_club` | `text` | **FK** | References `usaw_clubs(club_name)` |
+| `instagram` | `text` | | Team Instagram handle or link |
+| `website_url` | `text` | | Team portal or university link |
+| `source_sheet` | `text` | DEFAULT 'Website Updates' | Source Excel sheet name |
+| `created_at` | `timestamptz` | DEFAULT now() | Creation timestamp |
+| `updated_at` | `timestamptz` | DEFAULT now() | Update timestamp |
+
+> [!NOTE]
+> Unique key constraint `uq_usaw_university_programs` on `(school_name, state)`.
 
 ### `usaw_club_rolling_metrics`
 

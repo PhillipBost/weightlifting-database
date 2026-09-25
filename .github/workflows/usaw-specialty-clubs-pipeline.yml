@@ -1,0 +1,72 @@
+name: USAW Specialty Clubs & University Programs Pipeline
+
+on:
+  schedule:
+    # Run monthly on the 1st at 04:00 UTC (12:00 AM EDT / 11:00 PM EST)
+    - cron: '0 4 1 * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run preview (no database writes)'
+        required: false
+        type: boolean
+        default: false
+      bipoc_only:
+        description: 'Sync BIPOC & LGBTQIA+ clubs only'
+        required: false
+        type: boolean
+        default: false
+      university_only:
+        description: 'Sync University programs only'
+        required: false
+        type: boolean
+        default: false
+
+jobs:
+  sync-specialty-clubs:
+    name: Sync Specialty Clubs & University Programs
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run specialty clubs synchronization
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+        run: |
+          ARGS=""
+          if [ "${{ inputs.dry_run }}" == "true" ]; then
+            ARGS="$ARGS --dry-run"
+          fi
+          if [ "${{ inputs.bipoc_only }}" == "true" ]; then
+            ARGS="$ARGS --bipoc"
+          fi
+          if [ "${{ inputs.university_only }}" == "true" ]; then
+            ARGS="$ARGS --university"
+          fi
+
+          echo "🚀 Executing specialty clubs synchronizer with arguments: $ARGS"
+          node scripts/production/sync-usaw-specialty-clubs.js $ARGS
+
+      - name: Generate summary
+        if: always()
+        run: |
+          echo "## 🏋️ USAW Specialty Clubs & University Programs Sync" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Timestamp:** $(date)" >> $GITHUB_STEP_SUMMARY
+          echo "**Mode:** ${{ inputs.dry_run == true && 'Dry Run (Preview)' || 'Live Database Sync' }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **BIPOC / LGBTQIA+ Clubs:** Synchronized from USAW Directory" >> $GITHUB_STEP_SUMMARY
+          echo "- **University Programs:** Dynamically discovered Contentstack Excel asset and synchronized into database" >> $GITHUB_STEP_SUMMARY
