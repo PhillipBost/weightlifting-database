@@ -278,7 +278,7 @@ async function syncBipocLgbtqiaClubs(supabase, dryRun) {
             console.warn(`[BIPOC SKIP] "${clubNameRaw}" has empty designation — logging and skipping, no write.`);
             continue;
         }
-        seenSourceNames.add(clubNameRaw.toLowerCase().trim());
+        seenSourceNames.add(normalizeClubName(clubNameRaw));
 
         if (existingClub) {
             matchedCount++;
@@ -353,8 +353,10 @@ async function syncBipocLgbtqiaClubs(supabase, dryRun) {
     console.log(`- Total Directory Entries Processed: ${rows.length - 1}`);
 
     // Add-only + report: log DB rows carrying a designation that were NOT seen
-    // on the live page this run. Never cleared automatically.
-    const absentDesignated = dbClubs.filter(c => c.community_designation && !seenSourceNames.has(c.club_name.toLowerCase().trim()));
+    // on the live page this run. Never cleared automatically. Keyed on
+    // normalizeClubName (not raw lowercase) so canonical variants
+    // (BARBARIAN BARBELL CLUB vs Barbarian Barbell) do not false-positive.
+    const absentDesignated = dbClubs.filter(c => c.community_designation && !seenSourceNames.has(normalizeClubName(c.club_name)));
     if (absentDesignated.length > 0) {
         console.warn(`\n[ABSENT REPORT] ${absentDesignated.length} designated DB rows not seen on live page (no action taken):`);
         absentDesignated.forEach(c => console.warn(`  - "${c.club_name}" | "${c.community_designation}"`));

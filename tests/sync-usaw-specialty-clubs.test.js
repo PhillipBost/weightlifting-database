@@ -165,3 +165,34 @@ describe('row-count abort guard (thin parse is failure, never delisting)', () =>
         expect(() => assertBipocRowCount(0)).toThrow(/below minimum/);
     });
 });
+
+describe('absent-report keying (canonical variants must not false-positive)', () => {
+    function buildSeen(sourceNames) {
+        return new Set(sourceNames.map(normalizeClubName));
+    }
+
+    test('BARBARIAN BARBELL CLUB keyed by source Barbarian Barbell is not absent', () => {
+        const seen = buildSeen(['Barbarian Barbell']);
+        expect(seen.has(normalizeClubName('BARBARIAN BARBELL CLUB'))).toBe(true);
+    });
+
+    test('CHFP WEIGHTLIFTING CLUB keyed by source CHFP Weightlifting is not absent', () => {
+        const seen = buildSeen(['CHFP Weightlifting']);
+        expect(seen.has(normalizeClubName('CHFP WEIGHTLIFTING CLUB'))).toBe(true);
+    });
+
+    test('Industrial Strength WLC keyed by source Industrial Strength is not absent', () => {
+        const seen = buildSeen(['Industrial Strength']);
+        expect(seen.has(normalizeClubName('Industrial Strength WLC'))).toBe(true);
+    });
+
+    test('Brave Barbells N Sprinkles WLC keyed by source Brave Barbell N Sprinkles is not absent', () => {
+        const seen = buildSeen(['Brave Barbell N Sprinkles']);
+        expect(seen.has(normalizeClubName('Brave Barbells N Sprinkles WLC'))).toBe(true);
+    });
+
+    test('genuinely absent club is still reported', () => {
+        const seen = buildSeen(['Barbarian Barbell']);
+        expect(seen.has(normalizeClubName('Desert Dome Weightlifting'))).toBe(false);
+    });
+});
