@@ -190,9 +190,9 @@ Individual athlete results linked to meets.
 | `contact_name` | `text` | | Contact person / owner / coach |
 | `instagram` | `text` | | Instagram handle or profile URL |
 | `website_url` | `text` | | Official club website URL |
-| `community_designation` | `text` | | Community designation (e.g. Black owned, LGBTQIA+) |
-| `is_bipoc_owned` | `boolean` | DEFAULT false | Flag for BIPOC owned / affiliated clubs |
-| `is_lgbtqia_owned` | `boolean` | DEFAULT false | Flag for LGBTQIA+ owned / affiliated clubs |
+| `community_designation` | `text` | | Verbatim source of truth: exact label as printed on the USAW BIPOC/LGBTQIA+ page (casing, "owned" suffix, slashes preserved). Never normalized or inferred. Frontend displays verbatim; filter pills match on this text, not on flags. |
+| `is_bipoc_owned` | `boolean` | DEFAULT false, **DEPRECATED 2026-09-28** | Frozen. Never written by the synchronizer. Do not derive from `community_designation`. |
+| `is_lgbtqia_owned` | `boolean` | DEFAULT false, **DEPRECATED 2026-09-28** | Frozen. Never written by the synchronizer. Do not derive from `community_designation`. |
 
 ### `usaw_university_programs`
 

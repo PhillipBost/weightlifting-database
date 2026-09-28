@@ -42,6 +42,12 @@ jobs:
         run: npm install
 
       - name: Run specialty clubs synchronization
+        # Acceptance protocol (quarantine phase): ALWAYS dispatch with
+        # dry_run=true first and review the log before any live run.
+        # Expected dry-run (2026-09-28): Monument Weightlifting NEW STUB verbatim,
+        # 14 quarantine suspects in ABSENT REPORT with zero writes, Blaze/Brightside
+        # already-verbatim with zero writes. See
+        # docs/USAW_SPECIALTY_CLUBS_QUARANTINE_2026-09-28.md.
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
