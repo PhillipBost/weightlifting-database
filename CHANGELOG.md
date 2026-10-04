@@ -2,6 +2,16 @@
 
 All notable changes to the Weightlifting Database project will be documented in this file.
 
+## [Added] - 2026-10-04 (Eastern Time)
+
+- **Open Weightlifting Competition Management System (owlcms) Meet Geocoding & Participant Country Validation (`migrations/add_owlcms_coordinates_and_country_code.sql`, `scripts/production/owlcms-geocoder.js`, `scripts/production/owlcms-importer.js`, `scripts/production/sweep-owlcms-geocodes.js`, `scripts/production/backfill-owlcms-coordinates-and-countries.js`)**:
+  - Applied schema migration adding `latitude double precision` and `longitude double precision` to `public.owlcms_meets`, and `country_code text` to `public.owlcms_meet_results` with index `idx_owlcms_meet_results_country_code`.
+  - Built automated geocoding service `scripts/production/owlcms-geocoder.js` using OpenStreetMap (OSM) Nominatim Application Programming Interface (API) with 1.1-second rate-limiting delay and intelligent candidate query cascade (including inverted `competitionCity`/`competitionSite` pairs).
+  - Integrated automatic geocoding into `scripts/production/owlcms-importer.js` on meet upload and enriched athlete parsing to resolve canonical 3-letter International Olympic Committee (IOC) / International Organization for Standardization (ISO-3) country codes from `ath.federationCodes`, `ath.country`, delegation teams, and 3-letter clubs into `public.owlcms_lifters` and `public.owlcms_meet_results`.
+  - Created resilience sweep worker `scripts/production/sweep-owlcms-geocodes.js` and hooked into singleton pipeline runner `scripts/production/run-owlcms-pipeline.js` to automatically heal any un-geocoded meets or missing result country codes.
+  - Backfilled historical meets: Meet Identifier (ID) 4 (*CAMPEONATOS PANAMERICANOS SUB 15, SUB 17 Y CAMPEONATOS SUDAMERICANOS...* in Guayaquil, Ecuador) updated to `latitude: -2.1894`, `longitude: -79.8891`, and Meets 1–3 backfilled with Canadian venue coordinates.
+  - Backfilled canonical IOC country codes for 100% of participants in Meet ID 4 (181 platform appearances across `ECU`, `VEN`, `PER`, `CHI`, `BOL`, `BRA`, `USA`, `ARG`, `CAN`, `ARU`, `COL`, `URU`, `PAN`, `CRC`, `HON`) and Canadian domestic meets (`CAN`).
+
 ## [Fixed] - 2026-09-28 (Eastern Time)
 
 - **USA Weightlifting (USAW) Specialty Clubs Verbatim-Only Correction (`migrations/fix-usaw-specialty-verbatim-2026-09-28.sql` — generated, NOT yet applied; run manually per project protocol, then `migrations/verify-usaw-specialty-verbatim-2026-09-28.sql`)**:

@@ -129,6 +129,9 @@ async function runPipeline() {
             }
         }
 
+        console.log('⚡ [PIPELINE] Running geocode and country-code sweep...');
+        await runChildScript('scripts/production/sweep-owlcms-geocodes.js');
+
         console.log('🏁 [PIPELINE] Pipeline run finished successfully.\n');
         return { success: true };
 

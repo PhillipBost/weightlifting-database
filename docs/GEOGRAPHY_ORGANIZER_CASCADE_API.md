@@ -19,8 +19,8 @@ WCH = Weightlifting Canada Haltérophilie · FHQ = Fédération d'haltérophilie
 ## 1. Data model summary (deployed facts)
 
 - Federation classification is stored in `public.federation_registry.level`
-  with check-constrained values: `international | continental | national |
-  regional_state_wso | club`.
+  with check-constrained values: `global_international | international | continental |
+  intercontinental_regional | regional | national | regional_state_wso | club`.
 - There are **no geographic country/continent/subdivision tables**. A "country"
   exists only as `federation_registry.country_code` on the national body, as
   aliases (`WCH` carries `CAN`, `Canada`), and as localization names.
@@ -60,7 +60,7 @@ optional parent constraint and PIT name filtering.
 
 | Param | Required | Meaning |
 |---|---|---|
-| `level` | no | One of `international`, `continental`, `national`, `regional_state_wso`, `club` |
+| `level` | no | One of `global_international`, `international`, `continental`, `intercontinental_regional`, `regional`, `national`, `regional_state_wso`, `club` |
 | `parent_id` | no | UUID; restricts to direct children via `registry.parent_federation_id` **or** an active `federation_affiliations` edge (Point-in-Time (PIT)-filtered) — the edge path is authoritative for National Governing Bodies (NGBs), whose `parent_federation_id` is `NULL` |
 | `q` | no | Search text; ≥ 3 characters enables substring matching, shorter requires exact match |
 | `as_of_date` | no | `YYYY-MM-DD`; display names filtered to those valid on the date |
@@ -71,9 +71,11 @@ optional parent constraint and PIT name filtering.
 
 | Tier | Call |
 |---|---|
+| Global Apex | `?level=global_international` (or `?level=international`) |
 | Continent | `?level=continental` |
 | Country | `?level=national` (optionally constrained by the selected continent via `parent_id`) |
-| Organizer | `?level=national&parent_id=…`, `?level=regional_state_wso&parent_id=…`, `?level=club&parent_id=…` |
+| Regional Sub-Level | `?level=regional&parent_id=…` (or `?level=intercontinental_regional`) |
+| Organizer | `?level=national&parent_id=…`, `?level=regional&parent_id=…`, `?level=regional_state_wso&parent_id=…`, `?level=club&parent_id=…` |
 
 **Response** (live-verified shape):
 
@@ -188,7 +190,7 @@ registry records.**
 | `no_match` | No candidate at rank ≥ 75 (or no candidates at all) |
 | `missing_in_source` | The source field was absent/empty |
 
-Plus `suggested_scope` (`international | continental | national | regional |
+Plus `suggested_scope` (`international | continental | regional | national | state_provincial | local |
 unknown`) derived **from the sanctioning federation's registry level only**.
 Team/record evidence is returned as corroboration (`teams.analysis`,
 `record_federations.resolutions`) and never upgrades the scope. Club team names
@@ -344,9 +346,13 @@ classification rule (mirrors the HTTP endpoint):
    more rows tied at the top rank (≥ 75) → `ambiguous` (uploader must choose) ·
    single top row → `unique` with `confidence_tier = 'exact'` (rank ≥ 90) or
    `'substring'` (75–89) · empty source field → `missing_in_source`.
-4. `suggested_scope` from a `unique` federation's `level`: `international →
-   international`, `continental → continental`, `national → national`,
-   `regional_state_wso → regional`, else `unknown`. Never upgrade scope from
+4. `suggested_scope` from a `unique` federation's `level`:
+   - `global_international / international` → `international`
+   - `continental` → `continental`
+   - `intercontinental_regional / regional` → `regional` (multi-nation regional bodies)
+   - `national` → `national`
+   - `regional_state_wso` → `state_provincial` (domestic state / provincial subdivisions)
+   - else `unknown`. Never upgrade scope from
    team/record evidence (§4 rules apply unchanged; club names never prove "local").
 5. Submit final choices via `uploaderSelections` on `POST /api/upload-owlcms` (§5).
 

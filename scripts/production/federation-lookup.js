@@ -57,7 +57,16 @@ function getClient() {
     return cachedClient;
 }
 
-const ALLOWED_LEVELS = ['international', 'continental', 'national', 'regional_state_wso', 'club'];
+const ALLOWED_LEVELS = [
+    'global_international',
+    'international',
+    'continental',
+    'intercontinental_regional',
+    'regional',
+    'national',
+    'regional_state_wso',
+    'club'
+];
 
 /**
  * Summarize ranked search_federations candidates for evidence records.
@@ -141,7 +150,13 @@ async function listFederationOptions(params = {}) {
         .select('id, canonical_name, short_code, country_code, level, parent_federation_id, is_verified, known_aliases')
         .order('canonical_name', { ascending: true })
         .limit(1000);
-    if (level) query = query.eq('level', level);
+    if (level) {
+        if (level === 'international' || level === 'global_international') {
+            query = query.in('level', ['international', 'global_international']);
+        } else {
+            query = query.eq('level', level);
+        }
+    }
     // NOTE: no .eq('parent_federation_id', parent_id) here — National Governing
     // Bodies (NGBs) carry parent_federation_id = NULL, so a legacy-only filter
     // returns 0 rows (Ecuador missing under PAWF — reported 2026-09-22). The
@@ -343,10 +358,13 @@ async function getFederationLineage(id, asOfDate = null) {
  * national events use club names as team names).
  */
 const SCOPE_BY_SANCTION_LEVEL = {
+    global_international: 'international',
     international: 'international',
     continental: 'continental',
+    intercontinental_regional: 'regional',
+    regional: 'regional',
     national: 'national',
-    regional_state_wso: 'regional'
+    regional_state_wso: 'state_provincial'
 };
 
 /**

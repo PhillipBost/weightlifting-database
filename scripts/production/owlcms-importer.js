@@ -30,6 +30,7 @@ const { promisify } = require('util');
 
 const gzipAsync = promisify(zlib.gzip);
 const { resolveOrDiscoverFederation, searchFederations } = require('./federation-resolver.js');
+const { geocodeOwlcmsMeet, normalizeToIocCountryCode } = require('./owlcms-geocoder.js');
 
 /**
  * Initialize default Supabase client from environment
@@ -155,10 +156,13 @@ function sanitizeArchiveFileName(fileName) {
  * national events use club names as team names).
  */
 const SCOPE_BY_SANCTION_LEVEL = {
+    global_international: 'international',
     international: 'international',
     continental: 'continental',
+    intercontinental_regional: 'regional',
+    regional: 'regional',
     national: 'national',
-    regional_state_wso: 'regional'
+    regional_state_wso: 'state_provincial'
 };
 
 /**
@@ -460,6 +464,27 @@ async function importOwlcmsJson(data, options = {}) {
     // Conservative competition-scope suggestion + full evidence
     const scopeEvidence = inferCompetitionScope(federationMeta, recordEvidence, meetTeams);
     
+    // Geocode meet host location via OpenStreetMap (OSM) Nominatim
+    let latitude = null;
+    let longitude = null;
+    let geocodeInfo = null;
+    if (!dryRun) {
+        try {
+            geocodeInfo = await geocodeOwlcmsMeet({
+                venue,
+                city,
+                country: hostCountry.adopted_code || country,
+                rawComp: comp
+            });
+            if (geocodeInfo && geocodeInfo.latitude != null && geocodeInfo.longitude != null) {
+                latitude = geocodeInfo.latitude;
+                longitude = geocodeInfo.longitude;
+            }
+        } catch (geoErr) {
+            console.warn(`[owlcms_importer] Geocoding warning: ${geoErr.message}`);
+        }
+    }
+
     const meetRow = {
         meet_name: meetName,
         start_date: startDate,
@@ -468,6 +493,8 @@ async function importOwlcmsJson(data, options = {}) {
         // genuine host-country text only; venue free-text no longer lands here
         country: country,
         venue: venue,
+        latitude: latitude,
+        longitude: longitude,
         host_country_code: hostCountry.adopted_code,
         organizer: organizer,
         organizer_federation_id: organizerCandidate.adopted_id,
@@ -487,7 +514,8 @@ async function importOwlcmsJson(data, options = {}) {
                 match_rank: federationMeta ? federationMeta.matchRank : null
             },
             organizer: organizerCandidate,
-            scope: scopeEvidence
+            scope: scopeEvidence,
+            geocoding: geocodeInfo
         },
         // Only ever set from explicit uploader input; never inferred
         uploader_selections: uploaderSelections || null,
@@ -507,6 +535,8 @@ async function importOwlcmsJson(data, options = {}) {
                 city,
                 country,
                 venue,
+                latitude,
+                longitude,
                 host_country_code: hostCountry.adopted_code,
                 organizer,
                 organizer_federation_id: organizerCandidate.adopted_id,
@@ -600,6 +630,7 @@ async function importOwlcmsJson(data, options = {}) {
     
     // 4. Process Lifters & Results
     const lifterIdsByAthleteKey = new Map();
+    const countryCodesByAthleteKey = new Map();
     let liftersCreated = 0;
     let liftersReused = 0;
     
@@ -626,9 +657,28 @@ async function importOwlcmsJson(data, options = {}) {
             clubName = teamMap.get(ath.team);
         }
         
-        // Country / federation code
-        let countryCode = ath.federationCodes ? ath.federationCodes.trim() : null;
-        if (!countryCode && ath.country) countryCode = ath.country.trim();
+        // Country / delegation code resolution (canonical IOC/ISO-3)
+        let countryCode = null;
+        if (ath.federationCodes) {
+            countryCode = normalizeToIocCountryCode(ath.federationCodes.trim()) || ath.federationCodes.trim();
+        }
+        if (!countryCode && ath.country) {
+            countryCode = normalizeToIocCountryCode(ath.country.trim()) || ath.country.trim();
+        }
+        // Fallback: check if team or club represents an international delegation (e.g. "ECU", "VEN", "USA")
+        if (!countryCode && ath.team !== undefined && teamMap.has(ath.team)) {
+            const teamName = teamMap.get(ath.team);
+            const iocMatch = normalizeToIocCountryCode(teamName);
+            if (iocMatch) {
+                countryCode = iocMatch;
+            }
+        }
+        if (!countryCode && ath.club) {
+            const iocMatch = normalizeToIocCountryCode(ath.club);
+            if (iocMatch) {
+                countryCode = iocMatch;
+            }
+        }
         
         // Membership number
         const membership = (ath.membership || ath.membershipNumber || '').toString().trim() || null;
@@ -683,9 +733,10 @@ async function importOwlcmsJson(data, options = {}) {
             liftersCreated++;
         }
         
-        // Map athlete index/key to lifterId
+        // Map athlete index/key to lifterId and countryCode
         const athleteKey = ath.key || ath.id || i;
         lifterIdsByAthleteKey.set(athleteKey, lifterId);
+        countryCodesByAthleteKey.set(athleteKey, countryCode);
     }
     
     // 5. Ingest Platform Results (1 physical session = 1 row)
@@ -732,6 +783,7 @@ async function importOwlcmsJson(data, options = {}) {
         resultsToInsert.push({
             meet_id: meetId,
             lifter_id: lifterId,
+            country_code: countryCodesByAthleteKey.get(athleteKey) || null,
             gender: ath.gender ? ath.gender.trim().toUpperCase() : null,
             birth_year: ath.birthYear || (ath.isoBirthDate ? parseInt(ath.isoBirthDate.split('-')[0], 10) : null),
             competition_age: (startDate && (ath.birthYear || ath.isoBirthDate)) 

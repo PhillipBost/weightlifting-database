@@ -48,3 +48,8 @@
 10. **Zero-Tolerance for Undefined Acronyms**:
    - Never output acronyms, initialisms, or shortened abbreviations in conversational responses, reports, plans, or documentation without first explicitly defining the complete phrase on first reference (e.g., 'Point-in-Time (PIT)').
    - This applies universally to domain terms, database concepts, technical workflows, and federation names.
+11. **Authentic Primary-Source Representation (Zero Artificial Identifiers)**:
+   - Never synthesize, invent, or editorialize artificial abbreviations, acronyms, or identifiers to resolve namespace, schema, or key collisions.
+   - All entity names, acronyms, and historical aliases must strictly reflect verified primary-source governing documents (constitutions, official directories, statutes).
+   - Real-world acronym collisions (e.g., Arabic Weightlifting Federation `AWF` vs. Asian Weightlifting Federation `AWF` vs. Australian Weightlifting Federation `AWF`) are genuine domain realities that must be handled structurally (via `public.federation_localizations`, nullable `short_code`, and disambiguation ranking), never obscured by fabricated labels.
+
