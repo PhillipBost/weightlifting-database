@@ -675,32 +675,35 @@ async function main() {
     console.log(`  No Match Found:  ${skippedCount}`);
     console.log('============================================================\n');
 
-    if (!isDryRun && newlyLinkedAthletes.length > 0) {
-        console.log(`📦 Triggering static shard generation for ${newlyLinkedAthletes.length} linked athlete(s)...`);
+    if (!isDryRun && owlcmsLifters.length > 0) {
+        console.log(`📦 Triggering static shard generation for ${owlcmsLifters.length} processed athlete(s)...`);
         let shardsSuccess = 0;
-        for (const athlete of newlyLinkedAthletes) {
+        const linkedMap = new Map(newlyLinkedAthletes.map(a => [a.owlcms_id, a]));
+
+        for (const oLifter of owlcmsLifters) {
             try {
                 if (!process.env.DB_HOST && !process.env.DATABASE_URL) {
                     console.log(`  ℹ️ DB_HOST not configured in local environment. Skipping local shard assembly (active on Hetzner production server).`);
                     break;
                 }
+                const linked = linkedMap.get(oLifter.lifter_id);
                 const res = await generateAthlete({
-                    usaw_id: athlete.usaw_id,
-                    iwf_id: athlete.iwf_id,
-                    owlcms_id: athlete.owlcms_id
+                    usaw_id: linked ? linked.usaw_id : null,
+                    iwf_id: linked ? linked.iwf_id : null,
+                    owlcms_id: oLifter.lifter_id
                 });
                 if (res.success) {
-                    console.log(`  ✅ Shards updated for "${athlete.name}" (${res.shards_written} files)`);
+                    console.log(`  ✅ Shards updated for "${oLifter.athlete_name}" (${res.shards_written} files)`);
                     shardsSuccess++;
                 } else {
-                    console.warn(`  ⚠️ Shard generation notice for "${athlete.name}": ${res.message || res.error}`);
+                    console.warn(`  ⚠️ Shard generation notice for "${oLifter.athlete_name}": ${res.message || res.error}`);
                 }
             } catch (shardErr) {
-                console.warn(`  ⚠️ Shard generation skipped for "${athlete.name}": ${shardErr.message}`);
+                console.warn(`  ⚠️ Shard generation skipped for "${oLifter.athlete_name}": ${shardErr.message}`);
             }
         }
         if (process.env.DB_HOST || process.env.DATABASE_URL) {
-            console.log(`🏁 Shard generation complete: ${shardsSuccess}/${newlyLinkedAthletes.length} athletes updated on disk.\n`);
+            console.log(`🏁 Shard generation complete: ${shardsSuccess}/${owlcmsLifters.length} athletes updated on disk.\n`);
         }
     }
 }

@@ -2,6 +2,16 @@
 
 All notable changes to the Weightlifting Database project will be documented in this file.
 
+## [Added] - 2026-10-13 (Eastern Time)
+
+- **Incorporate Open Weightlifting Competition Management System (OWLCMS) Results & Lifter Aliases into Athlete Static Shards (`scripts/production/assembler.js`, `scripts/production/listener.js`, `scripts/production/link-new-owlcms-athletes.js`, `scripts/production/seed.js`)**:
+  - Enriched `owlcms_results_agg` query in `scripts/production/assembler.js` to output `result_id`, `weight_class`, and `country_code` alongside existing fields, ensuring full compatibility with United States of America Weightlifting (USAW) and International Weightlifting Federation (IWF) shard consumers.
+  - Hardened primary OWLCMS Identification (ID) selection with deterministic `ORDER BY id ASC LIMIT 1`, and integrated `mapCountryCodeToName` for accurate country name resolution across international OWLCMS entries.
+  - Injected shard-specific `id` into static Gzip-compressed JavaScript Object Notation (`.json.gz`) outputs across all Quad-Writer branches (`/usaw/`, `/iwf/`, `/internal/`, `/owlcms/`).
+  - Updated real-time webhook listener `scripts/production/listener.js` on Port 8889 to accept `owlcms_id` in `POST /refresh-athlete` payloads and trigger multi-federation shard regeneration.
+  - Enhanced post-ingestion shard triggering in `scripts/production/link-new-owlcms-athletes.js` to compile static shards on Port 8888 for 100% of processed athletes in newly ingested meets (both linked and unlinked OWLCMS lifters).
+  - Added Pass 3 to bulk seeder `scripts/production/seed.js` to query and compile static shards for historical standalone OWLCMS lifters who lack USAW or IWF links.
+
 ## [Added] - 2026-10-04 (Eastern Time)
 
 - **Open Weightlifting Competition Management System (owlcms) Meet Geocoding & Participant Country Validation (`migrations/add_owlcms_coordinates_and_country_code.sql`, `scripts/production/owlcms-geocoder.js`, `scripts/production/owlcms-importer.js`, `scripts/production/sweep-owlcms-geocodes.js`, `scripts/production/backfill-owlcms-coordinates-and-countries.js`)**:

@@ -13,7 +13,7 @@ const WEBHOOK_SECRET = process.env.WEBHOOK_SECRET || 'changeme_12345';
  * Receives lifter_id from Postgres and triggers an individual JSON update.
  */
 app.post('/refresh-athlete', async (req, res) => {
-    const { usaw_id, iwf_id, secret } = req.body;
+    const { usaw_id, iwf_id, owlcms_id, secret } = req.body;
 
     // Security Check
     if (secret !== WEBHOOK_SECRET) {
@@ -21,17 +21,17 @@ app.post('/refresh-athlete', async (req, res) => {
         return res.status(401).json({ error: 'Unauthorized' });
     }
 
-    if (!usaw_id && !iwf_id) {
-        return res.status(400).json({ error: 'Missing athlete identifiers' });
+    if (!usaw_id && !iwf_id && !owlcms_id) {
+        return res.status(400).json({ error: 'Missing athlete identifiers (usaw_id, iwf_id, or owlcms_id required)' });
     }
 
-    console.log(`[LISTENER] Received refresh request - USAW: ${usaw_id}, IWF: ${iwf_id}`);
+    console.log(`[LISTENER] Received refresh request - USAW: ${usaw_id}, IWF: ${iwf_id}, OWLCMS: ${owlcms_id}`);
 
     // Trigger the real-time refresh
-    const result = await generateAthlete({ usaw_id, iwf_id });
+    const result = await generateAthlete({ usaw_id, iwf_id, owlcms_id });
 
     if (result.success) {
-        console.log(`[LISTENER] Success: Shards updated for USAW:${usaw_id}, IWF:${iwf_id}`);
+        console.log(`[LISTENER] Success: Shards updated for USAW:${usaw_id}, IWF:${iwf_id}, OWLCMS:${owlcms_id}`);
         return res.json({ success: true, shards_written: result.shards_written });
     } else {
         console.error(`[LISTENER] Failed: ${result.error}`);

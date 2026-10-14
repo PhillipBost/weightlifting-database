@@ -15,6 +15,7 @@ const clientConfig = {
 const OUTPUT_DIR = process.env.OUTPUT_DIR || '/var/www/athlete-data';
 const SHARDS_DIR = path.join(OUTPUT_DIR, 'shards');
 const { calculateCompetitionAge, getEligibleDivisions } = require('../shared/division-logic');
+const { mapCountryCodeToName } = require('./iwf-lifter-manager');
 
 // ── Achievement Aggregator ──────────────────────────────────────────────────
 function aggregateAchievements(rankings) {
@@ -587,14 +588,17 @@ async function generateAthlete(params, externalClient = null) {
                     jsonb_agg(
                         jsonb_build_object(
                             'id', r.result_id,
+                            'result_id', r.result_id,
                             'meet_id', r.meet_id,
                             'meet_name', m.meet_name,
                             'date', m.start_date,
                             'end_date', m.end_date,
                             'city', m.city,
                             'venue', m.country,
+                            'country_code', r.country_code,
                             'organizer', m.organizer,
                             'category', r.category,
+                            'weight_class', r.category,
                             'body_weight_kg', r.body_weight_kg,
                             'scale_weight_kg', r.scale_weight_kg,
                             'gender', r.gender,
@@ -712,7 +716,7 @@ async function generateAthlete(params, externalClient = null) {
             FROM (SELECT 1) dummy
             LEFT JOIN usaw_lifters ul ON ul.lifter_id = (SELECT id FROM all_usaw_internal_ids LIMIT 1)
             LEFT JOIN iwf_lifters il ON il.db_lifter_id = (SELECT id FROM all_iwf_db_ids LIMIT 1)
-            LEFT JOIN owlcms_lifters ol ON ol.lifter_id = (SELECT id FROM all_owlcms_internal_ids LIMIT 1)
+            LEFT JOIN owlcms_lifters ol ON ol.lifter_id = (SELECT id FROM all_owlcms_internal_ids ORDER BY id ASC LIMIT 1)
             LEFT JOIN usaw_results_agg ura ON true
             LEFT JOIN iwf_results_agg ira ON true
             LEFT JOIN owlcms_results_agg ora ON true
@@ -748,7 +752,7 @@ async function generateAthlete(params, externalClient = null) {
 
         const athleteName = row.usaw_athlete_name || row.iwf_athlete_name || row.owlcms_athlete_name;
         const countryCode = row.iwf_country_code || row.owlcms_country_code || 'USA';
-        const countryName = row.iwf_country_name || (countryCode === 'CAN' ? 'Canada' : 'United States');
+        const countryName = row.iwf_country_name || mapCountryCodeToName(countryCode) || (countryCode === 'CAN' ? 'Canada' : 'United States');
 
         const data = {
             id: usaw_id || iwf_id || owlcms_id,
@@ -779,9 +783,6 @@ async function generateAthlete(params, externalClient = null) {
             }
         };
 
-        const jsonStr = JSON.stringify(data);
-        const compressed = zlib.gzipSync(jsonStr);
-
         const writeFile = (type, id) => {
             if (!id) return;
             const idStr = id.toString();
@@ -790,6 +791,8 @@ async function generateAthlete(params, externalClient = null) {
             const file = path.join(dir, `${idStr}.json.gz`);
             try {
                 if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+                const shardData = { ...data, id: id };
+                const compressed = zlib.gzipSync(JSON.stringify(shardData));
                 fs.writeFileSync(file, compressed);
                 try { fs.chmodSync(file, 0o644); } catch {}
             } catch (writeErr) {

@@ -52,7 +52,7 @@ async function run() {
             const res = await client.query(
                 `SELECT il.db_lifter_id 
                  FROM iwf_lifters il 
-                 LEFT JOIN athlete_aliases aa ON il.db_lifter_id = aa.iwf_db_lifter_id 
+                 LEFT JOIN athlete_aliases aa ON (il.db_lifter_id = aa.iwf_db_lifter_id OR il.db_lifter_id = aa.iwf_db_lifter_id_2)
                  WHERE aa.usaw_lifter_id IS NULL
                  ORDER BY il.db_lifter_id 
                  LIMIT $1 OFFSET $2`,
@@ -70,9 +70,38 @@ async function run() {
             console.log(`[PASS 2] Progress: ${totalIwf} IWF-only profiles processed.`);
         }
 
+        // --- PASS 3: OWLCMS-ONLY POPULATION ---
+        // This covers athletes with OWLCMS records who are not aliased to USAW or IWF.
+        console.log(`\n[PASS 3] Generating shards for OWLCMS-Only Lifters (unlinked)...`);
+        offset = 0;
+        let totalOwlcms = 0;
+
+        while (true) {
+            const res = await client.query(
+                `SELECT DISTINCT ol.lifter_id 
+                 FROM owlcms_lifters ol 
+                 LEFT JOIN athlete_aliases aa ON (ol.lifter_id = aa.owlcms_lifter_id OR ol.lifter_id = aa.owlcms_lifter_id_2)
+                 WHERE aa.usaw_lifter_id IS NULL AND aa.iwf_db_lifter_id IS NULL AND aa.iwf_db_lifter_id_2 IS NULL
+                 ORDER BY ol.lifter_id 
+                 LIMIT $1 OFFSET $2`,
+                [BATCH_SIZE, offset]
+            );
+
+            if (res.rows.length === 0) break;
+
+            for (let row of res.rows) {
+                await generateAthlete({ owlcms_id: row.lifter_id }, client);
+            }
+
+            totalOwlcms += res.rows.length;
+            offset += BATCH_SIZE;
+            console.log(`[PASS 3] Progress: ${totalOwlcms} OWLCMS-only profiles processed.`);
+        }
+
         console.log(`\n[DATA FACTORY] UNIVERSAL BULK RE-SEED COMPLETE.`);
         console.log(`- Batch 1 (Domestic/Linked): ${totalUsaw}`);
         console.log(`- Batch 2 (International-Only): ${totalIwf}`);
+        console.log(`- Batch 3 (OWLCMS-Only): ${totalOwlcms}`);
 
     } catch (err) {
         console.error('[DATA FACTORY] CRITICAL ERROR:', err);
@@ -81,4 +110,8 @@ async function run() {
     }
 }
 
-run();
+if (require.main === module) {
+    run();
+}
+
+module.exports = { run };
