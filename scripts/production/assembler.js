@@ -14,8 +14,42 @@ const clientConfig = {
 
 const OUTPUT_DIR = process.env.OUTPUT_DIR || '/var/www/athlete-data';
 const SHARDS_DIR = path.join(OUTPUT_DIR, 'shards');
-const { calculateCompetitionAge, getEligibleDivisions } = require('../shared/division-logic');
-const { mapCountryCodeToName } = require('./iwf-lifter-manager');
+const COUNTRY_MAP = {
+    'ALB': 'Albania', 'AND': 'Andorra', 'ARM': 'Armenia', 'AUT': 'Austria', 'AZE': 'Azerbaijan',
+    'BEL': 'Belgium', 'BIH': 'Bosnia and Herzegovina', 'BUL': 'Bulgaria', 'CRO': 'Croatia',
+    'CYP': 'Cyprus', 'CZE': 'Czech Republic', 'DEN': 'Denmark', 'EST': 'Estonia', 'FIN': 'Finland',
+    'FRA': 'France', 'GEO': 'Georgia', 'GER': 'Germany', 'GRE': 'Greece', 'GBR': 'United Kingdom',
+    'HUN': 'Hungary', 'ISL': 'Iceland', 'IRL': 'Ireland', 'ITA': 'Italy', 'KOS': 'Kosovo',
+    'LAT': 'Latvia', 'LIE': 'Liechtenstein', 'LTU': 'Lithuania', 'LUX': 'Luxembourg', 'MDA': 'Moldova',
+    'MON': 'Monaco', 'MNE': 'Montenegro', 'NED': 'Netherlands', 'NOR': 'Norway', 'POL': 'Poland',
+    'POR': 'Portugal', 'ROU': 'Romania', 'RUS': 'Russia', 'SMR': 'San Marino', 'SRB': 'Serbia',
+    'SVK': 'Slovakia', 'SVN': 'Slovenia', 'ESP': 'Spain', 'SWE': 'Sweden', 'SUI': 'Switzerland',
+    'TUR': 'Turkey', 'UKR': 'Ukraine', 'AFG': 'Afghanistan', 'BAN': 'Bangladesh', 'CAM': 'Cambodia',
+    'CHN': 'China', 'HKG': 'Hong Kong', 'IND': 'India', 'IDN': 'Indonesia', 'IRN': 'Iran',
+    'JPN': 'Japan', 'JOR': 'Jordan', 'KAZ': 'Kazakhstan', 'KOR': 'South Korea', 'KWT': 'Kuwait',
+    'KGZ': 'Kyrgyzstan', 'LAO': 'Laos', 'LBN': 'Lebanon', 'MAS': 'Malaysia', 'MGL': 'Mongolia',
+    'MYA': 'Myanmar', 'NEP': 'Nepal', 'PAK': 'Pakistan', 'PHI': 'Philippines', 'QAT': 'Qatar',
+    'SGP': 'Singapore', 'THA': 'Thailand', 'TJK': 'Tajikistan', 'TPE': 'Taiwan', 'TKM': 'Turkmenistan',
+    'UZB': 'Uzbekistan', 'VIE': 'Vietnam', 'ARG': 'Argentina', 'BAR': 'Barbados', 'BRA': 'Brazil',
+    'CAN': 'Canada', 'CHI': 'Chile', 'COL': 'Colombia', 'CRC': 'Costa Rica', 'CUB': 'Cuba',
+    'DOM': 'Dominican Republic', 'ECU': 'Ecuador', 'SLV': 'El Salvador', 'GUA': 'Guatemala',
+    'HAI': 'Haiti', 'HND': 'Honduras', 'JAM': 'Jamaica', 'MEX': 'Mexico', 'PAN': 'Panama',
+    'PAR': 'Paraguay', 'PER': 'Peru', 'PUR': 'Puerto Rico', 'URU': 'Uruguay', 'USA': 'United States',
+    'VEN': 'Venezuela', 'AUS': 'Australia', 'FIJ': 'Fiji', 'NZL': 'New Zealand', 'PNG': 'Papua New Guinea',
+    'SAM': 'Samoa', 'TON': 'Tonga', 'ALG': 'Algeria', 'ANG': 'Angola', 'BOT': 'Botswana',
+    'BWA': 'Botswana', 'CMR': 'Cameroon', 'EGY': 'Egypt', 'ETH': 'Ethiopia', 'GHA': 'Ghana',
+    'KEN': 'Kenya', 'LIB': 'Libya', 'MAR': 'Morocco', 'MRI': 'Mauritius', 'MOZ': 'Mozambique',
+    'NAM': 'Namibia', 'NGA': 'Nigeria', 'RWA': 'Rwanda', 'RSA': 'South Africa', 'SUD': 'Sudan',
+    'TAN': 'Tanzania', 'TUN': 'Tunisia', 'UGA': 'Uganda', 'ZIM': 'Zimbabwe', 'VAN': 'Vanuatu',
+    'AIN': 'Individual Neutral Athletes', 'WRT': 'Weightlifting Refugee Team', 'ISR': 'Israel',
+    'ARU': 'Aruba', 'ASA': 'American Samoa', 'BOL': 'Bolivia', 'HON': 'Honduras', 'NIC': 'Nicaragua',
+    'PUR': 'Puerto Rico', 'NRU': 'Nauru', 'KIR': 'Kiribati', 'TTO': 'Trinidad and Tobago'
+};
+
+function mapCountryCodeToName(code) {
+    if (!code) return null;
+    return COUNTRY_MAP[code] || null;
+}
 
 // ── Achievement Aggregator ──────────────────────────────────────────────────
 function aggregateAchievements(rankings) {
