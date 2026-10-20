@@ -135,8 +135,9 @@ app.post('/api/federations/resolve', async (req, res) => {
 
 // API Endpoint: Trigger Post-Ingestion Pipeline (Non-blocking)
 app.post('/api/pipeline/run', (req, res) => {
-    console.log('[OWLCMS_SERVER] Pipeline run requested via API trigger');
-    runPipeline().catch(err => console.error('[OWLCMS_SERVER] Pipeline execution error:', err.message));
+    const { event, meet_id } = req.body || {};
+    console.log(`[OWLCMS_SERVER] Pipeline run requested via API trigger (event: ${event || 'MANUAL'}, meet_id: ${meet_id || 'ALL'})`);
+    runPipeline({ event, meet_id }).catch(err => console.error('[OWLCMS_SERVER] Pipeline execution error:', err.message));
     return res.json({
         success: true,
         message: 'Post-ingestion pipeline triggered asynchronously.'

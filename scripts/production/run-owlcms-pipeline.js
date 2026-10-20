@@ -89,8 +89,12 @@ function releaseLock() {
 
 /**
  * Main pipeline runner
+ * 
+ * @param {Object} [options] - Pipeline options
+ * @param {number} [options.meet_id] - Target meet_id for immediate geocoding
+ * @param {string} [options.event] - Trigger event name (e.g. 'MEET_INGESTED')
  */
-async function runPipeline() {
+async function runPipeline(options = {}) {
     const locked = acquireLock();
     if (!locked) {
         console.log('\n🔒 [PIPELINE] Another linker process is currently active.');
@@ -99,13 +103,21 @@ async function runPipeline() {
     }
 
     console.log('\n🔓 [PIPELINE] Lock acquired (PID: ' + process.pid + '). Starting OWLCMS post-ingestion pipeline...');
+    if (options.event) console.log(`   Trigger event: ${options.event}`);
+    if (options.meet_id) console.log(`   Target meet_id: ${options.meet_id}`);
 
     try {
+        // Step 1: Venue geocoding (fast path: resolves and stores venue coordinates immediately for map display)
+        console.log('\n⚡ [PIPELINE] Step 1: Executing venue geocoding and coordinate resolution...');
+        const sweepArgs = options.meet_id ? ['--meet_id', String(options.meet_id)] : [];
+        await runChildScript('scripts/production/sweep-owlcms-geocodes.js', sweepArgs);
+
+        // Step 2: Cross-federation athlete linking
         let keepRunning = true;
         let passNumber = 1;
 
         while (keepRunning) {
-            console.log(`\n⚡ [PIPELINE] Pass ${passNumber}: Executing cross-federation athlete linker...`);
+            console.log(`\n⚡ [PIPELINE] Step 2 (Pass ${passNumber}): Executing cross-federation athlete linker...`);
             await runChildScript('scripts/production/link-new-owlcms-athletes.js');
 
             // Check if more PENDING lifters were imported while linker was running
@@ -129,7 +141,8 @@ async function runPipeline() {
             }
         }
 
-        console.log('⚡ [PIPELINE] Running geocode and country-code sweep...');
+        // Step 3: Final sweep to verify all meets have coordinates and result country codes are synchronized
+        console.log('\n⚡ [PIPELINE] Step 3: Running final geocode and country-code sweep...');
         await runChildScript('scripts/production/sweep-owlcms-geocodes.js');
 
         console.log('🏁 [PIPELINE] Pipeline run finished successfully.\n');
@@ -144,7 +157,17 @@ async function runPipeline() {
 }
 
 if (require.main === module) {
-    runPipeline()
+    const args = process.argv.slice(2);
+    let targetMeetId = null;
+    for (let i = 0; i < args.length; i++) {
+        if (args[i] === '--meet_id' || args[i] === '--meet' || args[i] === '-m') {
+            if (args[i + 1]) targetMeetId = parseInt(args[i + 1], 10);
+        } else if (/^\d+$/.test(args[i])) {
+            targetMeetId = parseInt(args[i], 10);
+        }
+    }
+
+    runPipeline({ meet_id: targetMeetId })
         .then(() => process.exit(0))
         .catch(() => process.exit(1));
 }

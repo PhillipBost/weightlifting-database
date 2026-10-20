@@ -2,6 +2,17 @@
 
 All notable changes to the Weightlifting Database project will be documented in this file.
 
+## [Added] - 2026-10-19 (Eastern Time)
+
+- **Automated Open Weightlifting Competition Management System (OWLCMS) Venue Geocoding & Coordinate Pipeline (`scripts/production/owlcms-geocoder.js`, `scripts/production/sweep-owlcms-geocodes.js`, `scripts/production/run-owlcms-pipeline.js`, `scripts/production/owlcms-upload-server.js`)**:
+  - Upgraded `scripts/production/owlcms-geocoder.js` with a multi-engine cascading geocoding pipeline featuring **Photon** (`https://photon.komoot.io`) as the primary Point of Interest (POI) geocoder with **OpenStreetMap (OSM) Nominatim** as an intelligent fallback.
+  - Implemented cascading query address resolution: Query 1 Composite (`"{venue}, {city}"`), Query 2 Primary Address (splitting comma-delimited venue strings to extract street address indicators + city), and Query 3 Fallback (`"{city}, {country_name}"`).
+  - Added comprehensive International Olympic Committee (IOC), International Organization for Standardization (ISO) 3166-1 alpha-2, and English country name resolution tables covering all 192 International Weightlifting Federation (IWF) member nations, verifying candidate POI country codes against host country metadata.
+  - Enhanced sweep worker `scripts/production/sweep-owlcms-geocodes.js` to accept `--meet_id <id>` arguments for targeted immediate geocoding as well as global batch sweeps for un-geocoded competitions.
+  - Integrated venue geocoding directly into the singleton pipeline runner `scripts/production/run-owlcms-pipeline.js` as Step 1, ensuring map coordinates (`latitude`, `longitude`) are populated immediately for frontend map rendering (`MeetHubSpokeMap`) before longer-running athlete linking passes execute.
+  - Updated upload server endpoint `POST /api/pipeline/run` in `scripts/production/owlcms-upload-server.js` to forward `{ event, meet_id }` payloads to the pipeline runner.
+  - Backfilled Meet #5 (*Australian Weightlifting Federation [AWF] Masters and Australian Masters Games* in Gungahlin, Australian Capital Territory [ACT], Australia) with authoritative coordinates (`latitude = -35.187663`, `longitude = 149.1372014`) and synchronized country codes for 110 competition results.
+
 ## [Added] - 2026-10-13 (Eastern Time)
 
 - **Incorporate Open Weightlifting Competition Management System (OWLCMS) Results & Lifter Aliases into Athlete Static Shards (`scripts/production/assembler.js`, `scripts/production/listener.js`, `scripts/production/link-new-owlcms-athletes.js`, `scripts/production/seed.js`)**:
