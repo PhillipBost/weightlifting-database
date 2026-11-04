@@ -163,8 +163,9 @@ async function reconcileUsaw(client, summary) {
 
         for (const row of rows) {
             summary.scanned++;
-            const publicId = row.membership_number || row.lifter_id;
-            const filePath = getShardFilePath('usaw', publicId);
+            const isMember = Boolean(row.membership_number);
+            const publicId = isMember ? row.membership_number : row.lifter_id;
+            const filePath = getShardFilePath(isMember ? 'usaw' : 'internal', publicId);
             const latestDbTime = Math.max(
                 row.max_result_updated_at ? new Date(row.max_result_updated_at).getTime() : 0,
                 row.lifter_updated_at ? new Date(row.lifter_updated_at).getTime() : 0
@@ -174,12 +175,12 @@ async function reconcileUsaw(client, summary) {
             if (check.isStale) {
                 staleCount++;
                 summary.stale++;
-                console.log(`[USAW] Stale Athlete ID: ${row.lifter_id} (Member #: ${publicId}) - Reason: ${check.reason}`);
+                console.log(`[USAW] Stale Athlete ID: ${row.lifter_id} (Member #: ${row.membership_number || 'N/A'}) - Reason: ${check.reason}`);
 
                 if (!isDryRun) {
                     if (isCompile) {
                         try {
-                            await generateAthlete({ usaw_id: row.lifter_id }, client);
+                            await generateAthlete({ usaw_lifter_id: row.lifter_id, usaw_id: row.membership_number }, client);
                             summary.compiled++;
                         } catch (err) {
                             console.error(`[USAW] Compile error for lifter_id ${row.lifter_id}:`, err.message);

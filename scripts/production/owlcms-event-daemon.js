@@ -85,7 +85,7 @@ async function drainAthleteShardQueue() {
                     const { federation, entity_id, enqueued_at } = row;
                     const params = {};
                     if (federation === 'usaw') {
-                        params.usaw_id = entity_id;
+                        params.usaw_lifter_id = entity_id;
                     } else if (federation === 'iwf') {
                         params.iwf_id = entity_id;
                     } else if (federation === 'owlcms') {

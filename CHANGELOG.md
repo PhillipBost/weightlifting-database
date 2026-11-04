@@ -12,6 +12,12 @@ All notable changes to the Weightlifting Database project will be documented in 
 
 ## [Fixed] - 2026-11-04 (Eastern Time)
 
+- **Disambiguate United States of America Weightlifting (USAW) Internal Lifter Identifiers (`lifter_id`) from Membership Numbers (`scripts/production/assembler.js`, `scripts/production/owlcms-event-daemon.js`, `scripts/production/reconcile-stale-shards.js`)**:
+  - Resolved numerical Primary Key (PK) collisions where an internal `usaw_lifters.lifter_id` collided with an identical six-digit `membership_number` belonging to a different athlete during background shard compilation.
+  - Added dedicated parameter `usaw_lifter_id` to `generateAthlete()` in `scripts/production/assembler.js`, allowing direct internal database identity resolution without ambiguous `membership_number::text = $1 OR lifter_id::text = $1` database queries.
+  - Updated outbox queue draining in `scripts/production/owlcms-event-daemon.js` to dispatch `usaw_lifter_id: entity_id` when processing USAW mutations from `public.athlete_shard_queue`.
+  - Upgraded `scripts/production/reconcile-stale-shards.js` to check `/var/www/athlete-data/usaw/{shard}/{membership_number}.json.gz` for athletes with valid membership numbers and `/var/www/athlete-data/internal/{shard}/{lifter_id}.json.gz` for unlinked or guest athletes who lack membership numbers, preventing false staleness reports and compiling both public and internal shards accurately.
+
 - **Stale Static Shard Prevention for Unlinked USAW Athletes**:
   - Resolved the systemic issue where United States of America Weightlifting (USAW) athlete mutations (e.g. Denis Couture, USAW Membership Number: `1047936`, internal `lifter_id: 199867`) ingested via GitHub Actions failed to recompile static shards on the Hetzner host because background daemons previously only rebuilt shards for Open Weightlifting Competition Management System (OWLCMS) meets or newly created cross-federation alias links.
   - Dropped defective and inactive webhook trigger `refresh_athlete_json_trigger()` that relied on unconfigured local webhooks.

@@ -418,15 +418,15 @@ function getYearlySnapshots(results, gender, source, birthYear) {
  * Finalized logic to solve the 'relation not found' issue.
  */
 async function generateAthlete(params, externalClient = null) {
-    const { usaw_id, iwf_id, owlcms_id } = typeof params === 'object' ? params : { usaw_id: params };
+    const { usaw_id, usaw_lifter_id, iwf_id, owlcms_id } = typeof params === 'object' ? params : { usaw_id: params };
 
     const client = externalClient || new Client(clientConfig);
     if (!externalClient) await client.connect();
 
     try {
         // Phase 1: Identity Resolution (Public Identifier -> Internal Join Key)
-        let resolvedUsawId = null;
-        if (usaw_id) {
+        let resolvedUsawId = usaw_lifter_id || null;
+        if (usaw_id && !resolvedUsawId) {
             const idStr = usaw_id.toString();
             const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(idStr);
             const isNumeric = /^\d+$/.test(idStr);
@@ -789,7 +789,7 @@ async function generateAthlete(params, externalClient = null) {
         const countryName = row.iwf_country_name || mapCountryCodeToName(countryCode) || (countryCode === 'CAN' ? 'Canada' : 'United States');
 
         const data = {
-            id: usaw_id || iwf_id || owlcms_id,
+            id: usaw_id || iwf_id || owlcms_id || usaw_lifter_id,
             internal_id: row.internal_id,
             linked_usaw_id: row.membership_number,
             linked_iwf_id: row.prime_iwf_official_id,
@@ -850,7 +850,7 @@ async function generateAthlete(params, externalClient = null) {
         };
 
     } catch (err) {
-        console.error(`[ASSEMBLER] Universal Fatal Error for USAW:${usaw_id}, IWF:${iwf_id}, OWLCMS:${owlcms_id}:`, err);
+        console.error(`[ASSEMBLER] Universal Fatal Error for USAW:${usaw_id || usaw_lifter_id}, IWF:${iwf_id}, OWLCMS:${owlcms_id}:`, err);
         return { success: false, error: err.message };
     } finally {
         if (!externalClient) await client.end();
