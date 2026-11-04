@@ -8,7 +8,7 @@ All notable changes to the Weightlifting Database project will be documented in 
   - Implemented transactional PostgreSQL outbox table `public.athlete_shard_queue` with primary key `(federation, entity_id)` to decouple athlete data ingestion from static JavaScript Object Notation (JSON) shard generation.
   - Attached automated row-level and statement-level triggers across all 8 federation tables (`usaw_meet_results`, `usaw_lifters`, `usaw_division_rankings`, `iwf_meet_results`, `iwf_lifters`, `owlcms_meet_results`, `owlcms_lifters`, and `athlete_aliases`), capturing `OLD` and `NEW` entities across inserts, updates, and deletes and publishing `athlete_shard_event` notifications.
   - Upgraded production daemon `scripts/production/owlcms-event-daemon.js` to listen simultaneously on `owlcms_pipeline_event` and `athlete_shard_event`, batch-draining the outbox queue using a persistent PostgreSQL connection pool and generating static compressed shards (`.json.gz`) via `assembler.js`.
-  - Created historical reconciliation and catch-up utility `scripts/production/reconcile-stale-shards.js` supporting `--dry-run`, `--compile`, `--deep` (verifying gzip result counts against database aggregates), and targeted single-athlete reconciliation (`--athlete-id=<id>`).
+  - Created historical reconciliation and catch-up utility `scripts/production/reconcile-stale-shards.js` supporting `--dry-run`, `--compile`, `--deep` (verifying gzip result counts against database aggregates), `--force` (recompiling or enqueuing athletes regardless of timestamp freshness), and verbose single-athlete identity tracking (`--athlete-id=<id>`).
 
 ## [Fixed] - 2026-11-04 (Eastern Time)
 

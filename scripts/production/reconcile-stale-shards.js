@@ -32,6 +32,7 @@ const args = process.argv.slice(2);
 const isDryRun = args.includes('--dry-run');
 const isCompile = args.includes('--compile');
 const isDeep = args.includes('--deep');
+const isForce = args.includes('--force');
 
 function getArgValue(prefix) {
     const matched = args.find(a => a.startsWith(prefix));
@@ -142,6 +143,7 @@ async function reconcileUsaw(client, summary) {
             SELECT 
                 l.lifter_id,
                 l.membership_number,
+                l.athlete_name,
                 COUNT(r.result_id)::int AS db_result_count,
                 MAX(r.updated_at) AS max_result_updated_at,
                 l.updated_at AS lifter_updated_at
@@ -155,7 +157,7 @@ async function reconcileUsaw(client, summary) {
             query += ` WHERE l.membership_number::text = $1 OR l.lifter_id::text = $1 `;
         }
 
-        query += ` GROUP BY l.lifter_id, l.membership_number ORDER BY l.lifter_id ASC LIMIT $${params.length + 1} OFFSET $${params.length + 2}`;
+        query += ` GROUP BY l.lifter_id, l.membership_number, l.athlete_name ORDER BY l.lifter_id ASC LIMIT $${params.length + 1} OFFSET $${params.length + 2}`;
         params.push(batchSize, offset);
 
         const { rows } = await client.query(query, params);
@@ -172,10 +174,18 @@ async function reconcileUsaw(client, summary) {
             );
 
             const check = inspectShard(filePath, row.db_result_count, latestDbTime);
-            if (check.isStale) {
+            const isStaleOrForced = check.isStale || isForce;
+
+            if (targetAthleteId) {
+                console.log(`[USAW] Athlete: "${row.athlete_name || 'N/A'}" | Lifter ID: ${row.lifter_id} | Member #: ${row.membership_number || 'None (Internal Only)'} | Shard: ${filePath} | Status: ${check.isStale ? `STALE (${check.reason})` : 'FRESH'}${isForce ? ' [FORCED]' : ''}`);
+            }
+
+            if (isStaleOrForced) {
                 staleCount++;
                 summary.stale++;
-                console.log(`[USAW] Stale Athlete ID: ${row.lifter_id} (Member #: ${row.membership_number || 'N/A'}) - Reason: ${check.reason}`);
+                if (!targetAthleteId) {
+                    console.log(`[USAW] Stale Athlete ID: ${row.lifter_id} (Member #: ${row.membership_number || 'N/A'}) - Reason: ${check.reason}${isForce ? ' [FORCED]' : ''}`);
+                }
 
                 if (!isDryRun) {
                     if (isCompile) {
@@ -220,6 +230,7 @@ async function reconcileIwf(client, summary) {
             SELECT 
                 l.db_lifter_id,
                 l.iwf_lifter_id,
+                l.athlete_name,
                 COUNT(r.db_result_id)::int AS db_result_count,
                 MAX(r.updated_at) AS max_result_updated_at,
                 l.updated_at AS lifter_updated_at
@@ -233,7 +244,7 @@ async function reconcileIwf(client, summary) {
             query += ` WHERE l.iwf_lifter_id::text = $1 OR l.db_lifter_id::text = $1 `;
         }
 
-        query += ` GROUP BY l.db_lifter_id, l.iwf_lifter_id ORDER BY l.db_lifter_id ASC LIMIT $${params.length + 1} OFFSET $${params.length + 2}`;
+        query += ` GROUP BY l.db_lifter_id, l.iwf_lifter_id, l.athlete_name ORDER BY l.db_lifter_id ASC LIMIT $${params.length + 1} OFFSET $${params.length + 2}`;
         params.push(batchSize, offset);
 
         const { rows } = await client.query(query, params);
@@ -249,10 +260,18 @@ async function reconcileIwf(client, summary) {
             );
 
             const check = inspectShard(filePath, row.db_result_count, latestDbTime);
-            if (check.isStale) {
+            const isStaleOrForced = check.isStale || isForce;
+
+            if (targetAthleteId) {
+                console.log(`[IWF] Athlete: "${row.athlete_name || 'N/A'}" | DB ID: ${row.db_lifter_id} | IWF ID: ${row.iwf_lifter_id || 'None'} | Shard: ${filePath} | Status: ${check.isStale ? `STALE (${check.reason})` : 'FRESH'}${isForce ? ' [FORCED]' : ''}`);
+            }
+
+            if (isStaleOrForced) {
                 staleCount++;
                 summary.stale++;
-                console.log(`[IWF] Stale Athlete DB ID: ${row.db_lifter_id} (IWF ID: ${publicId}) - Reason: ${check.reason}`);
+                if (!targetAthleteId) {
+                    console.log(`[IWF] Stale Athlete DB ID: ${row.db_lifter_id} (IWF ID: ${publicId}) - Reason: ${check.reason}${isForce ? ' [FORCED]' : ''}`);
+                }
 
                 if (!isDryRun) {
                     if (isCompile) {
@@ -296,6 +315,7 @@ async function reconcileOwlcms(client, summary) {
         let query = `
             SELECT 
                 l.lifter_id,
+                l.athlete_name,
                 COUNT(r.result_id)::int AS db_result_count,
                 MAX(r.updated_at) AS max_result_updated_at,
                 l.updated_at AS lifter_updated_at
@@ -309,7 +329,7 @@ async function reconcileOwlcms(client, summary) {
             query += ` WHERE l.lifter_id::text = $1 `;
         }
 
-        query += ` GROUP BY l.lifter_id ORDER BY l.lifter_id ASC LIMIT $${params.length + 1} OFFSET $${params.length + 2}`;
+        query += ` GROUP BY l.lifter_id, l.athlete_name ORDER BY l.lifter_id ASC LIMIT $${params.length + 1} OFFSET $${params.length + 2}`;
         params.push(batchSize, offset);
 
         const { rows } = await client.query(query, params);
@@ -325,10 +345,18 @@ async function reconcileOwlcms(client, summary) {
             );
 
             const check = inspectShard(filePath, row.db_result_count, latestDbTime);
-            if (check.isStale) {
+            const isStaleOrForced = check.isStale || isForce;
+
+            if (targetAthleteId) {
+                console.log(`[OWLCMS] Athlete: "${row.athlete_name || 'N/A'}" | Lifter ID: ${row.lifter_id} | Shard: ${filePath} | Status: ${check.isStale ? `STALE (${check.reason})` : 'FRESH'}${isForce ? ' [FORCED]' : ''}`);
+            }
+
+            if (isStaleOrForced) {
                 staleCount++;
                 summary.stale++;
-                console.log(`[OWLCMS] Stale Athlete ID: ${row.lifter_id} - Reason: ${check.reason}`);
+                if (!targetAthleteId) {
+                    console.log(`[OWLCMS] Stale Athlete ID: ${row.lifter_id} - Reason: ${check.reason}${isForce ? ' [FORCED]' : ''}`);
+                }
 
                 if (!isDryRun) {
                     if (isCompile) {
@@ -368,6 +396,7 @@ async function main() {
     console.log('🎯 ATHLETE STATIC SHARD RECONCILER');
     console.log(`   Output Directory:   ${outputDir}`);
     console.log(`   Mode:               ${isDryRun ? 'DRY-RUN (Scan Only)' : (isCompile ? 'DIRECT COMPILE' : 'ENQUEUE TO OUTBOX')}`);
+    console.log(`   Force Mode:         ${isForce ? 'YES (Compile/enqueue even if fresh)' : 'NO'}`);
     console.log(`   Deep Verification:  ${isDeep ? 'YES (Gzip results parsed)' : 'NO (Timestamp and existence only)'}`);
     console.log(`   Federation Filter:  ${targetFederation.toUpperCase()}`);
     if (targetAthleteId) console.log(`   Target Athlete ID:  ${targetAthleteId}`);
