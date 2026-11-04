@@ -52,4 +52,9 @@
    - Never synthesize, invent, or editorialize artificial abbreviations, acronyms, or identifiers to resolve namespace, schema, or key collisions.
    - All entity names, acronyms, and historical aliases must strictly reflect verified primary-source governing documents (constitutions, official directories, statutes).
    - Real-world acronym collisions (e.g., Arabic Weightlifting Federation `AWF` vs. Asian Weightlifting Federation `AWF` vs. Australian Weightlifting Federation `AWF`) are genuine domain realities that must be handled structurally (via `public.federation_localizations`, nullable `short_code`, and disambiguation ranking), never obscured by fabricated labels.
+12. **Absolute Prohibition on Remote Host Shell Execution (Hetzner Server Isolation)**:
+   - Never execute Secure Shell (SSH), remote shell sessions, or direct terminal commands against the Hetzner production host (`46.62.223.85`).
+   - All server health checks, disk management, and host maintenance are reserved exclusively for manual execution by the system owner.
+   - Agent investigation and assistance for host operations must be strictly advisory (providing copy-paste commands or Coolify dashboard navigation instructions for the user to execute themselves).
+
 

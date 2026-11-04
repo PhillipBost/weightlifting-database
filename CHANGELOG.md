@@ -2,6 +2,27 @@
 
 All notable changes to the Weightlifting Database project will be documented in this file.
 
+## [Added] - 2026-11-04 (Eastern Time)
+
+- **Universal Multi-Federation Athlete Static Shard Outbox & Event Daemon (`migrations/add_athlete_shard_queue_and_triggers.sql`, `scripts/production/owlcms-event-daemon.js`, `scripts/production/reconcile-stale-shards.js`)**:
+  - Implemented transactional PostgreSQL outbox table `public.athlete_shard_queue` with primary key `(federation, entity_id)` to decouple athlete data ingestion from static JavaScript Object Notation (JSON) shard generation.
+  - Attached automated row-level and statement-level triggers across all 8 federation tables (`usaw_meet_results`, `usaw_lifters`, `usaw_division_rankings`, `iwf_meet_results`, `iwf_lifters`, `owlcms_meet_results`, `owlcms_lifters`, and `athlete_aliases`), capturing `OLD` and `NEW` entities across inserts, updates, and deletes and publishing `athlete_shard_event` notifications.
+  - Upgraded production daemon `scripts/production/owlcms-event-daemon.js` to listen simultaneously on `owlcms_pipeline_event` and `athlete_shard_event`, batch-draining the outbox queue using a persistent PostgreSQL connection pool and generating static compressed shards (`.json.gz`) via `assembler.js`.
+  - Created historical reconciliation and catch-up utility `scripts/production/reconcile-stale-shards.js` supporting `--dry-run`, `--compile`, `--deep` (verifying gzip result counts against database aggregates), and targeted single-athlete reconciliation (`--athlete-id=<id>`).
+
+## [Fixed] - 2026-11-04 (Eastern Time)
+
+- **Stale Static Shard Prevention for Unlinked USAW Athletes**:
+  - Resolved the systemic issue where United States of America Weightlifting (USAW) athlete mutations (e.g. Denis Couture, USAW Membership Number: `1047936`, internal `lifter_id: 199867`) ingested via GitHub Actions failed to recompile static shards on the Hetzner host because background daemons previously only rebuilt shards for Open Weightlifting Competition Management System (OWLCMS) meets or newly created cross-federation alias links.
+  - Dropped defective and inactive webhook trigger `refresh_athlete_json_trigger()` that relied on unconfigured local webhooks.
+
+## [Added] - 2026-11-01 (Eastern Time)
+
+- **Self-Hosted Umami Analytics Deployment & Infrastructure Hardening**:
+  - Provisioned self-hosted Umami Analytics (`ghcr.io/umami-software/umami:3.0.3`) paired with an isolated PostgreSQL 16 database container in Coolify on Hetzner host `46.62.223.85`.
+  - Configured Traefik reverse proxy routing with automatic Let's Encrypt Transport Layer Security (TLS) certificate generation for `https://analytics.owlanalytics.org`.
+  - Remediated root disk saturation (`/dev/sda1` 100% full) by vacuuming system logs and enforcing the 7-day remote backup retention policy across historical database dumps in `/data/coolify/backups/databases/root-team-0`, reclaiming over 20 Gigabytes (GB) of storage.
+
 ## [Added] - 2026-10-19 (Eastern Time)
 
 - **Automated Open Weightlifting Competition Management System (OWLCMS) Venue Geocoding & Coordinate Pipeline (`scripts/production/owlcms-geocoder.js`, `scripts/production/sweep-owlcms-geocodes.js`, `scripts/production/run-owlcms-pipeline.js`, `scripts/production/owlcms-upload-server.js`)**:
