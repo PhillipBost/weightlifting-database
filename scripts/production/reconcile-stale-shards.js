@@ -219,7 +219,7 @@ async function reconcileIwf(client, summary) {
             SELECT 
                 l.db_lifter_id,
                 l.iwf_lifter_id,
-                COUNT(r.result_id)::int AS db_result_count,
+                COUNT(r.db_result_id)::int AS db_result_count,
                 MAX(r.updated_at) AS max_result_updated_at,
                 l.updated_at AS lifter_updated_at
             FROM public.iwf_lifters l
