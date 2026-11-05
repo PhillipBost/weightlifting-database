@@ -80,7 +80,7 @@ function getShardFilePath(federation, publicId) {
 /**
  * Inspect a single shard file for existence, timestamp freshness, and optionally result count
  */
-function inspectShard(filePath, dbResultCount, latestDbTime) {
+function inspectShard(filePath, dbResultCount, latestDbTime, federation = null) {
     if (!fs.existsSync(filePath)) {
         return { isStale: true, reason: 'FILE_MISSING' };
     }
@@ -103,10 +103,21 @@ function inspectShard(filePath, dbResultCount, latestDbTime) {
             const decompressed = zlib.gunzipSync(compressed);
             const shardData = JSON.parse(decompressed.toString('utf8'));
             
-            // Replicate count aggregation from assembler:
-            // Results can be under data.results or nested under federations
+            // Match count aggregation strictly by federation if known to avoid cross-federation false alarms
             let shardCount = 0;
-            if (Array.isArray(shardData.results)) {
+            if (federation === 'usaw' || federation === 'internal') {
+                shardCount = Array.isArray(shardData.usaw_results) 
+                    ? shardData.usaw_results.length 
+                    : (shardData.results?.length || 0);
+            } else if (federation === 'iwf') {
+                shardCount = Array.isArray(shardData.iwf_results) 
+                    ? shardData.iwf_results.length 
+                    : (shardData.results?.length || 0);
+            } else if (federation === 'owlcms') {
+                shardCount = Array.isArray(shardData.owlcms_results) 
+                    ? shardData.owlcms_results.length 
+                    : (shardData.results?.length || 0);
+            } else if (Array.isArray(shardData.results)) {
                 shardCount = shardData.results.length;
             } else if (Array.isArray(shardData.meet_results)) {
                 shardCount = shardData.meet_results.length;
@@ -173,7 +184,7 @@ async function reconcileUsaw(client, summary) {
                 row.lifter_updated_at ? new Date(row.lifter_updated_at).getTime() : 0
             );
 
-            const check = inspectShard(filePath, row.db_result_count, latestDbTime);
+            const check = inspectShard(filePath, row.db_result_count, latestDbTime, isMember ? 'usaw' : 'internal');
             const isStaleOrForced = check.isStale || isForce;
 
             if (targetAthleteId) {
@@ -259,7 +270,7 @@ async function reconcileIwf(client, summary) {
                 row.lifter_updated_at ? new Date(row.lifter_updated_at).getTime() : 0
             );
 
-            const check = inspectShard(filePath, row.db_result_count, latestDbTime);
+            const check = inspectShard(filePath, row.db_result_count, latestDbTime, 'iwf');
             const isStaleOrForced = check.isStale || isForce;
 
             if (targetAthleteId) {
@@ -344,7 +355,7 @@ async function reconcileOwlcms(client, summary) {
                 row.lifter_updated_at ? new Date(row.lifter_updated_at).getTime() : 0
             );
 
-            const check = inspectShard(filePath, row.db_result_count, latestDbTime);
+            const check = inspectShard(filePath, row.db_result_count, latestDbTime, 'owlcms');
             const isStaleOrForced = check.isStale || isForce;
 
             if (targetAthleteId) {

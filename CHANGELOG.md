@@ -2,6 +2,12 @@
 
 All notable changes to the Weightlifting Database project will be documented in this file.
 
+## [Fixed] - 2026-11-05 (Eastern Time)
+
+- **Eliminate Cross-Federation False Positives in Static Shard Reconciler (`scripts/production/reconcile-stale-shards.js`)**:
+  - Updated `inspectShard()` in deep verification mode (`--deep`) to evaluate result counts strictly against the active scan's federation array (`shardData.usaw_results` for United States of America Weightlifting (USAW), `shardData.iwf_results` for International Weightlifting Federation (IWF), and `shardData.owlcms_results` for Open Weightlifting Competition Management System (OWLCMS)).
+  - Prevents athletes with cross-federation alias links from being erroneously flagged with `COUNT_MISMATCH` staleness due to total shard results exceeding single-federation Database (DB) scorecard counts.
+
 ## [Added] - 2026-11-05 (Eastern Time)
 
 - **Approved Homonym Split Execution Engine (`scripts/production/execute-approved-homonym-splits.js`)**:
