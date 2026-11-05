@@ -2,6 +2,15 @@
 
 All notable changes to the Weightlifting Database project will be documented in this file.
 
+## [Added] - 2026-11-05 (Eastern Time)
+
+- **Approved Homonym Split Execution Engine (`scripts/production/execute-approved-homonym-splits.js`)**:
+  - Implemented transactional processor for approved review items in `public.admin_review_queue` (`category = 'homonym_split'`, `status = 'APPROVED'`).
+  - Provisions distinct Primary Key (PK) records in `public.usaw_lifters` for Persons 1..N based on approved split plans, retaining the collapsed `lifter_id` for Person 1 to preserve historical foreign key stability.
+  - Reassigns confirmed scorecards (`splits[i].competitions`) and triaged scorecards (`unidentifiedCompetitions` mapped via `assigned_membership` or `assigned_to`) in `public.usaw_meet_results` to each target athlete.
+  - Automatically enqueues all separated `lifter_id`s into `public.athlete_shard_queue` to trigger immediate static JavaScript Object Notation (JSON) shard regeneration.
+  - Finalizes queue items to `status = 'RESOLVED'` with an execution summary payload recording reassignments and target identities.
+
 ## [Added] - 2026-11-04 (Eastern Time)
 
 - **Universal Multi-Federation Athlete Static Shard Outbox & Event Daemon (`migrations/add_athlete_shard_queue_and_triggers.sql`, `scripts/production/owlcms-event-daemon.js`, `scripts/production/reconcile-stale-shards.js`)**:
