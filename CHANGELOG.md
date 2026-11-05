@@ -4,6 +4,11 @@ All notable changes to the Weightlifting Database project will be documented in 
 
 ## [Fixed] - 2026-11-05 (Eastern Time)
 
+- **Graceful Handling of Multi-Entity Clusters & Unresolved Collapsed Lifter Identifiers in Homonym Split Engine (`scripts/production/execute-approved-homonym-splits.js`)**:
+  - Added resolution for donor/anchor lifters (`evidence.anchor_lifter_id`) when `primary_entity_id <= 0` or when scorecards were historically accumulated under a pre-existing member record (e.g. Person 1 in a scorecard partition).
+  - Supported flexible competition schemas accepting both array of numeric meet identifiers (`meets: [413, ...]`, `competitions: [413, ...]`) and detailed objects (`[{ meet_id: 413 }, ...]`).
+  - Added short-circuiting for scorecards already attached to the anchor lifter to avoid redundant Database (DB) writes, and enqueued both target and donor lifters to `public.athlete_shard_queue` for static JavaScript Object Notation (JSON) shard rebuilds.
+
 - **Eliminate Cross-Federation False Positives in Static Shard Reconciler (`scripts/production/reconcile-stale-shards.js`)**:
   - Updated `inspectShard()` in deep verification mode (`--deep`) to evaluate result counts strictly against the active scan's federation array (`shardData.usaw_results` for United States of America Weightlifting (USAW), `shardData.iwf_results` for International Weightlifting Federation (IWF), and `shardData.owlcms_results` for Open Weightlifting Competition Management System (OWLCMS)).
   - Prevents athletes with cross-federation alias links from being erroneously flagged with `COUNT_MISMATCH` staleness due to total shard results exceeding single-federation Database (DB) scorecard counts.

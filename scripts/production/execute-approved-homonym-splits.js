@@ -46,7 +46,7 @@ function sanitizeAthleteName(rawName) {
  */
 async function executeSplit(queueItem) {
     const queueId = queueItem.id;
-    const collapsedLifterId = queueItem.primary_entity_id;
+    const collapsedLifterId = typeof queueItem.primary_entity_id === 'number' ? queueItem.primary_entity_id : 0;
     const evidence = queueItem.evidence || {};
     const splitPlan = evidence.split_plan;
 
@@ -58,10 +58,14 @@ async function executeSplit(queueItem) {
         splitPlan.originalAthleteName || evidence.athlete_name || queueItem.title
     );
 
+    // Resolve donor / anchor lifter ID holding scorecards
+    let donorLifterId = evidence.anchor_lifter_id || (collapsedLifterId > 0 ? collapsedLifterId : null);
+
     console.log(`\n================================================================`);
     console.log(`⚙️  Executing Homonym Split for: "${originalAthleteName}"`);
     console.log(`   Queue ID:             ${queueId}`);
     console.log(`   Collapsed Lifter ID:  ${collapsedLifterId}`);
+    console.log(`   Anchor Lifter ID:     ${donorLifterId || 'Unresolved'}`);
     console.log(`   Distinct Persons:     ${splitPlan.splits.length}`);
     console.log(`   Approved By:          ${queueItem.resolved_by || 'Admin'}`);
     console.log(`   Mode:                 ${isDryRun ? 'DRY-RUN (Simulate Only)' : 'LIVE EXECUTION'}`);
@@ -74,13 +78,33 @@ async function executeSplit(queueItem) {
     for (let i = 0; i < splitPlan.splits.length; i++) {
         const person = splitPlan.splits[i];
         const memNum = person.membershipNumber ? String(person.membershipNumber).trim() : null;
-        let targetId = null;
+        let targetId = person.lifter_id || null;
 
         if (i === 0) {
-            // Person 1: Retain the collapsed lifter_id as canonical Person 1
-            targetId = collapsedLifterId;
+            // Person 1: If collapsedLifterId > 0, retain it as canonical Person 1
+            if (!targetId && collapsedLifterId > 0) {
+                targetId = collapsedLifterId;
+            }
 
-            if (memNum && !isDryRun) {
+            // Fallback: Check if usaw_lifters already has a record for Person 1
+            if (!targetId && memNum) {
+                const { data: lookup1 } = await supabase
+                    .from('usaw_lifters')
+                    .select('lifter_id')
+                    .eq('athlete_name', originalAthleteName)
+                    .eq('membership_number', memNum)
+                    .limit(1);
+
+                if (lookup1 && lookup1.length > 0) {
+                    targetId = lookup1[0].lifter_id;
+                }
+            }
+
+            if (!targetId && donorLifterId) {
+                targetId = donorLifterId;
+            }
+
+            if (targetId && memNum && !isDryRun) {
                 await supabase
                     .from('usaw_lifters')
                     .update({
@@ -90,10 +114,34 @@ async function executeSplit(queueItem) {
                     })
                     .eq('lifter_id', targetId);
             }
-            console.log(`  👤 Person 1 (Index 0): Retaining primary lifter_id ${targetId} (Member #: ${memNum || 'N/A'})`);
+
+            if (!targetId) {
+                if (isDryRun) {
+                    targetId = 'SIMULATED_NEW_LIFTER_P1';
+                } else {
+                    const { data: insertRes1, error: insertErr1 } = await supabase
+                        .from('usaw_lifters')
+                        .insert({
+                            athlete_name: originalAthleteName,
+                            membership_number: memNum,
+                            created_at: new Date().toISOString(),
+                            updated_at: new Date().toISOString()
+                        })
+                        .select('lifter_id')
+                        .single();
+
+                    if (insertErr1) throw new Error(`Failed to create lifter for Person 1: ${insertErr1.message}`);
+                    targetId = insertRes1.lifter_id;
+                }
+            }
+
+            if (!donorLifterId && typeof targetId === 'number') {
+                donorLifterId = targetId;
+            }
+            console.log(`  👤 Person 1 (Index 0): Resolved primary lifter_id ${targetId} (Member #: ${memNum || 'N/A'})`);
         } else {
             // Person 2..N: Check if an existing row matches this person, or insert a new one
-            if (memNum) {
+            if (!targetId && memNum) {
                 const { data: lookup } = await supabase
                     .from('usaw_lifters')
                     .select('lifter_id')
@@ -142,26 +190,38 @@ async function executeSplit(queueItem) {
         });
     }
 
-    // Step 2: Reassign confirmed competitions from splits[i].competitions
+    // Step 2: Reassign confirmed competitions from splits[i].competitions or splits[i].meets
     for (let i = 0; i < splitPlan.splits.length; i++) {
         const targetId = targetLifterIds[i];
-        const competitions = splitPlan.splits[i].competitions || [];
+        const rawMeets = splitPlan.splits[i].competitions || splitPlan.splits[i].meets || [];
+        const competitions = rawMeets.map(m => typeof m === 'object' && m ? m.meet_id : m).filter(Boolean);
 
         if (competitions.length > 0) {
+            if (targetId === donorLifterId) {
+                executionDetails[i].confirmed_meets_reassigned = competitions.length;
+                console.log(`  📦 Person ${i + 1} (lifter_id: ${targetId}): Retains ${competitions.length} confirmed meet results on anchor lifter.`);
+                continue;
+            }
+
             if (isDryRun) {
                 executionDetails[i].confirmed_meets_reassigned = competitions.length;
-                console.log(`  📦 Person ${i + 1} (lifter_id: ${targetId}): [DRY RUN] Would reassign ${competitions.length} confirmed meet results.`);
+                console.log(`  📦 Person ${i + 1} (lifter_id: ${targetId}): [DRY RUN] Would reassign ${competitions.length} confirmed meet results from donor ${donorLifterId || 'anchor'}.`);
             } else {
-                const { data: updated, error: updateErr } = await supabase
+                let updateQuery = supabase
                     .from('usaw_meet_results')
                     .update({
                         lifter_id: targetId,
                         updated_at: new Date().toISOString()
                     })
-                    .in('meet_id', competitions)
-                    .eq('lifter_id', collapsedLifterId)
-                    .select('result_id');
+                    .in('meet_id', competitions);
 
+                if (donorLifterId) {
+                    updateQuery = updateQuery.eq('lifter_id', donorLifterId);
+                } else {
+                    updateQuery = updateQuery.ilike('lifter_name', originalAthleteName);
+                }
+
+                const { data: updated, error: updateErr } = await updateQuery.select('result_id');
                 if (updateErr) throw new Error(`Failed to reassign confirmed meets for Person ${i + 1}: ${updateErr.message}`);
                 const count = updated ? updated.length : 0;
                 executionDetails[i].confirmed_meets_reassigned = count;
@@ -199,10 +259,21 @@ async function executeSplit(queueItem) {
             const meetId = card.meet_id;
             const meetDate = card.date || null;
 
+            if (targetId === donorLifterId) {
+                if (isDryRun) {
+                    console.log(`  🎯 [DRY RUN] Scorecard Meet ${meetId} assigned to anchor Person ${assignedSplitIndex + 1} (lifter_id: ${targetId}); no movement required.`);
+                } else {
+                    console.log(`  🎯 Scorecard Meet ${meetId} assigned to anchor Person ${assignedSplitIndex + 1} (lifter_id: ${targetId}); retained on anchor.`);
+                }
+                executionDetails[assignedSplitIndex].triaged_meets_reassigned += 1;
+                triagedTotalMoved += 1;
+                continue;
+            }
+
             if (isDryRun) {
                 executionDetails[assignedSplitIndex].triaged_meets_reassigned += 1;
                 triagedTotalMoved += 1;
-                console.log(`  🎯 [DRY RUN] Would reassign scorecard Meet ${meetId} (${meetDate || 'No Date'}) to Person ${assignedSplitIndex + 1} (lifter_id: ${targetId})`);
+                console.log(`  🎯 [DRY RUN] Would reassign scorecard Meet ${meetId} (${meetDate || 'No Date'}) to Person ${assignedSplitIndex + 1} (lifter_id: ${targetId}) from donor ${donorLifterId || 'anchor'}`);
             } else {
                 let query = supabase
                     .from('usaw_meet_results')
@@ -210,8 +281,13 @@ async function executeSplit(queueItem) {
                         lifter_id: targetId,
                         updated_at: new Date().toISOString()
                     })
-                    .eq('meet_id', meetId)
-                    .eq('lifter_id', collapsedLifterId);
+                    .eq('meet_id', meetId);
+
+                if (donorLifterId) {
+                    query = query.eq('lifter_id', donorLifterId);
+                } else {
+                    query = query.ilike('lifter_name', originalAthleteName);
+                }
 
                 if (meetDate) {
                     query = query.eq('date', meetDate);
@@ -228,12 +304,13 @@ async function executeSplit(queueItem) {
                 }
             }
         } else {
-            console.warn(`  ⚠️ Scorecard Meet ${card.meet_id} had no valid person assignment; left on collapsed lifter_id ${collapsedLifterId}.`);
+            console.warn(`  ⚠️ Scorecard Meet ${card.meet_id} had no valid person assignment; left on anchor lifter_id ${donorLifterId || collapsedLifterId}.`);
         }
     }
 
     // Step 4: Enqueue all affected lifter_ids into public.athlete_shard_queue
-    const uniqueLifterIds = Array.from(new Set(targetLifterIds)).filter(id => typeof id === 'number');
+    const allInvolvedIds = [...targetLifterIds, donorLifterId].filter(id => typeof id === 'number' && id > 0);
+    const uniqueLifterIds = Array.from(new Set(allInvolvedIds));
     if (!isDryRun && uniqueLifterIds.length > 0) {
         const queueRows = uniqueLifterIds.map(lid => ({
             federation: 'usaw',
@@ -256,6 +333,7 @@ async function executeSplit(queueItem) {
     const summaryPayload = {
         executed_at: new Date().toISOString(),
         collapsed_lifter_id: collapsedLifterId,
+        donor_lifter_id: donorLifterId,
         distinct_persons_count: splitPlan.splits.length,
         triaged_meets_reassigned: triagedTotalMoved,
         persons: executionDetails
