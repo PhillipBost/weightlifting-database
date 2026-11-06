@@ -4,6 +4,14 @@ All notable changes to the Weightlifting Database project will be documented in 
 
 ## [Added] - 2026-11-06 (Eastern Time)
 
+- **Tri-Category Member Collision Partitioning & Shard Data Hygiene Guards (`scripts/production/assembler.js`, `scripts/production/scan-usaw-name-changes.js`, `scripts/production/populate-admin-review-queue.js`)**:
+  - Implemented three-way partitioning of member collisions in `scan-usaw-name-changes.js` and `populate-admin-review-queue.js`:
+    1. `duplicate_profile`: Accounts sharing identical member numbers and names (e.g. Member #1076819) with `display_former_name: false`.
+    2. `data_hygiene_typo`: Email placeholders (e.g. Member #1088642), numeric strings, or minor clerical surname typos (e.g. Member #1084623, `Darius Castllo` vs `Castillo`) with `display_former_name: false`.
+    3. `name_change_merge`: Authentic surname amendments and aliases (e.g. Member #1030146, `Angelica Romero` → `Truett`) defaulting to `display_former_name: true`.
+  - Added shared hygiene and clerical typo detection (`isMinorClericalTypo`, `isDataDefectString`, `levenshteinDistance`, `isAdjacentTransposition`) across the pipeline.
+  - Guarded `historical_names` aggregation in `assembler.js` to skip defect strings and minor typos on historical scorecards so public profiles do not advertise scraper/data entry errors as former names.
+
 - **Historical Name Transition Timeline & Static Shard Delivery (`scripts/production/assembler.js`, `scripts/production/scan-usaw-name-changes.js`, `scripts/production/populate-admin-review-queue.js`)**:
   - Enhanced static shard compiler (`assembler.js`) to include `r.lifter_name` in `usaw_results_agg` and dynamically compute `historical_names: [{ name, start_year, end_year, first_seen, last_seen, meet_count }]` in root static athlete shards for all competitions where the scorecard name diverged from the canonical athlete name.
   - Enabled zero-database-overhead frontend rendering of historical name notices (e.g. *"Formerly competed as Angelica Romero (2017–2021)"*) directly from static gzip shards.

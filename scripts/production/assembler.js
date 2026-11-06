@@ -51,6 +51,74 @@ function mapCountryCodeToName(code) {
     return COUNTRY_MAP[code] || null;
 }
 
+function normalizeName(s) {
+    return (s || '').replace(/\s+/g, ' ').trim().toLowerCase();
+}
+
+function isDataDefectString(name) {
+    const s = (name || '').trim();
+    return s.includes('@') || /\d/.test(s);
+}
+
+function levenshteinDistance(s1, s2) {
+    const m = s1.length, n = s2.length;
+    const dp = Array.from({ length: m + 1 }, () => new Array(n + 1).fill(0));
+    for (let i = 0; i <= m; i++) dp[i][0] = i;
+    for (let j = 0; j <= n; j++) dp[0][j] = j;
+    for (let i = 1; i <= m; i++) {
+        for (let j = 1; j <= n; j++) {
+            if (s1[i - 1] === s2[j - 1]) {
+                dp[i][j] = dp[i - 1][j - 1];
+            } else {
+                dp[i][j] = 1 + Math.min(dp[i - 1][j], dp[i][j - 1], dp[i - 1][j - 1]);
+            }
+        }
+    }
+    return dp[m][n];
+}
+
+function isAdjacentTransposition(s1, s2) {
+    if (s1.length !== s2.length) return false;
+    const diffs = [];
+    for (let i = 0; i < s1.length; i++) {
+        if (s1[i] !== s2[i]) diffs.push(i);
+    }
+    return (
+        diffs.length === 2 &&
+        diffs[1] === diffs[0] + 1 &&
+        s1[diffs[0]] === s2[diffs[1]] &&
+        s1[diffs[1]] === s2[diffs[0]]
+    );
+}
+
+function isMinorClericalTypo(nameA, nameB) {
+    const cleanA = (nameA || '').trim().toLowerCase().replace(/[^a-z]/g, '');
+    const cleanB = (nameB || '').trim().toLowerCase().replace(/[^a-z]/g, '');
+    if (!cleanA || !cleanB) return false;
+    if (cleanA === cleanB) return true; // Punctuation/spacing difference only (e.g. O'Brien vs Obrien)
+
+    const tokensA = normalizeName(nameA).split(' ');
+    const tokensB = normalizeName(nameB).split(' ');
+    if (tokensA.length >= 2 && tokensB.length >= 2) {
+        const firstA = tokensA[0].replace(/[^a-z]/g, '');
+        const firstB = tokensB[0].replace(/[^a-z]/g, '');
+        const lastA = tokensA[tokensA.length - 1].replace(/[^a-z]/g, '');
+        const lastB = tokensB[tokensB.length - 1].replace(/[^a-z]/g, '');
+
+        if (
+            firstA === firstB &&
+            lastA.length > 0 &&
+            lastB.length > 0 &&
+            lastA[0] === lastB[0] &&
+            Math.max(lastA.length, lastB.length) >= 6 &&
+            (levenshteinDistance(lastA, lastB) === 1 || isAdjacentTransposition(lastA, lastB))
+        ) {
+            return true;
+        }
+    }
+    return false;
+}
+
 // ── Achievement Aggregator ──────────────────────────────────────────────────
 function aggregateAchievements(rankings) {
     const achievements = {
@@ -788,19 +856,20 @@ async function generateAthlete(params, externalClient = null) {
         const athleteName = row.usaw_athlete_name || row.iwf_athlete_name || row.owlcms_athlete_name;
 
         // Aggregate distinct historical names that diverge from the canonical athleteName
-        const canonicalLower = (athleteName || '').trim().toLowerCase();
+        const canonicalNorm = normalizeName(athleteName);
         const nameMap = new Map();
         for (const r of usawRes) {
             const rawName = (r.lifter_name || '').trim();
             if (!rawName) continue;
-            const lower = rawName.toLowerCase();
-            if (lower === canonicalLower) continue;
+            const norm = normalizeName(rawName);
+            if (norm === canonicalNorm) continue;
+            if (isDataDefectString(rawName) || isMinorClericalTypo(rawName, athleteName)) continue;
 
             const d = r.date ? new Date(r.date) : null;
             const year = (d && !isNaN(d.getTime())) ? d.getFullYear() : null;
 
-            if (!nameMap.has(lower)) {
-                nameMap.set(lower, {
+            if (!nameMap.has(norm)) {
+                nameMap.set(norm, {
                     name: rawName,
                     start_year: year,
                     end_year: year,
@@ -809,7 +878,7 @@ async function generateAthlete(params, externalClient = null) {
                     meet_count: 0
                 });
             }
-            const entry = nameMap.get(lower);
+            const entry = nameMap.get(norm);
             entry.meet_count++;
             if (r.date) {
                 if (!entry.first_seen || r.date < entry.first_seen) {

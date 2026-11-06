@@ -28,6 +28,74 @@ const supabase = createClient(
     process.env.SUPABASE_SECRET_KEY || process.env.SUPABASE_SERVICE_ROLE_KEY
 );
 
+function normalizeName(s) {
+    return (s || '').replace(/\s+/g, ' ').trim().toLowerCase();
+}
+
+function isDataDefectString(name) {
+    const s = (name || '').trim();
+    return s.includes('@') || /\d/.test(s);
+}
+
+function levenshteinDistance(s1, s2) {
+    const m = s1.length, n = s2.length;
+    const dp = Array.from({ length: m + 1 }, () => new Array(n + 1).fill(0));
+    for (let i = 0; i <= m; i++) dp[i][0] = i;
+    for (let j = 0; j <= n; j++) dp[0][j] = j;
+    for (let i = 1; i <= m; i++) {
+        for (let j = 1; j <= n; j++) {
+            if (s1[i - 1] === s2[j - 1]) {
+                dp[i][j] = dp[i - 1][j - 1];
+            } else {
+                dp[i][j] = 1 + Math.min(dp[i - 1][j], dp[i][j - 1], dp[i - 1][j - 1]);
+            }
+        }
+    }
+    return dp[m][n];
+}
+
+function isAdjacentTransposition(s1, s2) {
+    if (s1.length !== s2.length) return false;
+    const diffs = [];
+    for (let i = 0; i < s1.length; i++) {
+        if (s1[i] !== s2[i]) diffs.push(i);
+    }
+    return (
+        diffs.length === 2 &&
+        diffs[1] === diffs[0] + 1 &&
+        s1[diffs[0]] === s2[diffs[1]] &&
+        s1[diffs[1]] === s2[diffs[0]]
+    );
+}
+
+function isMinorClericalTypo(nameA, nameB) {
+    const cleanA = (nameA || '').trim().toLowerCase().replace(/[^a-z]/g, '');
+    const cleanB = (nameB || '').trim().toLowerCase().replace(/[^a-z]/g, '');
+    if (!cleanA || !cleanB) return false;
+    if (cleanA === cleanB) return true; // Punctuation/spacing difference only (e.g. O'Brien vs Obrien)
+
+    const tokensA = normalizeName(nameA).split(' ');
+    const tokensB = normalizeName(nameB).split(' ');
+    if (tokensA.length >= 2 && tokensB.length >= 2) {
+        const firstA = tokensA[0].replace(/[^a-z]/g, '');
+        const firstB = tokensB[0].replace(/[^a-z]/g, '');
+        const lastA = tokensA[tokensA.length - 1].replace(/[^a-z]/g, '');
+        const lastB = tokensB[tokensB.length - 1].replace(/[^a-z]/g, '');
+
+        if (
+            firstA === firstB &&
+            lastA.length > 0 &&
+            lastB.length > 0 &&
+            lastA[0] === lastB[0] &&
+            Math.max(lastA.length, lastB.length) >= 6 &&
+            (levenshteinDistance(lastA, lastB) === 1 || isAdjacentTransposition(lastA, lastB))
+        ) {
+            return true;
+        }
+    }
+    return false;
+}
+
 const BATCH_SIZE = 100;
 
 /**
@@ -280,11 +348,11 @@ async function ingestHomonymSplits() {
 }
 
 // ----------------------------------------------------------------------------
-// 2. INGEST NAME CHANGES & MARRIAGES (Shared membership, different names)
+// 2. INGEST MEMBER COLLISIONS (Duplicate Profiles, Data Hygiene, Name Changes)
 // ----------------------------------------------------------------------------
-async function ingestNameChanges() {
-    console.log('\n--- 2. Processing Name Changes & Marriage Mergers ---');
-    console.log('  Scanning usaw_lifters for shared membership numbers with divergent names...');
+async function ingestNameChanges(filterCategory = null) {
+    console.log('\n--- 2. Processing Member Collisions (Duplicate Profiles, Data Hygiene, Name Changes) ---');
+    console.log('  Scanning usaw_lifters for shared membership numbers...');
 
     let allLifters = [];
     let page = 0;
@@ -309,8 +377,7 @@ async function ingestNameChanges() {
 
     const conflictGroups = [];
     for (const [mem, group] of byMember.entries()) {
-        const uniqueNames = [...new Set(group.map(g => g.athlete_name.trim().toLowerCase()))];
-        if (uniqueNames.length > 1) {
+        if (group.length > 1) {
             conflictGroups.push({ mem, group });
         }
     }
@@ -352,25 +419,66 @@ async function ingestNameChanges() {
         }
     }
 
-    const records = [];
+    let records = [];
     for (const { mem, group } of conflictGroups) {
-        // Sort to have older/lower ID as primary, newer as candidate
         group.sort((a, b) => a.lifter_id - b.lifter_id);
         const primary = group[0];
-        const candidate = group[1];
+        const pNorm = normalizeName(primary.athlete_name);
+        const candidate = group.slice(1).find(g => normalizeName(g.athlete_name) !== pNorm) || group[1];
+        const cNorm = normalizeName(candidate.athlete_name);
 
         const pStat = lifterStats.get(primary.lifter_id) || {};
         const cStat = lifterStats.get(candidate.lifter_id) || {};
         const pEarlier = (pStat.minDate || '9999') <= (cStat.minDate || '9999');
-        const former = pEarlier ? primary : candidate;
-        const formerStat = pEarlier ? pStat : cStat;
-        const canonical = pEarlier ? candidate : primary;
-        const canonicalStat = pEarlier ? cStat : pStat;
+        let former = pEarlier ? primary : candidate;
+        let formerStat = pEarlier ? pStat : cStat;
+        let canonical = pEarlier ? candidate : primary;
+        let canonicalStat = pEarlier ? cStat : pStat;
+
+        let category;
+        let title;
+        let issueType;
+        let displayFormerName;
+        let note;
+
+        if (pNorm === cNorm) {
+            category = 'duplicate_profile';
+            title = `Duplicate Profile Records: ${canonical.athlete_name.trim()} (Member #${mem})`;
+            issueType = 'duplicate_profile';
+            displayFormerName = false;
+            note = 'Multiple distinct account rows exist for the same member number under identical names.';
+        } else if (
+            isDataDefectString(primary.athlete_name) ||
+            isDataDefectString(candidate.athlete_name) ||
+            isMinorClericalTypo(primary.athlete_name, candidate.athlete_name)
+        ) {
+            const pDefect = isDataDefectString(primary.athlete_name);
+            const cDefect = isDataDefectString(candidate.athlete_name);
+            if (pDefect && !cDefect) {
+                former = primary; formerStat = pStat;
+                canonical = candidate; canonicalStat = cStat;
+            } else if (cDefect && !pDefect) {
+                former = candidate; formerStat = cStat;
+                canonical = primary; canonicalStat = pStat;
+            }
+
+            category = 'data_hygiene_typo';
+            title = `Data Hygiene Correction: "${former.athlete_name.trim()}" → "${canonical.athlete_name.trim()}" (Member #${mem})`;
+            issueType = 'data_hygiene_typo';
+            displayFormerName = false;
+            note = 'Clerical misspelling, placeholder string, or data entry artifact in athlete name.';
+        } else {
+            category = 'name_change_merge';
+            title = `Name Change: "${former.athlete_name.trim()}" → "${canonical.athlete_name.trim()}" (Member #${mem})`;
+            issueType = 'name_change';
+            displayFormerName = true;
+            note = 'Athletes share identical USAW membership number with different recorded names (e.g. marriage or legal name amendment).';
+        }
 
         records.push({
-            category: 'name_change_merge',
+            category,
             status: 'PENDING',
-            title: `Name Change: "${primary.athlete_name}" ↔ "${candidate.athlete_name}" (Member #${mem})`,
+            title,
             primary_entity_type: 'usaw_lifters',
             primary_entity_id: primary.lifter_id,
             candidate_entity_type: 'usaw_lifters',
@@ -382,7 +490,9 @@ async function ingestNameChanges() {
                 candidate_name: candidate.athlete_name,
                 internal_ids: group.map(g => g.internal_id).filter(Boolean),
                 lifter_count: group.length,
-                note: 'Athletes share identical USAW membership number with different recorded names (e.g. marriage or spelling variation).',
+                issue_type: issueType,
+                display_former_name: displayFormerName,
+                note,
                 timeline: {
                     former_name: former.athlete_name,
                     former_start_year: formerStat.startYear || null,
@@ -396,9 +506,13 @@ async function ingestNameChanges() {
         });
     }
 
-    console.log(`  Found ${records.length} active name conflict groups.`);
+    if (filterCategory) {
+        records = records.filter(r => r.category === filterCategory);
+    }
+
+    console.log(`  Found ${records.length} review candidate items to stage.`);
     const count = await batchInsert(records);
-    console.log(`  ✅ Successfully staged ${count} name change review items.`);
+    console.log(`  ✅ Successfully staged ${count} review items.`);
 }
 
 // ----------------------------------------------------------------------------
@@ -453,8 +567,8 @@ async function main() {
     if (!targetCategory || targetCategory === 'homonym_split') {
         await ingestHomonymSplits();
     }
-    if (!targetCategory || targetCategory === 'name_change_merge') {
-        await ingestNameChanges();
+    if (!targetCategory || ['name_change_merge', 'duplicate_profile', 'data_hygiene_typo'].includes(targetCategory)) {
+        await ingestNameChanges(targetCategory);
     }
     if (!targetCategory || targetCategory === 'iwf_duplicate') {
         await ingestIwfDuplicates();
