@@ -307,34 +307,93 @@ async function ingestNameChanges() {
         byMember.get(l.membership_number).push(l);
     }
 
-    const records = [];
+    const conflictGroups = [];
     for (const [mem, group] of byMember.entries()) {
         const uniqueNames = [...new Set(group.map(g => g.athlete_name.trim().toLowerCase()))];
         if (uniqueNames.length > 1) {
-            // Sort to have older/lower ID as primary, newer as candidate
-            group.sort((a, b) => a.lifter_id - b.lifter_id);
-            const primary = group[0];
-            const candidate = group[1];
-
-            records.push({
-                category: 'name_change_merge',
-                status: 'PENDING',
-                title: `Name Change: "${primary.athlete_name}" ↔ "${candidate.athlete_name}" (Member #${mem})`,
-                primary_entity_type: 'usaw_lifters',
-                primary_entity_id: primary.lifter_id,
-                candidate_entity_type: 'usaw_lifters',
-                candidate_entity_id: candidate.lifter_id,
-                confidence_score: 95,
-                evidence: {
-                    membership_number: mem,
-                    primary_name: primary.athlete_name,
-                    candidate_name: candidate.athlete_name,
-                    internal_ids: group.map(g => g.internal_id).filter(Boolean),
-                    lifter_count: group.length,
-                    note: 'Athletes share identical USAW membership number with different recorded names (e.g. marriage or spelling variation).'
-                }
-            });
+            conflictGroups.push({ mem, group });
         }
+    }
+
+    // Fetch meet dates for conflict lifters to compute authentic chronological boundaries
+    const conflictLifterIds = [];
+    for (const item of conflictGroups) {
+        conflictLifterIds.push(...item.group.map(g => g.lifter_id));
+    }
+
+    const lifterStats = new Map();
+    const ID_CHUNK_SIZE = 500;
+    for (let i = 0; i < conflictLifterIds.length; i += ID_CHUNK_SIZE) {
+        const chunk = conflictLifterIds.slice(i, i + ID_CHUNK_SIZE);
+        const { data: meetDates, error: mErr } = await supabase
+            .from('usaw_meet_results')
+            .select('lifter_id, date')
+            .in('lifter_id', chunk)
+            .not('date', 'is', null);
+
+        if (!mErr && meetDates) {
+            for (const r of meetDates) {
+                const d = r.date ? new Date(r.date) : null;
+                const year = (d && !isNaN(d.getTime())) ? d.getFullYear() : null;
+                if (!lifterStats.has(r.lifter_id)) {
+                    lifterStats.set(r.lifter_id, {
+                        minDate: r.date,
+                        maxDate: r.date,
+                        startYear: year,
+                        endYear: year,
+                        count: 0
+                    });
+                }
+                const s = lifterStats.get(r.lifter_id);
+                s.count++;
+                if (r.date < s.minDate) { s.minDate = r.date; s.startYear = year; }
+                if (r.date > s.maxDate) { s.maxDate = r.date; s.endYear = year; }
+            }
+        }
+    }
+
+    const records = [];
+    for (const { mem, group } of conflictGroups) {
+        // Sort to have older/lower ID as primary, newer as candidate
+        group.sort((a, b) => a.lifter_id - b.lifter_id);
+        const primary = group[0];
+        const candidate = group[1];
+
+        const pStat = lifterStats.get(primary.lifter_id) || {};
+        const cStat = lifterStats.get(candidate.lifter_id) || {};
+        const pEarlier = (pStat.minDate || '9999') <= (cStat.minDate || '9999');
+        const former = pEarlier ? primary : candidate;
+        const formerStat = pEarlier ? pStat : cStat;
+        const canonical = pEarlier ? candidate : primary;
+        const canonicalStat = pEarlier ? cStat : pStat;
+
+        records.push({
+            category: 'name_change_merge',
+            status: 'PENDING',
+            title: `Name Change: "${primary.athlete_name}" ↔ "${candidate.athlete_name}" (Member #${mem})`,
+            primary_entity_type: 'usaw_lifters',
+            primary_entity_id: primary.lifter_id,
+            candidate_entity_type: 'usaw_lifters',
+            candidate_entity_id: candidate.lifter_id,
+            confidence_score: 95,
+            evidence: {
+                membership_number: mem,
+                primary_name: primary.athlete_name,
+                candidate_name: candidate.athlete_name,
+                internal_ids: group.map(g => g.internal_id).filter(Boolean),
+                lifter_count: group.length,
+                note: 'Athletes share identical USAW membership number with different recorded names (e.g. marriage or spelling variation).',
+                timeline: {
+                    former_name: former.athlete_name,
+                    former_start_year: formerStat.startYear || null,
+                    former_end_year: formerStat.endYear || null,
+                    canonical_name: canonical.athlete_name,
+                    canonical_start_year: canonicalStat.startYear || null,
+                    former_meet_count: formerStat.count || 0,
+                    canonical_meet_count: canonicalStat.count || 0
+                }
+            }
+        });
     }
 
     console.log(`  Found ${records.length} active name conflict groups.`);

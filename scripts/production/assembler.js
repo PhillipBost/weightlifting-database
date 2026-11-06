@@ -542,6 +542,7 @@ async function generateAthlete(params, externalClient = null) {
                         jsonb_build_object(
                             'id', r.result_id,
                             'meet_id', r.meet_id,
+                            'lifter_name', r.lifter_name,
                             'date', r.date,
                             'meet_name', r.meet_name,
                             'meets', jsonb_build_object('Level', m."Level"), -- FIXED: Quotes for USAW table
@@ -785,6 +786,44 @@ async function generateAthlete(params, externalClient = null) {
         ].filter(Boolean);
 
         const athleteName = row.usaw_athlete_name || row.iwf_athlete_name || row.owlcms_athlete_name;
+
+        // Aggregate distinct historical names that diverge from the canonical athleteName
+        const canonicalLower = (athleteName || '').trim().toLowerCase();
+        const nameMap = new Map();
+        for (const r of usawRes) {
+            const rawName = (r.lifter_name || '').trim();
+            if (!rawName) continue;
+            const lower = rawName.toLowerCase();
+            if (lower === canonicalLower) continue;
+
+            const d = r.date ? new Date(r.date) : null;
+            const year = (d && !isNaN(d.getTime())) ? d.getFullYear() : null;
+
+            if (!nameMap.has(lower)) {
+                nameMap.set(lower, {
+                    name: rawName,
+                    start_year: year,
+                    end_year: year,
+                    first_seen: r.date || null,
+                    last_seen: r.date || null,
+                    meet_count: 0
+                });
+            }
+            const entry = nameMap.get(lower);
+            entry.meet_count++;
+            if (r.date) {
+                if (!entry.first_seen || r.date < entry.first_seen) {
+                    entry.first_seen = r.date;
+                    entry.start_year = year;
+                }
+                if (!entry.last_seen || r.date > entry.last_seen) {
+                    entry.last_seen = r.date;
+                    entry.end_year = year;
+                }
+            }
+        }
+        const historicalNames = Array.from(nameMap.values());
+
         const countryCode = row.iwf_country_code || row.owlcms_country_code || 'USA';
         const countryName = row.iwf_country_name || mapCountryCodeToName(countryCode) || (countryCode === 'CAN' ? 'Canada' : 'United States');
 
@@ -802,6 +841,7 @@ async function generateAthlete(params, externalClient = null) {
             country_code: countryCode,
             country_name: countryName,
             gender: gender,
+            historical_names: historicalNames,
             external_links: externalLinks,
             usaw_results: row.usaw_results,
             iwf_results: row.iwf_results,

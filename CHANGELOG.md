@@ -2,6 +2,13 @@
 
 All notable changes to the Weightlifting Database project will be documented in this file.
 
+## [Added] - 2026-11-06 (Eastern Time)
+
+- **Historical Name Transition Timeline & Static Shard Delivery (`scripts/production/assembler.js`, `scripts/production/scan-usaw-name-changes.js`, `scripts/production/populate-admin-review-queue.js`)**:
+  - Enhanced static shard compiler (`assembler.js`) to include `r.lifter_name` in `usaw_results_agg` and dynamically compute `historical_names: [{ name, start_year, end_year, first_seen, last_seen, meet_count }]` in root static athlete shards for all competitions where the scorecard name diverged from the canonical athlete name.
+  - Enabled zero-database-overhead frontend rendering of historical name notices (e.g. *"Formerly competed as Angelica Romero (2017–2021)"*) directly from static gzip shards.
+  - Enriched name-change review queue staging in `scan-usaw-name-changes.js` and `populate-admin-review-queue.js` by querying `public.usaw_meet_results` for earliest and latest competition dates across candidate lifters and storing `evidence.timeline: { former_name, former_start_year, former_end_year, canonical_name, canonical_start_year, former_meet_count, canonical_meet_count }` for administrative comparison cards.
+
 ## [Fixed] - 2026-11-06 (Eastern Time)
 
 - **Comprehensive Sibling Profile Candidate Pool Resolution in Homonym Split Staging (`scripts/production/populate-admin-review-queue.js`)**:
