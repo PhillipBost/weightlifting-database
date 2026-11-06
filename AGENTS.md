@@ -56,5 +56,9 @@
    - Never execute Secure Shell (SSH), remote shell sessions, or direct terminal commands against the Hetzner production host (`46.62.223.85`).
    - All server health checks, disk management, and host maintenance are reserved exclusively for manual execution by the system owner.
    - Agent investigation and assistance for host operations must be strictly advisory (providing copy-paste commands or Coolify dashboard navigation instructions for the user to execute themselves).
+13. **Sequential Diagnostic & Operational Execution (Stop at Decision Forks)**:
+   - Never output multi-step instructions where subsequent steps depend on the outcome of an initial diagnostic or command.
+   - Work through host diagnostics, troubleshooting, and operational procedures strictly one step at a time.
+   - Whenever an anticipated decision fork exists, provide only the single step needed to reach that fork, stop, and await user feedback before prescribing the next action.
 
 

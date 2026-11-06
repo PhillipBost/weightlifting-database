@@ -20,6 +20,8 @@ const { createClient } = require('@supabase/supabase-js');
 const args = minimist(process.argv.slice(2));
 const isDryRun = args['dry-run'] === true;
 const targetCategory = args.category || null;
+const targetQueueId = args['queue-id'] || null;
+const targetAthleteName = args['athlete-name'] || null;
 
 const supabase = createClient(
     process.env.SUPABASE_URL,
@@ -27,6 +29,152 @@ const supabase = createClient(
 );
 
 const BATCH_SIZE = 100;
+
+/**
+ * Queries public.usaw_lifters across the entire table using ILIKE to resolve
+ * all existing sibling profiles without truncation.
+ */
+async function resolveHomonymCandidates(athleteName) {
+    const siblings = [];
+    let page = 0;
+    const PAGE_SIZE = 1000;
+
+    while (true) {
+        const { data, error } = await supabase
+            .from('usaw_lifters')
+            .select('lifter_id, athlete_name, membership_number, internal_id')
+            .ilike('athlete_name', athleteName.trim())
+            .range(page * PAGE_SIZE, (page + 1) * PAGE_SIZE - 1);
+
+        if (error) throw new Error(`Failed to query sibling profiles for "${athleteName}": ${error.message}`);
+        if (!data || data.length === 0) break;
+        siblings.push(...data);
+        if (data.length < PAGE_SIZE) break;
+        page++;
+    }
+    return siblings;
+}
+
+/**
+ * Reconciles candidate records in split_plan.splits with sibling lifter records from usaw_lifters,
+ * ensuring zero truncation of sibling profiles and moving identified scorecards out of unidentifiedCompetitions.
+ */
+function reconcileSplitPlanWithSiblings(athleteName, splitPlan, siblingLifters) {
+    if (!splitPlan) return splitPlan;
+    
+    // Normalize splits array
+    if (!Array.isArray(splitPlan.splits) && splitPlan.membershipGroups) {
+        splitPlan.splits = Object.entries(splitPlan.membershipGroups).map(([memNum, comps], idx) => ({
+            newAthleteName: `${athleteName} (Person ${idx + 1})`,
+            membershipNumber: memNum,
+            competitionCount: comps.length,
+            competitions: comps.map(c => c.meet_id || c)
+        }));
+    }
+
+    if (!Array.isArray(splitPlan.splits)) {
+        splitPlan.splits = [];
+    }
+
+    const matchedLifterIds = new Set();
+
+    // Attach lifter_id to existing candidate splits matching membershipNumber
+    for (const split of splitPlan.splits) {
+        const memStr = split.membershipNumber ? String(split.membershipNumber).trim() : null;
+        if (memStr) {
+            const sibling = siblingLifters.find(s => s.membership_number && String(s.membership_number).trim() === memStr);
+            if (sibling) {
+                split.lifter_id = sibling.lifter_id;
+                matchedLifterIds.add(sibling.lifter_id);
+            }
+        }
+    }
+
+    // Append omitted sibling profiles from usaw_lifters
+    for (const sibling of siblingLifters) {
+        if (!matchedLifterIds.has(sibling.lifter_id)) {
+            const memStr = sibling.membership_number ? String(sibling.membership_number).trim() : null;
+            splitPlan.splits.push({
+                newAthleteName: `${athleteName} (Person ${splitPlan.splits.length + 1})`,
+                membershipNumber: memStr,
+                lifter_id: sibling.lifter_id,
+                competitionCount: 0,
+                competitions: []
+            });
+            matchedLifterIds.add(sibling.lifter_id);
+        }
+    }
+
+    // Reconcile unidentifiedCompetitions against resolved candidate lifter_ids
+    if (Array.isArray(splitPlan.unidentifiedCompetitions) && splitPlan.unidentifiedCompetitions.length > 0) {
+        const remainingUnidentified = [];
+        for (const card of splitPlan.unidentifiedCompetitions) {
+            const cardLifterId = card.lifter_id || null;
+            const matchedSplit = splitPlan.splits.find(s => s.lifter_id && cardLifterId && s.lifter_id === cardLifterId);
+
+            if (matchedSplit) {
+                const meetId = card.meet_id || card;
+                if (!matchedSplit.competitions.includes(meetId)) {
+                    matchedSplit.competitions.push(meetId);
+                    matchedSplit.competitionCount = matchedSplit.competitions.length;
+                }
+            } else {
+                remainingUnidentified.push(card);
+            }
+        }
+        splitPlan.unidentifiedCompetitions = remainingUnidentified;
+    }
+
+    return splitPlan;
+}
+
+/**
+ * Targeted repair for a single review item in public.admin_review_queue
+ */
+async function repairTargetedHomonymItem(queueId, athleteName) {
+    console.log(`🔧 Running targeted repair for Queue ID: ${queueId || 'N/A'}, Athlete: "${athleteName || 'N/A'}"...`);
+    let query = supabase.from('admin_review_queue').select('*').eq('category', 'homonym_split');
+    if (queueId) query = query.eq('id', queueId);
+    if (athleteName) query = query.ilike('evidence->>athlete_name', athleteName);
+
+    const { data: items, error } = await query;
+    if (error) throw new Error(`Failed to fetch target queue item: ${error.message}`);
+    if (!items || items.length === 0) {
+        console.log('  ⚠️ No matching homonym_split item found.');
+        return;
+    }
+
+    for (const item of items) {
+        const name = item.evidence?.athlete_name || item.title.split('(')[0].trim();
+        const siblingLifters = await resolveHomonymCandidates(name);
+        console.log(`  Found ${siblingLifters.length} sibling profile(s) in usaw_lifters for "${name}".`);
+
+        const splitPlan = reconcileSplitPlanWithSiblings(name, item.evidence?.split_plan || {}, siblingLifters);
+        const updatedEvidence = {
+            ...item.evidence,
+            distinct_athletes: splitPlan.splits.length,
+            split_plan: splitPlan
+        };
+
+        if (isDryRun) {
+            console.log(`  [DRY RUN] Would update item ${item.id} with ${splitPlan.splits.length} candidates in split_plan.splits.`);
+            console.log(JSON.stringify(splitPlan, null, 2));
+        } else {
+            const { error: updErr } = await supabase
+                .from('admin_review_queue')
+                .update({
+                    title: `${name} (${splitPlan.splits.length} Distinct Athletes Collapsed)`,
+                    confidence_score: Math.min(60 + splitPlan.splits.length * 10, 100),
+                    evidence: updatedEvidence,
+                    updated_at: new Date().toISOString()
+                })
+                .eq('id', item.id);
+
+            if (updErr) throw new Error(`Failed to update review queue item ${item.id}: ${updErr.message}`);
+            console.log(`  ✅ Successfully updated review item ${item.id} with full candidate pool (${splitPlan.splits.length} candidates).`);
+        }
+    }
+}
 
 async function batchInsert(records) {
     if (records.length === 0) return 0;
@@ -53,6 +201,13 @@ async function batchInsert(records) {
 // ----------------------------------------------------------------------------
 async function ingestHomonymSplits() {
     console.log('\n--- 1. Processing Homonym Collisions (Contaminated Profiles) ---');
+
+    // If targeted repair mode is active for a specific queue item or athlete name
+    if (targetQueueId || targetAthleteName) {
+        await repairTargetedHomonymItem(targetQueueId, targetAthleteName);
+        return;
+    }
+
     const summaryPath = path.join(process.cwd(), 'analysis_output', 'summary_report.json');
     if (!fs.existsSync(summaryPath)) {
         console.warn('  ⚠️ summary_report.json not found in analysis_output/. Skipping.');
@@ -63,29 +218,11 @@ async function ingestHomonymSplits() {
     const requireSplit = (summary.splitDetails || []).filter(d => d.distinctAthletes > 1);
     console.log(`  Found ${requireSplit.length} homonym collision cases in summary report.`);
 
-    // Pre-fetch usaw_lifters map by athlete_name
-    console.log('  Fetching matching lifter_ids from usaw_lifters...');
-    const nameSet = new Set(requireSplit.map(s => s.athleteName.toLowerCase().trim()));
-    
-    // Query in chunks
-    const namesArray = Array.from(nameSet);
-    const lifterMap = new Map();
-    for (let i = 0; i < namesArray.length; i += 200) {
-        const chunk = namesArray.slice(i, i + 200);
-        const { data: lifters } = await supabase
-            .from('usaw_lifters')
-            .select('lifter_id, athlete_name, membership_number, internal_id')
-            .in('athlete_name', chunk);
-        for (const l of lifters || []) {
-            const key = l.athlete_name.toLowerCase().trim();
-            if (!lifterMap.has(key)) lifterMap.set(key, l.lifter_id);
-        }
-    }
-
     const records = [];
     for (const item of requireSplit) {
         const cleanName = item.athleteName.trim();
-        const lifterId = lifterMap.get(cleanName.toLowerCase()) || 0;
+        const siblingLifters = await resolveHomonymCandidates(cleanName);
+        const lifterId = siblingLifters.length > 0 ? siblingLifters[0].lifter_id : 0;
 
         // Try to load detailed split plan file if present
         let splitDetail = null;
@@ -101,18 +238,37 @@ async function ingestHomonymSplits() {
             } catch (e) {}
         }
 
+        if (splitDetail) {
+            splitDetail = reconcileSplitPlanWithSiblings(cleanName, splitDetail, siblingLifters);
+        } else if (siblingLifters.length > 1) {
+            splitDetail = {
+                action: 'SPLIT_REQUIRED',
+                originalAthleteName: cleanName,
+                splits: siblingLifters.map((sibling, idx) => ({
+                    newAthleteName: `${cleanName} (Person ${idx + 1})`,
+                    membershipNumber: sibling.membership_number ? String(sibling.membership_number).trim() : null,
+                    lifter_id: sibling.lifter_id,
+                    competitionCount: 0,
+                    competitions: []
+                })),
+                unidentifiedCompetitions: []
+            };
+        }
+
+        const distinctCount = splitDetail?.splits?.length || item.distinctAthletes;
+
         records.push({
             category: 'homonym_split',
             status: 'PENDING',
-            title: `${cleanName} (${item.distinctAthletes} Distinct Athletes Collapsed)`,
+            title: `${cleanName} (${distinctCount} Distinct Athletes Collapsed)`,
             primary_entity_type: 'usaw_lifters',
             primary_entity_id: lifterId,
             candidate_entity_type: null,
             candidate_entity_id: null,
-            confidence_score: Math.min(60 + item.distinctAthletes * 10, 100),
+            confidence_score: Math.min(60 + distinctCount * 10, 100),
             evidence: {
                 athlete_name: cleanName,
-                distinct_athletes: item.distinctAthletes,
+                distinct_athletes: distinctCount,
                 total_competitions: item.totalCompetitions,
                 split_plan: splitDetail
             }

@@ -2,7 +2,20 @@
 
 All notable changes to the Weightlifting Database project will be documented in this file.
 
+## [Fixed] - 2026-11-06 (Eastern Time)
+
+- **Comprehensive Sibling Profile Candidate Pool Resolution in Homonym Split Staging (`scripts/production/populate-admin-review-queue.js`)**:
+  - Implemented `resolveHomonymCandidates(athleteName)` to query `public.usaw_lifters` by `athlete_name ILIKE ...` with self-draining `.range()` pagination across the entire table, eliminating candidate undercounting and result truncation.
+  - Added `reconcileSplitPlanWithSiblings()` to synchronize discovered sibling profiles into `evidence.split_plan.splits`, attaching their existing Primary Key (PK) `lifter_id` values and ensuring previously omitted sibling records (e.g. `lifter_id: 4082`, Member #197954) are fully represented as candidate splits.
+  - Reconciled `unidentifiedCompetitions` against candidate `lifter_id`s, automatically reassigning confirmed scorecards (e.g. Meets #224 and #435) to their corresponding candidate splits and purging them from the unidentified pool.
+  - Added targeted review item repair capabilities via Command Line Interface (CLI) flags (`--queue-id` and `--athlete-name`).
+
 ## [Fixed] - 2026-11-05 (Eastern Time)
+
+- **PostgreSQL Port `5432` External Firewall Hardening on Hetzner Host (`46.62.223.85`)**:
+  - Remediated public internet exposure of `supabase-db-zoss8scsow00wsssgkck0g88` (`0.0.0.0:5432` and `[::]:5432`) reported by the German Federal Office for Information Security (*Bundesamt für Sicherheit in der Informationstechnik*, BSI) / Computer Emergency Response Team for Federal Agencies (CERT-Bund) scan from `2026-11-03 09:05:09 AM Eastern Standard Time (EST)`.
+  - Inserted persistent `DROP` rules in `DOCKER-USER` and `INPUT` chains across `iptables` (Internet Protocol version 4 (IPv4)) and `ip6tables` (Internet Protocol version 6 (IPv6)) via `netfilter-persistent` (`/etc/iptables/rules.v4` and `/etc/iptables/rules.v6`) restricted strictly to inbound packets on the external Wide Area Network (WAN) interface (`-i eth0 -p tcp --dport 5432 -j DROP`).
+  - Preserved uninterrupted internal Docker bridge connectivity (`10.0.1.9 -> 46.62.223.85:5432`) for the containerized Open Weightlifting Competition Management System (OWLCMS) event and static shard daemon (`scripts/production/owlcms-event-daemon.js`).
 
 - **Graceful Handling of Multi-Entity Clusters & Unresolved Collapsed Lifter Identifiers in Homonym Split Engine (`scripts/production/execute-approved-homonym-splits.js`)**:
   - Added resolution for donor/anchor lifters (`evidence.anchor_lifter_id`) when `primary_entity_id <= 0` or when scorecards were historically accumulated under a pre-existing member record (e.g. Person 1 in a scorecard partition).
