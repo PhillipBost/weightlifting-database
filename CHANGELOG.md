@@ -4,6 +4,10 @@ All notable changes to the Weightlifting Database project will be documented in 
 
 ## [Added] - 2026-11-06 (Eastern Time)
 
+- **Unified Shard Daemon & PostgreSQL Outbox Listener (`scripts/production/listener.js`)**:
+  - Embedded real-time PostgreSQL `LISTEN athlete_shard_event` notification listener and atomic `public.athlete_shard_queue` outbox drainer directly into `listener.js`.
+  - Enabled instantaneous, automatic static shard compilation on disk upon any database `INSERT`, `UPDATE`, or `DELETE` across athletes, scorecards, rankings, and aliases with 1500ms debouncing, while preserving the Transmission Control Protocol (TCP) Port 8889 Hypertext Transfer Protocol (HTTP) webhook endpoint.
+
 - **Tri-Category Member Collision Partitioning & Shard Data Hygiene Guards (`scripts/production/assembler.js`, `scripts/production/scan-usaw-name-changes.js`, `scripts/production/populate-admin-review-queue.js`)**:
   - Implemented three-way partitioning of member collisions in `scan-usaw-name-changes.js` and `populate-admin-review-queue.js`:
     1. `duplicate_profile`: Accounts sharing identical member numbers and names (e.g. Member #1076819) with `display_former_name: false`.
