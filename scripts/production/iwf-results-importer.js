@@ -465,9 +465,15 @@ async function importMeetResults(mensWeightClasses, womensWeightClasses, meetId,
         : [];
 
     if (options.athleteName) {
-        const target = options.athleteName.trim().toLowerCase();
-        mensAthletes = mensAthletes.filter(a => (a.name || '').trim().toLowerCase().includes(target));
-        womensAthletes = womensAthletes.filter(a => (a.name || '').trim().toLowerCase().includes(target));
+        const targetTokens = options.athleteName.trim().toLowerCase().split(/\s+/).filter(Boolean);
+        const matchesAthlete = (a) => {
+            const rawName = (a.name || '').toLowerCase();
+            const normalized = (lifterManager.normalizeName ? lifterManager.normalizeName(a.name || '') : '').toLowerCase();
+            return targetTokens.every(tok => rawName.includes(tok)) ||
+                   (normalized && targetTokens.every(tok => normalized.includes(tok)));
+        };
+        mensAthletes = mensAthletes.filter(matchesAthlete);
+        womensAthletes = womensAthletes.filter(matchesAthlete);
         console.log(`\n🎯 TARGETED ATHLETE FILTER ("${options.athleteName}"): ${mensAthletes.length} men's, ${womensAthletes.length} women's entries matched`);
     }
 
