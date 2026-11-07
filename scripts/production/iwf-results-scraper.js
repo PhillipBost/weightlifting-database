@@ -152,6 +152,23 @@ async function clickMensTab() {
     }
 
     log('Failed to find men\'s tab with any selector pattern', 'WARN');
+
+    // Diagnostic: find all available clickable filter elements or tabs on the page
+    try {
+        const availableFilters = await page.evaluate(() => {
+            const elements = Array.from(document.querySelectorAll('[data-target], .single__event__filter, [class*="filter"], [class*="tab"], h2, h3, button'));
+            return elements.slice(0, 15).map(el => ({
+                tag: el.tagName,
+                class: el.className,
+                target: el.getAttribute('data-target'),
+                text: el.innerText ? el.innerText.trim().slice(0, 40) : ''
+            }));
+        });
+        log(`Diagnostic - Available clickable candidates (${availableFilters.length}): ${JSON.stringify(availableFilters)}`, 'WARN');
+    } catch (diagErr) {
+        log(`Diagnostic error: ${diagErr.message}`, 'DEBUG');
+    }
+
     return false;
 }
 
@@ -711,10 +728,24 @@ async function scrapeEventResults(eventId, year = null, eventDate = null, endpoi
             log('✗ Failed to click men\'s tab', 'WARN');
         }
 
-        // Take screenshot for debugging (optional)
+        // Take screenshot and HTML snapshot for debugging
         const screenshotPath = path.join(config.LOGGING.OUTPUT_DIR, `event_${eventId}_mens_screenshot.png`);
         await page.screenshot({ path: screenshotPath });
         log(`Screenshot saved: ${screenshotPath}`);
+
+        if (!mensTabSuccess) {
+            const pageTitle = await page.title().catch(() => 'Unknown');
+            const bodySnippet = await page.evaluate(() => document.body?.innerText?.slice(0, 300) || '').catch(() => '');
+            log(`Page Title on tab failure: "${pageTitle}"`, 'WARN');
+            log(`Page text snippet: "${bodySnippet.replace(/\s+/g, ' ')}"`, 'WARN');
+
+            const htmlDumpPath = path.join(config.LOGGING.OUTPUT_DIR, `event_${eventId}_page.html`);
+            const html = await page.content().catch(() => '');
+            if (html) {
+                fs.writeFileSync(htmlDumpPath, html);
+                log(`HTML snapshot saved: ${htmlDumpPath}`);
+            }
+        }
 
         // Click women's tab (for future Steps 6-8)
         log('\n--- WOMEN\'S RESULTS ---');

@@ -4,6 +4,10 @@ All notable changes to the Weightlifting Database project will be documented in 
 
 ## [Fixed] - 2026-11-07 (Eastern Time)
 
+- **Scraper Tab Diagnostics & Output Artifact Upload (`scripts/production/iwf-results-scraper.js`, `.github/workflows/iwf-daily-results-pipeline.yml`)**:
+  - Enhanced `clickMensTab()` in `iwf-results-scraper.js` to log all discovered clickable DOM candidate elements, page title, and body text snippets upon selector failure, and saved full HTML page snapshots to `output/event_${eventId}_page.html`.
+  - Added `output/` to the failure artifact upload in `.github/workflows/iwf-daily-results-pipeline.yml` to preserve diagnostic screenshots and HTML snapshots across runs.
+
 - **Administrative Repair Protection, Scraper Failure Propagation & Clean Navigation (`scripts/production/iwf-database-importer.js`, `scripts/production/iwf-results-scraper.js`, `scripts/production/iwf-results-importer.js`, `scripts/production/assembler.js`, `scripts/production/populate-admin-review-queue.js`)**:
   - Propagated execution exit codes in `iwf-database-importer.js` so failed scrapes and event imports throw errors and exit with code `1`, preventing GitHub Actions runs from masking failures as successful completions.
   - Replaced custom HTTP cache-busting headers (`page.setExtraHTTPHeaders`) with Puppeteer native `page.setCacheEnabled(false)` in `iwf-results-scraper.js` to eliminate Cross-Origin Resource Sharing (CORS) header rejections on third-party security verification scripts while logging page titles upon navigation.

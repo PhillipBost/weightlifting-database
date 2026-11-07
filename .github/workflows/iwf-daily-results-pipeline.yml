@@ -116,6 +116,7 @@ jobs:
           path: |
             logs/
             errors/
+            output/
           retention-days: 30
 
       - name: Upload summary
