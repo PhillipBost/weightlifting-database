@@ -309,23 +309,29 @@ const LOGGING = {
 // ============================================================================
 
 const BROWSER = {
-    // Launch options
-    headless: true,
+    // Launch options: Under xvfb on Linux CI, run as full GUI window (headless: false); otherwise headless
+    headless: process.env.IWF_HEADLESS !== undefined
+        ? process.env.IWF_HEADLESS === 'true'
+        : (process.env.CI && process.platform === 'linux' ? false : true),
 
-    // Browser arguments (matches existing scrapers)
+    // Browser arguments (stealth configuration avoiding automation fingerprint flags)
     args: [
         '--no-sandbox',
         '--disable-setuid-sandbox',
-        '--disable-dev-shm-usage'
+        '--disable-dev-shm-usage',
+        '--disable-blink-features=AutomationControlled',
+        '--disable-features=IsolateOrigins,site-per-process',
+        '--window-size=1920,1080',
+        '--start-maximized'
     ],
 
-    // User agent
-    userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
+    // User agent matching modern desktop Chrome
+    userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
 
-    // Viewport
+    // Viewport matching standard full HD desktop
     viewport: {
-        width: 1280,
-        height: 800
+        width: 1920,
+        height: 1080
     },
 };
 

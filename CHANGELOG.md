@@ -4,6 +4,12 @@ All notable changes to the Weightlifting Database project will be documented in 
 
 ## [Fixed] - 2026-11-07 (Eastern Time)
 
+- **Headless Stealth Browser Configuration, Total Lift Parsing & Virtual Display Execution (`scripts/production/iwf-config.js`, `scripts/production/iwf-results-scraper.js`, `.github/workflows/iwf-daily-results-pipeline.yml`)**:
+  - Configured Puppeteer launch arguments in `iwf-config.js` with `--disable-blink-features=AutomationControlled`, `--disable-features=IsolateOrigins,site-per-process`, and 1080p desktop viewport dimensions.
+  - Injected `evaluateOnNewDocument()` overrides in `iwf-results-scraper.js` to suppress `navigator.webdriver` and mock standard `window.chrome`, `navigator.plugins`, and `navigator.languages` to evade automated bot detection heuristics.
+  - Added X Virtual Framebuffer (Xvfb) execution (`xvfb-run --auto-servernum`) to `.github/workflows/iwf-daily-results-pipeline.yml` so Chromium runs as a full Graphical User Interface (GUI) desktop browser on Ubuntu runners.
+  - Fixed `parseAttemptHTML()` in `iwf-results-scraper.js` to recognize the `'total'` lift section, extracting official competition ranks and totals while preventing Total cards from overwriting Clean & Jerk attempt fields.
+
 - **Scraper Tab Diagnostics & Output Artifact Upload (`scripts/production/iwf-results-scraper.js`, `.github/workflows/iwf-daily-results-pipeline.yml`)**:
   - Enhanced `clickMensTab()` in `iwf-results-scraper.js` to log all discovered clickable DOM candidate elements, page title, and body text snippets upon selector failure, and saved full HTML page snapshots to `output/event_${eventId}_page.html`.
   - Added `output/` to the failure artifact upload in `.github/workflows/iwf-daily-results-pipeline.yml` to preserve diagnostic screenshots and HTML snapshots across runs.

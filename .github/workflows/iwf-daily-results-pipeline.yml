@@ -65,7 +65,7 @@ jobs:
             YEAR=$(date +%Y)
           fi
           echo "Discovering events for year $YEAR..."
-          node scripts/production/iwf-event-discovery.js --year $YEAR 2>&1 | tee logs/iwf-event-discovery.log
+          xvfb-run --auto-servernum node scripts/production/iwf-event-discovery.js --year $YEAR 2>&1 | tee logs/iwf-event-discovery.log
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
@@ -88,10 +88,10 @@ jobs:
               CMD_ARGS+=("--athlete-name" "${{ github.event.inputs.athlete_name }}")
             fi
             echo "Running targeted event importer for Event ID $EVENT_ID..."
-            node scripts/production/iwf-database-importer.js "${CMD_ARGS[@]}" 2>&1 | tee logs/iwf-scraper.log
+            xvfb-run --auto-servernum node scripts/production/iwf-database-importer.js "${CMD_ARGS[@]}" 2>&1 | tee logs/iwf-scraper.log
           else
             echo "Running orchestrator for year $YEAR..."
-            node scripts/production/iwf-main.js --year $YEAR 2>&1 | tee logs/iwf-scraper.log
+            xvfb-run --auto-servernum node scripts/production/iwf-main.js --year $YEAR 2>&1 | tee logs/iwf-scraper.log
           fi
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}

@@ -105,6 +105,29 @@ async function initBrowser() {
     });
 
     page = await browser.newPage();
+
+    // Prevent detection of automated browser (suppress navigator.webdriver and mock standard browser artifacts)
+    await page.evaluateOnNewDocument(() => {
+        Object.defineProperty(navigator, 'webdriver', {
+            get: () => false,
+        });
+
+        window.chrome = {
+            runtime: {},
+            loadTimes: function() {},
+            csi: function() {},
+            app: {}
+        };
+
+        Object.defineProperty(navigator, 'plugins', {
+            get: () => [1, 2, 3, 4, 5],
+        });
+
+        Object.defineProperty(navigator, 'languages', {
+            get: () => ['en-US', 'en'],
+        });
+    });
+
     await page.setUserAgent(config.BROWSER.userAgent);
     await page.setViewport(config.BROWSER.viewport);
 
@@ -416,6 +439,9 @@ function parseAttemptHTML(htmlContent, gender) {
                 } else if (liftText.includes('clean') || liftText.includes('jerk')) {
                     currentLiftType = 'cj';
                     log(`    Lift type: Clean & Jerk`, 'DEBUG');
+                } else if (liftText.includes('total')) {
+                    currentLiftType = 'total';
+                    log(`    Lift type: Total`, 'DEBUG');
                 }
             }
 
@@ -538,41 +564,58 @@ function parseAttemptHTML(htmlContent, gender) {
                         athleteMap.set(athleteKey, athlete);
                     }
 
-                    // Extract attempts (in the col-md-3 section)
-                    const attemptCols = $card.find('.col-md-3 .col-3.not__cell__767');
-                    attemptCols.each((attemptIndex, attemptCol) => {
-                        if (attemptIndex >= 3) return; // Only first 3 are attempts, 4th is total
+                    // Extract attempts (in the col-md-3 section) for Snatch and Clean & Jerk
+                    if (currentLiftType === 'snatch' || currentLiftType === 'cj') {
+                        const attemptCols = $card.find('.col-md-3 .col-3.not__cell__767');
+                        attemptCols.each((attemptIndex, attemptCol) => {
+                            if (attemptIndex >= 3) return; // Only first 3 are attempts, 4th is total
 
-                        const $attemptCol = $(attemptCol);
-                        const strongText = $attemptCol.find('strong').text().trim();
+                            const $attemptCol = $(attemptCol);
+                            const strongText = $attemptCol.find('strong').text().trim();
 
-                        let attemptValue = 0;
-                        if (strongText && strongText !== '---') {
-                            const hasStrike = $attemptCol.find('strike').length > 0;
-                            const numericValue = parseFloat(strongText.replace(/[^\d.-]/g, ''));
-                            if (!isNaN(numericValue)) {
-                                attemptValue = hasStrike ? -numericValue : numericValue;
+                            let attemptValue = 0;
+                            if (strongText && strongText !== '---') {
+                                const hasStrike = $attemptCol.find('strike').length > 0;
+                                const numericValue = parseFloat(strongText.replace(/[^\d.-]/g, ''));
+                                if (!isNaN(numericValue)) {
+                                    attemptValue = hasStrike ? -numericValue : numericValue;
+                                }
+                            }
+
+                            // Set the appropriate field
+                            const fieldPrefix = currentLiftType === 'snatch' ? 'snatch' : 'cj';
+                            const fieldName = `${fieldPrefix}_${attemptIndex + 1}`;
+                            athlete[fieldName] = attemptValue;
+                        });
+
+                        // Extract best/total from 4th column
+                        const totalCol = $card.find('.col-md-3 .col-3.not__cell__767').eq(3);
+                        if (totalCol.length > 0) {
+                            const totalText = totalCol.find('strong').text().trim();
+                            // Remove "Total:" prefix and any non-numeric characters except dash and decimal point
+                            const numericText = totalText.replace(/^Total:\s*/, '').replace(/[^\d.-]/g, '');
+                            const totalValue = parseFloat(numericText) || null;
+
+                            if (currentLiftType === 'snatch') {
+                                athlete.best_snatch = totalValue;
+                            } else if (currentLiftType === 'cj') {
+                                athlete.best_cj = totalValue;
                             }
                         }
+                    }
 
-                        // Set the appropriate field
-                        const fieldPrefix = currentLiftType === 'snatch' ? 'snatch' : 'cj';
-                        const fieldName = `${fieldPrefix}_${attemptIndex + 1}`;
-                        athlete[fieldName] = attemptValue;
-                    });
+                    // Extract official overall rank and competition total from Total cards
+                    if (currentLiftType === 'total') {
+                        athlete.rank = rank;
 
-                    // Extract best/total from 4th column
-                    const totalCol = $card.find('.col-md-3 .col-3.not__cell__767').eq(3);
-                    if (totalCol.length > 0) {
-                        const totalText = totalCol.find('strong').text().trim();
-                        // Remove "Total:" prefix and any non-numeric characters except dash and decimal point
-                        const numericText = totalText.replace(/^Total:\s*/, '').replace(/[^\d.-]/g, '');
-                        const totalValue = parseFloat(numericText) || null;
-
-                        if (currentLiftType === 'snatch') {
-                            athlete.best_snatch = totalValue;
-                        } else if (currentLiftType === 'cj') {
-                            athlete.best_cj = totalValue;
+                        const totalCol = $card.find('.col-md-3 .col-3.not__cell__767').last();
+                        if (totalCol.length > 0) {
+                            const totalText = totalCol.find('strong').text().trim();
+                            const numericText = totalText.replace(/^Total:\s*/, '').replace(/[^\d.-]/g, '');
+                            const totalValue = parseFloat(numericText) || null;
+                            if (totalValue !== null) {
+                                athlete.total = totalValue;
+                            }
                         }
                     }
                 });
@@ -585,10 +628,10 @@ function parseAttemptHTML(htmlContent, gender) {
             weightClasses.push(currentWeightClass);
         }
 
-        // Calculate totals for each athlete
+        // Calculate totals for each athlete if not already set from total cards
         weightClasses.forEach(wc => {
             wc.athletes.forEach(athlete => {
-                if (athlete.best_snatch && athlete.best_cj) {
+                if (!athlete.total && athlete.best_snatch && athlete.best_cj) {
                     athlete.total = athlete.best_snatch + athlete.best_cj;
                 }
             });
