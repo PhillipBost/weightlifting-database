@@ -2,6 +2,14 @@
 
 All notable changes to the Weightlifting Database project will be documented in this file.
 
+## [Fixed] - 2026-11-07 (Eastern Time)
+
+- **Multi-Category Same-Meet Result Preservation & Targeted Workflow Dispatch (`scripts/production/iwf-results-importer.js`, `scripts/production/iwf-database-importer.js`, `scripts/production/iwf-results-scraper.js`, `.github/workflows/iwf-daily-results-pipeline.yml`)**:
+  - Fixed conflict detection in `insertResultRecord()` by including `weight_class` in composite key matching, ensuring athletes officially competing across multiple weight classes in the same meet (e.g., Robert Hawkins in 77 kg and 85 kg at the 2000 Junior World Championships, Event #154) are preserved as distinct scorecards rather than overwriting existing records.
+  - Added `--athlete-name` filtering and preserved existing meet metadata fallbacks in `iwf-database-importer.js` and `iwf-results-importer.js`.
+  - Added fallback resolution for local Google Chrome binaries in `iwf-results-scraper.js`.
+  - Enhanced GitHub Actions workflow `iwf-daily-results-pipeline.yml` with `workflow_dispatch` inputs for `event_id`, `force`, and `athlete_name` to allow targeted competition and athlete re-scraping directly from GitHub Actions.
+
 ## [Added] - 2026-11-06 (Eastern Time)
 
 - **Unified Shard Daemon & PostgreSQL Outbox Listener (`scripts/production/listener.js`)**:
