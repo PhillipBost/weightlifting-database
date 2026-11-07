@@ -12,6 +12,19 @@ on:
         description: 'Year to scrape (default: current year)'
         required: false
         type: string
+      event_id:
+        description: 'Specific IWF Event ID (optional, e.g., 154)'
+        required: false
+        type: string
+      force:
+        description: 'Force re-import existing meet results'
+        required: false
+        type: boolean
+        default: false
+      athlete_name:
+        description: 'Filter to specific athlete name (optional, e.g., Robert HAWKINS)'
+        required: false
+        type: string
 
 # CRITICAL: Prevent parallel workflow runs
 concurrency:
@@ -44,6 +57,7 @@ jobs:
           mkdir -p output logs errors
 
       - name: Discover IWF events
+        if: ${{ !github.event.inputs.event_id }}
         run: |
           set -o pipefail
           YEAR=${{ github.event.inputs.year || 'current' }}
@@ -63,8 +77,22 @@ jobs:
           if [ "$YEAR" = "current" ]; then
             YEAR=$(date +%Y)
           fi
-          echo "Running orchestrator for year $YEAR..."
-          node scripts/production/iwf-main.js --year $YEAR 2>&1 | tee logs/iwf-scraper.log
+
+          EVENT_ID="${{ github.event.inputs.event_id }}"
+          if [ -n "$EVENT_ID" ]; then
+            EXTRA_ARGS=""
+            if [ "${{ github.event.inputs.force }}" = "true" ]; then
+              EXTRA_ARGS="$EXTRA_ARGS --force"
+            fi
+            if [ -n "${{ github.event.inputs.athlete_name }}" ]; then
+              EXTRA_ARGS="$EXTRA_ARGS --athlete-name \"${{ github.event.inputs.athlete_name }}\""
+            fi
+            echo "Running targeted event importer for Event ID $EVENT_ID..."
+            node scripts/production/iwf-database-importer.js --event-id $EVENT_ID --year $YEAR $EXTRA_ARGS 2>&1 | tee logs/iwf-scraper.log
+          else
+            echo "Running orchestrator for year $YEAR..."
+            node scripts/production/iwf-main.js --year $YEAR 2>&1 | tee logs/iwf-scraper.log
+          fi
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}

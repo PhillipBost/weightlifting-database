@@ -94,8 +94,13 @@ let page = null;
 async function initBrowser() {
     log('Initializing Puppeteer browser...');
 
+    const defaultWindowsChrome = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe';
+    const executablePath = process.env.PUPPETEER_EXECUTABLE_PATH ||
+        (fs.existsSync(defaultWindowsChrome) ? defaultWindowsChrome : undefined);
+
     browser = await puppeteer.launch({
         headless: config.BROWSER.headless,
+        executablePath,
         args: config.BROWSER.args
     });
 

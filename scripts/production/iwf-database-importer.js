@@ -162,14 +162,25 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
         let meetMetadata = meetManager.extractMeetMetadata(eventId, year);
 
         if (!meetMetadata) {
-            console.log(`⚠️  No event discovery data found, will use minimal metadata`);
-            meetMetadata = {
-                event_id: eventId,
-                Meet: `Event ${eventId}`,
-                Level: 'International',
-                Date: eventDate,
-                URL: config.buildEventDetailURL(eventId, year, eventDate)
-            };
+            if (existingMeet) {
+                console.log(`✓ Using existing database metadata for meet: ${existingMeet.meet}`);
+                meetMetadata = {
+                    event_id: eventId,
+                    Meet: existingMeet.meet,
+                    Level: existingMeet.level || 'International',
+                    Date: existingMeet.date || eventDate,
+                    URL: existingMeet.url || config.buildEventDetailURL(eventId, year, eventDate)
+                };
+            } else {
+                console.log(`⚠️  No event discovery data found, will use minimal metadata`);
+                meetMetadata = {
+                    event_id: eventId,
+                    Meet: `Event ${eventId}`,
+                    Level: 'International',
+                    Date: eventDate,
+                    URL: config.buildEventDetailURL(eventId, year, eventDate)
+                };
+            }
         }
 
         // Step 3: Scrape event results
@@ -226,7 +237,8 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
             },
             {
                 batchSize: options.batchSize || 100,
-                delayMs: options.delayMs || 200
+                delayMs: options.delayMs || 200,
+                athleteName: options.athleteName || null
             }
         );
 
@@ -390,6 +402,7 @@ function parseArgs() {
         year: null,
         date: null,
         eventsFile: null,
+        athleteName: null,
         force: false,
         dryRun: false,
         batchSize: 100,
@@ -409,6 +422,9 @@ function parseArgs() {
                 break;
             case '--events-file':
                 options.eventsFile = args[++i];
+                break;
+            case '--athlete-name':
+                options.athleteName = args[++i];
                 break;
             case '--force':
                 options.force = true;
@@ -450,6 +466,7 @@ OPTIONS:
   --year <year>         Event year (for endpoint selection)
   --date <date>         Event date (YYYY-MM-DD format)
   --events-file <path>  Path to events JSON file for batch import
+  --athlete-name <name> Filter import to a specific athlete name
   --force               Force re-import even if event already exists
   --dry-run             Scrape data but don't import to database
   --batch-size <n>      Results batch size (default: 100)

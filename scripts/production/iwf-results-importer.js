@@ -202,14 +202,19 @@ function mapAthleteToResultRecord(athlete, meetId, lifter, meetInfo) {
  */
 async function insertResultRecord(resultData) {
     try {
-        // Step 1: Check if record exists with composite key (db_meet_id, db_lifter_id)
-        // Weight class is not included - athletes have one result per meet (can vary across meets)
+        // Step 1: Check if record exists with composite key (db_meet_id, db_lifter_id, weight_class)
         // Handle duplicates by querying all matching records
-        const { data: existingRecords, error: checkError } = await config.supabaseIWF
+        let query = config.supabaseIWF
             .from('iwf_meet_results')
             .select('db_result_id, total')
             .eq('db_meet_id', resultData.db_meet_id)
-            .eq('db_lifter_id', resultData.db_lifter_id)
+            .eq('db_lifter_id', resultData.db_lifter_id);
+
+        if (resultData.weight_class) {
+            query = query.eq('weight_class', resultData.weight_class);
+        }
+
+        const { data: existingRecords, error: checkError } = await query
             .order('db_result_id', { ascending: true });
 
         if (checkError) {
@@ -452,12 +457,19 @@ async function importMeetResults(mensWeightClasses, womensWeightClasses, meetId,
     };
 
     // Collect all athletes from both genders
-    const mensAthletes = (mensWeightClasses && mensWeightClasses.weight_classes) 
+    let mensAthletes = (mensWeightClasses && mensWeightClasses.weight_classes) 
         ? mensWeightClasses.weight_classes.flatMap(wc => wc.athletes || [])
         : [];
-    const womensAthletes = (womensWeightClasses && womensWeightClasses.weight_classes)
+    let womensAthletes = (womensWeightClasses && womensWeightClasses.weight_classes)
         ? womensWeightClasses.weight_classes.flatMap(wc => wc.athletes || [])
         : [];
+
+    if (options.athleteName) {
+        const target = options.athleteName.trim().toLowerCase();
+        mensAthletes = mensAthletes.filter(a => (a.name || '').trim().toLowerCase().includes(target));
+        womensAthletes = womensAthletes.filter(a => (a.name || '').trim().toLowerCase().includes(target));
+        console.log(`\n🎯 TARGETED ATHLETE FILTER ("${options.athleteName}"): ${mensAthletes.length} men's, ${womensAthletes.length} women's entries matched`);
+    }
 
     // Apply limit across BOTH genders if specified
     const limit = options.limit || null;
