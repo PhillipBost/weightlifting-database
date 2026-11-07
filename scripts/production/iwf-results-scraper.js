@@ -647,16 +647,9 @@ async function scrapeEventResults(eventId, year = null, eventDate = null, endpoi
         log(`Event URL: ${eventUrl}`);
         log(`Endpoint: ${result.endpoint || 'UNKNOWN'}`);
 
-        // Set cache-busting headers BEFORE navigation
-        await page.setExtraHTTPHeaders({
-            'Cache-Control': 'no-cache, no-store, must-revalidate, max-age=0',
-            'Pragma': 'no-cache',
-            'Expires': '0',
-            'X-Request-ID': `event-${eventId}-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
-            'X-IWF-Event-ID': String(eventId)
-        });
-
-        log(`Cache-busting headers set for event ${eventId}`);
+        // Disable browser disk/memory cache without injecting custom CORS-breaking HTTP headers
+        await page.setCacheEnabled(false);
+        log(`Browser cache disabled for event ${eventId}`);
 
         // Navigate to event detail page with retry
         await retryOperation(async () => {
@@ -666,7 +659,8 @@ async function scrapeEventResults(eventId, year = null, eventDate = null, endpoi
             });
         }, config.RETRY.NETWORK_REQUESTS, `navigate to event ${eventId}`);
 
-        log('Page loaded successfully');
+        const pageTitle = await page.title().catch(() => 'Unknown');
+        log(`Page loaded successfully: "${pageTitle}"`);
 
         // *** VERIFY URL ACTUALLY CHANGED ***
         const currentUrl = await page.url();

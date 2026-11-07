@@ -517,15 +517,24 @@ async function main() {
     try {
         if (options.eventsFile) {
             // Batch import mode
-            await batchImportEvents(options.eventsFile, options);
+            const batchResult = await batchImportEvents(options.eventsFile, options);
+            if (batchResult && batchResult.failed > 0 && batchResult.successful === 0) {
+                throw new Error(`Batch import failed (${batchResult.failed} failed, 0 succeeded)`);
+            }
         } else {
             // Single event import mode
-            await importEventToDatabase(
+            const result = await importEventToDatabase(
                 options.eventId,
                 options.year,
                 options.date,
                 options
             );
+            if (result && !result.success) {
+                const errMsg = result.errors && result.errors.length > 0
+                    ? result.errors.join('; ')
+                    : 'Event import failed';
+                throw new Error(errMsg);
+            }
         }
 
         console.log(`\n✅ Import completed successfully\n`);

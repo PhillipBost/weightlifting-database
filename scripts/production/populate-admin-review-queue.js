@@ -530,8 +530,26 @@ async function ingestIwfDuplicates() {
     const pairs = dupData.duplicate_pairs || [];
     console.log(`  Found ${pairs.length} duplicate result pairs in JSON.`);
 
+    // Query existing iwf_duplicate items across all statuses (PENDING, APPROVED, RESOLVED, REJECTED) to prevent re-staging
+    const { data: existingQueueItems, error: existingErr } = await supabase
+        .from('admin_review_queue')
+        .select('id, status, primary_entity_id, evidence')
+        .eq('category', 'iwf_duplicate');
+
+    if (existingErr) {
+        throw new Error(`Failed to query existing iwf_duplicate queue items: ${existingErr.message}`);
+    }
+
+    const existingKeys = new Set(
+        (existingQueueItems || []).map(item => `${item.evidence?.db_meet_id || ''}:${item.primary_entity_id || ''}`)
+    );
+
     const records = [];
     for (const p of pairs) {
+        const dedupKey = `${p.db_meet_id || ''}:${p.db_lifter_id || 0}`;
+        if (existingKeys.has(dedupKey)) {
+            continue;
+        }
         records.push({
             category: 'iwf_duplicate',
             status: 'PENDING',
@@ -553,7 +571,7 @@ async function ingestIwfDuplicates() {
     }
 
     const count = await batchInsert(records);
-    console.log(`  ✅ Successfully staged ${count} IWF duplicate review items.`);
+    console.log(`  ✅ Successfully staged ${count} IWF duplicate review items (${pairs.length - records.length} already in queue).`);
 }
 
 // ----------------------------------------------------------------------------

@@ -206,7 +206,7 @@ async function insertResultRecord(resultData) {
         // Handle duplicates by querying all matching records
         let query = config.supabaseIWF
             .from('iwf_meet_results')
-            .select('db_result_id, total')
+            .select('db_result_id, total, manual_override')
             .eq('db_meet_id', resultData.db_meet_id)
             .eq('db_lifter_id', resultData.db_lifter_id);
 
@@ -226,22 +226,33 @@ async function insertResultRecord(resultData) {
             };
         }
 
-        // Handle duplicates: prefer record with non-zero total, else use first
+        // Handle duplicates: prefer manual_override first, then record with non-zero total, else use first
         let existing = null;
         if (existingRecords && existingRecords.length > 0) {
-            existing = existingRecords.find(r =>
-                r.total && r.total !== '0' && r.total !== '---'
-            ) || existingRecords[0];
+            existing = existingRecords.find(r => r.manual_override === true) ||
+                existingRecords.find(r => r.total && r.total !== '0' && r.total !== '---') ||
+                existingRecords[0];
         }
 
         // Step 2: Update existing record or insert new
         let data, error;
 
         if (existing) {
+            // Respect manual_override lock: never overwrite administrator-repaired scorecards
+            if (existing.manual_override === true) {
+                return {
+                    success: true,
+                    result: existing,
+                    error: null,
+                    isDuplicate: true
+                };
+            }
+
             // Record exists - UPDATE with new values (fixes corrupted decimals)
+            const { manual_override, ...updatePayload } = resultData;
             const { data: updated, error: updateError } = await config.supabaseIWF
                 .from('iwf_meet_results')
-                .update(resultData)
+                .update(updatePayload)
                 .eq('db_result_id', existing.db_result_id)
                 .select('*')
                 .single();
@@ -249,6 +260,27 @@ async function insertResultRecord(resultData) {
             data = updated;
             error = updateError;
         } else {
+            // Before inserting, check if this scorecard was split/re-attributed to a different db_lifter_id with manual_override = true
+            if (resultData.weight_class && resultData.lifter_name) {
+                const { data: overriddenSplit } = await config.supabaseIWF
+                    .from('iwf_meet_results')
+                    .select('db_result_id, manual_override')
+                    .eq('db_meet_id', resultData.db_meet_id)
+                    .eq('weight_class', resultData.weight_class)
+                    .ilike('lifter_name', resultData.lifter_name)
+                    .eq('manual_override', true)
+                    .limit(1);
+
+                if (overriddenSplit && overriddenSplit.length > 0) {
+                    return {
+                        success: true,
+                        result: overriddenSplit[0],
+                        error: null,
+                        isDuplicate: true
+                    };
+                }
+            }
+
             // Record doesn't exist - INSERT
             const { data: inserted, error: insertError } = await config.supabaseIWF
                 .from('iwf_meet_results')

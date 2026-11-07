@@ -791,7 +791,7 @@ async function generateAthlete(params, externalClient = null) {
                 -- Final collection of every ID type for shard generation
                 SELECT jsonb_build_object(
                     'usaw_ids', (SELECT jsonb_agg(DISTINCT membership_number) FROM usaw_lifters WHERE lifter_id IN (SELECT id FROM all_usaw_internal_ids) AND membership_number IS NOT NULL),
-                    'iwf_ids', (SELECT jsonb_agg(DISTINCT iwf_lifter_id) FROM iwf_lifters WHERE db_lifter_id IN (SELECT id FROM all_iwf_db_ids) AND iwf_lifter_id IS NOT NULL),
+                    'iwf_ids', (SELECT jsonb_agg(DISTINCT COALESCE(iwf_lifter_id, db_lifter_id)) FROM iwf_lifters WHERE db_lifter_id IN (SELECT id FROM all_iwf_db_ids)),
                     'internal_ids', (SELECT jsonb_agg(DISTINCT id) FROM all_usaw_internal_ids),
                     'owlcms_ids', (SELECT jsonb_agg(DISTINCT id) FROM all_owlcms_internal_ids)
                 ) as ids

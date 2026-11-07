@@ -4,6 +4,13 @@ All notable changes to the Weightlifting Database project will be documented in 
 
 ## [Fixed] - 2026-11-07 (Eastern Time)
 
+- **Administrative Repair Protection, Scraper Failure Propagation & Clean Navigation (`scripts/production/iwf-database-importer.js`, `scripts/production/iwf-results-scraper.js`, `scripts/production/iwf-results-importer.js`, `scripts/production/assembler.js`, `scripts/production/populate-admin-review-queue.js`)**:
+  - Propagated execution exit codes in `iwf-database-importer.js` so failed scrapes and event imports throw errors and exit with code `1`, preventing GitHub Actions runs from masking failures as successful completions.
+  - Replaced custom HTTP cache-busting headers (`page.setExtraHTTPHeaders`) with Puppeteer native `page.setCacheEnabled(false)` in `iwf-results-scraper.js` to eliminate Cross-Origin Resource Sharing (CORS) header rejections on third-party security verification scripts while logging page titles upon navigation.
+  - Implemented `manual_override = true` lock protection in `iwf-results-importer.js` (`insertResultRecord()`) to ensure administrator-repaired scorecards are never overwritten during `--force` re-scrapes, and added pre-insert duplicate checks to protect split scorecards from being re-created under donor athletes.
+  - Added fallback static shard keying in `assembler.js` using `COALESCE(iwf_lifter_id, db_lifter_id)` so newly provisioned international athletes lacking official registry identifiers receive valid static shards.
+  - Added queue deduplication in `populate-admin-review-queue.js` (`ingestIwfDuplicates()`) querying `public.admin_review_queue` across all statuses (`PENDING`, `APPROVED`, `RESOLVED`, `REJECTED`) to avoid re-staging resolved items.
+
 - **Multi-Category Same-Meet Result Preservation & Targeted Workflow Dispatch (`scripts/production/iwf-results-importer.js`, `scripts/production/iwf-database-importer.js`, `scripts/production/iwf-results-scraper.js`, `.github/workflows/iwf-daily-results-pipeline.yml`)**:
   - Fixed conflict detection in `insertResultRecord()` by including `weight_class` in composite key matching, ensuring athletes officially competing across multiple weight classes in the same meet (e.g., Robert Hawkins in 77 kg and 85 kg at the 2000 Junior World Championships, Event #154) are preserved as distinct scorecards rather than overwriting existing records.
   - Added `--athlete-name` filtering and preserved existing meet metadata fallbacks in `iwf-database-importer.js` and `iwf-results-importer.js`.
