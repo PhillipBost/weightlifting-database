@@ -8,6 +8,8 @@ All notable changes to the Weightlifting Database project will be documented in 
   - Configured Puppeteer launch arguments in `iwf-config.js` with `--disable-blink-features=AutomationControlled`, `--disable-features=IsolateOrigins,site-per-process`, and 1080p desktop viewport dimensions.
   - Injected `evaluateOnNewDocument()` overrides in `iwf-results-scraper.js` to suppress `navigator.webdriver` and mock standard `window.chrome`, `navigator.plugins`, and `navigator.languages` to evade automated bot detection heuristics.
   - Added X Virtual Framebuffer (Xvfb) execution (`xvfb-run --auto-servernum`) to `.github/workflows/iwf-daily-results-pipeline.yml` so Chromium runs as a full Graphical User Interface (GUI) desktop browser on Ubuntu runners.
+  - Implemented an automated post-verification redirect drain in `iwf-results-scraper.js` that detects Cloudflare's `"Verification successful"` signal and waits for the final page redirect to complete before evaluating results tabs.
+  - Added `permissions: { contents: read, issues: write }` to `.github/workflows/iwf-daily-results-pipeline.yml` to authorize failure issue creation.
   - Fixed `parseAttemptHTML()` in `iwf-results-scraper.js` to recognize the `'total'` lift section, extracting official competition ranks and totals while preventing Total cards from overwriting Clean & Jerk attempt fields.
 
 - **Scraper Tab Diagnostics & Output Artifact Upload (`scripts/production/iwf-results-scraper.js`, `.github/workflows/iwf-daily-results-pipeline.yml`)**:

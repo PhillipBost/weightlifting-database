@@ -719,8 +719,51 @@ async function scrapeEventResults(eventId, year = null, eventDate = null, endpoi
             });
         }, config.RETRY.NETWORK_REQUESTS, `navigate to event ${eventId}`);
 
-        const pageTitle = await page.title().catch(() => 'Unknown');
+        let pageTitle = await page.title().catch(() => 'Unknown');
         log(`Page loaded successfully: "${pageTitle}"`);
+
+        // Check if page is currently undergoing Cloudflare security verification
+        if (pageTitle.toLowerCase().includes('just a moment') || pageTitle.toLowerCase().includes('security verification')) {
+            log('Detected Cloudflare verification gate. Waiting for automated verification and redirect...');
+            const verificationStart = Date.now();
+            const maxVerificationWaitMs = 30000;
+
+            while (Date.now() - verificationStart < maxVerificationWaitMs) {
+                await new Promise(resolve => setTimeout(resolve, 2000));
+                pageTitle = await page.title().catch(() => 'Unknown');
+                log(`  Current page title: "${pageTitle}"`);
+
+                if (!pageTitle.toLowerCase().includes('just a moment') &&
+                    !pageTitle.toLowerCase().includes('security verification') &&
+                    !pageTitle.toLowerCase().includes('cloudflare')) {
+                    log(`  ✓ Cloudflare verification cleared! Page title: "${pageTitle}"`);
+                    break;
+                }
+
+                // Check if Cloudflare marked verification successful
+                const verificationStatus = await page.evaluate(() => {
+                    const text = document.body ? document.body.innerText : '';
+                    if (text.includes('Verification successful')) return 'SUCCESS';
+                    return 'PENDING';
+                }).catch(() => 'ERROR');
+
+                if (verificationStatus === 'SUCCESS') {
+                    log('  ✓ Verification successful reported by Cloudflare. Awaiting redirect/navigation...');
+                    try {
+                        await page.waitForNavigation({ waitUntil: 'networkidle0', timeout: 15000 });
+                    } catch (navErr) {
+                        log(`  Navigation wait completed: ${navErr.message}`, 'DEBUG');
+                    }
+                    pageTitle = await page.title().catch(() => 'Unknown');
+                    log(`  Page title after navigation: "${pageTitle}"`);
+                    if (!pageTitle.toLowerCase().includes('just a moment') &&
+                        !pageTitle.toLowerCase().includes('security verification')) {
+                        log(`  ✓ Successfully navigated to target page: "${pageTitle}"`);
+                        break;
+                    }
+                }
+            }
+        }
 
         // *** VERIFY URL ACTUALLY CHANGED ***
         const currentUrl = await page.url();

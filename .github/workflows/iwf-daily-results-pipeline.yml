@@ -31,6 +31,10 @@ concurrency:
   group: iwf-scraper
   cancel-in-progress: false  # Queue instead of cancel
 
+permissions:
+  contents: read
+  issues: write
+
 jobs:
   scrape-iwf:
     runs-on: ubuntu-latest
