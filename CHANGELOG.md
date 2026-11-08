@@ -2,6 +2,14 @@
 
 All notable changes to the Weightlifting Database project will be documented in this file.
 
+## [Added] - 2026-11-08 (Eastern Standard Time)
+
+- **Multi-Category Athlete Parser Keying, Targeted Dry-Run Scorecard Validation & Canonical `iwf_meet_id` Summary Output (`scripts/production/iwf-results-scraper.js`, `scripts/production/iwf-database-importer.js`)**:
+  - Scoped athlete keys by weight class (`${name}-${nation}-${birthYear}-${weight_class}`) and broadened weight class header detection (`<h2>` and `<h3>`) in `parseAttemptHTML()` (`scripts/production/iwf-results-scraper.js`) to preserve multi-category athletes competing across distinct bodyweight classes in the same meet (such as Robert Hawkins in 77 kg and 85 kg at the 2000 Junior World Championships, Event #154).
+  - Enhanced `--dry-run` mode in `scripts/production/iwf-database-importer.js` to execute in-memory `--athlete-name` filtering, printing a full scorecard breakdown (Snatch 1–3, Clean & Jerk 1–3, Total, Rank, Weight Class, Bodyweight, Nation, and Year of Birth) when matched (`athleteFound: true`) or listing close candidate matches when absent (`athleteFound: false`), and bypassing the pre-scrape skip check on existing meets during dry runs.
+  - Standardized all summary return objects and structured `__IWF_SUMMARY_JSON__` standard output (`stdout`) payloads in `scripts/production/iwf-database-importer.js` to explicitly expose canonical `iwf_meet_id` at the root and in `importStats`.
+  - Implemented `parseIwfEventHtml()` in `scripts/production/iwf-results-scraper.js` and `--html-file` / `--meet-name` Command Line Interface (CLI) options in `scripts/production/iwf-database-importer.js`.
+
 ## [Fixed] - 2026-11-07 (Eastern Time)
 
 - **Outbox Queue Deletion Microsecond Precision Fix (`scripts/production/listener.js`, `scripts/production/owlcms-event-daemon.js`)**:

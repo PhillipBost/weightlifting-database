@@ -47,6 +47,7 @@ const { spawn } = require('child_process');
 
 const meetManager = require('./iwf-meet-manager');
 const resultsImporter = require('./iwf-results-importer');
+const lifterManager = require('./iwf-lifter-manager');
 const config = require('./iwf-config');
 
 // ============================================================================
@@ -110,6 +111,7 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
     const startTime = Date.now();
 
     const summary = {
+        iwf_meet_id: eventId ? String(eventId) : null,
         eventId: eventId,
         year: year,
         eventDate: eventDate,
@@ -130,12 +132,33 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
         console.log(`Date: ${eventDate}`);
         if (options.force) console.log(`Mode: FORCE RE-IMPORT`);
         if (options.dryRun) console.log(`Mode: DRY RUN (no database changes)`);
+        if (options.athleteName) console.log(`Target Athlete Filter: "${options.athleteName}"`);
+        if (options.htmlFile) console.log(`Source: HTML File (${options.htmlFile})`);
         console.log('='.repeat(80));
+
+        let scraperResult = null;
+        if (options.rawHtml || options.htmlFile) {
+            console.log(`\n📄 Parsing meet directly from HTML source...`);
+            const htmlContent = options.rawHtml || fs.readFileSync(options.htmlFile, 'utf8');
+            const scraper = require('./iwf-results-scraper');
+            scraperResult = scraper.parseIwfEventHtml(htmlContent, eventId);
+            if (!scraperResult.success) {
+                throw new Error('Failed to parse meet results from HTML');
+            }
+            if (!eventId && scraperResult.event_id) {
+                eventId = scraperResult.event_id;
+                summary.eventId = eventId;
+                summary.iwf_meet_id = String(eventId);
+            }
+            if (options.meetName) {
+                scraperResult.meet_name = options.meetName;
+            }
+        }
 
         // Step 1: Check if meet already exists and has results
         const existingMeet = await meetManager.findExistingMeet(eventId);
 
-        if (existingMeet && !options.force) {
+        if (existingMeet && !options.force && !options.dryRun) {
             console.log(`\n✓ Meet already exists: ${existingMeet.Meet} (ID: ${existingMeet.iwf_meet_id})`);
 
             const resultsCheck = await meetManager.checkMeetHasResults(existingMeet.iwf_meet_id);
@@ -146,11 +169,13 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
 
                 summary.meet = existingMeet;
                 summary.importStats = {
+                    iwf_meet_id: String(existingMeet.iwf_meet_id || eventId),
                     skipped: true,
                     existingResults: resultsCheck.count
                 };
                 summary.success = true;
                 summary.executionTimeMs = Date.now() - startTime;
+                console.log('__IWF_SUMMARY_JSON__:' + JSON.stringify(summary));
                 return summary;
             }
 
@@ -168,27 +193,31 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                     event_id: eventId,
                     Meet: existingMeet.meet,
                     Level: existingMeet.level || 'International',
-                    Date: existingMeet.date || eventDate,
+                    Date: existingMeet.date || eventDate || new Date().toISOString().split('T')[0],
                     URL: existingMeet.url || config.buildEventDetailURL(eventId, year, eventDate)
                 };
             } else {
-                console.log(`⚠️  No event discovery data found, will use minimal metadata`);
+                const resolvedMeetName = options.meetName || scraperResult?.meet_name || `Event ${eventId}`;
+                const resolvedDate = eventDate || options.date || (year ? `${year}-01-01` : new Date().toISOString().split('T')[0]);
+                console.log(`✓ Using metadata from HTML/options: "${resolvedMeetName}" (${resolvedDate})`);
                 meetMetadata = {
                     event_id: eventId,
-                    Meet: `Event ${eventId}`,
+                    Meet: resolvedMeetName,
                     Level: 'International',
-                    Date: eventDate,
-                    URL: config.buildEventDetailURL(eventId, year, eventDate)
+                    Date: resolvedDate,
+                    URL: config.buildEventDetailURL(eventId, year || new Date(resolvedDate).getFullYear(), resolvedDate)
                 };
             }
         }
 
-        // Step 3: Scrape event results
-        console.log(`\n🌐 Scraping event results...`);
-        const scraperResult = await runScraper(eventId, year, eventDate, meetMetadata?.endpoint || null);
+        // Step 3: Scrape event results (if not already parsed from HTML)
+        if (!scraperResult) {
+            console.log(`\n🌐 Scraping event results...`);
+            scraperResult = await runScraper(eventId, year, eventDate, meetMetadata?.endpoint || null);
 
-        if (!scraperResult.success) {
-            throw new Error('Failed to scrape event results');
+            if (!scraperResult.success) {
+                throw new Error('Failed to scrape event results');
+            }
         }
 
         const mensResults = scraperResult.mens_weight_classes;
@@ -199,15 +228,103 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
         console.log(`  Women's athletes: ${womensResults?.total_athletes || 0}`);
         console.log(`  Total athletes: ${(mensResults?.total_athletes || 0) + (womensResults?.total_athletes || 0)}`);
 
-        // Dry run mode: stop here
+        // Dry run mode: stop here (with in-memory --athlete-name filtering & scorecard breakdown)
         if (options.dryRun) {
             console.log(`\n📊 DRY RUN MODE - No database changes made`);
-            summary.success = true;
-            summary.importStats = {
-                dryRun: true,
-                totalAthletes: (mensResults?.total_athletes || 0) + (womensResults?.total_athletes || 0)
-            };
+            const meetTotalAthletes = (mensResults?.total_athletes || 0) + (womensResults?.total_athletes || 0);
+
+            if (options.athleteName) {
+                const allMens = (mensResults && mensResults.weight_classes)
+                    ? mensResults.weight_classes.flatMap(wc => (wc.athletes || []).map(a => ({ ...a, gender: a.gender || 'M', weight_class: a.weight_class || wc.weight_class })))
+                    : [];
+                const allWomens = (womensResults && womensResults.weight_classes)
+                    ? womensResults.weight_classes.flatMap(wc => (wc.athletes || []).map(a => ({ ...a, gender: a.gender || 'F', weight_class: a.weight_class || wc.weight_class })))
+                    : [];
+                const allAthletes = [...allMens, ...allWomens];
+
+                const targetTokens = options.athleteName.trim().toLowerCase().split(/\s+/).filter(Boolean);
+                const matchesAthlete = (a) => {
+                    const rawName = (a.name || '').toLowerCase();
+                    const normalized = (lifterManager.normalizeName ? lifterManager.normalizeName(a.name || '') : '').toLowerCase();
+                    return targetTokens.every(tok => rawName.includes(tok)) ||
+                           (normalized && targetTokens.every(tok => normalized.includes(tok)));
+                };
+
+                const matchedScorecards = allAthletes.filter(matchesAthlete);
+
+                if (matchedScorecards.length > 0) {
+                    console.log(`\n🎯 DRY RUN TARGETED ATHLETE MATCH ("${options.athleteName}"): ${matchedScorecards.length} scorecard(s) found in IWF Event ${eventId}`);
+                    matchedScorecards.forEach((ath, idx) => {
+                        console.log(`${'-'.repeat(80)}`);
+                        console.log(`Scorecard #${idx + 1}: ${ath.name} (${ath.nation || 'N/A'}) | Born: ${ath.birth_year || 'N/A'} | Gender: ${ath.gender || 'N/A'}`);
+                        console.log(`  IWF Meet ID:   ${eventId} (${meetMetadata?.Meet || `Event ${eventId}`})`);
+                        console.log(`  Weight Class:  ${ath.weight_class || 'N/A'} | Group: ${ath.group || 'N/A'} | Body Weight: ${ath.body_weight ?? 'N/A'} kg`);
+                        console.log(`  Snatch 1-3:    ${ath.snatch_1 ?? '-'} / ${ath.snatch_2 ?? '-'} / ${ath.snatch_3 ?? '-'} | Best Snatch: ${ath.best_snatch ?? '-'}`);
+                        console.log(`  C&J 1-3:       ${ath.cj_1 ?? '-'} / ${ath.cj_2 ?? '-'} / ${ath.cj_3 ?? '-'} | Best C&J:    ${ath.best_cj ?? '-'}`);
+                        console.log(`  Total / Rank:  ${ath.total ?? '-'} kg (Rank: ${ath.rank ?? 'DNF'})`);
+                    });
+                    console.log(`${'-'.repeat(80)}`);
+
+                    summary.success = true;
+                    summary.importStats = {
+                        dryRun: true,
+                        iwf_meet_id: String(eventId),
+                        athleteFilter: options.athleteName,
+                        athleteFound: true,
+                        totalAthletes: matchedScorecards.length,
+                        matchedScorecards: matchedScorecards,
+                        meetTotalAthletes: meetTotalAthletes
+                    };
+                } else {
+                    // Find close matches (sharing any token >= 3 chars)
+                    const significantTokens = targetTokens.filter(t => t.length >= 3);
+                    const closeMatches = allAthletes
+                        .filter(a => {
+                            const rawName = (a.name || '').toLowerCase();
+                            return significantTokens.some(tok => rawName.includes(tok));
+                        })
+                        .slice(0, 10)
+                        .map(a => ({
+                            name: a.name,
+                            nation: a.nation,
+                            birth_year: a.birth_year,
+                            gender: a.gender,
+                            weight_class: a.weight_class
+                        }));
+
+                    console.log(`\n⚠️  DRY RUN TARGETED ATHLETE NOT FOUND: "${options.athleteName}" was not present in IWF Event ${eventId} (searched ${meetTotalAthletes} athletes).`);
+                    if (closeMatches.length > 0) {
+                        console.log(`  Close matches in Event ${eventId}:`);
+                        closeMatches.forEach(cm => {
+                            console.log(`    - ${cm.name} (${cm.nation || 'N/A'}, Born: ${cm.birth_year || 'N/A'}, Class: ${cm.weight_class || 'N/A'})`);
+                        });
+                    }
+
+                    summary.success = true;
+                    summary.importStats = {
+                        dryRun: true,
+                        iwf_meet_id: String(eventId),
+                        athleteFilter: options.athleteName,
+                        athleteFound: false,
+                        totalAthletes: 0,
+                        matchedScorecards: [],
+                        closeMatches: closeMatches,
+                        meetTotalAthletes: meetTotalAthletes
+                    };
+                }
+            } else {
+                summary.success = true;
+                summary.importStats = {
+                    dryRun: true,
+                    iwf_meet_id: String(eventId),
+                    totalAthletes: meetTotalAthletes,
+                    menCount: mensResults?.total_athletes || 0,
+                    womenCount: womensResults?.total_athletes || 0
+                };
+            }
+
             summary.executionTimeMs = Date.now() - startTime;
+            console.log('__IWF_SUMMARY_JSON__:' + JSON.stringify(summary));
             return summary;
         }
 
@@ -215,6 +332,7 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
         console.log(`\n📝 Upserting meet record...`);
         const meet = await meetManager.upsertIWFMeet(meetMetadata);
         summary.meet = meet;
+        summary.iwf_meet_id = String(meet.iwf_meet_id || eventId);
 
         // Step 5: Upsert location record (if we have location data)
         if (meetMetadata.location_city || meetMetadata.location_country) {
@@ -242,6 +360,7 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
             }
         );
 
+        importStats.iwf_meet_id = String(meet.iwf_meet_id || eventId);
         summary.importStats = importStats;
         summary.success = true;
 
@@ -259,6 +378,7 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
         console.log(`IMPORT SUMMARY`);
         console.log('='.repeat(80));
         console.log(`Event: ${eventId} - ${meet.Meet}`);
+        console.log(`IWF Meet ID: ${meet.iwf_meet_id || eventId}`);
         console.log(`Meet ID: ${meet.db_meet_id}`);
         console.log(`\nResults:`);
         console.log(`  Total athletes: ${importStats.total.totalAthletes}`);
@@ -288,6 +408,7 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
         summary.executionTimeMs = Date.now() - startTime;
         console.log(`\nExecution time: ${(summary.executionTimeMs / 1000).toFixed(2)} seconds`);
         console.log('='.repeat(80));
+        console.log('__IWF_SUMMARY_JSON__:' + JSON.stringify(summary));
 
         return summary;
 
@@ -414,6 +535,12 @@ function parseArgs() {
             case '--event-id':
                 options.eventId = args[++i];
                 break;
+            case '--html-file':
+                options.htmlFile = args[++i];
+                break;
+            case '--meet-name':
+                options.meetName = args[++i];
+                break;
             case '--year':
                 options.year = parseInt(args[++i]);
                 break;
@@ -463,17 +590,22 @@ USAGE:
 
 OPTIONS:
   --event-id <id>       IWF event ID to import
+  --html-file <path>    Path to saved IWF meet HTML file (bypasses browser scraping)
+  --meet-name <name>    Custom meet name override
   --year <year>         Event year (for endpoint selection)
   --date <date>         Event date (YYYY-MM-DD format)
   --events-file <path>  Path to events JSON file for batch import
   --athlete-name <name> Filter import to a specific athlete name
   --force               Force re-import even if event already exists
-  --dry-run             Scrape data but don't import to database
+  --dry-run             Scrape/parse data but don't import to database
   --batch-size <n>      Results batch size (default: 100)
   --delay <ms>          Delay between batches in ms (default: 200)
   --help                Show this help message
 
 EXAMPLES:
+  # Single event import from HTML file
+  node iwf-database-importer.js --html-file meet.html --event-id 154
+
   # Single event import (MODERN endpoint)
   node iwf-database-importer.js --event-id 661 --year 2025 --date "2025-06-01"
 
@@ -502,14 +634,14 @@ async function main() {
     const options = parseArgs();
 
     // Validate options
-    if (!options.eventId && !options.eventsFile) {
-        console.error('Error: Either --event-id or --events-file must be specified');
+    if (!options.eventId && !options.eventsFile && !options.htmlFile) {
+        console.error('Error: Either --event-id, --events-file, or --html-file must be specified');
         printHelp();
         process.exit(1);
     }
 
-    if (options.eventId && !options.year) {
-        console.error('Error: --year is required when using --event-id');
+    if (options.eventId && !options.year && !options.htmlFile) {
+        console.error('Error: --year is required when using --event-id (without --html-file)');
         printHelp();
         process.exit(1);
     }

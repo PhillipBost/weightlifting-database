@@ -405,10 +405,10 @@ function parseAttemptHTML(htmlContent, gender) {
         $('.results__title, .cards').each((i, elem) => {
             const $elem = $(elem);
 
-            // Check for weight class header
-            const h3 = $elem.find('h3').first();
-            if (h3.length > 0) {
-                const rawText = h3.text().trim();
+            // Check for weight class header (supports both h2 and h3)
+            const hHeader = $elem.find('h2, h3').first();
+            if (hHeader.length > 0) {
+                const rawText = hHeader.text().trim();
                 // Extract weight class without gender suffix (e.g., "60 kg Men" → "60 kg")
                 const weightClassMatch = rawText.match(/(\d+|\+\d+)\s*kg/i);
                 const weightClassText = weightClassMatch ? weightClassMatch[0].trim() : rawText;
@@ -462,9 +462,9 @@ function parseAttemptHTML(htmlContent, gender) {
                     const birthYearMatch = bornText.match(/[0-9]{4}/)?.[0];
                     const birthYear = (birthYearMatch && birthYearMatch !== 'null') ? parseInt(birthYearMatch) : null;
 
-                    // Get or create athlete object using name+nation+birth_year as unique key
-                    // (rank is NOT unique - different athletes can have same rank)
-                    const athleteKey = `${name}-${nation}-${birthYear}`;
+                    // Get or create athlete object using name+nation+birth_year+weight_class as unique key
+                    // (preserves multi-category same-meet athletes across weight classes)
+                    const athleteKey = `${name}-${nation}-${birthYear}-${currentWeightClass.weight_class}`;
 
                     // DEBUG: Log extraction
                     console.log(`[DEBUG] Card: name="${name}", nation="${nation}", bornText="${bornText}", birthYear=${birthYear}, athleteKey="${athleteKey}"`);
@@ -658,6 +658,159 @@ function parseAttemptHTML(htmlContent, gender) {
             error: error.message
         };
     }
+}
+
+/**
+ * Parse full IWF meet HTML page directly
+ * Extracts meet metadata, men's results, and women's results
+ * Merges snatch/jerk attempt data with total cards
+ *
+ * @param {string} htmlContent - Full page HTML string
+ * @param {string|number} [eventId] - Optional event ID
+ * @returns {object} - Scraper-compatible results object
+ */
+function parseIwfEventHtml(htmlContent, eventId = null) {
+    if (!htmlContent || typeof htmlContent !== 'string') {
+        throw new Error('Valid HTML content string is required');
+    }
+
+    const $ = cheerio.load(htmlContent);
+
+    // 1. Extract Event ID if not passed
+    let resolvedEventId = eventId ? String(eventId) : null;
+    if (!resolvedEventId) {
+        const urlMatch = htmlContent.match(/event_id=(\d+)/);
+        if (urlMatch) {
+            resolvedEventId = urlMatch[1];
+        }
+    }
+
+    // 2. Extract Meet Metadata
+    const eventTitleElem = $('.title__event h2').first();
+    let meetName = eventTitleElem.length > 0 ? eventTitleElem.text().trim() : null;
+    if (!meetName) {
+        const pageTitle = $('title').text().trim();
+        meetName = pageTitle.replace(/\s*–\s*International Weightlifting Federation.*$/i, '').trim();
+    }
+    if (!meetName && resolvedEventId) {
+        meetName = `Event ${resolvedEventId}`;
+    }
+
+    log(`Extracted meet name from HTML: "${meetName}" (Event ID: ${resolvedEventId || 'unknown'})`);
+
+    // Helper to merge totals from #..._total container into parsed attempt results
+    function mergeTotals(attemptResults, totalContainerHtml, gender) {
+        if (!totalContainerHtml) return attemptResults;
+
+        const $total = cheerio.load(totalContainerHtml);
+        let currentWeightClass = null;
+        let totalCount = 0;
+
+        // Build lookup map for existing athletes in attemptResults
+        const athleteMap = new Map();
+        if (attemptResults && attemptResults.weight_classes) {
+            for (const wc of attemptResults.weight_classes) {
+                for (const ath of wc.athletes) {
+                    const normWc = (ath.weight_class || wc.weight_class || '').replace(/\s+/g, ' ').trim().toLowerCase();
+                    const key = `${ath.name.toUpperCase()}_${normWc}`;
+                    athleteMap.set(key, ath);
+                }
+            }
+        }
+
+        $total('.results__title, .cards').each((i, elem) => {
+            const $elem = $total(elem);
+            const hHeader = $elem.find('h2, h3').first();
+            if (hHeader.length > 0) {
+                const rawText = hHeader.text().trim();
+                const m = rawText.match(/(\d+|\+\d+)\s*kg/i);
+                currentWeightClass = m ? m[0].trim() : rawText;
+            }
+
+            if ($elem.hasClass('cards') && currentWeightClass) {
+                $elem.find('.card').not('.card__legend').each((idx, card) => {
+                    const $card = $total(card);
+                    const name = $card.find('.col-7.not__cell__767 p').first().text().trim();
+                    const rankText = $card.find('.col-2.not__cell__767 p').first().text().trim().replace(/Rank:\s*/, '');
+                    const rank = parseInt(rankText) || null;
+
+                    // Extract total from col-md-3
+                    let totalVal = null;
+                    const colMd3 = $card.find('.col-md-3');
+                    const totalStrong = colMd3.find('strong').last();
+                    if (totalStrong.length > 0) {
+                        const numMatch = totalStrong.text().replace(/^Total:\s*/, '').match(/[\d.]+/);
+                        if (numMatch) totalVal = parseFloat(numMatch[0]);
+                    }
+
+                    // Best snatch & CJ from total card columns if available
+                    let bestSnatch = null;
+                    let bestCj = null;
+                    const col4s = colMd3.find('.col-4.not__cell__767');
+                    if (col4s.length >= 2) {
+                        const sMatch = col4s.eq(0).find('strong').text().match(/[\d.]+/);
+                        if (sMatch) bestSnatch = parseFloat(sMatch[0]);
+                        const cMatch = col4s.eq(1).find('strong').text().match(/[\d.]+/);
+                        if (cMatch) bestCj = parseFloat(cMatch[0]);
+                    }
+
+                    const normWc = currentWeightClass.replace(/\s+/g, ' ').trim().toLowerCase();
+                    const key = `${name.toUpperCase()}_${normWc}`;
+                    const existingAth = athleteMap.get(key);
+
+                    if (existingAth) {
+                        if (rank !== null) existingAth.rank = rank;
+                        if (totalVal !== null) existingAth.total = totalVal;
+                        if (!existingAth.best_snatch && bestSnatch) existingAth.best_snatch = bestSnatch;
+                        if (!existingAth.best_cj && bestCj) existingAth.best_cj = bestCj;
+                        totalCount++;
+                    }
+                });
+            }
+        });
+
+        log(`Merged overall rankings and totals for ${totalCount} ${gender} athletes`);
+        return attemptResults;
+    }
+
+    // 3. Process Men's Results
+    let mensResults = { gender: 'men', weight_classes: [], total_athletes: 0 };
+    const menSjHtml = $('#men_snatchjerk').html();
+    const menTotHtml = $('#men_total').html();
+
+    if (menSjHtml) {
+        mensResults = parseAttemptHTML(menSjHtml, 'men');
+        if (menTotHtml) {
+            mensResults = mergeTotals(mensResults, menTotHtml, 'men');
+        }
+    } else if (menTotHtml) {
+        mensResults = parseAttemptHTML(menTotHtml, 'men');
+    }
+
+    // 4. Process Women's Results
+    let womensResults = { gender: 'women', weight_classes: [], total_athletes: 0 };
+    const womSjHtml = $('#women_snatchjerk').html();
+    const womTotHtml = $('#women_total').html();
+
+    if (womSjHtml) {
+        womensResults = parseAttemptHTML(womSjHtml, 'women');
+        if (womTotHtml) {
+            womensResults = mergeTotals(womensResults, womTotHtml, 'women');
+        }
+    } else if (womTotHtml) {
+        womensResults = parseAttemptHTML(womTotHtml, 'women');
+    }
+
+    const totalAthletes = (mensResults.total_athletes || 0) + (womensResults.total_athletes || 0);
+
+    return {
+        event_id: resolvedEventId,
+        meet_name: meetName,
+        success: totalAthletes > 0,
+        mens_weight_classes: mensResults,
+        womens_weight_classes: womensResults,
+        total_athletes: totalAthletes
+    };
 }
 
 // ============================================================================
@@ -980,5 +1133,6 @@ module.exports = {
     extractExpandedResults,
     saveExpandedResultsHTML,
     parseExpandedResultsFromFile,
-    parseAttemptHTML
+    parseAttemptHTML,
+    parseIwfEventHtml
 };
