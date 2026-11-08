@@ -158,23 +158,38 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
         // Step 1: Check if meet already exists and has results
         const existingMeet = await meetManager.findExistingMeet(eventId);
 
-        if (existingMeet && !options.force && !options.dryRun) {
+        if (existingMeet && !options.force) {
             console.log(`\n✓ Meet already exists: ${existingMeet.Meet} (ID: ${existingMeet.iwf_meet_id})`);
 
             const resultsCheck = await meetManager.checkMeetHasResults(existingMeet.iwf_meet_id);
 
             if (resultsCheck.hasResults) {
                 console.log(`✓ Meet already has ${resultsCheck.count} results`);
-                console.log(`\n⏭️  Skipping import (use --force to re-import)`);
-
                 summary.meet = existingMeet;
-                summary.importStats = {
-                    iwf_meet_id: String(existingMeet.iwf_meet_id || eventId),
-                    skipped: true,
-                    existingResults: resultsCheck.count
-                };
                 summary.success = true;
                 summary.executionTimeMs = Date.now() - startTime;
+
+                if (options.dryRun) {
+                    console.log(`⚠️ DRY RUN ADVISORY: Meet ${existingMeet.iwf_meet_id || eventId} already exists with ${resultsCheck.count} results. Live non-forced execution would SKIP this meet (0 database writes). Pass --force to simulate updates and inserts.`);
+                    summary.importStats = {
+                        dryRun: true,
+                        iwf_meet_id: String(existingMeet.iwf_meet_id || eventId),
+                        wouldSkip: true,
+                        skipReason: `Meet already exists in database with ${resultsCheck.count} results. Live execution without --force will perform 0 writes.`,
+                        existingResults: resultsCheck.count,
+                        simulatedUpdates: 0,
+                        simulatedInserts: 0,
+                        simulatedLocked: 0
+                    };
+                } else {
+                    console.log(`\n⏭️  Skipping import (use --force to re-import)`);
+                    summary.importStats = {
+                        iwf_meet_id: String(existingMeet.iwf_meet_id || eventId),
+                        skipped: true,
+                        existingResults: resultsCheck.count
+                    };
+                }
+
                 console.log('__IWF_SUMMARY_JSON__:' + JSON.stringify(summary));
                 return summary;
             }
@@ -233,6 +248,86 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
             console.log(`\n📊 DRY RUN MODE - No database changes made`);
             const meetTotalAthletes = (mensResults?.total_athletes || 0) + (womensResults?.total_athletes || 0);
 
+            // Fetch existing database results for this meet to evaluate simulated actions (UPDATE vs INSERT vs LOCKED_SKIP)
+            let existingDbScorecards = [];
+            if (existingMeet?.db_meet_id) {
+                try {
+                    const { data: dbRows, error: dbErr } = await config.supabaseIWF
+                        .from('iwf_meet_results')
+                        .select('db_result_id, db_lifter_id, lifter_name, weight_class, manual_override, total, snatch_lift_1, snatch_lift_2, snatch_lift_3, cj_lift_1, cj_lift_2, cj_lift_3, best_snatch, best_cj')
+                        .eq('db_meet_id', existingMeet.db_meet_id);
+                    if (!dbErr && dbRows) {
+                        existingDbScorecards = dbRows;
+                    }
+                } catch (fetchErr) {
+                    console.warn(`[Dry Run] Warning: Failed to fetch existing meet scorecards: ${fetchErr.message}`);
+                }
+            }
+
+            const evaluateScorecardSimulation = (sc) => {
+                if (!existingDbScorecards || existingDbScorecards.length === 0) {
+                    return {
+                        simulatedAction: 'INSERT',
+                        existingResultId: null,
+                        hasChanges: true,
+                        diffFields: []
+                    };
+                }
+
+                const normWc = (sc.weight_class || '').replace(/\s+/g, ' ').trim().toLowerCase();
+                const scTokens = (sc.name || sc.athlete_name || '').trim().toLowerCase().split(/\s+/).filter(Boolean);
+
+                const match = existingDbScorecards.find(r => {
+                    const rNormWc = (r.weight_class || '').replace(/\s+/g, ' ').trim().toLowerCase();
+                    if (normWc && rNormWc && normWc !== rNormWc) return false;
+
+                    const rName = (r.lifter_name || '').toLowerCase();
+                    return scTokens.length > 0 && scTokens.every(tok => rName.includes(tok));
+                });
+
+                if (!match) {
+                    return {
+                        simulatedAction: 'INSERT',
+                        existingResultId: null,
+                        hasChanges: true,
+                        diffFields: []
+                    };
+                }
+
+                if (match.manual_override === true) {
+                    return {
+                        simulatedAction: 'LOCKED_SKIP',
+                        existingResultId: match.db_result_id,
+                        hasChanges: false,
+                        diffFields: []
+                    };
+                }
+
+                const diffFields = [];
+                const checkDiff = (field, scVal, dbVal) => {
+                    const s1 = scVal != null ? String(scVal).trim() : '';
+                    const s2 = dbVal != null ? String(dbVal).trim() : '';
+                    if (s1 !== s2) diffFields.push(field);
+                };
+
+                checkDiff('snatch_1', sc.snatch_1, match.snatch_lift_1);
+                checkDiff('snatch_2', sc.snatch_2, match.snatch_lift_2);
+                checkDiff('snatch_3', sc.snatch_3, match.snatch_lift_3);
+                checkDiff('best_snatch', sc.best_snatch, match.best_snatch);
+                checkDiff('cj_1', sc.cj_1, match.cj_lift_1);
+                checkDiff('cj_2', sc.cj_2, match.cj_lift_2);
+                checkDiff('cj_3', sc.cj_3, match.cj_lift_3);
+                checkDiff('best_cj', sc.best_cj, match.best_cj);
+                checkDiff('total', sc.total, match.total);
+
+                return {
+                    simulatedAction: 'UPDATE',
+                    existingResultId: match.db_result_id,
+                    hasChanges: diffFields.length > 0,
+                    diffFields: diffFields
+                };
+            };
+
             if (options.athleteName) {
                 const allMens = (mensResults && mensResults.weight_classes)
                     ? mensResults.weight_classes.flatMap(wc => (wc.athletes || []).map(a => ({ ...a, gender: a.gender || 'M', weight_class: a.weight_class || wc.weight_class })))
@@ -254,49 +349,69 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
 
                 if (matchedScorecards.length > 0) {
                     console.log(`\n🎯 DRY RUN TARGETED ATHLETE MATCH ("${options.athleteName}"): ${matchedScorecards.length} scorecard(s) found in IWF Event ${eventId}`);
-                    matchedScorecards.forEach((ath, idx) => {
+
+                    const formattedScorecards = matchedScorecards.map(ath => {
+                        const sim = evaluateScorecardSimulation(ath);
+                        return {
+                            athlete_name: ath.name,
+                            name: ath.name,
+                            division: (ath.gender === 'F' || ath.gender === 'women' || ath.gender === 'W') ? "Women's Division" : "Men's Division",
+                            weight_class: ath.weight_class,
+                            nation: ath.nation,
+                            birth_year: ath.birth_year,
+                            body_weight_kg: ath.body_weight != null ? String(ath.body_weight) : null,
+                            snatch_1: ath.snatch_1 != null ? String(ath.snatch_1) : null,
+                            snatch_2: ath.snatch_2 != null ? String(ath.snatch_2) : null,
+                            snatch_3: ath.snatch_3 != null ? String(ath.snatch_3) : null,
+                            best_snatch: ath.best_snatch != null ? String(ath.best_snatch) : null,
+                            cj_1: ath.cj_1 != null ? String(ath.cj_1) : null,
+                            cj_2: ath.cj_2 != null ? String(ath.cj_2) : null,
+                            cj_3: ath.cj_3 != null ? String(ath.cj_3) : null,
+                            best_cj: ath.best_cj != null ? String(ath.best_cj) : null,
+                            total: ath.total != null ? String(ath.total) : null,
+                            rank: ath.rank != null ? String(ath.rank) : null,
+                            simulatedAction: sim.simulatedAction,
+                            existingResultId: sim.existingResultId,
+                            hasChanges: sim.hasChanges,
+                            diffFields: sim.diffFields
+                        };
+                    });
+
+                    formattedScorecards.forEach((ath, idx) => {
                         console.log(`${'-'.repeat(80)}`);
-                        console.log(`Scorecard #${idx + 1}: ${ath.name} (${ath.nation || 'N/A'}) | Born: ${ath.birth_year || 'N/A'} | Gender: ${ath.gender || 'N/A'}`);
-                        console.log(`  IWF Meet ID:   ${eventId} (${meetMetadata?.Meet || `Event ${eventId}`})`);
-                        console.log(`  Weight Class:  ${ath.weight_class || 'N/A'} | Group: ${ath.group || 'N/A'} | Body Weight: ${ath.body_weight ?? 'N/A'} kg`);
-                        console.log(`  Snatch 1-3:    ${ath.snatch_1 ?? '-'} / ${ath.snatch_2 ?? '-'} / ${ath.snatch_3 ?? '-'} | Best Snatch: ${ath.best_snatch ?? '-'}`);
-                        console.log(`  C&J 1-3:       ${ath.cj_1 ?? '-'} / ${ath.cj_2 ?? '-'} / ${ath.cj_3 ?? '-'} | Best C&J:    ${ath.best_cj ?? '-'}`);
-                        console.log(`  Total / Rank:  ${ath.total ?? '-'} kg (Rank: ${ath.rank ?? 'DNF'})`);
+                        console.log(`Scorecard #${idx + 1}: ${ath.name} (${ath.nation || 'N/A'}) | Born: ${ath.birth_year || 'N/A'} | Gender: ${ath.division}`);
+                        console.log(`  IWF Meet ID:        ${eventId} (${meetMetadata?.Meet || `Event ${eventId}`})`);
+                        console.log(`  Weight Class:       ${ath.weight_class || 'N/A'} | Body Weight: ${ath.body_weight_kg ?? 'N/A'} kg`);
+                        console.log(`  Snatch 1-3:         ${ath.snatch_1 ?? '-'} / ${ath.snatch_2 ?? '-'} / ${ath.snatch_3 ?? '-'} | Best Snatch: ${ath.best_snatch ?? '-'}`);
+                        console.log(`  C&J 1-3:            ${ath.cj_1 ?? '-'} / ${ath.cj_2 ?? '-'} / ${ath.cj_3 ?? '-'} | Best C&J:    ${ath.best_cj ?? '-'}`);
+                        console.log(`  Total / Rank:       ${ath.total ?? '-'} kg (Rank: ${ath.rank ?? 'DNF'})`);
+                        console.log(`  Simulation Action:  ${ath.simulatedAction} (Existing Result ID: ${ath.existingResultId || 'None - New Record'})`);
+                        if (ath.diffFields && ath.diffFields.length > 0) {
+                            console.log(`  Diff Fields:        ${ath.diffFields.join(', ')}`);
+                        }
                     });
                     console.log(`${'-'.repeat(80)}`);
-
-                    const formattedScorecards = matchedScorecards.map(ath => ({
-                        athlete_name: ath.name,
-                        name: ath.name,
-                        division: (ath.gender === 'F' || ath.gender === 'women' || ath.gender === 'W') ? "Women's Division" : "Men's Division",
-                        weight_class: ath.weight_class,
-                        nation: ath.nation,
-                        birth_year: ath.birth_year,
-                        body_weight_kg: ath.body_weight != null ? String(ath.body_weight) : null,
-                        snatch_1: ath.snatch_1 != null ? String(ath.snatch_1) : null,
-                        snatch_2: ath.snatch_2 != null ? String(ath.snatch_2) : null,
-                        snatch_3: ath.snatch_3 != null ? String(ath.snatch_3) : null,
-                        best_snatch: ath.best_snatch != null ? String(ath.best_snatch) : null,
-                        cj_1: ath.cj_1 != null ? String(ath.cj_1) : null,
-                        cj_2: ath.cj_2 != null ? String(ath.cj_2) : null,
-                        cj_3: ath.cj_3 != null ? String(ath.cj_3) : null,
-                        best_cj: ath.best_cj != null ? String(ath.best_cj) : null,
-                        total: ath.total != null ? String(ath.total) : null,
-                        rank: ath.rank != null ? String(ath.rank) : null
-                    }));
 
                     console.log('###TARGET_ATHLETE_JSON###');
                     console.log(JSON.stringify(formattedScorecards[0], null, 2));
                     console.log('###END_TARGET_ATHLETE_JSON###');
 
+                    const simulatedUpdates = formattedScorecards.filter(s => s.simulatedAction === 'UPDATE').length;
+                    const simulatedInserts = formattedScorecards.filter(s => s.simulatedAction === 'INSERT').length;
+                    const simulatedLocked = formattedScorecards.filter(s => s.simulatedAction === 'LOCKED_SKIP').length;
+
                     summary.success = true;
                     summary.importStats = {
                         dryRun: true,
                         iwf_meet_id: String(eventId),
+                        wouldSkip: false,
                         athleteName: options.athleteName,
                         athleteFilter: options.athleteName,
                         athleteFound: true,
                         totalAthletes: matchedScorecards.length,
+                        simulatedUpdates: simulatedUpdates,
+                        simulatedInserts: simulatedInserts,
+                        simulatedLocked: simulatedLocked,
                         targetAthlete: formattedScorecards[0],
                         targetAthletes: formattedScorecards,
                         matchedScorecards: formattedScorecards,
@@ -332,10 +447,14 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                     summary.importStats = {
                         dryRun: true,
                         iwf_meet_id: String(eventId),
+                        wouldSkip: false,
                         athleteName: options.athleteName,
                         athleteFilter: options.athleteName,
                         athleteFound: false,
                         totalAthletes: 0,
+                        simulatedUpdates: 0,
+                        simulatedInserts: 0,
+                        simulatedLocked: 0,
                         targetAthlete: null,
                         matchedScorecards: [],
                         closeMatches: closeMatches,
@@ -343,11 +462,33 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                     };
                 }
             } else {
+                const allMens = (mensResults && mensResults.weight_classes)
+                    ? mensResults.weight_classes.flatMap(wc => (wc.athletes || []).map(a => ({ ...a, gender: a.gender || 'M', weight_class: a.weight_class || wc.weight_class })))
+                    : [];
+                const allWomens = (womensResults && womensResults.weight_classes)
+                    ? womensResults.weight_classes.flatMap(wc => (wc.athletes || []).map(a => ({ ...a, gender: a.gender || 'F', weight_class: a.weight_class || wc.weight_class })))
+                    : [];
+                const allAthletes = [...allMens, ...allWomens];
+
+                const allSim = allAthletes.map(evaluateScorecardSimulation);
+                const totalUpdates = allSim.filter(s => s.simulatedAction === 'UPDATE').length;
+                const totalInserts = allSim.filter(s => s.simulatedAction === 'INSERT').length;
+                const totalLocked = allSim.filter(s => s.simulatedAction === 'LOCKED_SKIP').length;
+
+                console.log(`\n📊 Dry-Run Meet Simulation Breakdown (${meetTotalAthletes} total athletes):`);
+                console.log(`   Updates: ${totalUpdates}`);
+                console.log(`   Inserts: ${totalInserts}`);
+                console.log(`   Locked (manual override): ${totalLocked}`);
+
                 summary.success = true;
                 summary.importStats = {
                     dryRun: true,
                     iwf_meet_id: String(eventId),
+                    wouldSkip: false,
                     totalAthletes: meetTotalAthletes,
+                    simulatedUpdates: totalUpdates,
+                    simulatedInserts: totalInserts,
+                    simulatedLocked: totalLocked,
                     menCount: mensResults?.total_athletes || 0,
                     womenCount: womensResults?.total_athletes || 0
                 };
