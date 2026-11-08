@@ -4,6 +4,10 @@ All notable changes to the Weightlifting Database project will be documented in 
 
 ## [Fixed] - 2026-11-07 (Eastern Time)
 
+- **Outbox Queue Deletion Microsecond Precision Fix (`scripts/production/listener.js`, `scripts/production/owlcms-event-daemon.js`)**:
+  - Keyed queue deletions strictly on composite primary key `(federation, entity_id)` in `public.athlete_shard_queue`.
+  - Eliminated microsecond-to-millisecond truncation mismatch where JavaScript `Date` serialization caused `enqueued_at <= $3` inequality filters to evaluate to `false`, which previously prevented processed athletes from being deleted and trapped both background shard daemons in an unthrottled 100% CPU loop.
+
 - **Headless Stealth Browser Configuration, Total Lift Parsing & Virtual Display Execution (`scripts/production/iwf-config.js`, `scripts/production/iwf-results-scraper.js`, `.github/workflows/iwf-daily-results-pipeline.yml`)**:
   - Configured Puppeteer launch arguments in `iwf-config.js` with `--disable-blink-features=AutomationControlled`, `--disable-features=IsolateOrigins,site-per-process`, and 1080p desktop viewport dimensions.
   - Injected `evaluateOnNewDocument()` overrides in `iwf-results-scraper.js` to suppress `navigator.webdriver` and mock standard `window.chrome`, `navigator.plugins`, and `navigator.languages` to evade automated bot detection heuristics.

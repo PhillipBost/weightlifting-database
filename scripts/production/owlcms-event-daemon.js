@@ -106,8 +106,8 @@ async function drainAthleteShardQueue() {
                     // Delete the processed row from outbox table
                     await client.query(
                         `DELETE FROM public.athlete_shard_queue 
-                         WHERE federation = $1 AND entity_id = $2 AND enqueued_at <= $3`,
-                        [federation, entity_id, enqueued_at]
+                         WHERE federation = $1 AND entity_id = $2`,
+                        [federation, entity_id]
                     );
                 }
             } finally {
