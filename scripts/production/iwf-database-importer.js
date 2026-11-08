@@ -265,14 +265,41 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                     });
                     console.log(`${'-'.repeat(80)}`);
 
+                    const formattedScorecards = matchedScorecards.map(ath => ({
+                        athlete_name: ath.name,
+                        name: ath.name,
+                        division: (ath.gender === 'F' || ath.gender === 'women' || ath.gender === 'W') ? "Women's Division" : "Men's Division",
+                        weight_class: ath.weight_class,
+                        nation: ath.nation,
+                        birth_year: ath.birth_year,
+                        body_weight_kg: ath.body_weight != null ? String(ath.body_weight) : null,
+                        snatch_1: ath.snatch_1 != null ? String(ath.snatch_1) : null,
+                        snatch_2: ath.snatch_2 != null ? String(ath.snatch_2) : null,
+                        snatch_3: ath.snatch_3 != null ? String(ath.snatch_3) : null,
+                        best_snatch: ath.best_snatch != null ? String(ath.best_snatch) : null,
+                        cj_1: ath.cj_1 != null ? String(ath.cj_1) : null,
+                        cj_2: ath.cj_2 != null ? String(ath.cj_2) : null,
+                        cj_3: ath.cj_3 != null ? String(ath.cj_3) : null,
+                        best_cj: ath.best_cj != null ? String(ath.best_cj) : null,
+                        total: ath.total != null ? String(ath.total) : null,
+                        rank: ath.rank != null ? String(ath.rank) : null
+                    }));
+
+                    console.log('###TARGET_ATHLETE_JSON###');
+                    console.log(JSON.stringify(formattedScorecards[0], null, 2));
+                    console.log('###END_TARGET_ATHLETE_JSON###');
+
                     summary.success = true;
                     summary.importStats = {
                         dryRun: true,
                         iwf_meet_id: String(eventId),
+                        athleteName: options.athleteName,
                         athleteFilter: options.athleteName,
                         athleteFound: true,
                         totalAthletes: matchedScorecards.length,
-                        matchedScorecards: matchedScorecards,
+                        targetAthlete: formattedScorecards[0],
+                        targetAthletes: formattedScorecards,
+                        matchedScorecards: formattedScorecards,
                         meetTotalAthletes: meetTotalAthletes
                     };
                 } else {
@@ -292,6 +319,7 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                             weight_class: a.weight_class
                         }));
 
+                    console.log(`⚠️ Athlete "${options.athleteName}" not found in scraped results for Event ${eventId}.`);
                     console.log(`\n⚠️  DRY RUN TARGETED ATHLETE NOT FOUND: "${options.athleteName}" was not present in IWF Event ${eventId} (searched ${meetTotalAthletes} athletes).`);
                     if (closeMatches.length > 0) {
                         console.log(`  Close matches in Event ${eventId}:`);
@@ -304,9 +332,11 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                     summary.importStats = {
                         dryRun: true,
                         iwf_meet_id: String(eventId),
+                        athleteName: options.athleteName,
                         athleteFilter: options.athleteName,
                         athleteFound: false,
                         totalAthletes: 0,
+                        targetAthlete: null,
                         matchedScorecards: [],
                         closeMatches: closeMatches,
                         meetTotalAthletes: meetTotalAthletes
