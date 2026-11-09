@@ -2,6 +2,13 @@
 
 All notable changes to the Weightlifting Database project will be documented in this file.
 
+## [Changed] - 2026-11-08 (Eastern Standard Time)
+
+- **Strict Canonical IWF Shard Identification & Surrogate Key Isolation (`scripts/production/assembler.js`)**:
+  - Enforced strict primary-source indexing in `id_collector` by requiring `iwf_lifter_id NOT NULL` and eliminating the `COALESCE(iwf_lifter_id, db_lifter_id)` fallback for International Weightlifting Federation (IWF) static shards, guaranteeing internal database serial surrogate keys (`public.iwf_lifters.db_lifter_id`) never pollute the public `/iwf/` shard storage directory or cause future identifier namespace collisions.
+  - Canonicalized the root `data.id` property in `generateAthlete()` to resolve strictly to `row.prime_iwf_official_id` when assembling IWF profiles, and explicitly exposed `iwf_lifter_id` and `db_lifter_id` at the root of the assembled athlete payload.
+  - Joined `public.iwf_lifters` in `iwf_results_agg` to inject both `iwf_lifter_id` and `db_lifter_id` onto each competition result scorecard item in `data.iwf_results`, ensuring downstream frontend components (meet tables, personal best adapters, and charts) link exclusively to canonical federation numbers.
+
 ## [Added] - 2026-11-08 (Eastern Standard Time)
 
 - **High-Fidelity Dry-Run Simulation, Skip Enforcement & Split Action Telemetry (`scripts/production/iwf-database-importer.js`)**:

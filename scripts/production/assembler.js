@@ -651,6 +651,8 @@ async function generateAthlete(params, externalClient = null) {
                     jsonb_agg(
                        jsonb_build_object(
                             'id', r.db_result_id,
+                            'db_lifter_id', r.db_lifter_id,
+                            'iwf_lifter_id', il.iwf_lifter_id,
                             'meet_id', r.db_meet_id,
                             'iwf_meet_id', m.iwf_meet_id,
                             'date', r.date,
@@ -684,6 +686,7 @@ async function generateAthlete(params, externalClient = null) {
                     ) as results
                 FROM iwf_meet_results r
                 LEFT JOIN iwf_meets m ON r.db_meet_id = m.db_meet_id
+                LEFT JOIN iwf_lifters il ON r.db_lifter_id = il.db_lifter_id
                 WHERE r.db_lifter_id IN (SELECT id FROM all_iwf_db_ids)
             ),
             owlcms_results_agg AS (
@@ -791,7 +794,7 @@ async function generateAthlete(params, externalClient = null) {
                 -- Final collection of every ID type for shard generation
                 SELECT jsonb_build_object(
                     'usaw_ids', (SELECT jsonb_agg(DISTINCT membership_number) FROM usaw_lifters WHERE lifter_id IN (SELECT id FROM all_usaw_internal_ids) AND membership_number IS NOT NULL),
-                    'iwf_ids', (SELECT jsonb_agg(DISTINCT COALESCE(iwf_lifter_id, db_lifter_id)) FROM iwf_lifters WHERE db_lifter_id IN (SELECT id FROM all_iwf_db_ids)),
+                    'iwf_ids', (SELECT jsonb_agg(DISTINCT iwf_lifter_id) FROM iwf_lifters WHERE db_lifter_id IN (SELECT id FROM all_iwf_db_ids) AND iwf_lifter_id IS NOT NULL),
                     'internal_ids', (SELECT jsonb_agg(DISTINCT id) FROM all_usaw_internal_ids),
                     'owlcms_ids', (SELECT jsonb_agg(DISTINCT id) FROM all_owlcms_internal_ids)
                 ) as ids
@@ -897,10 +900,12 @@ async function generateAthlete(params, externalClient = null) {
         const countryName = row.iwf_country_name || mapCountryCodeToName(countryCode) || (countryCode === 'CAN' ? 'Canada' : 'United States');
 
         const data = {
-            id: usaw_id || iwf_id || owlcms_id || usaw_lifter_id,
+            id: usaw_id || row.prime_iwf_official_id || owlcms_id || usaw_lifter_id,
             internal_id: row.internal_id,
             linked_usaw_id: row.membership_number,
             linked_iwf_id: row.prime_iwf_official_id,
+            iwf_lifter_id: row.prime_iwf_official_id,
+            db_lifter_id: row.prime_iwf_db_id,
             linked_owlcms_id: row.prime_owlcms_id,
             usaw_athlete_name: row.usaw_athlete_name,
             iwf_athlete_name: row.iwf_athlete_name,
