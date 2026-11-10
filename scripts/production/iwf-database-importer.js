@@ -48,6 +48,7 @@ const { spawn } = require('child_process');
 const meetManager = require('./iwf-meet-manager');
 const resultsImporter = require('./iwf-results-importer');
 const lifterManager = require('./iwf-lifter-manager');
+const LockManager = require('./iwf-lock-manager');
 const config = require('./iwf-config');
 
 // ============================================================================
@@ -109,6 +110,7 @@ async function runScraper(eventId, year, eventDate, endpoint, targetUrl = null) 
  */
 async function importEventToDatabase(eventId, year, eventDate, options = {}) {
     const startTime = Date.now();
+    let lockAcquired = false;
 
     const summary = {
         iwf_meet_id: eventId ? String(eventId) : null,
@@ -124,6 +126,9 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
     };
 
     try {
+        LockManager.acquireLock();
+        lockAcquired = true;
+
         console.log(`\n${'='.repeat(80)}`);
         console.log(`IWF DATABASE IMPORT`);
         console.log('='.repeat(80));
@@ -617,6 +622,10 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
         summary.executionTimeMs = Date.now() - startTime;
 
         return summary;
+    } finally {
+        if (lockAcquired) {
+            LockManager.releaseLock();
+        }
     }
 }
 
@@ -752,60 +761,70 @@ async function batchImportEvents(eventsFilePath, options = {}) {
         results: []
     };
 
-    for (let i = 0; i < events.length; i++) {
-        const event = events[i];
+    let lockAcquired = false;
+    try {
+        LockManager.acquireLock();
+        lockAcquired = true;
 
-        console.log(`\n\n${'─'.repeat(80)}`);
-        console.log(`Event ${i + 1}/${events.length}: ${event.event_name || event.event_id}`);
-        console.log('─'.repeat(80));
+        for (let i = 0; i < events.length; i++) {
+            const event = events[i];
 
-        try {
-            const result = await importEventToDatabase(
-                event.event_id,
-                event.year || new Date(event.date).getFullYear(),
-                event.date,
-                options
-            );
+            console.log(`\n\n${'─'.repeat(80)}`);
+            console.log(`Event ${i + 1}/${events.length}: ${event.event_name || event.event_id}`);
+            console.log('─'.repeat(80));
 
-            batchSummary.results.push(result);
+            try {
+                const result = await importEventToDatabase(
+                    event.event_id,
+                    event.year || new Date(event.date).getFullYear(),
+                    event.date,
+                    options
+                );
 
-            if (result.success) {
-                if (result.importStats?.skipped) {
-                    batchSummary.skipped++;
+                batchSummary.results.push(result);
+
+                if (result.success) {
+                    if (result.importStats?.skipped) {
+                        batchSummary.skipped++;
+                    } else {
+                        batchSummary.successful++;
+                    }
                 } else {
-                    batchSummary.successful++;
+                    batchSummary.failed++;
                 }
-            } else {
+
+                // Delay between events to avoid overwhelming database
+                if (i < events.length - 1) {
+                    await new Promise(resolve => setTimeout(resolve, 2000));
+                }
+
+            } catch (error) {
+                console.error(`❌ Failed to import event ${event.event_id}: ${error.message}`);
                 batchSummary.failed++;
+                batchSummary.results.push({
+                    eventId: event.event_id,
+                    success: false,
+                    errors: [error.message]
+                });
             }
+        }
 
-            // Delay between events to avoid overwhelming database
-            if (i < events.length - 1) {
-                await new Promise(resolve => setTimeout(resolve, 2000));
-            }
+        // Print batch summary
+        console.log(`\n\n${'='.repeat(80)}`);
+        console.log(`BATCH IMPORT SUMMARY`);
+        console.log('='.repeat(80));
+        console.log(`Total events: ${batchSummary.totalEvents}`);
+        console.log(`Successful: ${batchSummary.successful}`);
+        console.log(`Skipped: ${batchSummary.skipped}`);
+        console.log(`Failed: ${batchSummary.failed}`);
+        console.log('='.repeat(80));
 
-        } catch (error) {
-            console.error(`❌ Failed to import event ${event.event_id}: ${error.message}`);
-            batchSummary.failed++;
-            batchSummary.results.push({
-                eventId: event.event_id,
-                success: false,
-                errors: [error.message]
-            });
+        return batchSummary;
+    } finally {
+        if (lockAcquired) {
+            LockManager.releaseLock();
         }
     }
-
-    // Print batch summary
-    console.log(`\n\n${'='.repeat(80)}`);
-    console.log(`BATCH IMPORT SUMMARY`);
-    console.log('='.repeat(80));
-    console.log(`Total events: ${batchSummary.totalEvents}`);
-    console.log(`Successful: ${batchSummary.successful}`);
-    console.log(`Skipped: ${batchSummary.skipped}`);
-    console.log(`Failed: ${batchSummary.failed}`);
-    console.log('='.repeat(80));
-
-    return batchSummary;
 }
 
 // ============================================================================

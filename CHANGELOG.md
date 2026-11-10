@@ -4,6 +4,15 @@ All notable changes to the Weightlifting Database project will be documented in 
 
 ## [Fixed] - 2026-11-10 (Eastern Standard Time)
 
+- **IWF Ingestion Singleton Mutex Locking & Re-Entrant Concurrency Protection (`scripts/production/iwf-lock-manager.js`, `scripts/production/iwf-database-importer.js`)**:
+  - Integrated `LockManager` singleton locking into `importEventToDatabase()` and `batchImportEvents()` in `scripts/production/iwf-database-importer.js`, guaranteeing that parallel or re-triggered importer processes cannot execute simultaneously against the same or concurrent competitions.
+  - Upgraded `scripts/production/iwf-lock-manager.js` to enforce depth-counted re-entrant locking (`lockDepth`) within the same Process Identifier (PID), enabling orchestrators (`iwf-main.js`) to invoke `importEventToDatabase()` without deadlock.
+  - Implemented live process verification via `process.kill(pid, 0)` with dead-PID recovery, automatically reclaiming stale locks upon abnormal process termination.
+  - Added process exit hooks (`exit`, `SIGINT`, `SIGTERM`) to guarantee that file locks are released cleanly upon exit.
+
+- **IWF Meet 700 Duplicate Scorecard Cleanup (`public.iwf_meet_results`)**:
+  - Identified and removed 258 duplicate scorecards in `public.iwf_meet_results` for Meet 2989 (2026 IWF World Championships) caused by concurrent execution races prior to mutex enforcement, restoring authentic state to 445 distinct athlete scorecards with zero duplicate profiles in `public.iwf_lifters`.
+
 - **IWF Lifter Duplicate Key Recovery & Safe Identity Resolution (`scripts/production/iwf-lifter-manager.js`, `scripts/production/iwf-results-importer.js`)**:
   - Replaced strict `.single()` with safe `.limit(1)` during International Weightlifting Federation (IWF) lifter identifier lookups in `findOrCreateLifter()`, preventing query failures and unhandled errors when resolving existing athletes.
   - Added an automated recovery handler for PostgreSQL unique constraint violations (`uq_iwf_lifters_iwf_lifter_id`, error code `23505`), fetching and returning the existing lifter record upon insert collision rather than returning `null`.
