@@ -2,6 +2,14 @@
 
 All notable changes to the Weightlifting Database project will be documented in this file.
 
+## [Fixed] - 2026-11-10 (Eastern Standard Time)
+
+- **Canonical Modern Results Endpoint & Explicit `--url` Input Authority (`scripts/production/iwf-config.js`, `scripts/production/iwf-database-importer.js`, `scripts/production/iwf-results-scraper.js`, `output/iwf_events_2026.json`)**:
+  - Restored canonical root `https://iwf.sport/results/results-by-events/` as `URLS.MODERN.BASE` and `URLS.MODERN.EVENT_DETAIL` in `scripts/production/iwf-config.js`, preventing event ID lookups from arbitrarily prefixing the `results-by-events-2025-2026/` sub-path onto modern competitions.
+  - Enforced user-supplied `--url` priority in `scripts/production/iwf-database-importer.js`, guaranteeing that an administrator's explicit target URL is never discarded or overridden by stale on-disk discovery cache records (`output/iwf_events_YYYY.json`).
+  - Added `--url` support to the command-line interface and `main()` invocation in `scripts/production/iwf-results-scraper.js`, automatically extracting the event identifier when `--event-id` is omitted and forwarding the exact target URL directly to Puppeteer navigation.
+  - Corrected cached metadata for Event 700 (2026 IWF World Championships) in `output/iwf_events_2026.json`.
+
 ## [Fixed] - 2026-11-09 (Eastern Standard Time)
 
 - **Preservation of Creation Timestamps on Meet, Location & Result Updates (`scripts/production/iwf-meet-manager.js`, `scripts/production/iwf-results-importer.js`)**:

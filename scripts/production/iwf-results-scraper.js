@@ -48,7 +48,8 @@ function parseArguments() {
     const options = {
         eventId: null,
         year: null,
-        date: null
+        date: null,
+        url: null
     };
 
     for (let i = 0; i < args.length; i++) {
@@ -65,19 +66,31 @@ function parseArguments() {
                 options.date = args[i + 1];
                 i++;
                 break;
+            case '--url':
+                options.url = args[i + 1];
+                i++;
+                break;
             case '--help':
                 console.log(`
 IWF Results Scraper - Usage:
   node iwf-results-scraper.js --event-id 661 --year 2025                    # Single event
   node iwf-results-scraper.js --event-id 621 --year 2025 --date "2025-05-09" # With date for endpoint selection
+  node iwf-results-scraper.js --url "https://iwf.sport/results/results-by-events/?event_id=700" # Direct URL
   node iwf-results-scraper.js --help                                         # Show this help
                 `);
                 process.exit(0);
         }
     }
 
+    if (options.url && !options.eventId) {
+        const match = options.url.match(/[?&]event_id=(\d+)/i);
+        if (match) {
+            options.eventId = match[1];
+        }
+    }
+
     if (!options.eventId) {
-        console.error('Error: --event-id is required');
+        console.error('Error: --event-id or --url is required');
         process.exit(1);
     }
 
@@ -1271,12 +1284,13 @@ async function main() {
         log(`Event ID: ${options.eventId}`);
         log(`Year: ${options.year || 'Not specified'}`);
         log(`Date: ${options.date || 'Not specified'}`);
+        if (options.url) log(`Target URL: ${options.url}`);
 
         // Initialize browser
         await initBrowser();
 
         // Scrape event results (navigation only for Step 5)
-        const result = await scrapeEventResults(options.eventId, options.year, options.date);
+        const result = await scrapeEventResults(options.eventId, options.year, options.date, null, options.url || null);
 
         // Close browser
         await closeBrowser();

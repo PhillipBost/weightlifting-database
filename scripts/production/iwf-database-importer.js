@@ -209,7 +209,7 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                     Meet: existingMeet.meet,
                     Level: existingMeet.level || 'International',
                     Date: existingMeet.date || eventDate || null,
-                    URL: existingMeet.url || config.buildEventDetailURL(eventId, year, eventDate)
+                    URL: options.url || existingMeet.url || config.buildEventDetailURL(eventId, year, eventDate)
                 };
             } else {
                 const resolvedMeetName = options.meetName || null;
@@ -222,6 +222,9 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                     URL: options.url || config.buildEventDetailURL(eventId, year, resolvedDate)
                 };
             }
+        } else if (options.url) {
+            console.log(`✓ Overriding cached meet URL with user-provided URL: ${options.url}`);
+            meetMetadata.URL = options.url;
         }
 
         // Step 3: Scrape event results (if not already parsed from HTML)
