@@ -2,6 +2,36 @@
 
 All notable changes to the Weightlifting Database project will be documented in this file.
 
+## [Fixed] - 2026-11-09 (Eastern Standard Time)
+
+- **Preservation of Creation Timestamps on Meet, Location & Result Updates (`scripts/production/iwf-meet-manager.js`, `scripts/production/iwf-results-importer.js`)**:
+  - Fixed `upsertIWFMeet()` and `upsertIWFMeetLocation()` in `scripts/production/iwf-meet-manager.js` to omit `created_at` from the upsert payload when updating an existing competition or venue location, preventing PostgreSQL `ON CONFLICT (iwf_meet_id) DO UPDATE SET` clauses from overwriting historical creation timestamps with the current execution time.
+  - Omitted `created_at` from `updatePayload` in `insertResultRecord()` (`scripts/production/iwf-results-importer.js`), ensuring that re-scrapes or targeted single-athlete updates in `public.iwf_meet_results` preserve their original insertion timestamps while updating `updated_at`.
+  - Preserved existing database values on updates so partial re-scrapes do not replace existing non-null venue coordinates or names with null.
+
+- **Dynamic Competition Metadata Discovery & Single-Event On-Demand Ingestion (`scripts/production/iwf-results-scraper.js`, `scripts/production/iwf-database-importer.js`)**:
+  - Implemented `discoverEventCardMetadata()` in `scripts/production/iwf-results-scraper.js` to query the annual competition listing page and extract authentic competition titles, dates, and venue locations (`city`, `country`) from event cards whenever on-disk annual discovery caches (`output/iwf_events_YYYY.json`) are absent, automatically persisting newly discovered events to disk.
+  - Extracted competition headings directly from the page Document Object Model (DOM) (`.title__filters h2`, `.title__event h2`) during results scraping.
+  - Eliminated synthetic placeholder date injection (`YYYY-01-01`) in `scripts/production/iwf-database-importer.js`, synchronizing authentic competition metadata and dates discovered during scraping into `meetMetadata` before invoking meet and location upserts.
+
+- **IWF Modern Era Endpoint Resolution & Direct `--url` Pipeline Navigation (`scripts/production/iwf-config.js`, `scripts/production/iwf-database-importer.js`, `scripts/production/iwf-results-scraper.js`, `weightlifting-frontend/app/api/admin/iwf-upload/route.ts`)**:
+  - Corrected `URLS.MODERN` in `scripts/production/iwf-config.js` to target the official `results-by-events-2025-2026/` sub-path instead of the generic search landing page (`results-by-events/`), preventing Puppeteer scrapers from landing on search forms where competition result tabs are absent.
+  - Added direct `--url <url>` parameter support across `scripts/production/iwf-database-importer.js` and `scripts/production/iwf-results-scraper.js`, ensuring that when an administrator inputs a full event URL, the scraper navigates directly to that exact URL rather than reconstructing or altering endpoint paths.
+  - Updated frontend admin upload API route (`weightlifting-frontend/app/api/admin/iwf-upload/route.ts`) to forward `--url` when a full HTTP URL is entered into the dashboard.
+
+## [Added] - 2026-11-09 (Eastern Standard Time)
+
+- **Persistent Cross-Federation Meet Aliases & Verbose Linker Telemetry (`scripts/production/link-new-iwf-athletes.js`)**:
+  - Integrated `scripts/production/link-new-iwf-athletes.js` with `public.meet_aliases` to resolve and persist cross-federation competition pairings across International Weightlifting Federation (IWF) and USA Weightlifting (USAW), querying persistent meet relationships prior to evaluating heuristics or manual code maps.
+  - Automatically writes newly discovered and verified meet pairings to `public.meet_aliases` to ensure competition cross-references persist for bidirectional frontend navigation.
+  - Upgraded linker console logging to explicitly output every recently updated IWF competition (ID, title, date), every established meet pairing with provenance tag, and the names, federation identifiers, and confidence scores for each athlete alias inserted into `public.athlete_aliases`.
+
+- **Automated Post-Import Duplicate Audit & Idempotent Queue Staging (`scripts/production/iwf-database-importer.js`)**:
+  - Implemented `auditMeetDuplicates(dbMeetId, meetName, iwfMeetId)` in `scripts/production/iwf-database-importer.js`, executing an automated database audit immediately following meet results ingestion in `importEventToDatabase()`.
+  - Audits `public.iwf_meet_results` for the ingested competition to detect any athlete recorded under multiple distinct bodyweight classes (`count(DISTINCT weight_class) > 1`), automatically staging new anomaly review items into `public.admin_review_queue` with category `iwf_duplicate`.
+  - Integrates with database-enforced idempotency (`uq_admin_review_iwf_duplicate_pending`) to safely handle repeat imports without creating duplicate tickets, permanently eliminating reliance on static catalog seeder files (`DUPLICATE_DATA_CORRECTION.json`).
+  - Exported `auditMeetDuplicates` in `module.exports` for programmatic and maintenance execution.
+
 ## [Changed] - 2026-11-08 (Eastern Standard Time)
 
 - **Strict Canonical IWF Shard Identification & Surrogate Key Isolation (`scripts/production/assembler.js`)**:

@@ -70,11 +70,11 @@ if (!process.env.SUPABASE_URL || !process.env.SUPABASE_SECRET_KEY) {
 const URLS = {
     // Modern results (2025 June 1+ onwards)
     MODERN: {
-        BASE: 'https://iwf.sport/results/results-by-events/',
-        EVENT_LISTING: 'https://iwf.sport/results/results-by-events/?event_year=',
-        EVENT_DETAIL: 'https://iwf.sport/results/results-by-events/?event_id=',
-        DEFAULT_YEAR: 2027,
-        AVAILABLE_YEARS: [2027, 2026, 2025], // 2025 = June 1st onwards only
+        BASE: 'https://iwf.sport/results/results-by-events/results-by-events-2025-2026/',
+        EVENT_LISTING: 'https://iwf.sport/results/results-by-events/results-by-events-2025-2026/?event_year=',
+        EVENT_DETAIL: 'https://iwf.sport/results/results-by-events/results-by-events-2025-2026/?event_id=',
+        DEFAULT_YEAR: 2026,
+        AVAILABLE_YEARS: [2026, 2025], // 2025 = June 1st onwards only
     },
 
     // Mid-range results (2018 Nov through 2025 May)
@@ -150,7 +150,7 @@ const SELECTORS = {
     resultsContainer: 'div.results, div.results__container, div[id*="result__container"]',
     weightClassHeader: 'h2, h3',  // Weight class headers like "55 kg Men"
     athleteCard: 'div.card:not(.card__legend)',  // Individual athlete result cards (excludes legend/header card)
-    
+
     // DEPRECATED - IWF doesn't use tables anymore
     // resultsTable: 'table, .results-table, div[class*="results"]',
     // athleteRow: 'tr, .athlete-row, div[class*="athlete"]',

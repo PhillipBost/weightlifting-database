@@ -114,8 +114,8 @@ async function initBrowser() {
 
         window.chrome = {
             runtime: {},
-            loadTimes: function() {},
-            csi: function() {},
+            loadTimes: function () { },
+            csi: function () { },
             app: {}
         };
 
@@ -275,7 +275,7 @@ async function verifyResultsLoaded() {
  */
 async function extractExpandedResults(xpathSelector, gender) {
     log(`Extracting expanded results for ${gender} using XPath...`);
-    
+
     try {
         // Use page.evaluate to query the DOM with XPath
         const expandedData = await page.evaluate((xpath) => {
@@ -289,12 +289,12 @@ async function extractExpandedResults(xpathSelector, gender) {
                 );
                 return result.singleNodeValue;
             };
-            
+
             const element = getElementByXPath(xpath);
             if (!element) {
                 return null;
             }
-            
+
             // Return the HTML content of the expanded results div
             return {
                 innerHTML: element.innerHTML,
@@ -303,23 +303,23 @@ async function extractExpandedResults(xpathSelector, gender) {
                 children: element.children.length
             };
         }, xpathSelector);
-        
+
         if (!expandedData) {
             log(`  ✗ Expanded results div not found at XPath: ${xpathSelector}`, 'WARN');
             return {};
         }
-        
+
         log(`  ✓ Found expanded results div with ${expandedData.children} children`);
-        
+
         // Save HTML for structure analysis
         await saveExpandedResultsHTML(gender, expandedData.innerHTML);
-        
+
         // Parse the HTML structure to extract attempt data
         const attemptData = parseAttemptHTML(expandedData.innerHTML, gender);
         log(`  ✓ Extracted attempt data structure`);
-        
+
         return attemptData;
-        
+
     } catch (error) {
         log(`  ✗ Error extracting expanded results: ${error.message}`, 'ERROR');
         return {};
@@ -520,7 +520,7 @@ function parseAttemptHTML(htmlContent, gender) {
                         }
 
 
-                    
+
 
 
                         // Extract bodyweight
@@ -814,8 +814,155 @@ function parseIwfEventHtml(htmlContent, eventId = null) {
 }
 
 // ============================================================================
-// NAVIGATION
+// NAVIGATION & DISCOVERY
 // ============================================================================
+
+/**
+ * Discover authentic event card metadata (name, date, location) from listing page or cache
+ *
+ * @param {object} browserInstance - Puppeteer browser instance
+ * @param {string} eventId - IWF event ID
+ * @param {number} year - Event year
+ * @param {string} endpoint - Endpoint key (MODERN, MID_RANGE, HISTORICAL)
+ * @returns {Promise<object|null>} - Discovered metadata or null
+ */
+async function discoverEventCardMetadata(browserInstance, eventId, year, endpoint) {
+    if (!eventId) return null;
+
+    const resolvedYear = year || new Date().getFullYear();
+    const resolvedEndpoint = endpoint || config.determineEndpoint(resolvedYear);
+    const eventsFilePath = path.join(config.LOGGING.OUTPUT_DIR, `iwf_events_${resolvedYear}.json`);
+
+    // 1. Check local cache first
+    if (fs.existsSync(eventsFilePath)) {
+        try {
+            const cachedData = JSON.parse(fs.readFileSync(eventsFilePath, 'utf8'));
+            const found = (cachedData.events || []).find(e => String(e.event_id) === String(eventId));
+            if (found && found.date) {
+                log(`✓ Found cached event card metadata for Event ${eventId} in ${eventsFilePath}`);
+                return {
+                    event_name: found.event_name,
+                    date: found.date,
+                    location: found.location,
+                    location_city: found.location_city,
+                    location_country: found.location_country
+                };
+            }
+        } catch (readErr) {
+            log(`Warning reading cached events file: ${readErr.message}`, 'DEBUG');
+        }
+    }
+
+    // 2. Discover from annual listing page if browser is available
+    if (!browserInstance) return null;
+
+    const listingBase = config.URLS[resolvedEndpoint]?.EVENT_LISTING;
+    if (!listingBase) return null;
+
+    const listingUrl = `${listingBase}${resolvedYear}`;
+    log(`Querying annual listing for authentic event card metadata: ${listingUrl}`);
+
+    let listingPage = null;
+    try {
+        listingPage = await browserInstance.newPage();
+        await listingPage.goto(listingUrl, {
+            waitUntil: 'networkidle0',
+            timeout: config.TIMING.REQUEST_TIMEOUT_MS
+        });
+
+        const cardData = await listingPage.evaluate((targetId) => {
+            const cards = Array.from(document.querySelectorAll('a.card, .event-card, .card'));
+            for (const card of cards) {
+                const href = card.getAttribute('href') || '';
+                if (href.includes(`event_id=${targetId}`)) {
+                    const titleElem = card.querySelector('p.title span.text, .title');
+                    const normalTexts = card.querySelectorAll('p.normal__text');
+                    const dateText = normalTexts[0] ? normalTexts[0].textContent.trim() : null;
+
+                    let city = null;
+                    let country = null;
+                    let locationText = null;
+
+                    if (normalTexts[1]) {
+                        locationText = normalTexts[1].textContent.trim();
+                        const strongElem = normalTexts[1].querySelector('strong');
+                        if (strongElem) {
+                            country = strongElem.textContent.trim();
+                            city = locationText.replace(country, '').replace(',', '').trim();
+                        } else {
+                            city = locationText;
+                        }
+                    }
+
+                    return {
+                        event_name: titleElem ? titleElem.textContent.trim() : null,
+                        date: dateText,
+                        location: locationText,
+                        location_city: city,
+                        location_country: country
+                    };
+                }
+            }
+            return null;
+        }, String(eventId));
+
+        if (cardData) {
+            log(`✓ Discovered event card: "${cardData.event_name}" (${cardData.date}), Location: ${cardData.location || 'N/A'}`);
+
+            // Persist discovered event into output/iwf_events_YYYY.json cache
+            try {
+                let eventsData = {
+                    metadata: {
+                        year: String(resolvedYear),
+                        scraped_at: new Date().toISOString(),
+                        event_count: 0,
+                        script_version: '1.0.0'
+                    },
+                    events: []
+                };
+
+                if (fs.existsSync(eventsFilePath)) {
+                    eventsData = JSON.parse(fs.readFileSync(eventsFilePath, 'utf8'));
+                    if (!Array.isArray(eventsData.events)) eventsData.events = [];
+                }
+
+                const existingIdx = eventsData.events.findIndex(e => String(e.event_id) === String(eventId));
+                const newEntry = {
+                    event_id: String(eventId),
+                    event_name: cardData.event_name,
+                    date: cardData.date,
+                    location: cardData.location,
+                    location_city: cardData.location_city,
+                    location_country: cardData.location_country,
+                    url: `${config.URLS[resolvedEndpoint]?.EVENT_DETAIL || ''}${eventId}`,
+                    endpoint: resolvedEndpoint,
+                    year: resolvedYear,
+                    scraped_at: new Date().toISOString()
+                };
+
+                if (existingIdx >= 0) {
+                    eventsData.events[existingIdx] = newEntry;
+                } else {
+                    eventsData.events.push(newEntry);
+                }
+                eventsData.metadata.event_count = eventsData.events.length;
+                fs.writeFileSync(eventsFilePath, JSON.stringify(eventsData, null, 2));
+                log(`✓ Saved discovered event into cache: ${eventsFilePath}`);
+            } catch (saveErr) {
+                log(`Warning saving discovered event cache: ${saveErr.message}`, 'WARN');
+            }
+        }
+
+        return cardData;
+    } catch (err) {
+        log(`Warning: Failed to discover event card from listing page: ${err.message}`, 'WARN');
+        return null;
+    } finally {
+        if (listingPage) {
+            await listingPage.close().catch(() => {});
+        }
+    }
+}
 
 /**
  * Navigate to event detail page and access results tabs
@@ -825,7 +972,7 @@ function parseIwfEventHtml(htmlContent, eventId = null) {
  * @param {string} eventDate - Event date in YYYY-MM-DD format (optional, for precise endpoint selection)
  * @returns {object} - Navigation result with success status and metadata
  */
-async function scrapeEventResults(eventId, year = null, eventDate = null, endpoint = null) {
+async function scrapeEventResults(eventId, year = null, eventDate = null, endpoint = null, targetUrl = null) {
     log('\n' + '='.repeat(80));
     log(`SCRAPING EVENT: ${eventId}`);
     log('='.repeat(80));
@@ -840,13 +987,20 @@ async function scrapeEventResults(eventId, year = null, eventDate = null, endpoi
         womens_tab_success: false,
         url: null,
         endpoint: null,
+        meet_metadata: null,
         error: null
     };
 
     try {
-        // Build event detail URL using endpoint if provided
+        // Build event detail URL using direct targetUrl or endpoint
         let eventUrl;
-        if (endpoint) {
+        if (typeof targetUrl === 'string' && targetUrl.startsWith('http')) {
+            eventUrl = targetUrl;
+            if (eventUrl.includes('2025-2026')) result.endpoint = 'MODERN';
+            else if (eventUrl.includes('2018-2025')) result.endpoint = 'MID_RANGE';
+            else if (eventUrl.includes('upto2018')) result.endpoint = 'HISTORICAL';
+            else result.endpoint = 'CUSTOM';
+        } else if (endpoint) {
             eventUrl = config.buildEventDetailURLFromEndpoint(eventId, endpoint);
             result.endpoint = endpoint;
         } else {
@@ -941,6 +1095,45 @@ async function scrapeEventResults(eventId, year = null, eventDate = null, endpoi
         log(`✓ URL verified: event_id=${eventId} matches`);
         result.navigation_success = true;
 
+        // Extract meet title from event detail page DOM
+        const extractedMeetTitle = await page.evaluate(() => {
+            const h2 = document.querySelector('.title__filters h2, .filters h2, .title__event h2, .event_title, h2.title');
+            if (h2 && h2.textContent.trim()) {
+                return h2.textContent.trim();
+            }
+            const headings = Array.from(document.querySelectorAll('h1, h2, h3'));
+            for (const h of headings) {
+                const text = h.textContent.trim();
+                if (text &&
+                    !text.toLowerCase().includes('results by events') &&
+                    !text.toLowerCase().includes('events') &&
+                    !text.toLowerCase().includes('year search') &&
+                    !text.toLowerCase().includes('event search') &&
+                    !text.toLowerCase().includes('athletes search') &&
+                    !text.toLowerCase().includes('search') &&
+                    !text.toLowerCase().includes('menu')) {
+                    return text;
+                }
+            }
+            return null;
+        }).catch(() => null);
+
+        if (extractedMeetTitle) {
+            log(`✓ Extracted meet title from page DOM: "${extractedMeetTitle}"`);
+        }
+
+        // Discover authentic event card metadata (date, location, official name) from annual listing page
+        const cardMetadata = await discoverEventCardMetadata(browser, eventId, year, result.endpoint);
+
+        result.meet_metadata = {
+            event_id: String(eventId),
+            meet_name: cardMetadata?.event_name || extractedMeetTitle || null,
+            date: cardMetadata?.date || null,
+            location_city: cardMetadata?.location_city || null,
+            location_country: cardMetadata?.location_country || null,
+            location_text: cardMetadata?.location || null
+        };
+
         // Wait for dynamic content
         log(`Waiting ${config.TIMING.PAGE_LOAD_DELAY_MS}ms for dynamic content...`);
         await new Promise(resolve => setTimeout(resolve, config.TIMING.PAGE_LOAD_DELAY_MS));
@@ -955,7 +1148,7 @@ async function scrapeEventResults(eventId, year = null, eventDate = null, endpoi
             const resultsLoaded = await verifyResultsLoaded();
             if (resultsLoaded) {
                 log('✓ Men\'s results loaded successfully');
-                
+
                 // Extract expanded results with individual attempts
                 log('Extracting men\'s expanded results with attempt details...');
                 const mensExpandedXPath = '/html/body/div[4]/section/div[2]/div[2]/div[2]';
@@ -996,7 +1189,7 @@ async function scrapeEventResults(eventId, year = null, eventDate = null, endpoi
             const resultsLoaded = await verifyResultsLoaded();
             if (resultsLoaded) {
                 log('✓ Women\'s results loaded successfully');
-                
+
                 // Extract expanded results with individual attempts
                 log('Extracting women\'s expanded results with attempt details...');
                 const womensExpandedXPath = '/html/body/div[4]/section/div[2]/div[2]/div[4]';

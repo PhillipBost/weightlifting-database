@@ -63,7 +63,7 @@ const config = require('./iwf-config');
  * @param {string} eventDate - Event date (YYYY-MM-DD)
  * @returns {Promise<Object>} - Scraper result data
  */
-async function runScraper(eventId, year, eventDate, endpoint) {
+async function runScraper(eventId, year, eventDate, endpoint, targetUrl = null) {
     console.log(`\n${'='.repeat(80)}`);
     console.log(`SCRAPING EVENT ${eventId}`);
     console.log('='.repeat(80));
@@ -76,7 +76,7 @@ async function runScraper(eventId, year, eventDate, endpoint) {
         await scraper.initBrowser();
 
         // Scrape event results
-        const result = await scraper.scrapeEventResults(eventId, year, eventDate, endpoint);
+        const result = await scraper.scrapeEventResults(eventId, year, eventDate, endpoint, targetUrl);
 
         // Close browser
         await scraper.closeBrowser();
@@ -208,19 +208,18 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                     event_id: eventId,
                     Meet: existingMeet.meet,
                     Level: existingMeet.level || 'International',
-                    Date: existingMeet.date || eventDate || new Date().toISOString().split('T')[0],
+                    Date: existingMeet.date || eventDate || null,
                     URL: existingMeet.url || config.buildEventDetailURL(eventId, year, eventDate)
                 };
             } else {
-                const resolvedMeetName = options.meetName || scraperResult?.meet_name || `Event ${eventId}`;
-                const resolvedDate = eventDate || options.date || (year ? `${year}-01-01` : new Date().toISOString().split('T')[0]);
-                console.log(`✓ Using metadata from HTML/options: "${resolvedMeetName}" (${resolvedDate})`);
+                const resolvedMeetName = options.meetName || null;
+                const resolvedDate = eventDate || options.date || null;
                 meetMetadata = {
                     event_id: eventId,
-                    Meet: resolvedMeetName,
+                    Meet: resolvedMeetName || `Event ${eventId}`,
                     Level: 'International',
                     Date: resolvedDate,
-                    URL: config.buildEventDetailURL(eventId, year || new Date(resolvedDate).getFullYear(), resolvedDate)
+                    URL: options.url || config.buildEventDetailURL(eventId, year, resolvedDate)
                 };
             }
         }
@@ -228,7 +227,7 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
         // Step 3: Scrape event results (if not already parsed from HTML)
         if (!scraperResult) {
             console.log(`\n🌐 Scraping event results...`);
-            scraperResult = await runScraper(eventId, year, eventDate, meetMetadata?.endpoint || null);
+            scraperResult = await runScraper(eventId, year, eventDate, meetMetadata?.endpoint || null, options.url || null);
 
             if (!scraperResult.success) {
                 throw new Error('Failed to scrape event results');
@@ -242,6 +241,24 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
         console.log(`  Men's athletes: ${mensResults?.total_athletes || 0}`);
         console.log(`  Women's athletes: ${womensResults?.total_athletes || 0}`);
         console.log(`  Total athletes: ${(mensResults?.total_athletes || 0) + (womensResults?.total_athletes || 0)}`);
+
+        // Synchronize authentic meet metadata from scraper/discovery if present
+        if (scraperResult?.meet_metadata) {
+            const sm = scraperResult.meet_metadata;
+            if (!options.meetName && (!meetMetadata.Meet || meetMetadata.Meet === `Event ${eventId}`)) {
+                meetMetadata.Meet = sm.meet_name || meetMetadata.Meet;
+            }
+            if (!options.date && !eventDate && (!meetMetadata.Date || !meetMetadata.Date.trim())) {
+                meetMetadata.Date = sm.date || meetMetadata.Date;
+            }
+            if (!meetMetadata.location_city && sm.location_city) {
+                meetMetadata.location_city = sm.location_city;
+            }
+            if (!meetMetadata.location_country && sm.location_country) {
+                meetMetadata.location_country = sm.location_country;
+            }
+            console.log(`✓ Synchronized authentic meet metadata: "${meetMetadata.Meet}" (${meetMetadata.Date || 'Date N/A'}), Location: ${meetMetadata.location_city || 'N/A'}, ${meetMetadata.location_country || 'N/A'}`);
+        }
 
         // Dry run mode: stop here (with in-memory --athlete-name filtering & scorecard breakdown)
         if (options.dryRun) {
@@ -342,7 +359,7 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                     const rawName = (a.name || '').toLowerCase();
                     const normalized = (lifterManager.normalizeName ? lifterManager.normalizeName(a.name || '') : '').toLowerCase();
                     return targetTokens.every(tok => rawName.includes(tok)) ||
-                           (normalized && targetTokens.every(tok => normalized.includes(tok)));
+                        (normalized && targetTokens.every(tok => normalized.includes(tok)));
                 };
 
                 const matchedScorecards = allAthletes.filter(matchesAthlete);
@@ -544,6 +561,11 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
             }));
         }
 
+        // Step 6b: Automated Post-Import Anomaly Audit
+        if (!options.dryRun && meet.db_meet_id) {
+            await auditMeetDuplicates(meet.db_meet_id, meet.Meet, meet.iwf_meet_id || eventId);
+        }
+
         // Step 7: Print summary
         console.log(`\n${'='.repeat(80)}`);
         console.log(`IMPORT SUMMARY`);
@@ -592,6 +614,109 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
         summary.executionTimeMs = Date.now() - startTime;
 
         return summary;
+    }
+}
+
+/**
+ * Automatically audits a meet for athletes competing in multiple weight classes
+ * and stages detected anomalies into public.admin_review_queue.
+ *
+ * @param {number} dbMeetId - Database meet ID
+ * @param {string} meetName - Competition name
+ * @param {string|number} iwfMeetId - IWF official event ID
+ * @returns {Promise<Object>} - Audit results summary
+ */
+async function auditMeetDuplicates(dbMeetId, meetName, iwfMeetId) {
+    if (!dbMeetId) return { audited: false, anomaliesCount: 0 };
+    try {
+        console.log(`\n🔍 [AUTO-AUDIT] Checking Meet ${dbMeetId} for multi-class scorecards...`);
+
+        const { data: results, error: fetchErr } = await config.supabaseIWF
+            .from('iwf_meet_results')
+            .select('db_result_id, db_lifter_id, lifter_name, weight_class, birth_year')
+            .eq('db_meet_id', dbMeetId);
+
+        if (fetchErr) {
+            console.error(`⚠️ [AUTO-AUDIT] Query failed for meet ${dbMeetId}: ${fetchErr.message}`);
+            return { audited: false, error: fetchErr.message };
+        }
+
+        if (!results || results.length === 0) {
+            console.log(`✓ [AUTO-AUDIT] No scorecards found for Meet ${dbMeetId}.`);
+            return { audited: true, anomaliesCount: 0 };
+        }
+
+        // Group scorecards by athlete
+        const lifterGroups = new Map();
+        for (const r of results) {
+            const key = r.db_lifter_id ? `id_${r.db_lifter_id}` : `name_${(r.lifter_name || '').trim().toLowerCase()}`;
+            if (!lifterGroups.has(key)) {
+                lifterGroups.set(key, {
+                    db_lifter_id: r.db_lifter_id,
+                    lifter_name: r.lifter_name,
+                    birth_year: r.birth_year,
+                    weight_classes: new Set(),
+                    scorecard_ids: []
+                });
+            }
+            const group = lifterGroups.get(key);
+            if (r.weight_class) group.weight_classes.add(r.weight_class);
+            group.scorecard_ids.push(r.db_result_id);
+        }
+
+        const anomalies = Array.from(lifterGroups.values()).filter(g => g.weight_classes.size > 1);
+
+        if (anomalies.length === 0) {
+            console.log(`✓ [AUTO-AUDIT] Clean: 0 multi-class duplicates found in Meet ${dbMeetId}.`);
+            return { audited: true, anomaliesCount: 0 };
+        }
+
+        console.log(`⚠️ [AUTO-AUDIT] Detected ${anomalies.length} athlete(s) with multi-class scorecards in Meet ${dbMeetId}:`);
+
+        for (const anom of anomalies) {
+            const weightClasses = Array.from(anom.weight_classes);
+            console.log(`   - ${anom.lifter_name} (Lifter ID: ${anom.db_lifter_id || 'N/A'}): ${weightClasses.join(', ')}`);
+
+            const reviewRecord = {
+                category: 'iwf_duplicate',
+                status: 'PENDING',
+                title: `IWF Same-Meet Duplicate: ${anom.lifter_name} (${meetName || `Meet ${dbMeetId}`})`,
+                primary_entity_type: 'iwf_meet_results',
+                primary_entity_id: anom.db_lifter_id || 0,
+                candidate_entity_type: 'iwf_lifters',
+                candidate_entity_id: anom.db_lifter_id || 0,
+                confidence_score: 90,
+                evidence: {
+                    db_meet_id: String(dbMeetId),
+                    iwf_meet_id: String(iwfMeetId || ''),
+                    meet_name: meetName,
+                    athlete_name: anom.lifter_name,
+                    birth_year: anom.birth_year,
+                    weight_classes: weightClasses,
+                    scorecard_ids: anom.scorecard_ids,
+                    note: 'Athlete recorded under multiple weight classes at the exact same international championship.'
+                }
+            };
+
+            const { error: insertErr } = await config.supabaseIWF
+                .from('admin_review_queue')
+                .insert([reviewRecord]);
+
+            if (insertErr) {
+                if (insertErr.code === '23505' || insertErr.message?.includes('uq_admin_review_iwf_duplicate_pending')) {
+                    console.log(`   ℹ️ [AUTO-AUDIT] Review ticket already pending for ${anom.lifter_name} (Meet ${dbMeetId}).`);
+                } else {
+                    console.error(`   ❌ [AUTO-AUDIT] Failed staging review item for ${anom.lifter_name}: ${insertErr.message}`);
+                }
+            } else {
+                console.log(`   ✅ [AUTO-AUDIT] Successfully staged review ticket for ${anom.lifter_name}.`);
+            }
+        }
+
+        return { audited: true, anomaliesCount: anomalies.length };
+    } catch (err) {
+        console.error(`⚠️ [AUTO-AUDIT] Unexpected error during meet audit: ${err.message}`);
+        return { audited: false, error: err.message };
     }
 }
 
@@ -724,6 +849,9 @@ function parseArgs() {
             case '--athlete-name':
                 options.athleteName = args[++i];
                 break;
+            case '--url':
+                options.url = args[++i];
+                break;
             case '--force':
                 options.force = true;
                 break;
@@ -761,6 +889,7 @@ USAGE:
 
 OPTIONS:
   --event-id <id>       IWF event ID to import
+  --url <url>           Full IWF event URL (bypasses endpoint calculation)
   --html-file <path>    Path to saved IWF meet HTML file (bypasses browser scraping)
   --meet-name <name>    Custom meet name override
   --year <year>         Event year (for endpoint selection)
@@ -804,9 +933,22 @@ EXAMPLES:
 async function main() {
     const options = parseArgs();
 
+    if (options.url) {
+        if (!options.eventId) {
+            const m = options.url.match(/[?&]event_id=(\d+)/i);
+            if (m) options.eventId = m[1];
+        }
+        if (!options.year) {
+            if (options.url.includes('2025-2026')) options.year = 2026;
+            else if (options.url.includes('2018-2025')) options.year = 2024;
+            else if (options.url.includes('upto2018')) options.year = 2018;
+            else options.year = new Date().getFullYear();
+        }
+    }
+
     // Validate options
-    if (!options.eventId && !options.eventsFile && !options.htmlFile) {
-        console.error('Error: Either --event-id, --events-file, or --html-file must be specified');
+    if (!options.eventId && !options.eventsFile && !options.htmlFile && !options.url) {
+        console.error('Error: Either --event-id, --events-file, --html-file, or --url must be specified');
         printHelp();
         process.exit(1);
     }
@@ -861,5 +1003,6 @@ if (require.main === module) {
 module.exports = {
     importEventToDatabase,
     batchImportEvents,
-    runScraper
+    runScraper,
+    auditMeetDuplicates
 };

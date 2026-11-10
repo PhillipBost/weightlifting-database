@@ -106,23 +106,27 @@ async function upsertIWFMeet(meetData) {
         throw new Error('Meet data with event_id is required');
     }
 
-    const insertData = {
-        iwf_meet_id: meetData.event_id.toString(),  // TEXT column storing IWF event ID
-        meet: meetData.Meet || meetData.meet || null,
-        level: meetData.Level || meetData.level || null,
-        date: meetData.Date || meetData.date || null,
-        results: null,
-        url: meetData.URL || meetData.url || null,
-        batch_id: meetData.batch_id || null,
-        scraped_date: meetData.scraped_date || new Date().toISOString(),
-        created_at: new Date().toISOString(),
-        updated_at: new Date().toISOString()
-    };
-
     try {
         // Check if meet exists first
         const existingMeet = await findExistingMeet(meetData.event_id);
         const isNew = !existingMeet;
+
+        const insertData = {
+            iwf_meet_id: meetData.event_id.toString(),  // TEXT column storing IWF event ID
+            meet: meetData.Meet || meetData.meet || existingMeet?.meet || null,
+            level: meetData.Level || meetData.level || existingMeet?.level || null,
+            date: meetData.Date || meetData.date || existingMeet?.date || null,
+            results: null,
+            url: meetData.URL || meetData.url || existingMeet?.url || null,
+            batch_id: meetData.batch_id || existingMeet?.batch_id || null,
+            scraped_date: meetData.scraped_date || new Date().toISOString(),
+            updated_at: new Date().toISOString()
+        };
+
+        // Only set created_at on initial insertion to preserve historical timestamp on re-scrapes and updates
+        if (isNew) {
+            insertData.created_at = new Date().toISOString();
+        }
 
         // Upsert: insert new or update existing based on iwf_meet_id unique constraint
         const { error } = await config.supabaseIWF
@@ -238,17 +242,21 @@ async function upsertIWFMeetLocation(meetId, locationData = {}, shouldGeocode = 
 
     const insertData = {
         iwf_meet_id: meetId.toString(),
-        address: locationData.address || null,
-        location_text: locationData.location_text || null,
-        date_range: locationData.date_range || null,
-        latitude: locationData.latitude || null,
-        longitude: locationData.longitude || null,
-        country: locationData.country || null,
-        city: locationData.city || null,
-        venue_name: locationData.venue_name || null,
-        created_at: new Date().toISOString(),
+        address: locationData.address || existingLocation?.address || null,
+        location_text: locationData.location_text || existingLocation?.location_text || null,
+        date_range: locationData.date_range || existingLocation?.date_range || null,
+        latitude: locationData.latitude != null ? locationData.latitude : (existingLocation?.latitude || null),
+        longitude: locationData.longitude != null ? locationData.longitude : (existingLocation?.longitude || null),
+        country: locationData.country || existingLocation?.country || null,
+        city: locationData.city || existingLocation?.city || null,
+        venue_name: locationData.venue_name || existingLocation?.venue_name || null,
         updated_at: new Date().toISOString()
     };
+
+    // Only set created_at on initial insertion to preserve historical timestamp
+    if (isNew) {
+        insertData.created_at = new Date().toISOString();
+    }
 
     try {
         // Upsert: insert new or update existing based on iwf_meet_id unique constraint

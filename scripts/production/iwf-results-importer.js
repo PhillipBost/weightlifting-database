@@ -248,8 +248,8 @@ async function insertResultRecord(resultData) {
                 };
             }
 
-            // Record exists - UPDATE with new values (fixes corrupted decimals)
-            const { manual_override, ...updatePayload } = resultData;
+            // Record exists - UPDATE with new values (fixes corrupted decimals while preserving original created_at)
+            const { manual_override, created_at, ...updatePayload } = resultData;
             const { data: updated, error: updateError } = await config.supabaseIWF
                 .from('iwf_meet_results')
                 .update(updatePayload)

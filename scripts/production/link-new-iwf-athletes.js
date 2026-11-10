@@ -306,6 +306,10 @@ async function run() {
         .in('db_meet_id', recentMeetIds);
 
     const iwfMeets = iwfMeetsData || [];
+    console.log(`  Target IWF meets within lookback window: ${iwfMeets.length}`);
+    for (const m of iwfMeets) {
+        console.log(`    - [IWF Meet ${m.db_meet_id}] "${m.meet}" (${m.date || 'Date N/A'})`);
+    }
 
     // Also pull all USAW International meets + manual overrides for event mapping
     const manualUsawIds = Object.values(MANUAL_MEET_MAP).flat();
@@ -316,25 +320,89 @@ async function run() {
 
     const usawMeets = usawMeetsData || [];
 
-    // Step 3: Build meet pairs (same logic as maintenance script)
+    // Step 3: Build meet pairs using public.meet_aliases, manual overrides, and dynamic discovery
     console.log(`\n[3/5] Mapping IWF meets to USAW meets...`);
     const meetMapPairs = [];
 
+    // Query persistent meet_aliases table first
+    let persistedMeetAliases = [];
+    try {
+        const { data: aliasRows, error: aliasErr } = await supabase
+            .from('meet_aliases')
+            .select('iwf_meet_id, usaw_meet_id, match_confidence, manual_override')
+            .in('iwf_meet_id', recentMeetIds);
+
+        if (!aliasErr && aliasRows) {
+            persistedMeetAliases = aliasRows;
+        }
+    } catch (err) {
+        console.warn(`  ⚠️ Warning querying meet_aliases: ${err.message}`);
+    }
+
     for (const iMeet of iwfMeets) {
-        const explicitOverrides = MANUAL_MEET_MAP[iMeet.db_meet_id];
-        if (explicitOverrides) {
-            for (const overrideUsawId of explicitOverrides) {
-                const explicitUsaw = usawMeets.find(m => m.meet_id === overrideUsawId);
-                if (explicitUsaw) {
+        // Priority 1: Persistent meet_aliases table
+        const dbMatches = persistedMeetAliases.filter(a => a.iwf_meet_id === iMeet.db_meet_id);
+        if (dbMatches.length > 0) {
+            for (const dbMatch of dbMatches) {
+                let usawMeet = usawMeets.find(m => m.meet_id === dbMatch.usaw_meet_id);
+                if (!usawMeet) {
+                    const { data: fetchedUsaw } = await supabase
+                        .from('usaw_meets')
+                        .select('meet_id, Meet, Date')
+                        .eq('meet_id', dbMatch.usaw_meet_id)
+                        .maybeSingle();
+                    if (fetchedUsaw) {
+                        usawMeet = fetchedUsaw;
+                        usawMeets.push(fetchedUsaw);
+                    }
+                }
+
+                if (usawMeet) {
                     meetMapPairs.push({
-                        iwf_meet_id: iMeet.db_meet_id, iwf_meet_name: iMeet.meet, iwf_date: iMeet.date,
-                        usaw_meet_id: explicitUsaw.meet_id, usaw_meet_name: explicitUsaw.Meet, usaw_date: explicitUsaw.Date
+                        iwf_meet_id: iMeet.db_meet_id,
+                        iwf_meet_name: iMeet.meet,
+                        iwf_date: iMeet.date,
+                        usaw_meet_id: usawMeet.meet_id,
+                        usaw_meet_name: usawMeet.Meet,
+                        usaw_date: usawMeet.Date,
+                        provenance: dbMatch.manual_override ? 'Persistent Override (meet_aliases)' : 'Persistent Link (meet_aliases)'
                     });
                 }
             }
             continue;
         }
 
+        // Priority 2: Code manual overrides (MANUAL_MEET_MAP)
+        const explicitOverrides = MANUAL_MEET_MAP[iMeet.db_meet_id];
+        if (explicitOverrides) {
+            for (const overrideUsawId of explicitOverrides) {
+                const explicitUsaw = usawMeets.find(m => m.meet_id === overrideUsawId);
+                if (explicitUsaw) {
+                    meetMapPairs.push({
+                        iwf_meet_id: iMeet.db_meet_id,
+                        iwf_meet_name: iMeet.meet,
+                        iwf_date: iMeet.date,
+                        usaw_meet_id: explicitUsaw.meet_id,
+                        usaw_meet_name: explicitUsaw.Meet,
+                        usaw_date: explicitUsaw.Date,
+                        provenance: 'Code Override (MANUAL_MEET_MAP)'
+                    });
+
+                    // Persist to meet_aliases table
+                    if (!isDryRun) {
+                        await supabase.from('meet_aliases').upsert({
+                            iwf_meet_id: iMeet.db_meet_id,
+                            usaw_meet_id: explicitUsaw.meet_id,
+                            match_confidence: 100,
+                            manual_override: true
+                        }, { onConflict: 'usaw_meet_id,iwf_meet_id' }).catch(() => {});
+                    }
+                }
+            }
+            continue;
+        }
+
+        // Priority 3: Dynamic heuristic discovery (14-day window + title token overlap)
         const nearbyUsawMeets = usawMeets.filter(uMeet => getDaysDiff(iMeet.date, uMeet.Date) <= 14);
         const iTokens = tokenizeMeet(iMeet.meet);
         let bestUsaw = null;
@@ -342,17 +410,38 @@ async function run() {
         for (const uMeet of nearbyUsawMeets) {
             const uTokens = tokenizeMeet(uMeet.Meet);
             const overlap = uTokens.filter(t => iTokens.includes(t)).length;
-            if (overlap > maxOverlap) { maxOverlap = overlap; bestUsaw = uMeet; }
+            if (overlap > maxOverlap) {
+                maxOverlap = overlap;
+                bestUsaw = uMeet;
+            }
         }
-        if (bestUsaw) {
+        if (bestUsaw && maxOverlap >= 2) {
             meetMapPairs.push({
-                iwf_meet_id: iMeet.db_meet_id, iwf_meet_name: iMeet.meet, iwf_date: iMeet.date,
-                usaw_meet_id: bestUsaw.meet_id, usaw_meet_name: bestUsaw.Meet, usaw_date: bestUsaw.Date
+                iwf_meet_id: iMeet.db_meet_id,
+                iwf_meet_name: iMeet.meet,
+                iwf_date: iMeet.date,
+                usaw_meet_id: bestUsaw.meet_id,
+                usaw_meet_name: bestUsaw.Meet,
+                usaw_date: bestUsaw.Date,
+                provenance: `Dynamic Discovery (Overlap: ${maxOverlap} tokens)`
             });
+
+            // Persist newly discovered meet mapping to meet_aliases
+            if (!isDryRun) {
+                await supabase.from('meet_aliases').upsert({
+                    iwf_meet_id: iMeet.db_meet_id,
+                    usaw_meet_id: bestUsaw.meet_id,
+                    match_confidence: 90,
+                    manual_override: false
+                }, { onConflict: 'usaw_meet_id,iwf_meet_id' }).catch(() => {});
+            }
         }
     }
 
-    console.log(`  Mapped ${meetMapPairs.length} IWF meets to USAW meets.`);
+    console.log(`  Mapped ${meetMapPairs.length} IWF meets to USAW meets:`);
+    for (const pair of meetMapPairs) {
+        console.log(`    ✓ [IWF ${pair.iwf_meet_id}] "${pair.iwf_meet_name}" (${pair.iwf_date}) ↔ [USAW ${pair.usaw_meet_id}] "${pair.usaw_meet_name}" (${pair.usaw_date}) [${pair.provenance}]`);
+    }
 
     if (meetMapPairs.length === 0) {
         console.log('None of the recently updated IWF meets could be mapped to a USAW meet. No links to create.');
@@ -397,7 +486,9 @@ async function run() {
                     verifiedAliases.push({
                         usaw_lifter_id: overrideTarget.lifter_id,
                         iwf_db_lifter_id: iAthlete.db_lifter_id,
-                        match_confidence: 100
+                        match_confidence: 100,
+                        usaw_name: overrideTarget.lifter_name,
+                        iwf_name: iAthlete.lifter_name
                     });
                     continue;
                 }
@@ -438,7 +529,9 @@ async function run() {
                 verifiedAliases.push({
                     usaw_lifter_id: possibleIdentities[0].lifter_id,
                     iwf_db_lifter_id: iAthlete.db_lifter_id,
-                    match_confidence: possibleIdentities[0].calculated_score
+                    match_confidence: possibleIdentities[0].calculated_score,
+                    usaw_name: possibleIdentities[0].lifter_name,
+                    iwf_name: iAthlete.lifter_name
                 });
             }
         }
@@ -506,7 +599,9 @@ async function run() {
                     verifiedAliases.push({
                         usaw_lifter_id: uAthlete.lifter_id,
                         iwf_db_lifter_id: iAthlete.db_lifter_id,
-                        match_confidence: 90
+                        match_confidence: 90,
+                        usaw_name: uAthlete.lifter_name,
+                        iwf_name: iAthlete.athlete_name
                     });
                     securedIwfIds.add(iAthlete.db_lifter_id);
                     fallbackMatches++;
@@ -806,17 +901,27 @@ async function run() {
 
     // Step 5: Upsert into athlete_aliases
     if (finalAliases.length > 0) {
-        console.log(`\n[5/5] Inserting ${finalAliases.length} USAW ↔ IWF aliases into athlete_aliases...`);
+        console.log(`\n[5/5] Inserting ${finalAliases.length} USAW ↔ IWF aliases into athlete_aliases:`);
+        for (const a of finalAliases) {
+            console.log(`  ✓ Linked: IWF[${a.iwf_db_lifter_id}] "${a.iwf_name || 'N/A'}" ↔ USAW[${a.usaw_lifter_id}] "${a.usaw_name || 'N/A'}" (Confidence: ${a.match_confidence})`);
+        }
+
+        const dbPayload = finalAliases.map(a => ({
+            usaw_lifter_id: a.usaw_lifter_id,
+            iwf_db_lifter_id: a.iwf_db_lifter_id,
+            match_confidence: a.match_confidence
+        }));
+
         if (!isDryRun) {
             const { error: insertError } = await supabase
                 .from('athlete_aliases')
-                .upsert(finalAliases, { onConflict: 'usaw_lifter_id,iwf_db_lifter_id' });
+                .upsert(dbPayload, { onConflict: 'usaw_lifter_id,iwf_db_lifter_id' });
 
             if (insertError) {
                 console.error('ERROR inserting USAW ↔ IWF aliases:', insertError.message, insertError.code);
                 process.exit(1);
             }
-            console.log(`✓ Successfully upserted ${finalAliases.length} USAW ↔ IWF athlete aliases.`);
+            console.log(`✓ Successfully upserted ${finalAliases.length} USAW ↔ IWF athlete aliases into public.athlete_aliases.`);
         } else {
             console.log(`[DRY RUN] Would insert ${finalAliases.length} USAW ↔ IWF aliases.`);
         }
