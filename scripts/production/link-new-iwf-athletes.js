@@ -428,12 +428,16 @@ async function run() {
 
             // Persist newly discovered meet mapping to meet_aliases
             if (!isDryRun) {
-                await supabase.from('meet_aliases').upsert({
-                    iwf_meet_id: iMeet.db_meet_id,
-                    usaw_meet_id: bestUsaw.meet_id,
-                    match_confidence: 90,
-                    manual_override: false
-                }, { onConflict: 'usaw_meet_id,iwf_meet_id' }).catch(() => {});
+                try {
+                    await supabase.from('meet_aliases').upsert({
+                        iwf_meet_id: iMeet.db_meet_id,
+                        usaw_meet_id: bestUsaw.meet_id,
+                        match_confidence: 90,
+                        manual_override: false
+                    }, { onConflict: 'usaw_meet_id,iwf_meet_id' });
+                } catch (aliasErr) {
+                    console.warn(`    ⚠️ Non-fatal meet_aliases upsert warning: ${aliasErr.message}`);
+                }
             }
         }
     }

@@ -4,6 +4,14 @@ All notable changes to the Weightlifting Database project will be documented in 
 
 ## [Fixed] - 2026-11-10 (Eastern Standard Time)
 
+- **IWF Lifter Duplicate Key Recovery & Safe Identity Resolution (`scripts/production/iwf-lifter-manager.js`, `scripts/production/iwf-results-importer.js`)**:
+  - Replaced strict `.single()` with safe `.limit(1)` during International Weightlifting Federation (IWF) lifter identifier lookups in `findOrCreateLifter()`, preventing query failures and unhandled errors when resolving existing athletes.
+  - Added an automated recovery handler for PostgreSQL unique constraint violations (`uq_iwf_lifters_iwf_lifter_id`, error code `23505`), fetching and returning the existing lifter record upon insert collision rather than returning `null`.
+  - Added explicit diagnostic validation in `importAthleteResult()` to prevent unhandled null dereferences when scorecard records are mapped.
+
+- **Meet Alias Upsert Promise Handling in Cross-Federation Linker (`scripts/production/link-new-iwf-athletes.js`)**:
+  - Replaced unsupported `.catch()` on Supabase `PostgrestFilterBuilder` with standard `try / catch` handling during `meet_aliases` upsert operations in `scripts/production/link-new-iwf-athletes.js`, preventing fatal `TypeError` interruptions during competition mapping.
+
 - **Canonical Modern Results Endpoint & Explicit `--url` Input Authority (`scripts/production/iwf-config.js`, `scripts/production/iwf-database-importer.js`, `scripts/production/iwf-results-scraper.js`, `output/iwf_events_2026.json`)**:
   - Restored canonical root `https://iwf.sport/results/results-by-events/` as `URLS.MODERN.BASE` and `URLS.MODERN.EVENT_DETAIL` in `scripts/production/iwf-config.js`, preventing event ID lookups from arbitrarily prefixing the `results-by-events-2025-2026/` sub-path onto modern competitions.
   - Enforced user-supplied `--url` priority in `scripts/production/iwf-database-importer.js`, guaranteeing that an administrator's explicit target URL is never discarded or overridden by stale on-disk discovery cache records (`output/iwf_events_YYYY.json`).

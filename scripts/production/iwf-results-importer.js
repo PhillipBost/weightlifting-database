@@ -338,6 +338,10 @@ async function importAthleteResult(athlete, meetId, meetInfo) {
             athlete.iwf_athlete_url
         );
 
+        if (!lifter || !lifter.db_lifter_id) {
+            throw new Error(`Failed to resolve or create lifter record for "${athlete.name}" (${athlete.nation || 'unknown nation'})`);
+        }
+
         // Step 2: Enrich athlete data with analytics calculations
         // This calculates: qpoints, q_youth, q_masters, competition_age, successful attempts, bounce-back metrics
         const enrichedAthlete = await analytics.enrichAthleteWithAnalytics(athlete, meetInfo);

@@ -410,14 +410,17 @@ async function findOrCreateLifter(name, country, birthYear, gender, iWFLifterId,
     try {
         // Step 1: If we have an IWF lifter ID, use that as primary key (globally unique)
         if (iWFLifterId) {
-            const { data: lifterByIWFId, error: iwfSearchError } = await config.supabaseIWF
+            const { data: liftersByIWFId, error: iwfSearchError } = await config.supabaseIWF
                 .from('iwf_lifters')
                 .select('*')
                 .eq('iwf_lifter_id', iWFLifterId)
-                .single();
+                .limit(1);
 
-            if (!iwfSearchError && lifterByIWFId) {
-                console.log(`[Lifter Manager] Found existing by IWF ID: ${normalizedName} (${country})`);
+            if (iwfSearchError) {
+                console.warn(`[Lifter Manager] Warning querying by IWF ID (${iWFLifterId}): ${iwfSearchError.message}`);
+            } else if (liftersByIWFId && liftersByIWFId.length > 0) {
+                const lifterByIWFId = liftersByIWFId[0];
+                console.log(`[Lifter Manager] Found existing by IWF ID: ${normalizedName} (${country}) [ID: ${lifterByIWFId.db_lifter_id}]`);
                 return lifterByIWFId;
             }
         }
@@ -518,6 +521,21 @@ async function findOrCreateLifter(name, country, birthYear, gender, iWFLifterId,
             .single();
 
         if (insertError) {
+            // If duplicate key collision on iwf_lifter_id, recover by fetching the existing lifter
+            if (iWFLifterId && (insertError.code === '23505' || (insertError.message && insertError.message.includes('uq_iwf_lifters_iwf_lifter_id')))) {
+                console.log(`[Lifter Manager] Duplicate IWF ID collision detected for ${iWFLifterId}. Recovering existing lifter record...`);
+                const { data: recoveredLifters, error: recoverErr } = await config.supabaseIWF
+                    .from('iwf_lifters')
+                    .select('*')
+                    .eq('iwf_lifter_id', iWFLifterId)
+                    .limit(1);
+
+                if (!recoverErr && recoveredLifters && recoveredLifters.length > 0) {
+                    console.log(`[Lifter Manager] Successfully recovered existing lifter by IWF ID: ${recoveredLifters[0].athlete_name} (ID: ${recoveredLifters[0].db_lifter_id})`);
+                    return recoveredLifters[0];
+                }
+            }
+
             console.error(`[Lifter Manager] Error creating lifter: ${insertError.message}`);
             return null;
         }
