@@ -2,7 +2,18 @@
 
 All notable changes to the Weightlifting Database project will be documented in this file.
 
+## [Added] - 2026-11-10 (Eastern Standard Time)
+
+- **IWF Pipeline Runs Audit Table Migration (`migrations/create_iwf_pipeline_runs_table.sql`)**:
+  - Added the canonical database migration for `public.iwf_pipeline_runs`, persisting full scraper telemetry, console output, parameters, and run status.
+  - Implemented foreign-key-decoupled `db_meet_id BIGINT NULL` tracking to allow dry-run simulations and pre-commit validations without relational constraint failures.
+  - Enforced Discretionary Access Control (DAC) sequence and table permissions for `service_role` and `authenticated` roles, alongside Row-Level Security (RLS) policies requiring administrator role verification (`public.is_admin(auth.uid())`).
+
 ## [Fixed] - 2026-11-10 (Eastern Standard Time)
+
+- **IWF Pre-Import Result Counting & Meet Name Resolution (`scripts/production/iwf-meet-manager.js`, `scripts/production/iwf-database-importer.js`)**:
+  - Corrected `checkMeetHasResults()` in `scripts/production/iwf-meet-manager.js` to resolve and query by `db_meet_id` in `public.iwf_meet_results` rather than the non-existent `iwf_meet_id` column, eliminating query error `42703` and restoring accurate detection of pre-existing competition scorecards.
+  - Fixed property casing in `scripts/production/iwf-database-importer.js` (`existingMeet.meet || existingMeet.Meet`), preventing meet names from rendering as `undefined` in console output and forwarding canonical `db_meet_id` directly to pre-import checks.
 
 - **IWF Ingestion Singleton Mutex Locking & Re-Entrant Concurrency Protection (`scripts/production/iwf-lock-manager.js`, `scripts/production/iwf-database-importer.js`)**:
   - Integrated `LockManager` singleton locking into `importEventToDatabase()` and `batchImportEvents()` in `scripts/production/iwf-database-importer.js`, guaranteeing that parallel or re-triggered importer processes cannot execute simultaneously against the same or concurrent competitions.

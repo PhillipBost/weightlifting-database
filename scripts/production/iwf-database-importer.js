@@ -164,9 +164,9 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
         const existingMeet = await meetManager.findExistingMeet(eventId);
 
         if (existingMeet && !options.force) {
-            console.log(`\n✓ Meet already exists: ${existingMeet.Meet} (ID: ${existingMeet.iwf_meet_id})`);
+            console.log(`\n✓ Meet already exists: ${existingMeet.meet || existingMeet.Meet} (ID: ${existingMeet.iwf_meet_id})`);
 
-            const resultsCheck = await meetManager.checkMeetHasResults(existingMeet.iwf_meet_id);
+            const resultsCheck = await meetManager.checkMeetHasResults(existingMeet.db_meet_id || existingMeet.iwf_meet_id);
 
             if (resultsCheck.hasResults) {
                 console.log(`✓ Meet already has ${resultsCheck.count} results`);

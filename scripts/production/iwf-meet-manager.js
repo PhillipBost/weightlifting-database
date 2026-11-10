@@ -56,27 +56,53 @@ async function findExistingMeet(eventId) {
 /**
  * Check if meet has existing results
  *
- * @param {number} meetId - IWF meet ID
- * @returns {Object} - { hasResults: boolean, count: number }
+ * @param {number|string} identifier - Database meet ID (db_meet_id) or official IWF event ID (iwf_meet_id)
+ * @returns {Promise<Object>} - { hasResults: boolean, count: number }
  */
-async function checkMeetHasResults(meetId) {
-    if (!meetId) {
+async function checkMeetHasResults(identifier) {
+    if (!identifier) {
         return { hasResults: false, count: 0 };
     }
 
     try {
+        let dbMeetId = null;
+        const numericId = parseInt(identifier, 10);
+
+        // 1. If identifier is a valid db_meet_id in iwf_meets
+        if (!isNaN(numericId)) {
+            const { data: byDbId } = await config.supabaseIWF
+                .from('iwf_meets')
+                .select('db_meet_id')
+                .eq('db_meet_id', numericId)
+                .maybeSingle();
+            if (byDbId?.db_meet_id) dbMeetId = byDbId.db_meet_id;
+        }
+
+        // 2. Fallback: resolve db_meet_id using official event ID (iwf_meet_id)
+        if (!dbMeetId) {
+            const { data: byIwfId } = await config.supabaseIWF
+                .from('iwf_meets')
+                .select('db_meet_id')
+                .eq('iwf_meet_id', String(identifier))
+                .maybeSingle();
+            if (byIwfId?.db_meet_id) dbMeetId = byIwfId.db_meet_id;
+        }
+
+        if (!dbMeetId && !isNaN(numericId)) dbMeetId = numericId;
+        if (!dbMeetId) return { hasResults: false, count: 0 };
+
         const { count, error } = await config.supabaseIWF
             .from('iwf_meet_results')
             .select('*', { count: 'exact', head: true })
-            .eq('iwf_meet_id', meetId);
+            .eq('db_meet_id', dbMeetId);
 
         if (error) {
-            console.error(`Error checking meet results: ${error.message}`);
+            console.error(`Error checking meet results for meet ${dbMeetId}: ${error.message}`);
             return { hasResults: false, count: 0 };
         }
 
         return {
-            hasResults: count > 0,
+            hasResults: (count || 0) > 0,
             count: count || 0
         };
 
