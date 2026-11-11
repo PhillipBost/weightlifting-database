@@ -249,34 +249,117 @@ async function fetchAll(client, table, select, filterCol, filterVal) {
 // ============================================================================
 
 async function run() {
-    const args = minimist(process.argv.slice(2), { default: { days: 3 } });
+    const startTime = Date.now();
+    const args = minimist(process.argv.slice(2), { 
+        default: { days: 3 },
+        string: [
+            'event-id', 'eventId',
+            'meet-id', 'meetId',
+            'year',
+            'athlete-name', 'athleteName',
+            'athlete-db-id', 'athleteDbId',
+            'iwf-id', 'iwfId',
+            'target-federation', 'targetFederation'
+        ]
+    });
     const isDryRun = args['dry-run'] || args.d || false;
     const isAll = args.all || false;
     const isVerbose = args.verbose || args.v || false;
-    const lookbackDays = parseInt(args.days) || 3;
+    const isReEvaluate = args['re-evaluate'] || args.reEvaluate || false;
+    const targetFed = (args['target-federation'] || args.targetFederation || 'all').toLowerCase();
+
+    const eventIdParam = args['event-id'] || args.eventId;
+    const meetIdParam = args['meet-id'] || args.meetId;
+    const yearParam = args.year ? parseInt(args.year, 10) : null;
+    const athleteNameParam = args['athlete-name'] || args.athleteName;
+    const athleteDbIdParam = (args['athlete-db-id'] || args.athleteDbId) ? parseInt(args['athlete-db-id'] || args.athleteDbId, 10) : null;
+    const iwfIdParam = args['iwf-id'] || args.iwfId;
+    const lookbackDays = parseInt(args.days, 10) || 3;
     const cutoffDate = new Date(Date.now() - lookbackDays * 24 * 60 * 60 * 1000);
 
     console.log(`\n[IWF ATHLETE LINKER] Starting production run`);
     if (isDryRun) console.log(`  MODE: DRY RUN (no database writes)`);
     if (isVerbose) console.log(`  VERBOSITY: Verbose logging enabled`);
-    console.log(`  Lookback window: ${isAll ? 'ALL (Full Historical Corpus)' : `${lookbackDays} days (since ${cutoffDate.toISOString().split('T')[0]})`}`);
+    if (isReEvaluate) console.log(`  RE-EVALUATE: Re-evaluating existing links`);
+    if (targetFed !== 'all') console.log(`  TARGET FEDERATION: ${targetFed.toUpperCase()} only`);
 
     // Verify credentials
     if (!process.env.SUPABASE_URL || !process.env.SUPABASE_SECRET_KEY) {
         console.error('ERROR: SUPABASE_URL and SUPABASE_SECRET_KEY are required.');
         process.exit(1);
     }
-    // Step 1: Find IWF meets and lifters recently updated (scoped anchor)
-    console.log(`\n[1/5] Finding IWF meets updated in ${isAll ? 'full database' : `last ${lookbackDays} days`}...`);
+
+    // Step 1: Find IWF meets and lifters for target scope
     let recentMeetIds = [];
     let recentLifterIds = [];
+    let targetScope = { type: 'lookback', value: `${lookbackDays} days` };
 
-    if (isAll) {
+    if (eventIdParam || meetIdParam) {
+        const targetId = eventIdParam || meetIdParam;
+        targetScope = { type: eventIdParam ? 'event_id' : 'meet_id', value: String(targetId) };
+        console.log(`\n[1/5] Finding IWF meet for identifier ${targetId}...`);
+        const { data: matchedMeets } = await supabaseIwf
+            .from('iwf_meets')
+            .select('db_meet_id, iwf_meet_id')
+            .or(`db_meet_id.eq.${Number(targetId) || 0},iwf_meet_id.eq.${String(targetId)}`);
+
+        if (!matchedMeets || matchedMeets.length === 0) {
+            console.error(`ERROR: No IWF meet found matching "${targetId}"`);
+            process.exit(1);
+        }
+        recentMeetIds = matchedMeets.map(m => m.db_meet_id);
+        const { data: mResults } = await supabaseIwf
+            .from('iwf_meet_results')
+            .select('db_lifter_id')
+            .in('db_meet_id', recentMeetIds);
+        recentLifterIds = [...new Set((mResults || []).map(r => r.db_lifter_id))];
+    } else if (yearParam) {
+        targetScope = { type: 'year', value: yearParam };
+        console.log(`\n[1/5] Finding IWF meets for calendar year ${yearParam}...`);
+        const { data: yearMeets } = await supabaseIwf
+            .from('iwf_meets')
+            .select('db_meet_id')
+            .gte('date', `${yearParam}-01-01`)
+            .lte('date', `${yearParam}-12-31`);
+        recentMeetIds = (yearMeets || []).map(m => m.db_meet_id);
+        if (recentMeetIds.length > 0) {
+            const { data: mResults } = await supabaseIwf
+                .from('iwf_meet_results')
+                .select('db_lifter_id')
+                .in('db_meet_id', recentMeetIds);
+            recentLifterIds = [...new Set((mResults || []).map(r => r.db_lifter_id))];
+        }
+    } else if (athleteDbIdParam || iwfIdParam || athleteNameParam) {
+        targetScope = { 
+            type: athleteDbIdParam ? 'athlete_db_id' : (iwfIdParam ? 'iwf_id' : 'athlete_name'), 
+            value: athleteDbIdParam || iwfIdParam || athleteNameParam 
+        };
+        console.log(`\n[1/5] Finding IWF athlete profile...`);
+        let query = supabaseIwf.from('iwf_lifters').select('db_lifter_id, athlete_name');
+        if (athleteDbIdParam) query = query.eq('db_lifter_id', athleteDbIdParam);
+        else if (iwfIdParam) query = query.eq('iwf_lifter_id', String(iwfIdParam));
+        else query = query.ilike('athlete_name', `%${athleteNameParam.trim()}%`);
+
+        const { data: matchedLifters } = await query;
+        if (!matchedLifters || matchedLifters.length === 0) {
+            console.error(`ERROR: No IWF athlete found matching criteria.`);
+            process.exit(1);
+        }
+        recentLifterIds = matchedLifters.map(l => l.db_lifter_id);
+        const { data: lResults } = await supabaseIwf
+            .from('iwf_meet_results')
+            .select('db_meet_id')
+            .in('db_lifter_id', recentLifterIds);
+        recentMeetIds = [...new Set((lResults || []).map(r => r.db_meet_id))];
+    } else if (isAll) {
+        targetScope = { type: 'all', value: 'full_historical_corpus' };
+        console.log(`\n[1/5] Targeting full historical IWF corpus...`);
         const { data: allMeets } = await supabaseIwf.from('iwf_meets').select('db_meet_id');
         recentMeetIds = (allMeets || []).map(m => m.db_meet_id);
         const allLifters = await fetchAll(supabaseIwf, 'iwf_lifters', 'db_lifter_id');
         recentLifterIds = (allLifters || []).map(l => l.db_lifter_id);
     } else {
+        console.log(`\n[1/5] Finding IWF meets updated in last ${lookbackDays} days...`);
         const { data: recentResults, error: recentErr } = await supabaseIwf
             .from('iwf_meet_results')
             .select('db_meet_id, db_lifter_id')
@@ -291,12 +374,26 @@ async function run() {
         recentLifterIds = [...new Set((recentResults || []).map(r => r.db_lifter_id))];
     }
 
-    if (recentMeetIds.length === 0 && !isAll) {
-        console.log('No new IWF meet data found within lookback window. Nothing to link.');
+    if (recentMeetIds.length === 0 && recentLifterIds.length === 0 && !isAll) {
+        console.log('No IWF meet data found within selected target scope. Nothing to link.');
+        console.log('__IWF_LINKER_SUMMARY_JSON__:' + JSON.stringify({
+            targetScope,
+            athletesEvaluated: 0,
+            meetsEvaluated: 0,
+            targetFederation: targetFed,
+            usawMatchesFound: 0,
+            newUsawAliasesInserted: 0,
+            alreadyLinkedUsawAliases: 0,
+            owlcmsMatchesFound: 0,
+            ambiguousStagedToReview: 0,
+            isDryRun,
+            isReEvaluate,
+            executionTimeMs: Date.now() - startTime
+        }));
         process.exit(0);
     }
 
-    console.log(`  Found ${recentMeetIds.length} recently updated IWF meets.`);
+    console.log(`  Found ${recentMeetIds.length} target IWF meet(s) and ${recentLifterIds.length} athlete(s).`);
 
     // Step 2: Get IWF meet metadata for those meets
     console.log(`\n[2/5] Fetching IWF and USAW meet metadata...`);
@@ -320,17 +417,21 @@ async function run() {
 
     const usawMeets = usawMeetsData || [];
 
-    // Step 3: Build meet pairs using public.meet_aliases, manual overrides, and dynamic discovery
-    console.log(`\n[3/5] Mapping IWF meets to USAW meets...`);
-    const meetMapPairs = [];
+    const verifiedAliases = [];
+    const ambiguousPairs = [];
 
-    // Query persistent meet_aliases table first
-    let persistedMeetAliases = [];
-    try {
-        const { data: aliasRows, error: aliasErr } = await supabase
-            .from('meet_aliases')
-            .select('iwf_meet_id, usaw_meet_id, match_confidence, manual_override')
-            .in('iwf_meet_id', recentMeetIds);
+    if (targetFed !== 'owlcms') {
+        // Step 3: Build meet pairs using public.meet_aliases, manual overrides, and dynamic discovery
+        console.log(`\n[3/5] Mapping IWF meets to USAW meets...`);
+        const meetMapPairs = [];
+
+        // Query persistent meet_aliases table first
+        let persistedMeetAliases = [];
+        try {
+            const { data: aliasRows, error: aliasErr } = await supabase
+                .from('meet_aliases')
+                .select('iwf_meet_id, usaw_meet_id, match_confidence, manual_override')
+                .in('iwf_meet_id', recentMeetIds);
 
         if (!aliasErr && aliasRows) {
             persistedMeetAliases = aliasRows;
@@ -448,95 +549,91 @@ async function run() {
     }
 
     if (meetMapPairs.length === 0) {
-        console.log('None of the recently updated IWF meets could be mapped to a USAW meet. No links to create.');
-        process.exit(0);
-    }
+        console.log('  ⚠️ No target IWF meets mapped to USAW meets directly. Skipping Phase 1 meet-to-meet matching.');
+    } else {
+        // Step 4: Fetch rosters and run triple-lock validation
+        console.log(`\n[4/5] Fetching rosters and running physics verification...`);
+        const mappedIwfMeetIds = [...new Set(meetMapPairs.map(p => p.iwf_meet_id))];
+        const iwfAllMeetResults = [];
+        for (let i = 0; i < mappedIwfMeetIds.length; i += 100) {
+            const chunk = mappedIwfMeetIds.slice(i, i + 100);
+            const { data } = await supabaseIwf.from('iwf_meet_results')
+                .select('db_meet_id, db_lifter_id, lifter_name, country_code, birth_year, snatch_lift_1, snatch_lift_2, snatch_lift_3, best_snatch, cj_lift_1, cj_lift_2, cj_lift_3, best_cj, total')
+                .in('db_meet_id', chunk);
+            if (data) iwfAllMeetResults.push(...data);
+        }
 
-    // Step 4: Fetch rosters and run triple-lock validation
-    console.log(`\n[4/5] Fetching rosters and running physics verification...`);
-    const mappedIwfMeetIds = [...new Set(meetMapPairs.map(p => p.iwf_meet_id))];
-    const iwfAllMeetResults = [];
-    for (let i = 0; i < mappedIwfMeetIds.length; i += 100) {
-        const chunk = mappedIwfMeetIds.slice(i, i + 100);
-        const { data } = await supabaseIwf.from('iwf_meet_results')
-            .select('db_meet_id, db_lifter_id, lifter_name, country_code, birth_year, snatch_lift_1, snatch_lift_2, snatch_lift_3, best_snatch, cj_lift_1, cj_lift_2, cj_lift_3, best_cj, total')
-            .in('db_meet_id', chunk);
-        if (data) iwfAllMeetResults.push(...data);
-    }
+        const usawTargetMeetIds = [...new Set(meetMapPairs.map(m => m.usaw_meet_id))];
+        const usawMeetResults = [];
+        for (let i = 0; i < usawTargetMeetIds.length; i += 100) {
+            const chunk = usawTargetMeetIds.slice(i, i + 100);
+            const { data } = await supabase.from('usaw_meet_results')
+                .select('lifter_id, lifter_name, meet_id, birth_year, snatch_lift_1, snatch_lift_2, snatch_lift_3, best_snatch, cj_lift_1, cj_lift_2, cj_lift_3, best_cj, total')
+                .in('meet_id', chunk);
+            if (data) usawMeetResults.push(...data);
+        }
 
-    const usawTargetMeetIds = [...new Set(meetMapPairs.map(m => m.usaw_meet_id))];
-    const usawMeetResults = [];
-    for (let i = 0; i < usawTargetMeetIds.length; i += 100) {
-        const chunk = usawTargetMeetIds.slice(i, i + 100);
-        const { data } = await supabase.from('usaw_meet_results')
-            .select('lifter_id, lifter_name, meet_id, birth_year, snatch_lift_1, snatch_lift_2, snatch_lift_3, best_snatch, cj_lift_1, cj_lift_2, cj_lift_3, best_cj, total')
-            .in('meet_id', chunk);
-        if (data) usawMeetResults.push(...data);
-    }
+        for (const pair of meetMapPairs) {
+            const iRoster = iwfAllMeetResults.filter(r => r.db_meet_id === pair.iwf_meet_id);
+            const uRoster = usawMeetResults.filter(r => r.meet_id === pair.usaw_meet_id);
 
-    const verifiedAliases = [];
-    const ambiguousPairs = [];
+            for (const iAthlete of iRoster) {
+                // Manual override check
+                if (MANUAL_ATHLETE_MAP[iAthlete.db_lifter_id]) {
+                    const targetUsawId = MANUAL_ATHLETE_MAP[iAthlete.db_lifter_id];
+                    const overrideTarget = uRoster.find(u => u.lifter_id === targetUsawId);
+                    if (overrideTarget) {
+                        verifiedAliases.push({
+                            usaw_lifter_id: overrideTarget.lifter_id,
+                            iwf_db_lifter_id: iAthlete.db_lifter_id,
+                            match_confidence: 100,
+                            usaw_name: overrideTarget.lifter_name,
+                            iwf_name: iAthlete.lifter_name
+                        });
+                        continue;
+                    }
+                }
 
-    for (const pair of meetMapPairs) {
-        const iRoster = iwfAllMeetResults.filter(r => r.db_meet_id === pair.iwf_meet_id);
-        const uRoster = usawMeetResults.filter(r => r.meet_id === pair.usaw_meet_id);
+                const isUsaAthlete = iAthlete.country_code === 'USA';
+                let possibleIdentities = [];
 
-        for (const iAthlete of iRoster) {
-            // Manual override check
-            if (MANUAL_ATHLETE_MAP[iAthlete.db_lifter_id]) {
-                const targetUsawId = MANUAL_ATHLETE_MAP[iAthlete.db_lifter_id];
-                const overrideTarget = uRoster.find(u => u.lifter_id === targetUsawId);
-                if (overrideTarget) {
+                for (const uAthlete of uRoster) {
+                    if (BLACKLIST_ATHLETE_MAP[iAthlete.db_lifter_id]?.includes(uAthlete.lifter_id)) {
+                        continue;
+                    }
+                    const res = evaluateIdentity(iAthlete, uAthlete, isUsaAthlete);
+                    if (res.status === 'MATCH') {
+                        uAthlete.calculated_score = res.score;
+                        possibleIdentities.push(uAthlete);
+                    } else if (res.status === 'AMBIGUOUS') {
+                        ambiguousPairs.push({
+                            iAthlete,
+                            uAthlete,
+                            score: res.score
+                        });
+                    }
+                }
+
+                // Resolve ties by physics delta
+                if (possibleIdentities.length > 1) {
+                    possibleIdentities.sort((a, b) => getDelta(iAthlete, a) - getDelta(iAthlete, b));
+                    if (getDelta(iAthlete, possibleIdentities[0]) < getDelta(iAthlete, possibleIdentities[1])) {
+                        possibleIdentities = [possibleIdentities[0]];
+                    } else {
+                        const uniqueIds = new Set(possibleIdentities.map(u => u.lifter_id));
+                        if (uniqueIds.size === 1) possibleIdentities = [possibleIdentities[0]];
+                    }
+                }
+
+                if (possibleIdentities.length === 1) {
                     verifiedAliases.push({
-                        usaw_lifter_id: overrideTarget.lifter_id,
+                        usaw_lifter_id: possibleIdentities[0].lifter_id,
                         iwf_db_lifter_id: iAthlete.db_lifter_id,
-                        match_confidence: 100,
-                        usaw_name: overrideTarget.lifter_name,
+                        match_confidence: possibleIdentities[0].calculated_score,
+                        usaw_name: possibleIdentities[0].lifter_name,
                         iwf_name: iAthlete.lifter_name
                     });
-                    continue;
                 }
-            }
-
-            const isUsaAthlete = iAthlete.country_code === 'USA';
-            let possibleIdentities = [];
-
-            for (const uAthlete of uRoster) {
-                if (BLACKLIST_ATHLETE_MAP[iAthlete.db_lifter_id]?.includes(uAthlete.lifter_id)) {
-                    continue;
-                }
-                const res = evaluateIdentity(iAthlete, uAthlete, isUsaAthlete);
-                if (res.status === 'MATCH') {
-                    uAthlete.calculated_score = res.score;
-                    possibleIdentities.push(uAthlete);
-                } else if (res.status === 'AMBIGUOUS') {
-                    ambiguousPairs.push({
-                        iAthlete,
-                        uAthlete,
-                        score: res.score
-                    });
-                }
-            }
-
-            // Resolve ties by physics delta
-            if (possibleIdentities.length > 1) {
-                possibleIdentities.sort((a, b) => getDelta(iAthlete, a) - getDelta(iAthlete, b));
-                if (getDelta(iAthlete, possibleIdentities[0]) < getDelta(iAthlete, possibleIdentities[1])) {
-                    possibleIdentities = [possibleIdentities[0]];
-                } else {
-                    const uniqueIds = new Set(possibleIdentities.map(u => u.lifter_id));
-                    if (uniqueIds.size === 1) possibleIdentities = [possibleIdentities[0]];
-                }
-            }
-
-            if (possibleIdentities.length === 1) {
-                verifiedAliases.push({
-                    usaw_lifter_id: possibleIdentities[0].lifter_id,
-                    iwf_db_lifter_id: iAthlete.db_lifter_id,
-                    match_confidence: possibleIdentities[0].calculated_score,
-                    usaw_name: possibleIdentities[0].lifter_name,
-                    iwf_name: iAthlete.lifter_name
-                });
             }
         }
     }
@@ -548,10 +645,16 @@ async function run() {
     const securedIwfIds = new Set(verifiedAliases.map(a => a.iwf_db_lifter_id));
 
     try {
-        const existingAliases = await fetchAll(supabase, 'athlete_aliases', 'iwf_db_lifter_id, usaw_lifter_id');
-        for (const a of existingAliases) securedIwfIds.add(a.iwf_db_lifter_id);
+        if (!isReEvaluate) {
+            const existingAliases = await fetchAll(supabase, 'athlete_aliases', 'iwf_db_lifter_id, usaw_lifter_id');
+            for (const a of (existingAliases || [])) {
+                if (a.iwf_db_lifter_id && a.usaw_lifter_id) {
+                    securedIwfIds.add(a.iwf_db_lifter_id);
+                }
+            }
+        }
 
-        const unmatchedRecentIwfIds = recentLifterIds.filter(id => !securedIwfIds.has(id));
+        const unmatchedRecentIwfIds = isReEvaluate ? recentLifterIds : recentLifterIds.filter(id => !securedIwfIds.has(id));
 
         if (unmatchedRecentIwfIds.length > 0) {
             console.log(`  Fetching distinct_usaw_lifters_view for name-subset verification...`);
@@ -616,14 +719,19 @@ async function run() {
     } catch (err) {
         console.error(`  [ERROR] Fallback matching failed: ${err.message}`);
     }
+    } else {
+        console.log('\n⏭️  Skipping USAW matching (target-federation: owlcms)');
+    }
 
-    // --- PHASE 3: OWLCMS CROSS-FEDERATION MATCHING (IWF ↔ OWLCMS) ---
-    console.log(`\n[PHASE 3] OWLCMS Cross-Federation Matching (IWF ↔ OWLCMS)...`);
     const verifiedIwfOwlcmsAliases = [];
     const newlyLinkedOwlcmsAthletes = [];
     const ambiguousOwlcmsPairs = [];
 
-    try {
+    if (targetFed !== 'usaw') {
+        // --- PHASE 3: OWLCMS CROSS-FEDERATION MATCHING (IWF ↔ OWLCMS) ---
+        console.log(`\n[PHASE 3] OWLCMS Cross-Federation Matching (IWF ↔ OWLCMS)...`);
+
+        try {
         // Fetch existing IWF <-> OWLCMS pairwise links
         const existingIwfOwlcmsLinks = await fetchAll(
             supabase,
@@ -692,7 +800,7 @@ async function run() {
                 for (const oLifter of potentialOwlcms) {
                     phase3Comparisons++;
                     const pairKey = `${iAthlete.db_lifter_id}-${oLifter.lifter_id}`;
-                    if (existingPairSet.has(pairKey)) {
+                    if (!isReEvaluate && existingPairSet.has(pairKey)) {
                         if (isVerbose) {
                             console.log(`     ✓ Edge already exists: IWF[${iAthlete.db_lifter_id}] ── OWLCMS[${oLifter.lifter_id}]`);
                         }
@@ -792,6 +900,9 @@ async function run() {
         }
     } catch (err) {
         console.error(`  [ERROR] OWLCMS cross-federation matching failed: ${err.message}`);
+    }
+    } else {
+        console.log('\n⏭️  Skipping Phase 3 OWLCMS matching (target-federation: usaw)');
     }
 
     // Deduplicate USAW <-> IWF aliases
@@ -913,8 +1024,28 @@ async function run() {
         }
     }
 
+    function emitSummary() {
+        const linkerSummary = {
+            targetScope,
+            athletesEvaluated: recentLifterIds.length,
+            meetsEvaluated: recentMeetIds.length,
+            targetFederation: targetFed,
+            usawMatchesFound: finalAliases.length,
+            newUsawAliasesInserted: newUsawAliases.length,
+            alreadyLinkedUsawAliases: alreadyLinkedCount,
+            owlcmsMatchesFound: verifiedIwfOwlcmsAliases.length,
+            ambiguousStagedToReview: allAmbiguousToStage.length,
+            isDryRun,
+            isReEvaluate,
+            executionTimeMs: Date.now() - startTime
+        };
+        console.log('__IWF_LINKER_SUMMARY_JSON__:' + JSON.stringify(linkerSummary));
+    }
+
     if (newUsawAliases.length === 0 && verifiedIwfOwlcmsAliases.length === 0) {
         console.log('\n✓ No new links found across federations. athlete_aliases unchanged.');
+        emitSummary();
+        console.log('\n[IWF ATHLETE LINKER] Done.\n');
         process.exit(0);
     }
 
@@ -987,6 +1118,7 @@ async function run() {
         }
     }
 
+    emitSummary();
     console.log('\n[IWF ATHLETE LINKER] Done.\n');
     process.exit(0);
 }

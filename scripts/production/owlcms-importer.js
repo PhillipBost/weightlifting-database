@@ -31,6 +31,7 @@ const { promisify } = require('util');
 const gzipAsync = promisify(zlib.gzip);
 const { resolveOrDiscoverFederation, searchFederations } = require('./federation-resolver.js');
 const { geocodeOwlcmsMeet, normalizeToIocCountryCode } = require('./owlcms-geocoder.js');
+const { enqueueAthleteEvaluations, CORE_FEDERATION_UUIDS } = require('./lib/athlete-evaluator-engine.js');
 
 /**
  * Initialize default Supabase client from environment
@@ -731,6 +732,18 @@ async function importOwlcmsJson(data, options = {}) {
             }
             lifterId = newLifter.lifter_id;
             liftersCreated++;
+
+            // Enqueue newly created OWLCMS lifter for evaluation against peer federations
+            try {
+                await enqueueAthleteEvaluations(
+                    supabase,
+                    CORE_FEDERATION_UUIDS.OWLCMS,
+                    lifterId,
+                    [CORE_FEDERATION_UUIDS.USAW, CORE_FEDERATION_UUIDS.IWF]
+                );
+            } catch (enqueueErr) {
+                console.warn(`[OWLCMS Importer] Non-fatal evaluation enqueue error: ${enqueueErr.message}`);
+            }
         }
         
         // Map athlete index/key to lifterId and countryCode

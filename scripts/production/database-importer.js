@@ -24,6 +24,9 @@ const { generateDivisionRankings } = require('./ranking-engine.js');
 // Import Sport80 search function for enhanced matching
 const { searchSport80ForLifter } = require('./searchSport80ForLifter.js');
 
+// Import evaluation enqueue helper
+const { enqueueAthleteEvaluations, CORE_FEDERATION_UUIDS } = require('./lib/athlete-evaluator-engine.js');
+
 // Extract meet internal_id from Sport80 URL
 function extractMeetInternalId(url) {
     if (!url || typeof url !== 'string') {
@@ -539,6 +542,21 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
         }
 
         console.log(`  ✅ Created new lifter: ${cleanName} (ID: ${newLifter.lifter_id})`);
+
+        // Enqueue newly created USAW lifter for evaluation against peer federations
+        if (newLifter && newLifter.lifter_id) {
+            try {
+                await enqueueAthleteEvaluations(
+                    supabase,
+                    CORE_FEDERATION_UUIDS.USAW,
+                    newLifter.lifter_id,
+                    [CORE_FEDERATION_UUIDS.IWF, CORE_FEDERATION_UUIDS.OWLCMS]
+                );
+            } catch (enqueueErr) {
+                console.warn(`  ⚠️ Non-fatal evaluation enqueue error: ${enqueueErr.message}`);
+            }
+        }
+
         return newLifter;
     }
 
@@ -579,6 +597,21 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
                 }
 
                 console.log(`  ➕ Created fallback lifter: ${cleanName} (ID: ${newLifter.lifter_id})`);
+
+                // Enqueue newly created USAW lifter for evaluation against peer federations
+                if (newLifter && newLifter.lifter_id) {
+                    try {
+                        await enqueueAthleteEvaluations(
+                            supabase,
+                            CORE_FEDERATION_UUIDS.USAW,
+                            newLifter.lifter_id,
+                            [CORE_FEDERATION_UUIDS.IWF, CORE_FEDERATION_UUIDS.OWLCMS]
+                        );
+                    } catch (enqueueErr) {
+                        console.warn(`  ⚠️ Non-fatal evaluation enqueue error: ${enqueueErr.message}`);
+                    }
+                }
+
                 return newLifter;
             }
         }
@@ -618,6 +651,21 @@ async function findOrCreateLifter(lifterName, additionalData = {}) {
     }
 
     console.log(`  ➕ Created disambiguation fallback lifter: ${cleanName} (ID: ${newLifter.lifter_id})`);
+
+    // Enqueue newly created USAW lifter for evaluation against peer federations
+    if (newLifter && newLifter.lifter_id) {
+        try {
+            await enqueueAthleteEvaluations(
+                supabase,
+                CORE_FEDERATION_UUIDS.USAW,
+                newLifter.lifter_id,
+                [CORE_FEDERATION_UUIDS.IWF, CORE_FEDERATION_UUIDS.OWLCMS]
+            );
+        } catch (enqueueErr) {
+            console.warn(`  ⚠️ Non-fatal evaluation enqueue error: ${enqueueErr.message}`);
+        }
+    }
+
     return newLifter;
 }
 

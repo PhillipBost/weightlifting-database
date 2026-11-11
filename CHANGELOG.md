@@ -4,10 +4,39 @@ All notable changes to the Weightlifting Database project will be documented in 
 
 ## [Added] - 2026-11-10 (Eastern Standard Time)
 
+- **Ingestion Lifecycle Evaluation Hooks (`scripts/production/iwf-lifter-manager.js`, `scripts/production/database-importer.js`, `scripts/production/owlcms-importer.js`)**:
+  - Integrated `enqueueAthleteEvaluations()` into the creation lifecycle for International Weightlifting Federation (IWF), USA Weightlifting (USAW), and Open Weightlifting Competition Management System (owlcms) athlete profiles.
+  - Automatically enqueues newly inserted athletes for evaluation across registered peer federations in `public.athlete_linking_evaluations`, eliminating calendar lookback blindspots and establishing proactive queue-driven cross-federation graph pairing upon ingestion.
+
+- **Symmetrical Athlete Evaluator Engine & Queue Worker (`scripts/production/lib/athlete-evaluator-engine.js`, `scripts/production/run-athlete-linking-evaluator.js`)**:
+  - Implemented the core evaluator engine enforcing strict universal demographic gating `(gender, birth_year)`, multi-token name scoring, country divergence penalties, career performance delta validation, and manual mapping overrides (`MANUAL_ATHLETE_MAP`, `BLACKLIST_ATHLETE_MAP`).
+  - Created the symmetrical batch queue worker that queries `PENDING` evaluations from `public.athlete_linking_evaluations`, resolves candidate pools against any registered target federation in `public.federation_registry`, inserts verified identity edges into `public.athlete_aliases` adhering to pairwise integrity (`check_alias_type = 2`), and updates the ledger with complete provenance in `evidence_breakdown` (`JSONB`).
+  - Added structured summary emission (`__ATHLETE_EVALUATOR_SUMMARY_JSON__:{...}`) supporting Large Language Model (LLM) agents and administrative dashboard telemetry.
+
+- **System Architecture Specification Document (`ARCHITECTURE.md`)**:
+  - Established the definitive system architecture document detailing the multi-federation identity graph, the decoupled evaluation ledger (`public.athlete_linking_evaluations`), universal demographic anchoring, symmetrical pairing pipelines, and longitudinal federation registry standards.
+
+- **Federation-Agnostic Athlete Linking & Evaluation Ledger Migration (`migrations/create_athlete_linking_evaluations_table.sql`)**:
+  - Created the canonical migration for `public.athlete_linking_evaluations`, decoupling pairwise identity edges (`public.athlete_aliases`) from task lifecycle state.
+  - Keyed evaluation states by `(source_federation_id, source_athlete_id, target_federation_id)` referencing `public.federation_registry(id)` to allow dynamic multi-federation scaling without Data Definition Language (DDL) churn.
+  - Implemented rich telemetry columns including `evidence_breakdown` (`JSONB`), `confidence_score`, `algorithm_version`, and lifecycle state constraints (`PENDING`, `MATCHED`, `REVIEW_NEEDED`, `VETTED_ISOLATED`).
+
+- **Targeted Scoping & Machine-Readable Telemetry in IWF Cross-Federation Linker (`scripts/production/link-new-iwf-athletes.js`)**:
+  - Implemented granular Command Line Interface (CLI) scoping flags (`--event-id`, `--meet-id`, `--year`, `--athlete-name`, `--athlete-db-id`, `--iwf-id`, `--target-federation`, `--re-evaluate`), transitioning identity evaluation from an arbitrary lookback window to precision target cohorts.
+  - Added structured JavaScript Object Notation (JSON) summary emission (`__IWF_LINKER_SUMMARY_JSON__:{...}`) upon script completion and early exits, enabling frontend Application Programming Interface (API) routes to ingest and render verified telemetry without string manipulation or regex parsing.
+  - Preserved multi-federation graph enrichment by preventing athletes with existing Open Weightlifting Competition Management System (owlcms) links from being skipped during USA Weightlifting (USAW) fallback matching unless explicitly linked to USAW.
+  - Resolved non-intersecting competition execution by allowing Phase 2 (USAW fallback) and Phase 3 (owlcms cohort matching) to evaluate athletes when target competitions share no direct meet-level alias with USAW.
+
 - **IWF Pipeline Runs Audit Table Migration (`migrations/create_iwf_pipeline_runs_table.sql`)**:
   - Added the canonical database migration for `public.iwf_pipeline_runs`, persisting full scraper telemetry, console output, parameters, and run status.
   - Implemented foreign-key-decoupled `db_meet_id BIGINT NULL` tracking to allow dry-run simulations and pre-commit validations without relational constraint failures.
   - Enforced Discretionary Access Control (DAC) sequence and table permissions for `service_role` and `authenticated` roles, alongside Row-Level Security (RLS) policies requiring administrator role verification (`public.is_admin(auth.uid())`).
+
+## [Changed] - 2026-11-10 (Eastern Standard Time)
+
+- **Separation of Architectural Specifications and Agent Governance (`AGENTS.md`, `ARCHITECTURE.md`)**:
+  - Migrated structural data architecture, ingestion pipelines, singleton mutex concurrency controls, and demographic matching rules from `AGENTS.md` into `ARCHITECTURE.md`.
+  - Streamlined `AGENTS.md` to focus exclusively on agent personality, behavioral constraints, communication standards, and operational execution guardrails.
 
 ## [Fixed] - 2026-11-10 (Eastern Standard Time)
 
