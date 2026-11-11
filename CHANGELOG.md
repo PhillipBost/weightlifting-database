@@ -11,6 +11,13 @@ All notable changes to the Weightlifting Database project will be documented in 
 
 ## [Fixed] - 2026-11-10 (Eastern Standard Time)
 
+- **IWF Dry-Run Skip Telemetry Accuracy (`scripts/production/iwf-database-importer.js`)**:
+  - Updated dry-run skip advisory messaging and `skipReason` telemetry to accurately reflect that non-forced skip logic only applies to scorecard re-scraping and database ingestion, clarifying that downstream cross-federation athlete pairing and alias reconciliation still execute.
+
+- **Existing Alias Deduplication in Cross-Federation Linker (`scripts/production/link-new-iwf-athletes.js`)**:
+  - Added an existing-link lookup against `public.athlete_aliases` before announcing and upserting USAW ↔ IWF roster matches in Phase 1, preventing previously verified athlete links from being erroneously reported as "new links" during repeat runs.
+  - Filtered upsert payloads so only genuinely new cross-federation links trigger database writes, accurately reporting already-linked candidate counts in console output.
+
 - **IWF Pre-Import Result Counting & Meet Name Resolution (`scripts/production/iwf-meet-manager.js`, `scripts/production/iwf-database-importer.js`)**:
   - Corrected `checkMeetHasResults()` in `scripts/production/iwf-meet-manager.js` to resolve and query by `db_meet_id` in `public.iwf_meet_results` rather than the non-existent `iwf_meet_id` column, eliminating query error `42703` and restoring accurate detection of pre-existing competition scorecards.
   - Fixed property casing in `scripts/production/iwf-database-importer.js` (`existingMeet.meet || existingMeet.Meet`), preventing meet names from rendering as `undefined` in console output and forwarding canonical `db_meet_id` directly to pre-import checks.

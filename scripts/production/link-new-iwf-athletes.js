@@ -802,7 +802,22 @@ async function run() {
     }
     const finalAliases = Array.from(uniqueAliasMap.values());
 
-    console.log(`\n  Verified ${finalAliases.length} new USAW ↔ IWF aliases.`);
+    // Check existing USAW <-> IWF aliases to avoid re-announcing existing edges
+    const existingUsawIwfAliases = await fetchAll(supabase, 'athlete_aliases', 'usaw_lifter_id, iwf_db_lifter_id');
+    const existingUsawIwfSet = new Set(
+        (existingUsawIwfAliases || [])
+            .filter(a => a.usaw_lifter_id && a.iwf_db_lifter_id)
+            .map(a => `${a.usaw_lifter_id}-${a.iwf_db_lifter_id}`)
+    );
+
+    const newUsawAliases = finalAliases.filter(a => !existingUsawIwfSet.has(`${a.usaw_lifter_id}-${a.iwf_db_lifter_id}`));
+    const alreadyLinkedCount = finalAliases.length - newUsawAliases.length;
+
+    if (alreadyLinkedCount > 0) {
+        console.log(`\n  Verified ${finalAliases.length} USAW ↔ IWF roster matches (${alreadyLinkedCount} already linked, ${newUsawAliases.length} new).`);
+    } else {
+        console.log(`\n  Verified ${newUsawAliases.length} new USAW ↔ IWF aliases.`);
+    }
     console.log(`  Verified ${verifiedIwfOwlcmsAliases.length} new IWF ↔ OWLCMS aliases.`);
 
     // --- STAGE AMBIGUOUS CROSS-FEDERATION PAIRS TO ADMIN_REVIEW_QUEUE ---
@@ -898,19 +913,19 @@ async function run() {
         }
     }
 
-    if (finalAliases.length === 0 && verifiedIwfOwlcmsAliases.length === 0) {
-        console.log('No new links found across federations. athlete_aliases unchanged.');
+    if (newUsawAliases.length === 0 && verifiedIwfOwlcmsAliases.length === 0) {
+        console.log('\n✓ No new links found across federations. athlete_aliases unchanged.');
         process.exit(0);
     }
 
-    // Step 5: Upsert into athlete_aliases
-    if (finalAliases.length > 0) {
-        console.log(`\n[5/5] Inserting ${finalAliases.length} USAW ↔ IWF aliases into athlete_aliases:`);
-        for (const a of finalAliases) {
+    // Step 5: Upsert into athlete_aliases (only genuinely new aliases)
+    if (newUsawAliases.length > 0) {
+        console.log(`\n[5/5] Inserting ${newUsawAliases.length} new USAW ↔ IWF aliases into athlete_aliases:`);
+        for (const a of newUsawAliases) {
             console.log(`  ✓ Linked: IWF[${a.iwf_db_lifter_id}] "${a.iwf_name || 'N/A'}" ↔ USAW[${a.usaw_lifter_id}] "${a.usaw_name || 'N/A'}" (Confidence: ${a.match_confidence})`);
         }
 
-        const dbPayload = finalAliases.map(a => ({
+        const dbPayload = newUsawAliases.map(a => ({
             usaw_lifter_id: a.usaw_lifter_id,
             iwf_db_lifter_id: a.iwf_db_lifter_id,
             match_confidence: a.match_confidence
@@ -925,10 +940,12 @@ async function run() {
                 console.error('ERROR inserting USAW ↔ IWF aliases:', insertError.message, insertError.code);
                 process.exit(1);
             }
-            console.log(`✓ Successfully upserted ${finalAliases.length} USAW ↔ IWF athlete aliases into public.athlete_aliases.`);
+            console.log(`✓ Successfully upserted ${newUsawAliases.length} USAW ↔ IWF athlete aliases into public.athlete_aliases.`);
         } else {
-            console.log(`[DRY RUN] Would insert ${finalAliases.length} USAW ↔ IWF aliases.`);
+            console.log(`[DRY RUN] Would insert ${newUsawAliases.length} USAW ↔ IWF aliases.`);
         }
+    } else if (finalAliases.length > 0) {
+        console.log(`\n[5/5] USAW ↔ IWF Aliases: All ${finalAliases.length} verified roster matches are already linked in public.athlete_aliases (0 new inserts needed).`);
     }
 
     if (verifiedIwfOwlcmsAliases.length > 0) {

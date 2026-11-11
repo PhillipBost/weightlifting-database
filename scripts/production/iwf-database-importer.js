@@ -175,12 +175,12 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                 summary.executionTimeMs = Date.now() - startTime;
 
                 if (options.dryRun) {
-                    console.log(`⚠️ DRY RUN ADVISORY: Meet ${existingMeet.iwf_meet_id || eventId} already exists with ${resultsCheck.count} results. Live non-forced execution would SKIP this meet (0 database writes). Pass --force to simulate updates and inserts.`);
+                    console.log(`⚠️ DRY RUN ADVISORY: Meet ${existingMeet.iwf_meet_id || eventId} already exists with ${resultsCheck.count} results. Live non-forced execution would SKIP scorecard scraping for this meet; downstream cross-federation athlete pairing will proceed. Pass --force to simulate scorecard updates and inserts.`);
                     summary.importStats = {
                         dryRun: true,
                         iwf_meet_id: String(existingMeet.iwf_meet_id || eventId),
                         wouldSkip: true,
-                        skipReason: `Meet already exists in database with ${resultsCheck.count} results. Live execution without --force will perform 0 writes.`,
+                        skipReason: `Meet scorecards already exist in database (${resultsCheck.count} results). Live execution without --force skips scorecard scraping; downstream athlete linking proceeds.`,
                         existingResults: resultsCheck.count,
                         simulatedUpdates: 0,
                         simulatedInserts: 0,
