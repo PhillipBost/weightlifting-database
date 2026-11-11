@@ -31,7 +31,9 @@ const minimist = require('minimist');
 const {
     CORE_FEDERATION_UUIDS,
     ALGORITHM_VERSION,
-    evaluateCandidateMatch
+    evaluateCandidateMatch,
+    calculateNameScore,
+    fetchCareerBestTotal
 } = require('./lib/athlete-evaluator-engine.js');
 
 const supabase = createClient(
@@ -124,6 +126,10 @@ async function main() {
 
     if (isReEvaluate) {
         query = query.in('status', ['PENDING', 'REVIEW_NEEDED', 'VETTED_ISOLATED']);
+        // Exclude permanently blacklisted records from broad re-evaluations unless explicitly targeted
+        if (!targetAthleteId) {
+            query = query.eq('is_blacklisted', false);
+        }
     } else {
         query = query.eq('status', 'PENDING');
     }
@@ -230,6 +236,9 @@ async function main() {
             console.warn(`  ⚠️ Source athlete [${sCode}] ${task.source_athlete_id} not found in database. Skipping.`);
             continue;
         }
+
+        // Hydrate source athlete career best total for performance delta scoring
+        sourceProfile.best_total = await fetchCareerBestTotal(supabase, sCode, sourceProfile.id);
 
         // 4. Demographic Cohort Key
         const genderKey = sourceProfile.gender ? sourceProfile.gender.trim().toUpperCase() : null;
@@ -341,7 +350,29 @@ async function main() {
         let bestScore = 0;
         let bestBreakdown = [];
 
+        // Extract rejected candidate IDs from evidence_breakdown if previously blacklisted/rejected by admin
+        const rejectedCandidateIds = new Set(
+            (task.evidence_breakdown?.rejected_candidate_ids || []).map(id => parseInt(id, 10))
+        );
+
         for (const candidate of candidates) {
+            // Skip candidates explicitly rejected by admin for this evaluation
+            if (rejectedCandidateIds.has(parseInt(candidate.id, 10))) {
+                if (isVerbose) {
+                    console.log(`     ⏭️ Skipping candidate [${tCode}:${candidate.id}] "${candidate.name}" (in rejected_candidate_ids)`);
+                }
+                continue;
+            }
+
+            // Pre-screen name token overlap before querying meet results
+            const nameScore = calculateNameScore(sourceProfile.name, candidate.name);
+            if (nameScore === 0) continue;
+
+            // Hydrate candidate career best total if not already cached
+            if (candidate.best_total === undefined) {
+                candidate.best_total = await fetchCareerBestTotal(supabase, tCode, candidate.id);
+            }
+
             const result = evaluateCandidateMatch(sourceProfile, candidate, sCode, tCode);
             if (result.score > bestScore) {
                 bestScore = result.score;
@@ -409,7 +440,8 @@ async function main() {
                             target: bestCandidate,
                             score: bestScore,
                             breakdown: bestBreakdown,
-                            cohort: cohortKey
+                            cohort: cohortKey,
+                            rejected_candidate_ids: Array.from(rejectedCandidateIds)
                         },
                         evaluated_at: new Date().toISOString()
                     })
@@ -432,7 +464,8 @@ async function main() {
                             target: bestCandidate,
                             score: bestScore,
                             breakdown: bestBreakdown,
-                            cohort: cohortKey
+                            cohort: cohortKey,
+                            rejected_candidate_ids: Array.from(rejectedCandidateIds)
                         },
                         evaluated_at: new Date().toISOString()
                     })
@@ -452,7 +485,8 @@ async function main() {
                         evidence_breakdown: {
                             highest_score: bestScore,
                             cohort: cohortKey,
-                            candidates_checked: candidates.length
+                            candidates_checked: candidates.length,
+                            rejected_candidate_ids: Array.from(rejectedCandidateIds)
                         },
                         evaluated_at: new Date().toISOString()
                     })

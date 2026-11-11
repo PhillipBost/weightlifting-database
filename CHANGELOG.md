@@ -2,6 +2,13 @@
 
 All notable changes to the Weightlifting Database project will be documented in this file.
 
+## [Fixed] - 2026-11-11 (Eastern Standard Time)
+
+- **Worker Alignment: Blacklist Skipping & Career Best Total Hydration (`scripts/production/lib/athlete-evaluator-engine.js`, `scripts/production/run-athlete-linking-evaluator.js`)**:
+  - Excluded permanently blacklisted evaluations (`is_blacklisted = true`) from generic `--re-evaluate` passes to prevent administrative rejections from being overwritten back to `REVIEW_NEEDED`.
+  - Added candidate skipping for any candidate identifier in `task.evidence_breakdown.rejected_candidate_ids`, allowing the evaluator to evaluate the next-best candidate in the demographic cohort upon re-evaluation.
+  - Implemented `fetchCareerBestTotal()` across International Weightlifting Federation (IWF), USA Weightlifting (USAW), and Open Weightlifting Competition Management System (owlcms) meet results, hydrating `best_total` on source athletes and candidate profiles passing name token gates to activate career performance delta scoring and persist totals into `evidence_breakdown`.
+
 ## [Added] - 2026-11-10 (Eastern Standard Time)
 
 - **Ingestion Lifecycle Evaluation Hooks (`scripts/production/iwf-lifter-manager.js`, `scripts/production/database-importer.js`, `scripts/production/owlcms-importer.js`)**:

@@ -314,6 +314,30 @@ async function enqueueAthleteEvaluations(supabase, sourceFedId, sourceAthleteId,
     return data || [];
 }
 
+/**
+ * Fetch career best total for a specific athlete in a given federation
+ */
+async function fetchCareerBestTotal(supabase, fedCode, athleteId) {
+    if (!athleteId) return null;
+    const cleanId = parseInt(athleteId, 10);
+    if (isNaN(cleanId)) return null;
+
+    let data = null;
+    if (fedCode === 'IWF') {
+        const res = await supabase.from('iwf_meet_results').select('total').eq('db_lifter_id', cleanId);
+        data = res.data;
+    } else if (fedCode === 'USAW') {
+        const res = await supabase.from('usaw_meet_results').select('total').eq('lifter_id', cleanId);
+        data = res.data;
+    } else if (fedCode === 'OWLCMS') {
+        const res = await supabase.from('owlcms_meet_results').select('total').eq('lifter_id', cleanId);
+        data = res.data;
+    }
+
+    const totals = (data || []).map(r => parseLift(r.total)).filter(t => t !== null && t > 0);
+    return totals.length > 0 ? Math.max(...totals) : null;
+}
+
 module.exports = {
     CORE_FEDERATION_UUIDS,
     ALGORITHM_VERSION,
@@ -322,6 +346,7 @@ module.exports = {
     extractCountryCode,
     calculateNameScore,
     evaluateCandidateMatch,
-    enqueueAthleteEvaluations
+    enqueueAthleteEvaluations,
+    fetchCareerBestTotal
 };
 
