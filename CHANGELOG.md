@@ -4,6 +4,11 @@ All notable changes to the Weightlifting Database project will be documented in 
 
 ## [Fixed] - 2026-11-11 (Eastern Standard Time)
 
+- **Granular Dry-Run Investigation Telemetry (`scripts/production/iwf-database-importer.js`)**:
+  - Enhanced the competition meet dry-run simulation to print comprehensive diagnostic blocks for every simulated insert, including full athlete scorecard metrics (Nation, Birth Year, Division, Category, Bodyweight, Snatch 1–3, Clean & Jerk [C&J] 1–3, Total, Rank).
+  - Added class-level cohort cross-referencing against existing database records to immediately surface any potential database counterpart scorecards, aiding in the diagnosis of name variations or transliteration anomalies.
+  - Added reporting for locked scorecards and structured serialization of `simulatedInsertsDetails` into `__IWF_SUMMARY_JSON__`.
+
 - **4-Tier Chronological IWF Meet Results URL Standard (`scripts/production/iwf-config.js`, `scripts/production/iwf-database-importer.js`, `scripts/production/iwf-results-scraper.js`, `scripts/production/iwf-main.js`)**:
   - Implemented the canonical 4-tier chronological International Weightlifting Federation (IWF) meet results era standard across scrapers and ingestion scripts:
     1. Modern / Current (August 2026 – Present): `https://iwf.sport/results/results-by-events/?event_id=${eventId}`

@@ -501,15 +501,62 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                     : [];
                 const allAthletes = [...allMens, ...allWomens];
 
-                const allSim = allAthletes.map(evaluateScorecardSimulation);
-                const totalUpdates = allSim.filter(s => s.simulatedAction === 'UPDATE').length;
-                const totalInserts = allSim.filter(s => s.simulatedAction === 'INSERT').length;
-                const totalLocked = allSim.filter(s => s.simulatedAction === 'LOCKED_SKIP').length;
+                const evaluatedAthletes = allAthletes.map(ath => ({
+                    athlete: ath,
+                    simulation: evaluateScorecardSimulation(ath)
+                }));
+
+                const insertEntries = evaluatedAthletes.filter(e => e.simulation.simulatedAction === 'INSERT');
+                const lockedEntries = evaluatedAthletes.filter(e => e.simulation.simulatedAction === 'LOCKED_SKIP');
+                const totalUpdates = evaluatedAthletes.filter(e => e.simulation.simulatedAction === 'UPDATE').length;
+                const totalInserts = insertEntries.length;
+                const totalLocked = lockedEntries.length;
 
                 console.log(`\n📊 Dry-Run Meet Simulation Breakdown (${meetTotalAthletes} total athletes):`);
                 console.log(`   Updates: ${totalUpdates}`);
                 console.log(`   Inserts: ${totalInserts}`);
                 console.log(`   Locked (manual override): ${totalLocked}`);
+
+                // Granular investigation reporting for simulated inserts
+                if (insertEntries.length > 0) {
+                    console.log(`\n${'='.repeat(80)}`);
+                    console.log(`📥 SIMULATED INSERTS (${insertEntries.length} Unmatched Scorecards):`);
+                    console.log(`${'='.repeat(80)}`);
+
+                    insertEntries.forEach((entry, idx) => {
+                        const a = entry.athlete;
+                        console.log(`\n[Insert #${idx + 1}] ${a.name} (${a.nation || 'N/A'})`);
+                        console.log(`   Category:    ${a.weight_class || 'N/A'} | Division: ${a.gender === 'F' ? "Women's" : "Men's"} | Born: ${a.birth_year || 'N/A'}`);
+                        console.log(`   Bodyweight:  ${a.body_weight != null ? a.body_weight + ' kg' : 'N/A'} | Rank: ${a.rank ?? 'DNF'}`);
+                        console.log(`   Snatch 1-3:  ${a.snatch_1 ?? '-'} / ${a.snatch_2 ?? '-'} / ${a.snatch_3 ?? '-'} | Best: ${a.best_snatch ?? '-'}`);
+                        console.log(`   C&J 1-3:     ${a.cj_1 ?? '-'} / ${a.cj_2 ?? '-'} / ${a.cj_3 ?? '-'} | Best: ${a.best_cj ?? '-'}`);
+                        console.log(`   Total:       ${a.total ?? '-'} kg`);
+
+                        // Cohort inspection: Find existing database scorecards in this exact weight class
+                        const normWc = (a.weight_class || '').replace(/\s+/g, ' ').trim().toLowerCase();
+                        const sameClassDb = existingDbScorecards.filter(r => {
+                            const rNormWc = (r.weight_class || '').replace(/\s+/g, ' ').trim().toLowerCase();
+                            return normWc && rNormWc && normWc === rNormWc;
+                        });
+
+                        if (sameClassDb.length > 0) {
+                            console.log(`   🔍 Existing Database Scorecards in Class (${a.weight_class}):`);
+                            sameClassDb.forEach(r => {
+                                console.log(`      - DB Result ID ${r.db_result_id}: "${r.lifter_name}" | Total: ${r.total ?? '-'} kg | Snatch: ${r.best_snatch ?? '-'} | C&J: ${r.best_cj ?? '-'}`);
+                            });
+                        } else {
+                            console.log(`   ℹ️ No existing scorecards found in database for class: ${a.weight_class}`);
+                        }
+                    });
+                    console.log(`\n${'='.repeat(80)}`);
+                }
+
+                if (lockedEntries.length > 0) {
+                    console.log(`\n🔒 LOCKED SCORECARDS (${lockedEntries.length} Manual Overrides Preserved):`);
+                    lockedEntries.forEach(entry => {
+                        console.log(`   - ${entry.athlete.name} (${entry.athlete.weight_class}): Preserved DB Result ID ${entry.simulation.existingResultId}`);
+                    });
+                }
 
                 summary.success = true;
                 summary.importStats = {
@@ -520,6 +567,15 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                     simulatedUpdates: totalUpdates,
                     simulatedInserts: totalInserts,
                     simulatedLocked: totalLocked,
+                    simulatedInsertsDetails: insertEntries.map(e => ({
+                        athlete_name: e.athlete.name,
+                        weight_class: e.athlete.weight_class,
+                        gender: e.athlete.gender,
+                        birth_year: e.athlete.birth_year,
+                        nation: e.athlete.nation,
+                        total: e.athlete.total,
+                        rank: e.athlete.rank
+                    })),
                     menCount: mensResults?.total_athletes || 0,
                     womenCount: womensResults?.total_athletes || 0
                 };
