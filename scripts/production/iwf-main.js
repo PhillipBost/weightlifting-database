@@ -58,7 +58,7 @@ const EVENT_DELAY_MS = config.TIMING.EVENT_DELAY_MS;
  */
 function parseArguments() {
     const argv = minimist(process.argv.slice(2), {
-        string: ['year', 'event-id', 'from-year', 'to-year', 'date', 'limit'],
+        string: ['year', 'event-id', 'from-year', 'to-year', 'date', 'limit', 'url'],
         boolean: ['help', 'skip-ytd-backfill']
     });
 
@@ -73,6 +73,7 @@ function parseArguments() {
         fromYear: argv['from-year'] ? parseInt(argv['from-year']) : null,
         toYear: argv['to-year'] ? parseInt(argv['to-year']) : null,
         date: argv.date,
+        url: argv.url,
         limit: argv.limit ? parseInt(argv.limit) : null,  // Limit number of athletes to import
         skipYTDBackfill: argv['skip-ytd-backfill'] || false
     };
@@ -85,6 +86,7 @@ IWF Main Orchestrator - Scrape, Scrape & Import IWF Competition Results
 Usage:
   node iwf-main.js --year 2025                    Scrape and import all events from a single year
   node iwf-main.js --event-id 661                 Scrape and import a single event
+  node iwf-main.js --event-id 676 --url <url>     Scrape and import with explicit URL
   node iwf-main.js --from-year 2024 --to-year 2025  Scrape and import events from a year range
   node iwf-main.js --help                         Show this help message
 
@@ -491,7 +493,8 @@ async function main() {
 
         // Prepare options to pass through
         const importOptions = {
-            limit: args.limit || null
+            limit: args.limit || null,
+            url: args.url || null
         };
 
         // Process each event

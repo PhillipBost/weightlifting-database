@@ -4,6 +4,16 @@ All notable changes to the Weightlifting Database project will be documented in 
 
 ## [Fixed] - 2026-11-11 (Eastern Standard Time)
 
+- **4-Tier Chronological IWF Meet Results URL Standard (`scripts/production/iwf-config.js`, `scripts/production/iwf-database-importer.js`, `scripts/production/iwf-results-scraper.js`, `scripts/production/iwf-main.js`)**:
+  - Implemented the canonical 4-tier chronological International Weightlifting Federation (IWF) meet results era standard across scrapers and ingestion scripts:
+    1. Modern / Current (August 2026 – Present): `https://iwf.sport/results/results-by-events/?event_id=${eventId}`
+    2. Results 2025–2026 (July 2025 – July 2026): `https://iwf.sport/results/results-by-events/results-by-events-2025-2026/?event_id=${eventId}`
+    3. Mid-Range (November 2018 – May 2025): `https://iwf.sport/results/results-by-events/results-by-events-2018-2025/?event_id=${eventId}`
+    4. Historical (1998 – October 2018): `https://iwf.sport/results/results-by-events/results-by-events-upto2018/?event_id=${eventId}`
+  - Created robust `parseDate(dateOrYear)` and `getIwfMeetUrl(eventId, dateOrYear)` helpers in `iwf-config.js` to correctly resolve events such as Event #676 (XXIII Commonwealth Games, July 23, 2026) to the `results-by-events-2025-2026` endpoint.
+  - Added Command-Line Interface (CLI) `--url` argument support with top priority across `iwf-database-importer.js` and `iwf-main.js`, bypassing recalculation and directly preserving explicit user-supplied Uniform Resource Locators (URLs).
+  - Updated `iwf-results-scraper.js` navigation logic to preserve target URLs and accurately identify the `RESULTS_2025_2026` endpoint.
+
 - **Worker Alignment: Blacklist Skipping & Career Best Total Hydration (`scripts/production/lib/athlete-evaluator-engine.js`, `scripts/production/run-athlete-linking-evaluator.js`)**:
   - Excluded permanently blacklisted evaluations (`is_blacklisted = true`) from generic `--re-evaluate` passes to prevent administrative rejections from being overwritten back to `REVIEW_NEEDED`.
   - Added candidate skipping for any candidate identifier in `task.evidence_breakdown.rejected_candidate_ids`, allowing the evaluator to evaluate the next-best candidate in the demographic cohort upon re-evaluation.

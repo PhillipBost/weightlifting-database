@@ -214,7 +214,7 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                     Meet: existingMeet.meet,
                     Level: existingMeet.level || 'International',
                     Date: existingMeet.date || eventDate || null,
-                    URL: options.url || existingMeet.url || config.buildEventDetailURL(eventId, year, eventDate)
+                    URL: options.url || existingMeet.url || config.getIwfMeetUrl(eventId, eventDate || existingMeet.date || year)
                 };
             } else {
                 const resolvedMeetName = options.meetName || null;
@@ -224,7 +224,7 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                     Meet: resolvedMeetName || `Event ${eventId}`,
                     Level: 'International',
                     Date: resolvedDate,
-                    URL: options.url || config.buildEventDetailURL(eventId, year, resolvedDate)
+                    URL: options.url || config.getIwfMeetUrl(eventId, resolvedDate || year)
                 };
             }
         } else if (options.url) {
@@ -232,10 +232,16 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
             meetMetadata.URL = options.url;
         }
 
+        // Determine target URL with priority:
+        // 1. Explicit CLI --url option
+        // 2. Extracted meetMetadata.URL (if valid URL)
+        // 3. Fallback to 4-tier chronological getIwfMeetUrl
+        const targetScrapeUrl = options.url || meetMetadata?.URL || config.getIwfMeetUrl(eventId, eventDate || meetMetadata?.Date || options.date || year);
+
         // Step 3: Scrape event results (if not already parsed from HTML)
         if (!scraperResult) {
             console.log(`\n🌐 Scraping event results...`);
-            scraperResult = await runScraper(eventId, year, eventDate, meetMetadata?.endpoint || null, options.url || null);
+            scraperResult = await runScraper(eventId, year, eventDate || meetMetadata?.Date || options.date || null, null, targetScrapeUrl);
 
             if (!scraperResult.success) {
                 throw new Error('Failed to scrape event results');

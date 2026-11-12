@@ -1009,16 +1009,17 @@ async function scrapeEventResults(eventId, year = null, eventDate = null, endpoi
         let eventUrl;
         if (typeof targetUrl === 'string' && targetUrl.startsWith('http')) {
             eventUrl = targetUrl;
-            if (eventUrl.includes('2025-2026')) result.endpoint = 'MODERN';
+            if (eventUrl.includes('2025-2026')) result.endpoint = 'RESULTS_2025_2026';
             else if (eventUrl.includes('2018-2025')) result.endpoint = 'MID_RANGE';
             else if (eventUrl.includes('upto2018')) result.endpoint = 'HISTORICAL';
+            else if (eventUrl.includes('results-by-events/?event_id=')) result.endpoint = 'MODERN';
             else result.endpoint = 'CUSTOM';
         } else if (endpoint) {
             eventUrl = config.buildEventDetailURLFromEndpoint(eventId, endpoint);
             result.endpoint = endpoint;
         } else {
-            eventUrl = config.buildEventDetailURL(eventId, year, eventDate);
-            if (year) {
+            eventUrl = config.getIwfMeetUrl(eventId, eventDate || year);
+            if (year || eventDate) {
                 result.endpoint = config.determineEndpoint(year, eventDate);
             }
         }

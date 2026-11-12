@@ -52,32 +52,44 @@ if (!process.env.SUPABASE_URL || !process.env.SUPABASE_SECRET_KEY) {
 // ============================================================================
 
 /**
- * IWF splits results across THREE different URL endpoints based on date ranges:
+ * IWF splits results across FOUR different URL endpoints based on date ranges:
  *
- * 1. MODERN (2025 June 1+ to present)
+ * 1. MODERN (August 2026 to present)
  *    - URL: https://iwf.sport/results/results-by-events/
- *    - Default year: 2027
- *    - Uses dropdown: <select name="event_year">
+ *    - Append: ?event_id=XXXX or ?event_year=YYYY
  *
- * 2. MID_RANGE (2018 Nov to 2025 May 31)
+ * 2. RESULTS_2025_2026 (July 2025 through July 2026)
+ *    - URL: https://iwf.sport/results/results-by-events/results-by-events-2025-2026/
+ *    - Append: ?event_id=XXXX or ?event_year=YYYY
+ *
+ * 3. MID_RANGE (November 2018 through May 2025)
  *    - URL: https://iwf.sport/results/results-by-events/results-by-events-2018-2025/
- *    - Append: ?event_year=YYYY
+ *    - Append: ?event_id=XXXX or ?event_year=YYYY
  *
- * 3. HISTORICAL (1998 to 2018 Oct)
+ * 4. HISTORICAL (1998 through October 2018)
  *    - URL: https://iwf.sport/results/results-by-events/results-by-events-upto2018/
- *    - Append: ?event_year=YYYY
+ *    - Append: ?event_id=XXXX or ?event_year=YYYY
  */
 const URLS = {
-    // Modern results (2025 June 1+ onwards)
+    // Tier 1: Modern results (August 2026 onwards)
     MODERN: {
         BASE: 'https://iwf.sport/results/results-by-events/',
         EVENT_LISTING: 'https://iwf.sport/results/results-by-events/?event_year=',
         EVENT_DETAIL: 'https://iwf.sport/results/results-by-events/?event_id=',
         DEFAULT_YEAR: 2026,
-        AVAILABLE_YEARS: [2026, 2025], // 2025 = June 1st onwards only
+        AVAILABLE_YEARS: [2026],
     },
 
-    // Mid-range results (2018 Nov through 2025 May)
+    // Tier 2: July 2025 through July 2026
+    RESULTS_2025_2026: {
+        BASE: 'https://iwf.sport/results/results-by-events/results-by-events-2025-2026/',
+        EVENT_LISTING: 'https://iwf.sport/results/results-by-events/results-by-events-2025-2026/?event_year=',
+        EVENT_DETAIL: 'https://iwf.sport/results/results-by-events/results-by-events-2025-2026/?event_id=',
+        START_YEAR: 2025,
+        END_YEAR: 2026,
+    },
+
+    // Tier 3: Mid-range results (2018 Nov through 2025 May)
     MID_RANGE: {
         BASE: 'https://iwf.sport/results/results-by-events/results-by-events-2018-2025/',
         EVENT_LISTING: 'https://iwf.sport/results/results-by-events/results-by-events-2018-2025/?event_year=',
@@ -86,7 +98,7 @@ const URLS = {
         END_YEAR: 2025,
     },
 
-    // Historical results (1998 through 2018 Oct)
+    // Tier 4: Historical results (1998 through 2018 Oct)
     HISTORICAL: {
         BASE: 'https://iwf.sport/results/results-by-events/results-by-events-upto2018/',
         EVENT_LISTING: 'https://iwf.sport/results/results-by-events/results-by-events-upto2018/?event_year=',
@@ -97,17 +109,104 @@ const URLS = {
 
     // Date split points
     CUTOFF_DATES: {
-        // 2025: Split at June 1st
-        // Events before June 1, 2025 → MID_RANGE
-        // Events June 1, 2025 onwards → MODERN
-        YEAR_2025_SPLIT: '2025-06-01',
-
+        // 2026: Split at August 1st
+        YEAR_2026_SPLIT: '2026-08-01',
+        // 2025: Split at July 1st
+        YEAR_2025_SPLIT: '2025-07-01',
         // 2018: Split at November 1st
-        // Events before November 1, 2018 → HISTORICAL
-        // Events November 1, 2018 onwards → MID_RANGE
         YEAR_2018_SPLIT: '2018-11-01',
     },
 };
+
+const MONTH_NAME_MAP = {
+    jan: 1, january: 1,
+    feb: 2, february: 2,
+    mar: 3, march: 3,
+    apr: 4, april: 4,
+    may: 5,
+    jun: 6, june: 6,
+    jul: 7, july: 7,
+    aug: 8, august: 8,
+    sep: 9, sept: 9, september: 9,
+    oct: 10, october: 10,
+    nov: 11, november: 11,
+    dec: 12, december: 12
+};
+
+/**
+ * Parse year and 1-indexed month from date string or numeric year
+ *
+ * @param {string|number} dateOrYear - Year integer, ISO string, or human date string
+ * @returns {{ year: number|null, month: number|null }}
+ */
+function parseDate(dateOrYear) {
+    if (!dateOrYear) {
+        return { year: null, month: null };
+    }
+
+    if (typeof dateOrYear === 'number') {
+        return { year: dateOrYear, month: null };
+    }
+
+    const str = String(dateOrYear).trim();
+    if (/^\d{4}$/.test(str)) {
+        return { year: parseInt(str, 10), month: null };
+    }
+
+    const isoMatch = str.match(/^(\d{4})-(\d{1,2})(?:-\d{1,2})?/);
+    if (isoMatch) {
+        return {
+            year: parseInt(isoMatch[1], 10),
+            month: parseInt(isoMatch[2], 10)
+        };
+    }
+
+    const yearMatch = str.match(/\b(19\d{2}|20\d{2})\b/);
+    const monthMatch = str.match(/\b(jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|june?|july?|aug(?:ust)?|sep(?:t(?:ember)?)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)\b/i);
+
+    const year = yearMatch ? parseInt(yearMatch[1], 10) : null;
+    const month = monthMatch ? MONTH_NAME_MAP[monthMatch[1].toLowerCase()] : null;
+
+    if (year !== null) {
+        return { year, month };
+    }
+
+    const fallbackDate = new Date(str);
+    if (!isNaN(fallbackDate.getTime())) {
+        return {
+            year: fallbackDate.getUTCFullYear(),
+            month: fallbackDate.getUTCMonth() + 1
+        };
+    }
+
+    return { year: null, month: null };
+}
+
+/**
+ * Canonical 4-Tier IWF Results URL Resolver
+ *
+ * @param {string|number} eventId - IWF Event ID
+ * @param {string|number} dateOrYear - Date string or year
+ * @returns {string} Fully qualified canonical event URL
+ */
+function getIwfMeetUrl(eventId, dateOrYear) {
+    const { year, month } = parseDate(dateOrYear);
+
+    // 1. August 2026 - Current
+    if (year > 2026 || (year === 2026 && month && month >= 8)) {
+        return `https://iwf.sport/results/results-by-events/?event_id=${eventId}`;
+    }
+    // 2. July 2025 - July 2026
+    if (year === 2026 || (year === 2025 && (month === null || month >= 7))) {
+        return `https://iwf.sport/results/results-by-events/results-by-events-2025-2026/?event_id=${eventId}`;
+    }
+    // 3. Nov 2018 - May 2025
+    if ((year === 2025 && month && month <= 6) || (year >= 2019 && year <= 2024) || (year === 2018 && month && month >= 11)) {
+        return `https://iwf.sport/results/results-by-events/results-by-events-2018-2025/?event_id=${eventId}`;
+    }
+    // 4. 1998 - Oct 2018
+    return `https://iwf.sport/results/results-by-events/results-by-events-upto2018/?event_id=${eventId}`;
+}
 
 // ============================================================================
 // CSS SELECTORS (Step 3.1)
@@ -395,48 +494,36 @@ module.exports = {
     VALIDATION,
 
     /**
-     * Determine which endpoint to use based on year
+     * Determine which endpoint to use based on year and optional date
      *
-     * Handles split years (2025, 2018) where events span multiple endpoints.
-     * For split years without a specific date, defaults to the safer assumption.
+     * Implements canonical 4-tier chronological era resolution:
+     * 1. MODERN: August 2026 - Current
+     * 2. RESULTS_2025_2026: July 2025 - July 2026
+     * 3. MID_RANGE: November 2018 - May 2025
+     * 4. HISTORICAL: 1998 - October 2018
      *
-     * @param {number} year - Year to check
-     * @param {string} eventDate - Optional event date (YYYY-MM-DD) for precise split handling
-     * @returns {string} - 'MODERN', 'MID_RANGE', or 'HISTORICAL'
-     *
-     * @example
-     * determineEndpoint(2024)  // Returns 'MID_RANGE'
-     * determineEndpoint(2025, '2025-07-15')  // Returns 'MODERN' (after June 1)
-     * determineEndpoint(2025, '2025-03-20')  // Returns 'MID_RANGE' (before June 1)
-     * determineEndpoint(2018)  // Returns 'MID_RANGE' (default for split year)
+     * @param {number|string} year - Year to check
+     * @param {string} eventDate - Optional event date (e.g. 'Jul 23, 2026', '2026-07-23')
+     * @returns {string} - 'MODERN', 'RESULTS_2025_2026', 'MID_RANGE', or 'HISTORICAL'
      */
     determineEndpoint: (year, eventDate = null) => {
-        // Handle specific date splits for 2025 and 2018
-        if (year === 2025 && eventDate) {
-            return eventDate >= URLS.CUTOFF_DATES.YEAR_2025_SPLIT ? 'MODERN' : 'MID_RANGE';
-        } else if (year === 2025 && !eventDate) {
-            // Default to MID_RANGE for 2025 if no specific date (safer assumption)
-            return 'MID_RANGE';
-        }
+        const { year: parsedYear, month } = parseDate(eventDate || year);
+        const resolvedYear = parsedYear || (typeof year === 'number' ? year : parseInt(year, 10)) || null;
 
-        if (year === 2018 && eventDate) {
-            return eventDate >= URLS.CUTOFF_DATES.YEAR_2018_SPLIT ? 'MID_RANGE' : 'HISTORICAL';
-        } else if (year === 2018 && !eventDate) {
-            // Default to MID_RANGE for 2018 if no specific date (safer assumption)
-            return 'MID_RANGE';
-        }
-
-        // Standard year-based logic
-        if (year >= 2026) {
+        // 1. August 2026 - Current
+        if (resolvedYear > 2026 || (resolvedYear === 2026 && month && month >= 8)) {
             return 'MODERN';
-        } else if (year >= 2019 && year <= 2024) {
-            return 'MID_RANGE';
-        } else if (year >= URLS.HISTORICAL.START_YEAR && year <= 2017) {
-            return 'HISTORICAL';
         }
-
-        // Fallback to MID_RANGE for unknown cases
-        return 'MID_RANGE';
+        // 2. July 2025 - July 2026
+        if (resolvedYear === 2026 || (resolvedYear === 2025 && (month === null || month >= 7))) {
+            return 'RESULTS_2025_2026';
+        }
+        // 3. Nov 2018 - May 2025
+        if ((resolvedYear === 2025 && month && month <= 6) || (resolvedYear >= 2019 && resolvedYear <= 2024) || (resolvedYear === 2018 && month && month >= 11)) {
+            return 'MID_RANGE';
+        }
+        // 4. 1998 - Oct 2018
+        return 'HISTORICAL';
     },
 
     /**
@@ -447,13 +534,6 @@ module.exports = {
      * @param {number} year - Year to scrape
      * @param {string} eventDate - Optional event date for precise endpoint selection
      * @returns {string} - Complete URL for event listing page
-     *
-     * @example
-     * buildEventListingURL(2024)
-     * // Returns: 'https://iwf.sport/results/results-by-events/results-by-events-2018-2025/?event_year=2024'
-     *
-     * buildEventListingURL(2025, '2025-07-01')
-     * // Returns: 'https://iwf.sport/results/results-by-events/?event_year=2025'
      */
     buildEventListingURL: (year, eventDate = null) => {
         const endpoint = module.exports.determineEndpoint(year, eventDate);
@@ -461,6 +541,8 @@ module.exports = {
         switch (endpoint) {
             case 'MODERN':
                 return `${URLS.MODERN.EVENT_LISTING}${year}`;
+            case 'RESULTS_2025_2026':
+                return `${URLS.RESULTS_2025_2026.EVENT_LISTING}${year}`;
             case 'MID_RANGE':
                 return `${URLS.MID_RANGE.EVENT_LISTING}${year}`;
             case 'HISTORICAL':
@@ -474,58 +556,33 @@ module.exports = {
      * Build event detail URL for specific event ID
      *
      * Automatically selects correct endpoint based on year and optional date.
-     * If no year provided, defaults to MODERN endpoint (most recent).
+     * If no year or date provided, defaults to MODERN endpoint.
      *
      * @param {string} eventId - Event ID to view
      * @param {number} year - Year of event (to determine endpoint)
      * @param {string} eventDate - Optional event date for precise endpoint selection
      * @returns {string} - Complete URL for event detail page
-     *
-     * @example
-     * buildEventDetailURL('661', 2025)
-     * // Returns: 'https://iwf.sport/results/results-by-events/results-by-events-2018-2025/?event_id=661'
-     *
-     * buildEventDetailURL('661')
-     * // Returns: 'https://iwf.sport/results/results-by-events/?event_id=661' (defaults to MODERN)
      */
     buildEventDetailURL: (eventId, year = null, eventDate = null) => {
-        // If no year provided, default to MODERN endpoint (most recent)
-        if (!year) {
+        if (!year && !eventDate) {
             return `${URLS.MODERN.EVENT_DETAIL}${eventId}`;
         }
-
-        const endpoint = module.exports.determineEndpoint(year, eventDate);
-
-        switch (endpoint) {
-            case 'MODERN':
-                return `${URLS.MODERN.EVENT_DETAIL}${eventId}`;
-            case 'MID_RANGE':
-                return `${URLS.MID_RANGE.EVENT_DETAIL}${eventId}`;
-            case 'HISTORICAL':
-                return `${URLS.HISTORICAL.EVENT_DETAIL}${eventId}`;
-            default:
-                return `${URLS.MODERN.EVENT_DETAIL}${eventId}`;
-        }
+        return getIwfMeetUrl(eventId, eventDate || year);
     },
 
     /**
      * Build event detail URL from known endpoint (no recalculation needed)
      *
-     * Use this when you already know which endpoint the event belongs to,
-     * avoiding the overhead of recalculating based on year/date.
-     *
      * @param {string} eventId - Event ID to view
-     * @param {string} endpoint - Endpoint type ('MODERN', 'MID_RANGE', or 'HISTORICAL')
+     * @param {string} endpoint - Endpoint type ('MODERN', 'RESULTS_2025_2026', 'MID_RANGE', or 'HISTORICAL')
      * @returns {string} - Complete URL for event detail page
-     *
-     * @example
-     * buildEventDetailURLFromEndpoint('661', 'MID_RANGE')
-     * // Returns: 'https://iwf.sport/results/results-by-events/results-by-events-2018-2025/?event_id=661'
      */
     buildEventDetailURLFromEndpoint: (eventId, endpoint) => {
         switch (endpoint) {
             case 'MODERN':
                 return `${URLS.MODERN.EVENT_DETAIL}${eventId}`;
+            case 'RESULTS_2025_2026':
+                return `${URLS.RESULTS_2025_2026.EVENT_DETAIL}${eventId}`;
             case 'MID_RANGE':
                 return `${URLS.MID_RANGE.EVENT_DETAIL}${eventId}`;
             case 'HISTORICAL':
@@ -539,18 +596,11 @@ module.exports = {
      * Get year range for scraping (handles split years)
      *
      * Returns array of year objects with endpoint information and URLs.
-     * Adds notes for split years (2025, 2018) that span multiple endpoints.
+     * Adds notes for split years (2026, 2025, 2018) that span multiple endpoints.
      *
      * @param {number} startYear - Starting year
      * @param {number} endYear - Ending year
      * @returns {Array} - Array of year objects with endpoint info
-     *
-     * @example
-     * getYearRange(2024, 2025)
-     * // Returns: [
-     * //   { year: 2024, endpoint: 'MID_RANGE', url: '...' },
-     * //   { year: 2025, endpoint: 'MID_RANGE', url: '...', note: 'Split year...' }
-     * // ]
      */
     getYearRange: (startYear, endYear) => {
         const start = startYear || YEARS.START;
@@ -566,10 +616,11 @@ module.exports = {
                 url: module.exports.buildEventListingURL(year)
             });
 
-            // Handle split years: For 2025 and 2018, we might need both endpoints
-            if (year === 2025) {
-                // Add note about split year
-                years[years.length - 1].note = 'Split year: Events before June 1 in MID_RANGE, June 1+ in MODERN';
+            // Handle split years
+            if (year === 2026) {
+                years[years.length - 1].note = 'Split year: Events through July in RESULTS_2025_2026, August+ in MODERN';
+            } else if (year === 2025) {
+                years[years.length - 1].note = 'Split year: Events through June in MID_RANGE, July+ in RESULTS_2025_2026';
             } else if (year === 2018) {
                 years[years.length - 1].note = 'Split year: Events before Nov 1 in HISTORICAL, Nov 1+ in MID_RANGE';
             }
@@ -581,20 +632,12 @@ module.exports = {
     /**
      * Get all endpoints that need to be scraped for a given year range
      *
-     * Handles split years (2025, 2018) by including BOTH endpoints for those years.
+     * Handles split years (2026, 2025, 2018) by including BOTH endpoints for those years.
      * Returns array of endpoint objects ready for scraping, including date ranges.
      *
      * @param {number} startYear - Starting year
      * @param {number} endYear - Ending year
      * @returns {Array} - Array of {endpoint, year, url, dateRange} objects to scrape
-     *
-     * @example
-     * getEndpointsToScrape(2024, 2025)
-     * // Returns: [
-     * //   { endpoint: 'MID_RANGE', year: 2024, url: '...', dateRange: '2024-01-01 to 2024-12-31' },
-     * //   { endpoint: 'MID_RANGE', year: 2025, url: '...', dateRange: '2025-01-01 to 2025-05-31' },
-     * //   { endpoint: 'MODERN', year: 2025, url: '...', dateRange: '2025-06-01 to 2025-12-31' }
-     * // ]
      */
     getEndpointsToScrape: (startYear, endYear) => {
         const start = startYear || YEARS.START;
@@ -602,23 +645,34 @@ module.exports = {
         const endpointsToScrape = [];
 
         for (let year = start; year <= end; year++) {
-            // For split years, we need to scrape BOTH endpoints
-            if (year === 2025) {
-                // 2025 appears in both MID_RANGE (Jan-May) and MODERN (Jun-Dec)
+            // For split years, scrape both relevant endpoints
+            if (year === 2026) {
+                endpointsToScrape.push({
+                    endpoint: 'RESULTS_2025_2026',
+                    year: 2026,
+                    url: URLS.RESULTS_2025_2026.EVENT_LISTING + '2026',
+                    dateRange: '2026-01-01 to 2026-07-31',
+                });
+                endpointsToScrape.push({
+                    endpoint: 'MODERN',
+                    year: 2026,
+                    url: URLS.MODERN.EVENT_LISTING + '2026',
+                    dateRange: '2026-08-01 to 2026-12-31',
+                });
+            } else if (year === 2025) {
                 endpointsToScrape.push({
                     endpoint: 'MID_RANGE',
                     year: 2025,
                     url: URLS.MID_RANGE.EVENT_LISTING + '2025',
-                    dateRange: '2025-01-01 to 2025-05-31',
+                    dateRange: '2025-01-01 to 2025-06-30',
                 });
                 endpointsToScrape.push({
-                    endpoint: 'MODERN',
+                    endpoint: 'RESULTS_2025_2026',
                     year: 2025,
-                    url: URLS.MODERN.EVENT_LISTING + '2025',
-                    dateRange: '2025-06-01 to 2025-12-31',
+                    url: URLS.RESULTS_2025_2026.EVENT_LISTING + '2025',
+                    dateRange: '2025-07-01 to 2025-12-31',
                 });
             } else if (year === 2018) {
-                // 2018 appears in both HISTORICAL (Jan-Oct) and MID_RANGE (Nov-Dec)
                 endpointsToScrape.push({
                     endpoint: 'HISTORICAL',
                     year: 2018,
@@ -632,7 +686,6 @@ module.exports = {
                     dateRange: '2018-11-01 to 2018-12-31',
                 });
             } else {
-                // Normal years - single endpoint
                 const endpoint = module.exports.determineEndpoint(year);
                 endpointsToScrape.push({
                     endpoint,
@@ -645,4 +698,8 @@ module.exports = {
 
         return endpointsToScrape;
     },
+
+    // 4-Tier URL standard helpers
+    getIwfMeetUrl,
+    parseDate,
 };
