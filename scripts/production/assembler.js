@@ -636,6 +636,8 @@ async function generateAthlete(params, externalClient = null) {
                             'gamx_u', r.gamx_u,
                             'gamx_a', r.gamx_a,
                             'gamx_masters', r.gamx_masters,
+                            'gamx_sm', r.gamx_sm,
+                            'gamx_jm', r.gamx_jm,
                             'wso', r.wso,
                             'club_name', r.club_name,
                             'gender', r.gender,
@@ -680,6 +682,8 @@ async function generateAthlete(params, externalClient = null) {
                             'gamx_u', r.gamx_u,
                             'gamx_a', r.gamx_a,
                             'gamx_masters', r.gamx_masters,
+                            'gamx_sm', r.gamx_sm,
+                            'gamx_jm', r.gamx_jm,
                             'gender', r.gender,
                             'birth_year', r.birth_year
                         ) ORDER BY r.date::DATE DESC
@@ -733,6 +737,8 @@ async function generateAthlete(params, externalClient = null) {
                             'gamx_s', r.gamx_s,
                             'gamx_j', r.gamx_j,
                             'gamx_masters', r.gamx_masters,
+                            'gamx_sm', r.gamx_sm,
+                            'gamx_jm', r.gamx_jm,
                             'qpoints', r.qpoints,
                             'q_youth', r.q_youth,
                             'q_masters', r.q_masters,
