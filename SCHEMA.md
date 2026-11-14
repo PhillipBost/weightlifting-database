@@ -146,6 +146,8 @@ Individual athlete results linked to meets.
 | `gamx_total` | `numeric` | | |
 | `gamx_s` | `numeric` | | |
 | `gamx_j` | `numeric` | | |
+| `gamx_sm` | `numeric` | | Masters snatch score |
+| `gamx_jm` | `numeric` | | Masters clean and jerk score |
 | `gender` | `text` | | |
 | `birth_year` | `integer` | | |
 | `national_rank` | `integer` | | |
@@ -359,6 +361,8 @@ Collegiate weightlifting programs tracked by USAW.
 | `gamx_total` | `numeric` | | |
 | `gamx_s` | `numeric` | | |
 | `gamx_j` | `numeric` | | |
+| `gamx_sm` | `numeric` | | Masters snatch score |
+| `gamx_jm` | `numeric` | | Masters clean and jerk score |
 | `manual_override` | `boolean` | DEFAULT false | |
 | `country_code` | `varchar` | | |
 | `country_name` | `text` | | |

@@ -11,6 +11,7 @@
 7. **Change & Architecture Tracking**:
    - **Chronological Changes**: Significant fixes, added features, or structural changes should be appended to CHANGELOG.md under [Fixed], [Added], or [Changed].
    - **System Architecture**: The living system map in ARCHITECTURE.md is updated only when a structural component (port, container, or core sync model) is permanently added or changed.
+8. **Database Statement Execution**: Only the owner runs Structured Query Language (SQL) directly against the database. Notify the owner before running any script that executes SQL against the database.
 
 ## 2. Agent Operational & Behavioral Guardrails
 

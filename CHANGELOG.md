@@ -2,6 +2,37 @@
 
 All notable changes to the Weightlifting Database project will be documented in this file.
 
+## [Added] - 2026-11-13 (Eastern Standard Time)
+
+- **Batched Score Backfill (`migrations/create_gamx_batched_backfill.sql`, `scripts/maintenance/backfill_gamx_scores_batched.js`)**:
+  - Prepared an owner-run, sequential backfill for all eight model-score columns across the three result tables. Preview is read-only and examines one batch per selected table; applying requires an explicit option.
+  - Includes manually edited results, reports skipped results and restart points, and rolls back a batch if a trigger changes a protected field or the calculated scores. Normal calculated-field, timestamp, meet-count, and refresh-queue triggers remain active.
+  - Prepared `migrations/test_gamx_batched_backfill.sql` for an owner-run rollback test; installation alone does not update results.
+
+- **Masters Lift Score Triggers (`migrations/add_gamx_masters_lift_triggers.sql`)**:
+  - Prepared an owner-run migration adding `gamx_sm` and `gamx_jm` to the three result tables, with calculation after competition-age triggers.
+  - Changed, nonempty athlete gender and birth-year values propagate to linked international and Open Weightlifting Competition Management System results. Installation does not backfill existing results.
+  - Prepared `migrations/test_gamx_masters_lift_triggers.sql` for an owner-run rollback test, including temporary updates to one existing athlete and result in each of two federations.
+
+- **GAMX Masters Lift Naming (`migrations/rename_gamx_masters_lifts.sql`)**:
+  - Prepared an owner-run migration to rename the masters snatch and clean-and-jerk factor tables to `gamx_sm_factors` and `gamx_jm_factors`, and their lookup types to `sm` and `jm`. It retains the factor data and does not change result scores.
+  - The earlier activation migration retains its original names as historical migration steps; the post-activation verification expects the names after this rename.
+
+- **GAMX Candidate Activation Migration (`migrations/activate_gamx_candidates.sql`)**:
+  - Prepared, but did not execute, an owner-run transaction that backs up and updates youth and senior-total factors, adds distinct masters-lift factor tables, and updates the lookup function with variant-specific bodyweight handling.
+  - The transaction checks the deployed lookup fingerprint and candidate keys before changes, and checks published examples before committing. It does not update result rows or triggers. `migrations/verify_gamx_activation.sql` provides a separate read-only comparison after activation.
+
+- **GAMX Candidate Batch Loader (`scripts/utils/load_gamx_candidates.js`)**:
+  - Validates the published workbooks offline by default. With explicit `--load`, inserts missing candidate factors through Supabase without modifying existing factors or result scores.
+  - Checks all existing candidate rows before inserting, stops on conflicts, and verifies all candidate rows afterward using a relative tolerance of `1e-12` for numerical values. Interrupted runs can be resumed when existing rows match.
+
+## [Added] - 2026-11-12 (Eastern Standard Time)
+
+- **Offline GAMX Candidate Generator (`scripts/utils/generate_gamx_factor_update.py`)**:
+  - Run `python scripts\utils\generate_gamx_factor_update.py --output <new-loading-file> --verification-output <new-verification-file>` to generate reviewable Structured Query Language (SQL) files without connecting to the database. The source workbooks must be in `GAMX files v2.0\GAMX v2 files pulled 20261112`; their checksums and keyed factor grids are validated before output.
+  - The loading transaction creates four separate candidate tables for youth, senior total, masters snatch, and masters clean and jerk. Existing factor tables, result scores, functions, and triggers are not changed. The candidate tables have row-level security enabled with no access policies and are intended for owner review.
+  - The read-only verification file checks row counts and compares eight workbook examples to scores produced by the existing database calculation function. It must be run as the candidate table owner.
+
 ## [Fixed] - 2026-11-11 (Eastern Standard Time)
 
 - **Granular Dry-Run Investigation Telemetry (`scripts/production/iwf-database-importer.js`)**:

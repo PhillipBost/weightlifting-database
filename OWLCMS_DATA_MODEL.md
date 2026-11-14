@@ -61,7 +61,7 @@ Individual platform performance and attempt records (1 row per platform appearan
   * `bounce_back_snatch_2..3`, `bounce_back_cj_2..3`: Recovery flags (`true` if made attempt immediately after a miss).
   * `best_snatch_ytd`, `best_cj_ytd`, `best_total_ytd`: Career Year-To-Date progression.
 * **Analytical Demographics**: `gender`, `birth_year`, `competition_age`.
-* **Full GAMX Suite**: `gamx_u` (Youth), `gamx_a` (Junior/Senior), `gamx_masters` (Masters), `gamx_total` (Senior Total), `gamx_s` (Snatch), `gamx_j` (C&J).
+* **Score Suite**: `gamx_u` (Youth), `gamx_a` (Junior/Senior), `gamx_masters` (Masters Total), `gamx_total` (Senior Total), `gamx_s` (Snatch), `gamx_j` (Clean and Jerk), `gamx_sm` (Masters Snatch), `gamx_jm` (Masters Clean and Jerk).
 * **Q-Scores Suite**: `qpoints` (Senior ages 21–30), `q_masters` (Masters ages 31+), `q_youth` (Youth ages 10–20).
 * **Weigh-in Precision**:
   * `body_weight_kg`: Official category bodyweight.
