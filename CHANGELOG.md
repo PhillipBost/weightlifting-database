@@ -2,6 +2,15 @@
 
 All notable changes to the Weightlifting Database project will be documented in this file.
 
+## [Added] - 2026-11-16 (Eastern Standard Time)
+
+- **Static Meet Shard Generation & Refresh Pipeline (`scripts/production/assembler.js`, `scripts/production/lib/meet-shard-refresh.js`, `scripts/production/backfill-meet-shards.js`, `migrations/add_meet_shard_queue_and_triggers.sql`)**:
+  - Added `generateMeet()` and `getMeetShardId()` to `scripts/production/assembler.js`, compiling Gzip-compressed UTF-8 JavaScript Object Notation (`.json.gz`) meet shards at `/meets/{federation}/{shardId}/{meetId}.json.gz` for USA Weightlifting (`usaw`), International Weightlifting Federation (`iwf`), and Open Weightlifting Competition Management System (`owlcms`) matching the frontend Application Programming Interface (API) contracts.
+  - Prepared owner-run migration `migrations/add_meet_shard_queue_and_triggers.sql` creating `public.meet_shard_queue` and automated PostgreSQL triggers publishing `meet_shard_event` notifications on meet, location/listing, result, lifter, and alias mutations.
+  - Extended `scripts/production/owlcms-event-daemon.js` and `scripts/production/listener.js` (Transmission Control Protocol (TCP) Port `8889`) to listen on `meet_shard_event`, drain `public.meet_shard_queue`, accept meet refresh payloads on `POST /refresh-athlete`, and expose `POST /refresh-meet`.
+  - Integrated incremental meet shard refreshes into `scripts/production/run-owlcms-pipeline.js`, `scripts/production/database-importer.js`, `scripts/production/iwf-database-importer.js`, and `scripts/production/execute-approved-homonym-splits.js`.
+  - Created `scripts/production/backfill-meet-shards.js` (`npm run seed:meets`) for full historical backfill and `--only-missing` / `--dry-run` / `--enqueue` reconciliation.
+
 ## [Added] - 2026-11-13 (Eastern Standard Time)
 
 - **Batched Score Backfill (`migrations/create_gamx_batched_backfill.sql`, `scripts/maintenance/backfill_gamx_scores_batched.js`)**:

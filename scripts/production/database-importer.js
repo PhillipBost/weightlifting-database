@@ -26,6 +26,7 @@ const { searchSport80ForLifter } = require('./searchSport80ForLifter.js');
 
 // Import evaluation enqueue helper
 const { enqueueAthleteEvaluations, CORE_FEDERATION_UUIDS } = require('./lib/athlete-evaluator-engine.js');
+const { triggerMeetShardRefresh } = require('./lib/meet-shard-refresh.js');
 
 // Extract meet internal_id from Sport80 URL
 function extractMeetInternalId(url) {
@@ -303,6 +304,8 @@ async function scrapeAndImportMeetResults(newMeetIds, meetings) {
                     } catch (rankErr) {
                         console.error(`[PIPELINE] ⚠️ Ranking engine failed for meet ${meetId}:`, rankErr.message);
                     }
+
+                    await triggerMeetShardRefresh('usaw', meetId, { supabase });
                 }
 
             } catch (error) {

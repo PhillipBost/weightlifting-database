@@ -11,6 +11,7 @@ const { createClient } = require('@supabase/supabase-js');
 const { spawn } = require('child_process');
 const fs = require('fs');
 const path = require('path');
+const { triggerMeetShardRefresh } = require('./lib/meet-shard-refresh');
 
 const LOCK_FILE = path.join(__dirname, '.owlcms_pipeline.lock');
 const LOCK_TIMEOUT_MS = 30 * 60 * 1000; // 30 minutes max lock duration
@@ -144,6 +145,23 @@ async function runPipeline(options = {}) {
         // Step 3: Final sweep to verify all meets have coordinates and result country codes are synchronized
         console.log('\n⚡ [PIPELINE] Step 3: Running final geocode and country-code sweep...');
         await runChildScript('scripts/production/sweep-owlcms-geocodes.js');
+
+        // Step 4: Compile static meet shard(s) for OWLCMS
+        console.log('\n⚡ [PIPELINE] Step 4: Compiling OWLCMS static meet shard(s)...');
+        let meetIdsToRefresh = options.meet_id ? [options.meet_id] : [];
+        if (meetIdsToRefresh.length === 0) {
+            const cutoff = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString();
+            const { data: recentMeets } = await supabase
+                .from('owlcms_meets')
+                .select('meet_id')
+                .gte('updated_at', cutoff);
+            if (recentMeets) {
+                meetIdsToRefresh = recentMeets.map(m => m.meet_id);
+            }
+        }
+        if (meetIdsToRefresh.length > 0) {
+            await triggerMeetShardRefresh('owlcms', meetIdsToRefresh, { supabase });
+        }
 
         console.log('🏁 [PIPELINE] Pipeline run finished successfully.\n');
         return { success: true };

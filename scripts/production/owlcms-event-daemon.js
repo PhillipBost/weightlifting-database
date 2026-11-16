@@ -17,18 +17,23 @@ require('dotenv').config();
 const { Client, Pool } = require('pg');
 const { runPipeline } = require('./run-owlcms-pipeline');
 const { generateAthlete } = require('./assembler');
+const { drainMeetShardQueue } = require('./lib/meet-shard-refresh');
 
 const PIPELINE_DEBOUNCE_MS = 1500; // Debounce window for burst OWLCMS meet imports
 const SHARD_DEBOUNCE_MS = 2000;    // Debounce window for bulk athlete shard triggers
 
 let pipelineDebounceTimer = null;
 let shardDebounceTimer = null;
+let meetShardDebounceTimer = null;
 
 let isPipelineActive = false;
 let pendingPipelineRunQueued = false;
 
 let isDrainingQueue = false;
 let pendingShardDrainQueued = false;
+
+let isDrainingMeetQueue = false;
+let pendingMeetDrainQueued = false;
 
 let pool = null;
 let activeClient = null;
@@ -140,6 +145,45 @@ function triggerDebouncedShardDrain() {
 }
 
 /**
+ * Drain the meet shard outbox queue atomically
+ */
+async function runMeetShardDrain() {
+    if (!pool) return;
+
+    if (isDrainingMeetQueue) {
+        pendingMeetDrainQueued = true;
+        return;
+    }
+
+    isDrainingMeetQueue = true;
+    try {
+        await drainMeetShardQueue(pool, '[DAEMON-MEET]');
+    } catch (err) {
+        console.error('[DAEMON-MEET] Error during meet shard queue drain:', err.message);
+    } finally {
+        isDrainingMeetQueue = false;
+        if (pendingMeetDrainQueued) {
+            pendingMeetDrainQueued = false;
+            runMeetShardDrain();
+        }
+    }
+}
+
+/**
+ * Debounce burst notifications for meet shard updates
+ */
+function triggerDebouncedMeetShardDrain() {
+    if (meetShardDebounceTimer) {
+        clearTimeout(meetShardDebounceTimer);
+    }
+
+    meetShardDebounceTimer = setTimeout(() => {
+        meetShardDebounceTimer = null;
+        runMeetShardDrain();
+    }, SHARD_DEBOUNCE_MS);
+}
+
+/**
  * Debounce burst notifications and trigger pipeline
  */
 function triggerDebouncedPipeline(eventPayload) {
@@ -160,8 +204,9 @@ function triggerDebouncedPipeline(eventPayload) {
         try {
             console.log('\n⚡ [DAEMON] OWLCMS pipeline change event detected. Triggering post-ingestion pipeline...');
             await runPipeline();
-            // Drain any athlete shards enqueued during linking
+            // Drain any athlete or meet shards enqueued during linking
             drainAthleteShardQueue();
+            runMeetShardDrain();
         } catch (err) {
             console.error('[DAEMON] Pipeline execution error:', err.message);
         } finally {
@@ -203,6 +248,9 @@ async function startDaemon() {
         } else if (msg.channel === 'athlete_shard_event') {
             console.log(`[DAEMON] Received Postgres notification on "athlete_shard_event"`);
             triggerDebouncedShardDrain();
+        } else if (msg.channel === 'meet_shard_event') {
+            console.log(`[DAEMON] Received Postgres notification on "meet_shard_event"`);
+            triggerDebouncedMeetShardDrain();
         }
     });
 
@@ -216,11 +264,13 @@ async function startDaemon() {
         await client.connect();
         await client.query('LISTEN owlcms_pipeline_event');
         await client.query('LISTEN athlete_shard_event');
-        console.log('📡 [DAEMON] Actively listening on channels: "owlcms_pipeline_event", "athlete_shard_event"');
+        await client.query('LISTEN meet_shard_event');
+        console.log('📡 [DAEMON] Actively listening on channels: "owlcms_pipeline_event", "athlete_shard_event", "meet_shard_event"');
         console.log('💤 [DAEMON] Daemon is idle (0% CPU). Awaiting database change events from Supabase/Next.js...\n');
 
         // Startup catch-up: drain any pending outbox items that arrived while daemon was offline
         drainAthleteShardQueue();
+        runMeetShardDrain();
     } catch (err) {
         console.error('[DAEMON] Initial connection failed:', err.message);
         reconnect();
@@ -241,10 +291,12 @@ const shutdown = async () => {
     console.log('\n[DAEMON] Shutting down gracefully...');
     if (pipelineDebounceTimer) clearTimeout(pipelineDebounceTimer);
     if (shardDebounceTimer) clearTimeout(shardDebounceTimer);
+    if (meetShardDebounceTimer) clearTimeout(meetShardDebounceTimer);
     if (activeClient) {
         try {
             await activeClient.query('UNLISTEN owlcms_pipeline_event');
             await activeClient.query('UNLISTEN athlete_shard_event');
+            await activeClient.query('UNLISTEN meet_shard_event');
             await activeClient.end();
         } catch {}
     }

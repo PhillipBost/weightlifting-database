@@ -17,6 +17,7 @@
 require('dotenv').config();
 const minimist = require('minimist');
 const { createClient } = require('@supabase/supabase-js');
+const { enqueueMeetShards } = require('./lib/meet-shard-refresh');
 
 const args = minimist(process.argv.slice(2));
 const isDryRun = args['dry-run'] === true || args.d === true;
@@ -73,6 +74,7 @@ async function executeSplit(queueItem) {
 
     const targetLifterIds = [];
     const executionDetails = [];
+    const affectedMeetIds = new Set();
 
     // Step 1: Resolve or provision distinct usaw_lifters records for Persons 1..N
     for (let i = 0; i < splitPlan.splits.length; i++) {
@@ -224,6 +226,7 @@ async function executeSplit(queueItem) {
                 const { data: updated, error: updateErr } = await updateQuery.select('result_id');
                 if (updateErr) throw new Error(`Failed to reassign confirmed meets for Person ${i + 1}: ${updateErr.message}`);
                 const count = updated ? updated.length : 0;
+                if (count > 0) competitions.forEach(mid => affectedMeetIds.add(mid));
                 executionDetails[i].confirmed_meets_reassigned = count;
                 console.log(`  📦 Person ${i + 1} (lifter_id: ${targetId}): Assigned ${count} confirmed meet results.`);
             }
@@ -298,6 +301,7 @@ async function executeSplit(queueItem) {
                     console.warn(`  ⚠️ Error reassigning scorecard Meet ${meetId}: ${cardErr.message}`);
                 } else {
                     const movedCount = updatedCard ? updatedCard.length : 0;
+                    if (movedCount > 0 && meetId) affectedMeetIds.add(meetId);
                     executionDetails[assignedSplitIndex].triaged_meets_reassigned += movedCount;
                     triagedTotalMoved += movedCount;
                     console.log(`  🎯 Reassigned ${movedCount} scorecard(s) for Meet ${meetId} (${meetDate || 'No Date'}) to Person ${assignedSplitIndex + 1} (lifter_id: ${targetId})`);
@@ -326,6 +330,13 @@ async function executeSplit(queueItem) {
             console.warn('  ⚠️ Failed to enqueue to athlete_shard_queue:', qErr.message);
         } else {
             console.log(`  📢 Enqueued ${uniqueLifterIds.length} athlete IDs to public.athlete_shard_queue for immediate static shard generation.`);
+        }
+    }
+
+    if (!isDryRun && affectedMeetIds.size > 0) {
+        const meetEnq = await enqueueMeetShards(supabase, 'usaw', Array.from(affectedMeetIds));
+        if (meetEnq.enqueued > 0) {
+            console.log(`  📢 Enqueued ${meetEnq.enqueued} meet ID(s) to public.meet_shard_queue for static meet shard generation.`);
         }
     }
 

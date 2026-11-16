@@ -83,9 +83,9 @@ Every cross-federation link must adhere to universal demographic anchoring `(gen
    - Overlapping meet imports never spawn duplicate runners; the active process executes a self-draining loop until all `PENDING` lifters across all newly uploaded meets are linked.
 
 4. **Change-Triggered Automation Daemon**:
-   - Persistent worker daemon (`scripts/production/owlcms-event-daemon.js`) connects to PostgreSQL via `LISTEN owlcms_pipeline_event`.
-   - Wakes up instantaneously upon `INSERT` on `owlcms_lifters` (`link_status = 'PENDING'`) or `athlete_aliases`.
-   - Debounces burst imports (1500ms window), executes `runPipeline()`, and automatically updates affected static shards on disk without polling or open inbound firewall ports.
+   - Persistent worker daemon (`scripts/production/owlcms-event-daemon.js`) connects to PostgreSQL via `LISTEN owlcms_pipeline_event`, `LISTEN athlete_shard_event`, and `LISTEN meet_shard_event`.
+   - Wakes up instantaneously upon `INSERT`, `UPDATE`, or `DELETE` across athlete, meet, result, location/listing, and alias tables (`public.athlete_shard_queue`, `public.meet_shard_queue`).
+   - Debounces burst imports, executes `runPipeline()`, and automatically updates affected static athlete shards (`/{federation}/{shardId}/{id}.json.gz`) and meet shards (`/meets/{federation}/{shardId}/{meetId}.json.gz`) on disk without polling or open inbound firewall ports.
 
 ---
 

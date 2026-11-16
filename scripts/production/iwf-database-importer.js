@@ -50,6 +50,7 @@ const resultsImporter = require('./iwf-results-importer');
 const lifterManager = require('./iwf-lifter-manager');
 const LockManager = require('./iwf-lock-manager');
 const config = require('./iwf-config');
+const { triggerMeetShardRefresh } = require('./lib/meet-shard-refresh');
 
 // ============================================================================
 // SCRAPER INTEGRATION
@@ -634,6 +635,11 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
         // Step 6b: Automated Post-Import Anomaly Audit
         if (!options.dryRun && meet.db_meet_id) {
             await auditMeetDuplicates(meet.db_meet_id, meet.Meet, meet.iwf_meet_id || eventId);
+        }
+
+        // Step 6c: Refresh static meet shard
+        if (!options.dryRun && (meet.iwf_meet_id || eventId)) {
+            await triggerMeetShardRefresh('iwf', meet.iwf_meet_id || eventId, { supabase: config.supabaseIWF });
         }
 
         // Step 7: Print summary

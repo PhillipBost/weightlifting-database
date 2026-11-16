@@ -977,4 +977,529 @@ async function generateAthlete(params, externalClient = null) {
     }
 }
 
-module.exports = { generateAthlete };
+// ── Meet Shard Assembler ─────────────────────────────────────────────────────
+
+const MEET_SHARD_SCHEMA_VERSION = '1.0';
+const MAX_RAW_PAYLOAD_BYTES = 5 * 1024 * 1024; // 5 MB uncompressed guard for OWLCMS raw_payload
+
+/**
+ * Compute 2-digit shard directory from a meet identifier.
+ * Numeric IDs: zero-padded to at least 2 chars, last 2 digits. Non-numeric: '00'.
+ */
+function getMeetShardId(meetId) {
+    const s = String(meetId ?? '').trim();
+    if (!/^\d+$/.test(s)) return '00';
+    return s.padStart(2, '0').slice(-2);
+}
+
+/**
+ * Write a gzip-compressed UTF-8 JSON meet shard to OUTPUT_DIR/meets/{federation}/{shardId}/{meetId}.json.gz.
+ */
+function writeMeetShardFile(federation, meetId, payload) {
+    const idStr = String(meetId).trim();
+    const shardId = getMeetShardId(idStr);
+    const dir = path.join(OUTPUT_DIR, 'meets', federation, shardId);
+    const file = path.join(dir, `${idStr}.json.gz`);
+
+    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+    const compressed = zlib.gzipSync(JSON.stringify(payload));
+    fs.writeFileSync(file, compressed);
+    try { fs.chmodSync(file, 0o644); } catch {}
+    return file;
+}
+
+/**
+ * Assemble USAW meet shard payload.
+ */
+async function assembleUsawMeetPayload(meetId, client) {
+    const meetQuery = `
+        SELECT
+            m.meet_id,
+            m."Meet",
+            m."Date",
+            m."Level",
+            m.city,
+            m.state,
+            m.address,
+            m.street_address,
+            m.zip_code,
+            m.elevation_meters,
+            m.latitude,
+            m.longitude,
+            m."URL",
+            COALESCE(
+                (
+                    SELECT jsonb_agg(
+                        jsonb_build_object(
+                            'street_address', l.street_address,
+                            'city', l.city,
+                            'state', l.state,
+                            'zip_code', l.zip_code,
+                            'address', l.address,
+                            'location_text', l.location_text
+                        )
+                        ORDER BY l.listing_id ASC
+                    )
+                    FROM public.usaw_meet_listings l
+                    WHERE l.meet_id = m.meet_id
+                ),
+                '[]'::jsonb
+            ) AS listings
+        FROM public.usaw_meets m
+        WHERE m.meet_id = $1
+        LIMIT 1;
+    `;
+    const meetRes = await client.query(meetQuery, [meetId]);
+    if (meetRes.rows.length === 0) return null;
+
+    const resultsQuery = `
+        SELECT
+            r.result_id,
+            r.meet_id,
+            r.lifter_name,
+            r.lifter_id,
+            r.weight_class,
+            r.best_snatch,
+            r.best_cj,
+            r.total,
+            r.snatch_lift_1,
+            r.snatch_lift_2,
+            r.snatch_lift_3,
+            r.cj_lift_1,
+            r.cj_lift_2,
+            r.cj_lift_3,
+            r.body_weight_kg,
+            r.gender,
+            r.birth_year,
+            r.age_category,
+            r.competition_age,
+            r.wso,
+            r.club_name,
+            r.qpoints,
+            r.q_youth,
+            r.q_masters,
+            r.gamx_total,
+            r.gamx_s,
+            r.gamx_j,
+            r.gamx_u,
+            r.gamx_a,
+            r.gamx_masters,
+            r.gamx_sm,
+            r.gamx_jm,
+            jsonb_build_object('membership_number', ul.membership_number) AS lifters
+        FROM public.usaw_meet_results r
+        LEFT JOIN public.usaw_lifters ul ON r.lifter_id = ul.lifter_id
+        WHERE r.meet_id = $1
+        ORDER BY r.weight_class ASC NULLS LAST, r.result_id ASC;
+    `;
+    const resultsRes = await client.query(resultsQuery, [meetId]);
+
+    return {
+        schema_version: MEET_SHARD_SCHEMA_VERSION,
+        generated_at: new Date().toISOString(),
+        meet: meetRes.rows[0],
+        results: resultsRes.rows || []
+    };
+}
+
+/**
+ * Assemble IWF meet shard payload. Accepts either iwf_meet_id (preferred) or db_meet_id.
+ */
+async function assembleIwfMeetPayload(meetIdentifier, client, isDbMeetId = false) {
+    const meetQuery = isDbMeetId
+        ? `SELECT iwf_meet_id, db_meet_id, meet, date, level, url, results FROM public.iwf_meets WHERE db_meet_id = $1 LIMIT 1`
+        : `SELECT iwf_meet_id, db_meet_id, meet, date, level, url, results FROM public.iwf_meets WHERE iwf_meet_id = $1 LIMIT 1`;
+
+    const meetRes = await client.query(meetQuery, [isDbMeetId ? parseInt(meetIdentifier, 10) : String(meetIdentifier)]);
+    if (meetRes.rows.length === 0) return null;
+
+    const meetRow = meetRes.rows[0];
+    const [locRes, resultsRes] = await Promise.all([
+        client.query(
+            `SELECT * FROM public.iwf_meet_locations WHERE iwf_meet_id = $1 ORDER BY db_location_id ASC`,
+            [meetRow.iwf_meet_id]
+        ),
+        client.query(
+            `SELECT
+                r.db_result_id,
+                r.db_lifter_id,
+                r.db_meet_id,
+                r.meet_name,
+                r.date,
+                r.lifter_name,
+                r.weight_class,
+                r.best_snatch,
+                r.best_cj,
+                r.total,
+                r.snatch_lift_1,
+                r.snatch_lift_2,
+                r.snatch_lift_3,
+                r.cj_lift_1,
+                r.cj_lift_2,
+                r.cj_lift_3,
+                r.body_weight_kg,
+                r.gender,
+                r.age_category,
+                r.competition_age,
+                r.birth_year,
+                r.country_code,
+                r.country_name,
+                r.competition_group,
+                r.rank,
+                r.qpoints,
+                r.q_youth,
+                r.q_masters,
+                r.gamx_total,
+                r.gamx_s,
+                r.gamx_j,
+                r.gamx_u,
+                r.gamx_a,
+                r.gamx_masters,
+                r.gamx_sm,
+                r.gamx_jm,
+                r.best_snatch_ytd,
+                r.best_cj_ytd,
+                r.best_total_ytd,
+                r.snatch_successful_attempts,
+                r.cj_successful_attempts,
+                r.total_successful_attempts,
+                r.bounce_back_snatch_2,
+                r.bounce_back_snatch_3,
+                r.bounce_back_cj_2,
+                r.bounce_back_cj_3,
+                r.manual_override,
+                r.created_at,
+                r.updated_at,
+                jsonb_build_object('iwf_lifter_id', il.iwf_lifter_id) AS iwf_lifters
+             FROM public.iwf_meet_results r
+             LEFT JOIN public.iwf_lifters il ON r.db_lifter_id = il.db_lifter_id
+             WHERE r.db_meet_id = $1
+             ORDER BY r.weight_class ASC NULLS LAST, r.rank ASC NULLS LAST, r.db_result_id ASC`,
+            [meetRow.db_meet_id]
+        )
+    ]);
+
+    return {
+        canonicalMeetId: meetRow.iwf_meet_id,
+        payload: {
+            schema_version: MEET_SHARD_SCHEMA_VERSION,
+            generated_at: new Date().toISOString(),
+            meet: meetRow,
+            locations: locRes.rows || [],
+            results: resultsRes.rows || []
+        }
+    };
+}
+
+/**
+ * Resolve Point-in-Time federation_details (canonical name, short code, country code,
+ * level, historical_sanction, and governance apex/continental/parent) for an OWLCMS meet.
+ */
+async function resolveOwlcmsFederationDetails(federationId, startDate, client) {
+    if (!federationId) return null;
+
+    const fedRes = await client.query(
+        `SELECT id, canonical_name, short_code, country_code, level, parent_federation_id, is_verified
+         FROM public.federation_registry
+         WHERE id = $1
+         LIMIT 1`,
+        [federationId]
+    );
+    if (fedRes.rows.length === 0) return null;
+    const fed = fedRes.rows[0];
+    const asOfDate = startDate ? new Date(startDate).toISOString().slice(0, 10) : null;
+
+    const [locRes, hqRes, lineageRes] = await Promise.all([
+        client.query(
+            `SELECT language_code, full_name, acronym, name_type, valid_from, valid_until
+             FROM public.federation_localizations
+             WHERE federation_id = $1
+               AND ($2::date IS NULL OR ((valid_from IS NULL OR valid_from <= $2::date) AND (valid_until IS NULL OR valid_until >= $2::date)))
+             ORDER BY CASE name_type WHEN 'primary' THEN 0 WHEN 'official_translation' THEN 1 WHEN 'historical' THEN 2 ELSE 3 END, full_name ASC`,
+            [federationId, asOfDate]
+        ),
+        client.query(
+            `SELECT city, country_code, valid_from, valid_until, is_current
+             FROM public.federation_headquarters
+             WHERE federation_id = $1
+               AND ($2::date IS NULL OR ((valid_from IS NULL OR valid_from <= $2::date) AND (valid_until IS NULL OR valid_until >= $2::date)))
+             ORDER BY is_current DESC, valid_from DESC NULLS LAST`,
+            [federationId, asOfDate]
+        ),
+        client.query(
+            `WITH RECURSIVE walk AS (
+                SELECT 1 AS depth, fa.parent_id, fa.relationship_type, fa.is_verified,
+                       ARRAY[fa.child_id, fa.parent_id] AS visited
+                FROM public.federation_affiliations fa
+                WHERE fa.child_id = $1
+                  AND fa.is_active = true
+                  AND ($2::date IS NULL OR ((fa.effective_start IS NULL OR fa.effective_start <= $2::date) AND (fa.effective_end IS NULL OR fa.effective_end >= $2::date)))
+                UNION ALL
+                SELECT w.depth + 1, fa.parent_id, fa.relationship_type, fa.is_verified,
+                       w.visited || fa.parent_id
+                FROM walk w
+                JOIN public.federation_affiliations fa ON fa.child_id = w.parent_id
+                WHERE w.depth < 6
+                  AND NOT fa.parent_id = ANY(w.visited)
+                  AND fa.is_active = true
+                  AND ($2::date IS NULL OR ((fa.effective_start IS NULL OR fa.effective_start <= $2::date) AND (fa.effective_end IS NULL OR fa.effective_end >= $2::date)))
+            )
+            SELECT w.depth, w.relationship_type, w.is_verified,
+                   f.id, f.canonical_name, f.short_code, f.country_code, f.level
+            FROM walk w
+            JOIN public.federation_registry f ON f.id = w.parent_id
+            ORDER BY w.depth ASC, f.canonical_name ASC`,
+            [federationId, asOfDate]
+        )
+    ]);
+
+    const hops = lineageRes.rows || [];
+    const primaryLoc = locRes.rows.find(l => l.name_type === 'primary') || locRes.rows[0] || null;
+    const apex = hops.find(h => h.level === 'global_international' || h.level === 'international') || null;
+    const continental = hops.find(h => h.level === 'continental') || null;
+    const parent = hops.find(h => h.depth === 1 && h.relationship_type === 'regional_subdivision')
+        || hops.find(h => h.depth === 1)
+        || null;
+
+    return {
+        id: fed.id,
+        canonical_name: fed.canonical_name,
+        short_code: fed.short_code,
+        country_code: fed.country_code,
+        level: fed.level,
+        is_verified: fed.is_verified,
+        historical_sanction: {
+            as_of_date: asOfDate,
+            name: primaryLoc ? primaryLoc.full_name : fed.canonical_name,
+            short_code: (primaryLoc && primaryLoc.acronym) ? primaryLoc.acronym : fed.short_code,
+            localizations: locRes.rows,
+            headquarters: hqRes.rows[0] || null
+        },
+        governance: {
+            apex: apex ? { id: apex.id, canonical_name: apex.canonical_name, short_code: apex.short_code, level: apex.level } : null,
+            continental: continental ? { id: continental.id, canonical_name: continental.canonical_name, short_code: continental.short_code, level: continental.level } : null,
+            parent: parent ? { id: parent.id, canonical_name: parent.canonical_name, short_code: parent.short_code, level: parent.level, relationship_type: parent.relationship_type } : null,
+            hops
+        }
+    };
+}
+
+/**
+ * Assemble OWLCMS meet shard payload.
+ */
+async function assembleOwlcmsMeetPayload(meetId, client) {
+    const meetRes = await client.query(
+        `SELECT
+            m.meet_id,
+            m.meet_name,
+            m.start_date,
+            m.end_date,
+            m.city,
+            m.country,
+            m.organizer,
+            m.federation_id,
+            m.organizer_federation_id,
+            m.competition_scope,
+            m.venue,
+            m.latitude,
+            m.longitude,
+            m.host_country_code,
+            m.format_version,
+            m.raw_payload,
+            fr.canonical_name AS federation_name,
+            fr.short_code AS federation_short_code
+         FROM public.owlcms_meets m
+         LEFT JOIN public.federation_registry fr ON m.federation_id = fr.id
+         WHERE m.meet_id = $1
+         LIMIT 1`,
+        [meetId]
+    );
+    if (meetRes.rows.length === 0) return null;
+
+    const m = meetRes.rows[0];
+    const [federationDetails, resultsRes] = await Promise.all([
+        resolveOwlcmsFederationDetails(m.federation_id, m.start_date, client),
+        client.query(
+            `SELECT
+                r.*,
+                jsonb_build_object(
+                    'lifter_id', ol.lifter_id,
+                    'athlete_name', ol.athlete_name,
+                    'first_name', ol.first_name,
+                    'last_name', ol.last_name,
+                    'gender', ol.gender,
+                    'birth_year', ol.birth_year,
+                    'exact_birth_date', ol.exact_birth_date,
+                    'country_code', ol.country_code,
+                    'club_name', ol.club_name,
+                    'membership_number', ol.membership_number
+                ) AS lifter,
+                EXISTS (
+                    SELECT 1 FROM public.athlete_aliases aa
+                    WHERE (aa.owlcms_lifter_id = r.lifter_id OR aa.owlcms_lifter_id_2 = r.lifter_id)
+                      AND aa.usaw_lifter_id IS NOT NULL
+                ) AS has_usaw_alias,
+                EXISTS (
+                    SELECT 1 FROM public.athlete_aliases aa
+                    WHERE (aa.owlcms_lifter_id = r.lifter_id OR aa.owlcms_lifter_id_2 = r.lifter_id)
+                      AND (aa.iwf_db_lifter_id IS NOT NULL OR aa.iwf_db_lifter_id_2 IS NOT NULL)
+                ) AS has_iwf_alias
+             FROM public.owlcms_meet_results r
+             JOIN public.owlcms_lifters ol ON r.lifter_id = ol.lifter_id
+             WHERE r.meet_id = $1
+             ORDER BY r.category ASC NULLS LAST, r.total DESC NULLS LAST, r.result_id ASC`,
+            [meetId]
+        )
+    ]);
+
+    const rawResults = resultsRes.rows || [];
+    const clubs = new Set();
+    const sessions = new Set();
+    const categories = new Set();
+    let totalAttempts = 0;
+    let successfulAttempts = 0;
+
+    const enrichedResults = rawResults.map(row => {
+        const { has_usaw_alias, has_iwf_alias, lifter, ...resultFields } = row;
+        const l = lifter || {};
+        if (l.club_name) clubs.add(l.club_name);
+        if (row.session_name) sessions.add(row.session_name);
+        if (row.category) categories.add(row.category);
+
+        const attempts = [row.snatch_1, row.snatch_2, row.snatch_3, row.cj_1, row.cj_2, row.cj_3];
+        for (const a of attempts) {
+            if (a !== null && a !== undefined && Number(a) !== 0) {
+                totalAttempts++;
+                if (Number(a) > 0) successfulAttempts++;
+            }
+        }
+
+        const linkedFederation = has_usaw_alias ? 'USAW' : (has_iwf_alias ? 'IWF' : null);
+
+        return {
+            ...resultFields,
+            lifter: l,
+            athlete_name: l.athlete_name || null,
+            first_name: l.first_name || null,
+            last_name: l.last_name || null,
+            gender: row.gender || l.gender || null,
+            birth_year: row.birth_year || l.birth_year || null,
+            club_name: l.club_name || null,
+            country_code: row.country_code || l.country_code || null,
+            membership_number: l.membership_number || null,
+            profile_url: `/athlete/owlcms/${row.lifter_id}`,
+            linked_federation: linkedFederation
+        };
+    });
+
+    // Guard against oversized raw_payload (> 5 MB uncompressed)
+    let rawPayload = m.raw_payload || null;
+    if (rawPayload) {
+        const rawSize = Buffer.byteLength(JSON.stringify(rawPayload), 'utf8');
+        if (rawSize > MAX_RAW_PAYLOAD_BYTES && typeof rawPayload === 'object') {
+            const { athletes, competitors, ...metaOnly } = rawPayload;
+            rawPayload = metaOnly;
+        }
+    }
+
+    const summary = {
+        total_athletes: enrichedResults.length,
+        total_clubs: clubs.size,
+        total_attempts: totalAttempts,
+        successful_attempts: successfulAttempts,
+        success_rate: totalAttempts > 0 ? Math.round((successfulAttempts / totalAttempts) * 1000) / 10 : 0,
+        sessions: Array.from(sessions),
+        categories: Array.from(categories)
+    };
+
+    return {
+        schema_version: MEET_SHARD_SCHEMA_VERSION,
+        generated_at: new Date().toISOString(),
+        success: true,
+        meet: {
+            meet_id: m.meet_id,
+            meet_name: m.meet_name,
+            start_date: m.start_date,
+            end_date: m.end_date,
+            city: m.city,
+            country: m.country,
+            organizer: m.organizer,
+            federation: (federationDetails && federationDetails.short_code) || m.federation_short_code || m.federation_name || null,
+            federation_id: m.federation_id,
+            organizer_federation_id: m.organizer_federation_id,
+            competition_scope: m.competition_scope,
+            federation_details: federationDetails,
+            venue: m.venue,
+            latitude: m.latitude,
+            longitude: m.longitude,
+            host_country_code: m.host_country_code,
+            format_version: m.format_version,
+            raw_payload: rawPayload,
+            summary
+        },
+        results: enrichedResults
+    };
+}
+
+/**
+ * Generate and write a static .json.gz meet shard for USAW, IWF, or OWLCMS.
+ *
+ * @param {Object} params
+ * @param {'usaw'|'iwf'|'owlcms'} params.federation
+ * @param {string|number} params.meet_id - Canonical meet ID (iwf_meet_id for IWF unless is_db_meet_id=true)
+ * @param {boolean} [params.is_db_meet_id=false] - When true for IWF, resolves iwf_meet_id from db_meet_id
+ * @param {Object|null} [externalClient=null] - Optional pg Client/PoolClient
+ */
+async function generateMeet(params, externalClient = null) {
+    const federation = String(params?.federation || '').trim().toLowerCase();
+    const meetId = params?.meet_id ?? params?.meetId;
+    const isDbMeetId = Boolean(params?.is_db_meet_id);
+
+    if (!['usaw', 'iwf', 'owlcms'].includes(federation)) {
+        return { success: false, error: `Unsupported federation "${federation}". Expected usaw, iwf, or owlcms.` };
+    }
+    if (meetId === null || meetId === undefined || String(meetId).trim() === '') {
+        return { success: false, error: 'meet_id is required.' };
+    }
+
+    const client = externalClient || new Client(clientConfig);
+    if (!externalClient) await client.connect();
+
+    try {
+        let canonicalMeetId = String(meetId).trim();
+        let payload = null;
+
+        if (federation === 'usaw') {
+            payload = await assembleUsawMeetPayload(parseInt(canonicalMeetId, 10), client);
+        } else if (federation === 'iwf') {
+            const assembled = await assembleIwfMeetPayload(canonicalMeetId, client, isDbMeetId);
+            if (assembled) {
+                canonicalMeetId = String(assembled.canonicalMeetId);
+                payload = assembled.payload;
+            }
+        } else if (federation === 'owlcms') {
+            payload = await assembleOwlcmsMeetPayload(parseInt(canonicalMeetId, 10), client);
+        }
+
+        if (!payload) {
+            return { success: false, error: `Meet not found (${federation}:${meetId})` };
+        }
+
+        const filePath = writeMeetShardFile(federation, canonicalMeetId, payload);
+        return {
+            success: true,
+            federation,
+            meet_id: canonicalMeetId,
+            shard_id: getMeetShardId(canonicalMeetId),
+            file_path: filePath,
+            result_count: payload.results?.length || 0
+        };
+    } catch (err) {
+        console.error(`[ASSEMBLER] Meet Shard Error (${federation}:${meetId}):`, err);
+        return { success: false, error: err.message };
+    } finally {
+        if (!externalClient) await client.end();
+    }
+}
+
+module.exports = { generateAthlete, generateMeet, getMeetShardId };
