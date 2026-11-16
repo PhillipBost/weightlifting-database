@@ -21,6 +21,7 @@ const { createClient } = require('@supabase/supabase-js');
 const minimist = require('minimist');
 const { OWLCMS_MANUAL_MAP, OWLCMS_BLACKLIST_MAP } = require('../shared/athlete-mappings.js');
 const { generateAthlete } = require('./assembler.js');
+const { applyTokenAsymmetryGuard } = require('./lib/athlete-evaluator-engine.js');
 
 const supabase = createClient(
     process.env.SUPABASE_URL,
@@ -194,7 +195,12 @@ function evaluateMatch(owlcmsLifter, candidate, candidateType, candidateResults 
         }
     }
 
-    const finalScore = Math.min(Math.max(score, 0), 100);
+    let finalScore = Math.min(Math.max(score, 0), 100);
+    const guard = applyTokenAsymmetryGuard(finalScore, tokenize(owlcmsLifter.athlete_name), tokenize(candidate.athlete_name), 79);
+    finalScore = guard.score;
+    if (guard.asymmetric) {
+        breakdown.push(guard.reason);
+    }
     return {
         status: finalScore >= 80 ? 'HIGH_CONFIDENCE' : (finalScore >= 60 ? 'REVIEW_NEEDED' : 'NO_MATCH'),
         score: finalScore,

@@ -72,6 +72,22 @@ function extractCountryCode(lifter) {
 }
 
 /**
+ * Enforce token-count asymmetry guard: when one name has >= 2 more tokens than the other,
+ * cap the score at 79 so it routes to manual review instead of auto-linking.
+ */
+function applyTokenAsymmetryGuard(score, tokensA, tokensB, capScore = 79) {
+    const diff = Math.abs(tokensA.length - tokensB.length);
+    if (tokensA.length > 0 && tokensB.length > 0 && diff >= 2) {
+        return {
+            score: Math.min(score, capScore),
+            asymmetric: true,
+            reason: `Token-count asymmetry (${tokensA.length} vs ${tokensB.length} tokens; diff ${diff} >= 2): capped at ${capScore}% for manual review`
+        };
+    }
+    return { score, asymmetric: false, reason: null };
+}
+
+/**
  * Calculate token overlap score between two athlete names
  */
 function calculateNameScore(nameA, nameB) {
@@ -263,7 +279,12 @@ function evaluateCandidateMatch(source, target, sourceFedCode, targetFedCode) {
         }
     }
 
-    const finalScore = Math.min(Math.max(score, 0), 100);
+    let finalScore = Math.min(Math.max(score, 0), 100);
+    const guard = applyTokenAsymmetryGuard(finalScore, tokenize(source.name), tokenize(target.name), 79);
+    finalScore = guard.score;
+    if (guard.asymmetric) {
+        breakdown.push(guard.reason);
+    }
 
     let status = 'NO_MATCH';
     if (finalScore >= 80) status = 'MATCHED';
@@ -345,6 +366,7 @@ module.exports = {
     parseLift,
     extractCountryCode,
     calculateNameScore,
+    applyTokenAsymmetryGuard,
     evaluateCandidateMatch,
     enqueueAthleteEvaluations,
     fetchCareerBestTotal

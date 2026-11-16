@@ -20,6 +20,7 @@ const { createClient } = require('@supabase/supabase-js');
 const minimist = require('minimist');
 const { MANUAL_ATHLETE_MAP, BLACKLIST_ATHLETE_MAP, IWF_DUPLICATE_MAP, MANUAL_MEET_MAP, OWLCMS_MANUAL_MAP, OWLCMS_BLACKLIST_MAP } = require('../shared/athlete-mappings.js');
 const { generateAthlete } = require('./assembler.js');
+const { applyTokenAsymmetryGuard } = require('./lib/athlete-evaluator-engine.js');
 
 const supabase = createClient(
     process.env.SUPABASE_URL,
@@ -215,16 +216,18 @@ function evaluateIdentity(iAthlete, uAthlete, isUsaAthlete) {
         score += 10;
     }
 
-    // Cap score at 100
+    // Cap score at 100 and enforce token-count asymmetry guard
     score = Math.min(score, 100);
+    const guard = applyTokenAsymmetryGuard(score, iwfTokens, usawTokens, 79);
+    score = guard.score;
 
     // 5. Determine status
     if (score >= 100) {
-        return { status: 'MATCH', score };
+        return { status: 'MATCH', score, reason: null };
     } else if (score >= 70) {
-        return { status: 'AMBIGUOUS', score };
+        return { status: 'AMBIGUOUS', score, reason: guard.reason };
     } else {
-        return { status: 'NO_MATCH', score };
+        return { status: 'NO_MATCH', score, reason: guard.reason };
     }
 }
 
@@ -259,14 +262,14 @@ async function run() {
             'athlete-name', 'athleteName',
             'athlete-db-id', 'athleteDbId',
             'iwf-id', 'iwfId',
-            'target-federation', 'targetFederation'
+            'federation', 'target-federation', 'targetFederation'
         ]
     });
     const isDryRun = args['dry-run'] || args.d || false;
     const isAll = args.all || false;
     const isVerbose = args.verbose || args.v || false;
     const isReEvaluate = args['re-evaluate'] || args.reEvaluate || false;
-    const targetFed = (args['target-federation'] || args.targetFederation || 'all').toLowerCase();
+    const targetFed = (args.federation || args['target-federation'] || args.targetFederation || 'all').toLowerCase();
 
     const eventIdParam = args['event-id'] || args.eventId;
     const meetIdParam = args['meet-id'] || args.meetId;
@@ -606,10 +609,12 @@ async function run() {
                         uAthlete.calculated_score = res.score;
                         possibleIdentities.push(uAthlete);
                     } else if (res.status === 'AMBIGUOUS') {
+                        console.log(`  ⚠️ [Phase 1] Review: IWF[${iAthlete.db_lifter_id}] "${iAthlete.lifter_name}" ↔ USAW[${uAthlete.lifter_id}] "${uAthlete.lifter_name}" (Score: ${res.score}${res.reason ? ` | ${res.reason}` : ''})`);
                         ambiguousPairs.push({
                             iAthlete,
                             uAthlete,
-                            score: res.score
+                            score: res.score,
+                            reason: res.reason || null
                         });
                     }
                 }
@@ -626,6 +631,7 @@ async function run() {
                 }
 
                 if (possibleIdentities.length === 1) {
+                    console.log(`  ✓ [Phase 1] Auto-link: IWF[${iAthlete.db_lifter_id}] "${iAthlete.lifter_name}" ↔ USAW[${possibleIdentities[0].lifter_id}] "${possibleIdentities[0].lifter_name}" (Confidence: ${possibleIdentities[0].calculated_score})`);
                     verifiedAliases.push({
                         usaw_lifter_id: possibleIdentities[0].lifter_id,
                         iwf_db_lifter_id: iAthlete.db_lifter_id,
@@ -665,7 +671,7 @@ async function run() {
             for (let i = 0; i < unmatchedRecentIwfIds.length; i += 1000) {
                 const chunk = unmatchedRecentIwfIds.slice(i, i + 1000);
                 const { data } = await supabaseIwf.from('iwf_lifters')
-                    .select('db_lifter_id, athlete_name, birth_year')
+                    .select('db_lifter_id, athlete_name, birth_year, country_code')
                     .in('db_lifter_id', chunk);
                 if (data) unmatchedIwfLifters.push(...data);
             }
@@ -678,6 +684,7 @@ async function run() {
             }
 
             let fallbackMatches = 0;
+            let fallbackReviews = 0;
             for (const iAthlete of unmatchedIwfLifters) {
                 if (!iAthlete.birth_year) continue;
                 const iTokens = tokenize(iAthlete.athlete_name);
@@ -703,18 +710,32 @@ async function run() {
 
                 if (candidates.length === 1) {
                     const uAthlete = candidates[0];
-                    verifiedAliases.push({
-                        usaw_lifter_id: uAthlete.lifter_id,
-                        iwf_db_lifter_id: iAthlete.db_lifter_id,
-                        match_confidence: 90,
-                        usaw_name: uAthlete.lifter_name,
-                        iwf_name: iAthlete.athlete_name
-                    });
-                    securedIwfIds.add(iAthlete.db_lifter_id);
-                    fallbackMatches++;
+                    const guard = applyTokenAsymmetryGuard(90, iTokens, uAthlete.tokens, 75);
+                    if (guard.asymmetric) {
+                        console.log(`  ⚠️ [Phase 2] Review: IWF[${iAthlete.db_lifter_id}] "${iAthlete.athlete_name}" ↔ USAW[${uAthlete.lifter_id}] "${uAthlete.lifter_name}" (Score: ${guard.score} | ${guard.reason})`);
+                        ambiguousPairs.push({
+                            iAthlete,
+                            uAthlete,
+                            score: guard.score,
+                            reason: guard.reason
+                        });
+                        securedIwfIds.add(iAthlete.db_lifter_id);
+                        fallbackReviews++;
+                    } else {
+                        console.log(`  ✓ [Phase 2] Auto-link: IWF[${iAthlete.db_lifter_id}] "${iAthlete.athlete_name}" ↔ USAW[${uAthlete.lifter_id}] "${uAthlete.lifter_name}" (Confidence: 90)`);
+                        verifiedAliases.push({
+                            usaw_lifter_id: uAthlete.lifter_id,
+                            iwf_db_lifter_id: iAthlete.db_lifter_id,
+                            match_confidence: 90,
+                            usaw_name: uAthlete.lifter_name,
+                            iwf_name: iAthlete.athlete_name
+                        });
+                        securedIwfIds.add(iAthlete.db_lifter_id);
+                        fallbackMatches++;
+                    }
                 }
             }
-            console.log(`  ✓ Phase 2 fallback found ${fallbackMatches} new non-intersecting links!`);
+            console.log(`  ✓ Phase 2 fallback found ${fallbackMatches} auto-link(s) and ${fallbackReviews} review candidate(s)!`);
         }
     } catch (err) {
         console.error(`  [ERROR] Fallback matching failed: ${err.message}`);
@@ -849,7 +870,14 @@ async function run() {
                         }
                     }
 
-                    const finalScore = Math.min(Math.max(score, 0), 100);
+                    let finalScore = Math.min(Math.max(score, 0), 100);
+                    if (!isWhitelisted) {
+                        const guard = applyTokenAsymmetryGuard(finalScore, tokenize(iAthlete.athlete_name), oLifter.tokens, 79);
+                        finalScore = guard.score;
+                        if (guard.asymmetric) {
+                            breakdown.push(guard.reason);
+                        }
+                    }
 
                     if (finalScore >= 80) {
                         console.log(`  🎯 MATCH: IWF[${iAthlete.db_lifter_id}] "${iAthlete.athlete_name}" ── OWLCMS[${oLifter.lifter_id}] "${oLifter.athlete_name}" (Score: ${finalScore})`);
@@ -935,10 +963,12 @@ async function run() {
     const allAmbiguousToStage = [];
 
     for (const item of ambiguousPairs) {
+        const iName = item.iAthlete.athlete_name || item.iAthlete.lifter_name;
+        const uName = item.uAthlete.athlete_name || item.uAthlete.lifter_name;
         allAmbiguousToStage.push({
             category: 'cross_federation',
             status: 'PENDING',
-            title: `Borderline Match: IWF[${item.iAthlete.db_lifter_id}] "${item.iAthlete.athlete_name}" ↔ USAW[${item.uAthlete.lifter_id}] "${item.uAthlete.athlete_name}" (Score: ${item.score})`,
+            title: `Borderline Match: IWF[${item.iAthlete.db_lifter_id}] "${iName}" ↔ USAW[${item.uAthlete.lifter_id}] "${uName}" (Score: ${item.score})`,
             primary_entity_type: 'iwf_lifters',
             primary_entity_id: item.iAthlete.db_lifter_id,
             candidate_entity_type: 'usaw_lifters',
@@ -948,13 +978,14 @@ async function run() {
                 federations: ['IWF', 'USAW'],
                 iwf_athlete: {
                     db_lifter_id: item.iAthlete.db_lifter_id,
-                    athlete_name: item.iAthlete.athlete_name,
-                    country_code: item.iAthlete.country_code
+                    athlete_name: iName,
+                    country_code: item.iAthlete.country_code || null
                 },
                 usaw_athlete: {
                     lifter_id: item.uAthlete.lifter_id,
-                    athlete_name: item.uAthlete.athlete_name
+                    athlete_name: uName
                 },
+                reason: item.reason || null,
                 score: item.score,
                 detected_at: new Date().toISOString()
             }
