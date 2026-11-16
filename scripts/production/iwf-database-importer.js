@@ -103,6 +103,50 @@ async function runScraper(eventId, year, eventDate, endpoint, targetUrl = null, 
 // IMPORT WORKFLOW
 // ============================================================================
 
+function tokenizeName(str) {
+    return (str || '').trim().toLowerCase().split(/\s+/).filter(Boolean);
+}
+
+function findMatchingDbScorecard(sc, existingDbScorecards) {
+    if (!existingDbScorecards || existingDbScorecards.length === 0) return null;
+
+    const normWc = (sc.weight_class || '').replace(/\s+/g, ' ').trim().toLowerCase();
+    const scTokens = tokenizeName(sc.name || sc.athlete_name);
+    const sameWcRows = existingDbScorecards.filter(r => {
+        const rNormWc = (r.weight_class || '').replace(/\s+/g, ' ').trim().toLowerCase();
+        return !(normWc && rNormWc && normWc !== rNormWc);
+    });
+
+    // Priority 1: Match by IWF Lifter ID if available on both sides
+    let match = sc.iwf_lifter_id
+        ? sameWcRows.find(r => r.iwf_lifters?.iwf_lifter_id != null && String(r.iwf_lifters.iwf_lifter_id) === String(sc.iwf_lifter_id))
+        : null;
+
+    // Priority 2: All scraped tokens appear in stored name
+    if (!match && scTokens.length > 0) {
+        match = sameWcRows.find(r => {
+            const rName = (r.lifter_name || '').toLowerCase();
+            return scTokens.every(tok => rName.includes(tok));
+        });
+    }
+
+    // Priority 3: Stored name tokens are a subset of scraped name tokens (handles added middle names)
+    if (!match && scTokens.length >= 2) {
+        const scNation = (sc.nation || '').trim().toUpperCase();
+        const candidates = sameWcRows.filter(r => {
+            if (scNation && r.country_code && r.country_code.trim().toUpperCase() !== scNation) return false;
+            if (sc.birth_year && r.birth_year && Number(r.birth_year) !== Number(sc.birth_year)) return false;
+            const rTokens = tokenizeName(r.lifter_name);
+            return rTokens.length >= 2 && rTokens.every(tok => scTokens.includes(tok));
+        });
+        if (candidates.length === 1) {
+            match = candidates[0];
+        }
+    }
+
+    return match || null;
+}
+
 /**
  * Import single event to database
  * Main workflow orchestrator
@@ -141,6 +185,7 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
         console.log(`Year: ${year}`);
         console.log(`Date: ${eventDate}`);
         if (options.force) console.log(`Mode: FORCE RE-IMPORT`);
+        if (options.syncNames) console.log(`Mode: SYNC NAMES ONLY (updates changed athlete names without overwriting other scorecards)`);
         if (options.dryRun) console.log(`Mode: DRY RUN (no database changes)`);
         if (options.athleteName) console.log(`Target Athlete Filter: "${options.athleteName}"`);
         if (options.htmlFile) console.log(`Source: HTML File (${options.htmlFile})`);
@@ -168,7 +213,7 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
         // Step 1: Check if meet already exists and has results
         const existingMeet = await meetManager.findExistingMeet(eventId);
 
-        if (existingMeet && !options.force) {
+        if (existingMeet && !options.force && !options.syncNames) {
             console.log(`\n✓ Meet already exists: ${existingMeet.meet || existingMeet.Meet} (ID: ${existingMeet.iwf_meet_id})`);
 
             const resultsCheck = await meetManager.checkMeetHasResults(existingMeet.db_meet_id || existingMeet.iwf_meet_id);
@@ -279,6 +324,104 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
             console.log(`✓ Synchronized authentic meet metadata: "${meetMetadata.Meet}" (${meetMetadata.Date || 'Date N/A'}), Location: ${meetMetadata.location_city || 'N/A'}, ${meetMetadata.location_country || 'N/A'}`);
         }
 
+        // Name-sync-only mode: update only iwf_lifters.athlete_name and iwf_meet_results.lifter_name for changed names
+        if (options.syncNames) {
+            console.log(`\n🔄 NAME SYNC MODE${options.dryRun ? ' (DRY RUN - no database writes)' : ''} - Checking for athlete name changes...`);
+            const meetTotalAthletes = (mensResults?.total_athletes || 0) + (womensResults?.total_athletes || 0);
+            let existingDbScorecards = [];
+
+            if (existingMeet?.db_meet_id) {
+                const { data: dbRows, error: dbErr } = await config.supabaseIWF
+                    .from('iwf_meet_results')
+                    .select('db_result_id, db_lifter_id, lifter_name, weight_class, birth_year, country_code, manual_override, iwf_lifters(db_lifter_id, athlete_name, iwf_lifter_id)')
+                    .eq('db_meet_id', existingMeet.db_meet_id);
+                if (dbErr) {
+                    throw new Error(`Failed to fetch existing meet scorecards: ${dbErr.message}`);
+                }
+                existingDbScorecards = dbRows || [];
+            }
+
+            const allMens = (mensResults?.weight_classes || []).flatMap(wc =>
+                (wc.athletes || []).map(a => ({ ...a, gender: a.gender || 'M', weight_class: a.weight_class || wc.weight_class }))
+            );
+            const allWomens = (womensResults?.weight_classes || []).flatMap(wc =>
+                (wc.athletes || []).map(a => ({ ...a, gender: a.gender || 'F', weight_class: a.weight_class || wc.weight_class }))
+            );
+            const allAthletes = [...allMens, ...allWomens];
+
+            const updatedAthletes = [];
+            let lockedSkipped = 0;
+
+            for (const ath of allAthletes) {
+                const match = findMatchingDbScorecard(ath, existingDbScorecards);
+                if (!match) continue;
+                if (match.manual_override === true) {
+                    lockedSkipped++;
+                    continue;
+                }
+
+                const scNormName = lifterManager.normalizeName ? lifterManager.normalizeName(ath.name || '') : (ath.name || '').trim();
+                const dbLifterName = (match.iwf_lifters?.athlete_name || '').trim();
+                const dbResultName = (match.lifter_name || '').trim();
+
+                const lifterNameDiffers = scNormName && dbLifterName && scNormName.toLowerCase() !== dbLifterName.toLowerCase();
+                const resultNameDiffers = scNormName && dbResultName && scNormName.toLowerCase() !== dbResultName.toLowerCase();
+
+                if (!lifterNameDiffers && !resultNameDiffers) continue;
+
+                const oldDisplay = dbLifterName || dbResultName;
+                console.log(`  🔄 [Name Sync]${options.dryRun ? ' [DRY RUN]' : ''} IWF[${match.db_lifter_id}] (Result ${match.db_result_id}, ${ath.weight_class}): "${oldDisplay}" -> "${scNormName}"`);
+
+                if (!options.dryRun) {
+                    if (lifterNameDiffers && match.db_lifter_id) {
+                        const { error: lifterErr } = await config.supabaseIWF
+                            .from('iwf_lifters')
+                            .update({ athlete_name: scNormName })
+                            .eq('db_lifter_id', match.db_lifter_id);
+                        if (lifterErr) {
+                            console.error(`    ❌ Failed updating iwf_lifters[${match.db_lifter_id}]: ${lifterErr.message}`);
+                            continue;
+                        }
+                    }
+                    if (resultNameDiffers && match.db_result_id) {
+                        const { error: resErr } = await config.supabaseIWF
+                            .from('iwf_meet_results')
+                            .update({ lifter_name: scNormName })
+                            .eq('db_result_id', match.db_result_id);
+                        if (resErr) {
+                            console.error(`    ❌ Failed updating iwf_meet_results[${match.db_result_id}]: ${resErr.message}`);
+                            continue;
+                        }
+                    }
+                }
+
+                updatedAthletes.push({
+                    db_lifter_id: match.db_lifter_id,
+                    db_result_id: match.db_result_id,
+                    weight_class: ath.weight_class,
+                    old_name: oldDisplay,
+                    new_name: scNormName
+                });
+            }
+
+            console.log(`\n✓ Name sync complete: ${updatedAthletes.length} athlete name(s) ${options.dryRun ? 'would be updated' : 'updated'} (${meetTotalAthletes} total scraped, ${lockedSkipped} locked skipped).`);
+
+            summary.meet = existingMeet || meetMetadata;
+            summary.success = true;
+            summary.importStats = {
+                syncNames: true,
+                dryRun: !!options.dryRun,
+                iwf_meet_id: String(eventId),
+                totalAthletes: meetTotalAthletes,
+                nameUpdatesCount: updatedAthletes.length,
+                lockedSkipped,
+                updatedAthletes
+            };
+            summary.executionTimeMs = Date.now() - startTime;
+            console.log('__IWF_SUMMARY_JSON__:' + JSON.stringify(summary));
+            return summary;
+        }
+
         // Dry run mode: stop here (with in-memory --athlete-name filtering & scorecard breakdown)
         if (options.dryRun) {
             console.log(`\n📊 DRY RUN MODE - No database changes made`);
@@ -300,52 +443,8 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                 }
             }
 
-            const tokenizeName = (str) => (str || '').trim().toLowerCase().split(/\s+/).filter(Boolean);
-
             const evaluateScorecardSimulation = (sc) => {
-                if (!existingDbScorecards || existingDbScorecards.length === 0) {
-                    return {
-                        simulatedAction: 'INSERT',
-                        existingResultId: null,
-                        hasChanges: true,
-                        diffFields: []
-                    };
-                }
-
-                const normWc = (sc.weight_class || '').replace(/\s+/g, ' ').trim().toLowerCase();
-                const scTokens = tokenizeName(sc.name || sc.athlete_name);
-                const sameWcRows = existingDbScorecards.filter(r => {
-                    const rNormWc = (r.weight_class || '').replace(/\s+/g, ' ').trim().toLowerCase();
-                    return !(normWc && rNormWc && normWc !== rNormWc);
-                });
-
-                // Priority 1: Match by IWF Lifter ID if available on both sides
-                let match = sc.iwf_lifter_id
-                    ? sameWcRows.find(r => r.iwf_lifters?.iwf_lifter_id != null && String(r.iwf_lifters.iwf_lifter_id) === String(sc.iwf_lifter_id))
-                    : null;
-
-                // Priority 2: All scraped tokens appear in stored name
-                if (!match && scTokens.length > 0) {
-                    match = sameWcRows.find(r => {
-                        const rName = (r.lifter_name || '').toLowerCase();
-                        return scTokens.every(tok => rName.includes(tok));
-                    });
-                }
-
-                // Priority 3: Stored name tokens are a subset of scraped name tokens (handles added middle names)
-                // Require matching country_code and birth_year when available to prevent false positives
-                if (!match && scTokens.length >= 2) {
-                    const scNation = (sc.nation || '').trim().toUpperCase();
-                    const candidates = sameWcRows.filter(r => {
-                        if (scNation && r.country_code && r.country_code.trim().toUpperCase() !== scNation) return false;
-                        if (sc.birth_year && r.birth_year && Number(r.birth_year) !== Number(sc.birth_year)) return false;
-                        const rTokens = tokenizeName(r.lifter_name);
-                        return rTokens.length >= 2 && rTokens.every(tok => scTokens.includes(tok));
-                    });
-                    if (candidates.length === 1) {
-                        match = candidates[0];
-                    }
-                }
+                const match = findMatchingDbScorecard(sc, existingDbScorecards);
 
                 if (!match) {
                     return {
@@ -1017,6 +1116,7 @@ function parseArgs() {
         eventsFile: null,
         athleteName: null,
         force: false,
+        syncNames: false,
         dryRun: false,
         batchSize: 100,
         delayMs: 200
@@ -1050,6 +1150,9 @@ function parseArgs() {
                 break;
             case '--force':
                 options.force = true;
+                break;
+            case '--sync-names':
+                options.syncNames = true;
                 break;
             case '--dry-run':
                 options.dryRun = true;
