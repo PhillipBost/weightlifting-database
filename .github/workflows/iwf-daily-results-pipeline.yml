@@ -1,9 +1,10 @@
 name: IWF Daily Results Pipeline
 
 on:
-  schedule:
-    # Run daily at 10 PM UTC (5 PM EST)
-    - cron: '0 22 * * *'
+  # Disabled: Cloudflare Managed Challenge blocks GitHub-hosted runner IP addresses
+  # schedule:
+  #   # Run daily at 10 PM UTC (5 PM EST)
+  #   - cron: '0 22 * * *'
 
   # Allow manual trigger
   workflow_dispatch:
