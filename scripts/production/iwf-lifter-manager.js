@@ -361,6 +361,24 @@ function getMatchKey(name) {
     return name.toUpperCase().trim();
 }
 
+/**
+ * Check if all tokens of the shorter name appear in the longer name.
+ * Requires at least 2 tokens in the shorter name to avoid single-token collisions.
+ *
+ * @param {string} nameA - First normalized name
+ * @param {string} nameB - Second normalized name
+ * @returns {boolean}
+ */
+function isTokenSubsetMatch(nameA, nameB) {
+    const tokensA = getMatchKey(nameA).split(/\s+/).filter(Boolean);
+    const tokensB = getMatchKey(nameB).split(/\s+/).filter(Boolean);
+    if (tokensA.length < 2 || tokensB.length < 2) {
+        return false;
+    }
+    const [shorter, longer] = tokensA.length <= tokensB.length ? [tokensA, tokensB] : [tokensB, tokensA];
+    return shorter.every(tok => longer.includes(tok));
+}
+
 // ============================================================================
 // CORE FUNCTIONS
 // ============================================================================
@@ -387,6 +405,35 @@ function getMatchKey(name) {
  * @param {string} iWFAthleteUrl - Full URL to IWF athlete profile (optional)
  * @returns {Object|null} - Lifter object with db_lifter_id or null on error
  */
+async function syncExistingLifterMetadata(existingLifter, normalizedName, matchKey, iWFLifterId, iWFAthleteUrl) {
+    const updateData = {};
+    if (getMatchKey(existingLifter.athlete_name) !== matchKey) {
+        updateData.athlete_name = normalizedName;
+        console.log(`[Lifter Manager] Updated athlete name (ID: ${existingLifter.db_lifter_id}): "${existingLifter.athlete_name}" -> "${normalizedName}"`);
+        existingLifter.athlete_name = normalizedName;
+    }
+    if (iWFLifterId && !existingLifter.iwf_lifter_id) {
+        updateData.iwf_lifter_id = iWFLifterId;
+        existingLifter.iwf_lifter_id = iWFLifterId;
+        console.log(`[Lifter Manager] Updating lifter ${existingLifter.db_lifter_id} with IWF ID: ${iWFLifterId}`);
+    }
+    if (iWFAthleteUrl && !existingLifter.iwf_athlete_url) {
+        updateData.iwf_athlete_url = iWFAthleteUrl;
+        existingLifter.iwf_athlete_url = iWFAthleteUrl;
+    }
+
+    if (Object.keys(updateData).length > 0) {
+        const { error: updateError } = await config.supabaseIWF
+            .from('iwf_lifters')
+            .update(updateData)
+            .eq('db_lifter_id', existingLifter.db_lifter_id);
+        if (updateError) {
+            console.warn(`[Lifter Manager] Warning updating lifter ${existingLifter.db_lifter_id}: ${updateError.message}`);
+        }
+    }
+    return existingLifter;
+}
+
 async function findOrCreateLifter(name, country, birthYear, gender, iWFLifterId, iWFAthleteUrl) {
     // Validate required parameters
     if (!name || !country) {
@@ -422,12 +469,12 @@ async function findOrCreateLifter(name, country, birthYear, gender, iWFLifterId,
             } else if (liftersByIWFId && liftersByIWFId.length > 0) {
                 const lifterByIWFId = liftersByIWFId[0];
                 console.log(`[Lifter Manager] Found existing by IWF ID: ${normalizedName} (${country}) [ID: ${lifterByIWFId.db_lifter_id}]`);
-                return lifterByIWFId;
+                return await syncExistingLifterMetadata(lifterByIWFId, normalizedName, matchKey, iWFLifterId, iWFAthleteUrl);
             }
         }
 
         // Step 2: Fallback to name + country matching with birth_year consideration
-        // Matching hierarchy: name+country+birth_year → name+country (with warning)
+        // Matching hierarchy: name+country+birth_year → name+country → token-subset+country+birth_year
         const { data: liftersInCountry, error: searchError } = await config.supabaseIWF
             .from('iwf_lifters')
             .select('*')
@@ -481,26 +528,25 @@ async function findOrCreateLifter(name, country, birthYear, gender, iWFLifterId,
                 }
             }
 
-            if (existingLifter) {
-                // Update with IWF ID and URL if we have them and they're not already set
-                if ((iWFLifterId || iWFAthleteUrl) && (!existingLifter.iwf_lifter_id || !existingLifter.iwf_athlete_url)) {
-                    const updateData = {};
-                    if (iWFLifterId && !existingLifter.iwf_lifter_id) {
-                        updateData.iwf_lifter_id = iWFLifterId;
-                        console.log(`[Lifter Manager] Updating lifter ${existingLifter.db_lifter_id} with IWF ID: ${iWFLifterId}`);
-                    }
-                    if (iWFAthleteUrl && !existingLifter.iwf_athlete_url) {
-                        updateData.iwf_athlete_url = iWFAthleteUrl;
-                    }
+            // Third priority: token-subset match within same country + birth_year (+ gender if known)
+            // Handles name expansions/contractions (e.g. added middle names) when IWF ID is absent
+            if (!existingLifter && birthYear) {
+                const tokenMatches = liftersInCountry.filter(lifter => {
+                    if (lifter.birth_year !== birthYear) return false;
+                    if (gender && lifter.gender && lifter.gender !== gender) return false;
+                    return isTokenSubsetMatch(normalizedName, lifter.athlete_name);
+                });
 
-                    if (Object.keys(updateData).length > 0) {
-                        await config.supabaseIWF
-                            .from('iwf_lifters')
-                            .update(updateData)
-                            .eq('db_lifter_id', existingLifter.db_lifter_id);
-                    }
+                if (tokenMatches.length === 1) {
+                    existingLifter = tokenMatches[0];
+                    console.log(`[Lifter Manager] Found existing by token-subset+country+birth_year: "${existingLifter.athlete_name}" -> "${normalizedName}" (${country}, born ${birthYear}, ID: ${existingLifter.db_lifter_id})`);
+                } else if (tokenMatches.length > 1) {
+                    console.warn(`[Lifter Manager] WARNING: ${tokenMatches.length} token-subset candidates for "${normalizedName}" (${country}, born ${birthYear}). Skipping auto-merge.`);
                 }
-                return existingLifter;
+            }
+
+            if (existingLifter) {
+                return await syncExistingLifterMetadata(existingLifter, normalizedName, matchKey, iWFLifterId, iWFAthleteUrl);
             }
         }
 

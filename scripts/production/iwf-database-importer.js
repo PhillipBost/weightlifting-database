@@ -286,7 +286,7 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                 try {
                     const { data: dbRows, error: dbErr } = await config.supabaseIWF
                         .from('iwf_meet_results')
-                        .select('db_result_id, db_lifter_id, lifter_name, weight_class, manual_override, total, snatch_lift_1, snatch_lift_2, snatch_lift_3, cj_lift_1, cj_lift_2, cj_lift_3, best_snatch, best_cj')
+                        .select('db_result_id, db_lifter_id, lifter_name, weight_class, birth_year, country_code, manual_override, total, snatch_lift_1, snatch_lift_2, snatch_lift_3, cj_lift_1, cj_lift_2, cj_lift_3, best_snatch, best_cj, iwf_lifters(iwf_lifter_id)')
                         .eq('db_meet_id', existingMeet.db_meet_id);
                     if (!dbErr && dbRows) {
                         existingDbScorecards = dbRows;
@@ -295,6 +295,8 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                     console.warn(`[Dry Run] Warning: Failed to fetch existing meet scorecards: ${fetchErr.message}`);
                 }
             }
+
+            const tokenizeName = (str) => (str || '').trim().toLowerCase().split(/\s+/).filter(Boolean);
 
             const evaluateScorecardSimulation = (sc) => {
                 if (!existingDbScorecards || existingDbScorecards.length === 0) {
@@ -307,15 +309,39 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                 }
 
                 const normWc = (sc.weight_class || '').replace(/\s+/g, ' ').trim().toLowerCase();
-                const scTokens = (sc.name || sc.athlete_name || '').trim().toLowerCase().split(/\s+/).filter(Boolean);
-
-                const match = existingDbScorecards.find(r => {
+                const scTokens = tokenizeName(sc.name || sc.athlete_name);
+                const sameWcRows = existingDbScorecards.filter(r => {
                     const rNormWc = (r.weight_class || '').replace(/\s+/g, ' ').trim().toLowerCase();
-                    if (normWc && rNormWc && normWc !== rNormWc) return false;
-
-                    const rName = (r.lifter_name || '').toLowerCase();
-                    return scTokens.length > 0 && scTokens.every(tok => rName.includes(tok));
+                    return !(normWc && rNormWc && normWc !== rNormWc);
                 });
+
+                // Priority 1: Match by IWF Lifter ID if available on both sides
+                let match = sc.iwf_lifter_id
+                    ? sameWcRows.find(r => r.iwf_lifters?.iwf_lifter_id != null && String(r.iwf_lifters.iwf_lifter_id) === String(sc.iwf_lifter_id))
+                    : null;
+
+                // Priority 2: All scraped tokens appear in stored name
+                if (!match && scTokens.length > 0) {
+                    match = sameWcRows.find(r => {
+                        const rName = (r.lifter_name || '').toLowerCase();
+                        return scTokens.every(tok => rName.includes(tok));
+                    });
+                }
+
+                // Priority 3: Stored name tokens are a subset of scraped name tokens (handles added middle names)
+                // Require matching country_code and birth_year when available to prevent false positives
+                if (!match && scTokens.length >= 2) {
+                    const scNation = (sc.nation || '').trim().toUpperCase();
+                    const candidates = sameWcRows.filter(r => {
+                        if (scNation && r.country_code && r.country_code.trim().toUpperCase() !== scNation) return false;
+                        if (sc.birth_year && r.birth_year && Number(r.birth_year) !== Number(sc.birth_year)) return false;
+                        const rTokens = tokenizeName(r.lifter_name);
+                        return rTokens.length >= 2 && rTokens.every(tok => scTokens.includes(tok));
+                    });
+                    if (candidates.length === 1) {
+                        match = candidates[0];
+                    }
+                }
 
                 if (!match) {
                     return {
@@ -342,6 +368,12 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                     if (s1 !== s2) diffFields.push(field);
                 };
 
+                const scNormName = lifterManager.normalizeName ? lifterManager.normalizeName(sc.name || sc.athlete_name || '') : (sc.name || sc.athlete_name || '');
+                const dbNormName = (match.lifter_name || '').trim();
+                if (scNormName && dbNormName && scNormName.toLowerCase() !== dbNormName.toLowerCase()) {
+                    diffFields.push('lifter_name');
+                }
+
                 checkDiff('snatch_1', sc.snatch_1, match.snatch_lift_1);
                 checkDiff('snatch_2', sc.snatch_2, match.snatch_lift_2);
                 checkDiff('snatch_3', sc.snatch_3, match.snatch_lift_3);
@@ -355,6 +387,8 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                 return {
                     simulatedAction: 'UPDATE',
                     existingResultId: match.db_result_id,
+                    existingLifterName: dbNormName,
+                    newLifterName: scNormName,
                     hasChanges: diffFields.length > 0,
                     diffFields: diffFields
                 };
@@ -556,6 +590,16 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                     console.log(`\n🔒 LOCKED SCORECARDS (${lockedEntries.length} Manual Overrides Preserved):`);
                     lockedEntries.forEach(entry => {
                         console.log(`   - ${entry.athlete.name} (${entry.athlete.weight_class}): Preserved DB Result ID ${entry.simulation.existingResultId}`);
+                    });
+                }
+
+                const nameChangeEntries = evaluatedAthletes.filter(
+                    e => e.simulation.simulatedAction === 'UPDATE' && e.simulation.diffFields.includes('lifter_name')
+                );
+                if (nameChangeEntries.length > 0) {
+                    console.log(`\n🔄 ATHLETE NAME CHANGES DETECTED (${nameChangeEntries.length}):`);
+                    nameChangeEntries.forEach(entry => {
+                        console.log(`   - DB Result ID ${entry.simulation.existingResultId} (${entry.athlete.weight_class}): "${entry.simulation.existingLifterName}" -> "${entry.simulation.newLifterName}"`);
                     });
                 }
 
