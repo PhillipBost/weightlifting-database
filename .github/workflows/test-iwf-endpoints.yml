@@ -1,0 +1,30 @@
+name: Test IWF Endpoints
+
+on:
+  workflow_dispatch:
+
+jobs:
+  probe-iwf:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Probe IWF endpoints
+        run: |
+          ENDPOINTS=(
+            "https://iwf.sport/downloads/?category=5&sortby=date"
+            "https://iwf.sport/wp-json/wp/v2/posts?per_page=5"
+            "https://iwf.sport/wp-json/wpdm/v1/packages"
+            "https://iwf.sport/feed/"
+            "https://iwf.sport/sitemap_index.xml"
+          )
+
+          for url in "${ENDPOINTS[@]}"; do
+            echo "========================================"
+            echo "URL: $url"
+            curl -sS -D /tmp/headers.txt -o /tmp/body.txt -w "HTTP_STATUS: %{http_code}\n" \
+              -A "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" \
+              "$url" || true
+            grep -iE "^(http/|server:|cf-|content-type:)" /tmp/headers.txt || true
+            echo "--- Body preview (first 15 lines) ---"
+            head -n 15 /tmp/body.txt || true
+            echo ""
+          done
