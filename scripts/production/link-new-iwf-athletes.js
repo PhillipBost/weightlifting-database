@@ -319,18 +319,39 @@ async function run() {
     } else if (yearParam) {
         targetScope = { type: 'year', value: yearParam };
         console.log(`\n[1/5] Finding IWF meets for calendar year ${yearParam}...`);
-        const { data: yearMeets } = await supabaseIwf
+        const { data: yearMeets, error: yearErr } = await supabaseIwf
             .from('iwf_meets')
             .select('db_meet_id')
-            .gte('date', `${yearParam}-01-01`)
-            .lte('date', `${yearParam}-12-31`);
+            .ilike('date', `%${yearParam}%`);
+        if (yearErr) {
+            console.error('ERROR fetching IWF meets for year:', yearErr.message);
+            process.exit(1);
+        }
         recentMeetIds = (yearMeets || []).map(m => m.db_meet_id);
         if (recentMeetIds.length > 0) {
-            const { data: mResults } = await supabaseIwf
-                .from('iwf_meet_results')
-                .select('db_lifter_id')
-                .in('db_meet_id', recentMeetIds);
-            recentLifterIds = [...new Set((mResults || []).map(r => r.db_lifter_id))];
+            const lifterIdSet = new Set();
+            for (let i = 0; i < recentMeetIds.length; i += 100) {
+                const chunk = recentMeetIds.slice(i, i + 100);
+                let page = 0;
+                while (true) {
+                    const { data: mResults, error: mResErr } = await supabaseIwf
+                        .from('iwf_meet_results')
+                        .select('db_lifter_id')
+                        .in('db_meet_id', chunk)
+                        .range(page * 1000, (page + 1) * 1000 - 1);
+                    if (mResErr) {
+                        console.error('ERROR fetching IWF meet results for year:', mResErr.message);
+                        process.exit(1);
+                    }
+                    if (!mResults || mResults.length === 0) break;
+                    for (const r of mResults) {
+                        if (r.db_lifter_id) lifterIdSet.add(r.db_lifter_id);
+                    }
+                    if (mResults.length < 1000) break;
+                    page++;
+                }
+            }
+            recentLifterIds = Array.from(lifterIdSet);
         }
     } else if (athleteDbIdParam || iwfIdParam || athleteNameParam) {
         targetScope = { 
