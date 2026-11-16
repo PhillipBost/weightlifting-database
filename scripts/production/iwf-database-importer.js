@@ -65,7 +65,7 @@ const { triggerMeetShardRefresh } = require('./lib/meet-shard-refresh');
  * @param {string} eventDate - Event date (YYYY-MM-DD)
  * @returns {Promise<Object>} - Scraper result data
  */
-async function runScraper(eventId, year, eventDate, endpoint, targetUrl = null) {
+async function runScraper(eventId, year, eventDate, endpoint, targetUrl = null, reuseBrowser = false) {
     console.log(`\n${'='.repeat(80)}`);
     console.log(`SCRAPING EVENT ${eventId}`);
     console.log('='.repeat(80));
@@ -74,14 +74,18 @@ async function runScraper(eventId, year, eventDate, endpoint, targetUrl = null) 
     const scraper = require('./iwf-results-scraper');
 
     try {
-        // Initialize browser
-        await scraper.initBrowser();
+        // Initialize browser unless reusing an active batch session
+        if (!reuseBrowser) {
+            await scraper.initBrowser();
+        }
 
         // Scrape event results
         const result = await scraper.scrapeEventResults(eventId, year, eventDate, endpoint, targetUrl);
 
-        // Close browser
-        await scraper.closeBrowser();
+        // Close browser unless reusing an active batch session
+        if (!reuseBrowser) {
+            await scraper.closeBrowser();
+        }
 
         if (!result.success) {
             throw new Error('Scraper failed to complete successfully');
@@ -242,7 +246,7 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
         // Step 3: Scrape event results (if not already parsed from HTML)
         if (!scraperResult) {
             console.log(`\n🌐 Scraping event results...`);
-            scraperResult = await runScraper(eventId, year, eventDate || meetMetadata?.Date || options.date || null, null, targetScrapeUrl);
+            scraperResult = await runScraper(eventId, year, eventDate || meetMetadata?.Date || options.date || null, null, targetScrapeUrl, options.reuseBrowser === true);
 
             if (!scraperResult.success) {
                 throw new Error('Failed to scrape event results');
@@ -851,20 +855,7 @@ async function auditMeetDuplicates(dbMeetId, meetName, iwfMeetId) {
  * @param {Object} options - Import options
  * @returns {Promise<Object>} - Batch import summary
  */
-async function batchImportEvents(eventsFilePath, options = {}) {
-    console.log(`\n${'='.repeat(80)}`);
-    console.log(`BATCH IMPORT FROM FILE`);
-    console.log('='.repeat(80));
-    console.log(`File: ${eventsFilePath}`);
-    console.log('='.repeat(80));
-
-    if (!fs.existsSync(eventsFilePath)) {
-        throw new Error(`Events file not found: ${eventsFilePath}`);
-    }
-
-    const events = JSON.parse(fs.readFileSync(eventsFilePath, 'utf8'));
-    console.log(`Loaded ${events.length} events`);
-
+async function runBatchEvents(events, options = {}) {
     const batchSummary = {
         totalEvents: events.length,
         successful: 0,
@@ -873,10 +864,25 @@ async function batchImportEvents(eventsFilePath, options = {}) {
         results: []
     };
 
+    if (events.length === 0) {
+        console.log('No events to process.');
+        return batchSummary;
+    }
+
+    const scraper = require('./iwf-results-scraper');
+    const useSharedBrowser = !options.htmlFile && !options.rawHtml;
     let lockAcquired = false;
+    let browserInitialized = false;
+
     try {
         LockManager.acquireLock();
         lockAcquired = true;
+
+        if (useSharedBrowser) {
+            console.log(`\n🌐 Initializing shared Puppeteer browser session for ${events.length} event(s)...`);
+            await scraper.initBrowser();
+            browserInitialized = true;
+        }
 
         for (let i = 0; i < events.length; i++) {
             const event = events[i];
@@ -890,7 +896,7 @@ async function batchImportEvents(eventsFilePath, options = {}) {
                     event.event_id,
                     event.year || new Date(event.date).getFullYear(),
                     event.date,
-                    options
+                    { ...options, reuseBrowser: useSharedBrowser }
                 );
 
                 batchSummary.results.push(result);
@@ -933,10 +939,66 @@ async function batchImportEvents(eventsFilePath, options = {}) {
 
         return batchSummary;
     } finally {
+        if (browserInitialized) {
+            await scraper.closeBrowser().catch(() => {});
+        }
         if (lockAcquired) {
             LockManager.releaseLock();
         }
     }
+}
+
+async function batchImportEvents(eventsFilePath, options = {}) {
+    console.log(`\n${'='.repeat(80)}`);
+    console.log(`BATCH IMPORT FROM FILE`);
+    console.log('='.repeat(80));
+    console.log(`File: ${eventsFilePath}`);
+    console.log('='.repeat(80));
+
+    if (!fs.existsSync(eventsFilePath)) {
+        throw new Error(`Events file not found: ${eventsFilePath}`);
+    }
+
+    const events = JSON.parse(fs.readFileSync(eventsFilePath, 'utf8'));
+    console.log(`Loaded ${events.length} events`);
+
+    return await runBatchEvents(events, options);
+}
+
+/**
+ * Batch import all IWF meets in database for a given calendar year
+ * using a single shared Puppeteer browser session.
+ *
+ * @param {number} year - Calendar year (e.g., 2026)
+ * @param {Object} options - Import options
+ * @returns {Promise<Object>} - Batch import summary
+ */
+async function batchImportYear(year, options = {}) {
+    console.log(`\n${'='.repeat(80)}`);
+    console.log(`BATCH IMPORT FOR CALENDAR YEAR ${year}`);
+    console.log('='.repeat(80));
+
+    const { data: yearMeets, error: yearErr } = await config.supabaseIWF
+        .from('iwf_meets')
+        .select('iwf_meet_id, meet, date')
+        .ilike('date', `%${year}%`)
+        .order('db_meet_id', { ascending: true });
+
+    if (yearErr) {
+        throw new Error(`Failed to query iwf_meets for year ${year}: ${yearErr.message}`);
+    }
+
+    const events = (yearMeets || [])
+        .filter(m => m.iwf_meet_id)
+        .map(m => ({
+            event_id: m.iwf_meet_id,
+            event_name: m.meet,
+            year: year,
+            date: m.date
+        }));
+
+    console.log(`Found ${events.length} IWF meet(s) in database for ${year}`);
+    return await runBatchEvents(events, options);
 }
 
 // ============================================================================
@@ -1081,8 +1143,8 @@ async function main() {
     }
 
     // Validate options
-    if (!options.eventId && !options.eventsFile && !options.htmlFile && !options.url) {
-        console.error('Error: Either --event-id, --events-file, --html-file, or --url must be specified');
+    if (!options.eventId && !options.eventsFile && !options.htmlFile && !options.url && !options.year) {
+        console.error('Error: Either --event-id, --events-file, --html-file, --url, or --year must be specified');
         printHelp();
         process.exit(1);
     }
@@ -1095,10 +1157,16 @@ async function main() {
 
     try {
         if (options.eventsFile) {
-            // Batch import mode
+            // Batch import mode from events file
             const batchResult = await batchImportEvents(options.eventsFile, options);
             if (batchResult && batchResult.failed > 0 && batchResult.successful === 0) {
                 throw new Error(`Batch import failed (${batchResult.failed} failed, 0 succeeded)`);
+            }
+        } else if (options.year && !options.eventId && !options.htmlFile && !options.url) {
+            // Batch import mode for all meets in a calendar year
+            const batchResult = await batchImportYear(options.year, options);
+            if (batchResult && batchResult.failed > 0 && batchResult.successful === 0) {
+                throw new Error(`Year batch import failed (${batchResult.failed} failed, 0 succeeded)`);
             }
         } else {
             // Single event import mode
