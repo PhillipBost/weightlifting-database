@@ -102,7 +102,13 @@ async function runScraper(eventId, year, eventDate, endpoint, targetUrl = null, 
 // ============================================================================
 
 function tokenizeName(str) {
-    return (str || '').trim().toLowerCase().split(/\s+/).filter(Boolean);
+    return (str || '')
+        .toLowerCase()
+        .replace(/[.\-_/]/g, ' ')
+        .replace(/[^a-z0-9\s]/g, '')
+        .trim()
+        .split(/\s+/)
+        .filter(Boolean);
 }
 
 function findMatchingDbScorecard(sc, existingDbScorecards) {
@@ -372,6 +378,155 @@ async function resolveIwfIdConflictViaBioPages(ath, match, scNormName, existingM
 }
 
 /**
+ * Scan other public.iwf_lifters records in the same (country_code, birth_year)
+ * for cross-meet IWF-to-IWF duplicate profiles not yet linked in athlete_aliases.
+ */
+async function checkCrossMeetIwfDuplicates(ath, match, scNormName, iwfLiftersByCountryYear, alreadyLinkedPairs, options = {}) {
+    const scraper = require('./iwf-results-scraper');
+    const dbLifterId = match.db_lifter_id;
+    const dbIwfId = match.iwf_lifters?.iwf_lifter_id || null;
+    const country = (ath.nation || match.country_code || '').trim().toUpperCase();
+    const birthYear = ath.birth_year || match.birth_year || null;
+    if (!dbLifterId || !country || !birthYear) return { links: 0, reviews: [], mismatches: 0 };
+
+    const pool = iwfLiftersByCountryYear.get(`${country}_${birthYear}`) || [];
+    const myTokens = tokenizeName(scNormName || match.iwf_lifters?.athlete_name);
+    if (myTokens.length < 2) return { links: 0, reviews: [], mismatches: 0 };
+
+    const gender = (ath.gender || '').toUpperCase() || null;
+    const normalizeBioUrl = (u) => {
+        if (!u || typeof u !== 'string') return null;
+        try {
+            return new URL(u, 'https://iwf.sport').toString();
+        } catch (_) {
+            return null;
+        }
+    };
+
+    let links = 0;
+    let mismatches = 0;
+    const reviews = [];
+
+    for (const other of pool) {
+        if (other.db_lifter_id === dbLifterId) continue;
+        if (gender && other.gender && other.gender.toUpperCase() !== gender) continue;
+
+        const pairKey = dbLifterId < other.db_lifter_id
+            ? `${dbLifterId}-${other.db_lifter_id}`
+            : `${other.db_lifter_id}-${dbLifterId}`;
+        if (alreadyLinkedPairs.has(pairKey)) continue;
+
+        const otherTokens = tokenizeName(other.athlete_name);
+        if (otherTokens.length < 2) continue;
+        const overlap = myTokens.filter(t => otherTokens.includes(t)).length;
+        const minLen = Math.min(myTokens.length, otherTokens.length);
+        if (overlap < 2 || overlap / minLen < 0.75) continue;
+
+        alreadyLinkedPairs.add(pairKey);
+
+        const myBioUrl = normalizeBioUrl(ath.iwf_athlete_url || match.iwf_lifters?.iwf_athlete_url);
+        const otherBioUrl = normalizeBioUrl(other.iwf_athlete_url);
+
+        console.log(`\n  🔍 Cross-Meet IWF ↔ IWF Candidate (${ath.weight_class || 'N/A'}): #${dbLifterId} (IWF ${dbIwfId || 'N/A'}, "${scNormName}") vs #${other.db_lifter_id} (IWF ${other.iwf_lifter_id || 'N/A'}, "${other.athlete_name}")`);
+
+        const myBio = myBioUrl ? await scraper.scrapeAthleteBio(myBioUrl) : { success: false };
+        const otherBio = otherBioUrl ? await scraper.scrapeAthleteBio(otherBioUrl) : { success: false };
+
+        const myDob = myBio.birth_date || null;
+        const otherDob = otherBio.birth_date || null;
+        const myGender = myBio.gender || gender || null;
+        const otherGender = otherBio.gender || other.gender || null;
+
+        console.log(`     Bio 1 (ID ${dbIwfId || dbLifterId}): DOB=${myDob || 'unknown'}, Gender=${myGender || '?'}, Country=${country}`);
+        console.log(`     Bio 2 (ID ${other.iwf_lifter_id || other.db_lifter_id}): DOB=${otherDob || 'unknown'}, Gender=${otherGender || '?'}, Country=${other.country_code || country}`);
+
+        if (myGender && otherGender && myGender.toUpperCase() !== otherGender.toUpperCase()) {
+            console.log(`     ❌ Gender mismatch — skipping.`);
+            mismatches++;
+            continue;
+        }
+
+        if (myDob && otherDob && myDob === otherDob) {
+            console.log(`     ✅ Confirmed SAME athlete (DOB ${myDob}). ${options.dryRun ? '(would link in athlete_aliases)' : 'Linking in athlete_aliases...'}`);
+            if (!options.dryRun) {
+                const { error: aliasErr } = await config.supabaseIWF
+                    .from('athlete_aliases')
+                    .insert({
+                        iwf_db_lifter_id: dbLifterId,
+                        iwf_db_lifter_id_2: other.db_lifter_id,
+                        match_confidence: 100,
+                        manual_override: false
+                    });
+                if (aliasErr) {
+                    console.warn(`     ⚠️ Failed inserting athlete_aliases edge: ${aliasErr.message}`);
+                } else {
+                    console.log(`     ✓ Inserted IWF ↔ IWF edge in athlete_aliases: #${dbLifterId} ↔ #${other.db_lifter_id}`);
+                }
+            }
+            links++;
+        } else {
+            const reviewReason = (myDob && otherDob)
+                ? `Cross-meet same name & birth year (${birthYear}), DOB differs (${myDob} vs ${otherDob}; potential placeholder, swapped month/day, or typo)`
+                : `Cross-meet same name & birth year (${birthYear}), bio DOB incomplete (${myDob || 'unknown'} vs ${otherDob || 'unknown'})`;
+            console.log(`     ⚠️ Flagged for review (IWF ↔ IWF): ${reviewReason}`);
+
+            if (!options.dryRun) {
+                const candEntityId = other.iwf_lifter_id || other.db_lifter_id;
+                const { data: existingQ } = await config.supabaseIWF
+                    .from('admin_review_queue')
+                    .select('id')
+                    .eq('category', 'iwf_duplicate')
+                    .or(`and(primary_entity_id.eq.${dbLifterId},candidate_entity_id.eq.${candEntityId}),and(primary_entity_id.eq.${other.db_lifter_id},candidate_entity_id.eq.${dbIwfId || dbLifterId})`)
+                    .limit(1);
+
+                if (!existingQ || existingQ.length === 0) {
+                    const { data: insertedQ, error: qErr } = await config.supabaseIWF.from('admin_review_queue').insert({
+                        category: 'iwf_duplicate',
+                        status: 'PENDING',
+                        title: `Potential IWF ↔ IWF Match: #${dbLifterId} (IWF ${dbIwfId || 'N/A'}) vs #${other.db_lifter_id} (IWF ${other.iwf_lifter_id || 'N/A'}) ("${scNormName}")`,
+                        primary_entity_type: 'iwf_lifters',
+                        primary_entity_id: dbLifterId,
+                        candidate_entity_type: 'iwf_lifters',
+                        candidate_entity_id: candEntityId,
+                        confidence_score: 75,
+                        evidence: {
+                            federations: ['IWF', 'IWF'],
+                            reason: reviewReason,
+                            scraped_iwf_id: other.iwf_lifter_id,
+                            other_db_lifter_id: other.db_lifter_id,
+                            scraped_name: other.athlete_name,
+                            scraped_athlete_url: otherBioUrl,
+                            scraped_bio: otherBio,
+                            db_iwf_id: dbIwfId,
+                            db_name: scNormName,
+                            db_athlete_url: myBioUrl,
+                            db_bio: myBio
+                        }
+                    }).select('id').single();
+                    if (qErr) {
+                        console.warn(`     ⚠️ Failed staging to admin_review_queue: ${qErr.message}`);
+                    } else {
+                        console.log(`     ✓ Staged to admin_review_queue (category: iwf_duplicate, ID: ${insertedQ?.id || 'N/A'}).`);
+                    }
+                } else {
+                    console.log(`     ✓ Already staged in admin_review_queue (ID: ${existingQ[0].id}).`);
+                }
+            }
+
+            reviews.push({
+                name: scNormName,
+                db_lifter_id: dbLifterId,
+                db_iwf_id: dbIwfId,
+                scraped_iwf_id: other.iwf_lifter_id || other.db_lifter_id,
+                reason: reviewReason
+            });
+        }
+    }
+
+    return { links, reviews, mismatches };
+}
+
+/**
  * Import single event to database
  * Main workflow orchestrator
  *
@@ -578,6 +733,54 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
             );
             const allAthletes = [...allMens, ...allWomens];
 
+            // Preload existing IWF <-> IWF athlete_aliases edges and iwf_lifters in target countries for cross-meet duplicate checks
+            const alreadyLinkedPairs = new Set();
+            let page = 0;
+            while (true) {
+                const { data: aliasRows, error: aliasErr } = await config.supabaseIWF
+                    .from('athlete_aliases')
+                    .select('iwf_db_lifter_id, iwf_db_lifter_id_2')
+                    .not('iwf_db_lifter_id', 'is', null)
+                    .not('iwf_db_lifter_id_2', 'is', null)
+                    .range(page * 1000, (page + 1) * 1000 - 1);
+                if (aliasErr || !aliasRows || aliasRows.length === 0) break;
+                for (const a of aliasRows) {
+                    const key = a.iwf_db_lifter_id < a.iwf_db_lifter_id_2
+                        ? `${a.iwf_db_lifter_id}-${a.iwf_db_lifter_id_2}`
+                        : `${a.iwf_db_lifter_id_2}-${a.iwf_db_lifter_id}`;
+                    alreadyLinkedPairs.add(key);
+                }
+                if (aliasRows.length < 1000) break;
+                page++;
+            }
+
+            const targetCountries = [...new Set([
+                ...allAthletes.map(a => (a.nation || '').trim().toUpperCase()),
+                ...existingDbScorecards.map(r => (r.country_code || '').trim().toUpperCase())
+            ].filter(Boolean))];
+
+            const iwfLiftersByCountryYear = new Map();
+            for (let i = 0; i < targetCountries.length; i += 25) {
+                const chunk = targetCountries.slice(i, i + 25);
+                let lPage = 0;
+                while (true) {
+                    const { data: lRows, error: lErr } = await config.supabaseIWF
+                        .from('iwf_lifters')
+                        .select('db_lifter_id, athlete_name, birth_year, gender, country_code, iwf_lifter_id, iwf_athlete_url')
+                        .in('country_code', chunk)
+                        .not('birth_year', 'is', null)
+                        .range(lPage * 1000, (lPage + 1) * 1000 - 1);
+                    if (lErr || !lRows || lRows.length === 0) break;
+                    for (const l of lRows) {
+                        const key = `${(l.country_code || '').trim().toUpperCase()}_${l.birth_year}`;
+                        if (!iwfLiftersByCountryYear.has(key)) iwfLiftersByCountryYear.set(key, []);
+                        iwfLiftersByCountryYear.get(key).push(l);
+                    }
+                    if (lRows.length < 1000) break;
+                    lPage++;
+                }
+            }
+
             const updatedAthletes = [];
             const flaggedForReview = [];
             let unmatchedCount = 0;
@@ -666,6 +869,10 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
 
                 if (!lifterNameDiffers && mismatchedResultIds.length === 0) {
                     unchangedCount++;
+                    const crossRes = await checkCrossMeetIwfDuplicates(ath, match, scNormName, iwfLiftersByCountryYear, alreadyLinkedPairs, options);
+                    confirmedSameLinks += crossRes.links;
+                    distinctMismatches += crossRes.mismatches;
+                    flaggedForReview.push(...crossRes.reviews);
                     continue;
                 }
 
@@ -722,6 +929,11 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                     old_name: oldDisplay,
                     new_name: scNormName
                 });
+
+                const crossRes = await checkCrossMeetIwfDuplicates(ath, match, scNormName, iwfLiftersByCountryYear, alreadyLinkedPairs, options);
+                confirmedSameLinks += crossRes.links;
+                distinctMismatches += crossRes.mismatches;
+                flaggedForReview.push(...crossRes.reviews);
             }
 
             const verb = options.dryRun ? 'would be ' : '';
