@@ -618,6 +618,7 @@ function parseAttemptHTML(htmlContent, gender) {
 
 
                         const athleteUrl = athleteLink.attr('href');
+                        let normalizedAthleteUrl = null;
 
 
                         let iwfLifterId = null;
@@ -630,6 +631,7 @@ function parseAttemptHTML(htmlContent, gender) {
 
 
                                 const urlObj = new URL(athleteUrl, 'https://iwf.sport');
+                                normalizedAthleteUrl = urlObj.toString();
 
 
                                 const idParam = urlObj.searchParams.get('id');
@@ -683,7 +685,7 @@ function parseAttemptHTML(htmlContent, gender) {
                             birth_year: birthYear,
                             body_weight: bodyweight,
                             group: group,
-                            iwf_athlete_url: athleteUrl || null,
+                            iwf_athlete_url: normalizedAthleteUrl || athleteUrl || null,
                             iwf_lifter_id: iwfLifterId,
                             gender: gender === 'men' ? 'M' : gender === 'women' ? 'F' : null,
                             weight_class: currentWeightClass.weight_class,

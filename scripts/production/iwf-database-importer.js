@@ -155,8 +155,16 @@ async function resolveIwfIdConflictViaBioPages(ath, match, scNormName, existingM
     const scraper = require('./iwf-results-scraper');
     const dbLifterId = match.db_lifter_id;
     const dbIwfId = match.iwf_lifters?.iwf_lifter_id;
-    const dbBioUrl = match.iwf_lifters?.iwf_athlete_url || (dbIwfId ? `https://iwf.sport/weightlifting_/athletes-bios/?id=${dbIwfId}` : null);
-    const scrapedBioUrl = ath.iwf_athlete_url || (ath.iwf_lifter_id ? `https://iwf.sport/weightlifting_/athletes-bios/?id=${ath.iwf_lifter_id}` : null);
+    const normalizeBioUrl = (u) => {
+        if (!u || typeof u !== 'string') return null;
+        try {
+            return new URL(u, 'https://iwf.sport').toString();
+        } catch (_) {
+            return null;
+        }
+    };
+    const dbBioUrl = normalizeBioUrl(match.iwf_lifters?.iwf_athlete_url);
+    const scrapedBioUrl = normalizeBioUrl(ath.iwf_athlete_url);
 
     console.log(`\n  ⚠️ IWF ID Conflict (${ath.weight_class || 'N/A'}): Scraped IWF ID ${ath.iwf_lifter_id} ("${ath.name}") vs DB IWF ID ${dbIwfId} (iwf_lifters #${dbLifterId}, "${match.iwf_lifters?.athlete_name}")`);
     console.log(`     Verifying via IWF bio pages...`);
@@ -228,9 +236,11 @@ async function resolveIwfIdConflictViaBioPages(ath, match, scNormName, existingM
                         reason: reviewReason,
                         scraped_iwf_id: ath.iwf_lifter_id,
                         scraped_name: scNormName,
+                        scraped_athlete_url: scrapedBioUrl,
                         scraped_bio: scrapedBio,
                         db_iwf_id: dbIwfId,
                         db_name: match.iwf_lifters?.athlete_name,
+                        db_athlete_url: dbBioUrl,
                         db_bio: dbBio
                     }
                 }).select('id').single();
