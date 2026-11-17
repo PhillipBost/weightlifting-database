@@ -192,12 +192,12 @@ function parseDate(dateOrYear) {
 function getIwfMeetUrl(eventId, dateOrYear) {
     const { year, month } = parseDate(dateOrYear);
 
-    // 1. August 2026 - Current
-    if (year > 2026 || (year === 2026 && month && month >= 8)) {
+    // 1. August 2026 - Current (also default when year === 2026 and month is unknown)
+    if (year > 2026 || (year === 2026 && (month === null || month >= 8))) {
         return `https://iwf.sport/results/results-by-events/?event_id=${eventId}`;
     }
     // 2. July 2025 - July 2026
-    if (year === 2026 || (year === 2025 && (month === null || month >= 7))) {
+    if ((year === 2026 && month && month <= 7) || (year === 2025 && (month === null || month >= 7))) {
         return `https://iwf.sport/results/results-by-events/results-by-events-2025-2026/?event_id=${eventId}`;
     }
     // 3. Nov 2018 - May 2025

@@ -264,7 +264,7 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                     Meet: existingMeet.meet,
                     Level: existingMeet.level || 'International',
                     Date: existingMeet.date || eventDate || null,
-                    URL: options.url || existingMeet.url || config.getIwfMeetUrl(eventId, eventDate || existingMeet.date || year)
+                    URL: options.url || config.getIwfMeetUrl(eventId, eventDate || existingMeet.date || year)
                 };
             } else {
                 const resolvedMeetName = options.meetName || null;
@@ -284,9 +284,13 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
 
         // Determine target URL with priority:
         // 1. Explicit CLI --url option
-        // 2. Extracted meetMetadata.URL (if valid URL)
-        // 3. Fallback to 4-tier chronological getIwfMeetUrl
-        const targetScrapeUrl = options.url || meetMetadata?.URL || config.getIwfMeetUrl(eventId, eventDate || meetMetadata?.Date || options.date || year);
+        // 2. Canonical 4-tier chronological getIwfMeetUrl (avoids stale cached/DB URLs)
+        // 3. Fallback to meetMetadata.URL
+        const canonicalDate = eventDate || meetMetadata?.Date || existingMeet?.date || options.date || year;
+        const targetScrapeUrl = options.url || config.getIwfMeetUrl(eventId, canonicalDate) || meetMetadata?.URL;
+        if (!options.url && meetMetadata && targetScrapeUrl) {
+            meetMetadata.URL = targetScrapeUrl;
+        }
 
         // Step 3: Scrape event results (if not already parsed from HTML)
         if (!scraperResult) {
