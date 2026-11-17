@@ -103,48 +103,60 @@ IWF Results Scraper - Usage:
 
 let browser = null;
 let page = null;
+let browserInitPromise = null;
 
 async function initBrowser() {
-    log('Initializing Puppeteer browser...');
+    if (browser) return;
+    if (browserInitPromise) return browserInitPromise;
 
-    const defaultWindowsChrome = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe';
-    const executablePath = process.env.PUPPETEER_EXECUTABLE_PATH ||
-        (fs.existsSync(defaultWindowsChrome) ? defaultWindowsChrome : undefined);
+    browserInitPromise = (async () => {
+        log('Initializing Puppeteer browser...');
 
-    browser = await puppeteer.launch({
-        headless: config.BROWSER.headless,
-        executablePath,
-        args: config.BROWSER.args
-    });
+        const defaultWindowsChrome = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe';
+        const executablePath = process.env.PUPPETEER_EXECUTABLE_PATH ||
+            (fs.existsSync(defaultWindowsChrome) ? defaultWindowsChrome : undefined);
 
-    page = await browser.newPage();
-
-    // Prevent detection of automated browser (suppress navigator.webdriver and mock standard browser artifacts)
-    await page.evaluateOnNewDocument(() => {
-        Object.defineProperty(navigator, 'webdriver', {
-            get: () => false,
+        browser = await puppeteer.launch({
+            headless: config.BROWSER.headless,
+            executablePath,
+            args: config.BROWSER.args
         });
 
-        window.chrome = {
-            runtime: {},
-            loadTimes: function () { },
-            csi: function () { },
-            app: {}
-        };
+        page = await browser.newPage();
 
-        Object.defineProperty(navigator, 'plugins', {
-            get: () => [1, 2, 3, 4, 5],
+        // Prevent detection of automated browser (suppress navigator.webdriver and mock standard browser artifacts)
+        await page.evaluateOnNewDocument(() => {
+            Object.defineProperty(navigator, 'webdriver', {
+                get: () => false,
+            });
+
+            window.chrome = {
+                runtime: {},
+                loadTimes: function () { },
+                csi: function () { },
+                app: {}
+            };
+
+            Object.defineProperty(navigator, 'plugins', {
+                get: () => [1, 2, 3, 4, 5],
+            });
+
+            Object.defineProperty(navigator, 'languages', {
+                get: () => ['en-US', 'en'],
+            });
         });
 
-        Object.defineProperty(navigator, 'languages', {
-            get: () => ['en-US', 'en'],
-        });
-    });
+        await page.setUserAgent(config.BROWSER.userAgent);
+        await page.setViewport(config.BROWSER.viewport);
 
-    await page.setUserAgent(config.BROWSER.userAgent);
-    await page.setViewport(config.BROWSER.viewport);
+        log('Browser initialized successfully');
+    })();
 
-    log('Browser initialized successfully');
+    try {
+        await browserInitPromise;
+    } finally {
+        browserInitPromise = null;
+    }
 }
 
 async function closeBrowser() {

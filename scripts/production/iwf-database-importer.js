@@ -163,10 +163,8 @@ async function resolveIwfIdConflictViaBioPages(ath, match, scNormName, existingM
     console.log(`\n  ⚠️ IWF ID Conflict (${ath.weight_class || 'N/A'}): Scraped IWF ID ${ath.iwf_lifter_id} ("${ath.name}") vs DB IWF ID ${dbIwfId} (iwf_lifters #${dbLifterId}, "${match.iwf_lifters?.athlete_name}")`);
     console.log(`     Verifying via IWF bio pages...`);
 
-    const [scrapedBio, dbBio] = await Promise.all([
-        scrapedBioUrl ? scraper.scrapeAthleteBio(scrapedBioUrl) : Promise.resolve({ success: false }),
-        dbBioUrl ? scraper.scrapeAthleteBio(dbBioUrl) : Promise.resolve({ success: false })
-    ]);
+    const scrapedBio = scrapedBioUrl ? await scraper.scrapeAthleteBio(scrapedBioUrl) : { success: false };
+    const dbBio = dbBioUrl ? await scraper.scrapeAthleteBio(dbBioUrl) : { success: false };
 
     const sDob = scrapedBio.birth_date || null;
     const dDob = dbBio.birth_date || null;
@@ -448,9 +446,10 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
         }
 
         // Step 3: Scrape event results (if not already parsed from HTML)
+        const keepBrowserForSyncNames = options.syncNames && !options.reuseBrowser && !options.htmlFile && !options.rawHtml;
         if (!scraperResult) {
             console.log(`\n🌐 Scraping event results...`);
-            scraperResult = await runScraper(eventId, year, eventDate || meetMetadata?.Date || options.date || null, null, targetScrapeUrl, options.reuseBrowser === true);
+            scraperResult = await runScraper(eventId, year, eventDate || meetMetadata?.Date || options.date || null, null, targetScrapeUrl, options.reuseBrowser === true || keepBrowserForSyncNames);
 
             if (!scraperResult.success) {
                 throw new Error('Failed to scrape event results');
@@ -1065,6 +1064,9 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
 
         return summary;
     } finally {
+        if (options.syncNames && !options.reuseBrowser && !options.htmlFile && !options.rawHtml) {
+            await require('./iwf-results-scraper').closeBrowser().catch(() => {});
+        }
         if (lockAcquired) {
             LockManager.releaseLock();
         }
