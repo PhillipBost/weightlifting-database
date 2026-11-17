@@ -398,7 +398,10 @@ async function checkCrossMeetIwfDuplicates(ath, match, scNormName, iwfLiftersByC
     const birthYear = ath.birth_year || match.birth_year || null;
     if (!dbLifterId || !country || !birthYear) return { links: 0, reviews: [], mismatches: 0 };
 
-    const pool = iwfLiftersByCountryYear.get(`${country}_${birthYear}`) || [];
+    const pool = [
+        ...(iwfLiftersByCountryYear.get(`${country}_${birthYear}`) || []),
+        ...(iwfLiftersByCountryYear.get(`NULL_${birthYear}`) || [])
+    ];
     const myTokens = tokenizeName(scNormName || match.iwf_lifters?.athlete_name);
     if (myTokens.length < 2) return { links: 0, reviews: [], mismatches: 0 };
 
@@ -471,8 +474,9 @@ async function checkCrossMeetIwfDuplicates(ath, match, scNormName, iwfLiftersByC
         console.log(`     Bio 1 (ID ${dbIwfId || dbLifterId}): DOB=${myDob || 'unknown'}, Gender=${myGender || '?'}, Country=${country}`);
         console.log(`     Bio 2 (ID ${other.iwf_lifter_id || other.db_lifter_id}): DOB=${otherDob || 'unknown'}, Gender=${otherGender || '?'}, Country=${other.country_code || country}`);
 
-        if (myGender && otherGender && myGender.toUpperCase() !== otherGender.toUpperCase()) {
-            console.log(`     ❌ Gender mismatch — skipping.`);
+        if ((myGender && otherGender && myGender.toUpperCase() !== otherGender.toUpperCase()) ||
+            (otherBio.country_code && otherBio.country_code.toUpperCase() !== country)) {
+            console.log(`     ❌ Gender/country mismatch — skipping.`);
             mismatches++;
             continue;
         }
@@ -846,6 +850,31 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                     }
                     if (lRows.length < 1000) break;
                     lPage++;
+                }
+            }
+
+            // Also preload iwf_lifters with country_code IS NULL for the meet's birth years
+            const targetBirthYears = [...new Set([
+                ...allAthletes.map(a => a.birth_year),
+                ...existingDbScorecards.map(r => r.birth_year)
+            ].filter(Boolean))];
+            if (targetBirthYears.length > 0) {
+                let nPage = 0;
+                while (true) {
+                    const { data: nullCountryRows, error: ncErr } = await config.supabaseIWF
+                        .from('iwf_lifters')
+                        .select('db_lifter_id, athlete_name, birth_year, gender, country_code, iwf_lifter_id, iwf_athlete_url')
+                        .is('country_code', null)
+                        .in('birth_year', targetBirthYears)
+                        .range(nPage * 1000, (nPage + 1) * 1000 - 1);
+                    if (ncErr || !nullCountryRows || nullCountryRows.length === 0) break;
+                    for (const l of nullCountryRows) {
+                        const key = `NULL_${l.birth_year}`;
+                        if (!iwfLiftersByCountryYear.has(key)) iwfLiftersByCountryYear.set(key, []);
+                        iwfLiftersByCountryYear.get(key).push(l);
+                    }
+                    if (nullCountryRows.length < 1000) break;
+                    nPage++;
                 }
             }
 
