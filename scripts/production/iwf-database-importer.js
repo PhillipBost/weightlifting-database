@@ -221,7 +221,7 @@ async function resolveIwfIdConflictViaBioPages(ath, match, scNormName, existingM
         if (!options.dryRun) {
             const { data: existingQ } = await config.supabaseIWF
                 .from('admin_review_queue')
-                .select('id')
+                .select('id, status')
                 .eq('category', 'iwf_duplicate')
                 .eq('primary_entity_id', dbLifterId)
                 .eq('candidate_entity_id', ath.iwf_lifter_id)
@@ -256,7 +256,8 @@ async function resolveIwfIdConflictViaBioPages(ath, match, scNormName, existingM
                     console.log(`     ✓ Staged to admin_review_queue (category: iwf_duplicate, ID: ${insertedQ?.id || 'N/A'}).`);
                 }
             } else {
-                console.log(`     ✓ Already staged in admin_review_queue (ID: ${existingQ[0].id}).`);
+                console.log(`     ✓ Already in admin_review_queue (ID: ${existingQ[0].id}, status: ${existingQ[0].status}).`);
+                return { resolved: false, action: 'ALREADY_IN_QUEUE', existingStatus: existingQ[0].status, existingQueueId: existingQ[0].id, reason: reviewReason };
             }
         }
         return { resolved: false, action: 'REVIEW_STAGED', reason: reviewReason };
@@ -406,6 +407,7 @@ async function checkCrossMeetIwfDuplicates(ath, match, scNormName, iwfLiftersByC
     let links = 0;
     let mismatches = 0;
     const reviews = [];
+    const alreadyInQueue = [];
 
     for (const other of pool) {
         if (other.db_lifter_id === dbLifterId) continue;
@@ -471,11 +473,13 @@ async function checkCrossMeetIwfDuplicates(ath, match, scNormName, iwfLiftersByC
                 : `Cross-meet same name & birth year (${birthYear}), bio DOB incomplete (${myDob || 'unknown'} vs ${otherDob || 'unknown'})`;
             console.log(`     ⚠️ Flagged for review (IWF ↔ IWF): ${reviewReason}`);
 
+            let isAlreadyQueued = false;
+            let existingQueueStatus = null;
             if (!options.dryRun) {
                 const candEntityId = other.iwf_lifter_id || other.db_lifter_id;
                 const { data: existingQ } = await config.supabaseIWF
                     .from('admin_review_queue')
-                    .select('id')
+                    .select('id, status')
                     .eq('category', 'iwf_duplicate')
                     .or(`and(primary_entity_id.eq.${dbLifterId},candidate_entity_id.eq.${candEntityId}),and(primary_entity_id.eq.${other.db_lifter_id},candidate_entity_id.eq.${dbIwfId || dbLifterId})`)
                     .limit(1);
@@ -510,21 +514,29 @@ async function checkCrossMeetIwfDuplicates(ath, match, scNormName, iwfLiftersByC
                         console.log(`     ✓ Staged to admin_review_queue (category: iwf_duplicate, ID: ${insertedQ?.id || 'N/A'}).`);
                     }
                 } else {
-                    console.log(`     ✓ Already staged in admin_review_queue (ID: ${existingQ[0].id}).`);
+                    isAlreadyQueued = true;
+                    existingQueueStatus = existingQ[0].status;
+                    console.log(`     ✓ Already in admin_review_queue (ID: ${existingQ[0].id}, status: ${existingQ[0].status}).`);
                 }
             }
 
-            reviews.push({
+            const reviewEntry = {
                 name: scNormName,
                 db_lifter_id: dbLifterId,
                 db_iwf_id: dbIwfId,
                 scraped_iwf_id: other.iwf_lifter_id || other.db_lifter_id,
-                reason: reviewReason
-            });
+                reason: reviewReason,
+                status: existingQueueStatus
+            };
+            if (isAlreadyQueued) {
+                alreadyInQueue.push(reviewEntry);
+            } else {
+                reviews.push(reviewEntry);
+            }
         }
     }
 
-    return { links, reviews, mismatches };
+    return { links, reviews, alreadyInQueue, mismatches };
 }
 
 /**
@@ -784,6 +796,7 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
 
             const updatedAthletes = [];
             const flaggedForReview = [];
+            const alreadyInQueue = [];
             let unmatchedCount = 0;
             let unchangedCount = 0;
             let lockedSkipped = 0;
@@ -832,6 +845,15 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                                 scraped_iwf_id: ath.iwf_lifter_id,
                                 reason: conflictRes.reason
                             });
+                        } else if (conflictRes.action === 'ALREADY_IN_QUEUE') {
+                            alreadyInQueue.push({
+                                name: scNormName,
+                                db_lifter_id: match.db_lifter_id,
+                                db_iwf_id: match.iwf_lifters?.iwf_lifter_id,
+                                scraped_iwf_id: ath.iwf_lifter_id,
+                                reason: conflictRes.reason,
+                                status: conflictRes.existingStatus
+                            });
                         } else {
                             distinctMismatches++;
                         }
@@ -874,6 +896,7 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                     confirmedSameLinks += crossRes.links;
                     distinctMismatches += crossRes.mismatches;
                     flaggedForReview.push(...crossRes.reviews);
+                    alreadyInQueue.push(...(crossRes.alreadyInQueue || []));
                     continue;
                 }
 
@@ -935,6 +958,7 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                 confirmedSameLinks += crossRes.links;
                 distinctMismatches += crossRes.mismatches;
                 flaggedForReview.push(...crossRes.reviews);
+                alreadyInQueue.push(...(crossRes.alreadyInQueue || []));
             }
 
             const verb = options.dryRun ? 'would be ' : '';
@@ -946,15 +970,22 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
             console.log(`  Unmatched in meet database records:    ${unmatchedCount}`);
             console.log(`  Locked skipped (manual_override):      ${lockedSkipped}`);
             console.log(`  Direct name updates (${verb}applied):    ${directNameUpdates}`);
-            console.log(`  IWF ID conflicts investigated:         ${confirmedSameLinks + flaggedForReview.length + distinctMismatches}`);
+            console.log(`  IWF ID conflicts investigated:         ${confirmedSameLinks + flaggedForReview.length + alreadyInQueue.length + distinctMismatches}`);
             console.log(`    - Confirmed same-athlete links:      ${confirmedSameLinks}`);
-            console.log(`    - Flagged for review (admin queue):  ${flaggedForReview.length}`);
+            console.log(`    - Newly staged for review:           ${flaggedForReview.length}`);
+            console.log(`    - Already in review queue (skipped): ${alreadyInQueue.length}`);
             console.log(`    - Determined distinct (mismatch):    ${distinctMismatches}`);
             console.log(`  Failed updates:                        ${failedUpdates}`);
             if (flaggedForReview.length > 0) {
-                console.log(`\n  📋 Flagged for Review (category = 'iwf_duplicate'):`);
+                console.log(`\n  📋 Newly Staged for Review (category = 'iwf_duplicate'):`);
                 flaggedForReview.forEach((f, idx) => {
                     console.log(`     ${idx + 1}. "${f.name}" (DB #${f.db_lifter_id} / IWF ${f.db_iwf_id} vs IWF ${f.scraped_iwf_id}) — ${f.reason}`);
+                });
+            }
+            if (alreadyInQueue.length > 0) {
+                console.log(`\n  ℹ️  Already in Review Queue (skipped):`);
+                alreadyInQueue.forEach((f, idx) => {
+                    console.log(`     ${idx + 1}. "${f.name}" (DB #${f.db_lifter_id} / IWF ${f.db_iwf_id} vs IWF ${f.scraped_iwf_id}) [${f.status}] — ${f.reason}`);
                 });
             }
             console.log('='.repeat(80));
@@ -972,11 +1003,13 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                 directNameUpdates,
                 confirmedSameLinks,
                 flaggedForReviewCount: flaggedForReview.length,
+                alreadyInQueueCount: alreadyInQueue.length,
                 distinctMismatches,
                 nameUpdatesCount: updatedAthletes.length,
                 failedUpdates,
                 updatedAthletes,
-                flaggedForReview
+                flaggedForReview,
+                alreadyInQueue
             };
             summary.executionTimeMs = Date.now() - startTime;
             console.log('__IWF_SUMMARY_JSON__:' + JSON.stringify(summary));
