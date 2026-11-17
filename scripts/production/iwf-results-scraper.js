@@ -150,7 +150,118 @@ async function initBrowser() {
 async function closeBrowser() {
     if (browser) {
         await browser.close();
+        browser = null;
+        page = null;
         log('Browser closed');
+    }
+}
+
+/**
+ * Parse a birth date string into YYYY-MM-DD when full day/month/year is present.
+ */
+function parseBioBirthDate(text) {
+    if (!text) return null;
+    const iso = text.match(/\b((?:19|20)\d{2})-(\d{2})-(\d{2})\b/);
+    if (iso) return `${iso[1]}-${iso[2]}-${iso[3]}`;
+
+    const dmy = text.match(/\b(\d{1,2})[./-](\d{1,2})[./-]((?:19|20)\d{2})\b/);
+    if (dmy) {
+        return `${dmy[3]}-${String(dmy[2]).padStart(2, '0')}-${String(dmy[1]).padStart(2, '0')}`;
+    }
+
+    const parsed = new Date(text);
+    if (!isNaN(parsed.getTime())) {
+        return parsed.toISOString().slice(0, 10);
+    }
+    return null;
+}
+
+/**
+ * Visit an IWF athlete bio URL using the active Puppeteer browser and extract
+ * authoritative demographics (exact birth_date, gender, country_code, name).
+ *
+ * @param {string} athleteUrl - Full or relative IWF athlete bio URL
+ * @returns {Promise<Object>}
+ */
+async function scrapeAthleteBio(athleteUrl) {
+    if (!athleteUrl) {
+        return { success: false, error: 'Missing athleteUrl' };
+    }
+
+    const fullUrl = athleteUrl.startsWith('http')
+        ? athleteUrl
+        : new URL(athleteUrl, 'https://iwf.sport').toString();
+
+    let urlId = null;
+    let slugBirthDate = null;
+    try {
+        const u = new URL(fullUrl);
+        const idParam = u.searchParams.get('id');
+        if (idParam) urlId = parseInt(idParam, 10);
+        const slug = u.searchParams.get('athlete') || '';
+        const slugDate = slug.match(/((?:19|20)\d{2}-\d{2}-\d{2})$/);
+        if (slugDate) slugBirthDate = slugDate[1];
+    } catch (_) {
+        // ignore URL parse failure
+    }
+
+    let ownBrowser = false;
+    let bioPage = null;
+    try {
+        if (!browser) {
+            await initBrowser();
+            ownBrowser = true;
+        }
+        bioPage = await browser.newPage();
+        await bioPage.setUserAgent(config.BROWSER.userAgent);
+        await bioPage.goto(fullUrl, { waitUntil: 'networkidle2', timeout: config.TIMEOUTS.navigation || 30000 });
+        await new Promise(resolve => setTimeout(resolve, 1000));
+
+        const extracted = await bioPage.evaluate(() => {
+            const bodyText = document.body ? document.body.innerText : '';
+            const h1 = document.querySelector('h1, .athlete__name, .single__athlete__name, h2');
+            const titleName = h1 ? h1.textContent.trim() : '';
+            return { bodyText, titleName };
+        });
+
+        const text = extracted.bodyText || '';
+        const dobMatch = text.match(/(?:Born|Birth\s*date|Date\s*of\s*birth)\s*:?\s*([^\n\r]+)/i);
+        const birthDate = parseBioBirthDate(dobMatch ? dobMatch[1] : null) || slugBirthDate;
+        const birthYear = birthDate ? parseInt(birthDate.slice(0, 4), 10) : null;
+
+        let gender = null;
+        if (/\bFemale\b|\bWomen\b/i.test(text)) gender = 'F';
+        else if (/\bMale\b|\bMen\b/i.test(text)) gender = 'M';
+
+        const nationMatch = text.match(/(?:Nation|Country)\s*:?\s*([A-Z]{3})\b/i);
+        const countryCode = nationMatch ? nationMatch[1].toUpperCase() : null;
+
+        return {
+            success: true,
+            url: fullUrl,
+            iwf_lifter_id: urlId,
+            name: extracted.titleName || null,
+            birth_date: birthDate,
+            birth_year: birthYear,
+            gender,
+            country_code: countryCode
+        };
+    } catch (error) {
+        return {
+            success: false,
+            url: fullUrl,
+            iwf_lifter_id: urlId,
+            birth_date: slugBirthDate,
+            birth_year: slugBirthDate ? parseInt(slugBirthDate.slice(0, 4), 10) : null,
+            error: error.message
+        };
+    } finally {
+        if (bioPage) {
+            await bioPage.close().catch(() => {});
+        }
+        if (ownBrowser) {
+            await closeBrowser().catch(() => {});
+        }
     }
 }
 
@@ -1335,6 +1446,7 @@ module.exports = {
     initBrowser,
     closeBrowser,
     scrapeEventResults,
+    scrapeAthleteBio,
     clickMensTab,
     clickWomensTab,
     verifyResultsLoaded,

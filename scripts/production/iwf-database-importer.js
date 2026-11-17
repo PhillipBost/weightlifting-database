@@ -148,6 +148,161 @@ function findMatchingDbScorecard(sc, existingDbScorecards) {
 }
 
 /**
+ * Resolve an IWF-to-IWF ID conflict (same athlete assigned two different iwf_lifter_id profiles
+ * across meets) by visiting both IWF bio pages and checking exact birth_date, gender, and nation.
+ * Creates/links the second iwf_lifters row via athlete_aliases (check_alias_type = 2), assigns the
+ * most recent meet's name to the primary iwf_lifters row, and preserves historical meet result names.
+ */
+async function resolveIwfIdConflictViaBioPages(ath, match, scNormName, existingMeet, options = {}) {
+    const scraper = require('./iwf-results-scraper');
+    const dbLifterId = match.db_lifter_id;
+    const dbIwfId = match.iwf_lifters?.iwf_lifter_id;
+    const dbBioUrl = match.iwf_lifters?.iwf_athlete_url || (dbIwfId ? `https://iwf.sport/weightlifting_/athletes-bios/?id=${dbIwfId}` : null);
+    const scrapedBioUrl = ath.iwf_athlete_url || (ath.iwf_lifter_id ? `https://iwf.sport/weightlifting_/athletes-bios/?id=${ath.iwf_lifter_id}` : null);
+
+    console.log(`\n  ⚠️ IWF ID Conflict (${ath.weight_class || 'N/A'}): Scraped IWF ID ${ath.iwf_lifter_id} ("${ath.name}") vs DB IWF ID ${dbIwfId} (iwf_lifters #${dbLifterId}, "${match.iwf_lifters?.athlete_name}")`);
+    console.log(`     Verifying via IWF bio pages...`);
+
+    const [scrapedBio, dbBio] = await Promise.all([
+        scrapedBioUrl ? scraper.scrapeAthleteBio(scrapedBioUrl) : Promise.resolve({ success: false }),
+        dbBioUrl ? scraper.scrapeAthleteBio(dbBioUrl) : Promise.resolve({ success: false })
+    ]);
+
+    const sDob = scrapedBio.birth_date || null;
+    const dDob = dbBio.birth_date || null;
+    const sGender = scrapedBio.gender || ath.gender || null;
+    const dGender = dbBio.gender || null;
+    const sCountry = scrapedBio.country_code || ath.nation || null;
+    const dCountry = dbBio.country_code || match.country_code || null;
+
+    console.log(`     Scraped Bio (ID ${ath.iwf_lifter_id}): DOB=${sDob || 'unknown'}, Gender=${sGender || '?'}, Country=${sCountry || '?'}`);
+    console.log(`     DB Bio      (ID ${dbIwfId}): DOB=${dDob || 'unknown'}, Gender=${dGender || '?'}, Country=${dCountry || '?'}`);
+
+    // Conflict if exact DOBs or genders disagree
+    if ((sDob && dDob && sDob !== dDob) || (sGender && dGender && sGender !== dGender)) {
+        console.log(`     ❌ Bio verification MISMATCH — treating as distinct athletes (no merge, no overwrite).`);
+        return { resolved: false, action: 'MISMATCH' };
+    }
+
+    // Confirmed same person if both exact YYYY-MM-DD DOBs match (and country doesn't diverge)
+    const dobConfirmed = Boolean(sDob && dDob && sDob === dDob);
+    const countryOk = !sCountry || !dCountry || sCountry === dCountry;
+
+    if (!dobConfirmed || !countryOk) {
+        console.log(`     ⚠️ Bio pages could not definitively confirm identity — staging to admin_review_queue.`);
+        if (!options.dryRun) {
+            await config.supabaseIWF.from('admin_review_queue').insert({
+                category: 'iwf_duplicate',
+                status: 'PENDING',
+                title: `IWF ID Conflict: #${dbLifterId} (IWF ${dbIwfId}) vs IWF ${ath.iwf_lifter_id} ("${scNormName}")`,
+                primary_entity_type: 'iwf_lifters',
+                primary_entity_id: dbLifterId,
+                candidate_entity_type: 'iwf_lifters',
+                candidate_entity_id: ath.iwf_lifter_id,
+                confidence_score: 70,
+                evidence: {
+                    scraped_iwf_id: ath.iwf_lifter_id,
+                    scraped_name: scNormName,
+                    scraped_bio: scrapedBio,
+                    db_iwf_id: dbIwfId,
+                    db_name: match.iwf_lifters?.athlete_name,
+                    db_bio: dbBio
+                }
+            }).catch(() => {});
+        }
+        return { resolved: false, action: 'REVIEW_STAGED' };
+    }
+
+    // Determine whether this meet is the most recent meet for this athlete
+    let isMostRecentMeet = true;
+    const thisMeetTs = existingMeet?.date ? Date.parse(existingMeet.date) : NaN;
+    if (!isNaN(thisMeetTs)) {
+        const { data: priorMeets } = await config.supabaseIWF
+            .from('iwf_meet_results')
+            .select('date')
+            .eq('db_lifter_id', dbLifterId);
+        for (const pm of (priorMeets || [])) {
+            const pmTs = pm.date ? Date.parse(pm.date) : NaN;
+            if (!isNaN(pmTs) && pmTs > thisMeetTs) {
+                isMostRecentMeet = false;
+                break;
+            }
+        }
+    }
+
+    const actionTag = options.dryRun ? '(would apply)' : '(applying)';
+    console.log(`     ✅ Confirmed SAME athlete (DOB ${sDob}). Creating IWF ↔ IWF alias & preserving historical meet result names ${actionTag}`);
+    if (isMostRecentMeet) {
+        console.log(`        Primary iwf_lifters #${dbLifterId} name -> "${scNormName}" (most recent meet)`);
+    }
+
+    if (options.dryRun) {
+        return { resolved: true, action: 'DRY_RUN_LINKED', newName: scNormName };
+    }
+
+    // 1. Find or create the second iwf_lifters row for ath.iwf_lifter_id
+    const secondLifter = await lifterManager.findOrCreateLifter(
+        ath.name,
+        ath.nation || sCountry,
+        ath.birth_year || scrapedBio.birth_year,
+        sGender,
+        ath.iwf_lifter_id,
+        scrapedBioUrl
+    );
+    if (!secondLifter || !secondLifter.db_lifter_id) {
+        throw new Error(`Failed to resolve second iwf_lifters record for IWF ID ${ath.iwf_lifter_id}`);
+    }
+
+    // 2. Insert IWF <-> IWF pairwise edge in athlete_aliases (check_alias_type = 2)
+    if (secondLifter.db_lifter_id !== dbLifterId) {
+        const { data: existingAlias } = await config.supabaseIWF
+            .from('athlete_aliases')
+            .select('alias_id')
+            .or(`and(iwf_db_lifter_id.eq.${dbLifterId},iwf_db_lifter_id_2.eq.${secondLifter.db_lifter_id}),and(iwf_db_lifter_id.eq.${secondLifter.db_lifter_id},iwf_db_lifter_id_2.eq.${dbLifterId})`)
+            .limit(1);
+
+        if (!existingAlias || existingAlias.length === 0) {
+            const { error: aliasErr } = await config.supabaseIWF
+                .from('athlete_aliases')
+                .insert({
+                    iwf_db_lifter_id: dbLifterId,
+                    iwf_db_lifter_id_2: secondLifter.db_lifter_id,
+                    match_confidence: 100,
+                    manual_override: false
+                });
+            if (aliasErr) {
+                throw new Error(`Failed inserting IWF <-> IWF athlete_aliases edge: ${aliasErr.message}`);
+            }
+            console.log(`        ✓ Inserted IWF ↔ IWF edge in athlete_aliases: #${dbLifterId} ↔ #${secondLifter.db_lifter_id}`);
+        }
+    }
+
+    // 3. Re-point ONLY this meet's result to secondLifter & preserve its meet result name
+    if (match.db_result_id) {
+        const { error: resErr } = await config.supabaseIWF
+            .from('iwf_meet_results')
+            .update({ db_lifter_id: secondLifter.db_lifter_id, lifter_name: scNormName })
+            .eq('db_result_id', match.db_result_id);
+        if (resErr) {
+            throw new Error(`Failed updating iwf_meet_results[${match.db_result_id}]: ${resErr.message}`);
+        }
+    }
+
+    // 4. Assign the most recent meet's name to the primary iwf_lifters record
+    if (isMostRecentMeet && dbLifterId) {
+        const { error: primErr } = await config.supabaseIWF
+            .from('iwf_lifters')
+            .update({ athlete_name: scNormName })
+            .eq('db_lifter_id', dbLifterId);
+        if (primErr) {
+            throw new Error(`Failed updating primary iwf_lifters[${dbLifterId}]: ${primErr.message}`);
+        }
+    }
+
+    return { resolved: true, action: 'LINKED', secondDbLifterId: secondLifter.db_lifter_id, newName: scNormName };
+}
+
+/**
  * Import single event to database
  * Main workflow orchestrator
  *
@@ -337,7 +492,7 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
             if (existingMeet?.db_meet_id) {
                 const { data: dbRows, error: dbErr } = await config.supabaseIWF
                     .from('iwf_meet_results')
-                    .select('db_result_id, db_lifter_id, lifter_name, weight_class, birth_year, country_code, manual_override, iwf_lifters(db_lifter_id, athlete_name, iwf_lifter_id)')
+                    .select('db_result_id, db_lifter_id, lifter_name, weight_class, birth_year, country_code, manual_override, iwf_lifters(db_lifter_id, athlete_name, iwf_lifter_id, iwf_athlete_url)')
                     .eq('db_meet_id', existingMeet.db_meet_id);
                 if (dbErr) {
                     throw new Error(`Failed to fetch existing meet scorecards: ${dbErr.message}`);
@@ -369,6 +524,30 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                 const scNormName = lifterManager.normalizeName ? lifterManager.normalizeName(ath.name || '') : (ath.name || '').trim();
                 const dbLifterName = (match.iwf_lifters?.athlete_name || '').trim();
                 const dbResultName = (match.lifter_name || '').trim();
+
+                // Check for distinct IWF ID conflict (e.g. same athlete assigned two official IWF IDs across meets)
+                if (ath.iwf_lifter_id && match.iwf_lifters?.iwf_lifter_id &&
+                    String(ath.iwf_lifter_id) !== String(match.iwf_lifters.iwf_lifter_id)) {
+                    try {
+                        const conflictRes = await resolveIwfIdConflictViaBioPages(ath, match, scNormName, existingMeet, options);
+                        if (conflictRes.resolved) {
+                            updatedAthletes.push({
+                                db_lifter_id: match.db_lifter_id,
+                                second_db_lifter_id: conflictRes.secondDbLifterId || null,
+                                db_result_id: match.db_result_id,
+                                weight_class: ath.weight_class,
+                                old_name: dbLifterName,
+                                new_name: conflictRes.newName,
+                                resolution: conflictRes.action
+                            });
+                        }
+                    } catch (conflictErr) {
+                        failedUpdates++;
+                        summary.errors.push(`Conflict resolution IWF[${match.db_lifter_id}]: ${conflictErr.message}`);
+                        console.error(`    ❌ Conflict resolution failed: ${conflictErr.message}`);
+                    }
+                    continue;
+                }
 
                 const lifterNameDiffers = scNormName && dbLifterName && scNormName.toLowerCase() !== dbLifterName.toLowerCase();
                 const currentResultDiffers = scNormName && dbResultName && scNormName.toLowerCase() !== dbResultName.toLowerCase();
@@ -1148,6 +1327,47 @@ async function batchImportYear(year, options = {}) {
     return await runBatchEvents(events, options);
 }
 
+/**
+ * Batch import a specific list of IWF event IDs (e.g. --event-ids 676,700)
+ * using a single shared Puppeteer browser session.
+ *
+ * @param {Array<string>} eventIds - Ordered list of IWF event IDs
+ * @param {Object} options - Import options
+ * @returns {Promise<Object>} - Batch import summary
+ */
+async function batchImportEventIds(eventIds, options = {}) {
+    console.log(`\n${'='.repeat(80)}`);
+    console.log(`BATCH IMPORT FOR EVENT IDS: ${eventIds.join(', ')}`);
+    console.log('='.repeat(80));
+
+    const { data: dbMeets, error: dbErr } = await config.supabaseIWF
+        .from('iwf_meets')
+        .select('iwf_meet_id, meet, date')
+        .in('iwf_meet_id', eventIds.map(String));
+
+    if (dbErr) {
+        throw new Error(`Failed to query iwf_meets for event IDs: ${dbErr.message}`);
+    }
+
+    const meetById = new Map((dbMeets || []).map(m => [String(m.iwf_meet_id), m]));
+    const events = eventIds.map(id => {
+        const m = meetById.get(String(id));
+        let parsedYear = options.year || null;
+        if (!parsedYear && m?.date) {
+            const ym = String(m.date).match(/\b(19\d{2}|20\d{2})\b/);
+            if (ym) parsedYear = parseInt(ym[1], 10);
+        }
+        return {
+            event_id: String(id),
+            event_name: m?.meet || `Event ${id}`,
+            year: parsedYear || new Date().getFullYear(),
+            date: m?.date || options.date || null
+        };
+    });
+
+    return await runBatchEvents(events, options);
+}
+
 // ============================================================================
 // CLI INTERFACE
 // ============================================================================
@@ -1159,6 +1379,7 @@ function parseArgs() {
     const args = process.argv.slice(2);
     const options = {
         eventId: null,
+        eventIds: null,
         year: null,
         date: null,
         eventsFile: null,
@@ -1174,6 +1395,9 @@ function parseArgs() {
         switch (args[i]) {
             case '--event-id':
                 options.eventId = args[++i];
+                break;
+            case '--event-ids':
+                options.eventIds = args[++i].split(',').map(s => s.trim()).filter(Boolean);
                 break;
             case '--html-file':
                 options.htmlFile = args[++i];
@@ -1294,8 +1518,8 @@ async function main() {
     }
 
     // Validate options
-    if (!options.eventId && !options.eventsFile && !options.htmlFile && !options.url && !options.year) {
-        console.error('Error: Either --event-id, --events-file, --html-file, --url, or --year must be specified');
+    if (!options.eventId && !(options.eventIds && options.eventIds.length > 0) && !options.eventsFile && !options.htmlFile && !options.url && !options.year) {
+        console.error('Error: Either --event-id, --event-ids, --events-file, --html-file, --url, or --year must be specified');
         printHelp();
         process.exit(1);
     }
@@ -1312,6 +1536,12 @@ async function main() {
             const batchResult = await batchImportEvents(options.eventsFile, options);
             if (batchResult && batchResult.failed > 0 && batchResult.successful === 0) {
                 throw new Error(`Batch import failed (${batchResult.failed} failed, 0 succeeded)`);
+            }
+        } else if (options.eventIds && options.eventIds.length > 0) {
+            // Batch import mode for explicit comma-separated event IDs
+            const batchResult = await batchImportEventIds(options.eventIds, options);
+            if (batchResult && batchResult.failed > 0 && batchResult.successful === 0) {
+                throw new Error(`Event IDs batch import failed (${batchResult.failed} failed, 0 succeeded)`);
             }
         } else if (options.year && !options.eventId && !options.htmlFile && !options.url) {
             // Batch import mode for all meets in a calendar year
