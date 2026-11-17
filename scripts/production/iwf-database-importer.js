@@ -418,9 +418,10 @@ async function checkCrossMeetIwfDuplicates(ath, match, scNormName, iwfLiftersByC
 
         const otherTokens = tokenizeName(other.athlete_name);
         if (otherTokens.length < 2) continue;
-        const overlap = myTokens.filter(t => otherTokens.includes(t)).length;
-        const minLen = Math.min(myTokens.length, otherTokens.length);
-        if (overlap < 2 || overlap / minLen < 0.75) continue;
+        const uniqueMyTokens = [...new Set(myTokens)];
+        const otherTokenSet = new Set(otherTokens);
+        const overlap = uniqueMyTokens.filter(t => otherTokenSet.has(t)).length;
+        if (overlap < 2) continue;
 
         alreadyLinkedPairs.add(pairKey);
 
