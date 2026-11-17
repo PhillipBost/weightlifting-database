@@ -190,6 +190,19 @@ function findMatchingDbScorecard(sc, existingDbScorecards) {
         }
     }
 
+    // Priority 5: Unique stored-token-subset match in same weight_class + country_code (ignoring birth_year)
+    if (!match && scTokens.length >= 2) {
+        const scNation = (sc.nation || '').trim().toUpperCase();
+        const candidates = sameWcRows.filter(r => {
+            if (scNation && r.country_code && r.country_code.trim().toUpperCase() !== scNation) return false;
+            const rTokens = tokenizeName(r.lifter_name);
+            return rTokens.length >= 2 && rTokens.every(tok => scTokens.includes(tok));
+        });
+        if (candidates.length === 1) {
+            match = candidates[0];
+        }
+    }
+
     return match || null;
 }
 
@@ -924,6 +937,7 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
             const flaggedForReview = [];
             const alreadyInQueue = [];
             const unmatchedAthletes = [];
+            const lockedAthletes = [];
             let unmatchedCount = 0;
             let unchangedCount = 0;
             let lockedSkipped = 0;
@@ -937,17 +951,68 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                 const match = findMatchingDbScorecard(ath, existingDbScorecards);
                 if (!match) {
                     unmatchedCount++;
-                    unmatchedAthletes.push({
+                    const uEntry = {
                         name: ath.name || ath.athlete_name || 'Unknown',
                         weight_class: ath.weight_class || 'N/A',
                         nation: ath.nation || 'N/A',
                         birth_year: ath.birth_year || null,
                         iwf_lifter_id: ath.iwf_lifter_id || null
+                    };
+                    unmatchedAthletes.push(uEntry);
+
+                    // Check if a plausible candidate exists in this meet's DB scorecards and stage for review
+                    const scTokens = tokenizeName(ath.name || ath.athlete_name);
+                    const scNation = (ath.nation || '').trim().toUpperCase();
+                    const meetCandidate = existingDbScorecards.find(r => {
+                        if (scNation && r.country_code && r.country_code.trim().toUpperCase() !== scNation) return false;
+                        if (ath.birth_year && r.birth_year && Number(ath.birth_year) === Number(r.birth_year)) {
+                            const rTokens = tokenizeName(r.lifter_name);
+                            return scTokens.some(t => rTokens.some(rt => isFuzzyTokenMatch(t, rt)));
+                        }
+                        return false;
                     });
+                    if (meetCandidate && !options.dryRun && ath.iwf_lifter_id) {
+                        const { data: exQ } = await config.supabaseIWF
+                            .from('admin_review_queue')
+                            .select('id, status')
+                            .eq('category', 'iwf_duplicate')
+                            .eq('primary_entity_id', meetCandidate.db_lifter_id)
+                            .eq('candidate_entity_id', ath.iwf_lifter_id)
+                            .limit(1);
+                        if (!exQ || exQ.length === 0) {
+                            await config.supabaseIWF.from('admin_review_queue').insert({
+                                category: 'iwf_duplicate',
+                                status: 'PENDING',
+                                title: `Unmatched Meet Athlete Candidate: #${meetCandidate.db_lifter_id} ("${meetCandidate.lifter_name}") vs IWF ${ath.iwf_lifter_id} ("${ath.name}")`,
+                                primary_entity_type: 'iwf_lifters',
+                                primary_entity_id: meetCandidate.db_lifter_id,
+                                candidate_entity_type: 'iwf_lifters',
+                                candidate_entity_id: ath.iwf_lifter_id,
+                                confidence_score: 65,
+                                evidence: {
+                                    federations: ['IWF', 'IWF'],
+                                    reason: `Unmatched in meet ${eventId}; same country/birth_year candidate in meet scorecards`,
+                                    scraped_iwf_id: ath.iwf_lifter_id,
+                                    scraped_name: ath.name,
+                                    scraped_athlete_url: ath.iwf_athlete_url || null,
+                                    db_iwf_id: meetCandidate.iwf_lifters?.iwf_lifter_id || null,
+                                    db_name: meetCandidate.lifter_name,
+                                    db_athlete_url: meetCandidate.iwf_lifters?.iwf_athlete_url || null
+                                }
+                            });
+                        }
+                    }
                     continue;
                 }
                 if (match.manual_override === true) {
                     lockedSkipped++;
+                    lockedAthletes.push({
+                        db_result_id: match.db_result_id,
+                        db_lifter_id: match.db_lifter_id,
+                        lifter_name: match.lifter_name || match.iwf_lifters?.athlete_name || 'Unknown',
+                        scraped_name: ath.name || ath.athlete_name || 'Unknown',
+                        weight_class: match.weight_class || ath.weight_class || 'N/A'
+                    });
                     continue;
                 }
 
@@ -1128,6 +1193,12 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                     console.log(`     ${idx + 1}. "${u.name}" (${u.weight_class}, ${u.nation}, born ${u.birth_year || 'N/A'}, IWF ${u.iwf_lifter_id || 'N/A'})`);
                 });
             }
+            if (lockedAthletes.length > 0) {
+                console.log(`\n  🔒 Locked Skipped (manual_override = true, ${lockedAthletes.length}):`);
+                lockedAthletes.forEach((l, idx) => {
+                    console.log(`     ${idx + 1}. "${l.lifter_name}" (DB Result #${l.db_result_id}, Lifter #${l.db_lifter_id}, ${l.weight_class}, scraped "${l.scraped_name}")`);
+                });
+            }
             console.log('='.repeat(80));
 
             summary.meet = existingMeet || meetMetadata;
@@ -1149,7 +1220,9 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                 failedUpdates,
                 updatedAthletes,
                 flaggedForReview,
-                alreadyInQueue
+                alreadyInQueue,
+                unmatchedAthletes,
+                lockedAthletes
             };
             summary.executionTimeMs = Date.now() - startTime;
             console.log('__IWF_SUMMARY_JSON__:' + JSON.stringify(summary));
@@ -1771,6 +1844,44 @@ async function runBatchEvents(events, options = {}) {
         console.log(`Successful: ${batchSummary.successful}`);
         console.log(`Skipped: ${batchSummary.skipped}`);
         console.log(`Failed: ${batchSummary.failed}`);
+        if (options.syncNames && batchSummary.results.length > 1) {
+            const syncResults = batchSummary.results.filter(r => r?.importStats?.syncNames);
+            const sumField = (f) => syncResults.reduce((acc, r) => acc + (r.importStats[f] || 0), 0);
+            const allNewlyStaged = syncResults.flatMap(r => (r.importStats.flaggedForReview || []).map(x => ({ ...x, meetId: r.iwf_meet_id || r.eventId })));
+            const allUnmatched = syncResults.flatMap(r => (r.importStats.unmatchedAthletes || []).map(x => ({ ...x, meetId: r.iwf_meet_id || r.eventId })));
+            const allLocked = syncResults.flatMap(r => (r.importStats.lockedAthletes || []).map(x => ({ ...x, meetId: r.iwf_meet_id || r.eventId })));
+
+            console.log(`\nBATCH NAME SYNC SUMMARY (${syncResults.length} meet(s)):`);
+            console.log(`  Total scraped athletes:                ${sumField('totalAthletes')}`);
+            console.log(`  Left alone (already up to date):       ${sumField('unchangedCount')}`);
+            console.log(`  Unmatched in meet database records:    ${sumField('unmatchedCount')}`);
+            console.log(`  Locked skipped (manual_override):      ${sumField('lockedSkipped')}`);
+            console.log(`  Direct name updates:                   ${sumField('directNameUpdates')}`);
+            console.log(`  Confirmed same-athlete links:          ${sumField('confirmedSameLinks')}`);
+            console.log(`  Newly staged for review:               ${sumField('flaggedForReviewCount')}`);
+            console.log(`  Already in review queue (skipped):     ${sumField('alreadyInQueueCount')}`);
+            console.log(`  Determined distinct (mismatch):        ${sumField('distinctMismatches')}`);
+            console.log(`  Failed updates:                        ${sumField('failedUpdates')}`);
+
+            if (allNewlyStaged.length > 0) {
+                console.log(`\n  📋 All Newly Staged for Review (${allNewlyStaged.length}):`);
+                allNewlyStaged.forEach((f, idx) => {
+                    console.log(`     ${idx + 1}. [Meet ${f.meetId}] "${f.name}" (DB #${f.db_lifter_id} / IWF ${f.db_iwf_id} vs IWF ${f.scraped_iwf_id}) — ${f.reason}`);
+                });
+            }
+            if (allUnmatched.length > 0) {
+                console.log(`\n  ❓ All Unmatched Athletes (${allUnmatched.length}):`);
+                allUnmatched.forEach((u, idx) => {
+                    console.log(`     ${idx + 1}. [Meet ${u.meetId}] "${u.name}" (${u.weight_class}, ${u.nation}, born ${u.birth_year || 'N/A'}, IWF ${u.iwf_lifter_id || 'N/A'})`);
+                });
+            }
+            if (allLocked.length > 0) {
+                console.log(`\n  🔒 All Locked Skipped (${allLocked.length}):`);
+                allLocked.forEach((l, idx) => {
+                    console.log(`     ${idx + 1}. [Meet ${l.meetId}] "${l.lifter_name}" (DB Result #${l.db_result_id}, Lifter #${l.db_lifter_id}, ${l.weight_class})`);
+                });
+            }
+        }
         console.log('='.repeat(80));
 
         return batchSummary;
