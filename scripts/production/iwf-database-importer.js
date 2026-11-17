@@ -74,10 +74,8 @@ async function runScraper(eventId, year, eventDate, endpoint, targetUrl = null, 
     const scraper = require('./iwf-results-scraper');
 
     try {
-        // Initialize browser unless reusing an active batch session
-        if (!reuseBrowser) {
-            await scraper.initBrowser();
-        }
+        // Initialize browser (no-op if already open in a shared/batch session)
+        await scraper.initBrowser();
 
         // Scrape event results
         const result = await scraper.scrapeEventResults(eventId, year, eventDate, endpoint, targetUrl);
