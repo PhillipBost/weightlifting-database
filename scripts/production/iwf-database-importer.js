@@ -250,11 +250,17 @@ async function resolveIwfIdConflictViaBioPages(ath, match, scNormName, existingM
         match.iwf_lifters?.athlete_name &&
         scNormName.toLowerCase() === match.iwf_lifters.athlete_name.trim().toLowerCase()
     );
+    const sTokens = tokenizeName(scNormName);
+    const dTokens = tokenizeName(match.iwf_lifters?.athlete_name);
+    const [shorterToks, longerToks] = sTokens.length <= dTokens.length ? [sTokens, dTokens] : [dTokens, sTokens];
+    const isTokenSubset = shorterToks.length >= 2 && shorterToks.every(t => longerToks.some(lt => isFuzzyTokenMatch(t, lt)));
+    const hasPlaceholderDob = Boolean((sDob && sDob.endsWith('-01-01')) || (dDob && dDob.endsWith('-01-01')));
+    const allowYearMismatchReview = exactNameMatch || (isTokenSubset && ((sYear && dYear && Math.abs(sYear - dYear) <= 2) || hasPlaceholderDob));
 
-    // Hard mismatch if gender or country disagrees, or if birth year disagrees without an exact name match
+    // Hard mismatch if gender or country disagrees, or if birth year disagrees without exact/subset review match
     if ((sGender && dGender && sGender !== dGender) ||
         (sCountry && dCountry && sCountry !== dCountry) ||
-        (sYear && dYear && sYear !== dYear && !exactNameMatch)) {
+        (sYear && dYear && sYear !== dYear && !allowYearMismatchReview)) {
         console.log(`     ❌ Bio verification MISMATCH — treating as distinct athletes (no merge, no overwrite).`);
         return { resolved: false, action: 'MISMATCH' };
     }
@@ -263,13 +269,11 @@ async function resolveIwfIdConflictViaBioPages(ath, match, scNormName, existingM
     const dobConfirmed = Boolean(sDob && dDob && sDob === dDob);
 
     if (!dobConfirmed) {
-        const sTokens = tokenizeName(scNormName);
-        const dTokens = tokenizeName(match.iwf_lifters?.athlete_name);
         const overlapCount = sTokens.filter(t => dTokens.some(dt => isFuzzyTokenMatch(t, dt))).length;
-        const nameSimilar = exactNameMatch || overlapCount >= 2;
+        const nameSimilar = exactNameMatch || isTokenSubset || overlapCount >= 2;
         const yearMatches = Boolean(sYear && dYear && sYear === dYear);
 
-        if (!nameSimilar || (!yearMatches && !exactNameMatch)) {
+        if (!nameSimilar || (!yearMatches && !allowYearMismatchReview)) {
             console.log(`     ❌ Bio verification inconclusive and insufficient name/birth-year match — skipping.`);
             return { resolved: false, action: 'MISMATCH' };
         }
