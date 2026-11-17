@@ -365,15 +365,47 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                 const dbResultName = (match.lifter_name || '').trim();
 
                 const lifterNameDiffers = scNormName && dbLifterName && scNormName.toLowerCase() !== dbLifterName.toLowerCase();
-                const resultNameDiffers = scNormName && dbResultName && scNormName.toLowerCase() !== dbResultName.toLowerCase();
+                const currentResultDiffers = scNormName && dbResultName && scNormName.toLowerCase() !== dbResultName.toLowerCase();
 
-                if (!lifterNameDiffers && !resultNameDiffers) continue;
+                // Check all non-locked historical iwf_meet_results rows for this db_lifter_id
+                let mismatchedResultIds = [];
+                if (match.db_lifter_id && scNormName) {
+                    const { data: allLifterResults, error: histErr } = await config.supabaseIWF
+                        .from('iwf_meet_results')
+                        .select('db_result_id, lifter_name')
+                        .eq('db_lifter_id', match.db_lifter_id)
+                        .or('manual_override.is.null,manual_override.eq.false');
+                    if (histErr) {
+                        console.warn(`    ⚠️ Failed checking historical results for IWF[${match.db_lifter_id}]: ${histErr.message}`);
+                        if (currentResultDiffers && match.db_result_id) {
+                            mismatchedResultIds = [match.db_result_id];
+                        }
+                    } else {
+                        mismatchedResultIds = (allLifterResults || [])
+                            .filter(r => (r.lifter_name || '').trim().toLowerCase() !== scNormName.toLowerCase())
+                            .map(r => r.db_result_id);
+                    }
+                } else if (currentResultDiffers && match.db_result_id) {
+                    mismatchedResultIds = [match.db_result_id];
+                }
 
-                const diffs = [];
-                if (lifterNameDiffers) diffs.push(`iwf_lifters: "${dbLifterName}" -> "${scNormName}"`);
-                if (resultNameDiffers) diffs.push(`iwf_meet_results: "${dbResultName}" -> "${scNormName}"`);
+                if (!lifterNameDiffers && mismatchedResultIds.length === 0) continue;
+
+                const actionTag = options.dryRun ? '(would update)' : '(updated)';
+                const idxLabel = updatedAthletes.length + 1;
+                console.log(`\n  [${idxLabel}] ${ath.weight_class || 'N/A'} — Scraped: "${ath.name}"`);
+                if (lifterNameDiffers) {
+                    console.log(`      Lifter profile (iwf_lifters #${match.db_lifter_id}):  "${dbLifterName}" -> "${scNormName}" ${actionTag}`);
+                } else {
+                    console.log(`      Lifter profile (iwf_lifters #${match.db_lifter_id}):  Already up to date`);
+                }
+                if (mismatchedResultIds.length > 0) {
+                    console.log(`      Meet results (iwf_meet_results):       ${mismatchedResultIds.length} row(s) -> "${scNormName}" ${actionTag}`);
+                } else {
+                    console.log(`      Meet results (iwf_meet_results):       Already up to date`);
+                }
+
                 const oldDisplay = lifterNameDiffers ? dbLifterName : dbResultName;
-                console.log(`  🔄 [Name Sync]${options.dryRun ? ' [DRY RUN]' : ''} IWF[${match.db_lifter_id}] (Result ${match.db_result_id}, ${ath.weight_class}, raw="${ath.name}"): ${diffs.join(' | ')}`);
 
                 if (!options.dryRun) {
                     if (lifterNameDiffers && match.db_lifter_id) {
@@ -386,13 +418,13 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                             continue;
                         }
                     }
-                    if (resultNameDiffers && match.db_result_id) {
+                    if (mismatchedResultIds.length > 0) {
                         const { error: resErr } = await config.supabaseIWF
                             .from('iwf_meet_results')
                             .update({ lifter_name: scNormName })
-                            .eq('db_result_id', match.db_result_id);
+                            .in('db_result_id', mismatchedResultIds);
                         if (resErr) {
-                            console.error(`    ❌ Failed updating iwf_meet_results[${match.db_result_id}]: ${resErr.message}`);
+                            console.error(`    ❌ Failed updating iwf_meet_results for IWF[${match.db_lifter_id}]: ${resErr.message}`);
                             continue;
                         }
                     }
@@ -401,6 +433,7 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                 updatedAthletes.push({
                     db_lifter_id: match.db_lifter_id,
                     db_result_id: match.db_result_id,
+                    updated_result_rows: mismatchedResultIds.length,
                     weight_class: ath.weight_class,
                     old_name: oldDisplay,
                     new_name: scNormName
