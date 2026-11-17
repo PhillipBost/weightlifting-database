@@ -390,7 +390,7 @@ async function resolveIwfIdConflictViaBioPages(ath, match, scNormName, existingM
  * Scan other public.iwf_lifters records in the same (country_code, birth_year)
  * for cross-meet IWF-to-IWF duplicate profiles not yet linked in athlete_aliases.
  */
-async function checkCrossMeetIwfDuplicates(ath, match, scNormName, iwfLiftersByCountryYear, alreadyLinkedPairs, options = {}) {
+async function checkCrossMeetIwfDuplicates(ath, match, scNormName, iwfLiftersByCountryYear, alreadyLinkedPairs, options = {}, existingIwfQueueMap = null) {
     const scraper = require('./iwf-results-scraper');
     const dbLifterId = match.db_lifter_id;
     const dbIwfId = match.iwf_lifters?.iwf_lifter_id || null;
@@ -434,6 +434,26 @@ async function checkCrossMeetIwfDuplicates(ath, match, scNormName, iwfLiftersByC
         if (overlap < 2) continue;
 
         alreadyLinkedPairs.add(pairKey);
+
+        // Skip bio-page scraping if this pair is already in admin_review_queue (PENDING, APPROVED, or REJECTED)
+        if (existingIwfQueueMap) {
+            const candEntityId = other.iwf_lifter_id || other.db_lifter_id;
+            const queued = existingIwfQueueMap.get(`db:${pairKey}`)
+                || existingIwfQueueMap.get(`ent:${dbLifterId}->${candEntityId}`)
+                || existingIwfQueueMap.get(`ent:${other.db_lifter_id}->${dbIwfId || dbLifterId}`);
+            if (queued) {
+                console.log(`  ⏭️  Skipping Cross-Meet IWF ↔ IWF Candidate #${dbLifterId} vs #${other.db_lifter_id} — already in admin_review_queue (ID: ${queued.id}, status: ${queued.status})`);
+                alreadyInQueue.push({
+                    name: scNormName,
+                    db_lifter_id: dbLifterId,
+                    db_iwf_id: dbIwfId,
+                    scraped_iwf_id: candEntityId,
+                    reason: `Already in admin_review_queue (${queued.status})`,
+                    status: queued.status
+                });
+                continue;
+            }
+        }
 
         const myBioUrl = normalizeBioUrl(ath.iwf_athlete_url || match.iwf_lifters?.iwf_athlete_url);
         const otherBioUrl = normalizeBioUrl(other.iwf_athlete_url);
@@ -775,6 +795,33 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                 page++;
             }
 
+            // Preload existing admin_review_queue (category = 'iwf_duplicate') to skip REJECTED/APPROVED/PENDING pairs before bio scraping
+            const existingIwfQueueMap = new Map();
+            let qPage = 0;
+            while (true) {
+                const { data: qRows, error: qFetchErr } = await config.supabaseIWF
+                    .from('admin_review_queue')
+                    .select('id, status, primary_entity_id, candidate_entity_id, evidence')
+                    .eq('category', 'iwf_duplicate')
+                    .range(qPage * 1000, (qPage + 1) * 1000 - 1);
+                if (qFetchErr || !qRows || qRows.length === 0) break;
+                for (const qr of qRows) {
+                    const info = { id: qr.id, status: qr.status };
+                    if (qr.primary_entity_id && qr.candidate_entity_id) {
+                        existingIwfQueueMap.set(`ent:${qr.primary_entity_id}->${qr.candidate_entity_id}`, info);
+                    }
+                    const otherDbId = qr.evidence?.other_db_lifter_id;
+                    if (qr.primary_entity_id && otherDbId) {
+                        const p1 = Number(qr.primary_entity_id);
+                        const p2 = Number(otherDbId);
+                        const sortedKey = p1 < p2 ? `${p1}-${p2}` : `${p2}-${p1}`;
+                        existingIwfQueueMap.set(`db:${sortedKey}`, info);
+                    }
+                }
+                if (qRows.length < 1000) break;
+                qPage++;
+            }
+
             const targetCountries = [...new Set([
                 ...allAthletes.map(a => (a.nation || '').trim().toUpperCase()),
                 ...existingDbScorecards.map(r => (r.country_code || '').trim().toUpperCase())
@@ -900,7 +947,7 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
 
                 if (!lifterNameDiffers && mismatchedResultIds.length === 0) {
                     unchangedCount++;
-                    const crossRes = await checkCrossMeetIwfDuplicates(ath, match, scNormName, iwfLiftersByCountryYear, alreadyLinkedPairs, options);
+                    const crossRes = await checkCrossMeetIwfDuplicates(ath, match, scNormName, iwfLiftersByCountryYear, alreadyLinkedPairs, options, existingIwfQueueMap);
                     confirmedSameLinks += crossRes.links;
                     distinctMismatches += crossRes.mismatches;
                     flaggedForReview.push(...crossRes.reviews);
@@ -962,7 +1009,7 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                     new_name: scNormName
                 });
 
-                const crossRes = await checkCrossMeetIwfDuplicates(ath, match, scNormName, iwfLiftersByCountryYear, alreadyLinkedPairs, options);
+                const crossRes = await checkCrossMeetIwfDuplicates(ath, match, scNormName, iwfLiftersByCountryYear, alreadyLinkedPairs, options, existingIwfQueueMap);
                 confirmedSameLinks += crossRes.links;
                 distinctMismatches += crossRes.mismatches;
                 flaggedForReview.push(...crossRes.reviews);
