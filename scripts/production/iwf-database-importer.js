@@ -351,6 +351,8 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
 
             const updatedAthletes = [];
             let lockedSkipped = 0;
+            let failedUpdates = 0;
+            let candidateCount = 0;
 
             for (const ath of allAthletes) {
                 const match = findMatchingDbScorecard(ath, existingDbScorecards);
@@ -391,8 +393,8 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
 
                 if (!lifterNameDiffers && mismatchedResultIds.length === 0) continue;
 
-                const actionTag = options.dryRun ? '(would update)' : '(updated)';
-                const idxLabel = updatedAthletes.length + 1;
+                const actionTag = options.dryRun ? '(would update)' : '(pending update)';
+                const idxLabel = ++candidateCount;
                 console.log(`\n  [${idxLabel}] ${ath.weight_class || 'N/A'} — Scraped: "${ath.name}"`);
                 if (lifterNameDiffers) {
                     console.log(`      Lifter profile (iwf_lifters #${match.db_lifter_id}):  "${dbLifterName}" -> "${scNormName}" ${actionTag}`);
@@ -414,6 +416,8 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                             .update({ athlete_name: scNormName })
                             .eq('db_lifter_id', match.db_lifter_id);
                         if (lifterErr) {
+                            failedUpdates++;
+                            summary.errors.push(`iwf_lifters[${match.db_lifter_id}]: ${lifterErr.message}`);
                             console.error(`    ❌ Failed updating iwf_lifters[${match.db_lifter_id}]: ${lifterErr.message}`);
                             continue;
                         }
@@ -424,10 +428,13 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                             .update({ lifter_name: scNormName })
                             .in('db_result_id', mismatchedResultIds);
                         if (resErr) {
+                            failedUpdates++;
+                            summary.errors.push(`iwf_meet_results[${match.db_lifter_id}]: ${resErr.message}`);
                             console.error(`    ❌ Failed updating iwf_meet_results for IWF[${match.db_lifter_id}]: ${resErr.message}`);
                             continue;
                         }
                     }
+                    console.log(`      ✅ Updated in database`);
                 }
 
                 updatedAthletes.push({
@@ -440,16 +447,17 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                 });
             }
 
-            console.log(`\n✓ Name sync complete: ${updatedAthletes.length} athlete name(s) ${options.dryRun ? 'would be updated' : 'updated'} (${meetTotalAthletes} total scraped, ${lockedSkipped} locked skipped).`);
+            console.log(`\n${failedUpdates > 0 ? '⚠️' : '✓'} Name sync complete: ${updatedAthletes.length} athlete name(s) ${options.dryRun ? 'would be updated' : 'updated'}, ${failedUpdates} failed (${meetTotalAthletes} total scraped, ${lockedSkipped} locked skipped).`);
 
             summary.meet = existingMeet || meetMetadata;
-            summary.success = true;
+            summary.success = failedUpdates === 0;
             summary.importStats = {
                 syncNames: true,
                 dryRun: !!options.dryRun,
                 iwf_meet_id: String(eventId),
                 totalAthletes: meetTotalAthletes,
                 nameUpdatesCount: updatedAthletes.length,
+                failedUpdates,
                 lockedSkipped,
                 updatedAthletes
             };
