@@ -655,6 +655,7 @@ async function generateAthlete(params, externalClient = null) {
                             'id', r.db_result_id,
                             'db_lifter_id', r.db_lifter_id,
                             'iwf_lifter_id', il.iwf_lifter_id,
+                            'lifter_name', r.lifter_name,
                             'meet_id', r.db_meet_id,
                             'iwf_meet_id', m.iwf_meet_id,
                             'date', r.date,
@@ -862,12 +863,14 @@ async function generateAthlete(params, externalClient = null) {
             row.internal_id ? { type: 'usaw', url: `https://usaweightlifting.sport80.com/public/rankings/member/${row.internal_id}` } : null
         ].filter(Boolean);
 
-        const athleteName = row.usaw_athlete_name || row.iwf_athlete_name || row.owlcms_athlete_name;
+        const latestIwfLifterName = iwfRes.find(r => r.lifter_name && r.lifter_name.trim())?.lifter_name?.trim() || null;
+        const canonicalIwfName = latestIwfLifterName || row.iwf_athlete_name;
+        const athleteName = row.usaw_athlete_name || canonicalIwfName || row.owlcms_athlete_name;
 
         // Aggregate distinct historical names that diverge from the canonical athleteName
         const canonicalNorm = normalizeName(athleteName);
         const nameMap = new Map();
-        for (const r of usawRes) {
+        for (const r of [...usawRes, ...iwfRes]) {
             const rawName = (r.lifter_name || '').trim();
             if (!rawName) continue;
             const norm = normalizeName(rawName);
@@ -914,7 +917,7 @@ async function generateAthlete(params, externalClient = null) {
             db_lifter_id: row.prime_iwf_db_id,
             linked_owlcms_id: row.prime_owlcms_id,
             usaw_athlete_name: row.usaw_athlete_name,
-            iwf_athlete_name: row.iwf_athlete_name,
+            iwf_athlete_name: canonicalIwfName,
             owlcms_athlete_name: row.owlcms_athlete_name,
             athlete_name: athleteName,
             birthYear,
