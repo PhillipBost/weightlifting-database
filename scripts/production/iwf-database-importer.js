@@ -166,6 +166,8 @@ async function resolveIwfIdConflictViaBioPages(ath, match, scNormName, existingM
 
     const sDob = scrapedBio.birth_date || null;
     const dDob = dbBio.birth_date || null;
+    const sYear = (sDob ? parseInt(sDob.slice(0, 4), 10) : null) || ath.birth_year || null;
+    const dYear = (dDob ? parseInt(dDob.slice(0, 4), 10) : null) || match.birth_year || null;
     const sGender = scrapedBio.gender || ath.gender || null;
     const dGender = dbBio.gender || null;
     const sCountry = scrapedBio.country_code || ath.nation || null;
@@ -174,37 +176,67 @@ async function resolveIwfIdConflictViaBioPages(ath, match, scNormName, existingM
     console.log(`     Scraped Bio (ID ${ath.iwf_lifter_id}): DOB=${sDob || 'unknown'}, Gender=${sGender || '?'}, Country=${sCountry || '?'}`);
     console.log(`     DB Bio      (ID ${dbIwfId}): DOB=${dDob || 'unknown'}, Gender=${dGender || '?'}, Country=${dCountry || '?'}`);
 
-    // Conflict if exact DOBs or genders disagree
-    if ((sDob && dDob && sDob !== dDob) || (sGender && dGender && sGender !== dGender)) {
+    // Hard mismatch if gender, country, or birth year disagrees
+    if ((sGender && dGender && sGender !== dGender) ||
+        (sCountry && dCountry && sCountry !== dCountry) ||
+        (sYear && dYear && sYear !== dYear)) {
         console.log(`     ❌ Bio verification MISMATCH — treating as distinct athletes (no merge, no overwrite).`);
         return { resolved: false, action: 'MISMATCH' };
     }
 
-    // Confirmed same person if both exact YYYY-MM-DD DOBs match (and country doesn't diverge)
+    // Confirmed same person if both exact YYYY-MM-DD DOBs match
     const dobConfirmed = Boolean(sDob && dDob && sDob === dDob);
-    const countryOk = !sCountry || !dCountry || sCountry === dCountry;
 
-    if (!dobConfirmed || !countryOk) {
-        console.log(`     ⚠️ Bio pages could not definitively confirm identity — staging to admin_review_queue.`);
+    if (!dobConfirmed) {
+        const sTokens = tokenizeName(scNormName);
+        const dTokens = tokenizeName(match.iwf_lifters?.athlete_name);
+        const overlapCount = sTokens.filter(t => dTokens.includes(t)).length;
+        const nameSimilar = (scNormName && match.iwf_lifters?.athlete_name &&
+            scNormName.toLowerCase() === match.iwf_lifters.athlete_name.toLowerCase()) || overlapCount >= 2;
+
+        if (!nameSimilar || !sYear || !dYear || sYear !== dYear) {
+            console.log(`     ❌ Bio verification inconclusive and insufficient name/birth-year match — skipping.`);
+            return { resolved: false, action: 'MISMATCH' };
+        }
+
+        const reviewReason = (sDob && dDob)
+            ? `Same name & birth year (${sYear}), DOB differs (${sDob} vs ${dDob}; potential placeholder, swapped month/day, or typo)`
+            : `Same name & birth year (${sYear}), bio DOB incomplete (${sDob || 'unknown'} vs ${dDob || 'unknown'})`;
+
+        console.log(`     ⚠️ Flagged for review (IWF ↔ IWF): ${reviewReason}`);
         if (!options.dryRun) {
-            await config.supabaseIWF.from('admin_review_queue').insert({
-                category: 'iwf_duplicate',
-                status: 'PENDING',
-                title: `IWF ID Conflict: #${dbLifterId} (IWF ${dbIwfId}) vs IWF ${ath.iwf_lifter_id} ("${scNormName}")`,
-                primary_entity_type: 'iwf_lifters',
-                primary_entity_id: dbLifterId,
-                candidate_entity_type: 'iwf_lifters',
-                candidate_entity_id: ath.iwf_lifter_id,
-                confidence_score: 70,
-                evidence: {
-                    scraped_iwf_id: ath.iwf_lifter_id,
-                    scraped_name: scNormName,
-                    scraped_bio: scrapedBio,
-                    db_iwf_id: dbIwfId,
-                    db_name: match.iwf_lifters?.athlete_name,
-                    db_bio: dbBio
-                }
-            }).catch(() => {});
+            const { data: existingQ } = await config.supabaseIWF
+                .from('admin_review_queue')
+                .select('id')
+                .eq('category', 'iwf_duplicate')
+                .eq('primary_entity_id', dbLifterId)
+                .eq('candidate_entity_id', ath.iwf_lifter_id)
+                .limit(1);
+
+            if (!existingQ || existingQ.length === 0) {
+                await config.supabaseIWF.from('admin_review_queue').insert({
+                    category: 'iwf_duplicate',
+                    status: 'PENDING',
+                    title: `Potential IWF ↔ IWF Match: #${dbLifterId} (IWF ${dbIwfId}) vs IWF ${ath.iwf_lifter_id} ("${scNormName}")`,
+                    primary_entity_type: 'iwf_lifters',
+                    primary_entity_id: dbLifterId,
+                    candidate_entity_type: 'iwf_lifters',
+                    candidate_entity_id: ath.iwf_lifter_id,
+                    confidence_score: 75,
+                    evidence: {
+                        federations: ['IWF', 'IWF'],
+                        reason: reviewReason,
+                        scraped_iwf_id: ath.iwf_lifter_id,
+                        scraped_name: scNormName,
+                        scraped_bio: scrapedBio,
+                        db_iwf_id: dbIwfId,
+                        db_name: match.iwf_lifters?.athlete_name,
+                        db_bio: dbBio
+                    }
+                }).catch(() => {});
+            } else {
+                console.log(`     ✓ Already staged in admin_review_queue.`);
+            }
         }
         return { resolved: false, action: 'REVIEW_STAGED' };
     }
