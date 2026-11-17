@@ -148,6 +148,7 @@ async function initBrowser() {
 
         await page.setUserAgent(config.BROWSER.userAgent);
         await page.setViewport(config.BROWSER.viewport);
+        await page.setCacheEnabled(false);
 
         log('Browser initialized successfully');
     })();
@@ -1152,10 +1153,6 @@ async function scrapeEventResults(eventId, year = null, eventDate = null, endpoi
 
         log(`Event URL: ${eventUrl}`);
         log(`Endpoint: ${result.endpoint || 'UNKNOWN'}`);
-
-        // Disable browser disk/memory cache without injecting custom CORS-breaking HTTP headers
-        await page.setCacheEnabled(false);
-        log(`Browser cache disabled for event ${eventId}`);
 
         // Navigate to event detail page with retry
         await retryOperation(async () => {
