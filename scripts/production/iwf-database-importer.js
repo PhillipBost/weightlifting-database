@@ -214,7 +214,7 @@ async function resolveIwfIdConflictViaBioPages(ath, match, scNormName, existingM
                 .limit(1);
 
             if (!existingQ || existingQ.length === 0) {
-                await config.supabaseIWF.from('admin_review_queue').insert({
+                const { error: qErr } = await config.supabaseIWF.from('admin_review_queue').insert({
                     category: 'iwf_duplicate',
                     status: 'PENDING',
                     title: `Potential IWF ↔ IWF Match: #${dbLifterId} (IWF ${dbIwfId}) vs IWF ${ath.iwf_lifter_id} ("${scNormName}")`,
@@ -233,7 +233,10 @@ async function resolveIwfIdConflictViaBioPages(ath, match, scNormName, existingM
                         db_name: match.iwf_lifters?.athlete_name,
                         db_bio: dbBio
                     }
-                }).catch(() => {});
+                });
+                if (qErr) {
+                    console.warn(`     ⚠️ Failed staging to admin_review_queue: ${qErr.message}`);
+                }
             } else {
                 console.log(`     ✓ Already staged in admin_review_queue.`);
             }
@@ -268,15 +271,41 @@ async function resolveIwfIdConflictViaBioPages(ath, match, scNormName, existingM
         return { resolved: true, action: 'DRY_RUN_LINKED', newName: scNormName };
     }
 
-    // 1. Find or create the second iwf_lifters row for ath.iwf_lifter_id
-    const secondLifter = await lifterManager.findOrCreateLifter(
-        ath.name,
-        ath.nation || sCountry,
-        ath.birth_year || scrapedBio.birth_year,
-        sGender,
-        ath.iwf_lifter_id,
-        scrapedBioUrl
-    );
+    // 1. Find or create the second iwf_lifters row strictly by ath.iwf_lifter_id
+    // (Do NOT call findOrCreateLifter here, as its Step 2 name/birth_year fallback would return dbLifterId)
+    let { data: secondLifter, error: secondLookupErr } = await config.supabaseIWF
+        .from('iwf_lifters')
+        .select('*')
+        .eq('iwf_lifter_id', ath.iwf_lifter_id)
+        .maybeSingle();
+
+    if (secondLookupErr) {
+        throw new Error(`Failed querying second iwf_lifters record for IWF ID ${ath.iwf_lifter_id}: ${secondLookupErr.message}`);
+    }
+
+    if (!secondLifter) {
+        const secCountry = ath.nation || sCountry || null;
+        const { data: insertedLifter, error: insertSecErr } = await config.supabaseIWF
+            .from('iwf_lifters')
+            .insert([{
+                athlete_name: scNormName,
+                gender: sGender || null,
+                birth_year: ath.birth_year || scrapedBio.birth_year || null,
+                country_code: secCountry,
+                country_name: secCountry ? lifterManager.mapCountryCodeToName(secCountry) : null,
+                iwf_lifter_id: ath.iwf_lifter_id,
+                iwf_athlete_url: scrapedBioUrl || null
+            }])
+            .select('*')
+            .single();
+
+        if (insertSecErr) {
+            throw new Error(`Failed creating second iwf_lifters record for IWF ID ${ath.iwf_lifter_id}: ${insertSecErr.message}`);
+        }
+        secondLifter = insertedLifter;
+        console.log(`        ✓ Created second iwf_lifters #${secondLifter.db_lifter_id} for IWF ID ${ath.iwf_lifter_id}`);
+    }
+
     if (!secondLifter || !secondLifter.db_lifter_id) {
         throw new Error(`Failed to resolve second iwf_lifters record for IWF ID ${ath.iwf_lifter_id}`);
     }
