@@ -190,10 +190,16 @@ async function resolveIwfIdConflictViaBioPages(ath, match, scNormName, existingM
     console.log(`     Scraped Bio (ID ${ath.iwf_lifter_id}): DOB=${sDob || 'unknown'}, Gender=${sGender || '?'}, Country=${sCountry || '?'}`);
     console.log(`     DB Bio      (ID ${dbIwfId}): DOB=${dDob || 'unknown'}, Gender=${dGender || '?'}, Country=${dCountry || '?'}`);
 
-    // Hard mismatch if gender, country, or birth year disagrees
+    const exactNameMatch = Boolean(
+        scNormName &&
+        match.iwf_lifters?.athlete_name &&
+        scNormName.toLowerCase() === match.iwf_lifters.athlete_name.trim().toLowerCase()
+    );
+
+    // Hard mismatch if gender or country disagrees, or if birth year disagrees without an exact name match
     if ((sGender && dGender && sGender !== dGender) ||
         (sCountry && dCountry && sCountry !== dCountry) ||
-        (sYear && dYear && sYear !== dYear)) {
+        (sYear && dYear && sYear !== dYear && !exactNameMatch)) {
         console.log(`     ❌ Bio verification MISMATCH — treating as distinct athletes (no merge, no overwrite).`);
         return { resolved: false, action: 'MISMATCH' };
     }
@@ -205,17 +211,19 @@ async function resolveIwfIdConflictViaBioPages(ath, match, scNormName, existingM
         const sTokens = tokenizeName(scNormName);
         const dTokens = tokenizeName(match.iwf_lifters?.athlete_name);
         const overlapCount = sTokens.filter(t => dTokens.includes(t)).length;
-        const nameSimilar = (scNormName && match.iwf_lifters?.athlete_name &&
-            scNormName.toLowerCase() === match.iwf_lifters.athlete_name.toLowerCase()) || overlapCount >= 2;
+        const nameSimilar = exactNameMatch || overlapCount >= 2;
+        const yearMatches = Boolean(sYear && dYear && sYear === dYear);
 
-        if (!nameSimilar || !sYear || !dYear || sYear !== dYear) {
+        if (!nameSimilar || (!yearMatches && !exactNameMatch)) {
             console.log(`     ❌ Bio verification inconclusive and insufficient name/birth-year match — skipping.`);
             return { resolved: false, action: 'MISMATCH' };
         }
 
-        const reviewReason = (sDob && dDob)
-            ? `Same name & birth year (${sYear}), DOB differs (${sDob} vs ${dDob}; potential placeholder, swapped month/day, or typo)`
-            : `Same name & birth year (${sYear}), bio DOB incomplete (${sDob || 'unknown'} vs ${dDob || 'unknown'})`;
+        const reviewReason = !yearMatches
+            ? `Fractured IWF profile candidate: exact same name & country (${sCountry || dCountry || '?'}), DOB differs (${sDob || sYear || 'unknown'} vs ${dDob || dYear || 'unknown'})`
+            : (sDob && dDob)
+                ? `Same name & birth year (${sYear}), DOB differs (${sDob} vs ${dDob}; potential placeholder, swapped month/day, or typo)`
+                : `Same name & birth year (${sYear}), bio DOB incomplete (${sDob || 'unknown'} vs ${dDob || 'unknown'})`;
 
         console.log(`     ⚠️ Flagged for review (IWF ↔ IWF): ${reviewReason}`);
         if (!options.dryRun) {
