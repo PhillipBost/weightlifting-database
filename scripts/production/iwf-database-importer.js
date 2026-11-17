@@ -111,6 +111,32 @@ function tokenizeName(str) {
         .filter(Boolean);
 }
 
+function levenshteinDistance(a, b) {
+    if (a === b) return 0;
+    if (!a.length) return b.length;
+    if (!b.length) return a.length;
+    const prev = Array.from({ length: b.length + 1 }, (_, i) => i);
+    for (let i = 1; i <= a.length; i++) {
+        let curr = [i];
+        for (let j = 1; j <= b.length; j++) {
+            const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+            curr[j] = Math.min(curr[j - 1] + 1, prev[j] + 1, prev[j - 1] + cost);
+        }
+        for (let j = 0; j <= b.length; j++) prev[j] = curr[j];
+    }
+    return prev[b.length];
+}
+
+function isFuzzyTokenMatch(tokA, tokB) {
+    if (tokA === tokB) return true;
+    const maxLen = Math.max(tokA.length, tokB.length);
+    const minLen = Math.min(tokA.length, tokB.length);
+    if (minLen < 4) return false;
+    const maxDist = maxLen >= 8 ? 2 : 1;
+    if (Math.abs(tokA.length - tokB.length) > maxDist) return false;
+    return levenshteinDistance(tokA, tokB) <= maxDist;
+}
+
 function findMatchingDbScorecard(sc, existingDbScorecards) {
     if (!existingDbScorecards || existingDbScorecards.length === 0) return null;
 
@@ -148,15 +174,15 @@ function findMatchingDbScorecard(sc, existingDbScorecards) {
         }
     }
 
-    // Priority 4: Unique >= 2 distinct token overlap with matching country_code + birth_year
+    // Priority 4: Unique >= 2 matching tokens (allowing 1-2 char typos) with matching country_code + birth_year
     if (!match && scTokens.length >= 2 && sc.birth_year) {
         const scNation = (sc.nation || '').trim().toUpperCase();
         const uniqueScTokens = [...new Set(scTokens)];
         const candidates = sameWcRows.filter(r => {
             if (scNation && r.country_code && r.country_code.trim().toUpperCase() !== scNation) return false;
             if (!r.birth_year || Number(r.birth_year) !== Number(sc.birth_year)) return false;
-            const rTokenSet = new Set(tokenizeName(r.lifter_name));
-            const overlap = uniqueScTokens.filter(t => rTokenSet.has(t)).length;
+            const rTokens = [...new Set(tokenizeName(r.lifter_name))];
+            const overlap = uniqueScTokens.filter(t => rTokens.some(rt => isFuzzyTokenMatch(t, rt))).length;
             return overlap >= 2;
         });
         if (candidates.length === 1) {
@@ -226,7 +252,7 @@ async function resolveIwfIdConflictViaBioPages(ath, match, scNormName, existingM
     if (!dobConfirmed) {
         const sTokens = tokenizeName(scNormName);
         const dTokens = tokenizeName(match.iwf_lifters?.athlete_name);
-        const overlapCount = sTokens.filter(t => dTokens.includes(t)).length;
+        const overlapCount = sTokens.filter(t => dTokens.some(dt => isFuzzyTokenMatch(t, dt))).length;
         const nameSimilar = exactNameMatch || overlapCount >= 2;
         const yearMatches = Boolean(sYear && dYear && sYear === dYear);
 
