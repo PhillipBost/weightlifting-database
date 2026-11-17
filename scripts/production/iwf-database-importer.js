@@ -214,7 +214,7 @@ async function resolveIwfIdConflictViaBioPages(ath, match, scNormName, existingM
                 .limit(1);
 
             if (!existingQ || existingQ.length === 0) {
-                const { error: qErr } = await config.supabaseIWF.from('admin_review_queue').insert({
+                const { data: insertedQ, error: qErr } = await config.supabaseIWF.from('admin_review_queue').insert({
                     category: 'iwf_duplicate',
                     status: 'PENDING',
                     title: `Potential IWF ↔ IWF Match: #${dbLifterId} (IWF ${dbIwfId}) vs IWF ${ath.iwf_lifter_id} ("${scNormName}")`,
@@ -233,15 +233,17 @@ async function resolveIwfIdConflictViaBioPages(ath, match, scNormName, existingM
                         db_name: match.iwf_lifters?.athlete_name,
                         db_bio: dbBio
                     }
-                });
+                }).select('id').single();
                 if (qErr) {
                     console.warn(`     ⚠️ Failed staging to admin_review_queue: ${qErr.message}`);
+                } else {
+                    console.log(`     ✓ Staged to admin_review_queue (category: iwf_duplicate, ID: ${insertedQ?.id || 'N/A'}).`);
                 }
             } else {
-                console.log(`     ✓ Already staged in admin_review_queue.`);
+                console.log(`     ✓ Already staged in admin_review_queue (ID: ${existingQ[0].id}).`);
             }
         }
-        return { resolved: false, action: 'REVIEW_STAGED' };
+        return { resolved: false, action: 'REVIEW_STAGED', reason: reviewReason };
     }
 
     // Determine whether this meet is the most recent meet for this athlete
@@ -567,13 +569,22 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
             const allAthletes = [...allMens, ...allWomens];
 
             const updatedAthletes = [];
+            const flaggedForReview = [];
+            let unmatchedCount = 0;
+            let unchangedCount = 0;
             let lockedSkipped = 0;
             let failedUpdates = 0;
             let candidateCount = 0;
+            let directNameUpdates = 0;
+            let confirmedSameLinks = 0;
+            let distinctMismatches = 0;
 
             for (const ath of allAthletes) {
                 const match = findMatchingDbScorecard(ath, existingDbScorecards);
-                if (!match) continue;
+                if (!match) {
+                    unmatchedCount++;
+                    continue;
+                }
                 if (match.manual_override === true) {
                     lockedSkipped++;
                     continue;
@@ -589,6 +600,7 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                     try {
                         const conflictRes = await resolveIwfIdConflictViaBioPages(ath, match, scNormName, existingMeet, options);
                         if (conflictRes.resolved) {
+                            confirmedSameLinks++;
                             updatedAthletes.push({
                                 db_lifter_id: match.db_lifter_id,
                                 second_db_lifter_id: conflictRes.secondDbLifterId || null,
@@ -598,6 +610,16 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                                 new_name: conflictRes.newName,
                                 resolution: conflictRes.action
                             });
+                        } else if (conflictRes.action === 'REVIEW_STAGED') {
+                            flaggedForReview.push({
+                                name: scNormName,
+                                db_lifter_id: match.db_lifter_id,
+                                db_iwf_id: match.iwf_lifters?.iwf_lifter_id,
+                                scraped_iwf_id: ath.iwf_lifter_id,
+                                reason: conflictRes.reason
+                            });
+                        } else {
+                            distinctMismatches++;
                         }
                     } catch (conflictErr) {
                         failedUpdates++;
@@ -632,7 +654,10 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                     mismatchedResultIds = [match.db_result_id];
                 }
 
-                if (!lifterNameDiffers && mismatchedResultIds.length === 0) continue;
+                if (!lifterNameDiffers && mismatchedResultIds.length === 0) {
+                    unchangedCount++;
+                    continue;
+                }
 
                 const actionTag = options.dryRun ? '(would update)' : '(pending update)';
                 const idxLabel = ++candidateCount;
@@ -678,6 +703,7 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                     console.log(`      ✅ Updated in database`);
                 }
 
+                directNameUpdates++;
                 updatedAthletes.push({
                     db_lifter_id: match.db_lifter_id,
                     db_result_id: match.db_result_id,
@@ -688,7 +714,27 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                 });
             }
 
-            console.log(`\n${failedUpdates > 0 ? '⚠️' : '✓'} Name sync complete: ${updatedAthletes.length} athlete name(s) ${options.dryRun ? 'would be updated' : 'updated'}, ${failedUpdates} failed (${meetTotalAthletes} total scraped, ${lockedSkipped} locked skipped).`);
+            const verb = options.dryRun ? 'would be ' : '';
+            console.log(`\n${'='.repeat(80)}`);
+            console.log(`${failedUpdates > 0 ? '⚠️' : '✓'} NAME SYNC SUMMARY${options.dryRun ? ' (DRY RUN)' : ''}`);
+            console.log('='.repeat(80));
+            console.log(`  Total scraped athletes:                ${meetTotalAthletes}`);
+            console.log(`  Left alone (already up to date):       ${unchangedCount}`);
+            console.log(`  Unmatched in meet database records:    ${unmatchedCount}`);
+            console.log(`  Locked skipped (manual_override):      ${lockedSkipped}`);
+            console.log(`  Direct name updates (${verb}applied):    ${directNameUpdates}`);
+            console.log(`  IWF ID conflicts investigated:         ${confirmedSameLinks + flaggedForReview.length + distinctMismatches}`);
+            console.log(`    - Confirmed same-athlete links:      ${confirmedSameLinks}`);
+            console.log(`    - Flagged for review (admin queue):  ${flaggedForReview.length}`);
+            console.log(`    - Determined distinct (mismatch):    ${distinctMismatches}`);
+            console.log(`  Failed updates:                        ${failedUpdates}`);
+            if (flaggedForReview.length > 0) {
+                console.log(`\n  📋 Flagged for Review (category = 'iwf_duplicate'):`);
+                flaggedForReview.forEach((f, idx) => {
+                    console.log(`     ${idx + 1}. "${f.name}" (DB #${f.db_lifter_id} / IWF ${f.db_iwf_id} vs IWF ${f.scraped_iwf_id}) — ${f.reason}`);
+                });
+            }
+            console.log('='.repeat(80));
 
             summary.meet = existingMeet || meetMetadata;
             summary.success = failedUpdates === 0;
@@ -697,10 +743,17 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                 dryRun: !!options.dryRun,
                 iwf_meet_id: String(eventId),
                 totalAthletes: meetTotalAthletes,
+                unchangedCount,
+                unmatchedCount,
+                lockedSkipped,
+                directNameUpdates,
+                confirmedSameLinks,
+                flaggedForReviewCount: flaggedForReview.length,
+                distinctMismatches,
                 nameUpdatesCount: updatedAthletes.length,
                 failedUpdates,
-                lockedSkipped,
-                updatedAthletes
+                updatedAthletes,
+                flaggedForReview
             };
             summary.executionTimeMs = Date.now() - startTime;
             console.log('__IWF_SUMMARY_JSON__:' + JSON.stringify(summary));
