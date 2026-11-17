@@ -369,8 +369,11 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
 
                 if (!lifterNameDiffers && !resultNameDiffers) continue;
 
-                const oldDisplay = dbLifterName || dbResultName;
-                console.log(`  🔄 [Name Sync]${options.dryRun ? ' [DRY RUN]' : ''} IWF[${match.db_lifter_id}] (Result ${match.db_result_id}, ${ath.weight_class}): "${oldDisplay}" -> "${scNormName}"`);
+                const diffs = [];
+                if (lifterNameDiffers) diffs.push(`iwf_lifters: "${dbLifterName}" -> "${scNormName}"`);
+                if (resultNameDiffers) diffs.push(`iwf_meet_results: "${dbResultName}" -> "${scNormName}"`);
+                const oldDisplay = lifterNameDiffers ? dbLifterName : dbResultName;
+                console.log(`  🔄 [Name Sync]${options.dryRun ? ' [DRY RUN]' : ''} IWF[${match.db_lifter_id}] (Result ${match.db_result_id}, ${ath.weight_class}, raw="${ath.name}"): ${diffs.join(' | ')}`);
 
                 if (!options.dryRun) {
                     if (lifterNameDiffers && match.db_lifter_id) {

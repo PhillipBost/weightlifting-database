@@ -288,8 +288,12 @@ function normalizeName(name) {
         trimmed = trimmed.replace(suffixPattern, ' ').trim();
     }
 
-    // Step 2: Remove any 3-letter country codes (leaked from extraction)
-    trimmed = trimmed.replace(/\s+([A-Z]{3})\s*(?:\([A-Z]{3}\))?(?=\s|$)/g, ' ').trim();
+    // Step 2: Remove trailing 3-letter country codes (leaked from extraction)
+    trimmed = trimmed.replace(/\s+(?:[A-Z]{3}\s+)?\([A-Z]{3}\)\s*$/, '').trim();
+    const trailingCodeMatch = trimmed.match(/\s+([A-Z]{3})$/);
+    if (trailingCodeMatch && mapCountryCodeToName(trailingCodeMatch[1])) {
+        trimmed = trimmed.slice(0, -trailingCodeMatch[0].length).trim();
+    }
 
     // Step 3: Split into parts
     const parts = trimmed.split(/\s+/).filter(p => p.length > 0);
