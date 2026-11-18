@@ -1204,7 +1204,7 @@ async function scrapeDivisionRankings(page, divisionCode, startDate, endDate) {
     }
 }
 
-async function batchEnrichAthletes(scrapedAthletes, startDate, endDate, ageCategory, weightClass, forceUpdate = false, targetLifterName = null) {
+async function batchEnrichAthletes(scrapedAthletes, startDate, endDate, ageCategory, weightClass, forceUpdate = false, targetLifterName = null, dryRun = false) {
     if (scrapedAthletes.length === 0) return;
 
     console.log(`    📊 Batch enrichment: Processing ${scrapedAthletes.length} athletes from scraped data...`);
@@ -1307,14 +1307,19 @@ async function batchEnrichAthletes(scrapedAthletes, startDate, endDate, ageCateg
             }
 
             if (Object.keys(updateData).length > 0) {
-                const { error: updateError } = await supabase
-                    .from('usaw_meet_results')
-                    .update(updateData)
-                    .eq('result_id', dbResult.result_id);
-
-                if (!updateError) {
+                if (dryRun) {
                     updateCount++;
-                    console.log(`      ✅ Enriched: ${dbResult.lifter_name} (${Object.keys(updateData).join(', ')})`);
+                    console.log(`      [DRY RUN] Would enrich ${dbResult.lifter_name} (${Object.keys(updateData).join(', ')})`);
+                } else {
+                    const { error: updateError } = await supabase
+                        .from('usaw_meet_results')
+                        .update(updateData)
+                        .eq('result_id', dbResult.result_id);
+
+                    if (!updateError) {
+                        updateCount++;
+                        console.log(`      ✅ Enriched: ${dbResult.lifter_name} (${Object.keys(updateData).join(', ')})`);
+                    }
                 }
             }
 
@@ -1327,14 +1332,19 @@ async function batchEnrichAthletes(scrapedAthletes, startDate, endDate, ageCateg
                     .single();
 
                 if (!lifterFetchError && lifterData && !lifterData.internal_id) {
-                    const { error: lifterUpdateError } = await supabase
-                        .from('usaw_lifters')
-                        .update({ internal_id: scrapedAthlete.internalId })
-                        .eq('lifter_id', dbResult.lifter_id);
-
-                    if (!lifterUpdateError) {
+                    if (dryRun) {
                         lifterIdUpdates++;
-                        console.log(`      🔗 Linked internal_id ${scrapedAthlete.internalId} to ${dbResult.lifter_name}`);
+                        console.log(`      [DRY RUN] Would link internal_id ${scrapedAthlete.internalId} to ${dbResult.lifter_name}`);
+                    } else {
+                        const { error: lifterUpdateError } = await supabase
+                            .from('usaw_lifters')
+                            .update({ internal_id: scrapedAthlete.internalId })
+                            .eq('lifter_id', dbResult.lifter_id);
+
+                        if (!lifterUpdateError) {
+                            lifterIdUpdates++;
+                            console.log(`      🔗 Linked internal_id ${scrapedAthlete.internalId} to ${dbResult.lifter_name}`);
+                        }
                     }
                 }
             }
@@ -1352,13 +1362,17 @@ async function batchEnrichAthletes(scrapedAthletes, startDate, endDate, ageCateg
                         .single();
 
                     if (!lifterFetchError && lifterData && (!lifterData.membership_number || lifterData.membership_number.toString() !== cleanMemNum)) {
-                        const { error: memUpdateError } = await supabase
-                            .from('usaw_lifters')
-                            .update({ membership_number: cleanMemNum })
-                            .eq('lifter_id', dbResult.lifter_id);
+                        if (dryRun) {
+                            console.log(`      [DRY RUN] Would enrich membership_number ${cleanMemNum} for ${dbResult.lifter_name}`);
+                        } else {
+                            const { error: memUpdateError } = await supabase
+                                .from('usaw_lifters')
+                                .update({ membership_number: cleanMemNum })
+                                .eq('lifter_id', dbResult.lifter_id);
 
-                        if (!memUpdateError) {
-                            console.log(`      💳 Enriched membership_number ${cleanMemNum} for ${dbResult.lifter_name}`);
+                            if (!memUpdateError) {
+                                console.log(`      💳 Enriched membership_number ${cleanMemNum} for ${dbResult.lifter_name}`);
+                            }
                         }
                     }
                 }
@@ -1400,14 +1414,18 @@ async function batchEnrichAthletes(scrapedAthletes, startDate, endDate, ageCateg
                 .single();
 
             if (!meetError && meetData && (!meetData.Level || meetData.Level === 'Unknown')) {
-                // Update the meet's Level
-                const { error: updateError } = await supabase
-                    .from('usaw_meets')
-                    .update({ Level: mostCommonLevel })
-                    .eq('meet_id', meetId);
+                if (dryRun) {
+                    console.log(`      [DRY RUN] Would update meet ${meetId} Level: ${mostCommonLevel}`);
+                } else {
+                    // Update the meet's Level
+                    const { error: updateError } = await supabase
+                        .from('usaw_meets')
+                        .update({ Level: mostCommonLevel })
+                        .eq('meet_id', meetId);
 
-                if (!updateError) {
-                    console.log(`      📍 Updated meet ${meetId} Level: ${mostCommonLevel}`);
+                    if (!updateError) {
+                        console.log(`      📍 Updated meet ${meetId} Level: ${mostCommonLevel}`);
+                    }
                 }
             }
         }
@@ -1601,7 +1619,7 @@ function generateAlternativeDivisions(originalCategory, bodyWeight, eventDateStr
     return uniqueCandidates;
 }
 
-async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, targetMeetId, eventDate, ageCategory, weightClass, bodyweight = null, isFallbackCheck = false, expectedTotal = null, expectedSnatch = null, expectedCJ = null, browser = null, forceUpdate = false) {
+async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, targetMeetId, eventDate, ageCategory, weightClass, bodyweight = null, isFallbackCheck = false, expectedTotal = null, expectedSnatch = null, expectedCJ = null, browser = null, forceUpdate = false, dryRun = false) {
     if (!isFallbackCheck) {
         console.log(`  🔍 Tier 1: Base64 URL Lookup Protocol (Division Rankings)`);
     } else {
@@ -1686,7 +1704,8 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
                     expectedSnatch,
                     expectedCJ,
                     browser,
-                    forceUpdate
+                    forceUpdate,
+                    dryRun
                 );
             }
         }
@@ -1740,7 +1759,7 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
 
         // BATCH ENRICHMENT - Update all matching athletes in the database
         // Pass lifterName as targetLifterName to scope forceUpdate
-        await batchEnrichAthletes(scrapedAthletes, startDate, endDate, ageCategory, weightClass, forceUpdate, lifterName);
+        await batchEnrichAthletes(scrapedAthletes, startDate, endDate, ageCategory, weightClass, forceUpdate, lifterName, dryRun);
 
         // VERIFICATION - Check if target lifter was found
         let targetAthlete = null;
@@ -1803,12 +1822,16 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
 
                                 // Let's do a safe update here if we have a single candidate
                                 if (potentialLifterIds.length === 1) {
-                                    try {
-                                        await supabase.from('usaw_lifters')
-                                            .update({ membership_number: extractedData.membershipNumber })
-                                            .eq('lifter_id', lifterId);
-                                        console.log(`    💾 Saved: Updated membership # for lifter ${lifterId}`);
-                                    } catch (e) { console.log('    ⚠️ Save Failed (Membership):', e.message); }
+                                    if (dryRun) {
+                                        console.log(`    [DRY RUN] Would save membership # ${extractedData.membershipNumber} for lifter ${lifterId}`);
+                                    } else {
+                                        try {
+                                            await supabase.from('usaw_lifters')
+                                                .update({ membership_number: extractedData.membershipNumber })
+                                                .eq('lifter_id', lifterId);
+                                            console.log(`    💾 Saved: Updated membership # for lifter ${lifterId}`);
+                                        } catch (e) { console.log('    ⚠️ Save Failed (Membership):', e.message); }
+                                    }
                                 }
                             }
                         }
@@ -1827,15 +1850,19 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
 
                 // NEW: Ensure internal_id is linked to the lifter (Fix for Regression)
                 if (targetAthlete.internalId) {
-                    try {
-                        await supabase
-                            .from('usaw_lifters')
-                            .update({ internal_id: targetAthlete.internalId })
-                            .eq('lifter_id', potentialLifterIds[0]);
+                    if (dryRun) {
+                        console.log(`    [DRY RUN] Would link internal_id ${targetAthlete.internalId} to lifter ${potentialLifterIds[0]}`);
+                    } else {
+                        try {
+                            await supabase
+                                .from('usaw_lifters')
+                                .update({ internal_id: targetAthlete.internalId })
+                                .eq('lifter_id', potentialLifterIds[0]);
 
-                        console.log(`    🔗 Linked internal_id ${targetAthlete.internalId} to lifter ${potentialLifterIds[0]}`);
-                    } catch (e) {
-                        console.log('    ⚠️ Failed to link internal_id:', e.message);
+                            console.log(`    🔗 Linked internal_id ${targetAthlete.internalId} to lifter ${potentialLifterIds[0]}`);
+                        } catch (e) {
+                            console.log('    ⚠️ Failed to link internal_id:', e.message);
+                        }
                     }
                 }
 
@@ -1849,32 +1876,40 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
                     if (targetAthlete.competitionAge) updateData.competition_age = parseInt(targetAthlete.competitionAge);
 
                     if (Object.keys(updateData).length > 0) {
-                        try {
-                            await supabase
-                                .from('usaw_meet_results')
-                                .update(updateData)
-                                .eq('meet_id', targetMeetId)
-                                .eq('lifter_id', potentialLifterIds[0]);
+                        if (dryRun) {
+                            console.log(`      [DRY RUN] Would update metadata for ${lifterName} (ID: ${potentialLifterIds[0]}): ${Object.keys(updateData).join(', ')}`);
+                        } else {
+                            try {
+                                await supabase
+                                    .from('usaw_meet_results')
+                                    .update(updateData)
+                                    .eq('meet_id', targetMeetId)
+                                    .eq('lifter_id', potentialLifterIds[0]);
 
-                            console.log(`      ✅ Targeted Enrichment: Updated metadata for ${lifterName} (ID: ${potentialLifterIds[0]})`);
-                        } catch (err) {
-                            console.log(`      ⚠️ Targeted Enrichment Error: ${err.message}`);
+                                console.log(`      ✅ Targeted Enrichment: Updated metadata for ${lifterName} (ID: ${potentialLifterIds[0]})`);
+                            } catch (err) {
+                                console.log(`      ⚠️ Targeted Enrichment Error: ${err.message}`);
+                            }
                         }
                     }
                 }
 
                 // TARGETED UPDATE (Lifter): Save Membership Number if found
                 if (targetAthlete.membershipNumber) {
-                    try {
-                        const { error: memError } = await supabase.from('usaw_lifters')
-                            .update({ membership_number: targetAthlete.membershipNumber })
-                            .eq('lifter_id', potentialLifterIds[0])
-                            .is('membership_number', null); // Only if currently null to avoid overwrite conflicts? actually users want this so maybe always?
+                    if (dryRun) {
+                        console.log(`      [DRY RUN] Would save Membership Number ${targetAthlete.membershipNumber} for lifter ${potentialLifterIds[0]}`);
+                    } else {
+                        try {
+                            const { error: memError } = await supabase.from('usaw_lifters')
+                                .update({ membership_number: targetAthlete.membershipNumber })
+                                .eq('lifter_id', potentialLifterIds[0])
+                                .is('membership_number', null); // Only if currently null to avoid overwrite conflicts? actually users want this so maybe always?
 
-                        if (!memError) {
-                            console.log(`      💾 Saved Membership Number ${targetAthlete.membershipNumber} for lifter ${potentialLifterIds[0]}`);
-                        }
-                    } catch (err) { console.log('      ⚠️ Save Failed (Membership):', err.message); }
+                            if (!memError) {
+                                console.log(`      💾 Saved Membership Number ${targetAthlete.membershipNumber} for lifter ${potentialLifterIds[0]}`);
+                            }
+                        } catch (err) { console.log('      ⚠️ Save Failed (Membership):', err.message); }
+                    }
                 }
 
                 return {
@@ -1907,30 +1942,38 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
                     if (targetAthlete.competitionAge) updateData.competition_age = parseInt(targetAthlete.competitionAge);
 
                     if (Object.keys(updateData).length > 0) {
-                        try {
-                            await supabase
-                                .from('usaw_meet_results')
-                                .update(updateData)
-                                .eq('meet_id', targetMeetId)
-                                .eq('lifter_id', matchedLifter.lifter_id);
+                        if (dryRun) {
+                            console.log(`      [DRY RUN] Would update metadata for ${lifterName} (ID: ${matchedLifter.lifter_id}): ${Object.keys(updateData).join(', ')}`);
+                        } else {
+                            try {
+                                await supabase
+                                    .from('usaw_meet_results')
+                                    .update(updateData)
+                                    .eq('meet_id', targetMeetId)
+                                    .eq('lifter_id', matchedLifter.lifter_id);
 
-                            console.log(`      ✅ Targeted Enrichment: Updated metadata for ${lifterName} (ID: ${matchedLifter.lifter_id})`);
-                        } catch (err) {
-                            console.log(`      ⚠️ Targeted Enrichment Error: ${err.message}`);
+                                console.log(`      ✅ Targeted Enrichment: Updated metadata for ${lifterName} (ID: ${matchedLifter.lifter_id})`);
+                            } catch (err) {
+                                console.log(`      ⚠️ Targeted Enrichment Error: ${err.message}`);
+                            }
                         }
                     }
 
                     // TARGETED UPDATE (Lifter): Save Membership Number if found
                     if (targetAthlete.membershipNumber) {
-                        try {
-                            const { error: memError } = await supabase.from('usaw_lifters')
-                                .update({ membership_number: targetAthlete.membershipNumber })
-                                .eq('lifter_id', matchedLifter.lifter_id);
+                        if (dryRun) {
+                            console.log(`      [DRY RUN] Would save Membership Number ${targetAthlete.membershipNumber} for lifter ${matchedLifter.lifter_id}`);
+                        } else {
+                            try {
+                                const { error: memError } = await supabase.from('usaw_lifters')
+                                    .update({ membership_number: targetAthlete.membershipNumber })
+                                    .eq('lifter_id', matchedLifter.lifter_id);
 
-                            if (!memError) {
-                                console.log(`      💾 Saved Membership Number ${targetAthlete.membershipNumber} for lifter ${matchedLifter.lifter_id}`);
-                            }
-                        } catch (err) { console.log('      ⚠️ Save Failed (Membership):', err.message); }
+                                if (!memError) {
+                                    console.log(`      💾 Saved Membership Number ${targetAthlete.membershipNumber} for lifter ${matchedLifter.lifter_id}`);
+                                }
+                            } catch (err) { console.log('      ⚠️ Save Failed (Membership):', err.message); }
+                        }
                     }
 
                     return {
@@ -1988,12 +2031,16 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
                     }
 
                     const lifterId = bestCandidate.lifter_id;
-                    console.log(`    🔗 Linking internal_id ${targetAthlete.internalId} to lifter ${lifterId}`);
+                    if (dryRun) {
+                        console.log(`    [DRY RUN] Would link internal_id ${targetAthlete.internalId} to lifter ${lifterId}`);
+                    } else {
+                        console.log(`    🔗 Linking internal_id ${targetAthlete.internalId} to lifter ${lifterId}`);
 
-                    await supabase
-                        .from('usaw_lifters')
-                        .update({ internal_id: targetAthlete.internalId })
-                        .eq('lifter_id', lifterId);
+                        await supabase
+                            .from('usaw_lifters')
+                            .update({ internal_id: targetAthlete.internalId })
+                            .eq('lifter_id', lifterId);
+                    }
 
                     // TARGETED UPDATE (Lifter): Save Membership Number if found (SAME AS ABOVE)
                     if (targetAthlete.membershipNumber) {
@@ -2017,15 +2064,19 @@ async function runBase64UrlLookupProtocol(lifterName, potentialLifterIds, target
                             }
                         }
 
-                        try {
-                            const { error: memError } = await supabase.from('usaw_lifters')
-                                .update({ membership_number: targetAthlete.membershipNumber })
-                                .eq('lifter_id', lifterId);
+                        if (dryRun) {
+                            console.log(`      [DRY RUN] Would save Membership Number ${targetAthlete.membershipNumber} for lifter ${lifterId}`);
+                        } else {
+                            try {
+                                const { error: memError } = await supabase.from('usaw_lifters')
+                                    .update({ membership_number: targetAthlete.membershipNumber })
+                                    .eq('lifter_id', lifterId);
 
-                            if (!memError) {
-                                console.log(`      💾 Saved Membership Number ${targetAthlete.membershipNumber} for lifter ${lifterId}`);
-                            }
-                        } catch (err) { console.log('      ⚠️ Save Failed (Membership):', err.message); }
+                                if (!memError) {
+                                    console.log(`      💾 Saved Membership Number ${targetAthlete.membershipNumber} for lifter ${lifterId}`);
+                                }
+                            } catch (err) { console.log('      ⚠️ Save Failed (Membership):', err.message); }
+                        }
                     }
 
                     return {

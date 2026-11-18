@@ -44,31 +44,28 @@ class WsoBackfillEngine {
                 // TIER 1 & 1.5: Division Rankings via Base64 URL
                 // We use the shared implementation which does batch enrichment
                 if (!hasDuplicates) {
-                    if (this.config.dryRun) {
-                        this.logger.info(`[DRY RUN] Would run Tier 1 Base64 URL lookup for ${result.lifter_name} (meet ${result.meet_id})`);
-                    } else {
-                        this.logger.info(`Running Tier 1 for ${result.lifter_name}...`);
-                        const tier1Result = await runBase64UrlLookupProtocol(
-                            result.lifter_name,
-                            potentialLifterIds,
-                            result.meet_id,
-                            result.date,
-                            result.age_category,
-                            result.weight_class,
-                            result.body_weight_kg,
-                            false, // isFallbackCheck
-                            result.total,
-                            result.best_snatch,
-                            result.best_cj,
-                            null, // browser (optional)
-                            this.config.force // forceUpdate
-                        );
+                    this.logger.info(`Running Tier 1 for ${result.lifter_name}...`);
+                    const tier1Result = await runBase64UrlLookupProtocol(
+                        result.lifter_name,
+                        potentialLifterIds,
+                        result.meet_id,
+                        result.date,
+                        result.age_category,
+                        result.weight_class,
+                        result.body_weight_kg,
+                        false, // isFallbackCheck
+                        result.total,
+                        result.best_snatch,
+                        result.best_cj,
+                        null, // browser (optional)
+                        this.config.force, // forceUpdate
+                        this.config.dryRun // dryRun
+                    );
 
-                        if (tier1Result) {
-                            success = true;
-                            session.completed++;
-                            this.logger.info(`✅ Tier 1 success for ${result.lifter_name}`);
-                        }
+                    if (tier1Result) {
+                        success = true;
+                        session.completed++;
+                        this.logger.info(`✅ Tier 1 success for ${result.lifter_name}`);
                     }
                 } else {
                     this.logger.info(`Duplicate names detected for ${result.lifter_name}, skipping Tier 1`);
@@ -200,39 +197,34 @@ class WsoBackfillEngine {
                             }
 
                             // NOW: Re-run Tier 1 (rankings) with the specific verified lifter ID to get metadata
-                            if (this.config.dryRun) {
-                                this.logger.info(`[DRY RUN] Would run Tier 1 (Base64) with verified lifter ID ${lifter.lifter_id}${metaMsg}`);
+                            this.logger.info(`Running Tier 1 (Base64) with verified lifter ID ${lifter.lifter_id}${metaMsg}...`);
+
+                            const tier1Result = await runBase64UrlLookupProtocol(
+                                result.lifter_name,
+                                [lifter.lifter_id], // Pass verified ID
+                                result.meet_id,
+                                resultVerification.foundDate || result.date,
+                                lookupCategory, // Use inferred or original category
+                                result.weight_class,
+                                result.body_weight_kg,
+                                false, // isFallbackCheck
+                                result.total,
+                                result.best_snatch,
+                                result.best_cj,
+                                null, // browser
+                                this.config.force, // forceUpdate
+                                this.config.dryRun // dryRun
+                            );
+
+                            if (tier1Result) {
+                                success = true;
+                                session.completed++;
+                                this.logger.info(`✅ Tier 1 success (after Identity Verification) for ${result.lifter_name}`);
+                            } else {
+                                // We verified identity but failed to scrape metadata (no total or not in rankings)
                                 success = true;
                                 session.completedWithoutMetadata++;
-                            } else {
-                                this.logger.info(`Running Tier 1 (Base64) with verified lifter ID ${lifter.lifter_id}${metaMsg}...`);
-
-                                const tier1Result = await runBase64UrlLookupProtocol(
-                                    result.lifter_name,
-                                    [lifter.lifter_id], // Pass verified ID
-                                    result.meet_id,
-                                    resultVerification.foundDate || result.date,
-                                    lookupCategory, // Use inferred or original category
-                                    result.weight_class,
-                                    result.body_weight_kg,
-                                    false, // isFallbackCheck
-                                    result.total,
-                                    result.best_snatch,
-                                    result.best_cj,
-                                    null, // browser
-                                    this.config.force // forceUpdate
-                                );
-
-                                if (tier1Result) {
-                                    success = true;
-                                    session.completed++;
-                                    this.logger.info(`✅ Tier 1 success (after Identity Verification) for ${result.lifter_name}`);
-                                } else {
-                                    // We verified identity but failed to scrape metadata (no total or not in rankings)
-                                    success = true;
-                                    session.completedWithoutMetadata++;
-                                    this.logger.info(`ℹ️ Identity verified, but metadata enrichment skipped (no total or not in rankings) for ${result.lifter_name}`);
-                                }
+                                this.logger.info(`ℹ️ Identity verified, but metadata enrichment skipped (no total or not in rankings) for ${result.lifter_name}`);
                             }
                             break;
                         }
@@ -249,30 +241,27 @@ class WsoBackfillEngine {
                     }
 
                     const potentialIds = lifters.map(l => l.lifter_id);
-                    if (this.config.dryRun) {
-                        this.logger.info(`[DRY RUN] Would run Tier 1 Discovery Base64 URL lookup for ${result.lifter_name} (${potentialIds.length} candidate IDs)`);
-                    } else {
-                        const tier1Result = await runBase64UrlLookupProtocol(
-                            result.lifter_name,
-                            potentialIds,
-                            result.meet_id,
-                            result.date,
-                            discoveryCategory,
-                            result.weight_class,
-                            result.body_weight_kg,
-                            false,
-                            result.total,
-                            result.best_snatch,
-                            result.best_cj,
-                            null,
-                            this.config.force
-                        );
+                    const tier1Result = await runBase64UrlLookupProtocol(
+                        result.lifter_name,
+                        potentialIds,
+                        result.meet_id,
+                        result.date,
+                        discoveryCategory,
+                        result.weight_class,
+                        result.body_weight_kg,
+                        false,
+                        result.total,
+                        result.best_snatch,
+                        result.best_cj,
+                        null,
+                        this.config.force,
+                        this.config.dryRun
+                    );
 
-                        if (tier1Result) {
-                            success = true;
-                            session.completed++;
-                            this.logger.info(`✅ Tier 1 Discovery Success: Disambiguated/Verified via Rankings Search`);
-                        }
+                    if (tier1Result) {
+                        success = true;
+                        session.completed++;
+                        this.logger.info(`✅ Tier 1 Discovery Success: Disambiguated/Verified via Rankings Search`);
                     }
                 }
 
