@@ -212,10 +212,23 @@ function findMatchingDbScorecard(sc, existingDbScorecards) {
  * Creates/links the second iwf_lifters row via athlete_aliases (check_alias_type = 2), assigns the
  * most recent meet's name to the primary iwf_lifters row, and preserves historical meet result names.
  */
-async function resolveIwfIdConflictViaBioPages(ath, match, scNormName, existingMeet, options = {}) {
+async function resolveIwfIdConflictViaBioPages(ath, match, scNormName, existingMeet, options = {}, existingIwfQueueMap = null) {
     const scraper = require('./iwf-results-scraper');
     const dbLifterId = match.db_lifter_id;
     const dbIwfId = match.iwf_lifters?.iwf_lifter_id;
+
+    // Skip immediately (no warning noise, no bio scrape) if already in admin_review_queue
+    if (existingIwfQueueMap && dbLifterId && ath.iwf_lifter_id) {
+        const queued = existingIwfQueueMap.get(`ent:${dbLifterId}->${ath.iwf_lifter_id}`);
+        if (queued) {
+            const st = (queued.status || '').toUpperCase();
+            if (st === 'PENDING') {
+                return { resolved: false, action: 'ALREADY_IN_QUEUE', existingStatus: st, existingQueueId: queued.id, reason: 'Already in admin_review_queue (PENDING)' };
+            }
+            return { resolved: false, action: 'PREVIOUSLY_RESOLVED', existingStatus: st, existingQueueId: queued.id, reason: `Previously resolved (${st})` };
+        }
+    }
+
     const normalizeBioUrl = (u) => {
         if (!u || typeof u !== 'string') return null;
         try {
@@ -323,8 +336,12 @@ async function resolveIwfIdConflictViaBioPages(ath, match, scNormName, existingM
                     console.log(`     ✓ Staged to admin_review_queue (category: iwf_duplicate, ID: ${insertedQ?.id || 'N/A'}).`);
                 }
             } else {
-                console.log(`     ✓ Already in admin_review_queue (ID: ${existingQ[0].id}, status: ${existingQ[0].status}).`);
-                return { resolved: false, action: 'ALREADY_IN_QUEUE', existingStatus: existingQ[0].status, existingQueueId: existingQ[0].id, reason: reviewReason };
+                const st = (existingQ[0].status || '').toUpperCase();
+                if (st === 'PENDING') {
+                    console.log(`     ✓ Already in admin_review_queue (ID: ${existingQ[0].id}, status: ${st}).`);
+                    return { resolved: false, action: 'ALREADY_IN_QUEUE', existingStatus: st, existingQueueId: existingQ[0].id, reason: reviewReason };
+                }
+                return { resolved: false, action: 'PREVIOUSLY_RESOLVED', existingStatus: st, existingQueueId: existingQ[0].id, reason: reviewReason };
             }
         }
         return { resolved: false, action: 'REVIEW_STAGED', reason: reviewReason };
@@ -478,6 +495,7 @@ async function checkCrossMeetIwfDuplicates(ath, match, scNormName, iwfLiftersByC
     let mismatches = 0;
     const reviews = [];
     const alreadyInQueue = [];
+    const previouslyResolved = [];
 
     for (const other of pool) {
         if (other.db_lifter_id === dbLifterId) continue;
@@ -504,15 +522,21 @@ async function checkCrossMeetIwfDuplicates(ath, match, scNormName, iwfLiftersByC
                 || existingIwfQueueMap.get(`ent:${dbLifterId}->${candEntityId}`)
                 || existingIwfQueueMap.get(`ent:${other.db_lifter_id}->${dbIwfId || dbLifterId}`);
             if (queued) {
-                console.log(`  ⏭️  Skipping Cross-Meet IWF ↔ IWF Candidate #${dbLifterId} vs #${other.db_lifter_id} — already in admin_review_queue (ID: ${queued.id}, status: ${queued.status})`);
-                alreadyInQueue.push({
+                const st = (queued.status || '').toUpperCase();
+                const entry = {
                     name: scNormName,
                     db_lifter_id: dbLifterId,
                     db_iwf_id: dbIwfId,
                     scraped_iwf_id: candEntityId,
-                    reason: `Already in admin_review_queue (${queued.status})`,
-                    status: queued.status
-                });
+                    reason: st === 'PENDING' ? 'Already in admin_review_queue (PENDING)' : `Previously resolved (${st})`,
+                    status: st
+                };
+                if (st === 'PENDING') {
+                    console.log(`  ⏭️  Skipping Cross-Meet IWF ↔ IWF Candidate #${dbLifterId} vs #${other.db_lifter_id} — already in admin_review_queue (ID: ${queued.id}, status: PENDING)`);
+                    alreadyInQueue.push(entry);
+                } else {
+                    previouslyResolved.push(entry);
+                }
                 continue;
             }
         }
@@ -620,14 +644,19 @@ async function checkCrossMeetIwfDuplicates(ath, match, scNormName, iwfLiftersByC
                 status: existingQueueStatus
             };
             if (isAlreadyQueued) {
-                alreadyInQueue.push(reviewEntry);
+                const st = (existingQueueStatus || '').toUpperCase();
+                if (st === 'PENDING') {
+                    alreadyInQueue.push(reviewEntry);
+                } else {
+                    previouslyResolved.push(reviewEntry);
+                }
             } else {
                 reviews.push(reviewEntry);
             }
         }
     }
 
-    return { links, reviews, alreadyInQueue, mismatches };
+    return { links, reviews, alreadyInQueue, previouslyResolved, mismatches };
 }
 
 /**
@@ -940,6 +969,7 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
             const updatedAthletes = [];
             const flaggedForReview = [];
             const alreadyInQueue = [];
+            const previouslyResolved = [];
             const unmatchedAthletes = [];
             const lockedAthletes = [];
             let unmatchedCount = 0;
@@ -1028,7 +1058,7 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                 if (ath.iwf_lifter_id && match.iwf_lifters?.iwf_lifter_id &&
                     String(ath.iwf_lifter_id) !== String(match.iwf_lifters.iwf_lifter_id)) {
                     try {
-                        const conflictRes = await resolveIwfIdConflictViaBioPages(ath, match, scNormName, existingMeet, options);
+                        const conflictRes = await resolveIwfIdConflictViaBioPages(ath, match, scNormName, existingMeet, options, existingIwfQueueMap);
                         if (conflictRes.resolved) {
                             confirmedSameLinks++;
                             updatedAthletes.push({
@@ -1050,6 +1080,15 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                             });
                         } else if (conflictRes.action === 'ALREADY_IN_QUEUE') {
                             alreadyInQueue.push({
+                                name: scNormName,
+                                db_lifter_id: match.db_lifter_id,
+                                db_iwf_id: match.iwf_lifters?.iwf_lifter_id,
+                                scraped_iwf_id: ath.iwf_lifter_id,
+                                reason: conflictRes.reason,
+                                status: conflictRes.existingStatus
+                            });
+                        } else if (conflictRes.action === 'PREVIOUSLY_RESOLVED') {
+                            previouslyResolved.push({
                                 name: scNormName,
                                 db_lifter_id: match.db_lifter_id,
                                 db_iwf_id: match.iwf_lifters?.iwf_lifter_id,
@@ -1100,6 +1139,7 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                     distinctMismatches += crossRes.mismatches;
                     flaggedForReview.push(...crossRes.reviews);
                     alreadyInQueue.push(...(crossRes.alreadyInQueue || []));
+                    previouslyResolved.push(...(crossRes.previouslyResolved || []));
                     continue;
                 }
 
@@ -1162,6 +1202,7 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                 distinctMismatches += crossRes.mismatches;
                 flaggedForReview.push(...crossRes.reviews);
                 alreadyInQueue.push(...(crossRes.alreadyInQueue || []));
+                previouslyResolved.push(...(crossRes.previouslyResolved || []));
             }
 
             const verb = options.dryRun ? 'would be ' : '';
@@ -1173,10 +1214,11 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
             console.log(`  Unmatched in meet database records:    ${unmatchedCount}`);
             console.log(`  Locked skipped (manual_override):      ${lockedSkipped}`);
             console.log(`  Direct name updates (${verb}applied):    ${directNameUpdates}`);
-            console.log(`  IWF ID conflicts investigated:         ${confirmedSameLinks + flaggedForReview.length + alreadyInQueue.length + distinctMismatches}`);
+            console.log(`  IWF ID conflicts investigated:         ${confirmedSameLinks + flaggedForReview.length + alreadyInQueue.length + previouslyResolved.length + distinctMismatches}`);
             console.log(`    - Confirmed same-athlete links:      ${confirmedSameLinks}`);
             console.log(`    - Newly staged for review:           ${flaggedForReview.length}`);
-            console.log(`    - Already in review queue (skipped): ${alreadyInQueue.length}`);
+            console.log(`    - Already in review queue (pending): ${alreadyInQueue.length}`);
+            console.log(`    - Previously resolved (skipped):     ${previouslyResolved.length}`);
             console.log(`    - Determined distinct (mismatch):    ${distinctMismatches}`);
             console.log(`  Failed updates:                        ${failedUpdates}`);
             if (flaggedForReview.length > 0) {
@@ -1186,7 +1228,7 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                 });
             }
             if (alreadyInQueue.length > 0) {
-                console.log(`\n  ℹ️  Already in Review Queue (skipped):`);
+                console.log(`\n  ℹ️  Already in Review Queue (pending):`);
                 alreadyInQueue.forEach((f, idx) => {
                     console.log(`     ${idx + 1}. "${f.name}" (DB #${f.db_lifter_id} / IWF ${f.db_iwf_id} vs IWF ${f.scraped_iwf_id}) [${f.status}] — ${f.reason}`);
                 });
@@ -1219,6 +1261,7 @@ async function importEventToDatabase(eventId, year, eventDate, options = {}) {
                 confirmedSameLinks,
                 flaggedForReviewCount: flaggedForReview.length,
                 alreadyInQueueCount: alreadyInQueue.length,
+                previouslyResolvedCount: previouslyResolved.length,
                 distinctMismatches,
                 nameUpdatesCount: updatedAthletes.length,
                 failedUpdates,
@@ -1863,7 +1906,8 @@ async function runBatchEvents(events, options = {}) {
             console.log(`  Direct name updates:                   ${sumField('directNameUpdates')}`);
             console.log(`  Confirmed same-athlete links:          ${sumField('confirmedSameLinks')}`);
             console.log(`  Newly staged for review:               ${sumField('flaggedForReviewCount')}`);
-            console.log(`  Already in review queue (skipped):     ${sumField('alreadyInQueueCount')}`);
+            console.log(`  Already in review queue (pending):     ${sumField('alreadyInQueueCount')}`);
+            console.log(`  Previously resolved (skipped):         ${sumField('previouslyResolvedCount')}`);
             console.log(`  Determined distinct (mismatch):        ${sumField('distinctMismatches')}`);
             console.log(`  Failed updates:                        ${sumField('failedUpdates')}`);
 
