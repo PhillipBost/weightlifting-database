@@ -515,12 +515,16 @@ async function run() {
 
                     // Persist to meet_aliases table
                     if (!isDryRun) {
-                        await supabase.from('meet_aliases').upsert({
-                            iwf_meet_id: iMeet.db_meet_id,
-                            usaw_meet_id: explicitUsaw.meet_id,
-                            match_confidence: 100,
-                            manual_override: true
-                        }, { onConflict: 'usaw_meet_id,iwf_meet_id' }).catch(() => {});
+                        try {
+                            await supabase.from('meet_aliases').upsert({
+                                iwf_meet_id: iMeet.db_meet_id,
+                                usaw_meet_id: explicitUsaw.meet_id,
+                                match_confidence: 100,
+                                manual_override: true
+                            }, { onConflict: 'usaw_meet_id,iwf_meet_id' });
+                        } catch (aliasErr) {
+                            console.warn(`    ⚠️ Non-fatal meet_aliases upsert warning: ${aliasErr.message}`);
+                        }
                     }
                 }
             }
