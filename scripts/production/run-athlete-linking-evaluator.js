@@ -126,10 +126,6 @@ async function main() {
 
     if (isReEvaluate) {
         query = query.in('status', ['PENDING', 'REVIEW_NEEDED', 'VETTED_ISOLATED']);
-        // Exclude permanently blacklisted records from broad re-evaluations unless explicitly targeted
-        if (!targetAthleteId) {
-            query = query.eq('is_blacklisted', false);
-        }
     } else {
         query = query.eq('status', 'PENDING');
     }
