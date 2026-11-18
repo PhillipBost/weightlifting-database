@@ -44,27 +44,31 @@ class WsoBackfillEngine {
                 // TIER 1 & 1.5: Division Rankings via Base64 URL
                 // We use the shared implementation which does batch enrichment
                 if (!hasDuplicates) {
-                    this.logger.info(`Running Tier 1 for ${result.lifter_name}...`);
-                    const tier1Result = await runBase64UrlLookupProtocol(
-                        result.lifter_name,
-                        potentialLifterIds,
-                        result.meet_id,
-                        result.date,
-                        result.age_category,
-                        result.weight_class,
-                        result.body_weight_kg,
-                        false, // isFallbackCheck
-                        result.total,
-                        result.best_snatch,
-                        result.best_cj,
-                        null, // browser (optional)
-                        this.config.force // forceUpdate
-                    );
+                    if (this.config.dryRun) {
+                        this.logger.info(`[DRY RUN] Would run Tier 1 Base64 URL lookup for ${result.lifter_name} (meet ${result.meet_id})`);
+                    } else {
+                        this.logger.info(`Running Tier 1 for ${result.lifter_name}...`);
+                        const tier1Result = await runBase64UrlLookupProtocol(
+                            result.lifter_name,
+                            potentialLifterIds,
+                            result.meet_id,
+                            result.date,
+                            result.age_category,
+                            result.weight_class,
+                            result.body_weight_kg,
+                            false, // isFallbackCheck
+                            result.total,
+                            result.best_snatch,
+                            result.best_cj,
+                            null, // browser (optional)
+                            this.config.force // forceUpdate
+                        );
 
-                    if (tier1Result) {
-                        success = true;
-                        session.completed++;
-                        this.logger.info(`✅ Tier 1 success for ${result.lifter_name}`);
+                        if (tier1Result) {
+                            success = true;
+                            session.completed++;
+                            this.logger.info(`✅ Tier 1 success for ${result.lifter_name}`);
+                        }
                     }
                 } else {
                     this.logger.info(`Duplicate names detected for ${result.lifter_name}, skipping Tier 1`);
@@ -101,76 +105,84 @@ class WsoBackfillEngine {
                                 const memNum = resultVerification.metadata.membershipNumber;
                                 this.logger.info(`  📝 Found Membership Number: ${memNum}`);
 
-                                const { error: memError } = await this.supabase
-                                    .from('usaw_lifters')
-                                    .update({ membership_number: memNum })
-                                    .eq('lifter_id', lifter.lifter_id);
-
-                                if (memError) {
-                                    this.logger.warn(`  ⚠️ Failed to save membership number: ${memError.message}`);
+                                if (this.config.dryRun) {
+                                    this.logger.info(`  [DRY RUN] Would save Membership Number ${memNum} for lifter ${lifter.lifter_id}`);
                                 } else {
-                                    this.logger.info(`  💾 Saved membership number ${memNum}`);
+                                    const { error: memError } = await this.supabase
+                                        .from('usaw_lifters')
+                                        .update({ membership_number: memNum })
+                                        .eq('lifter_id', lifter.lifter_id);
+
+                                    if (memError) {
+                                        this.logger.warn(`  ⚠️ Failed to save membership number: ${memError.message}`);
+                                    } else {
+                                        this.logger.info(`  💾 Saved membership number ${memNum}`);
+                                    }
                                 }
                             }
 
                             // DECONTAMINATION: Check if the verified lifter matches the current result's lifter_id
                             if (result.lifter_id && lifter.lifter_id && result.lifter_id !== lifter.lifter_id) {
-                                this.logger.info(`  ♻️ Decontamination: Reassigning result ${result.result_id} from Lifter ${result.lifter_id} to Verified Lifter ${lifter.lifter_id}`);
+                                if (this.config.dryRun) {
+                                    this.logger.info(`  [DRY RUN] Would reassign result ${result.result_id} from Lifter ${result.lifter_id} to Verified Lifter ${lifter.lifter_id} (and clean up conflicts/phantom lifter if empty)`);
+                                } else {
+                                    this.logger.info(`  ♻️ Decontamination: Reassigning result ${result.result_id} from Lifter ${result.lifter_id} to Verified Lifter ${lifter.lifter_id}`);
 
-                                const { error: reassignmentError } = await this.supabase
-                                    .from('usaw_meet_results')
-                                    .update({ lifter_id: lifter.lifter_id })
-                                    .eq('result_id', result.result_id);
+                                    const { error: reassignmentError } = await this.supabase
+                                        .from('usaw_meet_results')
+                                        .update({ lifter_id: lifter.lifter_id })
+                                        .eq('result_id', result.result_id);
 
-                                let cleanupNeeded = false;
+                                    let cleanupNeeded = false;
 
-                                if (reassignmentError) {
-                                    if (reassignmentError.message && reassignmentError.message.includes('unique constraint')) {
-                                        this.logger.warn(`  ⚠️ Conflict detected: Verified Master ${lifter.lifter_id} already has a result for this meet/weight class.`);
-                                        this.logger.info(`  🗑️ Resolution: Deleting redundant result ${result.result_id} from Duplicate Entry ${result.lifter_id} to resolve conflict.`);
+                                    if (reassignmentError) {
+                                        if (reassignmentError.message && reassignmentError.message.includes('unique constraint')) {
+                                            this.logger.warn(`  ⚠️ Conflict detected: Verified Master ${lifter.lifter_id} already has a result for this meet/weight class.`);
+                                            this.logger.info(`  🗑️ Resolution: Deleting redundant result ${result.result_id} from Duplicate Entry ${result.lifter_id} to resolve conflict.`);
 
-                                        const { error: conflictDeleteError } = await this.supabase
-                                            .from('usaw_meet_results')
-                                            .delete()
-                                            .eq('result_id', result.result_id);
+                                            const { error: conflictDeleteError } = await this.supabase
+                                                .from('usaw_meet_results')
+                                                .delete()
+                                                .eq('result_id', result.result_id);
 
-                                        if (conflictDeleteError) {
-                                            this.logger.error(`  ❌ Failed to delete conflicting result: ${conflictDeleteError.message}`);
+                                            if (conflictDeleteError) {
+                                                this.logger.error(`  ❌ Failed to delete conflicting result: ${conflictDeleteError.message}`);
+                                            } else {
+                                                this.logger.info(`  ✅ Redundant result deleted.`);
+                                                cleanupNeeded = true;
+                                            }
                                         } else {
-                                            this.logger.info(`  ✅ Redundant result deleted.`);
-                                            cleanupNeeded = true;
+                                            this.logger.error(`  ❌ Failed to reassign lifter: ${reassignmentError.message}`);
                                         }
                                     } else {
-                                        this.logger.error(`  ❌ Failed to reassign lifter: ${reassignmentError.message}`);
+                                        this.logger.info(`  ✅ Result reassigned successfully`);
+                                        cleanupNeeded = true;
                                     }
-                                } else {
-                                    this.logger.info(`  ✅ Result reassigned successfully`);
-                                    cleanupNeeded = true;
-                                }
 
-                                if (cleanupNeeded) {
-                                    // PHANTOM CLEANUP: Check if old lifter has any remaining results
-                                    // If not, delete the phantom lifter to keep DB clean
-                                    const oldLifterId = result.lifter_id;
-                                    const { count } = await this.supabase
-                                        .from('usaw_meet_results')
-                                        .select('*', { count: 'exact', head: true })
-                                        .eq('lifter_id', oldLifterId);
-
-                                    if (count === 0) {
-                                        this.logger.info(`  🗑️ Duplicate Profile Cleanup: Lifter ${oldLifterId} has 0 results remaining. Deleting...`);
-                                        const { error: deleteError } = await this.supabase
-                                            .from('usaw_lifters')
-                                            .delete()
+                                    if (cleanupNeeded) {
+                                        // PHANTOM CLEANUP: Check if old lifter has any remaining results
+                                        // If not, delete the phantom lifter to keep DB clean
+                                        const oldLifterId = result.lifter_id;
+                                        const { count } = await this.supabase
+                                            .from('usaw_meet_results')
+                                            .select('*', { count: 'exact', head: true })
                                             .eq('lifter_id', oldLifterId);
 
-                                        if (deleteError) {
-                                            this.logger.error(`  ❌ Failed to delete duplicate entry: ${deleteError.message}`);
+                                        if (count === 0) {
+                                            this.logger.info(`  🗑️ Duplicate Profile Cleanup: Lifter ${oldLifterId} has 0 results remaining. Deleting...`);
+                                            const { error: deleteError } = await this.supabase
+                                                .from('usaw_lifters')
+                                                .delete()
+                                                .eq('lifter_id', oldLifterId);
+
+                                            if (deleteError) {
+                                                this.logger.error(`  ❌ Failed to delete duplicate entry: ${deleteError.message}`);
+                                            } else {
+                                                this.logger.info(`  ✅ Duplicate profile ${oldLifterId} erased successfully.`);
+                                            }
                                         } else {
-                                            this.logger.info(`  ✅ Duplicate profile ${oldLifterId} erased successfully.`);
+                                            this.logger.info(`  ℹ️ Lifter ${oldLifterId} still has ${count} results. Keeping record.`);
                                         }
-                                    } else {
-                                        this.logger.info(`  ℹ️ Lifter ${oldLifterId} still has ${count} results. Keeping record.`);
                                     }
                                 }
                             }
@@ -188,33 +200,39 @@ class WsoBackfillEngine {
                             }
 
                             // NOW: Re-run Tier 1 (rankings) with the specific verified lifter ID to get metadata
-                            this.logger.info(`Running Tier 1 (Base64) with verified lifter ID ${lifter.lifter_id}${metaMsg}...`);
-
-                            const tier1Result = await runBase64UrlLookupProtocol(
-                                result.lifter_name,
-                                [lifter.lifter_id], // Pass verified ID
-                                result.meet_id,
-                                resultVerification.foundDate || result.date,
-                                lookupCategory, // Use inferred or original category
-                                result.weight_class,
-                                result.body_weight_kg,
-                                false, // isFallbackCheck
-                                result.total,
-                                result.best_snatch,
-                                result.best_cj,
-                                null, // browser
-                                this.config.force // forceUpdate
-                            );
-
-                            if (tier1Result) {
-                                success = true;
-                                session.completed++;
-                                this.logger.info(`✅ Tier 1 success (after Identity Verification) for ${result.lifter_name}`);
-                            } else {
-                                // We verified identity but failed to scrape metadata (no total or not in rankings)
+                            if (this.config.dryRun) {
+                                this.logger.info(`[DRY RUN] Would run Tier 1 (Base64) with verified lifter ID ${lifter.lifter_id}${metaMsg}`);
                                 success = true;
                                 session.completedWithoutMetadata++;
-                                this.logger.info(`ℹ️ Identity verified, but metadata enrichment skipped (no total or not in rankings) for ${result.lifter_name}`);
+                            } else {
+                                this.logger.info(`Running Tier 1 (Base64) with verified lifter ID ${lifter.lifter_id}${metaMsg}...`);
+
+                                const tier1Result = await runBase64UrlLookupProtocol(
+                                    result.lifter_name,
+                                    [lifter.lifter_id], // Pass verified ID
+                                    result.meet_id,
+                                    resultVerification.foundDate || result.date,
+                                    lookupCategory, // Use inferred or original category
+                                    result.weight_class,
+                                    result.body_weight_kg,
+                                    false, // isFallbackCheck
+                                    result.total,
+                                    result.best_snatch,
+                                    result.best_cj,
+                                    null, // browser
+                                    this.config.force // forceUpdate
+                                );
+
+                                if (tier1Result) {
+                                    success = true;
+                                    session.completed++;
+                                    this.logger.info(`✅ Tier 1 success (after Identity Verification) for ${result.lifter_name}`);
+                                } else {
+                                    // We verified identity but failed to scrape metadata (no total or not in rankings)
+                                    success = true;
+                                    session.completedWithoutMetadata++;
+                                    this.logger.info(`ℹ️ Identity verified, but metadata enrichment skipped (no total or not in rankings) for ${result.lifter_name}`);
+                                }
                             }
                             break;
                         }
@@ -231,26 +249,30 @@ class WsoBackfillEngine {
                     }
 
                     const potentialIds = lifters.map(l => l.lifter_id);
-                    const tier1Result = await runBase64UrlLookupProtocol(
-                        result.lifter_name,
-                        potentialIds,
-                        result.meet_id,
-                        result.date,
-                        discoveryCategory,
-                        result.weight_class,
-                        result.body_weight_kg,
-                        false,
-                        result.total,
-                        result.best_snatch,
-                        result.best_cj,
-                        null,
-                        this.config.force
-                    );
+                    if (this.config.dryRun) {
+                        this.logger.info(`[DRY RUN] Would run Tier 1 Discovery Base64 URL lookup for ${result.lifter_name} (${potentialIds.length} candidate IDs)`);
+                    } else {
+                        const tier1Result = await runBase64UrlLookupProtocol(
+                            result.lifter_name,
+                            potentialIds,
+                            result.meet_id,
+                            result.date,
+                            discoveryCategory,
+                            result.weight_class,
+                            result.body_weight_kg,
+                            false,
+                            result.total,
+                            result.best_snatch,
+                            result.best_cj,
+                            null,
+                            this.config.force
+                        );
 
-                    if (tier1Result) {
-                        success = true;
-                        session.completed++;
-                        this.logger.info(`✅ Tier 1 Discovery Success: Disambiguated/Verified via Rankings Search`);
+                        if (tier1Result) {
+                            success = true;
+                            session.completed++;
+                            this.logger.info(`✅ Tier 1 Discovery Success: Disambiguated/Verified via Rankings Search`);
+                        }
                     }
                 }
 
