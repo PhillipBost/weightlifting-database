@@ -2,6 +2,18 @@
 
 All notable changes to the Weightlifting Database project will be documented in this file.
 
+## [Changed] - 2026-11-20 (Eastern Standard Time)
+
+- **Disabled Automatic Evaluation Enqueuing for International Weightlifting Federation (IWF) Imports (`scripts/production/iwf-lifter-manager.js`)**:
+  - Removed `enqueueAthleteEvaluations()` and its import from `scripts/production/iwf-lifter-manager.js` so newly created International Weightlifting Federation (IWF) athletes are no longer automatically inserted as `PENDING` rows into `public.athlete_linking_evaluations`.
+  - Eliminates duplicate cross-federation matching alongside `link-new-iwf-athletes.js`, while leaving USA Weightlifting (USAW) (`scripts/production/database-importer.js`), Open Weightlifting Competition Management System (OWLCMS) (`scripts/production/owlcms-importer.js`), `public.athlete_linking_evaluations`, and `scripts/production/run-athlete-linking-evaluator.js` unchanged for on-demand historical backfills from the Admin User Interface (UI).
+
+## [Added] - 2026-11-19 (Eastern Standard Time)
+
+- **Cross-Federation Backfill Run Audit Table (`migrations/create_cross_federation_backfill_runs_table.sql`)**:
+  - Prepared an owner-run Structured Query Language (SQL) migration creating `public.cross_federation_backfill_runs` to log manual Cross-Federation Athlete Matching backfill enqueue runs triggered via the Admin User Interface (UI) Application Programming Interface (API) endpoint (`/api/admin/pipeline/seed-backfill`).
+  - Configured validation checks for source/target federations (`IWF`, `USAW`, `OWLCMS`) and scope modes (`date_range`, `year`, `meet`, `full`), chronological and federation indexes, and Row-Level Security (RLS) policies matching `public.iwf_pipeline_runs` (`service_role` full access and authenticated admin access via `public.is_admin(auth.uid())`).
+
 ## [Added] - 2026-11-16 (Eastern Standard Time)
 
 - **Static Meet Shard Generation & Refresh Pipeline (`scripts/production/assembler.js`, `scripts/production/lib/meet-shard-refresh.js`, `scripts/production/backfill-meet-shards.js`, `migrations/add_meet_shard_queue_and_triggers.sql`)**:

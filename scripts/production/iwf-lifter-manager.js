@@ -14,7 +14,6 @@
  */
 
 const config = require('./iwf-config');
-const { enqueueAthleteEvaluations, CORE_FEDERATION_UUIDS } = require('./lib/athlete-evaluator-engine.js');
 
 // ============================================================================
 // NORMALIZATION FUNCTIONS
@@ -598,20 +597,6 @@ async function findOrCreateLifter(name, country, birthYear, gender, iWFLifterId,
 
         if (!newLifter.db_lifter_id) {
             console.warn(`[Lifter Manager] Warning: db_lifter_id is null for ${normalizedName}. Full lifter object:`, JSON.stringify(newLifter));
-        }
-
-        // Enqueue newly created IWF lifter for evaluation against peer federations
-        if (newLifter && newLifter.db_lifter_id) {
-            try {
-                await enqueueAthleteEvaluations(
-                    config.supabaseIWF,
-                    CORE_FEDERATION_UUIDS.IWF,
-                    newLifter.db_lifter_id,
-                    [CORE_FEDERATION_UUIDS.USAW, CORE_FEDERATION_UUIDS.OWLCMS]
-                );
-            } catch (enqueueErr) {
-                console.warn(`[Lifter Manager] Non-fatal evaluation enqueue error: ${enqueueErr.message}`);
-            }
         }
 
         console.log(`[Lifter Manager] Created new: ${normalizedName} (${country}${countryName ? ' - ' + countryName : ''}) - ID: ${newLifter.db_lifter_id}`);
