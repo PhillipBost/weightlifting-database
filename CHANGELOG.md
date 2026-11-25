@@ -2,6 +2,16 @@
 
 All notable changes to the Weightlifting Database project will be documented in this file.
 
+## [Changed] - 2026-11-23 (Eastern Standard Time)
+
+- **Hardened Symmetrical Athlete Linking Evaluator (`v3.0-strict-physics-symmetrical`) (`scripts/production/lib/athlete-evaluator-engine.js`, `scripts/production/run-athlete-linking-evaluator.js`, `tests/athlete-evaluator-engine.test.js`)**:
+  - Upgraded name normalization with non-Normalization Form Decomposition (NFD) Latin transliteration (`ł`, `ø`, `đ`, `ß`, `æ`, `œ`, `ı`), spaced `Mc` surname prefix merging, deduplicated substantive token sets (`Set`), non-identifying particle/suffix filtering (`de`, `la`, `da`, `el`, `al`, `jr`, `sr`, Roman numerals), and Levenshtein / adjacent-transposition typo detection.
+  - Enforced the Strict Auto-Link Policy: auto-linking (`MATCHED`) now requires either a manual whitelist, shared-meet 6-attempt signed scorecard physics verification (`public.meet_aliases` + `MANUAL_MEET_MAP`), or an exact substantive name set with matching `gender` and `birth_year`, no uncorroborated country divergence (unless historical totals match within `<= 15` kilograms), no `> 25` kilogram historical total divergence across all meets, and a single unambiguous target.
+  - Added multi-candidate tie routing to `REVIEW_NEEDED` with `evidence_breakdown.additional_candidates` so human reviewers can distinguish fractured duplicate profiles from homonyms rather than silently discarding runners-up.
+  - Routed extra/missing middle names (`TOKEN_SUBSET`), 1–2 character typos (`FUZZY_EXACT_OR_SUBSET`), corroborated single-surname matches (`same country` and `<= 10` kilogram historical total delta), and bounded `±2` year or missing (`NULL`) birth-year exact-name matches to `REVIEW_NEEDED` instead of auto-linking or permanently isolating them.
+  - Fixed PostgreSQL Representational State Transfer (PostgREST) 1,000-row cohort truncation by paginating target candidate and alias queries with `fetchAll()`, fixed Open Weightlifting Competition Management System (OWLCMS) whitelist/blacklist map lookups, moved whitelist resolution ahead of cohort and name pre-screening, and persisted `algorithm_version` on every evaluation update.
+  - Added unit test suite `tests/athlete-evaluator-engine.test.js` validating strict false-positive guards, typo and birth-year fallback review routing, and shared-meet 6-attempt physics verification.
+
 ## [Changed] - 2026-11-20 (Eastern Standard Time)
 
 - **Disabled Automatic Evaluation Enqueuing for International Weightlifting Federation (IWF) Imports (`scripts/production/iwf-lifter-manager.js`)**:
