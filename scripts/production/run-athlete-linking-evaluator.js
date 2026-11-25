@@ -555,8 +555,33 @@ async function main() {
 
         // Collect all qualifying candidates (>= 60) keyed by target candidate ID
         const qualifyingById = new Map();
-        const recordCandidateResult = (candidate, result) => {
-            if (!candidate || candidate.id == null || !result || result.score < 60) return;
+        const TIER_RANK = {
+            EXACT_ORDERED: 6,
+            EXACT_SET_REORDERED: 5,
+            TOKEN_SUBSET: 4,
+            FUZZY_EXACT_OR_SUBSET: 3,
+            PARTIAL_OVERLAP_NON_SUBSET: 2,
+            SINGLE_SURNAME_ONLY: 1,
+            BLACKLISTED: 0,
+            NONE: 0
+        };
+        let nameOverlapCount = 0;
+        let closestRejected = null;
+        const recordRejectedNearMiss = (candidate, result, quickNameTier = null) => {
+            if (!candidate || candidate.id == null || !result || result.score >= 60) return;
+            const tier = result.matchTier && result.matchTier !== 'NONE' ? result.matchTier : (quickNameTier || 'NONE');
+            const rank = TIER_RANK[tier] || 0;
+            const prevRank = closestRejected ? (TIER_RANK[closestRejected.tier] || 0) : -1;
+            if (!closestRejected || rank > prevRank || (rank === prevRank && result.score > closestRejected.result.score)) {
+                closestRejected = { candidate, result, tier };
+            }
+        };
+        const recordCandidateResult = (candidate, result, quickNameTier = null) => {
+            if (!candidate || candidate.id == null || !result) return;
+            if (result.score < 60) {
+                recordRejectedNearMiss(candidate, result, quickNameTier);
+                return;
+            }
             const cid = parseInt(candidate.id, 10);
             const existing = qualifyingById.get(cid);
             if (!existing || result.score > existing.result.score || (result.score === existing.result.score && result.status === 'MATCHED' && existing.result.status !== 'MATCHED')) {
@@ -649,11 +674,12 @@ async function main() {
                 // Pre-screen name tier before hydrating totals
                 const quickName = analyzeNameMatch(sourceProfile.name, candidate.name);
                 if (quickName.tier === 'NONE') continue;
+                nameOverlapCount++;
 
                 await hydrateTotals(tCode, candidate);
 
                 const result = evaluateCandidateMatch(sourceProfile, candidate, sCode, tCode);
-                recordCandidateResult(candidate, result);
+                recordCandidateResult(candidate, result, quickName.tier);
             }
         }
 
@@ -668,13 +694,14 @@ async function main() {
 
                 const quickName = analyzeNameMatch(sourceProfile.name, candidate.name);
                 if (quickName.tier !== 'EXACT_ORDERED' && quickName.tier !== 'EXACT_SET_REORDERED') continue;
+                nameOverlapCount++;
 
                 await hydrateTotals(tCode, candidate);
 
                 const fbResult = evaluateCandidateMatch(sourceProfile, candidate, sCode, tCode, {
                     allowBirthYearFallback: true
                 });
-                recordCandidateResult(candidate, fbResult);
+                recordCandidateResult(candidate, fbResult, quickName.tier);
             }
         }
 
@@ -837,8 +864,23 @@ async function main() {
                         ? 'Demographic cohort empty and no +/-2 year exact-name fallback found'
                         : 'No candidate reached review threshold (>= 60) under strict v3.0 policy'));
 
-            if (isVerbose) {
-                console.log(`  ✓ Isolated [${sCode}:${sourceProfile.id}] "${sourceProfile.name}" -> [${tCode}]: ${reason}`);
+            if (isDryRun || isVerbose) {
+                const sCountryDisplay = sourceProfile.country || sourceProfile.country_code || 'N/A';
+                const sTotalDisplay = sourceProfile.best_total != null ? `${sourceProfile.best_total}kg` : 'no total';
+                const overlapText = !genderKey || !birthYearKey
+                    ? reason
+                    : `Cohort: ${cohortCandidateCount} | ${nameOverlapCount} name-overlap(s)`;
+                console.log(`  ⚪ ISOLATED: [${sCode}:${sourceProfile.id}] "${sourceProfile.name}" (${genderKey || '?'}, ${birthYearKey || '?'}, ${sCountryDisplay}, Best: ${sTotalDisplay}) -> [${tCode}] | ${overlapText}`);
+                if (closestRejected) {
+                    const rc = closestRejected.candidate;
+                    const rr = closestRejected.result;
+                    const rCountry = rc.country || rc.country_code || 'N/A';
+                    const rTotal = rc.best_total != null ? `${rc.best_total}kg` : 'no total';
+                    const rejectNote = (rr.breakdown && rr.breakdown.length > 0)
+                        ? rr.breakdown[rr.breakdown.length - 1]
+                        : (rr.verdict || 'Below review threshold');
+                    console.log(`     Closest rejected: [${tCode}:${rc.id}] "${rc.name}" (${rc.birth_year || '?'}, ${rCountry}, Best: ${rTotal}) [${closestRejected.tier}] — ${rejectNote}`);
+                }
             }
             if (!isDryRun) {
                 await supabase
