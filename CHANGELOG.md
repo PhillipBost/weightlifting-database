@@ -2,6 +2,12 @@
 
 All notable changes to the Weightlifting Database project will be documented in this file.
 
+## [Added] - 2026-11-27 (Eastern Standard Time)
+
+- **Cross-Federation Drain Runs Audit Table (`migrations/create_cross_federation_drain_runs_table.sql`)**:
+  - Prepared an owner-run Structured Query Language (SQL) migration creating `public.cross_federation_drain_runs` to persist execution history, parameters, outcome telemetry (`summary_json`), and archived console logs for Admin User Interface (UI) Step 2 queue drains (`/api/admin/pipeline/drain` -> `scripts/production/run-athlete-linking-evaluator.js`).
+  - Added chronological and status indexes, Discretionary Access Control (DAC) table and identity sequence grants, and Row-Level Security (RLS) policies matching `public.iwf_pipeline_runs` and `public.cross_federation_backfill_runs` (`service_role` full access and authenticated admin access via `public.is_admin(auth.uid())`).
+
 ## [Changed] - 2026-11-23 (Eastern Standard Time)
 
 - **Hardened Symmetrical Athlete Linking Evaluator (`v3.0-strict-physics-symmetrical`) (`scripts/production/lib/athlete-evaluator-engine.js`, `scripts/production/run-athlete-linking-evaluator.js`, `tests/athlete-evaluator-engine.test.js`)**:
