@@ -361,6 +361,11 @@ async function main() {
     if (sourceFedParam) console.log(`Filter Source Federation: ${sourceFedParam}`);
     if (targetFedParam) console.log(`Filter Target Federation: ${targetFedParam}`);
     if (targetAthleteId) console.log(`Filter Athlete ID: ${targetAthleteId}`);
+    console.log(`Checks per athlete:`);
+    console.log(`  1. Manual Whitelists (bypass birth year and name differences)`);
+    console.log(`  2. Shared-Meet 6-Attempt Scorecard Physics (IWF <-> USAW mapped meets, ignores birth year)`);
+    console.log(`  3. Exact (Gender + Birth Year) Cohort (exact, inverted, middle names, 1-2 character typos, all historical totals)`);
+    console.log(`  4. Bad/Missing Birth-Year Fallback (+/-2 years and NULL birth year, same gender + exact name -> Review)`);
     console.log(`============================================================\n`);
 
     // 1. Load Federation Registry Lookups
@@ -602,6 +607,7 @@ async function main() {
         }
 
         // --- STEP B: Tier-1 Shared-Meet 6-Attempt Physics Pass (IWF <-> USAW) ---
+        let sharedMeetsChecked = 0;
         if (isIwfUsawPair && sourceMeetResults.length > 0) {
             const meetLookup = sCode === 'IWF' ? iwfToUsawMeets : usawToIwfMeets;
             const mappedTargetMeetIds = new Set();
@@ -612,6 +618,7 @@ async function main() {
                     for (const tmId of targets) mappedTargetMeetIds.add(tmId);
                 }
             }
+            sharedMeetsChecked = mappedTargetMeetIds.size;
 
             if (mappedTargetMeetIds.size > 0) {
                 const targetResultsByAthlete = new Map();
@@ -684,6 +691,7 @@ async function main() {
         }
 
         // --- STEP D: Bounded Bad or Missing Birth-Year Fallback (+/-2 years or NULL, Review-Only) ---
+        let fallbackExactHits = 0;
         const hasMatchedCandidate = Array.from(qualifyingById.values()).some(x => x.result.status === 'MATCHED');
         if (!hasMatchedCandidate && genderKey) {
             const fallbackCandidates = await fetchBirthYearFallbackCandidates(tCode, genderKey, birthYearKey, sourceProfile.name);
@@ -694,7 +702,7 @@ async function main() {
 
                 const quickName = analyzeNameMatch(sourceProfile.name, candidate.name);
                 if (quickName.tier !== 'EXACT_ORDERED' && quickName.tier !== 'EXACT_SET_REORDERED') continue;
-                nameOverlapCount++;
+                fallbackExactHits++;
 
                 await hydrateTotals(tCode, candidate);
 
@@ -867,10 +875,22 @@ async function main() {
             if (isDryRun || isVerbose) {
                 const sCountryDisplay = sourceProfile.country || sourceProfile.country_code || 'N/A';
                 const sTotalDisplay = sourceProfile.best_total != null ? `${sourceProfile.best_total}kg` : 'no total';
-                const overlapText = !genderKey || !birthYearKey
-                    ? reason
-                    : `Cohort: ${cohortCandidateCount} | ${nameOverlapCount} name-overlap(s)`;
-                console.log(`  ⚪ ISOLATED: [${sCode}:${sourceProfile.id}] "${sourceProfile.name}" (${genderKey || '?'}, ${birthYearKey || '?'}, ${sCountryDisplay}, Best: ${sTotalDisplay}) -> [${tCode}] | ${overlapText}`);
+                console.log(`  ⚪ ISOLATED: [${sCode}:${sourceProfile.id}] "${sourceProfile.name}" (${genderKey || '?'}, ${birthYearKey || '?'}, ${sCountryDisplay}, Best: ${sTotalDisplay}) -> [${tCode}]`);
+
+                const checks = [];
+                if (isIwfUsawPair) {
+                    checks.push(`Shared mapped meets = ${sharedMeetsChecked}`);
+                }
+                if (genderKey && birthYearKey) {
+                    checks.push(`Exact (${genderKey}, ${birthYearKey}) cohort = ${cohortCandidateCount} (${nameOverlapCount} name overlaps)`);
+                    checks.push(`Birth-year fallback (${birthYearKey - 2}-${birthYearKey + 2}/NULL) = ${fallbackExactHits} exact-name hits`);
+                } else if (genderKey) {
+                    checks.push(`Missing birth year -> any-year exact-name fallback = ${fallbackExactHits} exact-name hits`);
+                } else {
+                    checks.push(reason);
+                }
+                console.log(`     Checked: ${checks.join(' | ')}`);
+
                 if (closestRejected) {
                     const rc = closestRejected.candidate;
                     const rr = closestRejected.result;
