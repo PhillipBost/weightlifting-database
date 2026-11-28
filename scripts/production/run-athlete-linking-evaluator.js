@@ -872,35 +872,33 @@ async function main() {
                         ? 'Demographic cohort empty and no +/-2 year exact-name fallback found'
                         : 'No candidate reached review threshold (>= 60) under strict v3.0 policy'));
 
-            if (isDryRun || isVerbose) {
-                const sCountryDisplay = sourceProfile.country || sourceProfile.country_code || 'N/A';
-                const sTotalDisplay = sourceProfile.best_total != null ? `${sourceProfile.best_total}kg` : 'no total';
-                console.log(`  ⚪ ISOLATED: [${sCode}:${sourceProfile.id}] "${sourceProfile.name}" (${genderKey || '?'}, ${birthYearKey || '?'}, ${sCountryDisplay}, Best: ${sTotalDisplay}) -> [${tCode}]`);
+            const sCountryDisplay = sourceProfile.country || sourceProfile.country_code || 'N/A';
+            const sTotalDisplay = sourceProfile.best_total != null ? `${sourceProfile.best_total}kg` : 'no total';
+            console.log(`  ⚪ ISOLATED: [${sCode}:${sourceProfile.id}] "${sourceProfile.name}" (${genderKey || '?'}, ${birthYearKey || '?'}, ${sCountryDisplay}, Best: ${sTotalDisplay}) -> [${tCode}]`);
 
-                const checks = [];
-                if (isIwfUsawPair) {
-                    checks.push(`Shared mapped meets = ${sharedMeetsChecked}`);
-                }
-                if (genderKey && birthYearKey) {
-                    checks.push(`Exact (${genderKey}, ${birthYearKey}) cohort = ${cohortCandidateCount} (${nameOverlapCount} name overlaps)`);
-                    checks.push(`Birth-year fallback (${birthYearKey - 2}-${birthYearKey + 2}/NULL) = ${fallbackExactHits} exact-name hits`);
-                } else if (genderKey) {
-                    checks.push(`Missing birth year -> any-year exact-name fallback = ${fallbackExactHits} exact-name hits`);
-                } else {
-                    checks.push(reason);
-                }
-                console.log(`     Checked: ${checks.join(' | ')}`);
+            const checks = [];
+            if (isIwfUsawPair) {
+                checks.push(`Shared mapped meets = ${sharedMeetsChecked}`);
+            }
+            if (genderKey && birthYearKey) {
+                checks.push(`Exact (${genderKey}, ${birthYearKey}) cohort = ${cohortCandidateCount} (${nameOverlapCount} name overlaps)`);
+                checks.push(`Birth-year fallback (${birthYearKey - 2}-${birthYearKey + 2}/NULL) = ${fallbackExactHits} exact-name hits`);
+            } else if (genderKey) {
+                checks.push(`Missing birth year -> any-year exact-name fallback = ${fallbackExactHits} exact-name hits`);
+            } else {
+                checks.push(reason);
+            }
+            console.log(`     Checked: ${checks.join(' | ')}`);
 
-                if (closestRejected) {
-                    const rc = closestRejected.candidate;
-                    const rr = closestRejected.result;
-                    const rCountry = rc.country || rc.country_code || 'N/A';
-                    const rTotal = rc.best_total != null ? `${rc.best_total}kg` : 'no total';
-                    const rejectNote = (rr.breakdown && rr.breakdown.length > 0)
-                        ? rr.breakdown[rr.breakdown.length - 1]
-                        : (rr.verdict || 'Below review threshold');
-                    console.log(`     Closest rejected: [${tCode}:${rc.id}] "${rc.name}" (${rc.birth_year || '?'}, ${rCountry}, Best: ${rTotal}) [${closestRejected.tier}] — ${rejectNote}`);
-                }
+            if (closestRejected) {
+                const rc = closestRejected.candidate;
+                const rr = closestRejected.result;
+                const rCountry = rc.country || rc.country_code || 'N/A';
+                const rTotal = rc.best_total != null ? `${rc.best_total}kg` : 'no total';
+                const rejectNote = (rr.breakdown && rr.breakdown.length > 0)
+                    ? rr.breakdown[rr.breakdown.length - 1]
+                    : (rr.verdict || 'Below review threshold');
+                console.log(`     Closest rejected: [${tCode}:${rc.id}] "${rc.name}" (${rc.birth_year || '?'}, ${rCountry}, Best: ${rTotal}) [${closestRejected.tier}] — ${rejectNote}`);
             }
             if (!isDryRun) {
                 await supabase
